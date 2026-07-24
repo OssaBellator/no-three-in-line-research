@@ -84,7 +84,7 @@ For fixed \(r=t+h<k\), the total number of cross-stratum divisor collisions,
 counting both orientations, is less than
 
 \[
-8+rac{16L}d+8\sqrt L.
+8+\frac{16L}{d}+8\sqrt L.
 \]
 
 ### Proof
@@ -93,7 +93,7 @@ The signed carry range is \(0<|m|<M/d\). CMR63 restricts `m` to one residue
 class modulo \(p^h\), so the number `J` of carries is at most
 
 \[
-J\le1+rac{2M}{dp^h}=1+rac{2L}d.
+J\le1+\frac{2M}{dp^h}=1+\frac{2L}{d}.
 \]
 
 The corresponding values `z` form an arithmetic progression of length `J`
