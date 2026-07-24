@@ -54,8 +54,12 @@ This index collects the product/composition results on
 | PX47 | Crossed rectangle templates are equivalent under scalar transposition | PROVED | `docs/46-unrestricted-one-layer-obstruction-six-seven.md` |
 | PX48 | The unrestricted arbitrary-block PX28 family has no template at base sides six or seven | PROVED FINITE | `docs/46-unrestricted-one-layer-obstruction-six-seven.md` |
 | PX49 | The unrestricted arbitrary-block PX28 family has no template at base side eight | PROVED FINITE | `docs/47-unrestricted-one-layer-obstruction-eight.md` |
+| PX50 | Arbitrary-map full four-layer hosts have an exact four-permutation normal form depending on the factor only through relative cycle type | PROVED | `docs/48-full-selector-normal-form-and-side-three-closure.md` |
+| PX51 | Every saturated side-three factor composes with side two to a saturated no-three side-six configuration | PROVED | `docs/48-full-selector-normal-form-and-side-three-closure.md` |
+| PX52 | One-outer-layer states reduce exactly to two independently relabelled factors of one relative cycle type | PROVED | `docs/49-one-outer-layer-normal-form-and-side-six-obstruction.md` |
+| PX53 | No side-six relative cycle type has a one-outer-layer no-three template | PROVED FINITE | `docs/49-one-outer-layer-normal-form-and-side-six-obstruction.md` |
 
-The branch has factor-independent special closure theorems for `2 x 4` and
-`2 x 5`, exact gauge and rectangle-matching reductions, and a complete
-unrestricted one-layer classification through base side eight.  It still has no
-infinite multiplicative closure class or arithmetic coverage theorem.
+The branch has factor-independent special closure theorems for `2 x 3`, `2 x 4`,
+and `2 x 5`, exact one-layer and full-host normal forms, and complete restricted
+obstructions through base side eight.  It still has no infinite multiplicative
+closure class or arithmetic coverage theorem.
