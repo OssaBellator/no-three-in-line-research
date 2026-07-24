@@ -57,7 +57,7 @@ unresolved case.
 44. **Explicit wrap centers.** Every degenerate scalar carry cell is radial about one rational center \(pS/d\), while every nondegenerate cell meets one hyperbola channel at most twice.
 45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy a divisor-controlled integer product equation.
 46. **Wrap-center dispersion.** A large perfect-alignment class either occupies many rational centers or has multipliers with a large common divisor relative to their size.
-47. **Two-forbidden-matching spread.** Permutations avoiding a position set of row/column degree at most two have constant density and \(128/(t)_r\) cylinder bounds.
+47. **Two-forbidden-matching spread.** Permutations avoiding a position set of row/column degree at most two have density at least \(1/72\) and \(72/(t)_r\) cylinder bounds for \(t\ge7\).
 48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
 49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
 50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
@@ -78,17 +78,26 @@ unresolved case.
 65. **Digital completion obstruction.** The recorded 64-point digit-linear layer has no second-permutation no-three completion, by an exact integer covering certificate.
 66. **Corrected CRT taxonomy.** Saturated prime-factor pairs cannot be modular arcs; local-line slope carries and collision directions must both be tracked.
 67. **Finite composite coverage.** Exact saturated configurations are recorded at \(N=4,6,8,9,10,12\); one-layer digital channels are recorded through \(N=64\).
+68. **Recursive first-separation summation.** Balanced reciprocal banks at \(p\equiv1\pmod4\) have expected syndrome \(O_p(N^2\log N)\), and the logarithmic mass is confined to binary same-layer stars.
+69. **Prefix-star neutralization.** Complete prefix rematching banks destroy every assigned binary star, remove the endpoint baseline, and have quadratic normalized rank-two/rank-three collateral.
+70. **Stable quotient charging.** Fine-to-coarse repairs preserve every later quotient charge; rank-one collateral sums to \(O_p(N^2\log^2N)\) in expectation.
+71. **Recursive-compatible node bank.** One reciprocal node can be changed while preserving saturation; invariant triples wholly inside child subtrees cancel exactly.
+72. **Vertical child-pencil dichotomy.** The remaining external child load is either \(O(N^2)\) per depth after normalization or exposes an explicit alternating endpoint bank.
+73. **Quantitative frozen-bank certificate.** Child-pencil mass controls the extracted star size, and a frozen bank forces normalized rank-\(1/2/3\) concentration at least \(t/216\).
+74. **Balanced reciprocal-law classification.** Exact cell balance inside the completed-reciprocal family exists precisely for primes \(p\equiv1\pmod4\); reweighting cannot solve \(p\equiv3\pmod4\).
+75. **Prime-seven balanced factorization.** Seven integer no-three permutations partition the \(7	imes7\) grid and generate saturated recursive banks for every \(N=7^k\).
+76. **Prime-seven spectral syndrome.** A sharpened factorization has pair-difference multiplicity at most three and expected syndrome below \((36/7)(k-1)N^2+(29/9)N^2\).
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
 - Alternating two-colour carry-core termination and conversion.
-- A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
-- A monotone carry-complexity potential or finite-denominator absorber theorem.
+- Conversion of the CMR112 rank-\(1/2/3\) child-pencil alternatives into a decreasing joint state or a paid carry/quotient defect.
+- A lexicographic potential paying for fine stars recreated by later coarse repairs.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem.
-- Recursive first-separation summation for the restricted prime-power bank.
 - Removal or absorption of the square-root divisor-collision boundary.
+- Non-reciprocal balanced grid factorizations beyond the prime seven.
 - A joint digital two-layer construction replacing the obstructed CMR12 completion route.
 - A CRT slope-carry incompatibility or absorption theorem.
 - Coverage of arbitrary composite side lengths.
@@ -107,14 +116,15 @@ unresolved case.
 - A unit-group channel is not a full permutation channel.
 - The known 64-point digital layer cannot be completed by any second permutation.
 - A saturated odd-prime CRT factor cannot satisfy the modular-arc premise of the simple direction-separation theorem.
+- The weak recursive-compatible child load is not the ordinary finer-prefix collateral: a parent-node move changes its row residue class.
+- No balanced weighting of completed-reciprocal maps exists when \(p\equiv3\pmod4\).
 
 ## Bottom line
 
-There is no complete proof. The prime-field repair route still needs global
-alternating-closure concentration. The independent composite route now has
-full nonlinear prime-power channels, recursive saturated banks, an all-prime
-spread terminal family, quadratic-order one- and two-layer syndrome bounds,
-and corrected CRT slope-carry signatures. Its main unresolved step is a global
-first-separation decoder or absorber that converts those quantitative bounds
-into an exact no-three saturated state, followed by assembly across arbitrary
-composite moduli.
+There is no complete proof. The prime-field and prime-power repair routes now
+meet at the same explicit obstruction: termination of an alternating
+rank-\(1/2/3\) concentration expansion. The composite route additionally has
+full nonlinear prime-power channels, stable recursive banks, quadratic-order
+syndrome bounds, and balanced \(7^k\) banks outside the reciprocal family. It
+still needs exact elimination of the remaining alternating defects and then a
+coverage mechanism for arbitrary side lengths.
