@@ -83,12 +83,133 @@ The following recursive block-doubling design is impossible:
 
 The obstruction is independent of the chosen permutations or absorber states.
 
-## 2. Consequence for reservoir placement
+## 2. Projection-dispersion requirement
+
+Let `Y` be the `t` old reservoir rows, let `C` be the set of old columns hit by
+the deleted points, and let
+
+\[
+N=\{m+1,\ldots,m+t\}
+\]
+
+be the new coordinate interval. Every row-lift state is contained in
+
+\[
+U=(C\times N)\cup(N\times Y).
+\]
+
+For a primitive nonaxis integer functional
+
+\[
+\lambda_{a,b}(x,y)=ax+by,
+\qquad ab\ne0,\quad\gcd(a,b)=1,
+\]
+
+its level sets are parallel lattice lines.
+
+### Proposition PP3u -- PROVED
+
+If a row-lift state `A subseteq U` has `|A|=4t` and is no-three-in-line, then
+for every primitive nonaxis pair `(a,b)`,
+
+\[
+\boxed{
+|\lambda_{a,b}(U)|
+=
+|(aC+bN)\cup(aN+bY)|
+\ge2t.
+}
+\]
+
+#### Proof
+
+Every level set of `lambda_{a,b}` contains at most two points of `A`. Hence
+
+\[
+4t=|A|\le2|\lambda_{a,b}(A)|
+\le2|\lambda_{a,b}(U)|.
+\]
+
+Divide by two. ∎
+
+Thus projection dispersion is a necessary support-level test that can be run
+before any local-lemma or state search.
+
+## 3. Classification of the minimal projection failure
+
+We use the elementary equality case of the integer sumset bound:
+for finite integer sets `A,B` with at least two elements,
+
+\[
+|A+B|\ge|A|+|B|-1,
+\]
+
+with equality only when `A` and `B` are arithmetic progressions with the same
+common difference.
+
+Every deleted column contains at most two reservoir points, so `|C|>=t`.
+
+### Proposition PP3v -- PROVED
+
+Assume `t>=2`. If for some primitive nonaxis `(a,b)` one has
+
+\[
+|(aC+bN)\cup(aN+bY)|\le2t-1,
+\]
+
+then all of the following hold:
+
+1. `|C|=t`;
+2. `|a|=|b|=1`;
+3. `C` and `Y` are intervals of length `t`;
+4. the two component image intervals coincide.
+
+For a reservoir contained in `[m]` and the adjacent new interval
+`N={m+1,...,m+t}`, the only possible case is `a=b` and `C=Y`. Equivalently,
+the support is the aligned configuration from PP3s and the forcing lines have
+slope `-1`.
+
+#### Proof
+
+Both component images satisfy the integer sumset bound:
+
+\[
+|aC+bN|\ge|C|+t-1\ge2t-1,
+\]
+
+and
+
+\[
+|aN+bY|\ge2t-1.
+\]
+
+If their union has at most `2t-1` elements, both inequalities are equalities,
+`|C|=t`, and the two image sets coincide.
+
+Equality in the first sumset bound says that `aC` and `bN` are arithmetic
+progressions with one common difference. Since `bN` has common difference
+`|b|`, the progression `aC` must have the same difference. Coprimality of
+`a,b` then forces `|a|=1`, and `C` is an interval. Applying the same argument
+to `aN+bY` forces `|b|=1` and makes `Y` an interval.
+
+It remains to compare the two image intervals. When `a=b`, equality is
+`C+N=N+Y`, hence `C=Y`. When `a=-b`, equality would require the centre of
+`C-N` to equal the centre of `N-Y`. But every element of `C` and `Y` is at
+most `m`, whereas every element of `N` is at least `m+1`; the two centres have
+opposite signs after translation and cannot agree. Changing both signs does
+not change the level-set family. Therefore only `a=b` and `C=Y` remain. ∎
+
+PP3v shows that the slope-`-1` obstruction is the unique primitive-direction
+failure at the absolute `2t-1` projection threshold. Other row-lift placements
+are not automatically valid, but they pass this first support-level
+pigeonhole screen.
+
+## 4. Consequence for reservoir placement
 
 The general row-lift theorem PP3i is not refuted. Its old reservoir rows and
 hit columns may be distributed throughout a much larger `[m]^2` core. Then the
-sum coordinates of the two cross rectangles can occupy far more than `2t-1`
-levels.
+linear projections of the two cross rectangles can occupy many more than
+`2t-1` levels.
 
 A viable PP3 preparation theorem must therefore use at least one of the
 following:
