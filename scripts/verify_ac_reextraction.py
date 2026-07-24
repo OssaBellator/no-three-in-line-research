@@ -434,6 +434,74 @@ def verify_capacitated_hall(maximum_resources: int = 3) -> None:
     assert not has_capacitated_assignment(eligibility, (1, 1))
 
 
+def deficient_family(
+    eligibility: tuple[frozenset[int], ...],
+    capacities: tuple[int, ...],
+) -> frozenset[int] | None:
+    for mask in range(1, 1 << len(eligibility)):
+        events = frozenset(
+            event
+            for event in range(len(eligibility))
+            if mask & (1 << event)
+        )
+        neighbourhood = set().union(
+            *(eligibility[event] for event in events)
+        )
+        if len(events) > sum(
+            capacities[resource] for resource in neighbourhood
+        ):
+            return events
+    return None
+
+
+def verify_overlap_payment(maximum_resources: int = 3) -> None:
+    for resource_count in range(1, maximum_resources + 1):
+        eligible_sets = tuple(
+            frozenset(
+                resource
+                for resource in range(resource_count)
+                if mask & (1 << resource)
+            )
+            for mask in range(1, 1 << resource_count)
+        )
+        for capacities in product(range(3), repeat=resource_count):
+            for event_count in range(1, 4):
+                for eligibility in product(eligible_sets, repeat=event_count):
+                    minimum_degree = min(
+                        sum(capacities[resource] for resource in resources)
+                        for resources in eligibility
+                    )
+                    token_degree = max(
+                        (
+                            sum(
+                                resource in resources
+                                for resources in eligibility
+                            )
+                            for resource, capacity in enumerate(capacities)
+                            if capacity
+                        ),
+                        default=0,
+                    )
+                    if minimum_degree and token_degree <= minimum_degree:
+                        assert capacitated_hall(eligibility, capacities)
+
+                    deficient = deficient_family(eligibility, capacities)
+                    if deficient is None or minimum_degree == 0:
+                        continue
+                    neighbourhood = set().union(
+                        *(eligibility[event] for event in deficient)
+                    )
+                    assert any(
+                        capacities[resource]
+                        and sum(
+                            resource in eligibility[event]
+                            for event in deficient
+                        )
+                        > minimum_degree
+                        for resource in neighbourhood
+                    )
+
+
 def main() -> None:
     verify_weighted_extraction()
     verify_composed_bound()
@@ -444,6 +512,7 @@ def main() -> None:
     verify_strict_support_descent()
     verify_ticketed_support_potential()
     verify_capacitated_hall()
+    verify_overlap_payment()
     print("AC re-extraction and reuse accounting: verified")
 
 

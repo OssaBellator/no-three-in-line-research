@@ -506,10 +506,73 @@ entire eligible current-incidence neighbourhood has insufficient
 capacity, and that deficient family is the object to classify or
 delegate to BDA/RI.
 
+## AC3g -- bounded-overlap payment criterion
+
+Replace every resource \(\pi\) by its \(c_\pi\) capacity tokens, as in
+AC3f.  A reopening is adjacent to all tokens belonging to its eligible
+resources.  Suppose:
+
+1. every reopening is adjacent to at least \(L\) tokens;
+2. every token is adjacent to at most \(\Delta\) reopenings.
+
+### Lemma AC3g -- PROVED
+
+For every reopening subfamily \(\mathcal X\),
+
+\[
+\boxed{
+|N(\mathcal X)|
+\geq
+\frac L\Delta|\mathcal X|.
+}
+\]
+
+In particular, \(L\geq\Delta\) implies all capacitated Hall inequalities
+from AC3f and hence supplies a valid paid ticket assignment.
+
+More sharply, assume only the first condition.  If Hall fails, then
+there is a deficient reopening family \(\mathcal X\) and one paid
+resource token which is eligible for more than \(L\) events of
+\(\mathcal X\).  Thus one of the following exact alternatives holds:
+
+1. all token reuse degrees are at most \(L\), and every reopening can be
+   paid within capacity;
+2. one current syndrome incidence or certificate resource is eligible
+   for more than \(L\) reopenings in a Hall-deficient component.
+
+### Proof
+
+Count eligibility edges between \(\mathcal X\) and its token
+neighbourhood.  The reopening degree condition gives at least
+\(L|\mathcal X|\) edges, while the token degree condition gives at most
+\(\Delta|N(\mathcal X)|\).  This proves the first box, and
+\(L\geq\Delta\) gives Hall.
+
+If Hall fails, choose \(\mathcal X\) with
+\(|N(\mathcal X)|<|\mathcal X|\).  The same edge count, without an
+upper-degree assumption, shows that the average degree of a token in
+\(N(\mathcal X)\) is greater than
+
+\[
+\frac{L|\mathcal X|}{|N(\mathcal X)|}>L.
+\]
+
+Some token therefore has degree greater than \(L\) inside the deficient
+family. \(\square\)
+
+AC3g turns the Hall interface into a local geometric audit.  It is
+enough to prove that every reopening meets \(L\) units of current paid
+incidence and that no such unit can support more than \(L\) reopenings.
+Failure is already a concentrated reuse obstruction at one incidence,
+which can be passed to the anchor, carry, denominator, or rational
+classification machinery.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
 four quotient states, a finite ticket trace, and every strict-support
 maximal-depth descent order through seven objects.  It also enumerates
 all descent and ticketed-reopening transitions through six objects and
 three tickets, and compares the capacitated Hall inequalities with direct
-charge assignment on small eligibility systems.
+charge assignment on small eligibility systems.  The same enumeration
+checks the bounded-overlap expansion and its high-reuse deficient
+alternative.

@@ -209,6 +209,15 @@ geometric statement is now this neighbourhood-capacity inequality (or
 classification of its deficient witness), not an unspecified online
 charging rule.
 
+AC3g supplies a checkable sufficient condition for that inequality.
+After splitting capacities into tokens, minimum reopening degree \(L\)
+and maximum token reuse degree \(\Delta\) give neighbourhood expansion
+\(L/\Delta\). Thus \(L\geq\Delta\) pays every reopening. If Hall still
+fails under the minimum-degree condition, one current incidence is
+eligible for more than \(L\) reopenings in the deficient family. The
+remaining geometry may therefore prove bounded overlap or classify one
+explicit high-reuse incidence.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
