@@ -44,6 +44,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/27-all-n-prime-patching.md`](docs/27-all-n-prime-patching.md): exact boundary states, prime-gap transfer, finite certificates, and obstruction search for the all-`n` route.
 - [`docs/28-one-strip-and-pair-aware-patching.md`](docs/28-one-strip-and-pair-aware-patching.md): complete one-strip rigidity, blocker matchings, finite seed graph, and pair-aware wider-corner endpoint.
 - [`docs/29-general-reservoir-patching.md`](docs/29-general-reservoir-patching.md): arbitrary deleted-reservoir local loads, one-strip seed averaging, and internally clean spread-bank endpoints.
+- [`docs/30-deletion-aware-row-lift-banks.md`](docs/30-deletion-aware-row-lift-banks.md): deletion-aware one-strip certificates and a rank-three-spread multi-row reservoir bank.
+- [`docs/31-sequential-row-lift-local-lemma.md`](docs/31-sequential-row-lift-local-lemma.md): sequential permutation-layer local lemma and activated-load obstruction for row-lift banks.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
@@ -60,6 +62,10 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`scripts/analyze_corner_patch_loads.py`](scripts/analyze_corner_patch_loads.py): computes old-pair, old-anchor-pair, and internal-triple loads for wider corner patches.
 - [`scripts/analyze_reservoir_patch_loads.py`](scripts/analyze_reservoir_patch_loads.py): computes exact arbitrary-deficit clone and coordinate loads.
 - [`scripts/analyze_patch_bank.py`](scripts/analyze_patch_bank.py): verifies finite internally clean patch banks and their cell/pair spread.
+- [`scripts/analyze_deletion_aware_one_strip.py`](scripts/analyze_deletion_aware_one_strip.py): computes surviving one-strip certificate averages after forced deletion.
+- [`scripts/analyze_row_lift_bank.py`](scripts/analyze_row_lift_bank.py): enumerates exact small row-lift banks and their certificate spread.
+- [`scripts/analyze_row_lift_sequential_loads.py`](scripts/analyze_row_lift_sequential_loads.py): computes activated permutation-layer loads for every legal prefix.
+- [`scripts/search_row_lift_reservoirs.py`](scripts/search_row_lift_reservoirs.py): searches every two- and three-row reservoir in a finite certificate corpus.
 
 ## Research discipline
 
@@ -96,7 +102,7 @@ The strongest current synthesis is:
 
 The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or divisor-controlled perfect alignment. A dominant first-generation star can also be removed exactly by an alternating endpoint-permutation bank. The main geometric target is therefore a second-order concentration/termination theorem for the normalized collateral of that joint bank.
 
-The independent all-`n` prime-patching track now has exact one-strip rigidity, an arbitrary-reservoir local-load theorem, and an internally clean spread-bank endpoint. Its remaining bottleneck is a prepared prime-minus-one reservoir or bank satisfying one of these endpoints over a width large enough for prime-gap transfer.
+The independent all-`n` prime-patching track now has deletion-aware one-strip bounds, arbitrary-reservoir endpoints, and an explicit row-lift bank with both global-spread and sequential activated-load criteria. Its remaining bottleneck is geometric direction control or state pruning over a width large enough for prime-gap transfer.
 
 ## Running the checks
 
@@ -119,6 +125,10 @@ python scripts/enumerate_one_strip_seeds.py --max-n 5
 python scripts/analyze_corner_patch_loads.py certificates/prime-patching-small.json --n 3 --t 10
 python scripts/analyze_reservoir_patch_loads.py certificates/prime-patching-small.json --n 3 --t 1 --delete 1,1 --delete 2,3
 python scripts/analyze_patch_bank.py certificates.json bank.json --n 3 --t 1 --delete 1,1 --delete 2,3
+python scripts/analyze_deletion_aware_one_strip.py certificates/prime-patching-small.json
+python scripts/analyze_row_lift_bank.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
+python scripts/analyze_row_lift_sequential_loads.py certificates/prime-patching-small.json --n 3 --rows 1,2,3 --all-orders
+python scripts/search_row_lift_reservoirs.py certificates/prime-patching-small.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for arbitrary \(n\) unless explicitly paired with a proved finite classification.
