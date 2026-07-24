@@ -43,7 +43,11 @@ This index collects the product/composition results on
 | PX36 | The complete four-block affine one-layer family normalizes to identity first blocks | PROVED | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
 | PX37 | The complete affine one-layer family has no no-three state at base sides six or seven | PROVED FINITE | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
 | PX38 | Successful normalized templates transport to their full map-group double cosets, yielding a general closure criterion | PROVED | `docs/43-double-coset-template-closure.md` |
+| PX39 | Arbitrary one-layer block maps admit an exact full-symmetric gauge normalization | PROVED | `docs/44-gauge-normalization-and-small-one-layer-census.md` |
+| PX40 | The complete normalized arbitrary-map census through base side five has the exact recorded template counts | PROVED FINITE | `docs/44-gauge-normalization-and-small-one-layer-census.md` |
+| PX41 | One successful normalized template gives factor-independent doubling when arbitrary block permutations are allowed | PROVED | `docs/45-universal-side-four-template-closure.md` |
+| PX42 | Every saturated side-four factor composes with side two to the exact side-eight template | PROVED | `docs/45-universal-side-four-template-closure.md` |
 
-The branch has a factor-independent special closure theorem for `2 x 5` and a
-general double-coset closure criterion, but still no infinite multiplicative
-closure class or arithmetic coverage theorem.
+The branch has factor-independent special closure theorems for `2 x 4` and
+`2 x 5`, plus general gauge and double-coset closure criteria, but still no
+infinite multiplicative closure class or arithmetic coverage theorem.
