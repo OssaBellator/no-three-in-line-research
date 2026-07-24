@@ -99,6 +99,16 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 87. **Matching-block local-load density.** Small blocker and anchor signature loads retain a quantified positive fraction of the `Theta(r^4)` state domain.
 88. **Clean-rung hypergraph packing.** Diffuse clean-state degree gives disjoint rung packings; failure exposes a small transversal edge core.
 89. **Full width-two block bank.** Retaining all 36 geometries per deletion improves cell/pair spread and breaks the canonical matching-number-one obstruction on stored sides eight through ten.
+90. **Balanced square-root macro reduction.** Every perfect matching layer contains `m^(23/80+o(1))` disjoint monotone pools of size `m^(19/40+o(1))`; square-root width per pool reaches total width `m^0.525`.
+91. **Universal internal square-root macro patch.** A product-space local lemma gives width `Theta(sqrt(R))` endpoint-adapted internal geometry on every matching pool.
+92. **Macro fixed-rank spread.** The conditioned local-lemma distribution gives `O(R^-q)` fixed-rank cylinders.
+93. **Dense source-safe domains.** A dense movement/refill label compatibility matching removes every fixed-pair patch-cell blocker before the macro local lemma.
+94. **Same-edge product factorization.** Same-edge anchored triples satisfy `(A-v)(B-u)=(x-u)(y-v)` and are controlled by divisor energy.
+95. **Boundary-shadow/Hall dichotomy.** Failure of dense source-safe domains forces a large boundary shadow or a structured label compatibility obstruction.
+96. **Global slot-occurrence endpoint.** Internal, source, and cross-macro events are solved together when each slot has only `O(R)` additional bad-event occurrences.
+97. **Same-edge anchor domain pruning.** Divisor-energy-compatible label matching removes the exceptional unary same-edge anchored class while preserving macro spread.
+98. **Weighted slot-mass endpoint.** It suffices that the total additional bad-event probability incident to each slot is at most `1/48-o(1)`; raw event count is unnecessary.
+99. **Constant-width blocker-cover barrier.** Random independent deletion covers an additional blocker with probability only `O(K/m)`, unary cover domains vanish on stored sides seven through ten, and raw two-block width-two extensions fail on stored sides eight through ten.
 
 ## What remains conditional
 
@@ -109,10 +119,10 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - A second-order concentration theorem for the alternating neutralization bank.
 - A monotone carry-complexity potential or bounded-denominator chamber absorber.
 - A superregular resampling oracle and sparse algebraic `O(1/d)` spread.
-- An all-`n` prime-patching preparation theorem using one of two correlated architectures:
-  - matching-first width-two blocks of size `r asymp m^0.475` with polynomial clean-state density, diffuse clean-deletion hypergraph, controlled nonaxis blocker shadow, and cross-block bad-box bounds;
-  - larger endpoint-adapted or parabolic rungs whose old row and column templates are correlated through actual source edges.
-- Protected rectangle or tomographic trades neutralizing the small transversal cores exposed by the clean-state hypergraph.
+- An all-`n` square-root macro preparation theorem at the balanced exponents, requiring:
+  - a perfect matching in the refined fixed-pair and same-edge-anchor-safe label graph for almost every macro pool, or protected trades handling the boundary-shadow, Hall, and divisor-energy concentration alternatives;
+  - grouping ordinary anchored-pair and cross-macro certificates into rank-two/rank-three pattern events whose total probability mass at each slot is at most `1/48-o(1)`.
+- The older matching-first constant-width route remains conditional and now requires blocker-endpoint clustering or protected cross-block deletion trades; independent product deletion is insufficient.
 
 ## Important refutations
 
@@ -128,21 +138,27 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - The unrestricted full row-lift bank is not automatically clean.
 - Aligned off-diagonal block doubling is impossible for every width.
 - Conditioning the complete small banks to internally clean components does not produce a clean pair at fully deleted widths `3,4,5`.
-- Deletion-cycle entropy alone cannot dilute a fixed certificate.
+- Deletion-cycle entropy alone cannot dilute a fixed external certificate.
 - Neither the 40-state unsheared nor 18,816-state sheared parabolic finite sweep contains a raw clean patch on the stored corpus.
 - Unstructured rectangle repair of depth two produces no stored extension from source side seven onward.
 - Independent linear-size sheared column and row boxes cannot have positive constant matching-admissible density at `t=o(m)`.
 - Canonical matching-block cleanliness is not universal: a five-edge no-three matching can make all five canonical states bad.
 - On every stored perfect matching layer, the canonical clean-state hypergraph has matching number one and a transversal of size at most two.
+- Independent matching-block deletion does not pay non-axis source blockers at prime-gap scale.
+- Complete unary blocker-cover domains are empty on both stored matching layers from side seven through ten.
+- Every stored two-block width-two partition at sides eight through ten fails before patch-patch interactions are considered.
 
 ## Bottom line
 
 There is no complete proof. The principal global bottleneck remains
 second-generation alternating-bank collateral and termination. Independently,
-the all-`n` prime-patching track now closes exact matching availability,
-endpoint-adapted width-two internal geometry, equal-margin block state spaces,
-local clean-density criteria, and finite clean-rung packing diagnostics. The
-missing theorem is no longer positive-density independent template matching. It
-is a correlated secant-shadow preparation theorem: construct large matching
-blocks whose clean 36-state domains are diffuse and whose external and
-cross-block bad boxes pass the multistate first-moment or local-lemma endpoints.
+the all-`n` prime-patching track now closes matching-pool extraction,
+prime-gap-scale square-root macro width, equal-margin restoration, complete
+internal geometry, fixed-pair source cleaning under a dense label matching, and
+fixed-rank conditional spread. It also has exact unary same-edge-anchor pruning
+and a weighted global local-lemma endpoint.
+
+The missing theorem is now a weighted external-distribution statement: prepare
+the refined label matchings and prove that ordinary source-anchor and cross-macro
+pattern events carry at most `1/48-o(1)` total probability mass at every slot.
+The branch does not prove the no-three-in-line conjecture.
