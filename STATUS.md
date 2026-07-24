@@ -4,97 +4,115 @@
 
 ## External status
 
-The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 paper proves the analogous maximum \(kn\) for every fixed \(k\ge3\) and sufficiently large \(n\), while identifying \(k=2\) as the exceptional unresolved case.
+The classical no-three-in-line conjecture `D(n)=2n` remains open. A July 2026
+paper proves the analogous maximum `kn` for every fixed `k>=3` and sufficiently
+large `n`, while identifying `k=2` as the exceptional unresolved case.
 
 ## What is genuinely proved in this notebook
 
 1. **Saturated decomposition.** A set with exactly two points in every row and column decomposes into two permutation layers.
 2. **Clone-host regularity criterion.** Small active-coordinate secant shadow gives a near-complete superregular completion host.
-3. **Candidate-only logarithmic obstruction.** A constant-density candidate host contains \(\Omega(n^4\log n)\) collinear candidate triples; first-moment pruning cannot close the problem.
-4. **Reverse-scale certified multicover.** Descending dyadic heights avoids the protected-long-line problem and gives exact potential destruction under target deletion.
-5. **Spread injection lemma.** A dense target-partner graph with \(t\ll p\) admits a \(K/p\)-spread random injection by greedy exposure.
+3. **Candidate-only logarithmic obstruction.** A constant-density candidate host contains `Omega(n^4 log n)` collinear candidate triples; first-moment pruning cannot close the problem.
+4. **Reverse-scale certified multicover.** Descending dyadic heights gives exact potential destruction under target deletion.
+5. **Spread injection lemma.** A dense target-partner graph admits a spread random injection.
 6. **Uniform local-bank implication.** Explicit switch-shadow and anchor-load conditions imply negative expected drift.
-7. **Protected tomographic trades.** Difference operators produce finite row/column/direction line-sum-preserving signed trades.
-8. **Affine finite-direction construction.** For suitable arithmetic moduli, two affine permutations give a saturated configuration avoiding any fixed finite direction set.
-9. **Subgroup coset absorbers.** Suitable affine configurations contain linearly many independently switchable blocks preserving protected toroidal line sums.
-10. **Exact one-block collateral identity.** For absorber order \(h\le H\), a high line meets a block at most once and average collateral equals external secant shadow divided by \(h\).
-11. **Block-shadow closure.** Whole-block reservoir growth makes every reservoir block externally shadow-clean without row/column deficits.
-12. **Product-state LLL criterion.** A full-product block completion exists when normalized pair/triple conflict mass per block is small.
-13. **Complementary hyperbola seed.** \(H_a\cup H_b\) has two points per row/column, at most four per line, no monochromatic triples, and bounded displacement multiplicity.
-14. **Low-syndrome seed.** Some pair of hyperbola channels has \(O(n\log n)\) triple certificates.
-15. **Hamiltonian-cycle criterion.** The union graph cycles are controlled by the multiplicative order of \(b/a\).
-16. **Möbius secant matching.** For a fixed opposite-channel anchor, same-channel secant pairs form a projective involution matching.
-17. **Cycle-bank theorem.** Every trapping cycle supports a \(k\)-state row-column-preserving cyclic matching trade.
-18. **Window-product theorem.** Each cycle state lies in a number of modular hyperbolas equal to its distinct cyclic window-product count.
-19. **Collision-free carry-cycle bank bound.** Every carry-filtered cycle has a collision-aware full-permutation state whose cost is bounded by normalized one-, two-, and three-cell certificate counts.
-20. **Frozen-cycle concentration.** Failure of every cycle-block state forces a dense one-cell shadow, anchored-pair shadow, or candidate-only triple core.
-21. **Clone-space exact selection theorem.** A uniformly random perfect matching on two row and column clones avoids unavailable cells, duplicate cells and all lifted collinear triples whenever the maximum local canonical-event probability load is at most \(1/24\).
-22. **Concrete endpoint.** For \(n\ge100\), a candidate host with at most \(n/100\) unavailable cells and at most \(n^3/200\) residual collinear triples incident with each row or column contains a saturated no-three-in-line configuration.
-23. **Selection failure concentration.** Failure in a near-complete host forces a row or column carrying \(\Omega(n^3)\) residual collinear triples.
-24. **Fixed-rank superregular spread.** A uniformly random perfect matching of a dense superregular pair is \(O(1/N)\)-spread for every fixed rank, by six-cycle switchings.
-25. **Clone inheritance.** The two-clone blow-up of a superregular pair remains superregular with explicit parameter loss.
-26. **Two-layer spread.** Dense superregular pairs support a spread distribution on two edge-disjoint perfect matchings, giving exact row and column degree two.
-27. **Global conflict-mass endpoint.** A dense superregular host contains a saturated conflict-free two-layer selection whenever the total spread-weighted conflict mass is below one.
-28. **Inverse-additive repair banks.** Small quotient sets and many low-complexity windows produce linear common-ratio rectangle banks; near-minimal quotient sets complete to subgroup-coset absorbers.
-29. **Coset and rational propagation.** Structured cycle parameters propagate to opposite-colour anchor structure, while full subgroup cosets of order at least three expand under the normalized Möbius map.
-30. **Exact common-ratio collateral.** The cost of one same-ratio rectangle switch is exactly its two weighted secant loads plus the occupancy of its switched-pair line.
-31. **Common-ratio decoder-or-structure theorem.** A paid common-ratio bank either contains an improving rectangle, a dense channel-pair secant star, or a large aligned multiplicative anchor class.
-32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), one rectangle strictly lowers the triple potential.
-33. **Syndrome-weighted quotient extraction.** If \(|X/X|\le K|X|\), actual point triple degrees produce an admissible common-ratio matching carrying at least \(H/(6K)\) vertex-incidence weight.
-34. **Paid-bank lower bound.** In a \(q\)-channel universe, the extracted bank has \(D\ge H/(6K)-(q-1)|X|\).
-35. **Weighted conversion criterion.** Sufficiently large structured syndrome incidence forces an improving rectangle or one of the explicit alternating-closure structures.
-36. **Projective conic-pencil geometry.** Every opposite-channel anchor has an exact modular tangent/secant profile governed by \(\chi(1-b/a)\).
-37. **Aligned-anchor carry signatures.** Nondegenerate signatures have only \(p^{o(1)}\) real solutions, while degenerate signatures are exact affine-interpolation cells.
-38. **Sharp same-channel carry dispersion.** A same-channel real secant star has divisor-bounded multiplicity at each exact cross-carry level.
-39. **Universal star carry dispersion.** Any endpoint-disjoint secant star, including a cross-channel star, occupies at least its edge count divided by \(p^{o(1)}\) product-carry signatures.
-40. **Combined paid-bank transition.** A failed paid bank produces an improvement, product/coordinate carry dispersion, or a perfect affine-alignment population.
-41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit finite rational grid; the two endpoint parameters are inadmissible.
-42. **Reduced-denominator chamber criterion.** Perfect alignment at parameter \(t'/q\) occurs exactly when both relevant wrap indices are divisible by \(q\).
-43. **Denominator-sensitive sparsity.** A denominator-\(q\) perfect chamber contains at most \(4p/q\) base points; positive-density chambers therefore have bounded denominator.
-44. **Explicit wrap centers.** Every degenerate scalar carry cell is radial about one rational center \(pS/d\), while every nondegenerate cell meets one hyperbola channel at most twice.
-45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy a divisor-controlled integer product equation.
-46. **Wrap-center dispersion.** A large perfect-alignment class either occupies many rational centers or has multipliers with a large common divisor relative to their size.
-47. **Two-forbidden-matching spread.** Permutations avoiding a position set of row/column degree at most two have constant density and \(128/(t)_r\) cylinder bounds.
-48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
-49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
-50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
-51. **Exact prime-patching one-strip interface.** Every boundary-only one-strip patch is either a one-point corner splice or a two-edge strip switch; blocker secants through each inserted point form a matching and give an exact deletion-cover criterion.
-52. **Pair-aware prime-patching endpoint.** A wider corner host satisfying explicit omitted-cell, old-anchor-pair, and internal-triple local-load bounds contains an exact saturated patch.
-53. **Prime-gap transfer.** A proved patch width covering the backward gaps from solved prime-minus-one sizes transfers those solutions to all sufficiently large side lengths.
-54. **Arbitrary-reservoir prime-patching endpoint.** The clone-space local-load theorem extends to any deleted saturated reservoir, including old-old replacements and mixed old/new cells, with explicit normalized cell/pair/triple bounds.
-55. **Internally clean spread-bank endpoint.** A distribution on internally no-three deficit completions yields a valid patch whenever its selected blocked-cell and retained-anchor-pair expectation is below one.
-56. **Deletion-aware one-strip averaging.** Automatic horizontal and vertical boundary blockers are always cleared by the forced deletion; the surviving type-two certificate mass has an exact average and a nonaxis-blocker upper bound.
-57. **Row-lift reservoir bank.** Deleting `t` complete old rows supports a `4t`-cell exact completion bank with cell, pair, and triple spread at most `6/t`, `36/(t)_2`, and `72/(t)_3`.
-58. **Sequential row-lift local lemma.** Exposing the four permutation layers one at a time yields an exact local-load endpoint: if every legal prefix has activated assignment load at most `1/24`, a clean row-lift patch exists.
+7. **Protected tomographic trades.** Difference operators produce row/column/direction line-sum-preserving signed trades.
+8. **Affine finite-direction construction.** Suitable affine permutations avoid any fixed finite direction set.
+9. **Subgroup coset absorbers.** Suitable affine configurations contain many independently switchable protected blocks.
+10. **Exact one-block collateral identity.** Average collateral equals external secant shadow divided by absorber order.
+11. **Block-shadow closure.** Whole-block reservoir growth produces externally shadow-clean blocks.
+12. **Product-state LLL criterion.** Small normalized pair/triple conflict mass gives a block completion.
+13. **Complementary hyperbola seed.** Two modular hyperbolas give saturation, line cap four, no monochromatic triples, and bounded displacement multiplicity.
+14. **Low-syndrome seed.** Some hyperbola pair has `O(n log n)` triple certificates.
+15. **Hamiltonian-cycle criterion.** Hyperbola-layer cycles are controlled by multiplicative order.
+16. **Möbius secant matching.** Same-channel secants through an opposite-channel anchor form an involution matching.
+17. **Cycle-bank theorem.** Every trapping cycle supports a row-column-preserving cyclic trade bank.
+18. **Window-product theorem.** Cycle-state conic coverage equals its distinct cyclic window-product count.
+19. **Collision-free carry-cycle bank bound.** Full-permutation state cost is controlled by normalized certificate counts.
+20. **Frozen-cycle concentration.** Failure forces a dense cell shadow, anchored-pair shadow, or triple core.
+21. **Clone-space exact selection theorem.** Maximum canonical-event load at most `1/24` gives a saturated conflict-free selection.
+22. **Concrete endpoint.** A 99%-dense host with bounded local triple incidence contains a saturated no-three set.
+23. **Selection failure concentration.** Failure in a near-complete host forces a row or column with `Omega(n^3)` residual triples.
+24. **Fixed-rank superregular spread.** Dense superregular perfect matchings are fixed-rank `O(1/N)`-spread.
+25. **Clone inheritance.** Two-clone blow-up preserves superregularity.
+26. **Two-layer spread.** Dense superregular pairs support two edge-disjoint spread perfect matchings.
+27. **Global conflict-mass endpoint.** Small total spread-weighted conflict mass gives a saturated two-layer selection.
+28. **Inverse-additive repair banks.** Small quotient sets produce common-ratio rectangle banks and coset absorbers.
+29. **Coset and rational propagation.** Structured parameters propagate through opposite-colour anchors and Möbius maps.
+30. **Exact common-ratio collateral.** One rectangle switch has an exact weighted secant cost.
+31. **Common-ratio decoder-or-structure theorem.** A paid bank improves or produces explicit star/alignment structure.
+32. **Uniform conversion inequality.** Sufficient syndrome incidence forces an improving rectangle.
+33. **Syndrome-weighted quotient extraction.** Actual triple degrees yield an admissible weighted common-ratio matching.
+34. **Paid-bank lower bound.** The extracted bank carries a quantified incidence weight.
+35. **Weighted conversion criterion.** Large structured incidence forces improvement or alternating closure.
+36. **Projective conic-pencil geometry.** Opposite-channel anchors have an exact modular secant profile.
+37. **Aligned-anchor carry signatures.** Nondegenerate signatures are divisor-bounded; degenerate ones are interpolation cells.
+38. **Sharp same-channel carry dispersion.** Cross-carry levels have divisor-bounded multiplicity.
+39. **Universal star carry dispersion.** Endpoint-disjoint stars occupy many product-carry signatures.
+40. **Combined paid-bank transition.** Failure gives improvement, carry dispersion, or perfect alignment.
+41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit rational grid.
+42. **Reduced-denominator chamber criterion.** Perfect alignment is equivalent to wrap-index divisibility.
+43. **Denominator-sensitive sparsity.** Positive-density perfect chambers have bounded denominator.
+44. **Explicit wrap centers.** Degenerate carry cells are radial about rational centers.
+45. **Perfect-wrap factorization.** Recentered chambers satisfy divisor-controlled product equations.
+46. **Wrap-center dispersion.** Large aligned classes disperse across centers or have a large common divisor.
+47. **Two-forbidden-matching spread.** Permutations avoiding degree-two forbidden positions have constant density and cylinder bounds.
+48. **Movable endpoint substar.** A large star contains many movable endpoints of one layer/channel type.
+49. **Alternating star neutralization.** Opposite-layer endpoint permutations destroy the original star exactly.
+50. **Joint-bank collateral bound.** Remaining expected collateral is controlled by normalized certificate counts.
+51. **Exact prime-patching one-strip interface.** Every boundary-only one-strip patch has one of two forced forms and an exact blocker-cover criterion.
+52. **Pair-aware prime-patching endpoint.** Explicit corner cell/pair/triple loads suffice for an exact patch.
+53. **Prime-gap transfer.** A patch width covering backward gaps from solved prime-minus-one sizes transfers to all large sizes.
+54. **Arbitrary-reservoir endpoint.** Clone-space selection handles deleted reservoirs, old-old replacements, and mixed cells.
+55. **Internally clean spread-bank endpoint.** Small retained-core cell/pair expectation gives a valid patch.
+56. **Deletion-aware one-strip averaging.** Automatic axis blockers are cleared by the forced deletion; surviving certificates have an exact average.
+57. **Row-lift reservoir bank.** Deleting `t` old rows gives a `4t`-cell exact completion bank with rank-three spread.
+58. **Sequential row-lift local lemma.** Four permutation layers can be exposed sequentially under activated load `1/24`.
+59. **Static and conditioned pruning endpoints.** Terminal vertex loads and collision-conditioned event masses give prefix-free sufficient tests.
+60. **Full-support row-lift barrier.** One unpruned refill rectangle has `Omega(t^4 log t)` compatible triples, so global first moment cannot scale.
+61. **Off-diagonal block obstruction.** Any `4t` points in two aligned off-diagonal `t x t` blocks force a slope-minus-one triple.
+62. **Projection classification.** Primitive-direction support dispersion is necessary, and the aligned slope-minus-one block is the unique minimal `2t-1` failure.
+63. **Quantitative projection forcing.** Convex line occupancy gives exact lower bounds on triples forced by under-dispersed projections, additive across directions.
+64. **Component-clean endpoint.** Independent internally clean movement/refill banks have an exact factored certificate expectation and spread criterion.
+65. **Quadratic cross-triple cap.** Two internally no-three components of size `2t` create at most `4t(2t-1)` cross triples.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Carry-sensitive phase codes.
-- Orbit Tanner expansion beyond bounded local conflict mass.
+- Carry-sensitive phase codes and orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
-- A monotone carry-complexity potential showing that repeated carry/wrap-center dispersion must terminate or enter an absorbable exception.
-- Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
-- A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
-- Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
-- A prime-minus-one row-lift reservoir whose direction-pruned support satisfies PP3j, or whose restricted four-layer bank satisfies the sequential activated-load endpoint PP3l, over a width large enough to match an unconditional prime-gap theorem.
+- A second-order concentration theorem for the alternating neutralization bank.
+- A monotone carry-complexity potential or bounded-denominator chamber absorber.
+- A superregular resampling oracle and sparse algebraic `O(1/d)` spread.
+- A prime-minus-one reservoir with one of the following at prime-gap-scale width:
+  - a sparse row-lift subbank passing PP3p or PP3r;
+  - a prefix-structured bank passing PP3l or PP3q;
+  - large internally clean component banks passing PP3z or PP3aa;
+  - an arbitrary-reservoir host passing the PP2 local-load endpoint.
 
 ## Important refutations
 
-- Dense constant-probability pruning cannot make all candidate-only triple constraints sparse enough.
-- A large secant bank does not automatically certify destruction of current defects.
-- Wall expansion does not necessarily terminate in an improving synchronized state.
-- A single common absorber shift or common slope can be trapped by translated blocks.
-- Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
-- A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
-- A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
-- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
-- Repeating boundary-only one-strip prime patches cannot cover all sizes: exhaustive branching from the unique side-two seed reaches no side-five state.
-- The original PP3b unconditioned boundary-shadow test is vacuous for every saturated seed, because every noncorner future-boundary cell lies on its row or column axis secant.
-- The unrestricted full row-lift bank is not automatically clean: the exact side-three bank has no clean state, and every layer order develops an activated load above the sequential threshold.
+- Dense constant-probability pruning cannot remove candidate-only triple accumulation.
+- A large secant bank does not automatically certify current-defect destruction.
+- Wall expansion and one common shift or slope need not terminate in improvement.
+- Bounded occupancy and pair codegree do not imply private-repair expansion.
+- One-colour carry-cycle repair can freeze.
+- Spread perfect-matching measures do not automatically inherit complete-permutation negative dependency.
+- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio.
+- Repeating boundary-only one-strip patches cannot reach every size.
+- The original PP3b boundary-shadow test is vacuous for every saturated seed.
+- The unrestricted full row-lift bank is not automatically clean.
+- Aligned off-diagonal block doubling is impossible for every width.
+- Conditioning the complete small banks to internally clean components does not produce a clean pair at fully deleted widths `3,4,5`.
 
 ## Bottom line
 
-There is no complete proof. Carry and wrap-center classification make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The principal global bottleneck remains second-generation normalized collateral and termination. Independently, the all-`n` prime-patching track now also has deletion-aware one-strip averaging, an explicit rank-three-spread row-lift bank, and a sequential permutation-layer local lemma. The missing step is geometric: prune directions or states so every activated assignment load remains small over a prime-gap-scale width.
+There is no complete proof. The principal global bottleneck remains
+second-generation alternating-bank collateral and termination. Independently,
+the all-`n` prime-patching track now has exact extension interfaces, several
+selection endpoints, a concrete row-lift bank, static and sequential pruning
+criteria, projection obstructions, and component-clean factorization. The
+remaining missing theorem is asymptotic geometric preparation: build a sparse,
+spread, internally controlled reservoir over a width large enough for
+unconditional prime-gap transfer.
