@@ -77,7 +77,8 @@ point on \(L\) has valuation \(r\):
 
 \[
 x=p^r u,
-\qquad y=p^r v,
+\qquad
+y=p^r v,
 \qquad uv\equiv c_r\pmod {p^{k-r}}.
 \]
 
@@ -233,7 +234,8 @@ cycle length.  Let \(N=p^k\), and define
 \[
 q_p=
 \begin{cases}
-p,&p\text{ odd},\\4,&p=2,
+p,&p\text{ odd},\\
+4,&p=2,
 \end{cases}
 \qquad
 \sigma_p(y)=[(1+q_p)y+1]_N.
