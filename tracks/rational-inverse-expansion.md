@@ -168,6 +168,21 @@ remaining exceptional-chain theorem is now the expansion or explicit
 classification of low-conductance cuts of \(J\), rather than an
 unstructured collision problem.
 
+[`rational-inverse-boundary-gcd.md`](rational-inverse-boundary-gcd.md)
+proves RI2g. For the punctured coset union \(D\), let \(P_D\) be its
+root polynomial and \(P_D^\tau\) its denominator-cleared Möbius
+transform. Then
+
+\[
+B(D)=|D|-\deg\gcd(P_D,P_D^\tau).
+\]
+
+In particular, a zero-boundary quotient component satisfies an exact
+functional equation \(P_D^\tau=cP_D\), while boundary \(L\) gives a
+common factor of degree at least \(|D|-L\). Since a full coset union has
+the sparse form \(\prod_i(X^{|H|}-x_i^{|H|})\), the remaining RI2--RI3
+classification is now a sparse-polynomial gcd rigidity problem.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement
