@@ -27,9 +27,10 @@ For each pair of slots, make one conflict event containing:
 - equality of their selected source edges;
 - a collinear triple using both points from one slot and one point from the other.
 
-For each triple of slots, make one conflict event when one point from each slot
-is collinear.  Avoiding every event makes the edge choices injective and the
-entire inserted patch no-three-in-line.
+For each triple of slots, make one conflict event when their three selected
+source edges are pairwise distinct and one point from each slot is collinear.
+Collision cases are already covered by pair events.  Avoiding every event makes
+the edge choices injective and the entire inserted patch no-three-in-line.
 
 ## 2. Event bounds
 
@@ -53,10 +54,12 @@ column and its refill support in at most one old row.  Since `E` is a matching,
 at most two choices for `X_t` complete such a triple.  This contributes `2/R`;
 interchanging the two slots contributes another `2/R`.
 
-For three slots, choose one of the movement/refill points from each slot.  There
-are eight type choices.  After two source edges are fixed, the required line
-prescribes at most one old column or row for the third slot, and hence at most
-one matching edge.  Each type has probability at most `1/R`. ∎
+For three slots with pairwise distinct selected edges, choose one of the
+movement/refill points from each slot.  There are eight type choices.  After two
+distinct source edges are fixed, their two candidate points determine a line.
+The required movement row or refill column for the third slot prescribes at most
+one old column or row, and hence at most one matching edge.  Each type has
+probability at most `1/R`. ∎
 
 ## 3. Dependency bound
 
@@ -110,8 +113,8 @@ Every event has probability at most `p=8/R`.  By PP3dm,
 
 The symmetric local lemma yields an avoiding assignment.  Pair-event avoidance
 makes the selected source edges distinct.  Any triple among the inserted points
-uses either two slots or three slots, so it is excluded by the corresponding
-event.
+uses either two controlling slots or three distinct controlling slots, so it is
+excluded by the corresponding event.
 
 Every selected old column and row is restored once.  Balance of `alpha,beta`
 gives two points on every new row and column, proving saturation. ∎
@@ -127,14 +130,17 @@ For sufficiently large `R`, one may take
 Thus every matching pool supports endpoint-adapted internally no-three geometry
 of width `Theta(sqrt(R))`; monotone endpoint order is unnecessary.
 
-## 5. Remaining distribution problem
+## 5. Distribution and source-clean refinements
 
-PP3dn proves existence in the raw product space.  It does not yet prove that the
-avoiding assignments have constant density or inherit `O(1/R)` fixed-rank
-marginals.  The remaining local input is therefore a distribution theorem:
-retain slot-edge spread while also excluding opposite-layer and cross-macro
-certificates, either through a resampling/switching measure or through one
-enlarged product-space local lemma.
+The fixed-rank distribution issue left by the bare existence proof is closed in
+PP3dp--PP3dr: the conditional LLL distribution has `O(1/R)` cell and
+`O(1/R^2)` ordinary-pair spread.  PP3dt further disperses the same-source-edge
+movement/refill pair by randomizing the balanced refill coupling.
+
+PP3ea--PP3ec incorporate fixed-pair source cleaning directly by restricting each
+slot to a dense safe edge domain.  The remaining local certificates are
+fixed-anchor patch pairs, with the same-edge class governed by the product
+factorization PP3dv.
 
 At the PP3dh exponents,
 
@@ -144,5 +150,6 @@ At the PP3dh exponents,
  W=m^{19/80+o(1)},
 \]
 
-and `MW=m^(21/40+o(1))`.  Matching availability, degree restoration, and all
-internal patch geometry are now closed at the required prime-gap width.
+and `MW=m^(21/40+o(1))`.  Matching availability, degree restoration, internal
+patch geometry, and fixed-rank internal spread are now closed at the required
+prime-gap width.
