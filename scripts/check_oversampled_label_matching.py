@@ -2,16 +2,14 @@
 """Evaluate PP3ft--PP3fv from refined-domain analyzer JSON output.
 
 Generate the input with ``analyze_same_edge_anchor_domains.py --output FILE``.
-The checker reconstructs the average movement/refill boundary shadows, applies
-the divisor-energy edge loss, and reports the rigorous refined-graph edge and
-matching lower bounds.  An optional target width tests the PP3fu matching
-condition.
+The checker reconstructs average movement/refill boundary shadows and reports
+both the exact bad-label-incidence guarantee and the weaker divisor-energy
+fallback.  An optional target width tests the PP3fu matching condition.
 """
 from __future__ import annotations
 
 import argparse
 import json
-import math
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -39,11 +37,25 @@ def fraction_json(value: Fraction) -> dict[str, Any]:
     }
 
 
+def lower_bounds(
+    label_count: int,
+    fixed_pair_loss: Fraction,
+    anchor_loss: Fraction,
+) -> tuple[Fraction, int, int]:
+    real_edge_lower = (
+        Fraction(label_count * label_count) - fixed_pair_loss - anchor_loss
+    )
+    integer_edge_lower = max(0, ceil_fraction(real_edge_lower))
+    matching_lower = ceil_fraction(Fraction(integer_edge_lower, label_count))
+    return real_edge_lower, integer_edge_lower, matching_lower
+
+
 def analyze_layer(layer: dict[str, Any], target_width: int | None) -> dict[str, Any]:
     pool_size = layer.get("pool_size")
     labels = layer.get("candidate_labels")
     movement_sizes = layer.get("movement_safe_sizes")
     refill_sizes = layer.get("refill_safe_sizes")
+    bad_incidence = layer.get("same_edge_bad_incidence_sum")
     energy = layer.get("pool_anchor_divisor_energy")
     actual_edges = layer.get("refined_graph_edge_count")
     actual_matching = layer.get("refined_graph_maximum_matching")
@@ -55,6 +67,9 @@ def analyze_layer(layer: dict[str, Any], target_width: int | None) -> dict[str, 
         or not labels
         or not isinstance(movement_sizes, dict)
         or not isinstance(refill_sizes, dict)
+        or isinstance(bad_incidence, bool)
+        or not isinstance(bad_incidence, int)
+        or bad_incidence < 0
         or isinstance(energy, bool)
         or not isinstance(energy, int)
         or energy < 0
@@ -95,14 +110,21 @@ def analyze_layer(layer: dict[str, Any], target_width: int | None) -> dict[str, 
         label_count * total_shadow,
         (1 - gamma) * pool_size,
     )
-    divisor_loss = Fraction(energy, epsilon * pool_size)
-    real_edge_lower = Fraction(label_count * label_count) - fixed_pair_loss - divisor_loss
-    integer_edge_lower = max(0, ceil_fraction(real_edge_lower))
-    matching_lower = ceil_fraction(Fraction(integer_edge_lower, label_count))
+    exact_anchor_loss = Fraction(bad_incidence, epsilon * pool_size)
+    energy_anchor_loss = Fraction(energy, epsilon * pool_size)
+
+    exact_real, exact_integer, exact_matching = lower_bounds(
+        label_count, fixed_pair_loss, exact_anchor_loss
+    )
+    energy_real, energy_integer, energy_matching = lower_bounds(
+        label_count, fixed_pair_loss, energy_anchor_loss
+    )
 
     sigma = Fraction(total_shadow, pool_size * label_count)
-    eta = Fraction(energy, pool_size * label_count * label_count)
-    normalized_matching_fraction = 1 - sigma / (1 - gamma) - eta / epsilon
+    eta_u = Fraction(bad_incidence, pool_size * label_count * label_count)
+    eta_e = Fraction(energy, pool_size * label_count * label_count)
+    exact_normalized_fraction = 1 - sigma / (1 - gamma) - eta_u / epsilon
+    energy_normalized_fraction = 1 - sigma / (1 - gamma) - eta_e / epsilon
 
     result: dict[str, Any] = {
         "source_n": layer.get("source_n"),
@@ -111,22 +133,35 @@ def analyze_layer(layer: dict[str, Any], target_width: int | None) -> dict[str, 
         "label_count": label_count,
         "movement_shadow": movement_shadow,
         "refill_shadow": refill_shadow,
+        "same_edge_bad_incidence_sum": bad_incidence,
+        "pool_anchor_divisor_energy": energy,
+        "bad_incidence_below_divisor_energy": bad_incidence <= energy,
         "normalized_total_shadow_sigma": fraction_json(sigma),
-        "normalized_divisor_energy_eta": fraction_json(eta),
-        "PP3ft_real_edge_lower_bound": fraction_json(real_edge_lower),
-        "PP3ft_integer_edge_lower_bound": integer_edge_lower,
+        "normalized_bad_incidence_eta_U": fraction_json(eta_u),
+        "normalized_divisor_energy_eta_E": fraction_json(eta_e),
+        "PP3ft_exact_real_edge_lower_bound": fraction_json(exact_real),
+        "PP3ft_exact_integer_edge_lower_bound": exact_integer,
+        "PP3ft_exact_matching_lower_bound": exact_matching,
+        "PP3ft_energy_real_edge_lower_bound": fraction_json(energy_real),
+        "PP3ft_energy_integer_edge_lower_bound": energy_integer,
+        "PP3ft_energy_matching_lower_bound": energy_matching,
         "actual_refined_graph_edges": actual_edges,
-        "PP3ft_matching_lower_bound": matching_lower,
         "actual_maximum_matching": actual_matching,
-        "PP3fv_normalized_matching_fraction": fraction_json(
-            normalized_matching_fraction
+        "PP3fv_exact_normalized_matching_fraction": fraction_json(
+            exact_normalized_fraction
         ),
-        "edge_bound_consistent": actual_edges >= integer_edge_lower,
-        "matching_bound_consistent": actual_matching >= matching_lower,
+        "PP3fv_energy_normalized_matching_fraction": fraction_json(
+            energy_normalized_fraction
+        ),
+        "exact_edge_bound_consistent": actual_edges >= exact_integer,
+        "exact_matching_bound_consistent": actual_matching >= exact_matching,
+        "energy_edge_bound_consistent": actual_edges >= energy_integer,
+        "energy_matching_bound_consistent": actual_matching >= energy_matching,
     }
     if target_width is not None:
         result["target_width"] = target_width
-        result["PP3fu_matching_condition"] = matching_lower >= target_width
+        result["PP3fu_exact_matching_condition"] = exact_matching >= target_width
+        result["PP3fu_energy_matching_condition"] = energy_matching >= target_width
         result["actual_matching_reaches_target"] = actual_matching >= target_width
     return result
 
