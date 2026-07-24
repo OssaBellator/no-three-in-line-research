@@ -209,6 +209,152 @@ gives the bound \(h_i\leq H\), and one residue class modulo \(q\)
 contains at most \(\lceil H/q\rceil\) integers in \([1,H]\).
 \(\square\)
 
+## BDA4d -- radial density forces bounded shape or repeated increments
+
+Retain one exact factor pair \(d,c\), and abbreviate
+
+\[
+A=\|d\|_\infty,
+\qquad
+B=\|c\|_\infty.
+\]
+
+Let \(\mathcal S\) be a set of \(K\) distinct radial parameters in one
+fixed complete atlas profile, with
+
+\[
+\operatorname{height}(h dc^{\mathsf T})=hAB\leq N.
+\]
+
+Put
+
+\[
+H=\left\lfloor\frac{N}{AB}\right\rfloor.
+\]
+
+All members of \(\mathcal S\) occupy one residue class modulo \(q\)
+inside \([1,H]\).  Let \(J\) be the total number of available integers
+in that residue class and interval.
+
+### Corollary BDA4d -- PROVED
+
+The chain length and primitive shape obey
+
+\[
+\boxed{
+N\geq AB\bigl(1+q(K-1)\bigr).
+}
+\]
+
+In particular, if \(K\geq\delta N\) and \(N\geq2/\delta\), then
+
+\[
+\boxed{
+AB\leq\frac{2}{q\delta}.
+}
+\]
+
+Thus a radial chain carrying positive linear density in the box height
+uses one of finitely many primitive factor pairs depending only on
+\(q\) and \(\delta\).  With
+
+\[
+M=\left\lfloor\frac{2}{q\delta}\right\rfloor,
+\]
+
+the number of possible ordered pairs \((d,c)\), before imposing their
+fixed atlas classes, is at most
+
+\[
+\boxed{8M^4.}
+\]
+
+There is also an exact dense-progression alternative.  Among the
+occupied radial parameters there are at least
+
+\[
+\boxed{
+E=\max\{0,\,2K-J-1\}
+}
+\]
+
+adjacent occupied pairs \(h,h+q\).  At least
+
+\[
+\boxed{
+\left\lceil\frac E2\right\rceil
+}
+\]
+
+of those pairs can be selected with disjoint radial parameters, and
+every selected pair has the identical matrix increment
+
+\[
+\boxed{
+(h+q)dc^{\mathsf T}-hdc^{\mathsf T}
+=qdc^{\mathsf T}.
+}
+\]
+
+### Proof
+
+Order the radial parameters as
+
+\[
+h_1<h_2<\cdots<h_K.
+\]
+
+They are congruent modulo \(q\), so
+
+\[
+h_K\geq h_1+q(K-1)\geq1+q(K-1).
+\]
+
+Multiplying by \(AB\) and using \(h_KAB\leq N\) proves the first box.
+If \(K\geq\delta N\) and \(N\geq2/\delta\), then
+
+\[
+1+q(K-1)
+\geq
+q\delta N-(q-1)
+\geq
+\frac{q\delta N}{2},
+\]
+
+which gives \(AB\leq2/(q\delta)\).
+
+A normalized primitive direction \(d=(a,b)\) of norm at most \(M\)
+has at most \(2M^2\) possible integer values: there are \(M\) positive
+choices for \(a\) and at most \(2M\) nonzero signed choices for \(b\).
+An arbitrarily oriented primitive scale vector \(c=(u,v)\) has at most
+\(4M^2\) possible values.  The product constraint \(AB\leq M\) implies
+both individual norm bounds, so \(8M^4\) is a valid crude factor-pair
+count.
+
+Finally, view the \(J\) available radial values as a path of slots
+spaced by \(q\).  Decompose its \(K\) occupied slots into \(R\) runs.
+The \(J-K\) empty slots give
+
+\[
+R\leq J-K+1.
+\]
+
+The number of occupied adjacent pairs is \(K-R\), hence at least
+\(2K-J-1\).  In every occupied run of length \(\ell\), alternating
+edges select \(\lfloor\ell/2\rfloor\geq(\ell-1)/2\) disjoint adjacent
+pairs.  Summing over the runs gives at least \(\lceil E/2\rceil\).
+The matrix-difference identity is immediate. \(\square\)
+
+BDA4d makes the radial obstruction effective at the scale needed by a
+positive-density argument.  A linearly large chain has bounded
+primitive shape and hence belongs to a finite \(q,\delta\)-dependent
+library.  If it is denser than one half of its allowed radial
+progression, it also supplies a linear family of disjoint radial pairs
+with one common rank-one increment.  The remaining absorber step must
+lift these relative-matrix pairs to row-column-preserving trades by
+controlling their anchors and translations; that geometric incidence
+is now the explicit blocker rather than radial arithmetic.
+
 BDA3k and BDA4c replace the unbounded integer-lift problem by two
 explicit alternatives:
 
@@ -225,4 +371,6 @@ interfaces.
 `scripts/verify_bda_lift_separation.py` exhaustively checks determinant
 divisibility, the sharp slope identity, interval packing, projective
 orientation, scalar faithfulness, and radial-chain spacing for small
-denominators and primitive vectors.
+denominators and primitive vectors.  It also exhausts the radial
+length/shape tradeoff and adjacent-pair extraction on small residue
+progressions.

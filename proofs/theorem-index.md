@@ -63,6 +63,9 @@ The numbering is local to this repository.
 | BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `tracks/bounded-denominator-finite-transition.md` |
 | BDA4b | Common-scale prime division has a canonical finite valuation height and ends in full unit-pivot charts | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
 | BDA4c | Fixed-atlas repeated factor lifts form one \(q\)-spaced radial progression | PROVED | `tracks/bounded-denominator-lift-separation.md` |
+| BDA4d | A linearly large radial chain has bounded primitive shape, while radial density yields identical \(q\)-step increments | PROVED | `tracks/bounded-denominator-lift-separation.md` |
+| BDA4e | Co-anchored adjacent radial pairs admit a paid compatible subfamily unless current load forces one of five affine anchor chains | PROVED | `tracks/bounded-denominator-radial-pair-regularization.md` |
+| BDA4f | Capped paid radial occupancy above half capacity yields a quantified parity matching of co-anchored adjacent pairs | PROVED | `tracks/bounded-denominator-radial-pair-regularization.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |

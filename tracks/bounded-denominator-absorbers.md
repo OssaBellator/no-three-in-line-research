@@ -201,6 +201,42 @@ The remaining classification must charge the former through
 carry/wrap-center dispersion and send the latter through the
 common-ratio or subgroup-coset interfaces.
 
+BDA4d adds the density threshold needed for that interface. A radial
+chain of \(K\) addresses in matrix-height box \(N\) forces
+\[
+N\geq
+\|d\|_\infty\|c\|_\infty\bigl(1+q(K-1)\bigr).
+\]
+Consequently any chain with \(K\geq\delta N\) has primitive factor
+height \(O(1/(q\delta))\), leaving only a finite shape library. A chain
+dense in its permitted radial progression also contains a linear
+matching of \(q\)-adjacent parameters, all with the same rank-one
+increment \(qdc^{\mathsf T}\). The remaining geometric blocker is
+anchor/translation regularization for these identical increments.
+
+[`bounded-denominator-radial-pair-regularization.md`](bounded-denominator-radial-pair-regularization.md)
+proves BDA4e. An adjacent radial-pair support uses at most five rows and
+five columns when the two relative types occur at one common anchor.
+Bounded coordinate load therefore yields a
+constant-fraction paid compatible subfamily by an explicit conflict
+colouring. High coordinate load instead concentrates a constant share
+of that coordinate's current paid incidence on one of five affine
+anchor laws. The remaining absorber construction may consequently work
+with compatible common increments or with a one-dimensional paid anchor
+chain. The remaining prerequisite is paid co-anchor extraction, or a
+classification of why adjacent relative types fail to co-anchor.
+
+BDA4f supplies that extraction above an exact half-capacity threshold.
+If aggregate occurrence weights \(w_{P,j}\leq\beta\) occupy \(J\)
+radial slots at each anchor, total paid mass \(W\) produces adjacent
+co-anchored overlap at least
+\[
+\bigl(2W-\beta|\mathcal A|(J+1)\bigr)_+.
+\]
+An odd/even split retains half of this weight on radially disjoint
+pairs, which can then enter BDA4e. Failure is the explicit complementary
+low-occupancy inequality, not an unspecified co-anchoring obstruction.
+
 ## BDA4 — exception classification
 
 ### Target statement
