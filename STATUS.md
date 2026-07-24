@@ -31,6 +31,10 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 21. **Clone-space exact selection theorem.** A uniformly random perfect matching on two row and column clones avoids unavailable cells, duplicate cells and all lifted collinear triples whenever the maximum local canonical-event probability load is at most \(1/24\).
 22. **Concrete endpoint.** For \(n\ge100\), a candidate host with at most \(n/100\) unavailable cells and at most \(n^3/200\) residual collinear triples incident with each row or column contains a saturated no-three-in-line configuration.
 23. **Selection failure concentration.** Failure in a near-complete candidate host forces some row or column to support \(\Omega(n^3)\) residual collinear triples.
+24. **Fixed-rank superregular spread.** A uniformly random perfect matching of a dense superregular pair is \(O(1/N)\)-spread for every fixed rank, by six-cycle switchings.
+25. **Clone inheritance.** The two-clone blow-up of a superregular pair remains superregular with explicit parameter loss.
+26. **Two-layer spread.** Dense superregular pairs support a spread distribution on two edge-disjoint perfect matchings, giving exact row and column degree two.
+27. **Global conflict-mass endpoint.** A dense superregular host contains a saturated conflict-free two-layer selection whenever the total spread-weighted conflict mass is below one.
 
 ## What remains conditional
 
@@ -39,7 +43,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- Extension of the clone-space selection theorem from complete to superregular candidate hosts.
+- A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
+- Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
 
 ## Important refutations
 
@@ -49,7 +54,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - A single common absorber shift or common slope can be trapped by translated blocks.
 - Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
+- A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
 
 ## Bottom line
 
-There is no complete proof. The repository now contains an exact degree-constrained endpoint theorem: once geometric cleaning produces a sufficiently dense host with bounded local residual triple incidence, the final saturated selection follows rigorously from a matching-space lopsided local lemma.
+There is no complete proof. The complete-host local-load endpoint is proved, and the dense superregular spread component is now proved at fixed rank and available at all ranks from published work. The remaining selection-theoretic gap is not spread itself, but the dependency/resampling mechanism needed to turn local conflict bounds into an exact perfect matching inside a noncomplete host.
