@@ -71,6 +71,7 @@ The numbering is local to this repository.
 | OP2g | Canonical phase nogoods reduce exactly to an antichain unit-propagation core | PROVED | `tracks/orbit-phase-core-preprocessing.md` |
 | OP2h | Irreducible canonical phase nogoods obey a sharp nonuniform Lubell inequality | PROVED | `tracks/orbit-phase-antichain-lubell.md` |
 | OP2i | Irreducible Lubell mass localizes all heavy variable and phase-literal load to a bounded kernel | PROVED | `tracks/orbit-phase-antichain-lubell.md` |
+| OP2j | Conditioning has an exact Lubell amplification and localizes large residual mass to one kernel pattern | PROVED | `tracks/orbit-phase-antichain-lubell.md` |
 | OP3a | Exact weighted phase-flip drift identity | PROVED | `tracks/orbit-phase-literals-and-decoder.md` |
 | OP3b | Lexicographic phase/structure decoder termination | PROVED UNDER HYPOTHESES | `tracks/orbit-phase-literals-and-decoder.md` |
 | O6 | One-colour carry-cycle dispersion lemma | REFUTED | `docs/13-carry-cycle-dispersion.md` |

@@ -133,6 +133,147 @@ def verify_load_localization(
         )
 
 
+def condition_nogood(
+    nogood: Nogood,
+    assignment: dict[int, int],
+    remap: dict[int, int],
+) -> Nogood | None:
+    residual: list[tuple[int, int]] = []
+    for variable, label in nogood:
+        if variable in assignment:
+            if assignment[variable] != label:
+                return None
+        else:
+            residual.append((remap[variable], label))
+    return tuple(residual)
+
+
+def canonical_residual(family: tuple[Nogood, ...]) -> tuple[Nogood, ...]:
+    unique = set(family)
+    return tuple(
+        sorted(
+            nogood
+            for nogood in unique
+            if not any(
+                set(other) < set(nogood) for other in unique
+            )
+        )
+    )
+
+
+def verify_conditioning_amplification(
+    family: tuple[Nogood, ...],
+    domain_sizes: tuple[int, ...],
+) -> None:
+    if not family or len(domain_sizes) < 2:
+        return
+    variable_count = len(domain_sizes)
+    rank = max(len(nogood) for nogood in family)
+    variables = tuple(range(variable_count))
+    for fixed_size in range(1, variable_count):
+        for fixed in combinations(variables, fixed_size):
+            fixed_set = set(fixed)
+            remaining_variables = tuple(
+                variable for variable in variables
+                if variable not in fixed_set
+            )
+            remap = {
+                variable: index
+                for index, variable in enumerate(remaining_variables)
+            }
+            residual_domains = tuple(
+                domain_sizes[variable]
+                for variable in remaining_variables
+            )
+            pattern_count = sum(
+                comb(fixed_size, intersection_size)
+                for intersection_size in range(
+                    min(fixed_size, rank - 1) + 1
+                )
+            )
+            for labels in product(
+                *(range(domain_sizes[variable]) for variable in fixed)
+            ):
+                assignment = dict(zip(fixed, labels))
+                survivors: list[tuple[Nogood, Nogood]] = []
+                contradiction = False
+                for nogood in family:
+                    residual = condition_nogood(
+                        nogood,
+                        assignment,
+                        remap,
+                    )
+                    if residual is None:
+                        continue
+                    if not residual:
+                        contradiction = True
+                        break
+                    survivors.append((nogood, residual))
+                if contradiction:
+                    continue
+
+                canonical = canonical_residual(
+                    tuple(residual for _, residual in survivors)
+                )
+                residual_mass = lubell_weight(
+                    canonical,
+                    residual_domains,
+                )
+                residual_loads, _ = lubell_loads(
+                    canonical,
+                    residual_domains,
+                )
+                amplified_total = Fraction(0)
+                amplified_loads = [
+                    Fraction(0) for _ in residual_domains
+                ]
+                pattern_mass: dict[frozenset[int], Fraction] = {}
+                for original, residual in survivors:
+                    intersection = frozenset(
+                        variable
+                        for variable, _ in original
+                        if variable in fixed_set
+                    )
+                    original_weight = lubell_weight(
+                        (original,),
+                        domain_sizes,
+                    )
+                    factor = Fraction(
+                        comb(variable_count, len(original)),
+                        comb(
+                            variable_count - fixed_size,
+                            len(residual),
+                        ),
+                    )
+                    for variable in intersection:
+                        factor *= domain_sizes[variable]
+                    residual_weight = lubell_weight(
+                        (residual,),
+                        residual_domains,
+                    )
+                    assert original_weight * factor == residual_weight
+                    amplified_total += residual_weight
+                    pattern_mass[intersection] = (
+                        pattern_mass.get(intersection, Fraction(0))
+                        + residual_weight
+                    )
+                    for variable, _ in residual:
+                        amplified_loads[variable] += residual_weight
+
+                assert residual_mass <= amplified_total
+                assert all(
+                    residual_loads[variable]
+                    <= amplified_loads[variable]
+                    for variable in range(len(residual_domains))
+                )
+                if residual_mass:
+                    assert pattern_mass
+                    assert (
+                        max(pattern_mass.values()) * pattern_count
+                        >= residual_mass
+                    )
+
+
 def verify_families(
     domain_sizes: tuple[int, ...],
     maximum_family_size: int,
@@ -143,6 +284,10 @@ def verify_families(
             if antichain(family):
                 assert lubell_weight(family, domain_sizes) <= 1
                 verify_load_localization(family, domain_sizes)
+                verify_conditioning_amplification(
+                    family,
+                    domain_sizes,
+                )
 
 
 def verify_sharp_layers(domain_sizes: tuple[int, ...]) -> None:

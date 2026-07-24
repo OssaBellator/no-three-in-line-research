@@ -230,8 +230,139 @@ It does not claim that this load remains unchanged after conditioning
 on the kernel, so arithmetic expansion is still needed to control the
 conditioned residual or classify the heavy kernel.
 
+## OP2j -- exact conditioning amplification
+
+Fix a variable set \(H\subseteq V\) of size \(f\) and an assignment
+\(\alpha\) on \(H\).  Condition every canonical nogood on \(\alpha\):
+a check is deleted if one of its fixed literals disagrees with
+\(\alpha\), and otherwise its literals in \(H\) are removed.  An empty
+survivor is an immediate contradiction certificate.  In the remaining
+case, delete duplicate and subsumed residual checks as in OP2g and call
+the resulting antichain \(\mathcal C_\alpha\).
+
+For a surviving original check \(C\), put
+
+\[
+k=|S_C|,
+\qquad
+j=|S_C\cap H|,
+\qquad
+D=C|_{V\setminus H}.
+\]
+
+Define
+
+\[
+\boxed{
+\Lambda_H(C)
+=
+\frac{\binom nk}{\binom{n-f}{k-j}}
+\prod_{v\in S_C\cap H}|\mathcal A_v|.
+}
+\]
+
+### Theorem OP2j -- PROVED
+
+Before duplicate/subsumption deletion, the residual check has exactly
+
+\[
+\boxed{
+w_{V\setminus H}(D)=\Lambda_H(C)\,w_V(C).
+}
+\]
+
+Consequently,
+
+\[
+\boxed{
+\sum_{D\in\mathcal C_\alpha}w_{V\setminus H}(D)
+\leq
+\sum_{\substack{C\in\mathcal C\\C\text{ survives }\alpha}}
+\Lambda_H(C)w_V(C),
+}
+\]
+
+and, for every \(v\notin H\),
+
+\[
+\boxed{
+\lambda_\alpha(v)
+\leq
+\sum_{\substack{C\text{ survives }\alpha\\v\in S_C}}
+\Lambda_H(C)w_V(C).
+}
+\]
+
+If all original checks have rank at most \(r\), the amplified source
+sum is partitioned by at most
+
+\[
+\boxed{
+P(f,r)=
+\sum_{j=0}^{\min\{f,r-1\}}\binom fj
+}
+\]
+
+intersection patterns \(S_C\cap H\).  Therefore residual Lubell mass
+\(M_\alpha\) forces one fixed kernel-intersection pattern to carry at
+least \(M_\alpha/P(f,r)\) amplified source mass.
+
+For checks disjoint from \(H\),
+
+\[
+\Lambda_H(C)
+=
+\frac{\binom nk}{\binom{n-f}k}
+\leq
+\left(\frac n{n-f-r+1}\right)^r
+\]
+
+whenever \(n-f\geq r\).  Thus bounded conditioning changes the
+disjoint-check mass by \(1+O_r(f/n)\); any much larger amplification
+must come from checks meeting the heavy kernel.
+
+### Proof
+
+The original and residual weights are
+
+\[
+w_V(C)
+=
+\frac1{\binom nk
+\prod_{v\in S_C}|\mathcal A_v|},
+\qquad
+w_{V\setminus H}(D)
+=
+\frac1{\binom{n-f}{k-j}
+\prod_{v\in S_C\setminus H}|\mathcal A_v|}.
+\]
+
+Their ratio is exactly \(\Lambda_H(C)\).  Every canonical residual check
+has at least one surviving ancestor.  Choose one; its exact identity
+proves the first two inequalities, while summing only checks containing
+\(v\) proves the load inequality.
+
+A nonempty residual has \(j\leq r-1\), so its kernel intersection is one
+of the \(P(f,r)\) subsets.  Pigeonholing the amplified source sum, which
+is at least \(M_\alpha\), proves the pattern localization.  Finally,
+
+\[
+\frac{\binom nk}{\binom{n-f}k}
+=
+\prod_{i=0}^{k-1}\frac{n-i}{n-f-i}
+\]
+
+and \(k\leq r\) gives the displayed disjoint-check bound. \(\square\)
+
+OP2j identifies the only conditioning hazard left after OP2i.  Either
+the low-load residual remains quantitatively low, or one explicit
+intersection pattern with the bounded heavy kernel carries the
+amplified obstruction.  Unary or empty residuals continue through the
+exact OP2g propagation interface.
+
 `scripts/verify_phase_antichain_lubell.py` exhaustively checks small
 binary and nonuniform-domain antichains and verifies equality for every
 complete fixed-rank layer.  It also checks the variable/literal
 double-count identities, every rational heavy-kernel threshold in the
-test range, and the sharp complete-layer loads.
+test range, the sharp complete-layer loads, and the exact
+conditioning-amplification formula after residual canonicalization.

@@ -140,6 +140,19 @@ alternative for the current irreducible core; the remaining arithmetic
 task is to control the residual after conditioning on that kernel or to
 classify it as a structured exception.
 
+OP2j supplies that conditioning audit. A surviving rank-\(k\) check
+meeting \(j\) of \(f\) fixed variables has exact Lubell amplification
+\[
+\frac{\binom nk}{\binom{n-f}{k-j}}
+\prod_{v\in S_C\cap H}|\mathcal A_v|.
+\]
+Checks disjoint from a bounded kernel inflate only by \(1+O_r(f/n)\).
+If the conditioned residual is still heavy, one of at most
+\(\sum_{j\le r-1}\binom fj\) kernel-intersection patterns carries the
+amplified obstruction. Thus the remaining expansion theorem may work
+with a low-load residual or one explicit kernel star, not an
+unstructured conditioning loss.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -190,6 +203,9 @@ irreducible check family.
 OP2i further confines all variables above any fixed normalized-load
 threshold to a bounded kernel and gives explicit low-load literals
 outside it.
+OP2j tracks the exact Lubell amplification caused by conditioning that
+kernel and localizes any large residual increase to one kernel
+intersection pattern.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
