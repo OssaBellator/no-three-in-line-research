@@ -89,6 +89,19 @@ fixed-feedback-variable core, including theta blocks, is an exact finite
 interface. A residual topology needing new OP2 expansion may be assumed
 to have unbounded variable-deletion distance from the cactus class.
 
+[`orbit-phase-incidence-treewidth.md`](orbit-phase-incidence-treewidth.md)
+proves OP2f by dynamic programming directly on a factor-incidence tree
+decomposition. A bag variable carries its phase label and a bag check
+carries one accumulated mismatch bit, giving exact completion in
+
+\[
+O\!\left(\max\{h,4\}^{t+1}(|V|+|\mathcal C|+I)\right)
+\]
+
+for incidence treewidth \(t\). Hence bounded-width strip and ladder
+cores are also finite interfaces, even when their feedback distance
+grows.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -130,6 +143,8 @@ OP2d does the same for arbitrary-arity factor cacti, with a possible
 two-state check-saturation certificate.
 OP2e does the same for every fixed variable-deletion distance from a
 factor cactus, at the cost of enumerating the bounded feedback alphabet.
+OP2f additionally deletes every bounded factor-incidence-treewidth core
+through an exact separator table.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -170,7 +185,8 @@ unary-saturation obstruction are retained by
 `scripts/verify_phase_cactus.py`. High-arity factor-cactus messages are
 checked by `scripts/verify_phase_factor_cactus.py`. Conditioning across
 one feedback variable on every binary theta instance is checked by
-`scripts/verify_phase_feedback.py`.
+`scripts/verify_phase_feedback.py`. Bounded-width noncactus ladders are
+checked by `scripts/verify_phase_incidence_treewidth.py`.
 
 ## Completion criterion
 
