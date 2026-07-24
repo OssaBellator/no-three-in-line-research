@@ -67,3 +67,27 @@ Alternating two-colour carry-core conversion and multiscale integration remain o
 **Status:** REFUTED.
 
 For \(p=11\), \(H_2\cup H_3\) contains the chordless red cycle with parameters \((4,5,7,6)\). Its identity state is the unique minimum among all fourteen collision-free row-column matchings of its cycle block. The shift by two has constant window product and decomposes into two order-two orbit absorbers, but its potential is larger, and each individual rectangle switch is also worse. See `docs/13-carry-cycle-dispersion.md`.
+
+## 12. “Two affine permutation channels can give a direct all-modulus no-three seed.”
+
+**Status:** REFUTED FOR EVERY \(N\ge5\).
+
+Affine channels do saturate every row and column, but their lifted first differences take only the two values \(m\) and \(m-N\). Equal adjacent differences give a consecutive triple; strict alternation makes columns \(0,2,4\) collinear. See `docs/27-composite-modulus-obstructions.md`.
+
+## 13. “The prime-field hyperbola line cap survives at composite modulus.”
+
+**Status:** REFUTED.
+
+For odd squarefree \(N\), the unit hyperbola \(xy\equiv1\pmod N\) has \(2^{\omega(N)}\) standard-lift points on \(y=x\). For odd prime powers \(p^k\), a suitable unit hyperbola has \(p^{\lfloor k/2\rfloor}\) points on one real anti-diagonal. Powers of two have a four-point diagonal collapse.
+
+## 14. “A unit-group hyperbola can be treated as a full permutation channel.”
+
+**Status:** FALSE.
+
+It has only \(\varphi(N)\) points and occupies exactly the unit rows and columns. Adding more unit-hyperbola channels never fills a nonunit row or column.
+
+## 15. “A toroidal no-three set may gain a real triple under standard lifting.”
+
+**Status:** WRONG IMPLICATION UNDER THE GENUINE DEFINITION.
+
+Every real collinear triple lies in one primitive toroidal direction fibre after reduction modulo \(N\). Hence a set protecting all such fibres cannot gain a real triple. The converse is the actual failure: a modular determinant can vanish while the integer determinant is a nonzero multiple of \(N\).
