@@ -1,6 +1,6 @@
 # Affine one-inner-layer obstruction at base sides six and seven
 
-PX34 proves a factor-independent special closure for `2 x 5` by normalizing any
+PX35 proves a factor-independent special closure for `2 x 5` by normalizing any
 side-five permutation layer into one successful affine double coset. This note
 tests whether the same blockwise-affine one-inner-layer mechanism persists at
 the next two base sides.
@@ -41,7 +41,7 @@ Choose an arbitrary permutation `tau in Sym([n])`, arbitrary affine block maps
 one of the four orientations `cc,cf,fc,ff`, and form the PX28 state using both
 outer layers and the single inner permutation `tau`.
 
-## Lemma PX35 -- PROVED
+## Lemma PX36 -- PROVED
 
 To exhaust the complete four-block affine family, it is enough to impose
 
@@ -86,7 +86,7 @@ ranges over the full symmetric group, so does `tau'`. This substitution merely
 renames the decoded fine row and column digits and leaves the resulting scalar
 point set unchanged. \(\square\)
 
-## Theorem PX36 -- PROVED FINITE
+## Theorem PX37 -- PROVED FINITE
 
 No blockwise-affine one-inner-layer state is no-three at base side six or base
 side seven.
@@ -119,7 +119,7 @@ For every normalized parameter tuple, construct the explicit PX28 point set in
 the ordinary integer grid. It has exactly two points in every row and column by
 PX28. Expose the points in deterministic order and reject the state as soon as
 one point completes a zero-determinant triple with two earlier points. Complete
-enumeration returns zero no-three states in both cases. PX35 transfers the
+enumeration returns zero no-three states in both cases. PX36 transfers the
 normalized result to the full four-block affine family. \(\square\)
 
 ## Interpretation
@@ -145,7 +145,7 @@ This does not rule out:
 - block maps chosen from a larger structured group;
 - multi-layer or composite-batch repairs.
 
-It does show that PX34 cannot be promoted to a general doubling theorem by
+It does show that PX35 cannot be promoted to a general doubling theorem by
 reusing only affine digit maps and one inner layer.
 
 ## Verification
