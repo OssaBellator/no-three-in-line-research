@@ -43,6 +43,16 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR183 | Every frozen inherited four-core satisfies \(3T_1+2T_2+T_3\ge9\) | PROVED | `docs/88-prime-power-inherited-four-core-cover.md` |
 | CMR184 | Every minimum cylinder cover is one complete non-diagonal board row or column | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
 | CMR185 | The sixteen Pareto-minimal inherited four-core rank profiles are completely classified | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
+| CMR186 | Every rank-\(1/2/3\) cover of the full parent derangement bank has at least \(t-1\) cylinders, with equality only for a complete row or column shadow | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
+| CMR187 | Every terminal Pareto subcover accounts for at most \(9/11\) of the parent law, forcing at least \(2/11\) additional mass | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
+| CMR188 | An extremal complete parent row/column shadow exposes a matching-or-star alternating neutralization bank | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
+| CMR189 | Every frozen inherited core has either an extremal secant fan or at least \(t\) distinct parent candidate cylinders | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
+| CMR190 | A batch of \(R\) terminal targets has a parent state creating at least \(\lceil2R/11\rceil\) triples outside all chosen local covers | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
+| CMR191 | Every such newly created triple touches the parent replacement block | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
+| CMR192 | Large outside-cover batches compress to disjoint defects, an alternating bank, or a heavy line | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
+| CMR193 | Every crossing target admits a four-endpoint move which strictly expands the closure envelope | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
+| CMR194 | Every lifted batch either forces strict envelope expansion or yields \(\lceil2R/11\rceil\) internal replacement-touching triples | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
+| CMR195 | Strict crossing resolutions occur at most \(k\) times on an \(N=p^k\) branch | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
