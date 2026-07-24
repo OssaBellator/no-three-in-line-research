@@ -91,3 +91,15 @@ It has only \(\varphi(N)\) points and occupies exactly the unit rows and columns
 **Status:** WRONG IMPLICATION UNDER THE GENUINE DEFINITION.
 
 Every real collinear triple lies in one primitive toroidal direction fibre after reduction modulo \(N\). Hence a set protecting all such fibres cannot gain a real triple. The converse is the actual failure: a modular determinant can vanish while the integer determinant is a nonzero multiple of \(N\).
+
+## 16. “The known 64-point digit-linear layer should admit some second permutation completion.”
+
+**Status:** REFUTED BY AN EXACT INTEGER CERTIFICATE.
+
+For the CMR12 layer, only `390` cells survive the two-fixed-point constraints. The admissible bipartite graph still has perfect matchings, but `122` one-fixed-point line capacities, together with row and column capacities, have an integer dual cover of cost `31718/500<64`. Hence no second permutation can avoid all mixed triples, even before its own internal triples are considered. See `docs/51-digital-64-completion-obstruction.md`.
+
+## 17. “Saturated prime-factor pairs can satisfy the local modular-arc premise needed by the simple CRT criterion.”
+
+**Status:** IMPOSSIBLE FOR EVERY ODD PRIME.
+
+An affine no-three set in \(\mathbb F_p^2\) has at most \(p+2\) points by the direction count through one selected point. A saturated local pair has `2p` points, so it cannot satisfy that premise. The CRT route must retain distinct-point local slopes and their carry signatures, not only mixed collisions. See `docs/46-crt-local-arc-obstruction.md` and `docs/52-crt-slope-carry-signatures.md`.
