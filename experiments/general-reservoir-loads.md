@@ -129,15 +129,15 @@ The exact bank has:
 | Maximum triple probability | `1/3` |
 | Blocked support cells | 0 |
 | Retained-anchor support pairs | 0 |
-| Internal support triples | 46 |
+| Compatible internal support triples | 34 |
 | Exact expected certificates | `34/3` |
 | Minimum certificates in one state | 3 |
 | Clean states | 0 |
 
 Deleting the entire old configuration removes every external certificate in
 this example. The obstruction is purely internal: the cross-shaped support has
-46 collinear triples, and every one of the 144 exact degree states selects at
-least three triple certificates.
+34 compatible nonaxis collinear triples, and every one of the 144 exact degree
+states selects at least three triple certificates.
 
 This confirms both halves of the new result:
 
