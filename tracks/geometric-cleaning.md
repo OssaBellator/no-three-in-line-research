@@ -103,6 +103,18 @@ For the final completion host or block product space, regularize candidate-only 
 
 The theorem must overcome the proved `Omega(n^4 log n)` total candidate-triple obstruction; it cannot rely on uniform independent pruning.
 
+### Proved peeling reduction
+
+[`geometric-cleaning-conflict-peeling.md`](geometric-cleaning-conflict-peeling.md)
+proves GC4a. For any normalized conflict threshold \(\tau\), iterative
+high-load deletion either reaches maximum load at most \(\tau\), deleting
+fewer than \(W/\tau\) variables, or produces an ordered witness in which
+every deleted variable carries more than \(\tau\) fresh conflict weight
+surviving all earlier deletions. Thus the remaining GC4 problem is
+geometric: convert a long fresh-weight witness into algebraic structure
+and current paid incidence. The latent \(\Omega(n^4\log n)\) obstruction
+is not discarded.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement
@@ -134,8 +146,9 @@ Every delegation must carry paid incidence so the global potential decreases whe
 - intermediate switches that collapse partner density;
 - candidate-only cores surviving all simple anchor deletion rules.
 
-The installed-block wall and its pool-collapse mechanism are now proved
-and retained as a regression in the accompanying note.
+The installed-block wall, its pool-collapse mechanism, and the exact
+candidate-conflict peeling accounting are now proved and retained in the
+accompanying notes and scripts.
 
 ## Completion criterion
 
