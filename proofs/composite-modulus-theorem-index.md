@@ -20,6 +20,10 @@ This ledger collects the results specific to
 | CML2 | Modular collinearity can be a false positive for the standard lift | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CML3 | Modular determinant zero with determinant magnitude below \(N\) implies real collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CMCRT1 | Naive CRT products have unavoidable mixed-projection triples | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMCRT2 | Synchronized local permutation pairs assemble to exact global saturation | PROVED | `docs/39-crt-mixed-collision-factorization.md` |
+| CMCRT3 | Mixed local collisions factor the global determinant as \(uv\det(A,B)\) | PROVED | `docs/39-crt-mixed-collision-factorization.md` |
+| CMCRT4 | Under local modular arc hypotheses every real triple has mixed-collision form | PROVED UNDER HYPOTHESES | `docs/39-crt-mixed-collision-factorization.md` |
+| CMCRT5 | Disjoint scaled collision-direction sets imply an ordered-box no-three CRT lift | PROVED UNDER HYPOTHESES | `docs/39-crt-mixed-collision-factorization.md` |
 | CMR1 | Valuation-completed reciprocals are full prime-power involutions | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR2 | Exact valuation-stratum quadratic for line intersections | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR3 | Odd-prime intersections reduce to one top Hensel-tangent cell | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
