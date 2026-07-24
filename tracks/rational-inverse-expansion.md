@@ -152,6 +152,22 @@ If the right side is smaller than \(|H|\), the image meets at least
 index range through \(m=o(\sqrt p)\); saturation and the genuinely
 larger-index regime remain to be classified.
 
+[`rational-inverse-quotient-boundary.md`](rational-inverse-quotient-boundary.md)
+proves RI2f, an exact structural identity valid in every remaining
+range. The collision involution induces a symmetric integer matrix
+\(J\) on all \(H\)-cosets. For a union \(D_S\) of source cosets,
+
+\[
+2|F_r(D_S)|-|D_S|=f_S+B(S),
+\]
+
+where \(f_S\) counts involution fixed points and \(B(S)\) is the
+weighted quotient cut. Hence a union whose image nearly saturates the
+universal half bound is exactly a low-boundary quotient set. The
+remaining exceptional-chain theorem is now the expansion or explicit
+classification of low-conductance cuts of \(J\), rather than an
+unstructured collision problem.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement
