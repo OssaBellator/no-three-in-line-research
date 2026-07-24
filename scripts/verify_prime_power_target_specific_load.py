@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from fractions import Fraction
 from itertools import combinations, permutations
 from math import comb, factorial, floor
 
@@ -45,7 +46,7 @@ def verify_local_wall_arithmetic(max_t: int = 1_000_000) -> None:
     for t in range(48, max_t + 1):
         falling_three = t * (t - 1) * (t - 2)
         line_capacity = comb(t - 1, 2)
-        assert (falling_three / 48) / line_capacity == t / 24
+        assert Fraction(falling_three, 48 * line_capacity) == Fraction(t, 24)
         wall_lines = floor(t / 24)
         assert wall_lines <= t - 2
 
