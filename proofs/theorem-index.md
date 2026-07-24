@@ -36,4 +36,8 @@ The numbering is local to this repository.
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O4 | Cycle-bank theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O5 | Window-product conic-cover theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O6 | Carry-cycle dispersion lemma | OPEN | `docs/11-open-bottlenecks.md` |
+| O6 | One-colour carry-cycle dispersion lemma | REFUTED | `docs/13-carry-cycle-dispersion.md` |
+| CC1 | Collision-free permutation spread lemma | PROVED | `docs/13-carry-cycle-dispersion.md` |
+| CC2 | Universal collision-aware carry-cycle bank bound | PROVED | `docs/13-carry-cycle-dispersion.md` |
+| CC3 | Frozen-cycle concentration trichotomy | PROVED | `docs/13-carry-cycle-dispersion.md` |
+| CC4 | Alternating two-colour carry-core lemma | OPEN | `docs/13-carry-cycle-dispersion.md` |
