@@ -54,8 +54,8 @@ once, and no real collinear triple.
 Represent a selected point as
 
 \[
-(ax,ay+arepsilon),
-\qquad arepsilon\in\{0,1\}.
+(ax,ay+b),
+\qquad b\in\{0,1\}.
 \]
 
 For any triple, its exact determinant has the form
@@ -67,8 +67,8 @@ For any triple, its exact determinant has the form
 where \(D\) is the determinant of the integer pairs \((x,y)\), while
 
 \[
-E=(x_2-x_1)(\varepsilon_3-\varepsilon_1)
- -(x_3-x_1)(\varepsilon_2-\varepsilon_1).
+E=(x_2-x_1)(b_3-b_1)
+ -(x_3-x_1)(b_2-b_1).
 \]
 
 Because the layer indicators are binary, either \(E=0\) or \(E\) is the
@@ -105,4 +105,4 @@ terminal construction or a spread distribution supported on terminal
 no-three states remains open.
 
 The exact check is implemented in
-[`scripts/verify_prime_power_terminal_configurations.py`](../scripts/verify_prime_power_terminal_configurations.py).
+[`scripts/verify_prime_power_terminal_configurations.py`](../scripts/verify_prime_power-terminal-configurations.py).
