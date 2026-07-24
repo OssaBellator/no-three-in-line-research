@@ -9,6 +9,14 @@ The numbering is local to this repository.
 | PP1a | Two disjoint permutations give a raw `t>=2` boundary state | PROVED | `docs/27-all-n-prime-patching.md` |
 | PP1b | One-point corner splice gives the exact `t=1` boundary state | PROVED | `docs/27-all-n-prime-patching.md` |
 | PP1c | Exact three-class criterion for geometric patch admissibility | PROVED | `docs/27-all-n-prime-patching.md` |
+| PP1d | Complete two-form classification of boundary-only one-strip patches | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP2a | External-point secants form a blocker matching with exact deletion criterion | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP2b | Exact geometric criterion for one-strip patches | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP2c | Pair-aware corner-patch local-load theorem | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP2d | Concrete cell/pair/triple load endpoint for corner patches | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP2e | Failed corner endpoint forces a heavy cell, pair, or triple load | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP3a | Exact labeled one-strip seed graph through side five | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP3-R1 | Universal recursive boundary-only one-strip construction | REFUTED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP4a | Abstract solved-length plus patch-width transfer to all large `n` | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
 | PP4b | Short-prime-interval exponent translates to the same patch-width exponent | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
 | S3 | Candidate-only triple energy is \(\Omega(\delta^3n^4\log n)\) | PROVED | `docs/02-reverse-scale-switching.md` |
