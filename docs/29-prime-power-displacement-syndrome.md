@@ -244,3 +244,152 @@ line point.
 
 The checks are implemented in
 [`scripts/verify_prime_power_displacement.py`](../scripts/verify_prime_power_displacement.py).
+
+## 5. Exact companion cross-displacement quadratic
+
+Let
+
+\[
+\sigma_p(y)=[(1+e_p)y+1]_N,
+\qquad
+ e_p=\begin{cases}p,&p\text{ odd},\\4,&p=2,\end{cases}
+\]
+
+and put \(G=\sigma_p\circ R_{\mathbf c}\).  Consider an oriented cross-channel
+pair
+
+\[
+P=(x,R_{\mathbf c}(x)),
+\qquad
+P'=(x+a,G(x+a)),
+\]
+
+with exact lifted displacement \((a,b)=P'-P\).  Suppose both columns are
+nonzero and lie in the same valuation stratum \(r\).  Write
+
+\[
+x=p^r u,
+\qquad
+a=p^r\alpha,
+\qquad m=k-r.
+\]
+
+Then \(u\) and \(u+\alpha\) are units modulo \(p^m\).
+
+### Theorem CMR9 — PROVED
+
+Every such cross-channel pair satisfies
+
+\[
+b\equiv1\pmod {p^r}.
+\]
+
+Putting \(B=(b-1)/p^r\), its first endpoint parameter obeys the exact
+quadratic congruence
+
+\[
+B u^2+(B\alpha-c_r e_p)u+c_r\alpha
+\equiv0\pmod {p^m}.
+\]
+
+For odd \(p\), if \(p\nmid B\), the possible residue classes of \(u\) are in
+bijection with square roots modulo \(p^m\) of
+
+\[
+\mathcal D
+=(B\alpha-c_rp)^2-4Bc_r\alpha.
+\]
+
+Hence the number of candidate same-stratum cross-channel pairs with fixed
+exact displacement is at most
+
+\[
+\rho_p(m,\mathcal D)
+\le2p^{\lfloor m/2\rfloor}.
+\]
+
+### Proof
+
+Modulo \(N\), the row displacement equation is
+
+\[
+p^r c_r\bigl((1+e_p)(u+\alpha)^{-1}-u^{-1}\bigr)+1
+\equiv b.
+\]
+
+The first term is divisible by \(p^r\), proving \(b\equiv1\pmod {p^r}\).
+After subtracting one and dividing by \(p^r\), multiplication by
+\(u(u+\alpha)\) gives
+
+\[
+B u(u+\alpha)
+\equiv c_r(e_pu-\alpha)
+\pmod {p^m},
+\]
+
+which is the displayed quadratic.  When \(p\) and \(B\) are units, completing
+the square with leading coefficient \(B\) gives the stated discriminant and
+the square-root count from Theorem CMR3. ∎
+
+This is the first exact companion cross-channel displacement equation.  The
+remaining cases are cross-stratum pairs and the singular regime
+\(p\mid B\).
+
+## 6. Exact mixed-layer determinant carry identity
+
+The companion map also has a universal exact carry normal form, independent
+of the special choice of base permutation.  Let \(f\) be any permutation of
+\([N]\), put
+
+\[
+q(y)=\left\lfloor\frac{(1+e_p)y+1}{N}\right\rfloor,
+\qquad
+d(y)=e_py+1-Nq(y),
+\]
+
+so that \(\sigma_p(y)=y+d(y)\) as standard integers.
+
+For columns \(x_i\), write \(y_i=f(x_i)\), choose layer indicators
+\(\varepsilon_i\in\{0,1\}\), and set
+
+\[
+z_i=y_i+\varepsilon_i d(y_i).
+\]
+
+### Theorem CMR10 — PROVED
+
+The exact integer determinant of the three chosen layer points is
+
+\[
+\begin{aligned}
+\Delta((x_i,z_i)_{i=1}^3)
+={}&\Delta((x_i,y_i)_{i=1}^3)\\
+&+(x_2-x_1)(\varepsilon_3d(y_3)-\varepsilon_1d(y_1))\\
+&-(x_3-x_1)(\varepsilon_2d(y_2)-\varepsilon_1d(y_1)).
+\end{aligned}
+\]
+
+In particular, for three points all in the companion layer,
+
+\[
+\Delta_G
+=(1+e_p)\Delta_f
+-N\Bigl((x_2-x_1)(q(y_3)-q(y_1))
+-(x_3-x_1)(q(y_2)-q(y_1))\Bigr).
+\]
+
+Thus every same- or mixed-layer real triple is governed by an explicit base
+determinant plus a bounded-range companion carry determinant.
+
+### Proof
+
+Substitute \(z_i=y_i+\varepsilon_i d(y_i)\) into the determinant and use its
+linearity in the row coordinates.  When all three indicators equal one, the
+constant terms in \(d(y)=e_py+1-Nq(y)\) cancel, the \(e_py\) contribution is
+\(e_p\Delta_f\), and the remaining term is the displayed multiple of \(N\).
+∎
+
+CMR9 and CMR10 reduce the companion cross-channel CM3 target to explicit
+quadratic-root and carry-determinant counts.  A near-linear syndrome theorem
+still requires controlling the singular cross-displacement cells and the
+number of exact real solutions inside each carry signature.
