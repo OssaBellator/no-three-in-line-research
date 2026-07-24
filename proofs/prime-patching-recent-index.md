@@ -30,6 +30,8 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3ca--PP3cb | Local signature-load clean-density endpoint and failure trichotomy | PROVED | `docs/52-matching-block-local-loads.md` |
 | PP3cc--PP3ce | Clean-rung hypergraph packing, spread, and transversal core | PROVED | `docs/53-clean-rung-hypergraph-packing.md` |
 | PP3cf--PP3ch | Full 36-state width-two block bank and improved spread | PROVED | `docs/54-full-width-two-block-banks.md` |
+| PP3ci | Seven-profile global first-moment endpoint for clean full-width-two blocks | PROVED | `docs/55-matching-block-global-endpoint.md` |
+| PP3cj | Asymptotic profile-count corollary for matching-block completion | PROVED | `docs/55-matching-block-global-endpoint.md` |
 
 ## Current exact target
 
@@ -37,9 +39,9 @@ The independent-template matching-density assumption is now refuted.  Two
 correlated routes remain:
 
 1. matching-first constant-width blocks: about `m^0.525` width-two rungs grouped
-   into blocks of size `r asymp m^0.475`, with a polynomial clean-state density,
-   diffuse clean-deletion hypergraph, and controlled external/cross-block bad
-   boxes;
+   into blocks of size `r asymp m^0.475`, with clean-domain density `delta`, a
+   diffuse clean-deletion hypergraph, and the seven PP3ci profile counts below
+   their `delta r`, `delta^2 r^2`, and `delta^3 r^3` thresholds;
 2. larger endpoint-adapted or parabolic rungs whose row and column templates are
    correlated through actual source edges rather than sampled independently.
 
