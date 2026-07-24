@@ -39,7 +39,7 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3ds--PP3du | Random balanced coupling disperses the same-edge pair spike | PROVED | `docs/67-random-balanced-coupling-spread.md` |
 | PP3dv--PP3dy | Exact product factorization and divisor-energy endpoint for same-edge anchors | PROVED | `docs/68-same-edge-anchor-product-factorization.md` |
 | PP3dz--PP3ed | Dense safe-domain square-root macro patch and conditional spread | PROVED | `docs/69-dense-domain-source-clean-macro-patch.md` |
-| PP3ee--PP3eh | Boundary-shadow density or Hall-obstruction dichotomy | PROVED | `docs/70-boundary-shadow-density-dichotomy.md` |
+| PP3ee--PP3eh | Boundary-shadow density or Hall-obstruction dichotomy, with coordinate warning | PROVED / CORRECTED | `docs/70-boundary-shadow-density-dichotomy.md` |
 | PP3ei--PP3ek | Global slot-occurrence LLL endpoint and conditional spread | PROVED / FROM PUBLISHED LLL DISTRIBUTION | `docs/71-global-slot-occurrence-endpoint.md` |
 | PP3el--PP3eo | Random constant-width block profile cancellation and all-block endpoint | PROVED | `docs/56-random-matching-block-preparation.md` |
 | PP3ep--PP3es | Uniform deletion union and deletion-aware profile endpoint | PROVED | `docs/57-deletion-aware-random-block-profiles.md` |
@@ -49,7 +49,11 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3fd--PP3fh | Same-edge anchor domain pruning through divisor energy | PROVED / FROM STANDARD AND PUBLISHED LLL THEOREMS | `docs/72-same-edge-anchor-domain-pruning.md` |
 | PP3fi--PP3fl | Weighted slot-mass LLL endpoint and conditional spread | PROVED / FROM ASYMMETRIC AND PUBLISHED LLL THEOREMS | `docs/73-weighted-slot-mass-endpoint.md` |
 | PP3fm--PP3fr | Grouped pair/triple relations and completion-energy endpoint | PROVED | `docs/74-grouped-pattern-completion-energy.md` |
-| PP3fs--PP3fv | Oversampled refined label matching from average shadow and exact bad incidence | PROVED / FROM STANDARD LLL | `docs/75-oversampled-refined-label-matching.md` |
+| PP3fs--PP3ft, PP3fv | Average refined-label graph and matching bounds | PROVED | `docs/75-oversampled-refined-label-matching.md` |
+| PP3-R5 | Discarding unused numerical labels after oversampling preserves saturation | REFUTED | `docs/75-oversampled-refined-label-matching.md` |
+| PP3fu | Oversampled matching yields a macro only with a saturation-compatible allocation | PROVED UNDER HYPOTHESIS | `docs/75-oversampled-refined-label-matching.md` |
+| PP3fw--PP3fz | Global balanced ownership and full-coordinate refined matching | PROVED / FROM PERMUTATION CONCENTRATION | `docs/76-global-balanced-label-allocation.md` |
+| PP3ga--PP3gd | Universal one-sided slab separation of same-slot cross-macro pairs | PROVED | `docs/77-one-sided-slab-cross-macro-separation.md` |
 
 ## Current exact target
 
@@ -59,28 +63,20 @@ At the balanced exponents
 macro variables M = m^0.2875
 source-pool size R = m^0.475
 macro width W = Theta(sqrt(R)) = m^0.2375,
-total width MW = m^0.525.
+total width T=MW = m^0.525.
 ```
 
 Matching pools, equal-margin restoration, complete internal no-three geometry,
 and fixed-rank internal spread are universal.
 
-The first half of source cleaning is now reduced to the oversampled label
-inequality
+The coordinate allocation issue is now explicit.  The `T` final new rows and
+`T` final new columns must all be used.  PP3fw solves this once there is a
+balanced movement-label ownership and one global refined perfect matching.
+PP3fy gives a sufficient averaged-density/concentration criterion for such an
+ownership; no numerical label is discarded.
 
-```text
-(S_M + S_R) / ((1-gamma) R L)
-+ U / (epsilon R L^2)
-< 1 - W/L,
-```
-
-where `U=sum_(A,B)|U_(A,B)|` is the exact same-edge-anchor bad-label incidence.
-Under this inequality and the local width bound, PP3fu supplies the required
-refined label matching and removes both fixed-pair cells and same-edge anchored
-pairs.  The divisor energy gives a weaker arithmetic fallback `U<=E`.
-
-The second half is weighted global compatibility.  For every slot `s`, it is
-sufficient to prove
+After global allocation, source and cross-macro compatibility is governed by the
+grouped completion energies of PP3fp.  For every slot `s`, it is sufficient that
 
 ```text
 sum of grouped ordinary-source pair-event probabilities
@@ -88,24 +84,20 @@ sum of grouped ordinary-source pair-event probabilities
 <= 1/48 - o(1).
 ```
 
-PP3fo writes this mass exactly as forbidden relation densities; PP3fp converts it
-to pair and triple completion energies.  PP3fk then solves all internal,
-source-containing, and cross-macro events in one asymmetric local-lemma
-assignment, while PP3fl preserves `O(R^-q)` fixed-rank spread.  The older PP3ei
-endpoint requiring only `O(R)` events per slot remains a simpler fallback.
+Column-slab pools with movement rows in the same order make every cross-macro
+same-slot-pair-plus-movement relation empty.  The row-slab transpose removes the
+refill version.  Thus one whole high-probability direction can be deleted from
+the weighted mass universally.
 
-The remaining bottleneck therefore has two explicit quantitative pieces:
+The remaining bottleneck has two quantitative pieces:
 
-1. prove the oversampled shadow/bad-incidence inequality in almost every macro
-   pool, or exploit its boundary-shadow, Hall, and divisor-energy concentration
+1. prove the balanced global refined-label conditions of PP3fy, or exploit their
+   boundary-shadow, Hall, exact bad-incidence, and divisor-energy concentration
    alternatives with protected trades;
-2. prove the grouped completion-energy inequality from PP3fp, equivalently keep
-   the weighted external mass below `1/48-o(1)` at every slot.
+2. bound the residual grouped completion energy after the slab cancellation by
+   the PP3fo threshold `1/48-o(1)` per slot.
 
-The constant-width side analysis PP3el--PP3fc sharpens what not to do: random
-independent deletion does not cover additional blockers, unary blocker-cover
-domains become empty on the stored larger seeds, and every raw two-block test at
-sides eight through ten fails before patch-patch interactions.  Its positive
-output is the exact blocker-demand rank localization PP3fa--PP3fb: a correlated
-partition should cluster blocker endpoints into the controller block or a
-bounded-degree partner graph.
+The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
+deletion does not cover additional blockers, unary blocker-cover domains become
+empty on the stored larger seeds, and every raw two-block test at sides eight
+through ten fails before patch-patch interactions.
