@@ -37,4 +37,5 @@ This ledger collects the results specific to
 | CMR15 | Unit-stratum top-digit collisions decompose into disjoint \(p\)-point blocks | PROVED | `docs/32-prime-power-top-digit-blocks.md` |
 | CMR16 | Top-digit blocks support independent full permutation banks with exact spread | PROVED | `docs/32-prime-power-top-digit-blocks.md` |
 | CMR17 | Every top-digit block permutation remains disjoint from the companion layer | PROVED | `docs/33-prime-power-companion-compatible-blocks.md` |
+| CMR18 | Top-digit block-bank collateral equals an exact normalized certificate sum | PROVED | `docs/34-prime-power-block-bank-collateral.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
