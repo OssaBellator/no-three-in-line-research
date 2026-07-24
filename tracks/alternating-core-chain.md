@@ -94,6 +94,17 @@ Every structural output of AC1 can be converted, with constant-factor loss, into
 
 The destroyed-incidence weight of the extracted object must be at least `c mathcal N`, up to the already proved pair-overlap correction `O(q|X|)`.
 
+### Proved compatibility reduction
+
+[`alternating-core-reextraction-and-reuse.md`](alternating-core-reextraction-and-reuse.md)
+proves AC2a: candidate structural objects whose full incompatibility graph
+has maximum degree \(\Delta\) contain a simultaneously installable family
+carrying at least a \(1/(\Delta+1)\) fraction of their paid weight.
+Certificate overlap and cross-object creation are included explicitly in
+the conflict relation. The remaining AC2 task is to derive a bounded
+degree from the AC1 arithmetic labels, or send its high-conflict
+alternative to BDA/RI.
+
 ### Interface
 
 Outputs 1 and 2 restart the proved WQ/CR/AN machinery in the opposite layer. Output 3 is charged by AC3. Output 4 invokes the independent bounded-denominator absorber branch.
@@ -134,6 +145,14 @@ bounded-integer carry/center/coset signatures has size `p^{O(1)}` and
 strictly increases whenever AC2 returns a genuinely new signature.  The
 unresolved part of AC3 is now precisely the no-recycling assertion for a
 transition carrying only previously exposed signatures.
+
+The re-extraction note proves AC3b and AC3c. A bounded reuse ticket for
+each old signature extends the exposure potential and gives an explicit
+termination bound. Without tickets, a strictly monotone potential exists
+on the repeated-signature transition quotient exactly when that quotient
+is acyclic. Thus every remaining directed cycle must be broken by current
+paid incidence, a terminal bank, or a classified BDA/RI delegation; it
+cannot be removed by reweighting the same signatures.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -208,6 +227,8 @@ upgrade AC6 while those inputs remain open.
 - extend the existing frozen-cycle and neutralization scripts to enumerate AC1 certificate types;
 - verify that every small-prime failed neutralization state produces one AC1 alternative;
 - track signature reuse and search for cycles in the proposed `Xi` potential;
+- verify weighted compatible extraction and reject every unticketed
+  repeated-signature cycle;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 
