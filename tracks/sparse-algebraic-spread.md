@@ -66,6 +66,14 @@ The stronger target is an all-rank distribution satisfying the same bound for ev
 
 Rank three is sufficient for duplicate-cell and collinear-triple conflicts; all-rank spread is useful for containers and robust thresholds.
 
+### Proved composition component
+
+[`sparse-spread-composition.md`](sparse-spread-composition.md) proves SAS3a:
+the required conditional one-edge estimate through rank `s-1` implies
+rank-`s` spread by the chain rule. The remaining task is to derive that
+conditional estimate from SAS1 after the prescribed vertices and edges are
+deleted.
+
 ## SAS4 — Two-layer sparse spread
 
 ### Target statement
@@ -77,6 +85,14 @@ After sampling `M_1`, prove that `G-M_1` retains the sparse-host hypotheses and 
 \]
 
 The union is a simple 2-factor with exact row and column degree two.
+
+### Spread conclusion proved
+
+The composition note proves the displayed `(2C/d)^|F|` inequality for
+every edge set and the exact simple-2-factor conclusion, assuming the
+second layer has conditional `C/d` spread after `M_1`. Thus the sole
+remaining SAS4 issue is the host-stability/measure construction needed to
+supply that conditional hypothesis.
 
 ## SAS5 — Geometric conflict endpoint
 
@@ -98,6 +114,17 @@ T(G)<c d^3.
 
 A successful host must therefore combine sparse spread with a genuinely small geometric triple count.
 
+### Abstract endpoint proved
+
+The composition note proves the conflict-family union-bound theorem and
+the explicit triple threshold
+
+`T(G) < d^3/(2C)^3`.
+
+SAS5 remains open only in its host-specific part: constructing an intended
+algebraic host satisfying this count (or proving a local resampling
+upgrade).
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
@@ -115,4 +142,6 @@ A successful host must therefore combine sparse spread with a genuinely small ge
 
 ## Completion criterion
 
-This branch is complete when SAS1–SAS5 are proved for at least one algebraic host rich enough to support exact degree-two saturation and all collinearity constraints.
+This branch is complete when SAS1–SAS2 and the remaining host-specific
+parts of SAS3–SAS5 are proved for at least one algebraic host rich enough
+to support exact degree-two saturation and all collinearity constraints.
