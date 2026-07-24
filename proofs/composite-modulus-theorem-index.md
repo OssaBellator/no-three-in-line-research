@@ -94,14 +94,14 @@ This ledger collects the results specific to
 | CMR64 | Each nonzero cross-stratum valuation has a summed Hensel root bound | PROVED | `docs/56-prime-power-cross-stratum-sum.md` |
 | CMR65 | Complete divisor collisions satisfy \(C(a,d)<20N/d+13\sqrt N+8k\) | PROVED | `docs/56-prime-power-cross-stratum-sum.md` |
 | CMR66 | Completed reciprocals have energy \(O(N^{3/2}+N\log^3N)\) and syndrome \(O(N^2\log N)\) | PROVED | `docs/56-prime-power-cross-stratum-sum.md` |
-| CMR67 | All-shift nonsquare reciprocals form a balanced no-three family for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
-| CMR68 | Recursive first-separation depth gives a product collinearity bound | PROVED | `docs/57-prime-power-first-separation-sum.md` |
+| CMR67 | Balanced nonsquare reciprocal maps admit an exact saturated common-parameter root law for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
+| CMR68 | Recursive first-separation depth gives a product determinant-divisibility bound | PROVED | `docs/57-prime-power-first-separation-sum.md` |
 | CMR69 | First-separation certificates sum to a subcubic bound generally and \(O_p(N^2\log N)\) for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
-| CMR70 | Layer-transverse recursive triples have full-depth probability at most \(1/N\) | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
+| CMR70 | Layer-transverse recursive triples have full-depth probability at most \(p/((p-1)N)\) | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
 | CMR71 | The logarithmic recursive syndrome is confined to layer-aligned closest pairs | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
 | CMR72 | Recursive pair codegrees are stratified by layer and p-adic closeness | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
 | CMR73 | A binary closest pair pays an additional \(1/h\) separation-node factor | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
-| CMR74 | Exact clustering counts give \(\mathbb ET_k<4kN^2+(p+2)N^2/3\) | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
+| CMR74 | Exact clustering counts give \(\mathbb ET_k<4(k-1)N^2+(p+3)N^2/3\) | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
 | CMR75 | Every p-adic layer-prefix block has a constant-spread rematching bank | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
 | CMR76 | Prefix rematching destroys every old binary star assigned to the block | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
 | CMR77 | Binary-star load extraction is scale-invariant after normalization by block size | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
@@ -112,5 +112,10 @@ This ledger collects the results specific to
 | CMR82 | Quotient secant energy splits into endpoint, modular-third-point, and collision terms | PROVED | `docs/62-prime-power-quotient-incidence-decomposition.md` |
 | CMR83 | Distinct-projection excess is a weighted quotient modular-syndrome energy | PROVED | `docs/62-prime-power-quotient-incidence-decomposition.md` |
 | CMR84 | Repeated projections lie on primitive carry-direction quotient lines | PROVED | `docs/62-prime-power-quotient-incidence-decomposition.md` |
+| CMR85 | Endpoint quotient rectangles are absent from actual rank-one prefix collateral | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
+| CMR86 | Distinct-projection excess is at most \(3t^2\) times the quotient modular syndrome | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
+| CMR87 | Collision carry excess is always below \(2N^2\) at one scale | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
+| CMR88 | Balanced recursive quotients have expected modular syndrome \(O_p(sm^2)\) | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
+| CMR89 | Total expected rank-one prefix collateral is \(O_p(N^2\log^2N)\) | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
