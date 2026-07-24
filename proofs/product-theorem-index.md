@@ -65,8 +65,13 @@ This index collects the product/composition results on
 | PX58 | Every side-six factor of relative `(4,2)` type composes with side two to an exact side-twelve certificate | PROVED | `docs/52-universal-full-selector-side-six-closure.md` |
 | PX59 | Every side-six factor of relative `(3,3)` type composes with side two to an exact side-twelve certificate | PROVED | `docs/52-universal-full-selector-side-six-closure.md` |
 | PX60 | Every saturated side-six factor composes with side two to a saturated no-three side-twelve configuration | PROVED | `docs/52-universal-full-selector-side-six-closure.md` |
+| PX61 | Full hosts admit an exact three-labeling normal form with one row and two independent column labelings | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
+| PX62 | The `N x N` grid has at most `2N^4 H_(N-1)` unordered collinear triples | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
+| PX63 | Every saturated side-`n` factor has a factor-compatible side-`2n` product state with `O(n log n)` bad triples | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
+| PX64 | The universal low-syndrome state has line occupancy at most eight and logarithmic average rectangle defect degree | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
 
-The branch has factor-independent product theorems for `2 x 3`, `2 x 4`,
-`2 x 5`, and `2 x 6`.  It has exact one-layer and full-host normal forms and an
-exact transfer system for every mixed selector, but still no infinite
-multiplicative closure class or arithmetic coverage theorem.
+The branch has exact factor-independent product theorems for `2 x 3`, `2 x 4`,
+`2 x 5`, and `2 x 6`, together with an all-side approximate doubling theorem
+with only `O(n log n)` defects.  Exact infinite multiplicative closure now
+reduces to a sparse bounded-occupancy repair-or-structure theorem; arithmetic
+coverage remains open.
