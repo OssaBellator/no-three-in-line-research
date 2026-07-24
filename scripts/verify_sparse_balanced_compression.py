@@ -6,6 +6,8 @@ from __future__ import annotations
 from fractions import Fraction
 from itertools import combinations, permutations, product
 
+Constraint = tuple[tuple[int, int, int], tuple[int, int, int]]
+
 
 def falling(number: int, rank: int) -> int:
     result = 1
@@ -74,6 +76,93 @@ def profile_counts(row_colours: tuple[int, ...]) -> tuple[int, int, int]:
     return tuple(profile)
 
 
+def constraints(row_colours: tuple[int, ...]) -> tuple[Constraint, ...]:
+    total = len(row_colours)
+    return tuple(
+        (
+            columns,
+            tuple(row_colours[row] for row in rows),
+        )
+        for rows in combinations(range(total), 3)
+        for columns in collinear_column_triples(rows, total)
+    )
+
+
+def conditional_energy(
+    records: tuple[Constraint, ...],
+    partial: tuple[int | None, ...],
+    remaining: tuple[int, ...],
+) -> Fraction:
+    unassigned_total = sum(remaining)
+    total = Fraction(0)
+    for columns, required_labels in records:
+        needed = [0] * len(remaining)
+        compatible = True
+        unassigned = 0
+        for column, required in zip(columns, required_labels):
+            assigned = partial[column]
+            if assigned is None:
+                needed[required] += 1
+                unassigned += 1
+            elif assigned != required:
+                compatible = False
+                break
+        if not compatible:
+            continue
+        numerator = 1
+        for label, count in enumerate(needed):
+            numerator *= falling(remaining[label], count)
+        total += Fraction(
+            numerator,
+            falling(unassigned_total, unassigned),
+        )
+    return total
+
+
+def greedy_conditional_decoder(
+    records: tuple[Constraint, ...],
+    block_count: int,
+    block_size: int,
+) -> tuple[tuple[int, ...], tuple[Fraction, ...]]:
+    total = block_count * block_size
+    partial: list[int | None] = [None] * total
+    remaining = [block_size] * block_count
+    trace = [
+        conditional_energy(
+            records,
+            tuple(partial),
+            tuple(remaining),
+        )
+    ]
+    for column in range(total):
+        unassigned_total = sum(remaining)
+        candidates: list[tuple[Fraction, int]] = []
+        weighted_average = Fraction(0)
+        for label in range(block_count):
+            if remaining[label] == 0:
+                continue
+            probability = Fraction(remaining[label], unassigned_total)
+            partial[column] = label
+            remaining[label] -= 1
+            value = conditional_energy(
+                records,
+                tuple(partial),
+                tuple(remaining),
+            )
+            remaining[label] += 1
+            partial[column] = None
+            weighted_average += probability * value
+            candidates.append((value, label))
+        assert weighted_average == trace[-1]
+        value, selected = min(candidates)
+        assert value <= trace[-1]
+        partial[column] = selected
+        remaining[selected] -= 1
+        trace.append(value)
+    assert all(value is not None for value in partial)
+    return tuple(int(value) for value in partial), tuple(trace)
+
+
 def verify_partition(
     row_colours: tuple[int, ...],
     block_count: int,
@@ -93,6 +182,60 @@ def verify_partition(
     )
     assert Fraction(sum(values), len(values)) == expected
     assert min(values) <= expected
+
+    records = constraints(row_colours)
+    empty = tuple(None for _ in range(total))
+    initial = conditional_energy(
+        records,
+        empty,
+        tuple(block_size for _ in range(block_count)),
+    )
+    assert initial == expected
+    decoded, trace = greedy_conditional_decoder(
+        records,
+        block_count,
+        block_size,
+    )
+    assert all(
+        decoded.count(label) == block_size
+        for label in range(block_count)
+    )
+    assert all(
+        later <= earlier for earlier, later in zip(trace, trace[1:])
+    )
+    assert trace[-1] == triple_count(row_colours, decoded)
+    assert trace[-1] <= expected
+
+    for prefix in range(total + 1):
+        partial = tuple(
+            decoded[column] if column < prefix else None
+            for column in range(total)
+        )
+        remaining = tuple(
+            block_size
+            - sum(
+                decoded[column] == label for column in range(prefix)
+            )
+            for label in range(block_count)
+        )
+        completions = [
+            colouring
+            for colouring in colourings
+            if all(
+                partial[column] is None
+                or partial[column] == colouring[column]
+                for column in range(total)
+            )
+        ]
+        assert completions
+        actual = Fraction(
+            sum(
+                triple_count(row_colours, colouring)
+                for colouring in completions
+            ),
+            len(completions),
+        )
+        assert conditional_energy(records, partial, remaining) == actual
 
 
 def verify() -> None:

@@ -125,6 +125,102 @@ required multiplicities and choose a label of minimum conditional
 expectation at each step to make the construction deterministic.
 \(\square\)
 
+## SAS5g -- exact conditional compression decoder
+
+Let \(\mathcal Q\) be the multiset of constraint records in the first
+display of SAS5f.  A record \(Q\) consists of three distinct columns
+and their three required row-block labels.  Suppose a partial column
+map is defined on \(A\subseteq[N]\).  Let \(r_\ell\) be the unused
+capacity of label \(\ell\), and put
+
+\[
+R=\sum_\ell r_\ell=N-|A|.
+\]
+
+If an already assigned column of \(Q\) has the wrong label, set
+\(p_Q=0\).  Otherwise let \(u_\ell(Q)\) count the unassigned columns of
+\(Q\) requiring label \(\ell\), and let
+\(u(Q)=\sum_\ell u_\ell(Q)\).  Define
+
+\[
+\boxed{
+p_Q
+=
+\frac{\prod_\ell(r_\ell)_{u_\ell(Q)}}{(R)_{u(Q)}},
+\qquad
+\Phi(A)=\sum_{Q\in\mathcal Q}p_Q.
+}
+\]
+
+The empty product and \((R)_0\) are one.
+
+### Theorem SAS5g -- PROVED
+
+The value \(\Phi(A)\) is exactly the expected final triple energy of a
+uniformly random balanced completion of the partial map.  If \(x\notin
+A\), then
+
+\[
+\boxed{
+\Phi(A)
+=
+\sum_{\ell:r_\ell>0}
+\frac{r_\ell}{R}
+\Phi(A\cup\{x\mapsto\ell\}).
+}
+\]
+
+Consequently the following deterministic algorithm returns a balanced
+map \(\kappa\) with
+
+\[
+\boxed{
+T(G_\kappa)\leq\Phi(\varnothing)
+=
+\frac{
+A_3(d)_3+A_{21}(d)_2d+A_{111}d^3
+}{(N)_3}.
+}
+\]
+
+Process the columns in any fixed order.  At a column \(x\), evaluate
+the displayed conditional potential for every label of positive
+remaining capacity and choose a minimizing label.  With the constraint
+list explicitly stored, the direct implementation uses
+\(O(Nb|\mathcal Q|)\) constraint evaluations and exact rational
+arithmetic.
+
+### Proof
+
+Conditioned on the partial map, the remaining labels are a uniformly
+random ordering of a multiset with \(r_\ell\) copies of label \(\ell\).
+If the assigned part of \(Q\) is compatible, the probability of drawing
+its required unassigned label multiset is the multivariate
+without-replacement probability
+
+\[
+\frac{\prod_\ell(r_\ell)_{u_\ell(Q)}}{(R)_{u(Q)}}.
+\]
+
+It is zero after an assigned mismatch.  Summing these indicator
+probabilities proves that \(\Phi(A)\) is the conditional expectation.
+
+The next label at \(x\) equals \(\ell\) with probability \(r_\ell/R\).
+The law of total expectation gives the second box, so at least one
+positive-capacity label has next potential at most the current one.
+Choosing such a label preserves a balanced completion and never
+increases \(\Phi\).  At a full assignment every \(p_Q\) is its
+zero-one violation indicator, hence \(\Phi=T(G_\kappa)\).  The initial
+value is the SAS5f expectation. \(\square\)
+
+This is an executable certificate, not only an averaging existence
+argument.  In particular, \(\Phi(\varnothing)<1\) produces a
+zero-conflict standard-grid block host because the final energy is a
+nonnegative integer.  More generally, the SAS5 endpoint follows
+whenever the initial potential is below \(d^3/18^3\).  Beating that
+initial benchmark still requires a structured arithmetic row partition
+or a stronger-than-greedy potential.
+
 ## Checkable SAS5 endpoint
 
 For the block-host spread constant \(C=9\) from SAS4b, SAS5a applies
@@ -157,4 +253,7 @@ not merely an arbitrary relabelling of the expanded SAS5e columns.
 
 `scripts/verify_sparse_balanced_compression.py` enumerates every balanced
 colouring for small consecutive and interlaced row partitions and checks
-both the exact energy and its average profile formula.
+both the exact energy and its average profile formula.  It also checks
+the conditional formula against every balanced completion along the
+greedy path, verifies the one-step averaging identity, and runs the
+deterministic decoder to a balanced nonincreasing final energy.

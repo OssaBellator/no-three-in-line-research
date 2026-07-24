@@ -246,6 +246,17 @@ that mean and a checkable sufficient condition for the SAS5a threshold.
 It also shows that the remaining compression step needs structured
 arithmetic colouring when the balanced-random benchmark is too large.
 
+The same note proves SAS5g and makes that deterministic claim fully
+explicit. For every partial balanced assignment, the conditional
+potential is a sum of multivariate hypergeometric terms
+\(\prod_\ell(r_\ell)_{u_\ell}/(R)_u\). Its remaining-capacity-weighted
+average over the next label equals the current potential. Greedy
+minimization therefore constructs a balanced map attaining the SAS5f
+mean bound, and an initial potential below one yields zero conflicts
+exactly. The remaining arithmetic frontier is to choose a row partition
+whose initial benchmark already meets the endpoint, or to introduce a
+stronger structured potential.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
