@@ -28,14 +28,14 @@ f_{m,0}(x)\ne f_{m,1}(x)
 \qquad(m\in\{u,v\}).
 \]
 
-For \(arepsilon\in\{0,1\}\), define \(f_{N,\varepsilon}\) coordinatewise by
+For \(\epsilon\in\{0,1\}\), define \(f_{N,\epsilon}\) coordinatewise by
 
 \[
-f_{N,\varepsilon}(x)\equiv f_{u,\varepsilon}(x\bmod u)\pmod u,
+f_{N,\epsilon}(x)\equiv f_{u,\epsilon}(x\bmod u)\pmod u,
 \]
 
 \[
-f_{N,\varepsilon}(x)\equiv f_{v,\varepsilon}(x\bmod v)\pmod v.
+f_{N,\epsilon}(x)\equiv f_{v,\epsilon}(x\bmod v)\pmod v.
 \]
 
 ### Theorem CMCRT2 — PROVED
@@ -70,9 +70,9 @@ P_2\equiv P_0\pmod v.
 Define the integer scaled collision vectors
 
 \[
-A=\frac{P_1-P_0}{u},
+A=(P_1-P_0)/u,
 \qquad
-B=\frac{P_2-P_0}{v}.
+B=(P_2-P_0)/v.
 \]
 
 ### Theorem CMCRT3 — PROVED
@@ -98,8 +98,8 @@ of the two-dimensional determinant gives
 \]
 
 The integer determinant vanishes exactly when \(A\) and \(B\) are linearly
-dependent over neither \(\mathbb Q\) nor \(\mathbb R\), equivalently when they
-are parallel. ∎
+dependent over \(\mathbb Q\), equivalently over \(\mathbb R\), or equivalently
+when they are parallel. ∎
 
 Thus CMCRT1's divisibility by `N` is not an uncontrolled carry: its quotient
 is an explicit determinant of scaled collision directions.
@@ -124,8 +124,7 @@ P_2\equiv P_0\pmod v,
 and therefore satisfies
 
 \[
-\det\left(rac{P_1-P_0}{u},
-          rac{P_2-P_0}{v}ight)=0.
+\det((P_1-P_0)/u,(P_2-P_0)/v)=0.
 \]
 
 ### Proof
@@ -147,10 +146,8 @@ For a global candidate set \(S_N\), define
 \[
 \mathcal D_u
 =
-\left\{
-\operatorname{prim}\left(\frac{P'-P}{u}\right):
-P\ne P',\ P\equiv P'\pmod u
-\right\},
+\{\operatorname{prim}((P'-P)/u):
+P\ne P',\ P\equiv P'\pmod u\},
 \]
 
 and define \(\mathcal D_v\) analogously. Directions are unoriented primitive
