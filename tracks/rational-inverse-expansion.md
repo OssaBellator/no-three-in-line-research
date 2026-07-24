@@ -206,6 +206,18 @@ factors into fixed linear factors and explicit quadratics
 the compatibility of the sparse coset polynomial with this
 trace-quadratic factorization.
 
+RI2j adds the multiplicative law behind those factors. If
+\(\{x,\tau_r(x)\}\) has image \(y\), then
+\[
+x+\tau_r(x)=y+1,\qquad x\tau_r(x)=ry.
+\]
+Hence an orbit joining source cosets \(A,B\) has forced target colour
+\(r^{-1}AB\). At a fixed source coset and target colour the neighbouring
+source coset is unique, so a core meeting \(k\) image cosets has quotient
+support degree at most \(k\). The unresolved rigidity now concerns a
+sparse polynomial together with this product-coloured bounded-degree
+coset relation.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement

@@ -176,13 +176,23 @@ def verify_orbit_trace(limit: int = 43) -> None:
             )
             for x in domain:
                 trace = orbit_trace(x, r, p)
+                mate = partner(x, r, p)
+                image = rational_image(x, r, p)
                 assert rational_image(x, r, p) == (
                     2 * r - 1 + trace
                 ) % p
-                assert orbit_trace(partner(x, r, p), r, p) == trace
+                assert orbit_trace(mate, r, p) == trace
+                assert (x + mate) % p == (image + 1) % p
+                assert x * mate % p == r * image % p
+                assert (
+                    x * x - (image + 1) * x + r * image
+                ) % p == 0
+                assert (
+                    mate * mate - (image + 1) * mate + r * image
+                ) % p == 0
                 for z in domain:
                     assert (orbit_trace(z, r, p) == trace) == (
-                        z == x or z == partner(x, r, p)
+                        z == x or z == mate
                     )
 
 
@@ -302,6 +312,42 @@ def verify(limit: int = 23) -> None:
                         (2 * r - 1 + orbit_trace(x, r, p)) % p
                         for x in core
                     }
+
+                    target_labels = {
+                        logarithm[value] % index for value in core_image
+                    }
+                    neighbours_by_colour: dict[
+                        int,
+                        dict[int, int],
+                    ] = {}
+                    seen_orbits: set[int] = set()
+                    r_label = logarithm[r] % index
+                    for x in core:
+                        if x in seen_orbits:
+                            continue
+                        mate = partner(x, r, p)
+                        image = rational_image(x, r, p)
+                        left = logarithm[x] % index
+                        right = logarithm[mate] % index
+                        colour = logarithm[image] % index
+                        assert colour == (left + right - r_label) % index
+                        for source, neighbour in (
+                            (left, right),
+                            (right, left),
+                        ):
+                            colour_map = neighbours_by_colour.setdefault(
+                                source,
+                                {},
+                            )
+                            if colour in colour_map:
+                                assert colour_map[colour] == neighbour
+                            else:
+                                colour_map[colour] = neighbour
+                        seen_orbits.update((x, mate))
+                    assert all(
+                        len(set(colour_map.values())) <= len(target_labels)
+                        for colour_map in neighbours_by_colour.values()
+                    )
 
                     if len(domain) <= 8:
                         ordered = tuple(sorted(domain))

@@ -286,6 +286,101 @@ is now precise: determine when the sparse coset polynomial can factor
 into these fixed linear and trace-quadratic orbit factors, or turn the
 resulting finite trace bank into an absorber.
 
+## RI2j -- orbit norm and quotient-coset product law
+
+Let \(z=\tau_r(x)\) and \(y=F_r(x)\) for \(x\in D_r\).
+
+### Theorem RI2j -- PROVED
+
+Every rational-inverse orbit obeys the exact sum and norm identities
+
+\[
+\boxed{
+x+z=y+1,
+\qquad
+xz=ry.
+}
+\]
+
+Equivalently, its one- or two-point orbit is the root multiset of
+
+\[
+\boxed{
+X^2-(y+1)X+ry.
+}
+\]
+
+Let \(H\leq\mathbb F_p^\times\).  If
+
+\[
+x\in \alpha H,
+\qquad
+z\in\beta H,
+\]
+
+then
+
+\[
+\boxed{
+y\in r^{-1}\alpha\beta H.
+}
+\]
+
+Consequently, compress any invariant core \(K\) to the following simple
+quotient support relation on \(\mathbb F_p^\times/H\): join source
+cosets \(A,B\) when one \(\tau_r\)-orbit of \(K\) meets both, and colour
+that quotient edge by the target coset containing its common image.
+The edge colour is forced to be
+
+\[
+\boxed{
+\operatorname{col}(A,B)=r^{-1}AB.
+}
+\]
+
+At a fixed source coset \(A\), one target colour \(C\) determines at
+most one neighbouring source coset,
+
+\[
+\boxed{
+B=rCA^{-1}.
+}
+\]
+
+Thus if \(F_r(K)\) meets \(k\) target \(H\)-cosets, every source vertex
+of the quotient support relation has at most \(k\) distinct neighbours
+(with a fixed-orbit loop counted once).
+
+### Proof
+
+The affine trace formula in RI2i gives
+
+\[
+y=2r-1+\left((x-r)+(z-r)\right)=x+z-1,
+\]
+
+which is the sum identity.  Directly from
+\[
+z=\frac{r(x-1)}{x-r},
+\qquad
+y=\frac{x(x-1)}{x-r},
+\]
+we obtain \(xz=ry\).  Vieta's formula gives the orbit polynomial.
+
+Taking multiplicative \(H\)-cosets in the norm identity yields
+\(yH=r^{-1}(xH)(zH)\), proving the product law and the edge-colour
+formula.  Solving \(C=r^{-1}AB\) for \(B\) proves uniqueness at a fixed
+source vertex.  Only colours met by \(F_r(K)\) can occur, so there are
+at most \(k\) distinct neighbours. \(\square\)
+
+RI2j turns the trace factorization into a multiplicative quotient
+constraint.  A low-target-coset invariant core is supported on a
+bounded-degree coset relation whose colours are not arbitrary: they are
+the products of its endpoint cosets divided by \(r\).  The remaining
+RI3 rigidity may therefore combine sparse-polynomial structure with
+this exact product-coloured quotient graph, while RI5 may treat each
+fixed endpoint-coset pair as one absorber channel.
+
 ## Coset-union form
 
 If
@@ -323,4 +418,5 @@ boundary degree, zero-boundary functional equation, and sparse
 coset-polynomial identity through small primes.  It also verifies the
 maximal invariant core, exact gcd polynomial, and disjoint image
 decomposition, together with the affine orbit-trace quotient and
-trace-quadratic core factorization.
+trace-quadratic core factorization.  The same regressions check the
+orbit sum/norm law and the product-coloured quotient-coset relation.
