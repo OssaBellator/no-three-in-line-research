@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify PX98--PX100: exact sparse rectangle reservoirs."""
+"""Verify PX100--PX102: exact sparse rectangle reservoirs."""
 from __future__ import annotations
 
 from itertools import combinations, permutations, product
@@ -53,7 +53,7 @@ def verify_alteration() -> None:
                 q = numerator / 20
                 lower = side * q - len(pairs) * q**2 - len(triples) * q**3
                 assert independence + 1e-12 >= lower
-    print("PX99 alteration bound: exhaustive through four vertices")
+    print("PX101 alteration bound: exhaustive through four vertices")
 
 
 def verify_constants() -> None:
@@ -63,7 +63,7 @@ def verify_constants() -> None:
         retained = side * q - 48 * side * q**2 - K * side * h * q**3
         claimed = side / (8 * sqrt(K * h))
         assert retained >= claimed
-    print("PX100 constants: checked through side 10000")
+    print("PX102 constants: checked through side 10000")
 
 
 def rectangle_state(
@@ -125,7 +125,7 @@ def main() -> None:
     verify_alteration()
     verify_constants()
     verify_small_states()
-    print("PX98--PX100 verification passed")
+    print("PX100--PX102 verification passed")
 
 
 if __name__ == "__main__":
