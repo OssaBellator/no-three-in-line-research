@@ -131,6 +131,15 @@ a complete fixed-rank layer, so it both supplies an exact normalized
 budget and proves that antichain preprocessing alone cannot replace the
 missing arithmetic expansion theorem.
 
+OP2i localizes that budget. The weighted variable loads sum to at most
+the maximum check rank \(r\), so at threshold \(\theta\) all heavy load
+is supported on at most \(r/\theta\) variables, while every other
+variable has load below \(\theta\). Some phase literal has load at most
+\(r/(n|\mathcal A_v|)\). This gives an exact bounded-kernel/low-load
+alternative for the current irreducible core; the remaining arithmetic
+task is to control the residual after conditioning on that kernel or to
+classify it as a structured exception.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -178,6 +187,9 @@ OP2g may be applied first: it removes subsumed checks and propagates all
 forced labels before any residual conflict-mass or topology estimate.
 OP2h then supplies a unit Lubell-mass budget for the resulting
 irreducible check family.
+OP2i further confines all variables above any fixed normalized-load
+threshold to a bounded kernel and gives explicit low-load literals
+outside it.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 

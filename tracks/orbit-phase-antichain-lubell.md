@@ -106,6 +106,132 @@ preprocessing removes redundancy, but new arithmetic input is necessary
 to turn the unit Lubell budget into private checks or a structured
 absorber.
 
+## OP2i -- Lubell load localization
+
+Give each irreducible check its OP2h weight
+
+\[
+w(C)
+=
+\frac1{
+\binom n{|S_C|}
+\prod_{v\in S_C}|\mathcal A_v|
+}.
+\]
+
+For a variable and a phase literal define
+
+\[
+\lambda(v)=\sum_{C:v\in S_C}w(C),
+\qquad
+\lambda(v,a)
+=
+\sum_{\substack{C:v\in S_C\\f_C(v)=a}}w(C).
+\]
+
+### Theorem OP2i -- PROVED
+
+If every check has arity at most \(r\), then
+
+\[
+\boxed{
+\sum_{v\in V}\lambda(v)
+=
+\sum_{C\in\mathcal C}|S_C|w(C)
+\leq r,
+}
+\]
+
+and
+
+\[
+\boxed{
+\sum_{a\in\mathcal A_v}\lambda(v,a)=\lambda(v).
+}
+\]
+
+Consequently, for every \(\theta>0\), the heavy-variable kernel
+
+\[
+H_\theta=\{v:\lambda(v)\geq\theta\}
+\]
+
+satisfies, together with the heavy-literal set
+
+\[
+L_\theta
+=
+\{(v,a):\lambda(v,a)\geq\theta\},
+\]
+
+the bounds
+
+\[
+\boxed{
+|H_\theta|\leq r/\theta,
+\qquad
+|L_\theta|\leq r/\theta.
+}
+\]
+
+Every variable outside \(H_\theta\) has normalized incident check load
+less than \(\theta\).  Moreover, some variable \(v\) and one of its
+phases \(a\) satisfy
+
+\[
+\boxed{
+\lambda(v)\leq\frac rn,
+\qquad
+\lambda(v,a)\leq\frac r{n|\mathcal A_v|}.
+}
+\]
+
+For a common \(h\)-phase alphabet and rank-two/three checks, the exact
+load formula is
+
+\[
+\lambda(v)
+=
+\frac{M_2(v)}{\binom n2h^2}
++
+\frac{M_3(v)}{\binom n3h^3},
+\]
+
+so \(|H_\theta|\leq3/\theta\).
+
+### Proof
+
+Double-count weighted check--variable incidences:
+
+\[
+\sum_v\lambda(v)=\sum_C|S_C|w(C).
+\]
+
+OP2h gives \(\sum_Cw(C)\leq1\), and
+\(|S_C|\leq r\), proving the first box.  Partitioning the checks
+incident with \(v\) according to their forbidden label at \(v\) gives
+the literal identity.  The total of all literal loads is therefore also
+at most \(r\).  Each heavy variable or heavy literal contributes at
+least \(\theta\) to its corresponding sum, proving both kernel bounds.
+Finally, averaging the variable loads gives a variable with load at most
+\(r/n\), and averaging its load among its
+\(|\mathcal A_v|\) literals gives the last assertion. \(\square\)
+
+The constants are sharp at the normalized scale: the complete layer of
+all arity-\(r\) canonical assignments has Lubell mass one,
+\(\lambda(v)=r/n\), and, for a common alphabet,
+\(\lambda(v,a)=r/(nh)\).
+
+OP2i supplies a bounded-kernel/low-load dichotomy for the irreducible
+core.  At any fixed threshold, every normalized heavy variable lies in
+an explicitly enumerable set of at most \(r/\theta\) variables; every
+remaining variable is already below the chosen local-load threshold.
+It does not claim that this load remains unchanged after conditioning
+on the kernel, so arithmetic expansion is still needed to control the
+conditioned residual or classify the heavy kernel.
+
 `scripts/verify_phase_antichain_lubell.py` exhaustively checks small
 binary and nonuniform-domain antichains and verifies equality for every
-complete fixed-rank layer.
+complete fixed-rank layer.  It also checks the variable/literal
+double-count identities, every rational heavy-kernel threshold in the
+test range, and the sharp complete-layer loads.
