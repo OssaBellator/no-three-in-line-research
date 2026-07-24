@@ -1,15 +1,19 @@
-# Ordered joint parent banks and split-rank collateral
+# Old-cell-clean ordered joint parent banks
 
 The exact prime-five and prime-seven escapes require a larger move than the
 terminal four-board: rematch one complete inherited layer block and then rematch
-the other against the new first layer. This chapter constructs that ordered
-joint bank at every block size and gives its exact split-rank collateral bound.
+the other against the new first layer.
 
-## 1. The 72-spread bound extends to every size at least four
+There is one essential geometric subtlety. It is not enough to move both
+**labeled** layers. An old first-layer grid cell could be reoccupied by the new
+second layer, so an old target triple might survive geometrically. Exact target
+destruction requires the final union to avoid every old cell of both parent
+blocks. The second stage therefore has three forbidden matchings.
 
-CMR110 proves the degree-two forbidden-board estimate for `t>=7`, while CMR128
-proves existence for `t>=4`. The same quantitative constant in fact holds over
-the entire range.
+This chapter constructs the resulting old-cell-clean bank for block size at
+least thirteen and gives its split-rank collateral law.
+
+## 1. Degree-two spread down to size four
 
 ### Theorem CMR153 — PROVED
 
@@ -31,98 +35,135 @@ uniform on `Omega(F)`, then
 
 ### Proof
 
-For `t>=7` this is CMR110. It remains to check `t=4,5,6`.
-
-A bipartite forbidden graph of maximum degree two is the union of two partial
-matchings. Extend both partial matchings to perfect matchings. Adding forbidden
-cells can only decrease the allowed set, so it suffices to consider the union
-of two complete matchings. Normalize the first to the identity and enumerate
-the relative second permutation.
-
-The exact minimum allowed-state counts are
+For `t>=7` this is CMR110. A degree-two bipartite forbidden graph is the union
+of two partial matchings. Extend them to complete matchings and normalize the
+first to the identity. Exact enumeration of the relative second matching gives
+minimum allowed-state counts
 
 \[
 2,\qquad12,\qquad80
 \]
 
-at `t=4,5,6`, respectively. These exceed
+at `t=4,5,6`. Each exceeds `t!/72`. At most `(t-r)!` permutations contain a
+fixed compatible rank-`r` prescription, proving the cylinder bound. ∎
 
-\[
-\frac{4!}{72},
-\qquad
-\frac{5!}{72},
-\qquad
-\frac{6!}{72}.
-\]
-
-For the cylinder estimate, at most `(t-r)!` permutations contain `Q`; divide by
-`t!/72`. ∎
-
-The size-three obstruction from CMR128 shows that `t=4` remains the sharp
-universal threshold.
-
-## 2. Ordered rematching of two inherited layer blocks
-
-Fix one column block `C` of size `t>=4` in a saturated state. Let `A_0` and
-`A_1` be the points of the two permutation layers in those columns. Each has
-`t` points and carries one set of `t` rows.
-
-Construct an ordered state as follows.
-
-1. Uniformly rematch `A_0` to its existing rows while avoiding its old cells and
-   the current cells of layer one.
-2. Conditional on the first matching, uniformly rematch `A_1` to its existing
-   rows while avoiding its old cells and the new cells of layer zero.
-
-At both stages the forbidden board has row and column degree at most two.
+## 2. A degree-three spread bank
 
 ### Theorem CMR154 — PROVED
 
-The ordered joint bank is nonempty and contains at least
+Let `F` have row and column degree at most three. For every `t>=13`,
 
 \[
-\left(\frac{t!}{72}\right)^2
+\boxed{
+|\Omega(F)|\ge\frac{t!}{700}.
+}
 \]
 
-ordered states.
-
-Every state preserves both permutation layers, exact saturation, and layer
-disjointness, and moves every point of `A_0 union A_1`.
-
-Let `Q_0,Q_1` be compatible prescribed cells in the two layer boards, with
+For a compatible rank-`r` partial matching `Q` and uniform `pi` in `Omega(F)`,
 
 \[
-|Q_0|=r_0,
-\qquad
-|Q_1|=r_1.
+\boxed{
+\Pr(Q\subseteq\pi)
+\le
+\frac{700}{(t)_r}.
+}
 \]
 
-Under the sequential uniform law,
+### Proof
+
+For each forbidden cell `(i,j)`, let `E_{ij}` be the canonical event
+`pi(i)=j` under a uniformly random permutation. Each event has probability
+`1/t`. In the lopsided permutation dependency graph, it has at most four
+neighbours: at most two further forbidden cells in its row and two in its
+column.
+
+Choose
+
+\[
+x=\frac2t.
+\]
+
+For `t>=13`,
+
+\[
+\frac1t
+\le
+\frac2t\left(1-\frac2t\right)^4,
+\]
+
+because `(1-2/13)^4>1/2` and the left factor increases with `t`. The lopsided
+local lemma gives
+
+\[
+\Pr(\pi\in\Omega(F))
+\ge
+\left(1-\frac2t\right)^{|F|}
+\ge
+\left(1-\frac2t\right)^{3t}.
+\]
+
+The final expression is increasing for `t>=13`, and at `t=13` it is
+
+\[
+\left(\frac{11}{13}\right)^{39}
+>
+\frac1{700}.
+\]
+
+Thus the state count follows. Divide the trivial upper bound `(t-r)!` for
+states containing `Q` by `t!/700`. ∎
+
+## 3. The old-cell-clean ordered joint bank
+
+Fix one column block `C` of size `t>=13` in a saturated state. Let `A_0,A_1`
+be the two inherited layer blocks in those columns, and let `O` be the union of
+their old grid cells.
+
+Construct an ordered state as follows.
+
+1. Rematch `A_0` to its existing rows while avoiding every cell of `O`.
+2. Conditional on the first matching, rematch `A_1` to its existing rows while
+   avoiding every cell of `O` and every new first-layer cell.
+
+The first forbidden board has degree at most two. The second has degree at most
+three: the old layer-zero cells, old layer-one cells, and new layer-zero cells
+are three partial matchings in the second board.
+
+### Theorem CMR155 — PROVED
+
+The old-cell-clean ordered joint bank contains at least
+
+\[
+\boxed{
+\frac{(t!)^2}{72\cdot700}
+}
+\]
+
+ordered states. Every state preserves both permutation layers, saturation, and
+layer disjointness, and its final point set avoids every old cell of `A_0 union
+A_1`.
+
+Let `Q_0,Q_1` prescribe `r_0,r_1` compatible cells in the first and second
+boards. Under the sequential uniform law,
 
 \[
 \boxed{
 \Pr(Q_0\cup Q_1\text{ is selected})
 \le
-\frac{72^{\mathbf 1_{r_0>0}+\mathbf 1_{r_1>0}}}
+\frac{72^{\mathbf1_{r_0>0}}700^{\mathbf1_{r_1>0}}}
 {(t)_{r_0}(t)_{r_1}}.
 }
 \]
 
-Here `(t)_0=1`. If a prescription conflicts with the random first matching,
-its conditional probability is zero.
-
 ### Proof
 
 CMR153 gives at least `t!/72` first-stage states. For every first-stage state,
-the second forbidden board again has degree at most two, so it has at least
-`t!/72` states. This proves the state count and all structural assertions.
+CMR154 gives at least `t!/700` second-stage states. Both structural claims
+follow from the forbidden sets.
 
-Expose the first matching. Its prescription probability is at most
-`72/(t)_{r_0}` when `r_0>0`. Conditional on any exposed first matching, the
-second prescription is either forbidden or has probability at most
-`72/(t)_{r_1}`. Multiply the bounds. ∎
-
-## 3. Exact target destruction
+Expose the first matching and apply its `72/(t)_{r_0}` cylinder bound.
+Conditional on it, the second prescription is either forbidden or has
+probability at most `700/(t)_{r_1}`. Multiply. ∎
 
 Put
 
@@ -132,66 +173,54 @@ A=A_0\cup A_1,
 X=S\setminus A.
 \]
 
-### Theorem CMR155 — PROVED
-
-Every old real triple touching `A` is absent from every ordered joint state.
-Thus the exact destroyed population is
+Because the final union avoids all old cells of `A`, every old triple touching
+`A` is destroyed. Hence the exact target population is
 
 \[
 D(A)=\Phi(S)-\Phi(X).
 \]
 
-In particular, the bank destroys every inherited four-core target whose chosen
-moved endpoint lies in `A`.
+## 4. Split-rank collateral law
 
-### Proof
-
-Every old cell of both layer blocks is forbidden at its corresponding stage.
-Hence no old point of `A` survives. A triple touching `A` therefore loses at
-least one cell. Triples wholly in `X` are unchanged. ∎
-
-## 4. Split-rank collateral identity
-
-For nonnegative integers `r_0,r_1` with
-
-\[
-1\le r_0+r_1\le3,
-\]
-
-let `T_{r_0,r_1}` count real-collinear candidate certificates consisting of
-
-- exactly `r_0` mutually compatible cells from the layer-zero board;
-- exactly `r_1` mutually compatible cells from the layer-one board;
-- exactly `3-r_0-r_1` fixed points of `X`;
-
-with the two board prescriptions also cell-disjoint. Candidate certificates
-which become forbidden after the first exposure are harmless overcounts.
+For `1<=r_0+r_1<=3`, let `T_{r_0,r_1}` count real-collinear candidate
+certificates with exactly `r_0` compatible first-board cells, `r_1` compatible
+second-board cells, and `3-r_0-r_1` fixed points of `X`. Overcounting cells which
+become conditionally forbidden is harmless.
 
 ### Theorem CMR156 — PROVED
 
-For a sequentially random ordered joint state `S_{pi_0,pi_1}`,
+For a sequentially random old-cell-clean state,
 
 \[
 \boxed{
 \begin{aligned}
 \mathbb E\bigl[\Phi(S_{\pi_0,\pi_1})-\Phi(X)\bigr]
 \le{}&
-\frac{72}{t}\bigl(T_{1,0}+T_{0,1}\bigr)\\
-&+\frac{72}{(t)_2}\bigl(T_{2,0}+T_{0,2}\bigr)
-+\frac{72^2}{t^2}T_{1,1}\\
-&+\frac{72}{(t)_3}\bigl(T_{3,0}+T_{0,3}\bigr)\\
-&+\frac{72^2}{(t)_2t}
+\frac{72}{t}T_{1,0}
++
+\frac{700}{t}T_{0,1}\\
+&+
+\frac{72}{(t)_2}T_{2,0}
++
+\frac{700}{(t)_2}T_{0,2}
++
+\frac{72\cdot700}{t^2}T_{1,1}\\
+&+
+\frac{72}{(t)_3}T_{3,0}
++
+\frac{700}{(t)_3}T_{0,3}\\
+&+
+\frac{72\cdot700}{(t)_2t}
 \bigl(T_{2,1}+T_{1,2}\bigr).
 \end{aligned}
 }
 \]
 
-Consequently, if the right side is strictly below `D(A)`, some ordered joint
-parent state lowers the triple potential.
+If the right side is below `D(A)`, some ordered joint state lowers the current
+triple potential.
 
-More generally, relative to a fixed global baseline `S_0`, if the parent excess
-is `e` and no joint state improves `S_0`, then the displayed weighted sum is at
-least
+Relative to a fixed global baseline `S_0`, if the parent excess is `e` and no
+joint state improves `S_0`, the displayed weighted sum is at least
 
 \[
 D(A)-e.
@@ -199,8 +228,9 @@ D(A)-e.
 
 ### Proof
 
-Every new triple has one of the nine displayed split ranks. Apply CMR154 to its
-prescribed cells and sum by linearity of expectation. CMR155 gives
+Every new triple has one of the nine displayed split ranks. Apply CMR155 to its
+prescribed cells and sum by linearity of expectation. Exact old-cell exclusion
+gives
 
 \[
 \Phi(S_{\pi_0,\pi_1})-\Phi(S)
@@ -208,35 +238,28 @@ prescribed cells and sum by linearity of expectation. CMR155 gives
 -D(A)+\bigl(\Phi(S_{\pi_0,\pi_1})-\Phi(X)\bigr).
 \]
 
-A negative expectation yields an improving state. For the global-baseline
-version, use the identity from CMR123:
+The global-baseline statement is the CMR123 identity with the joint block in
+place of the endpoint block. ∎
 
-\[
-\Phi(S_{\pi_0,\pi_1})-\Phi(X)
-=
-\bigl(\Phi(S_{\pi_0,\pi_1})-\Phi(S_0)\bigr)-e+D(A).
-\]
+## 5. Exceptional base blocks and remaining theorem
 
-The first term is nonnegative under global nonimprovement. ∎
+The general bank begins at `t=13`. This covers
 
-## 5. Remaining joint-parent theorem
+- every base block for primes `p>=13`;
+- every nonbase ancestor block at `p=5`, since its size is at least `25`;
+- every nonbase ancestor block at `p=7`, since its size is at least `49`.
 
-CMR156 supplies the exact bank and the exact collateral expression suggested by
-the `p=5` and `p=7` escape censuses. The remaining work is no longer to invent
-a larger move. It is to control the five split-rank sums using the inherited
-prefix geometry.
+The exceptional base blocks are exactly the cases already handled by exhaustive
+certificates:
 
-A sufficient theorem would show that, for the smallest ancestor block of every
-terminal four-core trap, the CMR156 right side is paid by
+- CMR147--CMR148 at `p=5`;
+- CMR151--CMR152 for the balanced `p=7` root family.
 
-1. the ancestor's quotient modular syndrome;
-2. its primitive carry-direction cells;
-3. the coarse target load which created the terminal core; or
-4. a reverse-scale account for fine triples recreated by the joint move.
+The remaining general theorem is to control the CMR156 split-rank sums by the
+ancestor's quotient, carry, and reverse-scale budgets. The new cross-layer
+higher-rank terms admit universal quadratic bounds in the next chapter; only
+rank-one secant shadows retain arithmetic content.
 
-This would convert the exact finite parent escapes into a general inherited
-escape theorem.
-
-No all-`n` theorem is claimed here. The small-size state counts and joint
-cylinder arithmetic are checked in
+No all-`n` theorem is claimed here. The finite degree-two counts, the
+`1/700` degree-three constant, and the split-rank arithmetic are checked in
 [`scripts/verify_prime_power_ordered_joint_parent.py`](../scripts/verify_prime_power_ordered_joint_parent.py).
