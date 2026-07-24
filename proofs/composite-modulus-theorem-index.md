@@ -34,7 +34,7 @@ This ledger collects the results specific to
 | CMR4 | Universal companion layer is saturated, Hamiltonian, and vertically bounded | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR5 | Binary digit-linear no-three channels at \(N=8,16,32\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR6 | Every completed-reciprocal secant is \(p\)-adically diagonal | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
-| CMR7 | Same-stratum fixed displacement has an exact square-root signature | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR7 | Same-stratum fixed displacement has a corrected exact square-root signature | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | CMR8 | One-channel syndrome is \(O(N^{5/2}+N^2\log N)\) | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | CMR9 | Same-stratum companion cross-displacement reduces to a quadratic | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | CMR10 | Universal mixed-layer companion determinant carry identity | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
@@ -64,7 +64,7 @@ This ledger collects the results specific to
 | CMR34 | The completed-inverse terminal state is companion-compatible and no-three at every prime power | PROVED | `docs/42-prime-power-terminal-family.md` |
 | CMR35 | Low shifts and nonsquare reciprocal parameters give no-three terminal permutations | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
 | CMR36 | The terminal family has exact one-cell \(O(1/p)\) and rank-two \(O(1/p^2)\) cylinder bounds | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
-| CMR37 | Independent terminal-family layers give a spread no-three companion base | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
+| CMR37 | Independent terminal-family layers give a spread no-three terminal bank | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
 | CMR38 | Uniform recursive p-adic permutations have an exact normalized pair-difference law | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
 | CMR39 | Uniform recursive p-adic permutations have expected harmonic energy \(O(N\log^3N)\) | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
 | CMR40 | The no-three terminal-base recursive bank retains expected harmonic energy \(O(N\log^3N)\) | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
@@ -83,5 +83,11 @@ This ledger collects the results specific to
 | CMR53 | Each cross-stratum valuation has a summed Hensel root bound | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
 | CMR54 | Complete divisor collisions satisfy \(C(a,d)<20N/d+13\sqrt N+8k\) | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
 | CMR55 | Completed reciprocals have harmonic energy \(O(N^{3/2}+N\log^3N)\) and syndrome \(O(N^2\log N)\) | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
+| CMR56 | The full completed-reciprocal companion host has a height-sensitive line cap | PROVED | `docs/52-prime-power-companion-global-syndrome.md` |
+| CMR57 | The full companion host has harmonic direction energy \(O(p^2N^{3/2}\log N+pkN^{3/2})\) | PROVED | `docs/52-prime-power-companion-global-syndrome.md` |
+| CMR58 | The full companion host has syndrome \(O_p(N^2\log N)\) for fixed odd prime base | PROVED | `docs/52-prime-power-companion-global-syndrome.md` |
+| CMR59 | Complete scalar averages of corrected displacement-root multiplicities equal \(\varphi(p^m)\) | PROVED | `docs/53-prime-power-average-displacement-roots.md` |
+| CMR60 | Unit scalar averages have an exact square/nonsquare formula and mean at most one | PROVED | `docs/53-prime-power-average-displacement-roots.md` |
+| CMR61 | Complete-residue fixed-direction candidate mass is below \(mp^m\) per stratum | PROVED | `docs/53-prime-power-average-displacement-roots.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
