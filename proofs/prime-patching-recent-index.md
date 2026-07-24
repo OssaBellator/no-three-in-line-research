@@ -48,6 +48,8 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3fa--PP3fc | Cross-block blocker-demand CSP and exact two-block obstruction | PROVED / EXHAUSTIVE FINITE CHECK | `docs/60-blocker-demand-csp-and-two-block-obstruction.md` |
 | PP3fd--PP3fh | Same-edge anchor domain pruning through divisor energy | PROVED / FROM STANDARD AND PUBLISHED LLL THEOREMS | `docs/72-same-edge-anchor-domain-pruning.md` |
 | PP3fi--PP3fl | Weighted slot-mass LLL endpoint and conditional spread | PROVED / FROM ASYMMETRIC AND PUBLISHED LLL THEOREMS | `docs/73-weighted-slot-mass-endpoint.md` |
+| PP3fm--PP3fr | Grouped pair/triple relations and completion-energy endpoint | PROVED | `docs/74-grouped-pattern-completion-energy.md` |
+| PP3fs--PP3fv | Oversampled refined label matching from average shadow and exact bad incidence | PROVED / FROM STANDARD LLL | `docs/75-oversampled-refined-label-matching.md` |
 
 ## Current exact target
 
@@ -61,32 +63,44 @@ total width MW = m^0.525.
 ```
 
 Matching pools, equal-margin restoration, complete internal no-three geometry,
-and fixed-rank internal spread are universal.  The refined-domain theorem PP3ff
-removes both fixed-pair patch cells and same-edge anchored patch pairs whenever
-the divisor-energy compatibility graph has a dense perfect matching.
+and fixed-rank internal spread are universal.
 
-The strongest current global endpoint is weighted rather than unweighted.  For
-every slot `s`, it is sufficient to prove
+The first half of source cleaning is now reduced to the oversampled label
+inequality
 
 ```text
-ordinary-source event mass at s
-+ cross-macro event mass at s
+(S_M + S_R) / ((1-gamma) R L)
++ U / (epsilon R L^2)
+< 1 - W/L,
+```
+
+where `U=sum_(A,B)|U_(A,B)|` is the exact same-edge-anchor bad-label incidence.
+Under this inequality and the local width bound, PP3fu supplies the required
+refined label matching and removes both fixed-pair cells and same-edge anchored
+pairs.  The divisor energy gives a weaker arithmetic fallback `U<=E`.
+
+The second half is weighted global compatibility.  For every slot `s`, it is
+sufficient to prove
+
+```text
+sum of grouped ordinary-source pair-event probabilities
++ sum of grouped cross-macro pair/triple-event probabilities
 <= 1/48 - o(1).
 ```
 
-PP3fk then solves all internal, source-containing, and cross-macro events in one
-asymmetric local-lemma assignment, while PP3fl preserves `O(R^-q)` fixed-rank
-spread.  The older PP3ei endpoint requiring only `O(R)` events per slot remains a
-simpler fallback.
+PP3fo writes this mass exactly as forbidden relation densities; PP3fp converts it
+to pair and triple completion energies.  PP3fk then solves all internal,
+source-containing, and cross-macro events in one asymmetric local-lemma
+assignment, while PP3fl preserves `O(R^-q)` fixed-rank spread.  The older PP3ei
+endpoint requiring only `O(R)` events per slot remains a simpler fallback.
 
-The remaining bottleneck has two explicit pieces:
+The remaining bottleneck therefore has two explicit quantitative pieces:
 
-1. prove that the refined movement/refill label graph from PP3ff has a perfect
-   matching in almost every macro pool, or exploit the boundary-shadow/Hall and
-   divisor-energy concentration alternatives with protected trades;
-2. group ordinary anchored-pair and cross-macro certificates into rank-two or
-   rank-three pattern events whose total incident probability mass is at most
-   `1/48-o(1)` per slot.
+1. prove the oversampled shadow/bad-incidence inequality in almost every macro
+   pool, or exploit its boundary-shadow, Hall, and divisor-energy concentration
+   alternatives with protected trades;
+2. prove the grouped completion-energy inequality from PP3fp, equivalently keep
+   the weighted external mass below `1/48-o(1)` at every slot.
 
 The constant-width side analysis PP3el--PP3fc sharpens what not to do: random
 independent deletion does not cover additional blockers, unary blocker-cover
