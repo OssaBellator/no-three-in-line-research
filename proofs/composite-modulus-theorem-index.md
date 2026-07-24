@@ -117,5 +117,17 @@ This ledger collects the results specific to
 | CMR87 | Collision carry excess is always below \(2N^2\) at one scale | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
 | CMR88 | Balanced recursive quotients have expected modular syndrome \(O_p(sm^2)\) | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
 | CMR89 | Total expected rank-one prefix collateral is \(O_p(N^2\log^2N)\) | PROVED | `docs/63-prime-power-quotient-excess-charging.md` |
+| CMR90 | Aggregate normalized rank-two prefix collateral is below \(2N^2\) per scale | PROVED | `docs/64-prime-power-higher-rank-prefix-collateral.md` |
+| CMR91 | Aggregate normalized rank-three prefix collateral is below \(N^2/(3p)\) per scale | PROVED | `docs/64-prime-power-higher-rank-prefix-collateral.md` |
+| CMR92 | All higher-rank prefix collateral is universally quadratic | PROVED | `docs/64-prime-power-higher-rank-prefix-collateral.md` |
+| CMR93 | A prefix rematching preserves every coarser row fibre and quotient state | PROVED | `docs/65-prime-power-descending-prefix-invariance.md` |
+| CMR94 | Fine-to-coarse prefix sweeps retain admissibility and initial quotient syndrome | PROVED | `docs/65-prime-power-descending-prefix-invariance.md` |
+| CMR95 | Frozen scale loads retain stable quotient charging after all finer repairs | PROVED | `docs/65-prime-power-descending-prefix-invariance.md` |
+| CMR96 | A two-endpoint-forbidden reciprocal node bank has exact size and cylinder law | PROVED | `docs/66-prime-power-recursive-compatible-star-bank.md` |
+| CMR97 | Reciprocal node-bank states preserve saturation and the recursive algebraic class | PROVED | `docs/66-prime-power-recursive-compatible-star-bank.md` |
+| CMR98 | A heavy child-digit pair supplies a recursive-compatible binary-star repair | PROVED | `docs/66-prime-power-recursive-compatible-star-bank.md` |
+| CMR99 | Recursive-compatible node repair has a child-digit-rank collateral inequality | PROVED | `docs/66-prime-power-recursive-compatible-star-bank.md` |
+| CMR100 | Child-subtree triple determinants are invariant under parent-node replacement | PROVED | `docs/67-prime-power-child-core-cancellation.md` |
+| CMR101 | Invariant child triples cancel exactly from the node-repair inequality | PROVED | `docs/67-prime-power-child-core-cancellation.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
