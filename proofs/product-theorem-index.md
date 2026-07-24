@@ -68,10 +68,15 @@ This index collects the product/composition results on
 | PX61 | Full hosts admit an exact three-labeling normal form with one row and two independent column labelings | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
 | PX62 | The `N x N` grid has at most `2N^4 H_(N-1)` unordered collinear triples | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
 | PX63 | Every saturated side-`n` factor has a factor-compatible side-`2n` product state with `O(n log n)` bad triples | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
-| PX64 | The universal low-syndrome state has line occupancy at most eight and logarithmic average rectangle defect degree | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
+| PX64 | The universal low-syndrome state has subcubic maximum line occupancy and logarithmic average rectangle defect degree | PROVED | `docs/53-universal-low-syndrome-doubling.md` |
+| PX65 | Every rectangle output factor has all-transposition relative cycle type | PROVED | `docs/54-transposition-class-recursion.md` |
+| PX66 | The side-eight all-transposition class has no affine-column full-selector template, even with arbitrary `P` | PROVED FINITE | `docs/54-transposition-class-recursion.md` |
+| PX67 | Every bad rectangle triple is destroyed at least `3(n-4)` times across the complete column-transposition bank | PROVED | `docs/55-rectangle-transposition-decoder.md` |
+| PX68 | Column transpositions cover every outside point once and every nontrivial inserted pair at most once | PROVED | `docs/55-rectangle-transposition-decoder.md` |
+| PX69 | Rectangle transpositions give an exact improvement-or-one/two-point-shadow inequality | PROVED | `docs/55-rectangle-transposition-decoder.md` |
 
 The branch has exact factor-independent product theorems for `2 x 3`, `2 x 4`,
-`2 x 5`, and `2 x 6`, together with an all-side approximate doubling theorem
-with only `O(n log n)` defects.  Exact infinite multiplicative closure now
-reduces to a sparse bounded-occupancy repair-or-structure theorem; arithmetic
-coverage remains open.
+`2 x 5`, and `2 x 6`, together with an all-side `O(n log n)` approximate
+doubling theorem and a transposition decoder. Exact infinite multiplicative
+closure now reduces to absorption of the resulting logarithmic one-point or
+bank-pair shadow concentration; arithmetic coverage remains open.
