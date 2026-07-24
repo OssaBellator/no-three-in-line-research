@@ -1,6 +1,6 @@
 # Two-coordinate protected affine-coset bank
 
-PX78 varies only one translation parameter in each additive coset.  PX80 shows
+PX89 varies only one translation parameter in each additive coset.  PX91 shows
 that this measure has far too much accumulated local certificate mass.  This
 chapter adds independent affine freedom to both rectangle coordinates while
 preserving every protected line capacity.
@@ -52,7 +52,7 @@ for an arbitrary global column shift `c_0`, and take the rectangle state
 Q(P,t,r).
 \]
 
-## Theorem PX81 -- PROVED
+## Theorem PX92 -- PROVED
 
 Suppose that for every coset `C_c` and every protected direction `(a,b) in D`,
 
@@ -125,7 +125,7 @@ Let `h=ell` be prime and let `M_ell(D,m)` be the set of slope pairs
 
 satisfying the two local unit conditions for all directions in `D`.
 
-### Theorem PX82 -- PROVED
+### Theorem PX93 -- PROVED
 
 If
 
@@ -205,7 +205,7 @@ Each of the five cosets therefore has
 5^2\cdot4=100
 \]
 
-protected local states, rather than the five translation states of PX78.  The
+protected local states, rather than the five translation states of PX89.  The
 complete bank has `100^5` states.
 
 This is still not asserted to contain a no-three state.  Deterministic sampling
@@ -214,13 +214,13 @@ but no asymptotic concentration theorem has yet been proved.
 
 ## 4. Revised protected-spread target
 
-PX81 supplies the geometry required by the missing two-coordinate protected
+PX92 supplies the geometry required by the missing two-coordinate protected
 spread theorem.  The remaining probabilistic task is now internal to the slope
 and shift variables:
 
 1. prove fixed-rank cylinder bounds for the induced permutations `P,t,r`;
 2. bound one-, two-, and three-coset collinearity certificate loads;
-3. combine the bounds with PX71 after choosing a height cutoff;
+3. combine the bounds with PX82 after choosing a height cutoff;
 4. apply a local lemma, resampling theorem, or conflict-free matching theorem.
 
 Unlike the translation-only bank, the row and column labels now move
