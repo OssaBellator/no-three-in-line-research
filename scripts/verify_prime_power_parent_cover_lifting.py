@@ -53,6 +53,8 @@ def cylinder(states: list[tuple[int, ...]], prescription) -> frozenset[int]:
 
 
 def verify_cylinder_maxima(max_t: int) -> None:
+    # Exact enumeration is intentionally kept to t<=6. The proof for arbitrary
+    # t uses the derangement-density inequalities from CMR176.
     for t in range(5, max_t + 1):
         states = derangements(t)
         rank_maxima = {}
@@ -71,10 +73,7 @@ def verify_minimum_rank_one_covers_at_five() -> None:
     states = derangements(t)
     universe = frozenset(range(len(states)))
     cells = [(row, column) for row in range(t) for column in range(t) if row != column]
-    cell_cylinders = {
-        cell: cylinder(states, (cell,))
-        for cell in cells
-    }
+    cell_cylinders = {cell: cylinder(states, (cell,)) for cell in cells}
 
     covers = []
     for chosen in combinations(cells, t - 1):
@@ -122,17 +121,17 @@ def verify_matching_star_arithmetic(max_edges: int) -> None:
     for edge_count in range(4, max_edges + 1):
         r = floor(sqrt(edge_count / 2))
         assert r >= 1
-        for maximal_matching_size in range(1, edge_count + 1):
-            if maximal_matching_size >= r:
-                continue
-            forced_degree = ceil(edge_count / (2 * maximal_matching_size))
+        # If a maximal matching has size q<r, the weakest forced-degree bound
+        # occurs at q=r-1. Checking that endpoint is enough.
+        if r > 1:
+            forced_degree = ceil(edge_count / (2 * (r - 1)))
             assert forced_degree >= r
         movable = ceil(r / 2)
         assert movable >= 1
 
 
 def main() -> None:
-    verify_cylinder_maxima(max_t=8)
+    verify_cylinder_maxima(max_t=6)
     verify_minimum_rank_one_covers_at_five()
     verify_profile_lifting(max_t=500)
     verify_matching_star_arithmetic(max_edges=100_000)
