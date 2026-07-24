@@ -23,6 +23,14 @@ from math import gcd, isqrt
 
 Point = tuple[int, int]
 
+FINITE_COMPOSITE_CONSTRUCTIONS: dict[int, tuple[list[int], list[int]]] = {
+    4: ([2, 0, 3, 1], [0, 2, 1, 3]),
+    6: ([4, 3, 5, 0, 2, 1], [3, 1, 0, 5, 4, 2]),
+    8: ([3, 6, 7, 1, 0, 5, 2, 4], [2, 0, 3, 7, 1, 4, 6, 5]),
+    9: ([1, 2, 7, 5, 0, 3, 8, 4, 6], [6, 0, 8, 3, 7, 5, 1, 2, 4]),
+    10: ([8, 3, 7, 5, 1, 9, 0, 2, 6, 4], [5, 2, 8, 3, 0, 6, 9, 4, 7, 1]),
+}
+
 
 def determinant(a: Point, b: Point, c: Point) -> int:
     """Twice the signed Euclidean area."""
@@ -140,6 +148,20 @@ def crt_product_permutation(
         crt_pair((a_u * (x % u) + b_u) % u, (a_v * (x % v) + b_v) % v, u, v)
         for x in range(n)
     ]
+
+
+def verify_finite_constructions() -> int:
+    checks = 0
+    for n, (first, second) in FINITE_COMPOSITE_CONSTRUCTIONS.items():
+        assert sorted(first) == list(range(n))
+        assert sorted(second) == list(range(n))
+        assert all(first[x] != second[x] for x in range(n))
+        points = [(x, first[x]) for x in range(n)] + [(x, second[x]) for x in range(n)]
+        assert set(Counter(x for x, _ in points).values()) == {2}
+        assert set(Counter(y for _, y in points).values()) == {2}
+        assert all(determinant(a, b, c) != 0 for a, b, c in combinations(points, 3))
+        checks += 1
+    return checks
 
 
 def verify_affine(max_modulus: int) -> int:
@@ -277,12 +299,13 @@ def main() -> None:
     if args.max_modulus < 9:
         parser.error("--max-modulus must be at least 9")
 
+    finite_checks = verify_finite_constructions()
     affine_checks = verify_affine(args.max_modulus)
     hyperbola_checks = verify_hyperbola_collapses(args.max_modulus)
     lifting_checks = verify_lifting_and_crt(args.max_modulus)
 
     print(
-        f"verified through N={args.max_modulus}: "
+        f"verified finite constructions={finite_checks}; through N={args.max_modulus}: "
         f"affine={affine_checks}, "
         f"hyperbola={hyperbola_checks}, "
         f"lifting/CRT={lifting_checks}"
