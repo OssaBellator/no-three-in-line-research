@@ -80,6 +80,19 @@ The local trades from BDA2 can be selected on a linear-size disjoint subfamily o
 
 The proof must use the bounded denominator and explicit wrap-index residues; generic bounded codegree is insufficient.
 
+### Proved combinatorial reduction
+
+[`bounded-denominator-conflict-regularization.md`](bounded-denominator-conflict-regularization.md)
+proves BDA3a. If the total integer labelled conflict mass on \(n\)
+candidate chamber blocks is at most \(D_qn\), deterministic
+regularization retains at least half the blocks with load at most
+\(4D_q\), and greedy colouring extracts a linear-size compatible
+subfamily. In the paid weighted form, either such a family retains a
+constant fraction of paid mass or more than half the paid mass lies on
+high-load blocks. Thus the remaining BDA3 step is the \(q\)-stripe
+arithmetic bound on total conflict mass, or classification of its
+high-load alternative as a periodic template.
+
 ## BDA4 — exception classification
 
 ### Target statement
@@ -118,8 +131,10 @@ For every `q` tested, enumerate the finite quotient CSP and search for:
 - order-two exceptions;
 - collisions between the two permutation layers.
 
-The cyclic two-forbidden-matching local bank is now retained as an
-exhaustive regression in `scripts/verify_bda_local_bank.py`.
+The cyclic two-forbidden-matching local bank and deterministic conflict
+regularization are retained as exhaustive regressions in
+`scripts/verify_bda_local_bank.py` and
+`scripts/verify_bda_conflict_regularization.py`.
 
 Any frozen template must be added to BDA4 rather than hidden in an asymptotic estimate.
 
