@@ -181,7 +181,9 @@ There is an admissible common-ratio bank with
 \boxed{
 D(M)
 \ge
-\frac{k-3}{3(Kk-1)}H-rac{\beta k}{2}.
+\frac{k-3}{3(Kk-1)}H
+-
+\frac{\beta k}{2}.
 }
 \]
 
@@ -269,7 +271,9 @@ If
 
 \[
 \boxed{
-\frac{k-3}{3(Kk-1)}H-rac{\beta k}{2}
+\frac{k-3}{3(Kk-1)}H
+-
+\frac{\beta k}{2}
 >
 k\Theta+2q\Lambda,
 }
