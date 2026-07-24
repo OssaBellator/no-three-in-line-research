@@ -11,8 +11,11 @@ Prime-gap information alone is not sufficient: embedding a `2m`-point solution
 into an `n x n` grid leaves `2(n-m)` missing points. The essential theorem is an
 exact extension absorber.
 
-Detailed statements and proofs are in
-[`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md).
+Detailed statements and proofs are in:
+
+- [`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md);
+- [`docs/28-one-strip-and-pair-aware-patching.md`](../docs/28-one-strip-and-pair-aware-patching.md).
+
 Small exact computations are recorded in
 [`experiments/prime-patching-small.md`](../experiments/prime-patching-small.md).
 
@@ -20,59 +23,61 @@ Small exact computations are recorded in
 
 ### Status: PROVED for saturation; geometry separated into PP2
 
-Let `S_m` be a saturated no-three-in-line configuration on `[m]^2`. For
-`t>=1`, define the enlarged grid `[m+t]^2`.
-
 The row-column bookkeeping is now exact:
 
-- for `t>=2`, any two edge-disjoint permutation graphs on the new `t x t`
-  corner add exactly `2t` points without changing the old core;
-- for `t=1`, deleting one old point `(x,y)` and inserting
-  `(x,m+1)`, `(m+1,y)`, and `(m+1,m+1)` adds two points and preserves every
-  row and column degree;
-- a proposed patch is geometrically valid exactly when it avoids old-pair
-  secants, old-anchor/new-pair triples, and internal new-point triples.
-
-The last three conflict classes are the PP2 problem, not part of the solved
-saturation interface.
+- for `t>=2`, two edge-disjoint permutation graphs on the new `t x t` corner
+  add exactly `2t` points without changing the old core;
+- for `t=1`, every boundary-only degree state is one of exactly two forms:
+  a one-point corner splice or a two-edge strip switch;
+- the complete `t=1` list has only `2m^2-m` forced candidates;
+- geometric validity is exactly the avoidance of old-pair secants,
+  old-anchor/new-pair triples, and internal new-point triples.
 
 ## PP2 — Secant-shadow patching lemma
 
-### Status: OPEN
+### Status: OPEN, with exact endpoints and obstructions
 
 There should be functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one
-can choose or prepare a reservoir in `S_m` with the following property:
+can choose or prepare a reservoir in `S_m` that supports an exact
+row-column-preserving completion without creating any triple.
 
-- delete at most `f(t)` reservoir blocks;
-- insert a row-column-preserving completion involving the `t` new rows and
-  `t` new columns;
-- create no collinear triple with retained old points;
-- internally avoid all triples among new and replacement points.
+The following parts are now proved:
 
-The desired width should be at least polylogarithmic in `m`; an `m^theta` width
-would also be useful if matched by a proven prime-gap theorem.
+- secants through any external point form a matching on the old configuration;
+- a one-strip patch is valid exactly when its one- or two-point deletion set
+  covers every inserted-point blocker matching and every mixed inserted pair
+  avoids retained old anchors;
+- for a wider corner, a pair-aware clone-space local lemma gives an exact
+  sufficient inequality in the maximum omitted-cell, old-anchor-pair, and
+  internal-triple loads;
+- for `t>=100`, the concrete bounds
+  `m_*<=t/100`, `pi_*<=t^2/400`, and `tau_*<=t^3/400` suffice;
+- failure under this endpoint forces one of those three local loads to be large.
 
-A finite warning is now explicit: for the recorded `n=3` seed, the exact
-boundary-only `3 -> 4` search is exhausted through deletion budget four, while
-an unrestricted two-deletion patch succeeds using an interior replacement
-cell. This refutes that naive boundary-only model for that seed, not PP2 in
-general.
+The missing work is to construct a prepared prime-minus-one seed and candidate
+bank satisfying those load bounds for a useful width.
 
 ## PP3 — Robust seed preparation
 
-### Status: OPEN
+### Status: OPEN; naive one-strip recursion REFUTED
 
-Prove that the prime-minus-one construction can be chosen with a boundary or
-distributed absorber reservoir satisfying PP2, rather than as an arbitrary
-saturated configuration. The reservoir should have:
+A prepared reservoir should have low old-pair shadow, low old-anchor pair load,
+controlled internal direction families, interchangeable row-column states, and
+compatibility with a variable deletion budget.
 
-- low secant shadow into future rows and columns;
-- many interchangeable row-column states;
-- bounded interaction with the core construction;
-- compatibility with deleting a variable number `t` of blocks.
+Finite exhaustive results show why this cannot be omitted:
 
-This may require reserving rows and columns before the main prime-grid repair
-process.
+- among all labeled saturated no-three states, only `1/2` at `n=3`, `4/11` at
+  `n=4`, and `9/32` at `n=5` admit a boundary-only one-strip extension;
+- branching over every one-strip state from the unique `n=2` seed reaches
+  `2` states at `n=3`, `1` at `n=4`, and none at `n=5`;
+- every stored certificate with `3<=n<=10` is boundary-only one-strip blocked;
+- unrestricted interior replacement nevertheless extends the stored chain
+  through `n=10`.
+
+Thus a universal repetition of the two one-strip moves is refuted. Wider
+boundary ladders, distributed absorbers, and interior tomographic trades remain
+viable.
 
 ## PP4 — Prime-gap transfer theorem
 
@@ -105,45 +110,38 @@ No prime-gap input completes this branch while PP2 and PP3 remain open.
 
 ### Status: VERIFIER COMPLETE; CERTIFICATES VERIFIED FOR `2<=n<=10`
 
-Once PP4 covers all `n>=n_0`, provide exact constructions or certified
-computational solutions for every `n<n_0` not already covered.
-
-`scripts/verify_no_three_certificate.py` checks machine-readable coordinate
-files using exact integer determinants, exact bounds, distinctness, point count,
-and two points in every row and column. The file
-[`certificates/prime-patching-small.json`](../certificates/prime-patching-small.json)
-contains verified saturated no-three-in-line configurations for every
+`scripts/verify_no_three_certificate.py` checks machine-readable coordinates
+using exact integer determinants, exact bounds, distinctness, point count, and
+two points in every row and column. The current certificate corpus covers
 `n=2,...,10`.
 
 The missing PP5 work is the eventual threshold and the complete certificate set
-below it; the current finite set is a regression corpus and genuine partial
-coverage, not a closure of PP5.
+below it.
 
-## Computational falsification
+## Computational tools
 
-`scripts/search_boundary_extension.py` exhaustively searches small patches with
-a chosen deletion budget. It distinguishes:
+- `scripts/search_boundary_extension.py`: general prescribed-degree extension
+  CSP with explicit `found`, `exhausted`, and `cutoff` outcomes;
+- `scripts/analyze_one_strip_extensions.py`: complete `t=1` boundary-only
+  analyzer using the two-state classification;
+- `scripts/enumerate_one_strip_seeds.py`: exhaustive labeled seed graph for
+  small sides;
+- `scripts/analyze_corner_patch_loads.py`: exact wider-corner cell/pair/triple
+  load profiler;
+- `scripts/verify_no_three_certificate.py`: exact finite certificate verifier.
 
-- `found`, with a complete coordinate certificate;
-- `exhausted`, a genuine negative result within the stated search model;
-- `cutoff`, an explicitly inconclusive resource limit.
+## Candidate absorber designs still viable
 
-The `--boundary-only` mode can be compared with unrestricted replacement to
-search for cores requiring interior changes. The exact `n=2` through `n=10`
-chain and the finite exhausted searches are recorded in the experiment note.
-
-## Candidate absorber designs
-
-- boundary ladders using alternating cycles in the row-column graph;
+- boundary ladders spanning several new rows and columns;
 - subgroup-coset blocks reserved across several outer strips;
-- recursive two-row/two-column extension gadgets;
-- Hall-type completion in a near-complete new-row/new-column host;
-- tomographic trades that free selected old rows and columns before extension.
+- Hall-type completion after structured shadow cleaning;
+- tomographic trades that free selected old rows and columns before extension;
+- distributed reservoirs designed during the prime-grid repair process.
 
 ## Completion criterion
 
 This branch is complete only when PP2 and PP3 provide an exact extension width
 large enough for PP4, followed by a verified PP5 certificate set for the
-remaining side lengths. The current branch closes PP1, the logical and
-prime-gap parts of PP4, the PP5 verification machinery, and the cases
-`2<=n<=10`; it does not prove the no-three-in-line conjecture.
+remaining side lengths. The current branch closes PP1, the pair-aware PP2
+endpoint, the logical and prime-gap parts of PP4, and finite verification
+machinery; it does not prove the no-three-in-line conjecture.
