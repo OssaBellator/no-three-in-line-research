@@ -21,6 +21,10 @@ The numbering is local to this repository.
 | PP2i | Failed general reservoir endpoint forces a heavy local load | PROVED | `docs/29-general-reservoir-patching.md` |
 | PP2j | Internally clean spread-bank external-patching theorem | PROVED | `docs/29-general-reservoir-patching.md` |
 | PP2k | Cell/pair spread criterion for an internally clean bank | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP2l | Exact variable-reservoir deletion-aware expectation theorem | PROVED | `docs/37-variable-reservoir-patch-banks.md` |
+| PP2m | Uniform joint-incidence form for variable reservoirs | PROVED | `docs/37-variable-reservoir-patch-banks.md` |
+| PP2n | Deletion-blind variable-reservoir fallback | PROVED | `docs/37-variable-reservoir-patch-banks.md` |
+| PP2o | Failed variable-reservoir bank forces a concentrated joint certificate | PROVED | `docs/37-variable-reservoir-patch-banks.md` |
 | PP3a | Exact labeled one-strip seed graph through side five | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP3b | Averaging criterion for a boundary-only type-two seed extension | PROVED | `docs/29-general-reservoir-patching.md` |
 | PP3c | Every noncorner one-strip boundary cell has an automatic axis blocker | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
@@ -49,6 +53,30 @@ The numbering is local to this repository.
 | PP3z | Exact independent component-clean row-lift endpoint | PROVED | `docs/35-component-clean-row-lift-banks.md` |
 | PP3aa | Cell/pair spread form of the component-clean endpoint | PROVED | `docs/35-component-clean-row-lift-banks.md` |
 | PP3ab | Quadratic cross-triple cap for two internally clean components | PROVED | `docs/35-component-clean-row-lift-banks.md` |
+| PP3ac | Monotone two-branch parabola is internally no-three with positive secants | PROVED | `docs/36-monotone-parabolic-reservoirs.md` |
+| PP3ad | Upper-left/lower-right positive-secant components have no cross triple | PROVED | `docs/36-monotone-parabolic-reservoirs.md` |
+| PP3ae | Exact parabolic matching-reservoir patch interface | PROVED | `docs/36-monotone-parabolic-reservoirs.md` |
+| PP3af | Square-root coordinate width for one parabolic rung | PROVED | `docs/36-monotone-parabolic-reservoirs.md` |
+| PP3ag | Coarse external certificate bounds for a parabolic patch | PROVED | `docs/36-monotone-parabolic-reservoirs.md` |
+| PP3ah | Multi-rung parabolic coordinate-budget inequality | PROVED | `docs/38-parabolic-rung-budget.md` |
+| PP3ai | Prime-gap exponent converts to rung-count exponent `2theta-1` | PROVED | `docs/38-parabolic-rung-budget.md` |
+| PP3aj | Degree-two matching-reservoir graph factorizes into paths and cycles | PROVED | `docs/39-matching-reservoir-cycle-factorization.md` |
+| PP3ak | Exact forced and cycle-optional deletion marginals | PROVED | `docs/39-matching-reservoir-cycle-factorization.md` |
+| PP3al | Deletion-cycle entropy alone does not dilute fixed certificates | PROVED | `docs/39-matching-reservoir-cycle-factorization.md` |
+| PP3am | Exact 2-SAT equivalence for fixed-patch cycle reservoirs | PROVED | `docs/40-cycle-reservoir-2sat.md` |
+| PP3an | Forced-deletion certificate criterion for cycle reservoirs | PROVED | `docs/40-cycle-reservoir-2sat.md` |
+| PP3ao | Unary cycle-reservoir criterion | PROVED | `docs/40-cycle-reservoir-2sat.md` |
+| PP3ap | Implication-graph SCC criterion for cycle reservoirs | PROVED | `docs/40-cycle-reservoir-2sat.md` |
+| PP3aq | Affine-sheared double parabola remains internally no-three | PROVED | `docs/41-sheared-parabolic-banks.md` |
+| PP3ar | Offset-shear component bank has explicit cell and pair spread | PROVED | `docs/41-sheared-parabolic-banks.md` |
+| PP3as | Matching-admissible sheared patch bank has joint component spread | PROVED | `docs/41-sheared-parabolic-banks.md` |
+| PP3at | Deletion-blind external endpoint for sheared parabolic banks | PROVED | `docs/41-sheared-parabolic-banks.md` |
+| PP3au | Complete degree classification of cross-only width-two matching patches | PROVED | `docs/42-width-two-matching-patches.md` |
+| PP3av | Exact geometric criterion for width-two matching patches | PROVED | `docs/42-width-two-matching-patches.md` |
+| PP3aw | Stored-corpus width-two matching-patch obstruction | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/42-width-two-matching-patches.md` |
+| PP3ax | Alternating rectangle switches preserve saturation | PROVED | `docs/43-one-rectangle-patch-repair.md` |
+| PP3ay | Exact one-rectangle no-three repair criterion | PROVED | `docs/43-one-rectangle-patch-repair.md` |
+| PP3az | Exactly three stored width-two states admit one-rectangle repair | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/43-one-rectangle-patch-repair.md` |
 | PP3-R4 | Aligned off-diagonal block-doubling row-lift construction | REFUTED | `docs/33-off-diagonal-reservoir-obstruction.md` |
 | PP3-R3 | Unrestricted full row-lift bank is automatically clean | REFUTED | `docs/31-sequential-row-lift-local-lemma.md` |
 | PP3-R2 | Unconditioned PP3b boundary-shadow criterion as a usable seed test | REFUTED AS USEFUL | `docs/30-deletion-aware-row-lift-banks.md` |
