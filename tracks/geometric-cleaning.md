@@ -119,9 +119,16 @@ is not discarded.
 proves GC4b for each unweighted triple step in that witness. A high-load
 anchor has either a high-codegree pair or an endpoint-disjoint star of
 size at least \(d(v)/(2\Delta-1)\). This supplies the exact alternating
-bank topology; the remaining geometric obligation is to attach current
-paid incidence or convert the high-codegree pair into arithmetic
-structure.
+bank topology. GC4c gives its weighted form: in the bounded-codegree
+case one star retains at least \(1/(2\Delta-1)\) of whatever fresh
+weight is placed on the triples. Thus paid input remains paid. The
+remaining geometric obligation is to identify the GC4a candidate weight
+with current syndrome incidence, or convert the high-codegree pair into
+arithmetic structure carrying that incidence. GC4d accumulates this over
+a peeling prefix: absent a high-codegree pair, \(k\) steps yield
+certificate-disjoint stars of total fresh weight greater than
+\(k\tau/(2\Delta-1)\). Only their cross-star installation conflicts and
+the latent-to-paid conversion remain.
 
 ## GC5 — Clean-host endpoint theorem
 

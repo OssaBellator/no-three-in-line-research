@@ -21,6 +21,21 @@ def maximal_matching(
     return chosen
 
 
+def greedy_edge_colouring(
+    edges: tuple[tuple[int, int], ...]
+) -> list[list[tuple[int, int]]]:
+    colours: list[list[tuple[int, int]]] = []
+    for edge in edges:
+        endpoints = set(edge)
+        for colour in colours:
+            if all(endpoints.isdisjoint(other) for other in colour):
+                colour.append(edge)
+                break
+        else:
+            colours.append([edge])
+    return colours
+
+
 def verify(max_vertices: int = 6) -> None:
     for size in range(max_vertices + 1):
         possible = tuple(combinations(range(size), 2))
@@ -40,10 +55,36 @@ def verify(max_vertices: int = 6) -> None:
             if edges:
                 assert len(matching) * (2 * delta - 1) >= len(edges)
 
+            colours = greedy_edge_colouring(edges)
+            assert len(colours) <= max(0, 2 * delta - 1)
+            assert sorted(edge for colour in colours for edge in colour) == list(
+                edges
+            )
+            assert all(
+                len({vertex for edge in colour for vertex in edge})
+                == 2 * len(colour)
+                for colour in colours
+            )
+
+            weights = {
+                edge: 1 + (5 * index + 2 * mask) % 13
+                for index, edge in enumerate(edges)
+            }
+            total_weight = sum(weights.values())
+            heaviest = max(
+                (
+                    sum(weights[edge] for edge in colour)
+                    for colour in colours
+                ),
+                default=0,
+            )
+            if edges:
+                assert heaviest * (2 * delta - 1) >= total_weight
+
 
 def main() -> None:
     verify()
-    print("GC anchor-link dichotomy: verified through six link vertices")
+    print("weighted GC anchor-link dichotomy: verified through six vertices")
 
 
 if __name__ == "__main__":
