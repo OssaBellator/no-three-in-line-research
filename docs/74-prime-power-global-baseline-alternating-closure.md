@@ -103,7 +103,7 @@ A matching in `H` means a family of vertex-disjoint collinear triples.
 
 ### Theorem CMR124 — PROVED
 
-Let `s>=7`. If
+Let `s>=4`. If
 
 \[
 |H|
@@ -118,7 +118,7 @@ then at least one of the following holds.
 2. **Alternating expansion.** There is a point `z` and `2s-1`
    endpoint-disjoint secants through `z` such that one can choose one endpoint
    from each of `s` secants in one fixed permutation layer. Those `s` endpoints
-   support a CMR110 alternating matching bank which preserves saturation and
+   support a CMR128 alternating matching bank which preserves saturation and
    destroys the `s` corresponding triples in every state.
 3. **External line core.** A real line `L` contains more than `2s` points of
    `X`.
@@ -145,8 +145,8 @@ endpoint in one fixed layer. Choose one such endpoint from each pair.
 The chosen endpoints are distinct and, within one permutation layer, occupy
 distinct rows and columns. Forbid their original cells and the cells occupied by
 the other layer. The forbidden board has row and column degree at most two, so
-CMR110 gives a nonempty matching bank. Moving every chosen endpoint destroys all
-`s` original triples through `z`. This is the second alternative.
+CMR128 gives a perfect matching because `s>=4`. Moving every chosen endpoint
+destroys all `s` original triples through `z`. This is the second alternative.
 
 It remains to suppose that a maximal matching in `G_z` has at most `2s-2`
 edges. Its endpoints form a vertex cover of `G_z` of size at most `4s-4`.
@@ -172,27 +172,33 @@ collinearity. It does not use a modular-to-real implication.
 
 ## 3. Conversion of a globally frozen endpoint bank
 
-Suppose an extracted alternating bank has size `t>=7` and destroys `t` current
+Suppose an extracted alternating bank has size `t>=4` and destroys `t` current
 star triples. Keep the original state `S_0` as the global comparison baseline.
+Define
+
+\[
+\sigma(t)
+=
+\max\left\{
+ s\ge4:
+ 24(s-1)^2(3s-2)\le t
+\right\},
+\]
+
+whenever this set is nonempty.
 
 ### Corollary CMR125 — PROVED
 
-Put
-
-\[
-s(t)=\left\lfloor\left(\frac{t}{72}\right)^{1/3}\right\rfloor.
-\]
-
-If `s(t)>=7`, then at least one of the following holds.
+If `sigma(t)` is defined, then at least one of the following holds.
 
 1. Some endpoint-bank state has potential strictly below `Phi(S_0)`.
 2. The chosen parent state has excess at least `t/2` over `S_0`.
-3. Some globally nonimproving endpoint state contains `s(t)` vertex-disjoint
-   real triples touching its replacement matching.
+3. Some globally nonimproving endpoint state contains `sigma(t)`
+   vertex-disjoint real triples touching its replacement matching.
 4. Some globally nonimproving endpoint state exposes a new alternating bank of
-   size `s(t)`.
+   size `sigma(t)`.
 5. Some globally nonimproving endpoint state has an external line containing
-   more than `2s(t)` points outside its replacement matching.
+   more than `2sigma(t)` points outside its replacement matching.
 
 ### Proof
 
@@ -200,27 +206,29 @@ If the first alternative fails, apply CMR123. If the parent excess is at least
 `t/2`, the second alternative holds. Otherwise every endpoint state has at least
 `t/2` triples touching its replacement matching.
 
-Since
+By the definition of `sigma(t)`,
 
 \[
 \frac t2
 \ge
-36s(t)^3
->
-12(s(t)-1)^2(3s(t)-2),
+12(\sigma(t)-1)^2(3\sigma(t)-2).
 \]
 
 CMR124 applies to any endpoint state and gives one of the final three
 alternatives. ∎
 
-The threshold `s(t)>=7` is guaranteed once
+The parameter `sigma(t)` is defined once
 
 \[
-t\ge72\cdot7^3=24696.
+t\ge
+24(4-1)^2(3\cdot4-2)
+=
+2160.
 \]
 
-Smaller banks form an absolute finite residual class rather than a scale-growing
-obstruction.
+Thus banks smaller than `2160` form the absolute residual class. This improves
+the earlier coarse threshold `24696`; the quantitative spread theorem CMR110 is
+not needed after the next star has already been extracted.
 
 ## 4. Descending closure size
 
@@ -232,32 +240,52 @@ Follow only branches which
 - have parent excess below half the current star size;
 - do not terminate in a paid disjoint-defect family or an external line core.
 
-Then the successive alternating bank sizes satisfy
+For every current size `t_j>=2160`, the next alternating bank may be restricted
+to exactly
+
+\[
+t_{j+1}=\sigma(t_j)
+\]
+
+endpoints. Moreover,
 
 \[
 t_{j+1}
-\le
-\left(\frac{t_j}{72}\right)^{1/3}
 <
-t_j^{1/3}.
+\left(\frac{t_j}{12}\right)^{1/3}.
 \]
 
-Hence every such branch reaches a bank of size below `24696` after
-`O(log log t_0)` expansions. More explicitly, it is enough that
-
-\[
-3^j
-\ge
-\frac{\log t_0}{\log 24696}.
-\]
+Hence every such branch reaches a bank of size below `2160` after
+`O(log log t_0)` expansions.
 
 ### Proof
 
-CMR125 supplies a new bank of exactly `s(t_j)` endpoints whenever none of the
-other alternatives holds. Restricting an extracted star to exactly that many
-pairs preserves the degree-two forbidden-board property. The displayed
-recurrence follows. Iteration gives `t_j<=t_0^{3^{-j}}`, which proves the stated
-bound. ∎
+CMR125 supplies a new bank of `sigma(t_j)` endpoints whenever none of the other
+alternatives holds. Restricting an extracted star to exactly that many pairs
+preserves the degree-two forbidden-board property, and CMR128 keeps the bank
+nonempty.
+
+For `s>=4`,
+
+\[
+s-1\ge\frac s2,
+\qquad
+3s-2\ge2s.
+\]
+
+Therefore every admissible value `s=sigma(t_j)` satisfies
+
+\[
+t_j
+\ge
+24(s-1)^2(3s-2)
+\ge
+12s^3.
+\]
+
+This proves the displayed recurrence. Repeated cube-root contraction reaches an
+absolute constant after `O(log log t_0)` steps, and the explicit constant here is
+`2160`. ∎
 
 This is a genuine termination statement for uncharged alternating expansion:
 an unbounded closure chain is impossible. The unresolved issue is to aggregate
@@ -316,8 +344,7 @@ finite-accounting tasks:
 
 1. sum the disjoint-defect and heavy-line payments over the family of starting
    prime-power nodes without repeated charging;
-2. resolve or enumerate the absolute endpoint-bank residual class below
-   `24696`.
+2. resolve or enumerate the absolute endpoint-bank residual class below `2160`.
 
 No all-`n` theorem is claimed here. The global-baseline transfer and compression
 inequalities are checked in
