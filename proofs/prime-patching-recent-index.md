@@ -67,6 +67,7 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3hw--PP3hz | Resource-disjoint label/controller/blocker extraction | PROVED | `docs/86-controller-shadow-resource-matching.md` |
 | PP3ia--PP3id | Endpoint-permutation trade and exact controller-shadow change | PROVED / CONDITIONAL IMPROVEMENT | `docs/87-controller-shadow-endpoint-permutation-trades.md` |
 | PP3ie--PP3ii | Spread derangement first-moment and collateral endpoint | PROVED | `docs/88-endpoint-derangement-first-moment.md` |
+| PP3ij--PP3im | Fixed-infrastructure controller-shadow potential and monotone termination | PROVED / CONDITIONAL ON CONVERSION | `docs/89-controller-shadow-monotone-termination.md` |
 
 ## Current exact target
 
@@ -80,12 +81,12 @@ total width T=MW  = m^(21/40+o(1)) = m^0.525.
 ```
 
 This balance is exponent-optimal among disjoint source pools with
-`W=Theta(sqrt(R))`.  Matching supply, equal-margin restoration, internal macro
+`W=Theta(sqrt(R))`. Matching supply, equal-margin restoration, internal macro
 geometry, fixed-rank spread, all patch-only cross-macro energy, and all ordinary
 two-slot source-anchor energy are closed.
 
-The active-pool safety correction is essential.  Fixed-core graphs do not test
-blocker pairs using unselected pool edges.  The correct graph uses the
+The active-pool safety correction is essential. Fixed-core graphs do not test
+blocker pairs using unselected pool edges. The correct graph uses the
 controller-aware domains
 
 ```text
@@ -97,7 +98,7 @@ H_ctrl(A,B) = values whose movement/refill cells have no blocker pair
 If these graphs satisfy the global allocation theorem, PP3hq gives the full
 `m^0.525` patch.
 
-The strongest direct allocation criterion is complementary degree.  For every
+The strongest direct allocation criterion is complementary degree. For every
 nonedge `(i,A,B)`, it is enough that
 
 ```text
@@ -105,16 +106,16 @@ deg_{J_i}(A) + average_refill_degree(B)
     >= T + O(sqrt(T log T)).
 ```
 
-A positive-density failure of controller-aware safety cannot remain diffuse.
-It produces either:
+A positive-density failure of controller-aware safety cannot remain diffuse. It
+produces either:
 
 1. a blocker star with `m^0.475` distinct rays; or
 2. `m^0.525` resource-disjoint bad entries with distinct labels, controller
    edges, and endpoint-disjoint blocker pairs.
 
-The second alternative yields a matching-layer endpoint bank.  Endpoint
-permutation trades have an exact removal-credit/insertion-cost identity, and
-the spread-derangement endpoint succeeds when
+The second alternative yields a matching-layer endpoint bank. Endpoint
+permutation trades have an exact removal-credit/insertion-cost identity, and the
+spread-derangement endpoint succeeds when
 
 ```text
 cell/q + (pair + unary shadow)/q^2
@@ -123,7 +124,12 @@ cell/q + (pair + unary shadow)/q^2
 
 is sufficiently small.
 
-The remaining bottleneck is therefore one controller-shadow conversion theorem:
+Every successful paid trade strictly decreases a fixed nonnegative integer
+controller-shadow potential while preserving the controller pools. Therefore a
+uniform star/resource conversion theorem automatically terminates; no separate
+cycle-prevention lemma is needed.
+
+The remaining bottleneck is one controller-shadow conversion theorem:
 
 - prove the controller-aware global label graphs satisfy PP3gl directly; or
 - use the star/resource alternatives to build a source-admissible endpoint or
