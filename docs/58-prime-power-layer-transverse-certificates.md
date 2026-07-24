@@ -5,19 +5,18 @@ balanced recursive bank of CMR67, many layer patterns expose a unit-coefficient
 row digit at every depth. Nonroot depths contribute exact factors `1/p`; the
 saturated root law contributes `1/(p-1)`.
 
-Throughout this chapter,
+Throughout,
 
 \[
 N=p^k,
-\qquad
-p\equiv1\pmod4,
+\qquad p\equiv1\pmod4,
 \]
 
-and the bank uses the saturated common-parameter root law from CMR67, followed
-by independent uniform maps from `B_p` at every nonroot layer-prefix node.
+and the bank uses the common-nonsquare, distinct-shift root law from CMR67,
+followed by independent uniform maps from `B_p` at every nonroot layer-prefix
+node.
 
-Fix three distinct columns `x_1,x_2,x_3` with layer labels
-`ell_1,ell_2,ell_3`. Put
+Fix distinct columns `x_1,x_2,x_3` with layer labels `ell_1,ell_2,ell_3`. Put
 
 \[
 r=\min_{i<j}v_p(x_i-x_j),
@@ -25,13 +24,11 @@ r=\min_{i<j}v_p(x_i-x_j),
 s=\max_{i<j}v_p(x_i-x_j).
 \]
 
-If `s>r`, the ultrametric property gives one unique closest pair, namely the
-pair with valuation `s`.
-
-Call the selected triple **layer-transverse** when either
+If `s>r`, the ultrametric property gives one unique closest pair. Call the
+triple **layer-transverse** when either:
 
 1. `s=r` and the three layer labels are not all equal; or
-2. `s>r` and the two points in the unique closest pair use different layers.
+2. `s>r` and the closest pair uses different layers.
 
 ## 1. Full-depth anti-concentration
 
@@ -47,11 +44,11 @@ Every fixed layer-transverse triple satisfies
 \frac{p}{p-1}\frac1N.
 \]
 
-The same bound therefore holds for real collinearity.
+The same bound holds for real collinearity.
 
 ### Proof
 
-Use the determinant coefficients
+Use determinant coefficients
 
 \[
 \kappa_1=x_3-x_2,
@@ -61,37 +58,31 @@ Use the determinant coefficients
 \kappa_3=x_2-x_1,
 \]
 
-and divide them by their common minimum power `p^r`. The indices whose reduced
-coefficients are units are determined by the p-adic clustering pattern.
+and divide by their common minimum power `p^r`.
 
 If `s=r`, all three reduced coefficients are units. Since the layer labels are
-not all equal, one layer occurs exactly once. That point's node key is unique at
+not all equal, one layer occurs exactly once; that point has a unique node key at
 every depth.
 
-If `s>r`, the unit coefficients are exactly those attached to the two endpoints
-of the unique closest pair. Their layers are different. At every depth, the
-endpoint whose layer differs from the third point has a node key distinct from
-both other keys.
+If `s>r`, the unit coefficients are exactly those of the closest-pair endpoints.
+Their layers differ, so at every depth one unit-coefficient endpoint has a node
+key distinct from both other points.
 
-At each nonroot depth `n=1,...,k-1`, expose every output except the chosen unique
+At every nonroot depth `n=1,...,k-1`, expose all outputs except the chosen unique
 unit-coefficient digit. The next determinant congruence fixes at most one value,
-and CMR67 makes that digit exactly uniform on `F_p`. These levels contribute
+and the balanced node law makes it uniform on `F_p`. These levels contribute
 `p^{-(k-1)}`.
 
-At the root, the other layer is queried at two distinct columns. Its two outputs
-determine its shift and the common nonsquare parameter. The singleton layer's
-shift remains uniform among the `p-1` values distinct from the other shift.
-Thus the required singleton row has conditional atom at most `1/(p-1)`.
-Multiplying the root and nonroot factors proves the theorem. ∎
+At the root, the two outputs in the repeated layer determine that layer's shift
+and the common nonsquare parameter. The singleton layer's shift remains uniform
+among the `p-1` values different from the other shift. Hence its required row
+has conditional probability at most `1/(p-1)`. Multiply the factors. ∎
 
 ## 2. The logarithmic syndrome is layer-aligned
 
-For one unordered column triple, the number of nontransverse layer assignments
-is at most four:
-
-- if `s=r`, only the two monochromatic assignments are nontransverse;
-- if `s>r`, the closest pair must use one common layer, giving four assignments
-  after the third layer is chosen.
+For one unordered column triple, at most four layer assignments are
+nontransverse: two monochromatic assignments in the equilateral case, or four
+assignments making the closest pair monochromatic in the binary case.
 
 ### Corollary CMR71 — PROVED
 
@@ -114,31 +105,26 @@ Consequently
 \[
 \mathbb E T_k
 <
-2pkN^2+rac{4p}{3(p-1)}N^2.
+2pkN^2+
+\frac{4p}{3(p-1)}N^2.
 \]
 
 ### Proof
 
-The first estimate uses CMR70 and at most eight layer assignments for every
-column triple.
-
-For the nontransverse part, group column triples by
+The transverse estimate uses CMR70 and at most eight layer assignments per
+column triple. For the nontransverse part, group triples by
 
 \[
 s=\max_{i<j}v_p(x_i-x_j).
 \]
 
-As in CMR69, the number in one group is less than `N^3/(2p^s)`. There are at
-most four nontransverse layer assignments, and CMR68 gives probability at most
+There are fewer than `N^3/(2p^s)` column triples in one group, at most four
+nontransverse layer assignments, and CMR68 gives probability at most
+`p^{-(k-s-1)}`. Thus each scale contributes at most `2pN^2`; sum the `k`
+scales. ∎
 
-\[
-p^{-(k-s-1)}.
-\]
-
-Thus every `s` contributes at most `2pN^2`. Sum the `k` valuation levels. ∎
-
-The theorem identifies the source of the logarithmic loss: same-layer closest
-pairs, not generic mixed-layer triples.
+The theorem identifies the logarithmic source: same-layer closest pairs, not
+generic mixed-layer triples.
 
 ## 3. Pair-codegree stratification
 
@@ -184,22 +170,16 @@ t=\max_{i<j}v_p(x_i-x_j).
 \]
 
 There are fewer than `N` choices with `t=u`. For each `t>u`, the third column
-must be congruent modulo `p^t` to one of the fixed endpoints, so there are at
-most
+must be congruent modulo `p^t` to one fixed endpoint, giving at most
+`2N/p^t` choices.
 
-\[
-\frac{2N}{p^t}
-\]
-
-choices.
-
-For a same-layer pair, use CMR68 for both choices of the third layer. This gives
+For a same-layer fixed pair, apply CMR68 for both choices of the third layer:
 
 \[
 \begin{aligned}
 D
 &\le
-2N p^{-(k-u-1)}
+2Np^{-(k-u-1)}
 +2\sum_{t=u+1}^{k-1}
 \frac{2N}{p^t}p^{-(k-t-1)}\\
 &=
@@ -207,15 +187,9 @@ D
 \end{aligned}
 \]
 
-Now suppose the fixed pair uses different layers. Every third point with `t=u`
-is layer-transverse, so CMR70 gives contribution at most
-
-\[
-2N\frac{p}{(p-1)N}=\frac{2p}{p-1}.
-\]
-
-For `t>u`, one of the two third-layer choices is layer-transverse while the other
-is nontransverse. Hence
+For a cross-layer fixed pair, all `t=u` triples are layer-transverse, giving
+`2p/(p-1)`. For `t>u`, one third-layer choice is transverse and the other is
+nontransverse. Therefore
 
 \[
 \begin{aligned}
@@ -226,8 +200,7 @@ D
 \sum_{t=u+1}^{k-1}
 \frac{2N}{p^t}
 \left(
-\frac{p}{(p-1)N}
-+p^{-(k-t-1)}
+\frac{p}{(p-1)N}+p^{-(k-t-1)}
 \right)\\
 &\le
 \frac{2p}{p-1}
@@ -238,7 +211,7 @@ D
 \end{aligned}
 \]
 
-This proves both bounds. ∎
+∎
 
 The high-codegree term `p^(u+1)` occurs only for same-layer pairs with a long
 common p-adic column prefix. At valuation `u`, there are fewer than
@@ -247,8 +220,7 @@ common p-adic column prefix. At valuation `u`, there are fewer than
 \frac{N^2}{p^u}
 \]
 
-such pairs across both layers. Thus the exceptional pair mass is organized in
-an explicit multiscale Carleson family.
+such pairs across both layers, producing an explicit multiscale Carleson family.
 
 The structural cases are checked in
 [`scripts/verify_prime_power_layer_transverse.py`](../scripts/verify_prime_power_layer_transverse.py).
