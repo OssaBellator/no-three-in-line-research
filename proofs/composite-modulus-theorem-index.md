@@ -34,4 +34,6 @@ This ledger collects the results specific to
 | CMR12 | A binary digit-linear no-three channel exists at \(N=64\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/30-prime-power-tangent-and-digital-lift.md` |
 | CMR13 | The CMR12 matrix has no direct one-bit block extension at \(N=128\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/30-prime-power-tangent-and-digital-lift.md` |
 | CMR14 | Every odd-prime completed reciprocal has linear exact displacement multiplicity | PROVED | `docs/31-prime-power-displacement-obstruction.md` |
+| CMR15 | Unit-stratum top-digit collisions decompose into disjoint \(p\)-point blocks | PROVED | `docs/32-prime-power-top-digit-blocks.md` |
+| CMR16 | Top-digit blocks support independent full permutation banks with exact spread | PROVED | `docs/32-prime-power-top-digit-blocks.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
