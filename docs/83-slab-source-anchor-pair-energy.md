@@ -1,9 +1,9 @@
 # Ordinary source-anchor pair energy at the slab scale
 
-After fully safe one-slot pruning PP3ge, every remaining source-containing
-certificate uses two distinct slots and one retained source anchor.  At the
-slab-optimal parameters PP3gr, these ordinary anchor-pair events also have
-summable incident mass.
+After controller-aware one-slot pruning PP3hn, every remaining anchored
+source-containing certificate uses two distinct slots and one retained source
+anchor.  At the slab-optimal parameters PP3gr, these ordinary anchor-pair
+events have summable incident mass.
 
 The proof uses three facts.
 
@@ -346,13 +346,14 @@ Apply PP3hh to all movement partners, PP3hi to all refill partners, and PP3hj
 to the two mixed orientations.  Use at most `O(T)` partners and the elementary
 bound on `tau(d)`.  The exponent computations are direct. ∎
 
-## 6. Conditional completion after global allocation
+## 6. Conditional completion after controller-aware allocation
 
 ### Corollary PP3hl -- PROVED
 
-Suppose the slab-optimal pools admit the saturation-compatible global refined
-label allocation PP3fw with fully safe domains PP3ge.  Then all source-anchor
-and patch-only external event mass is `o(1)` at every slot.
+Suppose the slab-optimal pools admit the saturation-compatible
+controller-aware global allocation PP3ho.  Then all ordinary source-anchor and
+patch-only external event mass is `o(1)` at every slot, while every unary
+retained-pair and same-slot anchor certificate is absent value by value.
 
 Consequently, for all sufficiently large `m`, the weighted endpoint PP3fk gives
 a simultaneous saturated no-three patch of width
@@ -364,8 +365,8 @@ a simultaneous saturated no-three patch of width
 #### Proof
 
 The ordinary anchor mass is `o(1)` by PP3hk.  Patch-only cross-macro mass is
-`o(1)` by PP3he.  Unary source classes were removed by the fully safe domains.
-The sum is eventually below the positive residual PP3fj budget
+`o(1)` by PP3he.  Unary source classes are removed by PP3hn--PP3ho.  The total
+external mass is eventually below the positive residual PP3fj budget
 
 \[
  \frac1{48}-o(1).
@@ -374,7 +375,8 @@ The sum is eventually below the positive residual PP3fj budget
 Apply PP3fk. ∎
 
 Thus the geometric completion-energy half of the prime-patching bottleneck is
-closed.  The remaining asymptotic input is the global refined-label allocation:
-construct the fully safe domains with the complementary-degree condition of
-PP3gl, or resolve its explicit boundary-shadow and bad-label concentration
-obstructions by protected trades.
+closed.  The remaining asymptotic input is the controller-aware global refined
+label allocation: construct dense domains `H_{A,B}^{ctrl}` satisfying the
+complementary-degree condition of PP3gl, or resolve their explicit
+noncontroller blocker-shadow and same-slot bad-label concentration by protected
+trades.
