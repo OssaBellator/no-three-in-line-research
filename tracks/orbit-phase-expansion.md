@@ -12,7 +12,7 @@ This is an alternative decoder track. It groups the unresolved phase-code and or
 - I2/I6: common-ratio banks and full coset absorber banks;
 - the generic claim “bounded line occupancy plus bounded pair codegree implies private repair” is refuted.
 
-## OP1 — Carry-sensitive phase alphabet
+## OP1 — Carry-sensitive phase alphabet — PARTIAL
 
 ### Target statement
 
@@ -26,6 +26,14 @@ For an orbit block of order `h`, construct a finite state alphabet `A_h` and an 
 such that every real collinear triple involving the block forbids a labelled assignment on at most three variables and the forbidden label depends only on a bounded amount of phase data.
 
 The number of states should be `Omega(h)` and every state must preserve the same active rows and columns.
+
+[`orbit-phase-literals-and-decoder.md`](orbit-phase-literals-and-decoder.md)
+proves OP1a: the O1 alphabet `Z/hZ` gives exactly `h` row-column-preserving
+states, and every realizable real triple is one canonical forbidden partial
+assignment on at most three block variables. It also gives a lossless
+constant-length carry decoration. The remaining OP1 issue is uniform
+compression of the numerical carry values into signature layers useful to
+OP2.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -52,6 +60,15 @@ Given OP2, define a local or batch decoder that changes phases while preserving 
 - delegates a bounded structured component to an existing absorber.
 
 The decoder must handle cycle-like cores and the exact `p=11` frozen one-colour example by permitting opposite-colour or multi-block phase changes.
+
+### Proved decoder components
+
+The phase-literal note proves the exact identity
+`Delta Phi = created weight - destroyed weight`, its check-disjoint batch
+version, and a lexicographic termination lemma for rounds that either lower
+`Phi` or increase a bounded structured-core potential. OP3 remains open
+until OP2 supplies one of those certified moves for every nonzero
+syndrome.
 
 ## OP4 — Product-state completion
 
@@ -92,4 +109,6 @@ No residual generic cycle core may remain unclassified.
 
 ## Completion criterion
 
-This branch is complete when OP1–OP5 provide a rigorous saturation-preserving decoder theorem, not merely an empirical expansion claim.
+This branch is complete when the remaining OP1 compression and OP2–OP5
+provide a rigorous saturation-preserving decoder theorem, not merely an
+empirical expansion claim.

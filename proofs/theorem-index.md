@@ -61,6 +61,9 @@ The numbering is local to this repository.
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O4 | Cycle-bank theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O5 | Window-product conic-cover theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
+| OP1a | Orbit states give canonical forbidden phase assignments of rank at most three | PROVED | `tracks/orbit-phase-literals-and-decoder.md` |
+| OP3a | Exact weighted phase-flip drift identity | PROVED | `tracks/orbit-phase-literals-and-decoder.md` |
+| OP3b | Lexicographic phase/structure decoder termination | PROVED UNDER HYPOTHESES | `tracks/orbit-phase-literals-and-decoder.md` |
 | O6 | One-colour carry-cycle dispersion lemma | REFUTED | `docs/13-carry-cycle-dispersion.md` |
 | CC1 | Collision-free permutation spread lemma | PROVED | `docs/13-carry-cycle-dispersion.md` |
 | CC2 | Universal collision-aware carry-cycle bank bound | PROVED | `docs/13-carry-cycle-dispersion.md` |
