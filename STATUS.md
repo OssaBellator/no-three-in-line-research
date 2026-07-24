@@ -98,13 +98,17 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 88. **Exact side-six selector populations.** Relative types `(6)`, `(4,2)`, and `(3,3)` have 181,122, 325,620, and 298,116 abstract selector states respectively.
 89. **Unique affine mixed side-six template.** Among 20,736 affine full-selector hosts, exactly one is feasible: the 6-cycle type in `ff`, producing an exact side-twelve certificate.
 90. **Six-cycle side-six closure class.** All 84 ordered saturated side-six factors whose relative permutation is a 6-cycle transport to the same side-twelve no-three configuration.
+91. **Four-plus-two side-six closure class.** All 16 ordered saturated side-six factors whose relative permutation has cycle type `(4,2)` transport to one exact `cc` side-twelve certificate.
+92. **Three-plus-three side-six closure class.** All 16 ordered saturated side-six factors whose relative permutation has cycle type `(3,3)` transport to one exact crossed side-twelve certificate.
+93. **Universal special product closure at six.** Every saturated no-three side-six factor composes with side two to an exact saturated no-three side-twelve configuration.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- A mixed full-selector classification for side-six relative types `(4,2)` and `(3,3)` under arbitrary block permutations.
 - An infinite family of successful full-selector cycle types or another controlled product family yielding multiplicative closure.
+- A full-selector classification at base side seven and larger.
+- A recursive product theorem at a produced base such as side ten or twelve.
 - A global product repair or resampling theorem that coordinates many projection fibres and distinguishes feasible hosts from structured infeasible cores.
 - Arithmetic coverage derived from an infinite closure or extension theorem.
 - Orbit Tanner expansion beyond bounded local conflict mass.
@@ -135,8 +139,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - The complete affine one-inner-layer family has no no-three state at base sides six or seven, even when the inner permutation is arbitrary.
 - The complete arbitrary-map one-inner-layer family has no template at bases 3, 6, 7, or 8.
 - No one-outer-layer side-six template exists for any of the relative types `(6)`, `(4,2)`, or `(3,3)`.
-- The affine full-selector family has no side-six template for relative types `(4,2)` or `(3,3)`; arbitrary full-selector maps remain open.
+- The all-affine full-selector family has no side-six template for relative types `(4,2)` or `(3,3)`; their successful universal templates require more general block maps.
 
 ## Bottom line
 
-There is no complete proof. The product branch now contains factor-independent closure theorems \(2\times3\to6\), \(2\times4\to8\), and \(2\times5\to10\), plus a factor-class closure \(2\times6\to12\) for all side-six factors of relative 6-cycle type. The arbitrary-map one-inner-layer family is completely classified through base eight and cannot iterate the side-four closure to sixteen. The full selector is reduced to relative cycle type and an exact transfer system, but the side-six `(4,2)` and `(3,3)` classes and every infinite closure or arithmetic coverage theorem remain open. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
+There is no complete proof. The product branch now contains factor-independent closure theorems \(2\times3\to6\), \(2\times4\to8\), \(2\times5\to10\), and \(2\times6\to12\). The arbitrary-map one-inner-layer family is completely classified through base eight and cannot iterate the side-four closure to sixteen. The full selector is reduced to relative cycle type and an exact transfer system, and all side-six relative classes are now solved. No infinite multiplicative closure or arithmetic coverage theorem follows: the next product targets are larger-base cycle-type templates, a recursive closure at side ten or twelve, or a general repair/resampling theorem. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
