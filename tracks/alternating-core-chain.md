@@ -191,6 +191,14 @@ size minus one. Recycling can now occur only when a discarded object is
 explicitly reintroduced; that reopening must be charged by AC3b or leave
 through a paid/structured endpoint.
 
+AC3e combines those two mechanisms in one scalar potential. Giving each
+support reopening one ticket and weighting consumed tickets by the full
+object-universe size dominates even a reset to full support. With total
+ticket budget \(R\), every mixture of labelled descents and reopenings
+has length at most \(O(|\mathcal O|(R+1))\). The remaining AC3 obligation
+is therefore exactly to derive finite \(p^{o(1)}\) ticket supply from
+current paid incidence.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement

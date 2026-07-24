@@ -326,6 +326,42 @@ def verify_strict_support_descent(max_size: int = 7) -> None:
     assert reopened == frozenset({1, 2, 3})
 
 
+def verify_ticketed_support_potential(
+    max_size: int = 6,
+    maximum_tickets: int = 3,
+) -> None:
+    for size in range(1, max_size + 1):
+        supports = [
+            frozenset(
+                vertex
+                for vertex in range(size)
+                if mask & (1 << vertex)
+            )
+            for mask in range(1, 1 << size)
+        ]
+        for ticket_budget in range(maximum_tickets + 1):
+            upper = size * ticket_budget + size - 1
+            for used in range(ticket_budget + 1):
+                for support in supports:
+                    potential = size * used + size - len(support)
+                    assert 0 <= potential <= upper
+
+                    for next_support in supports:
+                        if next_support < support:
+                            next_potential = (
+                                size * used + size - len(next_support)
+                            )
+                            assert next_potential >= potential + 1
+
+                        if used < ticket_budget:
+                            next_potential = (
+                                size * (used + 1)
+                                + size
+                                - len(next_support)
+                            )
+                            assert next_potential >= potential + 1
+
+
 def main() -> None:
     verify_weighted_extraction()
     verify_composed_bound()
@@ -334,6 +370,7 @@ def main() -> None:
     verify_cycle_criterion()
     verify_ticket_trace()
     verify_strict_support_descent()
+    verify_ticketed_support_potential()
     print("AC re-extraction and reuse accounting: verified")
 
 

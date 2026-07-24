@@ -372,7 +372,71 @@ consume an AC3b ticket or terminate through a paid bank or BDA/RI
 delegation.  AC3d does not bound those reopenings, but isolates them as
 the only possible source of recycling after labelled overload descent.
 
+## AC3e -- combined descent/reopening potential
+
+Let \(n=|\mathcal O|\), and suppose a closure component has a total
+budget of \(R\) support-reuse tickets.  A nonterminal support transition
+from \((U,t)\), where \(U\ne\varnothing\) and \(0\leq t\leq R\), is
+required to be one of:
+
+1. an unticketed labelled descent \(U'\subsetneq U\), with \(t'=t\);
+2. a ticketed transition to any nonempty \(U'\subseteq\mathcal O\),
+   with \(t'\geq t+1\).
+
+The second case includes every reopening or other failure of strict
+support descent.
+
+### Lemma AC3e -- PROVED
+
+The integer potential
+
+\[
+\boxed{
+\Xi_{\rm reopen}(U,t)
+=
+nt+n-|U|
+}
+\]
+
+increases by at least one on every nonterminal transition and satisfies
+
+\[
+0\leq\Xi_{\rm reopen}\leq nR+n-1.
+\]
+
+Consequently, from state \((U_0,t_0)\), the component makes at most
+
+\[
+\boxed{
+nR+n-\Xi_{\rm reopen}(U_0,t_0)
+}
+\]
+
+further transition-or-terminal oracle calls.
+
+### Proof
+
+On an unticketed descent, \(t\) is fixed and \(|U|\) drops by at least
+one, so the potential rises by at least one.
+
+On a ticketed transition, the ticket term rises by at least \(n\).
+Changing between two nonempty supports can decrease the support-deficit
+term \(n-|U|\) by at most \(n-1\).  The net increase is therefore at
+least one.  The displayed range follows from \(t\leq R\) and
+\(1\leq|U|\leq n\).  Apply the bounded integer-growth argument of AC4a.
+\(\square\)
+
+AC3e combines AC3b and AC3d without a lexicographic reset: a ticket may
+reopen the entire object universe, yet its coefficient pays for the
+largest possible loss of support deficit.  Thus, once current syndrome
+incidence supplies a finite total ticket budget \(R\), labelled overload
+recursion and all paid reopenings terminate under one explicit scalar
+potential.  Constructing that syndrome-paid budget remains the geometric
+part of AC3.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
 four quotient states, a finite ticket trace, and every strict-support
-maximal-depth descent order through seven objects.
+maximal-depth descent order through seven objects.  It also enumerates
+all descent and ticketed-reopening transitions through six objects and
+three tickets.
