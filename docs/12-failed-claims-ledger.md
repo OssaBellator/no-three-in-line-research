@@ -60,4 +60,10 @@ When \(h\le H\), a high line meets the block at most once. The internal unanchor
 
 **Status:** FALSE.
 
-The final carry-cycle dispersion and multiscale integration steps remain open.
+Alternating two-colour carry-core conversion and multiscale integration remain open.
+
+## 11. “Every carry-filtered Möbius cycle improves or contains an improving orbit absorber.”
+
+**Status:** REFUTED.
+
+For \(p=11\), \(H_2\cup H_3\) contains the chordless red cycle with parameters \((4,5,7,6)\). Its identity state is the unique minimum among all fourteen collision-free row-column matchings of its cycle block. The shift by two has constant window product and decomposes into two order-two orbit absorbers, but its potential is larger, and each individual rectangle switch is also worse. See `docs/13-carry-cycle-dispersion.md`.
