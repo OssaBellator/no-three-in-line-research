@@ -59,9 +59,19 @@ is audited on every edge before RI4's one-colour, order-two
 square/collapse, or larger colour-ratio classification is applied.
 Rank-three clauses either contain a disjoint transversal matching or
 have a bounded switch kernel whose conditioned residuals are all
-2-SAT instances.  Uniform arithmetic control is still open for
-unlabelled implication factors, the RI5 fixed-edge conversion, large
-rank-three matchings, action-literal kernels, and wide action CSPs.
+2-SAT instances.
+
+[`orbit-phase-geometric-labels.md`](orbit-phase-geometric-labels.md)
+proves OP4g--OP4h.  Every implicated ancestor factor is classified
+losslessly by channel profile.  A two-channel factor supplies both
+orientations of an exact \(F_r\)-collision edge, its quotient product
+law, and its cross/product-carry routes; a three-channel factor supplies
+three mixed product-carry routes.  An exact bicycle audit then either
+constructs globally consistent literal labels for OP4e or returns a
+root/literal mismatch with all source carry records retained.  Uniform
+arithmetic control is still open at the paid aggregation of those
+returned records, the RI5 fixed-edge conversion, large rank-three
+matchings, action-literal kernels, and wide action CSPs.
 
 ## OP2 — Arithmetic Tanner graph
 

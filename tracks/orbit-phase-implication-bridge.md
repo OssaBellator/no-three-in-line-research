@@ -27,8 +27,11 @@ This note supplies the exact bridge and the exact failure output.
    instances.
 
 Thus the order-two and rank-three frontiers now meet at one lossless
-interface.  The remaining work is geometric label production,
-disjoint-transversal expansion, and absorber conversion.
+interface.  The companion
+[`orbit-phase-geometric-labels.md`](orbit-phase-geometric-labels.md)
+proves OP4g--OP4h: it derives the factor-level rational/carry record
+and decides whether the local root pairs admit consistent literal
+labels on the whole bicycle.
 
 ## OP4d -- source-labelled implication bicycles
 
@@ -372,15 +375,18 @@ The protected-bank obstruction now follows a lossless decision tree.
    - an order-two loop-and-edge collapse; or
    - an explicit colour-ratio subgroup of order at least three.
 
-5. An uncertified bicycle returns its first missing or invalid
-   source-factor transition record.
+5. OP4g--OP4h replace a generic uncertified edge by one of:
+
+   - a three-channel product-carry record;
+   - a differing root coset;
+   - a complete literal-root compatibility conflict; or
+   - a rational-admissible bicycle with all labels supplied.
 
 The remaining frontiers are now precise.
 
-1. **Geometric label theorem.**  For every implicated OP1 ancestor
-   factor, derive the rational quotient record
-   \(A_{\ell'}=RC_eA_\ell^{-1}\), or route that factor to a named
-   product/cross-carry or bounded-denominator output.
+1. **Carry aggregation after a failed label gate.**  Pay and aggregate
+   the product signatures, cross-carry levels, or root changes returned
+   by OP4h across many incompatible bicycles.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
@@ -400,3 +406,8 @@ invalid-label cases.  It also compares the rank-three matching/kernel
 decision procedure with brute force on thousands of formulas and
 retains both empty-clause and implication-bicycle branch
 certificates.
+
+`scripts/verify_phase_geometric_labels.py` exhausts small prime grids
+for the OP4g channel-profile theorem and quotient identities.  It also
+compares the OP4h fixed-normalization propagation with brute force and
+checks every success and failure output of the complete gate.
