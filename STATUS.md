@@ -87,16 +87,20 @@ unresolved case.
 74. **Balanced reciprocal-law classification.** Exact cell balance inside the completed-reciprocal family exists precisely for primes \(p\equiv1\pmod4\); reweighting cannot solve \(p\equiv3\pmod4\).
 75. **Prime-seven balanced factorization.** Seven integer no-three permutations partition the \(7\times7\) grid and generate saturated recursive banks for every \(N=7^k\).
 76. **Prime-seven spectral syndrome.** A sharpened factorization has pair-difference multiplicity at most three and expected syndrome below \((36/7)(k-1)N^2+(29/9)N^2\).
-77. **Global-baseline alternating compression.** A globally nonimproving, low-excess endpoint bank gives disjoint defects, a heavy outside line, or a cubic-root smaller alternating bank; uncharged expansion reaches size below \(2160\) after \(O(\log\log t)\) levels.
+77. **Global-baseline alternating compression.** A fixed global comparison baseline transfers target destruction to every nonimproving child state and gives cube-root closure compression.
 78. **Sharp small matching threshold.** Every degree-two forbidden endpoint board of size at least four has a perfect matching, while size three can fail.
+79. **Geometric outcomes are executable.** Disjoint defects and heavy outside lines produce further alternating banks; no repeated-charge ledger is needed for either class.
+80. **Target-load closure.** Separating endpoint-board size from certified target load removes the parent-excess barrier and contracts every positive load to a four-endpoint, one-target bank.
+81. **Full-load two-layer conversion.** Ordered rematching of the two permutation layers destroys every triple in a vertex-disjoint family.
+82. **Exact terminal-board profile.** Every normalized four-endpoint board has 2--9 states with sharp rank-one, rank-two, and rank-three atoms \(3/4,2/3,1/2\).
+83. **Four-core cycle certificate.** Any positive global saturated minimum generates a finite cycle of four-point trades.
+84. **Balanced local defect flow.** Around every four-core cycle, each grid triple is created and removed equally often, and all changes touch moved cells.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Alternating two-colour carry-core termination on the prime-field route.
-- A no-double-charge ledger for the CMR125 excess, disjoint-defect, and heavy-line alternatives across all prime-power nodes and scales.
-- Elimination or exact classification of the absolute endpoint-bank residual class below \(2160\).
+- Exclusion of balanced four-endpoint defect-flow cycles using first-separation, quotient, or carry signatures.
 - A lexicographic potential paying for fine stars recreated by later coarse repairs.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem.
 - Removal or absorption of the square-root divisor-collision boundary.
@@ -125,10 +129,10 @@ unresolved case.
 
 ## Bottom line
 
-There is no complete proof. On the composite prime-power route, unbounded
-alternating expansion is now ruled out: every low-excess branch is paid by
-excess, disjoint defects, or a heavy outside line, or contracts to an absolute
-bank below \(2160\). What remains is global no-double-charge accounting, the
-bounded endpoint core, repair interaction across scales, and finally coverage
-of arbitrary side lengths. The prime-field route still needs its corresponding
-global alternating carry-core conversion.
+There is no complete proof. On the composite prime-power route, every globally
+nonimproving alternating closure now contracts to one exact terminal object: a
+four-endpoint board destroying one specified triple. Any positive global
+minimum must therefore support a finite balanced cycle of such trades. The
+principal missing theorem is a first-separation or carry-signature obstruction
+to that cycle, followed by a scale budget for fine structures recreated by
+coarse repairs and a coverage mechanism for arbitrary side lengths.
