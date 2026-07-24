@@ -41,6 +41,8 @@ The numbering is local to this repository.
 | CMR6 | Every completed-reciprocal secant is \(p\)-adically diagonal | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | CMR7 | Same-stratum fixed displacement has an exact reduced product/square-root signature | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | CMR8 | Completed-reciprocal one-channel syndrome is \(O(N^{5/2}+N^2\log N)\) | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR9 | Same-stratum companion cross-displacement reduces to an exact quadratic | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR10 | Universal mixed-layer companion determinant carry identity | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | B1 | High line meets an order-\(h\) block at most once when \(h\le H\) | PROVED | `docs/06-block-collateral-energy.md` |
 | B2 | Exact one-block collateral and drift identities | PROVED | `docs/06-block-collateral-energy.md` |
 | B3 | Block-shadow closure theorem | PROVED | `docs/06-block-collateral-energy.md` |
