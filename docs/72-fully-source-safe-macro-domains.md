@@ -30,7 +30,7 @@ Make the bipartite label graph `G_gamma^full` by joining `A` to `B` when
  |H_{A,B}^{\rm full}|\ge\gamma R.
 \]
 
-### Theorem PP3el -- PROVED
+### Theorem PP3ge -- PROVED
 
 If `G_gamma^full` contains a perfect matching and
 
@@ -77,7 +77,7 @@ Define
  \right|.
 \]
 
-### Proposition PP3em -- PROVED
+### Proposition PP3gf -- PROVED
 
 Under independent uniform sampling from the two slot domains, the probability
 of an ordinary fixed-anchor conflict between `s,t` is at most
@@ -100,7 +100,7 @@ matching edge.  The useful regime is bounded or slowly growing codegree.
 
 ## 3. Integration with the global slot endpoint
 
-### Corollary PP3en -- PROVED
+### Corollary PP3gg -- PROVED
 
 Suppose every full safe slot domain has size at least `gamma R` and every
 ordinary anchor codegree satisfies
@@ -128,7 +128,7 @@ is internally clean and clean against `F`.
 
 #### Proof
 
-Combine PP3em with the codegree hypothesis and apply PP3ej--PP3ei. ∎
+Combine PP3gf with the codegree hypothesis and apply PP3ej--PP3ei. ∎
 
 ## 4. Failure structure
 
