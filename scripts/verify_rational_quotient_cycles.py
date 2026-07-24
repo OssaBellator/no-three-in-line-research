@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify RI2k/RI3a product-coloured quotient dynamics."""
+"""Verify RI2k--RI4a product-coloured quotient dynamics."""
 
 from __future__ import annotations
 
@@ -8,6 +8,7 @@ from math import gcd
 
 
 Edge = tuple[int, int]
+ColouredEdge = tuple[int, int, int]
 
 
 def walk(
@@ -263,6 +264,105 @@ def verify_component_parity(maximum_order: int = 5) -> None:
                         }
 
 
+def verify_order_two_templates(maximum_order: int = 20) -> None:
+    checked_weight_patterns: set[tuple[int, ...]] = set()
+    for order in range(2, maximum_order + 1, 2):
+        involution = order // 2
+        subgroup = {0, involution}
+        for root_colour in range(order):
+            for base_colour in range(order):
+                colours = {
+                    base_colour,
+                    (base_colour + involution) % order,
+                }
+                assert generated_ratio_subgroup(colours, order) == subgroup
+                for source in range(order):
+                    partner = (
+                        root_colour + base_colour - source
+                    ) % order
+                    source_coset = {
+                        source,
+                        (source + involution) % order,
+                    }
+                    partner_coset = {
+                        partner,
+                        (partner + involution) % order,
+                    }
+                    vertices = source_coset | partner_coset
+                    edges: set[ColouredEdge] = set()
+                    for vertex in vertices:
+                        for colour in colours:
+                            neighbour = (
+                                root_colour + colour - vertex
+                            ) % order
+                            assert neighbour in vertices
+                            left, right = sorted((vertex, neighbour))
+                            edges.add((left, right, colour))
+
+                    if source_coset.isdisjoint(partner_coset):
+                        assert len(vertices) == 4
+                        assert len(edges) == 4
+                        assert all(left != right for left, right, _ in edges)
+                        assert all(
+                            sum(colour == selected for _, _, colour in edges)
+                            == 2
+                            for selected in colours
+                        )
+                        uncoloured = {
+                            (left, right) for left, right, _ in edges
+                        }
+                        assert len(connected_components(uncoloured)) == 1
+                        assert all(
+                            sum(vertex in edge for edge in uncoloured) == 2
+                            for vertex in vertices
+                        )
+                    else:
+                        assert source_coset == partner_coset
+                        assert len(vertices) == 2
+                        assert len(edges) == 3
+                        loops = {
+                            edge for edge in edges if edge[0] == edge[1]
+                        }
+                        links = edges - loops
+                        assert len(loops) == 2
+                        assert len(links) == 1
+                        assert len({colour for _, _, colour in loops}) == 1
+                        loop_colour = next(iter(loops))[2]
+                        assert next(iter(links))[2] != loop_colour
+
+                    colour_counts = tuple(sorted(
+                        sum(
+                            edge_colour == colour
+                            for _, _, edge_colour in edges
+                        )
+                        for colour in colours
+                    ))
+                    if colour_counts in checked_weight_patterns:
+                        continue
+                    checked_weight_patterns.add(colour_counts)
+                    edge_list = tuple(edges)
+                    for weights in product(
+                        range(4),
+                        repeat=len(edge_list),
+                    ):
+                        total = sum(weights)
+                        if total == 0:
+                            continue
+                        assert len(edge_list) * max(weights) >= total
+                        weight_by_colour = {
+                            colour: sum(
+                                weight
+                                for edge, weight in zip(
+                                    edge_list,
+                                    weights,
+                                )
+                                if edge[2] == colour
+                            )
+                            for colour in colours
+                        }
+                        assert 2 * max(weight_by_colour.values()) >= total
+
+
 def verify_cycle_multiplicity(maximum_order: int = 30) -> None:
     for order in range(1, maximum_order + 1):
         for target in range(order):
@@ -289,6 +389,7 @@ def verify_cycle_multiplicity(maximum_order: int = 30) -> None:
 def main() -> None:
     verify_walk_formula()
     verify_component_parity()
+    verify_order_two_templates()
     verify_cycle_multiplicity()
     print("rational quotient cycle dynamics: verified")
 

@@ -280,6 +280,22 @@ transition `c_i -> c_{i+1}` is realized by
 order-two coset and has quotient rank zero. RI4 must require full or
 quantitatively dense cosets and charge pair-collapse mass.
 
+RI4a in
+[`rational-inverse-quotient-cycles.md`](rational-inverse-quotient-cycles.md)
+classifies the quotient geometry once the colour-ratio subgroup itself
+has order two. Every component is contained in either one alternating
+four-cycle or one two-vertex loop-and-edge collapse. Thus the remaining
+RI4 issue is no longer the shape of a single order-two quotient
+component; it is density inside these templates, pair-collapse charging
+between successive parameters, and conversion of the two finite
+templates to row-column-preserving absorber states.
+
+RI4b localizes arbitrary paid point or orbit weight inside those
+templates. One fixed endpoint-coset pair and target colour carries at
+least one quarter of the weight in the square and at least one third in
+the collapsed template. Thus the order-two RI5 conversion may be built
+for a single quotient edge rather than a mixture of finite templates.
+
 ## RI5 — Absorber interface
 
 ### Target statement

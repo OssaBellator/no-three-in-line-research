@@ -107,6 +107,8 @@ The numbering is local to this repository.
 | RI2k | Product-coloured quotient walks form a generalized-dihedral action with exact even/odd cycle constraints | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
 | RI3a | A quotient component lies in two cosets of the target-colour ratio subgroup while its image lies in one | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
 | RI3b | Bipartite components have an exact side-ratio subgroup, while odd cycles collapse source support to one coset | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
+| RI4a | Every order-two colour-ratio component is contained in an alternating square or a loop-and-edge collapse | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
+| RI4b | Paid order-two orbit weight localizes to one endpoint-coset edge with a \(1/4\) or \(1/3\) guarantee | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
 | RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |
