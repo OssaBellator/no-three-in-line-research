@@ -89,8 +89,9 @@ Thus the published prime-gap exponent is reached with
  }
 \]
 
-The total number of selected source edges is a fixed fraction of one matching
-layer rather than `o(m)`, but remains below `m` by the choice `ab<1`.
+The total number of selected source-pool edges is a fixed fraction of one
+matching layer rather than `o(m)`, but remains below `m` by the choice `ab<1`.
+Only `2W` values are ultimately selected from each pool.
 
 ## 2. Comparison with the monotone-pool balance
 
@@ -169,13 +170,13 @@ There are fewer than `2T` partner slots.  Sum the probability bound and use
 
 This applies to:
 
-- ordinary fixed-anchor pair events when the PP3gf completion codegree is
-  bounded;
+- ordinary fixed-anchor pair events when their relation size is `O(R)`;
 - cross-macro pair events under the universal PP3gh probability bound;
 - any additional grouped rank-two relation with `O(1/R)` probability.
 
-Therefore the two-slot classes no longer consume a positive fraction of the
-PP3fj budget.  The asymptotic obstruction is rank three.
+Therefore two-slot classes with that probability scale no longer consume a
+positive fraction of the PP3fj budget.  The asymptotic obstruction is rank
+three or unary controller-shadow density.
 
 ## 4. Rank-three scale
 
@@ -217,17 +218,15 @@ Thus slab localization saves another factor `M`: the repeated-movement mixed
 class needs a completion-energy saving of only `m^{1/20+o(1)}`, while a fully
 unrestricted rank-three population would need `m^{1/10+o(1)}`.
 
-## 5. Revised weighted endpoint
+## 5. Controller-aware weighted endpoint
 
 ### Corollary PP3gu -- PROVED
 
-Use fully source-safe domains PP3ge, the global coordinate allocation PP3fw,
-and the column-slab architecture.  Assume:
+Use the controller-aware domains PP3hn--PP3ho, the global coordinate allocation
+PP3fw, and the column-slab architecture.  Assume:
 
-1. every ordinary anchor completion codegree `kappa_{s,t}` is bounded by an
-   absolute constant;
-2. all external grouped pair events have the PP3gh `O(1/R)` probability bound;
-3. the grouped rank-three relations satisfy, for every slot `s`,
+1. all external grouped pair events have total incident mass `o(1)`;
+2. the grouped rank-three relations satisfy, for every slot `s`,
 
 \[
  \sum_{\{t,u\}}
@@ -241,24 +240,23 @@ cylinders retain the PP3fl spread bound.
 
 #### Proof
 
-By PP3gs, the complete external two-slot mass is `o(1)`.  The internal mass is
-at most `1/16+o(1)` by PP3fj.  Hypothesis 3 keeps the remaining external mass
-within the residual `1/48-o(1)` budget.  Apply PP3fk and PP3fl. ∎
+Controller-aware domains remove every unary retained-pair and same-slot anchor
+certificate.  The internal mass is at most `1/16+o(1)` by PP3fj.  Hypotheses 1
+and 2 keep the remaining external mass within the residual `1/48-o(1)` budget.
+Apply PP3fk and PP3fl. ∎
 
 The corresponding row-slab statement is obtained by transposition.
 
-## 6. New exact bottleneck
+## 6. Subsequent closure of the energy side
 
-At the slab-optimized exponents, the allocation and completion tasks are:
+The later chapters strengthen this preliminary endpoint.
 
-1. find the saturation-compatible global refined-label matching on only
-   `m^{1/20+o(1)}` macro graphs, each with domains of size
-   `m^{19/20+o(1)}`;
-2. control only grouped rank-three completion energy, because all bounded-
-   codegree rank-two classes are asymptotically free;
-3. exploit PP3gn to reduce one mixed rank-three class to same-macro secants
-   tested against another pool.
+- PP3he proves all patch-only cross-macro mass is `o(1)` at the slab-optimal
+  scale.
+- PP3hk proves all ordinary two-slot source-anchor mass is `o(1)`.
+- PP3ho supplies the exact controller-aware unary safety interface.
 
-This strictly narrows the remaining theorem compared with the earlier
-`M=m^{23/80}` balance.  It does not by itself bound the all-movement,
-all-refill, or residual mixed triple energies.
+Thus the remaining task is not rank-two or rank-three completion energy.  It is
+the density and saturation-compatible global allocation of the
+controller-aware domains `H_{A,B}^{ctrl}`, or a collateral-controlled trade
+that improves their noncontroller blocker shadow.
