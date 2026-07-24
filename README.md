@@ -63,6 +63,7 @@ where `D(n)` is the maximum number of points that can be selected from an
 - [`docs/41-sheared-parabolic-banks.md`](docs/41-sheared-parabolic-banks.md): sheared internally clean banks with explicit cell/pair spread.
 - [`docs/42-width-two-matching-patches.md`](docs/42-width-two-matching-patches.md): complete cross-only width-two classification and finite obstruction.
 - [`docs/43-one-rectangle-patch-repair.md`](docs/43-one-rectangle-patch-repair.md): exact alternating-rectangle repair criterion and repaired extensions.
+- [`docs/44-multi-rectangle-trade-banks.md`](docs/44-multi-rectangle-trade-banks.md): exact rank-three SAT bank and exhaustive two-switch classification.
 
 ## Research discipline
 
@@ -95,12 +96,15 @@ The independent all-`n` prime-patching track now has:
 - a multi-rung coordinate budget reducing the published prime-gap target to
   about `m^0.05` compatible square-root rungs;
 - a complete width-two matching-patch classification;
-- three exact patch-plus-rectangle repaired extensions, `4 -> 6`, `5 -> 7`,
-  and `6 -> 8`.
+- exact rectangle-trade CNF selection, with a 2-SAT endpoint when every triple
+  meets at most two protected rectangle variables;
+- 9, 7, and 14 additional two-switch target configurations from stored sources
+  4, 5, and 6, while exhaustive depth two yields none from sources 7 through 10.
 
 Its remaining bottleneck is an asymptotic preparation theorem that installs
-matching-admissible parabolic rungs and protected rectangle trades with low
-external certificate interaction and mutual compatibility.
+matching-admissible parabolic rungs and protected rectangle trades whose joint
+triple formula has bounded rank, controlled occurrence, and mutual cross-rung
+compatibility.
 
 ## Running the checks
 
@@ -119,6 +123,8 @@ python scripts/analyze_matching_reservoir_cycles.py certificates/prime-patching-
 python scripts/solve_matching_reservoir_2sat.py certificates/prime-patching-small.json experiments/parabolic-variable-bank-n4.json --n 4 --t 2 --columns 1,2,3,4 --rows 1,2,3,4
 python scripts/search_width_two_matching_patches.py certificates/prime-patching-small.json
 python scripts/search_width_two_rectangle_repairs.py certificates/prime-patching-small.json
+python scripts/search_width_two_two_rectangle_repairs.py certificates/prime-patching-small.json
+python scripts/solve_rectangle_trade_bank.py experiments/two-rectangle-bank-n4.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for
@@ -147,7 +153,8 @@ A useful contribution should do at least one of the following:
 - prove a quantified shadow, projection, or codegree bound;
 - prepare a positive-density family of matching-admissible sheared parabolic states;
 - build a geometry-aligned cycle bank with satisfiable external-certificate 2-SAT;
-- construct protected rectangle trades around residual patch certificates;
+- install a protected rectangle family with bounded-rank, bounded-occurrence
+  triple clauses;
 - prove multi-rung compatibility at the `m^0.05` rung-count scale;
 - prepare a prime-minus-one reservoir meeting a PP2 endpoint;
 - prove the second-order concentration theorem for the alternating neutralization bank;
