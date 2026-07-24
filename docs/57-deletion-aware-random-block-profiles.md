@@ -1,6 +1,9 @@
 # Deletion-aware random matching-block profiles
 
-PP3cm counts source anchors deletion-blindly.  The random block construction has
+This constant-width side analysis follows PP3eo and continues the numbering at
+PP3ep.
+
+PP3en counts source anchors deletion-blindly.  The random block construction has
 more structure: after choosing one four-edge deletion in every block, the union
 of deleted source edges is a uniform fixed-size subset of the matching layer.
 This gives exact survival factors for source anchors and removes every
@@ -8,7 +11,7 @@ controller-anchor collision.
 
 ## 1. Uniform deletion union
 
-Use the random labelled equipartition from PP3ck.  In every block `E_i`, choose a
+Use the random labelled equipartition from PP3el.  In every block `E_i`, choose a
 uniform four-edge deletion `D_i subseteq E_i`, independently between blocks, and
 then choose the two ordered pair partitions uniformly.  Put
 
@@ -18,7 +21,7 @@ then choose the two ordered pair partitions uniformly.  Put
 
 Thus `|D|=4K`.
 
-### Proposition PP3co -- PROVED
+### Proposition PP3ep -- PROVED
 
 The random set `D` is a uniform `4K`-subset of the matching layer `P`.
 
@@ -60,7 +63,7 @@ from one another, and be disjoint from the `q` controller edges.  Define
  \qquad H_{q,0}=1.
 \]
 
-### Corollary PP3cp -- PROVED
+### Corollary PP3eq -- PROVED
 
 Conditional on the controlled patch event, all `s` source anchors survive with
 probability exactly `H_{q,s}`.
@@ -70,7 +73,7 @@ anchor event has probability zero.
 
 #### Proof
 
-PP3co leaves a uniform `(4K-q)`-subset of the `m-q` noncontroller edges to be
+PP3ep leaves a uniform `(4K-q)`-subset of the `m-q` noncontroller edges to be
 deleted.  The probability that none of the `s` anchors lies in it is
 
 \[
@@ -93,7 +96,7 @@ deleted and all positive-rank same-layer anchor events vanish.
 
 ## 3. Stratified global profile counts
 
-Refine the deletion-blind profile counts from PP3cm as follows.
+Refine the deletion-blind profile counts from PP3en as follows.
 
 - `M_1^{(s)}`, for `s=0,1,2`, counts `M_1` signatures whose two source points
   contain exactly `s` points from the selected matching layer.
@@ -102,10 +105,10 @@ Refine the deletion-blind profile counts from PP3cm as follows.
 
 Delete from these families every signature in which a selected-layer source
 anchor is one of its candidate controller edges.  Such a triple is impossible by
-PP3cp.  The all-patch profiles `M_{h1},M_{21},M_{111}` need no anchor
+PP3eq.  The all-patch profiles `M_{h1},M_{21},M_{111}` need no anchor
 stratification.
 
-### Proposition PP3cq -- PROVED
+### Proposition PP3er -- PROVED
 
 Let `W_delta` be the PP3ci left side after conditioning every block to a clean
 domain of density at least `delta`.  Then
@@ -146,8 +149,8 @@ G_\delta^{\rm del}
 
 #### Proof
 
-Use the same block-assignment probabilities as in PP3cm.  For every profile with
-source anchors in the selected layer, PP3cp gives the additional factor
+Use the same block-assignment probabilities as in PP3en.  For every profile with
+source anchors in the selected layer, PP3eq gives the additional factor
 `H_{q,s}`, where `q` is the number of distinct controller edges.  Signatures with
 a controller-anchor collision have probability zero and were removed.  Finally,
 conditioning each involved block to a clean domain can increase an event
@@ -158,9 +161,9 @@ Since `H_{q,s}<=1`, this always improves the deletion-blind bound `G_delta`.
 
 ## 4. Deletion-aware all-block endpoint
 
-### Theorem PP3cr -- PROVED
+### Theorem PP3es -- PROVED
 
-In PP3cn, the term `G_delta` may be replaced by `G_delta^{del}`.  Hence a valid
+In PP3eo, the term `G_delta` may be replaced by `G_delta^{del}`.  Hence a valid
 width-`2K` saturated no-three extension exists whenever
 
 \[
@@ -171,7 +174,7 @@ width-`2K` saturated no-three extension exists whenever
 
 #### Proof
 
-Repeat the proof of PP3cn, using PP3cq to bound the expected global certificate
+Repeat the proof of PP3eo, using PP3er to bound the expected global certificate
 mass. ∎
 
 ## 5. Scaling consequence and limitation
