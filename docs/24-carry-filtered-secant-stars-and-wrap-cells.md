@@ -1,11 +1,12 @@
 # Carry-filtered secant stars and wrap cells
 
-This chapter complements [`23-aligned-anchor-carry-cells.md`](23-aligned-anchor-carry-cells.md). That chapter gives a detailed determinant factorization for aligned anchors in the original hyperbola parameters. Here we prove two additional geometric statements:
+This chapter complements [`23-aligned-anchor-carry-cells.md`](23-aligned-anchor-carry-cells.md). That chapter gives a detailed determinant factorization for aligned anchors in the original hyperbola parameters. Here we prove three additional geometric statements:
 
-1. same-channel secant stars admit an exact integer carry factorization and a divisor bound at each carry level;
-2. coordinatewise scalar lifts admit a universal wrap-cell classification with explicit rational centers.
+1. same-channel secant stars admit an exact integer cross-carry factorization;
+2. cross-channel secant stars disperse across endpoint product-carry signatures;
+3. coordinatewise scalar lifts admit a universal wrap-cell classification with explicit rational centers.
 
-Together with the paid common-ratio conversion theorem, these statements reduce the alternating-closure obstruction to cross-channel stars and explicitly classified perfect-wrap chambers.
+Together with the paid common-ratio conversion theorem, these statements remove anonymous secant-star and aligned-anchor obstructions. What remains is to turn carry-signature dispersion into closure growth and to control the explicit perfect-wrap chambers.
 
 Throughout, residues are represented by integers in \(\{1,\ldots,p-1\}\).
 
@@ -61,18 +62,21 @@ B_z,P_x,P_u\text{ are real-collinear}
 The projective secant relation gives
 
 \[
-(x-z)(y_u-w)\equiv(u-z)(y_x-w)\pmod p.
+(x-z)(y_u-w)
+\equiv
+(u-z)(y_x-w)
+\pmod p.
 \]
 
 Using \(y_u\equiv a/u\), \(w\equiv b/z\), and
 
 \[
-r xu=z(x+u-z),
+r xu=z(x+u-z)
 \]
 
 shows that each cross product is congruent to \(b-a\). Their difference is the real collinearity determinant, so it vanishes exactly when the two integer carries agree. \(\square\)
 
-## 2. Divisor control and carry dispersion
+## 2. Same-channel divisor control
 
 For a carry level \(t\), put
 
@@ -102,13 +106,16 @@ Consequently, a same-channel real secant star containing \(M\) pairs occupies at
 \boxed{\frac{M}{\Delta_p}}
 \]
 
-distinct carry levels, where
+distinct cross-carry levels, where
 
 \[
-\Delta_p=\max_{1\le n\le(p-2)^2}\tau(n)
+\Delta_p
+=
+\max_{1\le n\le(p-2)^2}\tau(n)
 =
 \exp\!\left(O\!\left(\frac{\log p}{\log\log p}\right)\right)
-=p^{o(1)}.
+=
+p^{o(1)}.
 \]
 
 ### Proof
@@ -121,9 +128,79 @@ At level \(t\), every oriented parameter satisfies
 
 The nonzero integer \(x-z\) is a signed divisor of \(N_t\) and determines \(x\). Thus there are at most \(2\tau(|N_t|)\) oriented parameters. Each real secant pair contributes two orientations. \(\square\)
 
-This gives a genuine carry-dispersion theorem: a polynomially large same-channel star cannot remain inside a bounded family of carry levels.
+## 3. Cross-channel product carries
 
-## 3. Universal scalar wrap criterion
+For a point \(P=(x,y)\in H_a\), define its product carry
+
+\[
+\ell_a(P)=\frac{xy-a}{p}.
+\]
+
+Then
+
+\[
+xy=a+p\ell_a(P),
+\qquad
+0\le\ell_a(P)\le p-2.
+\]
+
+For a second channel \(H_c\), define \(\ell_c\) analogously. Put
+
+\[
+\Delta_p^\times
+=
+\max_{1\le n\le(p-1)^2}\tau(n).
+\]
+
+### Theorem CF3 — PROVED
+
+Fix an anchor point anywhere in the real grid. For fixed product carries \((s,t)\), the number of pairs
+
+\[
+P\in H_a,
+\qquad Q\in H_c,
+\]
+
+with
+
+\[
+\ell_a(P)=s,
+\qquad
+\ell_c(Q)=t
+\]
+
+that are real-collinear with the anchor is at most
+
+\[
+\boxed{
+\tau(a+ps)\tau(c+pt)
+\le(\Delta_p^\times)^2.
+}
+\]
+
+Consequently, a cross-channel secant star of size \(M\) occupies at least
+
+\[
+\boxed{
+\frac{M}{(\Delta_p^\times)^2}
+}
+\]
+
+distinct endpoint product-carry signatures.
+
+### Proof
+
+At product carry \(s\), a point of \(H_a\) satisfies
+
+\[
+xy=a+ps.
+\]
+
+Its positive coordinate \(x\) is a divisor of \(a+ps\), so there are at most \(\tau(a+ps)\) such grid points. The corresponding statement holds on \(H_c\). The number of possible ordered endpoint pairs in one signature is therefore at most the product of the two divisor counts; imposing collinearity with the anchor can only reduce it. \(\square\)
+
+This is coarser than CF2 because it does not use the projective involution, but it applies to endpoints on distinct channels.
+
+## 4. Universal scalar wrap criterion
 
 Let
 
@@ -131,15 +208,15 @@ Let
 U=(x,y)\in[1,p-1]^2
 \]
 
-and take distinct \(\alpha,\beta\in\{2,\ldots,p-1\}\). Define
+and take distinct \(\alpha,\beta\in\{2,\ldots,p-1\}\). Define the coordinatewise lifted multiples
 
 \[
 P_\alpha(U)=\langle\alpha U\rangle_p,
 \qquad
-P_\beta(U)=\langle\beta U\rangle_p
+P_\beta(U)=\langle\beta U\rangle_p,
 \]
 
-coordinatewise, and set
+and set
 
 \[
 K_\alpha(U)=
@@ -151,9 +228,9 @@ K_\alpha(U)=
 
 with \(K_\beta(U)\) defined analogously.
 
-### Theorem CF3 — PROVED
+### Theorem CF4 — PROVED
 
-Writing \(A=K_\alpha(U)\), \(B=K_\beta(U)\), the points
+Writing \(A=K_\alpha(U)\) and \(B=K_\beta(U)\), the points
 
 \[
 U,P_\alpha(U),P_\beta(U)
@@ -179,33 +256,33 @@ P_\beta(U)-U=(\beta-1)U-pB
 
 and expand the determinant. \(\square\)
 
-## 4. Nondegenerate cells and common-wrap centers
+## 5. Nondegenerate cells and common-wrap centers
 
-Fix \(A,B\). Inside that carry cell, CF3 is
+Fix \(A,B\). Inside that carry cell, CF4 becomes
 
 \[
 \det\bigl(U,(\alpha-1)B-(\beta-1)A\bigr)
 =p\det(A,B).
 \]
 
-The pair of one-dimensional carries
+For one coordinate \(q\in\{1,\ldots,p-1\}\), the pair
 
 \[
 \left(
-\left\lfloor\frac{\alpha t}{p}\right\rfloor,
-\left\lfloor\frac{\beta t}{p}\right\rfloor
+\left\lfloor\frac{\alpha q}{p}\right\rfloor,
+\left\lfloor\frac{\beta q}{p}\right\rfloor
 \right)
 \]
 
 is constant on at most
 
 \[
-\rho_{\alpha,eta}\le\alpha+\beta-1
+\rho_{\alpha,\beta}\le\alpha+\beta-1
 \]
 
-intervals. Hence there are at most \(\rho_{\alpha,eta}^2\) two-dimensional carry cells.
+intervals. Hence there are at most \(\rho_{\alpha,\beta}^2\) two-dimensional carry cells.
 
-### Theorem CF4 — PROVED
+### Theorem CF5 — PROVED
 
 For one modular-hyperbola channel \(H_c\):
 
@@ -216,7 +293,7 @@ For one modular-hyperbola channel \(H_c\):
    contains at most two aligned points of \(H_c\);
 2. the total nondegenerate aligned population is at most
    \[
-   \boxed{2\rho_{\alpha,eta}^2};
+   \boxed{2\rho_{\alpha,\beta}^2};
    \]
 3. writing
    \[
@@ -229,7 +306,8 @@ For one modular-hyperbola channel \(H_c\):
    a cell is degenerate exactly when
    \[
    A=\alpha'S,
-   \qquad B=\beta'S
+   \qquad
+   B=\beta'S
    \]
    for some \(S\in\{0,\ldots,d\}^2\);
 4. there are at most \((d+1)^2\) degenerate cells, and every point in one such cell is automatically aligned through the rational center
@@ -261,32 +339,29 @@ P_\beta(U)-U
 
 which proves the common-center statement. \(\square\)
 
-Theorem CF4 is a geometric companion to CA1–CA4: CA2 gives a divisor bound per nondegenerate aligned signature, while CF4 gives a global line bound per scalar carry cell and identifies every degenerate cell by an explicit rational center.
+Theorem CF5 is a geometric companion to CA1–CA4: CA2 gives a divisor bound per nondegenerate aligned signature, while CF5 gives a global line bound per scalar carry cell and identifies every degenerate cell by an explicit rational center.
 
-## 5. Partial alternating-closure reduction
+## 6. Partial alternating-closure reduction
 
-### Theorem CF5 — PROVED
+### Theorem CF6 — PROVED
 
 A failed paid common-ratio bank produces at least one of the following:
 
 1. an improving rectangle;
-2. a cross-channel secant star;
-3. a same-channel secant star spread over at least \(M/\Delta_p\) carry levels;
-4. an aligned-anchor family dispersed over many nondegenerate carry signatures, as in CA4;
-5. a large perfect-alignment population in explicit carry slabs, and in the scalar-cell formulation, inside at most \((d+1)^2\) common-wrap radial chambers.
+2. a same-channel secant star dispersed through at least \(M/\Delta_p\) cross-carry levels;
+3. a cross-channel secant star dispersed through at least \(M/(\Delta_p^\times)^2\) endpoint product-carry signatures;
+4. an aligned-anchor family dispersed through many nondegenerate carry signatures, as in CA4;
+5. a large perfect-alignment population in explicit carry slabs and, in the scalar-cell formulation, inside at most \((d+1)^2\) common-wrap radial chambers.
 
-Thus the remaining alternating-closure mechanisms are now:
+No secant-star or aligned-anchor obstruction is now anonymous. The remaining closure problem is to show that repeated propagation cannot sustain unbounded carry-signature growth, and that dense perfect-wrap chambers are absorbable or impossible outside the known algebraic exceptions.
 
-- **cross-channel stars**, for which a two-channel carry factorization is still missing;
-- **perfect-wrap chambers**, which require a chamber-sparsity or absorber theorem.
+## 7. Next exact targets
 
-## 6. Next exact targets
+### Target CF7: carry-signature growth inequality
 
-### Target CF6: cross-channel carry factorization
+Assign a complexity cost to every cross-carry level, endpoint product-carry signature, and aligned carry signature. Prove that alternating red/blue propagation either creates an improving trade or increases this complexity faster than the active core can grow.
 
-For one line through an anchor on \(H_b\), with endpoints on distinct channels \(H_a,H_c\), find a fixed-degree integer carry invariant giving a divisor-type bound analogous to CF2.
-
-### Target CF7: perfect-wrap chamber sparsity
+### Target CF8: perfect-wrap chamber sparsity
 
 A degenerate scalar cell has side lengths at most
 
@@ -302,4 +377,4 @@ Prove that many modular-hyperbola points cannot occupy these cells unless they f
 python scripts/verify_carry_closure.py --prime 17
 ```
 
-checks CF1–CF4 exhaustively for small odd primes. It is a finite sanity check, not a proof for arbitrary \(p\).
+checks CF1, CF2, CF4, and CF5 exhaustively for small odd primes. CF3 is an elementary divisor-count statement. The script is a finite sanity check, not a proof for arbitrary \(p\).
