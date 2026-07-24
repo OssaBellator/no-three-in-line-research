@@ -12,7 +12,7 @@ S(\pi_0,\pi_1)
 \{(x,\pi_r(x)):x\in[N],\ r\in\{0,1\}\}.
 \]
 
-## Theorem PXF1 — PROVED
+## Finite certificate at 6 — PROVED
 
 The pair
 
@@ -26,7 +26,7 @@ defines a saturated no-three configuration of 12 points in `[6]^2`.
 
 It arises from the `3 x 2` cycle-phase product in a crossed radix orientation.
 
-## Theorem PXF2 — PROVED
+## Finite certificate at 8 — PROVED
 
 The pair
 
