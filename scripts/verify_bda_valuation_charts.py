@@ -201,6 +201,81 @@ def verify_common_content(maximum_q: int = 30, maximum_bound: int = 20) -> None:
     verify_global_projective_atlas()
 
 
+def verify_double_primitive_lifts(maximum_q: int = 18) -> None:
+    for a in range(1, 7):
+        for b in range(-6, 7):
+            if b == 0 or gcd(a, abs(b)) != 1:
+                continue
+            for m in range(-15, 16):
+                for n in range(-15, 16):
+                    if m == 0 or n == 0:
+                        continue
+                    radial = gcd(abs(m), abs(n))
+                    u, v = m // radial, n // radial
+                    assert radial > 0
+                    assert gcd(abs(u), abs(v)) == 1
+                    matrix = (
+                        (a * m, a * n),
+                        (b * m, b * n),
+                    )
+                    reconstructed = (
+                        (radial * a * u, radial * a * v),
+                        (radial * b * u, radial * b * v),
+                    )
+                    assert reconstructed == matrix
+                    height = max(abs(entry) for row in matrix for entry in row)
+                    assert height == (
+                        radial
+                        * max(abs(a), abs(b))
+                        * max(abs(u), abs(v))
+                    )
+
+                    for q in range(2, maximum_q + 1):
+                        q_content = common_content(m, n, q)
+                        radial_q_part = 1
+                        for prime in prime_divisors(q):
+                            radial_q_part *= prime ** valuation(radial, prime)
+                        assert q_content == radial_q_part
+                        reduced_radial = radial // radial_q_part
+                        assert gcd(reduced_radial, q) == 1
+                        assert (
+                            m // q_content,
+                            n // q_content,
+                        ) == (reduced_radial * u, reduced_radial * v)
+
+                        direction_class = projective_class(
+                            (a % q, b % q),
+                            q,
+                        )
+                        scale_class = projective_class(
+                            (u % q, v % q),
+                            q,
+                        )
+                        reduced_matrix = (
+                            a * reduced_radial * u % q,
+                            a * reduced_radial * v % q,
+                            b * reduced_radial * u % q,
+                            b * reduced_radial * v % q,
+                        )
+                        assert projective_class(
+                            (
+                                reduced_radial * u % q,
+                                reduced_radial * v % q,
+                            ),
+                            q,
+                        ) == scale_class
+                        assert reduced_matrix == (
+                            (a % q) * (reduced_radial * u % q) % q,
+                            (a % q) * (reduced_radial * v % q) % q,
+                            (b % q) * (reduced_radial * u % q) % q,
+                            (b % q) * (reduced_radial * v % q) % q,
+                        )
+                        assert direction_class == projective_class(
+                            (a % q, b % q),
+                            q,
+                        )
+
+
 def verify() -> None:
     for prime in (2, 3, 5):
         for exponent in range(1, 4):
@@ -290,6 +365,7 @@ def verify() -> None:
                                     * pow(scales[column], -1, modulus)
                                 ) % modulus
     verify_common_content()
+    verify_double_primitive_lifts()
 
 
 def main() -> None:

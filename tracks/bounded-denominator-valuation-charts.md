@@ -350,9 +350,130 @@ slope/scale address has exactly the finite atlas above.  The remaining
 BDA4 unboundedness is therefore in integer lifts and transition cycles,
 not composite-residue factorization.
 
+## BDA3j -- double-primitive integer-lift normal form
+
+Retain the unique BDA3g factorization
+
+\[
+M=
+\begin{pmatrix}U&V\\S&T\end{pmatrix}
+=
+\begin{pmatrix}a\\b\end{pmatrix}
+\begin{pmatrix}m&n\end{pmatrix},
+\qquad
+a>0,\quad \gcd(a,|b|)=1.
+\]
+
+Put
+
+\[
+h=\gcd(|m|,|n|),
+\qquad
+(u,v)=(m/h,n/h).
+\]
+
+### Theorem BDA3j -- PROVED
+
+Every compatible collinear address has the unique factorization
+
+\[
+\boxed{
+M
+=
+h
+\begin{pmatrix}a\\b\end{pmatrix}
+\begin{pmatrix}u&v\end{pmatrix},
+\qquad
+h>0,\quad
+\gcd(a,|b|)=\gcd(|u|,|v|)=1,
+}
+\]
+
+with \(a>0\) and all four vector coordinates nonzero.  If every entry
+of \(M\) has absolute value at most \(N\), then
+
+\[
+\boxed{
+h\,\max\{|a|,|b|\}\,\max\{|u|,|v|\}
+=
+\max\{|U|,|V|,|S|,|T|\}
+\leq N.
+}
+\]
+
+For the fixed denominator \(q\), write
+
+\[
+h_q=\prod_{\ell\mid q}\ell^{v_\ell(h)},
+\qquad
+h^\circ=h/h_q.
+\]
+
+Then the BDA4b content and reduced scales are exactly
+
+\[
+\boxed{
+g_q(m,n)=h_q,
+\qquad
+(m^\circ,n^\circ)=h^\circ(u,v),
+\qquad
+\gcd(h^\circ,q)=1.
+}
+\]
+
+Consequently, modulo \(q\), the content-reduced matrix is
+
+\[
+\boxed{
+M^\circ
+=h^\circ
+\begin{pmatrix}a\\b\end{pmatrix}
+\begin{pmatrix}u&v\end{pmatrix}.
+}
+\]
+
+Both vectors are unimodular modulo \(q\), while \(h^\circ\) is a unit.
+Thus the two projective factors in the finite BDA3i atlas are precisely
+the reductions of the two primitive integer directions
+\([a:b]\) and \([u:v]\); its remaining unit scalar records
+\(h^\circ\) together with the fixed representative normalizations.
+
+### Proof
+
+The definition of \(h\) makes \((u,v)\) primitive and gives the
+displayed factorization.  Conversely, primitivity of \((u,v)\) forces
+\(h=\gcd(|m|,|n|)\), while BDA3g already makes \((a,b)\), \(m\), and
+\(n\) unique.  This proves uniqueness.
+
+The maximum absolute entry of an outer product is the product of the
+two maximum coordinate norms, giving the height identity.
+
+Since \((u,v)\) is primitive, for every prime \(\ell\)
+
+\[
+\min\{v_\ell(m),v_\ell(n)\}=v_\ell(h).
+\]
+
+Restricting the product to primes dividing \(q\) proves
+\(g_q(m,n)=h_q\), and division gives the reduced-scale formula.
+No prime dividing \(q\) divides \(h^\circ\).  Each primitive integer
+two-vector is unimodular modulo every modulus, so BDA3i applies to the
+last display and identifies its two projective factors. \(\square\)
+
+BDA3j removes the apparent four-variable integer-lift ambiguity.
+After the finite residue atlas, an unbounded lift consists of exactly
+two primitive rational directions and one radial integer \(h^\circ\)
+coprime to \(q\), constrained by the product-height box.  Repetition of
+either primitive factor is now a one-dimensional slope/spacing-ratio
+chain, while radial escape is a single scalar phenomenon.  BDA4 still
+has to classify those chains, but no additional lift coordinate is
+hidden in the residue profile.
+
 `scripts/verify_bda_valuation_charts.py` exhaustively checks the
 truncated valuation, unit-pivot, and projective-ratio identities for
 small primitive directions, scales, and prime powers.  It also checks
 the canonical common-content reduction, exact height descent, box
 ceiling, terminal unit pivots, global projective uniqueness, and the
-exact CRT atlas count for composite denominators.
+exact CRT atlas count for composite denominators.  The same enumeration
+checks the double-primitive lift factorization, radial \(q\)-content,
+and product-height identity.

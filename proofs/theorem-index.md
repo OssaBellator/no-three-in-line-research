@@ -57,6 +57,7 @@ The numbering is local to this repository.
 | BDA3g | Compatible collinear relative addresses factor through one primitive spatial slope and two point scales | PROVED | `tracks/bounded-denominator-primitive-slope.md` |
 | BDA3h | Prime-power valuation pivots classify every visible primitive-slope and point-scale residue component | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
 | BDA3i | The content-reduced residue matrix has a unique finite CRT projective factor profile | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
+| BDA3j | Every integer address has a unique double-primitive lift with one radial scale whose \(q\)-smooth part is the valuation tower | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
 | BDA3-residue-wall | Equal coordinate residues do not determine collinearity | PROVED | `tracks/bounded-denominator-relative-address.md` |
 | BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `tracks/bounded-denominator-finite-transition.md` |
 | BDA4b | Common-scale prime division has a canonical finite valuation height and ends in full unit-pivot charts | PROVED | `tracks/bounded-denominator-valuation-charts.md` |

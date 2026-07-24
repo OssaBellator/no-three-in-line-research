@@ -178,6 +178,16 @@ rank-one residue matrices. Thus the remaining address escape is in
 integer lifts and genuine profile cycles, not a hidden composite-ring
 factorization ambiguity.
 
+BDA3j gives those integer lifts a unique normal form. Every address is
+\(h(a,b)^{\mathsf T}(u,v)\), with both two-vectors primitive and
+\(h>0\); its exact box height is
+\(h\|(a,b)\|_\infty\|(u,v)\|_\infty\). The BDA4b common content is
+exactly the \(q\)-smooth part of \(h\), so after content removal the
+only radial parameter is a unit modulo \(q\). The unbounded BDA4
+classification is therefore reduced to two primitive rational
+directions and one coprime radial scalar, rather than four unrelated
+integer lifts.
+
 ## BDA4 — exception classification
 
 ### Target statement
