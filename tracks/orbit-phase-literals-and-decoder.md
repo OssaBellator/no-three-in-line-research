@@ -206,10 +206,12 @@ the same 2-SAT machinery.
 
 [`orbit-phase-geometric-labels.md`](orbit-phase-geometric-labels.md),
 [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md),
+[`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md),
 and
-[`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
-continue these interfaces through OP4g--OP4j.  They derive exact
+[`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md)
+continue these interfaces through OP4g--OP4k.  They derive exact
 rational/carry factor records, audit whole-bicycle label consistency,
 separate complete rational density from one-sided formal companions,
-and turn every large rank-three matching into quantified product-carry
-signature growth.
+turn every large rank-three matching into quantified product-carry
+signature growth, and integrate the resulting blocker records into a
+role-tagged state ledger with a bounded current-recurrence output.

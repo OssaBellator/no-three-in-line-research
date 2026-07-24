@@ -506,20 +506,36 @@ is decided exactly, and factor-conservative fixed-edge payment is
 routed to complete rational density, one-sided completion deficits,
 heavy source reuse, or carry growth.
 
+[`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
+and
+[`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md)
+continue the rank-three side through OP4j--OP4k.  Exact
+profile/signature records enter a role-tagged state-qualified ledger.
+A no-growth matching is localized to one current-old blocker fibre of
+at most \(\Delta_p\) point-disjoint factors; externally certified
+weight above its finite capacity forces a heavy factor or a new token.
+
 Therefore repeated carry signatures are no longer an anonymous
 failure of monotonicity or an excuse to combine incompatible
 historical corrections.  At most
-\(|\Omega||\Sigma_{\rm act}|\) ledger-growth rounds occur before a
-current recurrent class must be processed.  The remaining frontier
-consists of five named arithmetic outputs:
+\[
+|\Omega|
+\bigl(
+|\Sigma_{\rm fan}|+|\Sigma_3|
+\bigr)
+\]
+role-tagged ledger-growth rounds occur before a current recurrent class
+must be processed.  OP4k.3 gives the corresponding OP3b finite-descent
+bound after replacing the fan-only token capacity by this combined
+capacity.  The remaining frontier consists of five named arithmetic
+outputs:
 
 1. high-overlap action-literal kernels;
 2. failed OP4h label gates whose source factors still need a
    current-syndrome payment certificate;
 3. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
    deficits, or its heavy-factor/carry-growth alternatives;
-4. OP4j rank-three blocker signatures awaiting state-ledger
-   integration;
+4. OP4k bounded current recurrent rank-three blocker fibres;
 5. the wide-support action CSPs already separated by OP3j.
 
 To finish OP2--OP5, these outputs must be shown to expand, to force a
@@ -534,3 +550,6 @@ protected-bank projection with direct source-factor evaluation,
 compares the implication solver with all assignments on thousands of
 2-CNF formulas, retains explicit contradictory paths, and checks both
 satisfiable and infeasible rank-three banks.
+
+`scripts/verify_phase_blocker_ledger.py` exhausts the rank-three
+role-tagged ledger extension and its divisor-capacity recurrence gate.

@@ -71,8 +71,8 @@ constructs globally consistent literal labels for OP4e or returns a
 root/literal mismatch with all source carry records retained.  Uniform
 arithmetic control is still open at the source-factor participation
 needed to pay those returned records, the RI5 fixed-edge conversion,
-rank-three signature-ledger integration, action-literal kernels, and
-wide action CSPs.
+bounded recurrent rank-three blocker fibres, action-literal kernels,
+and wide action CSPs.
 
 [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
 proves OP4i and the payment boundary.  Protected-bank correction weight
@@ -95,6 +95,18 @@ size \(\nu\) exposes at least
 {\left(q(q-1)+\binom q3\right)\Delta_p}
 \]
 signatures, with a weighted heavy-factor alternative.
+
+[`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md)
+proves OP4k and closes the rank-three state-ledger interface.  Exact
+profile/signature records use a role tag distinct from OP3k correction
+centres.  A matching of size \(\nu\) represents at least
+\(\lceil\nu/\Delta_p\rceil\) blocker tokens; either current-new tokens
+strictly grow the ledger or one current-old fibre of at most
+\(\Delta_p\) point-disjoint factors is returned.  Externally certified
+weight above the old-token capacity forces a heavy factor or new-token
+growth.  The combined fan/blocker ledger obeys the same exact OP3b
+finite-descent rank with the sum of the two role-tagged signature
+capacities.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -391,6 +403,9 @@ rank-three matching/kernel alternative: a maximal matching of
 \(2^{3\nu}\) conditioned residuals are all OP4b instances.
 OP4j routes the matching side to a finite channel profile with
 divisor-controlled product-carry signature growth.
+OP4k admits the exact rank-three profile/signature records to the
+role-tagged state ledger and localizes every no-growth return to a
+bounded current recurrent blocker fibre.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -457,6 +472,8 @@ by `scripts/verify_phase_geometric_labels.py`; paid fixed-edge density,
 completion deficits, and repetition are checked by
 `scripts/verify_phase_paid_edge_density.py`; rank-three matching carry
 dispersion is checked by `scripts/verify_phase_rank_three_router.py`.
+Rank-three state-ledger growth, recurrence, and weighted capacity are
+checked by `scripts/verify_phase_blocker_ledger.py`.
 
 ## Completion criterion
 

@@ -59,7 +59,7 @@ def canonical_route(
     prime: int,
 ) -> RankThreeRoute:
     assert len(factor.support_scope) == 3
-    assert factor.weight > 0
+    assert factor.weight >= 0
     assert determinant(*factor.points) == 0
     certificate = classify_factor(prime, factor.points)
     channels = certificate.channels

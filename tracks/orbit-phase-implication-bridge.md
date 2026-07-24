@@ -394,12 +394,16 @@ The remaining frontiers are now precise.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
-3. **Rank-three ledger integration.**
+3. **Rank-three recurrence.**
    [`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
    proves OP4j: every large switch-disjoint matching forces quantified
-   product-carry signature growth.  The remaining step is to admit
-   those blocker-factor signatures to the state-qualified ledger or
-   route their recurrence.
+   product-carry signature growth.
+   [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md)
+   proves OP4k: exact profile/signature records enter a role-tagged
+   state ledger, while a no-growth return is one current recurrent
+   fibre of at most \(\Delta_p\) point-disjoint source factors.  The
+   remaining arithmetic task is to process that bounded fibre, not to
+   invent another ledger.
 4. **Other OP3j outputs.**  Resolve the high-overlap action-literal
    kernels and wide action CSPs.
 
@@ -427,3 +431,7 @@ all really collinear oriented factors for \(p=11\).
 `scripts/verify_phase_rank_three_router.py` checks OP4j's finite channel
 profiles and endpoint-disjoint carry capacity on every real
 non-single-channel factor for \(p=11\).
+
+`scripts/verify_phase_blocker_ledger.py` checks OP4k's exact token
+growth, recurrence bounds, weighted capacity gate, and separation by
+snapshot and geometric role.

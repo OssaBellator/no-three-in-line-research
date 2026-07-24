@@ -170,10 +170,19 @@ OP4f's large-matching branch is no longer an anonymous
    \(3\nu\).  Exact conditioning returns the OP4d--OP4i rank-two
    interfaces.
 
-The remaining integration task is to admit these rank-three
-source-factor signatures into the state-qualified ledger, or to route a
-recurrent signature class to the existing factor-fan/carry machinery.
-No new rank-three local-lemma estimate is required.
+[`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md)
+performs the state-qualified integration as OP4k.  Because the exact
+channel profile is retained in the token, a matching of size \(\nu\)
+represents at least \(\lceil\nu/\Delta_p\rceil\) blocker tokens.  A
+round either inserts every current-new token or returns one current-old
+profile/signature fibre containing at most \(\Delta_p\) point-disjoint
+source factors.  With externally certified factor weights, excessive
+old-token mass forces a heavy source factor or ledger growth.
+
+Thus no new rank-three local-lemma estimate or ledger bookkeeping
+lemma is required.  The remaining arithmetic output is the bounded
+current recurrent blocker fibre; as before, clause logic does not
+supply its syndrome payment.
 
 `scripts/verify_phase_rank_three_router.py` enumerates all 4,448 real
 non-single-channel triples in the nonzero \(p=11\) grid.  It verifies
@@ -181,3 +190,7 @@ the canonical profile/signature record in 1,466 classes, checks the
 two-level divisor capacity, and exercises three-channel, two-channel,
 mixed-profile, weighted carry-growth, and heavy-factor matching
 outputs.
+
+`scripts/verify_phase_blocker_ledger.py` checks the ensuing OP4k
+growth, recurrence, weighted-capacity, snapshot-separation, and
+role-separation statements.

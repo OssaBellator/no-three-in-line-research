@@ -399,9 +399,11 @@ completion deficits, one heavy repeated source factor, or quantified
 product-carry growth.
 
 The next independent endpoints are therefore the RI5
-row-column-preserving conversion of the dense fixed-edge output, the
-source-factor participation theorem needed to pay failed bicycles, and
-the state-qualified ledger integration of OP4j rank-three signatures.
+row-column-preserving conversion of the dense fixed-edge output and the
+source-factor participation theorem needed to pay failed bicycles.
+The formerly separate rank-three ledger obligation is closed by
+[`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md);
+its remaining output is one bounded current recurrent blocker fibre.
 
 `scripts/verify_phase_geometric_labels.py` exhausts every modularly
 collinear triple in the nonzero grids for
