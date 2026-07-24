@@ -93,21 +93,20 @@ If
  \mathcal S_R=o(RL_R),
 \]
 
-and `W=o(L_M),o(L_R)`, then one may take `epsilon=o(1)` in PP3ee.  The resulting
-macro width is
-
-\[
- (1-o(1))\frac{\sqrt R}{16},
-\]
-
-and the conditional cell and ordinary-pair marginals are respectively
-`O(1/R)` and `O(1/R^2)`.
+and `W=o(L_M),o(L_R)`, then one may select `W` good labels in each direction and
+their abstract compatibility graph is complete with density parameter
+`1-o(1)`.
 
 #### Proof
 
 Choose `epsilon` tending to zero but larger than both normalized shadow
 densities and larger than `W/L_M,W/L_R`.  Corollary PP3ef then guarantees at
-least `W` good labels in each direction.  Apply PP3ee and PP3ec. ∎
+least `W` good labels in each direction. ∎
+
+This corollary is a label-selection statement only.  Turning a selected subset
+of numerical labels into a width-`W` saturated grid patch requires the selected
+new rows and columns to be exactly the final new coordinates, or requires a
+separate saturation-preserving allocation theorem.
 
 ## 3. Hall-type refinement
 
@@ -117,8 +116,8 @@ it may have large intersections with many labels on the other side.
 
 ### Proposition PP3eh -- PROVED
 
-If the compatibility graph `G_gamma` has minimum degree at least `W/2` on both
-sides, then PP3ea applies.
+If the compatibility graph `G_gamma` on the `W` labels that will actually be
+installed has minimum degree at least `W/2` on both sides, then PP3ea applies.
 
 #### Proof
 
@@ -133,15 +132,24 @@ Thus a failed macro patch forces either:
 Both alternatives are concrete targets for cycle flips, protected rectangles,
 or tomographic trades.
 
-## 4. Global label allocation
+## 4. Coordinate-budget warning
 
-For several disjoint matching pools, the candidate new-coordinate region may be
-larger than the final installed width.  One may first assign each pool a label
-reservoir of size `L` and then retain only `W=Theta(sqrt R)` good labels.
-Disjointness of the final selected label sets is sufficient; unused labels cost
-no row or column degree.
+A numerical label in `[m+1,m+L]` is an actual row or column of the final grid.
+If a construction selects only `W<L` labels and inserts no points on the other
+labels, then it is not saturated on `[m+L]^2`.  Reinterpreting it as a patch on
+`[m+W]^2` also fails when a selected label exceeds `m+W`.  An arbitrary
+order-preserving compression of the selected labels does not preserve
+collinearity in general.
 
-Consequently, a global preparation theorem may work with oversampling:
-construct disjoint candidate strips of size `L>>sqrt R`, prove normalized
-shadow `o(1)` in most strips, and invoke PP3eg.  The final extension width counts
-only the selected labels.
+Therefore unused numerical labels are **not free**.  The earlier informal
+oversampling shortcut is invalid without an additional interface.  Two valid
+uses of a larger candidate reservoir are:
+
+1. prove that the selected labels already form the complete consecutive final
+   coordinate set;
+2. allocate all final new labels globally among several macro variables, so
+   every new row and column is used exactly twice.
+
+The second option leads to a global balanced label-allocation and matching
+problem.  It can still exploit average boundary-shadow information, but it must
+cover every final label rather than discard the labels not chosen by one macro.
