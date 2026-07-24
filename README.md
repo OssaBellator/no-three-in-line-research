@@ -28,6 +28,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/11-open-bottlenecks.md`](docs/11-open-bottlenecks.md): exact remaining lemmas and proposed experiments.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): claims that were corrected, weakened, or refuted.
 - [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected collision-aware bank theorem.
+- [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection theorem and local triple-load endpoint.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
@@ -57,8 +58,9 @@ The strongest current synthesis is:
 6. Use collision-aware full permutation banks on cycle blocks.
 7. When a one-colour cycle is frozen, expand to its opposite-colour secant anchors.
 8. Control the alternating closure through quantitative one-, two-, and three-cell concentration certificates.
+9. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current target is an alternating two-colour carry-core lemma, supported by a universal collision-aware permutation-bank bound.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current geometric target is an alternating two-colour carry-core lemma. The new exact endpoint theorem says that once every row and column loses at most one percent of its cells and carries at most \(n^3/200\) residual collinear triples, a saturated no-three-in-line selection exists.
 
 ## Running the checks
 
@@ -79,6 +81,7 @@ These programs are sanity checks, not proofs for arbitrary \(n\).
 - Kovács, Nagy, Szabó, *Randomised algebraic constructions for the no-\((k+1)\)-in-line problem*, arXiv:2508.07632.
 - Glock, Joos, Kim, Kühn, Lichev, *Conflict-free hypergraph matchings*, arXiv:2205.05564.
 - Joos, Mubayi, Smith, *Conflict-free Hypergraph Matchings and Coverings*, arXiv:2407.18144.
+- Lu, Szekely, *A new asymptotic enumeration technique: the Lovasz Local Lemma*, arXiv:0905.3983.
 - Ceko, Pagani, Tijdeman, *Algorithms for linear time reconstruction by discrete tomography II*, arXiv:2010.07862.
 
 ## Contribution guidance
@@ -88,7 +91,7 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
-- implement an exact search for Möbius cycle states;
+- extend clone-space selection from complete to superregular candidate hosts;
 - classify frozen cycles and alternating anchor closures;
 - connect the carry filter to additive-combinatorial structure.
 
