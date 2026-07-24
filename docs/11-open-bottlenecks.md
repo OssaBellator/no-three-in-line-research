@@ -70,10 +70,10 @@ needs one of:
 
 The composite-modulus branch now has a complete nonlinear prime-power host,
 recursive saturated banks, exact carry signatures, deterministic and random
-syndrome estimates, and an executable multiscale repair bank.
+syndrome estimates, and two executable multiscale repair banks.
 
-For completed reciprocals and their companion layer, the current deterministic
-bounds are
+For completed reciprocals and their companion layer, the deterministic bounds
+are
 
 \[
 \mathcal E=O(N^{3/2}+N\log^3N),
@@ -81,64 +81,68 @@ bounds are
 T=O_p(N^2\log N).
 \]
 
-For the balanced recursive bank at primes \(p\equiv1\pmod4\), CMR67--CMR74 give
+For the corrected balanced recursive bank at primes
+\(p\equiv1\pmod4\), CMR67--CMR74 give
 
 \[
 \mathbb E T_k
 <
-4kN^2+\frac{p+2}{3}N^2.
+4(k-1)N^2+\frac{p+3}{3}N^2.
 \]
 
-CMR75--CMR78 neutralize every old binary same-layer star assigned to a complete
-p-adic prefix block. The rematching bank preserves saturation, moves every old
-block point, and has constant matching spread. CMR79--CMR81 reduce failed
-rank-one repair collateral to the quotient secant-incidence energy
+CMR75--CMR84 construct full prefix-block rematching banks, neutralize every old
+binary same-layer star assigned to a block, and decompose failed rank-one
+collateral into endpoint, modular-third-point, and repeated-projection terms.
+
+CMR85 removes the endpoint baseline completely from the actual candidate count.
+CMR86--CMR89 prove
 
 \[
-\mathcal J_s(S)
-=
-\sum_{e\in\binom S2}
-\sum_{\ell=0}^1 I_{s,\ell}(L_e).
+\mathcal M_s\le3t^2Z_s,
+\qquad
+\mathcal C_s-|E_s^{\rm coll}|<2N^2,
 \]
 
-CMR82--CMR84 now split this energy exactly into
+and total expected rank-one collateral
 
 \[
-\mathcal J_s(S)
-=
-2\left(\binom{2N}{2}-N(t-1)\right)
-+
-\mathcal M_s(S)
-+
-\mathcal C_s(S),
+O_p(N^2\log^2N).
 \]
 
-where `M_s` is a weighted three-distinct-point quotient modular-syndrome energy
-and `C_s` is a repeated-projection carry-direction energy over exactly
-`N(t-1)` same-layer fibre pairs.
+CMR90--CMR92 close the higher-rank terms universally:
 
-Thus the original binary-star bottleneck and its rank-one reduction are closed.
-The remaining repair theorem must charge the two excess energies, sharpen the
-universal endpoint baseline in CMR80, and control higher-rank matching
-collateral.
+\[
+\sum_{a,\ell}\frac{T_2}{(t)_2}<2N^2,
+\qquad
+\sum_{a,\ell}\frac{T_3}{(t)_3}<\frac{N^2}{3p}.
+\]
+
+CMR93--CMR95 show that finer prefix repairs preserve every coarser quotient and
+its modular-syndrome charge, so a fine-to-coarse sweep remains admissible.
+CMR96--CMR99 add a smaller recursive-compatible node bank: it stays inside the
+balanced reciprocal parameter space, destroys a heavy child-pair star, and has
+`O(1/p^2)` spread once two child digits are prescribed.
+
+Thus quotient excess charging, endpoint removal, and normalized higher-rank
+prefix collateral are closed. The remaining repair issue is iteration and
+fine-scale charging, not construction of a local bank.
 
 ### Composite-modulus open lemmas
 
-1. **Quotient excess-energy charging.** Bound `M_s` by quotient syndrome with
-   inherited line-signature multiplicity, and bound `C_s` using the primitive
-   carry directions from CMR84 together with CMR14--CMR22 and CMR58--CMR66.
-2. **Endpoint-baseline sharpening.** CMR79 allows `t` lifts in every successful
-   endpoint rectangle, but the two forbidden matchings remove the old selected
-   cells from the actual rank-one candidate set. Quantify this saving before
-   inserting `J_s` into CMR81.
-3. **Higher-rank prefix collateral.** Sum the normalized `T_2/(t)_2` and
-   `T_3/(t)_3` terms in CMR78 or convert their concentration into a paid
-   opposite-layer bank.
+1. **Recursive-compatible rank-one descent.** In CMR99, charge the weak node-rank
+   `U_1` certificates to child-prefix rank-one energies and prove a lexicographic
+   or reverse-scale decrease that survives repeated node repairs.
+2. **Termination after coarse repairs.** CMR93 protects unprocessed coarser
+   quotients, but a later coarse repair may recreate fine stars. Prove that the
+   reintroduced fine mass is paid by the coarse potential decrease.
+3. **Sharper modular quotient syndrome.** Improve the current
+   `O_p(sm^2)` bound for `Z_s`, or exploit inherited primitive line signatures to
+   beat the raw factor `3t^2` in CMR86.
 4. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
    in CMR61 and CMR64 for nearly singular carries.
-5. **Balanced local laws for all odd primes.** Construct a comparable no-three
-   fibre law for `p=3 mod 4`, or replace the reflection argument by a different
-   balanced family.
+5. **Balanced local laws for all odd primes.** Construct a comparable saturated
+   no-three fibre law for `p=3 mod 4`, or prove an obstruction within the
+   completed-reciprocal family.
 6. **Joint digital construction.** Search jointly for both layers or replace the
    obstructed `64`-point first layer before attempting a lift to `128`.
 7. **CRT slope-carry incompatibility.** Control simultaneous vanishing of
@@ -154,25 +158,27 @@ The following should be exhaustively tested for small primes:
 - distribution of \(q_s\) for real carry-filtered cycles;
 - existence of alternating two-colour closures that remain jointly frozen;
 - which CC3 certificate type dominates frozen examples;
-- exact `M_s` and `C_s` populations by scale and line signature;
-- savings from removing the two forbidden endpoint matchings;
-- normalized rank-two and rank-three prefix-block collateral;
+- recursive-compatible `U_1` collateral by child scale;
+- fine mass recreated by one coarse prefix repair;
+- inherited line-signature multiplicities inside `M_s`;
 - nearly singular completed-reciprocal divisor collisions;
-- balanced no-three fibre families at primes `p=3 mod 4`;
+- balanced no-three fibre laws at primes `p=3 mod 4`;
 - joint two-layer digital searches;
 - mixed-projection determinant distributions for CRT products.
 
 ## Recommended order of work
 
-1. Prove the quotient excess-energy charging theorem for `M_s` and `C_s`.
-2. Sharpen the endpoint baseline in CMR80.
-3. Bound the aggregate rank-two and rank-three prefix collateral in CMR78.
-4. Remove the square-root divisor boundary in CMR61 and CMR64.
-5. Search for balanced local reciprocal laws at primes `p=3 mod 4`.
-6. Build a mixed-projection-aware CRT assembly theorem.
-7. Continue exact finite searches at `N=14` and beyond.
-8. Search jointly for digital two-layer constructions.
-9. Convert the original CC3 concentration alternatives into forced
-   opposite-colour expansion.
-10. Prove a termination or global-density contradiction for alternating closure.
+1. Charge CMR99 node-rank-one collateral to finer prefix energies.
+2. Build a lexicographic termination potential for recursive-compatible node
+   repairs.
+3. Quantify fine-star recreation under the full prefix rematching bank.
+4. Sharpen the modular quotient syndrome and inherited line-signature
+   multiplicity.
+5. Remove the square-root divisor boundary in CMR61 and CMR64.
+6. Classify balanced local reciprocal laws at primes `p=3 mod 4`.
+7. Build a mixed-projection-aware CRT assembly theorem.
+8. Continue exact finite searches at `N=14` and beyond.
+9. Search jointly for digital two-layer constructions.
+10. Convert the original CC3 concentration alternatives into forced
+    opposite-colour expansion.
 11. Integrate both prime-field and prime-power repairs with descending scales.
