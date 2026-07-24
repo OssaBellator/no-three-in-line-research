@@ -3,6 +3,7 @@
 This experiment accompanies
 [`docs/90-superregular-paid-endpoint-trades.md`](../docs/90-superregular-paid-endpoint-trades.md),
 [`docs/91-endpoint-host-regularization.md`](../docs/91-endpoint-host-regularization.md),
+[`docs/92-low-support-permutation-local-lemma.md`](../docs/92-low-support-permutation-local-lemma.md),
 and
 [`scripts/analyze_endpoint_trade_hosts.py`](../scripts/analyze_endpoint_trade_hosts.py).
 
@@ -23,6 +24,8 @@ fixed source. The program:
 - counts anchored-pair and inserted-triple patterns by endpoint-index support
   rank;
 - applies the PP3is high-degree pruning;
+- computes the exact PP3ix low-event resource mass and the PP3ja high-support
+  source term;
 - searches exactly for a perfect matching whose insertion restores a saturated
   no-three configuration.
 
@@ -84,10 +87,42 @@ The inserted-triple profiles contain support ranks three through six. At side
 | 0 | 1 | 26 | 87 | 80 |
 | 1 | 1 | 4 | 31 | 33 |
 
-Most finite patterns have support rank above their event rank and are therefore
-eligible for additional dilution under PP3iv. The persistent rank-two anchored
-pairs and rank-three inserted triples are the low-support cores that random
-endpoint thinning cannot improve.
+Most finite patterns have support rank above their event rank and are eligible
+for additional dilution under PP3iv. PP3iz identifies the low-support patterns
+exactly: rank-two pairs are transpositions, rank-three pairs are directed
+transitions, and rank-three triples are directed 3-cycles.
+
+## Low-support permutation mass
+
+The exact maximum PP3ix resource masses on the full hosts are:
+
+| Side/layer | Maximum low-event mass | PP3ix threshold `1/24` |
+|---|---:|:---:|
+| 4/0 | `5/6` | fail |
+| 4/1 | `5/6` | fail |
+| 5/0 | `17/20` | fail |
+| 5/1 | `4/5` | fail |
+| 6/0 | `5/6` | fail |
+| 6/1 | `5/6` | fail |
+| 7/0 | `19/21` | fail |
+| 7/1 | `17/21` | fail |
+| 8/0 | `45/56` | fail |
+| 8/1 | `11/14` | fail |
+| 9/0 | `1` | fail |
+| 9/1 | `65/72` | fail |
+| 10/0 | `34/45` | fail |
+| 10/1 | `203/240` | fail |
+
+These values are dominated by unary forbidden arcs, not by transpositions or
+directed triangles. This is consistent with PP3jb: the finite hosts have
+forbidden degrees comparable to their side length, whereas the asymptotic
+criterion requires a small fixed fraction with total transition mass below the
+remaining `1/24` budget.
+
+The high-support PP3ja source term also exceeds one on almost every full host;
+for example it is `16911/1000` on side `10`, layer `0`, and `3393/500` on side
+`10`, layer `1`. Thus the exact finite failures are not artefacts of the coarse
+constant in PP3ix.
 
 ## High-degree pruning
 
@@ -101,21 +136,23 @@ Several pruned subbanks admit an exact source-admissible matching:
 | 8/0 | 7 | 7 | yes |
 | 10/1 | 7 | 7 | yes |
 
-Other layers remain obstructed after pruning. Thus endpoint regularization can
-recover clean subbanks, but a universal theorem still has to control the
-low-support pair/triple cores rather than only unary degree.
+Other layers remain obstructed after pruning. Endpoint regularization can
+therefore recover clean subbanks even when neither the asymptotic LLL constant
+nor the full-host first moment certifies them.
 
 ## Interpretation
 
 The exact finite data support the revised conversion programme.
 
-1. Put unary-invalid cells outside the host rather than charging them in the
-   first moment.
-2. Prune high endpoint rows and columns to obtain a superregular host when the
-   forbidden density is small.
-3. Thin by endpoint-index support rank to dilute diffuse high-support patterns.
-4. Apply a separate protected trade or structural theorem to the surviving
-   rank-two and rank-three cores.
+1. Put unary-invalid cells outside a superregular host, or include them as
+   canonical unary events when their per-resource mass is small.
+2. Prune high endpoint rows and columns when the forbidden density is sparse.
+3. Remove transposition, transition, and directed-triangle cores with the
+   permutation local lemma PP3ix.
+4. Thin by endpoint-index support rank to dilute diffuse high-support patterns.
+5. Apply the paid PP3ja endpoint to the remaining rank-four pair, high-support
+   triple, and controller-shadow collateral terms.
 
-The experiment does not prove an asymptotic endpoint trade. It identifies the
-precise residual structures left after PP3io--PP3iw.
+The experiment does not prove an asymptotic endpoint trade. It verifies that the
+new theorem tests the intended quantities and that the stored failures are
+structurally genuine.
