@@ -58,6 +58,11 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
 49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
 50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
+51. **All-modulus affine saturation.** For every modulus, two affine permutation channels with distinct offsets use every row and column exactly twice, including nonunit strata.
+52. **Affine real-lift classification.** The affine determinant is exactly \(-N\) times a carry determinant, and every affine modular channel has a real collinear triple for \(N\ge5\).
+53. **Affine pair graph and codegree classification.** Unit offset gives one alternating Hamiltonian cycle, but one corresponding-column displacement repeats at least \(\lceil N/2\rceil\) times.
+54. **Composite hyperbola collapse families.** Odd squarefree, odd prime-power, and power-of-two unit hyperbolas have explicit real lines containing more than two points.
+55. **Composite lift and CRT limitations.** Real collinearity always implies modular primitive-fibre collinearity, while coordinatewise CRT products contain mixed-projection triples with determinant divisible by the full modulus.
 
 ## What remains conditional
 
@@ -71,6 +76,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
+- A nonlinear full permutation channel over a broad composite-modulus class with a genuine real line cap, bounded displacement multiplicity, and controlled syndrome.
+- A positive ordered-box CRT assembly theorem handling mixed local-projection triples.
 
 ## Important refutations
 
@@ -82,7 +89,13 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
 - Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
+- Affine modular permutations cannot be a direct no-three channel for \(N\ge5\), despite solving saturation.
+- Prime-field hyperbola line caps do not survive natural composite unit-hyperbola substitution.
+- A unit-group channel is not a full permutation channel and cannot fill nonunit rows or columns.
+- A genuine toroidal no-three set cannot gain a real triple under standard lifting; the false implication is modular-to-real, not real-to-modular.
 
 ## Bottom line
 
-There is no complete proof. The reviewed branch is merged. Carry and wrap-center classification now make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
+There is no complete proof. Carry and wrap-center classification make every first-generation prime-field obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck there is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
+
+The composite-modulus branch now solves saturation and cycle structure for affine layers and closes the mandatory obstruction docket, but it also proves that the two most natural direct families—affine permutations and uncompleted unit hyperbolas—cannot supply the required real line cap. The positive all-\(n\) route must begin with a nonlinear full permutation host and a mixed-projection-aware CRT or prime-power analysis.
