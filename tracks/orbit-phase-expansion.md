@@ -67,6 +67,14 @@ alternating cycle, and one phase choice breaks its closing check.
 Consequently OP2 arithmetic expansion is needed only for unary saturation
 or a component with at least two independent cycles.
 
+[`orbit-phase-cactus-completion.md`](orbit-phase-cactus-completion.md)
+proves OP2c for a multiply-cyclic class. If every residual check has arity
+two and the contracted variable multigraph is a cactus, block-tree dynamic
+programming either constructs an assignment or compresses the entire
+obstruction to explicit unary saturation at an articulation variable.
+The remaining generic core has an arity-three check or a noncactus binary
+block with at least two independent cycles.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -102,6 +110,9 @@ OP2b also deletes every unicyclic component.  Thus the residual core for
 the OP4 estimate may be assumed to have cyclomatic number at least two in
 each component.
 
+OP2c additionally deletes satisfiable binary cactus blocks and turns every
+unsatisfiable binary cactus into a unary certificate before that estimate.
+
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
 ## OP5 — Interface theorem
@@ -136,7 +147,9 @@ No residual generic cycle core may remain unclassified.
 The forest and pseudoforest boundaries, unary-saturation exception, and a
 multiply-cyclic unsatisfiable example are retained by
 `scripts/verify_phase_forest.py` and
-`scripts/verify_phase_pseudoforest.py`.
+`scripts/verify_phase_pseudoforest.py`. Binary cactus compression and its
+unary-saturation obstruction are retained by
+`scripts/verify_phase_cactus.py`.
 
 ## Completion criterion
 

@@ -64,6 +64,7 @@ The numbering is local to this repository.
 | OP1a | Orbit states give canonical forbidden phase assignments of rank at most three | PROVED | `tracks/orbit-phase-literals-and-decoder.md` |
 | OP2a | Acyclic canonical phase-factor graphs are exactly completable | PROVED | `tracks/orbit-phase-forest-completion.md` |
 | OP2b | Canonical phase-factor pseudoforests are exactly completable | PROVED | `tracks/orbit-phase-pseudoforest-completion.md` |
+| OP2c | Binary-check cactus cores reduce exactly to unary saturation | PROVED | `tracks/orbit-phase-cactus-completion.md` |
 | OP3a | Exact weighted phase-flip drift identity | PROVED | `tracks/orbit-phase-literals-and-decoder.md` |
 | OP3b | Lexicographic phase/structure decoder termination | PROVED UNDER HYPOTHESES | `tracks/orbit-phase-literals-and-decoder.md` |
 | O6 | One-colour carry-cycle dispersion lemma | REFUTED | `docs/13-carry-cycle-dispersion.md` |
