@@ -1,6 +1,6 @@
 # Protected affine cylinder bounds and the rank-two barrier
 
-PX81--PX82 add independent row and column affine parameters inside every
+PX92--PX93 add independent row and column affine parameters inside every
 protected coset.  This chapter computes the exact local cylinder probabilities.
 The bank has the desired spread through rank two, but no further: two prescribed
 indices determine the complete local affine state.
@@ -16,7 +16,7 @@ Assume the subgroup order is a prime `ell`.  Fix one coset and identify it with
 M\subseteq(\mathbb F_\ell^*)^2
 \]
 
-be the admissible slope-pair set from PX82.  Choose
+be the admissible slope-pair set from PX93.  Choose
 
 \[
 (A,G)\in M,
@@ -36,19 +36,19 @@ The harmless fixed coset representatives, global multiplier `m`, and global
 column shift are omitted from the formulas; they are bijections and do not
 change cylinder probabilities.
 
-## Theorem PX83 -- PROVED
+## Theorem PX94 -- PROVED
 
 The protected affine local measure has the following exact cylinder laws.
 
 1. For one index `x` and arbitrary targets `y,z`,
-   
+
    \[
    \Pr(P(x)=y,\Phi(x)=z)=\frac1{\ell^2}.
    \]
 
 2. For distinct indices `x_1,x_2` and arbitrary row and column targets
    `y_1,y_2,z_1,z_2`, the joint probability is either zero or
-   
+
    \[
    \boxed{
    \frac1{|M|\ell^2}.
@@ -58,7 +58,7 @@ The protected affine local measure has the following exact cylinder laws.
 3. Local states in distinct additive cosets are independent, so cylinder
    probabilities multiply over cosets.
 
-Using PX82, every nonzero two-index cylinder therefore satisfies
+Using PX93, every nonzero two-index cylinder therefore satisfies
 
 \[
 \Pr(\text{cylinder})
@@ -95,13 +95,13 @@ G=(z_1-z_2)(x_1-x_2)^{-1}.
 
 The shifts are then uniquely determined.  If this slope pair is not in `M`, the
 probability is zero; otherwise exactly one of the `|M|ell^2` local states
-realizes the cylinder.  Independence across cosets is built into PX81.  The
-last inequality is PX82. \(\square\)
+realizes the cylinder.  Independence across cosets is built into PX92.  The
+last inequality is PX93. \(\square\)
 
 For `ell` large compared with `|D|`, the two-index probability is
 `O(ell^(-4))`, matching the scale of two independent random permutations.
 
-## Theorem PX84 -- PROVED
+## Theorem PX95 -- PROVED
 
 The affine protected bank does not have all-rank permutation spread.  For every
 admissible slope pair and every three distinct indices
@@ -147,7 +147,7 @@ collinearity certificate involving three independently placed indices in the
 same coset.
 
 This explains structurally why adding affine slopes improves the translation
-bank but does not automatically solve PX79.  The next protected entropy source
+bank but does not automatically solve PX90.  The next protected entropy source
 must have genuine rank-three variation.  Natural candidates are:
 
 1. arbitrary or highly spread permutations inside each additive coset subject
@@ -171,14 +171,14 @@ ell=5,
 Every nonzero two-index joint row/column cylinder has probability
 
 \[
-\frac1{4\cdot25}=rac1{100}.
+\frac1{4\cdot25}=\frac1{100}.
 \]
 
 Some three-index cylinders also have probability `1/100`.  By contrast, the
 uniform two-permutation scale for three distinct images would be
 
 \[
-\frac1{(5)_3^2}=rac1{3600}.
+\frac1{(5)_3^2}=\frac1{3600}.
 \]
 
 Thus the finite example already displays the full rank-two obstruction.
