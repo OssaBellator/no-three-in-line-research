@@ -40,6 +40,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/24-secant-star-carry-dispersion.md`](docs/24-secant-star-carry-dispersion.md): universal product-carry dispersion for endpoint-disjoint stars in every channel pair.
 - [`docs/25-perfect-alignment-arithmetic.md`](docs/25-perfect-alignment-arithmetic.md): exact interpolation-parameter arithmetic and bounded-denominator chamber sparsity.
 - [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
+- [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
@@ -75,13 +76,14 @@ The strongest current synthesis is:
 8. Weight quotient extraction by actual triple degrees, producing a paid admissible common-ratio bank.
 9. Convert the bank: either one rectangle improves, or failure yields a channel-pair secant star or an aligned multiplicative anchor class.
 10. Apply carry classification. Every endpoint-disjoint star disperses through divisor-controlled product-carry signatures; aligned anchors disperse through nondegenerate coordinate-carry signatures or enter perfect affine-interpolation chambers.
-11. Apply perfect-alignment arithmetic. Positive-density perfect chambers have bounded rational denominator and constrained source/target wrap indices.
-12. Recenter each perfect-wrap chamber at its rational center; its hyperbola points satisfy a divisor-bounded integer factorization, forcing further wrap-center dispersion.
-13. Prove a monotone alternating-closure potential, or construct finite-denominator absorbers for the remaining perfect chambers.
-14. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-15. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
+11. Apply perfect-alignment arithmetic and wrap-center factorization. Positive-density perfect chambers have bounded rational denominator and divisor-controlled occupancy at each rational center.
+12. Neutralize a dominant secant star by moving one endpoint from many star pairs through a constant-spread opposite-layer permutation bank.
+13. Analyze only the second-generation normalized certificate counts created by this joint bank.
+14. Prove a monotone alternating-closure potential, or construct finite-denominator absorbers for the remaining perfect chambers.
+15. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
+16. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth, bounded-denominator perfect alignment, and divisor-controlled wrap-center occupancy. The main geometric target is a monotone carry-complexity termination theorem.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or divisor-controlled perfect alignment. A dominant first-generation star can also be removed exactly by an alternating endpoint-permutation bank. The main geometric target is therefore a second-order concentration/termination theorem for the normalized collateral of that joint bank.
 
 ## Running the checks
 
@@ -121,9 +123,9 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
+- prove the second-order concentration theorem for the alternating neutralization bank;
 - construct a monotone carry-signature potential for alternating closure;
 - construct absorbers for bounded-denominator perfect-interpolation chambers;
-- sharpen the coarse cross-channel product-carry dispersion to a fixed-degree carry invariant;
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
 - classify frozen cycles and alternating anchor closures.
