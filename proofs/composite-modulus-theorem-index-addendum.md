@@ -14,3 +14,6 @@ composite index remains in
 | CMR107 | A concentrated one-point child pencil exposes an alternating outside-endpoint star bank | PROVED | `docs/69-prime-power-child-pencil-dichotomy.md` |
 | CMR108 | A concentrated two-point child pencil exposes a nested translated-child star bank | PROVED | `docs/69-prime-power-child-pencil-dichotomy.md` |
 | CMR109 | Absorber-free child pencils contribute less than \(240N^2\) expected weak collateral per depth | PROVED | `docs/69-prime-power-child-pencil-dichotomy.md` |
+| CMR110 | Degree-two forbidden matching banks have at least \(t!/72\) states and \(72/(t)_r\) cylinder spread | PROVED | `docs/70-prime-power-alternating-pencil-certificates.md` |
+| CMR111 | Child-pencil mass quantitatively controls the size of an extracted alternating star bank | PROVED | `docs/70-prime-power-alternating-pencil-certificates.md` |
+| CMR112 | A frozen extracted bank forces normalized rank-\(1/2/3\) concentration at least \(t/216\) | PROVED | `docs/70-prime-power-alternating-pencil-certificates.md` |
