@@ -30,6 +30,15 @@ Identify explicit, checkable hypotheses on a balanced bipartite graph `G` of deg
 
 The hypotheses must be strong enough to imply a perfect matching and stable under deleting one previously sampled perfect matching.
 
+### Checkable sufficient switching hypothesis
+
+[`sparse-four-cycle-switching.md`](sparse-four-cycle-switching.md)
+identifies one explicit sufficient condition: every matching containing an
+edge `e` has at least `L=Omega(d)` alternating four-cycle switches removing
+`e`, uniformly after the required bounded vertex deletions. This condition
+is not necessary—high-girth hosts require the longer-cycle alternative in
+the original SAS1 docket.
+
 ## SAS2 — Sparse switching ratio
 
 ### Target statement
@@ -50,6 +59,13 @@ Consequently
 
 The proof may use longer alternating cycles, expansion of a matching-switch chain, or permanent ratios.
 
+### Four-cycle case proved
+
+The switching note proves SAS2a: the four-cycle forward descriptions have
+reverse multiplicity at most one, so a uniform lower bound `L` gives
+`Pr(e in M)<=1/(L+1)`. In particular `L+1>=cd` gives the requested
+`O(1/d)` estimate. Longer-cycle hosts remain open.
+
 ## SAS3 — Fixed-rank and all-rank spread
 
 ### Target statement
@@ -65,6 +81,10 @@ for `|F|<=s`.
 The stronger target is an all-rank distribution satisfying the same bound for every matching `F`.
 
 Rank three is sufficient for duplicate-cell and collinear-triple conflicts; all-rank spread is useful for containers and robust thresholds.
+
+SAS3b proves the same edge bound after conditioning on a partial matching
+whenever the residual graph retains the four-cycle hypothesis. Combined
+with SAS3a, bounded-rank spread is therefore complete for this host class.
 
 ### Proved composition component
 
@@ -139,6 +159,9 @@ upgrade).
 - measure alternating-cycle counts through edges in the algebraic hosts;
 - compute exact permanent ratios for small primes;
 - test stability after deleting one perfect matching.
+
+`scripts/verify_sparse_switching.py` retains both the exact complete-host
+ratio and the degree-two cycle with no four-cycle switch.
 
 ## Completion criterion
 
