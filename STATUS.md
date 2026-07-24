@@ -88,12 +88,23 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 78. **Complete small arbitrary-map census.** The normalized one-layer family has exact success/configuration counts \((16,9),(0,0),(4,4),(8,5)\) at base sides two through five.
 79. **Full-symmetric template universality.** With arbitrary block permutations, one successful normalized template transports every fine permutation and therefore every saturated factor layer.
 80. **Universal special product closure at four.** Every saturated no-three side-four factor composes with side two to the exact saturated no-three side-eight template.
+81. **Rectangle perfect-matching normal form.** Every arbitrary-map one-inner-layer state is a perfect matching of four-corner rectangles; every bad triple is diagonal or transversal.
+82. **Rectangle conflict bounds.** One rectangle has at most \(16n(n-1)^2\) diagonal-conflict partners and one compatible pair has at most \(64n(n-2)^2\) transversal completions.
+83. **Complete unrestricted one-layer boundary through eight.** Templates exist at bases 2, 4, and 5 and are impossible at bases 3, 6, 7, and 8, even with arbitrary block maps.
+84. **Full four-layer normal form.** Arbitrary block-map hosts have block permutations \(Q^jTH^sP^i\) and depend on the inner factor only through the cycle type of its relative permutation.
+85. **Universal special product closure at three.** Every saturated side-three factor composes with side two to the exact saturated no-three side-six full-selector template.
+86. **One-outer-layer reduction and obstruction.** One-outer-layer states are two independently relabelled factors of one relative cycle type, and all 60,544 such side-six states fail.
+87. **Full-selector transfer matrix.** A relative \(L\)-cycle has exactly \(2+2\cdot4^L+(4+2\sqrt3)^L+(4-2\sqrt3)^L\) abstract degree-two selector states, with counts multiplying over cycles.
+88. **Exact side-six selector populations.** Relative types `(6)`, `(4,2)`, and `(3,3)` have 181,122, 325,620, and 298,116 abstract selector states respectively.
+89. **Unique affine mixed side-six template.** Among 20,736 affine full-selector hosts, exactly one is feasible: the 6-cycle type in `ff`, producing an exact side-twelve certificate.
+90. **Six-cycle side-six closure class.** All 84 ordered saturated side-six factors whose relative permutation is a 6-cycle transport to the same side-twelve no-three configuration.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- An infinite family of successful normalized templates or another controlled block-map family yielding a multiplicatively closed class.
+- A mixed full-selector classification for side-six relative types `(4,2)` and `(3,3)` under arbitrary block permutations.
+- An infinite family of successful full-selector cycle types or another controlled product family yielding multiplicative closure.
 - A global product repair or resampling theorem that coordinates many projection fibres and distinguishes feasible hosts from structured infeasible cores.
 - Arithmetic coverage derived from an infinite closure or extension theorem.
 - Orbit Tanner expansion beyond bounded local conflict mass.
@@ -122,8 +133,10 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Identity/reversal block maps alone are not factor-independent: the complete census succeeds for only 9 of 32 layer-unordered side-five factors.
 - Normalized affine second-block maps do not rescue the canonical side-five full-selector host.
 - The complete affine one-inner-layer family has no no-three state at base sides six or seven, even when the inner permutation is arbitrary.
-- The complete arbitrary-map normalized one-layer family has no template at base side three.
+- The complete arbitrary-map one-inner-layer family has no template at bases 3, 6, 7, or 8.
+- No one-outer-layer side-six template exists for any of the relative types `(6)`, `(4,2)`, or `(3,3)`.
+- The affine full-selector family has no side-six template for relative types `(4,2)` or `(3,3)`; arbitrary full-selector maps remain open.
 
 ## Bottom line
 
-There is no complete proof. The product branch now contains genuine factor-independent closure theorems \(2\times4\to8\) and \(2\times5\to10\), together with exact gauge and double-coset criteria explaining how one normalized template transports across a class of factor layers. These closures still do not form an infinite multiplicatively closed family: template existence is unknown at base side eight in the unrestricted family, the affine family is empty at base sides six and seven, and no arithmetic coverage theorem follows. The next product target is a structural template-existence theorem, an iterable side-eight template, a two-layer/full-selector extension beyond the affine obstruction, or a model-or-structured-core resampling theorem. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
+There is no complete proof. The product branch now contains factor-independent closure theorems \(2\times3\to6\), \(2\times4\to8\), and \(2\times5\to10\), plus a factor-class closure \(2\times6\to12\) for all side-six factors of relative 6-cycle type. The arbitrary-map one-inner-layer family is completely classified through base eight and cannot iterate the side-four closure to sixteen. The full selector is reduced to relative cycle type and an exact transfer system, but the side-six `(4,2)` and `(3,3)` classes and every infinite closure or arithmetic coverage theorem remain open. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
