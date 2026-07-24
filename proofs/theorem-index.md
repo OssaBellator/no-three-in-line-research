@@ -71,6 +71,7 @@ The numbering is local to this repository.
 | AC3e | One scalar potential terminates strict descents mixed with bounded ticketed support reopenings | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3f | Capacitated Hall inequalities exactly characterize syndrome-paid reopening tickets | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3g | Minimum paid incidence and bounded token reuse imply the reopening Hall condition | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
+| AC3h | A Hall-deficient high-reuse incidence contains a same-label compatible fan or a second-order conflict overload | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

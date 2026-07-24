@@ -567,6 +567,73 @@ Failure is already a concentrated reuse obstruction at one incidence,
 which can be passed to the anchor, carry, denominator, or rational
 classification machinery.
 
+## AC3h -- labelled fan inside a high-reuse incidence
+
+Assume the second alternative of AC3g.  Thus a paid resource token
+\(\pi\) is eligible for a reopening family
+\(\mathcal Y\) with
+
+\[
+|\mathcal Y|=d>L.
+\]
+
+Give every eligibility pair \((j,\pi)\), \(j\in\mathcal Y\), one of at
+most \(T\) geometric labels.  A label may record the role of \(\pi\) in
+the reopened object: anchor, endpoint, carry channel, denominator chart,
+or rational-return type.  On each label class put the full support
+conflict graph for the corresponding reopenings.
+
+### Lemma AC3h -- PROVED
+
+Some label \(\lambda\) has a class
+\(\mathcal Y_\lambda\) satisfying
+
+\[
+\boxed{
+|\mathcal Y_\lambda|\geq\left\lceil\frac dT\right\rceil
+>\frac LT.
+}
+\]
+
+For every integer \(\Gamma\geq0\), that same-label class has one of the
+following two outcomes:
+
+1. one reopening conflicts with more than \(\Gamma\) other members of
+   \(\mathcal Y_\lambda\); or
+2. there is a pairwise support-compatible subfamily
+   \(\mathcal I\subseteq\mathcal Y_\lambda\) with
+   \[
+   \boxed{
+   |\mathcal I|
+   \geq
+   \left\lceil
+   \frac{|\mathcal Y_\lambda|}{\Gamma+1}
+   \right\rceil,
+   \qquad
+   |\mathcal I|>\frac{L}{T(\Gamma+1)}.
+   }
+   \]
+
+### Proof
+
+Pigeonhole the \(d\) eligibility pairs among at most \(T\) labels.  This
+gives the first box, including its strict inequality because \(d>L\).
+
+If the first outcome fails, the conflict graph induced by
+\(\mathcal Y_\lambda\) has maximum degree at most \(\Gamma\).  A greedy
+proper colouring uses at most \(\Gamma+1\) colours.  Its largest colour
+class is support-compatible and has the size in the second box.  The
+strict lower bound follows from
+\(|\mathcal Y_\lambda|>L/T\). \(\square\)
+
+The members of \(\mathcal I\) still share the same capacity token, so
+AC3h does **not** declare them separately paid.  Its role is
+classification: every Hall failure now yields either a second-order
+support-conflict overload or a broad compatible fan with one fixed paid
+incidence and one fixed arithmetic label.  The geometric no-reuse
+theorem may therefore work inside a single token--label fibre rather
+than an arbitrary deficient bipartite graph.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
 four quotient states, a finite ticket trace, and every strict-support
@@ -575,4 +642,4 @@ all descent and ticketed-reopening transitions through six objects and
 three tickets, and compares the capacitated Hall inequalities with direct
 charge assignment on small eligibility systems.  The same enumeration
 checks the bounded-overlap expansion and its high-reuse deficient
-alternative.
+alternative, together with the same-label fan/conflict dichotomy.

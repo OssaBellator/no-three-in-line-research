@@ -218,6 +218,16 @@ eligible for more than \(L\) reopenings in the deficient family. The
 remaining geometry may therefore prove bounded overlap or classify one
 explicit high-reuse incidence.
 
+AC3h localizes that latter obstruction further. Among the more than
+\(L\) reopenings using one token, one of the finitely many geometric
+roles occurs more than \(L/T\) times. At any support-conflict threshold
+\(\Gamma\), this same-token, same-label fibre either contains a
+reopening with more than \(\Gamma\) conflicts or a support-compatible
+fan of size greater than \(L/(T(\Gamma+1))\). The fan is not declared
+multiply paid by its shared token; it is the exact concentrated
+incidence pattern that the remaining anchor/carry/BDA/RI geometry must
+classify.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
