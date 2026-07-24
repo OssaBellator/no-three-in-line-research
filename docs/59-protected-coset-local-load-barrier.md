@@ -1,6 +1,6 @@
 # Protected coset local-load criterion and finite barrier
 
-PX75 installs an exponential factor-compatible state space while preserving all
+PX78 installs an exponential factor-compatible state space while preserving all
 chosen low-height line capacities.  This chapter asks whether the independent
 coset shifts can already be selected by a direct Lovasz local lemma.
 
@@ -17,7 +17,7 @@ space.
 
 ## 1. Event system
 
-Use the protected coset bank PX75 with additive subgroup `K` of order `h` and
+Use the protected coset bank PX78 with additive subgroup `K` of order `h` and
 coset variables
 
 \[
@@ -51,7 +51,7 @@ and define the normalized load at one coset variable by
 
 Events with disjoint supports are mutually independent.
 
-## Theorem PX76 -- PROVED
+## Theorem PX79 -- PROVED
 
 If
 
@@ -63,7 +63,7 @@ If
 
 then some protected coset-shift state is no-three.
 
-Consequently, under the hypotheses of PX75, this state is saturated,
+Consequently, under the hypotheses of PX78, this state is saturated,
 factor-compatible, and preserves every protected line capacity.
 
 ### Proof
@@ -127,7 +127,7 @@ N_Eh^{3-|\operatorname{supp}(B_E)|},
 \Lambda_C=\frac{W_C}{h^3}.
 \]
 
-Thus PX76 is algorithmically checkable without floating-point arithmetic.
+Thus PX79 is algorithmically checkable without floating-point arithmetic.
 
 ## 3. Exact order-five census in `Z_25`
 
@@ -193,9 +193,9 @@ and
 =1341.504.
 \]
 
-### Theorem PX77 -- PROVED FINITE
+### Theorem PX80 -- PROVED FINITE
 
-The direct local-load hypothesis PX76 fails for this protected `Z_25`
+The direct local-load hypothesis PX79 fails for this protected `Z_25`
 order-five coset bank by a factor greater than sixteen thousand.
 
 ### Proof
@@ -228,10 +228,10 @@ distribution on the three labelings `(R,A,B)` from PX61 such that
 2. fixed-rank cylinders have probability `O((n)_k^{-1})` in each independently
    exposed coordinate family;
 3. the resulting one-, two-, and three-variable certificate loads satisfy a
-   constant local bound such as PX76.
+   constant local bound such as PX79.
 
 The universal low-syndrome seed PX63 shows that unrestricted independent
-permutations have enough global spread.  PX72--PX75 show that low directions can
+permutations have enough global spread.  PX75--PX78 show that low directions can
 be protected deterministically.  The unresolved task is to achieve both
 properties in one distribution.
 
