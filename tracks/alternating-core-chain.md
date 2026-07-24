@@ -119,6 +119,13 @@ endpoint-disjoint star carrying at least
 derive those degree bounds from the AC1 arithmetic labels, or send the
 paid high-degree alternative to BDA/RI.
 
+AC2c removes the need to phrase the second bound in unweighted degree.
+For any \(K\), either a compatible family retains at least \(1/K\) of
+the current paid weight, or one object's closed conflict neighbourhood
+carries more than \(K\) times its own paid weight. Thus the unresolved
+high-conflict return is itself quantitatively paid; only its arithmetic
+classification remains.
+
 ### Interface
 
 Outputs 1 and 2 restart the proved WQ/CR/AN machinery in the opposite layer. Output 3 is charged by AC3. Output 4 invokes the independent bounded-denominator absorber branch.

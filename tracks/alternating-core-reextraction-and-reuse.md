@@ -92,6 +92,60 @@ give both bounded pair codegree and bounded full incompatibility degree.
 The unresolved route is now exactly a high pair codegree or a
 high-incompatibility-degree return carrying current paid mass.
 
+## AC2c -- weighted incompatibility return
+
+The maximum-degree hypothesis in AC2a can be replaced by a condition
+which measures the actual paid mass around each object. Discard
+zero-weight objects and define the closed-neighbourhood load
+
+\[
+L(o)=\sum_{o'\in N[o]}w(o').
+\]
+
+### Lemma AC2c -- PROVED
+
+For every real \(K\geq1\), one of the following holds:
+
+1. some object \(o\) has a paid overloaded neighbourhood
+   \[
+   \boxed{L(o)>K\,w(o);}
+   \]
+2. there is a compatible family \(\mathcal I\) with
+   \[
+   \boxed{
+   \sum_{o\in\mathcal I}w(o)
+   \geq
+   \frac1K\sum_{o\in\mathcal O}w(o).
+   }
+   \]
+
+### Proof
+
+Give every object \(o\) an independent exponential clock of rate
+\(w(o)\), and select \(o\) when its clock is the earliest in \(N[o]\).
+Adjacent objects cannot both be selected. The exponential-race identity
+gives
+
+\[
+\Pr(o\text{ is selected})=\frac{w(o)}{L(o)}.
+\]
+
+Hence the expected selected weight is
+
+\[
+\sum_o\frac{w(o)^2}{L(o)}.
+\]
+
+If the first alternative fails, every summand is at least \(w(o)/K\).
+The expectation is therefore at least the second boxed quantity, so some
+realization has at least that weight. \(\square\)
+
+This makes the high-incompatibility alternative paid without using
+unweighted degree. To finish the route, the geometry must classify an
+object whose full conflict neighbourhood carries \(K\) times its own
+current incidence, or show that such neighbourhood loads are uniformly
+bounded.
+
 ## AC3b -- ticketed signature potential
 
 Let \(\Sigma\) be the finite signature universe from AC3a.  Give every

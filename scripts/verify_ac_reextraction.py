@@ -58,6 +58,54 @@ def verify_composed_bound() -> None:
             )
 
 
+def maximum_independent_weight(
+    size: int,
+    edges: tuple[tuple[int, int], ...],
+    weights: list[int],
+) -> int:
+    edge_set = set(edges)
+    best = 0
+    for mask in range(1 << size):
+        chosen = [vertex for vertex in range(size) if mask & (1 << vertex)]
+        if any(
+            (min(left, right), max(left, right)) in edge_set
+            for left, right in combinations(chosen, 2)
+        ):
+            continue
+        best = max(best, sum(weights[vertex] for vertex in chosen))
+    return best
+
+
+def verify_weighted_neighbourhood(max_size: int = 5) -> None:
+    for size in range(1, max_size + 1):
+        pairs = tuple(combinations(range(size), 2))
+        for mask in range(1 << len(pairs)):
+            edges = tuple(
+                edge for index, edge in enumerate(pairs) if mask & (1 << index)
+            )
+            weights = [1 + (7 * vertex + mask) % 9 for vertex in range(size)]
+            loads = weights.copy()
+            for left, right in edges:
+                loads[left] += weights[right]
+                loads[right] += weights[left]
+            caro_wei = sum(
+                (
+                    Fraction(weights[vertex] ** 2, loads[vertex])
+                    for vertex in range(size)
+                ),
+                Fraction(0),
+            )
+            optimum = maximum_independent_weight(size, edges, weights)
+            assert optimum >= caro_wei
+            for threshold in range(1, 11):
+                overloaded = any(
+                    loads[vertex] > threshold * weights[vertex]
+                    for vertex in range(size)
+                )
+                if not overloaded:
+                    assert optimum * threshold >= sum(weights)
+
+
 def acyclic_potential(
     size: int, edges: tuple[tuple[int, int], ...]
 ) -> list[int] | None:
@@ -139,6 +187,7 @@ def verify_ticket_trace() -> None:
 def main() -> None:
     verify_weighted_extraction()
     verify_composed_bound()
+    verify_weighted_neighbourhood()
     verify_cycle_criterion()
     verify_ticket_trace()
     print("AC re-extraction and reuse accounting: verified")
