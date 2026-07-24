@@ -10,7 +10,10 @@ The numbering is local to this repository.
 | S4 | Reverse-scale certified multicover deletion inequality | PROVED | `docs/02-reverse-scale-switching.md` |
 | S5 | Sparse scale-\(H\) switch-bank drift theorem | PROVED UNDER HYPOTHESES | `docs/02-reverse-scale-switching.md` |
 | GC1-wall | Installed bounded blocks can eliminate every partner | PROVED | `tracks/geometric-cleaning-budget-and-wall.md` |
+| GC1a | Separate partner-blocker caps imply uniform admissible density | PROVED | `tracks/geometric-cleaning-load-accounting.md` |
+| GC2-wall | Uniform latent anchor load survives small target deletion | PROVED | `tracks/geometric-cleaning-load-accounting.md` |
 | GC3a | Paid partner consumption bounds total pool depletion | PROVED | `tracks/geometric-cleaning-budget-and-wall.md` |
+| GC3b | Paid incidence bounds creation of exceptional anchors | PROVED | `tracks/geometric-cleaning-load-accounting.md` |
 | L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
 | L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
 | L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |

@@ -30,6 +30,12 @@ blocks can cover every possible partner while `|B|=1<=cH`.
 gives the explicit permutation-layer wall. A corrected GC1 must add a
 per-target protection-load cap and charge it to current paid incidence.
 
+The exact corrected combinatorial endpoint is now proved as GC1a in
+[`geometric-cleaning-load-accounting.md`](geometric-cleaning-load-accounting.md):
+separate collision, high-line, installed-block, and active-core blocker
+caps add by a union bound. The remaining work is to derive those four caps
+geometrically with total density below one.
+
 ## GC2 — Scale-sensitive anchor pair-shadow cap
 
 ### Target statement
@@ -49,6 +55,14 @@ The cleaning process must produce one of:
 3. an algebraically structured core passed to the alternating-core branch.
 
 Latent secant banks must be connected to actual destroyed syndrome weight; unweighted blocker banks are insufficient.
+
+### Proved obstruction
+
+The load-accounting note proves GC2-wall: if every target contributes
+`L` latent load to one anchor, deletion of `epsilon|B|` targets leaves at
+least `(1-epsilon)|B|L`. Thus the cap-only route can fail by an arbitrary
+factor; such an anchor must be converted to GC2's paid-bank or structured
+outcome.
 
 ## GC3 — Intermediate-state stability
 
@@ -71,6 +85,11 @@ per unit of paid potential decrease, total depletion is at most
 `(1-delta)` individual density to at worst `(1-2delta)`. The geometric work
 remaining in GC3 is to establish that consumption inequality and a
 compatible scale-local bound on `Psi_0`.
+
+GC3b in the load-accounting note also bounds the total number of newly
+exceptional anchors by `RW/(theta n)` when each declaration receives
+`theta n` paid incidence and each incidence is reused at most `R` times.
+The geometric no-reuse estimate is still open.
 
 ## GC4 — Candidate-only conflict regularization
 
