@@ -75,6 +75,16 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 63. **Quantitative projection forcing.** Convex line occupancy gives exact lower bounds on triples forced by under-dispersed projections, additive across directions.
 64. **Component-clean endpoint.** Independent internally clean movement/refill banks have an exact factored certificate expectation and spread criterion.
 65. **Quadratic cross-triple cap.** Two internally no-three components of size `2t` create at most `4t(2t-1)` cross triples.
+66. **Monotone parabolic patch.** A two-branch integer parabola and its transpose give an internally no-three matching-reservoir patch of width `Theta(sqrt(m))`.
+67. **Variable-reservoir expectation.** State-dependent deletion sets are handled by exact joint retained-point/insertion probabilities; expectation below one gives a patch.
+68. **Multi-rung coordinate budget.** A total width `m^theta` can be packed using `Theta(m^(2theta-1))` square-root-scale parabolic rungs at the one-dimensional capacity level.
+69. **Matching-reservoir cycle factorization.** The induced reservoir graph has maximum degree two; its perfect matchings factor into forced paths and independent alternating cycles.
+70. **Cycle-reservoir 2-SAT.** For a fixed internally clean patch, clearing every external certificate by cycle matching choices is exactly a 2-SAT problem.
+71. **Sheared parabolic spread.** Linear shears preserve the no-three proof and produce explicit cell and nonaxis-pair spread, conditional on matching-admissible parameter density.
+72. **Complete width-two matching interface.** Every cross-only width-two matching patch is one of 36 ordered-partition states for each four-column/four-row matching reservoir.
+73. **Width-two finite obstruction.** All `80,731` internally clean cross-only width-two states in the stored `4<=n<=10` corpus retain at least one external triple.
+74. **One-rectangle repair criterion.** An alternating rectangle switch preserves saturation and has an exact secant/anchor cleanliness criterion.
+75. **Repaired finite extensions.** Exactly three stored width-two near misses admit one rectangle repair, giving `4 -> 6`, `5 -> 7`, and `6 -> 8` extensions.
 
 ## What remains conditional
 
@@ -85,11 +95,11 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - A second-order concentration theorem for the alternating neutralization bank.
 - A monotone carry-complexity potential or bounded-denominator chamber absorber.
 - A superregular resampling oracle and sparse algebraic `O(1/d)` spread.
-- A prime-minus-one reservoir with one of the following at prime-gap-scale width:
-  - a sparse row-lift subbank passing PP3p or PP3r;
-  - a prefix-structured bank passing PP3l or PP3q;
-  - large internally clean component banks passing PP3z or PP3aa;
-  - an arbitrary-reservoir host passing the PP2 local-load endpoint.
+- A prime-minus-one preparation theorem installing roughly `m^0.05` mutually compatible parabolic rungs for the published prime-gap exponent, together with:
+  - positive-density matching-admissible sheared parameter tuples;
+  - satisfiable cycle-reservoir 2-SAT or PP2l joint mass below one;
+  - protected rectangle trades covering residual certificates;
+  - cross-rung compatibility.
 
 ## Important refutations
 
@@ -105,14 +115,16 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - The unrestricted full row-lift bank is not automatically clean.
 - Aligned off-diagonal block doubling is impossible for every width.
 - Conditioning the complete small banks to internally clean components does not produce a clean pair at fully deleted widths `3,4,5`.
+- Deletion-cycle entropy alone cannot dilute a fixed external certificate.
+- Neither the 40-state unsheared nor 18,816-state sheared parabolic finite sweep contains a raw clean patch on the stored corpus.
 
 ## Bottom line
 
 There is no complete proof. The principal global bottleneck remains
 second-generation alternating-bank collateral and termination. Independently,
-the all-`n` prime-patching track now has exact extension interfaces, several
-selection endpoints, a concrete row-lift bank, static and sequential pruning
-criteria, projection obstructions, and component-clean factorization. The
-remaining missing theorem is asymptotic geometric preparation: build a sparse,
-spread, internally controlled reservoir over a width large enough for
+the all-`n` prime-patching track now has exact fixed- and variable-reservoir
+interfaces, row-lift and parabolic internally clean banks, static/sequential/
+2-SAT selection criteria, a quantitative multi-rung budget, and a verified
+patch-plus-rectangle repair mechanism. The missing theorem is asymptotic seed
+preparation and cross-rung compatibility over a total width large enough for
 unconditional prime-gap transfer.
