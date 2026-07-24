@@ -1,6 +1,6 @@
 # Protected coset absorbers inside the rectangle product family
 
-PX72--PX74 construct factor-compatible rectangle states which avoid every
+PX75--PX77 construct factor-compatible rectangle states which avoid every
 prescribed low-height direction.  A single protected state is not enough for a
 repair theorem; one also needs many independent states which preserve the
 protected constraints.  This chapter installs such a bank on composite moduli.
@@ -22,7 +22,7 @@ Define the cosetwise permutation
 Every coset is translated inside itself, so `phi_delta` is a permutation of
 `Z_n`.
 
-Fix affine parameters `m,c,s` from PX72 and put
+Fix affine parameters `m,c,s` from PX75 and put
 
 \[
 p_s(u)=u+s,
@@ -41,7 +41,7 @@ Q_\delta=Q(p_s,t_\delta,r_\delta)
 
 be the resulting rectangle state.
 
-## Theorem PX75 -- PROVED
+## Theorem PX78 -- PROVED
 
 Let `D` be a finite set of nonaxis primitive directions and suppose
 
@@ -60,11 +60,11 @@ following properties.
 3. Changing one coset shift affects only the `h` rectangles indexed by that
    coset and preserves all row and column degrees.
 4. The cosets provide exactly
-   
+
    \[
    h^{n/h}
    \]
-   
+
    global protected states.
 5. Every state is factor-compatible with every saturated side-`n` factor by
    full-symmetric rectangle transport.
@@ -106,9 +106,9 @@ row and column degrees stay two.  The `n/h` cosets choose their shifts
 independently from `h` values, giving `h^(n/h)` states.  PX41 transports every
 normalized rectangle state to every factor layer. \(\square\)
 
-## Corollary PX75a -- PROVED
+## Corollary PX78a -- PROVED
 
-Under the rough-modulus hypothesis of PX74, every additive subgroup of order
+Under the rough-modulus hypothesis of PX77, every additive subgroup of order
 `h` installs `n/h` independent `h`-state absorbers while preserving all
 primitive directions of height at most `H`.
 
@@ -120,15 +120,15 @@ In particular, after choosing `H` so that
 
 is below the least prime factor of `n`, all remaining defects have primitive
 height greater than `H`, and every remaining compatible-pair transversal
-codegree has the PX68 bound
+codegree has the PX71 bound
 
 \[
-64n^2\left(1+\frac{2n}{H}\right).
+64n^2\left(1+rac{2n}{H}\right).
 \]
 
 ## 2. What this adds to the general route
 
-The protected low-direction state from PX74 is no longer isolated.  Composite
+The protected low-direction state from PX77 is no longer isolated.  Composite
 rough moduli now support an exponential family of factor-compatible states with
 independent local coordinates and a polynomial high-direction codegree saving.
 
