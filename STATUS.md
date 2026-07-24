@@ -46,14 +46,18 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 36. **Projective conic-pencil geometry.** Every opposite-channel anchor has an exact modular tangent/secant profile governed by \(\chi(1-b/a)\).
 37. **Aligned-anchor carry signatures.** Nondegenerate signatures have only \(p^{o(1)}\) real solutions, while degenerate signatures are exact affine-interpolation cells.
 38. **Sharp same-channel carry dispersion.** A same-channel real secant star has divisor-bounded multiplicity at each exact cross-carry level.
-39. **Universal star carry dispersion.** Any endpoint-disjoint secant star, including a cross-channel star, must occupy at least its edge count divided by \(p^{o(1)}\) product-carry signatures.
+39. **Universal star carry dispersion.** Any endpoint-disjoint secant star, including a cross-channel star, occupies at least its edge count divided by \(p^{o(1)}\) product-carry signatures.
 40. **Combined paid-bank transition.** A failed paid bank produces an improvement, product/coordinate carry dispersion, or a perfect affine-alignment population.
 41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit finite rational grid; the two endpoint parameters are inadmissible.
 42. **Reduced-denominator chamber criterion.** Perfect alignment at parameter \(t'/q\) occurs exactly when both relevant wrap indices are divisible by \(q\).
 43. **Denominator-sensitive sparsity.** A denominator-\(q\) perfect chamber contains at most \(4p/q\) base points; positive-density chambers therefore have bounded denominator.
 44. **Explicit wrap centers.** Every degenerate scalar carry cell is radial about one rational center \(pS/d\), while every nondegenerate cell meets one hyperbola channel at most twice.
-45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy \(XY\equiv d^2c\pmod p\) with \(|X|,|Y|<pd/m\), yielding an explicit divisor bound per chamber.
+45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy a divisor-controlled integer product equation.
 46. **Wrap-center dispersion.** A large perfect-alignment class either occupies many rational centers or has multipliers with a large common divisor relative to their size.
+47. **Two-forbidden-matching spread.** Permutations avoiding a position set of row/column degree at most two have constant density and \(128/(t)_r\) cylinder bounds.
+48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
+49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
+50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
 
 ## What remains conditional
 
@@ -62,9 +66,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- A monotone carry-complexity potential showing that repeated product, coordinate, cross-carry, and wrap-center dispersion must terminate or enter an absorbable exception.
+- A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
+- A monotone carry-complexity potential showing that repeated carry/wrap-center dispersion must terminate or enter an absorbable exception.
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
-- A sharper fixed-degree cross-channel carry invariant; coarse cross-channel signature dispersion is already proved.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
 
@@ -81,4 +85,4 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 
 ## Bottom line
 
-There is no complete proof. The branch review added the exact projective conic baseline, and the next carry phase converts both structural outputs of a failed paid bank into explicit signature growth, bounded-denominator perfect alignment, or divisor-controlled wrap-center dispersion. The remaining geometric bottleneck is a termination/absorption theorem for that finite carry complexity, not an unclassified secant-star or aligned-anchor load.
+There is no complete proof. The reviewed branch is merged. Carry and wrap-center classification now make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
