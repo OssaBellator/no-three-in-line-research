@@ -109,5 +109,8 @@ This ledger collects the results specific to
 | CMR79 | A real line has at most t lifts per quotient-channel incidence | PROVED | `docs/61-prime-power-rank-one-quotient-reduction.md` |
 | CMR80 | Aggregate rank-one prefix collateral is bounded by quotient secant incidence | PROVED | `docs/61-prime-power-rank-one-quotient-reduction.md` |
 | CMR81 | Failed prefix repair forces quotient incidence or higher-rank collateral concentration | PROVED | `docs/61-prime-power-rank-one-quotient-reduction.md` |
+| CMR82 | Quotient secant energy splits into endpoint, modular-third-point, and collision terms | PROVED | `docs/62-prime-power-quotient-incidence-decomposition.md` |
+| CMR83 | Distinct-projection excess is a weighted quotient modular-syndrome energy | PROVED | `docs/62-prime-power-quotient-incidence-decomposition.md` |
+| CMR84 | Repeated projections lie on primitive carry-direction quotient lines | PROVED | `docs/62-prime-power-quotient-incidence-decomposition.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
