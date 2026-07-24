@@ -36,20 +36,26 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3ct--PP3cv | Random-pool fixed-core pattern sparsification | PROVED | `docs/59-random-pool-fixed-core-sparsification.md` |
 | PP3cx--PP3cz | Random cross-pool patch potential and `K=o(m^(1/3))` endpoint | PROVED | `docs/60-random-cross-pool-patch-sparsification.md` |
 | PP3da--PP3dc | Multi-rung macro-bank margins, spread, and support-compression warning | PROVED | `docs/61-multi-rung-matching-macro-banks.md` |
+| PP3dd--PP3df | Repeated monotone-subsequence extraction at the prime-gap pool exponents | PROVED | `docs/62-monotone-matching-pool-extraction.md` |
 
 ## Current exact target
 
 Random equipartition now supplies, for every saturated source, disjoint
-`r=o(sqrt(m))` matching pools with same-pool clean density `1/36-o(1)`.  The
-remaining preparation problem has two explicit parts:
+`r=o(sqrt(m))` matching pools with same-pool clean density `1/36-o(1)`.  Every
+perfect matching layer also contains `m^0.05` disjoint monotone pools of size
+`m^0.475`, after at most one global row reflection.
+
+The remaining preparation problem has two explicit parts:
 
 1. make the normalized opposite-layer pattern density `Sigma` from PP3ct vanish,
    or satisfy the weaker directional counts PP3cp and clear the residual anchored
    pairs with protected trades;
-2. replace the `m^0.525` independent width-two interval supports by only
-   `o(m^(1/3))` genuinely support-compressed macro-rungs.  Merely grouping a full
-   product of micro-rungs does not reduce the interval-level cross potential.
+2. build an endpoint-adapted support-compressed macro state on one increasing
+   `m^0.475`-edge pool, installing width `Theta(m^0.475)` with polynomial clean
+   state density.  Merely grouping a full product of micro-rungs does not reduce
+   the interval-level cross potential.
 
-The earlier `m^0.05` square-root-rung ladder already lies safely below the
-cross-pool threshold; its missing input is a matching-first endpoint-adapted
-compressed component bank rather than independent parabolic template density.
+Once about `m^0.05` such macro states exist, PP3cz makes their mutual patch-only
+compatibility automatic.  The missing theorem is now local compressed geometry
+on an ordered matching pool, not matching availability, pool packing, or
+cross-variable first moment.
