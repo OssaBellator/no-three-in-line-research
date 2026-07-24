@@ -8,11 +8,11 @@ cost by normalized rank-one, rank-two, and rank-three certificate counts, and a
 frozen cycle forces concentration in one of those ranks.
 
 The prime-field and prime-power programmes now meet at a much smaller common
-object: a finite cycle of four-endpoint trades. The open conversion theorem is
-to show that such a cycle either contains an improving state or has impossible
-carry and first-separation signature balance.
+object: a finite terminal component of four-endpoint trades. CMR143--CMR144 show
+that such components genuinely exist even above a known lower-potential state.
+Therefore pure four-board local descent is false.
 
-## Bottleneck 2: four-endpoint defect-flow cycles
+## Bottleneck 2: inherited escape from four-endpoint traps
 
 CMR123--CMR137 keep one fixed global baseline, convert disjoint defects and
 heavy lines into executable banks, absorb high parent excess through the active
@@ -38,24 +38,34 @@ CMR139 exhausts the normalized terminal boards. Every four-board has between
 at ranks one, two, and three.
 
 CMR141--CMR142 show that any positive global saturated minimum generates a
-finite directed cycle of four-point trades. Around the cycle, every created and
-removed triple touches a moved cell, and for each fixed grid triple the number
-of creations equals the number of removals.
+finite directed cycle of four-point trades, with exact balance between created
+and removed triples. CMR143 gives an explicit potential-one two-cycle at
+`N=4`, while CMR144 gives a separate potential-zero saturated state. Hence
+balanced cycles and locally minimal four-core components cannot be excluded in
+complete generality.
 
 ### Corrected open lemma
 
-Assign every created and removed triple its canonical prime-power data:
+A terminal core arising from the prime-power closure carries ancestry absent
+from the `N=4` trap:
 
-- maximum pair valuation and first-separation depth;
-- binary/equilateral/transverse cluster type;
-- layer pattern and prefix owner;
-- primitive line direction;
-- quotient and carry signature.
+- an original binary same-layer star and unique prefix owner;
+- a recursive-compatible parent node and depth;
+- protected quotient states from fine-to-coarse processing;
+- inherited first-separation, primitive direction, and carry signatures;
+- a recorded sequence of child-pencil and alternating expansions.
 
-Prove that a nonempty balanced defect-flow cycle cannot preserve this signature
-multiset unless one transition lowers the triple potential. A weaker sufficient
-form would be a lexicographic signature whose total strictly decreases around
-one transition and never increases around the others.
+Use this ancestry to prove one of:
+
+1. an allowed terminal state lowers the fixed global baseline;
+2. the core expands to an inherited parent or opposite-layer bank with a
+   strictly smaller lexicographic ancestry signature;
+3. a quotient or carry signature cannot balance around the terminal component;
+4. the component belongs to a finite trapped family with an explicit larger
+   escape move.
+
+A theorem depending only on normalized four-board type and current triple
+potential cannot suffice.
 
 ## Bottleneck 3: multiscale preservation
 
@@ -64,10 +74,11 @@ but a later coarse repair may recreate fine stars. A complete proof needs a
 reverse-scale budget showing that recreated fine mass is paid by one of:
 
 1. the coarse target load destroyed by the move;
-2. a strict increase in canonical first-separation depth;
+2. a strict change in canonical first-separation ancestry;
 3. a bounded carry-signature account attached to the coarse node.
 
-The four-core cycle theorem must be compatible with this scale ledger.
+The inherited four-core escape theorem must be compatible with this scale
+ledger.
 
 ## Bottleneck 4: all side lengths
 
@@ -126,12 +137,14 @@ The following portions are closed:
 12. conversion of disjoint defects and heavy lines into new banks;
 13. elimination of the parent-excess barrier by baseline-difference incidence;
 14. contraction of every target load to the four-endpoint one-target core;
-15. exact terminal-board atom enumeration and defect-flow cycle balance.
+15. exact terminal-board atom enumeration and defect-flow cycle balance;
+16. an exact trapped four-core component showing universal local descent is false.
 
 ## Composite-modulus open lemmas
 
-1. **Four-core signature obstruction.** Rule out a nonempty balanced cycle of
-   four-endpoint trades using first-separation, quotient, line, or carry data.
+1. **Inherited four-core escape.** Use prefix ancestry, quotient state, or carry
+   signatures to escape terminal components arising from the prime-power
+   closure.
 2. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
    coarse prefix repairs.
 3. **Non-reciprocal balanced prime families.** Extend the prime-seven grid
@@ -151,12 +164,11 @@ The following portions are closed:
 
 The strongest exact searches now are:
 
-- enumerate four-core cycles in small prime-power hosts and record the complete
-  created/removed signature flow;
-- test whether first-separation depth or primitive carry complexity is monotone
-  on every terminal transition;
-- classify which rank-one, rank-two, or rank-three certificates cover the 2--9
-  states of each normalized four-board;
+- enumerate strongly connected four-core components in small prime-power hosts
+  while retaining their full prefix ancestry;
+- compare trapped components with the explicit `N=4` two-cycle;
+- test which parent-node or opposite-layer moves escape each component;
+- record created/removed quotient and carry signatures around every component;
 - quantify fine mass recreated by one coarse prefix repair;
 - search for no-three grid factorizations and pair spectra at `p=11,19,...`;
 - test inherited line-signature multiplicities inside `M_s`;
@@ -165,15 +177,17 @@ The strongest exact searches now are:
 
 ## Recommended order of work
 
-1. Build the four-core first-separation/carry signature ledger.
-2. Exhaust four-core cycles for the smallest balanced prime-power hosts.
-3. Prove a coarse-to-fine recreation budget compatible with that ledger.
-4. Search for non-reciprocal balanced grid factorizations at the next
+1. Build an ancestry-preserving four-core transition enumerator.
+2. Find explicit parent or opposite-layer escapes for all small trapped
+   components.
+3. Extract a monotone ancestry/carry invariant from those escapes.
+4. Prove a coarse-to-fine recreation budget compatible with that invariant.
+5. Search for non-reciprocal balanced grid factorizations at the next
    `p=3 mod 4` primes.
-5. Sharpen modular quotient syndrome and inherited line-signature multiplicity.
-6. Remove the square-root divisor boundary.
-7. Build a mixed-projection-aware CRT assembly theorem.
-8. Continue exact finite searches at `N=14` and beyond.
-9. Search jointly for digital two-layer constructions.
+6. Sharpen modular quotient syndrome and inherited line-signature multiplicity.
+7. Remove the square-root divisor boundary.
+8. Build a mixed-projection-aware CRT assembly theorem.
+9. Continue exact finite searches at `N=14` and beyond.
+10. Search jointly for digital two-layer constructions.
 
 There is still no complete proof of the no-three-in-line conjecture.
