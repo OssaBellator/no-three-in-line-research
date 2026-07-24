@@ -16,7 +16,7 @@ The first exact results are recorded in
 - **CM3 affine cycle structure: PROVED; geometric requirements fail.** A unit offset gives one alternating Hamiltonian cycle, but corresponding-column displacement multiplicity is \(\Omega(N)\).
 - **CM4: PARTIAL.** Explicit Hensel-multiplicity and zero-divisor exceptional families are classified; a full prime-power carry calculus remains open.
 - **CM5: PARTIAL.** Real collinearity always projects to modular collinearity, and naive CRT products have unavoidable mixed-projection triples. A positive ordered-box assembly theorem remains open.
-- **CM6: OPEN.** No admissible nonlinear composite host class is yet known.
+- **CM6: PARTIAL.** Exact saturated no-three constructions are verified for composite sizes `4, 6, 8, 9, 10`; no scalable admissible class is yet known.
 
 Finite checks are in
 [`scripts/verify_composite_modulus.py`](../scripts/verify_composite_modulus.py).
@@ -141,7 +141,10 @@ Therefore local arc bounds alone do not prove the ordered-box theorem.
 
 Prove that the admissible modulus class is multiplicatively or additively rich enough to cover every sufficiently large `n`, preferably every `n` directly. Handle the remaining finite sizes by exact constructions.
 
-**Status:** OPEN. The affine family covers all moduli algebraically but is geometrically impossible for \(N\ge5\); the unit-hyperbola family neither saturates nor maintains a composite line cap.
+**Status:** PARTIAL. Exact saturated no-three configurations are recorded for
+\(N\in\{4,6,8,9,10\}\) in
+[`proofs/composite-finite-constructions.md`](../proofs/composite-finite-constructions.md).
+The affine family covers all moduli algebraically but is geometrically impossible for \(N\ge5\); the unit-hyperbola family neither saturates nor maintains a composite line cap. No scalable admissible class is known.
 
 ## Candidate modulus classes
 
@@ -165,4 +168,4 @@ Affine permutations and uncompleted unit hyperbolas are now eliminated as direct
 
 This branch is complete when CM1–CM6 give an exact saturated construction or a repairable bounded-syndrome seed for every sufficiently large composite side length, with real-grid—not merely modular—collinearity proved.
 
-The branch is not complete. It now contains a finished saturation theorem, a finished affine classification, the mandatory obstruction package, and a precise positive search boundary.
+The branch is not complete. It now contains a finished saturation theorem, a finished affine classification, the mandatory obstruction package, five exact finite composite base cases, and a precise positive search boundary.
