@@ -41,3 +41,8 @@ The numbering is local to this repository.
 | CC2 | Universal collision-aware carry-cycle bank bound | PROVED | `docs/13-carry-cycle-dispersion.md` |
 | CC3 | Frozen-cycle concentration trichotomy | PROVED | `docs/13-carry-cycle-dispersion.md` |
 | CC4 | Alternating two-colour carry-core lemma | OPEN | `docs/13-carry-cycle-dispersion.md` |
+| D1 | Clone-space local-load selection theorem | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
+| D2 | Explicit missing-cell/triple-incidence criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
+| D3 | Robust 99%-dense endpoint criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
+| D4 | Failure forces an \(\Omega(n^3)\) row/column triple core | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
+| D5 | Superregular clone-selection lemma | OPEN | `docs/15-degree-constrained-hypergraph-selection.md` |
