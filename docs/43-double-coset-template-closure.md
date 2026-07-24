@@ -1,6 +1,6 @@
 # Double-coset template closure theorem
 
-PX34 proves the special closure `2 x 5 -> 10` by transporting every admissible
+PX35 proves the special closure `2 x 5 -> 10` by transporting every admissible
 side-five permutation layer to one successful normalized template. The argument
 is not specific to five once separated into its group-theoretic components.
 This chapter records the general reduction.
@@ -37,7 +37,7 @@ permutation `t`.
 
 Call `(theta,t;r,s)` a **successful template** when this state is no-three.
 
-## Theorem PX37 -- PROVED
+## Theorem PX38 -- PROVED
 
 Suppose `(theta,t;r,s)` is a successful template. Then every permutation
 
@@ -106,7 +106,7 @@ is exactly the corresponding coordinate of
 `T_theta(t;r,s)`. The two point sets are equal. Saturation follows from PX28,
 and no-three follows from success of the template. \(\square\)
 
-## Corollary PX37a -- PROVED
+## Corollary PX38a -- PROVED
 
 Let `L` be a class of permutations on `[n]`. Suppose successful templates
 
@@ -134,7 +134,7 @@ in `L`, this is a factor-independent closure theorem
 
 ### Proof
 
-Choose one layer `tau in L`, choose a covering double coset, and apply PX37.
+Choose one layer `tau in L`, choose a covering double coset, and apply PX38.
 \(\square\)
 
 ## 2. Algorithmic form
@@ -145,7 +145,7 @@ Given one factor layer `tau`:
 1. enumerate templates `q`;
 2. enumerate `(alpha,beta) in G^2` until
    `beta tau alpha^{-1}=t_q`;
-3. output the block maps from PX37;
+3. output the block maps from PX38;
 4. generate the `4n` scalar cells of the PX28 state.
 
 The search uses at most
@@ -170,15 +170,15 @@ r=s:u\mapsto4-u,
 \]
 
 and orientation `ff`. PX25 and PX30 prove that this is a successful template.
-PX33 proves
+PX34 proves
 
 \[
 S_5=G\sqcup GtG,
 \]
 
-while PX33a proves that no affine permutation can occur as a layer of a
+while PX34a proves that no affine permutation can occur as a layer of a
 saturated no-three side-five factor. Hence every admissible layer lies in
-`GtG`, and PX37a gives PX34.
+`GtG`, and PX38a gives PX35.
 
 ## 4. Exact obstruction criterion
 
@@ -191,7 +191,7 @@ side length:
 3. **group failure:** a group large enough for coverage makes the template
    family geometrically too rigid or computationally uncontrolled.
 
-PX36 proves template failure for the complete affine one-layer family at base
+PX37 proves template failure for the complete affine one-layer family at base
 sides six and seven: there is no successful target `t` at all, so no affine
 double-coset coverage argument can start there.
 
