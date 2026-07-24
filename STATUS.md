@@ -39,14 +39,18 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 29. **Coset and rational propagation.** Structured cycle parameters propagate to opposite-colour anchor structure, while full subgroup cosets of order at least three expand under the normalized Möbius map.
 30. **Exact common-ratio collateral.** The cost of one same-ratio rectangle switch is exactly its two weighted secant loads plus the occupancy of its switched-pair line.
 31. **Common-ratio decoder-or-structure theorem.** A paid common-ratio bank either contains an improving rectangle, a dense channel-pair secant star, or a large aligned multiplicative anchor class.
-32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), where \(\Theta\) is switched-cell secant load and \(\Lambda\) aligned-anchor multiplicity, one rectangle strictly lowers the triple potential.
+32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), one rectangle strictly lowers the triple potential.
 33. **Syndrome-weighted quotient extraction.** If \(|X/X|\le K|X|\), actual point triple degrees produce an admissible common-ratio matching carrying at least \(H/(6K)\) vertex-incidence weight.
-34. **Paid-bank lower bound.** After correcting for pair-overlap, the extracted bank has \(D\ge H/(6K)-\beta|X|/2\); in a \(q\)-channel universe, \(D\ge H/(6K)-(q-1)|X|\).
+34. **Paid-bank lower bound.** In a \(q\)-channel universe, the extracted bank has \(D\ge H/(6K)-(q-1)|X|\).
 35. **Weighted conversion criterion.** Sufficiently large structured syndrome incidence forces an improving rectangle or one of the explicit alternating-closure structures.
-36. **Projective conic-pencil geometry.** The hyperbola channels form a two-base-point conic pencil; every opposite-channel anchor has \(1+\chi(1-b/a)\) tangents and exactly \((p-4-\chi(1-b/a))/2\) fully affine secants on the other channel.
-37. **Aligned-anchor carry signatures.** Every aligned-anchor determinant factors inside a fixed carry signature; nondegenerate signatures have only \(p^{o(1)}\) solutions, while degenerate signatures are exact affine-interpolation cells.
-38. **Same-channel carry dispersion.** At a fixed carry level, a real same-channel secant star has at most \(\tau(|b-a+pt|)\) edges, so a large star must occupy many carry levels.
-39. **Common-wrap center classification.** Coordinatewise scalar lifts are linearly constrained in every nondegenerate carry cell, while every degenerate cell is radial about one explicit rational center \(pS/d\).
+36. **Projective conic-pencil geometry.** Every opposite-channel anchor has an exact modular tangent/secant profile governed by \(\chi(1-b/a)\).
+37. **Aligned-anchor carry signatures.** Nondegenerate signatures have only \(p^{o(1)}\) real solutions, while degenerate signatures are exact affine-interpolation cells.
+38. **Sharp same-channel carry dispersion.** A same-channel real secant star has divisor-bounded multiplicity at each exact cross-carry level.
+39. **Universal star carry dispersion.** Any endpoint-disjoint secant star, including a cross-channel star, must occupy at least its edge count divided by \(p^{o(1)}\) product-carry signatures.
+40. **Combined paid-bank transition.** A failed paid bank produces an improvement, product/coordinate carry dispersion, or a perfect affine-alignment population.
+41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit finite rational grid; the two endpoint parameters are inadmissible.
+42. **Reduced-denominator chamber criterion.** Perfect alignment at parameter \(t'/q\) occurs exactly when both relevant wrap indices are divisible by \(q\).
+43. **Denominator-sensitive sparsity.** A denominator-\(q\) perfect chamber contains at most \(4p/q\) base points; positive-density chambers therefore have bounded denominator.
 
 ## What remains conditional
 
@@ -55,8 +59,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- A cross-channel carry factorization for secant stars whose endpoints lie on different hyperbola channels.
-- A sparsity or absorber theorem for the perfect-alignment/common-wrap carry chambers.
+- A monotone carry-complexity potential showing that repeated product/coordinate carry dispersion must terminate or enter an absorbable exception.
+- Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
+- A sharper fixed-degree cross-channel carry invariant; coarse cross-channel signature dispersion is already proved.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
 
@@ -69,8 +74,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
-- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and the sparse inadmissibility graph supplied by saturation.
+- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
 
 ## Bottom line
 
-There is no complete proof. The weighted-bank bottleneck is closed, and both branches of its structural obstruction are now partially carry-classified. Same-channel secant stars must disperse across divisor-controlled carry levels. Aligned-anchor classes either disperse across nondegenerate carry signatures or concentrate in exact perfect-wrap chambers. The remaining geometric bottlenecks are the cross-channel star and the dense perfect-wrap chamber.
+There is no complete proof. The branch review added the exact projective conic baseline, and the next carry phase now converts both structural outputs of a failed paid bank into explicit signature growth or bounded-denominator perfect alignment. The remaining geometric bottleneck is a termination/absorption theorem for that carry complexity, not an unclassified secant-star or aligned-anchor load.
