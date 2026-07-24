@@ -148,6 +148,89 @@ predecessor. Thus reverse degree is at most one even though the forward
 degrees vary. The state-dependent symmetric weighting from SRR1d
 therefore gives the asserted kernel. \(\square\)
 
+## SRR3j -- dense-host uniform cylinder spread from switching
+
+Let \(d_{\min}\) be the minimum degree of \(G\) on both vertex classes
+and put
+
+\[
+\boxed{
+L_2=2d_{\min}-N-3.
+}
+\]
+
+Assume \(\Omega_2(G)\ne\varnothing\), and let \(\mu_2\) be its uniform
+measure.
+
+### Theorem SRR3j -- PROVED
+
+If \(L_2\geq1\), then every host edge \(e\), in either specified layer,
+satisfies
+
+\[
+\boxed{
+\Pr_{\mu_2}(e\text{ occurs in that layer})
+\leq\frac1{L_2+1}.
+}
+\]
+
+More generally, let \(F\) be any globally compatible set of \(s\)
+labelled host edges across the two layers.  If \(1\leq s\leq L_2\),
+then
+
+\[
+\boxed{
+\Pr_{\mu_2}(F\subseteq(M_1,M_2))
+\leq
+\prod_{t=0}^{s-1}\frac1{L_2-t+1}
+=
+\frac1{(L_2+1)_s}.
+}
+\]
+
+Here \((x)_s=x(x-1)\cdots(x-s+1)\).  In particular, if
+\(d_{\min}\geq\delta N\) for fixed \(\delta>1/2\), the uniform
+two-layer host measure is fixed-rank
+
+\[
+\left(\frac{1+o(1)}{(2\delta-1)N}\right)\text{-spread}.
+\]
+
+### Proof
+
+For one labelled edge, form the bipartite switching graph from states
+containing it to states avoiding it.  SRR3f gives every flawed state at
+least \(L_2\) outgoing four-cycle switches, while every nonflawed state
+has at most one reverse predecessor.  Double-counting switching edges
+gives
+
+\[
+L_2|\Omega_e|\leq|\Omega_2(G)\setminus\Omega_e|.
+\]
+
+Rearranging proves the first box.
+
+Order the \(s\) labelled edges of \(F\) and condition successively.
+After \(t\) edges have been fixed, apply the same switching graph to the
+next edge inside the conditioned state space.  A switch already counted
+by SRR3f preserves the other layer.  To preserve the fixed edges in its
+own layer, discard partner rows supporting those edges; there are at
+most \(t\) such rows.  Every flawed conditioned state therefore has at
+least \(L_2-t\) valid forward switches, and reverse degree is still at
+most one.  If the conditioned state space is empty the desired
+probability is zero; otherwise the same double count gives conditional
+probability at most \(1/(L_2-t+1)\).  Multiplication over
+\(t=0,\ldots,s-1\) proves the cylinder bound.  The asymptotic statement
+is immediate for fixed \(s\). \(\square\)
+
+SRR3j obtains the natural fixed-rank spread directly for the uniform
+two-layer measure on every sufficiently dense host; no external spread
+measure is needed.  It still does not prove SRR2: a spread upper bound
+does not control the ratio between a remote cylinder conditioned on a
+flaw and its marginal.  The remaining theorem is precisely that
+lopsided correlation comparison, now separated from both stationarity
+and uniform cylinder rarity.
+
 ## Deterministic locality retained
 
 Put
@@ -181,3 +264,5 @@ it.
 and ordered edge-disjoint pairs in complete and one-edge-deleted hosts.
 It checks the degree bounds, unique reverse predecessor, flaw removal,
 host preservation, and exact row and column sums of the rational kernel.
+It also checks the uniform labelled-cylinder spread bound and each of
+its sequential conditional factors on complete small hosts.

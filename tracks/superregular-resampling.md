@@ -201,6 +201,15 @@ bound \((2\delta-1)N-3\). The other layer is unchanged pathwise and a
 remote same-layer partial matching cannot be created, but arbitrary-host
 conditional correlations are not yet controlled.
 
+The same switching count proves SRR3j. If
+\(L_2=2d_{\min}-N-3\geq1\), the *uniform* two-layer host measure has
+labelled edge marginal at most \(1/(L_2+1)\), and every compatible
+rank-\(s\) cylinder, \(s\leq L_2\), has probability at most
+\(1/(L_2+1)_s\). Thus dense hosts already have the natural uniform
+fixed-rank \(O(N^{-1})\)-spread. This deliberately does not infer
+negative dependency: the remaining SRR2 gap is the conditioned
+remote-cylinder ratio, not cylinder rarity.
+
 ## SRR4 — Superregular local-load endpoint
 
 ### Target statement

@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 from fractions import Fraction
-from itertools import permutations
+from itertools import combinations, permutations
 
 Matching = tuple[int, ...]
 State = tuple[Matching, Matching]
@@ -164,6 +164,68 @@ def verify_two_layer(host: Host) -> None:
             )
 
 
+def contains_labelled_edges(
+    state: State,
+    labelled_edges: tuple[tuple[int, int, int], ...],
+) -> bool:
+    return all(
+        state[layer][row] == column
+        for layer, row, column in labelled_edges
+    )
+
+
+def verify_two_layer_cylinder_spread(
+    host: Host,
+    maximum_rank: int = 3,
+) -> None:
+    n = len(host)
+    matchings = perfect_matchings(host)
+    states = [
+        (first, second)
+        for first in matchings
+        for second in matchings
+        if all(first[row] != second[row] for row in range(n))
+    ]
+    assert states
+    columns = column_degrees(host)
+    minimum_degree = min(
+        min(map(len, host)),
+        min(columns),
+    )
+    lower = 2 * minimum_degree - n - 3
+    if lower < 1:
+        return
+    atoms = tuple(
+        (layer, row, column)
+        for layer in range(2)
+        for row, row_neighbours in enumerate(host)
+        for column in row_neighbours
+    )
+    total = len(states)
+    for rank in range(1, min(maximum_rank, lower) + 1):
+        denominator = 1
+        for offset in range(rank):
+            denominator *= lower + 1 - offset
+        for cylinder in combinations(atoms, rank):
+            previous_states = states
+            for offset, atom in enumerate(cylinder):
+                next_states = [
+                    state
+                    for state in previous_states
+                    if contains_labelled_edges(state, (atom,))
+                ]
+                if previous_states:
+                    assert Fraction(
+                        len(next_states),
+                        len(previous_states),
+                    ) <= Fraction(1, lower - offset + 1)
+                previous_states = next_states
+            assert Fraction(len(previous_states), total) <= Fraction(
+                1,
+                denominator,
+            )
+
+
 def complete_host(n: int) -> Host:
     return tuple(frozenset(range(n)) for _ in range(n))
 
@@ -183,6 +245,7 @@ def main() -> None:
     verify_one_layer(one_edge_deleted_host(4))
     verify_two_layer(complete_host(4))
     verify_two_layer(one_edge_deleted_host(5))
+    verify_two_layer_cylinder_spread(complete_host(5))
     print("dense-host stationary resampling: all enumerated kernels passed")
 
 
