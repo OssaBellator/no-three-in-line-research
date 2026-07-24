@@ -11,16 +11,16 @@ A naive Cartesian or block product fails because points from different blocks ca
 The detailed proofs and counterexamples are in
 [`docs/27-all-n-product-construction.md`](../docs/27-all-n-product-construction.md),
 with exact finite checks and SAT search in
-[`scripts/verify_product_construction.py`](../scripts/verify_product_construction.py).
+[`scripts/verify_product_construction.py`](../scripts/verify_product-construction.py).
 
 | Item | Status | Current result |
 |---|---|---|
-| PC1 | **COMPLETE** | Independent cycle phases give two disjoint permutation layers for all four global coarse/fine radix orientations, in `O(mn)` time. |
-| PC2 | **PARTIAL** | A general four-term determinant identity, all four coarse/fine multiplicity types, and the exact weighted-direction form of type `(2,2)` are proved. |
-| PC3 | **OPEN / GLOBAL RADIX-PHASE ROUTE REFUTED** | One `2x3` factor pair defeats all 16 phase states in each of all four radix orientations. Phase feasibility is now an exact width-three CNF. |
-| PC4 | **OPEN** | No useful no-three multiplicative closure theorem is proved. |
-| PC5 | **OPEN** | Arithmetic coverage cannot start until a closure or extension theorem is available. |
-| PC6 | **PARTIAL** | Cycle flips are executable factor-protected trades. The full factor-product host has line cap `4 min(m,n)` and pair codegree at most `4 min(m,n)-2`; arithmetic carry concentration remains open. |
+| PC1 | **COMPLETE / STRENGTHENED** | Cycle phases work in all four radix orientations, and every degree-two subset of the full four-regular product host decomposes into two disjoint permutation layers. |
+| PC2 | **PARTIAL** | The general determinant identity, four multiplicity types, and exact weighted type-`(2,2)` resonance are proved; simultaneous hybrid resonance elimination remains open. |
+| PC3 | **OPEN / TWO RESTRICTED ROUTES REFUTED** | Phase feasibility and full-host degree-two feasibility both have exact width-three CNFs. The full selector repairs `2x3` and some `3x3` cases, but all tested `2x5` and `5x2` full hosts fail. |
+| PC4 | **OPEN** | No infinite no-three multiplicative closure theorem is proved. |
+| PC5 | **OPEN / FINITE CERTIFICATES** | Product searches give exact saturated configurations at sides 6, 8, and 9, but no generating family or arithmetic coverage. |
+| PC6 | **SUBSTANTIAL PARTIAL** | All degree-two product states are connected by executable alternating-cycle trades. Lines, pair codegrees, and fixed nonzero carry levels have explicit multiplicity bounds; monotone hybrid-resonance repair remains open. |
 
 The completion criterion at the end of this file is **not** met.
 
@@ -75,6 +75,12 @@ Y_{\theta_y}\left(
 
 Theorem PX1 proves that both layers are permutations and are cell-disjoint for
 all four orientations.
+
+Theorem PX9 enlarges the state space. The full factor-product host is a
+four-regular bipartite graph on scalar rows and columns. Every spanning
+degree-two subgraph is saturated and decomposes into two permutation layers by
+alternating the edges on its even cycles. Thus cycle phases are a convenient
+subfamily, not the complete factor-compatible state space.
 
 ## PC2 — Cross-block line classification
 
@@ -209,6 +215,27 @@ This turns finite PC3 testing into a reproducible exact SAT problem rather than
 raw enumeration. The current script includes a standard-library DPLL model
 counter and cross-checks it against direct enumeration on the smallest cases.
 
+### Enlarged full-host endpoint
+
+Theorem PX10 gives a second width-three CNF with one variable for each of the
+`4mn` host cells. Exact degree two at every row and column costs `16mn`
+three-clauses, and every real-collinear host triple contributes one negative
+three-clause.
+
+This larger state space strictly improves on cycle phases. The exact `2x3`
+phase counterexample has no phase solution in any orientation, but its crossed
+product host contains the no-three layers
+
+\[
+(1,5,3,0,4,2),\qquad(3,1,5,2,0,4).
+\]
+
+It also produces side-nine configurations from selected `3x3` factor pairs.
+However, exhaustive search over every ordered saturated no-three factor pair of
+sizes `2` and `5`, in all four global orientations, finds no degree-two
+no-three host state. Therefore the full four-orientation product host is still
+not a universal PC3 theorem.
+
 ## PC4 — Product closure theorem
 
 **Status: OPEN.**
@@ -227,16 +254,15 @@ A weaker theorem allowing one factor from a special absorber class is also usefu
 
 ### Current evidence
 
-Some small factor pairs have successful phase states in selected orientations:
+The full-host selector gives exact positive product instances at `2x2`, `2x3`,
+`3x2`, `3x3`, `2x4`, and `4x2`, depending on factor pair and orientation. It
+strictly contains the cycle-phase family and repairs the original `2x3`
+obstruction.
 
-- `(2,2)` has successes in all four orientations;
-- `(3,2)` has successes only in the two crossed orientations among the tested states;
-- `(2,4)` has successes in `ff`;
-- `(4,2)` has successes in `cc`, `cf`, and `fc`.
-
-However, `(2,3)`, `(3,3)`, `(3,4)`, `(4,3)`, `(2,5)`, and `(5,2)` have no
-successful states in any global orientation in the exhaustive configured
-range. These finite positives do not form a closure class.
+The same exact search gives zero models for all 128 ordered `2x5` factor-pair
+instances and all 128 ordered `5x2` instances in each of the four orientations.
+Hence neither cycle phases nor arbitrary degree-two selection in the unmodified
+factor-product host defines a multiplicatively closed class.
 
 ## PC5 — Arithmetic coverage
 
@@ -253,11 +279,16 @@ Combine PC4 with base constructions to cover every sufficiently large integer. P
 
 State exactly which integers remain uncovered and provide finite constructions where possible.
 
-No arithmetic coverage statement follows from the current finite successes.
+The product searches give explicit saturated no-three configurations at side
+lengths 6, 8, and 9. They are verified independently in
+`docs/28-product-finite-witnesses.md` and
+`scripts/verify_product_witnesses.py`.
+
+No arithmetic coverage statement follows from these finite successes.
 
 ## PC6 — Product-compatible repair machinery
 
-**Status: PARTIAL via Theorems PX5 and PX6.**
+**Status: PARTIAL via Theorems PX5, PX6, PX11, and PX12.**
 
 ### Target statement
 
@@ -269,10 +300,8 @@ If the raw product is only a bounded-syndrome saturated seed, show that the curr
 
 ### Results
 
-Toggling one phase bit on one fine alternating cycle removes and inserts the
-same number of cells in one coarse factor point, preserves every row and column
-exactly in all four orientations, and keeps all coarse and fine projections
-inside the original factor configurations.
+PX5 proves that each original phase-cycle toggle is an executable
+row-column-preserving factor-protected trade in every global orientation.
 
 For the full factor-product host
 
@@ -282,29 +311,51 @@ For the full factor-product host
 \{F_\theta(c,f):c\in S_m,\ f\in S_n\},
 \]
 
-Theorem PX6 proves:
+PX6 proves:
 
 - at most two points of a fixed coarse projection lie on one real line;
 - at most two points of a fixed fine projection lie on one real line;
 - every line contains at most `4 min(m,n)` host points;
 - every fixed pair has at most `4 min(m,n)-2` third-point candidates.
 
-This supplies a uniform projection-signature and pair-codegree bound. The
-unresolved PC6 work is sharper concentration by the actual arithmetic carry
-values in PX2, followed by a repair/termination theorem using that structure.
+PX11 proves that any two degree-two host states differ by edge-disjoint
+alternating cycles. Toggling those cycles one at a time keeps every row and
+column at degree two and never leaves the factor-product host. Thus the entire
+factor-compatible saturation state space is connected by executable trades.
+
+PX12 gives an arithmetic carry bound. For any no-three set of `s` points, the
+number of ordered triples at one fixed nonzero signed determinant is at most
+`2s(s-1)`. Consequently, for a fixed ordered coarse projected triple and a
+fixed nonzero ordinary fine carry `kappa`, at most
+
+\[
+4n(2n-1)
+\]
+
+ordered fine projected triples satisfy `Delta_uv=n kappa`. The analogous
+coarse bound is `4m(2m-1)`.
+
+The unresolved PC6 work is simultaneous concentration of the two hybrid
+determinants in PX2 and a monotone or resampling rule for choosing the
+alternating-cycle trades.
 
 ## Candidate starting cases
 
-- phase choices beyond complete alternating cycles, while preserving each
-  block matching;
-- non-global digit bijections rather than only `cc`, `cf`, `fc`, `ff`;
-- product of subgroup-coset absorbers with coprime orbit orders;
-- a local-lemma or resampling theorem applied to the PX7 clause system using
-  PX6 codegree bounds;
-- one factor used only to assign structured offsets to blocks of the other.
+- non-global digit bijections or block offsets that enlarge the host beyond the
+  four global radix orientations and escape the exact `2x5` obstruction;
+- a local-lemma, resampling, or entropy-compression theorem for the PX10
+  exact-degree 3-CNF using PX6 and PX12;
+- a monotone collinearity potential along the alternating-cycle state graph of
+  PX11;
+- joint concentration bounds for `(Delta_iv,Delta_uj,kappa)` rather than one
+  determinant level at a time;
+- product hosts built from subgroup-coset absorbers with additional offset
+  states, not only the raw tensor cells.
 
-The raw four-layer tensor host is impossible: PX4 shows that common horizontal
-and vertical factor directions create immediate type-`(2,2)` triples.
+The raw four-layer tensor host without degree-two selection is impossible: PX4
+shows that common horizontal and vertical factor directions create immediate
+type-`(2,2)` triples. The degree-two host is strictly stronger than cycle
+phases, but the exhaustive `2x5` zero shows that it also needs enlargement.
 
 ## Mandatory falsification
 
@@ -315,14 +366,19 @@ and vertical factor directions create immediate type-`(2,2)` triples.
 - resonance when factor slopes are rationally related;
 - apparent successes caused by incomplete phase enumeration.
 
-The verifier now checks all four global radix orientations, row/column
-duplication, the exact general determinant identity, the ordinary carry
-identity, SAT/direct-enumeration equivalence, and explicit real collinearities.
+The verification suite now checks all four global radix orientations,
+row/column duplication, the exact determinant and carry identities, phase and
+full-host CNF equivalence on base cases, exhaustive degree-two model counts,
+explicit side-6/8/9 witnesses, and fixed signed-area multiplicity through side
+five.
 
 ## Completion criterion
 
 This branch is complete when PC1–PC6 give a rigorous closure operation and an arithmetic coverage theorem sufficient to derive `D(n)=2n` for all large `n`, followed by exact treatment of the remaining finite sizes.
 
-**Current verdict:** not complete. PC1 is closed; PC2 and PC6 now have stronger
-exact partial theorems; PC3 has an exact SAT endpoint but the enlarged global
-radix-phase route is refuted; PC4 and PC5 remain open.
+**Current verdict:** not complete. PC1 is closed in the full product-host state
+space. PC2 has exact resonance formulae. PC3 now has exact phase and
+full-selector CNFs, but both unmodified global-host routes have finite
+obstructions. PC6 has connected executable repair states and one-coordinate
+carry concentration, while the joint hybrid-resonance termination theorem,
+PC4 closure, and PC5 arithmetic coverage remain open.
