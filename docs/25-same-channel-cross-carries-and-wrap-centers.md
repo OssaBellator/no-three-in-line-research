@@ -5,10 +5,11 @@ This chapter complements two preceding carry-classification results:
 - [`23-aligned-anchor-carry-cells.md`](23-aligned-anchor-carry-cells.md) gives the fine determinant factorisation for aligned anchors;
 - [`24-secant-star-carry-dispersion.md`](24-secant-star-carry-dispersion.md) gives the canonical product-carry dispersion theorem for endpoint-disjoint secant stars and the combined paid-bank transition.
 
-Here we retain two nonoverlapping refinements:
+Here we retain three nonoverlapping refinements:
 
 1. an exact cross-carry invariant for a same-channel secant involution;
-2. a coordinate-free scalar-wrap classification with explicit rational centers.
+2. a coordinate-free scalar-wrap classification with explicit rational centers;
+3. an integer-factorisation bound inside every perfect-wrap chamber.
 
 Throughout, nonzero residues use representatives in \(\{1,\ldots,p-1\}\).
 
@@ -270,7 +271,126 @@ so both lifted points lie on the radial line through \(U\) and \(C_S\). \(\squar
 
 Theorem CF4 is a geometric companion to CA1–CA4. The CA theorem gives a sharp factorization and divisor bound inside each aligned signature; CF4 describes every degenerate scalar cell by one explicit rational center.
 
-## 5. Canonical alternating transition
+## 5. Factorisation inside a perfect-wrap chamber
+
+Fix a degenerate chamber with index
+
+\[
+S=(s_x,s_y).
+\]
+
+For \(U=(x,y)\) in this chamber define centered integer coordinates
+
+\[
+X=d x-p s_x,
+\qquad
+Y=d y-p s_y.
+\]
+
+Put
+
+\[
+m=\max(\alpha,\beta)
+\]
+
+and
+
+\[
+\Delta_p^{\mathrm{wrap}}
+=
+\max_{1\le n<p^2}\tau(n).
+\]
+
+### Theorem CF5 — PROVED
+
+Every point \(U\in H_c\) in the chamber satisfies
+
+\[
+\boxed{XY\equiv d^2c\pmod p}
+\]
+
+and
+
+\[
+\boxed{|X|,|Y|<\frac{pd}{m}.}
+\]
+
+Consequently the chamber contains at most
+
+\[
+\boxed{
+2\left(
+\left\lceil\frac{2pd^2}{m^2}\right\rceil+1
+\right)
+\Delta_p^{\mathrm{wrap}}
+}
+\]
+
+points of \(H_c\).
+
+### Proof
+
+For either multiplier \(\gamma\in\{\alpha,\beta\}\), write
+
+\[
+\gamma-1=d\gamma'.
+\]
+
+The chamber condition in one coordinate is
+
+\[
+\left\lfloor\frac{\gamma x}{p}\right\rfloor
+=
+\gamma's_x.
+\]
+
+Therefore
+
+\[
+-\frac{ps_x}{\gamma}
+\le
+X
+<
+\frac{p(d-s_x)}{\gamma}.
+\]
+
+Using the larger multiplier gives \(|X|<pd/m\), and the same argument gives the bound for \(Y\).
+
+Since \(xy\equiv c\pmod p\),
+
+\[
+XY=(dx-ps_x)(dy-ps_y)
+\equiv d^2c\pmod p.
+\]
+
+Thus
+
+\[
+XY=d^2c+pt
+\]
+
+for an integer \(t\). The interval \(|XY|<(pd/m)^2\) allows at most
+
+\[
+\left\lceil\frac{2pd^2}{m^2}\right\rceil+1
+\]
+
+values of \(t\). Each nonzero integer \(d^2c+pt\), whose absolute value is below \(p^2\), has at most \(2\tau(|d^2c+pt|)\) ordered signed factorisations \((X,Y)\). The map \(U\mapsto(X,Y)\) is injective. \(\square\)
+
+### Corollary CF6 — PROVED
+
+If \(E_{\mathrm{wrap}}\) perfectly aligned points occupy \(h\) nonempty degenerate chambers, then
+
+\[
+\boxed{
+h\ge
+\frac{E_{\mathrm{wrap}}}{
+2(\lceil2pd^2/m^2\rceil+1)\Delta_p^{\mathrm{wrap}}}.}
+\]
+
+In particular, a large perfect-alignment class either disperses through many explicit rational centers or has multipliers with a large common divisor relative to their size.
+
+## 6. Canonical alternating transition
 
 The combined transition is Theorem SC3 in the secant-star chapter:
 
@@ -282,22 +402,26 @@ The combined transition is Theorem SC3 in the secant-star chapter:
 }
 \]
 
-CF1–CF4 refine its two structural outputs:
+CF1–CF6 refine its structural outputs:
 
 - same-channel stars have anchor-specific cross-carry dispersion;
-- perfect-alignment cells have explicit rational centers.
+- perfect-alignment cells have explicit rational centers;
+- every perfect-wrap chamber has divisor-controlled occupancy.
 
-## 6. Remaining target
+No high-load branch is now anonymous. The remaining issue is termination: one must prove that repeated alternating propagation cannot indefinitely create new carry signatures and wrap centers without either exhausting their finite budget or entering an absorbable algebraic exception.
 
-### Target CF5 — OPEN: perfect-wrap chamber sparsity
+## 7. Remaining target
 
-A degenerate scalar carry cell has side lengths at most
+### Target CF7 — OPEN: monotone carry-complexity potential
 
-\[
-\frac{p}{\max(\alpha,\beta)}.
-\]
+Construct a potential charging:
 
-Prove that a modular hyperbola cannot occupy many such cells heavily unless its parameters lie in one of the multiplicative-coset exceptions already isolated by the inverse-additive theory.
+- product-carry signatures from SC2;
+- same-channel cross-carry levels from CF2;
+- nondegenerate aligned signatures from CA4;
+- occupied perfect-wrap centers from CF6.
+
+Prove that every non-improving alternating closure step raises this potential by a quantified amount, while the total possible potential is bounded by the size and channel complexity of the active core.
 
 ## Verification
 
@@ -305,4 +429,4 @@ Prove that a modular hyperbola cannot occupy many such cells heavily unless its 
 python scripts/verify_carry_closure.py --prime 17
 ```
 
-checks CF1–CF4 exhaustively for small odd primes. It is a finite sanity check, not a proof for arbitrary \(p\).
+checks CF1–CF5 exhaustively for small odd primes. It is a finite sanity check, not a proof for arbitrary \(p\).
