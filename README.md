@@ -19,8 +19,9 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`STATUS.md`](STATUS.md): current honesty ledger.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): global theorem index.
 - [`proofs/composite-modulus-theorem-index.md`](proofs/composite-modulus-theorem-index.md): composite-track theorem index.
+- [`proofs/composite-modulus-theorem-index-addendum.md`](proofs/composite-modulus-theorem-index-addendum.md): current CMR102+ addendum.
 - [`tracks/all-n-composite-modulus.md`](tracks/all-n-composite-modulus.md): original composite task track.
-- [`tracks/all-n-composite-modulus-progress.md`](tracks/all-n-composite-modulus-progress.md): current CM1–CM6 progress and bottlenecks.
+- [`tracks/all-n-composite-modulus-progress.md`](tracks/all-n-composite-modulus-progress.md): CM1–CM6 progress and bottlenecks.
 
 ### General repair programme
 
@@ -47,7 +48,10 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/39-crt-mixed-collision-factorization.md`](docs/39-crt-mixed-collision-factorization.md) through [`docs/43-prime-power-terminal-spread-family.md`](docs/43-prime-power-terminal-spread-family.md): CRT mixed collisions, tangent spacing, harmonic energy, and all-prime terminal families.
 - [`docs/44-prime-power-global-energy-bound.md`](docs/44-prime-power-global-energy-bound.md) and [`docs/45-prime-power-companion-global-syndrome.md`](docs/45-prime-power-companion-global-syndrome.md): quadratic-order one- and two-layer syndrome bounds.
 - [`docs/46-crt-local-arc-obstruction.md`](docs/46-crt-local-arc-obstruction.md) through [`docs/52-crt-slope-carry-signatures.md`](docs/52-crt-slope-carry-signatures.md): corrected CRT taxonomy, restricted recursive banks, exact average roots, recursive dispersion, digital obstruction, and slope-carry signatures.
-- [`docs/53-prime-power-divisor-collision-energy.md`](docs/53-prime-power-divisor-collision-energy.md) through [`docs/56-prime-power-cross-stratum-sum.md`](docs/56-prime-power-cross-stratum-sum.md): divisor-collision reduction, critical cells, singular sums, and the unconditional \(O(N^2\log N)\) one-channel syndrome.
+- [`docs/53-prime-power-divisor-collision-energy.md`](docs/53-prime-power-divisor-collision-energy.md) through [`docs/59-prime-power-binary-cluster-sum.md`](docs/59-prime-power-binary-cluster-sum.md): divisor-collision reduction, singular sums, first-separation summation, and binary-cluster localization.
+- [`docs/60-prime-power-prefix-star-neutralization.md`](docs/60-prime-power-prefix-star-neutralization.md) through [`docs/67-prime-power-child-core-cancellation.md`](docs/67-prime-power-child-core-cancellation.md): prefix repair, quotient charging, higher-rank collateral, descending invariance, and recursive-compatible node banks.
+- [`docs/68-prime-power-child-translation-pencils.md`](docs/68-prime-power-child-translation-pencils.md) through [`docs/70-prime-power-alternating-pencil-certificates.md`](docs/70-prime-power-alternating-pencil-certificates.md): child pencils, diffuse-or-alternating extraction, and frozen rank certificates.
+- [`docs/71-prime-power-balanced-law-classification.md`](docs/71-prime-power-balanced-law-classification.md) through [`docs/73-prime-seven-pair-spectrum.md`](docs/73-prime-seven-pair-spectrum.md): reciprocal-law obstruction and balanced recursive banks at every power of seven.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -76,13 +80,13 @@ step is a global second-generation concentration or termination theorem.
 ### Composite prime-power route
 
 Start from completed-reciprocal full channels and their companion layer. Use
-the recursive all-stratum fibre bank and all-prime conic terminal family.
-Deterministic one- and two-layer syndromes are now \(O(N^2\log N)\) for fixed
-prime base, and recursive marginals have expected harmonic energy
-\(O(N\log^3N)\). The principal missing step is a global first-separation
-decoder that converts local `O(1/p)` anti-concentration into an exact no-three
-state. Arbitrary composite assembly additionally requires CRT slope-carry
-incompatibility or absorption.
+the recursive all-stratum fibre bank, prefix-star repair, and child-pencil
+alternating banks. The generic first-separation and prefix-collateral sums are
+closed at quadratic-polylogarithmic scale. Balanced recursive banks exist for
+all \(p\equiv1\pmod4\) and, through a non-reciprocal factorization, for every
+power of seven. The principal missing step is conversion and termination of the
+explicit frozen rank-`1/2/3` alternating certificates. Arbitrary composite
+assembly additionally requires a separate coverage mechanism.
 
 ## Running checks
 
@@ -92,12 +96,16 @@ script explicitly documents an optional solver.
 ```bash
 python scripts/verify_composite_modulus.py --max-modulus 40
 python scripts/verify_prime_power_channels.py --max-modulus 125
-python scripts/verify_prime_power_global_energy.py
-python scripts/verify_prime_power_companion_global.py
-python scripts/verify_prime_power_restricted_bank.py
-python scripts/verify_prime_power_recursive_harmonic.py --samples 100
+python scripts/verify_prime_power_first_separation_sum.py --max-modulus 125
+python scripts/verify_prime_power_quotient_excess.py
+python scripts/verify_prime_power_higher_rank_prefix.py
+python scripts/verify_prime_power_child_translation_pencils.py
+python scripts/verify_prime_power_child_pencil_dichotomy.py
+python scripts/verify_prime_power_alternating_pencil_certificates.py
+python scripts/verify_prime_power_balanced_law_classification.py
+python scripts/verify_prime_seven_balanced_bank.py
+python scripts/verify_prime_seven_pair_spectrum.py
 python scripts/verify_prime_power_cross_stratum_sum.py --max-modulus 125
-python scripts/verify_crt_slope_carry.py
 python scripts/verify_digital_64_completion_obstruction.py
 python scripts/verify_composite_finite_extensions.py
 ```
