@@ -8,8 +8,9 @@ originally treated two outcomes as paid terminal branches:
 
 Both outcomes actually contain another executable alternating bank. Thus no
 cross-node no-double-charge ledger is needed for these two geometric classes.
-The only nongeometric stopping alternative left by CMR125 is an excess barrier
-relative to the fixed global baseline.
+The bookkeeping must distinguish the **endpoint-board size** from the
+**target load**, meaning the number of old triples guaranteed to disappear in
+every bank state.
 
 Throughout, a **saturated state** is the disjoint union of two permutation
 layers on an `N` by `N` grid. An endpoint bank selects points from one fixed
@@ -48,14 +49,9 @@ forbidden board on `B` has an allowed perfect matching. Every allowed state
 moves all points of `B`, preserves saturation and layer disjointness, and
 destroys all those chosen triples.
 
-In particular, if `q>=4`, the disjoint family exposes an alternating bank of
-some size between `4` and `q`; if a prescribed target size `r` satisfies
-
-\[
-\left\lceil\frac q2\right\rceil\le r\le N,
-\]
-
-then the bank may be padded to exactly `r` endpoints.
+Thus a disjoint family of size `q` gives a bank with target load at least
+`ceil(q/2)`. The board may be padded to any size `r` between that target load
+and `N`, subject to `r>=4`.
 
 ### Proof
 
@@ -82,8 +78,8 @@ preserved by the endpoint rematching. ∎
 ### Theorem CMR130 — PROVED
 
 Let `s>=4`, and suppose a real line `L` contains more than `2s` points of a
-saturated state. Then `L` exposes an alternating endpoint bank of size exactly
-`s`.
+saturated state. Then `L` exposes an alternating endpoint bank of board size and
+target load exactly `s`.
 
 There are `s` points `B={b_1,...,b_s}` in one fixed permutation layer and two
 further points `u,v` on `L`, outside `B`, such that every old triple
@@ -112,83 +108,60 @@ layer. ∎
 The same conclusion holds when the heavy line lies entirely in the outside set
 `X` of CMR124: its points may simply become the endpoint set of the next bank.
 
-## 3. Closure conversion without geometric payment
+## 3. Geometry-to-bank conversion with target load
 
-Retain the global baseline `S_0` and the function
-
-\[
-\sigma(t)=
-\max\{s\ge4:24(s-1)^2(3s-2)\le t\}
-\]
-
-from CMR125.
+For an endpoint bank `B`, write `d(B)` for any certified number of old triples
+which every bank state destroys. The board size and `d(B)` need not be equal.
 
 ### Corollary CMR131 — PROVED
 
-Let an endpoint bank of size `t>=2160` destroy `t` current star triples. Then at
-least one of the following holds.
+Apply CMR124 with an integer `s>=4`. Each of its three geometric alternatives
+produces another alternating endpoint bank:
 
-1. Some bank state has potential strictly below `Phi(S_0)`.
-2. The parent state has excess at least `t/2` above `S_0`.
-3. Some globally nonimproving bank state exposes a new alternating endpoint
-   bank of size exactly `sigma(t)`.
+1. the direct secant-star alternative gives board size `s` and target load `s`;
+2. the `s` vertex-disjoint triples give, after CMR129 and padding, board size
+   `s` and target load at least `ceil(s/2)`;
+3. the heavy-line alternative gives, by CMR130, board size `s` and target load
+   `s`.
+
+Thus every geometric outcome has a next bank of board size exactly `s` and
+certified target load at least `ceil(s/2)`.
 
 ### Proof
 
-Apply CMR125. Its direct alternating-expansion alternative already gives a bank
-of size `sigma(t)`.
-
-If CMR125 gives `sigma(t)` vertex-disjoint triples, apply CMR129. At least
-`ceil(sigma(t)/2)` of them supply chosen points in one fixed layer. Pad those
-points inside that layer to exactly `sigma(t)` endpoints and apply CMR128. The
-resulting bank destroys all selected disjoint triples.
-
-If CMR125 gives a line with more than `2sigma(t)` outside points, CMR130 gives a
-bank of size exactly `sigma(t)`.
-
-Thus the three geometric alternatives of CMR125 all produce the same next-bank
-outcome. ∎
+Only the disjoint-triple case needs explanation. CMR129 selects one point from
+at least `ceil(s/2)` triples in one layer. Pad that endpoint set to exactly `s`
+points in the same layer and apply CMR128. Every selected triple loses its
+chosen point. The other two cases are the direct CMR124 bank and CMR130. ∎
 
 ### Corollary CMR132 — PROVED
 
-Along every alternating-closure branch which
-
-- never improves the fixed baseline, and
-- never crosses the half-star excess barrier,
-
-the bank sizes satisfy
+Suppose a saturated state contains at least
 
 \[
-t_{j+1}=\sigma(t_j)
-<
-\left(\frac{t_j}{12}\right)^{1/3}
+12(s-1)^2(3s-2)
 \]
 
-whenever `t_j>=2160`. Hence the branch reaches a bank below `2160` after
-`O(log log t_0)` expansions, without invoking any disjoint-triple or heavy-line
-charging ledger.
+real triples touching a designated point set, with `s>=4`. Then it exposes an
+alternating bank of board size `s` and target load at least `ceil(s/2)`.
+
+Consequently the disjoint-defect and heavy-line alternatives never require a
+separate global charging ledger. They are executable continuation certificates.
 
 ### Proof
 
-CMR131 leaves only the next-bank alternative on such a branch. The contraction
-estimate is CMR126. ∎
+Apply CMR124 and then CMR131. ∎
 
 ## 4. Revised remaining endpoint
 
-The repeated-charge task is now narrower than stated after CMR127.
+The correct recursive invariant is the target load, not merely the number of
+endpoint columns. The next chapter combines this invariant with the fixed
+baseline and proves that both low-excess and high-excess branches contract.
 
-The following no longer require global accounting:
+The unresolved tasks after that contraction are:
 
-- vertex-disjoint replacement-touching defects;
-- heavy outside lines.
-
-Both are executable expansion certificates. The unresolved alternating problem
-is reduced to:
-
-1. control or bypass the **half-star excess barrier** relative to the fixed
-   baseline;
-2. eliminate or classify the absolute endpoint-bank core below `2160`;
-3. pay for fine structures recreated by later coarse prefix repairs.
+1. the universal four-endpoint, one-target closure core;
+2. payment for fine structures recreated by later coarse prefix repairs.
 
 No all-`n` theorem is claimed here. The layer-pigeonhole, padding, and heavy-line
 bank assertions are checked in
