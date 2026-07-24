@@ -18,9 +18,15 @@ product theorem index.
 | PC5 | **OPEN / FINITE COVERAGE.** Exact product-derived configurations now include sides 6, 8, 9, and 10. The special `2 x 5` theorem does not yield arithmetic coverage by itself. |
 | PC6 | **SUBSTANTIAL PARTIAL.** Full repair-state connectivity, exact collateral, bounded projection fibres, finite bounded-support batches, and unsatisfiable-core certificates are available. A general resampling-or-infeasibility theorem remains open. |
 
-## New special closure
+## From non-affine escape to universal closure
 
-Let
+PX33 exhausts normalized arbitrary second-block permutations at `2 x 5`. It
+finds seven successful parameter states, five scalar configurations, and an
+explicit non-affine escape for the canonical factor that remains impossible in
+the normalized affine full-selector family.
+
+The factor-independent theorem uses a different normalization in which all four
+block maps may be nontrivial. Let
 
 \[
 H=\operatorname{AGL}(1,5)
@@ -32,7 +38,7 @@ and
 t=(2,4,0,3,1).
 \]
 
-Theorem PX33 proves
+Theorem PX34 proves
 
 \[
 S_5=H\sqcup HtH,
@@ -61,7 +67,7 @@ Set
 \]
 
 then use orientation `ff` and the explicit one-inner-layer construction PX28.
-PX34 proves that the resulting configuration is the exact saturated no-three
+PX35 proves that the resulting configuration is the exact saturated no-three
 side-ten witness.
 
 This gives the factor-independent operation
@@ -70,10 +76,15 @@ This gives the factor-independent operation
 \boxed{2\times5\longrightarrow10.}
 \]
 
+PX38 abstracts the argument: any successful normalized template transports to
+its complete map-group double coset. Covering all admissible factor layers by a
+bounded set of successful double cosets is therefore a sufficient closure
+criterion.
+
 ## Exact affine boundary
 
-The mechanism is not a generic doubling theorem. PX35 normalizes the complete
-four-block affine one-inner-layer family to identity first blocks. PX36 then
+The mechanism is not a generic doubling theorem. PX36 normalizes the complete
+four-block affine one-inner-layer family to identity first blocks. PX37 then
 exhausts:
 
 \[
@@ -95,9 +106,9 @@ full-selector resampling.
 
 ## Exact next targets
 
-1. **Group-orbit criterion.** Find side lengths `n` for which a manageable map
-   group has target double cosets covering every permutation layer that may
-   occur in a saturated factor.
+1. **Group-orbit coverage.** Find infinitely many side lengths `n` for which a
+   manageable map group has successful target double cosets covering every
+   permutation layer that may occur in a saturated factor.
 2. **Two-layer affine selection.** Determine whether both inner layers and the
    full exact selector can overcome the affine one-layer obstruction at base
    six or seven.
@@ -111,6 +122,7 @@ full-selector resampling.
 ## Verification
 
 ```bash
+python scripts/verify_product_nonaffine_one_layer.py
 python scripts/verify_product_affine_side_five_closure.py
 python scripts/verify_product_affine_one_layer_obstruction.py --side 6
 python scripts/verify_product_affine_one_layer_obstruction.py --side 7 --workers 8
