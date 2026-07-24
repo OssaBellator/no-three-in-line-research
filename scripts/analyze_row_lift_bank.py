@@ -198,7 +198,9 @@ def analyze(
     internal_triples = {
         triple
         for triple in combinations(sorted(support), 3)
-        if determinant(*triple) == 0
+        if len({point[0] for point in triple}) == 3
+        and len({point[1] for point in triple}) == 3
+        and determinant(*triple) == 0
     }
 
     cell_frequency: Counter[Point] = Counter()
@@ -251,11 +253,9 @@ def analyze(
     theorem_bound = (
         Fraction(6 * len(blocked_cells), t)
         + Fraction(36 * len(anchored_pairs), t * (t - 1))
-        + (
-            Fraction(72 * len(internal_triples), t * (t - 1) * (t - 2))
-            if t >= 3
-            else Fraction(0, 1)
-        )
+        + Fraction(72 * len(internal_triples), t * (t - 1) * (t - 2))
+        if t >= 3
+        else None
     )
 
     return {
@@ -287,8 +287,14 @@ def analyze(
         "defect_histogram": {
             str(count): defect_histogram[count] for count in sorted(defect_histogram)
         },
-        "PP3j_bound_fraction": f"{theorem_bound.numerator}/{theorem_bound.denominator}",
-        "PP3j_criterion_passes": theorem_bound < 1,
+        "PP3j_bound_fraction": (
+            f"{theorem_bound.numerator}/{theorem_bound.denominator}"
+            if theorem_bound is not None
+            else None
+        ),
+        "PP3j_criterion_passes": (
+            theorem_bound < 1 if theorem_bound is not None else None
+        ),
         "clean_states": clean_states,
     }
 
