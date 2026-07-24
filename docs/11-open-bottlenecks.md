@@ -148,6 +148,24 @@ three normalized collateral ranks satisfies
 \frac{T_r}{(t)_r}\ge\frac{t}{216}.
 \]
 
+CMR113--CMR115 completely classify exact balanced laws inside the
+completed-reciprocal local family. Cell balance forces a uniform shift for each
+coefficient, and the two endpoint shifts require opposite quadratic characters.
+Consequently such a balanced no-three law exists exactly for
+\(p\equiv1\pmod4\). At primes \(p\equiv3\pmod4\), changing the weights on the
+same reciprocal maps cannot work.
+
+CMR116--CMR119 give a non-reciprocal escape at the prime seven: seven integer
+no-three permutations partition the entire \(7\times7\) grid, producing a
+saturated balanced recursive bank at every \(N=7^k\). CMR120--CMR122 sharpen
+its pair spectrum and prove
+
+\[
+\mathbb E T_k
+<
+\frac{36}{7}(k-1)N^2+\frac{29}{9}N^2.
+\]
+
 Thus local-bank construction, quotient charging, endpoint removal, higher-rank
 prefix collateral, internal child-core cancellation, and vertical-pencil
 concentration are closed. The remaining recursive problem is the same
@@ -164,14 +182,14 @@ to an explicit p-adic node, scale, and star size.
    quotients, but a later coarse repair may recreate fine stars. Prove that the
    reintroduced fine mass is paid by the coarse potential decrease or by a
    lexicographic scale budget.
-3. **Sharper modular quotient syndrome.** Improve the current
+3. **Non-reciprocal balanced prime families.** Extend the prime-seven grid
+   factorization to `p=11,19,...`, or prove structural obstructions to a
+   factorization into `p` integer no-three permutations.
+4. **Sharper modular quotient syndrome.** Improve the current
    `O_p(sm^2)` bound for `Z_s`, or exploit inherited primitive line signatures to
    beat the raw factor `3t^2` in CMR86.
-4. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
+5. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
    in CMR61 and CMR64 for nearly singular carries.
-5. **Balanced local laws for all odd primes.** Construct a comparable saturated
-   no-three fibre law for `p=3 mod 4`, or prove an obstruction within the
-   completed-reciprocal family.
 6. **Joint digital construction.** Search jointly for both layers or replace the
    obstructed `64`-point first layer before attempting a lift to `128`.
 7. **CRT slope-carry incompatibility.** Control simultaneous vanishing of
@@ -189,9 +207,9 @@ The following should be exhaustively tested for small primes:
 - which CMR112/CC3 certificate rank dominates frozen child-pencil banks;
 - whether opposite-layer node expansion unlocks concentrated pencil examples;
 - fine mass recreated by one coarse prefix repair;
+- exact no-three grid factorizations and pair spectra at `p=11,19,...`;
 - inherited line-signature multiplicities inside `M_s`;
 - nearly singular completed-reciprocal divisor collisions;
-- balanced no-three fibre laws at primes `p=3 mod 4`;
 - joint two-layer digital searches;
 - mixed-projection determinant distributions for CRT products.
 
@@ -202,10 +220,11 @@ The following should be exhaustively tested for small primes:
 2. Build a lexicographic termination potential for the resulting alternating
    node closures.
 3. Quantify fine-star recreation under the full prefix-rematching bank.
-4. Sharpen the modular quotient syndrome and inherited line-signature
+4. Search for non-reciprocal balanced grid factorizations at the next
+   `p=3 mod 4` primes.
+5. Sharpen the modular quotient syndrome and inherited line-signature
    multiplicity.
-5. Remove the square-root divisor boundary in CMR61 and CMR64.
-6. Classify balanced local reciprocal laws at primes `p=3 mod 4`.
+6. Remove the square-root divisor boundary in CMR61 and CMR64.
 7. Build a mixed-projection-aware CRT assembly theorem.
 8. Continue exact finite searches at `N=14` and beyond.
 9. Search jointly for digital two-layer constructions.
