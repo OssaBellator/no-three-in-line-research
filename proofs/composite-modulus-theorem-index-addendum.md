@@ -23,36 +23,42 @@ This addendum records CMR102 onward. The main composite index remains in
 | ID | Statement | Status | Location |
 |---|---|---|---|
 | CMR138 | Naive sequential two-layer rematching destroys every selected geometric target | **REFUTED AS STATED**; the second layer may reoccupy an old first-layer cell | `docs/78-prime-power-four-endpoint-core.md` |
-| CMR139 | Four-endpoint boards have 2--9 states and sharp rank atoms \(3/4,2/3,1/2\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/78-prime-power-four-endpoint-core.md` |
-| CMR140 | Four-board expected collateral is bounded by \((3/4)T_1+(2/3)T_2+(1/2)T_3\) | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
-| CMR141 | Every positive global saturated minimum generates a finite directed cycle of four-endpoint trades | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
-| CMR142 | Created and removed triples balance exactly around every four-core cycle | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
+| CMR139--142 | Exact four-board profile, expected collateral, finite terminal cycles, and defect-flow balance | PROVED; CMR139 finite-exhaustive | `docs/78-prime-power-four-endpoint-core.md` |
 | CMR143--144 | Exact \(N=4\) potential-one terminal two-cycle and a separate potential-zero state | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/79-four-endpoint-trap-counterexample.md` |
 | CMR145--148 | Complete \(N=5\) census, terminal four-core classification, and ordered full-parent escapes | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/80-prime-five-four-core-escape.md` |
 | CMR149--152 | Prime-seven root census, one-layer traps, and exact ordered joint-parent escapes | PROVED BY EXHAUSTIVE FINITE CHECK / EXACT CERTIFICATES | `docs/81-prime-seven-root-parent-escape.md` |
-| CMR153 | Degree-two boards of size at least four have \(t!/72\) states and \(72/(t)_r\) spread | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
-| CMR154 | Degree-three boards of size at least thirteen have \(t!/700\) states and \(700/(t)_r\) spread | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
-| CMR155--156 | Old-cell-clean ordered joint-parent bank and exact nine-class collateral law | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
+| CMR153--156 | Degree-two/degree-three spread, old-cell-clean joint-parent banks, and the nine-class collateral law | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
 | CMR157--161 | Cross-rank quadratic bounds, optimized ordering, all-scale collateral, and quotient stability | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
 | CMR162--168 | Persistent nonroot disjoint row fibres, independent derangement joint banks, reciprocal/prime-seven scale sums, and stability | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
 | CMR169--171 | Exact one-to-three block packing ledger and frozen-state endpoints | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
 | CMR172--175 | Closure-envelope row-set invariance, persistent ancestry, monotone envelope depth, and canonical parent assignment | PROVED | `docs/86-prime-power-closure-envelope.md` |
 | CMR176--180 | Sharp derangement cylinders and sharpened reciprocal/prime-seven joint-parent bounds | PROVED | `docs/87-prime-power-sharp-derangement-cylinders.md` |
-| CMR181 | Every inherited nonroot four-core is the nine-state derangement board | PROVED | `docs/88-prime-power-inherited-four-core-cover.md` |
-| CMR182 | Its exact rank atoms are \(1/3,2/9,1/9\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
-| CMR183 | Every frozen inherited four-core satisfies \(3T_1+2T_2+T_3\ge9\) | PROVED | `docs/88-prime-power-inherited-four-core-cover.md` |
-| CMR184 | Every minimum cylinder cover is one complete non-diagonal board row or column | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
-| CMR185 | The sixteen Pareto-minimal inherited four-core rank profiles are completely classified | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
-| CMR186 | Every rank-\(1/2/3\) cover of the full parent derangement bank has at least \(t-1\) cylinders, with equality only for a complete row or column shadow | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
-| CMR187 | Every terminal Pareto subcover accounts for at most \(9/11\) of the parent law, forcing at least \(2/11\) additional mass | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
-| CMR188 | An extremal complete parent row/column shadow exposes a matching-or-star alternating neutralization bank | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
-| CMR189 | Every frozen inherited core has either an extremal secant fan or at least \(t\) distinct parent candidate cylinders | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
-| CMR190 | A batch of \(R\) terminal targets has a parent state creating at least \(\lceil2R/11\rceil\) triples outside all chosen local covers | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
-| CMR191 | Every such newly created triple touches the parent replacement block | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
-| CMR192 | Large outside-cover batches compress to disjoint defects, an alternating bank, or a heavy line | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
-| CMR193 | Every crossing target admits a four-endpoint move which strictly expands the closure envelope | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
-| CMR194 | Every lifted batch either forces strict envelope expansion or yields \(\lceil2R/11\rceil\) internal replacement-touching triples | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
-| CMR195 | Strict crossing resolutions occur at most \(k\) times on an \(N=p^k\) branch | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
+| CMR181--185 | Unique inherited nine-state core, exact atoms, cover inequality, minimum covers, and sixteen Pareto profiles | PROVED; CMR182/184/185 finite-exhaustive | `docs/88-prime-power-inherited-four-core-cover.md` |
+| CMR186--189 | Full-parent cover lower bound, \(9/11\) lifting cap, secant-fan extraction, and parent-cover dichotomy | PROVED | `docs/89-prime-power-parent-cover-lifting.md` |
+| CMR190--192 | Batch \(2/11\) defect generation, replacement-touching support, and geometric compression | PROVED | `docs/90-prime-power-batch-parent-lifting.md` |
+| CMR193--195 | Crossing-target envelope expansion, internal/crossing dichotomy, and the \(k\)-step expansion budget | PROVED | `docs/91-prime-power-envelope-expansion-dichotomy.md` |
+| CMR196 | Every candidate certificate line cuts the parent board in a partial matching | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
+| CMR197 | Fewer than \(\lfloor t/2floor\) real certificate lines are simultaneously avoidable | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
+| CMR198 | Every frozen parent cover uses at least \(\lfloor t/2floor\) distinct real-line signatures | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
+| CMR199 | Every frozen parent cover contains an off-diagonal Hall rectangle \(A	imes T\) with \(|A|+|T|>t\) | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
+| CMR200 | A Hall rectangle exposes a half-full source row or target column and one majority rank | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
+| CMR201 | Rank-one and rank-two Hall walls expose executable alternating banks | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
+| CMR202 | The only non-executable one-wall outcome is a rank-three candidate-only wall | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
+| CMR203--205 | Exact majority-wall masses and dense residual cover lower bounds | PROVED | `docs/94-prime-power-parent-wall-peeling.md` |
+| CMR206--209 | Dense-host Hall walls, degree-preserving peeling, logarithmic half-degree descent, and linear rank-three avoidance | PROVED | `docs/95-prime-power-iterated-hall-wall-peeling.md` |
+| CMR210 | Essential matching edges have an exact Hall factorization | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
+| CMR211 | An essential edge in minimum degree \(\delta\ge2\) requires \(\delta\le|A|\le t-\delta\) | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
+| CMR212 | Every balanced host of minimum degree at least \(\lceil t/2ceil\) has no essential edge | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
+| CMR213--214 | Every current certificate has a deletable cell and one-step residual cover replacement | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
+| CMR215--218 | Deleted cells create essential edges only through alternating exchange cycles, giving acyclic certificate ancestry | PROVED | `docs/97-prime-power-certificate-exchange-ancestry.md` |
+| CMR219 | A \(1/24\) parent local-load bound gives an improving derangement by the matching-space local lemma | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
+| CMR220 | Every frozen parent has weighted rank concentration; for \(t\ge48\) one normalized rank exceeds \(1/144\) | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
+| CMR221 | Rank one and rank two are executable; otherwise one row/column carries more than \((t)_3/144\) candidate-only triples | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
+| CMR222 | One dyadic primitive-height band carries more than \((t)_3/(144\lceil\log_2tceil)\) of those triples | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
+| CMR223 | One cell lies in fewer than \(3t^2\) candidate-only conflicts in one dyadic band | PROVED | `docs/99-prime-power-band-conflict-system.md` |
+| CMR224 | One compatible cell pair has band codegree below \(t/H\) | PROVED | `docs/99-prime-power-band-conflict-system.md` |
+| CMR225 | Bands with \(H\ge t^arepsilon\) satisfy the standard bounded-conflict hypotheses | PROVED | `docs/99-prime-power-band-conflict-system.md` |
+| CMR226 | Every such high-height band has a conflict-free almost-perfect derangement matching | PROVED FROM A PUBLISHED THEOREM | `docs/99-prime-power-band-conflict-system.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
