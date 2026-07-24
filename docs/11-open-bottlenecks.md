@@ -89,10 +89,10 @@ For the balanced recursive bank at primes \(p\equiv1\pmod4\), CMR67--CMR74 give
 4kN^2+\frac{p+2}{3}N^2.
 \]
 
-CMR75--CMR78 now neutralize every old binary same-layer star assigned to a
-complete p-adic prefix block. The rematching bank preserves saturation, moves
-every old block point, and has constant matching spread. CMR79--CMR81 reduce
-failed rank-one repair collateral to the quotient secant-incidence energy
+CMR75--CMR78 neutralize every old binary same-layer star assigned to a complete
+p-adic prefix block. The rematching bank preserves saturation, moves every old
+block point, and has constant matching spread. CMR79--CMR81 reduce failed
+rank-one repair collateral to the quotient secant-incidence energy
 
 \[
 \mathcal J_s(S)
@@ -101,29 +101,49 @@ failed rank-one repair collateral to the quotient secant-incidence energy
 \sum_{\ell=0}^1 I_{s,\ell}(L_e).
 \]
 
-Thus the original vague binary-star bottleneck is closed. The remaining repair
-problem is a quotient-incidence and higher-rank charging theorem.
+CMR82--CMR84 now split this energy exactly into
+
+\[
+\mathcal J_s(S)
+=
+2\left(\binom{2N}{2}-N(t-1)\right)
++
+\mathcal M_s(S)
++
+\mathcal C_s(S),
+\]
+
+where `M_s` is a weighted three-distinct-point quotient modular-syndrome energy
+and `C_s` is a repeated-projection carry-direction energy over exactly
+`N(t-1)` same-layer fibre pairs.
+
+Thus the original binary-star bottleneck and its rank-one reduction are closed.
+The remaining repair theorem must charge the two excess energies, sharpen the
+universal endpoint baseline in CMR80, and control higher-rank matching
+collateral.
 
 ### Composite-modulus open lemmas
 
-1. **Quotient-incidence charging.** Split `J_s` into distinct-projection modular
-   triples and repeated-projection carry stars. Charge the first part to the
-   quotient syndrome and the second to the displacement/carry cells
-   CMR14--CMR22 and CMR58--CMR66. Combine this with the normalized rank-two and
-   rank-three collateral from CMR78.
-2. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
-   in CMR61 and CMR64 for nearly singular carries, closing the gap between the
-   deterministic energy bound and a near-linear polylogarithmic estimate.
-3. **Balanced local laws for all odd primes.** CMR67 gives exact `1/p` cell
-   marginals when `p=1 mod 4`. Construct a comparable no-three fibre law for
-   `p=3 mod 4`, or replace the reflection argument by a different balanced
-   family.
-4. **Joint digital construction.** The recorded `64`-point digital layer has no
-   second-permutation completion. Search jointly for both layers or replace the
-   first layer before attempting a nonlinear lift to `128`.
-5. **CRT slope-carry incompatibility.** Control simultaneous vanishing of the
-   local signatures `L_u,L_v`, including noncyclic zero-divisor incidences.
-6. **Further finite coverage.** Exact saturated constructions are known at
+1. **Quotient excess-energy charging.** Bound `M_s` by quotient syndrome with
+   inherited line-signature multiplicity, and bound `C_s` using the primitive
+   carry directions from CMR84 together with CMR14--CMR22 and CMR58--CMR66.
+2. **Endpoint-baseline sharpening.** CMR79 allows `t` lifts in every successful
+   endpoint rectangle, but the two forbidden matchings remove the old selected
+   cells from the actual rank-one candidate set. Quantify this saving before
+   inserting `J_s` into CMR81.
+3. **Higher-rank prefix collateral.** Sum the normalized `T_2/(t)_2` and
+   `T_3/(t)_3` terms in CMR78 or convert their concentration into a paid
+   opposite-layer bank.
+4. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
+   in CMR61 and CMR64 for nearly singular carries.
+5. **Balanced local laws for all odd primes.** Construct a comparable no-three
+   fibre law for `p=3 mod 4`, or replace the reflection argument by a different
+   balanced family.
+6. **Joint digital construction.** Search jointly for both layers or replace the
+   obstructed `64`-point first layer before attempting a lift to `128`.
+7. **CRT slope-carry incompatibility.** Control simultaneous vanishing of
+   `L_u,L_v`, including noncyclic zero-divisor incidences.
+8. **Further finite coverage.** Exact saturated constructions are known at
    composite sizes `4,6,8,9,10,12`; `N=14` remains unresolved.
 
 ## Bottleneck 5: computational falsification
@@ -134,7 +154,8 @@ The following should be exhaustively tested for small primes:
 - distribution of \(q_s\) for real carry-filtered cycles;
 - existence of alternating two-colour closures that remain jointly frozen;
 - which CC3 certificate type dominates frozen examples;
-- exact quotient-incidence and collision-star populations `J_s`;
+- exact `M_s` and `C_s` populations by scale and line signature;
+- savings from removing the two forbidden endpoint matchings;
 - normalized rank-two and rank-three prefix-block collateral;
 - nearly singular completed-reciprocal divisor collisions;
 - balanced no-three fibre families at primes `p=3 mod 4`;
@@ -143,14 +164,15 @@ The following should be exhaustively tested for small primes:
 
 ## Recommended order of work
 
-1. Prove the quotient-incidence/carry charging theorem for CMR81.
-2. Bound the aggregate rank-two and rank-three prefix collateral in CMR78.
-3. Remove the square-root divisor boundary in CMR61 and CMR64.
-4. Search for balanced local reciprocal laws at primes `p=3 mod 4`.
-5. Build a mixed-projection-aware CRT assembly theorem.
-6. Continue exact finite searches at `N=14` and beyond.
-7. Search jointly for digital two-layer constructions.
-8. Convert the original CC3 concentration alternatives into forced
+1. Prove the quotient excess-energy charging theorem for `M_s` and `C_s`.
+2. Sharpen the endpoint baseline in CMR80.
+3. Bound the aggregate rank-two and rank-three prefix collateral in CMR78.
+4. Remove the square-root divisor boundary in CMR61 and CMR64.
+5. Search for balanced local reciprocal laws at primes `p=3 mod 4`.
+6. Build a mixed-projection-aware CRT assembly theorem.
+7. Continue exact finite searches at `N=14` and beyond.
+8. Search jointly for digital two-layer constructions.
+9. Convert the original CC3 concentration alternatives into forced
    opposite-colour expansion.
-9. Prove a termination or global-density contradiction for alternating closure.
-10. Integrate both prime-field and prime-power repairs with descending scales.
+10. Prove a termination or global-density contradiction for alternating closure.
+11. Integrate both prime-field and prime-power repairs with descending scales.
