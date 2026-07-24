@@ -62,9 +62,11 @@ This index collects the product/composition results on
 | PX55 | The three side-six relative cycle types have exactly 181122, 325620, and 298116 abstract selector states | PROVED | `docs/50-full-selector-transfer-matrix.md` |
 | PX56 | Exactly one of the 20736 affine full-selector side-six hosts is feasible | PROVED FINITE | `docs/51-affine-full-selector-six-cycle-closure.md` |
 | PX57 | Every side-six factor of relative 6-cycle type composes with side two to the exact side-twelve certificate | PROVED | `docs/51-affine-full-selector-six-cycle-closure.md` |
+| PX58 | Every side-six factor of relative `(4,2)` type composes with side two to an exact side-twelve certificate | PROVED | `docs/52-universal-full-selector-side-six-closure.md` |
+| PX59 | Every side-six factor of relative `(3,3)` type composes with side two to an exact side-twelve certificate | PROVED | `docs/52-universal-full-selector-side-six-closure.md` |
+| PX60 | Every saturated side-six factor composes with side two to a saturated no-three side-twelve configuration | PROVED | `docs/52-universal-full-selector-side-six-closure.md` |
 
-The branch has factor-independent special closure theorems for `2 x 3`, `2 x 4`,
-and `2 x 5`, plus a `2 x 6 -> 12` closure for the relative 6-cycle factor class.
-It has exact one-layer and full-host normal forms and an exact transfer system for
-every mixed selector, but still no infinite multiplicative closure class or
-arithmetic coverage theorem.
+The branch has factor-independent product theorems for `2 x 3`, `2 x 4`,
+`2 x 5`, and `2 x 6`.  It has exact one-layer and full-host normal forms and an
+exact transfer system for every mixed selector, but still no infinite
+multiplicative closure class or arithmetic coverage theorem.
