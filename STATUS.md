@@ -63,6 +63,12 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 53. **Affine pair graph and codegree classification.** Unit offset gives one alternating Hamiltonian cycle, but one corresponding-column displacement repeats at least \(\lceil N/2\rceil\) times.
 54. **Composite hyperbola collapse families.** Odd squarefree, odd prime-power, and power-of-two unit hyperbolas have explicit real lines containing more than two points.
 55. **Composite lift and CRT limitations.** Real collinearity always implies modular primitive-fibre collinearity, while coordinatewise CRT products contain mixed-projection triples with determinant divisible by the full modulus.
+56. **Completed reciprocal full channels.** At every prime power, valuation-stratum inversion gives a nonlinear valuation-preserving involution covering every unit and nonunit row and column.
+57. **Prime-power tangent-cell classification.** At odd prime powers, every line intersection reduces to explicit valuation quadratics; only the top possible stratum can be singular, and its multiplicity is an exact square-root count. The resulting real-line cap is \(O(\sqrt N+\log N)\).
+58. **Universal companion layer.** Every prime-power permutation channel has a disjoint companion layer whose row-column graph is one alternating Hamiltonian cycle; corresponding-column vertical displacement multiplicity is at most \(p\) for odd \(p\), or four for powers of two.
+59. **Prime-power displacement signature.** Every same-channel completed-reciprocal secant has equal \(p\)-adic valuation in its two displacement coordinates, and fixed same-stratum displacements reduce to one explicit product/square-root congruence.
+60. **Completed-reciprocal syndrome bound.** One completed-reciprocal channel has at most \(O(N^{5/2}+N^2\log N)\) real collinear triples.
+61. **Digital finite channels.** Explicit binary digit-linear permutations give no-three channels at \(N=8,16,32\), verified by exhaustive exact determinant checks.
 
 ## What remains conditional
 
@@ -76,7 +82,10 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
-- A nonlinear full permutation channel over a broad composite-modulus class with a genuine real line cap, bounded displacement multiplicity, and controlled syndrome.
+- A divisor-sensitive exact-real bound inside completed-reciprocal Hensel tangent cells, sufficient for a constant or repairable line cap.
+- Arbitrary two-dimensional and cross-channel displacement bounds for the prime-power companion pair.
+- A near-linear same-/cross-channel syndrome bound for the nonlinear prime-power host.
+- A scalable digit-linear no-three family beyond \(N=32\).
 - A positive ordered-box CRT assembly theorem handling mixed local-projection triples.
 
 ## Important refutations
@@ -98,4 +107,4 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 
 There is no complete proof. Carry and wrap-center classification make every first-generation prime-field obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck there is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
 
-The composite-modulus branch now solves saturation and cycle structure for affine layers and closes the mandatory obstruction docket, but it also proves that the two most natural direct families—affine permutations and uncompleted unit hyperbolas—cannot supply the required real line cap. The positive all-\(n\) route must begin with a nonlinear full permutation host and a mixed-projection-aware CRT or prime-power analysis.
+The composite-modulus branch now has a nonlinear full prime-power host rather than only negative classifications. Completed reciprocals cover all valuation strata, their line and same-stratum secant equations are explicit, and a companion layer supplies saturation and a Hamiltonian alternating cycle. The current general bounds—\(O(\sqrt N+\log N)\) points per line and \(O(N^{5/2}+N^2\log N)\) one-channel triples—remain too weak. The next positive target is an exact-real divisor bound inside tangent cells, followed by companion cross-channel syndrome control and mixed-projection-aware CRT assembly.
