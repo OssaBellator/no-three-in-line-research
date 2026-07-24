@@ -301,15 +301,15 @@ Every state `A` has the following properties:
 1. `(S\setminus D) union A` has exactly two points in every row and column of
    `[m+t]^2`;
 2. `A` contains `4t` distinct cells, so the net point increase is `2t`;
-3. for every prescribed set `Q` of `r=1,2,3` distinct cells,
+3. for every prescribed set `Q` of distinct cells,
 
 \[
 \Pr(Q\subseteq A)
 \le
 \begin{cases}
-6/t,&r=1,\\
-36/(t)_2,&r=2,\\
-72/(t)_3,&r=3.
+6/t,&|Q|=1,\\
+36/(t)_2,&|Q|=2,\\
+72/(t)_3,&|Q|=3\text{ and }t\ge3.
 \end{cases}
 \]
 
@@ -364,11 +364,12 @@ Define:
 
 - `mathcal B`: support cells lying on secants through two points of `X`;
 - `mathcal P_X`: support-cell pairs whose line contains a point of `X`;
-- `mathcal T`: collinear support-cell triples.
+- `mathcal T`: collinear support-cell triples with three distinct rows and
+  three distinct columns.
 
 ### Corollary PP3j -- PROVED
 
-If
+Assume `t>=3`. If
 
 \[
 \boxed{
@@ -385,7 +386,9 @@ then the row reservoir contains a valid width-`t` patch.
 
 #### Proof
 
-Let `Z` count selected certificates of the three displayed types. The rank-one,
+Horizontal and vertical support triples are omitted from `mathcal T` because
+no state with exactly two points per row and column can select them. Let `Z`
+count selected certificates of the three displayed types. The rank-one,
 rank-two, and rank-three spread bounds from PP3i give the displayed upper bound
 for `E Z`. If it is below one, some state has `Z=0`, and hence no triple with
 two retained points, one retained point, or three inserted points. ∎
