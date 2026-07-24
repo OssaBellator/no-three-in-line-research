@@ -31,10 +31,11 @@ objects includes:
 The role is **terminally labelled** instead when its label already
 places it in a carry-growth, bounded-denominator, rational-quotient, or
 finite exceptional-state interface.  A shared-token role may instead
-be **separable phase-realized** in the sense of AC3p.  The remaining
-geometric work must route the actual role dictionary to one of these
-three forms; the results below close the combinatorics of the
-anchor-realized form.
+be **separable phase-realized** in the sense of AC3p; AC3s--AC3u prove
+this interface for scope-complete canonical phase-block tokens, up to
+one explicit exact-phase sensitivity witness.  The remaining geometric
+work must route the actual role dictionary to one of these three forms;
+the results below close the combinatorics of the anchor-realized form.
 
 ## AC3k -- four-way routing of an anchor-realized Hall output
 
@@ -225,6 +226,13 @@ codegree greater than \(12\) gives seven third endpoints in one
 permutation layer, while codegree at most \(12\) costs only the absolute
 anchor-link factor \(23\).  No further abstract compatibility
 extraction is missing.
+
+For canonical phase-block tokens, AC3s--AC3u make the role alternative
+finite and checkable: at most seven literal mismatch states, at most
+\(h^3-1\) exact states, or one rank-at-most-three phase-sensitivity
+witness.  What remains is to verify the scope-complete conflict graph
+for the concrete closure moves and pass the witness to the existing
+carry/BDA/RI classifiers.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

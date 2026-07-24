@@ -297,6 +297,18 @@ ticket and must enter the joint additive collateral audit. Thus generic
 shared-fan feasibility is closed. The remaining AC3 geometry is the
 finite role dictionary and the finite phase-by-phase collateral profile.
 
+[`alternating-core-canonical-role-dictionary.md`](alternating-core-canonical-role-dictionary.md)
+proves AC3s--AC3u for the canonical phase-block part of that dictionary.
+A current certificate meets at most three phase blocks. Destroying it
+therefore has at most seven nonzero mismatch words. If legality and
+collateral are invariant inside each mismatch fibre, AC3p applies with
+this absolute alphabet. Otherwise the exact common alphabet has at most
+\(h^3-1\) states and failure of compression exposes two exact phases
+with the same mismatch word plus one local legality or cost discrepancy.
+Thus the remaining role work is no longer an arbitrary fan label: it is
+scope-completeness for each closure move and arithmetic classification
+of an explicit rank-at-most-three phase-sensitivity witness.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
@@ -380,6 +392,8 @@ upgrade AC6 while those inputs remain open.
   collateral certificates;
 - exhaust finite common-phase messages, bounded infeasible cores, and
   strict phase-loss ticket traces;
+- verify rank-three mismatch compression and retain every exact-phase
+  sensitivity witness;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 

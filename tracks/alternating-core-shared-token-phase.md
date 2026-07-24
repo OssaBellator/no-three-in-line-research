@@ -313,6 +313,16 @@ prove that each actual role returned by AC3h is one of:
 3. terminally labelled by a carry, bounded denominator, rational
    quotient, or finite exceptional state.
 
+[`alternating-core-canonical-role-dictionary.md`](alternating-core-canonical-role-dictionary.md)
+proves AC3s--AC3u for canonical phase-block certificate tokens.  Their
+common scope has rank at most three.  Literal-invariant roles compress
+to at most seven nonzero mismatch states; exact-phase roles use at most
+\(h^3-1\) states, and failure of compression returns two same-mismatch
+phases together with one local legality or cost discrepancy.  The
+remaining geometric checks are scope-completeness for each concrete
+closure operation and arithmetic classification of that explicit
+phase-sensitivity witness.
+
 The important remaining numerical case is no longer an unbounded fan.
 It is the finite phase-collateral profile in AC3p.1.  Repeated factors
 which preserve the common message cannot masquerade as fresh progress.

@@ -82,6 +82,9 @@ The numbering is local to this repository.
 | AC3p | A separable shared-token phase fan has a joint state or an equivalent feasibility core of at most the phase-alphabet size | PROVED | `tracks/alternating-core-shared-token-phase.md` |
 | AC3q | Strict common-phase losses supply at most one ticket per phase; message-redundant reopenings consume none | PROVED | `tracks/alternating-core-shared-token-phase.md` |
 | AC3r | A same-token Hall fan routes to conflict overload, role realization, a joint improvement, a bounded phase core, or an explicit collateral profile | PROVED | `tracks/alternating-core-shared-token-phase.md` |
+| AC3s | A canonical rank-three phase-block token has at most seven nonzero mismatch states | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
+| AC3t | Scope-complete literal-invariant token fans satisfy the AC3p contract with at most seven phases | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
+| AC3u | Exact-phase token roles use at most \(h^3-1\) states or expose an explicit rank-three sensitivity witness | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

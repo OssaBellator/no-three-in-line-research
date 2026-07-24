@@ -41,6 +41,10 @@ The alternating branch's AC3p--AC3r interface is the exact star-shaped
 special case to be used when an orbit-phase alphabet realizes one
 shared-token role: it contracts feasibility to one common phase message
 without importing the unresolved general Tanner-expansion claim.
+AC3s--AC3u additionally import only the proved canonical-literal
+representation: a shared certificate has rank at most three and either
+compresses to seven mismatch states or returns an exact-phase
+sensitivity witness.  No general OP2 expansion statement is assumed.
 
 ## Independent selection endpoints
 
