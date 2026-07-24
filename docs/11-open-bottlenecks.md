@@ -7,16 +7,15 @@ The one-colour carry-cycle dispersion conjecture is refuted by an exact
 cost by normalized rank-one, rank-two, and rank-three certificate counts, and a
 frozen cycle forces concentration in one of those ranks.
 
-The prime-field and prime-power programmes now meet at a much smaller common
-object: a finite terminal component of four-endpoint trades. CMR143--CMR144 show
-that such components genuinely exist even above a known lower-potential state.
-Therefore pure four-board local descent is false.
+The prime-field and prime-power programmes now meet at finite terminal
+components of four-endpoint trades. CMR143--CMR144 show that such components
+can exist above a known lower-potential state, so normalized four-board dynamics
+alone cannot prove descent.
 
-## Bottleneck 2: inherited escape from four-endpoint traps
+## Bottleneck 2: inherited escape inside one prefix envelope
 
-CMR123--CMR137 keep one fixed global baseline, convert disjoint defects and
-heavy lines into executable banks, absorb high parent excess through the active
-baseline difference set, and contract every positive target load to
+CMR123--CMR137 retain one fixed global baseline and contract every positive
+target load to
 
 \[
 \text{board size }4,
@@ -24,61 +23,63 @@ baseline difference set, and contract every positive target load to
 \text{target load }1.
 \]
 
-CMR139 exhausts the normalized terminal boards. Every four-board has between
-`2` and `9` allowed states, and its sharp uniform cylinder atoms are
+CMR139--CMR144 classify the abstract terminal board, prove exact defect-flow
+balance on terminal cycles, and exhibit a genuine `N=4` local trap.
 
-\[
-\frac34,
-\qquad
-\frac23,
-\qquad
-\frac12
-\]
+The inherited prime-power core is much more rigid.
 
-at ranks one, two, and three.
-
-CMR141--CMR142 show that any positive global saturated minimum generates a
-finite directed cycle of four-point trades, with exact balance between created
-and removed triples. CMR143 gives an explicit potential-one two-cycle at
-`N=4`, while CMR144 gives a separate potential-zero saturated state. Hence
-balanced cycles and locally minimal four-core components cannot be excluded in
-complete generality.
+- CMR145--CMR152 give exact complete-parent escapes at the prime-five and
+  prime-seven roots.
+- CMR153--CMR180 construct old-cell-clean parent banks, prove all split-rank
+  collateral bounds, retain quotient stability, and sharpen the nonroot bank to
+  independent derangements with exact fixed-rank cylinders.
+- CMR172--CMR175 attach every closure branch to a canonical prefix envelope
+  whose two layer row sets are invariant and whose depth can decrease at most
+  `k` times.
+- CMR181--CMR185 show that every inherited nonroot terminal core is the unique
+  nine-state four-object derangement board and classify all sixteen Pareto
+  cylinder-cover profiles.
+- CMR186--CMR189 lift those profiles to the full parent bank. Every parent cover
+  needs at least `t-1` distinct cylinders; equality is one complete row or
+  column secant shadow. A terminal subcover accounts for at most `9/11` of the
+  parent law, so at least `2/11` additional cover mass is forced.
+- CMR190--CMR192 batch the deficit: `R` simultaneous terminal targets produce a
+  concrete parent state with at least
+  \[
+  \left\lceil\frac{2R}{11}\right\rceil
+  \]
+  actual new triples outside all selected local covers.
+- CMR193--CMR195 show that any such triple crossing the current envelope forces
+  a strict envelope expansion. This can occur at most `k` times.
 
 ### Corrected open lemma
 
-A terminal core arising from the prime-power closure carries ancestry absent
-from the `N=4` trap:
+After the final envelope expansion, all remaining parent-lifted defect mass is
+internal to one fixed envelope. Prove that repeated internal batches cannot
+cycle indefinitely. A sufficient theorem would show one of:
 
-- an original binary same-layer star and unique prefix owner;
-- a recursive-compatible parent node and depth;
-- protected quotient states from fine-to-coarse processing;
-- inherited first-separation, primitive direction, and carry signatures;
-- a recorded sequence of child-pencil and alternating expansions.
+1. every strict parent-cover expansion consumes a new first-separation or
+   primitive carry signature;
+2. a complete parent row/column secant fan forces an endpoint outside the
+   envelope and hence a strict expansion;
+3. the accumulated `2/11` internal mass exceeds the envelope's joint-parent
+   collateral budget before a signature can be reused;
+4. a finite internal trapped component admits an explicit larger inherited
+   move, as at the prime-five and prime-seven roots.
 
-Use this ancestry to prove one of:
-
-1. an allowed terminal state lowers the fixed global baseline;
-2. the core expands to an inherited parent or opposite-layer bank with a
-   strictly smaller lexicographic ancestry signature;
-3. a quotient or carry signature cannot balance around the terminal component;
-4. the component belongs to a finite trapped family with an explicit larger
-   escape move.
-
-A theorem depending only on normalized four-board type and current triple
-potential cannot suffice.
+The missing statement is now an **internal no-return lemma**, not a bank
+existence theorem and not a generic no-double-charge problem.
 
 ## Bottleneck 3: multiscale preservation
 
 Fine-to-coarse prefix processing preserves every unprocessed quotient charge,
-but a later coarse repair may recreate fine stars. A complete proof needs a
-reverse-scale budget showing that recreated fine mass is paid by one of:
+but a later coarse repair may recreate fine stars. The envelope chain controls
+strict coarsenings, while the remaining internal no-return theorem must provide
+a reverse-scale budget for recreated fine mass through one of:
 
 1. the coarse target load destroyed by the move;
 2. a strict change in canonical first-separation ancestry;
-3. a bounded carry-signature account attached to the coarse node.
-
-The inherited four-core escape theorem must be compatible with this scale
-ledger.
+3. a bounded primitive carry-signature account attached to the envelope.
 
 ## Bottleneck 4: all side lengths
 
@@ -89,8 +90,9 @@ The composite-modulus branch has:
 - recursive balanced banks for every fixed `p=1 mod 4`;
 - a non-reciprocal balanced factorization at `p=7`;
 - deterministic and random quadratic-order syndrome bounds;
-- exact prefix and child-pencil repair banks;
-- global-baseline target-load contraction to the four-core.
+- exact prefix, child-pencil, terminal, and inherited parent repair banks;
+- global-baseline contraction and parent-cover lifting to a fixed-envelope
+  internal obstruction.
 
 For completed reciprocals and their companion layer,
 
@@ -137,14 +139,21 @@ The following portions are closed:
 12. conversion of disjoint defects and heavy lines into new banks;
 13. elimination of the parent-excess barrier by baseline-difference incidence;
 14. contraction of every target load to the four-endpoint one-target core;
-15. exact terminal-board atom enumeration and defect-flow cycle balance;
-16. an exact trapped four-core component showing universal local descent is false.
+15. exact terminal-board atoms, cycle balance, and the abstract local trap;
+16. exact prime-five and prime-seven root parent escapes;
+17. old-cell-clean ordered and disjoint-fibre joint-parent banks;
+18. quadratic split-rank collateral and all-scale parent-bank sums;
+19. exact one-to-three block packing ledger;
+20. persistent closure-envelope ancestry and bounded depth expansion;
+21. sharp nonroot derangement cylinder laws;
+22. exact inherited terminal Pareto profiles;
+23. full-parent cover lifting with the `9/11` local-cover cap;
+24. batch `2/11` defect generation and crossing-envelope expansion.
 
 ## Composite-modulus open lemmas
 
-1. **Inherited four-core escape.** Use prefix ancestry, quotient state, or carry
-   signatures to escape terminal components arising from the prime-power
-   closure.
+1. **Internal envelope no-return.** Prevent repeated CMR190 batches from
+   recycling the same internal first-separation and carry signatures.
 2. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
    coarse prefix repairs.
 3. **Non-reciprocal balanced prime families.** Extend the prime-seven grid
@@ -164,12 +173,14 @@ The following portions are closed:
 
 The strongest exact searches now are:
 
-- enumerate strongly connected four-core components in small prime-power hosts
-  while retaining their full prefix ancestry;
-- compare trapped components with the explicit `N=4` two-cycle;
-- test which parent-node or opposite-layer moves escape each component;
-- record created/removed quotient and carry signatures around every component;
-- quantify fine mass recreated by one coarse prefix repair;
+- enumerate inherited terminal components while retaining the canonical
+  envelope and all parent-cover cylinders;
+- record whether each `2/11` batch defect is crossing or internal;
+- test reuse multiplicities of first-separation, primitive direction, quotient,
+  and carry signatures inside one fixed envelope;
+- classify complete parent row/column secant fans and whether their CMR188
+  endpoint banks force envelope expansion;
+- quantify fine mass recreated by one coarse prefix or joint-parent repair;
 - search for no-three grid factorizations and pair spectra at `p=11,19,...`;
 - test inherited line-signature multiplicities inside `M_s`;
 - enumerate nearly singular completed-reciprocal divisor collisions;
@@ -177,11 +188,10 @@ The strongest exact searches now are:
 
 ## Recommended order of work
 
-1. Build an ancestry-preserving four-core transition enumerator.
-2. Find explicit parent or opposite-layer escapes for all small trapped
-   components.
-3. Extract a monotone ancestry/carry invariant from those escapes.
-4. Prove a coarse-to-fine recreation budget compatible with that invariant.
+1. Build the fixed-envelope signature ledger for CMR190 internal defects.
+2. Enumerate complete parent secant fans in the smallest nonroot hosts.
+3. Prove a no-return or bounded-reuse lemma for one primitive carry signature.
+4. Integrate that lemma with the coarse-to-fine recreation budget.
 5. Search for non-reciprocal balanced grid factorizations at the next
    `p=3 mod 4` primes.
 6. Sharpen modular quotient syndrome and inherited line-signature multiplicity.
