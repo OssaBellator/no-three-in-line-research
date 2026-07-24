@@ -66,6 +66,15 @@ reverse multiplicity at most one, so a uniform lower bound `L` gives
 `Pr(e in M)<=1/(L+1)`. In particular `L+1>=cd` gives the requested
 `O(1/d)` estimate. Longer-cycle hosts remain open.
 
+[`sparse-general-switching-ratio.md`](sparse-general-switching-ratio.md)
+proves SAS2b for arbitrary labelled alternating-cycle descriptions. If
+every matching containing \(e\) has at least \(L\) forward descriptions
+and every avoiding matching has at most \(R\) reverse descriptions, then
+\(\Pr(e\in M)\leq R/(L+R)\). The conditioned SAS3c version is identical
+on the residual matching space. Thus longer-cycle hosts now require only
+the host-specific ratio \(L/R=\Omega(d)\), including deletion stability;
+injective reverse switching is not required.
+
 ## SAS3 — Fixed-rank and all-rank spread
 
 ### Target statement
@@ -85,6 +94,8 @@ Rank three is sufficient for duplicate-cell and collinear-triple conflicts; all-
 SAS3b proves the same edge bound after conditioning on a partial matching
 whenever the residual graph retains the four-cycle hypothesis. Combined
 with SAS3a, bounded-rank spread is therefore complete for this host class.
+SAS3c gives the corresponding conclusion for any labelled longer-cycle
+family whose forward/reverse ratio survives the same deletion.
 
 ### Proved composition component
 
@@ -162,6 +173,8 @@ upgrade).
 
 `scripts/verify_sparse_switching.py` retains both the exact complete-host
 ratio and the degree-two cycle with no four-cycle switch.
+`scripts/verify_general_switching_ratio.py` exhaustively checks the
+labelled forward/reverse theorem, including parallel descriptions.
 
 ## Completion criterion
 
