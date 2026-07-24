@@ -58,12 +58,19 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
 49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
 50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
+51. **Four-orientation mixed-radix saturation.** Independent alternating-cycle phases give two disjoint permutation layers for every global coarse/fine digit orientation.
+52. **General product determinant classification.** Every mixed-radix product triple satisfies one four-term coarse/hybrid/fine determinant identity, yielding exactly four cross-block multiplicity types.
+53. **Weighted direction resonance.** Type-\((2,2)\) product triples are exactly weighted parallelisms between one coarse secant and one fine secant.
+54. **Factor-product host codegrees.** Every product-host line has at most \(4\min(m,n)\) points, and every pair has at most \(4\min(m,n)-2\) possible third points.
+55. **Exact phase SAT reduction.** For fixed factors and orientation, no-three phase selection is equivalent to an explicit width-three CNF with \(2mc\) variables.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Carry-sensitive phase codes.
+- Carry-sensitive phase codes and non-global digit maps for product constructions.
+- Arithmetic carry-signature concentration and a terminating product repair theorem.
+- A useful multiplicative closure class and any resulting arithmetic coverage.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
 - A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
@@ -82,7 +89,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
 - Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
+- Global coarse/fine radix orientation plus independent alternating-cycle phases does not universally produce a no-three product; one \(2\times3\) factor pair defeats all 64 orientation/phase states.
 
 ## Bottom line
 
-There is no complete proof. The reviewed branch is merged. Carry and wrap-center classification now make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
+There is no complete proof. The product branch now has exact saturation, determinant, codegree, and SAT formulations, but no multiplicative closure theorem. Its next bottleneck is an arithmetic carry-concentration or enlarged repair theorem that goes beyond global digit orientation and whole-cycle phase bits. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
