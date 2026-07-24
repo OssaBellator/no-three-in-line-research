@@ -89,10 +89,10 @@ Choose `(b,c)` uniformly from the `h^2` parameter pairs.
 
 ### Theorem CMR36 — PROVED
 
-For one terminal layer, any prescribed cell has probability at most `1/h`.
-Any compatible prescription on at least two distinct columns has probability
-at most `1/h^2`, and the latter bound remains valid for every higher-rank
-prescription.
+For one terminal layer, any prescribed normalized cell has probability at most
+`1/h`. Any compatible prescription on at least two distinct columns has
+probability at most `1/h^2`, and the latter bound remains valid for every
+higher-rank prescription.
 
 ### Proof
 
@@ -123,16 +123,16 @@ cannot increase that number. ∎
 ## 3. Two-layer terminal bank
 
 At `N=p^k`, put `a=p^(k-1)`. Choose independent parameter pairs for the two
-layers and select
+layers and select the actual terminal cells
 
 \[
-\{(j,aF_{b_0,c_0}(j)):0\le j<p\}
+\{(aj,aF_{b_0,c_0}(j)):0\le j<p\}
 \]
 
 and
 
 \[
-\{(j,1+aF_{b_1,c_1}(j)):0\le j<p\}.
+\{(aj,1+aF_{b_1,c_1}(j)):0\le j<p\}.
 \]
 
 ### Corollary CMR37 — PROVED
@@ -157,14 +157,32 @@ where
 
 ### Proof
 
-CMR35 excludes same-layer triples. Reduction modulo `p` excludes mixed triples
-because the two terminal row blocks have different row residues. The cylinder
-law is the product of the independent single-layer bounds from CMR36. ∎
+CMR35 excludes same-layer triples after subtracting the layer offset and
+scaling both coordinates by `a`.
+
+For a mixed triple, write its points as `(ax_i,ay_i+b_i)` with binary layer
+indicators `b_i`. Its determinant is
+
+\[
+a(aD+E),
+\]
+
+where `D` is the normalized determinant and
+
+\[
+E=(x_2-x_1)(b_3-b_1)-(x_3-x_1)(b_2-b_1).
+\]
+
+The two same-layer points have distinct columns, so `E` is nonzero and
+`|E|<=p-1`. If `D=0`, the determinant is `aE`. If `D` is nonzero, then
+`|aD|>=p>|E|`. Thus no mixed determinant vanishes. The cylinder law is the
+product of the independent single-layer bounds from CMR36. ∎
 
 This gives the recursive bank a nontrivial spread base measure at every odd
 prime. It does not give full rank-`r` decay beyond rank two, but every terminal
 triple prescription using at least two cells in one layer has probability
 `O(p^-2)`.
 
-The finite checker is
+The finite checker uses normalized columns, whose determinant differs from the
+full terminal determinant by the fixed nonzero factor `a`:
 [`scripts/verify_prime_power_terminal_spread.py`](../scripts/verify_prime_power_terminal_spread.py).
