@@ -48,6 +48,7 @@ The numbering is local to this repository.
 | BDA1 | Canonical \(q^2\)-class perfect-chamber strip decomposition | PROVED | `tracks/bounded-denominator-strip-proof.md` |
 | BDA2a | Collision-free bounded chamber permutation bank | PROVED | `tracks/bounded-denominator-local-bank.md` |
 | BDA2b | Bounded support cannot remove dispersed cell-private mass | PROVED | `tracks/bounded-denominator-local-bank.md` |
+| BDA3a | Linear labelled conflict mass gives compatible block regularization | PROVED | `tracks/bounded-denominator-conflict-regularization.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
