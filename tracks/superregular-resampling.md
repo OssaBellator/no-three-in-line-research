@@ -119,6 +119,16 @@ SRR2a resolves that comparison when the missing cells form a partial
 matching of sublinear rank. Arbitrary missing-edge geometry and the
 two-layer conditioned measure remain open.
 
+[`sparse-hole-locality.md`](sparse-hole-locality.md) proves SRR2b for an
+arbitrary missing set \(Q\) of sublinear total size. Rook-polynomial
+inclusion--exclusion gives the exact cylinder count, while a union bound
+gives the same remote inflation estimate as SRR2a with \(t=|Q|\).
+Together with SRR1d this supplies at least \(N-2t-1\) stationary
+four-cycle choices and all five one-layer oracle properties whenever
+\(t=o(N)\). The unresolved one-layer host range may therefore be
+assumed to have a linear or larger number of holes; arbitrary geometry
+alone is no longer an obstruction in the sparse-hole regime.
+
 ## SRR3 — Two-layer exact-cover extension
 
 ### Target statement
@@ -195,7 +205,9 @@ The state-dependent one- and two-layer kernels in complete and
 one-edge-deleted dense hosts are checked by
 `scripts/verify_dense_host_resampling.py`. Deleted-matching extension
 counts and remote-cylinder ratios are checked by
-`scripts/verify_deleted_matching_locality.py`.
+`scripts/verify_deleted_matching_locality.py`. Arbitrary sparse-hole
+rook counts and locality are checked by
+`scripts/verify_sparse_hole_locality.py`.
 
 ## Completion criterion
 
