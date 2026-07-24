@@ -88,7 +88,7 @@ Thus controller-aware global allocation alone would give the required
 
 Positive-density controller-aware failure forces one of:
 
-1. a blocker star with `Omega(m^0.475)` distinct rays;
+1. a source-endpoint blocker star with `Omega(m^0.475)` distinct rays;
 2. `Omega(m^0.525)` resource-disjoint bad entries with distinct labels and
    controllers and endpoint-disjoint blocker pairs.
 
@@ -122,47 +122,76 @@ using:
 Source admissibility is therefore no longer part of the resource-bank
 bottleneck.
 
-### Diffuse insertion shadow is closed exactly
+### Zero-unary-shadow endpoint
 
-The `q` designated removal-credit incidences may be protected from direct
-recapture by forbidding a union of endpoint partial matchings.
+Direct designated-credit recapture cells and every cell with positive residual
+unary insertion shadow may be removed from the endpoint host before selection.
+Call the resulting source-safe graph `G_0`.
 
-After that, forbid every endpoint cell with any positive residual unary shadow
-and every compatible endpoint-cell pair with any positive residual binary
-shadow. If the simple support degrees satisfy
+Every perfect matching of `G_0` has zero unary insertion shadow and preserves the
+designated credit. If `G_0` has no perfect matching, Hall's theorem gives exact
+sets `X,Y` satisfying
 
 \[
-\boxed{
-d_{\rm rec}+d_1=o(q),
+|X|+|Y|>q,
 \qquad
-d_2=o(q^2),
-}
+X\times Y\subseteq E(\overline{G_0}).
 \]
 
-the permutation local lemma produces a source-admissible endpoint trade with
+Thus the true unary obstruction is a forbidden Hall rectangle or an almost
+completely forbidden fibre block, not one isolated rich fibre.
 
-\[
-\mathcal I=0.
-\]
+If `G_0` is superregular and its remaining anchored-pair, binary-shadow-pair, and
+inserted-triple counts are summable, a spread perfect matching produces a
+source-admissible trade with complete insertion cost zero.
 
-The positive removal credit then gives a strict potential decrease. Witness
-multiplicity is irrelevant: each positive support is forbidden once.
+### Isolated support concentrations are prunable
+
+Deleting `o(q)` exceptional endpoint indices retains `(1-o(1))q` designated
+credit units and can only decrease every source and shadow support.
+Consequently isolated rich recapture fibres, unary-shadow fibres, and binary
+stars are not terminal.
+
+Persistent failure forces a linear support core. Along a subsequence, either:
+
+- `Omega(q)` endpoint indices have unary support degree `Omega(q)`, yielding
+  `Omega(q^2)` simple unary support; or
+- `Omega(q)` endpoint indices have binary support degree `Omega(q^2)`, yielding
+  `Omega(q^3)` binary conflict support.
+
+The unary core contains a linear matching of forbidden endpoint cells. The
+binary core yields either a quadratic endpoint-resource star or a linear family
+of resource-disjoint binary conflicts.
+
+### Corrected source-star geometry
+
+The star from the controller-shadow dichotomy has a common **source endpoint**.
+The older alternating-neutralisation theorem instead assumes a common
+**candidate point**, so it does not apply verbatim.
+
+A free star centre, lying outside the fixed controller infrastructure, belongs to
+a linear endpoint bank disjoint from every controller. Moving it supplies
+`Omega(m)` removal credit and reduces the star branch to the same zero-unary
+Hall/superregular endpoint.
+
+A captive star centre belongs to a selected controller pool. Moving it changes
+the fixed candidate-entry universe, so this case needs either a dynamic
+controller potential or a controller-preserving trade on its blocker partners.
 
 ## What remains conditional
 
-The remaining theorem is support-concentrated controller-shadow conversion.
-One must prove at least one of the following routes closes every case:
+The remaining theorem is now concentrated in four structural endpoints:
 
-- **direct allocation:** the controller-aware global label graphs satisfy the
-  complementary-degree criterion;
-- **blocker-star conversion:** an alternating, endpoint, rectangle, cycle, or
-  tomographic trade improves the forced star;
-- **resource concentration conversion:** handle a dense unary endpoint source
-  shadow, rich designated-credit recapture fibre, unary insertion-shadow fibre,
-  or binary insertion-shadow star.
+- **direct allocation:** prove the controller-aware global label graphs satisfy
+  the complementary-degree criterion;
+- **unary Hall conversion:** convert a forbidden Hall rectangle or a matchable
+  but non-superregular zero-unary endpoint host;
+- **binary-core conversion:** neutralize the cubic binary shadow-support core;
+- **captive source-star conversion:** preserve or dynamically relabel the
+  controller infrastructure while removing the star centre or its blocker rays.
 
-Diffuse weighted residuals, endpoint source validity, cross-macro completion
-energy, and termination are no longer open.
+Diffuse weighted residuals, endpoint source validity, isolated rich fibres,
+cross-macro completion energy, and termination are no longer open.
 
 The older constant-width width-two route remains a secondary diagnostic and
 requires blocker-endpoint clustering or protected cross-block deletion trades.
@@ -182,6 +211,8 @@ requires blocker-endpoint clustering or protected cross-block deletion trades.
   saturated grid.
 - Fixed-core safe domains do not handle blocker pairs using unselected
   active-pool edges.
+- A source-endpoint blocker star is not automatically a common-candidate
+  alternating star.
 
 ## Bottom line
 
@@ -189,8 +220,10 @@ There is no complete proof. The prime-patching branch now closes matching supply
 exponent-optimal macro width, degree restoration, fixed-rank spread,
 saturation-compatible global allocation interfaces, all external weighted
 completion energy, source-valid resource endpoint conversion, diffuse insertion
-shadow, and monotone termination.
+shadow, exact unary Hall reduction, sublinear support pruning, and monotone
+termination.
 
-The exact remaining theorem concerns only the direct, blocker-star, and four
-support-concentrated resource alternatives above. Until that theorem is proved,
-the branch does not prove the no-three-in-line conjecture.
+The exact remaining theorem concerns direct allocation, Hall-rectangle or
+non-superregular-host conversion, cubic binary-support conversion, and captive
+source-star conversion. Until those cases are closed, the branch does not prove
+the no-three-in-line conjecture.
