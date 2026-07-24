@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR67--CMR69 on finite odd-prime instances."""
+"""Verify CMR67--CMR69 and the corrected saturated root law."""
 from __future__ import annotations
 
 import argparse
@@ -81,6 +81,53 @@ def verify_balanced_family(p: int) -> tuple[int, int, int]:
     return len(family), triple_checks, len(pair_counts)
 
 
+def verify_saturated_root_law(p: int) -> tuple[int, int]:
+    """Check the exact disjointness characterization and root marginals."""
+    assert p % 4 == 1
+    ns = nonsquares(p)
+    h = len(ns)
+    maps = {
+        (b, c): reciprocal_permutation(p, b, c)
+        for b in range(p)
+        for c in ns
+    }
+
+    characterization_checks = 0
+    for (b0, c0), f0 in maps.items():
+        for (b1, c1), f1 in maps.items():
+            disjoint = all(f0[x] != f1[x] for x in range(p))
+            assert disjoint == (c0 == c1 and b0 != b1)
+            characterization_checks += 1
+
+    root_states = []
+    for c in ns:
+        for b0 in range(p):
+            for b1 in range(p):
+                if b0 == b1:
+                    continue
+                root_states.append((maps[(b0, c)], maps[(b1, c)]))
+
+    assert len(root_states) == h * p * (p - 1)
+
+    layer_cells = [Counter(), Counter()]
+    ordered_rows = [Counter() for _ in range(p)]
+    for f0, f1 in root_states:
+        assert all(f0[x] != f1[x] for x in range(p))
+        for x in range(p):
+            layer_cells[0][(x, f0[x])] += 1
+            layer_cells[1][(x, f1[x])] += 1
+            ordered_rows[x][(f0[x], f1[x])] += 1
+
+    expected_cell_count = h * (p - 1)
+    assert set(layer_cells[0].values()) == {expected_cell_count}
+    assert set(layer_cells[1].values()) == {expected_cell_count}
+    for counts in ordered_rows:
+        assert len(counts) == p * (p - 1)
+        assert set(counts.values()) == {h}
+
+    return len(root_states), characterization_checks
+
+
 def prime_power_data(n: int) -> tuple[int, int] | None:
     for p in range(3, n + 1, 2):
         if not is_prime(p):
@@ -121,10 +168,10 @@ def verify_first_separation_structure(p: int, k: int) -> tuple[int, list[int]]:
         for depth in range(s + 1, k):
             prefixes = [x % (p**depth) for x in columns]
             assert len(set(prefixes)) == 3
+            assert depth >= 1  # The corrected root coupling is never charged here.
             assert reduced[chosen] % p != 0
             checks += 1
 
-    # The counting bound used in CMR69.
     for s, count in enumerate(by_s):
         pair_bound = p**s * ((n // (p**s)) * (n // (p**s) - 1) // 2)
         assert count <= pair_bound * n
@@ -140,16 +187,21 @@ def main() -> None:
 
     balanced_primes = 0
     local_states = 0
+    root_states = 0
     local_triples = 0
     local_pairs = 0
+    root_characterizations = 0
     for p in range(5, args.max_prime + 1, 2):
         if not is_prime(p) or p % 4 != 1:
             continue
         states, triples, pairs = verify_balanced_family(p)
+        roots, characterizations = verify_saturated_root_law(p)
         balanced_primes += 1
         local_states += states
+        root_states += roots
         local_triples += triples
         local_pairs += pairs
+        root_characterizations += characterizations
 
     structural_instances = 0
     structural_checks = 0
@@ -169,7 +221,8 @@ def main() -> None:
     print(
         "verified first-separation sum "
         f"balanced-primes={balanced_primes}; local-states={local_states}; "
-        f"local-triples={local_triples}; local-pairs={local_pairs}; "
+        f"root-states={root_states}; local-triples={local_triples}; "
+        f"local-pairs={local_pairs}; root-characterizations={root_characterizations}; "
         f"prime-powers={structural_instances}; digit-checks={structural_checks}; "
         f"valuation-cells={valuation_cells}"
     )
