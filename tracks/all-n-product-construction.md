@@ -10,17 +10,17 @@ A naive Cartesian or block product fails because points from different blocks ca
 
 The detailed proofs and counterexamples are in
 [`docs/27-all-n-product-construction.md`](../docs/27-all-n-product-construction.md),
-with finite checks in
+with exact finite checks and SAT search in
 [`scripts/verify_product_construction.py`](../scripts/verify_product_construction.py).
 
 | Item | Status | Current result |
 |---|---|---|
-| PC1 | **COMPLETE** | Cycle-wise phase encoding gives exactly two disjoint permutation layers on `[mn]^2` in `O(mn)` time. |
-| PC2 | **PARTIAL** | Exact determinant `n^2 Delta_c + nM + Delta_f` and four cross-block multiplicity types are proved; resonance elimination is open. |
-| PC3 | **OPEN / SIMPLE PHASE ROUTE REFUTED** | A `2x3` factor pair defeats every independent cycle-wise phase state. Stronger offsets, digit maps, or repairs are required. |
-| PC4 | **OPEN** | No no-three multiplicative closure theorem is proved. |
+| PC1 | **COMPLETE** | Independent cycle phases give two disjoint permutation layers for all four global coarse/fine radix orientations, in `O(mn)` time. |
+| PC2 | **PARTIAL** | A general four-term determinant identity, all four coarse/fine multiplicity types, and the exact weighted-direction form of type `(2,2)` are proved. |
+| PC3 | **OPEN / GLOBAL RADIX-PHASE ROUTE REFUTED** | One `2x3` factor pair defeats all 16 phase states in each of all four radix orientations. Phase feasibility is now an exact width-three CNF. |
+| PC4 | **OPEN** | No useful no-three multiplicative closure theorem is proved. |
 | PC5 | **OPEN** | Arithmetic coverage cannot start until a closure or extension theorem is available. |
-| PC6 | **PARTIAL** | Single cycle-bit flips are executable row-column-preserving trades and preserve both factor projections; carry-signature multiplicity is open. |
+| PC6 | **PARTIAL** | Cycle flips are executable factor-protected trades. The full factor-product host has line cap `4 min(m,n)` and pair codegree at most `4 min(m,n)-2`; arithmetic carry concentration remains open. |
 
 The completion criterion at the end of this file is **not** met.
 
@@ -49,21 +49,36 @@ The construction should use exactly `2mn` distinct cells and retain a decomposit
 ### Result
 
 Write the factor configurations as permutation pairs `sigma_0,sigma_1` and
-`tau_0,tau_1`. On each orbit `C` of `tau_1^{-1} tau_0`, choose an
-independent phase bit for each output layer and coarse row. The two flattened
-layers are
+`tau_0,tau_1`. On each orbit `C` of `tau_1^{-1} tau_0`, choose an independent
+phase bit for each output layer and coarse row.
+
+Each scalar coordinate may be flattened coarse-major or fine-major:
 
 \[
-\Pi_r(ni+u)
-=
-n\sigma_r(i)+\tau_{\varepsilon_{r,i,C(u)}}(u).
+X_c(i,u)=ni+u,\qquad X_f(i,u)=mu+i,
 \]
 
-Theorem PX1 proves that both `Pi_r` are permutations and are cell-disjoint.
+\[
+Y_c(j,v)=nj+v,\qquad Y_f(j,v)=mv+j.
+\]
+
+For every orientation `theta in {cc,cf,fc,ff}`, define
+
+\[
+\Pi_r^\theta(X_{\theta_x}(i,u))
+=
+Y_{\theta_y}\left(
+\sigma_r(i),
+\tau_{\varepsilon_{r,i,C(u)}}(u)
+\right).
+\]
+
+Theorem PX1 proves that both layers are permutations and are cell-disjoint for
+all four orientations.
 
 ## PC2 — Cross-block line classification
 
-**Status: PARTIAL via Theorems PX2 and PX3.**
+**Status: PARTIAL via Theorems PX2--PX4.**
 
 ### Target statement
 
@@ -78,25 +93,73 @@ The mixed carry equations must be eliminated by the encoding or absorbed by a fi
 
 ### Result
 
-For flattened points `P_t=(ni_t+u_t,nj_t+v_t)`, the exact determinant is
+For one orientation, write
 
 \[
-\det(P_0,P_1,P_2)=n^2\Delta_c+nM+\Delta_f.
+F_\theta(i,j,u,v)
+=
+(a_i i+a_u u,\ a_j j+a_v v),
 \]
 
-A bad triple has `Delta_f=n kappa`, `|kappa|<=n-2`, and satisfies
+where each coefficient pair is `(n,1)` in a coarse-major coordinate and `(1,m)`
+in a fine-major coordinate. Then
 
 \[
-n\Delta_c+M+\kappa=0.
+\det F_\theta
+=
+a_i a_j\Delta_{ij}
++a_i a_v\Delta_{iv}
++a_u a_j\Delta_{uj}
++a_u a_v\Delta_{uv}.
 \]
+
+This identity simultaneously covers all four radix orientations.
 
 When both factors are no-three, every bad triple has exactly one of the four
-coarse/fine distinct-point types `(2,2)`, `(2,3)`, `(3,2)`, `(3,3)`. The
-remaining task is to eliminate their explicit resonance equations.
+coarse/fine distinct-point types
+
+\[
+(2,2),\ (2,3),\ (3,2),\ (3,3).
+\]
+
+Each type is obtained by setting the corresponding factor determinant to zero
+or nonzero in the displayed identity.
+
+For type `(2,2)`, after relabelling the points as three corners
+
+\[
+F_\theta(c_0,f_0),\quad
+F_\theta(c_0,f_1),\quad
+F_\theta(c_1,f_0),
+\]
+
+the exact obstruction is
+
+\[
+\det\bigl(B(f_1-f_0),A(c_1-c_0)\bigr)=0,
+\]
+
+where `A` and `B` are the diagonal coarse and fine scale matrices. Thus the
+first resonance is precisely equality of weighted factor-secant directions.
+
+In the ordinary `cc` orientation, the fine determinant is `n kappa` with
+
+\[
+|\kappa|\le n-2,
+\]
+
+and the carry normal form is
+
+\[
+n\Delta_{ij}+\Delta_{iv}+\Delta_{uj}+\kappa=0.
+\]
+
+The remaining task is to eliminate or absorb the four explicit resonance
+families.
 
 ## PC3 — Scale-separation or phase theorem
 
-**Status: OPEN; independent cycle-wise phases are REFUTED.**
+**Status: OPEN; all global radix orientations with independent cycle phases are REFUTED.**
 
 ### Target statement
 
@@ -113,10 +176,38 @@ The theorem must preserve the square side length `mn`; it may not enlarge the am
 ### Falsification result
 
 For one saturated no-three `2x2` factor and one saturated no-three `3x3`
-factor, the fine alternating graph is one cycle and all sixteen independent
-cycle-phase states contain an explicit three-point line. Thus phase labels
-attached only to alternating cycles cannot prove PC3 in the raw lexicographic
-lift.
+factor, the fine alternating graph is one cycle. There are four phase variables,
+hence sixteen phase states in each radix orientation.
+
+The verifier finds an explicit real integer collinearity in all
+
+\[
+4\cdot16=64
+\]
+
+phase/orientation states. Thus changing only whether each coordinate is
+coarse-major or fine-major does not repair the independent cycle-phase route.
+
+### Exact computational endpoint
+
+For fixed factor pairs and a fixed orientation, Theorem PX7 builds a CNF with
+
+\[
+2mc
+\]
+
+variables, where `c` is the number of fine alternating cycles, clause width at
+most three, and at most
+
+\[
+8\binom{2mn}{3}
+\]
+
+clauses. Its satisfying assignments are exactly the no-three phase states.
+
+This turns finite PC3 testing into a reproducible exact SAT problem rather than
+raw enumeration. The current script includes a standard-library DPLL model
+counter and cross-checks it against direct enumeration on the smallest cases.
 
 ## PC4 — Product closure theorem
 
@@ -134,6 +225,19 @@ where membership means an exact saturated no-three-in-line configuration exists.
 
 A weaker theorem allowing one factor from a special absorber class is also useful.
 
+### Current evidence
+
+Some small factor pairs have successful phase states in selected orientations:
+
+- `(2,2)` has successes in all four orientations;
+- `(3,2)` has successes only in the two crossed orientations among the tested states;
+- `(2,4)` has successes in `ff`;
+- `(4,2)` has successes in `cc`, `cf`, and `fc`.
+
+However, `(2,3)`, `(3,3)`, `(3,4)`, `(4,3)`, `(2,5)`, and `(5,2)` have no
+successful states in any global orientation in the exhaustive configured
+range. These finite positives do not form a closure class.
+
 ## PC5 — Arithmetic coverage
 
 **Status: OPEN.**
@@ -149,9 +253,11 @@ Combine PC4 with base constructions to cover every sufficiently large integer. P
 
 State exactly which integers remain uncovered and provide finite constructions where possible.
 
+No arithmetic coverage statement follows from the current finite successes.
+
 ## PC6 — Product-compatible repair machinery
 
-**Status: PARTIAL via Theorem PX4.**
+**Status: PARTIAL via Theorems PX5 and PX6.**
 
 ### Target statement
 
@@ -161,23 +267,44 @@ If the raw product is only a bounded-syndrome saturated seed, show that the curr
 - cross-block carries have bounded signature multiplicity;
 - the repair process cannot destroy the factor-level no-three property.
 
-### Result
+### Results
 
 Toggling one phase bit on one fine alternating cycle removes and inserts the
-same number of cells in one coarse block, preserves every row and column
-exactly, and keeps all coarse and fine projections inside the original factor
-configurations. The unresolved PC6 item is a useful bound on the multiplicity
-of the four PC2 resonance signatures under sequences of such toggles.
+same number of cells in one coarse factor point, preserves every row and column
+exactly in all four orientations, and keeps all coarse and fine projections
+inside the original factor configurations.
+
+For the full factor-product host
+
+\[
+\mathcal H^\theta_{m,n}
+=
+\{F_\theta(c,f):c\in S_m,\ f\in S_n\},
+\]
+
+Theorem PX6 proves:
+
+- at most two points of a fixed coarse projection lie on one real line;
+- at most two points of a fixed fine projection lie on one real line;
+- every line contains at most `4 min(m,n)` host points;
+- every fixed pair has at most `4 min(m,n)-2` third-point candidates.
+
+This supplies a uniform projection-signature and pair-codegree bound. The
+unresolved PC6 work is sharper concentration by the actual arithmetic carry
+values in PX2, followed by a repair/termination theorem using that structure.
 
 ## Candidate starting cases
 
-- product of two affine permutation pairs;
+- phase choices beyond complete alternating cycles, while preserving each
+  block matching;
+- non-global digit bijections rather than only `cc`, `cf`, `fc`, `ff`;
 - product of subgroup-coset absorbers with coprime orbit orders;
-- one factor used only to assign phases to blocks of the other;
-- tensoring two perfect matchings, then selecting two of the four layer products by a phase rule.
+- a local-lemma or resampling theorem applied to the PX7 clause system using
+  PX6 codegree bounds;
+- one factor used only to assign structured offsets to blocks of the other.
 
-The last two candidates, when restricted to independent cycle-wise phases in
-the raw mixed-radix lift, are insufficient by PX5.
+The raw four-layer tensor host is impossible: PX4 shows that common horizontal
+and vertical factor directions create immediate type-`(2,2)` triples.
 
 ## Mandatory falsification
 
@@ -185,15 +312,17 @@ the raw mixed-radix lift, are insufficient by PX5.
 - collinear triples created by base-`n` carries;
 - duplicated rows or columns after flattening mixed-radix coordinates;
 - products that work toroidally but fail after integer lifting;
-- resonance when factor slopes are rationally related.
+- resonance when factor slopes are rationally related;
+- apparent successes caused by incomplete phase enumeration.
 
-The verifier now checks row/column duplication, the exact base-`n` carry
-identity, and explicit rational-slope resonances for all small factor pairs in
-its configured range.
+The verifier now checks all four global radix orientations, row/column
+duplication, the exact general determinant identity, the ordinary carry
+identity, SAT/direct-enumeration equivalence, and explicit real collinearities.
 
 ## Completion criterion
 
 This branch is complete when PC1–PC6 give a rigorous closure operation and an arithmetic coverage theorem sufficient to derive `D(n)=2n` for all large `n`, followed by exact treatment of the remaining finite sizes.
 
-**Current verdict:** not complete. PC1 is closed, PC2 and PC6 have exact partial
-theorems, and independent cycle-wise phases in the raw lift are refuted.
+**Current verdict:** not complete. PC1 is closed; PC2 and PC6 now have stronger
+exact partial theorems; PC3 has an exact SAT endpoint but the enlarged global
+radix-phase route is refuted; PC4 and PC5 remain open.
