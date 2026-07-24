@@ -78,14 +78,20 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 68. **Canonical unsatisfiable line core.** One unmodified crossed \(2\times5\) host has a deletion-minimal 35-line core relative to the exact degree-two clauses.
 69. **One-inner-layer twisted products.** Fixing one inner permutation while retaining both outer layers gives an explicit \(O(mn)\) saturated blockwise product family.
 70. **Complete reversal census.** Among all sixteen identity/reversal assignments at \(2\times5\), exactly the four varying in both row and column blocks succeed; each rescues 9 of 32 inner factors across 13 factor/orientation hosts.
+71. **Complete normalized non-affine census.** Allowing arbitrary second-block permutations gives seven no-three parameter states, five scalar configurations, and an explicit non-affine escape for the canonical side-five factor.
+72. **Affine double-coset classification at five.** \(S_5\) is the disjoint union of \(\operatorname{AGL}(1,5)\) and one 100-element non-affine double coset; every admissible side-five factor layer lies in the latter.
+73. **Universal special product closure.** Every saturated no-three side-five factor, and either of its two permutation layers, composes with the saturated side-two factor to the same exact saturated no-three side-ten configuration after suitable blockwise affine maps.
+74. **Affine normalization theorem.** The complete four-block affine one-inner-layer family reduces to identity first blocks and relative affine second-block maps.
+75. **Affine one-layer obstruction at six and seven.** Exhaustive searches of 414,720 and 35,562,240 normalized states find no no-three affine one-inner-layer product at either base side.
+76. **Double-coset template closure.** Any successful normalized one-layer template transports to its entire map-group double coset; double-coset coverage of admissible factor layers is a sufficient factor-independent closure criterion.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- An infinite controlled family of blockwise digit maps or offsets that yields a useful multiplicative closure class.
+- An infinite family of successful double-coset templates or another controlled block-map family yielding a multiplicatively closed class.
 - A global product repair or resampling theorem that coordinates many projection fibres and distinguishes feasible hosts from structured infeasible cores.
-- A useful multiplicative closure class and any resulting arithmetic coverage.
+- Arithmetic coverage derived from an infinite closure or extension theorem.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
 - A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
@@ -109,8 +115,10 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Triple-count descent on alternating cycles is not monotone: a crossed side-six host has ten one-defect traps although it contains no-three states.
 - Lexicographically refining triple count by the natural pair-line energy still leaves four exact bad local minima in that host.
 - The parity-reflection lift is not a universal doubling theorem: exhaustive search finds no reflected no-three permutation for base sides 3, 4, 6, 7, or 8.
-- Identity/reversal block maps do not rescue every \(2\times5\) factor: the complete census succeeds for only 9 of 32 layer-unordered side-five factors.
+- Identity/reversal block maps alone are not factor-independent: the complete census succeeds for only 9 of 32 layer-unordered side-five factors.
+- Normalized affine second-block maps do not rescue the canonical side-five full-selector host.
+- The complete affine one-inner-layer family has no no-three state at base sides six or seven, even when the inner permutation is arbitrary.
 
 ## Bottom line
 
-There is no complete proof. The product branch now shows that the quantified unmodified \(2\times5\) gap can be removed inside the same \(10\times10\) grid by non-global blockwise digit maps, and the successful witness already lies in an explicit one-inner-layer family. The complete reversal census also shows that this is not yet closure: only 9 of 32 side-five factors are rescued, and variation in both row and column block maps is necessary. The next product target is a controlled affine or structured block-map theorem that explains and generalizes the escape from the 35-line core, or a resampling theorem that returns either a model or a structured infeasibility certificate. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
+There is no complete proof. The product branch now contains a genuine but isolated factor-independent closure theorem: every saturated side-five factor composes with side two to give the exact side-ten no-three configuration. The double-coset template theorem explains the mechanism and supplies a precise route to further closures. However, the same affine one-layer family is empty at base sides six and seven, and no infinite multiplicative closure class or arithmetic coverage theorem is known. The next product target is an infinite family of successful map-group templates, a two-layer/full-selector extension beyond the affine obstruction, or a model-or-structured-core resampling theorem. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
