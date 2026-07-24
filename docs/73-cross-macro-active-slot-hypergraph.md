@@ -17,14 +17,13 @@ orientations.
 
 A triple of slots `s,t,u` from at least two macro pools is **cross-active** if
 some pairwise-distinct source-edge choices create a collinear triple using one
-movement/refill point from each slot.  Make one event
-`T_{s,t,u}^{cross}`.
+movement/refill point from each slot.  Make one event `T_{s,t,u}^{cross}`.
 
 Inactive slot sets create no geometric restriction and are omitted.
 
 ## 2. Universal probability bounds
 
-### Proposition PP3eo -- PROVED
+### Proposition PP3gh -- PROVED
 
 For dense domains as above,
 
@@ -70,14 +69,14 @@ For a slot `s`, let
 \]
 
 be the number of active cross-slot pair and triple events containing `s`.
-Include ordinary fixed-anchor pair events from PP3em in a separate count
+Include ordinary fixed-anchor pair events from PP3gf in a separate count
 `d_anchor(s)` after verifying their completion codegree.
 
-### Theorem PP3ep -- PROVED
+### Theorem PP3gi -- PROVED
 
 Assume:
 
-1. unary source conflicts have been removed by fully safe domains PP3el;
+1. unary source conflicts have been removed by fully safe domains PP3ge;
 2. ordinary anchor events satisfy the probability bound
    `8/(gamma^2R)`;
 3. every slot satisfies
@@ -101,7 +100,7 @@ Then one simultaneous assignment of every macro slot is:
 
 The internal event occurrence is at most `gamma^2R/128` by PP3ej.  The added
 occurrence bound keeps the total below the PP3ei threshold
-`(gamma^2R+48)/72`.  Proposition PP3eo and the anchor hypothesis give the
+`(gamma^2R+48)/72`.  Proposition PP3gh and the anchor hypothesis give the
 required event probability.  Apply PP3ei. ∎
 
 The conditional output distribution retains the cylinder spread PP3ek.
@@ -109,7 +108,7 @@ The conditional output distribution retains the cylinder spread PP3ek.
 ## 4. Exact support-compression target
 
 The complete unpruned slot system has about `MW` slots, so one slot could belong
-to `Theta((MW)^2)` active triples.  PP3ep requires only `O(R)`.
+to `Theta((MW)^2)` active triples.  PP3gi requires only `O(R)`.
 At the balanced exponents
 
 \[
@@ -135,7 +134,7 @@ The remaining cross-macro theorem is now precise:
 
 > arrange new-coordinate labels, pool endpoint sets, or protected trades so that
 > the active slot pair/triple hypergraph has maximum degree `O(R)` with a constant
-> smaller than the PP3ep budget.
+> smaller than the PP3gi budget.
 
 Failure produces a slot with `Omega(R)` distinct geometrically realizable cross
 patterns.  Such a slot is an explicit secant-star or pair-shadow core rather
