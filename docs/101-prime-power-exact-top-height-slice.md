@@ -1,11 +1,11 @@
 # Exact avoidance of the top primitive-height slice
 
 CMR223--CMR226 treat a dyadic height band as a bounded conflict system and
-obtain an almost-perfect conflict-free matching.  At the very top of the
+obtain an almost-perfect conflict-free matching. At the very top of the
 primitive-height range, the matching-space local-load theorem CMR219 is already
 strong enough to give an exact parent permutation.
 
-Work in one normalized nonroot parent board of odd size `t`.  For a primitive
+Work in one normalized nonroot parent board of odd size `t`. For a primitive
 nonaxis direction `(u,v)`, put
 
 \[
@@ -59,23 +59,22 @@ directions with maximum coordinate `K` is exactly
 4\varphi(K).
 \]
 
-Indeed, the primitive points on the boundary of the square
-`[-K,K]^2` number `8\varphi(K)`, and identifying opposite directions divides
-this by two.
+Indeed, the primitive points on the boundary of the square `[-K,K]^2` number
+`8\varphi(K)`, and identifying opposite directions divides this by two.
 
-Fix one such direction and one board cell incident with `w`.  Since
+Fix one such direction and one board cell incident with `w`. Since
 
 \[
 K>\frac{t-1}{3},
 \]
 
 the integer parameter interval of the line contains at most three board
-points.  Consequently at most one triple of this direction contains the fixed
-cell.  There are at most `t` cells incident with `w`, so this direction
+points. Consequently at most one triple of this direction contains the fixed
+cell. There are at most `t` cells incident with `w`, so this direction
 contributes at most `t` triples.
 
-Summing the `4\varphi(K)` directions gives the first bound.  Finally use
-`\varphi(K)<=K` and, because `t` is odd,
+Summing the `4\varphi(K)` directions gives the first bound. Finally use
+`\varphi(K)\le K` and, because `t` is odd,
 
 \[
 \sum_{K=H}^{(t-1)/2}K
@@ -107,11 +106,12 @@ then every parent board vertex satisfies
 
 \[
 \boxed{
-\frac1t+rac{T_3(w)}{(t)_3}<\frac1{24}.
+\frac1t+
+\frac{T_3(w)}{(t)_3}<\frac1{24}.
 }
 \]
 
-An explicit finite version is:
+An explicit finite version is
 
 \[
 \boxed{
@@ -121,7 +121,7 @@ An explicit finite version is:
 }
 \]
 
-implies the same inequality.
+which implies the same inequality.
 
 ### Proof
 
@@ -135,7 +135,7 @@ CMR231 gives
 }{(t-1)(t-2)}.
 \]
 
-If `H>=ct`, the right side has limit superior
+If `H\ge ct`, the right side has limit superior
 
 \[
 2\left(\frac14-c^2\right)
@@ -148,7 +148,7 @@ If `H>=ct`, the right side has limit superior
 The additional diagonal load `1/t` tends to zero, proving the asymptotic
 statement.
 
-For the explicit claim, use `H>=49t/100`.  It is enough to check
+For the explicit claim, use `H\ge49t/100`. It is enough to check
 
 \[
 \frac1t+
@@ -165,7 +165,7 @@ After clearing positive denominators, this is
 328t^3-31575t^2+53750t-30000\ge0.
 \]
 
-The cubic is increasing and positive for every `t>=95`; the companion checker
+The cubic is increasing and positive for every `t\ge95`; the companion checker
 verifies the exact integer boundary. ∎
 
 ## 3. Exact top-slice cleaning
@@ -190,32 +190,32 @@ there is a parent permutation which
 ### Proof
 
 Apply CMR219 with the old diagonal singleton events and with
-`\mathcal F_3=\mathcal C_{\ge H}`.  There are no rank-one or rank-two events in
-this band-only application.  CMR232 verifies the local-load hypothesis at every
+`\mathcal F_3=\mathcal C_{\ge H}`. There are no rank-one or rank-two events in
+this band-only application. CMR232 verifies the local-load hypothesis at every
 board vertex, so the matching-space lopsided local lemma supplies a perfect
 matching avoiding all bad events. ∎
 
-The conclusion is exact, unlike CMR226.  It does not yet clean lower primitive
+The conclusion is exact, unlike CMR226. It does not yet clean lower primitive
 heights, and a permutation chosen for this slice may create triples in those
 lower bands.
 
 ## 4. Revised height programme
 
 The top `1/50` of the possible primitive-height interval is now removable by
-one exact parent move for every sufficiently large odd block.  More generally,
+one exact parent move for every sufficiently large odd block. More generally,
 CMR232 identifies the natural local-load boundary
 
 \[
 c=\sqrt{11/48}\approx0.4787.
 \]
 
-The remaining exact-band task starts below this constant-height threshold.  It
+The remaining exact-band task starts below this constant-height threshold. It
 may be attacked by combining
 
 - the half-line deletion resilience CMR228--CMR230;
 - the almost-perfect bounded-conflict matching CMR226;
 - and a reserve or switching completion for the intermediate-height bands.
 
-No all-`n` theorem is claimed here.  Primitive-direction counts and the explicit
-`49/100`, `t>=95` inequality are checked in
+No all-`n` theorem is claimed here. Primitive-direction counts and the explicit
+`49/100`, `t\ge95` inequality are checked in
 [`scripts/verify_prime_power_exact_top_slice.py`](../scripts/verify_prime_power_exact_top_slice.py).
