@@ -12,7 +12,7 @@ conflict-free perfect-matching problem.
 |---|---|
 | PC1 | **COMPLETE / RECTANGLE NORMAL FORM.** Every arbitrary-map one-inner-layer state for the side-two outer factor is a perfect matching of `n` four-corner rectangles and is automatically saturated. |
 | PC2 | **SUBSTANTIAL PARTIAL.** Every bad triple is exactly either a diagonal two-rectangle conflict or a transversal three-rectangle conflict. Uniform conflict-degree bounds are proved. |
-| PC3 | **PARTIAL POSITIVE.** Exact templates exist at base sides 2, 4, and 5, and none exists at base side 3. Template existence remains open at bases 6, 7, and 8 in the unrestricted rectangle model. |
+| PC3 | **EXACT THROUGH BASE SEVEN.** Templates exist at base sides 2, 4, and 5. Complete unrestricted searches prove that no arbitrary-map one-inner-layer template exists at bases 3, 6, or 7. Base 8 remains open. |
 | PC4 | **TWO SPECIAL CLOSURES PROVED.** The template transport theorems give factor-independent products `2 x 4 -> 8` and `2 x 5 -> 10`. No infinite closure class is known. |
 | PC5 | **OPEN.** The special closures and finite witnesses do not imply arithmetic coverage. |
 | PC6 | **REFORMULATED.** The next resampling problem is a conflict-free perfect matching in a complete four-partite four-uniform hypergraph with explicit rank-two and rank-three conflicts. |
@@ -91,36 +91,50 @@ argument cannot prove an infinite closure theorem.
 
 ## Exact small boundary
 
-The complete normalized census gives:
+The complete unrestricted one-layer results are:
 
-| Base side | Template exists? |
-|---:|---|
-| 2 | yes |
-| 3 | no |
-| 4 | yes |
-| 5 | yes |
-| 6 | open in unrestricted rectangle model |
-| 7 | open in unrestricted rectangle model |
-| 8 | open in unrestricted rectangle model |
+| Base side | Template exists? | Status |
+|---:|---|---|
+| 2 | yes | exact census |
+| 3 | no | complete arbitrary-map obstruction |
+| 4 | yes | factor-independent `2 x 4 -> 8` |
+| 5 | yes | factor-independent `2 x 5 -> 10` |
+| 6 | no | complete arbitrary-map obstruction |
+| 7 | no | complete arbitrary-map obstruction |
+| 8 | open | decisive next recursive case |
 
-The affine one-layer subfamily has been exhausted and is empty at bases six and
-seven, but arbitrary rectangle matchings are substantially more general.
+PX48 proves the side-six and side-seven negative results using the exact
+rectangle conflict system, not only affine maps. The complete search-node counts
+are:
+
+| Base side | Orientation | Search nodes |
+|---:|---|---:|
+| 6 | `cc` | 236,651 |
+| 6 | `cf` | 251,708 |
+| 6 | `fc` | 260,521 |
+| 6 | `ff` | 204,824 |
+| 7 | `cc` | 3,185,100 |
+| 7 | `cf` | 3,561,372 |
+| 7 | `ff` | 2,761,350 |
+
+At side seven, `fc` follows from `cf` by the transpose equivalence PX47.
 
 ## Exact next targets
 
-1. **Conflict-degree sharpening.** Replace the universal quadratic transversal
+1. **Base-eight template or obstruction.** A successful template would make the
+   side-four closure iterable once to side sixteen. A complete obstruction would
+   rule out that recursion inside PX28.
+2. **Conflict-degree sharpening.** Replace the universal quadratic transversal
    codegree by typical, orientation-specific, or admissible-layer bounds small
    enough for a conflict-free matching theorem.
-2. **Resampling theorem.** Adapt a spread-matching, lopsided-local-lemma, or
+3. **Resampling theorem.** Adapt a spread-matching, lopsided-local-lemma, or
    entropy-compression argument to the rank-two/rank-three rectangle conflict
    system.
-3. **Recursive templates.** Construct successful rectangle matchings at an
-   infinite sequence of base sides; a base-eight template would make the proved
-   side-four closure iterable once to side sixteen.
-4. **Structured obstruction.** Convert the base-three impossibility and the
-   canonical `2 x 5` unsatisfiable core into matching-theoretic certificates.
-5. **Two-inner-layer extension.** Determine whether the complete four-layer
-   selector has an analogous lower-dimensional matching normal form.
+4. **Two-inner-layer extension.** Determine whether the complete four-layer
+   selector has an analogous lower-dimensional matching normal form and can
+   escape the one-layer obstructions at six and seven.
+5. **Structured templates.** Construct successful rectangle matchings at an
+   infinite sequence of base sides.
 
 ## Verification
 
@@ -128,9 +142,12 @@ seven, but arbitrary rectangle matchings are substantially more general.
 python scripts/verify_product_rectangle_reduction.py
 python scripts/verify_product_rectangle_conflicts.py
 python scripts/verify_product_gauge_census.py
+python scripts/verify_product_unrestricted_six_seven.py --side 6
+python scripts/verify_product_unrestricted_six_seven.py --side 7
 python scripts/verify_product_universal_side_four_closure.py
 python scripts/verify_product_affine_side_five_closure.py
 ```
 
-The overall track remains incomplete: no infinite multiplicative closure class
-or arithmetic coverage theorem has been proved.
+The side-seven obstruction search is intentionally longer than the small census
+scripts. The overall track remains incomplete: no infinite multiplicative
+closure class or arithmetic coverage theorem has been proved.
