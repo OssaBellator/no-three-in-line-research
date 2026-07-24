@@ -188,6 +188,19 @@ classification is therefore reduced to two primitive rational
 directions and one coprime radial scalar, rather than four unrelated
 integer lifts.
 
+[`bounded-denominator-lift-separation.md`](bounded-denominator-lift-separation.md)
+proves BDA3k. Distinct primitive lifts in one projective residue class
+have determinant a nonzero multiple of \(q\), hence their rational
+slopes are separated by at least \(q/A^2\) under norm bound \(A\).
+It also proves BDA4c: within one complete atlas profile and bounded
+slope windows, a large lift family repeats one exact pair of primitive
+factors; the remaining radial parameters then occupy one residue class
+modulo \(q\). Thus the only unbounded alternatives are quantitatively
+separated rational directions or a single \(q\)-spaced radial chain.
+The remaining classification must charge the former through
+carry/wrap-center dispersion and send the latter through the
+common-ratio or subgroup-coset interfaces.
+
 ## BDA4 — exception classification
 
 ### Target statement
