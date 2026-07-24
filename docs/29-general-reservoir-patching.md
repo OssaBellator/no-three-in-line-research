@@ -279,7 +279,76 @@ blockers. Its value is that it converts PP3 seed preparation into two explicit
 global counts. The script `scripts/analyze_one_strip_seed_loads.py` evaluates
 the bound exactly.
 
-## 4. Revised PP3 target
+## 4. Internally clean spread-bank endpoint
+
+The local-load theorem treats internal triples as bad events. A different route
+is available when PP3 supplies a bank whose states are already internally
+no-three-in-line.
+
+Let `Omega` be a probability distribution on finite cell sets `A` such that
+every state:
+
+- fills the prescribed active row and column deficits;
+- contains distinct cells;
+- is internally no-three-in-line.
+
+Let `B` be the set of candidate cells lying on a secant through two retained
+points. Let `P_X` be the set of unordered candidate-cell pairs whose line
+contains at least one retained point.
+
+### Theorem PP2j -- PROVED
+
+If
+
+\[
+\sum_{z\in B}\Pr(z\in A)
++
+\sum_{\{z,z'\}\in P_X}\Pr(z,z'\in A)
+<1,
+\]
+
+then some state in the support of `Omega` is a valid patch for the retained
+configuration.
+
+#### Proof
+
+Let `Z` count selected cells from `B` plus selected pairs from `P_X`. The
+displayed left side is `E Z`. Since `Z` is a nonnegative integer and its
+expectation is below one, some state has `Z=0`.
+
+That state has no triple with two retained points because it selects no cell
+of `B`. It has no triple with one retained point because it selects no pair
+from `P_X`. It has no triple of inserted points by the definition of the bank.
+Its degree and distinctness properties already make it an executable patch. ∎
+
+### Corollary PP2k -- PROVED
+
+Suppose the bank satisfies the spread bounds
+
+\[
+\Pr(z\in A)\le\frac{\alpha}{N},
+\qquad
+\Pr(z,z'\in A)\le\frac{\beta}{N^2}
+\]
+
+for every cell and every distinct pair. If
+
+\[
+\frac{\alpha |B|}{N}
++
+\frac{\beta |P_X|}{N^2}
+<1,
+\]
+
+then a valid patch exists.
+
+This endpoint removes the candidate-only triple term completely. Its missing
+input is correspondingly stronger: PP3 must construct a spread distribution
+on completions that are already internally no-three-in-line. Proposition PP3b
+is the one-strip instance, with exact nonuniform cell and mixed-pair
+probabilities.
+
+## 5. Revised PP3 target
 
 The general-reservoir endpoint now accepts the actual operations allowed by
 PP2: delete old reservoir points, use old-old replacement cells, use mixed
