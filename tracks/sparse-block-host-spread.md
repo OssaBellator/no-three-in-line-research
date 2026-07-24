@@ -134,11 +134,14 @@ and first-layer deletion parts of SAS1--SAS4 for a concrete
 small-set expansion suggested for connected algebraic hosts; block
 factorization replaces that hypothesis here.
 
-SAS5 remains open for this family. The candidate cells in the block host
-may contain far more than \(O(d^3)\) real collinear triples, including
-triples crossing different blocks. The theorem therefore supplies a
-fully controlled sparse matching measure, not yet a no-three-in-line
-endpoint.
+SAS5 remains open for this abstract family, but its natural consecutive
+grid embedding is now ruled out by
+[`sparse-block-host-geometric-obstruction.md`](sparse-block-host-geometric-obstruction.md).
+Each block contains a compatible slope-one diagonal and the host has at
+least \(N(d-1)(d-2)/6\) collinear triples, which is
+\(\omega(d^3)\) when \(d=o(N)\). The theorem therefore supplies a fully
+controlled sparse matching measure, not a no-three-in-line endpoint in
+that embedding.
 
 `scripts/verify_sparse_block_host.py` exhaustively checks all first-layer
 and residual derangement cylinders through block size six.

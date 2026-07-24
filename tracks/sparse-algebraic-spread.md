@@ -175,6 +175,18 @@ SAS5 remains open only in its host-specific part: constructing an intended
 algebraic host satisfying this count (or proving a local resampling
 upgrade).
 
+The consecutive sparse block host cannot supply that missing part.
+[`sparse-block-host-geometric-obstruction.md`](sparse-block-host-geometric-obstruction.md)
+proves
+
+\[
+T(G_{b,d})\geq \frac{N(d-1)(d-2)}6=\omega(d^3)
+\]
+
+when \(d=o(N)\). Thus SAS1a/SAS4b remain useful matching-measure models,
+but the global SAS5 endpoint requires a different embedding, a different
+host, or a local-load theorem.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
@@ -195,7 +207,9 @@ ratio and the degree-two cycle with no four-cycle switch.
 `scripts/verify_general_switching_ratio.py` exhaustively checks the
 labelled forward/reverse theorem, including parallel descriptions.
 `scripts/verify_sparse_block_host.py` checks all complete-block and
-derangement cylinders through block size six.
+derangement cylinders through block size six. The consecutive-embedding
+triple obstruction is checked by
+`scripts/verify_sparse_block_geometry.py`.
 
 ## Completion criterion
 
