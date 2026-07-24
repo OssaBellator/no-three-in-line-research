@@ -28,6 +28,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 18. **Window-product theorem.** Each cycle state lies in a number of modular hyperbolas equal to its distinct cyclic window-product count.
 19. **Collision-free carry-cycle bank bound.** Every carry-filtered cycle has a collision-aware full-permutation state whose cost is bounded by normalized one-, two-, and three-cell certificate counts.
 20. **Frozen-cycle concentration.** Failure of every cycle-block state forces a dense one-cell shadow, anchored-pair shadow, or candidate-only triple core.
+21. **Clone-space exact selection theorem.** A uniformly random perfect matching on two row and column clones avoids unavailable cells, duplicate cells and all lifted collinear triples whenever the maximum local canonical-event probability load is at most \(1/24\).
+22. **Concrete endpoint.** For \(n\ge100\), a candidate host with at most \(n/100\) unavailable cells and at most \(n^3/200\) residual collinear triples incident with each row or column contains a saturated no-three-in-line configuration.
+23. **Selection failure concentration.** Failure in a near-complete candidate host forces some row or column to support \(\Omega(n^3)\) residual collinear triples.
 
 ## What remains conditional
 
@@ -36,6 +39,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
+- Extension of the clone-space selection theorem from complete to superregular candidate hosts.
 
 ## Important refutations
 
@@ -48,4 +52,4 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 
 ## Bottom line
 
-There is no complete proof. The repository does contain several reusable exact lemmas, an exact frozen-cycle counterexample, and a narrower alternating two-colour bottleneck.
+There is no complete proof. The repository now contains an exact degree-constrained endpoint theorem: once geometric cleaning produces a sufficiently dense host with bounded local residual triple incidence, the final saturated selection follows rigorously from a matching-space lopsided local lemma.
