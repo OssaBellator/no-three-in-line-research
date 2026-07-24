@@ -11,11 +11,13 @@ The prime-field conic argument cannot be copied blindly: over a ring, a degree-t
 The exact results are recorded in
 [`docs/27-composite-modulus-obstructions.md`](../docs/27-composite-modulus-obstructions.md)
 and
-[`docs/28-prime-power-completed-reciprocals.md`](../docs/28-prime-power-completed-reciprocals.md).
+[`docs/28-prime-power-completed-reciprocals.md`](../docs/28-prime-power-completed-reciprocals.md),
+and
+[`docs/29-prime-power-displacement-syndrome.md`](../docs/29-prime-power-displacement-syndrome.md).
 
 - **CM1: PROVED for saturation; nonlinear prime-power family added.** Affine pairs saturate every modulus.  At every prime power, valuation-completed reciprocals are full nonlinear involutions covering every nonunit stratum, and a universal companion layer gives a disjoint saturated pair.
 - **CM2: PARTIAL.** Affine and ordinary unit-hyperbola candidates are refuted.  Completed reciprocals have a proved \(O(\sqrt N+\log N)\) real-line cap with every excess confined to one Hensel-tangent cell.  Binary digit-linear channels are exactly no-three at \(N=8,16,32\), but no scalable constant-cap theorem is known.
-- **CM3: PARTIAL.** The companion construction gives one alternating Hamiltonian cycle and corresponding-column vertical displacement multiplicity at most \(p\) for odd \(p\), or at most four for powers of two.  Arbitrary two-dimensional displacement and syndrome bounds remain open.
+- **CM3: PARTIAL.** The companion construction gives one alternating Hamiltonian cycle and corresponding-column vertical displacement multiplicity at most \(p\) for odd \(p\), or at most four for powers of two.  Inside one completed-reciprocal channel, every displacement is \(p\)-adically diagonal and every fixed same-stratum displacement reduces to one square-root congruence.  The one-channel syndrome is at most \(O(N^{5/2}+N^2\log N)\); cross-channel and near-linear syndrome bounds remain open.
 - **CM4: PARTIAL.** Every completed-reciprocal line intersection has an exact valuation-stratum quadratic; only the top possible stratum can be singular, with exact odd-prime square-root multiplicity.  A full cross-channel carry calculus remains open.
 - **CM5: PARTIAL.** Real collinearity always projects to modular collinearity, and naive CRT products have unavoidable mixed-projection triples. A positive ordered-box assembly theorem remains open.
 - **CM6: PARTIAL.** Exact saturated no-three constructions are verified for composite sizes `4, 6, 8, 9, 10`; exact one-channel digital constructions are verified at `8, 16, 32`; no scalable admissible saturated class is yet known.
@@ -23,7 +25,9 @@ and
 Finite checks are in
 [`scripts/verify_composite_modulus.py`](../scripts/verify_composite_modulus.py)
 and
-[`scripts/verify_prime_power_channels.py`](../scripts/verify_prime_power_channels.py).
+[`scripts/verify_prime_power_channels.py`](../scripts/verify_prime_power_channels.py),
+and
+[`scripts/verify_prime_power_displacement.py`](../scripts/verify_prime_power_displacement.py).
 
 ## CM1 — Composite channel definition
 
@@ -141,9 +145,27 @@ vertical displacement of a corresponding-column pair has multiplicity at
 most \(p\) for odd prime powers and at most four for powers of two.
 
 Applied to a completed reciprocal, this supplies a nonlinear saturated
-Hamiltonian host.  The remaining CM3 work is to control arbitrary
-nonvertical displacement vectors and the same-/cross-channel real triple
-syndrome.
+Hamiltonian host.
+
+Within one completed-reciprocal channel, every exact displacement \((a,b)\)
+satisfies
+
+\[
+v_p(a)=v_p(b).
+\]
+
+If both endpoints lie in valuation stratum \(r\), the reduced endpoint
+product and the possible first endpoints are controlled by one explicit
+quadratic/square-root congruence.  Combining the one-channel line cap with
+pair counting gives the rigorous syndrome bound
+
+\[
+T(R_{\mathbf c})=O(N^{5/2}+N^2\log N).
+\]
+
+The remaining CM3 work is to turn the reduced secant congruence into a small
+multiplicity bound, analyze cross-stratum and companion cross-channel
+secants, and reach a near-linear total syndrome.
 
 ## CM4 — Prime-power carry calculus
 
@@ -182,8 +204,9 @@ controlled by the square-root congruence for
 \]
 
 Thus unit/nonunit interaction and all one-channel tangent multiplicities are
-classified.  Product carries, companion cross-secants, and absorber structure
-remain open.
+classified.  Same-channel secants also satisfy an exact \(p\)-adic diagonal
+filter and a reduced product signature.  Product carries, cross-stratum lift
+multiplicity, companion cross-secants, and absorber structure remain open.
 
 ## CM5 — CRT assembly theorem
 
@@ -237,4 +260,4 @@ Affine permutations and uncompleted unit hyperbolas are eliminated as direct sol
 
 This branch is complete when CM1–CM6 give an exact saturated construction or a repairable bounded-syndrome seed for every sufficiently large composite side length, with real-grid—not merely modular—collinearity proved.
 
-The branch is not complete. It now contains a nonlinear full prime-power channel, an exact valuation/Hensel line classification, a universal Hamiltonian companion layer with bounded vertical multiplicity, three exact digital no-three channels, the mandatory obstruction package, and five exact saturated finite composite base cases.
+The branch is not complete. It now contains a nonlinear full prime-power channel, exact valuation/Hensel line and secant signatures, a rigorous one-channel syndrome bound, a universal Hamiltonian companion layer with bounded vertical multiplicity, three exact digital no-three channels, the mandatory obstruction package, and five exact saturated finite composite base cases.
