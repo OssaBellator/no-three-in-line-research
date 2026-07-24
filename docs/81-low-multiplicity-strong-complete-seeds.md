@@ -9,10 +9,10 @@ PX129 reduces affine-orbit spread to two deterministic graph parameters:
 \]
 
 PX130 gives the first nonlinear example at order thirteen. This chapter records
-explicit seeds at the next three prime orders and compares them with universal
-counting lower bounds.
+explicit seeds at later prime orders and compares them with universal counting
+lower bounds.
 
-## 1. Explicit seeds
+## 1. Explicit seeds through order 23
 
 Use the following permutations in row order.
 
@@ -30,7 +30,8 @@ f_{23}=(2,6,12,14,11,21,18,20,0,4,8,10,16,9,5,1,19,17,15,13,3,22,7).
 
 ## Theorem PX132 -- PROVED FINITE
 
-Each displayed map is strong complete. Their exact affine-orbit parameters are:
+Each displayed map is strong complete. Together with the PX130 seed, their exact
+affine-orbit parameters are:
 
 | Prime \(p\) | \(\mu(f_p)\) | \(\tau(f_p)\) | \(K_2=\mu/p\) | \(K_3=(p-2)\tau/p\) |
 |---:|---:|---:|---:|---:|
@@ -47,10 +48,8 @@ f,
 \qquad x+f(x)
 \]
 
-are permutations. Enumerating all ordered secants and all ordered affine
-triangle shapes gives the displayed maxima. PX129 converts them to the orbit
-constants. The seeds were found by randomized exact search, but the theorem is
-only the deterministic verification of the displayed maps.
+are permutations. Enumerating all ordered secants and ordered affine triangle
+shapes gives the displayed maxima. PX129 converts them to the orbit constants.
 
 ## 2. Universal counting lower bounds
 
@@ -85,25 +84,59 @@ prime \(p\ge11\).
 There are \(p(p-1)\) ordered pairs \((u,v)\) with \(u\ne v\). Their secant
 slope cannot be zero because \(f\) is a permutation. It cannot be \(1\),
 because that would repeat a value of \(x-f(x)\), and it cannot be \(-1\), by
-the same argument with \(x+f(x)\). Thus the ordered pairs are distributed among
-only \(p-3\) allowed slopes, proving the first bound.
+the same argument with \(x+f(x)\). Thus the pairs are distributed among only
+\(p-3\) allowed slopes.
 
-Fix \(t\ne0,1\). Every ordered pair determines the third row
+Fix \(t\ne0,1\). Every ordered pair determines
 
 \[
-w=u+t(v-u),
+w=u+t(v-u)
 \]
 
-and hence one triple of invariants \((r,t,s)\). The slope \(r\) has at most
-\(p-3\) values. Since \(f(w)\) is distinct from \(f(u),f(v)\), the image ratio
-\(s\) is neither zero nor one and has at most \(p-2\) values. Averaging gives
-the second bound. The final numerical evaluation is direct. \(\square\)
+and hence one triple of invariants \((r,t,s)\). The slope has at most \(p-3\)
+values and the image ratio has at most \(p-2\) values. Averaging proves the
+second bound. The final numerical evaluation is direct. \(\square\)
 
-Thus the experimental triangle multiplicities six and eight are within a
-constant factor of the absolute optimum. The secant multiplicities are also
-within a factor below three of the averaging lower bound.
+## 3. Order 29
 
-## 3. Concrete asymptotic conjecture
+The compiled exact four-trade search produced
+
+\[
+f_{29}=
+(11,13,28,18,2,7,23,26,16,9,17,4,1,12,24,19,10,20,5,3,25,27,14,8,15,21,6,22,0).
+\]
+
+## Theorem PX134 -- PROVED FINITE
+
+The displayed order-29 map is strong complete and satisfies
+
+\[
+\boxed{
+\mu(f_{29})=54,
+\qquad
+\tau(f_{29})=9.
+}
+\]
+
+Consequently its affine-orbit distribution has
+
+\[
+K_2=\frac{54}{29}<2,
+\qquad
+K_3=\frac{243}{29}<9.
+\]
+
+Thus linear secant multiplicity and constant affine-triangle multiplicity persist
+at the next tested prime. The triangle constant is one above the proposed bound
+of eight, so PX134 supports the asymptotic scale but does not prove the sharp
+conjectured constant.
+
+### Proof
+
+Direct exact enumeration verifies strong completeness and computes every secant
+and affine-triangle bin. \(\square\)
+
+## 4. Concrete asymptotic conjecture
 
 > **Strong-complete orbit conjecture.** For every sufficiently large odd prime
 > \(p\), there is a strong complete mapping \(f_p\) with
@@ -113,22 +146,12 @@ within a factor below three of the averaging lower bound.
 > \tau(f_p)\le8.
 > \]
 
-By PX129 this would give
+By PX129 this would give \(K_2\le2+2/p\) and \(K_3\le8\). PX131 would then
+prove the two-direction protected-rainbow spread theorem at every such prime.
+A polylogarithmic bound on \(\tau\) may already suffice after re-optimising the
+downstream local-load criterion.
 
-\[
-K_2\le2+\frac2p,
-\qquad
-K_3\le8
-\]
-
-for one-stage affine-orbit spread. PX131 would then prove the two-direction
-protected-rainbow spread theorem at every such prime.
-
-The conjecture is stronger than needed. A polylogarithmic bound on \(\tau(f_p)\),
-combined with the polynomial high-direction codegree saving from PX82, may
-already suffice after re-optimizing the downstream local-load criterion.
-
-## 4. Verification
+## 5. Verification
 
 Run
 
@@ -137,5 +160,5 @@ python scripts/verify_product_low_multiplicity_seeds.py
 ```
 
 The verifier checks strong completeness, computes every secant and affine
-triangle bin, reproduces the table, and checks the corrected lower-bound
+triangle bin, reproduces all five seed rows, and checks the corrected lower-bound
 arithmetic through prime order 101.
