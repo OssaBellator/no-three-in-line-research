@@ -49,7 +49,7 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR231--233 | Exact top-height candidate-only load, the \(c>\sqrt{11/48}\) threshold, and exact cleaning above \(0.49t\) for odd \(t\ge95\) | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
 | CMR234 | Near affine transversals with at least two surviving points have an explicit order-pattern bound | PROVED | `docs/102-prime-power-near-transversal-line-resilience.md` |
 | CMR235--236 | Fixed and growing line-deletion surpluses beyond halfway | PROVED; superseded quantitatively by CMR241/245 | `docs/102-prime-power-near-transversal-line-resilience.md` |
-| CMR237 | Exact top-slice cleaning remains possible while forbidding \(\lfloor t/100floor\) previously discovered line matchings for odd \(t\ge175\) | PROVED | `docs/103-prime-power-linear-lower-height-reserve.md` |
+| CMR237 | Exact top-slice cleaning remains possible while forbidding `floor(t/100)` previously discovered line matchings for odd \(t\ge175\) | PROVED | `docs/103-prime-power-linear-lower-height-reserve.md` |
 | CMR238--239 | A frozen large parent exposes an anchored bank or a linear reserve of distinct candidate-only lines below height \(0.49t\) | PROVED | `docs/103-prime-power-linear-lower-height-reserve.md` |
 | CMR240 | Nonaxis lines covering a Cartesian rectangle modulo diagonal exceptions require at least \(a+c-3\) lines | PROVED | `docs/104-prime-power-boundary-line-blockers.md` |
 | CMR241--243 | Every \(t-3\) full-derangement lines are avoidable; equality at \(t-2\) has a rigid Hall-boundary factorization | PROVED | `docs/104-prime-power-boundary-line-blockers.md` |
