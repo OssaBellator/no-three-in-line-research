@@ -1,0 +1,9 @@
+[project]
+name = "no-three-in-line-research"
+version = "0.1.0"
+description = "Research notebook and finite verification tools for the no-three-in-line conjecture"
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
