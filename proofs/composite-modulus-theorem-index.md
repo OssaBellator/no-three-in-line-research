@@ -18,7 +18,7 @@ This ledger collects the results specific to
 | CMZ1 | Zero-divisor multiples of line equations merge primitive fibres | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CML1 | Real collinearity implies modular primitive-fibre collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CML2 | Modular collinearity can be a false positive for the standard lift | PROVED | `docs/27-composite-modulus-obstructions.md` |
-| CML3 | Modular determinant zero plus \(|\Delta|<N\) implies real collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML3 | Modular determinant zero with determinant magnitude below \(N\) implies real collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CMCRT1 | Naive CRT products have unavoidable mixed-projection triples | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CMR1 | Valuation-completed reciprocals are full prime-power involutions | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR2 | Exact valuation-stratum quadratic for line intersections | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
