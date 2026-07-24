@@ -55,6 +55,14 @@ where `D(n)` is the maximum number of points that can be selected from an
 - [`docs/33-off-diagonal-reservoir-obstruction.md`](docs/33-off-diagonal-reservoir-obstruction.md): aligned block obstruction and projection classification.
 - [`docs/34-projection-triple-lower-bounds.md`](docs/34-projection-triple-lower-bounds.md): quantitative parallel-line triple forcing.
 - [`docs/35-component-clean-row-lift-banks.md`](docs/35-component-clean-row-lift-banks.md): component-clean expectation endpoint and cross-triple cap.
+- [`docs/36-monotone-parabolic-reservoirs.md`](docs/36-monotone-parabolic-reservoirs.md): square-root internally clean parabolic matching patches.
+- [`docs/37-variable-reservoir-patch-banks.md`](docs/37-variable-reservoir-patch-banks.md): deletion-aware banks whose states use different reservoirs.
+- [`docs/38-parabolic-rung-budget.md`](docs/38-parabolic-rung-budget.md): multi-rung coordinate budget and prime-gap exponent conversion.
+- [`docs/39-matching-reservoir-cycle-factorization.md`](docs/39-matching-reservoir-cycle-factorization.md): exact path/cycle factorization and deletion marginals.
+- [`docs/40-cycle-reservoir-2sat.md`](docs/40-cycle-reservoir-2sat.md): exact 2-SAT selection for cycle-reservoir patches.
+- [`docs/41-sheared-parabolic-banks.md`](docs/41-sheared-parabolic-banks.md): sheared internally clean banks with explicit cell/pair spread.
+- [`docs/42-width-two-matching-patches.md`](docs/42-width-two-matching-patches.md): complete cross-only width-two classification and finite obstruction.
+- [`docs/43-one-rectangle-patch-repair.md`](docs/43-one-rectangle-patch-repair.md): exact alternating-rectangle repair criterion and repaired extensions.
 
 ## Research discipline
 
@@ -79,19 +87,20 @@ monotone carry potential or bounded-denominator absorber.
 
 The independent all-`n` prime-patching track now has:
 
-- exact one-strip and arbitrary-reservoir degree interfaces;
-- corner, clone-space, spread-bank, sequential, static, and component-clean
-  selection endpoints;
-- an explicit rank-three-spread row-lift bank;
-- a proof that unpruned full support cannot pass first moment;
-- a complete aligned off-diagonal block obstruction;
-- a primitive-direction projection screen with quantitative triple lower bounds;
-- exact finite diagnostics through stored side ten.
+- exact fixed- and variable-reservoir degree/selection interfaces;
+- row-lift sequential, static, projection, and component-clean endpoints;
+- an internally no-three parabolic patch of width `Theta(sqrt(m))`;
+- sheared parabolic banks with near-`1/m` cell spread;
+- exact path/cycle factorization and 2-SAT selection for matching reservoirs;
+- a multi-rung coordinate budget reducing the published prime-gap target to
+  about `m^0.05` compatible square-root rungs;
+- a complete width-two matching-patch classification;
+- three exact patch-plus-rectangle repaired extensions, `4 -> 6`, `5 -> 7`,
+  and `6 -> 8`.
 
-Its remaining bottleneck is an asymptotic geometric preparation theorem:
-construct a sparse algebraic or tomographic bank with low terminal loads, or
-large internally clean component banks with `O(1/t)` cell and `O(1/t^2)` pair
-spread and sufficiently small cross incidence.
+Its remaining bottleneck is an asymptotic preparation theorem that installs
+matching-admissible parabolic rungs and protected rectangle trades with low
+external certificate interaction and mutual compatibility.
 
 ## Running the checks
 
@@ -104,10 +113,12 @@ python scripts/verify_no_three_certificate.py certificates/prime-patching-small.
 python scripts/analyze_deletion_aware_one_strip.py certificates/prime-patching-small.json
 python scripts/analyze_row_lift_bank.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
 python scripts/analyze_row_lift_sequential_loads.py certificates/prime-patching-small.json --n 3 --rows 1,2,3 --all-orders
-python scripts/analyze_row_lift_static_pruning.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
-python scripts/analyze_row_lift_projections.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
-python scripts/analyze_component_clean_row_lift.py certificates/prime-patching-small.json --n 5 --rows 1,2,3,4,5
-python scripts/search_row_lift_reservoirs.py certificates/prime-patching-small.json
+python scripts/analyze_parabolic_matching_reservoir.py certificates/prime-patching-small.json --widths 2
+python scripts/search_sheared_parabolic_parameters.py certificates/prime-patching-small.json --widths 2,3
+python scripts/analyze_matching_reservoir_cycles.py certificates/prime-patching-small.json --n 4 --columns 1,2,3,4 --rows 1,2,3,4
+python scripts/solve_matching_reservoir_2sat.py certificates/prime-patching-small.json experiments/parabolic-variable-bank-n4.json --n 4 --t 2 --columns 1,2,3,4 --rows 1,2,3,4
+python scripts/search_width_two_matching_patches.py certificates/prime-patching-small.json
+python scripts/search_width_two_rectangle_repairs.py certificates/prime-patching-small.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for
@@ -134,12 +145,13 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow, projection, or codegree bound;
-- build a sparse row-lift subbank passing PP3p, PP3q, or PP3r;
-- construct large internally no-three component banks passing PP3z or PP3aa;
-- prepare a prime-minus-one reservoir meeting the PP2 cell/pair/triple endpoint;
+- prepare a positive-density family of matching-admissible sheared parabolic states;
+- build a geometry-aligned cycle bank with satisfiable external-certificate 2-SAT;
+- construct protected rectangle trades around residual patch certificates;
+- prove multi-rung compatibility at the `m^0.05` rung-count scale;
+- prepare a prime-minus-one reservoir meeting a PP2 endpoint;
 - prove the second-order concentration theorem for the alternating neutralization bank;
 - construct a monotone carry-signature potential or bounded-denominator absorber;
-- build a superregular perfect-matching resampling oracle;
-- extend dense `O(1/N)` spread to sparse algebraic hosts with `O(1/d)` spread.
+- build a superregular perfect-matching resampling oracle.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
