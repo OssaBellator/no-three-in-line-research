@@ -1,0 +1,118 @@
+# Composite-modulus track: current progress and revised bottlenecks
+
+This is the current addendum to
+[`tracks/all-n-composite-modulus.md`](all-n-composite-modulus.md). The detailed
+claims are indexed in
+[`proofs/composite-modulus-theorem-index.md`](../proofs/composite-modulus-theorem-index.md).
+
+## Current state of CM1–CM6
+
+### CM1 — nonlinear full channels: partial positive completion
+
+Valuation-completed reciprocals are full nonlinear permutation channels at
+every prime power. They preserve every valuation stratum, including all
+nonunits. A universal affine row companion produces a disjoint saturated pair
+whose row-column graph is one alternating Hamiltonian cycle.
+
+### CM2 — real line cap: narrowed but open
+
+For odd prime powers, every line intersection reduces to simple lower
+valuation roots plus one possible top Hensel-tangent cell. The coarse cap is
+
+\[
+O(\sqrt N+\log N).
+\]
+
+CMR11 adds exact real geometry: tangent roots lie in one or two spaced residue
+classes, and an unbalanced Euclidean slope shortens the feasible coordinate
+interval by the coefficient ratio. Large cells must therefore be both
+`p`-adically singular and slope-balanced.
+
+A constant or repairable uniform line cap is still open.
+
+### CM3 — displacement and syndrome: one target refuted
+
+Same- and cross-channel secants now have explicit valuation quadratics and
+mixed-layer carry identities. The one-channel triple syndrome is bounded by
+
+\[
+O(N^{5/2}+N^2\log N).
+\]
+
+However, CMR14 proves that completed reciprocals cannot have bounded
+same-channel displacement multiplicity. For every odd prime power, one exact
+top-digit displacement repeats at least
+
+\[
+\frac{p-1}{p^2}N
+\]
+
+times. The prime-hyperbola bounded-codegree argument therefore cannot be
+ported directly. A structured-collision quotient or absorber is required.
+
+### CM4 — prime-power carry calculus: substantial partial completion
+
+The branch now contains:
+
+- valuation-stratum line quadratics;
+- exact odd-prime square-root multiplicities;
+- one singular top tangent cell;
+- same-channel displacement products;
+- companion cross-displacement quadratics;
+- a universal mixed-layer determinant carry identity;
+- the explicit top-digit collision classes from CMR14.
+
+The missing step is a decoder or absorber for the singular tangent and
+translation cells.
+
+### CM5 — CRT assembly: open
+
+Real triples always project to modular triples, but naive coordinatewise CRT
+products contain mixed-projection triples. No ordered-box assembly theorem yet
+handles cases where different point pairs collapse in different factors.
+
+### CM6 — coverage: finite and one-layer progress
+
+Exact saturated no-three configurations are recorded at composite side lengths
+
+\[
+4,6,8,9,10.
+\]
+
+Binary digit-linear one-channel no-three permutations are now verified at
+
+\[
+8,16,32,64.
+\]
+
+The `64`-point matrix is a direct extension of an alternate `32`-point matrix,
+but all `4096` invertible direct one-bit block extensions of it fail at `128`.
+No scalable saturated class is known.
+
+## Revised bottlenecks
+
+1. **Balanced tangent-cell theorem.** Bound exact real populations when the
+   discriminant is highly divisible and the line coefficients have comparable
+   magnitude. CMR11 already handles the unbalanced regime.
+2. **Top-digit collision quotient.** Treat the linear repeated displacements
+   from CMR14 as valuation blocks, then prove a weighted or quotient codegree
+   bound after those blocks are contracted.
+3. **Digital saturation at 64.** Pair the CMR12 permutation with a second
+   disjoint permutation layer without creating a real triple.
+4. **Non-block digital lift to 128.** Search all-block modifications or
+   triangular nonlinear Boolean terms; direct one-bit extension is refuted.
+5. **Companion syndrome count.** Use CMR9 and CMR10 to control singular
+   cross-displacement cells and exact carry determinants.
+6. **Mixed-projection CRT signature.** Add a signature recording which pair
+   collapses in each local factor and force either a small global determinant
+   or an absorbable collision pattern.
+
+## Checks
+
+```bash
+python scripts/verify_prime_power_tangent_digital.py --max-modulus 125
+python scripts/verify_prime_power_displacement_obstruction.py --max-modulus 343
+```
+
+These are finite exact checks. They do not constitute a complete all-`n`
+construction.
