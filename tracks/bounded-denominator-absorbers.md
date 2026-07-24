@@ -237,6 +237,25 @@ An odd/even split retains half of this weight on radially disjoint
 pairs, which can then enter BDA4e. Failure is the explicit complementary
 low-occupancy inequality, not an unspecified co-anchoring obstruction.
 
+[`bounded-denominator-radial-rectangle-decoder.md`](bounded-denominator-radial-rectangle-decoder.md)
+proves BDA5a--BDA5b for one clean co-anchored adjacent pair. On either
+radial role, the opposite rectangle diagonal is empty, full in the
+other colour, or singly blocked. The first case gives a one-layer
+rectangle switch; the second gives an exact two-colour phase flip; and
+if neither is available, the two roles give disjoint one-blocker
+alternating-path seeds. Every admissible state destroys both radial
+triples, leaving only its explicitly measurable collateral.
+
+BDA5c couples any compatible family of at least two single-blocker
+rectangles, including the two roles of one clean radial pair. All active
+rectangles are switched simultaneously, while the opposite-layer
+blocker cells are rematched by a derangement. This preserves both layers
+and frees every desired cross cell. For families of size at least seven,
+BDA5d applies AN1 to give the exact normalized rank-one, rank-two, and
+rank-three collateral criterion. BDA5e closes the last local occupancy
+case: every clean pair has a legal one- or two-layer decoder, so only
+its explicit collateral remains to be paid.
+
 ## BDA4 — exception classification
 
 ### Target statement

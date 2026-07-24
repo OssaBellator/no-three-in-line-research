@@ -66,6 +66,11 @@ The numbering is local to this repository.
 | BDA4d | A linearly large radial chain has bounded primitive shape, while radial density yields identical \(q\)-step increments | PROVED | `tracks/bounded-denominator-lift-separation.md` |
 | BDA4e | Co-anchored adjacent radial pairs admit a paid compatible subfamily unless current load forces one of five affine anchor chains | PROVED | `tracks/bounded-denominator-radial-pair-regularization.md` |
 | BDA4f | Capped paid radial occupancy above half capacity yields a quantified parity matching of co-anchored adjacent pairs | PROVED | `tracks/bounded-denominator-radial-pair-regularization.md` |
+| BDA5a | A clean co-anchored radial pair yields a rectangle switch, a two-colour phase flip, or two disjoint single-blocker seeds | PROVED | `tracks/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5b | A radial rectangle state improves whenever its explicit collateral is below the two destroyed paid triples | PROVED | `tracks/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5c | A compatible family of single-blocker radial rectangles is resolved by a coupled opposite-layer derangement | PROVED | `tracks/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5d | The coupled blocker bank improves under an explicit AN1-normalized collateral inequality | PROVED | `tracks/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5e | Every clean co-anchored adjacent radial pair has a row-column-preserving one- or two-layer decoder state | PROVED | `tracks/bounded-denominator-radial-rectangle-decoder.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
