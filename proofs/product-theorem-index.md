@@ -24,6 +24,9 @@ This index collects the product/composition results on
 | PX17 | Triple count plus pair-line energy gives monotone repair | REFUTED | `docs/30-hybrid-resonance-and-repair-barriers.md` |
 | PX18 | Every bad state in the canonical successful side-six host improves within two cycle toggles | PROVED FINITE | `docs/31-two-cycle-batch-repair.md` |
 | PX19 | Every bad state in one successful side-nine host improves within two cycle toggles | PROVED FINITE | `docs/32-side-nine-batch-repair.md` |
+| PX20 | Every successful ordered crossed side-nine host has repair radius two and barrier one | PROVED FINITE | `docs/33-all-successful-side-nine-batches.md` |
+| PX21 | Any sequence of cycle trades compresses to one executable balanced endpoint batch | PROVED | `docs/34-composite-cycle-batches.md` |
+| PX22 | All exact side-six and side-nine traps have improving composite support at most eight | PROVED FINITE | `docs/34-composite-cycle-batches.md` |
 
 The branch still has no infinite multiplicative closure theorem or arithmetic
 coverage theorem.
