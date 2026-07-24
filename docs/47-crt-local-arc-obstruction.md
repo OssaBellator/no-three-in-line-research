@@ -59,8 +59,9 @@ U=P_1-P_0,
 V=P_2-P_0.
 \]
 
-Suppose its projection modulo `m` is collinear. Choose one modular direction
-vector `d` and scalar representatives `alpha,beta` such that
+Assume that its two local displacement vectors admit one cyclic-line
+representation modulo `m`: choose a direction vector `d` and scalar
+representatives `alpha,beta` such that
 
 \[
 U\equiv\alpha d\pmod m,
@@ -68,7 +69,12 @@ U\equiv\alpha d\pmod m,
 V\equiv\beta d\pmod m.
 \]
 
-This includes collisions by allowing one or both scalars to be zero. Write
+This representation is automatic when `m` is prime and the projected triple is
+collinear over \(\mathbb F_m\). Over a composite ring it is an explicit extra
+hypothesis; determinant zero alone need not imply a cyclic representation.
+Collisions are included by allowing one or both scalars to be zero.
+
+Write
 
 \[
 U=\alpha d+mA,
@@ -121,8 +127,10 @@ multiple of that factor.
 
 ## 3. Two-factor compatibility
 
-Let `u,v` be coprime, put `N=uv`, and suppose the triple is collinear modulo
-both factors. Construct signatures `L_u,L_v` using CMCRT8.
+Let `u,v` be coprime, put `N=uv`, and suppose cyclic-line representations have
+been chosen modulo both factors. This is automatic when `u,v` are prime and
+the projected triples are collinear in the two affine planes. Construct
+signatures `L_u,L_v` using CMCRT8.
 
 ### Corollary CMCRT9 — PROVED
 
@@ -158,12 +166,17 @@ vanishes exactly when `q=0`. ∎
 
 ## 4. Revised CRT target
 
-A positive saturated CRT theorem must control three types of local data:
+A positive saturated CRT theorem over prime factors must control three types of
+local data:
 
 1. collision directions, covered by CMCRT3;
 2. distinct-point local line directions `d` and scalar positions
    `alpha,beta`;
 3. the carry vectors `A,B` entering `L_m`.
+
+For composite local factors, one must additionally classify noncyclic
+zero-divisor incidences that do not admit the displayed direction
+representation.
 
 The new construction target is to force the two factor signatures to be
 incompatible unless `q` is nonzero, or to absorb the population with
