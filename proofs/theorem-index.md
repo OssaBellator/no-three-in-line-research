@@ -31,6 +31,10 @@ The numbering is local to this repository.
 | H3 | Dyadic shadow bound from bounded displacement multiplicity | PROVED | `docs/08-hyperbola-interleaver.md` |
 | H4 | Existence of an \(O(n\log n)\)-syndrome hyperbola pair | PROVED | `docs/08-hyperbola-interleaver.md` |
 | H5 | Hamiltonian-cycle decomposition by \(\operatorname{ord}(b/a)\) | PROVED | `docs/08-hyperbola-interleaver.md` |
+| G1 | Projective conic-pencil construction and four-point real line cap | PROVED | `docs/22-incidence-conic-pencil.md` |
+| G2 | Opposite-channel projection is a projective secant involution | PROVED | `docs/22-incidence-conic-pencil.md` |
+| G3 | Exact tangent and affine-secant profile from every opposite-channel anchor | PROVED | `docs/22-incidence-conic-pencil.md` |
+| G4 | Ratio normal form for modular incidence, with Euclidean-lift limitation | PROVED | `docs/22-incidence-conic-pencil.md` |
 | O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
