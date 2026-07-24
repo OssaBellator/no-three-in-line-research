@@ -24,6 +24,11 @@ saturated states with an exact cylinder law. Contracting the blocks recovers
 the identical companion host at exponent \(k-1\). Iterating this gives an
 exact recursive multiscale bank.
 
+The alternative CMR43 lift replaces each full fibre permutation by the
+quadratic-size conic family CMR35. It remains saturated, removes every
+monochromatic triple internal to one fibre, and gives `O(1/p)` conditional
+anti-concentration for every other triple at that lift level.
+
 ### CM2 — real line cap: height-sensitive but open
 
 For odd prime powers, every line intersection reduces to simple lower
@@ -42,10 +47,11 @@ O\left(1+\frac{p^t}{H}\right),
 where \(2t\) is the discriminant valuation. Large cells must therefore be
 both highly singular and supported on small primitive directions.
 
-A constant or repairable uniform line cap is still open, but the remaining
-exception is now height-weighted rather than global.
+A constant or repairable uniform line cap for the deterministic completed
+reciprocal remains open, but the exception is now height-weighted rather than
+global.
 
-### CM3 — syndrome reduced to harmonic direction energy
+### CM3 — deterministic and recursive harmonic energy separated
 
 Same- and cross-channel secants have explicit valuation quadratics and
 mixed-layer carry identities. Bounded same-channel displacement multiplicity
@@ -58,30 +64,30 @@ is impossible: CMR14 gives one exact top-digit vector repeated at least
 times. CMR15–CMR22 localize those repeats to disjoint blocks and install
 executable permutation banks.
 
-Define
-
-\[
-\mathcal E
-=
-\sum_{\{P,Q\}}
-\frac1{H(P,Q)}.
-\]
-
-CMR32 proves
+For the deterministic completed reciprocal, CMR32 gives
 
 \[
 T(R_{\mathbf c})
 \le
 \frac{2k}{3}\binom N2
 +
-\frac{2\sqrt N}{3}\mathcal E.
+\frac{2\sqrt N}{3}\mathcal E(R_{\mathbf c}).
 \]
 
-Finite data place \(\mathcal E\) near \(N\log N\). The one-channel
-syndrome target is therefore reduced to a near-linear harmonic direction-
-energy theorem, preferably after block contraction.
+A near-linear bound for this deterministic harmonic energy is still open.
 
-### CM4 — prime-power carry calculus: recursive decoder space constructed
+For the recursive bank, the analogous dispersion target is now proved:
+CMR38 gives the exact pair-difference law of a uniform recursive p-adic
+permutation, and CMR39–CMR40 prove
+
+\[
+\mathbb E\mathcal E=O(N\log^3N)
+\]
+
+even with the no-three terminal spread family at the base. Thus a saturated
+recursive state with near-linear polylogarithmic harmonic energy exists.
+
+### CM4 — prime-power carry calculus and local anti-concentration
 
 The branch now contains:
 
@@ -96,46 +102,58 @@ The branch now contains:
   \[
   \Delta_N=D_0+p^{k-1}M+p^{2k-2}D_1;
   \]
-- an exact first-separation signature \(q+M+p^{k-1}D_1=0\).
+- an exact first-separation signature \(q+M+p^{k-1}D_1=0\);
+- the affine-in-one-digit identity CMR41;
+- one-step anti-concentration CMR42;
+- the conic-family fibre lift CMR43, which removes the only weak
+  three-in-one-fibre case.
 
-The terminal state is now explicit at every prime: CMR33 proves that
+The terminal state is solved uniformly at every prime. CMR35–CMR37 also give a
+spread terminal base with one-cell probability `O(1/p)` and rank-two
+probability `O(1/p^2)`.
 
-\[
-F_p(0)=1,
-\qquad
-F_p(x)=[1+x^{-1}]_p
-\]
+The remaining decoder theorem is global: sum first-separation certificate
+weights across quotient levels without losing the local `O(1/p)` gain.
 
-is a no-three permutation, and CMR34 installs it simultaneously in the two
-terminal row blocks. The remaining decoder theorem is therefore only a
-concentration bound for nonterminal recursive first-separation certificates.
+### CM5 — CRT local-arc route corrected
 
-### CM5 — CRT saturation and mixed-collision criterion
-
-Synchronized local permutation pairs assemble to exact two-layer saturation.
-For a mixed collision
-
-\[
-P_1-P_0=uA,
-\qquad
-P_2-P_0=vB,
-\]
-
-the global determinant factors exactly as
+Synchronized local permutation pairs still assemble to exact global
+saturation, and mixed collisions retain the factorization
 
 \[
 \Delta(P_0,P_1,P_2)=uv\det(A,B).
 \]
 
-Under local modular arc hypotheses, every global real triple has this mixed
-form. Therefore disjoint scaled collision-direction sets give a positive
-ordered-box CRT assembly criterion.
+However, CMCRT6–CMCRT7 prove that the local modular-arc hypothesis in CMCRT4 is
+impossible for every saturated odd-prime local pair: an affine no-three set in
+\(\mathbb F_p^2\) has at most \(p+2\) points, whereas a saturated pair has
+`2p`.
 
-The remaining construction task is to build local pairs whose two scaled
-collision-direction sets are disjoint, rather than merely controlling local
-line caps.
+CMCRT8 replaces the collision-only picture by the exact local slope-carry
+signature
 
-### CM6 — finite coverage and digital progress
+\[
+L_m
+=
+\alpha\det(d,B)-\beta\det(d,A)+m\det(A,B),
+\qquad
+\Delta=mL_m.
+\]
+
+For coprime factors, CMCRT9 gives
+
+\[
+L_u=vq,
+\qquad
+L_v=uq,
+\qquad
+\Delta=uvq.
+\]
+
+The revised CRT target is therefore slope-carry incompatibility, not only
+collision-direction separation.
+
+### CM6 — finite coverage and digital branch
 
 Exact saturated no-three configurations are recorded at composite side lengths
 
@@ -149,30 +167,35 @@ Binary digit-linear one-channel no-three permutations are verified at
 8,16,32,64.
 \]
 
-The `64`-point matrix has no direct one-bit block extension to `128`.
+The direct one-bit extension of the CMR12 matrix to `128` is refuted. CMR44 now
+also proves, by an exact integer covering certificate, that the existing
+`64`-point CMR12 layer has no second-permutation no-three completion at all.
+The certificate already contradicts the mixed-triple constraints, without
+using triples internal to the proposed second layer.
 
-The unrestricted uniform terminal block has expected internal triple mass at
-least \((p-1)/3\), so a flat first-moment finish fails for \(p\ge5\). This no
-longer blocks the recursive construction: CMR33–CMR34 provide one explicit
-companion-compatible no-three terminal state for every prime and every
-exponent.
+Thus the digital route must search for a joint two-layer construction from the
+outset or replace the first layer; completing the current CMR12 layer is closed
+negatively.
 
 No scalable all-composite construction is yet known.
 
 ## Revised bottlenecks
 
-1. **Harmonic direction energy.** Prove
-   \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), ideally after contracting
-   the deterministic top-digit blocks.
-2. **Recursive first-separation concentration.** Bound the weighted mass of
-   signatures \(q+M+p^{k-1}D_1=0\) under the recursive CMR27 measure, with the
-   explicit CMR34 terminal state fixed at the base.
+1. **Recursive first-separation summation.** Combine CMR28–CMR29 with the
+   conic-fibre `O(1/p)` bound from CMR43 and prove a global normalized
+   certificate estimate across all quotient levels.
+2. **Deterministic harmonic direction energy.** Prove
+   \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), or show that the recursive
+   low-energy state can inherit a replacement for the CMR31 line cap.
 3. **Balanced small-height tangent lines.** Sum the remaining highly singular,
-   low-height directions without reverting to a global square-root cap.
-4. **Digital saturation at 64 and non-block lift to 128.** The direct bit-block
-   extension is refuted; unrestricted completion remains open.
-5. **CRT direction separation.** Construct synchronized local pairs satisfying
-   \(\mathcal D_u\cap\mathcal D_v=\varnothing\).
+   low-height deterministic directions without reverting to a global
+   square-root cap.
+4. **Joint digital construction.** Search for two compatible layers at `64`, or
+   a different first layer and a nonlinear non-block lift to `128`; the CMR12
+   completion subproblem is finished negatively.
+5. **CRT slope-carry incompatibility.** Build local saturated pairs for which
+   the two signatures `L_u,L_v` cannot simultaneously vanish except in an
+   explicitly absorbable family.
 
 ## Checks
 
@@ -186,11 +209,16 @@ python scripts/verify_prime_power_all_stratum_bank.py --max-modulus 125
 python scripts/verify_prime_power_terminal_mass.py --max-prime 13
 python scripts/verify_prime_power_terminal_configurations.py
 python scripts/verify_prime_power_terminal_family.py --max-prime 101 --max-exponent 4
+python scripts/verify_prime_power_terminal_spread.py --max-prime 19
 python scripts/verify_prime_power_recursive_quotient.py --max-modulus 125
 python scripts/verify_prime_power_recursive_determinant.py
+python scripts/verify_prime_power_recursive_harmonic.py --samples 100
+python scripts/verify_prime_power_lift_anti_concentration.py --max-prime 5
 python scripts/verify_crt_mixed_collision.py --max-modulus 60
+python scripts/verify_crt_slope_carry.py
 python scripts/verify_prime_power_tangent_parameter.py --max-modulus 243
 python scripts/verify_prime_power_harmonic_energy.py --max-modulus 243
+python scripts/verify_digital_64_completion_obstruction.py
 ```
 
 These are finite exact checks. They do not constitute a complete all-`n`
