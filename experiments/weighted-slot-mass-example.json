@@ -1,0 +1,15 @@
+{
+  "slots": ["s0", "s1", "s2", "s3"],
+  "events": [
+    {"name": "pair-01", "slots": ["s0", "s1"], "probability": "1/100"},
+    {"name": "pair-02", "slots": ["s0", "s2"], "probability": "1/100"},
+    {"name": "pair-03", "slots": ["s0", "s3"], "probability": "1/100"},
+    {"name": "pair-12", "slots": ["s1", "s2"], "probability": "1/100"},
+    {"name": "pair-13", "slots": ["s1", "s3"], "probability": "1/100"},
+    {"name": "pair-23", "slots": ["s2", "s3"], "probability": "1/100"},
+    {"name": "triple-012", "slots": ["s0", "s1", "s2"], "probability": "1/200"},
+    {"name": "triple-013", "slots": ["s0", "s1", "s3"], "probability": "1/200"},
+    {"name": "triple-023", "slots": ["s0", "s2", "s3"], "probability": "1/200"},
+    {"name": "triple-123", "slots": ["s1", "s2", "s3"], "probability": "1/200"}
+  ]
+}
