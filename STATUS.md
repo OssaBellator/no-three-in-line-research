@@ -85,15 +85,18 @@ unresolved case.
 72. **Vertical child-pencil dichotomy.** The remaining external child load is either \(O(N^2)\) per depth after normalization or exposes an explicit alternating endpoint bank.
 73. **Quantitative frozen-bank certificate.** Child-pencil mass controls the extracted star size, and a frozen bank forces normalized rank-\(1/2/3\) concentration at least \(t/216\).
 74. **Balanced reciprocal-law classification.** Exact cell balance inside the completed-reciprocal family exists precisely for primes \(p\equiv1\pmod4\); reweighting cannot solve \(p\equiv3\pmod4\).
-75. **Prime-seven balanced factorization.** Seven integer no-three permutations partition the \(7	imes7\) grid and generate saturated recursive banks for every \(N=7^k\).
+75. **Prime-seven balanced factorization.** Seven integer no-three permutations partition the \(7\times7\) grid and generate saturated recursive banks for every \(N=7^k\).
 76. **Prime-seven spectral syndrome.** A sharpened factorization has pair-difference multiplicity at most three and expected syndrome below \((36/7)(k-1)N^2+(29/9)N^2\).
+77. **Global-baseline alternating compression.** A globally nonimproving, low-excess endpoint bank gives disjoint defects, a heavy outside line, or a cubic-root smaller alternating bank; uncharged expansion reaches size below \(2160\) after \(O(\log\log t)\) levels.
+78. **Sharp small matching threshold.** Every degree-two forbidden endpoint board of size at least four has a perfect matching, while size three can fail.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Alternating two-colour carry-core termination and conversion.
-- Conversion of the CMR112 rank-\(1/2/3\) child-pencil alternatives into a decreasing joint state or a paid carry/quotient defect.
+- Alternating two-colour carry-core termination on the prime-field route.
+- A no-double-charge ledger for the CMR125 excess, disjoint-defect, and heavy-line alternatives across all prime-power nodes and scales.
+- Elimination or exact classification of the absolute endpoint-bank residual class below \(2160\).
 - A lexicographic potential paying for fine stars recreated by later coarse repairs.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem.
 - Removal or absorption of the square-root divisor-collision boundary.
@@ -118,13 +121,14 @@ unresolved case.
 - A saturated odd-prime CRT factor cannot satisfy the modular-arc premise of the simple direction-separation theorem.
 - The weak recursive-compatible child load is not the ordinary finer-prefix collateral: a parent-node move changes its row residue class.
 - No balanced weighting of completed-reciprocal maps exists when \(p\equiv3\pmod4\).
+- A degree-two forbidden endpoint board need not have a perfect matching at size three.
 
 ## Bottom line
 
-There is no complete proof. The prime-field and prime-power repair routes now
-meet at the same explicit obstruction: termination of an alternating
-rank-\(1/2/3\) concentration expansion. The composite route additionally has
-full nonlinear prime-power channels, stable recursive banks, quadratic-order
-syndrome bounds, and balanced \(7^k\) banks outside the reciprocal family. It
-still needs exact elimination of the remaining alternating defects and then a
-coverage mechanism for arbitrary side lengths.
+There is no complete proof. On the composite prime-power route, unbounded
+alternating expansion is now ruled out: every low-excess branch is paid by
+excess, disjoint defects, or a heavy outside line, or contracts to an absolute
+bank below \(2160\). What remains is global no-double-charge accounting, the
+bounded endpoint core, repair interaction across scales, and finally coverage
+of arbitrary side lengths. The prime-field route still needs its corresponding
+global alternating carry-core conversion.
