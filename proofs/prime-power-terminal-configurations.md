@@ -32,7 +32,9 @@ p\in\{3,5,7,11,13,17,19,23,29,31\}
 \]
 
 and every \(k\ge2\), the permutations in the following table make
-\(S_{p,k}(P,Q)\) a saturated local configuration with no real collinear triple.
+\(S_{p,k}(P,Q)\) an executable two-layer terminal state with one cell from
+each layer in every terminal column, each prescribed row block used exactly
+once, and no real collinear triple.
 
 | \(p\) | \(P(0),\ldots,P(p-1)\) | \(Q(0),\ldots,Q(p-1)\) |
 |---:|---|---|
@@ -76,18 +78,24 @@ difference of two column indices in one layer. Hence
 |E|\le p-1.
 \]
 
-The verifier checks \(\Delta_p\ne0\) for every triple. If \(D=0\), this implies
-\(E\ne0\), so the determinant is nonzero for every `a`. If \(D\ne0\) and
+The verifier checks \(\Delta_p
+e0\) for every triple. If \(D=0\), this implies
+\(E
+e0\), so the determinant is nonzero for every `a`. If \(D
+e0\) and
 \(a=p^{k-1}\ge p^2\), then
 
 \[
 |aD|\ge p^2>p-1\ge|E|,
 \]
 
-so \(aD+E\ne0\). Thus the check at \(k=2\) proves all \(k\ge2\).
+so \(aD+E
+e0\). Thus the check at \(k=2\) proves all \(k\ge2\).
 
-Each layer is a permutation of its `p`-point row block, and the two row blocks
-are disjoint modulo `a`, so saturation inside the terminal columns is exact.
+Each layer bijects the terminal columns to its prescribed `p`-point row block,
+and the two row blocks are disjoint modulo `a`. The state is therefore
+compatible with the global two-layer saturation constraints. It is not, by
+itself, a row-saturated subgrid.
 
 ## Consequence
 
