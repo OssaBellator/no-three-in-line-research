@@ -1,6 +1,6 @@
 # Status and honesty ledger
 
-**Last updated:** 24 July 2026
+**Last updated:** 25 July 2026
 
 ## External status
 
@@ -105,26 +105,54 @@ remains open. This repository does **not** contain a complete proof.
   created only through an alternating exchange cycle with an earlier deleted
   cell, giving an acyclic certificate-ancestry graph.
 
-### Local-load and dyadic conflict endpoint
+### Exact parent line and local-load endpoint
 
-- Sampling the complete parent permutation and applying the matching-space
-  local lemma gives a sharp contrapositive: every frozen parent has one board
-  vertex with weighted rank-\(1/2/3\) load above \(1/24-1/t\).
-- For \(t\ge48\), rank one or rank two exposes an executable alternating bank,
-  or one parent row/column carries more than
+- At the top primitive-height slice, the exact rank-three vertex load is bounded
+  by
   
   \[
-  \frac{t(t-1)(t-2)}{144}
+  4t\sum_{K\ge H}\varphi(K).
   \]
   
-  candidate-only triples.
-- One dyadic primitive-height band carries at least a \(1/\lceil\log_2t\rceil\)
-  fraction of that cubic load.
-- In a band \(H\le\max(|u|,|v|)<2H\), one candidate cell belongs to fewer than
-  \(3t^2\) conflicts and one compatible cell pair has codegree below \(t/H\).
-- For \(H\ge t^\varepsilon\), these are exactly the standard bounded-conflict
-  hypotheses. A published conflict-free matching theorem therefore gives an
-  almost-perfect derangement matching avoiding the whole band.
+  For odd \(t\ge95\), one complete parent permutation avoids every
+  candidate-only board triple of height at least \(0.49t\). This statement does
+  not exclude anchored triples involving fixed outside points.
+- For odd \(t\ge175\), the same exact cleaning remains possible while all cells
+  from \(\lfloor t/100\rfloor\) previously discovered real lines are forbidden.
+  Thus an anchored-free frozen parent exposes a linear reserve of distinct
+  candidate-only lines below height \(0.49t\).
+- Boundary geometry sharpens the line-union model. Any \(t-3\) candidate-only
+  lines are simultaneously avoidable in the full derangement host.
+- A target-specific parent move needs to omit only one designated old endpoint.
+  In that host every family of at most \(t-2\) real lines is simultaneously
+  avoidable when all available cells on those lines are removed. A sharp
+  \(t-1\)-line blocker has a rigid one-slack Hall-boundary factorization.
+- Under the exact target-specific matching law, the rank-\(1/2/3\) cylinder
+  maxima are
+  
+  \[
+  \frac1{t-1},
+  \qquad
+  \frac1{(t-1)^2},
+  \qquad
+  \frac1{(t-1)^2(t-2)}.
+  \]
+- The target-specific matching-space local lemma gives a stronger
+  contrapositive. If no anchored rank-one or rank-two certificate exists, some
+  parent source row or target column supports more than
+  
+  \[
+  \frac{t(t-1)(t-2)}{48}
+  \]
+  
+  candidate-only triples, occupying more than \(t/24\) distinct real-line
+  signatures. A complete target-specific parent permutation can remove any
+  chosen \(\lfloor t/24\rfloor\) of those line signatures at once.
+- In one dyadic band \(H\le\max(|u|,|v|)<2H\), one candidate cell lies in fewer
+  than \(3t^2\) conflicts and one compatible pair has codegree below \(t/H\).
+  For \(H\ge t^\varepsilon\), a published conflict-free matching theorem gives
+  an almost-perfect band-conflict-free matching. Exact completion of that
+  almost-perfect object remains open.
 
 ## Important correction
 
@@ -141,22 +169,25 @@ No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-1. **Exact high-band completion.** Adapt the conflict-free
-   matching-and-covering theorem to the duplicated-row reserve model, obtaining
-   a full parent permutation rather than an almost-perfect matching while
-   preserving all protected conflicts.
-2. **Low-height carry absorption.** Control dyadic bands below
-   \(t^\varepsilon\) using first-separation, primitive direction, quotient, and
-   carry signatures inside one fixed envelope.
-3. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
+1. **Target-specific blocker conversion.** Classify or absorb the sharp
+   \(t-1\)-line Hall-boundary factorization, or show that the three possible
+   target-endpoint blockers of one old triple cannot coexist with the inherited
+   prefix and carry data.
+2. **Exact intermediate-band completion.** Upgrade the almost-perfect
+   conflict-free matching in a dyadic primitive-height band to a complete
+   parent permutation while retaining the line reserve and target omission.
+3. **Low-height carry absorption.** Control bands below the exact top-slice
+   threshold using first-separation, primitive direction, quotient, and carry
+   signatures inside one fixed envelope.
+4. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
    coarse prefix or joint-parent repairs.
-4. **Prime-field terminal conversion.** Transfer the inherited-envelope or
+5. **Prime-field terminal conversion.** Transfer the inherited-envelope or
    reserve-completion mechanism to prime-field carry cycles.
-5. **Square-root divisor boundary.** Remove or absorb the residual nearly
+6. **Square-root divisor boundary.** Remove or absorb the residual nearly
    singular collision terms.
-6. **Further balanced prime families.** Extend the non-reciprocal grid
+7. **Further balanced prime families.** Extend the non-reciprocal grid
    factorization beyond prime seven.
-7. **CRT, product, and side-length coverage.** Control mixed projections and
+8. **CRT, product, and side-length coverage.** Control mixed projections and
    cover arbitrary integer \(n\).
 
 ## Important refutations retained in the notebook
@@ -168,8 +199,7 @@ No later valid theorem depends on the refuted strengthening.
 - Wall expansion and synchronized one-colour cycle moves can be trapped.
 - A spread matching measure does not automatically inherit the complete
   permutation negative-dependency graph.
-- Affine modular permutations cannot directly solve the problem for
-  \(N\ge5\).
+- Affine modular permutations cannot directly solve the problem for \(N\ge5\).
 - Prime-field hyperbola line caps do not survive natural composite substitution.
 - The recorded 64-point digital layer has no second-permutation no-three
   completion.
@@ -183,9 +213,11 @@ No later valid theorem depends on the refuted strengthening.
 ## Bottom line
 
 There is no complete proof. On the composite prime-power route, bank
-construction, first-separation summation, prefix collateral, terminal
-contraction, parent lifting, Hall peeling, and high-band bounded-conflict
-verification are closed. The principal immediate theorem is **exact reserve
-completion for high primitive-height bands**; low bands still require the
-fixed-envelope carry ledger. A coarse-to-fine budget and arbitrary side-length
-coverage remain necessary afterward.
+construction, first-separation summation, prefix collateral, target-load
+contraction, parent lifting, Hall peeling, and target-specific line avoidance
+are closed through the sharp \(t-1\)-line endpoint. Candidate-only triples above
+height \(0.49t\) are exactly cleanable, and anchored-free freezing forces a cubic
+localized wall. The principal immediate theorem is conversion of the sharp
+Hall-boundary blocker or exact completion of the intermediate-height conflict
+system. A coarse-to-fine budget and arbitrary side-length coverage remain
+necessary afterward.
