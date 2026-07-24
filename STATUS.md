@@ -11,8 +11,7 @@ D(n)=2n
 \]
 
 remains open. A July 2026 paper proves the analogous maximum `kn` for every
-fixed `k>=3` and sufficiently large `n`, while leaving `k=2` as the exceptional
-case.
+fixed `k>=3` and sufficiently large `n`, while leaving `k=2` exceptional.
 
 This repository does **not** contain a complete proof.
 
@@ -36,26 +35,10 @@ potential or bounded-denominator absorber.
 
 ## All-n prime-patching track
 
-### Exact degree and transfer interfaces
+### Prime-gap-scale macro architecture
 
-The branch proves the boundary and arbitrary-reservoir degree bookkeeping,
-delete-and-restore selection endpoints, and the prime-gap transfer theorem under
-a sufficiently wide absorber. The published backward prime-gap exponent
-requires a fixed positive multiple of `m^0.525`, with the usual constant and
-rounding slack.
-
-### Matching supply
-
-Every saturated source decomposes into two perfect matching layers. Uniform
-subsets give exact hypergeometric matching reservoirs. Independent old-column
-and old-row template sampling cannot have constant matching-admissible density at
-sublinear width, so matching coordinates must be correlated through source
-edges.
-
-### Slab-optimal square-root macro geometry
-
-The product-LLL macro construction does not require monotone endpoint order.
-Using consecutive column-slab pools permits the exponent-optimal balance
+Every saturated source decomposes into two perfect matching layers. Consecutive
+column-slab pools give the exponent-optimal disjoint square-root-macro balance
 
 ```text
 macro variables M = m^(1/20+o(1))   = m^0.05
@@ -64,175 +47,150 @@ macro width W     = m^(19/40+o(1))  = m^0.475
 total width MW    = m^(21/40+o(1))  = m^0.525.
 ```
 
-The branch proves:
+The branch proves universal matching-pool supply, exact degree restoration,
+internal no-three macro geometry, conditioned fixed-rank spread, and optimality
+of these exponents among disjoint `O(sqrt(R))` macro architectures.
 
-- enough pairwise disjoint slab matching pools;
-- exact equal-margin row/column restoration;
-- internally no-three square-root macro patches by a product local lemma;
-- conditioned fixed-rank cylinder spread `O(R^-q)`;
-- optimality of the `m^0.05` macro-count exponent within any disjoint
-  `W=Theta(sqrt(R))` architecture.
+### Global labels and controller-aware safety
 
-### Coordinate correction and global allocation
-
-A numerical candidate label is an actual final row or column. Selecting only
-`W<L` labels from an `L`-coordinate interval and leaving the others empty does
-**not** preserve saturation; arbitrary label compression does not preserve
-collinearity. The valid replacement uses all
-
-\[
-T=MW
-\]
-
-final new rows and all `T` final new columns. A balanced ownership assigns every
-movement label to one macro, and one global refined perfect matching assigns
-every refill label exactly once.
-
-The strongest direct allocation criterion is complementary degree. For every
-incompatible triple `(i,A,B)`, it is sufficient that
+Every final numerical row and column must be used. Balanced movement-label
+ownership and one global refined perfect matching provide a saturation-compatible
+allocation. The strongest direct criterion is complementary degree:
 
 \[
 \deg_{J_i}(A)+q_B
 \ge
-T+O(\sqrt{T\log T}),
+T+O(\sqrt{T\log T})
 \]
 
-where `q_B` is the average refill degree across the macro graphs. This strictly
-weakens separate `T/2` minimum-degree requirements.
+for every incompatible `(i,A,B)`, where `q_B` is the average refill degree.
 
-### Controller-aware source safety
+Fixed-core safety is insufficient because unselected active-pool edges remain in
+the source. The correct controller-aware domain permits a value only when every
+blocker pair through either inserted cell contains its selected controller edge,
+which is deleted, and when its same-slot movement/refill pair has no retained
+source anchor.
 
-Fixed-core safety is not enough for an active matching pool: unselected pool
-edges remain in the source. The correct unary domain consists of source-edge
-values whose movement and refill cells have no blocker pair disjoint from the
-selected controller edge, and whose same-slot movement/refill pair has no
-retained source anchor.
+### External macro geometry is closed
 
-If the controller-aware graphs admit the global allocation, every unary
-retained-pair and same-slot anchor certificate is removed value by value.
+At the slab-optimal scale, the branch proves `o(1)` incident probability mass for
+all remaining external classes:
 
-### Weighted external geometry is closed at the slab scale
+- cross-macro patch pairs;
+- pure movement and pure refill triples;
+- mixed patch triples;
+- ordinary two-slot source-anchor pairs.
 
-All anchors or geometric witnesses producing the same forbidden slot-value
-pattern are grouped into one event. The weighted local lemma charges total
-incident probability rather than raw event count.
+Thus controller-aware global allocation alone would give the required
+`Omega(m^0.525)` saturated no-three patch.
 
-At the slab-optimal exponents, the branch proves:
+### Failure structure and monotone trades
 
-- every patch-only cross-macro rank-two event has total incident mass `o(1)`;
-- all-movement and all-refill rank-three mass is `o(1)` by gcd sums;
-- every mixed rank-three class is `o(1)` by divisor factorization;
-- every ordinary two-slot source-anchor class is `o(1)` by congruence and
-  divisor-square sums.
+Positive-density controller-aware failure forces one of:
 
-Therefore, once controller-aware global allocation is available, the weighted
-endpoint produces the full `m^0.525` patch. Cross-macro completion energy is no
-longer a separate bottleneck.
+1. a blocker star with `Omega(m^0.475)` distinct rays;
+2. `Omega(m^0.525)` resource-disjoint bad entries with distinct labels and
+   controllers and endpoint-disjoint blocker pairs.
 
-### Structure forced by controller-shadow failure
-
-A fixed source secant can witness at most one movement candidate per new row and
-one refill candidate per new column. Consequently, positive-density failure of
-controller-aware safety forces one of:
-
-1. a blocker star with `m^0.475` distinct rays; or
-2. `m^0.525` resource-disjoint bad entries with distinct new labels, controller
-   edges, and endpoint-disjoint blocker pairs.
-
-The second alternative contains a matching-layer endpoint bank. Endpoint
-permutations preserve saturation, and the controller-shadow potential has an
-exact removal-credit minus insertion-cost identity. Successful paid trades
-strictly decrease a fixed nonnegative integer potential while preserving all
-controller pools, so any uniform conversion theorem terminates automatically.
+Endpoint permutations preserve saturation and satisfy an exact
+removal-credit-minus-insertion-cost identity. Every successful paid trade
+strictly decreases a fixed nonnegative integer controller-shadow potential while
+preserving the controller pools, so a uniform conversion theorem terminates
+automatically.
 
 ### Resource-bank source validity is closed
 
-The endpoint bank can be thinned to
+Assume the resource endpoint rectangle has unary forbidden density `o(1)`. Thin
+its `Q=Omega(m^0.525)` endpoints to
 
 \[
 q=m^\kappa,
 \qquad
-0<\kappa<\dfrac1{40},
+0<\kappa<\frac1{40}.
 \]
 
-without losing asymptotic usefulness for source preparation. Under sparse unary
-endpoint shadow, the branch now proves a source-admissible endpoint permutation
-by combining:
+The branch then constructs a saturation-preserving no-three endpoint permutation
+using:
 
 - superregular endpoint-host pruning;
-- a permutation local lemma for unary cells, transpositions, anchored
-  two-step transitions, and directed 3-cycles;
-- an exact product factorization and divisor bound for anchored transitions;
-- support-rank thinning for rank-four anchored pairs and higher-support inserted
-  triples.
+- a permutation local lemma for unary cells, transpositions, directed
+  transitions, and directed 3-cycles;
+- a divisor factorization for anchored transitions;
+- support-rank thinning for rank-four anchored pairs and all higher-support
+  inserted triples.
 
-Thus the resource-bank branch always has a saturation-preserving no-three
-endpoint trade once its unary endpoint forbidden density is `o(1)`. Source
-validity is no longer part of the remaining resource obstruction.
+Source admissibility is therefore no longer part of the resource-bank
+bottleneck.
 
-### Guaranteed credit can be protected
+### Diffuse insertion shadow is closed exactly
 
-Each resource entry supplies one designated removal-credit unit. Replacement
-cells that directly recreate that incidence form a partial matching on the
-endpoint rectangle. Their union may be added to the unary permutation-LLL family.
-If its maximum row or column degree is `o(q)`, all `q` guaranteed credit units are
-protected at negligible local-lemma cost.
+The `q` designated removal-credit incidences may be protected from direct
+recapture by forbidding a union of endpoint partial matchings.
 
-The paid endpoint then succeeds once the residual unary and binary insertion
-shadow satisfy
+After that, forbid every endpoint cell with any positive residual unary shadow
+and every compatible endpoint-cell pair with any positive residual binary
+shadow. If the simple support degrees satisfy
 
-```text
-A_res = o(q^2),
-B_G   = o(q^3).
-```
+\[
+\boxed{
+d_{\rm rec}+d_1=o(q),
+\qquad
+d_2=o(q^2),
+}
+\]
 
-Failure produces a rich recapture fibre, residual unary-shadow core, or residual
-binary-shadow core.
+the permutation local lemma produces a source-admissible endpoint trade with
+
+\[
+\mathcal I=0.
+\]
+
+The positive removal credit then gives a strict potential decrease. Witness
+multiplicity is irrelevant: each positive support is forbidden once.
 
 ## What remains conditional
 
-The prime-patching track lacks one weighted controller-shadow conversion theorem.
+The remaining theorem is support-concentrated controller-shadow conversion.
+One must prove at least one of the following routes closes every case:
 
-- **Direct form:** prove the controller-aware global label graphs satisfy the
-  complementary-degree allocation criterion.
-- **Star form:** convert the forced blocker star into an improving alternating,
-  endpoint, rectangle, or tomographic trade.
-- **Resource form:** handle dense unary endpoint shadow, rich designated-credit
-  recapture fibres, or the residual weighted quantities `A_res` and `B_G`.
+- **direct allocation:** the controller-aware global label graphs satisfy the
+  complementary-degree criterion;
+- **blocker-star conversion:** an alternating, endpoint, rectangle, cycle, or
+  tomographic trade improves the forced star;
+- **resource concentration conversion:** handle a dense unary endpoint source
+  shadow, rich designated-credit recapture fibre, unary insertion-shadow fibre,
+  or binary insertion-shadow star.
+
+Diffuse weighted residuals, endpoint source validity, cross-macro completion
+energy, and termination are no longer open.
 
 The older constant-width width-two route remains a secondary diagnostic and
 requires blocker-endpoint clustering or protected cross-block deletion trades.
 
 ## Important refutations and finite barriers
 
-- Constant-density candidate pruning cannot overcome the candidate-only
+- Candidate-only constant-density pruning cannot beat the
   `Omega(n^4 log n)` triple population.
 - Repeated boundary-only one-strip extension fails before side five.
 - The unrestricted row-lift bank is not automatically clean.
 - Aligned off-diagonal block doubling is impossible at every width.
 - Independent sheared row/column boxes cannot have constant matching density at
   sublinear width.
-- Canonical matching-block cleanliness is not universal.
-- Independent constant-width deletion does not cover non-axis blockers at
+- Independent constant-width deletion does not cover nonaxis blockers at the
   prime-gap scale.
-- Unary blocker-cover domains are empty on both stored matching layers from side
-  seven through ten.
-- Every stored raw two-block width-two partition at sides eight through ten
-  fails before patch-patch interactions.
-- Unused numerical label coordinates cannot be discarded while claiming a
-  smaller saturated grid.
-- Fixed-core safe domains do not by themselves handle blocker pairs using
-  unselected active-pool edges.
+- Unused numerical labels cannot be discarded while claiming a smaller
+  saturated grid.
+- Fixed-core safe domains do not handle blocker pairs using unselected
+  active-pool edges.
 
 ## Bottom line
 
-There is no complete proof. The prime-patching branch now closes matching-pool
-supply, exponent-optimal prime-gap-scale internal macro width, degree
-restoration, fixed-rank spread, saturation-compatible global allocation
-interfaces, all weighted rank-two/rank-three completion energy, and source-valid
-endpoint conversion in the resource-bank branch.
+There is no complete proof. The prime-patching branch now closes matching supply,
+exponent-optimal macro width, degree restoration, fixed-rank spread,
+saturation-compatible global allocation interfaces, all external weighted
+completion energy, source-valid resource endpoint conversion, diffuse insertion
+shadow, and monotone termination.
 
-The exact remaining theorem is weighted controller-shadow improvement for the
-direct, blocker-star, rich-recapture, or residual-shadow alternatives. Until
-that theorem is proved, the branch does not prove the no-three-in-line
-conjecture.
+The exact remaining theorem concerns only the direct, blocker-star, and four
+support-concentrated resource alternatives above. Until that theorem is proved,
+the branch does not prove the no-three-in-line conjecture.
