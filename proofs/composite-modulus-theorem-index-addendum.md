@@ -47,3 +47,5 @@ CMR101. The main composite index remains in
 | CMR140 | The exact expected collateral of a four-board is bounded by \((3/4)T_1+(2/3)T_2+(1/2)T_3\) | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
 | CMR141 | Every positive global saturated minimum generates a finite directed cycle of four-endpoint trades | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
 | CMR142 | Created and removed triples balance exactly around every four-core cycle | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
+| CMR143 | Two explicit saturated \(N=4\) states form a potential-one terminal two-cycle under four-endpoint moves | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/79-four-endpoint-trap-counterexample.md` |
+| CMR144 | The four-core two-cycle lies above an explicit potential-zero saturated state, refuting universal local descent | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/79-four-endpoint-trap-counterexample.md` |
