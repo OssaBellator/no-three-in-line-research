@@ -395,9 +395,14 @@ expensive.  AC3v verifies scope completeness for every independent
 family produced from it.  AC3w prevents double payment, and AC3x turns
 density into a finite witness-labelled AC2d return.
 
-The remaining same-token frontier is therefore the arithmetic
-classification of AC3u's exact rank-at-most-three phase-sensitivity
-witness and of the dense structural label selected by AC3x.
+AC3y--AC3z in
+[`alternating-core-phase-sensitivity-localization.md`](alternating-core-phase-sensitivity-localization.md)
+further reduce the same-token output.  Every phase-sensitive dense
+class retains at least one ninth of its weight on one flipped block and
+one discrepancy kind, and exact phase values compress to their
+behavioral quotient.  The remaining frontier is completeness of the
+concrete arithmetic chart, or classification of its explicit
+same-label one-block derivative.
 
 `scripts/verify_ac_primal_conflicts.py` exhausts arbitrary Boolean
 factors on a four-cell system, grid factor/constraint states on a

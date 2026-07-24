@@ -654,6 +654,15 @@ exceptional core. The remaining geometric obligation is to prove that
 the actual role dictionary is phase-realized, anchor-realized, or
 terminally labelled.
 
+For canonical phase-block roles, AC3s--AC3z now make that phase branch
+fully local.  The common token has rank at most three, the primal graph
+gives exact additivity, all sensitivity occurs on one block, and raw
+phase values compress to the coordinate observational quotient.
+Append-only quotient refinements are monotone tickets under a complete
+subpolynomial arithmetic chart.  The remaining geometric obligation is
+therefore chart completeness, or classification of one explicit
+same-chart one-block derivative.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
 four quotient states, a finite ticket trace, and every strict-support

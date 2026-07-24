@@ -305,10 +305,6 @@ collateral are invariant inside each mismatch fibre, AC3p applies with
 this absolute alphabet. Otherwise the exact common alphabet has at most
 \(h^3-1\) states and failure of compression exposes two exact phases
 with the same mismatch word plus one local legality or cost discrepancy.
-At this stage the remaining role work is no longer an arbitrary fan
-label: it is scope-completeness for each closure move and arithmetic
-classification of an explicit rank-at-most-three phase-sensitivity
-witness.
 
 [`alternating-core-primal-conflict-completion.md`](alternating-core-primal-conflict-completion.md)
 proves AC3v--AC3x and closes the scope-completeness half of that
@@ -320,9 +316,25 @@ private paid sets are disjoint and the common token is counted once.
 This applies phase by phase to AC3p.1.  If the canonical graph is dense,
 its edges have finitely many structural incidence labels (only eighteen
 cross words for one rank-three certificate kind), and AC2d localizes the
-paid overload to one such label.  The remaining role frontier is now
-arithmetic classification of that dense label and of AC3u's explicit
-rank-at-most-three phase-sensitivity witness.
+paid overload to one such label.
+
+[`alternating-core-phase-sensitivity-localization.md`](alternating-core-phase-sensitivity-localization.md)
+proves AC3y--AC3z.  Every AC3u failure already occurs across a phase flip
+in one block while the mismatch word, and hence token discharge, stays
+fixed.  Weighted failures retain at least \(1/9\) of their mass in one
+block/discrepancy-kind class, or \(1/(9T)\) when combined with AC3x's
+structural labels.  Exact phase names then compress to the coarsest
+coordinate observational quotient of size
+\(a_{\rm eff}=\prod_i k_i-1\).  AC3p uses \(a_{\rm eff}\), not the raw
+\(h^3-1\) alphabet.  Finally, any proposed tuple of existing
+carry/denominator/quotient/orbit labels either determines all behavior
+or returns two phases with the same tuple and an explicit one-block
+derivative.  Under append-only history, the coordinate observational
+partitions refine monotonically; a complete chart bounds strict
+refinements by its total label count, while any history reset is an
+AC3e reopening.  The remaining role frontier is this concrete
+arithmetic-chart completeness statement; arbitrary multi-block
+sensitivity and irrelevant raw phase multiplicity are closed.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -412,6 +424,9 @@ upgrade AC6 while those inputs remain open.
 - exhaust canonical primal projections, including a triple spanning
   three repairs, exact factor/payment additivity, and finite structural
   incidence labels;
+- exhaust one-block phase derivatives, coordinate observational
+  quotients, arithmetic-chart audits, and weighted sensitivity
+  localization;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 

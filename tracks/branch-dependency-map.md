@@ -50,6 +50,10 @@ projection of all finite factor and constraint scopes proves exact
 scope completion and payment additivity, while a dense projection is
 returned with one finite structural incidence label.  These results do
 not import an arithmetic expansion theorem from another branch.
+AC3y--AC3z are also internal: they localize all phase sensitivity to one
+block, compress exact phases by observable behavior, and audit any
+proposed arithmetic chart.  They do not assume that OP2 or RI has
+already proved that chart complete.
 
 ## Independent selection endpoints
 

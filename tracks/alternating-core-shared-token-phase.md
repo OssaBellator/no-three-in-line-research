@@ -324,9 +324,16 @@ AC3v--AC3w in
 [`alternating-core-primal-conflict-completion.md`](alternating-core-primal-conflict-completion.md):
 project every exact factor and constraint scope onto its repair
 envelopes.  AC3x sends a dense canonical graph to a paid finite
-structural label.  The remaining geometric check is arithmetic
-classification of that dense label and of the explicit
-phase-sensitivity witness.
+structural label.
+
+AC3y--AC3z in
+[`alternating-core-phase-sensitivity-localization.md`](alternating-core-phase-sensitivity-localization.md)
+replace the raw exact alphabet by its coordinate observational quotient
+and replace every multi-block sensitivity witness by a one-block
+derivative.  A proposed arithmetic chart either determines all
+relations and costs or exposes an explicit same-chart derivative.  The
+remaining geometric check is completeness of the concrete
+carry/denominator/quotient/orbit chart for those one-block flips.
 
 The important remaining numerical case is no longer an unbounded fan.
 It is the finite phase-collateral profile in AC3p.1.  Repeated factors

@@ -298,7 +298,15 @@ If the relations are invariant but a private cost is not, its defining
 failure gives conclusion 2.  If only the fixed cost fails invariance,
 conclusion 3 holds.  These exhaust the definition. \(\square\)
 
-## Dictionary after AC3s--AC3u
+[`alternating-core-phase-sensitivity-localization.md`](alternating-core-phase-sensitivity-localization.md)
+sharpens both outputs of AC3u.  AC3y replaces every same-mismatch
+rank-at-most-three witness by a one-block phase flip, retaining at least
+one ninth of any weighted witness family in one block/kind class.  AC3z
+identifies phases with identical observable behavior and applies AC3p
+to the resulting effective alphabet, which can be much smaller than
+\(h^3-1\).
+
+## Dictionary after AC3s--AC3z
 
 For a canonical phase-block certificate token in a scope-complete
 support-conflict graph, the same-token branch now has a finite audit:
@@ -307,26 +315,31 @@ support-conflict graph, the same-token branch now has a finite audit:
    returns to the anchor-realized or terminal route;
 2. **literal-invariant:** an absolute alphabet of at most seven, handled
    by AC3p--AC3t;
-3. **small exact phase:** at most \(h^3-1=p^{o(1)}\) states, handled by
-   AC3p--AC3q;
-4. **large exact phase:** one explicit rank-at-most-three sensitivity
-   witness for carry, denominator, quotient, or orbit classification.
+3. **small observable phase:** the behavioral quotient has
+   \(a_{\rm eff}=p^{o(1)}\) states, handled by AC3p--AC3q even when the
+   raw exact alphabet is large;
+4. **large observable phase:** one block has large observational rank,
+   and AC3y returns an explicit one-block legality or cost derivative.
 
 A token which is not represented by canonical phase blocks remains in
 the anchor-realized or terminally labelled branches of the role
 dictionary.  A purported compatible fan whose private supports overlap
 exposes a missing scope-conflict edge instead of entering this theorem.
 
-Thus the remaining role frontier is narrow: classify exact phase
-sensitivity on at most three block variables.  Scope completeness no
-longer requires a move-by-move pairwise assertion: AC3v supplies it
-canonically from the full repair envelopes and exact scoped factors.
-If that canonical graph is dense, AC3x preserves current paid weight
-while localizing the failure to one structural incidence type; the
-arithmetic classification of that type remains open.
+Scope completeness no longer requires a move-by-move pairwise
+assertion: AC3v supplies it canonically from the full repair envelopes
+and exact scoped factors.  If that graph is dense, AC3x preserves
+current paid weight while localizing the failure to one structural
+incidence type.  AC3y then localizes phase sensitivity at an additional
+loss of at most nine.  The remaining role frontier is to prove that the
+existing carry/denominator/quotient/orbit chart is complete with
+subpolynomial image, or classify AC3z.1's explicit same-chart
+one-block derivative.
 
 `scripts/verify_ac_canonical_roles.py` checks the rank-three mismatch
 bound, exact and compressed product relations, sensitivity witnesses,
 and private-support extraction on exhaustive small phase systems.
 `scripts/verify_ac_primal_conflicts.py` independently checks the exact
 scope projection and additive identities.
+`scripts/verify_ac_phase_sensitivity.py` checks the one-block audit and
+behavioral quotient exhaustively on small phase products.

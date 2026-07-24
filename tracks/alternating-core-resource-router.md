@@ -234,8 +234,11 @@ witness.  AC3v--AC3w construct the scope-complete conflict graph from
 the exact repair envelopes, factor scopes, constraints, and private paid
 sets, and prove exact collateral and payment additivity on every
 independent family.  AC3x gives a dense graph a finite paid structural
-label.  What remains is to pass that label and the sensitivity witness
-to the existing carry/BDA/RI classifiers.
+label.  AC3y further localizes every sensitivity witness to one block
+and one discrepancy kind with weighted loss at most nine, while AC3z
+compresses behaviorally indistinguishable exact phases.  What remains
+is to prove completeness of the concrete carry/BDA/RI chart or classify
+the explicit same-chart one-block derivative.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

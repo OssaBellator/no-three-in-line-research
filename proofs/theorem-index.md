@@ -88,6 +88,8 @@ The numbering is local to this repository.
 | AC3v | The canonical primal projection of all scoped factors and constraints makes every independent repair family legal and exactly additive | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
 | AC3w | Private paid-certificate sets add exactly on primal-independent families while a common token is counted once | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
 | AC3x | Dense canonical conflicts localize with current paid weight to one of finitely many structural incidence labels | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
+| AC3y | Literal invariance is equivalent to vanishing on all one-block phase derivatives, with weighted failures localized at loss at most \(9\) | PROVED | `tracks/alternating-core-phase-sensitivity-localization.md` |
+| AC3z | Exact phases compress to the coordinate observational quotient; every arithmetic chart is complete or exposes a same-label one-block derivative | PROVED | `tracks/alternating-core-phase-sensitivity-localization.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |
