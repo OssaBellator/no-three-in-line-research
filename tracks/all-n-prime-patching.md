@@ -14,10 +14,13 @@ exact extension absorber.
 Detailed statements and proofs are in:
 
 - [`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md);
-- [`docs/28-one-strip-and-pair-aware-patching.md`](../docs/28-one-strip-and-pair-aware-patching.md).
+- [`docs/28-one-strip-and-pair-aware-patching.md`](../docs/28-one-strip-and-pair-aware-patching.md);
+- [`docs/29-general-reservoir-patching.md`](../docs/29-general-reservoir-patching.md).
 
-Small exact computations are recorded in
-[`experiments/prime-patching-small.md`](../experiments/prime-patching-small.md).
+Small exact computations are recorded in:
+
+- [`experiments/prime-patching-small.md`](../experiments/prime-patching-small.md);
+- [`experiments/general-reservoir-loads.md`](../experiments/general-reservoir-loads.md).
 
 ## PP1 — Boundary extension interface
 
@@ -35,7 +38,7 @@ The row-column bookkeeping is now exact:
 
 ## PP2 — Secant-shadow patching lemma
 
-### Status: OPEN, with exact endpoints and obstructions
+### Status: OPEN, with exact host and bank endpoints
 
 There should be functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one
 can choose or prepare a reservoir in `S_m` that supports an exact
@@ -50,12 +53,23 @@ The following parts are now proved:
 - for a wider corner, a pair-aware clone-space local lemma gives an exact
   sufficient inequality in the maximum omitted-cell, old-anchor-pair, and
   internal-triple loads;
-- for `t>=100`, the concrete bounds
-  `m_*<=t/100`, `pi_*<=t^2/400`, and `tau_*<=t^3/400` suffice;
-- failure under this endpoint forces one of those three local loads to be large.
+- the clone-space theorem now applies to arbitrary deleted reservoirs, including
+  old-old replacement cells and mixed old/new cells;
+- for active clone size `N>=200`, the bounds
+  `u_*<=N/200`, `pi_*<=N^2/1600`, and `tau_*<=N^3/3200` suffice;
+- failure under this endpoint forces one of those three local loads to be large;
+- alternatively, an internally no-three completion bank succeeds whenever its
+  cell and pair spread make the total retained-core certificate expectation
+  less than one.
 
-The missing work is to construct a prepared prime-minus-one seed and candidate
-bank satisfying those load bounds for a useful width.
+The exact selection step is therefore closed in two forms:
+
+1. prepare a candidate host satisfying the cell/pair/triple local-load bounds;
+2. prepare an internally no-three spread bank satisfying the external
+   cell/pair expectation bound.
+
+The missing work is the geometric preparation theorem producing one of these
+inputs for a useful width.
 
 ## PP3 — Robust seed preparation
 
@@ -73,11 +87,13 @@ Finite exhaustive results show why this cannot be omitted:
   `2` states at `n=3`, `1` at `n=4`, and none at `n=5`;
 - every stored certificate with `3<=n<=10` is boundary-only one-strip blocked;
 - unrestricted interior replacement nevertheless extends the stored chain
-  through `n=10`.
+  through `n=10`;
+- every stored seed has all `2n` noncorner future boundary cells on an old
+  secant, so the strong one-strip averaging criterion fails immediately.
 
 Thus a universal repetition of the two one-strip moves is refuted. Wider
-boundary ladders, distributed absorbers, and interior tomographic trades remain
-viable.
+boundary ladders, distributed absorbers, internally clean spread banks, and
+interior tomographic trades remain viable.
 
 ## PP4 — Prime-gap transfer theorem
 
@@ -124,10 +140,15 @@ below it.
   CSP with explicit `found`, `exhausted`, and `cutoff` outcomes;
 - `scripts/analyze_one_strip_extensions.py`: complete `t=1` boundary-only
   analyzer using the two-state classification;
+- `scripts/analyze_one_strip_seed_loads.py`: exact PP3b averaging profiler;
 - `scripts/enumerate_one_strip_seeds.py`: exhaustive labeled seed graph for
   small sides;
 - `scripts/analyze_corner_patch_loads.py`: exact wider-corner cell/pair/triple
   load profiler;
+- `scripts/analyze_reservoir_patch_loads.py`: exact arbitrary-deficit clone and
+  coordinate load profiler;
+- `scripts/analyze_patch_bank.py`: finite internally clean bank verifier and
+  cell/pair spread analyzer;
 - `scripts/verify_no_three_certificate.py`: exact finite certificate verifier.
 
 ## Candidate absorber designs still viable
@@ -135,6 +156,7 @@ below it.
 - boundary ladders spanning several new rows and columns;
 - subgroup-coset blocks reserved across several outer strips;
 - Hall-type completion after structured shadow cleaning;
+- internally no-three spread banks on prepared reservoir states;
 - tomographic trades that free selected old rows and columns before extension;
 - distributed reservoirs designed during the prime-grid repair process.
 
@@ -142,6 +164,6 @@ below it.
 
 This branch is complete only when PP2 and PP3 provide an exact extension width
 large enough for PP4, followed by a verified PP5 certificate set for the
-remaining side lengths. The current branch closes PP1, the pair-aware PP2
-endpoint, the logical and prime-gap parts of PP4, and finite verification
-machinery; it does not prove the no-three-in-line conjecture.
+remaining side lengths. The current branch closes PP1, arbitrary-reservoir and
+spread-bank PP2 endpoints, the logical and prime-gap parts of PP4, and finite
+verification machinery; it does not prove the no-three-in-line conjecture.
