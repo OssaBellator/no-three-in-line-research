@@ -71,13 +71,20 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 61. **Sharp type-\((2,2)\) multiplicity.** Weighted parallel factor secants have only linear multiplicity in the opposite factor; unordered resonant signatures are at most \(mn(2\min(m,n)-1)\).
 62. **Exact alternating-cycle collateral.** The triple-potential change of one cycle toggle splits exactly into one-moving, two-moving, and internal-cycle certificate terms.
 63. **Finite repair-barrier census.** In the canonical crossed \(2\times3\) host, ten one-defect states require a temporary increase to two defects before reaching either no-three state.
+64. **Composite batch compression.** Any finite sequence of alternating-cycle trades compresses to one balanced endpoint trade, and every exact side-six or side-nine trap found has an improving composite support of at most eight cells per sign.
+65. **Quantitative unmodified \(2\times5\) obstruction.** Every degree-two state in every global unmodified \(2\times5\) host has at least two bad triples; ordinary `cc` hosts have at least seven.
+66. **Blockwise digit-map saturation.** Arbitrary fine-digit permutations inside individual coarse row and column blocks preserve the simple four-regular host and all degree-two saturation conclusions.
+67. **Exact side-ten blockwise product.** One blockwise reversal applied to a \(2\times5\) product yields twenty no-three points in the \(10\times10\) grid.
+68. **Canonical unsatisfiable line core.** One unmodified crossed \(2\times5\) host has a deletion-minimal 35-line core relative to the exact degree-two clauses.
+69. **One-inner-layer twisted products.** Fixing one inner permutation while retaining both outer layers gives an explicit \(O(mn)\) saturated blockwise product family.
+70. **Complete reversal census.** Among all sixteen identity/reversal assignments at \(2\times5\), exactly the four varying in both row and column blocks succeed; each rescues 9 of 32 inner factors across 13 factor/orientation hosts.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Carry-sensitive phase codes, non-global digit maps, or offset hosts for product constructions.
-- A global product repair or resampling theorem that coordinates many projection fibres and permits controlled uphill moves.
+- An infinite controlled family of blockwise digit maps or offsets that yields a useful multiplicative closure class.
+- A global product repair or resampling theorem that coordinates many projection fibres and distinguishes feasible hosts from structured infeasible cores.
 - A useful multiplicative closure class and any resulting arithmetic coverage.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
@@ -101,7 +108,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Even arbitrary degree-two selection in the four unmodified global product hosts is not universal: exhaustive search finds no model for any ordered \(2\times5\) or \(5\times2\) factor-pair instance.
 - Triple-count descent on alternating cycles is not monotone: a crossed side-six host has ten one-defect traps although it contains no-three states.
 - Lexicographically refining triple count by the natural pair-line energy still leaves four exact bad local minima in that host.
+- The parity-reflection lift is not a universal doubling theorem: exhaustive search finds no reflected no-three permutation for base sides 3, 4, 6, 7, or 8.
+- Identity/reversal block maps do not rescue every \(2\times5\) factor: the complete census succeeds for only 9 of 32 layer-unordered side-five factors.
 
 ## Bottom line
 
-There is no complete proof. The product branch now has a connected full-host repair state space, exact phase and full-selector CNFs, line/codegree bounds, fixed-carry concentration, complete projection-fibre concentration, and an exact cycle-collateral identity. The elementary multiplicity bottleneck is substantially closed, but multiplicative closure still fails: the next target is a nonmonotone resampling or bounded-barrier theorem that coordinates many projection fibres, or an enlarged offset host escaping the finite \(2\times5\) obstruction. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
+There is no complete proof. The product branch now shows that the quantified unmodified \(2\times5\) gap can be removed inside the same \(10\times10\) grid by non-global blockwise digit maps, and the successful witness already lies in an explicit one-inner-layer family. The complete reversal census also shows that this is not yet closure: only 9 of 32 side-five factors are rescued, and variation in both row and column block maps is necessary. The next product target is a controlled affine or structured block-map theorem that explains and generalizes the escape from the 35-line core, or a resampling theorem that returns either a model or a structured infeasibility certificate. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
