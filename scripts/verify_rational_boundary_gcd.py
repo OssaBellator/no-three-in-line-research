@@ -135,6 +135,57 @@ def rational_image(x: int, r: int, p: int) -> int:
     return x * (1 - x) * pow(r - x, -1, p) % p
 
 
+def orbit_trace(x: int, r: int, p: int) -> int:
+    shifted = (x - r) % p
+    delta = r * (r - 1) % p
+    return (shifted + delta * pow(shifted, -1, p)) % p
+
+
+def orbit_factor_polynomial(
+    core: set[int],
+    r: int,
+    p: int,
+) -> Polynomial:
+    result = [1]
+    seen: set[int] = set()
+    delta = r * (r - 1) % p
+    for value in sorted(core):
+        if value in seen:
+            continue
+        mate = partner(value, r, p)
+        if mate == value:
+            factor = [(-value) % p, 1]
+            seen.add(value)
+        else:
+            trace = orbit_trace(value, r, p)
+            factor = [
+                (r * r + trace * r + delta) % p,
+                (-2 * r - trace) % p,
+                1,
+            ]
+            seen.update((value, mate))
+        result = multiply(result, factor, p)
+    return result
+
+
+def verify_orbit_trace(limit: int = 43) -> None:
+    for p in primes_through(limit):
+        for r in range(2, p):
+            domain = tuple(
+                x for x in range(1, p) if x not in (1, r)
+            )
+            for x in domain:
+                trace = orbit_trace(x, r, p)
+                assert rational_image(x, r, p) == (
+                    2 * r - 1 + trace
+                ) % p
+                assert orbit_trace(partner(x, r, p), r, p) == trace
+                for z in domain:
+                    assert (orbit_trace(z, r, p) == trace) == (
+                        z == x or z == partner(x, r, p)
+                    )
+
+
 def quotient_subsets(index: int) -> set[frozenset[int]]:
     labels = set(range(index))
     if index <= 7:
@@ -244,6 +295,13 @@ def verify(limit: int = 23) -> None:
                         partner(x, r, p) == x for x in core
                     )
                     assert 2 * len(core_image) == len(core) + fixed
+                    assert orbit_factor_polynomial(core, r, p) == (
+                        core_polynomial
+                    )
+                    assert core_image == {
+                        (2 * r - 1 + orbit_trace(x, r, p)) % p
+                        for x in core
+                    }
 
                     if len(domain) <= 8:
                         ordered = tuple(sorted(domain))
@@ -260,8 +318,9 @@ def verify(limit: int = 23) -> None:
 
 
 def main() -> None:
+    verify_orbit_trace()
     verify()
-    print("rational boundary gcd certificates: verified through prime 23")
+    print("rational boundary gcd/orbit traces: verified")
 
 
 if __name__ == "__main__":

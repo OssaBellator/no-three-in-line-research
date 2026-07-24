@@ -174,6 +174,118 @@ functional-equation core of size \(|D|-B(D)\) and exactly \(B(D)\)
 injective image outliers.  RI3 may classify the maximal core, while an
 absorber interface need only pay for the explicitly listed outliers.
 
+## RI2i -- orbit-trace quotient and core factorization
+
+Put
+
+\[
+\delta=r(r-1),
+\qquad
+\sigma_r(x)
+=
+(x-r)+\frac{\delta}{x-r}.
+\]
+
+### Theorem RI2i -- PROVED
+
+For every \(x\in D_r\),
+
+\[
+\boxed{
+F_r(x)=2r-1+\sigma_r(x),
+}
+\]
+
+and, for \(x,z\in D_r\),
+
+\[
+\boxed{
+\sigma_r(x)=\sigma_r(z)
+\quad\Longleftrightarrow\quad
+z=x\ \text{or}\ z=\tau_r(x).
+}
+\]
+
+Thus \(\sigma_r\) is an exact coordinate on the
+\(\tau_r\)-orbit quotient, and \(F_r\) is its affine translate.
+
+Let \(K\subseteq D_r\) be invariant.  For every nonfixed orbit
+\(O=\{x,\tau_r(x)\}\), put \(s_O=\sigma_r(x)\), and let
+\(\mathcal O_2(K)\) be the set of its two-element orbits.  Then
+
+\[
+\boxed{
+P_K(X)
+=
+\prod_{\substack{x\in K\\\tau_r(x)=x}}(X-x)
+\prod_{O\in\mathcal O_2(K)}
+\left(
+(X-r)^2-s_O(X-r)+\delta
+\right).
+}
+\]
+
+In particular, the image of the invariant core is explicitly
+
+\[
+\boxed{
+F_r(K)
+=
+\{\,2r-1+s_O:O\text{ is a }\tau_r\text{-orbit in }K\,\}.
+}
+\]
+
+### Proof
+
+Write \(y=x-r\).  Since
+
+\[
+\tau_r(x)-r=\frac{\delta}{x-r}=\frac\delta y,
+\]
+
+the trace is constant on each involution orbit.  Direct expansion gives
+
+\[
+F_r(x)
+=
+\frac{(r+y)(r+y-1)}y
+=
+2r-1+y+\frac\delta y.
+\]
+
+For \(w=z-r\),
+
+\[
+y+\frac\delta y=w+\frac\delta w
+\]
+
+is equivalent, after multiplying by \(yw\), to
+
+\[
+(y-w)(yw-\delta)=0.
+\]
+
+Hence \(z=x\) or \(w=\delta/y\), the latter being
+\(z=\tau_r(x)\).  This proves the quotient assertions.
+
+On a two-element orbit, the two shifted roots are \(y\) and
+\(\delta/y\).  Their monic quadratic is
+
+\[
+Y^2-\left(y+\frac\delta y\right)Y+\delta.
+\]
+
+Substituting \(Y=X-r\) gives the displayed factor.  Fixed orbits
+contribute their linear factors.  Multiplying over the disjoint orbits
+proves the polynomial factorization, and the affine trace identity gives
+the image formula. \(\square\)
+
+RI2i converts the functional-equation core from RI2h into an explicit
+set of orbit-trace parameters.  The unresolved multiplicative rigidity
+is now precise: determine when the sparse coset polynomial can factor
+into these fixed linear and trace-quadratic orbit factors, or turn the
+resulting finite trace bank into an absorber.
+
 ## Coset-union form
 
 If
@@ -210,4 +322,5 @@ not themselves classify the functional-equation core.
 boundary degree, zero-boundary functional equation, and sparse
 coset-polynomial identity through small primes.  It also verifies the
 maximal invariant core, exact gcd polynomial, and disjoint image
-decomposition.
+decomposition, together with the affine orbit-trace quotient and
+trace-quadratic core factorization.

@@ -192,6 +192,20 @@ exception plus explicitly counted outliers; repeated boundary pruning
 is unnecessary. The remaining rigidity problem may be restricted to
 the invariant core.
 
+RI2i then identifies the exact orbit quotient. With
+\(\delta=r(r-1)\),
+\[
+\sigma_r(x)=(x-r)+\delta/(x-r),
+\qquad
+F_r(x)=2r-1+\sigma_r(x),
+\]
+and two points have the same trace exactly when they are equal or
+\(\tau_r\)-partners. Every invariant core polynomial consequently
+factors into fixed linear factors and explicit quadratics
+\((X-r)^2-s(X-r)+\delta\). The remaining coset rigidity problem is now
+the compatibility of the sparse coset polynomial with this
+trace-quadratic factorization.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement
