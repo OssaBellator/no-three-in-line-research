@@ -1,6 +1,6 @@
 # Affine rectangle protection of low primitive directions
 
-PX67--PX70 isolate low primitive height as the sole source of full-order
+PX70--PX73 isolate low primitive height as the sole source of full-order
 transversal codegree in the rectangle matching model.  This chapter gives a
 factor-compatible positive construction which removes any prescribed finite set
 of nonaxis directions from the product state.
@@ -53,7 +53,7 @@ For every `u` it contains all four corners of
 
 It is automatically saturated by PX43.
 
-### Theorem PX72 -- PROVED
+### Theorem PX75 -- PROVED
 
 Let `D` be a finite set of nonaxis primitive directions.  Suppose
 
@@ -140,7 +140,7 @@ do not affect injectivity. \(\square\)
 
 The same residue-avoidance argument as A2 supplies a slope.
 
-### Theorem PX73 -- PROVED
+### Theorem PX76 -- PROVED
 
 Let `D` be a finite set of nonaxis primitive directions.  If every prime divisor
 `ell` of `n` satisfies
@@ -149,7 +149,7 @@ Let `D` be a finite set of nonaxis primitive directions.  If every prime divisor
 ell>|D|+1,
 \]
 
-then there is a residue `m` satisfying all hypotheses of PX72.
+then there is a residue `m` satisfying all hypotheses of PX75.
 
 ### Proof
 
@@ -165,7 +165,7 @@ is forbidden.  If `a=0 modulo ell`, then `b` is nonzero modulo `ell` because
 most `|D|+1` forbidden residues and therefore at least one allowed residue.
 Choose allowed residues independently at each prime power and combine them by
 the Chinese remainder theorem.  The resulting `m` is a unit modulo `n` and
-makes every `b-am` a unit. \(square\)
+makes every `b-am` a unit. \(\square\)
 
 ## 3. Protection through height `H`
 
@@ -184,7 +184,7 @@ PX62 gives at most `4h` primitive directions of exact height `h`, so
 =2H(H+1).
 \]
 
-### Corollary PX74 -- PROVED
+### Corollary PX77 -- PROVED
 
 If the least prime factor of `n` is greater than
 
@@ -198,9 +198,9 @@ height at most `H`.
 
 ### Proof
 
-Apply PX73 to `D_H`, then PX72.  The normalized scalar rectangle state is
+Apply PX76 to `D_H`, then PX75.  The normalized scalar rectangle state is
 available to every permutation layer of every saturated side-`n` factor by the
-full-symmetric gauge transport PX41. \(square\)
+full-symmetric gauge transport PX41. \(\square\)
 
 For prime `n`, any `H` with
 
@@ -214,7 +214,7 @@ is admissible, so one may protect `H=Theta(sqrt(n))` primitive height.
 
 Inside a repair or resampling family which preserves all protected line
 occupancies, every remaining bad triple has primitive height greater than `H`.
-PX68 then bounds every remaining transversal completion codegree by
+PX71 then bounds every remaining transversal completion codegree by
 
 \[
 64n^2\left(1+\frac{2n}{H}\right).
