@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Verify explicit finite no-three witnesses found by the product search.
+"""Verify explicit finite no-three witnesses found by product searches.
 
-These are exact finite certificates at side lengths 6 and 8. They do not imply
-an infinite product-closure theorem.
+These are exact finite certificates at side lengths 6, 8, and 9. They do not
+imply an infinite product-closure theorem.
 """
 from __future__ import annotations
 
@@ -20,6 +20,10 @@ EXAMPLES: tuple[PermutationPair, ...] = (
     (
         (2, 3, 1, 0, 7, 6, 4, 5),
         (4, 5, 7, 6, 1, 0, 2, 3),
+    ),
+    (
+        (3, 6, 1, 8, 0, 2, 5, 7, 4),
+        (4, 1, 3, 6, 8, 0, 7, 2, 5),
     ),
 )
 
