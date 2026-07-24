@@ -59,7 +59,7 @@ h(e,f)=
 Compatibility means that the four abstract coordinates of `e` and `f` are
 coordinatewise distinct, as required for two edges to coexist in a matching.
 
-### Lemma PX70 -- PROVED
+### Lemma PX81 -- PROVED
 
 Let `L` be a scalar line of primitive height `h`.  Its intersection with any one
 of the four scalar corner blocks contains at most
@@ -83,7 +83,7 @@ remove points and therefore cannot increase the bound. \(\square\)
 A transversal conflict consists of three compatible rectangle edges and one
 chosen corner from each edge lying on one real scalar line.
 
-### Theorem PX71 -- PROVED
+### Theorem PX82 -- PROVED
 
 For every compatible pair `e,f`, the number of rectangle edges `g` which are
 compatible with both and form at least one transversal conflict satisfies
@@ -117,7 +117,7 @@ There are sixteen choices of a corner of `e` and a corner of `f`, hence at most
 sixteen connecting scalar lines.  For each such line there are four possible
 corner types for `g`.
 
-Fix one connecting line and one corner type of `g`.  By PX70, at most
+Fix one connecting line and one corner type of `g`.  By PX81, at most
 `1+2n/h(e,f)` scalar points of that corner block lie on the line.  Fixing one
 such scalar corner fixes two of the four abstract coordinates of `g`; the other
 two have at most `n^2` choices.  Compatibility can only reduce this number.
@@ -131,7 +131,7 @@ needed by modern conflict-free matching processes.
 
 The preceding bound cannot be replaced by a uniform power saving.
 
-### Theorem PX72 -- PROVED
+### Theorem PX83 -- PROVED
 
 For every `n>=3` and every radix orientation, there are compatible rectangle
 edges `e,f` with at least
@@ -189,12 +189,12 @@ The three `(0,0)` corners are
 
 and are collinear.  The edge `g` is coordinatewise disjoint from both `e` and
 `f`.  There are exactly `(n-2)^3` such choices.  The upper bound
-`O(n^3)` follows from PX71 with `h(e,f)>=1`. \(\square\)
+`O(n^3)` follows from PX82 with `h(e,f)>=1`. \(\square\)
 
 This is the precise reason that the published conflict-free hypergraph matching
 theorems cannot be applied directly to the unfiltered rectangle conflict
 system: their bounded-conflict hypotheses require a polynomial saving in the
-codegree of rank-three conflicts, while PX72 gives codegree of the same order as
+codegree of rank-three conflicts, while PX83 gives codegree of the same order as
 the base degree.
 
 ## 4. Low-direction filtering tradeoff
@@ -205,7 +205,7 @@ For a height cutoff `H>=2`, call a compatible pair `H`-low if
 h(e,f)<H.
 \]
 
-### Theorem PX73 -- PROVED
+### Theorem PX84 -- PROVED
 
 For every rectangle edge `e`, the number of `H`-low compatible partners is at
 most
@@ -218,7 +218,7 @@ After declaring every `H`-low pair to be a rank-two conflict, every remaining
 compatible pair has transversal completion codegree at most
 
 \[
-\boxed{64n^2\left(1+\frac{2n}{H}\right)}.
+\boxed{64n^2\left(1+rac{2n}{H}\right)}.
 \]
 
 ### Proof
@@ -244,7 +244,7 @@ corner types.  This gives at most
 =256Hn^3
 \]
 
-partners.  The second assertion is PX71 with `h(e,f)>=H`. \(\square\)
+partners.  The second assertion is PX82 with `h(e,f)>=H`. \(\square\)
 
 ## 5. Why a simple cutoff is still insufficient
 
@@ -256,7 +256,7 @@ The cutoff theorem exposes a quantitative tension.
 - But the available rank-two degree bound becomes
   `O(Hd)=O(d^(1+delta/3))`, rather than `O(d)`.
 - Keeping `H` bounded preserves rank-two boundedness but leaves rank-three
-  codegree `Theta(d)` by PX72.
+  codegree `Theta(d)` by PX83.
 
 Therefore a one-parameter operation which simply converts every low-height
 triple interaction into a forbidden pair does not verify the standard
@@ -282,5 +282,5 @@ python scripts/verify_product_direction_stratification.py
 
 The verifier checks the line-intersection estimate on small grids, verifies the
 canonical `(n-2)^3` completion family in all four orientations, computes its
-exact completion count through base seven, and checks PX71 on deterministic
+exact completion count through base seven, and checks PX82 on deterministic
 samples of compatible pairs.
