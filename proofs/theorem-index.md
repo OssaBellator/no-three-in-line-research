@@ -23,6 +23,15 @@ The numbering is local to this repository.
 | PP2k | Cell/pair spread criterion for an internally clean bank | PROVED | `docs/29-general-reservoir-patching.md` |
 | PP3a | Exact labeled one-strip seed graph through side five | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP3b | Averaging criterion for a boundary-only type-two seed extension | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP3c | Every noncorner one-strip boundary cell has an automatic axis blocker | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3d | Exact deletion-aware type-two certificate-average criterion | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3e | Exact surviving-certificate expansion for one-strip states | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3f | Coarse nonaxis-blocker and mixed-anchor one-strip criterion | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3g | Degree-one forbidden-matching permutation spread | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3h | Balanced two-colouring of a deleted row reservoir | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3i | Row-lift reservoir bank has exact saturation and rank-three spread | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3j | Geometric certificate endpoint for the row-lift bank | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3-R2 | Unconditioned PP3b boundary-shadow criterion as a usable seed test | REFUTED AS USEFUL | `docs/30-deletion-aware-row-lift-banks.md` |
 | PP3-R1 | Universal recursive boundary-only one-strip construction | REFUTED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP4a | Abstract solved-length plus patch-width transfer to all large `n` | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
 | PP4b | Short-prime-interval exponent translates to the same patch-width exponent | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
