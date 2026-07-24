@@ -73,6 +73,15 @@ show that the numerical carry values can be grouped into a bounded family
 of signature layers with useful expansion. OP1a alone does not claim that
 the range of those integers is bounded independently of \(p\).
 
+[`orbit-phase-carry-fan-router.md`](orbit-phase-carry-fan-router.md)
+proves OP1b--OP1e for the geometric factor-fan output of the decoder.
+The raw product carry lies in \(\{0,\ldots,p-2\}\), coordinate wraps
+have their exact scalar ranges, and a repeated phase factor family
+contains one actual point-star.  Channel-pair matching and divisor
+bounds then force quantified product- or cross-carry signature growth.
+This avoids a generic compression assumption for factor fans, but does
+not yet make signature novelty monotone across decoder rounds.
+
 ## OP3a -- exact one-flip drift
 
 Let a finite labelled CSP have nonnegative check weights. For an assignment

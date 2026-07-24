@@ -337,10 +337,13 @@ The high-conflict return is no longer an unorganized graph.
    \(6\) relative to the high-degree payment, or \(12\) relative to the
    total individual gain.
 
-What remains cannot be supplied by graph theory alone.  The next
-theorem must inspect the OP1 carry records on one paid certificate
-class and prove a common carry/coset/denominator kernel, a
-residual-disjoint geometric family, or an absorber delegation.
+[`orbit-phase-carry-fan-router.md`](orbit-phase-carry-fan-router.md)
+performs that inspection for the geometric factor-fan class.
+OP1b--OP1e turn its repeated block variable into an actual point-star
+and then into divisor-controlled product or cross-carry signature
+growth.  OP3j preserves the \(G/12\) centre payment.  The remaining
+outputs are the action-literal correction kernels, wide action CSPs,
+and the cross-round novelty/termination problem for exposed signatures.
 
 `scripts/verify_phase_paid_witness_localization.py` exhausts small
 canonical support/factor systems, checks the local trichotomy and every

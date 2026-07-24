@@ -31,9 +31,17 @@ The number of states should be `Omega(h)` and every state must preserve the same
 proves OP1a: the O1 alphabet `Z/hZ` gives exactly `h` row-column-preserving
 states, and every realizable real triple is one canonical forbidden partial
 assignment on at most three block variables. It also gives a lossless
-constant-length carry decoration. The remaining OP1 issue is uniform
-compression of the numerical carry values into signature layers useful to
-OP2.
+constant-length carry decoration.
+
+[`orbit-phase-carry-fan-router.md`](orbit-phase-carry-fan-router.md)
+proves OP1b--OP1e.  It gives exact ranges for product and coordinate
+wrap carries, converts a repeated block-phase factor family to one
+actual point-star, and routes that star to endpoint-disjoint product or
+anchor-specific cross-carry signatures with divisor-controlled
+occupancy.  Thus geometric factor fans no longer need a generic uniform
+compression theorem.  Uniform control is still open for action-literal
+correction kernels, wide action CSPs, and the global novelty of
+signatures exposed across several decoder rounds.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -231,9 +239,22 @@ of support at most \(s\) has a size-\(t\) variable-overlap star,
 single-factor star, or variable-rooted factor fan.  Bounded phase
 alphabets refine these to repeated action or forbidden literals.  After
 OP3f, either wide corrections retain more than \(G/4\), or one fixed
-localized certificate type retains more than \(G/12\).  The remaining
-problem is arithmetic classification of the carry/coset/denominator
-labels on those paid kernels and fans.
+localized certificate type retains more than \(G/12\).
+
+OP3j in the carry-fan router completes the geometric factor-fan branch.
+If every block order is at most \(h\) and the active universe has \(q\)
+channels, each paid fan centre exposes at least
+
+\[
+\left\lceil
+\frac{t}{h^2q(q+1)\Delta_p^\star}
+\right\rceil
+\]
+
+product or cross-carry signatures without losing its centre gain.
+Action-literal kernels and wide action CSPs remain separate paid
+outputs.  The remaining problem is a monotone novelty/termination
+theorem across rounds, not local carry-label classification.
 
 ## OP4 — Product-state completion
 
@@ -279,6 +300,8 @@ weighted independent batch unless paid gain concentrates on witnessed
 high-conflict candidates.
 OP3g--OP3i localize that concentrated gain to wide supports or one paid
 class of repeated-literal correction kernels and factor fans.
+OP1b--OP1e and OP3j route every geometric factor-fan class to quantified
+product- or cross-carry signature growth while preserving its gain.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -329,7 +352,10 @@ weighted high-conflict extraction are checked by
 `scripts/verify_phase_external_collateral.py`.  Paid witness
 localization, literal refinement, the wide-support escape, and the
 factor-fan counterexample are checked by
-`scripts/verify_phase_paid_witness_localization.py`.
+`scripts/verify_phase_paid_witness_localization.py`.  Orbit-state
+partitions, raw carry ranges, phase-to-point anchoring, endpoint-disjoint
+channel extraction, and factor-fan carry dispersion are checked by
+`scripts/verify_phase_carry_fan_router.py`.
 
 ## Completion criterion
 
