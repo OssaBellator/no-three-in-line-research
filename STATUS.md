@@ -61,6 +61,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 51. **Exact prime-patching one-strip interface.** Every boundary-only one-strip patch is either a one-point corner splice or a two-edge strip switch; blocker secants through each inserted point form a matching and give an exact deletion-cover criterion.
 52. **Pair-aware prime-patching endpoint.** A wider corner host satisfying explicit omitted-cell, old-anchor-pair, and internal-triple local-load bounds contains an exact saturated patch.
 53. **Prime-gap transfer.** A proved patch width covering the backward gaps from solved prime-minus-one sizes transfers those solutions to all sufficiently large side lengths.
+54. **Arbitrary-reservoir prime-patching endpoint.** The clone-space local-load theorem extends to any deleted saturated reservoir, including old-old replacements and mixed old/new cells, with explicit normalized cell/pair/triple bounds.
+55. **Internally clean spread-bank endpoint.** A distribution on internally no-three deficit completions yields a valid patch whenever its selected blocked-cell and retained-anchor-pair expectation is below one.
 
 ## What remains conditional
 
@@ -74,7 +76,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
-- A prepared prime-minus-one reservoir satisfying the prime-patching cell/pair/triple load endpoint for a width large enough to match an unconditional prime-gap theorem.
+- A prepared prime-minus-one reservoir that either meets the arbitrary-reservoir cell/pair/triple load endpoint or supports an internally no-three spread bank over a width large enough to match an unconditional prime-gap theorem.
 
 ## Important refutations
 
@@ -90,4 +92,4 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 
 ## Bottom line
 
-There is no complete proof. Carry and wrap-center classification make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The principal global bottleneck remains second-generation normalized collateral and termination. Independently, the all-`n` prime-patching track now has exact one-strip rigidity and a pair-aware corner endpoint, but still lacks a prime-minus-one reservoir meeting the required local loads over a prime-gap-scale width.
+There is no complete proof. Carry and wrap-center classification make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The principal global bottleneck remains second-generation normalized collateral and termination. Independently, the all-`n` prime-patching track now has exact one-strip rigidity plus arbitrary-reservoir local-load and internally clean spread-bank endpoints. It still lacks the prepared prime-minus-one reservoir or bank satisfying either endpoint over a prime-gap-scale width.
