@@ -14,7 +14,7 @@ a=p^tA,
 \qquad M=p^{k-t}.
 \]
 
-Suppose the endpoint valuations are `t` and
+First suppose the two endpoints are nonzero and their valuations are `t` and
 
 \[
 r=t+h>t.
@@ -26,11 +26,13 @@ Put
 L=p^{k-r}=M/p^h.
 \]
 
+The possible pair containing the origin is treated separately below.
+
 ## 1. Full carry congruence
 
 ### Theorem CMR52 — PROVED
 
-Every cross-stratum divisor collision satisfies
+Every nonzero cross-stratum divisor collision satisfies
 
 \[
 dmA\equiv c_t\pmod {p^h}.
@@ -51,6 +53,14 @@ discriminant is
 =
 (z-p^hc_r)^2-4c_rc_t.
 \]
+
+A pair containing the origin satisfies the stronger congruence
+
+\[
+dmA\equiv c_t\pmod M
+\]
+
+directly and contributes at most one collision for fixed `a,d`.
 
 ### Proof
 
@@ -101,14 +111,20 @@ Its discriminant is
 Using `dmA=c_t+p^hz` simplifies this to the displayed `Delta_z`.
 
 In the reverse orientation the middle coefficient changes sign before
-squaring, and the same discriminant results. ∎
+squaring, and the same discriminant results.
 
-## 2. Summing one cross stratum
+For the origin pair, `x=0` and `x+a=p^tA`. The exact reduced row difference is
+congruent to `c_t A^{-1}` modulo `M`. Since it equals `dm`, multiplication by
+`A` gives the stated congruence. There is only one origin pair for a fixed
+positive difference `a`. ∎
+
+## 2. Summing one nonzero cross stratum
 
 ### Theorem CMR53 — PROVED
 
-For a fixed higher valuation `r=t+h`, the total number of cross-stratum divisor
-collisions, counting both endpoint orientations, is less than
+For a fixed nonzero higher valuation `r=t+h<k`, the total number of
+cross-stratum divisor collisions, counting both endpoint orientations, is less
+than
 
 \[
 8+
@@ -129,8 +145,8 @@ CMR52 restricts `m` to one residue class modulo `p^h`. Hence the number `J` of
 possible carries is at most
 
 \[
-J\le1+\frac{2M}{dp^h}
-=1+\frac{2L}d.
+J\le1+rac{2M}{dp^h}
+=1+rac{2L}d.
 \]
 
 As these carries run through their arithmetic progression, the corresponding
@@ -177,8 +193,8 @@ There are two endpoint orientations. ∎
 
 ### Corollary CMR54 — PROVED
 
-Summing all higher valuations `r>t`, the cross-stratum divisor-collision count
-is less than
+Summing all nonzero higher valuations `t<r<k` and the possible origin pair, the
+cross-stratum divisor-collision count is less than
 
 \[
 \frac{8M}d+11\sqrt M+8k.
@@ -211,8 +227,9 @@ and
 \]
 
 show that the `L/d` contribution is less than `8M/d` for odd `p`, while the
-square-root contribution is less than `11 sqrt(M)`. The constant terms total
-less than `8k`.
+square-root contribution is less than `11 sqrt(M)`. The constant terms from
+the nonzero strata, together with the at-most-one origin pair, are less than
+`8k`.
 
 Add the same-stratum bound CMR51 and use `M<=N`. ∎
 
