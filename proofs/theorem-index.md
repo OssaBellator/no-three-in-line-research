@@ -56,6 +56,9 @@ The numbering is local to this repository.
 | AN2 | Extraction of a movable same-layer endpoint substar | PROVED | `docs/26-alternating-star-neutralization.md` |
 | AN3 | Alternating endpoint-permutation bank neutralizes the original star | PROVED | `docs/26-alternating-star-neutralization.md` |
 | AN4 | Average collateral bound for the joint alternating bank | PROVED | `docs/26-alternating-star-neutralization.md` |
+| AC1a | Failed AN3 bank selects a heavy normalized certificate rank | PROVED | `tracks/alternating-core-certificate-accounting.md` |
+| AC1b | Exact anchor and anchor-pair certificate incidence identities | PROVED | `tracks/alternating-core-certificate-accounting.md` |
+| AC3a | Finite monotone potential for genuinely new carry signatures | PROVED | `tracks/alternating-core-certificate-accounting.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

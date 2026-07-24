@@ -71,6 +71,16 @@ The constants may initially depend polynomially on the ambient channel count; th
 - bounded line occupancy and pair codegree alone do not force a private repair;
 - a large unweighted ratio bank need not destroy any current defects.
 
+### Proved accounting components
+
+[`alternating-core-certificate-accounting.md`](alternating-core-certificate-accounting.md)
+proves AC1a: failure of every AN3 state forces one normalized rank
+`T_r/(t)_r` to be at least `(D_star-F_star)/384`, and the same conclusion
+survives any bounded first-stage label partition.  AC1b gives the exact
+one- and two-anchor incidence identities without collapsing multiplicity
+on rich lines.  The remaining AC1 step is the arithmetic conversion of a
+large labelled family into one of the four target structures.
+
 ## AC2 — Paid structural re-extraction
 
 ### Target statement
@@ -116,6 +126,14 @@ A weighted or lexicographic potential is acceptable, but the no-recycling assert
 - number of occupied rational wrap centers `pS/d`;
 - denominator rank, ordered so that large denominators are charged before small-denominator absorption;
 - multiplicative quotient rank or number of occupied subgroup cosets.
+
+### Proved exposure component
+
+The certificate-accounting note proves AC3a: the union of all exposed
+bounded-integer carry/center/coset signatures has size `p^{O(1)}` and
+strictly increases whenever AC2 returns a genuinely new signature.  The
+unresolved part of AC3 is now precisely the no-recycling assertion for a
+transition carrying only previously exposed signatures.
 
 ## AC4 — Alternating two-colour carry-core termination
 
