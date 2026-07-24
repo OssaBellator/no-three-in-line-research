@@ -64,6 +64,10 @@ The numbering is local to this repository.
 | PX6 | Factor-product host line cap and pair-codegree bound | PROVED | `docs/27-all-n-product-construction.md` |
 | PX7 | Exact phase feasibility reduces to width-three CNF | PROVED | `docs/27-all-n-product-construction.md` |
 | PX8 | Global radix orientation plus independent cycle phases always suffices | REFUTED | `docs/27-all-n-product-construction.md` |
+| PX9 | Every degree-two product-host state decomposes into two permutation layers | PROVED | `docs/29-full-product-host-selection.md` |
+| PX10 | Exact full product-host selection reduces to width-three CNF | PROVED | `docs/29-full-product-host-selection.md` |
+| PX11 | Product-compatible degree-two states are connected by alternating-cycle trades | PROVED | `docs/29-full-product-host-selection.md` |
+| PX12 | Fixed signed-area and nonzero carry levels have quadratic multiplicity | PROVED | `docs/29-full-product-host-selection.md` |
 | O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
