@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR47--CMR49 by exact enumeration."""
+"""Verify CMR59--CMR61 by exact enumeration."""
 from __future__ import annotations
 
 import argparse
