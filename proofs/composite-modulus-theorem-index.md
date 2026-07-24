@@ -94,5 +94,8 @@ This ledger collects the results specific to
 | CMR64 | Each nonzero cross-stratum valuation has a summed Hensel root bound | PROVED | `docs/56-prime-power-cross-stratum-sum.md` |
 | CMR65 | Complete divisor collisions satisfy \(C(a,d)<20N/d+13\sqrt N+8k\) | PROVED | `docs/56-prime-power-cross-stratum-sum.md` |
 | CMR66 | Completed reciprocals have energy \(O(N^{3/2}+N\log^3N)\) and syndrome \(O(N^2\log N)\) | PROVED | `docs/56-prime-power-cross-stratum-sum.md` |
+| CMR67 | All-shift nonsquare reciprocals form a balanced no-three family for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
+| CMR68 | Recursive first-separation depth gives a product collinearity bound | PROVED | `docs/57-prime-power-first-separation-sum.md` |
+| CMR69 | First-separation certificates sum to a subcubic bound generally and \(O_p(N^2\log N)\) for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
