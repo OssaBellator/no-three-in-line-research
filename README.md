@@ -37,13 +37,13 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): syndrome-weighted admissible quotient extraction and paid-bank lower bounds.
 - [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md): projective conic-pencil construction, exact opposite-channel secant profile, and ratio normal form.
 - [`docs/23-aligned-anchor-carry-cells.md`](docs/23-aligned-anchor-carry-cells.md): aligned-anchor determinant factorization, signature divisor bounds, and perfect-interpolation cells.
-- [`docs/24-carry-filtered-secant-stars-and-wrap-cells.md`](docs/24-carry-filtered-secant-stars-and-wrap-cells.md): sharp same-channel carry dispersion and universal common-wrap center classification.
-- [`docs/24-secant-star-carry-dispersion.md`](docs/24-secant-star-carry-dispersion.md): universal product-carry dispersion for endpoint-disjoint stars in any channel pair.
+- [`docs/24-secant-star-carry-dispersion.md`](docs/24-secant-star-carry-dispersion.md): universal product-carry dispersion for endpoint-disjoint stars in every channel pair.
 - [`docs/25-perfect-alignment-arithmetic.md`](docs/25-perfect-alignment-arithmetic.md): exact interpolation-parameter arithmetic and bounded-denominator chamber sparsity.
+- [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
-- [`scripts/verify_carry_closure.py`](scripts/verify_carry_closure.py): checks same-channel cross carries and scalar common-wrap cells.
+- [`scripts/verify_carry_closure.py`](scripts/verify_carry_closure.py): checks same-channel cross carries, scalar wrap cells, rational centers, and chamber bounds.
 - [`scripts/verify_perfect_alignment.py`](scripts/verify_perfect_alignment.py): checks the zero-leading-carry classification and reduced-denominator chamber bounds.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
@@ -75,12 +75,13 @@ The strongest current synthesis is:
 8. Weight quotient extraction by actual triple degrees, producing a paid admissible common-ratio bank.
 9. Convert the bank: either one rectangle improves, or failure yields a channel-pair secant star or an aligned multiplicative anchor class.
 10. Apply carry classification. Every endpoint-disjoint star disperses through divisor-controlled product-carry signatures; aligned anchors disperse through nondegenerate coordinate-carry signatures or enter perfect affine-interpolation chambers.
-11. Use interpolation arithmetic: positive-density perfect chambers have bounded rational denominator and constrained source/target wrap indices.
-12. Prove a monotone alternating-closure potential, or construct finite-denominator absorbers for the remaining perfect chambers.
-13. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-14. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
+11. Apply perfect-alignment arithmetic. Positive-density perfect chambers have bounded rational denominator and constrained source/target wrap indices.
+12. Recenter each perfect-wrap chamber at its rational center; its hyperbola points satisfy a divisor-bounded integer factorization, forcing further wrap-center dispersion.
+13. Prove a monotone alternating-closure potential, or construct finite-denominator absorbers for the remaining perfect chambers.
+14. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
+15. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or bounded-denominator perfect alignment. The main geometric target is a monotone carry-complexity termination theorem; a sharper fixed-degree cross-channel invariant remains desirable but is no longer required merely to obtain dispersion.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth, bounded-denominator perfect alignment, and divisor-controlled wrap-center occupancy. The main geometric target is a monotone carry-complexity termination theorem.
 
 ## Running the checks
 
