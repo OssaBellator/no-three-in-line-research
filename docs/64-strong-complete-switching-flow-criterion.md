@@ -133,21 +133,51 @@ Thus isolated vertices in the one-step graph can be handled by first moving
 inside a symmetry orbit, by using a bounded composite trade, or by assigning
 them zero mass in a separately constructed probability measure.
 
-## 3. Required scale
+## 3. Exact participation bound and required scale
 
-For a constant-spread theorem one needs
+### Lemma PX100b -- PROVED
+
+For a fixed strong complete mapping `f` and one selected edge of its graph, at
+most
+
+\[
+4p
+\]
+
+PX98 trade neighbours remove that edge.
+
+### Proof
+
+Choose the role of the edge among the four old rows in PX98.
+
+- If it is `(a,A)`, choosing `r` determines
+  `s=f(a+r)-A` and therefore the entire candidate trade.
+- If it is `(a+r,A+s)`, choosing `a` determines `r,A,s`.
+- If it is `(a-s,A+r)`, choosing `a` again determines every parameter.
+- If it is `(a-s+r,A+r+s)`, choosing `a` determines `r-s` and `r+s`; since
+  `p` is odd, it determines `r,s`.
+
+Each role has at most `p` choices, and the remaining PX98 identities can only
+remove candidates. \(\square\)
+
+For a constant-spread theorem PX100 needs
 
 \[
 L=\Omega(pU)
 \]
 
-under every conditioning of rank zero, one, and two.  A PX98 trade has three
-free parameters `(a,r,s)`.  Once one prescribed edge is required to disappear,
-one row parameter is fixed and a natural source scale is `Theta(p^2)`.  The
-desired reverse-congestion scale is therefore `O(p)`.
+under every conditioning of rank zero, one, and two.  PX100b shows that the
+largest natural one-step source scale for destroying one prescribed edge is
+`Theta(p)`, not `Theta(p^2)`.  The corresponding target is therefore:
 
-This parameter count explains why four-trades are appropriately sized for a
-rank-three theorem.  It is not itself a proof that the required flows exist.
+\[
+L=\Omega(p),
+\qquad
+U=O(1).
+\]
+
+Bounded trade paths may aggregate several one-step choices, but their terminal
+congestion must remain constant.
 
 ## 4. Order-thirteen benchmark
 
@@ -159,7 +189,7 @@ canonical PX98 path flow realizing those ratios has not yet been extracted.
 The exact next problem is:
 
 > construct, for every rank-at-most-two conditioning, a bounded-length PX98
-> path flow with `Theta(p^2)` source outflow and `O(p)` terminal congestion,
+> path flow with `Omega(p)` source outflow and `O(1)` terminal congestion,
 > after discarding or separately weighting only a controlled exceptional set.
 
 A successful construction proves the one-stage spread hypothesis needed in
