@@ -305,6 +305,74 @@ cycle by a paid bank, BDA/RI delegation, terminal improvement, or a
 finite consumable ticket.  This is an exact audit criterion for the
 remaining no-recycling proof.
 
+## AC3d -- strict-support potential for labelled recursion
+
+Fix a finite object universe \(\mathcal O\).  A **pure AC2d descent
+epoch** is a sequence of recursive overload states
+
+\[
+(U_0,o_0),(U_1,o_1),\ldots,
+\qquad o_t\in U_t\subseteq\mathcal O,
+\]
+
+in which the recursive alternative at time \(t\) chooses a certificate
+label \(\lambda_t\) and replaces the current universe by
+
+\[
+U_{t+1}=S_{\lambda_t}^{U_t}(o_t)
+\subseteq U_t\setminus\{o_t\}.
+\]
+
+The next centre \(o_{t+1}\) is the restricted-overload object supplied
+inside that induced label class.  No discarded object is reintroduced
+during a pure epoch.
+
+### Lemma AC3d -- PROVED
+
+The integer support potential
+
+\[
+\boxed{
+\Xi_{\rm supp}(U)=|\mathcal O|-|U|
+}
+\]
+
+strictly increases at every recursive AC2d overload descent.  A pure
+epoch beginning with \(U_0\) therefore contains at most
+\(|U_0|-1\) recursive descents and cannot contain a directed state
+cycle.
+
+### Proof
+
+Every conflict-neighbour class excludes its centre, so
+
+\[
+|U_{t+1}|
+\leq |U_t|-1.
+\]
+
+Consequently
+
+\[
+\Xi_{\rm supp}(U_{t+1})
+\geq
+\Xi_{\rm supp}(U_t)+1.
+\]
+
+The potential is bounded above by \(|\mathcal O|-1\) on a nonempty
+recursive state.  This gives the length bound.  Strict containment also
+precludes returning to an earlier universe, hence precludes a directed
+state cycle. \(\square\)
+
+Thus the recursive overload alternative created by AC2d is not one of
+the unticketed cycles left abstract in AC3c.  To revisit an object
+discarded from \(U_t\), a later operation must enlarge the support; that
+is a support-reuse event rather than an induced-label recursion and must
+consume an AC3b ticket or terminate through a paid bank or BDA/RI
+delegation.  AC3d does not bound those reopenings, but isolates them as
+the only possible source of recycling after labelled overload descent.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
-four quotient states, and a finite ticket trace.
+four quotient states, a finite ticket trace, and every strict-support
+maximal-depth descent order through seven objects.

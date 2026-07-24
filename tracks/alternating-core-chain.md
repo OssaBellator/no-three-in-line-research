@@ -183,6 +183,14 @@ is acyclic. Thus every remaining directed cycle must be broken by current
 paid incidence, a terminal bank, or a classified BDA/RI delegation; it
 cannot be removed by reweighting the same signatures.
 
+AC3d closes the recursion generated internally by AC2d. Each
+certificate-labelled overload replaces its current object universe by a
+strict subset excluding the old centre, so the support deficit increases
+and a pure labelled-descent epoch has depth at most the initial support
+size minus one. Recycling can now occur only when a discarded object is
+explicitly reintroduced; that reopening must be charged by AC3b or leave
+through a paid/structured endpoint.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement

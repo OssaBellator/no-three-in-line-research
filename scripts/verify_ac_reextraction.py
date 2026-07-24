@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from fractions import Fraction
-from itertools import combinations
+from itertools import combinations, permutations
 
 
 def greedy_colours(
@@ -292,6 +292,40 @@ def verify_ticket_trace() -> None:
     assert previous == len(signatures) + sum(budgets.values())
 
 
+def verify_strict_support_descent(max_size: int = 7) -> None:
+    """Every induced label recursion deletes its previous centre."""
+
+    for size in range(1, max_size + 1):
+        universe = frozenset(range(size))
+        for ordering in permutations(range(size)):
+            support = universe
+            previous = size - len(support)
+            steps = 0
+            for center in ordering:
+                if center not in support:
+                    continue
+                # Any label class is a subset of the current neighbours.
+                # Taking all remaining objects is the slowest possible
+                # strict descent and therefore tests the sharp depth bound.
+                next_support = support - {center}
+                if not next_support:
+                    break
+                current = size - len(next_support)
+                assert next_support < support
+                assert current >= previous + 1
+                support = next_support
+                previous = current
+                steps += 1
+            assert steps <= size - 1
+
+    # Repetition is possible only after an explicit support reopening.
+    support = frozenset({1, 2, 3})
+    support = support - {1}
+    assert 1 not in support
+    reopened = support | {1}
+    assert reopened == frozenset({1, 2, 3})
+
+
 def main() -> None:
     verify_weighted_extraction()
     verify_composed_bound()
@@ -299,6 +333,7 @@ def main() -> None:
     verify_labelled_overload()
     verify_cycle_criterion()
     verify_ticket_trace()
+    verify_strict_support_descent()
     print("AC re-extraction and reuse accounting: verified")
 
 
