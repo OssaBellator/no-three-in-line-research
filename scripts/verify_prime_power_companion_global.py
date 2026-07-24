@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR40--CMR42 on finite odd-prime companion hosts."""
+"""Verify CMR56--CMR58 on finite odd-prime companion hosts."""
 from __future__ import annotations
 
 import argparse
