@@ -67,4 +67,9 @@ The numbering is local to this repository.
 | CR2 | Radial anchor equation and \(2q\)-signature compression | PROVED | `docs/20-common-ratio-bank-conversion.md` |
 | CR3 | Common-ratio decoder-or-structure trichotomy | PROVED | `docs/20-common-ratio-bank-conversion.md` |
 | CR4 | Uniform paid-bank conversion inequality | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR5 | Weighted quotient-bank extraction | OPEN | `docs/20-common-ratio-bank-conversion.md` |
+| CR5 | Constant-fraction extraction for arbitrary pair weights | REFUTED AS STATED | `docs/21-weighted-quotient-bank.md` |
+| WQ1 | Inadmissible rectangle-pair graph has maximum degree two | PROVED | `docs/21-weighted-quotient-bank.md` |
+| WQ2 | Syndrome vertex degrees yield an admissible weighted common-ratio matching | PROVED | `docs/21-weighted-quotient-bank.md` |
+| WQ3 | Paid common-ratio bank with pair-overlap correction | PROVED | `docs/21-weighted-quotient-bank.md` |
+| WQ4 | Hyperbola-channel paid-bank lower bound | PROVED | `docs/21-weighted-quotient-bank.md` |
+| WQ5 | Weighted extraction plus conversion criterion | PROVED | `docs/21-weighted-quotient-bank.md` |
