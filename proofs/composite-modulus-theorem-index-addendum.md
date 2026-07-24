@@ -53,3 +53,16 @@ CMR101. The main composite index remains in
 | CMR146 | Potential-one four-move dynamics at \(N=5\) has 80 isolated traps and eight terminal two-cycles | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/80-prime-five-four-core-escape.md` |
 | CMR147 | Every one of the 96 trapped \(N=5\) states has an ordered full-parent two-layer escape to potential zero | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/80-prime-five-four-core-escape.md` |
 | CMR148 | At the prime five, every terminal four-core component is absorbed by the complete parent-layer bank | PROVED FOR THE EXACT \(N=5\) STATE SPACE | `docs/80-prime-five-four-core-escape.md` |
+| CMR149 | The balanced prime-seven root family has four potential-one states and no no-three root state | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/81-prime-seven-root-parent-escape.md` |
+| CMR150 | Two prime-seven root states resist every four-endpoint and every complete single-layer move | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/81-prime-seven-root-parent-escape.md` |
+| CMR151 | Both trapped prime-seven root states have explicit ordered joint complete-parent escapes to potential zero | PROVED BY EXACT CERTIFICATES | `docs/81-prime-seven-root-parent-escape.md` |
+| CMR152 | Every minimum prime-seven root state is escaped by a four-move or an ordered joint parent move | PROVED FOR THE BALANCED \(p=7\) ROOT FAMILY | `docs/81-prime-seven-root-parent-escape.md` |
+| CMR153 | Every degree-two forbidden board of size at least four has \(t!/72\) states and \(72/(t)_r\) spread | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
+| CMR154 | Every degree-three forbidden board of size at least thirteen has \(t!/700\) states and \(700/(t)_r\) spread | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
+| CMR155 | The old-cell-clean ordered joint parent bank has \((t!)^2/(72\cdot700)\) states and split cylinder spread | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
+| CMR156 | Old-cell-clean joint-parent collateral has an exact nine-class split-rank expectation bound | PROVED | `docs/82-prime-power-ordered-joint-parent-bank.md` |
+| CMR157 | Normalized cross-layer rank-two joint-parent collateral is below \(2N^2\) per scale | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
+| CMR158 | Normalized cross-layer rank-three joint-parent collateral is below \(N^2/p\) per scale | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
+| CMR159 | Choosing the better layer order bounds same-layer weight by \(386\) and cross-layer weight by \(50400\) | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
+| CMR160 | For balanced reciprocal primes \(p\ge13\), total expected joint-parent collateral is \(O_p(N^2\log^2N)\) | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
+| CMR161 | Old-cell-clean joint repairs preserve every unprocessed coarser quotient charge | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
