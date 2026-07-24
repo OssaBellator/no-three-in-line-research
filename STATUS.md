@@ -17,7 +17,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 7. **Protected tomographic trades.** Difference operators produce finite row/column/direction line-sum-preserving signed trades.
 8. **Affine finite-direction construction.** For suitable arithmetic moduli, two affine permutations give a saturated configuration avoiding any fixed finite direction set.
 9. **Subgroup coset absorbers.** Suitable affine configurations contain linearly many independently switchable blocks preserving protected toroidal line sums.
-10. **Exact one-block collateral identity.** For absorber order \(h\le H\), a high line meets a block at most once and average collateral equals external secant-shadow divided by \(h\).
+10. **Exact one-block collateral identity.** For absorber order \(h\le H\), a high line meets a block at most once and average collateral equals external secant shadow divided by \(h\).
 11. **Block-shadow closure.** Whole-block reservoir growth makes every reservoir block externally shadow-clean without row/column deficits.
 12. **Product-state LLL criterion.** A full-product block completion exists when normalized pair/triple conflict mass per block is small.
 13. **Complementary hyperbola seed.** \(H_a\cup H_b\) has two points per row/column, at most four per line, no monochromatic triples, and bounded displacement multiplicity.
@@ -40,6 +40,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 30. **Exact common-ratio collateral.** The cost of one same-ratio rectangle switch is exactly its two weighted secant loads plus the occupancy of its switched-pair line.
 31. **Common-ratio decoder-or-structure theorem.** A paid common-ratio bank either contains an improving rectangle, a dense channel-pair secant star, or a large aligned multiplicative anchor class.
 32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), where \(\Theta\) is switched-cell secant load and \(\Lambda\) aligned-anchor multiplicity, one rectangle strictly lowers the triple potential.
+33. **Syndrome-weighted quotient extraction.** If \(|X/X|\le K|X|\), actual point triple degrees produce an admissible common-ratio matching carrying at least \(H/(6K)\) vertex-incidence weight.
+34. **Paid-bank lower bound.** After correcting for pair-overlap, the extracted bank has \(D\ge H/(6K)-\beta|X|/2\); in a \(q\)-channel universe, \(D\ge H/(6K)-(q-1)|X|\).
+35. **Weighted conversion criterion.** Sufficiently large structured syndrome incidence forces an improving rectangle or one of the explicit alternating-closure structures.
 
 ## What remains conditional
 
@@ -48,7 +51,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- Weighted quotient-bank extraction: the inverse-additive bank must capture a positive fraction of current syndrome weight.
+- An alternating closure inequality controlling the secant-star load \(\Theta\) and aligned-anchor multiplicity \(\Lambda\).
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
 
@@ -61,8 +64,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
-- An unweighted inverse-additive common-ratio bank need not carry any current defect incidence.
+- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and the sparse inadmissibility graph supplied by saturation.
 
 ## Bottom line
 
-There is no complete proof. The structured common-ratio conversion step is now rigorous once the bank is paid by current defect incidence. Failure yields explicit opposite-colour structure rather than an anonymous local minimum. The next inverse bottleneck is to extract a same-ratio disjoint bank carrying a fixed fraction of the syndrome weight.
+There is no complete proof. The weighted-bank bottleneck is now closed for the weights that actually arise from current triple degrees. A low-quotient-complexity high-syndrome core automatically supplies a paid admissible common-ratio bank. The remaining geometric bottleneck is to prove that the alternating red/blue closure cannot sustain the resulting secant-star or aligned-anchor concentrations indefinitely.
