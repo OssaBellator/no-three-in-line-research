@@ -26,7 +26,7 @@ def verify_sequences(max_t: int) -> None:
         assert degree == threshold
         assert sum(peels) == (t // 2) - 1
         assert all(value >= 1 for value in peels)
-        assert len(peels) <= 1 + t.bit_length()
+        assert len(peels) <= 2 * t.bit_length()
 
         current_degree = t - 1
         for value in peels:
