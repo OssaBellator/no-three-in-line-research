@@ -40,6 +40,12 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3dv--PP3dy | Exact product factorization and divisor-energy endpoint for same-edge anchors | PROVED | `docs/68-same-edge-anchor-product-factorization.md` |
 | PP3dz--PP3ed | Dense safe-domain square-root macro patch and conditional spread | PROVED | `docs/69-dense-domain-source-clean-macro-patch.md` |
 | PP3ee--PP3eh | Boundary-shadow density or Hall-obstruction dichotomy | PROVED | `docs/70-boundary-shadow-density-dichotomy.md` |
+| PP3ei--PP3ek | Global slot-occurrence LLL endpoint and conditional spread | PROVED / FROM PUBLISHED LLL DISTRIBUTION | `docs/71-global-slot-occurrence-endpoint.md` |
+| PP3el--PP3eo | Random constant-width block profile cancellation and all-block endpoint | PROVED | `docs/56-random-matching-block-preparation.md` |
+| PP3ep--PP3es | Uniform deletion union and deletion-aware profile endpoint | PROVED | `docs/57-deletion-aware-random-block-profiles.md` |
+| PP3et--PP3ew | Candidate blocker-cover probability and product-measure barrier | PROVED | `docs/58-candidate-blocker-cover-barrier.md` |
+| PP3ex--PP3ez | Unary blocker-cover and complete external state domains | PROVED / FINITE OBSTRUCTION | `docs/59-blocker-cover-state-domains.md` |
+| PP3fa--PP3fc | Cross-block blocker-demand CSP and exact two-block obstruction | PROVED / EXHAUSTIVE FINITE CHECK | `docs/60-blocker-demand-csp-and-two-block-obstruction.md` |
 
 ## Current exact target
 
@@ -53,9 +59,12 @@ total width MW = m^0.525.
 ```
 
 Matching pools, equal-margin restoration, complete internal no-three geometry,
-and fixed-rank internal spread are now universal.  Fixed-pair source blockers are
-also removed whenever the movement/refill label compatibility graph has a
-dense perfect matching.
+and fixed-rank internal spread are universal.  The global slot theorem PP3ei
+also provides a concrete external occurrence budget of
+
+```text
+additional events per slot <= 7 gamma^2 R / 1152 + O(1).
+```
 
 The remaining bottleneck has two explicit pieces:
 
@@ -63,9 +72,14 @@ The remaining bottleneck has two explicit pieces:
    boundary-shadow/Hall concentration alternative with protected trades; then
    control fixed-anchor pairs, whose exceptional same-edge class is the divisor
    energy in PP3dv--PP3dy;
-2. prove genuine cross-macro support compression, or incorporate all cross-macro
-   certificates into one enlarged product-space local lemma.  Formal grouping of
-   a full micro-rung product does not reduce the interval-level potential.
+2. prove genuine cross-macro support compression, or show directly that every
+   slot participates in only `O(R)` external and cross-macro bad boxes so PP3ei
+   applies.
 
-The branch no longer lacks square-root macro geometry.  It lacks the global
-source-clean and cross-macro distribution theorem for those explicit macros.
+The constant-width side analysis PP3el--PP3fc sharpens what not to do: random
+independent deletion does not cover additional blockers, unary blocker-cover
+domains become empty on the stored larger seeds, and every raw two-block test at
+sides eight through ten fails before patch-patch interactions.  Its positive
+output is the exact blocker-demand rank localization PP3fa--PP3fb: a correlated
+partition should cluster blocker endpoints into the controller block or a
+bounded-degree partner graph.
