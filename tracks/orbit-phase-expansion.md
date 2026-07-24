@@ -176,6 +176,15 @@ at least \(\lceil W/(2\Delta)\rceil\) disjoint arms.  The remaining
 arithmetic task is now confined to those paid depth-two kernels and
 large disjoint-arm families.
 
+[`orbit-phase-external-collateral.md`](orbit-phase-external-collateral.md)
+proves OP2n for the latter output.  Choose one action variable on each
+residual-disjoint arm and restrict it to its noncurrent phases.  Every
+selected blocker then disappears, while every external hard check and
+weighted soft factor projects exactly to a forced status or a canonical
+action check.  The projected instance still has rank at most three, so
+the disjoint-arm output can recurse through the same phase machinery
+without hiding collateral.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -202,9 +211,19 @@ buckets.  Hence some phase creates at most \(E(v)/(h_v-1)\), and
 \((h_v-1)D(v)>E(v)\) gives an improving flip.  If no target improves,
 every target bucket has weight at least \(D(v)\).  Hard-unsafe targets
 return aligned hard blocker stars instead.  OP3 remains open because
-the auxiliary transversal changes can activate checks outside the
-original bucket, and large disjoint-arm outputs still require
-scope-complete paid selection or arithmetic expansion.
+its final arithmetic expansion/classification theorem is not yet
+proved.
+
+OP3d--OP3f in the external-collateral note close the generic batching
+gap.  OP3d audits every correction on its complete support.  OP3e joins
+two candidates whenever their supports overlap or a hard/soft check
+meets both supports; every independent family is then jointly hard-legal
+and has exactly additive drift.  Weighted Caro--Wei extraction either
+returns an executable batch with a quantified share of the individual
+gain or retains more than half of that gain on degree-at-least-\(D\)
+candidates.  Every high-conflict edge keeps an explicit shared-variable
+or check-scope witness.  The remaining problem is to classify those
+paid edge witnesses arithmetically.
 
 ## OP4 — Product-state completion
 
@@ -243,6 +262,11 @@ mass and the full amplified ancestor audit at \(P(f,r)\).
 OP2l--OP2m route every activated one-literal star to a bounded
 transversal correction, a paid deeper current-literal kernel, or a
 large residual-disjoint blocker family.
+OP2n projects every such disjoint-arm family to an exact
+rank-at-most-three action CSP with all external collateral retained.
+OP3d--OP3f make bounded corrections scope-complete and extract a
+weighted independent batch unless paid gain concentrates on witnessed
+high-conflict candidates.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -287,7 +311,10 @@ one feedback variable on every binary theta instance is checked by
 checked by `scripts/verify_phase_incidence_treewidth.py`.
 Activated rank-two literal stars, maximal-matching transversals, paid
 residual loads, and exact phase averaging are checked by
-`scripts/verify_phase_literal_star_router.py`.
+`scripts/verify_phase_literal_star_router.py`.  Exact action projection,
+external hard/soft collateral, scope-complete correction batches, and
+weighted high-conflict extraction are checked by
+`scripts/verify_phase_external_collateral.py`.
 
 ## Completion criterion
 

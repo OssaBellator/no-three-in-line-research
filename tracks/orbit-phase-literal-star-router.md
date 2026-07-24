@@ -444,6 +444,14 @@ expansion or a scope-complete paid selection.  What it removes is the
 previously unclassified step between a failed phase flip and those two
 precise outputs.
 
+[`orbit-phase-external-collateral.md`](orbit-phase-external-collateral.md)
+closes the formal part of both remaining interfaces.  OP2n converts a
+residual-disjoint arm family into an exact canonical action CSP, keeping
+every external hard check and weighted soft factor.  OP3d--OP3f audit
+bounded corrections on their complete supports and batch them only
+through a scope-complete primal graph.  The remaining work is the
+arithmetic classification of its paid high-conflict output.
+
 For the alternating-core interface, a large hard active-literal family
 now has a canonical interpretation.  Each target literal is either
 absent, admits a bounded transversal correction, or carries a disjoint

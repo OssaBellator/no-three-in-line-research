@@ -157,3 +157,12 @@ Averaging therefore gives an improving phase whenever
 weight at least \(D(v)\).  OP2l--OP2m then route each activated bucket
 to a bounded auxiliary transversal, a paid deeper current-literal
 kernel, or a residual-disjoint blocker family.
+
+[`orbit-phase-external-collateral.md`](orbit-phase-external-collateral.md)
+proves OP2n and OP3d--OP3f.  Residual-disjoint arms project exactly to a
+rank-at-most-three action CSP on noncurrent phases, with every external
+hard check and weighted soft factor retained.  Arbitrary improving
+corrections are audited on their complete supports and may be batched
+through a scope-complete primal graph; weighted extraction either
+returns an executable additive-gain batch or a paid high-conflict
+family with an explicit variable/check witness for every edge.
