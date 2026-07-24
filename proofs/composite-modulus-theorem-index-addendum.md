@@ -27,3 +27,8 @@ CMR101. The main composite index remains in
 | CMR120 | A prime-seven factorization has pair-difference multiplicity at most three | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/73-prime-seven-pair-spectrum.md` |
 | CMR121 | Binary same-layer clusters at powers of seven pay a \(3/7\) separation-node factor | PROVED | `docs/73-prime-seven-pair-spectrum.md` |
 | CMR122 | The sharpened prime-seven bank satisfies \(\mathbb ET_k<(36/7)(k-1)N^2+(29/9)N^2\) | PROVED | `docs/73-prime-seven-pair-spectrum.md` |
+| CMR123 | A fixed global baseline transfers an extracted-star deficit to every globally nonimproving child state | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
+| CMR124 | A dense replacement-touching triple hypergraph gives disjoint paid defects, an alternating subbank, or a heavy external line | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
+| CMR125 | Every globally frozen endpoint bank has an improvement, a half-star excess payment, a cubic-root subbank, disjoint defects, or a heavy external line | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
+| CMR126 | Uncharged alternating expansion reaches an absolute bounded bank after \(O(\log\log t)\) levels | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
+| CMR127 | Heavy external lines are bounded by the outside triple potential divided by \(\binom{2s+1}{3}\) | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
