@@ -206,6 +206,20 @@ contains at least \(\binom d3\) compatible triples, so the same
 shape-incompatible row and column sets in almost all blocks and must
 separately control triples meeting multiple blocks.
 
+[`sparse-zero-energy-blocks.md`](sparse-zero-energy-blocks.md) proves
+SAS5d, showing that the internal obstruction can be eliminated rather
+than merely reduced. For every \(d\)-element row set \(R\), a greedy
+integer column set \(C\) in a coordinate interval of length \(O(d^6)\)
+satisfies
+
+\[
+T_{\rm int}(R,C)=0.
+\]
+
+It avoids every row shape and its reflection in the column shape
+histogram. Thus the remaining block-host geometry is entirely the common
+coordinate budget and the triples meeting multiple blocks.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
@@ -230,7 +244,8 @@ derangement cylinders through block size six. The consecutive-embedding
 triple obstruction is checked by
 `scripts/verify_sparse_block_geometry.py`. The arbitrary-coordinate
 shape formula is checked by direct determinant enumeration in
-`scripts/verify_sparse_block_affine_energy.py`.
+`scripts/verify_sparse_block_affine_energy.py`. Zero-energy companion
+coordinates are checked by `scripts/verify_sparse_zero_energy.py`.
 
 ## Completion criterion
 

@@ -87,6 +87,7 @@ The numbering is local to this repository.
 | SAS5a | Global conflict-mass criterion yields a saturated 2-factor | PROVED | `tracks/sparse-spread-composition.md` |
 | SAS5b | Consecutive sparse blocks have \(\omega(d^3)\) compatible collinear triples | PROVED | `tracks/sparse-block-host-geometric-obstruction.md` |
 | SAS5c | Complete sparse blocks have an exact one-dimensional affine-shape triple energy | PROVED | `tracks/sparse-block-affine-energy.md` |
+| SAS5d | Every row set has an effective integer companion with zero internal block energy | PROVED | `tracks/sparse-zero-energy-blocks.md` |
 | I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |
