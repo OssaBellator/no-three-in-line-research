@@ -66,3 +66,10 @@ CMR101. The main composite index remains in
 | CMR159 | Choosing the better layer order bounds same-layer weight by \(386\) and cross-layer weight by \(50400\) | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
 | CMR160 | For balanced reciprocal primes \(p\ge13\), total expected joint-parent collateral is \(O_p(N^2\log^2N)\) | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
 | CMR161 | Old-cell-clean joint repairs preserve every unprocessed coarser quotient charge | PROVED | `docs/83-prime-power-joint-parent-collateral-sum.md` |
+| CMR162 | Balanced recursive nonroot layer blocks have disjoint row fibres, preserved by prefix and joint repairs | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR163 | A one-matching derangement board has at least \(t!/4\) states and \(4/(t)_r\) spread | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR164 | A nonroot disjoint-fibre joint bank has at least \((t!)^2/16\) old-cell-clean states and product spread | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR165 | Disjoint-fibre joint-parent collateral has split-rank constants four and sixteen | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR166 | Balanced reciprocal banks, including \(p=5\), have total nonroot joint-parent collateral \(O_p(N^2\log^2N)\) | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR167 | The prime-seven balanced bank has expected nonroot joint-parent collateral below \(((216k+360)(k-1)/7)N^2\) | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR168 | Disjoint-fibre joint repairs preserve coarser charges; root blocks use exact base escapes or the general old-cell-clean bank | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
