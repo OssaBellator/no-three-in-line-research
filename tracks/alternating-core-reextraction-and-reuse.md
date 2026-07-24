@@ -146,6 +146,83 @@ object whose full conflict neighbourhood carries \(K\) times its own
 current incidence, or show that such neighbourhood loads are uniformly
 bounded.
 
+## AC2d -- labelled overload descent
+
+Suppose every conflict edge incident with an object \(o\) carries one of
+at most \(T\) arithmetic labels. These labels may record the pair-rank,
+carry, quotient-ratio, wrap-center, or channel certificate responsible
+for the incompatibility. For a label \(\lambda\), let
+
+\[
+S_\lambda(o)
+=
+\{v\in N(o):ov\text{ has label }\lambda\}.
+\]
+
+### Lemma AC2d -- PROVED
+
+Assume \(L(o)>K w(o)\), where \(K>1\). For every \(Q\ge1\), some label
+\(\lambda\) satisfies
+
+\[
+\boxed{
+\sum_{v\in S_\lambda(o)}w(v)
+>
+\frac{K-1}{T}w(o)
+}
+\]
+
+and one of the following holds inside the conflict graph induced by
+\(S_\lambda(o)\):
+
+1. some \(v\in S_\lambda(o)\) has restricted closed-neighbourhood load
+   greater than \(Qw(v)\); or
+2. a compatible family \(\mathcal I\subseteq S_\lambda(o)\) has
+   \[
+   \boxed{
+   \sum_{v\in\mathcal I}w(v)
+   >
+   \frac{K-1}{TQ}w(o).
+   }
+   \]
+
+Moreover, for every \(\theta>0\), either that label class contains one
+object of weight greater than \(\theta w(o)\), or
+
+\[
+\boxed{
+|S_\lambda(o)|
+>
+\frac{K-1}{T\theta}.
+}
+\]
+
+### Proof
+
+The overload inequality gives
+
+\[
+\sum_{v\in N(o)}w(v)>(K-1)w(o).
+\]
+
+Partition this sum among at most \(T\) labels and choose a heaviest
+part. This proves the first box. Apply AC2c with parameter \(Q\) to the
+induced weighted conflict graph on that label class. Its two alternatives
+give the restricted overload or a compatible family carrying at least
+\(1/Q\) of the class weight, which proves the second box.
+
+Finally, if every member of the class has weight at most
+\(\theta w(o)\), its cardinality times \(\theta w(o)\) is at least its
+total weight. Combining this with the strict first box proves the last
+display. \(\square\)
+
+Thus a paid high-conflict return can be narrowed to one arithmetic
+certificate label before recursion. It then produces an installable paid
+bank, a single heavier object, a broad same-label star, or a deeper
+overload wholly inside that label. AC2d does not classify the resulting
+label; it removes arbitrary mixtures of labels from that remaining
+classification problem.
+
 ## AC3b -- ticketed signature potential
 
 Let \(\Sigma\) be the finite signature universe from AC3a.  Give every

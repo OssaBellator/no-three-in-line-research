@@ -126,6 +126,14 @@ carries more than \(K\) times its own paid weight. Thus the unresolved
 high-conflict return is itself quantitatively paid; only its arithmetic
 classification remains.
 
+AC2d localizes that paid overload to one of the finitely many arithmetic
+conflict labels. Within the selected label it either re-extracts a
+compatible family of weight greater than
+\((K-1)w(o)/(TQ)\), finds a heavier neighbour, returns a broad
+same-label star, or produces a deeper overload in the induced label
+class. Hence AC2 no longer passes an uncontrolled mixture of certificate
+types to AC3.
+
 ### Interface
 
 Outputs 1 and 2 restart the proved WQ/CR/AN machinery in the opposite layer. Output 3 is charged by AC3. Output 4 invokes the independent bounded-denominator absorber branch.

@@ -63,6 +63,7 @@ The numbering is local to this repository.
 | AC2a | Bounded conflict degree gives weighted compatible re-extraction | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC2b | Bounded link and incompatibility degrees compose to paid installable stars | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC2c | Weighted incompatibility yields a paid overload or a constant-fraction compatible family | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
+| AC2d | A paid overload localizes to one arithmetic label and recursively re-extracts or overloads | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3a | Finite monotone potential for genuinely new carry signatures | PROVED | `tracks/alternating-core-certificate-accounting.md` |
 | AC3b | Bounded signature-reuse tickets give a finite monotone potential | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3c | Unticketed strict transition potentials exist exactly on DAGs | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
