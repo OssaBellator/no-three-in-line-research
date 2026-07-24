@@ -30,6 +30,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected collision-aware bank theorem.
 - [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection theorem and local triple-load endpoint.
 - [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): six-cycle spread proof, dense superregular perfect-matching spread, and two-layer global conflict endpoint.
+- [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md): quotient-set inverse theorems, subgroup completion, and common-ratio repair banks.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
@@ -57,12 +58,13 @@ The strongest current synthesis is:
 4. Represent cross-channel bad triples as properly edge-coloured secant graphs whose colour classes are matchings.
 5. Peel leaves; every residual core contains a Möbius cycle.
 6. Use collision-aware full permutation banks on cycle blocks.
-7. When a one-colour cycle is frozen, expand to its opposite-colour secant anchors.
-8. Control the alternating closure through quantitative one-, two-, and three-cell concentration certificates.
-9. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-10. In dense superregular candidate hosts, use spread perfect-matching measures or the new six-cycle switching bound; the missing upgrade is a local dependency/resampling theorem.
+7. Apply inverse-additive theorems: small quotient sets yield common-ratio rectangle banks, and quotient ratio below \(3/2\) completes to a subgroup-coset absorber.
+8. When a one-colour cycle is frozen, expand to its opposite-colour secant anchors.
+9. Control the alternating closure through quantitative one-, two-, and three-cell concentration certificates.
+10. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
+11. In dense superregular candidate hosts, use spread perfect-matching measures or the six-cycle switching bound; the missing upgrade is a local dependency/resampling theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current geometric target is an alternating two-colour carry-core lemma. The exact complete-host endpoint is proved, and dense superregular pairs now admit rank-three and all-rank spread matching distributions. Spread alone, however, does not inherit the complete-permutation lopsided dependency graph.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current geometric targets are the conversion of common-ratio banks and alternating two-colour carry-core termination. The exact complete-host endpoint is proved, and dense superregular pairs admit rank-three and all-rank spread matching distributions.
 
 ## Running the checks
 
@@ -81,6 +83,9 @@ These programs are sanity checks, not proofs for arbitrary \(n\).
 
 - Ghosal, Goenka, Grebennikov, Keevash, Kwan, Pham, *No-\((k+1)\)-in-line problem for \(k\ge3\)*, arXiv:2607.05255.
 - Kovács, Nagy, Szabó, *Randomised algebraic constructions for the no-\((k+1)\)-in-line problem*, arXiv:2508.07632.
+- Reiher, Schoen, *Note on the Theorem of Balog, Szemeredi, and Gowers*, arXiv:2308.10245.
+- Gowers, Green, Manners, Tao, *Marton's Conjecture in abelian groups with bounded torsion*, arXiv:2404.02244.
+- Raghavan, *Improved Bounds for the Freiman-Ruzsa Theorem*, arXiv:2512.11217.
 - Nenadov, Pham, *Spread blow-up lemma with an application to perturbed random graphs*, arXiv:2410.06132.
 - Pham, Sah, Sawhney, Simkin, *A Toolkit for Robust Thresholds*, arXiv:2210.03064.
 - Glock, Joos, Kim, Kühn, Lichev, *Conflict-free hypergraph matchings*, arXiv:2205.05564.
@@ -95,9 +100,9 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
+- prove a common-ratio bank conversion theorem;
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
-- classify frozen cycles and alternating anchor closures;
-- connect the carry filter to additive-combinatorial structure.
+- classify frozen cycles and alternating anchor closures.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
