@@ -35,6 +35,11 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 25. **Clone inheritance.** The two-clone blow-up of a superregular pair remains superregular with explicit parameter loss.
 26. **Two-layer spread.** Dense superregular pairs support a spread distribution on two edge-disjoint perfect matchings, giving exact row and column degree two.
 27. **Global conflict-mass endpoint.** A dense superregular host contains a saturated conflict-free two-layer selection whenever the total spread-weighted conflict mass is below one.
+28. **Inverse-additive repair banks.** Small quotient sets and many low-complexity windows produce linear common-ratio rectangle banks; near-minimal quotient sets complete to subgroup-coset absorbers.
+29. **Coset and rational propagation.** Structured cycle parameters propagate to opposite-colour anchor structure, while full subgroup cosets of order at least three expand under the normalized Möbius map.
+30. **Exact common-ratio collateral.** The cost of one same-ratio rectangle switch is exactly its two weighted secant loads plus the occupancy of its switched-pair line.
+31. **Common-ratio decoder-or-structure theorem.** A paid common-ratio bank either contains an improving rectangle, a dense channel-pair secant star, or a large aligned multiplicative anchor class.
+32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), where \(\Theta\) is switched-cell secant load and \(\Lambda\) aligned-anchor multiplicity, one rectangle strictly lowers the triple potential.
 
 ## What remains conditional
 
@@ -43,6 +48,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
+- Weighted quotient-bank extraction: the inverse-additive bank must capture a positive fraction of current syndrome weight.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
 
@@ -55,7 +61,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
+- An unweighted inverse-additive common-ratio bank need not carry any current defect incidence.
 
 ## Bottom line
 
-There is no complete proof. The complete-host local-load endpoint is proved, and the dense superregular spread component is now proved at fixed rank and available at all ranks from published work. The remaining selection-theoretic gap is not spread itself, but the dependency/resampling mechanism needed to turn local conflict bounds into an exact perfect matching inside a noncomplete host.
+There is no complete proof. The structured common-ratio conversion step is now rigorous once the bank is paid by current defect incidence. Failure yields explicit opposite-colour structure rather than an anonymous local minimum. The next inverse bottleneck is to extract a same-ratio disjoint bank carrying a fixed fraction of the syndrome weight.
