@@ -75,6 +75,9 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3ji--PP3jn | Two-scale thinning closes endpoint source validity | PROVED | `docs/94-two-scale-endpoint-source-validity.md` |
 | PP3jo--PP3js | Designated-credit recapture avoidance and residual shadow endpoint | PROVED | `docs/95-designated-credit-recapture-avoidance.md` |
 | PP3jt--PP3jx | Shadow-support permutation cleaning and zero-cost endpoint criterion | PROVED | `docs/96-shadow-support-permutation-cleaning.md` |
+| PP3jy--PP3kc | Zero-unary-shadow host, Hall rectangle, and superregular zero-cost endpoint | PROVED / FROM SR1 | `docs/97-zero-unary-shadow-hall-rectangles.md` |
+| PP3kd--PP3kh | Sublinear exceptional-resource deletion and linear support-core extraction | PROVED | `docs/98-shadow-support-core-regularization.md` |
+| PP3ki--PP3kn | Free source-star distinguished endpoint conversion and captive-centre split | PROVED / CONDITIONAL ON HOST | `docs/99-source-endpoint-star-conversion.md` |
 
 ## Current exact target
 
@@ -92,49 +95,55 @@ spread, all patch-only cross-macro energy, and all ordinary two-slot
 source-anchor energy are closed. If the controller-aware global label graphs
 satisfy PP3gl, PP3hq immediately gives the full patch.
 
-A positive-density failure of controller-aware safety produces either:
-
-1. a blocker star with `m^0.475` distinct rays; or
-2. `m^0.525` resource-disjoint bad entries with distinct labels, controllers,
-   and endpoint-disjoint blocker pairs.
-
-The resource branch is source-valid. Under sparse unary endpoint shadow,
-two-scale thinning to any
+A positive-density controller-aware failure produces a source-endpoint star or a
+resource matching. The resource branch is source-valid after two-scale thinning.
+All recapture and residual unary-shadow cells may now be removed from one
+zero-unary host `G_0` rather than charged individually. Failure of this unary
+endpoint is exactly a Hall rectangle
 
 ```text
-q=m^kappa,  0<kappa<1/40,
+X times Y contained in the unary forbidden support,
+|X|+|Y| > q.
 ```
 
-followed by permutation-LLL cleaning produces a saturation-preserving no-three
-endpoint trade. Transpositions, directed 3-cycles, anchored transitions,
-rank-four anchored pairs, and every inserted-triple support class are closed.
+If `G_0` is superregular and the remaining pair/triple support is summable,
+PP3kb gives a source-admissible endpoint trade with zero insertion shadow.
 
-The guaranteed `q` removal-credit units may be protected from direct recapture.
-More strongly, every positive residual unary-shadow cell and binary-shadow pair
-may be forbidden once. If their simple support degrees satisfy
+Isolated rich fibres and binary stars are also not terminal. Deleting `o(q)`
+exceptional endpoint indices preserves positive credit and all source-validity
+bounds. Persistent failure forces either
 
 ```text
-d_rec + d_unary = o(q),
-d_binary        = o(q^2),
+Omega(q^2) unary support in a linear fibre core,
 ```
 
-the permutation local lemma produces a source-admissible endpoint trade with
-**zero insertion shadow**, hence a strict potential decrease.
+or
 
-Every successful paid trade strictly decreases a fixed nonnegative integer
-controller-shadow potential while preserving the controller pools, so a uniform
-conversion theorem automatically terminates.
+```text
+Omega(q^3) binary support in a linear conflict core.
+```
 
-The remaining bottleneck is reduced to the following support concentrations:
+The source-star geometry has been corrected. PP3hx gives blocker pairs sharing a
+source endpoint, not pairs through a common candidate point, so AN2--AN4 do not
+apply verbatim. A free star centre admits a linear distinguished endpoint bank
+and is reduced to the same zero-unary Hall/superregular endpoint. A captive star
+centre lies in the fixed controller infrastructure and requires a dynamic
+controller potential or a controller-preserving trade on its blocker partners.
+
+Every successful trade strictly decreases a fixed nonnegative integer potential,
+so a uniform conversion theorem automatically terminates.
+
+The remaining bottleneck is now reduced to:
 
 - prove the controller-aware global label graphs satisfy PP3gl directly; or
-- convert the original blocker-star branch; or
-- in the resource branch, handle dense unary endpoint source shadow, a rich
-  designated-credit recapture fibre, a unary insertion-shadow fibre, or a binary
-  insertion-shadow star.
+- convert a Hall rectangle or a matchable but non-superregular zero-unary host;
+- convert the cubic binary shadow-support core;
+- convert a free source-star Hall rectangle when PP3kl does not apply; and
+- handle captive source-star centres without destroying the fixed controller
+  infrastructure.
 
-Diffuse weighted residuals and source admissibility of the resource endpoint
-trade are no longer open.
+Diffuse weighted residuals, isolated rich fibres, and source admissibility of the
+resource endpoint trade are no longer open.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
