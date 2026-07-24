@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from fractions import Fraction
-from itertools import combinations, permutations
+from itertools import combinations, permutations, product
 
 
 def greedy_colours(
@@ -362,6 +362,78 @@ def verify_ticketed_support_potential(
                             assert next_potential >= potential + 1
 
 
+def capacitated_hall(
+    eligibility: tuple[frozenset[int], ...],
+    capacities: tuple[int, ...],
+) -> bool:
+    event_count = len(eligibility)
+    for mask in range(1 << event_count):
+        neighbourhood: set[int] = set()
+        selected = 0
+        for event, resources in enumerate(eligibility):
+            if mask & (1 << event):
+                selected += 1
+                neighbourhood.update(resources)
+        if selected > sum(capacities[resource] for resource in neighbourhood):
+            return False
+    return True
+
+
+def has_capacitated_assignment(
+    eligibility: tuple[frozenset[int], ...],
+    capacities: tuple[int, ...],
+) -> bool:
+    remaining = list(capacities)
+    ordered = sorted(eligibility, key=len)
+
+    def assign(index: int) -> bool:
+        if index == len(ordered):
+            return True
+        for resource in ordered[index]:
+            if remaining[resource] == 0:
+                continue
+            remaining[resource] -= 1
+            if assign(index + 1):
+                return True
+            remaining[resource] += 1
+        return False
+
+    return assign(0)
+
+
+def verify_capacitated_hall(maximum_resources: int = 3) -> None:
+    for resource_count in range(1, maximum_resources + 1):
+        nonempty_sets = tuple(
+            frozenset(
+                resource
+                for resource in range(resource_count)
+                if mask & (1 << resource)
+            )
+            for mask in range(1, 1 << resource_count)
+        )
+        for capacities in product(range(3), repeat=resource_count):
+            for event_count in range(4):
+                for eligibility in product(nonempty_sets, repeat=event_count):
+                    hall = capacitated_hall(eligibility, capacities)
+                    assigned = has_capacitated_assignment(
+                        eligibility,
+                        capacities,
+                    )
+                    assert hall == assigned
+                    if hall:
+                        assert event_count <= sum(capacities)
+
+    eligibility = (
+        frozenset({0}),
+        frozenset({0, 1}),
+        frozenset({0, 1}),
+    )
+    assert capacitated_hall(eligibility, (2, 1))
+    assert has_capacitated_assignment(eligibility, (2, 1))
+    assert not capacitated_hall(eligibility, (1, 1))
+    assert not has_capacitated_assignment(eligibility, (1, 1))
+
+
 def main() -> None:
     verify_weighted_extraction()
     verify_composed_bound()
@@ -371,6 +443,7 @@ def main() -> None:
     verify_ticket_trace()
     verify_strict_support_descent()
     verify_ticketed_support_potential()
+    verify_capacitated_hall()
     print("AC re-extraction and reuse accounting: verified")
 
 

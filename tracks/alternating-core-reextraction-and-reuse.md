@@ -434,9 +434,82 @@ recursion and all paid reopenings terminate under one explicit scalar
 potential.  Constructing that syndrome-paid budget remains the geometric
 part of AC3.
 
+## AC3f -- capacitated Hall certificate for paid reopenings
+
+Let \(\mathcal J\) be the reopening events in a finite closure prefix and
+let \(\mathcal P\) be a finite set of atomic paid resources.  A resource
+\(\pi\in\mathcal P\) has an integer capacity \(c_\pi\geq0\).  Each
+reopening \(j\in\mathcal J\) has a nonempty eligibility set
+\(A_j\subseteq\mathcal P\), consisting of the current syndrome
+incidences, original certificates, or exceptional-state tokens which
+may legitimately pay for that reopening.
+
+### Lemma AC3f -- PROVED
+
+There is a charge map
+
+\[
+\chi:\mathcal J\longrightarrow\mathcal P,
+\qquad
+\chi(j)\in A_j,
+\qquad
+|\chi^{-1}(\pi)|\leq c_\pi,
+\]
+
+if and only if every subfamily \(\mathcal X\subseteq\mathcal J\)
+satisfies the capacitated Hall inequalities
+
+\[
+\boxed{
+|\mathcal X|
+\leq
+\sum_{\pi\in\bigcup_{j\in\mathcal X}A_j}c_\pi.
+}
+\]
+
+Consequently, if these inequalities hold for every finite prefix of a
+closure trajectory, then the total number of reopenings is at most
+
+\[
+\boxed{
+R=\sum_{\pi\in\mathcal P}c_\pi.
+}
+\]
+
+With \(n=|\mathcal O|\), AC3e then bounds the entire mixture of labelled
+descents and reopenings by the potential ceiling \(nR+n-1\).  If every
+atomic paid resource has capacity at most \(\rho\), then
+\(R\leq\rho|\mathcal P|\).
+
+### Proof
+
+Replace each resource \(\pi\) by \(c_\pi\) distinguishable copies and
+join reopening \(j\) to every copy of every resource in \(A_j\).
+Ordinary Hall's marriage theorem gives a matching covering
+\(\mathcal J\) exactly when every subfamily has at least its cardinality
+many neighbouring copies.  The number of copies in the neighbourhood
+of \(\mathcal X\) is precisely the sum in the boxed inequality.  A
+covering matching is the required charge map, and conversely every
+charge map chooses distinct copies.
+
+Taking \(\mathcal X=\mathcal J\) gives
+\(|\mathcal J|\leq R\).  If an infinite trajectory existed, its first
+\(R+1\) reopenings would form a finite prefix contradicting that bound.
+The AC3e conclusion follows by using the reopening count as its ticket
+counter. \(\square\)
+
+Thus AC3 no longer needs an ad hoc greedy ticket assignment.  Its exact
+remaining payment obligation is to prove the boxed neighbourhood
+capacity inequality for the geometric eligibility relation.  Failure is
+equally informative: Hall returns a specific reopening subfamily whose
+entire eligible current-incidence neighbourhood has insufficient
+capacity, and that deficient family is the object to classify or
+delegate to BDA/RI.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
 four quotient states, a finite ticket trace, and every strict-support
 maximal-depth descent order through seven objects.  It also enumerates
 all descent and ticketed-reopening transitions through six objects and
-three tickets.
+three tickets, and compares the capacitated Hall inequalities with direct
+charge assignment on small eligibility systems.

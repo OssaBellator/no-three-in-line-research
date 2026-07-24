@@ -199,6 +199,16 @@ has length at most \(O(|\mathcal O|(R+1))\). The remaining AC3 obligation
 is therefore exactly to derive finite \(p^{o(1)}\) ticket supply from
 current paid incidence.
 
+AC3f replaces an assumed ticket assignment by an exact capacitated Hall
+criterion. Reopenings with eligible paid-resource sets \(A_j\) can be
+charged within capacities \(c_\pi\) if and only if every reopening
+subfamily sees capacity at least its size. In that case
+\(R=\sum_\pi c_\pi\) feeds AC3e; otherwise a Hall-deficient reopening
+family is an explicit paid-incidence obstruction. The unresolved
+geometric statement is now this neighbourhood-capacity inequality (or
+classification of its deficient witness), not an unspecified online
+charging rule.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
