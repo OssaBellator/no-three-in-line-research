@@ -101,6 +101,17 @@ collateral plus that sum, a joint improving state exists. Thus the
 remaining BDA3 arithmetic must bound this explicit sum or classify the
 quantified high-collateral family.
 
+[`bounded-denominator-profile-localization.md`](bounded-denominator-profile-localization.md)
+proves BDA3c. Once the \(q\)-stripe arithmetic partitions collateral
+triples into \(L_q\) finite profiles, failure of the BDA3b inequality
+forces one profile to carry at least \((W-F)_+/L_q\) normalized
+collateral, with an explicit conversion to raw candidate weight. This
+removes mixtures of residue, carry, and rank types from the BDA4 input.
+BDA3d unconditionally reduces the block-rank component to one of six
+patterns, carrying at least \((W-F)/6\) when \(W>F\). The remaining
+arithmetic task is to prove \(L_q=O_q(1)\) for the actual strip
+residue/carry signatures and classify each heavy profile.
+
 ## BDA4 — exception classification
 
 ### Target statement

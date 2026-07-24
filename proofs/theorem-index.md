@@ -50,6 +50,8 @@ The numbering is local to this repository.
 | BDA2b | Bounded support cannot remove dispersed cell-private mass | PROVED | `tracks/bounded-denominator-local-bank.md` |
 | BDA3a | Linear labelled conflict mass gives compatible block regularization | PROVED | `tracks/bounded-denominator-conflict-regularization.md` |
 | BDA3b | Compatible local chamber banks have an exact product collateral criterion | PROVED | `tracks/bounded-denominator-product-bank.md` |
+| BDA3c | A failed product bank localizes normalized collateral to one finite profile | PROVED | `tracks/bounded-denominator-profile-localization.md` |
+| BDA3d | Failed collateral localizes to one of six positive block-rank patterns | PROVED | `tracks/bounded-denominator-profile-localization.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
