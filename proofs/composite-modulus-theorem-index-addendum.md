@@ -49,3 +49,7 @@ CMR101. The main composite index remains in
 | CMR142 | Created and removed triples balance exactly around every four-core cycle | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
 | CMR143 | Two explicit saturated \(N=4\) states form a potential-one terminal two-cycle under four-endpoint moves | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/79-four-endpoint-trap-counterexample.md` |
 | CMR144 | The four-core two-cycle lies above an explicit potential-zero saturated state, refuting universal local descent | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/79-four-endpoint-trap-counterexample.md` |
+| CMR145 | The complete \(N=5\) saturated-state census has 5280 states and 64 no-three states | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/80-prime-five-four-core-escape.md` |
+| CMR146 | Potential-one four-move dynamics at \(N=5\) has 80 isolated traps and eight terminal two-cycles | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/80-prime-five-four-core-escape.md` |
+| CMR147 | Every one of the 96 trapped \(N=5\) states has an ordered full-parent two-layer escape to potential zero | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/80-prime-five-four-core-escape.md` |
+| CMR148 | At the prime five, every terminal four-core component is absorbed by the complete parent-layer bank | PROVED FOR THE EXACT \(N=5\) STATE SPACE | `docs/80-prime-five-four-core-escape.md` |
