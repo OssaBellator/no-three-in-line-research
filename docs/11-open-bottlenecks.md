@@ -166,17 +166,15 @@ its pair spectrum and prove
 \frac{36}{7}(k-1)N^2+\frac{29}{9}N^2.
 \]
 
-CMR123--CMR127 now compress the alternating closure while retaining one fixed
-global comparison baseline. A low-excess globally nonimproving bank of size `t`
-either exposes disjoint defects, exposes an outside line core, or contains a
-new alternating bank of size at most
-
-\[
-\left(\frac{t}{72}\right)^{1/3}.
-\]
+CMR123--CMR127 compress the alternating closure while retaining one fixed global
+comparison baseline. A low-excess globally nonimproving bank either exposes
+disjoint defects, exposes an outside line core, or contains a cubic-root smaller
+alternating bank. CMR128 proves that the smaller bank only needs size four:
+every degree-two forbidden board of size at least four has a perfect matching,
+and size three can fail.
 
 Thus an uncharged alternating expansion chain reaches an absolute bank size
-below `24696` after `O(log log t)` levels. Heavy outside lines are paid by the
+below `2160` after `O(log log t)` levels. Heavy outside lines are paid by the
 outside triple potential through
 
 \[
@@ -189,7 +187,7 @@ Local-bank construction, quotient charging, endpoint removal, higher-rank
 prefix collateral, child-core cancellation, vertical-pencil concentration, and
 unbounded alternating expansion are therefore closed. The remaining recursive
 problem is repeated-charge accounting across many starting nodes and scales,
-plus the absolute bounded endpoint-bank core.
+plus the absolute endpoint-bank core below `2160`.
 
 ### Composite-modulus open lemmas
 
@@ -197,7 +195,7 @@ plus the absolute bounded endpoint-bank core.
    heavy-line alternatives over all starting prime-power nodes without charging
    the same triple or line signature repeatedly.
 2. **Bounded alternating core.** Resolve, enumerate, or structurally absorb the
-   endpoint-bank residual class below `24696`.
+   endpoint-bank residual class below `2160`.
 3. **Termination after coarse repairs.** CMR93 protects unprocessed coarser
    quotients, but a later coarse repair may recreate fine stars. Prove that the
    reintroduced fine mass is paid by the coarse potential decrease or by a
@@ -225,7 +223,7 @@ The following should be exhaustively tested for small primes:
 - distribution of \(q_s\) for real carry-filtered cycles;
 - existence of alternating two-colour closures that remain jointly frozen;
 - overlap multiplicities of CMR125 disjoint-defect and heavy-line payments;
-- exact bounded-core behaviour for endpoint banks below `24696`;
+- exact bounded-core behaviour for endpoint banks below `2160`;
 - fine mass recreated by one coarse prefix repair;
 - exact no-three grid factorizations and pair spectra at `p=11,19,...`;
 - inherited line-signature multiplicities inside `M_s`;
@@ -236,7 +234,7 @@ The following should be exhaustively tested for small primes:
 ## Recommended order of work
 
 1. Build a no-double-charge ledger for the CMR125 defect and line alternatives.
-2. Reduce or enumerate the absolute endpoint-bank core below `24696`.
+2. Reduce or enumerate the absolute endpoint-bank core below `2160`.
 3. Quantify fine-star recreation under the full prefix-rematching bank.
 4. Search for non-reciprocal balanced grid factorizations at the next
    `p=3 mod 4` primes.
