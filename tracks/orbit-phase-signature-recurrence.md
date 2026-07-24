@@ -489,17 +489,26 @@ rank-two part or returns a labelled contradictory implication chain.
 OP4c returns every genuinely rank-three residual as an explicit
 three-support geometric transversal.
 
+[`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
+continues both outputs.  OP4d compresses a rank-two contradiction to a
+source-labelled implication bicycle.  OP4e audits rather than assumes
+the rational quotient law and then applies the one-colour,
+order-two-template, or larger-ratio classification.  OP4f returns a
+switch-disjoint rank-three matching or a bounded switch kernel whose
+conditioned residuals are all OP4b instances.
+
 Therefore repeated carry signatures are no longer an anonymous
 failure of monotonicity or an excuse to combine incompatible
 historical corrections.  At most
 \(|\Omega||\Sigma_{\rm act}|\) ledger-growth rounds occur before a
 current recurrent class must be processed.  The remaining frontier
-consists of four named arithmetic outputs:
+consists of five named arithmetic outputs:
 
 1. high-overlap action-literal kernels;
-2. contradictory order-two implication chains;
-3. rank-three carry transversals;
-4. the wide-support action CSPs already separated by OP3j.
+2. implication edges lacking a certified rational quotient label;
+3. certified fixed-edge RI5 square/collapse templates;
+4. large switch-disjoint rank-three carry transversals;
+5. the wide-support action CSPs already separated by OP3j.
 
 To finish OP2--OP5, these outputs must be shown to expand, to force a
 new ledger signature, or to enter one of the classified absorber

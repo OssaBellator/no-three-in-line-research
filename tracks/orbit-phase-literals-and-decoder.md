@@ -194,3 +194,12 @@ canonical factor family projects exactly to rank-at-most-three CNF.
 Rank two is completed by 2-SAT or returns a contradictory implication
 chain; rank-three residuals retain their exact geometric transversal
 provenance.
+
+[`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
+proves OP4d--OP4f.  Contradictory chains compress to bounded
+source-factor-labelled bicycles.  Only edges carrying a verified
+rational quotient transition enter the dihedral/order-two
+classification; missing or invalid labels return their exact source
+factor.  Rank-three clauses give a switch-disjoint matching or a
+bounded switch kernel whose conditioned residuals are all decided by
+the same 2-SAT machinery.

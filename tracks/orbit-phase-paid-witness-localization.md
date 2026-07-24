@@ -352,6 +352,13 @@ The remaining outputs are the action-literal correction kernels,
 wide action CSPs, contradictory implication chains, and explicit
 rank-three carry transversals.
 
+[`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
+refines the last two outputs.  It retains a bounded source-labelled
+bicycle for every rank-two contradiction, gates the rational
+order-two classification on an explicit quotient identity, and turns
+rank-three clauses into either a switch-disjoint matching or a bounded
+conditioned 2-SAT kernel.
+
 `scripts/verify_phase_paid_witness_localization.py` exhausts small
 canonical support/factor systems, checks the local trichotomy and every
 literal refinement, verifies the weighted organizer, and retains a

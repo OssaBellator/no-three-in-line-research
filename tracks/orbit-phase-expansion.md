@@ -50,9 +50,18 @@ contains a paid support-disjoint correction bank.  Corrections from
 different phase snapshots are never mixed.  The current bank projects
 losslessly to rank-at-most-three CNF.  Its rank-two part is exactly
 2-SAT, while every rank-three residual is a named geometric
-transversal.  Uniform arithmetic control is still open for those
-action-literal kernels, contradictory implication chains,
-rank-three transversals, and wide action CSPs.
+transversal.
+
+[`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
+proves OP4d--OP4f.  Every rank-two failure compresses to a bounded
+source-factor-labelled implication bicycle.  A rational quotient label
+is audited on every edge before RI4's one-colour, order-two
+square/collapse, or larger colour-ratio classification is applied.
+Rank-three clauses either contain a disjoint transversal matching or
+have a bounded switch kernel whose conditioned residuals are all
+2-SAT instances.  Uniform arithmetic control is still open for
+unlabelled implication factors, the RI5 fixed-edge conversion, large
+rank-three matchings, action-literal kernels, and wide action CSPs.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -337,6 +346,16 @@ exact rank-at-most-three CNF.  OP4b completes the rank-two case by
 identifies every remaining rank-three clause as a three-support
 geometric transversal and retains an eight-clause obstruction showing
 why satisfiability cannot follow from support disjointness alone.
+OP4d compresses every nonempty-clause rank-two obstruction to two
+simple implication paths with at most \(4m-2\) source-labelled
+occurrences.  OP4e applies the rational quotient classification only
+after every occurrence passes the exact
+\(A_{\ell'}=RC_eA_\ell^{-1}\) audit; it returns an uncertified factor,
+a one-colour component, an order-two square/collapse, or a
+colour-ratio subgroup of order at least three.  OP4f gives an exact
+rank-three matching/kernel alternative: a maximal matching of
+\(\nu\) switch-disjoint transversals, or a \(3\nu\)-switch kernel whose
+\(2^{3\nu}\) conditioned residuals are all OP4b instances.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -394,7 +413,10 @@ channel extraction, and factor-fan carry dispersion are checked by
 paid recurrence, support-disjoint extraction, lossless protected-bank
 projection, contradictory implication chains, and the rank-three
 transversal boundary are checked by
-`scripts/verify_phase_signature_recurrence.py`.
+`scripts/verify_phase_signature_recurrence.py`.  Source-labelled
+implication bicycles, the rational quotient audit and order-two
+templates, and the rank-three matching/kernel reduction are checked by
+`scripts/verify_phase_implication_bridge.py`.
 
 ## Completion criterion
 

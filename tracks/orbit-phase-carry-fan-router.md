@@ -455,12 +455,17 @@ paid high-reuse signature among centres at the current snapshot.
 Corrections from different snapshots are not combined.  OP3l then
 returns a deeper action-literal kernel or a paid current
 support-disjoint correction bank.  OP4a--OP4c project that bank exactly
-to 2-SAT plus explicit rank-three transversals.  The remaining
-termination theorem is arithmetic: classify the repeated
-action-literal kernels, contradictory implication chains,
-rank-three transversals, and wide OP2n action CSPs.  Bounded-denominator
-absorbers are still needed only when the aligned carry identities place
-a subsequent closure step in the perfect-interpolation branch.
+to 2-SAT plus explicit rank-three transversals.
+[`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
+then compresses 2-SAT failures to source-labelled bicycles, audits the
+rational quotient law edge by edge, and reduces rank three to a
+disjoint matching or bounded conditioned kernel.  The remaining
+termination theorem is arithmetic: certify or reroute the implicated
+geometric transitions, convert the fixed RI4 edge through RI5, handle
+large rank-three matchings, and classify repeated action-literal
+kernels and wide OP2n action CSPs.  Bounded-denominator absorbers are
+still needed only when the aligned carry identities place a subsequent
+closure step in the perfect-interpolation branch.
 
 `scripts/verify_phase_carry_fan_router.py` checks O1 block partitions
 and carry ranges, enumerates real OP1 factors in small bounded-channel
