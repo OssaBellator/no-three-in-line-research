@@ -102,5 +102,12 @@ This ledger collects the results specific to
 | CMR72 | Recursive pair codegrees are stratified by layer and p-adic closeness | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
 | CMR73 | A binary closest pair pays an additional \(1/h\) separation-node factor | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
 | CMR74 | Exact clustering counts give \(\mathbb ET_k<4kN^2+(p+2)N^2/3\) | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
+| CMR75 | Every p-adic layer-prefix block has a constant-spread rematching bank | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
+| CMR76 | Prefix rematching destroys every old binary star assigned to the block | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
+| CMR77 | Binary-star load extraction is scale-invariant after normalization by block size | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
+| CMR78 | Prefix repair has an exact rank-one/rank-two/rank-three collateral inequality | PROVED | `docs/60-prime-power-prefix-star-neutralization.md` |
+| CMR79 | A real line has at most t lifts per quotient-channel incidence | PROVED | `docs/61-prime-power-rank-one-quotient-reduction.md` |
+| CMR80 | Aggregate rank-one prefix collateral is bounded by quotient secant incidence | PROVED | `docs/61-prime-power-rank-one-quotient-reduction.md` |
+| CMR81 | Failed prefix repair forces quotient incidence or higher-rank collateral concentration | PROVED | `docs/61-prime-power-rank-one-quotient-reduction.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
