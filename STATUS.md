@@ -26,6 +26,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 16. **Möbius secant matching.** For a fixed opposite-channel anchor, same-channel secant pairs form a projective involution matching.
 17. **Cycle-bank theorem.** Every trapping cycle supports a \(k\)-state row-column-preserving cyclic matching trade.
 18. **Window-product theorem.** Each cycle state lies in a number of modular hyperbolas equal to its distinct cyclic window-product count.
+19. **Collision-free carry-cycle bank bound.** Every carry-filtered cycle has a collision-aware full-permutation state whose cost is bounded by normalized one-, two-, and three-cell certificate counts.
+20. **Frozen-cycle concentration.** Failure of every cycle-block state forces a dense one-cell shadow, anchored-pair shadow, or candidate-only triple core.
 
 ## What remains conditional
 
@@ -33,7 +35,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Product-state conflict regularization for candidate-only triples.
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
-- The carry-cycle dispersion lemma.
+- Alternating two-colour carry-core termination and conversion.
 
 ## Important refutations
 
@@ -42,7 +44,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Wall expansion does not necessarily terminate in an improving synchronized state.
 - A single common absorber shift or common slope can be trapped by translated blocks.
 - Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
+- A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 
 ## Bottom line
 
-There is no complete proof. The repository does contain several reusable exact lemmas and a narrower, algebraically structured final bottleneck.
+There is no complete proof. The repository does contain several reusable exact lemmas, an exact frozen-cycle counterexample, and a narrower alternating two-colour bottleneck.
