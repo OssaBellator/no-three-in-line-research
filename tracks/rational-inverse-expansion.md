@@ -60,9 +60,19 @@ proves RI1c for a full source coset: its exact collision loss is a subgroup
 intersection with one explicit Möbius map, up to at most two fixed points.
 It also expands that intersection into \(m^2\) explicit multiplicative
 character sums for subgroup index \(m\), and proves that only the trivial
-character pair can be an \(m\)-th-power main term.  The remaining RI1
-input is now the uniform nontrivial-sum bound and the conversion from
-target-coset distribution to expansion or absorption.
+character pair can be an \(m\)-th-power main term.
+
+[`rational-inverse-weil-overlap.md`](rational-inverse-weil-overlap.md)
+proves RI1d by applying the standard Weil character bound:
+
+\[
+\left|J(H;r,x_0)-\frac{p-3}{m^2}\right|<3\sqrt p.
+\]
+
+It follows that every subset of one source coset loses at most
+\((p-3)/(2m^2)+(3/2)\sqrt p\) image values to internal collision pairs.
+The remaining RI1 input is target-coset distribution or quotient growth,
+not source-fibre cardinality.
 
 ## RI2 — Union-of-cosets image theorem
 
@@ -163,10 +173,11 @@ Search small primes for:
 - long order-two exceptional chains;
 - simultaneous small-doubling examples not predicted by the current templates.
 
-The exact collision involution, subgroup-overlap formula, full-subgroup
-RI1 obstruction, and singleton RI4 obstruction are now proved and checked
-by `scripts/verify_rational_inverse.py` and
-`scripts/verify_rational_subgroup_overlap.py`.
+The exact collision involution, subgroup-overlap formula and Weil bound,
+full-subgroup RI1 obstruction, and singleton RI4 obstruction are now
+proved and checked by `scripts/verify_rational_inverse.py`,
+`scripts/verify_rational_subgroup_overlap.py`, and
+`scripts/verify_rational_weil_overlap.py`.
 
 ## Completion criterion
 

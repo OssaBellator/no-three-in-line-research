@@ -143,11 +143,11 @@ orders \(a,b,-b,-a\) at those four points.  For
 \((a,b)=(0,0)\).  Thus the trivial pair is the sole possible
 \(m\)-th-power main term.
 
-This does not silently import a character-sum estimate.  It isolates the
-remaining analytic input exactly: bound the \(m^2-1\) displayed
-nontrivial rational-character sums, uniformly in the subgroup index
-needed by RI1--RI3, and then convert the resulting image distribution
-across target cosets into an absorber or expansion statement.
+This note does not silently import a character-sum estimate.
+[`rational-inverse-weil-overlap.md`](rational-inverse-weil-overlap.md)
+applies the standard Weil bound to the displayed nontrivial terms and
+obtains an explicit \(O(\sqrt p)\) error. The remaining RI1 step is the
+conversion from target-coset distribution to expansion or absorption.
 
 `scripts/verify_rational_subgroup_overlap.py` exhaustively checks the
 overlap, orbit, bilinear-curve, image-loss, and character-orthogonality
