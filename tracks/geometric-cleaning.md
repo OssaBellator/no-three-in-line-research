@@ -156,6 +156,15 @@ size, so even reopening every discarded star gives net progress. Once
 paid incidence supplies \(R\) tickets, the entire recursive component
 has \(O(|\mathcal S|(R+1))\) depth without epoch resets.
 
+GC4i gives the exact payment test for those tickets. If \(A_j\) is the
+current-incidence neighbourhood eligible to pay for reopening \(j\),
+capacity-respecting charges exist exactly when every reopening subfamily
+sees paid capacity at least its cardinality. Passing this capacitated
+Hall test supplies \(R=\sum_\pi c_\pi\) to GC4h; failing it isolates a
+specific star-reopening cluster with deficient current-syndrome
+neighbourhood. Thus the remaining latent-to-paid step has a checkable
+neighbourhood inequality and a localized obstruction alternative.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement

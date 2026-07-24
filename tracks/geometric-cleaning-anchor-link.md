@@ -347,8 +347,72 @@ syndrome incidence bounds the total number of reopenings, GC4g--GC4h
 give an explicit finite regularization depth.  They still do not turn
 latent candidate weight into that payment.
 
+## GC4i -- capacitated Hall certificate for paid star reopenings
+
+Fix the reopening events \(\mathcal J\) in a finite regularization
+prefix.  Let \(\mathcal P\) be a set of atomic current-syndrome
+incidences, certified destroyed triples, or other nonreusable paid
+resources.  Give \(\pi\in\mathcal P\) integer capacity \(c_\pi\geq0\).
+For each reopening \(j\), let \(A_j\subseteq\mathcal P\) be the nonempty
+set of resources whose incidence actually meets the reopened star
+support and is therefore eligible to pay for \(j\).
+
+### Lemma GC4i -- PROVED
+
+A capacity-respecting payment
+
+\[
+\chi(j)\in A_j,
+\qquad
+|\chi^{-1}(\pi)|\leq c_\pi,
+\]
+
+exists if and only if every \(\mathcal X\subseteq\mathcal J\) obeys
+
+\[
+\boxed{
+|\mathcal X|
+\leq
+\sum_{\pi\in\bigcup_{j\in\mathcal X}A_j}c_\pi.
+}
+\]
+
+If this condition holds for every finite prefix, then there are at most
+
+\[
+R=\sum_{\pi\in\mathcal P}c_\pi
+\]
+
+reopenings in the whole component.  GC4h consequently gives the scalar
+ceiling \( |\mathcal S|R+|\mathcal S|-1\).  If the condition fails, it
+returns a subfamily \(\mathcal X\) whose eligible current-incidence
+capacity is strictly smaller than the number of star reopenings it must
+support.
+
+### Proof
+
+Clone each resource \(\pi\) into \(c_\pi\) distinguishable tokens and
+join reopening \(j\) to every token belonging to a resource in \(A_j\).
+Hall's marriage theorem matches all reopenings precisely when every
+subfamily sees at least as many tokens as events.  Its token
+neighbourhood has the cardinality in the boxed sum, proving the
+equivalence.  Applying the inequality to all events bounds their number
+by \(R\).  An infinite component would have a prefix with \(R+1\)
+reopenings, which is impossible.  GC4h then applies with its ticket
+counter equal to the reopening count. \(\square\)
+
+GC4i sharpens the latent-to-paid frontier.  A geometric proof need not
+guess a compatible greedy charge order: it may prove the boxed
+neighbourhood inequality directly.  Conversely, failure exposes a
+specific cluster of star reopenings with too small a current-syndrome
+neighbourhood; that cluster, rather than the entire mixed conflict
+system, must be converted to an absorber or an alternating-core
+delegation.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
 most six link vertices, together with strict-support recursion through
 every maximal-depth order on at most seven stars and every ticketed
-support replacement through six stars and three tickets.
+support replacement through six stars and three tickets.  It also
+compares the capacitated Hall test with direct paid-token assignment on
+small reopening systems.
