@@ -36,8 +36,12 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/20-common-ratio-bank-conversion.md`](docs/20-common-ratio-bank-conversion.md): exact rectangle collateral and decoder-or-structure conversion.
 - [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): syndrome-weighted admissible quotient extraction and paid-bank lower bounds.
 - [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md): projective conic-pencil construction, exact opposite-channel secant profile, and ratio normal form.
+- [`docs/23-aligned-anchor-carry-cells.md`](docs/23-aligned-anchor-carry-cells.md): aligned-anchor determinant factorization, signature divisor bounds, and perfect-interpolation cells.
+- [`docs/24-carry-filtered-secant-stars-and-wrap-cells.md`](docs/24-carry-filtered-secant-stars-and-wrap-cells.md): same-channel carry dispersion and universal common-wrap center classification.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
+- [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
+- [`scripts/verify_carry_closure.py`](scripts/verify_carry_closure.py): checks same-channel cross carries and scalar common-wrap cells.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
 - [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
@@ -65,13 +69,14 @@ The strongest current synthesis is:
 5. Peel leaves; every residual core contains a Möbius cycle.
 6. Use collision-aware full permutation banks on cycle blocks.
 7. Apply inverse-additive theorems: small quotient sets yield common-ratio rectangle banks and subgroup-coset absorbers.
-8. Weight the quotient extraction by actual point triple degrees. Saturation makes the inadmissible-pair graph degree at most two, producing a paid admissible common-ratio bank.
-9. Convert the bank: either one rectangle improves, or failure yields a dense channel-pair secant star or a large aligned multiplicative anchor class.
-10. Propagate the resulting structure through alternating red/blue anchor closure and rational-function expansion.
-11. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-12. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
+8. Weight quotient extraction by actual triple degrees, producing a paid admissible common-ratio bank.
+9. Convert the bank: either one rectangle improves, or failure yields a channel-pair secant star or an aligned multiplicative anchor class.
+10. Apply carry classification. Same-channel stars disperse through divisor-controlled carry levels; aligned anchors disperse through nondegenerate signatures or concentrate in perfect-wrap chambers.
+11. Resolve the remaining cross-channel stars and perfect-wrap chambers, then propagate through alternating red/blue closure.
+12. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
+13. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is now closed for syndrome-induced weights. The main geometric target is an alternating closure inequality showing that the secant-star and aligned-anchor concentrations cannot persist indefinitely without producing an improving trade or entering a classified subgroup-coset exception. The conic-pencil calculation supplies the exact modular baseline; the missing ingredient is the non-projectively-invariant Euclidean carry filter.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. The carry filter now classifies both same-channel stars and aligned anchors. The main geometric targets are a cross-channel carry factorization and a sparsity/absorber theorem for perfect-wrap chambers.
 
 ## Running the checks
 
@@ -80,6 +85,8 @@ The scripts require Python 3.10+ and only the standard library.
 ```bash
 python scripts/verify_hyperbola.py --prime 17
 python scripts/verify_conic_incidence.py --prime 17
+python scripts/verify_aligned_carry.py --prime 17
+python scripts/verify_carry_closure.py --prime 17
 python scripts/verify_absorber.py --n 30 --h 5 --m 7
 python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
 python scripts/verify_carry_cycle_bound.py
@@ -108,8 +115,8 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
-- prove an alternating closure inequality for the secant-star and aligned-anchor outputs;
-- classify the Euclidean carry filter inside the projective conic secant involutions;
+- prove the cross-channel carry factorization;
+- prove sparsity or construct absorbers for perfect-wrap chambers;
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
 - classify frozen cycles and alternating anchor closures.
