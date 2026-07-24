@@ -15,7 +15,14 @@ The numbering is local to this repository.
 | PP2c | Pair-aware corner-patch local-load theorem | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP2d | Concrete cell/pair/triple load endpoint for corner patches | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP2e | Failed corner endpoint forces a heavy cell, pair, or triple load | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP2f | Arbitrary-deficit clone-space patching theorem | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP2g | Coordinate-level arbitrary-reservoir local-load criterion | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP2h | Concrete normalized cell/pair/triple reservoir endpoint | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP2i | Failed general reservoir endpoint forces a heavy local load | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP2j | Internally clean spread-bank external-patching theorem | PROVED | `docs/29-general-reservoir-patching.md` |
+| PP2k | Cell/pair spread criterion for an internally clean bank | PROVED | `docs/29-general-reservoir-patching.md` |
 | PP3a | Exact labeled one-strip seed graph through side five | PROVED | `docs/28-one-strip-and-pair-aware-patching.md` |
+| PP3b | Averaging criterion for a boundary-only type-two seed extension | PROVED | `docs/29-general-reservoir-patching.md` |
 | PP3-R1 | Universal recursive boundary-only one-strip construction | REFUTED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP4a | Abstract solved-length plus patch-width transfer to all large `n` | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
 | PP4b | Short-prime-interval exponent translates to the same patch-width exponent | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
