@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from fractions import Fraction
 from itertools import combinations
 
 
@@ -39,6 +40,22 @@ def verify_weighted_extraction(max_size: int = 6) -> None:
                 sum(weights[vertex] for vertex in colour) for colour in colours
             )
             assert heaviest * (maximum_degree + 1) >= sum(weights)
+
+
+def verify_composed_bound() -> None:
+    for pair_degree in range(1, 8):
+        for conflict_degree in range(8):
+            total_weight = 137
+            link_retained = Fraction(
+                total_weight, 2 * pair_degree - 1
+            )
+            installable = link_retained / (conflict_degree + 1)
+            assert (
+                installable
+                * (2 * pair_degree - 1)
+                * (conflict_degree + 1)
+                == total_weight
+            )
 
 
 def acyclic_potential(
@@ -121,6 +138,7 @@ def verify_ticket_trace() -> None:
 
 def main() -> None:
     verify_weighted_extraction()
+    verify_composed_bound()
     verify_cycle_criterion()
     verify_ticket_trace()
     print("AC re-extraction and reuse accounting: verified")

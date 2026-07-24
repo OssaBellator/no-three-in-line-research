@@ -54,6 +54,44 @@ labels give a conflict graph of bounded degree.  A bound on ordinary
 support overlap alone is not enough: certificate overlap and cross-object
 creation must also be edges.
 
+## AC2b -- composed paid-star re-extraction
+
+Suppose the heavy-anchor family entering AC1d has total paid weight
+\(W_v\), every anchor pair has codegree at most \(\Delta\), and the full
+AC2a incompatibility graph on the resulting certificate objects has
+maximum degree at most \(\Gamma\).
+
+### Corollary AC2b -- PROVED
+
+There is a simultaneously installable endpoint-disjoint star
+\(\mathcal I\) with
+
+\[
+\boxed{
+\sum_{C\in\mathcal I}w(C)
+\geq
+\frac{W_v}{(2\Delta-1)(\Gamma+1)}.
+}
+\]
+
+If every object has collateral at most \(\eta w(C)\), with all
+nonadditive effects represented in the incompatibility graph, the joint
+collateral of \(\mathcal I\) is at most
+\(\eta\sum_{C\in\mathcal I}w(C)\).
+
+### Proof
+
+AC1d first returns an endpoint-disjoint star of weight at least
+\(W_v/(2\Delta-1)\). Restrict the full incompatibility graph to that
+star; its maximum degree is still at most \(\Gamma\). AC2a retains at
+least a \(1/(\Gamma+1)\) fraction of its weight and gives the collateral
+assertion. \(\square\)
+
+This completes the AC1-to-AC2 transition whenever the arithmetic labels
+give both bounded pair codegree and bounded full incompatibility degree.
+The unresolved route is now exactly a high pair codegree or a
+high-incompatibility-degree return carrying current paid mass.
+
 ## AC3b -- ticketed signature potential
 
 Let \(\Sigma\) be the finite signature universe from AC3a.  Give every

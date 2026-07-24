@@ -59,7 +59,9 @@ The numbering is local to this repository.
 | AC1a | Failed AN3 bank selects a heavy normalized certificate rank | PROVED | `tracks/alternating-core-certificate-accounting.md` |
 | AC1b | Exact anchor and anchor-pair certificate incidence identities | PROVED | `tracks/alternating-core-certificate-accounting.md` |
 | AC1c | A heavy rank-three anchor yields pair concentration or an endpoint-disjoint star | PROVED | `tracks/alternating-core-anchor-link.md` |
+| AC1d | Bounded pair codegree preserves paid mass in an endpoint-disjoint anchor star | PROVED | `tracks/alternating-core-anchor-link.md` |
 | AC2a | Bounded conflict degree gives weighted compatible re-extraction | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
+| AC2b | Bounded link and incompatibility degrees compose to paid installable stars | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3a | Finite monotone potential for genuinely new carry signatures | PROVED | `tracks/alternating-core-certificate-accounting.md` |
 | AC3b | Bounded signature-reuse tickets give a finite monotone potential | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3c | Unticketed strict transition potentials exist exactly on DAGs | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |

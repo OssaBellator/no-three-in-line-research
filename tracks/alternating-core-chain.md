@@ -85,9 +85,12 @@ large labelled family into one of the four target structures.
 AC1c for the concentrated-anchor case. A rank-three anchor of degree
 \(D\) has either a second anchor of codegree greater than \(\Delta\), or
 an endpoint-disjoint star of size at least \(D/(2\Delta-1)\). The latter
-feeds AN3 directly; the remaining arithmetic step is to convert high pair
-codegree into a quotient, carry, or denominator label carrying current
-paid incidence.
+feeds AN3 directly. AC1d gives the weighted form: if pair codegrees are
+at most \(\Delta\), one endpoint-disjoint star retains at least
+\(1/(2\Delta-1)\) of the current destroyed-incidence weight at the heavy
+anchor. The remaining arithmetic step is therefore confined to the
+high-pair-codegree alternative: convert it into a quotient, carry, or
+denominator label carrying current paid incidence.
 
 ## AC2 — Paid structural re-extraction
 
@@ -109,9 +112,12 @@ proves AC2a: candidate structural objects whose full incompatibility graph
 has maximum degree \(\Delta\) contain a simultaneously installable family
 carrying at least a \(1/(\Delta+1)\) fraction of their paid weight.
 Certificate overlap and cross-object creation are included explicitly in
-the conflict relation. The remaining AC2 task is to derive a bounded
-degree from the AC1 arithmetic labels, or send its high-conflict
-alternative to BDA/RI.
+the conflict relation. AC2b composes this with AC1d: pair-codegree
+\(\Delta\) and full incompatibility degree \(\Gamma\) give an installable
+endpoint-disjoint star carrying at least
+\(W/((2\Delta-1)(\Gamma+1))\) paid weight. The remaining AC2 task is to
+derive those degree bounds from the AC1 arithmetic labels, or send the
+paid high-degree alternative to BDA/RI.
 
 ### Interface
 
