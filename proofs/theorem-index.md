@@ -74,6 +74,8 @@ The numbering is local to this repository.
 | AC3h | A Hall-deficient high-reuse incidence contains a same-label compatible fan or a second-order conflict overload | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
 | AC3i | Every Hall failure has an exact unit-deficiency core with a quantified role-pure token-collision mass | PROVED | `tracks/alternating-core-minimal-deficiency.md` |
 | AC3j | Second-order collision load routes at square-root scale to a shared-token fan or a role-pure charging-resource star | PROVED | `tracks/alternating-core-minimal-deficiency.md` |
+| AC3k | An anchor-realized Hall output yields a shared-token fan, high pair codegree, support overload, or compatible paid star | PROVED | `tracks/alternating-core-resource-router.md` |
+| AC3l | Paid anchor weight yields a high pair, labelled overload, or compatible family with exact multiplicative loss | PROVED | `tracks/alternating-core-resource-router.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

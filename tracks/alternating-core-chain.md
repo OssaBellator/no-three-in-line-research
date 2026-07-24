@@ -251,6 +251,26 @@ either the AC3h same-token fan or one role-pure resource concentration
 at a reopened object. The remaining geometry must classify those two
 exact outputs through the anchor/carry/BDA/RI interfaces.
 
+[`alternating-core-resource-router.md`](alternating-core-resource-router.md)
+proves AC3k for an anchor-realized role, meaning its underlying current
+resources are distinct rank-three certificates through one cell and
+have explicit neutralization objects. With capacity cap \(\rho\), the
+AC3j resource star yields one of four exact outputs: a same-token fan, a
+high anchor-pair codegree, a support-conflict overload, or an
+endpoint-disjoint support-compatible paid star of explicitly bounded
+size. Once that size reaches seven and the AN2 layer/channel interface
+and the AN3 central-cell/intermediate-state contract hold, it is a valid
+AN3 input.
+
+AC3l gives the weighted version. Paid anchor weight \(W\) yields either
+a high pair codegree, an AC2d-ready paid conflict overload, or a
+compatible family of weight at least
+\(W/((2\Delta-1)K)\). Thus no further abstract compatibility lemma is
+missing for anchor-realized roles. The remaining AC3 geometry is now to
+prove the finite role dictionary and classify only the high-pair and
+same-token outputs; roles already labelled by carry, denominator, or
+quotient data leave through their terminal interfaces.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
@@ -328,6 +348,8 @@ upgrade AC6 while those inputs remain open.
   repeated-signature cycle;
 - enumerate minimal Hall-deficient cores and their role-pure collision
   loads;
+- verify anchor-realized resource routing through pair and support
+  conflict thresholds;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 
