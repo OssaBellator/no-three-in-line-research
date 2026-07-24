@@ -145,6 +145,16 @@ an arbitrary four-variable profile. Finiteness is still open, but BDA4
 may now classify repeated slopes via the CR/WQ interface and charge
 genuinely new direction classes.
 
+[`bounded-denominator-valuation-charts.md`](bounded-denominator-valuation-charts.md)
+proves BDA3h. Prime power by prime power, the minimum valuation of the
+four difference residues equals the common valuation of the two point
+scales. After dividing it out, the residue matrix has a unit pivot which
+recovers both the primitive-direction and relative-scale projective
+classes. A local component is invisible exactly when both scales vanish
+modulo that full prime power. Hence the remaining singular slope chain
+is a common-scale valuation tower, not an arbitrary composite-modulus
+zero-divisor case.
+
 ## BDA4 — exception classification
 
 ### Target statement

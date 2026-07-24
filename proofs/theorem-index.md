@@ -55,6 +55,7 @@ The numbering is local to this repository.
 | BDA3e | Intrinsic denominator-\(q\) collateral words have at most \(6(q^2\varphi(q))^3\) types | PROVED | `tracks/bounded-denominator-finite-transition.md` |
 | BDA3f | Collinearity depends on four relative coarse quotients, with bounded-window profile count | PROVED | `tracks/bounded-denominator-relative-address.md` |
 | BDA3g | Compatible collinear relative addresses factor through one primitive spatial slope and two point scales | PROVED | `tracks/bounded-denominator-primitive-slope.md` |
+| BDA3h | Prime-power valuation pivots classify every visible primitive-slope and point-scale residue component | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
 | BDA3-residue-wall | Equal coordinate residues do not determine collinearity | PROVED | `tracks/bounded-denominator-relative-address.md` |
 | BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `tracks/bounded-denominator-finite-transition.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
