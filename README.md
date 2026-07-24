@@ -41,6 +41,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/25-perfect-alignment-arithmetic.md`](docs/25-perfect-alignment-arithmetic.md): exact interpolation-parameter arithmetic and bounded-denominator chamber sparsity.
 - [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
 - [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
+- [`docs/27-all-n-product-construction.md`](docs/27-all-n-product-construction.md): cycle-phase product encoding, exact mixed-radix carry classification, repair trades, and phase counterexamples.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
@@ -49,6 +50,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
 - [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
+- [`scripts/verify_product_construction.py`](scripts/verify_product_construction.py): checks cycle-phase saturation, the exact mixed-radix determinant, and small product obstructions.
 
 ## Research discipline
 
@@ -98,6 +100,7 @@ python scripts/verify_perfect_alignment.py --prime 17
 python scripts/verify_absorber.py --n 30 --h 5 --m 7
 python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
 python scripts/verify_carry_cycle_bound.py
+python scripts/verify_product_construction.py
 ```
 
 These programs are sanity checks, not proofs for arbitrary \(n\).
@@ -128,6 +131,7 @@ A useful contribution should do at least one of the following:
 - construct absorbers for bounded-denominator perfect-interpolation chambers;
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
-- classify frozen cycles and alternating anchor closures.
+- classify frozen cycles and alternating anchor closures;
+- eliminate or exploit the four mixed-radix product resonance types in `docs/27-all-n-product-construction.md`.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
