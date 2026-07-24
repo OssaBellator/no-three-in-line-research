@@ -67,13 +67,17 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 57. **Exact full-selector SAT reduction.** No-three degree-two product-host selection is equivalent to an explicit width-three CNF with one variable per host cell.
 58. **Alternating-cycle repair connectivity.** Any two degree-two states in one product host are connected by executable alternating-cycle trades that preserve saturation and factor compatibility.
 59. **Fixed-area carry concentration.** In a no-three set of \(s\) points, every fixed nonzero signed determinant has at most \(2s(s-1)\) ordered realizations; this gives \(4n(2n-1)\) ordered fine triples at one nonzero ordinary product-carry level.
+60. **Complete projection-fibre concentration.** After fixing one complete ordered factor projection, the full mixed-radix collinearity equation has at most quadratic multiplicity in the other factor, simultaneously controlling both hybrid terms and the fine determinant.
+61. **Sharp type-\((2,2)\) multiplicity.** Weighted parallel factor secants have only linear multiplicity in the opposite factor; unordered resonant signatures are at most \(mn(2\min(m,n)-1)\).
+62. **Exact alternating-cycle collateral.** The triple-potential change of one cycle toggle splits exactly into one-moving, two-moving, and internal-cycle certificate terms.
+63. **Finite repair-barrier census.** In the canonical crossed \(2\times3\) host, ten one-defect states require a temporary increase to two defects before reaching either no-three state.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
 - Carry-sensitive phase codes, non-global digit maps, or offset hosts for product constructions.
-- Simultaneous concentration of the two hybrid product determinants and a monotone or resampling repair theorem.
+- A global product repair or resampling theorem that coordinates many projection fibres and permits controlled uphill moves.
 - A useful multiplicative closure class and any resulting arithmetic coverage.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
@@ -95,7 +99,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
 - Global coarse/fine radix orientation plus independent alternating-cycle phases does not universally produce a no-three product; one \(2\times3\) factor pair defeats all 64 orientation/phase states.
 - Even arbitrary degree-two selection in the four unmodified global product hosts is not universal: exhaustive search finds no model for any ordered \(2\times5\) or \(5\times2\) factor-pair instance.
+- Triple-count descent on alternating cycles is not monotone: a crossed side-six host has ten one-defect traps although it contains no-three states.
+- Lexicographically refining triple count by the natural pair-line energy still leaves four exact bad local minima in that host.
 
 ## Bottom line
 
-There is no complete proof. The product branch now has a connected full-host repair state space, exact phase and full-selector CNFs, line/codegree bounds, and fixed nonzero carry-level concentration. It still has no multiplicative closure theorem: the next bottleneck is simultaneous control of the two hybrid determinants, followed by a monotone or resampling rule on alternating-cycle trades or an enlarged offset host. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
+There is no complete proof. The product branch now has a connected full-host repair state space, exact phase and full-selector CNFs, line/codegree bounds, fixed-carry concentration, complete projection-fibre concentration, and an exact cycle-collateral identity. The elementary multiplicity bottleneck is substantially closed, but multiplicative closure still fails: the next target is a nonmonotone resampling or bounded-barrier theorem that coordinates many projection fibres, or an enlarged offset host escaping the finite \(2\times5\) obstruction. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
