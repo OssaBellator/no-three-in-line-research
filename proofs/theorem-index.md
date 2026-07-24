@@ -79,6 +79,9 @@ The numbering is local to this repository.
 | AC3m | A current pair core with seven same-layer endpoints has an AN1 endpoint-rematching bank destroying all selected core certificates | PROVED | `tracks/alternating-core-pair-core-bank.md` |
 | AC3n | The pair-core bank improves or returns a heavy normalized AC1 certificate family | PROVED | `tracks/alternating-core-pair-core-bank.md` |
 | AC3o | Pair threshold \(12\) routes high codegree to AC3m and bounds the anchor-link loss by \(23\) | PROVED | `tracks/alternating-core-pair-core-bank.md` |
+| AC3p | A separable shared-token phase fan has a joint state or an equivalent feasibility core of at most the phase-alphabet size | PROVED | `tracks/alternating-core-shared-token-phase.md` |
+| AC3q | Strict common-phase losses supply at most one ticket per phase; message-redundant reopenings consume none | PROVED | `tracks/alternating-core-shared-token-phase.md` |
+| AC3r | A same-token Hall fan routes to conflict overload, role realization, a joint improvement, a bounded phase core, or an explicit collateral profile | PROVED | `tracks/alternating-core-shared-token-phase.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

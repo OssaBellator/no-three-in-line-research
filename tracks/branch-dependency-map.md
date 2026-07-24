@@ -37,6 +37,10 @@ Removes the hypotheses behind S2, S5, L4 and P1. Can feed AC5 or bypass the alte
 ### `research/orbit-phase-expansion`
 
 Alternative decoder. May prove the local termination portion of AC4 by a phase/Tanner argument, but is logically independent while under development.
+The alternating branch's AC3p--AC3r interface is the exact star-shaped
+special case to be used when an orbit-phase alphabet realizes one
+shared-token role: it contracts feasibility to one common phase message
+without importing the unresolved general Tanner-expansion claim.
 
 ## Independent selection endpoints
 

@@ -356,7 +356,11 @@ explicit second-order outputs.
 
 - A shared-token fan is exactly the AC3h input.  Applying its support
   conflict threshold gives either a second-order installation overload
-  or a broad support-compatible same-token, same-role fan.
+  or a broad support-compatible same-token, same-role fan.  AC3p--AC3r
+  contract the latter to one common phase message whenever its role is
+  separable phase-realized: it has a joint state or an infeasible core
+  of at most the phase-alphabet size, and only strict phase losses
+  consume tickets.
 - A role-pure resource star has one reopened object incident with many
   distinct underlying resources, up to the explicit capacity loss
   \(\rho\).  For current syndrome or certificate resources this is
@@ -367,6 +371,9 @@ explicit second-order outputs.
 Thus the remaining no-recycling theorem no longer has to interpret an
 arbitrary Hall witness.  It must classify only a same-token role fan or
 one role-pure current-incidence concentration at a single reopening.
+For the same-token branch, the remaining work is the finite geometric
+role dictionary and the explicit phase-collateral profile, not generic
+fan feasibility.
 
 `scripts/verify_ac_minimal_deficiency.py` exhaustively checks all
 minimal deficient unit-token cores through five reopenings, exhausts

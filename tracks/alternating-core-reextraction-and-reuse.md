@@ -634,6 +634,18 @@ incidence and one fixed arithmetic label.  The geometric no-reuse
 theorem may therefore work inside a single token--label fibre rather
 than an arbitrary deficient bipartite graph.
 
+[`alternating-core-shared-token-phase.md`](alternating-core-shared-token-phase.md)
+proves AC3p--AC3r for every such fibre whose role is separable through
+one bounded common phase. Its complete feasibility message is an
+intersection \(M\) of phase subsets. The same \(M\) is witnessed by at
+most \(|\mathcal A|-|M|\) reopenings, strict message loss occurs at most
+\(|\mathcal A|\) times, and a message-redundant reopening receives no
+new ticket. A nonempty message yields one joint product state and an
+exact additive collateral audit; an empty message has a bounded
+exceptional core. The remaining geometric obligation is to prove that
+the actual role dictionary is phase-realized, anchor-realized, or
+terminally labelled.
+
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through
 four quotient states, a finite ticket trace, and every strict-support

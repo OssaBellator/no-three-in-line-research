@@ -30,9 +30,11 @@ objects includes:
 
 The role is **terminally labelled** instead when its label already
 places it in a carry-growth, bounded-denominator, rational-quotient, or
-finite exceptional-state interface.  The remaining geometric work must
-prove that the actual role dictionary has one of these two forms; the
-results below close the combinatorics of the anchor-realized form.
+finite exceptional-state interface.  A shared-token role may instead
+be **separable phase-realized** in the sense of AC3p.  The remaining
+geometric work must route the actual role dictionary to one of these
+three forms; the results below close the combinatorics of the
+anchor-realized form.
 
 ## AC3k -- four-way routing of an anchor-realized Hall output
 
@@ -201,8 +203,9 @@ outcome 3.  The collateral assertion is AC2a.
 For an anchor-realized role, the Hall obstruction now has only four
 explicit exits:
 
-1. a shared-token fan still requiring a joint-state or reuse-capacity
-   theorem;
+1. a shared-token fan entering AC3p--AC3r when its role is separable
+   phase-realized, and otherwise returning to the finite role
+   dictionary;
 2. a high anchor-pair codegree entering the endpoint-rematching bank
    AC3m--AC3n;
 3. a quantitatively paid labelled support overload handled recursively
@@ -212,7 +215,11 @@ explicit exits:
 Terminally labelled non-anchor roles already leave through the
 carry/BDA/RI interfaces by definition.  The remaining arithmetic
 frontier is therefore to prove the finite role dictionary and classify
-the shared-token output.  The high anchor-pair output is executable by
+the explicit shared-token phase-collateral profile.  AC3p--AC3r remove
+generic fan feasibility and, under persistent message history, give at
+most one strict-loss ticket per common phase; a message reset is an
+AC3e reopening and is paid separately.  The high anchor-pair output is
+executable by
 [`alternating-core-pair-core-bank.md`](alternating-core-pair-core-bank.md):
 codegree greater than \(12\) gives seven third endpoints in one
 permutation layer, while codegree at most \(12\) costs only the absolute

@@ -283,6 +283,20 @@ only the absolute factor \(23\). This is an executable transition, not
 yet a no-recycling theorem: repeated failed pair banks must still be
 paid by the AC3 potential.
 
+[`alternating-core-shared-token-phase.md`](alternating-core-shared-token-phase.md)
+proves AC3p--AC3r for the other AC3j output under an explicit separable
+phase-role contract. A support-compatible same-token fan has one common
+phase message \(M\). A subfan of size at most
+\(|\mathcal A|-|M|\) preserves that message exactly, so an infeasible
+fan has a core of size at most \(|\mathcal A|\), while a feasible fan
+has one joint product state. Strict phase losses occur at most
+\(|\mathcal A|\) times per token--role fibre while the historical
+message is retained; a message enlargement is an AC3e reopening and
+must be paid separately. A reopening which preserves \(M\) consumes no
+ticket and must enter the joint additive collateral audit. Thus generic
+shared-fan feasibility is closed. The remaining AC3 geometry is the
+finite role dictionary and the finite phase-by-phase collateral profile.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
@@ -364,6 +378,8 @@ upgrade AC6 while those inputs remain open.
   conflict thresholds;
 - enumerate high-pair endpoint-rematching states and their normalized
   collateral certificates;
+- exhaust finite common-phase messages, bounded infeasible cores, and
+  strict phase-loss ticket traces;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 
