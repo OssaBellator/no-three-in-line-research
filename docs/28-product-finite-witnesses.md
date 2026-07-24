@@ -1,8 +1,8 @@
-# Finite product witnesses at side lengths 6 and 8
+# Finite product witnesses at side lengths 6, 8, and 9
 
 This note records explicit saturated no-three configurations found inside the
-mixed-radix product search. They are finite certificates only; they do not prove
-multiplicative closure.
+mixed-radix product searches. They are finite certificates only; they do not
+prove multiplicative closure.
 
 For a permutation pair `(pi_0,pi_1)` on `[N]`, write
 
@@ -25,6 +25,14 @@ The pair
 defines a saturated no-three configuration of 12 points in `[6]^2`.
 
 It arises from the `3 x 2` cycle-phase product in a crossed radix orientation.
+A second side-six certificate arises from the enlarged `2 x 3` full-host
+selector:
+
+\[
+(1,5,3,0,4,2),
+\qquad
+(3,1,5,2,0,4).
+\]
 
 ## Finite certificate at 8 — PROVED
 
@@ -40,6 +48,23 @@ defines a saturated no-three configuration of 16 points in `[8]^2`.
 
 It arises from the `4 x 2` cycle-phase product in the ordinary radix
 orientation.
+
+## Finite certificate at 9 — PROVED
+
+The pair
+
+\[
+\pi_0=(3,6,1,8,0,2,5,7,4),
+\]
+
+\[
+\pi_1=(4,1,3,6,8,0,7,2,5)
+\]
+
+defines a saturated no-three configuration of 18 points in `[9]^2`.
+
+It arises from a degree-two selection in the crossed `3 x 3` factor-product
+host. It is not a cycle-phase state.
 
 ## Verification
 
