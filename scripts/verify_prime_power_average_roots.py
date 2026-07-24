@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR59--CMR61 by exact enumeration."""
+"""Verify CMR47--CMR49 by exact enumeration."""
 from __future__ import annotations
 
 import argparse
@@ -44,21 +44,13 @@ def verify_instance(p: int, m: int, R: int, S: int, c: int) -> int:
         checks += 1
 
     phi = modulus - modulus // p
-    assert all_sum == phi, (p, m, R, S, c, all_sum, phi)
+    assert all_sum == phi
     expected_units = (
         phi - 2 * p ** (m - 1)
         if legendre_square(constant, p)
         else phi
     )
-    assert unit_sum == expected_units, (
-        p,
-        m,
-        R,
-        S,
-        c,
-        unit_sum,
-        expected_units,
-    )
+    assert unit_sum == expected_units
     return checks
 
 
