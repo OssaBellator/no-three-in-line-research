@@ -165,6 +165,13 @@ specific star-reopening cluster with deficient current-syndrome
 neighbourhood. Thus the remaining latent-to-paid step has a checkable
 neighbourhood inequality and a localized obstruction alternative.
 
+GC4j derives that Hall condition from local incidence bounds. Minimum
+paid-token degree \(L\) at every reopening and maximum reuse degree
+\(\Delta\) give expansion \(L/\Delta\), so \(L\geq\Delta\) pays the
+component. If Hall fails, a token is reused by more than \(L\)
+reopenings in the deficient family. GC4's remaining geometry can now
+target bounded reuse or one concentrated current-incidence obstruction.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement

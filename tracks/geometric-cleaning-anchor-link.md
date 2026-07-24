@@ -409,10 +409,59 @@ neighbourhood; that cluster, rather than the entire mixed conflict
 system, must be converted to an absorber or an alternating-core
 delegation.
 
+## GC4j -- bounded-overlap star-payment criterion
+
+Split every paid resource \(\pi\) into its \(c_\pi\) capacity tokens.
+Suppose every star reopening is eligible for at least \(L\) such tokens
+and every token is eligible for at most \(\Delta\) reopenings.
+
+### Lemma GC4j -- PROVED
+
+Every reopening family \(\mathcal X\) has token neighbourhood
+
+\[
+\boxed{
+|N(\mathcal X)|
+\geq
+\frac L\Delta|\mathcal X|.
+}
+\]
+
+Hence \(L\geq\Delta\) implies the GC4i Hall condition and pays the whole
+regularization component.
+
+Without assuming a maximum token degree, any Hall-deficient family
+\(\mathcal X\) contains a paid token eligible for more than \(L\) of
+its star reopenings.  Thus minimum current-incidence \(L\) gives the
+exact dichotomy:
+
+1. token reuse is at most \(L\), so GC4i and GC4h terminate the
+   component;
+2. one current syndrome incidence supports more than \(L\) reopenings
+   inside a deficient star cluster.
+
+### Proof
+
+There are at least \(L|\mathcal X|\) eligibility edges from
+\(\mathcal X\).  If token degree is at most \(\Delta\), there are at
+most \(\Delta|N(\mathcal X)|\), giving the boxed expansion.
+
+If Hall fails, choose \(\mathcal X\) with
+\(|N(\mathcal X)|<|\mathcal X|\).  Its token-neighbourhood average
+degree is greater than
+\(L|\mathcal X|/|N(\mathcal X)|>L\), so some paid token has more than
+\(L\) neighbours in \(\mathcal X\). \(\square\)
+
+GC4j reduces the geometric payment proof to two local incidence
+estimates.  A failure is not diffuse latent mass: it is a single
+current-incidence resource reused by a large, explicitly Hall-deficient
+star family, suitable for anchor or arithmetic classification.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
 most six link vertices, together with strict-support recursion through
 every maximal-depth order on at most seven stars and every ticketed
 support replacement through six stars and three tickets.  It also
 compares the capacitated Hall test with direct paid-token assignment on
-small reopening systems.
+small reopening systems and checks the bounded-overlap/high-reuse
+dichotomy.
