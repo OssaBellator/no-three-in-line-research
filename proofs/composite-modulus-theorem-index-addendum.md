@@ -63,6 +63,9 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR228 | In an odd parent block, deletion inside half a block's distinct line matchings creates no essential edge while a perfect matching remains | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
 | CMR229 | A frozen odd parent either exposes an anchored bank or permits simultaneous deletion of \((t-1)/2\) candidate-only line matchings and forces one more line | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
 | CMR230 | Every large odd balanced parent has an anchored continuation or more than half a block's worth of candidate-only line signatures | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
+| CMR231 | Exact top-height vertex load is controlled by \(4t\sum_{K\ge H}\varphi(K)\) | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
+| CMR232 | If \(c>\sqrt{11/48}\), then all sufficiently large odd blocks with \(H\ge ct\) satisfy the \(1/24\) exact matching-space load bound; explicitly \(t\ge95,\ H\ge0.49t\) works | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
+| CMR233 | Every such block has an exact parent permutation avoiding all candidate-only triples of primitive height at least \(H\) | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
