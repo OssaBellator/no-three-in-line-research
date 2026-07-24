@@ -47,4 +47,6 @@ This ledger collects the results specific to
 | CMR25 | Top-digit contraction exactly recovers the exponent-\((k-1)\) companion host | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
 | CMR26 | Every saturated quotient state has \((p!)^{2N/p}\) saturated lifts | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
 | CMR27 | Recursive lifts form an exact multiscale cylinder measure | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
+| CMR28 | Prime-power lifts satisfy an exact lower-digit, mixed-digit, and top-digit determinant recurrence | PROVED | `docs/38-prime-power-recursive-determinant-carries.md` |
+| CMR29 | Every real triple has a finite recursive first-separation carry signature | PROVED | `docs/38-prime-power-recursive-determinant-carries.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
