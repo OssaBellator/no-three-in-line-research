@@ -187,6 +187,25 @@ when \(d=o(N)\). Thus SAS1a/SAS4b remain useful matching-measure models,
 but the global SAS5 endpoint requires a different embedding, a different
 host, or a local-load theorem.
 
+[`sparse-block-affine-energy.md`](sparse-block-affine-energy.md) proves
+SAS5c, the exact internal triple formula for an arbitrary complete block
+\(R\times C\):
+
+\[
+T_{\rm int}(R,C)
+=
+\sum_\lambda A_R(\lambda)
+\bigl(A_C(\lambda)+A_C(1-\lambda)\bigr).
+\]
+
+This turns the internal part of SAS5 into a checkable one-dimensional
+shape-energy condition. It also extends the obstruction: if the row and
+column sets of each block are affine images of one another, every block
+contains at least \(\binom d3\) compatible triples, so the same
+\(N(d-1)(d-2)/6\) lower bound holds. A viable block embedding must use
+shape-incompatible row and column sets in almost all blocks and must
+separately control triples meeting multiple blocks.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
@@ -209,7 +228,9 @@ labelled forward/reverse theorem, including parallel descriptions.
 `scripts/verify_sparse_block_host.py` checks all complete-block and
 derangement cylinders through block size six. The consecutive-embedding
 triple obstruction is checked by
-`scripts/verify_sparse_block_geometry.py`.
+`scripts/verify_sparse_block_geometry.py`. The arbitrary-coordinate
+shape formula is checked by direct determinant enumeration in
+`scripts/verify_sparse_block_affine_energy.py`.
 
 ## Completion criterion
 
