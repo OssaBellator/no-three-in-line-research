@@ -31,23 +31,33 @@ Signatures that cannot occur in any canonical four-edge state may be omitted.
 
 ## 2. Local first-moment endpoint
 
-### Theorem PP3ca -- PROVED
-
-If
+Put
 
 \[
- \boxed{
+ \Lambda(E)
+ =
  \frac{4|B|}{r}
  +
  \frac{4|A_1|}{r}
  +
- \frac{12|A_2|}{r(r-1)}
- <1,
+ \frac{12|A_2|}{r(r-1)}.
+\]
+
+### Theorem PP3ca -- PROVED
+
+The clean-state domain satisfies
+
+\[
+ \boxed{
+ |\Omega_{\rm clean}(E)|
+ \ge
+ \bigl(1-\Lambda(E)\bigr)\binom r4
  }
 \]
 
-then `Omega_clean(E)` is nonempty.  Hence the matching block supplies at least
-one locally no-three equal-margin state.
+whenever `Lambda(E)<=1`, with the right-hand side interpreted as a real lower
+bound.  In particular, `Lambda(E)<1` gives a nonempty locally no-three
+equal-margin state domain of density at least `1-Lambda(E)`.
 
 #### Proof
 
@@ -72,16 +82,21 @@ A signature in `A_2` requires two specified edges in `D`, which has probability
 Therefore
 
 \[
- \mathbb E Z
- \le
- \frac{4|B|}{r}
- +
- \frac{4|A_1|}{r}
- +
- \frac{12|A_2|}{r(r-1)}.
+ \mathbb E Z\le\Lambda(E).
 \]
 
-If the displayed bound is below one, some state has `Z=0`. ∎
+Every bad state contributes at least one to `Z`, so
+
+\[
+ \Pr(D\notin\Omega_{\rm clean}(E))
+ \le
+ \mathbb E Z
+ \le
+ \Lambda(E).
+\]
+
+Multiplying the complementary probability by `binom(r,4)` gives the stated
+clean-domain lower bound. ∎
 
 The theorem is deletion-aware at the signature level: a blocker signature never
 uses its controlling edge as a retained point, and an aligned cross pair never
@@ -110,11 +125,16 @@ or
 
 #### Proof
 
-If all three inequalities failed, the three terms in PP3ca would each be less
-than `1/3`, so their sum would be below one. ∎
+If all three inequalities failed, the three terms in `Lambda(E)` would each be
+less than `1/3`, so `Lambda(E)<1` and PP3ca would give a clean state. ∎
 
 Thus failure forces a linear blocker core, a linear same-edge anchor core, or a
 quadratic ordinary anchor core inside the matching block.
+
+More generally, if the clean-state density is below `eta`, then
+`Lambda(E)>1-eta`.  Therefore any attempt to keep a polynomial fraction of the
+`Theta(r^4)` states must quantitatively suppress at least one of the same three
+signature classes.
 
 ## 4. Exact finite analyzer
 
@@ -149,7 +169,8 @@ The theorem identifies a concrete target for prepared matching blocks of size
 - `|A_1|=o(r)`;
 - `|A_2|=o(r^2)`.
 
-Any quantitative improvement strong enough to make the displayed weighted sum
-less than one guarantees a nonempty clean state domain before external and
-cross-block clauses are considered.  Protected local trades may also be used to
-remove the concentrated signature class identified by PP3cb.
+Under these bounds, `Lambda(E)=o(1)` and a `(1-o(1))` fraction of all
+`binom(r,4)` states remains locally clean.  The multistate domain then retains
+`r^{4-o(1)}` effective entropy for the external and cross-block bad-box CSP.
+Protected local trades may also be used to remove the concentrated signature
+class identified by PP3cb.
