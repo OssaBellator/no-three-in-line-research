@@ -93,23 +93,14 @@ For the corrected balanced recursive bank at primes
 CMR75--CMR84 construct full prefix-block rematching banks, neutralize every old
 binary same-layer star assigned to a block, and decompose failed rank-one
 collateral into endpoint, modular-third-point, and repeated-projection terms.
-
-CMR85 removes the endpoint baseline completely from the actual candidate count.
-CMR86--CMR89 prove
-
-\[
-\mathcal M_s\le3t^2Z_s,
-\qquad
-\mathcal C_s-|E_s^{\rm coll}|<2N^2,
-\]
-
-and total expected rank-one collateral
+CMR85--CMR89 remove the endpoint baseline and prove total expected rank-one
+collateral
 
 \[
 O_p(N^2\log^2N).
 \]
 
-CMR90--CMR92 close the higher-rank terms universally:
+CMR90--CMR92 close the normalized higher-rank terms universally:
 
 \[
 \sum_{a,\ell}\frac{T_2}{(t)_2}<2N^2,
@@ -117,21 +108,46 @@ CMR90--CMR92 close the higher-rank terms universally:
 \sum_{a,\ell}\frac{T_3}{(t)_3}<\frac{N^2}{3p}.
 \]
 
-CMR93--CMR95 show that finer prefix repairs preserve every coarser quotient and
-its modular-syndrome charge, so a fine-to-coarse sweep remains admissible.
-CMR96--CMR99 add a smaller recursive-compatible node bank: it stays inside the
-balanced reciprocal parameter space, destroys a heavy child-pair star, and has
-`O(1/p^2)` spread once two child digits are prescribed.
+CMR93--CMR95 prove fine-to-coarse invariance of every unprocessed quotient
+charge. CMR96--CMR101 add a recursive-compatible reciprocal node bank and cancel
+all triples wholly inside one rigidly translated child subtree.
 
-Thus quotient excess charging, endpoint removal, and normalized higher-rank
-prefix collateral are closed. The remaining repair issue is iteration and
-fine-scale charging, not construction of a local bank.
+CMR102 corrects the proposed next step: direct descent of the remaining weak
+node-rank-one class to the ordinary finer prefix bank is impossible. A parent
+node change moves a child subtree to a different row residue modulo
+\(p^{s+1}\), while the finer rematching bank preserves its old row fibre.
+
+CMR103--CMR105 replace that invalid descent by the exact vertical
+child-translation pencil
+
+\[
+\mathcal V(A)=\sum_{\xi,\eta}W(\xi,\eta),
+\]
+
+where `W(xi,eta)` counts external triples created when child `xi` is rigidly
+placed in output row digit `eta`. The geometry-free bounds are
+
+\[
+\sum_\eta W_1(\xi,\eta)
+\le
+L\binom{|Z|}{2},
+\qquad
+\sum_\eta W_2(\xi,\eta)
+\le
+|Z|\binom L2.
+\]
+
+Thus the local-bank construction, quotient excess charging, endpoint removal,
+higher-rank collateral, and internal child-core cancellation are closed. The
+remaining recursive issue is a concentration or absorber theorem for the
+vertical translation-pencil potential, together with iteration after coarse
+repairs.
 
 ### Composite-modulus open lemmas
 
-1. **Recursive-compatible rank-one descent.** In CMR99, charge the weak node-rank
-   `U_1` certificates to child-prefix rank-one energies and prove a lexicographic
-   or reverse-scale decrease that survives repeated node repairs.
+1. **Vertical child-pencil concentration.** Bound `V(A)` using secant-shadow,
+   carry, or opposite-layer structure, or build a stronger node bank that
+   randomizes child translations with rank-two spread.
 2. **Termination after coarse repairs.** CMR93 protects unprocessed coarser
    quotients, but a later coarse repair may recreate fine stars. Prove that the
    reintroduced fine mass is paid by the coarse potential decrease.
@@ -158,7 +174,7 @@ The following should be exhaustively tested for small primes:
 - distribution of \(q_s\) for real carry-filtered cycles;
 - existence of alternating two-colour closures that remain jointly frozen;
 - which CC3 certificate type dominates frozen examples;
-- recursive-compatible `U_1` collateral by child scale;
+- vertical child-pencil profiles `W(xi,eta)` and their line signatures;
 - fine mass recreated by one coarse prefix repair;
 - inherited line-signature multiplicities inside `M_s`;
 - nearly singular completed-reciprocal divisor collisions;
@@ -168,10 +184,11 @@ The following should be exhaustively tested for small primes:
 
 ## Recommended order of work
 
-1. Charge CMR99 node-rank-one collateral to finer prefix energies.
+1. Prove concentration or structural expansion for the vertical child-pencil
+   potential `V(A)`.
 2. Build a lexicographic termination potential for recursive-compatible node
    repairs.
-3. Quantify fine-star recreation under the full prefix rematching bank.
+3. Quantify fine-star recreation under the full prefix-rematching bank.
 4. Sharpen the modular quotient syndrome and inherited line-signature
    multiplicity.
 5. Remove the square-root divisor boundary in CMR61 and CMR64.
