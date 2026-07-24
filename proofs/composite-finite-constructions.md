@@ -29,24 +29,48 @@ no real collinear triple.
 | 9 | `1, 2, 7, 5, 0, 3, 8, 4, 6` | `6, 0, 8, 3, 7, 5, 1, 2, 4` |
 | 10 | `8, 3, 7, 5, 1, 9, 0, 2, 6, 4` | `5, 2, 8, 3, 0, 6, 9, 4, 7, 1` |
 
+These five cases are checked in
+[`scripts/verify_composite_modulus.py`](../scripts/verify_composite_modulus.py).
+
+## Theorem CMF2 — PROVED BY EXHAUSTIVE FINITE CHECK
+
+At side length
+
+\[
+N=12,
+\]
+
+the permutations
+
+```text
+p_12 = 0, 2, 6, 5, 10, 11, 1, 8, 4, 3, 9, 7
+q_12 = 5, 9, 11, 7, 1, 2, 0, 10, 6, 8, 3, 4
+```
+
+are pointwise disjoint, and their two graphs form a saturated no-three
+configuration.
+
+The configuration was obtained as a zero-objective integer-feasibility solve
+with one binary variable per grid cell, exact degree-two constraints on every
+row and column, and an at-most-two constraint on every real grid line
+containing at least three cells. The recorded permutations are the complete
+certificate; no optimizer is needed for verification.
+
 ### Verification
 
-For each row of the table, the verifier checks:
+For every recorded construction, the exact checker verifies:
 
-1. both lists are permutations of \([N]\);
-2. \(p_N(x)\ne q_N(x)\) for every column \(x\);
-3. every row and column occurs exactly twice in the union;
-4. for all \(\binom{2N}{3}\) triples of selected points, the integer determinant
-
+1. both lists are permutations of `[N]`;
+2. the two values in every column are distinct;
+3. every row and column occurs exactly twice;
+4. for all \(\binom{2N}{3}\) triples, the integer determinant
    \[
    (x_2-x_1)(y_3-y_1)-(x_3-x_1)(y_2-y_1)
    \]
-
    is nonzero.
 
-The check is implemented in
-[`scripts/verify_composite_modulus.py`](../scripts/verify_composite_modulus.py)
-and uses exact integer arithmetic only.
+CMF2 is checked in
+[`scripts/verify_composite_finite_extensions.py`](../scripts/verify_composite_finite_extensions.py).
 
-These constructions complete five finite composite cases of CM6. They do not
-supply a scalable construction or an admissible modulus class.
+These constructions supply finite CM6 coverage only. They do not give a
+scalable construction or an admissible modulus class.
