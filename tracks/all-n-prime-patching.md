@@ -17,23 +17,30 @@ Detailed statements and proofs are in:
 - [`docs/28-one-strip-and-pair-aware-patching.md`](../docs/28-one-strip-and-pair-aware-patching.md);
 - [`docs/29-general-reservoir-patching.md`](../docs/29-general-reservoir-patching.md);
 - [`docs/30-deletion-aware-row-lift-banks.md`](../docs/30-deletion-aware-row-lift-banks.md);
-- [`docs/31-sequential-row-lift-local-lemma.md`](../docs/31-sequential-row-lift-local-lemma.md).
+- [`docs/31-sequential-row-lift-local-lemma.md`](../docs/31-sequential-row-lift-local-lemma.md);
+- [`docs/32-row-lift-pruning-barriers.md`](../docs/32-row-lift-pruning-barriers.md);
+- [`docs/33-off-diagonal-reservoir-obstruction.md`](../docs/33-off-diagonal-reservoir-obstruction.md);
+- [`docs/34-projection-triple-lower-bounds.md`](../docs/34-projection-triple-lower-bounds.md);
+- [`docs/35-component-clean-row-lift-banks.md`](../docs/35-component-clean-row-lift-banks.md).
 
-Small exact computations are recorded in:
+Finite computations are recorded in:
 
 - [`experiments/prime-patching-small.md`](../experiments/prime-patching-small.md);
-- [`experiments/general-reservoir-loads.md`](../experiments/general-reservoir-loads.md).
+- [`experiments/general-reservoir-loads.md`](../experiments/general-reservoir-loads.md);
+- [`experiments/row-lift-static-pruning.md`](../experiments/row-lift-static-pruning.md);
+- [`experiments/row-lift-projections.md`](../experiments/row-lift-projections.md);
+- [`experiments/component-clean-row-lift.md`](../experiments/component-clean-row-lift.md).
 
 ## PP1 — Boundary extension interface
 
 ### Status: PROVED for saturation; geometry separated into PP2
 
-The row-column bookkeeping is now exact:
+The row-column bookkeeping is exact:
 
 - for `t>=2`, two edge-disjoint permutation graphs on the new `t x t` corner
   add exactly `2t` points without changing the old core;
-- for `t=1`, every boundary-only degree state is one of exactly two forms:
-  a one-point corner splice or a two-edge strip switch;
+- for `t=1`, every boundary-only degree state is either a one-point corner splice
+  or a two-edge strip switch;
 - the complete `t=1` list has only `2m^2-m` forced candidates;
 - geometric validity is exactly the avoidance of old-pair secants,
   old-anchor/new-pair triples, and internal new-point triples.
@@ -43,156 +50,143 @@ The row-column bookkeeping is now exact:
 ### Status: OPEN, with exact host and bank endpoints
 
 There should be functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one
-can choose or prepare a reservoir in `S_m` that supports an exact
-row-column-preserving completion without creating any triple.
+can prepare a reservoir in `S_m` that supports an exact row-column-preserving
+completion without creating any triple.
 
-The following parts are now proved:
+The exact selection step is closed in several forms:
 
-- secants through any external point form a matching on the old configuration;
-- a one-strip patch is valid exactly when its one- or two-point deletion set
-  covers every inserted-point blocker matching and every mixed inserted pair
-  avoids retained old anchors;
-- for a wider corner, a pair-aware clone-space local lemma gives an exact
-  sufficient inequality in the maximum omitted-cell, old-anchor-pair, and
-  internal-triple loads;
-- the clone-space theorem now applies to arbitrary deleted reservoirs, including
-  old-old replacement cells and mixed old/new cells;
-- for active clone size `N>=200`, the bounds
-  `u_*<=N/200`, `pi_*<=N^2/1600`, and `tau_*<=N^3/3200` suffice;
-- failure under this endpoint forces one of those three local loads to be large;
-- alternatively, an internally no-three completion bank succeeds whenever its
-  cell and pair spread make the total retained-core certificate expectation
-  less than one.
+- a pair-aware corner clone-space local lemma;
+- an arbitrary deleted-reservoir clone-space theorem allowing old-old and
+  mixed old/new replacement cells;
+- explicit normalized cell, anchored-pair, and internal-triple load bounds;
+- an internally no-three spread-bank endpoint using only retained-core cell and
+  pair expectations;
+- a component-clean row-lift endpoint that factors movement and refill banks and
+  pays only retained-core and cross-component certificates.
 
-The exact selection step is therefore closed in two forms:
+For active clone size `N>=200`, the arbitrary-reservoir bounds
 
-1. prepare a candidate host satisfying the cell/pair/triple local-load bounds;
-2. prepare an internally no-three spread bank satisfying the external
-   cell/pair expectation bound.
+```text
+u_* <= N/200,
+pi_* <= N^2/1600,
+tau_* <= N^3/3200
+```
 
-The missing work is the geometric preparation theorem producing one of these
-inputs for a useful width.
+suffice. Failure forces one of the three local loads to be large.
+
+The missing work is geometric preparation, not exact degree selection.
 
 ## PP3 — Robust seed preparation
 
-### Status: OPEN; naive one-strip recursion REFUTED
+### Status: OPEN, with explicit banks, endpoints, and refutations
 
 A prepared reservoir should have low old-pair shadow, low old-anchor pair load,
-controlled internal direction families, interchangeable row-column states, and
-compatibility with a variable deletion budget.
+controlled internal directions, interchangeable row-column states, and a
+variable deletion budget.
 
-Finite exhaustive results show why this cannot be omitted:
+### Completed positive components
 
-- among all labeled saturated no-three states, only `1/2` at `n=3`, `4/11` at
-  `n=4`, and `9/32` at `n=5` admit a boundary-only one-strip extension;
-- branching over every one-strip state from the unique `n=2` seed reaches
-  `2` states at `n=3`, `1` at `n=4`, and none at `n=5`;
-- every stored certificate with `3<=n<=10` is boundary-only one-strip blocked;
-- unrestricted interior replacement nevertheless extends the stored chain
-  through `n=10`;
-- every saturated seed has all `2n` noncorner future boundary cells on the
-  automatic horizontal or vertical secants; the original PP3b average is
-  therefore universally vacuous rather than merely weak on the corpus;
-- after conditioning on the forced deletion, the exact type-two certificate
-  average succeeds for the `2 -> 3` seed and gives a nonaxis-blocker target;
-- deleting all points in `t` selected old rows supports an explicit row-lift
-  bank with exact saturation and rank-one, rank-two, and rank-three spread;
-- exposing the four row-lift permutation layers sequentially gives a local-lemma
-  endpoint in the maximum activated assignment load over legal prefixes;
-- the exact side-three full bank has no clean state and every layer order fails
-  the sequential threshold, localizing the obstruction before the fourth layer;
-- exhaustive search over every two- and three-row reservoir in the stored
-  `2<=n<=10` certificates finds no clean unrestricted full bank.
+- The exact one-strip degree states and deletion-aware surviving-certificate
+  average are proved. The corrected average detects the valid `2 -> 3` state.
+- Deleting all points in `t` old rows gives an explicit row-lift bank with exact
+  saturation and fixed-rank spread.
+- Four row-lift permutation layers can be selected by a prefix-aware sequential
+  local lemma under maximum activated assignment load `1/24`.
+- Prefix enumeration can be replaced by the static terminal-load test PP3p.
+- Collision constraints can be conditioned out, giving the threshold-one
+  activated-mass theorem PP3q and static test PP3r.
+- Projection dispersion gives a fast necessary support screen and exact lower
+  bounds on triples forced by under-dispersed parallel-line families.
+- Internally clean movement and refill component banks have an exact independent
+  expectation endpoint PP3z and spread form PP3aa. Any fixed clean component pair
+  has only `O(t^2)` cross triples.
 
-Thus a universal repetition of the two one-strip moves is refuted. The
-row-lift construction closes the interchangeable-state part of a wider
-boundary ladder, but its full cross-shaped state space remains too rich in
-internal certificates. The next target is a finite-direction-pruned row
-selection or a restricted subbank meeting the sequential activated-load
-endpoint.
+### Refuted or blocked shortcuts
+
+- Universal recursive boundary-only one-strip extension dies before side five.
+- The original unconditioned PP3b boundary-shadow average is universally
+  vacuous because every future boundary cell has an automatic axis blocker.
+- The unrestricted full row-lift bank is not automatically clean; exhaustive
+  searches over every two- and three-row reservoir in the stored `2<=n<=10`
+  corpus find no clean state.
+- The full-support PP3j first-moment route cannot scale: one refill rectangle
+  already contributes `Omega(t^4 log t)` compatible candidate triples.
+- Deleting an aligned contiguous square and refilling only its two off-diagonal
+  blocks is impossible for every `t`: `4t` points occupy only `2t-1` slope-`-1`
+  diagonals.
+- Projection equality analysis shows that this aligned slope-`-1` placement is
+  the unique primitive-direction failure at the minimal `2t-1` level threshold.
+- Conditioning the full small banks to internally clean components leaves no
+  clean pair at fully deleted widths `3,4,5`; the clean families are too small
+  and concentrated.
+
+### Current exact target
+
+A viable prime-gap-scale PP3 construction must now provide at least one of:
+
+1. a sparse algebraic or tomographic row-lift subbank passing PP3p or PP3r;
+2. a prefix-structured bank passing PP3l or PP3q despite failing the static
+   screens;
+3. large internally no-three movement and refill banks with `O(1/t)` cell and
+   `O(1/t^2)` pair spread, plus a cross-incidence bound passing PP3z/PP3aa;
+4. an arbitrary-reservoir cleaned host passing the PP2 cell/pair/triple endpoint.
+
+Reservoir rows and hit columns must also avoid the aligned interval obstruction.
 
 ## PP4 — Prime-gap transfer theorem
 
 ### Status: PROVED UNDER PP2–PP3
 
-Let `P` be a set of solved side lengths. If every sufficiently large `n` has
-some `m in P` with
+If every sufficiently large `n` has a solved size `m` with
 
 \[
 0\le n-m\le w(m),
 \]
 
-then the prepared-seed extension theorem implies `D(n)=2n` for every
-sufficiently large `n`.
+then the prepared-seed extension theorem implies `D(n)=2n` for every sufficiently
+large `n`.
 
-For `P={p-1:p prime}`, a short-interval theorem placing a prime in
-`[x-x^theta,x]` is matched by any proved width `w(m)>=C m^theta` with fixed
-`C>1`. Consequently:
+For solved sizes `m=p-1`, a prime in `[x-x^theta,x]` is matched by any proved
+width `w(m)>=C m^theta` with fixed `C>1`. Consequently:
 
 - the published Baker–Harman–Pintz exponent `theta=0.525` requires
   `w(m)>=C m^0.525`, or more simply `m^(0.525+epsilon)`;
-- Runbo Li's arXiv preprint claims `theta=0.52`, which may be used only as a
-  preprint input;
+- Runbo Li's arXiv preprint claims `theta=0.52`, usable only as a preprint input;
 - a merely polylogarithmic width does not currently give an unconditional
   all-`n` transfer.
-
-No prime-gap input completes this branch while PP2 and PP3 remain open.
 
 ## PP5 — Finite exceptions
 
 ### Status: VERIFIER COMPLETE; CERTIFICATES VERIFIED FOR `2<=n<=10`
 
-`scripts/verify_no_three_certificate.py` checks machine-readable coordinates
-using exact integer determinants, exact bounds, distinctness, point count, and
-two points in every row and column. The current certificate corpus covers
-`n=2,...,10`.
-
-The missing PP5 work is the eventual threshold and the complete certificate set
-below it.
+The exact verifier checks integer determinants, bounds, distinctness, point
+count, and two points in every row and column. The missing PP5 work is the
+eventual threshold and the complete certificate set below it.
 
 ## Computational tools
 
 - `scripts/search_boundary_extension.py`: general prescribed-degree extension
-  CSP with explicit `found`, `exhausted`, and `cutoff` outcomes;
-- `scripts/analyze_one_strip_extensions.py`: complete `t=1` boundary-only
-  analyzer using the two-state classification;
-- `scripts/analyze_one_strip_seed_loads.py`: records the now-vacuous
-  unconditioned PP3b average;
-- `scripts/analyze_deletion_aware_one_strip.py`: exact surviving-certificate
-  average and nonaxis-blocker profiler;
-- `scripts/enumerate_one_strip_seeds.py`: exhaustive labeled seed graph for
-  small sides;
-- `scripts/analyze_corner_patch_loads.py`: exact wider-corner cell/pair/triple
-  load profiler;
-- `scripts/analyze_reservoir_patch_loads.py`: exact arbitrary-deficit clone and
-  coordinate load profiler;
-- `scripts/analyze_patch_bank.py`: finite internally clean bank verifier and
-  cell/pair spread analyzer;
-- `scripts/analyze_row_lift_bank.py`: exact small row-lift bank enumerator,
-  spread checker, and certificate histogram;
-- `scripts/analyze_row_lift_sequential_loads.py`: legal-prefix enumeration and
-  activated assignment-load profiler for all four layer orders;
-- `scripts/search_row_lift_reservoirs.py`: exhaustive two- and three-row
-  reservoir search over finite certificate corpora;
+  CSP with `found`, `exhausted`, and `cutoff` outcomes;
+- `scripts/analyze_deletion_aware_one_strip.py`: exact deletion-aware `t=1`
+  certificate average;
+- `scripts/analyze_reservoir_patch_loads.py`: exact arbitrary-reservoir clone and
+  coordinate loads;
+- `scripts/analyze_row_lift_bank.py`: exact small full-bank enumeration;
+- `scripts/analyze_row_lift_sequential_loads.py`: prefix-aware four-layer loads;
+- `scripts/analyze_row_lift_static_pruning.py`: static PP3p and PP3r screens;
+- `scripts/analyze_row_lift_projections.py`: primitive-direction projection and
+  forced-triple lower bounds;
+- `scripts/analyze_component_clean_row_lift.py`: PP3z/PP3aa component-clean
+  analysis;
+- `scripts/search_row_lift_reservoirs.py`: exhaustive small reservoir-row search;
 - `scripts/verify_no_three_certificate.py`: exact finite certificate verifier.
-
-## Candidate absorber designs still viable
-
-- direction-pruned or state-pruned row-lift boundary banks satisfying PP3j or
-  PP3l;
-- subgroup-coset blocks reserved across several outer strips;
-- Hall-type completion after structured shadow cleaning;
-- internally no-three spread banks on prepared reservoir states;
-- tomographic trades that free selected old rows and columns before extension;
-- distributed reservoirs designed during the prime-grid repair process.
 
 ## Completion criterion
 
-This branch is complete only when PP2 and PP3 provide an exact extension width
-large enough for PP4, followed by a verified PP5 certificate set for the
-remaining side lengths. The current branch closes PP1, arbitrary-reservoir and
-spread-bank PP2 endpoints, deletion-aware one-strip averaging, and the
-interchangeable-state component of one structured PP3 reservoir. It still lacks
-geometric control that keeps either global certificates or sequential activated
-loads small over a prime-gap-scale width and does not prove the no-three-in-line
-conjecture.
+This branch is complete only when PP2 and PP3 provide a width large enough for
+PP4, followed by verified PP5 coverage below the resulting threshold. The branch
+now closes the exact extension interfaces, several host and bank selection
+endpoints, one-strip rigidity, a structured row-lift degree bank, sequential and
+static pruning criteria, projection obstructions, and component-clean
+factorization. It still lacks the asymptotic geometric preparation theorem and
+does not prove the no-three-in-line conjecture.
