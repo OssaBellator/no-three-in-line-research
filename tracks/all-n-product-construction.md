@@ -17,7 +17,7 @@ with finite checks in
 |---|---|---|
 | PC1 | **COMPLETE** | Cycle-wise phase encoding gives exactly two disjoint permutation layers on `[mn]^2` in `O(mn)` time. |
 | PC2 | **PARTIAL** | Exact determinant `n^2 Delta_c + nM + Delta_f` and four cross-block multiplicity types are proved; resonance elimination is open. |
-| PC3 | **OPEN / SIMPLE PHASE ROUTE REFUTED** | A `2x3` factor pair defeats every cycle-wise phase state. Stronger offsets, digit maps, or repairs are required. |
+| PC3 | **OPEN / SIMPLE PHASE ROUTE REFUTED** | A `2x3` factor pair defeats every independent cycle-wise phase state. Stronger offsets, digit maps, or repairs are required. |
 | PC4 | **OPEN** | No no-three multiplicative closure theorem is proved. |
 | PC5 | **OPEN** | Arithmetic coverage cannot start until a closure or extension theorem is available. |
 | PC6 | **PARTIAL** | Single cycle-bit flips are executable row-column-preserving trades and preserve both factor projections; carry-signature multiplicity is open. |
@@ -49,13 +49,14 @@ The construction should use exactly `2mn` distinct cells and retain a decomposit
 ### Result
 
 Write the factor configurations as permutation pairs `sigma_0,sigma_1` and
-`tau_0,tau_1`. On each orbit `C` of `tau_1^{-1} tau_0`, choose a phase bit for
-each coarse row. The two flattened layers are
+`tau_0,tau_1`. On each orbit `C` of `tau_1^{-1} tau_0`, choose an
+independent phase bit for each output layer and coarse row. The two flattened
+layers are
 
 \[
 \Pi_r(ni+u)
 =
-n\sigma_r(i)+\tau_{r\mathbin{\mathrm{xor}}\varepsilon_{i,C(u)}}(u).
+n\sigma_r(i)+\tau_{\varepsilon_{r,i,C(u)}}(u).
 \]
 
 Theorem PX1 proves that both `Pi_r` are permutations and are cell-disjoint.
@@ -95,7 +96,7 @@ remaining task is to eliminate their explicit resonance equations.
 
 ## PC3 — Scale-separation or phase theorem
 
-**Status: OPEN; cycle-wise phases alone are REFUTED.**
+**Status: OPEN; independent cycle-wise phases are REFUTED.**
 
 ### Target statement
 
@@ -112,7 +113,7 @@ The theorem must preserve the square side length `mn`; it may not enlarge the am
 ### Falsification result
 
 For one saturated no-three `2x2` factor and one saturated no-three `3x3`
-factor, the fine alternating graph is one cycle and all four possible
+factor, the fine alternating graph is one cycle and all sixteen independent
 cycle-phase states contain an explicit three-point line. Thus phase labels
 attached only to alternating cycles cannot prove PC3 in the raw lexicographic
 lift.
@@ -163,7 +164,7 @@ If the raw product is only a bounded-syndrome saturated seed, show that the curr
 ### Result
 
 Toggling one phase bit on one fine alternating cycle removes and inserts the
-same number of cells in two coarse blocks, preserves every row and column
+same number of cells in one coarse block, preserves every row and column
 exactly, and keeps all coarse and fine projections inside the original factor
 configurations. The unresolved PC6 item is a useful bound on the multiplicity
 of the four PC2 resonance signatures under sequences of such toggles.
@@ -175,8 +176,8 @@ of the four PC2 resonance signatures under sequences of such toggles.
 - one factor used only to assign phases to blocks of the other;
 - tensoring two perfect matchings, then selecting two of the four layer products by a phase rule.
 
-The last two candidates, when restricted to cycle-wise phases in the raw
-mixed-radix lift, are insufficient by PX5.
+The last two candidates, when restricted to independent cycle-wise phases in
+the raw mixed-radix lift, are insufficient by PX5.
 
 ## Mandatory falsification
 
@@ -195,4 +196,4 @@ its configured range.
 This branch is complete when PC1–PC6 give a rigorous closure operation and an arithmetic coverage theorem sufficient to derive `D(n)=2n` for all large `n`, followed by exact treatment of the remaining finite sizes.
 
 **Current verdict:** not complete. PC1 is closed, PC2 and PC6 have exact partial
-theorems, and the simplest PC3 phase mechanism is refuted.
+theorems, and independent cycle-wise phases in the raw lift are refuted.
