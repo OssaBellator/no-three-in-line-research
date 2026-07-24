@@ -52,7 +52,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/60-prime-power-prefix-star-neutralization.md`](docs/60-prime-power-prefix-star-neutralization.md) through [`docs/67-prime-power-child-core-cancellation.md`](docs/67-prime-power-child-core-cancellation.md): prefix repair, quotient charging, higher-rank collateral, descending invariance, and recursive-compatible node banks.
 - [`docs/68-prime-power-child-translation-pencils.md`](docs/68-prime-power-child-translation-pencils.md) through [`docs/70-prime-power-alternating-pencil-certificates.md`](docs/70-prime-power-alternating-pencil-certificates.md): child pencils, diffuse-or-alternating extraction, and frozen rank certificates.
 - [`docs/71-prime-power-balanced-law-classification.md`](docs/71-prime-power-balanced-law-classification.md) through [`docs/73-prime-seven-pair-spectrum.md`](docs/73-prime-seven-pair-spectrum.md): reciprocal-law obstruction and balanced recursive banks at every power of seven.
-- [`docs/74-prime-power-global-baseline-alternating-closure.md`](docs/74-prime-power-global-baseline-alternating-closure.md) and [`docs/75-degree-two-small-matching-existence.md`](docs/75-degree-two-small-matching-existence.md): global-baseline closure compression, paid line cores, and the sharp size-four matching threshold.
+- [`docs/74-prime-power-global-baseline-alternating-closure.md`](docs/74-prime-power-global-baseline-alternating-closure.md) and [`docs/75-degree-two-small-matching-existence.md`](docs/75-degree-two-small-matching-existence.md): global-baseline closure compression and the sharp size-four matching threshold.
+- [`docs/76-prime-power-paid-geometry-to-alternating-banks.md`](docs/76-prime-power-paid-geometry-to-alternating-banks.md) through [`docs/78-prime-power-four-endpoint-core.md`](docs/78-prime-power-four-endpoint-core.md): geometric continuation, target-load descent, exact four-board atoms, and balanced terminal defect-flow cycles.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -76,7 +77,7 @@ Start from complementary modular hyperbolas, encode row-column-preserving
 changes through orbit or rectangle banks, use inverse-additive extraction and
 carry classification, neutralize dominant secant stars, and finish with a
 clone-space or superregular exact-selection theorem. The principal missing
-step is a global second-generation concentration or termination theorem.
+step is exclusion of a balanced finite alternating defect-flow cycle.
 
 ### Composite prime-power route
 
@@ -85,11 +86,14 @@ the recursive all-stratum fibre bank, prefix-star repair, and child-pencil
 alternating banks. The generic first-separation and prefix-collateral sums are
 closed at quadratic-polylogarithmic scale. Balanced recursive banks exist for
 all \(p\equiv1\pmod4\) and, through a non-reciprocal factorization, for every
-power of seven. Uncharged alternating expansion now contracts to an absolute
-endpoint bank below `2160`; the principal missing steps are no-double-charge
-accounting, elimination of that finite core, and repair interaction across
-scales. Arbitrary composite assembly additionally requires a separate coverage
-mechanism.
+power of seven.
+
+Every globally nonimproving alternating closure now contracts to a
+four-endpoint board destroying one specified triple. Any positive global
+minimum must therefore contain a finite balanced cycle of four-point trades.
+The principal missing theorem is a first-separation or carry-signature
+obstruction to that cycle. Arbitrary composite assembly additionally requires
+a separate coverage mechanism.
 
 ## Running checks
 
@@ -106,6 +110,9 @@ python scripts/verify_prime_power_child_translation_pencils.py
 python scripts/verify_prime_power_child_pencil_dichotomy.py
 python scripts/verify_prime_power_alternating_pencil_certificates.py
 python scripts/verify_prime_power_global_baseline_closure.py
+python scripts/verify_prime_power_paid_geometry_conversion.py
+python scripts/verify_prime_power_target_load_closure.py
+python scripts/verify_prime_power_four_endpoint_core.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
