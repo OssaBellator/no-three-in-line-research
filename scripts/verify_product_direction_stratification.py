@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the direction-stratified rectangle conflict bounds PX67--PX70."""
+"""Verify the direction-stratified rectangle conflict bounds PX70--PX73."""
 from __future__ import annotations
 
 from itertools import product
@@ -84,7 +84,7 @@ def verify_line_intersections() -> None:
                 height = primitive_height(first, second)
                 line = [point for point in grid if determinant(first, second, point) == 0]
                 assert len(line) <= 1 + (2 * n - 1) // height + 1
-    print("PX67 line-intersection bound checked through base eight")
+    print("PX70 line-intersection bound checked through base eight")
 
 
 def verify_canonical_lower_bound() -> None:
@@ -144,7 +144,7 @@ def verify_completion_upper_bound() -> None:
                     exact,
                     bound,
                 )
-            print(f"PX68 sampled completion bound: n={n}, orientation={orientation}")
+            print(f"PX71 sampled completion bound: n={n}, orientation={orientation}")
 
 
 def verify_low_height_partner_bound() -> None:
@@ -161,7 +161,7 @@ def verify_low_height_partner_bound() -> None:
                 )
                 bound = 256 * cutoff * n**3
                 assert exact <= bound
-            print(f"PX70 low-height partner bound: n={n}, orientation={orientation}")
+            print(f"PX73 low-height partner bound: n={n}, orientation={orientation}")
 
 
 def main() -> None:
