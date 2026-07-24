@@ -401,7 +401,7 @@ product-carry growth.
 The next independent endpoints are therefore the RI5
 row-column-preserving conversion of the dense fixed-edge output, the
 source-factor participation theorem needed to pay failed bicycles, and
-the dispersion/absorption of large rank-three matchings.
+the state-qualified ledger integration of OP4j rank-three signatures.
 
 `scripts/verify_phase_geometric_labels.py` exhausts every modularly
 collinear triple in the nonzero grids for

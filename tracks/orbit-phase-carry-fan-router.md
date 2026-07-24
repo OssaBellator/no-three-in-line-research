@@ -459,10 +459,13 @@ to 2-SAT plus explicit rank-three transversals.
 [`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
 then compresses 2-SAT failures to source-labelled bicycles, audits the
 rational quotient law edge by edge, and reduces rank three to a
-disjoint matching or bounded conditioned kernel.  The remaining
+disjoint matching or bounded conditioned kernel.
+[`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
+routes every large matching to divisor-controlled product-carry
+signature growth.  The remaining
 termination theorem is arithmetic: certify or reroute the implicated
 geometric transitions, convert the fixed RI4 edge through RI5, handle
-large rank-three matchings, and classify repeated action-literal
+rank-three signature recurrence, and classify repeated action-literal
 kernels and wide OP2n action CSPs.  Bounded-denominator absorbers are
 still needed only when the aligned carry identities place a subsequent
 closure step in the perfect-interpolation branch.

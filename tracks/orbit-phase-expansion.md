@@ -71,8 +71,8 @@ constructs globally consistent literal labels for OP4e or returns a
 root/literal mismatch with all source carry records retained.  Uniform
 arithmetic control is still open at the source-factor participation
 needed to pay those returned records, the RI5 fixed-edge conversion,
-large rank-three matchings, action-literal kernels, and wide action
-CSPs.
+rank-three signature-ledger integration, action-literal kernels, and
+wide action CSPs.
 
 [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
 proves OP4i and the payment boundary.  Protected-bank correction weight
@@ -83,6 +83,18 @@ two rational source cosets and image coset when both fibre roots are
 witnessed, one-sided orbit growth with missing companions exposed, one
 heavy repeated source factor, or divisor-controlled product-carry
 signature growth.
+
+[`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
+proves OP4j.  OP4f matching factors are point-disjoint because their
+protected supports are block-disjoint.  After one finite
+channel-profile pigeonhole, every fixed product-carry signature
+supports at most \(\Delta_p\) matching factors.  Thus a matching of
+size \(\nu\) exposes at least
+\[
+\frac{\nu}
+{\left(q(q-1)+\binom q3\right)\Delta_p}
+\]
+signatures, with a weighted heavy-factor alternative.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -377,6 +389,8 @@ colour-ratio subgroup of order at least three.  OP4f gives an exact
 rank-three matching/kernel alternative: a maximal matching of
 \(\nu\) switch-disjoint transversals, or a \(3\nu\)-switch kernel whose
 \(2^{3\nu}\) conditioned residuals are all OP4b instances.
+OP4j routes the matching side to a finite channel profile with
+divisor-controlled product-carry signature growth.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -438,6 +452,11 @@ transversal boundary are checked by
 implication bicycles, the rational quotient audit and order-two
 templates, and the rank-three matching/kernel reduction are checked by
 `scripts/verify_phase_implication_bridge.py`.
+Geometric rational labels and global literal compatibility are checked
+by `scripts/verify_phase_geometric_labels.py`; paid fixed-edge density,
+completion deficits, and repetition are checked by
+`scripts/verify_phase_paid_edge_density.py`; rank-three matching carry
+dispersion is checked by `scripts/verify_phase_rank_three_router.py`.
 
 ## Completion criterion
 

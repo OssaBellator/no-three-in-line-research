@@ -394,8 +394,12 @@ The remaining frontiers are now precise.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
-3. **Rank-three dispersion.**  Expand or absorb a large family of
-   switch-disjoint geometric transversals.
+3. **Rank-three ledger integration.**
+   [`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
+   proves OP4j: every large switch-disjoint matching forces quantified
+   product-carry signature growth.  The remaining step is to admit
+   those blocker-factor signatures to the state-qualified ledger or
+   route their recurrence.
 4. **Other OP3j outputs.**  Resolve the high-overlap action-literal
    kernels and wide action CSPs.
 
@@ -419,3 +423,7 @@ checks every success and failure output of the complete gate.
 `scripts/verify_phase_paid_edge_density.py` checks the OP4i payment
 boundary and exhausts the fixed-template divisor-capacity interface on
 all really collinear oriented factors for \(p=11\).
+
+`scripts/verify_phase_rank_three_router.py` checks OP4j's finite channel
+profiles and endpoint-disjoint carry capacity on every real
+non-single-channel factor for \(p=11\).

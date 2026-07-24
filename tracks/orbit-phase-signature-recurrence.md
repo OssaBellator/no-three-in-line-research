@@ -518,7 +518,8 @@ consists of five named arithmetic outputs:
    current-syndrome payment certificate;
 3. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
    deficits, or its heavy-factor/carry-growth alternatives;
-4. large switch-disjoint rank-three carry transversals;
+4. OP4j rank-three blocker signatures awaiting state-ledger
+   integration;
 5. the wide-support action CSPs already separated by OP3j.
 
 To finish OP2--OP5, these outputs must be shown to expand, to force a
