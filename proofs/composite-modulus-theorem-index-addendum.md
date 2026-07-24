@@ -40,7 +40,7 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR196 | Every candidate certificate line cuts the parent board in a partial matching | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
 | CMR197 | Fewer than \(\lfloor t/2floor\) real certificate lines are simultaneously avoidable | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
 | CMR198 | Every frozen parent cover uses at least \(\lfloor t/2floor\) distinct real-line signatures | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
-| CMR199 | Every frozen parent cover contains an off-diagonal Hall rectangle \(A	imes T\) with \(|A|+|T|>t\) | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
+| CMR199 | Every frozen parent cover contains an off-diagonal Hall rectangle \(A\times T\) with \(|A|+|T|>t\) | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
 | CMR200 | A Hall rectangle exposes a half-full source row or target column and one majority rank | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
 | CMR201 | Rank-one and rank-two Hall walls expose executable alternating banks | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
 | CMR202 | The only non-executable one-wall outcome is a rank-three candidate-only wall | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
@@ -57,8 +57,12 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR222 | One dyadic primitive-height band carries more than \((t)_3/(144\lceil\log_2tceil)\) of those triples | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
 | CMR223 | One cell lies in fewer than \(3t^2\) candidate-only conflicts in one dyadic band | PROVED | `docs/99-prime-power-band-conflict-system.md` |
 | CMR224 | One compatible cell pair has band codegree below \(t/H\) | PROVED | `docs/99-prime-power-band-conflict-system.md` |
-| CMR225 | Bands with \(H\ge t^arepsilon\) satisfy the standard bounded-conflict hypotheses | PROVED | `docs/99-prime-power-band-conflict-system.md` |
+| CMR225 | Bands with \(H\ge t^\varepsilon\) satisfy the standard bounded-conflict hypotheses | PROVED | `docs/99-prime-power-band-conflict-system.md` |
 | CMR226 | Every such high-height band has a conflict-free almost-perfect derangement matching | PROVED FROM A PUBLISHED THEOREM | `docs/99-prime-power-band-conflict-system.md` |
+| CMR227 | Two finite real coordinate sets admit at most two full affine transversal lines | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
+| CMR228 | In an odd parent block, deletion inside half a block's distinct line matchings creates no essential edge while a perfect matching remains | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
+| CMR229 | A frozen odd parent either exposes an anchored bank or permits simultaneous deletion of \((t-1)/2\) candidate-only line matchings and forces one more line | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
+| CMR230 | Every large odd balanced parent has an anchored continuation or more than half a block's worth of candidate-only line signatures | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
