@@ -27,9 +27,11 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/10-cross-disciplinary-pathway.md`](docs/10-cross-disciplinary-pathway.md): radar, coding, tomography, and CSP interpretations.
 - [`docs/11-open-bottlenecks.md`](docs/11-open-bottlenecks.md): exact remaining lemmas and proposed experiments.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): claims that were corrected, weakened, or refuted.
+- [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected collision-aware bank theorem.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
+- [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
 
 ## Research discipline
 
@@ -52,10 +54,11 @@ The strongest current synthesis is:
 3. Encode row-column-preserving changes through multiplicative orbit blocks or cycle trades.
 4. Represent cross-channel bad triples as properly edge-coloured secant graphs whose colour classes are matchings.
 5. Peel leaves; every residual core contains a Möbius cycle.
-6. Replace the cycle by one of its cyclic matching states.
-7. Control collateral through cyclic window-product complexity.
+6. Use collision-aware full permutation banks on cycle blocks.
+7. When a one-colour cycle is frozen, expand to its opposite-colour secant anchors.
+8. Control the alternating closure through quantitative one-, two-, and three-cell concentration certificates.
 
-The unresolved step is a **carry-cycle dispersion lemma**: every Euclidean carry-filtered Möbius cycle must either admit an energy-decreasing state or contain a smaller multiplicative orbit absorber.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current target is an alternating two-colour carry-core lemma, supported by a universal collision-aware permutation-bank bound.
 
 ## Running the checks
 
@@ -65,6 +68,7 @@ The scripts require Python 3.10+ and only the standard library.
 python scripts/verify_hyperbola.py --prime 17
 python scripts/verify_absorber.py --n 30 --h 5 --m 7
 python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
+python scripts/verify_carry_cycle_bound.py
 ```
 
 These programs are sanity checks, not proofs for arbitrary \(n\).
@@ -85,7 +89,7 @@ A useful contribution should do at least one of the following:
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
 - implement an exact search for Möbius cycle states;
-- classify low-complexity window-product cycles;
+- classify frozen cycles and alternating anchor closures;
 - connect the carry filter to additive-combinatorial structure.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
