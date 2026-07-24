@@ -44,8 +44,11 @@ The numbering is local to this repository.
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
 | CF4 | Nondegenerate carry-cell line bound and common-wrap centers | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
 | CF5 | Partial alternating-closure reduction | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF6 | Cross-channel carry factorization | OPEN | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
+| CF6 | Sharp cross-channel fixed-degree carry factorization | OPEN | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
 | CF7 | Perfect-wrap chamber sparsity | OPEN | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
+| SC1 | Product-carry levels have divisor-bounded size | PROVED | `docs/24-secant-star-carry-dispersion.md` |
+| SC2 | Endpoint-disjoint secant stars force product-carry signature dispersion in any channel pair | PROVED | `docs/24-secant-star-carry-dispersion.md` |
+| SC3 | Paid bank yields improvement, carry dispersion, or perfect alignment | PROVED | `docs/24-secant-star-carry-dispersion.md` |
 | O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
