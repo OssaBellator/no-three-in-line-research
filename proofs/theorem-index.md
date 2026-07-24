@@ -68,6 +68,11 @@ The numbering is local to this repository.
 | PX10 | Exact full product-host selection reduces to width-three CNF | PROVED | `docs/29-full-product-host-selection.md` |
 | PX11 | Product-compatible degree-two states are connected by alternating-cycle trades | PROVED | `docs/29-full-product-host-selection.md` |
 | PX12 | Fixed signed-area and nonzero carry levels have quadratic multiplicity | PROVED | `docs/29-full-product-host-selection.md` |
+| PX13 | Complete projection fibres have at most quadratic joint resonance multiplicity | PROVED | `docs/30-hybrid-resonance-and-repair-barriers.md` |
+| PX14 | Type-\((2,2)\) weighted-direction signatures have linear factor multiplicity | PROVED | `docs/30-hybrid-resonance-and-repair-barriers.md` |
+| PX15 | Exact alternating-cycle triple-collateral identity | PROVED | `docs/30-hybrid-resonance-and-repair-barriers.md` |
+| PX16 | Every bad product state has a triple-count-improving cycle | REFUTED | `docs/30-hybrid-resonance-and-repair-barriers.md` |
+| PX17 | Triple count plus pair-line energy gives monotone repair | REFUTED | `docs/30-hybrid-resonance-and-repair-barriers.md` |
 | O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
