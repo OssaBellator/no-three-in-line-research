@@ -1,6 +1,6 @@
 # Affine rectangle protection of low primitive directions
 
-PX70--PX73 isolate low primitive height as the sole source of full-order
+PX81--PX84 isolate low primitive height as the sole source of full-order
 transversal codegree in the rectangle matching model.  This chapter gives a
 factor-compatible positive construction which removes any prescribed finite set
 of nonaxis directions from the product state.
@@ -38,22 +38,18 @@ t_c(u)=r_c(u)=mu+c\pmod n.
 The rectangle state is
 
 \[
-Q_{m,c,s}
-=
-Q(p_s,t_c,r_c).
+Q_{m,c,s}=Q(p_s,t_c,r_c).
 \]
 
 For every `u` it contains all four corners of
 
 \[
-\{u,n+p_s(u)\}
-\times
-\{t_c(u),n+t_c(u)\}.
+\{u,n+p_s(u)\}\times\{t_c(u),n+t_c(u)\}.
 \]
 
 It is automatically saturated by PX43.
 
-### Theorem PX75 -- PROVED
+### Theorem PX86 -- PROVED
 
 Let `D` be a finite set of nonaxis primitive directions.  Suppose
 
@@ -96,8 +92,7 @@ and the bottom colour consists of
 Fix `q=(a,b) in D`.  For the first top corner type,
 
 \[
-\lambda_q(u,t_c(u))
-=b u-a t_c(u).
+\lambda_q(u,t_c(u))=b u-a t_c(u).
 \]
 
 If two indices `u,v` give the same integer line coordinate, reduction modulo
@@ -111,8 +106,7 @@ The gcd hypothesis forces `u=v`.  Thus this corner type uses distinct real
 `q`-lines.  The second top corner has coordinate
 
 \[
-\lambda_q(u,n+t_c(u))
-=\lambda_q(u,t_c(u))-an.
+\lambda_q(u,n+t_c(u))=\lambda_q(u,t_c(u))-an.
 \]
 
 It is separately injective.  Equality between a first-type and second-type
@@ -140,7 +134,7 @@ do not affect injectivity. \(\square\)
 
 The same residue-avoidance argument as A2 supplies a slope.
 
-### Theorem PX76 -- PROVED
+### Theorem PX87 -- PROVED
 
 Let `D` be a finite set of nonaxis primitive directions.  If every prime divisor
 `ell` of `n` satisfies
@@ -149,7 +143,7 @@ Let `D` be a finite set of nonaxis primitive directions.  If every prime divisor
 ell>|D|+1,
 \]
 
-then there is a residue `m` satisfying all hypotheses of PX75.
+then there is a residue `m` satisfying all hypotheses of PX86.
 
 ### Proof
 
@@ -178,13 +172,10 @@ Let `D_H` be a fixed-half-plane set of all nonaxis primitive directions with
 PX62 gives at most `4h` primitive directions of exact height `h`, so
 
 \[
-|D_H|
-\le
-\sum_{h=1}^H4h
-=2H(H+1).
+|D_H|\le\sum_{h=1}^H4h=2H(H+1).
 \]
 
-### Corollary PX77 -- PROVED
+### Corollary PX88 -- PROVED
 
 If the least prime factor of `n` is greater than
 
@@ -198,7 +189,7 @@ height at most `H`.
 
 ### Proof
 
-Apply PX76 to `D_H`, then PX75.  The normalized scalar rectangle state is
+Apply PX87 to `D_H`, then PX86.  The normalized scalar rectangle state is
 available to every permutation layer of every saturated side-`n` factor by the
 full-symmetric gauge transport PX41. \(\square\)
 
@@ -214,7 +205,7 @@ is admissible, so one may protect `H=Theta(sqrt(n))` primitive height.
 
 Inside a repair or resampling family which preserves all protected line
 occupancies, every remaining bad triple has primitive height greater than `H`.
-PX71 then bounds every remaining transversal completion codegree by
+PX82 then bounds every remaining transversal completion codegree by
 
 \[
 64n^2\left(1+\frac{2n}{H}\right).
@@ -223,8 +214,7 @@ PX71 then bounds every remaining transversal completion codegree by
 For prime `n` and `H=Theta(sqrt(n))`, this is
 
 \[
-O(n^{5/2})
-=O(d^{5/6}),
+O(n^{5/2})=O(d^{5/6}),
 \qquad d=n^3.
 \]
 
