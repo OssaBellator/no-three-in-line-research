@@ -78,6 +78,7 @@ The numbering is local to this repository.
 | SR5 | Global conflict-mass endpoint for saturated two-layer selection | PROVED | `docs/16-superregular-clone-selection.md` |
 | SRR1a | Exact stationary four-cycle resampling oracle on \(K_{N,N}\) | PROVED | `tracks/complete-host-resampling-oracle.md` |
 | SRR1b | Balanced switching graphs yield stationary flaw-removal kernels | PROVED | `tracks/superregular-switching-criterion.md` |
+| SRR1c | Hall's condition characterizes supported stationary flaw removal | PROVED | `tracks/superregular-hall-resampling.md` |
 | I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |
