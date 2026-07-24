@@ -3,7 +3,8 @@
 CMR223--CMR226 treat a dyadic height band as a bounded conflict system and
 obtain an almost-perfect conflict-free matching. At the very top of the
 primitive-height range, the matching-space local-load theorem CMR219 is already
-strong enough to give an exact parent permutation.
+strong enough to give an exact parent permutation avoiding every
+**candidate-only** triple in that slice.
 
 Work in one normalized nonroot parent board of odd size `t`. For a primitive
 nonaxis direction `(u,v)`, put
@@ -12,7 +13,7 @@ nonaxis direction `(u,v)`, put
 K=\max\{|u|,|v|\}.
 \]
 
-A compatible triple can occur only when
+A compatible candidate-only board triple can occur only when
 
 \[
 K\le\frac{t-1}{2}.
@@ -183,8 +184,8 @@ H\ge\left\lceil\frac{49t}{100}\right\rceil,
 there is a parent permutation which
 
 1. avoids every old diagonal cell;
-2. contains no compatible collinear triple whose primitive height is at least
-   `H`;
+2. contains no compatible **candidate-only board triple** whose primitive
+   height is at least `H`;
 3. preserves saturation and inherited layer disjointness.
 
 ### Proof
@@ -195,15 +196,16 @@ this band-only application. CMR232 verifies the local-load hypothesis at every
 board vertex, so the matching-space lopsided local lemma supplies a perfect
 matching avoiding all bad events. ∎
 
-The conclusion is exact, unlike CMR226. It does not yet clean lower primitive
-heights, and a permutation chosen for this slice may create triples in those
-lower bands.
+The conclusion is exact, unlike CMR226. It does not exclude rank-one or
+rank-two triples involving fixed outside points, and it does not clean lower
+primitive heights. A permutation chosen for this slice may create triples in
+those omitted classes.
 
 ## 4. Revised height programme
 
-The top `1/50` of the possible primitive-height interval is now removable by
-one exact parent move for every sufficiently large odd block. More generally,
-CMR232 identifies the natural local-load boundary
+The top `1/50` of the possible candidate-only primitive-height interval is now
+removable by one exact parent move for every sufficiently large odd block. More
+generally, CMR232 identifies the natural local-load boundary
 
 \[
 c=\sqrt{11/48}\approx0.4787.
