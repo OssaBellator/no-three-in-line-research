@@ -73,3 +73,6 @@ CMR101. The main composite index remains in
 | CMR166 | Balanced reciprocal banks, including \(p=5\), have total nonroot joint-parent collateral \(O_p(N^2\log^2N)\) | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
 | CMR167 | The prime-seven balanced bank has expected nonroot joint-parent collateral below \(((216k+360)(k-1)/7)N^2\) | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
 | CMR168 | Disjoint-fibre joint repairs preserve coarser charges; root blocks use exact base escapes or the general old-cell-clean bank | PROVED | `docs/84-prime-power-disjoint-fibre-joint-bank.md` |
+| CMR169 | Summed destroyed populations at one scale count each triple once per occupied prefix block, hence one to three times | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
+| CMR170 | A state frozen under all nonroot joint-parent banks satisfies \((k-1)\Phi(S)\) at most the total joint collateral | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
+| CMR171 | Low-collateral frozen reciprocal and prime-seven states satisfy explicit quadratic-logarithmic potential bounds | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
