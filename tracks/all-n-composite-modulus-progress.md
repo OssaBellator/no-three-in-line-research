@@ -98,8 +98,17 @@ The branch now contains:
   \]
 - an exact first-separation signature \(q+M+p^{k-1}D_1=0\).
 
-The remaining decoder theorem is a concentration bound for these recursive
-first-separation certificates.
+The terminal state is now explicit at every prime: CMR33 proves that
+
+\[
+F_p(0)=1,
+\qquad
+F_p(x)=[1+x^{-1}]_p
+\]
+
+is a no-three permutation, and CMR34 installs it simultaneously in the two
+terminal row blocks. The remaining decoder theorem is therefore only a
+concentration bound for nonterminal recursive first-separation certificates.
 
 ### CM5 — CRT saturation and mixed-collision criterion
 
@@ -143,12 +152,12 @@ Binary digit-linear one-channel no-three permutations are verified at
 The `64`-point matrix has no direct one-bit block extension to `128`.
 
 The unrestricted uniform terminal block has expected internal triple mass at
-least \((p-1)/3\), so a flat first-moment finish fails for \(p\ge5\). Exact
-companion-offset terminal no-three states are nevertheless verified for every
-odd prime through `31`, and the exponent-\(2\) check proves the same local state
-works at all higher powers of that prime.
+least \((p-1)/3\), so a flat first-moment finish fails for \(p\ge5\). This no
+longer blocks the recursive construction: CMR33–CMR34 provide one explicit
+companion-compatible no-three terminal state for every prime and every
+exponent.
 
-No scalable all-prime terminal family or all-composite construction is known.
+No scalable all-composite construction is yet known.
 
 ## Revised bottlenecks
 
@@ -156,14 +165,13 @@ No scalable all-prime terminal family or all-composite construction is known.
    \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), ideally after contracting
    the deterministic top-digit blocks.
 2. **Recursive first-separation concentration.** Bound the weighted mass of
-   signatures \(q+M+p^{k-1}D_1=0\) under the recursive CMR27 measure.
+   signatures \(q+M+p^{k-1}D_1=0\) under the recursive CMR27 measure, with the
+   explicit CMR34 terminal state fixed at the base.
 3. **Balanced small-height tangent lines.** Sum the remaining highly singular,
    low-height directions without reverting to a global square-root cap.
-4. **Terminal family for all primes.** Replace the finite CMR24 table by an
-   algebraic or probabilistic family with usable spread.
-5. **Digital saturation at 64 and non-block lift to 128.** The direct bit-block
+4. **Digital saturation at 64 and non-block lift to 128.** The direct bit-block
    extension is refuted; unrestricted completion remains open.
-6. **CRT direction separation.** Construct synchronized local pairs satisfying
+5. **CRT direction separation.** Construct synchronized local pairs satisfying
    \(\mathcal D_u\cap\mathcal D_v=\varnothing\).
 
 ## Checks
@@ -177,6 +185,7 @@ python scripts/verify_prime_power_block_collateral.py
 python scripts/verify_prime_power_all_stratum_bank.py --max-modulus 125
 python scripts/verify_prime_power_terminal_mass.py --max-prime 13
 python scripts/verify_prime_power_terminal_configurations.py
+python scripts/verify_prime_power_terminal_family.py --max-prime 101 --max-exponent 4
 python scripts/verify_prime_power_recursive_quotient.py --max-modulus 125
 python scripts/verify_prime_power_recursive_determinant.py
 python scripts/verify_crt_mixed_collision.py --max-modulus 60
