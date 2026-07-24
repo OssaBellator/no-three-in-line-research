@@ -58,4 +58,10 @@ This ledger collects the results specific to
 | CMR32 | One-channel syndrome is controlled by harmonic direction energy | PROVED | `docs/41-prime-power-harmonic-direction-energy.md` |
 | CMR33 | The completed inverse \(F_p(0)=1, F_p(x)=1+x^{-1}\) is an integer no-three permutation for every prime | PROVED | `docs/42-prime-power-terminal-family.md` |
 | CMR34 | The completed-inverse terminal state is companion-compatible and no-three at every prime power | PROVED | `docs/42-prime-power-terminal-family.md` |
+| CMR35 | Low shifts and nonsquare reciprocal parameters give no-three terminal permutations | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
+| CMR36 | The terminal family has exact one-cell \(O(1/p)\) and rank-two \(O(1/p^2)\) cylinder bounds | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
+| CMR37 | Independent terminal-family layers give a spread no-three companion base | PROVED | `docs/43-prime-power-terminal-spread-family.md` |
+| CMR38 | Uniform recursive p-adic permutations have an exact normalized pair-difference law | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
+| CMR39 | Uniform recursive p-adic permutations have expected harmonic energy \(O(N\log^3N)\) | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
+| CMR40 | The no-three terminal-base recursive bank retains expected harmonic energy \(O(N\log^3N)\) | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
