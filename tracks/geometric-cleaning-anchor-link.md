@@ -248,6 +248,60 @@ before delegation: one explicit certificate type now carries the
 recursive obstruction. For latent weights it still does not supply the
 missing syndrome-incidence payment.
 
+## GC4g -- strict-support potential for certificate recursion
+
+Fix the finite star family \(\mathcal S\) present at the start of one
+GC4 regularization epoch.  A pure GC4f recursive descent has states
+
+\[
+(U_0,i_0),(U_1,i_1),\ldots,
+\qquad i_t\in U_t\subseteq\mathcal S,
+\]
+
+and its recursive overload alternative replaces \(U_t\) by one
+certificate class
+
+\[
+U_{t+1}=S_{\lambda_t}^{U_t}(i_t)
+\subseteq U_t\setminus\{i_t\}.
+\]
+
+No discarded star is reintroduced inside the epoch.
+
+### Lemma GC4g -- PROVED
+
+The support-deficit potential
+
+\[
+\boxed{
+\Gamma_{\rm supp}(U)=|\mathcal S|-|U|
+}
+\]
+
+increases by at least one at every pure GC4f recursive overload step.
+Consequently an epoch beginning on \(U_0\) has at most
+\(|U_0|-1\) such steps and contains no recursive state cycle.
+
+### Proof
+
+A star is not its own conflict neighbour, so every incident
+certificate class omits the current centre.  Hence
+
+\[
+|U_{t+1}|\leq |U_t|-1
+\]
+
+and the displayed potential increases by at least one.  It is bounded
+above by \(|\mathcal S|-1\) on a nonempty recursive state.  Strictly
+nested supports cannot revisit a previous state. \(\square\)
+
+Thus label-pure overload descent itself terminates without any geometric
+assumption.  Any later return to a discarded star must enlarge the
+support and is a separate reuse event.  Such a reopening still needs
+current syndrome payment or a bounded reuse ticket; likewise GC4g does
+not repair the latent-weight caveat in GC4c--GC4f.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
-most six link vertices.
+most six link vertices, together with strict-support recursion through
+every maximal-depth order on at most seven stars.

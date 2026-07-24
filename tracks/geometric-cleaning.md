@@ -144,6 +144,12 @@ label-pure overload. The remaining GC4 classification therefore need not
 handle arbitrary mixtures of row, column, anchor, cell, and collateral
 conflicts.
 
+GC4g proves that the final label-pure recursive alternative cannot loop
+inside one regularization epoch: its active star support strictly
+shrinks at every descent. A return to a discarded star is therefore an
+explicit support-reuse event, which is exactly where current syndrome
+incidence or a bounded reuse ticket must now be supplied.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement

@@ -4,7 +4,7 @@
 from __future__ import annotations
 
 from fractions import Fraction
-from itertools import combinations
+from itertools import combinations, permutations
 
 
 def maximal_matching(
@@ -239,10 +239,38 @@ def verify(max_vertices: int = 6) -> None:
                 assert heaviest * (2 * delta - 1) >= total_weight
 
 
+def verify_strict_support_descent(max_vertices: int = 7) -> None:
+    for size in range(1, max_vertices + 1):
+        full_support = frozenset(range(size))
+        for ordering in permutations(range(size)):
+            support = full_support
+            previous = size - len(support)
+            descents = 0
+            for center in ordering:
+                if center not in support:
+                    continue
+                label_class = support - {center}
+                if not label_class:
+                    break
+                potential = size - len(label_class)
+                assert label_class < support
+                assert potential >= previous + 1
+                support = label_class
+                previous = potential
+                descents += 1
+            assert descents <= size - 1
+
+    support = frozenset({0, 1, 2})
+    restricted = support - {0}
+    assert restricted < support
+    assert restricted | {0} == support
+
+
 def main() -> None:
     verify()
     verify_weighted_star_conflicts()
     verify_labelled_star_overload()
+    verify_strict_support_descent()
     print("weighted GC anchor-link dichotomy: verified through six vertices")
 
 

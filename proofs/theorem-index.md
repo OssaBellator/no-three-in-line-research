@@ -20,6 +20,7 @@ The numbering is local to this repository.
 | GC4d | A bounded-codegree peeling prefix yields disjoint fresh stars with linear total weight | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
 | GC4e | Weighted star conflicts yield a paid overload or a constant-fraction installable family | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
 | GC4f | A paid cross-star overload localizes and descends inside one certificate label | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
+| GC4g | Certificate-labelled star recursion has a strict finite-support potential | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
 | L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
 | L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
 | L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |
