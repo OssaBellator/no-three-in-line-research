@@ -49,6 +49,15 @@ For every set `U` of at most `eta m` variables, either
 
 The theorem must use the Möbius/carry labels; unlabelled degree and codegree hypotheses are insufficient.
 
+### Acyclic case proved
+
+[`orbit-phase-forest-completion.md`](orbit-phase-forest-completion.md)
+proves OP2a: when every check forbids one canonical phase assignment,
+alphabets have size at least two, checks have arity at least two, and the
+factor-incidence graph is a forest, leaf elimination constructs a
+conflict-free phase assignment in linear time. Hence only unary saturation
+or cyclic residual cores require arithmetic expansion or absorption.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -75,6 +84,10 @@ syndrome.
 ### Target statement
 
 After removing all structured exceptions, show that the residual labelled CSP has normalized pair/triple conflict mass below the product-state local-lemma threshold. Deduce a global phase assignment with no bad triple.
+
+OP2a already completes every acyclic residual component exactly. OP4 may
+delete those components before estimating normalized conflict mass on the
+cyclic core.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -106,6 +119,9 @@ No residual generic cycle core may remain unclassified.
 - constant-ratio cycles and order-two orbits;
 - the frozen `p=11` cycle;
 - cores in which every check has degree two within the active variable set.
+
+The forest/cycle boundary and unary-saturation exception are now retained
+by `scripts/verify_phase_forest.py`.
 
 ## Completion criterion
 
