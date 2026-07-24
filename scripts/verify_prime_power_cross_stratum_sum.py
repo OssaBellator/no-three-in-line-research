@@ -85,9 +85,15 @@ def verify_instance(p: int, k: int) -> tuple[int, int]:
         h = r - t
         reduced = a // (p**t)
         modulus = p ** (k - t)
+
+        if r == k:
+            # The only endpoint of valuation k is the origin, so there is at
+            # most one such pair for a fixed positive column difference.
+            assert count <= 1
+            continue
+
         local_modulus = p ** (k - r)
         exponent = k - r
-
         roots = 0
         possible_carries = 0
         limit = (modulus - 1) // d
