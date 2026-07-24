@@ -45,6 +45,7 @@ The numbering is local to this repository.
 | PA1 | Exact classification of zero-leading-carry interpolation parameters | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
 | PA2 | Perfect alignment is equivalent to a reduced-denominator wrap-index condition | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
 | PA3 | Perfect-alignment population is at most \(4p/q\) for denominator \(q\) | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
+| BDA1 | Canonical \(q^2\)-class perfect-chamber strip decomposition | PROVED | `tracks/bounded-denominator-strip-proof.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |

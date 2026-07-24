@@ -17,7 +17,7 @@ For an aligned interpolation parameter `t'/q` in lowest terms:
 
 Thus only fixed or bounded `q` can support a positive-density obstruction.
 
-## BDA1 — q-striped chamber decomposition
+## BDA1 — q-striped chamber decomposition — PROVED
 
 ### Target statement
 
@@ -29,6 +29,16 @@ For every fixed integer `q>=2`, partition the perfectly aligned base parameters 
 4. the corresponding aligned triples share one finite list of rational interpolation patterns.
 
 The decomposition must be canonical under the red–blue channel swap and stable under deletion of `O_q(1)` exceptional points.
+
+### Resolution
+
+[`bounded-denominator-strip-proof.md`](bounded-denominator-strip-proof.md)
+partitions arbitrary wrap residues into exactly `q^2` canonical classes of
+explicit carry intervals.  PA2 identifies a perfect chamber with the
+zero-zero class, and the note derives its single rational interpolation
+pattern directly.  The construction is invariant under source-target
+reversal and point deletion.  `scripts/verify_q_strips.py` exhaustively
+checks the interval and interpolation identities through `p=43`.
 
 ## BDA2 — local alternating absorber
 
@@ -99,4 +109,4 @@ Any frozen template must be added to BDA4 rather than hidden in an asymptotic es
 
 ## Completion criterion
 
-This branch is complete when BDA1–BDA5 are proved for every fixed `q`, with an effective dependence on `q` and an exact interface usable by the alternating-core branch.
+This branch is complete when BDA2–BDA5 are proved for every fixed `q`, with an effective dependence on `q` and an exact interface usable by the alternating-core branch. BDA1 is now proved.
