@@ -1,7 +1,7 @@
 # Canonical affine full-selector obstruction
 
 The blockwise reversal of PX25 removes the unmodified `2 x 5` defect gap for
-selected side-five factors.  PX30 shows that, inside the explicit one-inner-layer
+selected side-five factors.  PX31 shows that, inside the explicit one-inner-layer
 family, normalized affine block maps produce only the already known side-ten
 witness.
 
@@ -45,7 +45,7 @@ There are
 
 such hosts.
 
-## Theorem PX31 -- PROVED FINITE
+## Theorem PX32 -- PROVED FINITE
 
 None of the 1600 normalized affine hosts for the canonical factor pair contains
 a no-three spanning degree-two state.
@@ -63,7 +63,7 @@ selected cells.  The exact search returns no model in all 1600 cases. \(\square\
 
 ## 2. Interpretation
 
-PX31 prevents an overly optimistic conclusion from the side-ten witness.
+PX32 prevents an overly optimistic conclusion from the side-ten witness.
 
 - Blockwise affine maps are genuinely useful for some side-five factors.
 - They are not universal even when combined with the full degree-two selector.
@@ -91,5 +91,5 @@ python scripts/verify_product_canonical_affine_full_selector.py
 ```
 
 The script imports the independently checked blockwise-host and exact-selector
-routines and exhausts all 1600 hosts using only the standard library.  PX31 is a
+routines and exhausts all 1600 hosts using only the standard library.  PX32 is a
 finite obstruction, not a symbolic classification of all affine product hosts.
