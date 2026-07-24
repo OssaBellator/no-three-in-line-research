@@ -58,6 +58,15 @@ factor-incidence graph is a forest, leaf elimination constructs a
 conflict-free phase assignment in linear time. Hence only unary saturation
 or cyclic residual cores require arithmetic expansion or absorption.
 
+### Pseudoforest case proved
+
+[`orbit-phase-pseudoforest-completion.md`](orbit-phase-pseudoforest-completion.md)
+proves OP2b: the same conclusion holds when every incidence component has
+at most one cycle.  Leaf elimination reduces the only nonforest core to an
+alternating cycle, and one phase choice breaks its closing check.
+Consequently OP2 arithmetic expansion is needed only for unary saturation
+or a component with at least two independent cycles.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -88,6 +97,10 @@ After removing all structured exceptions, show that the residual labelled CSP ha
 OP2a already completes every acyclic residual component exactly. OP4 may
 delete those components before estimating normalized conflict mass on the
 cyclic core.
+
+OP2b also deletes every unicyclic component.  Thus the residual core for
+the OP4 estimate may be assumed to have cyclomatic number at least two in
+each component.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -120,8 +133,10 @@ No residual generic cycle core may remain unclassified.
 - the frozen `p=11` cycle;
 - cores in which every check has degree two within the active variable set.
 
-The forest/cycle boundary and unary-saturation exception are now retained
-by `scripts/verify_phase_forest.py`.
+The forest and pseudoforest boundaries, unary-saturation exception, and a
+multiply-cyclic unsatisfiable example are retained by
+`scripts/verify_phase_forest.py` and
+`scripts/verify_phase_pseudoforest.py`.
 
 ## Completion criterion
 
