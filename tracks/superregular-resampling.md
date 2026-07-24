@@ -129,6 +129,16 @@ four-cycle choices and all five one-layer oracle properties whenever
 assumed to have a linear or larger number of holes; arbitrary geometry
 alone is no longer an obstruction in the sparse-hole regime.
 
+[`two-layer-sparse-hole-locality.md`](two-layer-sparse-hole-locality.md)
+proves SRR3g. A general two-layer cylinder has a crude independent-layer
+upper count, while every globally compatible cylinder has the SRR3e
+lower count. Their ratio bounds the conditional probability of using
+one specified missing cell. A union bound and conditioning comparison
+then give \(1+o(1)\) remote locality for two edge-disjoint matchings
+whenever the arbitrary missing set has size \(t=o(N)\). Together with
+SRR3f's \(N-2t-3\) stationary choices, this completes the two-layer
+oracle throughout the sparse-hole regime.
+
 ## SRR3 — Two-layer exact-cover extension
 
 ### Target statement
@@ -207,7 +217,9 @@ one-edge-deleted dense hosts are checked by
 counts and remote-cylinder ratios are checked by
 `scripts/verify_deleted_matching_locality.py`. Arbitrary sparse-hole
 rook counts and locality are checked by
-`scripts/verify_sparse_hole_locality.py`.
+`scripts/verify_sparse_hole_locality.py`. Two-layer sparse-hole
+conditioning is checked by
+`scripts/verify_two_layer_sparse_hole_locality.py`.
 
 ## Completion criterion
 

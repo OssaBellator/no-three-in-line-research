@@ -88,6 +88,7 @@ The numbering is local to this repository.
 | SRR3d | Globally compatible mixed-layer remote events have \(1+O(1/N)\) inflation | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3e | General compatible mixed-layer cylinders satisfy \(1+O(1/N)\) resampling locality | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3f | Two dense host matchings admit a state-normalized stationary flaw-removal oracle | PROVED | `tracks/dense-host-stationary-resampling.md` |
+| SRR3g | Arbitrary sublinear host-hole sets preserve fixed-rank two-layer remote locality | PROVED | `tracks/two-layer-sparse-hole-locality.md` |
 | I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |
