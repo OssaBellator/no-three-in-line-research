@@ -10,8 +10,8 @@ claims are indexed in
 ### CM1 — nonlinear full channels and recursive saturated banks
 
 Valuation-completed reciprocals are full nonlinear permutation channels at
-every prime power. A universal row companion produces a disjoint saturated
-pair with one alternating Hamiltonian cycle.
+every prime power. A universal row companion produces a disjoint saturated pair
+with one alternating Hamiltonian cycle.
 
 At \(N=p^k\), the pair decomposes into \(N/p\) top-digit column blocks of size
 `p`. Both layers can be independently permuted inside every block, giving
@@ -20,9 +20,8 @@ At \(N=p^k\), the pair decomposes into \(N/p\) top-digit column blocks of size
 (p!)^{2N/p}
 \]
 
-saturated states with an exact cylinder law. Contracting the blocks recovers
-the identical host at exponent \(k-1\), yielding an exact recursive multiscale
-bank.
+saturated states with an exact cylinder law. Contracting the blocks recovers the
+identical host at exponent \(k-1\), yielding an exact recursive multiscale bank.
 
 The restricted CMR43 lift replaces each full fibre permutation by the
 quadratic-size conic family CMR35. It remains saturated, excludes every triple
@@ -35,14 +34,17 @@ For primes
 p\equiv1\pmod4,
 \]
 
-CMR67 enlarges the local family to all vertical shifts with nonsquare reciprocal
-parameter. Every cell is then exactly uniform with probability `1/p`, while
-rank-two prescriptions have probability at most `1/(p h)`.
+CMR67 uses all shifts and nonsquare reciprocal parameters. Every individual
+layer cell is exactly uniform with probability `1/p`. The saturated root law is
+not independent sampling: the two root maps use one common nonsquare parameter
+and two distinct shifts. This condition is necessary and sufficient for their
+pointwise disjointness. Above the root, independent balanced maps remain valid
+because the two layer row-prefix fibres are already disjoint.
 
 ### CM2 — real line cap: height-sensitive but open
 
-For odd prime powers, every line intersection reduces to simple lower
-valuation roots plus one possible top Hensel-tangent cell. The coarse cap is
+For odd prime powers, every line intersection reduces to simple lower valuation
+roots plus one possible top Hensel-tangent cell. The coarse cap is
 
 \[
 O(\sqrt N+\log N).
@@ -57,8 +59,8 @@ O\left(1+\frac{p^t}{H}\right),
 where \(2t\) is the discriminant valuation. Large cells must therefore be both
 highly singular and supported on small primitive directions.
 
-A constant uniform line cap remains open, but the exception is now
-height-weighted. CMR38 already converts this line cap into a general
+A constant uniform line cap remains open, but the exception is height-weighted.
+CMR38 converts this line cap into a general
 \(O(N^{3/2}\log N)\) deterministic harmonic-energy bound.
 
 ### CM3 — one- and two-layer syndrome bounds
@@ -73,7 +75,7 @@ exact top-digit vector repeated at least
 times. CMR15–CMR22 localize those repeats to disjoint executable blocks.
 
 For one deterministic completed-reciprocal layer, two independent arguments
-reach quadratic order:
+reach quadratic-order syndrome:
 
 - CMR38–CMR39 use direction splitting to prove
   \[
@@ -81,7 +83,7 @@ reach quadratic order:
   \qquad
   T=O(N^2\log N);
   \]
-- CMR56–CMR66 reduce the same energy to exact divisor-collision cells, prove
+- CMR56–CMR66 reduce the energy to exact divisor-collision cells, prove
   \[
   C(a,d)<20N/d+13\sqrt N+8k,
   \]
@@ -92,8 +94,8 @@ reach quadratic order:
   T=O(N^2\log N).
   \]
 
-The second proof identifies the remaining arithmetic loss: rare nearly
-singular carries create the square-root boundary.
+The second proof identifies the remaining arithmetic loss: rare nearly singular
+carries create the square-root boundary.
 
 For the complete deterministic two-layer companion host, CMR40–CMR42 give a
 height-sensitive line cap, harmonic energy
@@ -119,18 +121,24 @@ O(N\log^3N)
 
 even with a no-three spread family at the base.
 
-CMR68–CMR74 now sum recursive first-separation certificates. For every fixed
-odd `p>=5`, the original restricted bank has a genuinely subcubic expected
-syndrome. For `p=1 mod 4`, the balanced bank satisfies
+CMR68–CMR74 sum recursive first-separation certificates. For every fixed odd
+`p>=5`, the original restricted bank has a genuinely subcubic expected syndrome.
+For the corrected balanced saturated bank at `p=1 mod 4`,
 
 \[
 \mathbb E T_k
 <
-4kN^2+\frac{p+2}{3}N^2.
+4(k-1)N^2+
+\left(
+\frac{p-2}{3}+
+\frac{4p}{3(p-1)}
+\right)N^2
+<
+4(k-1)N^2+\frac{p+3}{3}N^2.
 \]
 
-Thus a saturated recursive state with `O_p(N^2 log N)` syndrome and exact
-multiscale spread exists throughout this infinite prime-power class.
+Thus this infinite prime-power class has saturated recursive states with
+`O_p(N^2 log N)` syndrome and exact multiscale spread.
 
 ### CM4 — prime-power carry calculus and recursive decoder space
 
@@ -148,20 +156,68 @@ The branch contains:
 - first-separation signatures \(q+M+p^{k-1}D_1=0\);
 - restricted conic-fibre and uniform-lift anti-concentration;
 - exact complete and unit scalar root averages;
-- a full recursive first-separation product bound CMR68;
-- full-depth `1/N` anti-concentration for layer-transverse triples CMR70;
-- pair-codegree localization CMR72;
-- the binary closest-pair separation factor CMR73;
-- exact equilateral and binary p-adic clustering sums CMR74.
+- full-depth layer-transverse anti-concentration
+  \[
+  \Pr(\Delta\equiv0\pmod N)
+  \le\frac{p}{(p-1)N};
+  \]
+- pair-codegree localization and the binary closest-pair factor;
+- exact equilateral and binary p-adic clustering sums.
 
-The first-separation summation bottleneck is therefore closed at the natural
-quadratic-logarithmic first-moment scale for `p=1 mod 4`. The logarithm has one
-explicit source: binary same-layer stars consisting of a closest pair at scale
-`s` and a third point outside that pair's prefix block. Equilateral clusters and
-all layer-transverse patterns have only quadratic total mass.
+CMR75–CMR78 install a full prefix-block rematching bank. Every old binary
+same-layer star assigned to the block is destroyed in every state, while the
+bank remains saturated and has matching-cylinder spread.
 
-The next recursive decoder theorem must neutralize these external pair-stars
-across scales, rather than seek stronger generic digit anti-concentration.
+CMR79–CMR89 close the rank-one quotient-incidence reduction. The actual
+rank-one candidate count contains no universal endpoint baseline, and
+
+\[
+\mathcal M_s\le3t^2Z_s,
+\qquad
+0\le\mathcal C_s-|E_s^{\rm coll}|<2N^2.
+\]
+
+For the balanced recursive bank, the expected total normalized rank-one
+collateral over all quotient scales is
+
+\[
+O_p(N^2\log^2N).
+\]
+
+CMR90–CMR92 close the higher-rank prefix terms for every saturated state:
+
+\[
+\sum_{a,\ell}\frac{T_2(A_{s,a,\ell})}{(t)_2}<2N^2,
+\qquad
+\sum_{a,\ell}\frac{T_3(A_{s,a,\ell})}{(t)_3}<\frac{N^2}{3p}.
+\]
+
+CMR93–CMR95 prove descending-scale invariance. A repair at scale `s` preserves
+every quotient modulo `p^r` for `r<=s`, including its modular syndrome and all
+coarser block row sets. A fine-to-coarse sweep therefore retains the initial
+balanced quotient charge at every unprocessed scale.
+
+CMR96–CMR99 add a recursive-compatible node bank. For two targeted child
+digits, its exact state count is
+
+\[
+h(p-2)+1,
+\qquad h=(p-1)/2,
+\]
+
+with one-child atom below `1/(p-2)` and rank-at-least-two child prescriptions at
+most `1/(h(p-2)+1)`. The bank changes only one reciprocal node, preserves the
+recursive algebraic class, and destroys a heavy child-pair star.
+
+CMR100–CMR101 identify and cancel an invariant subcore: triples wholly inside
+one child subtree are rigidly translated by a parent-node change, so their exact
+determinants and counts do not change. The remaining weak node-rank-one class is
+strictly external to that child subtree.
+
+The original generic first-separation, binary-star construction, quotient
+charging, endpoint removal, and higher-rank collateral bottlenecks are therefore
+closed at quadratic-polylogarithmic scale. The current recursive issue is a
+termination theorem for the external child-scale rank-one shadows.
 
 ### CM5 — CRT local-arc route corrected
 
@@ -197,8 +253,7 @@ L_v=uq,
 \]
 
 The revised target is slope-carry incompatibility over prime factors, plus a
-classification of noncyclic zero-divisor incidences for composite local
-factors.
+classification of noncyclic zero-divisor incidences for composite local factors.
 
 ### CM6 — finite coverage and the digital branch
 
@@ -217,35 +272,36 @@ Binary digit-linear one-channel no-three permutations are verified at
 8,16,32,64.
 \]
 
-The direct one-bit extension of the CMR12 matrix to `128` is refuted. CMR55
-also proves, by an exact integer covering certificate, that the existing
-`64`-point layer has no second-permutation no-three completion at all, even
-before triples internal to the proposed second layer are imposed.
+The direct one-bit extension of the CMR12 matrix to `128` is refuted. CMR55 also
+proves, by an exact integer covering certificate, that the existing `64`-point
+layer has no second-permutation no-three completion at all, even before triples
+internal to the proposed second layer are imposed.
 
 The digital route must therefore search jointly for both layers or replace the
 first layer. No scalable all-composite construction is known.
 
 ## Revised bottlenecks
 
-1. **Neutralize binary same-layer stars.** CMR68–CMR74 complete the generic
-   first-separation sum. The remaining recursive logarithm comes only from a
-   closest same-layer pair at one prefix scale and a third point outside that
-   prefix block. A repair or absorber theorem should act directly on these
-   multiscale pair-stars.
-2. **Remove the square-root divisor boundary.** Sharpen CMR61 and CMR64 for the
-   rare carries whose discriminant is divisible by nearly the full modulus,
-   closing the gap between CMR66 and near-linear deterministic energy.
-3. **Extend balanced local families.** CMR67 gives exact `1/p` marginals for
-   `p=1 mod 4`. Find a comparably balanced no-three fibre law for primes
-   `p=3 mod 4`, or prove a different all-odd-prime recursive summation.
-4. **Balanced small-height tangent lines.** Sum the highly singular low-height
-   directions without reverting to a worst-case square-root cap.
-5. **Joint digital construction.** Search for two compatible layers from the
+1. **External child-scale rank-one descent.** In the recursive-compatible CMR99
+   bank, charge `U_1^{ext}` to child-prefix secant energies and prove a
+   lexicographic or reverse-scale potential decrease.
+2. **Termination under repeated repairs.** Fine repairs preserve all coarser
+   quotient charges, but a later coarse repair may recreate fine stars. Bound
+   that recreated mass by the coarse decrease.
+3. **Sharper modular quotient syndrome.** Improve the current
+   `O_p(sm^2)` bound for `Z_s`, or exploit inherited primitive-line signatures to
+   reduce the factor `3t^2` in CMR86.
+4. **Remove the square-root divisor boundary.** Sharpen CMR61 and CMR64 for rare
+   carries whose discriminant is divisible by nearly the full modulus.
+5. **Extend balanced local families.** CMR67 gives an exact saturated balanced
+   law for `p=1 mod 4`. Find a comparable law for `p=3 mod 4`, or prove an
+   obstruction within completed reciprocal maps.
+6. **Joint digital construction.** Search for two compatible layers from the
    outset, or a different first layer and nonlinear lift to `128`.
-6. **CRT slope-carry incompatibility.** Construct local saturated pairs whose
+7. **CRT slope-carry incompatibility.** Construct local saturated pairs whose
    signatures cannot simultaneously vanish except in an absorbable family.
-7. **Further finite coverage.** `N=12` is solved; bounded `N=14` runs produced
-   no certificate, so no claim is made there.
+8. **Further finite coverage.** `N=12` is solved; bounded `N=14` runs produced no
+   certificate, so no claim is made there.
 
 ## Checks
 
@@ -256,6 +312,14 @@ python scripts/verify_prime_power_average_roots.py
 python scripts/verify_prime_power_first_separation_sum.py --max-modulus 125
 python scripts/verify_prime_power_layer_transverse.py --max-modulus 125
 python scripts/verify_prime_power_binary_clusters.py --max-modulus 125
+python scripts/verify_prime_power_prefix_star_bank.py
+python scripts/verify_prime_power_rank_one_reduction.py
+python scripts/verify_prime_power_quotient_incidence.py
+python scripts/verify_prime_power_quotient_excess.py
+python scripts/verify_prime_power_higher_rank_prefix.py
+python scripts/verify_prime_power_descending_invariance.py
+python scripts/verify_prime_power_recursive_compatible_bank.py
+python scripts/verify_prime_power_child_core_cancellation.py
 python scripts/verify_prime_power_recursive_harmonic.py --samples 100
 python scripts/verify_prime_power_lift_anti_concentration.py --max-prime 5
 python scripts/verify_prime_power_divisor_collisions.py --max-modulus 243
