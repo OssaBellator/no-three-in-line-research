@@ -79,7 +79,13 @@ The dependency graph should be indexed by overlapping matching vertices, possibl
 SRR1b and SRR1c show that stationarity and flaw removal follow from,
 respectively, switching balance or the exact Hall condition, but not the
 remote-event estimate. SRR2 still requires the lopsided/remote locality
-estimate recorded in those criteria.
+estimate recorded in those criteria. SRR3b proves that estimate for
+same-layer remote partial matchings in the complete two-layer space, and
+SRR3c proves it for remote events entirely in the untouched layer;
+SRR3d handles globally row-column-compatible mixed events. Thus the
+complete-host locality calculation is finished for single-layer flaws.
+SRR3e supplies the general compatible-cylinder count and finishes it for
+mixed-layer flaws as well; missing-edge hosts remain.
 
 ## SRR3 — Two-layer exact-cover extension
 
@@ -101,8 +107,15 @@ of \(K_{N,N}\). A four-cycle switch in one layer has at most two
 cross-layer collision rows; canonical deletion leaves exactly \(N-3\)
 forward choices and reverse degree at most one. SRR1b therefore gives an
 exact stationary reversible flaw-removal kernel preserving the simple
-two-layer exact cover. The remote-event theorem and the superregular
-missing-edge extension remain open.
+two-layer exact cover. SRR3b adds a pathwise noncreation theorem and an
+exact \(1+O(1/N)\) inflation bound for vertex-disjoint partial matchings
+in the resampled layer. SRR3c gives a derangement-ratio
+\(1+O_s(1/N)\) bound for rank-\(s\) remote events in the untouched layer.
+SRR3d combines the two counts for mixed-layer, globally compatible
+events. SRR3e extends the result to globally compatible mixed-layer flaws
+and events. The complete-host remote theorem is therefore proved for the
+canonical pair/triple conflicts; the superregular missing-edge extension
+remains open.
 
 ## SRR4 — Superregular local-load endpoint
 
