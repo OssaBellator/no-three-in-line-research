@@ -27,6 +27,7 @@ where `D(n)` is the maximum number of points that can be selected from an
 - [`docs/56-random-matching-block-sparsification.md`](docs/56-random-matching-block-sparsification.md) through [`docs/77-one-sided-slab-cross-macro-separation.md`](docs/77-one-sided-slab-cross-macro-separation.md): random sparsification, square-root macros, source cleaning, weighted event mass, global labels, and slab separation.
 - [`docs/78-ore-balanced-global-allocation.md`](docs/78-ore-balanced-global-allocation.md) through [`docs/89-controller-shadow-monotone-termination.md`](docs/89-controller-shadow-monotone-termination.md): complementary-degree allocation, slab-optimal exponents, external-energy closure, controller-aware domains, structural extraction, paid endpoint trades, and termination.
 - [`docs/90-superregular-paid-endpoint-trades.md`](docs/90-superregular-paid-endpoint-trades.md) through [`docs/96-shadow-support-permutation-cleaning.md`](docs/96-shadow-support-permutation-cleaning.md): endpoint-host regularisation, permutation local lemmas, transition divisor bounds, two-scale source-valid thinning, protected credit, and zero-cost shadow-support cleaning.
+- [`docs/97-zero-unary-shadow-hall-rectangles.md`](docs/97-zero-unary-shadow-hall-rectangles.md) through [`docs/99-source-endpoint-star-conversion.md`](docs/99-source-endpoint-star-conversion.md): zero-unary endpoint hosts, exact Hall rectangles, support-core regularisation, and the corrected source-star conversion split.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected, weakened, and refuted claims.
 
 ## Research discipline
@@ -73,11 +74,15 @@ The branch proves:
 - complementary-degree global allocation criteria;
 - controller-aware source safety including unselected active-pool edges;
 - `o(1)` incident mass for every remaining external pair/triple class;
-- blocker-star or resource-matching structure from positive shadow failure;
+- source-endpoint-star or resource-matching structure from positive shadow failure;
 - exact paid endpoint-trade identities and monotone termination;
 - source-valid resource endpoint conversion after two-scale thinning;
 - exact elimination of diffuse residual insertion shadow by support-based
-  permutation events.
+  permutation events;
+- exact Hall-rectangle obstruction for the zero-unary endpoint host;
+- deletion of sublinear exceptional support resources and extraction of linear
+  unary/binary support cores;
+- a distinguished-endpoint conversion for free source-star centres.
 
 For the resource bank, sparse unary endpoint shadow permits thinning to
 
@@ -91,24 +96,35 @@ followed by superregular pruning, permutation-LLL cleaning, divisor
 regularisation of anchored transitions, and support-rank thinning. This produces
 a saturation-preserving no-three endpoint trade.
 
-Direct recapture and every positive residual shadow support can then be forbidden
-once. If
+Direct recapture and residual unary insertion-shadow cells may now be removed
+from one zero-unary host `G_0`. If `G_0` has no perfect matching, Hall supplies
 
 \[
-d_{\rm rec}+d_1=o(q),
+|X|+|Y|>q,
 \qquad
-d_2=o(q^2),
+X\times Y\subseteq E(\overline{G_0}).
 \]
 
-the selected trade has zero insertion shadow and therefore strictly decreases
-the controller-shadow potential.
+If the host is superregular and its remaining pair/triple conflicts are
+summable, a spread perfect matching gives zero insertion shadow and a strict
+potential decrease.
 
-The remaining bottleneck is support-concentrated:
+A single rich fibre or binary star is not terminal. After deleting `o(q)`
+exceptional indices, persistent failure forces either `Omega(q^2)` unary support
+in a linear fibre core or `Omega(q^3)` binary conflict support.
 
-1. prove the controller-aware global graphs satisfy complementary degree; or
-2. convert the blocker-star branch; or
-3. handle dense unary endpoint source shadow, a rich recapture fibre, a unary
-   insertion-shadow fibre, or a binary insertion-shadow star.
+The controller-shadow star has a common source endpoint, not a common candidate
+point. Free star centres reduce to the same distinguished zero-unary endpoint;
+captive centres lie in the fixed controller infrastructure and require a dynamic
+potential or a controller-preserving trade.
+
+The remaining bottleneck has four forms:
+
+1. prove the controller-aware global graphs satisfy complementary degree;
+2. convert a Hall rectangle or a matchable but non-superregular zero-unary host;
+3. convert the cubic binary shadow-support core;
+4. convert captive source-star centres without destroying the fixed controller
+   infrastructure.
 
 The focused statements and exact formulas are in
 [`proofs/prime-patching-recent-index.md`](proofs/prime-patching-recent-index.md).
@@ -126,6 +142,7 @@ python scripts/check_weighted_slot_mass.py experiments/weighted-slot-mass-exampl
 python scripts/check_global_label_ore.py experiments/global-label-ore-example.json
 python scripts/analyze_controller_aware_domains.py certificates/prime-patching-small.json --labels 12 --gamma 1/3
 python scripts/analyze_endpoint_trade_hosts.py certificates/prime-patching-small.json
+python scripts/analyze_endpoint_hall_rectangles.py certificates/prime-patching-small.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for
@@ -150,9 +167,9 @@ A useful contribution should do at least one of the following:
 
 - verify or repair a result tagged **PROVED**;
 - prove complementary-degree allocation for the controller-aware label graphs;
-- convert the blocker-star alternative;
-- regularise dense unary endpoint shadow or rich recapture fibres;
-- convert unary insertion-shadow fibres or binary insertion-shadow stars;
+- convert zero-unary Hall rectangles or non-superregular matchable hosts;
+- convert cubic binary shadow-support cores;
+- convert captive source-star centres by a dynamic or controller-preserving trade;
 - prove the second-order concentration theorem for the alternating-neutralisation bank;
 - construct a monotone carry-signature potential or bounded-denominator absorber;
 - build a superregular perfect-matching resampling oracle.
