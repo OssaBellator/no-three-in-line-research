@@ -220,6 +220,16 @@ It avoids every row shape and its reflection in the column shape
 histogram. Thus the remaining block-host geometry is entirely the common
 coordinate budget and the triples meeting multiple blocks.
 
+[`sparse-expanded-grid-zero-conflict.md`](sparse-expanded-grid-zero-conflict.md)
+proves SAS5e by coordinating all block columns at once. A greedy
+construction places the \(N\) column vertices in an interval of length
+\(O(d^3N^3)\) so that the whole block host, including cross-block
+interactions, has no compatible collinear triple. Combined with
+SAS1a/SAS4b this is a deterministic no-conflict endpoint in the expanded
+rectangular embedding. The remaining block-host obstruction is now
+exactly coordinate compression into the standard \(N\)-column interval;
+arbitrary relabelling would not preserve collinearity.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
@@ -245,7 +255,9 @@ triple obstruction is checked by
 `scripts/verify_sparse_block_geometry.py`. The arbitrary-coordinate
 shape formula is checked by direct determinant enumeration in
 `scripts/verify_sparse_block_affine_energy.py`. Zero-energy companion
-coordinates are checked by `scripts/verify_sparse_zero_energy.py`.
+coordinates are checked by `scripts/verify_sparse_zero_energy.py`. The
+global expanded-grid construction is checked by
+`scripts/verify_sparse_expanded_grid.py`.
 
 ## Completion criterion
 
