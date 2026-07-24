@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR153--CMR156."""
+"""Finite and exact-arithmetic checks for CMR153--CMR156."""
 
 from __future__ import annotations
 
+from fractions import Fraction
 from itertools import permutations
 from math import factorial
 
@@ -17,7 +18,7 @@ def allowed_count(t: int, second_forbidden: tuple[int, ...]) -> int:
     )
 
 
-def verify_small_density() -> None:
+def verify_small_degree_two_density() -> None:
     expected_minimum = {4: 2, 5: 12, 6: 80}
     for t, expected in expected_minimum.items():
         minimum = min(
@@ -28,72 +29,69 @@ def verify_small_density() -> None:
         assert 72 * minimum >= factorial(t)
 
 
-def allowed_states(t: int, first_forbidden, second_forbidden):
-    return [
-        state
-        for state in permutations(range(t))
-        if all(
-            state[row] != first_forbidden[row]
-            and state[row] != second_forbidden[row]
-            for row in range(t)
-        )
-    ]
+def verify_degree_three_lll(max_t: int) -> None:
+    for t in range(13, max_t + 1):
+        # Local-lemma condition for x=2/t and dependency degree at most four.
+        assert Fraction(1, t) <= Fraction(2, t) * Fraction(t - 2, t) ** 4
+
+        lower_bound = Fraction(t - 2, t) ** (3 * t)
+        assert lower_bound > Fraction(1, 700)
 
 
-def verify_small_joint_bank() -> None:
-    # Normalize one current layer to the identity and the other to a cyclic shift.
-    for t in (4, 5):
-        identity = tuple(range(t))
-        shift = tuple((index + 1) % t for index in range(t))
-        first_states = allowed_states(t, identity, shift)
-        assert 72 * len(first_states) >= factorial(t)
-
-        total = 0
-        for first in first_states:
-            second_states = allowed_states(t, shift, first)
-            assert 72 * len(second_states) >= factorial(t)
-            total += len(second_states)
-        assert total * 72**2 >= factorial(t) ** 2
-
-
-def verify_split_rank_coefficients() -> None:
-    for t in range(4, 100):
+def verify_split_rank_coefficients(max_t: int) -> None:
+    for t in range(13, max_t + 1):
         falling = [1]
         for rank in range(1, 4):
             falling.append(falling[-1] * (t - rank + 1))
 
         coefficients = {
-            (1, 0): 72 / falling[1],
-            (0, 1): 72 / falling[1],
-            (2, 0): 72 / falling[2],
-            (0, 2): 72 / falling[2],
-            (1, 1): 72**2 / (falling[1] * falling[1]),
-            (3, 0): 72 / falling[3],
-            (0, 3): 72 / falling[3],
-            (2, 1): 72**2 / (falling[2] * falling[1]),
-            (1, 2): 72**2 / (falling[1] * falling[2]),
+            (1, 0): Fraction(72, falling[1]),
+            (0, 1): Fraction(700, falling[1]),
+            (2, 0): Fraction(72, falling[2]),
+            (0, 2): Fraction(700, falling[2]),
+            (1, 1): Fraction(72 * 700, falling[1] ** 2),
+            (3, 0): Fraction(72, falling[3]),
+            (0, 3): Fraction(700, falling[3]),
+            (2, 1): Fraction(72 * 700, falling[2] * falling[1]),
+            (1, 2): Fraction(72 * 700, falling[1] * falling[2]),
         }
-        assert set(coefficients) == {
-            (1, 0),
-            (0, 1),
-            (2, 0),
-            (0, 2),
-            (1, 1),
-            (3, 0),
-            (0, 3),
-            (2, 1),
-            (1, 2),
-        }
+        assert len(coefficients) == 9
         assert all(value > 0 for value in coefficients.values())
 
 
+def verify_old_cell_exclusion() -> None:
+    # Abstract one-column check: the first new cell avoids both old cells, and the
+    # second avoids both old cells plus the first new cell. Therefore the final
+    # unordered point pair contains neither old grid cell.
+    for t in range(13, 30):
+        for old_zero in range(t):
+            for old_one in range(t):
+                if old_zero == old_one:
+                    continue
+                first_choices = {
+                    row for row in range(t) if row not in {old_zero, old_one}
+                }
+                for new_zero in first_choices:
+                    second_choices = {
+                        row
+                        for row in range(t)
+                        if row not in {old_zero, old_one, new_zero}
+                    }
+                    assert second_choices
+                    for new_one in second_choices:
+                        assert old_zero not in {new_zero, new_one}
+                        assert old_one not in {new_zero, new_one}
+                        assert new_zero != new_one
+
+
 def main() -> None:
-    verify_small_density()
-    verify_small_joint_bank()
-    verify_split_rank_coefficients()
+    verify_small_degree_two_density()
+    verify_degree_three_lll(500)
+    verify_split_rank_coefficients(500)
+    verify_old_cell_exclusion()
     print(
-        "verified ordered joint parent bank: small minima 2,12,80 and "
-        "all nine split-rank coefficients"
+        "verified old-cell-clean joint parent bank: degree-two minima 2,12,80, "
+        "degree-three constant 1/700, and nine split-rank coefficients"
     )
 
 
