@@ -14,6 +14,7 @@ The numbering is local to this repository.
 | GC2-wall | Uniform latent anchor load survives small target deletion | PROVED | `tracks/geometric-cleaning-load-accounting.md` |
 | GC3a | Paid partner consumption bounds total pool depletion | PROVED | `tracks/geometric-cleaning-budget-and-wall.md` |
 | GC3b | Paid incidence bounds creation of exceptional anchors | PROVED | `tracks/geometric-cleaning-load-accounting.md` |
+| GC4a | High-load peeling yields a capped residual or fresh-weight witness | PROVED | `tracks/geometric-cleaning-conflict-peeling.md` |
 | L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
 | L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
 | L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |
