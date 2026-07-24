@@ -1,5 +1,7 @@
 # Candidate blocker covers and the product-measure barrier
 
+This constant-width side analysis follows PP3es and continues at PP3et.
+
 The random partition formulas close the distribution of source edges among
 blocks.  This chapter examines one candidate patch cell at a time.  Its source
 blocker pairs form a matching.  The controller deletion clears one automatic
@@ -38,12 +40,12 @@ For `z`, write:
 - `b(z)` for the number with both endpoints in `P`;
 - `c(z)` for the number with no endpoint in `P`.
 
-### Proposition PP3cs -- PROVED
+### Proposition PP3et -- PROVED
 
 Any extension whose source deletions are contained in `P` and which selects `z`
 requires `c(z)=0`.
 
-In the random `K`-block experiment of PP3co, put `d=4K`.  Conditional on
+In the random `K`-block experiment of PP3ep, put `d=4K`.  Conditional on
 selecting the prescribed candidate cell `z`, the probability that the complete
 deletion union covers every source blocker pair through `z` is zero when
 `c(z)>0`.  When `c(z)=0`, it is exactly
@@ -69,7 +71,7 @@ The automatic axis pair is covered by the controller edge `e`.  Every
 additional pair is disjoint from it and from all other blocker pairs.
 
 A pair counted by `c(z)` has no deletable endpoint, proving the first assertion.
-Assume `c(z)=0`.  By PP3co, conditional on selecting `z`, the remaining deletion
+Assume `c(z)=0`.  By PP3ep, conditional on selecting `z`, the remaining deletion
 set is a uniform `(d-1)`-subset of the `m-1` noncontroller edges of `P`.
 
 All `a(z)` unique layer endpoints must be included.  After forcing them, each of
@@ -96,7 +98,7 @@ when both endpoints lie in `P`.
 
 ## 3. Uniform upper bound for nontrivial candidates
 
-### Corollary PP3ct -- PROVED
+### Corollary PP3eu -- PROVED
 
 If `B^+(z)` is nonempty, then
 
@@ -135,7 +137,7 @@ Let `mathcal U` be the labelled candidate entries and define
  X=\#\{z\in\mathcal U:z\text{ is selected and some source blocker survives}\}.
 \]
 
-### Proposition PP3cu -- PROVED
+### Proposition PP3ev -- PROVED
 
 One has the exact identity
 
@@ -159,8 +161,8 @@ If `A` entries are axis-clean, then
 #### Proof
 
 Conditional on selecting `z`, the probability that no retained-pair blocker
-survives is exactly `C_z` by PP3cs.  Multiply by the selection probability
-`2/m` and sum.  The second inequality uses PP3ct for every non-axis-clean entry.
+survives is exactly `C_z` by PP3et.  Multiply by the selection probability
+`2/m` and sum.  The second inequality uses PP3eu for every non-axis-clean entry.
 ∎
 
 There are `4Km` labelled candidate entries and exactly `8K` selected patch
@@ -177,7 +179,7 @@ unsafe.
 
 ## 5. Consequence for the remaining route
 
-### Corollary PP3cv -- PROVED
+### Corollary PP3ew -- PROVED
 
 At prime-gap scale, random equipartition plus independent uniform full-bank state
 choices can yield `E X<1` only if all but `O(m)` of the `4Km` labelled candidate
