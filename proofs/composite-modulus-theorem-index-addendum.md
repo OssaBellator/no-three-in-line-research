@@ -40,32 +40,22 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR196 | Every candidate certificate line cuts the parent board in a partial matching | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
 | CMR197 | Fewer than \(\lfloor t/2floor\) real certificate lines are simultaneously avoidable | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
 | CMR198 | Every frozen parent cover uses at least \(\lfloor t/2floor\) distinct real-line signatures | PROVED | `docs/92-prime-power-parent-line-signature-expansion.md` |
-| CMR199 | Every frozen parent cover contains an off-diagonal Hall rectangle \(A\times T\) with \(|A|+|T|>t\) | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
-| CMR200 | A Hall rectangle exposes a half-full source row or target column and one majority rank | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
-| CMR201 | Rank-one and rank-two Hall walls expose executable alternating banks | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
-| CMR202 | The only non-executable one-wall outcome is a rank-three candidate-only wall | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
+| CMR199--202 | Hall blocker rectangles, half-full walls, anchored neutralization, and the candidate-only wall alternative | PROVED | `docs/93-prime-power-parent-hall-wall-dichotomy.md` |
 | CMR203--205 | Exact majority-wall masses and dense residual cover lower bounds | PROVED | `docs/94-prime-power-parent-wall-peeling.md` |
 | CMR206--209 | Dense-host Hall walls, degree-preserving peeling, logarithmic half-degree descent, and linear rank-three avoidance | PROVED | `docs/95-prime-power-iterated-hall-wall-peeling.md` |
-| CMR210 | Essential matching edges have an exact Hall factorization | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
-| CMR211 | An essential edge in minimum degree \(\delta\ge2\) requires \(\delta\le|A|\le t-\delta\) | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
-| CMR212 | Every balanced host of minimum degree at least \(\lceil t/2ceil\) has no essential edge | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
-| CMR213--214 | Every current certificate has a deletable cell and one-step residual cover replacement | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
+| CMR210--214 | Essential-edge Hall factorization, half-degree nonessentiality, and one-step certificate replacement | PROVED | `docs/96-prime-power-essential-edge-factorization.md` |
 | CMR215--218 | Deleted cells create essential edges only through alternating exchange cycles, giving acyclic certificate ancestry | PROVED | `docs/97-prime-power-certificate-exchange-ancestry.md` |
-| CMR219 | A \(1/24\) parent local-load bound gives an improving derangement by the matching-space local lemma | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
-| CMR220 | Every frozen parent has weighted rank concentration; for \(t\ge48\) one normalized rank exceeds \(1/144\) | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
-| CMR221 | Rank one and rank two are executable; otherwise one row/column carries more than \((t)_3/144\) candidate-only triples | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
-| CMR222 | One dyadic primitive-height band carries more than \((t)_3/(144\lceil\log_2tceil)\) of those triples | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
-| CMR223 | One cell lies in fewer than \(3t^2\) candidate-only conflicts in one dyadic band | PROVED | `docs/99-prime-power-band-conflict-system.md` |
-| CMR224 | One compatible cell pair has band codegree below \(t/H\) | PROVED | `docs/99-prime-power-band-conflict-system.md` |
-| CMR225 | Bands with \(H\ge t^\varepsilon\) satisfy the standard bounded-conflict hypotheses | PROVED | `docs/99-prime-power-band-conflict-system.md` |
-| CMR226 | Every such high-height band has a conflict-free almost-perfect derangement matching | PROVED FROM A PUBLISHED THEOREM | `docs/99-prime-power-band-conflict-system.md` |
+| CMR219--222 | Exact \(1/24\) parent local-load endpoint, frozen rank concentration, anchored extraction, and dyadic candidate-only localization | PROVED | `docs/98-prime-power-parent-local-load-endpoint.md` |
+| CMR223--226 | Dyadic-band conflict degree/codegree, bounded-conflict hypotheses, and an almost-perfect conflict-free matching | PROVED; CMR226 from a published theorem | `docs/99-prime-power-band-conflict-system.md` |
 | CMR227 | Two finite real coordinate sets admit at most two full affine transversal lines | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
 | CMR228 | In an odd parent block, deletion inside half a block's distinct line matchings creates no essential edge while a perfect matching remains | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
-| CMR229 | A frozen odd parent either exposes an anchored bank or permits simultaneous deletion of \((t-1)/2\) candidate-only line matchings and forces one more line | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
-| CMR230 | Every large odd balanced parent has an anchored continuation or more than half a block's worth of candidate-only line signatures | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
-| CMR231 | Exact top-height vertex load is controlled by \(4t\sum_{K\ge H}\varphi(K)\) | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
-| CMR232 | If \(c>\sqrt{11/48}\), then all sufficiently large odd blocks with \(H\ge ct\) satisfy the \(1/24\) exact matching-space load bound; explicitly \(t\ge95,\ H\ge0.49t\) works | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
-| CMR233 | Every such block has an exact parent permutation avoiding all candidate-only triples of primitive height at least \(H\) | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
+| CMR229--230 | A frozen odd parent exposes an anchored bank or more than half a block's worth of candidate-only line signatures | PROVED | `docs/100-prime-power-odd-line-deletion-resilience.md` |
+| CMR231--233 | Exact top-height candidate-only load, the \(c>\sqrt{11/48}\) threshold, and exact cleaning above \(0.49t\) for odd \(t\ge95\) | PROVED | `docs/101-prime-power-exact-top-height-slice.md` |
+| CMR234 | Near affine transversals have an explicit order-pattern bound | PROVED | `docs/102-prime-power-near-transversal-line-resilience.md` |
+| CMR235 | For fixed surplus \(r\), deletion inside \(h+r\) line matchings creates no essential edge once \(h\gg r^5\) | PROVED | `docs/102-prime-power-near-transversal-line-resilience.md` |
+| CMR236 | A frozen odd parent exposes an anchored bank or survives deletion of \(h+\Omega(h^{1/5})\) distinct line signatures | PROVED | `docs/102-prime-power-near-transversal-line-resilience.md` |
+| CMR237 | Exact top-slice cleaning remains possible while forbidding \(\lfloor t/100floor\) previously discovered line matchings for odd \(t\ge175\) | PROVED | `docs/103-prime-power-linear-lower-height-reserve.md` |
+| CMR238--239 | A frozen large parent exposes an anchored bank or a linear reserve of distinct candidate-only lines below height \(0.49t\) | PROVED | `docs/103-prime-power-linear-lower-height-reserve.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
