@@ -14,9 +14,10 @@ where `D_2` counts diagonal defects involving two rectangles and `D_3` counts
 transversal defects involving three rectangles.
 
 This chapter extracts an exact no-three subconfiguration while retaining whole
-rectangles.
+rectangles.  To avoid collisions with the concurrently advancing PX index, the
+results use the stable local prefix `PR` (product reservoir).
 
-## Theorem PX100 -- PROVED
+## Theorem PR1 -- PROVED
 
 For every `n>=3`, every saturated no-three side-`n` factor has a
 factor-compatible rectangle state satisfying simultaneously
@@ -47,7 +48,7 @@ for `i=2,3`, so one state satisfies both four-times-expectation bounds. For
 which gives the displayed constants. PX39 transports the normalized state to
 every factor layer. \(\square\)
 
-## Lemma PX101 -- PROVED
+## Lemma PR2 -- PROVED
 
 Let a hypergraph on `n` vertices have `e_2` edges of size two and `e_3` edges of
 size three. For every `q in [0,1]`, it has an independent set of size at least
@@ -63,7 +64,7 @@ selected vertices is `nq`, while the expected numbers of surviving rank-two and
 rank-three edges are `e_2q^2` and `e_3q^3`. Delete one vertex from each
 surviving edge and average. \(\square\)
 
-## Theorem PX102 -- PROVED
+## Theorem PR3 -- PROVED
 
 For every `n>=3` and every saturated no-three side-`n` factor, there is a
 factor-compatible family of at least
@@ -86,7 +87,7 @@ m=\Omega\!\left(\frac{n}{\sqrt{\log n}}\right).
 
 ### Proof
 
-Take the state from PX100 and form a defect hypergraph on its rectangle indices.
+Take the state from PR1 and form a defect hypergraph on its rectangle indices.
 Use
 
 \[
@@ -95,7 +96,7 @@ K=221184,
 q=\frac1{4\sqrt{KH_{2n-1}}}.
 \]
 
-PX101 gives an independent set of size at least
+PR2 gives an independent set of size at least
 
 \[
 nq-D_2q^2-D_3q^3.
@@ -126,15 +127,15 @@ scalar row and column. \(\square\)
 
 ## Consequence and next target
 
-PX102 is an exact all-side output of the product program: a protected no-three
+PR3 is an exact all-side output of the product program: a protected no-three
 reservoir occupying `Omega(n/sqrt(log n))` rectangle components.
 
 The remaining general-proof target is a protected extension theorem. One must
 show that the unused product host retains enough regularity to complete the
-remaining rows and columns without creating a triple with the PX102 reservoir.
+remaining rows and columns without creating a triple with the PR3 reservoir.
 The transposition decoder PX67--PX71, neutralization banks PX72--PX80,
-direction protection PX81--PX88, and protected matching reductions PX89--PX99
-now supply the relevant local and structured mechanisms.
+direction protection PX81--PX88, and protected matching reductions PX89 onward
+supply the relevant local and structured mechanisms.
 
 A successful completion theorem can therefore be attacked in two equivalent
 forms:
@@ -143,7 +144,8 @@ forms:
    conditioning on the sparse reservoir; or
 2. prove the simultaneous-rainbow rank-three spread hypothesis PX97 for the
    protected nonlinear coset completion, using the strong-complete four-trade
-   PX98 and its order-thirteen spread evidence PX99.
+   PX98, the order-thirteen spread evidence PX99, and the switching-flow
+   criterion PX100.
 
 ## Verification
 
@@ -153,7 +155,7 @@ Run
 python scripts/verify_product_sparse_rectangle_reservoir.py
 ```
 
-The verifier checks PX101 exhaustively on all simple rank-two/rank-three
-hypergraphs through four vertices, checks the PX102 numerical inequalities
-through side 10000, and verifies exact rectangle-reservoir extraction on small
+The verifier checks PR2 exhaustively on all simple rank-two/rank-three
+hypergraphs through four vertices, checks the PR3 numerical inequalities through
+side 10000, and verifies exact rectangle-reservoir extraction on small
 normalized states.
