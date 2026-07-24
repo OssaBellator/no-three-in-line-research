@@ -30,5 +30,6 @@ CMR101. The main composite index remains in
 | CMR123 | A fixed global baseline transfers an extracted-star deficit to every globally nonimproving child state | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
 | CMR124 | A dense replacement-touching triple hypergraph gives disjoint paid defects, an alternating subbank, or a heavy external line | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
 | CMR125 | Every globally frozen endpoint bank has an improvement, a half-star excess payment, a cubic-root subbank, disjoint defects, or a heavy external line | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
-| CMR126 | Uncharged alternating expansion reaches an absolute bounded bank after \(O(\log\log t)\) levels | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
+| CMR126 | Uncharged alternating expansion reaches a bank below \(2160\) after \(O(\log\log t)\) levels | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
 | CMR127 | Heavy external lines are bounded by the outside triple potential divided by \(\binom{2s+1}{3}\) | PROVED | `docs/74-prime-power-global-baseline-alternating-closure.md` |
+| CMR128 | Every degree-two forbidden matching board of size at least four has an allowed perfect matching, and size four is sharp | PROVED | `docs/75-degree-two-small-matching-existence.md` |
