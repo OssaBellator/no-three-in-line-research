@@ -102,6 +102,16 @@ for incidence treewidth \(t\). Hence bounded-width strip and ladder
 cores are also finite interfaces, even when their feedback distance
 grows.
 
+[`orbit-phase-core-preprocessing.md`](orbit-phase-core-preprocessing.md)
+proves OP2g, an exact fixed-point preprocessing for every canonical
+phase instance. Tautological and duplicate checks are deleted, a
+forbidden partial assignment subsumes each of its extensions, and unary
+nogoods propagate domain deletions. The procedure preserves the complete
+satisfying-assignment set and either exposes an empty-domain certificate
+or leaves an antichain of arity-at-least-two checks on nontrivial
+domains. Arithmetic expansion is therefore needed only for this
+irreducible canonical core.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -145,6 +155,8 @@ OP2e does the same for every fixed variable-deletion distance from a
 factor cactus, at the cost of enumerating the bounded feedback alphabet.
 OP2f additionally deletes every bounded factor-incidence-treewidth core
 through an exact separator table.
+OP2g may be applied first: it removes subsumed checks and propagates all
+forced labels before any residual conflict-mass or topology estimate.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
