@@ -54,6 +54,8 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3fu | Oversampled matching yields a macro only with a saturation-compatible allocation | PROVED UNDER HYPOTHESIS | `docs/75-oversampled-refined-label-matching.md` |
 | PP3fw--PP3fz | Global balanced ownership and full-coordinate refined matching | PROVED / FROM PERMUTATION CONCENTRATION | `docs/76-global-balanced-label-allocation.md` |
 | PP3ga--PP3gd | Universal one-sided slab separation of same-slot cross-macro pairs | PROVED | `docs/77-one-sided-slab-cross-macro-separation.md` |
+| PP3ge--PP3gg | Fully source-safe one-slot domains and ordinary anchor codegree | PROVED | `docs/72-fully-source-safe-macro-domains.md` |
+| PP3gh--PP3gi | Cross-macro active-slot probabilities and maximum-degree endpoint | PROVED | `docs/73-cross-macro-active-slot-hypergraph.md` |
 
 ## Current exact target
 
@@ -69,14 +71,18 @@ total width T=MW = m^0.525.
 Matching pools, equal-margin restoration, complete internal no-three geometry,
 and fixed-rank internal spread are universal.
 
-The coordinate allocation issue is now explicit.  The `T` final new rows and
-`T` final new columns must all be used.  PP3fw solves this once there is a
-balanced movement-label ownership and one global refined perfect matching.
-PP3fy gives a sufficient averaged-density/concentration criterion for such an
-ownership; no numerical label is discarded.
+The coordinate allocation issue is explicit.  The `T` final new rows and `T`
+final new columns must all be used.  PP3fw solves this once there is a balanced
+movement-label ownership and one global refined perfect matching.  PP3fy gives a
+sufficient averaged-density/concentration criterion; no numerical label is
+discarded.
 
-After global allocation, source and cross-macro compatibility is governed by the
-grouped completion energies of PP3fp.  For every slot `s`, it is sufficient that
+The source-clean domains PP3ge remove every unary source certificate.  Ordinary
+anchors are measured by the two-slot completion codegrees PP3gf.  Cross-macro
+patterns may be treated either by the active-slot maximum-degree endpoint PP3gi
+or by the stronger weighted grouped-energy endpoint PP3fo.
+
+For every slot `s`, the weighted route requires
 
 ```text
 sum of grouped ordinary-source pair-event probabilities
@@ -86,16 +92,16 @@ sum of grouped ordinary-source pair-event probabilities
 
 Column-slab pools with movement rows in the same order make every cross-macro
 same-slot-pair-plus-movement relation empty.  The row-slab transpose removes the
-refill version.  Thus one whole high-probability direction can be deleted from
-the weighted mass universally.
+refill version.  Thus one whole high-probability direction is deleted from the
+weighted mass universally.
 
 The remaining bottleneck has two quantitative pieces:
 
 1. prove the balanced global refined-label conditions of PP3fy, or exploit their
    boundary-shadow, Hall, exact bad-incidence, and divisor-energy concentration
    alternatives with protected trades;
-2. bound the residual grouped completion energy after the slab cancellation by
-   the PP3fo threshold `1/48-o(1)` per slot.
+2. prove either the residual active-slot degree bound PP3gi or the weaker and
+   more flexible grouped completion-energy bound PP3fo after slab cancellation.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
