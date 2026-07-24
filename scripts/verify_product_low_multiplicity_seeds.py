@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify PX132--PX133 low-multiplicity strong-complete seeds."""
+"""Verify PX132--PX134 low-multiplicity strong-complete seeds."""
 from collections import Counter
 from math import ceil
 
@@ -8,8 +8,9 @@ SEEDS = {
     17: (0,9,4,10,7,14,16,2,6,15,11,5,8,12,1,3,13),
     19: (13,9,17,6,1,11,8,14,0,2,5,15,10,12,4,16,7,3,18),
     23: (2,6,12,14,11,21,18,20,0,4,8,10,16,9,5,1,19,17,15,13,3,22,7),
+    29: (11,13,28,18,2,7,23,26,16,9,17,4,1,12,24,19,10,20,5,3,25,27,14,8,15,21,6,22,0),
 }
-EXPECTED = {13:(28,8),17:(28,6),19:(32,6),23:(44,8)}
+EXPECTED = {13:(28,8),17:(28,6),19:(32,6),23:(44,8),29:(54,9)}
 
 def strong(f):
     p=len(f)
@@ -43,7 +44,7 @@ def main():
     for p in primes(101):
         if p<7: continue
         assert ceil(p*(p-1)/((p-3)*(p-2)))==(3 if p==7 else 2)
-    print("PX132--PX133 verified")
+    print("PX132--PX134 verified")
 
 if __name__=="__main__":
     main()
