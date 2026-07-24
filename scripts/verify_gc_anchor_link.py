@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from fractions import Fraction
 from itertools import combinations
 
 
@@ -34,6 +35,52 @@ def greedy_edge_colouring(
         else:
             colours.append([edge])
     return colours
+
+
+def maximum_independent_weight(
+    size: int,
+    edges: tuple[tuple[int, int], ...],
+    weights: list[int],
+) -> int:
+    edge_set = set(edges)
+    best = 0
+    for mask in range(1 << size):
+        chosen = [vertex for vertex in range(size) if mask & (1 << vertex)]
+        if any(edge in edge_set for edge in combinations(chosen, 2)):
+            continue
+        best = max(best, sum(weights[vertex] for vertex in chosen))
+    return best
+
+
+def verify_weighted_star_conflicts(max_vertices: int = 5) -> None:
+    for size in range(1, max_vertices + 1):
+        possible = tuple(combinations(range(size), 2))
+        for mask in range(1 << len(possible)):
+            edges = tuple(
+                edge
+                for index, edge in enumerate(possible)
+                if mask & (1 << index)
+            )
+            weights = [1 + (3 * vertex + mask) % 11 for vertex in range(size)]
+            loads = weights.copy()
+            for left, right in edges:
+                loads[left] += weights[right]
+                loads[right] += weights[left]
+            bound = sum(
+                (
+                    Fraction(weights[vertex] ** 2, loads[vertex])
+                    for vertex in range(size)
+                ),
+                Fraction(0),
+            )
+            optimum = maximum_independent_weight(size, edges, weights)
+            assert optimum >= bound
+            for threshold in range(1, 12):
+                if all(
+                    loads[vertex] <= threshold * weights[vertex]
+                    for vertex in range(size)
+                ):
+                    assert optimum * threshold >= sum(weights)
 
 
 def verify(max_vertices: int = 6) -> None:
@@ -84,6 +131,7 @@ def verify(max_vertices: int = 6) -> None:
 
 def main() -> None:
     verify()
+    verify_weighted_star_conflicts()
     print("weighted GC anchor-link dichotomy: verified through six vertices")
 
 

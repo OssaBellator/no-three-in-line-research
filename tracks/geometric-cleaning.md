@@ -130,6 +130,13 @@ certificate-disjoint stars of total fresh weight greater than
 \(k\tau/(2\Delta-1)\). Only their cross-star installation conflicts and
 the latent-to-paid conversion remain.
 
+GC4e regularizes those cross-star conflicts by their actual weights. For
+every \(K\), it either installs a compatible family retaining a
+\(1/K\) fraction of the accumulated weight, or returns one star whose
+closed conflict neighbourhood carries more than \(K\) times its weight.
+Thus unweighted high degree is no longer a residual ambiguity: when the
+input is paid, the high-conflict alternative is quantitatively paid.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement

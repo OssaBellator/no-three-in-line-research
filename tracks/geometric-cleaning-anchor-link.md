@@ -136,6 +136,64 @@ bank of fresh star objects without reusing any conflict certificate.
 Their cross-star row, column, and collateral incompatibilities still
 have to be regularized before simultaneous installation.
 
+## GC4e -- weighted cross-star regularization
+
+Put every star returned by GC4d into a conflict graph, joining two stars
+whenever they cannot be installed simultaneously. The relation must
+include row/column overlap, shared replacement cells, and nonadditive
+cross-star collateral. Give star \(i\) its fresh weight \(W_i\), and put
+
+\[
+\Lambda_i=\sum_{j\in N[i]}W_j.
+\]
+
+### Lemma GC4e -- PROVED
+
+For every \(K\geq1\), either:
+
+1. some star has a weighted overload
+   \[
+   \boxed{\Lambda_i>K W_i};
+   \]
+2. a simultaneously installable star family retains at least
+   \[
+   \boxed{\frac1K\sum_iW_i}
+   \]
+   fresh weight.
+
+Consequently, in the bounded-pair-codegree case of GC4d, the second
+alternative retains more than
+
+\[
+\boxed{
+\frac{k\tau}{K(2\Delta-1)}
+}
+\]
+
+fresh weight after \(k\) peeling steps.
+
+### Proof
+
+Assign star \(i\) an independent exponential clock of rate \(W_i\), and
+select it when its clock is earliest in its closed conflict
+neighbourhood. The selected stars are compatible, and star \(i\) is
+selected with probability \(W_i/\Lambda_i\). If the first alternative
+fails, the expected selected weight is
+
+\[
+\sum_i\frac{W_i^2}{\Lambda_i}
+\geq
+\frac1K\sum_iW_i.
+\]
+
+Some realization has at least the expected weight. Combine this with
+GC4d for the final display. \(\square\)
+
+If the \(W_i\) are current syndrome weights, both alternatives are paid:
+the overload itself identifies a star together with more than \(K W_i\)
+neighbouring paid mass. For latent candidate weights the same caveat as
+GC4c remains; this lemma preserves but does not create payment.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
 most six link vertices.
