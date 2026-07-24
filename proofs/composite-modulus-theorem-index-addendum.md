@@ -42,3 +42,8 @@ CMR101. The main composite index remains in
 | CMR135 | Target load contracts by a cube-root recurrence until it is below \(2160\) | PROVED | `docs/77-prime-power-target-load-closure.md` |
 | CMR136 | Every remaining positive target load reduces to a four-endpoint bank destroying one specified triple | PROVED | `docs/77-prime-power-target-load-closure.md` |
 | CMR137 | Every globally nonimproving alternating closure reaches the universal four-endpoint, one-target core | PROVED | `docs/77-prime-power-target-load-closure.md` |
+| CMR138 | Ordered two-layer endpoint rematching destroys every triple in a vertex-disjoint family | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
+| CMR139 | Four-endpoint boards have 2–9 states and sharp rank atoms \(3/4,2/3,1/2\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/78-prime-power-four-endpoint-core.md` |
+| CMR140 | The exact expected collateral of a four-board is bounded by \((3/4)T_1+(2/3)T_2+(1/2)T_3\) | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
+| CMR141 | Every positive global saturated minimum generates a finite directed cycle of four-endpoint trades | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
+| CMR142 | Created and removed triples balance exactly around every four-core cycle | PROVED | `docs/78-prime-power-four-endpoint-core.md` |
