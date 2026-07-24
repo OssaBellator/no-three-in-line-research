@@ -76,6 +76,9 @@ The numbering is local to this repository.
 | AC3j | Second-order collision load routes at square-root scale to a shared-token fan or a role-pure charging-resource star | PROVED | `tracks/alternating-core-minimal-deficiency.md` |
 | AC3k | An anchor-realized Hall output yields a shared-token fan, high pair codegree, support overload, or compatible paid star | PROVED | `tracks/alternating-core-resource-router.md` |
 | AC3l | Paid anchor weight yields a high pair, labelled overload, or compatible family with exact multiplicative loss | PROVED | `tracks/alternating-core-resource-router.md` |
+| AC3m | A current pair core with seven same-layer endpoints has an AN1 endpoint-rematching bank destroying all selected core certificates | PROVED | `tracks/alternating-core-pair-core-bank.md` |
+| AC3n | The pair-core bank improves or returns a heavy normalized AC1 certificate family | PROVED | `tracks/alternating-core-pair-core-bank.md` |
+| AC3o | Pair threshold \(12\) routes high codegree to AC3m and bounds the anchor-link loss by \(23\) | PROVED | `tracks/alternating-core-pair-core-bank.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

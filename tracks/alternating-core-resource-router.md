@@ -203,8 +203,8 @@ explicit exits:
 
 1. a shared-token fan still requiring a joint-state or reuse-capacity
    theorem;
-2. a high anchor-pair codegree requiring carry, denominator, or
-   quotient classification;
+2. a high anchor-pair codegree entering the endpoint-rematching bank
+   AC3m--AC3n;
 3. a quantitatively paid labelled support overload handled recursively
    by AC2d and the AC3d--AC3e potential; or
 4. an endpoint-disjoint compatible paid star entering AN3--AN4.
@@ -212,8 +212,12 @@ explicit exits:
 Terminally labelled non-anchor roles already leave through the
 carry/BDA/RI interfaces by definition.  The remaining arithmetic
 frontier is therefore to prove the finite role dictionary and classify
-the high anchor-pair and shared-token outputs; no further abstract
-compatibility extraction is missing.
+the shared-token output.  The high anchor-pair output is executable by
+[`alternating-core-pair-core-bank.md`](alternating-core-pair-core-bank.md):
+codegree greater than \(12\) gives seven third endpoints in one
+permutation layer, while codegree at most \(12\) costs only the absolute
+anchor-link factor \(23\).  No further abstract compatibility
+extraction is missing.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

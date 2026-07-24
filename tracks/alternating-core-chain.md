@@ -267,9 +267,21 @@ a high pair codegree, an AC2d-ready paid conflict overload, or a
 compatible family of weight at least
 \(W/((2\Delta-1)K)\). Thus no further abstract compatibility lemma is
 missing for anchor-realized roles. The remaining AC3 geometry is now to
-prove the finite role dictionary and classify only the high-pair and
-same-token outputs; roles already labelled by carry, denominator, or
-quotient data leave through their terminal interfaces.
+prove the finite role dictionary and classify the same-token output;
+roles already labelled by carry, denominator, or quotient data leave
+through their terminal interfaces.
+
+[`alternating-core-pair-core-bank.md`](alternating-core-pair-core-bank.md)
+proves AC3m--AC3o and closes the high-pair topology. A pair codegree
+greater than \(12\) has at least seven third endpoints in one
+permutation layer. Rematching those endpoints with AN1 preserves both
+permutation layers, destroys the selected pair-core certificates, and
+has the same exact normalized collateral bound as AN4. Failure of the
+bank returns a heavy normalized AC1 family; success improves the
+potential. With \(\Delta=12\), the bounded-pair branch of AC3k loses
+only the absolute factor \(23\). This is an executable transition, not
+yet a no-recycling theorem: repeated failed pair banks must still be
+paid by the AC3 potential.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -350,6 +362,8 @@ upgrade AC6 while those inputs remain open.
   loads;
 - verify anchor-realized resource routing through pair and support
   conflict thresholds;
+- enumerate high-pair endpoint-rematching states and their normalized
+  collateral certificates;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 
