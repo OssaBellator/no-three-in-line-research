@@ -1,13 +1,13 @@
 # Universal low-syndrome product doubling
 
 The exact side-six closure PX60 finishes the finite relative-cycle classes at
-base six, but it does not yet give an infinite closure theorem.  This chapter
+base six, but it does not yet give an infinite closure theorem. This chapter
 replaces the next factorial host search by an all-side structural endpoint.
 
 For every saturated no-three side-`n` factor, arbitrary block maps produce a
-saturated side-`2n` product state with only `O(n log n)` bad triples.  The state
-is not asserted to be no-three.  Its purpose is to reduce exact doubling to a
-sparse repair problem with bounded line occupancy.
+saturated side-`2n` product state with only `O(n log n)` bad triples. The state
+is not asserted to be no-three. Its purpose is to reduce exact doubling to a
+sparse repair problem.
 
 Throughout, permutations are composed from right to left and
 
@@ -35,11 +35,11 @@ The three permutations `R,A,B` are independent.
 
 ### Theorem PX61 -- PROVED
 
-Fix a derangement `H` on `[n]` and an orientation `theta`.  Every normalized
+Fix a derangement `H` on `[n]` and an orientation `theta`. Every normalized
 arbitrary-block full host is obtained as follows.
 
-Use one abstract fine-row index `u`.  In coarse row block zero give it scalar
-fine-row label `u`; in coarse row block one give it label `R(u)`.  Its two
+Use one abstract fine-row index `u`. In coarse row block zero give it scalar
+fine-row label `u`; in coarse row block one give it label `R(u)`. Its two
 inner-layer neighbours in coarse column block zero have labels
 
 \[
@@ -65,7 +65,7 @@ column copies.
 
 ### Proof
 
-Reindex the second coarse row block by the abstract variable
+Reindex the second coarse row block by
 
 \[
 w=P(u).
@@ -77,9 +77,9 @@ Its scalar fine-row label is `u=P^{-1}(w)=R(w)`, while its block maps are
 Q^jTH^s(w).
 \]
 
-For `j=0` these are `A(w),A(Hw)`; for `j=1` they are
-`B(w),B(Hw)`.  The first row block already uses abstract label `u` directly.
-The converse substitutions recover PX50 exactly. \(\square\)
+For `j=0` these are `A(w),A(Hw)`; for `j=1` they are `B(w),B(Hw)`. The first row
+block already uses the abstract label directly. The converse substitutions
+recover PX50 exactly. \(\square\)
 
 This form absorbs the factorial parameter `P` into a row-pattern assignment and
 replaces `(T,Q)` by two independent column labelings.
@@ -94,9 +94,7 @@ Let `L(N)` be the number of unordered triples of distinct collinear points in
 For every `N>=2`,
 
 \[
-\boxed{
-L(N)\le 2N^4H_{N-1}.
-}
+\boxed{L(N)\le 2N^4H_{N-1}.}
 \]
 
 Consequently the number of ordered collinear triples is at most
@@ -114,7 +112,7 @@ Represent every unoriented line direction by one primitive integer vector
 d=\lVert q\rVert_\infty.
 \]
 
-There are at most `4d` such primitive directions with norm `d`.  A triple in
+There are at most `4d` such primitive directions with norm `d`. A triple in
 this direction has a first point `z` and the form
 
 \[
@@ -128,13 +126,12 @@ There are at most `N^2` choices for `z` and at most
 \frac12\left(\frac Nd\right)^2
 \]
 
-choices for `(r,s)`.  Summing over `d` gives
+choices for `(r,s)`. Therefore
 
 \[
 L(N)
 \le
-\sum_{d=1}^{N-1}
-4d\,N^2\,\frac{N^2}{2d^2}
+\sum_{d=1}^{N-1}4dN^2\frac{N^2}{2d^2}
 =
 2N^4H_{N-1}.
 \]
@@ -143,7 +140,7 @@ Multiplying by six gives the ordered bound. \(\square\)
 
 ## 3. Random rectangle state
 
-Use the PX43 rectangle normal form in any fixed orientation.  Choose three
+Use the PX43 rectangle normal form in any fixed orientation. Choose three
 independent uniform permutations
 
 \[
@@ -159,7 +156,7 @@ R_u=
 \{Y_0(t(u)),Y_1(r(u))\}.
 \]
 
-This is always a saturated state of `4n` points in `[2n]^2`.  By the
+This is always a saturated state of `4n` points in `[2n]^2`. By the
 full-symmetric gauge theorem, every permutation layer of every saturated
 side-`n` factor realizes every such normalized state after suitable block maps.
 
@@ -178,9 +175,7 @@ state satisfies
 \le
 \frac{8n^2}{n-1}
 +
-12288\,
-\frac{n^3}{(n-1)(n-2)}
-H_{2n-1}.
+12288\frac{n^3}{(n-1)(n-2)}H_{2n-1}.
 }
 \]
 
@@ -193,19 +188,18 @@ D=O(n\log n).
 
 ### Proof
 
-PX45a gives the diagonal contribution
+PX45a gives
 
 \[
 \mathbb E D_{\rm diag}\le\frac{8n^2}{n-1}.
 \]
 
 For the transversal contribution, fix an ordered choice of one of the four
-corner types for each of three distinct rectangles.  Condition on `p`.  The
-three scalar row coordinates are distinct, and the map from the ordered
-rectangle indices to their ordered scalar rows is injective.
+corner types for each of three distinct rectangles and condition on `p`. The
+three scalar row coordinates are distinct.
 
 Suppose `k` chosen corners use `t` and `3-k` use `r` for their fine-column
-labels.  Every admissible ordered scalar-column assignment then has probability
+labels. Every admissible ordered scalar-column assignment has probability
 
 \[
 \frac1{(n)_k(n)_{3-k}}
@@ -213,19 +207,14 @@ labels.  Every admissible ordered scalar-column assignment then has probability
 \frac1{(n)_3}.
 \]
 
-The number of possible ordered collinear scalar triples in `[2n]^2` is at most
+By PX62, the number of possible ordered collinear scalar triples in `[2n]^2` is
+at most
 
 \[
-12(2n)^4H_{2n-1}
+12(2n)^4H_{2n-1}.
 \]
 
-by PX62.  Hence one fixed ordered corner pattern contributes at most
-
-\[
-\frac{12(2n)^4H_{2n-1}}{(n)_3}
-\]
-
-in expectation.  There are `4^3=64` ordered corner patterns.  Therefore
+There are `4^3=64` ordered corner patterns. Hence
 
 \[
 \mathbb E D_{\rm trans}
@@ -235,11 +224,11 @@ in expectation.  There are `4^3=64` ordered corner patterns.  Therefore
 12288\frac{n^3}{(n-1)(n-2)}H_{2n-1}.
 \]
 
-Adding the two contributions proves the bound.  Since the expectation is an
-average over finite states, at least one state attains it.  Full-symmetric gauge
-transport makes that scalar state available to every factor layer. \(\square\)
+Adding the contributions proves the bound. Since the expectation is an average
+over finitely many states, one state attains it. Full-symmetric gauge transport
+makes that scalar state available to every factor layer. \(\square\)
 
-The constant is intentionally crude.  Exact small averages and random samples
+The constant is intentionally crude. Exact small averages and random samples
 are much smaller; the theorem records the asymptotic order needed for repair.
 
 ## 4. Sparse-syndrome consequences
@@ -251,43 +240,59 @@ side-`2n` product state with all of the following properties.
 
 1. It has `O(n log n)` bad triples.
 2. It has `O(n log n)` bad lines.
-3. Every scalar line contains at most eight host cells.
+3. If a scalar line contains `k` selected points, then
+   \[
+   k\le 2+(6D)^{1/3}=O((n\log n)^{1/3}).
+   \]
 4. The average bad-triple incidence of one rectangle is `O(log n)`.
 5. At least `n/2` of the `n` rectangles have bad-triple incidence `O(log n)`.
 
 ### Proof
 
-The first assertion is PX63.  Every bad line contributes at least one triple,
-so the second follows.  PX6 with outer side two gives host line occupancy at
-most
+The first assertion is PX63. Every bad line contributes at least one triple, so
+the second follows.
+
+A line containing `k>=3` selected points contributes
 
 \[
-4\min(2,n)=8.
+\binom k3
 \]
 
+bad triples. Since
+
+\[
+\binom k3
+=\frac{k(k-1)(k-2)}6
+\ge\frac{(k-2)^3}{6},
+\]
+
+we have `k<=2+(6D)^(1/3)`, proving the third assertion.
+
 A bad triple involves at most three rectangles, so the sum of rectangle defect
-degrees is at most `3D=O(n log n)`.  Averaging gives the fourth assertion, and
+degrees is at most `3D=O(n log n)`. Averaging gives the fourth assertion, and
 Markov's inequality gives the fifth. \(\square\)
 
-Thus exact product closure has been reduced, for every side, to repairing a
-bounded-occupancy syndrome of only logarithmic average load per rectangle.
+Arbitrary blockwise digit permutations preserve the four-regular combinatorial
+host and saturation, but they do not preserve the earlier global-radix line cap
+PX6. The subcubic line-occupancy conclusion above is the valid consequence of
+the low-syndrome theorem.
 
 ## 5. Revised general-proof target
 
 The next theorem should operate on the rectangle matching directly:
 
-> every saturated rectangle state with `O(n log n)` bad triples and line
-> occupancy at most eight admits either a bounded-support improving balanced
-> trade or a structured obstruction certificate.
+> every saturated rectangle state with `O(n log n)` bad triples admits either an
+> improving balanced trade or a structured one-point/two-point line-shadow
+> certificate.
 
-PX15 and PX21 already give the exact collateral identity and composite-batch
-compression.  PX22 shows bounded-support improvement in all exact side-six and
-side-nine traps examined.  PX63--PX64 now supply the missing all-side sparse
-starting state.
+PX15 and PX21 give the exact collateral identity and composite-batch
+compression. PX22 shows bounded-support improvement in all exact side-six and
+side-nine traps examined. PX69 now supplies an all-side transposition
+improvement-or-shadow theorem beginning from the PX63 seed.
 
-A successful repair-or-structure theorem, together with termination or
-absorption of its structured outcomes, would upgrade the present approximate
-doubling statement to exact multiplicative closure.
+A successful absorption theorem for the resulting logarithmic shadow
+concentration would upgrade approximate doubling to exact multiplicative
+closure.
 
 ## Verification
 
