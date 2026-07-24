@@ -42,6 +42,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
 - [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
 - [`docs/27-composite-modulus-obstructions.md`](docs/27-composite-modulus-obstructions.md): all-modulus affine saturation, universal affine triple obstruction, composite hyperbola collapses, and CRT lift limitations.
+- [`docs/28-prime-power-completed-reciprocals.md`](docs/28-prime-power-completed-reciprocals.md): nonlinear full prime-power channels, exact valuation quadratics, Hensel tangent cells, and Hamiltonian companion layers.
+- [`docs/29-prime-power-displacement-syndrome.md`](docs/29-prime-power-displacement-syndrome.md): p-adic secant signatures, reduced displacement quadratics, and a one-channel syndrome bound.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
@@ -51,6 +53,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
 - [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
 - [`scripts/verify_composite_modulus.py`](scripts/verify_composite_modulus.py): checks affine saturation/obstructions, composite hyperbola collapses, lift direction, and CRT mixed projections.
+- [`scripts/verify_prime_power_channels.py`](scripts/verify_prime_power_channels.py): checks completed-reciprocal permutations, tangent-cell line bounds, companion cycles, and digital no-three channels.
+- [`scripts/verify_prime_power_displacement.py`](scripts/verify_prime_power_displacement.py): checks p-adic displacement signatures and exact one-channel syndrome data.
 
 ## Research discipline
 
@@ -87,7 +91,7 @@ The strongest current synthesis is:
 
 The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or divisor-controlled perfect alignment. A dominant first-generation star can also be removed exactly by an alternating endpoint-permutation bank. The main geometric target is therefore a second-order concentration/termination theorem for the normalized collateral of that joint bank.
 
-The independent composite-modulus track now proves that affine permutation channels saturate every modulus but cannot be no-three for \(N\ge5\); natural unit hyperbolas also have explicit squarefree and prime-power line collapses. Any direct all-\(n\) algebraic host must therefore be nonlinear, cover nonunits, and overcome mixed CRT projection triples.
+The independent composite-modulus track now has a positive nonlinear prime-power host. Valuation-completed reciprocals are full permutations, every real line reduces to explicit valuation quadratics with one possible Hensel-tangent cell, and a universal companion layer gives saturation and one alternating Hamiltonian cycle. Same-channel secants are p-adically diagonal and the current general one-channel syndrome bound is \(O(N^{5/2}+N^2\log N)\). The remaining target is a constant or repairable tangent-cell bound, a near-linear two-channel syndrome, and mixed-projection-aware CRT assembly.
 
 ## Running the checks
 
@@ -103,6 +107,8 @@ python scripts/verify_absorber.py --n 30 --h 5 --m 7
 python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
 python scripts/verify_carry_cycle_bound.py
 python scripts/verify_composite_modulus.py --max-modulus 40
+python scripts/verify_prime_power_channels.py --max-modulus 125
+python scripts/verify_prime_power_displacement.py --max-modulus 243
 ```
 
 These programs are sanity checks, not proofs for arbitrary \(n\).
@@ -134,6 +140,8 @@ A useful contribution should do at least one of the following:
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
 - classify frozen cycles and alternating anchor closures;
-- construct a nonlinear full permutation channel over a broad composite-modulus class with a genuine real line cap.
+- prove a divisor-sensitive exact-real bound inside completed-reciprocal Hensel tangent cells;
+- control companion cross-channel displacement and reduce the prime-power syndrome to \(O(N\log^C N)\);
+- construct a mixed-projection-aware ordered-box CRT assembly theorem.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
