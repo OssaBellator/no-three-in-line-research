@@ -28,6 +28,10 @@ This index collects the product/composition results on
 | PX21 | Any sequence of cycle trades compresses to one executable balanced endpoint batch | PROVED | `docs/34-composite-cycle-batches.md` |
 | PX22 | All exact side-six and side-nine traps have improving composite support at most eight | PROVED FINITE | `docs/34-composite-cycle-batches.md` |
 | PX23 | Every unmodified global `2 x 5` product host has minimum defect potential at least two | PROVED FINITE | `docs/35-quantitative-2x5-obstruction.md` |
+| PX24 | Arbitrary blockwise fine-digit permutations preserve the four-regular product host and all degree-two saturation conclusions | PROVED | `docs/36-blockwise-digit-permutations.md` |
+| PX25 | A blockwise-reversed `2 x 5` product gives an exact saturated no-three side-ten configuration | PROVED | `docs/36-blockwise-digit-permutations.md` |
+| PX26 | The parity-reflection lift has exactly the recorded no-three permutations through base side eight | PROVED FINITE | `docs/36-blockwise-digit-permutations.md` |
+| PX27 | One canonical unmodified `2 x 5` host has a 35-line deletion-minimal unsatisfiable core | PROVED FINITE | `docs/37-canonical-2x5-unsat-core.md` |
 
 The branch still has no infinite multiplicative closure theorem or arithmetic
 coverage theorem.
