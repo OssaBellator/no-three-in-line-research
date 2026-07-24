@@ -53,8 +53,9 @@ This index collects the product/composition results on
 | PX46 | Every compatible rectangle pair has at most `64n(n-2)^2` transversal-conflict completions | PROVED | `docs/45-rectangle-conflict-degrees.md` |
 | PX47 | Crossed rectangle templates are equivalent under scalar transposition | PROVED | `docs/46-unrestricted-one-layer-obstruction-six-seven.md` |
 | PX48 | The unrestricted arbitrary-block PX28 family has no template at base sides six or seven | PROVED FINITE | `docs/46-unrestricted-one-layer-obstruction-six-seven.md` |
+| PX49 | The unrestricted arbitrary-block PX28 family has no template at base side eight | PROVED FINITE | `docs/47-unrestricted-one-layer-obstruction-eight.md` |
 
 The branch has factor-independent special closure theorems for `2 x 4` and
-`2 x 5`, exact gauge and rectangle-matching reductions, and complete
-unrestricted one-layer obstructions at bases three, six, and seven.  It still
-has no infinite multiplicative closure class or arithmetic coverage theorem.
+`2 x 5`, exact gauge and rectangle-matching reductions, and a complete
+unrestricted one-layer classification through base side eight.  It still has no
+infinite multiplicative closure class or arithmetic coverage theorem.
