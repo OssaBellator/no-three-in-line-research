@@ -55,6 +55,15 @@ explicit bilinear equation. Thus any corrected RI1 failure with
 `|F_r(C)| <= (1-delta)|C|` supplies `delta|C|` disjoint solutions on that
 curve. The remaining task is the subgroup incidence/classification bound.
 
+[`rational-inverse-subgroup-overlap.md`](rational-inverse-subgroup-overlap.md)
+proves RI1c for a full source coset: its exact collision loss is a subgroup
+intersection with one explicit Möbius map, up to at most two fixed points.
+It also expands that intersection into \(m^2\) explicit multiplicative
+character sums for subgroup index \(m\), and proves that only the trivial
+character pair can be an \(m\)-th-power main term.  The remaining RI1
+input is now the uniform nontrivial-sum bound and the conversion from
+target-coset distribution to expansion or absorption.
+
 ## RI2 — Union-of-cosets image theorem
 
 ### Target statement
@@ -154,9 +163,10 @@ Search small primes for:
 - long order-two exceptional chains;
 - simultaneous small-doubling examples not predicted by the current templates.
 
-The exact collision involution, the full-subgroup RI1 obstruction, and the
-singleton RI4 obstruction are now proved and checked by
-`scripts/verify_rational_inverse.py`.
+The exact collision involution, subgroup-overlap formula, full-subgroup
+RI1 obstruction, and singleton RI4 obstruction are now proved and checked
+by `scripts/verify_rational_inverse.py` and
+`scripts/verify_rational_subgroup_overlap.py`.
 
 ## Completion criterion
 
