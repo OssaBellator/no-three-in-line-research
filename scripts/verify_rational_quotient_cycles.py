@@ -7,6 +7,9 @@ from itertools import product
 from math import gcd
 
 
+Edge = tuple[int, int]
+
+
 def walk(
     start: int,
     root_colour: int,
@@ -34,6 +37,77 @@ def generated_ratio_subgroup(
     return {
         multiple * step % order
         for multiple in range(order // step)
+    }
+
+
+def generated_subgroup(values: set[int], order: int) -> set[int]:
+    step = order
+    for value in values:
+        step = gcd(step, value % order)
+    return {
+        multiple * step % order
+        for multiple in range(order // step)
+    }
+
+
+def connected_components(
+    edges: set[Edge],
+) -> tuple[set[int], ...]:
+    incident = {vertex for edge in edges for vertex in edge}
+    components: list[set[int]] = []
+    unseen = set(incident)
+    while unseen:
+        root = min(unseen)
+        component = {root}
+        frontier = [root]
+        unseen.remove(root)
+        while frontier:
+            vertex = frontier.pop()
+            neighbours = {
+                right if left == vertex else left
+                for left, right in edges
+                if left == vertex or right == vertex
+            }
+            for neighbour in neighbours & unseen:
+                unseen.remove(neighbour)
+                component.add(neighbour)
+                frontier.append(neighbour)
+        components.append(component)
+    return tuple(components)
+
+
+def bipartition(
+    component: set[int],
+    edges: set[Edge],
+) -> tuple[set[int], set[int]] | None:
+    side = {min(component): 0}
+    frontier = [min(component)]
+    while frontier:
+        vertex = frontier.pop()
+        for left, right in edges:
+            if left != vertex and right != vertex:
+                continue
+            neighbour = right if left == vertex else left
+            if neighbour == vertex:
+                return None
+            expected = 1 - side[vertex]
+            if neighbour in side:
+                if side[neighbour] != expected:
+                    return None
+            else:
+                side[neighbour] = expected
+                frontier.append(neighbour)
+    return (
+        {vertex for vertex in component if side[vertex] == 0},
+        {vertex for vertex in component if side[vertex] == 1},
+    )
+
+
+def all_ratios(vertices: set[int], order: int) -> set[int]:
+    return {
+        (left - right) % order
+        for left in vertices
+        for right in vertices
     }
 
 
@@ -112,6 +186,83 @@ def verify_walk_formula(maximum_order: int = 8, maximum_length: int = 4) -> None
                         assert len(set(vertices)) <= 2 * len(subgroup)
 
 
+def verify_component_parity(maximum_order: int = 5) -> None:
+    for order in range(1, maximum_order + 1):
+        edge_slots = tuple(
+            (left, right)
+            for left in range(order)
+            for right in range(left, order)
+        )
+        for mask in range(1, 1 << len(edge_slots)):
+            edges = {
+                edge
+                for index, edge in enumerate(edge_slots)
+                if mask & (1 << index)
+            }
+            for component in connected_components(edges):
+                component_edges = {
+                    edge
+                    for edge in edges
+                    if edge[0] in component and edge[1] in component
+                }
+                for root_colour in range(order):
+                    colours = {
+                        (left + right - root_colour) % order
+                        for left, right in component_edges
+                    }
+                    ratio_subgroup = generated_ratio_subgroup(
+                        colours,
+                        order,
+                    )
+                    parts = bipartition(component, component_edges)
+                    if parts is not None:
+                        left_part, right_part = parts
+                        side_subgroup = generated_subgroup(
+                            all_ratios(left_part, order)
+                            | all_ratios(right_part, order),
+                            order,
+                        )
+                        assert ratio_subgroup == side_subgroup
+                        left_root = min(left_part)
+                        right_root = min(right_part)
+                        assert left_part <= {
+                            (left_root + value) % order
+                            for value in ratio_subgroup
+                        }
+                        assert right_part <= {
+                            (right_root + value) % order
+                            for value in ratio_subgroup
+                        }
+                        assert colours <= {
+                            (
+                                left_root
+                                + right_root
+                                - root_colour
+                                + value
+                            ) % order
+                            for value in ratio_subgroup
+                        }
+                    else:
+                        source_subgroup = generated_subgroup(
+                            all_ratios(component, order),
+                            order,
+                        )
+                        assert ratio_subgroup == source_subgroup
+                        source_root = min(component)
+                        assert component <= {
+                            (source_root + value) % order
+                            for value in ratio_subgroup
+                        }
+                        assert colours <= {
+                            (
+                                2 * source_root
+                                - root_colour
+                                + value
+                            ) % order
+                            for value in ratio_subgroup
+                        }
+
+
 def verify_cycle_multiplicity(maximum_order: int = 30) -> None:
     for order in range(1, maximum_order + 1):
         for target in range(order):
@@ -137,6 +288,7 @@ def verify_cycle_multiplicity(maximum_order: int = 30) -> None:
 
 def main() -> None:
     verify_walk_formula()
+    verify_component_parity()
     verify_cycle_multiplicity()
     print("rational quotient cycle dynamics: verified")
 
