@@ -13,6 +13,8 @@ exact extension absorber.
 
 Detailed statements and proofs are in
 [`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md).
+Small exact computations are recorded in
+[`experiments/prime-patching-small.md`](../experiments/prime-patching-small.md).
 
 ## PP1 — Boundary extension interface
 
@@ -49,6 +51,12 @@ can choose or prepare a reservoir in `S_m` with the following property:
 
 The desired width should be at least polylogarithmic in `m`; an `m^theta` width
 would also be useful if matched by a proven prime-gap theorem.
+
+A finite warning is now explicit: for the recorded `n=3` seed, the exact
+boundary-only `3 -> 4` search is exhausted through deletion budget four, while
+an unrestricted two-deletion patch succeeds using an interior replacement
+cell. This refutes that naive boundary-only model for that seed, not PP2 in
+general.
 
 ## PP3 — Robust seed preparation
 
@@ -95,15 +103,21 @@ No prime-gap input completes this branch while PP2 and PP3 remain open.
 
 ## PP5 — Finite exceptions
 
-### Status: VERIFICATION INTERFACE COMPLETE; CERTIFICATE SET OPEN
+### Status: VERIFIER COMPLETE; CERTIFICATES VERIFIED FOR `2<=n<=10`
 
 Once PP4 covers all `n>=n_0`, provide exact constructions or certified
 computational solutions for every `n<n_0` not already covered.
 
-`scripts/verify_no_three_certificate.py` now checks machine-readable coordinate
+`scripts/verify_no_three_certificate.py` checks machine-readable coordinate
 files using exact integer determinants, exact bounds, distinctness, point count,
-and two points in every row and column. The missing work is the threshold and
-the complete certificate set below it.
+and two points in every row and column. The file
+[`certificates/prime-patching-small.json`](../certificates/prime-patching-small.json)
+contains verified saturated no-three-in-line configurations for every
+`n=2,...,10`.
+
+The missing PP5 work is the eventual threshold and the complete certificate set
+below it; the current finite set is a regression corpus and genuine partial
+coverage, not a closure of PP5.
 
 ## Computational falsification
 
@@ -115,7 +129,8 @@ a chosen deletion budget. It distinguishes:
 - `cutoff`, an explicitly inconclusive resource limit.
 
 The `--boundary-only` mode can be compared with unrestricted replacement to
-search for cores requiring interior changes.
+search for cores requiring interior changes. The exact `n=2` through `n=10`
+chain and the finite exhausted searches are recorded in the experiment note.
 
 ## Candidate absorber designs
 
@@ -130,5 +145,5 @@ search for cores requiring interior changes.
 This branch is complete only when PP2 and PP3 provide an exact extension width
 large enough for PP4, followed by a verified PP5 certificate set for the
 remaining side lengths. The current branch closes PP1, the logical and
-prime-gap parts of PP4, and the PP5 verification machinery; it does not prove
-the no-three-in-line conjecture.
+prime-gap parts of PP4, the PP5 verification machinery, and the cases
+`2<=n<=10`; it does not prove the no-three-in-line conjecture.
