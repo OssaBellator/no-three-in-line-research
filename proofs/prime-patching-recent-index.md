@@ -46,6 +46,8 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3et--PP3ew | Candidate blocker-cover probability and product-measure barrier | PROVED | `docs/58-candidate-blocker-cover-barrier.md` |
 | PP3ex--PP3ez | Unary blocker-cover and complete external state domains | PROVED / FINITE OBSTRUCTION | `docs/59-blocker-cover-state-domains.md` |
 | PP3fa--PP3fc | Cross-block blocker-demand CSP and exact two-block obstruction | PROVED / EXHAUSTIVE FINITE CHECK | `docs/60-blocker-demand-csp-and-two-block-obstruction.md` |
+| PP3fd--PP3fh | Same-edge anchor domain pruning through divisor energy | PROVED / FROM STANDARD AND PUBLISHED LLL THEOREMS | `docs/72-same-edge-anchor-domain-pruning.md` |
+| PP3fi--PP3fl | Weighted slot-mass LLL endpoint and conditional spread | PROVED / FROM ASYMMETRIC AND PUBLISHED LLL THEOREMS | `docs/73-weighted-slot-mass-endpoint.md` |
 
 ## Current exact target
 
@@ -59,22 +61,32 @@ total width MW = m^0.525.
 ```
 
 Matching pools, equal-margin restoration, complete internal no-three geometry,
-and fixed-rank internal spread are universal.  The global slot theorem PP3ei
-also provides a concrete external occurrence budget of
+and fixed-rank internal spread are universal.  The refined-domain theorem PP3ff
+removes both fixed-pair patch cells and same-edge anchored patch pairs whenever
+the divisor-energy compatibility graph has a dense perfect matching.
+
+The strongest current global endpoint is weighted rather than unweighted.  For
+every slot `s`, it is sufficient to prove
 
 ```text
-additional events per slot <= 7 gamma^2 R / 1152 + O(1).
+ordinary-source event mass at s
++ cross-macro event mass at s
+<= 1/48 - o(1).
 ```
+
+PP3fk then solves all internal, source-containing, and cross-macro events in one
+asymmetric local-lemma assignment, while PP3fl preserves `O(R^-q)` fixed-rank
+spread.  The older PP3ei endpoint requiring only `O(R)` events per slot remains a
+simpler fallback.
 
 The remaining bottleneck has two explicit pieces:
 
-1. prove dense safe label domains in almost every macro pool, or exploit the
-   boundary-shadow/Hall concentration alternative with protected trades; then
-   control fixed-anchor pairs, whose exceptional same-edge class is the divisor
-   energy in PP3dv--PP3dy;
-2. prove genuine cross-macro support compression, or show directly that every
-   slot participates in only `O(R)` external and cross-macro bad boxes so PP3ei
-   applies.
+1. prove that the refined movement/refill label graph from PP3ff has a perfect
+   matching in almost every macro pool, or exploit the boundary-shadow/Hall and
+   divisor-energy concentration alternatives with protected trades;
+2. group ordinary anchored-pair and cross-macro certificates into rank-two or
+   rank-three pattern events whose total incident probability mass is at most
+   `1/48-o(1)` per slot.
 
 The constant-width side analysis PP3el--PP3fc sharpens what not to do: random
 independent deletion does not cover additional blockers, unary blocker-cover
