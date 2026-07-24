@@ -23,10 +23,19 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3be | Equal-margin binary local states preserve saturation | PROVED | `docs/45-joint-binary-trade-cnf.md` |
 | PP3bf | Joint binary rung/trade selection is exact rank-at-most-three SAT | PROVED | `docs/45-joint-binary-trade-cnf.md` |
 | PP3bg | Rank-two joint binary banks reduce exactly to 2-SAT | PROVED | `docs/45-joint-binary-trade-cnf.md` |
+| PP3bh | Equal-margin finite-state variables preserve saturation | PROVED | `docs/46-multistate-trade-banks.md` |
+| PP3bi | Multistate rung/trade selection is an exact rank-three forbidden-box CSP | PROVED | `docs/46-multistate-trade-banks.md` |
+| PP3bj | Product-distribution first-moment endpoint for bad boxes | PROVED | `docs/46-multistate-trade-banks.md` |
+| PP3bk | Exact-rational bounded-dependency local-lemma endpoint | PROVED FROM STANDARD LLL | `docs/46-multistate-trade-banks.md` |
+| PP3bl | Variable-occurrence corollary for rank-three bad boxes | PROVED | `docs/46-multistate-trade-banks.md` |
+| PP3bm | Reverse old/new ordering excludes repeated-component cross-rung triples | PROVED | `docs/47-reverse-ordered-parabolic-rungs.md` |
+| PP3bn | Rank-three internal clauses require three distinct rungs | PROVED | `docs/47-reverse-ordered-parabolic-rungs.md` |
+| PP3bo | Three internally clean components have a quadratic cross-triple cap | PROVED | `docs/47-reverse-ordered-parabolic-rungs.md` |
 
 ## Current exact target
 
-Prepare roughly `m^0.05` square-root-scale rungs for the published prime-gap
-exponent, each with equal-margin binary patch/trade states, so that the joint
-cross-rung certificate formula is either satisfiable 2-SAT or a structurally
-controlled rank-three CNF.
+Prepare roughly `m^0.05` reverse-ordered square-root-scale rungs for the
+published prime-gap exponent.  Each rung should retain a large matching-
+admissible finite state set so that the remaining rank-two and three-rung bad
+boxes pass PP3bj, PP3bk, or PP3bl, possibly after adding protected trade
+variables.
