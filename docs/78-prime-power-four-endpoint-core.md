@@ -1,47 +1,49 @@
 # The four-endpoint alternating core
 
 CMR133--CMR137 reduce every globally nonimproving alternating closure to a
-four-endpoint board destroying one specified triple. This chapter strengthens
-the disjoint-defect conversion, gives the exact finite spread profile of every
-four-endpoint board, and records the finite-cycle certificate which any genuine
-positive global minimum must contain.
+four-endpoint board destroying one specified triple. This chapter gives the
+exact finite spread profile of every four-endpoint board and records the
+finite-cycle certificate which any genuine positive global minimum must
+contain.
 
-## 1. Full-load conversion of disjoint defects
+## 1. Correction to naive two-layer rematching
 
-CMR129 used one fixed layer and retained at least half of a vertex-disjoint
-triple family. By moving the two layers in sequence, the complete family can be
-retained.
+CMR129 correctly converts a vertex-disjoint triple family to a same-layer bank
+with at least half the target load. A proposed strengthening, formerly labeled
+CMR138, claimed that moving selected points in the two layers sequentially
+preserves the complete target load. That statement is false without an
+old-cell-clean condition.
 
-### Theorem CMR138 — PROVED
+### Claim CMR138 — REFUTED AS STATED
 
-Let `Q_1,...,Q_q` be vertex-disjoint real collinear triples in a saturated state
-on an `N` by `N` grid, with `N>=4`. Then there is an ordered two-layer endpoint
-bank which preserves saturation and layer disjointness and destroys all `q`
-triples in every final state.
+Moving a labeled point out of its old cell does not ensure that the old
+**geometric** cell disappears from the final union: the other layer may occupy
+it at the second stage.
 
-Choose one point from each `Q_i` and partition the chosen points by permutation
-layer. In each nonempty layer, pad the chosen set to at least four endpoints.
-First rematch layer zero while avoiding the current layer-one cells. Then
-rematch layer one while avoiding the new layer-zero cells.
+An explicit normalized four-column example is
 
-### Proof
+```text
+old layer 0 = (0,1,2,3)
+old layer 1 = (1,0,3,2)
+new layer 0 = (2,3,0,1)
+new layer 1 = (0,1,2,3).
+```
 
-The chosen points are distinct because the triples are vertex-disjoint. Within
-each permutation layer they have distinct rows and columns. Pad a nonempty
-layer set of size below four by arbitrary further points from that layer.
+The first move avoids both old matchings. The second avoids its own old matching
+and the new first layer. Nevertheless the final second layer reoccupies every
+old cell of layer zero.
 
-For the first layer, forbid the old endpoint cells and all cells occupied by the
-current second layer. The forbidden board has row and column degree at most two,
-so CMR128 gives a perfect matching. This move preserves the first-layer row and
-column sets and remains disjoint from the unchanged second layer.
+Therefore the original proof's sentence “every selected target point is moved,
+so every target triple loses a cell” was invalid for unlabeled point sets.
 
-For the second layer, use its original selected rows and columns, but now forbid
-its old cells and all cells occupied by the new first layer. Again CMR128 gives
-a perfect matching. Every selected target point is moved at its layer's stage,
-so every `Q_i` loses at least one cell. ∎
+Correct full-load two-layer conversions require one of the following:
 
-Thus the disjoint-defect alternative of CMR124 can preserve its full target
-load if an ordered two-layer bank is permitted.
+1. disjoint inherited row fibres, as in CMR162--CMR165;
+2. an explicitly old-cell-clean ordered bank, as in CMR154--CMR156;
+3. an exact finite escape certificate, as in CMR147 or CMR151.
+
+None of CMR133--CMR137 uses the refuted strengthening; their target-load
+contraction relies only on the valid one-layer conversion CMR129.
 
 ## 2. Exact four-board state profile
 
@@ -188,9 +190,10 @@ On every cycle from CMR141:
 ### Proof
 
 A triple using only cells common to consecutive states has unchanged presence.
-For a fixed grid triple, follow its indicator around the cycle. Every zero-to-one
-change is a creation and every one-to-zero change is a removal. The indicator
-returns to its initial value, so the two counts agree. Sum over triples. ∎
+For a fixed grid triple, follow its indicator around the cycle. Every
+zero-to-one change is a creation and every one-to-zero change is a removal. The
+indicator returns to its initial value, so the two counts agree. Sum over
+triples. ∎
 
 ## 5. Limitation of the abstract cycle reduction
 
@@ -201,10 +204,10 @@ monotone invariant depending only on normalized board type and current triple
 potential can prove the full theorem.
 
 The correct remaining target is **inherited escape**: a terminal core arising
-from the prime-power construction retains a prefix owner, recursive parent,
-protected quotient state, opposite-layer ancestry, and carry signatures. One
-must use that ancestry either to find a larger escape move or to prove that the
-trapped component cannot arise from the recursive closure.
+from the prime-power construction retains a closure envelope, protected row
+sets, quotient state, and carry signatures. One must use that ancestry either
+to find a larger old-cell-clean escape move or to prove that the trapped
+component cannot arise from the recursive closure.
 
 See [`docs/79-four-endpoint-trap-counterexample.md`](79-four-endpoint-trap-counterexample.md)
 for the exact trap and corrected open lemma.
