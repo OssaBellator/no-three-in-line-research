@@ -79,11 +79,13 @@ The numbering is local to this repository.
 | SRR1a | Exact stationary four-cycle resampling oracle on \(K_{N,N}\) | PROVED | `tracks/complete-host-resampling-oracle.md` |
 | SRR1b | Balanced switching graphs yield stationary flaw-removal kernels | PROVED | `tracks/superregular-switching-criterion.md` |
 | SRR1c | Hall's condition characterizes supported stationary flaw removal | PROVED | `tracks/superregular-hall-resampling.md` |
+| SRR1d | Dense missing-edge hosts admit a state-normalized stationary four-cycle oracle | PROVED | `tracks/dense-host-stationary-resampling.md` |
 | SRR3a | Two disjoint complete matchings admit a stationary four-cycle flaw-removal oracle | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3b | Same-layer remote events have exact \(1+O(1/N)\) inflation under SRR3a | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3c | Untouched-layer remote events have derangement-ratio \(1+O_s(1/N)\) inflation | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3d | Globally compatible mixed-layer remote events have \(1+O(1/N)\) inflation | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3e | General compatible mixed-layer cylinders satisfy \(1+O(1/N)\) resampling locality | PROVED | `tracks/complete-two-layer-resampling.md` |
+| SRR3f | Two dense host matchings admit a state-normalized stationary flaw-removal oracle | PROVED | `tracks/dense-host-stationary-resampling.md` |
 | I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |

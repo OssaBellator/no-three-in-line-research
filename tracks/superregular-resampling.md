@@ -15,7 +15,7 @@ This is an independent endpoint track. It seeks to upgrade the spread perfect-ma
 
 The gap is that spread in an arbitrary host does not imply the Lu–Szekely negative-dependency graph.
 
-## SRR1 — Stationary local resampling oracle — COMPLETE-HOST CASE PROVED
+## SRR1 — Stationary local resampling oracle — DENSE-HOST STATIONARITY PROVED; LOCALITY OPEN
 
 ### Target statement
 
@@ -42,7 +42,7 @@ row; it is a symmetric stationary kernel supported on one four-cycle and
 has an exact `1+O(1/N)` remote-event bound. The note also fixes the
 stationarity convention: stationarity must refer to the all-state kernel,
 since conditional regeneration to `mu` would contradict guaranteed flaw
-removal. The superregular missing-edge extension remains open.
+removal. The missing-edge remote-event comparison remains open.
 
 [`superregular-switching-criterion.md`](superregular-switching-criterion.md)
 proves SRR1b: an exact stationary oracle exists whenever the flaw-removing
@@ -57,6 +57,16 @@ allowed switching graph satisfies Hall's condition on the flawed side.
 The fractional Hall flow also identifies the remaining quantitative
 problem: find feasible switching weights with a dispersed
 remote-neighbourhood load.
+
+[`dense-host-stationary-resampling.md`](dense-host-stationary-resampling.md)
+proves SRR1d. For a host edge \(e=(i,j)\), a flawed perfect matching has
+at least \(d(i)+d(j)-N-1\) host-valid four-cycle partners. Although this
+degree varies with the state, every output has at most one reverse
+predecessor, so state-by-state normalization gives an exact symmetric
+uniform-stationary flaw-removal kernel. This settles the stationarity,
+host-preservation, and bounded-switch clauses whenever the lower bound
+is positive. It deliberately leaves the conditioned remote-cylinder
+correlation required by SRR2 open.
 
 ## SRR2 — Resampling dependency theorem
 
@@ -85,7 +95,9 @@ SRR3c proves it for remote events entirely in the untouched layer;
 SRR3d handles globally row-column-compatible mixed events. Thus the
 complete-host locality calculation is finished for single-layer flaws.
 SRR3e supplies the general compatible-cylinder count and finishes it for
-mixed-layer flaws as well; missing-edge hosts remain.
+mixed-layer flaws as well. SRR1d and SRR3f close the stationary
+flaw-removal part for sufficiently dense missing-edge hosts; the
+missing-host remote-cylinder comparison remains.
 
 ## SRR3 — Two-layer exact-cover extension
 
@@ -114,8 +126,21 @@ in the resampled layer. SRR3c gives a derangement-ratio
 SRR3d combines the two counts for mixed-layer, globally compatible
 events. SRR3e extends the result to globally compatible mixed-layer flaws
 and events. The complete-host remote theorem is therefore proved for the
-canonical pair/triple conflicts; the superregular missing-edge extension
-remains open.
+canonical pair/triple conflicts; its superregular missing-edge
+remote-event extension remains open.
+
+### Dense missing-edge stationary component proved
+
+[`dense-host-stationary-resampling.md`](dense-host-stationary-resampling.md)
+also proves SRR3f on ordered pairs of edge-disjoint host matchings. A
+flawed state has at least
+\(d(i)+d(j)-N-3\) host- and cross-layer-valid partner rows. Unique
+reverse predecessors again permit state-dependent symmetric weights,
+giving an exact uniform-stationary one-four-cycle oracle whenever this
+quantity is positive. Minimum degree \(\delta N\) gives the explicit
+bound \((2\delta-1)N-3\). The other layer is unchanged pathwise and a
+remote same-layer partial matching cannot be created, but arbitrary-host
+conditional correlations are not yet controlled.
 
 ## SRR4 — Superregular local-load endpoint
 
@@ -146,6 +171,9 @@ The theorem must achieve exact coverage, not merely an almost-perfect conflict-f
 
 The four-cycle positive-correlation example and the complete-host oracle
 are exhaustively checked by `scripts/verify_complete_resampling.py`.
+The state-dependent one- and two-layer kernels in complete and
+one-edge-deleted dense hosts are checked by
+`scripts/verify_dense_host_resampling.py`.
 
 ## Completion criterion
 
