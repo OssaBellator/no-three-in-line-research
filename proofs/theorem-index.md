@@ -80,6 +80,7 @@ The numbering is local to this repository.
 | SRR1b | Balanced switching graphs yield stationary flaw-removal kernels | PROVED | `tracks/superregular-switching-criterion.md` |
 | SRR1c | Hall's condition characterizes supported stationary flaw removal | PROVED | `tracks/superregular-hall-resampling.md` |
 | SRR1d | Dense missing-edge hosts admit a state-normalized stationary four-cycle oracle | PROVED | `tracks/dense-host-stationary-resampling.md` |
+| SRR2a | Deleted host matchings have exact extension counts and \(1+o(1)\) remote-cylinder locality | PROVED | `tracks/deleted-matching-locality.md` |
 | SRR3a | Two disjoint complete matchings admit a stationary four-cycle flaw-removal oracle | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3b | Same-layer remote events have exact \(1+O(1/N)\) inflation under SRR3a | PROVED | `tracks/complete-two-layer-resampling.md` |
 | SRR3c | Untouched-layer remote events have derangement-ratio \(1+O_s(1/N)\) inflation | PROVED | `tracks/complete-two-layer-resampling.md` |

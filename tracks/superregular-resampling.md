@@ -68,6 +68,22 @@ host-preservation, and bounded-switch clauses whenever the lower bound
 is positive. It deliberately leaves the conditioned remote-cylinder
 correlation required by SRR2 open.
 
+[`deleted-matching-locality.md`](deleted-matching-locality.md) proves
+SRR2a for the first nontrivial missing-host family. If the unavailable
+cells form a matching \(Q\) of rank \(t\), inclusion--exclusion gives
+the exact extension count after every partial matching. For
+vertex-disjoint rank-\(f,b\) cylinders, their correlation ratio is at
+most
+
+\[
+\frac{(N)_b}{(N-f)_b}
+\cdot
+\frac1{(1-t/(N-f))(1-t/(N-b))}.
+\]
+
+Together with SRR1d's pathwise noncreation, this proves the required
+\(1+o(1)\) remote locality for fixed \(f,b\) whenever \(t=o(N)\).
+
 ## SRR2 — Resampling dependency theorem
 
 ### Target statement
@@ -98,6 +114,10 @@ SRR3e supplies the general compatible-cylinder count and finishes it for
 mixed-layer flaws as well. SRR1d and SRR3f close the stationary
 flaw-removal part for sufficiently dense missing-edge hosts; the
 missing-host remote-cylinder comparison remains.
+
+SRR2a resolves that comparison when the missing cells form a partial
+matching of sublinear rank. Arbitrary missing-edge geometry and the
+two-layer conditioned measure remain open.
 
 ## SRR3 — Two-layer exact-cover extension
 
@@ -173,7 +193,9 @@ The four-cycle positive-correlation example and the complete-host oracle
 are exhaustively checked by `scripts/verify_complete_resampling.py`.
 The state-dependent one- and two-layer kernels in complete and
 one-edge-deleted dense hosts are checked by
-`scripts/verify_dense_host_resampling.py`.
+`scripts/verify_dense_host_resampling.py`. Deleted-matching extension
+counts and remote-cylinder ratios are checked by
+`scripts/verify_deleted_matching_locality.py`.
 
 ## Completion criterion
 
