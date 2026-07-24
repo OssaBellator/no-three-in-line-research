@@ -3,8 +3,9 @@
 
 For selected old reservoir rows, compute the hit old columns C and the cross
 support U=(C x N) union (N x Y). The program enumerates primitive nonaxis
-functionals ax+by up to a requested coefficient height and reports directions
-whose support image has fewer than 2t levels.
+functionals ax+by up to a requested coefficient height, reports directions
+whose support image has fewer than 2t levels, and gives the convexity lower
+bound on triples forced on those parallel-line families.
 """
 from __future__ import annotations
 
@@ -33,6 +34,19 @@ def is_interval(values: tuple[int, ...]) -> bool:
     return bool(values) and values == tuple(range(values[0], values[0] + len(values)))
 
 
+def choose3(value: int) -> int:
+    return value * (value - 1) * (value - 2) // 6
+
+
+def minimum_parallel_triples(point_count: int, level_count: int) -> int:
+    """Minimize sum binom(n_i,3) over level occupancies with fixed total."""
+    quotient, remainder = divmod(point_count, level_count)
+    return (
+        (level_count - remainder) * choose3(quotient)
+        + remainder * choose3(quotient + 1)
+    )
+
+
 def analyze(
     m: int,
     core: tuple[tuple[int, int], ...],
@@ -49,6 +63,7 @@ def analyze(
     minimum_levels: int | None = None
     minimum_direction_count = 0
     tested = 0
+    total_forced_triple_lower_bound = 0
 
     for a in range(1, height + 1):
         for b in range(-height, height + 1):
@@ -72,12 +87,15 @@ def analyze(
             elif level_count == minimum_levels:
                 minimum_direction_count += 1
             if level_count < 2 * t:
+                forced = minimum_parallel_triples(4 * t, level_count)
+                total_forced_triple_lower_bound += forced
                 directions.append(
                     {
                         "a": a,
                         "b": b,
                         "level_count": level_count,
                         "required_count": 2 * t,
+                        "forced_triple_lower_bound": forced,
                     }
                 )
 
@@ -103,6 +121,7 @@ def analyze(
         "required_projection_level_count": 2 * t,
         "failing_direction_count": len(directions),
         "failing_directions": directions,
+        "summed_forced_triple_lower_bound": total_forced_triple_lower_bound,
         "aligned_interval_PP3s_obstruction": aligned_interval,
         "tested_PP3u_screen_passes": not directions,
     }
