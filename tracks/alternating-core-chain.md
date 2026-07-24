@@ -130,6 +130,16 @@ Starting from any frozen cycle or failed paid bank in a bounded-hyperbola univer
 
 This is the corrected form of CC4. It must include the exact `p=11` frozen cycle, which is unlocked by an opposite-colour permutation, and must not rely on a one-colour cyclic-shift improvement.
 
+### Proved formal component
+
+[`alternating-core-formal-termination.md`](alternating-core-formal-termination.md)
+proves AC4a: an AC3 transition system with an integer potential
+`0<=Xi<=B` and strict growth on every nonterminal transition stops after at
+most `B-Xi_0+1` oracle calls.  It also records the existing `p=11`
+opposite-colour release as a mandatory transition regression.  AC4 itself
+remains open because AC1--AC3 do not yet supply the required total
+transition oracle.
+
 ## AC5 — Reverse-scale compatibility
 
 ### Target statement
@@ -144,6 +154,13 @@ Let `H` be one dyadic height scale and assume the configuration is upper-`2H`-cl
 Consequently, descending dyadic processing terminates with no collinear triple at any height.
 
 This lemma must connect the alternating banks to S4, S5, L1–L4 and the exact multiplicity accounting in AN4.
+
+### Proved formal component
+
+The same note proves AC5a: preservation of earlier height bands, creation
+only at lower bands, and strict descent of the integer `Psi_H` imply finite
+descending-scale termination.  What remains is the geometric proof that
+the AC1--AC4 moves satisfy those three hypotheses.
 
 ## AC6 — Prime-minus-one completion theorem
 
@@ -160,6 +177,13 @@ For every sufficiently large odd prime `p`, there exist `2(p-1)` points on the `
 5. finish when the triple potential is zero.
 
 This theorem still does not cover arbitrary `n`; that extension is split into the three independent all-`n` branches.
+
+### Proved conditional assembly
+
+AC6a in the formal-termination note derives the stated construction from
+the H4 seed plus the exact AC4 and AC5 interfaces, including delegated BDA
+and rational-inverse returns.  It is labelled conditional and does not
+upgrade AC6 while those inputs remain open.
 
 ## Verification programme
 

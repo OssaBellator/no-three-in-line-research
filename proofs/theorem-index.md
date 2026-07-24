@@ -56,6 +56,9 @@ The numbering is local to this repository.
 | AN2 | Extraction of a movable same-layer endpoint substar | PROVED | `docs/26-alternating-star-neutralization.md` |
 | AN3 | Alternating endpoint-permutation bank neutralizes the original star | PROVED | `docs/26-alternating-star-neutralization.md` |
 | AN4 | Average collateral bound for the joint alternating bank | PROVED | `docs/26-alternating-star-neutralization.md` |
+| AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
+| AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
+| AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |
 | O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
