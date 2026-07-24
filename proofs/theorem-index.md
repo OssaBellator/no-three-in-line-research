@@ -39,19 +39,19 @@ The numbering is local to this repository.
 | CA2 | Divisor bound per nondegenerate aligned carry signature | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
 | CA3 | Degenerate carry signatures are perfect affine-interpolation cells | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
 | CA4 | Aligned-anchor multiplicity is carry dispersion plus perfect-alignment mass | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF2 | Divisor bound and carry-level dispersion for same-channel secant stars | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF4 | Nondegenerate carry-cell line bound and common-wrap centers | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF5 | Partial alternating-closure reduction | PROVED | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF6 | Sharp cross-channel fixed-degree carry factorization | OPEN | `docs/24-carry-filtered-secant-stars-and-wrap-cells.md` |
-| CF7 | Perfect-wrap chamber sparsity | PARTIALLY PROVED | `docs/25-perfect-alignment-arithmetic.md` |
 | SC1 | Product-carry levels have divisor-bounded size | PROVED | `docs/24-secant-star-carry-dispersion.md` |
 | SC2 | Endpoint-disjoint secant stars force product-carry signature dispersion in any channel pair | PROVED | `docs/24-secant-star-carry-dispersion.md` |
 | SC3 | Paid bank yields improvement, carry dispersion, or perfect alignment | PROVED | `docs/24-secant-star-carry-dispersion.md` |
 | PA1 | Exact classification of zero-leading-carry interpolation parameters | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
 | PA2 | Perfect alignment is equivalent to a reduced-denominator wrap-index condition | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
 | PA3 | Perfect-alignment population is at most \(4p/q\) for denominator \(q\) | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
+| CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
+| CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
+| CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
+| CF4 | Carry-cell line bound and explicit common rational centers | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
+| CF5 | Divisor bound inside every perfect-wrap chamber | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
+| CF6 | Perfect-alignment mass forces wrap-center dispersion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
+| CF7 | Monotone carry-complexity potential | OPEN | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
 | O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
