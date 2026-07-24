@@ -20,3 +20,10 @@ CMR101. The main composite index remains in
 | CMR113 | Exact cell balance forces uniformity in the reciprocal shift for each coefficient | PROVED | `docs/71-prime-power-balanced-law-classification.md` |
 | CMR114 | The endpoint shifts \(0\) and \(p-1\) have exact quadratic-character no-three criteria | PROVED | `docs/71-prime-power-balanced-law-classification.md` |
 | CMR115 | Balanced completed-reciprocal no-three laws exist exactly for primes \(p\equiv1\pmod4\) | PROVED | `docs/71-prime-power-balanced-law-classification.md` |
+| CMR116 | Seven integer no-three permutations partition the \(7\times7\) grid | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/72-prime-seven-balanced-recursive-bank.md` |
+| CMR117 | Ordered distinct maps from the prime-seven factorization give a saturated root law | PROVED | `docs/72-prime-seven-balanced-recursive-bank.md` |
+| CMR118 | The prime-seven local family gives saturated recursive banks at every \(N=7^k\) | PROVED | `docs/72-prime-seven-balanced-recursive-bank.md` |
+| CMR119 | Powers of seven admit balanced recursive states with \(\mathbb ET_k\le28kN^2\) | PROVED | `docs/72-prime-seven-balanced-recursive-bank.md` |
+| CMR120 | A prime-seven factorization has pair-difference multiplicity at most three | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/73-prime-seven-pair-spectrum.md` |
+| CMR121 | Binary same-layer clusters at powers of seven pay a \(3/7\) separation-node factor | PROVED | `docs/73-prime-seven-pair-spectrum.md` |
+| CMR122 | The sharpened prime-seven bank satisfies \(\mathbb ET_k<(36/7)(k-1)N^2+(29/9)N^2\) | PROVED | `docs/73-prime-seven-pair-spectrum.md` |
