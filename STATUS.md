@@ -43,7 +43,10 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 33. **Syndrome-weighted quotient extraction.** If \(|X/X|\le K|X|\), actual point triple degrees produce an admissible common-ratio matching carrying at least \(H/(6K)\) vertex-incidence weight.
 34. **Paid-bank lower bound.** After correcting for pair-overlap, the extracted bank has \(D\ge H/(6K)-\beta|X|/2\); in a \(q\)-channel universe, \(D\ge H/(6K)-(q-1)|X|\).
 35. **Weighted conversion criterion.** Sufficiently large structured syndrome incidence forces an improving rectangle or one of the explicit alternating-closure structures.
-36. **Projective conic-pencil geometry.** The hyperbola channels form a two-base-point conic pencil; every opposite-channel anchor has \(1+\chi(1-b/a)\) tangents and exactly \((p-4-\chi(1-b/a))/2\) secants containing two affine points of the other channel.
+36. **Projective conic-pencil geometry.** The hyperbola channels form a two-base-point conic pencil; every opposite-channel anchor has \(1+\chi(1-b/a)\) tangents and exactly \((p-4-\chi(1-b/a))/2\) fully affine secants on the other channel.
+37. **Aligned-anchor carry signatures.** Every aligned-anchor determinant factors inside a fixed carry signature; nondegenerate signatures have only \(p^{o(1)}\) solutions, while degenerate signatures are exact affine-interpolation cells.
+38. **Same-channel carry dispersion.** At a fixed carry level, a real same-channel secant star has at most \(\tau(|b-a+pt|)\) edges, so a large star must occupy many carry levels.
+39. **Common-wrap center classification.** Coordinatewise scalar lifts are linearly constrained in every nondegenerate carry cell, while every degenerate cell is radial about one explicit rational center \(pS/d\).
 
 ## What remains conditional
 
@@ -52,8 +55,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- An alternating closure inequality controlling the secant-star load \(\Theta\) and aligned-anchor multiplicity \(\Lambda\).
-- Classification of the Euclidean carry filter inside the projective conic involution orbits.
+- A cross-channel carry factorization for secant stars whose endpoints lie on different hyperbola channels.
+- A sparsity or absorber theorem for the perfect-alignment/common-wrap carry chambers.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
 
@@ -70,4 +73,4 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 
 ## Bottom line
 
-There is no complete proof. The weighted-bank bottleneck is closed for weights arising from current triple degrees, and low-quotient-complexity high-syndrome cores supply paid admissible common-ratio banks. The projective conic geometry now gives an exact modular secant baseline for every anchor. The remaining geometric bottleneck is to exploit the non-projectively-invariant Euclidean carry filter and prove that alternating red/blue closure cannot sustain the resulting secant-star or aligned-anchor concentrations indefinitely.
+There is no complete proof. The weighted-bank bottleneck is closed, and both branches of its structural obstruction are now partially carry-classified. Same-channel secant stars must disperse across divisor-controlled carry levels. Aligned-anchor classes either disperse across nondegenerate carry signatures or concentrate in exact perfect-wrap chambers. The remaining geometric bottlenecks are the cross-channel star and the dense perfect-wrap chamber.
