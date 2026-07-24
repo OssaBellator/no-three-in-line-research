@@ -141,20 +141,33 @@ This endpoint is more structured than the host-cell CNF of PX10: the candidate
 hypergraph is complete and symmetric, while all difficulty lies in rank-two
 and rank-three rectangle conflicts.
 
-## 4. Remaining boundary
+## 4. Exact boundary through base seven
 
-PX40 gives the complete answer through `n=5`: the rectangle matching exists for
-`n=2,4,5` and does not exist for `n=3`.  PX37 rules out only the smaller affine
-subfamily at bases six and seven; the unrestricted rectangle-matching problem
-remains open there.
+PX40 and PX48 give the complete unrestricted answer through `n=7`:
 
-The next routes are now precise:
+| Base side | Rectangle template exists? |
+|---:|---|
+| 2 | yes |
+| 3 | no |
+| 4 | yes |
+| 5 | yes |
+| 6 | no |
+| 7 | no |
+| 8 | open |
 
-1. prove conflict-degree or spread bounds sufficient for a conflict-free perfect
-   matching;
+The negative results at six and seven concern the full arbitrary-permutation
+rectangle family, not only affine maps.  The next decisive finite case is base
+eight: success would allow the proved side-four closure to iterate to side
+sixteen, while an exact obstruction would rule out that recursion inside PX28.
+
+The remaining routes are now precise:
+
+1. sharpen conflict-degree or spread estimates enough for a conflict-free
+   perfect-matching theorem;
 2. construct recursive rectangle templates at infinitely many side lengths;
 3. derive structured obstruction certificates when every perfect matching has a
-   diagonal or transversal conflict.
+   diagonal or transversal conflict;
+4. extend the normal form to two inner layers or the full degree-two selector.
 
 ## Verification
 
@@ -162,7 +175,10 @@ Run
 
 ```bash
 python scripts/verify_product_rectangle_reduction.py
+python scripts/verify_product_unrestricted_six_seven.py --side 6
+python scripts/verify_product_unrestricted_six_seven.py --side 7
 ```
 
-The script exhausts every rectangle state through base four and checks
-saturation and the complete diagonal/transversal classification.
+The first script checks the normal form and conflict classification through base
+four.  The latter scripts exhaust the complete rectangle matching instances at
+bases six and seven.
