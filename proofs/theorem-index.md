@@ -45,4 +45,9 @@ The numbering is local to this repository.
 | D2 | Explicit missing-cell/triple-incidence criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
 | D3 | Robust 99%-dense endpoint criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
 | D4 | Failure forces an \(\Omega(n^3)\) row/column triple core | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D5 | Superregular clone-selection lemma | OPEN | `docs/15-degree-constrained-hypergraph-selection.md` |
+| D5 | Superregular local-load dependency/resampling upgrade | OPEN | `docs/16-superregular-clone-selection.md` |
+| SR1 | Uniform superregular perfect matching is fixed-rank \(O(1/N)\)-spread | PROVED | `docs/16-superregular-clone-selection.md` |
+| SR2 | Two-clone blow-up preserves superregularity | PROVED | `docs/16-superregular-clone-selection.md` |
+| SR3 | All-rank spread distribution on dense superregular perfect matchings | PUBLISHED THEOREM | `docs/16-superregular-clone-selection.md` |
+| SR4 | Spread distribution on two edge-disjoint perfect-matching layers | PROVED FROM SR3 | `docs/16-superregular-clone-selection.md` |
+| SR5 | Global conflict-mass endpoint for saturated two-layer selection | PROVED | `docs/16-superregular-clone-selection.md` |
