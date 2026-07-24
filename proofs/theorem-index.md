@@ -52,6 +52,8 @@ The numbering is local to this repository.
 | BDA3b | Compatible local chamber banks have an exact product collateral criterion | PROVED | `tracks/bounded-denominator-product-bank.md` |
 | BDA3c | A failed product bank localizes normalized collateral to one finite profile | PROVED | `tracks/bounded-denominator-profile-localization.md` |
 | BDA3d | Failed collateral localizes to one of six positive block-rank patterns | PROVED | `tracks/bounded-denominator-profile-localization.md` |
+| BDA3e | Intrinsic denominator-\(q\) collateral words have at most \(6(q^2\varphi(q))^3\) types | PROVED | `tracks/bounded-denominator-finite-transition.md` |
+| BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `tracks/bounded-denominator-finite-transition.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |

@@ -112,6 +112,15 @@ patterns, carrying at least \((W-F)/6\) when \(W>F\). The remaining
 arithmetic task is to prove \(L_q=O_q(1)\) for the actual strip
 residue/carry signatures and classify each heavy profile.
 
+[`bounded-denominator-finite-transition.md`](bounded-denominator-finite-transition.md)
+proves BDA3e: the intrinsic strip/rank/interpolation word has at most
+\(6(q^2\varphi(q))^3\) values. It also proves BDA4a: once the remaining
+geometric address is compressed to a complete finite profile, every
+long non-improving trajectory reaches a directed profile cycle of length
+at most the number of profiles. The unresolved arithmetic is now
+precisely the finite refinement of block identities, anchors, coarse
+carries, and channel data, followed by classification of those cycles.
+
 ## BDA4 — exception classification
 
 ### Target statement
