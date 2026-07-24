@@ -15,7 +15,7 @@ This is an independent endpoint track. It seeks to upgrade the spread perfect-ma
 
 The gap is that spread in an arbitrary host does not imply the Lu–Szekely negative-dependency graph.
 
-## SRR1 — Stationary local resampling oracle
+## SRR1 — Stationary local resampling oracle — COMPLETE-HOST CASE PROVED
 
 ### Target statement
 
@@ -34,6 +34,15 @@ such that:
 5. for every event `B` whose matching vertices are disjoint from a controlled neighbourhood of `F`, resampling `F` does not increase the probability of `B` by more than `1+o(1)`.
 
 A version using an exact heat-bath update on a bounded alternating-cycle gadget is preferred.
+
+[`complete-host-resampling-oracle.md`](complete-host-resampling-oracle.md)
+proves all five properties for `K_{N,N}`. The oracle swaps the matched
+columns of the distinguished forbidden row and one uniformly random other
+row; it is a symmetric stationary kernel supported on one four-cycle and
+has an exact `1+O(1/N)` remote-event bound. The note also fixes the
+stationarity convention: stationarity must refer to the all-state kernel,
+since conditional regeneration to `mu` would contradict guaranteed flaw
+removal. The superregular missing-edge extension remains open.
 
 ## SRR2 — Resampling dependency theorem
 
@@ -92,6 +101,12 @@ The theorem must achieve exact coverage, not merely an almost-perfect conflict-f
 - preservation of stationary measure after repeated resampling;
 - comparison against the exact complete-permutation constant `1/24`.
 
+The four-cycle positive-correlation example and the complete-host oracle
+are exhaustively checked by `scripts/verify_complete_resampling.py`.
+
 ## Completion criterion
 
-This branch is complete when SRR1–SRR4, or an equivalent conflict-free exact-cover theorem, is proved with constants and supplies a directly usable replacement for D1 in a dense superregular host.
+This branch is complete when the superregular extension of SRR1 and
+SRR2–SRR4, or an equivalent conflict-free exact-cover theorem, is proved
+with constants and supplies a directly usable replacement for D1 in a
+dense superregular host.
