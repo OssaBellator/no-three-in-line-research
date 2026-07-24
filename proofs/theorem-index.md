@@ -101,6 +101,7 @@ The numbering is local to this repository.
 | RI2e | Cross-coset caps give a quantitative union target-coset lower bound | PROVED | `tracks/rational-inverse-cross-coset-cap.md` |
 | RI2f | Rational collision saturation equals fixed-point mass plus a symmetric quotient cut | PROVED | `tracks/rational-inverse-quotient-boundary.md` |
 | RI2g | Rational involution boundary equals the degree defect of a coset polynomial and its Möbius transform | PROVED | `tracks/rational-inverse-boundary-gcd.md` |
+| RI2h | The polynomial gcd is the maximal invariant core and the boundary gives injective image outliers | PROVED | `tracks/rational-inverse-boundary-gcd.md` |
 | RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |

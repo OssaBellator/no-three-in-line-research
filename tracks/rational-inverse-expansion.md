@@ -183,6 +183,15 @@ common factor of degree at least \(|D|-L\). Since a full coset union has
 the sparse form \(\prod_i(X^{|H|}-x_i^{|H|})\), the remaining RI2--RI3
 classification is now a sparse-polynomial gcd rigidity problem.
 
+The same note proves RI2h: that monic gcd is exactly the root polynomial
+of the unique maximal \(\tau_r\)-invariant core
+\(K(D)=D\cap\tau_r(D)\). The complement has size \(B(D)\), maps
+injectively under \(F_r\), and its image is disjoint from the core image.
+Thus a low-boundary cut is already an exact functional-equation
+exception plus explicitly counted outliers; repeated boundary pruning
+is unnecessary. The remaining rigidity problem may be restricted to
+the invariant core.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement

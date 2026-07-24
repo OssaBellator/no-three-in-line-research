@@ -83,6 +83,97 @@ are proportional.  The leading coefficient of \(P_D^\tau\) is
 \(\prod_{c\in D}(r-c)\), while \(P_D\) is monic, giving the displayed
 functional equation.  Its converse is immediate. \(\square\)
 
+## RI2h -- maximal invariant gcd core
+
+Define
+
+\[
+K(D)
+=
+\{x\in D:\tau_r(x)\in D\}
+=
+D\cap\tau_r(D).
+\]
+
+### Theorem RI2h -- PROVED
+
+The set \(K(D)\) is the unique largest \(\tau_r\)-invariant subset of
+\(D\), and
+
+\[
+\boxed{
+|D\setminus K(D)|=B(D),
+\qquad
+P_{K(D)}
+=
+\operatorname{monic}\gcd(P_D,P_D^\tau).
+}
+\]
+
+In particular, the gcd itself is the root polynomial of the maximal
+invariant core and satisfies
+
+\[
+\boxed{
+P_{K(D)}^\tau
+=
+\left(\prod_{c\in K(D)}(r-c)\right)P_{K(D)}.
+}
+\]
+
+Let \(f(K)\) be the number of fixed points of \(\tau_r\) in \(K(D)\).
+The rational image decomposes exactly as
+
+\[
+\boxed{
+F_r(D)
+=
+F_r(K(D))
+\mathbin{\dot\cup}
+F_r(D\setminus K(D)),
+}
+\]
+
+where \(F_r\) is injective on \(D\setminus K(D)\), and hence
+
+\[
+\boxed{
+|F_r(D)|
+=
+\frac{|K(D)|+f(K)}2+B(D).
+}
+\]
+
+### Proof
+
+If \(x\in K(D)\), then \(x,\tau_r(x)\in D\).  Applying the involution
+again shows that \(\tau_r(x)\in K(D)\), so the core is invariant.  If
+\(J\subseteq D\) is invariant and \(x\in J\), then
+\(\tau_r(x)\in J\subseteq D\), whence \(x\in K(D)\).  Thus every
+invariant subset lies in \(K(D)\), proving uniqueness and maximality.
+The boundary identity follows directly from the definition.
+
+RI2g identifies the roots of the monic gcd as exactly the points
+\(x\in D\) whose partners also lie in \(D\).  These are precisely
+\(K(D)\), all with multiplicity one, so the polynomial identity follows.
+The core has zero boundary, and the displayed functional equation is
+the zero-boundary part of RI2g applied to \(K(D)\).
+
+Every fibre of \(F_r\) is a \(\tau_r\)-orbit.  Two distinct boundary
+points cannot have the same image, since they would be partners and
+would therefore both belong to the core.  Likewise, a boundary point
+cannot share an image with a core point.  Thus the two image pieces are
+disjoint and the boundary piece has cardinality \(B(D)\).  The invariant
+core is a union of two-cycles and \(f(K)\) fixed points, so it has
+\((|K(D)|+f(K))/2\) image values.  This proves the last box.
+\(\square\)
+
+There is therefore no iterative boundary-pruning cascade.  A
+low-boundary quotient component splits in one step into an exact
+functional-equation core of size \(|D|-B(D)\) and exactly \(B(D)\)
+injective image outliers.  RI3 may classify the maximal core, while an
+absorber interface need only pay for the explicitly listed outliers.
+
 ## Coset-union form
 
 If
@@ -109,10 +200,14 @@ coset polynomial and its Möbius transform.
 This is the algebraic classification interface missing after RI2f:
 zero-boundary exceptional chains satisfy an exact functional equation,
 while boundary \(L\) gives a degree-\(n-L\) approximate divisibility
-statement.  RI3 may now attack coefficient rigidity or sparse-polynomial
-gcd structure rather than an unlabelled quotient graph.  The theorem
-does not itself bound the degree of that gcd.
+statement.  RI2h identifies that common factor exactly with the maximal
+invariant core and separates the boundary as injective image outliers.
+RI3 may now attack coefficient rigidity or sparse-polynomial gcd
+structure rather than an unlabelled quotient graph.  These theorems do
+not themselves classify the functional-equation core.
 
 `scripts/verify_rational_boundary_gcd.py` exhaustively checks the
 boundary degree, zero-boundary functional equation, and sparse
-coset-polynomial identity through small primes.
+coset-polynomial identity through small primes.  It also verifies the
+maximal invariant core, exact gcd polynomial, and disjoint image
+decomposition.

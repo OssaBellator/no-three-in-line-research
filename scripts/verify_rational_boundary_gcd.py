@@ -131,6 +131,10 @@ def partner(x: int, r: int, p: int) -> int:
     return r * (x - 1) * pow(x - r, -1, p) % p
 
 
+def rational_image(x: int, r: int, p: int) -> int:
+    return x * (1 - x) * pow(r - x, -1, p) % p
+
+
 def quotient_subsets(index: int) -> set[frozenset[int]]:
     labels = set(range(index))
     if index <= 7:
@@ -204,6 +208,55 @@ def verify(limit: int = 23) -> None:
                     assert len(common) - 1 == len(domain) - boundary
                     if boundary == 0:
                         assert monic(transformed, p) == polynomial
+
+                    core = {
+                        x for x in domain if partner(x, r, p) in domain
+                    }
+                    outliers = domain - core
+                    assert len(outliers) == boundary
+                    assert {
+                        partner(x, r, p) for x in core
+                    } == core
+                    assert common == root_polynomial(core, p)
+
+                    core_polynomial = root_polynomial(core, p)
+                    core_transformed = transformed_polynomial(core, r, p)
+                    leading = 1
+                    for value in core:
+                        leading = leading * (r - value) % p
+                    assert core_transformed == [
+                        leading * coefficient % p
+                        for coefficient in core_polynomial
+                    ]
+
+                    core_image = {
+                        rational_image(x, r, p) for x in core
+                    }
+                    outlier_image = {
+                        rational_image(x, r, p) for x in outliers
+                    }
+                    assert len(outlier_image) == len(outliers)
+                    assert core_image.isdisjoint(outlier_image)
+                    assert core_image | outlier_image == {
+                        rational_image(x, r, p) for x in domain
+                    }
+                    fixed = sum(
+                        partner(x, r, p) == x for x in core
+                    )
+                    assert 2 * len(core_image) == len(core) + fixed
+
+                    if len(domain) <= 8:
+                        ordered = tuple(sorted(domain))
+                        for mask in range(1 << len(ordered)):
+                            candidate = {
+                                value
+                                for index, value in enumerate(ordered)
+                                if mask & (1 << index)
+                            }
+                            if {
+                                partner(x, r, p) for x in candidate
+                            } == candidate:
+                                assert candidate <= core
 
 
 def main() -> None:
