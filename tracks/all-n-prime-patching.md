@@ -16,7 +16,8 @@ Detailed statements and proofs are in:
 - [`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md);
 - [`docs/28-one-strip-and-pair-aware-patching.md`](../docs/28-one-strip-and-pair-aware-patching.md);
 - [`docs/29-general-reservoir-patching.md`](../docs/29-general-reservoir-patching.md);
-- [`docs/30-deletion-aware-row-lift-banks.md`](../docs/30-deletion-aware-row-lift-banks.md).
+- [`docs/30-deletion-aware-row-lift-banks.md`](../docs/30-deletion-aware-row-lift-banks.md);
+- [`docs/31-sequential-row-lift-local-lemma.md`](../docs/31-sequential-row-lift-local-lemma.md).
 
 Small exact computations are recorded in:
 
@@ -95,13 +96,20 @@ Finite exhaustive results show why this cannot be omitted:
 - after conditioning on the forced deletion, the exact type-two certificate
   average succeeds for the `2 -> 3` seed and gives a nonaxis-blocker target;
 - deleting all points in `t` selected old rows supports an explicit row-lift
-  bank with exact saturation and rank-one, rank-two, and rank-three spread.
+  bank with exact saturation and rank-one, rank-two, and rank-three spread;
+- exposing the four row-lift permutation layers sequentially gives a local-lemma
+  endpoint in the maximum activated assignment load over legal prefixes;
+- the exact side-three full bank has no clean state and every layer order fails
+  the sequential threshold, localizing the obstruction before the fourth layer;
+- exhaustive search over every two- and three-row reservoir in the stored
+  `2<=n<=10` certificates finds no clean unrestricted full bank.
 
 Thus a universal repetition of the two one-strip moves is refuted. The
 row-lift construction closes the interchangeable-state part of a wider
-boundary ladder, but its cross-shaped support still has too many internal
-triple certificates in the first finite tests. The next target is a
-finite-direction-pruned row selection or a restricted internally clean subbank.
+boundary ladder, but its full cross-shaped state space remains too rich in
+internal certificates. The next target is a finite-direction-pruned row
+selection or a restricted subbank meeting the sequential activated-load
+endpoint.
 
 ## PP4 — Prime-gap transfer theorem
 
@@ -148,7 +156,8 @@ below it.
   CSP with explicit `found`, `exhausted`, and `cutoff` outcomes;
 - `scripts/analyze_one_strip_extensions.py`: complete `t=1` boundary-only
   analyzer using the two-state classification;
-- `scripts/analyze_one_strip_seed_loads.py`: records the now-vacuous unconditioned PP3b average;
+- `scripts/analyze_one_strip_seed_loads.py`: records the now-vacuous
+  unconditioned PP3b average;
 - `scripts/analyze_deletion_aware_one_strip.py`: exact surviving-certificate
   average and nonaxis-blocker profiler;
 - `scripts/enumerate_one_strip_seeds.py`: exhaustive labeled seed graph for
@@ -161,11 +170,16 @@ below it.
   cell/pair spread analyzer;
 - `scripts/analyze_row_lift_bank.py`: exact small row-lift bank enumerator,
   spread checker, and certificate histogram;
+- `scripts/analyze_row_lift_sequential_loads.py`: legal-prefix enumeration and
+  activated assignment-load profiler for all four layer orders;
+- `scripts/search_row_lift_reservoirs.py`: exhaustive two- and three-row
+  reservoir search over finite certificate corpora;
 - `scripts/verify_no_three_certificate.py`: exact finite certificate verifier.
 
 ## Candidate absorber designs still viable
 
-- direction-pruned row-lift boundary banks spanning several new rows and columns;
+- direction-pruned or state-pruned row-lift boundary banks satisfying PP3j or
+  PP3l;
 - subgroup-coset blocks reserved across several outer strips;
 - Hall-type completion after structured shadow cleaning;
 - internally no-three spread banks on prepared reservoir states;
@@ -179,5 +193,6 @@ large enough for PP4, followed by a verified PP5 certificate set for the
 remaining side lengths. The current branch closes PP1, arbitrary-reservoir and
 spread-bank PP2 endpoints, deletion-aware one-strip averaging, and the
 interchangeable-state component of one structured PP3 reservoir. It still lacks
-geometric control of the row-lift support over a prime-gap-scale width and does
-not prove the no-three-in-line conjecture.
+geometric control that keeps either global certificates or sequential activated
+loads small over a prime-gap-scale width and does not prove the no-three-in-line
+conjecture.
