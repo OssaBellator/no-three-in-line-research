@@ -83,12 +83,14 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 71. **Sheared parabolic spread.** Linear shears preserve the no-three proof and produce explicit cell and nonaxis-pair spread, conditional on matching-admissible parameter density.
 72. **Complete width-two matching interface.** Every cross-only width-two matching patch is one of 36 ordered-partition states for each four-column/four-row matching reservoir.
 73. **Width-two finite obstruction.** All `80,731` internally clean cross-only width-two states in the stored `4<=n<=10` corpus retain at least one external triple.
-74. **One-rectangle repair criterion.** An alternating rectangle switch preserves saturation and has an exact secant/anchor cleanliness criterion.
-75. **Repaired finite extensions.** Exactly three stored width-two near misses admit one rectangle repair, giving `4 -> 6`, `5 -> 7`, and `6 -> 8` extensions.
-76. **Multi-rectangle Boolean bank.** Corner-disjoint alternating rectangles preserve saturation under every orientation assignment; potential triples form an exact rank-at-most-three CNF, reducing to 2-SAT at rank two.
-77. **Lossless two-switch filter.** After the first rectangle switch, untouched original triples must have a transversal of size at most two, giving a complete finite search reduction.
-78. **Two-switch finite gain.** Stored sources four, five, and six yield 9, 7, and 14 additional final configurations beyond one-switch repair.
-79. **Two-switch finite obstruction.** No stored width-two matching state from source side seven through ten admits any two sequential alternating rectangle repair.
+74. **Rectangle-trade SAT.** Protected rectangle orientations preserve saturation and their complete triple geometry is an exact rank-at-most-three CNF.
+75. **Depth-two finite classification.** Two switches give 9, 7, and 14 additional targets from stored sources 4, 5, and 6, but none from sources 7 through 10.
+76. **Unified binary trade CNF.** Rungs, reservoir cycles, rectangles, and tomographic trades with equal margins share one exact rank-three Boolean interface.
+77. **Multistate trade CSP.** Arbitrary finite equal-margin rung state sets give an exact rank-at-most-three forbidden-box problem.
+78. **Multistate first-moment endpoint.** Product bad-box expectation below one gives a valid saturated patch.
+79. **Multistate local-lemma endpoint.** Maximum bad-box probability `p` and dependency degree `D` satisfying `3p(D+1)<=1` give a valid patch.
+80. **Reverse-order rung separation.** Oppositely ordering old blocks and new intervals removes every cross-rung triple that repeats one movement/refill component.
+81. **Three-rung localization.** Internal rank-three clauses require three distinct rungs, and three clean components contribute at most a quadratic number of triples.
 
 ## What remains conditional
 
@@ -100,10 +102,10 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - A monotone carry-complexity potential or bounded-denominator chamber absorber.
 - A superregular resampling oracle and sparse algebraic `O(1/d)` spread.
 - A prime-minus-one preparation theorem installing roughly `m^0.05` mutually compatible parabolic rungs for the published prime-gap exponent, together with:
-  - positive-density matching-admissible sheared parameter tuples;
-  - satisfiable cycle-reservoir 2-SAT or PP2l joint mass below one;
-  - a protected rectangle family whose joint patch/trade CNF has bounded rank and occurrence;
-  - cross-rung compatibility.
+  - positive-density matching-admissible multistate sheared families;
+  - reverse old/new block ordering;
+  - rank-two bad-box control and sufficiently small three-rung bad-box probability or occurrence;
+  - protected trade variables clearing residual retained-core certificates.
 
 ## Important refutations
 
@@ -121,16 +123,15 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - Conditioning the complete small banks to internally clean components does not produce a clean pair at fully deleted widths `3,4,5`.
 - Deletion-cycle entropy alone cannot dilute a fixed external certificate.
 - Neither the 40-state unsheared nor 18,816-state sheared parabolic finite sweep contains a raw clean patch on the stored corpus.
-- Unstructured alternating-rectangle search to depth two gives no repair for the stored source sides seven through ten.
+- Unstructured rectangle repair of depth two produces no stored extension from source side seven onward.
 
 ## Bottom line
 
 There is no complete proof. The principal global bottleneck remains
 second-generation alternating-bank collateral and termination. Independently,
-the all-`n` prime-patching track now has exact fixed- and variable-reservoir
-interfaces, internally clean row-lift and parabolic banks, cycle and rectangle
-SAT selection criteria, a quantitative multi-rung budget, and verified
-patch-plus-trade gains. The missing theorem is asymptotic seed preparation:
-install matching reservoirs and protected trade variables whose joint CNF has
-bounded rank, bounded occurrence, and cross-rung compatibility over a total
-width large enough for unconditional prime-gap transfer.
+the all-`n` prime-patching track now has exact fixed-, variable-, binary-, and
+multistate reservoir interfaces; internally clean parabolic banks; a
+prime-gap-scale rung budget; reverse-order cross-rung localization; and exact
+trade/CSP solvers. The missing theorem is asymptotic seed preparation: construct
+a positive-density matching-admissible multistate ladder whose rank-two and
+three-rung bad boxes pass the new first-moment or bounded-dependency endpoints.
