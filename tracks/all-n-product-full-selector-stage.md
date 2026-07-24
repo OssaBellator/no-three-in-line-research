@@ -12,10 +12,10 @@ closures that genuinely require mixed selectors.
 |---|---|
 | PC1 | **COMPLETE.** Arbitrary blockwise digit maps preserve the four-regular host, and every spanning degree-two state is saturated and decomposes into two permutation layers. |
 | PC2 | **SUBSTANTIAL STRUCTURAL REDUCTION.** The complete side-two-outer host has normal form `Q^j T H^s P^i`; factor dependence is only the relative cycle type of `H`. The degree-two selector has an exact nine-state transfer matrix on every relative cycle. |
-| PC3 | **MIXED.** The arbitrary-map one-inner-layer family is completely classified through base side eight and fails at `3,6,7,8`. The full selector succeeds universally at base three and for the side-six 6-cycle factor class. |
-| PC4 | **THREE UNIVERSAL SPECIAL CLOSURES PLUS ONE FACTOR CLASS.** Products `2 x 3 -> 6`, `2 x 4 -> 8`, and `2 x 5 -> 10` are factor-independent. Product `2 x 6 -> 12` is proved for all side-six factors of relative 6-cycle type. No infinite multiplicatively closed family is known. |
+| PC3 | **EXACT THROUGH BASE SIX / MIXED BEYOND.** The arbitrary-map one-inner-layer family is completely classified through base side eight and fails at `3,6,7,8`. The full selector succeeds universally at bases three and six. |
+| PC4 | **FOUR UNIVERSAL SPECIAL CLOSURES.** Products `2 x 3 -> 6`, `2 x 4 -> 8`, `2 x 5 -> 10`, and `2 x 6 -> 12` are factor-independent. No infinite multiplicatively closed family is known. |
 | PC5 | **OPEN.** The special closures and finite witnesses do not imply arithmetic coverage. |
-| PC6 | **REFORMULATED AGAIN.** Full-selector feasibility is classified per relative cycle type and geometric parameters `T,P,Q`; repair/resampling remains open for arbitrary mixed selectors. |
+| PC6 | **REFORMULATED AGAIN.** Full-selector feasibility is classified per relative cycle type and geometric parameters `T,P,Q`; repair/resampling remains open at larger bases. |
 
 ## Full-host normal form
 
@@ -104,27 +104,17 @@ Counts multiply over the cycles of `H`. At side six this gives:
 The selector count is independent of `T,P,Q`; those permutations control the
 real-grid geometry and the collinearity constraints.
 
-## Side-six restricted obstruction and mixed success
+## Universal side-six closure
 
-PX52 reduces one-outer-layer states to two independently relabelled saturated
-factors of the same relative type. The 116 ordered side-six factors split as:
+The 116 ordered saturated side-six factors split exactly as follows:
 
-| Relative type | Count |
-|---|---:|
-| `(6)` | 84 |
-| `(4,2)` | 16 |
-| `(3,3)` | 16 |
+| Relative type | Count | Template theorem |
+|---|---:|---|
+| `(6)` | 84 | PX57 |
+| `(4,2)` | 16 | PX58 |
+| `(3,3)` | 16 | PX59 |
 
-PX53 exhausts all 60,544 one-outer-layer states and finds none no-three.
-
-The complete affine full-selector census then tests all
-
-\[
-3\cdot4\cdot12^3=20,736
-\]
-
-hosts with `T,P,Q` affine on `Z/6Z`. PX56 finds exactly one feasible host:
-relative type `(6)`, orientation `ff`, and
+The 6-cycle class uses the affine `ff` template
 
 \[
 T=(2,1,0,5,4,3),
@@ -132,31 +122,74 @@ T=(2,1,0,5,4,3),
 P=Q=(5,4,3,2,1,0).
 \]
 
-Its no-three state has permutation layers
+The missing `(4,2)` class is solved by the `cc` template
 
 \[
-(2,7,0,6,10,8,3,1,5,11,4,9),
+H=(1,4,5,0,3,2),
 \]
 
 \[
-(4,6,9,3,0,10,1,11,8,2,5,7).
+T=(4,5,0,1,2,3),
+\qquad
+P=(2,4,3,5,1,0),
+\qquad
+Q=(5,4,3,2,1,0),
 \]
 
-PX57 transports this same side-twelve certificate to all 84 ordered side-six
-factors of relative 6-cycle type. The selector uses both outer and both inner
-layers and is therefore genuinely mixed.
+with selected permutation layers
+
+\[
+(4,6,0,1,9,8,3,2,10,11,5,7),
+\]
+
+\[
+(6,9,3,4,1,11,0,10,7,8,2,5).
+\]
+
+The `(3,3)` class is solved by the crossed `cf` template
+
+\[
+H=(1,2,0,4,5,3),
+\]
+
+\[
+T=(1,3,4,2,0,5),
+\qquad
+P=(4,5,3,2,0,1),
+\qquad
+Q=(3,1,5,2,4,0),
+\]
+
+with layers
+
+\[
+(2,5,3,0,7,10,1,4,11,8,6,9),
+\]
+
+\[
+(5,8,2,7,10,11,0,1,4,9,3,6).
+\]
+
+PX50 transports each canonical host to every factor in its relative conjugacy
+class. PX60 therefore proves the factor-independent product
+
+\[
+\boxed{2\times6\longrightarrow12}.
+\]
+
+The `(4,2)` template uses a non-affine `P`, and the `(3,3)` template is also
+outside the all-affine census, so these results do not contradict PX56.
 
 ## Exact next targets
 
-1. **Remaining side-six cycle types.** Determine whether arbitrary `T,P,Q` give a
-   full-selector template for `(4,2)` or `(3,3)`. The affine family is already
-   proved empty for both.
-2. **Structured extension of the 6-cycle template.** Identify a map group or
-   recurrence containing the unique affine template and applicable at infinitely
-   many cycle lengths.
+1. **Larger-base cycle types.** Classify relative types occurring at base seven
+   and above, and find canonical full-selector templates that cover all of them.
+2. **Recursive closure.** Find a universal template at a side already produced by
+   the product theorems, such as side ten or twelve, so the construction can
+   iterate.
 3. **Geometric transfer refinement.** Enrich the nine-state selector transfer
    matrix with line or carry signatures so selector states and `T,P,Q` can be
-   searched jointly.
+   searched jointly at larger sides.
 4. **Repair/resampling.** Develop a conflict-aware theorem for the complete host
    normal form, distinguishing feasible cycle types from structured infeasible
    cores.
@@ -170,10 +203,14 @@ python scripts/verify_product_full_host_normal_form.py
 python scripts/verify_product_one_outer_layer_six.py
 python scripts/verify_product_selector_transfer.py
 python scripts/verify_product_affine_full_selector_six.py
+python scripts/verify_product_universal_side_six.py
 python scripts/verify_product_unrestricted_eight.py --orientation cc
 python scripts/verify_product_unrestricted_eight.py --orientation cf
 python scripts/verify_product_unrestricted_eight.py --orientation ff
 ```
 
-The crossed `fc` base-eight case follows from `cf` by scalar transposition. The
-overall no-three-in-line conjecture remains open.
+The universal side-six verifier enumerates all 116 ordered factors, checks the
+three relative-type populations, transports each canonical host, and verifies
+every side-twelve determinant. The crossed `fc` base-eight case follows from
+`cf` by scalar transposition. The overall no-three-in-line conjecture remains
+open.
