@@ -29,6 +29,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): claims that were corrected, weakened, or refuted.
 - [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected collision-aware bank theorem.
 - [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection theorem and local triple-load endpoint.
+- [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): six-cycle spread proof, dense superregular perfect-matching spread, and two-layer global conflict endpoint.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
@@ -59,8 +60,9 @@ The strongest current synthesis is:
 7. When a one-colour cycle is frozen, expand to its opposite-colour secant anchors.
 8. Control the alternating closure through quantitative one-, two-, and three-cell concentration certificates.
 9. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
+10. In dense superregular candidate hosts, use spread perfect-matching measures or the new six-cycle switching bound; the missing upgrade is a local dependency/resampling theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current geometric target is an alternating two-colour carry-core lemma. The new exact endpoint theorem says that once every row and column loses at most one percent of its cells and carries at most \(n^3/200\) residual collinear triples, a saturated no-three-in-line selection exists.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current geometric target is an alternating two-colour carry-core lemma. The exact complete-host endpoint is proved, and dense superregular pairs now admit rank-three and all-rank spread matching distributions. Spread alone, however, does not inherit the complete-permutation lopsided dependency graph.
 
 ## Running the checks
 
@@ -79,6 +81,8 @@ These programs are sanity checks, not proofs for arbitrary \(n\).
 
 - Ghosal, Goenka, Grebennikov, Keevash, Kwan, Pham, *No-\((k+1)\)-in-line problem for \(k\ge3\)*, arXiv:2607.05255.
 - Kovács, Nagy, Szabó, *Randomised algebraic constructions for the no-\((k+1)\)-in-line problem*, arXiv:2508.07632.
+- Nenadov, Pham, *Spread blow-up lemma with an application to perturbed random graphs*, arXiv:2410.06132.
+- Pham, Sah, Sawhney, Simkin, *A Toolkit for Robust Thresholds*, arXiv:2210.03064.
 - Glock, Joos, Kim, Kühn, Lichev, *Conflict-free hypergraph matchings*, arXiv:2205.05564.
 - Joos, Mubayi, Smith, *Conflict-free Hypergraph Matchings and Coverings*, arXiv:2407.18144.
 - Lu, Szekely, *A new asymptotic enumeration technique: the Lovasz Local Lemma*, arXiv:0905.3983.
@@ -91,7 +95,8 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
-- extend clone-space selection from complete to superregular candidate hosts;
+- build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
+- extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
 - classify frozen cycles and alternating anchor closures;
 - connect the carry filter to additive-combinatorial structure.
 
