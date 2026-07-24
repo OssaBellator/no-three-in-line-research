@@ -81,6 +81,14 @@ one- and two-anchor incidence identities without collapsing multiplicity
 on rich lines.  The remaining AC1 step is the arithmetic conversion of a
 large labelled family into one of the four target structures.
 
+[`alternating-core-anchor-link.md`](alternating-core-anchor-link.md) proves
+AC1c for the concentrated-anchor case. A rank-three anchor of degree
+\(D\) has either a second anchor of codegree greater than \(\Delta\), or
+an endpoint-disjoint star of size at least \(D/(2\Delta-1)\). The latter
+feeds AN3 directly; the remaining arithmetic step is to convert high pair
+codegree into a quotient, carry, or denominator label carrying current
+paid incidence.
+
 ## AC2 — Paid structural re-extraction
 
 ### Target statement
