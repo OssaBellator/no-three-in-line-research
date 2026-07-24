@@ -10,7 +10,7 @@ where `D(n)` is the maximum number of points that can be selected from an
 `n x n` integer grid with no three collinear.
 
 > **Status:** This repository does **not** contain a complete proof. The
-> conjecture remains open as of 24 July 2026. The notebook preserves proved
+> conjecture remains open as of 25 July 2026. The notebook preserves proved
 > lemmas, conditional reductions, failed pathways, counterexamples,
 > computational tools, and concrete next targets for independent checking.
 
@@ -25,10 +25,11 @@ where `D(n)` is the maximum number of points that can be selected from an
 - [`docs/02-reverse-scale-switching.md`](docs/02-reverse-scale-switching.md) through [`docs/07-failed-wall-pathway.md`](docs/07-failed-wall-pathway.md): switching, local banks, trades, absorbers, and failed wall expansion.
 - [`docs/08-hyperbola-interleaver.md`](docs/08-hyperbola-interleaver.md) through [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): modular hyperbolas, Möbius cycles, Tanner interpretations, and carry-cycle concentration.
 - [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md) through [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): clone-space selection, superregular spread, inverse-additive structure, and paid rectangle banks.
-- [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md) through [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): conic incidence, carry cells, perfect alignment, wrap centers, and alternating repair.
+- [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md) through [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): conic incidence, carry cells, perfect alignment, wrap centres, and alternating repair.
 - [`docs/27-all-n-prime-patching.md`](docs/27-all-n-prime-patching.md) through [`docs/55-matching-block-global-endpoint.md`](docs/55-matching-block-global-endpoint.md): boundary, row-lift, parabolic, width-two, variable-reservoir, trade-bank, and matching-block patching.
 - [`docs/56-random-matching-block-sparsification.md`](docs/56-random-matching-block-sparsification.md) through [`docs/71-global-slot-occurrence-endpoint.md`](docs/71-global-slot-occurrence-endpoint.md): random pool sparsification, square-root macro construction, source cleaning, conditional spread, and global occurrence budgets.
 - [`docs/72-same-edge-anchor-domain-pruning.md`](docs/72-same-edge-anchor-domain-pruning.md) through [`docs/77-one-sided-slab-cross-macro-separation.md`](docs/77-one-sided-slab-cross-macro-separation.md): refined anchor-safe domains, weighted event mass, grouped completion energy, coordinate correction, global label allocation, and slab separation.
+- [`docs/78-ore-balanced-global-allocation.md`](docs/78-ore-balanced-global-allocation.md) through [`docs/88-endpoint-derangement-first-moment.md`](docs/88-endpoint-derangement-first-moment.md): complementary-degree allocation, slab-optimal exponents, patch and anchor energy closure, controller-aware domains, blocker-resource extraction, and paid endpoint-permutation trades.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected, weakened, and refuted claims.
 
 ## Research discipline
@@ -46,54 +47,53 @@ structure a successful proof must exploit.
 
 ## Principal current pathways
 
-### Modular-hyperbola and alternating-neutralization route
+### Modular-hyperbola and alternating-neutralisation route
 
 The strongest repository-wide synthesis combines modular hyperbolas, Möbius
 cycle banks, weighted quotient extraction, carry dispersion, and alternating
-endpoint neutralization. Its main unresolved step is a second-order
+endpoint neutralisation. Its main unresolved step is a second-order
 concentration/termination theorem for the joint alternating bank, followed by a
 monotone carry potential or bounded-denominator absorber.
 
 ### All-`n` prime-patching route
 
-The independent prime-patching branch now reaches the published prime-gap scale
-internally.
-
-At the balanced exponents
+The independent prime-patching branch reaches the published prime-gap scale
+internally with the exponent-optimal disjoint square-root-macro balance
 
 ```text
-macro variables M = m^(23/80+o(1)) = m^0.2875
-source-pool size R = m^(19/40+o(1)) = m^0.475
-macro width W = Theta(sqrt(R))      = m^0.2375
-total width T=MW                    = m^0.525.
+macro variables M = m^(1/20+o(1))  = m^0.05
+source-pool size R = m^(19/20+o(1)) = m^0.95
+macro width W     = m^(19/40+o(1)) = m^0.475
+total width T=MW  = m^(21/40+o(1)) = m^0.525.
 ```
 
 The branch proves:
 
-- universal matching-pool supply from every saturated source;
+- universal slab matching-pool supply from every saturated source;
 - exact equal-margin restoration;
 - internally no-three square-root macro patches by a product-space local lemma;
 - conditioned fixed-rank spread `O(R^-q)`;
-- fixed-pair source cleaning through dense edge domains;
-- exact same-edge anchor factorization and label-dependent domain pruning;
-- a weighted global local-lemma endpoint charging incident probability mass;
-- grouped pair/triple completion-energy formulas;
-- saturation-compatible global ownership of all final new labels;
-- universal one-sided slab separation removing one high-probability cross-macro direction.
+- exponent optimality of the `M,R,W` balance within disjoint square-root macros;
+- saturation-compatible use of all final numerical labels;
+- complementary-degree global allocation criteria, weaker than separate `T/2` minimum degrees;
+- controller-aware unary source safety that includes unselected active-pool edges;
+- `o(1)` incident mass for every patch-only cross-macro event;
+- `o(1)` incident mass for every ordinary two-slot source-anchor event;
+- blocker-star or resource-matching structure from positive controller-shadow failure;
+- exact removal-credit minus insertion-cost identities for endpoint-permutation trades;
+- a spread-derangement first-moment endpoint for source validity and collateral.
 
-A key correction is also recorded: unused numerical candidate labels are not
-free. Selecting `W<L` coordinates from an `L`-coordinate interval leaves the
-other final rows and columns unsaturated, and arbitrary compression need not
-preserve collinearity. The valid replacement assigns **all** `T=MW` final new
-rows and columns globally among the macros.
+A key correction is that fixed-core safe domains do not automatically handle
+blocker pairs using unselected matching-pool edges. The correct domain allows a
+candidate value only when every blocker pair through its inserted cells contains
+the selected controller edge, which is deleted.
 
-The remaining bottleneck is now quantitative:
+The weighted rank-two/rank-three completion-energy side is now closed at the
+slab-optimal scale. The remaining bottleneck is one controller-shadow conversion
+theorem:
 
-1. prove a balanced global refined-label ownership and perfect matching, or
-   exploit the resulting boundary-shadow, Hall, exact bad-incidence, and
-   divisor-energy concentration with protected trades;
-2. after source cleaning and slab cancellation, prove grouped ordinary-anchor
-   and residual cross-macro event mass at most `1/48-o(1)` at every slot.
+1. prove the controller-aware global label graphs satisfy the complementary-degree allocation criterion; or
+2. convert the forced blocker star or resource matching into a source-admissible endpoint, rectangle, or tomographic trade whose inserted shadow is below its paid removal credit.
 
 The focused theorem statements and exact formulas are in
 [`proofs/prime-patching-recent-index.md`](proofs/prime-patching-recent-index.md).
@@ -114,6 +114,7 @@ python scripts/analyze_full_width_two_block_bank.py certificates/prime-patching-
 python scripts/check_weighted_slot_mass.py experiments/weighted-slot-mass-example.json
 python scripts/analyze_same_edge_anchor_domains.py certificates/prime-patching-small.json --labels 12 --gamma 1/3 --epsilon 1/6 --output /tmp/refined-labels.json
 python scripts/check_oversampled_label_matching.py /tmp/refined-labels.json
+python scripts/check_global_label_ore.py experiments/global-label-ore-example.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for
@@ -138,11 +139,12 @@ arbitrary `n` unless paired with a proved finite classification.
 A useful contribution should do at least one of the following:
 
 - verify or repair a result tagged **PROVED**;
-- prove balanced global refined-label allocation at the macro scale;
-- bound grouped pair/triple completion energy below the weighted slot threshold;
-- regularize a boundary-shadow, Hall, bad-incidence, or divisor-energy concentration;
-- build protected rectangle, cycle, or tomographic trades around the concentrated core;
-- prove the second-order concentration theorem for the alternating-neutralization bank;
+- prove complementary-degree allocation for the controller-aware label graphs;
+- bound or regularise the noncontroller blocker shadow of slab matching pools;
+- convert the blocker-star or resource-matching alternative by an endpoint,
+  rectangle, cycle, or tomographic trade;
+- improve the spread-derangement collateral bound on the extracted endpoint rectangle;
+- prove the second-order concentration theorem for the alternating-neutralisation bank;
 - construct a monotone carry-signature potential or bounded-denominator absorber;
 - build a superregular perfect-matching resampling oracle.
 
