@@ -31,7 +31,7 @@ t=(2,4,0,3,1),
 
 the unique `ff` one-inner-layer reversal permutation from PX30.
 
-## Theorem PX33 -- PROVED
+## Theorem PX34 -- PROVED
 
 The symmetric group on five symbols is the disjoint union
 
@@ -85,7 +85,7 @@ each element of the double coset has four pairs `(alpha,beta)` representing it.
 
 ## 2. Affine permutations cannot occur as factor layers
 
-### Lemma PX33a -- PROVED
+### Lemma PX34a -- PROVED
 
 The real graph in `[5]^2` of every permutation in `H` contains three collinear
 points.
@@ -121,7 +121,7 @@ Take the saturated side-two outer factor
 \]
 
 Let `(tau_0,tau_1)` be an arbitrary saturated no-three side-five factor. Choose
-either layer `tau=tau_s`. By PX33 and PX33a, there exist
+either layer `tau=tau_s`. By PX34 and PX34a, there exist
 
 \[
 \alpha_0,\beta_0\in H
@@ -149,7 +149,7 @@ and define the second block maps by
 
 Use the `ff` orientation and the PX28 one-inner-layer state based on `tau`.
 
-## Theorem PX34 -- PROVED
+## Theorem PX35 -- PROVED
 
 For every saturated no-three side-five factor and either one of its two
 permutation layers, the displayed affine block maps produce a saturated
@@ -222,12 +222,12 @@ Given the side-five factor:
 3. set `alpha_1=rho alpha_0` and `beta_1=rho beta_0`;
 4. output the PX28 `ff` state.
 
-PX33 guarantees exactly four valid affine pairs. The search is constant-size;
+PX34 guarantees exactly four valid affine pairs. The search is constant-size;
 the coordinate output is linear in the 20 resulting cells.
 
 ## 5. Boundary
 
-PX34 is the first factor-independent closure statement in this branch, but it
+PX35 is the first factor-independent closure statement in this branch, but it
 covers only the single multiplication `2 x 5`. It does not iterate by itself:
 no corresponding affine double-coset theorem is known for arbitrary `n`, and
 the one-inner-layer reversal census is empty at base sides 3, 4, 6, 7, and 8.
