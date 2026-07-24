@@ -64,6 +64,39 @@ def epsilon(
     ) / lower(n, first_rank, second_rank)
 
 
+def verify_linear_hole_ceiling(maximum_n: int = 36) -> None:
+    for n in range(2, maximum_n + 1):
+        for first_rank in range(n + 1):
+            for second_rank in range(n + 1):
+                if n < max(
+                    2,
+                    2 * second_rank,
+                    second_rank + 2,
+                    first_rank + second_rank + 1,
+                ):
+                    continue
+                denominator = n - first_rank - second_rank
+                base = lower(n, first_rank, second_rank)
+                first_ratio = (
+                    crude_upper(n, first_rank + 1, second_rank) / base
+                )
+                second_ratio = (
+                    crude_upper(n, first_rank, second_rank + 1) / base
+                )
+                assert first_ratio <= Fraction(3, denominator)
+                assert second_ratio <= Fraction(6, denominator)
+                for missing_size in range(n + 1):
+                    assert epsilon(
+                        n,
+                        missing_size,
+                        first_rank,
+                        second_rank,
+                    ) <= Fraction(
+                        9 * missing_size,
+                        denominator,
+                    )
+
+
 def globally_compatible(cylinder: Cylinder) -> bool:
     edges = cylinder[0] + cylinder[1]
     return (
@@ -221,7 +254,8 @@ def verify(n: int = 4) -> None:
 
 def main() -> None:
     verify()
-    print("two-layer sparse-hole locality: K4,4 regressions passed")
+    verify_linear_hole_ceiling()
+    print("two-layer sparse/linear-hole locality: regressions passed")
 
 
 if __name__ == "__main__":

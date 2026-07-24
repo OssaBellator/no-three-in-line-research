@@ -153,6 +153,131 @@ Finally, \(L_N(a,b)\) and \(V_N(a,b)\) are
 factor, so \(\varepsilon_Q(a,b)=O_{a,b}(t/N)=o(1)\).  SRR3e supplies
 the other \(1+O(N^{-1})\) factor. \(\square\)
 
+## SRR3h -- explicit linear-hole locality window
+
+The exact error in SRR3g has a rank-uniform elementary upper bound.
+
+### Theorem SRR3h -- PROVED
+
+Assume
+
+\[
+N\geq\max\{2,2b,b+2,a+b+1\}.
+\]
+
+Then
+
+\[
+\boxed{
+\frac{V_N(a+1,b)}{L_N(a,b)}
+\leq
+\frac3{N-a-b},
+}
+\]
+
+\[
+\boxed{
+\frac{V_N(a,b+1)}{L_N(a,b)}
+\leq
+\frac6{N-a-b},
+}
+\]
+
+and therefore every missing set \(Q\) of size \(t\) satisfies
+
+\[
+\boxed{
+\varepsilon_Q(a,b)
+\leq
+\frac{9t}{N-a-b}.
+}
+\]
+
+In particular, SRR3g applies whenever \(9t<N-a-b\).  For remote
+cylinders \(F,B\) of ranks \((k_1,k_2)\) and \((s_1,s_2)\), under the
+compatibility assumptions of SRR3g, the displayed rank conditions, and
+
+\[
+9t<N-k_1-k_2,
+\qquad
+9t<N-s_1-s_2,
+\]
+
+the following holds:
+
+\[
+\boxed{
+\frac{\mu_Q(B\mid F)}{\mu_Q(B)}
+\leq
+\frac{
+U_N(k_1+s_1,k_2+s_2)
+}{
+L_N(k_1,k_2)L_N(s_1,s_2)
+}
+\frac1{
+\left(1-\frac{9t}{N-k_1-k_2}\right)
+\left(1-\frac{9t}{N-s_1-s_2}\right)
+}.
+}
+\]
+
+Thus, for fixed ranks and \(t/N\leq c<1/9\), the remote-correlation
+inflation is uniformly \(O_c(1)\), with
+
+\[
+\limsup_{N\to\infty}
+\frac{\mu_Q(B\mid F)}{\mu_Q(B)}
+\leq
+\frac1{(1-9c)^2}.
+\]
+
+### Proof
+
+The union bound for \(b\) forbidden positions in a permutation of
+\(N-a\) points gives
+
+\[
+D(N-a,b)
+\geq
+(N-a)!-b(N-a-1)!
+=
+(N-a-b)(N-a-1)!.
+\]
+
+Also \(!m\geq m!/3\) for \(m\geq2\), directly from the alternating
+series
+\(!m/m!=\sum_{j=0}^m(-1)^j/j!\).  Substitution in the first ratio gives
+
+\[
+\frac{(N-a-1)!(N-b)!}
+{D(N-a,b)\,!(N-b)}
+\leq
+\frac3{N-a-b}.
+\]
+
+For the other layer,
+
+\[
+\frac{(N-a)!(N-b-1)!}
+{D(N-a,b)\,!(N-b)}
+\leq
+\frac{3(N-a)}
+{(N-a-b)(N-b)}.
+\]
+
+If \(a\geq b\), the last extra ratio is at most one.  If \(a<b\), the
+hypothesis \(N\geq2b\) gives
+\((N-a)/(N-b)\leq N/(N-b)\leq2\).  This proves the first three boxes.
+Insert those bounds for the two SRR3g errors to obtain the correlation
+estimate.  For fixed ranks the complete-host \(U/L/L\) factor tends to
+one, proving the limit. \(\square\)
+
+SRR3h extends arbitrary-hole control from \(o(N)\) holes with
+\(1+o(1)\) locality to a small linear number of holes with explicit
+constant locality.  It does not make that constant tend to one when
+\(t/N\) stays positive, and it still does not reach the
+\(\Theta(N^2)\)-hole superregular regime.
+
 ## Resampling consequence
 
 The empty-cylinder bound \(\varepsilon_Q(0,0)<1\) guarantees that the
@@ -168,10 +293,16 @@ noncreation property combined with SRR3g proves the full fixed-rank
 two-layer remote locality for every arbitrary missing set of size
 \(o(N)\).
 
-The unresolved superregular regime may therefore be assumed to have a
-linear or larger total number of holes.  This still does not handle the
-\(\Theta(N^2)\) missing cells allowed by dense superregularity.
+SRR3h additionally gives bounded remote inflation and
+\(\Omega(N)\) stationary choices for \(|Q|\leq cN\), \(c<1/9\).
+The unresolved superregular regime may therefore be assumed to lie
+beyond this explicit linear-hole window when bounded locality is enough.
+Near-independence at positive linear density and the
+\(\Theta(N^2)\) missing cells allowed by dense superregularity remain
+open.
 
 `scripts/verify_two_layer_sparse_hole_locality.py` exhaustively checks
 the complete cylinder bounds, conditional avoidance estimate, and host
-remote ratio on \(K_{4,4}\) with arbitrary small hole sets.
+remote ratio on \(K_{4,4}\) with arbitrary small hole sets.  It also
+checks both elementary ratio bounds and the \(9t/(N-a-b)\) error ceiling
+through a range of ranks and ambient sizes.

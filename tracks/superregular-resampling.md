@@ -139,6 +139,16 @@ whenever the arbitrary missing set has size \(t=o(N)\). Together with
 SRR3f's \(N-2t-3\) stationary choices, this completes the two-layer
 oracle throughout the sparse-hole regime.
 
+The same note proves SRR3h, the explicit bound
+\[
+\varepsilon_Q(a,b)\leq\frac{9|Q|}{N-a-b}.
+\]
+Hence arbitrary hole geometry of size \(|Q|\leq cN\), \(c<1/9\), still
+has \(O_c(1)\) fixed-rank remote inflation and linearly many stationary
+switches. This is a genuine linear-hole extension, although the
+inflation is not \(1+o(1)\) at fixed positive \(c\) and the
+quadratically many holes of a general superregular host remain open.
+
 ## SRR3 — Two-layer exact-cover extension
 
 ### Target statement
