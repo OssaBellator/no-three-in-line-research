@@ -179,9 +179,9 @@ def analyze(core: tuple[Point, ...], m: int, t: int) -> dict[str, Any]:
         "criterion_passes": load <= Fraction(1, 24),
         "robust_bounds_pass": (
             t >= 100
-            and m_star <= t / 100
-            and pi_star <= t * t / 400
-            and tau_star <= t * t * t / 400
+            and 100 * m_star <= t
+            and 400 * pi_star <= t * t
+            and 400 * tau_star <= t * t * t
         ),
     }
 
