@@ -76,12 +76,14 @@ The numbering is local to this repository.
 | SR3 | All-rank spread distribution on dense superregular perfect matchings | PUBLISHED THEOREM | `docs/16-superregular-clone-selection.md` |
 | SR4 | Spread distribution on two edge-disjoint perfect-matching layers | PROVED FROM SR3 | `docs/16-superregular-clone-selection.md` |
 | SR5 | Global conflict-mass endpoint for saturated two-layer selection | PROVED | `docs/16-superregular-clone-selection.md` |
+| SAS1a | Sparse complete-block hosts have an all-rank product matching measure | PROVED | `tracks/sparse-block-host-spread.md` |
 | SAS2a | Linear four-cycle switch count gives \(O(1/d)\) edge spread | PROVED | `tracks/sparse-four-cycle-switching.md` |
 | SAS2b | General labelled switching ratio bounds one-edge probability | PROVED | `tracks/sparse-general-switching-ratio.md` |
 | SAS3a | Conditional edge bounds imply fixed-rank sparse spread | PROVED | `tracks/sparse-spread-composition.md` |
 | SAS3b | The sparse switching ratio persists under compatible conditioning | PROVED | `tracks/sparse-four-cycle-switching.md` |
 | SAS3c | General labelled switching ratios persist under conditioning | PROVED | `tracks/sparse-general-switching-ratio.md` |
 | SAS4a | Conditional two-layer spread composes to \((2C/d)\)-spread | PROVED | `tracks/sparse-spread-composition.md` |
+| SAS4b | Residual block derangements give conditional all-rank two-layer spread | PROVED | `tracks/sparse-block-host-spread.md` |
 | SAS5a | Global conflict-mass criterion yields a saturated 2-factor | PROVED | `tracks/sparse-spread-composition.md` |
 | I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |

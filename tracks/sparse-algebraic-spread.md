@@ -30,6 +30,22 @@ Identify explicit, checkable hypotheses on a balanced bipartite graph `G` of deg
 
 The hypotheses must be strong enough to imply a perfect matching and stable under deleting one previously sampled perfect matching.
 
+### Explicit sparse block host
+
+[`sparse-block-host-spread.md`](sparse-block-host-spread.md) proves SAS1a
+and SAS4b for
+
+\[
+G_{b,d}=\bigsqcup_{\ell=1}^b K_{d,d}.
+\]
+
+Independent uniform block permutations have all-rank \((3/d)\)-spread.
+After deleting the first matching, independent uniform derangements have
+conditional all-rank \((9/d)\)-spread, so the two-layer union is a simple
+saturated 2-factor with \((18/d)\)-spread. This resolves the measure and
+deletion-stability parts of SAS1--SAS4 for a concrete \(d=o(N)\) host
+family. It does not supply the SAS5 geometric triple count.
+
 ### Checkable sufficient switching hypothesis
 
 [`sparse-four-cycle-switching.md`](sparse-four-cycle-switching.md)
@@ -125,6 +141,9 @@ second layer has conditional `C/d` spread after `M_1`. Thus the sole
 remaining SAS4 issue is the host-stability/measure construction needed to
 supply that conditional hypothesis.
 
+SAS4b supplies that construction explicitly for the sparse block host,
+using the exact derangement space after the first matching is deleted.
+
 ## SAS5 — Geometric conflict endpoint
 
 ### Target statement
@@ -175,6 +194,8 @@ upgrade).
 ratio and the degree-two cycle with no four-cycle switch.
 `scripts/verify_general_switching_ratio.py` exhaustively checks the
 labelled forward/reverse theorem, including parallel descriptions.
+`scripts/verify_sparse_block_host.py` checks all complete-block and
+derangement cylinders through block size six.
 
 ## Completion criterion
 
