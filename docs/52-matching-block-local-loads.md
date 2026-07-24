@@ -133,10 +133,12 @@ canonical four-edge states.  It reports:
 - the exact average local triple count;
 - the number of locally clean states.
 
-For the stored full matching layers, the PP3ca bound is never below one.  This is
-consistent with the criterion being sufficient rather than necessary: every
-stored layer still has at least one clean state, while the coarse union bound
-ranges from `3` to more than `13`.
+For the stored full matching layers, PP3ca certifies both side-four layers with
+bound zero.  From side five onward the upper bound is above one, although every
+stored layer still has clean states and several exact average triple counts are
+below one.  The criterion is therefore sufficient rather than necessary, and
+the union bound can substantially overpay for rank restrictions and retained
+point requirements.
 
 ## 5. Asymptotic use
 
