@@ -74,9 +74,21 @@ This index collects the product/composition results on
 | PX67 | Every bad rectangle triple is destroyed at least `3(n-4)` times across the complete column-transposition bank | PROVED | `docs/55-rectangle-transposition-decoder.md` |
 | PX68 | Column transpositions cover every outside point once and every nontrivial inserted pair at most once | PROVED | `docs/55-rectangle-transposition-decoder.md` |
 | PX69 | Rectangle transpositions give an exact improvement-or-one/two-point-shadow inequality | PROVED | `docs/55-rectangle-transposition-decoder.md` |
+| PX70 | A primitive-height-`h` line meets one rectangle corner block at most `1+2n/h` times | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX71 | Transversal completion codegree decays inversely with rectangle-pair primitive height | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX72 | Low-height rectangle pairs can have full-order `Theta(n^3)` transversal codegree | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX73 | Height filtering gives the exact rank-two/rank-three conflict tradeoff | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX74 | The side-eight all-transposition class has no bit-affine full-selector template, even with arbitrary `P` | PROVED FINITE | `docs/56-bit-affine-transposition-obstruction.md` |
+| PX75 | Affine rectangle states avoid every prescribed direction satisfying the unit-slope condition | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
+| PX76 | Rough moduli admit a slope protecting any finite prescribed direction set | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
+| PX77 | Rough moduli admit factor-compatible rectangle states protecting all directions through height `H` | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
+| PX78 | Additive-coset shifts install exponentially many independent protected rectangle states | PROVED | `docs/58-protected-rectangle-coset-absorbers.md` |
+| PX79 | Constant normalized coset certificate load implies an exact protected no-three state | PROVED | `docs/59-protected-coset-local-load-barrier.md` |
+| PX80 | The direct protected `Z_25` coset bank violates the PX79 load threshold by more than sixteen thousand | PROVED FINITE | `docs/59-protected-coset-local-load-barrier.md` |
 
 The branch has exact factor-independent product theorems for `2 x 3`, `2 x 4`,
 `2 x 5`, and `2 x 6`, together with an all-side `O(n log n)` approximate
-doubling theorem and a transposition decoder. Exact infinite multiplicative
-closure now reduces to absorption of the resulting logarithmic one-point or
-bank-pair shadow concentration; arithmetic coverage remains open.
+doubling theorem, an all-side transposition decoder, and a low-direction
+protection/absorber framework. Exact infinite multiplicative closure now
+reduces to absorbing logarithmic shadow concentration or proving a protected
+spread theorem; arithmetic coverage remains open.
