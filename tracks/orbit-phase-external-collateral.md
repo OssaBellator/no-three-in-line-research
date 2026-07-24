@@ -442,6 +442,14 @@ witnesses, to a carry/coset/denominator kernel or a new
 residual-disjoint family.  No further generic additivity, payment, or
 external-collateral lemma is missing.
 
+[`orbit-phase-paid-witness-localization.md`](orbit-phase-paid-witness-localization.md)
+performs the next finite routing step.  OP3g--OP3i separate paid wide
+supports and localize bounded high-degree corrections to
+variable-overlap stars, single-factor stars, or variable-rooted factor
+fans, with repeated-literal refinements and explicit global payment.
+Only the arithmetic classification of the resulting carry-decorated
+kernels and fans remains.
+
 `scripts/verify_phase_external_collateral.py` exhausts small action
 projections against the original canonical checks, verifies hard
 legality and weighted soft-potential identities, checks joint

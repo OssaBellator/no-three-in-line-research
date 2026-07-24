@@ -222,8 +222,18 @@ and has exactly additive drift.  Weighted Caro--Wei extraction either
 returns an executable batch with a quantified share of the individual
 gain or retains more than half of that gain on degree-at-least-\(D\)
 candidates.  Every high-conflict edge keeps an explicit shared-variable
-or check-scope witness.  The remaining problem is to classify those
-paid edge witnesses arithmetically.
+or check-scope witness.
+
+[`orbit-phase-paid-witness-localization.md`](orbit-phase-paid-witness-localization.md)
+proves OP3g--OP3i and organizes those witnesses without losing their
+payment.  For \(D>s\,t(t-1)\), every degree-at-least-\(D\) correction
+of support at most \(s\) has a size-\(t\) variable-overlap star,
+single-factor star, or variable-rooted factor fan.  Bounded phase
+alphabets refine these to repeated action or forbidden literals.  After
+OP3f, either wide corrections retain more than \(G/4\), or one fixed
+localized certificate type retains more than \(G/12\).  The remaining
+problem is arithmetic classification of the carry/coset/denominator
+labels on those paid kernels and fans.
 
 ## OP4 — Product-state completion
 
@@ -267,6 +277,8 @@ rank-at-most-three action CSP with all external collateral retained.
 OP3d--OP3f make bounded corrections scope-complete and extract a
 weighted independent batch unless paid gain concentrates on witnessed
 high-conflict candidates.
+OP3g--OP3i localize that concentrated gain to wide supports or one paid
+class of repeated-literal correction kernels and factor fans.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -314,7 +326,10 @@ residual loads, and exact phase averaging are checked by
 `scripts/verify_phase_literal_star_router.py`.  Exact action projection,
 external hard/soft collateral, scope-complete correction batches, and
 weighted high-conflict extraction are checked by
-`scripts/verify_phase_external_collateral.py`.
+`scripts/verify_phase_external_collateral.py`.  Paid witness
+localization, literal refinement, the wide-support escape, and the
+factor-fan counterexample are checked by
+`scripts/verify_phase_paid_witness_localization.py`.
 
 ## Completion criterion
 

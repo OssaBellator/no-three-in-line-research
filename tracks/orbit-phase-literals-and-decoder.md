@@ -166,3 +166,11 @@ corrections are audited on their complete supports and may be batched
 through a scope-complete primal graph; weighted extraction either
 returns an executable additive-gain batch or a paid high-conflict
 family with an explicit variable/check witness for every edge.
+
+[`orbit-phase-paid-witness-localization.md`](orbit-phase-paid-witness-localization.md)
+proves OP3g--OP3i.  Every bounded-support high-degree centre yields a
+variable-overlap star, single-factor star, or variable-rooted factor
+fan, and bounded alphabets refine these to repeated action or forbidden
+literals.  The weighted organizer keeps either more than \(G/4\) on
+wide corrections or more than \(G/12\) on one localized certificate
+type.

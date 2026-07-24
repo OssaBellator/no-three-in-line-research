@@ -449,8 +449,15 @@ closes the formal part of both remaining interfaces.  OP2n converts a
 residual-disjoint arm family into an exact canonical action CSP, keeping
 every external hard check and weighted soft factor.  OP3d--OP3f audit
 bounded corrections on their complete supports and batch them only
-through a scope-complete primal graph.  The remaining work is the
-arithmetic classification of its paid high-conflict output.
+through a scope-complete primal graph.
+
+[`orbit-phase-paid-witness-localization.md`](orbit-phase-paid-witness-localization.md)
+proves OP3g--OP3i for the resulting high-conflict output.  Bounded
+centres return a paid variable-overlap star, single-factor star, or
+variable-rooted factor fan; wide supports remain a separate paid
+output.  Phase pigeonholing exposes repeated action or forbidden
+literals.  The remaining work is arithmetic classification of the
+carry/coset/denominator labels on these explicit kernels and fans.
 
 For the alternating-core interface, a large hard active-literal family
 now has a canonical interpretation.  Each target literal is either
