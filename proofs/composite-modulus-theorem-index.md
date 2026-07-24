@@ -97,5 +97,10 @@ This ledger collects the results specific to
 | CMR67 | All-shift nonsquare reciprocals form a balanced no-three family for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
 | CMR68 | Recursive first-separation depth gives a product collinearity bound | PROVED | `docs/57-prime-power-first-separation-sum.md` |
 | CMR69 | First-separation certificates sum to a subcubic bound generally and \(O_p(N^2\log N)\) for \(p\equiv1\pmod4\) | PROVED | `docs/57-prime-power-first-separation-sum.md` |
+| CMR70 | Layer-transverse recursive triples have full-depth probability at most \(1/N\) | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
+| CMR71 | The logarithmic recursive syndrome is confined to layer-aligned closest pairs | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
+| CMR72 | Recursive pair codegrees are stratified by layer and p-adic closeness | PROVED | `docs/58-prime-power-layer-transverse-certificates.md` |
+| CMR73 | A binary closest pair pays an additional \(1/h\) separation-node factor | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
+| CMR74 | Exact clustering counts give \(\mathbb ET_k<4kN^2+(p+2)N^2/3\) | PROVED | `docs/59-prime-power-binary-cluster-sum.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
