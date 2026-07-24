@@ -336,9 +336,9 @@ The former “rank-three ledger integration” obligation is now closed.
    role-disjoint.
 
 What remains arithmetic is the treatment of the bounded recurrent
-blocker fibre, together with the already named source-factor payment,
-RI5 conversion, action-kernel, and wide-CSP frontiers.  OP4k does not
-claim that a recurrent blocker fibre is itself absorbable.
+blocker fibre, the OP4l paid off-core/Hall-reuse defect outputs, RI5
+conversion, action-kernel, and wide-CSP frontiers.  OP4k does not claim
+that a recurrent blocker fibre is itself absorbable.
 
 `scripts/verify_phase_blocker_ledger.py` exhausts abstract fibre
 occupancies up to the divisor cap, checks the growth and recurrence

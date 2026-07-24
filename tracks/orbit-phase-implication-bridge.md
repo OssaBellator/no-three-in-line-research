@@ -384,13 +384,19 @@ The protected-bank obstruction now follows a lossless decision tree.
 
 The remaining frontiers are now precise.
 
-1. **Source-factor participation.**  Transfer current protected-bank
-   payment to the source factors of a failed OP4h bicycle.
+1. **Syndrome payment and off-core routing.**
    [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
    proves that bank weights do not transfer by logic alone.  With
    factor-conservative edge weights, its OP4i gate already returns
    complete rational-orbit density, one-sided completion deficits, a
    heavy repeated factor, or product-carry growth.
+   [`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md)
+   proves OP4l: at least one third of rank-three correction gain enters
+   current source factors, a capacitated Hall failure returns paid
+   repeated defects, and any selected bicycle either receives half of
+   that payment or leaves the other half on explicit off-core current
+   defects.  The remaining task is arithmetic routing of the off-core
+   and Hall-reuse outputs.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
@@ -435,3 +441,7 @@ non-single-channel factor for \(p=11\).
 `scripts/verify_phase_blocker_ledger.py` checks OP4k's exact token
 growth, recurrence bounds, weighted capacity gate, and separation by
 snapshot and geometric role.
+
+`scripts/verify_phase_syndrome_payment.py` checks OP4l's proportional
+payment, capacitated Hall alternative, repeated-defect bound, and
+bicycle/off-core split.

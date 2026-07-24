@@ -56,6 +56,9 @@ geometry realizes the four-clause core.  It proves that OP4a--OP4d
 alone cannot manufacture paid geometric incidence.  A positive paid
 theorem must import a source-factor participation statement from the
 current syndrome accounting.
+[`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md)
+provides exactly that input, with a paid off-core alternative when the
+selected bicycle does not participate.
 
 ## Factor-conservative occurrence weights
 
@@ -318,9 +321,12 @@ input on which that remaining conversion must operate.
 
 The fixed-edge frontier now has four explicit gates.
 
-1. Protected-bank gain must first be transferred to source factors by
-   a current-syndrome participation theorem.  Proposition OP4i.0 shows
-   this cannot come from 2-SAT logic.
+1. Proposition OP4i.0 shows that protected-bank gain cannot transfer
+   to one selected bicycle by 2-SAT logic alone.
+   [`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md)
+   proves the exact replacement: OP4l pays at least \(G/3\) on current
+   rank-three source factors, then returns factor-conservative bicycle
+   occurrences or a comparably paid off-core defect family.
 2. Exact channel-pair localization costs the displayed factor \(P\);
    many channel pairs may instead be retained as a root/channel
    complexity output.

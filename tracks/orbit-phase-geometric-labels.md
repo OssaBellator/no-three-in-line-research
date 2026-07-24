@@ -382,9 +382,11 @@ output.
    product-carry router.
 3. A root or literal mismatch retains, edge by edge, the exact
    product signatures and cross-carry levels of its source factors.
-   What remains is to aggregate and pay those records across many
-   failed bicycles; no factor-level arithmetic classification is
-   missing.
+   [`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md)
+   supplies the exact payment gate: either the selected bicycle keeps
+   factor-conservative current-defect weight or a comparable payment
+   escapes to explicit off-core current factors.  What remains is the
+   arithmetic routing of that escape family.
 4. The audit is exact but can be exponential when the source
    provenance does not orient its secants.  A polynomial orientation
    theorem would improve the decoder runtime, but is not needed for
@@ -400,7 +402,7 @@ product-carry growth.
 
 The next independent endpoints are therefore the RI5
 row-column-preserving conversion of the dense fixed-edge output and the
-source-factor participation theorem needed to pay failed bicycles.
+OP4l routing of paid off-core or Hall-reuse defect families.
 The formerly separate rank-three ledger obligation is closed by
 [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md);
 its remaining output is one bounded current recurrent blocker fibre.

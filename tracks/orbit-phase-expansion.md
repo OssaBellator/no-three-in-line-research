@@ -69,10 +69,10 @@ law, and its cross/product-carry routes; a three-channel factor supplies
 three mixed product-carry routes.  An exact bicycle audit then either
 constructs globally consistent literal labels for OP4e or returns a
 root/literal mismatch with all source carry records retained.  Uniform
-arithmetic control is still open at the source-factor participation
-needed to pay those returned records, the RI5 fixed-edge conversion,
-bounded recurrent rank-three blocker fibres, action-literal kernels,
-and wide action CSPs.
+arithmetic control is still open at the OP4l routing of paid off-core
+or Hall-reuse current defects, the RI5 fixed-edge conversion, bounded
+recurrent rank-three blocker fibres, action-literal kernels, and wide
+action CSPs.
 
 [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
 proves OP4i and the payment boundary.  Protected-bank correction weight
@@ -107,6 +107,17 @@ weight above the old-token capacity forces a heavy factor or new-token
 growth.  The combined fan/blocker ledger obeys the same exact OP3b
 finite-descent rank with the sum of the two role-tagged signature
 capacities.
+
+[`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md)
+proves OP4l and closes the generic correction-gain payment gap.  If
+the improving protected corrections have total gain \(G\), normalized
+proportional charging places at least \(G/3\) on current rank-three
+source factors without exceeding their syndrome weights.  A
+capacitated Hall theorem either pays all of \(G\) or exposes a
+quantified repeated-defect overload.  For any selected implication
+bicycle, at least half of the retained payment lies on its
+current-defect source factors or more than half survives on explicit
+off-core current defects.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -406,6 +417,9 @@ divisor-controlled product-carry signature growth.
 OP4k admits the exact rank-three profile/signature records to the
 role-tagged state ledger and localizes every no-growth return to a
 bounded current recurrent blocker fibre.
+OP4l transfers a sharp universal fraction of correction gain to
+current source factors and returns factor-conservative bicycle
+occurrences or a paid off-core/Hall-reuse defect family.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -474,6 +488,9 @@ completion deficits, and repetition are checked by
 dispersion is checked by `scripts/verify_phase_rank_three_router.py`.
 Rank-three state-ledger growth, recurrence, and weighted capacity are
 checked by `scripts/verify_phase_blocker_ledger.py`.
+Current-syndrome proportional payment, capacitated Hall deficiency,
+and the bicycle/off-core gate are checked by
+`scripts/verify_phase_syndrome_payment.py`.
 
 ## Completion criterion
 
