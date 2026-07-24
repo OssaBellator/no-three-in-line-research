@@ -39,7 +39,7 @@ For every orientation and every
 use the row-pattern normal form of PX65--PX66.  The exact selector search absorbs
 all `8!` choices of `P` while considering every spanning degree-two state.
 
-## Theorem PX74 -- PROVED FINITE
+## Theorem PX85 -- PROVED FINITE
 
 No bit-affine column geometry for the side-eight all-transposition relative
 class contains a no-three spanning degree-two state, even when `P` is arbitrary.
@@ -83,7 +83,7 @@ sampling in that group and in the full symmetric group has not produced a
 witness, but those samples are not obstruction theorems and are therefore not
 recorded as proved results.
 
-Together with PX70--PX73, this shifts the general route away from successively
+Together with PX81--PX84, this shifts the general route away from successively
 larger small map groups and toward a direction-aware matching or sparse-repair
 theorem.
 
