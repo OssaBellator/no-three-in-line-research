@@ -213,7 +213,7 @@ then `X` is contained in at most
 }
 \]
 
-cosets of a nontrivial multiplicative subgroup.
+cosets of a multiplicative subgroup, which may be trivial in the general statement.
 
 In particular, if
 
@@ -221,7 +221,7 @@ In particular, if
 \boxed{|X/X|<\frac32|X|,}
 \]
 
-then `X` is contained in a single coset `x_0K` of a multiplicative subgroup `K`.
+then `X` is contained in a single coset `x_0K` of a multiplicative subgroup `K`; for `|X|>1`, this subgroup is nontrivial.
 
 More quantitatively, if
 
@@ -352,10 +352,22 @@ For a constant `K`, the hypothesis
 
 becomes a small-difference-set statement for the logarithm set `A\subseteq\mathbb Z/(p-1)\mathbb Z`.
 
-The current general abelian-group Freiman-Ruzsa theory gives a cover of `A` by a controlled number of translates of a bounded-dimensional convex coset progression. The strongest 2025 bounds have dimension and covering number
+After standard Ruzsa inequalities convert small difference to small doubling, current general abelian-group Freiman-Ruzsa theory covers `A` by at most
 
 \[
-\exp\bigl(O_\eta(\log(2K)^{1+\eta})\bigr)
+\exp\bigl(C_\eta\log(2K)^{1+\eta}\bigr)
+\]
+
+translates of a convex coset progression, with dimension at most
+
+\[
+C_\eta\log(2K)^{1+\eta}
+\]
+
+and size at most
+
+\[
+\exp\bigl(C_\eta\log(2K)^{1+\eta}\bigr)|A|
 \]
 
 for every fixed `\eta>0`.
