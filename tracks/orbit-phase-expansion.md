@@ -39,9 +39,20 @@ wrap carries, converts a repeated block-phase factor family to one
 actual point-star, and routes that star to endpoint-disjoint product or
 anchor-specific cross-carry signatures with divisor-controlled
 occupancy.  Thus geometric factor fans no longer need a generic uniform
-compression theorem.  Uniform control is still open for action-literal
-correction kernels, wide action CSPs, and the global novelty of
-signatures exposed across several decoder rounds.
+compression theorem.
+
+[`orbit-phase-signature-recurrence.md`](orbit-phase-signature-recurrence.md)
+proves OP3k--OP4c for the cross-round output.  First exposure gives a
+monotone state-qualified signature ledger.  Failure of ledger growth
+at the current phase assignment gives a paid high-reuse signature among
+the current centres, which either deepens an action-literal kernel or
+contains a paid support-disjoint correction bank.  Corrections from
+different phase snapshots are never mixed.  The current bank projects
+losslessly to rank-at-most-three CNF.  Its rank-two part is exactly
+2-SAT, while every rank-three residual is a named geometric
+transversal.  Uniform arithmetic control is still open for those
+action-literal kernels, contradictory implication chains,
+rank-three transversals, and wide action CSPs.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -253,8 +264,23 @@ channels, each paid fan centre exposes at least
 
 product or cross-carry signatures without losing its centre gain.
 Action-literal kernels and wide action CSPs remain separate paid
-outputs.  The remaining problem is a monotone novelty/termination
-theorem across rounds, not local carry-label classification.
+outputs.
+
+OP3k--OP3l in the signature-recurrence note close the purely
+combinatorial cross-round gap without transporting corrections between
+states.  Split gain over the signatures exposed by one current centre
+family is conserved exactly.  Across rounds, the persistent token is
+the pair of the full current phase snapshot and the carry signature.
+A return either grows this finite ledger or gives a fixed paid
+high-reuse signature among the current centres.  A bounded-support
+high-reuse class either has a deeper repeated action literal or a
+pairwise support-disjoint subfamily retaining at least a
+\(1/(s\ell)\) share of its payment, where \(\ell\) bounds variable
+overlap.  With
+\(B_{\rm tok}=|\Omega||\Sigma_{\rm act}|\), OP3k.2 and OP3b give
+finite descent in at most
+\((B_{\rm tok}+1)\Phi_0+B_{\rm tok}-|\mathcal L_0|\) rounds to zero
+syndrome or one of the remaining named arithmetic outputs.
 
 ## OP4 — Product-state completion
 
@@ -302,6 +328,15 @@ OP3g--OP3i localize that concentrated gain to wide supports or one paid
 class of repeated-literal correction kernels and factor fans.
 OP1b--OP1e and OP3j route every geometric factor-fan class to quantified
 product- or cross-carry signature growth while preserving its gain.
+OP3k--OP3l qualify cross-round recurrence by the current phase snapshot
+and turn an old-token return into a paid action-literal kernel or a
+current support-disjoint protected correction bank.
+OP4a projects every such bank, with all source-factor provenance, to an
+exact rank-at-most-three CNF.  OP4b completes the rank-two case by
+2-SAT or returns a labelled contradictory implication chain.  OP4c
+identifies every remaining rank-three clause as a three-support
+geometric transversal and retains an eight-clause obstruction showing
+why satisfiability cannot follow from support disjointness alone.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -355,7 +390,11 @@ factor-fan counterexample are checked by
 `scripts/verify_phase_paid_witness_localization.py`.  Orbit-state
 partitions, raw carry ranges, phase-to-point anchoring, endpoint-disjoint
 channel extraction, and factor-fan carry dispersion are checked by
-`scripts/verify_phase_carry_fan_router.py`.
+`scripts/verify_phase_carry_fan_router.py`.  First-exposure accounting,
+paid recurrence, support-disjoint extraction, lossless protected-bank
+projection, contradictory implication chains, and the rank-three
+transversal boundary are checked by
+`scripts/verify_phase_signature_recurrence.py`.
 
 ## Completion criterion
 

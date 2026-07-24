@@ -183,3 +183,14 @@ fan, and bounded alphabets refine these to repeated action or forbidden
 literals.  The weighted organizer keeps either more than \(G/4\) on
 wide corrections or more than \(G/12\) on one localized certificate
 type.
+
+[`orbit-phase-signature-recurrence.md`](orbit-phase-signature-recurrence.md)
+proves OP3k--OP4c.  The first-exposure ledger turns repeated carry
+signatures into a paid high-reuse class at the same current phase
+snapshot; the persistent token includes that snapshot, so incompatible
+historical corrections are never mixed.  Bounded overlap extracts a
+current support-disjoint binary correction bank, and the complete
+canonical factor family projects exactly to rank-at-most-three CNF.
+Rank two is completed by 2-SAT or returns a contradictory implication
+chain; rank-three residuals retain their exact geometric transversal
+provenance.

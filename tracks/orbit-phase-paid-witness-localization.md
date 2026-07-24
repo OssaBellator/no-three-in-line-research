@@ -341,9 +341,16 @@ The high-conflict return is no longer an unorganized graph.
 performs that inspection for the geometric factor-fan class.
 OP1b--OP1e turn its repeated block variable into an actual point-star
 and then into divisor-controlled product or cross-carry signature
-growth.  OP3j preserves the \(G/12\) centre payment.  The remaining
-outputs are the action-literal correction kernels, wide action CSPs,
-and the cross-round novelty/termination problem for exposed signatures.
+growth.  OP3j preserves the \(G/12\) centre payment.
+[`orbit-phase-signature-recurrence.md`](orbit-phase-signature-recurrence.md)
+then proves the first-exposure/high-reuse dichotomy, extracts
+support-disjoint recurrent correction banks at one common current
+snapshot unless an action kernel deepens, and projects those banks
+exactly to rank-at-most-three CNF.  Its state-qualified ledger never
+combines historical corrections from different phase assignments.
+The remaining outputs are the action-literal correction kernels,
+wide action CSPs, contradictory implication chains, and explicit
+rank-three carry transversals.
 
 `scripts/verify_phase_paid_witness_localization.py` exhausts small
 canonical support/factor systems, checks the local trichotomy and every

@@ -448,13 +448,19 @@ The numerical carry fields now have an exact role in the phase decoder.
 4. Every loss from total correction gain to geometric signature count
    is explicit in \(D,s,t,h,q\), and \(\Delta_p^\star\).
 
-The remaining termination theorem is now sharper.  It must either
-charge newly exposed carry signatures monotonically across decoder
-rounds, show that an action-literal kernel strictly grows a bounded
-structured core, or send a wide correction to its exact OP2n action
-CSP.  Bounded-denominator absorbers are still needed only when the
-aligned carry identities place a subsequent closure step in the
-perfect-interpolation branch.
+[`orbit-phase-signature-recurrence.md`](orbit-phase-signature-recurrence.md)
+performs the cross-round accounting.  OP3k conserves split gain and
+returns either state-qualified first-exposure ledger growth or one
+paid high-reuse signature among centres at the current snapshot.
+Corrections from different snapshots are not combined.  OP3l then
+returns a deeper action-literal kernel or a paid current
+support-disjoint correction bank.  OP4a--OP4c project that bank exactly
+to 2-SAT plus explicit rank-three transversals.  The remaining
+termination theorem is arithmetic: classify the repeated
+action-literal kernels, contradictory implication chains,
+rank-three transversals, and wide OP2n action CSPs.  Bounded-denominator
+absorbers are still needed only when the aligned carry identities place
+a subsequent closure step in the perfect-interpolation branch.
 
 `scripts/verify_phase_carry_fan_router.py` checks O1 block partitions
 and carry ranges, enumerates real OP1 factors in small bounded-channel
