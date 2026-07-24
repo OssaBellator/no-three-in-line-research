@@ -138,6 +138,20 @@ carries a \(1/\binom{s+1}{2}\) share on one explicit bilinear subgroup
 curve. The remaining incidence problem is therefore two-coset rather
 than an arbitrary union.
 
+[`rational-inverse-cross-coset-cap.md`](rational-inverse-cross-coset-cap.md)
+proves RI2d--RI2e by applying the four-point Weil calculation uniformly
+to every ordered pair of source cosets. A union of \(s\) source cosets
+has at most \(s^2A_m(p)/2\) full collision pairs, and therefore
+
+\[
+(s-k)|H|\le e+\frac{s^2}{2}A_m(p).
+\]
+
+If the right side is smaller than \(|H|\), the image meets at least
+\(s\) target cosets. For fixed \(s\), this gives a nontrivial growing
+index range through \(m=o(\sqrt p)\); saturation and the genuinely
+larger-index regime remain to be classified.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement
