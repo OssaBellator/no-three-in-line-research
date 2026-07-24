@@ -54,6 +54,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/71-prime-power-balanced-law-classification.md`](docs/71-prime-power-balanced-law-classification.md) through [`docs/73-prime-seven-pair-spectrum.md`](docs/73-prime-seven-pair-spectrum.md): reciprocal-law obstruction and balanced recursive banks at every power of seven.
 - [`docs/74-prime-power-global-baseline-alternating-closure.md`](docs/74-prime-power-global-baseline-alternating-closure.md) and [`docs/75-degree-two-small-matching-existence.md`](docs/75-degree-two-small-matching-existence.md): global-baseline closure compression and the sharp size-four matching threshold.
 - [`docs/76-prime-power-paid-geometry-to-alternating-banks.md`](docs/76-prime-power-paid-geometry-to-alternating-banks.md) through [`docs/78-prime-power-four-endpoint-core.md`](docs/78-prime-power-four-endpoint-core.md): geometric continuation, target-load descent, exact four-board atoms, and balanced terminal defect-flow cycles.
+- [`docs/79-four-endpoint-trap-counterexample.md`](docs/79-four-endpoint-trap-counterexample.md): an exact potential-one terminal two-cycle and the corrected inherited-escape target.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -76,8 +77,9 @@ obstruction is often as valuable as a positive lemma.
 Start from complementary modular hyperbolas, encode row-column-preserving
 changes through orbit or rectangle banks, use inverse-additive extraction and
 carry classification, neutralize dominant secant stars, and finish with a
-clone-space or superregular exact-selection theorem. The principal missing
-step is exclusion of a balanced finite alternating defect-flow cycle.
+clone-space or superregular exact-selection theorem. Exact terminal traps show
+that normalized local dynamics alone is insufficient; an escape must use
+channel ancestry or a larger joint move.
 
 ### Composite prime-power route
 
@@ -88,12 +90,11 @@ closed at quadratic-polylogarithmic scale. Balanced recursive banks exist for
 all \(p\equiv1\pmod4\) and, through a non-reciprocal factorization, for every
 power of seven.
 
-Every globally nonimproving alternating closure now contracts to a
-four-endpoint board destroying one specified triple. Any positive global
-minimum must therefore contain a finite balanced cycle of four-point trades.
-The principal missing theorem is a first-separation or carry-signature
-obstruction to that cycle. Arbitrary composite assembly additionally requires
-a separate coverage mechanism.
+Every globally nonimproving alternating closure contracts to a four-endpoint
+board destroying one specified triple. Exact four-core traps exist in general,
+so the principal missing theorem is an **inherited escape** using prefix node,
+scale, quotient state, opposite-layer ancestry, or carry signatures. Arbitrary
+composite assembly additionally requires a separate coverage mechanism.
 
 ## Running checks
 
