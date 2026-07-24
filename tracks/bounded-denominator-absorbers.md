@@ -130,6 +130,21 @@ residue-only wall: identical residue triples can be collinear or
 noncollinear, so some relative carry information is genuinely necessary.
 The remaining address problem is now relative rather than absolute.
 
+[`bounded-denominator-primitive-slope.md`](bounded-denominator-primitive-slope.md)
+proves BDA3g. On every compatible collinear triple the four coordinate
+differences factor uniquely as
+
+\[
+(U,S)=m(a,b),\qquad(V,T)=n(a,b)
+\]
+
+with \((a,b)\) a normalized primitive spatial direction, and the two
+point scales satisfy four explicit congruences modulo \(q\). Thus an
+unbounded relative-address escape is a primitive-slope/scale chain, not
+an arbitrary four-variable profile. Finiteness is still open, but BDA4
+may now classify repeated slopes via the CR/WQ interface and charge
+genuinely new direction classes.
+
 ## BDA4 — exception classification
 
 ### Target statement
