@@ -24,11 +24,11 @@ certificate types.
 
 ### Corrected open lemma
 
-Starting from a frozen one-colour cycle, add its opposite-colour secant anchors
-and permit matching changes in both colour blocks. Iterate this alternating
-closure. Prove that it either yields a decreasing joint state or forces a
-global concentration contradiction with the bounded-displacement geometry of
-the two hyperbola channels.
+Starting from a frozen one-colour carry cycle, add its opposite-colour secant
+anchors and permit matching changes in both colour blocks. Iterate this
+alternating closure. Prove that it either yields a decreasing joint state or
+forces a global concentration contradiction with the bounded-displacement
+geometry of the two hyperbola channels.
 
 The \(p=11\) frozen example is unlocked by an opposite-colour anchor permutation
 that reduces total potential from \(16\) to \(6\).
@@ -166,35 +166,55 @@ its pair spectrum and prove
 \frac{36}{7}(k-1)N^2+\frac{29}{9}N^2.
 \]
 
-Thus local-bank construction, quotient charging, endpoint removal, higher-rank
-prefix collateral, internal child-core cancellation, and vertical-pencil
-concentration are closed. The remaining recursive problem is the same
-alternating concentration-conversion problem as on the main branch, now attached
-to an explicit p-adic node, scale, and star size.
+CMR123--CMR127 now compress the alternating closure while retaining one fixed
+global comparison baseline. A low-excess globally nonimproving bank of size `t`
+either exposes disjoint defects, exposes an outside line core, or contains a
+new alternating bank of size at most
+
+\[
+\left(\frac{t}{72}\right)^{1/3}.
+\]
+
+Thus an uncharged alternating expansion chain reaches an absolute bank size
+below `24696` after `O(log log t)` levels. Heavy outside lines are paid by the
+outside triple potential through
+
+\[
+|\{L:|L\cap X|>2s\}|
+\le
+\frac{\Phi(X)}{\binom{2s+1}{3}}.
+\]
+
+Local-bank construction, quotient charging, endpoint removal, higher-rank
+prefix collateral, child-core cancellation, vertical-pencil concentration, and
+unbounded alternating expansion are therefore closed. The remaining recursive
+problem is repeated-charge accounting across many starting nodes and scales,
+plus the absolute bounded endpoint-bank core.
 
 ### Composite-modulus open lemmas
 
-1. **Alternating pencil concentration conversion.** Starting from the CMR112
-   rank-`1/2/3` certificate, force either a decreasing joint parent/endpoint
-   state, a paid quotient or carry defect, or expansion to an opposite-layer
-   node bank.
-2. **Termination after coarse repairs.** CMR93 protects unprocessed coarser
+1. **Repeated-charge accounting.** Sum the CMR125 excess, disjoint-defect, and
+   heavy-line alternatives over all starting prime-power nodes without charging
+   the same triple or line signature repeatedly.
+2. **Bounded alternating core.** Resolve, enumerate, or structurally absorb the
+   endpoint-bank residual class below `24696`.
+3. **Termination after coarse repairs.** CMR93 protects unprocessed coarser
    quotients, but a later coarse repair may recreate fine stars. Prove that the
    reintroduced fine mass is paid by the coarse potential decrease or by a
    lexicographic scale budget.
-3. **Non-reciprocal balanced prime families.** Extend the prime-seven grid
+4. **Non-reciprocal balanced prime families.** Extend the prime-seven grid
    factorization to `p=11,19,...`, or prove structural obstructions to a
    factorization into `p` integer no-three permutations.
-4. **Sharper modular quotient syndrome.** Improve the current
+5. **Sharper modular quotient syndrome.** Improve the current
    `O_p(sm^2)` bound for `Z_s`, or exploit inherited primitive line signatures to
    beat the raw factor `3t^2` in CMR86.
-5. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
+6. **Square-root divisor boundary.** Remove or sum the residual `sqrt(N)` terms
    in CMR61 and CMR64 for nearly singular carries.
-6. **Joint digital construction.** Search jointly for both layers or replace the
+7. **Joint digital construction.** Search jointly for both layers or replace the
    obstructed `64`-point first layer before attempting a lift to `128`.
-7. **CRT slope-carry incompatibility.** Control simultaneous vanishing of
+8. **CRT slope-carry incompatibility.** Control simultaneous vanishing of
    `L_u,L_v`, including noncyclic zero-divisor incidences.
-8. **Further finite coverage.** Exact saturated constructions are known at
+9. **Further finite coverage.** Exact saturated constructions are known at
    composite sizes `4,6,8,9,10,12`; `N=14` remains unresolved.
 
 ## Bottleneck 5: computational falsification
@@ -204,8 +224,8 @@ The following should be exhaustively tested for small primes:
 - classify frozen one-colour cycles and their alternating anchor closures;
 - distribution of \(q_s\) for real carry-filtered cycles;
 - existence of alternating two-colour closures that remain jointly frozen;
-- which CMR112/CC3 certificate rank dominates frozen child-pencil banks;
-- whether opposite-layer node expansion unlocks concentrated pencil examples;
+- overlap multiplicities of CMR125 disjoint-defect and heavy-line payments;
+- exact bounded-core behaviour for endpoint banks below `24696`;
 - fine mass recreated by one coarse prefix repair;
 - exact no-three grid factorizations and pair spectra at `p=11,19,...`;
 - inherited line-signature multiplicities inside `M_s`;
@@ -215,10 +235,8 @@ The following should be exhaustively tested for small primes:
 
 ## Recommended order of work
 
-1. Convert the CMR112 rank-`1/2/3` alternatives into forced opposite-layer or
-   paid-defect expansion.
-2. Build a lexicographic termination potential for the resulting alternating
-   node closures.
+1. Build a no-double-charge ledger for the CMR125 defect and line alternatives.
+2. Reduce or enumerate the absolute endpoint-bank core below `24696`.
 3. Quantify fine-star recreation under the full prefix-rematching bank.
 4. Search for non-reciprocal balanced grid factorizations at the next
    `p=3 mod 4` primes.
