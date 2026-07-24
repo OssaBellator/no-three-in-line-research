@@ -85,6 +85,10 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 73. **Width-two finite obstruction.** All `80,731` internally clean cross-only width-two states in the stored `4<=n<=10` corpus retain at least one external triple.
 74. **One-rectangle repair criterion.** An alternating rectangle switch preserves saturation and has an exact secant/anchor cleanliness criterion.
 75. **Repaired finite extensions.** Exactly three stored width-two near misses admit one rectangle repair, giving `4 -> 6`, `5 -> 7`, and `6 -> 8` extensions.
+76. **Multi-rectangle Boolean bank.** Corner-disjoint alternating rectangles preserve saturation under every orientation assignment; potential triples form an exact rank-at-most-three CNF, reducing to 2-SAT at rank two.
+77. **Lossless two-switch filter.** After the first rectangle switch, untouched original triples must have a transversal of size at most two, giving a complete finite search reduction.
+78. **Two-switch finite gain.** Stored sources four, five, and six yield 9, 7, and 14 additional final configurations beyond one-switch repair.
+79. **Two-switch finite obstruction.** No stored width-two matching state from source side seven through ten admits any two sequential alternating rectangle repair.
 
 ## What remains conditional
 
@@ -98,7 +102,7 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - A prime-minus-one preparation theorem installing roughly `m^0.05` mutually compatible parabolic rungs for the published prime-gap exponent, together with:
   - positive-density matching-admissible sheared parameter tuples;
   - satisfiable cycle-reservoir 2-SAT or PP2l joint mass below one;
-  - protected rectangle trades covering residual certificates;
+  - a protected rectangle family whose joint patch/trade CNF has bounded rank and occurrence;
   - cross-rung compatibility.
 
 ## Important refutations
@@ -117,14 +121,16 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - Conditioning the complete small banks to internally clean components does not produce a clean pair at fully deleted widths `3,4,5`.
 - Deletion-cycle entropy alone cannot dilute a fixed external certificate.
 - Neither the 40-state unsheared nor 18,816-state sheared parabolic finite sweep contains a raw clean patch on the stored corpus.
+- Unstructured alternating-rectangle search to depth two gives no repair for the stored source sides seven through ten.
 
 ## Bottom line
 
 There is no complete proof. The principal global bottleneck remains
 second-generation alternating-bank collateral and termination. Independently,
 the all-`n` prime-patching track now has exact fixed- and variable-reservoir
-interfaces, row-lift and parabolic internally clean banks, static/sequential/
-2-SAT selection criteria, a quantitative multi-rung budget, and a verified
-patch-plus-rectangle repair mechanism. The missing theorem is asymptotic seed
-preparation and cross-rung compatibility over a total width large enough for
-unconditional prime-gap transfer.
+interfaces, internally clean row-lift and parabolic banks, cycle and rectangle
+SAT selection criteria, a quantitative multi-rung budget, and verified
+patch-plus-trade gains. The missing theorem is asymptotic seed preparation:
+install matching reservoirs and protected trade variables whose joint CNF has
+bounded rank, bounded occurrence, and cross-rung compatibility over a total
+width large enough for unconditional prime-gap transfer.
