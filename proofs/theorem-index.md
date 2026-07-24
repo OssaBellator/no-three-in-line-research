@@ -59,4 +59,7 @@ The numbering is local to this repository.
 | I6 | Full coset unions support an \(m!h^m\)-state absorber bank | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
 | I7 | Möbius anchors lie in at most \(2L\) multiplicative translates | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
 | I8 | Alternating anchor concentration-or-structure propagation dichotomy | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I9 | Simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/18-pfr-coset-anchor-propagation.md` |
+| I9 | Full subgroup cosets of order at least three expand to at least two cosets under \(F_r\) | PROVED | `docs/19-rational-coset-expansion.md` |
+| I10 | Exact order-two non-expansion exception \(x^2=r\) | PROVED | `docs/19-rational-coset-expansion.md` |
+| I11 | Rank-zero alternating cores expand except for the order-two exceptional orbit | PROVED | `docs/19-rational-coset-expansion.md` |
+| I12 | General simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/19-rational-coset-expansion.md` |
