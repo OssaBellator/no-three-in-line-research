@@ -9,9 +9,10 @@ A naive Cartesian or block product fails because points from different blocks ca
 ## Progress ledger
 
 The detailed proofs and counterexamples are in
-[`docs/27-all-n-product-construction.md`](../docs/27-all-n-product-construction.md),
+[`docs/27-all-n-product-construction.md`](../docs/27-all-n-product-construction.md) and
+[`docs/29-full-product-host-selection.md`](../docs/29-full-product-host-selection.md),
 with exact finite checks and SAT search in
-[`scripts/verify_product_construction.py`](../scripts/verify_product-construction.py).
+[`scripts/verify_product_construction.py`](../scripts/verify_product_construction.py).
 
 | Item | Status | Current result |
 |---|---|---|
