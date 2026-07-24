@@ -40,7 +40,7 @@ pattern directly.  The construction is invariant under source-target
 reversal and point deletion.  `scripts/verify_q_strips.py` exhaustively
 checks the interval and interpolation identities through `p=43`.
 
-## BDA2 — local alternating absorber
+## BDA2 — local alternating absorber — PARTIAL
 
 ### Target statement
 
@@ -54,6 +54,19 @@ Given a q-striped perfect chamber containing at least `h(q)` paid aligned certif
 - creates at most `c_q/2` times that number of new certificates outside protected higher-height lines.
 
 A bank version with a spread distribution is also acceptable.
+
+### Proved state-bank component
+
+[`bounded-denominator-local-bank.md`](bounded-denominator-local-bank.md)
+proves BDA2a: every selected chamber block of at least seven cells has a
+collision-free row-column-preserving permutation bank with the exact AN1
+cylinder bounds and an AN4-type collateral formula.
+
+The same note proves the support obstruction BDA2b. A trade on `h(q)`
+rows cannot destroy a fixed fraction of arbitrarily many cell-private
+certificates. Thus the remaining BDA2/BDA3 work must prove paid incidence
+concentration on bounded blocks or select a parallel bank of such blocks;
+bounded support alone is insufficient.
 
 ## BDA3 — finite conflict regularization
 
@@ -104,6 +117,9 @@ For every `q` tested, enumerate the finite quotient CSP and search for:
 - translated copies defeating synchronized shifts;
 - order-two exceptions;
 - collisions between the two permutation layers.
+
+The cyclic two-forbidden-matching local bank is now retained as an
+exhaustive regression in `scripts/verify_bda_local_bank.py`.
 
 Any frozen template must be added to BDA4 rather than hidden in an asymptotic estimate.
 
