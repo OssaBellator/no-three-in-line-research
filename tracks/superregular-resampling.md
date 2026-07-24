@@ -50,6 +50,14 @@ switching graph is left-regular and has reverse degree no larger than its
 forward degree. This reduces the general host problem to a balanced
 alternating-cycle switching theorem plus the remote-neighbourhood bound.
 
+[`superregular-hall-resampling.md`](superregular-hall-resampling.md) proves
+SRR1c: degree regularity can be removed entirely for the stationarity and
+flaw-removal clauses.  Such a reversible kernel exists exactly when the
+allowed switching graph satisfies Hall's condition on the flawed side.
+The fractional Hall flow also identifies the remaining quantitative
+problem: find feasible switching weights with a dispersed
+remote-neighbourhood load.
+
 ## SRR2 — Resampling dependency theorem
 
 ### Target statement
@@ -68,9 +76,10 @@ for a sufficiently small absolute constant `c_0`, then a perfect matching avoidi
 
 The dependency graph should be indexed by overlapping matching vertices, possibly enlarged by the bounded resampling neighbourhood from SRR1.
 
-SRR1b shows that stationarity and flaw removal follow from switching
-balance, but not the remote-event estimate. SRR2 still requires the
-lopsided/remote locality estimate recorded in that criterion.
+SRR1b and SRR1c show that stationarity and flaw removal follow from,
+respectively, switching balance or the exact Hall condition, but not the
+remote-event estimate. SRR2 still requires the lopsided/remote locality
+estimate recorded in those criteria.
 
 ## SRR3 — Two-layer exact-cover extension
 
