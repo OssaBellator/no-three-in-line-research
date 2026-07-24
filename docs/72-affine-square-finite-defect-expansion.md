@@ -29,6 +29,7 @@ For every row \(x\notin W\), at least
 \boxed{
 p-1-3|W|
 }
+\]
 
 affine-square blocks \(B\in\mathcal B_i\) satisfy
 
@@ -121,22 +122,30 @@ available disjoint-root-square exits.
 For \(p\ge37\), this is already a positive linear source family.  The only
 remaining difficulty is routing edges on the nine-row nonlinear core.
 
-## 3. An exact unchanged-edge flow
+## 3. Conditioned unchanged-edge exits
 
-Fix a partial matching condition \(F_0\) of size at most two, and suppose its
-rows lie outside \(W\).  Let \(x\notin W\) be another row whose affine-root edge
-is to be removed.
+Fix a partial matching condition \(F_0\) of size at most two, suppose its rows
+lie outside \(W\), and suppose \(F_0\subseteq\operatorname{graph}(G)\).  Because
+\(G=F\) outside \(W\), every conditioned edge is the corresponding affine-root
+edge.
 
-At most four additional square supports through \(x\) are excluded by each
-conditioned row-image edge: a square through \(x\) can alter that edge only if
-it contains its row, and at most three squares contain the row pair, while the
-unique square decoded by PX106b can create its prescribed alternative image.
-Thus after rank-two conditioning, the crude source count remains
+Let \(x\notin W\) be another row whose affine-root edge is to be removed.  A
+root-square trade through \(x\) preserves a conditioned edge unless its support
+also contains that conditioned row.  By PX104, the pair consisting of \(x\) and
+one conditioned row belongs to exactly three affine squares.  Therefore rank
+\(|F_0|\) conditioning excludes at most \(3|F_0|\) further exits, and the source
+count remains
 
 \[
 \boxed{
-p-1-3|W|-8.
+p-1-3|W|-3|F_0|.
 }
+\]
+
+In particular, under rank-two conditioning it is at least
+
+\[
+\boxed{p-1-3|W|-6}.
 \]
 
 Whenever \(|W|=o(p)\), this is still \(\Omega(p)\), matching the source scale in
