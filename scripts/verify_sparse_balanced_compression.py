@@ -163,6 +163,173 @@ def greedy_conditional_decoder(
     return tuple(int(value) for value in partial), tuple(trace)
 
 
+def record_satisfied(
+    record: Constraint,
+    colouring: tuple[int, ...],
+) -> bool:
+    columns, required = record
+    return all(
+        colouring[column] == required[index]
+        for index, column in enumerate(columns)
+    )
+
+
+def swap_colours(
+    colouring: tuple[int, ...],
+    left: int,
+    right: int,
+) -> tuple[int, ...]:
+    result = list(colouring)
+    result[left], result[right] = result[right], result[left]
+    return tuple(result)
+
+
+def creation_count(
+    record: Constraint,
+    colouring: tuple[int, ...],
+    block_size: int,
+) -> int:
+    columns, required = record
+    mismatches = [
+        index
+        for index, column in enumerate(columns)
+        if colouring[column] != required[index]
+    ]
+    if len(mismatches) == 1:
+        index = mismatches[0]
+        needed = required[index]
+        return block_size - sum(
+            colouring[column] == needed for column in columns
+        )
+    if len(mismatches) == 2:
+        first, second = mismatches
+        return int(
+            colouring[columns[first]] == required[second]
+            and colouring[columns[second]] == required[first]
+        )
+    return 0
+
+
+def destruction_count(
+    record: Constraint,
+    colouring: tuple[int, ...],
+    block_size: int,
+) -> int:
+    assert record_satisfied(record, colouring)
+    columns, _ = record
+    internal_cross_pairs = sum(
+        colouring[columns[left]] != colouring[columns[right]]
+        for left, right in combinations(range(3), 2)
+    )
+    return 3 * (len(colouring) - block_size) - internal_cross_pairs
+
+
+def verify_swap_identity(
+    records: tuple[Constraint, ...],
+    colouring: tuple[int, ...],
+    block_size: int,
+) -> tuple[bool, int]:
+    cross_pairs = tuple(
+        (left, right)
+        for left, right in combinations(range(len(colouring)), 2)
+        if colouring[left] != colouring[right]
+    )
+    current = sum(
+        record_satisfied(record, colouring) for record in records
+    )
+    drifts = tuple(
+        sum(
+            record_satisfied(
+                record,
+                swap_colours(colouring, left, right),
+            )
+            for record in records
+        )
+        - current
+        for left, right in cross_pairs
+    )
+    created = 0
+    destroyed = 0
+    one_mismatch = 0
+    two_mismatches = 0
+    for record in records:
+        columns, required = record
+        mismatches = sum(
+            colouring[column] != required[index]
+            for index, column in enumerate(columns)
+        )
+        if mismatches == 0:
+            closed = destruction_count(record, colouring, block_size)
+            actual = sum(
+                not record_satisfied(
+                    record,
+                    swap_colours(colouring, left, right),
+                )
+                for left, right in cross_pairs
+            )
+            assert actual == closed
+            destroyed += closed
+        else:
+            closed = creation_count(record, colouring, block_size)
+            actual = sum(
+                record_satisfied(
+                    record,
+                    swap_colours(colouring, left, right),
+                )
+                for left, right in cross_pairs
+            )
+            assert actual == closed
+            created += closed
+            one_mismatch += mismatches == 1
+            two_mismatches += mismatches == 2
+    assert sum(drifts) == created - destroyed
+
+    local_minimum = all(drift >= 0 for drift in drifts)
+    if local_minimum and len(set(colouring)) >= 2:
+        assert created >= destroyed
+        assert block_size * one_mismatch + two_mismatches >= (
+            (3 * (len(colouring) - block_size) - 3) * current
+        )
+    return local_minimum, current
+
+
+def swap_descent(
+    records: tuple[Constraint, ...],
+    colouring: tuple[int, ...],
+    block_size: int,
+) -> tuple[tuple[int, ...], int]:
+    current = sum(
+        record_satisfied(record, colouring) for record in records
+    )
+    initial = current
+    steps = 0
+    while True:
+        improvement: tuple[tuple[int, ...], int] | None = None
+        for left, right in combinations(range(len(colouring)), 2):
+            if colouring[left] == colouring[right]:
+                continue
+            candidate = swap_colours(colouring, left, right)
+            value = sum(
+                record_satisfied(record, candidate)
+                for record in records
+            )
+            if value < current:
+                improvement = candidate, value
+                break
+        if improvement is None:
+            break
+        colouring, current = improvement
+        steps += 1
+        assert steps <= initial
+    local, checked = verify_swap_identity(
+        records,
+        colouring,
+        block_size,
+    )
+    assert local and checked == current
+    return colouring, steps
+
+
 def verify_partition(
     row_colours: tuple[int, ...],
     block_count: int,
@@ -205,6 +372,14 @@ def verify_partition(
     )
     assert trace[-1] == triple_count(row_colours, decoded)
     assert trace[-1] <= expected
+    for colouring in colourings:
+        verify_swap_identity(records, colouring, block_size)
+    descended, steps = swap_descent(records, decoded, block_size)
+    assert all(
+        descended.count(label) == block_size
+        for label in range(block_count)
+    )
+    assert steps <= triple_count(row_colours, decoded)
 
     for prefix in range(total + 1):
         partial = tuple(

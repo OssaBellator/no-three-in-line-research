@@ -257,6 +257,18 @@ exactly. The remaining arithmetic frontier is to choose a row partition
 whose initial benchmark already meets the endpoint, or to introduce a
 stronger structured potential.
 
+SAS5h adds a balance-preserving local decoder after that construction.
+An improving cross-label column swap lowers the exact energy. If no such
+swap exists, every surviving conflict forces enough one- or two-literal
+near-conflicts to satisfy
+\[
+dN_1+N_2\geq(3(N-d)-3)T(G_\kappa).
+\]
+Thus a nonzero local minimum returns a quantified correction bank rather
+than an unclassified colouring. The remaining arithmetic task is to
+batch those corrections or classify their repeated column/label
+patterns.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;

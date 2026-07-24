@@ -221,6 +221,116 @@ whenever the initial potential is below \(d^3/18^3\).  Beating that
 initial benchmark still requires a structured arithmetic row partition
 or a stronger-than-greedy potential.
 
+## SAS5h -- balanced-swap descent or near-conflict certificate
+
+For a balanced colouring \(\kappa\), let \(\Omega_\kappa\) be the
+unordered column pairs \(\{x,y\}\) with
+\(\kappa(x)\ne\kappa(y)\).  Swapping their labels preserves every label
+multiplicity.  Write
+
+\[
+\Delta_{xy}
+=
+T(G_{\kappa^{xy}})-T(G_\kappa).
+\]
+
+For a constraint \(Q\), let \(A_Q(\kappa)\) be the number of swaps in
+\(\Omega_\kappa\) which make \(Q\) satisfied, when it is currently
+unsatisfied.  If \(Q\) is satisfied, let
+
+\[
+\chi_Q
+=
+|\{\{i,j\}:1\leq i<j\leq3,\quad
+\text{the two required labels differ}\}|.
+\]
+
+### Theorem SAS5h -- PROVED
+
+Every satisfied constraint is destroyed by exactly
+
+\[
+\boxed{
+D_Q=3(N-d)-\chi_Q
+}
+\]
+
+cross-label swaps, and
+
+\[
+\boxed{
+\sum_{\{x,y\}\in\Omega_\kappa}\Delta_{xy}
+=
+\sum_{Q\text{ unsatisfied}}A_Q(\kappa)
+-
+\sum_{Q\text{ satisfied}}D_Q.
+}
+\]
+
+If an unsatisfied constraint has exactly one mismatched literal
+requiring label \(\ell\), then
+
+\[
+A_Q
+=
+d-
+|\{x\in S_Q:\kappa(x)=\ell\}|
+\leq d.
+\]
+
+If it has exactly two mismatches, then \(A_Q=1\) precisely when swapping
+those two columns supplies both required labels, and otherwise
+\(A_Q=0\).  Three mismatches give \(A_Q=0\).
+
+Let \(N_1,N_2\) count constraints with exactly one and two mismatches.
+If \(\kappa\) is swap-local-minimal, meaning every
+\(\Delta_{xy}\geq0\), then
+
+\[
+\boxed{
+dN_1+N_2
+\geq
+\bigl(3(N-d)-3\bigr)T(G_\kappa).
+}
+\]
+
+Starting from any balanced colouring, repeatedly applying a swap with
+\(\Delta_{xy}<0\) reaches either zero energy or such a local minimum in
+at most the initial energy many swaps.
+
+### Proof
+
+A satisfied constraint has three scope columns.  Each has \(N-d\)
+possible partners of a different label.  This counts an internal
+cross-label scope pair twice, so subtract the \(\chi_Q\) such pairs once.
+Every remaining counted swap changes at least one required scope label
+and destroys the constraint, proving \(D_Q\).
+
+For an unsatisfied constraint, a single swap can repair at most two
+mismatches.  With one mismatch, its column must swap with an
+outside-scope column of the required label; exactly the displayed
+number are available.  With two mismatches, the only possible repairing
+swap exchanges those two columns, and it works exactly under the stated
+crossed-label condition.  Three mismatches cannot be repaired.
+
+Sum the zero-one change of each constraint over all swaps and interchange
+the two finite sums.  Unsatisfied constraints contribute \(A_Q\);
+satisfied constraints contribute \(-D_Q\), proving the aggregate
+identity.  At a local minimum its left side is nonnegative.  Since
+\(\chi_Q\leq3\), every satisfied constraint contributes at least
+\(3(N-d)-3\), while the creation side is at most \(dN_1+N_2\).
+This proves the last box.
+
+Every improving swap preserves balance and lowers the nonnegative
+integer energy by at least one, proving termination and the step bound.
+\(\square\)
+
+Thus a failed balanced local search is itself structured: every
+remaining conflict forces a linear supply of one- or two-literal
+near-conflicts.  The unresolved arithmetic step may now seek an
+improving batch among those correcting swaps or classify their repeated
+column/label patterns.
+
 ## Checkable SAS5 endpoint
 
 For the block-host spread constant \(C=9\) from SAS4b, SAS5a applies
@@ -256,4 +366,7 @@ colouring for small consecutive and interlaced row partitions and checks
 both the exact energy and its average profile formula.  It also checks
 the conditional formula against every balanced completion along the
 greedy path, verifies the one-step averaging identity, and runs the
-deterministic decoder to a balanced nonincreasing final energy.
+deterministic decoder to a balanced nonincreasing final energy.  The
+same exhaustive instances verify the swap aggregate, the closed
+creation/destruction counts, and descent to the near-conflict
+certificate.
