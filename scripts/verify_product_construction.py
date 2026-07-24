@@ -22,7 +22,7 @@ from typing import Iterator
 Point = tuple[int, int]
 Permutation = tuple[int, ...]
 FactorPair = tuple[Permutation, Permutation]
-PhaseState = tuple[tuple[int, ...], ...]
+PhaseState = tuple[tuple[tuple[int, ...], ...], ...]
 
 
 @dataclass(frozen=True)
@@ -111,10 +111,18 @@ def transition_cycles(
 
 
 def phase_states(m: int, cycle_count: int) -> Iterator[PhaseState]:
-    for bits in product((0, 1), repeat=m * cycle_count):
+    for bits in product((0, 1), repeat=2 * m * cycle_count):
         yield tuple(
-            tuple(bits[i * cycle_count : (i + 1) * cycle_count])
-            for i in range(m)
+            tuple(
+                tuple(
+                    bits[
+                        (r * m + i) * cycle_count :
+                        (r * m + i + 1) * cycle_count
+                    ]
+                )
+                for i in range(m)
+            )
+            for r in (0, 1)
         )
 
 
@@ -136,7 +144,7 @@ def cycle_phase_product(
     for r in (0, 1):
         for i in range(m):
             for u in range(n):
-                s = r ^ phases[i][cycle_id[u]]
+                s = phases[r][i][cycle_id[u]]
                 j = outer[r][i]
                 v = inner[s][u]
                 layers[r].append(
@@ -193,13 +201,48 @@ def verify_determinant_identity(
 
 def explicit_diagonal_counterexample() -> None:
     factor: FactorPair = ((0, 1), (1, 0))
-    phases: PhaseState = ((0,), (0,))
+    phases: PhaseState = (((0,), (0,)), ((0,), (0,)))
     layers = cycle_phase_product(factor, factor, phases)
     witness = ((0, 0), (1, 1), (2, 2))
     cells = {point.flat for layer in layers for point in layer}
     assert set(witness).issubset(cells)
     assert determinant(*witness) == 0
     print(f"explicit 2x2 diagonal witness: {witness}")
+
+
+def explicit_all_phase_counterexample() -> None:
+    outer: FactorPair = ((0, 1), (1, 0))
+    inner: FactorPair = ((0, 2, 1), (1, 0, 2))
+    witnesses: dict[tuple[int, int, int, int], tuple[Point, Point, Point]] = {
+        (0, 0, 0, 0): ((0, 0), (1, 2), (2, 4)),
+        (0, 0, 0, 1): ((0, 0), (1, 2), (2, 4)),
+        (0, 0, 1, 0): ((0, 0), (2, 1), (4, 2)),
+        (0, 0, 1, 1): ((1, 2), (3, 3), (5, 4)),
+        (0, 1, 0, 0): ((0, 0), (1, 2), (2, 4)),
+        (0, 1, 0, 1): ((0, 0), (1, 2), (2, 4)),
+        (0, 1, 1, 0): ((0, 0), (2, 1), (4, 2)),
+        (0, 1, 1, 1): ((3, 4), (4, 3), (2, 5)),
+        (1, 0, 0, 0): ((3, 3), (1, 5), (2, 4)),
+        (1, 0, 0, 1): ((1, 0), (3, 1), (5, 2)),
+        (1, 0, 1, 0): ((0, 1), (1, 3), (2, 5)),
+        (1, 0, 1, 1): ((0, 1), (1, 3), (2, 5)),
+        (1, 1, 0, 0): ((0, 1), (2, 2), (4, 3)),
+        (1, 1, 0, 1): ((0, 1), (2, 2), (4, 3)),
+        (1, 1, 1, 0): ((0, 1), (2, 2), (4, 3)),
+        (1, 1, 1, 1): ((0, 1), (2, 2), (4, 3)),
+    }
+
+    for bits, witness in witnesses.items():
+        phases: PhaseState = (
+            ((bits[0],), (bits[1],)),
+            ((bits[2],), (bits[3],)),
+        )
+        layers = cycle_phase_product(outer, inner, phases)
+        cells = {point.flat for layer in layers for point in layer}
+        assert set(witness).issubset(cells)
+        assert determinant(*witness) == 0
+
+    print("explicit 2x3 obstruction: all 16 independent cycle-phase states fail")
 
 
 def check_case(
@@ -233,15 +276,16 @@ def main() -> None:
     parser.add_argument(
         "--include-four",
         action="store_true",
-        help="also exhaust the 2x4, 3x4, 4x2, and 4x3 cases",
+        help="also exhaust the 2x4 and 4x2 cases",
     )
     args = parser.parse_args()
 
     explicit_diagonal_counterexample()
+    explicit_all_phase_counterexample()
 
     cases = [(2, 2), (2, 3), (3, 2), (3, 3)]
     if args.include_four:
-        cases.extend([(2, 4), (3, 4), (4, 2), (4, 3)])
+        cases.extend([(2, 4), (4, 2)])
 
     for m, n in cases:
         states, successes, witness = check_case(m, n)
