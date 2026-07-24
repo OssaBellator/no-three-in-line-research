@@ -1,5 +1,8 @@
 # Random matching-block preparation and global profile cancellation
 
+This is a constant-width matching-block side analysis.  The active square-root
+macro chain currently ends at PP3ek; the results here continue at PP3el.
+
 The full width-two block endpoint PP3ci is stated after the matching layer has
 already been divided into labelled blocks.  This chapter performs that division
 randomly.  The factors contributed by random block membership cancel the
@@ -26,7 +29,7 @@ For a finite set `R` of distinct source edges and a map
  \qquad s=|R|.
 \]
 
-### Proposition PP3ck -- PROVED
+### Proposition PP3el -- PROVED
 
 The probability that every edge `e in R` belongs to its prescribed block
 `E_{phi(e)}` is
@@ -72,7 +75,7 @@ source edges all lie in `E_i`, and define the PP3ca load
  +\frac{12A_{2,i}}{r(r-1)}.
 \]
 
-### Proposition PP3cl -- PROVED
+### Proposition PP3em -- PROVED
 
 For the uniform labelled equipartition,
 
@@ -89,7 +92,7 @@ For the uniform labelled equipartition,
 #### Proof
 
 A `B_*` signature or an `A_{2,*}` signature uses three distinct source edges
-and survives exactly when all three enter its prescribed block.  PP3ck gives
+and survives exactly when all three enter its prescribed block.  PP3el gives
 probability `(r)_3/(m)_3`.  An `A_{1,*}` signature uses two distinct edges and
 has probability `(r)_2/(m)_2`.  Multiply by the three coefficients in
 `lambda_i` and simplify. ∎
@@ -120,7 +123,7 @@ Use the following seven global labelled counts.
 Let `W_delta` denote the PP3ci left side after a partition is realised, using a
 common clean-domain density lower bound `delta`.
 
-### Proposition PP3cm -- PROVED
+### Proposition PP3en -- PROVED
 
 For `0<delta<=1`,
 
@@ -180,7 +183,7 @@ blocks satisfies
  U\le\frac{1}{\tau}\sum_i\lambda_i.
 \]
 
-### Theorem PP3cn -- PROVED
+### Theorem PP3eo -- PROVED
 
 If
 
@@ -209,7 +212,7 @@ integer, this forces `U=0`; every block then has full-bank clean density at leas
 choices from the clean block domains.  Equal margins preserve two points in
 every row and column. ∎
 
-Unlike an argument that discards bad blocks, PP3cn uses every reserved new
+Unlike an argument that discards bad blocks, PP3eo uses every reserved new
 coordinate interval.  This is essential: leaving an interval unused would break
 saturation, and compressing the remaining coordinates need not preserve
 collinearity.
@@ -225,7 +228,7 @@ Take
  \qquad Kr\le m.
 \]
 
-PP3cn reduces the constant-width route to two global estimates on one matching
+PP3eo reduces the constant-width route to two global estimates on one matching
 layer:
 
 1. the labelled local-signature expression `L_*` must be small enough that every
