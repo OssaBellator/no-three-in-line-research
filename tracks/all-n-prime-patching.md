@@ -21,7 +21,15 @@ Detailed statements and proofs are in:
 - [`docs/32-row-lift-pruning-barriers.md`](../docs/32-row-lift-pruning-barriers.md);
 - [`docs/33-off-diagonal-reservoir-obstruction.md`](../docs/33-off-diagonal-reservoir-obstruction.md);
 - [`docs/34-projection-triple-lower-bounds.md`](../docs/34-projection-triple-lower-bounds.md);
-- [`docs/35-component-clean-row-lift-banks.md`](../docs/35-component-clean-row-lift-banks.md).
+- [`docs/35-component-clean-row-lift-banks.md`](../docs/35-component-clean-row-lift-banks.md);
+- [`docs/36-monotone-parabolic-reservoirs.md`](../docs/36-monotone-parabolic-reservoirs.md);
+- [`docs/37-variable-reservoir-patch-banks.md`](../docs/37-variable-reservoir-patch-banks.md);
+- [`docs/38-parabolic-rung-budget.md`](../docs/38-parabolic-rung-budget.md);
+- [`docs/39-matching-reservoir-cycle-factorization.md`](../docs/39-matching-reservoir-cycle-factorization.md);
+- [`docs/40-cycle-reservoir-2sat.md`](../docs/40-cycle-reservoir-2sat.md);
+- [`docs/41-sheared-parabolic-banks.md`](../docs/41-sheared-parabolic-banks.md);
+- [`docs/42-width-two-matching-patches.md`](../docs/42-width-two-matching-patches.md);
+- [`docs/43-one-rectangle-patch-repair.md`](../docs/43-one-rectangle-patch-repair.md).
 
 Finite computations are recorded in:
 
@@ -29,7 +37,14 @@ Finite computations are recorded in:
 - [`experiments/general-reservoir-loads.md`](../experiments/general-reservoir-loads.md);
 - [`experiments/row-lift-static-pruning.md`](../experiments/row-lift-static-pruning.md);
 - [`experiments/row-lift-projections.md`](../experiments/row-lift-projections.md);
-- [`experiments/component-clean-row-lift.md`](../experiments/component-clean-row-lift.md).
+- [`experiments/component-clean-row-lift.md`](../experiments/component-clean-row-lift.md);
+- [`experiments/parabolic-matching-reservoirs.md`](../experiments/parabolic-matching-reservoirs.md);
+- [`experiments/parabolic-parameter-sweep.md`](../experiments/parabolic-parameter-sweep.md);
+- [`experiments/sheared-parabolic-parameters.md`](../experiments/sheared-parabolic-parameters.md);
+- [`experiments/matching-reservoir-cycles.md`](../experiments/matching-reservoir-cycles.md);
+- [`experiments/cycle-reservoir-2sat.md`](../experiments/cycle-reservoir-2sat.md);
+- [`experiments/variable-reservoir-banks.md`](../experiments/variable-reservoir-banks.md);
+- [`experiments/width-two-rectangle-repairs.md`](../experiments/width-two-rectangle-repairs.md).
 
 ## PP1 — Boundary extension interface
 
@@ -47,7 +62,7 @@ The row-column bookkeeping is exact:
 
 ## PP2 — Secant-shadow patching lemma
 
-### Status: OPEN, with exact host and bank endpoints
+### Status: OPEN, with exact fixed- and variable-reservoir endpoints
 
 There should be functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one
 can prepare a reservoir in `S_m` that supports an exact row-column-preserving
@@ -62,7 +77,10 @@ The exact selection step is closed in several forms:
 - an internally no-three spread-bank endpoint using only retained-core cell and
   pair expectations;
 - a component-clean row-lift endpoint that factors movement and refill banks and
-  pays only retained-core and cross-component certificates.
+  pays only retained-core and cross-component certificates;
+- the deletion-aware variable-reservoir theorem PP2l, which permits different
+  states to delete different old points and uses the exact joint survival and
+  insertion probabilities.
 
 For active clone size `N>=200`, the arbitrary-reservoir bounds
 
@@ -78,7 +96,7 @@ The missing work is geometric preparation, not exact degree selection.
 
 ## PP3 — Robust seed preparation
 
-### Status: OPEN, with explicit banks, endpoints, and refutations
+### Status: OPEN, with an internally clean square-root patch and exact repair interfaces
 
 A prepared reservoir should have low old-pair shadow, low old-anchor pair load,
 controlled internal directions, interchangeable row-column states, and a
@@ -100,6 +118,39 @@ variable deletion budget.
 - Internally clean movement and refill component banks have an exact independent
   expectation endpoint PP3z and spread form PP3aa. Any fixed clean component pair
   has only `O(t^2)` cross triples.
+- The monotone parabolic matching construction gives a deterministic internally
+  no-three patch of width `Theta(sqrt(m))`; only the two retained-core certificate
+  classes remain.
+- A linear shear preserves the parabolic no-three proof and yields an internally
+  clean parameter bank with cell probability `O(1/m)` and nonaxis pair
+  probability as small as `O(t/m^2)`, conditional on a positive-density family
+  of matching-admissible parameter tuples.
+- Variable matching reservoirs factor exactly into forced paths and independent
+  alternating cycles. For one fixed patch, selecting cycle parities to clear all
+  external triples is exactly a 2-SAT problem.
+- Cross-only width-two matching patches have a complete 36-state degree
+  classification for each four-column/four-row matching reservoir.
+- A near-miss patch can be repaired by one alternating rectangle switch under
+  the exact criterion PP3ay. The stored corpus contains three such repaired
+  extensions: `4 -> 6`, `5 -> 7`, and `6 -> 8`.
+
+### Quantitative prime-gap-scale ladder target
+
+One parabolic rung has square-root width. If `K` disjoint rungs of widths `t_i`
+are packed into old-coordinate intervals, then
+
+\[
+\sum_i t_i
+\le
+K+\sqrt{K(m-K)/2}.
+\]
+
+A total width `m^theta` with `theta>1/2` therefore needs and permits
+`K=Theta(m^(2theta-1))` equal-scale rungs at the coordinate-budget level. For
+the published exponent `theta=0.525`, the target is only about `m^0.05`
+mutually compatible rungs.
+
+No multi-rung compatibility theorem is yet proved.
 
 ### Refuted or blocked shortcuts
 
@@ -119,19 +170,34 @@ variable deletion budget.
 - Conditioning the full small banks to internally clean components leaves no
   clean pair at fully deleted widths `3,4,5`; the clean families are too small
   and concentrated.
+- Across the stored `2<=n<=10` corpus, the unsheared parabolic parameter sweep
+  finds 40 matching states and the sheared sweep finds 18,816 matching states,
+  but neither contains an externally clean patch.
+- Exhausting all 80,731 internally clean cross-only width-two matching states
+  finds no raw patch. One rectangle switch repairs exactly three of them and no
+  others in the stored corpus.
+- Deletion-cycle entropy alone does not dilute a fixed certificate: optional
+  old points have survival probabilities bounded away from zero. Useful cycles
+  must be geometrically aligned so their alternating choices anticorrelate the
+  relevant blockers.
 
 ### Current exact target
 
-A viable prime-gap-scale PP3 construction must now provide at least one of:
+The strongest concrete route is now a **parabolic patch-plus-trade ladder**.
+A prime-gap-scale PP3 construction may succeed by providing:
 
-1. a sparse algebraic or tomographic row-lift subbank passing PP3p or PP3r;
-2. a prefix-structured bank passing PP3l or PP3q despite failing the static
-   screens;
-3. large internally no-three movement and refill banks with `O(1/t)` cell and
-   `O(1/t^2)` pair spread, plus a cross-incidence bound passing PP3z/PP3aa;
-4. an arbitrary-reservoir cleaned host passing the PP2 cell/pair/triple endpoint.
+1. `Theta(m^0.05)` mutually compatible square-root-scale parabolic rungs for the
+   published prime-gap exponent;
+2. a positive-density family of matching-admissible sheared parameter tuples;
+3. cycle parities satisfying the exact 2-SAT external-certificate formula, or
+   PP2l joint expectation below one;
+4. protected alternating rectangles whose removed diagonals cover residual
+   blockers and whose added diagonals have controlled collateral;
+5. compatibility between the inserted points and trades of different rungs.
 
-Reservoir rows and hit columns must also avoid the aligned interval obstruction.
+The older row-lift alternatives remain valid: a sparse algebraic bank passing
+PP3p/PP3r, a prefix-structured bank passing PP3l/PP3q, or an arbitrary-reservoir
+host passing the PP2 cell/pair/triple endpoint.
 
 ## PP4 — Prime-gap transfer theorem
 
@@ -178,6 +244,20 @@ eventual threshold and the complete certificate set below it.
   forced-triple lower bounds;
 - `scripts/analyze_component_clean_row_lift.py`: PP3z/PP3aa component-clean
   analysis;
+- `scripts/analyze_parabolic_matching_reservoir.py`: exact parabolic matching
+  reservoir search;
+- `scripts/search_parabolic_parameters.py`: unsheared parameter sweep;
+- `scripts/search_sheared_parabolic_parameters.py`: independent movement/refill
+  scale, gap, shear, and offset sweep;
+- `scripts/analyze_variable_reservoir_bank.py`: exact PP2l finite bank verifier;
+- `scripts/analyze_matching_reservoir_cycles.py`: degree-two path/cycle
+  factorization and deletion marginals;
+- `scripts/solve_matching_reservoir_2sat.py`: exact implication-graph solver for
+  fixed-patch cycle reservoirs;
+- `scripts/search_width_two_matching_patches.py`: complete cross-only width-two
+  matching-patch enumeration;
+- `scripts/search_width_two_rectangle_repairs.py`: exhaustive one-switch repair
+  search;
 - `scripts/search_row_lift_reservoirs.py`: exhaustive small reservoir-row search;
 - `scripts/verify_no_three_certificate.py`: exact finite certificate verifier.
 
@@ -185,8 +265,9 @@ eventual threshold and the complete certificate set below it.
 
 This branch is complete only when PP2 and PP3 provide a width large enough for
 PP4, followed by verified PP5 coverage below the resulting threshold. The branch
-now closes the exact extension interfaces, several host and bank selection
-endpoints, one-strip rigidity, a structured row-lift degree bank, sequential and
-static pruning criteria, projection obstructions, and component-clean
-factorization. It still lacks the asymptotic geometric preparation theorem and
-does not prove the no-three-in-line conjecture.
+now closes the exact extension interfaces, fixed- and variable-reservoir
+selection endpoints, one-strip rigidity, row-lift and parabolic internally clean
+banks, sequential/static/2-SAT selection criteria, projection obstructions, and
+one-rectangle repair. It still lacks the asymptotic seed-preparation and
+multi-rung compatibility theorem and does not prove the no-three-in-line
+conjecture.
