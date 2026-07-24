@@ -12,7 +12,7 @@ This track groups the unresolved geometric hypotheses behind S2, S5, L4 and P1. 
 - P1: a full-product block state exists under small normalized pair/triple conflict mass;
 - D1–D4: a near-complete clone host with low row/column triple load has an exact saturated solution.
 
-## GC1 — Uniform admissible partner density
+## GC1 — Uniform admissible partner density — REFUTED AS STATED
 
 ### Target statement
 
@@ -23,6 +23,12 @@ At dyadic height `H`, let `B` be a certified target batch in one permutation lay
 - it respects all currently installed absorber and active-core blocks.
 
 The constants `c,delta` must be uniform after every earlier switch at the same or higher scale.
+
+Without a quantitative bound on installed absorber/core coordinates, those
+blocks can cover every possible partner while `|B|=1<=cH`.
+[`geometric-cleaning-budget-and-wall.md`](geometric-cleaning-budget-and-wall.md)
+gives the explicit permutation-layer wall. A corrected GC1 must add a
+per-target protection-load cap and charge it to current paid incidence.
 
 ## GC2 — Scale-sensitive anchor pair-shadow cap
 
@@ -56,6 +62,15 @@ After any simultaneous switch supplied by L4, the next certified batch again adm
 - the process cannot consume the partner pool faster than it destroys certified excess.
 
 This closes the conditional batching conclusion in S5.
+
+### Proved budget component
+
+The wall note proves GC3a: if every batch consumes at most `kappa` partners
+per unit of paid potential decrease, total depletion is at most
+`kappa Psi_0`. It also proves that retaining half the pool changes
+`(1-delta)` individual density to at worst `(1-2delta)`. The geometric work
+remaining in GC3 is to establish that consumption inequality and a
+compatible scale-local bound on `Psi_0`.
 
 ## GC4 — Candidate-only conflict regularization
 
@@ -100,6 +115,12 @@ Every delegation must carry paid incidence so the global potential decreases whe
 - intermediate switches that collapse partner density;
 - candidate-only cores surviving all simple anchor deletion rules.
 
+The installed-block wall and its pool-collapse mechanism are now proved
+and retained as a regression in the accompanying note.
+
 ## Completion criterion
 
-This branch is complete when GC1–GC5 remove the hypotheses from S2, S5, L4 and P1, with constants compatible with either the complete-clone endpoint or the superregular endpoint.
+This branch is complete when the corrected GC1 and GC2–GC5 remove the
+hypotheses from S2, S5, L4 and P1, with constants compatible with either
+the complete-clone endpoint or the superregular endpoint. The unbudgeted
+GC1 statement must not be used.

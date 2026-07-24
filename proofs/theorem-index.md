@@ -9,6 +9,8 @@ The numbering is local to this repository.
 | S3 | Candidate-only triple energy is \(\Omega(\delta^3n^4\log n)\) | PROVED | `docs/02-reverse-scale-switching.md` |
 | S4 | Reverse-scale certified multicover deletion inequality | PROVED | `docs/02-reverse-scale-switching.md` |
 | S5 | Sparse scale-\(H\) switch-bank drift theorem | PROVED UNDER HYPOTHESES | `docs/02-reverse-scale-switching.md` |
+| GC1-wall | Installed bounded blocks can eliminate every partner | PROVED | `tracks/geometric-cleaning-budget-and-wall.md` |
+| GC3a | Paid partner consumption bounds total pool depletion | PROVED | `tracks/geometric-cleaning-budget-and-wall.md` |
 | L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
 | L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
 | L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |
