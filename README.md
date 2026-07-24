@@ -29,7 +29,8 @@ where `D(n)` is the maximum number of points that can be selected from an
 - [`docs/27-all-n-prime-patching.md`](docs/27-all-n-prime-patching.md) through [`docs/55-matching-block-global-endpoint.md`](docs/55-matching-block-global-endpoint.md): boundary, row-lift, parabolic, width-two, variable-reservoir, trade-bank, and matching-block patching.
 - [`docs/56-random-matching-block-sparsification.md`](docs/56-random-matching-block-sparsification.md) through [`docs/71-global-slot-occurrence-endpoint.md`](docs/71-global-slot-occurrence-endpoint.md): random pool sparsification, square-root macro construction, source cleaning, conditional spread, and global occurrence budgets.
 - [`docs/72-same-edge-anchor-domain-pruning.md`](docs/72-same-edge-anchor-domain-pruning.md) through [`docs/77-one-sided-slab-cross-macro-separation.md`](docs/77-one-sided-slab-cross-macro-separation.md): refined anchor-safe domains, weighted event mass, grouped completion energy, coordinate correction, global label allocation, and slab separation.
-- [`docs/78-ore-balanced-global-allocation.md`](docs/78-ore-balanced-global-allocation.md) through [`docs/88-endpoint-derangement-first-moment.md`](docs/88-endpoint-derangement-first-moment.md): complementary-degree allocation, slab-optimal exponents, patch and anchor energy closure, controller-aware domains, blocker-resource extraction, and paid endpoint-permutation trades.
+- [`docs/78-ore-balanced-global-allocation.md`](docs/78-ore-balanced-global-allocation.md) through [`docs/89-controller-shadow-monotone-termination.md`](docs/89-controller-shadow-monotone-termination.md): complementary-degree allocation, slab-optimal exponents, patch and anchor energy closure, controller-aware domains, blocker-resource extraction, paid endpoint trades, and monotone termination.
+- [`docs/90-superregular-paid-endpoint-trades.md`](docs/90-superregular-paid-endpoint-trades.md) through [`docs/95-designated-credit-recapture-avoidance.md`](docs/95-designated-credit-recapture-avoidance.md): endpoint-host regularisation, permutation local lemmas, transition divisor bounds, two-scale source-valid thinning, and protected designated credit.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected, weakened, and refuted claims.
 
 ## Research discipline
@@ -61,10 +62,10 @@ The independent prime-patching branch reaches the published prime-gap scale
 internally with the exponent-optimal disjoint square-root-macro balance
 
 ```text
-macro variables M = m^(1/20+o(1))  = m^0.05
+macro variables M = m^(1/20+o(1))   = m^0.05
 source-pool size R = m^(19/20+o(1)) = m^0.95
-macro width W     = m^(19/40+o(1)) = m^0.475
-total width T=MW  = m^(21/40+o(1)) = m^0.525.
+macro width W     = m^(19/40+o(1))  = m^0.475
+total width T=MW  = m^(21/40+o(1))  = m^0.525.
 ```
 
 The branch proves:
@@ -81,19 +82,35 @@ The branch proves:
 - `o(1)` incident mass for every ordinary two-slot source-anchor event;
 - blocker-star or resource-matching structure from positive controller-shadow failure;
 - exact removal-credit minus insertion-cost identities for endpoint-permutation trades;
-- a spread-derangement first-moment endpoint for source validity and collateral.
+- monotone termination of every uniformly improving controller-shadow repair;
+- source-valid endpoint conversion in the resource branch after two-scale thinning;
+- protection of the guaranteed resource credit by recapture-avoidance partial matchings.
 
 A key correction is that fixed-core safe domains do not automatically handle
 blocker pairs using unselected matching-pool edges. The correct domain allows a
 candidate value only when every blocker pair through its inserted cells contains
 the selected controller edge, which is deleted.
 
-The weighted rank-two/rank-three completion-energy side is now closed at the
-slab-optimal scale. The remaining bottleneck is one controller-shadow conversion
-theorem:
+The resource endpoint bank no longer has a source-validity gap. Under sparse
+unary endpoint shadow, one may thin it to
+
+\[
+q=m^\kappa,
+\qquad
+0<\kappa<\dfrac1{40},
+\]
+
+and obtain a saturation-preserving no-three endpoint permutation using
+superregular pruning, a permutation local lemma, divisor regularisation of
+anchored transitions, and support-rank thinning of the remaining pair/triple
+patterns.
+
+The weighted rank-two/rank-three macro completion side is closed. The remaining
+bottleneck is purely controller-shadow improvement:
 
 1. prove the controller-aware global label graphs satisfy the complementary-degree allocation criterion; or
-2. convert the forced blocker star or resource matching into a source-admissible endpoint, rectangle, or tomographic trade whose inserted shadow is below its paid removal credit.
+2. convert the blocker-star branch; or
+3. in the resource branch, control dense unary endpoint shadow, rich recapture fibres, residual unary shadow `A_res`, or residual binary shadow `B_G`.
 
 The focused theorem statements and exact formulas are in
 [`proofs/prime-patching-recent-index.md`](proofs/prime-patching-recent-index.md).
@@ -115,6 +132,8 @@ python scripts/check_weighted_slot_mass.py experiments/weighted-slot-mass-exampl
 python scripts/analyze_same_edge_anchor_domains.py certificates/prime-patching-small.json --labels 12 --gamma 1/3 --epsilon 1/6 --output /tmp/refined-labels.json
 python scripts/check_oversampled_label_matching.py /tmp/refined-labels.json
 python scripts/check_global_label_ore.py experiments/global-label-ore-example.json
+python scripts/analyze_controller_aware_domains.py certificates/prime-patching-small.json --labels 12 --gamma 1/3
+python scripts/analyze_endpoint_trade_hosts.py certificates/prime-patching-small.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for
@@ -140,10 +159,9 @@ A useful contribution should do at least one of the following:
 
 - verify or repair a result tagged **PROVED**;
 - prove complementary-degree allocation for the controller-aware label graphs;
-- bound or regularise the noncontroller blocker shadow of slab matching pools;
-- convert the blocker-star or resource-matching alternative by an endpoint,
-  rectangle, cycle, or tomographic trade;
-- improve the spread-derangement collateral bound on the extracted endpoint rectangle;
+- convert the blocker-star alternative by an alternating, endpoint, rectangle, or tomographic trade;
+- bound or regularise dense unary endpoint shadow or rich recapture fibres;
+- prove `A_res=o(q^2)` and `B_G=o(q^3)` on the thinned resource endpoint bank;
 - prove the second-order concentration theorem for the alternating-neutralisation bank;
 - construct a monotone carry-signature potential or bounded-denominator absorber;
 - build a superregular perfect-matching resampling oracle.
