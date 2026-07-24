@@ -54,8 +54,8 @@ once, and no real collinear triple.
 Represent a selected point as
 
 \[
-(ax,ay+\varepsilon),
-\qquad \varepsilon\in\{0,1\}.
+(ax,ay+arepsilon),
+\qquad arepsilon\in\{0,1\}.
 \]
 
 For any triple, its exact determinant has the form
@@ -78,19 +78,15 @@ difference of two column indices in one layer. Hence
 |E|\le p-1.
 \]
 
-The verifier checks \(\Delta_p
-e0\) for every triple. If \(D=0\), this implies
-\(E
-e0\), so the determinant is nonzero for every `a`. If \(D
-e0\) and
+The verifier checks \(\Delta_p\neq0\) for every triple. If \(D=0\), this implies
+\(E\neq0\), so the determinant is nonzero for every `a`. If \(D\neq0\) and
 \(a=p^{k-1}\ge p^2\), then
 
 \[
 |aD|\ge p^2>p-1\ge|E|,
 \]
 
-so \(aD+E
-e0\). Thus the check at \(k=2\) proves all \(k\ge2\).
+so \(aD+E\neq0\). Thus the check at \(k=2\) proves all \(k\ge2\).
 
 Each layer bijects the terminal columns to its prescribed `p`-point row block,
 and the two row blocks are disjoint modulo `a`. The state is therefore
