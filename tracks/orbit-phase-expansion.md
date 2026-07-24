@@ -153,6 +153,15 @@ amplified obstruction. Thus the remaining expansion theorem may work
 with a low-load residual or one explicit kernel star, not an
 unstructured conditioning loss.
 
+OP2k bounds every such kernel star. For one fixed intersection
+\(J\subseteq H\), surviving checks share the literals
+\(\alpha|_J\), so residualization is injective and preserves the
+antichain property. Its amplified source mass is therefore at most one.
+Summing gives an explicit \(P(f,r)\) ceiling for the entire amplified
+audit. Conditioning on a bounded kernel can now produce only finitely
+many unit-Lubell kernel stars; OP2 still has to expand or classify each
+star arithmetically.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -206,6 +215,8 @@ outside it.
 OP2j tracks the exact Lubell amplification caused by conditioning that
 kernel and localizes any large residual increase to one kernel
 intersection pattern.
+OP2k additionally caps every fixed intersection pattern at unit Lubell
+mass and the full amplified ancestor audit at \(P(f,r)\).
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 

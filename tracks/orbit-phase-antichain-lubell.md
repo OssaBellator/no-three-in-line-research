@@ -360,9 +360,85 @@ intersection pattern with the bounded heavy kernel carries the
 amplified obstruction.  Unary or empty residuals continue through the
 exact OP2g propagation interface.
 
+## OP2k -- one-unit cap for every kernel-intersection pattern
+
+Retain the setup of OP2j and assume no empty residual survives.  For
+\(J\subseteq H\), let \(\mathcal C_{\alpha,J}\) be the original checks
+which survive \(\alpha\) and satisfy
+
+\[
+S_C\cap H=J.
+\]
+
+Write \(\mathcal D_{\alpha,J}\) for their residual checks on
+\(V\setminus H\), before any global duplicate or subsumption deletion.
+
+### Theorem OP2k -- PROVED
+
+For every kernel-intersection pattern \(J\):
+
+1. residualization is injective on
+   \(\mathcal C_{\alpha,J}\);
+2. \(\mathcal D_{\alpha,J}\) is already an antichain; and
+3. its amplified source mass satisfies
+   \[
+   \boxed{
+   \sum_{C\in\mathcal C_{\alpha,J}}
+   \Lambda_H(C)w_V(C)
+   =
+   \sum_{D\in\mathcal D_{\alpha,J}}w_{V\setminus H}(D)
+   \leq1.
+   }
+   \]
+
+Consequently, for checks of rank at most \(r\),
+
+\[
+\boxed{
+\sum_{\substack{C\in\mathcal C\\C\text{ survives }\alpha}}
+\Lambda_H(C)w_V(C)
+\leq
+P(f,r)
+=
+\sum_{j=0}^{\min\{f,r-1\}}\binom fj.
+}
+\]
+
+The same \(P(f,r)\) ceiling applies to every amplified source load
+obtained by restricting the sum to checks containing one fixed residual
+variable.
+
+### Proof
+
+Every surviving check has on \(J\) exactly the literals prescribed by
+\(\alpha\).  Two checks in the same pattern with equal residuals
+therefore have identical fixed and residual literals, so they are the
+same check.  This proves injectivity.
+
+If two distinct residuals in the same pattern obeyed
+\(D_1\subsetneq D_2\), adjoining the common fixed literal set
+\(\alpha|_J\) would give \(C_1\subsetneq C_2\), contradicting the
+original antichain.  Thus the residual family is an antichain.  OP2h
+applied on \(V\setminus H\) bounds its Lubell mass by one, while the
+exact OP2j weight identity proves the equality in the first box.
+
+A nonempty residual has \(|J|\leq r-1\), so there are at most
+\(P(f,r)\) patterns.  Sum their unit bounds.  Restricting each
+pattern's nonnegative mass to checks containing a fixed variable cannot
+increase it, proving the load assertion. \(\square\)
+
+OP2k prevents conditioning from hiding unbounded multiplicity behind
+duplicate ancestors.  A bounded heavy kernel can amplify the source
+audit by at most the explicit finite pattern count, and each unit of
+that budget has one fixed kernel star.  This does not yet prove the
+arithmetic unique-neighbour expansion required by OP2, but it converts
+the residual obstruction into finitely many unit-Lubell kernel stars.
+
 `scripts/verify_phase_antichain_lubell.py` exhaustively checks small
 binary and nonuniform-domain antichains and verifies equality for every
 complete fixed-rank layer.  It also checks the variable/literal
 double-count identities, every rational heavy-kernel threshold in the
 test range, the sharp complete-layer loads, and the exact
-conditioning-amplification formula after residual canonicalization.
+conditioning-amplification formula after residual canonicalization,
+including the injective antichain and unit-mass bound in every fixed
+kernel-intersection pattern.

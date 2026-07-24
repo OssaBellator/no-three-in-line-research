@@ -228,6 +228,10 @@ def verify_conditioning_amplification(
                     Fraction(0) for _ in residual_domains
                 ]
                 pattern_mass: dict[frozenset[int], Fraction] = {}
+                pattern_residuals: dict[
+                    frozenset[int],
+                    list[Nogood],
+                ] = {}
                 for original, residual in survivors:
                     intersection = frozenset(
                         variable
@@ -257,6 +261,10 @@ def verify_conditioning_amplification(
                         pattern_mass.get(intersection, Fraction(0))
                         + residual_weight
                     )
+                    pattern_residuals.setdefault(
+                        intersection,
+                        [],
+                    ).append(residual)
                     for variable, _ in residual:
                         amplified_loads[variable] += residual_weight
 
@@ -272,6 +280,15 @@ def verify_conditioning_amplification(
                         max(pattern_mass.values()) * pattern_count
                         >= residual_mass
                     )
+                for intersection, residuals in pattern_residuals.items():
+                    assert len(residuals) == len(set(residuals))
+                    assert antichain(tuple(residuals))
+                    assert pattern_mass[intersection] == lubell_weight(
+                        tuple(residuals),
+                        residual_domains,
+                    )
+                    assert pattern_mass[intersection] <= 1
+                assert amplified_total <= pattern_count
 
 
 def verify_families(
