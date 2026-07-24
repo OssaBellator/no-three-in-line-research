@@ -1,12 +1,12 @@
 # Transposition-class recursion and the side-eight affine-column obstruction
 
-PX63 gives an all-side low-syndrome rectangle state.  This chapter records a
+PX63 gives an all-side low-syndrome rectangle state. This chapter records a
 second structural feature of the rectangle family: whenever a rectangle state
 is exact no-three, its output factor belongs to one fixed relative cycle class.
 That class is therefore the natural first target for recursive doubling.
 
 The chapter then closes the largest controlled side-eight search currently
-available for that class.  Affine column labelings do not suffice, even when the
+available for that class. Affine column labelings do not suffice, even when the
 second row-block labeling and the complete degree-two selector are arbitrary.
 
 ## 1. Relative type of every rectangle output
@@ -25,7 +25,7 @@ be any rectangle state from PX43.
 ### Theorem PX65 -- PROVED
 
 The row-column incidence graph of `Q(p,t,r)` is the disjoint union of `n`
-4-cycles.  Consequently every decomposition of the state into two permutation
+4-cycles. Consequently every decomposition of the state into two permutation
 layers has relative permutation of cycle type
 
 \[
@@ -49,20 +49,20 @@ and the two scalar columns
 Y_0(t(u)),\qquad Y_1(r(u)).
 \]
 
-This is one copy of `K_(2,2)`, hence one 4-cycle.  Because `p,t,r` are
+This is one copy of `K_(2,2)`, hence one 4-cycle. Because `p,t,r` are
 permutations, different indices use disjoint scalar rows and disjoint scalar
-columns.  The complete incidence graph is therefore the disjoint union of these
+columns. The complete incidence graph is therefore the disjoint union of these
 cycles.
 
 A two-edge-colouring of one 4-cycle into perfect matchings alternates around the
-cycle.  Comparing the two matching layers swaps its two row vertices.  Thus
-each rectangle contributes one 2-cycle to the relative permutation, and the
+cycle. Comparing the two matching layers swaps its two row vertices. Thus each
+rectangle contributes one 2-cycle to the relative permutation, and the
 components are disjoint. \(\square\)
 
 ### Corollary PX65a -- PROVED
 
 A successful rectangle template at base side `n` produces a side-`2n` factor in
-the all-transposition relative class.  Recursive use of the rectangle pathway
+the all-transposition relative class. Recursive use of the rectangle pathway
 therefore needs only a full-selector closure theorem for this output class, not
 a universal theorem for every relative cycle type at side `2n`.
 
@@ -71,8 +71,8 @@ relative types `(2,2,2,2)` at side eight and `(2,2,2,2,2)` at side ten.
 
 ## 2. Absorbing the row-relative permutation
 
-Use the three-labeling normal form PX61.  Fix a relative permutation `H`, a
-target labeling `T`, and a second-column relative labeling `Q`.  Put
+Use the three-labeling normal form PX61. Fix a relative permutation `H`, a
+target labeling `T`, and a second-column relative labeling `Q`. Put
 
 \[
 A=T,\qquad B=QT.
@@ -85,12 +85,12 @@ The first coarse row block has the `n` fixed abstract row patterns
 \qquad u\in[n].
 \]
 
-The second coarse row block has the same `n` patterns.  The permutation `P`
+The second coarse row block has the same `n` patterns. The permutation `P`
 only assigns those patterns bijectively to the `n` scalar rows in that block.
 
 Thus an exact selector search may choose `P` inside the row-by-row backtracking:
 when a second-block scalar row is exposed, choose one unused abstract pattern
-and then choose two of its four incident columns.  This covers every
+and then choose two of its four incident columns. This covers every
 `P in Sym([n])` without enumerating `n!` separate hosts.
 
 ## 3. Side-eight all-transposition class
@@ -136,21 +136,21 @@ labeled column geometries, but each search represents all `8!` row labelings.
 No affine-column geometry for the side-eight all-transposition relative class
 contains a no-three spanning degree-two state, even when `P` is arbitrary.
 
-The complete exact search data are:
+The complete exact search data for the committed deterministic branch order are:
 
 | Orientation | `(T,Q)` pairs | Search nodes | Maximum nodes in one geometry |
 |---|---:|---:|---:|
-| `cc` | 1,024 | 5,650,038 | 55,477 |
-| `cf` | 1,024 | 7,517,273 | 50,978 |
-| `fc` | 1,024 | 12,810,852 | 291,011 |
-| `ff` | 1,024 | 14,691,733 | 123,928 |
+| `cc` | 1,024 | 5,352,870 | 49,571 |
+| `cf` | 1,024 | 6,894,433 | 37,471 |
+| `fc` | 1,024 | 9,863,816 | 206,093 |
+| `ff` | 1,024 | 11,574,689 | 82,500 |
 
 ### Proof
 
-For fixed `(T,Q,theta)`, process all sixteen scalar rows.  In the first coarse
-row block the abstract pattern is fixed.  In the second block choose an unused
+For fixed `(T,Q,theta)`, process all sixteen scalar rows. In the first coarse
+row block the abstract pattern is fixed. In the second block choose an unused
 abstract pattern, which simultaneously chooses the value of `P` on that scalar
-row.  Then choose two of the four incident columns.
+row. Then choose two of the four incident columns.
 
 Track scalar column degrees, prune when the remaining rows cannot complete a
 column to degree two, and reject a branch exactly when its newly inserted cells
@@ -160,12 +160,13 @@ The 1,024 pairs in each row of the table exhaust `A_8^2`; the pattern assignment
 exhausts every `P`. \(\square\)
 
 This result strictly strengthens the direct affine census in which `P` was also
-required to be affine.
+required to be affine. Search-node totals depend on the deterministic branch
+order, while infeasibility does not.
 
 ## 4. Consequences for a recursive proof
 
 PX65 identifies the all-transposition class as the canonical output of every
-rectangle template.  PX66 shows that the first unresolved recursive instance,
+rectangle template. PX66 shows that the first unresolved recursive instance,
 side eight, cannot be solved by keeping both column labelings affine and hiding
 all nonlinearity in `P`.
 
@@ -178,7 +179,7 @@ of the following.
 4. A repair/resampling theorem applied to the universal low-syndrome seed PX63.
 
 PX66 does **not** rule out an arbitrary-map full-selector template for the
-all-transposition class.  That remains the exact finite recursion target.
+all-transposition class. That remains the exact finite recursion target.
 
 ## Verification
 
