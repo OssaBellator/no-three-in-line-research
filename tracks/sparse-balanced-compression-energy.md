@@ -331,6 +331,95 @@ near-conflicts.  The unresolved arithmetic step may now seek an
 improving batch among those correcting swaps or classify their repeated
 column/label patterns.
 
+## SAS5i -- concentrated swap certificate at a local minimum
+
+For a cross-label swap \(\omega=\{x,y\}\in\Omega_\kappa\), let
+
+\[
+D(\omega)
+=
+|\{Q:Q\text{ is satisfied by }\kappa
+\text{ and destroyed by }\omega\}|,
+\]
+
+\[
+R(\omega)
+=
+|\{Q:Q\text{ is unsatisfied by }\kappa
+\text{ and repaired by }\omega\}|.
+\]
+
+Thus \(\Delta_\omega=R(\omega)-D(\omega)\).
+
+### Theorem SAS5i -- PROVED
+
+For a balanced \(b\)-label colouring with \(N=bd\),
+
+\[
+\boxed{
+|\Omega_\kappa|=\frac{N(N-d)}2.
+}
+\]
+
+If \(\kappa\) is swap-local-minimal, \(T(G_\kappa)>0\), and
+\(3(N-d)-3>0\), then some cross-label column pair \(\omega\) satisfies
+
+\[
+\boxed{
+D(\omega)
+\geq
+\frac{(3(N-d)-3)T(G_\kappa)}
+{|\Omega_\kappa|}
+=
+\frac{2(3(N-d)-3)T(G_\kappa)}
+{N(N-d)},
+}
+\]
+
+and simultaneously
+
+\[
+\boxed{
+R(\omega)\geq D(\omega).
+}
+\]
+
+In integer form, \(D(\omega)\) is at least the ceiling of the displayed
+fraction.  Hence the balanced decoder has the exact trichotomy:
+
+1. \(T(G_\kappa)=0\);
+2. one swap lowers the energy; or
+3. one cross-label column exchange is incident with the displayed
+   number of current conflicts and at least as many repairable
+   near-conflicts.
+
+### Proof
+
+There are \(\binom N2\) column pairs in total and
+\(b\binom d2\) same-label pairs.  Their difference is
+\[
+\binom N2-b\binom d2=\frac{N(N-d)}2.
+\]
+
+Double-count satisfied-constraint/swap destruction incidences.  SAS5h
+gives each satisfied constraint at least \(3(N-d)-3\) destroying
+swaps, so
+\[
+\sum_{\omega\in\Omega_\kappa}D(\omega)
+\geq
+(3(N-d)-3)T(G_\kappa).
+\]
+One swap has at least the average displayed in the first box.  At a
+swap-local minimum,
+\(\Delta_\omega=R(\omega)-D(\omega)\geq0\) for every \(\omega\), which
+proves the second box and the trichotomy. \(\square\)
+
+SAS5i turns the aggregate near-conflict bank from SAS5h into one
+explicit two-column concentration.  The remaining standard-grid
+arithmetic can now either batch several such high-load swaps with
+disjoint scopes or classify repeated high-load column/label pairs.
+It need not begin from a diffuse \(N_1,N_2\) count.
+
 ## Checkable SAS5 endpoint
 
 For the block-host spread constant \(C=9\) from SAS4b, SAS5a applies
@@ -369,4 +458,5 @@ greedy path, verifies the one-step averaging identity, and runs the
 deterministic decoder to a balanced nonincreasing final energy.  The
 same exhaustive instances verify the swap aggregate, the closed
 creation/destruction counts, and descent to the near-conflict
-certificate.
+certificate, including the concentrated high-load swap at every
+positive local minimum.

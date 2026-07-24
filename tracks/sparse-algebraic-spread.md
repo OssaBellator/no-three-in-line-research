@@ -269,6 +269,16 @@ than an unclassified colouring. The remaining arithmetic task is to
 batch those corrections or classify their repeated column/label
 patterns.
 
+SAS5i concentrates that correction bank. At a positive swap-local
+minimum, some cross-label column pair destroys at least
+\[
+\frac{2(3(N-d)-3)T(G_\kappa)}{N(N-d)}
+\]
+current conflicts, and local minimality forces the same swap to create
+at least as many from repairable near-conflicts. The residual
+classification may therefore target high-load two-column/label
+patterns, rather than a diffuse global near-conflict count.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;

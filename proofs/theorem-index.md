@@ -92,6 +92,7 @@ The numbering is local to this repository.
 | SAS5f | Standard-grid block compression has an exact balanced-colour affine-triple energy | PROVED | `tracks/sparse-balanced-compression-energy.md` |
 | SAS5g | Exact conditional energy gives a deterministic balanced standard-grid compression decoder | PROVED | `tracks/sparse-balanced-compression-energy.md` |
 | SAS5h | Balanced swap descent either lowers compression energy or returns a quantified near-conflict bank | PROVED | `tracks/sparse-balanced-compression-energy.md` |
+| SAS5i | Every positive balanced swap-local minimum contains one column pair concentrating both destroyed conflicts and repairs | PROVED | `tracks/sparse-balanced-compression-energy.md` |
 | I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |

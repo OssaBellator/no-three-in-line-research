@@ -248,6 +248,36 @@ def verify_swap_identity(
         - current
         for left, right in cross_pairs
     )
+    created_by_swap = tuple(
+        sum(
+            not record_satisfied(record, colouring)
+            and record_satisfied(
+                record,
+                swap_colours(colouring, left, right),
+            )
+            for record in records
+        )
+        for left, right in cross_pairs
+    )
+    destroyed_by_swap = tuple(
+        sum(
+            record_satisfied(record, colouring)
+            and not record_satisfied(
+                record,
+                swap_colours(colouring, left, right),
+            )
+            for record in records
+        )
+        for left, right in cross_pairs
+    )
+    assert all(
+        drift == repaired - destroyed
+        for drift, repaired, destroyed in zip(
+            drifts,
+            created_by_swap,
+            destroyed_by_swap,
+        )
+    )
     created = 0
     destroyed = 0
     one_mismatch = 0
@@ -290,6 +320,22 @@ def verify_swap_identity(
         assert block_size * one_mismatch + two_mismatches >= (
             (3 * (len(colouring) - block_size) - 3) * current
         )
+        total = len(colouring)
+        assert len(cross_pairs) == total * (total - block_size) // 2
+        lower = 3 * (total - block_size) - 3
+        if current and lower > 0:
+            concentrated = max(
+                range(len(cross_pairs)),
+                key=destroyed_by_swap.__getitem__,
+            )
+            assert (
+                destroyed_by_swap[concentrated] * len(cross_pairs)
+                >= lower * current
+            )
+            assert (
+                created_by_swap[concentrated]
+                >= destroyed_by_swap[concentrated]
+            )
     return local_minimum, current
 
 
