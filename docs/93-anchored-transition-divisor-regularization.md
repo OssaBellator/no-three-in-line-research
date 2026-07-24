@@ -108,7 +108,7 @@ Fix a middle endpoint `j` and an anchor `p=(u,v)`.
 
    then at most `q` ordered pairs `(i,k)` satisfy it.
 
-For fixed `j`, at most two anchors are in the second case.
+For fixed `j`, at most two retained anchors are in the second case.
 
 #### Proof
 
@@ -131,10 +131,13 @@ endpoint layer has distinct old columns and distinct old rows, so each factor
 pair determines at most one `(i,k)`.
 
 If the fixed product is zero, the anchor shares the old column `x_j` or the old
-row `y_j`. These two possibilities contribute at most one anchor each because
-the retained source is saturated. In the shared-column case the equation forces
-one value of `k` and leaves at most `q` choices of `i`; the shared-row case is
-transposed. ∎
+row `y_j`. In the original saturated source there are exactly two points in old
+column `x_j` and exactly two points in old row `y_j`. The removed middle endpoint
+`(x_j,y_j)` occupies one of each, so among the retained source points there is at
+most one anchor sharing `x_j` and at most one sharing `y_j`.
+
+In the shared-column case the transition equation forces one value of `k` and
+leaves at most `q` choices of `i`; the shared-row case is transposed. ∎
 
 ## 3. Total transition population
 
@@ -328,6 +331,5 @@ The resource-bank conversion now has the following exact split.
 2. **Sparse unary shadow:** PP3jg removes all low-support source-validity cores,
    leaving only the PP3jh high-support and weighted-collateral expression.
 
-The first branch is a new endpoint-level shadow concentration suitable for a
-second protected trade. The second branch is a pure high-support first-moment
-problem.
+The first branch is an endpoint-level shadow concentration suitable for a second
+protected trade. The second branch is a high-support first-moment problem.
