@@ -80,16 +80,20 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 70. **Complete reversal census.** Among all sixteen identity/reversal assignments at \(2\times5\), exactly the four varying in both row and column blocks succeed; each rescues 9 of 32 inner factors across 13 factor/orientation hosts.
 71. **Complete normalized non-affine census.** Allowing arbitrary second-block permutations gives seven no-three parameter states, five scalar configurations, and an explicit non-affine escape for the canonical side-five factor.
 72. **Affine double-coset classification at five.** \(S_5\) is the disjoint union of \(\operatorname{AGL}(1,5)\) and one 100-element non-affine double coset; every admissible side-five factor layer lies in the latter.
-73. **Universal special product closure.** Every saturated no-three side-five factor, and either of its two permutation layers, composes with the saturated side-two factor to the same exact saturated no-three side-ten configuration after suitable blockwise affine maps.
+73. **Universal special product closure at five.** Every saturated no-three side-five factor, and either of its two permutation layers, composes with the saturated side-two factor to the same exact saturated no-three side-ten configuration after suitable blockwise affine maps.
 74. **Affine normalization theorem.** The complete four-block affine one-inner-layer family reduces to identity first blocks and relative affine second-block maps.
 75. **Affine one-layer obstruction at six and seven.** Exhaustive searches of 414,720 and 35,562,240 normalized states find no no-three affine one-inner-layer product at either base side.
 76. **Double-coset template closure.** Any successful normalized one-layer template transports to its entire map-group double coset; double-coset coverage of admissible factor layers is a sufficient factor-independent closure criterion.
+77. **Full permutation gauge normalization.** Arbitrary four-block one-inner-layer states normalize exactly to identity first block maps, without an affine hypothesis.
+78. **Complete small arbitrary-map census.** The normalized one-layer family has exact success/configuration counts \((16,9),(0,0),(4,4),(8,5)\) at base sides two through five.
+79. **Full-symmetric template universality.** With arbitrary block permutations, one successful normalized template transports every fine permutation and therefore every saturated factor layer.
+80. **Universal special product closure at four.** Every saturated no-three side-four factor composes with side two to the exact saturated no-three side-eight template.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- An infinite family of successful double-coset templates or another controlled block-map family yielding a multiplicatively closed class.
+- An infinite family of successful normalized templates or another controlled block-map family yielding a multiplicatively closed class.
 - A global product repair or resampling theorem that coordinates many projection fibres and distinguishes feasible hosts from structured infeasible cores.
 - Arithmetic coverage derived from an infinite closure or extension theorem.
 - Orbit Tanner expansion beyond bounded local conflict mass.
@@ -118,7 +122,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Identity/reversal block maps alone are not factor-independent: the complete census succeeds for only 9 of 32 layer-unordered side-five factors.
 - Normalized affine second-block maps do not rescue the canonical side-five full-selector host.
 - The complete affine one-inner-layer family has no no-three state at base sides six or seven, even when the inner permutation is arbitrary.
+- The complete arbitrary-map normalized one-layer family has no template at base side three.
 
 ## Bottom line
 
-There is no complete proof. The product branch now contains a genuine but isolated factor-independent closure theorem: every saturated side-five factor composes with side two to give the exact side-ten no-three configuration. The double-coset template theorem explains the mechanism and supplies a precise route to further closures. However, the same affine one-layer family is empty at base sides six and seven, and no infinite multiplicative closure class or arithmetic coverage theorem is known. The next product target is an infinite family of successful map-group templates, a two-layer/full-selector extension beyond the affine obstruction, or a model-or-structured-core resampling theorem. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
+There is no complete proof. The product branch now contains genuine factor-independent closure theorems \(2\times4\to8\) and \(2\times5\to10\), together with exact gauge and double-coset criteria explaining how one normalized template transports across a class of factor layers. These closures still do not form an infinite multiplicatively closed family: template existence is unknown at base side eight in the unrestricted family, the affine family is empty at base sides six and seven, and no arithmetic coverage theorem follows. The next product target is a structural template-existence theorem, an iterable side-eight template, a two-layer/full-selector extension beyond the affine obstruction, or a model-or-structured-core resampling theorem. The main hyperbola pathway still requires second-generation collateral concentration, followed by monotone termination or bounded-denominator absorption.
