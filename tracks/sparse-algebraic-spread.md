@@ -230,6 +230,22 @@ rectangular embedding. The remaining block-host obstruction is now
 exactly coordinate compression into the standard \(N\)-column interval;
 arbitrary relabelling would not preserve collinearity.
 
+[`sparse-balanced-compression-energy.md`](sparse-balanced-compression-energy.md)
+proves SAS5f, an exact standard-grid formulation. Assigning the \(N\)
+column coordinates to \(b\) labels with multiplicity \(d\) each gives a
+balanced \(3\)-CSP whose energy is exactly \(T(G)\). If
+\(A_3,A_{21},A_{111}\) count full-grid affine triples by row-block
+multiplicity, a uniformly balanced assignment has mean
+
+\[
+\frac{A_3(d)_3+A_{21}(d)_2d+A_{111}d^3}{(N)_3}.
+\]
+
+This gives a deterministic conditional-expectation embedding at most
+that mean and a checkable sufficient condition for the SAS5a threshold.
+It also shows that the remaining compression step needs structured
+arithmetic colouring when the balanced-random benchmark is too large.
+
 ## Intended host families
 
 - bounded unions of modular-hyperbola orbit states;
@@ -257,7 +273,9 @@ shape formula is checked by direct determinant enumeration in
 `scripts/verify_sparse_block_affine_energy.py`. Zero-energy companion
 coordinates are checked by `scripts/verify_sparse_zero_energy.py`. The
 global expanded-grid construction is checked by
-`scripts/verify_sparse_expanded_grid.py`.
+`scripts/verify_sparse_expanded_grid.py`. The exact standard-grid
+balanced-colour energy is checked by
+`scripts/verify_sparse_balanced_compression.py`.
 
 ## Completion criterion
 
