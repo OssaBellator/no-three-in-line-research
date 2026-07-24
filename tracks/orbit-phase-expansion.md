@@ -81,6 +81,14 @@ returns an assignment, variable saturation, or two-state check
 saturation. Consequently a residual topological core must now contain a
 noncactus factor block with at least two independent incidence cycles.
 
+[`orbit-phase-feedback-completion.md`](orbit-phase-feedback-completion.md)
+proves OP2e beyond the cactus boundary. If deleting \(f\) variable nodes
+leaves a factor-incidence cactus, conditioning those variables and
+running OP2d decides the instance in \(O(h^{f+3}I)\) time. Hence every
+fixed-feedback-variable core, including theta blocks, is an exact finite
+interface. A residual topology needing new OP2 expansion may be assumed
+to have unbounded variable-deletion distance from the cactus class.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -120,6 +128,8 @@ OP2c additionally deletes satisfiable binary cactus blocks and turns every
 unsatisfiable binary cactus into a unary certificate before that estimate.
 OP2d does the same for arbitrary-arity factor cacti, with a possible
 two-state check-saturation certificate.
+OP2e does the same for every fixed variable-deletion distance from a
+factor cactus, at the cost of enumerating the bounded feedback alphabet.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -158,7 +168,9 @@ multiply-cyclic unsatisfiable example are retained by
 `scripts/verify_phase_pseudoforest.py`. Binary cactus compression and its
 unary-saturation obstruction are retained by
 `scripts/verify_phase_cactus.py`. High-arity factor-cactus messages are
-checked by `scripts/verify_phase_factor_cactus.py`.
+checked by `scripts/verify_phase_factor_cactus.py`. Conditioning across
+one feedback variable on every binary theta instance is checked by
+`scripts/verify_phase_feedback.py`.
 
 ## Completion criterion
 
