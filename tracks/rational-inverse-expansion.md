@@ -128,6 +128,16 @@ index and the asymptotic range
 large-index range, where several source-coset character sums must be
 combined rather than bounded separately.
 
+[`rational-inverse-union-collision.md`](rational-inverse-union-collision.md)
+proves RI2b--RI2c uniformly in that remaining range. A union of \(s\)
+source cosets always meets at least
+\(\lceil(s|H|-2)/(2|H|)\rceil\) target cosets. More importantly, if it
+meets only \(k\) target cosets, it contains at least
+\((s-k)|H|-2\) full collision pairs, and one unordered source-coset pair
+carries a \(1/\binom{s+1}{2}\) share on one explicit bilinear subgroup
+curve. The remaining incidence problem is therefore two-coset rather
+than an arbitrary union.
+
 ## RI3 — Simultaneous small-doubling classification
 
 ### Target statement

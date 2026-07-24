@@ -95,6 +95,8 @@ The numbering is local to this repository.
 | RI1d | Weil bounds full-coset collision overlap with \(O(\sqrt p)\) error | PROVED | `tracks/rational-inverse-weil-overlap.md` |
 | RI1e | Full source cosets are Weil-equidistributed among target cosets | PROVED | `tracks/rational-inverse-target-cosets.md` |
 | RI2a | Small-index unions of full source cosets cover every target coset | PROVED | `tracks/rational-inverse-target-cosets.md` |
+| RI2b | Every union of source cosets has universal half-coverage with exact collision mass | PROVED | `tracks/rational-inverse-union-collision.md` |
+| RI2c | Target-coset loss localizes collision mass to one source-coset pair | PROVED | `tracks/rational-inverse-union-collision.md` |
 | RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |
