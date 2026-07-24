@@ -37,11 +37,12 @@ This index collects the product/composition results on
 | PX30 | Simultaneous-reversal one-inner-layer products have the exact orientation census recorded through base side eight | PROVED FINITE | `docs/39-one-layer-reversal-classification.md` |
 | PX31 | The normalized affine one-inner-layer family has exactly three parameter successes, all yielding the same side-ten witness | PROVED FINITE | `docs/39-normalized-affine-one-layer-census.md` |
 | PX32 | The canonical `2 x 5` factor remains full-selector infeasible under all 1600 normalized affine block-map hosts | PROVED FINITE | `docs/40-canonical-affine-full-selector-obstruction.md` |
-| PX33 | `S_5` is the disjoint union of the affine group and one 100-element non-affine double coset | PROVED | `docs/41-universal-affine-2x5-closure.md` |
-| PX34 | Every saturated side-five factor composes with the side-two factor to a saturated no-three side-ten configuration | PROVED | `docs/41-universal-affine-2x5-closure.md` |
-| PX35 | The complete four-block affine one-layer family normalizes to identity first blocks | PROVED | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
-| PX36 | The complete affine one-layer family has no no-three state at base sides six or seven | PROVED FINITE | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
-| PX37 | Successful normalized templates transport to their full map-group double cosets, yielding a general closure criterion | PROVED | `docs/43-double-coset-template-closure.md` |
+| PX33 | Complete normalized arbitrary-permutation one-layer census at `2 x 5`, including a canonical non-affine escape | PROVED FINITE | `docs/41-complete-nonaffine-one-layer-census.md` |
+| PX34 | `S_5` is the disjoint union of the affine group and one 100-element non-affine double coset | PROVED | `docs/41-universal-affine-2x5-closure.md` |
+| PX35 | Every saturated side-five factor composes with the side-two factor to a saturated no-three side-ten configuration | PROVED | `docs/41-universal-affine-2x5-closure.md` |
+| PX36 | The complete four-block affine one-layer family normalizes to identity first blocks | PROVED | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
+| PX37 | The complete affine one-layer family has no no-three state at base sides six or seven | PROVED FINITE | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
+| PX38 | Successful normalized templates transport to their full map-group double cosets, yielding a general closure criterion | PROVED | `docs/43-double-coset-template-closure.md` |
 
 The branch has a factor-independent special closure theorem for `2 x 5` and a
 general double-coset closure criterion, but still no infinite multiplicative
