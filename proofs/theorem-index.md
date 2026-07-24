@@ -31,6 +31,11 @@ The numbering is local to this repository.
 | PP3h | Balanced two-colouring of a deleted row reservoir | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
 | PP3i | Row-lift reservoir bank has exact saturation and rank-three spread | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
 | PP3j | Geometric certificate endpoint for the row-lift bank | PROVED | `docs/30-deletion-aware-row-lift-banks.md` |
+| PP3k | One-stage permutation canonical-event local-load theorem | PROVED | `docs/31-sequential-row-lift-local-lemma.md` |
+| PP3l | Sequential four-layer row-lift local lemma | PROVED | `docs/31-sequential-row-lift-local-lemma.md` |
+| PP3m | Failed row-lift selection forces a heavy activated assignment load | PROVED | `docs/31-sequential-row-lift-local-lemma.md` |
+| PP3n | Exact side-three sequential row-lift obstruction | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/31-sequential-row-lift-local-lemma.md` |
+| PP3-R3 | Unrestricted full row-lift bank is automatically clean | REFUTED | `docs/31-sequential-row-lift-local-lemma.md` |
 | PP3-R2 | Unconditioned PP3b boundary-shadow criterion as a usable seed test | REFUTED AS USEFUL | `docs/30-deletion-aware-row-lift-banks.md` |
 | PP3-R1 | Universal recursive boundary-only one-strip construction | REFUTED | `docs/28-one-strip-and-pair-aware-patching.md` |
 | PP4a | Abstract solved-length plus patch-width transfer to all large `n` | PROVED UNDER HYPOTHESES | `docs/27-all-n-prime-patching.md` |
