@@ -1,0 +1,37 @@
+# Composite-modulus theorem index
+
+This ledger collects the results specific to
+`research/all-n-composite-modulus`. The global theorem index remains in
+[`proofs/theorem-index.md`](theorem-index.md).
+
+| ID | Statement | Status | Location |
+|---|---|---|---|
+| CMA1 | Two affine permutation channels saturate every modulus | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA2 | Exact affine carry-determinant identity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA3 | Every affine modular channel has a real triple for \(N\ge5\) | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA4 | Exact alternating-cycle decomposition of two affine layers | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA5 | Affine corresponding-column displacement multiplicity is linear | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH1 | Unit hyperbolas omit every nonunit row and column | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH2 | Odd squarefree unit hyperbolas have \(2^{\omega(N)}\)-point diagonal collapses | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH3 | Odd prime-power unit hyperbolas have Hensel anti-diagonal collapses | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH4 | Power-of-two unit hyperbolas have four-point diagonal collapses | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMZ1 | Zero-divisor multiples of line equations merge primitive fibres | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML1 | Real collinearity implies modular primitive-fibre collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML2 | Modular collinearity can be a false positive for the standard lift | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML3 | Modular determinant zero plus \(|\Delta|<N\) implies real collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMCRT1 | Naive CRT products have unavoidable mixed-projection triples | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMR1 | Valuation-completed reciprocals are full prime-power involutions | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR2 | Exact valuation-stratum quadratic for line intersections | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR3 | Odd-prime intersections reduce to one top Hensel-tangent cell | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR4 | Universal companion layer is saturated, Hamiltonian, and vertically bounded | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR5 | Binary digit-linear no-three channels at \(N=8,16,32\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR6 | Every completed-reciprocal secant is \(p\)-adically diagonal | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR7 | Same-stratum fixed displacement has an exact square-root signature | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR8 | One-channel syndrome is \(O(N^{5/2}+N^2\log N)\) | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR9 | Same-stratum companion cross-displacement reduces to a quadratic | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR10 | Universal mixed-layer companion determinant carry identity | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR11 | Exact-real tangent roots occupy coefficient-controlled spaced classes | PROVED | `docs/30-prime-power-tangent-and-digital-lift.md` |
+| CMR12 | A binary digit-linear no-three channel exists at \(N=64\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/30-prime-power-tangent-and-digital-lift.md` |
+| CMR13 | The CMR12 matrix has no direct one-bit block extension at \(N=128\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/30-prime-power-tangent-and-digital-lift.md` |
+| CMR14 | Every odd-prime completed reciprocal has linear exact displacement multiplicity | PROVED | `docs/31-prime-power-displacement-obstruction.md` |
+| CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
