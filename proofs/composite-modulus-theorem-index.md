@@ -24,6 +24,10 @@ This ledger collects the results specific to
 | CMCRT3 | Mixed local collisions factor the global determinant as \(uv\det(A,B)\) | PROVED | `docs/39-crt-mixed-collision-factorization.md` |
 | CMCRT4 | Under local modular arc hypotheses every real triple has mixed-collision form | PROVED UNDER HYPOTHESES | `docs/39-crt-mixed-collision-factorization.md` |
 | CMCRT5 | Disjoint scaled collision-direction sets imply an ordered-box no-three CRT lift | PROVED UNDER HYPOTHESES | `docs/39-crt-mixed-collision-factorization.md` |
+| CMCRT6 | An affine no-three set over \(\mathbb F_p\) has size at most \(p+2\) | PROVED | `docs/47-crt-local-arc-obstruction.md` |
+| CMCRT7 | No saturated odd-prime local pair satisfies the CMCRT4 arc hypothesis | PROVED | `docs/47-crt-local-arc-obstruction.md` |
+| CMCRT8 | General local modular collinearity has an exact slope-carry determinant signature | PROVED | `docs/47-crt-local-arc-obstruction.md` |
+| CMCRT9 | Two coprime local slope-carry signatures share one global determinant quotient | PROVED | `docs/47-crt-local-arc-obstruction.md` |
 | CMR1 | Valuation-completed reciprocals are full prime-power involutions | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR2 | Exact valuation-stratum quadratic for line intersections | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
 | CMR3 | Odd-prime intersections reduce to one top Hensel-tangent cell | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
@@ -64,4 +68,8 @@ This ledger collects the results specific to
 | CMR38 | Uniform recursive p-adic permutations have an exact normalized pair-difference law | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
 | CMR39 | Uniform recursive p-adic permutations have expected harmonic energy \(O(N\log^3N)\) | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
 | CMR40 | The no-three terminal-base recursive bank retains expected harmonic energy \(O(N\log^3N)\) | PROVED | `docs/44-prime-power-recursive-harmonic-spread.md` |
+| CMR41 | One-step lift determinants are affine in every unexposed top row digit | PROVED | `docs/45-prime-power-lift-anti-concentration.md` |
+| CMR42 | Uniform recursive lifts have \(1/p\) collinearity anti-concentration outside one fibre-internal case | PROVED | `docs/45-prime-power-lift-anti-concentration.md` |
+| CMR43 | Conic-family fibre lifts eliminate the weak case and give uniform \(O(1/p)\) anti-concentration | PROVED | `docs/45-prime-power-lift-anti-concentration.md` |
+| CMR44 | The CMR12 64-point digital layer has no second-permutation no-three completion | PROVED BY EXACT FINITE CERTIFICATE | `docs/46-digital-64-completion-obstruction.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
