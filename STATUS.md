@@ -30,7 +30,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 20. **Frozen-cycle concentration.** Failure of every cycle-block state forces a dense one-cell shadow, anchored-pair shadow, or candidate-only triple core.
 21. **Clone-space exact selection theorem.** A uniformly random perfect matching on two row and column clones avoids unavailable cells, duplicate cells and all lifted collinear triples whenever the maximum local canonical-event probability load is at most \(1/24\).
 22. **Concrete endpoint.** For \(n\ge100\), a candidate host with at most \(n/100\) unavailable cells and at most \(n^3/200\) residual collinear triples incident with each row or column contains a saturated no-three-in-line configuration.
-23. **Selection failure concentration.** Failure in a near-complete candidate host forces some row or column to support \(\Omega(n^3)\) residual collinear triples.
+23. **Selection failure concentration.** Failure in a near-complete host forces a row or column carrying \(\Omega(n^3)\) residual collinear triples.
 24. **Fixed-rank superregular spread.** A uniformly random perfect matching of a dense superregular pair is \(O(1/N)\)-spread for every fixed rank, by six-cycle switchings.
 25. **Clone inheritance.** The two-clone blow-up of a superregular pair remains superregular with explicit parameter loss.
 26. **Two-layer spread.** Dense superregular pairs support a spread distribution on two edge-disjoint perfect matchings, giving exact row and column degree two.
@@ -63,6 +63,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 53. **Prime-gap transfer.** A proved patch width covering the backward gaps from solved prime-minus-one sizes transfers those solutions to all sufficiently large side lengths.
 54. **Arbitrary-reservoir prime-patching endpoint.** The clone-space local-load theorem extends to any deleted saturated reservoir, including old-old replacements and mixed old/new cells, with explicit normalized cell/pair/triple bounds.
 55. **Internally clean spread-bank endpoint.** A distribution on internally no-three deficit completions yields a valid patch whenever its selected blocked-cell and retained-anchor-pair expectation is below one.
+56. **Deletion-aware one-strip averaging.** Automatic horizontal and vertical boundary blockers are always cleared by the forced deletion; the surviving type-two certificate mass has an exact average and a nonaxis-blocker upper bound.
+57. **Row-lift reservoir bank.** Deleting `t` complete old rows supports a `4t`-cell exact completion bank with cell, pair, and triple spread at most `6/t`, `36/(t)_2`, and `72/(t)_3`.
+58. **Sequential row-lift local lemma.** Exposing the four permutation layers one at a time yields an exact local-load endpoint: if every legal prefix has activated assignment load at most `1/24`, a clean row-lift patch exists.
 
 ## What remains conditional
 
@@ -76,7 +79,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
-- A prepared prime-minus-one reservoir that either meets the arbitrary-reservoir cell/pair/triple load endpoint or supports an internally no-three spread bank over a width large enough to match an unconditional prime-gap theorem.
+- A prime-minus-one row-lift reservoir whose direction-pruned support satisfies PP3j, or whose restricted four-layer bank satisfies the sequential activated-load endpoint PP3l, over a width large enough to match an unconditional prime-gap theorem.
 
 ## Important refutations
 
@@ -89,7 +92,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
 - Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
 - Repeating boundary-only one-strip prime patches cannot cover all sizes: exhaustive branching from the unique side-two seed reaches no side-five state.
+- The original PP3b unconditioned boundary-shadow test is vacuous for every saturated seed, because every noncorner future-boundary cell lies on its row or column axis secant.
+- The unrestricted full row-lift bank is not automatically clean: the exact side-three bank has no clean state, and every layer order develops an activated load above the sequential threshold.
 
 ## Bottom line
 
-There is no complete proof. Carry and wrap-center classification make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The principal global bottleneck remains second-generation normalized collateral and termination. Independently, the all-`n` prime-patching track now has exact one-strip rigidity plus arbitrary-reservoir local-load and internally clean spread-bank endpoints. It still lacks the prepared prime-minus-one reservoir or bank satisfying either endpoint over a prime-gap-scale width.
+There is no complete proof. Carry and wrap-center classification make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The principal global bottleneck remains second-generation normalized collateral and termination. Independently, the all-`n` prime-patching track now also has deletion-aware one-strip averaging, an explicit rank-three-spread row-lift bank, and a sequential permutation-layer local lemma. The missing step is geometric: prune directions or states so every activated assignment load remains small over a prime-gap-scale width.
