@@ -48,7 +48,7 @@ The census therefore contains
 
 explicit saturated states.
 
-## Theorem PX30 -- PROVED FINITE
+## Theorem PX31 -- PROVED FINITE
 
 Exactly three of the 70,400 normalized affine one-inner-layer states are
 no-three.  They are:
@@ -124,5 +124,5 @@ python scripts/verify_product_affine_one_layer.py
 ```
 
 The script checks the exact 70,400-state census using only the standard library.
-PX30 is finite evidence, not an infinite doubling or multiplicative closure
+PX31 is finite evidence, not an infinite doubling or multiplicative closure
 theorem.
