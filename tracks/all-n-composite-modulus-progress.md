@@ -29,6 +29,16 @@ quadratic-size conic family CMR35. It remains saturated, excludes every triple
 internal to one quotient column fibre, and gives `O(1/p)` conditional
 anti-concentration for every first-separating fibre by CMR46.
 
+For primes
+
+\[
+p\equiv1\pmod4,
+\]
+
+CMR67 enlarges the local family to all vertical shifts with nonsquare reciprocal
+parameter. Every cell is then exactly uniform with probability `1/p`, while
+rank-two prescriptions have probability at most `1/(p h)`.
+
 ### CM2 — real line cap: height-sensitive but open
 
 For odd prime powers, every line intersection reduces to simple lower
@@ -63,7 +73,7 @@ exact top-digit vector repeated at least
 times. CMR15–CMR22 localize those repeats to disjoint executable blocks.
 
 For one deterministic completed-reciprocal layer, two independent arguments
-now reach quadratic order:
+reach quadratic order:
 
 - CMR38–CMR39 use direction splitting to prove
   \[
@@ -75,7 +85,7 @@ now reach quadratic order:
   \[
   C(a,d)<20N/d+13\sqrt N+8k,
   \]
-  and again obtain
+  and obtain
   \[
   \mathcal E=O(N^{3/2}+N\log^3N),
   \qquad
@@ -85,7 +95,7 @@ now reach quadratic order:
 The second proof identifies the remaining arithmetic loss: rare nearly
 singular carries create the square-root boundary.
 
-For the complete two-layer companion host, CMR40–CMR42 give a
+For the complete deterministic two-layer companion host, CMR40–CMR42 give a
 height-sensitive line cap, harmonic energy
 
 \[
@@ -107,12 +117,24 @@ CMR51–CMR52 prove expected harmonic energy
 O(N\log^3N)
 \]
 
-even with a no-three spread family at the base. Thus a saturated recursive
-state with near-linear polylogarithmic harmonic energy exists.
+even with a no-three spread family at the base.
+
+CMR68–CMR74 now sum recursive first-separation certificates. For every fixed
+odd `p>=5`, the original restricted bank has a genuinely subcubic expected
+syndrome. For `p=1 mod 4`, the balanced bank satisfies
+
+\[
+\mathbb E T_k
+<
+4kN^2+\frac{p+2}{3}N^2.
+\]
+
+Thus a saturated recursive state with `O_p(N^2 log N)` syndrome and exact
+multiscale spread exists throughout this infinite prime-power class.
 
 ### CM4 — prime-power carry calculus and recursive decoder space
 
-The branch now contains:
+The branch contains:
 
 - valuation-stratum line quadratics and exact square-root multiplicities;
 - exact-real primitive-line tangent spacing;
@@ -124,14 +146,22 @@ The branch now contains:
   \Delta_N=D_0+p^{k-1}M+p^{2k-2}D_1;
   \]
 - first-separation signatures \(q+M+p^{k-1}D_1=0\);
-- the restricted conic-fibre bank CMR43–CMR46;
-- the complementary uniform-lift bounds CMR53–CMR54;
-- exact complete and unit scalar root averages CMR47–CMR49.
+- restricted conic-fibre and uniform-lift anti-concentration;
+- exact complete and unit scalar root averages;
+- a full recursive first-separation product bound CMR68;
+- full-depth `1/N` anti-concentration for layer-transverse triples CMR70;
+- pair-codegree localization CMR72;
+- the binary closest-pair separation factor CMR73;
+- exact equilateral and binary p-adic clustering sums CMR74.
 
-The terminal state is solved uniformly at every prime, and CMR35–CMR37 give a
-spread terminal base. The remaining decoder theorem is global: sum
-first-separation certificate weights across quotient levels without losing the
-local `O(1/p)` gain.
+The first-separation summation bottleneck is therefore closed at the natural
+quadratic-logarithmic first-moment scale for `p=1 mod 4`. The logarithm has one
+explicit source: binary same-layer stars consisting of a closest pair at scale
+`s` and a third point outside that pair's prefix block. Equilateral clusters and
+all layer-transverse patterns have only quadratic total mass.
+
+The next recursive decoder theorem must neutralize these external pair-stars
+across scales, rather than seek stronger generic digit anti-concentration.
 
 ### CM5 — CRT local-arc route corrected
 
@@ -143,8 +173,8 @@ mixed collisions retain
 \]
 
 CMCRT6 proves that a saturated odd-prime local pair cannot be a modular arc, so
-the simple CMCRT4 premise cannot directly assemble saturated factors.
-CMCRT7 classifies the unavoidable collision/local-line projection patterns.
+the simple CMCRT4 premise cannot directly assemble saturated factors. CMCRT7
+classifies the unavoidable collision/local-line projection patterns.
 
 For a cyclic local line representation, CMCRT8 gives
 
@@ -179,7 +209,7 @@ Exact saturated no-three configurations are recorded at composite side lengths
 \]
 
 The `N=12` configuration is an exact feasibility certificate verified over all
-\(inom{24}{3}\) triples.
+\(\binom{24}{3}\) triples.
 
 Binary digit-linear one-channel no-three permutations are verified at
 
@@ -197,28 +227,35 @@ first layer. No scalable all-composite construction is known.
 
 ## Revised bottlenecks
 
-1. **Recursive first-separation summation.** Combine CMR28–CMR29 with the
-   restricted-fibre `O(1/p)` bound from CMR46 and prove a global normalized
-   certificate estimate across quotient levels.
+1. **Neutralize binary same-layer stars.** CMR68–CMR74 complete the generic
+   first-separation sum. The remaining recursive logarithm comes only from a
+   closest same-layer pair at one prefix scale and a third point outside that
+   prefix block. A repair or absorber theorem should act directly on these
+   multiscale pair-stars.
 2. **Remove the square-root divisor boundary.** Sharpen CMR61 and CMR64 for the
    rare carries whose discriminant is divisible by nearly the full modulus,
    closing the gap between CMR66 and near-linear deterministic energy.
-3. **Balanced small-height tangent lines.** Sum the highly singular low-height
+3. **Extend balanced local families.** CMR67 gives exact `1/p` marginals for
+   `p=1 mod 4`. Find a comparably balanced no-three fibre law for primes
+   `p=3 mod 4`, or prove a different all-odd-prime recursive summation.
+4. **Balanced small-height tangent lines.** Sum the highly singular low-height
    directions without reverting to a worst-case square-root cap.
-4. **Joint digital construction.** Search for two compatible layers from the
+5. **Joint digital construction.** Search for two compatible layers from the
    outset, or a different first layer and nonlinear lift to `128`.
-5. **CRT slope-carry incompatibility.** Construct local saturated pairs whose
+6. **CRT slope-carry incompatibility.** Construct local saturated pairs whose
    signatures cannot simultaneously vanish except in an absorbable family.
-6. **Further finite coverage.** `N=12` is solved; bounded `N=14` runs produced
+7. **Further finite coverage.** `N=12` is solved; bounded `N=14` runs produced
    no certificate, so no claim is made there.
 
 ## Checks
 
 ```bash
-python scripts/verify_prime_power_global_energy.py
+python scripts/verify_prime_power_harmonic_energy.py --max-modulus 243
 python scripts/verify_prime_power_companion_global.py
 python scripts/verify_prime_power_average_roots.py
-python scripts/verify_prime_power_restricted_bank.py
+python scripts/verify_prime_power_first_separation_sum.py --max-modulus 125
+python scripts/verify_prime_power_layer_transverse.py --max-modulus 125
+python scripts/verify_prime_power_binary_clusters.py --max-modulus 125
 python scripts/verify_prime_power_recursive_harmonic.py --samples 100
 python scripts/verify_prime_power_lift_anti_concentration.py --max-prime 5
 python scripts/verify_prime_power_divisor_collisions.py --max-modulus 243
