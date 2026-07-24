@@ -1,7 +1,7 @@
 # Composite-modulus theorem index addendum
 
-This addendum records the child-translation and balanced-law results following
-CMR101. The main composite index remains in
+This addendum records the child-translation and later results following CMR101.
+The main composite index remains in
 [`composite-modulus-theorem-index.md`](composite-modulus-theorem-index.md).
 
 | ID | Statement | Status | Location |
@@ -76,3 +76,17 @@ CMR101. The main composite index remains in
 | CMR169 | Summed destroyed populations at one scale count each triple once per occupied prefix block, hence one to three times | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
 | CMR170 | A state frozen under all nonroot joint-parent banks satisfies \((k-1)\Phi(S)\) at most the total joint collateral | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
 | CMR171 | Low-collateral frozen reciprocal and prime-seven states satisfy explicit quadratic-logarithmic potential bounds | PROVED | `docs/85-prime-power-joint-parent-packing-ledger.md` |
+| CMR172 | The row set of each layer over the closure envelope remains equal to its initial row set | PROVED | `docs/86-prime-power-closure-envelope.md` |
+| CMR173 | Every nonroot closure envelope retains disjoint layer row fibres and an executable joint parent bank | PROVED | `docs/86-prime-power-closure-envelope.md` |
+| CMR174 | Closure-envelope depth is nonincreasing and strictly coarsens at most \(k\) times | PROVED | `docs/86-prime-power-closure-envelope.md` |
+| CMR175 | Terminal cores admit a canonical nested envelope-parent assignment compatible with the packing ledger | PROVED | `docs/86-prime-power-closure-envelope.md` |
+| CMR176 | Uniform derangements at size at least five have density \(11/30\), exact one-cell atom \(1/(t-1)\), and rank-two/three constant \(30/11\) | PROVED | `docs/87-prime-power-sharp-derangement-cylinders.md` |
+| CMR177 | Nonroot joint-parent collateral has sharpened split-rank constants \(5/4,30/11,25/16,75/22\) | PROVED | `docs/87-prime-power-sharp-derangement-cylinders.md` |
+| CMR178 | Balanced reciprocal joint-parent collateral satisfies the sharpened all-scale bound | PROVED | `docs/87-prime-power-sharp-derangement-cylinders.md` |
+| CMR179 | Prime-seven joint-parent collateral is below \(((1620k+2015)(k-1)/168)N^2\) | PROVED | `docs/87-prime-power-sharp-derangement-cylinders.md` |
+| CMR180 | The sharpened packing ledger gives explicit frozen-state potential endpoints | PROVED | `docs/87-prime-power-sharp-derangement-cylinders.md` |
+| CMR181 | Every inherited nonroot four-core is the nine-state derangement board | PROVED | `docs/88-prime-power-inherited-four-core-cover.md` |
+| CMR182 | Its exact rank-one, rank-two, and rank-three atoms are \(1/3,2/9,1/9\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
+| CMR183 | Every frozen inherited four-core satisfies \(3T_1+2T_2+T_3\ge9\) | PROVED | `docs/88-prime-power-inherited-four-core-cover.md` |
+| CMR184 | Every minimum cylinder cover is one complete non-diagonal board row or column | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
+| CMR185 | The sixteen Pareto-minimal rank profiles of inherited four-core covers are completely classified | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/88-prime-power-inherited-four-core-cover.md` |
