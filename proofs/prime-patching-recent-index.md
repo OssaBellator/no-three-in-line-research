@@ -68,73 +68,68 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3ia--PP3id | Endpoint-permutation trade and exact controller-shadow change | PROVED / CONDITIONAL IMPROVEMENT | `docs/87-controller-shadow-endpoint-permutation-trades.md` |
 | PP3ie--PP3ii | Spread derangement first-moment and collateral endpoint | PROVED | `docs/88-endpoint-derangement-first-moment.md` |
 | PP3ij--PP3im | Fixed-infrastructure controller-shadow potential and monotone termination | PROVED / CONDITIONAL ON CONVERSION | `docs/89-controller-shadow-monotone-termination.md` |
+| PP3in--PP3ir | Superregular source-safe endpoint host and paid matching theorem | PROVED | `docs/90-superregular-paid-endpoint-trades.md` |
+| PP3is--PP3iw | Endpoint-host pruning and support-rank thinning | PROVED | `docs/91-endpoint-host-regularization.md` |
+| PP3ix--PP3jb | Permutation LLL removes low-support cycles and transitions | PROVED / FROM STANDARD AND PUBLISHED LLL THEOREMS | `docs/92-low-support-permutation-local-lemma.md` |
+| PP3jc--PP3jh | Divisor factorization regularizes anchored transitions | PROVED | `docs/93-anchored-transition-divisor-regularization.md` |
+| PP3ji--PP3jn | Two-scale thinning closes endpoint source validity | PROVED | `docs/94-two-scale-endpoint-source-validity.md` |
+| PP3jo--PP3js | Designated-credit recapture avoidance and residual shadow endpoint | PROVED | `docs/95-designated-credit-recapture-avoidance.md` |
 
 ## Current exact target
 
-The strongest square-root macro balance is now
+The exponent-optimal square-root macro balance is
 
 ```text
-macro variables M = m^(1/20+o(1))  = m^0.05
+macro variables M = m^(1/20+o(1))   = m^0.05
 source-pool size R = m^(19/20+o(1)) = m^0.95
-macro width W     = m^(19/40+o(1)) = m^0.475
-total width T=MW  = m^(21/40+o(1)) = m^0.525.
+macro width W     = m^(19/40+o(1))  = m^0.475
+total width T=MW  = m^(21/40+o(1))  = m^0.525.
 ```
 
-This balance is exponent-optimal among disjoint source pools with
-`W=Theta(sqrt(R))`. Matching supply, equal-margin restoration, internal macro
-geometry, fixed-rank spread, all patch-only cross-macro energy, and all ordinary
-two-slot source-anchor energy are closed.
+Matching supply, equal-margin restoration, internal macro geometry, fixed-rank
+spread, all patch-only cross-macro energy, and all ordinary two-slot
+source-anchor energy are closed. If the controller-aware global label graphs
+satisfy PP3gl, PP3hq immediately gives the full patch.
 
-The active-pool safety correction is essential. Fixed-core graphs do not test
-blocker pairs using unselected pool edges. The correct graph uses the
-controller-aware domains
-
-```text
-H_ctrl(A,B) = values whose movement/refill cells have no blocker pair
-              disjoint from the selected controller edge,
-              and whose same-slot pair has no retained source anchor.
-```
-
-If these graphs satisfy the global allocation theorem, PP3hq gives the full
-`m^0.525` patch.
-
-The strongest direct allocation criterion is complementary degree. For every
-nonedge `(i,A,B)`, it is enough that
-
-```text
-deg_{J_i}(A) + average_refill_degree(B)
-    >= T + O(sqrt(T log T)).
-```
-
-A positive-density failure of controller-aware safety cannot remain diffuse. It
-produces either:
+A positive-density failure of controller-aware safety produces either:
 
 1. a blocker star with `m^0.475` distinct rays; or
-2. `m^0.525` resource-disjoint bad entries with distinct labels, controller
-   edges, and endpoint-disjoint blocker pairs.
+2. `m^0.525` resource-disjoint bad entries with distinct labels, controllers,
+   and endpoint-disjoint blocker pairs.
 
-The second alternative yields a matching-layer endpoint bank. Endpoint
-permutation trades have an exact removal-credit/insertion-cost identity, and the
-spread-derangement endpoint succeeds when
+The resource branch is now source-valid. If its endpoint unary forbidden density
+is `o(1)`, two-scale thinning to any
 
 ```text
-cell/q + (pair + unary shadow)/q^2
-       + (triple + pair shadow)/q^3
+q=m^kappa,  0<kappa<1/40,
 ```
 
-is sufficiently small.
+followed by permutation-LLL cleaning produces a saturation-preserving no-three
+endpoint trade. The proof removes:
+
+- unary-invalid endpoint cells through pruning;
+- transpositions and directed 3-cycles through the permutation LLL;
+- anchored two-step transitions through divisor regularization;
+- every high-support anchored pair and inserted triple through rank-sensitive
+  thinning.
+
+The guaranteed `q` removal-credit units can also be protected from direct
+recapture. The recapture cells form a union of partial matchings; if that union
+has degree `o(q)`, it is added to the unary LLL family at negligible cost.
 
 Every successful paid trade strictly decreases a fixed nonnegative integer
-controller-shadow potential while preserving the controller pools. Therefore a
-uniform star/resource conversion theorem automatically terminates; no separate
-cycle-prevention lemma is needed.
+controller-shadow potential while preserving the controller pools, so a uniform
+conversion theorem automatically terminates.
 
-The remaining bottleneck is one controller-shadow conversion theorem:
+The remaining bottleneck is now purely weighted controller-shadow conversion:
 
 - prove the controller-aware global label graphs satisfy PP3gl directly; or
-- use the star/resource alternatives to build a source-admissible endpoint or
-  tomographic trade whose insertion collateral is below its paid removal
-  credit.
+- convert the blocker-star branch; and
+- in the resource branch, control one of the explicit residual alternatives:
+  a dense unary endpoint shadow, a rich recapture fibre, residual unary shadow
+  `A_res`, or residual binary shadow `B_G`.
+
+Source admissibility of the resource endpoint trade is no longer open.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
