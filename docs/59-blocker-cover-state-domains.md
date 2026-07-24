@@ -1,6 +1,6 @@
 # Blocker-cover state domains
 
-The candidate-level barrier PP3cu shows that independent deletion choices do not
+The candidate-level barrier PP3eu shows that independent deletion choices do not
 usually cover the source blockers of selected cells.  The strongest unary
 response is to condition each block state on covering all of its own
 retained-pair blockers.  This chapter gives the exact domain and records its
@@ -23,17 +23,17 @@ For a candidate point `z`, let
 
 This is a matching on `S`.
 
-### Proposition PP3cw -- PROVED
+### Proposition PP3ex -- PROVED
 
 The state `(D,Q)` creates no retained-retained-patch triple if and only if
 
 \[
- \boxed{
+\boxed{
  D\cap\{p,q\}\ne\varnothing
  \quad
  \text{for every }z\in Q
  \text{ and every }\{p,q\}\in\mathcal B_S(z).
- }
+}
 \]
 
 #### Proof
@@ -62,7 +62,7 @@ Define:
   two patch points;
 - `Omega_ext(E)=Omega_Q(E) intersect Omega_B(E) intersect Omega_A(E)`.
 
-### Proposition PP3cx -- PROVED
+### Proposition PP3ey -- PROVED
 
 1. Restricting a block variable to any nonempty intersection of these domains
    preserves equal margins.
@@ -75,7 +75,7 @@ Define:
 
 #### Proof
 
-Equal margins hold state by state in PP3cf.  PP3cw removes precisely the
+Equal margins hold state by state in PP3cf.  PP3ex removes precisely the
 retained-retained-patch triples.  The definition of `Omega_A` removes precisely
 the retained-patch-patch triples.  `Omega_Q` removes internal patch triples.
 These are all possible new triple classes because `S` itself is no-three. ∎
@@ -86,7 +86,7 @@ by another block.
 
 ## 3. Failure certificate
 
-### Corollary PP3cy -- PROVED
+### Corollary PP3ez -- PROVED
 
 If `Omega_B(E)` is empty, then every full-bank state contains a selected patch
 cell `z` and a blocker pair in `mathcal B_S(z)` that is disjoint from its local
