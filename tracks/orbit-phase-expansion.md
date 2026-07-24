@@ -72,8 +72,14 @@ proves OP2c for a multiply-cyclic class. If every residual check has arity
 two and the contracted variable multigraph is a cactus, block-tree dynamic
 programming either constructs an assignment or compresses the entire
 obstruction to explicit unary saturation at an articulation variable.
-The remaining generic core has an arity-three check or a noncactus binary
-block with at least two independent cycles.
+
+[`orbit-phase-factor-cactus-completion.md`](orbit-phase-factor-cactus-completion.md)
+proves OP2d for the full factor-incidence cactus, without a binary-arity
+restriction. Variable articulations carry label-set messages and check
+articulations carry one mismatch bit. The exact block dynamic program
+returns an assignment, variable saturation, or two-state check
+saturation. Consequently a residual topological core must now contain a
+noncactus factor block with at least two independent incidence cycles.
 
 ## OP3 — Phase-flip decoder
 
@@ -112,6 +118,8 @@ each component.
 
 OP2c additionally deletes satisfiable binary cactus blocks and turns every
 unsatisfiable binary cactus into a unary certificate before that estimate.
+OP2d does the same for arbitrary-arity factor cacti, with a possible
+two-state check-saturation certificate.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -149,7 +157,8 @@ multiply-cyclic unsatisfiable example are retained by
 `scripts/verify_phase_forest.py` and
 `scripts/verify_phase_pseudoforest.py`. Binary cactus compression and its
 unary-saturation obstruction are retained by
-`scripts/verify_phase_cactus.py`.
+`scripts/verify_phase_cactus.py`. High-arity factor-cactus messages are
+checked by `scripts/verify_phase_factor_cactus.py`.
 
 ## Completion criterion
 
