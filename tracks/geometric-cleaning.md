@@ -150,6 +150,12 @@ shrinks at every descent. A return to a discarded star is therefore an
 explicit support-reuse event, which is exactly where current syndrome
 incidence or a bounded reuse ticket must now be supplied.
 
+GC4h folds strict descent and those support reopenings into one integer
+potential. A ticket receives coefficient equal to the full star-universe
+size, so even reopening every discarded star gives net progress. Once
+paid incidence supplies \(R\) tickets, the entire recursive component
+has \(O(|\mathcal S|(R+1))\) depth without epoch resets.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement

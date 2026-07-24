@@ -301,7 +301,54 @@ support and is a separate reuse event.  Such a reopening still needs
 current syndrome payment or a bounded reuse ticket; likewise GC4g does
 not repair the latent-weight caveat in GC4c--GC4f.
 
+## GC4h -- combined descent/reopening potential
+
+Let \(n=|\mathcal S|\), and suppose one paid regularization component
+has at most \(R\) support-reuse tickets.  Record a nonempty active star
+support \(U\subseteq\mathcal S\) and the number \(t\) of tickets already
+used.  Every nonterminal transition must either strictly shrink \(U\)
+without a ticket, or consume at least one ticket before replacing \(U\)
+by an arbitrary nonempty support.
+
+### Lemma GC4h -- PROVED
+
+The scalar potential
+
+\[
+\boxed{
+\Gamma_{\rm reopen}(U,t)
+=
+nt+n-|U|
+}
+\]
+
+increases by at least one on every such transition and is at most
+\(nR+n-1\).  Hence the component has at most
+
+\[
+\boxed{
+nR+n-\Gamma_{\rm reopen}(U_0,t_0)
+}
+\]
+
+further transition-or-terminal calls from \((U_0,t_0)\).
+
+### Proof
+
+A strict shrink raises \(n-|U|\) by at least one.  A ticket raises the
+first term by at least \(n\), while an arbitrary support replacement can
+lower \(n-|U|\) by at most \(n-1\).  Both transition types therefore
+increase the potential.  The bound follows from
+\(0\leq t\leq R\) and \(1\leq|U|\leq n\). \(\square\)
+
+Thus a GC4f recursion may restart at full support after a paid
+reopening without resetting the termination argument.  Once current
+syndrome incidence bounds the total number of reopenings, GC4g--GC4h
+give an explicit finite regularization depth.  They still do not turn
+latent candidate weight into that payment.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
 most six link vertices, together with strict-support recursion through
-every maximal-depth order on at most seven stars.
+every maximal-depth order on at most seven stars and every ticketed
+support replacement through six stars and three tickets.

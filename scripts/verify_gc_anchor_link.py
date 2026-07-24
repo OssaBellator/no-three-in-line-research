@@ -266,11 +266,46 @@ def verify_strict_support_descent(max_vertices: int = 7) -> None:
     assert restricted | {0} == support
 
 
+def verify_ticketed_support_potential(
+    max_vertices: int = 6,
+    maximum_tickets: int = 3,
+) -> None:
+    for size in range(1, max_vertices + 1):
+        supports = [
+            frozenset(
+                vertex
+                for vertex in range(size)
+                if mask & (1 << vertex)
+            )
+            for mask in range(1, 1 << size)
+        ]
+        for ticket_budget in range(maximum_tickets + 1):
+            upper = size * ticket_budget + size - 1
+            for used in range(ticket_budget + 1):
+                for support in supports:
+                    potential = size * used + size - len(support)
+                    assert 0 <= potential <= upper
+                    for next_support in supports:
+                        if next_support < support:
+                            assert (
+                                size * used + size - len(next_support)
+                                >= potential + 1
+                            )
+                        if used < ticket_budget:
+                            assert (
+                                size * (used + 1)
+                                + size
+                                - len(next_support)
+                                >= potential + 1
+                            )
+
+
 def main() -> None:
     verify()
     verify_weighted_star_conflicts()
     verify_labelled_star_overload()
     verify_strict_support_descent()
+    verify_ticketed_support_potential()
     print("weighted GC anchor-link dichotomy: verified through six vertices")
 
 
