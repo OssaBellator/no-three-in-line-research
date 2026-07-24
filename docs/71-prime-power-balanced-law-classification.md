@@ -83,7 +83,7 @@ for every `u`. Since multiplication by `a` permutes `F_p`, this says
 \widehat\mu(a,d)=0
 \]
 
-for every frequency `d` whenever `a ne 0`.
+for every frequency `d` whenever \(a\ne0\).
 Fourier inversion in the first coordinate therefore makes
 `b -> mu(b,c)` constant for each fixed `c`. Write that constant as
 `alpha_c/p`. Total mass one gives `sum_c alpha_c=1`. ∎
