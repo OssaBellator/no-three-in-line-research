@@ -80,11 +80,56 @@ def verify_positive_correlation() -> None:
     )
 
 
+def verify_balanced_switching_kernel(n: int) -> None:
+    states = list(permutations(range(n)))
+    flawed = {state for state in states if state[0] == 0}
+    scale = n - 1
+    rows: dict[
+        tuple[int, ...], dict[tuple[int, ...], Fraction]
+    ] = {state: {} for state in states}
+
+    reverse_neighbours: dict[tuple[int, ...], list[tuple[int, ...]]] = {
+        state: [] for state in states if state not in flawed
+    }
+    for state in flawed:
+        neighbours = [switched(state, 0, other) for other in range(1, n)]
+        assert len(neighbours) == scale
+        assert all(output not in flawed for output in neighbours)
+        for output in neighbours:
+            rows[state][output] = rows[state].get(output, Fraction(0)) + Fraction(
+                1, scale
+            )
+            reverse_neighbours[output].append(state)
+
+    for state, neighbours in reverse_neighbours.items():
+        assert len(neighbours) <= scale
+        for output in neighbours:
+            rows[state][output] = rows[state].get(output, Fraction(0)) + Fraction(
+                1, scale
+            )
+        rows[state][state] = rows[state].get(state, Fraction(0)) + Fraction(
+            scale - len(neighbours), scale
+        )
+
+    assert all(sum(row.values()) == 1 for row in rows.values())
+    incoming = {state: Fraction(0) for state in states}
+    for row in rows.values():
+        for output, probability in row.items():
+            incoming[output] += probability
+    assert all(total == 1 for total in incoming.values())
+    assert all(
+        probability == rows[output].get(state, Fraction(0))
+        for state, row in rows.items()
+        for output, probability in row.items()
+    )
+
+
 def verify(max_n: int = 7) -> None:
     for n in range(2, max_n + 1):
         verify_stationarity(n)
         verify_removal_and_support(n)
         verify_remote_formula(n)
+        verify_balanced_switching_kernel(n)
     verify_positive_correlation()
 
 

@@ -44,6 +44,12 @@ stationarity convention: stationarity must refer to the all-state kernel,
 since conditional regeneration to `mu` would contradict guaranteed flaw
 removal. The superregular missing-edge extension remains open.
 
+[`superregular-switching-criterion.md`](superregular-switching-criterion.md)
+proves SRR1b: an exact stationary oracle exists whenever the flaw-removing
+switching graph is left-regular and has reverse degree no larger than its
+forward degree. This reduces the general host problem to a balanced
+alternating-cycle switching theorem plus the remote-neighbourhood bound.
+
 ## SRR2 — Resampling dependency theorem
 
 ### Target statement
@@ -61,6 +67,10 @@ If
 for a sufficiently small absolute constant `c_0`, then a perfect matching avoiding every forbidden event exists.
 
 The dependency graph should be indexed by overlapping matching vertices, possibly enlarged by the bounded resampling neighbourhood from SRR1.
+
+SRR1b shows that stationarity and flaw removal follow from switching
+balance, but not the remote-event estimate. SRR2 still requires the
+lopsided/remote locality estimate recorded in that criterion.
 
 ## SRR3 — Two-layer exact-cover extension
 
