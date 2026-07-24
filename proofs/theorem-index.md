@@ -35,6 +35,21 @@ The numbering is local to this repository.
 | PP3l | Sequential four-layer row-lift local lemma | PROVED | `docs/31-sequential-row-lift-local-lemma.md` |
 | PP3m | Failed row-lift selection forces a heavy activated assignment load | PROVED | `docs/31-sequential-row-lift-local-lemma.md` |
 | PP3n | Exact side-three sequential row-lift obstruction | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/31-sequential-row-lift-local-lemma.md` |
+| PP3o | Full row-lift support has \(\Omega(t^4\log t)\) compatible triples | PROVED | `docs/32-row-lift-pruning-barriers.md` |
+| PP3p | Static terminal-layer vertex-load criterion | PROVED | `docs/32-row-lift-pruning-barriers.md` |
+| PP3q | Collision-conditioned sequential activated-mass theorem | PROVED | `docs/32-row-lift-pruning-barriers.md` |
+| PP3r | Static collision-conditioned terminal-mass criterion | PROVED | `docs/32-row-lift-pruning-barriers.md` |
+| PP3s | Four-`t` points in aligned off-diagonal blocks force a slope-minus-one triple | PROVED | `docs/33-off-diagonal-reservoir-obstruction.md` |
+| PP3t | Aligned contiguous square reservoirs cannot be refilled only off diagonal | PROVED | `docs/33-off-diagonal-reservoir-obstruction.md` |
+| PP3u | Primitive-direction projection dispersion is necessary for row-lift states | PROVED | `docs/33-off-diagonal-reservoir-obstruction.md` |
+| PP3v | Classification of the minimal `2t-1` projection failure | PROVED | `docs/33-off-diagonal-reservoir-obstruction.md` |
+| PP3w | Convex minimum triple count on a fixed number of parallel lines | PROVED | `docs/34-projection-triple-lower-bounds.md` |
+| PP3x | Quantitative row-lift triple lower bound from one projection | PROVED | `docs/34-projection-triple-lower-bounds.md` |
+| PP3y | Projection triple lower bounds add across primitive directions | PROVED | `docs/34-projection-triple-lower-bounds.md` |
+| PP3z | Exact independent component-clean row-lift endpoint | PROVED | `docs/35-component-clean-row-lift-banks.md` |
+| PP3aa | Cell/pair spread form of the component-clean endpoint | PROVED | `docs/35-component-clean-row-lift-banks.md` |
+| PP3ab | Quadratic cross-triple cap for two internally clean components | PROVED | `docs/35-component-clean-row-lift-banks.md` |
+| PP3-R4 | Aligned off-diagonal block-doubling row-lift construction | REFUTED | `docs/33-off-diagonal-reservoir-obstruction.md` |
 | PP3-R3 | Unrestricted full row-lift bank is automatically clean | REFUTED | `docs/31-sequential-row-lift-local-lemma.md` |
 | PP3-R2 | Unconditioned PP3b boundary-shadow criterion as a usable seed test | REFUTED AS USEFUL | `docs/30-deletion-aware-row-lift-banks.md` |
 | PP3-R1 | Universal recursive boundary-only one-strip construction | REFUTED | `docs/28-one-strip-and-pair-aware-patching.md` |
