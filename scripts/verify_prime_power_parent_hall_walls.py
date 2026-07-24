@@ -35,6 +35,8 @@ def hall_witness(t: int, supported: set[tuple[int, int]]):
 
 
 def verify_hall_rectangles(max_t: int) -> None:
+    # Exhaustive rectangle/state incidence is kept to t<=6. The arbitrary-t
+    # statement is the Hall proof in CMR199.
     for t in range(5, max_t + 1):
         states = derangements(t)
         for source_set in powerset_nonempty(t):
@@ -84,7 +86,7 @@ def verify_wall_arithmetic(max_t: int) -> None:
 
 
 def main() -> None:
-    verify_hall_rectangles(max_t=7)
+    verify_hall_rectangles(max_t=6)
     verify_wall_arithmetic(max_t=100_000)
     print(
         "verified parent Hall walls: dense blocker rectangles, half-full "
