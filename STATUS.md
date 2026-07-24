@@ -4,7 +4,10 @@
 
 ## External status
 
-The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 paper proves the analogous maximum \(kn\) for every fixed \(k\ge3\) and sufficiently large \(n\), while identifying \(k=2\) as the exceptional unresolved case.
+The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026
+paper proves the analogous maximum \(kn\) for every fixed \(k\ge3\) and
+sufficiently large \(n\), while identifying \(k=2\) as the exceptional
+unresolved case.
 
 ## What is genuinely proved in this notebook
 
@@ -60,33 +63,35 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
 51. **All-modulus affine saturation.** For every modulus, two affine permutation channels with distinct offsets use every row and column exactly twice, including nonunit strata.
 52. **Affine real-lift classification.** The affine determinant is exactly \(-N\) times a carry determinant, and every affine modular channel has a real collinear triple for \(N\ge5\).
-53. **Affine pair graph and codegree classification.** Unit offset gives one alternating Hamiltonian cycle, but one corresponding-column displacement repeats at least \(\lceil N/2\rceil\) times.
-54. **Composite hyperbola collapse families.** Odd squarefree, odd prime-power, and power-of-two unit hyperbolas have explicit real lines containing more than two points.
-55. **Composite lift and CRT limitations.** Real collinearity always implies modular primitive-fibre collinearity, while coordinatewise CRT products contain mixed-projection triples with determinant divisible by the full modulus.
-56. **Completed reciprocal full channels.** At every prime power, valuation-stratum inversion gives a nonlinear valuation-preserving involution covering every unit and nonunit row and column.
-57. **Prime-power tangent-cell classification.** At odd prime powers, every line intersection reduces to explicit valuation quadratics; only the top possible stratum can be singular, and its multiplicity is an exact square-root count. The resulting real-line cap is \(O(\sqrt N+\log N)\).
-58. **Universal companion layer.** Every prime-power permutation channel has a disjoint companion layer whose row-column graph is one alternating Hamiltonian cycle; corresponding-column vertical displacement multiplicity is at most \(p\) for odd \(p\), or four for powers of two.
-59. **Prime-power displacement signature.** Every same-channel completed-reciprocal secant has equal \(p\)-adic valuation in its two displacement coordinates, and fixed same-stratum displacements reduce to one explicit product/square-root congruence.
-60. **Completed-reciprocal syndrome bound.** One completed-reciprocal channel has at most \(O(N^{5/2}+N^2\log N)\) real collinear triples.
-61. **Digital finite channels.** Explicit binary digit-linear permutations give no-three channels at \(N=8,16,32\), verified by exhaustive exact determinant checks.
+53. **Affine pair graph and codegree classification.** Unit offset gives one alternating Hamiltonian cycle, but one corresponding-column displacement repeats linearly many times.
+54. **Composite hyperbola collapse families.** Odd squarefree, odd prime-power, and power-of-two unit hyperbolas have explicit large real-line collapses.
+55. **Composite lift and CRT limitations.** Real collinearity always implies modular primitive-fibre collinearity, while coordinatewise CRT products contain mixed-projection triples.
+56. **Completed reciprocal full channels.** At every prime power, valuation-stratum inversion gives a nonlinear valuation-preserving involution covering every row and column.
+57. **Prime-power tangent-cell classification.** Odd-prime line intersections reduce to valuation quadratics with one possible Hensel-tangent cell and a height-sensitive exact-real cap.
+58. **Universal companion layer.** Every prime-power permutation channel has a disjoint companion layer with one alternating Hamiltonian cycle.
+59. **Prime-power displacement structure.** Completed-reciprocal secants have exact valuation, quadratic, block, and carry classifications; bounded raw multiplicity is impossible but the repetitions are localized.
+60. **Recursive prime-power banks.** Every quotient state has exact fibre lifts, contraction recovers the smaller host, and the restricted conic bank excludes fibre-internal triples with explicit spread.
+61. **All-prime terminal family.** Completed inverse permutations and their nonsquare-parameter spread family give companion-compatible no-three terminal states for every prime.
+62. **Quadratic-order deterministic syndrome.** One completed-reciprocal layer has harmonic energy \(O(N^{3/2}+N\log^3N)\) and at most \(O(N^2\log N)\) real triples.
+63. **Quadratic-order companion syndrome.** For fixed odd prime base, the full two-layer companion host has \(O_p(N^2\log N)\) same-/cross-layer triples.
+64. **Recursive harmonic dispersion.** The recursive bank has expected one-layer harmonic energy \(O(N\log^3N)\), including with a no-three terminal base.
+65. **Digital completion obstruction.** The recorded 64-point digit-linear layer has no second-permutation no-three completion, by an exact integer covering certificate.
+66. **Corrected CRT taxonomy.** Saturated prime-factor pairs cannot be modular arcs; local-line slope carries and collision directions must both be tracked.
+67. **Finite composite coverage.** Exact saturated configurations are recorded at \(N=4,6,8,9,10,12\); one-layer digital channels are recorded through \(N=64\).
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Carry-sensitive phase codes.
-- Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
 - A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
-- A monotone carry-complexity potential showing that repeated carry/wrap-center dispersion must terminate or enter an absorbable exception.
-- Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
-- A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
-- Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
-- A divisor-sensitive exact-real bound inside completed-reciprocal Hensel tangent cells, sufficient for a constant or repairable line cap.
-- Arbitrary two-dimensional and cross-channel displacement bounds for the prime-power companion pair.
-- A near-linear same-/cross-channel syndrome bound for the nonlinear prime-power host.
-- A scalable digit-linear no-three family beyond \(N=32\).
-- A positive ordered-box CRT assembly theorem handling mixed local-projection triples.
+- A monotone carry-complexity potential or finite-denominator absorber theorem.
+- A superregular resampling oracle or exact conflict-free perfect-matching theorem.
+- Recursive first-separation summation for the restricted prime-power bank.
+- Removal or absorption of the square-root divisor-collision boundary.
+- A joint digital two-layer construction replacing the obstructed CMR12 completion route.
+- A CRT slope-carry incompatibility or absorption theorem.
+- Coverage of arbitrary composite side lengths.
 
 ## Important refutations
 
@@ -95,16 +100,21 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Wall expansion does not necessarily terminate in an improving synchronized state.
 - A single common absorber shift or common slope can be trapped by translated blocks.
 - Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
-- A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
+- A carry-filtered cycle need not have an improving cyclic state or extracted order-two absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
-- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
-- Affine modular permutations cannot be a direct no-three channel for \(N\ge5\), despite solving saturation.
+- Affine modular permutations cannot be a direct no-three channel for \(N\ge5\).
 - Prime-field hyperbola line caps do not survive natural composite unit-hyperbola substitution.
-- A unit-group channel is not a full permutation channel and cannot fill nonunit rows or columns.
-- A genuine toroidal no-three set cannot gain a real triple under standard lifting; the false implication is modular-to-real, not real-to-modular.
+- A unit-group channel is not a full permutation channel.
+- The known 64-point digital layer cannot be completed by any second permutation.
+- A saturated odd-prime CRT factor cannot satisfy the modular-arc premise of the simple direction-separation theorem.
 
 ## Bottom line
 
-There is no complete proof. Carry and wrap-center classification make every first-generation prime-field obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck there is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
-
-The composite-modulus branch now has a nonlinear full prime-power host rather than only negative classifications. Completed reciprocals cover all valuation strata, their line and same-stratum secant equations are explicit, and a companion layer supplies saturation and a Hamiltonian alternating cycle. The current general bounds—\(O(\sqrt N+\log N)\) points per line and \(O(N^{5/2}+N^2\log N)\) one-channel triples—remain too weak. The next positive target is an exact-real divisor bound inside tangent cells, followed by companion cross-channel syndrome control and mixed-projection-aware CRT assembly.
+There is no complete proof. The prime-field repair route still needs global
+alternating-closure concentration. The independent composite route now has
+full nonlinear prime-power channels, recursive saturated banks, an all-prime
+spread terminal family, quadratic-order one- and two-layer syndrome bounds,
+and corrected CRT slope-carry signatures. Its main unresolved step is a global
+first-separation decoder or absorber that converts those quantitative bounds
+into an exact no-three saturated state, followed by assembly across arbitrary
+composite moduli.
