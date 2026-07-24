@@ -73,6 +73,43 @@ margin impossible. ∎
 This proposition handles the entire retained-retained-inserted certificate
 class against `F`; no secant multiplicities appear.
 
+### Proposition PP3cw -- PROVED
+
+For a deletion `D` avoiding unusable edges, put
+
+\[
+ \mu_a=|D\cap M_a|,
+ \qquad
+ \mu_b=|D\cap M_b|,
+ \qquad
+ \mu_*=4-\mu_a-\mu_b,
+\]
+
+and define `rho_a,rho_b,rho_*` analogously from `R_a,R_b`.  The exact number of
+fixed-pair-blocker-free width-two geometries on `D` is
+
+\[
+ \boxed{
+ \binom{\mu_*}{2-\mu_a}
+ \binom{\rho_*}{2-\rho_a},
+ }
+\]
+
+with a binomial coefficient interpreted as zero when its lower index is outside
+`[0,s]`.
+
+#### Proof
+
+A movement geometry is determined by the two edges assigned to new row `a`.
+Every edge of `D intersect M_a` must be chosen, every edge of `D intersect M_b`
+must be excluded, and exactly `2-mu_a` of the `mu_*` flexible edges must be
+chosen.  This gives the first binomial coefficient.  The refill column choice is
+independent and gives the second. ∎
+
+Thus PP3co is the positivity criterion for an exact factored state count.  The
+multiplicity is the entropy available for clearing the remaining anchored-pair
+patterns.
+
 ## 3. A clean-domain density bound
 
 For a nonnegative integer `s`, write `(s)_3=s(s-1)(s-2)`.
@@ -167,7 +204,8 @@ conditioned PP3cg bounds give expected fixed-anchor defect at most
 
 \[
  \boxed{
- \frac8\delta+rac{128}{\delta}\frac{r-1}{r}
+ \frac8\delta+
+ \frac{128}{\delta}\frac{r-1}{r}
  <
  \frac{136}{\delta}.
  }
