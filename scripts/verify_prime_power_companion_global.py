@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR56--CMR58 on finite odd-prime companion hosts."""
+"""Verify CMR40--CMR42 on finite odd-prime companion hosts."""
 from __future__ import annotations
 
 import argparse
@@ -80,13 +80,7 @@ def verify_instance(p: int, k: int) -> tuple[int, float, float, int, float]:
     for line, occupants in lines.items():
         A, B, _ = line
         height = max(abs(A), abs(B))
-        assert len(occupants) <= A0 + B0 / height + 1e-9, (
-            p,
-            k,
-            line,
-            len(occupants),
-            A0 + B0 / height,
-        )
+        assert len(occupants) <= A0 + B0 / height + 1e-9
 
     cutoff = max(1, isqrt(n))
     harmonic = sum(1.0 / height for height in range(1, cutoff + 1))
@@ -95,7 +89,7 @@ def verify_instance(p: int, k: int) -> tuple[int, float, float, int, float]:
         + 4 * n * B0 * harmonic
         + ((2 * n) * (2 * n - 1) / 2) / cutoff
     )
-    assert energy <= energy_bound + 1e-9, (p, k, energy, energy_bound)
+    assert energy <= energy_bound + 1e-9
 
     triples = sum(
         len(occupants) * (len(occupants) - 1) * (len(occupants) - 2) // 6
@@ -105,7 +99,7 @@ def verify_instance(p: int, k: int) -> tuple[int, float, float, int, float]:
         ((A0 - 2) / 3) * ((2 * n) * (2 * n - 1) / 2)
         + (B0 / 3) * energy_bound
     )
-    assert triples <= syndrome_bound + 1e-9, (p, k, triples, syndrome_bound)
+    assert triples <= syndrome_bound + 1e-9
     return n, energy, energy_bound, triples, syndrome_bound
 
 
