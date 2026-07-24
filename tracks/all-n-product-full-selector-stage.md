@@ -3,21 +3,21 @@
 **Branch:** `research/all-n-product-construction`
 
 This stage follows the complete arbitrary-map one-inner-layer classification
-through base side eight.  It moves to the complete four-layer host and records
-the first closure that genuinely requires a mixed selector.
+through base side eight. It moves to the complete four-layer host and records
+closures that genuinely require mixed selectors.
 
 ## Current ledger
 
 | Item | Current status |
 |---|---|
 | PC1 | **COMPLETE.** Arbitrary blockwise digit maps preserve the four-regular host, and every spanning degree-two state is saturated and decomposes into two permutation layers. |
-| PC2 | **SUBSTANTIAL STRUCTURAL REDUCTION.** The complete side-two-outer host has the exact normal form `Q^j T H^s P^i`; factor dependence is only the relative cycle type of `H`. Projection-fibre, line, carry, and conflict-degree bounds remain available. |
-| PC3 | **MIXED.** The arbitrary-map one-inner-layer family is completely classified through base side eight and fails at `3,6,7,8`. The full selector succeeds universally at base three. |
-| PC4 | **THREE SPECIAL CLOSURES PROVED.** Factor-independent products `2 x 3 -> 6`, `2 x 4 -> 8`, and `2 x 5 -> 10` are exact. No infinite multiplicatively closed family is known. |
+| PC2 | **SUBSTANTIAL STRUCTURAL REDUCTION.** The complete side-two-outer host has normal form `Q^j T H^s P^i`; factor dependence is only the relative cycle type of `H`. The degree-two selector has an exact nine-state transfer matrix on every relative cycle. |
+| PC3 | **MIXED.** The arbitrary-map one-inner-layer family is completely classified through base side eight and fails at `3,6,7,8`. The full selector succeeds universally at base three and for the side-six 6-cycle factor class. |
+| PC4 | **THREE UNIVERSAL SPECIAL CLOSURES PLUS ONE FACTOR CLASS.** Products `2 x 3 -> 6`, `2 x 4 -> 8`, and `2 x 5 -> 10` are factor-independent. Product `2 x 6 -> 12` is proved for all side-six factors of relative 6-cycle type. No infinite multiplicatively closed family is known. |
 | PC5 | **OPEN.** The special closures and finite witnesses do not imply arithmetic coverage. |
-| PC6 | **REFORMULATED AGAIN.** For the full selector, the next classification is per relative cycle type rather than per individual factor. Repair/resampling remains open for genuinely mixed selectors. |
+| PC6 | **REFORMULATED AGAIN.** Full-selector feasibility is classified per relative cycle type and geometric parameters `T,P,Q`; repair/resampling remains open for arbitrary mixed selectors. |
 
-## New full-host normal form
+## Full-host normal form
 
 For an inner factor `(tau_0,tau_1)` and arbitrary row/column block maps, define
 
@@ -41,14 +41,14 @@ Q^j T H^s P^i,
 \]
 
 Conversely, `T,P,Q` are arbitrary and `H` may be any conjugate of the factor's
-relative permutation.  Therefore full-selector geometry depends on the factor
+relative permutation. Therefore full-selector geometry depends on the factor
 only through relative cycle type.
 
 ## Universal side-three closure
 
 Every side-three factor has a fixed-point-free relative permutation, hence a
-3-cycle.  All such factors therefore transport to the same canonical crossed
-host.  The fixed selected state has permutation layers
+3-cycle. All such factors transport to one canonical crossed host with selected
+permutation layers
 
 \[
 (1,5,3,0,4,2),
@@ -56,7 +56,7 @@ host.  The fixed selected state has permutation layers
 (3,1,5,2,0,4).
 \]
 
-PX51 proves the factor-independent closure
+PX51 proves
 
 \[
 \boxed{2\times3\longrightarrow6}.
@@ -81,11 +81,33 @@ PX49 completes the arbitrary-map PX28 classification through base eight:
 
 Thus the `2 x 4 -> 8` closure cannot iterate to side sixteen inside PX28.
 
-## One-outer-layer side-six obstruction
+## Abstract mixed-selector transfer system
+
+For one relative cycle of length `L`, PX54 gives the exact selector count
+
+\[
+A_L
+=
+2+2\cdot4^L
++(4+2\sqrt3)^L
++(4-2\sqrt3)^L.
+\]
+
+Counts multiply over the cycles of `H`. At side six this gives:
+
+| Relative type | Abstract degree-two states |
+|---|---:|
+| `(6)` | 181,122 |
+| `(4,2)` | 325,620 |
+| `(3,3)` | 298,116 |
+
+The selector count is independent of `T,P,Q`; those permutations control the
+real-grid geometry and the collinearity constraints.
+
+## Side-six restricted obstruction and mixed success
 
 PX52 reduces one-outer-layer states to two independently relabelled saturated
-factors having the same relative cycle type.  At side six there are exactly 116
-ordered factors:
+factors of the same relative type. The 116 ordered side-six factors split as:
 
 | Relative type | Count |
 |---|---:|
@@ -93,25 +115,52 @@ ordered factors:
 | `(4,2)` | 16 |
 | `(3,3)` | 16 |
 
-PX53 exhausts all 60,544 choices of two target blocks, orientation, and outer
-layer and finds no no-three state.  Hence a successful `2 x 6 -> 12` product
-must mix both outer and both inner layers nontrivially.
+PX53 exhausts all 60,544 one-outer-layer states and finds none no-three.
+
+The complete affine full-selector census then tests all
+
+\[
+3\cdot4\cdot12^3=20,736
+\]
+
+hosts with `T,P,Q` affine on `Z/6Z`. PX56 finds exactly one feasible host:
+relative type `(6)`, orientation `ff`, and
+
+\[
+T=(2,1,0,5,4,3),
+\qquad
+P=Q=(5,4,3,2,1,0).
+\]
+
+Its no-three state has permutation layers
+
+\[
+(2,7,0,6,10,8,3,1,5,11,4,9),
+\]
+
+\[
+(4,6,9,3,0,10,1,11,8,2,5,7).
+\]
+
+PX57 transports this same side-twelve certificate to all 84 ordered side-six
+factors of relative 6-cycle type. The selector uses both outer and both inner
+layers and is therefore genuinely mixed.
 
 ## Exact next targets
 
-1. **Genuinely mixed side-six selector.** For each of the three relative cycle
-   types `(6)`, `(4,2)`, and `(3,3)`, determine whether some `T,P,Q` host has a
-   no-three spanning degree-two state.
-2. **Selector normal form.** Compress the degree-two selector inside one relative
-   cycle component into a lower-dimensional matching, transfer-matrix, or code
-   description.
-3. **Cycle-type transport.** Prove that one successful mixed template transports
-   every factor in its relative conjugacy class, then classify which cycle types
-   occur at larger sides.
-4. **Repair/resampling.** Develop a conflict-aware selection theorem for the
-   complete host normal form, distinguishing feasible cycle types from structured
-   infeasible cores.
-5. **Arithmetic coverage.** Convert any infinite cycle-type closure family into
+1. **Remaining side-six cycle types.** Determine whether arbitrary `T,P,Q` give a
+   full-selector template for `(4,2)` or `(3,3)`. The affine family is already
+   proved empty for both.
+2. **Structured extension of the 6-cycle template.** Identify a map group or
+   recurrence containing the unique affine template and applicable at infinitely
+   many cycle lengths.
+3. **Geometric transfer refinement.** Enrich the nine-state selector transfer
+   matrix with line or carry signatures so selector states and `T,P,Q` can be
+   searched jointly.
+4. **Repair/resampling.** Develop a conflict-aware theorem for the complete host
+   normal form, distinguishing feasible cycle types from structured infeasible
+   cores.
+5. **Arithmetic coverage.** Convert an infinite cycle-type closure family into
    coverage of all side lengths; no such family is currently known.
 
 ## Verification
@@ -119,10 +168,12 @@ must mix both outer and both inner layers nontrivially.
 ```bash
 python scripts/verify_product_full_host_normal_form.py
 python scripts/verify_product_one_outer_layer_six.py
+python scripts/verify_product_selector_transfer.py
+python scripts/verify_product_affine_full_selector_six.py
 python scripts/verify_product_unrestricted_eight.py --orientation cc
 python scripts/verify_product_unrestricted_eight.py --orientation cf
 python scripts/verify_product_unrestricted_eight.py --orientation ff
 ```
 
-The crossed `fc` base-eight case follows from `cf` by scalar transposition.  The
+The crossed `fc` base-eight case follows from `cf` by scalar transposition. The
 overall no-three-in-line conjecture remains open.
