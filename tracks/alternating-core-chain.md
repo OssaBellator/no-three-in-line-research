@@ -228,6 +228,29 @@ multiply paid by its shared token; it is the exact concentrated
 incidence pattern that the remaining anchor/carry/BDA/RI geometry must
 classify.
 
+[`alternating-core-minimal-deficiency.md`](alternating-core-minimal-deficiency.md)
+proves AC3i. Every Hall failure contains an inclusion-minimal core on
+\(m\) reopenings with exactly \(m-1\) capacity tokens, and every token
+is reused. If each reopening sees at least \(L\) tokens and incidences
+have at most \(T\) roles, the core has an exact balanced-bin lower bound
+\(\mathfrak C_T(L,m)\) on same-token, same-role pair collisions. One
+reopening therefore carries a quantified second-order collision load;
+for \(L\geq2T\), that load is already greater than \(L\).
+
+AC3j gives the corresponding square-root router. At a reopening with
+collision load \(\kappa\), either one same-role token is shared with
+more than \(\lfloor\sqrt{\kappa/T}\rfloor\) other reopenings, or one
+role at that reopening contains at least that many distinct colliding
+capacity tokens. Under resource capacity cap \(\rho\), the latter gives
+at least the same quantity divided by \(\rho\) in distinct underlying
+charging resources. When those are current syndrome incidences or
+certificates, the output is a genuine role-pure paid concentration;
+finite exceptional-state resources retain their explicit
+classification. Thus an arbitrary Hall witness has been reduced to
+either the AC3h same-token fan or one role-pure resource concentration
+at a reopened object. The remaining geometry must classify those two
+exact outputs through the anchor/carry/BDA/RI interfaces.
+
 ## AC4 — Alternating two-colour carry-core termination
 
 ### Target statement
@@ -303,6 +326,8 @@ upgrade AC6 while those inputs remain open.
 - track signature reuse and search for cycles in the proposed `Xi` potential;
 - verify weighted compatible extraction and reject every unticketed
   repeated-signature cycle;
+- enumerate minimal Hall-deficient cores and their role-pure collision
+  loads;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 
