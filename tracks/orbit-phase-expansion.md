@@ -162,6 +162,20 @@ audit. Conditioning on a bounded kernel can now produce only finitely
 many unit-Lubell kernel stars; OP2 still has to expand or classify each
 star arithmetically.
 
+[`orbit-phase-literal-star-router.md`](orbit-phase-literal-star-router.md)
+proves OP2l--OP2m for the one-literal stars actually activated by a
+phase change.  Fixing the target centre phase leaves residual scopes of
+size at most two, and every residual forbidden literal equals its
+current phase.  The bucket is therefore exactly a transversal system.
+A maximal residual matching of size \(\nu\) gives a transversal of size
+at most \(2\nu\): either there are \(m\) disjoint blocker arms, or at
+most \(2(m-1)\) auxiliary phase changes block the entire bucket.
+Weighted bucket mass \(W\) similarly yields either a current residual
+literal of load greater than \(\Delta\), extending the fixed kernel, or
+at least \(\lceil W/(2\Delta)\rceil\) disjoint arms.  The remaining
+arithmetic task is now confined to those paid depth-two kernels and
+large disjoint-arm families.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -179,9 +193,18 @@ The decoder must handle cycle-like cores and the exact `p=11` frozen one-colour 
 The phase-literal note proves the exact identity
 `Delta Phi = created weight - destroyed weight`, its check-disjoint batch
 version, and a lexicographic termination lemma for rounds that either lower
-`Phi` or increase a bounded structured-core potential. OP3 remains open
-until OP2 supplies one of those certified moves for every nonzero
-syndrome.
+`Phi` or increase a bounded structured-core potential.
+
+OP3c in the literal-star router sharpens the one-block identity.  The
+destroyed incident weight \(D(v)\) is independent of the target phase,
+while all possible creations partition into their unique target
+buckets.  Hence some phase creates at most \(E(v)/(h_v-1)\), and
+\((h_v-1)D(v)>E(v)\) gives an improving flip.  If no target improves,
+every target bucket has weight at least \(D(v)\).  Hard-unsafe targets
+return aligned hard blocker stars instead.  OP3 remains open because
+the auxiliary transversal changes can activate checks outside the
+original bucket, and large disjoint-arm outputs still require
+scope-complete paid selection or arithmetic expansion.
 
 ## OP4 — Product-state completion
 
@@ -217,6 +240,9 @@ kernel and localizes any large residual increase to one kernel
 intersection pattern.
 OP2k additionally caps every fixed intersection pattern at unit Lubell
 mass and the full amplified ancestor audit at \(P(f,r)\).
+OP2l--OP2m route every activated one-literal star to a bounded
+transversal correction, a paid deeper current-literal kernel, or a
+large residual-disjoint blocker family.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -259,6 +285,9 @@ checked by `scripts/verify_phase_factor_cactus.py`. Conditioning across
 one feedback variable on every binary theta instance is checked by
 `scripts/verify_phase_feedback.py`. Bounded-width noncactus ladders are
 checked by `scripts/verify_phase_incidence_treewidth.py`.
+Activated rank-two literal stars, maximal-matching transversals, paid
+residual loads, and exact phase averaging are checked by
+`scripts/verify_phase_literal_star_router.py`.
 
 ## Completion criterion
 

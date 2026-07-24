@@ -147,3 +147,13 @@ so \(\mathcal R\) again drops by at least one. \(\square\)
 OP2 and the absorber interfaces must now provide a total oracle returning
 a profitable OP3a flip, a strict OP3b structured increment, or a terminal
 delegation. Generic bounded degree/codegree does not provide that oracle.
+
+[`orbit-phase-literal-star-router.md`](orbit-phase-literal-star-router.md)
+proves OP3c, the exact target-phase refinement of OP3a.  Every
+alternative phase destroys the same current incident defect weight,
+while possible creations partition into their unique target buckets.
+Averaging therefore gives an improving phase whenever
+\((h_v-1)D(v)>E(v)\); if no phase improves, every target bucket has
+weight at least \(D(v)\).  OP2l--OP2m then route each activated bucket
+to a bounded auxiliary transversal, a paid deeper current-literal
+kernel, or a residual-disjoint blocker family.

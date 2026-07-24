@@ -434,6 +434,15 @@ that budget has one fixed kernel star.  This does not yet prove the
 arithmetic unique-neighbour expansion required by OP2, but it converts
 the residual obstruction into finitely many unit-Lubell kernel stars.
 
+[`orbit-phase-literal-star-router.md`](orbit-phase-literal-star-router.md)
+specializes the one-literal patterns which are active at a current
+phase assignment.  Their residual rank is at most two and all residual
+literals are aligned with that assignment.  OP2l therefore identifies
+them exactly with transversal systems, while OP2m routes their paid
+mass to a residual-disjoint matching or one deeper current-literal
+kernel.  No generic correlation assertion is added to the Lubell
+budget.
+
 `scripts/verify_phase_antichain_lubell.py` exhaustively checks small
 binary and nonuniform-domain antichains and verifies equality for every
 complete fixed-rank layer.  It also checks the variable/literal
