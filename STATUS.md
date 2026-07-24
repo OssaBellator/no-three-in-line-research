@@ -4,139 +4,175 @@
 
 ## External status
 
-The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026
-paper proves the analogous maximum \(kn\) for every fixed \(k\ge3\) and
-sufficiently large \(n\), while identifying \(k=2\) as the exceptional
-unresolved case.
+The classical no-three-in-line conjecture
 
-## What is genuinely proved in this notebook
+\[
+D(n)=2n
+\]
 
-1. **Saturated decomposition.** A set with exactly two points in every row and column decomposes into two permutation layers.
-2. **Clone-host regularity criterion.** Small active-coordinate secant shadow gives a near-complete superregular completion host.
-3. **Candidate-only logarithmic obstruction.** A constant-density candidate host contains \(\Omega(n^4\log n)\) collinear candidate triples; first-moment pruning cannot close the problem.
-4. **Reverse-scale certified multicover.** Descending dyadic heights avoids the protected-long-line problem and gives exact potential destruction under target deletion.
-5. **Spread injection lemma.** A dense target-partner graph with \(t\ll p\) admits a \(K/p\)-spread random injection by greedy exposure.
-6. **Uniform local-bank implication.** Explicit switch-shadow and anchor-load conditions imply negative expected drift.
-7. **Protected tomographic trades.** Difference operators produce finite row/column/direction line-sum-preserving signed trades.
-8. **Affine finite-direction construction.** For suitable arithmetic moduli, two affine permutations give a saturated configuration avoiding any fixed finite direction set.
-9. **Subgroup coset absorbers.** Suitable affine configurations contain linearly many independently switchable blocks preserving protected toroidal line sums.
-10. **Exact one-block collateral identity.** For absorber order \(h\le H\), a high line meets a block at most once and average collateral equals external secant shadow divided by \(h\).
-11. **Block-shadow closure.** Whole-block reservoir growth makes every reservoir block externally shadow-clean without row/column deficits.
-12. **Product-state LLL criterion.** A full-product block completion exists when normalized pair/triple conflict mass per block is small.
-13. **Complementary hyperbola seed.** \(H_a\cup H_b\) has two points per row/column, at most four per line, no monochromatic triples, and bounded displacement multiplicity.
-14. **Low-syndrome seed.** Some pair of hyperbola channels has \(O(n\log n)\) triple certificates.
-15. **Hamiltonian-cycle criterion.** The union graph cycles are controlled by the multiplicative order of \(b/a\).
-16. **Möbius secant matching.** For a fixed opposite-channel anchor, same-channel secant pairs form a projective involution matching.
-17. **Cycle-bank theorem.** Every trapping cycle supports a \(k\)-state row-column-preserving cyclic matching trade.
-18. **Window-product theorem.** Each cycle state lies in a number of modular hyperbolas equal to its distinct cyclic window-product count.
-19. **Collision-free carry-cycle bank bound.** Every carry-filtered cycle has a collision-aware full-permutation state whose cost is bounded by normalized one-, two-, and three-cell certificate counts.
-20. **Frozen-cycle concentration.** Failure of every cycle-block state forces a dense one-cell shadow, anchored-pair shadow, or candidate-only triple core.
-21. **Clone-space exact selection theorem.** A uniformly random perfect matching on two row and column clones avoids unavailable cells, duplicate cells and all lifted collinear triples whenever the maximum local canonical-event probability load is at most \(1/24\).
-22. **Concrete endpoint.** For \(n\ge100\), a candidate host with at most \(n/100\) unavailable cells and at most \(n^3/200\) residual collinear triples incident with each row or column contains a saturated no-three-in-line configuration.
-23. **Selection failure concentration.** Failure in a near-complete candidate host forces some row or column to support \(\Omega(n^3)\) residual collinear triples.
-24. **Fixed-rank superregular spread.** A uniformly random perfect matching of a dense superregular pair is \(O(1/N)\)-spread for every fixed rank, by six-cycle switchings.
-25. **Clone inheritance.** The two-clone blow-up of a superregular pair remains superregular with explicit parameter loss.
-26. **Two-layer spread.** Dense superregular pairs support a spread distribution on two edge-disjoint perfect matchings, giving exact row and column degree two.
-27. **Global conflict-mass endpoint.** A dense superregular host contains a saturated conflict-free two-layer selection whenever the total spread-weighted conflict mass is below one.
-28. **Inverse-additive repair banks.** Small quotient sets and many low-complexity windows produce linear common-ratio rectangle banks; near-minimal quotient sets complete to subgroup-coset absorbers.
-29. **Coset and rational propagation.** Structured cycle parameters propagate to opposite-colour anchor structure, while full subgroup cosets of order at least three expand under the normalized Möbius map.
-30. **Exact common-ratio collateral.** The cost of one same-ratio rectangle switch is exactly its two weighted secant loads plus the occupancy of its switched-pair line.
-31. **Common-ratio decoder-or-structure theorem.** A paid common-ratio bank either contains an improving rectangle, a dense channel-pair secant star, or a large aligned multiplicative anchor class.
-32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), one rectangle strictly lowers the triple potential.
-33. **Syndrome-weighted quotient extraction.** If \(|X/X|\le K|X|\), actual point triple degrees produce an admissible common-ratio matching carrying at least \(H/(6K)\) vertex-incidence weight.
-34. **Paid-bank lower bound.** In a \(q\)-channel universe, the extracted bank has \(D\ge H/(6K)-(q-1)|X|\).
-35. **Weighted conversion criterion.** Sufficiently large structured syndrome incidence forces an improving rectangle or one of the explicit alternating-closure structures.
-36. **Projective conic-pencil geometry.** Every opposite-channel anchor has an exact modular tangent/secant profile governed by \(\chi(1-b/a)\).
-37. **Aligned-anchor carry signatures.** Nondegenerate signatures have only \(p^{o(1)}\) real solutions, while degenerate signatures are exact affine-interpolation cells.
-38. **Sharp same-channel carry dispersion.** A same-channel real secant star has divisor-bounded multiplicity at each exact cross-carry level.
-39. **Universal star carry dispersion.** Any endpoint-disjoint secant star, including a cross-channel star, occupies at least its edge count divided by \(p^{o(1)}\) product-carry signatures.
-40. **Combined paid-bank transition.** A failed paid bank produces an improvement, product/coordinate carry dispersion, or a perfect affine-alignment population.
-41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit finite rational grid; the two endpoint parameters are inadmissible.
-42. **Reduced-denominator chamber criterion.** Perfect alignment at parameter \(t'/q\) occurs exactly when both relevant wrap indices are divisible by \(q\).
-43. **Denominator-sensitive sparsity.** A denominator-\(q\) perfect chamber contains at most \(4p/q\) base points; positive-density chambers therefore have bounded denominator.
-44. **Explicit wrap centers.** Every degenerate scalar carry cell is radial about one rational center \(pS/d\), while every nondegenerate cell meets one hyperbola channel at most twice.
-45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy a divisor-controlled integer product equation.
-46. **Wrap-center dispersion.** A large perfect-alignment class either occupies many rational centers or has multipliers with a large common divisor relative to their size.
-47. **Two-forbidden-matching spread.** Permutations avoiding a position set of row/column degree at most two have density at least \(1/72\) and \(72/(t)_r\) cylinder bounds for \(t\ge7\).
-48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
-49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
-50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
-51. **All-modulus affine saturation.** For every modulus, two affine permutation channels with distinct offsets use every row and column exactly twice, including nonunit strata.
-52. **Affine real-lift classification.** The affine determinant is exactly \(-N\) times a carry determinant, and every affine modular channel has a real collinear triple for \(N\ge5\).
-53. **Affine pair graph and codegree classification.** Unit offset gives one alternating Hamiltonian cycle, but one corresponding-column displacement repeats linearly many times.
-54. **Composite hyperbola collapse families.** Odd squarefree, odd prime-power, and power-of-two unit hyperbolas have explicit large real-line collapses.
-55. **Composite lift and CRT limitations.** Real collinearity always implies modular primitive-fibre collinearity, while coordinatewise CRT products contain mixed-projection triples.
-56. **Completed reciprocal full channels.** At every prime power, valuation-stratum inversion gives a nonlinear valuation-preserving involution covering every row and column.
-57. **Prime-power tangent-cell classification.** Odd-prime line intersections reduce to valuation quadratics with one possible Hensel-tangent cell and a height-sensitive exact-real cap.
-58. **Universal companion layer.** Every prime-power permutation channel has a disjoint companion layer with one alternating Hamiltonian cycle.
-59. **Prime-power displacement structure.** Completed-reciprocal secants have exact valuation, quadratic, block, and carry classifications; bounded raw multiplicity is impossible but the repetitions are localized.
-60. **Recursive prime-power banks.** Every quotient state has exact fibre lifts, contraction recovers the smaller host, and the restricted conic bank excludes fibre-internal triples with explicit spread.
-61. **All-prime terminal family.** Completed inverse permutations and their nonsquare-parameter spread family give companion-compatible no-three terminal states for every prime.
-62. **Quadratic-order deterministic syndrome.** One completed-reciprocal layer has harmonic energy \(O(N^{3/2}+N\log^3N)\) and at most \(O(N^2\log N)\) real triples.
-63. **Quadratic-order companion syndrome.** For fixed odd prime base, the full two-layer companion host has \(O_p(N^2\log N)\) same-/cross-layer triples.
-64. **Recursive harmonic dispersion.** The recursive bank has expected one-layer harmonic energy \(O(N\log^3N)\), including with a no-three terminal base.
-65. **Digital completion obstruction.** The recorded 64-point digit-linear layer has no second-permutation no-three completion, by an exact integer covering certificate.
-66. **Corrected CRT taxonomy.** Saturated prime-factor pairs cannot be modular arcs; local-line slope carries and collision directions must both be tracked.
-67. **Finite composite coverage.** Exact saturated configurations are recorded at \(N=4,6,8,9,10,12\); one-layer digital channels are recorded through \(N=64\).
-68. **Recursive first-separation summation.** Balanced reciprocal banks at \(p\equiv1\pmod4\) have expected syndrome \(O_p(N^2\log N)\), and the logarithmic mass is confined to binary same-layer stars.
-69. **Prefix-star neutralization.** Complete prefix rematching banks destroy every assigned binary star, remove the endpoint baseline, and have quadratic normalized rank-two/rank-three collateral.
-70. **Stable quotient charging.** Fine-to-coarse repairs preserve every later quotient charge; rank-one collateral sums to \(O_p(N^2\log^2N)\) in expectation.
-71. **Recursive-compatible node bank.** One reciprocal node can be changed while preserving saturation; invariant triples wholly inside child subtrees cancel exactly.
-72. **Vertical child-pencil dichotomy.** The remaining external child load is either \(O(N^2)\) per depth after normalization or exposes an explicit alternating endpoint bank.
-73. **Quantitative frozen-bank certificate.** Child-pencil mass controls the extracted star size, and a frozen bank forces normalized rank-\(1/2/3\) concentration at least \(t/216\).
-74. **Balanced reciprocal-law classification.** Exact cell balance inside the completed-reciprocal family exists precisely for primes \(p\equiv1\pmod4\); reweighting cannot solve \(p\equiv3\pmod4\).
-75. **Prime-seven balanced factorization.** Seven integer no-three permutations partition the \(7\times7\) grid and generate saturated recursive banks for every \(N=7^k\).
-76. **Prime-seven spectral syndrome.** A sharpened factorization has pair-difference multiplicity at most three and expected syndrome below \((36/7)(k-1)N^2+(29/9)N^2\).
-77. **Global-baseline alternating compression.** A fixed global comparison baseline transfers target destruction to every nonimproving child state and gives cube-root closure compression.
-78. **Sharp small matching threshold.** Every degree-two forbidden endpoint board of size at least four has a perfect matching, while size three can fail.
-79. **Geometric outcomes are executable.** Disjoint defects and heavy outside lines produce further alternating banks; no repeated-charge ledger is needed for either class.
-80. **Target-load closure.** Separating endpoint-board size from certified target load removes the parent-excess barrier and contracts every positive load to a four-endpoint, one-target bank.
-81. **Full-load two-layer conversion.** Ordered rematching of the two permutation layers destroys every triple in a vertex-disjoint family.
-82. **Exact terminal-board profile.** Every normalized four-endpoint board has 2--9 states with sharp rank-one, rank-two, and rank-three atoms \(3/4,2/3,1/2\).
-83. **Four-core cycle certificate.** Any positive global saturated minimum generates a finite cycle of four-point trades.
-84. **Balanced local defect flow.** Around every four-core cycle, each grid triple is created and removed equally often, and all changes touch moved cells.
-85. **Exact terminal trap.** Two explicit saturated \(N=4\) states form a potential-one two-cycle under all minimum-cost four-endpoint moves.
-86. **Universal local descent refuted.** The terminal two-cycle lies above an explicit potential-zero saturated state, so normalized four-board dynamics alone cannot prove global descent.
+remains open. This repository does **not** contain a complete proof.
+
+## What is genuinely proved
+
+### General repair and selection framework
+
+- Exact saturation decomposes into two permutation layers.
+- Reverse-scale target destruction, spread injections, local-bank drift
+  criteria, tomographic trades, subgroup absorbers, and exact one-block
+  collateral identities are proved under their stated hypotheses.
+- Clone-space and superregular perfect-matching endpoints reduce a complete
+  proof to explicit local conflict-mass or resampling conditions.
+- Complementary prime-field hyperbola channels have bounded line occupancy,
+  low syndrome, Möbius secant matchings, and explicit cycle/rectangle repair
+  banks.
+- Frozen prime-field banks force rank-one, rank-two, or rank-three
+  concentration; several natural one-colour or purely local descent claims are
+  exactly refuted.
+
+### Composite and prime-power algebra
+
+- Every modulus admits affine saturated pairs, but affine channels necessarily
+  contain real triples for side length at least five.
+- Natural composite unit-hyperbola substitutions have explicit collapse
+  families, and simple CRT arc assembly is obstructed by mixed projections and
+  zero-divisor directions.
+- Every odd prime power admits nonlinear completed-reciprocal full permutation
+  channels, disjoint companion layers, exact displacement/carry equations, and
+  recursive fibre banks.
+- For fixed odd prime base, deterministic and random completed-reciprocal hosts
+  have quadratic-order syndrome bounds.
+- Balanced completed-reciprocal local laws exist exactly for
+  \(p\equiv1\pmod4\); no reweighting of that same family works for
+  \(p\equiv3\pmod4\).
+- A non-reciprocal seven-map factorization gives balanced saturated recursive
+  banks for every \(N=7^k\), with a sharpened pair spectrum.
+
+### First-separation and prefix repair
+
+- Balanced reciprocal banks satisfy expected syndrome
+  \(O_p(N^2\log N)\); the logarithmic mass is localized to binary same-layer
+  stars.
+- Complete prefix rematching destroys every assigned binary star.
+- Rank-one quotient excess is charged to modular third-point and collision
+  energies; endpoint baselines disappear exactly.
+- Normalized rank-two and rank-three prefix collateral is universally
+  quadratic.
+- Fine-to-coarse repairs preserve every unprocessed quotient charge.
+- Recursive-compatible node banks cancel all triples wholly inside one rigidly
+  translated child subtree.
+- The remaining external child load is either quadratic per depth or exposes an
+  explicit alternating endpoint bank.
+
+### Alternating closure and terminal cores
+
+- Global-baseline transfer prevents recursive repair from resetting its
+  comparison state.
+- Dense replacement-touching triple families compress to disjoint defects,
+  alternating banks, or heavy lines.
+- Disjoint defects and heavy lines are executable continuations; no separate
+  repeated-charge ledger is needed for those classes.
+- Every positive target load contracts to a four-endpoint, one-target bank.
+- Every degree-two forbidden endpoint board of size at least four has an
+  allowed perfect matching; size three is the sharp failure threshold.
+- The abstract four-endpoint boards have 2--9 states and exact rank atoms
+  \(3/4,2/3,1/2\).
+- Any positive global saturated minimum generates a finite four-trade cycle,
+  with exact balance of created and removed triples.
+- An explicit \(N=4\) potential-one two-cycle exists above a separate
+  potential-zero state. Therefore universal normalized four-board descent is
+  false.
+
+### Inherited parent escape structure
+
+- Complete \(N=5\) and balanced prime-seven root censuses show that terminal
+  four-core traps are escaped by complete parent moves; at prime seven a joint
+  two-layer parent move is genuinely necessary.
+- Old-cell-clean ordered joint-parent banks have exact split-rank collateral
+  laws. At nonroot recursive blocks the inherited layer row fibres are disjoint,
+  so the joint bank simplifies to independent derangements.
+- Reciprocal and prime-seven nonroot joint-parent collateral sums are
+  \(O_p(N^2\log^2N)\), with exact fixed-rank derangement cylinders.
+- Summed destroyed populations count each triple once per occupied prefix block,
+  hence between one and three times at each scale.
+- Every closure branch has a canonical prefix envelope whose two layer row sets
+  are invariant. Envelope depth can strictly decrease at most \(k\) times for
+  \(N=p^k\).
+- Every inherited nonroot four-core is the unique nine-state four-object
+  derangement board. Its sixteen Pareto-minimal rank profiles are completely
+  classified.
+- Every rank-\(1/2/3\) cover of the full parent derangement bank needs at least
+  \(t-1\) cylinders. Equality is exactly one complete row or column rank-one
+  secant shadow.
+- Any terminal Pareto subcover accounts for at most \(9/11\) of the parent law,
+  forcing at least \(2/11\) additional cover mass.
+- A batch of \(R\) simultaneous terminal targets has one parent state with at
+  least
+  \[
+  \left\lceil\frac{2R}{11}\right\rceil
+  \]
+  actual new triples outside all selected local terminal covers.
+- Any such new triple crossing the current envelope forces a strict envelope
+  expansion. This crossing resolution can occur at most \(k\) times.
+
+## Important correction
+
+The former CMR138 claim that naive sequential two-layer rematching destroys
+every selected geometric target is **refuted as stated**. Moving a labeled
+first-layer point does not prevent the second layer from reoccupying its old
+grid cell. Valid replacements are:
+
+- the one-layer continuation CMR129;
+- the disjoint-fibre joint bank CMR164;
+- the explicitly old-cell-clean ordered bank CMR155.
+
+No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-- Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
-- Product-state conflict regularization for candidate-only triples.
-- An inherited escape theorem for four-endpoint traps arising from prime-power prefix ancestry.
-- A lexicographic potential paying for fine stars recreated by later coarse repairs.
-- A superregular resampling oracle or exact conflict-free perfect-matching theorem.
-- Removal or absorption of the square-root divisor-collision boundary.
-- Non-reciprocal balanced grid factorizations beyond the prime seven.
-- A joint digital two-layer construction replacing the obstructed CMR12 completion route.
-- A CRT slope-carry incompatibility or absorption theorem.
-- Coverage of arbitrary composite side lengths.
+1. **Internal envelope no-return.** After the final strict envelope expansion,
+   prove that repeated \(2/11\) parent-lifted defect batches cannot recycle the
+   same internal first-separation, primitive direction, quotient, and carry
+   signatures indefinitely.
+2. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
+   coarse prefix or joint-parent repairs.
+3. **Prime-field terminal conversion.** Transfer the inherited-envelope or
+   larger-parent escape mechanism to prime-field carry cycles.
+4. **Square-root divisor boundary.** Remove or absorb the residual nearly
+   singular collision terms.
+5. **Further balanced prime families.** Extend the non-reciprocal grid
+   factorization beyond prime seven.
+6. **CRT and product assembly.** Control mixed projections and simultaneous
+   zero-divisor slope carries.
+7. **Arbitrary side-length coverage.** Prime-power progress alone does not yet
+   cover every integer \(n\).
 
-## Important refutations
+## Important refutations retained in the notebook
 
-- Dense constant-probability pruning cannot make all candidate-only triple constraints sparse enough.
-- A large secant bank does not automatically certify destruction of current defects.
-- Wall expansion does not necessarily terminate in an improving synchronized state.
-- A single common absorber shift or common slope can be trapped by translated blocks.
-- Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
-- A carry-filtered cycle need not have an improving cyclic state or extracted order-two absorber.
-- A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
-- Affine modular permutations cannot be a direct no-three channel for \(N\ge5\).
-- Prime-field hyperbola line caps do not survive natural composite unit-hyperbola substitution.
-- A unit-group channel is not a full permutation channel.
-- The known 64-point digital layer cannot be completed by any second permutation.
-- A saturated odd-prime CRT factor cannot satisfy the modular-arc premise of the simple direction-separation theorem.
-- The weak recursive-compatible child load is not the ordinary finer-prefix collateral: a parent-node move changes its row residue class.
-- No balanced weighting of completed-reciprocal maps exists when \(p\equiv3\pmod4\).
-- A degree-two forbidden endpoint board need not have a perfect matching at size three.
-- A positive-potential saturated state need not admit a decreasing four-endpoint move.
-- Balanced four-core defect-flow cycles can exist above the global minimum.
+- Dense constant-probability pruning cannot regularize all candidate-only
+  triples.
+- A large secant bank does not automatically certify destruction of current
+  defects.
+- Wall expansion and synchronized one-colour cycle moves can be trapped.
+- A spread matching measure does not automatically inherit the complete
+  permutation negative-dependency graph.
+- Affine modular permutations cannot directly solve the problem for
+  \(N\ge5\).
+- Prime-field hyperbola line caps do not survive natural composite substitution.
+- The recorded 64-point digital layer has no second-permutation no-three
+  completion.
+- The weak recursive child load is not the ordinary finer-prefix collateral.
+- Balanced reciprocal weights do not exist for \(p\equiv3\pmod4\).
+- A degree-two endpoint board may fail at size three.
+- Positive-potential saturated states may have no decreasing four-endpoint
+  move, and balanced terminal defect-flow cycles can exist above the true
+  minimum.
 
 ## Bottom line
 
-There is no complete proof. On the composite prime-power route, every globally
-nonimproving alternating closure contracts to a four-endpoint board destroying
-one specified triple, but exact four-core traps exist in general. The principal
-missing theorem is therefore an **inherited escape** using the terminal core's
-prefix node, scale, quotient state, opposite-layer ancestry, or carry
-signatures. After that, one still needs a coarse-to-fine recreation budget and
-a coverage mechanism for arbitrary side lengths.
+There is no complete proof. On the composite prime-power route, bank
+construction, first-separation summation, prefix collateral, terminal
+contraction, parent-cover lifting, and crossing-envelope expansion are now
+closed. The principal missing theorem is an **internal fixed-envelope
+no-return lemma** for the \(2/11\) parent-lifted defect mass. After that one still
+needs a coarse-to-fine recreation budget and a mechanism covering arbitrary
+side lengths.
