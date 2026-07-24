@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact finite checks for CMR139--CMR144."""
+"""Exact finite checks for CMR138--CMR144."""
 
 from __future__ import annotations
 
@@ -68,6 +68,27 @@ def verify_four_board_profile() -> None:
         9: 1,
     }
     assert maximum_atoms == [Fraction(3, 4), Fraction(2, 3), Fraction(1, 2)]
+
+
+def verify_two_layer_reoccupation() -> None:
+    old_zero = (0, 1, 2, 3)
+    old_one = (1, 0, 3, 2)
+    new_zero = (2, 3, 0, 1)
+    new_one = (0, 1, 2, 3)
+
+    assert all(
+        new_zero[column] != old_zero[column]
+        and new_zero[column] != old_one[column]
+        for column in range(4)
+    )
+    assert all(
+        new_one[column] != old_one[column]
+        and new_one[column] != new_zero[column]
+        for column in range(4)
+    )
+
+    # Every old layer-zero geometric cell is reoccupied by the new second layer.
+    assert all(new_one[column] == old_zero[column] for column in range(4))
 
 
 def collinear(a: tuple[int, int], b: tuple[int, int], c: tuple[int, int]) -> bool:
@@ -143,30 +164,16 @@ def verify_exact_trap() -> None:
     assert outgoing_b == [1, 4, 4, 4]
 
     expected_a = frozenset(
-        {
-            (
-                (1, 1, 0),
-                (0, 2, 1),
-                (2, 0, 1),
-            )
-        }
+        {((1, 1, 0), (0, 2, 1), (2, 0, 1))}
     )
     expected_b = frozenset(
-        {
-            (
-                (2, 2, 0),
-                (1, 3, 1),
-                (3, 1, 1),
-            )
-        }
+        {((2, 2, 0), (1, 3, 1), (3, 1, 1))}
     )
     assert triples_a == expected_a
     assert triples_b == expected_b
 
 
 def verify_cycle_balance() -> None:
-    # A concrete abstract triple-set cycle. The identity checked here is purely
-    # set-theoretic and is the exact calculation used in CMR142.
     cycle = [
         frozenset({0, 1, 2}),
         frozenset({1, 2, 3, 4}),
@@ -194,11 +201,12 @@ def verify_cycle_balance() -> None:
 
 def main() -> None:
     verify_four_board_profile()
+    verify_two_layer_reoccupation()
     verify_exact_trap()
     verify_cycle_balance()
     print(
-        "verified four-endpoint core: 108 boards, atoms 3/4,2/3,1/2, "
-        "and the exact N=4 potential-one two-cycle"
+        "verified four-endpoint core: two-layer reoccupation, 108 boards, "
+        "atoms 3/4,2/3,1/2, and the exact N=4 potential-one two-cycle"
     )
 
 
