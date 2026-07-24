@@ -442,6 +442,63 @@ def verify_star_overlap_payment(maximum_resources: int = 3) -> None:
                     )
 
 
+def verify_deficient_labelled_fan(maximum_events: int = 5) -> None:
+    for event_count in range(1, maximum_events + 1):
+        possible = tuple(combinations(range(event_count), 2))
+        for label_count in range(1, 4):
+            for labels in product(range(label_count), repeat=event_count):
+                classes = [
+                    [
+                        event
+                        for event, assigned in enumerate(labels)
+                        if assigned == label
+                    ]
+                    for label in range(label_count)
+                ]
+                selected = max(classes, key=len)
+                assert len(selected) * label_count >= event_count
+
+                for reuse_floor in range(event_count):
+                    assert event_count > reuse_floor
+                    assert len(selected) * label_count > reuse_floor
+                    for mask in range(1 << len(possible)):
+                        edges = tuple(
+                            edge
+                            for index, edge in enumerate(possible)
+                            if mask & (1 << index)
+                        )
+                        selected_edges = tuple(
+                            edge
+                            for edge in edges
+                            if edge[0] in selected and edge[1] in selected
+                        )
+                        maximum_degree = max(
+                            (
+                                sum(vertex in edge for edge in selected_edges)
+                                for vertex in selected
+                            ),
+                            default=0,
+                        )
+                        independence = induced_maximum_weight(
+                            selected,
+                            edges,
+                            [1] * event_count,
+                        )
+                        for conflict_floor in range(event_count):
+                            if maximum_degree > conflict_floor:
+                                continue
+                            assert (
+                                independence * (conflict_floor + 1)
+                                >= len(selected)
+                            )
+                            assert (
+                                independence
+                                * label_count
+                                * (conflict_floor + 1)
+                                > reuse_floor
+                            )
+
+
 def main() -> None:
     verify()
     verify_weighted_star_conflicts()
@@ -450,6 +507,7 @@ def main() -> None:
     verify_ticketed_support_potential()
     verify_paid_reopening_hall()
     verify_star_overlap_payment()
+    verify_deficient_labelled_fan()
     print("weighted GC anchor-link dichotomy: verified through six vertices")
 
 

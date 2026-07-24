@@ -172,6 +172,15 @@ component. If Hall fails, a token is reused by more than \(L\)
 reopenings in the deficient family. GC4's remaining geometry can now
 target bounded reuse or one concentrated current-incidence obstruction.
 
+GC4k resolves finite mixtures inside that concentrated obstruction.
+Among the more than \(L\) uses of one token, one geometric role occurs
+more than \(L/T\) times. At support-conflict threshold \(\Gamma\), that
+token--role fibre either has a degree-\(>\Gamma\) installation overload
+or contains more than \(L/(T(\Gamma+1))\) mutually compatible stars.
+They still share one payment token, so the conclusion is a structural
+fan rather than a paid batch; it is now narrow enough for the GC2
+anchor-bank or alternating-core interfaces.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement

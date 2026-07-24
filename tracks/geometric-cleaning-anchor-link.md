@@ -457,6 +457,58 @@ estimates.  A failure is not diffuse latent mass: it is a single
 current-incidence resource reused by a large, explicitly Hall-deficient
 star family, suitable for anchor or arithmetic classification.
 
+## GC4k -- same-label fan in a deficient star cluster
+
+Assume GC4j returns a paid token \(\pi\) eligible for a star-reopening
+family \(\mathcal Y\) of size \(d>L\).  Label every incidence
+\((j,\pi)\) by one of at most \(T\) geometric roles, and put the full
+installation-conflict graph on each label class.
+
+### Lemma GC4k -- PROVED
+
+There is one label \(\lambda\) for which
+
+\[
+\boxed{
+|\mathcal Y_\lambda|
+\geq\left\lceil\frac dT\right\rceil
+>\frac LT.
+}
+\]
+
+For every integer \(\Gamma\geq0\), either:
+
+1. a star reopening in \(\mathcal Y_\lambda\) conflicts with more than
+   \(\Gamma\) other members of the same token--label fibre; or
+2. that fibre contains an installably support-compatible family
+   \(\mathcal I\) satisfying
+   \[
+   \boxed{
+   |\mathcal I|
+   \geq
+   \left\lceil
+   \frac{|\mathcal Y_\lambda|}{\Gamma+1}
+   \right\rceil
+   >
+   \frac{L}{T(\Gamma+1)}.
+   }
+   \]
+
+### Proof
+
+Pigeonhole the \(d\) uses of \(\pi\) among the \(T\) roles.  If the
+first outcome fails, the selected fibre has conflict maximum degree at
+most \(\Gamma\).  Greedy \((\Gamma+1)\)-colouring gives an independent
+colour class of the displayed size. \(\square\)
+
+The compatible family shares one token and is therefore not counted as
+independently paid.  GC4k instead makes the residual geometry
+one-dimensional in the certificate data: a Hall failure is either a
+second-order installation overload or a broad family of mutually
+installable stars all caused by the same current incidence in the same
+role.  This is the precise anchor/line concentration to be converted
+into GC2's paid secant bank or an alternating-core delegation.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
 most six link vertices, together with strict-support recursion through
@@ -464,4 +516,4 @@ every maximal-depth order on at most seven stars and every ticketed
 support replacement through six stars and three tickets.  It also
 compares the capacitated Hall test with direct paid-token assignment on
 small reopening systems and checks the bounded-overlap/high-reuse
-dichotomy.
+dichotomy and the same-token labelled-fan refinement.

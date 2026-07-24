@@ -24,6 +24,7 @@ The numbering is local to this repository.
 | GC4h | One scalar potential terminates strict star descents mixed with bounded paid reopenings | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
 | GC4i | Capacitated Hall inequalities exactly characterize current-incidence payments for star reopenings | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
 | GC4j | Minimum paid incidence and bounded token reuse imply the star-reopening Hall condition | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
+| GC4k | A Hall-deficient paid incidence contains a same-label compatible star fan or a second-order conflict overload | PROVED | `tracks/geometric-cleaning-anchor-link.md` |
 | L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
 | L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
 | L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |
