@@ -42,6 +42,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
 - [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
 - [`docs/27-all-n-product-construction.md`](docs/27-all-n-product-construction.md): four-orientation product encoding, general determinant classification, factor-host codegrees, exact phase SAT, and counterexamples.
+- [`docs/28-product-finite-witnesses.md`](docs/28-product-finite-witnesses.md): explicit product-generated saturated configurations at sides 6, 8, and 9.
+- [`docs/29-full-product-host-selection.md`](docs/29-full-product-host-selection.md): full degree-two product-host selection, exact 3-CNF, alternating-cycle repair connectivity, and fixed carry-level bounds.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
@@ -50,7 +52,10 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
 - [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
-- [`scripts/verify_product_construction.py`](scripts/verify_product_construction.py): checks all radix orientations, exact determinants, SAT/direct-enumeration equivalence, and small product obstructions.
+- [`scripts/verify_product_construction.py`](scripts/verify_product_construction.py): checks all radix orientations, exact determinants, phase SAT/direct-enumeration equivalence, and small product obstructions.
+- [`scripts/verify_product_two_factor.py`](scripts/verify_product_two_factor.py): exhausts degree-two states in full factor-product hosts and checks the exact selector CNF on base cases.
+- [`scripts/verify_product_carry_multiplicity.py`](scripts/verify_product_carry_multiplicity.py): checks fixed signed-area and nonzero product-carry multiplicity through side five.
+- [`scripts/verify_product_witnesses.py`](scripts/verify_product_witnesses.py): independently verifies the explicit side-6, side-8, and side-9 certificates.
 
 ## Research discipline
 
@@ -102,6 +107,10 @@ python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
 python scripts/verify_carry_cycle_bound.py
 python scripts/verify_product_construction.py
 python scripts/verify_product_construction.py --extended
+python scripts/verify_product_two_factor.py
+python scripts/verify_product_two_factor.py --extended
+python scripts/verify_product_carry_multiplicity.py
+python scripts/verify_product_witnesses.py
 ```
 
 These programs are sanity checks, not proofs for arbitrary \(n\).
@@ -133,6 +142,6 @@ A useful contribution should do at least one of the following:
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
 - classify frozen cycles and alternating anchor closures;
-- eliminate or exploit the four mixed-radix product resonance types in `docs/27-all-n-product-construction.md`.
+- prove simultaneous hybrid-determinant concentration or a monotone alternating-cycle repair theorem for the full product host.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
