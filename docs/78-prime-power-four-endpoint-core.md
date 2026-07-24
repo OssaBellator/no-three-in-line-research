@@ -19,12 +19,10 @@ on an `N` by `N` grid, with `N>=4`. Then there is an ordered two-layer endpoint
 bank which preserves saturation and layer disjointness and destroys all `q`
 triples in every final state.
 
-More precisely, choose one point from each `Q_i` and partition the chosen points
-by permutation layer. In each nonempty layer, pad the chosen set to at least
-four endpoints. First rematch the layer-zero board while avoiding the current
-layer-one cells. Then rematch the layer-one board while avoiding the new
-layer-zero cells. Both stages have an allowed perfect matching, and every
-chosen triple loses its selected point.
+Choose one point from each `Q_i` and partition the chosen points by permutation
+layer. In each nonempty layer, pad the chosen set to at least four endpoints.
+First rematch layer zero while avoiding the current layer-one cells. Then
+rematch layer one while avoiding the new layer-zero cells.
 
 ### Proof
 
@@ -38,22 +36,18 @@ so CMR128 gives a perfect matching. This move preserves the first-layer row and
 column sets and remains disjoint from the unchanged second layer.
 
 For the second layer, use its original selected rows and columns, but now forbid
-its old cells and all cells occupied by the new first layer. Again the forbidden
-board has degree at most two, so CMR128 gives a perfect matching. The final two
-layers are disjoint permutations.
+its old cells and all cells occupied by the new first layer. Again CMR128 gives
+a perfect matching. Every selected target point is moved at its layer's stage,
+so every `Q_i` loses at least one cell. ∎
 
-Every selected target point is moved at its layer's stage. Hence every `Q_i`
-loses at least one cell. ∎
-
-Thus the disjoint-defect alternative of CMR124 can preserve target load `s`, not
-merely `ceil(s/2)`, if an ordered two-layer bank is permitted.
+Thus the disjoint-defect alternative of CMR124 can preserve its full target
+load if an ordered two-layer bank is permitted.
 
 ## 2. Exact four-board state profile
 
 Normalize a four-endpoint board so that the old endpoint matching is the
-identity. The opposite layer contributes a partial injective matching `f`; an
-entry `f(i)=i` is impossible because the two layers are disjoint. An allowed
-state is a permutation `pi` satisfying
+identity. The opposite layer contributes a partial injective off-diagonal
+matching `f`. An allowed state is a permutation `pi` satisfying
 
 \[
 \pi(i)\ne i
@@ -70,8 +64,7 @@ whenever `f(i)` is defined.
 ### Theorem CMR139 — PROVED BY EXHAUSTIVE FINITE CHECK
 
 Every such four-endpoint board has at least two allowed perfect matchings.
-Under the uniform law on its allowed states, every compatible prescribed
-partial matching satisfies
+Under the uniform law on its allowed states,
 
 \[
 \Pr(\text{one prescribed cell})\le\frac34,
@@ -87,9 +80,7 @@ and
 \Pr(\text{three prescribed cells})\le\frac12.
 \]
 
-All three constants are attained by some partial opposite-layer matching.
-
-The possible numbers of allowed states are exactly
+All three constants are attained. The possible numbers of allowed states are
 
 \[
 2,3,4,5,6,9.
@@ -102,26 +93,25 @@ distribution is
 6,32,45,12,12,1
 \]
 
-in the displayed order.
+in that order.
 
 ### Proof
 
-There are finitely many partial injective off-diagonal maps on four rows. The
-checker enumerates all `108` maps, all `24` permutations, and every compatible
-rank-one, rank-two, and rank-three prescription. ∎
+The checker enumerates every partial injective off-diagonal map, every
+permutation, and every compatible rank-one, rank-two, and rank-three
+prescription. ∎
 
-The lower bound of two also has a short structural explanation. After choosing
-one allowed perfect matching, contract its edges. Every contracted vertex has
-at least one further allowed incoming and outgoing edge because the original
-allowed graph has minimum degree at least two. A directed cycle of further
-edges lifts to an alternating cycle, whose flip gives a second perfect
-matching.
+The lower bound of two also follows structurally. After choosing one allowed
+perfect matching, contract its edges. Every contracted vertex has a further
+allowed incoming and outgoing edge because the allowed graph has minimum degree
+at least two. A directed cycle of further edges lifts to an alternating cycle,
+whose flip gives a second matching.
 
 ### Corollary CMR140 — PROVED
 
-Let `B` be a four-endpoint board and let `T_r` count real-collinear candidate
-certificates containing exactly `r` compatible board cells and `3-r` fixed
-outside points. For a uniformly random allowed state,
+Let `T_r` count real-collinear candidate certificates containing exactly `r`
+compatible four-board cells and `3-r` fixed outside points. For a uniformly
+random allowed state,
 
 \[
 \mathbb E[\text{new triples touching the board}]
@@ -133,11 +123,8 @@ outside points. For a uniformly random allowed state,
 
 ### Proof
 
-Apply the three atom bounds from CMR139 to every candidate certificate and sum
-by linearity of expectation. ∎
-
-This is the exact finite replacement for the `72/(t)_r` spread law at the
-terminal board size.
+Apply CMR139 to every candidate certificate and sum by linearity of expectation.
+∎
 
 ## 3. Finite-cycle certificate for a positive global minimum
 
@@ -149,8 +136,6 @@ deterministic rule which, given a saturated state with a real triple,
 3. pads that point's layer to four endpoints;
 4. chooses one allowed four-board state.
 
-The rule may use lexicographic order throughout.
-
 ### Theorem CMR141 — PROVED
 
 Suppose the minimum triple potential among all saturated states at side length
@@ -161,24 +146,17 @@ finite directed cycle
 S_0,S_1,\ldots,S_{r-1},S_r=S_0
 \]
 
-such that every transition
-
-- is an allowed four-endpoint rematching in one layer;
-- preserves saturation and layer disjointness;
-- destroys the triple selected at its source state;
-- never visits a state below the global minimum potential.
+such that every transition is an allowed four-endpoint rematching, preserves
+saturation and layer disjointness, destroys the selected source triple, and
+never visits a state below the global minimum potential.
 
 ### Proof
 
-Start from any saturated state attaining the global minimum. Its potential is
-positive, so the deterministic rule is defined. Every allowed four-board move
-produces another saturated state. By global minimality, no resulting state has
-smaller potential. A state of potential zero cannot occur.
-
-Continue indefinitely. There are finitely many pairs consisting of a saturated
-state and one of its selected triples. The deterministic rule therefore repeats
-a pair, and the segment between two repetitions is the required directed
-cycle. Each source triple is destroyed because the chosen endpoint is moved. ∎
+Start from a saturated state attaining the global minimum. Its potential is
+positive, so the deterministic rule is defined. Every allowed move produces
+another saturated state, and global minimality prevents a lower-potential
+state. Continue indefinitely. There are finitely many state/selected-triple
+pairs, so one repeats and yields the cycle. ∎
 
 Thus failure of the no-three conclusion cannot hide in an infinite or
 scale-growing closure. It must produce a finite cycle of four-point trades.
@@ -199,11 +177,9 @@ where `T(S)` is the set of real collinear triples selected by `S`.
 
 On every cycle from CMR141:
 
-1. the selected source triple belongs to `R_j` for every `j`;
-2. every triple in `R_j union C_j` touches one of the old or new cells of the
-   four moved endpoints;
-3. for every fixed grid triple `Q`, the number of transitions on which `Q`
-   belongs to `C_j` equals the number on which it belongs to `R_j`;
+1. the selected source triple belongs to `R_j`;
+2. every triple in `R_j union C_j` touches an old or new moved endpoint cell;
+3. every fixed grid triple is created and removed equally often;
 4. consequently
    \[
    \sum_j|C_j|=\sum_j|R_j|.
@@ -211,20 +187,28 @@ On every cycle from CMR141:
 
 ### Proof
 
-The first assertion is the construction. A triple using only cells common to
-`S_j` and `S_{j+1}` has the same presence in both states, proving the second.
+A triple using only cells common to consecutive states has unchanged presence.
+For a fixed grid triple, follow its indicator around the cycle. Every zero-to-one
+change is a creation and every one-to-zero change is a removal. The indicator
+returns to its initial value, so the two counts agree. Sum over triples. ∎
 
-For a fixed grid triple, follow its indicator around the directed cycle. Every
-change from zero to one contributes one creation and every change from one to
-zero contributes one removal. Since the indicator returns to its initial value,
-the two counts agree. Summing over all grid triples proves the final identity. ∎
+## 5. Limitation of the abstract cycle reduction
 
-The remaining alternating theorem is therefore equivalent to ruling out these
-balanced local defect-flow cycles, or showing that one contains a state below
-its starting baseline. The natural next invariant is the multiset of p-adic
-first-separation and carry signatures of the created and removed triples around
-the cycle.
+CMR143--CMR144 exhibit a potential-one two-cycle at `N=4` with no decreasing
+four-endpoint move, while a separate potential-zero saturated state exists.
+Therefore balanced four-core cycles cannot be ruled out abstractly, and no
+monotone invariant depending only on normalized board type and current triple
+potential can prove the full theorem.
 
-No all-`n` theorem is claimed here. The exact four-board enumeration and the
-cycle-balance identities are checked in
+The correct remaining target is **inherited escape**: a terminal core arising
+from the prime-power construction retains a prefix owner, recursive parent,
+protected quotient state, opposite-layer ancestry, and carry signatures. One
+must use that ancestry either to find a larger escape move or to prove that the
+trapped component cannot arise from the recursive closure.
+
+See [`docs/79-four-endpoint-trap-counterexample.md`](79-four-endpoint-trap-counterexample.md)
+for the exact trap and corrected open lemma.
+
+No all-`n` theorem is claimed here. The exact four-board enumeration, cycle
+balance, and trap checks are in
 [`scripts/verify_prime_power_four_endpoint_core.py`](../scripts/verify_prime_power_four_endpoint_core.py).
