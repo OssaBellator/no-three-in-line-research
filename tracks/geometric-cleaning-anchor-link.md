@@ -194,6 +194,60 @@ the overload itself identifies a star together with more than \(K W_i\)
 neighbouring paid mass. For latent candidate weights the same caveat as
 GC4c remains; this lemma preserves but does not create payment.
 
+## GC4f -- certificate-labelled overload descent
+
+Assume every cross-star conflict incident with a star \(i\) has one of
+at most \(T\) certificate labels. A label records the actual reason for
+incompatibility, such as a shared row, shared column, replacement cell,
+anchor, or collateral type. Let \(S_\lambda(i)\) be the neighbouring
+stars carrying label \(\lambda\).
+
+### Lemma GC4f -- PROVED
+
+If \(\Lambda_i>K W_i\) for \(K>1\), then for every \(Q\ge1\) some label
+\(\lambda\) carries
+
+\[
+\boxed{
+\sum_{j\in S_\lambda(i)}W_j
+>
+\frac{K-1}{T}W_i
+}
+\]
+
+and either:
+
+1. one star in \(S_\lambda(i)\) has restricted closed-neighbourhood load
+   greater than \(Q\) times its own weight inside the induced conflict
+   graph on \(S_\lambda(i)\); or
+2. a simultaneously installable subfamily
+   \(\mathcal I\subseteq S_\lambda(i)\) carries more than
+   \[
+   \boxed{
+   \frac{K-1}{TQ}W_i.
+   }
+   \]
+
+For every \(\theta>0\), the same label class also contains either a star
+of weight greater than \(\theta W_i\), or more than
+\((K-1)/(T\theta)\) stars.
+
+### Proof
+
+Subtract \(W_i\) from the overload and partition the remaining weight
+among the at most \(T\) incident certificate labels. A heaviest class
+proves the first box. Apply GC4e with parameter \(Q\) to the conflict
+graph induced by that class. Its compatible-family alternative gives
+the second box, while its other alternative is precisely the stated
+restricted overload. If no class member is heavier than
+\(\theta W_i\), the first box divided by that upper bound gives the
+cardinality conclusion. \(\square\)
+
+For paid weights, GC4f removes mixtures of incompatibility mechanisms
+before delegation: one explicit certificate type now carries the
+recursive obstruction. For latent weights it still does not supply the
+missing syndrome-incidence payment.
+
 `scripts/verify_gc_anchor_link.py` exhaustively checks the matching bound
 and weighted \(2\Delta-1\)-colour partition for every simple graph on at
 most six link vertices.

@@ -83,6 +83,116 @@ def verify_weighted_star_conflicts(max_vertices: int = 5) -> None:
                     assert optimum * threshold >= sum(weights)
 
 
+def induced_maximum_weight(
+    vertices: list[int],
+    edges: tuple[tuple[int, int], ...],
+    weights: list[int],
+) -> int:
+    edge_set = set(edges)
+    best = 0
+    for mask in range(1 << len(vertices)):
+        chosen = [
+            vertex
+            for index, vertex in enumerate(vertices)
+            if mask & (1 << index)
+        ]
+        if any(edge in edge_set for edge in combinations(chosen, 2)):
+            continue
+        best = max(best, sum(weights[vertex] for vertex in chosen))
+    return best
+
+
+def verify_labelled_star_overload(max_vertices: int = 5) -> None:
+    for size in range(2, max_vertices + 1):
+        possible = tuple(combinations(range(size), 2))
+        for mask in range(1 << len(possible)):
+            edges = tuple(
+                edge
+                for index, edge in enumerate(possible)
+                if mask & (1 << index)
+            )
+            edge_set = set(edges)
+            weights = [1 + (7 * vertex + mask) % 10 for vertex in range(size)]
+            for center in range(size):
+                neighbours = [
+                    vertex
+                    for vertex in range(size)
+                    if (
+                        min(center, vertex),
+                        max(center, vertex),
+                    )
+                    in edge_set
+                ]
+                load = weights[center] + sum(
+                    weights[vertex] for vertex in neighbours
+                )
+                for threshold in range(2, 9):
+                    if load <= threshold * weights[center]:
+                        continue
+                    for label_count in range(1, 4):
+                        classes = [
+                            [
+                                vertex
+                                for vertex in neighbours
+                                if (vertex + 2 * mask) % label_count == label
+                            ]
+                            for label in range(label_count)
+                        ]
+                        selected = max(
+                            classes,
+                            key=lambda vertices: sum(
+                                weights[vertex] for vertex in vertices
+                            ),
+                        )
+                        selected_weight = sum(
+                            weights[vertex] for vertex in selected
+                        )
+                        assert (
+                            selected_weight * label_count
+                            > (threshold - 1) * weights[center]
+                        )
+
+                        for recursive_threshold in range(1, 6):
+                            overloaded = any(
+                                weights[vertex]
+                                + sum(
+                                    weights[other]
+                                    for other in selected
+                                    if other != vertex
+                                    and (
+                                        min(vertex, other),
+                                        max(vertex, other),
+                                    )
+                                    in edge_set
+                                )
+                                > recursive_threshold * weights[vertex]
+                                for vertex in selected
+                            )
+                            if not overloaded:
+                                optimum = induced_maximum_weight(
+                                    selected,
+                                    edges,
+                                    weights,
+                                )
+                                assert (
+                                    optimum * recursive_threshold
+                                    >= selected_weight
+                                )
+
+                        for relative_weight in range(1, 5):
+                            if all(
+                                weights[vertex]
+                                <= relative_weight * weights[center]
+                                for vertex in selected
+                            ):
+                                assert (
+                                    len(selected)
+                                    * label_count
+                                    * relative_weight
+                                    > threshold - 1
+                                )
+
+
 def verify(max_vertices: int = 6) -> None:
     for size in range(max_vertices + 1):
         possible = tuple(combinations(range(size), 2))
@@ -132,6 +242,7 @@ def verify(max_vertices: int = 6) -> None:
 def main() -> None:
     verify()
     verify_weighted_star_conflicts()
+    verify_labelled_star_overload()
     print("weighted GC anchor-link dichotomy: verified through six vertices")
 
 

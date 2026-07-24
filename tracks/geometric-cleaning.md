@@ -137,6 +137,13 @@ closed conflict neighbourhood carries more than \(K\) times its weight.
 Thus unweighted high degree is no longer a residual ambiguity: when the
 input is paid, the high-conflict alternative is quantitatively paid.
 
+GC4f further localizes a paid overload to one cross-star certificate
+label. Inside that class it either extracts an installable family,
+finds a heavier or broad same-label obstruction, or returns a deeper
+label-pure overload. The remaining GC4 classification therefore need not
+handle arbitrary mixtures of row, column, anchor, cell, and collateral
+conflicts.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement
