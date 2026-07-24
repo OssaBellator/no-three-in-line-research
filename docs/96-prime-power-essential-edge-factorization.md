@@ -1,9 +1,9 @@
-# Essential-edge factorization at the half-degree endpoint
+# Essential edges at the half-degree parent endpoint
 
 CMR208 preserves a parent matching host until its minimum degree reaches
-`ceil(t/2)`. Further certificate deletion may fail only when the chosen cell is
-contained in every perfect matching of the residual host. Hall's theorem gives
-an exact factorization of that obstruction.
+`ceil(t/2)`. A further certificate deletion could fail only if the chosen cell
+belonged to every perfect matching of the residual host. Hall's theorem shows
+that this cannot happen at the half-degree threshold.
 
 Let `H=(L,R;E)` be a balanced bipartite graph with `|L|=|R|=t` and at least one
 perfect matching. An edge is **essential** if it belongs to every perfect
@@ -13,7 +13,7 @@ matching of `H`.
 
 ### Theorem CMR210 — PROVED
 
-An edge `e=uv`, with `u in L` and `v in R`, is essential if and only if there
+An edge `e=uv`, with `u\in L` and `v\in R`, is essential if and only if there
 are sets
 
 \[
@@ -49,13 +49,13 @@ For every such pair `(A,B)`, perfect matchings factor canonically:
 ### Proof
 
 Suppose first that `e` is essential. Then `H-e` has no perfect matching. Hall's
-theorem supplies `A subseteq L` with
+theorem supplies `A\subseteq L` with
 
 \[
 |N_{H-e}(A)|<|A|.
 \]
 
-Since `H` itself has a perfect matching,
+Since `H` has a perfect matching,
 
 \[
 |N_H(A)|\ge|A|.
@@ -72,193 +72,155 @@ N_H(A)=N_{H-e}(A)\cup\{v\},
 |N_H(A)|=|A|.
 \]
 
-In particular `u in A`, the edge `uv` is the only edge from `A` to `v`, and
+In particular `u\in A`, the edge `uv` is the only edge from `A` to `v`, and
 with `B=N_H(A)` all three displayed conditions hold.
 
 Conversely, suppose such `A,B` exist. Every perfect matching must match the
-`|A|` vertices of `A` bijectively onto the `|B|=|A|` vertices of `B`, because
-there are no edges from `A` to `R\setminus B`. The vertex `v` has only the
-neighbour `u` inside `A`, so every perfect matching contains `uv`.
+`|A|` vertices of `A` bijectively onto `B`, because there are no edges from `A`
+to `R\setminus B`. The vertex `v` has only the neighbour `u` inside `A`, so
+every perfect matching contains `uv`.
 
-After fixing `uv`, no matching edge crosses between the two displayed vertex
-pairs: all remaining vertices of `A` match inside `B`, and cardinality then
-forces the complements to match internally. This gives the product
-factorization. ∎
+After fixing `uv`, the remaining vertices of `A` match inside `B`, and
+cardinality forces the complementary vertices to match internally. This gives
+the product factorization. ∎
 
 ## 2. Minimum-degree constraints
 
 ### Theorem CMR211 — PROVED
 
-Assume `H` has minimum degree at least `delta`, and let `uv` be essential with
-Hall factor `(A,B)`. Put `a=|A|=|B|`. Then
+Assume
+
+\[
+\delta(H)\ge2,
+\]
+
+and let `uv` be essential with Hall factor `(A,B)`. Put
+`a=|A|=|B|`. Then
 
 \[
 \boxed{
-\delta\le a\le t-\delta+1.
+\delta(H)\le a\le t-\delta(H).
 }
 \]
 
 ### Proof
 
-Every vertex of `A` has all its neighbours in `B`, so `a>=delta`.
+Every vertex of `A` has all its neighbours in `B`, so `a\ge\delta(H)`.
 
-The right vertex `v` has only one neighbour in `A`, namely `u`. Its remaining
-at least `delta-1` neighbours lie in `L\setminus A`, whose size is `t-a`.
-Thus
-
-\[
-t-a\ge\delta-1,
-\]
-
-which is the upper bound. ∎
-
-## 3. Odd half-degree hosts have no essential edge
-
-### Corollary CMR212 — PROVED
-
-Let
+The case `a=t` is impossible because then `A=L`, while
+`N_H(v)\cap A=\{u\}` would give `\deg(v)=1`. Hence `R\setminus B` is nonempty.
+Choose `w\in R\setminus B`. Since `B=N_H(A)`, the vertex `w` has no neighbour
+in `A`; all its neighbours lie in `L\setminus A`, a set of size `t-a`.
+Therefore
 
 \[
-t=2h+1,
-\qquad
-\delta(H)\ge h+1.
+\delta(H)\le t-a,
 \]
 
-Then `H` has no essential edge.
+which proves the upper bound. ∎
 
-Consequently, for every edge `e in E(H)`, the graph `H-e` still has a perfect
+This complementary-side bound is the decisive constraint. It is stronger than
+the one obtained from the endpoint `v` alone.
+
+## 3. Half-degree hosts have no essential edge
+
+### Theorem CMR212 — PROVED
+
+Let `t\ge4`, and suppose
+
+\[
+\delta(H)\ge\left\lceil\frac t2\right\rceil.
+\]
+
+Then `H` has no essential edge. Equivalently, for every edge `e\in E(H)`, the
+graph `H-e` still has a perfect matching.
+
+### Proof
+
+If `t` is odd, CMR211 would require
+
+\[
+\left\lceil\frac t2\right\rceil
+\le a\le
+\left\lfloor\frac t2\right\rfloor,
+\]
+
+which is impossible.
+
+Let `t=2h` be even. CMR211 forces `a=h`. Every vertex of `A` has degree at least
+`h`, has no neighbours outside the `h`-set `B`, and therefore is adjacent to
+every vertex of `B`. In particular `v` has every vertex of `A` as a neighbour,
+contradicting
+
+\[
+N_H(v)\cap A=\{u\}
+\]
+
+because `h\ge2`. ∎
+
+Thus the final host produced by CMR208 is not merely matchable: every one of its
+allowed cells is individually deletable while preserving some perfect
 matching.
 
-### Proof
+## 4. Every terminal certificate can be deleted once
 
-CMR211 would force
-
-\[
-h+1\le a\le(2h+1)-(h+1)+1=h+1,
-\]
-
-so `a=h+1=delta`. Every vertex of `A` has degree at least `a` and all its
-neighbours lie in `B`, which also has size `a`. Hence `H[A,B]` is complete.
-The vertex `v` is then adjacent to every vertex of `A`, contradicting
-`N_H(v) cap A={u}` because `a>=3`. ∎
-
-Thus the odd-size half-degree endpoint is fully deletable one edge at a time:
-there is no forced parent cell.
-
-## 4. Even half-degree hosts split off a complete factor
-
-### Theorem CMR213 — PROVED
-
-Let
-
-\[
-t=2h,
-\qquad
-h\ge3,
-\qquad
-\delta(H)\ge h,
-\]
-
-and suppose `uv` is essential. Then its Hall factor satisfies
-
-\[
-\boxed{|A|=|B|=h+1.}
-\]
-
-Moreover
-
-\[
-\boxed{
-H[A\setminus\{u\},B\setminus\{v\}]
-=K_{h,h}.
-}
-\]
-
-Hence
-
-\[
-\operatorname{PM}(H)
-\cong
-\{uv\}
-\times S_h
-\times
-\operatorname{PM}(H_0),
-\]
-
-where `H_0=H[L\setminus A,R\setminus B]` is a balanced host of size `h-1` and
-`S_h` denotes the `h!` matchings of the complete factor.
-
-### Proof
-
-CMR211 gives
-
-\[
-h\le a\le h+1.
-\]
-
-If `a=h`, every vertex of `A` has degree at least `h` and all neighbours in the
-`h`-set `B`; thus `H[A,B]=K_{h,h}`, again contradicting the unique neighbour
-condition at `v`. Hence `a=h+1`.
-
-Every vertex of `A\setminus\{u\}` is not adjacent to `v`, because `uv` is the
-only edge from `A` to `v`. It has degree at least `h`, all inside
-`B\setminus\{v\}`, which has exactly `h` vertices. Therefore it is adjacent to
-all of `B\setminus\{v\}`. This proves the complete factor, and CMR210 gives the
-matching product. ∎
-
-The only essential-edge obstruction at the half-degree threshold is therefore
-a rigid even-size bridge with one forced edge and one complete half-size
-matching component.
-
-## 5. Certificate deletion or factorization
-
-### Corollary CMR214 — PROVED
+### Corollary CMR213 — PROVED
 
 Let `H` be a half-degree residual parent host from CMR208, and let `Q` be any
 rank-`1/2/3` candidate certificate realized by at least one perfect matching of
 `H`.
 
-At least one of the following holds.
-
-1. **Deletable certificate cell.** Some prescribed edge `e in Q` is not
-   essential. Then `H-e` has a perfect matching and no matching of `H-e`
-   realizes `Q`.
-2. **Forced factor certificate.** Every prescribed edge of `Q` is essential.
-   Each is present in every perfect matching and has the exact Hall
-   factorization of CMR210. If `t` is odd, this alternative is impossible. If
-   `t` is even, every prescribed edge splits off the rigid complete factor from
-   CMR213.
+For every prescribed edge `e\in Q`, the graph `H-e` has a perfect matching, and
+no perfect matching of `H-e` realizes `Q`.
 
 ### Proof
 
-Deleting any prescribed edge destroys the entire cylinder `Q`. If one such
-edge is not essential, the first alternative follows by definition.
-Otherwise every prescribed edge is essential and the structural theorems
-apply. ∎
+CMR212 says that `e` is not essential, so `H-e` retains a perfect matching.
+Every realization of `Q` contains `e`, hence none remains after the deletion.
+∎
+
+## 5. One-step cover replacement
+
+### Corollary CMR214 — PROVED
+
+Suppose a candidate family `\mathcal C` covers every perfect matching of a
+half-degree host `H`. Choose any certificate `Q\in\mathcal C` which is realized
+by at least one perfect matching, and choose any prescribed edge `e\in Q`.
+
+Then
+
+1. `H-e` has at least one perfect matching;
+2. every perfect matching of `H-e` is covered by a certificate from
+   `\mathcal C` not containing `e`;
+3. the certificate `Q` has been eliminated from the residual cover problem.
+
+### Proof
+
+The first and third assertions are CMR213. Every perfect matching of `H-e` is
+also a perfect matching of `H`, so the original cover supplies a certificate.
+No certificate containing `e` can occur in `H-e`, proving the second assertion.
+∎
+
+This is a strict replacement step: one may remove an arbitrary currently
+realized candidate cylinder and retain a nonempty matching state space.
 
 ## 6. Revised internal endpoint
 
 CMR209 reduces internal no-return to repeated replacement of a linear
-rank-three family. CMR214 now gives the next deterministic step for every
-replacement certificate:
+rank-three family. CMR212--CMR214 show that the first replacement step can never
+be blocked by a forced parent cell, at either parity.
 
-- at odd residual size, one of its cells can always be deleted while retaining
-  a parent matching;
-- at even residual size, failure of deletion exposes a forced bridge and a
-  complete half-size matching factor.
+After one deletion the minimum degree may fall below `t/2`, so indefinite
+cell-by-cell deletion does not follow automatically. The remaining theorem is
+to organize the sequence of CMR214 replacements so that one of the following
+occurs before matching flexibility is exhausted:
 
-The remaining theorem is to iterate this delete-or-factor process while
-retaining enough candidate-cover information. A natural induction parameter is
+1. an anchored rank-one or rank-two wall exposes an executable bank;
+2. deleted cells accumulate in a new Hall rectangle that forces envelope
+   expansion or a smaller host decomposition;
+3. the replacement certificates consume new primitive line/carry signatures;
+4. the residual host retains a half-degree subhost after regularization.
 
-\[
-(\text{host size},\ \text{number of essential factors},\ \text{remaining envelope depth}).
-\]
-
-One must show that recursive forced factors cannot support a balanced cycle of
-new candidate-only triples without either producing a deletable certificate,
-forcing an envelope expansion, or exhausting the quotient/carry signature
-budget.
-
-No all-`n` theorem is claimed here. Essential-edge equivalence, factor sizes,
-and small half-degree hosts are checked in
+No all-`n` theorem is claimed here. Essential-edge equivalence and exhaustive
+small half-degree hosts are checked in
 [`scripts/verify_prime_power_essential_edges.py`](../scripts/verify_prime_power_essential_edges.py).
