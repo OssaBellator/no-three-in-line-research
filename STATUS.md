@@ -51,6 +51,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit finite rational grid; the two endpoint parameters are inadmissible.
 42. **Reduced-denominator chamber criterion.** Perfect alignment at parameter \(t'/q\) occurs exactly when both relevant wrap indices are divisible by \(q\).
 43. **Denominator-sensitive sparsity.** A denominator-\(q\) perfect chamber contains at most \(4p/q\) base points; positive-density chambers therefore have bounded denominator.
+44. **Explicit wrap centers.** Every degenerate scalar carry cell is radial about one rational center \(pS/d\), while every nondegenerate cell meets one hyperbola channel at most twice.
+45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy \(XY\equiv d^2c\pmod p\) with \(|X|,|Y|<pd/m\), yielding an explicit divisor bound per chamber.
+46. **Wrap-center dispersion.** A large perfect-alignment class either occupies many rational centers or has multipliers with a large common divisor relative to their size.
 
 ## What remains conditional
 
@@ -59,7 +62,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Carry-sensitive phase codes.
 - Orbit Tanner expansion beyond bounded local conflict mass.
 - Alternating two-colour carry-core termination and conversion.
-- A monotone carry-complexity potential showing that repeated product/coordinate carry dispersion must terminate or enter an absorbable exception.
+- A monotone carry-complexity potential showing that repeated product, coordinate, cross-carry, and wrap-center dispersion must terminate or enter an absorbable exception.
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
 - A sharper fixed-degree cross-channel carry invariant; coarse cross-channel signature dispersion is already proved.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
@@ -78,4 +81,4 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 
 ## Bottom line
 
-There is no complete proof. The branch review added the exact projective conic baseline, and the next carry phase now converts both structural outputs of a failed paid bank into explicit signature growth or bounded-denominator perfect alignment. The remaining geometric bottleneck is a termination/absorption theorem for that carry complexity, not an unclassified secant-star or aligned-anchor load.
+There is no complete proof. The branch review added the exact projective conic baseline, and the next carry phase converts both structural outputs of a failed paid bank into explicit signature growth, bounded-denominator perfect alignment, or divisor-controlled wrap-center dispersion. The remaining geometric bottleneck is a termination/absorption theorem for that finite carry complexity, not an unclassified secant-star or aligned-anchor load.
