@@ -35,7 +35,8 @@ Every real line `L` of primitive direction height `H` satisfies
 \[
 |L\cap R_{\mathbf c}|
 \le
-2k+2+rac{2\sqrt N}{H}.
+2k+2+
+\frac{2\sqrt N}{H}.
 \]
 
 ### Proof
@@ -91,7 +92,8 @@ primitive direction height. By CMR31,
 \[
 s_L-2
 \le
-2k+rac{2\sqrt N}{H_L}.
+2k+
+\frac{2\sqrt N}{H_L}.
 \]
 
 Therefore
@@ -102,7 +104,8 @@ Therefore
 \frac{s_L-2}{3}\binom{s_L}{2}
 \le
 \left(
-\frac{2k}{3}+rac{2\sqrt N}{3H_L}
+\frac{2k}{3}+
+\frac{2\sqrt N}{3H_L}
 \right)
 \binom{s_L}{2}.
 \]
@@ -125,7 +128,7 @@ The height-weighted pair sum is exactly
 Substitution proves the theorem. ∎
 
 This improves the previous endpoint conceptually: the square-root line cap is
-paid only on low-height pairs, rather than on all \(\binom N2\) pairs.
+paid only on low-height pairs, rather than on all \(inom N2\) pairs.
 
 ## 3. Finite data
 
