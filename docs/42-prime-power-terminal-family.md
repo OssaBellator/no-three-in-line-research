@@ -108,14 +108,15 @@ N=p^k,
 \qquad a=p^{k-1}.
 \]
 
-Define the two-layer terminal state
+The terminal columns in the full `N` by `N` grid are the multiples of `a`.
+Define
 
 \[
 S_{p,k}
 =
-\{(j,aF_p(j)):0\le j<p\}
+\{(aj,aF_p(j)):0\le j<p\}
 \cup
-\{(j,1+aF_p(j)):0\le j<p\}.
+\{(aj,1+aF_p(j)):0\le j<p\}.
 \]
 
 ### Theorem CMR34 — PROVED
@@ -130,20 +131,43 @@ saturation constraints.
 
 ### Proof
 
-Within either layer, subtracting the layer offset and dividing the row
-coordinate by `a` identifies the selected points with `Gamma_p`. CMR33 excludes
-all monochromatic triples.
+Within either layer, subtract the layer offset and divide both coordinates by
+`a`. This identifies the selected points with `Gamma_p`, so CMR33 excludes all
+same-layer triples.
 
-It remains to exclude a mixed triple. Reduce its determinant modulo `p`. Every
-first-layer row is congruent to `0`, and every second-layer row is congruent to
-`1`. Among three points, two belong to the same layer. Their columns are
-distinct. If their column difference is `d`, expansion of the determinant
-modulo `p` gives `d` or `-d`, according to which layer contains the third
-point. Since the terminal columns are distinct standard residues modulo `p`,
-this value is nonzero.
+For a mixed triple write its three points as
 
-Therefore no mixed real triple exists. The row-block and column-block
-conditions are immediate from the fact that `F_p` is a permutation. ∎
+\[
+( ax_i, ay_i+b_i),
+\qquad b_i\in\{0,1\}.
+\]
+
+Its exact determinant is
+
+\[
+\Delta=a(aD+E),
+\]
+
+where `D` is the determinant of the normalized points `(x_i,y_i)` and
+
+\[
+E=(x_2-x_1)(b_3-b_1)-(x_3-x_1)(b_2-b_1).
+\]
+
+Two points lie in the same layer. If `D=0`, then the mixed-layer point is not on
+the normalized line through those two same-layer points, because the two layer
+offsets differ; equivalently the displayed `E` is a nonzero difference of two
+distinct column indices. Hence
+
+\[
+0<|E|\le p-1.
+\]
+
+If `D\ne0`, then `|aD|>=a>=p>|E|`. In either case `aD+E` is nonzero, so the
+mixed determinant cannot vanish. ∎
+
+The verifier uses the normalized coordinates `(x,aF_p(x)+b)`: their determinant
+is exactly the full terminal determinant divided by the harmless factor `a`.
 
 ## 3. Consequence
 
@@ -152,7 +176,7 @@ uniform measure. At every prime base it may be fixed to the explicit state
 `S_{p,k}`, while all nonterminal fibres retain the recursive permutation-bank
 choices from CMR25--CMR27.
 
-This removes the fourth bottleneck in
+This removes the terminal-existence bottleneck in
 [`tracks/all-n-composite-modulus-progress.md`](../tracks/all-n-composite-modulus-progress.md).
 The remaining recursive problem is the external and cross-fibre certificate
 mass, not terminal existence.
