@@ -35,6 +35,8 @@ This index collects the product/composition results on
 | PX28 | Fixing one inner permutation while retaining both outer layers gives an explicit saturated blockwise product | PROVED | `docs/38-complete-blockwise-reversal-census.md` |
 | PX29 | Exactly four identity/reversal block patterns rescue `2 x 5`; each has the complete recorded factor/orientation census | PROVED FINITE | `docs/38-complete-blockwise-reversal-census.md` |
 | PX30 | Simultaneous-reversal one-inner-layer products have the exact orientation census recorded through base side eight | PROVED FINITE | `docs/39-one-layer-reversal-classification.md` |
+| PX31 | The normalized affine one-inner-layer family has exactly three parameter successes, all yielding the same side-ten witness | PROVED FINITE | `docs/39-normalized-affine-one-layer-census.md` |
+| PX32 | The canonical `2 x 5` factor remains full-selector infeasible under all 1600 normalized affine block-map hosts | PROVED FINITE | `docs/40-canonical-affine-full-selector-obstruction.md` |
 
 The branch still has no infinite multiplicative closure theorem or arithmetic
 coverage theorem.
