@@ -1,4 +1,4 @@
-# Finite product witnesses at side lengths 6, 8, and 9
+# Finite product witnesses at side lengths 6, 8, 9, and 10
 
 This note records explicit saturated no-three configurations found inside the
 mixed-radix product searches. They are finite certificates only; they do not
@@ -65,6 +65,25 @@ defines a saturated no-three configuration of 18 points in `[9]^2`.
 
 It arises from a degree-two selection in the crossed `3 x 3` factor-product
 host. It is not a cycle-phase state.
+
+## Finite certificate at 10 — PROVED
+
+The pair
+
+\[
+\pi_0=(4,2,1,3,0,9,6,8,7,5),
+\]
+
+\[
+\pi_1=(5,7,8,6,9,0,3,1,2,4)
+\]
+
+defines a saturated no-three configuration of 20 points in `[10]^2`.
+
+It arises from the blockwise-reversed `2 x 5` construction in
+[`docs/36-blockwise-digit-permutations.md`](36-blockwise-digit-permutations.md).
+Unlike every unmodified global `2 x 5` host, this locally permuted host contains
+a no-three degree-two state.
 
 ## Verification
 
