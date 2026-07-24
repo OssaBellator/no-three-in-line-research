@@ -144,6 +144,104 @@ This theorem does not bound that valuation tower across repeated
 re-extractions.  It supplies its exact local state and removes all other
 composite-denominator ambiguity.
 
+## BDA4b -- finite common-content tower
+
+Suppose the three cells lie in an integer box whose coordinate diameter
+is at most \(N\).  For every prime \(\ell\mid q\), define the untruncated
+common-scale height
+
+\[
+\nu_\ell(m,n)=\min\{v_\ell(m),v_\ell(n)\},
+\]
+
+and put
+
+\[
+\boxed{
+V_q(m,n)=\sum_{\ell\mid q}\nu_\ell(m,n),
+\qquad
+g_q(m,n)=\prod_{\ell\mid q}\ell^{\nu_\ell(m,n)}.
+}
+\]
+
+Let
+
+\[
+L_\ell(N)=\max\{k\geq0:\ell^k\leq N\}.
+\]
+
+### Theorem BDA4b -- PROVED
+
+For every compatible triple in the box,
+
+\[
+\boxed{
+0\leq V_q(m,n)
+\leq
+\sum_{\ell\mid q}L_\ell(N).
+}
+\]
+
+Repeatedly choose any prime \(\ell\mid q\) dividing both current scales
+and replace
+
+\[
+(m,n)\longmapsto(m/\ell,n/\ell).
+\]
+
+Every step lowers \(V_q\) by exactly one.  After exactly
+\(V_q(m,n)\) steps the process reaches the unique pair
+
+\[
+\boxed{
+(m^\circ,n^\circ)
+=
+\left(\frac m{g_q(m,n)},\frac n{g_q(m,n)}\right),
+}
+\]
+
+for which no prime divisor of \(q\) divides both coordinates.  At that
+terminal pair, every prime-power component \(\ell^e\Vert q\) has
+\(\kappa_\ell=0\) in BDA3h and therefore has a unit-pivot chart at full
+modulus \(\ell^e\).
+
+### Proof
+
+Because \(a\geq1\),
+
+\[
+|m|=\frac{|U|}{a}\leq N,
+\qquad
+|n|=\frac{|V|}{a}\leq N.
+\]
+
+The two scales are nonzero.  Hence
+\(v_\ell(m),v_\ell(n)\leq L_\ell(N)\), which proves the boxed height
+bound.
+
+Dividing both scales by \(\ell\) subtracts one from
+\(\nu_\ell\) and leaves every other prime valuation unchanged, so it
+lowers \(V_q\) by exactly one.  Prime division commutes, and the total
+power removed at \(\ell\) is forced to be
+\(\ell^{\nu_\ell(m,n)}\).  Thus every order ends after exactly \(V_q\)
+steps at the displayed unique pair.
+
+For each \(\ell\mid q\), at least one of \(m^\circ,n^\circ\) is an
+\(\ell\)-adic unit.  Primitivity of \((a,b)\) likewise makes at least
+one direction coordinate an \(\ell\)-adic unit.  Their outer product
+therefore has a unit entry modulo \(\ell^e\), so BDA3h applies with
+\(\kappa_\ell=0\). \(\square\)
+
+BDA4b closes the internal singular-division recursion for one geometric
+address.  In a prime-minus-one grid one may take \(N\leq p-1\), giving
+an explicit \(O_q(\log p)\) ceiling.  A BDA4 transition system must
+record the untruncated height rather than only the saturated residue
+\(\min(e,\nu_\ell)\); after the canonical common content is removed,
+the remaining classification concerns \(q\)-primitive slope/scale
+profiles and genuine profile cycles, not an invisible valuation tower.
+
 `scripts/verify_bda_valuation_charts.py` exhaustively checks the
 truncated valuation, unit-pivot, and projective-ratio identities for
-small primitive directions, scales, and prime powers.
+small primitive directions, scales, and prime powers.  It also checks
+the canonical common-content reduction, exact height descent, box
+ceiling, and terminal unit pivots for composite denominators.

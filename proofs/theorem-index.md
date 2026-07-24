@@ -58,6 +58,7 @@ The numbering is local to this repository.
 | BDA3h | Prime-power valuation pivots classify every visible primitive-slope and point-scale residue component | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
 | BDA3-residue-wall | Equal coordinate residues do not determine collinearity | PROVED | `tracks/bounded-denominator-relative-address.md` |
 | BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `tracks/bounded-denominator-finite-transition.md` |
+| BDA4b | Common-scale prime division has a canonical finite valuation height and ends in full unit-pivot charts | PROVED | `tracks/bounded-denominator-valuation-charts.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |

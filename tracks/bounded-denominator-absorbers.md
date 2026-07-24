@@ -155,6 +155,19 @@ modulo that full prime power. Hence the remaining singular slope chain
 is a common-scale valuation tower, not an arbitrary composite-modulus
 zero-divisor case.
 
+The same note proves BDA4b, which makes that tower finite inside every
+actual grid box. Removing one common prime factor from both point scales
+decreases the exact height
+\(V_q=\sum_{\ell\mid q}\min(v_\ell(m),v_\ell(n))\) by one, and
+\[
+V_q\leq\sum_{\ell\mid q}\lfloor\log_\ell N\rfloor.
+\]
+After the unique \(q\)-smooth common content is removed, every
+prime-power component has a full-precision unit pivot. Thus BDA4 no
+longer has an internally infinite singular-division case; it must
+classify the resulting \(q\)-primitive profiles and their genuine
+transition cycles.
+
 ## BDA4 — exception classification
 
 ### Target statement
