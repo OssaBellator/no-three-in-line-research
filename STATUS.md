@@ -95,12 +95,14 @@ unresolved case.
 82. **Exact terminal-board profile.** Every normalized four-endpoint board has 2--9 states with sharp rank-one, rank-two, and rank-three atoms \(3/4,2/3,1/2\).
 83. **Four-core cycle certificate.** Any positive global saturated minimum generates a finite cycle of four-point trades.
 84. **Balanced local defect flow.** Around every four-core cycle, each grid triple is created and removed equally often, and all changes touch moved cells.
+85. **Exact terminal trap.** Two explicit saturated \(N=4\) states form a potential-one two-cycle under all minimum-cost four-endpoint moves.
+86. **Universal local descent refuted.** The terminal two-cycle lies above an explicit potential-zero saturated state, so normalized four-board dynamics alone cannot prove global descent.
 
 ## What remains conditional
 
 - Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
 - Product-state conflict regularization for candidate-only triples.
-- Exclusion of balanced four-endpoint defect-flow cycles using first-separation, quotient, or carry signatures.
+- An inherited escape theorem for four-endpoint traps arising from prime-power prefix ancestry.
 - A lexicographic potential paying for fine stars recreated by later coarse repairs.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem.
 - Removal or absorption of the square-root divisor-collision boundary.
@@ -126,13 +128,15 @@ unresolved case.
 - The weak recursive-compatible child load is not the ordinary finer-prefix collateral: a parent-node move changes its row residue class.
 - No balanced weighting of completed-reciprocal maps exists when \(p\equiv3\pmod4\).
 - A degree-two forbidden endpoint board need not have a perfect matching at size three.
+- A positive-potential saturated state need not admit a decreasing four-endpoint move.
+- Balanced four-core defect-flow cycles can exist above the global minimum.
 
 ## Bottom line
 
 There is no complete proof. On the composite prime-power route, every globally
-nonimproving alternating closure now contracts to one exact terminal object: a
-four-endpoint board destroying one specified triple. Any positive global
-minimum must therefore support a finite balanced cycle of such trades. The
-principal missing theorem is a first-separation or carry-signature obstruction
-to that cycle, followed by a scale budget for fine structures recreated by
-coarse repairs and a coverage mechanism for arbitrary side lengths.
+nonimproving alternating closure contracts to a four-endpoint board destroying
+one specified triple, but exact four-core traps exist in general. The principal
+missing theorem is therefore an **inherited escape** using the terminal core's
+prefix node, scale, quotient state, opposite-layer ancestry, or carry
+signatures. After that, one still needs a coarse-to-fine recreation budget and
+a coverage mechanism for arbitrary side lengths.
