@@ -55,3 +55,8 @@ The numbering is local to this repository.
 | I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |
 | I4 | Many low-complexity windows yield a common-ratio bank via BSG | PROVED FROM PUBLISHED BSG | `docs/17-pfr-inverse-additive.md` |
+| I5 | Explicit Kneser density and coset-count refinement below doubling two | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
+| I6 | Full coset unions support an \(m!h^m\)-state absorber bank | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
+| I7 | Möbius anchors lie in at most \(2L\) multiplicative translates | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
+| I8 | Alternating anchor concentration-or-structure propagation dichotomy | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
+| I9 | Simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/18-pfr-coset-anchor-propagation.md` |
