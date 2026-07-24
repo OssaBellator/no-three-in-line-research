@@ -63,3 +63,8 @@ The numbering is local to this repository.
 | I10 | Exact order-two non-expansion exception \(x^2=r\) | PROVED | `docs/19-rational-coset-expansion.md` |
 | I11 | Rank-zero alternating cores expand except for the order-two exceptional orbit | PROVED | `docs/19-rational-coset-expansion.md` |
 | I12 | General simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/19-rational-coset-expansion.md` |
+| CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |
+| CR2 | Radial anchor equation and \(2q\)-signature compression | PROVED | `docs/20-common-ratio-bank-conversion.md` |
+| CR3 | Common-ratio decoder-or-structure trichotomy | PROVED | `docs/20-common-ratio-bank-conversion.md` |
+| CR4 | Uniform paid-bank conversion inequality | PROVED | `docs/20-common-ratio-bank-conversion.md` |
+| CR5 | Weighted quotient-bank extraction | OPEN | `docs/20-common-ratio-bank-conversion.md` |
