@@ -74,5 +74,14 @@ This ledger collects the results specific to
 | CMR44 | The CMR12 64-point digital layer has no second-permutation no-three completion | PROVED BY EXACT FINITE CERTIFICATE | `docs/46-digital-64-completion-obstruction.md` |
 | CMR45 | Deterministic harmonic energy is bounded by exact divisor-collision counts | PROVED | `docs/48-prime-power-divisor-collision-energy.md` |
 | CMR46 | A uniform divisor-collision bound implies \(O(KN\log^3N)\) harmonic energy | PROVED UNDER HYPOTHESES | `docs/48-prime-power-divisor-collision-energy.md` |
+| CMR47 | Same-stratum divisor collisions satisfy an exact carry quadratic | PROVED | `docs/49-prime-power-critical-collision-cells.md` |
+| CMR48 | All regular same-stratum collision cells have \(O(N/d)\) total mass | PROVED | `docs/49-prime-power-critical-collision-cells.md` |
+| CMR49 | Every cross-stratum collision lies in one explicit carry class | PROVED | `docs/49-prime-power-critical-collision-cells.md` |
+| CMR50 | The singular critical same-stratum class has total mass \(O(M/d+\sqrt M)\) | PROVED | `docs/50-prime-power-singular-collision-sum.md` |
+| CMR51 | All same-stratum divisor collisions have mass below \(12N/d+2\sqrt N\) | PROVED | `docs/50-prime-power-singular-collision-sum.md` |
+| CMR52 | Cross-stratum carries are fixed modulo the full valuation gap | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
+| CMR53 | Each cross-stratum valuation has a summed Hensel root bound | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
+| CMR54 | Complete divisor collisions satisfy \(C(a,d)<20N/d+13\sqrt N+8k\) | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
+| CMR55 | Completed reciprocals have harmonic energy \(O(N^{3/2}+N\log^3N)\) and syndrome \(O(N^2\log N)\) | PROVED | `docs/51-prime-power-cross-stratum-sum.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
 | CMF2 | A saturated no-three configuration exists for composite \(N=12\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
