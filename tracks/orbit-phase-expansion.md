@@ -112,6 +112,25 @@ or leaves an antichain of arity-at-least-two checks on nontrivial
 domains. Arithmetic expansion is therefore needed only for this
 irreducible canonical core.
 
+[`orbit-phase-antichain-lubell.md`](orbit-phase-antichain-lubell.md)
+proves OP2h. Every irreducible canonical check family satisfies the
+nonuniform Lubell bound
+
+\[
+\sum_C
+\left(
+\binom n{|C|}
+\prod_{v\in C}|\mathcal A_v|
+\right)^{-1}
+\leq1.
+\]
+
+For a common \(h\)-phase alphabet and rank-two/three checks this becomes
+\(M_2/(\binom n2h^2)+M_3/(\binom n3h^3)\leq1\). The bound is sharp for
+a complete fixed-rank layer, so it both supplies an exact normalized
+budget and proves that antichain preprocessing alone cannot replace the
+missing arithmetic expansion theorem.
+
 ## OP3 — Phase-flip decoder
 
 ### Target statement
@@ -157,6 +176,8 @@ OP2f additionally deletes every bounded factor-incidence-treewidth core
 through an exact separator table.
 OP2g may be applied first: it removes subsumed checks and propagates all
 forced labels before any residual conflict-mass or topology estimate.
+OP2h then supplies a unit Lubell-mass budget for the resulting
+irreducible check family.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
