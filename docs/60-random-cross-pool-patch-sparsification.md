@@ -56,37 +56,36 @@ ordered choices, and their line meets `U_L` in at most four points. ∎
 The counts deliberately include patterns that no degree state can select; this
 only enlarges the upper bounds.
 
-## 2. Random equipartition and clean local domains
+## 2. A partition potential independent of local domains
 
 Assume `m=Kr`.  Randomly equipartition `P` into ordered pools
 `E_1,...,E_K` and assign distinct intervals `I_1,...,I_K`.
 
-After the partition is exposed, suppose each retained pool has a state domain
-`Omega_i` of density at least `delta` in its full 36-state bank, with:
+Fix a target lower bound `delta>0` for the clean-domain density that will later
+be supplied on retained pools.  For any exposed equipartition, define
+`X_delta` as follows:
 
-- every state locally no-three;
-- every state clean against the original source points under consideration.
+- give every restricted same-edge-pair-plus-cell pattern weight
+  `2/(delta^2 r^2)`;
+- give every restricted ordinary-pair-plus-cell pattern weight
+  `16/(delta^2 r^3)`;
+- give every restricted one-cell-per-three-pools pattern weight
+  `8/(delta^3 r^3)`;
+- sum these weights over all ordered pool pairs and unordered pool triples.
 
-Choose the pool states independently and uniformly.  PP3cg and conditioning give
-
-\[
- q_1=\frac2{\delta r},
- \qquad
- q_h=\frac1{\delta r},
- \qquad
- q_2=\frac8{\delta r^2}.
-\]
-
-Let `Z_patch` count all selected patch-only triples meeting at least two pools.
+This potential is defined whether or not a particular pool is locally good.  If
+a collection of pools is later assigned independent clean domains of density at
+least `delta`, its expected number of selected patch-only triples is at most the
+restriction of `X_delta` to that collection.  Deleting pools can only decrease
+the potential.
 
 ### Theorem PP3cy -- PROVED
 
-The joint expectation over the random equipartition and the independent pool
-states satisfies
+The random equipartition satisfies
 
 \[
  \boxed{
- \mathbb E Z_{\rm patch}
+ \mathbb E X_\delta
  \le
  K(K-1)
  \left(
@@ -111,9 +110,8 @@ distinct source edges.  They land in the specified pools with probability
  \frac{r^2}{m(m-1)}.
 \]
 
-Proposition PP3cx gives at most `16m` global patterns, and a restricted pattern
-is selected with probability at most `q_h q_1=2/(delta^2r^2)`.  The expected
-contribution is at most
+Proposition PP3cx gives at most `16m` global patterns.  Multiplying by their
+potential weight gives expected contribution
 
 \[
  16m\frac{r^2}{m(m-1)}\frac2{\delta^2r^2}
@@ -128,8 +126,7 @@ assigned to pool `i` and one to pool `j`.  The assignment probability is
  \frac{(r)_2r}{(m)_3}.
 \]
 
-Using the `32m(m-1)` support cap and
-`q_2q_1=16/(delta^2r^3)`, its expected contribution is at most
+Using the `32m(m-1)` support cap and its potential weight gives
 
 \[
  32m(m-1)
@@ -139,9 +136,9 @@ Using the `32m(m-1)` support cap and
  \frac{512}{\delta^2(m-2)}.
 \]
 
-Now fix three distinct pools.  A global one-cell-per-pool pattern is controlled
-by three distinct edges and lands in the specified pools with probability
-`r^3/(m)_3`.  Proposition PP3cx and `q_1^3=8/(delta^3r^3)` give
+For three distinct pools, a global one-cell-per-pool pattern is controlled by
+three distinct edges and lands in the specified pools with probability
+`r^3/(m)_3`.  Proposition PP3cx gives contribution
 
 \[
  64m^2
@@ -153,29 +150,55 @@ by three distinct edges and lands in the specified pools with probability
 
 Sum over ordered pool pairs and unordered pool triples. ∎
 
+## 3. Composition with exceptional-pool deletion
+
+Let `B` be any nonnegative count of pools that fail the desired same-pool or
+source-clean preparation conditions.  Suppose a random equipartition satisfies
+
+\[
+ \mathbb E(B/K)=o(1)
+\]
+
+and every nonexceptional pool receives a clean domain of density at least a
+fixed `delta>0`.  PP3cm and PP3cv give exactly this type of estimate under their
+respective hypotheses.
+
 ### Corollary PP3cz -- PROVED
 
-If `delta` is bounded below by a positive constant and
+If
 
 \[
  K=o(m^{1/3}),
 \]
 
-then
+then there is an equipartition for which
 
 \[
- \mathbb E Z_{\rm patch}=o(1).
+ B=o(K)
+ \qquad\text{and}\qquad
+ X_\delta=o(1).
 \]
 
-Consequently some equipartition and state assignment has no patch-only
-cross-pool triple.
+After discarding the exceptional pools, some independent choice of states on all
+remaining pools contains no patch-only cross-pool triple.
 
-The same conclusion holds together with PP3cm and PP3cv whenever their
-exceptional pool fractions tend to zero: discard the exceptional pools using a
-small amount of initial slack, and apply the expectation bound to the retained
-ones.
+#### Proof
 
-## 3. Architectural consequence
+The right side of PP3cy is `o(1)` under `K=o(m^(1/3))`.  Therefore
+
+\[
+ \mathbb E\left(B/K+X_\delta\right)=o(1).
+\]
+
+Some equipartition has both summands `o(1)`.  Discard the `B` exceptional pools;
+this can only decrease `X_delta`.  On every remaining pool choose a clean state
+independently.  The expected number of patch-only triples is at most
+`X_delta=o(1)`, hence is below one for all sufficiently large `m`.  Some state
+assignment therefore contains none. ∎
+
+A small amount of initial pool slack replaces the discarded `o(K)` variables.
+
+## 4. Architectural consequence
 
 For the one-rung-per-pool constant-width proposal, the published transfer target
 would require
@@ -193,11 +216,11 @@ to one of two architectures:
    `K=m^0.05` prime-gap ladder, now using matching-first and pattern-compression
    preparation instead of independent parabolic template conditioning.
 
-At `K=m^0.05`, the patch-only expectation in PP3cy is `O(m^-0.85)` from pool
-pairs and `O(m^-0.85)` from pool triples.  Thus cross-variable patch geometry is
-not the obstruction at that scale.
+At `K=m^0.05`, the patch-only potential in PP3cy is `O(m^-0.9)` from pool pairs
+and `O(m^-0.85)` from pool triples.  Thus cross-variable patch geometry is not
+the obstruction at that scale.
 
-## 4. Remaining macro-state problem
+## 5. Remaining macro-state problem
 
 The unresolved construction is now a *large-width local variable*: from one
 large matching pool, build a polynomial-density state family that installs many
