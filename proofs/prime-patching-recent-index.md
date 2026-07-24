@@ -32,13 +32,13 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3cx--PP3cz | Random cross-pool potential and `K=o(m^(1/3))` endpoint | PROVED | `docs/60-random-cross-pool-patch-sparsification.md` |
 | PP3da--PP3dc | Multi-rung macro-bank margins, spread, and support-compression warning | PROVED | `docs/61-multi-rung-matching-macro-banks.md` |
 | PP3dd--PP3df | Repeated monotone matching-pool extraction | PROVED | `docs/62-monotone-matching-pool-extraction.md` |
-| PP3dg--PP3dh | Balanced exponent reduction to square-root macro states | PROVED UNDER HYPOTHESES | `docs/63-square-root-ordered-pool-macro-reduction.md` |
+| PP3dg--PP3dh | Earlier monotone-pool square-root macro balance | PROVED UNDER HYPOTHESES / SUPERSEDED IN EXPONENT CHOICE | `docs/63-square-root-ordered-pool-macro-reduction.md` |
 | PP3di--PP3dk | Greedy square-root component-clean macro bank and cylinder spread | PROVED | `docs/64-greedy-square-root-component-macro-bank.md` |
 | PP3dl--PP3do | Universal fully internal square-root macro patch by product LLL | PROVED | `docs/65-product-lll-square-root-macro-patch.md` |
 | PP3dp--PP3dr | Conditional LLL-distribution gives `O(R^-q)` fixed-rank macro spread | PROVED FROM PUBLISHED THEOREM | `docs/66-lll-distribution-square-root-macro-spread.md` |
 | PP3ds--PP3du | Random balanced coupling disperses the same-edge pair spike | PROVED | `docs/67-random-balanced-coupling-spread.md` |
 | PP3dv--PP3dy | Exact product factorization and divisor-energy endpoint for same-edge anchors | PROVED | `docs/68-same-edge-anchor-product-factorization.md` |
-| PP3dz--PP3ed | Dense safe-domain square-root macro patch and conditional spread | PROVED | `docs/69-dense-domain-source-clean-macro-patch.md` |
+| PP3dz--PP3ed | Dense fixed-core-safe square-root macro patch and conditional spread | PROVED | `docs/69-dense-domain-source-clean-macro-patch.md` |
 | PP3ee--PP3eh | Boundary-shadow density or Hall-obstruction dichotomy, with coordinate warning | PROVED / CORRECTED | `docs/70-boundary-shadow-density-dichotomy.md` |
 | PP3ei--PP3ek | Global slot-occurrence LLL endpoint and conditional spread | PROVED / FROM PUBLISHED LLL DISTRIBUTION | `docs/71-global-slot-occurrence-endpoint.md` |
 | PP3el--PP3eo | Random constant-width block profile cancellation and all-block endpoint | PROVED | `docs/56-random-matching-block-preparation.md` |
@@ -54,54 +54,81 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3fu | Oversampled matching yields a macro only with a saturation-compatible allocation | PROVED UNDER HYPOTHESIS | `docs/75-oversampled-refined-label-matching.md` |
 | PP3fw--PP3fz | Global balanced ownership and full-coordinate refined matching | PROVED / FROM PERMUTATION CONCENTRATION | `docs/76-global-balanced-label-allocation.md` |
 | PP3ga--PP3gd | Universal one-sided slab separation of same-slot cross-macro pairs | PROVED | `docs/77-one-sided-slab-cross-macro-separation.md` |
-| PP3ge--PP3gg | Fully source-safe one-slot domains and ordinary anchor codegree | PROVED | `docs/72-fully-source-safe-macro-domains.md` |
+| PP3ge--PP3gg | Fixed-core fully safe one-slot domains and ordinary anchor codegree | PROVED | `docs/72-fully-source-safe-macro-domains.md` |
 | PP3gh--PP3gi | Cross-macro active-slot probabilities and maximum-degree endpoint | PROVED | `docs/73-cross-macro-active-slot-hypergraph.md` |
+| PP3gj--PP3gm | Complementary-degree global allocation and random balanced endpoint | PROVED / FROM PERMUTATION CONCENTRATION | `docs/78-ore-balanced-global-allocation.md` |
+| PP3gn--PP3gq | Slab separation of all distinct-macro repeated-type mixed triples | PROVED | `docs/79-slab-mixed-type-localization.md` |
+| PP3gr--PP3gu | Slab-optimal exponent rebalance and rank-two mass reduction | PROVED / CONDITIONAL COMPLETION INTERFACE | `docs/80-slab-macro-exponent-rebalancing.md` |
+| PP3gv--PP3gy | Optimal macro-count and residual exponent barriers | PROVED | `docs/81-square-root-macro-architecture-optimality.md` |
+| PP3gz--PP3hf | Gcd/divisor bounds close all patch-only cross-macro energy | PROVED | `docs/82-slab-patch-triple-energy.md` |
+| PP3hg--PP3hl | Congruence/divisor-square bounds close ordinary source-anchor pair energy | PROVED | `docs/83-slab-source-anchor-pair-energy.md` |
+| PP3hm--PP3hq | Controller-aware safe domains and corrected global completion interface | PROVED / CONDITIONAL ON DENSITY | `docs/84-controller-aware-safe-macro-domains.md` |
+| PP3hr--PP3hv | Positive controller shadow forces a blocker star or disjoint blocker bank | PROVED | `docs/85-controller-shadow-star-matching-dichotomy.md` |
+| PP3hw--PP3hz | Resource-disjoint label/controller/blocker extraction | PROVED | `docs/86-controller-shadow-resource-matching.md` |
+| PP3ia--PP3id | Endpoint-permutation trade and exact controller-shadow change | PROVED / CONDITIONAL IMPROVEMENT | `docs/87-controller-shadow-endpoint-permutation-trades.md` |
+| PP3ie--PP3ii | Spread derangement first-moment and collateral endpoint | PROVED | `docs/88-endpoint-derangement-first-moment.md` |
 
 ## Current exact target
 
-At the balanced exponents
+The strongest square-root macro balance is now
 
 ```text
-macro variables M = m^0.2875
-source-pool size R = m^0.475
-macro width W = Theta(sqrt(R)) = m^0.2375,
-total width T=MW = m^0.525.
+macro variables M = m^(1/20+o(1))  = m^0.05
+source-pool size R = m^(19/20+o(1)) = m^0.95
+macro width W     = m^(19/40+o(1)) = m^0.475
+total width T=MW  = m^(21/40+o(1)) = m^0.525.
 ```
 
-Matching pools, equal-margin restoration, complete internal no-three geometry,
-and fixed-rank internal spread are universal.
+This balance is exponent-optimal among disjoint source pools with
+`W=Theta(sqrt(R))`.  Matching supply, equal-margin restoration, internal macro
+geometry, fixed-rank spread, all patch-only cross-macro energy, and all ordinary
+two-slot source-anchor energy are closed.
 
-The coordinate allocation issue is explicit.  The `T` final new rows and `T`
-final new columns must all be used.  PP3fw solves this once there is a balanced
-movement-label ownership and one global refined perfect matching.  PP3fy gives a
-sufficient averaged-density/concentration criterion; no numerical label is
-discarded.
-
-The source-clean domains PP3ge remove every unary source certificate.  Ordinary
-anchors are measured by the two-slot completion codegrees PP3gf.  Cross-macro
-patterns may be treated either by the active-slot maximum-degree endpoint PP3gi
-or by the stronger weighted grouped-energy endpoint PP3fo.
-
-For every slot `s`, the weighted route requires
+The active-pool safety correction is essential.  Fixed-core graphs do not test
+blocker pairs using unselected pool edges.  The correct graph uses the
+controller-aware domains
 
 ```text
-sum of grouped ordinary-source pair-event probabilities
-+ sum of grouped cross-macro pair/triple-event probabilities
-<= 1/48 - o(1).
+H_ctrl(A,B) = values whose movement/refill cells have no blocker pair
+              disjoint from the selected controller edge,
+              and whose same-slot pair has no retained source anchor.
 ```
 
-Column-slab pools with movement rows in the same order make every cross-macro
-same-slot-pair-plus-movement relation empty.  The row-slab transpose removes the
-refill version.  Thus one whole high-probability direction is deleted from the
-weighted mass universally.
+If these graphs satisfy the global allocation theorem, PP3hq gives the full
+`m^0.525` patch.
 
-The remaining bottleneck has two quantitative pieces:
+The strongest direct allocation criterion is complementary degree.  For every
+nonedge `(i,A,B)`, it is enough that
 
-1. prove the balanced global refined-label conditions of PP3fy, or exploit their
-   boundary-shadow, Hall, exact bad-incidence, and divisor-energy concentration
-   alternatives with protected trades;
-2. prove either the residual active-slot degree bound PP3gi or the weaker and
-   more flexible grouped completion-energy bound PP3fo after slab cancellation.
+```text
+deg_{J_i}(A) + average_refill_degree(B)
+    >= T + O(sqrt(T log T)).
+```
+
+A positive-density failure of controller-aware safety cannot remain diffuse.
+It produces either:
+
+1. a blocker star with `m^0.475` distinct rays; or
+2. `m^0.525` resource-disjoint bad entries with distinct labels, controller
+   edges, and endpoint-disjoint blocker pairs.
+
+The second alternative yields a matching-layer endpoint bank.  Endpoint
+permutation trades have an exact removal-credit/insertion-cost identity, and
+the spread-derangement endpoint succeeds when
+
+```text
+cell/q + (pair + unary shadow)/q^2
+       + (triple + pair shadow)/q^3
+```
+
+is sufficiently small.
+
+The remaining bottleneck is therefore one controller-shadow conversion theorem:
+
+- prove the controller-aware global label graphs satisfy PP3gl directly; or
+- use the star/resource alternatives to build a source-admissible endpoint or
+  tomographic trade whose insertion collateral is below its paid removal
+  credit.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
