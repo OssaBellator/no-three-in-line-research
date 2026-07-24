@@ -41,7 +41,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/74-prime-power-global-baseline-alternating-closure.md`](docs/74-prime-power-global-baseline-alternating-closure.md) through [`docs/79-four-endpoint-trap-counterexample.md`](docs/79-four-endpoint-trap-counterexample.md): global-baseline compression, target-load descent, exact terminal boards, and the abstract four-core trap.
 - [`docs/80-prime-five-four-core-escape.md`](docs/80-prime-five-four-core-escape.md) through [`docs/88-prime-power-inherited-four-core-cover.md`](docs/88-prime-power-inherited-four-core-cover.md): exact root escapes, joint-parent banks, closure envelopes, sharp derangement laws, and inherited terminal covers.
 - [`docs/89-prime-power-parent-cover-lifting.md`](docs/89-prime-power-parent-cover-lifting.md) through [`docs/95-prime-power-iterated-hall-wall-peeling.md`](docs/95-prime-power-iterated-hall-wall-peeling.md): parent-cover lifting, the \(2/11\) batch deficit, envelope expansion, line signatures, Hall walls, and iterative peeling.
-- [`docs/96-prime-power-essential-edge-factorization.md`](docs/96-prime-power-essential-edge-factorization.md) through [`docs/99-prime-power-band-conflict-system.md`](docs/99-prime-power-band-conflict-system.md): half-degree flexibility, exchange ancestry, local-load concentration, and bounded dyadic conflict systems.
+- [`docs/96-prime-power-essential-edge-factorization.md`](docs/96-prime-power-essential-edge-factorization.md) through [`docs/101-prime-power-exact-top-height-slice.md`](docs/101-prime-power-exact-top-height-slice.md): half-degree flexibility, exchange ancestry, local loads, bounded dyadic conflicts, odd-line deletion resilience, and exact top-slice cleaning.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -78,19 +78,33 @@ of seven.
 
 Every globally nonimproving alternating closure contracts to an inherited
 four-endpoint core. Parent lifting, Hall-wall peeling, and matching-space local
-loads now reduce the nonroot obstruction to a cubic candidate-only population
-in one dyadic primitive-height band. For bands
+loads reduce the nonroot obstruction to candidate-only triples in primitive
+height bands.
+
+For a band
 
 \[
-H\ge t^\varepsilon,
+H\le\max(|u|,|v|)<2H,
 \]
 
-the conflict degree is below \(3t^2\), pair codegree is at most \(t/H\), and a
-published conflict-free matching theorem gives an almost-perfect band-avoiding
-derangement matching. The principal missing step is **exact completion** of
-that matching using a reserve/absorption layer while retaining all previously
-protected bands. Low-height bands still require the prime-power carry ledger.
-Arbitrary composite assembly additionally needs a separate coverage mechanism.
+the conflict degree is below \(3t^2\) and pair codegree is at most \(t/H\).
+When \(H\ge t^\varepsilon\), a published conflict-free matching theorem gives
+an almost-perfect band-avoiding derangement matching. At the very top,
+
+\[
+H\ge0.49t,
+\qquad t\ge95,
+\]
+
+the matching-space local lemma gives an **exact** parent permutation avoiding
+all candidate-only board triples in that slice. This exact move does not also
+remove rank-one or rank-two triples involving fixed outside points, and it may
+create lower-height triples.
+
+The principal missing steps are exact reserve completion for the remaining
+high/intermediate bands, low-height carry absorption, and a reverse-scale
+budget protecting previously cleaned bands. Arbitrary composite assembly also
+needs a separate coverage mechanism.
 
 ## Running checks
 
@@ -121,6 +135,8 @@ python scripts/verify_prime_power_essential_edges.py
 python scripts/verify_prime_power_exchange_ancestry.py
 python scripts/verify_prime_power_parent_local_load.py
 python scripts/verify_prime_power_band_conflicts.py
+python scripts/verify_prime_power_odd_line_resilience.py
+python scripts/verify_prime_power_exact_top_slice.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
