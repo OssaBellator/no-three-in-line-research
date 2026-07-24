@@ -138,7 +138,7 @@ same-layer triples.
 For a mixed triple write its three points as
 
 \[
-( ax_i, ay_i+b_i),
+(ax_i,ay_i+b_i),
 \qquad b_i\in\{0,1\}.
 \]
 
@@ -154,17 +154,15 @@ where `D` is the determinant of the normalized points `(x_i,y_i)` and
 E=(x_2-x_1)(b_3-b_1)-(x_3-x_1)(b_2-b_1).
 \]
 
-Two points lie in the same layer. If `D=0`, then the mixed-layer point is not on
-the normalized line through those two same-layer points, because the two layer
-offsets differ; equivalently the displayed `E` is a nonzero difference of two
-distinct column indices. Hence
+Two points lie in the same layer. Consequently `E`, up to sign, is the
+difference of their two distinct column indices, and therefore
 
 \[
 0<|E|\le p-1.
 \]
 
-If `D\ne0`, then `|aD|>=a>=p>|E|`. In either case `aD+E` is nonzero, so the
-mixed determinant cannot vanish. ∎
+If `D=0`, then the determinant equals `aE` and is nonzero. If `D\ne0`, then
+`|aD|>=a>=p>|E|`, so again `aD+E` cannot vanish. ∎
 
 The verifier uses the normalized coordinates `(x,aF_p(x)+b)`: their determinant
 is exactly the full terminal determinant divided by the harmless factor `a`.
