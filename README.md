@@ -31,6 +31,9 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection theorem and local triple-load endpoint.
 - [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): six-cycle spread proof, dense superregular perfect-matching spread, and two-layer global conflict endpoint.
 - [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md): quotient-set inverse theorems, subgroup completion, and common-ratio repair banks.
+- [`docs/18-pfr-coset-anchor-propagation.md`](docs/18-pfr-coset-anchor-propagation.md): coset absorber banks and alternating anchor propagation.
+- [`docs/19-rational-coset-expansion.md`](docs/19-rational-coset-expansion.md): rational-function expansion of multiplicative cosets and the order-two exception.
+- [`docs/20-common-ratio-bank-conversion.md`](docs/20-common-ratio-bank-conversion.md): exact rectangle collateral, decoder-or-structure conversion, and the weighted-bank bottleneck.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
 - [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
@@ -58,13 +61,13 @@ The strongest current synthesis is:
 4. Represent cross-channel bad triples as properly edge-coloured secant graphs whose colour classes are matchings.
 5. Peel leaves; every residual core contains a Möbius cycle.
 6. Use collision-aware full permutation banks on cycle blocks.
-7. Apply inverse-additive theorems: small quotient sets yield common-ratio rectangle banks, and quotient ratio below \(3/2\) completes to a subgroup-coset absorber.
-8. When a one-colour cycle is frozen, expand to its opposite-colour secant anchors.
-9. Control the alternating closure through quantitative one-, two-, and three-cell concentration certificates.
+7. Apply inverse-additive theorems: small quotient sets yield common-ratio rectangle banks and subgroup-coset absorbers.
+8. Convert a **paid** common-ratio bank: either one rectangle improves, or failure yields a dense channel-pair secant star or a large aligned multiplicative anchor class.
+9. Propagate the resulting structure through alternating red/blue anchor closure and rational-function expansion.
 10. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-11. In dense superregular candidate hosts, use spread perfect-matching measures or the six-cycle switching bound; the missing upgrade is a local dependency/resampling theorem.
+11. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The current geometric targets are the conversion of common-ratio banks and alternating two-colour carry-core termination. The exact complete-host endpoint is proved, and dense superregular pairs admit rank-three and all-rank spread matching distributions.
+The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The common-ratio conversion step is now proved for banks carrying quantified current defect incidence. The next inverse bottleneck is weighted quotient-bank extraction: the algebraic bank must capture a positive fraction of the current syndrome, not merely contain many quotient pairs.
 
 ## Running the checks
 
@@ -100,7 +103,7 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
-- prove a common-ratio bank conversion theorem;
+- prove weighted quotient-bank extraction;
 - build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
 - extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
 - classify frozen cycles and alternating anchor closures.
