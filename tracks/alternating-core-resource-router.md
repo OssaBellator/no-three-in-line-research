@@ -230,9 +230,12 @@ extraction is missing.
 For canonical phase-block tokens, AC3s--AC3u make the role alternative
 finite and checkable: at most seven literal mismatch states, at most
 \(h^3-1\) exact states, or one rank-at-most-three phase-sensitivity
-witness.  What remains is to verify the scope-complete conflict graph
-for the concrete closure moves and pass the witness to the existing
-carry/BDA/RI classifiers.
+witness.  AC3v--AC3w construct the scope-complete conflict graph from
+the exact repair envelopes, factor scopes, constraints, and private paid
+sets, and prove exact collateral and payment additivity on every
+independent family.  AC3x gives a dense graph a finite paid structural
+label.  What remains is to pass that label and the sensitivity witness
+to the existing carry/BDA/RI classifiers.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

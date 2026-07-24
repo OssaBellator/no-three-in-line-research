@@ -45,6 +45,11 @@ AC3s--AC3u additionally import only the proved canonical-literal
 representation: a shared certificate has rank at most three and either
 compresses to seven mismatch states or returns an exact-phase
 sensitivity witness.  No general OP2 expansion statement is assumed.
+AC3v--AC3x are internal to the alternating branch: the primal
+projection of all finite factor and constraint scopes proves exact
+scope completion and payment additivity, while a dense projection is
+returned with one finite structural incidence label.  These results do
+not import an arithmetic expansion theorem from another branch.
 
 ## Independent selection endpoints
 

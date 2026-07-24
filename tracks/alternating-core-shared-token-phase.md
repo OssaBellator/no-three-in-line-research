@@ -319,8 +319,13 @@ common scope has rank at most three.  Literal-invariant roles compress
 to at most seven nonzero mismatch states; exact-phase roles use at most
 \(h^3-1\) states, and failure of compression returns two same-mismatch
 phases together with one local legality or cost discrepancy.  The
-remaining geometric checks are scope-completeness for each concrete
-closure operation and arithmetic classification of that explicit
+scope-completeness and additive-collateral hypotheses are discharged by
+AC3v--AC3w in
+[`alternating-core-primal-conflict-completion.md`](alternating-core-primal-conflict-completion.md):
+project every exact factor and constraint scope onto its repair
+envelopes.  AC3x sends a dense canonical graph to a paid finite
+structural label.  The remaining geometric check is arithmetic
+classification of that dense label and of the explicit
 phase-sensitivity witness.
 
 The important remaining numerical case is no longer an unbounded fan.

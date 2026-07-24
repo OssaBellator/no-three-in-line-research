@@ -85,6 +85,9 @@ The numbering is local to this repository.
 | AC3s | A canonical rank-three phase-block token has at most seven nonzero mismatch states | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
 | AC3t | Scope-complete literal-invariant token fans satisfy the AC3p contract with at most seven phases | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
 | AC3u | Exact-phase token roles use at most \(h^3-1\) states or expose an explicit rank-three sensitivity witness | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
+| AC3v | The canonical primal projection of all scoped factors and constraints makes every independent repair family legal and exactly additive | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
+| AC3w | Private paid-certificate sets add exactly on primal-independent families while a common token is counted once | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
+| AC3x | Dense canonical conflicts localize with current paid weight to one of finitely many structural incidence labels | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

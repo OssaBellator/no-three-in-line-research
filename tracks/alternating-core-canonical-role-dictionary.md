@@ -148,6 +148,15 @@ phase supports and no omitted cross-effect.  Sharing the token scope is
 allowed: it is represented by one common assignment
 \(\alpha\in\mathcal D_\pi\).
 
+[`alternating-core-primal-conflict-completion.md`](alternating-core-primal-conflict-completion.md)
+constructs this graph canonically.  It projects every potential-factor
+scope, row/column/protected constraint scope, and private paid-set
+overlap onto the repair envelopes which it meets.  AC3v proves that an
+independent family then has exact additive collateral, including when
+one triple could otherwise span three repairs.  AC3w counts the common
+token once, and AC3x gives every dense failure a finite structural
+witness label.
+
 For \(j\in\mathcal J\), let \(\mathcal X_j\) be its finite private state
 set and let
 
@@ -309,9 +318,15 @@ dictionary.  A purported compatible fan whose private supports overlap
 exposes a missing scope-conflict edge instead of entering this theorem.
 
 Thus the remaining role frontier is narrow: classify exact phase
-sensitivity on at most three block variables, and verify
-scope-completeness for each concrete closure operation.
+sensitivity on at most three block variables.  Scope completeness no
+longer requires a move-by-move pairwise assertion: AC3v supplies it
+canonically from the full repair envelopes and exact scoped factors.
+If that canonical graph is dense, AC3x preserves current paid weight
+while localizing the failure to one structural incidence type; the
+arithmetic classification of that type remains open.
 
 `scripts/verify_ac_canonical_roles.py` checks the rank-three mismatch
 bound, exact and compressed product relations, sensitivity witnesses,
 and private-support extraction on exhaustive small phase systems.
+`scripts/verify_ac_primal_conflicts.py` independently checks the exact
+scope projection and additive identities.

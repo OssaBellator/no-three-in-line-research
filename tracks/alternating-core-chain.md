@@ -305,9 +305,24 @@ collateral are invariant inside each mismatch fibre, AC3p applies with
 this absolute alphabet. Otherwise the exact common alphabet has at most
 \(h^3-1\) states and failure of compression exposes two exact phases
 with the same mismatch word plus one local legality or cost discrepancy.
-Thus the remaining role work is no longer an arbitrary fan label: it is
-scope-completeness for each closure move and arithmetic classification
-of an explicit rank-at-most-three phase-sensitivity witness.
+At this stage the remaining role work is no longer an arbitrary fan
+label: it is scope-completeness for each closure move and arithmetic
+classification of an explicit rank-at-most-three phase-sensitivity
+witness.
+
+[`alternating-core-primal-conflict-completion.md`](alternating-core-primal-conflict-completion.md)
+proves AC3v--AC3x and closes the scope-completeness half of that
+statement.  Project every potential-factor and feasibility-constraint
+scope onto the complete private repair envelopes.  The resulting primal
+graph turns a factor meeting any number of repairs into a clique, so an
+independent family is jointly legal and has exact additive potential;
+private paid sets are disjoint and the common token is counted once.
+This applies phase by phase to AC3p.1.  If the canonical graph is dense,
+its edges have finitely many structural incidence labels (only eighteen
+cross words for one rank-three certificate kind), and AC2d localizes the
+paid overload to one such label.  The remaining role frontier is now
+arithmetic classification of that dense label and of AC3u's explicit
+rank-at-most-three phase-sensitivity witness.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -394,6 +409,9 @@ upgrade AC6 while those inputs remain open.
   strict phase-loss ticket traces;
 - verify rank-three mismatch compression and retain every exact-phase
   sensitivity witness;
+- exhaust canonical primal projections, including a triple spanning
+  three repairs, exact factor/payment additivity, and finite structural
+  incidence labels;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 

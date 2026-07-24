@@ -54,6 +54,14 @@ labels give a conflict graph of bounded degree.  A bound on ordinary
 support overlap alone is not enough: certificate overlap and cross-object
 creation must also be edges.
 
+AC3v--AC3w in
+[`alternating-core-primal-conflict-completion.md`](alternating-core-primal-conflict-completion.md)
+give a canonical realization of this full graph by projecting every
+scoped potential term, feasibility constraint, and private paid-set
+overlap onto repair envelopes.  Their independent sets satisfy the
+additivity assertion above exactly.  AC3x supplies the finite
+edge-label set needed by AC2d when the canonical graph is dense.
+
 ## AC2b -- composed paid-star re-extraction
 
 Suppose the heavy-anchor family entering AC1d has total paid weight
