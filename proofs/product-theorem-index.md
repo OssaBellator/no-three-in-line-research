@@ -41,7 +41,7 @@ This index collects the product/composition results on
 | PX34 | `S_5` is the disjoint union of the affine group and one 100-element non-affine double coset | PROVED | `docs/41-universal-affine-2x5-closure.md` |
 | PX35 | Every saturated side-five factor composes with the side-two factor to a saturated no-three side-ten configuration | PROVED | `docs/41-universal-affine-2x5-closure.md` |
 | PX36 | The complete four-block affine one-layer family normalizes to identity first blocks | PROVED | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
-| PX37 | The complete affine one-layer family has no no-three state at base sides six or seven | PROVED FINITE | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
+| PX37 | The complete affine one-inner-layer family has no no-three state at base sides six or seven | PROVED FINITE | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
 | PX38 | Successful normalized templates transport to their full map-group double cosets, yielding a general closure criterion | PROVED | `docs/43-double-coset-template-closure.md` |
 | PX39 | Arbitrary one-layer block maps admit an exact full-symmetric gauge normalization | PROVED | `docs/44-gauge-normalization-and-small-one-layer-census.md` |
 | PX40 | The complete normalized arbitrary-map census through base side five has the exact recorded template counts | PROVED FINITE | `docs/44-gauge-normalization-and-small-one-layer-census.md` |
@@ -85,10 +85,16 @@ This index collects the product/composition results on
 | PX78 | Additive-coset shifts install exponentially many independent protected rectangle states | PROVED | `docs/58-protected-rectangle-coset-absorbers.md` |
 | PX79 | Constant normalized coset certificate load implies an exact protected no-three state | PROVED | `docs/59-protected-coset-local-load-barrier.md` |
 | PX80 | The direct protected `Z_25` coset bank violates the PX79 load threshold by more than sixteen thousand | PROVED FINITE | `docs/59-protected-coset-local-load-barrier.md` |
+| PX81 | Independent affine row and column maps in each additive coset preserve every protected line capacity | PROVED | `docs/60-two-coordinate-protected-coset-bank.md` |
+| PX82 | Prime-order protected cosets have at least `(ell-1-|D|)^2` admissible slope pairs and an exponential state bank | PROVED | `docs/60-two-coordinate-protected-coset-bank.md` |
+| PX83 | The protected affine coset measure has exact one- and two-index cylinder laws | PROVED | `docs/61-protected-affine-cylinder-bounds.md` |
+| PX84 | Protected affine coset states have a sharp rank-two spread barrier | PROVED | `docs/61-protected-affine-cylinder-bounds.md` |
+| PX85 | Protected nonlinear coset states are exactly two sequential simultaneous-rainbow perfect matchings | PROVED | `docs/62-protected-rainbow-matching-reduction.md` |
+| PX86 | Rank-three spread for both rainbow stages conditionally yields protected joint rank-three spread | PROVED CONDITIONALLY | `docs/62-protected-rainbow-matching-reduction.md` |
 
 The branch has exact factor-independent product theorems for `2 x 3`, `2 x 4`,
 `2 x 5`, and `2 x 6`, together with an all-side `O(n log n)` approximate
-doubling theorem, an all-side transposition decoder, and a low-direction
-protection/absorber framework. Exact infinite multiplicative closure now
-reduces to absorbing logarithmic shadow concentration or proving a protected
-spread theorem; arithmetic coverage remains open.
+doubling theorem, a transposition decoder, and a protected matching framework.
+Exact infinite multiplicative closure now reduces to absorbing logarithmic
+shadow concentration or proving the simultaneous-rainbow rank-three spread
+hypothesis in PX86; arithmetic coverage remains open.
