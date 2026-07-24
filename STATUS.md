@@ -91,6 +91,14 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 79. **Multistate local-lemma endpoint.** Maximum bad-box probability `p` and dependency degree `D` satisfying `3p(D+1)<=1` give a valid patch.
 80. **Reverse-order rung separation.** Oppositely ordering old blocks and new intervals removes every cross-rung triple that repeats one movement/refill component.
 81. **Three-rung localization.** Internal rank-three clauses require three distinct rungs, and three clean components contribute at most a quadratic number of triples.
+82. **Matching-density barrier.** Independent old-column and old-row template families have matching-admissible density at most `m alpha beta/t`; independent sheared boxes cannot have constant density at square-root width.
+83. **Matching-first reservoir bank.** Every saturated source has `2 binom(m,2t)` layer-labelled matching reservoirs with exact hypergeometric deletion spread.
+84. **Universal adjacent width-two rung.** Every four-edge matching reservoir has a canonical internally no-three endpoint-adapted replacement.
+85. **Canonical matching-first spread.** Width-two cells have `O(1/m)` spread, retained-anchor source-edge spikes cancel deletion-aware, and anchored defects are universally bounded.
+86. **Matching-block multistate bank.** An `r`-edge matching block supplies `binom(r,4)` equal-margin canonical states with hypergeometric spread.
+87. **Matching-block local-load density.** Small blocker and anchor signature loads retain a quantified positive fraction of the `Theta(r^4)` state domain.
+88. **Clean-rung hypergraph packing.** Diffuse clean-state degree gives disjoint rung packings; failure exposes a small transversal edge core.
+89. **Full width-two block bank.** Retaining all 36 geometries per deletion improves cell/pair spread and breaks the canonical matching-number-one obstruction on stored sides eight through ten.
 
 ## What remains conditional
 
@@ -101,11 +109,10 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - A second-order concentration theorem for the alternating neutralization bank.
 - A monotone carry-complexity potential or bounded-denominator chamber absorber.
 - A superregular resampling oracle and sparse algebraic `O(1/d)` spread.
-- A prime-minus-one preparation theorem installing roughly `m^0.05` mutually compatible parabolic rungs for the published prime-gap exponent, together with:
-  - positive-density matching-admissible multistate sheared families;
-  - reverse old/new block ordering;
-  - rank-two bad-box control and sufficiently small three-rung bad-box probability or occurrence;
-  - protected trade variables clearing residual retained-core certificates.
+- An all-`n` prime-patching preparation theorem using one of two correlated architectures:
+  - matching-first width-two blocks of size `r asymp m^0.475` with polynomial clean-state density, diffuse clean-deletion hypergraph, controlled nonaxis blocker shadow, and cross-block bad-box bounds;
+  - larger endpoint-adapted or parabolic rungs whose old row and column templates are correlated through actual source edges.
+- Protected rectangle or tomographic trades neutralizing the small transversal cores exposed by the clean-state hypergraph.
 
 ## Important refutations
 
@@ -121,17 +128,21 @@ large `n`, while identifying `k=2` as the exceptional unresolved case.
 - The unrestricted full row-lift bank is not automatically clean.
 - Aligned off-diagonal block doubling is impossible for every width.
 - Conditioning the complete small banks to internally clean components does not produce a clean pair at fully deleted widths `3,4,5`.
-- Deletion-cycle entropy alone cannot dilute a fixed external certificate.
+- Deletion-cycle entropy alone cannot dilute a fixed certificate.
 - Neither the 40-state unsheared nor 18,816-state sheared parabolic finite sweep contains a raw clean patch on the stored corpus.
 - Unstructured rectangle repair of depth two produces no stored extension from source side seven onward.
+- Independent linear-size sheared column and row boxes cannot have positive constant matching-admissible density at `t=o(m)`.
+- Canonical matching-block cleanliness is not universal: a five-edge no-three matching can make all five canonical states bad.
+- On every stored perfect matching layer, the canonical clean-state hypergraph has matching number one and a transversal of size at most two.
 
 ## Bottom line
 
 There is no complete proof. The principal global bottleneck remains
 second-generation alternating-bank collateral and termination. Independently,
-the all-`n` prime-patching track now has exact fixed-, variable-, binary-, and
-multistate reservoir interfaces; internally clean parabolic banks; a
-prime-gap-scale rung budget; reverse-order cross-rung localization; and exact
-trade/CSP solvers. The missing theorem is asymptotic seed preparation: construct
-a positive-density matching-admissible multistate ladder whose rank-two and
-three-rung bad boxes pass the new first-moment or bounded-dependency endpoints.
+the all-`n` prime-patching track now closes exact matching availability,
+endpoint-adapted width-two internal geometry, equal-margin block state spaces,
+local clean-density criteria, and finite clean-rung packing diagnostics. The
+missing theorem is no longer positive-density independent template matching. It
+is a correlated secant-shadow preparation theorem: construct large matching
+blocks whose clean 36-state domains are diffuse and whose external and
+cross-block bad boxes pass the multistate first-moment or local-lemma endpoints.
