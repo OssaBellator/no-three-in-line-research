@@ -47,7 +47,11 @@ This index collects the product/composition results on
 | PX40 | The complete normalized arbitrary-map census through base side five has the exact recorded template counts | PROVED FINITE | `docs/44-gauge-normalization-and-small-one-layer-census.md` |
 | PX41 | One successful normalized template gives factor-independent doubling when arbitrary block permutations are allowed | PROVED | `docs/45-universal-side-four-template-closure.md` |
 | PX42 | Every saturated side-four factor composes with side two to the exact side-eight template | PROVED | `docs/45-universal-side-four-template-closure.md` |
+| PX43 | Arbitrary-map PX28 states are exactly three-permutation perfect matchings of four-corner rectangles | PROVED | `docs/44-rectangle-perfect-matching-reduction.md` |
+| PX44 | Every rectangle-state collinearity is diagonal or transversal, giving an exact conflict-free matching reduction | PROVED | `docs/44-rectangle-perfect-matching-reduction.md` |
+| PX45 | Every rectangle edge has at most `16n(n-1)^2` compatible diagonal-conflict partners | PROVED | `docs/45-rectangle-conflict-degrees.md` |
+| PX46 | Every compatible rectangle pair has at most `64n(n-2)^2` transversal-conflict completions | PROVED | `docs/45-rectangle-conflict-degrees.md` |
 
 The branch has factor-independent special closure theorems for `2 x 4` and
-`2 x 5`, plus general gauge and double-coset closure criteria, but still no
-infinite multiplicative closure class or arithmetic coverage theorem.
+`2 x 5`, plus exact gauge, double-coset, and rectangle-matching reductions, but
+still no infinite multiplicative closure class or arithmetic coverage theorem.
