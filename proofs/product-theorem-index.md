@@ -51,7 +51,10 @@ This index collects the product/composition results on
 | PX44 | Every rectangle-state collinearity is diagonal or transversal, giving an exact conflict-free matching reduction | PROVED | `docs/44-rectangle-perfect-matching-reduction.md` |
 | PX45 | Every rectangle edge has at most `16n(n-1)^2` compatible diagonal-conflict partners | PROVED | `docs/45-rectangle-conflict-degrees.md` |
 | PX46 | Every compatible rectangle pair has at most `64n(n-2)^2` transversal-conflict completions | PROVED | `docs/45-rectangle-conflict-degrees.md` |
+| PX47 | Crossed rectangle templates are equivalent under scalar transposition | PROVED | `docs/46-unrestricted-one-layer-obstruction-six-seven.md` |
+| PX48 | The unrestricted arbitrary-block PX28 family has no template at base sides six or seven | PROVED FINITE | `docs/46-unrestricted-one-layer-obstruction-six-seven.md` |
 
 The branch has factor-independent special closure theorems for `2 x 4` and
-`2 x 5`, plus exact gauge, double-coset, and rectangle-matching reductions, but
-still no infinite multiplicative closure class or arithmetic coverage theorem.
+`2 x 5`, exact gauge and rectangle-matching reductions, and complete
+unrestricted one-layer obstructions at bases three, six, and seven.  It still
+has no infinite multiplicative closure class or arithmetic coverage theorem.
