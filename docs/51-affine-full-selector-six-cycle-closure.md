@@ -6,7 +6,7 @@ PX50 reduces arbitrary block-map full hosts to the four-permutation normal form
 g_{ijs}=Q^jTH^sP^i.
 \]
 
-PX53 rules out the one-outer-layer subfamily at side six.  This chapter tests a
+PX53 rules out the one-outer-layer subfamily at side six. This chapter tests a
 larger controlled family: the complete selector is allowed, while the three
 geometric permutations `T,P,Q` range over the affine permutation group of
 `Z/6Z`.
@@ -21,7 +21,7 @@ Let
 A_6=\{u\mapsto au+b\pmod6:a\in\{1,5\},\ b\in\mathbb Z/6\mathbb Z\}.
 \]
 
-Thus `|A_6|=12`.  Use one representative for each relative cycle type occurring
+Thus `|A_6|=12`. Use one representative for each relative cycle type occurring
 among saturated side-six factors:
 
 \[
@@ -90,11 +90,11 @@ The complete exact census is:
 
 ### Proof
 
-For each host, expose the twelve scalar rows in order.  Each row has four host
-cells and the selector chooses two.  Track all scalar column degrees, prune when
+For each host, expose the twelve scalar rows in order. Each row has four host
+cells and the selector chooses two. Track all scalar column degrees, prune when
 remaining rows cannot complete degree two, and reject a branch exactly when a
 newly inserted cell completes a real-collinear triple with two earlier cells.
-All geometry uses integer determinants.  Exhausting every host gives the table.
+All geometry uses integer determinants. Exhausting every host gives the table.
 \(\square\)
 
 ## 2. Explicit side-twelve certificate
@@ -128,9 +128,9 @@ Every scalar row and column contains two points, and every one of the
 
 integer determinants is nonzero.
 
-The selector is genuinely mixed.  It uses cells in all four coarse parity
-blocks: 7 cells in each diagonal block and 5 in each crossed block.  It also
-uses 12 cells from each inner layer.  Thus it belongs neither to the
+The selector is genuinely mixed. It uses cells in all four coarse parity
+blocks: 7 cells in each diagonal block and 5 in each crossed block. It also
+uses 12 cells from each inner layer. Thus it belongs neither to the
 one-inner-layer family PX28 nor to the one-outer-layer family PX52.
 
 ## Theorem PX57 -- PROVED
@@ -178,8 +178,8 @@ setting
 \]
 
 The resulting scalar host is literally the unique canonical affine host from
-PX56.  Therefore the same 24 scalar cells give the same no-three degree-two
-state.  Exhaustive side-six factor enumeration gives exactly 84 ordered factors
+PX56. Therefore the same 24 scalar cells give the same no-three degree-two
+state. Exhaustive side-six factor enumeration gives exactly 84 ordered factors
 with relative type `(6)`. \(\square\)
 
 ## 3. Verification
@@ -195,21 +195,20 @@ node count, verifies the unique parameter triple and side-twelve certificate,
 enumerates all 116 ordered saturated side-six factors, and transports the host
 to each of the 84 factors of relative type `(6)`.
 
-## 4. Boundary
+## 4. Updated boundary
 
-PX57 is the first side-six positive result, but it does not cover the 32 ordered
-factors of relative types `(4,2)` and `(3,3)`.  PX56 proves only that these two
-types have no template when `T,P,Q` are affine; arbitrary permutations and the
-full mixed selector remain open.
+PX56 remains the exact classification of the **all-affine** normal-form family.
+Its negative entries for `(4,2)` and `(3,3)` are still valid. They do not imply
+that arbitrary block permutations fail.
 
-The next exact targets are therefore:
+Chapter 52 supplies non-affine mixed templates for both missing relative
+classes:
 
-1. search arbitrary `T,P,Q` for the `(4,2)` and `(3,3)` types;
-2. determine whether the 6-cycle template belongs to a larger structured map
-   group or recursive family;
-3. use the transfer system PX54 to search selector states and geometric maps
-   jointly rather than host by host;
-4. convert cycle-type closures into an infinite multiplicative class and
-   arithmetic coverage.
+- PX58 covers every `(4,2)` factor;
+- PX59 covers every `(3,3)` factor;
+- PX60 combines them with PX57 to prove the universal side-six closure
+  \(2\times6\to12\).
 
-No such infinite theorem is currently proved.
+Thus the side-six classification is complete. The remaining product targets are
+larger-base cycle types, a recursive closure at a produced side such as ten or
+twelve, and an infinite multiplicative or arithmetic coverage theorem.
