@@ -42,4 +42,9 @@ This ledger collects the results specific to
 | CMR20 | Companion images form disjoint row blocks paired with every first-layer block | PROVED | `docs/35-prime-power-all-stratum-two-layer-bank.md` |
 | CMR21 | Both layers support an independent \((p!)^{2N/p}\)-state saturated bank | PROVED | `docs/35-prime-power-all-stratum-two-layer-bank.md` |
 | CMR22 | The global two-layer bank has an exact normalized certificate expectation | PROVED | `docs/35-prime-power-all-stratum-two-layer-bank.md` |
+| CMR23 | The uniform terminal block contributes expected triple mass at least \((p-1)/3\) | PROVED | `docs/36-prime-power-terminal-block-obstruction.md` |
+| CMR24 | Companion-offset terminal no-three states exist for odd primes through \(31\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/prime-power-terminal-configurations.md` |
+| CMR25 | Top-digit contraction exactly recovers the exponent-\((k-1)\) companion host | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
+| CMR26 | Every saturated quotient state has \((p!)^{2N/p}\) saturated lifts | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
+| CMR27 | Recursive lifts form an exact multiscale cylinder measure | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
