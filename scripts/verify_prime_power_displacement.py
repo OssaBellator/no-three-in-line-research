@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Verify completed-reciprocal displacement and syndrome claims.
 
-This script checks Theorems CMR6--CMR8 and prints exact finite data for the
+This script checks Theorems CMR6--CMR10 and prints exact finite data for the
 uniform parameter choice c_r=1.  It uses exact integer arithmetic only.
 """
 from __future__ import annotations
@@ -40,6 +40,13 @@ def completed_reciprocal(p: int, k: int, parameters: tuple[int, ...]) -> list[Po
             y = p**r * ((c * pow(unit, -1, modulus)) % modulus)
         points.append((x, y))
     return points
+
+
+def determinant(a: Point, b: Point, c: Point) -> int:
+    return (
+        (b[0] - a[0]) * (c[1] - a[1])
+        - (c[0] - a[0]) * (b[1] - a[1])
+    )
 
 
 def line_key(a: Point, b: Point) -> tuple[int, int, int]:
@@ -98,6 +105,94 @@ def verify_displacement_signatures(p: int, k: int, points: list[Point]) -> int:
     return checks
 
 
+def companion(value: int, p: int, k: int) -> int:
+    n = p**k
+    e = p if p % 2 else 4
+    return ((1 + e) * value + 1) % n
+
+
+def companion_carry(value: int, p: int, k: int) -> int:
+    n = p**k
+    e = p if p % 2 else 4
+    return ((1 + e) * value + 1) // n
+
+
+def verify_cross_displacement_quadratic(
+    p: int, k: int, points: list[Point]
+) -> int:
+    n = p**k
+    values = [y for _, y in points]
+    e = p if p % 2 else 4
+    checks = 0
+    for x in range(1, n):
+        r = valuation(x, p)
+        for xp in range(1, n):
+            if xp == x or valuation(xp, p) != r:
+                continue
+            a = xp - x
+            b = companion(values[xp], p, k) - values[x]
+            assert a % (p**r) == 0
+            assert (b - 1) % (p**r) == 0
+            alpha = a // (p**r)
+            B = (b - 1) // (p**r)
+            u = x // (p**r)
+            modulus = p ** (k - r)
+            c = 1
+            quadratic = B * u * u + (B * alpha - c * e) * u + c * alpha
+            assert quadratic % modulus == 0
+            checks += 1
+    return checks
+
+
+def verify_mixed_determinant_identity(
+    p: int, k: int, points: list[Point]
+) -> int:
+    values = [y for _, y in points]
+    n = p**k
+    e = p if p % 2 else 4
+    checks = 0
+    limit = min(n, 30)
+    for x1, x2, x3 in combinations(range(limit), 3):
+        base = ((x1, values[x1]), (x2, values[x2]), (x3, values[x3]))
+        base_det = determinant(*base)
+        carries = [companion_carry(values[x], p, k) for x in (x1, x2, x3)]
+        displacements = [
+            e * values[x] + 1 - n * q
+            for x, q in zip((x1, x2, x3), carries)
+        ]
+        layer_patterns = (
+            (0, 0, 1),
+            (0, 1, 0),
+            (1, 0, 0),
+            (0, 1, 1),
+            (1, 0, 1),
+            (1, 1, 0),
+            (1, 1, 1),
+        )
+        for eps in layer_patterns:
+            rows = [
+                values[x] + eps[i] * displacements[i]
+                for i, x in enumerate((x1, x2, x3))
+            ]
+            actual = determinant((x1, rows[0]), (x2, rows[1]), (x3, rows[2]))
+            predicted = (
+                base_det
+                + (x2 - x1)
+                * (eps[2] * displacements[2] - eps[0] * displacements[0])
+                - (x3 - x1)
+                * (eps[1] * displacements[1] - eps[0] * displacements[0])
+            )
+            assert actual == predicted
+            if eps == (1, 1, 1):
+                carry_det = (
+                    (x2 - x1) * (carries[2] - carries[0])
+                    - (x3 - x1) * (carries[1] - carries[0])
+                )
+                assert actual == (1 + e) * base_det - n * carry_det
+            checks += 1
+    return checks
+
+
 def verify_syndrome_bound(p: int, k: int, maximum: int, triples: int) -> None:
     n = p**k
     theoretical_cap = 2 * k + 2 * p ** (k // 2) + 1
@@ -114,18 +209,25 @@ def main() -> None:
         parser.error("--max-modulus must be at least 25")
 
     total_checks = 0
+    cross_checks = 0
+    determinant_checks = 0
     rows: list[tuple[int, int, int]] = []
     for p in (3, 5, 7):
         k = 1
         while p**k <= args.max_modulus:
             points = completed_reciprocal(p, k, tuple(1 for _ in range(k)))
             total_checks += verify_displacement_signatures(p, k, points)
+            cross_checks += verify_cross_displacement_quadratic(p, k, points)
+            determinant_checks += verify_mixed_determinant_identity(p, k, points)
             maximum, triples = line_statistics(points)
             verify_syndrome_bound(p, k, maximum, triples)
             rows.append((p**k, maximum, triples))
             k += 1
 
-    print(f"verified displacement pairs={total_checks}")
+    print(
+        f"verified displacement pairs={total_checks}; "
+        f"cross-pairs={cross_checks}; mixed-determinants={determinant_checks}"
+    )
     for n, maximum, triples in rows:
         print(f"N={n}: max-line={maximum}; triples={triples}")
 
