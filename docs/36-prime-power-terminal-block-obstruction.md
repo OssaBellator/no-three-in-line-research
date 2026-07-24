@@ -102,7 +102,8 @@ first-moment finish. A successful decoder must modify the terminal treatment
 in one of the following ways:
 
 1. restrict each terminal permutation to a local no-three family;
-2. install a fixed saturated no-three pair on the terminal `p` by `p` block;
+2. install a fixed companion-compatible two-layer terminal state with no
+   internal real triple, as in CMR24 for the verified prime bases;
 3. use a local-lemma or resampling measure that forbids terminal internal
    triples while retaining spread on external cells;
 4. enlarge the terminal block and couple it to neighbouring valuation blocks
