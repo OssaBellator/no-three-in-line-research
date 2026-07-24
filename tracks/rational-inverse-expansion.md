@@ -296,6 +296,18 @@ least one quarter of the weight in the square and at least one third in
 the collapsed template. Thus the order-two RI5 conversion may be built
 for a single quotient edge rather than a mixture of finite templates.
 
+[`rational-inverse-fixed-edge-bank.md`](rational-inverse-fixed-edge-bank.md)
+proves RI5a--RI5b. Completing the at most four source cosets of an
+order-two component installs the existing I6 matching bank. A paid
+current orbit is neutralized with probability at least
+\(1-1/(m|H|)\), while distinct-coset collateral prescriptions have the
+exact I6 cylinder probability \(1/((m)_r|H|^r)\). This gives an
+explicit expected-destruction versus normalized-collateral criterion
+for a row-column-preserving improving state. RI5c composes the paid
+localization and bank estimates: a square component pays a \(1/4\)
+factor and a collapsed component a \(1/3\) factor before the exact
+collateral comparison.
+
 ## RI5 — Absorber interface
 
 ### Target statement
