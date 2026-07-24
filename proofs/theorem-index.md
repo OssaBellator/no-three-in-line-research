@@ -35,6 +35,10 @@ The numbering is local to this repository.
 | G2 | Opposite-channel projection is a projective secant involution | PROVED | `docs/22-incidence-conic-pencil.md` |
 | G3 | Exact tangent and affine-secant profile from every opposite-channel anchor | PROVED | `docs/22-incidence-conic-pencil.md` |
 | G4 | Ratio normal form for modular incidence, with Euclidean-lift limitation | PROVED | `docs/22-incidence-conic-pencil.md` |
+| G5 | Primitive-direction root-window characterization of the Euclidean carry filter | PROVED | `docs/27-primitive-direction-carry-windows.md` |
+| G6 | Quadratic channel-word decomposition of secant-star energy | PROVED | `docs/27-primitive-direction-carry-windows.md` |
+| G7 | Height-sensitive tail bound for primitive-direction secant energy | PROVED | `docs/27-primitive-direction-carry-windows.md` |
+| G8 | Low/high primitive-direction decomposition of secant-star energy | PROVED | `docs/27-primitive-direction-carry-windows.md` |
 | CA1 | Exact aligned-anchor determinant carry formula | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
 | CA2 | Divisor bound per nondegenerate aligned carry signature | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
 | CA3 | Degenerate carry signatures are perfect affine-interpolation cells | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
