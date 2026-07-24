@@ -1,14 +1,15 @@
-# Oversampled refined label matching
+# Oversampled refined label matching: graph bounds and coordinate barrier
 
 PP3ff requires a matching of movement/refill label pairs whose source-edge
-domains are simultaneously fixed-pair safe and same-edge-anchor safe. A
-minimum-degree hypothesis is convenient but stronger than necessary. When the
-candidate label reservoir has size `L>>W`, global boundary-shadow and bad-label
-incidence averages already force a matching of size `W`.
+domains are simultaneously fixed-pair safe and same-edge-anchor safe.  Average
+boundary-shadow and bad-label incidence control the size and matching number of
+that refined graph.  However, selecting `W` numerical labels from a larger
+`L`-label interval does not by itself produce a saturated width-`W` grid patch.
+This chapter records both the valid graph estimates and that coordinate barrier.
 
 ## 1. Average fixed-pair compatibility
 
-Let `A_0,B_0` be candidate movement and refill label sets, both of size `L`. Use
+Let `A_0,B_0` be candidate movement and refill label sets, both of size `L`.  Use
 the notation of PP3ea and put
 
 \[
@@ -25,7 +26,7 @@ Define
  \mathcal S_R=\sum_{B\in B_0}b_R(B).
 \]
 
-Let `G_gamma` be the fixed-pair compatibility graph joining `(A,B)` when
+Let `G_gamma` join `(A,B)` when
 
 \[
  |C_A\cap D_B|\ge\gamma R.
@@ -69,19 +70,13 @@ Therefore a missing edge satisfies
  b_M(A)+b_R(B)>(1-\gamma)R.
 \]
 
-Summing `b_M(A)+b_R(B)` over all `L^2` label pairs gives
-
-\[
- L\mathcal S_M+L\mathcal S_R.
-\]
-
-Each missing pair contributes more than `(1-gamma)R`, proving the bound. ∎
-
-This is an average version of the boundary-shadow criterion PP3ee--PP3eg.
+Summing `b_M(A)+b_R(B)` over all `L^2` pairs gives
+`L\mathcal S_M+L\mathcal S_R`.  Each missing pair contributes more than
+`(1-gamma)R`. ∎
 
 ## 2. Removing same-edge-anchor-heavy label pairs
 
-Fix `0<epsilon<gamma`. Let `J_{gamma,epsilon}` be the refined graph from PP3ff,
+Fix `0<epsilon<gamma`.  Let `J_{gamma,epsilon}` be the refined graph from PP3ff,
 so an edge of `G_gamma` remains only when
 
 \[
@@ -96,17 +91,8 @@ Define the exact bad-label incidence
  \sum_{A\in A_0}\sum_{B\in B_0}|U_{A,B}|.
 \]
 
-Let
-
-\[
- \mathcal E=\mathcal E(E,F)
-\]
-
-be the pool-anchor divisor energy from PP3fe. Then
-
-\[
- \mathcal U\le\mathcal E.
-\]
+Let `mathcal E=mathcal E(E,F)` be the divisor energy from PP3fe.  Then
+`mathcal U<=mathcal E`.
 
 ### Proposition PP3ft -- PROVED
 
@@ -124,100 +110,83 @@ The refined graph satisfies
  }
 \]
 
-Hence also
-
-\[
- \boxed{
- |E(J_{\gamma,\epsilon})|
- \ge
- L^2
- -
- L\frac{\mathcal S_M+\mathcal S_R}{(1-\gamma)R}
- -
- \frac{\mathcal E}{\epsilon R}.
- }
-\]
-
-Its maximum matching size `nu(J)` satisfies
+Hence also the weaker arithmetic bound obtained by replacing `mathcal U` with
+`mathcal E`.  Moreover,
 
 \[
  \boxed{
  \nu(J_{\gamma,\epsilon})
  \ge
- \left\lceil
- \frac{|E(J_{\gamma,\epsilon})|}{L}
- \right\rceil.
+ \left\lceil\frac{|E(J_{\gamma,\epsilon})|}{L}\right\rceil.
  }
 \]
 
 #### Proof
 
-At most `mathcal U/(epsilon R)` label pairs can satisfy
-`|U_{A,B}|>epsilon R`. Remove these from the edge lower bound of PP3fs. The
-second displayed edge bound follows from PP3fe.
+At most `mathcal U/(epsilon R)` label pairs have
+`|U_{A,B}|>epsilon R`.  Remove them from the PP3fs edge lower bound.
 
-For the matching bound, König's theorem gives a vertex cover of size `nu(J)`.
-Every vertex covers at most `L` graph edges, so
+By König's theorem, a maximum matching and a minimum vertex cover have the same
+size.  A cover vertex meets at most `L` edges, so
+`|E(J)|<=nu(J)L`. ∎
 
-\[
- |E(J)|\le \nu(J)L.
-\]
+The exact incidence can be substantially smaller than the divisor energy because
+several retained anchors may witness the same bad source edge for one label
+pair.
 
-Rearrange and use integrality. ∎
+## 3. The coordinate-budget obstruction
 
-The exact incidence `mathcal U` can be much smaller than `mathcal E`, because
-many anchor witnesses may certify the same bad source edge for one label pair.
+### Refutation PP3-R5 -- PROVED
 
-## 3. Direct macro theorem
+The following shortcut is false:
 
-### Theorem PP3fu -- PROVED FROM THE STANDARD LOCAL LEMMA
-
-Suppose
-
-\[
- \boxed{
- L^2
- -
- L\frac{\mathcal S_M+\mathcal S_R}{(1-\gamma)R}
- -
- \frac{\mathcal U}{\epsilon R}
- >
- (W-1)L
- }
-\]
-
-and
-
-\[
- \boxed{
- 48(2W)^2\le(\gamma-\epsilon)^2R.
- }
-\]
-
-Then the matching pool supports a saturated width-`W` macro patch that:
-
-1. is internally no-three-in-line;
-2. uses `2W` distinct source edges;
-3. has no fixed-pair source blocker;
-4. has no same-edge anchored source triple.
-
-The same conclusion follows from the stronger arithmetic hypothesis obtained by
-replacing `mathcal U` with `mathcal E`.
+> choose `W<L` matched numerical label pairs from an `L`-label reservoir and
+> regard the result as a saturated width-`W` macro patch.
 
 #### Proof
 
-The first inequality and PP3ft give a matching of size at least `W` in
-`J_{gamma,epsilon}`. Restrict to the matched labels. Every matched label pair
-has a refined domain of size at least `(gamma-epsilon)R`. Apply PP3ff. ∎
+Suppose the reservoir consists of actual new coordinates in
+`[m+1,m+L]`.  A patch using only `W<L` of those rows and columns leaves every
+unselected coordinate with zero points, so it is not saturated on `[m+L]^2`.
+If a selected coordinate is greater than `m+W`, the patch is not contained in
+`[m+W]^2` either.
 
-Under the stronger PP3fg numerical condition, the resulting conditional macro
-distribution also has fixed-rank cylinder bound
+Relabelling an arbitrary selected subset to consecutive coordinates is not a
+grid affine transformation in general and need not preserve collinearity,
+fixed-pair safety, or the same-edge product equations. ∎
+
+Thus PP3fs--PP3ft are valid graph statements, but oversampling is not a free
+single-macro construction.
+
+## 4. Correct allocation interface
+
+### Proposition PP3fu -- PROVED UNDER A SATURATION-COMPATIBLE ALLOCATION HYPOTHESIS
+
+Assume the `L` movement labels and `L` refill labels are all actual final new
+coordinates and an allocation procedure assigns every one of them to macro
+variables, with exactly two slot points ultimately placed on every coordinate.
+Suppose one macro receives `W` matched pairs from `J_{gamma,epsilon}` and its
+refined domains have size at least `(gamma-epsilon)R`.  If
 
 \[
- \frac{e^{q/2}}{((\gamma-\epsilon)R)^q}.
+ \boxed{
+ 48(2W)^2\le(\gamma-\epsilon)^2R,
+ }
 \]
 
-## 4. Normalized form
+then that macro's slot choices can be made internally no-three and clean of
+fixed-pair and same-edge-anchor source triples, without changing the margins
+prescribed by the global allocation.
+
+#### Proof
+
+Once the global allocation supplies the `W` actual final row/column labels, the
+macro is exactly in the setting of PP3ff.  Apply that theorem. ∎
+
+The missing premise is essential: every final new coordinate must be allocated,
+not discarded.
+
+## 5. Normalized graph form
 
 Put
 
@@ -235,16 +204,13 @@ Put
  \frac{\mathcal E}{RL^2}.
 \]
 
-Thus `eta_U<=eta_E`.
-
 ### Corollary PP3fv -- PROVED
 
-The refined graph has matching number at least
+The abstract refined graph has matching number at least
 
 \[
  \boxed{
- L
- \left(
+ L\left(
  1-
  \frac{\sigma}{1-\gamma}
  -
@@ -253,68 +219,23 @@ The refined graph has matching number at least
  }
 \]
 
-up to the integer ceiling. In particular, PP3fu applies whenever
+up to the integer ceiling.  The weaker arithmetic form replaces `eta_U` by
+`eta_E`.
 
-\[
- \boxed{
- \frac WL
- <
- 1-
- \frac{\sigma}{1-\gamma}
- -
- \frac{\eta_U}{\epsilon}
- }
-\]
+This estimate is useful inside a valid global label-allocation theorem.  It does
+not by itself reduce the numerical coordinate span.
 
-with fixed positive slack, together with the local-lemma width inequality. A
-fully arithmetic sufficient form replaces `eta_U` by `eta_E`.
+## 6. Revised target
 
-#### Proof
+There are now two valid ways to exploit a large compatibility graph.
 
-Divide the PP3ft edge lower bound by `L` and use its matching estimate. ∎
+1. **No oversampling:** take `L=W`, prove a perfect matching directly, and apply
+   PP3ff.
+2. **Global allocation:** let all `T=MW` final new rows and columns be candidate
+   labels for several macros, allocate every label exactly once, and find one
+   global matching whose edges are refined-safe for the macro owning each
+   movement label.
 
-Thus one does not need normalized shadow and bad-label incidence tending to zero
-when `L` substantially exceeds `W`. It is enough that their combined density
-loss is smaller than the unused label fraction `1-W/L`.
-
-## 5. Prime-gap-scale use
-
-For one macro pool, the installed width is
-
-\[
- W=\Theta(\sqrt R).
-\]
-
-The candidate boundary reservoir may be much larger, because unused labels cost
-no row or column degree. Taking, for example,
-
-\[
- L=CW
-\]
-
-with fixed `C>1` permits a constant fraction of label pairs to be removed while
-retaining a `W`-matching. Larger oversampling gives proportionally more room for
-boundary-shadow and same-edge-anchor concentration.
-
-The remaining first-half bottleneck of the prime-patching route is therefore the
-explicit averaged estimate
-
-\[
- \boxed{
- \frac{\mathcal S_M+\mathcal S_R}{(1-\gamma)RL}
- +
- \frac{\mathcal U}{\epsilon RL^2}
- <
- 1-
- \frac WL.
- }
-\]
-
-The divisor-energy fallback replaces `mathcal U` by `mathcal E`.
-
-Failure forces either a positive-density boundary shadow or a positive-density
-bad-label matrix. The latter may arise from divisor-energy concentration, but
-the exact incidence formulation allows duplicate anchor witnesses to be
-compressed before arithmetic estimates are applied. These are precisely the
-structured alternatives targeted by protected rectangles, cycle flips, and
-carry/divisor dispersion.
+The second route can use the average graph estimates PP3fs--PP3fv while
+preserving saturation.  Its unresolved theorem is a balanced global allocation,
+not the deletion of unused coordinate labels.
