@@ -149,6 +149,15 @@ switches. This is a genuine linear-hole extension, although the
 inflation is not \(1+o(1)\) at fixed positive \(c\) and the
 quadratically many holes of a general superregular host remain open.
 
+SRR3i identifies the sharp asymptotic range of this particular
+crude-cylinder method. For fixed ranks and \(|Q|/N\to c\), its error
+tends to \(2ec\), giving bounded remote inflation for
+\(c<1/(2e)\). Separately, exact cell marginals show that the two-layer
+host space is nonempty for every arbitrary \(|Q|<N/2\), with
+\(N-2|Q|-3\) stationary switches when positive. The gap between
+\(1/(2e)\) correlation control and \(1/2\) switching feasibility now
+pinpoints the missing conditional counting improvement.
+
 ## SRR3 — Two-layer exact-cover extension
 
 ### Target statement

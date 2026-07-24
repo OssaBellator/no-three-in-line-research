@@ -278,6 +278,111 @@ constant locality.  It does not make that constant tend to one when
 \(t/N\) stays positive, and it still does not reach the
 \(\Theta(N^2)\)-hole superregular regime.
 
+## SRR3i -- sharp linear window of the crude-cylinder method
+
+The constant \(9\) in SRR3h is effective but not asymptotically sharp.
+For fixed cylinder ranks, the exact SRR3g error has a sharp limit.
+
+### Theorem SRR3i -- PROVED
+
+For fixed \(a,b\),
+
+\[
+\boxed{
+\lim_{N\to\infty}
+N\frac{V_N(a+1,b)}{L_N(a,b)}
+=e,
+\qquad
+\lim_{N\to\infty}
+N\frac{V_N(a,b+1)}{L_N(a,b)}
+=e.
+}
+\]
+
+Consequently, if \(t_N/N\to c\), then
+
+\[
+\boxed{
+\varepsilon_{Q_N}(a,b)\longrightarrow 2ec.
+}
+\]
+
+For fixed remote-cylinder ranks satisfying SRR3g, every
+\(c<1/(2e)\) therefore gives
+
+\[
+\boxed{
+\limsup_{N\to\infty}
+\frac{\mu_{Q_N}(B\mid F)}{\mu_{Q_N}(B)}
+\leq
+\frac1{(1-2ec)^2}.
+}
+\]
+
+Independently of conditioning, every specified cell occurs in exactly
+one of the two complete layers with probability \(2/N\).  Hence
+
+\[
+\boxed{
+\Pr_{\mu_0}(A_Q)\geq1-\frac{2t}{N}.
+}
+\]
+
+In particular, \(\Omega_2(K_{N,N}\setminus Q)\) is nonempty whenever
+\(2t<N\), and SRR3f supplies at least \(N-2t-3\) stationary
+four-cycle choices whenever \(2t<N-3\).
+
+### Proof
+
+Rewrite the two ratios as the products
+
+\[
+\frac{V_N(a+1,b)}{L_N(a,b)}
+=
+\frac1{N-a}
+\cdot
+\frac{(N-a)!}{D(N-a,b)}
+\cdot
+\frac{(N-b)!}{!(N-b)},
+\]
+
+\[
+\frac{V_N(a,b+1)}{L_N(a,b)}
+=
+\frac1{N-b}
+\cdot
+\frac{(N-a)!}{D(N-a,b)}
+\cdot
+\frac{(N-b)!}{!(N-b)}.
+\]
+
+For fixed \(b\),
+
+\[
+\frac{D(N-a,b)}{(N-a)!}
+=
+\sum_{j=0}^b
+\frac{(-1)^j\binom bj}{(N-a)_j}
+\longrightarrow1,
+\]
+
+while \(!(N-b)/(N-b)!\to e^{-1}\).  Multiplication by \(N\)
+proves both limits and then the error limit.  The complete-host
+\(U/L/L\) factor in SRR3g tends to one at fixed ranks, so its
+conditioning comparison gives the remote bound.
+
+Each layer is marginally a uniform perfect matching.  A specified cell
+has probability \(1/N\) in either layer and cannot occur in both.
+Thus its union probability is exactly \(2/N\); a union bound over \(Q\)
+proves the avoidance estimate.  Positive avoidance probability gives
+nonemptiness, and the switch count is SRR3f. \(\square\)
+
+SRR3i separates two issues.  Arbitrary linear hole sets below density
+\(1/2\) do not obstruct existence or stationary switching, while the
+current crude-cylinder correlation proof reaches density \(1/(2e)\).
+Closing that gap requires a sharper conditional extension count, not a
+better nonemptiness argument.
+
 ## Resampling consequence
 
 The empty-cylinder bound \(\varepsilon_Q(0,0)<1\) guarantees that the
@@ -295,6 +400,9 @@ two-layer remote locality for every arbitrary missing set of size
 
 SRR3h additionally gives bounded remote inflation and
 \(\Omega(N)\) stationary choices for \(|Q|\leq cN\), \(c<1/9\).
+SRR3i sharpens the asymptotic correlation range to
+\(c<1/(2e)\) and proves nonemptiness plus stationary switching up to
+the separate barrier \(c<1/2\).
 The unresolved superregular regime may therefore be assumed to lie
 beyond this explicit linear-hole window when bounded locality is enough.
 Near-independence at positive linear density and the
@@ -305,4 +413,5 @@ open.
 the complete cylinder bounds, conditional avoidance estimate, and host
 remote ratio on \(K_{4,4}\) with arbitrary small hole sets.  It also
 checks both elementary ratio bounds and the \(9t/(N-a-b)\) error ceiling
-through a range of ranks and ambient sizes.
+through a range of ranks and ambient sizes, the exact empty-cylinder
+\(2t/N\) estimate, and the fixed-rank \(2e\) limiting constant.

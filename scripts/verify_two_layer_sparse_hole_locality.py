@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from fractions import Fraction
 from itertools import combinations, permutations
-from math import comb, factorial
+from math import comb, e, factorial
 
 Edge = tuple[int, int]
 Cylinder = tuple[tuple[Edge, ...], tuple[Edge, ...]]
@@ -97,6 +97,48 @@ def verify_linear_hole_ceiling(maximum_n: int = 36) -> None:
                     )
 
 
+def verify_sharp_linear_limit() -> None:
+    for first_rank, second_rank in ((0, 0), (1, 0), (1, 1), (2, 1)):
+        for n in range(
+            max(5, first_rank + second_rank + 2),
+            31,
+        ):
+            base = lower(n, first_rank, second_rank)
+            first_ratio = (
+                crude_upper(n, first_rank + 1, second_rank) / base
+            )
+            second_ratio = (
+                crude_upper(n, first_rank, second_rank + 1) / base
+            )
+            common_factor = (
+                Fraction(
+                    factorial(n - first_rank),
+                    avoidance_count(n - first_rank, second_rank),
+                )
+                * Fraction(
+                    factorial(n - second_rank),
+                    derangement(n - second_rank),
+                )
+            )
+            assert first_ratio == (
+                Fraction(1, n - first_rank) * common_factor
+            )
+            assert second_ratio == (
+                Fraction(1, n - second_rank) * common_factor
+            )
+
+        n = 200
+        base = lower(n, first_rank, second_rank)
+        scaled_sum = float(
+            n
+            * (
+                crude_upper(n, first_rank + 1, second_rank) / base
+                + crude_upper(n, first_rank, second_rank + 1) / base
+            )
+        )
+        assert abs(scaled_sum - 2 * e) < 0.1
+
+
 def globally_compatible(cylinder: Cylinder) -> bool:
     edges = cylinder[0] + cylinder[1]
     return (
@@ -142,6 +184,13 @@ def verify(n: int = 4) -> None:
         if all(first[row] != second[row] for row in range(n))
     )
     assert len(complete_states) == factorial(n) * derangement(n)
+    for edge in all_edges:
+        used = sum(
+            state[0][edge[0]] == edge[1]
+            or state[1][edge[0]] == edge[1]
+            for state in complete_states
+        )
+        assert Fraction(used, len(complete_states)) == Fraction(2, n)
 
     empty: Cylinder = ((), ())
     single_events: list[Cylinder] = []
@@ -175,6 +224,10 @@ def verify(n: int = 4) -> None:
                 state for state in complete_states if avoids(state, missing)
             )
             assert host_states
+            assert Fraction(
+                len(host_states),
+                len(complete_states),
+            ) >= 1 - Fraction(2 * missing_size, n)
             for cylinder in cylinders:
                 if not host_valid(cylinder, missing):
                     continue
@@ -255,6 +308,7 @@ def verify(n: int = 4) -> None:
 def main() -> None:
     verify()
     verify_linear_hole_ceiling()
+    verify_sharp_linear_limit()
     print("two-layer sparse/linear-hole locality: regressions passed")
 
 
