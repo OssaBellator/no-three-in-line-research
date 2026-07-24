@@ -41,6 +41,8 @@ This index collects the product/composition results on
 | PX34 | Every saturated side-five factor composes with the side-two factor to a saturated no-three side-ten configuration | PROVED | `docs/41-universal-affine-2x5-closure.md` |
 | PX35 | The complete four-block affine one-layer family normalizes to identity first blocks | PROVED | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
 | PX36 | The complete affine one-layer family has no no-three state at base sides six or seven | PROVED FINITE | `docs/42-affine-one-layer-obstruction-at-six-and-seven.md` |
+| PX37 | Successful normalized templates transport to their full map-group double cosets, yielding a general closure criterion | PROVED | `docs/43-double-coset-template-closure.md` |
 
-The branch has a factor-independent special closure theorem for `2 x 5`, but
-still no infinite multiplicative closure class or arithmetic coverage theorem.
+The branch has a factor-independent special closure theorem for `2 x 5` and a
+general double-coset closure criterion, but still no infinite multiplicative
+closure class or arithmetic coverage theorem.
