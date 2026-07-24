@@ -89,6 +89,8 @@ The numbering is local to this repository.
 | I11 | Rank-zero alternating cores expand except for the order-two exceptional orbit | PROVED | `docs/19-rational-coset-expansion.md` |
 | I12 | General simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/19-rational-coset-expansion.md` |
 | RI0 | Exact two-point collision involution for \(F_r\) | PROVED | `tracks/rational-inverse-collision-and-obstructions.md` |
+| RI1a | Exact image loss equals the number of full collision orbits | PROVED | `tracks/rational-inverse-fibre-energy.md` |
+| RI1b | Dense coset nonexpansion yields a bilinear subgroup curve | PROVED | `tracks/rational-inverse-fibre-energy.md` |
 | RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |

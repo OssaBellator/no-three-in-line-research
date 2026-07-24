@@ -43,6 +43,18 @@ have more than `|H|` points. The corrected target must assume `H` is
 proper and `C subseteq F_p^*\{1,r}`. See
 [`rational-inverse-collision-and-obstructions.md`](rational-inverse-collision-and-obstructions.md).
 
+### Proved structural reduction
+
+[`rational-inverse-fibre-energy.md`](rational-inverse-fibre-energy.md)
+proves the exact identity
+
+`|F_r(C)| = |C| - (number of full nonfixed collision orbits)`.
+
+For `C subseteq xH`, every collision orbit is a solution in `H^2` of one
+explicit bilinear equation. Thus any corrected RI1 failure with
+`|F_r(C)| <= (1-delta)|C|` supplies `delta|C|` disjoint solutions on that
+curve. The remaining task is the subgroup incidence/classification bound.
+
 ## RI2 — Union-of-cosets image theorem
 
 ### Target statement
@@ -87,6 +99,10 @@ Prove that `C` is covered by `K^{O(1)}` translates of one subgroup `H` and that 
 - the two quotient sets actually expand by a factor depending only on `K`.
 
 A convex-coset-progression conclusion is insufficient unless it is converted into an executable absorber or expansion statement.
+
+RI1a also reduces the cardinality part of simultaneous nonexpansion to
+linear collision mass. RI3 must combine that exact fibre structure with
+the two quotient-set hypotheses; fibre degree alone is insufficient.
 
 ## RI4 — Order-two chain classification — REFUTED AS STATED
 

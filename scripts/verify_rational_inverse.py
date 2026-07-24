@@ -24,6 +24,16 @@ def tau_r(x: int, r: int, p: int) -> int:
     return r * (x - 1) * pow(x - r, -1, p) % p
 
 
+def collision_pair_count(subset: tuple[int, ...], r: int, p: int) -> int:
+    points = set(subset)
+    pairs: set[tuple[int, int]] = set()
+    for x in points:
+        partner = tau_r(x, r, p)
+        if partner in points and partner != x:
+            pairs.add(tuple(sorted((x, partner))))
+    return len(pairs)
+
+
 def verify_fibres(limit: int = 43) -> None:
     for p in primes_through(limit):
         for r in range(2, p):
@@ -58,6 +68,9 @@ def verify_all_small_subsets(limit: int = 11) -> None:
                 for subset in combinations(domain, size):
                     image = {f_r(x, r, p) for x in subset}
                     assert len(image) >= (size + 1) // 2
+                    assert len(image) == size - collision_pair_count(
+                        subset, r, p
+                    )
 
 
 def verify_full_subgroup_obstruction() -> None:
