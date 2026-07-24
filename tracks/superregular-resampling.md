@@ -93,6 +93,17 @@ Apply SRR2 sequentially or jointly to two edge-disjoint perfect matchings. The r
 
 The local-load hypothesis should scale as the natural spread probabilities `O(N^{-2})` and `O(N^{-3})` for pair and triple events.
 
+### Complete-host stationary component proved
+
+[`complete-two-layer-resampling.md`](complete-two-layer-resampling.md)
+proves SRR3a on the ordered space of two edge-disjoint perfect matchings
+of \(K_{N,N}\). A four-cycle switch in one layer has at most two
+cross-layer collision rows; canonical deletion leaves exactly \(N-3\)
+forward choices and reverse degree at most one. SRR1b therefore gives an
+exact stationary reversible flaw-removal kernel preserving the simple
+two-layer exact cover. The remote-event theorem and the superregular
+missing-edge extension remain open.
+
 ## SRR4 — Superregular local-load endpoint
 
 ### Target statement
