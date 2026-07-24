@@ -8,43 +8,12 @@ for all sufficiently large primes `p`, and asks how to extend such a
 construction to nearby side lengths.
 
 Prime-gap information alone is not sufficient: embedding a `2m`-point solution
-into an `n x n` grid leaves `2(n-m)` missing points. The essential theorem is an
-exact extension absorber.
+in an `n x n` grid leaves `2(n-m)` missing points. The essential theorem is an
+exact row-column-preserving extension absorber.
 
-Detailed statements and proofs are in:
-
-- [`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md);
-- [`docs/28-one-strip-and-pair-aware-patching.md`](../docs/28-one-strip-and-pair-aware-patching.md);
-- [`docs/29-general-reservoir-patching.md`](../docs/29-general-reservoir-patching.md);
-- [`docs/30-deletion-aware-row-lift-banks.md`](../docs/30-deletion-aware-row-lift-banks.md);
-- [`docs/31-sequential-row-lift-local-lemma.md`](../docs/31-sequential-row-lift-local-lemma.md);
-- [`docs/32-row-lift-pruning-barriers.md`](../docs/32-row-lift-pruning-barriers.md);
-- [`docs/33-off-diagonal-reservoir-obstruction.md`](../docs/33-off-diagonal-reservoir-obstruction.md);
-- [`docs/34-projection-triple-lower-bounds.md`](../docs/34-projection-triple-lower-bounds.md);
-- [`docs/35-component-clean-row-lift-banks.md`](../docs/35-component-clean-row-lift-banks.md);
-- [`docs/36-monotone-parabolic-reservoirs.md`](../docs/36-monotone-parabolic-reservoirs.md);
-- [`docs/37-variable-reservoir-patch-banks.md`](../docs/37-variable-reservoir-patch-banks.md);
-- [`docs/38-parabolic-rung-budget.md`](../docs/38-parabolic-rung-budget.md);
-- [`docs/39-matching-reservoir-cycle-factorization.md`](../docs/39-matching-reservoir-cycle-factorization.md);
-- [`docs/40-cycle-reservoir-2sat.md`](../docs/40-cycle-reservoir-2sat.md);
-- [`docs/41-sheared-parabolic-banks.md`](../docs/41-sheared-parabolic-banks.md);
-- [`docs/42-width-two-matching-patches.md`](../docs/42-width-two-matching-patches.md);
-- [`docs/43-one-rectangle-patch-repair.md`](../docs/43-one-rectangle-patch-repair.md).
-
-Finite computations are recorded in:
-
-- [`experiments/prime-patching-small.md`](../experiments/prime-patching-small.md);
-- [`experiments/general-reservoir-loads.md`](../experiments/general-reservoir-loads.md);
-- [`experiments/row-lift-static-pruning.md`](../experiments/row-lift-static-pruning.md);
-- [`experiments/row-lift-projections.md`](../experiments/row-lift-projections.md);
-- [`experiments/component-clean-row-lift.md`](../experiments/component-clean-row-lift.md);
-- [`experiments/parabolic-matching-reservoirs.md`](../experiments/parabolic-matching-reservoirs.md);
-- [`experiments/parabolic-parameter-sweep.md`](../experiments/parabolic-parameter-sweep.md);
-- [`experiments/sheared-parabolic-parameters.md`](../experiments/sheared-parabolic-parameters.md);
-- [`experiments/matching-reservoir-cycles.md`](../experiments/matching-reservoir-cycles.md);
-- [`experiments/cycle-reservoir-2sat.md`](../experiments/cycle-reservoir-2sat.md);
-- [`experiments/variable-reservoir-banks.md`](../experiments/variable-reservoir-banks.md);
-- [`experiments/width-two-rectangle-repairs.md`](../experiments/width-two-rectangle-repairs.md).
+The focused recent theorem list is
+[`proofs/prime-patching-recent-index.md`](../proofs/prime-patching-recent-index.md).
+Detailed chapters for the current route are `docs/27` through `docs/55`.
 
 ## PP1 — Boundary extension interface
 
@@ -52,35 +21,26 @@ Finite computations are recorded in:
 
 The row-column bookkeeping is exact:
 
-- for `t>=2`, two edge-disjoint permutation graphs on the new `t x t` corner
-  add exactly `2t` points without changing the old core;
-- for `t=1`, every boundary-only degree state is either a one-point corner splice
-  or a two-edge strip switch;
-- the complete `t=1` list has only `2m^2-m` forced candidates;
-- geometric validity is exactly the avoidance of old-pair secants,
-  old-anchor/new-pair triples, and internal new-point triples.
+- for `t>=2`, two edge-disjoint permutation graphs on the new `t x t` corner add
+  exactly `2t` points without changing the old core;
+- for `t=1`, every boundary-only degree state is either a corner splice or a
+  two-edge strip switch;
+- the complete `t=1` list has only `2m^2-m` candidates;
+- geometric validity is exactly the avoidance of retained-pair blockers,
+  retained-anchor/new-pair triples, and internal patch triples.
 
-## PP2 — Secant-shadow patching lemma
+## PP2 — Exact selection endpoints
 
-### Status: OPEN, with exact fixed- and variable-reservoir endpoints
+### Status: OPEN geometrically; exact selection closed in several forms
 
-There should be functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one
-can prepare a reservoir in `S_m` that supports an exact row-column-preserving
-completion without creating any triple.
+The branch now contains:
 
-The exact selection step is closed in several forms:
-
-- a pair-aware corner clone-space local lemma;
-- an arbitrary deleted-reservoir clone-space theorem allowing old-old and
-  mixed old/new replacement cells;
-- explicit normalized cell, anchored-pair, and internal-triple load bounds;
-- an internally no-three spread-bank endpoint using only retained-core cell and
-  pair expectations;
-- a component-clean row-lift endpoint that factors movement and refill banks and
-  pays only retained-core and cross-component certificates;
-- the deletion-aware variable-reservoir theorem PP2l, which permits different
-  states to delete different old points and uses the exact joint survival and
-  insertion probabilities.
+- pair-aware and arbitrary-reservoir clone-space local lemmas;
+- concrete cell, pair, and internal-triple load thresholds;
+- internally clean spread-bank endpoints;
+- exact state-dependent deletion expectations PP2l--PP2o;
+- binary and finite-state bad-box CSP formulations;
+- first-moment, bounded-dependency, and exact SAT/backtracking solvers.
 
 For active clone size `N>=200`, the arbitrary-reservoir bounds
 
@@ -90,118 +50,227 @@ pi_* <= N^2/1600,
 tau_* <= N^3/3200
 ```
 
-suffice. Failure forces one of the three local loads to be large.
-
-The missing work is geometric preparation, not exact degree selection.
+suffice. Failure forces one of those local loads to be large. The missing work is
+geometric preparation, not row-column degree selection.
 
 ## PP3 — Robust seed preparation
 
-### Status: OPEN, with an internally clean square-root patch and exact repair interfaces
+### Status: OPEN, with matching availability and width-two internal geometry closed
 
-A prepared reservoir should have low old-pair shadow, low old-anchor pair load,
-controlled internal directions, interchangeable row-column states, and a
-variable deletion budget.
+### Earlier positive components
 
-### Completed positive components
+The branch proves:
 
-- The exact one-strip degree states and deletion-aware surviving-certificate
-  average are proved. The corrected average detects the valid `2 -> 3` state.
-- Deleting all points in `t` old rows gives an explicit row-lift bank with exact
-  saturation and fixed-rank spread.
-- Four row-lift permutation layers can be selected by a prefix-aware sequential
-  local lemma under maximum activated assignment load `1/24`.
-- Prefix enumeration can be replaced by the static terminal-load test PP3p.
-- Collision constraints can be conditioned out, giving the threshold-one
-  activated-mass theorem PP3q and static test PP3r.
-- Projection dispersion gives a fast necessary support screen and exact lower
-  bounds on triples forced by under-dispersed parallel-line families.
-- Internally clean movement and refill component banks have an exact independent
-  expectation endpoint PP3z and spread form PP3aa. Any fixed clean component pair
-  has only `O(t^2)` cross triples.
-- The monotone parabolic matching construction gives a deterministic internally
-  no-three patch of width `Theta(sqrt(m))`; only the two retained-core certificate
-  classes remain.
-- A linear shear preserves the parabolic no-three proof and yields an internally
-  clean parameter bank with cell probability `O(1/m)` and nonaxis pair
-  probability as small as `O(t/m^2)`, conditional on a positive-density family
-  of matching-admissible parameter tuples.
-- Variable matching reservoirs factor exactly into forced paths and independent
-  alternating cycles. For one fixed patch, selecting cycle parities to clear all
-  external triples is exactly a 2-SAT problem.
-- Cross-only width-two matching patches have a complete 36-state degree
-  classification for each four-column/four-row matching reservoir.
-- A near-miss patch can be repaired by one alternating rectangle switch under
-  the exact criterion PP3ay. The stored corpus contains three such repaired
-  extensions: `4 -> 6`, `5 -> 7`, and `6 -> 8`.
+- deletion-aware one-strip averaging and the finite one-strip obstruction;
+- exact row-lift banks with sequential and static local-lemma endpoints;
+- projection obstructions and quantitative forced-triple bounds;
+- component-clean movement/refill factorization;
+- internally no-three parabolic rungs of square-root width;
+- sheared parabolic finite-state spread;
+- cycle-reservoir 2-SAT and protected rectangle-trade CNF selection;
+- multistate rank-at-most-three bad-box first-moment and LLL endpoints;
+- reverse old/new ordering, eliminating repeated-component cross-rung triples.
 
-### Quantitative prime-gap-scale ladder target
+### Matching-density correction
 
-One parabolic rung has square-root width. If `K` disjoint rungs of widths `t_i`
-are packed into old-coordinate intervals, then
+The hoped-for positive-density conditioning of independent sheared old-column
+and old-row boxes is impossible in an arbitrary saturated source. If their
+maximum coordinate marginals are `alpha,beta`, matching-admissible probability
+is at most
 
 \[
-\sum_i t_i
-\le
-K+\sqrt{K(m-K)/2}.
+\frac{m\alpha\beta}{t}.
 \]
 
-A total width `m^theta` with `theta>1/2` therefore needs and permits
-`K=Theta(m^(2theta-1))` equal-scale rungs at the coordinate-budget level. For
-the published exponent `theta=0.525`, the target is only about `m^0.05`
-mutually compatible rungs.
+For linear-size offset boxes at square-root width this is `O(m^-1/2)`, not a
+positive constant. Matching admissibility must correlate row and column choices
+through actual source edges.
 
-No multi-rung compatibility theorem is yet proved.
+### Matching-first bank
+
+Every saturated source incidence graph decomposes into two perfect matchings.
+Choosing one layer and a uniform `2t`-edge subset gives exactly
+
+\[
+2\binom m{2t}
+\]
+
+layer-labelled matching reservoirs with hypergeometric all-rank spread:
+
+```text
+source-edge deletion marginal       t/m
+old-coordinate inclusion marginal   2t/m
+rank-r coordinate cylinder          (2t)_r/(m)_r
+```
+
+Thus matching availability is closed for every saturated source.
+
+### Universal endpoint-adapted width-two rung
+
+Every four-edge matching reservoir supports a canonical internally no-three
+width-two patch. Sort its four columns and rows; pair the two smaller coordinates
+on the first new line and the two larger on the second. Internal nonaxis secants
+have positive slope, while movement-refill secants have negative slope.
+
+For the matching-first random canonical rung:
+
+- every patch cell has probability at most `4/m`;
+- every same-component pair has probability at most `12/[m(m-1)]`;
+- source-edge-aligned retained-anchor events cancel through the deletion;
+- anchored patch-pair defects are bounded by an absolute constant;
+- only nonaxis retained-pair blockers can grow with `m`.
+
+### Matching-block multistate variables
+
+Let `E` be an `r`-edge matching block and reserve one width-two interval. A state
+chooses four edges to delete and patches their endpoints. Retaining the unchosen
+block edges makes every state have identical row and column margins.
+
+The canonical family has `binom(r,4)` states. The full family retains all 36
+width-two geometries for every deletion and has
+
+\[
+36\binom r4
+\]
+
+states. Before clean-domain conditioning, the full bank has bounds
+
+```text
+patch cell                         <= 2/r
+ordinary same-block pair           <= 4/[r(r-1)]
+same-edge movement/refill pair     <= 1/r
+distinct-edge movement/refill pair <= 3/[r(r-1)].
+```
+
+If a clean fraction `delta` survives, these bounds lose only a factor `1/delta`.
+
+### Local clean-domain endpoint
+
+For the canonical block let `B` count retained-pair blocker signatures, `A_1`
+same-edge anchored-pair signatures, and `A_2` ordinary anchored-pair signatures.
+Put
+
+\[
+\Lambda(E)=
+\frac{4|B|}{r}
++
+\frac{4|A_1|}{r}
++
+\frac{12|A_2|}{r(r-1)}.
+\]
+
+Then
+
+\[
+|\Omega_{\rm clean}(E)|
+\ge
+(1-\Lambda(E))\binom r4.
+\]
+
+Hence `|B|=o(r)`, `|A_1|=o(r)`, and `|A_2|=o(r^2)` preserve a `1-o(1)` clean
+fraction. Failure forces a linear blocker core, linear same-edge anchor core, or
+quadratic ordinary-anchor core.
+
+### Clean-rung packing
+
+Locally clean four-edge deletions form a 4-uniform hypergraph on the block edges.
+If it has `h` hyperedges and maximum vertex degree `Delta`, it contains a matching
+of size at least
+
+\[
+\left\lceil\frac{h}{4\Delta}\right\rceil.
+\]
+
+If a large matching does not exist, a small source-edge transversal hits every
+clean state. That core is an explicit target for protected rectangle or
+tomographic trades.
+
+On the stored certificates, the canonical clean hypergraph always has matching
+number one and transversal at most two. Retaining all 36 geometries breaks this
+obstruction: stored sides eight, nine, and ten contain two disjoint locally clean
+width-two reservoirs in each tested layer.
+
+### Global seven-profile endpoint
+
+For `K` disjoint `r`-edge blocks with clean-domain density at least `delta`, every
+remaining triple has one of seven profiles:
+
+- `N_1`: two fixed points and one patch cell;
+- `N_h`: one fixed point and one same-edge patch pair;
+- `N_2`: one fixed point and one ordinary patch pair;
+- `N_11`: one fixed point and cells from two blocks;
+- `N_h1`: a same-edge pair plus a cell from another block;
+- `N_21`: an ordinary pair plus a cell from another block;
+- `N_111`: cells from three distinct blocks.
+
+A complete patch exists if
+
+\[
+\frac{2N_1+N_h}{\delta r}
++
+\frac{8N_2}{\delta r^2}
++
+\frac{4N_{11}+2N_{h1}}{\delta^2r^2}
++
+\frac{16N_{21}}{\delta^2r^3}
++
+\frac{8N_{111}}{\delta^3r^3}
+<1.
+\]
+
+Alternatively, if every block variable occurs in at most
+
+\[
+\frac{\delta r+12}{18}
+\]
+
+bad boxes, the bounded-dependency endpoint applies.
+
+### Prime-gap-scale block target
+
+A constant-width ladder needs `K=T/2` width-two rungs. For the published target
+`T=m^0.525`, partitioning one matching layer into `K` blocks gives the natural
+scale
+
+\[
+K\asymp m^{0.525},
+\qquad
+r\asymp m^{0.475}.
+\]
+
+Each unpruned block then has `m^{1.9+o(1)}` canonical states and 36 times as many
+full states.
+
+The remaining theorem is now precise: construct blocks at this scale with
+
+1. polynomial or constant clean-domain density `delta`;
+2. a diffuse clean-deletion hypergraph packing `K` disjoint reservoirs;
+3. small nonaxis blocker and anchor signature loads;
+4. PP3ci profile counts below the displayed thresholds, or block occurrence
+   `O(delta r)`;
+5. protected trades neutralizing any small transversal core.
 
 ### Refuted or blocked shortcuts
 
-- Universal recursive boundary-only one-strip extension dies before side five.
-- The original unconditioned PP3b boundary-shadow average is universally
-  vacuous because every future boundary cell has an automatic axis blocker.
-- The unrestricted full row-lift bank is not automatically clean; exhaustive
-  searches over every two- and three-row reservoir in the stored `2<=n<=10`
-  corpus find no clean state.
-- The full-support PP3j first-moment route cannot scale: one refill rectangle
-  already contributes `Omega(t^4 log t)` compatible candidate triples.
-- Deleting an aligned contiguous square and refilling only its two off-diagonal
-  blocks is impossible for every `t`: `4t` points occupy only `2t-1` slope-`-1`
-  diagonals.
-- Projection equality analysis shows that this aligned slope-`-1` placement is
-  the unique primitive-direction failure at the minimal `2t-1` level threshold.
-- Conditioning the full small banks to internally clean components leaves no
-  clean pair at fully deleted widths `3,4,5`; the clean families are too small
-  and concentrated.
-- Across the stored `2<=n<=10` corpus, the unsheared parabolic parameter sweep
-  finds 40 matching states and the sheared sweep finds 18,816 matching states,
-  but neither contains an externally clean patch.
-- Exhausting all 80,731 internally clean cross-only width-two matching states
-  finds no raw patch. One rectangle switch repairs exactly three of them and no
-  others in the stored corpus.
-- Deletion-cycle entropy alone does not dilute a fixed certificate: optional
-  old points have survival probabilities bounded away from zero. Useful cycles
-  must be geometrically aligned so their alternating choices anticorrelate the
-  relevant blockers.
+- recursive boundary-only one-strip extension dies before side five;
+- the original unconditioned one-strip shadow average is universally vacuous;
+- unpruned row-lift first moment cannot scale;
+- aligned off-diagonal block doubling is impossible;
+- conditioning full small row-lift banks does not yield spread clean components;
+- independent sheared row/column boxes cannot have positive constant
+  matching-admissible density at sublinear width;
+- canonical matching-block cleanliness already fails for one five-edge no-three
+  matching;
+- on the stored layers, canonical clean states are pinned to a one- or two-edge
+  transversal and cannot provide two disjoint rungs;
+- unrestricted rectangle repair to depth two gives no stored extension from
+  source side seven onward.
 
-### Current exact target
-
-The strongest concrete route is now a **parabolic patch-plus-trade ladder**.
-A prime-gap-scale PP3 construction may succeed by providing:
-
-1. `Theta(m^0.05)` mutually compatible square-root-scale parabolic rungs for the
-   published prime-gap exponent;
-2. a positive-density family of matching-admissible sheared parameter tuples;
-3. cycle parities satisfying the exact 2-SAT external-certificate formula, or
-   PP2l joint expectation below one;
-4. protected alternating rectangles whose removed diagonals cover residual
-   blockers and whose added diagonals have controlled collateral;
-5. compatibility between the inserted points and trades of different rungs.
-
-The older row-lift alternatives remain valid: a sparse algebraic bank passing
-PP3p/PP3r, a prefix-structured bank passing PP3l/PP3q, or an arbitrary-reservoir
-host passing the PP2 cell/pair/triple endpoint.
+The older row-lift and larger correlated-parabolic alternatives remain valid.
 
 ## PP4 — Prime-gap transfer theorem
 
-### Status: PROVED UNDER PP2–PP3
+### Status: PROVED UNDER PP2--PP3
 
 If every sufficiently large `n` has a solved size `m` with
 
@@ -209,65 +278,45 @@ If every sufficiently large `n` has a solved size `m` with
 0\le n-m\le w(m),
 \]
 
-then the prepared-seed extension theorem implies `D(n)=2n` for every sufficiently
-large `n`.
+then a prepared-seed extension of width `w(m)` gives `D(n)=2n` for every
+sufficiently large `n`.
 
-For solved sizes `m=p-1`, a prime in `[x-x^theta,x]` is matched by any proved
-width `w(m)>=C m^theta` with fixed `C>1`. Consequently:
-
-- the published Baker–Harman–Pintz exponent `theta=0.525` requires
-  `w(m)>=C m^0.525`, or more simply `m^(0.525+epsilon)`;
-- Runbo Li's arXiv preprint claims `theta=0.52`, usable only as a preprint input;
-- a merely polylogarithmic width does not currently give an unconditional
-  all-`n` transfer.
+For solved sizes `m=p-1`, the published Baker--Harman--Pintz exponent `0.525`
+requires width `m^(0.525+epsilon)` or a fixed-factor `C m^0.525` endpoint. A
+polylogarithmic width does not currently give an unconditional transfer.
 
 ## PP5 — Finite exceptions
 
 ### Status: VERIFIER COMPLETE; CERTIFICATES VERIFIED FOR `2<=n<=10`
 
-The exact verifier checks integer determinants, bounds, distinctness, point
-count, and two points in every row and column. The missing PP5 work is the
-eventual threshold and the complete certificate set below it.
+The exact verifier checks determinants, bounds, distinctness, point count, and
+two points in every row and column. The eventual threshold and certificates
+below it remain dependent on the asymptotic PP2--PP3 theorem.
 
-## Computational tools
+## Computational tools added on this branch
 
-- `scripts/search_boundary_extension.py`: general prescribed-degree extension
-  CSP with `found`, `exhausted`, and `cutoff` outcomes;
-- `scripts/analyze_deletion_aware_one_strip.py`: exact deletion-aware `t=1`
-  certificate average;
-- `scripts/analyze_reservoir_patch_loads.py`: exact arbitrary-reservoir clone and
-  coordinate loads;
-- `scripts/analyze_row_lift_bank.py`: exact small full-bank enumeration;
-- `scripts/analyze_row_lift_sequential_loads.py`: prefix-aware four-layer loads;
-- `scripts/analyze_row_lift_static_pruning.py`: static PP3p and PP3r screens;
-- `scripts/analyze_row_lift_projections.py`: primitive-direction projection and
-  forced-triple lower bounds;
-- `scripts/analyze_component_clean_row_lift.py`: PP3z/PP3aa component-clean
-  analysis;
-- `scripts/analyze_parabolic_matching_reservoir.py`: exact parabolic matching
-  reservoir search;
-- `scripts/search_parabolic_parameters.py`: unsheared parameter sweep;
-- `scripts/search_sheared_parabolic_parameters.py`: independent movement/refill
-  scale, gap, shear, and offset sweep;
-- `scripts/analyze_variable_reservoir_bank.py`: exact PP2l finite bank verifier;
-- `scripts/analyze_matching_reservoir_cycles.py`: degree-two path/cycle
-  factorization and deletion marginals;
-- `scripts/solve_matching_reservoir_2sat.py`: exact implication-graph solver for
-  fixed-patch cycle reservoirs;
-- `scripts/search_width_two_matching_patches.py`: complete cross-only width-two
-  matching-patch enumeration;
-- `scripts/search_width_two_rectangle_repairs.py`: exhaustive one-switch repair
-  search;
-- `scripts/search_row_lift_reservoirs.py`: exhaustive small reservoir-row search;
-- `scripts/verify_no_three_certificate.py`: exact finite certificate verifier.
+- `verify_no_three_certificate.py`: exact certificate verifier;
+- `search_boundary_extension.py`: prescribed-degree extension CSP;
+- `analyze_reservoir_patch_loads.py`: exact arbitrary-reservoir loads;
+- row-lift enumeration, projection, static, and sequential analyzers;
+- parabolic matching and parameter sweeps;
+- variable-reservoir, cycle-factorization, 2-SAT, binary, and multistate solvers;
+- one- and two-rectangle repair searches;
+- `analyze_matching_first_reservoirs.py`: exact matching-first decomposition and
+  hypergeometric spread;
+- `verify_universal_width_two_rung.py`: exhaustive adjacent-rung verifier;
+- `analyze_matching_first_width_two.py`: canonical external-defect split;
+- `analyze_matching_block_states.py`: clean-domain pruning diagnostics;
+- `analyze_matching_block_loads.py`: PP3ca signature loads;
+- `analyze_clean_rung_hypergraph.py`: exact clean-state packing and transversal;
+- `analyze_full_width_two_block_bank.py`: all 36 geometries and packing data.
 
 ## Completion criterion
 
 This branch is complete only when PP2 and PP3 provide a width large enough for
-PP4, followed by verified PP5 coverage below the resulting threshold. The branch
-now closes the exact extension interfaces, fixed- and variable-reservoir
-selection endpoints, one-strip rigidity, row-lift and parabolic internally clean
-banks, sequential/static/2-SAT selection criteria, projection obstructions, and
-one-rectangle repair. It still lacks the asymptotic seed-preparation and
-multi-rung compatibility theorem and does not prove the no-three-in-line
-conjecture.
+PP4, followed by verified PP5 coverage below the resulting threshold. It now
+closes exact extension interfaces, matching availability, endpoint-adapted
+width-two internal geometry, equal-margin state banks, local clean-density and
+packing endpoints, and an explicit global profile inequality. It still lacks
+the correlated secant-shadow preparation theorem and does not prove the
+no-three-in-line conjecture.
