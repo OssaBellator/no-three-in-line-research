@@ -19,7 +19,7 @@ be the normalized ratio map arising from the Möbius-cycle dynamics.
 - I10: the exact order-two nonexpansion exception is `x^2=r`;
 - I11: rank-zero alternating cores expand except through that order-two orbit.
 
-## RI1 — Dense-subset coset expansion
+## RI1 — Dense-subset coset expansion — REFUTED AS STATED
 
 ### Target statement
 
@@ -36,6 +36,12 @@ Prove a quantitative alternative:
 3. `C` is contained in an explicit bounded exceptional set associated with poles, zeros, or fixed points of `F_r`.
 
 A quotient-set formulation such as `|F_r(C)/F_r(C)|>= (1+c_epsilon)|C|` is also useful.
+
+The full subgroup `H=F_p^*` refutes this statement: after deleting the pole
+and zero, a dense set still has image in the unique `H`-coset and cannot
+have more than `|H|` points. The corrected target must assume `H` is
+proper and `C subseteq F_p^*\{1,r}`. See
+[`rational-inverse-collision-and-obstructions.md`](rational-inverse-collision-and-obstructions.md).
 
 ## RI2 — Union-of-cosets image theorem
 
@@ -56,6 +62,10 @@ N_H(F_r(C))\ge m+c m-O(1)
 \]
 
 unless the source cosets form one of finitely many exceptional chains. A weaker polynomial expansion bound is acceptable if it still prevents indefinite alternating recombination.
+
+The domain must explicitly remove or isolate the cosets containing `1` and
+the pole `r`; otherwise `F_r(C)` is not a subset of `F_p^*` or is not
+defined.
 
 ## RI3 — Simultaneous small-doubling classification
 
@@ -78,7 +88,7 @@ Prove that `C` is covered by `K^{O(1)}` translates of one subgroup `H` and that 
 
 A convex-coset-progression conclusion is insufficient unless it is converted into an executable absorber or expansion statement.
 
-## RI4 — Order-two chain classification
+## RI4 — Order-two chain classification — REFUTED AS STATED
 
 ### Target statement
 
@@ -90,6 +100,12 @@ C_0,C_1,\ldots,C_s,
 \]
 
 in which each `C_i` is covered by order-two subgroup cosets and no quotient-rank expansion occurs. Prove that the chain is periodic with bounded period and has an explicit row-column-preserving absorber state.
+
+Singletons give arbitrarily long nonperiodic counterexamples: any desired
+transition `c_i -> c_{i+1}` is realized by
+`r_i=c_i+c_i(1-c_i)/c_{i+1}`, while every singleton is covered by an
+order-two coset and has quotient rank zero. RI4 must require full or
+quantitatively dense cosets and charge pair-collapse mass.
 
 ## RI5 — Absorber interface
 
@@ -122,6 +138,13 @@ Search small primes for:
 - long order-two exceptional chains;
 - simultaneous small-doubling examples not predicted by the current templates.
 
+The exact collision involution, the full-subgroup RI1 obstruction, and the
+singleton RI4 obstruction are now proved and checked by
+`scripts/verify_rational_inverse.py`.
+
 ## Completion criterion
 
-This branch is complete when RI1–RI5 prove I12 in a form that either forces quotient expansion or returns an explicit absorbable finite coset configuration.
+This branch is complete when the corrected RI1–RI5 prove I12 in a form that
+either forces quotient expansion or returns an explicit absorbable finite
+coset configuration. The unqualified original RI1 and RI4 statements must
+not be reinstated.
