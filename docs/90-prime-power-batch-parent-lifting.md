@@ -149,7 +149,7 @@ and third outcomes. ∎
 The parameter is defined once `M(R)>=1080`, equivalently for
 
 \[
-R\ge5938.
+R\ge5935.
 \]
 
 Below that absolute threshold, CMR136 still reduces any positive outside
