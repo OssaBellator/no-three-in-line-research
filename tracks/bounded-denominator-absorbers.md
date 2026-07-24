@@ -93,6 +93,14 @@ high-load blocks. Thus the remaining BDA3 step is the \(q\)-stripe
 arithmetic bound on total conflict mass, or classification of its
 high-load alternative as a periodic template.
 
+[`bounded-denominator-product-bank.md`](bounded-denominator-product-bank.md)
+proves BDA3b. On any compatible block family, the independent product of
+the BDA2a banks has an exact normalized collateral sum over every local
+and cross-block candidate triple. If paid destroyed weight exceeds fixed
+collateral plus that sum, a joint improving state exists. Thus the
+remaining BDA3 arithmetic must bound this explicit sum or classify the
+quantified high-collateral family.
+
 ## BDA4 — exception classification
 
 ### Target statement
@@ -134,7 +142,8 @@ For every `q` tested, enumerate the finite quotient CSP and search for:
 The cyclic two-forbidden-matching local bank and deterministic conflict
 regularization are retained as exhaustive regressions in
 `scripts/verify_bda_local_bank.py` and
-`scripts/verify_bda_conflict_regularization.py`.
+`scripts/verify_bda_conflict_regularization.py`. Product-bank cylinder
+factorization is checked by `scripts/verify_bda_product_bank.py`.
 
 Any frozen template must be added to BDA4 rather than hidden in an asymptotic estimate.
 
