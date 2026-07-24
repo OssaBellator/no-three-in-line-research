@@ -53,6 +53,8 @@ The numbering is local to this repository.
 | BDA3c | A failed product bank localizes normalized collateral to one finite profile | PROVED | `tracks/bounded-denominator-profile-localization.md` |
 | BDA3d | Failed collateral localizes to one of six positive block-rank patterns | PROVED | `tracks/bounded-denominator-profile-localization.md` |
 | BDA3e | Intrinsic denominator-\(q\) collateral words have at most \(6(q^2\varphi(q))^3\) types | PROVED | `tracks/bounded-denominator-finite-transition.md` |
+| BDA3f | Collinearity depends on four relative coarse quotients, with bounded-window profile count | PROVED | `tracks/bounded-denominator-relative-address.md` |
+| BDA3-residue-wall | Equal coordinate residues do not determine collinearity | PROVED | `tracks/bounded-denominator-relative-address.md` |
 | BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `tracks/bounded-denominator-finite-transition.md` |
 | CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
 | CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |

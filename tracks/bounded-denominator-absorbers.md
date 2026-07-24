@@ -121,6 +121,15 @@ at most the number of profiles. The unresolved arithmetic is now
 precisely the finite refinement of block identities, anchors, coarse
 carries, and channel data, followed by classification of those cycles.
 
+[`bounded-denominator-relative-address.md`](bounded-denominator-relative-address.md)
+proves BDA3f: the collinearity determinant discards absolute coarse
+positions and depends only on coordinate residues and four relative
+quotient variables. A relative window of width \(W\) therefore costs at
+most \((2W+1)^4\) additional profiles. The same note proves the
+residue-only wall: identical residue triples can be collinear or
+noncollinear, so some relative carry information is genuinely necessary.
+The remaining address problem is now relative rather than absolute.
+
 ## BDA4 — exception classification
 
 ### Target statement
