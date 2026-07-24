@@ -105,4 +105,4 @@ terminal construction or a spread distribution supported on terminal
 no-three states remains open.
 
 The exact check is implemented in
-[`scripts/verify_prime_power_terminal_configurations.py`](../scripts/verify_prime_power-terminal-configurations.py).
+[`scripts/verify_prime_power_terminal_configurations.py`](../scripts/verify_prime_power_terminal_configurations.py).
