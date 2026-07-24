@@ -240,8 +240,119 @@ record the untruncated height rather than only the saturated residue
 the remaining classification concerns \(q\)-primitive slope/scale
 profiles and genuine profile cycles, not an invisible valuation tower.
 
+## BDA3i -- global projective atlas after content removal
+
+Write \(R_q=\mathbb Z/q\mathbb Z\).  A vector in \(R_q^2\) is
+**unimodular** when its two coordinates generate \(R_q\).  Integer
+primitivity makes \(d=(a,b)\) unimodular modulo \(q\), and BDA4b makes
+\(c=(m^\circ,n^\circ)\) unimodular modulo \(q\).
+
+Let \(\mathbb P^1(R_q)\) be the set of unimodular vectors modulo
+multiplication by a unit.
+
+### Theorem BDA3i -- PROVED
+
+The normalized residue matrix
+
+\[
+M^\circ
+=
+\begin{pmatrix}a\\b\end{pmatrix}
+\begin{pmatrix}m^\circ&n^\circ\end{pmatrix}
+\pmod q
+\]
+
+uniquely determines both projective classes
+
+\[
+\boxed{
+[a:b]\in\mathbb P^1(R_q),
+\qquad
+[m^\circ:n^\circ]\in\mathbb P^1(R_q).
+}
+\]
+
+Moreover,
+
+\[
+\boxed{
+|\mathbb P^1(R_q)|
+=
+\prod_{\ell^e\Vert q}
+(\ell^e+\ell^{e-1})
+=
+q\prod_{\ell\mid q}\left(1+\frac1\ell\right).
+}
+\]
+
+After fixing one representative of every projective class, every
+unimodular rank-one residue matrix has a unique representation
+
+\[
+\boxed{
+M=s\,d_0c_0^{\mathsf T},
+\qquad
+s\in R_q^\times.
+}
+\]
+
+Consequently the number of such matrices is exactly
+
+\[
+\boxed{
+\varphi(q)\,|\mathbb P^1(R_q)|^2.
+}
+\]
+
+### Proof
+
+Suppose
+
+\[
+dc^{\mathsf T}=d'(c')^{\mathsf T}
+\]
+
+with all four factor vectors unimodular.  Choose a linear functional
+\(\alpha\) with \(\alpha(d)=1\).  Applying \(\alpha\) to the matrix
+identity gives
+
+\[
+c=u c',
+\qquad
+u=\alpha(d').
+\]
+
+Because \(c\) is unimodular, its coordinates generate the unit ideal;
+as both are multiples of \(u\), the element \(u\) must be a unit.
+Choose a functional taking value one on \(c'\) and apply it on the
+right to obtain \(d'=u d\).  Thus the two projective classes are forced.
+Fixing representatives then leaves the unique product of the two
+factor units as the scalar \(s\).
+
+For \(q=\ell^e\), there are
+\(\ell^{2e}-\ell^{2e-2}\) unimodular vectors.  The free action of the
+\(\varphi(\ell^e)=\ell^{e-1}(\ell-1)\) units gives
+
+\[
+|\mathbb P^1(\mathbb Z/\ell^e\mathbb Z)|
+=\ell^e+\ell^{e-1}.
+\]
+
+The Chinese remainder theorem multiplies these counts over the prime
+powers dividing \(q\).  Finally, a projective-class pair and a unit
+scalar give distinct matrices by the uniqueness just proved, yielding
+the last count. \(\square\)
+
+BDA3i assembles the prime-power pivots into one finite composite-modulus
+profile even when the matrix has no globally unit entry.  After the
+common-content tower is removed, the residue part of a primitive
+slope/scale address has exactly the finite atlas above.  The remaining
+BDA4 unboundedness is therefore in integer lifts and transition cycles,
+not composite-residue factorization.
+
 `scripts/verify_bda_valuation_charts.py` exhaustively checks the
 truncated valuation, unit-pivot, and projective-ratio identities for
 small primitive directions, scales, and prime powers.  It also checks
 the canonical common-content reduction, exact height descent, box
-ceiling, and terminal unit pivots for composite denominators.
+ceiling, terminal unit pivots, global projective uniqueness, and the
+exact CRT atlas count for composite denominators.

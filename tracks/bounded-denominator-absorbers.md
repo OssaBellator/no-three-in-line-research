@@ -168,6 +168,16 @@ longer has an internally infinite singular-division case; it must
 classify the resulting \(q\)-primitive profiles and their genuine
 transition cycles.
 
+It also proves BDA3i, which glues all prime-power unit-pivot charts by
+CRT. The normalized residue matrix uniquely determines its direction
+and scale classes in \(\mathbb P^1(\mathbb Z/q\mathbb Z)\), whose size
+is \(q\prod_{\ell\mid q}(1+1/\ell)\). Including the unique unit scalar,
+there are exactly
+\(\varphi(q)|\mathbb P^1(\mathbb Z/q\mathbb Z)|^2\) unimodular
+rank-one residue matrices. Thus the remaining address escape is in
+integer lifts and genuine profile cycles, not a hidden composite-ring
+factorization ambiguity.
+
 ## BDA4 — exception classification
 
 ### Target statement

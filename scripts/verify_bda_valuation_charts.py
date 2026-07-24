@@ -64,6 +64,81 @@ def common_content(m: int, n: int, q: int) -> int:
     return result
 
 
+def units(modulus: int) -> tuple[int, ...]:
+    return tuple(
+        value for value in range(modulus) if gcd(value, modulus) == 1
+    )
+
+
+def unimodular_vectors(modulus: int) -> tuple[tuple[int, int], ...]:
+    return tuple(
+        (first, second)
+        for first in range(modulus)
+        for second in range(modulus)
+        if gcd(gcd(first, second), modulus) == 1
+    )
+
+
+def projective_class(
+    vector: tuple[int, int],
+    modulus: int,
+) -> tuple[int, int]:
+    return min(
+        (
+            unit * vector[0] % modulus,
+            unit * vector[1] % modulus,
+        )
+        for unit in units(modulus)
+    )
+
+
+def projective_count(modulus: int) -> int:
+    result = 1
+    remaining = modulus
+    for prime in prime_divisors(modulus):
+        power = 1
+        while remaining % prime == 0:
+            remaining //= prime
+            power *= prime
+        result *= power + power // prime
+    return result
+
+
+def verify_global_projective_atlas(maximum_q: int = 12) -> None:
+    for modulus in range(2, maximum_q + 1):
+        vectors = unimodular_vectors(modulus)
+        classes = {
+            projective_class(vector, modulus) for vector in vectors
+        }
+        expected_classes = projective_count(modulus)
+        assert len(classes) == expected_classes
+        assert len(vectors) == len(units(modulus)) * expected_classes
+
+        matrix_profiles: dict[
+            tuple[int, int, int, int],
+            set[tuple[tuple[int, int], tuple[int, int]]],
+        ] = {}
+        for direction in vectors:
+            direction_class = projective_class(direction, modulus)
+            for scales in vectors:
+                scale_class = projective_class(scales, modulus)
+                matrix = (
+                    direction[0] * scales[0] % modulus,
+                    direction[0] * scales[1] % modulus,
+                    direction[1] * scales[0] % modulus,
+                    direction[1] * scales[1] % modulus,
+                )
+                matrix_profiles.setdefault(matrix, set()).add(
+                    (direction_class, scale_class)
+                )
+        assert all(
+            len(profiles) == 1 for profiles in matrix_profiles.values()
+        )
+        assert len(matrix_profiles) == (
+            len(units(modulus)) * expected_classes**2
+        )
+
+
 def verify_common_content(maximum_q: int = 30, maximum_bound: int = 20) -> None:
     for q in range(2, maximum_q + 1):
         primes = prime_divisors(q)
@@ -123,6 +198,7 @@ def verify_common_content(maximum_q: int = 30, maximum_bound: int = 20) -> None:
                                     for row in matrix
                                     for entry in row
                                 )
+    verify_global_projective_atlas()
 
 
 def verify() -> None:
