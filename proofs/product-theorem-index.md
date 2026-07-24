@@ -27,6 +27,7 @@ This index collects the product/composition results on
 | PX20 | Every successful ordered crossed side-nine host has repair radius two and barrier one | PROVED FINITE | `docs/33-all-successful-side-nine-batches.md` |
 | PX21 | Any sequence of cycle trades compresses to one executable balanced endpoint batch | PROVED | `docs/34-composite-cycle-batches.md` |
 | PX22 | All exact side-six and side-nine traps have improving composite support at most eight | PROVED FINITE | `docs/34-composite-cycle-batches.md` |
+| PX23 | Every unmodified global `2 x 5` product host has minimum defect potential at least two | PROVED FINITE | `docs/35-quantitative-2x5-obstruction.md` |
 
 The branch still has no infinite multiplicative closure theorem or arithmetic
 coverage theorem.
