@@ -56,4 +56,6 @@ This ledger collects the results specific to
 | CMR30 | Primitive-line parameter spacing sharpens the exact tangent-cell population | PROVED | `docs/40-prime-power-tangent-parameter-spacing.md` |
 | CMR31 | Completed-reciprocal line occupancy is height-sensitive | PROVED | `docs/41-prime-power-harmonic-direction-energy.md` |
 | CMR32 | One-channel syndrome is controlled by harmonic direction energy | PROVED | `docs/41-prime-power-harmonic-direction-energy.md` |
+| CMR33 | The completed inverse \(F_p(0)=1, F_p(x)=1+x^{-1}\) is an integer no-three permutation for every prime | PROVED | `docs/42-prime-power-terminal-family.md` |
+| CMR34 | The completed-inverse terminal state is companion-compatible and no-three at every prime power | PROVED | `docs/42-prime-power-terminal-family.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
