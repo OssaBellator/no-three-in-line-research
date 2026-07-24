@@ -2,67 +2,120 @@
 
 **Branch:** `research/all-n-prime-patching`
 
-This branch is independent of the other all-`n` strategies. It assumes a saturated no-three-in-line theorem is eventually proved on `(p-1)x(p-1)` grids for all sufficiently large primes `p`, and asks how to extend such a construction to nearby side lengths.
+This branch is independent of the other all-`n` strategies. It assumes a
+saturated no-three-in-line theorem is eventually proved on `(p-1)x(p-1)` grids
+for all sufficiently large primes `p`, and asks how to extend such a
+construction to nearby side lengths.
 
-Prime-gap information alone is not sufficient: embedding a `2m`-point solution into an `n x n` grid leaves `2(n-m)` missing points. The essential theorem is an exact extension absorber.
+Prime-gap information alone is not sufficient: embedding a `2m`-point solution
+into an `n x n` grid leaves `2(n-m)` missing points. The essential theorem is an
+exact extension absorber.
+
+Detailed statements and proofs are in
+[`docs/27-all-n-prime-patching.md`](../docs/27-all-n-prime-patching.md).
 
 ## PP1 — Boundary extension interface
 
-### Target statement
+### Status: PROVED for saturation; geometry separated into PP2
 
-Let `S_m` be a saturated no-three-in-line configuration on `[m]^2`. For `t>=1`, define the enlarged grid `[m+t]^2`. Construct a set of admissible states on the new rows and columns that adds exactly `2t` points while preserving exactly two points in every old and new row and column.
+Let `S_m` be a saturated no-three-in-line configuration on `[m]^2`. For
+`t>=1`, define the enlarged grid `[m+t]^2`.
 
-The construction may modify `O(f(t))` old points near a designated reservoir, but must preserve the total point count `2(m+t)`.
+The row-column bookkeeping is now exact:
+
+- for `t>=2`, any two edge-disjoint permutation graphs on the new `t x t`
+  corner add exactly `2t` points without changing the old core;
+- for `t=1`, deleting one old point `(x,y)` and inserting
+  `(x,m+1)`, `(m+1,y)`, and `(m+1,m+1)` adds two points and preserves every
+  row and column degree;
+- a proposed patch is geometrically valid exactly when it avoids old-pair
+  secants, old-anchor/new-pair triples, and internal new-point triples.
+
+The last three conflict classes are the PP2 problem, not part of the solved
+saturation interface.
 
 ## PP2 — Secant-shadow patching lemma
 
-### Target statement
+### Status: OPEN
 
-There are functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one can choose or prepare a reservoir in `S_m` with the following property:
+There should be functions `w(m)` and `f(t)` such that, whenever `t<=w(m)`, one
+can choose or prepare a reservoir in `S_m` with the following property:
 
 - delete at most `f(t)` reservoir blocks;
-- insert a row-column-preserving completion involving the `t` new rows and `t` new columns;
+- insert a row-column-preserving completion involving the `t` new rows and
+  `t` new columns;
 - create no collinear triple with retained old points;
 - internally avoid all triples among new and replacement points.
 
-The desired width should be at least polylogarithmic in `m`; an `m^theta` width would also be useful if matched by a proven prime-gap theorem.
+The desired width should be at least polylogarithmic in `m`; an `m^theta` width
+would also be useful if matched by a proven prime-gap theorem.
 
 ## PP3 — Robust seed preparation
 
-### Target statement
+### Status: OPEN
 
-Prove that the prime-minus-one construction can be chosen with a boundary or distributed absorber reservoir satisfying PP2, rather than as an arbitrary saturated configuration. The reservoir should have:
+Prove that the prime-minus-one construction can be chosen with a boundary or
+distributed absorber reservoir satisfying PP2, rather than as an arbitrary
+saturated configuration. The reservoir should have:
 
 - low secant shadow into future rows and columns;
 - many interchangeable row-column states;
 - bounded interaction with the core construction;
 - compatibility with deleting a variable number `t` of blocks.
 
-This may require reserving rows and columns before the main prime-grid repair process.
+This may require reserving rows and columns before the main prime-grid repair
+process.
 
 ## PP4 — Prime-gap transfer theorem
 
-### Target statement
+### Status: PROVED UNDER PP2–PP3
 
-Let `P` be a set of solved side lengths, for example `P={p-1:p prime}`. If every sufficiently large `n` has some `m in P` with
+Let `P` be a set of solved side lengths. If every sufficiently large `n` has
+some `m in P` with
 
 \[
 0\le n-m\le w(m),
 \]
 
-then PP1–PP3 imply `D(n)=2n` for every sufficiently large `n`.
+then the prepared-seed extension theorem implies `D(n)=2n` for every
+sufficiently large `n`.
 
-State the exact unconditional or conditional prime-gap input needed for the proved width `w(m)`.
+For `P={p-1:p prime}`, a short-interval theorem placing a prime in
+`[x-x^theta,x]` is matched by any proved width `w(m)>=C m^theta` with fixed
+`C>1`. Consequently:
 
-No conjectural prime-gap assertion should be described as completing the proof unless the extension theorem and the gap theorem are both available.
+- the published Baker–Harman–Pintz exponent `theta=0.525` requires
+  `w(m)>=C m^0.525`, or more simply `m^(0.525+epsilon)`;
+- Runbo Li's arXiv preprint claims `theta=0.52`, which may be used only as a
+  preprint input;
+- a merely polylogarithmic width does not currently give an unconditional
+  all-`n` transfer.
+
+No prime-gap input completes this branch while PP2 and PP3 remain open.
 
 ## PP5 — Finite exceptions
 
-### Target statement
+### Status: VERIFICATION INTERFACE COMPLETE; CERTIFICATE SET OPEN
 
-Once PP4 covers all `n>=n_0`, provide exact constructions or certified computational solutions for every `n<n_0` not already covered.
+Once PP4 covers all `n>=n_0`, provide exact constructions or certified
+computational solutions for every `n<n_0` not already covered.
 
-The finite verification must include machine-checkable coordinates and exact integer determinant checks.
+`scripts/verify_no_three_certificate.py` now checks machine-readable coordinate
+files using exact integer determinants, exact bounds, distinctness, point count,
+and two points in every row and column. The missing work is the threshold and
+the complete certificate set below it.
+
+## Computational falsification
+
+`scripts/search_boundary_extension.py` exhaustively searches small patches with
+a chosen deletion budget. It distinguishes:
+
+- `found`, with a complete coordinate certificate;
+- `exhausted`, a genuine negative result within the stated search model;
+- `cutoff`, an explicitly inconclusive resource limit.
+
+The `--boundary-only` mode can be compared with unrestricted replacement to
+search for cores requiring interior changes.
 
 ## Candidate absorber designs
 
@@ -72,13 +125,10 @@ The finite verification must include machine-checkable coordinates and exact int
 - Hall-type completion in a near-complete new-row/new-column host;
 - tomographic trades that free selected old rows and columns before extension.
 
-## Falsification programme
-
-- test whether a saturated core can block every cell in one new row by old secants;
-- enumerate minimal extension obstructions for small `t`;
-- search for configurations requiring changes far from the boundary;
-- verify that proposed recursive gadgets do not create long-slope triples with the old core.
-
 ## Completion criterion
 
-This branch is complete when PP1–PP5 provide an exact theorem transferring the prime-minus-one result to every sufficiently large `n`, followed by finite verification of the remaining sizes.
+This branch is complete only when PP2 and PP3 provide an exact extension width
+large enough for PP4, followed by a verified PP5 certificate set for the
+remaining side lengths. The current branch closes PP1, the logical and
+prime-gap parts of PP4, and the PP5 verification machinery; it does not prove
+the no-three-in-line conjecture.
