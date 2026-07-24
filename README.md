@@ -6,9 +6,14 @@ A rigorous research notebook for attempts toward the classical conjecture
 D(n)=2n,
 \]
 
-where \(D(n)\) is the maximum number of points that can be selected from an \(n\times n\) integer grid with no three collinear.
+where `D(n)` is the maximum number of points that can be selected from an
+`n x n` integer grid with no three collinear.
 
-> **Status:** This repository does **not** contain a complete proof. The conjecture remains open as of 24 July 2026. The purpose of this repository is to preserve proved lemmas, conditional reductions, failed pathways, counterexamples, computational tools, and promising next targets in a form suitable for independent checking.
+> **Status:** This repository does **not** contain a complete proof. The
+> conjecture remains open as of 24 July 2026. The purpose of the repository is
+> to preserve proved lemmas, conditional reductions, failed pathways,
+> counterexamples, computational tools, and promising next targets in a form
+> suitable for independent checking.
 
 ## Repository map
 
@@ -16,7 +21,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): theorem-by-theorem classification.
 - [`docs/00-problem-and-literature.md`](docs/00-problem-and-literature.md): problem, current literature, and conventions.
 - [`docs/01-saturation-and-reservoirs.md`](docs/01-saturation-and-reservoirs.md): two-per-row/column framework, clones, deficits, and secant shadows.
-- [`docs/02-reverse-scale-switching.md`](docs/02-reverse-scale-switching.md): descending-scale potential and batch repair.
+- [`docs/02-reverse-scale-switching.md`](docs/02-reverse-scale-switching.md): descending-scale potential and candidate-only triple barrier.
 - [`docs/03-uniform-local-bank.md`](docs/03-uniform-local-bank.md): spread injection and explicit local-bank hypotheses.
 - [`docs/04-protected-tomographic-trades.md`](docs/04-protected-tomographic-trades.md): exact line-sum-preserving trades.
 - [`docs/05-subgroup-absorbers.md`](docs/05-subgroup-absorbers.md): affine terminal configurations and installed coset-cycle absorbers.
@@ -26,83 +31,67 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/09-orbit-tanner-and-mobius-cycles.md`](docs/09-orbit-tanner-and-mobius-cycles.md): orbit codebooks, Möbius secant matchings, cycle trades, and window products.
 - [`docs/10-cross-disciplinary-pathway.md`](docs/10-cross-disciplinary-pathway.md): radar, coding, tomography, and CSP interpretations.
 - [`docs/11-open-bottlenecks.md`](docs/11-open-bottlenecks.md): exact remaining lemmas and proposed experiments.
-- [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): claims that were corrected, weakened, or refuted.
+- [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected, weakened, or refuted claims.
 - [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected collision-aware bank theorem.
-- [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection theorem and local triple-load endpoint.
-- [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): six-cycle spread proof, dense superregular perfect-matching spread, and two-layer global conflict endpoint.
-- [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md): quotient-set inverse theorems, subgroup completion, and common-ratio repair banks.
+- [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection and local triple-load endpoint.
+- [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): dense superregular perfect-matching spread and two-layer endpoint.
+- [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md): quotient-set inverse theorems and common-ratio repair banks.
 - [`docs/18-pfr-coset-anchor-propagation.md`](docs/18-pfr-coset-anchor-propagation.md): coset absorber banks and alternating anchor propagation.
-- [`docs/19-rational-coset-expansion.md`](docs/19-rational-coset-expansion.md): rational-function expansion of multiplicative cosets and the order-two exception.
+- [`docs/19-rational-coset-expansion.md`](docs/19-rational-coset-expansion.md): rational-function expansion and the order-two exception.
 - [`docs/20-common-ratio-bank-conversion.md`](docs/20-common-ratio-bank-conversion.md): exact rectangle collateral and decoder-or-structure conversion.
-- [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): syndrome-weighted admissible quotient extraction and paid-bank lower bounds.
-- [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md): projective conic-pencil construction, exact opposite-channel secant profile, and ratio normal form.
-- [`docs/23-aligned-anchor-carry-cells.md`](docs/23-aligned-anchor-carry-cells.md): aligned-anchor determinant factorization, signature divisor bounds, and perfect-interpolation cells.
-- [`docs/24-secant-star-carry-dispersion.md`](docs/24-secant-star-carry-dispersion.md): universal product-carry dispersion for endpoint-disjoint stars in every channel pair.
-- [`docs/25-perfect-alignment-arithmetic.md`](docs/25-perfect-alignment-arithmetic.md): exact interpolation-parameter arithmetic and bounded-denominator chamber sparsity.
-- [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
-- [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
-- [`docs/27-all-n-prime-patching.md`](docs/27-all-n-prime-patching.md): exact boundary states, prime-gap transfer, finite certificates, and obstruction search for the all-`n` route.
-- [`docs/28-one-strip-and-pair-aware-patching.md`](docs/28-one-strip-and-pair-aware-patching.md): complete one-strip rigidity, blocker matchings, finite seed graph, and pair-aware wider-corner endpoint.
-- [`docs/29-general-reservoir-patching.md`](docs/29-general-reservoir-patching.md): arbitrary deleted-reservoir local loads, one-strip seed averaging, and internally clean spread-bank endpoints.
-- [`docs/30-deletion-aware-row-lift-banks.md`](docs/30-deletion-aware-row-lift-banks.md): deletion-aware one-strip certificates and a rank-three-spread multi-row reservoir bank.
-- [`docs/31-sequential-row-lift-local-lemma.md`](docs/31-sequential-row-lift-local-lemma.md): sequential permutation-layer local lemma and activated-load obstruction for row-lift banks.
-- [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
-- [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
-- [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
-- [`scripts/verify_carry_closure.py`](scripts/verify_carry_closure.py): checks same-channel cross carries, scalar wrap cells, rational centers, and chamber bounds.
-- [`scripts/verify_perfect_alignment.py`](scripts/verify_perfect_alignment.py): checks the zero-leading-carry classification and reduced-denominator chamber bounds.
-- [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
-- [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
-- [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
-- [`scripts/verify_no_three_certificate.py`](scripts/verify_no_three_certificate.py): verifies finite `2n`-point certificates with exact integer determinants.
-- [`scripts/search_boundary_extension.py`](scripts/search_boundary_extension.py): exhaustively searches small row-column-preserving extension patches with explicit cutoff semantics.
-- [`scripts/analyze_one_strip_extensions.py`](scripts/analyze_one_strip_extensions.py): checks the complete boundary-only `t=1` state list.
-- [`scripts/analyze_one_strip_seed_loads.py`](scripts/analyze_one_strip_seed_loads.py): evaluates the exact PP3b one-strip averaging bound.
-- [`scripts/enumerate_one_strip_seeds.py`](scripts/enumerate_one_strip_seeds.py): enumerates the exact labeled one-strip seed graph for small sides.
-- [`scripts/analyze_corner_patch_loads.py`](scripts/analyze_corner_patch_loads.py): computes old-pair, old-anchor-pair, and internal-triple loads for wider corner patches.
-- [`scripts/analyze_reservoir_patch_loads.py`](scripts/analyze_reservoir_patch_loads.py): computes exact arbitrary-deficit clone and coordinate loads.
-- [`scripts/analyze_patch_bank.py`](scripts/analyze_patch_bank.py): verifies finite internally clean patch banks and their cell/pair spread.
-- [`scripts/analyze_deletion_aware_one_strip.py`](scripts/analyze_deletion_aware_one_strip.py): computes surviving one-strip certificate averages after forced deletion.
-- [`scripts/analyze_row_lift_bank.py`](scripts/analyze_row_lift_bank.py): enumerates exact small row-lift banks and their certificate spread.
-- [`scripts/analyze_row_lift_sequential_loads.py`](scripts/analyze_row_lift_sequential_loads.py): computes activated permutation-layer loads for every legal prefix.
-- [`scripts/search_row_lift_reservoirs.py`](scripts/search_row_lift_reservoirs.py): searches every two- and three-row reservoir in a finite certificate corpus.
+- [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): syndrome-weighted quotient extraction and paid-bank lower bounds.
+- [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md): projective conic-pencil geometry and secant profile.
+- [`docs/23-aligned-anchor-carry-cells.md`](docs/23-aligned-anchor-carry-cells.md): aligned-anchor determinant factorization and carry cells.
+- [`docs/24-secant-star-carry-dispersion.md`](docs/24-secant-star-carry-dispersion.md): universal product-carry dispersion.
+- [`docs/25-perfect-alignment-arithmetic.md`](docs/25-perfect-alignment-arithmetic.md): interpolation-parameter arithmetic and chamber sparsity.
+- [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): same-channel carries, rational centers, and chamber bounds.
+- [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation repair banks.
+- [`docs/27-all-n-prime-patching.md`](docs/27-all-n-prime-patching.md): exact boundary states and prime-gap transfer.
+- [`docs/28-one-strip-and-pair-aware-patching.md`](docs/28-one-strip-and-pair-aware-patching.md): one-strip rigidity, blocker matchings, and corner endpoint.
+- [`docs/29-general-reservoir-patching.md`](docs/29-general-reservoir-patching.md): arbitrary-reservoir and spread-bank endpoints.
+- [`docs/30-deletion-aware-row-lift-banks.md`](docs/30-deletion-aware-row-lift-banks.md): deletion-aware one-strip certificates and row-lift spread.
+- [`docs/31-sequential-row-lift-local-lemma.md`](docs/31-sequential-row-lift-local-lemma.md): prefix-aware permutation-layer selection.
+- [`docs/32-row-lift-pruning-barriers.md`](docs/32-row-lift-pruning-barriers.md): static terminal loads, conditioned masses, and full-support barrier.
+- [`docs/33-off-diagonal-reservoir-obstruction.md`](docs/33-off-diagonal-reservoir-obstruction.md): aligned block obstruction and projection classification.
+- [`docs/34-projection-triple-lower-bounds.md`](docs/34-projection-triple-lower-bounds.md): quantitative parallel-line triple forcing.
+- [`docs/35-component-clean-row-lift-banks.md`](docs/35-component-clean-row-lift-banks.md): component-clean expectation endpoint and cross-triple cap.
 
 ## Research discipline
 
 Every mathematical item is tagged as one of:
 
-- **PROVED:** a complete proof is written in this repository.
-- **PROVED UNDER HYPOTHESES:** the implication is complete, but one or more hypotheses are not known to hold in the desired construction.
+- **PROVED:** a complete proof is written in the repository.
+- **PROVED UNDER HYPOTHESES:** the implication is complete, but a premise is not known in the desired construction.
 - **CONDITIONAL:** a reduction or theorem schema whose premise remains open.
 - **HEURISTIC:** a proposed mechanism, not a theorem.
-- **REFUTED:** a tempting statement accompanied by a counterexample.
+- **REFUTED:** a tempting statement accompanied by a counterexample or impossibility proof.
 
-The notebook deliberately keeps failed routes. In a long open problem, knowing exactly why a route fails is often as valuable as a new lemma.
+The notebook deliberately keeps failed routes. In a long open problem, knowing
+why a route fails is often as useful as a new lemma.
 
 ## Principal current pathway
 
-The strongest current synthesis is:
+The strongest global synthesis remains the modular-hyperbola, cycle-bank,
+weighted-quotient, carry-dispersion, and alternating-neutralization route. Its
+main unresolved step is a second-order concentration/termination theorem for
+the normalized collateral of the joint alternating bank, followed by a
+monotone carry potential or bounded-denominator absorber.
 
-1. Start from two complementary modular hyperbola permutations \(H_a\cup H_b\), viewed as two members of a projective conic pencil.
-2. Use their line cap, bounded displacement multiplicity, \(O(n\log n)\) triple syndrome, and exact opposite-channel secant profile.
-3. Encode row-column-preserving changes through multiplicative orbit blocks or cycle trades.
-4. Represent cross-channel bad triples as properly edge-coloured secant graphs whose colour classes are carry-filtered submatchings of projective involutions.
-5. Peel leaves; every residual core contains a Möbius cycle.
-6. Use collision-aware full permutation banks on cycle blocks.
-7. Apply inverse-additive theorems: small quotient sets yield common-ratio rectangle banks and subgroup-coset absorbers.
-8. Weight quotient extraction by actual triple degrees, producing a paid admissible common-ratio bank.
-9. Convert the bank: either one rectangle improves, or failure yields a channel-pair secant star or an aligned multiplicative anchor class.
-10. Apply carry classification. Every endpoint-disjoint star disperses through divisor-controlled product-carry signatures; aligned anchors disperse through nondegenerate coordinate-carry signatures or enter perfect affine-interpolation chambers.
-11. Apply perfect-alignment arithmetic and wrap-center factorization. Positive-density perfect chambers have bounded rational denominator and divisor-controlled occupancy at each rational center.
-12. Neutralize a dominant secant star by moving one endpoint from many star pairs through a constant-spread opposite-layer permutation bank.
-13. Analyze only the second-generation normalized certificate counts created by this joint bank.
-14. Prove a monotone alternating-closure potential, or construct finite-denominator absorbers for the remaining perfect chambers.
-15. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-16. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
+The independent all-`n` prime-patching track now has:
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or divisor-controlled perfect alignment. A dominant first-generation star can also be removed exactly by an alternating endpoint-permutation bank. The main geometric target is therefore a second-order concentration/termination theorem for the normalized collateral of that joint bank.
+- exact one-strip and arbitrary-reservoir degree interfaces;
+- corner, clone-space, spread-bank, sequential, static, and component-clean
+  selection endpoints;
+- an explicit rank-three-spread row-lift bank;
+- a proof that unpruned full support cannot pass first moment;
+- a complete aligned off-diagonal block obstruction;
+- a primitive-direction projection screen with quantitative triple lower bounds;
+- exact finite diagnostics through stored side ten.
 
-The independent all-`n` prime-patching track now has deletion-aware one-strip bounds, arbitrary-reservoir endpoints, and an explicit row-lift bank with both global-spread and sequential activated-load criteria. Its remaining bottleneck is geometric direction control or state pruning over a width large enough for prime-gap transfer.
+Its remaining bottleneck is an asymptotic geometric preparation theorem:
+construct a sparse algebraic or tomographic bank with low terminal loads, or
+large internally clean component banks with `O(1/t)` cell and `O(1/t^2)` pair
+spread and sufficiently small cross incidence.
 
 ## Running the checks
 
@@ -111,32 +100,23 @@ The scripts require Python 3.10+ and only the standard library.
 ```bash
 python scripts/verify_hyperbola.py --prime 17
 python scripts/verify_conic_incidence.py --prime 17
-python scripts/verify_aligned_carry.py --prime 17
-python scripts/verify_carry_closure.py --prime 17
-python scripts/verify_perfect_alignment.py --prime 17
-python scripts/verify_absorber.py --n 30 --h 5 --m 7
-python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
-python scripts/verify_carry_cycle_bound.py
 python scripts/verify_no_three_certificate.py certificates/prime-patching-small.json
-python scripts/search_boundary_extension.py core.json --t 1 --max-delete 2 --boundary-only
-python scripts/analyze_one_strip_extensions.py certificates/prime-patching-small.json
-python scripts/analyze_one_strip_seed_loads.py certificates/prime-patching-small.json
-python scripts/enumerate_one_strip_seeds.py --max-n 5
-python scripts/analyze_corner_patch_loads.py certificates/prime-patching-small.json --n 3 --t 10
-python scripts/analyze_reservoir_patch_loads.py certificates/prime-patching-small.json --n 3 --t 1 --delete 1,1 --delete 2,3
-python scripts/analyze_patch_bank.py certificates.json bank.json --n 3 --t 1 --delete 1,1 --delete 2,3
 python scripts/analyze_deletion_aware_one_strip.py certificates/prime-patching-small.json
 python scripts/analyze_row_lift_bank.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
 python scripts/analyze_row_lift_sequential_loads.py certificates/prime-patching-small.json --n 3 --rows 1,2,3 --all-orders
+python scripts/analyze_row_lift_static_pruning.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
+python scripts/analyze_row_lift_projections.py certificates/prime-patching-small.json --n 3 --rows 1,2,3
+python scripts/analyze_component_clean_row_lift.py certificates/prime-patching-small.json --n 5 --rows 1,2,3,4,5
 python scripts/search_row_lift_reservoirs.py certificates/prime-patching-small.json
 ```
 
-These programs are sanity checks or finite exhaustive checks, not proofs for arbitrary \(n\) unless explicitly paired with a proved finite classification.
+These programs are sanity checks or finite exhaustive checks, not proofs for
+arbitrary `n` unless explicitly paired with a proved finite classification.
 
 ## Primary references
 
-- Ghosal, Goenka, Grebennikov, Keevash, Kwan, Pham, *No-\((k+1)\)-in-line problem for \(k\ge3\)*, arXiv:2607.05255.
-- Kovács, Nagy, Szabó, *Randomised algebraic constructions for the no-\((k+1)\)-in-line problem*, arXiv:2508.07632.
+- Ghosal, Goenka, Grebennikov, Keevash, Kwan, Pham, *No-(k+1)-in-line problem for k>=3*, arXiv:2607.05255.
+- Kovács, Nagy, Szabó, *Randomised algebraic constructions for the no-(k+1)-in-line problem*, arXiv:2508.07632.
 - Reiher, Schoen, *Note on the Theorem of Balog, Szemeredi, and Gowers*, arXiv:2308.10245.
 - Gowers, Green, Manners, Tao, *Marton's Conjecture in abelian groups with bounded torsion*, arXiv:2404.02244.
 - Raghavan, *Improved Bounds for the Freiman-Ruzsa Theorem*, arXiv:2512.11217.
@@ -153,14 +133,13 @@ A useful contribution should do at least one of the following:
 
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
-- prove a quantified shadow/codegree bound;
-- prepare a prime-minus-one reservoir meeting the PP2 cell/pair/triple load endpoint;
-- construct an internally no-three spread bank meeting the PP2j external expectation endpoint;
+- prove a quantified shadow, projection, or codegree bound;
+- build a sparse row-lift subbank passing PP3p, PP3q, or PP3r;
+- construct large internally no-three component banks passing PP3z or PP3aa;
+- prepare a prime-minus-one reservoir meeting the PP2 cell/pair/triple endpoint;
 - prove the second-order concentration theorem for the alternating neutralization bank;
-- construct a monotone carry-signature potential for alternating closure;
-- construct absorbers for bounded-denominator perfect-interpolation chambers;
-- build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
-- extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
-- classify frozen cycles and alternating anchor closures.
+- construct a monotone carry-signature potential or bounded-denominator absorber;
+- build a superregular perfect-matching resampling oracle;
+- extend dense `O(1/N)` spread to sparse algebraic hosts with `O(1/d)` spread.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
