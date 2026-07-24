@@ -19,6 +19,20 @@ The numbering is local to this repository.
 | A1 | Affine finite-direction construction for \(D\)-good moduli | PROVED | `docs/05-subgroup-absorbers.md` |
 | A2 | Least-prime-factor criterion for \(D\)-good moduli | PROVED | `docs/05-subgroup-absorbers.md` |
 | A3 | Installed subgroup coset absorber | PROVED | `docs/05-subgroup-absorbers.md` |
+| CMA1 | Two affine permutation channels saturate every modulus | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA2 | Exact affine carry-determinant identity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA3 | Every affine modular channel has a real collinear triple for \(N\ge5\) | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA4 | Exact alternating-cycle decomposition of two affine layers | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMA5 | Affine corresponding-column displacement multiplicity is linear | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH1 | Unit hyperbolas omit every nonunit row and column | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH2 | Odd squarefree unit hyperbolas have \(2^{\omega(N)}\)-point diagonal collapses | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH3 | Odd prime-power unit hyperbolas have Hensel anti-diagonal collapses | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMH4 | Power-of-two unit hyperbolas have four-point diagonal collapses | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMZ1 | Zero-divisor multiples of line equations merge primitive fibres | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML1 | Real collinearity implies modular primitive-fibre collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML2 | Modular collinearity can be a false positive for the standard lift | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CML3 | Modular determinant zero plus \(|\Delta|<N\) implies real collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMCRT1 | Naive CRT product channels have unavoidable mixed-projection triples | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | B1 | High line meets an order-\(h\) block at most once when \(h\le H\) | PROVED | `docs/06-block-collateral-energy.md` |
 | B2 | Exact one-block collateral and drift identities | PROVED | `docs/06-block-collateral-energy.md` |
 | B3 | Block-shadow closure theorem | PROVED | `docs/06-block-collateral-energy.md` |
