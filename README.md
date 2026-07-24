@@ -6,112 +6,104 @@ A rigorous research notebook for attempts toward the classical conjecture
 D(n)=2n,
 \]
 
-where \(D(n)\) is the maximum number of points that can be selected from an \(n\times n\) integer grid with no three collinear.
+where \(D(n)\) is the maximum number of points that can be selected from an
+\(n\times n\) integer grid with no three collinear.
 
-> **Status:** This repository does **not** contain a complete proof. The conjecture remains open as of 24 July 2026. The purpose of this repository is to preserve proved lemmas, conditional reductions, failed pathways, counterexamples, computational tools, and promising next targets in a form suitable for independent checking.
+> **Status:** This repository does **not** contain a complete proof. The
+> conjecture remains open as of 24 July 2026. The notebook preserves proved
+> lemmas, conditional reductions, failed pathways, counterexamples,
+> computational certificates, and precise next targets.
 
 ## Repository map
 
-- [`STATUS.md`](STATUS.md): concise status and honesty ledger.
-- [`proofs/theorem-index.md`](proofs/theorem-index.md): theorem-by-theorem classification.
-- [`docs/00-problem-and-literature.md`](docs/00-problem-and-literature.md): problem, current literature, and conventions.
-- [`docs/01-saturation-and-reservoirs.md`](docs/01-saturation-and-reservoirs.md): two-per-row/column framework, clones, deficits, and secant shadows.
+- [`STATUS.md`](STATUS.md): current honesty ledger.
+- [`proofs/theorem-index.md`](proofs/theorem-index.md): global theorem index.
+- [`proofs/composite-modulus-theorem-index.md`](proofs/composite-modulus-theorem-index.md): composite-track theorem index.
+- [`tracks/all-n-composite-modulus.md`](tracks/all-n-composite-modulus.md): original composite task track.
+- [`tracks/all-n-composite-modulus-progress.md`](tracks/all-n-composite-modulus-progress.md): current CM1–CM6 progress and bottlenecks.
+
+### General repair programme
+
+- [`docs/01-saturation-and-reservoirs.md`](docs/01-saturation-and-reservoirs.md): saturation, clones, deficits, and secant shadows.
 - [`docs/02-reverse-scale-switching.md`](docs/02-reverse-scale-switching.md): descending-scale potential and batch repair.
-- [`docs/03-uniform-local-bank.md`](docs/03-uniform-local-bank.md): spread injection and explicit local-bank hypotheses.
+- [`docs/03-uniform-local-bank.md`](docs/03-uniform-local-bank.md): spread injection and local-bank hypotheses.
 - [`docs/04-protected-tomographic-trades.md`](docs/04-protected-tomographic-trades.md): exact line-sum-preserving trades.
-- [`docs/05-subgroup-absorbers.md`](docs/05-subgroup-absorbers.md): affine terminal configurations and installed coset-cycle absorbers.
-- [`docs/06-block-collateral-energy.md`](docs/06-block-collateral-energy.md): exact one-block collateral identities and block closure.
-- [`docs/07-failed-wall-pathway.md`](docs/07-failed-wall-pathway.md): false wall-termination lemma and translated-block counterexample.
-- [`docs/08-hyperbola-interleaver.md`](docs/08-hyperbola-interleaver.md): complementary modular hyperbolas, low-syndrome seeds, and Hamiltonian interleavers.
-- [`docs/09-orbit-tanner-and-mobius-cycles.md`](docs/09-orbit-tanner-and-mobius-cycles.md): orbit codebooks, Möbius secant matchings, cycle trades, and window products.
-- [`docs/10-cross-disciplinary-pathway.md`](docs/10-cross-disciplinary-pathway.md): radar, coding, tomography, and CSP interpretations.
-- [`docs/11-open-bottlenecks.md`](docs/11-open-bottlenecks.md): exact remaining lemmas and proposed experiments.
-- [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): claims that were corrected, weakened, or refuted.
-- [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected collision-aware bank theorem.
-- [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection theorem and local triple-load endpoint.
-- [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): six-cycle spread proof, dense superregular perfect-matching spread, and two-layer global conflict endpoint.
-- [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md): quotient-set inverse theorems, subgroup completion, and common-ratio repair banks.
-- [`docs/18-pfr-coset-anchor-propagation.md`](docs/18-pfr-coset-anchor-propagation.md): coset absorber banks and alternating anchor propagation.
-- [`docs/19-rational-coset-expansion.md`](docs/19-rational-coset-expansion.md): rational-function expansion of multiplicative cosets and the order-two exception.
-- [`docs/20-common-ratio-bank-conversion.md`](docs/20-common-ratio-bank-conversion.md): exact rectangle collateral and decoder-or-structure conversion.
-- [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): syndrome-weighted admissible quotient extraction and paid-bank lower bounds.
-- [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md): projective conic-pencil construction, exact opposite-channel secant profile, and ratio normal form.
-- [`docs/23-aligned-anchor-carry-cells.md`](docs/23-aligned-anchor-carry-cells.md): aligned-anchor determinant factorization, signature divisor bounds, and perfect-interpolation cells.
-- [`docs/24-secant-star-carry-dispersion.md`](docs/24-secant-star-carry-dispersion.md): universal product-carry dispersion for endpoint-disjoint stars in every channel pair.
-- [`docs/25-perfect-alignment-arithmetic.md`](docs/25-perfect-alignment-arithmetic.md): exact interpolation-parameter arithmetic and bounded-denominator chamber sparsity.
-- [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
-- [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
-- [`docs/27-composite-modulus-obstructions.md`](docs/27-composite-modulus-obstructions.md): all-modulus affine saturation, universal affine triple obstruction, composite hyperbola collapses, and CRT lift limitations.
-- [`docs/28-prime-power-completed-reciprocals.md`](docs/28-prime-power-completed-reciprocals.md): nonlinear full prime-power channels, exact valuation quadratics, Hensel tangent cells, and Hamiltonian companion layers.
-- [`docs/29-prime-power-displacement-syndrome.md`](docs/29-prime-power-displacement-syndrome.md): p-adic secant signatures, reduced displacement quadratics, and a one-channel syndrome bound.
-- [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
-- [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
-- [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
-- [`scripts/verify_carry_closure.py`](scripts/verify_carry_closure.py): checks same-channel cross carries, scalar wrap cells, rational centers, and chamber bounds.
-- [`scripts/verify_perfect_alignment.py`](scripts/verify_perfect_alignment.py): checks the zero-leading-carry classification and reduced-denominator chamber bounds.
-- [`scripts/verify_absorber.py`](scripts/verify_absorber.py): checks subgroup absorber states and protected line sums.
-- [`scripts/search_cycle_trades.py`](scripts/search_cycle_trades.py): extracts cross-channel syndrome graphs and Möbius cycles.
-- [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
-- [`scripts/verify_composite_modulus.py`](scripts/verify_composite_modulus.py): checks affine saturation/obstructions, composite hyperbola collapses, lift direction, and CRT mixed projections.
-- [`scripts/verify_prime_power_channels.py`](scripts/verify_prime_power_channels.py): checks completed-reciprocal permutations, tangent-cell line bounds, companion cycles, and digital no-three channels.
-- [`scripts/verify_prime_power_displacement.py`](scripts/verify_prime_power_displacement.py): checks p-adic displacement signatures and exact one-channel syndrome data.
+- [`docs/05-subgroup-absorbers.md`](docs/05-subgroup-absorbers.md): affine configurations and coset absorbers.
+- [`docs/06-block-collateral-energy.md`](docs/06-block-collateral-energy.md): exact block collateral and closure.
+- [`docs/08-hyperbola-interleaver.md`](docs/08-hyperbola-interleaver.md): complementary hyperbolas and Hamiltonian interleavers.
+- [`docs/09-orbit-tanner-and-mobius-cycles.md`](docs/09-orbit-tanner-and-mobius-cycles.md): orbit codebooks, secant matchings, and cycle trades.
+- [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): frozen-cycle counterexample and corrected bank theorem.
+- [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md): clone-space exact selection endpoint.
+- [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): dense matching spread and global conflict mass.
+- [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md) through [`docs/21-weighted-quotient-bank.md`](docs/21-weighted-quotient-bank.md): inverse-additive structure and paid common-ratio banks.
+- [`docs/22-incidence-conic-pencil.md`](docs/22-incidence-conic-pencil.md) through [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): carry cells, perfect alignment, wrap centers, and alternating repair banks.
+- [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected and refuted claims.
+
+### Composite and prime-power programme
+
+- [`docs/27-composite-modulus-obstructions.md`](docs/27-composite-modulus-obstructions.md): affine saturation, universal affine obstruction, composite hyperbola collapses, and CRT limitations.
+- [`docs/28-prime-power-completed-reciprocals.md`](docs/28-prime-power-completed-reciprocals.md) through [`docs/33-prime-power-companion-compatible-blocks.md`](docs/33-prime-power-companion-compatible-blocks.md): nonlinear full channels, tangent cells, displacement equations, top-digit blocks, and companion-compatible banks.
+- [`docs/34-prime-power-block-bank-collateral.md`](docs/34-prime-power-block-bank-collateral.md) through [`docs/38-prime-power-recursive-determinant-carries.md`](docs/38-prime-power-recursive-determinant-carries.md): all-stratum product banks, terminal obstruction, recursive quotient lifts, and determinant carries.
+- [`docs/39-crt-mixed-collision-factorization.md`](docs/39-crt-mixed-collision-factorization.md) through [`docs/43-prime-power-terminal-spread-family.md`](docs/43-prime-power-terminal-spread-family.md): CRT mixed collisions, tangent spacing, harmonic energy, and all-prime terminal families.
+- [`docs/44-prime-power-global-energy-bound.md`](docs/44-prime-power-global-energy-bound.md) and [`docs/45-prime-power-companion-global-syndrome.md`](docs/45-prime-power-companion-global-syndrome.md): quadratic-order one- and two-layer syndrome bounds.
+- [`docs/46-crt-local-arc-obstruction.md`](docs/46-crt-local-arc-obstruction.md) through [`docs/52-crt-slope-carry-signatures.md`](docs/52-crt-slope-carry-signatures.md): corrected CRT taxonomy, restricted recursive banks, exact average roots, recursive dispersion, digital obstruction, and slope-carry signatures.
+- [`docs/53-prime-power-divisor-collision-energy.md`](docs/53-prime-power-divisor-collision-energy.md) through [`docs/56-prime-power-cross-stratum-sum.md`](docs/56-prime-power-cross-stratum-sum.md): divisor-collision reduction, critical cells, singular sums, and the unconditional \(O(N^2\log N)\) one-channel syndrome.
+- [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
 
 Every mathematical item is tagged as one of:
 
-- **PROVED:** a complete proof is written in this repository.
-- **PROVED UNDER HYPOTHESES:** the implication is complete, but one or more hypotheses are not known to hold in the desired construction.
-- **CONDITIONAL:** a reduction or theorem schema whose premise remains open.
-- **HEURISTIC:** a proposed mechanism, not a theorem.
-- **REFUTED:** a tempting statement accompanied by a counterexample.
+- **PROVED:** a complete proof is written in the repository.
+- **PROVED UNDER HYPOTHESES:** the implication is complete, but a premise remains open.
+- **CONDITIONAL:** a reduction or theorem schema with an unresolved premise.
+- **HEURISTIC:** a proposed mechanism rather than a theorem.
+- **REFUTED:** a tempting statement accompanied by a counterexample or exact obstruction.
 
-The notebook deliberately keeps failed routes. In a long open problem, knowing exactly why a route fails is often as valuable as a new lemma.
+The notebook deliberately retains failed routes. In an open problem, an exact
+obstruction is often as valuable as a positive lemma.
 
-## Principal current pathway
+## Principal current pathways
 
-The strongest current synthesis is:
+### Prime-field repair
 
-1. Start from two complementary modular hyperbola permutations \(H_a\cup H_b\), viewed as two members of a projective conic pencil.
-2. Use their line cap, bounded displacement multiplicity, \(O(n\log n)\) triple syndrome, and exact opposite-channel secant profile.
-3. Encode row-column-preserving changes through multiplicative orbit blocks or cycle trades.
-4. Represent cross-channel bad triples as properly edge-coloured secant graphs whose colour classes are carry-filtered submatchings of projective involutions.
-5. Peel leaves; every residual core contains a Möbius cycle.
-6. Use collision-aware full permutation banks on cycle blocks.
-7. Apply inverse-additive theorems: small quotient sets yield common-ratio rectangle banks and subgroup-coset absorbers.
-8. Weight quotient extraction by actual triple degrees, producing a paid admissible common-ratio bank.
-9. Convert the bank: either one rectangle improves, or failure yields a channel-pair secant star or an aligned multiplicative anchor class.
-10. Apply carry classification. Every endpoint-disjoint star disperses through divisor-controlled product-carry signatures; aligned anchors disperse through nondegenerate coordinate-carry signatures or enter perfect affine-interpolation chambers.
-11. Apply perfect-alignment arithmetic and wrap-center factorization. Positive-density perfect chambers have bounded rational denominator and divisor-controlled occupancy at each rational center.
-12. Neutralize a dominant secant star by moving one endpoint from many star pairs through a constant-spread opposite-layer permutation bank.
-13. Analyze only the second-generation normalized certificate counts created by this joint bank.
-14. Prove a monotone alternating-closure potential, or construct finite-denominator absorbers for the remaining perfect chambers.
-15. Finish in a near-complete candidate host using the clone-space degree-constrained local-load theorem.
-16. In dense superregular candidate hosts, use spread perfect-matching measures; the missing upgrade is a local dependency/resampling theorem.
+Start from complementary modular hyperbolas, encode row-column-preserving
+changes through orbit or rectangle banks, use inverse-additive extraction and
+carry classification, neutralize dominant secant stars, and finish with a
+clone-space or superregular exact-selection theorem. The principal missing
+step is a global second-generation concentration or termination theorem.
 
-The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or divisor-controlled perfect alignment. A dominant first-generation star can also be removed exactly by an alternating endpoint-permutation bank. The main geometric target is therefore a second-order concentration/termination theorem for the normalized collateral of that joint bank.
+### Composite prime-power route
 
-The independent composite-modulus track now has a positive nonlinear prime-power host. Valuation-completed reciprocals are full permutations, every real line reduces to explicit valuation quadratics with one possible Hensel-tangent cell, and a universal companion layer gives saturation and one alternating Hamiltonian cycle. Same-channel secants are p-adically diagonal and the current general one-channel syndrome bound is \(O(N^{5/2}+N^2\log N)\). The remaining target is a constant or repairable tangent-cell bound, a near-linear two-channel syndrome, and mixed-projection-aware CRT assembly.
+Start from completed-reciprocal full channels and their companion layer. Use
+the recursive all-stratum fibre bank and all-prime conic terminal family.
+Deterministic one- and two-layer syndromes are now \(O(N^2\log N)\) for fixed
+prime base, and recursive marginals have expected harmonic energy
+\(O(N\log^3N)\). The principal missing step is a global first-separation
+decoder that converts local `O(1/p)` anti-concentration into an exact no-three
+state. Arbitrary composite assembly additionally requires CRT slope-carry
+incompatibility or absorption.
 
-## Running the checks
+## Running checks
 
-The scripts require Python 3.10+ and only the standard library.
+The scripts require Python 3.10+ and use the standard library unless a search
+script explicitly documents an optional solver.
 
 ```bash
-python scripts/verify_hyperbola.py --prime 17
-python scripts/verify_conic_incidence.py --prime 17
-python scripts/verify_aligned_carry.py --prime 17
-python scripts/verify_carry_closure.py --prime 17
-python scripts/verify_perfect_alignment.py --prime 17
-python scripts/verify_absorber.py --n 30 --h 5 --m 7
-python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
-python scripts/verify_carry_cycle_bound.py
 python scripts/verify_composite_modulus.py --max-modulus 40
 python scripts/verify_prime_power_channels.py --max-modulus 125
-python scripts/verify_prime_power_displacement.py --max-modulus 243
+python scripts/verify_prime_power_global_energy.py
+python scripts/verify_prime_power_companion_global.py
+python scripts/verify_prime_power_restricted_bank.py
+python scripts/verify_prime_power_recursive_harmonic.py --samples 100
+python scripts/verify_prime_power_cross_stratum_sum.py --max-modulus 125
+python scripts/verify_crt_slope_carry.py
+python scripts/verify_digital_64_completion_obstruction.py
+python scripts/verify_composite_finite_extensions.py
 ```
 
-These programs are sanity checks, not proofs for arbitrary \(n\).
+These programs are sanity checks and exact finite certificates, not proofs for
+arbitrary \(n\) unless the corresponding document supplies the general proof.
 
 ## Primary references
 
@@ -119,29 +111,9 @@ These programs are sanity checks, not proofs for arbitrary \(n\).
 - Kovács, Nagy, Szabó, *Randomised algebraic constructions for the no-\((k+1)\)-in-line problem*, arXiv:2508.07632.
 - Reiher, Schoen, *Note on the Theorem of Balog, Szemeredi, and Gowers*, arXiv:2308.10245.
 - Gowers, Green, Manners, Tao, *Marton's Conjecture in abelian groups with bounded torsion*, arXiv:2404.02244.
-- Raghavan, *Improved Bounds for the Freiman-Ruzsa Theorem*, arXiv:2512.11217.
 - Nenadov, Pham, *Spread blow-up lemma with an application to perturbed random graphs*, arXiv:2410.06132.
-- Pham, Sah, Sawhney, Simkin, *A Toolkit for Robust Thresholds*, arXiv:2210.03064.
 - Glock, Joos, Kim, Kühn, Lichev, *Conflict-free hypergraph matchings*, arXiv:2205.05564.
 - Joos, Mubayi, Smith, *Conflict-free Hypergraph Matchings and Coverings*, arXiv:2407.18144.
 - Lu, Szekely, *A new asymptotic enumeration technique: the Lovasz Local Lemma*, arXiv:0905.3983.
-- Ceko, Pagani, Tijdeman, *Algorithms for linear time reconstruction by discrete tomography II*, arXiv:2010.07862.
-
-## Contribution guidance
-
-A useful contribution should do at least one of the following:
-
-- verify or repair a proof tagged **PROVED**;
-- produce a small counterexample to a conditional lemma;
-- prove a quantified shadow/codegree bound;
-- prove the second-order concentration theorem for the alternating neutralization bank;
-- construct a monotone carry-signature potential for alternating closure;
-- construct absorbers for bounded-denominator perfect-interpolation chambers;
-- build a superregular perfect-matching resampling oracle or conflict-free exact-cover theorem;
-- extend dense \(O(1/N)\)-spread to sparse algebraic hosts with \(O(1/d)\)-spread;
-- classify frozen cycles and alternating anchor closures;
-- prove a divisor-sensitive exact-real bound inside completed-reciprocal Hensel tangent cells;
-- control companion cross-channel displacement and reduce the prime-power syndrome to \(O(N\log^C N)\);
-- construct a mixed-projection-aware ordered-box CRT assembly theorem.
 
 See [`CONTRIBUTING.md`](CONTRIBUTING.md).
