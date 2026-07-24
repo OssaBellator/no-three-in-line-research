@@ -77,7 +77,7 @@ T(R_{\mathbf c})
 \frac{2\sqrt N}{3}\mathcal E.
 \]
 
-Finite data place \(\mathcal E\) near \(N\log N\). The one-channel
+Finite data place \(\mathcal E\) near \(N\log N\). The one-channel
 syndrome target is therefore reduced to a near-linear harmonic direction-
 energy theorem, preferably after block contraction.
 
@@ -153,7 +153,7 @@ No scalable all-prime terminal family or all-composite construction is known.
 ## Revised bottlenecks
 
 1. **Harmonic direction energy.** Prove
-   \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), ideally after contracting
+   \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), ideally after contracting
    the deterministic top-digit blocks.
 2. **Recursive first-separation concentration.** Bound the weighted mass of
    signatures \(q+M+p^{k-1}D_1=0\) under the recursive CMR27 measure.
@@ -164,7 +164,7 @@ No scalable all-prime terminal family or all-composite construction is known.
 5. **Digital saturation at 64 and non-block lift to 128.** The direct bit-block
    extension is refuted; unrestricted completion remains open.
 6. **CRT direction separation.** Construct synchronized local pairs satisfying
-   \(\mathcal D_u\cap\mathcal D_v=\varnothing\).
+   \(\mathcal D_u\cap\mathcal D_v=\varnothing\).
 
 ## Checks
 
