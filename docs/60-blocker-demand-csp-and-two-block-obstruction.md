@@ -24,7 +24,7 @@ For a source edge `e in E_j`, define its retention set
 Source points in the other matching layer or outside all chosen blocks are fixed
 retained points.
 
-### Proposition PP3cz -- PROVED
+### Proposition PP3fa -- PROVED
 
 Let `z` be a candidate cell of block `i` and let `{p,q}` be a source blocker pair
 through `z`.  The exact bad box selecting the retained-pair triple `{p,q,z}` is
@@ -51,7 +51,7 @@ external-point blocker pairs.
 
 ## 2. Rank-three localization by endpoint blocks
 
-### Corollary PP3da -- PROVED
+### Corollary PP3fb -- PROVED
 
 A retained-pair blocker box has rank three only if its two deletable endpoints
 lie outside the controller block and lie in two distinct endpoint blocks.
@@ -85,7 +85,7 @@ for block `i` is **source-clean** if its eight patch points create no triple wit
 the resulting retained source, before the other patch is added.  This is a
 necessary condition for any complete two-block extension.
 
-### Proposition PP3db -- PROVED BY EXHAUSTIVE FINITE CHECK
+### Proposition PP3fc -- PROVED BY EXHAUSTIVE FINITE CHECK
 
 For every stored source side `n=8,9,10`, for both matching layers, and for every
 choice of two disjoint four-edge blocks, at least one of the two source-clean
