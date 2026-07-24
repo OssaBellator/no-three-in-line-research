@@ -115,6 +115,14 @@ geometric: convert a long fresh-weight witness into algebraic structure
 and current paid incidence. The latent \(\Omega(n^4\log n)\) obstruction
 is not discarded.
 
+[`geometric-cleaning-anchor-link.md`](geometric-cleaning-anchor-link.md)
+proves GC4b for each unweighted triple step in that witness. A high-load
+anchor has either a high-codegree pair or an endpoint-disjoint star of
+size at least \(d(v)/(2\Delta-1)\). This supplies the exact alternating
+bank topology; the remaining geometric obligation is to attach current
+paid incidence or convert the high-codegree pair into arithmetic
+structure.
+
 ## GC5 — Clean-host endpoint theorem
 
 ### Target statement
