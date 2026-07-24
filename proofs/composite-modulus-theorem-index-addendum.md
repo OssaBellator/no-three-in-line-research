@@ -1,7 +1,7 @@
 # Composite-modulus theorem index addendum
 
-This addendum records the child-translation results following CMR101. The main
-composite index remains in
+This addendum records the child-translation and balanced-law results following
+CMR101. The main composite index remains in
 [`composite-modulus-theorem-index.md`](composite-modulus-theorem-index.md).
 
 | ID | Statement | Status | Location |
@@ -17,3 +17,6 @@ composite index remains in
 | CMR110 | Degree-two forbidden matching banks have at least \(t!/72\) states and \(72/(t)_r\) cylinder spread | PROVED | `docs/70-prime-power-alternating-pencil-certificates.md` |
 | CMR111 | Child-pencil mass quantitatively controls the size of an extracted alternating star bank | PROVED | `docs/70-prime-power-alternating-pencil-certificates.md` |
 | CMR112 | A frozen extracted bank forces normalized rank-\(1/2/3\) concentration at least \(t/216\) | PROVED | `docs/70-prime-power-alternating-pencil-certificates.md` |
+| CMR113 | Exact cell balance forces uniformity in the reciprocal shift for each coefficient | PROVED | `docs/71-prime-power-balanced-law-classification.md` |
+| CMR114 | The endpoint shifts \(0\) and \(p-1\) have exact quadratic-character no-three criteria | PROVED | `docs/71-prime-power-balanced-law-classification.md` |
+| CMR115 | Balanced completed-reciprocal no-three laws exist exactly for primes \(p\equiv1\pmod4\) | PROVED | `docs/71-prime-power-balanced-law-classification.md` |
