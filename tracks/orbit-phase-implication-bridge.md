@@ -384,9 +384,13 @@ The protected-bank obstruction now follows a lossless decision tree.
 
 The remaining frontiers are now precise.
 
-1. **Carry aggregation after a failed label gate.**  Pay and aggregate
-   the product signatures, cross-carry levels, or root changes returned
-   by OP4h across many incompatible bicycles.
+1. **Source-factor participation.**  Transfer current protected-bank
+   payment to the source factors of a failed OP4h bicycle.
+   [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
+   proves that bank weights do not transfer by logic alone.  With
+   factor-conservative edge weights, its OP4i gate already returns
+   complete rational-orbit density, one-sided completion deficits, a
+   heavy repeated factor, or product-carry growth.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
@@ -411,3 +415,7 @@ certificates.
 for the OP4g channel-profile theorem and quotient identities.  It also
 compares the OP4h fixed-normalization propagation with brute force and
 checks every success and failure output of the complete gate.
+
+`scripts/verify_phase_paid_edge_density.py` checks the OP4i payment
+boundary and exhausts the fixed-template divisor-capacity interface on
+all really collinear oriented factors for \(p=11\).

@@ -69,9 +69,20 @@ law, and its cross/product-carry routes; a three-channel factor supplies
 three mixed product-carry routes.  An exact bicycle audit then either
 constructs globally consistent literal labels for OP4e or returns a
 root/literal mismatch with all source carry records retained.  Uniform
-arithmetic control is still open at the paid aggregation of those
-returned records, the RI5 fixed-edge conversion, large rank-three
-matchings, action-literal kernels, and wide action CSPs.
+arithmetic control is still open at the source-factor participation
+needed to pay those returned records, the RI5 fixed-edge conversion,
+large rank-three matchings, action-literal kernels, and wide action
+CSPs.
+
+[`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
+proves OP4i and the payment boundary.  Protected-bank correction weight
+does not automatically transfer to a small implication contradiction.
+For factor-conservative weights already localized to one quotient edge,
+however, OP4i gives an exact alternative: simultaneous density in the
+two rational source cosets and image coset when both fibre roots are
+witnessed, one-sided orbit growth with missing companions exposed, one
+heavy repeated source factor, or divisor-controlled product-carry
+signature growth.
 
 ## OP2 — Arithmetic Tanner graph
 

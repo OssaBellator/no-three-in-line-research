@@ -390,10 +390,18 @@ output.
    theorem would improve the decoder runtime, but is not needed for
    the structural alternative.
 
+[`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
+proves OP4i for a selected certified quotient edge.  Protected-bank
+gain does not automatically transfer to an implication bicycle.  Once
+factor-conservative occurrence payment is supplied, OP4i returns
+complete rational-orbit density, one-sided orbit growth with explicit
+completion deficits, one heavy repeated source factor, or quantified
+product-carry growth.
+
 The next independent endpoints are therefore the RI5
-row-column-preserving conversion of a selected quotient edge, the
-dispersion/absorption of large rank-three matchings, and paid
-aggregation of carry records returned by incompatible bicycles.
+row-column-preserving conversion of the dense fixed-edge output, the
+source-factor participation theorem needed to pay failed bicycles, and
+the dispersion/absorption of large rank-three matchings.
 
 `scripts/verify_phase_geometric_labels.py` exhausts every modularly
 collinear triple in the nonzero grids for

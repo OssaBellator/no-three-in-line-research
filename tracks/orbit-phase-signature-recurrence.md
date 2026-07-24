@@ -497,6 +497,15 @@ order-two-template, or larger-ratio classification.  OP4f returns a
 switch-disjoint rank-three matching or a bounded switch kernel whose
 conditioned residuals are all OP4b instances.
 
+[`orbit-phase-geometric-labels.md`](orbit-phase-geometric-labels.md)
+and
+[`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
+continue the rank-two side through OP4g--OP4i.  Every source factor now
+has an exact rational/carry record, whole-bicycle literal compatibility
+is decided exactly, and factor-conservative fixed-edge payment is
+routed to complete rational density, one-sided completion deficits,
+heavy source reuse, or carry growth.
+
 Therefore repeated carry signatures are no longer an anonymous
 failure of monotonicity or an excuse to combine incompatible
 historical corrections.  At most
@@ -505,8 +514,10 @@ current recurrent class must be processed.  The remaining frontier
 consists of five named arithmetic outputs:
 
 1. high-overlap action-literal kernels;
-2. implication edges lacking a certified rational quotient label;
-3. certified fixed-edge RI5 square/collapse templates;
+2. failed OP4h label gates whose source factors still need a
+   current-syndrome payment certificate;
+3. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
+   deficits, or its heavy-factor/carry-growth alternatives;
 4. large switch-disjoint rank-three carry transversals;
 5. the wide-support action CSPs already separated by OP3j.
 
