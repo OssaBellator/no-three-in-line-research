@@ -53,4 +53,7 @@ This ledger collects the results specific to
 | CMR27 | Recursive lifts form an exact multiscale cylinder measure | PROVED | `docs/37-prime-power-recursive-quotient-bank.md` |
 | CMR28 | Prime-power lifts satisfy an exact lower-digit, mixed-digit, and top-digit determinant recurrence | PROVED | `docs/38-prime-power-recursive-determinant-carries.md` |
 | CMR29 | Every real triple has a finite recursive first-separation carry signature | PROVED | `docs/38-prime-power-recursive-determinant-carries.md` |
+| CMR30 | Primitive-line parameter spacing sharpens the exact tangent-cell population | PROVED | `docs/40-prime-power-tangent-parameter-spacing.md` |
+| CMR31 | Completed-reciprocal line occupancy is height-sensitive | PROVED | `docs/41-prime-power-harmonic-direction-energy.md` |
+| CMR32 | One-channel syndrome is controlled by harmonic direction energy | PROVED | `docs/41-prime-power-harmonic-direction-energy.md` |
 | CMF1 | Saturated no-three configurations exist for composite \(N=4,6,8,9,10\) | PROVED BY EXHAUSTIVE FINITE CHECK | `proofs/composite-finite-constructions.md` |
