@@ -24,7 +24,7 @@ saturated states with an exact cylinder law. Contracting the blocks recovers
 the identical companion host at exponent \(k-1\). Iterating this gives an
 exact recursive multiscale bank.
 
-### CM2 — real line cap: narrowed but open
+### CM2 — real line cap: height-sensitive but open
 
 For odd prime powers, every line intersection reduces to simple lower
 valuation roots plus one possible top Hensel-tangent cell. The coarse cap is
@@ -33,35 +33,53 @@ valuation roots plus one possible top Hensel-tangent cell. The coarse cap is
 O(\sqrt N+\log N).
 \]
 
-CMR11 proves that tangent roots lie in one or two spaced residue classes, and
-an unbalanced Euclidean slope shortens the feasible coordinate interval by
-the coefficient ratio. Large cells must therefore be both `p`-adically
-singular and slope-balanced.
-
-A constant or repairable uniform line cap is still open.
-
-### CM3 — displacement and syndrome: obstruction localized and banked
-
-Same- and cross-channel secants have explicit valuation quadratics and
-mixed-layer carry identities. The current one-channel triple bound is
+CMR30 sharpens the top population on a primitive line of height `H` to
 
 \[
-O(N^{5/2}+N^2\log N).
+O\left(1+\frac{p^t}{H}\right),
 \]
 
-CMR14 proves that bounded same-channel displacement multiplicity is impossible
-for completed reciprocals: one exact top-digit vector repeats at least
+where \(2t\) is the discriminant valuation. Large cells must therefore be
+both highly singular and supported on small primitive directions.
+
+A constant or repairable uniform line cap is still open, but the remaining
+exception is now height-weighted rather than global.
+
+### CM3 — syndrome reduced to harmonic direction energy
+
+Same- and cross-channel secants have explicit valuation quadratics and
+mixed-layer carry identities. Bounded same-channel displacement multiplicity
+is impossible: CMR14 gives one exact top-digit vector repeated at least
 
 \[
 \frac{p-1}{p^2}N
 \]
 
-times. CMR15–CMR22 localize those repeats to disjoint `p`-point blocks and
-install executable one- and two-layer permutation banks with exact normalized
-certificate expectations.
+times. CMR15–CMR22 localize those repeats to disjoint blocks and install
+executable permutation banks.
 
-Thus the prime-field bounded-codegree target is refuted, but its
-structured-collision replacement is constructed.
+Define
+
+\[
+\mathcal E
+=
+\sum_{\{P,Q\}}
+\frac1{H(P,Q)}.
+\]
+
+CMR32 proves
+
+\[
+T(R_{\mathbf c})
+\le
+\frac{2k}{3}\binom N2
++
+\frac{2\sqrt N}{3}\mathcal E.
+\]
+
+Finite data place \(\mathcal E\) near \(N\log N\). The one-channel
+syndrome target is therefore reduced to a near-linear harmonic direction-
+energy theorem, preferably after block contraction.
 
 ### CM4 — prime-power carry calculus: recursive decoder space constructed
 
@@ -69,7 +87,7 @@ The branch now contains:
 
 - valuation-stratum line quadratics;
 - exact odd-prime square-root multiplicities;
-- exact-real tangent spacing;
+- exact-real primitive-parameter tangent spacing;
 - same- and cross-layer displacement quadratics;
 - mixed-layer determinant carries;
 - all-stratum collision blocks and full two-layer banks;
@@ -83,11 +101,30 @@ The branch now contains:
 The remaining decoder theorem is a concentration bound for these recursive
 first-separation certificates.
 
-### CM5 — CRT assembly: open
+### CM5 — CRT saturation and mixed-collision criterion
 
-Real triples always project to modular triples, but naive coordinatewise CRT
-products contain mixed-projection triples. No ordered-box assembly theorem yet
-handles cases where different point pairs collapse in different factors.
+Synchronized local permutation pairs assemble to exact two-layer saturation.
+For a mixed collision
+
+\[
+P_1-P_0=uA,
+\qquad
+P_2-P_0=vB,
+\]
+
+the global determinant factors exactly as
+
+\[
+\Delta(P_0,P_1,P_2)=uv\det(A,B).
+\]
+
+Under local modular arc hypotheses, every global real triple has this mixed
+form. Therefore disjoint scaled collision-direction sets give a positive
+ordered-box CRT assembly criterion.
+
+The remaining construction task is to build local pairs whose two scaled
+collision-direction sets are disjoint, rather than merely controlling local
+line caps.
 
 ### CM6 — finite coverage and digital progress
 
@@ -115,19 +152,19 @@ No scalable all-prime terminal family or all-composite construction is known.
 
 ## Revised bottlenecks
 
-1. **Recursive first-separation concentration.** Bound the weighted mass of
-   signatures \(q+M+p^{k-1}D_1=0\) under the recursive CMR27 measure, charging
-   each triple at its first nonzero quotient carry.
-2. **Balanced tangent-cell theorem.** Bound exact real populations when the
-   discriminant is highly divisible and the line coefficients are comparable.
-3. **Terminal family for all primes.** Replace the finite CMR24 table by an
+1. **Harmonic direction energy.** Prove
+   \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), ideally after contracting
+   the deterministic top-digit blocks.
+2. **Recursive first-separation concentration.** Bound the weighted mass of
+   signatures \(q+M+p^{k-1}D_1=0\) under the recursive CMR27 measure.
+3. **Balanced small-height tangent lines.** Sum the remaining highly singular,
+   low-height directions without reverting to a global square-root cap.
+4. **Terminal family for all primes.** Replace the finite CMR24 table by an
    algebraic or probabilistic family with usable spread.
-4. **Digital saturation at 64.** Pair the CMR12 permutation with a second
-   disjoint layer without creating a real triple.
-5. **Non-block digital lift to 128.** Allow changes throughout the old block or
-   triangular nonlinear Boolean terms; direct one-bit extension is refuted.
-6. **Mixed-projection CRT signature.** Record which pair collapses in each
-   local factor and force a small determinant or absorbable pattern.
+5. **Digital saturation at 64 and non-block lift to 128.** The direct bit-block
+   extension is refuted; unrestricted completion remains open.
+6. **CRT direction separation.** Construct synchronized local pairs satisfying
+   \(\mathcal D_u\cap\mathcal D_v=\varnothing\).
 
 ## Checks
 
@@ -142,6 +179,9 @@ python scripts/verify_prime_power_terminal_mass.py --max-prime 13
 python scripts/verify_prime_power_terminal_configurations.py
 python scripts/verify_prime_power_recursive_quotient.py --max-modulus 125
 python scripts/verify_prime_power_recursive_determinant.py
+python scripts/verify_crt_mixed_collision.py --max-modulus 60
+python scripts/verify_prime_power_tangent_parameter.py --max-modulus 243
+python scripts/verify_prime_power_harmonic_energy.py --max-modulus 243
 ```
 
 These are finite exact checks. They do not constitute a complete all-`n`
