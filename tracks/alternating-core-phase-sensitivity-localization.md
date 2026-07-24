@@ -486,6 +486,13 @@ claim checkable: prove chart completeness with
 derivative.  Multi-block phase sensitivity and irrelevant raw phase
 multiplicity are no longer part of the frontier.
 
+[`alternating-core-orbit-literal-charts.md`](alternating-core-orbit-literal-charts.md)
+performs this audit for canonical O1/OP1a checks.  AC3aa constructs the
+exact chart from active phase literals, AC3ab proves the sharp
+\(h\)-label lower bound when all O1 cells are observable, and AC3ac
+keeps hard behavior exact while bounding every light one-block
+collateral derivative by \(2\tau\).
+
 `scripts/verify_ac_phase_sensitivity.py` exhausts Boolean behavior
 records on small phase products, checks the Hamming-edge criterion,
 constructs the coordinate observational quotient, audits coarse and

@@ -306,7 +306,15 @@ identifies phases with identical observable behavior and applies AC3p
 to the resulting effective alphabet, which can be much smaller than
 \(h^3-1\).
 
-## Dictionary after AC3s--AC3z
+[`alternating-core-orbit-literal-charts.md`](alternating-core-orbit-literal-charts.md)
+then proves AC3aa--AC3ac for the canonical O1/OP1a behavior itself.
+The exact chart isolates only phase literals used by active hard and
+soft checks.  A threshold chart preserves hard feasibility exactly and
+bounds a light one-block collateral derivative by \(2\tau\).  Exact O1
+channels can nevertheless require all \(h\) labels, so a large hard
+literal family is retained as a real arithmetic obstruction.
+
+## Dictionary after AC3s--AC3ac
 
 For a canonical phase-block certificate token in a scope-complete
 support-conflict graph, the same-token branch now has a finite audit:
@@ -318,8 +326,15 @@ support-conflict graph, the same-token branch now has a finite audit:
 3. **small observable phase:** the behavioral quotient has
    \(a_{\rm eff}=p^{o(1)}\) states, handled by AC3p--AC3q even when the
    raw exact alphabet is large;
-4. **large observable phase:** one block has large observational rank,
-   and AC3y returns an explicit one-block legality or cost derivative.
+4. **small active literal support:** AC3aa gives an exact
+   \(p^{o(1)}\) chart even when the raw orbit and its channel have many
+   phases;
+5. **hard-exact light collateral:** AC3ac isolates every hard and heavy
+   literal and charges less than \(2\tau\) for each same-chart
+   one-block collateral derivative;
+6. **arithmetic obstruction:** one block has a large hard-literal
+   family or a paid heavy-literal kernel, entering OP2 expansion or an
+   explicit RI/BDA structured interface.
 
 A token which is not represented by canonical phase blocks remains in
 the anchor-realized or terminally labelled branches of the role
@@ -331,10 +346,10 @@ assertion: AC3v supplies it canonically from the full repair envelopes
 and exact scoped factors.  If that graph is dense, AC3x preserves
 current paid weight while localizing the failure to one structural
 incidence type.  AC3y then localizes phase sensitivity at an additional
-loss of at most nine.  The remaining role frontier is to prove that the
-existing carry/denominator/quotient/orbit chart is complete with
-subpolynomial image, or classify AC3z.1's explicit same-chart
-one-block derivative.
+loss of at most nine.  AC3aa makes the canonical chart complete without
+including unused phases, and AC3ac quantifies the only permitted soft
+coarsening.  The remaining role frontier is the arithmetic treatment of
+the explicit large hard-literal family or paid heavy-literal kernel.
 
 `scripts/verify_ac_canonical_roles.py` checks the rank-three mismatch
 bound, exact and compressed product relations, sensitivity witnesses,
@@ -343,3 +358,6 @@ and private-support extraction on exhaustive small phase systems.
 scope projection and additive identities.
 `scripts/verify_ac_phase_sensitivity.py` checks the one-block audit and
 behavioral quotient exhaustively on small phase products.
+`scripts/verify_ac_orbit_literal_charts.py` checks exact active-literal
+factorization, hard/heavy/light bounds, and the O1 phase/channel lower
+bound.

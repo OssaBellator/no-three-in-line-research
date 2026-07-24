@@ -54,6 +54,14 @@ AC3y--AC3z are also internal: they localize all phase sensitivity to one
 block, compress exact phases by observable behavior, and audit any
 proposed arithmetic chart.  They do not assume that OP2 or RI has
 already proved that chart complete.
+AC3aa--AC3ac import only the proved O1 partition and OP1a canonical
+phase-literal representation.  They construct the exact active-literal
+chart, prove that an exact O1 channel can require all \(h\) labels, and
+give a hard-exact heavy-soft chart with explicit \(2\tau\) one-block
+collateral error and at most \(3W/\tau\) heavy literals.  A large hard
+literal family remains an OP2 input; a subgroup-coset or
+bounded-denominator label is not called terminal until the independent
+RI or BDA paid-collateral interface applies.
 
 ## Independent selection endpoints
 

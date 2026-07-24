@@ -400,9 +400,12 @@ AC3y--AC3z in
 further reduce the same-token output.  Every phase-sensitive dense
 class retains at least one ninth of its weight on one flipped block and
 one discrepancy kind, and exact phase values compress to their
-behavioral quotient.  The remaining frontier is completeness of the
-concrete arithmetic chart, or classification of its explicit
-same-label one-block derivative.
+behavioral quotient.  AC3aa--AC3ac in
+[`alternating-core-orbit-literal-charts.md`](alternating-core-orbit-literal-charts.md)
+make the canonical O1 chart exact on active literals and quantify every
+permitted light-cost coarsening.  The remaining frontier is expansion
+or structured classification of a large hard-literal family or paid
+heavy-literal kernel.
 
 `scripts/verify_ac_primal_conflicts.py` exhausts arbitrary Boolean
 factors on a four-cell system, grid factor/constraint states on a

@@ -332,9 +332,26 @@ or returns two phases with the same tuple and an explicit one-block
 derivative.  Under append-only history, the coordinate observational
 partitions refine monotonically; a complete chart bounds strict
 refinements by its total label count, while any history reset is an
-AC3e reopening.  The remaining role frontier is this concrete
-arithmetic-chart completeness statement; arbitrary multi-block
-sensitivity and irrelevant raw phase multiplicity are closed.
+AC3e reopening.
+
+[`alternating-core-orbit-literal-charts.md`](alternating-core-orbit-literal-charts.md)
+proves AC3aa--AC3ac for the canonical O1/OP1a part of that chart audit.
+Every active real triple is one rank-at-most-three canonical phase
+check.  Isolating only the phase literals actually used by the active
+hard and soft checks gives an exact chart with at most
+\(|L_i\setminus\{q_i\}|+2\) labels per block.  A hard-exact
+heavy-soft chart additionally merges light collateral literals with
+one-block error less than \(2\tau\), while the total number of heavy
+literals is at most \(3W/\tau\).  This is sharp: the O1 channel
+\(a\lambda^{-t}\) is injective in \(t\), and a behavior record
+containing all cell probes needs all \(h\) phase labels.
+
+The remaining canonical role frontier is therefore a large family of
+distinct hard phase literals, or a paid heavy-literal kernel; it is the
+explicit OP2 arithmetic-expansion input.  BDA residue charts and RI
+subgroup-coset labels remain delegated interfaces with their own
+collateral hypotheses.  Arbitrary multi-block sensitivity, irrelevant
+raw phase multiplicity, and unrecorded light-cost error are closed.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -427,6 +444,8 @@ upgrade AC6 while those inputs remain open.
 - exhaust one-block phase derivatives, coordinate observational
   quotients, arithmetic-chart audits, and weighted sensitivity
   localization;
+- exhaust canonical active-literal charts, O1 channel injectivity, and
+  the hard-exact heavy-soft \(2\tau\) derivative bound;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 

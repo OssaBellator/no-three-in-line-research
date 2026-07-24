@@ -331,9 +331,17 @@ AC3y--AC3z in
 replace the raw exact alphabet by its coordinate observational quotient
 and replace every multi-block sensitivity witness by a one-block
 derivative.  A proposed arithmetic chart either determines all
-relations and costs or exposes an explicit same-chart derivative.  The
-remaining geometric check is completeness of the concrete
-carry/denominator/quotient/orbit chart for those one-block flips.
+relations and costs or exposes an explicit same-chart derivative.
+
+AC3aa--AC3ac in
+[`alternating-core-orbit-literal-charts.md`](alternating-core-orbit-literal-charts.md)
+resolve this audit for canonical O1/OP1a checks.  The exact chart
+isolates only active hard and soft phase literals.  Its thresholded
+version keeps hard relations exact and charges less than \(2\tau\) for
+one light-coordinate collateral derivative, while a large exact O1
+channel is proved to be a genuine \(h\)-label obstruction.  The
+remaining geometric check is expansion or structured classification of
+the resulting large hard-literal family or paid heavy-literal kernel.
 
 The important remaining numerical case is no longer an unbounded fan.
 It is the finite phase-collateral profile in AC3p.1.  Repeated factors
@@ -342,3 +350,5 @@ which preserve the common message cannot masquerade as fresh progress.
 `scripts/verify_ac_shared_token_phase.py` exhausts small message
 families, checks the bounded core and phase-loss potential, and compares
 the additive message formula with brute-force private-state products.
+`scripts/verify_ac_orbit_literal_charts.py` separately checks the exact
+canonical charts, thresholded derivative bounds, and O1 lower bound.
