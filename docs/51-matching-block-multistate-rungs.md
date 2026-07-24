@@ -126,14 +126,21 @@ triples wholly inside one state have been removed.  The global fixed points and
 other variable supports are disjoint from this local support, so PP3bi records
 all remaining triples. ∎
 
-Nonemptiness is not automatic.  For example, the six-edge no-three matching
+Nonemptiness is not automatic, already for five source edges.  The no-three
+matching
 
 ```text
-(1,3), (2,5), (3,6), (4,1), (5,4), (6,2)
+(1,4), (2,5), (4,1), (5,2), (6,6)
 ```
 
-has no clean four-edge canonical state.  This is an exact counterexample to the
-tempting universal block-cleanliness claim.
+has no clean canonical four-edge state: whichever source point is retained, it
+lies on a secant of the corresponding adjacent-pair patch.  This is an exact
+counterexample to the tempting universal block-cleanliness claim.
+
+The obstruction is specific to the canonical state restriction.  Allowing all
+36 width-two degree states for each four-edge deletion gives 14 locally clean
+states on this example, so enlarging the endpoint-adapted geometry remains a
+viable way to recover state density.
 
 ## 4. Block packing at prime-gap scale
 
