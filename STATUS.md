@@ -21,7 +21,7 @@ remains open. This repository does **not** contain a complete proof.
   criteria, tomographic trades, subgroup absorbers, and exact one-block
   collateral identities are proved under their stated hypotheses.
 - Clone-space and superregular perfect-matching endpoints reduce a complete
-  proof to explicit local conflict-mass or resampling conditions.
+  proof to explicit local conflict-mass, resampling, or absorption conditions.
 - Complementary prime-field hyperbola channels have bounded line occupancy,
   low syndrome, Möbius secant matchings, and explicit cycle/rectangle repair
   banks.
@@ -63,56 +63,68 @@ remains open. This repository does **not** contain a complete proof.
 - The remaining external child load is either quadratic per depth or exposes an
   explicit alternating endpoint bank.
 
-### Alternating closure and terminal cores
+### Alternating closure and inherited parent escape
 
 - Global-baseline transfer prevents recursive repair from resetting its
   comparison state.
 - Dense replacement-touching triple families compress to disjoint defects,
-  alternating banks, or heavy lines.
-- Disjoint defects and heavy lines are executable continuations; no separate
-  repeated-charge ledger is needed for those classes.
+  alternating banks, or heavy lines; the geometric outcomes are executable.
 - Every positive target load contracts to a four-endpoint, one-target bank.
 - Every degree-two forbidden endpoint board of size at least four has an
   allowed perfect matching; size three is the sharp failure threshold.
-- The abstract four-endpoint boards have 2--9 states and exact rank atoms
-  \(3/4,2/3,1/2\).
-- Any positive global saturated minimum generates a finite four-trade cycle,
-  with exact balance of created and removed triples.
+- Abstract four-endpoint boards have 2--9 states and exact rank atoms
+  \(3/4,2/3,1/2\). Any positive global saturated minimum generates a finite
+  four-trade cycle with exact defect-flow balance.
 - An explicit \(N=4\) potential-one two-cycle exists above a separate
-  potential-zero state. Therefore universal normalized four-board descent is
+  potential-zero state. Universal normalized four-board descent is therefore
   false.
-
-### Inherited parent escape structure
-
 - Complete \(N=5\) and balanced prime-seven root censuses show that terminal
-  four-core traps are escaped by complete parent moves; at prime seven a joint
-  two-layer parent move is genuinely necessary.
-- Old-cell-clean ordered joint-parent banks have exact split-rank collateral
-  laws. At nonroot recursive blocks the inherited layer row fibres are disjoint,
-  so the joint bank simplifies to independent derangements.
-- Reciprocal and prime-seven nonroot joint-parent collateral sums are
-  \(O_p(N^2\log^2N)\), with exact fixed-rank derangement cylinders.
-- Summed destroyed populations count each triple once per occupied prefix block,
-  hence between one and three times at each scale.
-- Every closure branch has a canonical prefix envelope whose two layer row sets
-  are invariant. Envelope depth can strictly decrease at most \(k\) times for
-  \(N=p^k\).
-- Every inherited nonroot four-core is the unique nine-state four-object
-  derangement board. Its sixteen Pareto-minimal rank profiles are completely
-  classified.
-- Every rank-\(1/2/3\) cover of the full parent derangement bank needs at least
-  \(t-1\) cylinders. Equality is exactly one complete row or column rank-one
-  secant shadow.
-- Any terminal Pareto subcover accounts for at most \(9/11\) of the parent law,
-  forcing at least \(2/11\) additional cover mass.
-- A batch of \(R\) simultaneous terminal targets has one parent state with at
-  least
+  traps are escaped by complete parent moves; at prime seven a joint two-layer
+  move is genuinely necessary.
+- Nonroot inherited layer row fibres are disjoint, so old-cell-clean joint
+  parent banks simplify to independent derangements. Their reciprocal and
+  prime-seven collateral sums are \(O_p(N^2\log^2N)\).
+- Every closure branch has a canonical prefix envelope with invariant row sets;
+  strict envelope expansion occurs at most \(k\) times for \(N=p^k\).
+- Every inherited nonroot four-core is the unique nine-state derangement board,
+  with sixteen exact Pareto-minimal cover profiles.
+- Every full parent cover needs at least \(t-1\) cylinders. A terminal Pareto
+  subcover accounts for at most \(9/11\) of the parent law.
+- A batch of \(R\) terminal targets has a parent state producing at least
+  
   \[
   \left\lceil\frac{2R}{11}\right\rceil
   \]
-  actual new triples outside all selected local terminal covers.
-- Any such new triple crossing the current envelope forces a strict envelope
-  expansion. This crossing resolution can occur at most \(k\) times.
+  
+  actual new triples outside all selected terminal explanations.
+- Crossing new triples force strict envelope expansion. Internal covers use at
+  least \(\lfloor t/2\rfloor\) real-line signatures and contain exact Hall walls.
+- Iterated Hall-wall peeling preserves a half-degree matching host while
+  avoiding \(\lfloor t/2\rfloor-1\) designated candidate-only triples.
+- Every half-degree host has no essential matching edge. Later essentiality is
+  created only through an alternating exchange cycle with an earlier deleted
+  cell, giving an acyclic certificate-ancestry graph.
+
+### Local-load and dyadic conflict endpoint
+
+- Sampling the complete parent permutation and applying the matching-space
+  local lemma gives a sharp contrapositive: every frozen parent has one board
+  vertex with weighted rank-\(1/2/3\) load above \(1/24-1/t\).
+- For \(t\ge48\), rank one or rank two exposes an executable alternating bank,
+  or one parent row/column carries more than
+  
+  \[
+  \frac{t(t-1)(t-2)}{144}
+  \]
+  
+  candidate-only triples.
+- One dyadic primitive-height band carries at least a \(1/\lceil\log_2t\rceil\)
+  fraction of that cubic load.
+- In a band \(H\le\max(|u|,|v|)<2H\), one candidate cell belongs to fewer than
+  \(3t^2\) conflicts and one compatible cell pair has codegree below \(t/H\).
+- For \(H\ge t^\varepsilon\), these are exactly the standard bounded-conflict
+  hypotheses. A published conflict-free matching theorem therefore gives an
+  almost-perfect derangement matching avoiding the whole band.
 
 ## Important correction
 
@@ -129,22 +141,23 @@ No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-1. **Internal envelope no-return.** After the final strict envelope expansion,
-   prove that repeated \(2/11\) parent-lifted defect batches cannot recycle the
-   same internal first-separation, primitive direction, quotient, and carry
-   signatures indefinitely.
-2. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
+1. **Exact high-band completion.** Adapt the conflict-free
+   matching-and-covering theorem to the duplicated-row reserve model, obtaining
+   a full parent permutation rather than an almost-perfect matching while
+   preserving all protected conflicts.
+2. **Low-height carry absorption.** Control dyadic bands below
+   \(t^\varepsilon\) using first-separation, primitive direction, quotient, and
+   carry signatures inside one fixed envelope.
+3. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
    coarse prefix or joint-parent repairs.
-3. **Prime-field terminal conversion.** Transfer the inherited-envelope or
-   larger-parent escape mechanism to prime-field carry cycles.
-4. **Square-root divisor boundary.** Remove or absorb the residual nearly
+4. **Prime-field terminal conversion.** Transfer the inherited-envelope or
+   reserve-completion mechanism to prime-field carry cycles.
+5. **Square-root divisor boundary.** Remove or absorb the residual nearly
    singular collision terms.
-5. **Further balanced prime families.** Extend the non-reciprocal grid
+6. **Further balanced prime families.** Extend the non-reciprocal grid
    factorization beyond prime seven.
-6. **CRT and product assembly.** Control mixed projections and simultaneous
-   zero-divisor slope carries.
-7. **Arbitrary side-length coverage.** Prime-power progress alone does not yet
-   cover every integer \(n\).
+7. **CRT, product, and side-length coverage.** Control mixed projections and
+   cover arbitrary integer \(n\).
 
 ## Important refutations retained in the notebook
 
@@ -171,8 +184,8 @@ No later valid theorem depends on the refuted strengthening.
 
 There is no complete proof. On the composite prime-power route, bank
 construction, first-separation summation, prefix collateral, terminal
-contraction, parent-cover lifting, and crossing-envelope expansion are now
-closed. The principal missing theorem is an **internal fixed-envelope
-no-return lemma** for the \(2/11\) parent-lifted defect mass. After that one still
-needs a coarse-to-fine recreation budget and a mechanism covering arbitrary
-side lengths.
+contraction, parent lifting, Hall peeling, and high-band bounded-conflict
+verification are closed. The principal immediate theorem is **exact reserve
+completion for high primitive-height bands**; low bands still require the
+fixed-envelope carry ledger. A coarse-to-fine budget and arbitrary side-length
+coverage remain necessary afterward.
