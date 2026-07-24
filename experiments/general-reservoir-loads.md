@@ -161,3 +161,34 @@ These examples reinforce the PP3 requirement: an arbitrary saturated seed can
 have a completely shadowed future corner. A successful all-`n` route must
 prepare the seed, delete a structured reservoir, and control the internal
 directions of the resulting completion bank.
+
+## 6. Exhaustive reservoir-row search on the stored corpus
+
+Running
+
+```bash
+python scripts/search_row_lift_reservoirs.py \
+  certificates/prime-patching-small.json
+```
+
+enumerates every two- and three-row reservoir in every stored certificate.
+Across the 17 `(n,t)` cases with `2<=n<=10` and `t in {2,3}`, no unrestricted
+full row-lift bank contains a clean state. The best minimum certificate counts
+are:
+
+| `n` | `t=2` | `t=3` |
+|---:|---:|---:|
+| 2 | 4 | -- |
+| 3 | 2 | 3 |
+| 4 | 2 | 3 |
+| 5 | 4 | 3 |
+| 6 | 4 | 3 |
+| 7 | 5 | 5 |
+| 8 | 5 | 7 |
+| 9 | 5 | 6 |
+| 10 | 6 | 7 |
+
+This is a finite statement about the stored seeds, not an asymptotic
+refutation. It does show that choosing reservoir rows while retaining the full
+four-permutation state space is insufficient on the current corpus. Direction
+constraints or state pruning must be part of the PP3 preparation mechanism.
