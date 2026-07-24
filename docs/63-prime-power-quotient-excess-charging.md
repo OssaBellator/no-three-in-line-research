@@ -255,10 +255,11 @@ Combine CMR85, CMR87, and CMR88. Finally use
 
 and average over the recursive product bank. ∎
 
-The quotient-incidence charging target is therefore complete at the
-quadratic-polylogarithmic scale. The remaining prefix-repair obstruction is
-entirely in the normalized rank-two and rank-three terms from CMR78, or in a
-sharper-than-first-moment treatment of the modular quotient syndrome.
+The quotient-incidence charging target is complete at the
+quadratic-polylogarithmic scale. CMR90--CMR92 separately close the normalized
+rank-two and rank-three prefix terms. The remaining recursive problem is a
+termination theorem for repeated repairs, especially the external child-scale
+rank-one class isolated by CMR99--CMR101.
 
 The exact finite checks are in
 [`scripts/verify_prime_power_quotient_excess.py`](../scripts/verify_prime_power_quotient_excess.py).
