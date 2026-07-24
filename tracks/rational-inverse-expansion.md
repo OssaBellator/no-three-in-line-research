@@ -74,6 +74,20 @@ It follows that every subset of one source coset loses at most
 The remaining RI1 input is target-coset distribution or quotient growth,
 not source-fibre cardinality.
 
+[`rational-inverse-target-cosets.md`](rational-inverse-target-cosets.md)
+proves RI1e:
+
+\[
+\left|N(x_0H,y_0H)-\frac{p-3}{m^2}\right|<3\sqrt p
+\]
+
+for every source and target coset. A dense subset \(C\) therefore meets
+at least \(|C|/A_m(p)\) target cosets, with explicit two-coset density
+bounds once \(|C|>A_m(p)\). This proves the corrected RI1 target-coset
+alternative for every fixed subgroup index and sufficiently large \(p\).
+The remaining issue is uniform growing-index control and absorber
+conversion.
+
 ## RI2 — Union-of-cosets image theorem
 
 ### Target statement
@@ -97,6 +111,22 @@ unless the source cosets form one of finitely many exceptional chains. A weaker 
 The domain must explicitly remove or isolate the cosets containing `1` and
 the pole `r`; otherwise `F_r(C)` is not a subset of `F_p^*` or is not
 defined.
+
+### Small-index case proved
+
+RI2a in
+[`rational-inverse-target-cosets.md`](rational-inverse-target-cosets.md)
+proves maximal coverage
+
+\[
+N_H(F_r(C\setminus\{1,r\}))=m
+\]
+
+whenever \(p-3>3(m^2-1)\sqrt p\). This includes every fixed subgroup
+index and the asymptotic range
+\(m<(1/\sqrt3-o(1))p^{1/4}\). The remaining RI2 problem is the
+large-index range, where several source-coset character sums must be
+combined rather than bounded separately.
 
 ## RI3 — Simultaneous small-doubling classification
 
@@ -177,7 +207,8 @@ The exact collision involution, subgroup-overlap formula and Weil bound,
 full-subgroup RI1 obstruction, and singleton RI4 obstruction are now
 proved and checked by `scripts/verify_rational_inverse.py`,
 `scripts/verify_rational_subgroup_overlap.py`, and
-`scripts/verify_rational_weil_overlap.py`.
+`scripts/verify_rational_weil_overlap.py`. Target-coset equidistribution
+is checked by `scripts/verify_rational_target_cosets.py`.
 
 ## Completion criterion
 

@@ -93,6 +93,8 @@ The numbering is local to this repository.
 | RI1b | Dense coset nonexpansion yields a bilinear subgroup curve | PROVED | `tracks/rational-inverse-fibre-energy.md` |
 | RI1c | Full-coset collision loss equals an explicit subgroup--Möbius overlap | PROVED | `tracks/rational-inverse-subgroup-overlap.md` |
 | RI1d | Weil bounds full-coset collision overlap with \(O(\sqrt p)\) error | PROVED | `tracks/rational-inverse-weil-overlap.md` |
+| RI1e | Full source cosets are Weil-equidistributed among target cosets | PROVED | `tracks/rational-inverse-target-cosets.md` |
+| RI2a | Small-index unions of full source cosets cover every target coset | PROVED | `tracks/rational-inverse-target-cosets.md` |
 | RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |
