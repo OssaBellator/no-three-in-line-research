@@ -74,27 +74,38 @@ This index collects the product/composition results on
 | PX67 | Every bad rectangle triple is destroyed at least `3(n-4)` times across the complete column-transposition bank | PROVED | `docs/55-rectangle-transposition-decoder.md` |
 | PX68 | Column transpositions cover every outside point once and every nontrivial inserted pair at most once | PROVED | `docs/55-rectangle-transposition-decoder.md` |
 | PX69 | Rectangle transpositions give an exact improvement-or-one/two-point-shadow inequality | PROVED | `docs/55-rectangle-transposition-decoder.md` |
-| PX70 | A primitive-height-`h` line meets one rectangle corner block at most `1+2n/h` times | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
-| PX71 | Transversal completion codegree decays inversely with rectangle-pair primitive height | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
-| PX72 | Low-height rectangle pairs can have full-order `Theta(n^3)` transversal codegree | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
-| PX73 | Height filtering gives the exact rank-two/rank-three conflict tradeoff | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
-| PX74 | The side-eight all-transposition class has no bit-affine full-selector template, even with arbitrary `P` | PROVED FINITE | `docs/56-bit-affine-transposition-obstruction.md` |
-| PX75 | Affine rectangle states avoid every prescribed direction satisfying the unit-slope condition | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
-| PX76 | Rough moduli admit a slope protecting any finite prescribed direction set | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
-| PX77 | Rough moduli admit factor-compatible rectangle states protecting all directions through height `H` | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
-| PX78 | Additive-coset shifts install exponentially many independent protected rectangle states | PROVED | `docs/58-protected-rectangle-coset-absorbers.md` |
-| PX79 | Constant normalized coset certificate load implies an exact protected no-three state | PROVED | `docs/59-protected-coset-local-load-barrier.md` |
-| PX80 | The direct protected `Z_25` coset bank violates the PX79 load threshold by more than sixteen thousand | PROVED FINITE | `docs/59-protected-coset-local-load-barrier.md` |
-| PX81 | Independent affine row and column maps in each additive coset preserve every protected line capacity | PROVED | `docs/60-two-coordinate-protected-coset-bank.md` |
-| PX82 | Prime-order protected cosets have at least `(ell-1-|D|)^2` admissible slope pairs and an exponential state bank | PROVED | `docs/60-two-coordinate-protected-coset-bank.md` |
-| PX83 | The protected affine coset measure has exact one- and two-index cylinder laws | PROVED | `docs/61-protected-affine-cylinder-bounds.md` |
-| PX84 | Protected affine coset states have a sharp rank-two spread barrier | PROVED | `docs/61-protected-affine-cylinder-bounds.md` |
-| PX85 | Protected nonlinear coset states are exactly two sequential simultaneous-rainbow perfect matchings | PROVED | `docs/62-protected-rainbow-matching-reduction.md` |
-| PX86 | Rank-three spread for both rainbow stages conditionally yields protected joint rank-three spread | PROVED CONDITIONALLY | `docs/62-protected-rainbow-matching-reduction.md` |
+| PX70 | One-point pair shadow decomposes into a clean radial secant star or radial defect core | PROVED | `docs/56-radial-shadow-trichotomy.md` |
+| PX71 | A transposition-local minimum has a clean star, radial defect core, or loaded bank line | PROVED | `docs/56-radial-shadow-trichotomy.md` |
+| PX72 | Every sufficiently large clean star contains a common-layer movable endpoint set | PROVED | `docs/57-rectangle-star-neutralization.md` |
+| PX73 | Clean radial stars admit a `128/(t)_r`-spread saturation-preserving neutralization bank | PROVED | `docs/57-rectangle-star-neutralization.md` |
+| PX74 | The clean-star bank has an exact normalized one-, two-, and three-cell collateral inequality | PROVED | `docs/57-rectangle-star-neutralization.md` |
+| PX75 | One permutation layer contains at least half the points of every loaded selected line | PROVED | `docs/58-loaded-line-neutralization.md` |
+| PX76 | Loaded selected lines admit a `128/(m)_r`-spread saturation-preserving neutralization bank | PROVED | `docs/58-loaded-line-neutralization.md` |
+| PX77 | The loaded-line bank has an exact normalized collateral inequality | PROVED | `docs/58-loaded-line-neutralization.md` |
+| PX78 | A bounded-occupancy radial core yields many common-layer movable endpoints | PROVED | `docs/59-radial-core-neutralization.md` |
+| PX79 | Radial defect cores admit a `128/(t)_r`-spread saturation-preserving neutralization bank | PROVED | `docs/59-radial-core-neutralization.md` |
+| PX80 | The radial-core bank has an exact normalized collateral inequality | PROVED | `docs/59-radial-core-neutralization.md` |
+| PX81 | A primitive-height-`h` line meets one rectangle corner block at most `1+2n/h` times | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX82 | Transversal completion codegree decays inversely with rectangle-pair primitive height | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX83 | Low-height rectangle pairs can have full-order `Theta(n^3)` transversal codegree | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX84 | Height filtering gives the exact rank-two/rank-three conflict tradeoff | PROVED | `docs/55-direction-stratified-conflict-barrier.md` |
+| PX85 | The side-eight all-transposition class has no bit-affine full-selector template, even with arbitrary `P` | PROVED FINITE | `docs/56-bit-affine-transposition-obstruction.md` |
+| PX86 | Affine rectangle states avoid every prescribed direction satisfying the unit-slope condition | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
+| PX87 | Rough moduli admit a slope protecting any finite prescribed direction set | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
+| PX88 | Rough moduli admit factor-compatible rectangle states protecting all directions through height `H` | PROVED | `docs/57-affine-rectangle-direction-protection.md` |
+| PX89 | Additive-coset shifts install exponentially many independent protected rectangle states | PROVED | `docs/58-protected-rectangle-coset-absorbers.md` |
+| PX90 | Constant normalized coset certificate load implies an exact protected no-three state | PROVED | `docs/59-protected-coset-local-load-barrier.md` |
+| PX91 | The direct protected `Z_25` coset bank violates the PX90 load threshold by more than sixteen thousand | PROVED FINITE | `docs/59-protected-coset-local-load-barrier.md` |
+| PX92 | Independent affine row and column maps in each additive coset preserve every protected line capacity | PROVED | `docs/60-two-coordinate-protected-coset-bank.md` |
+| PX93 | Prime-order protected cosets have at least `(ell-1-|D|)^2` admissible slope pairs and an exponential state bank | PROVED | `docs/60-two-coordinate-protected-coset-bank.md` |
+| PX94 | The protected affine coset measure has exact one- and two-index cylinder laws | PROVED | `docs/61-protected-affine-cylinder-bounds.md` |
+| PX95 | Protected affine coset states have a sharp rank-two spread barrier | PROVED | `docs/61-protected-affine-cylinder-bounds.md` |
+| PX96 | Protected nonlinear coset states are exactly two sequential simultaneous-rainbow perfect matchings | PROVED | `docs/62-protected-rainbow-matching-reduction.md` |
+| PX97 | Rank-three spread for both rainbow stages conditionally yields protected joint rank-three spread | PROVED CONDITIONALLY | `docs/62-protected-rainbow-matching-reduction.md` |
 
-The branch has exact factor-independent product theorems for `2 x 3`, `2 x 4`,
-`2 x 5`, and `2 x 6`, together with an all-side `O(n log n)` approximate
-doubling theorem, a transposition decoder, and a protected matching framework.
-Exact infinite multiplicative closure now reduces to absorbing logarithmic
-shadow concentration or proving the simultaneous-rainbow rank-three spread
-hypothesis in PX86; arithmetic coverage remains open.
+The branch has exact factor-independent products for base sides three through six,
+an all-side `O(n log n)` approximate doubling theorem, and first-generation
+absorbers for every endpoint of transposition descent. Exact infinite closure
+now reduces to controlling the resulting second-generation fixed-rank matching
+certificates, or proving the simultaneous-rainbow rank-three spread hypothesis
+PX97 after low-direction protection. Arithmetic coverage remains open.
