@@ -58,6 +58,9 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
 49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
 50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
+51. **Exact prime-patching one-strip interface.** Every boundary-only one-strip patch is either a one-point corner splice or a two-edge strip switch; blocker secants through each inserted point form a matching and give an exact deletion-cover criterion.
+52. **Pair-aware prime-patching endpoint.** A wider corner host satisfying explicit omitted-cell, old-anchor-pair, and internal-triple local-load bounds contains an exact saturated patch.
+53. **Prime-gap transfer.** A proved patch width covering the backward gaps from solved prime-minus-one sizes transfers those solutions to all sufficiently large side lengths.
 
 ## What remains conditional
 
@@ -71,6 +74,7 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
 - A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
 - Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
+- A prepared prime-minus-one reservoir satisfying the prime-patching cell/pair/triple load endpoint for a width large enough to match an unconditional prime-gap theorem.
 
 ## Important refutations
 
@@ -82,7 +86,8 @@ The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 
 - A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
 - A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
 - Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
+- Repeating boundary-only one-strip prime patches cannot cover all sizes: exhaustive branching from the unique side-two seed reaches no side-five state.
 
 ## Bottom line
 
-There is no complete proof. The reviewed branch is merged. Carry and wrap-center classification now make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
+There is no complete proof. Carry and wrap-center classification make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The principal global bottleneck remains second-generation normalized collateral and termination. Independently, the all-`n` prime-patching track now has exact one-strip rigidity and a pair-aware corner endpoint, but still lacks a prime-minus-one reservoir meeting the required local loads over a prime-gap-scale width.
