@@ -42,6 +42,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`docs/26-same-channel-cross-carries-and-wrap-centers.md`](docs/26-same-channel-cross-carries-and-wrap-centers.md): exact same-channel cross carries, rational wrap centers, and chamber divisor bounds.
 - [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): two-colour endpoint-permutation banks that neutralize the dominant secant star.
 - [`docs/27-all-n-prime-patching.md`](docs/27-all-n-prime-patching.md): exact boundary states, prime-gap transfer, finite certificates, and obstruction search for the all-`n` route.
+- [`docs/28-one-strip-and-pair-aware-patching.md`](docs/28-one-strip-and-pair-aware-patching.md): complete one-strip rigidity, blocker matchings, finite seed graph, and pair-aware wider-corner endpoint.
 - [`scripts/verify_hyperbola.py`](scripts/verify_hyperbola.py): checks modular-hyperbola line bounds and displacement multiplicities for small primes.
 - [`scripts/verify_conic_incidence.py`](scripts/verify_conic_incidence.py): checks projective secant involutions and exact tangent/secant counts for all ratios and anchors.
 - [`scripts/verify_aligned_carry.py`](scripts/verify_aligned_carry.py): checks the aligned-anchor determinant, factorization, and interpolation identities.
@@ -52,6 +53,9 @@ where \(D(n)\) is the maximum number of points that can be selected from an \(n\
 - [`scripts/verify_carry_cycle_bound.py`](scripts/verify_carry_cycle_bound.py): verifies the frozen carry cycle and two-colour anchor release.
 - [`scripts/verify_no_three_certificate.py`](scripts/verify_no_three_certificate.py): verifies finite `2n`-point certificates with exact integer determinants.
 - [`scripts/search_boundary_extension.py`](scripts/search_boundary_extension.py): exhaustively searches small row-column-preserving extension patches with explicit cutoff semantics.
+- [`scripts/analyze_one_strip_extensions.py`](scripts/analyze_one_strip_extensions.py): checks the complete boundary-only `t=1` state list.
+- [`scripts/enumerate_one_strip_seeds.py`](scripts/enumerate_one_strip_seeds.py): enumerates the exact labeled one-strip seed graph for small sides.
+- [`scripts/analyze_corner_patch_loads.py`](scripts/analyze_corner_patch_loads.py): computes old-pair, old-anchor-pair, and internal-triple loads for wider corner patches.
 
 ## Research discipline
 
@@ -88,6 +92,8 @@ The strongest current synthesis is:
 
 The original one-colour **carry-cycle dispersion lemma is refuted** by an exact \(p=11\) frozen cycle. The weighted quotient-bank bottleneck is closed. Both structural branches of a failed paid bank now reduce to explicit carry-signature growth or divisor-controlled perfect alignment. A dominant first-generation star can also be removed exactly by an alternating endpoint-permutation bank. The main geometric target is therefore a second-order concentration/termination theorem for the normalized collateral of that joint bank.
 
+The independent all-`n` prime-patching track now has a complete one-strip classification and a pair-aware corner endpoint. Its remaining bottleneck is a prepared prime-minus-one reservoir meeting explicit cell-, pair-, and triple-load bounds over a width large enough for prime-gap transfer.
+
 ## Running the checks
 
 The scripts require Python 3.10+ and only the standard library.
@@ -101,11 +107,14 @@ python scripts/verify_perfect_alignment.py --prime 17
 python scripts/verify_absorber.py --n 30 --h 5 --m 7
 python scripts/search_cycle_trades.py --prime 17 --a 1 --b 3
 python scripts/verify_carry_cycle_bound.py
-python scripts/verify_no_three_certificate.py certificates.json
+python scripts/verify_no_three_certificate.py certificates/prime-patching-small.json
 python scripts/search_boundary_extension.py core.json --t 1 --max-delete 2 --boundary-only
+python scripts/analyze_one_strip_extensions.py certificates/prime-patching-small.json
+python scripts/enumerate_one_strip_seeds.py --max-n 5
+python scripts/analyze_corner_patch_loads.py certificates/prime-patching-small.json --n 3 --t 10
 ```
 
-These programs are sanity checks, not proofs for arbitrary \(n\).
+These programs are sanity checks or finite exhaustive checks, not proofs for arbitrary \(n\) unless explicitly paired with a proved finite classification.
 
 ## Primary references
 
@@ -128,6 +137,7 @@ A useful contribution should do at least one of the following:
 - verify or repair a proof tagged **PROVED**;
 - produce a small counterexample to a conditional lemma;
 - prove a quantified shadow/codegree bound;
+- prepare a prime-minus-one reservoir meeting the PP2 cell/pair/triple load endpoint;
 - prove the second-order concentration theorem for the alternating neutralization bank;
 - construct a monotone carry-signature potential for alternating closure;
 - construct absorbers for bounded-denominator perfect-interpolation chambers;
