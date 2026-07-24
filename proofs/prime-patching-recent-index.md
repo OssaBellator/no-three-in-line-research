@@ -74,6 +74,7 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3jc--PP3jh | Divisor factorization regularizes anchored transitions | PROVED | `docs/93-anchored-transition-divisor-regularization.md` |
 | PP3ji--PP3jn | Two-scale thinning closes endpoint source validity | PROVED | `docs/94-two-scale-endpoint-source-validity.md` |
 | PP3jo--PP3js | Designated-credit recapture avoidance and residual shadow endpoint | PROVED | `docs/95-designated-credit-recapture-avoidance.md` |
+| PP3jt--PP3jx | Shadow-support permutation cleaning and zero-cost endpoint criterion | PROVED | `docs/96-shadow-support-permutation-cleaning.md` |
 
 ## Current exact target
 
@@ -97,39 +98,43 @@ A positive-density failure of controller-aware safety produces either:
 2. `m^0.525` resource-disjoint bad entries with distinct labels, controllers,
    and endpoint-disjoint blocker pairs.
 
-The resource branch is now source-valid. If its endpoint unary forbidden density
-is `o(1)`, two-scale thinning to any
+The resource branch is source-valid. Under sparse unary endpoint shadow,
+two-scale thinning to any
 
 ```text
 q=m^kappa,  0<kappa<1/40,
 ```
 
 followed by permutation-LLL cleaning produces a saturation-preserving no-three
-endpoint trade. The proof removes:
+endpoint trade. Transpositions, directed 3-cycles, anchored transitions,
+rank-four anchored pairs, and every inserted-triple support class are closed.
 
-- unary-invalid endpoint cells through pruning;
-- transpositions and directed 3-cycles through the permutation LLL;
-- anchored two-step transitions through divisor regularization;
-- every high-support anchored pair and inserted triple through rank-sensitive
-  thinning.
+The guaranteed `q` removal-credit units may be protected from direct recapture.
+More strongly, every positive residual unary-shadow cell and binary-shadow pair
+may be forbidden once. If their simple support degrees satisfy
 
-The guaranteed `q` removal-credit units can also be protected from direct
-recapture. The recapture cells form a union of partial matchings; if that union
-has degree `o(q)`, it is added to the unary LLL family at negligible cost.
+```text
+d_rec + d_unary = o(q),
+d_binary        = o(q^2),
+```
+
+the permutation local lemma produces a source-admissible endpoint trade with
+**zero insertion shadow**, hence a strict potential decrease.
 
 Every successful paid trade strictly decreases a fixed nonnegative integer
 controller-shadow potential while preserving the controller pools, so a uniform
 conversion theorem automatically terminates.
 
-The remaining bottleneck is now purely weighted controller-shadow conversion:
+The remaining bottleneck is reduced to the following support concentrations:
 
 - prove the controller-aware global label graphs satisfy PP3gl directly; or
-- convert the blocker-star branch; and
-- in the resource branch, control one of the explicit residual alternatives:
-  a dense unary endpoint shadow, a rich recapture fibre, residual unary shadow
-  `A_res`, or residual binary shadow `B_G`.
+- convert the original blocker-star branch; or
+- in the resource branch, handle dense unary endpoint source shadow, a rich
+  designated-credit recapture fibre, a unary insertion-shadow fibre, or a binary
+  insertion-shadow star.
 
-Source admissibility of the resource endpoint trade is no longer open.
+Diffuse weighted residuals and source admissibility of the resource endpoint
+trade are no longer open.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
