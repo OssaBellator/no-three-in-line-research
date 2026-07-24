@@ -112,45 +112,58 @@ CMR93--CMR95 prove fine-to-coarse invariance of every unprocessed quotient
 charge. CMR96--CMR101 add a recursive-compatible reciprocal node bank and cancel
 all triples wholly inside one rigidly translated child subtree.
 
-CMR102 corrects the proposed next step: direct descent of the remaining weak
-node-rank-one class to the ordinary finer prefix bank is impossible. A parent
-node change moves a child subtree to a different row residue modulo
-\(p^{s+1}\), while the finer rematching bank preserves its old row fibre.
-
-CMR103--CMR105 replace that invalid descent by the exact vertical
-child-translation pencil
+CMR102 shows that direct descent of the remaining weak node-rank-one class to
+the ordinary finer prefix bank is impossible. CMR103--CMR106 replace it by the
+support-pruned vertical pencil
 
 \[
-\mathcal V(A)=\sum_{\xi,\eta}W(\xi,\eta),
+\mathcal V_\Omega(A)
+=
+\sum_{(\xi,\eta)\text{ supported}}W(\xi,\eta).
 \]
 
-where `W(xi,eta)` counts external triples created when child `xi` is rigidly
-placed in output row digit `eta`. The geometry-free bounds are
+CMR107--CMR109 close the pencil-mass problem as a dichotomy. A concentrated
+one- or two-point pencil exposes an alternating endpoint bank of size at least
+seven. If no such bank exists, the total expected weak pencil collateral over
+all nodes at one depth is less than
 
 \[
-\sum_\eta W_1(\xi,\eta)
-\le
-L\binom{|Z|}{2},
+240N^2.
+\]
+
+CMR110 improves every degree-two forbidden matching bank from the original
+constant `128` to
+
+\[
+|\Omega(F)|\ge\frac{t!}{72},
 \qquad
-\sum_\eta W_2(\xi,\eta)
-\le
-|Z|\binom L2.
+\Pr(Q\subseteq\pi)\le\frac{72}{(t)_r}.
 \]
 
-Thus the local-bank construction, quotient excess charging, endpoint removal,
-higher-rank collateral, and internal child-core cancellation are closed. The
-remaining recursive issue is a concentration or absorber theorem for the
-vertical translation-pencil potential, together with iteration after coarse
-repairs.
+CMR111 makes the extraction quantitative: the star size is proportional to the
+pencil mass. CMR112 proves that if the extracted bank is frozen, then one of its
+three normalized collateral ranks satisfies
+
+\[
+\frac{T_r}{(t)_r}\ge\frac{t}{216}.
+\]
+
+Thus local-bank construction, quotient charging, endpoint removal, higher-rank
+prefix collateral, internal child-core cancellation, and vertical-pencil
+concentration are closed. The remaining recursive problem is the same
+alternating concentration-conversion problem as on the main branch, now attached
+to an explicit p-adic node, scale, and star size.
 
 ### Composite-modulus open lemmas
 
-1. **Vertical child-pencil concentration.** Bound `V(A)` using secant-shadow,
-   carry, or opposite-layer structure, or build a stronger node bank that
-   randomizes child translations with rank-two spread.
+1. **Alternating pencil concentration conversion.** Starting from the CMR112
+   rank-`1/2/3` certificate, force either a decreasing joint parent/endpoint
+   state, a paid quotient or carry defect, or expansion to an opposite-layer
+   node bank.
 2. **Termination after coarse repairs.** CMR93 protects unprocessed coarser
    quotients, but a later coarse repair may recreate fine stars. Prove that the
-   reintroduced fine mass is paid by the coarse potential decrease.
+   reintroduced fine mass is paid by the coarse potential decrease or by a
+   lexicographic scale budget.
 3. **Sharper modular quotient syndrome.** Improve the current
    `O_p(sm^2)` bound for `Z_s`, or exploit inherited primitive line signatures to
    beat the raw factor `3t^2` in CMR86.
@@ -173,8 +186,8 @@ The following should be exhaustively tested for small primes:
 - classify frozen one-colour cycles and their alternating anchor closures;
 - distribution of \(q_s\) for real carry-filtered cycles;
 - existence of alternating two-colour closures that remain jointly frozen;
-- which CC3 certificate type dominates frozen examples;
-- vertical child-pencil profiles `W(xi,eta)` and their line signatures;
+- which CMR112/CC3 certificate rank dominates frozen child-pencil banks;
+- whether opposite-layer node expansion unlocks concentrated pencil examples;
 - fine mass recreated by one coarse prefix repair;
 - inherited line-signature multiplicities inside `M_s`;
 - nearly singular completed-reciprocal divisor collisions;
@@ -184,10 +197,10 @@ The following should be exhaustively tested for small primes:
 
 ## Recommended order of work
 
-1. Prove concentration or structural expansion for the vertical child-pencil
-   potential `V(A)`.
-2. Build a lexicographic termination potential for recursive-compatible node
-   repairs.
+1. Convert the CMR112 rank-`1/2/3` alternatives into forced opposite-layer or
+   paid-defect expansion.
+2. Build a lexicographic termination potential for the resulting alternating
+   node closures.
 3. Quantify fine-star recreation under the full prefix-rematching bank.
 4. Sharpen the modular quotient syndrome and inherited line-signature
    multiplicity.
@@ -196,6 +209,4 @@ The following should be exhaustively tested for small primes:
 7. Build a mixed-projection-aware CRT assembly theorem.
 8. Continue exact finite searches at `N=14` and beyond.
 9. Search jointly for digital two-layer constructions.
-10. Convert the original CC3 concentration alternatives into forced
-    opposite-colour expansion.
-11. Integrate both prime-field and prime-power repairs with descending scales.
+10. Integrate both prime-field and prime-power repairs with descending scales.
