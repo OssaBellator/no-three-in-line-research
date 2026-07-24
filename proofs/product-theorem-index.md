@@ -34,6 +34,7 @@ This index collects the product/composition results on
 | PX27 | One canonical unmodified `2 x 5` host has a 35-line deletion-minimal unsatisfiable core | PROVED FINITE | `docs/37-canonical-2x5-unsat-core.md` |
 | PX28 | Fixing one inner permutation while retaining both outer layers gives an explicit saturated blockwise product | PROVED | `docs/38-complete-blockwise-reversal-census.md` |
 | PX29 | Exactly four identity/reversal block patterns rescue `2 x 5`; each has the complete recorded factor/orientation census | PROVED FINITE | `docs/38-complete-blockwise-reversal-census.md` |
+| PX30 | Simultaneous-reversal one-inner-layer products have the exact orientation census recorded through base side eight | PROVED FINITE | `docs/39-one-layer-reversal-classification.md` |
 
 The branch still has no infinite multiplicative closure theorem or arithmetic
 coverage theorem.
