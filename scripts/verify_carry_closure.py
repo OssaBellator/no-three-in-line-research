@@ -5,7 +5,8 @@ Checks:
 - same-channel cross-carry factorization and divisor bounds;
 - scalar-lift wrap determinant criterion;
 - nondegenerate carry cells contain at most two hyperbola points;
-- degenerate cells have the claimed common rational center.
+- degenerate cells have the claimed common rational center;
+- perfect-wrap chambers obey the centered factorisation bound.
 
 This is a finite sanity check, not a proof for arbitrary p.
 """
@@ -115,6 +116,8 @@ def check_same_channel(p: int) -> None:
 
 
 def check_wrap_cells(p: int) -> None:
+    divisor_cap = max(tau(n) for n in range(1, p * p))
+
     for c in range(1, p):
         channel = [hpoint(c, x, p) for x in range(1, p)]
 
@@ -144,6 +147,13 @@ def check_wrap_cells(p: int) -> None:
                 common_divisor = gcd(alpha - 1, beta - 1)
                 alpha_reduced = (alpha - 1) // common_divisor
                 beta_reduced = (beta - 1) // common_divisor
+                largest_multiplier = max(alpha, beta)
+                carry_value_count = (
+                    2 * p * common_divisor * common_divisor
+                    + largest_multiplier * largest_multiplier
+                    - 1
+                ) // (largest_multiplier * largest_multiplier) + 1
+                chamber_bound = 2 * carry_value_count * divisor_cap
 
                 for (carry_a, carry_b), items in groups.items():
                     coefficient = (
@@ -176,7 +186,7 @@ def check_wrap_cells(p: int) -> None:
                     for point, _ in items:
                         point_a = lifted_multiple(alpha, point, p)
                         point_b = lifted_multiple(beta, point, p)
-                        base = (
+                        centered = (
                             common_divisor * point[0]
                             - p * center_index[0],
                             common_divisor * point[1]
@@ -191,13 +201,25 @@ def check_wrap_cells(p: int) -> None:
                             common_divisor * (point_b[1] - point[1]),
                         )
                         assert vector_a == (
-                            (alpha - 1) * base[0],
-                            (alpha - 1) * base[1],
+                            (alpha - 1) * centered[0],
+                            (alpha - 1) * centered[1],
                         )
                         assert vector_b == (
-                            (beta - 1) * base[0],
-                            (beta - 1) * base[1],
+                            (beta - 1) * centered[0],
+                            (beta - 1) * centered[1],
                         )
+                        assert abs(centered[0]) * largest_multiplier < (
+                            p * common_divisor
+                        )
+                        assert abs(centered[1]) * largest_multiplier < (
+                            p * common_divisor
+                        )
+                        assert (
+                            centered[0] * centered[1]
+                            - common_divisor * common_divisor * c
+                        ) % p == 0
+
+                    assert len(items) <= chamber_bound
 
 
 def main() -> None:
