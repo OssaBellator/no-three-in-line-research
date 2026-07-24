@@ -51,7 +51,7 @@ A constant or repairable uniform line cap for the deterministic completed
 reciprocal remains open, but the exception is now height-weighted rather than
 global.
 
-### CM3 — deterministic and recursive harmonic energy separated
+### CM3 — deterministic syndrome improved to quadratic order
 
 Same- and cross-channel secants have explicit valuation quadratics and
 mixed-layer carry identities. Bounded same-channel displacement multiplicity
@@ -64,21 +64,29 @@ is impossible: CMR14 gives one exact top-digit vector repeated at least
 times. CMR15–CMR22 localize those repeats to disjoint blocks and install
 executable permutation banks.
 
-For the deterministic completed reciprocal, CMR32 gives
+For the deterministic completed reciprocal, CMR45 converts harmonic energy to
+divisor-collision counts. CMR47–CMR54 classify and sum those collisions:
+regular same-stratum cells have `O(N/d)` mass; the singular same-stratum cell
+has `O(M/d+sqrt(M))` mass; and each cross-stratum gap has an explicit quadratic
+whose summed roots obey the same type of estimate. The resulting unconditional
+bound is
 
 \[
-T(R_{\mathbf c})
-\le
-\frac{2k}{3}\binom N2
-+
-\frac{2\sqrt N}{3}\mathcal E(R_{\mathbf c}).
+\mathcal E(R_{\mathbf c})
+=
+O(N^{3/2}+N\log^3N).
 \]
 
-A near-linear bound for this deterministic harmonic energy is still open.
+Combining it with CMR32 gives the improved one-channel syndrome
 
-For the recursive bank, the analogous dispersion target is now proved:
-CMR38 gives the exact pair-difference law of a uniform recursive p-adic
-permutation, and CMR39–CMR40 prove
+\[
+T(R_{\mathbf c})=O(N^2\log N),
+\]
+
+replacing the previous `O(N^(5/2)+N^2 log N)` estimate.
+
+For the recursive bank, CMR38 gives the exact pair-difference law of a uniform
+recursive p-adic permutation, and CMR39–CMR40 prove
 
 \[
 \mathbb E\mathcal E=O(N\log^3N)
@@ -129,8 +137,8 @@ impossible for every saturated odd-prime local pair: an affine no-three set in
 \(\mathbb F_p^2\) has at most \(p+2\) points, whereas a saturated pair has
 `2p`.
 
-CMCRT8 replaces the collision-only picture by the exact local slope-carry
-signature
+CMCRT8 instead applies to a cyclic local line representation and gives the
+slope-carry signature
 
 \[
 L_m
@@ -140,7 +148,7 @@ L_m
 \Delta=mL_m.
 \]
 
-For coprime factors, CMCRT9 gives
+For coprime factors with such representations, CMCRT9 gives
 
 \[
 L_u=vq,
@@ -150,16 +158,20 @@ L_v=uq,
 \Delta=uvq.
 \]
 
-The revised CRT target is therefore slope-carry incompatibility, not only
-collision-direction separation.
+The revised CRT target is slope-carry incompatibility over prime factors,
+together with a separate classification of noncyclic zero-divisor incidences
+inside composite local factors.
 
 ### CM6 — finite coverage and digital branch
 
 Exact saturated no-three configurations are recorded at composite side lengths
 
 \[
-4,6,8,9,10.
+4,6,8,9,10,12.
 \]
+
+The new `N=12` configuration is an exact integer-feasibility certificate and
+is verified over all \(\binom{24}{3}\) triples.
 
 Binary digit-linear one-channel no-three permutations are verified at
 
@@ -184,9 +196,10 @@ No scalable all-composite construction is yet known.
 1. **Recursive first-separation summation.** Combine CMR28–CMR29 with the
    conic-fibre `O(1/p)` bound from CMR43 and prove a global normalized
    certificate estimate across all quotient levels.
-2. **Deterministic harmonic direction energy.** Prove
-   \(\mathcal E(R_{\mathbf c})=O(N\log^C N)\), or show that the recursive
-   low-energy state can inherit a replacement for the CMR31 line cap.
+2. **Remove the square-root collision boundary.** Sharpen CMR50 and CMR53 on
+   the rare carries whose discriminant is divisible by nearly the full
+   modulus. This is the remaining gap between the deterministic
+   `O(N^(3/2)+N log^3 N)` energy and a near-linear bound.
 3. **Balanced small-height tangent lines.** Sum the remaining highly singular,
    low-height deterministic directions without reverting to a global
    square-root cap.
@@ -196,6 +209,9 @@ No scalable all-composite construction is yet known.
 5. **CRT slope-carry incompatibility.** Build local saturated pairs for which
    the two signatures `L_u,L_v` cannot simultaneously vanish except in an
    explicitly absorbable family.
+6. **Further finite coverage.** The exact feasibility model solves `N=12`; no
+   certificate at `N=14` was obtained in the bounded runs, so no claim is made
+   there.
 
 ## Checks
 
@@ -214,11 +230,16 @@ python scripts/verify_prime_power_recursive_quotient.py --max-modulus 125
 python scripts/verify_prime_power_recursive_determinant.py
 python scripts/verify_prime_power_recursive_harmonic.py --samples 100
 python scripts/verify_prime_power_lift_anti_concentration.py --max-prime 5
+python scripts/verify_prime_power_divisor_collisions.py --max-modulus 243
+python scripts/verify_prime_power_critical_collisions.py --max-modulus 125
+python scripts/verify_prime_power_singular_collision_sum.py --max-modulus 125
+python scripts/verify_prime_power_cross_stratum_sum.py --max-modulus 125
 python scripts/verify_crt_mixed_collision.py --max-modulus 60
 python scripts/verify_crt_slope_carry.py
 python scripts/verify_prime_power_tangent_parameter.py --max-modulus 243
 python scripts/verify_prime_power_harmonic_energy.py --max-modulus 243
 python scripts/verify_digital_64_completion_obstruction.py
+python scripts/verify_composite_finite_extensions.py
 ```
 
 These are finite exact checks. They do not constitute a complete all-`n`
