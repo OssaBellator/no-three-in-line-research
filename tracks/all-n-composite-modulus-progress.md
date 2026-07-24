@@ -1,7 +1,7 @@
 # Composite-modulus track: current progress and revised bottlenecks
 
 This is the current addendum to
-[`tracks/all-n-composite-modulus.md`](all-n-composite-modulus.md). The detailed
+[`tracks/all-n-composite-modulus.md`](all-n-composite-modulus.md). Detailed
 claims are indexed in
 [`proofs/composite-modulus-theorem-index.md`](../proofs/composite-modulus-theorem-index.md).
 
@@ -21,13 +21,13 @@ At \(N=p^k\), the pair decomposes into \(N/p\) top-digit column blocks of size
 \]
 
 saturated states with an exact cylinder law. Contracting the blocks recovers
-the identical companion host at exponent \(k-1\). Iterating this gives an
-exact recursive multiscale bank.
+the identical host at exponent \(k-1\), yielding an exact recursive multiscale
+bank.
 
-The alternative CMR43 lift replaces each full fibre permutation by the
-quadratic-size conic family CMR35. It remains saturated, removes every
-monochromatic triple internal to one fibre, and gives `O(1/p)` conditional
-anti-concentration for every other triple at that lift level.
+The restricted CMR43 lift replaces each full fibre permutation by the
+quadratic-size conic family CMR35. It remains saturated, excludes every triple
+internal to one quotient column fibre, and gives `O(1/p)` conditional
+anti-concentration for every first-separating fibre by CMR46.
 
 ### CM2 — real line cap: height-sensitive but open
 
@@ -44,101 +44,109 @@ CMR30 sharpens the top population on a primitive line of height `H` to
 O\left(1+\frac{p^t}{H}\right),
 \]
 
-where \(2t\) is the discriminant valuation. Large cells must therefore be
-both highly singular and supported on small primitive directions.
+where \(2t\) is the discriminant valuation. Large cells must therefore be both
+highly singular and supported on small primitive directions.
 
-A constant or repairable uniform line cap for the deterministic completed
-reciprocal remains open, but the exception is now height-weighted rather than
-global.
+A constant uniform line cap remains open, but the exception is now
+height-weighted. CMR38 already converts this line cap into a general
+\(O(N^{3/2}\log N)\) deterministic harmonic-energy bound.
 
-### CM3 — deterministic syndrome improved to quadratic order
+### CM3 — one- and two-layer syndrome bounds
 
-Same- and cross-channel secants have explicit valuation quadratics and
-mixed-layer carry identities. Bounded same-channel displacement multiplicity
-is impossible: CMR14 gives one exact top-digit vector repeated at least
+Bounded same-channel displacement multiplicity is impossible: CMR14 gives one
+exact top-digit vector repeated at least
 
 \[
 \frac{p-1}{p^2}N
 \]
 
-times. CMR15–CMR22 localize those repeats to disjoint blocks and install
-executable permutation banks.
+times. CMR15–CMR22 localize those repeats to disjoint executable blocks.
 
-For the deterministic completed reciprocal, CMR45 converts harmonic energy to
-divisor-collision counts. CMR47–CMR54 classify and sum those collisions:
-regular same-stratum cells have `O(N/d)` mass; the singular same-stratum cell
-has `O(M/d+sqrt(M))` mass; and each cross-stratum gap has an explicit quadratic
-whose summed roots obey the same type of estimate. The resulting unconditional
-bound is
+For one deterministic completed-reciprocal layer, two independent arguments
+now reach quadratic order:
+
+- CMR38–CMR39 use direction splitting to prove
+  \[
+  \mathcal E=O(N^{3/2}\log N),
+  \qquad
+  T=O(N^2\log N);
+  \]
+- CMR56–CMR66 reduce the same energy to exact divisor-collision cells, prove
+  \[
+  C(a,d)<20N/d+13\sqrt N+8k,
+  \]
+  and again obtain
+  \[
+  \mathcal E=O(N^{3/2}+N\log^3N),
+  \qquad
+  T=O(N^2\log N).
+  \]
+
+The second proof identifies the remaining arithmetic loss: rare nearly
+singular carries create the square-root boundary.
+
+For the complete two-layer companion host, CMR40–CMR42 give a
+height-sensitive line cap, harmonic energy
 
 \[
-\mathcal E(R_{\mathbf c})
-=
-O(N^{3/2}+N\log^3N).
+O_p(N^{3/2}\log N),
 \]
 
-Combining it with CMR32 gives the improved one-channel syndrome
+and full same-/cross-layer syndrome
 
 \[
-T(R_{\mathbf c})=O(N^2\log N),
+O_p(N^2\log N)
 \]
 
-replacing the previous `O(N^(5/2)+N^2 log N)` estimate.
+for every fixed odd prime base.
 
-For the recursive bank, CMR38 gives the exact pair-difference law of a uniform
-recursive p-adic permutation, and CMR39–CMR40 prove
+For the recursive bank, CMR50 gives the exact pair-difference law, while
+CMR51–CMR52 prove expected harmonic energy
 
 \[
-\mathbb E\mathcal E=O(N\log^3N)
+O(N\log^3N)
 \]
 
-even with the no-three terminal spread family at the base. Thus a saturated
-recursive state with near-linear polylogarithmic harmonic energy exists.
+even with a no-three spread family at the base. Thus a saturated recursive
+state with near-linear polylogarithmic harmonic energy exists.
 
-### CM4 — prime-power carry calculus and local anti-concentration
+### CM4 — prime-power carry calculus and recursive decoder space
 
 The branch now contains:
 
-- valuation-stratum line quadratics;
-- exact odd-prime square-root multiplicities;
-- exact-real primitive-parameter tangent spacing;
+- valuation-stratum line quadratics and exact square-root multiplicities;
+- exact-real primitive-line tangent spacing;
 - same- and cross-layer displacement quadratics;
-- mixed-layer determinant carries;
 - all-stratum collision blocks and full two-layer banks;
-- exact recursive quotient self-similarity;
+- recursive quotient self-similarity;
 - the determinant recurrence
   \[
   \Delta_N=D_0+p^{k-1}M+p^{2k-2}D_1;
   \]
-- an exact first-separation signature \(q+M+p^{k-1}D_1=0\);
-- the affine-in-one-digit identity CMR41;
-- one-step anti-concentration CMR42;
-- the conic-family fibre lift CMR43, which removes the only weak
-  three-in-one-fibre case.
+- first-separation signatures \(q+M+p^{k-1}D_1=0\);
+- the restricted conic-fibre bank CMR43–CMR46;
+- the complementary uniform-lift bounds CMR53–CMR54;
+- exact complete and unit scalar root averages CMR47–CMR49.
 
-The terminal state is solved uniformly at every prime. CMR35–CMR37 also give a
-spread terminal base with one-cell probability `O(1/p)` and rank-two
-probability `O(1/p^2)`.
-
-The remaining decoder theorem is global: sum first-separation certificate
-weights across quotient levels without losing the local `O(1/p)` gain.
+The terminal state is solved uniformly at every prime, and CMR35–CMR37 give a
+spread terminal base. The remaining decoder theorem is global: sum
+first-separation certificate weights across quotient levels without losing the
+local `O(1/p)` gain.
 
 ### CM5 — CRT local-arc route corrected
 
-Synchronized local permutation pairs still assemble to exact global
-saturation, and mixed collisions retain the factorization
+Synchronized local permutation pairs assemble to exact global saturation, and
+mixed collisions retain
 
 \[
 \Delta(P_0,P_1,P_2)=uv\det(A,B).
 \]
 
-However, CMCRT6–CMCRT7 prove that the local modular-arc hypothesis in CMCRT4 is
-impossible for every saturated odd-prime local pair: an affine no-three set in
-\(\mathbb F_p^2\) has at most \(p+2\) points, whereas a saturated pair has
-`2p`.
+CMCRT6 proves that a saturated odd-prime local pair cannot be a modular arc, so
+the simple CMCRT4 premise cannot directly assemble saturated factors.
+CMCRT7 classifies the unavoidable collision/local-line projection patterns.
 
-CMCRT8 instead applies to a cyclic local line representation and gives the
-slope-carry signature
+For a cyclic local line representation, CMCRT8 gives
 
 \[
 L_m
@@ -148,7 +156,7 @@ L_m
 \Delta=mL_m.
 \]
 
-For coprime factors with such representations, CMCRT9 gives
+For coprime factors, CMCRT9 gives
 
 \[
 L_u=vq,
@@ -158,11 +166,11 @@ L_v=uq,
 \Delta=uvq.
 \]
 
-The revised CRT target is slope-carry incompatibility over prime factors,
-together with a separate classification of noncyclic zero-divisor incidences
-inside composite local factors.
+The revised target is slope-carry incompatibility over prime factors, plus a
+classification of noncyclic zero-divisor incidences for composite local
+factors.
 
-### CM6 — finite coverage and digital branch
+### CM6 — finite coverage and the digital branch
 
 Exact saturated no-three configurations are recorded at composite side lengths
 
@@ -170,8 +178,8 @@ Exact saturated no-three configurations are recorded at composite side lengths
 4,6,8,9,10,12.
 \]
 
-The new `N=12` configuration is an exact integer-feasibility certificate and
-is verified over all \(\binom{24}{3}\) triples.
+The `N=12` configuration is an exact feasibility certificate verified over all
+\(inom{24}{3}\) triples.
 
 Binary digit-linear one-channel no-three permutations are verified at
 
@@ -179,68 +187,49 @@ Binary digit-linear one-channel no-three permutations are verified at
 8,16,32,64.
 \]
 
-The direct one-bit extension of the CMR12 matrix to `128` is refuted. CMR44 now
+The direct one-bit extension of the CMR12 matrix to `128` is refuted. CMR55
 also proves, by an exact integer covering certificate, that the existing
-`64`-point CMR12 layer has no second-permutation no-three completion at all.
-The certificate already contradicts the mixed-triple constraints, without
-using triples internal to the proposed second layer.
+`64`-point layer has no second-permutation no-three completion at all, even
+before triples internal to the proposed second layer are imposed.
 
-Thus the digital route must search for a joint two-layer construction from the
-outset or replace the first layer; completing the current CMR12 layer is closed
-negatively.
-
-No scalable all-composite construction is yet known.
+The digital route must therefore search jointly for both layers or replace the
+first layer. No scalable all-composite construction is known.
 
 ## Revised bottlenecks
 
 1. **Recursive first-separation summation.** Combine CMR28–CMR29 with the
-   conic-fibre `O(1/p)` bound from CMR43 and prove a global normalized
-   certificate estimate across all quotient levels.
-2. **Remove the square-root collision boundary.** Sharpen CMR50 and CMR53 on
-   the rare carries whose discriminant is divisible by nearly the full
-   modulus. This is the remaining gap between the deterministic
-   `O(N^(3/2)+N log^3 N)` energy and a near-linear bound.
-3. **Balanced small-height tangent lines.** Sum the remaining highly singular,
-   low-height deterministic directions without reverting to a global
-   square-root cap.
-4. **Joint digital construction.** Search for two compatible layers at `64`, or
-   a different first layer and a nonlinear non-block lift to `128`; the CMR12
-   completion subproblem is finished negatively.
-5. **CRT slope-carry incompatibility.** Build local saturated pairs for which
-   the two signatures `L_u,L_v` cannot simultaneously vanish except in an
-   explicitly absorbable family.
-6. **Further finite coverage.** The exact feasibility model solves `N=12`; no
-   certificate at `N=14` was obtained in the bounded runs, so no claim is made
-   there.
+   restricted-fibre `O(1/p)` bound from CMR46 and prove a global normalized
+   certificate estimate across quotient levels.
+2. **Remove the square-root divisor boundary.** Sharpen CMR61 and CMR64 for the
+   rare carries whose discriminant is divisible by nearly the full modulus,
+   closing the gap between CMR66 and near-linear deterministic energy.
+3. **Balanced small-height tangent lines.** Sum the highly singular low-height
+   directions without reverting to a worst-case square-root cap.
+4. **Joint digital construction.** Search for two compatible layers from the
+   outset, or a different first layer and nonlinear lift to `128`.
+5. **CRT slope-carry incompatibility.** Construct local saturated pairs whose
+   signatures cannot simultaneously vanish except in an absorbable family.
+6. **Further finite coverage.** `N=12` is solved; bounded `N=14` runs produced
+   no certificate, so no claim is made there.
 
 ## Checks
 
 ```bash
-python scripts/verify_prime_power_tangent_digital.py --max-modulus 125
-python scripts/verify_prime_power_displacement_obstruction.py --max-modulus 343
-python scripts/verify_prime_power_top_digit_blocks.py --max-modulus 125
-python scripts/verify_prime_power_companion_blocks.py --max-modulus 125
-python scripts/verify_prime_power_block_collateral.py
-python scripts/verify_prime_power_all_stratum_bank.py --max-modulus 125
-python scripts/verify_prime_power_terminal_mass.py --max-prime 13
-python scripts/verify_prime_power_terminal_configurations.py
-python scripts/verify_prime_power_terminal_family.py --max-prime 101 --max-exponent 4
-python scripts/verify_prime_power_terminal_spread.py --max-prime 19
-python scripts/verify_prime_power_recursive_quotient.py --max-modulus 125
-python scripts/verify_prime_power_recursive_determinant.py
+python scripts/verify_prime_power_global_energy.py
+python scripts/verify_prime_power_companion_global.py
+python scripts/verify_prime_power_average_roots.py
+python scripts/verify_prime_power_restricted_bank.py
 python scripts/verify_prime_power_recursive_harmonic.py --samples 100
 python scripts/verify_prime_power_lift_anti_concentration.py --max-prime 5
 python scripts/verify_prime_power_divisor_collisions.py --max-modulus 243
 python scripts/verify_prime_power_critical_collisions.py --max-modulus 125
 python scripts/verify_prime_power_singular_collision_sum.py --max-modulus 125
 python scripts/verify_prime_power_cross_stratum_sum.py --max-modulus 125
-python scripts/verify_crt_mixed_collision.py --max-modulus 60
+python scripts/verify_prime_power_terminal_family.py --max-prime 101 --max-exponent 4
+python scripts/verify_prime_power_terminal_spread.py --max-prime 19
 python scripts/verify_crt_slope_carry.py
-python scripts/verify_prime_power_tangent_parameter.py --max-modulus 243
-python scripts/verify_prime_power_harmonic_energy.py --max-modulus 243
 python scripts/verify_digital_64_completion_obstruction.py
 python scripts/verify_composite_finite_extensions.py
 ```
 
-These are finite exact checks. They do not constitute a complete all-`n`
-construction.
+These finite checks do not constitute a complete all-`n` construction.
