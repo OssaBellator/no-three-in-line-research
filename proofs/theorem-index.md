@@ -33,6 +33,14 @@ The numbering is local to this repository.
 | CML2 | Modular collinearity can be a false positive for the standard lift | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CML3 | Modular determinant zero plus \(|\Delta|<N\) implies real collinearity | PROVED | `docs/27-composite-modulus-obstructions.md` |
 | CMCRT1 | Naive CRT product channels have unavoidable mixed-projection triples | PROVED | `docs/27-composite-modulus-obstructions.md` |
+| CMR1 | Valuation-completed reciprocals are full prime-power involutions | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR2 | Exact valuation-stratum quadratic for completed-reciprocal line intersections | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR3 | Odd-prime line intersections reduce to one top Hensel-tangent cell | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR4 | Universal companion layer is saturated, Hamiltonian, and vertically bounded | PROVED | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR5 | Binary digit-linear no-three channels at \(N=8,16,32\) | PROVED BY EXHAUSTIVE FINITE CHECK | `docs/28-prime-power-completed-reciprocals.md` |
+| CMR6 | Every completed-reciprocal secant is \(p\)-adically diagonal | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR7 | Same-stratum fixed displacement has an exact reduced product/square-root signature | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
+| CMR8 | Completed-reciprocal one-channel syndrome is \(O(N^{5/2}+N^2\log N)\) | PROVED | `docs/29-prime-power-displacement-syndrome.md` |
 | B1 | High line meets an order-\(h\) block at most once when \(h\le H\) | PROVED | `docs/06-block-collateral-energy.md` |
 | B2 | Exact one-block collateral and drift identities | PROVED | `docs/06-block-collateral-energy.md` |
 | B3 | Block-shadow closure theorem | PROVED | `docs/06-block-collateral-energy.md` |
