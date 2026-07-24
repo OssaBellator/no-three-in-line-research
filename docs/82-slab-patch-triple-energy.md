@@ -343,41 +343,32 @@ The one-sided slab cancellation PP3gn remains useful for constants and for
 failure localization, but is no longer needed to obtain asymptotic summability
 at the optimized pool size.
 
-## 5. Completion now reduces to source-anchor pairs
+## 5. Combination with controller-aware source cleaning
 
 ### Corollary PP3hf -- PROVED
 
 Assume:
 
-1. the global refined-label allocation PP3fw is available on the slab-optimal
-   pools;
-2. fully source-safe domains PP3ge remove all unary source certificates;
-3. the total ordinary fixed-anchor pair-event mass incident to every slot is at
+1. the controller-aware global allocation PP3ho is available on the
+   slab-optimal pools;
+2. the total ordinary fixed-anchor pair-event mass incident to every slot is at
    most
 
    \[
     \frac1{48}-o(1).
    \]
 
-Then one simultaneous saturated no-three assignment exists and has the fixed-
-rank spread of PP3fl.
-
-If every ordinary anchor completion codegree `kappa_{s,t}` is bounded by an
-absolute constant, hypothesis 3 is automatic because
-
-\[
- \sum_t\Pr(G_{s,t}^{\rm anchor})
- =O\left(\frac TR\right)
- =o(1).
-\]
+Then one simultaneous saturated no-three assignment exists and has the
+fixed-rank spread of PP3fl.
 
 #### Proof
 
-PP3he makes all patch-only external mass `o(1)`.  Hypothesis 3 keeps the
-remaining source-anchor mass inside the PP3fj budget.  Apply PP3fk and PP3fl.
-The bounded-codegree conclusion follows from PP3gf and PP3gs. ∎
+PP3ho removes every unary retained-pair and same-slot anchor certificate.
+PP3he makes all patch-only external mass `o(1)`.  Hypothesis 2 keeps the
+remaining ordinary source-anchor mass inside the PP3fj budget.  Apply PP3fk and
+PP3fl. ∎
 
-Thus the second former bottleneck, cross-macro patch geometry, is closed at the
-slab-optimal exponents.  The unresolved external geometry is now entirely the
-ordinary retained-source-anchor pair relation, together with the global refined
-label allocation needed to create the dense fully safe domains.
+The later theorem PP3hk proves that the ordinary anchor mass in hypothesis 2
+is itself `o(1)` at the slab-optimal exponents.  Thus cross-macro patch geometry
+is closed, while the remaining construction problem is the density and global
+allocation of the controller-aware domains `H_{A,B}^{ctrl}`.
