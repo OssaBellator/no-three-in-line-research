@@ -21,7 +21,7 @@ If every nonedge `ab`, with `a in A` and `b in B`, satisfies
 
 \[
  \boxed{
- d_G(a)+d_G(b)\ge T+1,
+ d_G(a)+d_G(b)\ge T,
  }
 \]
 
@@ -55,9 +55,8 @@ Therefore
 
 contradicting the hypothesis.  Hall's theorem gives a perfect matching. ∎
 
-The constant `T+1` is deliberately integer-safe.  The same proof shows that
-`T` already suffices, but the one-unit slack is convenient when degrees are
-controlled by concentration estimates.
+The threshold `T` is sharp for this Hall-obstruction proof: a failed Hall set
+produces a nonedge whose endpoint-degree sum is at most `T-1`.
 
 ## 2. Fixed ownership criterion
 
@@ -91,7 +90,7 @@ nonedge `(A,B) notin J_{sigma(A)}` satisfies
 
 \[
  \boxed{
- \deg_{J_{\sigma(A)}}(A)+Z_B(\sigma)\ge T+1.
+ \deg_{J_{\sigma(A)}}(A)+Z_B(\sigma)\ge T.
  }
 \]
 
@@ -131,7 +130,7 @@ Let `h>0`.  Assume that every macro `i`, movement label `A`, and refill label
 
 \[
  \boxed{
- \deg_{J_i}(A)+q_B\ge T+1+h.
+ \deg_{J_i}(A)+q_B\ge T+h.
  }
 \]
 
@@ -174,7 +173,7 @@ For a nonedge `(A,B) notin J_{sigma(A)}`, the first hypothesis now yields
  \deg_{J_{\sigma(A)}}(A)+Z_B
  \ge
  \deg_{J_{\sigma(A)}}(A)+q_B-h
- \ge T+1.
+ \ge T.
 \]
 
 Apply PP3gk. ∎
@@ -194,7 +193,7 @@ all incompatible macro-label pairs satisfy
  \boxed{
  \deg_{J_i}(A)+q_B
  \ge
- T+1+8\sqrt{T\log T}.
+ T+8\sqrt{T\log T}.
  }
 \]
 
@@ -229,7 +228,7 @@ for more localized information:
 \[
  (i,A,B)
  \quad\text{with}\quad
- \deg_{J_i}(A)+q_B<T+1+h.
+ \deg_{J_i}(A)+q_B<T+h.
 \]
 
 Such a witness localizes the global Hall obstruction simultaneously in one
