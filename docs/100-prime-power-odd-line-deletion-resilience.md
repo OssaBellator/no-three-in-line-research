@@ -108,10 +108,10 @@ B=N_H(A)\subseteq R,
 |A|=|B|=a,
 \]
 
-with `uv` the unique edge from `A` to `v`. CMR211 gives
+with `uv` the unique edge from `A` to `v`. The corrected CMR211 gives
 
 \[
-h\le a\le h+2.
+h\le a\le t-h=h+1.
 \]
 
 Put
@@ -142,28 +142,22 @@ of these missing cells. Hence `D` contains at least
 |A||C|-1-\min\{|A|,|C|\}
 \]
 
-cells of `A\times C`. For each of the three possibilities
+cells of `A\times C`. For both possible values
 
 \[
 a=h,
 \qquad a=h+1,
-\qquad a=h+2,
 \]
 
-this lower bound is
+this lower bound equals
 
 \[
 \boxed{h(h+1)-1}.
 \]
 
-If `a=h` or `a=h+2`, one has
-
-\[
-\min\{|A|,|C|\}=h.
-\]
-
-Each line contributes at most `h` cells to `A\times C`, so the `h` lines
-contribute at most `h^2`, less than `h(h+1)-1`. These two cases are impossible.
+If `a=h`, then `|C|=h+2`. Each line contributes at most `h` cells to
+`A\times C`, so the `h` lines contribute at most `h^2`, less than
+`h(h+1)-1`. This case is impossible.
 
 It remains that
 
@@ -202,13 +196,13 @@ holds.
 1. A residual parent state is covered by a rank-one or rank-two certificate;
    CMR201 supplies an executable anchored alternating continuation.
 2. There are `h+1` distinct rank-three real-line signatures
-
+   
    \[
    L_1,\ldots,L_{h+1},
    \]
-
+   
    and a parent perfect matching which avoids every candidate cell on
-
+   
    \[
    L_1,\ldots,L_h.
    \]
@@ -242,8 +236,8 @@ and hence has a perfect matching by Hall's theorem.
 For `j=h`, delete the cells of `E(L_h)` one at a time. Before each deletion the
 current graph has a perfect matching and its deleted set is contained in the
 union of the `h` distinct line matchings. CMR228 says that the next edge is not
-essential, so deleting it preserves a perfect matching. Thus the complete
-line matching `E(L_h)` can also be removed.
+essential, so deleting it preserves a perfect matching. Thus the complete line
+matching `E(L_h)` can also be removed.
 
 The final graph `H_h` has a perfect matching avoiding all cells on the first
 `h` lines. Its covering certificate cannot use any of those lines. If it is
@@ -281,6 +275,6 @@ or charge the forced additional line signatures to primitive-height, quotient,
 or carry cells. At the exact half-block threshold there is no essential-edge
 or forced-factor obstruction.
 
-No all-`n` theorem is claimed here. The affine-transversal rigidity and the
-three Hall-factor arithmetic cases are checked in
+No all-`n` theorem is claimed here. The affine-transversal rigidity and Hall
+factor arithmetic are checked in
 [`scripts/verify_prime_power_odd_line_resilience.py`](../scripts/verify_prime_power_odd_line_resilience.py).
