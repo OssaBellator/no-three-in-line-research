@@ -1,7 +1,7 @@
 {
-  "range": "PX397-PX507",
+  "range": "PX397-PX511",
   "root": "PX492",
-  "frontier_root": "PX507",
+  "frontier_root": "PX511",
   "nodes": {
     "PX397-403": {"document": "docs/153-px63-one-hit-derangement-entry.md", "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"], "move_space": "rectangle_label", "status": "entry_audited"},
     "PX404-410": {"document": "docs/154-px64-line-cap-return-depth.md", "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"], "move_space": "arithmetic_only", "status": "line_cap_audited"},
@@ -23,7 +23,8 @@
     "PX496-498": {"document": "docs/170-side-seven-insertion-recursion-barrier.md", "depends_on": ["PX56", "PX58", "PX59", "PX60", "PX493-495"], "move_space": "arithmetic_only", "status": "side_seven_insertion_barrier"},
     "PX499-500": {"document": "docs/171-side-seven-two-column-selector-normal-form.md", "depends_on": ["PX50", "PX493-495"], "move_space": "arithmetic_only", "status": "side_seven_selector_normal_form"},
     "PX501-503": {"document": "docs/172-side-seven-local-minimum-transposition-boxes.md", "depends_on": ["PX496-498", "PX499-500"], "move_space": "arithmetic_only", "status": "side_seven_local_transposition_barrier"},
-    "PX504-507": {"document": "docs/173-side-seven-selector-coordinate-orbit-csp.md", "depends_on": ["PX499-500", "PX501-503"], "move_space": "arithmetic_only", "status": "side_seven_coordinate_orbit_barrier"}
+    "PX504-507": {"document": "docs/173-side-seven-selector-coordinate-orbit-csp.md", "depends_on": ["PX499-500", "PX501-503"], "move_space": "arithmetic_only", "status": "side_seven_coordinate_orbit_barrier"},
+    "PX508-511": {"document": "docs/174-side-seven-cross-half-obstruction-profile.md", "depends_on": ["PX504-507"], "move_space": "arithmetic_only", "status": "side_seven_cross_half_obstruction"}
   },
   "safety_rules": {
     "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
@@ -53,7 +54,9 @@
       "side_seven_local_box_nodes_total": 126633677,
       "side_seven_coordinate_csp_variables": 21,
       "side_seven_coordinate_orbit_nodes_total": 2227923,
-      "side_seven_coordinate_raw_assignments": 2048385024000
+      "side_seven_coordinate_raw_assignments": 2048385024000,
+      "side_seven_top_clean_pairs": 926852,
+      "side_seven_half_compatible_pairs": 806548
     }
   }
 }
