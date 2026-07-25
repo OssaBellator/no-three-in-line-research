@@ -1,21 +1,21 @@
 # Weak dynamic slack is near-static, while persistent contacts amplify to recurrent unavailable cores
 
 CMR587--CMR592 extract recurrent unavailable sets from large dynamic selector
-histories.  One edge case remains important: the exact persistent contact from
-CMR586 may occur when the canonical dynamic threshold is only one.  In that
+histories. One edge case remains important: the exact persistent contact from
+CMR586 may occur when the canonical dynamic threshold is only one. In that
 case there is no second unavailable edge to extract from every failure.
 
-The selector slack itself resolves this case.  Threshold one means that the
+The selector slack itself resolves this case. Threshold one means that the
 fixed collateral profile lies within `1/[q(n-1)]` of the static boundary, so it
-already has a positive constant normalized rank-zero/rank-one mass.  All of the
+already has a positive constant normalized rank-zero/rank-one mass. All of the
 canonical line, secant-star, primitive-height, wall, prefix, carry, and deletion
 conclusions therefore apply with a slightly weaker explicit constant.
 
 When the threshold is at least two, a fixed persistent contact may be
-conditioned out of every unavailable inventory.  The remaining inventories
+conditioned out of every unavailable inventory. The remaining inventories
 still have size at least `H_P-1`, so exact subset double counting extracts an
-additional recurrent set.  On a nested joint-absence interval this produces a
-larger persistent unavailable core containing the original contact.  The core
+additional recurrent set. On a nested joint-absence interval this produces a
+larger persistent unavailable core containing the original contact. The core
 then enters the batch-absorption versus persistent-wall theorem CMR589.
 
 Fix one dynamic canonical protected selector state `P` with residual side
@@ -35,7 +35,7 @@ and positive slack
 \[
 \Delta_P
 =
-1-\frac2q-A_P
+1-\frac{2}{q}-A_P
 >0.
 \]
 
@@ -61,7 +61,7 @@ B_j\subseteq U_P,
 
 ### Theorem CMR593 — PROVED
 
-Fix an integer `r>=2`.  If
+Fix an integer `r>=2`. If
 
 \[
 H_P<r,
@@ -77,7 +77,9 @@ c_{q,n,r}
 :=
 \frac{11}{30}
 \left(
-1-rac2q-rac{r-1}{q(n-1)}
+1-
+\frac{2}{q}-
+\frac{r-1}{q(n-1)}
 \right).
 }
 \]
@@ -92,7 +94,9 @@ S_P
 :=
 \frac{11}{30}
 \left(
-1-rac2q-rac1{q(n-1)}
+1-
+\frac{2}{q}-
+\frac{1}{q(n-1)}
 \right).
 }
 \]
@@ -124,16 +128,25 @@ Therefore
 \[
 A_P
 =
-1-rac2q-\Delta_P
+1-
+\frac{2}{q}-
+\Delta_P
 \ge
-1-rac2q-rac{r-1}{q(n-1)}.
+1-
+\frac{2}{q}-
+\frac{r-1}{q(n-1)}.
 \]
 
-Multiply by `11/30`.  For `r=2`, the expression is minimized over
+Multiply by `11/30`. For `r=2`, the expression is minimized over
 `q>=4,n>=5` at `q=4,n=5`, where it equals
 
 \[
-\frac{11}{30}\left(1-rac12-rac1{16}\right)
+\frac{11}{30}
+\left(
+1-
+\frac{1}{2}-
+\frac{1}{16}
+\right)
 =
 \frac{77}{480}.
 \]
@@ -147,10 +160,11 @@ it is a fixed near-static collateral profile.
 
 ### Theorem CMR594 — PROVED
 
-Assume `H_P=1`.  Put
+Assume `H_P=1`. Put
 
 \[
-\widetilde c=\widetilde c_{q,n}.
+\widetilde c=
+\widetilde c_{q,n}.
 \]
 
 At least one of the following holds.
@@ -163,7 +177,7 @@ At least one of the following holds.
    \frac{\widetilde c}{2}(n)_3.
    }
    \]
-2. **One-endpoint rank-one near-static mass.**  Some paid endpoint `z` satisfies
+2. **One-endpoint rank-one near-static mass.** Some paid endpoint `z` satisfies
    \[
    \boxed{
    V_1(P;z)
@@ -173,14 +187,14 @@ At least one of the following holds.
    \]
 
 Every conclusion of CMR559--CMR570 whose proof uses only the lower bound on
-`S_P` remains valid with `c_q` replaced by `\widetilde c`.  In particular the
+`S_P` remains valid with `c_q` replaced by `\widetilde c`. In particular the
 profile reaches a fixed low-height heavy line, a paid-endpoint secant star, a
 matching-vertex wall, a heavy full-prefix cell, a dispersed carry-cell family,
 or the rank-zero disjoint-deletion endpoint.
 
 ### Proof
 
-Apply the rank-polarization proof of CMR558 to the lower bound in CMR593.  The
+Apply the rank-polarization proof of CMR558 to the lower bound in CMR593. The
 support-line decomposition, binomial capacities, square-root extraction,
 factorial-moment energy, dyadic height localization, matching-wall/prefix/carry
 conversion, and disjoint-deletion arguments are homogeneous in the assumed
@@ -199,7 +213,7 @@ F_0\subseteq U_P,
 |F_0|=a<H_P,
 \]
 
-be contained in every selected inventory `B_j`.  This includes the case where
+be contained in every selected inventory `B_j`. This includes the case where
 `F_0` is already continuously unavailable on the selected interval.
 
 ### Theorem CMR595 — PROVED
@@ -214,7 +228,7 @@ Fix integers
 
 For any `J` selected failed occurrences, at least one of the following holds.
 
-1. **Additional recurrent set.**  Some fixed `r`-edge set
+1. **Additional recurrent set.** Some fixed `r`-edge set
    \[
    W\subseteq U_P\setminus F_0
    \]
@@ -236,7 +250,7 @@ For any `J` selected failed occurrences, at least one of the following holds.
 ### Proof
 
 Every residual inventory `B_j\setminus F_0` has size at least `H_P-a` inside
-the fixed universe `U_P\setminus F_0` of size `N-a`.  Double-count its
+the fixed universe `U_P\setminus F_0` of size `N-a`. Double-count its
 `r`-subsets exactly as in CMR587. ∎
 
 The conditioning preserves the ownership label of the selector and of the
@@ -260,7 +274,7 @@ For every integer `\sigma>=2`, at least one of the following holds.
    \left\lceil\frac{\lambda}{\sigma-1}\right\rceil-1.
    }
    \]
-2. **Amplified persistent core.**  One subinterval contains at least `\sigma`
+2. **Amplified persistent core.** One subinterval contains at least `\sigma`
    selected occurrences while every edge of
    \[
    \boxed{F_0\cup W}
@@ -269,7 +283,7 @@ For every integer `\sigma>=2`, at least one of the following holds.
 
 ### Proof
 
-Apply CMR538 to `W` within the interval.  In its joint-absence branch, `F_0`
+Apply CMR538 to `W` within the interval. In its joint-absence branch, `F_0`
 remains absent because the new interval is nested inside the original one. ∎
 
 Thus persistent cores can grow without losing their earlier edges.
@@ -287,7 +301,7 @@ Fix a target rank
 2\le r\le H_P
 \]
 
-and integers `\lambda,\sigma>=2`.  At least one of the following holds.
+and integers `\lambda,\sigma>=2`. At least one of the following holds.
 
 1. **Finite contact-conditioned history.**
    \[
@@ -299,9 +313,9 @@ and integers `\lambda,\sigma>=2`.  At least one of the following holds.
         {\binom{H_P-1}{r-1}}.
    }
    \]
-2. **Aggregate reintroduction payment.**  A fixed additional `(r-1)`-edge set
+2. **Aggregate reintroduction payment.** A fixed additional `(r-1)`-edge set
    reaches the first branch of CMR596.
-3. **Persistent `r`-core containing the contact.**  One subinterval contains at
+3. **Persistent `r`-core containing the contact.** One subinterval contains at
    least `\sigma` selected occurrences while a fixed `r`-edge set
    \[
    \boxed{W_r\ni f}
@@ -310,7 +324,7 @@ and integers `\lambda,\sigma>=2`.  At least one of the following holds.
 
 ### Proof
 
-Apply CMR595 with `F_0={f}`, `a=1`, and residual rank `r-1`.  In the recurrent
+Apply CMR595 with `F_0={f}`, `a=1`, and residual rank `r-1`. In the recurrent
 branch apply CMR596. ∎
 
 The theorem avoids an iterative loss: the desired target rank is extracted in
@@ -320,20 +334,20 @@ one subset-counting step.
 
 ### Corollary CMR598 — PROVED
 
-Fix `q>=4,n>=5`.  Every exact persistent-contact branch of a dynamic canonical
+Fix `q>=4,n>=5`. Every exact persistent-contact branch of a dynamic canonical
 selector reaches at least one of the following endpoints.
 
-1. **Near-static collateral geometry.**  If `H_P=1`, CMR593--CMR594 give a fixed
+1. **Near-static collateral geometry.** If `H_P=1`, CMR593--CMR594 give a fixed
    positive collateral profile with
    \[
-   S_P\ge77/480
+   S_P\ge\frac{77}{480}
    \]
    and the complete line/secant-star/wall/prefix/carry/deletion alternatives.
-2. **Finite contact-conditioned history.**  For `H_P>=2`, the bound of CMR597
+2. **Finite contact-conditioned history.** For `H_P>=2`, the bound of CMR597
    holds at every chosen target rank `2<=r<=H_P`.
-3. **Aggregate reintroduction payment.**  Additional recurrent edges pay the
+3. **Aggregate reintroduction payment.** Additional recurrent edges pay the
    multi-edge return ledger.
-4. **Persistent unavailable core.**  A fixed `r`-edge core containing the
+4. **Persistent unavailable core.** A fixed `r`-edge core containing the
    original contact remains jointly unavailable and enters CMR589--CMR591,
    yielding batch protected absorption or a persistent row/column token wall.
 
@@ -341,7 +355,7 @@ Repeated batch absorption has finite depth by CMR590.
 
 ### Proof
 
-Split on `H_P=1`.  Use CMR594 in the first case.  In the second case choose any
+Split on `H_P=1`. Use CMR594 in the first case. In the second case choose any
 `2<=r<=H_P`, apply CMR597, and then CMR589--CMR591 to a persistent core. ∎
 
 ## 7. Revised frontier
@@ -356,10 +370,10 @@ The final single-contact exception is no longer isolated.
 
 The remaining prime-power frontier is temporal reuse of the resulting fixed
 near-static wall/prefix/carry certificates and fixed persistent core/token
-walls after all batch absorption capacity is exhausted.  The expected exits
+walls after all batch absorption capacity is exhausted. The expected exits
 remain protected-reserve depletion, deletion ancestry, full-token return, or
 strict envelope expansion.
 
-No all-`n` theorem is claimed.  Slack constants, conditional subset counting,
+No all-`n` theorem is claimed. Slack constants, conditional subset counting,
 nested joint-absence amplification, and target-rank extraction are checked in
 [`scripts/verify_prime_power_selector_slack_core.py`](../scripts/verify_prime_power_selector_slack_core.py).
