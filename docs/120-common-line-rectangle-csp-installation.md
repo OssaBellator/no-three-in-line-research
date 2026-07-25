@@ -104,7 +104,8 @@ The exact potential change
 \Delta(x)=C(x)-R(x)
 \]
 
-is a pseudo-Boolean polynomial of degree at most two:
+is a pseudo-Boolean function of degree at most two. Equivalently, it has a local
+state-table representation
 
 \[
 \Delta(x)
@@ -116,16 +117,19 @@ is a pseudo-Boolean polynomial of degree at most two:
 \sum_{s<t}c_{st}(x_s,x_t).
 \]
 
-All coefficients are finite nonnegative incidence counts, except for the signed
-removal-credit terms already included in \(c_s\) or \(\Delta_0\).
+The unary and binary state-cost tables are nonnegative incidence counts before
+removal credit is subtracted. After conversion to the standard monomial basis,
+its algebraic coefficients may have either sign; designated removal credit enters
+with negative sign in the corresponding constant or unary table.
 
 #### Proof
 
 Every source-plus-inserted blocker uses one selected bank cell and is determined
 by one local state. Every inserted-plus-inserted blocker uses two selected bank
 cells and is determined by at most two local states. No controller-shadow blocker
-pair uses three inserted cells. Sum all incidences with multiplicity and subtract
-the designated removal credits. ∎
+pair uses three inserted cells. Sum all incidence tables with multiplicity and
+subtract the designated removal credits. Any function of one or two Boolean
+variables has a multilinear representation of degree at most two. ∎
 
 This is the rectangle-bank version of the endpoint potential identity PP3id and
 the dynamic excess identity PP3kx.
