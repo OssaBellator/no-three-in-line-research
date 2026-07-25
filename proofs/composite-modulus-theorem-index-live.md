@@ -31,12 +31,15 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
 | CMR492--496 | Universal compatible-pair derangement cylinder, rank-two-on-line elimination, rooted-arm cleaning, equal-size rooted-star banks, and bottleneck-pair line-clean splice | PROVED | `docs/156-prime-power-universal-compatible-pair-line-clean.md` |
 | CMR497--501 | Minimum line-clean restoration cost, forced restoration core, cheap-or-factorization availability, exact token/conflict payment, and application to rooted/bottleneck cylinders | PROVED | `docs/157-prime-power-line-clean-rollback-availability.md` |
+| CMR502--506 | Exact derangement restoration marginals, weighted cheap-clean selection, frozen collateral versus unavailable depletion, incidence concentration/dispersion, and the combined availability endpoint | PROVED | `docs/158-prime-power-line-clean-weighted-selection.md` |
+| CMR507--511 | Adaptive maximum unavailable-edge absorption, exact extension identity, König row-column cover, heavy unavailable-star concentration, and rooted/bottleneck application | PROVED | `docs/159-prime-power-adaptive-line-clean-unavailable-cover.md` |
+| CMR512--516 | Exact unavailable-star prefix occupancy, tunable heavy/dispersed token alternative, disjoint token packing, square-root endpoint, and adaptive line-clean token splice | PROVED | `docs/160-prime-power-unavailable-star-token-splice.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR501 is the cheap-availability selection theorem. Every final
-rooted-star arm and bottleneck pair has a line-clean cylinder; availability costs
-at most one residual matching, cheap restoration has exact token and packet
-price, and expensive restoration factors the host. The remaining task is to
-choose a cheaply restored completion whose destroyed inherited target load
-exceeds its recreated collateral, or force reserve depletion, a heavy
-prefix/carry signature, lower-dimensional factorization, or envelope expansion.
+frontier after CMR516 is temporal accounting for adaptive unavailable-edge
+absorption and unavailable-token reuse across parent epochs. One-shot cheap
+selection is closed: failure yields frozen collateral, strict factorization,
+free absorption, a heavy unavailable full-prefix token, or a dispersed
+unavailable-token bank. The next target is to show that repeated use of the last
+two branches pays protected-reserve depletion, ancestor-return incidence, or
+envelope expansion without double counting.
