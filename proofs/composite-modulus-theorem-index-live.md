@@ -43,14 +43,15 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR552--557 | Canonical forbidden matching, time-independent collateral profile, static/dynamic selector classification, exact dynamic history bounds, global labelled selector stock, and no-double-counting endpoint | PROVED | `docs/167-prime-power-canonical-selector-ledger.md` |
 | CMR558--563 | Exact support-line decomposition, static rank polarization, heavy/dispersed line-weight lemma, rank-zero residual-line endpoint, rank-one secant-fan endpoint, and canonical static-collateral geometry | PROVED | `docs/168-prime-power-static-selector-line-profile.md` |
 | CMR564--568 | Exact rank-one secant-star splice, linear rank-zero line systems, fan-or-packing extraction, square-root packing, and combined static-selector geometry | PROVED | `docs/169-prime-power-static-line-bank-splice.md` |
+| CMR569--573 | Matching-preserving packed-conflict deletion, fully forced packing bound, private deleted-edge code, distinct restoration payment, and rank-zero packing endpoint | PROVED | `docs/170-prime-power-disjoint-conflict-deletion.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR568 has two canonical branches. Static selector collateral is
-now a heavy single conflict line, an established repeated-cell secant star, or
-a pairwise cell-disjoint rank-zero line-certificate packing. Dynamic selector
-failure has polynomial labelled stock unless one canonical allowed edge pays
-reintroduction or remains persistently unavailable. The next target is to
-attach the secant-star sizes to the strongest mixed-ratio/carry constants,
-attach the rank-zero packing to protected-line reserve, conflict-free
-selection, or deletion ancestry, and handle the persistent canonical blocker
-through reserve depletion or envelope expansion.
+frontier after CMR573 has two canonical branches. Static selector collateral is
+now reduced to heavy single conflict lines or established repeated-cell secant
+stars; the disjoint rank-zero packing branch is paid by deletion, forced-core
+terminality, and private restoration edges. Dynamic selector failure has
+polynomial labelled stock unless one canonical allowed edge pays reintroduction
+or remains persistently unavailable. The next targets are mixed-ratio/carry or
+line-energy execution for heavy lines and secant stars, plus reserve-depletion,
+deletion-ancestry, or envelope-expansion payment for the persistent canonical
+blocker.
