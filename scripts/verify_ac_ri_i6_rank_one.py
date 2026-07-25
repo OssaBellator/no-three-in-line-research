@@ -45,6 +45,15 @@ def normalize_line(A, B, C, prime):
     return (A * scale % prime, B * scale % prime, C * scale % prime)
 
 
+def line_through(first, second, prime):
+    x1, y1 = first
+    x2, y2 = second
+    A = y2 - y1
+    B = x1 - x2
+    C = A * x1 + B * y1
+    return normalize_line(A, B, C, prime)
+
+
 def modular_lines(prime):
     lines = set()
     for A in range(prime):
@@ -148,8 +157,6 @@ def verify_geometry():
                                 assert count == expected_count
                                 probability_checks += 1
 
-                            # Any compatible collection of one, two, or three cells
-                            # in one channel fixes the same source image and shift.
                             physical_cells = [(x, y) for x, y, _ in cells]
                             for size in range(1, min(3, len(physical_cells)) + 1):
                                 for prescribed in combinations(physical_cells, size):
@@ -169,15 +176,23 @@ def verify_geometry():
                                 assert intersection <= 2
                                 line_checks += 1
 
-                            # On a fixed product channel, the modular sum determines
-                            # the unordered pair through its quadratic polynomial.
-                            pairs_by_sum = {}
+                            pairs_by_address = {}
+                            pairs_by_line = {}
                             for first, second in combinations(point_set, 2):
-                                pair = tuple(sorted((first[0], second[0])))
-                                key = (first[0] + second[0]) % prime
-                                assert key not in pairs_by_sum or pairs_by_sum[key] == pair
-                                pairs_by_sum[key] = pair
-                                assert first[0] * second[0] % prime == product_value
+                                columns = tuple(sorted((first[0], second[0])))
+                                address = (
+                                    (first[0] + second[0]) % prime,
+                                    (first[0] * second[0]) % prime,
+                                )
+                                assert (
+                                    address not in pairs_by_address
+                                    or pairs_by_address[address] == columns
+                                )
+                                pairs_by_address[address] = columns
+
+                                line = line_through(first, second, prime)
+                                assert line not in pairs_by_line or pairs_by_line[line] == columns
+                                pairs_by_line[line] = columns
                                 secant_checks += 1
 
     return (
@@ -205,7 +220,6 @@ def verify_weight_routers(maximum=24):
                 assert channel_average == c1 / m
                 raw_checks += 1
 
-                # One- and two-moving-cell classes partition one channel.
                 for one_cell in range(expected_numerator + 1):
                     two_cell = expected_numerator - one_cell
                     assert max(one_cell, two_cell) * 2 >= expected_numerator
@@ -215,7 +229,7 @@ def verify_weight_routers(maximum=24):
         for threshold in range(1, maximum + 1):
             class_count = ceil(total / threshold)
             assert class_count * threshold >= total
-            # Direction, affine-offset, and secant-sum routers use the same bound.
+            # Direction, affine-offset, and exact-secant routers.
             router_checks += 3
 
     return raw_checks, split_checks, router_checks
