@@ -1,6 +1,6 @@
 # Status and honesty ledger
 
-**Last updated:** 25 July 2026
+**Last updated:** 26 July 2026
 
 ## External status
 
@@ -130,6 +130,53 @@ Give returned or unavailable edges binary cost one.
   strict lower-dimensional factorization.
 - Cheap restoration has exact token cost and recreated-conflict support bounds.
 
+### Canonical selector and protected-certificate normal form
+
+- Persistent cross and rooted-trace ancestry have polynomial signature stock or
+  reduce to one fixed compatible-pair line-clean selector.
+- Every selector has one canonical forbidden matching, one fixed collateral
+  profile, and one fixed allowed-edge universe.
+- Failed selectors polarize into static collateral or dynamic unavailable-edge
+  inventory; all selector, line, token, edge, and protected-state charges are
+  owner-labelled.
+- Heavy lines and secant stars execute by monotone protected absorption.
+- Persistent unavailable contacts amplify to jointly absent cores, batch
+  absorption, or simultaneous row/column token walls.
+- Threshold-one dynamic selectors have the uniform near-static collateral bound
+  \(S\ge77/480\).
+
+### Product potential and essential recursion
+
+- A large protected core leaves a balanced sparse interface of at most twice
+  the free side.
+- Fixing the interface skeleton gives an exact protected-factor/free-factor
+  product.
+- Candidate conflicts split exactly into pure protected, pure free, and sparse
+  mixed atoms. Each mixed atom is a Cartesian rectangle and has protected rank
+  at most two.
+- A completely dirty clean-factor product yields a bounded free/interface atom
+  or a rank-one/rank-two protected prescription with quantitative support.
+- Nonessential prescriptions pay matching-preserving deletion and private
+  restoration. Essential prescriptions contract exactly and transfer to the
+  other factor.
+- Forced product certificates can disappear only through certificate-edge
+  deletion, skeleton churn, or an entering-edge alternating cycle.
+- Contracting the complete essential core leaves a residual host with no
+  essential edges. Core-anchored conflicts are rank at most two and enter a
+  finite deletion/contraction recursion.
+
+### Prime-power factor-prefix recursion
+
+- Every reduced factor has one canonical deepest full-prefix envelope.
+- At its first nontrivial digit split, every matching has an exact \(p\times p\)
+  child transport table.
+- Fixing the vertex-routing skeleton factors the matching family exactly across
+  strict child prefix cells.
+- A side-\(d\) factor has at most \(p^{2d}\) routing skeletons.
+- Long factor histories recur in one fixed child product or are finitely
+  bounded.
+- Child loads give heavy strict blocks or dispersed absolute carry cells.
+
 ## Important corrections
 
 - Naive sequential two-layer rematching may reoccupy an old first-layer cell.
@@ -140,29 +187,34 @@ Give returned or unavailable edges binary cost one.
   replacements.
 - Theta-fan cycles sharing a boundary edge are structural alternatives, not a
   simultaneous-flip family.
+- The matching relabelling which makes a canonical forbidden matching diagonal
+  is combinatorial only; real collinearity is always evaluated in the original
+  parent-board coordinates.
+- One new edge may unlock several old essential edges when they lie on the same
+  alternating cycle. Entering-edge payment is per affected alternating
+  component, not per omitted essential edge.
 
 ## Current open frontier
 
-1. **Cheap line-clean selection.** Inside a line-clean cylinder made available
-   by fewer than \(q\) restored edges, select a completion whose destroyed
-   inherited target load exceeds recreated collateral.
-2. **Frozen-bank conversion.** Combine CMR334 averaging with line-clean rollback
-   payment to force strict potential decrease, reserve depletion, a heavy
-   prefix/carry signature, or envelope expansion.
-3. **Sparse-interface recursion.** Turn deletion of a mixed-cycle boundary-tail
-   interface into a formally decreasing host or envelope measure.
-4. **Low-height carry absorption and prime-field transfer.** Integrate the
-   remaining low-height signatures and rebuild the endpoint for prime fields.
-5. **Arbitrary side lengths.** Extend balanced prime families, control CRT
+1. **Recurrent child-product potential.** Inside one fixed prefix-routing
+   skeleton, recurse on the strict child hosts or extract and pay cross-child
+   mixed atoms without losing owner labels.
+2. **Routing-change payment.** Convert repeated changes of child routing into
+   full-token return, deletion ancestry, or strict closure-envelope expansion.
+3. **Prime-field and low-height transfer.** Integrate the remaining low-height
+   signatures and rebuild the endpoint for prime fields not covered by the
+   balanced recursive families.
+4. **Arbitrary side lengths.** Extend balanced prime families, control CRT
    projections, and cover every positive integer \(n\).
 
 ## Bottom line
 
-There is no complete proof. Through CMR501, construction, temporal lifting,
-minimum-cost normalization, mixed-cycle reduction, universal compatible-pair
-line-clean cylinders, and line-clean availability accounting are closed at
+There is no complete proof. Through CMR663, line-clean selection, dynamic
+availability, protected-certificate execution, sparse-interface product
+factorisation, mixed-conflict rectangles, essential-core contraction, forced-
+certificate escape payment, and strict prefix-routing recursion are closed at
 their stated scales.
 
-The principal remaining prime-power theorem is selection inside the cheaply
-restored line-clean cylinder. Arbitrary side-length coverage remains necessary
+The principal remaining prime-power theorem is payment across a recurrent
+strict child product. Arbitrary side-length coverage remains necessary
 afterward.
