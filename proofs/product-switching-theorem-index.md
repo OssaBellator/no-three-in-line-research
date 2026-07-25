@@ -1,6 +1,6 @@
 # Product switching and protected-spread theorem index
 
-This index continues the product-construction ledger after PX97.  It records
+This index continues the product-construction ledger after PX97. It records
 the strong-complete switching, affine-square, marker-flow, and affine-orbit
 results developed on `research/all-n-product-construction`.
 
@@ -40,26 +40,30 @@ results developed on `research/all-n-product-construction`.
 | PX129 | The affine similarity orbit of one seed has exact cylinder laws governed by secant and affine-triangle multiplicities | PROVED | `docs/80-affine-orbit-strong-complete-spread.md` |
 | PX130 | One order-thirteen seed has secant multiplicity 28, triangle multiplicity 8, and orbit cylinder constants below 3 and 7 | PROVED FINITE | `docs/80-affine-orbit-strong-complete-spread.md` |
 | PX131 | At local order thirteen, the two-stage protected rainbow problem has an unconditional joint rank-three spread distribution | PROVED | `docs/80-affine-orbit-strong-complete-spread.md` |
+| PX132 | Explicit strong-complete seeds through order 23 have the recorded constant affine-triangle multiplicities | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX133 | Every strong-complete seed obeys the exact secant and fixed-row-ratio averaging lower bounds | PROVED | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX134 | Orders 29, 31, 37, and 41 have explicit seeds with `mu<2p` and `tau<=9` | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX135 | Orders 43 and 47 have explicit seeds with `mu<2p` and `tau=9` | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX136 | Order 53 has an explicit seed with `mu=80` and `tau=7` | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX137 | Nonlinear cubic and completed-Mobius seed families are empty through prime order 101 | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
 
 ## Current exact boundary
 
 The switching-flow route is complete through the entire one-bridge nonlinear
-shell.  The remaining switching task is to construct a layered probability
+shell. The remaining switching task is to construct a layered probability
 measure or deeper-core flow which rewrites a linear number of rows while
 retaining the PX100 conditional ratios.
 
 The affine-orbit route replaces that global mixing task by a deterministic seed
-problem.  For infinitely many primes, construct one strong complete mapping
-`f` with
+problem. Explicit seeds through order 53 satisfy
 
 \[
-\mu(f)=O(p),
+\mu(f)<2p,
 \qquad
-\tau(f)=O(1),
+\tau(f)\le9,
 \]
 
-or with sufficiently mild growth for the downstream protected local-load
-estimate.  PX130 proves the desired scale exactly at order thirteen.
-
-Neither route yet proves infinite exact product closure.  They provide two
-sharply formulated bottlenecks rather than another finite template search.
+with the order-53 seed attaining `tau=7`. The remaining theorem is to construct
+such seeds for infinitely many primes, or prove a sufficiently mild
+polylogarithmic triangle bound from a quasirandom toroidal-queens matching
+process. Neither route yet proves infinite exact product closure.
