@@ -23,11 +23,11 @@ def verify_universal_recreation_support() -> None:
             default=0,
         )
 
-        for returned in subsets:
-            after = before | returned
+        for entering in subsets:
+            after = before | entering
             recreated = [triple for triple in conflicts if triple <= after]
-            assert all(triple & returned for triple in recreated)
-            assert len(recreated) <= len(returned) * maximum_degree
+            assert all(triple & entering for triple in recreated)
+            assert len(recreated) <= len(entering) * maximum_degree
 
 
 def verify_harmonic_degree_charges() -> None:
@@ -38,11 +38,11 @@ def verify_harmonic_degree_charges() -> None:
             weight = sum(Fraction(1, height) for height in heights)
             degree_bound = 2 * (side - 1) ** 2 * weight
 
-            for returned_count in (0, 1, side // 3, side):
-                recreation_bound = degree_bound * returned_count
+            for churn_count in (0, 1, side // 3, side):
+                recreation_bound = degree_bound * churn_count
                 assert recreation_bound >= 0
                 if weight < Fraction(3, 2):
-                    assert recreation_bound < 3 * side * side * returned_count + 1
+                    assert recreation_bound < 3 * side * side * churn_count + 1
 
 
 def verify_total_weight_bound() -> None:
@@ -123,8 +123,9 @@ def main() -> None:
     verify_first_dirty_schedule_accounting()
     verify_combined_churn_bound()
     print(
-        "verified packet recreation churn: returned-edge support, harmonic "
-        "degree charges, packet losses, and first-dirty schedule bounds"
+        "verified packet recreation churn: entering-edge support, equal-size "
+        "leaving churn, harmonic degree charges, packet losses, and first-dirty "
+        "schedule bounds"
     )
 
 
