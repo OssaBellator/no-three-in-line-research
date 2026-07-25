@@ -57,6 +57,8 @@ families and develop the complementary repair route. The active task ledger is
 | PX220 | Joint release on the thinned packet has only linear expected internal rank-three collateral | PROVED | `docs/112-thinned-joint-packet-rank-three.md` |
 | PX221 | Geometric-progression packets require linearly many product levels to remove a fixed fraction of candidate support-four energy | PROVED | `docs/113-packet-count-barrier-and-logarithmic-window.md` |
 | PX222 | Logarithmically many released packets retain polynomial-density and polynomial-spread bounds compatible with sufficient support excess | PROVED | `docs/113-packet-count-barrier-and-logarithmic-window.md` |
+| PX223 | Selected crosses from one product level form disjoint packet-arc transpositions and decompose old support-four defects exactly | PROVED | `docs/114-defect-heavy-product-levels.md` |
+| PX224 | Low-syndrome blocks have only logarithmically many linearly defect-heavy product levels | PROVED | `docs/114-defect-heavy-product-levels.md` |
 
 ## Current exact boundary
 
@@ -72,25 +74,24 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has a complete packet-extraction and joint-
-release interface, plus a sharp candidate-energy limitation.
+The low-syndrome repair route now distinguishes candidate packet energy from old
+selected defect energy.
 
-- PX183--PX209 isolate the rematching collateral sectors, pay the internal and
-  low-support terms, and control support four on large blocks.
-- PX210--PX218 extract successive product packets, release any fixed packet
-  family jointly, preserve spread under exposure, and transfer external loads.
-- PX219--PX220 combine square-root thinning with joint release, making internal
-  packet-subgrid rank-three collateral linear while a designated packet retains
-  a quadratic zero-probability cross family.
-- PX221 refutes an absolute packet-count theorem for unrestricted candidate
-  energy: geometric-progression grids can require `Omega(h)` product levels.
-- PX222 identifies a viable intermediate window: `O(log h)` packets cost only a
-  polynomial spread factor, which support-excess thinning can still overcome in
-  sufficiently nonminimal sectors.
+- PX183--PX220 provide the support-sensitive decoder, successive packet
+  extraction, joint release, conditioned spread, and linear internal rank-three
+  collateral after packet-compatible thinning.
+- PX221 refutes bounded packet termination for unrestricted candidate energy and
+  shows that `Omega(h)` levels can be necessary.
+- PX222 preserves a viable logarithmic packet window with polynomial spread.
+- PX223 proves that selected crosses in one packet are disjoint transpositions
+  and gives the exact old-defect packet decomposition.
+- PX224 proves that a block with `O(h log h)` old support-four defects has only
+  `O(log h)` product levels carrying a linear number of those defects; all such
+  heavy levels can be included in one logarithmic joint release.
 
-The next termination theorem must therefore be defect weighted or scale
-sensitive. A promising target is to prove that old selected defects occupy only
-`O(log h)` heavy product levels even though unrestricted candidate energy can
-occupy `Theta(h)` levels. External rank one, minimal-support and short-cycle
-sectors, destroyed-old-mass accounting, and exact infinite product closure
-remain open.
+The genuine packet frontier is now the **diffuse selected-defect regime**, where
+every remaining product level has sublinear old load. A termination theorem must
+show that this dispersion itself yields an improving average, another loaded
+line or clean star, or a decreasing defect-weighted packet potential. External
+rank one, minimal-support and short-cycle sectors, exact destruction-versus-
+creation constants, and infinite product closure remain open.
