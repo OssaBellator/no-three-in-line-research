@@ -62,6 +62,9 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR257--260 | Three-slice moment obstruction, sharp \(t-3\) common fans, and three-endpoint singleton-blocker expansion | PROVED | `docs/108-prime-power-three-endpoint-fan-obstruction.md` |
 | CMR261--265 | Summed placement load, exact target-specific cleaning above \(0.44t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/109-prime-power-role-count-height-cleaning.md` |
 | CMR266--270 | Parity-sieved height mass, exact target-specific cleaning above \(0.43t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/110-prime-power-parity-sieved-height-cleaning.md` |
+| CMR271--273 | Hall-width averaging, long-line height control, and reduction of width at least seven to the sub-\(0.43t\) regime | PROVED | `docs/111-prime-power-hall-width-height-reduction.md` |
+| CMR274--277 | Exact Hall deficiency/overlap slack; widths four through six reduce to low height, leaving width-two and width-three residuals | PROVED | `docs/112-prime-power-thin-hall-slack.md` |
+| CMR278--283 | Mod-six totient sieve, exact target-specific cleaning above \(0.42t\), a `floor(t/2000)` line reserve, and lower-height extraction | PROVED | `docs/113-prime-power-mod-six-height-cleaning.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
