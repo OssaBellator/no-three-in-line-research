@@ -1,12 +1,10 @@
 # Arbitrary parent resets have a universal full-token return bound
 
-CMR398--CMR402 compute full-token edge return for recursive prefix resets.  The
-remaining scheduling problem also uses whole-parent moves: exact harmonic-band
-coverings and joint-parent repairs.  Their internal construction is irrelevant
-to edge return.  When one selected matching is replaced, every newly available
-cell belongs to the old matching that ceased to be selected or forbidden.
-Therefore one full prefix token receives at most one returned edge per source
-column in its fixed column prefix.
+CMR393--CMR397 compute full-token edge return for recursive prefix resets. The
+remaining schedule also uses whole-parent moves: exact harmonic-packet
+coverings and joint-parent repairs. Their internal construction is irrelevant
+to edge return. When one selected or forbidden matching is replaced, every
+newly available cell belongs to the old matching that ceased to be excluded.
 
 Let
 
@@ -19,10 +17,10 @@ and fix a full prefix token
 \[
 \tau=(b,a,c,\theta),
 \qquad
-1\le b<h.
+1\le b<h,
 \]
 
-Its cell universe is
+with cell universe
 
 \[
 U_\tau^{(2)}
@@ -33,9 +31,9 @@ U_\tau^{(2)}
 
 ## 1. One arbitrary matching reset
 
-Let `K` be a parent matching board, let `M` be one currently selected or
-forbidden perfect matching, and let `F` collect every other fixed forbidden
-edge, including persistent deletion masks.  Put
+Let `K` be a parent matching board, `M` one currently selected or forbidden
+perfect matching, and `F` every other fixed forbidden edge, including
+persistent deletion masks. Put
 
 \[
 H=K\setminus(M\cup F).
@@ -57,7 +55,7 @@ The newly available edges satisfy
 \boxed{H'\setminus H\subseteq M\setminus M'.}
 \]
 
-Consequently
+Consequently,
 
 \[
 \boxed{
@@ -69,28 +67,25 @@ Consequently
 
 ### Proof
 
-An edge newly available in `H'` was excluded from `H`.  Since the fixed
-forbidden set `F` did not change and the edge lies in `H'`, it cannot belong to
-`F`.  It must therefore belong to `M`, and because it is now allowed it cannot
-belong to `M'`.  This proves the set inclusion.
+A newly available edge was excluded from `H`. Since `F` did not change and the
+edge lies in `H'`, it does not belong to `F`. It therefore belongs to `M`, and
+because it is now allowed it does not belong to `M'`.
 
-The old perfect matching `M` has one edge in each source column.  Exactly
-`t/p^b` source columns have residue `a modulo p^b`, so at most that many edges
-of `M` can lie in the full-token universe. ∎
+The old perfect matching has one edge in each source column. Exactly `t/p^b`
+source columns extend the prescribed column prefix `a`, so at most that many
+old matching edges lie in the token universe. ∎
 
-This includes a complete exact-band replacement, a full-parent derangement,
-and a one-layer stage of an ordered joint-parent move.
+This includes a complete harmonic-packet replacement, a full-parent
+derangement, and one layer stage of an ordered joint-parent move.
 
 ## 2. Joint-parent and packet schedules
 
 ### Corollary CMR404 — PROVED
 
-1. One ordered joint-parent move, with both layer matchings replaced once,
+1. One ordered joint-parent move, replacing both layer matchings once,
    reintroduces at most
    \[
-   \boxed{
-   \frac{2t}{p^b}
-   }
+   \boxed{\frac{2t}{p^b}}
    \]
    edges into one direction-labelled full-token inventory.
 2. A schedule containing `R` arbitrary one-layer whole-parent resets and `J`
@@ -104,24 +99,24 @@ and a one-layer stage of an ordered joint-parent move.
 
 ### Proof
 
-Apply CMR403 to each changed matching and sum with multiplicity.  Suppression
-by overlaps, opposite-layer occupancy, or persistent deletion masks only
-reduces the true returned set. ∎
+Apply CMR403 to each changed matching and sum with multiplicity. Overlaps,
+opposite-layer occupancy, and persistent deletion masks only reduce the true
+returned set. ∎
 
-In particular, every exact harmonic packet supplied by CMR388 costs at most
-`t/p^b` in the token ledger when installed by one layer replacement.
+In particular, every exact harmonic packet supplied by CMR401 costs at most
+`t/p^b` in one token ledger when installed by one layer replacement.
 
 ## 3. Combined endpoint-visit budget
 
 ### Corollary CMR405 — PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS
 
-Suppose a closure epoch contains:
+Suppose one closure epoch contains
 
 - one descending recursive-prefix pass;
 - `R` arbitrary one-layer whole-parent resets;
 - `J` ordered joint-parent resets.
 
-Then one exact full token satisfies
+Then
 
 \[
 \boxed{
@@ -133,34 +128,27 @@ D_\tau^{(2)}
 }
 \]
 
-At the tunable deep threshold
-
-\[
-p^b\ge t^{2/3},
-\]
-
-this becomes
+At the deep threshold `p^b\ge t^{2/3}`,
 
 \[
 \boxed{
 D_\tau^{(2)}
 \le
- t^{2/3}+
- (2h+R+2J)t^{1/3}.
+t^{2/3}+(2h+R+2J)t^{1/3}.
 }
 \]
 
 ### Proof
 
-CMR399 pays the prefix-pass return mass.  CMR404 pays all listed non-prefix
-resets.  Add the exact initial stock from CMR394 and apply the dynamic inventory
-CMR395.  The deep specialization uses `b<=h`. ∎
+CMR394 pays the prefix-pass return mass and CMR404 pays the non-prefix resets.
+Add the exact initial stock from CMR389 and apply the dynamic inventory CMR390.
+Use `b\le h` for the specialization. ∎
 
-Thus exact-band and joint-parent moves no longer form an unquantified token
-source.  The remaining scheduling issue is the **number** of such moves and the
-possibility that repeated use of the same ancestor or packet state creates a
-cycle; their per-move token cost is fixed and linear in the token width.
+Exact packet and joint-parent moves are therefore no longer unquantified token
+sources. The remaining issue is the number of such moves and whether repeated
+use of one ancestor or packet state creates a cycle; each move now has a fixed
+linear token-width cost.
 
-No all-`n` theorem is claimed here.  Host-churn inclusion, per-reset capacity,
+No all-`n` theorem is claimed here. Host-churn inclusion, per-reset capacity,
 and combined schedule coefficients are checked in
 [`scripts/verify_prime_power_nonprefix_token_return.py`](../scripts/verify_prime_power_nonprefix_token_return.py).
