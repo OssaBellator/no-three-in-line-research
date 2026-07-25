@@ -65,14 +65,21 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR691--697 | Static host-stage and routing-epoch bounds, complete owner-edge/token/certificate stocks, recurrence thresholds, canonical path-length alternatives, and the descending-path normal form | PROVED | `docs/189-prime-power-descending-path-owner-stock.md` |
 | CMR698--705 | Exact target-destruction identity, entering-cell load concentration, edge-centred four-endpoint handoff, internal/expansion split, multiplicative target-load churn payment, forced-certificate conversion, and the descending-path potential endpoint | PROVED | `docs/190-prime-power-target-handoff-potential-conversion.md` |
 | CMR706--712 | Fixed-envelope target stock, recreation support, recurrent cell-target extraction, polynomial chain bound, exact reintroduction/token payment, envelope-chain aggregation, and the target-chain endpoint | PROVED | `docs/191-prime-power-fixed-envelope-target-chain.md` |
+| CMR713--719 | Entering-edge nonessentiality, recurrent target-cell deletion, monotone inactivity, owner-labelled pair stock, finite deletion depth, and the recurrent-target endpoint | PROVED | `docs/192-prime-power-recurrent-target-edge-deletion.md` |
+| CMR720--726 | Stored avoidance matching, redeletion or deletion-ancestry witness, essential-return recurrence, absence-run payment, exact contraction, and the target-edge return endpoint | PROVED | `docs/193-prime-power-target-edge-return-ancestry.md` |
+| CMR727--733 | Exact deficiency-one matching loss, canonical unit Hall wall, minimal-wall robustness, stored missing-edge witness, finite wall stock, paid wall escape, and the essential-return endpoint | PROVED | `docs/194-prime-power-essential-return-hall-batch.md` |
+| CMR734--740 | Exact unit-wall restriction and Cartesian factorisation, strict side budget, rank-two target rectangles, deletion-or-forced action, and finite wall normalisation | PROVED | `docs/195-prime-power-unit-wall-factorization.md` |
+| CMR741--747 | Exact factor-forest mass descent, split/node/depth bounds, cubic owner-edge and token stock, certificate/deletion stock, and the unit-wall factor-tree endpoint | PROVED | `docs/196-prime-power-unit-wall-factor-tree.md` |
 
-The branch still does not prove the all-`n` conjecture. After CMR712, the local
-factor, routing, forced-certificate, target-handoff, and target-signature loops
-all have owner-labelled finite stock or exact entering-edge payment. Every
-nonimproving target-destroying transition hands its load to one entering cell;
-forced certificates become target-load-one banks; and an internal target chain
-is polynomially bounded unless one exact cell-target pair is repeatedly
-recreated. The remaining prime-power frontier is the dynamic conversion of that
-recurrent pair into protected-reserve depletion, permanent deletion ancestry,
-full-token return, strict closure-envelope expansion, or a baseline improvement,
-followed by prime-field transfer and arbitrary side-length assembly.
+The branch still does not prove the all-`n` conjecture. After CMR747, all local
+factor, routing, target-handoff, recurrent-target, returned-edge, and essential
+unit-wall branches have exact deletion, contraction, product, or owner-labelled
+finite-stock normal forms. Removing one essential returned edge creates a
+canonical deficiency-one wall, not a large anonymous Hall obstruction; its
+matching family factors across strict children whose total side is one smaller.
+The complete branching wall tree has at most `d` splits and total owner-edge
+stock at most `d(d+1)(2d+1)/6`. The remaining prime-power frontier is the dynamic
+aggregation of genuinely restored cross-cut and target edges against protected
+reserve, permanent deletion ancestry, full-token return capacity, and inherited
+target-load descent, followed by prime-field transfer and arbitrary side-length
+assembly.
