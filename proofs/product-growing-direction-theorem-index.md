@@ -3,7 +3,7 @@
 This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
-families and redirect the complementary repair route.
+families and develop the complementary repair route.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -22,6 +22,15 @@ families and redirect the complementary repair route.
 | PX186 | Every prime arithmetic rematching block with degree-two forbidden positions has an avoiding matching with at most `16p` internal real triples | PROVED | `docs/100-arithmetic-low-collateral-rematching.md` |
 | PX187 | The conic permutation has secant multiplicity at most `p+3` and affine-triangle multiplicity at most eight | PROVED | `docs/101-arithmetic-rematching-mixed-collateral.md` |
 | PX188 | Arithmetic conic rematching has an explicit mixed-background collateral bound after forbidden-position repair | PROVED | `docs/101-arithmetic-rematching-mixed-collateral.md` |
+| PX189 | Every movable endpoint family has a subset of size `Omega(sqrt(t))` whose complete candidate grid has only `O(s^4)` compatible collinear triples | PROVED | `docs/102-square-root-endpoint-thinning.md` |
+| PX190 | The uniform degree-two-forbidden bank on the thinned block has only `O(s)` expected internal collateral | PROVED | `docs/102-square-root-endpoint-thinning.md` |
+| PX191 | Every background anchor defines a proper line-pencil edge-colouring of the rematching graph | PROVED | `docs/103-background-anchor-rainbow-reduction.md` |
+| PX192 | Two-replacement/one-background collateral is exactly the repeated-colour count across all anchor colourings | PROVED | `docs/103-background-anchor-rainbow-reduction.md` |
+| PX193 | Every current anchor-colour collision is destroyed by at least `2(s-6)` executable transpositions | PROVED | `docs/104-background-rainbow-transposition-decoder.md` |
+| PX194 | The background-rainbow transposition bank satisfies the exact aggregate improvement inequality | PROVED | `docs/104-background-rainbow-transposition-decoder.md` |
+| PX195 | A collision-local minimum has a heavy off-matching anchor shadow, yielding a loaded line or clean star | PROVED | `docs/104-background-rainbow-transposition-decoder.md` |
+| PX196 | A matching graph with forbidden degree `Delta` has at least `e^(-4Delta)t!` allowed permutations and uniform `e^(4Delta)/(t)_r` spread | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
+| PX197 | Every fixed-depth recursive neutralization bank remains nonempty with an explicit spread constant | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
 
 ## Current exact boundary
 
@@ -37,18 +46,18 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route has a different, now sharper boundary.
+The low-syndrome repair route now has a recursive decoder.
 
-- PX183--PX184 prove that the uniform first-generation neutralization bank has
-  an intrinsic logarithmic internal-collateral loss on arithmetic endpoint
-  sets.
-- PX185--PX188 remove that logarithm on prime arithmetic blocks and reduce the
-  remaining repair inequality to averaged and maximum one-/two-point shadow
-  terms.
+- PX183--PX184 identify the uniform-bank logarithmic barrier.
+- PX185--PX190 remove the internal rank-three logarithm, either structurally on
+  arithmetic blocks or universally by square-root thinning.
+- PX191--PX195 identify the remaining `T_2` sector with simultaneous-rainbow
+  collisions and decode every large collision-local minimum back into a loaded
+  line or clean star.
+- PX196--PX197 show that bounded-depth recursive neutralization remains
+  executable even after earlier positions are added to the forbidden set.
 
-The next viable repair theorem is an inverse-additive alternative for the
-movable endpoint pairs: extract a large coupled arithmetic block and apply
-PX188, or prove that additive expansion disperses the `C_1`, `C_2`, and
-`Lambda_1` certificate masses enough for the original spread bank to improve.
-
-No exact infinite product closure is claimed yet.
+The next exact obligation is termination: construct a monotone generational
+potential, or prove that an absolute recursion depth suffices to make destroyed
+old mass dominate all fixed-rank collateral. No exact infinite product closure
+is claimed yet.
