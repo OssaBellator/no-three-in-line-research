@@ -119,7 +119,7 @@ def verify_symbolic(maximum_size=30):
             ]
             assert all(
                 earlier >= later
-                for earlier, later in zip(values, values[1:], strict=True)
+                for earlier, later in zip(values, values[1:])
             )
             monotonic_checks += max(0, len(values) - 1)
 
