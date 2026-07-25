@@ -36,9 +36,11 @@ AC3at--AC3ax retain the generic normalized-to-physical adapter for genuinely mov
 
 The canonical OP route is different and is now corrected. AC3ay--AC3be provide the normalized component, complete fibres, current payment, actual scales, and coherent root pairing. AC3bf proves those current hyperbola roots are fixed by completion, so they cannot pay completion components. AC3bg--AC3bj lift every I6 state through one common RI5f boundary closure and give an exact active/blocker collateral criterion.
 
-AC3bk--AC3bo split a heavy blocker average into singleton affine geometry, one of five finite small-derangement tables, or a normalized large rank-one/rank-two/rank-three profile. AC3bp--AC3bs amplify active rank one to raw weight, localize one source-target-shift channel without subgroup-order loss, and route it to direction spread, offset spread, a heavy line, or at most two moving cells.
+AC3bp--AC3cb classify source-coset ranks one, two, and three. Every expected active term amplifies to raw physical channel classes without subgroup-order loss; the multiplicity alphabet is finite; and every heavy line reduces to one linear channel cell or at most eight explicit quadratic-root words. AC3cc--AC3cg prove that every new state-independent active triple is supported on one, two, or three RI5f closure cells and route it to closure stars, secants, triples, or boundary-path spread.
 
-The unresolved RI interface is now classification of active rank two and rank three, the heavy-line/context-pair output, the three blocker profile classes, state-independent closure collateral, incomplete fibres, root imbalance, and scale dispersion.
+AC3bk--AC3co close the blocker probability problem. Small occupancies have exact overlap/cycle tables, every compatible partial blocker prescription has an inclusion-exclusion extension count depending only on `(t,s,q)`, and the large-bank cylinder cap improves from `128/(t)_s` to the exact sharp value and the universal bound `3/(t)_s`.
+
+The unresolved RI interface is now termination/payment of the explicit quadratic-root tuples and closure outputs, arithmetic classification of one exact blocker partial-permutation profile, the residual fixed term `F_rest`, incomplete fibres, root imbalance, and scale dispersion.
 
 ### `research/geometric-cleaning`
 
