@@ -155,22 +155,26 @@ For every integer \(D\ge1\), one of the following holds.
 1. One fixed point \(p\in F\) witnesses at least \(D\) star edges.  Then the
    line \(\overline{a_sp}\) contains at least \(D\) resource-disjoint neighbour
    cells.
-2. At least \(h/D\) distinct fixed witness points, and hence at least \(h/D\)
-   distinct witness lines through \(a_s\), occur.
+2. At least \(h/D\) distinct witness lines through \(a_s\) occur.
 
 #### Proof
 
-Group the neighbours by \(p_t\).  A repeated witness point determines one common
-line through \(a_s\).  If no point occurs \(D\) times, at least \(h/D\) witness
-points are needed.  Two distinct witness points cannot determine the same line
-through \(a_s\) unless that line contains both fixed points and \(a_s\); such a
-line would contain three points of the already source-valid fixed set when
-\(a_s\in F\), or can simply be grouped as one geometric line when
-\(a_s\notin F\).  In either formulation the alternatives are a repeated rich
-line or many distinct lines through \(a_s\). ∎
+Group the neighbours by their geometric witness line
 
-For complete formal safety in the second alternative, lines rather than witness
-points are the canonical objects; repeated collinear witness points are merged.
+\[
+ \ell_t=\overline{a_sp_t}.
+\]
+
+If one line occurs at least \(D\) times, use it.  Otherwise more than \(h/D\)
+distinct lines are required.
+
+Moreover, after unit-clause preprocessing a fixed witness line through \(a_s\)
+contains at most one point of \(F\).  Indeed, if it contained two distinct fixed
+points, selecting the cross state of the centre rectangle would create a
+collinear triple consisting of \(a_s\) and those two fixed points, so state one
+would have been forbidden by a unit clause.  Thus repeated witness lines and
+repeated witness points are equivalent on the flexible bank.  Resource-
+disjointness of the neighbour cells follows from PP3ok. ∎
 
 ## 6. Complete cross-conflict endpoint
 
