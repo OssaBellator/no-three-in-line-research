@@ -1,0 +1,63 @@
+{
+  "range": "PX397-PX450",
+  "root": "PX450",
+  "nodes": {
+    "PX397-403": {
+      "document": "docs/153-px63-one-hit-derangement-entry.md",
+      "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"],
+      "move_space": "rectangle_label",
+      "status": "entry_audited"
+    },
+    "PX404-410": {
+      "document": "docs/154-px64-line-cap-return-depth.md",
+      "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"],
+      "move_space": "arithmetic_only",
+      "status": "line_cap_audited"
+    },
+    "PX411-419": {
+      "document": "docs/155-channel-free-rectangle-label-return.md",
+      "depends_on": ["PX43", "PX61", "PX196", "PX200", "PX232", "PX233", "PX357"],
+      "move_space": "rectangle_label",
+      "status": "terminal_return_lifted"
+    },
+    "PX420-427": {
+      "document": "docs/156-host-compatible-first-generation-label-banks.md",
+      "depends_on": ["PX235", "PX240", "PX241", "PX242", "PX243", "PX411-419"],
+      "move_space": "rectangle_label",
+      "status": "first_generation_lifted"
+    },
+    "PX428-436": {
+      "document": "docs/157-paired-label-product-packet-decoder.md",
+      "depends_on": ["PX207", "PX208", "PX228", "PX300", "PX302", "PX305", "PX306", "PX411-419"],
+      "move_space": "rectangle_label",
+      "status": "packet_lifted"
+    },
+    "PX437-444": {
+      "document": "docs/158-paired-label-mixed-shadow-and-recurrence.md",
+      "depends_on": ["PX217", "PX218", "PX256", "PX257", "PX258", "PX259", "PX260", "PX261", "PX262", "PX411-419", "PX428-436"],
+      "move_space": "rectangle_label",
+      "status": "mixed_and_recurrence_lifted"
+    },
+    "PX445-450": {
+      "document": "docs/159-paired-label-large-block-and-asymptotic-loop.md",
+      "depends_on": ["PX225", "PX227", "PX263", "PX264", "PX265", "PX266", "PX324", "PX325", "PX326", "PX327", "PX328", "PX329", "PX394", "PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444"],
+      "move_space": "rectangle_label",
+      "status": "asymptotic_reduction"
+    }
+  },
+  "safety_rules": {
+    "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
+    "forbidden_unlifted_move_phrases": [
+      "apply the individual-point replacement directly",
+      "arbitrary scalar endpoint rematching preserves factor compatibility",
+      "the inaccessible PX63 statement"
+    ],
+    "required_constants": {
+      "paired_support_four_denominator": 32768,
+      "entry_good_bank_cylinder_factor": 9,
+      "entry_good_bank_destruction_denominator": 18,
+      "rectangle_point_type_count": 4,
+      "label_family_count": 2
+    }
+  }
+}
