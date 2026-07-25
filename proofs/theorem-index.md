@@ -92,6 +92,11 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3ew–AC3ex | Absent companion anchors canonically install then decode; failure returns one of seven masks at `U/(357K)` | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
 | AC3ey | Bare companion installation is not paid; the private factor is destroyed only by the rectangle decoder | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
 | AC3ez | The fibre quadratic excludes both fixed-edge midpoint triples, so the final companion rectangle support is triple-free | PROVED | `docs/alternating-core-ri-companion-midpoint-exclusion.md` |
+| AC3fa–AC3fb | Every created triple has rank one, two or three; failed banks return `D/3` rank mass and finite role multisets | PROVED | `docs/alternating-core-created-cell-rank-router.md` |
+| AC3fc–AC3fd | Current decoder alphabets have sizes `8,10,16,34`; rank routing improves clean/missing/absent/multiscale constants | PROVED | `docs/alternating-core-created-cell-rank-router.md` |
+| AC3fe–AC3fh | RI closure and rectangle fixed terms equal created-cell rank outputs; no payment is assigned at classification time | PROVED | `docs/alternating-core-ri-fixed-term-rank-router.md` |
+| AC3fi–AC3fl | RI moving tuples have seven nonzero current/new words and become rank-one, rank-two or rank-three collateral profiles | PROVED | `docs/alternating-core-ri-moving-tuple-rank-router.md` |
+| AC3fm–AC3fo | Crossed-blocker complexes have eleven count/word states, preserve product laws and require no collateral-stage payment | PROVED | `docs/alternating-core-ri-blocker-rank-router.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
