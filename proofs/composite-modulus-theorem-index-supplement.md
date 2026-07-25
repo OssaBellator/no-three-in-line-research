@@ -21,10 +21,10 @@ supplement mirrors the collision-free live range recorded in
 | CMR433--438 | Matching-contraction cycle criterion, exact one-edge exchange corridor, chain batch flips, exact Dilworth cycle-cover width, batch-or-branch dichotomy, and linear temporal cycle compression | PROVED | `docs/145-prime-power-exchange-corridor-path-cover.md` |
 | CMR439--443 | Sparse rollback escape, minimum rollback essential core, cost-or-factorization dichotomy, terminal-certificate rollback, and quadratic rollback-incidence packing/concentration | PROVED | `docs/146-prime-power-sparse-rollback-factorization.md` |
 | CMR444--447 | Exact rollback full-token incidence, cheap rollback payment, universal restored-edge recreation support, and harmonic packet rollback cost | PROVED | `docs/147-prime-power-rollback-incidence-payment.md` |
+| CMR448--452 | Minimum-cost rollback characterization, no-negative alternating cycles, zero-cycle connectivity, exact tight optimal host, and integral rollback-level potentials | PROVED | `docs/148-prime-power-rollback-optimal-face.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR447, common-epoch rollback existence and its token/packet cost are closed.
-The immediate targets are qualitative conversion of a small restored-edge set
-into reserve depletion, target-load destruction, prefix or line-clean escape,
-or envelope expansion, together with payment for repeated compatible local
-ancestor resets.
+CMR452, cheap rollback is restricted to a canonical tight assignment face with
+integer potential levels. The immediate targets are geometric conversion of
+large tight levels or zero-cost components, and attaching the same minimum-cost
+normalization to repeated compatible local ancestor resets.
