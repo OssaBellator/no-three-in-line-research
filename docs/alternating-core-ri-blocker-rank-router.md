@@ -52,51 +52,51 @@ possible words: one for `a=1`, three for `a=2`, and seven for `a=3`.
 
 The noncrossed cells are unchanged blocker context and hence lie in `M`. Membership of each crossed physical cell in `M` is fixed. If every crossed cell also belonged to `M`, all three cells of the triple were present before the repair and the triple was not newly created. The rank identity follows from the definition. QED.
 
-## AC3fn -- crossed-count and rank localization -- PROVED
+## AC3fn -- eleven-state crossed-count/word localization -- PROVED
 
-Let one exact blocker arc/anchor-kind/arithmetic profile have raw collateral weight `S`. First split by the number `a` of crossed cells in the triple. One count class carries at least
-
-$$
-\boxed{S/3.}
-$$
-
-Inside that class, one nonzero current/new word carries at least
+Let one exact blocker arc/anchor-kind/arithmetic profile have raw collateral weight `S`. The joint label consists of the crossed count `a` and one nonzero word in `\{0,1\}^a`. The number of joint labels is exactly
 
 $$
-\boxed{
-\frac{S}{3(2^a-1)}.
-}
+\sum_{a=1}^3(2^a-1)=1+3+7=11.
 $$
 
-Uniformly over `a<=3`, one exact crossed-count/current-new word carries at least
+Therefore one exact crossed-count/current-new word carries raw weight at least
 
 $$
-\boxed{S/21.}
+\boxed{S/11}
 $$
 
 and has created-cell rank one, two or three.
 
-Under the large-blocker output of AC3ct, one such rank profile has raw weight at least
+For a fixed crossed count class of weight `S_a`, one word carries at least
 
 $$
 \boxed{
-\frac{(t)_sG}{2268\,2^{2s}L}
+\frac{S_a}{2^a-1}.
 }
 $$
 
-because `2268=108*21`. With the exact sharp derangement probability, the corresponding bound is
+Under the large-blocker output of AC3ct, one joint rank profile has raw weight at least
 
 $$
 \boxed{
-\frac{G}{756\,p_{t,s}^{\rm sharp}\,2^{2s}L}
+\frac{(t)_sG}{1188\,2^{2s}L}
 }
 $$
 
-because `756=36*21`.
+because `1188=108*11`. With the exact sharp derangement probability, the corresponding bound is
+
+$$
+\boxed{
+\frac{G}{396\,p_{t,s}^{\rm sharp}\,2^{2s}L}
+}
+$$
+
+because `396=36*11`.
 
 ### Proof
 
-The crossed-count classes `a=1,2,3` partition the profile. AC3fm gives `2^a-1` words in one class. Apply weighted pigeonhole and substitute the two AC3ct profile bounds. QED.
+The eleven joint labels partition the profile, so weighted pigeonhole gives `S/11`. Substitute the two AC3ct profile bounds. The within-count statement is the same argument on the `2^a-1` words. QED.
 
 When `a=1`, the output is one crossed-cell completion literal against a current blocker pair. When `a=2`, it is a crossed-pair secant through one current context cell. When `a=3`, it is an all-new crossed-cell tuple.
 
@@ -142,4 +142,4 @@ The remaining blocker frontier is arithmetic termination of rank-one crossed-cel
 
 ## Finite check
 
-`scripts/verify_ac_ri_blocker_rank_router.py` enumerates crossed counts one through three, all nonzero current/new words, verifies the rank map, exhausts bounded twenty-one-bin weighted ledgers, and checks the constants `2268` and `756`.
+`scripts/verify_ac_ri_blocker_rank_router.py` enumerates crossed counts one through three, all eleven joint current/new labels, verifies the rank map, exhausts bounded eleven-bin weighted ledgers, and checks the constants `1188` and `396`.
