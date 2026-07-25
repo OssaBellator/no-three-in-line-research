@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR355--CMR360's duplicated-row model."""
+"""Finite checks for CMR372--CMR377's duplicated-row model."""
 
 from __future__ import annotations
 
@@ -39,7 +39,7 @@ def band_triples(t: int, height: int) -> list[tuple[Cell, Cell, Cell]]:
 
 
 def verify_host_degrees(t: int, target: Cell) -> None:
-    for copy_name in ("Q", "R"):
+    for _copy_name in ("Q", "R"):
         source_degree = Counter()
         row_degree = Counter()
         for x in range(t):
@@ -72,7 +72,9 @@ def verify_main_band_bounds(t: int, height: int) -> None:
 def verify_mixed_copy_counts(t: int, height: int) -> None:
     triples = band_triples(t, height)
     by_type_edge_degree: dict[tuple[int, int], Counter[Edge]] = defaultdict(Counter)
-    by_type_pair_degree: dict[tuple[int, int], Counter[frozenset[Edge]]] = defaultdict(Counter)
+    by_type_pair_degree: dict[
+        tuple[int, int], Counter[frozenset[Edge]]
+    ] = defaultdict(Counter)
 
     for triple in triples:
         for copies in product(("Q", "R"), repeat=3):
@@ -90,8 +92,6 @@ def verify_mixed_copy_counts(t: int, height: int) -> None:
             for pair in combinations(edges, 2):
                 by_type_pair_degree[key][frozenset(pair)] += 1
 
-    # E5 for geometric (2,1): fixing the one reserve edge leaves exactly the
-    # original board-cell degree.
     reserve_degrees = [
         count
         for edge, count in by_type_edge_degree[(2, 1)].items()
@@ -99,14 +99,11 @@ def verify_mixed_copy_counts(t: int, height: int) -> None:
     ]
     assert max(reserve_degrees, default=0) < 3 * t * t
 
-    # E6: one fixed main edge and one fixed reserve edge have board pair
-    # codegree below t/H.
     for pair, count in by_type_pair_degree[(2, 1)].items():
         if {edge[0] for edge in pair} == {"Q", "R"}:
             assert count * height < t
 
-    # The same raw pair-codegree bound controls every copy pattern.
-    for key, counter in by_type_pair_degree.items():
+    for counter in by_type_pair_degree.values():
         for pair, count in counter.items():
             represented = {(edge[1], edge[2]) for edge in pair}
             if len(represented) == 2:
@@ -132,9 +129,6 @@ def verify_row_copy_conflicts(t: int) -> None:
 
 
 def verify_decoding(t: int, target: Cell) -> None:
-    # Enumerate all assignments of an original row and a copy to every source.
-    # Keep only duplicated-host matchings avoiding row-copy conflicts, and check
-    # that they decode to ordinary target-specific permutations.
     options = [
         (copy_name, row)
         for copy_name in ("Q", "R")
