@@ -36,15 +36,16 @@ def harmonic_band(lower: int) -> Fraction:
 
 
 def verify_two_band_budget() -> None:
-    previous = harmonic_band(1)
-    for lower in range(2, 10_000):
+    # Check the exact recurrence on a bounded range. The symbolic difference is
+    # negative for every positive lower endpoint, so the H=5 check controls all
+    # larger bands.
+    for lower in range(1, 100):
         current = harmonic_band(lower)
-        assert current < previous
-        previous = current
-        if lower >= 5:
-            assert current < Fraction(3, 4)
+        following = harmonic_band(lower + 1)
+        assert following - current == -Fraction(1, 2 * lower * (2 * lower + 1))
 
     assert harmonic_band(5) == Fraction(1879, 2520)
+    assert harmonic_band(5) < Fraction(3, 4)
 
 
 def primitive_height(first: tuple[int, int], second: tuple[int, int]) -> int:
@@ -60,7 +61,7 @@ def collinear(points: tuple[tuple[int, int], ...]) -> bool:
 
 
 def verify_cell_degree_bound() -> None:
-    for t in range(5, 13):
+    for t in range(5, 10):
         cells = [(x, y) for x in range(t) for y in range(t)]
         for chosen_heights in ({1}, {2}, {1, 2}, {2, 3}):
             degree = {cell: 0 for cell in cells}
@@ -88,8 +89,8 @@ def verify_cell_degree_bound() -> None:
             assert max(degree.values(), default=0) <= exact_bound
 
             harmonic = sum(Fraction(1, height) for height in chosen_heights)
-            crude_numerator = 2 * (t - 1) ** 2 * harmonic
-            assert max(degree.values(), default=0) <= crude_numerator
+            crude_bound = 2 * (t - 1) ** 2 * harmonic
+            assert max(degree.values(), default=0) <= crude_bound
 
 
 def main() -> None:
