@@ -7,7 +7,7 @@ smaller Hall side. Widths four through six then produce linearly many lines
 below height `t/3`; only widths two and three remain distinct geometric
 obstructions.
 
-Let `A times C` be the Hall rectangle from CMR247, and put
+Let \(A\times C\) be the Hall rectangle from CMR247, and put
 
 \[
 n=\min\{|A|,|C|\},
@@ -15,7 +15,7 @@ n=\min\{|A|,|C|\},
 m=\max\{|A|,|C|\}=t+1-n.
 \]
 
-Let `\mathcal L` be the `t-1` blocking lines. For `L in mathcal L`, write
+Let `\mathcal L` be the `t-1` blocking lines. For \(L\in\mathcal L\), write
 
 \[
 i(L)=|L\cap(A\times C)|.
@@ -83,7 +83,8 @@ By definition,
 \[
 D=n(t-1)-I,
 \qquad
-\Omega=I-|\cup_{L\in\mathcal L}(L\cap(A\times C))|.
+\Omega
+=I-\left|\bigcup_{L\in\mathcal L}(L\cap(A\times C))\right|.
 \]
 
 Therefore
@@ -91,7 +92,7 @@ Therefore
 \[
 D+\Omega
 =
-n(t-1)-|\cup_{L\in\mathcal L}(L\cap(A\times C))|
+n(t-1)-\left|\bigcup_{L\in\mathcal L}(L\cap(A\times C))\right|
 \le
 n(t-1)-(nm-1).
 \]
