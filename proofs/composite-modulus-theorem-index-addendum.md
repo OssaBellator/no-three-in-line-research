@@ -61,6 +61,7 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR252--256 | Direction-class vertex load, exact target-specific cleaning above \(0.45t\), a `floor(t/200)` line reserve, and lower-height extraction | PROVED | `docs/107-prime-power-refined-target-height-slice.md` |
 | CMR257--260 | Three-slice moment obstruction, sharp \(t-3\) common fans, and three-endpoint singleton-blocker expansion | PROVED | `docs/108-prime-power-three-endpoint-fan-obstruction.md` |
 | CMR261--265 | Summed placement load, exact target-specific cleaning above \(0.44t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/109-prime-power-role-count-height-cleaning.md` |
+| CMR266--270 | Parity-sieved height mass, exact target-specific cleaning above \(0.43t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/110-prime-power-parity-sieved-height-cleaning.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
