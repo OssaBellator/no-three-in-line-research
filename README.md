@@ -4,7 +4,7 @@
 
 This is the principal dependent proof-chain branch. It develops paid structural re-extraction, finite-role concentration, alternating two-layer transitions, reverse-scale compatibility, and the prime-minus-one endpoint.
 
-> **Status:** AC3gc--AC3gm propagate union-safe BDA products, orient every realized created-cell rank to one pivot and realize expected profiles before pivoting. AC3gn--AC3he control decorated signatures, full partner saturation, empty-partner menus, the finite `3 x 3` exception and new physical pivot-cell exposure. AC3hf--AC3hh import the BDA affine-chain collapse with payment `H/10` and failed-rank return `H/30`. AC3hi--AC3hp close the remaining old-axis, fixed-context, fixed-pair and historical line-star topology by routing it to pair-core rematching, direct current-anchor rematching, one heavy certificate or a realized failed-bank rank. AC3hq--AC3hr show that occurrence-faithful ordinary co-anchor records automatically pass the collision/clean-support audit and need only the complete AC3v second extraction. AC3hs--AC3ht correct raw reflected `CD` use: its two local cells are nonradial, so reflected profiles execute through separately proved radial support or realized-rank pivot routing. The remaining work is physical occurrence realization for unresolved arithmetic roles, finite arithmetic transition cycles, AC4 assembly and the AC5 reverse-scale audit.
+> **Status:** AC3gc--AC3gm propagate union-safe BDA products, orient every realized created-cell rank to one pivot and realize expected profiles before pivoting. AC3gn--AC3he control decorated signatures, full partner saturation, empty-partner menus, the finite `3 x 3` exception and new physical pivot-cell exposure. AC3hf--AC3hh import the BDA affine-chain collapse with payment `H/10` and failed-rank return `H/30`. AC3hi--AC3hp close the remaining old-axis, fixed-context, fixed-pair and historical line-star topology by routing it to pair-core rematching, direct current-anchor rematching, one heavy certificate or a realized failed-bank rank. AC3hq--AC3hr show that occurrence-faithful ordinary co-anchor records automatically pass the collision/clean-support audit and need only the complete AC3v second extraction. AC3hs--AC3ht correct raw reflected `CD` use: its two local cells are nonradial, so reflected profiles execute through separately proved radial support or realized-rank pivot routing. AC3hu--AC3hw close pure adjacent-scale and strict denominator cycles with a ticket/prime-factor potential, so every remaining cycle changes a same-denominator non-scalar profile field. The remaining work is physical occurrence realization for unresolved arithmetic roles, classification of those residual profile changes, AC4 assembly and the AC5 reverse-scale audit.
 
 ## Core proof map
 
@@ -24,6 +24,7 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 - [`docs/alternating-core-cross-arm-recurrence.md`](docs/alternating-core-cross-arm-recurrence.md): new pivot-cell exposure and old-axis saturation.
 - [`docs/alternating-core-old-axis-context-router.md`](docs/alternating-core-old-axis-context-router.md): context overload, disjoint contexts and fixed-pair/axis-pivot routing.
 - [`docs/alternating-core-historical-line-router.md`](docs/alternating-core-historical-line-router.md): fixed-pair and current-anchor rematching for historical stars.
+- [`docs/alternating-core-scalar-cycle-import.md`](docs/alternating-core-scalar-cycle-import.md): ticketed adjacent-scale forests and strict denominator-cycle termination.
 
 ## Bounded-denominator interface
 
@@ -57,8 +58,8 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 ## Highest-value frontier
 
 1. Prove physical occurrence realization for the remaining arithmetic role labels; ordinary pairing and conflict handling are then automatic.
-2. Classify the retained arithmetic labels of heavy certificates, pair-core returns and failed rematching ranks into carry, BDA, RI or terminal finite states.
-3. Prove finite transition-cycle termination for those exact profiles and assemble AC4.
+2. Classify same-denominator non-scalar changes of primitive direction, residue/unit, rank/channel, anchor/context, external role or bank type.
+3. Integrate those residual profile edges into the finite transition quotient and assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 [`proofs/theorem-index.md`](proofs/theorem-index.md) is the canonical theorem ledger. The scripts exhaust finite abstractions and small-grid regressions; the Markdown arguments carry the general claims.
