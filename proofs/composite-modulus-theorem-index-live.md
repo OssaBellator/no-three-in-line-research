@@ -19,10 +19,11 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
 | CMR429--432 | Essential edges form one monotone matching core, first-essentiality layers, polynomial forced-certificate counts, and polynomial edge-set ancestry ledger | PROVED | `docs/144-prime-power-essential-core-ancestry-width.md` |
 | CMR433--438 | Matching-contraction cycle criterion, exact one-edge exchange corridor, chain batch flips, exact Dilworth cycle-cover width, batch-or-branch dichotomy, and linear temporal cycle compression | PROVED | `docs/145-prime-power-exchange-corridor-path-cover.md` |
+| CMR439--443 | Sparse rollback escape, minimum rollback essential core, cost-or-factorization dichotomy, terminal-certificate rollback, and quadratic rollback-incidence packing/concentration | PROVED | `docs/146-prime-power-sparse-rollback-factorization.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR438 is temporal or geometric use of at most `t` historical
-batch exchange cycles and payment for repeated local ancestor resets. At one
-deletion, newly essential matching edges form a reachability poset: chains can
-be exchanged together in one alternating cycle, while antichains certify
-branches which no one exchange cycle through that deletion can address.
+frontier after CMR443 is geometric payment for cheap rollback footprints and
+payment for repeated local ancestor resets. Every final forced edge can be
+escaped by restoring at most `t` deleted edges. If its minimum rollback has size
+at least `q`, the avoiding matching space factors off that forced rollback
+matching and reduces to a host of side at most `t-q`.
