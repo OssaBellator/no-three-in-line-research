@@ -25,7 +25,8 @@ The notebook contains proved lemmas or exact conditional endpoints for:
 - exact fixed- and variable-reservoir patch expectations;
 - binary and multistate rank-at-most-three forbidden-box CSPs;
 - weighted local-lemma and fixed-rank spread endpoints;
-- modular-hyperbola, carry, quotient, gcd, divisor, and incidence structure;
+- modular-hyperbola, carry, quotient, gcd, divisor, Ramsey, and incidence
+  structure;
 - exact finite certificate verification and small exhaustive searches.
 
 The principal non-prime-patching route still lacks its second-generation
@@ -88,129 +89,47 @@ Let `rho_i(A)` and `chi_i(B)` be the movement-row and refill-column nondegree
 upper bounds obtained from controller-cell defects and same-slot anchor counts.
 Let `kappa(B)` be the average refill score.
 
-The branch now has four separate allocation mechanisms.
+The branch has four separate allocation mechanisms.
 
-### 1. One-sided ownership bottleneck versus refill slack
+1. **One-sided bottleneck versus refill slack.** Direct allocation follows when
+   ```text
+   r_score <= min_B Lambda_score(B).
+   ```
+   Failure gives an exact capacitated movement-label Hall set paired with a refill
+   label whose cumulative local slack is too small.
+2. **Deterministic two-sided ownership.** Route exactly `W` movement labels and
+   `W` refill labels to every macro. Local Ore matching succeeds when
+   `r+s<=W`.
+3. **Random two-sided ownership.** Hypergeometric sampling succeeds when every
+   macro nonedge has
+   ```text
+   rho_i(A)+chi_i(B) <= T-m^(23/80+o(1)).
+   ```
+4. **Random one-sided ownership.** The average-refill complementary-degree
+   criterion succeeds when
+   ```text
+   rho_i(A)+kappa(B) <= T-8*sqrt(T log T).
+   ```
 
-For a balanced movement-label ownership, define the minimum possible maximum row
-score
+Sparse exceptional macro-label pairs are routable. A direct obstruction must
+survive all four mechanisms.
 
-\[
-r_{\rm score}
-=
-\min_\sigma\max_A\rho_{\sigma(A)}(A).
-\]
+### Anchor-energy localization
 
-For refill label `B`, define cumulative local slack
-
-\[
-\Lambda_{\rm score}(B)
-=
-\sum_i(W-\chi_i(B))_+.
-\]
-
-If
-
-\[
-\boxed{
-r_{\rm score}
-\le
-\min_B\Lambda_{\rm score}(B),
-}
-\]
-
-then a global label matching exists. This is threshold-free and deterministic.
-A failure returns an exact capacitated ownership Hall set and a refill label whose
-total local slack is below the ownership bottleneck.
-
-Under a fixed refill-label margin,
+The complete same-slot anchor mass across all disjoint active pools satisfies
 
 \[
-\Lambda_{\rm score}(B)
-\ge
-T-
-\frac{
-\sum_iA_i+\sum_iV_i(B)
-}{\delta R}.
+\sum_{i,A,B}u_i(A,B)=O(m^{2+o(1)}).
 \]
 
-Hence global rather than worst-macro excess-shadow and same-slot anchor mass
-controls the refill side.
+Combining this divisor-energy bound with the exact ownership Hall rectangle
+shows that an anchor-driven ownership failure cannot have a middle-sized Hall
+set. At the PP3of threshold it is either:
 
-### 2. Deterministic two-sided ownership
+- a sublinear exceptional label cluster; or
+- a macro rejecting all but a sublinear label set.
 
-Assign exactly `W` movement labels and exactly `W` refill labels to every macro.
-If the two ownership score thresholds satisfy
-
-\[
-\boxed{r+s\le W,}
-\]
-
-then every induced `W by W` macro compatibility graph has a perfect matching by
-the bipartite Ore theorem.
-
-Both ownership hosts have exact capacitated Hall criteria. Sparse exceptional
-macro-label pairs can therefore be routed around independently on the two label
-sides.
-
-### 3. Random two-sided ownership
-
-Independent random balanced partitions sample every global nondegree down by the
-factor `W/T`. If every macro nonedge satisfies
-
-\[
-\rho_i(A)+\chi_i(B)
-\le
-T-h,
-\]
-
-with
-
-\[
-h=2T\sqrt{\frac{\log(4MT)}W}
-=m^{23/80+o(1)},
-\]
-
-then all induced macro graphs simultaneously satisfy local Ore and admit perfect
-matchings.
-
-### 4. Random one-sided ownership
-
-The earlier complementary-degree theorem remains available. Global allocation
-follows whenever every incompatible triple satisfies
-
-\[
-\rho_i(A)+\kappa(B)
-\le
-T-8\sqrt{T\log T}.
-\]
-
-Diffuse excess shadow is therefore sufficient, but uniform smallness is no
-longer required. A direct obstruction must survive routing, cumulative slack,
-two-sided local matching, per-macro complementary degree, and average refill
-complementary degree simultaneously.
-
-## Exact ownership failure objects
-
-At threshold `r`, a balanced acceptable movement ownership exists exactly when
-
-\[
-W|N_M(X)|\ge|X|
-\]
-
-for every numerical-label set `X`. Failure gives an all-bad score rectangle
-
-\[
-X\times([M]\setminus N_M(X)).
-\]
-
-A middle-sized Hall set produces a positive-density label-by-macro rectangle;
-a very large Hall set produces at least one nearly dead macro column; and a small
-Hall set is an explicit exceptional-label cluster.
-
-Thus isolated bad macro-label pairs are not terminal. The direct numerical
-obstruction is a capacitated Hall/slack core or a score concentration surviving
-all four allocation architectures.
+Diffuse or positive-density anchor Hall rectangles are therefore closed.
 
 ## Source-valid resource trades
 
@@ -219,7 +138,7 @@ Under sparse unary source shadow, endpoint-host pruning, a permutation local
 lemma, transition divisor regularisation, and support-rank thinning produce a
 saturation-preserving no-three endpoint trade.
 
-The thinning can be chosen adaptively so that:
+The thinning may be chosen adaptively so that:
 
 - the unary forbidden graph has `o(q)` edges;
 - the anchored transition family has `o(q)` events;
@@ -228,7 +147,7 @@ The thinning can be chosen adaptively so that:
   `(1+o(1))/q`.
 
 Source admissibility of the resource endpoint is therefore closed with a
-near-uniform, rather than merely constant-factor, one-cell law.
+near-uniform one-cell law.
 
 ## Zero-unary Hall and binary endpoints
 
@@ -252,58 +171,94 @@ fractional minimum resource congestion has:
 - Hall inheritance under low-congestion deletion.
 
 One nonaxis witness line has a congestion-one cover. A family with `o(q)`
-witness-line overlap is also absorbed. The remaining binary objects are a
-linear-congestion fractional dual packing or a high-overlap witness-line pencil.
+witness-line overlap is also absorbed. The remaining original binary-shadow
+objects are a linear-congestion dual packing or a high-overlap witness-line
+pencil.
 
-## Rich-line conversion endpoint
+## Recapture-line rectangle conversion
 
 Naive one-survivor deletion cannot absorb a linear bank of linear-rich distinct
-geometric lines: the survivor-cover volume forces linear resource congestion.
-The owner lines must move.
+geometric lines. The owner lines must move.
 
-For the Hall-derived target set, adaptive thinning preserves a fixed positive
-quadratic density jointly with every source-validity diagnostic. Under the
-near-uniform source-valid derangement, the owner-line potential either strictly
-decreases or the assignment incidence system is near extremal:
+Adaptive thinning preserves a positive-density Hall target core jointly with all
+source-validity diagnostics. Failed owner-line improvement yields a
+near-extremal typed incidence system. Szemerédi--Trotter and a multiplicity split
+then produce a positive linear family of nonaxis lines with:
 
-\[
-H_0=(1+o(1))|\mathcal A|,
-\qquad
-\mathcal W=(1-o(1))q|\mathcal A|.
-\]
+- at least `q^(1/3-delta)` resource-disjoint owner/replacement cells per line;
+- at least `q^(1-delta)` Hall-target cells per line;
+- total typed multiplicity `Omega(q^2)`.
 
-Applying Szemerédi--Trotter to the `q^2` typed owner/replacement lines converts
-the near-extremal alternative into one nonaxis geometric line carrying
+Pairing the two matching traces on each line gives `Omega(q^3)` alternating
+rectangle candidates. A resource-degree bound extracts `Omega(q)` pairwise
+row/column-disjoint rectangle blocks.
 
-\[
-\Omega(q^{1/3})
-\]
+Rectangle extraction is therefore closed.
 
-pairwise resource-disjoint owner/replacement endpoint cells and their owner
-candidate points.
+## Superregular rectangle installation
 
-The former second-generation grid-rich pencil is therefore reduced to one common
-geometric carrier suitable for a protected line, rectangle, cycle, or
-tomographic trade.
+For a small linear cross-safe rectangle bank in a superregular endpoint host:
+
+- reserving its resources leaves a residual perfect matching;
+- the residual matching may be chosen source-valid;
+- the residual matching may also be chosen with low insertion-shadow base cost
+  whenever its unary/binary expected shadow is small relative to rectangle
+  credit;
+- each rectangle is an exact two-state `2 by 2` permutation block;
+- all remaining no-three constraints form a binary rank-at-most-three CNF;
+- exact insertion shadow is a degree-at-most-two pseudo-Boolean cost.
+
+Diffuse geometric clause mass and diffuse paid cost are closed by first moment,
+variable local lemma, support cleaning, or weighted thinning.
+
+## Signed binary rectangle endpoint
+
+After unit preprocessing, ternary clauses have vanishing density and may be
+removed on a growing subbank. Colouring each variable pair by its complete
+sixteen-valued forbidden-state signature and applying fixed-colour Ramsey gives
+a growing homogeneous subbank.
+
+Its paid capacity is exact.
+
+- If `(1,1)` is allowed, the all-cross state is geometrically valid and directly
+  protects one designated credit unit per rectangle.
+- If `(1,1)` is forbidden but `(0,0)` is allowed, every valid homogeneous
+  assignment has at most one cross-oriented rectangle. This signature is
+  explicitly credit-poor.
+- If both diagonal state pairs are forbidden, three rectangles already form an
+  unsatisfiable core.
+
+A dense all-cross conflict graph is geometric. It yields a rich cross line, a
+large pencil through one selected rectangle cell, or—after homogeneous Ramsey
+refinement—a complete fixed-anchor secant design.
+
+Sparse all-cross unary support and sparse all-cross binary support contain a
+growing zero-cost subbank. Weighted unary `o(K)` and binary `o(K^2)` cost likewise
+produce a growing `o(K)`-cost subbank. The residual matching base cost may be
+selected simultaneously with source validity by a paid superregular first
+moment.
+
+Thus arbitrary dense Boolean satisfiability, common-line rectangle extraction,
+residual matching, residual source validity, and diffuse paid collateral are no
+longer separate open problems.
 
 ## What remains conditional
 
 The remaining conversion theorem has the following structured forms.
 
 1. Convert an ownership Hall/slack core, a two-sided threshold gap, or the
-   simultaneous complementary-score concentration surviving all four direct
-   allocation interfaces.
+   simultaneous score concentration surviving all four allocation interfaces.
 2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
-   outside the recapture-line class.
-3. Convert the common nonaxis line matching from PP3oc.
-4. Convert a linear-congestion binary dual packing or witness-line pencil.
-5. Build source-admissible pool-compatible trades with `Xi` insertion cost below
+   outside the superregular recapture branch.
+3. Convert a credit-poor homogeneous rectangle signature, a rich cross line or
+   pencil, a complete fixed-anchor secant design, or a constant-size signed
+   contradiction.
+4. Convert linear unary, quadratic binary, or residual weighted shadow
+   concentration at the rectangle-credit scale.
+5. Convert a linear-congestion original binary-shadow dual packing or
+   witness-line pencil.
+6. Build source-admissible pool-compatible trades with `Xi` insertion cost below
    their star/resource removal credit.
-
-Diffuse weighted residuals, external completion energy, source validity of the
-resource endpoint, sparse exceptional labels, isolated rich fibres, raw
-binary-fan size, naive rich-line covering, dynamic controller relabelling, and
-termination are no longer separate open problems.
 
 ## Important cautions
 
@@ -313,6 +268,7 @@ termination are no longer separate open problems.
 - A source-endpoint blocker star is not automatically a common-candidate star.
 - A single rich line has bounded cover congestion, but a linear bank of
   linear-rich distinct lines need not.
+- The superregular rectangle theorems do not cover every matchable sparse host.
 - Finite diagnostics validate identities and expose obstructions; they do not
   prove the asymptotic conversion theorem.
 
@@ -321,6 +277,7 @@ termination are no longer separate open problems.
 There is no complete proof. The branch closes matching supply, exponent-optimal
 macro width, saturation-compatible allocation interfaces, external weighted
 geometry, source-valid near-uniform resource trades, low-congestion binary
-covering, direct controller-defect routing, exact ownership Hall/slack cores, and
-rich-line reduction to a common-line matching. The structured conversion cases
-above remain open.
+covering, exact ownership Hall/slack cores, recapture-line rectangle extraction,
+superregular residual installation, signed binary-CSP regularization, and
+diffuse paid rectangle selection. The structured concentration cases above
+remain open.
