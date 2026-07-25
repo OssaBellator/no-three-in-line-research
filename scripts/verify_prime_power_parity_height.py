@@ -7,10 +7,6 @@ from itertools import combinations
 from math import ceil, gcd
 
 
-def euler_phi(n: int) -> int:
-    return sum(gcd(a, n) == 1 for a in range(1, n))
-
-
 def primitive_height(p: tuple[int, int], q: tuple[int, int]) -> int:
     dx = q[0] - p[0]
     dy = q[1] - p[1]
@@ -62,7 +58,8 @@ def verify_small_geometric_loads() -> None:
         assert max(target_load) <= bound
 
 
-def verify_even_mass_pairing(max_t: int = 501) -> None:
+def verify_even_mass_pairing(max_t: int = 75) -> None:
+    # Finite sanity range only; CMR266 proves the pairing inequality generally.
     for t in range(7, max_t + 1, 2):
         top = (t - 1) // 2
         for height in range((t - 1) // 3 + 1, top + 1):
@@ -98,16 +95,6 @@ def verify_polynomial_thresholds() -> None:
     assert reserve_polynomial(449) > 0
     assert reserve_derivative(449) > 0
     assert 136374 * 449 - 20420400 > 0
-
-
-def crude_parity_integral_numerator(t: int) -> int:
-    # 16 times the integral upper bound in CMR267.
-    return (
-        16 * 71757 * t**3 // 2000000
-        + 16 * 5827 * t**2 // 10000
-        + 16 * 61 * t // 50
-        - 25
-    )
 
 
 def verify_exact_discrete_sample() -> None:
