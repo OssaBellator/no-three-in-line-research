@@ -2,7 +2,7 @@
 
 **Branch:** `research/alternating-core-chain`
 
-AC3db--AC3df reduce every incomplete rational fibre and one-root scale imbalance to a carry defect, an off-family current companion factor, or a row-column-disjoint family of one-cell companion completions. This note proves the missing payment interface for the latter two outputs. After one exact orientation and fibre are fixed, every companion record has a private original current factor. The corresponding Hall problem is therefore exact, and the only root-reversal cycle is a two-state involution paid by one finite fibre ticket.
+AC3db--AC3df reduce every incomplete rational fibre and one-root scale imbalance to a carry defect, an off-family current companion factor, or a row-column-disjoint family of one-cell companion completions. This note proves the missing payment interface for the latter two outputs. After one exact orientation and fibre are fixed, every companion record has a private original current factor. The corresponding Hall problem is therefore exact, the only root-reversal cycle is a two-state involution paid by one finite fibre ticket, and an off-family current companion produces a bounded-ratio bank of four-point current defect lines.
 
 ## Exact companion records
 
@@ -60,11 +60,11 @@ Consequently every companion record has a private current-defect resource: its o
 
 ### Proof
 
-The column of `P_x` is exactly `x`, so the current factor `T_x^c` determines `x`. Hence equal original factors imply equal bases and equal aggregated records. Since `c^dagger` is nonzero, equality `c^dagger x=c^dagger y` also implies `x=y`, proving injectivity of the desired-anchor map. QED.
+The factor retains its channel labels. Its unique `H_b` anchor is `B_{cx}`, whose column is `cx`; because `c` is nonzero, this determines `x`. Hence equal labelled original factors imply equal bases and equal aggregated records. Since `c^dagger` is nonzero, equality `c^dagger x=c^dagger y` also implies `x=y`, proving injectivity of the desired-anchor map. QED.
 
 ## AC3do -- exact capacitated Hall payment -- PROVED
 
-Let `J` be any finite family of exact companion records. Let
+Let `J` be any finite family of distinct exact companion records. Let
 
 $$
 \mathcal P=\{\pi_x:x\in J\}
@@ -86,17 +86,13 @@ $$
 }
 $$
 
-Therefore AC3f gives a unique charge map, namely `j_x -> pi_x`, and the total number of companion reopenings paid by this exact record family is at most
-
-$$
-\boxed{|\mathcal P|=|J|.}
-$$
+Therefore AC3f gives a unique charge map, namely `j_x -> pi_x`. Under the capacity-one ticket policy, each exact base/profile record can pay at most one reopening. A second event with the same base is immediately an explicit repeated-resource obstruction rather than another silently payable event.
 
 The same conclusion holds with an integer multiplicity capacity attached to an aggregated current factor: split the capacity into distinguishable copies before applying AC3f.
 
 ### Proof
 
-AC3dn makes the singleton eligibility sets pairwise disjoint. Their union over `X` therefore contains exactly `|X|` capacity-one resources. This is the displayed Hall identity, and AC3f supplies the charge map and total ticket bound. QED.
+AC3dn makes the singleton eligibility sets pairwise disjoint. Their union over `X` therefore contains exactly `|X|` capacity-one resources. This is the displayed Hall identity, and AC3f supplies the charge map. QED.
 
 ## AC3dp -- exact two-state companion involution -- PROVED
 
@@ -161,16 +157,95 @@ $$
 
 AC3dn--AC3do provide pairwise private payment. AC3v defines the complete conflict relation and proves exact additivity on independent sets. Apply AC2c to the weighted conflict graph. The final constant composes the `U/51` bound of AC3de with the `1/K` compatible extraction. QED.
 
+## AC3dr -- off-family companions form four-point current lines -- PROVED
+
+Assume the off-family current-companion case of AC3dc, so both `T_x^c` and `T_x^{c^dagger}` are current factors. Then
+
+$$
+\boxed{
+L_x=\{P_x,P_{gx},B_{cx},B_{c^\dagger x}\}
+}
+$$
+
+consists of four distinct current cells on one real affine line. Consequently all four three-element subsets of `L_x` are current collinear certificates.
+
+### Proof
+
+The two current factors share the two distinct points `P_x,P_{gx}`. Hence their third points lie on the same unique real line through that edge. The source points are distinct because `g!=1`; the anchors are distinct because the fibre is nonfixed; and no `H_a` cell equals an `H_b` cell because `a!=b`. Thus the four points are distinct. Every three-element subset of four points on one line is collinear. QED.
+
+## AC3ds -- bounded support conflict of four-point lines -- PROVED
+
+For one exact oriented fibre, the four columns of `L_x` have multipliers
+
+$$
+\mathcal M=\{1,g,c,c^\dagger\}
+$$
+
+relative to `x`. Relative to the source row `a/x`, their row multipliers are
+
+$$
+\mathcal N=\{1,g^{-1},c/g,c^\dagger/g\}.
+$$
+
+Join two distinct bases `x,y` when `L_x` and `L_y` share a row or column. Then a conflict requires
+
+$$
+\boxed{
+y/x\in
+\mathcal M\mathcal M^{-1}
+\cup
+\mathcal N\mathcal N^{-1}.
+}
+$$
+
+The union has at most thirty-one elements including the identity. Therefore the support-conflict graph has maximum degree at most
+
+$$
+\boxed{30,}
+$$
+
+and contains a row-column-disjoint subfamily carrying at least `1/31` of the total weight.
+
+### Proof
+
+A column equality has the form `mu x=nu y`, with `mu,nu in M`, and a row equality has the same quotient form with multipliers in `N`. Each quotient set has at most sixteen elements and both contain the identity, so their union has at most thirty-one. Every nonidentity ratio determines at most one conflicting base `y` for a fixed `x`. Greedy weighted colouring gives the `1/31` class. QED.
+
+## AC3dt -- paid off-family line-bank router -- PROVED
+
+Let one exact off-family current-companion class have total paid weight `V`. Then AC3ds gives a row-column-disjoint family of four-point current lines carrying at least
+
+$$
+\boxed{V/31.}
+$$
+
+Complete its full conflict relation with AC3v. For every `K>=1`, either one four-point line has scoped closed-neighbourhood paid load greater than `K` times its own weight, and AC2d returns one finite conflict label, or a fully support-compatible family carries at least
+
+$$
+\boxed{V/(31K).}
+$$
+
+Every selected object retains four explicit current collinear certificates, its common fixed edge, both rational roots, base scale, and all carry data. If the off-family branch came from an unmatched class of weight `U`, then `V>=U/3`, so the compatible-bank lower bound is
+
+$$
+\boxed{U/(93K).}
+$$
+
+unless a labelled overload occurs.
+
+### Proof
+
+Apply AC3ds and then AC2c to the scope-complete graph. AC3v supplies exact additivity on the independent family. The final constant uses the three-way split in AC3de. QED.
+
 ## Consequence for the AC3 ticket ledger
 
 The missing-companion route no longer has an abstract payment obligation.
 
 - Carry-defect companions enter the finite carry-signature ledger.
-- Off-family current companions use one capacity-one unordered-fibre ticket per base; their only raw root cycle is broken.
+- Off-family current companions use one capacity-one unordered-fibre ticket per base; their only raw root cycle is broken, and their current support amplifies to a four-point-line bank or a labelled scoped overload.
 - Absent-anchor completions have a unique private current-factor charge and enter a scope-complete paid-bank-or-labelled-overload router.
 
-What remains is the actual improvement/collateral comparison for a compatible one-cell completion bank and the arithmetic classification of any dense labelled overload. Neither payment eligibility nor companion-root recycling remains open.
+What remains is the actual improvement/collateral comparison for compatible one-cell-completion and four-point-line banks, together with arithmetic classification of any dense labelled overload. Neither payment eligibility nor companion-root recycling remains open.
 
 ## Finite check
 
-`scripts/verify_ac_ri_companion_payment.py` enumerates rational fibres over small primes, checks companion involution, injectivity of original-factor and desired-anchor maps, every capacitated Hall subfamily, capacity-one cycle breaking, and the weighted AC2c compatible-bank constants on small conflict graphs.
+`scripts/verify_ac_ri_companion_payment.py` enumerates rational fibres over small primes, checks companion involution, injectivity of original-factor and desired-anchor maps, every capacitated Hall subfamily, four-point-line certificates, the thirty-ratio support bound, capacity-one cycle breaking, and the weighted AC2c compatible-bank constants on small conflict graphs.
