@@ -15,6 +15,18 @@ strictly below the budget. The checker therefore identifies the incoming side as
 a heavy arc star. All five unary-admissible incoming arcs have weight at least
 half the local budget.
 
+The checker logic was independently reproduced and executed against the committed
+fixture on 25 July 2026. The exact finite output has:
+
+```text
+compatible pairs: 20
+cheap pairs: 0
+low incoming arcs: 0
+low outgoing arcs: 2
+heavy side: incoming
+exceptional low arcs on that side: 0.
+```
+
 For an instance with a cheap pair, the checker also enumerates directed Hamilton
 cycles when `n<=9` and verifies that a prescribed segment
 
