@@ -96,6 +96,7 @@ repository-wide theorem ledger.
 | PP3xw--PP3yb | Marked fillers dilute anchored transitions and close local source mass | PROVED / CONDITIONAL ON HARD-UNARY PREPARATION | `docs/161-marked-pool-transition-dilution.md` |
 | PP3yc--PP3yi | Unary-light marked endpoints complete; failure yields a unary resource bank | PROVED | `docs/162-marked-pool-unary-dilution.md` |
 | PP3yj--PP3yp | Support-ranked marked/unmarked Xi weights give paid endpoint criteria | PROVED / CONDITIONAL ON WEIGHT BOUNDS | `docs/163-marked-pool-xi-weight-dilution.md` |
+| PP3yq--PP3yw | Fixed captive-centre failure yields eleven explicit support-degree cores | PROVED | `docs/164-exceptional-marked-centre-certificates.md` |
 
 ## Current scale
 
@@ -133,13 +134,14 @@ support cores. Forced edges remain canonical tight Hall cuts.
 ## Dynamic Xi endpoint
 
 For a credited resource bank of size `m^(19/40)` inside a full pool of size
-`m^(19/20)`, marked filler blocks of size `b=m^(kappa)` with `kappa<19/80` make
-almost every credited endpoint light for anchored pairs, inserted triples, and
-transitions. Adaptive filler size also closes diffuse unary source support.
-Failure yields a unary resource bank or a fixed exceptional centre.
+`m^(19/20)`, marked filler blocks of size `b=m^kappa`, `kappa<19/80`, make almost
+every credited endpoint light for anchored pairs, inserted triples, transitions,
+and diffuse unary source support. Failure yields a unary resource bank or a fixed
+exceptional centre.
 
-Support-ranked marked and unmarked Xi formulas now identify the exact paid
-thresholds. Diffuse Xi weight gives a strict pool-compatible decrease.
+Support-ranked marked and unmarked Xi formulas identify the exact paid thresholds.
+Diffuse Xi weight gives a strict pool-compatible decrease. A fixed captive centre
+that still fails carries one of eleven explicit support-degree cores.
 
 ## Remaining theorem
 
@@ -147,16 +149,16 @@ The branch is reduced to:
 
 1. controller denominator failure, insufficient local Ore slack, or weighted
    anchor energy in one canonical ownership core;
-2. paid conversion of the source-star/resource banks produced by unary and forced
+2. paid conversion of source-star/resource banks produced by unary and forced
    Hall concentration;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. marked endpoint Xi-load cores, full-pool Xi-weight thresholds, or one fixed
-   captive star centre with exceptional source/paid load;
+4. marked endpoint Xi-load cores, full-pool Xi-weight thresholds, or one of the
+   eleven fixed-centre support cores;
 5. alternating cycle-star/theta support cores or source/shadow cost comparable
    with cycle credit;
 6. quadratic binary cell fans, complete two-resource choice grids, conditional
-   Hall families, or paid collateral on their extracted rectangle banks.
+   Hall families, or paid collateral on their rectangle states.
 
 Diffuse pool-local source mass, diffuse binary dual mass, raw resource stars,
 unstructured non-superregularity, and termination are no longer separate open
