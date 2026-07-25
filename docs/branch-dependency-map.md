@@ -114,6 +114,8 @@ B + (B+1)((n^2+1)H(n,L,lambda)+n^2),
 
 unless it returns an improving or paid menu, accepted arithmetic chamber, terminal literal/resource fan or exact outer reset. Matching-state churn and blocker-host drift are therefore total at the epoch level.
 
+AC3jv--AC3jz audit the arithmetic owners of those unary reasons. A target-containing BDA/RI/carry formula is prospective hard geometry because its target cell is absent from the current blocker state; it is not destroyed current payment. Payment requires a separate current owner with exact `current/physical/coherent/payable` status and a faithful destruction contract. RI target cells determine their physical scale but not component payability, while BDA target templates require a separate occurrence-faithful current radial owner or remain in the literal/missing-support route.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -124,9 +126,9 @@ unless it returns an improving or paid menu, accepted arithmetic chamber, termin
 
 ## Current frontier
 
-1. Install and pay the centred unconditional-literal, common-residual, support-disjoint, same-owner and many-owner outputs of AC3jl.
-2. Classify genuine outer reset edges by same-denominator arithmetic profile, owner interpretation, base-host construction, protected contract and envelope epoch; build the global bounded AC4 potential.
-3. Prove physical occurrence realization for unresolved carry/BDA/RI owner roles and terminate the remaining AC3ie boundary/petal terms.
+1. Install and pay the centred unconditional-literal, common-residual, support-disjoint, same-owner and many-owner outputs without charging prospective target geometry.
+2. Fill the AC3jz owner-status chart for each live carry/BDA/RI/protected owner and classify genuine outer reset edges.
+3. Build the global bounded AC4 potential and terminate the remaining AC3ie boundary/petal terms.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
