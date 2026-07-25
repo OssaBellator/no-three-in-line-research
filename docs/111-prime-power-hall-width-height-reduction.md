@@ -1,7 +1,7 @@
 # Hall-width reduction to low primitive height
 
 CMR247 leaves a nontrivial sharp blocker supported on `t-1` real lines and a
-Hall rectangle `A times C` with `|A|+|C|=t+1`. If both Hall sides are broad,
+Hall rectangle \(A\times C\) with `|A|+|C|=t+1`. If both Hall sides are broad,
 those lines must cover many rectangle cells. One line is then long, and every
 long grid line has small primitive direction height. Thus broad Hall-boundary
 factors belong automatically to the low-height carry regime.
@@ -24,7 +24,7 @@ Assume `n>=2`, so the blocker is not the singleton-fan case.
 
 ### Theorem CMR271 — PROVED
 
-Let `t-1` nonaxis real lines cover every cell of `A times C` except possibly one
+Let `t-1` nonaxis real lines cover every cell of \(A\times C\) except possibly one
 target cell. Then one of the lines contains at least
 
 \[
@@ -33,7 +33,7 @@ target cell. Then one of the lines contains at least
 }
 \]
 
-cells of `A times C`.
+cells of \(A\times C\).
 
 ### Proof
 
