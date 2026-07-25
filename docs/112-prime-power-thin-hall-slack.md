@@ -44,20 +44,25 @@ Define the available-cell line deficiency
 \[
 D
 =
-\sum_{L\in\mathcal L}(n-i_*(L))
+\sum_{L\in\mathcal L}(n-i_*(L)).
 \]
 
-and the repeated available-incidence mass
+For \(z\in A\times C\), let
+
+\[
+d_*(z)
+=
+|\{L\in\mathcal L:z\in E_*(L)\}|,
+\]
+
+and define the repeated available-incidence mass
 
 \[
 \Omega
 =
 \sum_{z\in A\times C}
-\max\{0,\deg_{E_*\mathcal L}(z)-1\},
+\max\{0,d_*(z)-1\}.
 \]
-
-where `deg_{E_* mathcal L}(z)` counts blocking lines whose available set
-`E_*(L)` contains `z`.
 
 Then
 
@@ -260,4 +265,4 @@ expansion, or a bounded carry-signature charge.
 
 No all-`n` theorem is claimed here. The exact slack identities and all width
 specializations are checked in
-[`scripts/verify_prime_power-thin-hall-slack.py`](../scripts/verify_prime_power_thin_hall_slack.py).
+[`scripts/verify_prime_power_thin_hall_slack.py`](../scripts/verify_prime_power_thin_hall_slack.py).
