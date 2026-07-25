@@ -50,6 +50,9 @@ This ledger records only branch-specific statements.
 | BDA5aa–BDA5ab | Reflected offsets have exact content `gcd(2Ah,q)` and a coprime reduced-unit profile | PROVED | `docs/bounded-denominator-reflected-scalar.md` |
 | BDA5ac | A fixed reflected residue is one scalar class modulo `q/gcd(2A,q)` | PROVED | `docs/bounded-denominator-reflected-scalar.md` |
 | BDA5ad | Cancellation above the denominator exponent is invisible to every finite denominator transition | PROVED | `docs/bounded-denominator-reflected-scalar.md` |
+| BDA5ae | Scalar pair overlap, endpoint weight, and `q`-step variation satisfy an exact identity | PROVED | `docs/bounded-denominator-overlap-variation.md` |
+| BDA5af–BDA5ag | Every scalar profile yields a paid pair bank, endpoint front, or parity-disjoint oriented missing-partner front | PROVED | `docs/bounded-denominator-overlap-variation.md` |
+| BDA5ah | The dispersed-anchor inequality is replaced by explicit scalar-front records with constants `W/4,W/4,W/8` at `theta=1/2` | PROVED | `docs/bounded-denominator-overlap-variation.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
