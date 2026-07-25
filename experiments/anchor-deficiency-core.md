@@ -56,7 +56,9 @@ The exact minimum-bottleneck completion uses weights `7` and `5`, so
 minimum bottleneck = 7 <= 13 = E_slot/d.
 ```
 
-I independently enumerated the acceptable matchings and the two completion
-bijections. The finite fixture verifies the Dulmage core and bottleneck-matching
-identities; it does not establish the asymptotic controller-slack hypotheses of
-PP3vy.
+The checker logic was reproduced and executed locally against this fixture on
+25 July 2026. It returned maximum acceptable matching size four, the displayed
+Dulmage core, deficiency two, and minimum bottleneck seven.
+
+The finite fixture verifies the matching/core identities. It does not establish
+the asymptotic controller-slack hypotheses of PP3vy.
