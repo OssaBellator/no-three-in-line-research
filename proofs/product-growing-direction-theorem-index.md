@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-common-product-packet-stage.md`](../tracks/all-n-product-common-product-packet-stage.md).
+[`tracks/all-n-product-conditioned-packet-release-stage.md`](../tracks/all-n-product-conditioned-packet-release-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -47,6 +47,8 @@ families and develop the complementary repair route. The active task ledger is
 | PX210 | Support-four pairs through one anchor are exactly vertex-disjoint pairs inside equal-product packets | PROVED | `docs/109-common-product-packet-extraction.md` |
 | PX211 | Large anchor-weighted support-four load forces a quantitative common-anchor/common-product packet | PROVED | `docs/109-common-product-packet-extraction.md` |
 | PX212 | Large common-product packets admit a constant-density fixed-rank-spread release bank avoiding all packet transpositions | PROVED | `docs/109-common-product-packet-extraction.md` |
+| PX213 | Packet-release spread survives arbitrary compatible exposure with only one extra reversed forbidden matching | PROVED | `docs/110-conditioned-packet-release-collateral.md` |
+| PX214 | External rank-at-most-three certificate weights transfer to expected packet-release collateral, conditionally and unconditionally | PROVED | `docs/110-conditioned-packet-release-collateral.md` |
 
 ## Current exact boundary
 
@@ -62,23 +64,20 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has a scale-sensitive, conditioning-stable
-recursive decoder with an executable support-four packet release.
+The low-syndrome repair route now has a complete probabilistic interface for
+common-product packet release.
 
-- PX183--PX190 isolate and remove the internal rematching logarithm.
-- PX191--PX195 decode large mixed `T_2` collision minima back into loaded lines
-  or clean stars.
-- PX196--PX204 provide bounded-depth bank existence, conditioned spread,
-  support-sensitive thinning, and the exact improvement criterion.
-- PX205--PX209 classify rank-two support, pay support two and support three, and
-  pay support four on blocks above `N^(2/3+epsilon)`.
-- PX210--PX211 turn large residual support-four mass into a common anchor/product
-  packet of quantitative size.
-- PX212 releases every sufficiently large packet through a constant-density
-  no-two-cycle matching bank while preserving fixed-rank spread.
+- PX183--PX209 isolate the rematching collateral sectors, pay the internal and
+  low-support terms, and control support four on large blocks.
+- PX210--PX212 extract a heavy common-product packet and release every
+  packet-certified transposition through a constant-density spread bank.
+- PX213 shows that sequential exposure adds only one reversed partial matching,
+  so residual spread loses one absolute factor rather than one factor per edge.
+- PX214 converts all remaining rank-at-most-three external certificate weights
+  into explicit normalized expected load; packet transpositions contribute zero.
 
-The immediate obligation is external collateral accounting for the PX212
-release measure: collisions through other anchors and product levels must be
-smaller than the packet-certified mass destroyed. Rank-one support two,
-rank-three short cycles, and an absolute recursion depth remain open; no exact
-infinite product closure is claimed yet.
+The missing input is now geometric: bound the external one-, two-, and
+three-cell certificate families of an extracted packet, or decode excessive
+external load into a second low-overlap packet, loaded line, clean star, or
+bounded composite batch. An absolute recursion depth and exact infinite product
+closure remain open.
