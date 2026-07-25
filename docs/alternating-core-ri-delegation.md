@@ -119,7 +119,7 @@ $$
 
 Apply RI5f to `M_0` and `T_S`. The block decomposes into internal cycles and boundary paths. Let `P_cyc` be the assigned paid weight on internal cycles and let `b` be the number of boundary paths.
 
-Exactly one of the following weighted outputs is available.
+At least one of the following weighted outputs is available.
 
 1. **Installable cycle mass:**
    $$
@@ -176,9 +176,9 @@ Let an AC3am common-residual family have total paid weight `W_x`. Assume:
 1. at most `R` arithmetic role labels;
 2. secondary multiplicity threshold `rho>=1`;
 3. the selected role is arithmetically RI-realized;
-4. scale, completion, payment, and support faithfulness hold;
-5. after choosing coherent witnesses, at most `K` scale classes are represented;
-6. an optional exact decoration alphabet has size `L`.
+4. scale, completion, paid, and support faithfulness hold;
+5. `K>=1` is a chosen scale-count threshold;
+6. an optional exact decoration alphabet has size `L>=1`.
 
 Then the selected quotient-role subfamily has weight at least
 
@@ -204,7 +204,7 @@ After AC3at, one of the following occurs.
    \boxed{W_x/(4Rrho K L)}.
    $$
 
-On the selected physical scale, AC3au--AC3av return a heavy physical anchor or partner column, installable cycle mass, a heavy boundary path, or an occupancy-executable completion-component family. If the full target block is already installed, RI5a--RI5c apply directly. Otherwise the component family enters RI5s--RI5ae with its actual collateral profile.
+On the selected physical scale, AC3au--AC3av return a heavy physical anchor or partner column, physical-column spread, installable cycle mass, a heavy boundary path, or an occupancy-executable completion-component family. If the full target block is already installed, RI5a--RI5c apply directly. Otherwise the component family enters RI5s--RI5ae with its actual collateral profile.
 
 No normalized quotient role is declared terminal before this physical-scale and completion audit.
 
