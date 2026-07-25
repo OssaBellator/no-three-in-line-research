@@ -13,7 +13,7 @@ python scripts/check_alternating_mobility.py \
   experiments/alternating-mobility-star-example.json
 ```
 
-The normalized alternating digraph has seven vertices.  Besides the diagonal
+The normalized alternating digraph has seven vertices. Besides the diagonal
 loops, it has the two arcs
 
 ```text
@@ -22,15 +22,10 @@ loops, it has the two arcs
 i -> 0
 ```
 
-for every leaf `i=1,...,6`.  It is one strongly connected component, but two
+for every leaf `i=1,...,6`. It is one strongly connected component, but two
 nontrivial directed cycles always share the centre.
 
-The perfect matchings are exactly:
-
-- the identity;
-- the six centre--leaf transpositions.
-
-Thus the expected exact output is
+Exact enumeration gives
 
 ```text
 perfect matching count                       = 7
@@ -42,10 +37,11 @@ all nontrivial matching cycles meet the hub  = true
 maximum cycles in one matching               = 1
 ```
 
-Deleting the hub leaves only the diagonal loops on vertices `2,...,6`, so the
-nonloop digraph is acyclic.  This is the extremal low-mobility shape behind
-PP3up: a large flexible SCC may have only constant simultaneous movement because
-all alternating cycles pass through one common resource.
+The seven matchings are the identity and the six centre--leaf transpositions.
+Deleting the hub leaves only diagonal loops on vertices `2,...,6`, so the
+nonloop digraph is acyclic.
 
-The regression validates the exact combinatorial reduction.  It does not prove
-that a hub-routed path system has a source-admissible low-cost state.
+The checker logic was reproduced and executed locally against this fixture on
+25 July 2026, yielding the values above. The regression validates the exact
+combinatorial reduction; it does not prove that a hub-routed path system has a
+source-admissible low-cost state.
