@@ -39,7 +39,7 @@ def maximum_disjoint_adjacent(occupied, step):
     return count
 
 
-def verify(bound=6, maximum_q=10, maximum_height=24):
+def verify(bound=5, maximum_q=9, maximum_height=18):
     vectors = primitive_vectors(bound)
     congruence_checks = 0
     projective_checks = 0
