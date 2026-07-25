@@ -97,42 +97,63 @@ resource-disjoint rectangles and using only the two cross resource blocks gives
 four equal-margin matching states. This bypasses every witness supported only on
 the original line and cross diagonals.
 
-The construction generalizes to level-`b` blocks. A level-`b` block has `2b`
-resources per side and at least `b` designated credits. Pairing two such blocks
-gives `((2b)!)^2` formal cross states. Direct recapture deletes fewer edges than
-are required to destroy every perfect matching.
+For a rectangle bank of size `H`, let the non-designated unary endpoint support
+have density `o(1)`. Deleting `o(H)` high-interaction rectangles leaves
+sublinear interaction degree. Equitable colouring then partitions all but
+`o(H)` rectangles into growing unary-independent groups. After pruning
+recapture-heavy resources, the directional cross hosts are near-complete
+superregular and have fixed-rank `O(b^-r)` spread.
 
-The stronger partition theorem removes the hierarchy's irregularity. If the
-non-designated unary endpoint graph has maximum degree `d=o(H)`, colour the
-rectangle-interaction graph, whose maximum degree is at most `4d`. Splitting its
-independent colour classes into growing groups discards only `o(H)` rectangles.
-Every group then has zero non-designated unary edges internally.
+At secondary exponent `kappa<1/60`, the chromatically scaled source-pair and
+inserted-triple terms vanish automatically. The global ordinary rectangle branch
+therefore reduces to the shadow-only quantities
 
-After deleting `o(b)` recapture-heavy rectangles from each group, both
-directional cross hosts are near-complete superregular. Their product matching
-law has fixed-rank probability `O(b^-r)`, and each block retains
-`(1-o(1))b` designated credits.
+```text
+k*A = Omega(H^2)
 
-Thus every sublinear unary-degree rectangle bank reduces directly to the paid
-spread inequality
+or
+
+k^2*B = Omega(H^3),
+```
+
+where `k` is the equitable-colouring count of the hard-unary rectangle
+interaction graph.
+
+## Pool-compatible dynamic trades
+
+The same cross-block construction works inside one controller pool and preserves
+the complete candidate-cell universe. It therefore satisfies the exact dynamic
+identity
 
 \[
-K^2\frac{P_b}{b^2}
-+
-K^3\frac{Q_b}{b^3}
-+
-\frac1{R_b}
-\left(
-K\frac{A_b}{b}
-+
-K^2\frac{B_b}{b^2}
-\right)
-<1.
+\Xi(S')-\Xi(S)=\mathcal I_\Xi-\mathcal C_\Xi.
 \]
 
-Arbitrary signed rectangle signatures, dense finite-state CSPs, bounded local
-contradictions, and infinite-depth hierarchy irregularity are no longer
-separate obstructions in the sublinear-unary regime.
+Diffuse hard source support and diffuse pool-local pair, triple, unary-
+`Xi`, and binary-`Xi` weights give a strict pool-compatible decrease. Unlike the
+global rectangle branch, pool-local pair and triple masses remain explicit
+hypotheses; they are not automatically closed by the global `kappa<1/60`
+argument.
+
+## Matchable non-superregular hosts
+
+Fix any perfect matching and orient each allowed matching-index edge `i -> j`.
+Every alternative perfect matching factors over the strongly connected
+components of this alternating digraph.
+
+- Nontrivial components are exact disjoint finite-state variables. Their
+  no-three constraints have rank at most three and their insertion cost has rank
+  at most two.
+- A trivial component is exactly a forced reference edge.
+- Every forced edge is the private edge of a Hall-tight set.
+- Its forward and backward reachability closures give canonical completely
+  forbidden cuts.
+
+Bounded credited flexible components form paid finite-state banks with one
+guaranteed credit per component. Dense binary component interactions Ramsey-
+regularize to a constant state or a bounded signed contradiction. Forced edges
+are not a new diffuse graph obstruction: they mark a hard-unary Hall rectangle,
+a small endpoint cluster, or a small complementary capacity core.
 
 ## Current remaining theorem
 
@@ -140,15 +161,16 @@ The all-`n` branch is reduced to:
 
 1. converting an ownership Hall/slack core, two-sided threshold gap, or the
    simultaneous score concentration surviving all four allocation interfaces;
-2. converting a Hall rectangle or matchable but non-superregular zero-unary host
-   outside the superregular recapture branch;
-3. converting a unary endpoint resource with linear forbidden cross-block degree;
-4. converting source or shadow weights concentrated in the growing-block paid
-   expression above;
-5. converting a linear-congestion original binary-shadow dual packing or
-   witness-line pencil;
-6. constructing source-admissible pool-compatible trades whose excess-shadow
-   insertion cost is below their star/resource removal credit.
+2. converting positive-density hard-unary support and its Hall/line/resource
+   cores, including canonical forced-edge cuts;
+3. converting chromatically concentrated unary or binary controller-shadow
+   weight at scales `H^2/k` and `H^3/k^2` in the global rectangle branch;
+4. converting pool-local pair/triple mass or unary/binary `Xi` weight at the same
+   chromatic scales, including captive-star collateral;
+5. converting unbounded alternating SCCs or concentrated bounded-component
+   geometry and cost;
+6. converting a linear-congestion original binary-shadow dual packing or
+   witness-line pencil.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -157,12 +179,11 @@ The no-three-in-line conjecture remains unproved.
 - `docs/78`--`docs/117`: slab allocation, controller-aware external closure,
   ownership interfaces, endpoint trades, Hall/congestion endpoints, source-valid
   thinning, and incidence localization.
-- `docs/118`--`docs/130`: anchor-energy localization, rectangle extraction,
-  exact installation, signed Ramsey reduction, support cleaning, and paid
-  residual matching.
-- `docs/131`--`docs/138`: cross-block supervariables, host regularization,
-  multistate Ramsey completion, universal signature bypass, hierarchical and
-  growing-depth amplification, and unary-independent superregular grouping.
+- `docs/118`--`docs/142`: anchor-energy localization, rectangle extraction,
+  cross-block amplification, equitable-colour paid selection, chromatic source
+  closure, and dynamic-`Xi` block trades.
+- `docs/143`--`docs/146`: alternating-SCC factorization, forced-edge tight Hall
+  certificates, canonical reachability cuts, and bounded-component paid banks.
 
 ## Running current checks
 
@@ -180,6 +201,9 @@ python scripts/check_homogeneous_binary_signature.py \
 
 python scripts/check_cross_block_supervariable.py \
   experiments/cross-block-supervariable-example.json
+
+python scripts/check_alternating_scc_decomposition.py \
+  experiments/alternating-scc-example.json
 ```
 
 These are exact finite checks or diagnostics. They are not asymptotic proofs
