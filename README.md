@@ -156,18 +156,30 @@ The exact remaining transition cases are:
 
 The transition sunflower itself is no longer a separate frontier.
 
-## Fixed-centre unary-Xi endpoint
+## Fixed-centre marked-Xi endpoint
 
 At a source-light captive centre, rank-two unary `Xi` cost is determined by the
 one incoming and one outgoing arc selected by the single cycle. Fixing a locally
-clean centre segment leaves exactly `(b-3)!` conditional single-cycle completions
-and the corresponding exact fixed-rank cylinder law.
+clean centre segment leaves exactly `(b-3)!` conditional completions. Either that
+segment is cheap or all but `m^(1/2+o(1))` admissible arcs on one side form a
+fixed-row or fixed-column rich-cost star.
 
-Either one locally clean segment has deterministic unary cost below the available
-budget, or all but `m^(1/2+o(1))` admissible arcs on one side are heavy. Those
-replacement cells lie on one fixed old row or one fixed old column. The remaining
-rank-two unary `Xi` object is therefore a fixed-axis rich-cost star, or residual
-source/higher-rank paid concentration after conditioning on a cheap segment.
+Rank-three binary `Xi` patterns are exactly directed two-arc paths through the
+centre. A cheap source-clean five-index chain gives a conditioned completion;
+failure becomes a weighted middle rectangle, a small outer-choice core with a
+near-complete heavy outer-role family, or an outer transition source core.
+
+Rank-four binary `Xi` patterns are one centre arc paired with one vertex-disjoint
+remote arc. Conditioning on the centre arc gives exact remote-arc probability
+
+```text
+(b-3)/((N-2)(N-3)).
+```
+
+Sparse positive partner support can be avoided completely regardless of weights.
+Under fixed residual slack, failure forces `Omega(N^2/b)` supported partner arcs,
+and hence a partner-resource star or fixed-cell remote matching of size
+`Omega(N/sqrt(b))`, which is much larger than `W`.
 
 ## Current remaining theorem
 
@@ -179,17 +191,18 @@ The all-`n` branch is reduced to:
    forced Hall cuts, and transition sunflowers;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. fixed-axis unary-`Xi` stars, remaining marked binary `Xi` ranks, full-pool `Xi`
-   thresholds, or fixed-centre source/weight cores;
+4. fixed-axis unary-`Xi` stars, weighted rank-three path cores, large rank-four
+   partner stars/fixed-cell petal banks, full-pool `Xi` thresholds, or fixed-centre
+   source/weight cores;
 5. alternating cycle-star/theta support cores or cost at the cycle-credit scale;
 6. quadratic binary cell fans, weighted choice grids, projective covers,
    conditional Hall families, or support-ranked residual collateral.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic
 `Xi` terms, diffuse binary dual mass, raw resource stars, diffuse transition-petal
-collateral, unstructured rank-two unary `Xi` fibres, unstructured
-non-superregularity, controller relabelling, and termination are no longer
-separate open problems.
+collateral, unstructured rank-two unary and rank-three/rank-four binary `Xi`
+tables, fixed rank-four multiplicity cores, unstructured non-superregularity,
+controller relabelling, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -203,7 +216,8 @@ The no-three-in-line conjecture remains unproved.
   source dilution, support-ranked `Xi`, and universal single-cycle fillers.
 - `docs/167`--`docs/171`: transition role localization, clean-chain averaging,
   disjoint witness petals, credited sunflower banks, and collateral localization.
-- `docs/176`: conditioned centre segments and fixed-axis unary-`Xi` arc stars.
+- `docs/176`--`docs/179`: unary arc stars, rank-three path localization, exact
+  rank-four fibres, and rank-four support avoidance/star--matching localization.
 
 ## Current exact checks
 
@@ -222,6 +236,12 @@ python scripts/check_transition_sunflower_bank.py \
   experiments/transition-sunflower-bank-example.json
 python scripts/check_unary_xi_arc_star.py \
   experiments/unary-xi-arc-star-example.json
+python scripts/check_rank_three_binary_xi_paths.py \
+  experiments/rank-three-binary-xi-paths-example.json
+python scripts/check_rank_four_binary_xi_fibres.py \
+  experiments/rank-four-binary-xi-fibres-example.json
+python scripts/check_rank_four_binary_xi_support.py \
+  experiments/rank-four-binary-xi-support-example.json
 ```
 
 These are finite diagnostics. They do not replace the asymptotic conversion
