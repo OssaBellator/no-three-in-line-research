@@ -9,8 +9,8 @@ D(n)=2n,
 where `D(n)` is the maximum number of points in an `n x n` integer grid with no
 three collinear.
 
-> **Status:** The conjecture remains open as of 25 July 2026.  This repository
-> does not contain a complete proof.  It records proved lemmas, conditional
+> **Status:** The conjecture remains open as of 25 July 2026. This repository
+> does not contain a complete proof. It records proved lemmas, conditional
 > reductions, failed pathways, finite checks, and explicit next targets.
 
 ## Start here
@@ -46,47 +46,47 @@ The branch proves:
 - internally no-three square-root macros and fixed-rank spread;
 - exponent optimality within disjoint `O(sqrt(R))` macro architectures;
 - saturation-compatible use of every final numerical label;
-- complementary-degree global allocation criteria;
 - controller-aware source safety against the full active source;
 - `o(1)` weighted mass for all remaining external pair/triple classes;
 - blocker-star or resource-bank structure from positive controller shadow;
-- source-valid endpoint trades after two-scale thinning;
+- source-valid endpoint trades after adaptive thinning;
 - exact zero-unary Hall rectangles and support-core localization;
 - binary-shadow congestion covers and exact LP duals;
-- owner-line assignment energy and grid-rich pencil extraction;
 - a pairing-invariant excess-shadow potential for dynamic pool trades;
-- direct global allocation from explicit controller-defect Ore scores.
+- controller-defect Ore scores and four global label-allocation interfaces;
+- exact capacitated ownership Hall cores and refill-slack obstructions;
+- rich-line energy reduction to one common nonaxis carrier.
 
-## Current direct endpoint
+## Four allocation interfaces
 
-For macro movement/refill defect counts `a_i(A),b_i(B)` and same-slot anchor
-counts `u_i(A,B)`, the branch defines normalized nondegree scores
-`rho_i(A),kappa(B)`.
+The controller-defect scores support four independent ways to use every final
+movement and refill label.
 
-Global allocation follows when every incompatible triple satisfies
+1. **One-sided bottleneck/slack:** balanced movement ownership completes when
+   its minimum bottleneck is at most every refill label's cumulative local slack.
+2. **Deterministic two-sided ownership:** assign `W` labels of each type to every
+   macro; local Ore completes when the two global nondegree thresholds satisfy
+   `r+s<=W`.
+3. **Random two-sided ownership:** per-macro complementary degree with slack
+   `m^(23/80+o(1))` gives local perfect matchings after two balanced random
+   partitions.
+4. **Random one-sided ownership:** the earlier average-refill complementary-degree
+   theorem remains available with the smaller `sqrt(T log T)` ownership loss.
+
+At threshold `r`, movement ownership is possible exactly when
 
 \[
-\rho_i(A)+\kappa(B)
-\le
-T-8\sqrt{T\log T}.
+W|N_M(X)|\ge|X|
 \]
 
-A fixed labelwise domain margin together with
+for every numerical-label set `X`. Failure returns an explicit all-bad
+label-by-macro rectangle. Sparse exceptional macro-label pairs are therefore
+routable rather than terminal.
 
-```text
-Xi_i=o(RT),
-max_A U_i(A)=o(RT),
-max_B average_i V_i(B)=o(RT)
-```
-
-already implies this condition.  Thus diffuse excess shadow is sufficient; a
-direct failure must concentrate in a nearly dead label, one macro with
-`Omega(RT)` excess shadow, or a same-slot anchor row/average-column.
-
-## Current Hall and binary endpoint
+## Hall, binary, and rich-line endpoints
 
 All unary recapture and insertion-shadow cells are removed from a source-safe
-endpoint graph `G_0`.  Failure of a perfect matching is exactly a forbidden Hall
+endpoint graph `G_0`. Failure of a perfect matching is exactly a forbidden Hall
 rectangle
 
 \[
@@ -95,36 +95,34 @@ rectangle
 X\times Y\subseteq E(\overline{G_0}).
 \]
 
-Binary conflicts can be converted into unary deletions.  Their correct cost is
-minimum endpoint-resource congestion, not raw conflict count.  The fractional
+Binary conflicts can be converted into unary deletions. Their correct cost is
+minimum endpoint-resource congestion, not raw conflict count. The fractional
 congestion problem has factor-two rounding and an exact weighted dual.
 
-A single nonaxis witness line has a congestion-one cover.  However, a linear bank
-of linear-rich distinct lines cannot be solved by deleting all but one cell on
-each trace.  If
+A linear bank of linear-rich distinct witness lines cannot be solved by deleting
+all but one cell on every trace. Adaptive thinning instead produces a fully
+source-valid derangement with one-cell probabilities `(1+o(1))/q` while
+preserving a dense Hall target core.
+
+The owner-line potential then either strictly decreases or the incidence system
+is near extremal. Szemerédi--Trotter converts the latter case into one nonaxis
+geometric line carrying
 
 \[
-S=\sum_\lambda(|P_\lambda|-1),
+\Omega(q^{1/3})
 \]
 
-then every such simple cover satisfies
-
-\[
-|C|
-\ge
-\frac{S^2}{S+r(r-1)}.
-\]
-
-Consequently a linear rich-line bank forces linear unary congestion.  It must be
-handled by moving the owner lines, not by naive line-by-line deletion.
+resource-disjoint owner/replacement endpoint cells and their candidate points.
 
 ## Current remaining theorem
 
 The all-`n` branch is reduced to:
 
-1. regularising the five explicit direct-allocation concentrations;
-2. converting a Hall rectangle or matchable but non-superregular zero-unary host;
-3. converting the second-generation grid-rich owner-line pencil;
+1. converting an ownership Hall/slack core, two-sided threshold gap, or the
+   simultaneous score concentration surviving all four allocation interfaces;
+2. converting a Hall rectangle or matchable but non-superregular zero-unary host
+   outside the recapture-line case;
+3. converting the common nonaxis line matching produced by the rich-line chain;
 4. converting a linear-congestion binary dual packing or witness-line pencil;
 5. constructing source-admissible pool-compatible trades whose excess-shadow
    insertion cost is below their star/resource removal credit.
@@ -139,8 +137,13 @@ The no-three-in-line conjecture remains unproved.
 - `docs/90`--`docs/101`: source-valid endpoint regularization, Hall rectangles,
   support cores, source-star correction, and dynamic excess shadow.
 - `docs/102`--`docs/107`: binary congestion covers, rich-line energy,
-  line-supported covers, survivor-congestion barriers, controller-defect Ore
-  scores, and diffuse-shadow direct allocation.
+  survivor-congestion barriers, controller-defect Ore scores, and diffuse-shadow
+  allocation.
+- `docs/108`--`docs/113`: exceptional-label routing, exact ownership Hall cores,
+  two-sided ownership, bottleneck/refill slack, random local Ore, and global
+  defect-mass slack.
+- `docs/114`--`docs/117`: mass-sensitive derangement energy, adaptive near-uniform
+  source validity, incidence multiplicity, and dense-Hall-core thinning.
 
 ## Running current checks
 
@@ -164,7 +167,16 @@ python scripts/check_witness_line_survivors.py \
 
 python scripts/check_controller_defect_ore.py \
   experiments/controller-defect-ore-example.json
+
+python scripts/check_exceptional_label_ownership.py \
+  experiments/exceptional-label-ownership-example.json
+
+python scripts/check_exceptional_label_ownership.py \
+  experiments/exceptional-label-ownership-hall-example.json
+
+python scripts/check_two_sided_label_ownership.py \
+  experiments/two-sided-label-ownership-example.json
 ```
 
-These are exact finite checks or diagnostics.  They are not asymptotic proofs
+These are exact finite checks or diagnostics. They are not asymptotic proofs
 without the accompanying classification theorems.
