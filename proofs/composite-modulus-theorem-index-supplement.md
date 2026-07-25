@@ -18,9 +18,11 @@ supplement mirrors the collision-free live range recorded in
 | CMR422--425 | Lossy packet reset deletion/forced-ancestry dichotomy, finite deletion budget, packet-installation bound, and conditional ancestry-width closure | PROVED / PROVED UNDER THE ANCESTRY-WIDTH HYPOTHESIS | `docs/142-prime-power-packet-loss-deletion-ancestry.md` |
 | CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
 | CMR429--432 | Essential edges form one monotone matching core, first-essentiality layers, polynomial forced-certificate counts, and polynomial edge-set ancestry ledger | PROVED | `docs/144-prime-power-essential-core-ancestry-width.md` |
+| CMR433--438 | Matching-contraction cycle criterion, exact one-edge exchange corridor, chain batch flips, exact Dilworth cycle-cover width, batch-or-branch dichotomy, and linear temporal cycle compression | PROVED | `docs/145-prime-power-exchange-corridor-path-cover.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR432, raw edge-set ancestry width is polynomial. The immediate remaining
-target is geometric use of the fewer than `3t^3` distinct exchange links:
-extract a simultaneous low-overlap flip family or force p-adic/carry
-concentration, strict host decomposition, or envelope expansion.
+CMR438, the cubic edge-set ancestry ledger compresses to at most `t`
+time-labelled batch exchange cycles. The immediate targets are lifting a large
+low-overlap subfamily to one common host epoch, converting reachability
+antichains into Hall/p-adic/carry decomposition, and paying repeated compatible
+local ancestor resets.
