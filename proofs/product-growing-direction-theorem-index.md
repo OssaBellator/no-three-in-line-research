@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-conditioned-packet-release-stage.md`](../tracks/all-n-product-conditioned-packet-release-stage.md).
+[`tracks/all-n-product-iterated-packet-stage.md`](../tracks/all-n-product-iterated-packet-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -49,6 +49,10 @@ families and develop the complementary repair route. The active task ledger is
 | PX212 | Large common-product packets admit a constant-density fixed-rank-spread release bank avoiding all packet transpositions | PROVED | `docs/109-common-product-packet-extraction.md` |
 | PX213 | Packet-release spread survives arbitrary compatible exposure with only one extra reversed forbidden matching | PROVED | `docs/110-conditioned-packet-release-collateral.md` |
 | PX214 | External rank-at-most-three certificate weights transfer to expected packet-release collateral, conditionally and unconditionally | PROVED | `docs/110-conditioned-packet-release-collateral.md` |
+| PX215 | Distinct anchor-product packet levels intersect in at most two candidate cells | PROVED | `docs/111-iterated-product-packet-release.md` |
+| PX216 | Every positive residual support-four load quantitatively extracts a new product packet | PROVED | `docs/111-iterated-product-packet-release.md` |
+| PX217 | Any fixed family of product packets admits one constant-density fixed-rank-spread joint release | PROVED | `docs/111-iterated-product-packet-release.md` |
+| PX218 | Joint packet release remains spread after exposure, with one complementary partial matching per packet | PROVED | `docs/111-iterated-product-packet-release.md` |
 
 ## Current exact boundary
 
@@ -64,20 +68,24 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has a complete probabilistic interface for
-common-product packet release.
+The low-syndrome repair route now has a complete fixed-packet release and
+iteration interface.
 
 - PX183--PX209 isolate the rematching collateral sectors, pay the internal and
   low-support terms, and control support four on large blocks.
-- PX210--PX212 extract a heavy common-product packet and release every
-  packet-certified transposition through a constant-density spread bank.
-- PX213 shows that sequential exposure adds only one reversed partial matching,
-  so residual spread loses one absolute factor rather than one factor per edge.
-- PX214 converts all remaining rank-at-most-three external certificate weights
-  into explicit normalized expected load; packet transpositions contribute zero.
+- PX210--PX214 extract one heavy product packet, release it, preserve spread
+  under exposure, and transfer all external rank-at-most-three loads.
+- PX215 proves exact two-cell overlap for distinct anchor-product levels.
+- PX216 shows that every positive residual support-four mass extracts another
+  explicit product packet, with linear packet size at cubic-per-anchor mass.
+- PX217 releases any fixed packet family simultaneously with density
+  `e^(-4Delta-4k)` and fixed-rank spread.
+- PX218 shows that conditioning adds only one complementary partial matching per
+  packet and transfers external loads with residual constant `e^(4Delta+8k)`.
 
-The missing input is now geometric: bound the external one-, two-, and
-three-cell certificate families of an extracted packet, or decode excessive
-external load into a second low-overlap packet, loaded line, clean star, or
-bounded composite batch. An absolute recursion depth and exact infinite product
-closure remain open.
+The missing input is now termination rather than second-packet existence or
+probability theory. One must prove that an absolute number of packet extractions
+pays all residual rank-two mass, or that continued extraction forces a loaded
+line, clean star, common-anchor family, or bounded composite structure. External
+rank-one and rank-three constants, destroyed-old-mass accounting, and exact
+infinite product closure remain open.
