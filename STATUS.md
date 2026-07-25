@@ -85,8 +85,8 @@ remains open. This repository does **not** contain a complete proof.
   \Omega\left(\frac{H^3}{\log t}\right)
   \]
   distinct replacement-line signatures.
-- Those lines convert to a matching-vertex wall, an executable heavy prefix
-  cell, or dispersed full prefix cells.
+- Those lines convert to a matching-vertex wall, a repeated-cell secant star,
+  an executable heavy prefix cell, or dispersed full prefix tokens.
 
 ### High-height and intermediate-band cleaning
 
@@ -107,21 +107,30 @@ remains open. This repository does **not** contain a complete proof.
 - This upgrades the earlier almost-perfect band matching for one band. It does
   not yet clean all \(O(\log t)\) bands simultaneously.
 
-### Heavy and dispersed carry tokens
+### Heavy, dispersed, and repeated carry tokens
 
 - Every heavy thin carry-cell certificate opens an executable prefix bank:
   external witnesses return to the original binary-star block, internal
   witnesses move to a deeper closest-pair block, and equilateral witnesses use
   their common block.
 - Repeated internal ownership transfer strictly increases depth and terminates.
-- Fresh dispersed tokens have a finite static budget, but static token
-  monotonicity is false: two complete old-cell-clean rematchings can restore the
-  initial state exactly.
-- The correct dynamic inventory is
+- Fresh dispersed row-prefix and full-prefix tokens have finite static budgets,
+  but static token monotonicity is false: two complete old-cell-clean
+  rematchings can restore the initial state exactly.
+- For a row-prefix token, the dynamic inventory is
   \[
-  D_\tau\le \frac{t^2}{p^b}+I_\tau,
+  D_\tau\le \frac{t^2}{p^b}+I_\tau.
   \]
-  where \(I_\tau\) counts token-compatible edge reintroductions.
+- For a full token \(\tau=(b,a,c,\theta)\), the exact initial edge stock is
+  \[
+  \frac{t^2}{p^{2b}},
+  \]
+  and
+  \[
+  D_\tau^{(2)}
+  \le
+  \frac{t^2}{p^{2b}}+I_\tau^{(2)}.
+  \]
 - For one fixed Hall-pair token, the exact line universe is explicitly counted.
   In the deep regime it has at most \(t/p\) lines, so the complete universes of
   any \(p-1\) deep tokens can be removed simultaneously by one target-specific
@@ -138,22 +147,31 @@ remains open. This repository does **not** contain a complete proof.
   \qquad
   \text{simultaneous batch capacity }\Omega(t^{1/3}).
   \]
-- One old-cell-clean coarse prefix reset returns at most \(t/p^b\) edges to a
-  fixed depth-\(b\) token, independently of the coarser reset depth.
-- In a one-pass descending prefix schedule,
+- General laminar accounting bounds a complete two-layer sweep by
+  \(2ht/p^b\) returned row-token edges. The recursive post-exposure profile
+  sharpens this to
   \[
-  I_\tau^{\rm coarse}\le\frac{2bt}{p^b},
+  I_\tau^{\rm coarse}\le\frac{2bt}{p^b}.
   \]
-  and the total direction-labelled coarse return mass over all nonroot tokens is
-  at most
+- The same one-dimensional reset cost applies to a full token:
   \[
-  (p+1)t\,h(h-1)=O_p(t\log^2t).
+  I_\tau^{(2),\rm coarse}\le\frac{2bt}{p^b}.
   \]
-- In an arbitrary schedule, unbounded coarse return forces repeated rematching
-  of one of the at most \(2b\) compatible ancestor depth-layer slots.
+  Thus, at the deep threshold \(p^b\ge t^{2/3}\),
+  \[
+  D_\tau^{(2)}\le t^{2/3}+2h t^{1/3}.
+  \]
+- The direction-labelled one-pass full-token return mass over all nonroot tokens
+  is
+  \[
+  O_p(t^2\log t).
+  \]
+- For arbitrary recursive prefix histories, excessive row-token or full-token
+  return forces repeated rematching of one of the finitely many compatible
+  ancestor depth-layer slots.
 - Every off-token witness certificate already opens an executable prefix
-  continuation; the remaining unresolved repeated-token term is fully forced
-  exchange ancestry together with repeated ancestor resets.
+  continuation. The remaining repeated-token term is fully forced exchange
+  ancestry together with repeated ancestor resets and non-prefix resets.
 
 ## Important correction
 
@@ -164,12 +182,13 @@ CMR164. No later valid theorem depends on the refuted strengthening.
 
 Static carry-token consumption is also not monotone; CMR350 records exact
 two-step token-restoring cycles. All current no-return statements explicitly
-include edge reintroduction or are restricted to one simultaneous batch.
+include edge reintroduction or are restricted to one simultaneous batch or one
+scheduled sweep.
 
 ## What remains conditional
 
-1. **Repeated ancestor-reset payment.** A one-pass descending prefix schedule now
-   has an explicit \(O_p(t\log^2t)\) token-return budget. For arbitrary closure
+1. **Repeated ancestor-reset payment.** One-pass recursive prefix schedules now
+   have explicit row-token and full-token return budgets. For arbitrary closure
    histories, charge repeated use of one compatible ancestor slot to coarse
    target destruction, envelope expansion, reserve consumption, or new exchange
    ancestry.
@@ -178,11 +197,10 @@ include edge reintroduction or are restricted to one simultaneous batch.
    logarithm in the conflict degree or recreating previously cleaned bands.
 3. **Forced ancestry width.** Bound the width of the fully forced
    certificate-exchange DAG or resample several exchange cycles simultaneously.
-4. **Low-height carry absorption.** Charge the remaining lower-height line
+4. **Non-prefix return profiles.** Joint-parent and exact-band resets need
+   descendant full-token return bounds analogous to CMR393--CMR397.
+5. **Low-height carry absorption.** Charge the remaining lower-height line
    populations to first-separation, quotient, and primitive carry signatures.
-5. **Joint-parent reintroduction.** The recursive prefix profile is explicit, but
-   arbitrary joint-parent resets need a corresponding descendant-token return
-   bound.
 6. **Prime-field terminal conversion.** Transfer the inherited-envelope and
    exact-covering mechanism to prime-field carry cycles.
 7. **Square-root divisor boundary.** Remove or absorb the remaining nearly
@@ -199,9 +217,10 @@ generic recursive first moment, prefix and joint-parent collateral, terminal
 target contraction, sharp Hall blocker geometry, universal line-clean repair,
 heavy-token local continuation, exact high-slice cleaning, exact completion of
 one intermediate band, one-step deep-token batch elimination, and the complete
-coarse-prefix return profile for a single descending pass.
+row-token and full-token return profiles for a single descending recursive
+prefix pass.
 
-The principal remaining prime-power theorem is dynamic rather than local:
-control repeated resets of one compatible ancestor slot while scheduling
-multiple height bands and bounding fully forced exchange ancestry. Arbitrary
-side-length coverage remains necessary afterward.
+The principal remaining prime-power theorem is dynamic rather than local: pay
+repeated use of one compatible ancestor slot, control non-prefix recreation and
+fully forced exchange ancestry, and schedule multiple exact height-band
+coverings. Arbitrary side-length coverage remains necessary afterward.
