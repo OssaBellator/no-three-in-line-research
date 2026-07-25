@@ -29,10 +29,10 @@ supplement mirrors the collision-free live range recorded in
 | CMR477--481 | Vertex-to-boundary incidence reduction, exact return-path representation, directed Menger theta-fan/cut alternative, second-edge concentration, and boundary-source-switch interpretation | PROVED | `docs/153-prime-power-mixed-cycle-boundary-fan-cut.md` |
 | CMR482--486 | Theta-fan private entering-edge sunflower, blocker resilience, rooted-conflict dichotomy, aggregate conflict payment, and harmonic packet/token endpoint | PROVED | `docs/154-prime-power-theta-fan-private-edge-payment.md` |
 | CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
+| CMR492--496 | Universal compatible-pair derangement cylinder, rank-two-on-line elimination, rooted-arm cleaning, equal-size rooted-star banks, and bottleneck-pair line-clean splice | PROVED | `docs/156-prime-power-universal-compatible-pair-line-clean.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR491, mixed zero-cost motion has been reduced to executable simultaneous
-flips, sparse matching-pair interfaces, private-route incidence payment,
-repeated-cell secant-star geometry, or a fixed compatible rank-two completion
-cylinder. The immediate target is to integrate the last two branches with the
-existing secant-star carry-dispersion and line-clean paid-pair banks.
+CMR496, every rooted-star arm and every fixed bottleneck pair has an exact
+full-parent line-clean cylinder of size `D_{m-2}`. The immediate target is to
+make one such cylinder available and paid inside the restricted current host,
+using rollback, reserve, target-load, carry, prefix, or envelope progress.
