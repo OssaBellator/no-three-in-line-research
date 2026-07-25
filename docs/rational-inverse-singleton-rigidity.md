@@ -2,7 +2,7 @@
 
 **Branch:** `research/rational-inverse-expansion`
 
-RI5h leaves one completion component only when exactly one desired target cell is occupied by the blocker layer. This note proves that the obstruction cannot be bypassed by partially installing the component while using only its current and target cells.
+RI5h leaves one completion component only when exactly one desired target cell is occupied by the blocker layer. This note proves that the obstruction cannot be bypassed by partially installing the component while using only its current and target cells. RI5l subsequently resolves the obstruction by moving that blocker with one auxiliary blocker cell.
 
 ## Relative completion cycle
 
@@ -79,15 +79,11 @@ for every \(v\). Thus \(S\) is invariant under the single cycle \(\sigma\). Its 
 
 ## Consequence for the RI5i singleton output
 
-If the blocker layer occupies one desired cell of \(D\), the full target state is illegal while the blocker remains. RI5k shows that every coordinatewise current/target compromise on the same component is also impossible: the only legal binary mix is the unchanged current state.
+If the blocker layer occupies one desired cell of \(D\), the full target state is illegal while that blocker remains. RI5k shows that every coordinatewise current/target compromise on the same component is also impossible: the only legal binary mix is the unchanged current state.
 
-Therefore a heavy singleton-blocker component is a genuine alternating obstruction. Any progress must do at least one of the following:
+Therefore the singleton is a genuine **two-layer** obstruction rather than a missing one-layer partial switch. Progress must move the blocker, use an external cell, or delegate arithmetically. RI5l supplies the first two operations simultaneously: any second blocker cell gives an auxiliary transposition that moves the blocker while installing the full target component.
 
-1. move the blocker in the opposite layer;
-2. use a cell outside the current/target completion cycle;
-3. delegate the component through its carry, bounded-denominator, quotient, or exceptional-state label.
-
-This removes partial same-layer installation as a possible missing case in RI6.
+RI5k remains essential because it proves that RI5l is not bypassing an overlooked partial active-layer state. After RI5l, the remaining issue is only the collateral of the explicit two-layer transposition bank.
 
 ## Finite check
 
