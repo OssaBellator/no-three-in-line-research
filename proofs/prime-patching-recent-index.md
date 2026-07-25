@@ -47,6 +47,8 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3aco--PP3acs | Rank-three middle rectangles are paid two-resource choice grids; failure is weighted multiplicity, projective cover, residual collateral, or a small outer core | PROVED / CONDITIONAL PAID INTERFACE | `docs/181-rank-three-middle-paid-choice-grid.md` |
 | PP3act--PP3acz | Dense rank-three outer roles yield comparable-cost fixed-centre path-petal banks with diffuse collateral averaged away | PROVED / CONDITIONAL PAID INTERFACE | `docs/182-rank-three-outer-disjoint-path-petal-bank.md` |
 | PP3ada--PP3adg | Fixed-axis unary Xi stars yield comparable-cost one-arc petal banks; failure is centre-core cost or global unary weight at bank-credit scale | PROVED / CONDITIONAL PAID INTERFACE | `docs/183-fixed-axis-unary-xi-arc-petal-bank.md` |
+| PP3adh--PP3adm | Full-pool rank-two unary Xi truncation gives a paid heavy-arc-avoiding cycle or an `Omega(N/b)` fixed-centre heavy arc star | PROVED / CONDITIONAL PAID INTERFACE | `docs/184-full-pool-unary-xi-truncation.md` |
+| PP3adn--PP3adt | Full-pool binary Xi truncation gives a paid heavy-pattern-avoiding cycle or fixed-centre rank-three/rank-four support-degree cores | PROVED / CONDITIONAL PAID INTERFACE | `docs/185-full-pool-binary-xi-truncation.md` |
 
 ## Current scale
 
@@ -79,37 +81,28 @@ Remaining transition failure is:
 
 ## Current marked-Xi endpoint
 
-At a source-light captive centre, rank-two unary `Xi` weight gives a cheap clean
-centre segment or a near-complete incoming/outgoing arc star. The star is already
-a fixed-centre one-arc petal bank. Dyadic pigeonholing gives a `W`-sized
-comparable-cost subbank, and bounded-support averaging closes diffuse noncentral
-collateral. Remaining unary failure is centre-core or local arc cost at the
-removal-credit scale, global rank-two unary weight `A_2=Omega(R_*W)`, or residual
-source/host structure.
+Rank-two unary `Xi` weight gives a cheap clean centre segment or a fixed-centre
+one-arc petal bank. Dyadic pigeonholing supplies a `W`-sized comparable-cost
+subbank, and bounded-support averaging closes diffuse noncentral collateral.
+Full-pool unary truncation also shows that a hard aggregate `A_2b/N^2` term
+forces an `Omega(N/b)` heavy incident-arc star, so it returns to the same petal
+bank.
 
-Rank-three binary `Xi` patterns are directed two-arc paths through the centre. The
-middle role is a paid two-resource choice grid. In the outer roles, dense heavy
-support gives `(1-o(1))N^2` paths; a typed-resource greedy extraction and dyadic
-pigeonhole produce a `W`-sized comparable-cost path-petal bank, disjoint outside
-the centre. Bounded-support averaging closes diffuse noncentral collateral.
-Remaining rank-three failure is centre-core or local path weight at the removal
-credit scale, a global support-ranked threshold, outer source/host failure, or
-one of the already-listed paid-grid/projective-cover/residual-host objects.
+Rank-three binary `Xi` patterns are directed two-arc paths through the centre.
+The middle role is a paid two-resource choice grid. Dense outer roles give a
+`W`-sized comparable-cost path-petal bank disjoint outside the centre. Rank-four
+binary weight reduces through support avoidance and robust Hall localization to
+the existing conditional Hall/grid or alternating-host branches.
 
-Rank-four binary `Xi` weight reduces to one conditioned partner-support deletion.
-If the residual host remains superregular, the complete support is avoided and
-the paid first moment applies. If it is matchable but non-superregular, the
-alternating-component frontier applies. If deletion destroys matchability,
-robust Hall localization forces a repeated secondary-resource star of size
-`Omega(N)`, which feeds PP3xd--PP3xo. Fixed-cell remote matchings, square-root
-partner stars, and rank-four multiplicity cores are no longer separate frontiers.
+Finally, full-pool binary truncation converts hard `B_3b/N^3` and `B_4b^2/N^4`
+terms into fixed-centre support-degree cores of sizes `Omega(N^2/b)` and
+`Omega(N^3/b^2)`, respectively. These feed the rank-three and rank-four chains
+above.
 
 The remaining marked-`Xi` conversion is therefore conditioned centre-core or
-local-credit concentration, global support-ranked/full-pool thresholds, and
-residual source/host structure. The fixed-axis unary star, rank-three middle and
-outer families, and rank-four failure have rejoined existing paid-petal,
-source-star/resource-bank, weighted-grid, projective-cover, alternating-host,
-conditional-Hall, and quadratic-fan frontiers.
+local-credit concentration and residual source/host structure. Fixed-axis unary
+stars, all three full-pool support-ranked thresholds, rank-three middle/outer
+families, and rank-four tables are no longer independent frontiers.
 
 ## Remaining theorem
 
@@ -121,8 +114,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
    hard unary support, forced Hall cuts, transitions, and marked `Xi` localization.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
-4. Convert centre-core/local-credit concentration, full-pool `Xi` thresholds, or
-   fixed-centre source/weight cores.
+4. Convert centre-core/local-credit concentration or remaining fixed-centre
+   source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
@@ -130,11 +123,11 @@ The all-n branch is reduced to the following concentrated conversion problems.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic Xi
 terms, diffuse binary dual mass, raw resource stars, transition petal collateral,
-unstructured rank-two unary `Xi` fibres, fixed-axis unary `Xi` stars,
-unstructured rank-three and rank-four binary `Xi` tables, weighted rank-three
-middle rectangles, small-core heavy rank-three outer families, fixed rank-four
-multiplicity cores, fixed-cell rank-four petal banks, square-root rank-four partner
-stars, unstructured non-superregularity, and termination are no longer separate
-open problems.
+unstructured rank-two unary `Xi` fibres, fixed-axis unary `Xi` stars, unstructured
+full-pool support-ranked `Xi` thresholds, unstructured rank-three and rank-four
+binary `Xi` tables, weighted rank-three middle rectangles, small-core heavy
+rank-three outer families, fixed rank-four multiplicity cores, fixed-cell
+rank-four petal banks, square-root rank-four partner stars, unstructured
+non-superregularity, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
