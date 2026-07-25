@@ -46,6 +46,7 @@ This ledger records only branch-specific statements.
 | BDA5w | Every direction pair has a unique transverse form `e=αd+gk f` with `k` a unit at the residual modulus | PROVED | `docs/bounded-denominator-residual-determinant.md` |
 | BDA5x | Dense scalar recurrence confines the transverse increment `qk` to a finite shape-dependent library | PROVED | `docs/bounded-denominator-residual-determinant.md` |
 | BDA5y | Dense scalar-slot occupancy yields quantified disjoint genuine radial pairs `h,h+q` | PROVED | `docs/bounded-denominator-scalar-q-pairs.md` |
+| BDA5z | Weighted scalar occupancy yields a paid co-anchored `h,h+q` family or an explicit dispersed-anchor bound | PROVED | `docs/bounded-denominator-gstep-coanchor.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
