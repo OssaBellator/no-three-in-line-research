@@ -531,8 +531,8 @@ capacity.  The remaining frontier consists of five named arithmetic
 outputs:
 
 1. high-overlap action-literal kernels;
-2. OP4l paid off-core or Hall-reuse current-defect families awaiting
-   arithmetic routing;
+2. OP4m heavy paid current factors or recurrent role-tagged defect
+   signatures;
 3. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
    deficits, or its heavy-factor/carry-growth alternatives;
 4. OP4k bounded current recurrent rank-three blocker fibres;

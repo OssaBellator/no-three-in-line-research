@@ -385,8 +385,10 @@ output.
    [`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md)
    supplies the exact payment gate: either the selected bicycle keeps
    factor-conservative current-defect weight or a comparable payment
-   escapes to explicit off-core current factors.  What remains is the
-   arithmetic routing of that escape family.
+   escapes to explicit off-core current factors.
+   [`orbit-phase-defect-router.md`](orbit-phase-defect-router.md)
+   routes that escape to a heavy factor, paid point star, or
+   point-disjoint carry-signature family.
 4. The audit is exact but can be exponential when the source
    provenance does not orient its secants.  A polynomial orientation
    theorem would improve the decoder runtime, but is not needed for
@@ -401,8 +403,9 @@ completion deficits, one heavy repeated source factor, or quantified
 product-carry growth.
 
 The next independent endpoints are therefore the RI5
-row-column-preserving conversion of the dense fixed-edge output and the
-OP4l routing of paid off-core or Hall-reuse defect families.
+row-column-preserving conversion of the dense fixed-edge output and
+recurrence/treatment of the OP4m heavy-factor or paid defect-signature
+outputs.
 The formerly separate rank-three ledger obligation is closed by
 [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md);
 its remaining output is one bounded current recurrent blocker fibre.

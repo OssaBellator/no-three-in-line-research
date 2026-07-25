@@ -327,6 +327,9 @@ The fixed-edge frontier now has four explicit gates.
    proves the exact replacement: OP4l pays at least \(G/3\) on current
    rank-three source factors, then returns factor-conservative bicycle
    occurrences or a comparably paid off-core defect family.
+   [`orbit-phase-defect-router.md`](orbit-phase-defect-router.md)
+   routes the latter to a heavy factor, paid point star, or
+   point-disjoint carry-signature growth.
 2. Exact channel-pair localization costs the displayed factor \(P\);
    many channel pairs may instead be retained as a root/channel
    complexity output.

@@ -384,7 +384,7 @@ The protected-bank obstruction now follows a lossless decision tree.
 
 The remaining frontiers are now precise.
 
-1. **Syndrome payment and off-core routing.**
+1. **Syndrome payment and defect routing.**
    [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
    proves that bank weights do not transfer by logic alone.  With
    factor-conservative edge weights, its OP4i gate already returns
@@ -395,8 +395,12 @@ The remaining frontiers are now precise.
    current source factors, a capacitated Hall failure returns paid
    repeated defects, and any selected bicycle either receives half of
    that payment or leaves the other half on explicit off-core current
-   defects.  The remaining task is arithmetic routing of the off-core
-   and Hall-reuse outputs.
+   defects.
+   [`orbit-phase-defect-router.md`](orbit-phase-defect-router.md)
+   proves OP4m: every paid off-core or Hall-reuse family returns a
+   heavy current factor, a paid point-star carry family, or quantified
+   exact signatures on point-disjoint current defects.  The remaining
+   task is recurrence or treatment of one heavy factor.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
@@ -445,3 +449,6 @@ snapshot and geometric role.
 `scripts/verify_phase_syndrome_payment.py` checks OP4l's proportional
 payment, capacitated Hall alternative, repeated-defect bound, and
 bicycle/off-core split.
+
+`scripts/verify_phase_defect_router.py` checks OP4m's weighted
+point-star/matching extraction and its two carry-capacity routes.
