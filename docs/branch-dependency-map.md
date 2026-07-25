@@ -26,7 +26,11 @@ This is the only branch intended to carry the full local-to-global proof chain.
 
 Consumes PA/CF chamber structure; returns a decreasing trade for every fixed reduced denominator `q`. Imported by AC2–AC4.
 
-AC3an--AC3aq provide the exact alternating-core adapter. Once one AC role supplies a bounded denominator and direction shape together with fields `(q,d,e,xi,P,h)`, the paid family localizes to one exact scalar profile, one `q/gcd(det(d,e),q)` progression, and the weighted BDA5z co-anchor router. AC3ar--AC3as compose this with AC3am and return a paid large-direction output when bounded shape fails. Paid and support faithfulness remain explicit hypotheses. The remaining interface work is to prove those hypotheses for actual role-pure outputs and terminate the BDA dispersed-anchor or affine-chain alternatives.
+AC3an--AC3aq provide the exact alternating-core adapter for ordinary determinant-scalar roles. Once one AC role supplies a bounded denominator and direction shape together with fields `(q,d,e,xi,P,h)`, the paid family localizes to one exact scalar profile, one `q/gcd(det(d,e),q)` progression, and the weighted BDA5z co-anchor router. AC3ar--AC3as compose this with AC3am and return a paid large-direction output when bounded shape fails.
+
+BDA5aa--BDA5ad close the reflected `CD` denominator scalar: `A(2h+q)` has the same content modulo `q` as `2Ah`, and every fixed residue is one scale class modulo `q/gcd(2A,q)`. AC3dj--AC3dm import this result, localize reflected profiles finitely, and give the same weighted genuine `h,h+q` co-anchor extraction without a cancellation-height label.
+
+Paid and support faithfulness remain explicit hypotheses for executable decoding. The remaining BDA interface work is to prove those geometric hypotheses for actual ordinary and reflected role outputs and terminate the dispersed-anchor or affine-chain alternatives.
 
 ### `research/rational-inverse-expansion`
 
@@ -96,7 +100,7 @@ Construct algebraic seeds directly over composite moduli or prime powers, includ
 
 Prove a saturation-preserving product/composition theorem and use arithmetic factorization to cover all side lengths.
 
-The three all-`n` branches are alternatives and should not be coupled unless one develops a proved interface.
+The three all-n branches are alternatives and should not be coupled unless one develops a proved interface.
 
 ## Merge discipline
 
@@ -104,4 +108,4 @@ The three all-`n` branches are alternatives and should not be coupled unless one
 - Preserve counterexamples and regression tests.
 - When a branch proves an interface theorem, update this map and the theorem index in the same change sequence.
 - Results which only improve constants should merge into their source track rather than creating another dependency.
-- A complete no-three-in-line proof requires one successful local/global construction chain and one successful all-`n` route.
+- A complete no-three-in-line proof requires one successful local/global construction chain and one successful all-n route.
