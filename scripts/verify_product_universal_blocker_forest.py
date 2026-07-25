@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
-"""Finite arithmetic checks for PX324--PX329."""
+"""Finite arithmetic checks for corrected PX324--PX329."""
 
 from itertools import product
 
 
 def main() -> None:
     for destroyed in range(1, 41):
-        for created in range(41):
-            if created < destroyed:
-                assert created - destroyed < 0
-            else:
-                budget = created - destroyed + 1
-                assert 1 <= budget <= created
-                assert created - budget - destroyed == -1
-                remaining = created
-                for _ in range(budget):
-                    remaining -= 1
-                assert remaining - destroyed < 0
+        for external in range(41):
+            for internal in range(21):
+                total = external + internal
+                if destroyed > total:
+                    assert total - destroyed < 0
+                if destroyed > internal and destroyed <= total:
+                    budget = total - destroyed + 1
+                    assert 1 <= budget <= external
+                    assert total - budget - destroyed == -1
+                if destroyed <= internal:
+                    assert total - external - destroyed == internal - destroyed >= 0
 
     supports = set()
     for mask in product((0, 1), repeat=3):
@@ -33,7 +33,7 @@ def main() -> None:
             assert new_vector < vector
             vector = new_vector
 
-    print("PX324--PX329 universal blocker-forest verifier: PASS")
+    print("PX324--PX329 corrected external blocker-forest verifier: PASS")
 
 
 if __name__ == "__main__":
