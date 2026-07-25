@@ -14,6 +14,7 @@ def line_cells(
     descriptor: tuple[int, int, int],
 ) -> frozenset[tuple[int, int]]:
     a, b, c = descriptor
+    assert c not in (x1, x2)
     cells = frozenset(((x1, a), (x2, b), (c, y3)))
     assert len(cells) == 3
     assert len({x for x, _ in cells}) == 3
@@ -45,10 +46,15 @@ def verify_certificate(
 ) -> None:
     (x1, y1), (x2, _), (_, y3) = triple
     target = (x1, y1)
+    nondegenerate = [
+        descriptor
+        for descriptor in descriptors
+        if descriptor[2] not in (x1, x2)
+    ]
     cylinders: list[set[tuple[int, ...]]] = []
     fan_rows = set()
 
-    for descriptor in descriptors:
+    for descriptor in nondegenerate:
         cells = line_cells(x1, x2, y3, descriptor)
         fan_cell = (x1, descriptor[0])
         assert fan_cell in cells
@@ -63,12 +69,13 @@ def verify_certificate(
             assert all(state[source] == row for source, row in cells)
         cylinders.append(states)
 
+    assert cylinders
     for left in range(len(cylinders)):
         for right in range(left + 1, len(cylinders)):
             assert cylinders[left].isdisjoint(cylinders[right])
 
     union = set().union(*cylinders)
-    assert len(union) == len(descriptors) * factorial(t - 3)
+    assert len(union) == len(nondegenerate) * factorial(t - 3)
 
 
 def verify_explicit_banks() -> None:
