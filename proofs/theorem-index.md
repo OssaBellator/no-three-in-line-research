@@ -99,6 +99,8 @@ The numbering is local to this repository.
 | AC3ag | A global rank-three centre star has a realizable residual matching whose union is a transversal of at most twice its size | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
 | AC3ah | Dyadic regularization gives a paid context-disjoint family or a high residual-block degree | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
 | AC3ai | High residual-block degree gives a paid depth-two literal or at least \(\lfloor d/e\rfloor+1\) phase labels | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
+| AC3aj | Hard-unsafe target phases give fixed exclusions, a common current residual literal, or support-disjoint blocker arms | PROVED | `tracks/alternating-core-cross-centre-router.md` |
+| AC3ak | Hard-safe targets improve or contribute disjoint creation mass at least \(sD\), simultaneously with the unsafe-target router | PROVED | `tracks/alternating-core-cross-centre-router.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

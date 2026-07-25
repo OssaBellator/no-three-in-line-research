@@ -420,6 +420,12 @@ rank-one mass, a paid simultaneously realizable context-disjoint bank,
 a paid depth-two literal, or many phase literals at one residual
 block.
 
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md)
+handles all target literals at the current phase block.  AC3aj--AC3ak
+make the hard-safe soft buckets disjointly paid and route hard-unsafe
+targets to fixed exclusions, a common residual current literal, or
+support-disjoint alternative-target blockers.
+
 This router also explains the independent structured interfaces.
 
 - An order-\(h\) O1 block already supplies the explicit subgroup
@@ -440,9 +446,9 @@ frontier without conflating three different issues:
 
 - exact active-literal complexity;
 - quantitatively light collateral sensitivity; and
-- cross-centre expansion of a large distinct hard-literal family;
 - arithmetic classification of a paid context-disjoint bank,
-  depth-two kernel, or residual-block phase fan.
+  depth-two kernel, residual-block phase fan, common-residual
+  cross-centre fan, or support-disjoint alternative-target family.
 
 `scripts/verify_ac_orbit_literal_charts.py` exhausts small canonical
 check systems, verifies exact chart factorization and the observational
@@ -454,3 +460,5 @@ and checks their exact drift, residual transversals, and paid matching
 bounds.
 `scripts/verify_ac_global_literal_contexts.py` exhausts the corresponding
 global fixed-centre context families and checks dyadic paid extraction.
+`scripts/verify_ac_cross_centre_router.py` exhausts the distinct-target
+safe/unit/fan/matching alternatives at one current block.

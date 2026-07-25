@@ -365,15 +365,26 @@ simultaneously activatable residual-disjoint context bank retaining an
 explicit \(1/(K(2d-1))\) fraction, a paid depth-two literal, or at least
 \(\lfloor d/e\rfloor+1\) phase literals at one residual block.
 
-The remaining canonical role frontier is therefore cross-centre
-expansion of a large family of distinct hard literals and the
-scope-complete arithmetic classification/installation of the
-context-disjoint bank, depth-two kernel, or one-block phase fan.
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md)
+proves AC3aj--AC3ak for all distinct target literals at one current
+block.  Hard-safe nonimproving target buckets are disjoint and carry
+aggregate weight at least \(sD\).  Hard-unsafe targets have
+effectively rank-one exclusions, a common current residual literal
+paired with more than \(\Delta\) centre phases, or at least
+\(\lceil u/(4\Delta)\rceil\) alternative-target blockers with
+support-disjoint residual arms.
+
+The remaining canonical role frontier is therefore the scope-complete
+arithmetic classification/installation of the paid context bank,
+depth-two kernel, one-block phase fan, common-residual cross-centre
+fan, or support-disjoint alternative-target blocker family.
 BDA residue charts and RI subgroup-coset labels remain delegated
 interfaces with their own collateral hypotheses.  Arbitrary
 multi-block sensitivity, irrelevant raw phase multiplicity,
 unrecorded light-cost error, an already activated target bucket, and
-the global residual-context mixture at one fixed centre are closed.
+the global residual-context mixture at one fixed centre are closed;
+so is the unclassified mixture of distinct target literals at the
+current context.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -470,6 +481,8 @@ upgrade AC6 while those inputs remain open.
   the hard-exact heavy-soft \(2\tau\) derivative bound;
 - exhaust global fixed-centre context families, dyadic paid colour
   classes, and high-degree depth-two/phase-fan refinements;
+- exhaust cross-centre safe/unit/blocker records and their disjoint
+  paid-target or common-residual-literal alternatives;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 

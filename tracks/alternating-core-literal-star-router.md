@@ -345,10 +345,16 @@ large global weight spread across different contexts.  AC3ag--AC3ai
 return effectively rank-one mass, a paid simultaneously activatable
 context bank, a depth-two literal, or a one-block phase fan.
 
-What remains arithmetic is cross-centre expansion for many distinct
-hard literals and scope-complete collateral control or structured
-classification of those last three global outputs.  No payment is
-inferred from a phase label which is inactive at the current context.
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md)
+handles all distinct target literals at one current block.  Its
+hard-safe buckets have disjoint paid mass, while its hard-unsafe
+targets give fixed exclusions, a common current residual literal, or
+support-disjoint alternative-target arms.
+
+What remains arithmetic is scope-complete collateral control or
+structured classification of those explicit local and global outputs.
+No payment is inferred from a phase label which is inactive at the
+current context.
 
 `scripts/verify_ac_literal_star_router.py` exhausts small rank-at-most
 three canonical check systems, compares every phase-bucket drift with

@@ -347,10 +347,13 @@ exact drift and a rank-two residual matching/transversal audit.  The
 AC3ag--AC3ai continuation in
 [`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
 closes the residual-context mixture at one fixed global centre by
-dyadic paid colouring and phase refinement.  The remaining geometric
-check is therefore cross-centre expansion of distinct hard literals
-and structured classification of the paid context bank, depth-two
-kernel, or residual-block phase fan.
+dyadic paid colouring and phase refinement.  The mixture across
+distinct target literals is closed by AC3aj--AC3ak in
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md):
+hard-safe buckets are disjointly paid and hard-unsafe targets give
+fixed exclusions, a common residual literal, or support-disjoint
+blockers.  What remains is structured classification and installation
+of these explicit outputs.
 
 The important remaining numerical case is no longer an unbounded fan.
 It is the finite phase-collateral profile in AC3p.1.  Repeated factors
@@ -366,3 +369,5 @@ hard/soft bucket drift, rigid residual coordinates, and quantitative
 paid matching alternative.
 `scripts/verify_ac_global_literal_contexts.py` checks all small global
 fixed-centre context families over a nonuniform alphabet.
+`scripts/verify_ac_cross_centre_router.py` checks all abstract
+distinct-target blocker records through five phases.

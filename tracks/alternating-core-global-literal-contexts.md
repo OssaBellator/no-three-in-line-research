@@ -292,6 +292,12 @@ context still requires the actual destroyed-weight and hard-safety
 audit; this theorem does not infer those quantities from global
 literal load.
 
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md)
+handles the orthogonal case of many distinct centre literals at one
+current block.  AC3aj--AC3ak separate their hard-safe paid buckets from
+effectively rank-one exclusions, common-residual hard fans, and
+support-disjoint alternative-target blockers.
+
 `scripts/verify_ac_global_literal_contexts.py` exhausts small
 nonuniform phase alphabets, including a rigid block, checks simultaneous
 realizability and the matching/transversal bound, constructs every

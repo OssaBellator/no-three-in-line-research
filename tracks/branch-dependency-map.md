@@ -58,10 +58,10 @@ AC3aa--AC3ac import only the proved O1 partition and OP1a canonical
 phase-literal representation.  They construct the exact active-literal
 chart, prove that an exact O1 channel can require all \(h\) labels, and
 give a hard-exact heavy-soft chart with explicit \(2\tau\) one-block
-collateral error and at most \(3W/\tau\) heavy literals.  A large hard
-literal family remains an OP2 input; a subgroup-coset or
-bounded-denominator label is not called terminal until the independent
-RI or BDA paid-collateral interface applies.
+collateral error and at most \(3W/\tau\) heavy literals.  Large hard
+and heavy-soft literal families enter the subsequent internal routers;
+a subgroup-coset or bounded-denominator label is not called terminal
+until the independent RI or BDA paid-collateral interface applies.
 AC3ad--AC3af are again internal finite combinatorics.  Once OP2 or the
 main chain localizes a literal to the current phase context, they
 compute exact drift and reduce the activated rank-three bucket to an
@@ -72,9 +72,15 @@ absorber.
 AC3ag--AC3ai are also internal.  At one fixed global centre literal
 they turn varying residual contexts into an effectively rank-one
 class, a paid simultaneously realizable context bank, a depth-two
-literal, or a residual-block phase fan.  Cross-centre hard-literal
-expansion and the arithmetic classification of these outputs remain
-explicit OP2/RI/BDA interfaces.
+literal, or a residual-block phase fan.  The cross-centre hard-literal
+mixture is passed to AC3aj--AC3ak; arithmetic classification of the
+structured outputs remains an explicit OP2/RI/BDA interface.
+AC3aj--AC3ak close that cross-centre combinatorial step at every
+current block.  Safe nonimproving target buckets are disjointly paid;
+unsafe targets give fixed exclusions, a common current residual
+literal, or support-disjoint alternative-target blockers.  Only the
+scope-complete arithmetic installation/classification of the explicit
+outputs remains an OP2/RI/BDA interface.
 
 ## Independent selection endpoints
 

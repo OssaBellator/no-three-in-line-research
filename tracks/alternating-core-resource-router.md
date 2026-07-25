@@ -246,9 +246,11 @@ literal already activated at one current context, returning exact
 fixed collateral, a paid depth-two literal, or a residual-disjoint
 bank when no phase improves.  AC3ag--AC3ai close the varying-context
 mixture at each fixed centre by paid dyadic colouring and phase
-refinement.  What remains is cross-centre hard-literal expansion and
-arithmetic or RI/BDA classification of the paid context bank,
-depth-two kernel, or residual-block phase fan.
+refinement.  AC3aj--AC3ak close the distinct-target mixture with
+disjoint safe payment and a hard unit/fan/matching route.  What remains
+is arithmetic or RI/BDA classification and installation of the paid
+context bank, depth-two kernel, residual-block phase fan,
+common-residual cross-centre fan, or support-disjoint blockers.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

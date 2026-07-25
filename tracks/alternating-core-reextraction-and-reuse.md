@@ -668,10 +668,11 @@ localized to the current context and returns an effectively rank-one
 target, bounded transversal, paid depth-two literal, or
 residual-disjoint bank.  AC3ag--AC3ai then dyadically route all
 contexts at one fixed centre to a paid context-disjoint bank, a
-depth-two literal, or a residual-block phase fan.  The remaining
-geometric obligation is therefore cross-centre hard-literal expansion
-and classification of those explicit outputs, rather than an
-unspecified same-chart derivative.
+depth-two literal, or a residual-block phase fan.  AC3aj--AC3ak close
+the distinct-target mixture with disjoint safe payment and an exact
+hard unit/fan/matching route.  The remaining geometric obligation is
+therefore classification and installation of those explicit outputs,
+rather than an unspecified same-chart derivative.
 
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through

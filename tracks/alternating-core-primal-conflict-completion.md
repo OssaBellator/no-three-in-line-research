@@ -409,9 +409,12 @@ route every current-context-localized target through exact drift and a
 rank-two residual audit.  AC3ag--AC3ai in
 [`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
 route the varying contexts at one fixed centre by dyadic paid
-colouring.  The remaining frontier is cross-centre hard-literal
-expansion and structured classification of the resulting paid context
-bank, depth-two kernel, or residual-block phase fan.
+colouring.  AC3aj--AC3ak in
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md)
+close the distinct-target mixture.  The remaining frontier is
+structured classification and installation of the resulting paid
+context bank, depth-two kernel, residual-block phase fan,
+common-residual cross-centre fan, or support-disjoint blockers.
 
 `scripts/verify_ac_primal_conflicts.py` exhausts arbitrary Boolean
 factors on a four-cell system, grid factor/constraint states on a

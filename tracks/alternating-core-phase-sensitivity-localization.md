@@ -502,9 +502,12 @@ residual-disjoint bank.
 
 [`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
 closes the varying-context mixture at one fixed centre by AC3ag--AC3ai.
-Thus only cross-centre hard-literal expansion and arithmetic
-classification of the paid context bank, depth-two kernel, or
-residual-block phase fan remain.
+AC3aj--AC3ak in
+[`alternating-core-cross-centre-router.md`](alternating-core-cross-centre-router.md)
+then close the distinct-target mixture at one current block.  Thus only
+arithmetic classification/installation of the paid context bank,
+depth-two kernel, residual-block phase fan, common-residual
+cross-centre fan, or support-disjoint blockers remains.
 
 `scripts/verify_ac_phase_sensitivity.py` exhausts Boolean behavior
 records on small phase products, checks the Hamming-edge criterion,
