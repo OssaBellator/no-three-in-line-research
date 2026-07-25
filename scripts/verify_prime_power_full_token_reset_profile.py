@@ -32,15 +32,18 @@ def verify_deep_thresholds() -> None:
     for p, h in ((3, 9), (5, 9), (7, 6), (11, 6)):
         t = p**h
         for depth in range(1, h):
-            exact = t * t // (p ** (2 * depth)) + 2 * depth * t // (p**depth)
+            initial = t * t // (p ** (2 * depth))
+            returns = 2 * depth * t // (p**depth)
 
+            # p^depth > t^(1/3): initial < t^(4/3) and
+            # returns < 2h*t^(2/3), checked after cubing.
             if 3 * depth > h:
-                upper = t ** 4 + (2 * h) ** 3 * t**2
-                assert exact**3 < upper
+                assert initial**3 < t**4
+                assert returns**3 < (2 * h) ** 3 * t**2
 
+            # p^depth >= t^(2/3): initial <= t^(2/3) and
+            # returns <= 2h*t^(1/3).
             if 3 * depth >= 2 * h:
-                initial = t * t // (p ** (2 * depth))
-                returns = 2 * depth * t // (p**depth)
                 assert initial**3 <= t**2
                 assert returns**3 <= (2 * h) ** 3 * t
 
