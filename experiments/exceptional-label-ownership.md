@@ -3,6 +3,7 @@
 These experiments accompany
 [`docs/108-exceptional-label-balanced-ownership.md`](../docs/108-exceptional-label-balanced-ownership.md),
 [`docs/109-ownership-hall-core-localization.md`](../docs/109-ownership-hall-core-localization.md),
+[`docs/111-ownership-bottleneck-refill-slack.md`](../docs/111-ownership-bottleneck-refill-slack.md),
 and
 [`scripts/check_exceptional_label_ownership.py`](../scripts/check_exceptional_label_ownership.py).
 
@@ -50,19 +51,25 @@ labels 4,5 -> macro 0.
 The capped refill scores are
 
 ```text
-3, 1, 2, 0, 2, 2.
+3, 1, 2, 0, 2, 2,
 ```
 
-Since `r=1`, every refill label satisfies
+and the corresponding refill slacks are
 
 ```text
-r + capped score <= 4 <= T.
+3, 5, 4, 6, 4, 4.
 ```
 
-Hence PP3mk is certified even though no movement label is acceptable in every
-macro.
+Hence
 
-## 2. Exact ownership Hall core
+```text
+ownership bottleneck = 1,
+minimum refill slack = 3,
+```
+
+so both PP3mk and the threshold-free PP3mx comparison are certified.
+
+## 2. Exact ownership Hall and bottleneck-slack gap
 
 Run
 
@@ -71,8 +78,9 @@ python scripts/check_exceptional_label_ownership.py \
   experiments/exceptional-label-ownership-hall-example.json
 ```
 
-Movement labels `0,1,2` accept only macro zero. That macro has capacity `W=2`,
-so the exact matching size is five rather than six. The checker returns
+At the displayed threshold `r=1`, movement labels `0,1,2` accept only macro zero.
+That macro has capacity `W=2`, so the exact matching size is five. The checker
+returns
 
 ```text
 movement Hall set       = {0,1,2},
@@ -85,6 +93,21 @@ deficiency              = 1.
 All pairs between these three labels and macros one and two are unacceptable,
 which is the PP3mn high-score rectangle.
 
-These are finite regressions for the matching and Hall calculations. They do not
-assert that every geometric controller-defect instance satisfies the successful
-score bounds.
+The least threshold at which a balanced movement ownership exists is
+
+```text
+ownership bottleneck = 4.
+```
+
+Every column score equals `W=2`, so every refill slack is zero. Thus
+
+```text
+minimum refill slack = 0,
+4 > 0,
+```
+
+and the threshold-free PP3mz gap is also present.
+
+These are finite regressions for the matching, Hall, bottleneck, and slack
+calculations. They do not assert that every geometric controller-defect instance
+satisfies the successful score bounds.
