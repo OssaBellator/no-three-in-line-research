@@ -22,7 +22,7 @@ This is the principal local-to-global chain.
 
 ### `research/bounded-denominator-absorbers`
 
-The branch supplies finite denominator profiles, scalar progressions, genuine adjacent radial pairs, overlap/variation fronts, reflected effective denominators and affine-chain alternatives.
+The branch supplies finite denominator profiles, scalar progressions, genuine adjacent radial pairs, overlap/variation fronts and reflected effective denominators.
 
 BDA5ai--BDA5ak are the canonical union-safe radial decoders. BDA5al--BDA5ao propagate them through heterogeneous products and rank-one suppression:
 
@@ -31,7 +31,11 @@ BDA5ai--BDA5ak are the canonical union-safe radial decoders. BDA5al--BDA5ao prop
 - exact collateral probabilities are `m_C/2^{|J(C)|}`;
 - the floor/imbalance identity and deterministic `4,8` losses remain unchanged.
 
-AC3fz--AC3gf import these results. Clean and missing-support created-role alphabets are `12` and `36`; complete-envelope role bounds are `21` and `53`. The remaining BDA work is affine-chain termination, unaudited support-faithfulness and finite-profile cycle termination.
+BDA5ap--BDA5ar close the former five affine-anchor-chain output. A high row or column contains only two current union cells; after the five-role split one exact role cell carries at least one tenth of the incident paid record weight. Fixing that cell determines both anchor coordinates and places every retained support on one radial line.
+
+AC3fz--AC3gf import the union-safe product. AC3hf--AC3hh import the fixed-cell affine collapse under the BDA4f parity and exact-occurrence aggregation hypotheses, giving pivot payment `H/10` and failed-rank return `H/30`.
+
+The remaining BDA work is balanced-floor/higher-rank arithmetic, unaudited ordinary/reflected support-faithfulness and finite-profile cycle termination.
 
 ## Rational-inverse input
 
@@ -52,29 +56,25 @@ AC3fe--AC3fo classify fixed, moving and blocker collateral by pre-transition cur
 
 ## Universal AC interfaces
 
-AC3fa--AC3fd give every failed executable bank the exact created-cell-rank split. AC3fp--AC3fr give dense conflict returns an explicit finite role dictionary.
+AC3fa--AC3fd give every failed executable bank the exact created-cell-rank split. AC3fp--AC3fr give dense conflict returns an explicit finite role dictionary. AC3fs--AC3gm orient every realized or expected rank profile to a private union-safe pivot bucket.
 
-AC3fs--AC3fv construct the union-safe pivot rectangle. AC3gg--AC3gj extend it to all realized created-cell ranks by orienting every certificate to its least new cell. AC3gk--AC3gm realize expected rank profiles before pivoting, so BDA failed products yield explicit pivot payment scales.
+AC3gn--AC3gq give canonical pivot rectangles a finite `2Ln^8` signature alphabet. AC3gr--AC3gu classify full partner saturation by a complete pivot cross, an exact fused/split blocker law and one heavy line profile; line-refined signatures have safe bound `8Ln^10`.
 
-AC3gn--AC3gq control local pivot reuse. For a retained role alphabet of size `L`, canonical decorated pivot rectangles lie in a signature universe of size at most
+AC3gv--AC3ha close the local saturated menu for every `n`. For `n>=4`, at least `n-3` empty partner alternatives have pairwise-disjoint creation buckets. The unique `3 x 3` split exception has one common final union.
 
-```text
-2 L n^8.
-```
+AC3hb--AC3he add physical pivot-cell exposure. A mixed epoch of AC2d support descent, new signatures and new pivot cells has one bounded scalar potential and ends at a named output or an old-axis saturation fan.
 
-Every pivot step either exposes a new signature or returns a full partner-saturation record at one pivot. A mixed epoch of AC2d support descent and new-signature pivot execution is controlled by
+AC3hi--AC3hk route old-axis histories to one of:
 
-```text
-Xi_piv(U,E) = N |E| + N - |U|
-```
-
-and cannot cycle. The only new no-recycling obstruction is the exact full partner-saturation profile.
+- a context-disjoint alternative-target family;
+- a heavy fixed current pair;
+- one fixed current context cell with many distinct axis pivots.
 
 ## Current frontier
 
-1. Classify full partner-saturation records and same-role cross-envelope overload stars through carry/BDA/RI or fixed-centre geometry.
-2. Terminate the five BDA affine chains and remaining unaudited co-anchor outputs.
-3. Integrate every finite saturation/affine output into AC4.
+1. Classify full line-partner saturation and old-axis fixed-context/fixed-pair/dispersion profiles through carry, BDA, RI or a genuine multi-target construction.
+2. Close remaining ordinary and reflected co-anchor support-faithfulness cases.
+3. Prove finite transition-cycle termination for the remaining exact arithmetic profiles and assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
