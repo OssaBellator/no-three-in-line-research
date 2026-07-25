@@ -75,7 +75,7 @@ rectangle diagonals. Equitable colouring and superregular spread absorb every
 zero-density hard-unary rectangle support and every bounded signed finite-state
 contradiction.
 
-## Conditional binary stars and two-resource grids
+## Conditional binary stars and paid two-resource grids
 
 A perfect matching chooses one cell at a fixed endpoint resource. Therefore a
 binary resource star is an exact conditional problem: fix the selected centre
@@ -89,8 +89,12 @@ In a superregular host:
 - failure of that matrix forces a complete quadratic choice grid between two
   endpoint resources.
 
-The remaining binary geometry is therefore a quadratic fan, a conditional Hall
-family, a complete two-resource choice grid, or paid/source concentration.
+A complete support grid is not itself paid failure. Selecting the local pair and
+its residual matching in one average closes the grid whenever average blocker
+multiplicity plus residual collateral is below the combined removal credit. A
+persistent grid therefore has weighted mass at the credit scale and requires a
+candidate-rich projective matching cover, residual concentration, or a
+non-superregular conditional host.
 
 ## Matchable non-superregular hosts
 
@@ -123,20 +127,21 @@ size `m^(19/20)`, force one credited endpoint into a marked filler block of size
 `b=m^kappa`, with `kappa<19/80`.
 
 Full-pool dilution proves that all but `o(m^(19/40))` credited endpoints are light
-for:
+for support-rank-four anchored pairs, rank-four through rank-six inserted triples,
+and anchored transitions. Adaptive filler size also closes diffuse unary source
+support. If no credited endpoint is unary-light, Hall extracts an
+`Omega(m^(19/40))` unary-forbidden resource matching.
 
-- support-rank-four anchored pairs;
-- rank-four, five, and six inserted triples;
-- anchored transitions.
+The marked block now uses a uniform single-cycle endpoint permutation. Its exact
+cylinder law is `1/(b-1)_r` on directed path forests and zero on every proper
+directed cycle. It moves every endpoint and deterministically removes diagonal
+arcs, transpositions, and directed triangles. Thus no separately prepared spread
+host is needed.
 
-Adaptive filler size also closes diffuse unary source support. If no credited
-endpoint is unary-light, Hall extracts an `Omega(m^(19/40))` unary-forbidden
-resource matching, which rejoins the source-star/resource-bank branch.
-
-Support-ranked marked and unmarked formulas now give the exact unary and binary
-`Xi` paid thresholds. Diffuse `Xi` weight yields a strict pool-compatible decrease.
-A fixed captive star centre either succeeds or carries one of eleven explicit
-support-degree cores.
+In the paid `Xi` expression, rank-one unary weight and rank-two binary
+transposition weight vanish identically. Diffuse remaining support-ranked weight
+gives a strict pool-compatible decrease. A fixed captive star centre that still
+fails carries one of nine explicit support-degree cores.
 
 ## Current remaining theorem
 
@@ -149,15 +154,17 @@ The all-`n` branch is reduced to:
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
 4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, or one fixed captive
-   centre with an explicit support-degree certificate;
+   centre with one of nine explicit support-degree certificates;
 5. alternating cycle-star/theta support cores or cost comparable with cycle
    credit;
-6. quadratic binary cell fans, complete two-resource choice grids, conditional
-   Hall families, or paid collateral on their rectangle states.
+6. quadratic binary cell fans, weighted two-resource choice grids,
+   candidate-rich projective covers, conditional Hall families, or residual paid
+   collateral.
 
-Diffuse pool-local source mass, raw polynomial resource stars, diffuse binary dual
-mass, unstructured non-superregularity, controller relabelling, and termination
-are no longer separate open problems.
+Diffuse pool-local source mass, prepared marked spread hosts, rank-one unary
+`Xi`, rank-two binary transpositions, raw polynomial resource stars, diffuse
+binary dual mass, unstructured non-superregularity, controller relabelling, and
+termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -171,6 +178,8 @@ The no-three-in-line conjecture remains unproved.
   localization, and complete two-resource choice grids.
 - `docs/160`--`docs/164`: marked pool source dilution, unary-resource extraction,
   support-ranked `Xi` weights, and exceptional-centre certificates.
+- `docs/165`--`docs/166`: universal single-cycle filler states and paid
+  two-resource grid selection.
 
 ## Current exact checks
 
@@ -185,6 +194,9 @@ python scripts/check_anchor_deficiency_core.py \
 
 python scripts/check_binary_resource_star_conditioning.py \
   experiments/binary-resource-star-conditioning-example.json
+
+python scripts/check_single_cycle_spread.py \
+  experiments/single-cycle-spread-example.json
 ```
 
 These are finite diagnostics. They do not replace the asymptotic conversion
