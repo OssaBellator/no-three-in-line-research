@@ -273,7 +273,8 @@ Hence a cycle-erased history containing `L` whole-parent selected states satisfi
 \boxed{
 L
 \le
-1+rac{\mathcal I}{2(p+1)(h-1)}.
+1+
+\mathcal I\big/\bigl(2(p+1)(h-1)\bigr).
 }
 \]
 
