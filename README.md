@@ -17,39 +17,28 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 ## Repository map
 
 - [`STATUS.md`](STATUS.md): current honesty ledger.
-- [`proofs/theorem-index.md`](proofs/theorem-index.md): global theorem index.
+- [`docs/11-open-bottlenecks.md`](docs/11-open-bottlenecks.md): live research roadmap.
 - [`proofs/composite-modulus-theorem-index.md`](proofs/composite-modulus-theorem-index.md): composite-track theorem index.
-- [`proofs/composite-modulus-theorem-index-addendum.md`](proofs/composite-modulus-theorem-index-addendum.md): CMR102--CMR384 addendum.
-- [`proofs/composite-modulus-theorem-index-supplement.md`](proofs/composite-modulus-theorem-index-supplement.md): current live range from CMR385 onward.
+- [`proofs/composite-modulus-theorem-index-addendum.md`](proofs/composite-modulus-theorem-index-addendum.md): CMR102--CMR384.
+- [`proofs/composite-modulus-theorem-index-live.md`](proofs/composite-modulus-theorem-index-live.md): authoritative collision-free range from CMR385 onward.
+- [`proofs/composite-modulus-theorem-index-supplement.md`](proofs/composite-modulus-theorem-index-supplement.md): mirrored live range.
 - [`tracks/all-n-composite-modulus.md`](tracks/all-n-composite-modulus.md): original composite task track.
-- [`tracks/all-n-composite-modulus-progress.md`](tracks/all-n-composite-modulus-progress.md): CM1–CM6 progress and bottlenecks.
+- [`tracks/all-n-composite-modulus-progress.md`](tracks/all-n-composite-modulus-progress.md): CM1--CM6 progress and bottlenecks.
 
 ### General repair programme
 
-- [`docs/01-saturation-and-reservoirs.md`](docs/01-saturation-and-reservoirs.md) through [`docs/06-block-collateral-energy.md`](docs/06-block-collateral-energy.md): saturation, reverse-scale repair, spread banks, tomographic trades, absorbers, and exact block collateral.
-- [`docs/08-hyperbola-interleaver.md`](docs/08-hyperbola-interleaver.md) through [`docs/13-carry-cycle-dispersion.md`](docs/13-carry-cycle-dispersion.md): complementary hyperbolas, orbit/cycle banks, and the corrected frozen-cycle theorem.
-- [`docs/15-degree-constrained-hypergraph-selection.md`](docs/15-degree-constrained-hypergraph-selection.md) and [`docs/16-superregular-clone-selection.md`](docs/16-superregular-clone-selection.md): clone-space exact selection, dense spread matchings, and global conflict-mass endpoints.
-- [`docs/17-pfr-inverse-additive.md`](docs/17-pfr-inverse-additive.md) through [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): inverse-additive structure, quotient banks, carry cells, wrap centers, and alternating repair.
+- [`docs/01-saturation-and-reservoirs.md`](docs/01-saturation-and-reservoirs.md) through [`docs/26-alternating-star-neutralization.md`](docs/26-alternating-star-neutralization.md): saturation, repair banks, hyperbola interleaving, inverse-additive structure, carry cells, and alternating neutralization.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected and refuted claims.
 
 ### Composite and prime-power programme
 
-- [`docs/27-composite-modulus-obstructions.md`](docs/27-composite-modulus-obstructions.md) through [`docs/33-prime-power-companion-compatible-blocks.md`](docs/33-prime-power-companion-compatible-blocks.md): composite obstructions, nonlinear full channels, tangent cells, displacement, and companion-compatible blocks.
-- [`docs/34-prime-power-block-bank-collateral.md`](docs/34-prime-power-block-bank-collateral.md) through [`docs/45-prime-power-companion-global-syndrome.md`](docs/45-prime-power-companion-global-syndrome.md): recursive quotient banks, determinant carries, terminal spread, and quadratic-order syndrome bounds.
-- [`docs/46-crt-local-arc-obstruction.md`](docs/46-crt-local-arc-obstruction.md) through [`docs/59-prime-power-binary-cluster-sum.md`](docs/59-prime-power-binary-cluster-sum.md): CRT taxonomy, digital obstruction, divisor collisions, first-separation summation, and binary-star localization.
-- [`docs/60-prime-power-prefix-star-neutralization.md`](docs/60-prime-power-prefix-star-neutralization.md) through [`docs/70-prime-power-alternating-pencil-certificates.md`](docs/70-prime-power-alternating-pencil-certificates.md): prefix repair, quotient charging, higher-rank collateral, descending invariance, child pencils, and frozen rank certificates.
-- [`docs/71-prime-power-balanced-law-classification.md`](docs/71-prime-power-balanced-law-classification.md) through [`docs/73-prime-seven-pair-spectrum.md`](docs/73-prime-seven-pair-spectrum.md): reciprocal-law classification and balanced recursive banks at powers of seven.
-- [`docs/74-prime-power-global-baseline-alternating-closure.md`](docs/74-prime-power-global-baseline-alternating-closure.md) through [`docs/79-four-endpoint-trap-counterexample.md`](docs/79-four-endpoint-trap-counterexample.md): global-baseline compression, target-load descent, exact terminal boards, and the abstract four-core trap.
-- [`docs/80-prime-five-four-core-escape.md`](docs/80-prime-five-four-core-escape.md) through [`docs/88-prime-power-inherited-four-core-cover.md`](docs/88-prime-power-inherited-four-core-cover.md): exact root escapes, joint-parent banks, closure envelopes, sharp derangement laws, and inherited terminal covers.
-- [`docs/89-prime-power-parent-cover-lifting.md`](docs/89-prime-power-parent-cover-lifting.md) through [`docs/95-prime-power-iterated-hall-wall-peeling.md`](docs/95-prime-power-iterated-hall-wall-peeling.md): parent-cover lifting, the \(2/11\) batch deficit, envelope expansion, line signatures, Hall walls, and iterative peeling.
-- [`docs/96-prime-power-essential-edge-factorization.md`](docs/96-prime-power-essential-edge-factorization.md) through [`docs/101-prime-power-exact-top-height-slice.md`](docs/101-prime-power-exact-top-height-slice.md): half-degree flexibility, exchange ancestry, local loads, bounded dyadic conflicts, odd-line deletion resilience, and exact top-slice cleaning.
-- [`docs/102-prime-power-near-transversal-line-resilience.md`](docs/102-prime-power-near-transversal-line-resilience.md) through [`docs/113-prime-power-mod-six-height-cleaning.md`](docs/113-prime-power-mod-six-height-cleaning.md): line-deletion reserves, target-specific Hall blockers, refined high-slice cleaning, fan obstructions, and Hall-width reduction.
-- [`docs/114-prime-power-thin-blocker-cover-expansion.md`](docs/114-prime-power-thin-blocker-cover-expansion.md) through [`docs/123-prime-power-mixed-fan-factorial-carry.md`](docs/123-prime-power-mixed-fan-factorial-carry.md): thin blocker extraction, first-separation signatures, carry cells, witness routing, and mixed-fan factorial carries.
-- [`docs/124-prime-power-paid-mixed-ratio-bank.md`](docs/124-prime-power-paid-mixed-ratio-bank.md) through [`docs/130-prime-power-token-reintroduction-ledger.md`](docs/130-prime-power-token-reintroduction-ledger.md): paid ratio banks, line-clean completions, heavy-cell continuation, dispersed-token packing, and dynamic token-edge inventory.
-- [`docs/131-prime-power-line-clean-line-energy.md`](docs/131-prime-power-line-clean-line-energy.md) and [`docs/132-prime-power-line-energy-to-carry-cells.md`](docs/132-prime-power-line-energy-to-carry-cells.md): frozen line energy, dyadic localization, matching-vertex walls, and full-prefix carry cells.
-- [`docs/130-prime-power-universal-line-clean-blocker-bank.md`](docs/130-prime-power-universal-line-clean-blocker-bank.md) through [`docs/132-prime-power-exact-band-covering.md`](docs/132-prime-power-exact-band-covering.md): universal sharp-blocker banks, deep-token universe elimination, tunable batching, and exact completion of one intermediate-height band.
-- [`docs/133-prime-power-laminar-reintroduction-budget.md`](docs/133-prime-power-laminar-reintroduction-budget.md) and [`docs/133-prime-power-coarse-reset-reintroduction-profile.md`](docs/133-prime-power-coarse-reset-reintroduction-profile.md): laminar row-stock accounting, exact recursive-fibre return profiles, ancestor-slot factorization, and witness execution.
-- [`docs/133-prime-power-line-energy-token-endpoint.md`](docs/133-prime-power-line-energy-token-endpoint.md) through [`docs/135-prime-power-full-token-coarse-reset-profile.md`](docs/135-prime-power-full-token-coarse-reset-profile.md): full-prefix token packing, two-dimensional dynamic inventory, per-ancestor reset costs, deep visit bounds, repeated-slot thresholds, and aggregate return mass.
+- [`docs/27-composite-modulus-obstructions.md`](docs/27-composite-modulus-obstructions.md) through [`docs/59-prime-power-binary-cluster-sum.md`](docs/59-prime-power-binary-cluster-sum.md): nonlinear prime-power channels, recursive banks, CRT obstructions, divisor collisions, and first-separation summation.
+- [`docs/60-prime-power-prefix-star-neutralization.md`](docs/60-prime-power-prefix-star-neutralization.md) through [`docs/88-prime-power-inherited-four-core-cover.md`](docs/88-prime-power-inherited-four-core-cover.md): prefix repair, quotient charging, alternating closure, terminal traps, joint-parent banks, and inherited covers.
+- [`docs/89-prime-power-parent-cover-lifting.md`](docs/89-prime-power-parent-cover-lifting.md) through [`docs/113-prime-power-mod-six-height-cleaning.md`](docs/113-prime-power-mod-six-height-cleaning.md): parent lifting, Hall-wall peeling, exchange ancestry, matching-space loads, and exact high-slice cleaning.
+- [`docs/114-prime-power-thin-blocker-cover-expansion.md`](docs/114-prime-power-thin-blocker-cover-expansion.md) through [`docs/132-prime-power-exact-band-covering.md`](docs/132-prime-power-exact-band-covering.md): thin blocker signatures, carry cells, line-clean banks, token batching, and exact completion of one intermediate-height band.
+- [`docs/133-prime-power-laminar-reintroduction-budget.md`](docs/133-prime-power-laminar-reintroduction-budget.md) through [`docs/139-prime-power-state-cycle-erasure.md`](docs/139-prime-power-state-cycle-erasure.md): laminar and recursive return profiles, harmonic packet completion, nonprefix reset costs, and exact state-cycle erasure.
+- [`docs/140-prime-power-edge-incidence-state-expansion.md`](docs/140-prime-power-edge-incidence-state-expansion.md): exact labelled edge incidence, sharp \(O_p(t\log^2t)\) sweep budgets, and polynomial payment for distinct-state expansion.
+- [`docs/141-prime-power-packet-recreation-churn-ledger.md`](docs/141-prime-power-packet-recreation-churn-ledger.md): returned-edge support for recreated packet conflicts and first-dirty scheduling reduced to cumulative churn.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -74,48 +63,26 @@ changes through orbit or rectangle banks, use inverse-additive extraction and
 carry classification, neutralize dominant secant stars, and finish with a
 clone-space or conflict-free exact-selection theorem. Exact terminal traps show
 that normalized local dynamics alone is insufficient; an escape must use
-channel ancestry or a larger joint move.
+channel ancestry or a larger inherited move.
 
 ### Composite prime-power route
 
-Start from completed-reciprocal full channels and their companion layer. The
-generic first-separation and prefix-collateral sums are closed at
-quadratic-polylogarithmic scale. Balanced recursive banks exist for all
-\(p\equiv1\pmod4\) and, through a non-reciprocal factorization, for every power
-of seven.
+The generic recursive first moment, prefix and joint-parent collateral, terminal
+contraction, Hall-blocker geometry, universal line-clean repair, exact high-slice
+cleaning, and harmonic-packet completion are closed at their stated scales.
 
-Every globally nonimproving alternating closure contracts to an inherited
-four-endpoint core. Parent lifting, Hall-wall peeling, and matching-space local
-loads reduce the nonroot obstruction to candidate-only triples in primitive
-height bands.
-
-For a band
+For every fixed \(\eta>0\), all relevant intermediate dyadic bands partition
+into
 
 \[
-H\le\max(|u|,|v|)<2H,
+P_\eta(t)
+\le
+\left\lceil\frac{1+\log_2t}{2}\right\rceil
 \]
 
-the conflict degree is below \(3t^2\) and pair codegree is at most \(t/H\).
-For every fixed \(\eta>0\), the duplicated-row Joos--Mubayi--Smith covering
-model gives an **exact** target-specific parent permutation avoiding any one
-band \(H\ge t^\eta\), for all sufficiently large \(t\). At the very top,
+exactly cleanable harmonic packets.
 
-\[
-H\ge0.42t,
-\]
-
-matching-space local-lemma arguments give exact cleaning with linear
-protected-line reserves. The remaining intermediate-height problem is to
-schedule all \(O(\log t)\) bands without accumulating a forbidden logarithmic
-conflict degree or recreating previously cleaned bands.
-
-Thin Hall blockers now have a complete local signature route. Universal
-line-clean banks turn frozen blockers into line energy, matching-vertex walls,
-secant stars, heavy prefix cells, or dispersed full tokens. Deep token universes
-can be removed in simultaneous batches, with a tunable cubic-root tradeoff
-between heavy load and batch capacity.
-
-For a full token \(\tau=(b,a,c,\theta)\), executable endpoint visits satisfy
+For a full token \(\tau=(b,a,c,\theta)\),
 
 \[
 D_\tau^{(2)}
@@ -123,25 +90,41 @@ D_\tau^{(2)}
 \frac{t^2}{p^{2b}}+I_\tau^{(2)}.
 \]
 
-A one-pass descending recursive prefix schedule has
+One recursive ancestor or one one-layer whole-parent reset returns at most
+\(t/p^b\) token edges. Exact edge-incidence accounting gives
 
 \[
-I_\tau^{(2),\rm coarse}\le\frac{2bt}{p^b}.
+\text{one prefix pass}
+\le
+(p+1)t h(h-1)
 \]
 
-At the deep threshold \(p^b\ge t^{2/3}\), this gives
+and
 
 \[
-D_\tau^{(2)}\le t^{2/3}+2h t^{1/3}.
+\text{prefix pass + packet sweep}
+\le
+(p+1)t(h-1)\bigl(h+P_\eta(t)\bigr)
+=O_p(t\log^2t).
 \]
 
-Across all labelled nonroot full tokens, the one-pass return mass is
-\(O_p(t^2\log t)\). For arbitrary recursive histories, excessive return forces
-repeated rematching of one compatible ancestor slot. Witness certificates
-already open executable prefix continuations. The remaining dynamic obstruction
-is payment for repeated slot use, non-prefix recreation, fully forced exchange
-ancestry, and multi-band scheduling. Arbitrary composite assembly still needs a
-separate coverage mechanism.
+Exact selected-state cycles are erasable. Distinct feasible parent states differ
+on at least two returned edges, so state-space expansion pays churn linearly.
+Every conflict recreated from an earlier clean harmonic packet contains a
+returned edge, and a first-dirty schedule satisfies
+
+\[
+T
+\le
+P+2(t-1)^2W_*C,
+\]
+
+where \(C\) is cumulative returned-edge churn and \(W_*\) is the total harmonic
+packet weight.
+
+The live prime-power frontier is therefore a global upper bound or monotone
+conversion for \(C\), together with control of fully forced exchange ancestry.
+Arbitrary side-length coverage remains necessary afterward.
 
 ## Running checks
 
@@ -153,46 +136,28 @@ python scripts/verify_composite_modulus.py --max-modulus 40
 python scripts/verify_prime_power_channels.py --max-modulus 125
 python scripts/verify_prime_power_first_separation_sum.py --max-modulus 125
 python scripts/verify_prime_power_quotient_excess.py
-python scripts/verify_prime_power_higher_rank_prefix.py
-python scripts/verify_prime_power_child_translation_pencils.py
-python scripts/verify_prime_power_child_pencil_dichotomy.py
-python scripts/verify_prime_power_alternating_pencil_certificates.py
 python scripts/verify_prime_power_global_baseline_closure.py
-python scripts/verify_prime_power_paid_geometry_conversion.py
-python scripts/verify_prime_power_target_load_closure.py
-python scripts/verify_prime_power_four_endpoint_core.py
 python scripts/verify_prime_power_parent_cover_lifting.py
-python scripts/verify_prime_power_batch_parent_lifting.py
-python scripts/verify_prime_power_envelope_expansion.py
-python scripts/verify_prime_power_parent_line_signatures.py
-python scripts/verify_prime_power_parent_hall_walls.py
-python scripts/verify_prime_power_parent_wall_peeling.py
-python scripts/verify_prime_power_iterated_hall_peeling.py
-python scripts/verify_prime_power_essential_edges.py
 python scripts/verify_prime_power_exchange_ancestry.py
-python scripts/verify_prime_power_parent_local_load.py
 python scripts/verify_prime_power_band_conflicts.py
-python scripts/verify_prime_power_odd_line_resilience.py
 python scripts/verify_prime_power_exact_top_slice.py
-python scripts/verify_prime_power_heavy_cell_continuation.py
-python scripts/verify_prime_power_dispersed_token_ledger.py
-python scripts/verify_prime_power_token_reintroduction_ledger.py
 python scripts/verify_prime_power_line_clean_energy.py
 python scripts/verify_prime_power_line_energy_carry.py
 python scripts/verify_prime_power_line_energy_tokens.py
-python scripts/verify_prime_power_universal_line_clean.py
-python scripts/verify_prime_power_dispersed_token_universe.py
-python scripts/verify_prime_power_tunable_token_batching.py
 python scripts/verify_prime_power_exact_band_covering.py
+python scripts/verify_prime_power_harmonic_band_packing.py
 python scripts/verify_prime_power_laminar_reintroduction.py
 python scripts/verify_prime_power_coarse_reset_profile.py
 python scripts/verify_prime_power_full_token_reintroduction.py
 python scripts/verify_prime_power_full_token_reset_profile.py
+python scripts/verify_prime_power_nonprefix_token_return.py
+python scripts/verify_prime_power_harmonic_packet_sweep.py
+python scripts/verify_prime_power_state_cycle_erasure.py
+python scripts/verify_prime_power_edge_incidence_state_expansion.py
+python scripts/verify_prime_power_packet_recreation_churn.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
-python scripts/verify_prime_power_cross_stratum_sum.py --max-modulus 125
-python scripts/verify_digital_64_completion_obstruction.py
 python scripts/verify_composite_finite_extensions.py
 ```
 
