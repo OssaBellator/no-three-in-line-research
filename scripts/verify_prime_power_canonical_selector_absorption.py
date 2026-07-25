@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR581--CMR586 canonical absorption and chase identities."""
+"""Verify CMR571--CMR576 canonical absorption and chase identities."""
 
 from itertools import combinations, permutations
 from math import ceil, factorial
