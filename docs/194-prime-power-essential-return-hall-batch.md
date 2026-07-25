@@ -1,57 +1,131 @@
-# Essential target-edge returns expose Hall-deficiency deletion batches
+# Essential target-edge returns expose canonical unit Hall walls
 
 CMR720--CMR726 attach one missing edge of a stored avoiding matching to every
 essential return of a previously deleted target edge. Hall's theorem gives a
-stronger certificate. Removing the essential returned edge leaves a
-nonmatchable host. Any Hall-deficient source set then cuts not just one but the
-full deficiency number of distinct edges from the stored avoiding matching.
+more precise normal form. Removing one essential edge from a matchable host
+leaves a matching of size exactly one below perfect, so every Hall obstruction
+has deficiency exactly one. The returned edge is the unique current edge which
+repairs the missing neighbour of that cut.
 
-Fix a balanced bipartite vertex set of side `m`. Let `M_0` be a stored perfect
-matching avoiding a physical edge `e`. Let `H` be a later matchable host in
-which `e` is essential. Put
+Fix a balanced bipartite vertex set of side `m`. Let
+
+\[
+e=(u,v)
+\]
+
+be essential in a matchable host `H`, and put
 
 \[
 G=H-e.
 \]
 
-Then `G` has no perfect matching.
+Let `M_0` be the stored earlier perfect matching which avoided `e`.
 
-## 1. Hall witness after removing the essential returned edge
+## 1. Removing one essential edge has matching deficiency one
 
 ### Theorem CMR727 -- PROVED
 
-There is a nonempty source set `X` with neighbour set
+The maximum matching number of `G` is
 
 \[
-Y=N_G(X)
+\boxed{\nu(G)=m-1.}
 \]
 
-such that
+Consequently
 
 \[
-\boxed{|Y|<|X|.}
+\boxed{
+\max_{X\subseteq L}
+\bigl(|X|-|N_G(X)|\bigr)=1.
+}
 \]
-
-Writing
-
-\[
-\delta=|X|-|Y|,
-\]
-
-one has `delta>=1`.
 
 ### Proof
 
-Since `e` is essential in the matchable host `H`, deleting it destroys all
-perfect matchings. Hall's theorem applied to `G=H-e` supplies `X` with the
-stated deficiency. ∎
+Every perfect matching of `H` contains `e`. Removing `e` from one such matching
+leaves a matching of size `m-1` in `G`, so `nu(G)>=m-1`. Since `e` is essential,
+`G` has no perfect matching, and therefore `nu(G)<=m-1`. Equality follows.
+The deficiency form of Hall's theorem gives the second identity. ∎
 
-The set `(X,Y)` is an exact later-host obstruction, not an inherited geometric
-approximation.
+Thus a larger Hall-deficiency batch cannot occur after removing only one
+essential edge.
 
-## 2. The stored avoiding matching contains a deleted batch of size delta
+## 2. Every deficient cut is a unit wall repaired by e
 
-For the Hall witness CMR727, define
+Let `X` be any Hall-deficient source set in `G` and write
+
+\[
+Y=N_G(X).
+\]
+
+### Theorem CMR728 -- PROVED
+
+One has
+
+\[
+\boxed{|Y|=|X|-1,}
+\qquad
+\boxed{u\in X,}
+\qquad
+\boxed{v\notin Y.}
+\]
+
+Moreover
+
+\[
+\boxed{N_H(X)=Y\cup\{v\}.}
+\]
+
+Hence `e` is the unique edge of `H` from `X` to the target complement of `Y`.
+
+### Proof
+
+CMR727 makes every positive Hall deficiency equal to one. If `u` were not in
+`X`, adding `e` to `G` would not enlarge the neighbour set of `X`, so `H` would
+also violate Hall. Thus `u` lies in `X`. If `v` belonged to `Y`, adding `e`
+would again leave the neighbour set unchanged, with the same contradiction.
+Therefore `v` is outside `Y`, and the only edge added in passing from `G` to `H`
+is `e=(u,v)`, giving the displayed neighbour identity. ∎
+
+The wall is exact and owner-local: its missing neighbour is the target endpoint
+of the returned essential edge.
+
+## 3. Canonical minimal unit wall
+
+Choose the lexicographically first inclusion-minimal Hall-deficient source set
+`X`, and put `Y=N_G(X)`.
+
+### Theorem CMR729 -- PROVED
+
+For every `x` in `X`,
+
+\[
+\boxed{N_G(X\setminus\{x\})=Y.}
+\]
+
+If `|X|>=2`, every target vertex in `Y` has at least two neighbours in `X`.
+If `|X|=1`, then `X={u}` and `Y` is empty, so the source endpoint of `e` is
+isolated in `G`.
+
+### Proof
+
+By inclusion-minimality, `X\setminus\{x\}` is not deficient. Its neighbour set
+is contained in `Y`, while
+
+\[
+|X\setminus\{x\}|=|X|-1=|Y|.
+\]
+
+Hall's inequality therefore forces equality of the neighbour set with `Y`.
+If some `y` in `Y` had only one neighbour `x` in `X`, then removing `x` would
+remove `y` from the neighbour set, contradicting the equality. The singleton
+case follows from `|Y|=|X|-1=0` and CMR728. ∎
+
+Thus a nontrivial unit wall has no target leaf on its deficient side.
+
+## 4. The stored avoiding matching supplies a missing wall edge
+
+Define
 
 \[
 F_{X,Y}
@@ -59,161 +133,125 @@ F_{X,Y}
 \{(x,M_0(x)):x\in X,\ M_0(x)\notin Y\}.
 \]
 
-### Theorem CMR728 -- PROVED
-
-The set `F_{X,Y}` is a matching contained in the old stored matching `M_0`, every
-edge of it is absent from the later host `H`, and
-
-\[
-\boxed{|F_{X,Y}|\ge\delta.}
-\]
-
-### Proof
-
-The `|X|` matching targets `M_0(X)` are distinct. At most `|Y|` of them lie in
-`Y`, so at least `|X|-|Y|=delta` lie outside `Y`. This proves the cardinality
-bound and the matching property.
-
-If `(x,M_0(x))` with `x` in `X` and `M_0(x)` not in `Y` belonged to `H`, then it
-would belong to `G` because it is not `e`—the stored matching avoids `e`. Its
-target would then lie in `N_G(X)=Y`, a contradiction. Thus every edge of the
-batch is absent from `H`. ∎
-
-An essential return therefore carries a deletion batch whose size is the Hall
-deficiency.
-
-## 3. Large deletion batch or thin Hall wall
-
-Fix an integer threshold `r>=1`.
-
-### Theorem CMR729 -- PROVED
-
-Every essential return reaches exactly one of the following structural regimes.
-
-1. **Large deletion ancestry.** The Hall deficiency satisfies `delta>=r`, and
-   `F_{X,Y}` contains at least `r` distinct missing edges of `M_0`.
-2. **Thin Hall wall.** One has `1<=delta<r`; the later avoiding host `G` has an
-   explicit Hall-deficient cut of width `delta`, together with `delta` distinct
-   missing stored-matching edges across the cut.
-
-### Proof
-
-Apply CMR728 and split according to the integer value of `delta`. ∎
-
-The thin branch enters the existing Hall-wall, peeling, essential-factorisation,
-and low-width signature machinery CMR199--CMR218 and CMR271--CMR305 whenever
-its inherited geometric hypotheses are invoked.
-
-## 4. Repeated large-deficiency episodes pack or concentrate
-
-Consider `K` essential-return episodes relative to the same stored matching
-`M_0`. In episode `j`, choose one Hall batch `F_j` from CMR728 and assume
-
-\[
-|F_j|\ge r.
-\]
-
 ### Theorem CMR730 -- PROVED
 
-For every integer `lambda>=2`, at least one of the following holds.
+The set `F_{X,Y}` is nonempty, is a matching contained in `M_0`, and every one
+of its edges is absent from `H`.
 
-1. One exact edge of `M_0` belongs to at least `lambda` Hall batches.
+### Proof
+
+The `|X|` targets `M_0(X)` are distinct, while `Y` has size `|X|-1`, so at least
+one stored matching target lies outside `Y`. If such an edge belonged to `H`, it
+would also belong to `G`, because `M_0` avoids `e`; its target would then lie in
+`N_G(X)=Y`, a contradiction. ∎
+
+Choose the first edge of `F_{X,Y}` in the stored matching order and call it the
+canonical blocking witness `f`.
+
+## 5. Finite canonical wall stock or exact recurrence
+
+The canonical unit-wall signature is
+
+\[
+\Sigma_{\mathrm{wall}}
+=
+(
+\text{owner},
+ e,
+ X,
+ Y,
+ f
+).
+\]
+
+The set `X`, the set `Y`, and the witness `f` are chosen deterministically from
+the owner and `e`.
+
+### Theorem CMR731 -- PROVED
+
+At a fixed owner stage of side `m`, there are at most
+
+\[
+\boxed{m^2}
+\]
+
+canonical unit-wall signatures. For every integer `lambda>=2`, a history of `K`
+essential-return episodes at that owner reaches one of:
+
+1. one exact signature in at least `lambda` episodes;
 2. 
    \[
-   \boxed{
-   K
-   \le
-   \left\lfloor
-   \frac{(\lambda-1)m}{r}
-   \right\rfloor.
-   }
+   \boxed{K\le(\lambda-1)m^2.}
    \]
 
 ### Proof
 
-The batch incidence is at least `Kr`. If no stored matching edge occurs
-`lambda` times, each of the `m` edges contributes at most `lambda-1`
-incidences. Therefore `Kr<=(lambda-1)m`. ∎
+There is at most one deterministic wall signature for each physical essential
+edge `e`, and the host has at most `m^2` edges. Apply the pigeonhole principle.
+∎
 
-Thus many essential returns cannot repeatedly expose large deficiency without
-concentrating on one old matching edge.
+No exponential stock of arbitrary Hall witnesses is charged.
 
-## 5. A recurrent Hall-batch edge is continuous absence or reintroduction
+## 6. Escape from a persistent unit wall is an entering cross-cut edge
 
-Fix the recurrent stored edge `f` from CMR730. Record its absent/present status
-through the return history.
-
-### Theorem CMR731 -- PROVED
-
-Let `rho(f)` be the number of maximal absence runs and `I(f)` the number of
-absent-to-present reintroductions. Then
-
-\[
-\boxed{\rho(f)\le1+I(f).}
-\]
-
-Consequently repeated Hall-batch concentration on `f` yields either
-
-1. one long interval where `f` remains continuously absent; or
-2. repeated reintroduction of `f`, with exact entering-edge and full-token
-   payment.
-
-### Proof
-
-Apply the absence-run identity CMR519. ∎
-
-The first branch is a persistent Hall-wall certificate; the second is dynamic
-edge payment.
-
-## 6. Persistent Hall deficiency is stable under further deletions
+Fix one recurrent signature `(e,X,Y,f)` at an unchanged owner. The avoiding host
+`G=H-e` has no edge from `X` to the target complement of `Y`.
 
 ### Theorem CMR732 -- PROVED
 
-Suppose an interval uses only further edge deletions and endpoint contractions
-inside the same owner and never restores any edge of one Hall batch
-`F_{X,Y}`. Then no later uncontracted host on the same vertex cut can recover a
-perfect matching across that cut without changing the owner or restoring at
-least one missing batch edge or another edge from `X` to the target complement
-of the current neighbour set.
+Suppose a later matchable owner state avoids the forced use of `e` or no longer
+has the same unit Hall wall. Then at least one of the following has occurred.
+
+1. A new or restored edge enters from `X` to the target complement of `Y`.
+2. An endpoint of the cut is contracted, giving strict side descent.
+3. The factor, routing, envelope, or host owner changes.
+
+If the canonical stored witness `f` itself is repeatedly absent and present, its
+absence runs satisfy
+
+\[
+\boxed{\rho(f)\le1+I(f),}
+\]
+
+so repeated returns pay the existing reintroduction ledger.
 
 ### Proof
 
-Further deletions cannot enlarge `N_G(X)`. Endpoint contractions either remove
-vertices and reduce the owner or preserve the deficiency on the surviving cut.
-A perfect matching on the same uncontracted vertex sets would require Hall's
-condition, hence at least one new edge enlarging the deficient neighbour set.
-Such an edge is a genuine restoration or owner-changing addition. ∎
+As long as the owner and vertex sets are fixed and no edge is added from `X`
+outside `Y`, the neighbour set of `X` remains contained in `Y`, whose size is
+`|X|-1`; Hall deficiency persists. Hence any same-owner escape requires a
+cross-cut addition. Contraction and owner change are the other structural ways
+to leave the statement. The absence-run identity is CMR519. ∎
 
-The statement is deliberately owner-local; contraction is counted as strict
-side descent rather than as persistence of an unchanged cut.
+The added cross-cut edge has exact entering-edge and full-token incidence.
 
-## 7. Essential-return Hall endpoint
+## 7. Essential-return unit-wall endpoint
 
 ### Corollary CMR733 -- PROVED
 
 Every essential return of a previously deleted target edge reaches at least one
 of the following.
 
-1. A Hall batch of many distinct old matching-edge deletions.
-2. A thin Hall wall entering the established low-width signature machinery.
-3. Finite Hall-batch history.
-4. One recurrent old matching edge which is continuously absent.
-5. Reintroduction of a recurrent old edge, with exact token payment.
-6. Strict contraction or owner change.
+1. A singleton forced source row, when the canonical wall has `|X|=1`.
+2. A robust unit Hall wall with every target in `Y` having at least two neighbours
+   in `X`.
+3. Finite canonical wall stock.
+4. One exact recurrent unit-wall signature.
+5. A new or restored cross-cut edge with entering-edge and token payment.
+6. Reintroduction of the canonical stored witness edge.
+7. Strict contraction or owner change.
 
-Therefore the essential-return branch is no longer represented by one anonymous
-missing edge. It exposes a deficiency-sized matching batch and reduces repeated
-returns to Hall-wall persistence, dynamic reintroduction, or strict descent.
-The remaining prime-power frontier is the geometric/payment conversion of a
-persistent thin Hall wall inside one fixed envelope into protected-reserve
-depletion, full-token return, or baseline improvement.
+Therefore removing one essential returned edge never creates a large-deficiency
+mystery. It creates one exact deficiency-one wall, canonically owned by the
+returned edge. The next structural action is the exact matching factorisation
+across that unit wall after the essential edge is contracted.
 
 ### Proof
 
-Use CMR727--CMR729 for one episode, CMR730 for repeated large-deficiency
-episodes, CMR731 for recurrence, and CMR732 for the persistent owner-local
-branch. ∎
+Use CMR727--CMR730 for the wall structure, CMR731 for finite stock or recurrence,
+and CMR732 for escape. ∎
 
-No all-`n` theorem is claimed. Hall witnesses, exact stored-matching batches,
-and incidence bounds are checked in
+No all-`n` theorem is claimed. Unit matching deficiency, minimal-wall
+robustness, canonical missing-edge witnesses, and recurrence bounds are checked
+in
 [`scripts/verify_prime_power_essential_return_hall_batch.py`](../scripts/verify_prime_power_essential_return_hall_batch.py).
