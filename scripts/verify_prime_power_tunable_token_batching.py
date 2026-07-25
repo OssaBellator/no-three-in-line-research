@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact integer checks for CMR351--CMR354."""
+"""Exact integer checks for CMR368--CMR371."""
 
 from __future__ import annotations
 
@@ -29,9 +29,6 @@ def verify_thresholds() -> None:
             t = p**h
             q = cubic_threshold(h)
             assert 0 <= q < h
-
-            # t^(2/3)/p <= p^q < t^(2/3) <= p^(q+1),
-            # checked after cubing to keep the arithmetic exact.
             assert (p ** (q + 1)) ** 3 >= t * t
             assert (p**q) ** 3 < t * t
 
