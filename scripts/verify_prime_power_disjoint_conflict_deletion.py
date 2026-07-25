@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR569--CMR573 disjoint-conflict deletion arithmetic."""
+"""Verify CMR577--CMR581 disjoint-conflict deletion arithmetic."""
 
 from itertools import combinations
 from math import floor
