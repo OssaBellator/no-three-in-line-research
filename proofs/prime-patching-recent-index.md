@@ -89,16 +89,21 @@ repository-wide theorem ledger.
 | PP3wc--PP3wh | Dense hard-unary support yields source stars or resource banks | PROVED | `docs/154-dense-hard-unary-star-resource-localization.md` |
 | PP3wi--PP3wn | Binary dual support yields resource stars or alternating rectangles | PROVED | `docs/155-binary-dual-packing-rectangle-localization.md` |
 | PP3wo--PP3wu | Weighted binary dual mass yields rectangle matchings or price cores | PROVED | `docs/156-binary-dual-price-core-localization.md` |
+| PP3wv--PP3xc | Binary resource stars condition on one centre; subquadratic stars complete | PROVED / FROM SR1 | `docs/157-conditional-binary-resource-star-completion.md` |
+| PP3xd--PP3xi | Failed binary-star centres yield partner rectangles or two-resource pencils | PROVED | `docs/158-conditional-binary-star-hall-localization.md` |
+| PP3xj--PP3xo | Repeated binary pencils become complete two-resource choice grids | PROVED / FROM SUPERREGULAR SLICING | `docs/159-two-resource-binary-choice-grid.md` |
+| PP3xp--PP3xv | Full-pool fillers dilute marked high-support source mass | PROVED / CONDITIONAL ON PREPARED SPREAD HOST | `docs/160-pool-filler-dilution-source-validity.md` |
+| PP3xw--PP3yb | Marked fillers dilute anchored transitions and close local source mass | PROVED / CONDITIONAL ON HARD-UNARY PREPARATION | `docs/161-marked-pool-transition-dilution.md` |
+| PP3yc--PP3yi | Unary-light marked endpoints complete; failure yields a unary resource bank | PROVED | `docs/162-marked-pool-unary-dilution.md` |
+| PP3yj--PP3yp | Support-ranked marked/unmarked Xi weights give paid endpoint criteria | PROVED / CONDITIONAL ON WEIGHT BOUNDS | `docs/163-marked-pool-xi-weight-dilution.md` |
 
 ## Current scale
 
-The slab-optimal architecture is
-
 ```text
-macro variables M = m^(1/20+o(1))   = m^0.05
-source-pool size R = m^(19/20+o(1)) = m^0.95
-macro width W     = m^(19/40+o(1))  = m^0.475
-total width T=MW  = m^(21/40+o(1))  = m^0.525.
+macro variables M = m^(1/20+o(1))
+source-pool size R = m^(19/20+o(1))
+macro width W     = m^(19/40+o(1))
+total width T=MW  = m^(21/40+o(1)).
 ```
 
 Matching supply, degree restoration, internal macro geometry, fixed-rank spread,
@@ -108,67 +113,53 @@ patch by PP3hq.
 
 ## Direct allocation endpoint
 
-Anchor-only ownership failure has maximum deficiency
+Anchor-only ownership failure has deficiency `o(T)` and one canonical Dulmage
+cut. Its exact movement/refill bottlenecks complete by local Ore when they fit the
+controller slack. Failure is a nonpositive controller denominator, insufficient
+baseline Ore slack, or weighted anchor energy per necessary core crossing.
 
-```text
-D_anc = O(m^(1/2-zeta+o(1))) = o(T).
-```
+## Hall, binary, and non-superregular endpoint
 
-All necessary threshold violations may be confined to one canonical Dulmage cut.
-The movement and refill cores have exact bottlenecks `E_U/d_U` and `E_V/d_V`.
-If those increments fit inside every macro's baseline controller-degree slack,
-PP3vy gives all local perfect matchings. Failure is a controller denominator,
-insufficient baseline Ore slack, or weighted anchor energy per necessary core
-crossing.
-
-The earlier one-sided bottleneck/slack, deterministic two-sided ownership,
-random two-sided local Ore, and random one-sided average-refill mechanisms remain
-available independently.
-
-## Hall, block, dynamic, and non-superregular endpoint
-
-A recapture-dominated Hall core yields a linear rectangle bank. Every
-zero-density hard-unary support is absorbed by cross-block states and
-superregular spread matching. Positive-density hard-unary support gives a fixed
-endpoint-resource cell star, then either a source-star centre or a
-resource-disjoint credited endpoint bank.
-
-At secondary exponent `kappa<1/60`, the global ordinary rectangle branch has
-automatic chromatic source validity and reduces to chromatically concentrated
-unary or binary shadow weight. The pool-compatible dynamic-Xi branch retains
-pool-local pair/triple mass as well as unary/binary Xi-weight.
+A recapture Hall core yields a linear rectangle bank. Binary dual mass yields
+rectangle matchings or high-price resource cores. A resource star conditions on
+its uniquely selected centre cell; subquadratic stars complete in superregular
+hosts. Persistent failure gives conditional Hall rectangles, quadratic cell fans,
+two-resource pencils, or complete quadratic choice grids.
 
 A matchable non-superregular host factors over alternating SCCs. Maximum mobility
-converts large credited components into disjoint alternating-cycle banks; low
-mobility gives a feedback hub, a multistate cycle star, or a two-hub theta-state
-support core. Forced edges remain canonical tight Hall cuts.
+gives disjoint cycle banks; low mobility gives cycle stars or two-hub theta
+support cores. Forced edges remain canonical tight Hall cuts.
 
-A linear binary-congestion dual packing yields either a growing
-resource-disjoint alternating-rectangle bank or an `O(sqrt(q))` high-price
-resource core carrying `Omega(q)` dual weight.
+## Dynamic Xi endpoint
+
+For a credited resource bank of size `m^(19/40)` inside a full pool of size
+`m^(19/20)`, marked filler blocks of size `b=m^(kappa)` with `kappa<19/80` make
+almost every credited endpoint light for anchored pairs, inserted triples, and
+transitions. Adaptive filler size also closes diffuse unary source support.
+Failure yields a unary resource bank or a fixed exceptional centre.
+
+Support-ranked marked and unmarked Xi formulas now identify the exact paid
+thresholds. Diffuse Xi weight gives a strict pool-compatible decrease.
 
 ## Remaining theorem
 
-The branch is reduced to the following structured cases.
+The branch is reduced to:
 
-1. Convert controller denominator failure, insufficient baseline Ore slack, or
-   weighted anchor energy concentrated in one canonical movement/refill core.
-2. Pay the source-star or resource-bank trades produced by positive-density hard
-   unary support and forced tight Hall cuts.
-3. Convert chromatically concentrated unary or binary controller-shadow weight
-   in the global rectangle branch.
-4. Convert pool-local pair/triple mass or unary/binary Xi-weight, including
-   captive-star collateral.
-5. Convert alternating cycle-star/theta support cores or concentrated
-   source-invalid and insertion-shadow mass relative to cycle credit.
-6. Convert the high-price binary resource core, its weighted resource star, or
-   paid collateral on the extracted binary-conflict rectangle bank.
+1. controller denominator failure, insufficient local Ore slack, or weighted
+   anchor energy in one canonical ownership core;
+2. paid conversion of the source-star/resource banks produced by unary and forced
+   Hall concentration;
+3. chromatically concentrated unary or binary controller-shadow weight in the
+   global rectangle branch;
+4. marked endpoint Xi-load cores, full-pool Xi-weight thresholds, or one fixed
+   captive star centre with exceptional source/paid load;
+5. alternating cycle-star/theta support cores or source/shadow cost comparable
+   with cycle credit;
+6. quadratic binary cell fans, complete two-resource choice grids, conditional
+   Hall families, or paid collateral on their extracted rectangle banks.
 
-Diffuse weighted residuals, external completion energy, source validity of the
-global resource endpoint, sparse exceptional labels, arbitrary dense rectangle
-CSPs, original signed contradictions, hierarchical irregularity, unstructured
-non-superregularity, raw positive-density hard-unary support, diffuse binary dual
-mass, controller relabelling, and termination are no longer separate open
+Diffuse pool-local source mass, diffuse binary dual mass, raw resource stars,
+unstructured non-superregularity, and termination are no longer separate open
 problems.
 
 The no-three-in-line conjecture remains unproved.
