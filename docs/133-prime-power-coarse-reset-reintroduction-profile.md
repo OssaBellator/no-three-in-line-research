@@ -2,8 +2,8 @@
 
 CMR378--CMR381 give a general vacated-row budget for one laminar prefix sweep.
 This chapter sharpens that accounting when the sweep remains in the recursive
-prefix geometry of CMR93--CMR94.  A coarse block has one complete row fibre, so
-its return to a fixed finer token is either zero or exactly flat.  After a
+prefix geometry of CMR93--CMR94. A coarse block has one complete row fibre, so
+its return to a fixed finer token is either zero or exactly flat. After a
 depth-`b` token is exposed, only `2b` compatible ancestor depth-layer slots can
 return its endpoint edges.
 
@@ -13,7 +13,7 @@ Work in one normalized inherited parent block of side
 t=p^h
 \]
 
-with `p` odd.  At depth `r`, the recursive row fibre in layer `ell` is
+with `p` odd. At depth `r`, the recursive row fibre in layer `ell` is
 
 \[
 R_{r,a,\ell}
@@ -45,9 +45,14 @@ stock.
 
 ## 1. Exact host churn and the flat recursive-fibre profile
 
-Let `B` be a set of `q` columns and `R` a set of `q` rows.  Put `K=B times R`.
+Let `B` be a set of `q` columns and `R` a set of `q` rows. Put
+
+\[
+K=B\times R.
+\]
+
 Let `M` be the current matching of the moving layer and let `L` be the partial
-matching formed by opposite-layer cells in `K`.  Suppose `M'` is an
+matching formed by opposite-layer cells in `K`. Suppose `M'` is an
 old-cell-clean replacement, so
 
 \[
@@ -73,7 +78,7 @@ The host churn is exact:
 \]
 
 Now let `B` be one recursive depth-`r` prefix block with `0<=r<b`, so
-`q=t/p^r`, and let its row set be `R_{r,a,ell}`.  Call it
+`q=t/p^r`, and let its row set be `R_{r,a,ell}`. Call it
 **tau-compatible** when
 
 \[
@@ -85,39 +90,39 @@ exactly
 
 \[
 \boxed{
-\frac{q}{p^{b-r}}=rac{t}{p^b}
+\frac{q}{p^{b-r}}=\frac{t}{p^b}
 }
 \]
 
 old matching edges in `U_tau` when the block is tau-compatible, and none when
-it is not.  With a persistent residual deletion mask, the actual returned
+it is not. With a persistent residual deletion mask, the actual returned
 available-edge count is at most `t/p^b`.
 
 ### Proof
 
 An edge is in `H'\H` exactly when it is excluded by `M union L` but not by
-`M' union L`; pairwise disjointness makes this set exactly `M`.  The reverse
+`M' union L`; pairwise disjointness makes this set exactly `M`. The reverse
 difference is symmetric.
 
 For the prefix statement, the old matching is a bijection onto the complete row
-fibre.  An incompatible fibre contains no row congruent to `c modulo p^b`.  A
+fibre. An incompatible fibre contains no row congruent to `c modulo p^b`. A
 compatible fibre contains exactly
 
 \[
-\frac{t/p^r}{p^{b-r}}=rac{t}{p^b}
+\frac{t/p^r}{p^{b-r}}=\frac{t}{p^b}
 \]
 
-such rows, each used by exactly one old matching edge.  A retained deletion
-mask can only suppress returned edges. ∎
+such rows, each used by exactly one old matching edge. A retained deletion mask
+can only suppress returned edges. ∎
 
-The return count is independent of the coarse depth.  This is stronger than the
+The return count is independent of the coarse depth. This is stronger than the
 general CMR378 row-stock inequality because the recursive fibre is exactly
 balanced over every finer residue.
 
 ## 2. Ancestor-slot factorization and the one-pass sum
 
 Once a depth-`b` token is exposed in a descending schedule, only later depths
-`r<b` are coarser than it.  For every such depth and moving layer, the quotient
+`r<b` are coarser than it. For every such depth and moving layer, the quotient
 row-prefix permutation gives one unique tau-compatible block.
 
 Let `A_{tau,r,ell}` count rematchings of that block after the token is exposed,
@@ -184,10 +189,10 @@ For fixed prime base this is `O_p(t log^2 t)`.
 ### Proof
 
 CMR382 contributes at most `t/p^b` for each compatible reset, giving the first
-inequality.  There are `b` coarser depths and at most two moving layers, proving
-`A_tau<=2b`.  Apply CMR347 for the endpoint bound.
+inequality. There are `b` coarser depths and at most two moving layers, proving
+`A_tau<=2b`. Apply CMR347 for the endpoint bound.
 
-At depth `b` there are `p^b` row residues and `p+1` directions.  Multiplying by
+At depth `b` there are `p^b` row residues and `p+1` directions. Multiplying by
 `2bt/p^b` gives `2(p+1)bt`; summing `b=1,...,h-1` gives the displayed total. ∎
 
 Compared with the general laminar bound `2ht/p^b` from CMR380, the recursive
@@ -198,7 +203,7 @@ ancestor levels.
 
 ### Theorem CMR384 — PROVED
 
-Fix `m>=0`.  If every tau-compatible ancestor depth-layer slot is rematched at
+Fix `m>=0`. If every tau-compatible ancestor depth-layer slot is rematched at
 most `m` times after the token is exposed, then
 
 \[
@@ -224,7 +229,7 @@ D_\tau
 Conversely, if either bound fails, one of the at most `2b` compatible ancestor
 slots has been rematched more than `m` times.
 
-Moreover, the witness-escape case in CMR349 is already executable.  Every such
+Moreover, the witness-escape case in CMR349 is already executable. Every such
 certificate opens a CMR75 prefix continuation:
 
 1. an external witness exits at a strict earlier depth and leaves the Hall pair
@@ -238,26 +243,26 @@ A chain using only the deeper internal alternative has length at most
 
 ### Proof
 
-The multiplicity assumption gives `A_tau<=2bm`; apply CMR383 and CMR347.  Its
+The multiplicity assumption gives `A_tau<=2bm`; apply CMR383 and CMR347. Its
 converse is the contrapositive.
 
 For witnesses, apply the primitive-parameter trichotomy CMR315--CMR317 and the
-executable continuations CMR340--CMR343.  Those results apply to each compatible
+executable continuations CMR340--CMR343. Those results apply to each compatible
 triple individually and do not require a heavy population. ∎
 
 Thus unrestricted coarse return has one precise source: repeated use of a fixed
-compatible ancestor slot.  Witness visits are no longer a separate local
-classification problem.  The remaining fixed-envelope terms are:
+compatible ancestor slot. Witness visits are no longer a separate local
+classification problem. The remaining fixed-envelope terms are:
 
 - a monotone payment for repeated ancestor-slot resets;
 - the width of fully forced CMR217 exchange ancestry;
 - and, at full-token resolution, the two-dimensional return mass of
-  CMR389--CMR392.
+  CMR389--CMR397.
 
 Joint-parent resets still require a separate descendant-token profile because
 they preserve envelope row sets but need not preserve all recursive descendant
 fibres.
 
-No all-`n` theorem is claimed here.  Exact host churn, flat p-adic returns,
+No all-`n` theorem is claimed here. Exact host churn, flat p-adic returns,
 one-pass sums, reset multiplicity, and witness routing are checked in
-[`scripts/verify_prime_power_coarse_reset_profile.py`](../scripts/verify_prime_power_coarse_reset_profile.py).
+[`scripts/verify_prime_power_coarse_reset_profile.py`](../scripts/verify_prime_power_coarse-reset-profile.py).
