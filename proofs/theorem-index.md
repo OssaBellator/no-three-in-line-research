@@ -60,10 +60,13 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3kr–AC3ku | Two-block target correction has only centre-only, residual-only or joint witnesses; common-residual and support-disjoint fans reduce to complete states or lower-depth exact obstructions | PROVED UNDER THE DECLARED PHASE-REALIZATION CONTRACT | `docs/alternating-core-two-block-target-completion.md` |
 | AC3kv–AC3ky | An unused hard phase completes every target with no replacement blocker; unresolved disjoint arms force distinct hard-literal-saturated blocks or exact resets | PROVED UNDER THE DECLARED PHASE-REALIZATION CONTRACT | `docs/alternating-core-unused-phase-target-completion.md` |
 | AC3kz–AC3lc | Repeated decorated edges contain simple profile cycles of length at most `P`; cycle words and least-field returns are finite, with global closure conditional on cycle tickets/payment/descent | PROVED; CYCLE CLOSURE CONDITIONAL ON THE STATED CONTRACT | `docs/alternating-core-macro-cycle-router.md` |
+| AC3ld–AC3lh | The full activated blocker bucket has a rank-two transversal; unused phases on all transversal blocks complete the target, while failure yields a large residual matching or role-pure saturated blocks with polynomial hard-check tickets | PROVED UNDER THE DECLARED PHYSICAL PHASE/HARD-REGISTRY CONTRACT | `docs/alternating-core-multiblock-unused-phase-completion.md` |
+| AC3li–AC3lm | Saturated literals split into active current-context blockers and latent dependencies; the fixed-registry dependency graph is functional and has at most `U/2` simple cycles | PROVED | `docs/alternating-core-saturated-literal-dependency.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
-| AC4 | Total alternating transition oracle | OPEN; REDUCED TO SATURATED HARD-LITERAL BLOCKS, REPLACEMENT/PARENT RESETS AND RECURRENT SIMPLE MACRO CYCLES | `docs/alternating-core-chain.md` |
+| AC4 | Total alternating transition oracle | OPEN; REDUCED TO ACTIVE/LATENT SATURATED-LITERAL ROLES, PARENT/REGISTRY RESETS AND RECURRENT SIMPLE MACRO CYCLES | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
-| AC5 | Geometric verification of the reverse-scale invariants for every AC move | OPEN | `docs/alternating-core-chain.md` |
+| AC5b–AC5f | Net `Psi_H` drift suffices despite same-band creation; upper-band preservation and scale descent reduce exactly to `N_{2H}=0` and `N_H<|B|` for a certified multicover batch | PROVED AS AN AUDIT INTERFACE | `docs/alternating-core-reverse-scale-audit.md` |
+| AC5 | Geometric verification for every AC menu | OPEN; REDUCED TO SCALE-TAGGED HIGH-LINE EXCLUSION, CURRENT-BAND CREATION BOUNDS AND INTERMEDIATE-STATE STABILITY | `docs/alternating-core-chain.md` |
 | AC6a | Prime-minus-one assembly from exact AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `docs/alternating-core-formal-termination.md` |
 | AC6 | Unconditional prime-minus-one completion | OPEN | `docs/alternating-core-chain.md` |
 
