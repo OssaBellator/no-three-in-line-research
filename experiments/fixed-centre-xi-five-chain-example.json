@@ -1,0 +1,19 @@
+{
+  "n": 8,
+  "block_size": 7,
+  "chain": [0, 1, 2, 3, 4],
+  "weights": {
+    "rank2_in": 1,
+    "rank2_out": 1,
+    "rank3_left": 1,
+    "rank3_middle": 1,
+    "rank3_right": 1,
+    "rank4_deterministic_in": 2,
+    "rank4_deterministic_out": 2,
+    "rank4_boundary_default": 10,
+    "rank4_remote_default": 4
+  },
+  "removal_credit": 80,
+  "residual_objective": 0.5,
+  "tau": 0.5
+}
