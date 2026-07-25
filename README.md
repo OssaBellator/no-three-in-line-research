@@ -44,7 +44,10 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/96-prime-power-essential-edge-factorization.md`](docs/96-prime-power-essential-edge-factorization.md) through [`docs/101-prime-power-exact-top-height-slice.md`](docs/101-prime-power-exact-top-height-slice.md): half-degree flexibility, exchange ancestry, local loads, bounded dyadic conflicts, odd-line deletion resilience, and exact top-slice cleaning.
 - [`docs/102-prime-power-near-transversal-line-resilience.md`](docs/102-prime-power-near-transversal-line-resilience.md) through [`docs/113-prime-power-mod-six-height-cleaning.md`](docs/113-prime-power-mod-six-height-cleaning.md): line-deletion reserves, target-specific Hall blockers, refined high-slice cleaning, fan obstructions, and Hall-width reduction.
 - [`docs/114-prime-power-thin-blocker-cover-expansion.md`](docs/114-prime-power-thin-blocker-cover-expansion.md) through [`docs/123-prime-power-mixed-fan-factorial-carry.md`](docs/123-prime-power-mixed-fan-factorial-carry.md): thin blocker extraction, first-separation signatures, carry cells, witness routing, and mixed-fan factorial carries.
-- [`docs/124-prime-power-paid-mixed-ratio-bank.md`](docs/124-prime-power-paid-mixed-ratio-bank.md) through [`docs/130-prime-power-token-reintroduction-ledger.md`](docs/130-prime-power-token-reintroduction-ledger.md): paid ratio banks, line-clean completions, heavy-cell continuation, dispersed-token packing, and dynamic token-edge reintroduction accounting.
+- [`docs/124-prime-power-paid-mixed-ratio-bank.md`](docs/124-prime-power-paid-mixed-ratio-bank.md) through [`docs/130-prime-power-token-reintroduction-ledger.md`](docs/130-prime-power-token-reintroduction-ledger.md): paid ratio banks, line-clean completions, heavy-cell continuation, dispersed-token packing, and dynamic token-edge inventory.
+- [`docs/131-prime-power-line-clean-line-energy.md`](docs/131-prime-power-line-clean-line-energy.md) and [`docs/132-prime-power-line-energy-to-carry-cells.md`](docs/132-prime-power-line-energy-to-carry-cells.md): frozen line energy, dyadic localization, matching-vertex walls, and full-prefix carry cells.
+- [`docs/130-prime-power-universal-line-clean-blocker-bank.md`](docs/130-prime-power-universal-line-clean-blocker-bank.md) through [`docs/132-prime-power-exact-band-covering.md`](docs/132-prime-power-exact-band-covering.md): universal sharp-blocker banks, deep-token universe elimination, tunable batching, and exact completion of one intermediate-height band.
+- [`docs/133-prime-power-coarse-reset-reintroduction-profile.md`](docs/133-prime-power-coarse-reset-reintroduction-profile.md): exact coarse-reset host churn, one-pass \(O_p(t\log^2t)\) token-return mass, and reset-multiplicity reduction.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -91,32 +94,47 @@ H\le\max(|u|,|v|)<2H,
 \]
 
 the conflict degree is below \(3t^2\) and pair codegree is at most \(t/H\).
-When \(H\ge t^\varepsilon\), a published conflict-free matching theorem gives
-an almost-perfect band-avoiding derangement matching. At the very top,
+For every fixed \(\eta>0\), the duplicated-row Joos--Mubayi--Smith covering
+model gives an **exact** target-specific parent permutation avoiding any one
+band \(H\ge t^\eta\), for all sufficiently large \(t\). At the very top,
 
 \[
 H\ge0.42t,
 \]
 
-exact matching-space local-lemma arguments clean the candidate-only slice,
-including line-clean paid-pair hosts and linear protected-line reserves at the
-recorded thresholds.
+matching-space local-lemma arguments give exact cleaning with linear
+protected-line reserves. The remaining intermediate-height problem is to
+schedule all \(O(\log t)\) bands without accumulating a forbidden logarithmic
+conflict degree or recreating previously cleaned bands.
 
-Thin Hall blockers now have a complete local signature route. Heavy carry cells
-open executable prefix banks, and pairwise fresh dispersed episodes have a
-finite \(O_p(\sqrt t\log t)\) token budget. For a repeated absolute token
-\(\tau=(b,c,\theta)\), executable endpoint deletions satisfy
+Thin Hall blockers now have a complete local signature route. Universal
+line-clean banks turn frozen blockers into line energy, matching-vertex walls,
+heavy prefix cells, or dispersed tokens. Deep token universes can be removed in
+simultaneous batches, with a tunable cubic-root tradeoff between heavy load and
+batch capacity.
+
+For a repeated absolute token \(\tau=(b,c,\theta)\), executable endpoint
+deletions satisfy
 
 \[
-D_\tau\le \frac{t^2}{p^b}+I_\tau,
+D_\tau\le \frac{t^2}{p^b}+I_\tau.
 \]
 
-where \(I_\tau\) counts token-compatible candidate-edge reintroductions. The
-remaining dynamic obstruction is therefore explicit: charge those
-reintroductions to coarse repairs, route off-token witness deletions, and bound
-the width of fully forced exchange ancestry. Static token counting alone cannot
-suffice, because two old-cell-clean rematchings can restore an entire layer.
-Arbitrary composite assembly still needs a separate coverage mechanism.
+A one-pass descending prefix schedule now has the explicit coarse-return bound
+
+\[
+I_\tau^{\rm coarse}\le\frac{2bt}{p^b},
+\qquad
+\sum_\tau I_\tau^{\rm coarse}
+\le(p+1)t\,h(h-1).
+\]
+
+For arbitrary histories, unbounded return forces repeated rematching of one of
+finitely many compatible ancestor slots. Witness certificates already open
+executable prefix continuations. The remaining dynamic obstruction is repeated
+ancestor-reset payment together with the width of fully forced exchange
+ancestry and multi-band scheduling. Arbitrary composite assembly still needs a
+separate coverage mechanism.
 
 ## Running checks
 
@@ -152,6 +170,13 @@ python scripts/verify_prime_power_exact_top_slice.py
 python scripts/verify_prime_power_heavy_cell_continuation.py
 python scripts/verify_prime_power_dispersed_token_ledger.py
 python scripts/verify_prime_power_token_reintroduction_ledger.py
+python scripts/verify_prime_power_line_clean_energy.py
+python scripts/verify_prime_power_line_energy_carry.py
+python scripts/verify_prime_power_universal_line_clean.py
+python scripts/verify_prime_power_dispersed_token_universe.py
+python scripts/verify_prime_power_tunable_token_batching.py
+python scripts/verify_prime_power_exact_band_covering.py
+python scripts/verify_prime_power_coarse_reset_profile.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
