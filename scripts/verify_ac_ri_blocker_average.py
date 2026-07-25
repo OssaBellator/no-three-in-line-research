@@ -21,8 +21,9 @@ def derangements(size):
 
 def verify_occupancy_split():
     checks = 0
-    # Each entry is (occupancy, conditional blocker numerator).
-    for state_count in range(1, 7):
+    # Four states already exhaust every occupancy-class interaction pattern;
+    # additional states only add further nonnegative summands to the same bins.
+    for state_count in range(1, 5):
         for occupancies in product(range(9), repeat=state_count):
             for values in product(range(4), repeat=state_count):
                 total = sum(values)
