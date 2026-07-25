@@ -56,6 +56,8 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3bv–AC3bx | Fixed line/channel classes have multiplicities `4,2,8` and exact weighted routers | PROVED | `docs/alternating-core-ri-i6-rank-two-three.md` |
 | AC3by–AC3cb | Every heavy line has an exact linear/quadratic channel equation and at most eight discriminant-root words | PROVED | `docs/alternating-core-ri-i6-line-channels.md` |
 | AC3cc–AC3cg | Every new state-independent active triple contains RI5f closure cells and routes to closure stars, secants, triples, or spread | PROVED | `docs/alternating-core-ri-closure-collateral.md` |
+| AC3ch–AC3ci | Small blocker occupancies have exact overlap/cycle extension tables and sharp cylinder caps | PROVED | `docs/alternating-core-ri-small-derangements.md` |
+| AC3cj–AC3ck | A heavy small-derangement state amplifies to one exact rank/type/profile with sharp constants | PROVED | `docs/alternating-core-ri-small-derangements.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
