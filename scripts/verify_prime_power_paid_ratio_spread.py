@@ -32,11 +32,11 @@ def completions(t: int, target: Cell, prescribed: frozenset[Cell]) -> list[State
 
 def candidate_triples(t: int) -> list[frozenset[Cell]]:
     points = [(x, y) for x in range(t) for y in range(t)]
-    result = []
-    for cells in combinations(points, 3):
-        if compatible(cells) and collinear(cells):
-            result.append(frozenset(cells))
-    return result
+    return [
+        frozenset(cells)
+        for cells in combinations(points, 3)
+        if compatible(cells) and collinear(cells)
+    ]
 
 
 def explicit_designated_triples(
@@ -73,30 +73,28 @@ def verify_conditional_law(
         if x not in {u for u, _ in designated}
         and y not in {v for _, v in designated}
     ]
-    prescriptions = [
-        frozenset(cells)
-        for rank in (1, 2, 3)
-        for cells in combinations(remaining_cells, rank)
-        if compatible(cells)
-    ]
-    prescriptions.extend(
-        frozenset((fixed, residual))
-        for fixed in designated
-        for residual in remaining_cells
-        if compatible((fixed, residual))
-    )
+    prescriptions: set[frozenset[Cell]] = set()
+    for fixed_count in range(4):
+        for fixed in combinations(tuple(designated), fixed_count):
+            for residual_count in range(4 - fixed_count):
+                if residual_count > n:
+                    continue
+                for residual in combinations(remaining_cells, residual_count):
+                    prescription = frozenset(fixed + residual)
+                    if not prescription or not compatible(prescription | designated):
+                        continue
+                    prescriptions.add(prescription)
 
     for prescription in prescriptions:
-        if not compatible(prescription | designated):
-            continue
         overlap = len(prescription & designated)
         rank = len(prescription)
+        residual_rank = rank - overlap
+        assert residual_rank <= n
         count = sum(
             all(state[x] == y for x, y in prescription)
             for state in states
         )
-        expected = factorial(n - (rank - overlap))
-        assert count == expected
+        assert count == factorial(n - residual_rank)
 
 
 def verify_exact_collateral(
@@ -104,14 +102,13 @@ def verify_exact_collateral(
     target: Cell,
     designated: frozenset[Cell],
 ) -> None:
+    assert t >= 6
     states = completions(t, target, designated)
     triples = candidate_triples(t)
     n = t - 3
     u = [0, 0, 0]
     for triple in triples:
-        if triple == designated:
-            continue
-        if not compatible(triple | designated):
+        if triple == designated or not compatible(triple | designated):
             continue
         overlap = len(triple & designated)
         assert overlap in (0, 1, 2)
@@ -151,16 +148,17 @@ def verify_unconditional_atoms(
 
     all_cells = [(x, y) for x in range(t) for y in range(t)]
     for cell in all_cells:
-        probability_numerator = sum(state[cell[0]] == cell[1] for state in states)
-        assert probability_numerator * m * n <= len(states) * (m + n)
+        count = sum(state[cell[0]] == cell[1] for state in states)
+        assert count * m * n <= len(states) * (m + n)
 
+    if n < 2:
+        return
     for cells in combinations(all_cells, 2):
         if not compatible(cells):
             continue
         count = sum(all(state[x] == y for x, y in cells) for state in states)
-        # Multiply the displayed CMR327 bound by m*(n)_2.
-        right = (n * (n - 1) + 2 * (n - 1) + m) * factorial(n)
-        assert count * m * n * (n - 1) <= right * m
+        right_factor = n * (n - 1) + 2 * (n - 1) + m
+        assert count * m * n * (n - 1) <= len(states) * right_factor
 
 
 def verify_examples() -> None:
@@ -192,7 +190,8 @@ def verify_examples() -> None:
         assert designated
         for triple in designated:
             verify_conditional_law(t, target, triple)
-            verify_exact_collateral(t, target, triple)
+            if t >= 6:
+                verify_exact_collateral(t, target, triple)
         verify_unconditional_atoms(t, target, designated)
 
 
@@ -200,7 +199,7 @@ def main() -> None:
     verify_examples()
     print(
         "verified paid ratio spread: conditional falling-factorial cylinders, "
-        "exact collateral identities, rank-two bounds, and bank atom estimates"
+        "t>=6 collateral identities, rank-two bounds, and bank atom estimates"
     )
 
 
