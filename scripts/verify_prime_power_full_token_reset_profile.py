@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Arithmetic checks for CMR393--CMR395."""
+"""Arithmetic checks for CMR393--CMR397."""
 
 from __future__ import annotations
 
@@ -35,26 +35,61 @@ def verify_deep_thresholds() -> None:
             initial = t * t // (p ** (2 * depth))
             returns = 2 * depth * t // (p**depth)
 
-            # p^depth > t^(1/3): initial < t^(4/3) and
-            # returns < 2h*t^(2/3), checked after cubing.
             if 3 * depth > h:
                 assert initial**3 < t**4
                 assert returns**3 < (2 * h) ** 3 * t**2
 
-            # p^depth >= t^(2/3): initial <= t^(2/3) and
-            # returns <= 2h*t^(1/3).
             if 3 * depth >= 2 * h:
                 assert initial**3 <= t**2
                 assert returns**3 <= (2 * h) ** 3 * t
+
+
+def verify_reset_occurrence_factorization() -> None:
+    for p, h in ((3, 7), (5, 5), (7, 4)):
+        t = p**h
+        for depth in range(1, h):
+            slots = 2 * depth
+            per_reset = t // (p**depth)
+            initial = t * t // (p ** (2 * depth))
+            for cap in range(7):
+                counts = [cap] * slots
+                total_returns = sum(counts) * per_reset
+                assert total_returns == 2 * depth * cap * per_reset
+                assert initial + total_returns == (
+                    initial + 2 * depth * cap * t // (p**depth)
+                )
+
+                counts[0] += 1
+                assert max(counts) > cap
+                assert sum(counts) * per_reset > 2 * depth * cap * per_reset
+
+
+def verify_aggregate_labelled_sum() -> None:
+    for p, h in ((3, 7), (5, 6), (7, 5), (11, 4)):
+        t = p**h
+        directions = p + 1
+        exact = 0
+        for depth in range(1, h):
+            token_count = directions * p ** (2 * depth)
+            per_token = 2 * depth * t // (p**depth)
+            exact += token_count * per_token
+
+        displayed = 2 * directions * t * sum(
+            depth * p**depth for depth in range(1, h)
+        )
+        assert exact == displayed
+        assert exact < 2 * directions * h * t * t // (p - 1)
 
 
 def main() -> None:
     verify_per_reset_capacity()
     verify_one_pass_bound()
     verify_deep_thresholds()
+    verify_reset_occurrence_factorization()
+    verify_aggregate_labelled_sum()
     print(
         "verified full-token reset profile: per-ancestor capacity, one-pass "
-        "reintroduction sum, and cubic/deep threshold bounds"
+        "visit bounds, deep thresholds, reset multiplicity, and aggregate mass"
     )
 
 
