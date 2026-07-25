@@ -1,41 +1,53 @@
-# Packet recreation is supported by returned-edge churn
+# Packet recreation is supported by entering-edge churn
 
 CMR413--CMR417 show that exact state cycles are erasable and that every genuinely
-new selected parent state pays returned-edge and full-token incidence mass.  The
+new selected parent state pays leaving-edge and full-token incidence mass. The
 remaining packet-scheduling question is whether a later exact covering can
-recreate conflicts from an earlier clean packet.  Such recreation has an exact
-support: every newly present old-packet triple contains an edge returned by the
-latest reset.
+recreate conflicts from an earlier clean packet.
 
-This chapter converts packet no-return into a churn ledger.  It does not yet
-bound total churn, but it removes packet recreation as an independent source of
-complexity.
-
-Let `H,H'` be two represented-cell hosts on the same parent board and put
+There are two opposite sides of one selected-state transition. If the old and
+new selected perfect matchings are `M` and `M'`, put
 
 \[
-R=H'\setminus H.
+E^+=M'\setminus M,
+\qquad
+E^-=M\setminus M'.
 \]
 
-For a family `\mathcal C` of candidate-only triples, call `H`
-`\mathcal C`-clean when no member of `\mathcal C` is contained in `H`.
+The set `E^+` consists of newly selected or **entering** edges. The set `E^-`
+consists of old selected edges vacated by the reset; these are the edges returned
+to the complementary available host. Because both matchings have size `t`,
+
+\[
+|E^+|=|E^-|.
+\]
+
+Recreated selected triples are supported by `E^+`, not literally by `E^-`.
+Their number is nevertheless paid exactly by the same churn magnitude
+`|E^-|`. This terminology correction leaves all quantitative conclusions below
+unchanged.
+
+For a family `\mathcal C` of candidate-only triples, call a selected represented-
+cell state `M` `\mathcal C`-clean when no member of `\mathcal C` is contained in
+`M`.
 
 ## 1. Universal recreation support
 
 ### Theorem CMR418 — PROVED
 
-Assume `H` is `\mathcal C`-clean.  Every conflict
+Assume `M` is `\mathcal C`-clean and `M'` is another selected represented-cell
+state. Every conflict
 
 \[
 C\in\mathcal C,
 \qquad
-C\subseteq H',
+C\subseteq M',
 \]
 
-contains at least one returned edge:
+contains at least one entering edge:
 
 \[
-\boxed{C\cap R\ne\varnothing.}
+\boxed{C\cap E^+\ne\varnothing.}
 \]
 
 Consequently, if
@@ -46,21 +58,28 @@ Consequently, if
 \max_e|\{C\in\mathcal C:e\in C\}|,
 \]
 
-then the number of conflicts from `\mathcal C` present in `H'` is at most
+then the number of conflicts from `\mathcal C` present in `M'` is at most
 
 \[
-\boxed{|R|\Delta(\mathcal C).}
+\boxed{|E^+|\Delta(\mathcal C).}
+\]
+
+When `M,M'` are perfect matchings, this is also
+
+\[
+\boxed{|E^-|\Delta(\mathcal C).}
 \]
 
 ### Proof
 
-If `C\subseteq H'` and `C\cap R=\varnothing`, then every edge of `C` already
-belongs to `H`; hence `C\subseteq H`, contradicting cleanliness.  For the count,
-assign each recreated conflict to one returned edge it contains and use the
-maximum conflict degree. ∎
+If `C\subseteq M'` and `C\cap E^+=\varnothing`, every edge of `C` already lies
+in `M`, contradicting cleanliness. Assign each recreated conflict to one
+entering edge it contains and use the maximum conflict degree. For perfect
+matchings, `|E^+|=|E^-|`. ∎
 
-The theorem applies to any host reset.  It does not require the new selected
-matching to be old-cell-clean.
+The support statement concerns entering selected edges. The payment can be
+recorded using leaving or available-host churn because the two cardinalities
+are equal.
 
 ## 2. One harmonic packet
 
@@ -78,27 +97,33 @@ system.
 
 ### Corollary CMR419 — PROVED
 
-If `H` is clean for the packet and a reset returns `R`, then the number of packet
-triples recreated in `H'` is at most
+If `M` is clean for the packet and a selected-state reset `M\to M'` has entering
+and leaving sets `E^+,E^-`, then the number of packet triples recreated in `M'`
+is at most
 
 \[
 \boxed{
-2(t-1)^2W(\mathcal K)|R|
-<
-3t^2|R|.
+2(t-1)^2W(\mathcal K)|E^+|
 }
+=
+\boxed{
+2(t-1)^2W(\mathcal K)|E^-|
+}
+<
+3t^2|E^-|.
 \]
 
-In particular, the packet remains clean whenever no returned edge belongs to
-any packet triple.
+In particular, the packet remains clean whenever no entering edge belongs to a
+packet triple.
 
 ### Proof
 
-Apply CMR418 and the harmonic conflict-degree bound CMR386.  The final statement
-is the zero-incidence case. ∎
+Apply CMR418 and the harmonic conflict-degree bound CMR386. Equality of the two
+churn magnitudes follows from `|M|=|M'|`. ∎
 
-Thus packet protection can be formulated entirely as a restriction on the old
-matching edges vacated by later resets.
+Thus packet protection can be formulated as a restriction on newly selected
+edges, while its aggregate cost is charged to the equally large set of vacated
+old matching edges.
 
 ## 3. Several previously clean packets
 
@@ -116,23 +141,29 @@ theorem does.
 
 ### Theorem CMR420 — PROVED
 
-Consider a reset history.  Immediately before reset `j`, let `A_j` be the set of
-packets which are clean, let `R_j` be the returned-edge set, and let `N_j` be the
-number of triples from those packets which are present immediately after the
-reset.  Then
+Consider a selected-state reset history. Immediately before reset `j`, let
+`A_j` be the set of packets which are clean, let `E_j^+,E_j^-` be the entering
+and leaving edge sets, and let `N_j` be the number of triples from those packets
+present immediately afterward. Put
+
+\[
+c_j=|E_j^+|=|E_j^-|.
+\]
+
+Then
 
 \[
 \boxed{
 N_j
 \le
-2(t-1)^2W_{A_j}|R_j|.
+2(t-1)^2W_{A_j}c_j.
 }
 \]
 
 Hence, with
 
 \[
-C=\sum_j|R_j|,
+C=\sum_jc_j,
 \qquad
 W_*=\sum_{q=1}^P W(\mathcal K_q),
 \]
@@ -161,29 +192,19 @@ W_*
 
 ### Proof
 
-Before reset `j`, the host is clean for the union conflict system
+Before reset `j`, the selected state is clean for the union conflict system
+`\mathcal C_{\mathcal K_{A_j}}`. Apply CMR418. CMR386 bounds the maximum degree
+of that union by `2(t-1)^2W_{A_j}`. Since `W_{A_j}\le W_*`, summation gives the
+second inequality. The harmonic-sum estimate follows from the integral bound. ∎
 
-\[
-\mathcal C_{\mathcal K_{A_j}}.
-\]
-
-Apply CMR418.  CMR386 bounds the maximum degree of that union by
-
-\[
-2(t-1)^2W_{A_j}.
-\]
-
-Since `W_{A_j}\le W_*`, summation gives the second inequality.  The harmonic-sum
-estimate follows from the integral bound. ∎
-
-The sum counts recreated triple occurrences with reset multiplicity.  It is
+The sum counts recreated triple occurrences with reset multiplicity. It is
 therefore suitable for a dynamic ledger even when the same geometric triple is
 recreated more than once.
 
 ## 4. First-dirty packet scheduling
 
-Fix an order of the packets.  At each step, choose the first packet which is not
-currently clean and install one of its exact covering states from CMR388.  A
+Fix an order of the packets. At each step, choose the first packet which is not
+currently clean and install one of its exact covering states from CMR388. A
 packet **loss** is a transition in which a packet was clean immediately before a
 reset and is not clean immediately afterward.
 
@@ -193,10 +214,10 @@ For every reset in the first-dirty schedule, exactly one of the following holds.
 
 1. The targeted dirty packet becomes clean and no earlier clean packet is lost.
 2. At least one earlier packet is lost, and every lost packet has a recreated
-   triple containing a returned edge.
+   triple containing an entering edge.
 
 Let `L` be the total number of packet losses and `T` the number of packet
-installations.  Then
+installations. Then
 
 \[
 \boxed{T\le P+L}
@@ -226,21 +247,21 @@ P+2(t-1)^2W_*C.
 
 ### Proof
 
-The installed state is clean for its target packet by CMR388.  If no earlier
-packet is lost, the first-dirty index advances.  Otherwise CMR418 gives the
-returned-edge witness for each lost packet.
+The installed state is clean for its target packet by CMR388. If no earlier
+packet is lost, the first-dirty index advances. Otherwise CMR418 gives the
+entering-edge witness for every lost packet.
 
-Each installation is a dirty-to-clean transition for its target packet.  Every
+Each installation is a dirty-to-clean transition for its target packet. Every
 packet can undergo one initial cleaning, giving at most `P` such transitions.
 Every later cleaning of the same packet must follow an earlier clean-to-dirty
-loss.  Thus `T\le P+L`.  Each loss contributes at least one recreated triple, so
+loss. Thus `T\le P+L`. Each loss contributes at least one recreated triple, so
 `L\le\sum_jN_j`; apply CMR420. ∎
 
 This is a conditional termination reduction rather than a complete termination
-theorem.  Once cumulative returned-edge churn `C` is bounded by a monotone global
-quantity, the entire first-dirty packet schedule has a polynomial length bound.
-Together with CMR417, both distinct-state expansion and packet recreation are now
-paid by the same churn variable.
+theorem. Once cumulative selected-state churn `C` is bounded by a monotone
+global quantity, the entire first-dirty packet schedule has a polynomial length
+bound. Together with CMR417, both distinct-state expansion and packet recreation
+are paid by the same churn magnitude.
 
 The remaining frontier is therefore narrower:
 
@@ -249,6 +270,7 @@ The remaining frontier is therefore narrower:
 2. show that any excess churn opens enough fully forced exchange ancestry to
    permit simultaneous resampling.
 
-No all-`n` theorem is claimed here.  Recreation support, harmonic degree charges,
-packet-loss accounting, and first-dirty schedule inequalities are checked in
+No all-`n` theorem is claimed here. Entering-edge support, equality of entering
+and leaving churn, harmonic degree charges, packet-loss accounting, and
+first-dirty schedule inequalities are checked in
 [`scripts/verify_prime_power_packet_recreation_churn.py`](../scripts/verify_prime_power_packet_recreation_churn.py).
