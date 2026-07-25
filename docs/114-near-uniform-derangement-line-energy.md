@@ -1,14 +1,14 @@
 # Near-uniform derangements and line-energy extremality
 
 The rich-line first moment PP3lh used the coarse one-cell spread constant
-\(K=O(1)\). The permutation local lemma actually gives a sharper bound in terms
-of its local bad-event mass \(\lambda\). When fixed points are forbidden, every
-current line incidence is removed deterministically, so only off-diagonal energy
-must be paid.
+\(K=O(1)\). The permutation local lemma gives a sharper bound in terms of its
+local bad-event mass \(\lambda\). When fixed points are forbidden, every current
+line incidence is removed deterministically, so only off-diagonal energy must be
+paid.
 
 This chapter shows that line-energy failure is nearly extremal: almost every
-target cell must lie on exactly one current owner line and must be reachable by
-almost every owner through some replacement.
+target cell lies on exactly one current owner line and is reachable by almost
+every owner through some replacement.
 
 ## 1. Mass-sensitive conditioned spread
 
@@ -24,11 +24,9 @@ x_E=2\Pr(E).
 For every prescribed matching \(F\) of rank \(r\le3\),
 
 \[
-\boxed{
-\Pr(F\subseteq\pi\mid\text{avoid }\mathcal L)
+\Pr(F\subseteq\pi\mid\operatorname{avoid}\mathcal L)
 \le
-\frac{\exp(8r\lambda)}{(q)_r}.
-}
+\dfrac{\exp(8r\lambda)}{(q)_r}.
 \]
 
 #### Proof
@@ -56,7 +54,7 @@ Use the owner-line matrix of PP3lg:
 h_{ij}
 =
 |\{a\in\mathcal A:
-a,z_i,(x_i,y_j)\text{ are collinear}\}|.
+a,z_i,(x_i,y_j)\operatorname{\ are\ collinear}\}|.
 \]
 
 Put
@@ -75,20 +73,16 @@ conditioned permutation is a derangement.
 Under the conditioned distribution of PP3nk,
 
 \[
-\boxed{
 \mathbb E H(\pi)
 \le
-\frac{e^{8\lambda}}q
-\bigl(\mathcal W-H_0\bigr).
-}
+\dfrac{e^{8\lambda}}q
+(\mathcal W-H_0).
 \]
 
 Consequently an improving source-admissible endpoint permutation exists whenever
 
 \[
-\boxed{
 e^{8\lambda}(\mathcal W-H_0)<qH_0.
-}
 \]
 
 #### Proof
@@ -110,21 +104,19 @@ For a fixed owner \(i\) and target cell \(a\), at most one replacement index
 \(j\) satisfies
 
 \[
-a,z_i,(x_i,y_j)\text{ collinear}.
+a,z_i,(x_i,y_j)\operatorname{\ are\ collinear}.
 \]
 
 Hence
 
 \[
-\boxed{
 \mathcal W\le q|\mathcal A|.
-}
 \]
 
 If every target cell lies on at least one current owner line, then
 
 \[
-\boxed{H_0\ge|\mathcal A|.}
+H_0\ge|\mathcal A|.
 \]
 
 #### Proof
@@ -142,7 +134,7 @@ of its cells is witnessed by at least one current designated line.
 Put
 
 \[
-\varepsilon=e^{8\lambda}-1.
+\epsilon=e^{8\lambda}-1.
 \]
 
 ### Theorem PP3nn -- PROVED
@@ -151,23 +143,19 @@ Assume the hypotheses of PP3nm and suppose the improvement inequality PP3nl
 fails. Then
 
 \[
-\boxed{
 1
 \le
-\frac{H_0}{|\mathcal A|}
+\dfrac{H_0}{|\mathcal A|}
 \le
-\frac{q(1+\varepsilon)}{q+1+\varepsilon}
-}
+\dfrac{q(1+\epsilon)}{q+1+\epsilon}
 \]
 
 and
 
 \[
-\boxed{
-\frac{\mathcal W}{q|\mathcal A|}
+\dfrac{\mathcal W}{q|\mathcal A|}
 \ge
-\frac{q+1+\varepsilon}{q(1+\varepsilon)}.
-}
+\dfrac{q+1+\epsilon}{q(1+\epsilon)}.
 \]
 
 #### Proof
@@ -175,7 +163,7 @@ and
 Failure gives
 
 \[
-(1+\varepsilon)(\mathcal W-H_0)
+(1+\epsilon)(\mathcal W-H_0)
 \ge
 qH_0.
 \]
@@ -183,8 +171,7 @@ qH_0.
 Using \(\mathcal W\le q|\mathcal A|\),
 
 \[
-(1+\varepsilon)
-(q|\mathcal A|-H_0)
+(1+\epsilon)(q|\mathcal A|-H_0)
 \ge qH_0,
 \]
 
@@ -196,13 +183,13 @@ The same failure inequality gives
 \[
 \mathcal W
 \ge
-H_0\left(1+\frac q{1+\varepsilon}\right).
+H_0\left(1+\dfrac q{1+\epsilon}\right).
 \]
 
 Use \(H_0\ge|\mathcal A|\) and divide by \(q|\mathcal A|\). ∎
 
-If \(\varepsilon<1/(q-1)\), the first displayed interval is empty, so an
-improving trade is automatic.
+If \(\epsilon<1/(q-1)\), the first displayed interval is empty, so an improving
+trade is automatic.
 
 For the natural scale \(\lambda=O(1/q)\), failure forces
 
@@ -224,13 +211,14 @@ every owner it is reachable through some off-diagonal replacement.
 For \(a\in\mathcal A\), let
 
 \[
-c(a)=|\{i:a\text{ lies on the current owner line }i\}|
+c(a)=|\{i:a\operatorname{\ lies\ on\ current\ owner\ line\ }i\}|
 \]
 
 and
 
 \[
-n(a)=|\{i:\exists j\text{ with }a,z_i,(x_i,y_j)	ext{ collinear}\}|.
+n(a)=|\{i:\exists j\operatorname{\ with\ }a,z_i,(x_i,y_j)
+\operatorname{\ collinear}\}|.
 \]
 
 Then
@@ -252,20 +240,20 @@ with
 Under PP3nn,
 
 \[
-\frac1{|\mathcal A|}
+\dfrac1{|\mathcal A|}
 \sum_a(c(a)-1)
 \le
-\frac{q(1+\varepsilon)}{q+1+\varepsilon}-1,
+\dfrac{q(1+\epsilon)}{q+1+\epsilon}-1,
 \]
 
 and
 
 \[
-\frac1{|\mathcal A|}
+\dfrac1{|\mathcal A|}
 \sum_a(q-n(a))
 \le
 q-
-\frac{q+1+\varepsilon}{1+\varepsilon}.
+\dfrac{q+1+\epsilon}{1+\epsilon}.
 \]
 
 Hence failure produces simultaneously:
