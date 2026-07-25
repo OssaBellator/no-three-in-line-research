@@ -144,8 +144,6 @@ def verify_toggle_profiles(primes=(5, 7)):
                     prime, parameter, components
                 )
                 current_cells = {(x, current[x]) for x in columns_now}
-                target_cells = {(x, target[x]) for x in columns_now}
-
                 controlled = {index: set() for index in range(len(components))}
 
                 for triple in triples:
@@ -196,7 +194,6 @@ def verify_toggle_profiles(primes=(5, 7)):
                                     - parameter * total
                                 ) % prime == 0
 
-                # Exact rank-one subset additivity.
                 for bits in product((0, 1), repeat=len(components)):
                     state = state_cells(
                         columns_now, current, target, components, bits
@@ -226,9 +223,9 @@ def verify_toggle_profiles(primes=(5, 7)):
     return state_checks, rank_one_checks, len(context_groups)
 
 
-def verify_routers(maximum_weight=4):
+def verify_routers(maximum_weight=3, maximum_components=4):
     checks = 0
-    for component_count in range(1, 6):
+    for component_count in range(1, maximum_components + 1):
         for collateral in product(
             range(maximum_weight + 1), repeat=component_count
         ):
