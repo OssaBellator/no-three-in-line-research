@@ -17,9 +17,10 @@ supplement mirrors the collision-free live range recorded in
 | CMR418--421 | Entering-edge support for recreated selected conflicts, equality with leaving-edge churn, harmonic packet recreation bounds, and the first-dirty packet ledger | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
 | CMR422--425 | Lossy packet reset deletion/forced-ancestry dichotomy, finite deletion budget, packet-installation bound, and conditional ancestry-width closure | PROVED / PROVED UNDER THE ANCESTRY-WIDTH HYPOTHESIS | `docs/142-prime-power-packet-loss-deletion-ancestry.md` |
 | CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
+| CMR429--432 | Essential edges form one monotone matching core, first-essentiality layers, polynomial forced-certificate counts, and polynomial edge-set ancestry ledger | PROVED | `docs/144-prime-power-essential-core-ancestry-width.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR428, harmonic-packet scheduling has an unconditional local endpoint: it
-finishes in polynomially many installations or reaches one terminal fully
-forced CMR217 certificate. The immediate remaining targets are resolving that
-ancestry endpoint and paying repeated local ancestor resets.
+CMR432, raw edge-set ancestry width is polynomial. The immediate remaining
+target is geometric use of the fewer than `3t^3` distinct exchange links:
+extract a simultaneous low-overlap flip family or force p-adic/carry
+concentration, strict host decomposition, or envelope expansion.
