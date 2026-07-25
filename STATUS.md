@@ -119,6 +119,27 @@ remains open. This repository does **not** contain a complete proof.
   with one of only 72 signed shift pairs. For \(p\ge11\), the parallel case
   forces equal valuations of the adjacent Hall-slice gaps.
 
+### Dynamic repeated-token ledger
+
+- For one absolute token \(\tau=(b,c,\theta)\), the ambient Hall-endpoint stock
+  has exactly \(t^2/p^b\) candidate cells.
+- If \(D_\tau\) executable visits delete token endpoints and \(I_\tau\) counts
+  token-compatible edge reintroductions with multiplicity, then
+
+  \[
+  D_\tau\le \frac{t^2}{p^b}+I_\tau.
+  \]
+
+- Every repeated token visit is separated into a token-paid endpoint deletion,
+  an off-token witness deletion, or a fully forced rank-\(1/2/3\) certificate
+  governed by the acyclic CMR217--CMR218 ancestry relation.
+- Static token consumption is not monotone: for every block size \(t\ge2\), two
+  old-cell-clean complete rematchings can return a permutation layer exactly to
+  its starting state. The reintroduction term is therefore necessary.
+- Unbounded fixed-envelope repetition is now localized to token-edge
+  reintroduction mass, off-token witness escapes, and the width of the forced
+  ancestry DAG.
+
 ### Mixed singleton fans
 
 - A fully recycled source/source/target fan has, apart from two shared-cell
@@ -169,17 +190,17 @@ CMR164. No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-1. **Repeated-token DAG width.** Fresh dispersed carry tokens have a finite
-   budget and heavy tokens are executable. The immediate theorem is to bound
-   repeated visits to one absolute token using exchange ancestry, simultaneous
-   resampling, or a paid quotient/carry defect.
+1. **Reintroduction and ancestry closure.** Executable repeated-token visits now
+   have an exact initial-stock-plus-reintroduction bound. Charge
+   \(I_\tau\) to the coarse repair that restores the edge, route off-token
+   witness deletions, or bound the width of the fully forced ancestry DAG.
 2. **Low-height line-clean collateral.** Charge the rank-zero/rank-one mass and
    the linear low-height line reserve from the paid-pair bank to the opposite-
    deviation anchor, carry cells, or envelope expansion.
 3. **Exact intermediate-band completion.** Upgrade the almost-perfect
    conflict-free matching below height \(0.42t\) to a complete permutation.
-4. **Coarse-to-fine recreation.** Pay fine stars recreated by later coarse
-   prefix or joint-parent repairs.
+4. **Coarse-to-fine recreation.** Pay fine stars and token-compatible candidate
+   edges recreated by later coarse prefix or joint-parent repairs.
 5. **Prime-field terminal conversion.** Transfer the inherited-envelope and
    completion mechanism to prime-field carry cycles.
 6. **Square-root divisor boundary.** Remove or absorb the residual nearly
@@ -205,14 +226,18 @@ CMR164. No later valid theorem depends on the refuted strengthening.
 - The weak recursive child load is not the ordinary finer-prefix collateral.
 - Balanced reciprocal weights do not exist for \(p\equiv3\pmod4\).
 - Positive-potential saturated states may have no decreasing four-endpoint move.
+- A complete rematching does not permanently spend a carry token; exact
+  two-step token-restoring cycles exist at every block size \(t\ge2\).
 
 ## Bottom line
 
 There is no complete proof. The composite prime-power route now closes bank
 construction, first-separation summation, prefix and joint-parent collateral,
 target-load contraction, sharp parent blocker geometry, heavy-token local
-continuation, and exact candidate-only cleaning above \(0.42t\). Mixed fans
-admit line-clean paid-pair banks with no rank-two collateral. The principal
-remaining prime-power theorem is dynamic rather than local: control repeated
-visits to one low-height carry token and pay fine structures recreated by later
-coarse repairs. Arbitrary side-length coverage remains necessary afterward.
+continuation, exact candidate-only cleaning above \(0.42t\), and a dynamic
+inventory bound for executable repeated-token visits. Mixed fans admit
+line-clean paid-pair banks with no rank-two collateral. The principal remaining
+prime-power theorem is dynamic: charge token-compatible edges and fine stars
+reintroduced by coarse repairs, route off-token witness escapes, and control the
+width of fully forced exchange ancestry. Arbitrary side-length coverage remains
+necessary afterward.
