@@ -27,18 +27,21 @@ The rank-three atom bound from CMR248 is
 
 ### Theorem CMR284 — PROVED
 
-Let a sharp target-specific Hall blocker have smaller side `n=2`. Its
+Let a sharp target-specific Hall blocker have smaller side `n=2`. Its available
 line--rectangle incidence structure is one of the following.
 
-1. **Perfect chord matching.** Every one of the `t-1` blocking lines meets both
-   Hall slices, and the resulting chords form a perfect matching between the two
-   sets of `t-1` Hall cells.
-2. **One repeat and one omission.** Every blocking line is a full chord; one Hall
-   cell lies on two chords, one Hall cell is uncovered, and every other Hall cell
-   lies on exactly one chord.
-3. **One deficient line.** Exactly `t-2` lines are full chords forming a matching,
-   the remaining line meets exactly one Hall slice, and all covered Hall cells
-   are distinct. The unique uncovered Hall cell is `z_*`.
+1. **Perfect chord matching.** The target cell lies outside the Hall rectangle.
+   Every one of the `t-1` blocking lines has two available Hall cells, and the
+   resulting chords form a perfect matching between the two sets of `t-1` Hall
+   cells.
+2. **One repeat and the target omission.** The target cell lies in the Hall
+   rectangle. Every blocking line is a full available chord; one available Hall
+   cell lies on two chords, `z_*` is uncovered by the available line sets, and
+   every other Hall cell lies on exactly one chord.
+3. **One deficient line.** The target cell lies in the Hall rectangle. Exactly
+   `t-2` lines are full available chords forming a matching, the remaining line
+   has exactly one available Hall cell, and all covered Hall cells are distinct.
+   The unique uncovered Hall cell is `z_*`.
 
 In every case there are at least `t-2` full chords with pairwise disjoint Hall
 endpoints.
@@ -53,15 +56,20 @@ D+\Omega\le1.
 
 Both quantities are nonnegative integers.
 
-If `D=0`, every line is a full chord. If also `Omega=0`, the `2(t-1)` chord
-incidences cover `2(t-1)` distinct Hall cells, giving the perfect matching. If
-`Omega=1`, the same incidence count covers `2(t-1)-1` distinct cells: exactly
-one cell is repeated and exactly one is omitted.
+If `D=0`, every line has two available Hall cells. If also `Omega=0`, the
+`2(t-1)` available chord incidences cover `2(t-1)` distinct Hall cells. Thus
+`z_*` cannot lie in the rectangle, and the chords form the perfect matching.
+If `Omega=1`, the same incidence count covers `2(t-1)-1` distinct cells. The
+sole permitted uncovered Hall cell is `z_*`, and exactly one available cell is
+repeated.
 
-If `D=1`, then `Omega=0`. Exactly one line has deficiency one and every other
-line is full. All incidences are distinct. The union has `2(t-1)-1` cells, so
-the sole uncovered cell is the permitted exception `z_*`. The full chords are
-pairwise endpoint-disjoint. ∎
+If `D=1`, then `Omega=0`. Exactly one line has one available Hall cell and every
+other line is full. All available incidences are distinct. The union has
+`2(t-1)-1` cells, so the sole uncovered Hall cell is `z_*`. The full chords are
+pairwise endpoint-disjoint.
+
+In the repeated-cell case, remove one of the two chords using the repeated cell.
+At least `t-2` pairwise endpoint-disjoint full chords remain. ∎
 
 ## 2. Width-three disjoint triple extraction
 
@@ -74,17 +82,17 @@ least
 \boxed{t-9}
 \]
 
-full Hall-rectangle lines whose three-cell candidate triples are pairwise
-disjoint as board cells.
+lines with three available Hall-rectangle cells whose candidate triples are
+pairwise disjoint as board cells.
 
 Every two of these rank-three matching events are mutually exclusive under
 `Omega_*`.
 
 ### Proof
 
-CMR276 gives at least `t-5` full three-cell lines and total repeated-incidence
-mass at most four. For every Hall cell used by more than one full line, remove
-all but one of those lines. Removing at most
+CMR276 gives at least `t-5` full available three-cell lines and total repeated
+available-incidence mass at most four. For every Hall cell used by more than one
+full line, remove all but one of those lines. Removing at most
 
 \[
 \sum_z\max\{0,\deg(z)-1\}
