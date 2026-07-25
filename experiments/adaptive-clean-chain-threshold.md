@@ -1,7 +1,7 @@
 # Adaptive clean-chain threshold diagnostic
 
 This check accompanies
-`docs/190-adaptive-clean-chain-threshold.md`.
+`docs/191-adaptive-clean-chain-threshold.md`.
 
 Run:
 
