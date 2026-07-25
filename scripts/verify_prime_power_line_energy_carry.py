@@ -72,24 +72,32 @@ def verify_signature_pigeonhole() -> None:
 def verify_prefix_cell_capacity() -> None:
     for p, h in ((3, 4), (5, 3), (7, 2)):
         t = p**h
+        image = [(2 * source + 1) % t for source in range(t)]
+        assert len(set(image)) == t
+
         for depth in range(h):
             modulus = p**depth
             capacity = t // modulus
 
             # A permutation matching supplies one first endpoint in every source
             # and every row.  Count its occupancy in full prefix cells.
-            counts: Counter[tuple[int, int]] = Counter()
-            for source in range(t):
-                row = (2 * source + 1) % t
-                if len({(2 * x + 1) % t for x in range(t)}) != t:
-                    row = source
-                counts[(source % modulus, row % modulus)] += 1
-            assert max(counts.values()) <= capacity
-
+            counts = Counter(
+                (source % modulus, image[source] % modulus)
+                for source in range(t)
+            )
             population = sum(counts.values())
             support = len(counts)
+            maximum = max(counts.values())
+
+            assert maximum <= capacity
             assert support * capacity >= population
-            assert max(counts.values()) * modulus**2 >= population
+            assert maximum * modulus**2 >= population
+
+            # This is the exact integer split used in CMR358.
+            if modulus**3 <= t:
+                assert modulus**6 <= t**2
+            else:
+                assert modulus**3 > t
 
 
 def verify_combined_thresholds() -> None:
@@ -103,17 +111,9 @@ def verify_combined_thresholds() -> None:
                 threshold += 1
             pair_matching = floor(line_count / (4 * threshold))
             signature = floor(pair_matching / (h * (p + 1)))
+            assert threshold**2 >= line_count
             assert pair_matching >= 0
             assert signature >= 0
-
-            # The two-dimensional heavy/dispersion threshold is t^(2/3).
-            cube_root = round(t ** (1 / 3))
-            while (cube_root + 1) ** 3 <= t:
-                cube_root += 1
-            while cube_root**3 > t:
-                cube_root -= 1
-            denominator = max(1, cube_root**2)
-            assert ceil(signature / denominator) >= 0
 
 
 def main() -> None:
