@@ -129,20 +129,71 @@ Consequently PP3qn applies whenever
  <(1-o(1))R_H.
 \]
 
+If, more strongly,
+
+\[
+ K\frac{A_0}{q_0}
+ +
+ K^2\frac{B_0}{q_0^2}
+ =o(h),
+\]
+
+then the residual matching may be chosen source-valid with
+
+\[
+ C_0=o(h).
+\]
+
 #### Proof
 
 Reservation can only decrease the source-pattern populations, while
 \(q_0=\Theta(q)\) changes the normalized expressions by constant factors.
-PP3nr and PP3jl make their sum \(o(1)\).  Substitute into PP3qn. ∎
+PP3nr and PP3jl make their sum \(o(1)\).  This proves the first sufficient
+condition by substitution into PP3qn.
 
-In particular, if the expected residual shadow cost is \(o(h)\), then the
-residual matching may be chosen source-valid with
+For the final assertion, write
 
 \[
- C_0=o(h)
+ \alpha_m=\mathbb EX=o(1)
 \]
 
-after the usual slowly vanishing rescaling of the first-moment objective.
+and
+
+\[
+ \beta_m=\frac{\mathbb EC_0}{h}=o(1).
+\]
+
+Choose any positive sequence
+
+\[
+ \epsilon_m\longrightarrow0
+\]
+
+such that
+
+\[
+ \frac{\beta_m}{\epsilon_m}\longrightarrow0;
+\]
+
+for example \(\epsilon_m=\sqrt{\beta_m}\) when \(eta_m>0\).  Then
+
+\[
+ \mathbb E\left(
+ X+\frac{C_0}{\epsilon_mh}
+ \right)
+ \le
+ \alpha_m+\frac{\beta_m}{\epsilon_m}
+ =o(1).
+\]
+
+For all sufficiently large instances this expectation is below one.  Some
+matching therefore has \(X=0\) and
+
+\[
+ C_0<\epsilon_mh=o(h).
+\]
+
+∎
 
 ## 4. Completion with a cleaned cross subbank
 
