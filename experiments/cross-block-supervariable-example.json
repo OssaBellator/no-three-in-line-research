@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "name": "unique_safe_cross_block_state",
+      "left_s": ["s0", "s1"],
+      "right_s": ["S0", "S1"],
+      "left_t": ["t0", "t1"],
+      "right_t": ["T0", "T1"],
+      "owner_left_s": "s0",
+      "owner_left_t": "t0",
+      "direct_recapture_cells": [["s0", "T0"], ["t0", "S1"]],
+      "unary_forbidden_cells": [["s1", "T1"], ["t1", "S0"]]
+    },
+    {
+      "name": "forward_hall_failure",
+      "left_s": ["u0", "u1"],
+      "right_s": ["U0", "U1"],
+      "left_t": ["v0", "v1"],
+      "right_t": ["V0", "V1"],
+      "owner_left_s": "u0",
+      "owner_left_t": "v0",
+      "direct_recapture_cells": [["u0", "V0"], ["v0", "U0"]],
+      "unary_forbidden_cells": [["u1", "V0"], ["u1", "V1"]]
+    }
+  ]
+}
