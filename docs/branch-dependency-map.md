@@ -84,6 +84,16 @@ H(n,L,lambda) = n^2(lambda [L(n-1)^2]^2 + L(n-1)^2 + 1)
 
 forces one removal/long-return two-cross profile of multiplicity at least `lambda`. In a finite resource universe of size `B`, strict monotone-mask growth occurs at most `B` times; otherwise one constant-mask interval exceeds the same threshold. Thus factorial state-space size and pure mask drift are no longer terminal parameters.
 
+AC3iu--AC3iy remove two of the three residual host-drift fields. Every historical target matching in one fixed active base host projects to the unique alternating component through the paid pivot relative to one current reference matching. Blocker feasibility is exactly a directed cycle-cover problem. On the complete blocker host every projection repairs for `n>=3`; in a restricted host failure is a canonical minimal Hall core with a dead row, low-mobility source or role-pure reused-target/resource-star output.
+
+AC3iz--AC3jc extract the genuine external defect of that Hall core. A core of size `m` exposes at least
+
+```text
+m(n-m+1) - min(m,n-m+1) - 1 >= n-2
+```
+
+cells absent from the fixed blocker base host. Weighted failure of total `V` concentrates on one exact missing cell at scale `(n-2)V/n^2`, or on one of `R` canonical missing reasons at incidence scale `(n-2)V/R`. Reference-state and raw opposite-layer drift are therefore no longer residual matching-state problems.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -94,7 +104,7 @@ forces one removal/long-return two-cross profile of multiplicity at least `lambd
 
 ## Current frontier
 
-1. Pay or finitely classify the state-derived host changes left by AC3it: reference matching, opposite-layer exclusion and derived allowed-host drift at fixed mask.
+1. Classify and pay the exact missing blocker-host reasons from AC3jb through existing carry/BDA/RI/protected-resource roles, or prove a bounded exceptional stock.
 2. Terminate genuine arithmetic/context and envelope-epoch changes, repeated off-boundary cells and the AC3ie boundary/petal terms.
 3. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
 4. Build the residual finite transition quotient and assemble AC4, then verify AC5 and discharge AC6.
