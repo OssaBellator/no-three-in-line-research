@@ -110,6 +110,8 @@ The returned profile retains `t`, the exact derangement table, blocker prescript
 
 As in AC3bl, one state has conditional value at least the occupancy-class average. Expected collateral never exceeds the raw total candidate weight. A finite profile split loses at most `L`. QED.
 
+AC3ch--AC3ck subsequently resolve the five tables into exact overlap/cycle types and give sharp rank-specific cylinder probabilities. AC3bm remains the stronger rank-unspecified raw bound; AC3ck gives the sharper exact-rank/type record.
+
 ## AC3bn -- large-derangement rank amplification -- PROVED FROM RI5j
 
 Assume
@@ -124,43 +126,43 @@ $$
 D/3.
 $$
 
-Let `T_{eta,s}` be the raw weight of that rank-`s` candidate family. RI5j gives
+The original RI5j cap gives the valid baseline
 
 $$
-\frac{D}{3}
-\le
-\frac{128T_{eta,s}}{(t)_s},
+T_{eta,s}\ge\frac{(t)_sD}{384},
 $$
 
-and therefore
+and after a profile split,
 
 $$
-\boxed{
-T_{eta,s}
-\ge
-\frac{(t)_sD}{384}.
-}
-$$
-
-After an exact profile split of size `L`, one profile has raw weight at least
-
-$$
-\boxed{
 \frac{(t)_sD}{384L}.
+$$
+
+AC3cl--AC3cn supersede this baseline. The exact extension formula yields the sharp probability `p_{t,s}^{sharp}` and the stronger bounds
+
+$$
+\boxed{
+T_{eta,s}\ge\frac{D}{3p_{t,s}^{sharp}}
+\ge\frac{(t)_sD}{9},
 }
 $$
 
-### Proof
+and
 
-The three rank terms partition the large-state variable blocker average. One rank contributes at least `D/3` after selecting a state at least as heavy as the average. Apply the RI5j cylinder cap and weighted pigeonhole. QED.
+$$
+\boxed{
+\text{one profile has weight at least }
+\frac{D}{3p_{t,s}^{sharp}L}
+\ge\frac{(t)_sD}{9L}.
+}
+$$
 
 ## AC3bo -- blocker output after a failed closed fixed-edge bank -- PROVED
 
 Let
 
 $$
-G=
-\left(1-\frac1{mh}\right)W-F>0.
+G=\left(1-\frac1{mh}\right)W-F>0.
 $$
 
 If AC3bi returns the blocker alternative, then
@@ -179,25 +181,27 @@ One of the following follows.
    $$
    \boxed{\frac{G}{12L}.}
    $$
+   AC3ch--AC3ck additionally return an exact rank and overlap/cycle type with their sharp probability.
 3. **Large normalized rank profile.** One state with `t>=7`, one rank `s<=3`, and one exact profile have raw weight at least
    $$
-   \boxed{\frac{(t)_sG}{4608L}.}
+   \boxed{\frac{(t)_sG}{108L}.}
    $$
+   The exact sharp bound is `G/(36p_{t,s}^{sharp}L)`.
 
 ### Proof
 
-AC3bk selects one occupancy regime at loss at most three. Apply AC3bl, AC3bm, or AC3bn with `D=G/12`. QED.
+AC3bk selects one occupancy regime at loss at most three. Apply AC3bl or AC3bm in the first two cases. In the large case use AC3cn with `D=G/12`. QED.
 
-## Frontier after AC3bk--AC3bo
+## Frontier after AC3bk--AC3co
 
-The blocker term is no longer a mixed conditional expectation. It exits through exactly one of:
+The blocker term is no longer a mixed conditional expectation and its probability theory is complete. It exits through exactly one of:
 
 - the existing singleton crossed affine-address router;
-- one of five finite small derangement tables;
-- a large rank-one, rank-two, or rank-three normalized blocker profile.
+- one exact small overlap/cycle prescription type;
+- one exact large partial-permutation profile `(t,s,q)` with inclusion-exclusion probability.
 
-The remaining blocker geometry is arithmetic classification of one selected profile, not simultaneous control of every occupancy pattern.
+The remaining blocker task is arithmetic classification and termination of one selected exact profile, not control of the repair bank.
 
 ## Finite check
 
-`scripts/verify_ac_ri_blocker_average.py` checks the occupancy partition, singleton amplification, all derangements through size eight, the `128/(t)_s` cylinder caps, the rank split, and the constants in AC3bo.
+`scripts/verify_ac_ri_blocker_average.py` checks the occupancy partition and the original baseline constants. `scripts/verify_ac_ri_small_derangements.py` exhausts the five small tables. `scripts/verify_ac_ri_derangement_extension_formula.py` checks the exact all-occupancy extension formula, sharp caps, and the improved AC3bo large-profile constant.
