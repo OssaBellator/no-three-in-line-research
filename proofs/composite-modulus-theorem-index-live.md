@@ -16,10 +16,11 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR413--417 | Exact full-token edge-incidence multiplicity, scale-filtered prefix and packet budgets, two-edge matching churn, and polynomial state-expansion payment | PROVED | `docs/140-prime-power-edge-incidence-state-expansion.md` |
 | CMR418--421 | Entering-edge support for recreated selected conflicts, equality with leaving-edge churn, harmonic packet recreation bounds, and the first-dirty packet ledger | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
 | CMR422--425 | Lossy packet reset deletion/forced-ancestry dichotomy, finite deletion budget, packet-installation bound, and conditional ancestry-width closure | PROVED / PROVED UNDER THE ANCESTRY-WIDTH HYPOTHESIS | `docs/142-prime-power-packet-loss-deletion-ancestry.md` |
+| CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR425 is quantitative control of fully forced exchange ancestry
-and repeated local ancestor resets. Inside one certificate-directed deletion
-pass, packet losses no longer require a separate cumulative-churn bound: every
-lossy reset pays a permanent deletion or one fully forced ancestry event, and
-permanent deletion responses occur at most `t(t-1)` times.
+frontier after CMR428 is quantitative resolution of one terminal fully forced
+exchange-ancestry certificate and repeated local ancestor resets. Within one
+certificate-directed deletion pass, the harmonic-packet schedule either
+completes in at most `P(1+t(t-1))` installations or reaches one terminal fully
+forced packet certificate in at most `P(2+t(t-1))` installations.
