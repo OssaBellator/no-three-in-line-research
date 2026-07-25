@@ -38,13 +38,14 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR522--526 | Maximum-allowed persistent-edge criterion, exact two-endpoint deficiency, persistent-aware absorption, row-column cross incidence, and rooted trace witnesses | PROVED | `docs/162-prime-power-persistent-blocker-absorption-deficiency.md` |
 | CMR527--534 | Cross-pair line injectivity, disjoint equal-size pair cylinders, support multiplicity, König pair-bank/star dichotomy, unavailable paid-pair surcharge, trace-cell signatures, joint pair persistence, and the combined cross endpoint | PROVED | `docs/163-prime-power-persistent-cross-pair-bank.md` |
 | CMR535--540 | Canonical envelope-epoch assignment, exact pair/trace signature stocks, finite ancestry or recurrence, multi-edge joint absence runs, recurrent-pair payment, and fixed trace-line ancestry | PROVED | `docs/164-prime-power-cross-signature-ancestry.md` |
+| CMR541--545 | Refined rooted-trace determinacy, polynomial signature stock, finite ancestry or recurrence, fixed-line weighted selector, and unified persistent-cross ancestry endpoint | PROVED | `docs/165-prime-power-refined-trace-ancestry.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR540 has two fixed-signature payment problems. Recurrent pair
-ancestry either pays reintroduction or becomes one jointly persistent
-three-edge signature with a fixed CMR531 selector. Recurrent trace ancestry is
-confined to one envelope, central cell, arm, and trace cell, but the trace cell
-is not necessarily unavailable. The next target is to convert repeated
-selector failure or fixed trace-line recurrence into protected-reserve
-depletion, full-token return, quotient/carry concentration, deletion ancestry,
-or strict envelope expansion.
+frontier after CMR545 is one common payment problem: repeated failure of a
+fixed compatible-pair line-clean selector. Pair and rooted-trace ancestry are
+polynomially bounded unless they pay reintroduction or reduce to such a fixed
+selector. Every selector failure already yields frozen rank-zero/rank-one
+collateral or unavailable-edge inventory. The next target is to convert
+repeated returned obstructions into protected-reserve depletion, full-token
+return, quotient/carry concentration, deletion ancestry, or strict envelope
+expansion without double counting between selector signatures.
