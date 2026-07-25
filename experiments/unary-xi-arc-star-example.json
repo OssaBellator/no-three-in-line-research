@@ -1,0 +1,22 @@
+{
+  "n": 6,
+  "centre": 0,
+  "budget": 10,
+  "incoming_cost": {
+    "1": 8,
+    "2": 8,
+    "3": 8,
+    "4": 9,
+    "5": 9
+  },
+  "outgoing_cost": {
+    "1": 2,
+    "2": 2,
+    "3": 6,
+    "4": 7,
+    "5": 8
+  },
+  "safe_predecessors": [1, 2, 3, 4, 5],
+  "safe_successors": [1, 2, 3, 4, 5],
+  "forbidden_middle_pairs": []
+}
