@@ -1,8 +1,9 @@
 # Product switching and protected-spread theorem index
 
 This index continues the product-construction ledger after PX97. It records
-the strong-complete switching, affine-square, marker-flow, and affine-orbit
-results developed on `research/all-n-product-construction`.
+the strong-complete switching, affine-square, marker-flow, affine-orbit,
+exact-cover, lattice, and absorber results developed on
+`research/all-n-product-construction`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -41,29 +42,40 @@ results developed on `research/all-n-product-construction`.
 | PX130 | One order-thirteen seed has secant multiplicity 28, triangle multiplicity 8, and orbit cylinder constants below 3 and 7 | PROVED FINITE | `docs/80-affine-orbit-strong-complete-spread.md` |
 | PX131 | At local order thirteen, the two-stage protected rainbow problem has an unconditional joint rank-three spread distribution | PROVED | `docs/80-affine-orbit-strong-complete-spread.md` |
 | PX132 | Explicit strong-complete seeds through order 23 have the recorded constant affine-triangle multiplicities | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
-| PX133 | Every strong-complete seed obeys the exact secant and fixed-row-ratio averaging lower bounds | PROVED | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX133 | Every strong-complete seed obeys the corrected secant and fixed-row-ratio averaging lower bounds | PROVED | `docs/81-low-multiplicity-strong-complete-seeds.md` |
 | PX134 | Orders 29, 31, 37, and 41 have explicit seeds with `mu<2p` and `tau<=9` | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
 | PX135 | Orders 43 and 47 have explicit seeds with `mu<2p` and `tau=9` | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
 | PX136 | Order 53 has an explicit seed with `mu=80` and `tau=7` | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
 | PX137 | Nonlinear cubic and completed-Mobius seed families are empty through prime order 101 | PROVED FINITE | `docs/81-low-multiplicity-strong-complete-seeds.md` |
+| PX138 | Strong-complete mappings are exactly perfect matchings of the four-partite host `(x,y,x-y,x+y)` | PROVED | `docs/83-strong-complete-exact-cover-host.md` |
+| PX139 | The exact-cover host is `p`-regular, linear, and retains residual degree at least `p-3k` after a `k`-edge condition | PROVED | `docs/83-strong-complete-exact-cover-host.md` |
+| PX140 | Affine strong-complete matchings have exact one-, two-, and three-edge extension counts | PROVED | `docs/83-strong-complete-exact-cover-host.md` |
+| PX141 | Every large prime has an almost-perfect partial strong-complete matching with optimal secant loads and subpower triangle loads | PROVED USING EXTERNAL THEOREM | `docs/84-pseudorandom-almost-strong-complete-seeds.md` |
+| PX142 | The exact-cover incidence lattice has cokernel `Z^3 plus (Z/pZ)^3` | PROVED | `docs/85-strong-complete-edge-lattice.md` |
+| PX143 | Equal part totals and three linear/quadratic modular moments exactly characterize the edge lattice | PROVED | `docs/85-strong-complete-edge-lattice.md` |
+| PX144 | Two-point lattice leftovers are circle rotations, with an exact direct-completion criterion | PROVED | `docs/85-strong-complete-edge-lattice.md` |
+| PX145 | Every two-point lattice leftover has an affine normal form | PROVED | `docs/86-two-point-lattice-absorbers.md` |
+| PX146 | Every two-point obstruction through prime order 13 has an absorber of order two | PROVED FINITE | `docs/86-two-point-lattice-absorbers.md` |
+| PX147 | Every two-point obstruction at orders 17 and 19 has an absorber of order at most three | PROVED FINITE | `docs/86-two-point-lattice-absorbers.md` |
 
 ## Current exact boundary
 
 The switching-flow route is complete through the entire one-bridge nonlinear
-shell. The remaining switching task is to construct a layered probability
-measure or deeper-core flow which rewrites a linear number of rows while
-retaining the PX100 conditional ratios.
+shell. The affine-orbit route has explicit constant-multiplicity seeds through
+order 53. The exact-cover route additionally proves a pseudorandom almost-seed
+for every sufficiently large prime and computes the complete lattice obstruction
+to exact completion.
 
-The affine-orbit route replaces that global mixing task by a deterministic seed
-problem. Explicit seeds through order 53 satisfy
+The next two proof obligations are now explicit.
 
-\[
-\mu(f)<2p,
-\qquad
-\tau(f)\le9,
-\]
+1. **Exact pseudorandom completion.** Complete PX141 while retaining subpower
+   secant and triangle loads. The duplicated-reservoir reduction brings the
+   Joos--Mubayi--Smith exact covering theorem into range; the remaining check is
+   a bounded-conflict lemma for bucketed repeated-shape occurrences.
+2. **Lattice absorption.** Prove a uniform absorber theorem for moment-zero
+   leftovers. Two-point absorbers require order two through 13 and order three
+   at 17 and 19; larger orders are not yet classified in the repository.
 
-with the order-53 seed attaining `tau=7`. The remaining theorem is to construct
-such seeds for infinitely many primes, or prove a sufficiently mild
-polylogarithmic triangle bound from a quasirandom toroidal-queens matching
-process. Neither route yet proves infinite exact product closure.
+Neither route yet proves infinite exact product closure, but both have moved
+from an undifferentiated completion problem to finite-dimensional conflict and
+lattice statements.
