@@ -13,11 +13,12 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR403--405 | Universal whole-parent host-churn inclusion, one-layer/joint-parent full-token return costs, and the combined prefix-plus-nonprefix visit budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/137-prime-power-nonprefix-full-token-return.md` |
 | CMR406--409 | Harmonic-packet count, per-token packet-sweep return, combined deep-token visit bound, and aggregate quadratic-log sweep budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/138-prime-power-harmonic-packet-sweep-budget.md` |
 | CMR410--412 | Monotone-mask cycle erasure, simple finite histories, and the outside-context dichotomy for repeated ancestor or packet states | PROVED | `docs/139-prime-power-state-cycle-erasure.md` |
+| CMR413--417 | Exact full-token edge-incidence multiplicity, scale-filtered prefix and packet budgets, two-edge matching churn, and polynomial state-expansion payment | PROVED | `docs/140-prime-power-edge-incidence-state-expansion.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR412 is quantitative state-space expansion: show that a long
-sequence of distinct ancestor or packet states consumes full-token return mass,
-target load, reserve capacity, or width in the acyclic exchange-ancestry graph
-before the factorial local state space becomes relevant. Per-move and one-sweep
-full-token return costs are explicit for recursive prefix, exact-band, and
-joint-parent resets.
+frontier after CMR417 is to couple the exact churn payment to packet protection,
+target-load destruction, reserve depletion, or bounded fully forced exchange
+ancestry. Exact state cycles are erasable, and a long sequence of distinct
+selected states now forces proportionally large returned-edge and full-token
+incidence mass. One prefix pass plus one harmonic-packet sweep has the sharper
+aggregate bound `O_p(t log^2 t)`.
