@@ -1,6 +1,6 @@
 # Full-prefix token repetition has a two-dimensional edge inventory
 
-CMR388 reduces a long frozen two-slice closure to candidate walls, secant stars,
+CMR393 reduces a long frozen two-slice closure to candidate walls, secant stars,
 executable heavy prefix cells, or repeated visits to one exact absolute full
 prefix token. A full token fixes both column and row prefixes, so its edge stock
 is quadratically smaller than the row-prefix stock in CMR348.
@@ -39,7 +39,7 @@ U_\tau^{(2)}
 
 ## 1. Exact two-dimensional stock
 
-### Theorem CMR389 — PROVED
+### Theorem CMR394 — PROVED
 
 The full-token universe has exact size
 
@@ -83,7 +83,7 @@ I_\tau^{(2)}
 
 count later reintroductions with multiplicity.
 
-### Theorem CMR390 — PROVED
+### Theorem CMR395 — PROVED
 
 If `D_\tau^{(2)}` endpoint visits occur, then
 
@@ -107,7 +107,7 @@ D_\tau^{(2)}-\frac{t^2}{p^{2b}}.
 
 ### Proof
 
-Apply the CMR347 dynamic inventory lemma to `U_\tau^{(2)}` and use CMR389.
+Apply the CMR347 dynamic inventory lemma to `U_\tau^{(2)}` and use CMR394.
 Every initial or reintroduced edge pays for at most one subsequent consumption
 before it must be introduced again. ∎
 
@@ -117,7 +117,7 @@ At a repeated token visit, process the certificate as in CMR349: delete a
 nonessential Hall endpoint if possible; otherwise delete a nonessential witness;
 if every prescribed edge is essential, attach the CMR217 ancestry links.
 
-### Theorem CMR391 — PROVED UNDER THE CMR349 HYPOTHESES
+### Theorem CMR396 — PROVED UNDER THE CMR349 HYPOTHESES
 
 Assume the residual hosts form a deletion pass beginning with no essential
 edge, every deletion retains a perfect matching, and every repeated visit is
@@ -153,12 +153,12 @@ certificates, and the ancestry graph is acyclic inside the pass.
 
 ### Proof
 
-The three cases are exhaustive. CMR390 bounds endpoint-paid visits; CMR217 and
+The three cases are exhaustive. CMR395 bounds endpoint-paid visits; CMR217 and
 CMR218 give the ancestry assertions. ∎
 
 ## 4. Depth-dependent stock bounds
 
-### Corollary CMR392 — PROVED
+### Corollary CMR397 — PROVED
 
 For every `0\le\alpha\le1`, if
 
@@ -179,7 +179,7 @@ In particular:
 
 ### Proof
 
-Substitute `p^{2b}\ge t^{2\alpha}` into CMR389. ∎
+Substitute `p^{2b}\ge t^{2\alpha}` into CMR394. ∎
 
 Thus repetition of one full token is no longer free. After its initial
 quadratic-prefix stock is exhausted, every further visit pays a returned exact
