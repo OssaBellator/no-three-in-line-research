@@ -30,9 +30,11 @@ supplement mirrors the collision-free live range recorded in
 | CMR482--486 | Theta-fan private entering-edge sunflower, blocker resilience, rooted-conflict dichotomy, aggregate conflict payment, and harmonic packet/token endpoint | PROVED | `docs/154-prime-power-theta-fan-private-edge-payment.md` |
 | CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
 | CMR492--496 | Universal compatible-pair derangement cylinder, rank-two-on-line elimination, rooted-arm cleaning, equal-size rooted-star banks, and bottleneck-pair line-clean splice | PROVED | `docs/156-prime-power-universal-compatible-pair-line-clean.md` |
+| CMR497--501 | Minimum line-clean restoration cost, forced restoration core, cheap-or-factorization availability, exact token/conflict payment, and application to rooted/bottleneck cylinders | PROVED | `docs/157-prime-power-line-clean-rollback-availability.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR496, every rooted-star arm and every fixed bottleneck pair has an exact
-full-parent line-clean cylinder of size `D_{m-2}`. The immediate target is to
-make one such cylinder available and paid inside the restricted current host,
-using rollback, reserve, target-load, carry, prefix, or envelope progress.
+CMR501, universal line-clean construction and current-host availability are both
+closed: cheap restoration is priced and expensive restoration factors the host.
+The immediate target is selection inside the cheaply restored cylinder, using
+frozen-bank averaging, target-load decrease, reserve depletion, prefix/carry
+concentration, or envelope expansion.
