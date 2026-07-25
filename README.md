@@ -176,10 +176,15 @@ remote arc. Conditioning on the centre arc gives exact remote-arc probability
 (b-3)/((N-2)(N-3)).
 ```
 
-Sparse positive partner support can be avoided completely regardless of weights.
-Under fixed residual slack, failure forces `Omega(N^2/b)` supported partner arcs,
-and hence a partner-resource star or fixed-cell remote matching of size
-`Omega(N/sqrt(b))`, which is much larger than `W`.
+The complete positive partner support is deleted from one conditioned residual
+host. If the deletion leaves a superregular host, the support is avoided and the
+paid first moment applies. If the residual host is matchable but non-superregular,
+the alternating-component frontier applies. If deletion destroys matchability,
+a robust Hall lemma forces a repeated secondary-resource star of size `Omega(N)`,
+which feeds the existing conditional Hall and two-resource-grid chain.
+
+Fixed rank-four multiplicity cores, fixed-cell remote matchings, and square-root
+partner stars are therefore no longer independent frontiers.
 
 ## Current remaining theorem
 
@@ -191,9 +196,8 @@ The all-`n` branch is reduced to:
    forced Hall cuts, and transition sunflowers;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. fixed-axis unary-`Xi` stars, weighted rank-three path cores, large rank-four
-   partner stars/fixed-cell petal banks, full-pool `Xi` thresholds, or fixed-centre
-   source/weight cores;
+4. fixed-axis unary-`Xi` stars, weighted rank-three path cores, full-pool `Xi`
+   thresholds, or fixed-centre source/weight cores;
 5. alternating cycle-star/theta support cores or cost at the cycle-credit scale;
 6. quadratic binary cell fans, weighted choice grids, projective covers,
    conditional Hall families, or support-ranked residual collateral.
@@ -201,8 +205,9 @@ The all-`n` branch is reduced to:
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic
 `Xi` terms, diffuse binary dual mass, raw resource stars, diffuse transition-petal
 collateral, unstructured rank-two unary and rank-three/rank-four binary `Xi`
-tables, fixed rank-four multiplicity cores, unstructured non-superregularity,
-controller relabelling, and termination are no longer separate open problems.
+tables, fixed rank-four multiplicity cores, fixed-cell rank-four petal banks,
+square-root rank-four partner stars, unstructured non-superregularity, controller
+relabelling, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -216,8 +221,9 @@ The no-three-in-line conjecture remains unproved.
   source dilution, support-ranked `Xi`, and universal single-cycle fillers.
 - `docs/167`--`docs/171`: transition role localization, clean-chain averaging,
   disjoint witness petals, credited sunflower banks, and collateral localization.
-- `docs/176`--`docs/179`: unary arc stars, rank-three path localization, exact
-  rank-four fibres, and rank-four support avoidance/star--matching localization.
+- `docs/176`--`docs/180`: unary arc stars, rank-three path localization, exact
+  rank-four fibres, support avoidance, and robust Hall localization to a linear
+  secondary-resource star.
 
 ## Current exact checks
 
@@ -242,6 +248,8 @@ python scripts/check_rank_four_binary_xi_fibres.py \
   experiments/rank-four-binary-xi-fibres-example.json
 python scripts/check_rank_four_binary_xi_support.py \
   experiments/rank-four-binary-xi-support-example.json
+python scripts/check_rank_four_partner_hall_star.py \
+  experiments/rank-four-partner-hall-star-example.json
 ```
 
 These are finite diagnostics. They do not replace the asymptotic conversion
