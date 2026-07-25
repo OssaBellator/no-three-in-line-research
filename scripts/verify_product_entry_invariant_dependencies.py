@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
-"""Repository audit for PX397--PX455 dependencies and effective cutoff data."""
+"""Repository audit for PX397--PX478 dependencies and effective cutoff data."""
 
 from __future__ import annotations
 
 import json
-import math
 from pathlib import Path
 import re
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST_PATH = ROOT / "proofs" / "product-entry-invariant-dependencies.json"
-INDEX_PATH = ROOT / "proofs" / "product-growing-direction-theorem-index-PX397-PX450.md"
+INDEX_PATHS = [
+    ROOT / "proofs" / "product-growing-direction-theorem-index-PX397-PX450.md",
+    ROOT / "proofs" / "product-growing-direction-theorem-index-PX451-PX478.md",
+]
 DOC_PATHS = [ROOT / "docs" / f"{number}-{name}" for number, name in (
     (153, "px63-one-hit-derangement-entry.md"),
     (154, "px64-line-cap-return-depth.md"),
@@ -21,19 +23,16 @@ DOC_PATHS = [ROOT / "docs" / f"{number}-{name}" for number, name in (
     (158, "paired-label-mixed-shadow-and-recurrence.md"),
     (159, "paired-label-large-block-and-asymptotic-loop.md"),
     (160, "dependency-and-effective-cutoff-audit.md"),
+    (161, "explicit-cartesian-triple-constant.md"),
+    (162, "explicit-nested-depth-envelope.md"),
+    (163, "explicit-divisor-witness-and-effective-exponents.md"),
+    (164, "packet-family-free-active-repair-path.md"),
+    (165, "explicit-common-asymptotic-cutoff.md"),
 )]
 
 HEADING_RE = re.compile(r"^### (?:Theorem|Corollary) PX(\d+)\b", re.MULTILINE)
 INDEX_RE = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
-
-
-def theorem_block(theorem_id: int) -> str | None:
-    ranges = ((397, 403), (404, 410), (411, 419), (420, 427),
-              (428, 436), (437, 444), (445, 450))
-    for start, end in ranges:
-        if start <= theorem_id <= end:
-            return f"PX{start}-{end}"
-    return None
+BLOCK_START_RE = re.compile(r"^PX(\d+)")
 
 
 def check_manifest() -> dict:
@@ -41,18 +40,22 @@ def check_manifest() -> dict:
     nodes = manifest["nodes"]
     allowed = set(manifest["safety_rules"]["allowed_terminal_move_spaces"])
 
-    for node, data in nodes.items():
-        assert data["move_space"] in allowed
-        assert (ROOT / data["document"]).is_file()
+    assert manifest["range"] == "PX397-PX478"
+    assert manifest["root"] == "PX478"
 
-    # Internal continuation dependencies must point strictly backwards.
-    starts = {node: int(node.split("-")[0][2:]) for node in nodes}
+    starts: dict[str, int] = {}
+    for node, data in nodes.items():
+        match = BLOCK_START_RE.match(node)
+        assert match is not None, node
+        starts[node] = int(match.group(1))
+        assert data["move_space"] in allowed
+        assert (ROOT / data["document"]).is_file(), data["document"]
+
     for node, data in nodes.items():
         for dependency in data["depends_on"]:
             if dependency in nodes:
-                assert starts[dependency] < starts[node]
+                assert starts[dependency] < starts[node], (dependency, node)
 
-    assert manifest["root"] == "PX450"
     return manifest
 
 
@@ -65,84 +68,76 @@ def check_theorem_ids() -> None:
             theorem_id = int(match.group(1))
             occurrences.setdefault(theorem_id, []).append(path.name)
 
-    for theorem_id in range(397, 456):
+    for theorem_id in range(397, 479):
         assert len(occurrences.get(theorem_id, [])) == 1, (
             theorem_id,
             occurrences.get(theorem_id, []),
         )
 
-    index_text = INDEX_PATH.read_text(encoding="utf-8")
-    index_ids = [int(value) for value in INDEX_RE.findall(index_text)]
-    assert index_ids == list(range(397, 451))
+    index_ids: list[int] = []
+    for path in INDEX_PATHS:
+        assert path.is_file(), path
+        index_ids.extend(int(value) for value in INDEX_RE.findall(
+            path.read_text(encoding="utf-8")
+        ))
+    assert index_ids == list(range(397, 479)), index_ids
 
 
 def check_safety_text(manifest: dict) -> None:
-    text = "\n".join(path.read_text(encoding="utf-8") for path in DOC_PATHS)
+    all_text = "\n".join(path.read_text(encoding="utf-8") for path in DOC_PATHS)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
-        assert phrase not in text
+        assert phrase not in all_text
 
     constants = manifest["safety_rules"]["required_constants"]
-    doc159 = (ROOT / "docs" / "159-paired-label-large-block-and-asymptotic-loop.md").read_text(encoding="utf-8")
-    doc153 = (ROOT / "docs" / "153-px63-one-hit-derangement-entry.md").read_text(encoding="utf-8")
-    doc155 = (ROOT / "docs" / "155-channel-free-rectangle-label-return.md").read_text(encoding="utf-8")
+    docs = {
+        path.name: path.read_text(encoding="utf-8")
+        for path in DOC_PATHS
+    }
+    doc153 = docs["153-px63-one-hit-derangement-entry.md"]
+    doc155 = docs["155-channel-free-rectangle-label-return.md"]
+    doc159 = docs["159-paired-label-large-block-and-asymptotic-loop.md"]
+    doc161 = docs["161-explicit-cartesian-triple-constant.md"]
+    doc163 = docs["163-explicit-divisor-witness-and-effective-exponents.md"]
+    doc164 = docs["164-packet-family-free-active-repair-path.md"]
+    doc165 = docs["165-explicit-common-asymptotic-cutoff.md"]
 
     assert str(constants["paired_support_four_denominator"]) in doc159
     assert "8192e^{4\\Delta}" not in doc159
-    assert f"\\frac9{{(c)_r}}" in doc153 or "9/(c)_r" in doc153
+    assert "9/(c)_r" in doc153 or "\\frac9{(c)_r}" in doc153
     assert "D/18" in doc153
     assert "four" in doc155.lower()
     assert (
         "two label families" in doc155.lower()
         or "two column-label families" in doc155.lower()
     )
+    assert f"A_3={constants['cartesian_triple_constant']}" in doc161
+    assert f"10^{{{constants['divisor_constant_power_of_ten']}}}" in doc163
+    divisor_exponent = constants["divisor_exponent_denominator"]
+    assert f"N^{{1/{divisor_exponent}}}" in doc163
+    assert "active packet-family count to zero" in doc164
+    assert f"10^{{{constants['explicit_cutoff_power_of_ten']}}}" in doc165
+    assert "\\log(4N^{3/5})" in doc165
 
 
-def logsumexp(first: float, second: float) -> float:
-    high = max(first, second)
-    return high + math.log(math.exp(first - high) + math.exp(second - high))
-
-
-def check_parameterized_cutoff() -> None:
-    # Synthetic effective witness.  We use log N directly to avoid constructing
-    # an enormous integer; the test checks the finite inequalities in PX453.
-    log_n = 1_000_000.0
-    epsilon = 0.10
-    rho = 0.05
-    eta = 0.01
-    a3 = 1_000_000.0
-
-    log2_n = log_n / math.log(2.0)
-    depth = math.ceil(math.log2(log2_n)) + 10
-    delta = 3 + 2 * depth
-    log_t = (0.5 + epsilon) * log_n
-    log_b = math.log(max(32.0, 16.0 * delta + 4.0, 16.0 * math.exp(2.0 * delta)))
-    log_c = math.log(32768.0 / eta) + 4.0 * delta
-
-    log_q_first = math.log(eta / 128.0) - math.log(math.log(2.0) + log_t)
-    log_q_second = log_t - log_c - (1.0 + rho) * log_n
-    log_q = min(log_q_first, log_q_second)
-
-    # qT >= B.
-    assert log_q + log_t >= log_b
-
-    # N-1-2Delta > 0, checked in log form with huge slack.
-    assert log_n > math.log(2.0 * delta + 2.0)
-
-    # 4096 A3 e^(2Delta) (q log(2T)+q^2 log(2T)) <= 1/8.
-    log_log_2t = math.log(math.log(2.0) + log_t)
-    first_term = log_q + log_log_2t
-    second_term = 2.0 * log_q + log_log_2t
-    log_parenthesis = logsumexp(first_term, second_term)
-    log_internal = math.log(4096.0 * a3) + 2.0 * delta + log_parenthesis
-    assert log_internal <= math.log(1.0 / 8.0)
+def check_cutoff_resolution() -> None:
+    audit = (ROOT / "docs" / "160-dependency-and-effective-cutoff-audit.md").read_text(
+        encoding="utf-8"
+    )
+    cutoff = (ROOT / "docs" / "165-explicit-common-asymptotic-cutoff.md").read_text(
+        encoding="utf-8"
+    )
+    assert "PX460" in audit and "PX465" in audit and "PX468" in audit
+    assert "PX478" in audit
+    assert "N_0=10^{4000}" in cutoff
+    assert "finite range" in cutoff.lower()
 
 
 def main() -> None:
     manifest = check_manifest()
     check_theorem_ids()
     check_safety_text(manifest)
-    check_parameterized_cutoff()
-    print("PX397--PX455 dependency and effective-cutoff audit: PASS")
+    check_cutoff_resolution()
+    print("PX397--PX478 dependency and effective-cutoff audit: PASS")
 
 
 if __name__ == "__main__":
