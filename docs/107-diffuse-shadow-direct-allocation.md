@@ -6,7 +6,7 @@ chapter gives a clean asymptotic corollary: uniformly diffuse excess shadow is
 already enough for direct completion.
 
 The theorem separates the remaining direct obstruction from average density.
-Failure must concentrate in a nearly dead label, one macro with large total
+Failure must concentrate in a collapsing label margin, one macro with large total
 excess shadow, or a same-slot anchor row/column.
 
 ## 1. Uniform domain margin
@@ -199,11 +199,13 @@ candidate cell safe.  It only needs:
 If direct allocation still fails along an asymptotic sequence, then at least one
 of the following persists along a subsequence.
 
-1. **Nearly dead movement label:** for some fixed \(\delta>0\),
+1. **Movement-margin collapse:** for every fixed \(\delta>0\), some macro and
+   movement label satisfy
    \[
    a_i(A)>(1-\gamma-\delta)R.
    \]
-2. **Nearly dead refill label:**
+2. **Refill-margin collapse:** for every fixed \(\delta>0\), some macro and refill
+   label satisfy
    \[
    b_i(B)>(1-\gamma-\delta)R.
    \]
@@ -222,9 +224,11 @@ of the following persists along a subsequence.
 
 #### Proof
 
-If none persists, choose a fixed margin \(\delta>0\) and a common
-\(\varepsilon=o(1)\) satisfying PP3me.  The direct allocation then exists, a
-contradiction. ∎
+If neither margin-collapse alternative persists, then some fixed
+\(\delta_M,\delta_R>0\) give eventual uniform movement and refill margins.  Use
+\(\delta=\min\{\delta_M,\delta_R\}\).  If none of the three mass concentrations
+persists, all three normalized quantities in PP3me are \(o(1)\).  Direct
+allocation follows, a contradiction. ∎
 
 This reduces the direct route from an abstract graph-density theorem to five
 explicit geometric concentration objects.  The dynamic \(\Xi\)-trades target the
