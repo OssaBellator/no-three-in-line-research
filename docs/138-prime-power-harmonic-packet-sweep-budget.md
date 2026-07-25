@@ -1,8 +1,8 @@
 # One harmonic-packet sweep preserves the quadratic-log token budget
 
-CMR388 cleans every intermediate-height family of harmonic weight below
-`3/2`, and CMR389 cleans any two dyadic bands beginning at height at least
-five. CMR403 bounds the full-token edge return of each resulting one-layer
+CMR401 cleans every intermediate-height family of harmonic weight below `3/2`,
+and CMR402 cleans any two dyadic bands beginning at height at least five.
+CMR403 bounds the full-token edge return of each resulting one-layer
 whole-parent reset. Therefore a complete sweep through paired dyadic bands has
 only logarithmically many resets and fits inside the same quadratic-logarithmic
 full-token budget as one descending prefix pass.
@@ -13,7 +13,7 @@ Let
 t=p^h
 \]
 
-and fix `eta>0`. Consider the nonempty dyadic bands
+and fix `\eta>0`. Consider the nonempty dyadic bands
 
 \[
 [H,2H),
@@ -23,13 +23,13 @@ H=2^j,
 \max\{5,t^\eta\}\le H\le t-1.
 \]
 
-Let `B_eta(t)` be their number.
+Let `B_\eta(t)` be their number.
 
 ## 1. Packet count
 
 ### Theorem CMR406 — PROVED
 
-The dyadic bands may be partitioned into
+The bands may be partitioned into
 
 \[
 \boxed{
@@ -39,10 +39,8 @@ P_\eta(t)
 }
 \]
 
-harmonic packets, each of which is exactly cleanable by one target-specific
-parent permutation for all sufficiently large `t`.
-
-Moreover,
+harmonic packets, each exactly cleanable by one target-specific parent
+permutation for all sufficiently large `t`. Moreover,
 
 \[
 \boxed{
@@ -54,14 +52,12 @@ P_\eta(t)
 
 ### Proof
 
-Pair the dyadic bands arbitrarily. Every two-band packet has harmonic weight
-below `3/2` by CMR389. If one band remains, its harmonic weight is below `3/4`
-and CMR388 applies directly. There are at most `1+log_2 t` positive dyadic
-lower endpoints below `t`, giving the displayed packet bound. ∎
+Pair the dyadic bands arbitrarily. Every two-band packet is cleanable by CMR402.
+If one band remains, its harmonic weight is below `3/4`, so CMR401 applies.
+There are at most `1+\log_2t` positive dyadic lower endpoints below `t`. ∎
 
-This theorem concerns existence of one exact parent state for each packet. It
-does not claim that installing those states sequentially preserves packets
-cleaned earlier.
+This is an existence statement for one state per packet; it does not assert
+that sequential installation preserves earlier packets.
 
 ## 2. Per-token packet-sweep return
 
@@ -73,12 +69,11 @@ Fix one full token
 1\le b<h.
 \]
 
-A **packet sweep** installs one one-layer exact covering state for every packet
-from CMR406.
+A packet sweep installs one one-layer exact covering state for each packet.
 
 ### Theorem CMR407 — PROVED
 
-The full-token edge reintroduction mass caused by one packet sweep is at most
+The full-token reintroduction mass caused by one packet sweep satisfies
 
 \[
 \boxed{
@@ -90,9 +85,8 @@ I_\tau^{(2),\mathrm{packet}}
 
 ### Proof
 
-Each packet installation replaces one whole-parent matching and therefore
-returns at most `t/p^b` token edges by CMR403. Sum over the `P_eta(t)` packets
-with multiplicity. ∎
+Each packet installation replaces one whole-parent matching and returns at most
+`t/p^b` token edges by CMR403. Sum with multiplicity. ∎
 
 ## 3. Combined deep-token visit bound
 
@@ -111,19 +105,13 @@ D_\tau^{(2)}
 }
 \]
 
-At the deep threshold
-
-\[
-p^b\ge t^{2/3},
-\]
-
-one has
+At the deep threshold `p^b\ge t^{2/3}`,
 
 \[
 \boxed{
 D_\tau^{(2)}
 \le
- t^{2/3}
+t^{2/3}
 +
 \left(
 2h+
@@ -134,12 +122,12 @@ D_\tau^{(2)}
 
 ### Proof
 
-Combine CMR399 with CMR407 and the initial stock from CMR394. Use `b<=h` and
-CMR406 for the specialization. ∎
+Combine CMR394 with CMR407 and the initial stock from CMR389. Use `b\le h` and
+CMR406. ∎
 
-Thus one full exact packet sweep has the same deep-token order as one prefix
-pass. The unresolved issue is recurrence of cleaned bands, not an excessive
-one-sweep edge-return cost.
+Thus one exact packet sweep has the same deep-token order as one prefix pass.
+The unresolved issue is recurrence of cleaned bands, not excessive one-sweep
+edge return.
 
 ## 4. Aggregate labelled packet budget
 
@@ -164,10 +152,10 @@ full-token return mass
 ### Proof
 
 At depth `b`, there are `(p+1)p^{2b}` full tokens. CMR407 contributes
-`P_eta(t)t/p^b` to each, so the depth contribution is
+`P_\eta(t)t/p^b` to each, so the depth contribution is
 
 \[
-(p+1)P_\eta(t)t p^b.
+(p+1)P_\eta(t)tp^b.
 \]
 
 Summing gives
@@ -179,14 +167,14 @@ Summing gives
 \frac{(p+1)P_\eta(t)}{p-1}t^2.
 \]
 
-CMR402 gives `O_p(t^2 log t)` for the prefix pass, and CMR406 gives
-`P_eta(t)=O(log t)`. ∎
+CMR397 gives `O_p(t^2\log t)` for the prefix pass and CMR406 gives
+`P_\eta(t)=O(\log t)`. ∎
 
-The packet sweep therefore introduces no new superquadratic token-return scale.
-A complete closure theorem must still show that packet installation does not
-recreate an unbounded number of earlier packet conflicts, or that such
-recreation pays repeated packet states, target load, or exchange ancestry.
+The packet sweep introduces no new superquadratic token-return scale. A complete
+closure theorem must still show that packet installation does not recreate an
+unbounded number of earlier packet conflicts, or that such recreation pays
+repeated packet states, target load, or exchange ancestry.
 
 No all-`n` theorem is claimed here. Packet counts, per-token coefficients, and
-aggregate geometric sums are checked in
+aggregate sums are checked in
 [`scripts/verify_prime_power_harmonic_packet_sweep.py`](../scripts/verify_prime_power_harmonic_packet_sweep.py).
