@@ -35,6 +35,10 @@ families and develop the complementary repair route. The active task ledger is
 | PX198 | Every compatible cylinder with residual order at least `8Delta` has two-sided `e^(plus/minus 4Delta)/(t)_r` probability bounds | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
 | PX199 | The bounded-forbidden spread estimate is stable under arbitrary compatible partial-matching conditioning | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
 | PX200 | Forbidden maximum degree `Delta` guarantees an allowed perfect matching at the sharp threshold `t>=2Delta` | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
+| PX201 | Weighted endpoint thinning simultaneously controls every rank-at-most-three support sector | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
+| PX202 | Conditioned bounded-forbidden spread transfers support-sector counts to expected certificate load | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
+| PX203 | The only undamped diagonal-free sectors are rematching transpositions and directed three-cycles | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
+| PX204 | A support-sector load smaller than the guaranteed destroyed mass yields a strictly improving rematching | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
 
 ## Current exact boundary
 
@@ -50,7 +54,8 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has a conditioning-stable recursive decoder.
+The low-syndrome repair route now has a support-sensitive, conditioning-stable
+recursive decoder.
 
 - PX183--PX184 identify the uniform-bank logarithmic barrier.
 - PX185--PX190 remove the internal rank-three logarithm, either structurally on
@@ -64,10 +69,15 @@ The low-syndrome repair route now has a conditioning-stable recursive decoder.
   fixed-rank cylinder scale on the residual bank.
 - PX200 lowers the sharp executability threshold to `t>=2Delta`; quantitative
   spread still uses `t>=8Delta`.
+- PX201--PX202 convert endpoint-index support excess directly into powers of the
+  thinning probability, including under bounded-rank conditioning.
+- PX203 shows that only transposition pairs and directed three-cycles avoid this
+  power saving; the transposition contribution is already bounded by selected
+  line occupancy.
+- PX204 gives the exact destroyed-mass versus support-load improvement criterion.
 
-The next exact obligation is termination: construct a monotone generational
-potential, or prove that an absolute recursion depth suffices to make destroyed
-old mass dominate all fixed-rank collateral. The new conditioning theorem means
-that this accounting may be performed sequentially without paying a new spread
-constant at every bounded-rank exposure. No exact infinite product closure is
-claimed yet.
+The next obligation is now quantitative rather than organizational: bound the
+support-two rank-one load, the support-three/support-four rank-two loads, and the
+support-excess rank-three loads along one decoder generation strongly enough to
+apply PX204 twice. An absolute recursion depth or monotone generational potential
+is still open, and no exact infinite product closure is claimed yet.
