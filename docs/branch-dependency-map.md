@@ -36,11 +36,15 @@ AC3at--AC3ax retain the generic normalized-to-physical adapter for genuinely mov
 
 The canonical OP route is different and is now corrected. AC3ay--AC3be provide the normalized component, complete fibres, current payment, actual scales, and coherent root pairing. AC3bf proves those current hyperbola roots are fixed by completion, so they cannot pay completion components. AC3bg--AC3bj lift every I6 state through one common RI5f boundary closure and give an exact active/blocker collateral criterion.
 
-AC3bp--AC3cb classify source-coset ranks one, two, and three. Every expected active term amplifies to raw physical channel classes without subgroup-order loss; the multiplicity alphabet is finite; and every heavy line reduces to one linear channel cell or at most eight explicit quadratic-root words. AC3cc--AC3cg prove that every new state-independent active triple is supported on one, two, or three RI5f closure cells and route it to closure stars, secants, triples, or boundary-path spread.
+AC3bp--AC3cb classify source-coset ranks one, two, and three. Every expected active term amplifies to raw physical channel classes without subgroup-order loss; the multiplicity alphabet is finite; and every heavy line reduces to one linear channel cell or at most eight explicit quadratic-root words. AC3cc--AC3cg route active state-independent collateral to closure stars, secants, triples, or boundary-path spread.
 
-AC3bk--AC3co close the blocker probability problem. Small occupancies have exact overlap/cycle tables, every compatible partial blocker prescription has an inclusion-exclusion extension count depending only on `(t,s,q)`, and the large-bank cylinder cap improves from `128/(t)_s` to the exact sharp value and the universal bound `3/(t)_s`. AC3cp--AC3ct then realize every selected prescription as one of nine crossed-rectangle path/cycle types. Closure-anchor words return to the closure router; all-I6 paths telescope and 2-/3-cycles preserve the product of their channel parameters.
+AC3bk--AC3co close blocker probability. Every partial blocker prescription has an exact inclusion-exclusion extension count, with universal cap `3/(t)_s`. AC3cp--AC3ct realize the selected prescription as one of nine crossed-rectangle path/cycle types, with exact product laws on all-I6 paths and cycles.
 
-The unresolved RI interface is now termination/payment of the explicit quadratic-root tuples, closure outputs, and crossed-rectangle complexes, together with the residual fixed term `F_rest`, incomplete fibres, root imbalance, and scale dispersion.
+AC3cu--AC3da close the entire state-independent geometric term: a new fixed union triple must use an RI5f closure cell, one universal two-closure crossed rectangle, or one exceptional `mh=2` layer-transfer rectangle. There is no residual diffuse `F_rest` for the fixed-cell triple potential.
+
+AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion; the last case has a row-column-disjoint subfamily carrying at least `1/51` of one exact unmatched class. AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight.
+
+The unresolved RI interface is now payment and scoped-collateral termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, off-family current companions, one-cell companion completions, and the extracted multi-scale bank. No quotient, fixed-term, fibre, scale, or blocker-probability class remains unnamed.
 
 ### `research/geometric-cleaning`
 
