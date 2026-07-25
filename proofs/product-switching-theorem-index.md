@@ -2,8 +2,8 @@
 
 This index continues the product-construction ledger after PX97. It records
 the strong-complete switching, affine-square, marker-flow, affine-orbit,
-exact-cover, lattice, absorber, and sign-quotient results developed on
-`research/all-n-product-construction`.
+exact-cover, lattice, absorber, sign-quotient, and completion-reservoir results
+developed on `research/all-n-product-construction`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -67,33 +67,39 @@ exact-cover, lattice, absorber, and sign-quotient results developed on
 | PX155 | Every fixed absorber template is feasible on at most one affine line of lattice-circle parameters | PROVED | `docs/88-unbounded-two-point-absorber-order.md` |
 | PX156 | The minimum two-point absorber order is unbounded as the prime varies | PROVED | `docs/88-unbounded-two-point-absorber-order.md` |
 | PX157 | Every normalized two-point type through prime order 31 has absorber order at most four | PROVED FINITE | `docs/88-unbounded-two-point-absorber-order.md` |
+| PX158 | The duplicated reservoir has exact degree, linearity, and projection-collision counts | PROVED | `docs/89-duplicated-reservoir-completion-reduction.md` |
+| PX159 | Every projection-collision-free row-perfect duplicated matching projects to a perfect strong-complete matching | PROVED | `docs/89-duplicated-reservoir-completion-reduction.md` |
+| PX160 | Projection collisions satisfy the mixed-bounded conditions for exact duplicated-reservoir completion | PROVED USING EXTERNAL THEOREM | `docs/90-anchored-completion-shape-control.md` |
+| PX161 | The PX141 almost-matching can simultaneously bound every one-new-edge anchored affine-triangle load by `p^eta` | PROVED USING PX141 EXTERNAL INPUT | `docs/90-anchored-completion-shape-control.md` |
+| PX162 | Every affine shape has exact occurrence incidences, and bounded matching number in `B` buckets gives at most `9(q-1)(p-1)B` occurrences | PROVED | `docs/91-high-arity-repeated-shape-conflicts.md` |
+| PX163 | Fixed high-arity random bucketing gives a simply bounded pure-completion repeated-shape conflict system | PROVED | `docs/91-high-arity-repeated-shape-conflicts.md` |
 
 ## Current exact boundary
 
 The switching-flow route is complete through the entire one-bridge nonlinear
 shell. The affine-orbit route has explicit constant-multiplicity seeds through
-order 53. The exact-cover route additionally proves a pseudorandom almost-seed
-for every sufficiently large prime and computes the complete lattice obstruction
-to exact completion. The sign-pair quotient supplies a smaller regular testbed
-with exact odd seeds through order 67 and the correct fixed-bin first moments.
+order 53. The exact-cover route proves a pseudorandom almost-seed for every
+sufficiently large prime and computes the complete lattice obstruction to exact
+completion. The sign-pair quotient supplies a smaller regular testbed with exact
+odd seeds through order 67 and the correct fixed-bin first moments.
 
-The individual bounded-absorber program is now completely resolved in the
-negative. Order two first fails at prime 17, order three first fails at prime
-23, and PX156 proves that no fixed order can absorb every two-point lattice
-leftover over all primes. Order four nevertheless remains sufficient through
-prime 31.
+The individual bounded-absorber program is completely resolved in the negative:
+PX156 proves that no fixed order absorbs every two-point lattice leftover over
+all primes.
 
-The next two proof obligations are:
+The duplicated-reservoir route now solves three pieces of exact pseudorandom
+completion:
 
-1. **Exact pseudorandom completion.** Complete PX141 while retaining subpower
-   secant and triangle loads. The conflict-free covering theorem of
-   Joos--Mubayi--Smith is designed to extend an almost-perfect matching across a
-   prescribed vertex set while avoiding mixed old/new conflicts; the remaining
-   work is to build a duplicated completion reservoir satisfying its degree,
-   codegree, and bucketed repeated-shape conflict bounds.
-2. **Collective or growing-order absorption.** Replace fixed two-point gadgets by
-   a collective absorber for many moment-zero circle packets, or allow absorber
-   order to grow while controlling the added secant and triangle loads.
+1. projection-collision-free row-perfect matchings project to exact
+   strong-complete mappings;
+2. every fixed one-completion-edge/two-old-edge affine-shape load is at most
+   `p^eta` in the first-stage matching;
+3. high-arity bucketing bounds the all-completion contribution to every affine
+   shape by `O(p^(1+beta))` for arbitrarily small fixed `beta>0`.
 
-Neither route yet proves infinite exact product closure, but one formerly open
-possibility--a universal bounded two-point absorber--is now ruled out.
+The remaining geometric sector consists of affine-shape occurrences using two
+completion edges and one selected old edge. Proving mixed high-arity degree and
+codegree bounds for all overlap patterns would complete the conflict-system
+input needed to preserve subpower triangle multiplicities during exact
+completion. Collective or growing-order absorption remains an alternative, but
+fixed local absorber order is impossible.
