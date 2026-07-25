@@ -61,7 +61,9 @@ This switch preserves that layer's row and column sets and removes `z` from that
 Let the opposite permutation layer occupy `t` of the two desired cross cells, where `t` is `0,1` or `2`. A legal repaired opposite layer which does not contain `z` always exists.
 
 1. `t=0`: leave the opposite layer unchanged.
-2. `t=1`: choose one opposite-layer cell whose column lies outside `{c_0,c_1}` and transpose its row with the unique blocked cross cell.
+2. `t=1`: orient the rectangle so the pivot is `(c_0,r_0)`.
+   - If the blocked cross is `(c_0,r_1)` in the pivot column, transpose its blocker row with the blocker row in the partner column `c_1`.
+   - If the blocked cross is `(c_1,r_0)` in the partner column, choose a blocker cell in a column `c_2` outside `{c_0,c_1}` and transpose those two blocker rows.
 3. `t=2`: choose one opposite-layer cell
    $$
    e=(c_2,r_2),
@@ -89,13 +91,13 @@ Every resulting state is a legal pair of disjoint permutation layers, the pivot 
 
 The two selected cells are distinct cells of one permutation layer, so they use distinct rows and columns. The opposite diagonal preserves its row and column sets. Every triple in `P_z` contains `z`, regardless of the layers of its context cells, so absence of `z` from the final union destroys the whole bucket.
 
-A collinear triple cannot occur on a two-column grid, so `W_z>0` implies at least three columns and supplies the outside auxiliary column required in cases `t=1,2`.
+A collinear triple cannot occur on a two-column grid, so `W_z>0` implies at least three columns and supplies an outside auxiliary column when it is required.
 
-In the singleton case, the selected blocked row occurs at no other opposite-layer column. Swapping it with an outside cell preserves the blocker matching; neither replacement equals a cell of the switched pivot layer, and the pivot column receives a row different from `r_0`.
+For `t=1`, suppose first that `(c_0,r_1)` is blocked. The blocker row in column `c_1` is neither `r_0`—otherwise the second cross would also be blocked—nor `r_1`—by inter-layer disjointness before the switch. After transposition, the pivot column receives that third row, while column `c_1` receives `r_1`; the pivot is not restored and both blocker replacements avoid the switched first layer. If instead `(c_1,r_0)` is blocked, row `r_0` occurs nowhere else in the blocker permutation. Swapping with any outside blocker column therefore gives column `c_1` a row different from `r_0`, puts `r_0` in a column different from `c_0`, and again avoids the switched first layer.
 
 In the full case, the displayed three-cycle uses the same three blocker rows and columns. It avoids the switched first layer: at `c_0`, row `r_2` differs from `r_1`; at `c_1`, row `r_1` differs from `r_0`; and at `c_2`, row `r_0` differs from the first-layer row in column `c_2` because `r_0` was the original first-layer row in the distinct column `c_0`. The pivot `(c_0,r_0)` is absent. QED.
 
-A simple phase flip is not a paid pivot decoder for the union potential: it would move `z` to the opposite layer and leave every union triple containing `z` intact. The oriented auxiliary repair above is essential.
+A simple phase flip is not a paid pivot decoder for the union potential: it would move `z` to the opposite layer and leave every union triple containing `z` intact. The oriented auxiliary repairs above are essential.
 
 ## AC3ft -- exact private payment by pivot aggregation -- PROVED
 
@@ -128,7 +130,7 @@ A rank-one triple has exactly one cell outside the fixed parent set `M`, so it h
 For a pivot `z`, let `E_z` contain:
 
 - the pivot, selected same-layer partner and both cross cells;
-- every outside auxiliary opposite-layer cell and replacement used by the singleton or three-cycle repair;
+- every partner-column or outside auxiliary opposite-layer cell and replacement used by the singleton or three-cycle repair;
 - the private paid bucket `P_z`;
 - every row, column, replacement, potential-factor, protected-bank and feasibility scope meeting any local state.
 
@@ -222,4 +224,4 @@ The remaining rank-one work is global no-recycling across successive parent conf
 
 ## Finite check
 
-`scripts/verify_ac_rank_one_pivot_decoder.py` normalizes both permutation layers on small grids, exhausts pivot rectangles and all opposite-layer occupancies, verifies the singleton and full-block auxiliary repairs, arbitrary-layer context-bucket destruction, private pivot assignment, rank-three failed ledgers and reverse-ticket identity.
+`scripts/verify_ac_rank_one_pivot_decoder.py` normalizes both permutation layers on small grids, exhausts pivot rectangles and all opposite-layer occupancies, verifies both singleton orientations and the full-block three-cycle, arbitrary-layer context-bucket destruction, private pivot assignment, rank-three failed ledgers and reverse-ticket identity.
