@@ -414,11 +414,17 @@ The remaining frontiers are now precise.
    [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md)
    proves OP4k: exact profile/signature records enter a role-tagged
    state ledger, while a no-growth return is one current recurrent
-   fibre of at most \(\Delta_p\) point-disjoint source factors.  The
-   remaining arithmetic task is to process that bounded fibre, not to
-   invent another ledger.
-4. **Other OP3j outputs.**  Resolve the high-overlap action-literal
-   kernels and wide action CSPs.
+   fibre of at most \(\Delta_p\) point-disjoint source factors.
+   [`orbit-phase-centre-fallback.md`](orbit-phase-centre-fallback.md)
+   proves OP4o: the fibre's \(3b\) distinct protected switches retain
+   positive current-centre weights, so one is executable with gain at
+   least \(W/(3b)\).  The remaining task is its stronger simultaneous
+   absorber classification, not another ledger or a one-step descent
+   rule.
+4. **Other OP3j outputs.**  OP4o likewise returns a current improving
+   centre from every paid high-overlap action-literal class and wide
+   action CSP.  Resolve their stronger completion/absorber interfaces
+   and the upstream case in which no improving centre is available.
 
 No generic implication edge is identified with a rational orbit, and
 no order-two template is declared absorbable before RI5 is proved.
@@ -458,3 +464,6 @@ point-star/matching extraction and its two carry-capacity routes.
 
 `scripts/verify_phase_chargeback.py` checks OP4n's direct descent from
 heavy and recurrent paid source-factor fibres.
+`scripts/verify_phase_centre_fallback.py` checks OP4o's direct descent
+from retained correction-centre weights, including source-unpaid
+rank-three fibres.

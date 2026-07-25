@@ -183,9 +183,13 @@ token capacity \(B_{\rm ext}\) from OP4m, OP3b gives the usual bound
 }
 \]
 
-This closes the paid-defect part of the orbit-phase decoder.  It does
-not classify unpaid protected-blocker fibres, complete RI5 dense
-edges, action-literal kernels, or wide action CSPs as absorbers.
+This closes the paid-defect part of the orbit-phase decoder.
+[`orbit-phase-centre-fallback.md`](orbit-phase-centre-fallback.md)
+gives the complementary OP4o correction-side rule: even a
+source-unpaid protected-blocker fibre, paid action-literal class, or
+paid wide class contains a current executable improving centre.  That
+rule prevents decoder stalling but does not classify those outputs,
+or complete RI5 dense edges, as absorbers.
 
 `scripts/verify_phase_chargeback.py` exhausts small nonnegative
 rank-three charge matrices and every nonempty factor fibre.  It checks

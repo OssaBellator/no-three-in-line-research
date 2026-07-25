@@ -529,8 +529,8 @@ must be processed.  OP4k.3 gives the corresponding OP3b finite-descent
 bound after replacing the fan-only token capacity by this combined
 capacity.  OP4m--OP4n further extend the role-tagged ledger to paid
 current defects and turn every current recurrent paid fibre into
-direct descent.  The remaining frontier consists of four named
-arithmetic outputs:
+direct descent.  Before OP4o, the remaining structural frontier was
+recorded as four named arithmetic outputs:
 
 1. high-overlap action-literal kernels;
 2. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
@@ -538,9 +538,19 @@ arithmetic outputs:
 3. OP4k bounded current recurrent rank-three blocker fibres;
 4. the wide-support action CSPs already separated by OP3j.
 
-To finish OP2--OP5, these outputs must be shown to expand, to force a
-new ledger signature, or to enter one of the classified absorber
-interfaces.  No claim that this final arithmetic classification is
+[`orbit-phase-centre-fallback.md`](orbit-phase-centre-fallback.md)
+proves OP4o and removes three of these current families as one-step
+decoder stalls.  A nonempty subfamily of \(n\) current corrections and
+retained weight \(W\) contains an executable centre of gain at least
+\(W/n\).  For an OP4k fibre of \(b\) switch-disjoint factors this
+becomes \(W/(3b)\geq W/(3\Delta_p)\), using centre weights without
+assigning them to the source factors.
+
+To finish the stronger OP2--OP5 interface, these outputs must still be
+shown to expand, to force a new ledger signature, or to enter one of
+the classified simultaneous absorber interfaces.  OP4o also does not
+supply a correction at a positive local minimum.  No claim that this
+final arithmetic classification or the upstream total oracle is
 already proved is made here.
 
 `scripts/verify_phase_signature_recurrence.py` exhausts small
@@ -553,3 +563,6 @@ satisfiable and infeasible rank-three banks.
 
 `scripts/verify_phase_blocker_ledger.py` exhausts the rank-three
 role-tagged ledger extension and its divisor-capacity recurrence gate.
+`scripts/verify_phase_centre_fallback.py` checks the complementary
+current-centre descent rule with exact split weights and
+switch-disjoint blocker fibres.

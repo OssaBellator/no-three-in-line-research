@@ -402,11 +402,14 @@ complete rational-orbit density, one-sided orbit growth with explicit
 completion deficits, one heavy repeated source factor, or quantified
 product-carry growth.
 
-The next independent endpoints are therefore the RI5
-row-column-preserving conversion of the dense fixed-edge output, the
-unpaid bounded blocker fibres, action-literal kernels, and wide action
-CSPs.  OP4n closes recurrence of every current-defect signature that
-retains OP4l payment.
+The next independent structural endpoints are therefore the RI5
+row-column-preserving conversion of the dense fixed-edge output and the
+simultaneous absorber classification of bounded blocker fibres,
+action-literal kernels, and wide action CSPs.  OP4n closes recurrence
+of every current-defect signature that retains OP4l payment.  OP4o
+separately proves direct descent from the retained correction-centre
+weights of the latter three outputs, including blocker fibres whose
+source factors are unpaid.
 The formerly separate rank-three ledger obligation is closed by
 [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md);
 its remaining output is one bounded current recurrent blocker fibre.

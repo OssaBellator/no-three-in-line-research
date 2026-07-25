@@ -335,11 +335,25 @@ The former “rank-three ledger integration” obligation is now closed.
 4. The fan and blocker ledgers share a finite state space but remain
    role-disjoint.
 
-What remains arithmetic is the treatment of the bounded recurrent
-unpaid blocker fibre, RI5 conversion, action-kernel, and wide-CSP
-frontiers.  OP4n separately closes every recurrent defect fibre that
-retains OP4l current-syndrome payment.  OP4k does not claim that an
-unpaid recurrent blocker fibre is itself absorbable.
+[`orbit-phase-centre-fallback.md`](orbit-phase-centre-fallback.md)
+proves OP4o for the current-centre side of the second output.  A fibre
+of \(b\) switch-disjoint factors meets exactly \(3b\) distinct
+protected corrections.  If their retained split weight is \(W_K\),
+one of those current corrections is executable with gain at least
+\[
+\frac{W_K}{3b}
+\geq
+\frac{W_K}{3\Delta_p}.
+\]
+Thus a source-unpaid recurrent blocker fibre is not a zero-progress
+decoder output.  OP4o does not assign payment to its source factors
+and does not claim that the fibre is itself absorbable.
+
+What remains arithmetic is the stronger simultaneous absorber or
+completion classification of this bounded fibre, RI5 conversion, and
+the corresponding structural classification of action-kernel and
+wide-CSP outputs.  OP4n separately closes every recurrent defect fibre
+that retains OP4l current-syndrome payment.
 
 `scripts/verify_phase_blocker_ledger.py` exhausts abstract fibre
 occupancies up to the divisor cap, checks the growth and recurrence

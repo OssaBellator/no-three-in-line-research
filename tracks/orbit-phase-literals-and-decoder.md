@@ -211,8 +211,10 @@ the same 2-SAT machinery.
 [`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md),
 [`orbit-phase-defect-router.md`](orbit-phase-defect-router.md),
 and
-[`orbit-phase-chargeback.md`](orbit-phase-chargeback.md)
-continue these interfaces through OP4g--OP4n.  They derive exact
+[`orbit-phase-chargeback.md`](orbit-phase-chargeback.md),
+and
+[`orbit-phase-centre-fallback.md`](orbit-phase-centre-fallback.md)
+continue these interfaces through OP4g--OP4o.  They derive exact
 rational/carry factor records, audit whole-bicycle label consistency,
 separate complete rational density from one-sided formal companions,
 turn every large rank-three matching into quantified product-carry
@@ -222,4 +224,9 @@ last two notes transfer at least one third of correction gain to
 current source factors, give a capacitated bicycle/off-core payment
 gate, and route paid current factors to point stars or point-disjoint
 carry-signature families.  OP4n turns every heavy or current-recurrent
-paid fibre into an executable improving correction.
+paid fibre into an executable improving correction.  OP4o then uses
+the retained current-centre weights directly: every nonempty
+structured correction family has a legal centre of at least its
+average retained weight, including source-unpaid OP4k blocker fibres.
+This closes their one-step descent role without asserting the stronger
+absorber classifications.

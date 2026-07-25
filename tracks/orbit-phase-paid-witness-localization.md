@@ -21,9 +21,12 @@ to a repeated forbidden literal.  A weighted organizer retains a fixed
 fraction of the OP3f payment on one certificate type, while explicitly
 returning corrections with large support as a separate paid output.
 
-The remaining frontier is genuinely arithmetic: classify the carry,
-coset, and denominator labels on these repeated-literal kernels and
-factor fans.
+The remaining structural frontier is genuinely arithmetic: classify
+the carry, coset, and denominator labels on these repeated-literal
+kernels and factor fans.  OP4o later supplies one-centre descent for
+every nonempty current paid kernel or wide family, so this
+classification is needed for simultaneous completion rather than
+basic progress.
 
 ## Witness partition around one correction
 
@@ -348,9 +351,12 @@ support-disjoint recurrent correction banks at one common current
 snapshot unless an action kernel deepens, and projects those banks
 exactly to rank-at-most-three CNF.  Its state-qualified ledger never
 combines historical corrections from different phase assignments.
-The remaining outputs are the action-literal correction kernels,
-wide action CSPs, contradictory implication chains, and explicit
-rank-three carry transversals.
+The remaining structured outputs are the action-literal correction
+kernels, wide action CSPs, contradictory implication chains, and
+explicit rank-three carry transversals.  OP4o later shows that every
+nonempty current paid action-kernel or wide class already contains an
+executable improving centre; their unresolved role is the stronger
+simultaneous completion or absorber classification.
 
 [`orbit-phase-implication-bridge.md`](orbit-phase-implication-bridge.md)
 refines the last two outputs.  It retains a bounded source-labelled

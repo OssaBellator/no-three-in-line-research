@@ -444,7 +444,8 @@ The numerical carry fields now have an exact role in the phase decoder.
    anchor-specific cross-carry signatures.
 3. Action-literal correction kernels and wide corrections remain
    separate paid structured outputs instead of being forced into an
-   inapplicable secant-star theorem.
+   inapplicable secant-star theorem.  OP4o later shows that either
+   current output already has a direct improving-centre fallback.
 4. Every loss from total correction gain to geometric signature count
    is explicit in \(D,s,t,h,q\), and \(\Delta_p^\star\).
 
@@ -462,13 +463,15 @@ rational quotient law edge by edge, and reduces rank three to a
 disjoint matching or bounded conditioned kernel.
 [`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md)
 routes every large matching to divisor-controlled product-carry
-signature growth.  The remaining
-termination theorem is arithmetic: certify or reroute the implicated
-geometric transitions, convert the fixed RI4 edge through RI5, handle
-rank-three signature recurrence, and classify repeated action-literal
-kernels and wide OP2n action CSPs.  Bounded-denominator absorbers are
-still needed only when the aligned carry identities place a subsequent
-closure step in the perfect-interpolation branch.
+signature growth.  OP4o supplies direct current-centre descent for
+source-unpaid recurrent blocker fibres, paid repeated action-literal
+kernels, and paid wide OP2n action CSPs.  The remaining structural
+theorem is arithmetic: certify or reroute the implicated geometric
+transitions, convert the fixed RI4 edge through RI5, and classify those
+outputs when a simultaneous absorber or completion is required.
+Bounded-denominator absorbers are still needed only when the aligned
+carry identities place a subsequent closure step in the
+perfect-interpolation branch.
 
 `scripts/verify_phase_carry_fan_router.py` checks O1 block partitions
 and carry ranges, enumerates real OP1 factors in small bounded-channel

@@ -69,10 +69,12 @@ law, and its cross/product-carry routes; a three-channel factor supplies
 three mixed product-carry routes.  An exact bicycle audit then either
 constructs globally consistent literal labels for OP4e or returns a
 root/literal mismatch with all source carry records retained.  Uniform
-arithmetic control is still open at the RI5 fixed-edge conversion,
-unpaid bounded recurrent rank-three blocker fibres, action-literal
-kernels, and wide action CSPs.  OP4n closes every heavy or recurrent
-current-defect output that retains OP4l payment.
+arithmetic absorber control is still open at the RI5 fixed-edge
+conversion and the simultaneous classification of bounded recurrent
+rank-three blocker fibres, action-literal kernels, and wide action
+CSPs.  OP4n closes every heavy or recurrent current-defect output that
+retains OP4l payment, while OP4o supplies direct descent from the
+current correction-centre weights of the latter three outputs.
 
 [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
 proves OP4i and the payment boundary.  Protected-bank correction weight
@@ -142,6 +144,19 @@ least \(W/(3b)\).  Consequently, a heavy factor gives direct descent;
 a current-new OP4m signature grows the ledger; and a current-old
 matching or point-star fibre gives descent of at least
 \(W/(3\Delta_p)\) or \(W/(3\Delta_p^\star)\), respectively.
+
+[`orbit-phase-centre-fallback.md`](orbit-phase-centre-fallback.md)
+proves OP4o and separates source-factor payment from correction-centre
+payment.  Every nonempty current structured output retains positive
+weights \(w_i\leq g_i\) on individually legal improving corrections,
+so a subfamily of \(n\) centres and total retained weight \(W\) has an
+executable centre of gain at least \(W/n\).  In particular, an OP4k
+fibre of \(b\leq\Delta_p\) switch-disjoint rank-three factors touches
+exactly \(3b\) current centres and gives descent at least
+\(W/(3b)\), even when its source factors are unpaid.  The same rule
+keeps the paid action-kernel and wide-CSP outputs from becoming
+zero-progress decoder rounds; their stronger absorber classification
+remains separate.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -353,7 +368,10 @@ channels, each paid fan centre exposes at least
 
 product or cross-carry signatures without losing its centre gain.
 Action-literal kernels and wide action CSPs remain separate paid
-outputs.
+structured outputs.  OP4o shows that either current family already
+contains an executable centre with at least its average retained gain;
+what remains open for these outputs is simultaneous completion or
+absorber structure, not one-step descent.
 
 OP3k--OP3l in the signature-recurrence note close the purely
 combinatorial cross-round gap without transporting corrections between
@@ -369,7 +387,10 @@ overlap.  With
 \(B_{\rm tok}=|\Omega||\Sigma_{\rm act}|\), OP3k.2 and OP3b give
 finite descent in at most
 \((B_{\rm tok}+1)\Phi_0+B_{\rm tok}-|\mathcal L_0|\) rounds to zero
-syndrome or one of the remaining named arithmetic outputs.
+syndrome or one of the named arithmetic outputs.  OP4o subsequently
+continues every nonempty current correction-centred output by strict
+descent; their named interfaces remain necessary only for stronger
+completion or absorber conclusions.
 
 ## OP4 — Product-state completion
 
@@ -450,6 +471,12 @@ defects.
 OP4n charges every heavy or current-recurrent paid defect fibre back
 to an executable improving correction, so this path yields only
 syndrome descent or finite ledger growth.
+OP4o applies directly on the correction-centre side.  It turns every
+nonempty current paid action/wide class, protected-bank subinstance,
+and source-unpaid recurrent OP4k fibre into strict descent.  The
+structured outputs remain relevant to OP5 because one-centre descent
+does not itself construct an absorber or supply the upstream total
+oracle at a positive local minimum.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -525,6 +552,9 @@ Paid current-defect star/matching extraction and its carry-capacity
 routes are checked by `scripts/verify_phase_defect_router.py`.
 Incidence-resolved charge-back and the sharp recurrent-fibre descent
 bound are checked by `scripts/verify_phase_chargeback.py`.
+Current-centre retained-weight descent, OP3k split payments, paid OP3j
+classes, and switch-disjoint blocker-fibre fallbacks are checked by
+`scripts/verify_phase_centre_fallback.py`.
 
 ## Completion criterion
 
