@@ -25,12 +25,17 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR453--461 | Rollback-sensitive potential range, optimal-allowed edge criterion, exact SCC product, additive local rollback cost, active-level concentration, threshold endpoint, and transfer to marked ancestor-return slots | PROVED | `docs/149-prime-power-tight-rollback-scc-factorization.md` |
 | CMR462--466 | Exact level-cut flow conservation, at most `2k` cross-level edges, balanced residual levels, conditional level factorization, finite skeleton count, and marked-slot transfer | PROVED | `docs/150-prime-power-rollback-level-skeleton.md` |
 | CMR467--471 | Right-endpoint cost polarization inside one level, exact source-split products, mixed-colour cycle criterion, colour-separated factorization, and transfer to rollback/ancestor faces | PROVED | `docs/151-prime-power-same-level-colour-split.md` |
+| CMR472--476 | Cyclic colour-boundary criterion, canonical short mixed-cycle witnesses, vertex packing versus concentration, simultaneous flips, and sparse-tail deletion | PROVED | `docs/152-prime-power-mixed-cycle-packing-concentration.md` |
+| CMR477--481 | Vertex-to-boundary incidence reduction, exact return-path representation, directed Menger theta-fan/cut alternative, second-edge concentration, and boundary-source-switch interpretation | PROVED | `docs/153-prime-power-mixed-cycle-boundary-fan-cut.md` |
+| CMR482--486 | Theta-fan private entering-edge sunflower, blocker resilience, rooted-conflict dichotomy, aggregate conflict payment, and harmonic packet/token endpoint | PROVED | `docs/154-prime-power-theta-fan-private-edge-payment.md` |
+| CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR471 is geometric use of mixed-colour zero-cost alternating
-cycles inside one same-level residual block. Positive marked-cost excursions
-are eliminated, cross-level motion is confined to a balanced skeleton of at
-most `2k` edges, and absence of a mixed block gives exact lower-dimensional
-factorization. The next target is a low-overlap cycle family or a theorem that
-cycle overlap forces prefix, primitive-height, quotient, carry, Hall, reserve,
-or envelope concentration.
+frontier after CMR491 has returned to established geometric repair objects.
+Mixed zero-cost motion now yields simultaneous vertex-disjoint flips, a sparse
+boundary interface, private theta-route edge payment, a repeated-cell secant
+star, or a fixed compatible rank-two completion cylinder. The next target is to
+splice the final two branches into the existing secant-star carry-dispersion and
+line-clean paid-pair machinery, converting them to target-load destruction,
+reserve depletion, prefix/carry concentration, strict factorization, or envelope
+expansion.
