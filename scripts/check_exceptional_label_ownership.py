@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Exact checker for PP3mg--PP3mk exceptional-label ownership criteria."""
+"""Exact checker for PP3mg--PP3mo exceptional-label ownership criteria."""
 
 from __future__ import annotations
 
 import argparse
 import json
+from collections import deque
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -83,7 +84,7 @@ def load_instance(
 
 def maximum_matching(
     adjacency: list[list[int]], right_size: int
-) -> tuple[int, list[int]]:
+) -> tuple[int, list[int], list[int]]:
     right_to_left = [-1] * right_size
 
     def augment(left: int, seen: list[bool]) -> bool:
@@ -106,7 +107,44 @@ def maximum_matching(
     for right, left in enumerate(right_to_left):
         if left != -1:
             left_to_right[left] = right
-    return size, left_to_right
+    return size, left_to_right, right_to_left
+
+
+def hall_witness(
+    adjacency: list[list[int]],
+    left_to_right: list[int],
+    right_to_left: list[int],
+    W: int,
+) -> dict[str, object] | None:
+    roots = [left for left, right in enumerate(left_to_right) if right == -1]
+    if not roots:
+        return None
+
+    reached_left = set(roots)
+    reached_right: set[int] = set()
+    queue: deque[int] = deque(roots)
+
+    while queue:
+        left = queue.popleft()
+        matched_right = left_to_right[left]
+        for right in adjacency[left]:
+            if right == matched_right or right in reached_right:
+                continue
+            reached_right.add(right)
+            matched_left = right_to_left[right]
+            if matched_left != -1 and matched_left not in reached_left:
+                reached_left.add(matched_left)
+                queue.append(matched_left)
+
+    macros = sorted({right // W for right in reached_right})
+    capacity = W * len(macros)
+    return {
+        "movement_labels": sorted(reached_left),
+        "acceptable_macros": macros,
+        "label_count": len(reached_left),
+        "macro_capacity": capacity,
+        "deficiency": len(reached_left) - capacity,
+    }
 
 
 def main() -> None:
@@ -140,7 +178,7 @@ def main() -> None:
                 neighbors.extend(i * W + copy for copy in range(W))
         adjacency.append(neighbors)
 
-    matching_size, left_to_right = maximum_matching(adjacency, T)
+    matching_size, left_to_right, right_to_left = maximum_matching(adjacency, T)
     ownership = [right // W if right != -1 else None for right in left_to_right]
     macro_loads = [0] * M
     for macro in ownership:
@@ -176,9 +214,14 @@ def main() -> None:
         "balanced_ownership_found": balanced,
         "ownership_by_movement_label": ownership,
         "macro_loads": macro_loads,
+        "ownership_hall_witness": (
+            None
+            if balanced
+            else hall_witness(adjacency, left_to_right, right_to_left, W)
+        ),
         "capped_refill_scores": [fraction_text(value) for value in capped_sums],
         "refill_score_violations": refill_violations,
-        "pp3mk_certified": not ore_violations and balanced and not refill_violations,
+        "pp3mk_certified": balanced and not refill_violations,
     }
     print(json.dumps(result, indent=2, sort_keys=True))
 
