@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Arithmetic checks for CMR347--CMR350."""
+"""Arithmetic checks for CMR360--CMR363."""
 
 from __future__ import annotations
 
@@ -33,8 +33,6 @@ def verify_amplification(max_t: int = 100_000) -> None:
             assert (threshold - 1) ** 2 < incidences <= threshold**2
             assert threshold >= ceil(t / 32)
 
-            # If fewer than threshold signatures carry all incidences, one has
-            # incidence degree at least threshold.
             if threshold > 1:
                 assert ceil(incidences / (threshold - 1)) >= threshold
 
