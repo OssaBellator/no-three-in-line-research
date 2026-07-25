@@ -36,9 +36,9 @@ e=b-a,
 \qquad
 g=\gcd(d,|e|),
 \qquad
-u=\frac d g,
+u=\frac{d}{g},
 \qquad
-v=\frac e g.
+v=\frac{e}{g}.
 \]
 
 Then `(u,v)` is the primitive integer direction of the chord line. Every grid
@@ -112,9 +112,7 @@ subfamily of size at least
 
 \[
 \boxed{
-\left\lceil
-\frac{t-2}{\tau(d)}
-\right\rceil
+\operatorname{ceil}\left(\frac{t-2}{\tau(d)}\right)
 }
 \]
 
@@ -140,9 +138,9 @@ one obtains the uniform lower bound
 
 \[
 \boxed{
-\left\lceil
+\operatorname{ceil}\left(
 \frac{t-2}{2\sqrt{t-1}}
-\rightceil.
+\right).
 }
 \]
 
