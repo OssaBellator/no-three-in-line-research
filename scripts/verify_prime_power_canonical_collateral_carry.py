@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify CMR574--CMR580 energy, height, and carry-splice arithmetic."""
+"""Verify CMR564--CMR570 energy, height, and carry-splice arithmetic."""
 
 from itertools import combinations
 from math import ceil, comb, floor, gcd, log2
