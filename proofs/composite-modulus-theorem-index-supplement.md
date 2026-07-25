@@ -14,11 +14,11 @@ supplement mirrors the collision-free live range recorded in
 | CMR406--409 | Harmonic-packet count, per-token packet-sweep return, combined deep-token visit bound, and aggregate quadratic-log sweep budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/138-prime-power-harmonic-packet-sweep-budget.md` |
 | CMR410--412 | Monotone-mask cycle erasure, simple finite histories, and the outside-context dichotomy for repeated ancestor or packet states | PROVED | `docs/139-prime-power-state-cycle-erasure.md` |
 | CMR413--417 | Exact full-token edge-incidence multiplicity, scale-filtered prefix and packet budgets, two-edge matching churn, and polynomial state-expansion payment | PROVED | `docs/140-prime-power-edge-incidence-state-expansion.md` |
-| CMR418--421 | Universal returned-edge support for recreated conflicts, harmonic packet recreation bounds, cumulative packet-loss ledger, and first-dirty schedule reduction | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
+| CMR418--421 | Entering-edge support for recreated selected conflicts, equality with leaving-edge churn, harmonic packet recreation bounds, and the first-dirty packet ledger | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
+| CMR422--425 | Lossy packet reset deletion/forced-ancestry dichotomy, finite deletion budget, packet-installation bound, and conditional ancestry-width closure | PROVED / PROVED UNDER THE ANCESTRY-WIDTH HYPOTHESIS | `docs/142-prime-power-packet-loss-deletion-ancestry.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR421, exact cycles, cost-free state expansion, and uncharged packet recreation
-are removed from the live obstruction. The immediate task is a global upper
-bound on cumulative returned-edge churn or a conversion of excess churn into
-target-load destruction, reserve or envelope depletion, or bounded fully forced
-exchange ancestry.
+CMR425, packet scheduling inside one deletion pass is reduced to fully forced
+exchange-ancestry width. The immediate remaining targets are an incoming-width
+bound for CMR217 ancestry, a simultaneous exchange-cycle resampling theorem, and
+an analogous monotone payment for repeated local ancestor resets.
