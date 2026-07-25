@@ -18,16 +18,17 @@ def count_token_pairs(t: int, p: int, d: int, b: int, slope: int | None) -> int:
     """Count ordered row pairs on the two fixed source slices."""
     modulus = p**b
     rows = list(range(0, t, modulus))
+    r = valuation(d, p)
     result = 0
     for first in rows:
         for second in rows:
             displacement = second - first
             if displacement == 0:
                 continue
-            depth = min(valuation(d, p), valuation(displacement, p))
+            depth = min(r, valuation(displacement, p))
             if depth != b:
                 continue
-            if b < valuation(d, p):
+            if b < r:
                 if slope is not None:
                     continue
             else:
@@ -41,30 +42,32 @@ def count_token_pairs(t: int, p: int, d: int, b: int, slope: int | None) -> int:
 
 
 def verify_exact_counts() -> None:
-    for p in (3, 5, 7):
-        for h in range(2, 6):
-            t = p**h
-            for d in range(1, min(t, 4 * p**2)):
-                r = valuation(d, p)
-                for b in range(r + 1):
-                    size = t // (p**b)
-                    if b < r:
-                        observed = count_token_pairs(t, p, d, b, None)
-                        expected = size * (size - size // p)
+    # Exhaustive endpoint-pair enumeration is deliberately restricted to small
+    # boards; the large-range checks below use only the closed formulas.
+    cases = ((3, 2), (3, 3), (3, 4), (5, 2), (5, 3), (7, 2))
+    for p, h in cases:
+        t = p**h
+        for d in range(1, min(t, 3 * p + 1)):
+            r = valuation(d, p)
+            for b in range(r + 1):
+                size = t // (p**b)
+                if b < r:
+                    observed = count_token_pairs(t, p, d, b, None)
+                    expected = size * (size - size // p)
+                    assert observed == expected
+                else:
+                    for slope in range(p):
+                        observed = count_token_pairs(t, p, d, b, slope)
+                        if slope:
+                            expected = size * size // p
+                        else:
+                            expected = size * (size // p - 1)
                         assert observed == expected
-                    else:
-                        for slope in range(p):
-                            observed = count_token_pairs(t, p, d, b, slope)
-                            if slope:
-                                expected = size * size // p
-                            else:
-                                expected = size * (size // p - 1)
-                            assert observed == expected
 
 
 def verify_deep_bound() -> None:
-    for p in (3, 5, 7, 11):
-        for h in range(2, 15):
+    for p in (3, 5, 7, 11, 13):
+        for h in range(2, 25):
             t = p**h
             for b in range(h):
                 if p ** (2 * b) <= t:
@@ -76,8 +79,8 @@ def verify_deep_bound() -> None:
 
 
 def verify_batch_threshold() -> None:
-    for p in (3, 5, 7, 11, 13):
-        for h in range(2, 12):
+    for p in (3, 5, 7, 11, 13, 17):
+        for h in range(2, 20):
             t = p**h
             for token_count in range(1, p):
                 total = token_count * (t // p)
