@@ -1,0 +1,20 @@
+{
+  "verify_all_signatures_up_to": 8,
+  "cases": [
+    {
+      "name": "credit_rich",
+      "h": 6,
+      "forbidden_pairs": [[0, 0], [0, 1]]
+    },
+    {
+      "name": "credit_poor",
+      "h": 6,
+      "forbidden_pairs": [[1, 1], [0, 1]]
+    },
+    {
+      "name": "local_contradiction",
+      "h": 6,
+      "forbidden_pairs": [[0, 0], [1, 1]]
+    }
+  ]
+}
