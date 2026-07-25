@@ -138,6 +138,22 @@ remains open. This repository does **not** contain a complete proof.
   \qquad
   \text{simultaneous batch capacity }\Omega(t^{1/3}).
   \]
+- One old-cell-clean coarse prefix reset returns at most \(t/p^b\) edges to a
+  fixed depth-\(b\) token, independently of the coarser reset depth.
+- In a one-pass descending prefix schedule,
+  \[
+  I_\tau^{\rm coarse}\le\frac{2bt}{p^b},
+  \]
+  and the total direction-labelled coarse return mass over all nonroot tokens is
+  at most
+  \[
+  (p+1)t\,h(h-1)=O_p(t\log^2t).
+  \]
+- In an arbitrary schedule, unbounded coarse return forces repeated rematching
+  of one of the at most \(2b\) compatible ancestor depth-layer slots.
+- Every off-token witness certificate already opens an executable prefix
+  continuation; the remaining unresolved repeated-token term is fully forced
+  exchange ancestry together with repeated ancestor resets.
 
 ## Important correction
 
@@ -152,22 +168,28 @@ include edge reintroduction or are restricted to one simultaneous batch.
 
 ## What remains conditional
 
-1. **Coarse-to-fine reintroduction.** Charge token-compatible cells and fine
-   stars restored by later coarse prefix or joint-parent repairs.
+1. **Repeated ancestor-reset payment.** A one-pass descending prefix schedule now
+   has an explicit \(O_p(t\log^2t)\) token-return budget. For arbitrary closure
+   histories, charge repeated use of one compatible ancestor slot to coarse
+   target destruction, envelope expansion, reserve consumption, or new exchange
+   ancestry.
 2. **Band scheduling and no-return.** Combine the exact one-band covering theorem
    across the \(O(\log t)\) intermediate bands without accumulating a forbidden
    logarithm in the conflict degree or recreating previously cleaned bands.
-3. **Witness and ancestry width.** Route off-token witness deletions and bound
-   the width of the fully forced certificate-exchange DAG.
+3. **Forced ancestry width.** Bound the width of the fully forced
+   certificate-exchange DAG or resample several exchange cycles simultaneously.
 4. **Low-height carry absorption.** Charge the remaining lower-height line
    populations to first-separation, quotient, and primitive carry signatures.
-5. **Prime-field terminal conversion.** Transfer the inherited-envelope and
+5. **Joint-parent reintroduction.** The recursive prefix profile is explicit, but
+   arbitrary joint-parent resets need a corresponding descendant-token return
+   bound.
+6. **Prime-field terminal conversion.** Transfer the inherited-envelope and
    exact-covering mechanism to prime-field carry cycles.
-6. **Square-root divisor boundary.** Remove or absorb the remaining nearly
+7. **Square-root divisor boundary.** Remove or absorb the remaining nearly
    singular collision terms.
-7. **Further balanced prime families.** Extend the non-reciprocal grid
+8. **Further balanced prime families.** Extend the non-reciprocal grid
    factorization beyond prime seven.
-8. **CRT and arbitrary side lengths.** Control mixed projections and cover all
+9. **CRT and arbitrary side lengths.** Control mixed projections and cover all
    positive integers \(n\).
 
 ## Bottom line
@@ -176,8 +198,10 @@ There is no complete proof. The composite prime-power route now closes the
 generic recursive first moment, prefix and joint-parent collateral, terminal
 target contraction, sharp Hall blocker geometry, universal line-clean repair,
 heavy-token local continuation, exact high-slice cleaning, exact completion of
-one intermediate band, and one-step deep-token batch elimination.
+one intermediate band, one-step deep-token batch elimination, and the complete
+coarse-prefix return profile for a single descending pass.
 
 The principal remaining prime-power theorem is dynamic rather than local:
-control coarse-to-fine reintroduction while scheduling multiple height bands.
-Arbitrary side-length coverage remains necessary afterward.
+control repeated resets of one compatible ancestor slot while scheduling
+multiple height bands and bounding fully forced exchange ancestry. Arbitrary
+side-length coverage remains necessary afterward.
