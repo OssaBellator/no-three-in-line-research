@@ -78,6 +78,8 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3jy--PP3kc | Zero-unary-shadow host, Hall rectangle, and superregular zero-cost endpoint | PROVED / FROM SR1 | `docs/97-zero-unary-shadow-hall-rectangles.md` |
 | PP3kd--PP3kh | Sublinear exceptional-resource deletion and linear support-core extraction | PROVED | `docs/98-shadow-support-core-regularization.md` |
 | PP3ki--PP3kn | Free source-star distinguished endpoint conversion and captive-centre split | PROVED / CONDITIONAL ON HOST | `docs/99-source-endpoint-star-conversion.md` |
+| PP3ko--PP3kt | Hall support colouring, tomographic line banks, and binary fan localization | PROVED | `docs/100-hall-rectangle-and-binary-fan-localization.md` |
+| PP3ku--PP3kz | Pairing-invariant excess cell-shadow potential and dynamic pool termination | PROVED / CONDITIONAL ON CONVERSION | `docs/101-dynamic-pool-excess-shadow-potential.md` |
 
 ## Current exact target
 
@@ -95,55 +97,55 @@ spread, all patch-only cross-macro energy, and all ordinary two-slot
 source-anchor energy are closed. If the controller-aware global label graphs
 satisfy PP3gl, PP3hq immediately gives the full patch.
 
-A positive-density controller-aware failure produces a source-endpoint star or a
-resource matching. The resource branch is source-valid after two-scale thinning.
-All recapture and residual unary-shadow cells may now be removed from one
-zero-unary host `G_0` rather than charged individually. Failure of this unary
-endpoint is exactly a Hall rectangle
+The resource branch is source-valid after two-scale thinning. Recapture and
+residual unary-shadow cells are absorbed into one zero-unary host `G_0`. Failure
+is exactly a Hall rectangle
 
 ```text
 X times Y contained in the unary forbidden support,
 |X|+|Y| > q.
 ```
 
-If `G_0` is superregular and the remaining pair/triple support is summable,
-PP3kb gives a source-admissible endpoint trade with zero insertion shadow.
+A macroscopic rectangle contains a quadratic core of one witness type. A
+recapture-dominated core yields a linear bank of designated lines, each meeting
+the endpoint rectangle in linearly many cells. The cubic binary support core
+yields either a linear endpoint-cell fan with candidate-line structure or a
+linear resource-disjoint binary conflict bank.
 
-Isolated rich fibres and binary stars are also not terminal. Deleting `o(q)`
-exceptional endpoint indices preserves positive credit and all source-validity
-bounds. Persistent failure forces either
+Isolated rich resources are prunable. Persistent failure forces `Omega(q^2)`
+unary support or `Omega(q^3)` binary support in a linear endpoint-resource core.
+
+The source-star geometry has been corrected: PP3hx gives a common source
+endpoint, not a common candidate point. The apparent captive-centre obstruction
+from fixed controller identities is removed by the dynamic excess potential
 
 ```text
-Omega(q^2) unary support in a linear fibre core,
+Xi(S) = sum_z (number of source blocker pairs through z - 1).
 ```
 
-or
+The subtracted unit is the unique automatic controller-containing axis blocker.
+Every additional blocker is nonaxis and controller-disjoint. Permuting matching
+endpoints inside one pool preserves its old-column set, old-row set, and complete
+candidate-cell universe, so `Xi` has an exact removal-credit-minus-insertion-cost
+identity even when controller pairings change. A captive star supplies its full
+linear credit to this potential.
 
-```text
-Omega(q^3) binary support in a linear conflict core.
-```
-
-The source-star geometry has been corrected. PP3hx gives blocker pairs sharing a
-source endpoint, not pairs through a common candidate point, so AN2--AN4 do not
-apply verbatim. A free star centre admits a linear distinguished endpoint bank
-and is reduced to the same zero-unary Hall/superregular endpoint. A captive star
-centre lies in the fixed controller infrastructure and requires a dynamic
-controller potential or a controller-preserving trade on its blocker partners.
-
-Every successful trade strictly decreases a fixed nonnegative integer potential,
-so a uniform conversion theorem automatically terminates.
+For every fixed density threshold, a uniform pool-compatible conversion theorem
+terminates below that threshold; a uniform `o(1)` threshold sequence gives
+`o(1)` bad cell-entry density.
 
 The remaining bottleneck is now reduced to:
 
 - prove the controller-aware global label graphs satisfy PP3gl directly; or
-- convert a Hall rectangle or a matchable but non-superregular zero-unary host;
-- convert the cubic binary shadow-support core;
-- convert a free source-star Hall rectangle when PP3kl does not apply; and
-- handle captive source-star centres without destroying the fixed controller
-  infrastructure.
+- convert the Hall rectangle or a matchable but non-superregular zero-unary host;
+- convert the tomographic recapture-line bank;
+- convert the binary endpoint-cell fan or resource-disjoint binary bank; and
+- construct source-admissible pool-compatible endpoint trades whose `Xi`
+  insertion cost is below the star/resource removal credit.
 
-Diffuse weighted residuals, isolated rich fibres, and source admissibility of the
-resource endpoint trade are no longer open.
+Dynamic controller relabelling, diffuse weighted residuals, isolated rich
+fibres, and source admissibility of the resource endpoint trade are no longer
+separate obstructions.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
