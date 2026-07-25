@@ -30,6 +30,11 @@ This ledger records only branch-specific results and corrections.
 | RI5n | Failed auxiliary collateral comparison forces raw profile weight linear in `n-1` | PROVED | `docs/rational-inverse-singleton-transposition.md` |
 | RI5o | Failed auxiliary collateral localizes to a vertical star, horizontal star, or opposite-rectangle diagonal profile | PROVED | `docs/rational-inverse-crossed-channel-localization.md` |
 | RI5p | Each crossed-channel profile has one heavy auxiliary rectangle or quantified physical spread | PROVED | `docs/rational-inverse-crossed-channel-localization.md` |
+| RI5q | Every crossed-channel collateral triple has an exact primitive direction and signed affine offset | PROVED | `docs/rational-inverse-crossed-affine-addresses.md` |
+| RI5r | A crossed profile yields direction spread, parallel-offset spread, or one heavy exact affine line | PROVED | `docs/rational-inverse-crossed-affine-addresses.md` |
+| RI5s | Closed completion components form an independent Boolean toggle bank with exact active cylinder probabilities | PROVED | `docs/rational-inverse-component-toggle-bank.md` |
+| RI5t | The toggle bank plus conditional blocker repair has an exact expected collateral criterion | PROVED | `docs/rational-inverse-component-toggle-bank.md` |
+| RI5u | Failed toggle comparison localizes to active rank one, two, three, or blocker-repair collateral | PROVED | `docs/rational-inverse-component-toggle-bank.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
