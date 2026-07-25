@@ -37,7 +37,9 @@ AC3fz--AC3gf import the union-safe product. AC3hf--AC3hh import the fixed-cell a
 
 AC3hq--AC3hr remove the generic ordinary support-faithfulness gate after physical occurrence realization: same-anchor `h,h+q` pairs automatically enter the AC3ec collision/clean-support audit, while the complete AC3v envelope graph handles every remaining incompatibility. AC3hs--AC3ht show that raw reflected `CD` cells are nonradial and must be executed through separately proved radial support or realized-rank pivot routing.
 
-The remaining BDA work is physical realization of unresolved arithmetic roles, balanced-floor/higher-rank arithmetic and finite-profile cycle termination.
+BDA5as--BDA5au and AC3hu--AC3hw close every cycle consisting only of physical `h <-> h+q` moves and strict effective-denominator descent. Any surviving cycle changes one same-denominator non-scalar field: primitive direction, residue/unit, rank/channel, anchor/context, external arithmetic role or bank type.
+
+The remaining BDA work is physical realization of unresolved arithmetic roles, balanced-floor/higher-rank arithmetic and classification of those same-denominator non-scalar cycle edges.
 
 ## Rational-inverse input
 
@@ -77,8 +79,8 @@ AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weig
 ## Current frontier
 
 1. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
-2. Classify the retained arithmetic labels of heavy certificates, pair-core returns and failed rematching ranks.
-3. Prove finite transition-cycle termination for those exact profiles and assemble AC4.
+2. Classify same-denominator non-scalar changes of primitive direction, residue/unit, rank/channel, anchor/context, external role or bank type.
+3. Build the residual finite transition quotient from those labelled edges and assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
