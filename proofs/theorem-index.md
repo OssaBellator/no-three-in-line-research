@@ -85,6 +85,13 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3el | Actual clean partners satisfy the full BDA5a–BDA5e support contract with private occupied-side payment | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
 | AC3em | Clean pairs yield a scope-complete executable product bank of weight `W/K` or one finite paid overload | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
 | AC3en–AC3eo | One-sided paid decoder products have exact four-rank collateral; failure returns `1/128` or `1/256` AC3am-scale profiles | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
+| AC3ep–AC3eq | One- and two-cell missing BDA partners have canonical active completion and full blocker repair through occupancy four | PROVED | `docs/alternating-core-bda-missing-support-completion.md` |
+| AC3er–AC3es | Missing-support records install and decode; failed products return one of seven stage masks at `1/224` or `1/448` AC3am scale | PROVED | `docs/alternating-core-bda-missing-support-completion.md` |
+| AC3et–AC3eu | Companion anchors have an exact opposite-diagonal geometry and a legal paid two-layer rectangle decoder | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ev | Off-family companion lines yield executable paid rectangle banks; failure returns a three-mask profile at `V/(93K)` | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ew–AC3ex | Absent companion anchors canonically install then decode; failure returns one of seven masks at `U/(357K)` | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ey | Bare companion installation is not paid; the private factor is destroyed only by the rectangle decoder | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ez | The fibre quadratic excludes both fixed-edge midpoint triples, so the final companion rectangle support is triple-free | PROVED | `docs/alternating-core-ri-companion-midpoint-exclusion.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
