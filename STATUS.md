@@ -47,11 +47,9 @@ remains open. This repository does **not** contain a complete proof.
   factor.
 - Broad factors and widths four through six reduce to low primitive height.
   Width two and width three reduce to explicit primitive/carry signatures.
-- Universal line-clean paid-pair banks apply to singleton, width-two,
-  width-three, and finite-width Hall families. They move the old target, remove
-  every other cell of the paid line, and eliminate rank-two-on-that-line
-  collateral.
-- A frozen two-slice line-clean bank forces a dyadic band containing
+- Universal line-clean paid-pair banks move the old target, remove every other
+  cell of the paid line, and eliminate rank-two-on-that-line collateral.
+- A frozen two-slice line-clean bank forces a dyadic band with
   \[
   \Omega\!\left(\frac{H^3}{\log t}\right)
   \]
@@ -70,85 +68,92 @@ remains open. This repository does **not** contain a complete proof.
   \qquad
   \sum_{K\in\mathcal K}\frac1K<\frac32.
   \]
-- In particular, any two dyadic intermediate-height bands beginning at height
-  at least five can be cleaned simultaneously.
-- All dyadic bands from \(\max\{5,t^\eta\}\) to \(t\) partition into
+- Any two dyadic intermediate-height bands beginning at height at least five can
+  be cleaned simultaneously.
+- All relevant dyadic bands partition into
   \[
   P_\eta(t)
   \le
   \left\lceil\frac{1+\log_2t}{2}\right\rceil
   \]
-  exact harmonic packets. One full packet sweep therefore uses only
-  \(O(\log t)\) whole-parent replacements.
-- The existence of one clean state for every packet is proved. Sequential
-  preservation of earlier packets is not; this is now a recurrence problem,
-  not a missing packet construction.
+  exact harmonic packets. One packet sweep uses only \(O(\log t)\)
+  whole-parent replacements.
+- The existence of one clean state for every packet is proved. The remaining
+  question is sequential preservation, not packet construction.
 
-### Heavy, dispersed, and repeated full tokens
+### Full-token return, state expansion, and packet recreation
 
-- Every heavy carry-cell certificate opens an executable prefix continuation:
-  external witnesses return to an earlier block, internal witnesses transfer to
-  a deeper closest pair, and equilateral witnesses use their common block.
-- Fresh dispersed full tokens have a finite static budget. Static monotonicity
-  is false, so the ledger counts exact edge reintroductions.
-- For a full token
-  \[
-  \tau=(b,a,c,\theta),
-  \]
-  the exact initial edge stock is
-  \[
-  \frac{t^2}{p^{2b}},
-  \]
-  and the dynamic inventory is
-  \[
-  D_\tau^{(2)}
-  \le
-  \frac{t^2}{p^{2b}}+I_\tau^{(2)}.
-  \]
-- One recursive ancestor reset returns at most \(t/p^b\) full-token edges. In a
-  descending one-pass prefix schedule,
+For a full token
+
+\[
+\tau=(b,a,c,\theta),
+\]
+
+the exact initial edge stock and dynamic inventory are
+
+\[
+|U_\tau^{(2)}|=\frac{t^2}{p^{2b}},
+\qquad
+D_\tau^{(2)}
+\le
+\frac{t^2}{p^{2b}}+I_\tau^{(2)}.
+\]
+
+- One recursive ancestor reset returns at most \(t/p^b\) token edges. In one
+  descending prefix pass,
   \[
   I_\tau^{(2),\mathrm{coarse}}
   \le
   \frac{2bt}{p^b}.
   \]
-- At the deep threshold \(p^b\ge t^{2/3}\),
+- At \(p^b\ge t^{2/3}\),
   \[
   D_\tau^{(2)}
   \le
   t^{2/3}+2h t^{1/3}.
   \]
-- The direction-labelled full-token return mass over all nonroot tokens in one
-  prefix pass is \(O_p(t^2\log t)\).
-- Arbitrary recursive histories factor through reset multiplicity: excessive
-  return forces repeated use of one of at most \(2b\) compatible ancestor
-  depth-layer slots.
-- A whole-parent one-layer reset, including an exact-packet replacement, returns
-  at most \(t/p^b\) full-token edges. One ordered joint-parent reset returns at
-  most \(2t/p^b\).
-- One complete harmonic packet sweep contributes
+- A whole-parent one-layer reset returns at most \(t/p^b\) token edges; one
+  ordered joint-parent reset returns at most \(2t/p^b\).
+- One packet sweep contributes
   \[
   I_\tau^{(2),\mathrm{packet}}
   \le
-  \frac{P_\eta(t)t}{p^b}
+  \frac{P_\eta(t)t}{p^b}.
   \]
-  to one token. At the deep threshold, one prefix pass plus one packet sweep
-  gives
+- Exact edge-incidence accounting sharpens the aggregate direction-labelled
+  return mass of one two-layer prefix pass to
   \[
-  D_\tau^{(2)}
-  \le
-  t^{2/3}
-  +
-  \left(
-  2h+
-  \left\lceil\frac{1+\log_2t}{2}\right\rceil
-  \right)t^{1/3}.
+  (p+1)t h(h-1),
   \]
-- The aggregate direction-labelled return mass of one prefix pass plus one
-  packet sweep remains \(O_p(t^2\log t)\).
+  and one prefix pass plus one packet sweep to
+  \[
+  (p+1)t(h-1)\bigl(h+P_\eta(t)\bigr)
+  =O_p(t\log^2t).
+  \]
+  The earlier \(O_p(t^2\log t)\) tokenwise union bounds remain valid but are not
+  sharp.
+- Exact selected-state cycles are erasable under a monotone forbidden mask.
+- Two distinct feasible selected perfect matchings return at least two old
+  edges. Hence a cycle-erased sequence of distinct states pays returned-edge and
+  full-token incidence mass linearly; factorial state counts are no longer the
+  quantitative endpoint.
+- If a later reset recreates a triple from an earlier clean packet, that triple
+  contains a newly returned edge. For packet weight \(W\), at most
+  \[
+  2(t-1)^2W|R|
+  \]
+  packet triples are recreated by a reset returning \(R\).
+- For a first-dirty packet schedule with total packet weight \(W_*\), cumulative
+  returned-edge churn \(C\), packet count \(P\), and installation count \(T\),
+  \[
+  T
+  \le
+  P+2(t-1)^2W_*C.
+  \]
+  Thus packet losses and distinct-state expansion are charged to the same churn
+  variable.
 - Every off-token witness certificate already opens an executable prefix
-  continuation. The residual repeated-token branch is fully forced exchange
-  ancestry together with repeated use of ancestor or packet states.
+  continuation. The remaining forced branch is exchange ancestry.
 
 ## Important corrections
 
@@ -158,36 +163,35 @@ remains open. This repository does **not** contain a complete proof.
   CMR164.
 - Static token consumption is not monotone; CMR350 records exact two-step
   token-restoring cycles. Every current no-return statement includes
-  reintroduction, reset multiplicity, or a scheduled-pass hypothesis.
+  reintroduction, reset multiplicity, cycle erasure, or a scheduled-pass
+  hypothesis.
 
 ## What remains conditional
 
-1. **Repeated ancestor/packet-state payment.** Charge repeated use of one
-   compatible ancestor or harmonic-packet state to destroyed coarse target
-   load, envelope expansion, reserve consumption, or new exchange ancestry.
-2. **Packet no-return.** One exact state per packet and the complete one-sweep
-   return budget are proved. Show that installing later packets does not
-   recreate an unbounded number of earlier packet conflicts, or charge every
-   recreation to a monotone quantity.
-3. **Forced ancestry width.** Bound the width of the fully forced
-   certificate-exchange DAG or resample several exchange cycles together.
-4. **Low-height carry absorption.** Charge the remaining lower-height lines to
+1. **Global churn payment.** Bound cumulative returned-edge churn by destroyed
+   target load, strict envelope expansion, protected-reserve depletion, or a new
+   monotone packet potential.
+2. **Forced ancestry width.** Convert excess churn into bounded width or
+   simultaneously resample several fully forced certificate-exchange cycles.
+3. **Low-height carry absorption.** Charge the remaining lower-height lines to
    first-separation, quotient, and primitive carry signatures.
-5. **Prime-field terminal conversion.** Transfer the inherited-envelope and
+4. **Prime-field terminal conversion.** Transfer the inherited-envelope and
    exact-covering mechanism to prime-field carry cycles.
-6. **Square-root divisor boundary.** Remove or absorb the residual nearly
+5. **Square-root divisor boundary.** Remove or absorb the residual nearly
    singular collision terms.
-7. **Further balanced prime families.** Extend the non-reciprocal factorization
+6. **Further balanced prime families.** Extend the non-reciprocal factorization
    beyond prime seven.
-8. **CRT and arbitrary side lengths.** Control mixed projections and cover every
+7. **CRT and arbitrary side lengths.** Control mixed projections and cover every
    positive integer \(n\).
 
 ## Bottom line
 
 There is no complete proof. On the prime-power route, the generic first moment,
 prefix and joint-parent collateral, terminal contraction, Hall-blocker repair,
-heavy-token continuation, exact harmonic-packet completion, and the complete
-one-pass prefix-plus-packet token-return budget are closed. The principal
-remaining theorem is dynamic: prevent repeated ancestor and packet states, and
-fully forced exchange ancestry, from recycling the same geometric defects.
-Arbitrary side-length coverage remains necessary afterward.
+heavy-token continuation, exact harmonic-packet completion, one-sweep return
+costs, exact state-cycle erasure, polynomial state-expansion payment, and packet
+recreation charging are closed.
+
+The principal remaining prime-power theorem is now a global bound or conversion
+for cumulative returned-edge churn and fully forced exchange ancestry. Arbitrary
+side-length coverage remains necessary afterward.
