@@ -1,8 +1,10 @@
-# Prime-patching frontier addendum: credited-bank support closure
+# Prime-patching frontier addendum: credited-bank and domain-support closure
 
 This addendum extends `proofs/prime-patching-recent-index.md` after PP3afm.
-It records the paid resource-bank and fixed-cell reductions in `docs/193`
-through `docs/197` without replacing the larger historical ledger.
+It records the paid resource-bank, fixed-cell, and direct allocation-domain
+reductions in `docs/193` through `docs/199` without replacing the larger
+historical ledger.  The filename is retained for continuity with earlier
+references.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -11,6 +13,8 @@ through `docs/197` without replacing the larger historical ledger.
 | PP3aga--PP3agg | Adaptive ambient thinning absorbs every vanishing foreign support density; persistent failure is a positive-density ambient unary/rank-three/rank-four resource star | PROVED | `docs/195-adaptive-ambient-foreign-support-thinning.md` |
 | PP3agh--PP3agn | A marked source-star centre recreates only an `O(q/Q)` fraction of its own credit; failure is foreign support, marked source structure, or endpoint-host failure | PROVED / CONDITIONAL MARKED PAID INTERFACE | `docs/196-marked-source-star-credit-amortization.md` |
 | PP3ago--PP3agt | Thresholding a fixed-cell candidate fan pays all light partners; failure yields a uniform heavy partner pencil, conditional Hall structure, or foreign paid/source concentration | PROVED / CONDITIONAL PAID INTERFACE | `docs/197-thresholded-fixed-cell-fan-payment.md` |
+| PP3agu--PP3agz | A fixed-cell fan removes at most `n` controller entries per label and at most `2n` values from one paired macro domain; robust allocation margin bypasses arbitrary fan multiplicity | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/198-fixed-cell-fan-allocation-domain-bypass.md` |
+| PP3aha--PP3ahg | Every binary shadow of an `s`-cell source-valid endpoint state is supported on `binom(s,2)` line matchings and costs at most `s(s-1)` values from one macro domain | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/199-small-endpoint-binary-shadow-allocation-bypass.md` |
 
 ## Updated resource-bank endpoint
 
@@ -51,23 +55,11 @@ one incident resource, a rank-`h` support survives with exact factor
 (q-1)_(h-1)/(Q-1)_(h-1).
 ```
 
-Choose `q` slowly enough that the rank-four normalized ambient degree times
-`q` tends to zero. After deleting `o(q)` exceptional indices, the foreign
-unary degree is `o(q)` and the total foreign binary degree is `o(q^2)`. The
-zero-cost permutation local lemma then gives a strict `Xi` decrease.
+Adaptive thinning absorbs every vanishing ambient support degree.  Persistent
+failure of the monotone paid route therefore gives an ambient unary,
+rank-three, or rank-four fixed-resource star.
 
-Consequently failure requires at least one ambient fixed-resource degree
-threshold:
-
-```text
-Delta_1=Omega(Q),
-Delta_3=Omega(Q^2),
-Delta_4=Omega(Q^3).
-```
-
-Rank-two binary support is automatically lower order under adaptive thinning.
-
-## Updated fixed-cell fan endpoint
+## Fixed-cell paid and allocation endpoints
 
 For a fixed centre cell with residual size `n=q-1`, credit `C_a`, and reserved
 slack `tau`, put
@@ -76,37 +68,88 @@ slack `tau`, put
 theta=tau C_a/(2n).
 ```
 
-Delete only partner cells of multiplicity above `theta`. Every residual perfect
-matching then spends at most `tau C_a/2` on all remaining fan incidences. If the
-heavy deletion kills matching in a superregular host, robust Hall forces one
-secondary resource incident with `Omega(n)` heavy partners.
+Deleting partners above `theta` pays every remaining light fan inside half the
+reserved credit.  If heavy deletion kills matching in a superregular host,
+robust Hall forces a linear uniformly heavy partner pencil and a credit-scale
+bank of distinct candidate incidences.
 
-Candidate sets are disjoint across partners in one complete-grid row or
-column. The heavy pencil therefore carries a credit-scale bank of distinct
-candidate incidences, and dyadic pigeonholing gives a factor-two comparable
-subbank after only a logarithmic loss.
+There is now a separate direct-completion route.  Every centre--partner secant
+line is a matching between controller edges and movement labels, and another
+matching between controller edges and refill labels.  A residual matching of
+size `n` therefore removes at most `n` entries at one controller or label and
+at most `2n` values from one refined domain.  If the nonfan domains have margin
+`xi R` and
 
-## Revised open paid objects
+```text
+2n<=xi R,
+```
 
-The selected witness incidences of source-star, hard-unary, transition, and
-binary resource banks are no longer part of their own insertion collateral.
-Diffuse foreign insertion support is also absorbed, and self-recapture of one
-heavy source-star centre is amortized. Unstructured fixed-cell multiplicity is
-replaced by a uniform heavy pencil.
+the global controller-aware allocation graphs survive regardless of candidate
+multiplicity.
 
-The remaining paid objects are:
+## Complete binary-shadow domain bypass
 
-1. positive-density ambient unary insertion-shadow stars whose witness graph
-   gives a resource-bank rather than a single heavy centre;
-2. positive-density ambient rank-three or rank-four binary stars;
-3. uniform heavy fixed-cell partner pencils and their candidate banks;
-4. fixed-centre arc/path-petal cost;
-5. conditional-Hall and alternating-host residual structure;
-6. marked source preparation or endpoint-host failure;
-7. foreign insertion multiplicity already comparable with removal credit.
+A source-valid endpoint state with `s` inserted cells has exactly
+
+```text
+binom(s,2)
+```
+
+nonaxis inserted-pair secants.  All rank-two through rank-four binary `Xi`
+entries are supported on the corresponding line matchings.  Hence
+
+```text
+Delta(binary candidate support) <= binom(s,2)
+```
+
+on the controller-edge and label sides, and one macro domain loses at most
+
+```text
+2 binom(s,2)=s(s-1)
+```
+
+values.
+
+At the active scales,
+
+```text
+R=m^(19/20+o(1)),
+s=m^(kappa+o(1)),
+kappa<19/40,
+```
+
+so `s^2=o(R)`.  Any fixed positive nonbinary domain margin absorbs the complete
+binary insertion shadow.  This is a direct final-allocation theorem, not a
+claim that the trade decreases the integer `Xi` potential.
+
+## Revised open objects
+
+The frontier now separates the monotone paid route from the robust direct
+allocation route.
+
+In the robust-domain direct-completion branch, positive-density rank-three and
+rank-four binary stars, fixed-cell heavy pencils, weighted choice grids,
+candidate-rich projective covers, and arbitrary binary `Xi` multiplicity of one
+active endpoint state are no longer independent obstructions.
+
+The remaining concentrated problems are:
+
+1. positive-density ambient unary insertion shadow whose witness structure gives
+   a resource bank rather than one marked source centre;
+2. fixed-centre unary arc/path-petal cost and other unary insertion shadow using
+   retained source points;
+3. failure of the nonbinary `Omega(R)` domain margin or of the global allocation
+   criterion;
+4. marked source, transition, anchor, or endpoint-host failure;
+5. conditional-Hall or alternating-host structure before a source-valid trade is
+   selected;
+6. branches that still require a monotone `Xi` decrease because no direct final
+   allocation is available;
+7. endpoint states too large for `s^2=o(R)`.
 
 Rich designated recapture fibres, selected-credit self-recreation, diffuse
-foreign support cores, source-star self-recapture, and unstructured fixed-cell
-candidate multiplicity are no longer independent frontiers.
+foreign support cores, source-star self-recapture, unstructured fixed-cell
+candidate multiplicity, and binary multiplicity on small source-valid endpoint
+states are no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
