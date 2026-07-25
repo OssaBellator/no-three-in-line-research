@@ -115,7 +115,7 @@ This gives the displayed equation. \(\square\)
 
 Let one channel/profile class from RI5o have total weight \(S\). For auxiliary column \(c\), let \(S_c\) be the weight of candidates in the class created by that auxiliary state.
 
-For every real threshold \(\beta>0\), exactly one of the following quantitative outputs is available:
+For every real threshold \(\beta>0\), at least one of the following quantitative outputs is available:
 
 1. **Heavy auxiliary rectangle:** some \(c\) satisfies
    \[
@@ -128,6 +128,8 @@ For every real threshold \(\beta>0\), exactly one of the following quantitative 
    }
    \]
    distinct auxiliary columns carry positive class weight.
+
+More precisely, outcome 2 holds whenever outcome 1 fails.
 
 In the vertical channel these give distinct rows in one fixed column. In the horizontal channel they give distinct columns in one fixed row. In the paired channel they give distinct auxiliary rectangles sharing the singleton corner \(q\).
 
@@ -154,4 +156,4 @@ These are direct inputs for the alternating-core anchor/resource routers, geomet
 
 ## Finite check
 
-`scripts/verify_rational_crossed_channels.py` exhausts small blocker permutations, auxiliary states, variable matching triples, channel partitions, rectangle-diagonal identities, profile pigeonholing, and the heavy-auxiliary/spread alternative.
+`scripts/verify_rational_crossed_channels.py` exhausts small blocker permutations, auxiliary states, variable collinear matching triples, channel partitions, rectangle-diagonal identities, profile pigeonholing, and the heavy-auxiliary/spread alternative.
