@@ -32,7 +32,7 @@ Fix `0<eta<1`.  Put
 \[
 C_{\Delta,\eta}
 =
-\frac{8192e^{4\Delta}}{\eta}
+\frac{32768e^{4\Delta}}{\eta}
 \]
 
 and choose
@@ -91,12 +91,18 @@ PX225 gives the one-copy relative support-four bound
 512e^{4\Delta}\frac{qN\mathfrak d(N)}t.
 \]
 
-Multiply by eight and use the second term in `q_eta`; the chosen constant leaves
-more than the displayed margin.  PX227 and PX333 bound internal support-five
-and six relative to `s` by constant multiples of
-`q log(2t)+q^2 log(2t)`.  Multiplication by eight is paid by the first term in
-`q_eta`.  PX332 makes support three/four constant-scale, again stable under an
-absolute factor.
+Multiply by eight and use the second term in `q_eta`:
+
+\[
+4096e^{4\Delta}\frac{q_\eta N\mathfrak d(N)}t
+\le
+\frac\eta8.
+\]
+
+PX227 and PX333 bound internal support-five and six relative to `s` by constant
+multiples of `q log(2t)+q^2 log(2t)`.  Multiplication by eight is paid by the
+first term in `q_eta`.  PX332 makes support three/four constant-scale, again
+stable under an absolute factor.
 
 The threshold calculation is unchanged: `mathfrak d(N)=N^(o(1))`, and changing
 constants or the logarithmic cap does not alter the exponent one half.
