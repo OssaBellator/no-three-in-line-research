@@ -63,8 +63,11 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR261--265 | Summed placement load, exact target-specific cleaning above \(0.44t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/109-prime-power-role-count-height-cleaning.md` |
 | CMR266--270 | Parity-sieved height mass, exact target-specific cleaning above \(0.43t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/110-prime-power-parity-sieved-height-cleaning.md` |
 | CMR271--273 | Hall-width averaging, long-line height control, and reduction of width at least seven to the sub-\(0.43t\) regime | PROVED | `docs/111-prime-power-hall-width-height-reduction.md` |
-| CMR274--277 | Exact Hall deficiency/overlap slack; widths four through six reduce to low height, leaving width-two and width-three residuals | PROVED | `docs/112-prime-power-thin-hall-slack.md` |
+| CMR274--277 | Exact available-cell Hall deficiency/overlap slack; widths four through six reduce to low height, leaving width-two and width-three residuals | PROVED | `docs/112-prime-power-thin-hall-slack.md` |
 | CMR278--283 | Mod-six totient sieve, exact target-specific cleaning above \(0.42t\), a `floor(t/2000)` line reserve, and lower-height extraction | PROVED | `docs/113-prime-power-mod-six-height-cleaning.md` |
+| CMR284--287 | Exact width-two chord cases, width-three disjoint extraction, quadratic-inverse canonical mass, and cubic outside-cover expansion | PROVED | `docs/114-prime-power-thin-blocker-cover-expansion.md` |
+| CMR288--290 | Width-three seven-hole extraction, affine first/reverse-second moments, and nonconstant hole signatures for \(t\ge10\) | PROVED | `docs/115-prime-power-width-three-hole-signature.md` |
+| CMR291--293 | Width-two primitive continuation, internal/extension witnesses, and an \(Omega(\sqrt t)\) common gcd stratum | PROVED | `docs/116-prime-power-width-two-primitive-signatures.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
