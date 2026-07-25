@@ -158,38 +158,40 @@ The transition sunflower itself is no longer a separate frontier.
 
 ## Fixed-centre marked-Xi endpoint
 
-At a source-light captive centre, rank-two unary `Xi` cost is determined by the
-one incoming and one outgoing arc selected by the single cycle. Fixing a locally
-clean centre segment leaves exactly `(b-3)!` conditional completions. Either that
-segment is cheap or all but `m^(1/2+o(1))` admissible arcs on one side form a
-fixed-row or fixed-column rich-cost star.
+Rank-two unary `Xi` weight gives a cheap clean centre segment or a near-complete
+incoming/outgoing arc star. The star is already a fixed-centre one-arc petal bank.
+Dyadic pigeonholing supplies a `W`-sized comparable-cost subbank, and
+bounded-support averaging closes diffuse noncentral collateral. Failure is
+centre-core or local arc cost at the removal-credit scale, residual source/host
+structure, or global unary weight at the total bank-credit scale.
+
+The aggregate full-pool unary term also has a support conversion. Truncate arc
+weights at a credit-per-cycle-arc scale. Exact marked-cycle probabilities give a
+paid state avoiding all heavy arcs unless one endpoint has `Omega(N/b)` heavy
+incoming or outgoing arcs. This is much larger than `W` and returns to the same
+arc-petal bank.
 
 Rank-three binary `Xi` patterns are directed two-arc paths through the centre.
 Their middle-role family is a paid opposite-side two-resource choice grid. Dense
 heavy predecessor or successor support contains `(1-o(1))N²` paths; typed-resource
 greedy extraction and dyadic pigeonholing give a `W`-sized comparable-cost
 path-petal bank disjoint outside the centre. Bounded-support averaging closes
-diffuse noncentral collateral. Remaining failure is centre-core or local path
-weight at the credit scale, a global support-ranked threshold, outer source/host
-failure, or an already-listed weighted-grid/projective-cover/residual-host object.
+diffuse noncentral collateral.
 
 Rank-four binary `Xi` patterns are one centre arc paired with one vertex-disjoint
-remote arc. Conditioning on the centre arc gives exact remote-arc probability
+remote arc. Support avoidance and robust Hall localization return either a paid
+conditioned host, an alternating-component residual host, or a repeated
+secondary-resource star feeding the conditional Hall and two-resource-grid chain.
 
-```text
-(b-3)/((N-2)(N-3)).
-```
+Full-pool binary truncation closes the remaining aggregate tables as independent
+objects. Failure of heavy-pattern avoidance forces a fixed-centre rank-three
+support degree `Omega(N²/b)` or rank-four support degree `Omega(N³/b²)`, which
+feeds the fixed-centre chains above.
 
-The complete positive partner support is deleted from one conditioned residual
-host. If the deletion leaves a superregular host, the support is avoided and the
-paid first moment applies. If the residual host is matchable but non-superregular,
-the alternating-component frontier applies. If deletion destroys matchability,
-a robust Hall lemma forces a repeated secondary-resource star of size `Omega(N)`,
-which feeds the existing conditional Hall and two-resource-grid chain.
-
-Weighted rank-three middle rectangles, small-core heavy rank-three outer families,
-fixed rank-four multiplicity cores, fixed-cell remote matchings, and square-root
-partner stars are therefore no longer independent frontiers.
+Fixed-axis unary stars, full-pool unary/binary tables, weighted rank-three middle
+rectangles, small-core heavy rank-three outer families, fixed rank-four
+multiplicity cores, fixed-cell remote matchings, and square-root partner stars are
+therefore no longer independent frontiers.
 
 ## Current remaining theorem
 
@@ -197,23 +199,24 @@ The all-`n` branch is reduced to:
 
 1. controller denominator failure, insufficient local Ore slack, or weighted
    anchor energy in one canonical ownership core;
-2. paid source-star/resource-bank and fixed-centre path-petal conversion produced
-   by hard unary support, forced Hall cuts, transitions, and rank-three outer roles;
+2. paid source-star/resource-bank and fixed-centre arc/path-petal conversion
+   produced by hard unary support, forced Hall cuts, transitions, and marked `Xi`;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. fixed-axis unary-`Xi` stars, centre-core/local-credit concentration, full-pool
-   `Xi` thresholds, or fixed-centre source/weight cores;
+4. centre-core/local-credit concentration or remaining fixed-centre source/weight
+   cores;
 5. alternating cycle-star/theta support cores or cost at the cycle-credit scale;
 6. quadratic binary cell fans, weighted choice grids, projective covers,
    conditional Hall families, or support-ranked residual collateral.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic
 `Xi` terms, diffuse binary dual mass, raw resource stars, diffuse transition-petal
-collateral, unstructured rank-two unary and rank-three/rank-four binary `Xi`
-tables, weighted rank-three middle rectangles, small-core heavy rank-three outer
-families, fixed rank-four multiplicity cores, fixed-cell rank-four petal banks,
-square-root rank-four partner stars, unstructured non-superregularity, controller
-relabelling, and termination are no longer separate open problems.
+collateral, unstructured full-pool support-ranked `Xi` thresholds, unstructured
+rank-two unary and rank-three/rank-four binary `Xi` tables, fixed-axis unary stars,
+weighted rank-three middle rectangles, small-core heavy rank-three outer families,
+fixed rank-four multiplicity cores, fixed-cell rank-four petal banks, square-root
+rank-four partner stars, unstructured non-superregularity, controller relabelling,
+and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -227,9 +230,9 @@ The no-three-in-line conjecture remains unproved.
   source dilution, support-ranked `Xi`, and universal single-cycle fillers.
 - `docs/167`--`docs/171`: transition role localization, clean-chain averaging,
   disjoint witness petals, credited sunflower banks, and collateral localization.
-- `docs/176`--`docs/182`: unary arc stars, rank-three path localization, exact
-  rank-four fibres, support avoidance, robust Hall localization, rank-three
-  middle-grid selection, and disjoint outer path-petal banks.
+- `docs/176`--`docs/185`: fixed-centre unary/rank-three/rank-four localization,
+  robust Hall and paid-grid handoffs, arc/path-petal banks, and full-pool unary and
+  binary truncation to fixed-centre cores.
 
 ## Current exact checks
 
@@ -260,6 +263,12 @@ python scripts/check_rank_three_middle_choice_grid.py \
   experiments/rank-three-middle-choice-grid-example.json
 python scripts/check_rank_three_outer_path_petals.py \
   experiments/rank-three-outer-path-petals-example.json
+python scripts/check_unary_xi_arc_petals.py \
+  experiments/unary-xi-arc-petals-example.json
+python scripts/check_full_pool_unary_xi_truncation.py \
+  experiments/full-pool-unary-xi-truncation-example.json
+python scripts/check_full_pool_binary_xi_truncation.py \
+  experiments/full-pool-binary-xi-truncation-example.json
 ```
 
 These are finite diagnostics. They do not replace the asymptotic conversion
