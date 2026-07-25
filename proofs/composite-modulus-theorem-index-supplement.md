@@ -10,10 +10,11 @@ supplement records the subsequent live range.
 | CMR393--397 | Per-ancestor full-token return capacity, one-pass visit bounds, deep-threshold specializations, arbitrary reset multiplicity, and aggregate labelled return mass | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/135-prime-power-full-token-coarse-reset-profile.md` |
 | CMR398--402 | Exact primitive-direction count, harmonic conflict-degree packets, mixed boundedness, exact packet completion, and simultaneous cleaning of two dyadic bands | PROVED; CMR401 from Joos--Mubayi--Smith | `docs/134-prime-power-harmonic-band-packing.md` |
 | CMR403--405 | Universal whole-parent host-churn inclusion, one-layer/joint-parent full-token return costs, and the combined prefix-plus-nonprefix visit budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/137-prime-power-nonprefix-full-token-return.md` |
+| CMR406--409 | Dyadic packet count, per-token packet-sweep return, combined deep-token visit bound, and aggregate quadratic-log packet budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/138-prime-power-harmonic-packet-sweep-budget.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR405, the immediate fixed-envelope problems are a monotone payment for
-repeated use of one compatible ancestor slot, scheduling all harmonic packets,
-and quantitative control of fully forced exchange-ancestry width. Per-move
-full-token return costs for prefix, harmonic-packet, and joint-parent resets are
-now explicit.
+CMR409, the immediate fixed-envelope problems are a monotone payment for
+repeated use of one compatible ancestor or packet state, prevention or payment
+of conflicts recreated by later packet installation, and quantitative control
+of fully forced exchange-ancestry width. Per-move and one-sweep token-return
+costs for prefix, harmonic-packet, and joint-parent resets are now explicit.
