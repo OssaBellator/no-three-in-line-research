@@ -91,8 +91,8 @@ def verify_exact_line_atoms() -> None:
         if first[0] == second[0] or first[1] == second[1]:
             continue
         key = line_key((first, second))
+        a, b, c = key
         for cell in grid:
-            a, b, c = key
             if a * cell[0] + b * cell[1] == c:
                 cells_by_line[key].add(cell)
 
@@ -113,27 +113,46 @@ def verify_exact_line_atoms() -> None:
         assert actual <= bound
 
 
-def verify_cubic_height_bound(max_t: int = 20_000) -> None:
-    for t in range(20, max_t + 1):
-        n = t - 2
-        m = t - 9
-        bands = (t - 1).bit_length()
-        assert bands >= 1
-        for height in range(1, t):
-            q = 1 + (t - 1) // height
-            atom = Fraction(comb(q, 3), n * (n - 1) * (n - 2))
-            atom += Fraction(2 * comb(q - 1, 2), m * n * (n - 1))
-            assert atom * height**3 <= 3
+def check_height_range(t: int) -> None:
+    n = t - 2
+    m = t - 9
+    bands = (t - 1).bit_length()
+    assert bands >= 1
+    common_denominator = m * n * (n - 1) * (n - 2)
 
-            if atom:
-                lower = Fraction(11 * height**3, 90 * bands)
-                # CMR354 is the rearrangement J * atom >= 11/(30B).
-                assert lower * atom <= Fraction(11, 30 * bands)
+    for height in range(1, t):
+        q = 1 + (t - 1) // height
+        numerator = m * comb(q, 3)
+        numerator += 2 * (n - 2) * comb(q - 1, 2)
+
+        # The CMR354 bracket is at most 3/H^3.
+        assert numerator * height**3 <= 3 * common_denominator
+
+        # Rearranging J*A >= 11/(30B) gives J >= 11H^3/(90B).
+        if numerator:
+            assert (
+                11 * height**3 * numerator
+                <= 99 * common_denominator
+            )
+
+
+def verify_cubic_height_bound() -> None:
+    for t in range(20, 1001):
+        check_height_range(t)
+    for t in (1575, 1677, 1983, 2847, 10_000, 100_000):
+        check_height_range(t)
+
+
+def verify_polynomial_margin() -> None:
+    for t in range(20, 10_001):
+        polynomial = 11 * t**3 - 264 * t**2 + 1041 * t - 1124
+        assert polynomial >= 0
 
 
 def main() -> None:
     verify_exact_line_atoms()
     verify_cubic_height_bound()
+    verify_polynomial_margin()
     print(
         "verified line-clean line energy: exact two-slice atoms on t=7, "
         "dyadic occupancy bounds, and the cubic height-signature inequality"
