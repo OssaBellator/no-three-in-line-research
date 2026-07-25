@@ -64,6 +64,9 @@ exact-cover, lattice, absorber, and sign-quotient results developed on
 | PX152 | At prime 23, the unique order-three absorber obstruction `(1,5,5)` has minimum absorber order four | PROVED FINITE | `docs/87-order-three-absorber-barrier.md` |
 | PX153 | Every one of the `(5!)^3` abstract order-three templates imposes exactly two affine parameter conditions | PROVED FINITE/SYMBOLIC | `docs/87-order-three-absorber-barrier.md` |
 | PX154 | For every prime above `102400000`, some lattice-admissible two-point leftover has no absorber of order at most three | PROVED | `docs/87-order-three-absorber-barrier.md` |
+| PX155 | Every fixed absorber template is feasible on at most one affine line of lattice-circle parameters | PROVED | `docs/88-unbounded-two-point-absorber-order.md` |
+| PX156 | The minimum two-point absorber order is unbounded as the prime varies | PROVED | `docs/88-unbounded-two-point-absorber-order.md` |
+| PX157 | Every normalized two-point type through prime order 31 has absorber order at most four | PROVED FINITE | `docs/88-unbounded-two-point-absorber-order.md` |
 
 ## Current exact boundary
 
@@ -74,21 +77,23 @@ for every sufficiently large prime and computes the complete lattice obstruction
 to exact completion. The sign-pair quotient supplies a smaller regular testbed
 with exact odd seeds through order 67 and the correct fixed-bin first moments.
 
-The absorber program now has a sharper boundary. Order two first fails at prime
-17, order three first fails at prime 23, and PX154 proves that order three is
-asymptotically impossible as a universal bound. The first order-three exception
-has an explicit order-four absorber.
+The individual bounded-absorber program is now completely resolved in the
+negative. Order two first fails at prime 17, order three first fails at prime
+23, and PX156 proves that no fixed order can absorb every two-point lattice
+leftover over all primes. Order four nevertheless remains sufficient through
+prime 31.
 
 The next two proof obligations are:
 
 1. **Exact pseudorandom completion.** Complete PX141 while retaining subpower
-   secant and triangle loads. The duplicated-reservoir reduction brings the
-   Joos--Mubayi--Smith exact covering theorem into range; the remaining check is
-   a bounded-conflict lemma for bucketed repeated-shape occurrences.
-2. **Higher-order or collective absorption.** Determine whether order four is
-   universal for two-point lattice leftovers, find the first order-four
-   obstruction, or construct a collective absorber for many moment-zero circle
-   packets simultaneously.
+   secant and triangle loads. The conflict-free covering theorem of
+   Joos--Mubayi--Smith is designed to extend an almost-perfect matching across a
+   prescribed vertex set while avoiding mixed old/new conflicts; the remaining
+   work is to build a duplicated completion reservoir satisfying its degree,
+   codegree, and bucketed repeated-shape conflict bounds.
+2. **Collective or growing-order absorption.** Replace fixed two-point gadgets by
+   a collective absorber for many moment-zero circle packets, or allow absorber
+   order to grow while controlling the added secant and triangle loads.
 
-Neither route yet proves infinite exact product closure, but the former
-order-three absorber conjecture is now decisively resolved in the negative.
+Neither route yet proves infinite exact product closure, but one formerly open
+possibility--a universal bounded two-point absorber--is now ruled out.
