@@ -46,6 +46,9 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/146-prime-power-sparse-rollback-factorization.md`](docs/146-prime-power-sparse-rollback-factorization.md): common-epoch rollback with at most `t` restored edges, minimum rollback essential cores, and cost-or-host-factorization.
 - [`docs/147-prime-power-rollback-incidence-payment.md`](docs/147-prime-power-rollback-incidence-payment.md): exact rollback full-token incidence and restored-edge support for harmonic packet recreation.
 - [`docs/148-prime-power-rollback-optimal-face.md`](docs/148-prime-power-rollback-optimal-face.md): minimum-cost rollback, no-negative alternating cycles, exact tight optimal host, and integer rollback levels.
+- [`docs/149-prime-power-tight-rollback-scc-factorization.md`](docs/149-prime-power-tight-rollback-scc-factorization.md): optimum-sensitive level range, optimal-allowed SCC product, additive local marked cost, and active-level concentration.
+- [`docs/150-prime-power-rollback-level-skeleton.md`](docs/150-prime-power-rollback-level-skeleton.md): exact level-cut circulation, sparse balanced cross-level skeletons, and conditional factorization by potential level.
+- [`docs/151-prime-power-same-level-colour-split.md`](docs/151-prime-power-same-level-colour-split.md): right-column marked-cost polarization, source-split products, and mixed-colour zero-cost cycle endpoint.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -146,19 +149,21 @@ exact labelled full-token cost
 and every conflict from a packet family which was clean before rollback must use
 a restored edge.
 
-Give deleted edges unit cost and final-host edges zero cost. The minimum rollback
-states are exactly the perfect matchings of a canonical tight subgraph. Relative
-to one optimum, every alternating cycle has nonnegative cost; all other optima
-are obtained by zero-cost cycle flips. Shortest-path potentials layer the tight
-exchange arcs by integers in `[-(t-1),0]`, with level change `-1`, `0`, or `1`
-according to rollback-cost change.
+Minimum rollback and repeated marked-return states now have an exact normal
+form. The optimum-sensitive potential lies in `[-k,0]`; the optimum family
+factors over strongly connected exchange blocks; every optimum has a balanced
+cross-level skeleton of at most `2k` edges; and, conditional on that skeleton,
+all remaining choices factor by potential level. Inside one residual level,
+markedness is determined solely by the right endpoint. The source set assigned
+to marked columns either factors uniquely from the unmarked part or changes
+along an explicit mixed-colour zero-cost alternating cycle.
 
-The live prime-power frontier is therefore geometric analysis of this **tight
-rollback host**: turn a large level, dense zero-cost component, or many unit
-level changes into target-load destruction, reserve depletion, prefix or
-line-clean continuation, Hall decomposition, or envelope expansion. The same
-minimum-cost normalization must still be attached to repeated compatible local
-ancestor resets, followed by arbitrary side-length coverage.
+The live prime-power frontier is therefore geometric use of these mixed-colour
+same-level cycles: extract a large low-overlap family for simultaneous
+resampling, or prove that overlap forces prefix, primitive-height, quotient,
+carry, Hall, reserve, or envelope concentration. Absence of a mixed block gives
+strict lower-dimensional factorization. Arbitrary side-length coverage remains
+necessary afterward.
 
 ## Running checks
 
@@ -196,6 +201,9 @@ python scripts/verify_prime_power_exchange_corridor.py
 python scripts/verify_prime_power_sparse_rollback.py
 python scripts/verify_prime_power_rollback_incidence.py
 python scripts/verify_prime_power_rollback_optimal_face.py
+python scripts/verify_prime_power_tight_rollback_scc.py
+python scripts/verify_prime_power_rollback_level_skeleton.py
+python scripts/verify_prime_power_same_level_colour_split.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
