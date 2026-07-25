@@ -3,14 +3,14 @@
 The adaptive source-valid bank PP3nr is chosen by random endpoint thinning. The
 incidence localization PP3ny assumes that the Hall-derived target set remains
 quadratically dense on the retained endpoint coordinates. This chapter supplies
-that missing connection.
+that connection and combines it with the target-rich common-line theorem.
 
 ## 1. Dense cell sets in a random tied subbank
 
 Let
 
 \[
-\mathcal A_Q\subseteq[Q]\times[Q]
+\mathcal A_Q\subseteq[Q]^2
 \]
 
 be a set of endpoint cells satisfying
@@ -22,17 +22,16 @@ be a set of endpoint cells satisfying
 for fixed \(\alpha>0\). Choose a uniform \(q\)-subset \(I\subseteq[Q]\), and put
 
 \[
-X_I=|\mathcal A_Q\cap(I	imes I)|.
+X_I=|\mathcal A_Q\cap I^2|.
 \]
 
-### Proposition PP3nz -- PROVED FROM PERMUTATION BOUNDED DIFFERENCES
+### Proposition PP3nz -- PROVED FROM BOUNDED DIFFERENCES ON THE UNIFORM SLICE
 
-For \(q	o\infty\) and \(q=o(Q)\),
+For \(q\longrightarrow\infty\) and \(q=o(Q)\),
 
 \[
-\boxed{
-\Pr\left(X_I<rac\alpha2q^2ight)=o(1).
-}
+\Pr\left(X_I<\dfrac\alpha2q^2\right)=o(1).
+\]
 
 #### Proof
 
@@ -41,27 +40,27 @@ At most \(Q\) cells of \(\mathcal A_Q\) are diagonal. Therefore
 \[
 \mathbb E X_I
 \ge
-rac{(q)_2}{(Q)_2}igl(\alpha Q^2-Qigr)
+\dfrac{(q)_2}{(Q)_2}(\alpha Q^2-Q)
 =
 (\alpha-o(1))q^2.
 \]
 
-Represent \(I\) by the first \(q\) entries of a uniform random permutation of
-\([Q]\). Exchanging one selected index with one unselected index changes \(X_I\)
-by at most \(4q\): only cells using one of the two exchanged indices can change.
-The standard bounded-differences inequality for random permutations gives
+Exchanging one selected index with one unselected index changes \(X_I\) by at
+most \(4q\), because only cells using one of the two exchanged indices can
+change. The standard bounded-differences inequality on the uniform \(q\)-subset
+slice gives
 
 \[
-\Pr\left(|X_I-\mathbb EX_I|>tight)
+\Pr(|X_I-\mathbb EX_I|>t)
 \le
-2\exp\left(-crac{t^2}{q^3}ight)
+2\exp\left(-c\dfrac{t^2}{q^3}\right)
 \]
 
 for an absolute constant \(c>0\). Take \(t=\alpha q^2/3\). The right side is
-\(\exp(-\Omega_\alpha(q))=o(1)\), and the expectation exceeds
-\(5\alpha q^2/6\) for all sufficiently large \(m\). ∎
+\(\exp(-\Omega_\alpha(q))=o(1)\), while the expectation exceeds
+\(5\alpha q^2/6\) for sufficiently large \(q\). ∎
 
-Only the vanishing tail is used; constants in the permutation inequality are
+Only the vanishing tail is used; constants in the slice inequality are
 irrelevant.
 
 ## 2. Joint choice with source diagnostics
@@ -71,12 +70,7 @@ irrelevant.
 Use the adaptive size \(q\) from PP3nq. There is a \(q\)-subset \(I\) such that
 simultaneously:
 
-1. 
-   \[
-   |\mathcal A_Q\cap(I	imes I)|
-   \ge
-   rac\alpha2q^2;
-   \]
+1. \(|\mathcal A_Q\cap I^2|\ge\alpha q^2/2\);
 2. the unary forbidden graph has \(o(q)\) edges;
 3. the anchored transition family has \(o(q)\) events;
 4. the normalized high-support source-validity expression is \(o(1)\).
@@ -104,13 +98,12 @@ q'=(1-o(1))q
 and the retained target set satisfies
 
 \[
-\boxed{
 |\mathcal A_{q'}|
 \ge
-\left(rac\alpha2-o(1)ight)q^2
+(\alpha/2-o(1))q^2
 =
 \Omega_\alpha((q')^2).
-}
+\]
 
 #### Proof
 
@@ -122,23 +115,21 @@ cells disappear. Apply PP3oa. ∎
 
 ### Corollary PP3oc -- PROVED
 
-Let a macroscopic Hall rectangle contain a quadratic recapture target core on a
-resource bank of size \(Q\). After adaptive thinning and complete source-validity
-cleanup, at least one of the following holds.
+Fix \(\delta>0\). Let a macroscopic Hall rectangle contain a quadratic recapture
+target core on a resource bank of size \(Q\). After adaptive thinning and
+complete source-validity cleanup, at least one of the following holds.
 
 1. A source-valid endpoint derangement strictly decreases the owner-line load.
-2. One nonaxis geometric line contains
-   \[
-   \Omega(q^{1/3})
-   \]
-   pairwise resource-disjoint owner/replacement endpoint cells and their owner
-   candidate points.
+2. One nonaxis geometric line contains both:
+   - at least \((q')^{1/3-\delta}\) pairwise resource-disjoint
+     owner/replacement endpoint cells and their owner candidate points;
+   - at least \((q')^{1-\delta}\) retained Hall-target endpoint cells.
 
 #### Proof
 
 PP3oa--PP3ob preserve a fixed positive target density. Apply PP3nt, PP3nu, and
-PP3ny on the retained bank. ∎
+the strengthened PP3ny on the retained bank. ∎
 
 Thus the line-energy chain no longer assumes that a dense Hall core survives the
-secondary thinning; it is preserved jointly with every source-validity
-requirement.
+secondary thinning. The final structured alternative is one target-rich common
+line carrying two large matching traces.
