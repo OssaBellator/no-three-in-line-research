@@ -46,238 +46,194 @@ macro width W     = m^(19/40+o(1))  = m^0.475
 total width MW    = m^(21/40+o(1))  = m^0.525.
 ```
 
-The branch proves matching-pool supply, exact degree restoration, internally
-no-three square-root macros, conditioned fixed-rank spread, and exponent
-optimality within disjoint `O(sqrt(R))` macro architectures.
+Matching-pool supply, exact degree restoration, internally no-three macros,
+fixed-rank spread, and exponent optimality within disjoint square-root-macro
+architectures are proved.
 
-### Controller-aware domains and external geometry
+### Controller-aware safety and external closure
 
-Every final numerical row and column must be used. Fixed-core safety is
-insufficient because unselected active-pool edges remain in the source.
-Controller-aware safety tests every blocker pair against the full source and
-permits a candidate value only when its controller deletion clears every unary
-source obstruction.
+Unselected active-pool edges remain in the source, so fixed-core safety is not
+enough. Controller-aware domains test every blocker against the full source and
+permit a state only when its own controller deletion clears every unary source
+obstruction.
 
-At the slab-optimal scale, every patch-only cross-macro class and every ordinary
-two-slot source-anchor class has `o(1)` incident probability mass. Thus any
-saturation-compatible controller-aware allocation gives an
-`Omega(m^0.525)` saturated patch.
+At the slab-optimal scale, every remaining patch-only cross-macro class and every
+ordinary two-slot source-anchor class has `o(1)` incident probability mass.
+Any saturation-compatible controller-aware label allocation would therefore give
+an `Omega(m^0.525)` patch.
 
 ### Dynamic excess-shadow potential
 
-Positive controller shadow produces either:
-
-1. a source-endpoint blocker star of size `Omega(m^0.475)`; or
-2. `Omega(m^0.525)` resource-disjoint bad entries with distinct labels,
-   controllers, and endpoint-disjoint blocker pairs.
-
-Within-pool endpoint permutations preserve the pool coordinate sets and complete
-candidate-cell universe. Every candidate has one automatic controller-containing
-axis blocker. Therefore
+Every candidate cell has one automatic controller-containing axis blocker. The
+pairing-invariant excess potential
 
 \[
-\Xi(S)=\sum_z\bigl(b_S(z)-1\bigr)
+\Xi(S)=\sum_z(b_S(z)-1)
 \]
 
-is a nonnegative pairing-invariant excess-shadow potential. Every pool-compatible
-trade satisfies an exact insertion-cost-minus-removal-credit identity for `Xi`.
-Uniform improving trades terminate automatically.
+counts the additional nonaxis blockers. Pool-compatible endpoint trades satisfy
+an exact insertion-cost-minus-removal-credit identity. Uniform improving trades
+terminate automatically.
 
 ## Four direct allocation interfaces
 
-Let `rho_i(A)` and `chi_i(B)` be the movement-row and refill-column nondegree
-upper bounds obtained from controller-cell defects and same-slot anchor counts.
-Let `kappa(B)` be the average refill score.
+Controller-defect scores support four independent completion mechanisms.
 
-The branch has four separate allocation mechanisms.
+1. One-sided movement ownership versus cumulative refill slack.
+2. Deterministic balanced ownership on both label sides with `r+s<=W`.
+3. Random two-sided ownership from per-macro complementary degree.
+4. Random one-sided ownership from average refill complementary degree.
 
-1. **One-sided bottleneck versus refill slack.** Direct allocation follows when
-   ```text
-   r_score <= min_B Lambda_score(B).
-   ```
-   Failure gives an exact capacitated movement-label Hall set paired with a refill
-   label whose cumulative local slack is too small.
-2. **Deterministic two-sided ownership.** Route exactly `W` movement labels and
-   `W` refill labels to every macro. Local Ore matching succeeds when
-   `r+s<=W`.
-3. **Random two-sided ownership.** Hypergeometric sampling succeeds when every
-   macro nonedge has
-   ```text
-   rho_i(A)+chi_i(B) <= T-m^(23/80+o(1)).
-   ```
-4. **Random one-sided ownership.** The average-refill complementary-degree
-   criterion succeeds when
-   ```text
-   rho_i(A)+kappa(B) <= T-8*sqrt(T log T).
-   ```
-
-Sparse exceptional macro-label pairs are routable. A direct obstruction must
-survive all four mechanisms.
-
-### Anchor-energy localization
-
-The complete same-slot anchor mass across all disjoint active pools satisfies
+At threshold `r`, balanced movement ownership exists exactly when
 
 \[
-\sum_{i,A,B}u_i(A,B)=O(m^{2+o(1)}).
+W|N_M(X)|\ge|X|
 \]
 
-Combining this divisor-energy bound with the exact ownership Hall rectangle
-shows that an anchor-driven ownership failure cannot have a middle-sized Hall
-set. At the PP3of threshold it is either:
+for every numerical-label set `X`. Failure gives an explicit all-bad
+label-by-macro rectangle.
 
-- a sublinear exceptional label cluster; or
-- a macro rejecting all but a sublinear label set.
+The total same-slot anchor energy across all disjoint pools is `m^(2+o(1))`.
+Combining it with the Hall rectangle eliminates middle-density anchor ownership
+failure. The remaining anchor object is a sublinear exceptional label cluster or
+a nearly dead macro column.
 
-Diffuse or positive-density anchor Hall rectangles are therefore closed.
+## Source-valid endpoint trades
 
-## Source-valid resource trades
+A resource bank of size `Q=Omega(m^0.525)` may be thinned adaptively to a growing
+bank with:
 
-A resource bank of size `Q=Omega(m^0.525)` may be thinned to a growing subbank.
-Under sparse unary source shadow, endpoint-host pruning, a permutation local
-lemma, transition divisor regularisation, and support-rank thinning produce a
-saturation-preserving no-three endpoint trade.
+- no unary-invalid endpoint arc;
+- no anchored two-step transition;
+- vanishing high-support source-invalid expectation;
+- a fully source-valid derangement with one-cell probability `(1+o(1))/q`.
 
-The thinning may be chosen adaptively so that:
+Source admissibility of the endpoint trade is therefore closed in the sparse-
+unary branch.
 
-- the unary forbidden graph has `o(q)` edges;
-- the anchored transition family has `o(q)` events;
-- deleting all their incident indices costs only `o(q)` endpoints;
-- the remaining fully source-valid derangement has one-cell probabilities
-  `(1+o(1))/q`.
+## Hall, line, and rectangle extraction
 
-Source admissibility of the resource endpoint is therefore closed with a
-near-uniform one-cell law.
+After deleting direct recapture and residual unary-shadow cells, failure of the
+source-safe endpoint host is exactly a Hall rectangle.
 
-## Zero-unary Hall and binary endpoints
+Binary insertion shadow is governed by resource congestion. The fractional
+cover problem has factor-two rounding, an exact dual packing, and Hall
+inheritance under low-congestion deletion.
 
-Direct recapture cells and residual unary-shadow cells are deleted from one
-source-safe endpoint host `G_0`. Failure of a perfect matching is exactly a Hall
-rectangle
+For a recapture-dominated Hall core, failed owner-line improvement gives a
+positive-density family of target-rich repeated nonaxis lines. Pairing the two
+matching traces on those lines produces `Omega(q^3)` alternating rectangle
+candidates and an `Omega(q)` pairwise row/column-disjoint rectangle bank.
+Rectangle extraction is closed.
 
-\[
-|X|+|Y|>q,
-\qquad
-X\times Y\subseteq E(\overline{G_0}).
-\]
+## Superregular rectangle installation and paid selection
 
-A macroscopic rectangle contains a quadratic core of one witness type.
+In the superregular branch:
 
-Every binary conflict can be covered by deleting one of its endpoint cells. The
-fractional minimum resource congestion has:
+- a small linear reservation leaves a residual perfect matching;
+- the residual matching can be chosen source-valid and low-cost;
+- every rectangle is an equal-margin two-state permutation block;
+- all remaining geometric conditions form an exact binary rank-at-most-three
+  CNF;
+- exact insertion shadow is a unary/binary finite-state cost.
 
-- factor-two threshold rounding;
-- an exact LP dual weighted-conflict packing;
-- Hall inheritance under low-congestion deletion.
+First-moment and variable-local-lemma criteria close diffuse clause mass and
+diffuse insertion collateral.
 
-One nonaxis witness line has a congestion-one cover. A family with `o(q)`
-witness-line overlap is also absorbed. The remaining original binary-shadow
-objects are a linear-congestion dual packing or a high-overlap witness-line
-pencil.
+## Cross-block signature bypass
 
-## Recapture-line rectangle conversion
+The two natural rectangle diagonals are not a terminal state space. Pair two
+resource-disjoint rectangles and use only cells in the two cross resource
+blocks. There are exactly four such perfect-matching states.
 
-Naive one-survivor deletion cannot absorb a linear bank of linear-rich distinct
-geometric lines. The owner lines must move.
+Before general unary pruning, at least one state directly protects both
+designated owner credits. After pruning, state existence is exactly two small
+`2 by 2` Hall tests.
 
-Adaptive thinning preserves a positive-density Hall target core jointly with all
-source-validity diagnostics. Failed owner-line improvement yields a
-near-extremal typed incidence system. Szemerédi--Trotter and a multiplicity split
-then produce a positive linear family of nonaxis lines with:
+If the non-designated unary endpoint graph has maximum degree `d`, every
+rectangle has at most `4d` bad partners. Thus `d=o(h)` allows almost the entire
+bank of `h` rectangles to pair into source-safe four-state supervariables with
+at least two credits each.
 
-- at least `q^(1/3-delta)` resource-disjoint owner/replacement cells per line;
-- at least `q^(1-delta)` Hall-target cells per line;
-- total typed multiplicity `Omega(q^2)`.
+This bypass does not depend on the original binary signature. Under sparse unary
+degree it removes as separate obstructions:
 
-Pairing the two matching traces on each line gives `Omega(q^3)` alternating
-rectangle candidates. A resource-degree bound extracts `Omega(q)` pairwise
-row/column-disjoint rectangle blocks.
+- credit-poor Boolean signatures;
+- three-rectangle signed contradictions;
+- dense all-cross conflict graphs;
+- rich cross lines and pencils;
+- complete fixed-anchor secant designs supported on the original cross cells.
 
-Rectangle extraction is therefore closed.
+All geometry is recomputed in the four-state cross-block space.
 
-## Superregular rectangle installation
+## Multistate Ramsey completion
 
-For a small linear cross-safe rectangle bank in a superregular endpoint host:
+After local-state pruning, only finitely many nonempty state alphabets remain.
+Adaptive thinning removes ternary bad boxes on a growing subbank. Fixed-colour
+Ramsey homogenizes the complete pair signature.
 
-- reserving its resources leaves a residual perfect matching;
-- the residual matching may be chosen source-valid;
-- the residual matching may also be chosen with low insertion-shadow base cost
-  whenever its unary/binary expected shadow is small relative to rectangle
-  credit;
-- each rectangle is an exact two-state `2 by 2` permutation block;
-- all remaining no-three constraints form a binary rank-at-most-three CNF;
-- exact insertion shadow is a degree-at-most-two pseudo-Boolean cost.
+For an alphabet of at most four states:
 
-Diffuse geometric clause mass and diffuse paid cost are closed by first moment,
-variable local lemma, support cleaning, or weighted thinning.
+- if some diagonal pair `(a,a)` is allowed, the all-`a` state satisfies every
+  binary constraint;
+- if every diagonal pair is forbidden, at most five variables already form a
+  contradiction.
 
-## Signed binary rectangle endpoint
+Diffuse state cost gives a strict improvement against the two-credit-per-block
+removal budget.
 
-After unit preprocessing, ternary clauses have vanishing density and may be
-removed on a growing subbank. Colouring each variable pair by its complete
-sixteen-valued forbidden-state signature and applying fixed-colour Ramsey gives
-a growing homogeneous subbank.
+## Hierarchical cross-block amplification
 
-Its paid capacity is exact.
+The cross-block construction iterates. A level-`b` block contains `b` original
+rectangles, `2b` resources per side, and at least `b` designated credits.
+Pairing two such blocks gives `((2b)!)^2` cross states.
 
-- If `(1,1)` is allowed, the all-cross state is geometrically valid and directly
-  protects one designated credit unit per rectangle.
-- If `(1,1)` is forbidden but `(0,0)` is allowed, every valid homogeneous
-  assignment has at most one cross-oriented rectangle. This signature is
-  explicitly credit-poor.
-- If both diagonal state pairs are forbidden, three rectangles already form an
-  unsatisfiable core.
+Direct recapture removes at most `b` edges from each directional `K_(2b,2b)`.
+At least `2b` edge deletions are needed to destroy every perfect matching.
+With non-designated unary maximum degree `d`, a level-`b` block has at most
+`4d` bad partners, independently of `b`.
 
-A dense all-cross conflict graph is geometric. It yields a rich cross line, a
-large pencil through one selected rectangle cell, or—after homogeneous Ramsey
-refinement—a complete fixed-anchor secant design.
-
-Sparse all-cross unary support and sparse all-cross binary support contain a
-growing zero-cost subbank. Weighted unary `o(K)` and binary `o(K^2)` cost likewise
-produce a growing `o(K)`-cost subbank. The residual matching base cost may be
-selected simultaneously with source validity by a paid superregular first
-moment.
-
-Thus arbitrary dense Boolean satisfiability, common-line rectangle extraction,
-residual matching, residual source validity, and diffuse paid collateral are no
-longer separate open problems.
+Consequently every contradiction at any fixed hierarchy depth can be bypassed
+under sparse unary degree. Failure at all fixed depths is a coherent
+infinite-depth hierarchy of locally feasible blocks with concentrated geometry
+or cost, not a finite local CSP obstruction.
 
 ## What remains conditional
 
-The remaining conversion theorem has the following structured forms.
+The remaining conversion theorem has these structured forms.
 
-1. Convert an ownership Hall/slack core, a two-sided threshold gap, or the
-   simultaneous score concentration surviving all four allocation interfaces.
-2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
+1. Convert an ownership Hall/slack core, two-sided threshold gap, or score
+   concentration surviving all four allocation interfaces.
+2. Convert a Hall rectangle or matchable but non-superregular zero-unary host
    outside the superregular recapture branch.
-3. Convert a credit-poor homogeneous rectangle signature, a rich cross line or
-   pencil, a complete fixed-anchor secant design, or a constant-size signed
-   contradiction.
-4. Convert linear unary, quadratic binary, or residual weighted shadow
-   concentration at the rectangle-credit scale.
-5. Convert a linear-congestion original binary-shadow dual packing or
+3. Convert a unary endpoint resource with linear forbidden cross-block degree.
+4. Convert locally impossible hierarchical cross-block state sets or unary,
+   binary, and residual weighted shadow concentrated at block-credit scale.
+5. Rule out or convert an infinite-depth feasible cross-block hierarchy for
+   which no fixed amplification depth admits diffuse paid completion.
+6. Convert a linear-congestion original binary-shadow dual packing or
    witness-line pencil.
-6. Build source-admissible pool-compatible trades with `Xi` insertion cost below
-   their star/resource removal credit.
+7. Build source-admissible pool-compatible trades with `Xi` insertion cost below
+   star/resource removal credit.
 
 ## Important cautions
 
 - Unused numerical labels cannot be discarded and compressed while preserving
   saturation.
 - Fixed-core domains do not handle unselected active-pool edges.
-- A source-endpoint blocker star is not automatically a common-candidate star.
-- A single rich line has bounded cover congestion, but a linear bank of
-  linear-rich distinct lines need not.
-- The superregular rectangle theorems do not cover every matchable sparse host.
+- Sparse-unary cross-block results do not cover a resource with linear unary
+  forbidden degree.
+- Superregular residual results do not cover every matchable sparse host.
+- Fixed-depth amplification does not prove eventual success of the hierarchy.
 - Finite diagnostics validate identities and expose obstructions; they do not
   prove the asymptotic conversion theorem.
 
 ## Bottom line
 
 There is no complete proof. The branch closes matching supply, exponent-optimal
-macro width, saturation-compatible allocation interfaces, external weighted
-geometry, source-valid near-uniform resource trades, low-congestion binary
-covering, exact ownership Hall/slack cores, recapture-line rectangle extraction,
-superregular residual installation, signed binary-CSP regularization, and
-diffuse paid rectangle selection. The structured concentration cases above
-remain open.
+macro width, four global allocation interfaces, external weighted geometry,
+source-valid near-uniform endpoint trades, rectangle extraction, superregular
+residual installation, signed and multistate CSP regularization, diffuse paid
+selection, and every bounded-depth diagonal-signature contradiction under sparse
+unary degree. The structured concentration and infinite-depth cases above remain
+open.
