@@ -1,6 +1,6 @@
 # Full-prefix token repetition has a two-dimensional edge inventory
 
-CMR388 reduces a long frozen two-slice closure to candidate walls, secant stars,
+CMR393 reduces a long frozen two-slice closure to candidate walls, secant stars,
 executable heavy prefix cells, or repeated visits to one exact absolute full
 prefix token. CMR347 gives the correct dynamic accounting principle for
 repeated row-prefix tokens. The full token exposed by CMR357 is sharper: it
@@ -46,7 +46,7 @@ further shrink the ambient cell stock.
 
 ## 1. Exact two-dimensional stock
 
-### Theorem CMR389 — PROVED
+### Theorem CMR394 — PROVED
 
 The full-token universe has exact size
 
@@ -102,7 +102,7 @@ I_\tau^{(2)}
 \right|.
 \]
 
-### Theorem CMR390 — PROVED
+### Theorem CMR395 — PROVED
 
 If `D_\tau^{(2)}` full-token endpoint visits occur, then
 
@@ -130,7 +130,7 @@ D_\tau^{(2)}-
 ### Proof
 
 Apply the dynamic inventory lemma CMR347 with universe
-`U=U_\tau^{(2)}` and use the exact initial-stock bound from CMR389. Every
+`U=U_\tau^{(2)}` and use the exact initial-stock bound from CMR394. Every
 initial edge and every reintroduced edge can pay for at most one subsequent
 consumption before it must be introduced again. ∎
 
@@ -148,7 +148,7 @@ Process it by the same rule as CMR349:
    nonessential, delete that witness edge;
 3. if every prescribed edge is essential, attach the CMR217 ancestry links.
 
-### Theorem CMR391 — PROVED UNDER THE CMR349 HYPOTHESES
+### Theorem CMR396 — PROVED UNDER THE CMR349 HYPOTHESES
 
 Assume the residual hosts form a deletion pass beginning with no essential
 edge, every deletion retains a perfect matching, and every repeated
@@ -191,7 +191,7 @@ earlier certificates, and the ancestry graph is acyclic within the pass.
 
 ### Proof
 
-The three processing cases are exhaustive. CMR390 bounds the endpoint-paid
+The three processing cases are exhaustive. CMR395 bounds the endpoint-paid
 visits. CMR217 supplies at most one ancestry link per prescribed edge and
 CMR218 supplies acyclicity. ∎
 
@@ -202,7 +202,7 @@ off-token witness deletion, or a strictly earlier ancestry certificate.
 
 ## 4. Depth-dependent stock bounds
 
-### Corollary CMR392 — PROVED
+### Corollary CMR397 — PROVED
 
 For every real `alpha` with `0<=alpha<=1`, if
 
@@ -233,7 +233,7 @@ In particular:
 
 ### Proof
 
-Substitute `p^{2b}\ge t^{2\alpha}` into CMR389. ∎
+Substitute `p^{2b}\ge t^{2\alpha}` into CMR394. ∎
 
 The remaining dynamic theorem is now precisely quantitative: bound the
 full-token reintroduction mass `I_\tau^{(2)}`, the witness-escape mass, or the
