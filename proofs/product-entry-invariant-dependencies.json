@@ -1,6 +1,6 @@
 {
-  "range": "PX397-PX450",
-  "root": "PX450",
+  "range": "PX397-PX478",
+  "root": "PX478",
   "nodes": {
     "PX397-403": {
       "document": "docs/153-px63-one-hit-derangement-entry.md",
@@ -43,6 +43,42 @@
       "depends_on": ["PX225", "PX227", "PX263", "PX264", "PX265", "PX266", "PX324", "PX325", "PX326", "PX327", "PX328", "PX329", "PX394", "PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444"],
       "move_space": "rectangle_label",
       "status": "asymptotic_reduction"
+    },
+    "PX451-455": {
+      "document": "docs/160-dependency-and-effective-cutoff-audit.md",
+      "depends_on": ["PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444", "PX445-450"],
+      "move_space": "arithmetic_only",
+      "status": "dependency_and_cutoff_interface"
+    },
+    "PX456-460": {
+      "document": "docs/161-explicit-cartesian-triple-constant.md",
+      "depends_on": ["PX333", "PX451-455"],
+      "move_space": "arithmetic_only",
+      "status": "incidence_constant_effective"
+    },
+    "PX461-465": {
+      "document": "docs/162-explicit-nested-depth-envelope.md",
+      "depends_on": ["PX265", "PX266", "PX451-455"],
+      "move_space": "arithmetic_only",
+      "status": "nested_depth_effective"
+    },
+    "PX466-470": {
+      "document": "docs/163-explicit-divisor-witness-and-effective-exponents.md",
+      "depends_on": ["PX418", "PX445-450", "PX451-455"],
+      "move_space": "arithmetic_only",
+      "status": "divisor_and_return_exponents_effective"
+    },
+    "PX471-473": {
+      "document": "docs/164-packet-family-free-active-repair-path.md",
+      "depends_on": ["PX428-436", "PX445-450", "PX466-470"],
+      "move_space": "rectangle_label",
+      "status": "active_packet_parameter_removed"
+    },
+    "PX474-478": {
+      "document": "docs/165-explicit-common-asymptotic-cutoff.md",
+      "depends_on": ["PX456-460", "PX461-465", "PX466-470", "PX471-473", "PX445-450"],
+      "move_space": "arithmetic_only",
+      "status": "common_cutoff_effective"
     }
   },
   "safety_rules": {
@@ -57,7 +93,14 @@
       "entry_good_bank_cylinder_factor": 9,
       "entry_good_bank_destruction_denominator": 18,
       "rectangle_point_type_count": 4,
-      "label_family_count": 2
+      "label_family_count": 2,
+      "cartesian_triple_constant": 320,
+      "divisor_constant_power_of_ten": 27,
+      "divisor_exponent_denominator": 6,
+      "effective_threshold_numerator": 3,
+      "effective_threshold_denominator": 5,
+      "explicit_cutoff_power_of_ten": 4000,
+      "active_joint_packet_count": 0
     }
   }
 }
