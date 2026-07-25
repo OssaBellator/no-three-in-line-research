@@ -30,7 +30,9 @@ AC3an--AC3aq provide the exact alternating-core adapter for ordinary determinant
 
 BDA5aa--BDA5ad close the reflected `CD` denominator scalar: `A(2h+q)` has the same content modulo `q` as `2Ah`, and every fixed residue is one scale class modulo `q/gcd(2A,q)`. AC3dj--AC3dm import this result, localize reflected profiles finitely, and give the same weighted genuine `h,h+q` co-anchor extraction without a cancellation-height label.
 
-Paid and support faithfulness remain explicit hypotheses for executable decoding. The remaining BDA interface work is to prove those geometric hypotheses for actual ordinary and reflected role outputs and terminate the dispersed-anchor or affine-chain alternatives.
+BDA5ae--BDA5ah replace the former dispersed-anchor inequality by an exact overlap-variation router. One scalar profile gives a paid pair bank, a paid endpoint front, or a parity-disjoint oriented missing-partner front. AC3du--AC3dx import these fronts, prove private scalar-slot payment, and route them through the scope-complete paid-bank-or-labelled-overload interface.
+
+Paid and support faithfulness remain explicit hypotheses for executable pair decoding. The remaining BDA interface work is installation or denominator descent for the one-sided fronts, support faithfulness for actual ordinary and reflected role outputs, and termination of affine-chain and higher-rank alternatives.
 
 ### `research/rational-inverse-expansion`
 
@@ -46,9 +48,9 @@ AC3bk--AC3co close blocker probability. Every partial blocker prescription has a
 
 AC3cu--AC3da close the entire state-independent geometric term: a new fixed union triple must use an RI5f closure cell, one universal two-closure crossed rectangle, or one exceptional `mh=2` layer-transfer rectangle. There is no residual diffuse `F_rest` for the fixed-cell triple potential.
 
-AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion; the last case has a row-column-disjoint subfamily carrying at least `1/51` of one exact unmatched class. AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight.
+AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion. AC3dn--AC3dt close payment and root recycling for those outputs: exact records have private original-factor resources, root reversal has one capacity-one ticket per base, absent anchors enter a paid-bank-or-labelled-overload router, and off-family companions form four-point current-line banks. AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight.
 
-The unresolved RI interface is now payment and scoped-collateral termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, off-family current companions, one-cell companion completions, and the extracted multi-scale bank. No quotient, fixed-term, fibre, scale, or blocker-probability class remains unnamed.
+The unresolved RI interface is now actual improvement/collateral termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, privately paid companion banks, four-point line banks, and the extracted multi-scale bank. Payment eligibility and raw root recycling for the companion branch are closed.
 
 ### `research/geometric-cleaning`
 
