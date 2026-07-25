@@ -10,7 +10,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 \(n\times n\) integer grid with no three collinear.
 
 > **Status:** This repository does **not** contain a complete proof. The
-> conjecture remains open as of 24 July 2026. The notebook preserves proved
+> conjecture remains open as of 25 July 2026. The notebook preserves proved
 > lemmas, conditional reductions, failed pathways, counterexamples,
 > computational certificates, and precise next targets.
 
@@ -42,6 +42,9 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/80-prime-five-four-core-escape.md`](docs/80-prime-five-four-core-escape.md) through [`docs/88-prime-power-inherited-four-core-cover.md`](docs/88-prime-power-inherited-four-core-cover.md): exact root escapes, joint-parent banks, closure envelopes, sharp derangement laws, and inherited terminal covers.
 - [`docs/89-prime-power-parent-cover-lifting.md`](docs/89-prime-power-parent-cover-lifting.md) through [`docs/95-prime-power-iterated-hall-wall-peeling.md`](docs/95-prime-power-iterated-hall-wall-peeling.md): parent-cover lifting, the \(2/11\) batch deficit, envelope expansion, line signatures, Hall walls, and iterative peeling.
 - [`docs/96-prime-power-essential-edge-factorization.md`](docs/96-prime-power-essential-edge-factorization.md) through [`docs/101-prime-power-exact-top-height-slice.md`](docs/101-prime-power-exact-top-height-slice.md): half-degree flexibility, exchange ancestry, local loads, bounded dyadic conflicts, odd-line deletion resilience, and exact top-slice cleaning.
+- [`docs/102-prime-power-near-transversal-line-resilience.md`](docs/102-prime-power-near-transversal-line-resilience.md) through [`docs/113-prime-power-mod-six-height-cleaning.md`](docs/113-prime-power-mod-six-height-cleaning.md): line-deletion reserves, target-specific Hall blockers, refined high-slice cleaning, fan obstructions, and Hall-width reduction.
+- [`docs/114-prime-power-thin-blocker-cover-expansion.md`](docs/114-prime-power-thin-blocker-cover-expansion.md) through [`docs/123-prime-power-mixed-fan-factorial-carry.md`](docs/123-prime-power-mixed-fan-factorial-carry.md): thin blocker extraction, first-separation signatures, carry cells, witness routing, and mixed-fan factorial carries.
+- [`docs/124-prime-power-paid-mixed-ratio-bank.md`](docs/124-prime-power-paid-mixed-ratio-bank.md) through [`docs/130-prime-power-token-reintroduction-ledger.md`](docs/130-prime-power-token-reintroduction-ledger.md): paid ratio banks, line-clean completions, heavy-cell continuation, dispersed-token packing, and dynamic token-edge reintroduction accounting.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -92,19 +95,28 @@ When \(H\ge t^\varepsilon\), a published conflict-free matching theorem gives
 an almost-perfect band-avoiding derangement matching. At the very top,
 
 \[
-H\ge0.49t,
-\qquad t\ge95,
+H\ge0.42t,
 \]
 
-the matching-space local lemma gives an **exact** parent permutation avoiding
-all candidate-only board triples in that slice. This exact move does not also
-remove rank-one or rank-two triples involving fixed outside points, and it may
-create lower-height triples.
+exact matching-space local-lemma arguments clean the candidate-only slice,
+including line-clean paid-pair hosts and linear protected-line reserves at the
+recorded thresholds.
 
-The principal missing steps are exact reserve completion for the remaining
-high/intermediate bands, low-height carry absorption, and a reverse-scale
-budget protecting previously cleaned bands. Arbitrary composite assembly also
-needs a separate coverage mechanism.
+Thin Hall blockers now have a complete local signature route. Heavy carry cells
+open executable prefix banks, and pairwise fresh dispersed episodes have a
+finite \(O_p(\sqrt t\log t)\) token budget. For a repeated absolute token
+\(\tau=(b,c,\theta)\), executable endpoint deletions satisfy
+
+\[
+D_\tau\le \frac{t^2}{p^b}+I_\tau,
+\]
+
+where \(I_\tau\) counts token-compatible candidate-edge reintroductions. The
+remaining dynamic obstruction is therefore explicit: charge those
+reintroductions to coarse repairs, route off-token witness deletions, and bound
+the width of fully forced exchange ancestry. Static token counting alone cannot
+suffice, because two old-cell-clean rematchings can restore an entire layer.
+Arbitrary composite assembly still needs a separate coverage mechanism.
 
 ## Running checks
 
@@ -137,6 +149,9 @@ python scripts/verify_prime_power_parent_local_load.py
 python scripts/verify_prime_power_band_conflicts.py
 python scripts/verify_prime_power_odd_line_resilience.py
 python scripts/verify_prime_power_exact_top_slice.py
+python scripts/verify_prime_power_heavy_cell_continuation.py
+python scripts/verify_prime_power_dispersed_token_ledger.py
+python scripts/verify_prime_power_token_reintroduction_ledger.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
