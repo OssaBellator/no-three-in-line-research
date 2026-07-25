@@ -1,67 +1,54 @@
 # Witness-line survivor congestion and the rich-line barrier
 
 The line-supported cover PP3lo deletes all but one allowed endpoint cell on each
-witness line.  That construction has congestion one for a single line, but a
-linear bank of linear-rich **distinct geometric lines** behaves differently.
-This chapter records the exact load conservation, a geometric union lower bound,
-and the fractional survivor-allocation problem.
+witness line.  This has congestion one for a single line, but a linear bank of
+linear-rich **distinct geometric lines** behaves differently.
 
-The conclusion is corrective: rich Hall-derived line banks cannot in general be
-absorbed by applying the one-line cover independently.  They require the
-owner-line reconfiguration energy of PP3lg--PP3ll or another genuine trade.
+Repeated typed witnesses on the same geometric line must first be merged: one
+deletion set covers all conflicts assigned to that line.  The barrier below
+concerns the number of distinct geometric traces after this merging.
 
-## 1. Distinct traces and survivor covers
+## 1. Survivor covers
 
 Let
 
 \[
- G_0=(L,R;E),
- \qquad |L|=|R|=q,
+G_0=(L,R;E),
+\qquad |L|=|R|=q,
 \]
 
-be an endpoint host.  Let \(\mathcal L\) be a family of distinct nonaxis
-geometric lines.  For \(\lambda\in\mathcal L\), let
+and let \(\mathcal L\) be a family of distinct nonaxis geometric lines.  For
+\(\lambda\in\mathcal L\), let
 
 \[
- P_\lambda=P_E(\lambda)
+P_\lambda=P_E(\lambda)
 \]
 
-be its nonempty allowed endpoint trace.  By PP3lm, every \(P_\lambda\) is a
-matching in the resource bipartite graph.
+be its nonempty allowed trace.  By PP3lm, every trace is a matching in the
+endpoint-resource graph.
 
-Choose one survivor
+Choose one survivor \(s_\lambda\in P_\lambda\), put
 
 \[
- s_\lambda\in P_\lambda
+D_\lambda=P_\lambda\setminus\{s_\lambda\},
 \]
 
-and delete
+and define the simple unary cover
 
 \[
- D_\lambda=P_\lambda\setminus\{s_\lambda\}.
+C_s=\bigcup_{\lambda\in\mathcal L}D_\lambda.
 \]
-
-The resulting simple unary cover is
-
-\[
- C_s=\bigcup_{\lambda\in\mathcal L}D_\lambda.
-\]
-
-Repeated typed witnesses on the same geometric line should be merged before this
-construction, because one deletion set covers all conflicts assigned to that
-line.
 
 ## 2. Exact multiplicity-load conservation
 
-For an endpoint resource \(v\in L\cup R\), define the line-multiplicity deletion
-load
+For a resource \(v\in L\cup R\), define
 
 \[
- M_s(v)
- =
- |\{\lambda\in\mathcal L:
-   P_\lambda\text{ contains a cell incident with }v,
-   \ s_\lambda\text{ is not incident with }v\}|.
+M_s(v)
+=
+|\{\lambda:
+P_\lambda\text{ contains a cell incident with }v,
+\ s_\lambda\text{ is not incident with }v\}|.
 \]
 
 ### Proposition PP3lr -- PROVED
@@ -69,57 +56,56 @@ load
 For every survivor choice,
 
 \[
- \boxed{
- \sum_{v\in L\cup R}M_s(v)
- =
- 2\sum_{\lambda\in\mathcal L}(|P_\lambda|-1).
- }
+\boxed{
+\sum_{v\in L\cup R}M_s(v)
+=
+2\sum_{\lambda\in\mathcal L}(|P_\lambda|-1).
+}
 \]
 
 Consequently
 
 \[
- \boxed{
- \max_v M_s(v)
- \ge
- \frac1q
- \sum_{\lambda\in\mathcal L}(|P_\lambda|-1).
- }
+\boxed{
+\max_vM_s(v)
+\ge
+\frac1q
+\sum_{\lambda\in\mathcal L}(|P_\lambda|-1).
+}
 \]
 
 #### Proof
 
-On one line, every deleted trace cell uses two endpoint resources, and the trace
-is a matching.  Hence that line contributes exactly \(2(|P_\lambda|-1)\) to the
-sum of multiplicity loads.  Sum over the lines and average over the \(2q\)
-resources. ∎
+On one trace, every deleted cell uses two resources and distinct deleted cells
+use distinct resources on each side.  Thus the trace contributes exactly
+\(2(|P_\lambda|-1)\) to the total multiplicity load.  Sum and average over the
+\(2q\) resources. ∎
 
-This is a barrier for the **multiplicity estimate** in PP3lo.  Distinct line
-deletions can overlap as cells, so a geometric union estimate is also needed for
-the actual simple cover.
+This controls the multiplicity estimate.  A geometric union bound is needed for
+the actual simple cover because deletions from different lines may overlap.
 
 ## 3. Geometric union lower bound
 
 Put
 
 \[
- r=|\mathcal L|,
- \qquad
- S=\sum_{\lambda\in\mathcal L}(|P_\lambda|-1).
+r=|\mathcal L|,
+\qquad
+S=\sum_{\lambda\in\mathcal L}(|P_\lambda|-1).
 \]
 
 For a cell \(a\), let
 
 \[
- m(a)=|\{\lambda:a\in D_\lambda\}|.
+m(a)=|\{\lambda:a\in D_\lambda\}|.
 \]
 
-Distinct geometric lines meet in at most one point.  Therefore
+Distinct geometric lines meet in at most one point, so
 
 \[
- \sum_a\binom{m(a)}2
- \le
- \binom r2.
+\sum_a\binom{m(a)}2
+\le
+\binom r2.
 \]
 
 ### Theorem PP3ls -- PROVED
@@ -127,22 +113,21 @@ Distinct geometric lines meet in at most one point.  Therefore
 Every survivor cover satisfies
 
 \[
- \boxed{
- |C_s|
- \ge
- \frac{S^2}{S+r(r-1)}.
- }
+\boxed{
+|C_s|
+\ge
+\frac{S^2}{S+r(r-1)}.
+}
 \]
 
-Hence its endpoint-resource congestion obeys
+Hence
 
 \[
- \boxed{
- \Delta(C_s)
- \ge
- \frac1q\,
- \frac{S^2}{S+r(r-1)}.
- }
+\boxed{
+\Delta(C_s)
+\ge
+\frac1q\frac{S^2}{S+r(r-1)}.
+}
 \]
 
 #### Proof
@@ -150,160 +135,149 @@ Hence its endpoint-resource congestion obeys
 One has
 
 \[
- \sum_a m(a)=S
+\sum_a m(a)=S
 \]
 
 and
 
 \[
- \sum_a m(a)^2
- =
- S+2\sum_a\binom{m(a)}2
- \le
- S+r(r-1).
+\sum_a m(a)^2
+=
+S+2\sum_a\binom{m(a)}2
+\le
+S+r(r-1).
 \]
 
 Cauchy--Schwarz gives
 
 \[
- S^2
- =
- \left(\sum_{a\in C_s}m(a)\right)^2
- \le
- |C_s|\sum_a m(a)^2.
+S^2
+\le
+|C_s|\sum_a m(a)^2.
 \]
 
-This proves the union bound.  The bipartite graph \(C_s\) has \(2|C_s|\)
-resource incidences on \(2q\) resources, so its maximum degree is at least
+Finally, the bipartite graph \(C_s\) has average resource degree
 \(|C_s|/q\). ∎
 
 ### Corollary PP3lt -- PROVED
 
-Fix constants \(\alpha,\beta>0\).  Suppose
+Fix constants \(\alpha,\beta>0\).  If
 
 \[
- r\ge\beta q
+r\ge\beta q
 \]
 
-and every allowed trace satisfies
+and every trace has
 
 \[
- |P_\lambda|\ge\alpha q.
+|P_\lambda|\ge\alpha q,
 \]
 
-Then every one-survivor line cover has
+then
 
 \[
- \Delta(C_s)
- \ge
- \left(
- \frac{\alpha^2\beta}{\alpha+\beta}
- -o(1)
- \right)q.
+\boxed{
+\Delta(C_s)
+\ge
+\left(
+\frac{\alpha^2\beta}{\alpha+\beta}-o(1)
+\right)q.
+}
 \]
 
 #### Proof
 
-Here
+Use
 
 \[
- S\ge r(\alpha q-1).
+S\ge r(\alpha q-1)
 \]
 
-Substitute this and \(r\ge\beta q\) into PP3ls and divide by \(q\). ∎
+in PP3ls.  The resulting asymptotic lower bound is increasing in \(r/q\), so its
+minimum under \(r/q\ge\beta\) occurs at \(\beta\). ∎
 
-Thus a linear bank of linear-rich distinct lines necessarily creates linear
-unary congestion under the PP3ln deletion pattern.  In particular, the rich
-recapture bank of PP3kp cannot be completed merely by deleting all but one cell
-from each designated line.
+Therefore a linear number of distinct geometric lines with linear traces cannot
+be absorbed by the one-survivor deletion pattern at sublinear congestion.
+
+For the PP3kp recapture alternative this gives a dichotomy:
+
+1. linearly many typed designated witnesses collapse onto few geometric lines,
+   producing a repeated-line credit concentration; or
+2. linearly many distinct geometric designated lines remain, and PP3lt rules out
+   naive unary survivor covering.
+
+The second case requires owner-line reassignment or another genuine trade.
 
 ## 4. Fractional survivor allocation
 
-The exact obstruction can be expressed as a fractional assignment problem.  For
-every \(\lambda\in\mathcal L\) and \(a\in P_\lambda\), choose
-\(x_{\lambda,a}\ge0\) with
+Choose variables \(x_{\lambda,a}\ge0\) satisfying
 
 \[
- \sum_{a\in P_\lambda}x_{\lambda,a}=1.
+\sum_{a\in P_\lambda}x_{\lambda,a}=1.
 \]
 
-For a resource \(v\), let \(a_\lambda(v)\) denote the unique trace cell incident
-with \(v\), when it exists.  Define the fractional deletion load
+For a resource \(v\), let \(a_\lambda(v)\) be the unique trace cell incident with
+\(v\), when it exists, and define
 
 \[
- \ell_x(v)
- =
- \sum_{\lambda:v\in P_\lambda}
- \left(1-x_{\lambda,a_\lambda(v)}\right).
+\ell_x(v)
+=
+\sum_{\lambda:v\in P_\lambda}
+\left(1-x_{\lambda,a_\lambda(v)}\right).
 \]
 
 Put
 
 \[
- \sigma^*(\mathcal L)
- =
- \min_x\max_v\ell_x(v).
+\sigma^*(\mathcal L)=\min_x\max_v\ell_x(v).
 \]
 
 ### Theorem PP3lu -- PROVED
 
-The fractional survivor congestion has the exact dual form
+The fractional survivor congestion has the exact dual
 
 \[
- \boxed{
- \sigma^*(\mathcal L)
- =
- \max_y
- \left[
- \sum_{v}d_{\mathcal L}(v)y_v
- -
- \sum_{\lambda\in\mathcal L}
- \max_{a\in P_\lambda}
- \bigl(y_{\ell(a)}+y_{r(a)}\bigr)
- \right],
- }
+\boxed{
+\sigma^*(\mathcal L)
+=
+\max_y
+\left[
+\sum_vd_{\mathcal L}(v)y_v
+-
+\sum_{\lambda\in\mathcal L}
+\max_{a\in P_\lambda}
+\bigl(y_{\ell(a)}+y_{r(a)}\bigr)
+\right],
+}
 \]
 
-where the maximum is over nonnegative resource prices satisfying
+where \(y_v\ge0\) and
 
 \[
- \sum_v y_v\le1.
+\sum_vy_v\le1.
 \]
 
 #### Proof
 
-Write the primal constraints as
+Write the primal resource constraints as
 
 \[
- t+
- \sum_{\lambda:v\in P_\lambda}
+t+
+\sum_{\lambda:v\in P_\lambda}
  x_{\lambda,a_\lambda(v)}
- \ge
- d_{\mathcal L}(v).
+\ge
+d_{\mathcal L}(v).
 \]
 
-Use nonnegative dual variables \(y_v\) for these inequalities and a free variable
-\(\alpha_\lambda\) for each survivor equality.  The variable \(t\) gives
-\(\sum_vy_v\le1\).  For a trace cell \(a\in P_\lambda\), dual feasibility is
+Dual resource variables are nonnegative and the survivor equalities have free
+dual variables.  The variable \(t\) gives \(\sum_vy_v\le1\), while a trace cell
+\(a\in P_\lambda\) gives
 
 \[
- y_{\ell(a)}+y_{r(a)}+\alpha_\lambda\le0.
+y_{\ell(a)}+y_{r(a)}+\alpha_\lambda\le0.
 \]
 
-At the optimum,
-
-\[
- \alpha_\lambda
- =
- -\max_{a\in P_\lambda}
- \bigl(y_{\ell(a)}+y_{r(a)}\bigr).
-\]
-
-Substitution gives the displayed objective.  Finite-dimensional linear
-programming duality completes the proof. ∎
-
-The dual measures resource price that cannot be protected by choosing one cell
-on each trace.
+Optimizing \(\alpha_\lambda\) yields the displayed objective. ∎
 
 ## 5. Randomized rounding
 
@@ -312,53 +286,40 @@ on each trace.
 There is an integral survivor choice satisfying
 
 \[
- \boxed{
- \max_v M_s(v)
- \le
- \sigma^*(\mathcal L)
- +4\sqrt{(\sigma^*(\mathcal L)+1)\log(2q)}
- +4\log(2q).
- }
+\boxed{
+\max_vM_s(v)
+\le
+\sigma^*(\mathcal L)
++4\sqrt{(\sigma^*(\mathcal L)+1)\log(2q)}
++4\log(2q).
+}
 \]
 
-Consequently, if
-
-\[
- \sigma^*(\mathcal L)=o(q),
-\]
-
-then the PP3lo survivor cover has multiplicity congestion \(o(q)\), and therefore
-simple resource congestion \(o(q)\).
+Thus \(\sigma^*(\mathcal L)=o(q)\) gives a simple unary cover of congestion
+\(o(q)\).
 
 #### Proof
 
-Take an optimal fractional solution and choose the survivor on each line
-independently according to \(x_{\lambda,\cdot}\).  For a fixed resource \(v\),
-\(M_s(v)\) is a sum of independent Bernoulli variables with expectation at most
+Choose each line's survivor independently according to an optimal fractional
+solution.  For fixed \(v\), \(M_s(v)\) is a Bernoulli sum of expectation at most
 \(\sigma^*(\mathcal L)\).  Bernstein's inequality and a union bound over the
-\(2q\) resources give the displayed bound with positive probability.  The final
-statement follows because the additive term is \(o(q)\) whenever
-\(\sigma^*(\mathcal L)=o(q)\). ∎
+\(2q\) resources give the stated bound.  Simple cover degree is at most
+multiplicity load. ∎
 
-## 6. Revised witness-line endpoint
+## 6. Revised endpoint
 
 ### Corollary PP3lw -- PROVED
 
-The full-trace line-cover route has the following exact alternatives.
+The full-trace survivor route has three exact regimes.
 
-1. \(\sigma^*(\mathcal L)=o(q)\).  Then survivor rounding gives a unary cover of
-   congestion \(o(q)\), after which PP3lc or PP3ld applies.
-2. \(\sigma^*(\mathcal L)\ge\rho q\) along a subsequence.  Then PP3lu supplies a
-   unit resource-price vector for which a linear amount of line-incidence price
-   remains unprotected after the best survivor on every trace.
-3. If there are \(\Omega(q)\) distinct lines with \(\Omega(q)\)-sized traces,
-   PP3lt already forces the second regime.
+1. \(\sigma^*(\mathcal L)=o(q)\): survivor rounding gives a low-congestion unary
+   cover, after which PP3lc or PP3ld applies.
+2. \(\sigma^*(\mathcal L)\ge\rho q\) along a subsequence: PP3lu supplies a unit
+   resource-price vector with linear unavoidable deletion price.
+3. A linear bank of linear-rich distinct lines automatically lies in regime 2 by
+   PP3lt.
 
-Therefore one-line unary absorption closes sparse total trace volume, but it
-cannot close the second-generation grid-rich pencil.  The latter must be attacked
-by owner-line reassignment, a rectangle/tomographic trade, or a more economical
-conflict cover that does not delete almost the whole trace.
-
-This chapter also corrects the scope of PP3lp: low witness-line overlap is a
-sufficient endpoint, not a mechanism capable of absorbing every linear bank of
-linear-rich lines.
+Hence one-line absorption closes sparse total trace volume.  It cannot close the
+second-generation grid-rich pencil.  The unresolved conversion must move the
+owner lines, use a rectangle/tomographic trade, or exploit a substantially more
+economical conflict cover than deleting almost the whole trace.
