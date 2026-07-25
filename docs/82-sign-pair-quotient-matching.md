@@ -1,9 +1,9 @@
 # Sign-pair quotient matchings for odd strong-complete maps
 
 The affine-orbit route asks for one strong-complete seed with low secant and
-affine-triangle multiplicities.  This chapter introduces a symmetric subfamily
-whose existence problem is itself a regular perfect-matching problem with
-bounded codegrees.
+affine-triangle multiplicities. This chapter introduces a symmetric subfamily
+whose existence problem is a regular perfect-matching problem with bounded
+codegrees.
 
 Let \(p\) be an odd prime and put
 
@@ -17,33 +17,28 @@ Write \([x]\) for the sign class of a nonzero field element \(x\).
 
 ## 1. The quotient hypergraph
 
-Take four labelled copies
+Take four labelled copies \(X,Y,D,S\) of \(\mathcal Q_p\). For nonzero \(x,y\)
+with \(y\ne\pm x\), define
 
 \[
-X,Y,D,S
+e(x,y)=([x],[y],[x-y],[x+y]).
 \]
 
-of \(\mathcal Q_p\).  For nonzero \(x,y\) with \(y\ne\pm x\), define
-
-\[
-e(x,y)=([x],[y],[x-y],[x+y])\in X\times Y\times D\times S.
-\]
-
-The pairs \((x,y)\) and \((-x,-y)\) define the same edge.  No other pair does:
-if only one sign is reversed, the last two sign classes are interchanged, and
+The pairs \((x,y)\) and \((-x,-y)\) define the same edge. No other pair does:
+reversing only one sign interchanges the final two sign classes, and
 \([x-y]\ne[x+y]\) because \(x,y\ne0\).
 
 Call the resulting four-partite four-graph \(\mathcal H_p^{\pm}\).
 
-## Theorem PX138 -- PROVED
+## Theorem PX148 -- PROVED
 
 Perfect matchings of \(\mathcal H_p^{\pm}\) are in bijection with permutations
 
 \[
-f:\mathbb F_p\longrightarrow\mathbb F_p
+f:\mathbb F_p\to\mathbb F_p
 \]
 
-satisfying
+such that
 
 \[
 f(0)=0,
@@ -51,7 +46,7 @@ f(0)=0,
 f(-x)=-f(x),
 \]
 
-and such that
+and all three maps
 
 \[
 f,
@@ -59,13 +54,12 @@ f,
 \qquad x\mapsto x+f(x)
 \]
 
-are all permutations.  In other words, they are exactly the odd
-strong-complete mappings.
+are permutations. Thus the matchings are exactly the odd strong-complete maps.
 
 ### Proof
 
-Let \(M\) be a perfect matching.  The unique edge of \(M\) covering an input
-class \([x]\) has a representative \(e(x,y)\).  Define
+Let \(M\) be a perfect matching. The unique edge covering an input class
+\([x]\) has a representative \(e(x,y)\). Define
 
 \[
 f(x)=y,
@@ -75,25 +69,24 @@ f(-x)=-y,
 f(0)=0.
 \]
 
-Changing the representative to \((-x,-y)\) gives the same definition.  Since
-\(M\) covers every \(Y\)-vertex once, the nonzero values of \(f\) occupy every
-sign class once, with both signs supplied by oddness; hence \(f\) is a
-permutation.  Covering every \(D\)-vertex once gives the same conclusion for
-\(x-f(x)\), and covering every \(S\)-vertex once gives it for \(x+f(x)\).
-
-Conversely, an odd strong-complete map contributes one edge
+Changing the representative to \((-x,-y)\) gives the same definition. Covering
+every \(Y\)-vertex once makes \(f\) a permutation; covering \(D\) and \(S\)
+makes \(x-f(x)\) and \(x+f(x)\) permutations. Conversely, an odd
+strong-complete map contributes one edge
 
 \[
 ([x],[f(x)],[x-f(x)],[x+f(x)])
 \]
 
-for every input sign class.  The three permutation conditions imply that these
-edges cover every vertex in all four parts exactly once.  Thus they form a
-perfect matching. \(\square\)
+for each input sign class, and the three permutation conditions make these
+edges a perfect matching. \(\square\)
+
+This is the sign-quotient subhypergraph of the full exact-cover host from
+PX138--PX139.
 
 ## 2. Exact regularity
 
-## Theorem PX139 -- PROVED
+## Theorem PX149 -- PROVED
 
 The quotient hypergraph has
 
@@ -105,7 +98,7 @@ The quotient hypergraph has
 m(p-3)
 \]
 
-edges and is exactly \((p-3)\)-regular.  Its maximum pair and triple codegrees
+edges and is exactly \((p-3)\)-regular. Its maximum pair and triple codegrees
 are
 
 \[
@@ -120,23 +113,21 @@ Fixing \([x]\in X\), there are \(p-3\) signed output choices
 y\in\mathbb F_p^*\setminus\{x,-x\}.
 \]
 
-They give distinct edges, so the \(X\)-degree is \(p-3\).  The same argument
-works for \(Y\).
+They give distinct edges. The same argument works for \(Y\).
 
-Fix a difference class and orient it as \(x-y=d\ne0\).  Then \(y=x-d\), and
-\(x\) may be any field element except
+Fix a difference class and orient it as \(x-y=d\ne0\). Then \(y=x-d\), and
+\(x\) can be any field element except
 
 \[
 0,
 \qquad d,
-\qquad d/2.
+\qquad d/2,
 \]
 
-These exclusions respectively prevent \(x=0\), \(y=0\), and \(x+y=0\).
-Therefore the \(D\)-degree is again \(p-3\).  The sum part is identical.
-Multiplying the degree by \(|X|=m\) gives the edge count.
+which respectively prevent \(x=0\), \(y=0\), and \(x+y=0\). Thus the \(D\)
+degree is \(p-3\); the sum part is identical.
 
-Any two of the four linear forms
+Any two of the linear forms
 
 \[
 x,
@@ -145,30 +136,23 @@ x,
 \qquad x+y
 \]
 
-are linearly independent in odd characteristic.  After fixing two sign
-classes, there are at most four choices of their signs, paired by simultaneous
-negation, so at most two edges.  Generic pairs attain two.
+are independent in odd characteristic. After fixing two sign classes, there
+are at most four sign choices, paired by simultaneous negation, so the pair
+codegree is at most two. Generic pairs attain two.
 
 For three parts, the third sign class distinguishes the two possible relative
-sign choices.  For example, after fixing \([x]\) and \([y]\), the two candidates
-have difference classes \([x-y]\) and \([x+y]\), which are distinct.  The other
-three choices of parts reduce to this calculation by solving the corresponding
-pair of linear equations.  Thus every triple lies in at most one edge, and
-examples attaining one are immediate. \(\square\)
-
-The base matching problem is therefore unusually clean: its degree tends to
-infinity linearly while every nontrivial codegree is bounded absolutely.
+signs. For instance, after fixing \([x]\) and \([y]\), the two candidates have
+difference classes \([x-y]\) and \([x+y]\), which are distinct. The remaining
+triples of parts follow by solving the corresponding two linear equations.
+Thus the triple codegree is one. \(\square\)
 
 ## 3. Exact finite odd seeds
 
 Randomized exact-cover search in \(\mathcal H_p^{\pm}\), followed by exact
-multiplicity scoring, produced the following odd strong-complete seeds.  The
-full row-order permutations are stored in the verifier.
+multiplicity scoring, gives the following odd strong-complete seeds. Their full
+row-order permutations are stored in the verifier.
 
-## Theorem PX140 -- PROVED FINITE
-
-There are explicit odd strong-complete maps with the following affine-orbit
-parameters.
+## Theorem PX150 -- PROVED FINITE
 
 | Prime \(p\) | \(\mu(f)\) | \(	au(f)\) | \(K_2=\mu/p\) | \(K_3=(p-2)	au/p\) |
 |---:|---:|---:|---:|---:|
@@ -179,16 +163,16 @@ parameters.
 | 61 | 90 | 12 | \(<1.48\) | \(<11.61\) |
 | 67 | 96 | 12 | \(<1.44\) | \(<11.65\) |
 
-Thus forcing the sign symmetry does not create a linear triangle-multiplicity
-obstruction.  It costs only a modest constant in the tested affine-orbit
-parameters while replacing an unrestricted exact-cover problem by the regular
-bounded-codegree hypergraph of PX139.
+Thus sign symmetry does not create a linear triangle-multiplicity obstruction.
+It costs only a modest constant in the tested affine-orbit parameters while
+replacing the unrestricted exact-cover problem by the regular bounded-codegree
+host of PX149.
 
-## 4. What a spread matching measure already gives
+## 4. Fixed-bin consequences of spread
 
-Let \(d=p-3\).  A probability distribution on perfect matchings of
-\(\mathcal H_p^{\pm}\) is called rank-three \(K/d\)-spread when every compatible
-set \(F\) of at most three hyperedges satisfies
+Let \(d=p-3\). A probability distribution on perfect matchings of
+\(\mathcal H_p^{\pm}\) is rank-three \(K/d\)-spread if every compatible set \(F\)
+of at most three hyperedges satisfies
 
 \[
 \Pr(F\subseteq M)
@@ -197,9 +181,9 @@ set \(F\) of at most three hyperedges satisfies
 \]
 
 Assume \(1\le K\le d\), and let \(f_M\) be the odd strong-complete map obtained
-from PX138.
+from PX148.
 
-## Theorem PX141 -- PROVED CONDITIONALLY
+## Theorem PX151 -- PROVED CONDITIONALLY
 
 For every scalar secant slope \(r\),
 
@@ -213,11 +197,10 @@ For every scalar secant slope \(r\),
 }
 \]
 
-In particular,
+Hence
 
 \[
-\mathbb E\,\mu_{f_M}(r)
-=O(K^2p).
+\mathbb E\,\mu_{f_M}(r)=O(K^2p).
 \]
 
 For every affine-triangle shape \((r,t,s)\), with \(t,s\ne0,1\),
@@ -232,59 +215,41 @@ For every affine-triangle shape \((r,t,s)\), with \(t,s\ne0,1\),
 }
 \]
 
-Hence
+Thus
 
 \[
-\mathbb E\,\tau_{f_M}(r,t,s)
-=O(K^3)
+\mathbb E\,\tau_{f_M}(r,t,s)=O(K^3)
 \]
 
-uniformly in the shape and the prime.
+uniformly in the shape and prime.
 
 ### Proof: secants
 
-Consider an ordered row pair \((u,v)\).
-
-There are exactly \(3(p-1)\) degenerate pairs of the following forms:
+There are exactly \(3(p-1)\) ordered row pairs of the forms
 
 \[
 u=0,
-\qquad
-v=0,
-\qquad
-v=-u\ne0.
+\qquad v=0,
+\qquad v=-u\ne0.
 \]
 
-For a fixed slope \(r\), each such condition fixes at most one quotient
-hyperedge.  Its probability is at most \(K/d\).
+For a fixed slope, each fixes at most one quotient edge and therefore has
+probability at most \(K/d\).
 
-The remaining
-
-\[
-(p-1)(p-3)
-\]
-
-ordered pairs use two distinct nonzero sign classes.  After choosing the scalar
-value \(f(u)\), of which there are at most \(p\) possibilities, the equation
+The remaining \((p-1)(p-3)\) ordered pairs use two distinct nonzero sign
+classes. After choosing \(f(u)\) in at most \(p\) ways, the equation
 
 \[
 f(v)-f(u)=r(v-u)
 \]
 
-fixes \(f(v)\).  Every valid assignment prescribes two compatible quotient
-edges and therefore has probability at most \((K/d)^2\).  Summing gives the
-first displayed bound.
+fixes \(f(v)\). Each valid assignment prescribes two compatible quotient edges
+and has probability at most \((K/d)^2\). Summing gives the first bound.
 
 ### Proof: affine triangles
 
-Put
-
-\[
-w=u+t(v-u).
-\]
-
-The three scalar rows are distinct.  Their sign classes fail to be three
-distinct nonzero classes only when at least one of
+Put \(w=u+t(v-u)\). The three scalar rows are distinct. Their sign classes fail
+to be three distinct nonzero classes only when one of
 
 \[
 u=0,
@@ -295,43 +260,39 @@ u=0,
 \quad w=-v
 \]
 
-holds.  For fixed \(t\), these six linear equations account for at most \(6p\)
-ordered pairs.  Oddness, together with the prescribed shape \((r,t,s)\), then
-fixes every nonzero image involved, if the shape is consistent at all.  The
-probability is at most \(K/d\).
+holds. For fixed \(t\), these equations account for at most \(6p\) ordered
+pairs. Oddness and the prescribed shape then fix every nonzero image involved,
+if the shape is consistent, so the probability is at most \(K/d\).
 
-For every other ordered pair, choose \(f(u)\) in at most \(p\) ways.  The slope
-\(r\) fixes \(f(v)\), and the output ratio \(s\) fixes \(f(w)\).  This prescribes
-three distinct compatible quotient edges, with probability at most
-\((K/d)^3\).  There are at most \(p(p-1)\) ordered pairs.  Summing proves the
-second displayed bound. \(\square\)
+For every other ordered pair, choose \(f(u)\) in at most \(p\) ways. The slope
+fixes \(f(v)\), and the output ratio fixes \(f(w)\). This prescribes three
+distinct compatible quotient edges, with probability at most \((K/d)^3\).
+There are at most \(p(p-1)\) ordered pairs. Summing proves the result.
+\(\square\)
 
-## 5. The sharpened remaining theorem
+## 5. Relation to the current completion program
 
-PX141 shows that first moments are already at the desired scales in the
-sign-pair matching model.  The missing statement is now a tail theorem:
-construct a perfect-matching distribution in \(\mathcal H_p^{\pm}\) which is
-spread through logarithmic rank, or prove comparable concentration for the
-random-greedy-plus-absorption process.
+PX141 already gives an almost-perfect pseudorandom matching in the full host
+\(\mathcal H_p\). PX148--PX151 provide a complementary quotient model:
 
-Such a result should yield one matching with
+1. the degree remains linear;
+2. pair and triple codegrees stay absolutely bounded;
+3. exact odd seeds with constant triangle multiplicity exist through order 67;
+4. rank-three spread already forces the correct first-moment scales.
+
+The remaining quotient theorem is tail control: construct a perfect-matching
+measure spread through logarithmic rank, or prove comparable concentration for
+a random-greedy-plus-absorption process. Such a theorem should yield
 
 \[
 \mu(f)=O(p\operatorname{polylog}p),
 \qquad
-\tau(f)=\operatorname{polylog}p,
+\tau(f)=\operatorname{polylog}p.
 \]
 
-and potentially the constant bounds suggested by PX132--PX140.  The exact
-regularity and bounded codegrees in PX139 match the hypotheses of modern
-nibble, absorption, and spread methods much more closely than the original
-unrestricted permutation formulation.
-
-The asymptotic enumeration of toroidal queens proves that strong-complete maps
-are exponentially abundant, but its currently stated error term does not by
-itself give the fixed-rank completion ratios required here.  The next proof
-must extract robust conditional counting or direct cylinder bounds from that
-machinery.
+The full-host route is currently further advanced because PX142--PX147 compute
+its exact lattice and finite absorbers. The quotient route remains useful as a
+smaller symmetric testbed for a spread perfect-matching theorem.
 
 ## 6. Verification
 
@@ -342,5 +303,5 @@ python scripts/verify_product_sign_pair_quotient.py
 ```
 
 The verifier constructs the quotient hypergraph through prime order nineteen,
-checks its edge count, regularity and exact codegrees, and verifies every
-listed odd seed and multiplicity through order sixty-seven.
+checks its edge count, regularity and exact codegrees, and verifies every listed
+odd seed and multiplicity through order sixty-seven.
