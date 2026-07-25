@@ -35,6 +35,13 @@ This ledger records only branch-specific results and corrections.
 | RI5s | Closed completion components form an independent Boolean toggle bank with exact active cylinder probabilities | PROVED | `docs/rational-inverse-component-toggle-bank.md` |
 | RI5t | The toggle bank plus conditional blocker repair has an exact expected collateral criterion | PROVED | `docs/rational-inverse-component-toggle-bank.md` |
 | RI5u | Failed toggle comparison localizes to active rank one, two, three, or blocker-repair collateral | PROVED | `docs/rational-inverse-component-toggle-bank.md` |
+| RI5v | Every new active rank-one triple prescribes one target component and has exact additive component cost | PROVED | `docs/rational-inverse-rank-one-active-profile.md` |
+| RI5w | A line meets the target hyperbola in at most two cells, eliminating local target rank three | PROVED | `docs/rational-inverse-rank-one-active-profile.md` |
+| RI5x | Rank-one active failure localizes to one-target incidence, exact hyperbola secants, or poor component ratios | PROVED | `docs/rational-inverse-rank-one-active-profile.md` |
+| RI5y | Positive paid-minus-rank-one components form a filtered product bank with guaranteed local margin | PROVED | `docs/rational-inverse-rank-one-margin-bank.md` |
+| RI5z | The filtered bank improves or routes failure to residual rank one, rank two, rank three, or blocker repair | PROVED | `docs/rational-inverse-rank-one-margin-bank.md` |
+| RI5aa | Iterative shadow pruning stabilizes with all surviving component margins positive | PROVED | `docs/rational-inverse-shadow-pruning.md` |
+| RI5ab | The terminal pruning core has no uncharged active rank one and routes only rank two, rank three, or blocker repair | PROVED | `docs/rational-inverse-shadow-pruning.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
