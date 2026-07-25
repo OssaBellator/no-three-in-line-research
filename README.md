@@ -41,14 +41,14 @@ total width T=MW  = m^(21/40+o(1)).
 The branch proves matching supply, exact degree restoration, internally no-three
 macro geometry, fixed-rank spread, exponent optimality, use of every final
 numerical label, controller-aware source safety, patch-only external closure, and
-ordinary two-slot source-anchor closure.
+ordinary same-slot source-anchor closure.
 
 Any saturation-compatible controller-aware global label allocation gives the
 prime-gap-scale patch.
 
 ## Four global allocation interfaces
 
-The branch retains four independent allocation mechanisms:
+The branch retains four independent mechanisms:
 
 1. one-sided movement ownership versus cumulative refill slack;
 2. deterministic two-sided ownership with local Ore condition `r+s<=W`;
@@ -58,8 +58,9 @@ The branch retains four independent allocation mechanisms:
 Same-slot anchor failure has sublinear deficiency and one canonical Dulmage cut.
 The crossing assignments have exact bottlenecks `E_U/d_U` and `E_V/d_V`. If those
 increments fit the local controller slack, every macro compatibility graph has a
-perfect matching. Remaining failure is a controller denominator, insufficient
-baseline Ore slack, or concentrated anchor energy per necessary crossing.
+perfect matching. Remaining direct failure is a controller denominator,
+insufficient baseline Ore slack, or concentrated anchor energy per necessary
+crossing.
 
 ## Hall, binary, and rectangle endpoint
 
@@ -77,26 +78,24 @@ rectangle diagonals. Equitable colouring and superregular spread absorb every
 zero-density hard-unary rectangle support and every bounded signed finite-state
 contradiction.
 
-## Conditional binary stars and paid two-resource grids
+## Conditional binary stars and paid choice grids
 
-A perfect matching chooses one cell at a fixed endpoint resource. Therefore a
-binary resource star is an exact conditional problem: fix the selected centre
-cell, delete only its partner fibre, and complete the residual matching.
+A perfect matching chooses one cell at a fixed endpoint resource. Thus a binary
+resource star is an exact conditional problem: fix the centre cell, delete only
+its partner fibre, and complete the residual matching.
 
 In a superregular host:
 
 - every subquadratic resource star has a sparse fibre and completes;
 - persistent failure yields conditional Hall rectangles or a quadratic cell fan;
 - a repeated secondary resource becomes a two-choice forbidden matrix;
-- failure of that matrix forces a complete quadratic choice grid between two
-  endpoint resources.
+- failure of that matrix forces a complete quadratic choice grid.
 
-A complete support grid is not itself paid failure. Selecting the local pair and
-its residual matching in one average closes the grid whenever average blocker
-multiplicity plus residual collateral is below the combined removal credit. A
-persistent grid therefore has weighted mass at the credit scale and requires a
-candidate-rich projective matching cover, residual concentration, or a
-non-superregular conditional host.
+A complete support grid is not itself paid failure. Joint selection of its local
+pair and residual matching succeeds whenever average blocker multiplicity plus
+support-ranked residual collateral is below the combined removal credit.
+Persistent failure is weighted multiplicity, a projective cover, residual
+concentration, or a non-superregular conditional host.
 
 ## Matchable non-superregular hosts
 
@@ -105,9 +104,8 @@ Perfect matchings factor exactly over the strongly connected components.
 
 - Trivial components are forced edges with canonical tight Hall cuts.
 - Bounded flexible credited components are paid finite-state banks.
-- Maximum mobility in a large component gives disjoint alternating-cycle banks.
-- Low mobility gives a feedback hub, a one-hub cycle-star, or a two-hub theta
-  support core.
+- Maximum mobility gives disjoint alternating-cycle banks.
+- Low mobility gives a feedback hub, a cycle-star, or a two-hub theta support core.
 
 Unbounded SCC size and unstructured sparse-host failure are no longer terminal
 parameters.
@@ -120,36 +118,43 @@ $$
 \Xi(S)=\sum_z (b_S(z)-1).
 $$
 
-Pool-compatible endpoint permutations preserve the complete candidate-cell
-universe and satisfy an exact insertion-cost-minus-removal-credit identity.
-Uniform strict improvement terminates automatically.
+Pool-compatible endpoint permutations preserve the candidate-cell universe and
+satisfy an exact insertion-cost-minus-removal-credit identity. Uniform strict
+improvement terminates automatically.
 
 For a credited resource bank of size `m^(19/40)` inside a full controller pool of
-size `m^(19/20)`, force one credited endpoint into a marked filler block of size
-`b=m^kappa`, with `kappa<19/80`.
+size `m^(19/20)`, marked filler dilution makes almost every endpoint light for
+anchored pairs, rank-four through rank-six inserted triples, and anchored
+transitions. Adaptive filler size also closes diffuse unary source support; total
+unary failure produces an `Omega(m^(19/40))` unary-forbidden resource matching.
 
-Full-pool dilution proves that all but `o(m^(19/40))` credited endpoints are light
-for support-rank-four anchored pairs, rank-four through rank-six inserted triples,
-and anchored transitions. Adaptive filler size also closes diffuse unary source
-support. If no credited endpoint is unary-light, Hall extracts an
-`Omega(m^(19/40))` unary-forbidden resource matching.
-
-The marked block now uses a uniform single-cycle endpoint permutation. Its exact
+The marked block uses a uniform single-cycle endpoint permutation. Its exact
 cylinder law is `1/(b-1)_r` on directed path forests and zero on every proper
-directed cycle. It moves every endpoint and deterministically removes diagonal
-arcs, transpositions, and directed triangles. Thus no separately prepared spread
-host is needed.
+directed cycle. It moves every endpoint and eliminates diagonal arcs,
+transpositions, and directed triangles. Rank-one unary `Xi` weight and rank-two
+binary transposition weight therefore vanish identically.
 
-In the paid `Xi` expression, rank-one unary weight and rank-two binary
-transposition weight vanish identically. Diffuse remaining support-ranked weight
-gives a strict pool-compatible decrease. A fixed captive star centre that still
-fails carries one of nine explicit support-degree cores.
+## Fixed-centre transition endpoint
 
-The transition core is now sharpened further: a failed clean-chain branch gives a
-linear resource-disjoint witness sunflower, and layer/pool pigeonholing converts
-that sunflower to a free or one-pool credited endpoint bank of size
-`m^(9/10-o(1))`, far above the required marked-bank scale. Transition sunflowers
-therefore rejoin the ordinary paid star/resource-bank frontier.
+The transition branch now has a canonical chain.
+
+1. A support-ranked clean five-index chain gives a paid single-cycle completion.
+2. Otherwise a near-complete role star contains `Omega(N)` witness petals that are
+   pairwise disjoint outside the captive centre.
+3. Layer and pool pigeonholing convert the sunflower to a free or one-pool credited
+   endpoint bank of size at least `W=m^(19/40+o(1))`.
+4. Bounded-support averaging across the disjoint petals closes every diffuse
+   noncentral source and `Xi` contribution.
+
+The exact remaining transition cases are:
+
+- a source or `Xi` core supported at the shared captive centre;
+- global support-ranked petal-touching weight at the bank-credit scale;
+- a unary-forbidden resource matching;
+- hard-unary or residual endpoint-host failure;
+- paid completion through the free or one-pool endpoint bank.
+
+The transition sunflower itself is no longer a separate frontier.
 
 ## Current remaining theorem
 
@@ -157,39 +162,33 @@ The all-`n` branch is reduced to:
 
 1. controller denominator failure, insufficient local Ore slack, or weighted
    anchor energy in one canonical ownership core;
-2. paid conversion of source-star/resource banks produced by unary support,
-   forced Hall cuts, and fixed-centre transition sunflowers;
+2. paid source-star/resource-bank conversion produced by hard unary support,
+   forced Hall cuts, and transition sunflowers;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, weighted
-   clean-chain concentration, or one of the eight nontransition fixed-centre
-   support-degree certificates;
-5. alternating cycle-star/theta support cores or cost comparable with cycle
-   credit;
-6. quadratic binary cell fans, weighted two-resource choice grids,
-   candidate-rich projective covers, conditional Hall families, or residual paid
-   collateral.
+4. remaining marked `Xi` ranks, full-pool `Xi` thresholds, or fixed-centre
+   source/weight cores;
+5. alternating cycle-star/theta support cores or cost at the cycle-credit scale;
+6. quadratic binary cell fans, weighted choice grids, projective covers,
+   conditional Hall families, or support-ranked residual collateral.
 
-Diffuse pool-local source mass, prepared marked spread hosts, rank-one unary
-`Xi`, rank-two binary transpositions, raw polynomial resource stars, diffuse
-binary dual mass, unstructured non-superregularity, controller relabelling,
-transition sunflowers, and termination are no longer separate open problems.
+Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic
+`Xi` terms, diffuse binary dual mass, raw resource stars, diffuse transition-petal
+collateral, unstructured non-superregularity, controller relabelling, and
+termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
 ## Recent proof chapters
 
-- `docs/143`--`docs/149`: alternating SCCs, forced Hall cuts, maximum mobility,
-  cycle stars, and theta states.
+- `docs/143`--`docs/149`: alternating SCCs, forced Hall cuts, mobility, cycle stars,
+  and theta states.
 - `docs/150`--`docs/156`: canonical weighted anchor cores, local Ore completion,
-  dense hard-unary localization, and binary dual price cores.
-- `docs/157`--`docs/159`: conditional resource-star completion, conditional Hall
-  localization, and complete two-resource choice grids.
-- `docs/160`--`docs/166`: marked pool source dilution, unary-resource extraction,
-  support-ranked `Xi` weights, exceptional-centre certificates, universal
-  single-cycle filler states, and paid two-resource grid selection.
-- `docs/167`--`docs/170`: fixed-centre transition role localization, bounded-choice
-  cores, disjoint witness petals, and conversion to credited endpoint banks.
+  hard-unary localization, and binary dual price cores.
+- `docs/157`--`docs/166`: conditional resource stars, paid choice grids, marked
+  source dilution, support-ranked `Xi`, and universal single-cycle fillers.
+- `docs/167`--`docs/171`: transition role localization, clean-chain averaging,
+  disjoint witness petals, credited sunflower banks, and collateral localization.
 
 ## Current exact checks
 
