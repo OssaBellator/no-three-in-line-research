@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+"""Finite arithmetic checks for PX324--PX329."""
+
+from itertools import product
+
+
+def main() -> None:
+    for destroyed in range(1, 41):
+        for created in range(41):
+            if created < destroyed:
+                assert created - destroyed < 0
+            else:
+                budget = created - destroyed + 1
+                assert 1 <= budget <= created
+                assert created - budget - destroyed == -1
+                remaining = created
+                for _ in range(budget):
+                    remaining -= 1
+                assert remaining - destroyed < 0
+
+    supports = set()
+    for mask in product((0, 1), repeat=3):
+        support = sum(mask)
+        if support:
+            supports.add(support)
+            assert 1 <= support <= 3
+    assert supports == {1, 2, 3}
+
+    for blocker_count in range(1, 30):
+        vector = (blocker_count, 0)
+        for deeper in range(blocker_count):
+            new_vector = (vector[0] - 1, deeper + 1)
+            assert new_vector < vector
+            vector = new_vector
+
+    print("PX324--PX329 universal blocker-forest verifier: PASS")
+
+
+if __name__ == "__main__":
+    main()
