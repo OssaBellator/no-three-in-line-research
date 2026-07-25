@@ -57,6 +57,9 @@ This ledger records only branch-specific statements.
 | BDA5ap | A high row or column localizes at least one tenth of its paid record weight to one exact current role cell | PROVED | `docs/bounded-denominator-affine-chain-collapse.md` |
 | BDA5aq | Fixing the selected role cell determines both anchor coordinates and places every retained support on one radial line | PROVED | `docs/bounded-denominator-affine-chain-collapse.md` |
 | BDA5ar | Every five-role affine-chain output terminates as a fixed-anchor or translated fixed-cell radial profile | PROVED | `docs/bounded-denominator-affine-chain-collapse.md` |
-| BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
+| BDA5as | Every physical `h,h+q` scale graph is a disjoint union of paths | PROVED | `docs/bounded-denominator-scalar-cycle-termination.md` |
+| BDA5at | Capacity-one unordered adjacent-support tickets forbid every scalar closed walk | PROVED | `docs/bounded-denominator-scalar-cycle-termination.md` |
+| BDA5au | Strict divisor descent plus new adjacent tickets has one bounded integer potential | PROVED | `docs/bounded-denominator-scalar-cycle-termination.md` |
+| BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN; PURE SCALE/DENOMINATOR CYCLES CLOSED | `docs/bounded-denominator-absorbers.md`; `docs/bounded-denominator-scalar-cycle-termination.md` |
 
 No statement here proves the global conjecture.
