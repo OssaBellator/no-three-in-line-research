@@ -62,18 +62,17 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR671--676 | Changed-routing conservation, entering/leaving support, alternating-component union, finite routing-change stock, exact token/recreation payment, and the routing-history endpoint | PROVED | `docs/186-prime-power-routing-change-edge-support.md` |
 | CMR677--683 | Active mixed-atom criterion, forced/deletable split, matching-preserving deletion, monotone finite recursion, mixed-clean additivity, and strict child descent | PROVED | `docs/187-prime-power-mixed-child-deletion-recursion.md` |
 | CMR684--690 | Forced child-product terminality, finite signature and stage stock, recurrence, deletion/routing/entering-edge escape, and forced-child ancestry | PROVED | `docs/188-prime-power-forced-child-certificate-ancestry.md` |
+| CMR691--697 | Static host-stage and routing-epoch bounds, complete owner-edge/token/certificate stocks, recurrence thresholds, canonical path-length alternatives, and the descending-path normal form | PROVED | `docs/189-prime-power-descending-path-owner-stock.md` |
+| CMR698--705 | Exact target-destruction identity, entering-cell load concentration, edge-centred four-endpoint handoff, internal/expansion split, multiplicative target-load churn payment, forced-certificate conversion, and the descending-path potential endpoint | PROVED | `docs/190-prime-power-target-handoff-potential-conversion.md` |
+| CMR706--712 | Fixed-envelope target stock, recreation support, recurrent cell-target extraction, polynomial chain bound, exact reintroduction/token payment, envelope-chain aggregation, and the target-chain endpoint | PROVED | `docs/191-prime-power-fixed-envelope-target-chain.md` |
 
-The branch still does not prove the all-`n` conjecture. After CMR690, one
-recurrent child-routing product has a complete static and temporal normal form.
-Routing changes pay at least two entering and two leaving physical edges, with
-exact full-token incidence. Under a fixed routing skeleton, active cross-child
-conflicts are deleted monotonically unless they are forced by child essential
-cores; after at most `d^2` deletions, the product is globally clean, recurses
-into one strict child factor, or exposes one owner-labelled forced certificate.
-Strict child recursion decreases envelope side and factor side. Forced
-certificates have polynomial ancestry stock and can disappear only through
-certificate-edge deletion, routing churn, or genuinely entering factor edges.
-The remaining prime-power frontier is to aggregate this descending execution
-with inherited target-load descent, protected-reserve depletion, and the finite
-closure-envelope budget, then transfer the endpoint to prime fields and
-arbitrary side lengths.
+The branch still does not prove the all-`n` conjecture. After CMR712, the local
+factor, routing, forced-certificate, target-handoff, and target-signature loops
+all have owner-labelled finite stock or exact entering-edge payment. Every
+nonimproving target-destroying transition hands its load to one entering cell;
+forced certificates become target-load-one banks; and an internal target chain
+is polynomially bounded unless one exact cell-target pair is repeatedly
+recreated. The remaining prime-power frontier is the dynamic conversion of that
+recurrent pair into protected-reserve depletion, permanent deletion ancestry,
+full-token return, strict closure-envelope expansion, or a baseline improvement,
+followed by prime-field transfer and arbitrary side-length assembly.
