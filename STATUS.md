@@ -201,56 +201,51 @@ No separately prepared spread host is required in this branch.
 
 The support-ranked `Xi` expression therefore has no rank-one unary term and no
 rank-two binary transposition term. The remaining marked loads are rank-two unary
-and rank-three/rank-four binary weights; the corresponding unmarked full-pool
-terms are explicit. Diffuse remaining weight gives a strict dynamic decrease.
+and rank-three/rank-four binary weights.
 
-A fixed captive centre either succeeds or carries one of nine explicit support
-degree cores: unary, transition, anchored-pair, three triple ranks, rank-two unary
-`Xi`, or rank-three/rank-four binary `Xi`.
+The transition core is reduced to a linear disjoint-petal sunflower and then to
+a free or one-pool credited endpoint bank of size at least `W`. Diffuse
+noncentral collateral averages away across its petals.
 
-The transition core has now been reduced further. A failed clean-chain bank gives
-an `Omega(N)` resource-disjoint witness-petal sunflower. Pigeonholing the source
-permutation layer and the free/controller-pool class yields a free or single-pool
-credited endpoint bank of size
+The fixed-centre rank-two unary core first gives a cheap clean centre segment or
+a near-complete incoming/outgoing heavy arc star. That star is already a
+fixed-centre one-arc petal bank. Dyadic pigeonholing gives a `W`-sized
+comparable-cost subbank, and bounded-support averaging closes diffuse noncentral
+collateral. Failure is centre-core or local arc cost at the credit scale, residual
+source/host structure, or global unary weight `A_2=Omega(R_*W)`.
+
+The full-pool unary table also has a support conversion. Truncating at
+`tau R_*/(4b)` gives a paid marked cycle avoiding all heavy arcs unless one
+endpoint has `Omega(N/b)` heavy incident arcs. This is larger than `W` and returns
+to the same arc-petal branch.
+
+Rank-three binary `Xi` patterns are directed two-arc paths. Their middle role is
+a paid two-resource choice grid. Dense heavy outer support yields a `W`-sized
+comparable-cost path-petal bank disjoint outside the centre. Rank-four patterns
+reduce through conditioned support avoidance and robust Hall localization to a
+paid host, an alternating-component residual host, or a repeated
+secondary-resource star feeding the conditional Hall/grid chain.
+
+Full-pool binary truncation removes the remaining aggregate tables as independent
+frontiers. Failure of heavy-pattern avoidance forces a fixed-centre rank-three
+support degree
 
 ```text
-Omega(N/M)=m^(9/10-o(1)),
+Omega(N^2/b)
 ```
 
-which contains the required `W=m^(19/40+o(1))` subbank. Transition sunflowers
-therefore rejoin the existing paid source-star/resource-bank frontier. The exact
-finite bookkeeping is checked by `scripts/check_transition_sunflower_bank.py`.
+or a fixed-centre rank-four support degree
 
-The fixed-centre rank-two unary `Xi` core is localized. Conditioning on the
-incoming and outgoing centre arcs leaves exactly `(b-3)!` completions. Either a
-locally source-clean pair has cost below budget, or all but
-`m^(1/2+o(1))` admissible arcs on one side form a fixed-row or fixed-column
-rich-cost star.
+```text
+Omega(N^3/b^2).
+```
 
-Rank-three binary `Xi` patterns are directed two-arc paths through the centre.
-Their middle role is a paid two-resource choice grid. Dense heavy outer support
-contains `(1-o(1))N²` predecessor or successor paths. A typed-resource greedy
-extraction and dyadic pigeonhole give a `W`-sized comparable-cost path-petal bank
-whose noncentral resources are pairwise disjoint. Bounded-support averaging
-closes diffuse noncentral collateral. Remaining failure is centre-core or local
-path cost at the credit scale, a global support-ranked threshold, outer
-source/host failure, or an already-listed paid-grid/projective-cover object. The
-finite extraction is checked by `scripts/check_rank_three_outer_path_petals.py`.
+These rejoin the rank-three and rank-four localization chains.
 
-Rank-four binary `Xi` patterns are one fixed centre arc paired with one
-vertex-disjoint remote arc. Sparse support is avoided exactly. More strongly,
-delete the complete positive partner support from the conditioned residual host:
-
-- a superregular residual host gives a support-avoiding paid completion;
-- a matchable non-superregular residual host rejoins the alternating-component
-  frontier;
-- an unmatchable residual host has, by robust Hall localization, a repeated
-  secondary-resource star of size `Omega(N)` and rejoins the conditional
-  Hall/two-resource-grid chain.
-
-Thus weighted rank-three middle rectangles, small-core heavy rank-three outer
-families, fixed rank-four multiplicity cores, fixed-cell remote matchings, and
-square-root partner stars are no longer independent obstructions.
+Thus fixed-axis unary stars, unstructured full-pool `A_2`, `B_3`, and `B_4`
+thresholds, weighted rank-three middle rectangles, small-core heavy rank-three
+outer families, fixed rank-four multiplicity cores, fixed-cell remote matchings,
+and square-root partner stars are no longer independent obstructions.
 
 ## What remains conditional
 
@@ -258,13 +253,12 @@ The missing conversion theorem has these structured forms.
 
 1. Convert controller denominator failure, insufficient local Ore slack, or
    weighted anchor energy concentrated in one canonical ownership core.
-2. Pay source-star/resource-bank and fixed-centre path-petal trades produced by
-   unary support, forced Hall cuts, transitions, and rank-three outer roles.
+2. Pay source-star/resource-bank and fixed-centre arc/path-petal trades produced by
+   unary support, forced Hall cuts, transitions, and marked `Xi` localization.
 3. Convert chromatically concentrated unary or binary controller-shadow weight
    in the global rectangle branch.
-4. Convert fixed-axis unary-`Xi` stars, centre-core/local-credit concentration,
-   full-pool `Xi`-weight thresholds, or the remaining fixed-centre source/weight
-   cores.
+4. Convert centre-core/local-credit concentration or the remaining fixed-centre
+   source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted two-resource choice grids,
@@ -288,8 +282,11 @@ The missing conversion theorem has these structured forms.
   bounds.
 - The robust rank-four Hall theorem localizes matchability failure; it does not
   pay residual source or non-rank-four insertion cost.
-- The rank-three path-petal theorem closes diffuse noncentral collateral but not
-  centre-core weight or local path cost already at the removal-credit scale.
+- The arc/path-petal theorems close diffuse noncentral collateral but not
+  centre-core weight or local cost already at the removal-credit scale.
+- The full-pool truncation theorems are conservative heavy-pattern avoidance
+  reductions; their hard branches still require the cited fixed-centre
+  conversions.
 - Finite diagnostics verify identities and examples, not asymptotic conversion.
 
 ## Bottom line
@@ -300,10 +297,10 @@ extraction, superregular and non-superregular state decompositions, canonical
 weighted anchor deficiency, conditional resource stars, diffuse pool-local source
 mass, universal marked single-cycle spread, low-rank cyclic `Xi` terms, diffuse
 binary dual mass, transition-sunflower localization to credited endpoint banks,
-rank-two unary `Xi` localization, rank-three middle and outer localization to
-existing paid-grid and fixed-centre path-petal frontiers, and rank-four support
-localization through robust Hall to the conditional Hall/grid frontier.
+rank-two unary arc-petal localization, rank-three middle/outer localization,
+rank-four support localization through robust Hall, and full-pool unary/binary
+truncation to fixed-centre cores.
 
-The concentrated local-Ore, paid star/resource/petal, global-shadow, fixed-axis
-unary, centre-core/local-credit, cycle-support, full-pool-weight, and weighted
-binary-grid cores above remain open.
+The concentrated local-Ore, paid star/resource/petal, global-shadow,
+centre-core/local-credit, cycle-support, and weighted binary-grid cores above
+remain open.
