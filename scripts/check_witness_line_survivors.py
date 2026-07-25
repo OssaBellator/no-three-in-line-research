@@ -94,6 +94,12 @@ def resource_degrees(q: int, cells: Iterable[Cell]) -> list[int]:
     return degrees
 
 
+def ceil_ratio(numerator: int, denominator: int) -> int:
+    if denominator <= 0:
+        raise ValueError("denominator must be positive")
+    return (numerator + denominator - 1) // denominator
+
+
 def main() -> None:
     args = parse_args()
     q, lines = load_instance(args.input)
@@ -141,11 +147,13 @@ def main() -> None:
     r = len(lines)
     total_deleted_multiplicity = sum(len(trace) - 1 for trace in lines)
     denominator = total_deleted_multiplicity + r * (r - 1)
-    union_lower_bound = math.ceil(
-        total_deleted_multiplicity**2 / denominator
-    ) if denominator else 0
-    congestion_lower_bound = math.ceil(union_lower_bound / q)
-    multiplicity_average_lower_bound = math.ceil(total_deleted_multiplicity / q)
+    union_lower_bound = (
+        ceil_ratio(total_deleted_multiplicity**2, denominator)
+        if denominator
+        else 0
+    )
+    congestion_lower_bound = ceil_ratio(union_lower_bound, q)
+    multiplicity_average_lower_bound = ceil_ratio(total_deleted_multiplicity, q)
 
     result = {
         "q": q,
