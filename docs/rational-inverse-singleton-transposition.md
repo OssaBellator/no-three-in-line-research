@@ -6,13 +6,13 @@ RI5h--RI5k isolate one desired completion cell occupied by the blocker layer and
 
 ## Setup
 
-Let \(N\) be the active-layer matching obtained after installing the selected RI5f completion components, except that one component is held back only because its desired cell
+Let \(N\) be the **proposed completed active matching** obtained by installing every selected RI5f completion component. Suppose exactly one desired cell
 
 \[
 q=(c_0,r_0)
 \]
 
-belongs to the blocker matching \(M_1\). Equivalently, the proposed completed active matching contains \(q\). Assume the ambient permutation size is \(n\ge2\).
+of \(N\) belongs to the current blocker matching \(M_1\). The current legal state may hold back the component containing \(q\); the construction below installs it and changes the blocker layer simultaneously. Assume the ambient permutation size is \(n\ge2\).
 
 For any other blocker cell
 
@@ -31,7 +31,7 @@ p'=(c_1,r_0).
 
 ## RI5l -- auxiliary blocker transposition -- PROVED
 
-Replace the held-back active component by its full target matching, remove \(q,p\) from \(M_1\), and insert \(q',p'\). The resulting two-layer state:
+Install the full active matching \(N\), remove \(q,p\) from \(M_1\), and insert \(q',p'\). The resulting two-layer state:
 
 1. preserves every active-layer row and column;
 2. preserves every blocker-layer row and column;
@@ -89,12 +89,16 @@ Let \(\mathcal T\) be the remaining possible new blocker-layer triples, so every
 For auxiliary column \(c\), the two newly inserted cells are
 
 \[
-(c_0,M_1(c))
+V_c=(c_0,M_1(c))
 \qquad\text{and}\qquad
-(c,r_0).
+H_c=(c,r_0).
 \]
 
-A cell of the first form determines \(c\) uniquely because the blocker rows \(M_1(c)\) are distinct. A cell of the second form determines \(c\) from its column. Therefore any exact new triple containing a crossed cell can occur for at most one auxiliary choice. Uniform averaging over the \(n-1\) choices gives the bound. \(\square\)
+Each crossed cell determines \(c\) uniquely: \(V_c\) does so through its row, because the blocker rows \(M_1(c)\) are distinct, while \(H_c\) does so through its column.
+
+It remains to exclude one exact triple being created in two states using different crossed cells. If \(c\ne d\), the state indexed by \(c\) does not contain \(V_d\), because its unique cell in column \(c_0\) is \(V_c\). It also does not contain \(H_d=(d,r_0)\), because before choosing \(d\) the blocker cell in column \(d\) is \((d,M_1(d))\), and \(M_1(d)\ne r_0\). Thus no crossed cell belonging to state \(d\) appears in state \(c\).
+
+Any exact new triple contains a crossed cell from the state that creates it, so it cannot occur in a second auxiliary state. Uniform averaging over the \(n-1\) choices gives the bound. \(\square\)
 
 ## RI5n -- collateral criterion and failure localization -- PROVED
 
@@ -147,4 +151,4 @@ The second output is especially rigid: every candidate uses one of two crossed-c
 
 ## Finite check
 
-`scripts/verify_rational_singleton_transposition.py` exhausts disjoint active and blocker permutations and proposed completed active matchings through size five. It verifies every auxiliary transposition, layer disjointness, uniqueness of the auxiliary choice for every newly created blocker triple, and the exact `1/(n-1)` cylinder cap.
+`scripts/verify_rational_singleton_transposition.py` exhausts disjoint active and blocker permutations and proposed completed active matchings through size five. It verifies every auxiliary transposition, layer disjointness, crossed-cell separation between distinct states, uniqueness of the auxiliary choice for every newly created blocker triple, and the exact `1/(n-1)` cylinder cap.
