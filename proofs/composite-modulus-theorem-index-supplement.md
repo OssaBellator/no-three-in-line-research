@@ -31,10 +31,13 @@ supplement mirrors the collision-free live range recorded in
 | CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
 | CMR492--496 | Universal compatible-pair derangement cylinder, rank-two-on-line elimination, rooted-arm cleaning, equal-size rooted-star banks, and bottleneck-pair line-clean splice | PROVED | `docs/156-prime-power-universal-compatible-pair-line-clean.md` |
 | CMR497--501 | Minimum line-clean restoration cost, forced restoration core, cheap-or-factorization availability, exact token/conflict payment, and application to rooted/bottleneck cylinders | PROVED | `docs/157-prime-power-line-clean-rollback-availability.md` |
+| CMR502--506 | Exact derangement restoration marginals, weighted cheap-clean selection, frozen collateral versus unavailable depletion, incidence concentration/dispersion, and the combined availability endpoint | PROVED | `docs/158-prime-power-line-clean-weighted-selection.md` |
+| CMR507--511 | Adaptive maximum unavailable-edge absorption, exact extension identity, König row-column cover, heavy unavailable-star concentration, and rooted/bottleneck application | PROVED | `docs/159-prime-power-adaptive-line-clean-unavailable-cover.md` |
+| CMR512--516 | Exact unavailable-star prefix occupancy, tunable heavy/dispersed token alternative, disjoint token packing, square-root endpoint, and adaptive line-clean token splice | PROVED | `docs/160-prime-power-unavailable-star-token-splice.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR501, universal line-clean construction and current-host availability are both
-closed: cheap restoration is priced and expensive restoration factors the host.
-The immediate target is selection inside the cheaply restored cylinder, using
-frozen-bank averaging, target-load decrease, reserve depletion, prefix/carry
-concentration, or envelope expansion.
+CMR516, one-shot line-clean selection and adaptive unavailable-edge geometry are
+closed. The immediate target is temporal payment for repeated free absorption,
+heavy unavailable tokens, and dispersed unavailable-token banks across parent
+epochs, through reserve depletion, ancestor-return incidence, or envelope
+expansion.
