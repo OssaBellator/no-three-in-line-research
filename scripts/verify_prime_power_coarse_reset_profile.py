@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR378--CMR384.
+"""Finite checks for CMR382--CMR384.
 
 The checks cover exact host churn under an old-cell-clean rematching, the flat
-p-adic fine-token return profile of a coarse block, one-pass aggregate bounds,
-reset-multiplicity thresholds, and the primitive-line witness trichotomy used in
-CMR384.
+p-adic fine-token return profile of a recursive coarse block, one-pass aggregate
+bounds, reset-slot multiplicity, and the primitive-line witness trichotomy.
 """
 
 from __future__ import annotations
@@ -51,7 +50,6 @@ def verify_exact_host_churn() -> None:
         assert after - before == old
         assert before - after == replacement
 
-        # A persistent deletion mask can only suppress returned old edges.
         deleted = {edge for edge in old if edge[0] % 2 == 0}
         residual_before = before - deleted
         residual_after = after - deleted
@@ -126,7 +124,7 @@ def verify_flat_token_profile() -> None:
 
 
 def verify_one_pass_sums() -> None:
-    """Check CMR381--CMR382 exactly at the displayed arithmetic level."""
+    """Check the one-pass bounds in CMR383."""
 
     for prime in (3, 5, 7, 11):
         directions = prime + 1
@@ -149,7 +147,7 @@ def verify_one_pass_sums() -> None:
 
 
 def verify_reset_multiplicity_threshold() -> None:
-    """Check the ancestor-slot pigeonhole threshold from CMR383."""
+    """Check the compatible-slot pigeonhole threshold from CMR384."""
 
     for depth in range(1, 12):
         slots = 2 * depth
@@ -157,11 +155,10 @@ def verify_reset_multiplicity_threshold() -> None:
             bounded_counts = [cap] * slots
             assert sum(bounded_counts) <= slots * cap
 
-            if slots:
-                violating_counts = bounded_counts.copy()
-                violating_counts[0] += 1
-                assert sum(violating_counts) > slots * cap
-                assert max(violating_counts) > cap
+            violating_counts = bounded_counts.copy()
+            violating_counts[0] += 1
+            assert sum(violating_counts) > slots * cap
+            assert max(violating_counts) > cap
 
         for prime in (3, 5, 7):
             side = prime ** (depth + 1)
@@ -172,7 +169,7 @@ def verify_reset_multiplicity_threshold() -> None:
 
 
 def verify_witness_trichotomy() -> None:
-    """Enumerate the valuation alternatives underlying CMR384."""
+    """Enumerate the valuation alternatives used in CMR384."""
 
     for prime in (3, 5, 7):
         modulus = prime**4
@@ -191,11 +188,8 @@ def verify_witness_trichotomy() -> None:
                     assert e == c
                 elif c > b:
                     assert e == b
-                    assert c > b
                 else:
                     assert e >= b
-                    if e > b:
-                        assert e > c
 
 
 def main() -> None:
@@ -205,7 +199,7 @@ def main() -> None:
     verify_reset_multiplicity_threshold()
     verify_witness_trichotomy()
     print(
-        "verified coarse reset profile: exact host churn, flat p-adic token "
+        "verified recursive coarse reset profile: exact host churn, flat token "
         "returns, one-pass O_p(t log^2 t) sum, reset multiplicity, and witness "
         "routing"
     )
