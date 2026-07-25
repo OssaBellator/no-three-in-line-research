@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact finite checks for AC3ig--AC3ik."""
+"""Exact finite checks for AC3il--AC3ip."""
 
 from __future__ import annotations
 
@@ -83,7 +83,7 @@ def check_failed_ledgers():
 def main():
     states, overlaps, two_hub, cylinders = check_cycle_menus()
     ledgers, constants = check_failed_ledgers()
-    print("AC3ig--AC3ik exact checks passed")
+    print("AC3il--AC3ip exact checks passed")
     print(f"cycle states: {states}")
     print(f"overlapping cycle pairs: {overlaps}")
     print(f"two-hub cycle pairs: {two_hub}")
