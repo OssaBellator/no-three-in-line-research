@@ -31,8 +31,7 @@ def decompose_completion(current, target, selected):
             x = sigma[x]
 
         if x in position:
-            cut = position[x]
-            assert cut == 0
+            assert position[x] == 0
             cycles.append(tuple(order))
         else:
             assert x not in selected
@@ -58,17 +57,13 @@ def verify_fixed_roots_and_closure(maximum_n=6):
 
     for n in range(2, maximum_n + 1):
         all_perms = list(permutations(range(n)))
-        # Full enumeration through n=5; a structured sample at n=6.
         if n == maximum_n:
             all_perms = all_perms[:40]
         for current in all_perms:
-            inverse = inverse_permutation(current)
             for target in all_perms:
-                if n == maximum_n and target not in all_perms[:40]:
-                    continue
                 for mask in range(1, 1 << n):
                     selected = {x for x in range(n) if mask & (1 << x)}
-                    sigma, cycles, paths, outside, mapping = closed_target(
+                    sigma, _, _, outside, mapping = closed_target(
                         current, target, selected
                     )
 
@@ -85,8 +80,6 @@ def verify_fixed_roots_and_closure(maximum_n=6):
                     }
                     closure_checks += 1
 
-                    # Any permutation of the target rows on X lifts through
-                    # the same closure. This contains every I6 state as a subset.
                     target_rows = [target[x] for x in sorted(selected)]
                     for row_order in list(permutations(target_rows))[:24]:
                         lifted = dict(mapping)
@@ -134,15 +127,14 @@ def coset_index(value, quotient_index):
 def verify_i6(maximum_group_order=12):
     state_checks = 0
     survival_checks = 0
-    cylinder_checks = 0
+    distinct_coset_checks = 0
+    same_source_checks = 0
 
     for group_order in range(4, maximum_group_order + 1):
         for subgroup_order in range(2, group_order + 1):
             if group_order % subgroup_order:
                 continue
             quotient_index = group_order // subgroup_order
-            if quotient_index < 1:
-                continue
             max_m = min(4, quotient_index)
             for m in range(1, max_m + 1):
                 representatives = tuple(range(m))
@@ -162,8 +154,8 @@ def verify_i6(maximum_group_order=12):
                     state_checks += 1
 
                 total_states = len(states)
-                expected_single = total_states // (m * subgroup_order)
-                for alpha, rep in enumerate(representatives):
+                expected_rank_one = total_states // (m * subgroup_order)
+                for rep in representatives:
                     for g in subgroup:
                         column = (rep + g) % group_order
                         current_row = (-column) % group_order
@@ -171,13 +163,12 @@ def verify_i6(maximum_group_order=12):
                             mapping[column] == current_row
                             for _, _, mapping in states
                         )
-                        assert count == expected_single
+                        assert count == expected_rank_one
                         survival_checks += 1
 
-                # Prescribe one cell in each of r distinct source cosets from
-                # a concrete base state and count all states containing it.
                 sample_states = states[: min(8, len(states))]
                 for _, _, base_mapping in sample_states:
+                    # Prescriptions on r distinct source cosets.
                     for rank in range(1, min(3, m) + 1):
                         for source_indices in combinations(range(m), rank):
                             prescribed = []
@@ -188,9 +179,10 @@ def verify_i6(maximum_group_order=12):
                                 column = (rep + g) % group_order
                                 row = base_mapping[column]
                                 prescribed.append((column, row))
-                                target_cosets.add(coset_index((-row) % group_order, quotient_index))
-                            if len(target_cosets) != rank:
-                                continue
+                                target_cosets.add(
+                                    coset_index((-row) % group_order, quotient_index)
+                                )
+                            assert len(target_cosets) == rank
                             count = sum(
                                 all(mapping[column] == row for column, row in prescribed)
                                 for _, _, mapping in states
@@ -200,9 +192,29 @@ def verify_i6(maximum_group_order=12):
                                 * subgroup_order ** (m - rank)
                             )
                             assert count == expected
-                            cylinder_checks += 1
+                            distinct_coset_checks += 1
 
-    return state_checks, survival_checks, cylinder_checks
+                    # Several cells in one source coset still have rank one.
+                    for alpha, rep in enumerate(representatives):
+                        source_cells = [
+                            ((rep + g) % group_order, base_mapping[(rep + g) % group_order])
+                            for g in subgroup
+                        ]
+                        for size in range(2, min(3, len(source_cells)) + 1):
+                            for prescribed in combinations(source_cells, size):
+                                count = sum(
+                                    all(mapping[column] == row for column, row in prescribed)
+                                    for _, _, mapping in states
+                                )
+                                assert count == expected_rank_one
+                                same_source_checks += 1
+
+    return (
+        state_checks,
+        survival_checks,
+        distinct_coset_checks,
+        same_source_checks,
+    )
 
 
 def repaired_blocker(active, blocker):
@@ -259,7 +271,7 @@ def verify_failure_router(maximum=16):
 
 def main():
     fixed, closure, lifted = verify_fixed_roots_and_closure()
-    states, survival, cylinders = verify_i6()
+    states, survival, distinct, same_source = verify_i6()
     blocker = verify_blocker_repairs()
     routers = verify_failure_router()
     print(
@@ -267,7 +279,7 @@ def main():
         f"{fixed} fixed roots, {closure} closure systems, "
         f"{lifted} lifted target states, {states} I6 states, "
         f"{survival} single-cell survival counts, "
-        f"{cylinders} distinct-coset cylinders, "
+        f"{distinct} distinct-coset and {same_source} same-source cylinders, "
         f"{sum(blocker.values())} blocker repairs "
         f"({blocker['zero']}/{blocker['singleton']}/{blocker['multiple']}), "
         f"and {routers} failed-bank routers"
