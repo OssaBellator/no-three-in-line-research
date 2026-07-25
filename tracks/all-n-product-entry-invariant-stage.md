@@ -3,9 +3,9 @@
 **Branch:** `research/all-n-product-construction`
 
 PX397--PX450 audit the PX63 entry and lift every active decoder to exact
-rectangle-label moves.  PX451--PX478 make the asymptotic branch effective.
-PX479--PX482 use the exact nested-depth plateau, and PX483--PX487 optimize the
-divisor witness.
+rectangle-label moves. PX451--PX478 make the asymptotic branch effective.
+PX479--PX487 compress the cutoff using exact depth and reciprocal divisor
+witnesses. PX488--PX492 use the rational exponent `8/109`.
 
 ## Current ledger
 
@@ -17,11 +17,10 @@ divisor witness.
 | Dependency DAG | **AUDITED** | The manifest is acyclic and every move-producing block is rectangle-label compatible. |
 | Nested depth | **EFFECTIVE** | `d_*(N)=1+ceil(log_2(log_2 max(N,2)+2))`. |
 | Packet-family parameter | **REMOVED** | The active path pays support four directly above threshold and uses historical packet corrections below it. |
-| First explicit cutoff | **SUPERSEDED** | PX478 gave `10^4000`. |
-| Exact-depth cutoff | **SUPERSEDED** | PX482 gave `10^3650`. |
-| Optimized divisor cutoff | **ACTIVE** | PX487 gives `N_2=10^2950`. |
-| Asymptotic exact doubling | **PROVED AS A REDUCTION** | For every `n>=N_2`, the indexed host-compatible causal loop reaches zero bad triples. |
-| Below-cutoff orders | **OPEN** | A non-enumerative bridge or a much smaller interval-sensitive cutoff is required. |
+| Earlier cutoffs | **SUPERSEDED** | PX478: `10^4000`; PX482: `10^3650`; PX487: `10^2950`. |
+| Active cutoff | **EXPLICIT** | PX492 gives `N_3=10^2900`. |
+| Asymptotic exact doubling | **PROVED AS A REDUCTION** | For every `n>=N_3`, the indexed host-compatible causal loop reaches zero bad triples. |
+| Below-cutoff orders | **OPEN** | A non-enumerative bridge or interval-specific maximal-divisor theorem is required. |
 | Exact all-side closure | **OPEN** | No finite-range bridge has been proved. |
 
 ## Active constants
@@ -33,28 +32,29 @@ A_3=320,
 \]
 
 \[
-\mathfrak d(N)\le10^{72}N^{1/7},
+\mathfrak d(N)\le10^{59}N^{16/109},
 \qquad
-N_2=10^{2950}.
+N_3=10^{2900}.
 \]
 
-The exact nested-depth plateau remains
+The retained-order exponent is
 
 \[
-d_*(N)=15,
-\qquad
-\Delta_*(N)=33
+\frac65-1-\frac{16}{109}
+=
+\frac{29}{545}>0.
 \]
 
-through the starting interval.  The improved divisor margin is
+At the starting order the exact nested values remain
 
 \[
-\frac{T(N)^2}{N\mathfrak d(N)}
-\ge10^{-72}N^{2/35}.
+d_*(N_3)=15,
+\qquad
+\Delta_*(N_3)=33.
 \]
 
-At `N=10^2950`, the divisor-controlled retained-order ratio has logarithmic
-margin above `5.9`; the four-return ratio has margin above `13`.
+The divisor-controlled retained-order ratio has logarithmic margin above `3.0`,
+and the four-return ratio has margin above `12`.
 
 ## Integrated repair path
 
@@ -65,20 +65,22 @@ margin above `5.9`; the four-return ratio has margin above `13`.
 5. Pay support four directly on large blocks.
 6. Correct selected packet defects by unique label transpositions and forbid
    their historical assignments.
-7. Keep every strict decrease inside the factor-compatible rectangle state
-   space and iterate the integer potential to zero.
+7. Keep every strict decrease inside the factor-compatible rectangle state space
+   and iterate the integer potential to zero.
 
 ## Immediate frontier
 
-1. **Divisor-witness optimization table.** Compare exact finite Euler products
-   `C_(1/k)` and resulting cutoffs for all viable integer `k`; PX487 shows that
-   `k=14` beats `k=12`.
-2. **Interval-specific divisor bounds.** Replace a universal `m^(1/14)` bound by
-   exact maximal divisor data over finite logarithmic intervals.
-3. **Finite-range bridge.** Find a construction or absorber that enters the
-   effective range without enumerating every order below `10^2950`.
-4. **Practical census boundary.** Only after compression reaches a feasible
-   cutoff should exact rectangle/template enumeration resume.
+1. **Structural finite-range bridge.** Produce larger exact factors from every
+   smaller order without assuming the desired doubling theorem at intermediate
+   orders.
+2. **Interval-specific maximal-divisor bounds.** Universal power bounds now show
+   diminishing returns; exploit the exact range `m< N^2` on logarithmic
+   intervals instead.
+3. **Divisor witness optimization.** Determine whether any rational exponent
+   materially beats `8/109`; improvements of only tens of decimal orders do not
+   change the need for a bridge.
+4. **Practical census boundary.** Resume exact finite enumeration only after the
+   cutoff has been reduced to a computationally meaningful range.
 
 ## Verification
 
@@ -86,11 +88,11 @@ margin above `5.9`; the four-return ratio has margin above `13`.
 python scripts/verify_product_entry_invariant_dependencies.py
 python scripts/verify_product_explicit_cartesian_triples.py
 python scripts/verify_product_explicit_nested_depth.py
-python scripts/verify_product_explicit_divisor_witness.py
 python scripts/verify_product_packet_family_free_path.py
 python scripts/verify_product_explicit_common_cutoff.py
 python scripts/verify_product_compressed_common_cutoff.py
 python scripts/verify_product_fourteenth_divisor_cutoff.py
+python scripts/verify_product_rational_divisor_cutoff.py
 ```
 
 Exact all-side product closure and the classical no-three-in-line conjecture
