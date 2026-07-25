@@ -1,0 +1,33 @@
+{
+  "n": 6,
+  "cases": [
+    {
+      "name": "one arc",
+      "arcs": [[0, 1]]
+    },
+    {
+      "name": "two-step path",
+      "arcs": [[0, 1], [1, 2]]
+    },
+    {
+      "name": "two disjoint arcs",
+      "arcs": [[0, 1], [2, 3]]
+    },
+    {
+      "name": "transposition",
+      "arcs": [[0, 1], [1, 0]]
+    },
+    {
+      "name": "three-step path",
+      "arcs": [[0, 1], [1, 2], [2, 3]]
+    },
+    {
+      "name": "three disjoint arcs",
+      "arcs": [[0, 1], [2, 3], [4, 5]]
+    },
+    {
+      "name": "directed triangle",
+      "arcs": [[0, 1], [1, 2], [2, 0]]
+    }
+  ]
+}
