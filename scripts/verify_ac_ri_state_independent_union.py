@@ -133,18 +133,14 @@ def verify_full_banks(maximum_block_size=4):
 
                             # The two active states are the two diagonals of the
                             # same 2 by 2 block.
-                            block_columns = {0, 1}
-                            assert set(selected) == block_columns
-                            other_diagonal = cells(states[active_indices[0]]) & (
-                                block_columns
-                                and {(0, 0), (0, 1), (1, 0), (1, 1)}
-                            )
+                            assert set(selected) == {0, 1}
+                            block_square = {(0, 0), (0, 1), (1, 0), (1, 1)}
+                            other_diagonal = cells(states[active_indices[0]]) & block_square
                             assert len(other_diagonal) == 2
                             transfer_cells += 1
                         else:
-                            # In the finite exhaustive supports used here, a
-                            # universal never-active crossed cell can occur only
-                            # in the explicit auxiliary example below.
+                            # A never-active common new cell comes from one fixed
+                            # two-blocker pair.
                             assert all(len(selected) == 2 for selected in selected_sets)
                             pairs = selected_sets
                             assert all(pair == pairs[0] for pair in pairs)
@@ -161,14 +157,15 @@ def verify_full_banks(maximum_block_size=4):
 
 
 def verify_universal_closure_example():
-    # Two I6 columns, two fixed closure anchors, and two auxiliary outside
-    # columns. The blocker sends the I6 columns to auxiliary rows, so the only
-    # desired blocker cells in every active state are the two closure anchors.
+    # Two I6 columns, two fixed closure anchors, and two unchanged outside
+    # active columns. The blocker sends the I6 columns to outside rows, so the
+    # only desired blocker cells in every active state are the closure anchors.
     active_states = [
         (0, 1, 2, 3, 4, 5),
         (1, 0, 2, 3, 4, 5),
     ]
     blocker = (4, 5, 2, 3, 0, 1)
+    unchanged_current_active = {(4, 4), (5, 5)}
 
     joint_states = []
     selected_sets = []
@@ -180,8 +177,8 @@ def verify_universal_closure_example():
 
     assert selected_sets == [{2, 3}, {2, 3}]
     common_union = set.intersection(*joint_states)
-    new_common = common_union - cells(blocker)
-    assert {(2, 3), (3, 2)} <= new_common
+    new_common = common_union - cells(blocker) - unchanged_current_active
+    assert new_common == {(2, 3), (3, 2)}
     return len(new_common)
 
 
