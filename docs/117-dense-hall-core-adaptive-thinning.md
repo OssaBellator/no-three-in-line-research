@@ -3,7 +3,7 @@
 The adaptive source-valid bank PP3nr is chosen by random endpoint thinning. The
 incidence localization PP3ny assumes that the Hall-derived target set remains
 quadratically dense on the retained endpoint coordinates. This chapter supplies
-that connection and combines it with the target-rich common-line theorem.
+that connection and combines it with the target-rich line-family theorem.
 
 ## 1. Dense cell sets in a random tied subbank
 
@@ -120,16 +120,24 @@ target core on a resource bank of size \(Q\). After adaptive thinning and
 complete source-validity cleanup, at least one of the following holds.
 
 1. A source-valid endpoint derangement strictly decreases the owner-line load.
-2. One nonaxis geometric line contains both:
-   - at least \((q')^{1/3-\delta}\) pairwise resource-disjoint
-     owner/replacement endpoint cells and their owner candidate points;
-   - at least \((q')^{1-\delta}\) retained Hall-target endpoint cells.
+2. There is a family of \(\Omega(q')\) distinct nonaxis lines such that:
+   - every line carries at least \((q')^{1/3-\delta}\) pairwise
+     resource-disjoint owner/replacement endpoint cells and their owner candidate
+     points;
+   - every line contains at least \((q')^{1-\delta}\) retained Hall-target
+     endpoint cells;
+   - the total owner/replacement multiplicity over the family is
+     \(\Omega((q')^2)\).
+
+In the second case PP3ok extracts \(\Omega(q')\) pairwise row/column-disjoint
+formal alternating rectangles.
 
 #### Proof
 
 PP3oa--PP3ob preserve a fixed positive target density. Apply PP3nt, PP3nu, and
-the strengthened PP3ny on the retained bank. ∎
+the strengthened PP3ny on the retained bank. Then apply PP3ok. ∎
 
-Thus the line-energy chain no longer assumes that a dense Hall core survives the
-secondary thinning. The final structured alternative is one target-rich common
-line carrying two large matching traces.
+Thus dense Hall-core survival, complete source validity, target-rich line-family
+localization, and linear formal rectangle extraction now form one connected
+chain. The remaining recapture task is installation of the rectangle bank with
+negative potential change.
