@@ -19,7 +19,7 @@ main and mixed candidate-only triple systems.
 
 ## 1. Exact direction count
 
-### Theorem CMR398 — PROVED
+### Theorem CMR385 — PROVED
 
 For every integer `K\ge1`, the number of unoriented primitive integer directions
 with
@@ -42,7 +42,7 @@ formula also gives the four height-one directions. ∎
 
 ## 2. Harmonic conflict-degree bound
 
-### Theorem CMR399 — PROVED
+### Theorem CMR386 — PROVED
 
 Every represented candidate cell belongs to at most
 
@@ -81,13 +81,13 @@ points. Hence at most
 \binom{\lfloor(t-1)/K\rfloor}{2}
 \]
 
-triples on that line contain the fixed cell. Sum over CMR398's directions, then
+triples on that line contain the fixed cell. Sum over CMR385's directions, then
 use `\varphi(K)\le K` and `\binom{x}{2}\le x^2/2`. Copy labels do not change the
 represented-cell count. ∎
 
 ## 3. Mixed boundedness for a harmonic family
 
-### Theorem CMR400 — PROVED
+### Theorem CMR387 — PROVED
 
 Fix `\eta>0`. Assume
 
@@ -106,7 +106,7 @@ Joos--Mubayi--Smith theorem. For all sufficiently large `t`,
 
 ### Proof
 
-CMR399 gives
+CMR386 gives
 
 \[
 \Delta(\mathcal C_{\mathcal K})<3(t-1)^2<3t^2.
@@ -121,22 +121,22 @@ pair codegree of the union remains below
 \le t^{1-\epsilon}.
 \]
 
-The mixed proof of CMR375 is unchanged: fixed-edge estimates use CMR399,
+The mixed proof of CMR375 is unchanged: fixed-edge estimates use CMR386,
 fixed-pair estimates use the same pair-codegree bound, and row-copy conflicts
 are unchanged. Thus (E1)–(E6) retain positive power slack. ∎
 
 ## 4. Exact harmonic-family completion
 
-### Theorem CMR401 — PROVED FROM JOOS--MUBAYI--SMITH
+### Theorem CMR388 — PROVED FROM JOOS--MUBAYI--SMITH
 
-Under the hypotheses of CMR400, there exists a complete target-specific parent
+Under the hypotheses of CMR387, there exists a complete target-specific parent
 permutation containing no candidate-only collinear triple whose primitive
 height belongs to `\mathcal K`.
 
 ### Proof
 
 Apply the mixed-bounded covering theorem as in CMR376, using CMR373 for the
-hosts and CMR400 for the main and mixed conflict systems. Decode by CMR372. ∎
+hosts and CMR387 for the main and mixed conflict systems. Decode by CMR372. ∎
 
 ## 5. Two dyadic bands at once
 
@@ -146,7 +146,7 @@ For `H\ge1`, put
 S_H=\sum_{K=H}^{2H-1}\frac1K.
 \]
 
-### Corollary CMR402 — PROVED
+### Corollary CMR389 — PROVED
 
 Let `H_1,H_2` be distinct dyadic lower endpoints satisfying
 
@@ -186,7 +186,7 @@ S_5
 \]
 
 Each selected band has harmonic weight below `3/4`; their union has weight
-below `3/2`. Apply CMR401. ∎
+below `3/2`. Apply CMR388. ∎
 
 Exact completion is therefore available for any harmonic packet of weight below
 `3/2`, including any two intermediate dyadic bands. The total harmonic weight
