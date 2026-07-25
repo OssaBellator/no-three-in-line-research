@@ -3,8 +3,9 @@
 PP3nu reduces failed owner-line improvement to a near-complete incidence design:
 for a Hall-derived target set \(\mathcal A\), almost every owner can reach almost
 every target cell through some replacement line. This chapter applies the
-Szemerédi--Trotter incidence theorem to show that such energy requires a highly
-repeated geometric line.
+Szemerédi--Trotter incidence theorem and a multiplicity split. The result is one
+geometric line that is simultaneously repeated by many owner assignments and
+rich in Hall-target cells.
 
 ## 1. Typed owner/replacement lines
 
@@ -16,67 +17,87 @@ For owner \(i\) and replacement index \(j\), let
 \overline{z_i(x_i,y_j)}.
 \]
 
-Let \(\mathscr L\) be the set of distinct geometric lines occurring among the
-\(q^2\) typed pairs \((i,j)\), and let
+For each distinct geometric line \(\ell\), define
 
 \[
-\mu
+m(\ell)
 =
-\max_{\ell\in\mathscr L}
 |\{(i,j):\ell_{ij}=\ell\}|
 \]
 
-be the maximum line multiplicity.
+and
 
-The full assignment energy is
+\[
+r(\ell)
+=
+|\mathcal A\cap\ell|.
+\]
+
+Let \(\mathscr L\) be the set of distinct typed lines. The full assignment
+energy is
 
 \[
 \mathcal W
 =
+\sum_{\ell\in\mathscr L}m(\ell)r(\ell)
+=
 \sum_{i,j}|\mathcal A\cap\ell_{ij}|.
+\]
+
+Also
+
+\[
+\sum_{\ell\in\mathscr L}m(\ell)=q^2.
 \]
 
 ### Proposition PP3nv -- PROVED FROM THE SZEMERÉDI--TROTTER THEOREM
 
-There is an absolute constant \(C\) such that
+If
 
 \[
-oxed{
+\mu=\max_{\ell\in\mathscr L}m(\ell),
+\]
+
+then an absolute constant \(C\) satisfies
+
+\[
 \mathcal W
 \le
 C\mu\left(
 |\mathcal A|^{2/3}|\mathscr L|^{2/3}
 +|\mathcal A|+|\mathscr L|
-ight).
-}
+\right).
+\]
+
+In particular,
+
+\[
+\mathcal W=O(\mu q^{8/3}).
 \]
 
 #### Proof
 
-For each distinct line \(\ell\), its incidences with \(\mathcal A\) are counted in
-\(\mathcal W\) with multiplicity at most \(\mu\). Hence
+Every ordinary incidence between \(\mathcal A\) and one distinct line is counted
+in \(\mathcal W\) at most \(\mu\) times. Hence
 
 \[
 \mathcal W
 \le
-\mu\,I(\mathcal A,\mathscr L),
+\mu I(\mathcal A,\mathscr L).
 \]
 
-where \(I\) is the ordinary point-line incidence number. Apply the
-Szemerédi--Trotter theorem. ∎
+Apply Szemerédi--Trotter and use
+\(|\mathcal A|,|\mathscr L|\le q^2\). ∎
 
-Since \(|\mathscr L|\le q^2\) and \(|\mathcal A|\le q^2\), this gives the coarse
-universal bound
+This already forces some line multiplicity \(\Omega(q^{1/3})\) when
+\(\mathcal W=\Omega(q^3)\), but it does not by itself state that the repeated
+line is target-rich. The next theorem supplies both properties.
 
-\[
-oxed{\mathcal W=O(\mu q^{8/3}).}
-\]
+## 2. Simultaneous multiplicity and target richness
 
-## 2. Dense Hall target sets force repeated lines
+### Theorem PP3nw -- PROVED
 
-### Corollary PP3nw -- PROVED
-
-Fix \(\alpha>0\). Suppose
+Fix constants \(\alpha,\beta>0\) and \(\delta>0\). Suppose
 
 \[
 |\mathcal A|\ge\alpha q^2
@@ -85,50 +106,84 @@ Fix \(\alpha>0\). Suppose
 and
 
 \[
-\mathcal W\ge(1-arepsilon)q|\mathcal A|
+\mathcal W\ge\beta q|\mathcal A|.
 \]
 
-for some \(0\learepsilon<1\). Then
+For all sufficiently large \(q\), there is a geometric line \(\ell\) satisfying
 
 \[
-oxed{
-\mu
-\ge
-c_\alpha(1-arepsilon)q^{1/3}
-}
+m(\ell)\ge q^{1/3-\delta}
 \]
 
-for a positive constant \(c_\alpha\) depending only on \(\alpha\).
+and
+
+\[
+r(\ell)\ge q^{1-\delta}.
+\]
 
 #### Proof
 
-The lower bound on \(\mathcal W\) is at least
-\((1-arepsilon)\alpha q^3\). Proposition PP3nv and
-\(|\mathcal A|,|\mathscr L|\le q^2\) give
+Suppose no line has both properties. Split the lines into
 
 \[
-(1-arepsilon)\alpha q^3
-\le
-C'\mu q^{8/3}.
+\mathscr L_{\operatorname{low}}
+=
+\{\ell:m(\ell)<q^{1/3-\delta}\}
 \]
 
-Rearrange. ∎
+and its complement.
 
-Thus the near-extremal alternative PP3nu cannot be supported by essentially
-distinct owner/replacement lines.
+For the low-multiplicity lines,
 
-## 3. Resource structure of one repeated line
+\[
+\sum_{\ell\in\mathscr L_{\operatorname{low}}}
+m(\ell)r(\ell)
+\le
+q^{1/3-\delta}I(\mathcal A,\mathscr L)
+=
+O(q^{3-\delta})
+\]
 
-Assume every relevant owner line is nonvertical and nonhorizontal, as in the
+by Szemerédi--Trotter.
+
+Every remaining line has multiplicity at least \(q^{1/3-\delta}\), so by the
+contrary assumption it has target richness below \(q^{1-\delta}\). Therefore
+
+\[
+\sum_{\ell\notin\mathscr L_{\operatorname{low}}}
+m(\ell)r(\ell)
+<
+q^{1-\delta}
+\sum_{\ell}m(\ell)
+=
+q^{3-\delta}.
+\]
+
+Thus \(\mathcal W=O(q^{3-\delta})\), contradicting
+
+\[
+\mathcal W
+\ge
+\alpha\beta q^3
+\]
+
+for sufficiently large \(q\). ∎
+
+The exponents may approach \(1/3\) and \(1\) arbitrarily closely. No dyadic
+loss is needed.
+
+## 3. Resource structure of one common line
+
+Assume the relevant line is nonvertical and nonhorizontal, as in the
 noncontroller recapture geometry.
 
 ### Proposition PP3nx -- PROVED
 
-If one geometric line \(\ell\) has typed multiplicity \(\mu\), then its
+If one geometric line \(\ell\) has typed multiplicity \(m(\ell)\), then its
 representations
 
 \[
-\ell=\ell_{i_1j_1}=\cdots=\ell_{i_\mu j_\mu}
+\ell=\ell_{i_1j_1}=\cdots=\ell_{i_sj_s}
 \]
 
 use pairwise distinct owner indices \(i_t\) and pairwise distinct replacement
@@ -138,43 +193,44 @@ indices \(j_t\). Consequently the endpoint cells
 (x_{i_t},y_{j_t})
 \]
 
-form a matching in the endpoint-resource graph, and all corresponding candidate
-points \(z_{i_t}\) lie on the same geometric line \(\ell\).
+form a matching in the endpoint-resource graph, and all owner candidate points
+\(z_{i_t}\) lie on \(\ell\).
+
+The target cells \(\mathcal A\cap\ell\) also form a matching in the endpoint
+rectangle.
 
 #### Proof
 
-For fixed owner \(i\), distinct replacement rows \(y_j\) give distinct lines
-through \(z_i\), because the line is not the vertical line \(x=x_i\). Hence the
-owner indices are distinct.
+For fixed owner \(i\), two distinct replacement rows on the same line through
+\(z_i\) would force that line to be vertical. Thus the owner indices are
+distinct.
 
 For fixed replacement row \(y_j\), a nonhorizontal line meets that row in at
-most one point. Since the old columns \(x_i\) are distinct, two representations
-on the same line cannot share \(j\). The endpoint cells therefore use distinct
-left and right resources. Each defining line contains its candidate \(z_i\). ∎
+most one point. Since the old columns \(x_i\) are distinct, the replacement
+indices are distinct. This proves the first matching statement. The target-cell
+statement is the same nonaxis row-and-column intersection argument as PP3lm. ∎
 
-The repeated-line obstruction is therefore already an endpoint-compatible bank,
-not merely a multiplicity count.
+Thus the obstruction contains two large matching traces on one geometric carrier:
+one trace of owner/replacement cells and one trace of Hall-target cells.
 
 ## 4. Combined line-energy dichotomy
 
 ### Corollary PP3ny -- PROVED
 
-Suppose the Hall-derived target set has density
+Fix \(\alpha>0\) and \(\delta>0\). Suppose the Hall-derived target set satisfies
 
 \[
 |\mathcal A|\ge\alpha q^2
 \]
 
-for fixed \(\alpha>0\), and use the adaptive source-valid derangement of PP3nt.
-Then at least one of the following holds.
+and use the adaptive source-valid derangement of PP3nt. Then at least one of the
+following holds.
 
 1. A source-valid endpoint derangement strictly decreases the owner-line load.
-2. There is one nonaxis geometric line containing
-   \[
-   \Omega_\alpha(q^{1/3})
-   \]
-   pairwise resource-disjoint owner/replacement endpoint cells and the associated
-   owner candidate points.
+2. There is one nonaxis geometric line containing both:
+   - at least \(q^{1/3-\delta}\) pairwise resource-disjoint owner/replacement
+     endpoint cells and their owner candidate points;
+   - at least \(q^{1-\delta}\) Hall-target endpoint cells.
 
 #### Proof
 
@@ -184,8 +240,9 @@ If improvement fails, PP3nu gives
 \mathcal W=(1-o(1))q|\mathcal A|.
 \]
 
-Apply PP3nw and then PP3nx. ∎
+For sufficiently large \(q\), use PP3nw with any fixed \(\beta<1\), then apply
+PP3nx. ∎
 
-This replaces the second-generation grid-rich pencil by a single common-line
-matching of polynomial size. The next conversion may therefore use a protected
-line, rectangle, cycle, or tomographic trade on one explicit geometric carrier.
+This replaces the second-generation grid-rich pencil by one target-rich common
+line. The next conversion may work directly on two matching traces carried by
+that line.
