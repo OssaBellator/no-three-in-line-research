@@ -35,11 +35,11 @@ BDA5ap--BDA5ar close the former five affine-anchor-chain output. A high row or c
 
 AC3fz--AC3gf import the union-safe product. AC3hf--AC3hh import the fixed-cell affine collapse under the BDA4f parity and exact-occurrence aggregation hypotheses, giving pivot payment `H/10` and failed-rank return `H/30`.
 
-AC3hq--AC3hr remove the generic ordinary support-faithfulness gate after physical occurrence realization: same-anchor `h,h+q` pairs automatically enter the AC3ec collision/clean-support audit, while the complete AC3v envelope graph handles every remaining incompatibility. AC3hs--AC3ht show that raw reflected `CD` cells are nonradial and must be executed through separately proved radial support or realized-rank pivot routing.
+AC3hq--AC3hr remove the generic ordinary support-faithfulness gate after physical occurrence realization. AC3hs--AC3ht show raw reflected `CD` cells are nonradial and must execute through separately proved radial support or realized-rank pivot routing.
 
-BDA5as--BDA5au and AC3hu--AC3hw close every cycle consisting only of physical `h <-> h+q` moves and strict effective-denominator descent. Any surviving cycle changes one same-denominator non-scalar field: primitive direction, residue/unit, rank/channel, anchor/context, external arithmetic role or bank type.
+BDA5as--BDA5au and AC3hu--AC3hw close every cycle consisting only of physical `h <-> h+q` moves and strict effective-denominator descent. Any surviving cycle changes one same-denominator non-scalar field.
 
-The remaining BDA work is physical realization of unresolved arithmetic roles, balanced-floor/higher-rank arithmetic and classification of those same-denominator non-scalar cycle edges.
+The remaining BDA work is physical realization of unresolved arithmetic roles, balanced-floor/higher-rank arithmetic and classification of same-denominator non-scalar edges.
 
 ## Rational-inverse input
 
@@ -62,45 +62,31 @@ AC3fe--AC3fo classify fixed, moving and blocker collateral by pre-transition cur
 
 AC3fa--AC3fd give every failed executable bank the exact created-cell-rank split. AC3fp--AC3fr give dense conflict returns an explicit finite role dictionary. AC3fs--AC3gm orient every realized or expected rank profile to a private union-safe pivot bucket.
 
-AC3gn--AC3gq give canonical pivot rectangles a finite `2Ln^8` signature alphabet. AC3gr--AC3gu classify full partner saturation by a complete pivot cross, an exact fused/split blocker law and one heavy line profile; line-refined signatures have safe bound `8Ln^10`.
+AC3gn--AC3he control pivot signatures, partner saturation, empty-partner menus and physical pivot-cell exposure. AC3hi--AC3hp close old-axis, fixed-pair and historical line-star topology.
 
-AC3gv--AC3ha close the local saturated menu for every `n`. For `n>=4`, at least `n-3` empty partner alternatives have pairwise-disjoint creation buckets. The unique `3 x 3` split exception has one common final union.
+AC3hx--AC3ia import monotone-mask state-cycle erasure and assign every nontrivial matching change one finite cross signature. Each change is a capacity-one rectangle or a genuinely long alternating cycle.
 
-AC3hb--AC3he add physical pivot-cell exposure. A mixed epoch of AC2d support descent, new signatures and new pivot cells has one bounded scalar potential and ends at a named output or an old-axis saturation fan.
-
-AC3hi--AC3hk route old-axis histories to one of:
-
-- a context-disjoint alternative-target family;
-- a heavy fixed current pair;
-- one fixed current context cell with many distinct axis pivots.
-
-AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weighted line star gives a pair-core bank, a direct current-anchor rematching bank, one heavy current certificate, an explicit labelled overload or a realized next created-cell rank.
-
-AC3hx--AC3ia import the general monotone-mask cycle-erasure principle and add an alternating-core-specific cross signature of ambient size `2Ln^2(n-1)^2`. Every nontrivial state change is a capacity-one rectangle or a genuinely long alternating cycle.
-
-AC3ib--AC3if show that repeated cell returns spend a finite `L(n-1)^2` rectangle-ticket stock or expose a repeated long return cross. When the recurrent cycles are represented in one current exchange host, they give a paid one-hub cycle-star or a two-hub interface; otherwise an explicit host/context field changed.
-
-AC3ig--AC3ik strengthen the static interface: arbitrary overlapping cycles in one common host are legal alternative states, destroy the same private pivot bucket, and return an exact created rank on failure. Static two-hub overlap is therefore not terminal. The only residual historical output is host drift.
-
-AC3il--AC3ip refine long histories without assuming a common host. Deleting the fixed cross gives simple paths; a maximal packing returns path petals or a quantified second hub. Inside one common parent, boundary paths yield edge-disjoint petal alternatives or one repeated off-boundary cell. Under private payment the petal ledger is
+AC3ib--AC3if delete the fixed cross from long cycles and return path petals or a second hub. Inside one common parent, boundary paths yield edge-petal alternatives, a repeated off-boundary cell, or the exact paid petal ledger
 
 ```text
-E[created] <= F + (1/p) sum_j C_j,
+E[created] <= F + (1/p) sum_j C_j.
 ```
 
-so failure gives `F >= D/2` or `sum_j C_j >= pD/2`.
+AC3ig--AC3ik show repeated pivot-cell returns spend at most `L(n-1)^2` rectangle tickets before one long return cross repeats. In one common exchange host, directed Menger gives a one-hub cycle-star menu or a two-hub separator.
+
+AC3il--AC3ip strengthen the static interface: arbitrary overlapping cycles in one common host are legal alternative states, all remove the same paid pivot, and a failed menu returns one realized created rank. Static two-hub overlap is not terminal. The residual historical output is an explicit host-drift profile.
 
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
 
-- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta theorems require credited-host hypotheses before asymptotic delegation.
+- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta geometry motivated AC3ig--AC3ip, while AC uses its own private pivot payment and does not import controller or asymptotic hypotheses.
 - `research/all-n-composite-modulus` reaches CMR545 and supplies exact cycle erasure, churn and prime-power signature ancestry. AC3hx imports only the arithmetic-free monotone-mask principle.
 - `research/all-n-product-construction` has exact product encodings, SAT reductions and finite witnesses, but no unconditional global selector or stronger AC recurrence interface.
 
 ## Current frontier
 
-1. Pay or finitely classify host-drift profiles, parent/epoch changes, repeated off-boundary cells and the AC3io boundary-supported/petal-specific failure terms.
+1. Pay or finitely classify host-drift profiles, parent/epoch changes, repeated off-boundary cells and the AC3ie boundary-supported/petal-specific terms.
 2. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
 3. Build the residual finite transition quotient from those context and arithmetic-role edges, then assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
