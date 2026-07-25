@@ -75,6 +75,10 @@ repository-wide theorem ledger.
 | PP3sv--PP3ta | Equitable colouring converts local paid weights into global chromatic totals | PROVED / FROM HAJNAL--SZEMEREDI AND SR1 | `docs/140-equitable-colour-paid-block-selection.md` |
 | PP3tb--PP3tf | Chromatically scaled source-pair and triple terms vanish for kappa below one-sixtieth | PROVED | `docs/141-chromatic-source-mass-closure.md` |
 | PP3tg--PP3tm | Pool-compatible cross-block states give dynamic-Xi trades | PROVED / CONDITIONAL ON POOL-LOCAL SOURCE MASS | `docs/142-pool-compatible-cross-block-xi-trades.md` |
+| PP3tn--PP3tt | Alternating-SCC factorization of matchable non-superregular hosts | PROVED | `docs/143-alternating-scc-nonsuperregular-decomposition.md` |
+| PP3tu--PP3ty | Forced matching edges are private edges of tight Hall blocks | PROVED | `docs/144-forced-edge-tight-hall-certificates.md` |
+| PP3tz--PP3ue | Canonical forward/backward reachability cuts localize forced edges | PROVED | `docs/145-canonical-forced-edge-reachability-cuts.md` |
+| PP3uf--PP3ul | Bounded credited alternating components form paid finite-state banks | PROVED / CONDITIONAL ON DIFFUSE COMPONENT GEOMETRY | `docs/146-bounded-alternating-component-paid-bank.md` |
 
 ## Current scale
 
@@ -99,28 +103,22 @@ deterministic two-sided ownership, random two-sided local Ore, and random
 one-sided average-refill complementary degree. Anchor energy rules out
 middle-density ownership Hall rectangles.
 
-## Hall, block, and dynamic endpoint
+## Hall, block, dynamic, and non-superregular endpoint
 
-A recapture-dominated Hall core yields a linear rectangle bank. The original
-rectangle signatures and every zero-density hard-unary support are absorbed by
-cross-block states, unary-independent equitable colouring, recapture pruning,
-and superregular spread matching.
+A recapture-dominated Hall core yields a linear rectangle bank. Every zero-density
+hard-unary support is absorbed by cross-block states, equitable colouring,
+recapture pruning, and superregular spread matching.
 
-At secondary exponent \(\kappa<1/60\), the **global ordinary rectangle branch**
-has automatic chromatic source validity and reduces to the shadow-only
-quantities
+At secondary exponent `kappa<1/60`, the global ordinary rectangle branch has
+automatic chromatic source validity and reduces to `k*A=Omega(H^2)` or
+`k^2*B=Omega(H^3)`. The pool-compatible dynamic-Xi branch retains pool-local
+pair/triple mass as well as unary/binary Xi-weight.
 
-```text
-k*A = Omega(H^2)
-
-or
-
-k^2*B = Omega(H^3).
-```
-
-The pool-compatible dynamic-\(\Xi\) branch uses the same block construction and
-exact removal credit, but retains pool-local source-pair and triple quantities in
-addition to its unary and binary \(\Xi\)-weights.
+A matchable non-superregular host factors exactly over alternating SCCs. Bounded
+flexible credited components give finite-state paid banks. Forced edges are
+private edges of canonical forward/backward tight Hall cuts, so their obstruction
+is already a hard-unary Hall rectangle, a small endpoint cluster, or a small
+complementary capacity core.
 
 ## Remaining theorem
 
@@ -128,20 +126,21 @@ The branch is reduced to the following structured cases.
 
 1. Convert an ownership Hall/slack core, two-sided threshold gap, or score
    concentration surviving all four allocation interfaces.
-2. Convert a Hall rectangle or matchable but non-superregular zero-unary host
-   outside the superregular recapture branch.
-3. Convert positive-density hard-unary support and its Hall/line/resource cores.
-4. Convert chromatically concentrated unary or binary controller-shadow weight
-   at scales \(H^2/k\) and \(H^3/k^2\) in the global rectangle branch.
-5. Convert pool-local pair/triple mass or unary/binary \(\Xi\)-weight at the same
+2. Convert positive-density hard-unary support and its Hall/line/resource cores,
+   including tight forced-edge cuts.
+3. Convert chromatically concentrated unary or binary controller-shadow weight
+   at scales `H^2/k` and `H^3/k^2` in the global rectangle branch.
+4. Convert pool-local pair/triple mass or unary/binary Xi-weight at the same
    chromatic scales, including captive-star collateral.
+5. Convert unbounded alternating SCCs or concentrated bounded-component CSP/cost.
 6. Convert a linear-congestion original binary-shadow dual packing or
    witness-line pencil.
 
 Diffuse weighted residuals, external completion energy, source validity of the
 global resource endpoint, sparse exceptional labels, arbitrary dense rectangle
-CSPs, original signed contradictions, hierarchical irregularity, superregular
-residual installation, diffuse pool-compatible dynamic trades, controller
-relabelling, and termination are no longer separate open problems.
+CSPs, original signed contradictions, hierarchical irregularity, unstructured
+non-superregularity, superregular residual installation, diffuse pool-compatible
+dynamic trades, controller relabelling, and termination are no longer separate
+open problems.
 
 The no-three-in-line conjecture remains unproved.
