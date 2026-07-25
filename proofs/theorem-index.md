@@ -97,6 +97,8 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3fe–AC3fh | RI closure and rectangle fixed terms equal created-cell rank outputs; no payment is assigned at classification time | PROVED | `docs/alternating-core-ri-fixed-term-rank-router.md` |
 | AC3fi–AC3fl | RI moving tuples have seven nonzero current/new words and become rank-one, rank-two or rank-three collateral profiles | PROVED | `docs/alternating-core-ri-moving-tuple-rank-router.md` |
 | AC3fm–AC3fo | Crossed-blocker complexes have eleven count/word states, preserve product laws and require no collateral-stage payment | PROVED | `docs/alternating-core-ri-blocker-rank-router.md` |
+| AC3fp–AC3fq | Core and protected conflicts have explicit finite local-role dictionaries with bound `18e^3+5e^2+qΣ(4e)^s` | PROVED | `docs/alternating-core-overload-role-dictionary.md` |
+| AC3fr | AC2d localizes dense paid mass to one exact role-labelled cell, row, column, cross-triple, or protected witness | PROVED | `docs/alternating-core-overload-role-dictionary.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
