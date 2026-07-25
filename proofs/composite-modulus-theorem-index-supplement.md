@@ -22,9 +22,14 @@ supplement mirrors the collision-free live range recorded in
 | CMR439--443 | Sparse rollback escape, minimum rollback essential core, cost-or-factorization dichotomy, terminal-certificate rollback, and quadratic rollback-incidence packing/concentration | PROVED | `docs/146-prime-power-sparse-rollback-factorization.md` |
 | CMR444--447 | Exact rollback full-token incidence, cheap rollback payment, universal restored-edge recreation support, and harmonic packet rollback cost | PROVED | `docs/147-prime-power-rollback-incidence-payment.md` |
 | CMR448--452 | Minimum-cost rollback characterization, no-negative alternating cycles, zero-cycle connectivity, exact tight optimal host, and integral rollback-level potentials | PROVED | `docs/148-prime-power-rollback-optimal-face.md` |
+| CMR453--461 | Rollback-sensitive potential range, optimal-allowed edge criterion, exact SCC product, additive local rollback cost, active-level concentration, threshold endpoint, and transfer to marked ancestor-return slots | PROVED | `docs/149-prime-power-tight-rollback-scc-factorization.md` |
+| CMR462--466 | Exact level-cut flow conservation, at most `2k` cross-level edges, balanced residual levels, conditional level factorization, finite skeleton count, and marked-slot transfer | PROVED | `docs/150-prime-power-rollback-level-skeleton.md` |
+| CMR467--471 | Right-endpoint cost polarization inside one level, exact source-split products, mixed-colour cycle criterion, colour-separated factorization, and transfer to rollback/ancestor faces | PROVED | `docs/151-prime-power-same-level-colour-split.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR452, cheap rollback is restricted to a canonical tight assignment face with
-integer potential levels. The immediate targets are geometric conversion of
-large tight levels or zero-cost components, and attaching the same minimum-cost
-normalization to repeated compatible local ancestor resets.
+CMR471, minimum rollback and repeated marked-return states reduce to sparse
+balanced cross-level skeletons and same-level factors. A same-level factor
+either decomposes by marked versus unmarked columns or contains an explicit
+mixed-colour zero-cost alternating cycle. The immediate target is geometric use
+of those mixed cycles or conversion of their overlap into prefix, carry, Hall,
+reserve, or envelope structure.
