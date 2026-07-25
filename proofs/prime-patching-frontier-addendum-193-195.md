@@ -1,10 +1,10 @@
 # Prime-patching frontier addendum: credited-bank and domain-support closure
 
 This addendum extends `proofs/prime-patching-recent-index.md` after PP3afm.
-It records the paid resource-bank, fixed-cell, direct allocation-domain, and
-composite source-star reductions in `docs/193` through `docs/201` without
-replacing the larger historical ledger.  The filename is retained for
-continuity with earlier references.
+It records the paid resource-bank, fixed-cell, direct allocation-domain,
+composite source-star, and final-state path reductions in `docs/193` through
+`docs/203` without replacing the larger historical ledger.  The filename is
+retained for continuity with earlier references.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -17,6 +17,8 @@ continuity with earlier references.
 | PP3aha--PP3ahg | Every binary shadow of an `s`-cell source-valid endpoint state is supported on `binom(s,2)` line matchings and costs at most `s(s-1)` values from one macro domain | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/199-small-endpoint-binary-shadow-allocation-bypass.md` |
 | PP3ahh--PP3ahn | Unary witness multiplicity is one for a fixed inserted cell and candidate; `o(R)` unary weight is domain-absorbed, while failed arc-petal completion forces `A_2=Omega(RW)` | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/200-unary-shadow-domain-margin-threshold.md` |
 | PP3aho--PP3ahu | Unary domain failure creates a post-trade source star of degree `Omega(R/s)`; a second marked trade cancels the created incidences exactly in a composite potential identity | PROVED / CONDITIONAL COMPOSITE PAID INTERFACE | `docs/201-unary-domain-failure-composite-source-star.md` |
+| PP3ahv--PP3aia | In a two-step source-valid path, final controller domains depend only on surviving final new points; transient shadow disappears and direct allocation uses only final unary support plus `s_f(s_f-1)` | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/202-two-step-final-state-shadow-path-independence.md` |
+| PP3aib--PP3aig | Along any bounded-depth source-valid path, only the final new set matters; binary loss is controlled by cumulative surviving size squared and unary failure yields the next final source star | PROVED / CONDITIONAL CASCADE INTERFACE | `docs/203-bounded-depth-final-shadow-cascade.md` |
 
 ## Updated resource-bank endpoint
 
@@ -167,20 +169,20 @@ margin branch.
 
 Suppose an `s`-cell source-valid trade starts from domains of size at least
 `(gamma+xi)R` and unary insertion shadow pushes one paired macro domain below
-`gamma R`.  Assign each removed value to a causing inserted cell and to movement
-or refill type.  One class has size
+`gamma R`. Assign each removed value to a causing inserted cell and to movement
+or refill type. One class has size
 
 ```text
 C > xi R/(2s).
 ```
 
 In the post-trade source, the causing inserted cell is a common blocker endpoint
-in those `C` distinct entries, with distinct retained partners.  It is therefore
+in those `C` distinct entries, with distinct retained partners. It is therefore
 a genuine source-star centre carrying `C` units of dynamic credit.
 
 Let the first trade have removal credit `R_1` and other insertion cost `J_1`.
 Let a second marked trade move the new centre, with selected-line self-recapture
-`I_self` and foreign cost `J_2`.  The exact two-step identity is
+`I_self` and foreign cost `J_2`. The exact two-step identity is
 
 ```text
 Xi(S_2)-Xi(S_0)
@@ -189,7 +191,7 @@ J_1+I_self+J_2-R_1.
 ```
 
 The `C` incidences created in the first state and destroyed in the second cancel
-exactly.  If `R_1->infinity`, `C<=R`, and the post-trade marked layer has size
+exactly. If `R_1->infinity`, `C<=R`, and the post-trade marked layer has size
 `Omega(R)`, the second subbank may be chosen slowly enough that
 
 ```text
@@ -197,43 +199,94 @@ E I_self=o(R_1).
 ```
 
 Thus diffuse first-step and second-step foreign cost gives a strict composite
-improvement.  Domain-scale unary failure is a second-generation marked
+improvement. Domain-scale unary failure is a second-generation marked
 source-star, not a new terminal weight table.
+
+## Final-state path independence
+
+For robust direct allocation there is a stronger alternative to paying the
+uncancelled intermediate terms.  After a source-valid trade path, write
+
+```text
+S_t=O_t dot-union N_t,
+S=|N_t|,
+```
+
+where `O_t` is the final retained original source and `N_t` is the set of points
+that survive as genuinely new final points. Every final blocker pair not already
+contained in `O_t` is either `N_t--O_t` or `N_t--N_t`. Points inserted and later
+removed belong to neither class.
+
+Consequently every transient candidate entry disappears from the final domains,
+regardless of its intermediate `Xi` multiplicity. The complete final shadow
+removes at most
+
+```text
+d_M^t(i,A)+d_F^t(i,B)+S(S-1)
+```
+
+values from one macro domain. A sufficient label-free bound is
+
+```text
+U_t+S(S-1).
+```
+
+If this fits a fixed margin `xi R`, direct allocation completes without any
+potential decrease or growing removal credit along the path. If final unary
+support destroys one margin, some point in `N_t` is a final source-star centre
+of degree greater than
+
+```text
+xi R/(2S).
+```
+
+For a depth-`t` path with at most `s_j` points inserted at step `j`, all final
+binary shadow is negligible whenever
+
+```text
+(sum_j s_j)^2=o(R).
+```
+
+At the slab scale this permits total surviving size
+`m^(kappa_*+o(1))` for every `kappa_*<19/40`, including polynomially growing
+cascade depth when the individual trades are sufficiently small.
 
 ## Revised open objects
 
 The frontier now separates the monotone paid route, robust direct allocation,
-and two-step composite conversion.
+two-step composite conversion, and bounded-depth final-state cascades.
 
 In the robust-domain direct-completion branch, positive-density rank-three and
 rank-four binary stars, fixed-cell heavy pencils, weighted choice grids,
-candidate-rich projective covers, arbitrary binary `Xi` multiplicity, and
-`o(R)` unary `Xi` weight of one active endpoint state are no longer independent
-obstructions.
+candidate-rich projective covers, arbitrary binary `Xi` multiplicity,
+intermediate foreign shadow, and `o(R)` final unary weight are no longer
+independent obstructions.
 
-Unary shadow that destroys a robust domain margin is also localized: it creates
-a post-trade source-star centre of degree `Omega(R/s)` and cancels in a composite
-marked trade whenever the uncancelled collateral is diffuse.
+Unary shadow that destroys a final robust margin is localized to a final
+source-star centre of degree `Omega(R/S)`. Intermediate lack of removal credit
+is irrelevant whenever direct final allocation is available.
 
 The remaining concentrated problems are:
 
-1. positive-density ambient unary insertion shadow whose witness structure gives
-   a resource bank before a source-valid first trade is available;
-2. uncancelled first-step or second-step foreign insertion cost;
-3. failure of the nonbinary `Omega(R)` base domain margin or of the global
+1. failure to select a controller-preserving source-valid trade path because of
+   marked source, transition, anchor, conditional-Hall, alternating-host, or
+   distinguished endpoint-host structure;
+2. failure of the nonshadow `Omega(R)` base-domain margin or of the global
    allocation criterion;
-4. marked source, transition, anchor, or distinguished endpoint-host failure;
-5. conditional-Hall or alternating-host structure before a source-valid trade is
-   selected;
-6. branches that still require a one-step monotone `Xi` decrease and cannot use
-   direct or composite completion;
-7. endpoint states too large for `s^2=o(R)`;
-8. first trades with no growing removal credit.
+3. final unary source-star cascades whose cumulative surviving size approaches
+   the boundary `S^2=Omega(R)`;
+4. branches that still require a one-step monotone `Xi` decrease because no
+   robust final allocation is available;
+5. genuinely final foreign unary support that is neither margin-absorbed nor
+   converted by another marked source-star trade;
+6. unbounded cascades for which no termination or cumulative-size control has
+   yet been proved.
 
 Rich designated recapture fibres, selected-credit self-recreation, diffuse
 foreign support cores, source-star self-recapture, unstructured fixed-cell
 candidate multiplicity, binary multiplicity on small source-valid endpoint
-states, credit-scale path-petal binary cost, and raw unary domain failure are no
+states, credit-scale path-petal binary cost, raw unary domain failure,
+intermediate foreign multiplicity, and intermediate lack of credit are no
 longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
