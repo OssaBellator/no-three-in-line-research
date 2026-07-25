@@ -301,7 +301,7 @@ The token statement is CMR413 applied to the distinct restored edges. ∎
 Thus unavailability of the two fixed cross partners does not invalidate the
 line-clean bank; it is an explicit additive cost.
 
-## 6. Trace contacts immediately yield one-arm token structure
+## 6. Trace contacts yield one-arm line and token signatures
 
 Suppose `R` distinct rooted-arm cylinders expose paid-line trace contacts with
 the persistent cell `e`.  CMR526 supplies `R` distinct witness cells in the
@@ -325,7 +325,7 @@ Consequently, at every chosen nonroot depth, that arm yields either
 \boxed{
 \text{one full token containing at least }
 \left\lceil\sqrt d\right\rceil
-\text{ unavailable witnesses},
+\text{ trace witnesses},
 }
 \]
 
@@ -337,17 +337,24 @@ or at least
 }
 \]
 
-pairwise disjoint unavailable full-token witnesses.
+pairwise disjoint full-token trace witnesses.
 
 ### Proof
 
 The row and column arms meet only in the central cell `e`, and CMR526 excludes
 `e` from the selected trace witnesses.  Hence the `R` distinct witnesses split
 disjointly between the two arms, so one arm contains at least
-`\lceil R/2\rceil`.  Apply CMR515 to that row or column star. ∎
+`\lceil R/2\rceil`.
 
-The trace-contact half of CMR525 is therefore already paid by the heavy-token
-or dispersed-token ledger.
+At a fixed depth, partition the varying coordinate of that arm by its residue
+modulo `p^b`.  The proof of CMR512--CMR515 is purely a partition-and-pigeonhole
+argument, so it applies to these distinct trace cells without assuming that
+they are unavailable. ∎
+
+The trace-contact half of CMR525 therefore gives heavy/dispersed token
+**geometry**.  Unlike the absorption partners, the trace witnesses need not be
+unavailable, so their temporal payment must use their paid-line or ancestry
+provenance rather than unavailable-edge depletion.
 
 ## 7. Repeated exact pair types: reintroduction or a persistent paid pair
 
@@ -432,8 +439,8 @@ persistent-aware line-clean episodes and is never absorbed.  Fix integers
 After discarding at most half the occurrences, at least one of the following
 exact endpoints is reached.
 
-1. **Trace-token endpoint.**  One row or column arm has the CMR532 heavy-token
-   or dispersed-token alternative.
+1. **Trace-signature endpoint.**  One row or column arm has the CMR532
+   heavy-token or dispersed-token trace-cell alternative.
 2. **Exact pair recurrence with temporal payment.**  One pair type occurs at
    least `\lambda` times.  Then CMR533 gives either reintroduction payment or a
    jointly persistent compatible paid pair, to which the weighted selector
@@ -485,7 +492,8 @@ cylinders. ∎
 The persistent row-column cross is no longer an unstructured temporal
 obstruction.
 
-- Trace contacts immediately give one heavy arm and hence token structure.
+- Trace contacts give one heavy arm and hence exact line/token signatures;
+  the trace cells are not asserted to be unavailable.
 - Deficiency pairs form an injective family of paid lines.
 - Distinct pair types give pairwise disjoint equal-size line-clean cylinders.
 - König yields a large two-arm bank or an exact one-arm line-star bank.
@@ -493,7 +501,7 @@ obstruction.
 - Unavailable paid edges cost only a deterministic surcharge of at most two.
 
 The remaining prime-power task is now **ancestry payment for persistent
-pair/star banks**.  One must show that repeated failure of the CMR531 selector
+pair/star banks and trace-cell signatures**.  One must show that repeated failure of the CMR531 selector
 across the nested envelope chain pays protected-reserve depletion, repeated
 full-token return, a fixed quotient/carry signature, deletion ancestry, or a
 strict envelope expansion.  CMR174 limits strict envelope expansions to the
