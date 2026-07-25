@@ -14,16 +14,16 @@ A compatible active collateral triple has rank `r(T)` equal to the number of com
 
 Let `T` be a new compatible active triple with `r(T)=1`. Then its unique prescribed component bit is the target value `1`, never the current value `0`.
 
-Consequently every new rank-one triple has one unique controlling component. Let `C_i` now denote the total weight of the new rank-one triples controlled by component `i`. Then
+Consequently every new rank-one triple has one unique controlling component. Let `R_i` denote the total weight of the new rank-one triples controlled by component `i`. Then
 
 $$
-A_1 = (1/2) sum_i C_i.
+A_1 = (1/2) sum_i R_i.
 $$
 
 More strongly, for every deterministic subset `S` of components toggled to their target states, the total rank-one active collateral is exactly
 
 $$
-sum_{i in S} C_i.
+sum_{i in S} R_i.
 $$
 
 Suppose the paid certificates assigned to component `i` have total weight `W_i`, and each is absent whenever component `i` is in its target state. Toggling `S` therefore destroys paid weight at least
@@ -35,7 +35,7 @@ $$
 so its guaranteed paid-minus-rank-one margin is at least
 
 $$
-sum_{i in S} (W_i-C_i).
+sum_{i in S} (W_i-R_i).
 $$
 
 ### Proof
@@ -101,7 +101,7 @@ Hence an exact two-target secant identifies the target pair and therefore its co
 Let
 
 $$
-C = sum_i C_i = 2A_1.
+R = sum_i R_i = 2A_1.
 $$
 
 Let `σ` be any finite profile map on the component-local rank-one triples, with `L` profile values. Include in the profile the component type, quotient label, physical scale, carry word, and any desired finite incidence decoration.
@@ -109,7 +109,7 @@ Let `σ` be any finite profile map on the component-local rank-one triples, with
 After splitting by local target rank `s in {1,2}` and by `σ`, one class has raw weight at least
 
 $$
-C/(2L)=A_1/L.
+R/(2L)=A_1/L.
 $$
 
 If the RI5u rank-one outcome satisfies
@@ -129,25 +129,25 @@ The selected class has one of two rigid forms.
 1. A one-target class with context-pair multiplicity at most two.
 2. A two-target class of exact hyperbola secants, each encoded by `(x+y,xy)` and attached to one controlling component.
 
-There is also a component-ratio router. For any real `ρ>0`, let `B_ρ` be the components with `C_i>ρW_i`. Then
+There is also a component-ratio router. For any real `ρ>0`, let `B_ρ` be the components with `R_i>ρW_i`. Then
 
 $$
-sum_{i in B_ρ} C_i >= C-ρW.
+sum_{i in B_ρ} R_i >= R-ρW.
 $$
 
 If every bad component carries collateral at most `β`, at least
 
 $$
-ceil((C-ρW)/β)
+ceil((R-ρW)/β)
 $$
 
-bad components are present whenever `C>ρW`.
+bad components are present whenever `R>ρW`.
 
 ### Proof
 
 The local target-rank and finite profile values partition the rank-one triples into at most `2L` classes, proving the first bounds.
 
-For the ratio router, components outside `B_ρ` contribute at most `ρW_i` each. Their total collateral is at most `ρW`. Removing them from `C` leaves at least `C-ρW` collateral on `B_ρ`. The cardinality conclusion is averaging under the cap `β`. QED.
+For the ratio router, components outside `B_ρ` contribute at most `ρW_i` each. Their total collateral is at most `ρW`. Removing them from `R` leaves at least `R-ρW` collateral on `B_ρ`. The cardinality conclusion is averaging under the cap `β`. QED.
 
 ## Interface to RI6
 
@@ -164,4 +164,4 @@ The next active-layer work is to compare these component-local costs with their 
 
 ## Finite check
 
-`scripts/verify_rational_rank_one_active.py` exhausts small finite fields, target hyperbolas, row-preserving cycle switches, and fixed outside matching cells. It verifies one-sided rank-one newness, exact subset additivity, the two-intersection bound, one-context-pair multiplicity, the secant equation and uniqueness, and the profile/component routers.
+`scripts/verify_rational_rank_one_active.py` exhausts small finite fields, target hyperbolas, row-preserving cycle switches, and nontrivial fixed outside matching states. It verifies one-sided rank-one newness, exact subset additivity, the two-intersection bound, one-context-pair multiplicity, the secant equation and uniqueness, and the profile/component routers.
