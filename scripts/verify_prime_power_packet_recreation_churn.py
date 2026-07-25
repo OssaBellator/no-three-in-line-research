@@ -46,13 +46,26 @@ def verify_harmonic_degree_charges() -> None:
 
 
 def verify_total_weight_bound() -> None:
-    for side in range(5, 10_000):
+    maximum_side = 10_000
+    harmonic = [0.0] * maximum_side
+    for value in range(1, maximum_side):
+        harmonic[value] = harmonic[value - 1] + 1.0 / value
+
+    for side in range(5, maximum_side):
+        for lower in (1, 2, 5, max(1, side // 10)):
+            if lower >= side:
+                continue
+            interval_sum = harmonic[side - 1] - harmonic[lower - 1]
+            bound = 1 + log(side / lower)
+            assert interval_sum <= bound + 1e-12
+
+    # Keep a few exact rational checks alongside the linear floating-point sweep.
+    for side in (5, 10, 50, 100, 500):
         for lower in (1, 2, 5, max(1, side // 10)):
             if lower >= side:
                 continue
             exact = sum(Fraction(1, height) for height in range(lower, side))
-            bound = 1 + log(side / lower)
-            assert float(exact) <= bound
+            assert float(exact) <= 1 + log(side / lower)
 
 
 def verify_first_dirty_schedule_accounting() -> None:
