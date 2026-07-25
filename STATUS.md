@@ -104,8 +104,9 @@ remains open. This repository does **not** contain a complete proof.
   main-conflict, and mixed-conflict hypotheses. It gives an **exact
   target-specific parent permutation** avoiding all candidate-only triples in
   that band.
-- This upgrades the earlier almost-perfect band matching for one band. It does
-  not yet clean all \(O(\log t)\) bands simultaneously.
+- Harmonic direction packing upgrades this to simultaneous exact cleaning of
+  two prescribed dyadic bands under the stated covering hypotheses.
+- Exact simultaneous cleaning of all \(O(\log t)\) bands remains open.
 
 ### Heavy, dispersed, and repeated carry tokens
 
@@ -192,13 +193,13 @@ scheduled sweep.
    histories, charge repeated use of one compatible ancestor slot to coarse
    target destruction, envelope expansion, reserve consumption, or new exchange
    ancestry.
-2. **Band scheduling and no-return.** Combine the exact one-band covering theorem
-   across the \(O(\log t)\) intermediate bands without accumulating a forbidden
-   logarithm in the conflict degree or recreating previously cleaned bands.
+2. **Band scheduling and no-return.** Extend the exact two-band harmonic packing
+   to all \(O(\log t)\) intermediate bands without accumulating a forbidden
+   conflict-degree factor or recreating previously cleaned bands.
 3. **Forced ancestry width.** Bound the width of the fully forced
    certificate-exchange DAG or resample several exchange cycles simultaneously.
 4. **Non-prefix return profiles.** Joint-parent and exact-band resets need
-   descendant full-token return bounds analogous to CMR393--CMR397.
+   descendant full-token return bounds analogous to CMR398--CMR402.
 5. **Low-height carry absorption.** Charge the remaining lower-height line
    populations to first-separation, quotient, and primitive carry signatures.
 6. **Prime-field terminal conversion.** Transfer the inherited-envelope and
@@ -216,11 +217,11 @@ There is no complete proof. The composite prime-power route now closes the
 generic recursive first moment, prefix and joint-parent collateral, terminal
 target contraction, sharp Hall blocker geometry, universal line-clean repair,
 heavy-token local continuation, exact high-slice cleaning, exact completion of
-one intermediate band, one-step deep-token batch elimination, and the complete
-row-token and full-token return profiles for a single descending recursive
-prefix pass.
+one intermediate band and two harmonically packed bands, one-step deep-token
+batch elimination, and the complete row-token and full-token return profiles
+for a single descending recursive prefix pass.
 
 The principal remaining prime-power theorem is dynamic rather than local: pay
 repeated use of one compatible ancestor slot, control non-prefix recreation and
-fully forced exchange ancestry, and schedule multiple exact height-band
-coverings. Arbitrary side-length coverage remains necessary afterward.
+fully forced exchange ancestry, and schedule all exact height-band coverings.
+Arbitrary side-length coverage remains necessary afterward.
