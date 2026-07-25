@@ -19,7 +19,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`STATUS.md`](STATUS.md): current honesty ledger.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): global theorem index.
 - [`proofs/composite-modulus-theorem-index.md`](proofs/composite-modulus-theorem-index.md): composite-track theorem index.
-- [`proofs/composite-modulus-theorem-index-addendum.md`](proofs/composite-modulus-theorem-index-addendum.md): current CMR102+ addendum.
+- [`proofs/composite-modulus-theorem-index-addendum.md`](proofs/composite-modulus-theorem-index-addendum.md): CMR102--CMR384 addendum.
+- [`proofs/composite-modulus-theorem-index-supplement.md`](proofs/composite-modulus-theorem-index-supplement.md): current live range from CMR385 onward.
 - [`tracks/all-n-composite-modulus.md`](tracks/all-n-composite-modulus.md): original composite task track.
 - [`tracks/all-n-composite-modulus-progress.md`](tracks/all-n-composite-modulus-progress.md): CM1–CM6 progress and bottlenecks.
 
@@ -47,7 +48,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/124-prime-power-paid-mixed-ratio-bank.md`](docs/124-prime-power-paid-mixed-ratio-bank.md) through [`docs/130-prime-power-token-reintroduction-ledger.md`](docs/130-prime-power-token-reintroduction-ledger.md): paid ratio banks, line-clean completions, heavy-cell continuation, dispersed-token packing, and dynamic token-edge inventory.
 - [`docs/131-prime-power-line-clean-line-energy.md`](docs/131-prime-power-line-clean-line-energy.md) and [`docs/132-prime-power-line-energy-to-carry-cells.md`](docs/132-prime-power-line-energy-to-carry-cells.md): frozen line energy, dyadic localization, matching-vertex walls, and full-prefix carry cells.
 - [`docs/130-prime-power-universal-line-clean-blocker-bank.md`](docs/130-prime-power-universal-line-clean-blocker-bank.md) through [`docs/132-prime-power-exact-band-covering.md`](docs/132-prime-power-exact-band-covering.md): universal sharp-blocker banks, deep-token universe elimination, tunable batching, and exact completion of one intermediate-height band.
-- [`docs/133-prime-power-coarse-reset-reintroduction-profile.md`](docs/133-prime-power-coarse-reset-reintroduction-profile.md): exact coarse-reset host churn, one-pass \(O_p(t\log^2t)\) token-return mass, and reset-multiplicity reduction.
+- [`docs/133-prime-power-laminar-reintroduction-budget.md`](docs/133-prime-power-laminar-reintroduction-budget.md) and [`docs/133-prime-power-coarse-reset-reintroduction-profile.md`](docs/133-prime-power-coarse-reset-reintroduction-profile.md): laminar row-stock accounting, exact recursive-fibre return profiles, ancestor-slot factorization, and witness execution.
+- [`docs/133-prime-power-line-energy-token-endpoint.md`](docs/133-prime-power-line-energy-token-endpoint.md) through [`docs/135-prime-power-full-token-coarse-reset-profile.md`](docs/135-prime-power-full-token-coarse-reset-profile.md): full-prefix token packing, two-dimensional dynamic inventory, per-ancestor reset costs, deep visit bounds, repeated-slot thresholds, and aggregate return mass.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -109,31 +111,36 @@ conflict degree or recreating previously cleaned bands.
 
 Thin Hall blockers now have a complete local signature route. Universal
 line-clean banks turn frozen blockers into line energy, matching-vertex walls,
-heavy prefix cells, or dispersed tokens. Deep token universes can be removed in
-simultaneous batches, with a tunable cubic-root tradeoff between heavy load and
-batch capacity.
+secant stars, heavy prefix cells, or dispersed full tokens. Deep token universes
+can be removed in simultaneous batches, with a tunable cubic-root tradeoff
+between heavy load and batch capacity.
 
-For a repeated absolute token \(\tau=(b,c,\theta)\), executable endpoint
-deletions satisfy
-
-\[
-D_\tau\le \frac{t^2}{p^b}+I_\tau.
-\]
-
-A one-pass descending prefix schedule now has the explicit coarse-return bound
+For a full token \(\tau=(b,a,c,\theta)\), executable endpoint visits satisfy
 
 \[
-I_\tau^{\rm coarse}\le\frac{2bt}{p^b},
-\qquad
-\sum_\tau I_\tau^{\rm coarse}
-\le(p+1)t\,h(h-1).
+D_\tau^{(2)}
+\le
+\frac{t^2}{p^{2b}}+I_\tau^{(2)}.
 \]
 
-For arbitrary histories, unbounded return forces repeated rematching of one of
-finitely many compatible ancestor slots. Witness certificates already open
-executable prefix continuations. The remaining dynamic obstruction is repeated
-ancestor-reset payment together with the width of fully forced exchange
-ancestry and multi-band scheduling. Arbitrary composite assembly still needs a
+A one-pass descending recursive prefix schedule has
+
+\[
+I_\tau^{(2),\rm coarse}\le\frac{2bt}{p^b}.
+\]
+
+At the deep threshold \(p^b\ge t^{2/3}\), this gives
+
+\[
+D_\tau^{(2)}\le t^{2/3}+2h t^{1/3}.
+\]
+
+Across all labelled nonroot full tokens, the one-pass return mass is
+\(O_p(t^2\log t)\). For arbitrary recursive histories, excessive return forces
+repeated rematching of one compatible ancestor slot. Witness certificates
+already open executable prefix continuations. The remaining dynamic obstruction
+is payment for repeated slot use, non-prefix recreation, fully forced exchange
+ancestry, and multi-band scheduling. Arbitrary composite assembly still needs a
 separate coverage mechanism.
 
 ## Running checks
@@ -172,11 +179,15 @@ python scripts/verify_prime_power_dispersed_token_ledger.py
 python scripts/verify_prime_power_token_reintroduction_ledger.py
 python scripts/verify_prime_power_line_clean_energy.py
 python scripts/verify_prime_power_line_energy_carry.py
+python scripts/verify_prime_power_line_energy_tokens.py
 python scripts/verify_prime_power_universal_line_clean.py
 python scripts/verify_prime_power_dispersed_token_universe.py
 python scripts/verify_prime_power_tunable_token_batching.py
 python scripts/verify_prime_power_exact_band_covering.py
+python scripts/verify_prime_power_laminar_reintroduction.py
 python scripts/verify_prime_power_coarse_reset_profile.py
+python scripts/verify_prime_power_full_token_reintroduction.py
+python scripts/verify_prime_power_full_token_reset_profile.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
