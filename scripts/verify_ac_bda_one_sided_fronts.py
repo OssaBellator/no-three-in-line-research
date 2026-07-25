@@ -20,9 +20,11 @@ def path_fronts(weights, step):
             overlap += min(weights[left], weights[right])
             difference = weights[right] - weights[left]
             if difference > 0:
-                up_edges[local_index % 2].append((left, right, difference))
+                # The right slot carries the unmatched excess.
+                up_edges[local_index % 2].append((left, right, difference, right))
             elif difference < 0:
-                down_edges[local_index % 2].append((left, right, -difference))
+                # The left slot carries the unmatched excess.
+                down_edges[local_index % 2].append((left, right, -difference, left))
 
     endpoint_weight = sum(weights[index] for index in endpoint_slots)
     pair_weight = Fraction(overlap, 2)
@@ -47,15 +49,19 @@ def verify_scalar_fronts(maximum_length=7, maximum_weight=3):
                     weights, step
                 )
 
-                # Every parity class is slot-disjoint.
+                # Every parity class is slot-disjoint, and in particular its
+                # excess-side private resources are distinct.
                 for edge_class in classes:
                     used = []
-                    for left, right, _ in edge_class:
+                    private = []
+                    for left, right, _, heavy in edge_class:
                         used.extend((left, right))
+                        private.append(heavy)
                     assert len(used) == len(set(used))
+                    assert len(private) == len(set(private))
 
                 # Private singleton resources give exact Hall on every selected
-                # endpoint set and every selected parity edge set.
+                # endpoint set and every selected oriented parity class.
                 endpoint_list = sorted(endpoints)
                 for mask in range(1 << len(endpoint_list)):
                     selected = {
@@ -72,12 +78,8 @@ def verify_scalar_fronts(maximum_length=7, maximum_weight=3):
                             for index in range(len(edge_class))
                             if mask >> index & 1
                         ]
-                        resources = {
-                            slot
-                            for left, right, _ in selected
-                            for slot in (left, right)
-                        }
-                        assert len(resources) == 2 * len(selected)
+                        resources = {edge[3] for edge in selected}
+                        assert len(resources) == len(selected)
                         hall_subfamilies += 1
 
                 if total:
