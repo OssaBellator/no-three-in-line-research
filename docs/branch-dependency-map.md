@@ -35,7 +35,9 @@ BDA5ap--BDA5ar close the former five affine-anchor-chain output. A high row or c
 
 AC3fz--AC3gf import the union-safe product. AC3hf--AC3hh import the fixed-cell affine collapse under the BDA4f parity and exact-occurrence aggregation hypotheses, giving pivot payment `H/10` and failed-rank return `H/30`.
 
-The remaining BDA work is balanced-floor/higher-rank arithmetic, unaudited ordinary/reflected support-faithfulness and finite-profile cycle termination.
+AC3hq--AC3hr remove the generic ordinary support-faithfulness gate after physical occurrence realization: same-anchor `h,h+q` pairs automatically enter the AC3ec collision/clean-support audit, while the complete AC3v envelope graph handles every remaining incompatibility. AC3hs--AC3ht show that raw reflected `CD` cells are nonradial and must be executed through separately proved radial support or realized-rank pivot routing.
+
+The remaining BDA work is physical realization of unresolved arithmetic roles, balanced-floor/higher-rank arithmetic and finite-profile cycle termination.
 
 ## Rational-inverse input
 
@@ -70,11 +72,13 @@ AC3hi--AC3hk route old-axis histories to one of:
 - a heavy fixed current pair;
 - one fixed current context cell with many distinct axis pivots.
 
+AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weighted line star gives a pair-core bank, a direct current-anchor rematching bank, one heavy current certificate, an explicit labelled overload or a realized next created-cell rank.
+
 ## Current frontier
 
-1. Classify full line-partner saturation and old-axis fixed-context/fixed-pair/dispersion profiles through carry, BDA, RI or a genuine multi-target construction.
-2. Close remaining ordinary and reflected co-anchor support-faithfulness cases.
-3. Prove finite transition-cycle termination for the remaining exact arithmetic profiles and assemble AC4.
+1. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
+2. Classify the retained arithmetic labels of heavy certificates, pair-core returns and failed rematching ranks.
+3. Prove finite transition-cycle termination for those exact profiles and assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
