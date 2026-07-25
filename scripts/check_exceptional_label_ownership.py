@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact checker for PP3mg--PP3mo exceptional-label ownership criteria."""
+"""Exact checker for PP3mg--PP3mz exceptional-label ownership criteria."""
 
 from __future__ import annotations
 
@@ -110,6 +110,20 @@ def maximum_matching(
     return size, left_to_right, right_to_left
 
 
+def ownership_graph(
+    rows: list[list[Fraction]], threshold: Fraction, M: int, W: int
+) -> tuple[list[list[bool]], list[list[int]]]:
+    acceptable = [[score <= threshold for score in row] for row in rows]
+    adjacency: list[list[int]] = []
+    for flags in acceptable:
+        neighbors: list[int] = []
+        for macro, allowed in enumerate(flags):
+            if allowed:
+                neighbors.extend(macro * W + copy for copy in range(W))
+        adjacency.append(neighbors)
+    return acceptable, adjacency
+
+
 def hall_witness(
     adjacency: list[list[int]],
     left_to_right: list[int],
@@ -147,11 +161,47 @@ def hall_witness(
     }
 
 
+def matching_snapshot(
+    rows: list[list[Fraction]], threshold: Fraction, M: int, W: int
+) -> dict[str, object]:
+    acceptable, adjacency = ownership_graph(rows, threshold, M, W)
+    T = len(rows)
+    size, left_to_right, right_to_left = maximum_matching(adjacency, T)
+    ownership = [right // W if right != -1 else None for right in left_to_right]
+    loads = [0] * M
+    for macro in ownership:
+        if macro is not None:
+            loads[macro] += 1
+    balanced = size == T and loads == [W] * M
+    return {
+        "acceptable": acceptable,
+        "adjacency": adjacency,
+        "size": size,
+        "left_to_right": left_to_right,
+        "right_to_left": right_to_left,
+        "ownership": ownership,
+        "loads": loads,
+        "balanced": balanced,
+    }
+
+
+def ownership_bottleneck(
+    rows: list[list[Fraction]], M: int, W: int
+) -> tuple[Fraction, dict[str, object]]:
+    candidates = sorted({score for row in rows for score in row})
+    for threshold in candidates:
+        snapshot = matching_snapshot(rows, threshold, M, W)
+        if snapshot["balanced"]:
+            return threshold, snapshot
+    raise RuntimeError("complete score matrix must be matchable at its maximum score")
+
+
 def main() -> None:
     args = parse_args()
     T, M, W, r, rows, cols = load_instance(args.input)
 
-    acceptable = [[rows[A][i] <= r for i in range(M)] for A in range(T)]
+    fixed = matching_snapshot(rows, r, M, W)
+    acceptable = fixed["acceptable"]
     good_macro_counts = [sum(flags) for flags in acceptable]
     good_label_counts = [sum(acceptable[A][i] for A in range(T)) for i in range(M)]
 
@@ -170,38 +220,46 @@ def main() -> None:
                     }
                 )
 
-    adjacency: list[list[int]] = []
-    for A in range(T):
-        neighbors: list[int] = []
-        for i in range(M):
-            if acceptable[A][i]:
-                neighbors.extend(i * W + copy for copy in range(W))
-        adjacency.append(neighbors)
-
-    matching_size, left_to_right, right_to_left = maximum_matching(adjacency, T)
-    ownership = [right // W if right != -1 else None for right in left_to_right]
-    macro_loads = [0] * M
-    for macro in ownership:
-        if macro is not None:
-            macro_loads[macro] += 1
-
     capped_sums: list[Fraction] = []
+    refill_slacks: list[Fraction] = []
     refill_violations: list[dict[str, object]] = []
     for B in range(T):
         capped = sum(
             (min(Fraction(W), cols[B][i]) for i in range(M)), Fraction()
         )
+        slack = sum(
+            (max(Fraction(), Fraction(W) - cols[B][i]) for i in range(M)),
+            Fraction(),
+        )
         capped_sums.append(capped)
+        refill_slacks.append(slack)
         if r + capped > T:
             refill_violations.append(
                 {
                     "refill_label": B,
                     "capped_sum": fraction_text(capped),
+                    "refill_slack": fraction_text(slack),
                     "r_plus_capped_sum": fraction_text(r + capped),
                 }
             )
 
-    balanced = matching_size == T and macro_loads == [W] * M
+    bottleneck, optimum = ownership_bottleneck(rows, M, W)
+    minimum_slack = min(refill_slacks)
+    bottleneck_certified = bottleneck <= minimum_slack
+
+    gap_witness = None
+    if not bottleneck_certified:
+        threshold_snapshot = matching_snapshot(rows, minimum_slack, M, W)
+        gap_witness = {
+            "minimum_refill_slack": fraction_text(minimum_slack),
+            "ownership_hall_witness_at_refill_slack": hall_witness(
+                threshold_snapshot["adjacency"],
+                threshold_snapshot["left_to_right"],
+                threshold_snapshot["right_to_left"],
+                W,
+            ),
+        }
+
     result = {
         "T": T,
         "M": M,
@@ -210,18 +268,29 @@ def main() -> None:
         "acceptable_macro_counts_by_label": good_macro_counts,
         "acceptable_label_counts_by_macro": good_label_counts,
         "ownership_ore_violations": ore_violations,
-        "ownership_matching_size": matching_size,
-        "balanced_ownership_found": balanced,
-        "ownership_by_movement_label": ownership,
-        "macro_loads": macro_loads,
+        "ownership_matching_size": fixed["size"],
+        "balanced_ownership_found": fixed["balanced"],
+        "ownership_by_movement_label": fixed["ownership"],
+        "macro_loads": fixed["loads"],
         "ownership_hall_witness": (
             None
-            if balanced
-            else hall_witness(adjacency, left_to_right, right_to_left, W)
+            if fixed["balanced"]
+            else hall_witness(
+                fixed["adjacency"],
+                fixed["left_to_right"],
+                fixed["right_to_left"],
+                W,
+            )
         ),
         "capped_refill_scores": [fraction_text(value) for value in capped_sums],
+        "refill_slacks": [fraction_text(value) for value in refill_slacks],
         "refill_score_violations": refill_violations,
-        "pp3mk_certified": balanced and not refill_violations,
+        "pp3mk_certified": fixed["balanced"] and not refill_violations,
+        "ownership_bottleneck": fraction_text(bottleneck),
+        "minimum_refill_slack": fraction_text(minimum_slack),
+        "bottleneck_ownership": optimum["ownership"],
+        "pp3mx_bottleneck_slack_certified": bottleneck_certified,
+        "bottleneck_slack_gap_witness": gap_witness,
     }
     print(json.dumps(result, indent=2, sort_keys=True))
 
