@@ -1,6 +1,6 @@
 # Full-prefix tokens inherit the coarse-reset return profile
 
-CMR394--CMR397 sharpen repeated-token accounting by fixing both endpoint
+CMR389--CMR392 sharpen repeated-token accounting by fixing both endpoint
 prefix coordinates. CMR378--CMR384 compute row-token return under laminar and
 recursive coarse prefix resets. The two results combine directly: one ancestor
 reset can return at most one old matching edge for each source column in the
@@ -12,7 +12,7 @@ Let
 t=p^h
 \]
 
-and fix one absolute full prefix token
+and fix one absolute full token
 
 \[
 \tau=(b,a,c,\theta),
@@ -30,73 +30,58 @@ U_\tau^{(2)}
 \]
 
 Consider an old-cell-clean rematching of one depth-`r` prefix block, where
-
-\[
-0\le r<b.
-\]
+`0\le r<b`.
 
 ## 1. One ancestor reset
 
-### Theorem CMR398 — PROVED
+### Theorem CMR393 — PROVED
 
 One depth-`r` one-layer prefix rematching reintroduces at most
 
 \[
-\boxed{
-\frac{t}{p^b}
-}
+\boxed{\frac{t}{p^b}}
 \]
 
-old matching edges in `U_\tau^{(2)}`.
+old matching edges in `U_\tau^{(2)}`. It reintroduces none unless
 
-It reintroduces none unless both of the following compatibility conditions
-hold:
+1. the block column residue agrees with `a\pmod{p^r}`;
+2. the block row-fibre residue agrees with `c\pmod{p^r}`.
 
-1. the block column residue agrees with `a modulo p^r`;
-2. the block row-fibre residue agrees with `c modulo p^r`.
-
-The same upper bound holds in a peeled residual host and for the
-coordinate-dual opposite-layer reset.
+The same bound holds in a peeled residual host and for the coordinate-dual
+opposite-layer reset.
 
 ### Proof
 
-By the exact host-churn statement CMR378, the only edges reintroduced at
-full-host level are old matching edges of the rematched block. If the block
-column residue is incompatible with `a`, it contains no source column of the
-full token. If the row fibre is incompatible with `c`, it contains no target
-row of the full token.
+By the exact host-churn theorem CMR382, the only full-host edges reintroduced
+are old matching edges of the rematched block. An incompatible column block
+contains no source extending `a`; an incompatible row fibre contains no row
+extending `c`.
 
-When both are compatible, exactly
+When both conditions hold, exactly
 
 \[
-\frac{t/p^r}{p^{b-r}}
-=
-\frac{t}{p^b}
+\frac{t/p^r}{p^{b-r}}=\frac{t}{p^b}
 \]
 
-columns of the block extend the prescribed depth-`b` column residue `a`. A
-matching has one old edge per such source column, so at most `t/p^b` returned
-edges can lie in the full-token universe. A persistent deletion mask can only
-reduce the returned set. The dual statement interchanges the two matching
-classes. ∎
+columns extend the prescribed depth-`b` column prefix. A matching has one old
+edge per such source column. A persistent deletion mask can only reduce the
+returned set. ∎
 
-Unlike the row-token profile in CMR379, equality is not asserted: unless the
-recursive depth-`b` descendant row fibre is retained, the old matching need not
-send every compatible source column to the prescribed depth-`b` row prefix.
+Unlike the row-token profile in CMR382, equality is not asserted: a coarse
+matching need not send every compatible source to the chosen depth-`b` row
+prefix.
 
 ## 2. One-pass reset budget
 
-Follow the descending one-pass prefix schedule of CMR381, with the sharper
-post-exposure ancestor accounting of CMR383. Let
+Follow the descending one-pass prefix schedule of CMR383. Let
 
 \[
 I_\tau^{(2),\mathrm{coarse}}
 \]
 
-be the full-token edge reintroduction mass caused by all later coarser prefix
-resets.
+be the full-token reintroduction mass caused by all later coarser prefix resets.
 
-### Theorem CMR399 — PROVED UNDER THE ONE-PASS HYPOTHESIS
+### Theorem CMR394 — PROVED UNDER THE ONE-PASS HYPOTHESIS
 
 For every full token,
 
@@ -108,7 +93,7 @@ I_\tau^{(2),\mathrm{coarse}}
 }
 \]
 
-Consequently the number of full-token endpoint visits satisfies
+Consequently,
 
 \[
 \boxed{
@@ -124,22 +109,17 @@ If only the measured layer is rematched, both factors `2` may be removed.
 
 ### Proof
 
-At each coarser depth `r=0,...,b-1` and in each moving layer, there is at most
-one block whose column prefix can extend `a`. The row-fibre condition can only
-remove that candidate. Under the one-pass hypothesis, each compatible
-block-layer slot is used at most once. There are at most `2b` slots, and CMR398
-charges at most `t/p^b` returned full-token edges to each. Combine with the
-initial-stock inventory CMR395. ∎
+For each coarser depth `r=0,\ldots,b-1` and each moving layer, at most one block
+can satisfy the CMR393 column-prefix condition; the row-fibre condition may
+remove that block. In a one-pass schedule every compatible depth-layer slot is
+used at most once. There are at most `2b` slots, each returning at most
+`t/p^b` edges. Combine with the full-token inventory CMR390. ∎
 
 ## 3. Deep full-token visit bounds
 
-### Corollary CMR400 — PROVED UNDER THE ONE-PASS HYPOTHESIS
+### Corollary CMR395 — PROVED UNDER THE ONE-PASS HYPOTHESIS
 
-1. If
-   \[
-   p^b>t^{1/3},
-   \]
-   then
+1. If `p^b>t^{1/3}`, then
    \[
    \boxed{
    D_\tau^{(2)}
@@ -147,11 +127,7 @@ initial-stock inventory CMR395. ∎
    t^{4/3}+2h\,t^{2/3}.
    }
    \]
-2. If
-   \[
-   p^b\ge t^{2/3},
-   \]
-   then
+2. If `p^b\ge t^{2/3}`, then
    \[
    \boxed{
    D_\tau^{(2)}
@@ -162,33 +138,27 @@ initial-stock inventory CMR395. ∎
 
 ### Proof
 
-Use CMR399 and substitute the corresponding lower bound on `p^b`. Also use
-`b<=h`. ∎
-
-Thus a single descending prefix pass has a subquadratic—and at the tunable deep
-threshold, sublinear up to the initial `t^{2/3}` term—budget for repeated visits
-to one exact full token.
+Apply CMR394 and substitute the corresponding lower bound on `p^b`, using
+`b\le h`. ∎
 
 ## 4. Exact reset-occurrence factorization
 
-For every coarser depth `r<b` and moving layer `ell`, let
+For every coarser depth `r<b` and layer `\ell`, let
 
 \[
 A_{\tau,r,\ell}^{(2)}
 \]
 
-be the number of old-cell-clean rematchings, after the token is exposed, of the
-unique depth-`r` block which can satisfy both CMR398 compatibility conditions.
-If no such block exists, put this count equal to zero. Define
+count rematchings, after token exposure, of the unique depth-`r` block which can
+satisfy both CMR393 compatibility conditions. Put
 
 \[
 A_\tau^{(2)}
 =
-\sum_{r=0}^{b-1}\sum_{\ell=0}^1
-A_{\tau,r,\ell}^{(2)}.
+\sum_{r=0}^{b-1}\sum_{\ell=0}^1A_{\tau,r,\ell}^{(2)}.
 \]
 
-### Theorem CMR401 — PROVED
+### Theorem CMR396 — PROVED
 
 For an arbitrary number of recursive prefix resets,
 
@@ -200,8 +170,8 @@ I_\tau^{(2),\mathrm{coarse}}
 }
 \]
 
-Fix `m>=0`. If every compatible ancestor depth-layer slot is rematched at most
-`m` times after the token is exposed, then
+If every compatible ancestor depth-layer slot is rematched at most `m` times,
+then
 
 \[
 \boxed{
@@ -223,22 +193,21 @@ D_\tau^{(2)}
 }
 \]
 
-Conversely, failure of either displayed multiplicity bound forces one of the at
-most `2b` compatible ancestor slots to be rematched more than `m` times.
+Conversely, failure of either multiplicity bound forces one of the at most
+`2b` compatible ancestor slots to be rematched more than `m` times.
 
 ### Proof
 
-CMR398 contributes at most `t/p^b` for every counted reset, proving the
-factorization. There are `b` coarser depths and at most two moving layers, so
-the multiplicity hypothesis gives `A_\tau^{(2)}<=2bm`. Apply CMR395 for the
-visit bound. The final statement is the contrapositive. ∎
+CMR393 contributes at most `t/p^b` for each counted reset. The multiplicity
+hypothesis gives `A_\tau^{(2)}\le2bm`; apply CMR390. The final assertion is the
+contrapositive. ∎
 
-CMR401 identifies the only unbounded recursive-prefix source exactly: repeated
-use of one fixed compatible ancestor slot.
+Thus repeated use of one exact ancestor slot is the only unbounded recursive
+prefix source.
 
 ## 5. Aggregate labelled return mass
 
-### Corollary CMR402 — PROVED UNDER THE ONE-PASS HYPOTHESIS
+### Corollary CMR397 — PROVED UNDER THE ONE-PASS HYPOTHESIS
 
 Summing over every nonroot full token in the parent block gives
 
@@ -264,41 +233,30 @@ In particular,
 }
 \]
 
-so the direction-labelled aggregate is `O_p(t^2 log t)`.
+so the direction-labelled aggregate is `O_p(t^2\log t)`.
 
 ### Proof
 
-At depth `b` there are `p^{2b}` prefix pairs `(a,c)` and `p+1` directions.
-Multiply this count by the per-token CMR399 bound `2bt/p^b`, obtaining
-`2(p+1)bt p^b`. Sum over `b`. Finally,
+At depth `b` there are `p^{2b}` prefix pairs and `p+1` directions. Multiply by
+the CMR394 per-token bound `2bt/p^b`, obtaining `2(p+1)btp^b`, and sum. Finally,
 
 \[
-\sum_{b=1}^{h-1}b p^b
+\sum_{b=1}^{h-1}bp^b
 <
 h\sum_{b=1}^{h-1}p^b
 <
-\frac{h t}{p-1}.
+\frac{ht}{p-1}.
 \]
 
 ∎
 
 This is deliberately a labelled upper bound: one returned edge may be counted
-once for every direction. Geometric direction support can only reduce the true
-mass.
+once for every direction.
 
-## 6. Revised frontier
-
-A canonical descending prefix pass cannot freely replenish repeated full
-tokens. At cubic depth, one token has total executable endpoint stock at most
-`t^{2/3}+O(h t^{1/3})`; globally, all labelled full-token returns in the pass
-have `O_p(t^2 log t)` mass. For unrestricted histories, excessive return forces
-repeated use of one exact ancestor slot.
-
-The remaining dynamic sources are therefore:
-
-1. a monotone payment for repeated use of that slot;
-2. joint-parent or exact-band resets outside the recursive prefix schedule;
-3. the width of the fully forced exchange-ancestry branch.
+A canonical descending prefix pass therefore has subquadratic per-token stock
+at deep scales and `O_p(t^2\log t)` aggregate labelled return mass. The remaining
+dynamic sources are repeated use of one ancestor slot, joint-parent or band
+resets outside the prefix schedule, and fully forced exchange ancestry.
 
 No all-`n` theorem is claimed here. Per-reset capacities, reset multiplicity,
 one-pass sums, and depth specializations are checked in
