@@ -140,6 +140,8 @@ AC3ld--AC3lh strengthen unused-phase completion from one blocker to the complete
 
 AC3li--AC3lm correct the interpretation of saturation. Each named phase is either an active current-context blocker or a latent check requiring another noncurrent literal. Canonical latent dependencies form a functional graph. In one fixed hard registry it has at most `U` edges and at most `floor(U/2)` vertex-disjoint cycles; registry changes remain decorated outer resets. Static dependency cycles are not assigned payment without an arithmetic or ticket theorem.
 
+AC3ln--AC3ls attach a payment-safe provenance record to every active or latent literal. The target-containing phase/carry/BDA/RI/protected hard pattern is absent from the current state and therefore prospective. A separate current owner may pay only through its transition-relative destruction route. With seven installed provenance families the role alphabet is at most `714q`, and the physical active/latent decoration stock is `O(qn^4)` before exact compatibility is imposed.
+
 AC5b--AC5f give the exact reverse-scale audit. Same-band collateral is permitted when `Psi_H` decreases. For a certified multicover batch `B`, every AC menu must prove
 
 ```text
@@ -147,7 +149,9 @@ N_{2H}(S,S') = 0
 N_H(S\B,S') < |B|.
 ```
 
-The first condition preserves already settled bands; the second gives strict integer drift. Created-cell rank is not a scale certificate and must be refined by supporting-line height. This interface matches geometric cleaning's high-line blocker and sparse-batch counts, but verification for every pivot, BDA, RI, target and petal menu remains open.
+The first condition preserves already settled bands; the second gives strict integer drift. Created-cell rank is not a scale certificate and must be refined by supporting-line height.
+
+AC5g--AC5k turn that audit into an exact finite-menu router. Delete every state which creates a protected-band triple. On the surviving menu, an expected current-band count below `|B|` supplies a valid AC5 state. If every state is deleted, one exact high-line triple carries at least a polynomial pigeonhole fraction of the failed menu. Multistep installations must satisfy the high-line exclusion at every intermediate step, not merely in the final state.
 
 ## All-n branch audit
 
@@ -159,9 +163,9 @@ The first condition preserves already settled bands; the second gives strict int
 
 ## Current frontier
 
-1. Classify active and latent saturated-literal roles through exact phase/carry/BDA/RI/protected charts, and discharge or ticket fixed-registry dependency cycles without charging prospective target geometry.
-2. Prove payment, strict bounded descent, physical impossibility or a capacity-one ticket for every recurrent simple macro cycle, and prove polynomial bounds for the remaining outer-profile fields.
-3. Audit every installed AC menu by proving `N_{2H}=0`, `N_H<|B|` and intermediate-state stability at each dyadic scale.
+1. For each provenance-classified active or latent literal edge, prove a separate current owner is destroyed, a bounded arithmetic field descends, the edge is impossible, or a capacity-one ticket is consumed.
+2. Prove payment, strict bounded descent, physical impossibility or a capacity-one ticket for every recurrent simple macro cycle, and prove polynomial bounds for the remaining denominator, owner-token, protected-contract and envelope fields.
+3. For every installed AC menu, bound the protected-filter survivor current-band expectation below `|B|` and prove intermediate-state bank stability.
 4. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset, then verify the remaining AC5 menus and discharge AC6.
 
 ## Other independent inputs
