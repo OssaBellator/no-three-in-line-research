@@ -1,13 +1,20 @@
 # Width-three blockers reduce to seven-hole moment signatures
 
-CMR285 extracts `t-9` pairwise disjoint full triples from every sharp width-three
-Hall blocker. Since the large Hall side has size `t-2`, those triples occupy all
-but seven Hall cells on each of the three small-side slices. Collinearity imposes
-exact first- and second-moment relations on the three omitted seven-sets. Thus
-the width-three obstruction is a constant-defect affine signature, independent
-of the parent block size.
+CMR285 extracts `t-9` pairwise disjoint full triples from every sufficiently
+large sharp width-three Hall blocker. Since the large Hall side has size `t-2`,
+those triples occupy all but seven Hall cells on each of the three small-side
+slices. Collinearity imposes exact first- and second-moment relations on the
+three omitted seven-sets. Thus the large width-three obstruction is a
+constant-defect affine signature, independent of the parent block size.
 
-Assume first that the smaller Hall side consists of three source coordinates
+Assume throughout this chapter that
+
+\[
+t\ge10.
+\]
+
+Smaller width-three parent blocks form a finite exceptional range. Assume first
+that the smaller Hall side consists of three source coordinates
 
 \[
 x_1<x_2<x_3.
@@ -34,8 +41,8 @@ Put
 
 ### Theorem CMR288 — PROVED
 
-Every sharp width-three blocker contains a subfamily of exactly `t-9` full
-available Hall lines which are pairwise disjoint as board cells.
+Every sharp width-three blocker with `t>=10` contains a subfamily of exactly
+`t-9` full available Hall lines which are pairwise disjoint as board cells.
 
 For `i=1,2,3`, let `U_i` be the set of row coordinates used by this subfamily on
 the slice `x=x_i`, and put
@@ -55,7 +62,7 @@ Then
 CMR285 supplies at least `t-9` pairwise disjoint full triples. Retain exactly
 `t-9` of them. On each of the three slices, disjointness gives `t-9` distinct
 used cells from the common `(t-2)`-set `C`, leaving seven omitted coordinates.
-∎
+Because `t>=10`, at least one retained line is present. ∎
 
 ## 2. Exact moment constraints
 
@@ -136,14 +143,14 @@ for every seven-set `R`.
 If all three hole sets were equal, then all three used sets would also be equal.
 The second-moment inequality in the proof of CMR289 would be an equality. Since
 it was obtained by summing nonnegative strict-convexity gaps, equality would
-hold on every retained line. Thus every line would satisfy
+hold on every retained line. Thus every retained line would satisfy
 
 \[
 a_1=a_3,
 \]
 
-and would be horizontal. Horizontal triples are incompatible with a matching
-board, a contradiction. ∎
+and would be horizontal. At least one retained line exists because `t>=10`.
+Horizontal triples are incompatible with a matching board, a contradiction. ∎
 
 ## 4. Dual form and revised width-three endpoint
 
@@ -151,7 +158,7 @@ If the smaller Hall side consists of three target coordinates, interchange the
 two board coordinates. The same seven-hole cardinality and moment constraints
 hold for the omitted source coordinates.
 
-A sharp width-three blocker is therefore encoded by:
+A large sharp width-three blocker is therefore encoded by:
 
 - three ordered Hall slices;
 - three seven-element hole sets;
@@ -162,6 +169,7 @@ A sharp width-three blocker is therefore encoded by:
 The size-dependent part of the blocker has disappeared. The next width-three
 conversion may treat the seven-hole signature by finite switching, inherited
 prefix classification, or a carry charge attached to its moment discrepancy.
+The range `t<10` remains finite and separate.
 
 No all-`n` theorem is claimed here. The moment identities and an explicit
 parallel-line family with seven holes per slice are checked in
