@@ -34,9 +34,11 @@ BDA5ae--BDA5ah replace the former dispersed-anchor inequality by an exact overla
 
 AC3ec--AC3eg audit every one-sided front at its formal adjacent scale `H=h±q`. The output is bounded lower scale `h<=q`, one of two exact mixed role collisions, an actual clean BDA5a pair, or a privately paid one- or two-cell missing-support bank. Immediate reversal across the same adjacent scale pair consumes one finite ticket.
 
-AC3eh--AC3ek close the lower and mixed-collision arithmetic. A mixed collision has one coprime normal form, requires a divisor of `q`, and determines at most one unordered positive scale pair for the exact role word; lower fronts have only the `q` scales `1,...,q`. AC3el--AC3eo prove support faithfulness and executable heterogeneous decoder products for the actual-clean-partner class, with private occupied-side payment and failed-product returns to one of `F,T1,T2,T3` at the explicit `1/128` or `1/256` AC3am scales.
+AC3eh--AC3ek close lower and mixed-collision arithmetic. A mixed collision has one coprime normal form, requires a divisor of `q`, and determines at most one unordered positive scale pair for the exact role word; lower fronts have only the `q` scales `1,...,q`. AC3el--AC3eo prove support faithfulness and executable heterogeneous decoder products for the actual-clean-partner class, with private occupied-side payment and failed-product returns to one of `F,T1,T2,T3` at the explicit `1/128` or `1/256` AC3am scales.
 
-Support faithfulness remains open only for ordinary or reflected co-anchor outputs which have not passed through the AC3ec actual-clean-partner audit. The remaining BDA interface work is the potential comparison for missing-support installation banks, arithmetic termination of finite decoder collateral/overload profiles, and termination of affine-chain and higher-rank alternatives.
+AC3ep--AC3es close the missing-support installation branch. Every one- or two-cell adjacent partner target has a canonical active completion by cycles or boundary paths of length at most two. Exact RI blocker repair handles every collision with the target and closure cells, with occupancy at most four. The installed clean support enters the BDA decoder, and a failed composite product returns one of seven exact completion/repair/decoder masks at the `1/224` or `1/448` AC3am scale.
+
+Support faithfulness remains open only for ordinary or reflected co-anchor outputs which have not passed through the AC3ec actual-clean-partner audit. The remaining BDA interface work is arithmetic termination of finite decoder-mask and overload profiles, plus termination of affine-chain and higher-rank alternatives.
 
 ### `research/rational-inverse-expansion`
 
@@ -52,11 +54,13 @@ AC3bk--AC3co close blocker probability. Every partial blocker prescription has a
 
 AC3cu--AC3da close the entire state-independent geometric term: a new fixed union triple must use an RI5f closure cell, one universal two-closure crossed rectangle, or one exceptional `mh=2` layer-transfer rectangle. There is no residual diffuse `F_rest` for the fixed-cell triple potential.
 
-AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion. AC3dn--AC3dt close payment and root recycling for those outputs: exact records have private original-factor resources, root reversal has one capacity-one ticket per base, absent anchors enter a paid-bank-or-labelled-overload router, and off-family companions form four-point current-line banks.
+AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion. AC3dn--AC3dt prove private original-factor payment, exact Hall eligibility, and one capacity-one root ticket per base, but bare companion installation does not itself destroy that payment.
+
+AC3et--AC3ez supply the valid paid move. Once both companion anchors are current, the opposite-diagonal rectangle switch removes both anchors and destroys all four current triples on the companion line. Absent anchors first undergo canonical one-cell installation and blocker repair, then the same paid rectangle decoder. The rational fibre identity `c+c^dagger=1+g` excludes the only internal midpoint triple, so all surviving rectangle collateral is external. Failed products return exact three-stage or seven-stage masks at the `1/93`, `1/279`, or `1/357` compatible-bank scales recorded in the theorem notes.
 
 AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight. AC3dy--AC3eb complete the simultaneous interface: exact scales have private paid buckets, the scope-complete bank retains `W/(31K)`, product expectations add exactly, and failure returns one of `F,C1,C2,C3,B` with weight at least `W/(310K)`.
 
-The unresolved RI interface is now actual improvement/collateral termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, privately paid companion and four-point-line banks, finite multiscale overload labels, and the named aggregate `F,C1,C2,C3,B` returns. Payment eligibility and simultaneous installation for the scale-dispersion branch are closed.
+The unresolved RI interface is now arithmetic termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, companion-rectangle masks, finite multiscale overload labels, and the named aggregate `F,C1,C2,C3,B` returns. Payment and simultaneous installation are closed for coherent scale banks and companion records.
 
 ### `research/geometric-cleaning`
 
@@ -77,7 +81,8 @@ The alternating branch imports only proved finite interfaces:
 - AC3ag--AC3ai: global fixed-centre contexts;
 - AC3aj--AC3am: cross-centre blockers and finite arithmetic roles;
 - AC3ay--AC3ba: exact OP4g--OP4i rational labels and factor-conservative payment;
-- AC3du--AC3eo: exact scalar fronts, finite collision/lower states, and support-faithful clean decoder products.
+- AC3du--AC3es: exact scalar fronts, finite collision/lower states, clean decoder products, and canonical missing-support completion;
+- AC3et--AC3ez: paid RI companion rectangle decoders and midpoint exclusion.
 
 No open wide-CSP, Tanner-expansion, recurrent-blocker, RI, or BDA terminal claim is silently imported.
 
