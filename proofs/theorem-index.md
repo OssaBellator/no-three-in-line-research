@@ -1,148 +1,31 @@
-# Theorem index
+# Alternating-core theorem index
 
-The numbering is local to this repository.
+This branch-specific ledger groups the long AC chain without duplicating the shared theorems on `main`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| S1 | Saturated configurations decompose into two permutation layers | PROVED | `docs/01-saturation-and-reservoirs.md` |
-| S2 | Active-coordinate shadow bound implies clone-host superregularity | PROVED UNDER HYPOTHESES | `docs/01-saturation-and-reservoirs.md` |
-| S3 | Candidate-only triple energy is \(\Omega(\delta^3n^4\log n)\) | PROVED | `docs/02-reverse-scale-switching.md` |
-| S4 | Reverse-scale certified multicover deletion inequality | PROVED | `docs/02-reverse-scale-switching.md` |
-| S5 | Sparse scale-\(H\) switch-bank drift theorem | PROVED UNDER HYPOTHESES | `docs/02-reverse-scale-switching.md` |
-| L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
-| L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
-| L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |
-| L4 | Uniform local-bank negative drift under density/shadow caps | PROVED UNDER HYPOTHESES | `docs/03-uniform-local-bank.md` |
-| T1 | Difference-operator protected trade theorem | PROVED | `docs/04-protected-tomographic-trades.md` |
-| T2 | Formal protected rectangle bank with \(2^{r+1}\) cells per sign | PROVED | `docs/04-protected-tomographic-trades.md` |
-| T3 | Tomographic colour-cube states | PROVED | `docs/04-protected-tomographic-trades.md` |
-| A1 | Affine finite-direction construction for \(D\)-good moduli | PROVED | `docs/05-subgroup-absorbers.md` |
-| A2 | Least-prime-factor criterion for \(D\)-good moduli | PROVED | `docs/05-subgroup-absorbers.md` |
-| A3 | Installed subgroup coset absorber | PROVED | `docs/05-subgroup-absorbers.md` |
-| B1 | High line meets an order-\(h\) block at most once when \(h\le H\) | PROVED | `docs/06-block-collateral-energy.md` |
-| B2 | Exact one-block collateral and drift identities | PROVED | `docs/06-block-collateral-energy.md` |
-| B3 | Block-shadow closure theorem | PROVED | `docs/06-block-collateral-energy.md` |
-| B4 | Clean block reservoir first-moment completion | PROVED | `docs/06-block-collateral-energy.md` |
-| F1 | Wall-expansion termination | REFUTED | `docs/07-failed-wall-pathway.md` |
-| F2 | Synchronized slope change always improves after expansion | REFUTED | `docs/07-failed-wall-pathway.md` |
-| P1 | Product-state local lemma under normalized conflict mass | PROVED UNDER HYPOTHESES | `docs/07-failed-wall-pathway.md` |
-| H1 | Complementary modular hyperbola seed has line cap four | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H2 | Bichromatic displacement multiplicity at most two | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H3 | Dyadic shadow bound from bounded displacement multiplicity | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H4 | Existence of an \(O(n\log n)\)-syndrome hyperbola pair | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H5 | Hamiltonian-cycle decomposition by \(\operatorname{ord}(b/a)\) | PROVED | `docs/08-hyperbola-interleaver.md` |
-| G1 | Projective conic-pencil construction and four-point real line cap | PROVED | `docs/22-incidence-conic-pencil.md` |
-| G2 | Opposite-channel projection is a projective secant involution | PROVED | `docs/22-incidence-conic-pencil.md` |
-| G3 | Exact tangent and affine-secant profile from every opposite-channel anchor | PROVED | `docs/22-incidence-conic-pencil.md` |
-| G4 | Ratio normal form for modular incidence, with Euclidean-lift limitation | PROVED | `docs/22-incidence-conic-pencil.md` |
-| CA1 | Exact aligned-anchor determinant carry formula | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CA2 | Divisor bound per nondegenerate aligned carry signature | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CA3 | Degenerate carry signatures are perfect affine-interpolation cells | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CA4 | Aligned-anchor multiplicity is carry dispersion plus perfect-alignment mass | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| SC1 | Product-carry levels have divisor-bounded size | PROVED | `docs/24-secant-star-carry-dispersion.md` |
-| SC2 | Endpoint-disjoint secant stars force product-carry signature dispersion in any channel pair | PROVED | `docs/24-secant-star-carry-dispersion.md` |
-| SC3 | Paid bank yields improvement, carry dispersion, or perfect alignment | PROVED | `docs/24-secant-star-carry-dispersion.md` |
-| PA1 | Exact classification of zero-leading-carry interpolation parameters | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
-| PA2 | Perfect alignment is equivalent to a reduced-denominator wrap-index condition | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
-| PA3 | Perfect-alignment population is at most \(4p/q\) for denominator \(q\) | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
-| CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF4 | Carry-cell line bound and explicit common rational centers | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF5 | Divisor bound inside every perfect-wrap chamber | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF6 | Perfect-alignment mass forces wrap-center dispersion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF7 | Monotone carry-complexity potential | OPEN | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| AN1 | Constant-spread permutations avoiding two forbidden matchings | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AN2 | Extraction of a movable same-layer endpoint substar | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AN3 | Alternating endpoint-permutation bank neutralizes the original star | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AN4 | Average collateral bound for the joint alternating bank | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AC1a | Failed AN3 bank selects a heavy normalized certificate rank | PROVED | `tracks/alternating-core-certificate-accounting.md` |
-| AC1b | Exact anchor and anchor-pair certificate incidence identities | PROVED | `tracks/alternating-core-certificate-accounting.md` |
-| AC1c | A heavy rank-three anchor yields pair concentration or an endpoint-disjoint star | PROVED | `tracks/alternating-core-anchor-link.md` |
-| AC1d | Bounded pair codegree preserves paid mass in an endpoint-disjoint anchor star | PROVED | `tracks/alternating-core-anchor-link.md` |
-| AC2a | Bounded conflict degree gives weighted compatible re-extraction | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC2b | Bounded link and incompatibility degrees compose to paid installable stars | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC2c | Weighted incompatibility yields a paid overload or a constant-fraction compatible family | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC2d | A paid overload localizes to one arithmetic label and recursively re-extracts or overloads | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3a | Finite monotone potential for genuinely new carry signatures | PROVED | `tracks/alternating-core-certificate-accounting.md` |
-| AC3b | Bounded signature-reuse tickets give a finite monotone potential | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3c | Unticketed strict transition potentials exist exactly on DAGs | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3d | Certificate-labelled overload recursion has a strict finite-support potential | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3e | One scalar potential terminates strict descents mixed with bounded ticketed support reopenings | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3f | Capacitated Hall inequalities exactly characterize syndrome-paid reopening tickets | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3g | Minimum paid incidence and bounded token reuse imply the reopening Hall condition | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3h | A Hall-deficient high-reuse incidence contains a same-label compatible fan or a second-order conflict overload | PROVED | `tracks/alternating-core-reextraction-and-reuse.md` |
-| AC3i | Every Hall failure has an exact unit-deficiency core with a quantified role-pure token-collision mass | PROVED | `tracks/alternating-core-minimal-deficiency.md` |
-| AC3j | Second-order collision load routes at square-root scale to a shared-token fan or a role-pure charging-resource star | PROVED | `tracks/alternating-core-minimal-deficiency.md` |
-| AC3k | An anchor-realized Hall output yields a shared-token fan, high pair codegree, support overload, or compatible paid star | PROVED | `tracks/alternating-core-resource-router.md` |
-| AC3l | Paid anchor weight yields a high pair, labelled overload, or compatible family with exact multiplicative loss | PROVED | `tracks/alternating-core-resource-router.md` |
-| AC3m | A current pair core with seven same-layer endpoints has an AN1 endpoint-rematching bank destroying all selected core certificates | PROVED | `tracks/alternating-core-pair-core-bank.md` |
-| AC3n | The pair-core bank improves or returns a heavy normalized AC1 certificate family | PROVED | `tracks/alternating-core-pair-core-bank.md` |
-| AC3o | Pair threshold \(12\) routes high codegree to AC3m and bounds the anchor-link loss by \(23\) | PROVED | `tracks/alternating-core-pair-core-bank.md` |
-| AC3p | A separable shared-token phase fan has a joint state or an equivalent feasibility core of at most the phase-alphabet size | PROVED | `tracks/alternating-core-shared-token-phase.md` |
-| AC3q | Strict common-phase losses supply at most one ticket per phase; message-redundant reopenings consume none | PROVED | `tracks/alternating-core-shared-token-phase.md` |
-| AC3r | A same-token Hall fan routes to conflict overload, role realization, a joint improvement, a bounded phase core, or an explicit collateral profile | PROVED | `tracks/alternating-core-shared-token-phase.md` |
-| AC3s | A canonical rank-three phase-block token has at most seven nonzero mismatch states | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
-| AC3t | Scope-complete literal-invariant token fans satisfy the AC3p contract with at most seven phases | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
-| AC3u | Exact-phase token roles use at most \(h^3-1\) states or expose an explicit rank-three sensitivity witness | PROVED | `tracks/alternating-core-canonical-role-dictionary.md` |
-| AC3v | The canonical primal projection of all scoped factors and constraints makes every independent repair family legal and exactly additive | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
-| AC3w | Private paid-certificate sets add exactly on primal-independent families while a common token is counted once | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
-| AC3x | Dense canonical conflicts localize with current paid weight to one of finitely many structural incidence labels | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
-| AC3y | Literal invariance is equivalent to vanishing on all one-block phase derivatives, with weighted failures localized at loss at most \(9\) | PROVED | `tracks/alternating-core-phase-sensitivity-localization.md` |
-| AC3z | Exact phases compress to the coordinate observational quotient; every arithmetic chart is complete or exposes a same-label one-block derivative | PROVED | `tracks/alternating-core-phase-sensitivity-localization.md` |
-| AC3aa | Canonical rank-three checks factor exactly through their active phase-literal chart | PROVED | `tracks/alternating-core-orbit-literal-charts.md` |
-| AC3ab | Exact O1 cell probes and modular-hyperbola channels may require all \(h\) phase labels | PROVED | `tracks/alternating-core-orbit-literal-charts.md` |
-| AC3ac | Hard-exact heavy-soft charts have one-block error below \(2\tau\) and at most \(3W/\tau\) heavy literals | PROVED | `tracks/alternating-core-orbit-literal-charts.md` |
-| AC3ad | A current-context phase bucket has exact drift \(C-D\) and exact hard-safety test | PROVED | `tracks/alternating-core-literal-star-router.md` |
-| AC3ae | An activated rank-three bucket has an effectively rank-one target, bounded transversal, or residual-disjoint matching | PROVED | `tracks/alternating-core-literal-star-router.md` |
-| AC3af | A hard-safe nonimproving bucket gives \(D/2\) fixed collateral, a depth-two load above \(\Delta\), or \(\lceil D/(4\Delta)\rceil\) disjoint residual arms | PROVED | `tracks/alternating-core-literal-star-router.md` |
-| AC3ag | A global rank-three centre star has a realizable residual matching whose union is a transversal of at most twice its size | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
-| AC3ah | Dyadic regularization gives a paid context-disjoint family or a high residual-block degree | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
-| AC3ai | High residual-block degree gives a paid depth-two literal or at least \(\lfloor d/e\rfloor+1\) phase labels | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
-| AC3aj | Hard-unsafe target phases give fixed exclusions, a common current residual literal, or support-disjoint blocker arms | PROVED | `tracks/alternating-core-cross-centre-router.md` |
-| AC3ak | Hard-safe targets improve or contribute disjoint creation mass at least \(sD\), simultaneously with the unsafe-target router | PROVED | `tracks/alternating-core-cross-centre-router.md` |
-| AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
-| AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
-| AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |
-| O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O4 | Cycle-bank theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O5 | Window-product conic-cover theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O6 | One-colour carry-cycle dispersion lemma | REFUTED | `docs/13-carry-cycle-dispersion.md` |
-| CC1 | Collision-free permutation spread lemma | PROVED | `docs/13-carry-cycle-dispersion.md` |
-| CC2 | Universal collision-aware carry-cycle bank bound | PROVED | `docs/13-carry-cycle-dispersion.md` |
-| CC3 | Frozen-cycle concentration trichotomy | PROVED | `docs/13-carry-cycle-dispersion.md` |
-| CC4 | Alternating two-colour carry-core lemma | OPEN | `docs/13-carry-cycle-dispersion.md` |
-| D1 | Clone-space local-load selection theorem | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D2 | Explicit missing-cell/triple-incidence criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D3 | Robust 99%-dense endpoint criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D4 | Failure forces an \(\Omega(n^3)\) row/column triple core | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D5 | Superregular local-load dependency/resampling upgrade | OPEN | `docs/16-superregular-clone-selection.md` |
-| SR1 | Uniform superregular perfect matching is fixed-rank \(O(1/N)\)-spread | PROVED | `docs/16-superregular-clone-selection.md` |
-| SR2 | Two-clone blow-up preserves superregularity | PROVED | `docs/16-superregular-clone-selection.md` |
-| SR3 | All-rank spread distribution on dense superregular perfect matchings | PUBLISHED THEOREM | `docs/16-superregular-clone-selection.md` |
-| SR4 | Spread distribution on two edge-disjoint perfect-matching layers | PROVED FROM SR3 | `docs/16-superregular-clone-selection.md` |
-| SR5 | Global conflict-mass endpoint for saturated two-layer selection | PROVED | `docs/16-superregular-clone-selection.md` |
-| I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
-| I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
-| I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |
-| I4 | Many low-complexity windows yield a common-ratio bank via BSG | PROVED FROM PUBLISHED BSG | `docs/17-pfr-inverse-additive.md` |
-| I5 | Explicit Kneser density and coset-count refinement below doubling two | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I6 | Full coset unions support an \(m!h^m\)-state absorber bank | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I7 | Möbius anchors lie in at most \(2L\) multiplicative translates | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I8 | Alternating anchor concentration-or-structure propagation dichotomy | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I9 | Full subgroup cosets of order at least three expand to at least two cosets under \(F_r\) | PROVED | `docs/19-rational-coset-expansion.md` |
-| I10 | Exact order-two non-expansion exception \(x^2=r\) | PROVED | `docs/19-rational-coset-expansion.md` |
-| I11 | Rank-zero alternating cores expand except for the order-two exceptional orbit | PROVED | `docs/19-rational-coset-expansion.md` |
-| I12 | General simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/19-rational-coset-expansion.md` |
-| CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR2 | Radial anchor equation and \(2q\)-signature compression | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR3 | Common-ratio decoder-or-structure trichotomy | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR4 | Uniform paid-bank conversion inequality | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR5 | Constant-fraction extraction for arbitrary pair weights | REFUTED AS STATED | `docs/21-weighted-quotient-bank.md` |
-| WQ1 | Inadmissible rectangle-pair graph has maximum degree two | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ2 | Syndrome vertex degrees yield an admissible weighted common-ratio matching | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ3 | Paid common-ratio bank with pair-overlap correction | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ4 | Hyperbola-channel paid-bank lower bound | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ5 | Weighted extraction plus conversion criterion | PROVED | `docs/21-weighted-quotient-bank.md` |
+| AC1a–AC1b | Failed-bank normalized certificate accounting and exact anchor incidences | PROVED | `docs/alternating-core-certificate-accounting.md` |
+| AC1c–AC1d | Heavy rank-three anchors yield paid pair concentration or endpoint-disjoint stars | PROVED | `docs/alternating-core-anchor-link.md` |
+| AC2a–AC2d | Weighted compatible re-extraction, paid overload localization, and labelled recursion | PROVED | `docs/alternating-core-reextraction-and-reuse.md` |
+| AC3a | Genuinely new carry signatures have a finite monotone exposure potential | PROVED | `docs/alternating-core-certificate-accounting.md` |
+| AC3b–AC3h | Ticketed no-recycling, DAG criterion, Hall payment, and same-token fan routing | PROVED | `docs/alternating-core-reextraction-and-reuse.md` |
+| AC3i–AC3j | Minimal Hall cores force quantified role-pure second-order collision load | PROVED | `docs/alternating-core-minimal-deficiency.md` |
+| AC3k–AC3l | Anchor-realized resource stars route to paid stars or explicit overloads | PROVED | `docs/alternating-core-resource-router.md` |
+| AC3m–AC3o | High pair cores admit endpoint-rematching banks with explicit threshold loss | PROVED | `docs/alternating-core-pair-core-bank.md` |
+| AC3p–AC3r | Shared-token phase fans have finite feasibility cores and exact collateral profiles | PROVED | `docs/alternating-core-shared-token-phase.md` |
+| AC3s–AC3u | Canonical phase roles have finite mismatch alphabets or explicit sensitivity witnesses | PROVED | `docs/alternating-core-canonical-role-dictionary.md` |
+| AC3v–AC3x | Scope-complete primal conflicts make independent repair families legal and additive | PROVED | `docs/alternating-core-primal-conflict-completion.md` |
+| AC3y–AC3z | One-block derivatives localize sensitivity and define exact observational quotients | PROVED | `docs/alternating-core-phase-sensitivity-localization.md` |
+| AC3aa–AC3ac | Active orbit-literal charts are exact, with sharp compression limits | PROVED | `docs/alternating-core-orbit-literal-charts.md` |
+| AC3ad–AC3af | Current-context literal stars route to fixed collateral, depth-two load, or disjoint arms | PROVED | `docs/alternating-core-literal-star-router.md` |
+| AC3ag–AC3ai | Global fixed-centre contexts route to paid banks, depth-two literals, or phase fans | PROVED | `docs/alternating-core-global-literal-contexts.md` |
+| AC3aj–AC3ak | Cross-centre safe and unsafe targets route to paid buckets or explicit blockers | PROVED | `docs/alternating-core-cross-centre-router.md` |
+| AC3al | Bounded residual reuse yields a compatible blocker batch of weight at least `W/(2ρ-1)` | PROVED | `docs/alternating-core-cross-centre-batching.md` |
+| AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
+| AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
+| AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
+| AC5 | Geometric verification of the reverse-scale invariants for every AC move | OPEN | `docs/alternating-core-chain.md` |
+| AC6a | Prime-minus-one assembly from exact AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `docs/alternating-core-formal-termination.md` |
+| AC6 | Unconditional prime-minus-one completion | OPEN | `docs/alternating-core-chain.md` |
+
+No statement here proves the full all-`n` conjecture.
