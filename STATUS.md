@@ -76,10 +76,7 @@ remains open. This repository does **not** contain a complete proof.
   \le
   \left\lceil\frac{1+\log_2t}{2}\right\rceil
   \]
-  exact harmonic packets. One packet sweep uses only \(O(\log t)\)
-  whole-parent replacements.
-- The existence of one clean state for every packet is proved. Packet
-  construction is no longer open.
+  exact harmonic packets. Packet construction is no longer open.
 
 ### Full-token return and selected-state expansion
 
@@ -114,68 +111,71 @@ D_\tau^{(2)}
   \]
 - A whole-parent one-layer reset returns at most \(t/p^b\) token edges; one
   ordered joint-parent reset returns at most \(2t/p^b\).
-- One packet sweep contributes
+- Exact edge-incidence accounting gives
   \[
-  I_\tau^{(2),\mathrm{packet}}
+  \text{one prefix pass}
   \le
-  \frac{P_\eta(t)t}{p^b}.
+  (p+1)t h(h-1)
   \]
-- Exact edge-incidence accounting sharpens the aggregate direction-labelled
-  return mass of one two-layer prefix pass to
+  and
   \[
-  (p+1)t h(h-1),
-  \]
-  and one prefix pass plus one packet sweep to
-  \[
+  \text{prefix pass + packet sweep}
+  \le
   (p+1)t(h-1)\bigl(h+P_\eta(t)\bigr)
   =O_p(t\log^2t).
   \]
 - Exact selected-state cycles are erasable under a monotone forbidden mask.
 - Two distinct feasible selected perfect matchings differ by at least two
-  entering and two leaving edges. A cycle-erased sequence of distinct states
-  therefore pays full-token incidence mass linearly.
+  entering and two leaving edges, so distinct-state expansion pays full-token
+  incidence mass linearly.
 
-### Packet recreation, deletion, and ancestry
+### Packet recreation and local termination
 
 - A selected conflict recreated by a reset `M -> M'` contains an **entering**
   edge of `M'\setminus M`. The leaving set `M\setminus M'`, returned to the
   complementary available host, has exactly the same cardinality.
-- For packet weight \(W\), at most
-  \[
-  2(t-1)^2W\,|M'\setminus M|
-  \]
-  packet triples are recreated by one selected-state reset.
-- Inside one certificate-directed deletion pass, every lossy packet reset has
-  an immediate dichotomy:
-  1. delete a nonessential edge of one recreated triple and preserve a perfect
-     matching; or
-  2. expose a fully forced rank-three certificate with CMR217 exchange ancestry.
+- Inside one certificate-directed deletion pass, every lossy packet reset either
+  deletes a nonessential edge while preserving a perfect matching or exposes a
+  fully forced rank-three CMR217 certificate.
 - Permanent deletion responses occur at most
   \[
   |E(G_0)|-t\le t(t-1)
   \]
   times.
-- Essentiality is monotone under later matchability-preserving deletions. Hence
-  a packet triple whose three edges are essential remains present in every
-  later perfect matching of the same deletion pass and cannot be cleaned by
-  another selected-state reset.
-- The first-dirty packet schedule therefore has an unconditional local endpoint:
-  it either cleans every packet after at most
+- Essentiality is monotone under later matchability-preserving deletions. A
+  fully forced packet triple is therefore terminal for the current pass.
+- The first-dirty packet schedule either cleans every packet within
   \[
   P\bigl(1+t(t-1)\bigr)
   \]
-  installations, or reaches one terminal fully forced packet certificate after
-  at most
+  installations or reaches one terminal forced certificate within
   \[
   P\bigl(2+t(t-1)\bigr)
   \]
   installations.
-- The terminal certificate has at most three backward CMR217 ancestry links.
-  Resolving it requires an operation outside the current deletion pass, such as
-  envelope expansion, host decomposition, reserve replacement, or simultaneous
-  exchange-cycle resampling.
-- Every off-token witness certificate already opens an executable prefix
-  continuation. The residual forced branch is exchange ancestry.
+
+### Polynomial essential-core ancestry ledger
+
+- Essential edges in any matchable balanced bipartite host form a matching.
+- Across one nested deletion pass, essential sets grow monotonically and all
+  first-essentiality layers partition one final essential core `E_*` with
+  \[
+  |E_*|\le t.
+  \]
+- After identifying certificates with the same prescribed edge set, the number
+  of fully forced rank-`1/2/3` certificates is at most
+  \[
+  \binom t1+\binom t2+\binom t3<t^3+t.
+  \]
+- Their total distinct CMR217 ancestry links, counted once per prescribed edge,
+  are at most
+  \[
+  \binom t1+2\binom t2+3\binom t3<3t^3.
+  \]
+- Thus raw edge-set ancestry width is polynomial. The remaining challenge is to
+  exploit these links geometrically or algorithmically through simultaneous
+  low-overlap exchange flips, p-adic/carry concentration, host decomposition, or
+  envelope expansion.
 
 ## Important corrections
 
@@ -184,20 +184,18 @@ D_\tau^{(2)}
   reoccupy an old first-layer cell. Valid replacements are CMR129, CMR155, and
   CMR164.
 - Static token consumption is not monotone; CMR350 records exact two-step
-  token-restoring cycles. Every current no-return statement includes
-  reintroduction, reset multiplicity, cycle erasure, a scheduled-pass
-  hypothesis, or a deletion/ancestry response.
+  token-restoring cycles.
 - CMR418--CMR421 originally called the support edges of recreated selected
   triples “returned” edges. The support edges are entering edges
   `M'\setminus M`; the returned leaving set `M\setminus M'` has equal size, so
-  all numerical bounds remain correct. The chapter and verifier now use the
-  corrected orientation.
+  all numerical bounds remain correct.
 
 ## What remains conditional
 
-1. **Terminal forced-ancestry resolution.** Bound the incoming width of the
-   CMR217 certificate-exchange DAG, or simultaneously resample several exchange
-   cycles, to escape the terminal certificate exposed by CMR428.
+1. **Geometric exchange-ancestry resolution.** From the fewer than `3t^3`
+   distinct exchange links, extract a large low-overlap family for simultaneous
+   flipping, or force p-adic/carry concentration, strict host decomposition, or
+   envelope expansion.
 2. **Repeated local ancestor resets.** Extend the deletion/ancestry payment to
    repeated compatible prefix-ancestor slots not arising from packet loss.
 3. **Low-height carry absorption.** Charge the remaining lower-height lines to
@@ -213,14 +211,11 @@ D_\tau^{(2)}
 
 ## Bottom line
 
-There is no complete proof. On the prime-power route, the generic first moment,
-prefix and joint-parent collateral, terminal contraction, Hall-blocker repair,
-heavy-token continuation, exact harmonic-packet completion, one-sweep return
-costs, exact state-cycle erasure, polynomial state-expansion payment, corrected
-packet-recreation charging, deletion/ancestry response, and polynomial
-completion-or-terminal-ancestry packet scheduling are closed.
+There is no complete proof. On the prime-power route, packet construction,
+packet recurrence, state-cycle erasure, polynomial packet termination, and raw
+edge-set ancestry width are now closed at their stated scales.
 
-The principal remaining prime-power theorem is now a mechanism to resolve one
-terminal fully forced exchange-ancestry certificate, together with a
-corresponding payment for repeated local ancestor resets. Arbitrary side-length
-coverage remains necessary afterward.
+The principal remaining prime-power theorem is geometric use of the polynomial
+exchange-ancestry ledger, together with a corresponding payment for repeated
+local ancestor resets. Arbitrary side-length coverage remains necessary
+afterward.
