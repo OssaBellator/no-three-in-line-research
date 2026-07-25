@@ -79,6 +79,8 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR326--329 | Exact paid-ratio completion spread and candidate-only collateral for \(t\ge6\), with the \(t=5\) conditional law retained | PROVED | `docs/125-prime-power-paid-ratio-bank-spread.md` |
 | CMR330--334 | Line-clean paid-pair derangement bank, rank-two elimination, and frozen rank-zero/rank-one concentration | PROVED | `docs/126-prime-power-line-clean-paid-pair-bank.md` |
 | CMR335--339 | Residual matching-space local lemma, exact line-clean cleaning above \(0.42t\), protected-line reserve, and low-height extraction | PROVED | `docs/127-prime-power-line-clean-high-slice.md` |
+| CMR340--343 | Heavy-cell external, deeper, and equilateral prefix continuations, with strict-depth termination | PROVED | `docs/128-prime-power-heavy-cell-prefix-continuation.md` |
+| CMR344--346 | Exact dispersed-token count, fresh-token packing, temporal reuse, and width-two/width-three episode bounds | PROVED | `docs/129-prime-power-dispersed-cell-token-ledger.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
