@@ -43,6 +43,7 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3abn--PP3abu | Rank-three binary Xi patterns reduce to cheap conditioned chains, weighted middle rectangles, or small-core heavy outer-role families | PROVED / CONDITIONAL PAID INTERFACE | `docs/177-fixed-centre-rank-three-binary-xi-path-localization.md` |
 | PP3abv--PP3acb | Rank-four binary Xi patterns reduce to exact one-arc fibres, uniform partner fans, or high-multiplicity disjoint-arc patterns | PROVED / CONDITIONAL PAID INTERFACE | `docs/178-fixed-centre-rank-four-binary-xi-fibre-localization.md` |
 | PP3acc--PP3ach | Sparse rank-four partner support is avoided exactly; failure gives large partner-resource stars or fixed-cell petal banks | PROVED / CONDITIONAL PAID INTERFACE | `docs/179-fixed-centre-rank-four-binary-xi-support-localization.md` |
+| PP3aci--PP3acn | A hard rank-four support deletion forces a linear secondary-resource star and rejoins the conditional Hall/grid chain | PROVED / CONDITIONAL PAID INTERFACE | `docs/180-fixed-centre-rank-four-partner-hall-star.md` |
 
 ## Current scale
 
@@ -89,16 +90,19 @@ middle rectangle, an `m^(1/2+o(1))` exceptional outer-choice core with a
 near-complete heavy predecessor/successor family, or an outer transition source
 core.
 
-Rank-four binary `Xi` weight now reduces to one exact partner fibre after fixing
-the incoming or outgoing centre arc. Sparse positive support can be avoided
-entirely, regardless of pattern multiplicity. Under fixed residual slack, failure
-forces `Omega(N^2/b)` supported remote arcs and hence a partner-resource star or
-fixed-cell remote matching of size `Omega(N/sqrt(b))`, far larger than `W`.
+Rank-four binary `Xi` weight reduces to one conditioned partner-support deletion.
+If the residual host remains superregular, the complete support is avoided and
+the paid first moment applies. If it is matchable but non-superregular, the
+alternating-component frontier applies. If deletion destroys matchability,
+robust Hall localization forces a repeated secondary-resource star of size
+`Omega(N)`, which feeds PP3xd--PP3xo. Fixed-cell remote matchings, square-root
+partner stars, and rank-four multiplicity cores are no longer separate frontiers.
 
 The remaining marked-`Xi` conversion is therefore fixed-axis unary stars,
 conditioned residual concentration, weighted rank-three path rectangles or
-outer-role families, large rank-four partner stars/fixed-cell petal banks, and
-full-pool thresholds.
+outer-role families, and full-pool thresholds. Rank-four failure has rejoined the
+existing alternating-host, conditional Hall, quadratic-fan, and weighted-grid
+frontiers.
 
 ## Remaining theorem
 
@@ -110,9 +114,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
    cuts, and transition sunflowers.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
-4. Convert fixed-axis unary-`Xi` stars, weighted rank-three path cores, large
-   rank-four partner stars/fixed-cell petal banks, full-pool `Xi` thresholds, or
-   fixed-centre source/weight cores.
+4. Convert fixed-axis unary-`Xi` stars, weighted rank-three path cores, full-pool
+   `Xi` thresholds, or fixed-centre source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
@@ -121,7 +124,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic Xi
 terms, diffuse binary dual mass, raw resource stars, transition petal collateral,
 unstructured rank-two unary `Xi` fibres, unstructured rank-three and rank-four
-binary `Xi` tables, fixed rank-four multiplicity cores, unstructured
-non-superregularity, and termination are no longer separate open problems.
+binary `Xi` tables, fixed rank-four multiplicity cores, fixed-cell rank-four petal
+banks, square-root rank-four partner stars, unstructured non-superregularity, and
+termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
