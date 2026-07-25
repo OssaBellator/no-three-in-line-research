@@ -4,7 +4,7 @@
 
 This branch develops the finite-denominator exception route produced by perfect-alignment and wrap-center concentration. The canonical proof notes are under `docs/`; verification programs remain under `scripts/`.
 
-> **Status:** Rank-one decoder collateral reduces to one of `36` two-role channel comparisons. All one-cell channels share the scalar state `h det(d,e)`. Repeated scalar lifts lie in one `q/g` progression, where `g=gcd(|det(d,e)|,q)`; dense recurrence has a finite transverse increment library and yields paid co-anchored genuine radial pairs `h,h+q`. Bounded row/column load feeds these pairs to the proved rectangle decoder, while high load returns one of five affine anchor chains. Mixed walls descend to a strict divisor or are coprime terminal profiles. The reflected `CD` offset is now closed at denominator level: `gcd(A(2h+q),q)=gcd(2Ah,q)`, its reduced residue is a unit, and one fixed residue is a class modulo `q/gcd(2A,q)`. Extra valuation cancellation above `q` is invisible. The remaining bottlenecks are the dispersed-anchor inequality, affine anchor-chain termination, heavy rank-two/rank-three profiles, and recurrent finite-profile cycles.
+> **Status:** Rank-one decoder collateral reduces to one of `36` two-role channel comparisons. All one-cell channels share the scalar state `h det(d,e)`. Repeated scalar lifts lie in one `q/g` progression, where `g=gcd(|det(d,e)|,q)`; dense recurrence has a finite transverse increment library and yields paid co-anchored genuine radial pairs `h,h+q`. Bounded row/column load feeds these pairs to the proved rectangle decoder, while high load returns one of five affine anchor chains. Mixed walls descend to a strict divisor or are coprime terminal profiles. The reflected `CD` offset is closed at denominator level: `gcd(A(2h+q),q)=gcd(2Ah,q)`, its reduced residue is a unit, and one fixed residue is a class modulo `q/gcd(2A,q)`. Extra valuation cancellation above `q` is invisible, and AC3dj--AC3dm now import this exact profile into the alternating-core role dictionary. The remaining bottlenecks are the dispersed-anchor inequality, affine anchor-chain termination, heavy rank-two/rank-three profiles, and recurrent finite-profile cycles.
 
 ## Branch map
 
@@ -40,6 +40,6 @@ This branch develops the finite-denominator exception route produced by perfect-
 1. Close the BDA5z dispersed-anchor inequality or classify the five affine anchor chains through a terminating decoder/descent alternative.
 2. Apply BDA3c--BDA3e to the heavy rank-two or rank-three profile returned by BDA5j.
 3. Prove that every directed cycle in the finite transition quotient contains an improving decoder, strict denominator descent, scalar-pair return, or terminal absorber state.
-4. Integrate BDA5aa--BDA5ad into the alternating-core role dictionary so reflected `CD` returns use the same scalar-slot machinery without a cancellation label.
+4. Prove support faithfulness for reflected and ordinary AC role outputs so the extracted co-anchor families enter executable BDA decoders.
 
 The verification scripts check finite identities and small instances only.
