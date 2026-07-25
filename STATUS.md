@@ -221,14 +221,32 @@ which contains the required `W=m^(19/40+o(1))` subbank. Transition sunflowers
 therefore rejoin the existing paid source-star/resource-bank frontier. The exact
 finite bookkeeping is checked by `scripts/check_transition_sunflower_bank.py`.
 
-The fixed-centre rank-two unary `Xi` core is also localized. A single cycle uses
-one incoming and one outgoing arc at the centre. Conditioning on those arcs
-leaves exactly `(b-3)!` completions and the corresponding fixed-rank cylinder
-law. Either a locally source-clean pair has deterministic unary cost below the
-available budget, or all but `m^(1/2+o(1))` admissible arcs on one side have cost
-at least half that budget. Those heavy replacement cells lie on one fixed old
-row or one fixed old column. The finite dichotomy is checked by
-`scripts/check_unary_xi_arc_star.py`.
+The fixed-centre rank-two unary `Xi` core is localized. Conditioning on the
+incoming and outgoing centre arcs leaves exactly `(b-3)!` completions. Either a
+locally source-clean pair has cost below budget, or all but
+`m^(1/2+o(1))` admissible arcs on one side form a fixed-row or fixed-column
+rich-cost star.
+
+Rank-three binary `Xi` patterns are directed two-arc paths through the centre.
+They reduce to a conditioned cheap five-index chain, a weighted middle
+rectangle, a small outer-choice core with a near-complete heavy outer-role
+family, or an outer transition source core.
+
+Rank-four binary `Xi` patterns are one fixed centre arc paired with one
+vertex-disjoint remote arc. Sparse support is avoided exactly. More strongly,
+delete the complete positive partner support from the conditioned residual host:
+
+- a superregular residual host gives a support-avoiding paid completion;
+- a matchable non-superregular residual host rejoins the alternating-component
+  frontier;
+- an unmatchable residual host has, by robust Hall localization, a repeated
+  secondary-resource star of size `Omega(N)` and rejoins the conditional
+  Hall/two-resource-grid chain.
+
+Thus fixed rank-four multiplicity cores, fixed-cell remote matchings, and
+square-root partner stars are no longer independent obstructions. The finite
+Hall bookkeeping is checked by
+`scripts/check_rank_four_partner_hall_star.py`.
 
 ## What remains conditional
 
@@ -240,9 +258,8 @@ The missing conversion theorem has these structured forms.
    cuts, and fixed-centre transition sunflowers.
 3. Convert chromatically concentrated unary or binary controller-shadow weight
    in the global rectangle branch.
-4. Convert fixed-axis unary-`Xi` stars, remaining marked binary `Xi` ranks,
-   full-pool `Xi`-weight thresholds, weighted clean-chain concentration, or one
-   of the remaining fixed-centre source/weight cores.
+4. Convert fixed-axis unary-`Xi` stars, weighted rank-three path cores, full-pool
+   `Xi`-weight thresholds, or the remaining fixed-centre source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted two-resource choice grids,
@@ -259,11 +276,13 @@ The missing conversion theorem has these structured forms.
   bank; one predetermined centre may remain exceptional.
 - Moving one selected transition witness removes that certificate incidence but
   need not clear every witness of the same forbidden transition.
-- A cheap incoming/outgoing centre pair only isolates the deterministic rank-two
-  unary `Xi` cost; residual source and higher-rank paid terms must still fit the
-  conditional completion criterion.
+- Cheap conditioned centre arcs or chains isolate only their displayed
+  deterministic `Xi` terms; residual source and paid terms must still fit the
+  relevant completion criterion.
 - The reduced support-ranked `Xi` theorem is conditional on its displayed weight
   bounds.
+- The robust rank-four Hall theorem localizes matchability failure; it does not
+  pay residual source or non-rank-four insertion cost.
 - Finite diagnostics verify identities and examples, not asymptotic conversion.
 
 ## Bottom line
@@ -274,9 +293,10 @@ extraction, superregular and non-superregular state decompositions, canonical
 weighted anchor deficiency, conditional resource stars, diffuse pool-local source
 mass, universal marked single-cycle spread, low-rank cyclic `Xi` terms, diffuse
 binary dual mass, transition-sunflower localization to credited endpoint banks,
-and localization of rank-two unary `Xi` failure to conditioned cheap segments or
-fixed-axis heavy stars.
+rank-two unary `Xi` localization, rank-three path localization, and rank-four
+support localization through robust Hall to the existing conditional
+Hall/grid frontier.
 
-The concentrated local-Ore, paid star/resource, global-shadow, fixed-axis and
-higher-rank marked-`Xi`, cycle-support, and weighted binary-grid cores above
-remain open.
+The concentrated local-Ore, paid star/resource, global-shadow, fixed-axis unary
+and rank-three marked-`Xi`, cycle-support, full-pool-weight, and weighted
+binary-grid cores above remain open.
