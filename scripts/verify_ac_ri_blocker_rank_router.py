@@ -22,27 +22,25 @@ def verify_words() -> tuple[int, dict[int, int]]:
             assert 1 <= rank <= crossed_count
             checks += 1
     assert counts == {1: 1, 2: 3, 3: 7}
+    assert sum(counts.values()) == 11
     return checks, counts
 
 
 def verify_weighted_ledgers() -> int:
     checks = 0
-    # Twenty-one labelled bins safely dominate the three crossed-count
-    # classes followed by their nonzero membership-word splits.
-    for weights in product(range(3), repeat=7):
-        # Reuse each seven-bin word block at three crossed counts.
-        expanded = weights + weights + weights
-        total = sum(expanded)
+    # Exhaust every eleven-label ledger with entries 0,1,2.
+    for weights in product(range(3), repeat=11):
+        total = sum(weights)
         if total == 0:
             continue
-        assert 21 * max(expanded) >= total
+        assert 11 * max(weights) >= total
         checks += 1
     return checks
 
 
 def verify_constants() -> int:
-    assert 108 * 21 == 2268
-    assert 36 * 21 == 756
+    assert 108 * 11 == 1188
+    assert 36 * 11 == 396
     return 2
 
 
