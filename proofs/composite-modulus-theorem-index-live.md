@@ -45,13 +45,19 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR564--570 | Fixed factorial-moment line energy, dyadic primitive-height localization, explicit line-count bounds, heavy-line height control, rank-zero wall/prefix/carry conversion, rank-one fan conversion, and canonical collateral-to-carry endpoint | PROVED | `docs/169-prime-power-canonical-collateral-carry-splice.md` |
 | CMR571--576 | Canonical protected-matching extension, exact absorption criterion, protected-core contact signatures, one-stage dynamic endpoint, finite-depth absorption chase, and unified canonical-selector endpoint | PROVED | `docs/170-prime-power-canonical-selector-absorption-chase.md` |
 | CMR577--581 | Matching-preserving packed-conflict deletion, fully forced packing bound, private deleted-edge code, distinct restoration payment, and rank-zero packing endpoint | PROVED | `docs/171-prime-power-disjoint-conflict-deletion.md` |
+| CMR582--586 | Finite protected-contact universe, recurrence/distinct-stock split, protected-wall concentration, heavy/dispersed contact tokens, and exact persistent-contact endpoint | PROVED | `docs/172-prime-power-protected-contact-token-ledger.md` |
+| CMR587--592 | Uniform recurrent-set extraction, joint-absence payment, persistent matching/cover split, finite bulk absorption, persistent token walls, and the recurrent-set batching endpoint | PROVED | `docs/173-prime-power-dynamic-selector-recurrent-set-batching.md` |
+| CMR593--598 | Slack-to-collateral conversion, near-static geometry, conditioned recurrent-set extraction, persistent-core amplification, target-rank contact amplification, and the unified weak-slack endpoint | PROVED | `docs/174-prime-power-selector-slack-persistent-core.md` |
+| CMR599--604 | Protected-state owner stock, finite owned-line and exact token-edge universes, owned token/line recurrence, and the unified certificate-ownership endpoint | PROVED | `docs/175-prime-power-owned-certificate-stock.md` |
 
-The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR581 is payment for repeated protected-core contacts and reuse
-of the fixed wall, heavy-prefix, dispersed-carry, low-height-line, and secant-
-star certificates produced by canonical selector states. Dynamic absorption has
-at most `n-|Q_L|` growth steps and nonrecurrent history is polynomially bounded.
-The cell-disjoint rank-zero bank is paid by deletion, forced-core terminality,
-and private restoration edges. The remaining progress alternatives are
-protected-reserve depletion, full-token return, deletion ancestry, or strict
-envelope expansion; no selector or edge charge is anonymous.
+The branch still does not prove the all-`n` conjecture. After CMR604, every
+canonical selector history and every wall, prefix, carry, secant, low-height
+line, or persistent-edge output has a fixed owner and an explicit finite stock.
+Threshold-one dynamic selectors are constant near-static profiles; higher
+thresholds amplify persistent contacts to jointly unavailable cores, which
+batch-absorb or form simultaneous token walls. Repeated owned lines are one
+static certificate, while repeated owned token edges pay reintroduction or
+return to the persistent-core endpoint. The remaining frontier is execution of
+one fixed owned geometric certificate: derive strict potential decrease,
+protected-reserve depletion, deletion ancestry, full-token return, or envelope
+expansion. No selector, line, token, or edge charge is anonymous.
