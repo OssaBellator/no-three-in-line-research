@@ -42,14 +42,15 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3be | Canonical OP-to-RI fixed-edge composition retains one coherent class at loss `1/(16RρPKL)` | PROVED | `docs/alternating-core-ri-scale-pairing.md` |
 | AC3bf | Canonical paid hyperbola roots are fixed points of physical completion and cannot pay completion components | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
 | AC3bg | Every I6 state lifts through the same RI5f boundary closure | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
-| AC3bh | The closed-completion I6 bank has an exact paid-versus-active/blocker collateral criterion | PROVED (imports RI5a–RI5m) | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
-| AC3bi | Failed closed I6 comparison routes to active rank one, two, three, or blocker repair | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bh | The closed-completion I6 bank has exact source-coset-rank cylinder probabilities and a paid collateral criterion | PROVED (imports RI5a–RI5m) | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bi | Failed closed I6 comparison routes to source-coset rank one, two, three, or blocker repair | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
 | AC3bj | Canonical coherent OP payment enters the closed I6 bank without a completion-payment assignment | PROVED UNDER EXACT COLLATERAL AUDIT | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
 | AC3bk | The blocker average splits exactly into singleton, `t=2..6`, and `t>=7` occupancy regimes | PROVED | `docs/alternating-core-ri-blocker-average.md` |
 | AC3bl–AC3bo | Heavy blocker repair yields singleton affine, finite small-derangement, or normalized large-rank profiles | PROVED | `docs/alternating-core-ri-blocker-average.md` |
-| AC3bp | Every active I6 rank-one triple has an exact affine address and unique source-target-shift channel | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
-| AC3bq | Rank-one expectation amplifies to raw weight `mhC1`, and one channel retains `C1/m` | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
-| AC3br–AC3bs | Heavy rank one routes to direction spread, offset spread, a heavy line, or at most two moving cells | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
+| AC3bp | Source-coset rank one has one unique source-target-shift channel | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
+| AC3bq | One channel contributes one or two moving cells; three collinear channel cells are impossible | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
+| AC3br | Source-rank-one expectation amplifies to raw weight `mhC1`, with one channel/local multiplicity retaining `C1/(2m)` | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
+| AC3bs | Heavy source-rank one routes to affine direction/offset spread or exact two-cell secant incidence | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
