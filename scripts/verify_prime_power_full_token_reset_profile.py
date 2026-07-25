@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Arithmetic checks for CMR393--CMR397."""
+"""Arithmetic checks for CMR398--CMR402."""
 
 from __future__ import annotations
 
