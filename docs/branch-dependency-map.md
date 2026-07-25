@@ -38,9 +38,9 @@ The canonical OP route is different and is now corrected. AC3ay--AC3be provide t
 
 AC3bp--AC3cb classify source-coset ranks one, two, and three. Every expected active term amplifies to raw physical channel classes without subgroup-order loss; the multiplicity alphabet is finite; and every heavy line reduces to one linear channel cell or at most eight explicit quadratic-root words. AC3cc--AC3cg prove that every new state-independent active triple is supported on one, two, or three RI5f closure cells and route it to closure stars, secants, triples, or boundary-path spread.
 
-AC3bk--AC3co close the blocker probability problem. Small occupancies have exact overlap/cycle tables, every compatible partial blocker prescription has an inclusion-exclusion extension count depending only on `(t,s,q)`, and the large-bank cylinder cap improves from `128/(t)_s` to the exact sharp value and the universal bound `3/(t)_s`.
+AC3bk--AC3co close the blocker probability problem. Small occupancies have exact overlap/cycle tables, every compatible partial blocker prescription has an inclusion-exclusion extension count depending only on `(t,s,q)`, and the large-bank cylinder cap improves from `128/(t)_s` to the exact sharp value and the universal bound `3/(t)_s`. AC3cp--AC3ct then realize every selected prescription as one of nine crossed-rectangle path/cycle types. Closure-anchor words return to the closure router; all-I6 paths telescope and 2-/3-cycles preserve the product of their channel parameters.
 
-The unresolved RI interface is now termination/payment of the explicit quadratic-root tuples and closure outputs, arithmetic classification of one exact blocker partial-permutation profile, the residual fixed term `F_rest`, incomplete fibres, root imbalance, and scale dispersion.
+The unresolved RI interface is now termination/payment of the explicit quadratic-root tuples, closure outputs, and crossed-rectangle complexes, together with the residual fixed term `F_rest`, incomplete fibres, root imbalance, and scale dispersion.
 
 ### `research/geometric-cleaning`
 
