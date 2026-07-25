@@ -21,7 +21,7 @@ three collinear.
 - [`proofs/prime-patching-recent-index.md`](proofs/prime-patching-recent-index.md):
   focused PP3 theorem index.
 - [`proofs/prime-patching-transition-index.md`](proofs/prime-patching-transition-index.md):
-  fixed-centre transition addendum.
+  fixed-centre transition and local-core addendum.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): repository-wide ledger.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected
   and refuted statements.
@@ -156,6 +156,19 @@ The exact remaining transition cases are:
 
 The transition sunflower itself is no longer a separate frontier.
 
+## Fixed-centre unary-Xi endpoint
+
+At a source-light captive centre, rank-two unary `Xi` cost is determined by the
+one incoming and one outgoing arc selected by the single cycle. Fixing a locally
+clean centre segment leaves exactly `(b-3)!` conditional single-cycle completions
+and the corresponding exact fixed-rank cylinder law.
+
+Either one locally clean segment has deterministic unary cost below the available
+budget, or all but `m^(1/2+o(1))` admissible arcs on one side are heavy. Those
+replacement cells lie on one fixed old row or one fixed old column. The remaining
+rank-two unary `Xi` object is therefore a fixed-axis rich-cost star, or residual
+source/higher-rank paid concentration after conditioning on a cheap segment.
+
 ## Current remaining theorem
 
 The all-`n` branch is reduced to:
@@ -166,16 +179,17 @@ The all-`n` branch is reduced to:
    forced Hall cuts, and transition sunflowers;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. remaining marked `Xi` ranks, full-pool `Xi` thresholds, or fixed-centre
-   source/weight cores;
+4. fixed-axis unary-`Xi` stars, remaining marked binary `Xi` ranks, full-pool `Xi`
+   thresholds, or fixed-centre source/weight cores;
 5. alternating cycle-star/theta support cores or cost at the cycle-credit scale;
 6. quadratic binary cell fans, weighted choice grids, projective covers,
    conditional Hall families, or support-ranked residual collateral.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic
 `Xi` terms, diffuse binary dual mass, raw resource stars, diffuse transition-petal
-collateral, unstructured non-superregularity, controller relabelling, and
-termination are no longer separate open problems.
+collateral, unstructured rank-two unary `Xi` fibres, unstructured
+non-superregularity, controller relabelling, and termination are no longer
+separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -189,6 +203,7 @@ The no-three-in-line conjecture remains unproved.
   source dilution, support-ranked `Xi`, and universal single-cycle fillers.
 - `docs/167`--`docs/171`: transition role localization, clean-chain averaging,
   disjoint witness petals, credited sunflower banks, and collateral localization.
+- `docs/176`: conditioned centre segments and fixed-axis unary-`Xi` arc stars.
 
 ## Current exact checks
 
@@ -205,6 +220,8 @@ python scripts/check_single_cycle_spread.py \
   experiments/single-cycle-spread-example.json
 python scripts/check_transition_sunflower_bank.py \
   experiments/transition-sunflower-bank-example.json
+python scripts/check_unary_xi_arc_star.py \
+  experiments/unary-xi-arc-star-example.json
 ```
 
 These are finite diagnostics. They do not replace the asymptotic conversion
