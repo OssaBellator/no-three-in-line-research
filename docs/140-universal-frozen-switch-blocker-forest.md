@@ -1,19 +1,18 @@
-# Universal frozen-switch blocker forest
+# Frozen-switch external blocker forest
 
 PX319--PX323 close the packet-specific linear residue by using the exact blocker
-list of one correcting transposition.  The argument depends only on a frozen
-deterministic switch and therefore extends to every clean-star, radial,
-coordinate-field, and loaded-line switch.
+list of one correcting transposition.  The same countdown extends to a general
+frozen deterministic switch only after separating **external blockers**, which
+use one or two new cells and can be neutralized by moving fixed witnesses, from
+**internal blockers**, which use three new cells and cannot be suppressed while
+all inserted switch cells remain frozen.
 
-A fixed switch has an exact old-deletion set and a finite list of prospective
-new triples.  Each prospective triple uses one, two, or three new cells.  Once
-`C-D+1` blockers are assigned to deeper ancestor-safe children, the original
-switch is strictly improving.  This supplies the previously missing general
-first-order strict-sign-or-child interface; the remaining issue is the terminal
-absorption of the resulting bounded-support children, not another linear
-creation estimate.
+This distinction is essential.  The external first-order sectors admit a finite
+causal blocker forest whenever old destruction exceeds the internal rank-three
+load.  Internal support three remains governed by the thinning and terminal
+rank-three ledgers PX201--PX204 and PX260--PX276.
 
-## 1. Frozen deterministic switch
+## 1. Exact frozen-switch ledger
 
 Let `S` be the current selected state.  A deterministic switch `sigma` deletes a
 set `A` of current cells and inserts a disjoint set `W`, preserving the required
@@ -60,53 +59,17 @@ another triple to the frozen list. \(\square\)
 
 This is the set-theoretic form of the causal ledger PX235--PX239.
 
-## 2. Exact blocker countdown
+## 2. External and internal blocker sectors
 
-### Theorem PX325 -- PROVED
-
-If `c_sigma<d_sigma`, execute the switch immediately.  Otherwise, after assigning
-and permanently suppressing any
-
-\[
-\boxed{
-b_\sigma=c_\sigma-d_\sigma+1
-}
-\]
-
-distinct blockers from `B_sigma`, the switch becomes strictly improving, with
-potential change at most `-1`.
-
-### Proof
-
-After suppressing `b_sigma` blockers, PX324 gives
-
-\[
-c_\sigma-b_\sigma-d_\sigma=-1.
-\]
-
-The number `b_sigma` lies between one and `c_sigma` whenever
-`c_sigma>=d_sigma>=1`. \(\square\)
-
-Thus a nonimproving fixed switch has a finite exact debt, not an asymptotic
-creation coefficient.
-
-## 3. Every blocker is a bounded-support child
-
-For `T in B_sigma`, define its **new-cell support** by
+For `T in B_sigma`, define its new-cell support by
 
 \[
 r(T)=|T\cap W|.
 \]
 
-### Theorem PX326 -- PROVED
+### Theorem PX325 -- PROVED
 
-Every blocker has
-
-\[
-\boxed{1\le r(T)\le3.}
-\]
-
-It belongs to exactly one of the following geometric sectors.
+Every blocker has `1<=r(T)<=3` and belongs to exactly one sector.
 
 1. `r=1`: one prospective cell and two fixed points -- a prospective clean-star
    ray centred at the new cell.
@@ -115,66 +78,119 @@ It belongs to exactly one of the following geometric sectors.
 3. `r=3`: three prospective cells -- an internal rank-three certificate of the
    inserted switch block.
 
+Let
+
+\[
+B_\sigma^{\rm ext}=\{T:r(T)\le2\},
+\qquad
+B_\sigma^{\rm int}=\{T:r(T)=3\},
+\]
+
+and write their sizes as `c_ext` and `c_3`, so
+
+\[
+c_\sigma=c_{\rm ext}+c_3.
+\]
+
 ### Proof
 
 A new triple must contain at least one inserted cell, otherwise it was already
 present in `S`.  A triple has exactly three cells, giving the support range and
 the exhaustive classification. \(\square\)
 
-The support-one and support-two sectors are the exact geometric children decoded
-by PX228, PX249--PX262, and PX319--PX323.  The support-three sector is included
-in the rank-three terminal table of PX273.
+Support-one and support-two blockers can be neutralized while preserving `W` by
+moving one of their fixed witnesses.  A support-three blocker contains only
+cells of `W`; it cannot be removed under a genuinely frozen `W` interface.
 
-## 4. Causal blocker forest
+## 3. Exact external blocker countdown
 
-Work under the **frozen-switch child interface**:
+Work under the frozen-switch child interface for external blockers:
 
-1. the rows and columns of `A` and `W` remain reserved while a blocker child is
-   neutralized;
-2. previously suppressed blockers stay forbidden by the historical-position or
-   packet-complement constraints of PX278;
-3. every new obligation produced during child neutralization is assigned to a
-   deeper level.
+1. the rows and columns of `A` and `W` remain reserved;
+2. a chosen support-one or support-two blocker is neutralized by a deeper
+   clean-star or pair-line child;
+3. previously suppressed blockers stay absent by PX278;
+4. every new obligation is assigned to a deeper level.
 
-### Theorem PX327 -- PROVED
+### Theorem PX326 -- PROVED
 
-Every frozen switch with `d_sigma>=1` satisfies the strict-sign-or-child
-interface of PX280.  At its level it either:
+Assume
 
-1. executes immediately and strictly decreases the triple potential; or
-2. removes one unassigned blocker from the current list and assigns its
-   support-at-most-three certificate to a deeper child.
+\[
+\boxed{d_\sigma>c_3.}
+\]
 
-After at most `b_sigma` child conversions, the original switch executes with
-strict decrease.
+Then the switch satisfies an exact external strict-sign-or-child countdown.
+
+1. If `d_sigma>c_ext+c_3`, execute the switch immediately.
+2. Otherwise, after suppressing any
+
+   \[
+   \boxed{
+   b_\sigma=c_{\rm ext}+c_3-d_\sigma+1
+   }
+   \]
+
+   distinct external blockers, the switch becomes strictly improving.
+
+Moreover `1<=b_sigma<=c_ext`.
 
 ### Proof
 
-Use PX325.  Before the blocker budget is exhausted, choose one unsuppressed
-member of `B_sigma`; PX326 makes it a valid bounded-support child.  The frozen
-interface and PX278 keep earlier blockers absent.  Each conversion lowers the
-current blocker coordinate by one.  Once `b_sigma` blockers have been converted,
-PX325 executes the switch. \(\square\)
+The immediate case is PX324.  In the second case,
+`d_sigma<=c_ext+c_3` gives `b_sigma>=1`, while `d_sigma>c_3` gives
+`b_sigma<=c_ext`.  After suppressing `b_sigma` external blockers, the remaining
+creation count is at most
+
+\[
+c_{\rm ext}+c_3-b_\sigma=d_\sigma-1.
+\]
+
+PX324 gives potential change at most `-1`. \(\square\)
+
+### Corollary PX327 -- PROVED
+
+Under `d_sigma>c_3`, every frozen switch satisfies the strict-sign-or-child
+interface of PX280 using only support-one and support-two children.  At most
+`b_sigma` child conversions are required before the original switch executes.
+
+### Proof
+
+Before the budget is exhausted, choose one unsuppressed external blocker.
+PX325 identifies it as a clean-star-ray or pair-line child.  Each conversion
+lowers the current external-blocker coordinate by one, and PX278 prevents
+recurrence.  PX326 executes the switch when the budget is exhausted. \(\square\)
+
+## 4. Exact remaining obstruction
 
 ### Corollary PX328 -- PROVED
 
-Clean-star, radial, coordinate-field, loaded-line, and packet-correction switches
-all have a finite causal blocker forest.  Their linear first-order creation
-terms cannot cause an infinite same-level loop.
+Packet correcting transpositions have `|W|=2`, hence `c_3=0`.  Their complete
+blocker forest PX319--PX323 is therefore an unconditional special case of
+PX326--PX327.
+
+For a general clean-star, radial, coordinate-field, or loaded-line switch, one
+of the following holds.
+
+1. `d_sigma>c_3`, and all external first-order debt is discharged by the finite
+   blocker forest.
+2. `c_3>=d_sigma`, so internal rank-three creation alone is large enough to pay
+   the old destruction and is the unique remaining sign obstruction.
 
 ### Corollary PX329 -- PROVED REDUCTION
 
-After PX315--PX318 and PX324--PX328, the remaining recursive frontier consists
-of bounded-support terminal obstruction certificates:
+The general support-one and support-two first-order bookkeeping problem is
+closed under the frozen-switch interface.  The remaining recursive frontier is
+exactly:
 
-1. constant-order trajectory residuals of order at most `Delta_0+1`;
-2. support-one, support-two, and support-three blocker children which survive the
-   exact terminal optimizer.
+1. internal support-three load `c_3>=d_sigma`, handled structurally or by the
+   PX201/PX260 rank-three decoders;
+2. constant-order trajectory residuals of order at most `Delta_0+1` from
+   PX315--PX318;
+3. terminal obstruction certificates surviving the exact optimizer.
 
-The general diffuse clean-star/radial **first-order bookkeeping problem is
-closed** under the frozen-switch interface.  Exact all-side closure still
-requires showing that the finite terminal obstruction family is absorbable or
-incompatible with the product induction.
+Exact all-side closure still requires proving that these internal/terminal
+obstructions are absorbable or incompatible with the product induction.
 
 ## 5. Verification
 
@@ -184,6 +200,7 @@ Run
 python scripts/verify_product_universal_blocker_forest.py
 ```
 
-The verifier exhausts destruction/creation counts, confirms the exact blocker
-budget, checks all support partitions of a three-cell prospective certificate,
-and simulates finite causal countdowns.
+The verifier exhausts destruction, external-creation, and internal-creation
+counts, confirms the exact external blocker budget under `d_sigma>c_3`, checks
+all support partitions of a three-cell certificate, and simulates the finite
+causal countdown.
