@@ -2,7 +2,7 @@
 
 **Branch:** `research/alternating-core-chain`
 
-AC3ax requires an actual normalized rational-inverse component, complete fibres, and occurrence-dependent scale sets. The canonical orbit-phase geometry already supplies those fields for every real two-channel source factor. This note imports the exact OP4g--OP4i identities, preserves current payment, and identifies the first remaining hypothesis as coherent paid scale pairing rather than quotient arithmetic.
+AC3ax requires an actual normalized rational-inverse component, complete fibres, and occurrence-dependent scale sets. The canonical orbit-phase geometry supplies those fields for every real two-channel source factor. This note imports the exact OP4g--OP4i identities, preserves current payment, and identifies the physical output as fixed-edge payment rather than completion-component payment.
 
 ## AC3ay -- one real two-channel factor gives an exact RI record -- PROVED FROM OP4g
 
@@ -144,12 +144,12 @@ Then one of the following paid outputs holds.
 
 1. **Paid complete-fibre family:**
    $$
-   \boxed{W_full\ge W/(2P).}
+   W_full\ge W/(2P).
    $$
-   Every represented fibre has both actual root witness sets, their base-scale coset sets, the fixed quotient edge, and exact carry provenance. This is the arithmetic input to AC3at.
+   Every represented fibre has both actual root witness sets, their base-scale coset sets, the fixed quotient edge, and exact carry provenance. This is the arithmetic input to AC3bc.
 2. **Paid one-sided family:**
    $$
-   \boxed{W_one>W/(2P).}
+   W_one>W/(2P).
    $$
    Every represented incomplete fibre returns its witnessed root, image, missing companion root, actual base scales, source factors, and exact carry data.
 
@@ -159,7 +159,7 @@ $$
 P\le q_act(q_act-1).
 $$
 
-Hence one of the two outputs carries at least
+Hence one output carries at least
 
 $$
 W/(2q_act(q_act-1)).
@@ -167,63 +167,45 @@ $$
 
 ### Proof
 
-Exact channel-pair classes partition `W`, so the heaviest has weight at least `W/P`. Complete and incomplete fibres partition that class. One part carries at least half its weight. AC3ay supplies the retained fields; OP4i supplies the exact missing-companion convention and the channel-pair bound. QED.
+Exact channel-pair classes partition `W`, so the heaviest has weight at least `W/P`. Complete and incomplete fibres partition that class. One part carries at least half its weight. AC3ay supplies the retained fields; OP4i supplies the exact missing-companion convention and channel-pair bound. QED.
 
-## AC3bb -- canonical AC3am-to-RI composition -- PROVED UNDER HYPOTHESES
+## AC3bb -- canonical AC3am-to-RI pre-pairing composition -- PROVED
 
 Let an AC3am common-residual family have total paid weight `W_x`. Assume:
 
 1. at most `R_0` arithmetic role labels;
 2. secondary multiplicity threshold `rho>=1`;
 3. the selected quotient role is realized by an OP4h-compatible two-channel family;
-4. at most `P` ordered channel pairs occur in that role;
-5. scale, completion, paid, and support faithfulness hold on the selected complete-fibre family;
-6. `K>=1` is a physical scale-count threshold;
-7. an optional exact profile alphabet has size `L>=1`.
+4. at most `P` ordered channel pairs occur in that role.
 
 Then the role-pure family has weight at least
 
 $$
-W_role\ge W_x/(2R_0rho).
+W_role\ge W_x/(2R_0rho),
 $$
 
-After AC3ba and AC3at, one of the following occurs.
+with `rho` omitted in the fixed-exclusion and repeated-residual-pair outputs. AC3ba then returns either:
 
-1. **Paid one-sided rational growth:** incomplete fibres carry at least
+1. paid one-sided rational growth of weight at least
    $$
-   \boxed{W_x/(4R_0rho P)}.
+   W_x/(4R_0rho P),
    $$
-2. **Paid physical-lift mismatch:** complete but scale-incoherent fibres carry at least
-   $$
-   \boxed{W_x/(8R_0rho P)}.
-   $$
-3. **Paid physical-scale dispersion:** more than `K` physical scale classes occur.
-4. **One physical decorated class:** one physical scale and one exact decoration class carry at least
-   $$
-   \boxed{W_x/(8R_0rho P K L)}.
-   $$
-   This class enters AC3au--AC3av and then RI5a--RI5ae according to whether the full block is already installed or must be completed.
+   with every missing companion root explicit; or
+2. a paid complete-fibre family of the same lower-bound scale, with both root occurrence measures and all actual base scales retained.
 
-The factors `rho` may again be omitted in the AC3am fixed-exclusion and repeated-residual-pair outputs.
+The complete side enters AC3bc--AC3be. It is not yet assigned to physical completion components.
 
 ### Proof
 
-AC3am loses at most `2R_0rho`. Channel-pair localization loses at most `P`. AC3ba loses at most two between complete and incomplete fibres. On the complete side, AC3at loses at most two between coherent and incoherent mass and at most `K` to select one scale. AC3aw loses at most `L`. Multiplying the losses gives the displayed constants. QED.
+AC3am loses at most `2R_0rho`; channel-pair localization and the complete-versus-incomplete split lose at most `2P`. QED.
 
 ## Consequence for the RI adapter
 
-For canonical orbit-phase quotient roles, two items from the AC3ax checklist are now discharged.
+For canonical orbit-phase quotient roles, the normalized RI component, complete-fibre relation, actual occurrence-dependent scale sets, exact cross-carry provenance, and factor-conservative payment are all supplied by proved OP interfaces.
 
-- The normalized RI component and complete-fibre relation are supplied by OP4g--OP4h.
-- Actual occurrence-dependent scale sets and exact cross-carry provenance are supplied factor by factor by AC3ay.
+AC3bc--AC3be then produce a coherent physical fixed-edge class at constant loss or one of the explicit incomplete-fibre, root-imbalance, or scale-dispersion outputs. AC3bf proves the coherent paid root cells are fixed by hyperbola completion, and AC3bg--AC3bj install the I6 bank directly through the common physical closure.
 
-The first genuinely new geometric obligation is narrower:
-
-1. prove scale faithfulness, meaning current paid mass can be paired across both roots at common physical scales;
-2. assign that paid mass completion-faithfully to the physical block;
-3. close the explicit one-sided, scale-mismatch, and scale-dispersion outputs.
-
-Thus canonical quotient arithmetic is no longer part of the unresolved AC-to-RI interface.
+Thus canonical quotient arithmetic and scale pairing are no longer unresolved. The remaining frontier is arithmetic classification of the closed-bank collateral terms and the three explicit escape outputs.
 
 ## Finite check
 
