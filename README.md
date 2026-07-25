@@ -4,7 +4,7 @@
 
 This branch develops the finite-denominator exception route produced by perfect-alignment and wrap-center concentration. The canonical proof notes are under `docs/`; verification programs remain under `scripts/`.
 
-> **Status:** BDA4e-compatible clean radial pairs admit a full heterogeneous decoder product. Rank-one collateral splits into a removable two-state imbalance and a balanced floor. That floor now localizes to one of four exact empty-switch/phase-flip role comparisons and one finite arithmetic profile, with large exclusive collateral on both roles. The remaining bottleneck is comparing those two determinant geometries arithmetically, or classifying the heavy rank-two/rank-three profile, plus clean-support failure, affine anchor chains, and recurrent cycles.
+> **Status:** BDA4e-compatible clean radial pairs admit a full heterogeneous decoder product. Rank-one collateral splits into a removable menu imbalance and a balanced floor. That floor now localizes to one of four occupancy types, one finite arithmetic profile, and one of only `36` ordered local-channel comparisons. Every selected channel obeys an exact determinant address, an anchor-ray wall, a separated `CD` affine line, or the original radial `AB` line. The remaining bottleneck is arithmetic classification of those explicit loci, or the heavy rank-two/rank-three profile, plus clean-support failure and recurrent finite-profile cycles.
 
 ## Branch map
 
@@ -24,11 +24,12 @@ This branch develops the finite-denominator exception route produced by perfect-
 - [`docs/bounded-denominator-heterogeneous-decoder-product.md`](docs/bounded-denominator-heterogeneous-decoder-product.md): simultaneous local menus and exact product collateral.
 - [`docs/bounded-denominator-rank-one-collateral.md`](docs/bounded-denominator-rank-one-collateral.md): balanced-floor decomposition and deterministic rank-one suppression.
 - [`docs/bounded-denominator-balanced-floor-localization.md`](docs/bounded-denominator-balanced-floor-localization.md): four occupancy types and two-role arithmetic localization.
+- [`docs/bounded-denominator-role-geometry.md`](docs/bounded-denominator-role-geometry.md): determinant-address comparison of the two decoder roles.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch theorem ledger.
 
 ## Highest-value frontier
 
-1. Compare the two role-side collateral geometries inside the BDA5k fixed occupancy/arithmetic profile.
+1. Feed the BDA5n anchor rays, separated `CD` lines, and non-wall determinant addresses into the primitive-slope and valuation charts.
 2. Apply BDA3c--BDA3e to the heavy rank-two or rank-three profile returned by BDA5j.
 3. Classify clean-support failure and the five affine anchor-chain outputs from BDA4e.
 4. Prove that every directed cycle in the finite transition quotient contains an improving decoder or a terminal absorber state.
