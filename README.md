@@ -4,7 +4,7 @@
 
 This is the principal dependent proof-chain branch. It develops paid structural re-extraction, finite-role concentration, alternating two-layer transitions, reverse-scale compatibility, and the prime-minus-one endpoint.
 
-> **Status:** AC3gc--AC3gm propagate union-safe BDA products, orient every realized created-cell rank to one pivot and realize expected profiles before pivoting. AC3gn--AC3he control decorated signatures, full partner saturation, empty-partner menus, the finite `3 x 3` exception and new physical pivot-cell exposure. AC3hf--AC3hh import the BDA affine-chain collapse with payment `H/10` and failed-rank return `H/30`. AC3hi--AC3hp close the remaining old-axis, fixed-context, fixed-pair and historical line-star topology by routing it to pair-core rematching, direct current-anchor rematching, one heavy certificate or a realized failed-bank rank. AC3hq--AC3hr show that occurrence-faithful ordinary co-anchor records automatically pass the collision/clean-support audit and need only the complete AC3v second extraction. AC3hs--AC3ht correct raw reflected `CD` use: its two local cells are nonradial, so reflected profiles execute through separately proved radial support or realized-rank pivot routing. AC3hu--AC3hw close pure adjacent-scale and strict denominator cycles. AC3hx--AC3ia now erase repeated selected states inside monotone-mask epochs and classify every nontrivial matching change by one finite cross signature: it is either a ticketed rectangle or a fixed-cross long alternating cycle with forced cell reinsertion on recurrence. The remaining work is payment/ancestry for those long-cycle and reinsertion cores, physical occurrence realization for unresolved arithmetic roles, AC4 assembly and the AC5 reverse-scale audit.
+> **Status:** AC3gc--AC3gm propagate union-safe BDA products, orient every realized created-cell rank to one pivot and realize expected profiles before pivoting. AC3gn--AC3he control decorated signatures, full partner saturation, empty-partner menus, the finite `3 x 3` exception and new physical pivot-cell exposure. AC3hf--AC3hh import the BDA affine-chain collapse with payment `H/10` and failed-rank return `H/30`. AC3hi--AC3hp close the remaining old-axis, fixed-context, fixed-pair and historical line-star topology by routing it to pair-core rematching, direct current-anchor rematching, one heavy certificate or a realized failed-bank rank. AC3hq--AC3hr show that occurrence-faithful ordinary co-anchor records automatically pass the collision/clean-support audit and need only the complete AC3v second extraction. AC3hs--AC3ht correct raw reflected `CD` use: its two local cells are nonradial, so reflected profiles execute through separately proved radial support or realized-rank pivot routing. AC3hu--AC3hw close pure adjacent-scale and strict denominator cycles. AC3hx--AC3ia erase repeated selected states inside monotone-mask epochs and classify every nontrivial matching change by one finite cross signature: it is either a ticketed rectangle or a fixed-cross long alternating cycle with forced cell reinsertion on recurrence. AC3ib--AC3if further turn recurrent long signatures into path petals or a quantified second hub; inside one common parent they yield edge-disjoint petal states, a repeated off-boundary cell, or a paid one-state-per-petal ledger. The remaining work is payment/ancestry for the second-hub, repeated-cell and petal-collateral outputs, physical occurrence realization for unresolved arithmetic roles, AC4 assembly and the AC5 reverse-scale audit.
 
 ## Core proof map
 
@@ -27,6 +27,7 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 - [`docs/alternating-core-historical-line-router.md`](docs/alternating-core-historical-line-router.md): fixed-pair and current-anchor rematching for historical stars.
 - [`docs/alternating-core-scalar-cycle-import.md`](docs/alternating-core-scalar-cycle-import.md): ticketed adjacent-scale forests and strict denominator-cycle termination.
 - [`docs/alternating-core-state-cycle-erasure.md`](docs/alternating-core-state-cycle-erasure.md): monotone-mask cycle erasure, finite cross signatures and rectangle/long-cycle routing.
+- [`docs/alternating-core-long-cycle-petals.md`](docs/alternating-core-long-cycle-petals.md): fixed-cross path petals, second-hub concentration and common-parent petal banks.
 
 ## Bounded-denominator interface
 
@@ -59,9 +60,9 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 
 ## Highest-value frontier
 
-1. Prove paid finite ancestry or a credited-host handoff for fixed-cross long alternating cycles and repeated layer-cell reinsertion.
+1. Prove paid finite ancestry for the second-hub and repeated off-boundary-cell outputs, and terminate the boundary-supported/petal-specific failure terms of AC3ie.
 2. Prove physical occurrence realization for the remaining arithmetic role labels; ordinary pairing and conflict handling are then automatic.
-3. Integrate the residual epoch/context and arithmetic-role edges into the finite transition quotient and assemble AC4.
+3. Integrate parent/epoch changes and retained arithmetic-role edges into the finite transition quotient and assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 [`proofs/theorem-index.md`](proofs/theorem-index.md) is the canonical theorem ledger. The scripts exhaust finite abstractions and small-grid regressions; the Markdown arguments carry the general claims.
