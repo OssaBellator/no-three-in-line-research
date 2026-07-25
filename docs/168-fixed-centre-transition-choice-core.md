@@ -12,9 +12,8 @@ those sets must belong to the middle forbidden relation `M_c`. Since
 `m^(1/2+o(1))` exceptional middles.
 
 Thus the remaining transition support is a small high-choice core plus a
-bounded-choice local state family. Whenever clean segments do exist, their local
-choice and the remaining single-cycle completion admit the same joint paid
-averaging used for two-resource grids.
+bounded-choice local state family. Whenever clean segments exist, their local
+choice and remaining single-cycle completion admit a support-ranked paid average.
 
 ## 1. Three-choice middle sets
 
@@ -44,17 +43,14 @@ min(|P_3|,|S_3|) <= sqrt(|M_c|+N).
 
 #### Proof
 
-Take distinct `p in P_3` and `s in S_3`. If `(p,s) notin M_c`, Proposition PP3zk
-with the constant threshold `3/N` supplies a clean choice of `r,t`, contrary to
-`C_c=empty`. Hence every distinct pair in `P_3 x S_3` lies in `M_c`.
+Take distinct `p in P_3` and `s in S_3`. If `(p,s) notin M_c`, choose
+`r in A_L(p)` avoiding `s`; at least two choices remain. Then choose
+`t in A_F(s)` avoiding `p` and the chosen `r`; at least one choice remains
+because `|A_F(s)|>=3`. This gives a clean five-index chain, contrary to
+`C_c=empty`.
 
-At most `N` pairs have `p=s`. Therefore
-
-```text
-|P_3||S_3|-N <= |M_c|.
-```
-
-The square-root bound follows. ∎
+Hence every distinct pair in `P_3 x S_3` lies in `M_c`. At most `N` pairs have
+`p=s`, which gives the displayed product bound and then the square-root bound. ∎
 
 ## 2. Slab-optimal exceptional-core size
 
@@ -69,19 +65,21 @@ N=m^(19/20+o(1)),
 absence of a clean local chain implies
 
 ```text
-min(|P_3|,|S_3|)=m^(1/2+o(1)).
+min(|P_3|,|S_3|)=O(m^(1/2+o(1))).
 ```
 
-More precisely the minimum is
+More precisely,
 
 ```text
-O(sqrt(mD_m+N))=m^(1/2+o(1)).
+min(|P_3|,|S_3|)
+<=O(sqrt(mD_m+N))
+=m^(1/2+o(1)).
 ```
 
 #### Proof
 
 Insert PP3zj into PP3zq. Since `mD_m=m^(1+o(1))` dominates
-`N=m^(19/20+o(1))`, its square root is `m^(1/2+o(1))`. ∎
+`N=m^(19/20+o(1))`, the square root has the displayed order. ∎
 
 This exceptional core is much smaller than the full pool size `N`.
 
@@ -89,7 +87,7 @@ This exceptional core is much smaller than the full pool size `N`.
 
 ### Proposition PP3zs -- PROVED
 
-If `|P_3|=m^(1/2+o(1))`, then every `p outside P_3` has at most two safe
+If `P_3` is the small set, every `p outside P_3` has at most two safe
 predecessors:
 
 ```text
@@ -104,9 +102,8 @@ Thus the predecessor-safe relation outside the exceptional middle set has at mos
 This is the definition of `P_3`, followed by summation over the remaining
 middles. ∎
 
-The support of a failed predecessor role is therefore the complement of an
-explicit two-valued relation, apart from the small high-choice core. This is
-strictly stronger than a generic near-complete transition star.
+The support of a failed predecessor role is the complement of an explicit
+two-valued relation, apart from a high-choice core of size `m^(1/2+o(1))`.
 
 ## 4. Exact extension of a clean local segment
 
@@ -134,33 +131,44 @@ all four arcs of `h` is
 (b-5)!.
 ```
 
-Conditional on `h`, every additional prescribed compatible rank-`u` arc forest
-has probability at most
+Conditional on `h`, every additional prescribed compatible set of `u` arcs has
+probability at most
 
 ```text
 1/(b-5)_u,
 ```
 
-unless it creates a proper directed cycle, in which case its probability is zero.
+unless the additional arcs together with `h` create a proper directed cycle, in
+which case the probability is zero.
 
 #### Proof
 
-After contracting the four-arc path, there are `b-4` cyclic objects. Their number
-of directed cyclic orders is `(b-5)!`. Contract any additional compatible path
-forest in the same way. Each additional prescribed arc reduces the object count
-by one, giving the displayed ratio. A proper directed cycle cannot lie inside one
-Hamilton cycle. ∎
+After contracting the four-arc path, there are `b-4` cyclic objects, with
+`(b-5)!` directed cyclic orders. Every additional compatible arc that does not
+create a proper directed cycle contracts two current objects and reduces the
+object count by one. Dividing the resulting count by `(b-5)!` gives the stated
+cylinder probability. ∎
 
 Thus fixing a clean segment retains a fixed-rank spread law on the remaining
-single-cycle completion, with `b` replaced by `b-4`.
+single-cycle completion, with effective size `b-4`.
 
-## 5. Paid averaging over clean segments
+## 5. Support-ranked paid averaging over clean segments
 
-For `h in C_c`, let:
+For `h in C_c`, classify every remaining source-invalid canonical pattern by the
+number `u` of additional random arcs required after the four arcs of `h` are
+fixed. Let
 
-- `P_h,Q_h` count all remaining source-invalid pair and triple patterns after the
-  four local arcs are fixed;
-- `J_h` be the remaining expected `Xi`-insertion cost under the conditional
+```text
+S_h,u
+```
+
+be the number or total nonnegative weight of those source-invalid patterns,
+where `0<=u<=3`. A term with `u=0` is a deterministic invalidity of the local
+segment and contributes in full.
+
+Let:
+
+- `J_h` be the exact expected remaining `Xi`-insertion cost under the conditional
   single-cycle completion;
 - `R_h>=R_*>0` be the exact guaranteed removal credit.
 
@@ -170,8 +178,7 @@ If `C_c` is nonempty and
 
 ```text
 (1/|C_c|) sum_{h in C_c} [
-  K^2 P_h/(b-4)^2
-  + K^3 Q_h/(b-4)^3
+  sum_{u=0}^3 K^u S_h,u/(b-4)^u
   + J_h/R_*
 ] < 1,
 ```
@@ -183,13 +190,16 @@ strict pool-compatible decrease of `Xi`.
 #### Proof
 
 Choose `h` uniformly from `C_c`, then choose a uniform conditional single-cycle
-completion. Proposition PP3zt supplies the fixed-rank cylinder estimates. The
-displayed expression bounds the expected number of remaining source violations
-plus normalized paid cost. An outcome below one has no source-invalid event and
-cost below `R_*<=R_h`. Apply PP3kx. ∎
+completion. Proposition PP3zt bounds every canonical pattern requiring `u`
+additional arcs by `K^u/(b-4)^u`, with zero probability for a proper directed
+cycle. The displayed expression therefore bounds the expected number of source
+violations plus normalized paid cost.
 
-This converts the polynomial chain bank of PP3zl into an explicit paid-selection
-interface.
+An outcome below one has no source-invalid event, including no deterministic
+`u=0` event, and has cost below `R_*<=R_h`. Apply PP3kx. ∎
+
+This is the correct normalization when remaining bad patterns may contain one or
+more of the four fixed local arcs.
 
 ## 6. Revised transition endpoint
 
@@ -197,10 +207,10 @@ interface.
 
 A fixed-centre transition core now has one of the following forms.
 
-1. **Paid clean-chain bank:** `C_c` is large and satisfies the averaged source and
-   paid criterion PP3zu.
+1. **Paid clean-chain bank:** `C_c` is large and satisfies the support-ranked
+   source and paid criterion PP3zu.
 2. **Weighted clean-chain concentration:** `C_c` is nonempty, but its averaged
-   residual source or `Xi` cost reaches the removal-credit scale.
+   deterministic, source, or `Xi` cost reaches the removal-credit scale.
 3. **Predecessor bounded-choice core:** outside at most `m^(1/2+o(1))` middle
    indices, every middle has at most two safe predecessors. The complementary
    forbidden role-star contains the fixed-anchor fan PP3zo.
@@ -209,4 +219,4 @@ A fixed-centre transition core now has one of the following forms.
 The generic transition-degree core, the middle-role core, and a diffuse
 near-complete role star are no longer independent frontiers. The unresolved
 support object is a small high-choice core plus a two-valued outer relation, or
-paid/source concentration on the clean-chain bank.
+support-ranked paid/source concentration on the clean-chain bank.
