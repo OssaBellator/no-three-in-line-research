@@ -4,7 +4,7 @@
 
 This is the principal dependent proof-chain branch. It develops paid structural re-extraction, finite-role concentration, alternating two-layer transitions, reverse-scale compatibility, and the prime-minus-one endpoint.
 
-> **Status:** AC3gc--AC3gm propagate union-safe BDA products and orient every realized created rank to a paid pivot. AC3gn--AC3hp close pivot saturation, physical pivot exposure, old-axis histories and historical line stars. AC3hq--AC3ht close ordinary co-anchor support after physical occurrence realization and correct raw reflected `CD` roles as nonradial. AC3hu--AC3hw close pure adjacent-scale and strict-denominator cycles. AC3hx--AC3ia erase exact selected-state loops and classify matching changes as ticketed rectangles or fixed-cross long cycles. AC3ib--AC3ip provide path-petal, return-cross and arbitrary common-host cycle menus; static one-/two-hub overlap is not terminal. AC3iq--AC3it now remove factorial state-space growth: every state change inserts at least two layer-cells, a history longer than `O(L^2 n^6)` forces one repeated removal/return two-cross profile, and monotone unavailable-mask growth has a finite explicit budget. The remaining work is ancestry/payment for state-derived host drift and genuine arithmetic/context or envelope changes, physical occurrence realization, AC4 assembly and the AC5 reverse-scale audit.
+> **Status:** AC3gc--AC3gm propagate union-safe BDA products and orient every realized created rank to a paid pivot. AC3gn--AC3hp close pivot saturation, physical pivot exposure, old-axis histories and historical line stars. AC3hq--AC3ht close ordinary co-anchor support after physical occurrence realization and correct raw reflected `CD` roles as nonradial. AC3hu--AC3hw close pure adjacent-scale and strict-denominator cycles. AC3hx--AC3ia erase exact selected-state loops and classify matching changes as ticketed rectangles or fixed-cross long cycles. AC3ib--AC3ip provide path-petal, return-cross and arbitrary common-host cycle menus; static one-/two-hub overlap is not terminal. AC3iq--AC3it remove factorial state-space growth and pure monotone-mask drift. AC3iu--AC3iy then eliminate historical reference-state and raw opposite-layer drift: every target projects to one current cycle, blocker completion is an exact exchange-cycle-cover problem, and complete blocker hosts always repair for `n>=3`. AC3iz--AC3jc show that every failed restricted-host repair exposes at least `n-2` genuinely missing base-host cells and concentrates weighted failure on one exact missing cell or one finite missing-reason class. The remaining work is payment/role realization of those missing-host reasons, genuine arithmetic/context or envelope changes, AC4 assembly and the AC5 reverse-scale audit.
 
 ## Core proof map
 
@@ -21,6 +21,8 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 - [`docs/alternating-core-long-cycle-interface.md`](docs/alternating-core-long-cycle-interface.md): return-cross tickets and one-/two-hub routing.
 - [`docs/alternating-core-common-host-cycle-menu.md`](docs/alternating-core-common-host-cycle-menu.md): arbitrary overlapping common-host cycle menus.
 - [`docs/alternating-core-state-churn-router.md`](docs/alternating-core-state-churn-router.md): polynomial state-churn and monotone-mask router.
+- [`docs/alternating-core-host-drift-normalization.md`](docs/alternating-core-host-drift-normalization.md): current-reference projection, blocker exchange covers and minimal Hall cores.
+- [`docs/alternating-core-host-defect-cut-router.md`](docs/alternating-core-host-defect-cut-router.md): sharp missing-host cut bound and weighted reason localization.
 
 ## Bounded-denominator interface
 
@@ -44,7 +46,7 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 
 ## Highest-value frontier
 
-1. Prove paid finite ancestry for state-derived host drift after AC3it: reference matching, opposite-layer exclusion and derived allowed-host changes at fixed mask.
+1. Prove that every live missing blocker-host reason from AC3jb is an already paid carry/BDA/RI/protected-resource role, or place it in a bounded exceptional stock.
 2. Terminate genuine arithmetic/context and envelope-epoch changes, plus AC3ie boundary/petal failure terms not represented in one common host.
 3. Prove physical occurrence realization for remaining carry/BDA/RI roles.
 4. Assemble AC4, then verify AC5 reverse-scale cleanliness and discharge AC6.
