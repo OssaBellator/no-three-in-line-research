@@ -266,20 +266,27 @@ endpoint-disjoint extraction with capacity
 Replacing \(B_{\rm all}\) in OP4k.3 by the displayed extended token
 capacity gives the same exact OP3b finite-descent bound.
 
+[`orbit-phase-chargeback.md`](orbit-phase-chargeback.md) proves OP4n
+for the no-growth side.  Because OP4l retains the correction source of
+every paid unit, a current recurrent fibre of \(b\) factors and payment
+\(W\) returns an executable improving correction of gain at least
+\(W/(3b)\).  In particular the matching and point-star capacity bounds
+give \(W/(3\Delta_p)\) and \(W/(3\Delta_p^\star)\), respectively.
+
 ## Exact interface after OP4m
 
 OP4l's paid off-core and Hall-reuse outputs are no longer unclassified
 factor families.
 
-1. They contain one heavy paid current factor; or
-2. they expose a paid point-star carry family; or
-3. they expose quantitatively many exact carry signatures on
-   point-disjoint current defects.
+1. A heavy paid current factor gives direct descent through OP4n.
+2. A paid point-star or point-disjoint family exposes a current-new
+   role-tagged signature and grows the ledger.
+3. If all exposed signatures are current-old, OP4n charges one
+   recurrent fibre back to a direct improving correction.
 
-The remaining arithmetic frontier is recurrence of the role-tagged
-defect signatures or treatment of one heavy paid factor.  Generic
-gain-to-source payment and generic paid-factor geometric routing are
-both complete.
+Thus paid current-defect families cannot stall the decoder.  Generic
+gain-to-source payment, paid-factor geometric routing, and
+paid-signature recurrence are complete.
 
 `scripts/verify_phase_defect_router.py` exhausts all
 \(\{0,1,2\}\)-weighted three-uniform hypergraphs on five abstract
@@ -287,3 +294,6 @@ points for the OP4m.0 star/matching bounds.  On every real
 non-single-channel factor for \(p=11\), it checks heavy-factor,
 paid-star, low-load matching, and canonical signature-capacity
 outputs.
+
+`scripts/verify_phase_chargeback.py` checks the OP4n descent on heavy
+and recurrent paid fibres.

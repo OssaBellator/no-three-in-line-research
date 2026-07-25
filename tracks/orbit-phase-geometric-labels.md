@@ -403,9 +403,10 @@ completion deficits, one heavy repeated source factor, or quantified
 product-carry growth.
 
 The next independent endpoints are therefore the RI5
-row-column-preserving conversion of the dense fixed-edge output and
-recurrence/treatment of the OP4m heavy-factor or paid defect-signature
-outputs.
+row-column-preserving conversion of the dense fixed-edge output, the
+unpaid bounded blocker fibres, action-literal kernels, and wide action
+CSPs.  OP4n closes recurrence of every current-defect signature that
+retains OP4l payment.
 The formerly separate rank-three ledger obligation is closed by
 [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md);
 its remaining output is one bounded current recurrent blocker fibre.

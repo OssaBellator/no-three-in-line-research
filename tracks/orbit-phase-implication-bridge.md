@@ -399,8 +399,11 @@ The remaining frontiers are now precise.
    [`orbit-phase-defect-router.md`](orbit-phase-defect-router.md)
    proves OP4m: every paid off-core or Hall-reuse family returns a
    heavy current factor, a paid point-star carry family, or quantified
-   exact signatures on point-disjoint current defects.  The remaining
-   task is recurrence or treatment of one heavy factor.
+   exact signatures on point-disjoint current defects.
+   [`orbit-phase-chargeback.md`](orbit-phase-chargeback.md) proves
+   OP4n: a heavy or current-recurrent paid fibre returns an executable
+   improving correction.  Thus this paid-defect path now yields
+   descent or finite role-tagged ledger growth.
 2. **Order-two RI5 conversion.**  Build and compare the
    row-column-preserving state family for the fixed quotient edge
    selected by the square/collapse template.
@@ -452,3 +455,6 @@ bicycle/off-core split.
 
 `scripts/verify_phase_defect_router.py` checks OP4m's weighted
 point-star/matching extraction and its two carry-capacity routes.
+
+`scripts/verify_phase_chargeback.py` checks OP4n's direct descent from
+heavy and recurrent paid source-factor fibres.

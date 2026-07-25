@@ -69,10 +69,10 @@ law, and its cross/product-carry routes; a three-channel factor supplies
 three mixed product-carry routes.  An exact bicycle audit then either
 constructs globally consistent literal labels for OP4e or returns a
 root/literal mismatch with all source carry records retained.  Uniform
-arithmetic control is still open at recurrence or treatment of OP4m
-heavy-factor/paid-defect signatures, the RI5 fixed-edge conversion,
-bounded recurrent rank-three blocker fibres, action-literal kernels,
-and wide action CSPs.
+arithmetic control is still open at the RI5 fixed-edge conversion,
+unpaid bounded recurrent rank-three blocker fibres, action-literal
+kernels, and wide action CSPs.  OP4n closes every heavy or recurrent
+current-defect output that retains OP4l payment.
 
 [`orbit-phase-paid-edge-density.md`](orbit-phase-paid-edge-density.md)
 proves OP4i and the payment boundary.  Protected-bank correction weight
@@ -133,6 +133,15 @@ at least
 \]
 exact channel-profile/product-carry records.  Defect signatures use
 their own provenance roles in the state-qualified ledger.
+
+[`orbit-phase-chargeback.md`](orbit-phase-chargeback.md) proves OP4n
+and closes recurrence of paid current-defect signatures.  An
+incidence-resolved paid fibre of \(b\) rank-three factors and total
+payment \(W\) contains an executable current correction of gain at
+least \(W/(3b)\).  Consequently, a heavy factor gives direct descent;
+a current-new OP4m signature grows the ledger; and a current-old
+matching or point-star fibre gives descent of at least
+\(W/(3\Delta_p)\) or \(W/(3\Delta_p^\star)\), respectively.
 
 ## OP2 — Arithmetic Tanner graph
 
@@ -438,6 +447,9 @@ occurrences or a paid off-core/Hall-reuse defect family.
 OP4m routes the latter to a heavy current factor, a paid point-star
 carry family, or quantified signatures on point-disjoint current
 defects.
+OP4n charges every heavy or current-recurrent paid defect fibre back
+to an executable improving correction, so this path yields only
+syndrome descent or finite ledger growth.
 
 This is an alternative to the perfect-matching selection endpoint and may operate directly in the bounded-hyperbola orbit universe.
 
@@ -511,6 +523,8 @@ and the bicycle/off-core gate are checked by
 `scripts/verify_phase_syndrome_payment.py`.
 Paid current-defect star/matching extraction and its carry-capacity
 routes are checked by `scripts/verify_phase_defect_router.py`.
+Incidence-resolved charge-back and the sharp recurrent-fibre descent
+bound are checked by `scripts/verify_phase_chargeback.py`.
 
 ## Completion criterion
 

@@ -527,16 +527,16 @@ historical corrections.  At most
 role-tagged ledger-growth rounds occur before a current recurrent class
 must be processed.  OP4k.3 gives the corresponding OP3b finite-descent
 bound after replacing the fan-only token capacity by this combined
-capacity.  The remaining frontier consists of five named arithmetic
-outputs:
+capacity.  OP4m--OP4n further extend the role-tagged ledger to paid
+current defects and turn every current recurrent paid fibre into
+direct descent.  The remaining frontier consists of four named
+arithmetic outputs:
 
 1. high-overlap action-literal kernels;
-2. OP4m heavy paid current factors or recurrent role-tagged defect
-   signatures;
-3. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
+2. OP4i complete dense fixed-edge RI5 inputs, one-sided completion
    deficits, or its heavy-factor/carry-growth alternatives;
-4. OP4k bounded current recurrent rank-three blocker fibres;
-5. the wide-support action CSPs already separated by OP3j.
+3. OP4k bounded current recurrent rank-three blocker fibres;
+4. the wide-support action CSPs already separated by OP3j.
 
 To finish OP2--OP5, these outputs must be shown to expand, to force a
 new ledger signature, or to enter one of the classified absorber

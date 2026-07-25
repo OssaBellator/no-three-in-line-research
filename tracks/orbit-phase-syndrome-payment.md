@@ -399,9 +399,12 @@ The source-payment frontier now has a lossless gate.
 OP4m and performs that routing.  A paid off-core or Hall-reuse family
 returns one heavy current factor, a paid point-star carry family, or
 quantitatively many exact signatures on point-disjoint current
-defects.  Thus no further generic conversion from correction gain to
-current source-factor payment or from paid source factors to geometric
-carry records is missing.
+defects.  [`orbit-phase-chargeback.md`](orbit-phase-chargeback.md)
+proves OP4n and sends every heavy or current-recurrent paid fibre back
+to an executable improving correction.  Thus no further generic
+conversion from correction gain to current source-factor payment, from
+paid source factors to geometric carry records, or from recurrent paid
+records to decoder descent is missing.
 
 `scripts/verify_phase_syndrome_payment.py` exhausts small rank-three
 gain--defect incidence systems over a finite rational weight grid.  It
@@ -411,3 +414,6 @@ deduplication, core/off-core split, and the sharp rank-three example.
 
 `scripts/verify_phase_defect_router.py` checks the subsequent OP4m
 point-star/matching and carry-capacity alternatives.
+
+`scripts/verify_phase_chargeback.py` checks OP4n's incidence-resolved
+descent and sharp rank/fibre loss.

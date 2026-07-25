@@ -330,6 +330,8 @@ The fixed-edge frontier now has four explicit gates.
    [`orbit-phase-defect-router.md`](orbit-phase-defect-router.md)
    routes the latter to a heavy factor, paid point star, or
    point-disjoint carry-signature growth.
+   [`orbit-phase-chargeback.md`](orbit-phase-chargeback.md) turns a
+   heavy or current-recurrent paid output into direct decoder descent.
 2. Exact channel-pair localization costs the displayed factor \(P\);
    many channel pairs may instead be retained as a root/channel
    complexity output.

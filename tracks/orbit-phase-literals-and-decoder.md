@@ -209,9 +209,10 @@ the same 2-SAT machinery.
 [`orbit-phase-rank-three-router.md`](orbit-phase-rank-three-router.md),
 [`orbit-phase-blocker-ledger.md`](orbit-phase-blocker-ledger.md),
 [`orbit-phase-syndrome-payment.md`](orbit-phase-syndrome-payment.md),
+[`orbit-phase-defect-router.md`](orbit-phase-defect-router.md),
 and
-[`orbit-phase-defect-router.md`](orbit-phase-defect-router.md)
-continue these interfaces through OP4g--OP4m.  They derive exact
+[`orbit-phase-chargeback.md`](orbit-phase-chargeback.md)
+continue these interfaces through OP4g--OP4n.  They derive exact
 rational/carry factor records, audit whole-bicycle label consistency,
 separate complete rational density from one-sided formal companions,
 turn every large rank-three matching into quantified product-carry
@@ -220,4 +221,5 @@ role-tagged state ledger with a bounded current-recurrence output.  The
 last two notes transfer at least one third of correction gain to
 current source factors, give a capacitated bicycle/off-core payment
 gate, and route paid current factors to point stars or point-disjoint
-carry-signature families.
+carry-signature families.  OP4n turns every heavy or current-recurrent
+paid fibre into an executable improving correction.
