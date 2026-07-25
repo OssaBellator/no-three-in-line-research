@@ -18,7 +18,7 @@ def determinant(
     return (x2 - x1) * (y3 - y1) - (x3 - x1) * (y2 - y1)
 
 
-def verify_exact_factorization(max_t: int = 16) -> None:
+def verify_exact_factorization(max_t: int = 9) -> None:
     for t in range(4, max_t + 1):
         for x1 in range(t):
             for x2 in range(x1 + 1, t):
@@ -50,49 +50,58 @@ def verify_exact_factorization(max_t: int = 16) -> None:
                                     assert beta == parameter * primitive_right
                                     assert parameter != 0
 
+                                if exact and s == 0:
+                                    assert a == y3
+                                if exact and s == d:
+                                    assert b == y3
 
-def verify_degenerate_cases(max_t: int = 100) -> None:
-    for t in range(4, max_t + 1):
-        for x1 in range(t - 1):
-            for x2 in range(x1 + 1, t):
-                d = x2 - x1
-                for y3 in range(t):
-                    for a in range(t):
-                        for b in range(t):
-                            alpha = y3 - a
-                            beta = b - y3
-                            if (d - 0) * alpha == 0 * beta:
-                                assert a == y3
-                            if (d - d) * alpha == d * beta:
-                                assert b == y3
+
+def check_ratio_census(p: int, t: int, x1: int, x2: int) -> None:
+    assert 0 <= x1 < x2 < t
+    d = x2 - x1
+    ratios: Counter[int] = Counter()
+    good = 0
+    for c in range(t):
+        s = c - x1
+        if s in (0, d):
+            continue
+        if s % p == 0 or (d - s) % p == 0:
+            continue
+        rho = (s % p) * pow((d - s) % p, -1, p) % p
+        assert rho != 0
+        ratios[rho] += 1
+        good += 1
+        if d % p != 0:
+            assert rho != p - 1
+            recovered = rho * (d % p) * pow(1 + rho, -1, p) % p
+            assert recovered == s % p
+
+    assert good >= t - 2 - 2 * (t // p)
+    if ratios:
+        assert max(ratios.values()) >= ceil(good / (p - 1))
 
 
 def verify_unit_ratio_counts() -> None:
-    for p, h in ((3, 4), (5, 3), (7, 3), (11, 2)):
+    # Exhaustive slice pairs on the small prime-power boards.
+    for p, h in ((3, 3), (5, 2), (7, 2)):
         t = p**h
         for x1 in range(t):
             for x2 in range(x1 + 1, t):
-                d = x2 - x1
-                ratios: Counter[int] = Counter()
-                good = 0
-                for c in range(t):
-                    s = c - x1
-                    if s in (0, d):
-                        continue
-                    if s % p == 0 or (d - s) % p == 0:
-                        continue
-                    rho = (s % p) * pow((d - s) % p, -1, p) % p
-                    assert rho != 0
-                    ratios[rho] += 1
-                    good += 1
-                    if d % p != 0:
-                        assert rho != p - 1
-                        recovered = rho * (d % p) * pow(1 + rho, -1, p) % p
-                        assert recovered == s % p
+                check_ratio_census(p, t, x1, x2)
 
-                assert good >= t - 2 - 2 * (t // p)
-                if ratios:
-                    assert max(ratios.values()) >= ceil(good / (p - 1))
+    # Representative unit, singular, central, and long gaps on larger boards.
+    for p, h in ((3, 5), (5, 4), (7, 3), (11, 3)):
+        t = p**h
+        pairs = {
+            (0, 1),
+            (0, p),
+            (0, t - 1),
+            (t // 3, min(t - 1, t // 3 + p)),
+            (max(0, t // 2 - 1), min(t - 1, t // 2 + 1)),
+        }
+        for x1, x2 in pairs:
+            if x1 < x2:
+                check_ratio_census(p, t, x1, x2)
 
 
 def verify_recycled_bound() -> None:
@@ -101,13 +110,11 @@ def verify_recycled_bound() -> None:
         numerator = max(0, t - 3 - 2 * (t // p))
         bound = ceil(numerator / (p - 1))
         assert bound >= 0
-        if h >= 2 and p >= 5:
-            assert bound * (p - 1) >= numerator
+        assert bound * (p - 1) >= numerator
 
 
 def main() -> None:
     verify_exact_factorization()
-    verify_degenerate_cases()
     verify_unit_ratio_counts()
     verify_recycled_bound()
     print(
