@@ -24,13 +24,17 @@ def verify_support_rank_grid() -> int:
     checks = 0
     support_types = range(3)
     ranks = range(3)
-    for threshold in range(1, 31):
-        for weights in product(range(7), repeat=9):
-            total = sum(weights)
-            if total < threshold:
-                continue
+    # Exhaust every 3x3 nonnegative grid with entries 0,1,2.
+    for weights in product(range(3), repeat=9):
+        total = sum(weights)
+        if total == 0:
+            continue
+        for threshold in range(1, total + 1):
             assert 9 * max(weights) >= threshold
-            rank_totals = [sum(weights[3 * s + r] for s in support_types) for r in ranks]
+            rank_totals = [
+                sum(weights[3 * support + rank] for support in support_types)
+                for rank in ranks
+            ]
             assert 3 * max(rank_totals) >= threshold
             checks += 1
     return checks
