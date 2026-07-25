@@ -67,7 +67,11 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR278--283 | Mod-six totient sieve, exact target-specific cleaning above \(0.42t\), a `floor(t/2000)` line reserve, and lower-height extraction | PROVED | `docs/113-prime-power-mod-six-height-cleaning.md` |
 | CMR284--287 | Exact width-two chord cases, width-three disjoint extraction, quadratic-inverse canonical mass, and cubic outside-cover expansion | PROVED | `docs/114-prime-power-thin-blocker-cover-expansion.md` |
 | CMR288--290 | Width-three seven-hole extraction, affine first/reverse-second moments, and nonconstant hole signatures for \(t\ge10\) | PROVED | `docs/115-prime-power-width-three-hole-signature.md` |
-| CMR291--293 | Width-two primitive continuation, internal/extension witnesses, and an \(Omega(\sqrt t)\) common gcd stratum | PROVED | `docs/116-prime-power-width-two-primitive-signatures.md` |
+| CMR291--293 | Width-two primitive continuation, internal/extension witnesses, and an \(\Omega(\sqrt t)\) common gcd stratum | PROVED | `docs/116-prime-power-width-two-primitive-signatures.md` |
+| CMR294--297 | Exact thin-blocker first-separation alphabet, width-two/width-three extraction, and absolute prefix-scale ownership | PROVED | `docs/117-prime-power-thin-blocker-first-separation-signatures.md` |
+| CMR298--301 | Width-three exact displacement moments, integer variance, 72 bounded parallel shifts, and the prime-\(p\ge11\) valuation consequence | PROVED | `docs/118-prime-power-width-three-variance-dichotomy.md` |
+| CMR302--305 | Thin-signature carry-cell capacity, square-root dispersion/heavy-cell dichotomy, and width-two/width-three consequences | PROVED | `docs/119-prime-power-thin-signature-carry-cells.md` |
+| CMR306--309 | Mixed-fan determinant factorization, shared-cell degeneracies, unit-ratio extraction, and recycled sharp-fan concentration | PROVED | `docs/120-prime-power-mixed-fan-ratio-signatures.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
