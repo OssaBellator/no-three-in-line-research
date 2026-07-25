@@ -53,15 +53,20 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR611--616 | Matching-vertex wall/disjoint-arm extraction, protected-touch bound, simultaneous star-arm absorption, finite star-growth budget, square-root execution, and the canonical secant-star endpoint | PROVED | `docs/177-prime-power-secant-star-protected-absorption.md` |
 | CMR617--622 | Protected/free flow balance, exact cross-skeleton product factorization, skeleton count, sparse-interface bound, threshold form, and the large-core endpoint | PROVED | `docs/178-prime-power-protected-core-interface-factorization.md` |
 | CMR623--628 | Skeleton recurrence, product diversity, protected-factor state expansion, cross-edge churn, labelled interface payment, and the large-core history endpoint | PROVED | `docs/179-prime-power-protected-skeleton-history.md` |
+| CMR629--635 | Exact pure/mixed conflict decomposition, sparse mixed-atom stock, product-rectangle occurrence, dirty-product concentration, low-rank protected prescriptions, matching-preserving deletion, and the product-potential endpoint | PROVED | `docs/180-prime-power-product-conflict-rectangle.md` |
+| CMR636--642 | Exact essential contraction, mixed-atom trigger transfer, rank-one/rank-two free triggers, forced product certificates, free-factor deletion, finite alternating depth, and the essential-prescription endpoint | PROVED | `docs/181-prime-power-essential-prescription-transfer.md` |
+| CMR643--648 | Essentiality-loss entering-edge support, alternating-cycle component payment, forced-certificate escape trichotomy, finite witness stock, exact token/churn payment, and the forced-product endpoint | PROVED | `docs/182-prime-power-forced-product-certificate-escape.md` |
+| CMR649--655 | Complete essential-core contraction, exact core-rank conflict decomposition, anchored low-rank prescriptions, canonical deletion step, finite pure-factor recursion, private restoration code, and the pure-factor endpoint | PROVED | `docs/183-prime-power-pure-factor-essential-recursion.md` |
+| CMR656--663 | Canonical factor prefix envelope, first child split, exact transport tables, vertex-routing product factorization, routing stock and recurrence, heavy/dispersed child cells, and the factor-prefix recursion endpoint | PROVED | `docs/184-prime-power-factor-prefix-routing.md` |
 
-The branch still does not prove the all-`n` conjecture. After CMR628, fixed
-heavy lines and secant stars have direct monotone protected executions, while a
-large protected core has an exact sparse-interface product decomposition.
-Frequent skeleton changes pay cross-edge churn; repeated skeletons force state
-diversity in the small free factor or in one fixed protected factor. All
-selector, protected-state, line, token, skeleton, and interface charges remain
-owner-labelled. The remaining frontier is to attach the candidate-conflict
-potential to the two product factors: recurse on the small free factor, charge
-the sparse interface, or convert protected-factor expansion into strict
-potential decrease, reserve depletion, deletion ancestry, full-token return,
-or envelope expansion.
+The branch still does not prove the all-`n` conjecture. After CMR663, candidate-
+conflict potential respects the exact protected/free product, fully essential
+mixed prescriptions contract or transfer to the bounded free side, forced
+product certificates have deletion/skeleton/entering-edge escape payment, and
+pure-factor obstructions undergo finite complete-core contraction and anchored
+deletion. Every surviving reduced factor has one canonical prime-power prefix
+envelope and a finite routing-skeleton decomposition into strict child-block
+products. The remaining frontier is payment across a recurrent child product:
+recurse on strict child hosts, charge cross-child mixed atoms by another sparse
+low-rank rectangle, or convert repeated routing changes into full-token return,
+closure-envelope expansion, deletion ancestry, or strict potential decrease.
