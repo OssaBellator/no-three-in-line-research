@@ -43,7 +43,8 @@ with the row.  The line `L_a` is nonhorizontal because `x_a!=x_u`.  Hence
 `L_a=L_(a')` would force `P_a=P_(a')`, impossible. \(\square\)
 
 Let `Z` be the fixed selected background.  Saturation gives `|Z|<=2n`.
-A directed-path blocker is exactly a pair `(a,z)` with `z in Z cap L_a`.
+A directed-path blocker is exactly a pair `(a,z)` with `z in Z cap L_a`, with
+`z` distinct from both inserted candidate cells.
 
 ### Theorem PX365 -- PROVED USING SZEMEREDI--TROTTER
 
@@ -104,15 +105,16 @@ Each `f_a` varies on one fixed grid row or one fixed grid column, and each
 chosen so that no `f_a` lies on the coordinate line containing all `g_b`, and
 symmetrically.
 
-For a fixed selected anchor `z`, put an edge `a b` when `f_a,g_b,z` are
-collinear.
+For a fixed selected anchor `z`, put an edge `a b` when `f_a,g_b,z` are three
+distinct collinear cells.  The distinctness condition is automatic for an
+actual blocker because inserted buffer cells are unoccupied before the move.
 
 ### Theorem PX367 -- PROVED
 
 For every fixed anchor `z`, the relation
 
 \[
-\{(a,b):f_a,g_b,z\text{ are collinear}\}
+\{(a,b):f_a,g_b,z\text{ are distinct and collinear}\}
 \]
 
 is a partial matching between the `a`-labels and `b`-labels.  In particular it
@@ -121,10 +123,11 @@ has at most `n` edges.
 ### Proof
 
 Fix `a`.  The line through `f_a` and `z` is not the coordinate line containing
-all `g_b`, by the displayed nondegeneracy of the four PX353 cross types.  It
-therefore meets that coordinate line in at most one point, determining at most
-one `b`.  The same argument with `a,b` reversed gives degree at most one on the
-other side. \(\square\)
+all `g_b`: otherwise that line would contain `f_a`, contrary to the exact
+cross-type geometry.  It therefore meets the coordinate line in at most one
+point, determining at most one `b`.  The possibility `z=f_a` is excluded by
+the distinct-cell blocker condition.  The same argument with `a,b` reversed
+gives degree at most one on the other side. \(\square\)
 
 ### Corollary PX368 -- PROVED
 
@@ -171,7 +174,7 @@ one weighted terminal-return chain.
 
 Consider a one-variable coordinate family of candidate cells `f_a` lying on a
 fixed grid row or fixed grid column.  A rank-one blocker consists of `f_a` and
-two fixed selected points `z,z'`.
+two distinct fixed selected points `z,z'`.
 
 ### Theorem PX370 -- PROVED REDUCTION
 
@@ -211,5 +214,5 @@ python scripts/verify_product_buffer_return_sector_caps.py
 
 The verifier checks distinct directed-path lines on exact integer grids,
 verifies every mixed anchor fibre is a partial matching in all four cross
-shapes, confirms the `D<=64` consequence, and tests the coordinate-line
-degeneracy dichotomy.
+shapes under the distinct-cell condition, confirms the `D<=64` consequence,
+and tests the coordinate-line degeneracy dichotomy.
