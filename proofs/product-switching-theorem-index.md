@@ -2,7 +2,7 @@
 
 This index continues the product-construction ledger after PX97. It records
 the strong-complete switching, affine-square, marker-flow, affine-orbit,
-exact-cover, lattice, and absorber results developed on
+exact-cover, lattice, absorber, and sign-quotient results developed on
 `research/all-n-product-construction`.
 
 | ID | Statement | Status | Location |
@@ -57,6 +57,10 @@ exact-cover, lattice, and absorber results developed on
 | PX145 | Every two-point lattice leftover has an affine normal form | PROVED | `docs/86-two-point-lattice-absorbers.md` |
 | PX146 | Every two-point obstruction through prime order 13 has an absorber of order two | PROVED FINITE | `docs/86-two-point-lattice-absorbers.md` |
 | PX147 | Every two-point obstruction at orders 17 and 19 has an absorber of order at most three | PROVED FINITE | `docs/86-two-point-lattice-absorbers.md` |
+| PX148 | Odd strong-complete maps are exactly perfect matchings of the sign-pair quotient host | PROVED | `docs/82-sign-pair-quotient-matching.md` |
+| PX149 | The sign-pair quotient host is `(p-3)`-regular with pair codegree two and triple codegree one | PROVED | `docs/82-sign-pair-quotient-matching.md` |
+| PX150 | Explicit odd seeds through order 67 have `mu<2p` and `tau<=12` | PROVED FINITE | `docs/82-sign-pair-quotient-matching.md` |
+| PX151 | Rank-three spread in the quotient host gives optimal fixed-bin secant and triangle expectations | PROVED CONDITIONALLY | `docs/82-sign-pair-quotient-matching.md` |
 
 ## Current exact boundary
 
@@ -64,7 +68,8 @@ The switching-flow route is complete through the entire one-bridge nonlinear
 shell. The affine-orbit route has explicit constant-multiplicity seeds through
 order 53. The exact-cover route additionally proves a pseudorandom almost-seed
 for every sufficiently large prime and computes the complete lattice obstruction
-to exact completion.
+to exact completion. The sign-pair quotient supplies a smaller regular testbed
+with exact odd seeds through order 67 and the correct fixed-bin first moments.
 
 The next two proof obligations are now explicit.
 
