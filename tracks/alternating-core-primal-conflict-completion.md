@@ -406,9 +406,12 @@ make the canonical O1 chart exact on active literals and quantify every
 permitted light-cost coarsening.  AC3ad--AC3af in
 [`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
 route every current-context-localized target through exact drift and a
-rank-two residual audit.  The remaining frontier is global context
-localization and structured classification of the resulting paid
-depth-two kernel or residual-disjoint bank.
+rank-two residual audit.  AC3ag--AC3ai in
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+route the varying contexts at one fixed centre by dyadic paid
+colouring.  The remaining frontier is cross-centre hard-literal
+expansion and structured classification of the resulting paid context
+bank, depth-two kernel, or residual-block phase fan.
 
 `scripts/verify_ac_primal_conflicts.py` exhausts arbitrary Boolean
 factors on a four-cell system, grid factor/constraint states on a

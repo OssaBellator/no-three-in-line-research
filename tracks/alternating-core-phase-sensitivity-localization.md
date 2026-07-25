@@ -498,8 +498,13 @@ then handles every literal already localized to the current phase
 context.  AC3ad computes exact drift and hard safety, while
 AC3ae--AC3af reduce a nonimproving rank-three bucket to fixed
 collateral, a paid depth-two literal, or a quantitatively large
-residual-disjoint bank.  Thus only global context localization and
-arithmetic classification of those explicit outputs remain.
+residual-disjoint bank.
+
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+closes the varying-context mixture at one fixed centre by AC3ag--AC3ai.
+Thus only cross-centre hard-literal expansion and arithmetic
+classification of the paid context bank, depth-two kernel, or
+residual-block phase fan remain.
 
 `scripts/verify_ac_phase_sensitivity.py` exhausts Boolean behavior
 records on small phase products, checks the Hamming-edge criterion,

@@ -413,6 +413,13 @@ quantitative: a hard-safe nonimproving target with destroyed weight
 above \(\Delta\), or at least
 \(\lceil D/(4\Delta)\rceil\) residual-disjoint arms.
 
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+handles a fixed centre literal before current-context localization.
+AC3ag--AC3ai dyadically regularize its weight and return effectively
+rank-one mass, a paid simultaneously realizable context-disjoint bank,
+a paid depth-two literal, or many phase literals at one residual
+block.
+
 This router also explains the independent structured interfaces.
 
 - An order-\(h\) O1 block already supplies the explicit subgroup
@@ -433,9 +440,9 @@ frontier without conflating three different issues:
 
 - exact active-literal complexity;
 - quantitatively light collateral sensitivity; and
-- current-context localization of a large hard/heavy literal family;
-- arithmetic classification of the resulting depth-two kernel or
-  residual-disjoint bank.
+- cross-centre expansion of a large distinct hard-literal family;
+- arithmetic classification of a paid context-disjoint bank,
+  depth-two kernel, or residual-block phase fan.
 
 `scripts/verify_ac_orbit_literal_charts.py` exhausts small canonical
 check systems, verifies exact chart factorization and the observational
@@ -445,3 +452,5 @@ the O1 phase/channel lower bound on small prime fields.
 rank-at-most-three target buckets, including rigid auxiliary phases,
 and checks their exact drift, residual transversals, and paid matching
 bounds.
+`scripts/verify_ac_global_literal_contexts.py` exhausts the corresponding
+global fixed-centre context families and checks dyadic paid extraction.

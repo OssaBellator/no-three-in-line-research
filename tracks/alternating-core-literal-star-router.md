@@ -339,11 +339,16 @@ The last two outputs enter AC3v--AC3x and the existing
 anchor/carry/BDA/RI role dictionary.  They are not generic “many
 literals.”
 
-What remains arithmetic is context localization for a large global
-hard-literal family or heavy-soft kernel, followed by scope-complete
-collateral control of the bounded transversal or disjoint-arm output.
-No payment is inferred from a phase label which is inactive at the
-current context.
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+handles the complementary case in which one fixed centre literal has
+large global weight spread across different contexts.  AC3ag--AC3ai
+return effectively rank-one mass, a paid simultaneously activatable
+context bank, a depth-two literal, or a one-block phase fan.
+
+What remains arithmetic is cross-centre expansion for many distinct
+hard literals and scope-complete collateral control or structured
+classification of those last three global outputs.  No payment is
+inferred from a phase label which is inactive at the current context.
 
 `scripts/verify_ac_literal_star_router.py` exhausts small rank-at-most
 three canonical check systems, compares every phase-bucket drift with

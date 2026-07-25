@@ -69,6 +69,12 @@ effectively rank-one obstruction, a bounded transversal, a paid
 depth-two literal, or a residual-disjoint bank.  They do not assume a
 global OP2 expansion theorem or promote an RI/BDA label to a terminal
 absorber.
+AC3ag--AC3ai are also internal.  At one fixed global centre literal
+they turn varying residual contexts into an effectively rank-one
+class, a paid simultaneously realizable context bank, a depth-two
+literal, or a residual-block phase fan.  Cross-centre hard-literal
+expansion and the arithmetic classification of these outputs remain
+explicit OP2/RI/BDA interfaces.
 
 ## Independent selection endpoints
 

@@ -321,7 +321,13 @@ improvement, an effectively rank-one target, a bounded auxiliary
 transversal, a paid depth-two literal, or a quantitatively large
 residual-disjoint bank.
 
-## Dictionary after AC3s--AC3af
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+proves AC3ag--AC3ai before that localization for one fixed centre
+literal.  A dyadic paid stratum has either bounded residual degree and
+a constant-fraction context-disjoint colour class, or high residual
+degree refining to a paid depth-two literal or a one-block phase fan.
+
+## Dictionary after AC3s--AC3ai
 
 For a canonical phase-block certificate token in a scope-complete
 support-conflict graph, the same-token branch now has a finite audit:
@@ -342,9 +348,12 @@ support-conflict graph, the same-token branch now has a finite audit:
 6. **localized literal star:** AC3ad--AC3af route an activated target
    bucket to an improvement, fixed collateral, a bounded transversal,
    a paid depth-two literal, or a residual-disjoint bank;
-7. **global arithmetic obstruction:** one block has a large
-   hard-literal family or a paid heavy-literal kernel whose current
-   contexts have not yet been localized, entering OP2 expansion or an
+7. **global fixed-centre star:** AC3ag--AC3ai route its residual
+   contexts to fixed mass, a paid context-disjoint bank, a depth-two
+   literal, or a residual-block phase fan;
+8. **cross-centre arithmetic obstruction:** one block has a large
+   family of distinct hard centre literals, or one of the global
+   outputs still needs installation, entering OP2 expansion or an
    explicit RI/BDA structured interface.
 
 A token which is not represented by canonical phase blocks remains in
@@ -360,8 +369,10 @@ incidence type.  AC3y then localizes phase sensitivity at an additional
 loss of at most nine.  AC3aa makes the canonical chart complete without
 including unused phases, and AC3ac quantifies the only permitted soft
 coarsening.  AC3ad--AC3af close every current-context-localized target.
-The remaining role frontier is global context localization and
-arithmetic treatment of the paid depth-two or residual-disjoint output.
+AC3ag--AC3ai close the residual-context mixture at each fixed centre.
+The remaining role frontier is cross-centre hard-literal expansion and
+arithmetic treatment of the paid context bank, depth-two kernel, or
+residual-block phase fan.
 
 `scripts/verify_ac_canonical_roles.py` checks the rank-three mismatch
 bound, exact and compressed product relations, sensitivity witnesses,
@@ -376,3 +387,6 @@ bound.
 `scripts/verify_ac_literal_star_router.py` checks exact target-bucket
 drift and safety, effectively rank-one targets, residual
 matching/transversal duality, and the paid \(D/(4\Delta)\) output.
+`scripts/verify_ac_global_literal_contexts.py` checks simultaneous
+context realization, dyadic paid colouring, and high-degree phase
+refinement.

@@ -357,15 +357,23 @@ hard-safe nonimproving target returns at least \(D/2\) unavoidable
 collateral, a depth-two literal of load \(>\Delta\), or at least
 \(\lceil D/(4\Delta)\rceil\) residual-disjoint arms.
 
-The remaining canonical role frontier is therefore **context
-localization** for a large global hard-literal family or paid
-heavy-literal kernel, followed by the scope-complete arithmetic
-classification of the resulting depth-two kernel or residual-disjoint
-bank.  BDA residue charts and RI subgroup-coset labels remain delegated
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+proves AC3ag--AC3ai for the preceding global-to-current gap at one fixed
+centre literal.  After one exact dyadic regularization, a weighted
+rank-three centre star returns effectively rank-one mass, a
+simultaneously activatable residual-disjoint context bank retaining an
+explicit \(1/(K(2d-1))\) fraction, a paid depth-two literal, or at least
+\(\lfloor d/e\rfloor+1\) phase literals at one residual block.
+
+The remaining canonical role frontier is therefore cross-centre
+expansion of a large family of distinct hard literals and the
+scope-complete arithmetic classification/installation of the
+context-disjoint bank, depth-two kernel, or one-block phase fan.
+BDA residue charts and RI subgroup-coset labels remain delegated
 interfaces with their own collateral hypotheses.  Arbitrary
 multi-block sensitivity, irrelevant raw phase multiplicity,
-unrecorded light-cost error, and an already activated target bucket are
-closed.
+unrecorded light-cost error, an already activated target bucket, and
+the global residual-context mixture at one fixed centre are closed.
 
 ## AC4 — Alternating two-colour carry-core termination
 
@@ -460,6 +468,8 @@ upgrade AC6 while those inputs remain open.
   localization;
 - exhaust canonical active-literal charts, O1 channel injectivity, and
   the hard-exact heavy-soft \(2\tau\) derivative bound;
+- exhaust global fixed-centre context families, dyadic paid colour
+  classes, and high-degree depth-two/phase-fan refinements;
 - preserve the `p=11` frozen example as a mandatory regression test;
 - test all dyadic-scale invariants after each generated joint switch.
 

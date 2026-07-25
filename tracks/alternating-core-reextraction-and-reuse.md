@@ -666,10 +666,12 @@ full O1 channel may genuinely have \(h\) observable labels.  The
 AC3ad--AC3af continuation computes exact drift after one literal is
 localized to the current context and returns an effectively rank-one
 target, bounded transversal, paid depth-two literal, or
-residual-disjoint bank.  The remaining geometric obligation is
-therefore global context localization and classification of those last
-two explicit outputs, rather than an unspecified same-chart
-derivative.
+residual-disjoint bank.  AC3ag--AC3ai then dyadically route all
+contexts at one fixed centre to a paid context-disjoint bank, a
+depth-two literal, or a residual-block phase fan.  The remaining
+geometric obligation is therefore cross-centre hard-literal expansion
+and classification of those explicit outputs, rather than an
+unspecified same-chart derivative.
 
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through

@@ -96,6 +96,9 @@ The numbering is local to this repository.
 | AC3ad | A current-context phase bucket has exact drift \(C-D\) and exact hard-safety test | PROVED | `tracks/alternating-core-literal-star-router.md` |
 | AC3ae | An activated rank-three bucket has an effectively rank-one target, bounded transversal, or residual-disjoint matching | PROVED | `tracks/alternating-core-literal-star-router.md` |
 | AC3af | A hard-safe nonimproving bucket gives \(D/2\) fixed collateral, a depth-two load above \(\Delta\), or \(\lceil D/(4\Delta)\rceil\) disjoint residual arms | PROVED | `tracks/alternating-core-literal-star-router.md` |
+| AC3ag | A global rank-three centre star has a realizable residual matching whose union is a transversal of at most twice its size | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
+| AC3ah | Dyadic regularization gives a paid context-disjoint family or a high residual-block degree | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
+| AC3ai | High residual-block degree gives a paid depth-two literal or at least \(\lfloor d/e\rfloor+1\) phase labels | PROVED | `tracks/alternating-core-global-literal-contexts.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

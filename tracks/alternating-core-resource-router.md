@@ -244,9 +244,11 @@ at most \(3W/\tau\) heavy literals.  AC3ab proves that the full O1
 channel itself may require all \(h\) labels.  AC3ad--AC3af close every
 literal already activated at one current context, returning exact
 fixed collateral, a paid depth-two literal, or a residual-disjoint
-bank when no phase improves.  What remains is global context
-localization and arithmetic or RI/BDA classification of those last two
-outputs.
+bank when no phase improves.  AC3ag--AC3ai close the varying-context
+mixture at each fixed centre by paid dyadic colouring and phase
+refinement.  What remains is cross-centre hard-literal expansion and
+arithmetic or RI/BDA classification of the paid context bank,
+depth-two kernel, or residual-block phase fan.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

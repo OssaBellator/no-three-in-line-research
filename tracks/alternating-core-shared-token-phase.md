@@ -344,9 +344,13 @@ AC3ad--AC3af continuation in
 [`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
 closes any target bucket already localized to the current context by
 exact drift and a rank-two residual matching/transversal audit.  The
-remaining geometric check is therefore context localization of the
-global hard/heavy literal family and structured classification of its
-paid depth-two or residual-disjoint output.
+AC3ag--AC3ai continuation in
+[`alternating-core-global-literal-contexts.md`](alternating-core-global-literal-contexts.md)
+closes the residual-context mixture at one fixed global centre by
+dyadic paid colouring and phase refinement.  The remaining geometric
+check is therefore cross-centre expansion of distinct hard literals
+and structured classification of the paid context bank, depth-two
+kernel, or residual-block phase fan.
 
 The important remaining numerical case is no longer an unbounded fan.
 It is the finite phase-collateral profile in AC3p.1.  Repeated factors
@@ -360,3 +364,5 @@ canonical charts, thresholded derivative bounds, and O1 lower bound.
 `scripts/verify_ac_literal_star_router.py` checks the localized
 hard/soft bucket drift, rigid residual coordinates, and quantitative
 paid matching alternative.
+`scripts/verify_ac_global_literal_contexts.py` checks all small global
+fixed-centre context families over a nonuniform alphabet.
