@@ -241,9 +241,12 @@ gives the canonical O1 role an exact chart supported only on literals
 actually used by active checks.  AC3ac makes every hard literal exact
 and bounds a light one-block collateral derivative by \(2\tau\), with
 at most \(3W/\tau\) heavy literals.  AC3ab proves that the full O1
-channel itself may require all \(h\) labels.  What remains is the
-arithmetic expansion or RI/BDA classification of a large hard-literal
-family or paid heavy-literal kernel.
+channel itself may require all \(h\) labels.  AC3ad--AC3af close every
+literal already activated at one current context, returning exact
+fixed collateral, a paid depth-two literal, or a residual-disjoint
+bank when no phase improves.  What remains is global context
+localization and arithmetic or RI/BDA classification of those last two
+outputs.
 
 `scripts/verify_ac_resource_router.py` exhausts all simple anchor-link
 graphs through six outside endpoints, checks the exact nested colouring

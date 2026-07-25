@@ -340,8 +340,13 @@ isolates only active hard and soft phase literals.  Its thresholded
 version keeps hard relations exact and charges less than \(2\tau\) for
 one light-coordinate collateral derivative, while a large exact O1
 channel is proved to be a genuine \(h\)-label obstruction.  The
-remaining geometric check is expansion or structured classification of
-the resulting large hard-literal family or paid heavy-literal kernel.
+AC3ad--AC3af continuation in
+[`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
+closes any target bucket already localized to the current context by
+exact drift and a rank-two residual matching/transversal audit.  The
+remaining geometric check is therefore context localization of the
+global hard/heavy literal family and structured classification of its
+paid depth-two or residual-disjoint output.
 
 The important remaining numerical case is no longer an unbounded fan.
 It is the finite phase-collateral profile in AC3p.1.  Repeated factors
@@ -352,3 +357,6 @@ families, checks the bounded core and phase-loss potential, and compares
 the additive message formula with brute-force private-state products.
 `scripts/verify_ac_orbit_literal_charts.py` separately checks the exact
 canonical charts, thresholded derivative bounds, and O1 lower bound.
+`scripts/verify_ac_literal_star_router.py` checks the localized
+hard/soft bucket drift, rigid residual coordinates, and quantitative
+paid matching alternative.

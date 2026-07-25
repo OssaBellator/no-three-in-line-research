@@ -403,9 +403,12 @@ one discrepancy kind, and exact phase values compress to their
 behavioral quotient.  AC3aa--AC3ac in
 [`alternating-core-orbit-literal-charts.md`](alternating-core-orbit-literal-charts.md)
 make the canonical O1 chart exact on active literals and quantify every
-permitted light-cost coarsening.  The remaining frontier is expansion
-or structured classification of a large hard-literal family or paid
-heavy-literal kernel.
+permitted light-cost coarsening.  AC3ad--AC3af in
+[`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
+route every current-context-localized target through exact drift and a
+rank-two residual audit.  The remaining frontier is global context
+localization and structured classification of the resulting paid
+depth-two kernel or residual-disjoint bank.
 
 `scripts/verify_ac_primal_conflicts.py` exhausts arbitrary Boolean
 factors on a four-cell system, grid factor/constraint states on a

@@ -314,7 +314,14 @@ bounds a light one-block collateral derivative by \(2\tau\).  Exact O1
 channels can nevertheless require all \(h\) labels, so a large hard
 literal family is retained as a real arithmetic obstruction.
 
-## Dictionary after AC3s--AC3ac
+[`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
+proves AC3ad--AC3af for each such obstruction after it is localized to
+one current context.  Exact drift routes it to an immediate
+improvement, an effectively rank-one target, a bounded auxiliary
+transversal, a paid depth-two literal, or a quantitatively large
+residual-disjoint bank.
+
+## Dictionary after AC3s--AC3af
 
 For a canonical phase-block certificate token in a scope-complete
 support-conflict graph, the same-token branch now has a finite audit:
@@ -332,8 +339,12 @@ support-conflict graph, the same-token branch now has a finite audit:
 5. **hard-exact light collateral:** AC3ac isolates every hard and heavy
    literal and charges less than \(2\tau\) for each same-chart
    one-block collateral derivative;
-6. **arithmetic obstruction:** one block has a large hard-literal
-   family or a paid heavy-literal kernel, entering OP2 expansion or an
+6. **localized literal star:** AC3ad--AC3af route an activated target
+   bucket to an improvement, fixed collateral, a bounded transversal,
+   a paid depth-two literal, or a residual-disjoint bank;
+7. **global arithmetic obstruction:** one block has a large
+   hard-literal family or a paid heavy-literal kernel whose current
+   contexts have not yet been localized, entering OP2 expansion or an
    explicit RI/BDA structured interface.
 
 A token which is not represented by canonical phase blocks remains in
@@ -348,8 +359,9 @@ current paid weight while localizing the failure to one structural
 incidence type.  AC3y then localizes phase sensitivity at an additional
 loss of at most nine.  AC3aa makes the canonical chart complete without
 including unused phases, and AC3ac quantifies the only permitted soft
-coarsening.  The remaining role frontier is the arithmetic treatment of
-the explicit large hard-literal family or paid heavy-literal kernel.
+coarsening.  AC3ad--AC3af close every current-context-localized target.
+The remaining role frontier is global context localization and
+arithmetic treatment of the paid depth-two or residual-disjoint output.
 
 `scripts/verify_ac_canonical_roles.py` checks the rank-three mismatch
 bound, exact and compressed product relations, sensitivity witnesses,
@@ -361,3 +373,6 @@ behavioral quotient exhaustively on small phase products.
 `scripts/verify_ac_orbit_literal_charts.py` checks exact active-literal
 factorization, hard/heavy/light bounds, and the O1 phase/channel lower
 bound.
+`scripts/verify_ac_literal_star_router.py` checks exact target-bucket
+drift and safety, effectively rank-one targets, residual
+matching/transversal duality, and the paid \(D/(4\Delta)\) output.

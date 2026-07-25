@@ -402,6 +402,17 @@ exhaustive audit.
    - a large heavy-literal kernel, carrying the explicit load
      \(\lambda(v,a)\geq\tau\).
 
+[`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
+continues this router after a literal has been localized to one current
+context.  AC3ad computes its exact hard safety and potential drift.
+AC3ae reduces every activated rank-three bucket to effectively
+rank-one collateral, a bounded auxiliary transversal, or a
+residual-disjoint matching.  AC3af makes the last alternative
+quantitative: a hard-safe nonimproving target with destroyed weight
+\(D\) has \(D/2\) unavoidable collateral, a depth-two literal load
+above \(\Delta\), or at least
+\(\lceil D/(4\Delta)\rceil\) residual-disjoint arms.
+
 This router also explains the independent structured interfaces.
 
 - An order-\(h\) O1 block already supplies the explicit subgroup
@@ -422,9 +433,15 @@ frontier without conflating three different issues:
 
 - exact active-literal complexity;
 - quantitatively light collateral sensitivity; and
-- arithmetic expansion of a large hard-literal family.
+- current-context localization of a large hard/heavy literal family;
+- arithmetic classification of the resulting depth-two kernel or
+  residual-disjoint bank.
 
 `scripts/verify_ac_orbit_literal_charts.py` exhausts small canonical
 check systems, verifies exact chart factorization and the observational
 quotient bound, enumerates the hard/heavy/light inequalities, and checks
 the O1 phase/channel lower bound on small prime fields.
+`scripts/verify_ac_literal_star_router.py` then exhausts the localized
+rank-at-most-three target buckets, including rigid auxiliary phases,
+and checks their exact drift, residual transversals, and paid matching
+bounds.

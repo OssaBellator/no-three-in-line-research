@@ -663,9 +663,13 @@ a complete chart from exactly the canonical phase literals used by the
 active checks; AC3ac keeps hard behavior exact while bounding any
 one-block light-collateral derivative by \(2\tau\).  AC3ab shows that a
 full O1 channel may genuinely have \(h\) observable labels.  The
-remaining geometric obligation is therefore expansion or
-classification of a large hard-literal family or paid heavy-literal
-kernel, rather than an unspecified same-chart derivative.
+AC3ad--AC3af continuation computes exact drift after one literal is
+localized to the current context and returns an effectively rank-one
+target, bounded transversal, paid depth-two literal, or
+residual-disjoint bank.  The remaining geometric obligation is
+therefore global context localization and classification of those last
+two explicit outputs, rather than an unspecified same-chart
+derivative.
 
 `scripts/verify_ac_reextraction.py` exhaustively checks the weighted
 colouring bound through six objects, the directed-cycle criterion through

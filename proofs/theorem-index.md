@@ -90,6 +90,12 @@ The numbering is local to this repository.
 | AC3x | Dense canonical conflicts localize with current paid weight to one of finitely many structural incidence labels | PROVED | `tracks/alternating-core-primal-conflict-completion.md` |
 | AC3y | Literal invariance is equivalent to vanishing on all one-block phase derivatives, with weighted failures localized at loss at most \(9\) | PROVED | `tracks/alternating-core-phase-sensitivity-localization.md` |
 | AC3z | Exact phases compress to the coordinate observational quotient; every arithmetic chart is complete or exposes a same-label one-block derivative | PROVED | `tracks/alternating-core-phase-sensitivity-localization.md` |
+| AC3aa | Canonical rank-three checks factor exactly through their active phase-literal chart | PROVED | `tracks/alternating-core-orbit-literal-charts.md` |
+| AC3ab | Exact O1 cell probes and modular-hyperbola channels may require all \(h\) phase labels | PROVED | `tracks/alternating-core-orbit-literal-charts.md` |
+| AC3ac | Hard-exact heavy-soft charts have one-block error below \(2\tau\) and at most \(3W/\tau\) heavy literals | PROVED | `tracks/alternating-core-orbit-literal-charts.md` |
+| AC3ad | A current-context phase bucket has exact drift \(C-D\) and exact hard-safety test | PROVED | `tracks/alternating-core-literal-star-router.md` |
+| AC3ae | An activated rank-three bucket has an effectively rank-one target, bounded transversal, or residual-disjoint matching | PROVED | `tracks/alternating-core-literal-star-router.md` |
+| AC3af | A hard-safe nonimproving bucket gives \(D/2\) fixed collateral, a depth-two load above \(\Delta\), or \(\lceil D/(4\Delta)\rceil\) disjoint residual arms | PROVED | `tracks/alternating-core-literal-star-router.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `tracks/alternating-core-formal-termination.md` |
 | AC6a | Prime-minus-one assembly from the AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `tracks/alternating-core-formal-termination.md` |

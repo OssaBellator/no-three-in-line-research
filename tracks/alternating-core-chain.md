@@ -346,12 +346,26 @@ literals is at most \(3W/\tau\).  This is sharp: the O1 channel
 \(a\lambda^{-t}\) is injective in \(t\), and a behavior record
 containing all cell probes needs all \(h\) phase labels.
 
-The remaining canonical role frontier is therefore a large family of
-distinct hard phase literals, or a paid heavy-literal kernel; it is the
-explicit OP2 arithmetic-expansion input.  BDA residue charts and RI
-subgroup-coset labels remain delegated interfaces with their own
-collateral hypotheses.  Arbitrary multi-block sensitivity, irrelevant
-raw phase multiplicity, and unrecorded light-cost error are closed.
+[`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
+proves AC3ad--AC3af once one of those literals is localized at the
+current phase context.  Its exact one-block drift either improves,
+finds a hard target exclusion, or pays the target bucket at the current
+destroyed-weight scale.  Because canonical checks have rank at most
+three, the remaining activated literals form an effective rank-at-most
+two hypergraph.  A maximal matching gives an exact transversal, and a
+hard-safe nonimproving target returns at least \(D/2\) unavoidable
+collateral, a depth-two literal of load \(>\Delta\), or at least
+\(\lceil D/(4\Delta)\rceil\) residual-disjoint arms.
+
+The remaining canonical role frontier is therefore **context
+localization** for a large global hard-literal family or paid
+heavy-literal kernel, followed by the scope-complete arithmetic
+classification of the resulting depth-two kernel or residual-disjoint
+bank.  BDA residue charts and RI subgroup-coset labels remain delegated
+interfaces with their own collateral hypotheses.  Arbitrary
+multi-block sensitivity, irrelevant raw phase multiplicity,
+unrecorded light-cost error, and an already activated target bucket are
+closed.
 
 ## AC4 — Alternating two-colour carry-core termination
 

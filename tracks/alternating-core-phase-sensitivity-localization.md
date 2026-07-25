@@ -493,6 +493,14 @@ exact chart from active phase literals, AC3ab proves the sharp
 keeps hard behavior exact while bounding every light one-block
 collateral derivative by \(2\tau\).
 
+[`alternating-core-literal-star-router.md`](alternating-core-literal-star-router.md)
+then handles every literal already localized to the current phase
+context.  AC3ad computes exact drift and hard safety, while
+AC3ae--AC3af reduce a nonimproving rank-three bucket to fixed
+collateral, a paid depth-two literal, or a quantitatively large
+residual-disjoint bank.  Thus only global context localization and
+arithmetic classification of those explicit outputs remain.
+
 `scripts/verify_ac_phase_sensitivity.py` exhausts Boolean behavior
 records on small phase products, checks the Hamming-edge criterion,
 constructs the coordinate observational quotient, audits coarse and

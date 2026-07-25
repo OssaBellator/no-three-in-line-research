@@ -62,6 +62,13 @@ collateral error and at most \(3W/\tau\) heavy literals.  A large hard
 literal family remains an OP2 input; a subgroup-coset or
 bounded-denominator label is not called terminal until the independent
 RI or BDA paid-collateral interface applies.
+AC3ad--AC3af are again internal finite combinatorics.  Once OP2 or the
+main chain localizes a literal to the current phase context, they
+compute exact drift and reduce the activated rank-three bucket to an
+effectively rank-one obstruction, a bounded transversal, a paid
+depth-two literal, or a residual-disjoint bank.  They do not assume a
+global OP2 expansion theorem or promote an RI/BDA label to a terminal
+absorber.
 
 ## Independent selection endpoints
 
