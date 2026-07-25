@@ -58,16 +58,22 @@ supplement mirrors the collision-free live range recorded in
 | CMR643--648 | Essentiality-loss entering-edge support, alternating-cycle component payment, forced-certificate escape trichotomy, finite witness stock, exact token/churn payment, and the forced-product endpoint | PROVED | `docs/182-prime-power-forced-product-certificate-escape.md` |
 | CMR649--655 | Complete essential-core contraction, exact core-rank conflict decomposition, anchored low-rank prescriptions, canonical deletion step, finite pure-factor recursion, private restoration code, and the pure-factor endpoint | PROVED | `docs/183-prime-power-pure-factor-essential-recursion.md` |
 | CMR656--663 | Canonical factor prefix envelope, first child split, exact transport tables, vertex-routing product factorization, routing stock and recurrence, heavy/dispersed child cells, and the factor-prefix recursion endpoint | PROVED | `docs/184-prime-power-factor-prefix-routing.md` |
+| CMR664--670 | Exact multi-child pure/mixed decomposition, child-rank vectors, Cartesian occurrence boxes, distinguished-child atom stock, dirty-product concentration, low-rank child triggers, and essentiality action | PROVED | `docs/185-prime-power-multi-child-conflict-rectangles.md` |
+| CMR671--676 | Changed-routing conservation, entering/leaving support, alternating-component union, finite routing-change stock, exact token/recreation payment, and the routing-history endpoint | PROVED | `docs/186-prime-power-routing-change-edge-support.md` |
+| CMR677--683 | Active mixed-atom criterion, forced/deletable split, matching-preserving deletion, monotone finite recursion, mixed-clean additivity, and strict child descent | PROVED | `docs/187-prime-power-mixed-child-deletion-recursion.md` |
+| CMR684--690 | Forced child-product terminality, finite signature and stage stock, recurrence, deletion/routing/entering-edge escape, and forced-child ancestry | PROVED | `docs/188-prime-power-forced-child-certificate-ancestry.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR663, candidate-conflict potential respects the exact protected/free product,
-fully essential mixed prescriptions contract or transfer to the bounded free
-side, forced product certificates have deletion/skeleton/entering-edge escape
-payment, and pure-factor obstructions undergo finite complete-core contraction
-and anchored deletion. Every surviving reduced factor has one canonical prime-
-power prefix envelope and a finite routing-skeleton decomposition into strict
-child-block products. The remaining frontier is payment across a recurrent
-child product: recurse on strict child hosts, charge cross-child mixed atoms by
-another sparse low-rank rectangle, or convert repeated routing changes into
-full-token return, closure-envelope expansion, deletion ancestry, or strict
-potential decrease.
+CMR690, one recurrent child-routing product has a complete static and temporal
+normal form. Routing changes pay at least two entering and two leaving physical
+edges, with exact full-token incidence. Under a fixed routing skeleton, active
+cross-child conflicts are deleted monotonically unless they are forced by child
+essential cores; after at most `d^2` deletions, the product is globally clean,
+recurses into one strict child factor, or exposes one owner-labelled forced
+certificate. Strict child recursion decreases envelope side and factor side.
+Forced certificates have polynomial ancestry stock and can disappear only
+through certificate-edge deletion, routing churn, or genuinely entering factor
+edges. The remaining prime-power frontier is to aggregate this descending
+execution with inherited target-load descent, protected-reserve depletion, and
+the finite closure-envelope budget, then transfer the endpoint to prime fields
+and arbitrary side lengths.
