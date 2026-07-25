@@ -41,16 +41,13 @@ Let \(X\) be a subset of the residual left side.
 - If \(|X|\le\epsilon q\), one vertex of \(X\) has at least
   \((d-\eta)q\ge|X|\) residual neighbors.
 - If \(\epsilon q<|X|\le q'-\epsilon q\) and the complement of \(N(X)\)
-  had size at least \(\epsilon q\), superregular density would give an edge from
-  \(X\) to that complement, a contradiction. Hence
-  \(|N(X)|>q'-\epsilon q\ge|X|\).
+  had size at least \(\epsilon q\), lower regularity would give an edge from
+  \(X\) to that complement. Hence \(|N(X)|>q'-\epsilon q\ge|X|\).
 - If \(|X|>q'-\epsilon q\) and some right vertex had no neighbor in \(X\), all
   its neighbors would lie in a set of size below \(\epsilon q\), contradicting
   its residual degree.
 
 Thus Hall's condition holds. ∎
-
-The argument uses only lower regularity and minimum degree.
 
 ## 2. Cross-safe rectangles
 
@@ -103,17 +100,15 @@ The reservation deletes \(2k\le2\xi q<(d-\epsilon)q\) vertices from each side.
 Apply PP3or with \(\eta=2\xi\). The remaining statements are PP3om and the
 definition of cross-safe. ∎
 
-This removes residual matching as a separate issue in the superregular branch.
-
 ## 4. Source-valid residual matching
 
-Assume the endpoint bank has undergone the adaptive preparation PP3nr. Thus the
-unary-invalid and anchored-transition classes vanish, while the normalized
-support-rank-four anchored-pair and support-rank-at-least-four inserted-triple
-expression is \(o(1)\).
+Assume the endpoint bank has undergone the adaptive preparation PP3nr. Thus all
+unary-invalid endpoint arcs and anchored transitions have been removed by
+resource deletion, while the normalized support-rank-four anchored-pair and
+support-rank-at-least-four inserted-triple expression is \(o(1)\).
 
-Let \(q_0\) be the residual side size after rectangle resources are reserved.
-Assume
+Let \(q_0\) be the residual side size after rectangle resources are reserved, and
+assume
 
 \[
 q_0\ge\nu q
@@ -121,11 +116,10 @@ q_0\ge\nu q
 
 for a fixed constant \(\nu>0\).
 
-### Theorem PP3ov -- PROVED FROM SR1
+### Theorem PP3ov -- PROVED FROM PP3ip AND SR1
 
-Under the hypotheses of PP3ot and the adaptive preparation above, the residual
-superregular host contains a perfect matching \(M_0\) such that the retained
-source together with the cells of \(M_0\) is no-three-in-line.
+The residual source-safe host contains a perfect matching \(M_0\) such that the
+retained source together with the cells of \(M_0\) is no-three-in-line.
 
 Moreover, the uniform residual perfect-matching law has fixed-rank probability
 \(O_\nu(q_0^{-r})\), and conditioning on source validity preserves this bound up
@@ -133,24 +127,27 @@ to a constant factor for every fixed rank.
 
 #### Proof
 
-Deleting rectangle resources can only decrease every anchored-pair and
-inserted-triple pattern count. Replacing the original denominator \(q\) by
-\(q_0\ge\nu q\) changes the normalized rank-two and rank-three expressions by
-at most the constant factors \(\nu^{-2}\) and \(\nu^{-3}\). Hence their sum
-remains \(o(1)\).
+After PP3nr there is no unary-invalid arc among retained resources. Excluding the
+surviving original endpoint edges removes only a partial matching, so the
+forbidden complement of the residual host has maximum degree at most one.
+Because \(q_0\to\infty\), PP3ip makes this residual host superregular with density
+\(1-o(1)\). SR1 therefore gives a constant \(K=K(\nu)\) such that every
+prescribed residual matching of fixed rank \(r\) occurs with probability at most
+\((K/q_0)^r\).
 
-By PP3or, the residual host is superregular with fixed positive density. SR1
-therefore gives a constant \(K=K(d,\epsilon,\nu)\) such that every prescribed
-residual matching of rank \(r\le3\) occurs with probability at most
-\((K/q_0)^r\) in a uniform perfect matching.
+Reserving rectangle resources can only decrease every anchored-pair and
+inserted-triple pattern count. Replacing denominator \(q\) by
+\(q_0\ge\nu q\) changes the normalized rank-two and rank-three expressions by
+at most \(\nu^{-2}\) and \(\nu^{-3}\). Their sum remains \(o(1)\).
 
 The expected number of remaining source-invalid anchored pairs and inserted
-triples is consequently \(o(1)\). The unary-invalid and transition classes are
-absent by PP3nr. Thus a residual perfect matching with no source-invalid pattern
-exists.
+triples in a uniform residual perfect matching is therefore \(o(1)\). Unary
+source-invalid arcs and transitions are absent by construction, so a residual
+source-valid perfect matching exists.
 
 The source-valid event has probability \(1-o(1)\). Dividing any fixed-rank
-cylinder probability by this probability preserves the \(O(q_0^{-r})\) bound. ∎
+cylinder probability by this probability preserves the
+\(O_\nu(q_0^{-r})\) bound. ∎
 
 This matching absorbs every source-validity condition involving only residual
 matching cells. It may contribute a fixed base amount to the shadow-cost
@@ -160,8 +157,8 @@ objective, but it creates no empty geometric clause.
 
 ### Corollary PP3ow -- PROVED
 
-In the cross-safe superregular branch, choose the residual matching \(M_0\) from
-PP3ov and fix it before exposing rectangle states. Then:
+In the cross-safe adaptively prepared branch, choose the residual matching
+\(M_0\) from PP3ov and fix it before exposing rectangle states. Then:
 
 1. every no-three violation containing only retained-source points and residual
    matching cells is absent;
@@ -171,10 +168,9 @@ PP3ov and fix it before exposing rectangle states. Then:
    with the residual matching contribution absorbed into its constant and unary
    state tables.
 
-Consequently common-line rectangle conversion in the superregular branch is
-reduced to finding a satisfying rectangle-state assignment with negative exact
-cost. Residual matching and residual source validity are no longer separate
-obstructions.
+Consequently common-line rectangle conversion is reduced to finding a satisfying
+rectangle-state assignment with negative exact cost. Residual matching and
+residual source validity are no longer separate obstructions.
 
 #### Proof
 
@@ -189,13 +185,13 @@ cells contribute binary costs. ∎
 
 ### Corollary PP3ox -- PROVED
 
-For a superregular adaptively prepared endpoint host, the common-line rectangle
-branch has the following exact alternatives.
+For an adaptively prepared endpoint host, the common-line rectangle branch has
+the following exact alternatives.
 
 1. A linear cross-safe rectangle bank is saturation- and source-validity-
    installable. The only remaining task is a satisfiable negative-cost assignment
    for its rank-at-most-three CNF and quadratic shadow objective.
 2. The unary forbidden support contains a linear matching of cross cells.
 
-The genuinely separate residual-host issue is therefore confined to matchable
-but non-superregular endpoint hosts.
+The genuinely separate residual-host issue is confined to endpoint hosts that
+remain matchable but do not admit the near-complete adaptive cleanup.
