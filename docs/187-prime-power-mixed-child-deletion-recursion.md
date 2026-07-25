@@ -35,8 +35,7 @@ A mixed atom `T` is active if and only if
 
 \[
 \boxed{
-\operatorname{PM}(H_a;T_a)
-e\varnothing
+\left|\operatorname{PM}(H_a;T_a)\right|>0
 }
 \]
 
