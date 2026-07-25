@@ -1,99 +1,26 @@
 {
-  "range": "PX397-PX482",
-  "root": "PX482",
+  "range": "PX397-PX487",
+  "root": "PX487",
   "nodes": {
-    "PX397-403": {
-      "document": "docs/153-px63-one-hit-derangement-entry.md",
-      "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"],
-      "move_space": "rectangle_label",
-      "status": "entry_audited"
-    },
-    "PX404-410": {
-      "document": "docs/154-px64-line-cap-return-depth.md",
-      "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"],
-      "move_space": "arithmetic_only",
-      "status": "line_cap_audited"
-    },
-    "PX411-419": {
-      "document": "docs/155-channel-free-rectangle-label-return.md",
-      "depends_on": ["PX43", "PX61", "PX196", "PX200", "PX232", "PX233", "PX357"],
-      "move_space": "rectangle_label",
-      "status": "terminal_return_lifted"
-    },
-    "PX420-427": {
-      "document": "docs/156-host-compatible-first-generation-label-banks.md",
-      "depends_on": ["PX235", "PX240", "PX241", "PX242", "PX243", "PX411-419"],
-      "move_space": "rectangle_label",
-      "status": "first_generation_lifted"
-    },
-    "PX428-436": {
-      "document": "docs/157-paired-label-product-packet-decoder.md",
-      "depends_on": ["PX207", "PX208", "PX228", "PX300", "PX302", "PX305", "PX306", "PX411-419"],
-      "move_space": "rectangle_label",
-      "status": "packet_lifted"
-    },
-    "PX437-444": {
-      "document": "docs/158-paired-label-mixed-shadow-and-recurrence.md",
-      "depends_on": ["PX217", "PX218", "PX256", "PX257", "PX258", "PX259", "PX260", "PX261", "PX262", "PX411-419", "PX428-436"],
-      "move_space": "rectangle_label",
-      "status": "mixed_and_recurrence_lifted"
-    },
-    "PX445-450": {
-      "document": "docs/159-paired-label-large-block-and-asymptotic-loop.md",
-      "depends_on": ["PX225", "PX227", "PX263", "PX264", "PX265", "PX266", "PX324", "PX325", "PX326", "PX327", "PX328", "PX329", "PX394", "PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444"],
-      "move_space": "rectangle_label",
-      "status": "asymptotic_reduction"
-    },
-    "PX451-455": {
-      "document": "docs/160-dependency-and-effective-cutoff-audit.md",
-      "depends_on": ["PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444", "PX445-450"],
-      "move_space": "arithmetic_only",
-      "status": "dependency_and_cutoff_interface"
-    },
-    "PX456-460": {
-      "document": "docs/161-explicit-cartesian-triple-constant.md",
-      "depends_on": ["PX333", "PX451-455"],
-      "move_space": "arithmetic_only",
-      "status": "incidence_constant_effective"
-    },
-    "PX461-465": {
-      "document": "docs/162-explicit-nested-depth-envelope.md",
-      "depends_on": ["PX265", "PX266", "PX451-455"],
-      "move_space": "arithmetic_only",
-      "status": "nested_depth_effective"
-    },
-    "PX466-470": {
-      "document": "docs/163-explicit-divisor-witness-and-effective-exponents.md",
-      "depends_on": ["PX418", "PX445-450", "PX451-455"],
-      "move_space": "arithmetic_only",
-      "status": "divisor_and_return_exponents_effective"
-    },
-    "PX471-473": {
-      "document": "docs/164-packet-family-free-active-repair-path.md",
-      "depends_on": ["PX428-436", "PX445-450", "PX466-470"],
-      "move_space": "rectangle_label",
-      "status": "active_packet_parameter_removed"
-    },
-    "PX474-478": {
-      "document": "docs/165-explicit-common-asymptotic-cutoff.md",
-      "depends_on": ["PX456-460", "PX461-465", "PX466-470", "PX471-473", "PX445-450"],
-      "move_space": "arithmetic_only",
-      "status": "common_cutoff_effective"
-    },
-    "PX479-482": {
-      "document": "docs/166-exact-depth-plateau-cutoff-compression.md",
-      "depends_on": ["PX461-465", "PX474-478"],
-      "move_space": "arithmetic_only",
-      "status": "common_cutoff_compressed"
-    }
+    "PX397-403": {"document": "docs/153-px63-one-hit-derangement-entry.md", "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"], "move_space": "rectangle_label", "status": "entry_audited"},
+    "PX404-410": {"document": "docs/154-px64-line-cap-return-depth.md", "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"], "move_space": "arithmetic_only", "status": "line_cap_audited"},
+    "PX411-419": {"document": "docs/155-channel-free-rectangle-label-return.md", "depends_on": ["PX43", "PX61", "PX196", "PX200", "PX232", "PX233", "PX357"], "move_space": "rectangle_label", "status": "terminal_return_lifted"},
+    "PX420-427": {"document": "docs/156-host-compatible-first-generation-label-banks.md", "depends_on": ["PX235", "PX240", "PX241", "PX242", "PX243", "PX411-419"], "move_space": "rectangle_label", "status": "first_generation_lifted"},
+    "PX428-436": {"document": "docs/157-paired-label-product-packet-decoder.md", "depends_on": ["PX207", "PX208", "PX228", "PX300", "PX302", "PX305", "PX306", "PX411-419"], "move_space": "rectangle_label", "status": "packet_lifted"},
+    "PX437-444": {"document": "docs/158-paired-label-mixed-shadow-and-recurrence.md", "depends_on": ["PX217", "PX218", "PX256", "PX257", "PX258", "PX259", "PX260", "PX261", "PX262", "PX411-419", "PX428-436"], "move_space": "rectangle_label", "status": "mixed_and_recurrence_lifted"},
+    "PX445-450": {"document": "docs/159-paired-label-large-block-and-asymptotic-loop.md", "depends_on": ["PX225", "PX227", "PX263", "PX264", "PX265", "PX266", "PX324", "PX325", "PX326", "PX327", "PX328", "PX329", "PX394", "PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444"], "move_space": "rectangle_label", "status": "asymptotic_reduction"},
+    "PX451-455": {"document": "docs/160-dependency-and-effective-cutoff-audit.md", "depends_on": ["PX397-403", "PX404-410", "PX411-419", "PX420-427", "PX428-436", "PX437-444", "PX445-450"], "move_space": "arithmetic_only", "status": "dependency_and_cutoff_interface"},
+    "PX456-460": {"document": "docs/161-explicit-cartesian-triple-constant.md", "depends_on": ["PX333", "PX451-455"], "move_space": "arithmetic_only", "status": "incidence_constant_effective"},
+    "PX461-465": {"document": "docs/162-explicit-nested-depth-envelope.md", "depends_on": ["PX265", "PX266", "PX451-455"], "move_space": "arithmetic_only", "status": "nested_depth_effective"},
+    "PX466-470": {"document": "docs/163-explicit-divisor-witness-and-effective-exponents.md", "depends_on": ["PX418", "PX445-450", "PX451-455"], "move_space": "arithmetic_only", "status": "divisor_and_return_exponents_effective"},
+    "PX471-473": {"document": "docs/164-packet-family-free-active-repair-path.md", "depends_on": ["PX428-436", "PX445-450", "PX466-470"], "move_space": "rectangle_label", "status": "active_packet_parameter_removed"},
+    "PX474-478": {"document": "docs/165-explicit-common-asymptotic-cutoff.md", "depends_on": ["PX456-460", "PX461-465", "PX466-470", "PX471-473", "PX445-450"], "move_space": "arithmetic_only", "status": "common_cutoff_effective"},
+    "PX479-482": {"document": "docs/166-exact-depth-plateau-cutoff-compression.md", "depends_on": ["PX461-465", "PX474-478"], "move_space": "arithmetic_only", "status": "common_cutoff_compressed"},
+    "PX483-487": {"document": "docs/167-fourteenth-power-divisor-cutoff-compression.md", "depends_on": ["PX466-470", "PX479-482"], "move_space": "arithmetic_only", "status": "divisor_witness_optimized"}
   },
   "safety_rules": {
     "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
-    "forbidden_unlifted_move_phrases": [
-      "apply the individual-point replacement directly",
-      "arbitrary scalar endpoint rematching preserves factor compatibility",
-      "the inaccessible PX63 statement"
-    ],
+    "forbidden_unlifted_move_phrases": ["apply the individual-point replacement directly", "arbitrary scalar endpoint rematching preserves factor compatibility", "the inaccessible PX63 statement"],
     "required_constants": {
       "paired_support_four_denominator": 32768,
       "entry_good_bank_cylinder_factor": 9,
@@ -101,12 +28,15 @@
       "rectangle_point_type_count": 4,
       "label_family_count": 2,
       "cartesian_triple_constant": 320,
-      "divisor_constant_power_of_ten": 27,
-      "divisor_exponent_denominator": 6,
+      "original_divisor_constant_power_of_ten": 27,
+      "original_divisor_exponent_denominator": 6,
+      "optimized_divisor_constant_power_of_ten": 72,
+      "optimized_divisor_exponent_denominator": 7,
       "effective_threshold_numerator": 3,
       "effective_threshold_denominator": 5,
       "original_explicit_cutoff_power_of_ten": 4000,
-      "compressed_cutoff_power_of_ten": 3650,
+      "depth_plateau_cutoff_power_of_ten": 3650,
+      "optimized_divisor_cutoff_power_of_ten": 2950,
       "active_joint_packet_count": 0
     }
   }
