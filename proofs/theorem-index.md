@@ -33,6 +33,8 @@ This ledger records only branch-specific statements.
 | BDA5j | Failure after rank-one suppression localizes to a balanced floor or a heavy rank-two/rank-three term | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
 | BDA5k | A balanced floor localizes to one of four two-role blocker patterns and one finite arithmetic profile | PROVED | `docs/bounded-denominator-balanced-floor-localization.md` |
 | BDA5l | A failed bank with large balanced floor forces both role states to carry quantified exclusive collateral | PROVED | `docs/bounded-denominator-balanced-floor-localization.md` |
+| BDA5m | One- and two-cell role collateral obey exact homothetic determinant-address identities | PROVED | `docs/bounded-denominator-role-geometry.md` |
+| BDA5n | Heavy two-role collateral localizes to one of `36` ordered channel comparisons and an explicit affine/radial locus | PROVED | `docs/bounded-denominator-role-geometry.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
