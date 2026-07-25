@@ -35,14 +35,21 @@ def verify_direction_counts() -> None:
 
 
 def verify_harmonic_packets() -> None:
-    previous = harmonic_band(1)
-    for lower in range(2, 10_000):
-        current = harmonic_band(lower)
-        assert current < previous
-        previous = current
-        if lower >= 5:
-            assert current < Fraction(3, 4)
+    # The proof uses the exact telescoping difference
+    # S_{H+1}-S_H = -1/(2H(2H+1)). Checking that identity is linear-time;
+    # recomputing every exact harmonic sum up to H=10_000 is quadratic and
+    # needlessly creates enormous intermediate denominators.
+    for lower in range(1, 10_000):
+        difference = (
+            Fraction(1, 2 * lower)
+            + Fraction(1, 2 * lower + 1)
+            - Fraction(1, lower)
+        )
+        assert difference == -Fraction(1, 2 * lower * (2 * lower + 1))
+        assert difference < 0
+
     assert harmonic_band(5) == Fraction(1879, 2520)
+    assert harmonic_band(5) < Fraction(3, 4)
 
 
 def verify_degree_inequality() -> None:
@@ -67,8 +74,8 @@ def main() -> None:
     verify_harmonic_packets()
     verify_degree_inequality()
     print(
-        "verified harmonic band packing: direction counts, decreasing dyadic "
-        "weights, two-band capacity, and harmonic degree bounds"
+        "verified harmonic band packing: direction counts, exact dyadic "
+        "difference identity, two-band capacity, and harmonic degree bounds"
     )
 
 
