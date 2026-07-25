@@ -1,0 +1,54 @@
+{
+  "controller_pool_count": 2,
+  "records": [
+    {
+      "id": "petal-0",
+      "anchor": "z0",
+      "anchor_layer": "A",
+      "anchor_pool": 0,
+      "resources": ["col:r0", "row:r0", "col:p0", "row:p0", "col:z0", "row:z0"]
+    },
+    {
+      "id": "petal-1",
+      "anchor": "z1",
+      "anchor_layer": "A",
+      "anchor_pool": 0,
+      "resources": ["col:r1", "row:r1", "col:p1", "row:p1", "col:z1", "row:z1"]
+    },
+    {
+      "id": "petal-2",
+      "anchor": "z2",
+      "anchor_layer": "A",
+      "anchor_pool": 0,
+      "resources": ["col:r2", "row:r2", "col:p2", "row:p2", "col:z2", "row:z2"]
+    },
+    {
+      "id": "petal-3",
+      "anchor": "z3",
+      "anchor_layer": "A",
+      "anchor_pool": 1,
+      "resources": ["col:r3", "row:r3", "col:p3", "row:p3", "col:z3", "row:z3"]
+    },
+    {
+      "id": "petal-4",
+      "anchor": "z4",
+      "anchor_layer": "A",
+      "anchor_pool": null,
+      "resources": ["col:r4", "row:r4", "col:p4", "row:p4", "col:z4", "row:z4"]
+    },
+    {
+      "id": "petal-5",
+      "anchor": "z5",
+      "anchor_layer": "B",
+      "anchor_pool": null,
+      "resources": ["col:r5", "row:r5", "col:p5", "row:p5", "col:z5", "row:z5"]
+    },
+    {
+      "id": "petal-6",
+      "anchor": "z6",
+      "anchor_layer": "B",
+      "anchor_pool": 1,
+      "resources": ["col:r6", "row:r6", "col:p6", "row:p6", "col:z6", "row:z6"]
+    }
+  ]
+}
