@@ -1,0 +1,7 @@
+{
+  "n": 7,
+  "b": 6,
+  "centre": 0,
+  "cost_arc": [1, 2],
+  "clean_rule": "r_lt_t"
+}
