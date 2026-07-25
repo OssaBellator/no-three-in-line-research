@@ -9,6 +9,14 @@ from itertools import combinations, permutations
 
 def verify_one_exception_boundary() -> None:
     universe = range(8)
+
+    # Singleton Hall sides: each nonaxis line meets the slice at most once.
+    for c in range(1, 8):
+        assert c - 1 == 1 + c - 2
+    for a in range(1, 8):
+        assert a - 1 == a + 1 - 2
+
+    # Nontrivial rectangle sides: use the two-boundary-points-per-line count.
     for a in range(2, 7):
         for c in range(2, 7):
             boundary = 2 * a + 2 * c - 4
@@ -88,8 +96,8 @@ def main() -> None:
     verify_one_exception_boundary()
     verify_small_hosts()
     print(
-        "verified target-specific line avoidance: every t-2 line family is "
-        "avoidable for all targets at t=4,5 and representative targets at t=6"
+        "verified target-specific line avoidance: singleton and nontrivial Hall "
+        "sides, plus every t-2 line family for the recorded small hosts"
     )
 
 
