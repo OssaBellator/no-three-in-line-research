@@ -21,6 +21,9 @@ This ledger records only branch-specific results and corrections.
 | RI5e | Complete fibres admit a scale-mismatch, scale-growth, physical-star, or localized-scale audit | PROVED | `docs/rational-inverse-lift-coherence.md` |
 | RI5f | Physical completion debt decomposes into installable permutation cycles and boundary alternating paths | PROVED | `docs/rational-inverse-completion-debt.md` |
 | RI5g | Completion weight lies half on installable cycles or concentrates on one boundary path | PROVED | `docs/rational-inverse-completion-debt.md` |
+| RI5h | Closed completion components are jointly installable unless exactly one desired cell is blocker-occupied | PROVED | `docs/rational-inverse-two-layer-completion.md` |
+| RI5i | Singleton blocker occupancy yields half-weight installation or one heavy blocked component | PROVED | `docs/rational-inverse-two-layer-completion.md` |
+| RI5j | Multiple blocker occupancies admit a fixed-point-free replacement bank with AN1 cylinder bounds | PROVED | `docs/rational-inverse-two-layer-completion.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
