@@ -63,7 +63,7 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3cp–AC3cq | Every exact blocker prescription is one of nine crossed-rectangle path/cycle types | PROVED | `docs/alternating-core-ri-blocker-rectangle-geometry.md` |
 | AC3cr–AC3ct | All-I6 blocker paths/cycles have telescoping product laws and closure/affine routers | PROVED | `docs/alternating-core-ri-blocker-rectangle-geometry.md` |
 | AC3cu–AC3cx | New blocker cells common to every repair are zero except one universal two-closure crossed rectangle | PROVED | `docs/alternating-core-ri-fixed-blocker-collateral.md` |
-| AC3cy–AC3da | Every state-independent new union triple is supported on closure cells, a closure rectangle, or one `mh=2` transfer rectangle | PROVED | `docs/alternating-core-ri-state-independent-union.md` |
+| AC3cy–AC3da | Every state-independent new union triple is supported on closure cells, a closure rectangle, or one `mh=2` layer-transfer rectangle | PROVED | `docs/alternating-core-ri-state-independent-union.md` |
 | AC3db–AC3df | Incomplete fibres and root imbalance yield carry defects, off-family current companions, or `1/51` one-cell completion families | PROVED | `docs/alternating-core-ri-missing-companions.md` |
 | AC3dg–AC3di | Coherent scale dispersion has at most thirty conflict ratios and a row-column-disjoint `1/31` scale bank | PROVED | `docs/alternating-core-ri-scale-dispersion.md` |
 | AC3dj–AC3dk | Reflected `CD` roles have exact effective denominators and finite profiles without a cancellation-height label | PROVED (imports BDA5aa–BDA5ad) | `docs/alternating-core-bda-reflected-role.md` |
@@ -82,23 +82,27 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3eg | Endpoint and variation fronts compose with AC3am at `1/32` and `1/64` after partner localization | PROVED | `docs/alternating-core-bda-front-installation.md` |
 | AC3eh–AC3ei | Mixed collisions have one coprime divisibility normal form; lower and collision scales form a finite bounded alphabet | PROVED | `docs/alternating-core-bda-collision-termination.md` |
 | AC3ej–AC3ek | Collision reversal uses the existing adjacent-pair ticket; exact lower-scale localization loses only `q` | PROVED | `docs/alternating-core-bda-collision-termination.md` |
-| AC3el | Actual clean partners satisfy the full BDA5a–BDA5e support contract with private occupied-side payment | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
-| AC3em | Clean pairs yield a scope-complete executable product bank of weight `W/K` or one finite paid overload | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
-| AC3en–AC3eo | One-sided paid decoder products have exact four-rank collateral; failure returns `1/128` or `1/256` AC3am-scale profiles | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
+| AC3el | Actual clean partners satisfy the BDA support contract with private payment | PROVED WITH UNION-SAFE CORRECTION AC3fz | `docs/alternating-core-bda-clean-pair-product.md` |
+| AC3em | Clean pairs yield a scope-complete executable product bank of weight `W/K` or one finite paid overload | PROVED WITH AC3fz ENVELOPES | `docs/alternating-core-bda-clean-pair-product.md` |
+| AC3en–AC3eo | One-sided paid decoder products have exact product collateral; coarse rank returns are improved by AC3fd | PROVED WITH AC3fz ENVELOPES | `docs/alternating-core-bda-clean-pair-product.md` |
 | AC3ep–AC3eq | One- and two-cell missing BDA partners have canonical active completion and full blocker repair through occupancy four | PROVED | `docs/alternating-core-bda-missing-support-completion.md` |
-| AC3er–AC3es | Missing-support records install and decode; failed products return one of seven stage masks at `1/224` or `1/448` AC3am scale | PROVED | `docs/alternating-core-bda-missing-support-completion.md` |
-| AC3et–AC3eu | Companion anchors have an exact opposite-diagonal geometry and a legal paid two-layer rectangle decoder | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
-| AC3ev | Off-family companion lines yield executable paid rectangle banks; failure returns a three-mask profile at `V/(93K)` | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
-| AC3ew–AC3ex | Absent companion anchors canonically install then decode; failure returns one of seven masks at `U/(357K)` | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
-| AC3ey | Bare companion installation is not paid; the private factor is destroyed only by the rectangle decoder | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3er–AC3es | Missing-support records install and decode; stage masks remain refinements of AC3fa rank | PROVED WITH UNION-SAFE DECODER AC3fz | `docs/alternating-core-bda-missing-support-completion.md` |
+| AC3et–AC3eu | Companion rectangle geometry is exact; AC3eu phase-flip payment is superseded for the union by AC3fw | CORRECTED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ev | Off-family companion lines yield paid rectangle banks using AC3fw union-safe repairs | PROVED WITH AC3fw | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ew–AC3ex | Absent companion anchors canonically install then use the AC3fw union-safe rectangle decoder | PROVED WITH AC3fw | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
+| AC3ey | Bare companion installation is not paid; the private factor is destroyed only by a union-safe rectangle decoder | PROVED | `docs/alternating-core-ri-companion-rectangle-decoder.md` |
 | AC3ez | The fibre quadratic excludes both fixed-edge midpoint triples, so the final companion rectangle support is triple-free | PROVED | `docs/alternating-core-ri-companion-midpoint-exclusion.md` |
 | AC3fa–AC3fb | Every created triple has rank one, two or three; failed banks return `D/3` rank mass and finite role multisets | PROVED | `docs/alternating-core-created-cell-rank-router.md` |
-| AC3fc–AC3fd | Current decoder alphabets have sizes `8,10,16,34`; rank routing improves clean/missing/absent/multiscale constants | PROVED | `docs/alternating-core-created-cell-rank-router.md` |
+| AC3fc–AC3fd | Created-cell role dictionaries and improved rank returns; clean/missing alphabet sizes are corrected by AC3gb | PROVED WITH AC3gb CORRECTION | `docs/alternating-core-created-cell-rank-router.md` |
 | AC3fe–AC3fh | RI closure and rectangle fixed terms equal created-cell rank outputs; no payment is assigned at classification time | PROVED | `docs/alternating-core-ri-fixed-term-rank-router.md` |
 | AC3fi–AC3fl | RI moving tuples have seven nonzero current/new words and become rank-one, rank-two or rank-three collateral profiles | PROVED | `docs/alternating-core-ri-moving-tuple-rank-router.md` |
 | AC3fm–AC3fo | Crossed-blocker complexes have eleven count/word states, preserve product laws and require no collateral-stage payment | PROVED | `docs/alternating-core-ri-blocker-rank-router.md` |
-| AC3fp–AC3fq | Core and protected conflicts have explicit finite local-role dictionaries with bound `18e^3+5e^2+qΣ(4e)^s` | PROVED | `docs/alternating-core-overload-role-dictionary.md` |
+| AC3fp–AC3fq | Core and protected conflicts have explicit finite local-role dictionaries; clean/missing examples are corrected by AC3gb | PROVED WITH AC3gb CORRECTION | `docs/alternating-core-overload-role-dictionary.md` |
 | AC3fr | AC2d localizes dense paid mass to one exact role-labelled cell, row, column, cross-triple, or protected witness | PROVED | `docs/alternating-core-overload-role-dictionary.md` |
+| AC3fs–AC3ft | Every realized rank-one profile has a union-safe pivot rectangle decoder and disjoint private pivot buckets | PROVED | `docs/alternating-core-rank-one-pivot-decoder.md` |
+| AC3fu–AC3fv | Rank-one pivots yield a paid scope-complete bank or overload; failure returns rank mass and reverse rectangles are ticketed | PROVED | `docs/alternating-core-rank-one-pivot-decoder.md` |
+| AC3fw–AC3fy | Companion rectangles have union-safe zero/one/two-blocker repairs; direct and absent products retain their constants | PROVED; SUPERSEDES AC3eu PAYMENT | `docs/alternating-core-ri-companion-union-safe-repair.md` |
+| AC3fz–AC3gb | BDA clean pairs import union-safe repairs; clean/missing role alphabets become `12,36` and envelope bounds `21,53` | PROVED; SUPERSEDES PHASE-FLIP PAYMENT | `docs/alternating-core-bda-union-safe-import.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
