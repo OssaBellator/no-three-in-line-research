@@ -2,9 +2,9 @@
 
 This addendum extends `proofs/prime-patching-recent-index.md` after PP3afm.
 It records the paid resource-bank, fixed-cell, direct allocation-domain,
-composite source-star, and final-state path reductions in `docs/193` through
-`docs/203` without replacing the larger historical ledger.  The filename is
-retained for continuity with earlier references.
+composite source-star, final-state path, and adaptive cascade reductions in
+`docs/193` through `docs/205` without replacing the larger historical ledger.
+The filename is retained for continuity with earlier references.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -19,6 +19,8 @@ retained for continuity with earlier references.
 | PP3aho--PP3ahu | Unary domain failure creates a post-trade source star of degree `Omega(R/s)`; a second marked trade cancels the created incidences exactly in a composite potential identity | PROVED / CONDITIONAL COMPOSITE PAID INTERFACE | `docs/201-unary-domain-failure-composite-source-star.md` |
 | PP3ahv--PP3aia | In a two-step source-valid path, final controller domains depend only on surviving final new points; transient shadow disappears and direct allocation uses only final unary support plus `s_f(s_f-1)` | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/202-two-step-final-state-shadow-path-independence.md` |
 | PP3aib--PP3aig | Along any bounded-depth source-valid path, only the final new set matters; binary loss is controlled by cumulative surviving size squared and unary failure yields the next final source star | PROVED / CONDITIONAL CASCADE INTERFACE | `docs/203-bounded-depth-final-shadow-cascade.md` |
+| PP3aih--PP3ain | Every planned cascade of depth `d=o(W)` admits marked subbank sizes with cumulative final size `o(W)`; failed final unary margin still yields an `omega(W)` source star | PROVED / CONDITIONAL DIRECT-CASCADE INTERFACE | `docs/204-adaptive-sub-square-root-cascade-sizing.md` |
+| PP3aio--PP3air | The explicit choice `q=floor(sqrt(W/d))` gives both `dq=o(W)` and the exact joint trace budget `dq^3/R=o(1)`; all planned selected-credit traces can be cleaned sequentially | PROVED / CONDITIONAL UNIFORM MARKED-HOST INTERFACE | `docs/205-exact-joint-cascade-trace-budget.md` |
 
 ## Updated resource-bank endpoint
 
@@ -205,7 +207,7 @@ source-star, not a new terminal weight table.
 ## Final-state path independence
 
 For robust direct allocation there is a stronger alternative to paying the
-uncancelled intermediate terms.  After a source-valid trade path, write
+uncancelled intermediate terms. After a source-valid trade path, write
 
 ```text
 S_t=O_t dot-union N_t,
@@ -251,42 +253,84 @@ At the slab scale this permits total surviving size
 `m^(kappa_*+o(1))` for every `kappa_*<19/40`, including polynomially growing
 cascade depth when the individual trades are sufficiently small.
 
+## Adaptive sub-square-root cascade budget
+
+Put
+
+```text
+W=sqrt(R)=m^(19/40+o(1)).
+```
+
+For every planned depth `d=o(W)`, choose
+
+```text
+q=floor(sqrt(W/d)).
+```
+
+Then the exact estimates are
+
+```text
+dq/W <= sqrt(d/W)=o(1)
+```
+
+and
+
+```text
+dq^3/R <= 1/sqrt(Wd)=o(1).
+```
+
+Thus a `d`-generation marked cascade has cumulative surviving size at most
+`dq=o(W)`, final binary domain loss `o(R)`, and a summable selected-credit trace
+failure budget. If final unary shadow still destroys one margin, the resulting
+source-star degree is
+
+```text
+Omega(R/(dq))=omega(W).
+```
+
+Therefore every failed final unary endpoint still supplies more than target
+width. Under uniform marked-host preparation, the trace and support-cleaning
+events may be imposed sequentially along the entire planned cascade without
+independence.
+
 ## Revised open objects
 
 The frontier now separates the monotone paid route, robust direct allocation,
-two-step composite conversion, and bounded-depth final-state cascades.
+two-step composite conversion, bounded-depth final-state cascades, and adaptive
+sub-square-root cascade sizing.
 
 In the robust-domain direct-completion branch, positive-density rank-three and
 rank-four binary stars, fixed-cell heavy pencils, weighted choice grids,
 candidate-rich projective covers, arbitrary binary `Xi` multiplicity,
-intermediate foreign shadow, and `o(R)` final unary weight are no longer
+intermediate foreign shadow, intermediate lack of credit, cumulative binary
+support below depth `o(W)`, and `o(R)` final unary weight are no longer
 independent obstructions.
 
 Unary shadow that destroys a final robust margin is localized to a final
-source-star centre of degree `Omega(R/S)`. Intermediate lack of removal credit
-is irrelevant whenever direct final allocation is available.
+source-star centre of degree `omega(W)` throughout every planned `o(W)`-depth
+cascade.
 
 The remaining concentrated problems are:
 
-1. failure to select a controller-preserving source-valid trade path because of
-   marked source, transition, anchor, conditional-Hall, alternating-host, or
-   distinguished endpoint-host structure;
+1. failure to select a uniformly prepared controller-preserving source-valid
+   path because of marked source, transition, anchor, conditional-Hall,
+   alternating-host, or distinguished endpoint-host structure;
 2. failure of the nonshadow `Omega(R)` base-domain margin or of the global
    allocation criterion;
-3. final unary source-star cascades whose cumulative surviving size approaches
-   the boundary `S^2=Omega(R)`;
+3. proving termination, or otherwise bounding the number of source-star
+   generations by `o(W)`;
 4. branches that still require a one-step monotone `Xi` decrease because no
    robust final allocation is available;
-5. genuinely final foreign unary support that is neither margin-absorbed nor
-   converted by another marked source-star trade;
-6. unbounded cascades for which no termination or cumulative-size control has
-   yet been proved.
+5. genuinely final unary support whose star centre cannot be moved through the
+   prepared marked infrastructure;
+6. cascade depth at or beyond the target-width scale, where the explicit
+   cumulative-size argument no longer gives `S=o(W)`.
 
 Rich designated recapture fibres, selected-credit self-recreation, diffuse
 foreign support cores, source-star self-recapture, unstructured fixed-cell
 candidate multiplicity, binary multiplicity on small source-valid endpoint
 states, credit-scale path-petal binary cost, raw unary domain failure,
-intermediate foreign multiplicity, and intermediate lack of credit are no
-longer separate frontiers.
+intermediate foreign multiplicity, intermediate lack of credit, and
+sub-target-depth cumulative binary growth are no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
