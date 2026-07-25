@@ -78,19 +78,27 @@ AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weig
 
 AC3hx--AC3ia import the general monotone-mask cycle-erasure principle and add an alternating-core-specific cross signature of ambient size `2Ln^2(n-1)^2`. Every nontrivial state change is a capacity-one rectangle or a genuinely long alternating cycle. Recurrent long signatures force repeated reinsertion of one exact layer-cell.
 
+AC3ib--AC3if delete the fixed cross from each recurrent long cycle and obtain a simple interior path. A maximal packing returns path petals or a quantified second hub. Inside one common parent, the boundary paths yield edge-disjoint petal alternatives or one repeated off-boundary cell; under private pivot payment the petal variable has the rigorous ledger
+
+```text
+E[created] <= F + (1/p) sum_j C_j.
+```
+
+Failure returns `F >= D/2` or `sum_j C_j >= pD/2`. Prime-patching cycle-star/theta delegation still requires its credited-host and source-validity hypotheses.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
 
-- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta theorems require credited-host hypotheses before AC3ia can delegate a long-cycle core.
+- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta theorems require credited-host hypotheses before AC can delegate a long-cycle core.
 - `research/all-n-composite-modulus` reaches CMR545 and supplies exact cycle erasure, churn and prime-power signature ancestry. AC3hx imports only the arithmetic-free monotone-mask principle.
 - `research/all-n-product-construction` has exact product encodings, SAT reductions and finite witnesses, but no unconditional global selector or stronger AC recurrence interface.
 
 ## Current frontier
 
-1. Pay or finitely classify fixed-cross long-cycle and repeated layer-cell reinsertion cores, or verify the credited-host hypotheses needed for prime-patching delegation.
+1. Pay or finitely classify the AC3if second-hub and repeated-cell outputs, and terminate its boundary-supported or petal-specific collateral terms.
 2. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
-3. Build the residual finite transition quotient from epoch/context changes and retained arithmetic-role edges, then assemble AC4.
+3. Build the residual finite transition quotient from parent/epoch changes and retained arithmetic-role edges, then assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
