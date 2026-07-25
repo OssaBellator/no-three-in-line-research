@@ -45,14 +45,15 @@ def affine_packet_lower_bound(prime: int, packet_size: int) -> int:
 
 def verify_piecewise_linear_examples() -> None:
     # Quadratic-character permutations x -> a*x on residues and b*x on
-    # nonresidues, using exact examples that are permutations. The theorem only
+    # nonresidues. The two multipliers lie in the same square class, so the two
+    # domain classes map bijectively to distinct image classes. The theorem only
     # needs one affine packet, not strong completeness.
     examples = {
-        7: (1, 3),
-        11: (1, 2),
-        13: (1, 2),
-        17: (1, 3),
-        19: (1, 2),
+        7: (1, 2),
+        11: (1, 3),
+        13: (1, 3),
+        17: (1, 2),
+        19: (1, 4),
     }
     for prime, (residue_multiplier, nonresidue_multiplier) in examples.items():
         residues = {pow(value, 2, prime) for value in range(1, prime)}
@@ -62,11 +63,7 @@ def verify_piecewise_linear_examples() -> None:
                 residue_multiplier if value in residues else nonresidue_multiplier
             )
             mapping.append(multiplier * value % prime)
-        # Some displayed multiplier pairs can map the two classes to the same
-        # image class. Retain only genuine permutations; the packet inequality
-        # is then checked exactly.
-        if len(set(mapping)) != prime:
-            continue
+        assert len(set(mapping)) == prime
         packet_size = (prime - 1) // 2
         observed = triangle_multiplicity(tuple(mapping))
         predicted = affine_packet_lower_bound(prime, packet_size)
@@ -99,9 +96,8 @@ def verify_symbolic_ranges() -> None:
             if retained >= 3:
                 lower = falling(retained, 3) / prime
                 assert lower > 0
-                if divisor >= 2:
-                    assert retained >= (prime + 1) // 2
-                    assert lower >= falling((prime + 1) // 2, 3) / prime
+                assert retained >= (prime + 1) // 2
+                assert lower >= falling((prime + 1) // 2, 3) / prime
     print("symbolic cyclotomic and near-linear barriers verified")
 
 
