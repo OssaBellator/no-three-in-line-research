@@ -71,6 +71,10 @@ repository-wide theorem ledger.
 | PP3ry--PP3sb | Growing-depth amplification produces growing-credit block banks | PROVED | `docs/136-growing-depth-cross-block-amplification.md` |
 | PP3sc--PP3sh | Sub-square-root unary degree yields superregular growing blocks and paid spread | PROVED / FROM SR1 | `docs/137-superregular-growing-cross-block-hosts.md` |
 | PP3si--PP3so | Unary-independent colouring gives superregular growing blocks for every sublinear unary degree | PROVED / FROM SR1 | `docs/138-unary-independent-cross-block-partition.md` |
+| PP3sp--PP3su | Vanishing-density hard unary support regularizes to superregular blocks | PROVED | `docs/139-unary-density-to-superregular-blocks.md` |
+| PP3sv--PP3ta | Equitable colouring converts local paid weights into global chromatic totals | PROVED / FROM HAJNAL--SZEMEREDI AND SR1 | `docs/140-equitable-colour-paid-block-selection.md` |
+| PP3tb--PP3tf | Chromatically scaled source-pair and triple terms vanish for kappa below one-sixtieth | PROVED | `docs/141-chromatic-source-mass-closure.md` |
+| PP3tg--PP3tm | Pool-compatible cross-block states give diffuse dynamic-Xi trades | PROVED / FROM SR1 | `docs/142-pool-compatible-cross-block-xi-trades.md` |
 
 ## Current scale
 
@@ -88,60 +92,57 @@ patch-only cross-macro energy, and ordinary two-slot source-anchor energy are
 closed. A controller-aware global label allocation immediately gives the full
 patch by PP3hq.
 
-## Four direct allocation interfaces
+## Direct allocation endpoint
 
-The controller-defect scores support four independent completion mechanisms.
+Four independent mechanisms remain available: one-sided bottleneck/slack,
+deterministic two-sided ownership, random two-sided local Ore, and random
+one-sided average-refill complementary degree. Anchor energy rules out
+middle-density ownership Hall rectangles.
 
-1. **One-sided bottleneck/slack:** `r_score <= min_B Lambda_score(B)`.
-2. **Deterministic two-sided ownership:** balanced thresholds satisfy `r+s<=W`.
-3. **Random two-sided ownership:** every macro nonedge satisfies
-   `rho_i(A)+chi_i(B) <= T-m^(23/80+o(1))`.
-4. **Random one-sided ownership:** average refill score satisfies the PP3lz
-   complementary-degree bound.
+## Hall, block, and dynamic endpoint
 
-Anchor energy cannot support a middle-density ownership Hall rectangle. At the
-PP3of threshold, failure is a sublinear exceptional label cluster or a macro
-rejecting all but a sublinear label set.
+A recapture-dominated Hall core yields a linear rectangle bank. The original
+rectangle signatures and every sublinear-density hard-unary support are absorbed
+by cross-block states, unary-independent equitable colouring, recapture pruning,
+and superregular spread matching.
 
-## Hall, rectangle, and growing-block endpoint
+At secondary exponent \(\kappa<1/60\), the chromatically scaled anchored-pair and
+inserted-triple terms vanish automatically. Both the ordinary paid rectangle
+branch and the pool-compatible dynamic-\(\Xi\) branch therefore reduce to the same
+shadow-only quantities:
 
-A recapture-dominated Hall core yields a linear resource-disjoint rectangle bank.
-In the superregular branch, residual matching, residual source validity, exact
-binary/multistate CSP installation, and diffuse paid selection are closed.
+```text
+k*A = Omega(H^2)
 
-The original two rectangle diagonals are no longer a binding state space.
-Cross-block states bypass arbitrary signed signatures and bounded local
-contradictions. More strongly, properly colouring the non-designated unary
-rectangle-interaction graph partitions all but \(o(H)\) rectangles into growing
-unary-independent groups whenever the unary maximum degree is \(o(H)\).
+or
 
-Each group can be split directly into two halves. After deleting \(o(b)\)
-recapture-heavy rectangles, both directional cross hosts are near-complete
-superregular and their product matching law has fixed-rank \(O(b^{-r})\) spread.
-Thus every sublinear unary-degree case reduces to the explicit paid source/shadow
-expression PP3sg; no infinite-depth irregular hierarchy remains.
+k^2*B = Omega(H^3),
+```
+
+where `k` is the equitable-colouring count of the hard-unary rectangle
+interaction graph. The dynamic branch uses the pool-invariant weights from
+PP3kx and retains exact star/resource removal credit.
 
 ## Remaining theorem
 
 The branch is reduced to the following structured cases.
 
-1. Convert an ownership Hall/slack core, a two-sided threshold gap, or the
-   simultaneous score concentration surviving all four allocation interfaces.
-2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
+1. Convert an ownership Hall/slack core, two-sided threshold gap, or score
+   concentration surviving all four allocation interfaces.
+2. Convert a Hall rectangle or matchable but non-superregular zero-unary host
    outside the superregular recapture branch.
-3. Convert a unary endpoint resource with linear forbidden cross-block degree.
-4. Convert source or shadow weights concentrated in the growing-block paid
-   expression PP3sg.
+3. Convert positive-density hard-unary support and its Hall/line/resource cores.
+4. Convert chromatically concentrated unary or binary controller-shadow weight
+   at scales \(H^2/k\) and \(H^3/k^2\), including the dynamic-\(\Xi\) weights.
 5. Convert a linear-congestion original binary-shadow dual packing or
    witness-line pencil.
-6. Construct source-admissible pool-compatible endpoint trades with `Xi`
-   insertion cost below star/resource removal credit.
+6. Convert a captive star whose insertion collateral remains comparable with its
+   concentrated removal credit.
 
 Diffuse weighted residuals, external completion energy, source validity of the
 resource endpoint, sparse exceptional labels, arbitrary dense rectangle CSPs,
-original signed rectangle contradictions, common-line rectangle extraction,
-hierarchical irregularity under sublinear unary degree, superregular residual
-installation, controller relabelling, and termination are no longer separate
-open problems.
+original signed contradictions, hierarchical irregularity, superregular
+residual installation, diffuse pool-compatible dynamic trades, controller
+relabelling, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
