@@ -21,13 +21,13 @@ This ledger records only branch-specific statements.
 | BDA4c–BDA4d | Repeated factor lifts form separated radial progressions with bounded primitive shape | PROVED | `docs/bounded-denominator-lift-separation.md` |
 | BDA4e | Co-anchored adjacent radial pairs regularize unless one of five anchor chains appears | PROVED | `docs/bounded-denominator-radial-pair-regularization.md` |
 | BDA4f | High capped radial occupancy yields a quantified parity matching of adjacent pairs | PROVED | `docs/bounded-denominator-radial-pair-regularization.md` |
-| BDA5a | A clean radial pair yields a rectangle switch, phase flip, or two blocker seeds | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
-| BDA5b | A radial decoder improves below its explicit collateral threshold | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5a | Rectangle geometry and blocker occupancy trichotomy; its full phase flip is layerwise only for union payment | PROVED WITH UNION CORRECTION BDA5ai–BDA5ak | `docs/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5b | A radial decoder improves below its explicit collateral threshold when the chosen state removes payment from the union | PROVED WITH UNION CORRECTION | `docs/bounded-denominator-radial-rectangle-decoder.md` |
 | BDA5c | Compatible single-blocker rectangles are resolved by an opposite-layer derangement | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
 | BDA5d | The coupled blocker bank improves under an explicit normalized collateral inequality | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
-| BDA5e | Every clean adjacent radial pair has a row-column-preserving decoder state | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
-| BDA5f | Every row-column-compatible clean radial family has a valid heterogeneous product of local decoder states | PROVED | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
-| BDA5g | Heterogeneous local menus have an exact rank-at-most-three product collateral criterion | PROVED | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
+| BDA5e | Every clean adjacent radial pair has a row-column-preserving decoder state | SUPERSEDED FOR UNION DESTRUCTION BY BDA5aj | `docs/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5f | Every row-column-compatible clean radial family has a valid heterogeneous product of local decoder states | PROVED WITH BDA5ai ENVELOPES | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
+| BDA5g | Heterogeneous local menus have an exact rank-at-most-three product collateral criterion | PROVED WITH BDA5ai ENVELOPES | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
 | BDA5h | Variable rank-one collateral splits exactly into a balanced floor and removable menu imbalance | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
 | BDA5i | Cheaper local decoder choices suppress rank one while costing factors at most `4` and `8` on ranks two and three | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
 | BDA5j | Failure after rank-one suppression localizes to a balanced floor or a heavy rank-two/rank-three term | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
@@ -53,6 +53,9 @@ This ledger records only branch-specific statements.
 | BDA5ae | Scalar pair overlap, endpoint weight, and `q`-step variation satisfy an exact identity | PROVED | `docs/bounded-denominator-overlap-variation.md` |
 | BDA5af–BDA5ag | Every scalar profile yields a paid pair bank, endpoint front, or parity-disjoint oriented missing-partner front | PROVED | `docs/bounded-denominator-overlap-variation.md` |
 | BDA5ah | The dispersed-anchor inequality is replaced by explicit scalar-front records with constants `W/4,W/4,W/8` at `theta=1/2` | PROVED | `docs/bounded-denominator-overlap-variation.md` |
+| BDA5ai | Every radial rectangle has a union-safe blocker repair for occupancies zero, one and two | PROVED | `docs/bounded-denominator-union-safe-rectangle-repair.md` |
+| BDA5aj | Every clean adjacent radial pair has a decoder removing the selected endpoints from the full union | PROVED | `docs/bounded-denominator-union-safe-rectangle-repair.md` |
+| BDA5ak | A phase flip preserves the rectangle union and is not payment for a union triple | PROVED | `docs/bounded-denominator-union-safe-rectangle-repair.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
