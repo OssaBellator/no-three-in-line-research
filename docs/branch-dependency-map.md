@@ -76,29 +76,33 @@ AC3hi--AC3hk route old-axis histories to one of:
 
 AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weighted line star gives a pair-core bank, a direct current-anchor rematching bank, one heavy current certificate, an explicit labelled overload or a realized next created-cell rank.
 
-AC3hx--AC3ia import the general monotone-mask cycle-erasure principle and add an alternating-core-specific cross signature of ambient size `2Ln^2(n-1)^2`. Every nontrivial state change is a capacity-one rectangle or a genuinely long alternating cycle. Recurrent long signatures force repeated reinsertion of one exact layer-cell.
+AC3hx--AC3ia import the general monotone-mask cycle-erasure principle and add an alternating-core-specific cross signature of ambient size `2Ln^2(n-1)^2`. Every nontrivial state change is a capacity-one rectangle or a genuinely long alternating cycle.
 
-AC3ib--AC3if delete the fixed cross from each recurrent long cycle and obtain a simple interior path. A maximal packing returns path petals or a quantified second hub. Inside one common parent, the boundary paths yield edge-disjoint petal alternatives or one repeated off-boundary cell; under private pivot payment the petal variable has the rigorous ledger
+AC3ib--AC3if show that repeated cell returns spend a finite `L(n-1)^2` rectangle-ticket stock or expose a repeated long return cross. When the recurrent cycles are represented in one current exchange host, they give a paid one-hub cycle-star or a two-hub interface; otherwise an explicit host/context field changed.
+
+AC3ig--AC3ik strengthen the static interface: arbitrary overlapping cycles in one common host are legal alternative states, destroy the same private pivot bucket, and return an exact created rank on failure. Static two-hub overlap is therefore not terminal. The only residual historical output is host drift.
+
+AC3il--AC3ip refine long histories without assuming a common host. Deleting the fixed cross gives simple paths; a maximal packing returns path petals or a quantified second hub. Inside one common parent, boundary paths yield edge-disjoint petal alternatives or one repeated off-boundary cell. Under private payment the petal ledger is
 
 ```text
-E[created] <= F + (1/p) sum_j C_j.
+E[created] <= F + (1/p) sum_j C_j,
 ```
 
-Failure returns `F >= D/2` or `sum_j C_j >= pD/2`. Prime-patching cycle-star/theta delegation still requires its credited-host and source-validity hypotheses.
+so failure gives `F >= D/2` or `sum_j C_j >= pD/2`.
 
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
 
-- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta theorems require credited-host hypotheses before AC can delegate a long-cycle core.
+- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta theorems require credited-host hypotheses before asymptotic delegation.
 - `research/all-n-composite-modulus` reaches CMR545 and supplies exact cycle erasure, churn and prime-power signature ancestry. AC3hx imports only the arithmetic-free monotone-mask principle.
 - `research/all-n-product-construction` has exact product encodings, SAT reductions and finite witnesses, but no unconditional global selector or stronger AC recurrence interface.
 
 ## Current frontier
 
-1. Pay or finitely classify the AC3if second-hub and repeated-cell outputs, and terminate its boundary-supported or petal-specific collateral terms.
+1. Pay or finitely classify host-drift profiles, parent/epoch changes, repeated off-boundary cells and the AC3io boundary-supported/petal-specific failure terms.
 2. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
-3. Build the residual finite transition quotient from parent/epoch changes and retained arithmetic-role edges, then assemble AC4.
+3. Build the residual finite transition quotient from those context and arithmetic-role edges, then assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
