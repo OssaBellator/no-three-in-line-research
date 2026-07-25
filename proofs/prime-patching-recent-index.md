@@ -40,6 +40,7 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3aaa--PP3aae | Every transition sunflower yields a free or one-pool credited endpoint bank | PROVED | `docs/170-transition-sunflower-credited-endpoint-bank.md` |
 | PP3aaf--PP3aaj | Bounded-support averaging localizes sunflower collateral to the shared centre | PROVED / FREE-BANK INTERFACE | `docs/171-transition-sunflower-collateral-localization.md` |
 | PP3abf--PP3abm | Rank-two unary Xi cost gives a cheap conditioned centre segment or a near-complete fixed-axis heavy arc star | PROVED / CONDITIONAL PAID INTERFACE | `docs/176-fixed-centre-unary-xi-arc-star-localization.md` |
+| PP3abn--PP3abu | Rank-three binary Xi patterns reduce to cheap conditioned chains, weighted middle rectangles, or small-core heavy outer-role families | PROVED / CONDITIONAL PAID INTERFACE | `docs/177-fixed-centre-rank-three-binary-xi-path-localization.md` |
 
 ## Current scale
 
@@ -78,9 +79,17 @@ an exact conditional single-cycle spread law. Either a locally clean segment has
 unary cost below the available budget, or `N-o(N)` heavy replacement arcs lie on
 one fixed old row or one fixed old column.
 
-The remaining unary-`Xi` conversion is therefore a fixed-axis rich-cost star or
-residual source/higher-rank paid concentration after conditioning on a cheap
-centre segment.
+Rank-three binary `Xi` weight is now localized as well. Every such pattern is a
+two-arc directed path, with the captive centre in the predecessor, middle, or
+successor role. Either one source-clean five-index chain has deterministic
+rank-three cost below the available budget, or failure yields a weighted heavy
+middle rectangle, an `m^(1/2+o(1))` exceptional outer-choice core with a
+near-complete heavy predecessor/successor family, or an outer transition source
+core.
+
+The remaining marked-`Xi` conversion is therefore fixed-axis unary stars,
+conditioned residual concentration, weighted rank-three path rectangles or
+outer-role families, rank-four binary weight, and full-pool thresholds.
 
 ## Remaining theorem
 
@@ -92,8 +101,9 @@ The all-n branch is reduced to the following concentrated conversion problems.
    cuts, and transition sunflowers.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
-4. Convert fixed-axis unary-`Xi` stars, the remaining marked binary `Xi` ranks,
-   full-pool `Xi` thresholds, or fixed-centre source/weight cores.
+4. Convert fixed-axis unary-`Xi` stars, weighted rank-three path cores, the
+   remaining rank-four binary `Xi` core, full-pool `Xi` thresholds, or fixed-centre
+   source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
@@ -101,7 +111,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic Xi
 terms, diffuse binary dual mass, raw resource stars, transition petal collateral,
-unstructured rank-two unary `Xi` fibres, unstructured non-superregularity, and
-termination are no longer separate open problems.
+unstructured rank-two unary `Xi` fibres, unstructured rank-three binary `Xi`
+tables, unstructured non-superregularity, and termination are no longer separate
+open problems.
 
 The no-three-in-line conjecture remains unproved.
