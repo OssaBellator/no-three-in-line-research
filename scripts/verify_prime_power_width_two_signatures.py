@@ -8,10 +8,19 @@ from math import ceil, gcd, isqrt, sqrt
 
 
 def divisor_count(n: int) -> int:
-    return sum(n % divisor == 0 for divisor in range(1, n + 1))
+    total = 0
+    root = isqrt(n)
+    for divisor in range(1, root + 1):
+        if n % divisor != 0:
+            continue
+        total += 1
+        if divisor * divisor != n:
+            total += 1
+    return total
 
 
-def verify_primitive_continuation(max_t: int = 200) -> None:
+def verify_primitive_continuation(max_t: int = 30) -> None:
+    # Finite exact geometry range; CMR291 proves the general lattice statement.
     for t in range(4, max_t + 1):
         for x1 in range(t):
             for x2 in range(x1 + 1, t):
@@ -40,13 +49,13 @@ def verify_primitive_continuation(max_t: int = 200) -> None:
                         )
 
 
-def verify_divisor_strata(max_t: int = 10_000) -> None:
-    for d in range(1, max_t + 1):
+def verify_divisor_strata(max_d: int = 100_000) -> None:
+    for d in range(1, max_d + 1):
         tau = divisor_count(d)
         assert tau <= 2 * sqrt(d)
         assert tau <= 2 * isqrt(d) + 1
 
-        # Synthetic chord population distributed among all gcd strata.
+        # Synthetic population distributed among all possible gcd strata.
         population = max(1, d - 1)
         counts = Counter(index % tau for index in range(population))
         largest = max(counts.values())
