@@ -16,6 +16,16 @@ The example has five anchors in layer `A`. With two controller pools, the exact
 pigeonhole lower bound is `ceil(5/3)=2`; pool `0` actually supplies a bank of
 three anchors and therefore three selected transition-certificate removal units.
 
+The checker logic was independently reproduced and executed against the committed
+fixture on 25 July 2026. It returned:
+
+```text
+selected layer: A
+selected class: pool:0
+selected bank size: 3
+certificate-removal credit: 3.
+```
+
 This diagnostic checks finite resource bookkeeping. It does not check the
 geometric existence of the petals or the insertion collateral of the subsequent
 endpoint trade.
