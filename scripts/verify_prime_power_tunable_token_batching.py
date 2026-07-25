@@ -3,11 +3,24 @@
 
 from __future__ import annotations
 
-from math import floor
-
 
 def cubic_threshold(h: int) -> int:
     return (2 * h + 2) // 3 - 1
+
+
+def integer_cube_root(n: int) -> int:
+    """Return the largest integer r with r**3 <= n."""
+    assert n >= 0
+    low, high = 0, 1
+    while high**3 <= n:
+        high *= 2
+    while low + 1 < high:
+        middle = (low + high) // 2
+        if middle**3 <= n:
+            low = middle
+        else:
+            high = middle
+    return low
 
 
 def verify_thresholds() -> None:
@@ -26,12 +39,8 @@ def verify_thresholds() -> None:
             line_bound_denominator = p ** (2 * (q + 1))
             batch = ((t - 2) * line_bound_denominator) // line_bound_numerator
 
-            # J_q is at least floor((t-2)/t^(2/3)).  Avoid irrational
-            # arithmetic by checking every integer j whose cubic condition
-            # certifies j <= (t-2)/t^(2/3).
-            lower = 0
-            while (lower + 1) ** 3 * t * t <= (t - 2) ** 3:
-                lower += 1
+            ratio_floor = (t - 2) ** 3 // (t * t)
+            lower = integer_cube_root(ratio_floor)
             assert batch >= lower
             assert batch * line_bound_numerator <= (
                 (t - 2) * line_bound_denominator
