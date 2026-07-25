@@ -20,7 +20,7 @@ The rank-three atom bound from CMR248 is
 \[
 \alpha_3
 =
-\frac1{(t-1)^2(t-2)}.
+\frac{1}{(t-1)^2(t-2)}.
 \]
 
 ## 1. Exact width-two chord structure
@@ -119,7 +119,7 @@ their union has target-specific probability at most
 
 \[
 \boxed{
-\frac1{(t-1)^2}.
+\frac{1}{(t-1)^2}.
 }
 \]
 
@@ -138,7 +138,7 @@ Therefore the union probability is at most
 \[
 (t-2)\alpha_3
 =
-\frac1{(t-1)^2}.
+\frac{1}{(t-1)^2}.
 \]
 
 The width-three events are mutually exclusive by CMR285, and their number is at
@@ -166,7 +166,8 @@ The canonical family covers probability at most `1/(t-1)^2`. Hence the other
 rank-three events must cover probability at least
 
 \[
-1-rac1{(t-1)^2}.
+1-
+\frac{1}{(t-1)^2}.
 \]
 
 Every rank-three event has probability at most
@@ -174,13 +175,14 @@ Every rank-three event has probability at most
 \[
 \alpha_3
 =
-\frac1{(t-1)^2(t-2)}.
+\frac{1}{(t-1)^2(t-2)}.
 \]
 
 The union bound therefore requires at least
 
 \[
-\left(1-rac1{(t-1)^2}\right)
+\left(1-
+\frac{1}{(t-1)^2}\right)
 (t-1)^2(t-2)
 =
 \bigl((t-1)^2-1\bigr)(t-2)
