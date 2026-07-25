@@ -74,6 +74,12 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3du | Every exact BDA scalar profile yields a paid pair bank, endpoint front, or oriented one-sided front | PROVED (imports BDA5ae–BDA5ah) | `docs/alternating-core-bda-one-sided-fronts.md` |
 | AC3dv–AC3dw | One-sided BDA fronts have private slot payment and a scope-complete paid-bank-or-labelled-overload router | PROVED | `docs/alternating-core-bda-one-sided-fronts.md` |
 | AC3dx | AC3am composes with the `theta=1/2` front router at losses `1/8,1/8,1/16` before scoped conflicts | PROVED | `docs/alternating-core-bda-one-sided-fronts.md` |
+| AC3dy | Coherent scales have private paid buckets and exact Hall payment | PROVED | `docs/alternating-core-ri-multiscale-product.md` |
+| AC3dz | A `1/31` scale family yields a scope-complete bank of weight `W/(31K)` or one finite paid overload | PROVED | `docs/alternating-core-ri-multiscale-product.md` |
+| AC3ea–AC3eb | Multiscale closed-I6 product expectations add exactly; failure returns one of `F,C1,C2,C3,B` at `W/(310K)` | PROVED | `docs/alternating-core-ri-multiscale-product.md` |
+| AC3ec–AC3ed | One-sided BDA fronts have an exact clean-support criterion and a four-way adjacent-partner router | PROVED | `docs/alternating-core-bda-front-installation.md` |
+| AC3ee–AC3ef | Missing BDA partners form privately paid installation banks, and adjacent-scale reversal has one finite ticket | PROVED | `docs/alternating-core-bda-front-installation.md` |
+| AC3eg | Endpoint and variation fronts compose with AC3am at `1/32` and `1/64` after partner localization | PROVED | `docs/alternating-core-bda-front-installation.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
