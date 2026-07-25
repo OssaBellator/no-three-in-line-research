@@ -8,32 +8,58 @@ import math
 import random
 
 
+A3 = 320
+PAIRED_SUPPORT_56 = 8 * 512 * A3
+
+
 def check_support_four_constant() -> None:
     rng = random.Random(445)
     for _ in range(5000):
         eta = Fraction(rng.randint(1, 99), 100)
-        # Normalize e^(4 Delta) N d(N) / t to one.  The paired relative bound is
-        # 8*512*q and q <= eta/32768.
+        # Normalize e^(4 Delta) N d(N) / t to one.
         q = eta / 32768
         paired_relative = 8 * 512 * q
-        assert paired_relative <= eta / 8
         assert paired_relative == eta / 8
 
 
-def check_square_root_exponent() -> None:
-    # t=N^(1/2+epsilon), divisor loss N^o(1): t^2/(N d(N)) has exponent 2epsilon-o(1).
-    for numerator in range(1, 20):
-        epsilon = Fraction(numerator, 100)
-        exponent = 2 * epsilon
-        assert exponent > 0
+def check_support_five_six_constant() -> None:
+    rng = random.Random(446)
+    assert PAIRED_SUPPORT_56 == 1_310_720
+    assert 16 * PAIRED_SUPPORT_56 == 20_971_520
+
+    for _ in range(5000):
+        eta = Fraction(rng.randint(1, 12), 144)  # at most 1/12
+        # Normalize e^(2 Delta) log(2t) to one.  The q^2 term is at most q.
+        q = eta / (16 * PAIRED_SUPPORT_56)
+        relative = PAIRED_SUPPORT_56 * (q + q)
+        assert relative == eta / 8
+
+
+def check_support_three_four_margin() -> None:
+    # Paired copy patterns multiply the one-copy 11 e^(2 Delta)/6 bound by 8.
+    paired_constant = Fraction(8 * 11, 6)
+    retained_order = 128  # normalized by e^(2 Delta)
+    relative = paired_constant / retained_order
+    assert relative == Fraction(11, 96)
+
+    eta = Fraction(1, 12)
+    total_internal = relative + eta / 8
+    assert total_internal == Fraction(1, 8)
+
+
+def check_effective_threshold_exponent() -> None:
+    # With d(N) <= 10^27 N^(1/6) and T=N^(3/5), qT has power N^(1/30).
+    threshold = Fraction(3, 5)
+    divisor_ambient = Fraction(7, 6)  # N*d(N)
+    retained_power = 2 * threshold - divisor_ambient
+    assert retained_power == Fraction(1, 30)
+    assert retained_power > 0
 
 
 def check_copy_pattern_stability() -> None:
     for rank in (1, 2, 3):
         patterns = 2**rank
         assert patterns <= 8
-        # Constant-scale and little-o quantities retain their scale after a
-        # fixed factor; record representative numerical witnesses.
         for order in (10**3, 10**6, 10**9):
             little_o = order / math.log(order)
             assert patterns * little_o / order == patterns / math.log(order)
@@ -65,7 +91,9 @@ def check_integer_termination() -> None:
 
 def main() -> None:
     check_support_four_constant()
-    check_square_root_exponent()
+    check_support_five_six_constant()
+    check_support_three_four_margin()
+    check_effective_threshold_exponent()
     check_copy_pattern_stability()
     check_entry_dichotomy()
     check_integer_termination()
