@@ -5,12 +5,13 @@
 This stage continues the low-syndrome repair route after PX183--PX195. Uniform
 endpoint rematching has unavoidable logarithmic internal collateral, but
 arithmetic rematching and square-root thinning remove that rank-three loss.
-The remaining mixed collateral is now organized by the number of endpoint
-indices used by each matching certificate.
+The remaining mixed collateral is organized by the number of endpoint indices
+used by each matching certificate.
 
-The exact new reduction is that endpoint-index support beyond matching rank pays
-an additional power of the thinning probability. Under square-root thinning,
-only literal transposition pairs and directed three-cycles avoid a power saving.
+The exact reduction is now sharper: endpoint-index support beyond matching rank
+pays an additional power of the thinning probability. Under square-root
+thinning, the rank-two support-two sector is constant-scale, support three is
+linear in the new block order, and only support four can remain superlinear.
 
 ## Current ledger
 
@@ -25,6 +26,8 @@ only literal transposition pairs and directed three-cycles avoid a power saving.
 | Support-sensitive thinning | **COMPLETE** | PX201--PX202 give simultaneous weighted sector thinning and conditioned certificate-load transfer. |
 | Short-cycle core | **CLASSIFIED** | PX203 proves that only rematching transpositions and directed three-cycles avoid support-excess decay. |
 | Improvement endpoint | **COMPLETE CONDITIONALLY ON LOADS** | PX204 converts any support-sector load bound below guaranteed destroyed mass into a strict improvement. |
+| Rank-two support three | **CONTROLLED** | PX205--PX206 identify directed two-paths and bound their thinned contribution linearly under bounded line occupancy. |
+| Rank-two support four | **OPEN / UNIQUE SUPERLINEAR SECTOR** | Two disjoint source-to-target arcs can still contribute on the original `t` scale. |
 | Absolute depth bound | **OPEN** | No proof yet shows that two or three generations always dominate accumulated collateral. |
 | Infinite exact closure | **OPEN** | The recursive decoder is not yet a terminating all-side doubling theorem. |
 
@@ -108,7 +111,40 @@ core has expected contribution at most
 128e^{4\Delta}L_Z.
 \]
 
-### 6. Improvement criterion
+### 6. Rank-two support paths
+
+PX205 classifies every diagonal-free rank-two certificate as one of:
+
+1. a directed two-cycle on two endpoint indices;
+2. a directed path on three endpoint indices;
+3. two directed arcs from a two-element source set to its disjoint two-element
+   target set.
+
+The exact pattern counts are
+
+\[
+\binom t2,
+\qquad
+t(t-1)(t-2),
+\qquad
+12\binom t4.
+\]
+
+Under line occupancy `L_Z`, PX206 converts these into expected square-root-thinned
+loads of orders
+
+\[
+O(L_Z),
+\qquad
+O(L_Zs),
+\qquad
+O(L_Zs^2),
+\]
+
+respectively, where `s=Theta(sqrt(t))`. Thus support four is the unique
+rank-two sector that can remain superlinear in the new block size.
+
+### 7. Improvement criterion
 
 PX204 states the exact endpoint needed for termination. If every bank state
 destroys at least `D_*` old certificates and
@@ -125,44 +161,48 @@ criterion holds after bounded-rank conditioning.
 
 ## Remaining proof tasks
 
-1. **Rank-one support-two bound.** Control the weighted number of one-replacement,
+1. **Rank-two support-four bound.** Prove `W_(2,4)=O(t^3)` after the PX195
+   loaded-line/clean-star extraction, or identify the exact obstruction to that
+   estimate.
+2. **Support-four decoder.** If `W_(2,4)>>t^3`, extract a common anchor pencil,
+   endpoint-disjoint star, biclique, or bounded-support batch that can be
+   neutralized recursively.
+3. **Rank-one support-two bound.** Control the weighted number of one-replacement,
    two-background certificates strongly enough that `W_(1,2)/t^(3/2)` is below
    the destroyed-mass scale.
-2. **Rank-two support-three bound.** Exploit the shared endpoint index to prove a
-   geometric estimate for `W_(2,3)/t^(5/2)`.
-3. **Rank-two support-four bound.** Bound `W_(2,4)/t^3`, or decode its concentration
-   into a new loaded pencil or endpoint-disjoint batch.
 4. **Rank-three support-excess constants.** Insert the known geometric counts from
    PX189 into PX202 with constants compatible with the guaranteed destruction.
-5. **Depth-two mass accounting.** Combine the four sector estimates with PX194
-   and PX204 to show that two generations destroy more old certificate mass than
-   they create.
-6. **Extraction persistence.** Prove that the clean star or loaded line extracted
+5. **Spread constant sharpening.** Replace the crude `e^(4Delta)` bound for the
+   actual union-of-few-partial-matchings forbidden graphs, especially when
+   `Delta=2` or `3`.
+6. **Depth-two mass accounting.** Combine the sector estimates with PX194 and
+   PX204 to show that two generations destroy more old certificate mass than they
+   create.
+7. **Extraction persistence.** Prove that the clean star or loaded line extracted
    at generation two retains enough endpoint-disjoint mass after generation-one
    forbidden positions are imposed.
-7. **Generational potential.** Find a potential that charges newly created `T_2`
-   collisions to a strictly smaller reservoir of anchors, directions, support
-   sectors, or endpoint cycles.
-8. **Closure conversion.** Insert a terminating recursive decoder into the
+8. **Generational potential.** Charge newly created `T_2` collisions to a strictly
+   smaller reservoir of anchors, directions, support sectors, or endpoint cycles.
+9. **Closure conversion.** Insert a terminating recursive decoder into the
    universal `O(n log n)` product seed PX63 without losing factor transport or
    exact row-column saturation.
 
-The immediate mathematical target is item 2 or item 3. PX203 shows that the
-minimal rank-two sector is already harmless under bounded line occupancy, so a
-new geometric estimate only has to treat pairs using three or four endpoint
-indices.
+The immediate mathematical target is now item 1 or item 2. The support-three
+subproblem is no longer an asymptotic barrier; the only potentially superlinear
+rank-two certificates use four distinct endpoint indices.
 
 ## Verification
 
 ```bash
 python scripts/verify_product_bounded_forbidden_spread.py
 python scripts/verify_product_support_excess_thinning.py
+python scripts/verify_product_rank_two_support.py
 ```
 
-The new verifier exhausts every compatible rank-at-most-three partial matching
-on seven endpoint indices, checks the short-cycle core, verifies exact Bernoulli
-support scaling, tests the weighted allowed-bank load transfer by full
-permutation enumeration, and checks the transposition line-load bound sharply.
+The new verifiers exhaust the relevant rank-at-most-three and rank-two partial
+matching spaces, check exact support classifications and counts, verify Bernoulli
+support scaling and weighted allowed-bank load transfer, and check the
+square-root sector inequalities.
 
 The classical no-three-in-line conjecture and infinite product closure remain
 open.
