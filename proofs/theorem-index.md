@@ -20,7 +20,8 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3ad–AC3af | Current-context literal stars route to fixed collateral, depth-two load, or disjoint arms | PROVED | `docs/alternating-core-literal-star-router.md` |
 | AC3ag–AC3ai | Global fixed-centre contexts route to paid banks, depth-two literals, or phase fans | PROVED | `docs/alternating-core-global-literal-contexts.md` |
 | AC3aj–AC3ak | Cross-centre safe and unsafe targets route to paid buckets or explicit blockers | PROVED | `docs/alternating-core-cross-centre-router.md` |
-| AC3al | Bounded residual reuse yields a compatible blocker batch of weight at least `W/(2ρ-1)` | PROVED | `docs/alternating-core-cross-centre-batching.md` |
+| AC3al | Bounded residual degree yields a residual-disjoint target family of weight at least `W/(2Δ-1)` | PROVED | `docs/alternating-core-cross-centre-batching.md` |
+| AC3am | A common residual literal localizes to one finite role, a repeated residual pair, or weighted secondary dispersion | PROVED | `docs/alternating-core-cross-centre-batching.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
