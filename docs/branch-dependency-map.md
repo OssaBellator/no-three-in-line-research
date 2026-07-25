@@ -84,7 +84,7 @@ H(n,L,lambda) = n^2(lambda [L(n-1)^2]^2 + L(n-1)^2 + 1)
 
 forces one removal/long-return two-cross profile of multiplicity at least `lambda`. In a finite resource universe of size `B`, strict monotone-mask growth occurs at most `B` times; otherwise one constant-mask interval exceeds the same threshold. Thus factorial state-space size and pure mask drift are no longer terminal parameters.
 
-AC3iu--AC3iy remove two of the three residual host-drift fields. Every historical target matching in one fixed active base host projects to the unique alternating component through the paid pivot relative to one current reference matching. Blocker feasibility is exactly a directed cycle-cover problem. On the complete blocker host every projection repairs for `n>=3`; in a restricted host failure is a canonical minimal Hall core with a dead row, low-mobility source or role-pure reused-target/resource-star output.
+AC3iu--AC3iy remove two residual host-drift fields. Every historical target matching in one fixed active base host projects to the unique alternating component through the paid pivot relative to one current reference matching. Blocker feasibility is exactly a directed cycle-cover problem. On the complete blocker host every projection repairs for `n>=3`; in a restricted host failure is a canonical minimal Hall core.
 
 AC3iz--AC3jc extract the genuine external defect of that Hall core. A core of size `m` exposes at least
 
@@ -92,7 +92,27 @@ AC3iz--AC3jc extract the genuine external defect of that Hall core. A core of si
 m(n-m+1) - min(m,n-m+1) - 1 >= n-2
 ```
 
-cells absent from the fixed blocker base host. Weighted failure of total `V` concentrates on one exact missing cell at scale `(n-2)V/n^2`, or on one of `R` canonical missing reasons at incidence scale `(n-2)V/R`. Reference-state and raw opposite-layer drift are therefore no longer residual matching-state problems.
+cells absent from the fixed blocker base host. Weighted failure concentrates on one exact missing cell at scale `(n-2)V/n^2`, or on one finite missing-reason class.
+
+AC3jd--AC3jh impose the exact unary host contract: soft collateral and multi-new-cell constraints stay in AC3v, while one-cell hard exclusions have a role alphabet of size at most
+
+```text
+R_un <= q(1+(r-1)2^r).
+```
+
+One failed projection contains at least `ceil((n-2)/(R_un rho))` distinct same-role owner resources when owner multiplicity is at most `rho`. Unowned reasons enter the current-context hard-literal router or a finite exceptional exposure stock.
+
+AC3ji--AC3jm sharpen every Hall cut to one physical centre. Some blocker row or inverse blocker column is incident with at least `floor(n/2)` missing targets; one unary role retains `ceil(floor(n/2)/R_un)` alternatives. Their residual scopes have rank at most two and enter the common-residual/support-disjoint cross-centre router, together with same-owner or many-owner resource outputs.
+
+AC3jn--AC3jq show that adding any missing edge from a minimal Hall cut destroys that exact core. Inside a persistent owner/context epoch every executable edge discharge increases an `n^2` blocker-host potential; failure returns the centred target/resource fan, while loss of persistence is an exact outer reset.
+
+AC3jr--AC3ju combine state churn, mask growth and persistent host reopening. One outer epoch has length at most
+
+```text
+B + (B+1)((n^2+1)H(n,L,lambda)+n^2),
+```
+
+unless it returns an improving or paid menu, accepted arithmetic chamber, terminal literal/resource fan or exact outer reset. Matching-state churn and blocker-host drift are therefore total at the epoch level.
 
 ## All-n branch audit
 
@@ -104,10 +124,10 @@ cells absent from the fixed blocker base host. Weighted failure of total `V` con
 
 ## Current frontier
 
-1. Classify and pay the exact missing blocker-host reasons from AC3jb through existing carry/BDA/RI/protected-resource roles, or prove a bounded exceptional stock.
-2. Terminate genuine arithmetic/context and envelope-epoch changes, repeated off-boundary cells and the AC3ie boundary/petal terms.
-3. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
-4. Build the residual finite transition quotient and assemble AC4, then verify AC5 and discharge AC6.
+1. Install and pay the centred unconditional-literal, common-residual, support-disjoint, same-owner and many-owner outputs of AC3jl.
+2. Classify genuine outer reset edges by same-denominator arithmetic profile, owner interpretation, base-host construction, protected contract and envelope epoch; build the global bounded AC4 potential.
+3. Prove physical occurrence realization for unresolved carry/BDA/RI owner roles and terminate the remaining AC3ie boundary/petal terms.
+4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
 
