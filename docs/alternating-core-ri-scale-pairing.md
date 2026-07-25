@@ -2,7 +2,9 @@
 
 **Branch:** `research/alternating-core-chain`
 
-AC3ba supplies paid occurrences supported on complete rational fibres, and AC3ay supplies the actual base scale of every occurrence. AC3ax previously retained scale faithfulness as a hypothesis. This note removes that hypothesis on a constant fraction of the paid mass, or returns an explicit one-root physical-scale imbalance.
+AC3ba supplies paid occurrences supported on complete rational fibres, and AC3ay supplies the actual base scale of every occurrence. This note removes assumed scale faithfulness on a constant fraction of the paid mass, or returns an explicit one-root physical-scale imbalance.
+
+The paired output is fixed-edge payment. For canonical current OP factors it is not payment for physical completion components; AC3bf proves that both paid root cells are fixed by the hyperbola completion target.
 
 ## Root-by-scale payment table
 
@@ -103,9 +105,9 @@ $$
 
 Both statements are weighted pigeonhole. On the imbalance side, if every atom is capped by `beta`, at least the selected weight divided by `beta` atoms are needed. On the coherent side, the scale classes partition `M`. QED.
 
-## AC3be -- canonical AC-to-RI composition without assumed scale faithfulness -- PROVED UNDER HYPOTHESES
+## AC3be -- canonical AC-to-RI fixed-edge composition -- PROVED
 
-Retain the setup of AC3bb except do not assume scale faithfulness. Let:
+Let:
 
 - `W_x` be the original AC3am common-residual paid weight;
 - `R_0` be the number of arithmetic role labels;
@@ -114,7 +116,7 @@ Retain the setup of AC3bb except do not assume scale faithfulness. Let:
 - `K` be the physical scale-count threshold;
 - `L` be the exact decoration count.
 
-Assume only arithmetic OP-to-RI realization, factor-conservative payment, and completion/support faithfulness for any selected coherent subfamily.
+Assume the selected quotient role has the arithmetic OP-to-RI realization and factor-conservative payment proved in AC3ay--AC3ba. No completion-payment assignment is assumed.
 
 Then one of the following occurs.
 
@@ -128,11 +130,11 @@ Then one of the following occurs.
    \boxed{W_x/(16R_0rho P L)}.
    $$
 3. **Paid physical-scale dispersion:** more than `K` coherent physical scales occur.
-4. **One coherent physical class:** one scale and one exact decoration carry at least
+4. **One coherent physical fixed-edge class:** one scale and one exact decoration carry at least
    $$
    \boxed{W_x/(16R_0rho P K L)}.
    $$
-   This class is scale faithful by construction and enters AC3au--AC3av.
+   Every paid record has both actual root witnesses at that scale. This class enters AC3bf--AC3bj.
 
 As before, `rho` is omitted in the AC3am fixed-exclusion and repeated-residual-pair outputs.
 
@@ -148,12 +150,13 @@ unless outcome 1 holds. AC3bc either returns one-root excess greater than `T/4`,
 
 ## Consequence
 
-For canonical orbit-phase quotient roles, scale faithfulness is no longer a free hypothesis. It is now a proved constant-loss output unless the paid mass itself certifies a one-root, one-scale imbalance. The remaining RI integration obligations are:
+For canonical orbit-phase quotient roles, scale faithfulness is proved at constant loss unless the paid mass itself certifies a one-root, one-scale imbalance. AC3bf then shows that the coherent paid roots are fixed by physical completion. The correct next construction is the closed-completion I6 bank of AC3bg--AC3bj.
+
+The remaining RI integration obligations are:
 
 1. classify the explicit incomplete-fibre and one-root scale-imbalance outputs;
-2. assign coherent paired payment completion-faithfully to target columns;
-3. prove support faithfulness for component toggles and blocker repair;
-4. close the resulting terminal RI5ae or blocker-profile output.
+2. classify physical-scale dispersion;
+3. bound or classify the closed-bank terms `F,C_1,C_2,C_3,B`.
 
 ## Finite check
 
