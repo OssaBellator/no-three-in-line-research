@@ -19,6 +19,8 @@ This ledger records only branch-specific results and corrections.
 | RI5a–RI5c | Installed physical coset blocks admit fixed-edge absorber conversion | PROVED (CONDITIONAL INTERFACE) | `docs/rational-inverse-fixed-edge-bank.md` |
 | RI5d | Quotient density does not imply a physical block because base scales are arbitrary | PROVED | `docs/rational-inverse-lift-coherence.md` |
 | RI5e | Complete fibres admit a scale-mismatch, scale-growth, physical-star, or localized-scale audit | PROVED | `docs/rational-inverse-lift-coherence.md` |
+| RI5f | Physical completion debt decomposes into installable permutation cycles and boundary alternating paths | PROVED | `docs/rational-inverse-completion-debt.md` |
+| RI5g | Completion weight lies half on installable cycles or concentrates on one boundary path | PROVED | `docs/rational-inverse-completion-debt.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
