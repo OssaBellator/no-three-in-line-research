@@ -128,6 +128,8 @@ AC3ke--AC3kh make owner status transition-relative. Installed pivot, BDA, RI, OP
 
 AC3ki--AC3km give centred blocker targets their exact installation contract. Complete alternatives form a menu rather than a product. Common owner tokens count once per selected state; owners private to different alternatives contribute only through their probability-weighted average. Executable targets feed the universal created-rank pivot fallback, forbidden targets remain unpaid, outer changes become macro edges, and unresolved targets are precisely those still lacking one scope-complete per-target state.
 
+AC3kn--AC3kq strengthen the AC3io petal bank. Exact statewise boundary and off-boundary creation replaces the candidate-union upper bound. If no child improves, one actual state realizes at least `D/2` in one category, one rank carries at least `D/6`, and the all-rank adapter gives payment `D/(6K)` or return `D/(18K)`. Once a common-parent paid petal family is installed, its collateral side is total; only parent/payment/context reset remains.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -138,9 +140,9 @@ AC3ki--AC3km give centred blocker targets their exact installation contract. Com
 
 ## Current frontier
 
-1. Construct complete per-target states for the unresolved common-residual and support-disjoint target alternatives, while leaving unconditional and prospective targets unpaid.
+1. Construct complete per-target states for unresolved common-residual and support-disjoint target alternatives, while leaving unconditional and prospective targets unpaid.
 2. Terminate each repeated decorated macro edge by current payment, strict bounded descent or a capacity-one macro ticket, and prove polynomial bounds for the outer profile/decorations needed by AC4.
-3. Close the remaining AC3ie boundary/petal terms and owner rows returning occurrence failure or coherence mismatch.
+3. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset; the collateral side is closed by AC3kn--AC3kq.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
