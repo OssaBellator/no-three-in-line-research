@@ -138,7 +138,7 @@ For every scale-load threshold `beta>0`, one of the following holds.
 1. **Heavy scale:** one scale carries weight greater than `beta` and enters the closed fixed-edge bank.
 2. **Many scales:** at least
    $$
-   \boxed{\lceil W/beta\rceil}
+   \boxed{\lceil W/\beta\rceil}
    $$
    scales occur.
 3. **Disjoint scale bank:** independently of the threshold, a row-column-disjoint scale subfamily carries weight at least
@@ -153,10 +153,24 @@ The selected scales have disjoint source, partner and both anchor row/column cos
 
 The heavy-or-many statement is weighted pigeonhole. AC3dh gives the disjoint bank. The final conflict completion is exactly the proved AC3v--AC3x interface and does not assume that row-column disjointness alone controls collateral. QED.
 
-## Consequence
+## Completed simultaneous interface
 
-Physical-scale dispersion is no longer an unstructured escape. It produces a constant-fraction family of coherent complete-fibre blocks with disjoint physical row and column supports, or a heavy individual scale already covered by the fixed-edge bank. The remaining task is the full scoped-collateral comparison on the extracted multi-scale bank.
+AC3dy--AC3eb in [`alternating-core-ri-multiscale-product.md`](alternating-core-ri-multiscale-product.md) complete the step left open in the first version of this note.
+
+- Exact scale buckets are private current-payment resources and satisfy Hall with equality.
+- Applying AC2c to the full repair-envelope graph gives a scope-complete bank of weight at least
+  $$
+  \boxed{W/(31K)}
+  $$
+  or one finite paid overload label.
+- On an independent scale family, the closed-I6 product expectation is exactly the sum of the local expectations.
+- If the product bank does not improve, one of the five aggregate terms `F,C1,C2,C3,B` carries weight at least
+  $$
+  \boxed{W/(310K)}.
+  $$
+
+Thus physical-scale dispersion no longer has a simultaneous-installation or payment gap. Its remaining outputs are the already classified local RI profiles or a finite scoped overload.
 
 ## Finite check
 
-`scripts/verify_ac_ri_scale_dispersion.py` enumerates finite cyclic quotient groups, exact label quadruples satisfying `B=RCA^{-1}`, checks both support alphabets and the thirty-ratio bound, constructs the scale-conflict graph, and verifies the `1/31` weighted extraction.
+`scripts/verify_ac_ri_scale_dispersion.py` enumerates finite cyclic quotient groups, exact label quadruples satisfying `B=RCA^{-1}`, checks both support alphabets and the thirty-ratio bound, constructs the scale-conflict graph, and verifies the `1/31` weighted extraction. `scripts/verify_ac_ri_multiscale_product.py` checks private scale Hall payment, scope-complete extraction, exact product expectation, and the `1/(310K)` failed-bank constant.
