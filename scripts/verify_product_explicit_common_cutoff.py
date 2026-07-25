@@ -30,11 +30,13 @@ def cutoff_values(log_n: float) -> dict[str, float]:
     log_t = 0.6 * log_n
     log_b = math.log(256.0) + 2.0 * delta
 
+    # Since T=ceil(N^(3/5)) <= 2N^(3/5), use log(4N^(3/5))
+    # in the denominator to obtain a genuine lower bound for q_1.
     log_q1 = (
         math.log(ETA)
         - math.log(16.0 * COEFFICIENT_56)
         - 2.0 * delta
-        - math.log(math.log(2.0) + log_t)
+        - math.log(math.log(4.0) + log_t)
     )
     log_q2 = (
         math.log(ETA)
@@ -45,7 +47,6 @@ def cutoff_values(log_n: float) -> dict[str, float]:
         - (7.0 / 6.0) * log_n
     )
 
-    # Explicit PX63/PX64 seed line bound.
     log_d_seed = (
         math.log(32780.0)
         + log_n
@@ -83,8 +84,6 @@ def check_starting_value() -> None:
     assert values["log_four_return_over_t"] > 0.0
     assert values["log_two_return_over_t"] > 0.0
     assert values["log_partner_ratio"] > 0.0
-
-    # Retain visible slack against accidental constant regressions.
     assert values["log_q2t_over_b"] > 10.0
     assert values["log_four_return_over_t"] > 20.0
 
@@ -97,7 +96,7 @@ def check_monotonicity_bounds() -> None:
     first_ratio_derivative = (
         0.6
         - 4.0 * derivative
-        - 0.6 / (math.log(2.0) + 0.6 * x)
+        - 0.6 / (math.log(4.0) + 0.6 * x)
     )
     second_ratio_derivative = 1.0 / 30.0 - 6.0 * derivative
     return_ratio_derivative_lower = 1.0 / 240.0 - 1.0 / (3.0 * x)
@@ -123,7 +122,6 @@ def check_corrected_internal_margins() -> None:
 
 
 def check_seed_bound_at_cutoff() -> None:
-    # Coarse decimal proof used in PX477.
     log10_d_upper = 4009.0
     log10_k_upper = math.log10(2.0) + 1337.0
     log10_star_lower = (
