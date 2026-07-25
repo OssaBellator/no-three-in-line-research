@@ -2,7 +2,7 @@
 
 This addendum extends `proofs/prime-patching-recent-index.md` after PP3afm.
 It records the paid resource-bank, fixed-cell, and direct allocation-domain
-reductions in `docs/193` through `docs/199` without replacing the larger
+reductions in `docs/193` through `docs/200` without replacing the larger
 historical ledger.  The filename is retained for continuity with earlier
 references.
 
@@ -15,6 +15,7 @@ references.
 | PP3ago--PP3agt | Thresholding a fixed-cell candidate fan pays all light partners; failure yields a uniform heavy partner pencil, conditional Hall structure, or foreign paid/source concentration | PROVED / CONDITIONAL PAID INTERFACE | `docs/197-thresholded-fixed-cell-fan-payment.md` |
 | PP3agu--PP3agz | A fixed-cell fan removes at most `n` controller entries per label and at most `2n` values from one paired macro domain; robust allocation margin bypasses arbitrary fan multiplicity | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/198-fixed-cell-fan-allocation-domain-bypass.md` |
 | PP3aha--PP3ahg | Every binary shadow of an `s`-cell source-valid endpoint state is supported on `binom(s,2)` line matchings and costs at most `s(s-1)` values from one macro domain | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/199-small-endpoint-binary-shadow-allocation-bypass.md` |
+| PP3ahh--PP3ahn | Unary witness multiplicity is one for a fixed inserted cell and candidate; `o(R)` unary weight is domain-absorbed, while failed arc-petal completion forces `A_2=Omega(RW)` | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/200-unary-shadow-domain-margin-threshold.md` |
 
 ## Updated resource-bank endpoint
 
@@ -55,7 +56,7 @@ one incident resource, a rank-`h` support survives with exact factor
 (q-1)_(h-1)/(Q-1)_(h-1).
 ```
 
-Adaptive thinning absorbs every vanishing ambient support degree.  Persistent
+Adaptive thinning absorbs every vanishing ambient support degree. Persistent
 failure of the monotone paid route therefore gives an ambient unary,
 rank-three, or rank-four fixed-resource star.
 
@@ -69,15 +70,15 @@ theta=tau C_a/(2n).
 ```
 
 Deleting partners above `theta` pays every remaining light fan inside half the
-reserved credit.  If heavy deletion kills matching in a superregular host,
+reserved credit. If heavy deletion kills matching in a superregular host,
 robust Hall forces a linear uniformly heavy partner pencil and a credit-scale
 bank of distinct candidate incidences.
 
-There is now a separate direct-completion route.  Every centre--partner secant
+There is now a separate direct-completion route. Every centre--partner secant
 line is a matching between controller edges and movement labels, and another
-matching between controller edges and refill labels.  A residual matching of
+matching between controller edges and refill labels. A residual matching of
 size `n` therefore removes at most `n` entries at one controller or label and
-at most `2n` values from one refined domain.  If the nonfan domains have margin
+at most `2n` values from one refined domain. If the nonfan domains have margin
 `xi R` and
 
 ```text
@@ -95,8 +96,8 @@ A source-valid endpoint state with `s` inserted cells has exactly
 binom(s,2)
 ```
 
-nonaxis inserted-pair secants.  All rank-two through rank-four binary `Xi`
-entries are supported on the corresponding line matchings.  Hence
+nonaxis inserted-pair secants. All rank-two through rank-four binary `Xi`
+entries are supported on the corresponding line matchings. Hence
 
 ```text
 Delta(binary candidate support) <= binom(s,2)
@@ -118,9 +119,48 @@ s=m^(kappa+o(1)),
 kappa<19/40,
 ```
 
-so `s^2=o(R)`.  Any fixed positive nonbinary domain margin absorbs the complete
-binary insertion shadow.  This is a direct final-allocation theorem, not a
+so `s^2=o(R)`. Any fixed positive nonbinary domain margin absorbs the complete
+binary insertion shadow. This is a direct final-allocation theorem, not a
 claim that the trade decreases the integer `Xi` potential.
+
+## Unary domain threshold and petal consequence
+
+For one fixed inserted cell and one controller candidate entry, source validity
+permits at most one retained-source witness. Thus the unary `Xi` contribution
+of a forced arc cell is simple candidate-entry support.
+
+For a source-valid state `P` of size `s`, a sufficient direct-allocation
+criterion is
+
+```text
+U_Xi(P)+s(s-1) <= xi R,
+```
+
+or the sharper per-label degree form in PP3ahj. Therefore every unary state cost
+`o(R)` is absorbed together with all binary shadow.
+
+For a comparable fixed-axis arc-petal bank `B`, assume the nonarc unary cost and
+the binary line-support term each use at most `xi R/4`. Then either one petal has
+
+```text
+a(e)<=xi R/2
+```
+
+and completes directly, or every petal is domain-heavy and
+
+```text
+A_2 >= sum_{e in B}a(e) > (xi/2)R|B|.
+```
+
+At target size `|B|=W`, failed direct completion therefore forces
+
+```text
+A_2=Omega(RW).
+```
+
+Rank-three path-petal, rank-four partner, and choice-grid local costs are binary
+and are already absorbed by the complete binary-shadow bypass in the robust
+margin branch.
 
 ## Revised open objects
 
@@ -129,15 +169,16 @@ allocation route.
 
 In the robust-domain direct-completion branch, positive-density rank-three and
 rank-four binary stars, fixed-cell heavy pencils, weighted choice grids,
-candidate-rich projective covers, and arbitrary binary `Xi` multiplicity of one
-active endpoint state are no longer independent obstructions.
+candidate-rich projective covers, arbitrary binary `Xi` multiplicity, and
+`o(R)` unary `Xi` weight of one active endpoint state are no longer independent
+obstructions.
 
 The remaining concentrated problems are:
 
 1. positive-density ambient unary insertion shadow whose witness structure gives
    a resource bank rather than one marked source centre;
-2. fixed-centre unary arc/path-petal cost and other unary insertion shadow using
-   retained source points;
+2. controller-domain-scale unary shadow, including an arc-petal core
+   `A_2=Omega(RW)`;
 3. failure of the nonbinary `Omega(R)` domain margin or of the global allocation
    criterion;
 4. marked source, transition, anchor, or endpoint-host failure;
@@ -149,7 +190,8 @@ The remaining concentrated problems are:
 
 Rich designated recapture fibres, selected-credit self-recreation, diffuse
 foreign support cores, source-star self-recapture, unstructured fixed-cell
-candidate multiplicity, and binary multiplicity on small source-valid endpoint
-states are no longer separate frontiers.
+candidate multiplicity, binary multiplicity on small source-valid endpoint
+states, and credit-scale path-petal binary cost are no longer separate
+frontiers.
 
 The no-three-in-line conjecture remains unproved.
