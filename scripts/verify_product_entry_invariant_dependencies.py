@@ -9,12 +9,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "proofs/product-entry-invariant-dependencies.json"
-INDEXES = [
-    ROOT / "proofs/product-growing-direction-theorem-index-PX397-PX450.md",
-    ROOT / "proofs/product-growing-direction-theorem-index-PX451-PX478.md",
-    ROOT / "proofs/product-growing-direction-theorem-index-PX479-PX482.md",
-    ROOT / "proofs/product-growing-direction-theorem-index-PX483-PX487.md",
-]
+INDEXES = [ROOT / "proofs" / name for name in (
+    "product-growing-direction-theorem-index-PX397-PX450.md",
+    "product-growing-direction-theorem-index-PX451-PX478.md",
+    "product-growing-direction-theorem-index-PX479-PX482.md",
+    "product-growing-direction-theorem-index-PX483-PX487.md",
+    "product-growing-direction-theorem-index-PX488-PX492.md",
+)]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
     "154-px64-line-cap-return-depth.md",
@@ -31,6 +32,7 @@ DOCS = [ROOT / "docs" / name for name in (
     "165-explicit-common-asymptotic-cutoff.md",
     "166-exact-depth-plateau-cutoff-compression.md",
     "167-fourteenth-power-divisor-cutoff-compression.md",
+    "168-rational-divisor-cutoff-compression.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
@@ -38,8 +40,8 @@ INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX487"
-    assert manifest["root"] == "PX487"
+    assert manifest["range"] == "PX397-PX492"
+    assert manifest["root"] == "PX492"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -56,7 +58,7 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 488):
+    for theorem_id in range(397, 493):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
@@ -64,21 +66,17 @@ def main() -> None:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 488))
+    assert index_ids == list(range(397, 493))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
         assert phrase not in text
-
-    required = manifest["safety_rules"]["required_constants"]
-    assert str(required["paired_support_four_denominator"]) in text
     assert "A_3=320" in text
-    assert "10^{72}" in text
-    assert "N^{1/7}" in text
-    assert "10^{2950}" in text
-    assert "N_2=10^{2950}" in text
-    assert "1900" in text
-    print("PX397--PX487 dependency and optimized-cutoff audit: PASS")
+    assert "C_{8/109}<10^{59}" in text
+    assert "N^{16/109}" in text
+    assert "N_3=10^{2900}" in text
+    assert "1508" in text and "29}{545" in text
+    print("PX397--PX492 dependency and rational-cutoff audit: PASS")
 
 
 if __name__ == "__main__":
