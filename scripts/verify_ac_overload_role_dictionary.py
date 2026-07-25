@@ -44,16 +44,28 @@ def verify_core_counts() -> tuple[int, dict[int, int]]:
 def verify_protected_counts() -> int:
     checks = 0
     for roles in range(1, 8):
-        previous = core_count(roles)
         for kinds in range(0, 5):
+            previous_rank = core_count(roles)
             for rank in range(1, 5):
                 value = protected_count(roles, kinds, rank)
                 assert value >= core_count(roles)
                 if kinds > 0:
                     assert value > core_count(roles)
-                assert value >= previous or kinds == 0
+                    assert value > previous_rank
+                else:
+                    assert value == core_count(roles)
+                previous_rank = value
                 checks += 1
-            previous = protected_count(roles, kinds, 4)
+
+        for rank in range(1, 5):
+            previous_kinds = core_count(roles)
+            for kinds in range(0, 5):
+                value = protected_count(roles, kinds, rank)
+                assert value >= previous_kinds
+                if kinds > 0:
+                    assert value > previous_kinds
+                previous_kinds = value
+                checks += 1
     return checks
 
 
