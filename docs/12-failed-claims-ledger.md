@@ -103,3 +103,9 @@ For the CMR12 layer, only `390` cells survive the two-fixed-point constraints. T
 **Status:** IMPOSSIBLE FOR EVERY ODD PRIME.
 
 An affine no-three set in \(\mathbb F_p^2\) has at most \(p+2\) points by the direction count through one selected point. A saturated local pair has `2p` points, so it cannot satisfy that premise. The CRT route must retain distinct-point local slopes and their carry signatures, not only mixed collisions. See `docs/46-crt-local-arc-obstruction.md` and `docs/52-crt-slope-carry-signatures.md`.
+
+## 18. “A carry token is permanently spent after one complete prefix rematching.”
+
+**Status:** REFUTED FOR EVERY BLOCK SIZE \(t\ge2\).
+
+Choose any derangement \(\sigma\) and replace a permutation layer \(f\) by \(f\circ\sigma\). This moves every old point. Applying \(\sigma^{-1}\) is also old-cell-clean and returns exactly to \(f\), restoring every occupied cell and every state-only carry token after two steps. Repeated-token control therefore needs a reintroduction charge or a time-oriented ancestry invariant; static token counting is insufficient. See `docs/130-prime-power-token-reintroduction-ledger.md`.
