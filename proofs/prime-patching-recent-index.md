@@ -48,8 +48,21 @@ repository-wide theorem ledger.
 | PP3nf--PP3nj | Global refill slack from controller and same-slot anchor mass | PROVED | `docs/113-global-refill-slack-from-defect-mass.md` |
 | PP3nk--PP3np | Mass-sensitive source-valid derangement line energy and extremality | PROVED / FROM LLL DISTRIBUTION | `docs/114-near-uniform-derangement-line-energy.md` |
 | PP3nq--PP3nu | Adaptive thinning gives near-uniform fully source-valid derangements | PROVED | `docs/115-adaptive-near-uniform-source-valid-derangements.md` |
-| PP3nv--PP3ny | Szemerédi--Trotter line-multiplicity localization | PROVED / FROM SZEMERÉDI--TROTTER | `docs/116-line-energy-incidence-multiplicity.md` |
-| PP3nz--PP3oc | Dense Hall core survives adaptive thinning and yields a common-line matching | PROVED / FROM PERMUTATION CONCENTRATION | `docs/117-dense-hall-core-adaptive-thinning.md` |
+| PP3nv--PP3ny | Szemerédi--Trotter line-family localization | PROVED / FROM SZEMERÉDI--TROTTER | `docs/116-line-energy-incidence-multiplicity.md` |
+| PP3nz--PP3oc | Dense Hall cores survive adaptive thinning and retain the line-family alternative | PROVED / FROM SLICE CONCENTRATION | `docs/117-dense-hall-core-adaptive-thinning.md` |
+| PP3od--PP3og | Divisor energy localizes anchor-driven ownership Hall failures | PROVED | `docs/118-anchor-energy-ownership-hall-localization.md` |
+| PP3oh--PP3ol | Target-rich line families yield linear resource-disjoint rectangle banks | PROVED / CONDITIONAL INSTALLATION INTERFACE | `docs/119-common-line-alternating-rectangle-bank.md` |
+| PP3om--PP3oq | Binary rectangle permutation blocks, exact rank-three CNF, and quadratic cost | PROVED | `docs/120-common-line-rectangle-csp-installation.md` |
+| PP3or--PP3ox | Superregular residual completion and source-valid residual matching | PROVED / FROM SR1 | `docs/121-superregular-common-line-rectangle-installation.md` |
+| PP3oy--PP3pb | Paid binary rectangle selection by first moment and variable LLL | PROVED / FROM LLL DISTRIBUTION | `docs/122-paid-binary-rectangle-selection.md` |
+| PP3pc--PP3pf | Unit preprocessing, ternary thinning, and binary clause-core extraction | PROVED | `docs/123-rectangle-clause-core-regularization.md` |
+| PP3pg--PP3pl | Signature Ramsey regularization and constant-state/local-contradiction dichotomy | PROVED / FROM FIXED-COLOUR RAMSEY | `docs/124-signed-binary-ramsey-regularization.md` |
+| PP3pm--PP3pr | Designated-credit cross orientation and preferred-state dichotomy | PROVED | `docs/125-designated-credit-cross-orientation.md` |
+| PP3ps--PP3px | Dense cross-conflict stars localize to rich lines or pencils | PROVED | `docs/126-cross-conflict-star-localization.md` |
+| PP3py--PP3qc | Homogeneous cross cliques collapse to a common line or fixed-anchor secant design | PROVED / FROM FIXED-COLOUR RAMSEY | `docs/127-homogeneous-cross-clique-geometry.md` |
+| PP3qd--PP3qg | Exact paid capacity of every homogeneous binary signature | PROVED | `docs/128-homogeneous-signature-paid-capacity.md` |
+| PP3qh--PP3qm | Sparse all-cross shadow support and weight give zero- or low-cost subbanks | PROVED | `docs/129-cross-state-shadow-support-cleaning.md` |
+| PP3qn--PP3qr | Joint source-valid low-cost residual matching and final diffuse-cost closure | PROVED / FROM SR1 | `docs/130-paid-residual-matching-selection.md` |
 
 ## Current scale
 
@@ -69,71 +82,75 @@ patch by PP3hq.
 
 ## Four direct allocation interfaces
 
-The controller-defect scores now support four independent completion mechanisms.
+The controller-defect scores support four independent completion mechanisms.
 
 1. **One-sided bottleneck/slack.** A balanced movement ownership exists with
-   bottleneck `r_score`; every refill label contributes cumulative local slack
-   `Lambda_score(B)`. PP3mx completes whenever
+   bottleneck `r_score`; every refill label contributes cumulative local slack.
+   PP3mx completes when
    ```text
    r_score <= min_B Lambda_score(B).
    ```
 2. **Deterministic two-sided ownership.** Route exactly `W` movement and `W`
-   refill labels to every macro. PP3mr completes whenever the two score thresholds
+   refill labels to every macro. PP3mr completes when the two score thresholds
    satisfy `r+s<=W`.
 3. **Random two-sided ownership.** PP3nd completes from the per-macro
    complementary score bound
    ```text
-   rho_i(A)+chi_i(B) <= T-m^(23/80+o(1))
+   rho_i(A)+chi_i(B) <= T-m^(23/80+o(1)).
    ```
-   on every macro nonedge.
 4. **Random one-sided ownership.** PP3lz uses the average refill score
    `kappa(B)` and the smaller balanced-ownership concentration loss.
 
-Sparse exceptional macro-label pairs are therefore routable. One-sided failure
-produces an exact ownership Hall rectangle paired with a refill label whose total
-local slack is too small. Under a fixed refill-label margin, global
-`sum_i Xi_i` and global same-slot anchor column mass directly lower-bound the
-available refill slack.
+Anchor energy cannot support a middle-density ownership Hall rectangle. At the
+PP3of threshold, failure is a sublinear exceptional label cluster or a macro
+rejecting all but a sublinear label set.
 
-## Hall, line, and binary endpoint
+## Hall, rectangle, and paid endpoint
 
-Unary endpoint failure is exactly a Hall rectangle in the zero-unary host.
-Binary shadow may be converted into unary deletion with congestion controlled by
-the fractional cover number `tau^*(B)`; failure is a linear-congestion dual
-packing or a high-overlap witness-line pencil.
+A recapture-dominated Hall core survives adaptive source-valid thinning. Failed
+owner-line improvement yields a positive-density family of target-rich repeated
+nonaxis lines. Pairing their two matching traces gives `Omega(q^3)` rectangle
+candidates and a linear row/column-disjoint rectangle bank.
 
-A linear bank of linear-rich distinct geometric lines cannot be absorbed by the
-one-survivor deletion pattern. The owner lines must move. Adaptive thinning may
-be chosen jointly so that:
+In the superregular branch:
 
-- a fixed positive-density Hall target core survives;
-- every unary and anchored-transition source event is removed by deleting only
-  `o(q)` endpoints;
-- the fully source-valid derangement has one-cell probabilities `(1+o(1))/q`.
+- reserving a small linear rectangle bank leaves a residual perfect matching;
+- the residual matching may be chosen source-valid and low-cost by PP3qn;
+- rectangle geometry is an exact binary rank-at-most-three CNF;
+- rectangle shadow is an exact unary/binary cost;
+- diffuse ternary clauses, diffuse binary signatures, diffuse all-cross support,
+  and diffuse residual weighted cost are closed.
 
-The owner-line potential then either strictly decreases, or the incidence system
-is near extremal. Szemerédi--Trotter converts the latter case into one nonaxis
-geometric line carrying `Omega(q^(1/3))` resource-disjoint owner/replacement
-endpoint cells and their candidate points.
+Signature Ramsey regularization leaves three paid behaviours. If `(1,1)` is
+allowed, the all-cross state preserves one designated unit per rectangle. If it
+is forbidden but `(0,0)` is allowed, every valid homogeneous assignment uses at
+most one credit-preserving cross state. If both diagonal pairs are forbidden,
+three rectangles already form a contradiction.
+
+A dense cross-state conflict is geometric: it contains a rich cross line, a
+large line pencil, or a complete fixed-anchor secant design. It is not an
+arbitrary dense Boolean graph.
 
 ## Remaining theorem
 
 The branch is reduced to the following structured cases.
 
 1. Convert an ownership Hall/slack core, a two-sided threshold gap, or the
-   simultaneous complementary-score concentration surviving all four direct
-   allocation interfaces.
+   simultaneous score concentration surviving all four allocation interfaces.
 2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
-   outside the recapture-line class.
-3. Convert the common nonaxis line matching from PP3oc by a protected line,
-   rectangle, cycle, or tomographic trade.
-4. Convert a linear-congestion binary dual packing or witness-line pencil.
-5. Construct source-admissible pool-compatible endpoint trades with `Xi`
+   outside the superregular recapture branch.
+3. Convert a credit-poor homogeneous rectangle signature, a rich cross line or
+   pencil, a complete fixed-anchor secant design, or a constant-size signed
+   contradiction.
+4. Convert linear unary, quadratic binary, or residual weighted shadow
+   concentration at the rectangle-credit scale.
+5. Convert a linear-congestion binary-shadow dual packing or witness-line pencil.
+6. Construct source-admissible pool-compatible endpoint trades with `Xi`
    insertion cost below star/resource removal credit.
 
 Diffuse weighted residuals, external completion energy, source validity of the
-resource endpoint, sparse exceptional labels, isolated rich fibres, raw
-binary-fan size, naive rich-line covering, controller relabelling, and termination
-are no longer separate open problems.
+resource endpoint, sparse exceptional labels, arbitrary dense rectangle CSPs,
+common-line rectangle extraction, superregular residual installation, controller
+relabelling, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
