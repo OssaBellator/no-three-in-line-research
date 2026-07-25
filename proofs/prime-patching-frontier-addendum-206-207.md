@@ -1,13 +1,15 @@
 # Prime-patching frontier addendum: original-reference cascade termination
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
-after PP3air. It records the original-reference and target-cycle reductions in
-`docs/206` and `docs/207` without replacing the larger historical ledgers.
+after PP3air. It records the original-reference, target-cycle, and chord-host
+reductions in `docs/206` through `docs/208` without replacing the larger
+historical ledgers.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
 | PP3ais--PP3aix | A fresh-helper single-cycle move increases original-reference defect by exactly `q-1`, preserves the number of defect cycles, keeps all later centres free, and leaves a linear untouched-original helper reservoir | PROVED / CONDITIONAL FRESH-HELPER MARKED INTERFACE | `docs/206-original-reference-single-cycle-defect-growth.md` |
 | PP3aiy--PP3aje | A canonical cascade reaches a `Theta(W)` single alternating defect cycle within `O(W/q)=o(W)` generations; before that it completes or exposes a marked-host/base-allocation obstruction | PROVED / CONDITIONAL FRESH-HELPER CASCADE INTERFACE | `docs/207-target-scale-alternating-cycle-cascade-endpoint.md` |
+| PP3ajf--PP3ajl | A target-scale Hamilton defect-cycle host has either a sublinear chord feedback hub, a rooted chord-cycle star, a distinct-signature cycle bank, concentrated backbone support/cost, or the bare two-state oscillation core | PROVED / CONDITIONAL ALTERNATING-HOST INTERFACE | `docs/208-hamilton-defect-cycle-chord-localization.md` |
 
 ## Exact original-reference coordinate
 
@@ -100,27 +102,54 @@ Theta(W),
 ```
 
 not an unbounded abstract cascade. Its original/current edge choices form an
-exact two-state reference-oscillation variable. Additional ambient alternating
-states feed the cycle-bank, mobility-hub, and theta localizations; without them,
-the remaining object is the explicit two-state cycle core.
+exact two-state reference-oscillation variable.
+
+## Chord localization of the target cycle
+
+Normalize the original edges of the target cycle to loops and the current defect
+to one Hamilton successor cycle. Every other allowed off-diagonal host edge is a
+chord. Let `L=Theta(W)` be the cycle length and `e` the number of chords.
+
+If `e=o(L)`, all chord endpoints together with one Hamilton vertex form an
+explicit feedback hub of size at most
+
+```text
+2e+1=o(L).
+```
+
+If `e=Omega(L)`, the chord tail--head graph gives one of:
+
+```text
+Omega(sqrt(L))
+```
+
+chords through one endpoint, or `Omega(sqrt(L))` chords with distinct tails and
+heads. Each chord plus its Hamilton return path is a canonical alternating-cycle
+state. In the distinct-signature family every chord arc has marginal `1/s`, and
+all remaining multiplicity is exact support overlap on the Hamilton backbone.
+
+Thus a target-cycle host is reduced to a small mobility hub, a rooted cycle star,
+a distinct-signature one-variable bank, concentrated backbone arc/pair/triple
+support or cost, or the bare original/current two-state oscillation.
 
 ## Revised live frontier
 
-Under fresh-helper single-cycle preparation, abstract cascade termination and
-sub-target-depth growth are no longer independent problems. The remaining cases
-are:
+Under fresh-helper single-cycle preparation, abstract cascade termination,
+sub-target-depth growth, and an unspecified target-scale alternating host are no
+longer independent problems. The remaining cases are:
 
 1. uniform preparation of the fresh-helper marked hosts through source,
-   transition, anchor, Hall, alternating-host, and distinguished endpoint
-   constraints;
+   transition, anchor, Hall, and distinguished endpoint constraints;
 2. failure of the nonshadow `Omega(R)` base-domain margin or global allocation
    criterion;
-3. direct treatment of the target-scale reference-oscillation cycle;
-4. conversion of that cycle through extra alternating host states, mobility hubs,
-   or theta paths;
-5. branches that cannot preserve one original reference layer or cannot choose
+3. payment or direct allocation for a sparse-chord mobility hub;
+4. source/support/cost concentration on a rooted chord-cycle star or
+   distinct-signature cycle bank;
+5. the bare two-state reference oscillation when the target cycle has no useful
+   chords;
+6. branches that cannot preserve one original reference layer or cannot choose
    untouched original helpers;
-6. branches with no robust final allocation that still require one-step monotone
+7. branches with no robust final allocation that still require one-step monotone
    `Xi` descent.
 
 The no-three-in-line conjecture remains unproved.
