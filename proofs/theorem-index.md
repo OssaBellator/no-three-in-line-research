@@ -80,6 +80,11 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3ec–AC3ed | One-sided BDA fronts have an exact clean-support criterion and a four-way adjacent-partner router | PROVED | `docs/alternating-core-bda-front-installation.md` |
 | AC3ee–AC3ef | Missing BDA partners form privately paid installation banks, and adjacent-scale reversal has one finite ticket | PROVED | `docs/alternating-core-bda-front-installation.md` |
 | AC3eg | Endpoint and variation fronts compose with AC3am at `1/32` and `1/64` after partner localization | PROVED | `docs/alternating-core-bda-front-installation.md` |
+| AC3eh–AC3ei | Mixed collisions have one coprime divisibility normal form; lower and collision scales form a finite bounded alphabet | PROVED | `docs/alternating-core-bda-collision-termination.md` |
+| AC3ej–AC3ek | Collision reversal uses the existing adjacent-pair ticket; exact lower-scale localization loses only `q` | PROVED | `docs/alternating-core-bda-collision-termination.md` |
+| AC3el | Actual clean partners satisfy the full BDA5a–BDA5e support contract with private occupied-side payment | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
+| AC3em | Clean pairs yield a scope-complete executable product bank of weight `W/K` or one finite paid overload | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
+| AC3en–AC3eo | One-sided paid decoder products have exact four-rank collateral; failure returns `1/128` or `1/256` AC3am-scale profiles | PROVED | `docs/alternating-core-bda-clean-pair-product.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
