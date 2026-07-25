@@ -34,12 +34,15 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR502--506 | Exact derangement restoration marginals, weighted cheap-clean selection, frozen collateral versus unavailable depletion, incidence concentration/dispersion, and the combined availability endpoint | PROVED | `docs/158-prime-power-line-clean-weighted-selection.md` |
 | CMR507--511 | Adaptive maximum unavailable-edge absorption, exact extension identity, König row-column cover, heavy unavailable-star concentration, and rooted/bottleneck application | PROVED | `docs/159-prime-power-adaptive-line-clean-unavailable-cover.md` |
 | CMR512--516 | Exact unavailable-star prefix occupancy, tunable heavy/dispersed token alternative, disjoint token packing, square-root endpoint, and adaptive line-clean token splice | PROVED | `docs/160-prime-power-unavailable-star-token-splice.md` |
+| CMR517--521 | One-token persistence/stock bound, exact global labelled stock, absence-run/reintroduction ledger, three-way temporal endpoint, and free-absorption episode bound | PROVED | `docs/161-prime-power-unavailable-token-temporal-ledger.md` |
+| CMR522--526 | Maximum-allowed persistent-edge criterion, exact two-endpoint deficiency, persistent-aware absorption, row-column cross incidence, and rooted trace witnesses | PROVED | `docs/162-prime-power-persistent-blocker-absorption-deficiency.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR516 is temporal accounting for adaptive unavailable-edge
-absorption and unavailable-token reuse across parent epochs. One-shot cheap
-selection is closed: failure yields frozen collateral, strict factorization,
-free absorption, a heavy unavailable full-prefix token, or a dispersed
-unavailable-token bank. The next target is to show that repeated use of the last
-two branches pays protected-reserve depletion, ancestor-return incidence, or
-envelope expansion without double counting.
+frontier after CMR526 is geometric conversion of a persistent unavailable
+row-column cross across envelope ancestry. One-shot selection, adaptive
+absorption, unavailable-token stock, and nonpersistent temporal reuse are closed.
+A continuously unavailable cell is absorbed when maximum-allowed; otherwise it
+meets the paid-line trace or forces two unavailable partner edges through its
+endpoints. The next target is to convert that cross into a Hall wall, fixed
+prefix/quotient/carry signature, protected-reserve depletion, deletion ancestry,
+or envelope expansion.
