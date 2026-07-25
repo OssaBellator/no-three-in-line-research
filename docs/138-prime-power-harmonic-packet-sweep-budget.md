@@ -1,7 +1,7 @@
 # One harmonic-packet sweep preserves the quadratic-log token budget
 
-CMR401 cleans every intermediate-height family of harmonic weight below `3/2`,
-and CMR402 cleans any two dyadic bands beginning at height at least five.
+CMR388 cleans every intermediate-height family of harmonic weight below `3/2`,
+and CMR389 cleans any two dyadic bands beginning at height at least five.
 CMR403 bounds the full-token edge return of each resulting one-layer
 whole-parent reset. Therefore a complete sweep through paired dyadic bands has
 only logarithmically many resets and fits inside the same quadratic-logarithmic
@@ -52,8 +52,8 @@ P_\eta(t)
 
 ### Proof
 
-Pair the dyadic bands arbitrarily. Every two-band packet is cleanable by CMR402.
-If one band remains, its harmonic weight is below `3/4`, so CMR401 applies.
+Pair the dyadic bands arbitrarily. Every two-band packet is cleanable by CMR389.
+If one band remains, its harmonic weight is below `3/4`, so CMR388 applies.
 There are at most `1+\log_2t` positive dyadic lower endpoints below `t`. ∎
 
 This is an existence statement for one state per packet; it does not assert
@@ -122,8 +122,9 @@ t^{2/3}
 
 ### Proof
 
-Combine CMR394 with CMR407 and the initial stock from CMR389. Use `b\le h` and
-CMR406. ∎
+Combine the prefix-pass return bound CMR399 with CMR407, then add the exact
+initial stock from CMR394 through the dynamic inventory CMR395. Use `b\le h`
+and CMR406. ∎
 
 Thus one exact packet sweep has the same deep-token order as one prefix pass.
 The unresolved issue is recurrence of cleaned bands, not excessive one-sweep
@@ -167,7 +168,7 @@ Summing gives
 \frac{(p+1)P_\eta(t)}{p-1}t^2.
 \]
 
-CMR397 gives `O_p(t^2\log t)` for the prefix pass and CMR406 gives
+CMR402 gives `O_p(t^2\log t)` for the prefix pass and CMR406 gives
 `P_\eta(t)=O(\log t)`. ∎
 
 The packet sweep introduces no new superquadratic token-return scale. A complete
