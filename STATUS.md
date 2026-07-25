@@ -165,19 +165,15 @@ D_\tau^{(2)}
 - After identifying certificates with the same prescribed edge set, there are
   fewer than \(t^3+t\) fully forced rank-`1/2/3` certificates and fewer than
   \(3t^3\) distinct CMR217 ancestry links.
-- Relative to a perfect matching, contracting the matching edges turns
-  alternating exchange cycles into directed cycles.
-- If deleting `f=\ell_ur_v` makes a matching edge newly essential, its contracted
-  vertex lies on no directed cycle after the deletion and lies on a directed
-  `v`-to-`u` exchange corridor.
+- Matching contraction turns alternating exchange cycles into directed cycles.
+  Newly essential matching edges lie in an acyclic directed exchange corridor.
 - Reachability on one first-essentiality layer is a partial order. Every chain
-  lies on one alternating cycle through `f`, so all matching edges in the chain
-  can be exchanged simultaneously before `f` is deleted.
-- The minimum number of exchange cycles through `f` needed to cover the entire
-  layer equals the width of that reachability poset.
-- For a layer of size `n`, either one exchange cycle batches at least
-  \(\lceil\sqrt n\rceil\) newly essential edges, or there is an antichain of
-  that size which no one exchange cycle through `f` can address twice.
+  lies on one alternating cycle through the deleted edge and can be exchanged
+  in one batch.
+- The exact exchange-cycle cover number of the layer is its reachability-poset
+  width.
+- A layer of size `n` has either a batch cycle containing at least
+  \(\lceil\sqrt n\rceil\) newly essential edges or an antichain of that size.
 - Across the full deletion pass, all first-essentiality edges are covered at
   their valid historical times by at most
   \[
@@ -205,8 +201,6 @@ and for `e\in\operatorname{Ess}(G)` define
   \[
   1\le\kappa(e)\le t.
   \]
-  Thus common-epoch escape requires restoring at most one matching's worth of
-  deleted edges, not an entire deletion suffix.
 - If `R` is a minimum rollback set for `e`, every edge of `R` is essential in
   `G+R-e`. Hence `R` is a forced matching and
   \[
@@ -218,7 +212,7 @@ and for `e\in\operatorname{Ess}(G)` define
 - For every threshold `q`, either `\kappa(e)<q`, or the avoiding matching problem
   factors to side at most `t-q`.
 - Every fully forced rank-`1/2/3` terminal certificate can be destroyed by such
-  a rollback for any one of its prescribed edges.
+  a rollback for any one prescribed edge.
 - Choosing one minimum rollback footprint for every edge of `E_*` gives
   \[
   \sum_{e\in E_*}|R_e|\le t^2.
@@ -229,8 +223,8 @@ and for `e\in\operatorname{Ess}(G)` define
   \[
   \mathcal I(R)=(p+1)(h-1)|R|.
   \]
-  Consequently all chosen minimum rollback footprints for `E_*` have total
-  labelled incidence at most
+  All chosen minimum rollback footprints for `E_*` have total labelled incidence
+  at most
   \[
   (p+1)(h-1)t^2.
   \]
@@ -241,9 +235,41 @@ and for `e\in\operatorname{Ess}(G)` define
   \]
   represented triples.
 
-Common-epoch existence and its token/packet price are therefore closed. Large
-rollback cost already gives strict host factorization. The residual temporal
-problem is qualitative payment for a small restored-edge support.
+### Canonical optimal rollback face
+
+Give every deleted edge unit cost and every final-host edge zero cost in
+`G_0-e`.
+
+- The rollback number is exactly the minimum assignment cost:
+  \[
+  \kappa(e)
+  =
+  \min\{|M\cap\Delta|:M\in\operatorname{PM}(G_0-e)\}.
+  \]
+- Relative to one minimum-cost matching, give a contraction arc `j -> k` weight
+  \[
+  c(\ell_jr_k)-c(m_k)\in\{-1,0,1\}.
+  \]
+  Every directed alternating cycle has nonnegative total weight.
+- Any two minimum rollback matchings differ only by zero-weight alternating
+  cycles. Positive-cost excursions are unnecessary.
+- Shortest-path potentials produce nonnegative reduced arc costs. The subgraph
+  consisting of the base matching and all zero-reduced-cost edges has perfect
+  matchings **exactly** equal to the minimum rollback states.
+- The potentials are integral and may be chosen in
+  \[
+  -(t-1)\le\phi(j)\le0.
+  \]
+  Every tight exchange arc satisfies
+  \[
+  \phi(k)-\phi(j)
+  =c(\ell_jr_k)-c(m_k)
+  \in\{-1,0,1\}.
+  \]
+
+Thus the cheap rollback branch is a canonical layered tight matching host, not
+an arbitrary family of expanded states. The remaining task is geometric
+analysis of its potential levels and zero-cost components.
 
 ## Important corrections
 
@@ -260,34 +286,38 @@ problem is qualitative payment for a small restored-edge support.
 
 ## What remains conditional
 
-1. **Cheap rollback conversion.** Convert a small restored-edge footprint into
-   destroyed target load, protected-reserve depletion, prefix or line-clean
-   continuation, strict envelope expansion, or another monotone payment.
-2. **Exchange-antichain geometry.** Convert a large CMR437 reachability antichain
-   into a Hall separator, p-adic/carry concentration, or another executable
-   inherited repair.
-3. **Repeated local ancestor resets.** Extend the deletion/rollback payment to
-   repeated compatible prefix-ancestor slots not arising from packet loss.
-4. **Low-height carry absorption.** Charge the remaining lower-height lines to
+1. **Tight rollback-host geometry.** Convert a large potential level, a dense
+   zero-cost component, or many unit level changes into target-load destruction,
+   reserve depletion, prefix/line-clean continuation, Hall decomposition, or
+   envelope expansion.
+2. **Rollback concentration conversion.** If many minimum rollback footprints
+   use one deleted edge, exploit its earlier certificate and p-adic/carry
+   signature.
+3. **Exchange-antichain geometry.** Convert a large CMR437 reachability antichain
+   into a Hall separator, p-adic/carry concentration, or executable inherited
+   repair.
+4. **Repeated local ancestor resets.** Attach the same minimum-cost/tight-face
+   normalization to repeated compatible prefix-ancestor slots.
+5. **Low-height carry absorption.** Charge the remaining lower-height lines to
    first-separation, quotient, and primitive carry signatures.
-5. **Prime-field terminal conversion.** Transfer the inherited-envelope and
+6. **Prime-field terminal conversion.** Transfer the inherited-envelope and
    exact-covering mechanism to prime-field carry cycles.
-6. **Square-root divisor boundary.** Remove or absorb the residual nearly
+7. **Square-root divisor boundary.** Remove or absorb the residual nearly
    singular collision terms.
-7. **Further balanced prime families.** Extend the non-reciprocal factorization
+8. **Further balanced prime families.** Extend the non-reciprocal factorization
    beyond prime seven.
-8. **CRT and arbitrary side lengths.** Control mixed projections and cover every
+9. **CRT and arbitrary side lengths.** Control mixed projections and cover every
    positive integer \(n\).
 
 ## Bottom line
 
 There is no complete proof. On the prime-power route, packet construction,
-packet recurrence, state-cycle erasure, polynomial packet termination, raw
-edge-set ancestry width, exact exchange corridors, linear temporal cycle
-compression, common-epoch sparse rollback, rollback host factorization, and
-rollback token/packet accounting are closed at their stated scales.
+packet recurrence, state-cycle erasure, polynomial packet termination, exact
+exchange corridors, linear temporal cycle compression, common-epoch sparse
+rollback, rollback host factorization, rollback token/packet accounting, and the
+canonical layered optimal rollback face are closed at their stated scales.
 
 The principal remaining prime-power theorem is a geometric progress certificate
-for cheap rollback footprints, together with a corresponding payment for
-repeated local ancestor resets. Arbitrary side-length coverage remains necessary
-afterward.
+for the tight rollback host, together with a corresponding minimum-cost
+normalization for repeated local ancestor resets. Arbitrary side-length coverage
+remains necessary afterward.
