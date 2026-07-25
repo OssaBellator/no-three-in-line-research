@@ -1,26 +1,26 @@
-# All-n product track: effective repair and side-seven structural stage
+# All-n product track: effective repair and side-seven selector-cycle stage
 
 **Branch:** `research/all-n-product-construction`
 
 PX397--PX492 give an effective rectangle-label doubling reduction above
-`10^2900`. PX493--PX507 isolate the first unresolved finite base, reduce it to
-four canonical relative classes, and successively rule out direct insertion,
-local host transpositions, and complete coordinate reordering of the four best
-abstract selectors.
+`10^2900`. PX493--PX514 isolate the first unresolved finite base, reduce it to
+four canonical relative classes, locate the fixed-selector obstruction in
+mixed-half triples, and turn alternating cycles into a complete selector move
+language.
 
 ## Current ledger
 
 | Item | Status | Current result |
 |---|---|---|
 | Effective closure root | **AUDITED** | PX492 closes the asymptotic numerical ledger at `N_3=10^2900`. |
-| Side-seven factor census | **COMPLETE** | PX493--PX495 give 132 saturated configurations, 488 ordered factors, and four relative classes. |
-| Direct side-six insertion recursion | **REFUTED** | PX497 rejects all 21,952 inherited one-label host extensions. |
-| Auxiliary `(2,2,2)` affine route | **REFUTED** | PX498 rejects all 6,912 affine hosts for the missing predecessor class. |
-| Two-column selector normal form | **AVAILABLE** | PX499 writes every host as `g_ijs=A_j H^s P^i`; PX500 gives exact alternating-cycle selector moves. |
-| Certified centre minima | **EXACT** | PX501 gives minimum triple counts `4,3,4,3` in the four best centre hosts. |
-| Local transposition repair | **REFUTED** | PX502 rejects all 170,368 hosts in the four one-transposition product boxes. |
-| Coordinate repair of centre selectors | **REFUTED** | PX505 rejects every bottom-row and two-column ordering of all four centre selectors. |
-| Universal side-seven doubling | **OPEN** | A successful construction must change the abstract selector itself. |
+| Side-seven factor census | **COMPLETE** | 132 saturated configurations, 488 ordered factors, four relative classes. |
+| Direct side-six insertion recursion | **REFUTED** | All 21,952 inherited one-label extensions fail. |
+| Local host transpositions | **REFUTED** | All 170,368 one-transposition-box hosts fail. |
+| Fixed-selector coordinate repair | **REFUTED** | The four centre selector coordinate orbits fail in 2,227,923 CSP nodes. |
+| Cross-half profile | **EXACT** | 926,852 top-clean pairs; 806,548 admit a separately clean bottom half; every union has a mixed-half triple. |
+| Selector move graph | **CONNECTED** | Alternating cycles connect all selectors with diameter at most fourteen. |
+| Radius-one selector layer | **ENUMERATED** | The four centres have 1,748 distinct simple alternating-cycle neighbours. |
+| Universal side-seven doubling | **OPEN** | Coordinate feasibility of the selector-changing layers remains unresolved. |
 | Exact all-side closure | **OPEN** | No structural bridge covers every base below the cutoff. |
 
 ## Effective asymptotic constants
@@ -37,97 +37,66 @@ A_3=320,
 N_3=10^{2900}.
 \]
 
-The retained-order exponent is
-
-\[
-\frac65-1-\frac{16}{109}=\frac{29}{545}>0.
-\]
-
 ## Exact side-seven classes
 
-| Relative type | Configurations | Ordered factors |
+| Relative type | Configurations | Ordered factors | Abstract selectors |
+|---|---:|---:|---:|
+| `(7)` | 60 | 120 | 1,323,522 |
+| `(5,2)` | 32 | 128 | 2,269,620 |
+| `(4,3)` | 20 | 80 | 1,975,428 |
+| `(3,2,2)` | 20 | 160 | 4,422,600 |
+| **Total** | **132** | **488** | **9,991,170** |
+
+## Fixed-selector coordinate obstruction
+
+After gauge-fixing the top row order, a selector embedding has 21 variables:
+`A_0`, `A_1`, and the bottom-row order `R`, each an element of `S_7`. The four
+centre selectors have no embedding in any orientation.
+
+The finer half-profile is:
+
+| Relative type | Top-clean pairs | Also bottom-clean |
 |---|---:|---:|
-| `(7)` | 60 | 120 |
-| `(5,2)` | 32 | 128 |
-| `(4,3)` | 20 | 80 |
-| `(3,2,2)` | 20 | 160 |
-| **Total** | **132** | **488** |
+| `(7)` | 172,568 | 134,382 |
+| `(5,2)` | 67,628 | 59,450 |
+| `(4,3)` | 221,952 | 202,836 |
+| `(3,2,2)` | 464,704 | 409,880 |
+| **Total** | **926,852** | **806,548** |
 
-PX50 reduces universal `2 x 7 -> 14` closure to four canonical full-selector
-host problems.
+For every bottom-clean completion, PX505 forces a triple meeting both halves.
+Thus the coordinate failure is genuinely cross-half rather than an intrinsic
+failure of either half.
 
-## Selector and coordinate decomposition
+## Selector-cycle graph
 
-Put
+For selectors `F,F'`, colour `F\setminus F'` red and `F'\setminus F` blue. Equal
+red and blue degree at every abstract row and column decomposes the symmetric
+difference into alternating cycles. Flipping at most fourteen such cycles
+transforms `F` into `F'`.
 
-\[
-A_0=T,
-\qquad
-A_1=QT.
-\]
+The exact first layers around the four centres are:
 
-Then
+| Relative type | Radius-one neighbours |
+|---|---:|
+| `(7)` | 1,092 |
+| `(5,2)` | 364 |
+| `(4,3)` | 180 |
+| `(3,2,2)` | 112 |
+| **Total** | **1,748** |
 
-\[
-\boxed{g_{ijs}=A_jH^sP^i}.
-\]
-
-After gauge-fixing the top row order, a fixed abstract selector has exactly 21
-coordinate variables:
-
-- seven values of `A_0`;
-- seven values of `A_1`;
-- seven values of the bottom-row order `R`;
-
-with one all-different condition on each group. Every bad triple uses three
-distinct abstract column vertices, so coordinate feasibility is an exact finite
-CSP.
-
-## Exact finite barriers
-
-### Local host boxes
-
-The four centre minima are
-
-\[
-(7):4,
-\qquad
-(5,2):3,
-\qquad
-(4,3):4,
-\qquad
-(3,2,2):3.
-\]
-
-All 170,368 hosts in their one-transposition product boxes fail, after
-126,633,677 exact selector nodes.
-
-### Complete coordinate orbits
-
-Fix the abstract selector underlying each centre. Vary `A_0,A_1,R` over all of
-`S_7^3` and use all four orientations. The exact CSP node counts are:
-
-| Relative type | `cc` | `cf` | `fc` | `ff` | Total |
-|---|---:|---:|---:|---:|---:|
-| `(7)` | 95,187 | 128,576 | 84,090 | 118,771 | 426,624 |
-| `(5,2)` | 123,744 | 126,196 | 124,181 | 127,384 | 501,505 |
-| `(4,3)` | 136,854 | 311,894 | 124,166 | 264,514 | 837,428 |
-| `(3,2,2)` | 93,186 | 91,698 | 124,604 | 152,878 | 462,366 |
-| **Total** |  |  |  |  | **2,227,923** |
-
-This rejects over two trillion raw coordinate assignments. It does not rule out
-other abstract selectors.
+The cycle lengths range from four to twenty-two. Every resulting selector has
+abstract degree two exactly.
 
 ## Immediate frontier
 
-1. **Abstract selector search.** Traverse the degree-two selector space by
-   alternating-cycle flips and send each new selector to the coordinate CSP.
-2. **Cross-half obstruction.** Determine why many coordinate orderings make the
-   top and bottom halves separately no-three but still force a mixed triple.
-3. **Selector invariant.** Find a computable selector signature that predicts
-   coordinate infeasibility before running the full 21-variable CSP.
-4. **Single-cycle theorem.** Explain the persistent low-defect floor in the
-   `(7)` class, or construct a selector outside the current basin.
+1. **Cached radius-one CSP.** Apply the 21-variable coordinate solver to all
+   1,748 neighbours while sharing triple constraints between nearby selectors.
+2. **Cross-half cycle ledger.** For a selector flip, count destroyed and created
+   mixed-half triples rather than recomputing the full geometry independently.
+3. **Breadth-first selector search.** If radius one fails, continue by selector
+   distance; PX512 guarantees completeness by distance fourteen.
+4. **Selector invariant.** Find a signature that predicts coordinate
+   infeasibility before the full CSP.
 5. **Finite-range bridge.** Convert a successful side-seven or general cycle
    theorem into arithmetic coverage below PX492.
 
@@ -140,6 +109,9 @@ python scripts/verify_product_side_seven_two_column_normal_form.py
 g++ -O3 -std=c++17 scripts/verify_product_side_seven_insertion_barrier.cpp -o /tmp/side7_barrier
 g++ -O3 -std=c++17 scripts/verify_product_side_seven_local_minimum_boxes.cpp -o /tmp/side7_boxes
 g++ -O3 -std=c++17 scripts/verify_product_side_seven_selector_coordinate_csp.cpp -o /tmp/side7_coordinate_csp
+g++ -O3 -std=c++17 scripts/verify_product_side_seven_cross_half_profile.cpp -o /tmp/side7_cross_half
+g++ -O3 -std=c++17 scripts/verify_product_side_seven_selector_cycle_graph.cpp -o /tmp/side7_selector_cycles
+/tmp/side7_selector_cycles
 ```
 
 Every recorded census and minimum uses exact integer determinants. Exact
