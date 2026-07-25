@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Exhaust AC3an--AC3aq arithmetic and weighted delegation checks."""
+"""Exhaust AC3an--AC3as arithmetic and weighted delegation checks."""
 
+from fractions import Fraction
 from itertools import product
 from math import gcd
 
@@ -159,7 +160,6 @@ def verify_weighted_paths(maximum_length=8, maximum_beta=3):
                     ) * 2 >= overlap
                     parity_checks += 1
 
-    # Additivity across two anchors is the only extra step used in AC3ap.
     for length in range(1, 6):
         for step in range(1, 6):
             for beta in range(1, 3):
@@ -187,16 +187,56 @@ def verify_weighted_paths(maximum_length=8, maximum_beta=3):
     return overlap_checks, parity_checks, anchor_checks
 
 
+def verify_role_composition(maximum_weight=40):
+    composition_checks = 0
+    shape_checks = 0
+
+    for total in range(1, maximum_weight + 1):
+        for role_count in range(1, 5):
+            for multiplicity in range(1, 5):
+                for profile_count in range(1, 6):
+                    selected_class = Fraction(total, 2 * role_count)
+                    secondary = selected_class / multiplicity
+                    exact_profile = secondary / profile_count
+                    uniform_lower = Fraction(
+                        total,
+                        2 * role_count * multiplicity * profile_count,
+                    )
+                    assert exact_profile == uniform_lower
+                    assert selected_class / profile_count >= uniform_lower
+                    composition_checks += 1
+
+    for record_count in range(1, 5):
+        for weights in product(range(4), repeat=record_count):
+            total = sum(weights)
+            if total == 0:
+                continue
+            for shapes in product(range(1, 5), repeat=record_count):
+                for threshold in range(1, 5):
+                    bounded = sum(
+                        weight
+                        for weight, shape in zip(weights, shapes, strict=True)
+                        if shape <= threshold
+                    )
+                    large = total - bounded
+                    assert 2 * bounded >= total or 2 * large >= total
+                    shape_checks += 1
+
+    return composition_checks, shape_checks
+
+
 def main():
     profile, pigeonhole = verify_profiles()
     congruence, aggregation = verify_slotization()
     overlap, parity, anchors = verify_weighted_paths()
+    composition, shapes = verify_role_composition()
     print(
         "AC BDA delegation: verified "
         f"{profile} profile counts, {pigeonhole} profile routers, "
         f"{congruence} scalar congruences, {aggregation} aggregations, "
         f"{overlap} weighted paths, {parity} parity classes, "
-        f"and {anchors} two-anchor sums"
+        f"{anchors} two-anchor sums, {composition} role compositions, "
+        f"and {shapes} shape partitions"
     )
 
 
