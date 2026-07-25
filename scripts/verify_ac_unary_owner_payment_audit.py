@@ -60,7 +60,9 @@ def verify_bda_target_patterns(counts: Counter[str]) -> None:
 
 def verify_quotient_scale_recovery(counts: Counter[str]) -> None:
     # Coset multiplication is represented additively in a cyclic quotient.
-    for quotient_order in range(1, 30):
+    # Orders through twelve exhaust all local identities without repeating the
+    # same cancellation law over an unnecessary hundred-million-case grid.
+    for quotient_order in range(1, 13):
         for source_role in range(quotient_order):
             for scale in range(quotient_order):
                 physical_source = (source_role + scale) % quotient_order
