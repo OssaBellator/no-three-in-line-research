@@ -2,7 +2,7 @@
 
 **Branch:** `research/alternating-core-chain`
 
-AC3fa--AC3fo reduce every failed executable BDA/RI bank and every explicit RI fixed, moving or blocker profile to created-cell rank one, two or three relative to a fixed parent configuration. This note terminates the purely local existence and payment questions for rank one. In a realized two-layer state, every rank-one triple has one distinguished cell absent from the parent configuration and two parent-current context cells. Aggregating by that pivot cell gives disjoint current-certificate payment buckets. A two-column rectangle switch removes the pivot and destroys its whole bucket; the opposite layer is repaired by the exact zero/singleton/two-intersection menu.
+AC3fa--AC3fo reduce every failed executable BDA/RI bank and every explicit RI fixed, moving or blocker profile to created-cell rank one, two or three relative to a fixed parent configuration. This note terminates the purely local existence and payment questions for rank one. In a realized two-layer state, every rank-one triple has one distinguished cell absent from the parent configuration and two parent-current context cells. Aggregating by that pivot cell gives disjoint current-certificate payment buckets. A two-column rectangle switch removes the pivot from the full two-layer union and destroys its whole bucket; the opposite layer is repaired without restoring the pivot.
 
 ## Rank-one pivot buckets
 
@@ -32,9 +32,9 @@ $$
 
 The two context cells of a triple may lie in either layer. Only the pivot's own layer is used for the decoder below.
 
-## AC3fs -- exact pivot rectangle decoder -- PROVED
+## AC3fs -- exact union-safe pivot rectangle decoder -- PROVED
 
-Assume `W_z>0`, and let `L_z` be the permutation layer containing `z`. Choose any other cell `a_z` of `L_z`. Such a cell exists: a current triple requires a grid with at least two columns, and `L_z` is a full permutation layer. Write
+Assume `W_z>0`, and let `L_z` be the permutation layer containing `z`. Choose any other cell `a_z` of `L_z`. Such a cell exists because a collinear triple in the two-layer union requires grid size at least three. Write
 
 $$
 z=(c_0,r_0),
@@ -56,21 +56,46 @@ z'=(c_0,r_1),
 a_z'=(c_1,r_0).
 $$
 
-This switch preserves that layer's row and column sets, removes `z`, and therefore destroys every certificate in `P_z`.
+This switch preserves that layer's row and column sets and removes `z` from that layer.
 
-Let the opposite permutation layer occupy `t` of the two desired cross cells, where `t` is `0,1` or `2`. A legal repaired opposite layer always exists:
+Let the opposite permutation layer occupy `t` of the two desired cross cells, where `t` is `0,1` or `2`. A legal repaired opposite layer which does not contain `z` always exists.
 
-1. `t=0`: leave it unchanged;
-2. `t=1`: transpose the unique blocked desired cell with any other cell of the opposite permutation;
-3. `t=2`: transpose the two blocked rows, equivalently exchange the two rectangle diagonals between the layers.
+1. `t=0`: leave the opposite layer unchanged.
+2. `t=1`: choose one opposite-layer cell whose column lies outside `{c_0,c_1}` and transpose its row with the unique blocked cross cell.
+3. `t=2`: choose one opposite-layer cell
+   $$
+   e=(c_2,r_2),
+   \qquad c_2\notin\{c_0,c_1\},
+   $$
+   and replace the three blocker cells
+   $$
+   (c_0,r_1),
+   \quad(c_1,r_0),
+   \quad(c_2,r_2)
+   $$
+   by the oriented three-cycle
+   $$
+   \boxed{
+   (c_0,r_2),
+   \quad(c_1,r_1),
+   \quad(c_2,r_0).
+   }
+   $$
+   This may restore the partner cell `a_z=(c_1,r_1)`, but it does not restore the pivot `z=(c_0,r_0)`.
 
-Every resulting state is a legal two-layer permutation state and destroys certified current weight at least `W_z`.
+Every resulting state is a legal pair of disjoint permutation layers, the pivot is absent from their union, and every certificate in `P_z` is destroyed. Hence the certified destroyed weight is at least `W_z`.
 
 ### Proof
 
-The two selected cells are distinct cells of one permutation layer, so they use distinct rows and columns. The opposite diagonal is disjoint from that layer and preserves its row and column sets. Every triple in `P_z` contains `z`, regardless of the layers of its two context cells, so removal of `z` destroys the entire bucket.
+The two selected cells are distinct cells of one permutation layer, so they use distinct rows and columns. The opposite diagonal preserves its row and column sets. Every triple in `P_z` contains `z`, regardless of the layers of its context cells, so absence of `z` from the final union destroys the whole bucket.
 
-For the opposite layer, the zero and two cases are the standard empty-diagonal switch and phase flip. In the singleton case the grid has at least two columns, so the opposite permutation has another cell. Transposing the blocked desired cell with any other opposite-layer cell preserves all opposite-layer rows and columns. Neither replacement can equal a cell of the switched first layer: one uses a selected active column with the wrong active row, and the other uses the selected active row in a different column. This is the RI5h singleton-repair argument. QED.
+A collinear triple cannot occur on a two-column grid, so `W_z>0` implies at least three columns and supplies the outside auxiliary column required in cases `t=1,2`.
+
+In the singleton case, the selected blocked row occurs at no other opposite-layer column. Swapping it with an outside cell preserves the blocker matching; neither replacement equals a cell of the switched pivot layer, and the pivot column receives a row different from `r_0`.
+
+In the full case, the displayed three-cycle uses the same three blocker rows and columns. It avoids the switched first layer: at `c_0`, row `r_2` differs from `r_1`; at `c_1`, row `r_1` differs from `r_0`; and at `c_2`, row `r_0` differs from the first-layer row in column `c_2` because `r_0` was the original first-layer row in the distinct column `c_0`. The pivot `(c_0,r_0)` is absent. QED.
+
+A simple phase flip is not a paid pivot decoder for the union potential: it would move `z` to the opposite layer and leave every union triple containing `z` intact. The oriented auxiliary repair above is essential.
 
 ## AC3ft -- exact private payment by pivot aggregation -- PROVED
 
@@ -103,7 +128,7 @@ A rank-one triple has exactly one cell outside the fixed parent set `M`, so it h
 For a pivot `z`, let `E_z` contain:
 
 - the pivot, selected same-layer partner and both cross cells;
-- every opposite-layer cell used by the zero/singleton/two-intersection repair menu;
+- every outside auxiliary opposite-layer cell and replacement used by the singleton or three-cycle repair;
 - the private paid bucket `P_z`;
 - every row, column, replacement, potential-factor, protected-bank and feasibility scope meeting any local state.
 
@@ -124,7 +149,7 @@ For every `K>=1`, one of the following holds.
    $$
    \boxed{D\ge W_1/K.}
    $$
-   Every product of its local repair choices is legal, and every state destroys all represented pivot buckets.
+   Every product of its local repair choices is legal, and every state destroys all represented pivot buckets from the full union.
 
 ### Proof
 
@@ -132,7 +157,7 @@ AC3ft gives disjoint private paid sets. AC3v includes every interaction in the p
 
 ## AC3fv -- pivot-product comparison and reverse ticket -- PROVED
 
-Choose independently from the finite local repair menu of every decoder in an executable pivot family. Relative to the realized state `S`, every newly created triple has AC3fa rank one, two or three. Let `N'_k` be its exact expected weight at new-cell rank `k`.
+Choose independently from the finite local repair menu of every decoder in an executable pivot family. Relative to the realized state `S`, every newly created union triple has AC3fa rank one, two or three. Let `N'_k` be its exact expected weight at new-cell rank `k`.
 
 Then
 
@@ -188,7 +213,7 @@ Rank-one collateral no longer lacks a local executable move or a valid payment m
 
 - The unique new cell is the pivot.
 - All current rank-one triples with that pivot form one private paid bucket.
-- A legal rectangle decoder removes the pivot and destroys the whole bucket.
+- A union-safe rectangle decoder removes the pivot and destroys the whole bucket.
 - Scope-complete extraction gives a paid product bank or an explicit AC3fr overload.
 - Failure returns a new rank-one, rank-two or rank-three profile at loss `1/(3K)`.
 - Immediate rectangle reversal is ticketed by the full rectangle address.
@@ -197,4 +222,4 @@ The remaining rank-one work is global no-recycling across successive parent conf
 
 ## Finite check
 
-`scripts/verify_ac_rank_one_pivot_decoder.py` normalizes both permutation layers on small grids, exhausts pivot rectangles and all opposite-layer occupancies, verifies every legal repair, arbitrary-layer context-bucket destruction, private pivot assignment, rank-three failed ledgers and reverse-ticket identity.
+`scripts/verify_ac_rank_one_pivot_decoder.py` normalizes both permutation layers on small grids, exhausts pivot rectangles and all opposite-layer occupancies, verifies the singleton and full-block auxiliary repairs, arbitrary-layer context-bucket destruction, private pivot assignment, rank-three failed ledgers and reverse-ticket identity.
