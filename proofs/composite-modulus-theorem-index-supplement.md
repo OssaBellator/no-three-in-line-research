@@ -36,9 +36,14 @@ supplement mirrors the collision-free live range recorded in
 | CMR512--516 | Exact unavailable-star prefix occupancy, tunable heavy/dispersed token alternative, disjoint token packing, square-root endpoint, and adaptive line-clean token splice | PROVED | `docs/160-prime-power-unavailable-star-token-splice.md` |
 | CMR517--521 | One-token persistence/stock bound, exact global labelled stock, absence-run/reintroduction ledger, three-way temporal endpoint, and free-absorption episode bound | PROVED | `docs/161-prime-power-unavailable-token-temporal-ledger.md` |
 | CMR522--526 | Maximum-allowed persistent-edge criterion, exact two-endpoint deficiency, persistent-aware absorption, row-column cross incidence, and rooted trace witnesses | PROVED | `docs/162-prime-power-persistent-blocker-absorption-deficiency.md` |
+| CMR527--534 | Cross-pair line injectivity, disjoint equal-size pair cylinders, support multiplicity, König pair-bank/star dichotomy, unavailable paid-pair surcharge, trace-cell signatures, joint pair persistence, and the combined cross endpoint | PROVED | `docs/163-prime-power-persistent-cross-pair-bank.md` |
+| CMR535--540 | Canonical envelope-epoch assignment, exact pair/trace signature stocks, finite ancestry or recurrence, multi-edge joint absence runs, recurrent-pair payment, and fixed trace-line ancestry | PROVED | `docs/164-prime-power-cross-signature-ancestry.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR526, one-shot selection and nonpersistent temporal reuse are closed. The
-immediate target is geometric conversion of a continuously unavailable
-row-column cross into a Hall wall, fixed prefix/quotient/carry signature,
-protected-reserve depletion, deletion ancestry, or envelope expansion.
+CMR540, persistent pair ancestry is finite unless it pays reintroduction or
+becomes one fixed common-epoch CMR531 selector. Persistent trace ancestry is
+finite unless one envelope-labelled central-cell/arm/trace-cell signature
+recurs. The trace cell is not necessarily unavailable. The immediate targets
+are payment for fixed selector failure and fixed trace-line recurrence via
+reserve depletion, full-token return, quotient/carry concentration, deletion
+ancestry, or envelope expansion.
