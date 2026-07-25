@@ -36,13 +36,18 @@ The composite branch now has the following reduction.
 8. CMR372--CMR377 use the Joos--Mubayi--Smith covering theorem to obtain an exact
    target-specific parent permutation avoiding every candidate-only triple in
    any one fixed band `H>=t^eta`, for sufficiently large `t`.
-9. CMR378--CMR384 compute the exact coarse-prefix return profile. A one-pass
-   descending sweep has only `O_p(t log^2 t)` direction-labelled token return
-   mass, and unbounded return requires repeated use of one compatible ancestor
-   slot.
+9. CMR378--CMR384 compute laminar and recursive row-token return profiles. A
+   one-pass descending recursive sweep has only `O_p(t log^2 t)` labelled
+   row-token return mass, and unbounded return requires repeated use of one
+   compatible ancestor slot.
+10. CMR385--CMR397 refine the line-energy endpoint to full prefix tokens, give
+    their exact two-dimensional initial stock, and prove a one-dimensional
+    per-reset cost. At depth `p^b>=t^(2/3)`, one full token has total one-pass
+    endpoint stock at most `t^(2/3)+2h t^(1/3)`.
 
-The inherited escape problem is no longer missing a local bank for one blocker
-or one intermediate band. It is a scheduling and no-return problem.
+The inherited escape problem is no longer missing a local bank for one blocker,
+one token batch, or one intermediate band. It is a scheduling and no-return
+problem.
 
 ### Intermediate and high primitive heights
 
@@ -65,8 +70,8 @@ substantial p-adic structure:
 
 - common first-separation depth and projective direction;
 - full-prefix heavy/dispersion alternatives;
-- exact token line universes;
-- tunable deep-token batches;
+- exact row-token and full-token inventories;
+- exact token line universes and tunable deep-token batches;
 - universal line-clean paid-pair banks;
 - quotient and carry collateral ledgers.
 
@@ -75,20 +80,30 @@ monotone payment, rather than prove another isolated extraction lemma.
 
 ## Bottleneck 3: repeated resets and forced ancestry
 
-Fine-to-coarse prefix processing preserves every unprocessed coarser quotient
-charge. CMR378--CMR383 now quantify the reverse direction for recursive prefix
-moves. For a depth-`b` token,
+For a row-prefix token, CMR383 factors recursive coarse return as
 
 \[
-I_\tau^{\rm coarse}\le\frac{t}{p^b}A_\tau,
+I_\tau^{\rm coarse}
+\le
+\frac{t}{p^b}A_\tau,
 \]
 
-where `A_tau` counts compatible ancestor resets. In one pass, `A_tau<=2b`; in
-an arbitrary history, unbounded return forces one of those finitely many
-ancestor depth-layer slots to be reset repeatedly.
+where `A_tau` counts compatible ancestor resets. CMR396 gives the full-token
+analogue
 
-Thus the next dynamic theorem is not a raw edge-count estimate. It must pay
-repeated use of one fixed slot by at least one of:
+\[
+I_\tau^{(2),\rm coarse}
+\le
+\frac{t}{p^b}A_\tau^{(2)}.
+\]
+
+In a one-pass schedule both reset counts are at most `2b`. In an arbitrary
+history, excessive return forces one of those finitely many ancestor
+ depth-layer slots to be reset repeatedly. The direction-labelled one-pass
+full-token return mass is `O_p(t^2 log t)`.
+
+Thus the next dynamic theorem is not another raw edge-count estimate. It must
+pay repeated use of one fixed slot by at least one of:
 
 1. coarse target load destroyed by the reset;
 2. strict envelope expansion;
@@ -99,9 +114,9 @@ CMR384 removes the witness term as a separate geometric mystery: every witness
 certificate opens an executable prefix continuation. The other unresolved term
 is the width of the fully forced CMR217 ancestry DAG.
 
-Joint-parent resets remain distinct. They preserve the envelope row sets but
-need not preserve every descendant fibre, so their fine-token return profile is
-not yet covered by CMR379--CMR383.
+Joint-parent and exact-band resets remain distinct. They need not preserve every
+recursive descendant fibre, so their fine full-token return profiles are not
+yet covered by CMR393--CMR397.
 
 ## Bottleneck 4: all side lengths
 
@@ -116,7 +131,8 @@ The prime-power programme now supplies:
   banks;
 - exact high-slice cleaning;
 - exact target-specific completion of any one intermediate-height band;
-- simultaneous elimination of bounded deep-token batches.
+- simultaneous elimination of bounded deep-token batches;
+- exact one-pass row-token and full-token reintroduction budgets.
 
 Arbitrary `n` still requires a separate coverage mechanism: further balanced
 prime factorizations, controlled products, CRT absorption, or patching between
@@ -138,16 +154,19 @@ The following broad pieces are closed:
 10. universal sharp-blocker line-clean banks and line-energy conversion;
 11. deep-token universe batching and tunable heavy/dispersion thresholds;
 12. exact completion of one intermediate-height band;
-13. exact one-pass coarse-prefix reintroduction accounting.
+13. exact row-token and full-token return accounting for one descending recursive
+    prefix pass;
+14. reduction of excessive recursive return to repeated use of one compatible
+    ancestor slot.
 
 ## Open lemmas in recommended order
 
-1. **Multi-band exact scheduling.** Combine CMR376 across all relevant height
+1. **Repeated ancestor-slot payment.** Attach a monotone charge to repeated
+   resets of one CMR396-compatible full-token ancestor slot.
+2. **Non-prefix return profile.** Bound full-token and protected-band recreation
+   under one old-cell-clean joint-parent or exact-band move.
+3. **Multi-band exact scheduling.** Combine CMR376 across all relevant height
    bands without logarithmic conflict-degree accumulation or recreation.
-2. **Repeated ancestor-slot payment.** Attach a monotone charge to repeated
-   resets of one CMR383-compatible prefix slot.
-3. **Joint-parent return profile.** Bound fine-token and fine-band recreation
-   under one old-cell-clean joint-parent move.
 4. **Forced-ancestry width.** Bound descendants per deleted edge/signature or
    resample several alternating exchange cycles simultaneously.
 5. **Low-height carry integration.** Convert universal line-clean outputs and
@@ -163,12 +182,12 @@ The following broad pieces are closed:
 
 ## Computational priorities
 
+- Measure exact full-token and protected-band recreation under one joint-parent
+  move.
 - Enumerate aggregate conflict degrees for grouped adjacent height bands in the
   duplicated-row covering model.
-- Measure exact fine-token and protected-band recreation under one joint-parent
-  move.
-- Enumerate exchange-ancestry descendant counts by first-separation signature.
-- Test reset-slot potentials against the exact CMR350 two-step recurrence.
+- Enumerate exchange-ancestry descendant counts by full-token signature.
+- Test ancestor-slot potentials against the exact CMR350 two-step recurrence.
 - Search for non-reciprocal balanced grid factorizations at the next
   `p=3 mod 4` primes.
 - Continue the `N=14` and joint digital searches.
