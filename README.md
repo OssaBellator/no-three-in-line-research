@@ -20,6 +20,8 @@ three collinear.
   roadmap.
 - [`proofs/prime-patching-recent-index.md`](proofs/prime-patching-recent-index.md):
   focused PP3 theorem index.
+- [`proofs/prime-patching-transition-index.md`](proofs/prime-patching-transition-index.md):
+  fixed-centre transition addendum.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): repository-wide ledger.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected
   and refuted statements.
@@ -143,18 +145,25 @@ transposition weight vanish identically. Diffuse remaining support-ranked weight
 gives a strict pool-compatible decrease. A fixed captive star centre that still
 fails carries one of nine explicit support-degree cores.
 
+The transition core is now sharpened further: a failed clean-chain branch gives a
+linear resource-disjoint witness sunflower, and layer/pool pigeonholing converts
+that sunflower to a free or one-pool credited endpoint bank of size
+`m^(9/10-o(1))`, far above the required marked-bank scale. Transition sunflowers
+therefore rejoin the ordinary paid star/resource-bank frontier.
+
 ## Current remaining theorem
 
 The all-`n` branch is reduced to:
 
 1. controller denominator failure, insufficient local Ore slack, or weighted
    anchor energy in one canonical ownership core;
-2. paid conversion of source-star/resource banks produced by unary support and
-   forced Hall cuts;
+2. paid conversion of source-star/resource banks produced by unary support,
+   forced Hall cuts, and fixed-centre transition sunflowers;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, or one fixed captive
-   centre with one of nine explicit support-degree certificates;
+4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, weighted
+   clean-chain concentration, or one of the eight nontransition fixed-centre
+   support-degree certificates;
 5. alternating cycle-star/theta support cores or cost comparable with cycle
    credit;
 6. quadratic binary cell fans, weighted two-resource choice grids,
@@ -163,8 +172,8 @@ The all-`n` branch is reduced to:
 
 Diffuse pool-local source mass, prepared marked spread hosts, rank-one unary
 `Xi`, rank-two binary transpositions, raw polynomial resource stars, diffuse
-binary dual mass, unstructured non-superregularity, controller relabelling, and
-termination are no longer separate open problems.
+binary dual mass, unstructured non-superregularity, controller relabelling,
+transition sunflowers, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -176,10 +185,11 @@ The no-three-in-line conjecture remains unproved.
   dense hard-unary localization, and binary dual price cores.
 - `docs/157`--`docs/159`: conditional resource-star completion, conditional Hall
   localization, and complete two-resource choice grids.
-- `docs/160`--`docs/164`: marked pool source dilution, unary-resource extraction,
-  support-ranked `Xi` weights, and exceptional-centre certificates.
-- `docs/165`--`docs/166`: universal single-cycle filler states and paid
-  two-resource grid selection.
+- `docs/160`--`docs/166`: marked pool source dilution, unary-resource extraction,
+  support-ranked `Xi` weights, exceptional-centre certificates, universal
+  single-cycle filler states, and paid two-resource grid selection.
+- `docs/167`--`docs/170`: fixed-centre transition role localization, bounded-choice
+  cores, disjoint witness petals, and conversion to credited endpoint banks.
 
 ## Current exact checks
 
@@ -188,15 +198,14 @@ The scripts use Python 3.10+ and the standard library.
 ```bash
 python scripts/check_alternating_mobility.py \
   experiments/alternating-mobility-star-example.json
-
 python scripts/check_anchor_deficiency_core.py \
   experiments/anchor-deficiency-core-example.json
-
 python scripts/check_binary_resource_star_conditioning.py \
   experiments/binary-resource-star-conditioning-example.json
-
 python scripts/check_single_cycle_spread.py \
   experiments/single-cycle-spread-example.json
+python scripts/check_transition_sunflower_bank.py \
+  experiments/transition-sunflower-bank-example.json
 ```
 
 These are finite diagnostics. They do not replace the asymptotic conversion
