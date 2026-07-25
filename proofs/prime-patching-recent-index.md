@@ -48,7 +48,7 @@ repository-wide theorem ledger.
 | PP3nf--PP3nj | Global refill slack from controller and same-slot anchor mass | PROVED | `docs/113-global-refill-slack-from-defect-mass.md` |
 | PP3nk--PP3np | Mass-sensitive source-valid derangement line energy and extremality | PROVED / FROM LLL DISTRIBUTION | `docs/114-near-uniform-derangement-line-energy.md` |
 | PP3nq--PP3nu | Adaptive thinning gives near-uniform fully source-valid derangements | PROVED | `docs/115-adaptive-near-uniform-source-valid-derangements.md` |
-| PP3nv--PP3ny | Szemerédi--Trotter line-family localization | PROVED / FROM SZEMERÉDI--TROTTER | `docs/116-line-energy-incidence-multiplicity.md` |
+| PP3nv--PP3ny | Szemeredi--Trotter line-family localization | PROVED / FROM SZEMEREDI--TROTTER | `docs/116-line-energy-incidence-multiplicity.md` |
 | PP3nz--PP3oc | Dense Hall cores survive adaptive thinning and retain the line-family alternative | PROVED / FROM SLICE CONCENTRATION | `docs/117-dense-hall-core-adaptive-thinning.md` |
 | PP3od--PP3og | Divisor energy localizes anchor-driven ownership Hall failures | PROVED | `docs/118-anchor-energy-ownership-hall-localization.md` |
 | PP3oh--PP3ol | Target-rich line families yield linear resource-disjoint rectangle banks | PROVED / CONDITIONAL INSTALLATION INTERFACE | `docs/119-common-line-alternating-rectangle-bank.md` |
@@ -79,6 +79,16 @@ repository-wide theorem ledger.
 | PP3tu--PP3ty | Forced matching edges are private edges of tight Hall blocks | PROVED | `docs/144-forced-edge-tight-hall-certificates.md` |
 | PP3tz--PP3ue | Canonical forward/backward reachability cuts localize forced edges | PROVED | `docs/145-canonical-forced-edge-reachability-cuts.md` |
 | PP3uf--PP3ul | Bounded credited alternating components form paid finite-state banks | PROVED / CONDITIONAL ON DIFFUSE COMPONENT GEOMETRY | `docs/146-bounded-alternating-component-paid-bank.md` |
+| PP3um--PP3ur | Maximum mobility gives disjoint cycle banks or a feedback hub | PROVED | `docs/147-maximum-mobility-alternating-cycle-bank.md` |
+| PP3us--PP3uy | Low mobility localizes to cycle stars or two-hub cores | PROVED / FROM VERTEX-CAPACITATED MAX FLOW | `docs/148-mobility-hub-cycle-star-localization.md` |
+| PP3uz--PP3vf | Two-hub cycles decompose into theta-state banks and support cores | PROVED | `docs/149-two-hub-theta-state-decomposition.md` |
+| PP3vg--PP3vm | Anchor ownership has sublinear deficiency and few exceptional macros | PROVED | `docs/150-anchor-threshold-ownership-deficiency.md` |
+| PP3vn--PP3vr | Dulmage reachability confines all anchor violations to one bad cut | PROVED | `docs/151-canonical-anchor-deficiency-core.md` |
+| PP3vs--PP3vw | Weighted anchor cores admit an E/d bottleneck completion | PROVED | `docs/152-weighted-anchor-core-completion.md` |
+| PP3vx--PP3wb | Core bottlenecks complete by local Ore or consume controller slack | PROVED | `docs/153-core-aware-local-ore-completion.md` |
+| PP3wc--PP3wh | Dense hard-unary support yields source stars or resource banks | PROVED | `docs/154-dense-hard-unary-star-resource-localization.md` |
+| PP3wi--PP3wn | Binary dual support yields resource stars or alternating rectangles | PROVED | `docs/155-binary-dual-packing-rectangle-localization.md` |
+| PP3wo--PP3wu | Weighted binary dual mass yields rectangle matchings or price cores | PROVED | `docs/156-binary-dual-price-core-localization.md` |
 
 ## Current scale
 
@@ -98,49 +108,67 @@ patch by PP3hq.
 
 ## Direct allocation endpoint
 
-Four independent mechanisms remain available: one-sided bottleneck/slack,
-deterministic two-sided ownership, random two-sided local Ore, and random
-one-sided average-refill complementary degree. Anchor energy rules out
-middle-density ownership Hall rectangles.
+Anchor-only ownership failure has maximum deficiency
+
+```text
+D_anc = O(m^(1/2-zeta+o(1))) = o(T).
+```
+
+All necessary threshold violations may be confined to one canonical Dulmage cut.
+The movement and refill cores have exact bottlenecks `E_U/d_U` and `E_V/d_V`.
+If those increments fit inside every macro's baseline controller-degree slack,
+PP3vy gives all local perfect matchings. Failure is a controller denominator,
+insufficient baseline Ore slack, or weighted anchor energy per necessary core
+crossing.
+
+The earlier one-sided bottleneck/slack, deterministic two-sided ownership,
+random two-sided local Ore, and random one-sided average-refill mechanisms remain
+available independently.
 
 ## Hall, block, dynamic, and non-superregular endpoint
 
-A recapture-dominated Hall core yields a linear rectangle bank. Every zero-density
-hard-unary support is absorbed by cross-block states, equitable colouring,
-recapture pruning, and superregular spread matching.
+A recapture-dominated Hall core yields a linear rectangle bank. Every
+zero-density hard-unary support is absorbed by cross-block states and
+superregular spread matching. Positive-density hard-unary support gives a fixed
+endpoint-resource cell star, then either a source-star centre or a
+resource-disjoint credited endpoint bank.
 
 At secondary exponent `kappa<1/60`, the global ordinary rectangle branch has
-automatic chromatic source validity and reduces to `k*A=Omega(H^2)` or
-`k^2*B=Omega(H^3)`. The pool-compatible dynamic-Xi branch retains pool-local
-pair/triple mass as well as unary/binary Xi-weight.
+automatic chromatic source validity and reduces to chromatically concentrated
+unary or binary shadow weight. The pool-compatible dynamic-Xi branch retains
+pool-local pair/triple mass as well as unary/binary Xi-weight.
 
-A matchable non-superregular host factors exactly over alternating SCCs. Bounded
-flexible credited components give finite-state paid banks. Forced edges are
-private edges of canonical forward/backward tight Hall cuts, so their obstruction
-is already a hard-unary Hall rectangle, a small endpoint cluster, or a small
-complementary capacity core.
+A matchable non-superregular host factors over alternating SCCs. Maximum mobility
+converts large credited components into disjoint alternating-cycle banks; low
+mobility gives a feedback hub, a multistate cycle star, or a two-hub theta-state
+support core. Forced edges remain canonical tight Hall cuts.
+
+A linear binary-congestion dual packing yields either a growing
+resource-disjoint alternating-rectangle bank or an `O(sqrt(q))` high-price
+resource core carrying `Omega(q)` dual weight.
 
 ## Remaining theorem
 
 The branch is reduced to the following structured cases.
 
-1. Convert an ownership Hall/slack core, two-sided threshold gap, or score
-   concentration surviving all four allocation interfaces.
-2. Convert positive-density hard-unary support and its Hall/line/resource cores,
-   including tight forced-edge cuts.
+1. Convert controller denominator failure, insufficient baseline Ore slack, or
+   weighted anchor energy concentrated in one canonical movement/refill core.
+2. Pay the source-star or resource-bank trades produced by positive-density hard
+   unary support and forced tight Hall cuts.
 3. Convert chromatically concentrated unary or binary controller-shadow weight
-   at scales `H^2/k` and `H^3/k^2` in the global rectangle branch.
-4. Convert pool-local pair/triple mass or unary/binary Xi-weight at the same
-   chromatic scales, including captive-star collateral.
-5. Convert unbounded alternating SCCs or concentrated bounded-component CSP/cost.
-6. Convert a linear-congestion original binary-shadow dual packing or
-   witness-line pencil.
+   in the global rectangle branch.
+4. Convert pool-local pair/triple mass or unary/binary Xi-weight, including
+   captive-star collateral.
+5. Convert alternating cycle-star/theta support cores or concentrated
+   source-invalid and insertion-shadow mass relative to cycle credit.
+6. Convert the high-price binary resource core, its weighted resource star, or
+   paid collateral on the extracted binary-conflict rectangle bank.
 
 Diffuse weighted residuals, external completion energy, source validity of the
 global resource endpoint, sparse exceptional labels, arbitrary dense rectangle
 CSPs, original signed contradictions, hierarchical irregularity, unstructured
-non-superregularity, superregular residual installation, diffuse pool-compatible
-dynamic trades, controller relabelling, and termination are no longer separate
-open problems.
+non-superregularity, raw positive-density hard-unary support, diffuse binary dual
+mass, controller relabelling, and termination are no longer separate open
+problems.
 
 The no-three-in-line conjecture remains unproved.
