@@ -32,7 +32,9 @@ BDA5aa--BDA5ad close the reflected `CD` denominator scalar: `A(2h+q)` has the sa
 
 BDA5ae--BDA5ah replace the former dispersed-anchor inequality by an exact overlap-variation router. One scalar profile gives a paid pair bank, a paid endpoint front, or a parity-disjoint oriented missing-partner front. AC3du--AC3dx import these fronts, prove private scalar-slot payment, and route them through the scope-complete paid-bank-or-labelled-overload interface.
 
-Paid and support faithfulness remain explicit hypotheses for executable pair decoding. The remaining BDA interface work is installation or denominator descent for the one-sided fronts, support faithfulness for actual ordinary and reflected role outputs, and termination of affine-chain and higher-rank alternatives.
+AC3ec--AC3eg now audit every one-sided front at its formal adjacent scale `H=h±q`. The output is bounded lower scale `h<=q`, one of two exact mixed role collisions, an actual clean BDA5a pair, or a privately paid one- or two-cell missing-support bank. Immediate reversal across the same adjacent scale pair consumes one finite ticket.
+
+Paid and support faithfulness remain explicit hypotheses for the original ordinary and reflected co-anchor pair outputs. The remaining BDA interface work is the actual collateral comparison for clean pairs and missing-support banks, arithmetic termination of lower-scale/collision labels, and termination of affine-chain and higher-rank alternatives.
 
 ### `research/rational-inverse-expansion`
 
@@ -48,9 +50,11 @@ AC3bk--AC3co close blocker probability. Every partial blocker prescription has a
 
 AC3cu--AC3da close the entire state-independent geometric term: a new fixed union triple must use an RI5f closure cell, one universal two-closure crossed rectangle, or one exceptional `mh=2` layer-transfer rectangle. There is no residual diffuse `F_rest` for the fixed-cell triple potential.
 
-AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion. AC3dn--AC3dt close payment and root recycling for those outputs: exact records have private original-factor resources, root reversal has one capacity-one ticket per base, absent anchors enter a paid-bank-or-labelled-overload router, and off-family companions form four-point current-line banks. AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight.
+AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion. AC3dn--AC3dt close payment and root recycling for those outputs: exact records have private original-factor resources, root reversal has one capacity-one ticket per base, absent anchors enter a paid-bank-or-labelled-overload router, and off-family companions form four-point current-line banks.
 
-The unresolved RI interface is now actual improvement/collateral termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, privately paid companion banks, four-point line banks, and the extracted multi-scale bank. Payment eligibility and raw root recycling for the companion branch are closed.
+AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight. AC3dy--AC3eb complete the simultaneous interface: exact scales have private paid buckets, the scope-complete bank retains `W/(31K)`, product expectations add exactly, and failure returns one of `F,C1,C2,C3,B` with weight at least `W/(310K)`.
+
+The unresolved RI interface is now actual improvement/collateral termination of explicit quadratic-root tuples, closure and transfer rectangles, crossed-blocker complexes, privately paid companion and four-point-line banks, finite multiscale overload labels, and the named aggregate `F,C1,C2,C3,B` returns. Payment eligibility and simultaneous installation for the scale-dispersion branch are closed.
 
 ### `research/geometric-cleaning`
 
