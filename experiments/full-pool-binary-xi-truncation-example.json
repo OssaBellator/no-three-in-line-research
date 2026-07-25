@@ -1,0 +1,14 @@
+{
+  "n": 8,
+  "block_size": 5,
+  "centre": 0,
+  "rank3_heavy_threshold": 3,
+  "rank4_heavy_threshold": 2,
+  "default_rank3_weight": 3,
+  "default_rank4_weight": 1,
+  "removal_credit": 1200,
+  "residual_objective": 0.8,
+  "tau": 0.2,
+  "rank3_weight_overrides": [],
+  "rank4_weight_overrides": []
+}
