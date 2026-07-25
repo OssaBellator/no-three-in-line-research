@@ -42,13 +42,14 @@ supplement mirrors the collision-free live range recorded in
 | CMR546--551 | Failed-selector polarization, unavailable-edge recurrence, rank-zero/rank-one collateral split, exact finite conflict stocks, recurrent target-load geometry, and fixed-selector history endpoint | PROVED | `docs/166-prime-power-fixed-selector-obstruction-stock.md` |
 | CMR552--557 | Canonical forbidden matching, time-independent collateral profile, static/dynamic selector classification, exact dynamic history bounds, global labelled selector stock, and no-double-counting endpoint | PROVED | `docs/167-prime-power-canonical-selector-ledger.md` |
 | CMR558--563 | Exact support-line decomposition, static rank polarization, heavy/dispersed line-weight lemma, rank-zero residual-line endpoint, rank-one secant-fan endpoint, and canonical static-collateral geometry | PROVED | `docs/168-prime-power-static-selector-line-profile.md` |
+| CMR564--568 | Exact rank-one secant-star splice, linear rank-zero line systems, fan-or-packing extraction, square-root packing, and combined static-selector geometry | PROVED | `docs/169-prime-power-static-line-bank-splice.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR563, static selector collateral is one heavy residual line, a large residual
-line bank, one heavy paid-endpoint secant, or a large fixed-centre secant fan.
-Dynamic selector histories have polynomial labelled stock unless one canonical
-allowed edge pays reintroduction or remains persistently unavailable. The
-immediate target is to splice the static line-profile sizes into line-energy,
-mixed-ratio, reserve, quotient/carry, deletion-ancestry, and envelope-expansion
-constants, while retaining the persistent canonical blocker as the parallel
-availability branch.
+CMR568, static selector collateral is a heavy single conflict line, an
+established repeated-cell secant star, or a pairwise cell-disjoint rank-zero
+line-certificate packing. Dynamic selector histories have polynomial labelled
+stock unless one canonical allowed edge pays reintroduction or remains
+persistently unavailable. The immediate targets are mixed-ratio/carry payment
+for the secant star, reserve or conflict-free payment for the rank-zero packing,
+and reserve-depletion or envelope-expansion payment for the persistent
+canonical blocker.
