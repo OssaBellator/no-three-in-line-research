@@ -39,13 +39,17 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR527--534 | Cross-pair line injectivity, disjoint equal-size pair cylinders, support multiplicity, König pair-bank/star dichotomy, unavailable paid-pair surcharge, trace-cell signatures, joint pair persistence, and the combined cross endpoint | PROVED | `docs/163-prime-power-persistent-cross-pair-bank.md` |
 | CMR535--540 | Canonical envelope-epoch assignment, exact pair/trace signature stocks, finite ancestry or recurrence, multi-edge joint absence runs, recurrent-pair payment, and fixed trace-line ancestry | PROVED | `docs/164-prime-power-cross-signature-ancestry.md` |
 | CMR541--545 | Refined rooted-trace determinacy, polynomial signature stock, finite ancestry or recurrence, fixed-line weighted selector, and unified persistent-cross ancestry endpoint | PROVED | `docs/165-prime-power-refined-trace-ancestry.md` |
+| CMR546--551 | Failed-selector polarization, unavailable-edge recurrence, rank-zero/rank-one collateral split, exact finite conflict stocks, recurrent target-load geometry, and fixed-selector history endpoint | PROVED | `docs/166-prime-power-fixed-selector-obstruction-stock.md` |
+| CMR552--557 | Canonical forbidden matching, time-independent collateral profile, static/dynamic selector classification, exact dynamic history bounds, global labelled selector stock, and no-double-counting endpoint | PROVED | `docs/167-prime-power-canonical-selector-ledger.md` |
+| CMR558--563 | Exact support-line decomposition, static rank polarization, heavy/dispersed line-weight lemma, rank-zero residual-line endpoint, rank-one secant-fan endpoint, and canonical static-collateral geometry | PROVED | `docs/168-prime-power-static-selector-line-profile.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR545 is one common payment problem: repeated failure of a
-fixed compatible-pair line-clean selector. Pair and rooted-trace ancestry are
-polynomially bounded unless they pay reintroduction or reduce to such a fixed
-selector. Every selector failure already yields frozen rank-zero/rank-one
-collateral or unavailable-edge inventory. The next target is to convert
-repeated returned obstructions into protected-reserve depletion, full-token
-return, quotient/carry concentration, deletion ancestry, or strict envelope
-expansion without double counting between selector signatures.
+frontier after CMR563 has two canonical branches. Static selector collateral is
+now one heavy residual line, a large residual line bank, one heavy secant
+through a paid endpoint, or a large fixed-centre secant fan. Dynamic selector
+failure has polynomial labelled stock unless one canonical allowed edge pays
+reintroduction or remains persistently unavailable. The next target is to
+splice the static line-profile sizes into the existing line-energy,
+mixed-ratio, protected-reserve, quotient/carry, deletion-ancestry, and envelope-
+expansion constants, while the persistent canonical blocker remains the
+parallel availability branch.
