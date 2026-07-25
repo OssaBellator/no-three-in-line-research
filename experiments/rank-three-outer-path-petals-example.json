@@ -1,0 +1,13 @@
+{
+  "n": 10,
+  "centre": 0,
+  "heavy_threshold": 3,
+  "default_weight": 4,
+  "target_bank": 4,
+  "source_invalid_limit": 5,
+  "exceptional_middle_indices": [
+    1
+  ],
+  "source_invalid_pairs": [],
+  "weight_overrides": []
+}
