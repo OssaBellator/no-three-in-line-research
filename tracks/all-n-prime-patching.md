@@ -8,7 +8,9 @@ prime-minus-one sides and asks for an exact row-column-preserving patch from sid
 every old and new row and column, and create no collinear triple.
 
 The active theorem ledger is
-[`proofs/prime-patching-recent-index.md`](../proofs/prime-patching-recent-index.md).
+[`proofs/prime-patching-recent-index.md`](../proofs/prime-patching-recent-index.md),
+with the fixed-centre transition addendum in
+[`proofs/prime-patching-transition-index.md`](../proofs/prime-patching-transition-index.md).
 
 ## PP1 — Degree interface
 
@@ -304,18 +306,43 @@ one of nine explicit support cores:
 Rank-one unary state cost and rank-two binary transposition cost are no longer
 frontiers.
 
-## 17. Current exact bottleneck
+## 17. Transition sunflower conversion
+
+The transition-degree core is now reduced by `docs/167`--`docs/170`.
+
+- The middle transition relation has size `o(N^2)`.
+- Either a support-ranked clean-chain average gives a paid completion, or the
+  outer role becomes a bounded-choice near-complete star.
+- The role-star contains `Omega(N)` witness petals that share only the fixed
+  centre and are otherwise disjoint in endpoint and source resources.
+- Pigeonholing the two source layers and the `M+1` free/controller-pool classes
+  gives a free or one-pool credited endpoint bank of size
+
+```text
+Omega(N/M)=m^(9/10-o(1)).
+```
+
+This contains the target bank size `W=m^(19/40+o(1))`. A transition sunflower is
+therefore no longer an independent support frontier: it rejoins the existing paid
+source-star/resource-bank conversion branch. The remaining transition-specific
+failure is weighted source or `Xi` concentration on the clean-chain bank.
+
+The finite layer/pool bookkeeping is checked by
+`scripts/check_transition_sunflower_bank.py`.
+
+## 18. Current exact bottleneck
 
 The missing conversion theorem is reduced to:
 
 1. controller denominator failure, insufficient local Ore slack, or weighted
    anchor energy in one canonical ownership core;
-2. paid conversion of source-star/resource banks produced by unary support and
-   forced Hall cuts;
+2. paid conversion of source-star/resource banks produced by unary support,
+   forced Hall cuts, and fixed-centre transition sunflowers;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, or one of nine
-   fixed-centre support cores;
+4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, weighted
+   clean-chain concentration, or one of eight nontransition fixed-centre support
+   cores;
 5. alternating cycle-star/theta support cores or cost comparable with cycle
    credit;
 6. quadratic binary cell fans, weighted two-resource choice grids,
