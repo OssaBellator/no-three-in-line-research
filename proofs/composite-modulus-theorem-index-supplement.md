@@ -19,10 +19,11 @@ supplement mirrors the collision-free live range recorded in
 | CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
 | CMR429--432 | Essential edges form one monotone matching core, first-essentiality layers, polynomial forced-certificate counts, and polynomial edge-set ancestry ledger | PROVED | `docs/144-prime-power-essential-core-ancestry-width.md` |
 | CMR433--438 | Matching-contraction cycle criterion, exact one-edge exchange corridor, chain batch flips, exact Dilworth cycle-cover width, batch-or-branch dichotomy, and linear temporal cycle compression | PROVED | `docs/145-prime-power-exchange-corridor-path-cover.md` |
+| CMR439--443 | Sparse rollback escape, minimum rollback essential core, cost-or-factorization dichotomy, terminal-certificate rollback, and quadratic rollback-incidence packing/concentration | PROVED | `docs/146-prime-power-sparse-rollback-factorization.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR438, the cubic edge-set ancestry ledger compresses to at most `t`
-time-labelled batch exchange cycles. The immediate targets are lifting a large
-low-overlap subfamily to one common host epoch, converting reachability
-antichains into Hall/p-adic/carry decomposition, and paying repeated compatible
-local ancestor resets.
+CMR443, common-epoch existence for terminal forced certificates is closed:
+restoring at most `t` deleted edges yields an avoiding perfect matching. Large
+minimum rollback cost forces exact lower-dimensional host factorization. The
+immediate targets are geometric payment for cheap rollback footprints and a
+canonical payment for repeated compatible local ancestor resets.
