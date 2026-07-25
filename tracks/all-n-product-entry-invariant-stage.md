@@ -2,35 +2,29 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This stage continues
-[`all-n-product-weighted-return-splice-stage.md`](all-n-product-weighted-return-splice-stage.md).
 PX397--PX450 audit the PX63 entry and lift every active decoder to exact
-rectangle-label moves.  PX451--PX478 complete the dependency audit and make the
-asymptotic branch effective.  PX479--PX482 use the exact nested-depth plateau to
-compress the common cutoff.
+rectangle-label moves.  PX451--PX478 make the asymptotic branch effective.
+PX479--PX482 use the exact nested-depth plateau, and PX483--PX487 optimize the
+divisor witness.
 
 ## Current ledger
 
 | Item | Status | Current result |
 |---|---|---|
-| PX63 source statement | **RECOVERED** | Every saturated side-`n` factor has a factor-compatible rectangle state with `O(n log n)` bad triples. |
-| Entry dichotomy | **AUDITED** | PX397--PX403 give a repeatable label-block/high-source entry with good-bank destruction `D/18` and cylinder factor nine. |
-| Rectangle host invariants | **LIFTED** | PX411--PX444 implement terminal, first-generation, packet, mixed-shadow, and recurrence moves as paired `t/r` label permutations. |
-| Actual seed line cap | **AUDITED** | PX404 and PX470 use the explicit `n^(1/3+o(1))` line cap; four one-variable returns cross the effective threshold. |
-| Paired internal sign | **EFFECTIVE** | PX445--PX446 use the corrected constants and explicit `A_3=320` to keep internal rank-three creation below destruction. |
-| Dependency DAG | **AUDITED** | PX451--PX452 and the JSON manifest certify an acyclic rectangle-label/arithmetic dependency path through PX482. |
-| Nested depth | **EFFECTIVE** | PX461--PX465 give an exact depth formula and cumulative spread exponent. |
-| Divisor loss | **EFFECTIVE** | PX466--PX468 give `mathfrak d(N)<=10^27 N^(1/6)`. |
-| Packet-family parameter | **REMOVED FROM ACTIVE PATH** | PX471--PX473 pay support four directly above threshold and use historical packet corrections below it. |
-| Original common cutoff | **SUPERSEDED** | PX478 gives `10^4000`. |
-| Compressed common cutoff | **EXPLICIT** | PX479--PX482 improve the active cutoff to `N_1=10^3650`. |
-| Asymptotic exact doubling | **PROVED AS A REDUCTION** | For every `n>=N_1`, the host-compatible causal repair loop reaches zero bad triples, subject only to the indexed rectangle-label reductions. |
-| Below-cutoff orders | **OPEN** | Direct enumeration remains impossible; a non-enumerative bridge or a far sharper range-sensitive cutoff is required. |
-| Exact all-side closure | **OPEN** | The finite-range bridge has not been proved. |
+| PX63 entry | **AUDITED** | Every positive rectangle state re-enters through a label block or high source with explicit destruction and spread. |
+| Rectangle invariants | **LIFTED** | Terminal, first-generation, packet, mixed-shadow, and recurrence moves are paired `t/r` label permutations. |
+| Paired internal sign | **EFFECTIVE** | `A_3=320` and corrected thinning constants force internal rank-three creation below destruction. |
+| Dependency DAG | **AUDITED** | The manifest is acyclic and every move-producing block is rectangle-label compatible. |
+| Nested depth | **EFFECTIVE** | `d_*(N)=1+ceil(log_2(log_2 max(N,2)+2))`. |
+| Packet-family parameter | **REMOVED** | The active path pays support four directly above threshold and uses historical packet corrections below it. |
+| First explicit cutoff | **SUPERSEDED** | PX478 gave `10^4000`. |
+| Exact-depth cutoff | **SUPERSEDED** | PX482 gave `10^3650`. |
+| Optimized divisor cutoff | **ACTIVE** | PX487 gives `N_2=10^2950`. |
+| Asymptotic exact doubling | **PROVED AS A REDUCTION** | For every `n>=N_2`, the indexed host-compatible causal loop reaches zero bad triples. |
+| Below-cutoff orders | **OPEN** | A non-enumerative bridge or a much smaller interval-sensitive cutoff is required. |
+| Exact all-side closure | **OPEN** | No finite-range bridge has been proved. |
 
-## Effective constants
-
-The active threshold and numerical witnesses are
+## Active constants
 
 \[
 T(N)=\lceil N^{3/5}\rceil,
@@ -39,78 +33,52 @@ A_3=320,
 \]
 
 \[
-d_*(N)=1+\left\lceil\log_2(\log_2\max\{N,2\}+2)\right\rceil,
-\]
-
-\[
-\mathfrak d(N)\le10^{27}N^{1/6},
+\mathfrak d(N)\le10^{72}N^{1/7},
 \qquad
-N_1=10^{3650}.
+N_2=10^{2950}.
 \]
 
-For paired large blocks use
-
-\[
-q_\eta=
-\min\left\{
-\frac{\eta}{20{,}971{,}520e^{2\Delta}\log(2t)},
-\frac{\eta t}{32768e^{4\Delta}N\mathfrak d(N)}
-\right\},
-\qquad
-0<\eta\le\frac1{12}.
-\]
-
-The retained-order requirement is
-
-\[
-q_\eta t\ge\max\{32,16\Delta+4,256e^{2\Delta}\}.
-\]
-
-## Integrated repair path
-
-1. PX448 re-enters from every positive rectangle state.
-2. A large source block enters the effective paired large-block decoder.
-3. A high source enters channel-free weighted return.
-4. Four one-variable returns, or one two-variable return, cross `N^(3/5)`.
-5. Above threshold, support four is paid directly; no growing packet family is
-   maintained.
-6. Below threshold, selected packet defects use unique label corrections and
-   historical positions prevent recurrence.
-7. Every strict decrease remains inside the same factor-compatible rectangle
-   state space, so integer potential descent reaches zero for `N>=N_1`.
-
-## Exact cutoff compression
-
-On
-
-\[
-10^{3650}\le N\le e^{9000},
-\]
-
-PX479 gives the exact values
+The exact nested-depth plateau remains
 
 \[
 d_*(N)=15,
 \qquad
-\Delta_*(N)=33.
+\Delta_*(N)=33
 \]
 
-The divisor-controlled retained-order ratio already exceeds `e^(3/2)` at the
-left endpoint and increases with derivative `1/30`.  At `log N=9000` the proof
-hands off to the smooth PX475/PX477 envelope.
+through the starting interval.  The improved divisor margin is
+
+\[
+\frac{T(N)^2}{N\mathfrak d(N)}
+\ge10^{-72}N^{2/35}.
+\]
+
+At `N=10^2950`, the divisor-controlled retained-order ratio has logarithmic
+margin above `5.9`; the four-return ratio has margin above `13`.
+
+## Integrated repair path
+
+1. Re-enter from every positive rectangle state by PX448.
+2. Send large source blocks to the effective paired decoder.
+3. Send high sources to channel-free weighted return.
+4. Four one-variable returns, or one two-variable return, cross `N^(3/5)`.
+5. Pay support four directly on large blocks.
+6. Correct selected packet defects by unique label transpositions and forbid
+   their historical assignments.
+7. Keep every strict decrease inside the factor-compatible rectangle state
+   space and iterate the integer potential to zero.
 
 ## Immediate frontier
 
-1. **Finite-range bridge.** Find a theorem that maps every positive order below
-   `N_1` to an order in the effective range without assuming the desired
-   doubling theorem at intermediate orders.
-2. **Cutoff compression.** Replace the global divisor witness and worst-case
-   label-degree constants by interval-specific exact bounds.  The next useful
-   target is a staircase cutoff table indexed by exact depth and divisor exponent.
-3. **Small-order exact census.** Extend existing exact rectangle/template
-   results only far enough to meet a genuinely practical compressed cutoff.
-4. **Global closure conversion.** Promote the asymptotic reduction only after a
-   finite-range bridge or complete finite census is proved.
+1. **Divisor-witness optimization table.** Compare exact finite Euler products
+   `C_(1/k)` and resulting cutoffs for all viable integer `k`; PX487 shows that
+   `k=14` beats `k=12`.
+2. **Interval-specific divisor bounds.** Replace a universal `m^(1/14)` bound by
+   exact maximal divisor data over finite logarithmic intervals.
+3. **Finite-range bridge.** Find a construction or absorber that enters the
+   effective range without enumerating every order below `10^2950`.
+4. **Practical census boundary.** Only after compression reaches a feasible
+   cutoff should exact rectangle/template enumeration resume.
 
 ## Verification
 
@@ -122,6 +90,7 @@ python scripts/verify_product_explicit_divisor_witness.py
 python scripts/verify_product_packet_family_free_path.py
 python scripts/verify_product_explicit_common_cutoff.py
 python scripts/verify_product_compressed_common_cutoff.py
+python scripts/verify_product_fourteenth_divisor_cutoff.py
 ```
 
 Exact all-side product closure and the classical no-three-in-line conjecture
