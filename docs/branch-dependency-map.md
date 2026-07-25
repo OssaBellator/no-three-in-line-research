@@ -1,134 +1,106 @@
 # Unresolved-lemma branch map
 
-This map records how the parallel research branches connect. A branch should merge only proved results; open statements remain labelled as targets.
+This map records proved cross-branch interfaces and leaves open statements labelled as targets.
 
 ## Main dependent chain
 
 ### `research/alternating-core-chain`
 
-Sequential dependency:
-
 ```text
 AN4 normalized collateral
  -> AC1 second-order concentration
  -> AC2 paid structural re-extraction
- -> AC3 monotone carry complexity
- -> AC4 alternating-core termination
+ -> AC3 finite roles, tickets and alternating transitions
+ -> AC4 total transition oracle
  -> AC5 reverse-scale compatibility
  -> AC6 prime-minus-one completion
 ```
 
-This is the only branch intended to carry the full local-to-global proof chain.
+This is the principal local-to-global chain.
 
-## Independent inputs to the main chain
+## Bounded-denominator input
 
 ### `research/bounded-denominator-absorbers`
 
-Consumes PA/CF chamber structure; returns a decreasing trade for every fixed reduced denominator `q`. Imported by AC2–AC4.
+The branch supplies finite denominator profiles, scalar progressions, genuine adjacent radial pairs, overlap/variation fronts, reflected effective denominators and affine-chain alternatives.
 
-AC3an--AC3aq provide the exact alternating-core adapter for ordinary determinant-scalar roles. Once one AC role supplies a bounded denominator and direction shape together with fields `(q,d,e,xi,P,h)`, the paid family localizes to one exact scalar profile, one `q/gcd(det(d,e),q)` progression, and the weighted BDA5z co-anchor router. AC3ar--AC3as compose this with AC3am and return a paid large-direction output when bounded shape fails.
+The original BDA5a full phase flip exchanges two permutation diagonals but preserves their four-cell union. It is not payment for a union triple. BDA5ai--BDA5ak are now the canonical local decoders:
 
-BDA5aa--BDA5ad close the reflected `CD` denominator scalar: `A(2h+q)` has the same content modulo `q` as `2Ah`, and every fixed residue is one scale class modulo `q/gcd(2A,q)`. AC3dj--AC3dm import this result, localize reflected profiles finitely, and give the same weighted genuine `h,h+q` co-anchor extraction without a cancellation-height label.
+- empty cross diagonal: no blocker change;
+- one blocked cross: one chosen auxiliary blocker cell;
+- two blocked crosses: two auxiliaries and a four-row repair;
+- both old radial endpoints are absent from the final union.
 
-BDA5ae--BDA5ah replace the former dispersed-anchor inequality by an exact overlap-variation router. One scalar profile gives a paid pair bank, a paid endpoint front, or a parity-disjoint oriented missing-partner front. AC3du--AC3dx import these fronts, prove private scalar-slot payment, and route them through the scope-complete paid-bank-or-labelled-overload interface.
+AC3fz--AC3gb import this correction. Clean and missing-support created-cell role alphabets are `12` and `36`; safe complete-envelope role bounds are `21` and `53`. AC3el--AC3eo and AC3ep--AC3es remain valid only with these enlarged union-safe menus and scopes.
 
-AC3ec--AC3eg audit every one-sided front at its formal adjacent scale `H=h±q`. The output is bounded lower scale `h<=q`, one of two exact mixed role collisions, an actual clean BDA5a pair, or a privately paid one- or two-cell missing-support bank. Immediate reversal across the same adjacent scale pair consumes one finite ticket.
+The unresolved BDA work is propagation through every older product ledger, termination of five affine anchor chains, heavy rank-two/rank-three profiles, remaining support-faithfulness cases and directed finite-profile cycles.
 
-AC3eh--AC3ek close lower and mixed-collision arithmetic. A mixed collision has one coprime normal form, requires a divisor of `q`, and determines at most one unordered positive scale pair for the exact role word; lower fronts have only the `q` scales `1,...,q`. AC3el--AC3eo prove support faithfulness and executable heterogeneous decoder products for the actual-clean-partner class.
-
-AC3ep--AC3es close the missing-support installation branch. Every one- or two-cell adjacent partner target has a canonical active completion by cycles or boundary paths of length at most two. Exact RI blocker repair handles every collision with the target and closure cells, with occupancy at most four. The installed clean support enters the BDA decoder.
-
-AC3fa--AC3fd give all executable BDA and RI banks a universal created-cell-rank split. Every failed bank returns rank one, two or three at loss `1/3`, then one finite literal-role multiset. The current decoder alphabets have sizes `8,10,16,34`; clean and missing-support products now return coarse rank mass at the improved `1/96` or `1/192` AC3am scales. Stage masks remain optional refinements.
-
-Support faithfulness remains open only for ordinary or reflected co-anchor outputs which have not passed through the AC3ec actual-clean-partner audit. The remaining BDA interface work is termination of created-cell rank profiles, finite overload labels, affine chains and higher-rank alternatives.
+## Rational-inverse input
 
 ### `research/rational-inverse-expansion`
 
-Solves I12 and classifies simultaneous small-doubling/order-two chains. Imported by AC3–AC4 when carry propagation enters a multiplicative structured exception.
+The generic RI adapter supplies exact physical cosets, completion paths/cycles and occupancy-aware two-layer states. The canonical OP route supplies paid complete fibres, common-closure I6 banks, exact source-rank accounting, derangement probabilities and crossed-rectangle product laws.
 
-AC3at--AC3ax retain the generic normalized-to-physical adapter for genuinely movable paid objects. It returns scale mismatch or dispersion, exact physical cosets, completion cycles or boundary paths, and occupancy-executable component states.
+Proved AC interfaces include:
 
-The canonical OP route is different and is now corrected. AC3ay--AC3be provide the normalized component, complete fibres, current payment, actual scales, and coherent root pairing. AC3bf proves those current hyperbola roots are fixed by completion, so they cannot pay completion components. AC3bg--AC3bj lift every I6 state through one common RI5f boundary closure and give an exact active/blocker collateral criterion.
+- AC3bp--AC3cb: rank-one/two/three channel geometry and quadratic branch words;
+- AC3cc--AC3da: complete state-independent closure, crossed-closure and transfer support;
+- AC3cl--AC3ct: exact blocker extension probabilities and nine crossed-rectangle graph types;
+- AC3db--AC3dt: companion fibres, private original-factor payment and finite root tickets;
+- AC3dy--AC3eb: coherent multiscale products and exact failed-bank returns.
 
-AC3bp--AC3cb classify source-coset ranks one, two, and three. Every expected active term amplifies to raw physical channel classes without subgroup-order loss; the multiplicity alphabet is finite; and every heavy line reduces to one linear channel cell or at most eight explicit quadratic-root words. AC3cc--AC3cg route active state-independent collateral to closure stars, secants, triples, or boundary-path spread.
+The original AC3eu full phase flip has the same union flaw as BDA5a. AC3fw--AC3fy replace it by union-safe zero/one/two-blocker repairs. Direct and absent companion products retain their quantitative constants after enlarging the scopes.
 
-AC3bk--AC3co close blocker probability. Every partial blocker prescription has an exact inclusion-exclusion extension count, with universal cap `3/(t)_s`. AC3cp--AC3ct realize the selected prescription as one of nine crossed-rectangle path/cycle types, with exact product laws on all-I6 paths and cycles.
+AC3fe--AC3fo classify fixed, moving and blocker collateral by pre-transition current/new words. These are collateral of the already paid parent bank; no boundary closure, quadratic tuple or crossed-cell tuple is assigned payment merely at classification time.
 
-AC3cu--AC3da close the entire state-independent geometric term: a new fixed union triple must use an RI5f closure cell, one universal two-closure crossed rectangle, or one exceptional `mh=2` layer-transfer rectangle. There is no residual diffuse `F_rest` for the fixed-cell triple potential.
+## Universal AC interfaces
 
-AC3db--AC3df unify incomplete fibres and root-scale imbalance. The same-base companion is either a nonzero carry defect, an off-selection current factor, or an absent-anchor one-cell completion. AC3dn--AC3dt prove private original-factor payment, exact Hall eligibility, and one capacity-one root ticket per base, but bare companion installation does not itself destroy that payment.
+AC3fa--AC3fd give every failed executable bank the exact rank split
 
-AC3et--AC3ez supply the valid paid move. Once both companion anchors are current, the opposite-diagonal rectangle switch removes both anchors and destroys all four current triples on the companion line. Absent anchors first undergo canonical one-cell installation and blocker repair, then the same paid rectangle decoder. The rational fibre identity `c+c^dagger=1+g` excludes the only internal midpoint triple, so all surviving rectangle collateral is external.
+```text
+rank 1: one new pivot plus a parent-current pair
+rank 2: two new cells plus one parent-current context
+rank 3: three new cells
+```
 
-AC3fe--AC3fh identify RI closure, universal crossed-closure and transfer-rectangle terms as created collateral ranks. Closure count equals created-cell rank, and one support-type/rank class retains at least `1/9` of a heavy fixed term. No payment or ticket is assigned merely for recording a boundary path or fixed rectangle.
+AC3fp--AC3fr give dense conflict returns an explicit finite role dictionary: envelope-cell, row, column, cross-triple or protected witness.
 
-AC3fi--AC3fl refine source-rank-two and source-rank-three moving tuples by seven nonzero pre-transition current/new words. Heavy quadratic pair/triple outputs become rank-one contexts, rank-two secants or rank-three all-new tuples without assuming that every moving position is new.
+AC3fs--AC3fv terminate local existence and payment for realized rank-one profiles. Aggregate all current triples by their unique new pivot cell; a union-safe rectangle decoder removes that pivot, private pivot buckets are disjoint, AC2c yields an executable bank or explicit overload, and immediate rectangle reversal is ticketed. A full blocker cross uses an oriented auxiliary three-cycle rather than a phase flip.
 
-AC3fm--AC3fo refine crossed-blocker complexes by eleven joint crossed-count/current-new states. One class retains at least `1/11` of an exact blocker profile; all path and cycle product laws remain intact. Closure anchors enter AC3fe--AC3fh, and no collateral-stage payment is invented.
+The current unresolved AC frontier is:
 
-AC3dg--AC3di classify coherent scale dispersion by at most thirty conflict ratios and extract a row-column-disjoint multi-scale bank carrying at least `1/31` of its paid weight. AC3dy--AC3eb complete the simultaneous interface: exact scales have private paid buckets and exact product expectations. AC3fd additionally returns one coarse created-cell rank at weight at least `W/(186K)` when the product fails; the finer `F,C1,C2,C3,B` split remains available.
+1. propagate union-safe repairs through every older product/collateral formula;
+2. terminate rank-two current-centred secants and rank-three all-new tuples;
+3. terminate same-role AC2d stars and BDA affine chains;
+4. prove global no-recycling across successive parent configurations;
+5. assemble AC4 and verify AC5.
 
-The unresolved RI interface is now arithmetic and geometric termination of rank-one current-pair contexts, rank-two current-centred secants, rank-three all-new tuples, finite AC2d overload labels and the surviving exact affine/product profiles. Payment begins only when a later executable transition identifies an actual current certificate to destroy.
+## Other independent inputs
 
 ### `research/geometric-cleaning`
 
-Removes the hypotheses behind S2, S5, L4 and P1. It can feed AC5 or bypass the alternating chain by reaching a matching/product-state endpoint.
+Removes geometric hypotheses and may feed AC5 or provide an independent matching endpoint.
 
 ### `research/orbit-phase-expansion`
 
-Alternative decoder. It may prove the local termination portion of AC4 by a phase/Tanner argument, but remains logically independent while under development.
+Provides finite phase/literal interfaces imported only where proved; it is not treated as a completed termination theorem.
 
-The alternating branch imports only proved finite interfaces:
+### Selection endpoints
 
-- AC3p--AC3r: one shared-token phase message;
-- AC3s--AC3u: rank-at-most-three mismatch words or exact sensitivity;
-- AC3v--AC3x: scope-complete primal conflicts and exact additivity;
-- AC3y--AC3z: one-block sensitivity and observable quotients;
-- AC3aa--AC3ac: exact active-literal charts;
-- AC3ad--AC3af: literal-star drift and residual arms;
-- AC3ag--AC3ai: global fixed-centre contexts;
-- AC3aj--AC3am: cross-centre blockers and finite arithmetic roles;
-- AC3ay--AC3ba: exact OP4g--OP4i rational labels and factor-conservative payment;
-- AC3du--AC3es: exact scalar fronts, finite collision/lower states, clean decoder products, and canonical missing-support completion;
-- AC3et--AC3ez: paid RI companion rectangle decoders and midpoint exclusion;
-- AC3fa--AC3fo: universal created-cell rank, RI fixed/moving/blocker current-new words, and corrected collateral-stage payment interpretation.
+- `research/superregular-resampling`: dense-host local-load endpoint.
+- `research/sparse-algebraic-spread`: sparse-host spread and two-layer selection.
 
-No open wide-CSP, Tanner-expansion, recurrent-blocker, RI, or BDA terminal claim is silently imported.
+### All-`n` routes
 
-## Independent selection endpoints
+- `research/all-n-prime-patching`
+- `research/all-n-composite-modulus`
+- `research/all-n-product-construction`
 
-### `research/superregular-resampling`
-
-Dense-host local-load endpoint: resampling oracle or conflict-free exact-cover theorem.
-
-### `research/sparse-algebraic-spread`
-
-Sparse-host `O(1/d)` spread and two-layer selection. Independent of the dense resampling theorem.
-
-These branches can replace or supplement the complete-clone endpoint once a suitable candidate host is constructed.
-
-## Independent all-`n` routes
-
-Each starts only after a prime-minus-one or other infinite family of exact constructions is available.
-
-### `research/all-n-prime-patching`
-
-Extend a solved `m x m` configuration to nearby `n x n` by a boundary/distributed absorber, then combine with a proven gap theorem.
-
-### `research/all-n-composite-modulus`
-
-Construct algebraic seeds directly over composite moduli or prime powers, including nonunit rows and real-lift carry control.
-
-### `research/all-n-product-construction`
-
-Prove a saturation-preserving product/composition theorem and use arithmetic factorization to cover all side lengths.
-
-The three all-n branches are alternatives and should not be coupled unless one develops a proved interface.
+These remain alternatives until one has a proved interface from a completed prime-minus-one or other infinite-family construction.
 
 ## Merge discipline
 
-- Do not merge a target statement as `PROVED` without a complete argument and exact hypotheses.
+- Do not mark a target `PROVED` without a complete argument and exact hypotheses.
 - Preserve counterexamples and regression tests.
-- When a branch proves an interface theorem, update this map and the theorem index in the same change sequence.
-- Results which only improve constants should merge into their source track rather than creating another dependency.
-- A complete no-three-in-line proof requires one successful local/global construction chain and one successful all-n route.
+- Update this map and the theorem index whenever an interface changes.
+- A complete proof requires one successful local/global construction chain and one successful all-`n` route.
