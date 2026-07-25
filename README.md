@@ -4,7 +4,7 @@
 
 This is the principal dependent proof-chain branch. It develops paid structural re-extraction, finite-role concentration, alternating two-layer transitions, reverse-scale compatibility, and the prime-minus-one endpoint.
 
-> **Status:** AC3gc--AC3gm propagate union-safe BDA products and orient every realized created rank to a paid pivot. AC3gn--AC3hp close pivot saturation, physical pivot exposure, old-axis histories and historical line stars. AC3hq--AC3ht close ordinary co-anchor support after physical occurrence realization and correct raw reflected `CD` roles as nonradial. AC3hu--AC3hw close pure adjacent-scale and strict-denominator cycles. AC3hx--AC3ia erase exact selected-state loops and classify matching changes as ticketed rectangles or fixed-cross long cycles. AC3ib--AC3ip provide path-petal, return-cross and arbitrary common-host cycle menus; static one-/two-hub overlap is not terminal. AC3iq--AC3it remove factorial state-space growth and pure monotone-mask drift. AC3iu--AC3iy then eliminate historical reference-state and raw opposite-layer drift: every target projects to one current cycle, blocker completion is an exact exchange-cycle-cover problem, and complete blocker hosts always repair for `n>=3`. AC3iz--AC3jc show that every failed restricted-host repair exposes at least `n-2` genuinely missing base-host cells and concentrates weighted failure on one exact missing cell or one finite missing-reason class. The remaining work is payment/role realization of those missing-host reasons, genuine arithmetic/context or envelope changes, AC4 assembly and the AC5 reverse-scale audit.
+> **Status:** AC3gc--AC3gm propagate union-safe BDA products and orient every realized created rank to a paid pivot. AC3gn--AC3hp close pivot saturation, physical pivot exposure, old-axis histories and historical line stars. AC3hq--AC3ht close ordinary co-anchor support after physical occurrence realization and correct raw reflected `CD` roles as nonradial. AC3hu--AC3hw close pure adjacent-scale and strict-denominator cycles. AC3hx--AC3ia erase exact selected-state loops and classify matching changes as ticketed rectangles or fixed-cross long cycles. AC3ib--AC3ip provide path-petal, return-cross and arbitrary common-host cycle menus. AC3iq--AC3it remove factorial state-space growth and pure monotone-mask drift. AC3iu--AC3jc normalize historical references and blocker hosts, giving a sharp `n-2` missing-host cut. AC3jd--AC3jh prove that fixed base hosts may delete cells only for unary hard reasons, give a `q(1+(r-1)2^r)` reason alphabet and route owner resources or unowned literals. AC3ji--AC3jm concentrate every Hall cut on one blocker row or inverse column with at least `floor(n/2)` missing targets. AC3jn--AC3jq give persistent edge reopenings an `n^2` potential. AC3jr--AC3ju combine state churn, masks and host reopening into an explicit epoch-local `O(B lambda L^2 n^8)` bound. The remaining AC4 work is installation/payment of the explicit terminal literal/owner fans and termination of genuine outer arithmetic/context, owner and envelope reset edges.
 
 ## Core proof map
 
@@ -23,6 +23,10 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 - [`docs/alternating-core-state-churn-router.md`](docs/alternating-core-state-churn-router.md): polynomial state-churn and monotone-mask router.
 - [`docs/alternating-core-host-drift-normalization.md`](docs/alternating-core-host-drift-normalization.md): current-reference projection, blocker exchange covers and minimal Hall cores.
 - [`docs/alternating-core-host-defect-cut-router.md`](docs/alternating-core-host-defect-cut-router.md): sharp missing-host cut bound and weighted reason localization.
+- [`docs/alternating-core-unary-host-reason-router.md`](docs/alternating-core-unary-host-reason-router.md): unary host contract, finite reason roles and owner/literal realization.
+- [`docs/alternating-core-hall-cut-target-fan.md`](docs/alternating-core-hall-cut-target-fan.md): centred target fans from blocker Hall cuts.
+- [`docs/alternating-core-hall-edge-reopening.md`](docs/alternating-core-hall-edge-reopening.md): core-breaking edge reopenings and context-reset localization.
+- [`docs/alternating-core-epoch-local-termination.md`](docs/alternating-core-epoch-local-termination.md): polynomial matching/mask/host epoch bound.
 
 ## Bounded-denominator interface
 
@@ -46,9 +50,9 @@ This is the principal dependent proof-chain branch. It develops paid structural 
 
 ## Highest-value frontier
 
-1. Prove that every live missing blocker-host reason from AC3jb is an already paid carry/BDA/RI/protected-resource role, or place it in a bounded exceptional stock.
-2. Terminate genuine arithmetic/context and envelope-epoch changes, plus AC3ie boundary/petal failure terms not represented in one common host.
-3. Prove physical occurrence realization for remaining carry/BDA/RI roles.
-4. Assemble AC4, then verify AC5 reverse-scale cleanliness and discharge AC6.
+1. Install and pay the centred hard-literal/common-residual/support-disjoint and owner-resource fans returned by AC3jl.
+2. Classify genuine outer reset edges by same-denominator arithmetic profile, owner interpretation, base-host construction, protected contract and envelope epoch, then build the global bounded potential for AC4.
+3. Prove physical occurrence realization for remaining carry/BDA/RI owner roles and close the AC3ie boundary/petal terms not represented in one common host.
+4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 [`proofs/theorem-index.md`](proofs/theorem-index.md) is the canonical theorem ledger. Verification scripts exhaust finite abstractions and small-grid regressions; the Markdown arguments carry the general claims.
