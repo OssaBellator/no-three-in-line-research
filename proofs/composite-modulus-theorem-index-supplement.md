@@ -49,16 +49,19 @@ supplement mirrors the collision-free live range recorded in
 | CMR587--592 | Uniform recurrent-set extraction, joint-absence payment, persistent matching/cover split, finite bulk absorption, persistent token walls, and the recurrent-set batching endpoint | PROVED | `docs/173-prime-power-dynamic-selector-recurrent-set-batching.md` |
 | CMR593--598 | Slack-to-collateral conversion, near-static geometry, conditioned recurrent-set extraction, persistent-core amplification, target-rank contact amplification, and the unified weak-slack endpoint | PROVED | `docs/174-prime-power-selector-slack-persistent-core.md` |
 | CMR599--604 | Protected-state owner stock, finite owned-line and exact token-edge universes, owned token/line recurrence, and the unified certificate-ownership endpoint | PROVED | `docs/175-prime-power-owned-certificate-stock.md` |
+| CMR605--610 | Protected-line incidence, simultaneous free-line absorption, post-absorption line caps, atom destruction, finite line-growth budget, and the heavy-line execution endpoint | PROVED | `docs/176-prime-power-heavy-line-protected-absorption.md` |
+| CMR611--616 | Matching-vertex wall/disjoint-arm extraction, protected-touch bound, simultaneous star-arm absorption, finite star-growth budget, square-root execution, and the canonical secant-star endpoint | PROVED | `docs/177-prime-power-secant-star-protected-absorption.md` |
+| CMR617--622 | Protected/free flow balance, exact cross-skeleton product factorization, skeleton count, sparse-interface bound, threshold form, and the large-core endpoint | PROVED | `docs/178-prime-power-protected-core-interface-factorization.md` |
+| CMR623--628 | Skeleton recurrence, product diversity, protected-factor state expansion, cross-edge churn, labelled interface payment, and the large-core history endpoint | PROVED | `docs/179-prime-power-protected-skeleton-history.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR604, every canonical selector history and every wall, prefix, carry, secant,
-low-height line, or persistent-edge output has a fixed owner and an explicit
-finite stock. Threshold-one dynamic selectors are constant near-static
-profiles; higher thresholds amplify persistent contacts to jointly unavailable
-cores, which batch-absorb or form simultaneous token walls. Repeated owned
-lines are one static certificate, while repeated owned token edges pay
-reintroduction or return to the persistent-core endpoint. The remaining
-frontier is execution of one fixed owned geometric certificate: derive strict
-potential decrease, protected-reserve depletion, deletion ancestry, full-token
-return, or envelope expansion. No selector, line, token, or edge charge is
-anonymous.
+CMR628, fixed heavy lines and secant stars have direct monotone protected
+executions, while a large protected core has an exact sparse-interface product
+decomposition. Frequent skeleton changes pay cross-edge churn; repeated
+skeletons force state diversity in the small free factor or in one fixed
+protected factor. All selector, protected-state, line, token, skeleton, and
+interface charges remain owner-labelled. The remaining frontier is to attach
+the candidate-conflict potential to the two product factors: recurse on the
+small free factor, charge the sparse interface, or convert protected-factor
+expansion into strict potential decrease, reserve depletion, deletion ancestry,
+full-token return, or envelope expansion.
