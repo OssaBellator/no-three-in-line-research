@@ -15,38 +15,49 @@ n=\min\{|A|,|C|\},
 m=\max\{|A|,|C|\}=t+1-n.
 \]
 
-Let `\mathcal L` be the `t-1` blocking lines. For \(L\in\mathcal L\), write
+Let `\mathcal L` be the `t-1` blocking lines. Recall that
 
 \[
-i(L)=|L\cap(A\times C)|.
+E_*(L)
+=
+\{\text{all parent-board cells on }L\}\setminus\{z_*\}.
+\]
+
+For \(L\in\mathcal L\), write
+
+\[
+i_*(L)=|E_*(L)\cap(A\times C)|.
 \]
 
 Every nonaxis line is a partial matching, so
 
 \[
-i(L)\le n.
+i_*(L)\le n.
 \]
 
 ## 1. Exact deficiency-plus-overlap budget
 
 ### Theorem CMR274 — PROVED
 
-Define the line deficiency
+Define the available-cell line deficiency
 
 \[
 D
 =
-\sum_{L\in\mathcal L}(n-i(L))
+\sum_{L\in\mathcal L}(n-i_*(L))
 \]
 
-and the repeated-incidence mass
+and the repeated available-incidence mass
 
 \[
 \Omega
 =
 \sum_{z\in A\times C}
-\max\{0,\deg_{\mathcal L}(z)-1\}.
+\max\{0,\deg_{E_*\mathcal L}(z)-1\},
 \]
+
+where `deg_{E_* mathcal L}(z)` counts blocking lines whose available set
+`E_*(L)` contains `z`.
 
 Then
 
@@ -58,24 +69,24 @@ n(n-2)+1.
 }
 \]
 
-Consequently all but at most `n(n-2)+1` blocking lines meet the Hall rectangle
-in exactly `n` cells.
+Consequently all but at most `n(n-2)+1` blocking lines have `n` available cells
+in the Hall rectangle.
 
 ### Proof
 
-The line family covers every Hall-rectangle cell except possibly the target
-cell, so its union contains at least
+The available line sets cover every Hall-rectangle cell except possibly the
+target cell, so their union contains at least
 
 \[
 nm-1
 \]
 
-cells. The total line--rectangle incidence count is
+cells. The total available line--rectangle incidence count is
 
 \[
 I
 =
-\sum_{L\in\mathcal L}i(L).
+\sum_{L\in\mathcal L}i_*(L).
 \]
 
 By definition,
@@ -84,7 +95,7 @@ By definition,
 D=n(t-1)-I,
 \qquad
 \Omega
-=I-\left|\bigcup_{L\in\mathcal L}(L\cap(A\times C))\right|.
+=I-\left|\bigcup_{L\in\mathcal L}(E_*(L)\cap(A\times C))\right|.
 \]
 
 Therefore
@@ -92,7 +103,7 @@ Therefore
 \[
 D+\Omega
 =
-n(t-1)-\left|\bigcup_{L\in\mathcal L}(L\cap(A\times C))\right|
+n(t-1)-\left|\bigcup_{L\in\mathcal L}(E_*(L)\cap(A\times C))\right|
 \le
 n(t-1)-(nm-1).
 \]
@@ -105,8 +116,8 @@ n(t-1-m)+1
 n(n-2)+1.
 \]
 
-Every nonfull line contributes at least one unit to `D`, proving the final
-assertion. ∎
+Every line with fewer than `n` available Hall cells contributes at least one
+unit to `D`, proving the final assertion. ∎
 
 ## 2. Widths four through six are linearly low-height
 
@@ -120,8 +131,8 @@ t-2-n(n-2)
 }
 \]
 
-blocking lines contain `n` Hall-rectangle cells. Every such line has primitive
-height at most
+blocking lines have `n` available Hall-rectangle cells. Every such line has
+primitive height at most
 
 \[
 \boxed{
@@ -157,7 +168,7 @@ CMR274 leaves at least
 t-2-n(n-2)
 \]
 
-full lines. A full line contains `n` board cells, so CMR272 gives
+full available lines. Such a line contains `n` board cells, so CMR272 gives
 
 \[
 (n-1)K\le t-1.
@@ -184,16 +195,16 @@ At least
 \boxed{t-5}
 \]
 
-blocking lines contain three Hall-rectangle cells. Each such full line is itself
-a compatible candidate-only collinear triple. Across the entire blocker there
-are at most four total units of nonfull-line deficiency and repeated
-Hall-rectangle incidence.
+blocking lines have three available Hall-rectangle cells. Each such full line
+is itself a compatible candidate-only collinear triple. Across the entire
+blocker there are at most four total units of available-cell deficiency and
+repeated available Hall-rectangle incidence.
 
 ### Proof
 
-Substitute `n=3` into CMR274. A nonaxis line containing all three cells has
-three distinct source and target coordinates and hence is one compatible
-candidate-only triple. ∎
+Substitute `n=3` into CMR274. A nonaxis line containing all three available
+cells has three distinct source and target coordinates and hence is one
+compatible candidate-only triple. ∎
 
 Width three is therefore an almost-disjoint population of `t-O(1)` actual
 candidate triples supported on the same three Hall slices.
@@ -214,21 +225,21 @@ At least
 \boxed{t-2}
 \]
 
-blocking lines contain both Hall-slice cells. Every such line has at least one
-additional compatible candidate cell outside the Hall rectangle, because it is
-a candidate-only certificate line but can contain at most two cells inside the
-width-two rectangle.
+blocking lines have both available Hall-slice cells. Every such line has at
+least one additional compatible candidate cell outside the Hall rectangle,
+because it is a candidate-only certificate line but can contain at most two
+available cells inside the width-two rectangle.
 
 Thus a width-two sharp blocker is a two-slice chord system of size `t-2`, with
-at most one total deficiency or overlap unit, together with external third-point
-witnesses.
+at most one total available-cell deficiency or overlap unit, together with
+external third-point witnesses.
 
 ### Proof
 
-Substitute `n=2` into CMR274. Every full line contains the two Hall-slice cells.
-A blocker line is supplied by a candidate-only triple, so it contains at least
-three compatible parent-board cells. The third cell lies outside the Hall
-rectangle. ∎
+Substitute `n=2` into CMR274. Every full available line contains the two
+Hall-slice cells. A blocker line is supplied by a candidate-only triple, so it
+contains at least three compatible available parent-board cells. The third cell
+lies outside the Hall rectangle. ∎
 
 ## 5. Revised sharp-blocker endpoint
 
@@ -249,4 +260,4 @@ expansion, or a bounded carry-signature charge.
 
 No all-`n` theorem is claimed here. The exact slack identities and all width
 specializations are checked in
-[`scripts/verify_prime_power_thin_hall_slack.py`](../scripts/verify_prime_power_thin_hall_slack.py).
+[`scripts/verify_prime_power-thin-hall-slack.py`](../scripts/verify_prime_power_thin_hall_slack.py).
