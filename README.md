@@ -38,7 +38,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/114-prime-power-thin-blocker-cover-expansion.md`](docs/114-prime-power-thin-blocker-cover-expansion.md) through [`docs/132-prime-power-exact-band-covering.md`](docs/132-prime-power-exact-band-covering.md): thin blocker signatures, carry cells, line-clean banks, token batching, and exact completion of one intermediate-height band.
 - [`docs/133-prime-power-laminar-reintroduction-budget.md`](docs/133-prime-power-laminar-reintroduction-budget.md) through [`docs/139-prime-power-state-cycle-erasure.md`](docs/139-prime-power-state-cycle-erasure.md): laminar and recursive return profiles, harmonic packet completion, nonprefix reset costs, and exact state-cycle erasure.
 - [`docs/140-prime-power-edge-incidence-state-expansion.md`](docs/140-prime-power-edge-incidence-state-expansion.md): exact labelled edge incidence, sharp \(O_p(t\log^2t)\) sweep budgets, and polynomial payment for distinct-state expansion.
-- [`docs/141-prime-power-packet-recreation-churn-ledger.md`](docs/141-prime-power-packet-recreation-churn-ledger.md): returned-edge support for recreated packet conflicts and first-dirty scheduling reduced to cumulative churn.
+- [`docs/141-prime-power-packet-recreation-churn-ledger.md`](docs/141-prime-power-packet-recreation-churn-ledger.md): entering-edge support for recreated packet conflicts, equality with leaving-edge churn, and first-dirty scheduling.
+- [`docs/142-prime-power-packet-loss-deletion-ancestry.md`](docs/142-prime-power-packet-loss-deletion-ancestry.md): deletion-or-forced-ancestry response for lossy packet resets, the `t(t-1)` deletion budget, and conditional ancestry-width closure.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -109,22 +110,38 @@ and
 \]
 
 Exact selected-state cycles are erasable. Distinct feasible parent states differ
-on at least two returned edges, so state-space expansion pays churn linearly.
-Every conflict recreated from an earlier clean harmonic packet contains a
-returned edge, and a first-dirty schedule satisfies
+on at least two entering and two leaving edges, so state-space expansion pays
+edge incidence linearly.
+
+A selected conflict recreated under `M -> M'` contains an entering edge of
+`M'\setminus M`. The leaving set `M\setminus M'`, returned to the complementary
+available host, has equal cardinality; this is the churn quantity used in the
+aggregate bounds.
+
+Inside one certificate-directed deletion pass, every lossy packet reset either
+
+1. deletes a nonessential edge of a recreated triple while preserving a perfect
+   matching; or
+2. exposes a fully forced rank-three certificate with backward CMR217 exchange
+   ancestry.
+
+Deletion responses occur at most \(t(t-1)\) times. If `P` is the packet count,
+`F` the number of fully forced packet events, and `T` the installation count,
 
 \[
-T
-\le
-P+2(t-1)^2W_*C,
+T\le P\bigl(1+t(t-1)+F\bigr).
 \]
 
-where \(C\) is cumulative returned-edge churn and \(W_*\) is the total harmonic
-packet weight.
+An incoming ancestry-width bound `w` gives
 
-The live prime-power frontier is therefore a global upper bound or monotone
-conversion for \(C\), together with control of fully forced exchange ancestry.
-Arbitrary side-length coverage remains necessary afterward.
+\[
+T\le P\bigl(1+(1+w)t(t-1)\bigr).
+\]
+
+The live prime-power frontier is therefore quantitative control or simultaneous
+resampling of fully forced exchange ancestry, together with a corresponding
+payment for repeated local ancestor resets. Arbitrary side-length coverage
+remains necessary afterward.
 
 ## Running checks
 
@@ -155,6 +172,7 @@ python scripts/verify_prime_power_harmonic_packet_sweep.py
 python scripts/verify_prime_power_state_cycle_erasure.py
 python scripts/verify_prime_power_edge_incidence_state_expansion.py
 python scripts/verify_prime_power_packet_recreation_churn.py
+python scripts/verify_prime_power_packet_loss_ancestry.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
