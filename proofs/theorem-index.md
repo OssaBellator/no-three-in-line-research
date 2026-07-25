@@ -22,6 +22,10 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3aj–AC3ak | Cross-centre safe and unsafe targets route to paid buckets or explicit blockers | PROVED | `docs/alternating-core-cross-centre-router.md` |
 | AC3al | Bounded residual degree yields a residual-disjoint target family of weight at least `W/(2Δ-1)` | PROVED | `docs/alternating-core-cross-centre-batching.md` |
 | AC3am | A common residual literal localizes to one finite role, a repeated residual pair, or weighted secondary dispersion | PROVED | `docs/alternating-core-cross-centre-batching.md` |
+| AC3an | Bounded denominator and direction shape localize paid mass to one exact BDA arithmetic profile | PROVED | `docs/alternating-core-bda-delegation.md` |
+| AC3ao | One exact BDA profile has a canonical `q/gcd(det,q)` scalar-slot realization with exact paid aggregation | PROVED | `docs/alternating-core-bda-delegation.md` |
+| AC3ap | Capped scalar slots yield weighted co-anchored `h,h+q` pairs, a compatible family, or a BDA affine anchor chain | PROVED (imports BDA4e/BDA5z) | `docs/alternating-core-bda-delegation.md` |
+| AC3aq | Every paid- and support-faithful BDA role delegates to a heavy atom, dispersed inequality, executable decoder family, or affine chain | PROVED UNDER HYPOTHESES | `docs/alternating-core-bda-delegation.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
