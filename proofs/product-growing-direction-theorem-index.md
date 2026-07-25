@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-adaptive-thinning-stage.md`](../tracks/all-n-product-adaptive-thinning-stage.md).
+[`tracks/all-n-product-small-sector-constants-stage.md`](../tracks/all-n-product-small-sector-constants-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -62,6 +62,10 @@ families and develop the complementary repair route. The active task ledger is
 | PX225 | General-probability endpoint thinning gives support-four expectation quadratic in `q` and destroyed mass linear in `q` | PROVED | `docs/115-adaptive-thinning-square-root-ambient-threshold.md` |
 | PX226 | Adaptive ambient thinning pays support four on every block above the `N^(1/2+epsilon)` scale | PROVED | `docs/115-adaptive-thinning-square-root-ambient-threshold.md` |
 | PX227 | The same adaptive block has linear internal rank-three and rank-two support-three collateral | PROVED | `docs/115-adaptive-thinning-square-root-ambient-threshold.md` |
+| PX228 | A heavy rank-one/two-background candidate cell contains a quantitative endpoint-disjoint secant star | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
+| PX229 | Outside the star outcome, the complete rank-one sector has linear expected load | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
+| PX230 | Rank-two transpositions and rank-three directed cycles have exact constant expected-load bounds | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
+| PX231 | Rank-two directed paths have exact expected load `e^(4Delta)L_Z(s-2)` | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
 
 ## Current exact boundary
 
@@ -77,26 +81,26 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has two scale regimes.
+The low-syndrome repair route now has explicit control of every rank-at-most-
+three asymptotic sector.
 
-- PX183--PX224 provide the support-sensitive decoder, packet extraction and
-  release, conditioned spread, candidate-energy barriers, and defect-heavy
-  packet concentration.
-- PX225 observes that support-four creation is quadratic in the thinning
-  probability while destroyed endpoint mass is linear.
-- PX226 chooses the ambient-dependent retention probability
-  `q=min(1/log(2t),t/(1024e^(4Delta)N mathfrak d(N)))` and pays support four on
-  every fixed-depth block with `t>=N^(1/2+epsilon)`.
-- PX227 shows that this adaptive choice simultaneously leaves internal rank
-  three and rank-two support three only linear in the retained block order.
+- PX225--PX227 pay support four above `N^(1/2+epsilon)` and keep all higher-
+  support internal rank-three terms linear.
+- PX228--PX229 turn rank one into a clean-star outcome or a linear expected-load
+  term.
+- PX230 gives exact constant bounds for the transposition and directed-cycle
+  cores.
+- PX231 replaces the former coarse support-three coefficient by the direct
+  count `e^(4Delta)L_Z`.
 
-The genuine packet and diffuse-defect frontier is therefore confined to
+The packet and diffuse-defect frontier is confined to
 
 \[
 t\le N^{1/2+o(1)}.
 \]
 
-The next obligations are an adaptive bound for rank-one/two-background
-certificates, control of the undamped directed-three-cycle sector, and constant
-sharpening sufficient for strict depth-two descent. Exact infinite product
-closure remains open.
+No rank-at-most-three sector now lacks either an explicit decoder or an at-most-
+linear expected-load estimate. The next obligation is quantitative: sharpen the
+allowed-matching cylinder constant and the guaranteed destruction constants
+until the complete linear ledger has strict negative drift. Small-block packet
+descent and exact infinite product closure remain open.
