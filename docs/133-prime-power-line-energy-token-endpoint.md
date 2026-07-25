@@ -10,7 +10,7 @@ for the dispersed branch.
 Let `A` distinct chosen line pairs from CMR355 be incident with one fixed source
 or target matching vertex. Each pair uses one candidate cell on that vertex.
 
-### Theorem CMR385 — PROVED
+### Theorem CMR390 — PROVED
 
 At least one of the following holds.
 
@@ -60,7 +60,7 @@ token is
 (a,c)\in(\mathbb Z/p^b\mathbb Z)^2.
 \]
 
-### Theorem CMR386 — PROVED
+### Theorem CMR391 — PROVED
 
 For one fixed direction, the exact number of full prefix tokens is
 
@@ -87,7 +87,7 @@ geometric series. ∎
 
 ## 3. Fresh-token packing and temporal reuse
 
-### Theorem CMR387 — PROVED
+### Theorem CMR392 — PROVED
 
 Let `E_1,\ldots,E_J` be dispersed line-energy episodes in the same inherited
 parent block, layer, and direction. Suppose every episode occupies at least `R`
@@ -114,7 +114,7 @@ episodes.
 ### Proof
 
 Count episode-token incidences and distribute them among the exact token set
-from CMR386. ∎
+from CMR391. ∎
 
 Attach the envelope depth, absolute prefix coordinates, layer, and direction to
 obtain absolute tokens. Fine repairs below a token preserve its coarser
@@ -122,7 +122,7 @@ coordinates; envelope expansion changes the namespace and is charged to CMR174.
 
 ## 4. Complete structural endpoint
 
-### Corollary CMR388 — PROVED
+### Corollary CMR393 — PROVED
 
 A frozen, anchored-free two-slice line-clean bank of size `t=p^h\ge20` exposes
 at least one of:
@@ -135,8 +135,8 @@ at least one of:
 
 ### Proof
 
-Apply CMR359. Split its matching-vertex fan by CMR385. The heavy cell is
-executable by CMR342. Apply CMR386–CMR387 to the dispersed alternative. ∎
+Apply CMR359. Split its matching-vertex fan by CMR390. The heavy cell is
+executable by CMR342. Apply CMR391--CMR392 to the dispersed alternative. ∎
 
 Thus the remaining fixed-envelope obstruction has one exact form: repeated
 visits to one absolute full prefix token, or one of the already executable
