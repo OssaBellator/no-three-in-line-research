@@ -41,8 +41,6 @@ def verify_host(prime: int, forms: tuple[Form, ...]) -> None:
         maximum_codegree = max(maximum_codegree, max(counts.values()))
     assert maximum_codegree == 1
 
-    # Deleting a matching of size k removes at most (uniformity-1)k edges at
-    # every remaining vertex.
     affine_matching = [
         host_edge(prime, forms, x, (2 * x + 1) % prime)
         for x in range(min(2, prime))
@@ -56,16 +54,20 @@ def verify_host(prime: int, forms: tuple[Form, ...]) -> None:
         for part, value in enumerate(item):
             deleted[part].add(value)
 
-    for part, value in enumerate(range(prime)):
-        if value in deleted[part]:
-            continue
-        residual = 0
-        for item in edges:
-            if item[part] != value:
+    for part in range(len(forms)):
+        for value in range(prime):
+            if value in deleted[part]:
                 continue
-            if all(item[index] not in deleted[index] for index in range(len(forms))):
-                residual += 1
-        assert residual >= prime - (len(forms) - 1) * len(affine_matching)
+            residual = 0
+            for item in edges:
+                if item[part] != value:
+                    continue
+                if all(
+                    item[index] not in deleted[index]
+                    for index in range(len(forms))
+                ):
+                    residual += 1
+            assert residual >= prime - (len(forms) - 1) * len(affine_matching)
 
     print(
         f"p={prime}: parts={len(forms)}, degree={prime}, codegree={maximum_codegree}"
@@ -74,8 +76,6 @@ def verify_host(prime: int, forms: tuple[Form, ...]) -> None:
 
 def verify_affine_orbit(prime: int, forms: tuple[Form, ...]) -> None:
     seed = tuple((x * x * x + 2 * x) % prime for x in range(prime))
-    # This check is only the linear-form covariance identity; the seed need not
-    # be a simultaneous-rainbow permutation.
     for scale in range(1, prime):
         inverse = pow(scale, -1, prime)
         for row_shift in range(prime):
