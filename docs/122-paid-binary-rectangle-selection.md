@@ -64,12 +64,10 @@ the original endpoints whose resources are reassigned.
 If
 
 \[
-\boxed{
 \sum_{B}\pi(B)
 +
 \dfrac{C_0+C_1+C_2}{R_0}
 <1,
-}
 \]
 
 then there is a rectangle-state assignment that avoids every geometric bad box
@@ -110,7 +108,7 @@ Define the local bad-box mass
 Assume
 
 \[
-\boxed{\lambda\le\dfrac1{24}.}
+\lambda\le\dfrac1{24}.
 \]
 
 Then the bad boxes may be avoided simultaneously. Under the product law
@@ -127,12 +125,10 @@ C_0
 Consequently, if
 
 \[
-\boxed{
 C_0
 +e^{8\lambda}C_1
 +e^{16\lambda}C_2
 <R_0,
-}
 \]
 
 then a satisfying negative-cost rectangle assignment exists.
@@ -206,33 +202,43 @@ negative paid cost for all sufficiently large instances.
 The exponential inflation factors in PP3oz are \(1+o(1)\). Absorb their error
 inside the fixed credit margin \(\delta R_0\). ∎
 
-Thus diffuse clause mass and diffuse insertion collateral close the superregular
-common-line branch.
+Thus diffuse clause mass and diffuse insertion collateral close the adaptively
+prepared common-line branch.
 
 ## 5. Exact remaining CSP concentrations
 
 ### Corollary PP3pb -- PROVED
 
-If the paid rectangle selection still fails, at least one of the following
-persists along a subsequence.
+Suppose no empty bad box is present. If the paid rectangle criterion PP3oz fails,
+at least one of the following holds.
 
 1. **Clause-mass concentration:** some rectangle variable belongs to bad boxes of
    total product probability exceeding \(1/24\).
-2. **Unary collateral concentration:** the conditioned unary insertion cost is a
-   positive fraction of the available removal credit.
-3. **Binary collateral concentration:** the conditioned binary insertion cost is
-   a positive fraction of the available removal credit.
-4. **Empty geometric clause:** the fixed residual source and matching already
-   contain a forbidden triple, contrary to PP3ov, or a rectangle state is
-   individually impossible in both orientations.
+2. **Fixed residual cost:**
+   \[
+   C_0\ge R_0/3.
+   \]
+3. **Unary collateral concentration:**
+   \[
+   e^{8\lambda}C_1\ge R_0/3.
+   \]
+4. **Binary collateral concentration:**
+   \[
+   e^{16\lambda}C_2\ge R_0/3.
+   \]
+
+If the exact geometric formula itself is unsatisfiable before these estimates are
+applied, then it contains either an empty bad box or a hard contradiction such as
+opposing unit clauses on one rectangle variable.
 
 #### Proof
 
-The empty-clause case is explicit in PP3on. Otherwise, if the local clause mass
-is at most \(1/24\) and the inflated unary/binary cost is below credit, PP3oz
-produces the required assignment. Negating those hypotheses gives the listed
-alternatives. ∎
+If \(\lambda\le1/24\) and none of the three cost terms reaches \(R_0/3\), their
+sum is below \(R_0\), so PP3oz succeeds. Negating this implication gives the four
+quantitative alternatives. Unsatisfiability from an empty box or opposing unit
+requirements is an exact CSP obstruction recorded by PP3on. ∎
 
-The last remaining superregular rectangle problem is therefore local: a heavy
-geometric-clause variable or a unary/binary shadow-cost concentration. It is no
-longer a global satisfiability problem without quantitative structure.
+The last remaining adaptively prepared rectangle problem is therefore local: a
+heavy geometric-clause variable, a fixed residual-cost concentration, or a
+unary/binary shadow-cost concentration. It is no longer a global satisfiability
+problem without quantitative structure.
