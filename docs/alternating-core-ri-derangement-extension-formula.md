@@ -27,7 +27,7 @@ R=\phi(C),
 \qquad
 q=|C\cap R|,
 \qquad
-u=t-2s+q.
+\nu=t-2s+q.
 $$
 
 The integer `nu` is the number of vertices belonging to neither the prescribed column set nor the prescribed row set.
