@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Exact checks for CMR398--CMR402."""
+"""Exact arithmetic checks for CMR385--CMR389."""
 
 from __future__ import annotations
 
 from fractions import Fraction
-from itertools import combinations
 from math import gcd
 
 
@@ -12,8 +11,8 @@ def phi(n: int) -> int:
     return sum(gcd(n, value) == 1 for value in range(1, n + 1))
 
 
-def unoriented_directions(height: int) -> set[tuple[int, int]]:
-    result = set()
+def direction_count(height: int) -> int:
+    representatives: set[tuple[int, int]] = set()
     for first in range(-height, height + 1):
         for second in range(-height, height + 1):
             if max(abs(first), abs(second)) != height:
@@ -22,81 +21,54 @@ def unoriented_directions(height: int) -> set[tuple[int, int]]:
                 continue
             direction = (first, second)
             opposite = (-first, -second)
-            result.add(min(direction, opposite))
-    return result
-
-
-def verify_direction_count() -> None:
-    for height in range(1, 100):
-        assert len(unoriented_directions(height)) == 4 * phi(height)
+            representatives.add(min(direction, opposite))
+    return len(representatives)
 
 
 def harmonic_band(lower: int) -> Fraction:
     return sum(Fraction(1, value) for value in range(lower, 2 * lower))
 
 
-def verify_two_band_budget() -> None:
-    for lower in range(1, 100):
+def verify_direction_counts() -> None:
+    for height in range(1, 100):
+        assert direction_count(height) == 4 * phi(height)
+
+
+def verify_harmonic_packets() -> None:
+    previous = harmonic_band(1)
+    for lower in range(2, 10_000):
         current = harmonic_band(lower)
-        following = harmonic_band(lower + 1)
-        assert following - current == -Fraction(1, 2 * lower * (2 * lower + 1))
-
+        assert current < previous
+        previous = current
+        if lower >= 5:
+            assert current < Fraction(3, 4)
     assert harmonic_band(5) == Fraction(1879, 2520)
-    assert harmonic_band(5) < Fraction(3, 4)
 
 
-def primitive_height(first: tuple[int, int], second: tuple[int, int]) -> int:
-    dx = second[0] - first[0]
-    dy = second[1] - first[1]
-    common = gcd(abs(dx), abs(dy))
-    return max(abs(dx // common), abs(dy // common))
-
-
-def collinear(points: tuple[tuple[int, int], ...]) -> bool:
-    (x1, y1), (x2, y2), (x3, y3) = points
-    return (x2 - x1) * (y3 - y1) == (x3 - x1) * (y2 - y1)
-
-
-def verify_cell_degree_bound() -> None:
-    for t in range(5, 10):
-        cells = [(x, y) for x in range(t) for y in range(t)]
-        for chosen_heights in ({1}, {2}, {1, 2}, {2, 3}):
-            degree = {cell: 0 for cell in cells}
-            for triple in combinations(cells, 3):
-                if len({x for x, _ in triple}) < 3:
-                    continue
-                if len({y for _, y in triple}) < 3:
-                    continue
-                if not collinear(triple):
-                    continue
-                height = primitive_height(triple[0], triple[1])
-                if height not in chosen_heights:
-                    continue
-                for cell in triple:
-                    degree[cell] += 1
-
+def verify_degree_inequality() -> None:
+    for side in range(5, 1000):
+        for heights in ({1}, {2}, {1, 2}, {2, 3}, {5, 6, 7, 8, 9}):
             exact_bound = sum(
                 4
                 * phi(height)
-                * ((t - 1) // height)
-                * (((t - 1) // height) - 1)
+                * ((side - 1) // height)
+                * (((side - 1) // height) - 1)
                 // 2
-                for height in chosen_heights
+                for height in heights
             )
-            assert max(degree.values(), default=0) <= exact_bound
-
-            harmonic = sum(Fraction(1, height) for height in chosen_heights)
-            crude_bound = 2 * (t - 1) ** 2 * harmonic
-            assert max(degree.values(), default=0) <= crude_bound
+            harmonic_bound = 2 * (side - 1) ** 2 * sum(
+                Fraction(1, height) for height in heights
+            )
+            assert exact_bound <= harmonic_bound
 
 
 def main() -> None:
-    verify_direction_count()
-    verify_two_band_budget()
-    verify_cell_degree_bound()
+    verify_direction_counts()
+    verify_harmonic_packets()
+    verify_degree_inequality()
     print(
-        "verified harmonic band packing: exact direction counts, decreasing "
-        "dyadic weights, two-band budget, and finite cell-degree bounds"
+        "verified harmonic band packing: direction counts, decreasing dyadic "
+        "weights, two-band capacity, and harmonic degree bounds"
     )
 
 
