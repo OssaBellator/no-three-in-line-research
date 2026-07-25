@@ -14,9 +14,11 @@ supplement mirrors the collision-free live range recorded in
 | CMR406--409 | Harmonic-packet count, per-token packet-sweep return, combined deep-token visit bound, and aggregate quadratic-log sweep budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/138-prime-power-harmonic-packet-sweep-budget.md` |
 | CMR410--412 | Monotone-mask cycle erasure, simple finite histories, and the outside-context dichotomy for repeated ancestor or packet states | PROVED | `docs/139-prime-power-state-cycle-erasure.md` |
 | CMR413--417 | Exact full-token edge-incidence multiplicity, scale-filtered prefix and packet budgets, two-edge matching churn, and polynomial state-expansion payment | PROVED | `docs/140-prime-power-edge-incidence-state-expansion.md` |
+| CMR418--421 | Universal returned-edge support for recreated conflicts, harmonic packet recreation bounds, cumulative packet-loss ledger, and first-dirty schedule reduction | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR417, exact cycles and cost-free state expansion are eliminated from the live
-obstruction. The immediate task is to couple returned-edge churn to protection
-of earlier harmonic packets, target-load destruction, reserve depletion, or the
-width of fully forced exchange ancestry.
+CMR421, exact cycles, cost-free state expansion, and uncharged packet recreation
+are removed from the live obstruction. The immediate task is a global upper
+bound on cumulative returned-edge churn or a conversion of excess churn into
+target-load destruction, reserve or envelope depletion, or bounded fully forced
+exchange ancestry.
