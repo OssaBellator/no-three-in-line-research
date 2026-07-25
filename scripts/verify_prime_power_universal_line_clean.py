@@ -30,7 +30,7 @@ def verify_amplification(max_t: int = 100_000) -> None:
             threshold = isqrt(incidences)
             if threshold * threshold < incidences:
                 threshold += 1
-            assert threshold == ceil(incidences**0.5)
+            assert (threshold - 1) ** 2 < incidences <= threshold**2
             assert threshold >= ceil(t / 32)
 
             # If fewer than threshold signatures carry all incidences, one has
