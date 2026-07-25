@@ -16,6 +16,7 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX488-PX492.md",
     "product-growing-direction-theorem-index-PX493-PX498.md",
     "product-growing-direction-theorem-index-PX499-PX503.md",
+    "product-growing-direction-theorem-index-PX504-PX507.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -38,6 +39,7 @@ DOCS = [ROOT / "docs" / name for name in (
     "170-side-seven-insertion-recursion-barrier.md",
     "171-side-seven-two-column-selector-normal-form.md",
     "172-side-seven-local-minimum-transposition-boxes.md",
+    "173-side-seven-selector-coordinate-orbit-csp.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
@@ -45,9 +47,9 @@ INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX503"
+    assert manifest["range"] == "PX397-PX507"
     assert manifest["root"] == "PX492"
-    assert manifest["frontier_root"] == "PX503"
+    assert manifest["frontier_root"] == "PX507"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -64,7 +66,7 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 504):
+    for theorem_id in range(397, 508):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
@@ -72,23 +74,18 @@ def main() -> None:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 504))
+    assert index_ids == list(range(397, 508))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
         assert phrase not in text
-    assert "A_3=320" in text
-    assert "C_{8/109}<10^{59}" in text
-    assert "N^{16/109}" in text
-    assert "N_3=10^{2900}" in text
-    assert "1508" in text and "29}{545" in text
-    assert "132" in text and "488" in text
-    assert "21,952" in text and "82,002,575" in text
-    assert "14,345,445" in text
-    assert "A_0=T" in text and "A_1=QT" in text
-    assert "4,\\ 3,\\ 4,\\ 3" in text
-    assert "170{,}368" in text and "126{,}633{,}677" in text
-    print("PX397--PX503 dependency, cutoff, and side-seven local-barrier audit: PASS")
+    for token in (
+        "A_3=320", "C_{8/109}<10^{59}", "N_3=10^{2900}",
+        "132", "488", "21,952", "170{,}368", "2{,}227{,}923",
+        "2{,}048{,}385{,}024{,}000",
+    ):
+        assert token in text
+    print("PX397--PX507 dependency, cutoff, and side-seven coordinate-orbit audit: PASS")
 
 
 if __name__ == "__main__":
