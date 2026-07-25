@@ -27,33 +27,44 @@ def verify_assignments() -> None:
 
                 if c < b:
                     assert e == c
-                    closest = b
-                    outside = c
-                    assert closest > outside
+                    assert b > c
                 elif c > b:
                     assert e == b
-                    closest = c
-                    outside = b
-                    assert closest > outside
+                    assert c > b
                 elif e > b:
                     assert c == b
-                    closest = e
-                    outside = b
-                    assert closest > outside
+                    assert e > b
                 else:
                     assert depths == (b, b, b)
 
 
 def verify_prefix_residues() -> None:
     for p in (3, 5, 7):
-        for closest_depth in range(1, 5):
-            modulus = p**closest_depth
+        for depth in range(1, 5):
+            modulus = p**depth
             first = 17
             second = first + modulus
-            for outside_depth in range(closest_depth):
+            for outside_depth in range(depth):
                 third = first + p**outside_depth
                 assert first % modulus == second % modulus
                 assert third % modulus != first % modulus
+
+            # Equilateral parameters 0, p^depth, 2*p^depth occupy one prefix
+            # block and three distinct children for odd p.
+            equilateral = (
+                first,
+                first + modulus,
+                first + 2 * modulus,
+            )
+            assert len({value % modulus for value in equilateral}) == 1
+            children = {
+                (value // modulus) % p
+                for value in equilateral
+            }
+            assert len(children) == 3
+            assert valuation(equilateral[1] - equilateral[0], p) == depth
+            assert valuation(equilateral[2] - equilateral[1], p) == depth
+            assert valuation(equilateral[2] - equilateral[0], p) == depth
 
 
 def verify_depth_termination() -> None:
@@ -73,7 +84,7 @@ def main() -> None:
     verify_depth_termination()
     print(
         "verified heavy-cell continuation: external and deeper closest-pair "
-        "ownership, prefix exclusion, equilateral cases, and depth termination"
+        "ownership, equilateral common blocks, and depth termination"
     )
 
 
