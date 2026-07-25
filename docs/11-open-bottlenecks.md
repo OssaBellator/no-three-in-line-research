@@ -41,11 +41,15 @@ The composite branch now has the following reduction.
 10. CMR429--CMR432 show that all essential edges lie in one final matching core of
     size at most `t`, giving fewer than `t^3+t` distinct forced rank-`1/2/3`
     edge-set certificates and fewer than `3t^3` distinct ancestry links.
+11. CMR433--CMR438 contract one fixed matching to a digraph, identify every
+    first-essentiality layer with an acyclic directed exchange corridor, and
+    compress the entire pass to at most `t` historical batch exchange cycles.
 
 The inherited escape problem is no longer missing a local bank, packet
-construction, packet termination statement, or polynomial ancestry-width bound.
-The principal fixed-envelope obstruction is geometric use of the polynomial
-exchange-link family and the analogous payment for repeated local ancestor
+construction, packet termination statement, polynomial ancestry ledger, or a
+cycle cover for first-essentiality layers. The principal fixed-envelope
+obstruction is temporal compatibility of the batch cycles, reachability
+antichain geometry, and the analogous payment for repeated local ancestor
 resets.
 
 ## Bottleneck 3: selected-state and ancestry dynamics
@@ -118,7 +122,7 @@ gives:
    \boxed{T\le P\bigl(2+t(t-1)\bigr)}.
    \]
 
-### Polynomial essential-core ledger
+### Essential-core ledger
 
 Let `E_*` be the final essential set of the deletion pass. CMR429--CMR432 give
 
@@ -130,36 +134,71 @@ and after identifying certificates with the same prescribed edge set,
 
 \[
 \#\{\text{forced rank-}1/2/3\text{ certificates}\}
-\le
-\binom t1+\binom t2+\binom t3
-<t^3+t,
+< t^3+t,
 \]
 
 while the total number of distinct CMR217 links is below
 
 \[
-\binom t1+2\binom t2+3\binom t3
-<3t^3.
+3t^3.
 \]
 
-Thus raw ancestry width and factorial certificate proliferation are closed.
+Raw ancestry width and factorial certificate proliferation are therefore
+closed.
+
+### Exact exchange corridors
+
+Fix a perfect matching `M` before deleting one edge `f=\ell_ur_v`. Contract the
+matching edges and orient every nonmatching edge `\ell_jr_k` as `j\to k`.
+CMR433--CMR436 show:
+
+1. a matching edge is nonessential exactly when its contracted vertex lies on a
+   directed cycle;
+2. an edge newly essential after deleting `f` is an acyclic vertex on a directed
+   `v`-to-`u` corridor;
+3. reachability on the new essential vertices is a partial order;
+4. every reachability chain lies on one exchange cycle through `f` and can be
+   traded in one batch;
+5. the minimum number of exchange cycles through `f` covering the layer equals
+   the poset width.
+
+For a layer of size `n`, CMR437 gives an exact square-root alternative:
+
+- one exchange cycle batches at least `ceil(sqrt(n))` newly essential edges; or
+- there is an antichain of that size which no one exchange cycle through `f`
+  can address twice.
+
+Finally CMR438 gives
+
+\[
+\boxed{
+\sum_i w_i
+\le
+\sum_i|E_i|
+=|E_*|
+\le t,
+}
+\]
+
+so all first-essentiality edges in the pass are covered at their valid times by
+at most `t` historical exchange cycles.
 
 ### Remaining theorem
 
 A complete fixed-envelope prime-power termination theorem must now provide at
 least one of:
 
-- a low-overlap extraction theorem for the polynomial CMR216 exchange-cycle
-  family, followed by simultaneous flips;
-- a high-overlap theorem forcing concentration on one p-adic, primitive-height,
-  quotient, or carry signature;
-- a theorem that concentrated exchange ancestry forces strict host
-  decomposition or envelope expansion;
+- a temporal lifting theorem placing many of the historical cycles in one common
+  host and matching epoch;
+- a low-overlap simultaneous-flip theorem after such lifting;
+- a theorem converting a large reachability antichain into a Hall separator,
+  p-adic/carry concentration, host decomposition, or envelope expansion;
 - or a monotone payment converting repeated local ancestor resets into deletion,
   reserve depletion, envelope expansion, or new geometric structure.
 
-Another raw node, link, or per-reset count will not close the argument; those
-counts are already polynomial and exact at the required level.
+Another raw node, link, or cycle-count estimate will not close the argument;
+those quantities are already polynomial, and the temporal cycle count is now
+linear.
 
 ## Bottleneck 4: low primitive heights
 
@@ -172,15 +211,16 @@ Generic pair-codegree estimates remain too weak at low height. The branch has:
 - universal line-clean paid-pair banks;
 - quotient and carry collateral ledgers.
 
-The open task is to feed these local alternatives into exchange-cycle overlap or
-repeated-ancestor payment rather than prove another isolated extraction lemma.
+The open task is to feed these local alternatives into exchange-antichain
+geometry or repeated-ancestor payment rather than prove another isolated
+extraction lemma.
 
 ## Bottleneck 5: all side lengths
 
 The prime-power programme now supplies nonlinear full channels at every odd
 prime power, balanced recursive banks for every `p=1 mod 4` and every power of
 seven, exact high-slice and harmonic-packet cleaning, and polynomial dynamic
-accounting through the ancestry ledger.
+accounting through the ancestry and exchange-corridor ledgers.
 
 Arbitrary `n` still requires a separate coverage mechanism: further balanced
 prime factorizations, controlled products, CRT absorption, or patching between
@@ -205,16 +245,19 @@ The following broad pieces are closed:
 13. essentiality persistence and polynomial completion-or-terminal-ancestry
     packet scheduling;
 14. polynomial distinct node and link bounds for the essential-core ancestry
-    ledger.
+    ledger;
+15. exact directed exchange corridors, Dilworth batch-cycle covers, and linear
+    temporal cycle compression.
 
 ## Open lemmas in recommended order
 
-1. **Exchange-cycle overlap dichotomy.** Extract many low-overlap CMR216 cycles
-   or force concentration on a bounded geometric/p-adic signature.
-2. **Simultaneous exchange resampling.** Turn a low-overlap cycle family into one
-   executable move eliminating several forced certificates.
-3. **Concentrated-ancestry conversion.** Turn high overlap into prefix repair,
-   line-clean continuation, host decomposition, or envelope expansion.
+1. **Temporal cycle lifting.** Determine when historical CMR435 cycles remain
+   alternating relative to one common selected matching, or construct an
+   equivalent common-epoch cycle family.
+2. **Exchange-antichain conversion.** Turn a large CMR437 antichain into Hall
+   decomposition, prefix/carry concentration, or envelope expansion.
+3. **Simultaneous exchange resampling.** Turn a lifted low-overlap cycle family
+   into one executable move eliminating several forced certificates.
 4. **Repeated local ancestor-state payment.** Extend the packet deletion/
    ancestry mechanism to compatible prefix ancestor resets.
 5. **Low-height carry integration.** Convert carry alternatives into the same
@@ -230,9 +273,11 @@ The following broad pieces are closed:
 
 ## Computational priorities
 
-- Enumerate CMR216 cycle overlaps by full-token and primitive-height signature.
-- Search for large edge-disjoint or bounded-overlap exchange-cycle families.
-- Test concentrated-cycle signatures against prefix and envelope continuations.
+- Enumerate matching-contraction corridor posets for exact terminal hosts.
+- Measure chain width and antichain signatures by full token, primitive height,
+  quotient, and carry data.
+- Search for common-epoch representatives of the at most `t` historical batch
+  cycles.
 - Test local ancestor-reset potentials against the CMR350 exact return cycle.
 - Search for further non-reciprocal balanced grid factorizations.
 - Continue the `N=14` and joint digital searches.
