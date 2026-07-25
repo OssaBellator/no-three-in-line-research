@@ -1,128 +1,26 @@
-# Theorem index
+# Rational-inverse theorem index
 
-The numbering is local to this repository.
+This ledger records only branch-specific results and corrections.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| S1 | Saturated configurations decompose into two permutation layers | PROVED | `docs/01-saturation-and-reservoirs.md` |
-| S2 | Active-coordinate shadow bound implies clone-host superregularity | PROVED UNDER HYPOTHESES | `docs/01-saturation-and-reservoirs.md` |
-| S3 | Candidate-only triple energy is \(\Omega(\delta^3n^4\log n)\) | PROVED | `docs/02-reverse-scale-switching.md` |
-| S4 | Reverse-scale certified multicover deletion inequality | PROVED | `docs/02-reverse-scale-switching.md` |
-| S5 | Sparse scale-\(H\) switch-bank drift theorem | PROVED UNDER HYPOTHESES | `docs/02-reverse-scale-switching.md` |
-| L1 | Greedy \(K/p\)-spread injection lemma | PROVED | `docs/03-uniform-local-bank.md` |
-| L2 | Cell-realisation multiplicity at most two | PROVED | `docs/03-uniform-local-bank.md` |
-| L3 | Anchor-load cap implies \(A_2\le8n\Theta\) | PROVED | `docs/03-uniform-local-bank.md` |
-| L4 | Uniform local-bank negative drift under density/shadow caps | PROVED UNDER HYPOTHESES | `docs/03-uniform-local-bank.md` |
-| T1 | Difference-operator protected trade theorem | PROVED | `docs/04-protected-tomographic-trades.md` |
-| T2 | Formal protected rectangle bank with \(2^{r+1}\) cells per sign | PROVED | `docs/04-protected-tomographic-trades.md` |
-| T3 | Tomographic colour-cube states | PROVED | `docs/04-protected-tomographic-trades.md` |
-| A1 | Affine finite-direction construction for \(D\)-good moduli | PROVED | `docs/05-subgroup-absorbers.md` |
-| A2 | Least-prime-factor criterion for \(D\)-good moduli | PROVED | `docs/05-subgroup-absorbers.md` |
-| A3 | Installed subgroup coset absorber | PROVED | `docs/05-subgroup-absorbers.md` |
-| B1 | High line meets an order-\(h\) block at most once when \(h\le H\) | PROVED | `docs/06-block-collateral-energy.md` |
-| B2 | Exact one-block collateral and drift identities | PROVED | `docs/06-block-collateral-energy.md` |
-| B3 | Block-shadow closure theorem | PROVED | `docs/06-block-collateral-energy.md` |
-| B4 | Clean block reservoir first-moment completion | PROVED | `docs/06-block-collateral-energy.md` |
-| F1 | Wall-expansion termination | REFUTED | `docs/07-failed-wall-pathway.md` |
-| F2 | Synchronized slope change always improves after expansion | REFUTED | `docs/07-failed-wall-pathway.md` |
-| P1 | Product-state local lemma under normalized conflict mass | PROVED UNDER HYPOTHESES | `docs/07-failed-wall-pathway.md` |
-| H1 | Complementary modular hyperbola seed has line cap four | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H2 | Bichromatic displacement multiplicity at most two | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H3 | Dyadic shadow bound from bounded displacement multiplicity | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H4 | Existence of an \(O(n\log n)\)-syndrome hyperbola pair | PROVED | `docs/08-hyperbola-interleaver.md` |
-| H5 | Hamiltonian-cycle decomposition by \(\operatorname{ord}(b/a)\) | PROVED | `docs/08-hyperbola-interleaver.md` |
-| G1 | Projective conic-pencil construction and four-point real line cap | PROVED | `docs/22-incidence-conic-pencil.md` |
-| G2 | Opposite-channel projection is a projective secant involution | PROVED | `docs/22-incidence-conic-pencil.md` |
-| G3 | Exact tangent and affine-secant profile from every opposite-channel anchor | PROVED | `docs/22-incidence-conic-pencil.md` |
-| G4 | Ratio normal form for modular incidence, with Euclidean-lift limitation | PROVED | `docs/22-incidence-conic-pencil.md` |
-| CA1 | Exact aligned-anchor determinant carry formula | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CA2 | Divisor bound per nondegenerate aligned carry signature | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CA3 | Degenerate carry signatures are perfect affine-interpolation cells | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| CA4 | Aligned-anchor multiplicity is carry dispersion plus perfect-alignment mass | PROVED | `docs/23-aligned-anchor-carry-cells.md` |
-| SC1 | Product-carry levels have divisor-bounded size | PROVED | `docs/24-secant-star-carry-dispersion.md` |
-| SC2 | Endpoint-disjoint secant stars force product-carry signature dispersion in any channel pair | PROVED | `docs/24-secant-star-carry-dispersion.md` |
-| SC3 | Paid bank yields improvement, carry dispersion, or perfect alignment | PROVED | `docs/24-secant-star-carry-dispersion.md` |
-| PA1 | Exact classification of zero-leading-carry interpolation parameters | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
-| PA2 | Perfect alignment is equivalent to a reduced-denominator wrap-index condition | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
-| PA3 | Perfect-alignment population is at most \(4p/q\) for denominator \(q\) | PROVED | `docs/25-perfect-alignment-arithmetic.md` |
-| CF1 | Exact same-channel cross-carry criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF2 | Divisor bound per same-channel cross-carry level | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF3 | Universal scalar-lift wrap determinant criterion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF4 | Carry-cell line bound and explicit common rational centers | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF5 | Divisor bound inside every perfect-wrap chamber | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF6 | Perfect-alignment mass forces wrap-center dispersion | PROVED | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| CF7 | Monotone carry-complexity potential | OPEN | `docs/26-same-channel-cross-carries-and-wrap-centers.md` |
-| AN1 | Constant-spread permutations avoiding two forbidden matchings | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AN2 | Extraction of a movable same-layer endpoint substar | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AN3 | Alternating endpoint-permutation bank neutralizes the original star | PROVED | `docs/26-alternating-star-neutralization.md` |
-| AN4 | Average collateral bound for the joint alternating bank | PROVED | `docs/26-alternating-star-neutralization.md` |
-| O1 | Multiplicative orbit block interleaver | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O2 | Möbius secant involution | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O3 | Properly edge-coloured syndrome graph | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O4 | Cycle-bank theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O5 | Window-product conic-cover theorem | PROVED | `docs/09-orbit-tanner-and-mobius-cycles.md` |
-| O6 | One-colour carry-cycle dispersion lemma | REFUTED | `docs/13-carry-cycle-dispersion.md` |
-| CC1 | Collision-free permutation spread lemma | PROVED | `docs/13-carry-cycle-dispersion.md` |
-| CC2 | Universal collision-aware carry-cycle bank bound | PROVED | `docs/13-carry-cycle-dispersion.md` |
-| CC3 | Frozen-cycle concentration trichotomy | PROVED | `docs/13-carry-cycle-dispersion.md` |
-| CC4 | Alternating two-colour carry-core lemma | OPEN | `docs/13-carry-cycle-dispersion.md` |
-| D1 | Clone-space local-load selection theorem | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D2 | Explicit missing-cell/triple-incidence criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D3 | Robust 99%-dense endpoint criterion | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D4 | Failure forces an \(\Omega(n^3)\) row/column triple core | PROVED | `docs/15-degree-constrained-hypergraph-selection.md` |
-| D5 | Superregular local-load dependency/resampling upgrade | OPEN | `docs/16-superregular-clone-selection.md` |
-| SR1 | Uniform superregular perfect matching is fixed-rank \(O(1/N)\)-spread | PROVED | `docs/16-superregular-clone-selection.md` |
-| SR2 | Two-clone blow-up preserves superregularity | PROVED | `docs/16-superregular-clone-selection.md` |
-| SR3 | All-rank spread distribution on dense superregular perfect matchings | PUBLISHED THEOREM | `docs/16-superregular-clone-selection.md` |
-| SR4 | Spread distribution on two edge-disjoint perfect-matching layers | PROVED FROM SR3 | `docs/16-superregular-clone-selection.md` |
-| SR5 | Global conflict-mass endpoint for saturated two-layer selection | PROVED | `docs/16-superregular-clone-selection.md` |
-| I1 | Window-ratio union and multiplicative-energy lower bound | PROVED | `docs/17-pfr-inverse-additive.md` |
-| I2 | Small quotient set yields a linear common-ratio rectangle bank | PROVED | `docs/17-pfr-inverse-additive.md` |
-| I3 | Quotient ratio below \(3/2\) completes to one subgroup-coset absorber | PROVED | `docs/17-pfr-inverse-additive.md` |
-| I4 | Many low-complexity windows yield a common-ratio bank via BSG | PROVED FROM PUBLISHED BSG | `docs/17-pfr-inverse-additive.md` |
-| I5 | Explicit Kneser density and coset-count refinement below doubling two | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I6 | Full coset unions support an \(m!h^m\)-state absorber bank | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I7 | Möbius anchors lie in at most \(2L\) multiplicative translates | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I8 | Alternating anchor concentration-or-structure propagation dichotomy | PROVED | `docs/18-pfr-coset-anchor-propagation.md` |
-| I9 | Full subgroup cosets of order at least three expand to at least two cosets under \(F_r\) | PROVED | `docs/19-rational-coset-expansion.md` |
-| I10 | Exact order-two non-expansion exception \(x^2=r\) | PROVED | `docs/19-rational-coset-expansion.md` |
-| I11 | Rank-zero alternating cores expand except for the order-two exceptional orbit | PROVED | `docs/19-rational-coset-expansion.md` |
-| I12 | General simultaneous small doubling for \(C\) and \(F_r(C)\) | OPEN | `docs/19-rational-coset-expansion.md` |
-| RI0 | Exact two-point collision involution for \(F_r\) | PROVED | `tracks/rational-inverse-collision-and-obstructions.md` |
-| RI1a | Exact image loss equals the number of full collision orbits | PROVED | `tracks/rational-inverse-fibre-energy.md` |
-| RI1b | Dense coset nonexpansion yields a bilinear subgroup curve | PROVED | `tracks/rational-inverse-fibre-energy.md` |
-| RI1c | Full-coset collision loss equals an explicit subgroup--Möbius overlap | PROVED | `tracks/rational-inverse-subgroup-overlap.md` |
-| RI1d | Weil bounds full-coset collision overlap with \(O(\sqrt p)\) error | PROVED | `tracks/rational-inverse-weil-overlap.md` |
-| RI1e | Full source cosets are Weil-equidistributed among target cosets | PROVED | `tracks/rational-inverse-target-cosets.md` |
-| RI2a | Small-index unions of full source cosets cover every target coset | PROVED | `tracks/rational-inverse-target-cosets.md` |
-| RI2b | Every union of source cosets has universal half-coverage with exact collision mass | PROVED | `tracks/rational-inverse-union-collision.md` |
-| RI2c | Target-coset loss localizes collision mass to one source-coset pair | PROVED | `tracks/rational-inverse-union-collision.md` |
-| RI2d | Every source-coset pair has a uniform Weil collision cap | PROVED | `tracks/rational-inverse-cross-coset-cap.md` |
-| RI2e | Cross-coset caps give a quantitative union target-coset lower bound | PROVED | `tracks/rational-inverse-cross-coset-cap.md` |
-| RI2f | Rational collision saturation equals fixed-point mass plus a symmetric quotient cut | PROVED | `tracks/rational-inverse-quotient-boundary.md` |
-| RI2g | Rational involution boundary equals the degree defect of a coset polynomial and its Möbius transform | PROVED | `tracks/rational-inverse-boundary-gcd.md` |
-| RI2h | The polynomial gcd is the maximal invariant core and the boundary gives injective image outliers | PROVED | `tracks/rational-inverse-boundary-gcd.md` |
-| RI2i | The rational map is an affine orbit trace and invariant cores factor into trace quadratics | PROVED | `tracks/rational-inverse-boundary-gcd.md` |
-| RI2j | Rational inverse orbits obey an exact norm law inducing a product-coloured bounded-degree coset relation | PROVED | `tracks/rational-inverse-boundary-gcd.md` |
-| RI2k | Product-coloured quotient walks form a generalized-dihedral action with exact even/odd cycle constraints | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
-| RI3a | A quotient component lies in two cosets of the target-colour ratio subgroup while its image lies in one | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
-| RI3b | Bipartite components have an exact side-ratio subgroup, while odd cycles collapse source support to one coset | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
-| RI4a | Every order-two colour-ratio component is contained in an alternating square or a loop-and-edge collapse | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
-| RI4b | Paid order-two orbit weight localizes to one endpoint-coset edge with a \(1/4\) or \(1/3\) guarantee | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
-| RI5a | On a bank-ready installed physical block, the I6 bank neutralizes paid fixed-edge objects with probability at least \(1-1/(m|H|)\) | PROVED (CONDITIONAL INTERFACE) | `tracks/rational-inverse-fixed-edge-bank.md` |
-| RI5b | On that installed block, paid destruction exceeding the exact normalized I6 collateral sum yields an improving matching state | PROVED (CONDITIONAL INTERFACE) | `tracks/rational-inverse-fixed-edge-bank.md` |
-| RI5c | A bank-ready order-two square or collapsed component improves under an explicit \(1/4\)- or \(1/3\)-weighted collateral inequality | PROVED (CONDITIONAL INTERFACE) | `tracks/rational-inverse-fixed-edge-bank.md` |
-| RI5d | The rational secant identity permits arbitrary occurrence base scales, so normalized coset density does not imply a physical coset block | PROVED | `tracks/rational-inverse-lift-coherence.md` |
-| RI5e | Complete fixed-edge fibres admit an exact scale-mismatch, scale-growth, physical-star, or scale-localized lift audit | PROVED | `tracks/rational-inverse-lift-coherence.md` |
-| RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
-| RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
-| CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR2 | Radial anchor equation and \(2q\)-signature compression | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR3 | Common-ratio decoder-or-structure trichotomy | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR4 | Uniform paid-bank conversion inequality | PROVED | `docs/20-common-ratio-bank-conversion.md` |
-| CR5 | Constant-fraction extraction for arbitrary pair weights | REFUTED AS STATED | `docs/21-weighted-quotient-bank.md` |
-| WQ1 | Inadmissible rectangle-pair graph has maximum degree two | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ2 | Syndrome vertex degrees yield an admissible weighted common-ratio matching | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ3 | Paid common-ratio bank with pair-overlap correction | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ4 | Hyperbola-channel paid-bank lower bound | PROVED | `docs/21-weighted-quotient-bank.md` |
-| WQ5 | Weighted extraction plus conversion criterion | PROVED | `docs/21-weighted-quotient-bank.md` |
+| RI0 | Exact two-point collision involution for the rational map | PROVED | `docs/rational-inverse-collision-and-obstructions.md` |
+| RI1a–RI1b | Exact fibre loss and the bilinear subgroup curve for dense-coset nonexpansion | PROVED | `docs/rational-inverse-fibre-energy.md` |
+| RI1c | Full-coset collision loss is an explicit subgroup–Möbius overlap | PROVED | `docs/rational-inverse-subgroup-overlap.md` |
+| RI1d | Weil bounds the full-coset overlap with square-root error | PROVED | `docs/rational-inverse-weil-overlap.md` |
+| RI1e | Full source cosets are Weil-equidistributed among target cosets | PROVED | `docs/rational-inverse-target-cosets.md` |
+| RI2a | Small-index unions of full source cosets cover every target coset | PROVED | `docs/rational-inverse-target-cosets.md` |
+| RI2b–RI2c | Coset unions have universal half-coverage, and target loss localizes collision mass | PROVED | `docs/rational-inverse-union-collision.md` |
+| RI2d–RI2e | Cross-coset collision caps imply quantitative target-coset coverage | PROVED | `docs/rational-inverse-cross-coset-cap.md` |
+| RI2f | Collision saturation equals fixed-point mass plus a symmetric quotient cut | PROVED | `docs/rational-inverse-quotient-boundary.md` |
+| RI2g–RI2j | Polynomial gcd, invariant core, trace factorization, and product-coloured norm law | PROVED | `docs/rational-inverse-boundary-gcd.md` |
+| RI2k–RI3b | Quotient walks have generalized-dihedral cycle and component structure | PROVED | `docs/rational-inverse-quotient-cycles.md` |
+| RI4a–RI4b | Order-two components reduce to squares or collapses with paid `1/4` or `1/3` localization | PROVED | `docs/rational-inverse-quotient-cycles.md` |
+| RI5a–RI5c | Installed physical coset blocks admit fixed-edge absorber conversion | PROVED (CONDITIONAL INTERFACE) | `docs/rational-inverse-fixed-edge-bank.md` |
+| RI5d | Quotient density does not imply a physical block because base scales are arbitrary | PROVED | `docs/rational-inverse-lift-coherence.md` |
+| RI5e | Complete fibres admit a scale-mismatch, scale-growth, physical-star, or localized-scale audit | PROVED | `docs/rational-inverse-lift-coherence.md` |
+| RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
+| RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
+| RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
+
+No statement here proves the global conjecture.
