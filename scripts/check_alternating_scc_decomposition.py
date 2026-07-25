@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify PP3tn--PP3tt on a finite bipartite host by exact enumeration."""
+"""Verify PP3tn--PP3ty on a finite bipartite host by exact enumeration."""
 
 from __future__ import annotations
 
@@ -98,6 +98,46 @@ def induced_component_matchings(
 
 def matching_to_edges(matching: Matching) -> list[list[int]]:
     return [[left, right] for left, right in enumerate(matching)]
+
+
+def neighborhood(left_set: list[int], edges: set[Edge]) -> list[int]:
+    return sorted(
+        {right for left, right in edges if left in set(left_set)}
+    )
+
+
+def forced_edge_hall_certificate(
+    n: int, edges: set[Edge], forced_index: int
+) -> dict[str, Any] | None:
+    """Find an inclusion-minimal deficiency-one Hall witness after deleting (i,i)."""
+    reduced = set(edges)
+    reduced.discard((forced_index, forced_index))
+    candidates: list[tuple[int, tuple[int, ...], tuple[int, ...]]] = []
+    for mask in range(1, 1 << n):
+        left_set = tuple(vertex for vertex in range(n) if mask & (1 << vertex))
+        if forced_index not in left_set:
+            continue
+        neighbors = tuple(neighborhood(list(left_set), reduced))
+        if len(neighbors) < len(left_set):
+            candidates.append((len(left_set), left_set, neighbors))
+    if not candidates:
+        return None
+    _, left_set, reduced_neighbors = min(candidates)
+    original_neighbors = tuple(neighborhood(list(left_set), edges))
+    private_right_edges = sorted(
+        [left for left in left_set if (left, forced_index) in edges]
+    )
+    return {
+        "forced_index": forced_index,
+        "left_set": list(left_set),
+        "reduced_neighborhood": list(reduced_neighbors),
+        "original_neighborhood": list(original_neighbors),
+        "reduced_deficiency": len(left_set) - len(reduced_neighbors),
+        "original_tight": len(original_neighbors) == len(left_set),
+        "restored_right_vertex": forced_index,
+        "left_vertices_adjacent_to_restored_right": private_right_edges,
+        "private_edge_verified": private_right_edges == [forced_index],
+    }
 
 
 def main() -> None:
@@ -207,6 +247,10 @@ def main() -> None:
     trivial_component_indices = [
         component[0] for component in components if len(component) == 1
     ]
+    hall_certificates = [
+        forced_edge_hall_certificate(n, normalized_edges, index)
+        for index in forced_reference_indices
+    ]
 
     component_records = []
     for component, states in zip(components, local_state_lists):
@@ -237,6 +281,14 @@ def main() -> None:
         "trivial_component_indices": trivial_component_indices,
         "forced_edge_characterization_verified": (
             forced_reference_indices == trivial_component_indices
+        ),
+        "forced_edge_hall_certificates": hall_certificates,
+        "forced_edge_hall_certificates_verified": all(
+            certificate is not None
+            and certificate["reduced_deficiency"] == 1
+            and certificate["original_tight"]
+            and certificate["private_edge_verified"]
+            for certificate in hall_certificates
         ),
         "cross_component_allowed_edges": cross_component_allowed,
         "cross_component_edges_selected_by_a_perfect_matching": cross_component_selected,
