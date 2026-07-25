@@ -41,18 +41,24 @@ The composite branch now has the following reduction.
 10. CMR429--CMR432 show that all essential edges lie in one final matching core of
     size at most `t`, giving fewer than `t^3+t` distinct forced rank-`1/2/3`
     edge-set certificates and fewer than `3t^3` distinct ancestry links.
-11. CMR433--CMR438 contract one fixed matching to a digraph, identify every
-    first-essentiality layer with an acyclic directed exchange corridor, and
-    compress the entire pass to at most `t` historical batch exchange cycles.
+11. CMR433--CMR438 identify every first-essentiality layer with an acyclic
+    directed exchange corridor and compress the entire pass to at most `t`
+    historical batch exchange cycles.
+12. CMR439--CMR443 lift every final essential edge to a common expanded final
+    epoch by restoring at most `t` deleted edges. A minimum rollback set is a
+    forced matching; large rollback cost gives exact lower-dimensional host
+    factorization.
+13. CMR444--CMR447 give exact full-token incidence for rollback and charge every
+    conflict recreated from a previously clean packet family to a restored edge.
 
 The inherited escape problem is no longer missing a local bank, packet
-construction, packet termination statement, polynomial ancestry ledger, or a
-cycle cover for first-essentiality layers. The principal fixed-envelope
-obstruction is temporal compatibility of the batch cycles, reachability
-antichain geometry, and the analogous payment for repeated local ancestor
-resets.
+construction, packet termination statement, polynomial ancestry ledger,
+exchange-cycle cover, or common-epoch avoiding matching. The principal
+fixed-envelope obstruction is now **qualitative progress from a small restored-
+edge footprint**, together with exchange-antichain geometry and the analogous
+payment for repeated local ancestor resets.
 
-## Bottleneck 3: selected-state and ancestry dynamics
+## Bottleneck 3: selected-state, ancestry, and rollback dynamics
 
 ### One-pass aggregate bounds
 
@@ -122,7 +128,7 @@ gives:
    \boxed{T\le P\bigl(2+t(t-1)\bigr)}.
    \]
 
-### Essential-core ledger
+### Essential core and exchange corridors
 
 Let `E_*` be the final essential set of the deletion pass. CMR429--CMR432 give
 
@@ -130,23 +136,8 @@ Let `E_*` be the final essential set of the deletion pass. CMR429--CMR432 give
 |E_*|\le t,
 \]
 
-and after identifying certificates with the same prescribed edge set,
-
-\[
-\#\{\text{forced rank-}1/2/3\text{ certificates}\}
-< t^3+t,
-\]
-
-while the total number of distinct CMR217 links is below
-
-\[
-3t^3.
-\]
-
-Raw ancestry width and factorial certificate proliferation are therefore
-closed.
-
-### Exact exchange corridors
+fewer than `t^3+t` distinct forced rank-`1/2/3` edge-set certificates, and fewer
+than `3t^3` distinct CMR217 ancestry links.
 
 Fix a perfect matching `M` before deleting one edge `f=\ell_ur_v`. Contract the
 matching edges and orient every nonmatching edge `\ell_jr_k` as `j\to k`.
@@ -162,7 +153,7 @@ CMR433--CMR436 show:
 5. the minimum number of exchange cycles through `f` covering the layer equals
    the poset width.
 
-For a layer of size `n`, CMR437 gives an exact square-root alternative:
+For a layer of size `n`, CMR437 gives:
 
 - one exchange cycle batches at least `ceil(sqrt(n))` newly essential edges; or
 - there is an antichain of that size which no one exchange cycle through `f`
@@ -172,7 +163,7 @@ Finally CMR438 gives
 
 \[
 \boxed{
-\sum_i w_i
+\sum_iw_i
 \le
 \sum_i|E_i|
 =|E_*|
@@ -180,25 +171,114 @@ Finally CMR438 gives
 }
 \]
 
-so all first-essentiality edges in the pass are covered at their valid times by
-at most `t` historical exchange cycles.
+so all first-essentiality edges are covered at their valid times by at most `t`
+historical exchange cycles.
+
+### Sparse common-epoch rollback
+
+Let `G` be the final host and
+
+\[
+\Delta=E(G_0)\setminus E(G).
+\]
+
+For `e\in\operatorname{Ess}(G)`, define
+
+\[
+\kappa(e)
+=
+\min\{|R|:R\subseteq\Delta,\ \operatorname{PM}(G+R-e)\ne\varnothing\}.
+\]
+
+CMR439--CMR443 give:
+
+\[
+\boxed{1\le\kappa(e)\le t.}
+\]
+
+If `R` is minimum, every edge of `R` is essential in `G+R-e`, so
+
+\[
+\boxed{
+\operatorname{PM}(G+R-e)
+\cong
+\{R\}\times
+\operatorname{PM}\bigl((G+R-e)-V(R)\bigr).
+}
+\]
+
+For every threshold `q`, either:
+
+1. `\kappa(e)<q`, giving a cheap common-epoch rollback; or
+2. `\kappa(e)\ge q`, and the avoiding problem factors to side at most `t-q`.
+
+Every terminal rank-`1/2/3` certificate is destroyed by applying this to any one
+prescribed edge. Choosing one minimum rollback set for each edge of `E_*` gives
+
+\[
+\boxed{
+\sum_{e\in E_*}|R_e|\le t^2.
+}
+\]
+
+The rollback footprints also satisfy a disjoint-packing versus common-deleted-
+edge concentration dichotomy.
+
+### Exact rollback payment
+
+CMR444 gives, for every restored set `R`,
+
+\[
+\boxed{
+\mathcal I(R)
+=(p+1)(h-1)|R|.
+}
+\]
+
+Hence a cheap rollback with `|R|<q` has labelled full-token cost below
+
+\[
+(p+1)(h-1)q,
+\]
+
+and all chosen minimum rollback footprints for `E_*` have total labelled cost at
+most
+
+\[
+\boxed{(p+1)(h-1)t^2}.
+\]
+
+If a candidate family was clean in `G`, every member appearing after rollback
+uses a restored edge. For a clean harmonic packet of weight `W`, rollback
+creates at most
+
+\[
+\boxed{2(t-1)^2W|R|}
+\]
+
+represented triples.
+
+Common-epoch existence and the numerical token/packet price are closed. Large
+rollback is already strict host decomposition. The live temporal obstruction is
+therefore qualitative conversion of the **cheap** restored-edge support.
 
 ### Remaining theorem
 
 A complete fixed-envelope prime-power termination theorem must now provide at
 least one of:
 
-- a temporal lifting theorem placing many of the historical cycles in one common
-  host and matching epoch;
-- a low-overlap simultaneous-flip theorem after such lifting;
-- a theorem converting a large reachability antichain into a Hall separator,
-  p-adic/carry concentration, host decomposition, or envelope expansion;
-- or a monotone payment converting repeated local ancestor resets into deletion,
-  reserve depletion, envelope expansion, or new geometric structure.
+- a theorem converting a small rollback footprint into destroyed target load or
+  protected-reserve depletion;
+- a prefix, line-clean, Hall, or envelope continuation forced by concentration
+  of many minimum rollback footprints on one deleted edge;
+- a theorem converting a large reachability antichain into Hall decomposition,
+  p-adic/carry concentration, or envelope expansion;
+- or a canonical monotone payment converting repeated local ancestor resets into
+  deletion, rollback, reserve depletion, or new geometric structure.
 
-Another raw node, link, or cycle-count estimate will not close the argument;
-those quantities are already polynomial, and the temporal cycle count is now
-linear.
+Another raw state, edge, link, cycle, or rollback-count estimate will not close
+the argument; those quantities are already polynomial or linear, and expensive
+rollback already factors the host.
 
 ## Bottleneck 4: low primitive heights
 
@@ -211,16 +291,15 @@ Generic pair-codegree estimates remain too weak at low height. The branch has:
 - universal line-clean paid-pair banks;
 - quotient and carry collateral ledgers.
 
-The open task is to feed these local alternatives into exchange-antichain
-geometry or repeated-ancestor payment rather than prove another isolated
-extraction lemma.
+The open task is to feed these local alternatives into rollback-support or
+exchange-antichain geometry rather than prove another isolated extraction lemma.
 
 ## Bottleneck 5: all side lengths
 
 The prime-power programme now supplies nonlinear full channels at every odd
 prime power, balanced recursive banks for every `p=1 mod 4` and every power of
 seven, exact high-slice and harmonic-packet cleaning, and polynomial dynamic
-accounting through the ancestry and exchange-corridor ledgers.
+accounting through sparse rollback.
 
 Arbitrary `n` still requires a separate coverage mechanism: further balanced
 prime factorizations, controlled products, CRT absorption, or patching between
@@ -247,21 +326,26 @@ The following broad pieces are closed:
 14. polynomial distinct node and link bounds for the essential-core ancestry
     ledger;
 15. exact directed exchange corridors, Dilworth batch-cycle covers, and linear
-    temporal cycle compression.
+    temporal cycle compression;
+16. sparse common-epoch rollback for every final essential edge;
+17. minimum rollback essential-core factorization and threshold
+    cost-or-dimension reduction;
+18. exact rollback full-token and harmonic-packet payment.
 
 ## Open lemmas in recommended order
 
-1. **Temporal cycle lifting.** Determine when historical CMR435 cycles remain
-   alternating relative to one common selected matching, or construct an
-   equivalent common-epoch cycle family.
-2. **Exchange-antichain conversion.** Turn a large CMR437 antichain into Hall
+1. **Cheap rollback conversion.** Use the restored matching support to force
+   target-load destruction, reserve depletion, prefix/line-clean repair, Hall
+   decomposition, or envelope expansion.
+2. **Rollback concentration conversion.** If many minimum rollback footprints
+   use one deleted edge, exploit the associated earlier deletion certificate and
+   its p-adic/carry signature.
+3. **Exchange-antichain conversion.** Turn a large CMR437 antichain into Hall
    decomposition, prefix/carry concentration, or envelope expansion.
-3. **Simultaneous exchange resampling.** Turn a lifted low-overlap cycle family
-   into one executable move eliminating several forced certificates.
-4. **Repeated local ancestor-state payment.** Extend the packet deletion/
-   ancestry mechanism to compatible prefix ancestor resets.
+4. **Repeated local ancestor-state payment.** Attach a canonical rollback or
+   deletion class to compatible prefix ancestor resets.
 5. **Low-height carry integration.** Convert carry alternatives into the same
-   exchange, deletion, or envelope budget.
+   rollback, exchange, deletion, or envelope budget.
 6. **Prime-field transfer.** Rebuild the inherited-envelope and exact-covering
    endpoint for complementary-hyperbola carry cycles.
 7. **Further balanced prime families.** Extend the prime-seven factorization or
@@ -273,11 +357,11 @@ The following broad pieces are closed:
 
 ## Computational priorities
 
-- Enumerate matching-contraction corridor posets for exact terminal hosts.
-- Measure chain width and antichain signatures by full token, primitive height,
-  quotient, and carry data.
-- Search for common-epoch representatives of the at most `t` historical batch
-  cycles.
+- Enumerate minimum rollback footprints for exact terminal hosts and classify
+  their full-token, primitive-height, quotient, and carry signatures.
+- Test whether rollback footprints concentrated on one deleted edge reproduce a
+  Hall wall, line-clean bank, or envelope-expansion certificate.
+- Enumerate CMR216 corridor antichains by the same signatures.
 - Test local ancestor-reset potentials against the CMR350 exact return cycle.
 - Search for further non-reciprocal balanced grid factorizations.
 - Continue the `N=14` and joint digital searches.
