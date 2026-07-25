@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from collections import Counter
-from itertools import combinations
+from itertools import combinations, permutations
 from math import sqrt
 from random import Random
 
@@ -19,23 +19,24 @@ def candidate_triples(
     endpoints: tuple[tuple[int, int], ...],
     indices: tuple[int, ...],
 ) -> tuple[tuple[tuple[int, int], ...], ...]:
-    rows = [(index, endpoints[index][0]) for index in indices]
-    columns = [(index, endpoints[index][1]) for index in indices]
-    cells = [
-        ((row_index, column_index), (row_value, column_value))
-        for row_index, row_value in rows
-        for column_index, column_value in columns
-    ]
     triples = []
-    for selected in combinations(cells, 3):
-        labels = tuple(item[0] for item in selected)
-        points = tuple(item[1] for item in selected)
-        if len({label[0] for label in labels}) < 3:
-            continue
-        if len({label[1] for label in labels}) < 3:
-            continue
-        if collinear(*points):
-            triples.append(labels)
+    for row_indices in combinations(indices, 3):
+        row_values = tuple(endpoints[index][0] for index in row_indices)
+        for column_indices in combinations(indices, 3):
+            column_values = tuple(
+                endpoints[index][1] for index in column_indices
+            )
+            for order in permutations(range(3)):
+                labels = tuple(
+                    (row_indices[position], column_indices[order[position]])
+                    for position in range(3)
+                )
+                points = tuple(
+                    (row_values[position], column_values[order[position]])
+                    for position in range(3)
+                )
+                if collinear(*points):
+                    triples.append(labels)
     return tuple(triples)
 
 
