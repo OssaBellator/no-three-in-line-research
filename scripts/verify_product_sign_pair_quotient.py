@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify PX138--PX141: sign-pair quotient matching and odd seeds."""
+"""Verify PX148--PX151: sign-pair quotient matching and odd seeds."""
 from collections import Counter
 from itertools import combinations
 
@@ -75,7 +75,7 @@ def quotient_edges(prime: int) -> list[tuple[int, int, int, int]]:
                 sign_class(x + y, prime),
             )
             assert all(value is not None for value in edge)
-            seen.add(edge)  # simultaneous negation gives the same edge
+            seen.add(edge)
     return sorted(seen)
 
 
@@ -121,7 +121,7 @@ def main() -> None:
         mu, tau = EXPECTED[prime]
         print(f"p={prime}: odd seed mu={mu}, tau={tau}")
 
-    print("PX138--PX141 verified")
+    print("PX148--PX151 verified")
 
 
 if __name__ == "__main__":
