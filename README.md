@@ -4,7 +4,7 @@
 
 This branch studies simultaneous structure of a multiplicative set and its image under the rational secant map, including collision involutions, subgroup-coset overlap, quotient cycles, order-two obstructions, and the physical-lift interface needed by absorber banks. Canonical proofs are under `docs/`.
 
-> **Status:** Scale-localized physical completion debt decomposes into closed permutation components. Opposite-layer occupancy is resolved by a global blocker derangement whenever the number of blocked desired cells is zero or at least two. Exactly one blocked desired cell leaves one explicit alternating component, and that component is rigid: no nontrivial current/target mixture preserves the active matching. The remaining bottleneck is therefore an actual blocker move, external-cell extension, or arithmetic delegation, together with collateral comparison for installed components.
+> **Status:** Scale-localized physical completion debt decomposes into closed permutation components, and all opposite-layer occupancy patterns are now executable. Zero blockers install directly, multiple blockers use a derangement, and a singleton blocker is moved by transposition with any auxiliary blocker cell. The remaining bottleneck is collateral: compare the completed active matching and the auxiliary-transposition bank against the paid fixed-edge mass, or classify the failed profile whose raw blocker collateral grows linearly with `n-1`.
 
 ## Branch map
 
@@ -22,14 +22,15 @@ This branch studies simultaneous structure of a multiplicative set and its image
 - [`docs/rational-inverse-fixed-edge-bank.md`](docs/rational-inverse-fixed-edge-bank.md)
 - [`docs/rational-inverse-lift-coherence.md`](docs/rational-inverse-lift-coherence.md)
 - [`docs/rational-inverse-completion-debt.md`](docs/rational-inverse-completion-debt.md): cycle/path decomposition of physical completion debt.
-- [`docs/rational-inverse-two-layer-completion.md`](docs/rational-inverse-two-layer-completion.md): blocker derangements and the singleton-blocker alternative.
+- [`docs/rational-inverse-two-layer-completion.md`](docs/rational-inverse-two-layer-completion.md): blocker derangements and the provisional singleton case.
 - [`docs/rational-inverse-singleton-rigidity.md`](docs/rational-inverse-singleton-rigidity.md): proof that partial current/target installation cannot bypass one blocker.
+- [`docs/rational-inverse-singleton-transposition.md`](docs/rational-inverse-singleton-transposition.md): auxiliary blocker transposition and exact `1/(n-1)` collateral bank.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch-specific theorem ledger.
 
 ## Highest-value frontier
 
-1. Move or absorb the unique blocker in the heavy RI5i/RI5k component using its quotient, scale, carry, and path labels.
-2. Bound collateral for the jointly installed RI5h completion components and feed failure into the paid-bank profile machinery.
-3. Install the conditional fixed-edge coset bank after the singleton debt is absorbed or delegated.
+1. Bound the active and blocker collateral of the RI5l--RI5n completed state, or localize a failed profile using its two crossed-cell channels.
+2. Convert the resulting heavy blocker profile into alternating-core, carry, or bounded-denominator structure.
+3. Complete the bank-ready audit and invoke the conditional fixed-edge coset bank.
 
 The scripts verify finite-field identities and small quotient/lift models; they do not replace the arbitrary-size proofs.
