@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Check the PP3lg--PP3lk rich-line endpoint energy on a finite instance."""
+"""Check the PP3lg--PP3no rich-line endpoint energy on a finite instance."""
 from __future__ import annotations
 
 import argparse
 import json
+import math
 from fractions import Fraction
 from pathlib import Path
 from typing import Any
@@ -29,15 +30,16 @@ def determinant(a: Point, b: Point, c: Point) -> int:
     return (b[0] - a[0]) * (c[1] - a[1]) - (b[1] - a[1]) * (c[0] - a[0])
 
 
-def parse_fraction(raw: Any, label: str) -> Fraction:
+def parse_fraction(raw: Any, label: str, *, allow_zero: bool = False) -> Fraction:
     if isinstance(raw, bool):
         raise ValueError(f"{label}: invalid rational")
     try:
         value = Fraction(str(raw))
     except (ValueError, ZeroDivisionError) as exc:
         raise ValueError(f"{label}: invalid rational") from exc
-    if value <= 0:
-        raise ValueError(f"{label}: must be positive")
+    if value < 0 or (value == 0 and not allow_zero):
+        comparison = "nonnegative" if allow_zero else "positive"
+        raise ValueError(f"{label}: must be {comparison}")
     return value
 
 
@@ -156,7 +158,7 @@ def main() -> None:
         else:
             if not isinstance(permitted_raw, list):
                 raise ValueError("permitted_edges must be a list")
-            permitted: set[Edge] = set()
+            permitted = set()
             for index, raw in enumerate(permitted_raw):
                 edge = parse_point(raw, f"permitted_edges[{index}]")
                 if not (0 <= edge[0] < q and 0 <= edge[1] < q):
@@ -178,6 +180,9 @@ def main() -> None:
             raise ValueError("current_permutation must be a permutation of [0,q)")
         current = list(current_raw)
         k_value = parse_fraction(payload.get("K", "1"), "K")
+        lambda_value = parse_fraction(
+            payload.get("lambda", "0"), "lambda", allow_zero=True
+        )
     except (OSError, ValueError, json.JSONDecodeError) as exc:
         raise SystemExit(f"check failed: {exc}") from exc
 
@@ -195,8 +200,17 @@ def main() -> None:
             )
         loads.append(row)
 
+    current_edges = {(i, current[i]) for i in range(q)}
     current_load = sum(loads[i][current[i]] for i in range(q))
     permitted_energy = sum(loads[i][j] for i, j in permitted)
+    permitted_off_current_energy = sum(
+        loads[i][j]
+        for i, j in permitted
+        if (i, j) not in current_edges
+    )
+    effective_energy = current_load + permitted_off_current_energy
+    full_assignment_energy = sum(sum(row) for row in loads)
+
     expected_upper = k_value * permitted_energy / q
     matching, _ = maximum_matching(q, permitted)
 
@@ -226,6 +240,73 @@ def main() -> None:
     )
     guaranteed_matching = guaranteed_rich_count / (2 * q)
 
+    current_multiplicity: dict[Point, int] = {}
+    reachable_owner_count: dict[Point, int] = {}
+    for target in targets:
+        current_count = 0
+        reachable_count = 0
+        for i in range(q):
+            current_replacement = (x_raw[i], y_raw[current[i]])
+            current_incident = (
+                target != current_replacement
+                and determinant(candidates[i], current_replacement, target) == 0
+            )
+            if current_incident:
+                current_count += 1
+
+            reachable = current_incident
+            if not reachable:
+                for j in range(q):
+                    if (i, j) not in permitted or (i, j) in current_edges:
+                        continue
+                    replacement = (x_raw[i], y_raw[j])
+                    if (
+                        target != replacement
+                        and determinant(candidates[i], replacement, target) == 0
+                    ):
+                        reachable = True
+                        break
+            if reachable:
+                reachable_count += 1
+
+        current_multiplicity[target] = current_count
+        reachable_owner_count[target] = reachable_count
+
+    all_targets_currently_witnessed = all(
+        value >= 1 for value in current_multiplicity.values()
+    )
+    mass_factor = math.exp(8.0 * float(lambda_value))
+    mass_sensitive_expected_upper = (
+        mass_factor * permitted_off_current_energy / q
+    )
+    mass_sensitive_improves = mass_sensitive_expected_upper < current_load
+
+    extremality: dict[str, Any] | None = None
+    if targets and all_targets_currently_witnessed:
+        epsilon = mass_factor - 1.0
+        h_ratio_upper = q * (1.0 + epsilon) / (q + 1.0 + epsilon)
+        energy_ratio_lower = (q + 1.0 + epsilon) / (q * (1.0 + epsilon))
+        extremality = {
+            "epsilon": epsilon,
+            "current_load_over_target_count": current_load / len(targets),
+            "effective_energy_over_q_target_count": (
+                effective_energy / (q * len(targets))
+            ),
+            "PP3nn_current_ratio_upper_if_improvement_fails": h_ratio_upper,
+            "PP3nn_energy_ratio_lower_if_improvement_fails": energy_ratio_lower,
+            "PP3nn_automatic_improvement_from_empty_ratio_interval": (
+                epsilon < 1.0 / (q - 1) if q > 1 else True
+            ),
+            "average_excess_current_multiplicity": (
+                sum(value - 1 for value in current_multiplicity.values())
+                / len(targets)
+            ),
+            "average_missing_owner_reachability": (
+                sum(q - value for value in reachable_owner_count.values())
+                / len(targets)
+            ),
+        }
+
     output = {
         "q": q,
         "target_cell_count": len(targets),
@@ -233,9 +314,16 @@ def main() -> None:
         "current_permutation": current,
         "current_line_load": current_load,
         "permitted_assignment_energy": permitted_energy,
+        "permitted_off_current_energy": permitted_off_current_energy,
+        "effective_current_plus_permitted_energy": effective_energy,
+        "full_assignment_energy": full_assignment_energy,
         "K": encode_fraction(k_value),
         "PP3lh_expected_upper": encode_fraction(expected_upper),
         "PP3lh_strict_improvement_certified": expected_upper < current_load,
+        "lambda": encode_fraction(lambda_value),
+        "PP3nl_mass_factor_exp_8lambda": mass_factor,
+        "PP3nl_expected_upper": mass_sensitive_expected_upper,
+        "PP3nl_strict_improvement_certified": mass_sensitive_improves,
         "permitted_perfect_matching_exists": len(matching) == q,
         "one_permitted_matching": [[i, matching[i]] for i in sorted(matching)],
         "exact_minimum_assignment": minimum_object,
@@ -251,6 +339,14 @@ def main() -> None:
         "PP3lk_guaranteed_matching_size_if_energy_fails": encode_fraction(
             guaranteed_matching
         ),
+        "all_targets_currently_witnessed": all_targets_currently_witnessed,
+        "current_target_multiplicities": {
+            str(target): current_multiplicity[target] for target in sorted(targets)
+        },
+        "reachable_owner_counts": {
+            str(target): reachable_owner_count[target] for target in sorted(targets)
+        },
+        "PP3nn_extremality_diagnostics": extremality,
         "load_matrix": loads,
     }
     print(json.dumps(output, indent=2, sort_keys=True))
