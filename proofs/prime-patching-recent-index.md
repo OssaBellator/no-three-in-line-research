@@ -68,6 +68,8 @@ repository-wide theorem ledger.
 | PP3re--PP3rk | Ramsey completion of the four-state cross-block CSP | PROVED / FROM FIXED-COLOUR RAMSEY | `docs/133-multistate-signature-ramsey-completion.md` |
 | PP3rl--PP3rp | Universal bypass of every original two-state rectangle signature | PROVED | `docs/134-universal-diagonal-signature-bypass.md` |
 | PP3rq--PP3rx | Hierarchical cross-block amplification bypasses bounded-level contradictions | PROVED | `docs/135-hierarchical-cross-block-amplification.md` |
+| PP3ry--PP3sb | Growing-depth amplification produces growing-credit block banks | PROVED | `docs/136-growing-depth-cross-block-amplification.md` |
+| PP3sc--PP3sh | Sub-square-root unary degree yields superregular growing blocks and paid spread | PROVED / FROM SR1 | `docs/137-superregular-growing-cross-block-hosts.md` |
 
 ## Current scale
 
@@ -107,16 +109,17 @@ In the superregular branch, residual matching, residual source validity, exact
 binary/multistate CSP installation, and diffuse paid selection are closed.
 
 The original two rectangle diagonals are no longer a binding state space. Under
-sublinear non-designated unary degree, arbitrary pairs of resource-disjoint
-rectangles may be replaced by four cross-block states. Almost the entire bank
-pairs safely, regardless of whether the original Boolean signature was
-credit-rich, credit-poor, contradictory, or supported on a dense cross-conflict
-line/pencil/secant design.
+sublinear non-designated unary degree, almost the entire bank pairs into safe
+cross-block supervariables regardless of the original signed signature or
+cross-conflict geometry. Ramsey regularization and hierarchical amplification
+bypass every bounded-level contradiction.
 
-The four-state CSP again Ramsey-regularizes to a constant state or a bounded
-local contradiction. Hierarchical cross-block amplification bypasses every such
-contradiction at any fixed depth while preserving one designated credit per
-original rectangle.
+The depth may grow slowly: one obtains both block size \(b\to\infty\) and a
+growing number of blocks while discarding only \(o(H)\) original rectangles.
+If the unary maximum degree is \(o(\sqrt H)\), square-root-size blocks can be
+pruned to near-complete superregular directional hosts. Their local state law has
+fixed-rank \(O(b^{-r})\) spread, and paid completion reduces to the explicit
+PP3sg source/shadow expression.
 
 ## Remaining theorem
 
@@ -126,11 +129,11 @@ The branch is reduced to the following structured cases.
    simultaneous score concentration surviving all four allocation interfaces.
 2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
    outside the superregular recapture branch.
-3. Convert a unary endpoint resource with linear forbidden cross-block degree.
-4. Convert locally impossible hierarchical cross-block state sets or unary,
-   binary, and residual weighted shadow concentrated at block-credit scale.
-5. Rule out or convert an infinite-depth feasible cross-block hierarchy for
-   which no fixed amplification depth has diffuse paid completion.
+3. Convert unary cross-block maximum degree at least square-root scale.
+4. Convert source or shadow weights concentrated in the growing-block paid
+   expression PP3sg.
+5. Convert a growing-scale hierarchy that stays locally feasible but irregular
+   in the intermediate unary-degree regime.
 6. Convert a linear-congestion original binary-shadow dual packing or
    witness-line pencil.
 7. Construct source-admissible pool-compatible endpoint trades with `Xi`
