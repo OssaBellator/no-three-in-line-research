@@ -4,7 +4,7 @@
 
 This is the principal dependent proof-chain branch. It starts after the proved alternating star-neutralization bank and develops second-order concentration, paid structural re-extraction, no-recycling, two-colour termination, reverse-scale compatibility, and the prime-minus-one endpoint. Canonical proof notes are stored in `docs/`.
 
-> **Status:** The bounded-denominator exit has an exact quantitative adapter through ordinary and reflected scalar profiles and weighted co-anchored `h,h+q` pairs. Reflected `CD` roles now use the effective denominator `q/gcd(2Ah,q)` and one scalar class modulo `q/gcd(2A,q)`; no cancellation-height label remains. The rational-inverse route has a corrected common-closure I6 bank with exact blocker repair and source-coset-rank accounting. Active ranks one, two, and three amplify to raw channel classes without subgroup-order loss; heavy lines reduce to at most eight exact root words; blocker prescriptions have exact derangement probabilities and nine crossed-rectangle types. State-independent collateral is fully geometric: it is supported on RI5f closure cells, one universal two-closure rectangle, or one exceptional `mh=2` transfer rectangle. Incomplete fibres and root imbalance reduce to companion carry defects, off-family current factors, or row-column-disjoint one-cell completion families; coherent scale dispersion yields a row-column-disjoint `1/31` multi-scale bank. The remaining work is payment, scoped-collateral comparison, support faithfulness, and no-recycling for these explicit outputs. The branch still lacks a total transition oracle.
+> **Status:** The bounded-denominator exit has exact ordinary and reflected scalar adapters. Reflected `CD` roles use the effective denominator `q/gcd(2Ah,q)` and no cancellation-height label. The former dispersed-anchor inequality is replaced by an exact pair/endpoint/variation router: one scalar profile yields a paid `h,h+q` pair bank, a privately paid extreme-slot front, or a privately paid oriented missing-partner front, with AC3am losses `1/8,1/8,1/16` before scoped conflicts. The rational-inverse route has a corrected common-closure I6 bank with exact blocker repair, source-rank accounting, exact derangement probabilities and nine crossed-rectangle types. State-independent collateral is fully geometric. Incomplete fibres and root imbalance yield carry defects, private one-cell completion records, or off-family companions; companion payment now satisfies Hall with equality, root reversal has one finite ticket per base, and off-family companions amplify to four-point current-line banks. Coherent scale dispersion yields a row-column-disjoint `1/31` multi-scale bank. The remaining work is actual improvement/collateral comparison, installation or denominator descent of explicit one-sided fronts, support faithfulness, closure/tuple payment, and global no-recycling. The branch still lacks a total transition oracle.
 
 ## Branch map
 
@@ -28,6 +28,7 @@ This is the principal dependent proof-chain branch. It starts after the proved a
 - [`docs/alternating-core-bda-delegation.md`](docs/alternating-core-bda-delegation.md): exact ordinary BDA realization contract, profile localization, scalar slots, and weighted co-anchor routing.
 - [`docs/alternating-core-bda-role-composition.md`](docs/alternating-core-bda-role-composition.md): quantitative composition with AC3am and the bounded-shape/large-direction router.
 - [`docs/alternating-core-bda-reflected-role.md`](docs/alternating-core-bda-reflected-role.md): reflected `CD` effective denominator, scalar slots, and co-anchor routing without cancellation labels.
+- [`docs/alternating-core-bda-one-sided-fronts.md`](docs/alternating-core-bda-one-sided-fronts.md): endpoint/oriented scalar fronts, private payment, and scoped conflict routing.
 - [`docs/alternating-core-ri-delegation.md`](docs/alternating-core-ri-delegation.md): generic normalized-to-physical RI contract for genuinely movable paid objects.
 - [`docs/alternating-core-op-ri-realization.md`](docs/alternating-core-op-ri-realization.md): canonical OP factors as exact paid RI records.
 - [`docs/alternating-core-ri-scale-pairing.md`](docs/alternating-core-ri-scale-pairing.md): weighted common-scale pairing or one-root imbalance.
@@ -43,16 +44,17 @@ This is the principal dependent proof-chain branch. It starts after the proved a
 - [`docs/alternating-core-ri-fixed-blocker-collateral.md`](docs/alternating-core-ri-fixed-blocker-collateral.md): common repaired-blocker support and universal two-closure rectangle.
 - [`docs/alternating-core-ri-state-independent-union.md`](docs/alternating-core-ri-state-independent-union.md): complete state-independent union support and the `mh=2` transfer rectangle.
 - [`docs/alternating-core-ri-missing-companions.md`](docs/alternating-core-ri-missing-companions.md): incomplete/imbalanced fibres as carry, current-companion, or one-cell completion outputs.
+- [`docs/alternating-core-ri-companion-payment.md`](docs/alternating-core-ri-companion-payment.md): private current-factor payment, root tickets, and four-point current-line banks.
 - [`docs/alternating-core-ri-scale-dispersion.md`](docs/alternating-core-ri-scale-dispersion.md): finite-ratio scale conflicts and the `1/31` disjoint scale bank.
 - [`docs/alternating-core-formal-termination.md`](docs/alternating-core-formal-termination.md)
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch theorem ledger.
 
 ## Highest-value frontier
 
-1. Prove current-defect eligibility and bounded reuse for the explicit RI outputs: quadratic-root tuples, closure stars/secants, crossed rectangles, off-family companion factors, and one-cell companion completions.
-2. Complete the scoped-collateral comparison on the `1/31` row-column-disjoint coherent multi-scale bank; route overload through AC2c--AC2d.
-3. Prove support faithfulness and executable decoding for ordinary and reflected BDA co-anchor families; then close the dispersed-anchor and five affine-chain outputs.
-4. Convert the resulting exact tuple, companion, and denominator resources into finite AC3f tickets, paid executable banks, carry/BDA delegation, or geometric-cleaning transitions.
-5. Derive finite paid-resource ticket supply for all reopenings and verify reverse-scale cleanliness of the resulting total oracle.
+1. Prove actual improvement/collateral bounds for the privately paid one-cell companion banks and four-point current-line banks; classify any AC2d overload labels.
+2. Prove current-defect eligibility and bounded reuse for the remaining RI quadratic-root tuples, closure stars/secants, transfer rectangles and crossed-blocker complexes.
+3. Install or force denominator descent for BDA endpoint/oriented missing-partner fronts, and prove support faithfulness for ordinary and reflected co-anchor pair families.
+4. Complete the scoped-collateral comparison on the `1/31` coherent multi-scale bank and terminate the five BDA affine chains and higher-rank profiles.
+5. Convert every surviving exact resource into a finite AC3f ticket, paid executable bank, carry/BDA/RI delegation, or geometric-cleaning transition; then verify reverse-scale cleanliness.
 
 The branch scripts exhaust finite abstractions and small-prime regressions; the Markdown arguments carry the general claims.
