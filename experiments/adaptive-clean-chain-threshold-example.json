@@ -1,0 +1,8 @@
+{
+  "n": 12,
+  "centre": 0,
+  "epsilon": 1e-6,
+  "forbidden_left": [],
+  "forbidden_middle": [],
+  "forbidden_right": []
+}
