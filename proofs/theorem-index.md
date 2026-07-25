@@ -52,6 +52,7 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3ji–AC3jm | Every blocker Hall cut has one row or inverse-column centre with at least `floor(n/2)` missing targets; a role-pure subfan enters the cross-centre residual and owner-resource routers | PROVED | `docs/alternating-core-hall-cut-target-fan.md` |
 | AC3jn–AC3jq | Reopening any minimal-core cut edge destroys that core; persistent executable reopenings have an `n^2` potential and otherwise return an exact terminal target/resource fan or outer reset | PROVED UNDER THE EDGE-EXECUTION CONTRACT | `docs/alternating-core-hall-edge-reopening.md` |
 | AC3jr–AC3ju | Matching churn, monotone masks and persistent blocker-host reopening terminate inside one outer epoch after an explicit `O(B lambda L^2 n^8)` bound | PROVED UNDER THE STATED EPOCH CONTRACT | `docs/alternating-core-epoch-local-termination.md` |
+| AC3jv–AC3jz | Target-containing unary BDA/RI/carry checks are prospective geometry, not current payment; separate current owners require physical/coherent/payable status and faithful destruction | PROVED | `docs/alternating-core-unary-owner-payment-audit.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN; REDUCED TO OUTER RESET EDGES AND TERMINAL LITERAL/OWNER INSTALLATION | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
