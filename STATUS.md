@@ -92,11 +92,10 @@ Positive-density controller-aware failure forces one of:
 2. `Omega(m^0.525)` resource-disjoint bad entries with distinct labels and
    controllers and endpoint-disjoint blocker pairs.
 
-Endpoint permutations preserve saturation and satisfy an exact
-removal-credit-minus-insertion-cost identity. Every successful paid trade
-strictly decreases a fixed nonnegative integer controller-shadow potential while
-preserving the controller pools, so a uniform conversion theorem terminates
-automatically.
+Endpoint permutations preserve saturation and satisfy exact
+removal-credit-minus-insertion-cost identities. Uniformly improving trades are
+controlled by nonnegative integer potentials, so no separate recurrence argument
+is needed once conversion is proved.
 
 ### Resource-bank source validity is closed
 
@@ -110,17 +109,10 @@ q=m^\kappa,
 \]
 
 The branch then constructs a saturation-preserving no-three endpoint permutation
-using:
-
-- superregular endpoint-host pruning;
-- a permutation local lemma for unary cells, transpositions, directed
-  transitions, and directed 3-cycles;
-- a divisor factorization for anchored transitions;
-- support-rank thinning for rank-four anchored pairs and all higher-support
-  inserted triples.
-
-Source admissibility is therefore no longer part of the resource-bank
-bottleneck.
+using superregular pruning, a permutation local lemma, divisor regularisation of
+anchored transitions, and support-rank thinning of all remaining source
+certificates. Source admissibility is therefore no longer part of the
+resource-bank bottleneck.
 
 ### Zero-unary-shadow endpoint
 
@@ -138,8 +130,9 @@ sets `X,Y` satisfying
 X\times Y\subseteq E(\overline{G_0}).
 \]
 
-Thus the true unary obstruction is a forbidden Hall rectangle or an almost
-completely forbidden fibre block, not one isolated rich fibre.
+A macroscopic Hall rectangle contains a quadratic core of one witness type. In
+the recapture case this yields a linear bank of designated lines, each meeting
+the endpoint rectangle in linearly many cells.
 
 If `G_0` is superregular and its remaining anchored-pair, binary-shadow-pair, and
 inserted-triple counts are summable, a spread perfect matching produces a
@@ -148,50 +141,67 @@ source-admissible trade with complete insertion cost zero.
 ### Isolated support concentrations are prunable
 
 Deleting `o(q)` exceptional endpoint indices retains `(1-o(1))q` designated
-credit units and can only decrease every source and shadow support.
-Consequently isolated rich recapture fibres, unary-shadow fibres, and binary
-stars are not terminal.
+credit units and can only decrease every source and shadow support. Persistent
+failure forces a linear support core:
 
-Persistent failure forces a linear support core. Along a subsequence, either:
+- `Omega(q^2)` simple unary support; or
+- `Omega(q^3)` binary conflict support.
 
-- `Omega(q)` endpoint indices have unary support degree `Omega(q)`, yielding
-  `Omega(q^2)` simple unary support; or
-- `Omega(q)` endpoint indices have binary support degree `Omega(q^2)`, yielding
-  `Omega(q^3)` binary conflict support.
+The cubic binary core yields either a linear endpoint-cell fan with candidate-line
+structure or a linear family of resource-disjoint binary conflicts.
 
-The unary core contains a linear matching of forbidden endpoint cells. The
-binary core yields either a quadratic endpoint-resource star or a linear family
-of resource-disjoint binary conflicts.
+### Dynamic pool excess-shadow potential
 
-### Corrected source-star geometry
+For each fixed pool, the complete candidate-cell universe depends only on its old
+column set and old row set, not on the current matching between them. Within-pool
+endpoint permutations therefore preserve this universe even when controller
+pairings change.
 
-The star from the controller-shadow dichotomy has a common **source endpoint**.
-The older alternating-neutralisation theorem instead assumes a common
-**candidate point**, so it does not apply verbatim.
+Every movement or refill candidate has exactly one automatic horizontal or
+vertical blocker pair, and that pair contains its current controller point.
+Every additional blocker pair is nonaxis and controller-disjoint. Hence
 
-A free star centre, lying outside the fixed controller infrastructure, belongs to
-a linear endpoint bank disjoint from every controller. Moving it supplies
-`Omega(m)` removal credit and reduces the star branch to the same zero-unary
-Hall/superregular endpoint.
+\[
+\Xi(S)=\sum_z\bigl(b_S(z)-1\bigr)
+\]
 
-A captive star centre belongs to a selected controller pool. Moving it changes
-the fixed candidate-entry universe, so this case needs either a dynamic
-controller potential or a controller-preserving trade on its blocker partners.
+is a nonnegative integer counting exactly the excess cell-shadow incidences.
+The number of bad cell entries is at most `Xi`.
+
+Pool-compatible endpoint permutations satisfy an exact
+`insertion cost - removal credit` identity for `Xi`. A star centre inside a
+controller pool supplies its full linear blocker credit while the pool's column
+set, row set, and candidate cells remain fixed.
+
+For every fixed density threshold, a uniform improving pool-compatible trade
+terminates below that threshold. A uniform threshold sequence tending to zero
+gives `o(1)` bad cell-entry density, and improvement whenever `Xi>0` terminates
+at `Xi=0`.
+
+The earlier apparent controller-relabelling obstruction for captive star centres
+is therefore removed. Their remaining difficulty is geometric: construct a
+source-admissible within-pool endpoint trade whose `Xi` insertion cost is below
+the star credit.
 
 ## What remains conditional
 
-The remaining theorem is now concentrated in four structural endpoints:
+The remaining theorem is concentrated in the following structural endpoints:
 
 - **direct allocation:** prove the controller-aware global label graphs satisfy
   the complementary-degree criterion;
 - **unary Hall conversion:** convert a forbidden Hall rectangle or a matchable
   but non-superregular zero-unary endpoint host;
-- **binary-core conversion:** neutralize the cubic binary shadow-support core;
-- **captive source-star conversion:** preserve or dynamically relabel the
-  controller infrastructure while removing the star centre or its blocker rays.
+- **recapture-line conversion:** convert the linear tomographic bank of rich
+  designated lines;
+- **binary-core conversion:** neutralize the endpoint-cell fan or the
+  resource-disjoint binary conflict bank;
+- **pool-compatible paid conversion:** construct source-admissible within-pool
+  endpoint trades with excess-shadow insertion cost below the star/resource
+  removal credit.
 
 Diffuse weighted residuals, endpoint source validity, isolated rich fibres,
-cross-macro completion energy, and termination are no longer open.
+dynamic controller relabelling, cross-macro completion energy, and termination
+are no longer separate open problems.
 
 The older constant-width width-two route remains a secondary diagnostic and
 requires blocker-endpoint clustering or protected cross-block deletion trades.
@@ -220,10 +230,10 @@ There is no complete proof. The prime-patching branch now closes matching supply
 exponent-optimal macro width, degree restoration, fixed-rank spread,
 saturation-compatible global allocation interfaces, all external weighted
 completion energy, source-valid resource endpoint conversion, diffuse insertion
-shadow, exact unary Hall reduction, sublinear support pruning, and monotone
-termination.
+shadow, exact unary Hall reduction, sublinear support pruning, binary-fan
+localisation, and pairing-invariant excess-shadow termination.
 
-The exact remaining theorem concerns direct allocation, Hall-rectangle or
-non-superregular-host conversion, cubic binary-support conversion, and captive
-source-star conversion. Until those cases are closed, the branch does not prove
-the no-three-in-line conjecture.
+The exact remaining theorem concerns direct allocation, Hall or tomographic-line
+conversion, binary-fan/resource-bank conversion, and source-admissible
+pool-compatible paid trades. Until those cases are closed, the branch does not
+prove the no-three-in-line conjecture.
