@@ -82,6 +82,12 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR340--343 | Heavy-cell external, deeper, and equilateral prefix continuations, with strict-depth termination | PROVED | `docs/128-prime-power-heavy-cell-prefix-continuation.md` |
 | CMR344--346 | Exact dispersed-token count, fresh-token packing, temporal reuse, and width-two/width-three episode bounds | PROVED | `docs/129-prime-power-dispersed-cell-token-ledger.md` |
 | CMR347--350 | Dynamic token-edge inventory, exact row-prefix stock, endpoint/witness/ancestry decomposition, and universal two-step rematching return | PROVED / PROVED UNDER HYPOTHESES / REFUTED STATIC NO-RETURN CLAIM | `docs/130-prime-power-token-reintroduction-ledger.md` |
+| CMR351--354 | One-line atoms, frozen line energy, dyadic localization, and cubic line-signature lower bound for two-slice line-clean banks | PROVED | `docs/131-prime-power-line-clean-line-energy.md` |
+| CMR355--359 | Line energy to matching-vertex walls, common first-separation signatures, and heavy/dispersed full prefix cells | PROVED | `docs/132-prime-power-line-energy-to-carry-cells.md` |
+| CMR360--363 | Universal line-clean banks, sharp-blocker instances, high-slice reserve, and quadratic low-height amplification | PROVED | `docs/130-prime-power-universal-line-clean-blocker-bank.md` |
+| CMR364--367 | Exact deep-token line universes, the \(t/p\) bound, simultaneous token-batch elimination, and frozen-state escape | PROVED | `docs/130-prime-power-dispersed-token-universe-elimination.md` |
+| CMR368--371 | Tunable heavy/dispersion threshold, deep-token line cost, batch capacity, and cubic-root specialization | PROVED | `docs/131-prime-power-tunable-token-batching.md` |
+| CMR372--377 | Duplicated-row decoding, host and mixed-conflict bounds, and exact target-specific completion of one intermediate-height band | PROVED; CMR376 from Joos--Mubayi--Smith | `docs/132-prime-power-exact-band-covering.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
