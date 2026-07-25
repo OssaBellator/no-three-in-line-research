@@ -3,9 +3,9 @@
 PP3nu reduces failed owner-line improvement to a near-complete incidence design:
 for a Hall-derived target set \(\mathcal A\), almost every owner can reach almost
 every target cell through some replacement line. This chapter applies the
-Szemerédi--Trotter incidence theorem and a multiplicity split. The result is one
-geometric line that is simultaneously repeated by many owner assignments and
-rich in Hall-target cells.
+Szemerédi--Trotter incidence theorem and a multiplicity split. The result is a
+large family of nonaxis geometric lines, each simultaneously repeated by many
+owner assignments and rich in Hall-target cells.
 
 ## 1. Typed owner/replacement lines
 
@@ -89,13 +89,35 @@ in \(\mathcal W\) at most \(\mu\) times. Hence
 Apply Szemerédi--Trotter and use
 \(|\mathcal A|,|\mathscr L|\le q^2\). ∎
 
-This already forces some line multiplicity \(\Omega(q^{1/3})\) when
-\(\mathcal W=\Omega(q^3)\), but it does not by itself state that the repeated
-line is target-rich. The next theorem supplies both properties.
+## 2. Axis assignments are negligible
 
-## 2. Simultaneous multiplicity and target richness
+In the movement/refill recapture geometry, every candidate point has one new
+coordinate and one old coordinate. The current designated blocker line is
+nonaxis.
 
-### Theorem PP3nw -- PROVED
+### Proposition PP3nw -- PROVED
+
+At most \(q\) typed owner/replacement pairs define a horizontal or vertical
+line. Their total contribution to \(\mathcal W\) is \(O(q^2)\).
+
+#### Proof
+
+For a movement candidate, the new row coordinate prevents a horizontal line.
+The old owner column is fixed as \(j\) varies; a vertical line would also contain
+the current owner endpoint and would be the automatic controller-containing
+axis blocker, contrary to the noncontroller designated line.
+
+For a refill candidate, the new column coordinate prevents a vertical line. A
+horizontal line can occur for at most one selected old row \(y_j\) for each
+owner. The transposed orientation gives the same bound. Thus there are at most
+\(q\) axis typed pairs. Every axis line meets the endpoint target rectangle in at
+most \(q\) cells. ∎
+
+Only the \(O(q^2)\) total bound is used below.
+
+## 3. Simultaneous multiplicity and target richness
+
+### Theorem PP3nx -- PROVED
 
 Fix constants \(\alpha,\beta>0\) and \(\delta>0\). Suppose
 
@@ -109,7 +131,7 @@ and
 \mathcal W\ge\beta q|\mathcal A|.
 \]
 
-For all sufficiently large \(q\), there is a geometric line \(\ell\) satisfying
+Let \(\mathscr G\) be the family of nonaxis lines satisfying
 
 \[
 m(\ell)\ge q^{1/3-\delta}
@@ -121,66 +143,73 @@ and
 r(\ell)\ge q^{1-\delta}.
 \]
 
+For all sufficiently large \(q\), there is a constant
+\(c=c(\alpha,\beta)>0\) such that
+
+\[
+\sum_{\ell\in\mathscr G}m(\ell)r(\ell)
+\ge cq^3.
+\]
+
+Consequently,
+
+\[
+|\mathscr G|\ge cq,
+\qquad
+\sum_{\ell\in\mathscr G}m(\ell)\ge cq^2,
+\qquad
+\sum_{\ell\in\mathscr G}r(\ell)\ge cq^2.
+\]
+
 #### Proof
 
-Suppose no line has both properties. Split the lines into
+The axis contribution is \(O(q^2)\) by PP3nw. Among nonaxis lines with
+multiplicity below \(q^{1/3-\delta}\), Szemerédi--Trotter gives total energy
 
 \[
-\mathscr L_{\operatorname{low}}
+O(q^{1/3-\delta}q^{8/3})
 =
-\{\ell:m(\ell)<q^{1/3-\delta}\}
+O(q^{3-\delta}).
 \]
 
-and its complement.
-
-For the low-multiplicity lines,
-
-\[
-\sum_{\ell\in\mathscr L_{\operatorname{low}}}
-m(\ell)r(\ell)
-\le
-q^{1/3-\delta}I(\mathcal A,\mathscr L)
-=
-O(q^{3-\delta})
-\]
-
-by Szemerédi--Trotter.
-
-Every remaining line has multiplicity at least \(q^{1/3-\delta}\), so by the
-contrary assumption it has target richness below \(q^{1-\delta}\). Therefore
+The remaining nonaxis lines outside \(\mathscr G\) have target richness below
+\(q^{1-\delta}\). Their total energy is at most
 
 \[
-\sum_{\ell\notin\mathscr L_{\operatorname{low}}}
-m(\ell)r(\ell)
-<
 q^{1-\delta}
-\sum_{\ell}m(\ell)
-=
+\sum_\ell m(\ell)
+\le
 q^{3-\delta}.
 \]
 
-Thus \(\mathcal W=O(q^{3-\delta})\), contradicting
+The hypothesis gives
 
 \[
-\mathcal W
-\ge
-\alpha\beta q^3
+\mathcal W\ge\alpha\beta q^3.
 \]
 
-for sufficiently large \(q\). ∎
+For sufficiently large \(q\), subtracting the three exceptional contributions
+leaves at least \(cq^3\) energy on \(\mathscr G\).
 
-The exponents may approach \(1/3\) and \(1\) arbitrarily closely. No dyadic
-loss is needed.
+A nonaxis line meets the endpoint rectangle in at most \(q\) cells and has typed
+multiplicity at most \(q\), as proved below. Therefore
 
-## 3. Resource structure of one common line
+\[
+m(\ell)r(\ell)\le q^2.
+\]
 
-Assume the relevant line is nonvertical and nonhorizontal, as in the
-noncontroller recapture geometry.
+This gives \(|\mathscr G|\ge cq\). The bounds on the two sums follow from
+\(r(\ell)\le q\) and \(m(\ell)\le q\). ∎
 
-### Proposition PP3nx -- PROVED
+Thus near-extremal assignment energy is supported by a positive linear number of
+target-rich repeated lines, not one accidental carrier.
 
-If one geometric line \(\ell\) has typed multiplicity \(m(\ell)\), then its
-representations
+## 4. Resource structure of one good line
+
+### Proposition PP3ny -- PROVED
+
+If one nonaxis geometric line \(\ell\) has typed multiplicity \(m(\ell)\), then
+its representations
 
 \[
 \ell=\ell_{i_1j_1}=\cdots=\ell_{i_sj_s}
@@ -210,12 +239,12 @@ most one point. Since the old columns \(x_i\) are distinct, the replacement
 indices are distinct. This proves the first matching statement. The target-cell
 statement is the same nonaxis row-and-column intersection argument as PP3lm. ∎
 
-Thus the obstruction contains two large matching traces on one geometric carrier:
-one trace of owner/replacement cells and one trace of Hall-target cells.
+Each good line therefore carries two large matching traces: owner/replacement
+cells and Hall-target cells.
 
-## 4. Combined line-energy dichotomy
+## 5. Combined line-energy dichotomy
 
-### Corollary PP3ny -- PROVED
+### Corollary PP3nz -- PROVED
 
 Fix \(\alpha>0\) and \(\delta>0\). Suppose the Hall-derived target set satisfies
 
@@ -227,10 +256,14 @@ and use the adaptive source-valid derangement of PP3nt. Then at least one of the
 following holds.
 
 1. A source-valid endpoint derangement strictly decreases the owner-line load.
-2. There is one nonaxis geometric line containing both:
-   - at least \(q^{1/3-\delta}\) pairwise resource-disjoint owner/replacement
-     endpoint cells and their owner candidate points;
-   - at least \(q^{1-\delta}\) Hall-target endpoint cells.
+2. There is a family \(\mathscr G\) of \(\Omega_\alpha(q)\) distinct nonaxis
+   lines such that:
+   - every line carries at least \(q^{1/3-\delta}\) pairwise
+     resource-disjoint owner/replacement endpoint cells and their owner candidate
+     points;
+   - every line contains at least \(q^{1-\delta}\) Hall-target endpoint cells;
+   - the total owner/replacement multiplicity over the family is
+     \(\Omega_\alpha(q^2)\).
 
 #### Proof
 
@@ -240,9 +273,10 @@ If improvement fails, PP3nu gives
 \mathcal W=(1-o(1))q|\mathcal A|.
 \]
 
-For sufficiently large \(q\), use PP3nw with any fixed \(\beta<1\), then apply
-PP3nx. ∎
+For sufficiently large \(q\), apply PP3nx with any fixed \(\beta<1\), then use
+PP3ny on every line of \(\mathscr G\). ∎
 
-This replaces the second-generation grid-rich pencil by one target-rich common
-line. The next conversion may work directly on two matching traces carried by
-that line.
+This replaces the second-generation grid-rich pencil by a positive-density
+family of target-rich common-line carriers. The next conversion may exploit the
+line family collectively through protected tomography or extract a smaller
+executable rectangle/cycle bank from its two matching traces.
