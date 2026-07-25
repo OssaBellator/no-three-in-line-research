@@ -11,7 +11,7 @@ Let `A` distinct chosen line pairs from CMR355 be incident with one fixed source
 vertex or target vertex. Each pair uses exactly one candidate cell on that
 matching vertex.
 
-### Theorem CMR385 — PROVED
+### Theorem CMR390 — PROVED
 
 At least one of the following holds.
 
@@ -77,7 +77,7 @@ where
 (a,c)\in(\mathbb Z/p^b\mathbb Z)^2.
 \]
 
-### Theorem CMR386 — PROVED
+### Theorem CMR391 — PROVED
 
 For one fixed direction, the number of full prefix tokens is exactly
 
@@ -106,7 +106,7 @@ resulting geometric series. ∎
 
 ## 3. Fresh-token packing and temporal reuse
 
-### Theorem CMR387 — PROVED
+### Theorem CMR392 — PROVED
 
 Let `E_1,...,E_J` be dispersed line-energy episodes in the same inherited
 parent block, layer, and projective direction. Suppose every episode occupies
@@ -138,7 +138,7 @@ episodes.
 ### Proof
 
 Count episode-token incidences and distribute them among the exact token set
-from CMR386. ∎
+from CMR391. ∎
 
 Attach the parent envelope depth, absolute prefix coordinates, layer, and
 direction to obtain absolute tokens. Fine repairs below a token preserve its
@@ -147,7 +147,7 @@ to CMR174.
 
 ## 4. Complete structural endpoint for a frozen two-slice bank
 
-### Corollary CMR388 — PROVED
+### Corollary CMR393 — PROVED
 
 A frozen, anchored-free two-slice line-clean bank of size `t=p^h>=20` exposes at
 least one of the following.
@@ -160,12 +160,12 @@ least one of the following.
 
 For the dyadic band of CMR354, the fan size and the heavy/dispersed populations
 are given explicitly by CMR359. Fresh dispersed episodes are bounded by
-CMR387; a long closure therefore reduces to the repeated-token alternative.
+CMR392; a long closure therefore reduces to the repeated-token alternative.
 
 ### Proof
 
-Apply CMR359. Split its matching-vertex fan by CMR385. The heavy prefix-cell
-alternative is executable by CMR342. Apply CMR386--CMR387 to the dispersed
+Apply CMR359. Split its matching-vertex fan by CMR390. The heavy prefix-cell
+alternative is executable by CMR342. Apply CMR391--CMR392 to the dispersed
 alternative. ∎
 
 Thus the remaining fixed-envelope obstruction has one exact form: repeated
