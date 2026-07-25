@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Verify PX185--PX186 arithmetic low-collateral rematching."""
+"""Verify PX185--PX188 arithmetic low-collateral rematching."""
 from __future__ import annotations
 
+from collections import Counter
 from itertools import combinations
 from random import Random
 
@@ -68,6 +69,45 @@ def maximum_line_occupancy(mapping: Permutation) -> int:
     return maximum
 
 
+def secant_multiplicity(mapping: Permutation) -> int:
+    prime = len(mapping)
+    inverse = [0] + [pow(value, -1, prime) for value in range(1, prime)]
+    counts: Counter[int] = Counter()
+    for first in range(prime):
+        for second in range(prime):
+            if first == second:
+                continue
+            slope = (
+                (mapping[second] - mapping[first])
+                * inverse[(second - first) % prime]
+                % prime
+            )
+            counts[slope] += 1
+    return max(counts.values())
+
+
+def affine_triangle_multiplicity(mapping: Permutation) -> int:
+    prime = len(mapping)
+    inverse = [0] + [pow(value, -1, prime) for value in range(1, prime)]
+    counts: Counter[tuple[int, int, int]] = Counter()
+    for first in range(prime):
+        for second in range(prime):
+            if first == second:
+                continue
+            row_difference = (second - first) % prime
+            image_difference = (mapping[second] - mapping[first]) % prime
+            slope = image_difference * inverse[row_difference] % prime
+            for row_ratio in range(2, prime):
+                third = (first + row_ratio * row_difference) % prime
+                image_ratio = (
+                    (mapping[third] - mapping[first])
+                    * inverse[image_difference]
+                    % prime
+                )
+                counts[(slope, row_ratio, image_ratio)] += 1
+    return max(counts.values())
+
+
 def forbidden_union(
     first: Permutation,
     second: Permutation,
@@ -91,18 +131,21 @@ def forbidden_hits(
 def repair_forbidden_hits(
     mapping: Permutation,
     forbidden: set[tuple[int, int]],
+    maximum_hits: int = 4,
 ) -> Permutation:
     current = list(mapping)
     prime = len(current)
+    initial_bad = forbidden_hits(tuple(current), forbidden)
+    assert len(initial_bad) <= maximum_hits
+    used_helpers: set[int] = set()
     while True:
         bad_rows = [
             row for row, image in enumerate(current) if (row, image) in forbidden
         ]
         if not bad_rows:
             return tuple(current)
-        assert len(bad_rows) <= 2
         row = bad_rows[0]
-        protected = set(bad_rows)
+        protected = set(bad_rows) | used_helpers
         helper = None
         for candidate in range(prime):
             if candidate == row or candidate in protected:
@@ -114,6 +157,7 @@ def repair_forbidden_hits(
             helper = candidate
             break
         assert helper is not None
+        used_helpers.add(helper)
         current[row], current[helper] = current[helper], current[row]
 
 
@@ -128,6 +172,8 @@ def verify_prime(prime: int) -> None:
     assert sorted(base) == list(range(prime))
     assert triple_count(base) == (prime - 1) // 2
     assert maximum_line_occupancy(base) == 3
+    assert secant_multiplicity(base) <= prime + 3
+    assert affine_triangle_multiplicity(base) <= 8
 
     random = Random(20260725 + prime)
     for trial in range(20):
@@ -137,6 +183,8 @@ def verify_prime(prime: int) -> None:
         )
         best = None
         best_hits = prime + 1
+        orbit_hit_sum = 0
+        orbit_size = prime * prime * (prime - 1)
         for scale in range(1, prime):
             for row_translation in range(prime):
                 for image_translation in range(prime):
@@ -144,24 +192,33 @@ def verify_prime(prime: int) -> None:
                         base, scale, row_translation, image_translation
                     )
                     hits = len(forbidden_hits(candidate, forbidden))
+                    orbit_hit_sum += hits
                     if hits < best_hits:
                         best_hits = hits
                         best = candidate
                     if best_hits == 0:
-                        break
-                if best_hits == 0:
+                        # Continue enumeration only on the first trial to check
+                        # the exact first moment.
+                        if trial != 0:
+                            break
+                if best_hits == 0 and trial != 0:
                     break
-            if best_hits == 0:
+            if best_hits == 0 and trial != 0:
                 break
         assert best is not None
         assert best_hits <= 2
+        if trial == 0:
+            assert orbit_hit_sum == len(forbidden) * prime * (prime - 1)
+            assert orbit_hit_sum / orbit_size <= 2
         repaired = repair_forbidden_hits(best, forbidden)
         assert sorted(repaired) == list(range(prime))
         assert not forbidden_hits(repaired, forbidden)
         count = triple_count(repaired)
         assert count <= 16 * prime
     print(
-        f"p={prime}: base triples={(prime-1)//2}, random forbidden systems passed"
+        f"p={prime}: triples={(prime-1)//2}, "
+        f"mu={secant_multiplicity(base)}, "
+        f"tau={affine_triangle_multiplicity(base)}"
     )
 
 
@@ -198,7 +255,7 @@ def main() -> None:
     for prime in (7, 11, 13, 17, 19):
         verify_prime(prime)
     verify_real_transport()
-    print("PX185--PX186 verified")
+    print("PX185--PX188 verified")
 
 
 if __name__ == "__main__":
