@@ -49,6 +49,10 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/149-prime-power-tight-rollback-scc-factorization.md`](docs/149-prime-power-tight-rollback-scc-factorization.md): optimum-sensitive level range, optimal-allowed SCC product, additive local marked cost, and active-level concentration.
 - [`docs/150-prime-power-rollback-level-skeleton.md`](docs/150-prime-power-rollback-level-skeleton.md): exact level-cut circulation, sparse balanced cross-level skeletons, and conditional factorization by potential level.
 - [`docs/151-prime-power-same-level-colour-split.md`](docs/151-prime-power-same-level-colour-split.md): right-column marked-cost polarization, source-split products, and mixed-colour zero-cost cycle endpoint.
+- [`docs/152-prime-power-mixed-cycle-packing-concentration.md`](docs/152-prime-power-mixed-cycle-packing-concentration.md): canonical mixed-cycle witnesses, simultaneous vertex-disjoint batches, exchange-vertex concentration, and sparse boundary interfaces.
+- [`docs/153-prime-power-mixed-cycle-boundary-fan-cut.md`](docs/153-prime-power-mixed-cycle-boundary-fan-cut.md): boundary-edge concentration, directed Menger theta fans, return cuts, and two-edge bottlenecks.
+- [`docs/154-prime-power-theta-fan-private-edge-payment.md`](docs/154-prime-power-theta-fan-private-edge-payment.md): private theta-route entering edges, rooted-conflict alternatives, and harmonic packet/token payment.
+- [`docs/155-prime-power-rooted-star-and-pair-cylinder.md`](docs/155-prime-power-rooted-star-and-pair-cylinder.md): secant-star identification of rooted conflicts and exact rank-two cylinders for two-edge bottlenecks.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -149,21 +153,25 @@ exact labelled full-token cost
 and every conflict from a packet family which was clean before rollback must use
 a restored edge.
 
-Minimum rollback and repeated marked-return states now have an exact normal
-form. The optimum-sensitive potential lies in `[-k,0]`; the optimum family
-factors over strongly connected exchange blocks; every optimum has a balanced
-cross-level skeleton of at most `2k` edges; and, conditional on that skeleton,
-all remaining choices factor by potential level. Inside one residual level,
-markedness is determined solely by the right endpoint. The source set assigned
-to marked columns either factors uniquely from the unmarked part or changes
-along an explicit mixed-colour zero-cost alternating cycle.
+Minimum rollback and repeated marked-return states have an exact normal form.
+The optimum-sensitive potential lies in `[-k,0]`; the optimum family factors over
+strongly connected exchange blocks; every optimum has a balanced cross-level
+skeleton of at most `2k` edges; and, conditional on that skeleton, all remaining
+choices factor by potential level. Inside one residual level, markedness is
+determined solely by the right endpoint.
 
-The live prime-power frontier is therefore geometric use of these mixed-colour
-same-level cycles: extract a large low-overlap family for simultaneous
-resampling, or prove that overlap forces prefix, primitive-height, quotient,
-carry, Hall, reserve, or envelope concentration. Absence of a mixed block gives
-strict lower-dimensional factorization. Arbitrary side-length coverage remains
-necessary afterward.
+Mixed same-level motion now has a finite endpoint. It yields a simultaneous
+vertex-disjoint cycle batch, a sparse boundary-tail interface, a boundary theta
+fan with pairwise private route edges, a repeated-cell secant star centered at
+one source-switch cell, or a compatible rank-two completion cylinder. Dirty
+theta states either pay distinct private full-token incidences or expose the
+secant-star branch.
+
+The live prime-power frontier is therefore to splice the last two structures
+into the existing secant-star carry-dispersion and line-clean paid-pair banks.
+The required output is target-load destruction, reserve depletion, a heavy
+prefix/carry signature, strict lower-dimensional factorization, or envelope
+expansion. Arbitrary side-length coverage remains necessary afterward.
 
 ## Running checks
 
@@ -204,6 +212,10 @@ python scripts/verify_prime_power_rollback_optimal_face.py
 python scripts/verify_prime_power_tight_rollback_scc.py
 python scripts/verify_prime_power_rollback_level_skeleton.py
 python scripts/verify_prime_power_same_level_colour_split.py
+python scripts/verify_prime_power_mixed_cycle_packing.py
+python scripts/verify_prime_power_mixed_cycle_boundary_fan.py
+python scripts/verify_prime_power_theta_fan_private_edges.py
+python scripts/verify_prime_power_rooted_star_pair_cylinder.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
