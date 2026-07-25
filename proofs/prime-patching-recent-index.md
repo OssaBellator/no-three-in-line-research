@@ -62,7 +62,12 @@ repository-wide theorem ledger.
 | PP3py--PP3qc | Homogeneous cross cliques collapse to a common line or fixed-anchor secant design | PROVED / FROM FIXED-COLOUR RAMSEY | `docs/127-homogeneous-cross-clique-geometry.md` |
 | PP3qd--PP3qg | Exact paid capacity of every homogeneous binary signature | PROVED | `docs/128-homogeneous-signature-paid-capacity.md` |
 | PP3qh--PP3qm | Sparse all-cross shadow support and weight give zero- or low-cost subbanks | PROVED | `docs/129-cross-state-shadow-support-cleaning.md` |
-| PP3qn--PP3qr | Joint source-valid low-cost residual matching and final diffuse-cost closure | PROVED / FROM SR1 | `docs/130-paid-residual-matching-selection.md` |
+| PP3qn--PP3qr | Joint source-valid low-cost residual matching and diffuse-cost closure | PROVED / FROM SR1 | `docs/130-paid-residual-matching-selection.md` |
+| PP3qs--PP3qy | Four-state cross-block bypass of credit-poor rectangle signatures | PROVED | `docs/131-credit-poor-cross-block-supervariables.md` |
+| PP3qz--PP3rd | Sparse-unary regularization of cross-block hosts | PROVED | `docs/132-cross-block-host-regularization.md` |
+| PP3re--PP3rk | Ramsey completion of the four-state cross-block CSP | PROVED / FROM FIXED-COLOUR RAMSEY | `docs/133-multistate-signature-ramsey-completion.md` |
+| PP3rl--PP3rp | Universal bypass of every original two-state rectangle signature | PROVED | `docs/134-universal-diagonal-signature-bypass.md` |
+| PP3rq--PP3rx | Hierarchical cross-block amplification bypasses bounded-level contradictions | PROVED | `docs/135-hierarchical-cross-block-amplification.md` |
 
 ## Current scale
 
@@ -84,52 +89,34 @@ patch by PP3hq.
 
 The controller-defect scores support four independent completion mechanisms.
 
-1. **One-sided bottleneck/slack.** A balanced movement ownership exists with
-   bottleneck `r_score`; every refill label contributes cumulative local slack.
-   PP3mx completes when
-   ```text
-   r_score <= min_B Lambda_score(B).
-   ```
-2. **Deterministic two-sided ownership.** Route exactly `W` movement and `W`
-   refill labels to every macro. PP3mr completes when the two score thresholds
-   satisfy `r+s<=W`.
-3. **Random two-sided ownership.** PP3nd completes from the per-macro
-   complementary score bound
-   ```text
-   rho_i(A)+chi_i(B) <= T-m^(23/80+o(1)).
-   ```
-4. **Random one-sided ownership.** PP3lz uses the average refill score
-   `kappa(B)` and the smaller balanced-ownership concentration loss.
+1. **One-sided bottleneck/slack:** `r_score <= min_B Lambda_score(B)`.
+2. **Deterministic two-sided ownership:** balanced thresholds satisfy `r+s<=W`.
+3. **Random two-sided ownership:** every macro nonedge satisfies
+   `rho_i(A)+chi_i(B) <= T-m^(23/80+o(1))`.
+4. **Random one-sided ownership:** average refill score satisfies the PP3lz
+   complementary-degree bound.
 
 Anchor energy cannot support a middle-density ownership Hall rectangle. At the
 PP3of threshold, failure is a sublinear exceptional label cluster or a macro
 rejecting all but a sublinear label set.
 
-## Hall, rectangle, and paid endpoint
+## Hall, rectangle, and hierarchical endpoint
 
-A recapture-dominated Hall core survives adaptive source-valid thinning. Failed
-owner-line improvement yields a positive-density family of target-rich repeated
-nonaxis lines. Pairing their two matching traces gives `Omega(q^3)` rectangle
-candidates and a linear row/column-disjoint rectangle bank.
+A recapture-dominated Hall core yields a linear resource-disjoint rectangle bank.
+In the superregular branch, residual matching, residual source validity, exact
+binary/multistate CSP installation, and diffuse paid selection are closed.
 
-In the superregular branch:
+The original two rectangle diagonals are no longer a binding state space. Under
+sublinear non-designated unary degree, arbitrary pairs of resource-disjoint
+rectangles may be replaced by four cross-block states. Almost the entire bank
+pairs safely, regardless of whether the original Boolean signature was
+credit-rich, credit-poor, contradictory, or supported on a dense cross-conflict
+line/pencil/secant design.
 
-- reserving a small linear rectangle bank leaves a residual perfect matching;
-- the residual matching may be chosen source-valid and low-cost by PP3qn;
-- rectangle geometry is an exact binary rank-at-most-three CNF;
-- rectangle shadow is an exact unary/binary cost;
-- diffuse ternary clauses, diffuse binary signatures, diffuse all-cross support,
-  and diffuse residual weighted cost are closed.
-
-Signature Ramsey regularization leaves three paid behaviours. If `(1,1)` is
-allowed, the all-cross state preserves one designated unit per rectangle. If it
-is forbidden but `(0,0)` is allowed, every valid homogeneous assignment uses at
-most one credit-preserving cross state. If both diagonal pairs are forbidden,
-three rectangles already form a contradiction.
-
-A dense cross-state conflict is geometric: it contains a rich cross line, a
-large line pencil, or a complete fixed-anchor secant design. It is not an
-arbitrary dense Boolean graph.
+The four-state CSP again Ramsey-regularizes to a constant state or a bounded
+local contradiction. Hierarchical cross-block amplification bypasses every such
+contradiction at any fixed depth while preserving one designated credit per
+original rectangle.
 
 ## Remaining theorem
 
@@ -139,18 +126,20 @@ The branch is reduced to the following structured cases.
    simultaneous score concentration surviving all four allocation interfaces.
 2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
    outside the superregular recapture branch.
-3. Convert a credit-poor homogeneous rectangle signature, a rich cross line or
-   pencil, a complete fixed-anchor secant design, or a constant-size signed
-   contradiction.
-4. Convert linear unary, quadratic binary, or residual weighted shadow
-   concentration at the rectangle-credit scale.
-5. Convert a linear-congestion binary-shadow dual packing or witness-line pencil.
-6. Construct source-admissible pool-compatible endpoint trades with `Xi`
+3. Convert a unary endpoint resource with linear forbidden cross-block degree.
+4. Convert locally impossible hierarchical cross-block state sets or unary,
+   binary, and residual weighted shadow concentrated at block-credit scale.
+5. Rule out or convert an infinite-depth feasible cross-block hierarchy for
+   which no fixed amplification depth has diffuse paid completion.
+6. Convert a linear-congestion original binary-shadow dual packing or
+   witness-line pencil.
+7. Construct source-admissible pool-compatible endpoint trades with `Xi`
    insertion cost below star/resource removal credit.
 
 Diffuse weighted residuals, external completion energy, source validity of the
 resource endpoint, sparse exceptional labels, arbitrary dense rectangle CSPs,
-common-line rectangle extraction, superregular residual installation, controller
-relabelling, and termination are no longer separate open problems.
+original signed rectangle contradictions, common-line rectangle extraction,
+superregular residual installation, controller relabelling, and termination are
+no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
