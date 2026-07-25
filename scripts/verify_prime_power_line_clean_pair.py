@@ -86,6 +86,7 @@ def build_line_data(
     t: int,
     target: Cell,
     x2: int,
+    y3: int,
     descriptor: tuple[int, int, int],
 ):
     x1, _ = target
@@ -97,7 +98,7 @@ def build_line_data(
     paid_pair = frozenset((fan, second))
     assert compatible(paid_pair)
     line = full_line_cells(t, fan, second)
-    assert (c, descriptor and target[1] + (0)) not in ()  # keep tuple evaluation simple
+    assert (c, y3) in line
 
     used_sources = {x for x, _ in paid_pair}
     used_rows = {y for _, y in paid_pair}
@@ -116,6 +117,7 @@ def verify_example() -> None:
     t = 7
     target = (0, 0)
     x2 = 1
+    y3 = 6
     descriptors = [
         (5, 6, 1),
         (1, 2, 5),
@@ -127,7 +129,7 @@ def verify_example() -> None:
     data = [
         item
         for descriptor in descriptors
-        if (item := build_line_data(t, target, x2, descriptor)) is not None
+        if (item := build_line_data(t, target, x2, y3, descriptor)) is not None
     ]
     assert len(data) == 4
     cylinders = []
@@ -187,18 +189,9 @@ def verify_example() -> None:
             selected = frozenset((x, state[x]) for x in range(t))
             actual_total += sum(triple <= selected for triple in triples)
 
-        bound_numerator = (
-            30
-            * len(states)
-            * (
-                v[0] * (n - 3)! if False else 0
-            )
-        )
         # Check CMR333 using exact integer denominators.
         lhs = actual_total * 11 * n * (n - 1) * (n - 2)
-        rhs = 30 * len(states) * (
-            v[0] + v[1] * (n - 2)
-        )
+        rhs = 30 * len(states) * (v[0] + v[1] * (n - 2))
         assert lhs <= rhs
         cylinders.append(set(states))
 
