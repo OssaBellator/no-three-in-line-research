@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Repository audit for PX397--PX478 dependencies and effective cutoff data."""
+"""Repository audit for PX397--PX482 dependencies and effective cutoff data."""
 
 from __future__ import annotations
 
@@ -13,6 +13,7 @@ MANIFEST_PATH = ROOT / "proofs" / "product-entry-invariant-dependencies.json"
 INDEX_PATHS = [
     ROOT / "proofs" / "product-growing-direction-theorem-index-PX397-PX450.md",
     ROOT / "proofs" / "product-growing-direction-theorem-index-PX451-PX478.md",
+    ROOT / "proofs" / "product-growing-direction-theorem-index-PX479-PX482.md",
 ]
 DOC_PATHS = [ROOT / "docs" / f"{number}-{name}" for number, name in (
     (153, "px63-one-hit-derangement-entry.md"),
@@ -28,6 +29,7 @@ DOC_PATHS = [ROOT / "docs" / f"{number}-{name}" for number, name in (
     (163, "explicit-divisor-witness-and-effective-exponents.md"),
     (164, "packet-family-free-active-repair-path.md"),
     (165, "explicit-common-asymptotic-cutoff.md"),
+    (166, "exact-depth-plateau-cutoff-compression.md"),
 )]
 
 HEADING_RE = re.compile(r"^### (?:Theorem|Corollary) PX(\d+)\b", re.MULTILINE)
@@ -40,8 +42,8 @@ def check_manifest() -> dict:
     nodes = manifest["nodes"]
     allowed = set(manifest["safety_rules"]["allowed_terminal_move_spaces"])
 
-    assert manifest["range"] == "PX397-PX478"
-    assert manifest["root"] == "PX478"
+    assert manifest["range"] == "PX397-PX482"
+    assert manifest["root"] == "PX482"
 
     starts: dict[str, int] = {}
     for node, data in nodes.items():
@@ -68,7 +70,7 @@ def check_theorem_ids() -> None:
             theorem_id = int(match.group(1))
             occurrences.setdefault(theorem_id, []).append(path.name)
 
-    for theorem_id in range(397, 479):
+    for theorem_id in range(397, 483):
         assert len(occurrences.get(theorem_id, [])) == 1, (
             theorem_id,
             occurrences.get(theorem_id, []),
@@ -80,7 +82,7 @@ def check_theorem_ids() -> None:
         index_ids.extend(int(value) for value in INDEX_RE.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 479)), index_ids
+    assert index_ids == list(range(397, 483)), index_ids
 
 
 def check_safety_text(manifest: dict) -> None:
@@ -100,6 +102,7 @@ def check_safety_text(manifest: dict) -> None:
     doc163 = docs["163-explicit-divisor-witness-and-effective-exponents.md"]
     doc164 = docs["164-packet-family-free-active-repair-path.md"]
     doc165 = docs["165-explicit-common-asymptotic-cutoff.md"]
+    doc166 = docs["166-exact-depth-plateau-cutoff-compression.md"]
 
     assert str(constants["paired_support_four_denominator"]) in doc159
     assert "8192e^{4\\Delta}" not in doc159
@@ -115,21 +118,24 @@ def check_safety_text(manifest: dict) -> None:
     divisor_exponent = constants["divisor_exponent_denominator"]
     assert f"N^{{1/{divisor_exponent}}}" in doc163
     assert "active packet-family count to zero" in doc164
-    assert f"10^{{{constants['explicit_cutoff_power_of_ten']}}}" in doc165
+    assert f"10^{{{constants['original_explicit_cutoff_power_of_ten']}}}" in doc165
     assert "\\log(4N^{3/5})" in doc165
+    assert f"10^{{{constants['compressed_cutoff_power_of_ten']}}}" in doc166
+    assert "d_*(N)=15" in doc166
+    assert "\\Delta_*(N)=33" in doc166
 
 
 def check_cutoff_resolution() -> None:
     audit = (ROOT / "docs" / "160-dependency-and-effective-cutoff-audit.md").read_text(
         encoding="utf-8"
     )
-    cutoff = (ROOT / "docs" / "165-explicit-common-asymptotic-cutoff.md").read_text(
+    compressed = (ROOT / "docs" / "166-exact-depth-plateau-cutoff-compression.md").read_text(
         encoding="utf-8"
     )
     assert "PX460" in audit and "PX465" in audit and "PX468" in audit
     assert "PX478" in audit
-    assert "N_0=10^{4000}" in cutoff
-    assert "finite range" in cutoff.lower()
+    assert "N_1=10^{3650}" in compressed
+    assert "finite range" in compressed.lower()
 
 
 def main() -> None:
@@ -137,7 +143,7 @@ def main() -> None:
     check_theorem_ids()
     check_safety_text(manifest)
     check_cutoff_resolution()
-    print("PX397--PX478 dependency and effective-cutoff audit: PASS")
+    print("PX397--PX482 dependency and compressed-cutoff audit: PASS")
 
 
 if __name__ == "__main__":
