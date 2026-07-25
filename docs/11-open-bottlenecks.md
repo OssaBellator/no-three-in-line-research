@@ -46,25 +46,39 @@ The composite branch now has the following reduction.
     their exact two-dimensional initial stock, and prove a one-dimensional
     per-reset cost. At depth `p^b>=t^(2/3)`, one full token has total one-pass
     endpoint stock at most `t^(2/3)+2h t^(1/3)`.
+12. CMR403--CMR405 give universal whole-parent and joint-parent token-return
+    costs, including exact-band replacements outside the recursive prefix
+    schedule.
+13. CMR406--CMR409 partition every intermediate dyadic band into `O(log t)`
+    exact harmonic packets and prove that one complete prefix-plus-packet sweep
+    still has only `O_p(t^2 log t)` labelled full-token return mass.
 
-The inherited escape problem is no longer missing a local bank for one blocker,
-one token batch, or one or two intermediate bands. It is a scheduling and
+The inherited escape problem is no longer missing a local bank, a token batch,
+or a finite-cost sweep through all intermediate bands. It is a recurrence and
 no-return problem.
 
 ### Intermediate and high primitive heights
 
-Exact completion of one band and harmonic simultaneous completion of two bands
-are proved. The unresolved step is control of all `O(log t)` relevant bands. A
-direct union of their conflict systems can accumulate a logarithmic factor in
-maximum conflict degree, and sequential exact coverings may recreate earlier
-bands.
+Exact completion of every harmonic packet is proved. The intermediate dyadic
+bands partition into
 
-A successful theorem must provide at least one of:
+\[
+P_\eta(t)
+\le
+\left\lceil\frac{1+\log_2t}{2}\right\rceil
+\]
 
-- a harmonic or grouped packing with uniformly bounded aggregate conflict
-  degree for all bands;
-- a protected-band reserve compatible with the duplicated-row covering model;
-- a reverse-height potential paying every recreated band;
+packets, and installing one state for every packet has an explicit
+quadratic-logarithmic token-return budget.
+
+The unresolved step is not packet existence or one-sweep reset cost. It is to
+show that sequential packet installation does not recreate an unbounded number
+of conflicts from earlier packets. A successful theorem must provide at least
+one of:
+
+- a protected-packet reserve compatible with the duplicated-row covering model;
+- a reverse-height potential paying every recreated packet;
+- a finite-state/no-return theorem for repeated packet states;
 - or simultaneous resampling coupled to certificate-exchange ancestry.
 
 ### Low primitive heights
@@ -103,24 +117,31 @@ I_\tau^{(2),\rm coarse}
 
 In a one-pass schedule both reset counts are at most `2b`. In an arbitrary
 history, excessive return forces one of those finitely many ancestor
-depth-layer slots to be reset repeatedly. The direction-labelled one-pass
-full-token return mass is `O_p(t^2 log t)` by CMR402.
+depth-layer slots to be reset repeatedly. CMR403--CMR405 add the same linear
+per-move cost for whole-parent and joint-parent resets.
+
+For one complete harmonic packet sweep,
+
+\[
+I_\tau^{(2),\rm packet}
+\le
+\frac{P_\eta(t)t}{p^b},
+\]
+
+and CMR409 keeps the total direction-labelled prefix-plus-packet return mass at
+`O_p(t^2 log t)`.
 
 Thus the next dynamic theorem is not another raw edge-count estimate. It must
-pay repeated use of one fixed slot by at least one of:
+pay repeated use of one fixed ancestor or packet state by at least one of:
 
 1. coarse target load destroyed by the reset;
 2. strict envelope expansion;
-3. reserve consumption in an exact band covering;
+3. protected reserve consumption;
 4. a new exchange-ancestry edge or quotient/carry defect.
 
 CMR384 removes the witness term as a separate geometric mystery: every witness
 certificate opens an executable prefix continuation. The other unresolved term
 is the width of the fully forced CMR217 ancestry DAG.
-
-Joint-parent and exact-band resets remain distinct. They need not preserve every
-recursive descendant fibre, so their fine full-token return profiles are not
-yet covered by CMR398--CMR402.
 
 ## Bottleneck 4: all side lengths
 
@@ -134,10 +155,11 @@ The prime-power programme now supplies:
 - executable prefix, child-pencil, terminal, parent, and universal line-clean
   banks;
 - exact high-slice cleaning;
-- exact target-specific completion of one intermediate-height band and two
-  harmonically packed bands;
+- exact target-specific completion of every harmonic intermediate-height
+  packet;
 - simultaneous elimination of bounded deep-token batches;
-- exact one-pass row-token and full-token reintroduction budgets.
+- exact one-sweep row-token and full-token reintroduction budgets for prefix,
+  packet, whole-parent, and joint-parent moves.
 
 Arbitrary `n` still requires a separate coverage mechanism: further balanced
 prime factorizations, controlled products, CRT absorption, or patching between
@@ -158,41 +180,39 @@ The following broad pieces are closed:
 9. exact high-slice cleaning with protected lines;
 10. universal sharp-blocker line-clean banks and line-energy conversion;
 11. deep-token universe batching and tunable heavy/dispersion thresholds;
-12. exact completion of one intermediate-height band and two harmonic bands;
-13. exact row-token and full-token return accounting for one descending recursive
-    prefix pass;
+12. exact completion of every harmonic packet of intermediate bands;
+13. exact row-token and full-token return accounting for one descending prefix
+    pass plus one complete packet sweep;
 14. reduction of excessive recursive return to repeated use of one compatible
-    ancestor slot.
+    ancestor or packet state.
 
 ## Open lemmas in recommended order
 
-1. **Repeated ancestor-slot payment.** Attach a monotone charge to repeated
+1. **Packet-state no-return.** Show that sequential installation of the
+   `O(log t)` exact packet states cannot recreate earlier packets indefinitely,
+   or charge every recurrence to a monotone quantity.
+2. **Repeated ancestor-state payment.** Attach a monotone charge to repeated
    resets of one CMR401-compatible full-token ancestor slot.
-2. **Non-prefix return profile.** Bound full-token and protected-band recreation
-   under one old-cell-clean joint-parent or exact-band move.
-3. **All-band exact scheduling.** Extend CMR389 from two harmonic bands to all
-   relevant bands without conflict-degree accumulation or recreation.
-4. **Forced-ancestry width.** Bound descendants per deleted edge/signature or
+3. **Forced-ancestry width.** Bound descendants per deleted edge/signature or
    resample several alternating exchange cycles simultaneously.
-5. **Low-height carry integration.** Convert universal line-clean outputs and
+4. **Low-height carry integration.** Convert universal line-clean outputs and
    tunable token batches into a global decreasing budget.
-6. **Prime-field transfer.** Rebuild the inherited-envelope and exact-covering
+5. **Prime-field transfer.** Rebuild the inherited-envelope and exact-covering
    endpoint for complementary-hyperbola carry cycles.
-7. **Further balanced prime families.** Extend the prime-seven grid
+6. **Further balanced prime families.** Extend the prime-seven grid
    factorization to `p=11,19,...`, or prove structural obstructions.
-8. **Square-root divisor boundary.** Remove or sum the nearly singular terms in
+7. **Square-root divisor boundary.** Remove or sum the nearly singular terms in
    CMR61 and CMR64.
-9. **CRT and arbitrary-size assembly.** Control mixed projections,
+8. **CRT and arbitrary-size assembly.** Control mixed projections,
    zero-divisor slope carries, and patching between admissible side lengths.
 
 ## Computational priorities
 
-- Measure exact full-token and protected-band recreation under one joint-parent
-  or exact-band move.
-- Enumerate aggregate conflict degrees for three or more harmonically separated
-  height bands in the duplicated-row covering model.
+- Enumerate packet-to-packet recreation matrices for the exact covering states.
+- Test ancestor- and packet-state potentials against the exact CMR350 two-step
+  recurrence.
 - Enumerate exchange-ancestry descendant counts by full-token signature.
-- Test ancestor-slot potentials against the exact CMR350 two-step recurrence.
+- Search for protected-packet reserves compatible with the duplicated-row host.
 - Search for non-reciprocal balanced grid factorizations at the next
   `p=3 mod 4` primes.
 - Continue the `N=14` and joint digital searches.
