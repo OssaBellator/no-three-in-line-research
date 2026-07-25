@@ -66,6 +66,8 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3cy–AC3da | Every state-independent new union triple is supported on closure cells, a closure rectangle, or one `mh=2` transfer rectangle | PROVED | `docs/alternating-core-ri-state-independent-union.md` |
 | AC3db–AC3df | Incomplete fibres and root imbalance yield carry defects, off-family current companions, or `1/51` one-cell completion families | PROVED | `docs/alternating-core-ri-missing-companions.md` |
 | AC3dg–AC3di | Coherent scale dispersion has at most thirty conflict ratios and a row-column-disjoint `1/31` scale bank | PROVED | `docs/alternating-core-ri-scale-dispersion.md` |
+| AC3dj–AC3dk | Reflected `CD` roles have exact effective denominators and finite profiles without a cancellation-height label | PROVED (imports BDA5aa–BDA5ad) | `docs/alternating-core-bda-reflected-role.md` |
+| AC3dl–AC3dm | Reflected scales form one class modulo `q/gcd(2A,q)` and admit weighted genuine `h,h+q` co-anchor extraction | PROVED | `docs/alternating-core-bda-reflected-role.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
