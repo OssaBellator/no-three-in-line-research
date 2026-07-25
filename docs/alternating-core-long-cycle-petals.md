@@ -37,7 +37,7 @@ edges.
 Regard rows and columns as the two vertex classes of the matching bipartite
 graph. Delete the three fixed edges `e,r,c` from `Gamma`.
 
-## AC3ib -- fixed-cross interior path normal form -- PROVED
+## AC3il -- fixed-cross interior path normal form -- PROVED
 
 The remaining edges form one simple path
 
@@ -76,7 +76,7 @@ has at least three edges and therefore at least two internal vertices. The
 bipartite board has `2n` row/column vertices, four of which are excluded, giving
 the upper bound. QED.
 
-## AC3ic -- path petals or a second hub -- PROVED
+## AC3im -- path petals or a second hub -- PROVED
 
 Let `t` distinct long-cycle episodes have the same fixed cross signature. For
 every integer `p>=2`, one of the following holds.
@@ -174,7 +174,7 @@ It has at most
 
 edges.
 
-## AC3id -- common-parent edge petals or a repeated cell -- PROVED
+## AC3in -- common-parent edge petals or a repeated cell -- PROVED
 
 Let `t` common-parent long alternatives have one fixed cross signature. For every
 integer `p>=2`, one of the following holds.
@@ -199,7 +199,7 @@ path to meet this union. Pigeonhole over its cells. QED.
 
 ## Exact common-parent petal bank
 
-Retain an edge-petal family of size `p` from AC3id. Let the child states be
+Retain an edge-petal family of size `p` from AC3in. Let the child states be
 
 \[
 S_1,\ldots,S_p.
@@ -207,11 +207,10 @@ S_1,\ldots,S_p.
 
 Assume the fixed removed cell `e` belongs to one private current certificate
 bucket of total weight `D`, so every child state destroys the full bucket.
-
 Every child state shares the same five-edge boundary support. Every other changed
 cell lies on one edge-disjoint boundary path.
 
-## AC3ie -- one-state-per-petal collateral ledger -- PROVED UNDER THE COMMON-PARENT PAYMENT HYPOTHESES
+## AC3io -- one-state-per-petal collateral ledger -- PROVED UNDER THE COMMON-PARENT PAYMENT HYPOTHESES
 
 The uniform choice from `S_1,...,S_p` has the following exact properties.
 
@@ -260,7 +259,7 @@ or
 ### Proof
 
 Legality and destruction are the common-parent and private-payment hypotheses.
-AC3id makes the off-boundary changed-cell sets pairwise disjoint. Every created
+AC3in makes the off-boundary changed-cell sets pairwise disjoint. Every created
 triple with an off-boundary inserted cell belongs to one petal state only. The
 remaining created triples lie in the declared boundary-supported candidate
 union, but petal-specific removals may suppress them in some states; bounding
@@ -269,11 +268,11 @@ two-term failure split follow. QED.
 
 The theorem is a multistate variable, not a product: exactly one petal is chosen.
 
-## AC3if -- fixed-cross long-cycle router -- PROVED
+## AC3ip -- fixed-cross long-cycle router -- PROVED
 
 A recurrent AC3ia long signature of multiplicity `t` returns one of:
 
-1. a historical path-petal family of any requested size `p` allowed by AC3ic;
+1. a historical path-petal family of any requested size `p` allowed by AC3im;
 2. a second row/column hub meeting at least
    \[
    t/((p-1)(2n-4))
@@ -281,9 +280,9 @@ A recurrent AC3ia long signature of multiplicity `t` returns one of:
    episodes;
 3. a genuine parent-state split;
 4. inside one common-parent class, an edge-petal family or one repeated
-   off-boundary physical cell from AC3id;
+   off-boundary physical cell from AC3in;
 5. under the private-payment hypothesis, an executable multistate bank with the
-   exact AC3ie collateral ledger;
+   exact AC3io collateral ledger;
 6. or an explicit outside-context or monotone-mask epoch change.
 
 In the executable case, failure is no longer an arbitrary bank-type change: it
@@ -292,8 +291,8 @@ petal-specific raw mass at scale `pD/2`.
 
 ### Proof
 
-Apply AC3ic to the historical family. Split by parent state. In a fixed parent,
-apply AC3id and then AC3ie when the removed cell carries private payment. If no
+Apply AC3im to the historical family. Split by parent state. In a fixed parent,
+apply AC3in and then AC3io when the removed cell carries private payment. If no
 fixed parent supports the selected multiplicity, retain the parent split as an
 explicit context output. QED.
 
@@ -302,7 +301,7 @@ explicit context output. QED.
 The structural alternatives match the shapes on
 `research/all-n-prime-patching`: a one-hub cycle-star or a two-hub
 concentration. That branch additionally assumes a fixed matchable host and
-designated credit on its reference endpoints. AC3if may delegate only after
+designated credit on its reference endpoints. AC3ip may delegate only after
 those host and credit hypotheses are verified; the present theorem does not
 silently import them.
 
@@ -326,4 +325,4 @@ the already finite context, carry, BDA or RI resources.
 six, extracts every fixed-cross interior path, checks its endpoints and internal
 vertex bound, verifies the greedy petal/hub alternative for every observed
 signature class, and checks common-parent boundary-path packing, off-boundary
-cell disjointness and every AC3ie expectation/failure identity.
+cell disjointness and every AC3io expectation/failure identity.
