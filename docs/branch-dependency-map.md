@@ -26,73 +26,41 @@ This is the only branch intended to carry the full local-to-global proof chain.
 
 Consumes PA/CF chamber structure; returns a decreasing trade for every fixed reduced denominator `q`. Imported by AC2–AC4.
 
-AC3an--AC3aq provide the exact alternating-core adapter. Once one AC role supplies a bounded denominator and direction shape together with fields `(q,d,e,xi,P,h)`, the paid family localizes to one exact scalar profile, one `q/gcd(det(d,e),q)` progression, and the weighted BDA5z co-anchor router. AC3ar--AC3as compose this with AC3am and return a paid large-direction output when bounded shape fails. Paid and support faithfulness remain explicit hypotheses. The remaining interface work is to prove those hypotheses for the actual role-pure outputs and to terminate the BDA dispersed-anchor or affine-chain alternatives.
+AC3an--AC3aq provide the exact alternating-core adapter. Once one AC role supplies a bounded denominator and direction shape together with fields `(q,d,e,xi,P,h)`, the paid family localizes to one exact scalar profile, one `q/gcd(det(d,e),q)` progression, and the weighted BDA5z co-anchor router. AC3ar--AC3as compose this with AC3am and return a paid large-direction output when bounded shape fails. Paid and support faithfulness remain explicit hypotheses. The remaining interface work is to prove those hypotheses for actual role-pure outputs and terminate the BDA dispersed-anchor or affine-chain alternatives.
 
 ### `research/rational-inverse-expansion`
 
 Solves I12 and classifies simultaneous small-doubling/order-two chains. Imported by AC3–AC4 when carry propagation enters a multiplicative structured exception.
 
-AC3at--AC3ax now give the exact normalized-to-physical adapter. A quotient role must retain occurrence scale sets, current payment, a completion-faithful target-column assignment, and support-faithful collateral profiles. The adapter returns paid scale mismatch or scale dispersion, exact physical source/partner/anchor cosets, completion cycles or boundary paths, and occupancy-executable two-layer component states before invoking RI5a--RI5ae.
+AC3at--AC3ax retain the generic normalized-to-physical adapter for genuinely movable paid objects. It returns scale mismatch or dispersion, exact physical cosets, completion cycles or boundary paths, and occupancy-executable component states.
 
-AC3ay--AC3bb prove that canonical OP4g--OP4i two-channel outputs already supply the normalized RI component, complete-fibre relation, actual base scales, and exact cross-carry provenance. AC3bc--AC3be remove assumed scale faithfulness: same-fibre same-scale pairing retains a coherent paid quarter, or one root sign carries a paid physical-scale imbalance. The unresolved RI interface is now completion-faithful payment, support-faithful collateral closure, and classification of the explicit incomplete-fibre, root-imbalance, scale-dispersion, boundary-path, terminal-interaction, and blocker-profile outputs.
+The canonical OP route is different and is now corrected. AC3ay--AC3be provide the normalized component, complete fibres, current payment, actual scales, and coherent root pairing. AC3bf proves those current hyperbola roots are fixed by completion, so they cannot pay completion components. AC3bg--AC3bj lift every I6 state through one common RI5f boundary closure and give an exact active/blocker collateral criterion.
+
+AC3bk--AC3bo split a heavy blocker average into singleton affine geometry, one of five finite small-derangement tables, or a normalized large rank-one/rank-two/rank-three profile. AC3bp--AC3bs amplify active rank one to raw weight, localize one source-target-shift channel without subgroup-order loss, and route it to direction spread, offset spread, a heavy line, or at most two moving cells.
+
+The unresolved RI interface is now classification of active rank two and rank three, the heavy-line/context-pair output, the three blocker profile classes, state-independent closure collateral, incomplete fibres, root imbalance, and scale dispersion.
 
 ### `research/geometric-cleaning`
 
-Removes the hypotheses behind S2, S5, L4 and P1. Can feed AC5 or bypass the alternating chain by reaching a matching/product-state endpoint.
+Removes the hypotheses behind S2, S5, L4 and P1. It can feed AC5 or bypass the alternating chain by reaching a matching/product-state endpoint.
 
 ### `research/orbit-phase-expansion`
 
-Alternative decoder. May prove the local termination portion of AC4 by a phase/Tanner argument, but is logically independent while under development.
-The alternating branch's AC3p--AC3r interface is the exact star-shaped
-special case to be used when an orbit-phase alphabet realizes one
-shared-token role: it contracts feasibility to one common phase message
-without importing the unresolved general Tanner-expansion claim.
-AC3s--AC3u additionally import only the proved canonical-literal
-representation: a shared certificate has rank at most three and either
-compresses to seven mismatch states or returns an exact-phase
-sensitivity witness. No general OP2 expansion statement is assumed.
-AC3v--AC3x are internal to the alternating branch: the primal
-projection of all finite factor and constraint scopes proves exact
-scope completion and payment additivity, while a dense projection is
-returned with one finite structural incidence label. These results do
-not import an arithmetic expansion theorem from another branch.
-AC3y--AC3z are also internal: they localize all phase sensitivity to one
-block, compress exact phases by observable behavior, and audit any
-proposed arithmetic chart. They do not assume that OP2 or RI has
-already proved that chart complete.
-AC3aa--AC3ac import only the proved O1 partition and OP1a canonical
-phase-literal representation. They construct the exact active-literal
-chart, prove that an exact O1 channel can require all `h` labels, and
-give a hard-exact heavy-soft chart with explicit `2tau` one-block
-collateral error and at most `3W/tau` heavy literals. Large hard
-and heavy-soft literal families enter the subsequent internal routers;
-a subgroup-coset or bounded-denominator label is not called terminal
-until the independent RI or BDA paid-collateral interface applies.
-AC3ad--AC3af are again internal finite combinatorics. Once OP2 or the
-main chain localizes a literal to the current phase context, they
-compute exact drift and reduce the activated rank-three bucket to an
-effectively rank-one obstruction, a bounded transversal, a paid
-depth-two literal, or a residual-disjoint bank. They do not assume a
-global OP2 expansion theorem or promote an RI/BDA label to a terminal
-absorber.
-AC3ag--AC3ai are also internal. At one fixed global centre literal
-they turn varying residual contexts into an effectively rank-one
-class, a paid simultaneously realizable context bank, a depth-two
-literal, or a residual-block phase fan. The cross-centre hard-literal
-mixture is passed to AC3aj--AC3ak; arithmetic classification of the
-structured outputs remains an explicit OP2/RI/BDA interface.
-AC3aj--AC3ak close that cross-centre combinatorial step at every
-current block. Safe nonimproving target buckets are disjointly paid;
-unsafe targets give fixed exclusions, a common current residual
-literal, or support-disjoint alternative-target blockers. Only the
-scope-complete arithmetic installation/classification of the explicit
-outputs remains an OP2/RI/BDA interface.
-AC3ay--AC3ba import the exact OP4g--OP4i rational labels and
-factor-conservative occurrence payment. They do not assume OP's open
-wide-CSP or recurrent-blocker completion claims. A successful local
-OP audit supplies an RI record; failed normalization or incomplete
-fibres remain explicit carry, label-conflict, or one-sided-growth
-outputs.
+Alternative decoder. It may prove the local termination portion of AC4 by a phase/Tanner argument, but remains logically independent while under development.
+
+The alternating branch imports only proved finite interfaces:
+
+- AC3p--AC3r: one shared-token phase message;
+- AC3s--AC3u: rank-at-most-three mismatch words or exact sensitivity;
+- AC3v--AC3x: scope-complete primal conflicts and exact additivity;
+- AC3y--AC3z: one-block sensitivity and observable quotients;
+- AC3aa--AC3ac: exact active-literal charts;
+- AC3ad--AC3af: literal-star drift and residual arms;
+- AC3ag--AC3ai: global fixed-centre contexts;
+- AC3aj--AC3am: cross-centre blockers and finite arithmetic roles;
+- AC3ay--AC3ba: exact OP4g--OP4i rational labels and factor-conservative payment.
+
+No open wide-CSP, Tanner-expansion, recurrent-blocker, RI, or BDA terminal claim is silently imported.
 
 ## Independent selection endpoints
 
@@ -106,7 +74,7 @@ Sparse-host `O(1/d)` spread and two-layer selection. Independent of the dense re
 
 These branches can replace or supplement the complete-clone endpoint once a suitable candidate host is constructed.
 
-## Independent all-n routes
+## Independent all-`n` routes
 
 Each starts only after a prime-minus-one or other infinite family of exact constructions is available.
 
@@ -122,12 +90,12 @@ Construct algebraic seeds directly over composite moduli or prime powers, includ
 
 Prove a saturation-preserving product/composition theorem and use arithmetic factorization to cover all side lengths.
 
-The three all-n branches are alternatives and should not be coupled unless one develops a proven interface to another.
+The three all-`n` branches are alternatives and should not be coupled unless one develops a proved interface.
 
 ## Merge discipline
 
 - Do not merge a target statement as `PROVED` without a complete argument and exact hypotheses.
 - Preserve counterexamples and regression tests.
-- When a branch proves an interface theorem, update this map and the theorem index in the same pull request.
-- Results that only improve constants should merge into their source track rather than creating another dependency.
-- A complete no-three-in-line proof requires one successful local/global construction chain and one successful all-n route.
+- When a branch proves an interface theorem, update this map and the theorem index in the same change sequence.
+- Results which only improve constants should merge into their source track rather than creating another dependency.
+- A complete no-three-in-line proof requires one successful local/global construction chain and one successful all-`n` route.
