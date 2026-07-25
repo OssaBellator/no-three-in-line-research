@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact finite checks for AC3ib--AC3if."""
+"""Exact finite checks for AC3ig--AC3ik."""
 
 from __future__ import annotations
 
@@ -155,7 +155,7 @@ def main():
     pig = check_ticket_pigeonhole()
     states, edges, piv = check_cycle_flowers()
     ledgers, const = check_rank_ledgers()
-    print("AC3ib--AC3if exact checks passed")
+    print("AC3ig--AC3ik exact checks passed")
     print(f"permutation changes: {ch}")
     print(f"rectangle components: {rect}")
     print(f"long components: {longc}")
