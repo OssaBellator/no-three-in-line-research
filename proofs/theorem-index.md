@@ -56,8 +56,9 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3ka–AC3kd | Exact outer profiles have a finite decorated directed-edge stock; internal work and first edges have one bounded potential, while only repeated decorated macro edges remain recurrent | PROVED; GLOBAL CLOSURE CONDITIONAL ON MACRO-TICKET CONTRACT | `docs/alternating-core-outer-reset-quotient.md` |
 | AC3ke–AC3kh | Owner status is transition-relative; installed pivot, BDA, RI, OP, phase and protected-resource owners enter one payment-safe six-route registry and owner resets have a finite decoration stock | PROVED | `docs/alternating-core-owner-status-registry.md` |
 | AC3ki–AC3km | Alternative values of one blocker variable form a menu, not a product; common owners count once, private owners average across alternatives, and executable targets feed the universal rank fallback | PROVED | `docs/alternating-core-alternative-target-menu.md` |
+| AC3kn–AC3kq | A common-parent paid petal menu has an exact boundary/off-boundary statewise ledger; failure realizes at least `D/2` created mass and feeds a rank at `D/6`, pivot payment `D/(6K)` or return `D/(18K)` | PROVED UNDER AC3io COMMON-PARENT PAYMENT HYPOTHESES | `docs/alternating-core-petal-rank-closure.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
-| AC4 | Total alternating transition oracle | OPEN; REDUCED TO REPEATED DECORATED MACRO EDGES AND UNRESOLVED PER-TARGET COMPLETION | `docs/alternating-core-chain.md` |
+| AC4 | Total alternating transition oracle | OPEN; REDUCED TO REPEATED DECORATED MACRO EDGES, COMMON-PARENT/PAYMENT RESETS AND UNRESOLVED PER-TARGET COMPLETION | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC5 | Geometric verification of the reverse-scale invariants for every AC move | OPEN | `docs/alternating-core-chain.md` |
 | AC6a | Prime-minus-one assembly from exact AC4/AC5 interfaces | PROVED UNDER HYPOTHESES | `docs/alternating-core-formal-termination.md` |
