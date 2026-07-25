@@ -31,7 +31,7 @@ that cycle, and let `S_Gamma` be the resulting ordered two-layer union.
 
 No disjointness between different cycles is assumed.
 
-## AC3ig -- arbitrary common-host cycle menu -- PROVED
+## AC3il -- arbitrary common-host cycle menu -- PROVED
 
 The states
 
@@ -72,7 +72,7 @@ m_r(F)=|\{\Gamma\in\mathcal C:F\subseteq
 M_\Gamma\setminus M\}|.
 \]
 
-## AC3ih -- exact cycle-menu cylinder law -- PROVED
+## AC3im -- exact cycle-menu cylinder law -- PROVED
 
 For every compatible `F` of rank `r<=3`,
 
@@ -103,7 +103,7 @@ The event occurs exactly for the cycle states counted by `m_r(F)`. QED.
 No product-power estimate is asserted.  A heavy `Delta_r` is retained as one
 literal inserted cell, pair or triple shared by many alternative cycle states.
 
-## AC3ii -- failed arbitrary-cycle menu returns a realized rank -- PROVED
+## AC3in -- failed arbitrary-cycle menu returns a realized rank -- PROVED
 
 Let `C_{Gamma,r}` be the exact created union-collateral weight of rank `r`
 in state `S_Gamma`, relative to the common parent state.  Put
@@ -155,15 +155,15 @@ AC3gi--AC3gj return:
 
 ### Proof
 
-AC3ig gives the same certified destroyed payment in every menu state.  Average
+AC3il gives the same certified destroyed payment in every menu state.  Average
 the exact created-minus-destroyed identity.  If the average is negative, one
 state improves.  Otherwise the three nonnegative rank expectations sum to at
 least `W_e`; pigeonhole and apply AC3gk--AC3gj. QED.
 
-## AC3ij -- static two-hub cores are not terminal -- PROVED
+## AC3io -- static two-hub cores are not terminal -- PROVED
 
 Under the common-host hypothesis, every output of AC3ic is executable through
-AC3ig--AC3ii.
+AC3il--AC3in.
 
 - A one-hub petal family is the special disjoint-support case.
 - A two-hub separator family is still a finite family of alternative legal
@@ -179,15 +179,15 @@ overload or literal heavy inserted support.
 ### Proof
 
 All families consist of cycles in the same exchange host relative to the same
-matching and all contain `e`.  Apply AC3ig--AC3ii. QED.
+matching and all contain `e`.  Apply AC3il--AC3in. QED.
 
-## AC3ik -- exact residual historical obstruction -- PROVED
+## AC3ip -- exact residual historical obstruction -- PROVED
 
 For a recurrent fixed-cross history from AC3ib--AC3if, exactly one of the
 following remains.
 
 1. A nonempty recurrent subfamily is represented relative to one common current
-   matching and one common current allowed host.  Then AC3ig--AC3ij execute it.
+   matching and one common current allowed host.  Then AC3il--AC3io execute it.
 2. No such common-host representation is available.  Between occurrences at
    least one of the following changed:
    - the reference matching state;
@@ -202,7 +202,7 @@ problem.
 
 ### Proof
 
-This is the definition of common-host representability, followed by AC3ig in
+This is the definition of common-host representability, followed by AC3il in
 the represented case. QED.
 
 ## Consequence
