@@ -20,10 +20,10 @@ mixed candidate-only triple systems whose primitive heights lie in
 
 ## 1. Exact direction count at one height
 
-### Theorem CMR382 — PROVED
+### Theorem CMR385 — PROVED
 
-For every integer `K\ge1`, the number of unoriented primitive integer
-directions `(u,v)` satisfying
+For every integer `K>=1`, the number of unoriented primitive integer directions
+`(u,v)` satisfying
 
 \[
 \max\{|u|,|v|\}=K
@@ -44,7 +44,7 @@ horizontal, vertical, and diagonal unoriented directions. ∎
 
 ## 2. Harmonic conflict-degree bound
 
-### Theorem CMR383 — PROVED
+### Theorem CMR386 — PROVED
 
 Every represented candidate cell belongs to at most
 
@@ -72,8 +72,8 @@ reserve edge.
 ### Proof
 
 Fix one cell and one primitive direction of height `K`. The integral line
-parameters for which the translated point remains in the board form an interval
-containing at most
+parameters for which the translated point remains in the board form an
+interval containing at most
 
 \[
 1+\left\lfloor\frac{t-1}{K}\right\rfloor
@@ -86,7 +86,7 @@ points. Hence at most
 \]
 
 triples on that line contain the fixed cell. Sum over the `4\varphi(K)`
-directions from CMR382. Finally use
+directions from CMR385. Finally use
 
 \[
 \varphi(K)\le K,
@@ -99,7 +99,7 @@ statement is identical. ∎
 
 ## 3. Mixed boundedness for a harmonic height family
 
-### Theorem CMR384 — PROVED
+### Theorem CMR387 — PROVED
 
 Fix `\eta>0`. Assume
 
@@ -122,7 +122,7 @@ structural threshold. Then, for all sufficiently large `t`,
 
 ### Proof
 
-CMR383 gives
+CMR386 gives
 
 \[
 \Delta(\mathcal C_{\mathcal K})
@@ -140,34 +140,34 @@ primitive height, so the pair codegree of the union is still bounded by
 
 This is (C3).
 
-The mixed proof of CMR375 is unchanged. Every estimate using fixed-edge conflict
-degree now uses CMR383 and remains below `3t^2`; every estimate using a fixed
-represented pair keeps the same `t/min K` bound because one pair determines one
-height. Row-copy conflicts are unchanged. Thus (E1)--(E6) hold with the same
-positive power slack. ∎
+The mixed proof of CMR375 is unchanged. Every estimate using fixed-edge
+conflict degree now uses CMR386 and remains below `3t^2`; every estimate using
+a fixed represented pair keeps the same `t/min K` bound because one pair
+determines one height. Row-copy conflicts are unchanged. Thus (E1)--(E6) hold
+with the same positive power slack. ∎
 
 ## 4. Exact harmonic-family completion
 
-### Theorem CMR385 — PROVED FROM JOOS--MUBAYI--SMITH
+### Theorem CMR388 — PROVED FROM JOOS--MUBAYI--SMITH
 
-Under the hypotheses of CMR384, there exists a complete target-specific parent
+Under the hypotheses of CMR387, there exists a complete target-specific parent
 permutation containing no candidate-only collinear triple whose primitive
 height belongs to `\mathcal K`.
 
 ### Proof
 
 Apply the mixed-bounded covering theorem exactly as in CMR376, using CMR373 for
-the hosts and CMR384 for the main and mixed conflicts. Decode by CMR372. ∎
+the hosts and CMR387 for the main and mixed conflicts. Decode by CMR372. ∎
 
 ## 5. Two dyadic bands at once
 
-For `H\ge1`, put
+For `H>=1`, put
 
 \[
 S_H=\sum_{K=H}^{2H-1}\frac1K.
 \]
 
-### Corollary CMR386 — PROVED
+### Corollary CMR389 — PROVED
 
 Let `H_1,H_2` be two distinct dyadic lower endpoints satisfying
 
@@ -190,7 +190,8 @@ The sequence `S_H` is strictly decreasing because
 \[
 S_{H+1}-S_H
 =
-\frac1{2H}+rac1{2H+1}-\frac1H
+\frac1{2H}+
+\frac1{2H+1}-\frac1H
 =
 -\frac1{2H(2H+1)}.
 \]
@@ -208,7 +209,7 @@ S_5
 \]
 
 Therefore each selected dyadic band has harmonic weight below `3/4`, and their
-union has weight below `3/2`. Apply CMR385. ∎
+union has weight below `3/2`. Apply CMR388. ∎
 
 ## 6. Revised scheduling endpoint
 
