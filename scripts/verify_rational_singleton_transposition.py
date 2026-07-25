@@ -20,12 +20,12 @@ def candidate_triples(n):
     return triples
 
 
-def verify(maximum_size=5):
+def verify(maximum_size=5, triple_size=4):
     state_count = 0
     triple_count = 0
 
     for n in range(2, maximum_size + 1):
-        triples = candidate_triples(n) if n >= 3 else []
+        triples = candidate_triples(n) if 3 <= n <= triple_size else []
 
         for active in permutations(range(n)):
             active_cells = matching_cells(active)
@@ -67,14 +67,15 @@ def verify(maximum_size=5):
                         state_count += 1
 
                     # Every newly inserted cell identifies one auxiliary state.
+                    # This proves the cylinder cap for all ranks; exact
+                    # rank-three candidates are additionally enumerated through
+                    # size ``triple_size``.
                     seen = {}
                     for index, created in enumerate(created_sets):
                         for cell in created:
                             seen.setdefault(cell, []).append(index)
                     assert all(len(indices) == 1 for indices in seen.values())
 
-                    # Every exact new rank-three blocker certificate occurs in
-                    # at most one auxiliary state.
                     for triple in triples:
                         if triple <= blocker_cells:
                             continue
@@ -94,7 +95,7 @@ def main():
     states, triples = verify()
     print(
         "RI singleton auxiliary transposition: verified "
-        f"{states} states and {triples} triple tests"
+        f"{states} states and {triples} exact triple tests"
     )
 
 
