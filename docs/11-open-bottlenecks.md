@@ -40,25 +40,29 @@ The composite branch now has the following reduction.
    one-pass descending recursive sweep has only `O_p(t log^2 t)` labelled
    row-token return mass, and unbounded return requires repeated use of one
    compatible ancestor slot.
-10. CMR385--CMR397 refine the line-energy endpoint to full prefix tokens, give
+10. CMR385--CMR389 use harmonic direction packing to give exact simultaneous
+    cleaning of two prescribed dyadic bands.
+11. CMR390--CMR402 refine the line-energy endpoint to full prefix tokens, give
     their exact two-dimensional initial stock, and prove a one-dimensional
     per-reset cost. At depth `p^b>=t^(2/3)`, one full token has total one-pass
     endpoint stock at most `t^(2/3)+2h t^(1/3)`.
 
 The inherited escape problem is no longer missing a local bank for one blocker,
-one token batch, or one intermediate band. It is a scheduling and no-return
-problem.
+one token batch, or one or two intermediate bands. It is a scheduling and
+no-return problem.
 
 ### Intermediate and high primitive heights
 
-Exact completion of one band is proved. The unresolved step is simultaneous or
-sequential control of all `O(log t)` relevant bands. A direct union of their
-conflict systems accumulates a logarithmic factor in maximum conflict degree,
-and sequential exact coverings may recreate earlier bands.
+Exact completion of one band and harmonic simultaneous completion of two bands
+are proved. The unresolved step is control of all `O(log t)` relevant bands. A
+direct union of their conflict systems can accumulate a logarithmic factor in
+maximum conflict degree, and sequential exact coverings may recreate earlier
+bands.
 
 A successful theorem must provide at least one of:
 
-- a band grouping with uniformly bounded aggregate conflict degree;
+- a harmonic or grouped packing with uniformly bounded aggregate conflict
+  degree for all bands;
 - a protected-band reserve compatible with the duplicated-row covering model;
 - a reverse-height potential paying every recreated band;
 - or simultaneous resampling coupled to certificate-exchange ancestry.
@@ -88,7 +92,7 @@ I_\tau^{\rm coarse}
 \frac{t}{p^b}A_\tau,
 \]
 
-where `A_tau` counts compatible ancestor resets. CMR396 gives the full-token
+where `A_tau` counts compatible ancestor resets. CMR401 gives the full-token
 analogue
 
 \[
@@ -99,8 +103,8 @@ I_\tau^{(2),\rm coarse}
 
 In a one-pass schedule both reset counts are at most `2b`. In an arbitrary
 history, excessive return forces one of those finitely many ancestor
- depth-layer slots to be reset repeatedly. The direction-labelled one-pass
-full-token return mass is `O_p(t^2 log t)`.
+depth-layer slots to be reset repeatedly. The direction-labelled one-pass
+full-token return mass is `O_p(t^2 log t)` by CMR402.
 
 Thus the next dynamic theorem is not another raw edge-count estimate. It must
 pay repeated use of one fixed slot by at least one of:
@@ -116,7 +120,7 @@ is the width of the fully forced CMR217 ancestry DAG.
 
 Joint-parent and exact-band resets remain distinct. They need not preserve every
 recursive descendant fibre, so their fine full-token return profiles are not
-yet covered by CMR393--CMR397.
+yet covered by CMR398--CMR402.
 
 ## Bottleneck 4: all side lengths
 
@@ -130,7 +134,8 @@ The prime-power programme now supplies:
 - executable prefix, child-pencil, terminal, parent, and universal line-clean
   banks;
 - exact high-slice cleaning;
-- exact target-specific completion of any one intermediate-height band;
+- exact target-specific completion of one intermediate-height band and two
+  harmonically packed bands;
 - simultaneous elimination of bounded deep-token batches;
 - exact one-pass row-token and full-token reintroduction budgets.
 
@@ -153,7 +158,7 @@ The following broad pieces are closed:
 9. exact high-slice cleaning with protected lines;
 10. universal sharp-blocker line-clean banks and line-energy conversion;
 11. deep-token universe batching and tunable heavy/dispersion thresholds;
-12. exact completion of one intermediate-height band;
+12. exact completion of one intermediate-height band and two harmonic bands;
 13. exact row-token and full-token return accounting for one descending recursive
     prefix pass;
 14. reduction of excessive recursive return to repeated use of one compatible
@@ -162,11 +167,11 @@ The following broad pieces are closed:
 ## Open lemmas in recommended order
 
 1. **Repeated ancestor-slot payment.** Attach a monotone charge to repeated
-   resets of one CMR396-compatible full-token ancestor slot.
+   resets of one CMR401-compatible full-token ancestor slot.
 2. **Non-prefix return profile.** Bound full-token and protected-band recreation
    under one old-cell-clean joint-parent or exact-band move.
-3. **Multi-band exact scheduling.** Combine CMR376 across all relevant height
-   bands without logarithmic conflict-degree accumulation or recreation.
+3. **All-band exact scheduling.** Extend CMR389 from two harmonic bands to all
+   relevant bands without conflict-degree accumulation or recreation.
 4. **Forced-ancestry width.** Bound descendants per deleted edge/signature or
    resample several alternating exchange cycles simultaneously.
 5. **Low-height carry integration.** Convert universal line-clean outputs and
@@ -183,9 +188,9 @@ The following broad pieces are closed:
 ## Computational priorities
 
 - Measure exact full-token and protected-band recreation under one joint-parent
-  move.
-- Enumerate aggregate conflict degrees for grouped adjacent height bands in the
-  duplicated-row covering model.
+  or exact-band move.
+- Enumerate aggregate conflict degrees for three or more harmonically separated
+  height bands in the duplicated-row covering model.
 - Enumerate exchange-ancestry descendant counts by full-token signature.
 - Test ancestor-slot potentials against the exact CMR350 two-step recurrence.
 - Search for non-reciprocal balanced grid factorizations at the next
