@@ -208,18 +208,32 @@ A fixed captive centre either succeeds or carries one of nine explicit support
 degree cores: unary, transition, anchored-pair, three triple ranks, rank-two unary
 `Xi`, or rank-three/rank-four binary `Xi`.
 
+The transition core has now been reduced further. A failed clean-chain bank gives
+an `Omega(N)` resource-disjoint witness-petal sunflower. Pigeonholing the source
+permutation layer and the free/controller-pool class yields a free or single-pool
+credited endpoint bank of size
+
+```text
+Omega(N/M)=m^(9/10-o(1)),
+```
+
+which contains the required `W=m^(19/40+o(1))` subbank. Transition sunflowers
+therefore rejoin the existing paid source-star/resource-bank frontier. The exact
+finite bookkeeping is checked by `scripts/check_transition_sunflower_bank.py`.
+
 ## What remains conditional
 
 The missing conversion theorem has these structured forms.
 
 1. Convert controller denominator failure, insufficient local Ore slack, or
    weighted anchor energy concentrated in one canonical ownership core.
-2. Pay source-star/resource-bank trades produced by unary support and forced Hall
-   cuts.
+2. Pay source-star/resource-bank trades produced by unary support, forced Hall
+   cuts, and fixed-centre transition sunflowers.
 3. Convert chromatically concentrated unary or binary controller-shadow weight
    in the global rectangle branch.
-4. Convert marked endpoint `Xi`-load cores, full-pool `Xi`-weight thresholds, or
-   one of the nine explicit support cores of a fixed captive centre.
+4. Convert marked endpoint `Xi`-load cores, full-pool `Xi`-weight thresholds,
+   weighted clean-chain concentration, or one of the eight nontransition support
+   cores of a fixed captive centre.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted two-resource choice grids,
@@ -234,6 +248,8 @@ The missing conversion theorem has these structured forms.
   defects.
 - The single-cycle marked-filler theorem applies to a large credited resource
   bank; one predetermined centre may remain exceptional.
+- Moving one selected transition witness removes that certificate incidence but
+  need not clear every witness of the same forbidden transition.
 - The reduced support-ranked `Xi` theorem is conditional on its displayed weight
   bounds.
 - Finite diagnostics verify identities and examples, not asymptotic conversion.
@@ -244,8 +260,9 @@ There is no complete proof. The branch closes matching supply, optimal macro
 width, four allocation interfaces, external weighted geometry, rectangle
 extraction, superregular and non-superregular state decompositions, canonical
 weighted anchor deficiency, conditional resource stars, diffuse pool-local source
-mass, universal marked single-cycle spread, low-rank cyclic `Xi` terms, and
-diffuse binary dual mass.
+mass, universal marked single-cycle spread, low-rank cyclic `Xi` terms, diffuse
+binary dual mass, and transition-sunflower localization to credited endpoint
+banks.
 
 The concentrated local-Ore, paid star/resource, global-shadow, marked-`Xi`,
 cycle-support, and weighted binary-grid cores above remain open.
