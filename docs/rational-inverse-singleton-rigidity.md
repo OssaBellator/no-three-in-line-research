@@ -15,7 +15,7 @@ C=M_0|_V
 for its current active matching and \(D\) for its closed target matching. Define
 
 \[
-oxed{\sigma=C^{-1}\circ D:V	o V.}
+\boxed{\sigma=C^{-1}\circ D:V\to V.}
 \]
 
 Thus
@@ -37,7 +37,7 @@ N(x)\in\{C(x),D(x)\}.
 If \(N\) uses exactly the same row set as \(C\), then
 
 \[
-oxed{N=C\quad	ext{or}\quad N=D.}
+\boxed{N=C\quad\text{or}\quad N=D.}
 \]
 
 Equivalently, no nonempty proper subset of the desired target cells can be installed while all other component columns retain their current cells.
@@ -52,8 +52,7 @@ S=\{x\in V:N(x)=D(x)\}
 
 be the columns using target cells. Fix \(v\in V\). The current row \(C(v)\) appears in the mixed matching from exactly two possible sources:
 
-- column \(v\), when \(v
-otin S\);
+- column \(v\), when \(v\notin S\);
 - column \(\sigma^{-1}(v)\), when \(\sigma^{-1}(v)\in S\), because
   \[
   D(\sigma^{-1}(v))=C(v).
@@ -62,8 +61,7 @@ otin S\);
 For \(N\) to use every current row exactly once, these two indicators must sum to one:
 
 \[
-\mathbf1_{\{v
-otin S\}}
+\mathbf1_{\{v\notin S\}}
 +
 \mathbf1_{\{\sigma^{-1}(v)\in S\}}
 =1.
@@ -77,7 +75,7 @@ Therefore
 \mathbf1_{\{\sigma^{-1}(v)\in S\}}
 \]
 
-for every \(v\). Thus \(S\) is invariant under the single cycle \(\sigma\). Its only invariant subsets are \(arnothing\) and \(V\), giving \(N=C\) or \(N=D\). \(\square\)
+for every \(v\). Thus \(S\) is invariant under the single cycle \(\sigma\). Its only invariant subsets are \(\varnothing\) and \(V\), giving \(N=C\) or \(N=D\). \(\square\)
 
 ## Consequence for the RI5i singleton output
 
