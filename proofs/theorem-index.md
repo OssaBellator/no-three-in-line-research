@@ -42,6 +42,9 @@ This ledger records only branch-specific results and corrections.
 | RI5z | The filtered bank improves or routes failure to residual rank one, rank two, rank three, or blocker repair | PROVED | `docs/rational-inverse-rank-one-margin-bank.md` |
 | RI5aa | Iterative shadow pruning stabilizes with all surviving component margins positive | PROVED | `docs/rational-inverse-shadow-pruning.md` |
 | RI5ab | The terminal pruning core has no uncharged active rank one and routes only rank two, rank three, or blocker repair | PROVED | `docs/rational-inverse-shadow-pruning.md` |
+| RI5ac | The terminal core has exactly seven rank-two and six rank-three canonical interaction words | PROVED | `docs/rational-inverse-terminal-interactions.md` |
+| RI5ad | Every terminal interaction reduces to one-target incidence or an exact two-target hyperbola secant | PROVED | `docs/rational-inverse-terminal-interactions.md` |
+| RI5ae | Failed terminal active collateral localizes to one finite word/profile class with explicit raw weight | PROVED | `docs/rational-inverse-terminal-interactions.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
