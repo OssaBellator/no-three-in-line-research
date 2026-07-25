@@ -2,8 +2,8 @@
 """Verify AC3bp--AC3bs on exhaustive small prime/subgroup models."""
 
 from fractions import Fraction
-from itertools import permutations, product
-from math import ceil, factorial
+from itertools import combinations, permutations, product
+from math import ceil
 
 
 def divisors(value):
@@ -110,6 +110,8 @@ def verify_geometry():
     recovery_checks = 0
     line_checks = 0
     probability_checks = 0
+    multi_cell_checks = 0
+    secant_checks = 0
 
     for prime in (5, 7, 11, 13):
         lines = modular_lines(prime)
@@ -146,7 +148,19 @@ def verify_geometry():
                                 assert count == expected_count
                                 probability_checks += 1
 
-                            point_set = {(x, y) for x, y, _ in cells}
+                            # Any compatible collection of one, two, or three cells
+                            # in one channel fixes the same source image and shift.
+                            physical_cells = [(x, y) for x, y, _ in cells]
+                            for size in range(1, min(3, len(physical_cells)) + 1):
+                                for prescribed in combinations(physical_cells, size):
+                                    count = sum(
+                                        all(state.get(x) == y for x, y in prescribed)
+                                        for state in states
+                                    )
+                                    assert count == expected_count
+                                    multi_cell_checks += 1
+
+                            point_set = set(physical_cells)
                             for A, B, C in lines:
                                 intersection = sum(
                                     (A * x + B * y - C) % prime == 0
@@ -155,12 +169,31 @@ def verify_geometry():
                                 assert intersection <= 2
                                 line_checks += 1
 
-    return channel_checks, recovery_checks, line_checks, probability_checks
+                            # On a fixed product channel, the modular sum determines
+                            # the unordered pair through its quadratic polynomial.
+                            pairs_by_sum = {}
+                            for first, second in combinations(point_set, 2):
+                                pair = tuple(sorted((first[0], second[0])))
+                                key = (first[0] + second[0]) % prime
+                                assert key not in pairs_by_sum or pairs_by_sum[key] == pair
+                                pairs_by_sum[key] = pair
+                                assert first[0] * second[0] % prime == product_value
+                                secant_checks += 1
+
+    return (
+        channel_checks,
+        recovery_checks,
+        line_checks,
+        probability_checks,
+        multi_cell_checks,
+        secant_checks,
+    )
 
 
 def verify_weight_routers(maximum=24):
     raw_checks = 0
     router_checks = 0
+    split_checks = 0
 
     for m in range(1, 5):
         for order in range(1, 9):
@@ -172,26 +205,32 @@ def verify_weight_routers(maximum=24):
                 assert channel_average == c1 / m
                 raw_checks += 1
 
+                # One- and two-moving-cell classes partition one channel.
+                for one_cell in range(expected_numerator + 1):
+                    two_cell = expected_numerator - one_cell
+                    assert max(one_cell, two_cell) * 2 >= expected_numerator
+                    split_checks += 1
+
     for total in range(1, maximum + 1):
         for threshold in range(1, maximum + 1):
             class_count = ceil(total / threshold)
-            # If every class is at most threshold, at least ceil(total/threshold)
-            # classes are necessary. The same calculation is used for directions
-            # and offsets.
             assert class_count * threshold >= total
-            router_checks += 2
+            # Direction, affine-offset, and secant-sum routers use the same bound.
+            router_checks += 3
 
-    return raw_checks, router_checks
+    return raw_checks, split_checks, router_checks
 
 
 def main():
-    channels, recovery, lines, probabilities = verify_geometry()
-    raw, routers = verify_weight_routers()
+    channels, recovery, lines, probabilities, multi, secants = verify_geometry()
+    raw, splits, routers = verify_weight_routers()
     print(
-        "AC RI I6 rank one: verified "
+        "AC RI I6 source-rank one: verified "
         f"{channels} channel products, {recovery} channel recoveries, "
-        f"{lines} line-conic intersections, {probabilities} I6 probabilities, "
-        f"{raw} raw-weight cancellations, and {routers} direction/offset routers"
+        f"{lines} line-conic intersections, {probabilities} single-cell and "
+        f"{multi} multi-cell probabilities, {secants} secant signatures, "
+        f"{raw} raw-weight cancellations, {splits} local-rank splits, "
+        f"and {routers} affine/secant routers"
     )
 
 
