@@ -1,0 +1,14 @@
+{
+  "n": 7,
+  "centre": 0,
+  "budget": 12,
+  "left_default_cost": 1,
+  "middle_default_cost": 10,
+  "right_default_cost": 1,
+  "left_cost_overrides": [],
+  "middle_cost_overrides": [],
+  "right_cost_overrides": [],
+  "forbidden_left_paths": [],
+  "forbidden_middle_paths": [],
+  "forbidden_right_paths": []
+}
