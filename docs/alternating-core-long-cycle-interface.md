@@ -53,7 +53,7 @@ T_{\rm ret}=L(n-1)^2
 
 return-cross signatures for fixed `ell,e`.
 
-## AC3ib -- finite rectangle returns or one repeated long return -- PROVED
+## AC3ig -- finite rectangle returns or one repeated long return -- PROVED
 
 Among the `r-1` selected reinsertion transitions, at most
 
@@ -116,7 +116,7 @@ off-diagonal edges.  Every switched state is required to remain disjoint from
 the unchanged opposite permutation layer; this is part of the current host
 `K`, not an inferred property.
 
-## AC3ic -- cycle-star or two-hub separator -- PROVED
+## AC3ih -- cycle-star or two-hub separator -- PROVED
 
 For every integer `p>=2`, exactly one of the following Menger alternatives is
 available.
@@ -149,9 +149,9 @@ The second output is an exact two-hub resource profile.  It retains the layer,
 both cross signatures, both hub resources, the arithmetic role and the current
 epoch label.
 
-## AC3id -- executable one-hub cycle-star menu -- PROVED
+## AC3ii -- executable one-hub cycle-star menu -- PROVED
 
-Assume the first alternative of AC3ic and write the cycles as
+Assume the first alternative of AC3ih and write the cycles as
 
 \[
 \Gamma_1,\ldots,\Gamma_p.
@@ -181,7 +181,7 @@ QED.
 
 This is a one-state-per-petal menu, not a Cartesian product.
 
-## AC3ie -- failed cycle-star menu returns a realized rank -- PROVED
+## AC3ij -- failed cycle-star menu returns a realized rank -- PROVED
 
 For state `j`, let `C_j` be the exact created union-collateral weight and let
 
@@ -231,7 +231,7 @@ identity `created - destroyed` over the finite menu.  Negative average yields
 an improving state.  Otherwise the average created weight is at least `W_e`;
 split it among the three created-cell ranks and apply AC3gk--AC3gj. QED.
 
-## AC3if -- exact all-n handoff -- PROVED AS AN INTERFACE
+## AC3ik -- exact all-n handoff -- PROVED AS AN INTERFACE
 
 A fixed-cross long-cycle history now has the following exhaustive scoped
 continuation.
@@ -239,8 +239,8 @@ continuation.
 1. Finite rectangle-return tickets are consumed.
 2. One fixed long return cross recurs, giving a two-cross history profile.
 3. If a recurrent subfamily is simultaneously represented in one current
-   exchange host, AC3ic gives:
-   - an executable paid one-hub cycle-star menu through AC3id--AC3ie; or
+   exchange host, AC3ih gives:
+   - an executable paid one-hub cycle-star menu through AC3ii--AC3ij; or
    - an exact two-hub separator core.
 4. If no such common host exists, the current allowed host, opposite-layer
    exclusion or outside arithmetic/context label changed.  That change is the
