@@ -28,6 +28,9 @@ This ledger records only branch-specific statements.
 | BDA5e | Every clean adjacent radial pair has a row-column-preserving decoder state | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
 | BDA5f | Every row-column-compatible clean radial family has a valid heterogeneous product of local decoder states | PROVED | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
 | BDA5g | Heterogeneous local menus have an exact rank-at-most-three product collateral criterion | PROVED | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
+| BDA5h | Variable rank-one collateral splits exactly into a balanced floor and removable menu imbalance | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
+| BDA5i | Cheaper local decoder choices suppress rank one while costing factors at most `4` and `8` on ranks two and three | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
+| BDA5j | Failure after rank-one suppression localizes to a balanced floor or a heavy rank-two/rank-three term | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
