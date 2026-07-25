@@ -13,6 +13,11 @@ states, while every tree component has one state for each possible unused root.
 Since the transition branch has `N-o(N)` middle indices in a ground set of size at
 most `N`, only `o(N)` tree components occur; the bulk state space is Boolean.
 
+The injective choice is a large partial endpoint matching, not automatically a
+complete endpoint permutation. Its unused left and right resource sets both have
+size `o(N)`. The final completion problem is therefore an explicit residual host
+of sublinear order.
+
 ## 1. The labelled predecessor multigraph
 
 Fix the predecessor version; the successor version is transposed. Let `P` be a
@@ -200,45 +205,62 @@ give the displayed inequality. The asymptotic conclusion follows immediately. �
 Thus the two-valued transition branch consists of a Boolean cycle bank plus only
 a sublinear collection of root variables.
 
-## 6. Exact geometric and paid CSP
+## 6. Exact residual completion interface
 
-Fix one state in every tree component or retain its unused root as a finite-state
-variable. For each nonloop unicyclic component introduce a Boolean variable
-`xi_C` selecting one of its two cyclic orientations.
+Let `V` be the full endpoint-index set of size `N`. For one injective assignment
+`f`, prescribe the endpoint arcs
 
-Each selected orientation gives one safe predecessor for every middle label in
-that component. The corresponding prescribed endpoint arcs are resource-disjoint
-on their tails and distinct on their middle heads.
+```text
+F_f={f(p)->p : p in P}.
+```
 
-### Theorem PP3aaa -- PROVED
+These arcs have distinct tails and distinct heads, so they form a bipartite partial
+matching. Put
 
-After the pseudoforest reduction, all remaining source and paid conditions form an
-exact finite-state CSP with the following structure.
+```text
+L_f=V\f(P),
+R_f=V\P,
+d=N-|P|.
+```
 
-1. A source-invalid pattern involving selected arcs from one, two, or three
-   components gives a forbidden box of rank at most three.
-2. A deterministic invalidity inside one component deletes one local state.
-3. The insertion-shadow or dynamic-`Xi` change is an exact sum of constant, unary,
-   and binary component-state costs.
-4. The nonloop unicyclic bulk is Boolean. The only non-Boolean variables are the
-   `o(N)` tree-root components from PP3zz.
+Then `|L_f|=|R_f|=d`.
 
-If all tree roots are fixed and every surviving source constraint involves at
-most two unicyclic components, feasibility is exactly a 2-SAT instance. In the
-general case it is the established rank-at-most-three paid finite-state endpoint.
+### Theorem PP3aaa -- PROVED AS A RESIDUAL-HOST INTERFACE
+
+For every pseudoforest state `f`:
+
+1. in the complete coordinate host, every bijection `L_f->R_f` completes `F_f` to
+   a full endpoint permutation, giving exactly `d!` residual completions;
+2. in an allowed endpoint host `G`, the completions are exactly the perfect
+   matchings of the residual bipartite host `G[L_f,R_f]`;
+3. when `|P|=N-o(N)`, this residual host has order `d=o(N)`;
+4. after one residual matching is fixed, every source-invalid pattern touches at
+   most three pseudoforest component variables, and every insertion-shadow or
+   dynamic-`Xi` term touches at most two;
+5. if the residual matching is selected jointly, every remaining pattern is
+   ranked by the number of additional residual arcs it requires, exactly as in
+   PP3ze and PP3zu.
+
+The nonloop unicyclic bulk is Boolean. The only non-Boolean predecessor variables
+are the `o(N)` tree roots from PP3zz, together with the explicit residual matching
+on `o(N)` resources.
 
 #### Proof
 
-A collinear source obstruction uses at most three newly selected endpoint arcs, so
-it touches at most three component variables. Fixing all arcs inside one component
-turns any wholly internal obstruction into a local state deletion. Every unary or
-binary controller-shadow incidence depends on at most one or two selected arcs,
-so after grouping arcs by components it contributes constant, unary, or binary
-state cost. The state counts are PP3zy--PP3zz. The 2-SAT statement is the standard
-Boolean encoding when no clause touches three variables. ∎
+The unused tail and head sets have equal size because `F_f` contains `|P|`
+compatible arcs. A full completion is therefore exactly a bijection between the
+unused sets; imposing an allowed host restricts this bijection to a residual
+perfect matching.
 
-This imports the exact cycle-reservoir logic of PP3am into the fixed-centre
-transition branch, with the tree-root surplus isolated explicitly.
+A source obstruction contains at most three newly selected endpoint cells, so
+after the residual cells are fixed it depends on at most three pseudoforest
+component states. Unary and binary paid incidences depend on at most one or two
+selected cells. When residual cells are random or selected jointly, condition on
+`f` and classify each pattern by its number of additional residual arcs. ∎
+
+Thus the pseudoforest theorem reduces the large transition table to a Boolean
+component bank plus a residual matching problem of sublinear order. It does not
+by itself assert that this residual host is matchable or source-valid.
 
 ## 7. Revised transition endpoint
 
@@ -252,11 +274,15 @@ The bounded-choice alternatives of PP3zv reduce to one of:
    unicyclic bulk gives exact two-state variables.
 3. **Sublinear root surplus:** at most `o(N)` tree components retain a choice of
    unused predecessor or successor root.
-4. **Paid finite-state concentration:** the resulting rank-at-most-three source or
-   unary/binary cost reaches the cycle-credit scale.
-5. **Clean-chain branch:** the support-ranked paid criterion PP3zu applies before
+4. **Sublinear residual host:** the selected safe arcs leave an exact endpoint
+   matching problem on `o(N)` unused resources.
+5. **Paid finite-state concentration:** after residual completion, the resulting
+   rank-at-most-three source term or unary/binary cost reaches the cycle-credit
+   scale.
+6. **Clean-chain branch:** the support-ranked paid criterion PP3zu applies before
    the bounded-choice reduction.
 
 A generic two-valued relation and a diffuse near-complete transition star are no
 longer independent frontiers. The exact unresolved support objects are a minimal
-bicyclic Hall core, a paid Boolean cycle bank, or the sublinear root surplus.
+bicyclic Hall core, a paid Boolean cycle bank, the sublinear tree-root surplus, or
+the sublinear residual host.
