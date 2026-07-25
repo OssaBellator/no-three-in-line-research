@@ -181,14 +181,69 @@ D_\tau^{(2)}
 - Across the full deletion pass, all first-essentiality edges are covered at
   their valid historical times by at most
   \[
-  \sum_i w_i\le |E_*|\le t
+  \sum_iw_i\le |E_*|\le t
   \]
   batch exchange cycles.
 
-Thus the cubic edge-set ancestry ledger compresses to a linear family of
-historical batch cycles. Those cycles are valid relative to different selected
-matchings and different deletion times, so a common-epoch simultaneous flip is
-not yet proved.
+### Sparse rollback and exact payment
+
+Let `G` be the final host of a deletion pass, let
+
+\[
+\Delta=E(G_0)\setminus E(G),
+\]
+
+and for `e\in\operatorname{Ess}(G)` define
+
+\[
+\kappa(e)
+=
+\min\{|R|:R\subseteq\Delta,\ \operatorname{PM}(G+R-e)\ne\varnothing\}.
+\]
+
+- Every final essential edge has
+  \[
+  1\le\kappa(e)\le t.
+  \]
+  Thus common-epoch escape requires restoring at most one matching's worth of
+  deleted edges, not an entire deletion suffix.
+- If `R` is a minimum rollback set for `e`, every edge of `R` is essential in
+  `G+R-e`. Hence `R` is a forced matching and
+  \[
+  \operatorname{PM}(G+R-e)
+  \cong
+  \{R\}\times
+  \operatorname{PM}\bigl((G+R-e)-V(R)\bigr).
+  \]
+- For every threshold `q`, either `\kappa(e)<q`, or the avoiding matching problem
+  factors to side at most `t-q`.
+- Every fully forced rank-`1/2/3` terminal certificate can be destroyed by such
+  a rollback for any one of its prescribed edges.
+- Choosing one minimum rollback footprint for every edge of `E_*` gives
+  \[
+  \sum_{e\in E_*}|R_e|\le t^2.
+  \]
+  These footprints admit a disjoint-packing versus common-deleted-edge
+  concentration dichotomy.
+- A restored set `R` has exact direction-labelled full-token incidence
+  \[
+  \mathcal I(R)=(p+1)(h-1)|R|.
+  \]
+  Consequently all chosen minimum rollback footprints for `E_*` have total
+  labelled incidence at most
+  \[
+  (p+1)(h-1)t^2.
+  \]
+- If a packet family was clean before rollback, every recreated conflict uses a
+  restored edge. A clean packet of harmonic weight `W` gains at most
+  \[
+  2(t-1)^2W|R|
+  \]
+  represented triples.
+
+Common-epoch existence and its token/packet price are therefore closed. Large
+rollback cost already gives strict host factorization. The residual temporal
+problem is qualitative payment for a small restored-edge support.
 
 ## Important corrections
 
@@ -205,13 +260,13 @@ not yet proved.
 
 ## What remains conditional
 
-1. **Temporal exchange-cycle lifting.** Lift a large low-overlap subfamily of the
-   at most `t` historical batch cycles to one common host/matching epoch, or
-   prove that failure forces strict host decomposition or envelope expansion.
+1. **Cheap rollback conversion.** Convert a small restored-edge footprint into
+   destroyed target load, protected-reserve depletion, prefix or line-clean
+   continuation, strict envelope expansion, or another monotone payment.
 2. **Exchange-antichain geometry.** Convert a large CMR437 reachability antichain
    into a Hall separator, p-adic/carry concentration, or another executable
    inherited repair.
-3. **Repeated local ancestor resets.** Extend the deletion/ancestry payment to
+3. **Repeated local ancestor resets.** Extend the deletion/rollback payment to
    repeated compatible prefix-ancestor slots not arising from packet loss.
 4. **Low-height carry absorption.** Charge the remaining lower-height lines to
    first-separation, quotient, and primitive carry signatures.
@@ -228,10 +283,11 @@ not yet proved.
 
 There is no complete proof. On the prime-power route, packet construction,
 packet recurrence, state-cycle erasure, polynomial packet termination, raw
-edge-set ancestry width, exact one-edge exchange corridors, and linear temporal
-cycle compression are closed at their stated scales.
+edge-set ancestry width, exact exchange corridors, linear temporal cycle
+compression, common-epoch sparse rollback, rollback host factorization, and
+rollback token/packet accounting are closed at their stated scales.
 
-The principal remaining prime-power theorem is temporal or geometric use of the
-at most `t` historical batch exchange cycles, together with a corresponding
-payment for repeated local ancestor resets. Arbitrary side-length coverage
-remains necessary afterward.
+The principal remaining prime-power theorem is a geometric progress certificate
+for cheap rollback footprints, together with a corresponding payment for
+repeated local ancestor resets. Arbitrary side-length coverage remains necessary
+afterward.
