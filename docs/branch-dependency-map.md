@@ -26,6 +26,8 @@ This is the only branch intended to carry the full local-to-global proof chain.
 
 Consumes PA/CF chamber structure; returns a decreasing trade for every fixed reduced denominator `q`. Imported by AC2–AC4.
 
+AC3an--AC3aq now provide the exact alternating-core adapter. Once one AC role supplies a bounded denominator and direction shape together with fields `(q,d,e,xi,P,h)`, the paid family localizes to one exact scalar profile, one `q/gcd(det(d,e),q)` progression, and the weighted BDA5z co-anchor router. Paid and support faithfulness are explicit hypotheses rather than consequences of the denominator label. The remaining interface work is to prove those hypotheses for the actual AC3am role-pure outputs and to terminate the BDA dispersed-anchor or affine-chain alternatives.
+
 ### `research/rational-inverse-expansion`
 
 Solves I12 and classifies simultaneous small-doubling/order-two chains. Imported by AC3–AC4 when carry propagation enters a multiplicative structured exception.
@@ -56,9 +58,9 @@ proposed arithmetic chart.  They do not assume that OP2 or RI has
 already proved that chart complete.
 AC3aa--AC3ac import only the proved O1 partition and OP1a canonical
 phase-literal representation.  They construct the exact active-literal
-chart, prove that an exact O1 channel can require all \(h\) labels, and
-give a hard-exact heavy-soft chart with explicit \(2\tau\) one-block
-collateral error and at most \(3W/\tau\) heavy literals.  Large hard
+chart, prove that an exact O1 channel can require all `h` labels, and
+give a hard-exact heavy-soft chart with explicit `2tau` one-block
+collateral error and at most `3W/tau` heavy literals.  Large hard
 and heavy-soft literal families enter the subsequent internal routers;
 a subgroup-coset or bounded-denominator label is not called terminal
 until the independent RI or BDA paid-collateral interface applies.
