@@ -41,6 +41,7 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3hs–AC3ht | Raw reflected `CD` cells are nonradial; reflected profiles execute through separately proved radial support or realized-rank pivot routing | PROVED | `docs/alternating-core-bda-support-correction.md` |
 | AC3hu–AC3hv | Physical adjacent-scale moves form ticketed forests; strict denominator/scalar epochs have one bounded potential | PROVED | `docs/alternating-core-scalar-cycle-import.md` |
 | AC3hw | Every remaining arithmetic cycle contains a same-denominator non-scalar profile change in one explicit finite field | PROVED | `docs/alternating-core-scalar-cycle-import.md` |
+| AC3hx–AC3ia | Monotone-mask selected-state cycles erase; every nontrivial state change has a finite cross signature and is a ticketed rectangle or fixed-cross long alternating cycle | PROVED | `docs/alternating-core-state-cycle-erasure.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
