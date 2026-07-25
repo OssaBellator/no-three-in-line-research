@@ -42,14 +42,15 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR546--551 | Failed-selector polarization, unavailable-edge recurrence, rank-zero/rank-one collateral split, exact finite conflict stocks, recurrent target-load geometry, and fixed-selector history endpoint | PROVED | `docs/166-prime-power-fixed-selector-obstruction-stock.md` |
 | CMR552--557 | Canonical forbidden matching, time-independent collateral profile, static/dynamic selector classification, exact dynamic history bounds, global labelled selector stock, and no-double-counting endpoint | PROVED | `docs/167-prime-power-canonical-selector-ledger.md` |
 | CMR558--563 | Exact support-line decomposition, static rank polarization, heavy/dispersed line-weight lemma, rank-zero residual-line endpoint, rank-one secant-fan endpoint, and canonical static-collateral geometry | PROVED | `docs/168-prime-power-static-selector-line-profile.md` |
+| CMR564--568 | Exact rank-one secant-star splice, linear rank-zero line systems, fan-or-packing extraction, square-root packing, and combined static-selector geometry | PROVED | `docs/169-prime-power-static-line-bank-splice.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR563 has two canonical branches. Static selector collateral is
-now one heavy residual line, a large residual line bank, one heavy secant
-through a paid endpoint, or a large fixed-centre secant fan. Dynamic selector
+frontier after CMR568 has two canonical branches. Static selector collateral is
+now a heavy single conflict line, an established repeated-cell secant star, or
+a pairwise cell-disjoint rank-zero line-certificate packing. Dynamic selector
 failure has polynomial labelled stock unless one canonical allowed edge pays
 reintroduction or remains persistently unavailable. The next target is to
-splice the static line-profile sizes into the existing line-energy,
-mixed-ratio, protected-reserve, quotient/carry, deletion-ancestry, and envelope-
-expansion constants, while the persistent canonical blocker remains the
-parallel availability branch.
+attach the secant-star sizes to the strongest mixed-ratio/carry constants,
+attach the rank-zero packing to protected-line reserve, conflict-free
+selection, or deletion ancestry, and handle the persistent canonical blocker
+through reserve depletion or envelope expansion.
