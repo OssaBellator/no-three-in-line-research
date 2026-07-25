@@ -5,6 +5,10 @@ rectangle resources are reserved. In a superregular endpoint host this residual
 matching is automatic for every sufficiently small linear subbank. The only new
 unary issue is whether the opposite rectangle diagonal belongs to the host.
 
+The adaptive source-validity preparation also survives this reservation. Hence
+the residual matching may be chosen no-three against the retained source before
+the rectangle variables are exposed.
+
 ## 1. Robust perfect matching after balanced vertex deletion
 
 Let \(G=(L,R;E)\) be an \((\epsilon,d)\)-superregular balanced bipartite graph
@@ -101,21 +105,97 @@ definition of cross-safe. ∎
 
 This removes residual matching as a separate issue in the superregular branch.
 
-## 4. Revised dense-host endpoint
+## 4. Source-valid residual matching
 
-### Corollary PP3ou -- PROVED
+Assume the endpoint bank has undergone the adaptive preparation PP3nr. Thus the
+unary-invalid and anchored-transition classes vanish, while the normalized
+support-rank-four anchored-pair and support-rank-at-least-four inserted-triple
+expression is \(o(1)\).
 
-For a superregular source-safe endpoint host, the common-line rectangle branch
-has the following exact alternatives.
+Let \(q_0\) be the residual side size after rectangle resources are reserved.
+Assume
 
-1. A linear cross-safe rectangle bank is saturation-installable, and the
-   remaining problem is the rank-at-most-three geometric CSP with negative
-   quadratic shadow cost from PP3on--PP3op.
+\[
+q_0\ge\nu q
+\]
+
+for a fixed constant \(\nu>0\).
+
+### Theorem PP3ov -- PROVED FROM SR1
+
+Under the hypotheses of PP3ot and the adaptive preparation above, the residual
+superregular host contains a perfect matching \(M_0\) such that the retained
+source together with the cells of \(M_0\) is no-three-in-line.
+
+Moreover, the uniform residual perfect-matching law has fixed-rank probability
+\(O_\nu(q_0^{-r})\), and conditioning on source validity preserves this bound up
+to a constant factor for every fixed rank.
+
+#### Proof
+
+Deleting rectangle resources can only decrease every anchored-pair and
+inserted-triple pattern count. Replacing the original denominator \(q\) by
+\(q_0\ge\nu q\) changes the normalized rank-two and rank-three expressions by
+at most the constant factors \(\nu^{-2}\) and \(\nu^{-3}\). Hence their sum
+remains \(o(1)\).
+
+By PP3or, the residual host is superregular with fixed positive density. SR1
+therefore gives a constant \(K=K(d,\epsilon,\nu)\) such that every prescribed
+residual matching of rank \(r\le3\) occurs with probability at most
+\((K/q_0)^r\) in a uniform perfect matching.
+
+The expected number of remaining source-invalid anchored pairs and inserted
+triples is consequently \(o(1)\). The unary-invalid and transition classes are
+absent by PP3nr. Thus a residual perfect matching with no source-invalid pattern
+exists.
+
+The source-valid event has probability \(1-o(1)\). Dividing any fixed-rank
+cylinder probability by this probability preserves the \(O(q_0^{-r})\) bound. ∎
+
+This matching absorbs every source-validity condition involving only residual
+matching cells. It may contribute a fixed base amount to the shadow-cost
+objective, but it creates no empty geometric clause.
+
+## 5. Rectangle variables after residual preparation
+
+### Corollary PP3ow -- PROVED
+
+In the cross-safe superregular branch, choose the residual matching \(M_0\) from
+PP3ov and fix it before exposing rectangle states. Then:
+
+1. every no-three violation containing only retained-source points and residual
+   matching cells is absent;
+2. every remaining geometric clause contains at least one rectangle variable;
+3. the exact clause rank remains at most three;
+4. the exact shadow change remains a degree-at-most-two pseudo-Boolean function,
+   with the residual matching contribution absorbed into its constant and unary
+   state tables.
+
+Consequently common-line rectangle conversion in the superregular branch is
+reduced to finding a satisfying rectangle-state assignment with negative exact
+cost. Residual matching and residual source validity are no longer separate
+obstructions.
+
+#### Proof
+
+The first statement is PP3ov. Apply PP3on after adding the fixed residual
+matching cells to the retained set \(F\). Any forbidden triple not already
+excluded must meet at least one variable support, and it meets at most three.
+The shadow decomposition PP3oo allows fixed residual cells to contribute to the
+constant term or to unary costs involving one rectangle state; pairs of rectangle
+cells contribute binary costs. ∎
+
+## 6. Revised dense-host endpoint
+
+### Corollary PP3ox -- PROVED
+
+For a superregular adaptively prepared endpoint host, the common-line rectangle
+branch has the following exact alternatives.
+
+1. A linear cross-safe rectangle bank is saturation- and source-validity-
+   installable. The only remaining task is a satisfiable negative-cost assignment
+   for its rank-at-most-three CNF and quadratic shadow objective.
 2. The unary forbidden support contains a linear matching of cross cells.
-
-If the first branch fails after installation, the failure is geometric-CSP or
-paid-cost concentration. If the second branch occurs, it joins the existing
-unary Hall/matching obstruction rather than creating a new class.
 
 The genuinely separate residual-host issue is therefore confined to matchable
 but non-superregular endpoint hosts.
