@@ -30,12 +30,13 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR482--486 | Theta-fan private entering-edge sunflower, blocker resilience, rooted-conflict dichotomy, aggregate conflict payment, and harmonic packet/token endpoint | PROVED | `docs/154-prime-power-theta-fan-private-edge-payment.md` |
 | CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
 | CMR492--496 | Universal compatible-pair derangement cylinder, rank-two-on-line elimination, rooted-arm cleaning, equal-size rooted-star banks, and bottleneck-pair line-clean splice | PROVED | `docs/156-prime-power-universal-compatible-pair-line-clean.md` |
+| CMR497--501 | Minimum line-clean restoration cost, forced restoration core, cheap-or-factorization availability, exact token/conflict payment, and application to rooted/bottleneck cylinders | PROVED | `docs/157-prime-power-line-clean-rollback-availability.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR496 is availability and payment for the universal line-clean
-cylinders inside the current restricted envelope. The final mixed-cycle branches
-now have exact full-parent banks of size `D_{m-2}` with no rank-two collateral on
-their paid lines. The next target is to combine CMR334 frozen-bank averaging with
-rollback/private-edge accounting to force strict target-load decrease, reserve
-depletion, a heavy prefix or carry signature, lower-dimensional factorization,
-or envelope expansion.
+frontier after CMR501 is the cheap-availability selection theorem. Every final
+rooted-star arm and bottleneck pair has a line-clean cylinder; availability costs
+at most one residual matching, cheap restoration has exact token and packet
+price, and expensive restoration factors the host. The remaining task is to
+choose a cheaply restored completion whose destroyed inherited target load
+exceeds its recreated collateral, or force reserve depletion, a heavy
+prefix/carry signature, lower-dimensional factorization, or envelope expansion.
