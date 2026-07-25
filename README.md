@@ -41,6 +41,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/141-prime-power-packet-recreation-churn-ledger.md`](docs/141-prime-power-packet-recreation-churn-ledger.md): entering-edge support for recreated packet conflicts, equality with leaving-edge churn, and first-dirty scheduling.
 - [`docs/142-prime-power-packet-loss-deletion-ancestry.md`](docs/142-prime-power-packet-loss-deletion-ancestry.md): deletion-or-forced-ancestry response for lossy packet resets and the `t(t-1)` deletion budget.
 - [`docs/143-prime-power-fully-forced-packet-terminality.md`](docs/143-prime-power-fully-forced-packet-terminality.md): essentiality persistence and the polynomial completion-or-terminal-ancestry packet endpoint.
+- [`docs/144-prime-power-essential-core-ancestry-width.md`](docs/144-prime-power-essential-core-ancestry-width.md): monotone essential core, polynomial forced-certificate counts, and the fewer-than-`3t^3` edge-set ancestry ledger.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -114,39 +115,34 @@ Exact selected-state cycles are erasable. Distinct feasible parent states differ
 on at least two entering and two leaving edges, so state-space expansion pays
 edge incidence linearly.
 
-A selected conflict recreated under `M -> M'` contains an entering edge of
-`M'\setminus M`. The leaving set `M\setminus M'`, returned to the complementary
-available host, has equal cardinality.
-
 Inside one certificate-directed deletion pass, every lossy packet reset either
+deletes a nonessential edge while preserving a perfect matching or exposes a
+fully forced rank-three certificate. Deletion responses occur at most
+\(t(t-1)\) times, and a fully forced packet triple is terminal for the pass.
+Thus packet processing completes or reaches one terminal ancestry certificate
+within a polynomial number of installations.
 
-1. deletes a nonessential edge of a recreated triple while preserving a perfect
-   matching; or
-2. exposes a fully forced rank-three certificate with backward CMR217 exchange
-   ancestry.
-
-Deletion responses occur at most \(t(t-1)\) times. Essentiality persists under
-all later matchability-preserving deletions, so a fully forced packet triple is
-terminal for the current pass.
-
-The first-dirty packet schedule therefore either cleans every packet within
+The essential edges accumulated during the pass form one monotone matching core
+`E_*` of size at most `t`. After deduplicating identical prescribed edge sets,
+there are fewer than
 
 \[
-P\bigl(1+t(t-1)\bigr)
+t^3+t
 \]
 
-installations, or reaches one terminal fully forced ancestry certificate within
+fully forced rank-`1/2/3` certificates and fewer than
 
 \[
-P\bigl(2+t(t-1)\bigr)
+3t^3
 \]
 
-installations.
+distinct CMR217 ancestry links.
 
-The live prime-power frontier is now resolution or simultaneous resampling of
-that terminal exchange-ancestry certificate, together with a corresponding
-payment for repeated local ancestor resets. Arbitrary side-length coverage
-remains necessary afterward.
+The live prime-power frontier is therefore geometric use of this polynomial
+exchange-ancestry ledger: extract a large low-overlap family for simultaneous
+flipping, or force p-adic/carry concentration, strict host decomposition, or
+envelope expansion. A corresponding payment for repeated local ancestor resets
+and arbitrary side-length coverage remain necessary afterward.
 
 ## Running checks
 
@@ -179,6 +175,7 @@ python scripts/verify_prime_power_edge_incidence_state_expansion.py
 python scripts/verify_prime_power_packet_recreation_churn.py
 python scripts/verify_prime_power_packet_loss_ancestry.py
 python scripts/verify_prime_power_forced_packet_terminality.py
+python scripts/verify_prime_power_essential_core_ancestry.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
