@@ -86,40 +86,39 @@ def verify_explicit_mixed_fans() -> None:
 def verify_prime_power_unit_ratios() -> None:
     for p, h in ((3, 4), (5, 3), (7, 3), (11, 2)):
         t = p**h
-        valuations = {valuation(signed_weight(t, x), p) for x in range(t)}
+        signed = [signed_weight(t, x) for x in range(t)]
+        valuations = {valuation(value, p) for value in signed}
         assert len(valuations) == 1
         common = next(iter(valuations))
+        units = [value // (p**common) for value in signed]
 
         for x in range(t):
             assert comb(t - 1, x) % p == (-1) ** x % p
 
-        for x1 in range(t):
-            unit1 = signed_weight(t, x1) // (p**common)
-            for x2 in (0, t // 3, t // 2, t - 1):
-                if not 0 <= x2 < t:
-                    continue
-                unit2 = signed_weight(t, x2) // (p**common)
+        probes = (0, t // 3, t // 2, t - 1)
+        for unit1 in units:
+            for x2 in probes:
+                unit2 = units[x2]
                 ratio = (unit1 % p) * pow(unit2 % p, -1, p) % p
                 assert ratio == 1
 
 
 def verify_archimedean_localization() -> None:
     for t in range(4, 200):
-        for x1 in range(t):
-            for x2 in range(t):
-                ratio_numerator = unsigned_weight(t, x1)
-                ratio_denominator = unsigned_weight(t, x2)
+        weights = [unsigned_weight(t, x) for x in range(t)]
+        for numerator in weights:
+            for denominator in weights:
                 possible = (
-                    ratio_numerator <= (t - 1) * ratio_denominator
-                    and ratio_denominator <= (t - 1) * ratio_numerator
+                    numerator <= (t - 1) * denominator
+                    and denominator <= (t - 1) * numerator
                 )
                 if possible:
-                    assert ratio_numerator / ratio_denominator <= t - 1
-                    assert ratio_denominator / ratio_numerator <= t - 1
+                    assert numerator <= (t - 1) * denominator
+                    assert denominator <= (t - 1) * numerator
 
         for x in range(t - 1):
-            left = unsigned_weight(t, x + 1) * (t - 1 - x)
-            right = unsigned_weight(t, x) * (x + 1)
+            left = weights[x + 1] * (t - 1 - x)
+            right = weights[x] * (x + 1)
             assert left == right
 
 
