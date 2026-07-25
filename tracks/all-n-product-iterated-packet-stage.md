@@ -5,9 +5,10 @@
 This stage continues
 [`tracks/all-n-product-conditioned-packet-release-stage.md`](all-n-product-conditioned-packet-release-stage.md).
 PX210--PX214 extract and release one common-product packet with conditioned
-fixed-rank spread. PX215--PX218 now iterate that mechanism: distinct product
-levels overlap in at most two cells, residual support-four mass extracts another
-level, and any fixed packet family admits one simultaneous release measure.
+fixed-rank spread. PX215--PX218 iterate that mechanism. PX219--PX220 pay internal
+rank-three collateral after packet-compatible square-root thinning, while
+PX221--PX222 identify the sharp packet-count barrier and the surviving
+logarithmic release window.
 
 ## Current ledger
 
@@ -19,8 +20,11 @@ level, and any fixed packet family admits one simultaneous release measure.
 | Fixed packet packing | **COMPLETE** | PX217 releases any `k` packets jointly when `h>=32 max(1,Delta,k)`. |
 | Conditioned packet packing | **COMPLETE** | PX218 shows that exposure adds one complementary partial matching per packet and gives conditioned spread. |
 | Packet-certified support four | **ELIMINATED EXACTLY** | Every cross event certified by every released packet has probability zero. |
-| Absolute packet count | **OPEN** | No theorem yet proves that an absolute number of extracted packets pays all external rank-two mass. |
-| External rank one and rank three | **OPEN** | Their geometric weights are not yet fully below the destroyed-mass scale. |
+| Internal packet rank three | **CONTROLLED** | PX219--PX220 give a square-root packet restriction with linear expected internal rank-three collateral. |
+| Absolute packet count | **REFUTED FOR CANDIDATE ENERGY** | PX221 gives geometric-progression grids requiring `Omega(h)` product levels to remove a fixed energy fraction. |
+| Logarithmic packet window | **PROVED** | PX222 gives polynomial density/spread for `O(log h)` released packets and explicit support-excess thresholds. |
+| External rank one | **OPEN** | One release cell plus two background points is not yet below the destroyed-mass scale. |
+| Defect-weighted termination | **OPEN** | No theorem yet bounds the number of heavy levels carrying old selected defects. |
 | Infinite exact closure | **OPEN** | No terminating all-side doubling theorem follows yet. |
 
 ## 1. Product levels form a sparse algebraic family
@@ -36,9 +40,6 @@ For anchor `z=(a,b)` and nonzero product `p`, the packet is
 Each packet is a partial matching. PX215 subtracts two rectangular-hyperbola
 equations and obtains a line. Therefore distinct product levels have intersection
 at most two.
-
-This gives an exact low-overlap statement for every packet extracted in later
-generations; it does not rely on randomness or generic coordinates.
 
 ## 2. Residual support-four decoder
 
@@ -64,14 +65,7 @@ mass cannot stay diffuse across anchors and product values.
 ## 3. Joint release measure
 
 For `k` packet partial matchings, include one canonical rank-two bad event for
-every packet-certified cross. Together with the inherited forbidden cells, the
-canonical permutation conflict graph has:
-
-- singleton-to-packet dependency at most `2k(h-1)`;
-- packet-to-packet dependency at most `4k(h-1)`;
-- packet-to-singleton dependency at most `4Delta`.
-
-PX217 uses witnesses
+every packet-certified cross. PX217 uses witnesses
 
 \[
 x_1=\frac2h,
@@ -93,60 +87,114 @@ The uniform joint-release measure has cylinder bound
 \frac{e^{4\Delta+4k}}{(h)_{|E|}}.
 \]
 
-The result applies to the complete product-level packet, not only to one
-vertex-disjoint matching extracted from that level.
+For `k` packets, sequential exposure adds at most one complementary partial
+matching per packet. PX218 therefore replaces `Delta` by `Delta+k`, independently
+of the exposure rank, and gives residual cylinder constant `e^(4Delta+8k)`.
 
-## 4. Sequential exposure
+## 4. Internal rank-three collateral
 
-For one packet, an exposed edge has at most one complementary edge which would
-finish a packet-certified cross. Over an arbitrary partial exposure, these
-complementary positions form one partial matching.
-
-For `k` packets, the union has degree at most `k`. PX218 therefore replaces
-`Delta` by `Delta+k`, independently of the exposure rank. In residual order `n`,
-conditioned cylinders satisfy
+PX219 applies PX189 to one designated packet correspondence. It retains
 
 \[
-\Pr(E_1\subseteq M\mid E_0\subseteq M)
-\le
-\frac{e^{4\Delta+8k}}{(n)_{|E_1|}}.
+s\ge\frac12\sqrt h
 \]
 
-Thus fixed packet packing remains compatible with the sequential certificate
-accounting developed in PX198--PX214.
+indices whose complete packet subgrid contains only `O(s^4)` compatible
+collinear triples. The designated packet still has `s` arcs and certifies
+`binom(s,2)` crosses.
 
-## 5. Remaining proof tasks
+PX220 applies the joint-release cylinder law and obtains
 
-1. **Absolute packet-count theorem.** Show that after a bounded number of greedy
-   packet extractions, the residual support-four load falls below the PX214
-   improvement threshold.
-2. **Packet-energy potential.** Find a potential on anchor-product levels which
-   decreases whenever a new packet is added to the release family.
-3. **Many-packet constant control.** Improve the `e^(4k)` spread loss, or prove
-   that only bounded `k` is ever required.
-4. **External rank-one geometry.** Bound one release cell plus two background
-   points on the packet subgrid.
-5. **External rank-three geometry.** Combine PX189 with the joint-release cylinder
-   law to pay all-candidate packet-subgrid triples with usable constants.
-6. **Destroyed old mass.** Relate packet-certified candidate energy to defects
-   present in the current selected state.
-7. **Depth-two accounting.** Combine the packet family with loaded-line and clean-
-   star recursion and prove strict net descent.
+\[
+\mathbb E\Phi_{3,\rm int}
+=
+O\!\left(e^{4\Delta+4k}s\right).
+\]
+
+Thus internal rank three is linear while the designated packet cross family is
+quadratic. The conditioned statement has constant `e^(4Delta+8k)`.
+
+## 5. Packet-count barrier
+
+For geometric-progression coordinates `x_i=y_i=2^i` and anchor zero, product
+levels have sizes
+
+\[
+1,2,\ldots,h-1,h,h-1,\ldots,2,1.
+\]
+
+PX221 computes total candidate support-four energy
+
+\[
+\frac{h(h-1)(2h-1)}6.
+\]
+
+One level contains at most `binom(h,2)` energy, so reducing the total by half
+requires at least `(2h-1)/6` released levels. Therefore the former absolute
+packet-count target is false without extra weighting by the current selected
+state.
+
+## 6. Logarithmic packet window
+
+PX222 substitutes
+
+\[
+k\le\kappa\log h
+\]
+
+into PX217--PX218. The unconditioned cylinder loss is at most `h^(4kappa)` and
+the conditioned loss at most `h^(8kappa)`, up to fixed `Delta` factors.
+
+A square-root-thinned support-`u`, rank-`r` sector still gains a power when
+
+\[
+\kappa<\frac{u-r}{8}
+\]
+
+unconditionally, or
+
+\[
+\kappa<\frac{u-r}{16}
+\]
+
+after exposure. This leaves a viable route through logarithmically many
+**defect-heavy** packets, but not through all candidate-heavy levels.
+
+## 7. Remaining proof tasks
+
+1. **Defect-level concentration.** Prove that old selected defects occupy only
+   `O(log h)` heavy anchor-product levels.
+2. **Defect-weighted packet potential.** Replace unrestricted candidate energy by
+   a potential charging only current defects and prove strict decrease under
+   joint release.
+3. **External rank-one geometry.** Bound one release cell plus two background
+   points on the thinned packet subgrid.
+4. **Minimal-support sectors.** Control sectors which receive no or only one
+   support-excess power.
+5. **Destroyed old mass.** Relate packet-certified candidate crosses to defects
+   actually present in the current matching.
+6. **Many-packet constants.** Sharpen the `e^(4k)` and `e^(8k)` losses in the
+   logarithmic regime.
+7. **Depth-two accounting.** Combine defect-heavy packet release with loaded-line
+   and clean-star recursion and prove strict net descent.
 8. **Closure conversion.** Insert the terminating decoder into PX63.
 
-The immediate frontier is item 1 or item 2. The second-packet extraction and the
-probability theory for every fixed packet family are no longer missing inputs.
+The immediate frontier is item 1 or item 2. Candidate-energy bounded termination
+is now refuted, while internal rank three and the probability theory for fixed
+or logarithmic packet families are no longer missing inputs.
 
-## 6. Verification
+## 8. Verification
 
 ```bash
 python scripts/verify_product_iterated_packet_release.py
+python scripts/verify_product_thinned_joint_packet.py
+python scripts/verify_product_packet_count_barrier.py
 ```
 
-The verifier checks product-level intersections, the residual extraction
-inequalities, exact joint packet-cross avoidance at order eight, all symbolic
-`k`-packet local-lemma inequalities, the density estimate, and the conditioned
-one-partial-matching-per-packet structure.
+The verifiers check product-level intersections, residual extraction, exact joint
+release, conditioned complement structure, packet-compatible thinning, exact
+rank-three transfer, the geometric-progression energy identity, the linear
+packet-count lower bound, and logarithmic spread exponents.
 
 The classical no-three-in-line conjecture and infinite product closure remain
 open.
