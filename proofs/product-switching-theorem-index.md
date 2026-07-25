@@ -2,8 +2,9 @@
 
 This index continues the product-construction ledger after PX97. It records
 the strong-complete switching, affine-square, marker-flow, affine-orbit,
-exact-cover, lattice, absorber, sign-quotient, and completion-reservoir results
-developed on `research/all-n-product-construction`.
+exact-cover, lattice, absorber, sign-quotient, completion-reservoir, and
+protected-direction results developed on
+`research/all-n-product-construction`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -73,33 +74,52 @@ developed on `research/all-n-product-construction`.
 | PX161 | The PX141 almost-matching can simultaneously bound every one-new-edge anchored affine-triangle load by `p^eta` | PROVED USING PX141 EXTERNAL INPUT | `docs/90-anchored-completion-shape-control.md` |
 | PX162 | Every affine shape has exact occurrence incidences, and bounded matching number in `B` buckets gives at most `9(q-1)(p-1)B` occurrences | PROVED | `docs/91-high-arity-repeated-shape-conflicts.md` |
 | PX163 | Fixed high-arity random bucketing gives a simply bounded pure-completion repeated-shape conflict system | PROVED | `docs/91-high-arity-repeated-shape-conflicts.md` |
+| PX164 | Every prospective completion edge has at most `p^eta` selected old secant partners of one prescribed slope and role | PROVED USING PX141 EXTERNAL INPUT | `docs/92-mixed-shape-stars-and-exact-triangle-completion.md` |
+| PX165 | Five-occurrence stars give simply bounded local-degree control in all affine-triangle completion sectors | PROVED | `docs/92-mixed-shape-stars-and-exact-triangle-completion.md` |
+| PX166 | Balanced row buckets give simply bounded mixed repeated-shape conflicts | PROVED | `docs/92-mixed-shape-stars-and-exact-triangle-completion.md` |
+| PX167 | Every sufficiently large prime has an exact strong-complete mapping with affine-triangle multiplicity at most `p^gamma` | PROVED USING EXTERNAL MATCHING THEOREMS | `docs/92-mixed-shape-stars-and-exact-triangle-completion.md` |
+| PX168 | Colored secant stars form a simply bounded all-completion conflict system | PROVED | `docs/93-exact-subpower-strong-complete-seeds.md` |
+| PX169 | Every sufficiently large prime has an exact strong-complete mapping with `mu<=p^(1+gamma)` and `tau<=p^gamma` | PROVED USING EXTERNAL MATCHING THEOREMS | `docs/93-exact-subpower-strong-complete-seeds.md` |
+| PX170 | Exact strong-complete affine-orbit measures have rank-three cylinder constants at most `p^gamma` | PROVED | `docs/93-exact-subpower-strong-complete-seeds.md` |
+| PX171 | Every fixed family of nonproportional linear forms defines a `p`-regular linear exact-cover host | PROVED | `docs/94-fixed-family-protected-rainbow-spread.md` |
+| PX172 | Every fixed linear-form family has an exact simultaneous-rainbow seed with subpower secant and triangle multiplicities | PROVED USING EXTERNAL MATCHING THEOREMS | `docs/94-fixed-family-protected-rainbow-spread.md` |
+| PX173 | Every fixed protected direction family has exact two-stage joint rank-three spread with arbitrarily small power loss | PROVED | `docs/94-fixed-family-protected-rainbow-spread.md` |
+| PX174 | Every positive primitive direction has an explicit rectangle pair with `Omega(n^3/h)` transversal completions | PROVED | `docs/95-polynomial-direction-growth-necessity.md` |
+| PX175 | Polynomial rectangle codegree saving requires polynomially many protected directions | PROVED | `docs/95-polynomial-direction-growth-necessity.md` |
 
 ## Current exact boundary
 
-The switching-flow route is complete through the entire one-bridge nonlinear
-shell. The affine-orbit route has explicit constant-multiplicity seeds through
-order 53. The exact-cover route proves a pseudorandom almost-seed for every
-sufficiently large prime and computes the complete lattice obstruction to exact
-completion. The sign-pair quotient supplies a smaller regular testbed with exact
-odd seeds through order 67 and the correct fixed-bin first moments.
+The exact-cover program now proves substantially more than finite seed evidence.
+For every fixed `gamma>0` and all sufficiently large primes, PX169 gives an
+exact strong-complete mapping with
+
+\[
+\mu(f)\le p^{1+\gamma},
+\qquad
+\tau(f)\le p^\gamma.
+\]
+
+PX173 extends the resulting affine-orbit spread to every fixed finite family of
+protected directions, uniformly in the conditional second rainbow stage.
 
 The individual bounded-absorber program is completely resolved in the negative:
 PX156 proves that no fixed order absorbs every two-point lattice leftover over
 all primes.
 
-The duplicated-reservoir route now solves three pieces of exact pseudorandom
-completion:
+The remaining direct rectangle bottleneck is now quantitative and unavoidable.
+PX174 shows that infinitely many primitive directions have full-order
+transversal codegree, and PX175 proves that obtaining a fixed polynomial
+codegree saving requires polynomially many protected directions. The published
+pseudorandom and conflict-free matching theorems used by PX141--PX173 assume
+fixed uniformity, so they do not supply this growing-direction statement.
 
-1. projection-collision-free row-perfect matchings project to exact
-   strong-complete mappings;
-2. every fixed one-completion-edge/two-old-edge affine-shape load is at most
-   `p^eta` in the first-stage matching;
-3. high-arity bucketing bounds the all-completion contribution to every affine
-   shape by `O(p^(1+beta))` for arbitrarily small fixed `beta>0`.
+The next viable proof targets are therefore:
 
-The remaining geometric sector consists of affine-shape occurrences using two
-completion edges and one selected old edge. Proving mixed high-arity degree and
-codegree bounds for all overlap patterns would complete the conflict-system
-input needed to preserve subpower triangle multiplicities during exact
-completion. Collective or growing-order absorption remains an alternative, but
-fixed local absorber order is impossible.
+1. a growing-uniformity version of the exact simultaneous-rainbow completion
+   theorem, strong enough for `s=p^kappa` linear forms;
+2. a direction-aware conflict process which handles polynomially many low-height
+   labels without making each label a host part;
+3. a return to the low-syndrome/repair route, now using the exact subpower seed
+   and spread theorems to control second-generation certificate loads.
+
+No exact infinite product closure is claimed yet.
