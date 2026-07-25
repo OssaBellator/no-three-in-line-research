@@ -76,11 +76,21 @@ AC3hi--AC3hk route old-axis histories to one of:
 
 AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weighted line star gives a pair-core bank, a direct current-anchor rematching bank, one heavy current certificate, an explicit labelled overload or a realized next created-cell rank.
 
+AC3hx--AC3ia import the general monotone-mask cycle-erasure principle and add an alternating-core-specific cross signature of ambient size `2Ln^2(n-1)^2`. Every nontrivial state change is a capacity-one rectangle or a genuinely long alternating cycle. Recurrent long signatures force repeated reinsertion of one exact layer-cell.
+
+## All-n branch audit
+
+`docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
+
+- `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta theorems require credited-host hypotheses before AC3ia can delegate a long-cycle core.
+- `research/all-n-composite-modulus` reaches CMR545 and supplies exact cycle erasure, churn and prime-power signature ancestry. AC3hx imports only the arithmetic-free monotone-mask principle.
+- `research/all-n-product-construction` has exact product encodings, SAT reductions and finite witnesses, but no unconditional global selector or stronger AC recurrence interface.
+
 ## Current frontier
 
-1. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
-2. Classify same-denominator non-scalar changes of primitive direction, residue/unit, rank/channel, anchor/context, external role or bank type.
-3. Build the residual finite transition quotient from those labelled edges and assemble AC4.
+1. Pay or finitely classify fixed-cross long-cycle and repeated layer-cell reinsertion cores, or verify the credited-host hypotheses needed for prime-patching delegation.
+2. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
+3. Build the residual finite transition quotient from epoch/context changes and retained arithmetic-role edges, then assemble AC4.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
@@ -89,12 +99,6 @@ AC3hl--AC3hp close the remaining fixed-pair and historical-line topology. A weig
 - `research/orbit-phase-expansion`: finite phase/literal interfaces imported only where proved.
 - `research/superregular-resampling`: dense-host local-load endpoint.
 - `research/sparse-algebraic-spread`: sparse-host spread and two-layer selection.
-
-Independent all-`n` routes remain:
-
-- `research/all-n-prime-patching`
-- `research/all-n-composite-modulus`
-- `research/all-n-product-construction`
 
 ## Merge discipline
 
