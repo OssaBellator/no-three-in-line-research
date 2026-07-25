@@ -18,10 +18,11 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR422--425 | Lossy packet reset deletion/forced-ancestry dichotomy, finite deletion budget, packet-installation bound, and conditional ancestry-width closure | PROVED / PROVED UNDER THE ANCESTRY-WIDTH HYPOTHESIS | `docs/142-prime-power-packet-loss-deletion-ancestry.md` |
 | CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
 | CMR429--432 | Essential edges form one monotone matching core, first-essentiality layers, polynomial forced-certificate counts, and polynomial edge-set ancestry ledger | PROVED | `docs/144-prime-power-essential-core-ancestry-width.md` |
+| CMR433--438 | Matching-contraction cycle criterion, exact one-edge exchange corridor, chain batch flips, exact Dilworth cycle-cover width, batch-or-branch dichotomy, and linear temporal cycle compression | PROVED | `docs/145-prime-power-exchange-corridor-path-cover.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR432 is geometric use of the polynomial exchange-ancestry
-ledger and payment for repeated local ancestor resets. In one deletion pass the
-final essential core has at most `t` edges, fewer than `t^3+t` distinct forced
-rank-`1/2/3` edge-set certificates occur, and their distinct CMR217 ancestry
-links total fewer than `3t^3`.
+frontier after CMR438 is temporal or geometric use of at most `t` historical
+batch exchange cycles and payment for repeated local ancestor resets. At one
+deletion, newly essential matching edges form a reachability poset: chains can
+be exchanged together in one alternating cycle, while antichains certify
+branches which no one exchange cycle through that deletion can address.
