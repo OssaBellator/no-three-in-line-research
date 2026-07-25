@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR351--CMR357.
+"""Finite checks for CMR378--CMR384.
 
 The checks cover exact host churn under an old-cell-clean rematching, the flat
 p-adic fine-token return profile of a coarse block, one-pass aggregate bounds,
 reset-multiplicity thresholds, and the primitive-line witness trichotomy used in
-CMR357.
+CMR384.
 """
 
 from __future__ import annotations
@@ -126,7 +126,7 @@ def verify_flat_token_profile() -> None:
 
 
 def verify_one_pass_sums() -> None:
-    """Check CMR354--CMR355 exactly at the displayed arithmetic level."""
+    """Check CMR381--CMR382 exactly at the displayed arithmetic level."""
 
     for prime in (3, 5, 7, 11):
         directions = prime + 1
@@ -149,7 +149,7 @@ def verify_one_pass_sums() -> None:
 
 
 def verify_reset_multiplicity_threshold() -> None:
-    """Check the ancestor-slot pigeonhole threshold from CMR356."""
+    """Check the ancestor-slot pigeonhole threshold from CMR383."""
 
     for depth in range(1, 12):
         slots = 2 * depth
@@ -172,7 +172,7 @@ def verify_reset_multiplicity_threshold() -> None:
 
 
 def verify_witness_trichotomy() -> None:
-    """Enumerate the valuation alternatives underlying CMR357."""
+    """Enumerate the valuation alternatives underlying CMR384."""
 
     for prime in (3, 5, 7):
         modulus = prime**4
