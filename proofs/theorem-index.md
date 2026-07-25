@@ -37,6 +37,10 @@ This ledger records only branch-specific statements.
 | BDA5n | Heavy two-role collateral localizes to one of `36` ordered channel comparisons and an explicit affine/radial locus | PROVED | `docs/bounded-denominator-role-geometry.md` |
 | BDA5o | Every role channel has an exact primitive-slope and signed-offset dictionary | PROVED | `docs/bounded-denominator-role-slope-dictionary.md` |
 | BDA5p | Non-wall one-cell collateral yields one heavy primitive slope or quantified slope spread | PROVED | `docs/bounded-denominator-role-slope-dictionary.md` |
+| BDA5q | All one-cell channel determinants collapse modulo `q` to the scalar `h det(d,e)` | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
+| BDA5r | Mixed wall directions retain the radial projective class at the exact remaining prime-power precision | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
+| BDA5s | The reflected `CD` line has one explicit scalar valuation and cancellation profile | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
+| BDA5t | Mixed wall invisibility is canonical descent to effective denominator `q/gcd(h,q)` | PROVED | `docs/bounded-denominator-wall-descent.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
