@@ -62,6 +62,10 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3cn–AC3co | Large blocker profiles use the exact cap and satisfy raw weight at least `(t)_sG/(108L)` | PROVED | `docs/alternating-core-ri-derangement-extension-formula.md` |
 | AC3cp–AC3cq | Every exact blocker prescription is one of nine crossed-rectangle path/cycle types | PROVED | `docs/alternating-core-ri-blocker-rectangle-geometry.md` |
 | AC3cr–AC3ct | All-I6 blocker paths/cycles have telescoping product laws and closure/affine routers | PROVED | `docs/alternating-core-ri-blocker-rectangle-geometry.md` |
+| AC3cu–AC3cx | New blocker cells common to every repair are zero except one universal two-closure crossed rectangle | PROVED | `docs/alternating-core-ri-fixed-blocker-collateral.md` |
+| AC3cy–AC3da | Every state-independent new union triple is supported on closure cells, a closure rectangle, or one `mh=2` transfer rectangle | PROVED | `docs/alternating-core-ri-state-independent-union.md` |
+| AC3db–AC3df | Incomplete fibres and root imbalance yield carry defects, off-family current companions, or `1/51` one-cell completion families | PROVED | `docs/alternating-core-ri-missing-companions.md` |
+| AC3dg–AC3di | Coherent scale dispersion has at most thirty conflict ratios and a row-column-disjoint `1/31` scale bank | PROVED | `docs/alternating-core-ri-scale-dispersion.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
