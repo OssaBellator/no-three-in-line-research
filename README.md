@@ -4,7 +4,7 @@
 
 This is the principal dependent proof-chain branch. It starts after the proved alternating star-neutralization bank and develops second-order concentration, paid structural re-extraction, no-recycling, two-colour termination, reverse-scale compatibility, and the prime-minus-one endpoint. Canonical proof notes are stored in `docs/`.
 
-> **Status:** The bounded-denominator exit has an exact quantitative adapter through BDA scalar profiles and weighted co-anchored `h,h+q` pairs. The rational-inverse route has been corrected and advanced: canonical paid OP roots are fixed by physical completion, so they cannot pay completion components. Instead every I6 fixed-edge state lifts through one common RI5f boundary closure, with exact blocker repair and active/blocker collateral accounting. The blocker average now splits into singleton, finite small-derangement, or normalized large-rank profiles. Active rank one amplifies to raw weight `mhC1`, localizes to one source-target-shift channel with no subgroup-order loss, and then routes to direction spread, offset spread, a heavy line, or at most two moving cells. The branch still lacks a total transition oracle.
+> **Status:** The bounded-denominator exit has an exact quantitative adapter through BDA scalar profiles and weighted co-anchored `h,h+q` pairs. The rational-inverse route has been corrected and advanced: canonical paid OP roots are fixed by physical completion, so they cannot pay completion components. Instead every I6 fixed-edge state lifts through one common RI5f boundary closure, with exact blocker repair and source-coset-rank active accounting. The blocker average splits into singleton, finite small-derangement, or normalized large-rank profiles. Source-coset rank one amplifies to raw weight `mhC1`, localizes to one source-target-shift channel with no subgroup-order loss, and then splits into one moving cell with affine direction/offset geometry or two moving cells with an exact secant address. The branch still lacks a total transition oracle.
 
 ## Branch map
 
@@ -32,13 +32,13 @@ This is the principal dependent proof-chain branch. It starts after the proved a
 - [`docs/alternating-core-ri-scale-pairing.md`](docs/alternating-core-ri-scale-pairing.md): weighted common-scale pairing or one-root imbalance.
 - [`docs/alternating-core-ri-closed-fixed-edge-bank.md`](docs/alternating-core-ri-closed-fixed-edge-bank.md): corrected common-closure I6 bank and exact collateral criterion.
 - [`docs/alternating-core-ri-blocker-average.md`](docs/alternating-core-ri-blocker-average.md): blocker occupancy split and profile amplification.
-- [`docs/alternating-core-ri-i6-rank-one.md`](docs/alternating-core-ri-i6-rank-one.md): rank-one active I6 affine/channel geometry.
+- [`docs/alternating-core-ri-i6-rank-one.md`](docs/alternating-core-ri-i6-rank-one.md): source-coset-rank-one affine/secant geometry.
 - [`docs/alternating-core-formal-termination.md`](docs/alternating-core-formal-termination.md)
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch theorem ledger.
 
 ## Highest-value frontier
 
-1. Classify the closed-bank active rank-two and rank-three terms `C2,C3`, and the heavy-line/context-pair output from `C1`.
+1. Classify the closed-bank source-coset-rank-two and rank-three terms `C2,C3`, and the heavy affine-line or exact-secant incidence returned by `C1`.
 2. Classify the blocker outputs: singleton affine profiles, five small derangement tables, and large normalized rank profiles.
 3. Bound or structurally route the state-independent closed-completion collateral `F`, plus incomplete fibres, root-scale imbalance, and physical-scale dispersion.
 4. Prove that each actual AC3am denominator role supplies the AC3aq paid/support-faithful fields, then close the BDA dispersed-anchor and affine-chain alternatives.
