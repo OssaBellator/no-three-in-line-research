@@ -65,7 +65,7 @@ The physical coordinates of any one moving cell recover `α,β,t` uniquely.
 
 ### Proof
 
-The column determines its source coset and its unique subgroup coordinate `g`. The row denominator divided by `g` determines the target coset and then the shift. Two cells from the same source coset can occur in one I6 state only when these recovered data agree. QED.
+The column determines its source coset and subgroup coordinate `g`. The row denominator divided by `g` determines the target coset and then the shift. Two cells from the same source coset can occur in one I6 state only when these recovered data agree. QED.
 
 ## AC3bq -- local conic-rank classification -- PROVED
 
@@ -84,24 +84,21 @@ The two possibilities have exact geometries.
    O=\det(e,Z-A),
    $$
    the triple has one primitive affine direction and signed offset.
-2. **Two moving cells.** The moving pair `Z_1,Z_2` lies on one channel conic and the third cell is fixed. The unordered pair has exact secant address
+2. **Two moving cells.** The moving pair `Z_1,Z_2` lies on one channel conic and the third cell is fixed. If their columns are `x_1,x_2`, the unordered pair has exact symmetric address
    $$
-   \left(x_1+x_2,\ x_1x_2\right)
-   =
-   \left(x_1+x_2,\lambda_\chi\right)
-   \pmod p.
+   \boxed{(S,P)=(x_1+x_2,x_1x_2)\pmod p.}
    $$
-   For fixed `χ` and fixed sum, the unordered moving pair is unique.
+   Equivalently, it has the exact affine line through `Z_1,Z_2`. For fixed channel and fixed line there is at most one unordered pair.
 
 ### Proof
 
 All moving cells lie on the nondegenerate conic `xy=λ_χ`. The reduction modulo `p` of the primitive real line containing the triple is a nonzero modular line, so it meets the conic in at most two points. This excludes `k=3`. The one-cell affine address is standard. In the two-cell case the columns are the roots of
 
 $$
-X^2-(x_1+x_2)X+x_1x_2=0,
+X^2-SX+P=0,
 $$
 
-so their sum and product determine the unordered pair. QED.
+so `(S,P)` determines the unordered pair. The line-conic intersection bound gives the equivalent line formulation. QED.
 
 ## AC3br -- exact raw-weight amplification and channel localization -- PROVED
 
@@ -127,7 +124,7 @@ $$
 
 Inside that channel, either the one-moving-cell class or the two-moving-cell class carries at least half its weight.
 
-In particular, if AC3bi gives `C_1>=G/4`, then one channel and one local multiplicity carry raw weight at least
+If AC3bi gives `C_1>=G/4`, then one channel and one local multiplicity carry raw weight at least
 
 $$
 \boxed{G/(8m).}
@@ -135,7 +132,7 @@ $$
 
 ### Proof
 
-The exact probability follows from the I6 source-coset rank formula. Pigeonhole over at most `m^2h` channels and then over the two local multiplicities. QED.
+Use the exact I6 source-coset-rank probability, then pigeonhole over at most `m^2h` channels and two local multiplicities. QED.
 
 The subgroup order cancels completely.
 
@@ -161,19 +158,15 @@ On one line and channel there are at most two possible moving cells.
 
 ### Two-moving-cell side
 
-Fix one channel and two-moving-cell raw weight `S`. Partition by the modular secant sum
-
-$$
-s=x_1+x_2.
-$$
-
-For every threshold `beta>0`, either one exact secant sum carries more than `beta`, or at least
+Fix one channel and two-moving-cell raw weight `S`. Partition by exact secant line, or equivalently by the symmetric pair address `(S,P)`. For every threshold `beta>0`, either one exact moving pair carries more than `beta`, or at least
 
 $$
 \lceil S/beta\rceil
 $$
 
-distinct secant sums occur. A fixed channel and sum determine one unordered moving pair, so a heavy sum is a heavy exact pair together with its fixed-context incidence.
+distinct secant lines or pair addresses occur.
+
+A fixed channel and secant line determine one unordered moving pair, so a heavy line is a heavy exact pair together with its fixed-context incidence.
 
 ### Proof
 
@@ -198,8 +191,8 @@ The output is one of:
 - many primitive context directions;
 - many parallel affine offsets;
 - one heavy exact affine line and at most two moving cells;
-- many modular secant sums;
-- one heavy exact moving pair with its fixed context incidence.
+- many exact secant lines or symmetric pair addresses;
+- one heavy exact moving pair with its fixed-context incidence.
 
 Every output retains its source coset, target coset, shift, product channel, physical cells, and affine or secant address.
 
@@ -209,4 +202,4 @@ The source-coset-rank-one term is now a raw physical one-cell or two-cell conic 
 
 ## Finite check
 
-`scripts/verify_ac_ri_i6_rank_one.py` enumerates small primes and subgroup cosets, verifies unique common channel labels, one- and two-cell source-coset probabilities, impossibility of three collinear channel cells, secant-pair uniqueness, raw-weight cancellation, and the affine/secant routers.
+`scripts/verify_ac_ri_i6_rank_one.py` enumerates small primes and subgroup cosets, verifies unique common channel labels, one- and two-cell source-coset probabilities, impossibility of three collinear channel cells, symmetric secant-pair uniqueness, raw-weight cancellation, and the affine/secant routers.
