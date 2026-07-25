@@ -1,131 +1,106 @@
-# All-n product track: audited entry and rectangle-invariant stage
+# All-n product track: effective rectangle-label repair stage
 
 **Branch:** `research/all-n-product-construction`
 
 This stage continues
 [`all-n-product-weighted-return-splice-stage.md`](all-n-product-weighted-return-splice-stage.md).
-PX397--PX450 recover and audit the actual PX63 entry theorem, replace the hidden
-subpower line/channel hypotheses by exact rectangle-label arguments, lift every
-large-block decoder sector to factor-compatible `t/r` label permutations, and
-obtain an asymptotic exact-doubling reduction subject to one common cutoff and a
-dependency audit.
+PX397--PX450 audit the PX63 entry and lift every active decoder to exact
+rectangle-label moves.  PX451--PX478 complete the dependency audit, instantiate
+all asymptotic constants, remove the growing packet-family parameter from the
+active route, and give one explicit common cutoff.
 
 ## Current ledger
 
 | Item | Status | Current result |
 |---|---|---|
-| PX63 source statement | **RECOVERED** | The random rectangle state has explicit expected defect bound and `O(n log n)` potential. |
-| Entry dichotomy | **AUDITED** | PX397--PX403 give a large/nested label block or a weighted terminal source with good-bank destruction `D/18` and cylinder factor nine. |
-| Seed line occupancy | **AUDITED** | PX404 gives `K=n^(1/3+o(1))`; PX407--PX410 show three return amplifications still cross the square-root threshold. |
-| Layer/channel hypothesis | **REMOVED FOR TERMINAL RETURN** | PX411--PX419 replace endpoint channels by the two exact rectangle label variables `t,r`. |
-| First-generation host invariants | **LIFTED** | PX420--PX427 implement clean-star, radial, and loaded-line banks as paired label permutations. |
-| Packet correction host invariants | **LIFTED** | PX428--PX436 give typed packets, paired correction graphs, and factor-compatible Bernoulli strict sign. |
-| Mixed-shadow host invariants | **LIFTED** | PX437--PX441 retain the exact two-bank destruction inequality in paired label space. |
-| Packet recurrence | **LIFTED** | PX442--PX443 identify packet complements with label two-cycle events and apply joint release in label space. |
-| Unified rectangle invariant | **AVAILABLE AS REDUCTION** | PX444 keeps all indexed decoder moves inside the PX43/PX61 factor-compatible rectangle state space. |
-| Paired support-four constant | **CORRECTED** | PX445 uses `32768 e^(4Delta)/eta` to leave relative margin `eta/8`. |
-| Paired large-block sign | **AVAILABLE AS REDUCTION** | PX446--PX447 retain internal gap and strict-sign-or-child after constant-copy lifting. |
-| Re-entry after each decrease | **AVAILABLE** | PX448 applies the one-hit label construction to every positive rectangle state, not only the initial PX63 seed. |
-| Asymptotic repair loop | **PROVED UNDER LABEL-INTERFACE REDUCTIONS** | PX449 gives a finite host-compatible causal subtree ending in strict decrease for sufficiently large order. |
-| Asymptotic exact doubling | **REDUCED** | PX450 iterates integer potential descent to zero, pending common-cutoff and dependency audit. |
-| Common finite cutoff | **OPEN** | One numerical threshold must dominate paired spread, divisor, label-degree, and terminal-transposition conditions. |
-| Below-cutoff orders | **OPEN** | Finite base orders need exact absorbers, certificates, or an independent path into the asymptotic range. |
-| Dependency audit | **OPEN** | Mechanically verify that PX397--PX449 invoke only paired label moves and no obsolete individual-point bank. |
-| Exact all-side closure | **OPEN** | The finite-order and audit obligations have not been discharged. |
+| PX63 source statement | **RECOVERED** | Every saturated side-`n` factor has a factor-compatible rectangle state with `O(n log n)` bad triples. |
+| Entry dichotomy | **AUDITED** | PX397--PX403 give a repeatable label-block/high-source entry with good-bank destruction `D/18` and cylinder factor nine. |
+| Rectangle host invariants | **LIFTED** | PX411--PX444 implement terminal, first-generation, packet, mixed-shadow, and recurrence moves as paired `t/r` label permutations. |
+| Actual seed line cap | **AUDITED** | PX404 and PX470 use the explicit `n^(1/3+o(1))` line cap; four one-variable returns cross the effective threshold. |
+| Paired internal sign | **EFFECTIVE** | PX445--PX446 use the corrected constants and explicit `A_3=320` to keep internal rank-three creation below destruction. |
+| Dependency DAG | **AUDITED** | PX451--PX452 and the JSON manifest certify an acyclic rectangle-label/arithmetic dependency path through PX478. |
+| Nested depth | **EFFECTIVE** | PX461--PX465 give an exact depth formula and cumulative spread exponent. |
+| Divisor loss | **EFFECTIVE** | PX466--PX468 give `mathfrak d(N)<=10^27 N^(1/6)`. |
+| Packet-family parameter | **REMOVED FROM ACTIVE PATH** | PX471--PX473 pay support four directly above threshold and use historical packet corrections below it. |
+| Common asymptotic cutoff | **EXPLICIT** | PX474--PX478 certify `N_0=10^4000`. |
+| Asymptotic exact doubling | **PROVED AS A REDUCTION** | For every `n>=N_0`, the host-compatible causal repair loop reaches zero bad triples, subject only to the already indexed label-interface reductions. |
+| Below-cutoff orders | **OPEN** | Direct enumeration is impossible at this cutoff; a non-enumerative bridge or a drastically sharper cutoff is required. |
+| Exact all-side closure | **OPEN** | The finite-range bridge has not been proved. |
 
-## 1. Audited entry hierarchy
+## Effective constants
 
-For every nonzero rectangle state with `D` bad triples:
-
-1. one-third source thinning uniquely hits at least `4D/9` triples;
-2. one label family carries weight at least `2D/9`;
-3. a derangement good subbank has at least `c!/9` states;
-4. every good state destroys at least `D/18` old triples;
-5. rank-`r` cylinders cost at most `9/(c)_r`;
-6. a source-size threshold gives a large label block or one high-weight source.
-
-Thus the original product induction entry is explicit and repeatable after every
-strict decrease.
-
-## 2. Rectangle label hierarchy
-
-A `t`- or `r`-assignment moves two paired points in one scalar column.  Permuting
-label values on a source set:
-
-- preserves the exact rectangle normal form;
-- preserves factor compatibility and saturation;
-- never permits a created triple to use both points of one assignment;
-- translates one geometric forbidden partial matching to label degree at most
-  two;
-- retains ordinary falling-factorial cylinder ranks.
-
-This paired representation replaces layer/channel pigeonholing and prevents the
-repair tree from leaving the product state space.
-
-## 3. Quantitative asymptotic hierarchy
-
-The actual seed line cap is
+The active threshold and numerical witnesses are
 
 \[
-K=n^{1/3+o(1)}.
-\]
-
-Channel-free one-variable amplification satisfies
-
-\[
-D_j
-\ge
-\left(\frac n{96}\right)^{1-2^{-j}}D_0^{2^{-j}}.
-\]
-
-After three high-source returns,
-
-\[
-D_3=n^{7/8-o(1)},
+T(N)=\lceil N^{3/5}\rceil,
 \qquad
-D_3/K=n^{13/24-o(1)}>n^{1/2}.
+A_3=320,
 \]
-
-A two-variable return gives a next-generation star of order
-`n^(2/3-o(1))`.  Large paired blocks use retuned thinning with
 
 \[
-C_{\Delta,\eta}
-=
-32768e^{4\Delta}/\eta,
+d_*(N)=1+\left\lceil\log_2(\log_2\max\{N,2\}+2)\right\rceil,
 \]
 
-so the factor-eight paired support-four increase contributes at most
-`eta s/8` and the square-root ambient exponent is unchanged.
+\[
+\mathfrak d(N)\le10^{27}N^{1/6},
+\qquad
+N_0=10^{4000}.
+\]
+
+For paired large blocks use
+
+\[
+q_\eta=
+\min\left\{
+\frac{\eta}{20{,}971{,}520e^{2\Delta}\log(2t)},
+\frac{\eta t}{32768e^{4\Delta}N\mathfrak d(N)}
+\right\},
+\qquad
+0<\eta\le\frac1{12}.
+\]
+
+The retained-order requirement is
+
+\[
+q_\eta t\ge\max\{32,16\Delta+4,256e^{2\Delta}\}.
+\]
+
+## Integrated repair path
+
+1. PX448 re-enters from every positive rectangle state.
+2. A large source block enters the effective paired large-block decoder.
+3. A high source enters channel-free weighted return.
+4. Four one-variable returns, or one two-variable return, cross `N^(3/5)`.
+5. Above threshold, support four is paid directly; no growing packet family is
+   maintained.
+6. Below threshold, selected packet defects use unique label corrections and
+   historical positions prevent recurrence.
+7. Every strict decrease remains inside the same factor-compatible rectangle
+   state space, so integer potential descent reaches zero for `N>=N_0`.
 
 ## Immediate frontier
 
-1. **Common cutoff.** Combine every explicit inequality into one computable
-   `N_0`; record how it depends on the divisor cap and inherited label degree.
-2. **Dependency audit.** Build a theorem-dependency manifest for PX397--PX449 and
-   flag any edge leading to an unlifted individual-point move.
-3. **Finite orders.** Enumerate or symbolically absorb all `n<N_0`, or find a
-   construction chain entering the asymptotic range.
-4. **Global index update.** Promote PX450 only after the cutoff and dependency
-   audits pass.
-5. **Closure statement.** Distinguish asymptotic conditional doubling from exact
-   all-side closure and from the classical conjecture.
+1. **Finite-range bridge.** Find a theorem that maps every positive order below
+   `N_0` to an order in the effective range without assuming the desired
+   doubling theorem at intermediate orders.
+2. **Cutoff compression.** Replace the universal divisor constant `10^27` and
+   worst-case depth/degree envelopes by range-sensitive exact bounds, producing
+   a practical finite cutoff.
+3. **Small-order exact census.** Extend existing exact rectangle/template
+   results only far enough to meet the compressed cutoff, not to `10^4000`.
+4. **Global closure conversion.** Promote the asymptotic reduction only after a
+   finite-range bridge or complete finite census is proved.
 
 ## Verification
 
 ```bash
-python scripts/verify_product_px63_entry_derangement.py
-python scripts/verify_product_px64_return_depth.py
-python scripts/verify_product_channel_free_label_return.py
-python scripts/verify_product_first_generation_label_lift.py
-python scripts/verify_product_paired_label_packet.py
-python scripts/verify_product_paired_label_mixed_shadow.py
-python scripts/verify_product_paired_large_block_margin.py
+python scripts/verify_product_entry_invariant_dependencies.py
+python scripts/verify_product_explicit_cartesian_triples.py
+python scripts/verify_product_explicit_nested_depth.py
+python scripts/verify_product_explicit_divisor_witness.py
+python scripts/verify_product_packet_family_free_path.py
+python scripts/verify_product_explicit_common_cutoff.py
 ```
-
-The new scripts encode the finite combinatorial identities and arithmetic
-constants used by PX397--PX450.  A repository-wide dependency/cutoff verifier is
-the next implementation target.
 
 Exact all-side product closure and the classical no-three-in-line conjecture
 remain open.
