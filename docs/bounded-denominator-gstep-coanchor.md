@@ -103,23 +103,36 @@ $$
 of the lower-bound pair weight before any additional geometric cleaning.
 - If a load exceeds `Λ`, BDA4e returns one of the five explicit affine anchor laws, carrying at least one fifth of the paid incidence at that heavy coordinate.
 
-Thus a scalar profile above the BDA5z half-capacity threshold enters the existing radial decoder pipeline without a new co-anchor hypothesis. Below the threshold it satisfies the explicit dispersed-anchor inequality
+Thus a scalar profile above the BDA5z half-capacity threshold enters the existing radial decoder pipeline without a new co-anchor hypothesis.
+
+## Superseding the dispersed inequality
+
+The earlier presentation left a profile below that half-capacity threshold as the numerical output
 
 $$
 W < (1/2+ε)β|A|(J+g).
 $$
 
+BDA5ae--BDA5ah in [`bounded-denominator-overlap-variation.md`](bounded-denominator-overlap-variation.md) now replace this numerical endpoint by an exact path router which does not require the atom cap. For every threshold `theta`, one profile yields:
+
+1. a parity-disjoint genuine `h,h+q` pair bank of weight at least `theta W/2`;
+2. a family of distinct extreme scalar slots of weight greater than `(1-theta)W/2`;
+3. or a parity-disjoint oriented missing-partner front of paid excess greater than `(1-theta)W/4`.
+
+At `theta=1/2` the guarantees are `W/4,W/4,W/8`. Thus the dispersed-anchor inequality is retained only as a valid coarse corollary of BDA5z, not as an unresolved terminal state.
+
 ## Interface to BDA6
 
-The scalar-lift route now terminates in one of four named outputs:
+The scalar-lift route now terminates in one of five named outputs:
 
 1. sparse scalar occupancy;
 2. a finite transverse increment library;
 3. a paid compatible family of genuine q-adjacent radial pairs;
-4. one of the five paid affine anchor chains from BDA4e.
+4. a paid endpoint or oriented one-sided scalar front;
+5. one of the five paid affine anchor chains from BDA4e.
 
-Outcome 3 passes directly to BDA5a--BDA5g. The unresolved scalar branch is therefore only the explicit dispersed-anchor inequality or an affine anchor chain, not the existence of co-anchored decoder pairs.
+Outcome 3 passes directly to BDA5a--BDA5g. Outcome 4 has private scalar-slot payment after import to AC3du--AC3dx and remains an explicit installation or denominator-descent problem. The unresolved scalar branch is therefore the geometry of those one-sided fronts and the affine anchor chains, not a dispersed numerical inequality.
 
 ## Finite check
 
-`scripts/verify_bda_gstep_coanchor.py` exhausts small capped slot-weight vectors and interlacing parameters. It checks the weighted overlap inequality, the two parity classes, radial disjointness, the density consequence, and additive combination across anchors.
+`scripts/verify_bda_gstep_coanchor.py` exhausts small capped slot-weight vectors and interlacing parameters. It checks the weighted overlap inequality, the two parity classes, radial disjointness, the density consequence, and additive combination across anchors. `scripts/verify_bda_overlap_variation.py` checks the exact replacement router.
