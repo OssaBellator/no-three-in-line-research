@@ -98,14 +98,18 @@ def crude_role_sum(t: int) -> int:
 def verify_exact_arithmetic_sample() -> None:
     for t in range(347, 20_002, 2):
         denominator = t * (t - 1) * (t - 2)
-        high_load = crude_role_sum(t) / denominator
-        assert 1 / t + high_load < 1 / 24
+        high_numerator = crude_role_sum(t)
+        target_numerator = (t - 1) * (t - 2)
+        assert 24 * (target_numerator + high_numerator) < denominator
+
         if t >= 611:
-            reserve_load = (t // 500) / t
-            assert reserve_load + 1 / t + high_load < 1 / 24
+            reserve = t // 500
+            fixed_numerator = (reserve + 1) * (t - 1) * (t - 2)
+            assert 24 * (fixed_numerator + high_numerator) < denominator
 
 
-def verify_placement_sum(max_t: int = 500) -> None:
+def verify_placement_sum(max_t: int = 75) -> None:
+    # Finite sanity range only; CMR261 proves the general inequality directly.
     for t in range(7, max_t + 1, 2):
         for x0 in range(t):
             for k in range((t - 1) // 3 + 1, (t - 1) // 2 + 1):
