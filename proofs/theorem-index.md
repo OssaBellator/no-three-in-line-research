@@ -26,6 +26,8 @@ This ledger records only branch-specific statements.
 | BDA5c | Compatible single-blocker rectangles are resolved by an opposite-layer derangement | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
 | BDA5d | The coupled blocker bank improves under an explicit normalized collateral inequality | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
 | BDA5e | Every clean adjacent radial pair has a row-column-preserving decoder state | PROVED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
+| BDA5f | Every row-column-compatible clean radial family has a valid heterogeneous product of local decoder states | PROVED | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
+| BDA5g | Heterogeneous local menus have an exact rank-at-most-three product collateral criterion | PROVED | `docs/bounded-denominator-heterogeneous-decoder-product.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
