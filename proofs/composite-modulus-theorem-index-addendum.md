@@ -72,6 +72,13 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR298--301 | Width-three exact displacement moments, integer variance, 72 bounded parallel shifts, and the prime-\(p\ge11\) valuation consequence | PROVED | `docs/118-prime-power-width-three-variance-dichotomy.md` |
 | CMR302--305 | Thin-signature carry-cell capacity, square-root dispersion/heavy-cell dichotomy, and width-two/width-three consequences | PROVED | `docs/119-prime-power-thin-signature-carry-cells.md` |
 | CMR306--309 | Mixed-fan determinant factorization, shared-cell degeneracies, unit-ratio extraction, and recycled sharp-fan concentration | PROVED | `docs/120-prime-power-mixed-fan-ratio-signatures.md` |
+| CMR310--313 | Exact carry-cell witness membership, internal/external routing, strict exit depths, and internal scaling | PROVED | `docs/121-prime-power-carry-cell-witness-routing.md` |
+| CMR314--317 | Primitive line-parameter ultrametric, equilateral/deeper closest-pair routing, and strict-depth termination | PROVED | `docs/122-prime-power-line-parameter-cluster-routing.md` |
+| CMR318--321 | Mixed-fan factorial identity, opposite-deviation p-adic carry pair, archimedean localization, and coordinate duality | PROVED | `docs/123-prime-power-mixed-fan-factorial-carry.md` |
+| CMR322--325 | Fan-anchored certificate selection, exact paid ratio cylinders, disjointness, and bank size | PROVED | `docs/124-prime-power-paid-mixed-ratio-bank.md` |
+| CMR326--329 | Exact paid-ratio completion spread and candidate-only collateral for \(t\ge6\), with the \(t=5\) conditional law retained | PROVED | `docs/125-prime-power-paid-ratio-bank-spread.md` |
+| CMR330--334 | Line-clean paid-pair derangement bank, rank-two elimination, and frozen rank-zero/rank-one concentration | PROVED | `docs/126-prime-power-line-clean-paid-pair-bank.md` |
+| CMR335--339 | Residual matching-space local lemma, exact line-clean cleaning above \(0.42t\), protected-line reserve, and low-height extraction | PROVED | `docs/127-prime-power-line-clean-high-slice.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
