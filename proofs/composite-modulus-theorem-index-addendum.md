@@ -53,11 +53,14 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR238--239 | A frozen large parent exposes an anchored bank or a linear reserve of distinct candidate-only lines below height \(0.49t\) | PROVED | `docs/103-prime-power-linear-lower-height-reserve.md` |
 | CMR240 | Nonaxis lines covering a Cartesian rectangle modulo diagonal exceptions require at least \(a+c-3\) lines | PROVED | `docs/104-prime-power-boundary-line-blockers.md` |
 | CMR241--243 | Every \(t-3\) full-derangement lines are avoidable; equality at \(t-2\) has a rigid Hall-boundary factorization | PROVED | `docs/104-prime-power-boundary-line-blockers.md` |
-| CMR244 | Nonaxis lines covering a Cartesian rectangle modulo one arbitrary exception require at least \(a+c-2\) lines | PROVED | `docs/105-prime-power-target-specific-line-escape.md` |
-| CMR245--247 | Every \(t-2\) target-specific line families are avoidable when all available line cells are deleted; a sharp \(t-1\) blocker has a one-slack Hall-boundary factorization | PROVED | `docs/105-prime-power-target-specific-line-escape.md` |
+| CMR244 | Nonaxis lines cover a nonempty Cartesian product modulo one arbitrary exception only if at least \(a+c-2\) lines are used, including singleton sides | PROVED | `docs/105-prime-power-target-specific-line-escape.md` |
+| CMR245--247 | Every \(t-2\) target-specific line family is avoidable; a sharp \(t-1\) blocker is a singleton fan or a one-slack Hall-boundary factor | PROVED | `docs/105-prime-power-target-specific-line-escape.md` |
 | CMR248 | Exact target-specific state count, rank-\(1/2/3\) cylinder atoms, and cover inequality | PROVED | `docs/106-prime-power-target-specific-local-load.md` |
 | CMR249 | A target-specific \(1/24\) matching-space local-load bound gives an improving parent permutation | PROVED | `docs/106-prime-power-target-specific-local-load.md` |
 | CMR250--251 | Anchored-free freezing forces a cubic wall, more than \(t/24\) local line signatures, and an executable wall-removal step | PROVED | `docs/106-prime-power-target-specific-local-load.md` |
+| CMR252--256 | Direction-class vertex load, exact target-specific cleaning above \(0.45t\), a `floor(t/200)` line reserve, and lower-height extraction | PROVED | `docs/107-prime-power-refined-target-height-slice.md` |
+| CMR257--260 | Three-slice moment obstruction, sharp \(t-3\) common fans, and three-endpoint singleton-blocker expansion | PROVED | `docs/108-prime-power-three-endpoint-fan-obstruction.md` |
+| CMR261--265 | Summed placement load, exact target-specific cleaning above \(0.44t\), a `floor(t/500)` line reserve, and lower-height extraction | PROVED | `docs/109-prime-power-role-count-height-cleaning.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
