@@ -116,6 +116,18 @@ unless it returns an improving or paid menu, accepted arithmetic chamber, termin
 
 AC3jv--AC3jz audit the arithmetic owners of those unary reasons. A target-containing BDA/RI/carry formula is prospective hard geometry because its target cell is absent from the current blocker state; it is not destroyed current payment. Payment requires a separate current owner with exact `current/physical/coherent/payable` status and a faithful destruction contract. RI target cells determine their physical scale but not component payability, while BDA target templates require a separate occurrence-faithful current radial owner or remain in the literal/missing-support route.
 
+AC3ka--AC3kd build the finite outer reset quotient. For `P` outer profiles, reset-decoration alphabet `R` and epoch ceiling `M`,
+
+```text
+Xi_out = (M+1)|E_seen| + c_epoch
+```
+
+strictly increases on every internal epoch step and first traversal of a decorated reset edge. A history beyond `(M+1)RP(P-1)+M` exposes one repeated exact macro edge. Global closure follows under the explicit macro-ticket contract; without such a ticket, payment or strict bounded descent, the repeated edge is the exact remaining recurrence witness.
+
+AC3ke--AC3kh make owner status transition-relative. Installed pivot, BDA, RI, OP fixed-root, phase and protected-resource owners enter a six-route registry. Directed owner-route changes have stock at most `30KJ` for `K` owner kinds and `J` transition families, and become decorations of the outer macro quotient.
+
+AC3ki--AC3km give centred blocker targets their exact installation contract. Complete alternatives form a menu rather than a product. Common owner tokens count once per selected state; owners private to different alternatives contribute only through their probability-weighted average. Executable targets feed the universal created-rank pivot fallback, forbidden targets remain unpaid, outer changes become macro edges, and unresolved targets are precisely those still lacking one scope-complete per-target state.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -126,9 +138,9 @@ AC3jv--AC3jz audit the arithmetic owners of those unary reasons. A target-contai
 
 ## Current frontier
 
-1. Install and pay the centred unconditional-literal, common-residual, support-disjoint, same-owner and many-owner outputs without charging prospective target geometry.
-2. Fill the AC3jz owner-status chart for each live carry/BDA/RI/protected owner and classify genuine outer reset edges.
-3. Build the global bounded AC4 potential and terminate the remaining AC3ie boundary/petal terms.
+1. Construct complete per-target states for the unresolved common-residual and support-disjoint target alternatives, while leaving unconditional and prospective targets unpaid.
+2. Terminate each repeated decorated macro edge by current payment, strict bounded descent or a capacity-one macro ticket, and prove polynomial bounds for the outer profile/decorations needed by AC4.
+3. Close the remaining AC3ie boundary/petal terms and owner rows returning occurrence failure or coherence mismatch.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
