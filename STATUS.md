@@ -78,10 +78,10 @@ remains open. This repository does **not** contain a complete proof.
   \]
   exact harmonic packets. One packet sweep uses only \(O(\log t)\)
   whole-parent replacements.
-- The existence of one clean state for every packet is proved. The remaining
-  question is sequential preservation, not packet construction.
+- The existence of one clean state for every packet is proved. Packet
+  construction is no longer open.
 
-### Full-token return, state expansion, and packet recreation
+### Full-token return and selected-state expansion
 
 For a full token
 
@@ -130,30 +130,51 @@ D_\tau^{(2)}
   (p+1)t(h-1)\bigl(h+P_\eta(t)\bigr)
   =O_p(t\log^2t).
   \]
-  The earlier \(O_p(t^2\log t)\) tokenwise union bounds remain valid but are not
-  sharp.
 - Exact selected-state cycles are erasable under a monotone forbidden mask.
-- Two distinct feasible selected perfect matchings return at least two old
-  edges. Hence a cycle-erased sequence of distinct states pays returned-edge and
-  full-token incidence mass linearly; factorial state counts are no longer the
-  quantitative endpoint.
-- If a later reset recreates a triple from an earlier clean packet, that triple
-  contains a newly returned edge. For packet weight \(W\), at most
+- Two distinct feasible selected perfect matchings differ by at least two
+  entering and two leaving edges. A cycle-erased sequence of distinct states
+  therefore pays full-token incidence mass linearly.
+
+### Packet recreation, deletion, and ancestry
+
+- A selected conflict recreated by a reset `M -> M'` contains an **entering**
+  edge of `M'\setminus M`. The leaving set `M\setminus M'`, which is returned to
+  the complementary available host, has exactly the same cardinality. Thus the
+  earlier packet-recreation inequalities remain valid after correcting the edge
+  orientation.
+- For packet weight \(W\), at most
   \[
-  2(t-1)^2W|R|
+  2(t-1)^2W\,|M'\setminus M|
   \]
-  packet triples are recreated by a reset returning \(R\).
-- For a first-dirty packet schedule with total packet weight \(W_*\), cumulative
-  returned-edge churn \(C\), packet count \(P\), and installation count \(T\),
+  packet triples are recreated by one selected-state reset.
+- For the first-dirty packet schedule, packet losses and installations are
+  charged to the same entering/leaving churn magnitude.
+- Inside one certificate-directed deletion pass, every lossy packet reset has
+  an immediate dichotomy:
+  1. delete a nonessential edge of one recreated triple and preserve a perfect
+     matching; or
+  2. expose a fully forced rank-three certificate with CMR217 exchange ancestry.
+- Permanent deletion responses occur at most
+  \[
+  |E(G_0)|-t\le t(t-1)
+  \]
+  times.
+- If `P` is the packet count and `F` is the number of fully forced packet events,
+  the number `T` of packet installations satisfies
+  \[
+  T\le P\bigl(1+t(t-1)+F\bigr).
+  \]
+- If every earlier deletion certificate receives at most `w` incoming links
+  from fully forced packet events, then
   \[
   T
   \le
-  P+2(t-1)^2W_*C.
+  P\bigl(1+(1+w)t(t-1)\bigr).
   \]
-  Thus packet losses and distinct-state expansion are charged to the same churn
-  variable.
+  Thus packet scheduling inside one deletion pass is reduced to ancestry width,
+  not cumulative churn.
 - Every off-token witness certificate already opens an executable prefix
-  continuation. The remaining forced branch is exchange ancestry.
+  continuation. The residual forced branch is exchange ancestry.
 
 ## Important corrections
 
@@ -163,16 +184,21 @@ D_\tau^{(2)}
   CMR164.
 - Static token consumption is not monotone; CMR350 records exact two-step
   token-restoring cycles. Every current no-return statement includes
-  reintroduction, reset multiplicity, cycle erasure, or a scheduled-pass
-  hypothesis.
+  reintroduction, reset multiplicity, cycle erasure, a scheduled-pass
+  hypothesis, or a deletion/ancestry response.
+- CMR418--CMR421 originally called the support edges of recreated selected
+  triples “returned” edges. The support edges are entering edges
+  `M'\setminus M`; the returned leaving set `M\setminus M'` has equal size, so
+  all numerical bounds remain correct. The chapter and verifier now use the
+  corrected orientation.
 
 ## What remains conditional
 
-1. **Global churn payment.** Bound cumulative returned-edge churn by destroyed
-   target load, strict envelope expansion, protected-reserve depletion, or a new
-   monotone packet potential.
-2. **Forced ancestry width.** Convert excess churn into bounded width or
-   simultaneously resample several fully forced certificate-exchange cycles.
+1. **Forced ancestry width.** Bound the incoming width of the fully forced
+   CMR217 certificate-exchange DAG, or simultaneously resample several exchange
+   cycles.
+2. **Repeated local ancestor resets.** Extend the deletion/ancestry payment to
+   repeated compatible prefix-ancestor slots not arising from packet loss.
 3. **Low-height carry absorption.** Charge the remaining lower-height lines to
    first-separation, quotient, and primitive carry signatures.
 4. **Prime-field terminal conversion.** Transfer the inherited-envelope and
@@ -189,9 +215,10 @@ D_\tau^{(2)}
 There is no complete proof. On the prime-power route, the generic first moment,
 prefix and joint-parent collateral, terminal contraction, Hall-blocker repair,
 heavy-token continuation, exact harmonic-packet completion, one-sweep return
-costs, exact state-cycle erasure, polynomial state-expansion payment, and packet
-recreation charging are closed.
+costs, exact state-cycle erasure, polynomial state-expansion payment, packet
+recreation charging, and packet-loss deletion/ancestry reduction are closed.
 
-The principal remaining prime-power theorem is now a global bound or conversion
-for cumulative returned-edge churn and fully forced exchange ancestry. Arbitrary
+The principal remaining prime-power theorem is now a quantitative bound or
+simultaneous-resampling mechanism for fully forced exchange ancestry, together
+with a corresponding payment for repeated local ancestor resets. Arbitrary
 side-length coverage remains necessary afterward.
