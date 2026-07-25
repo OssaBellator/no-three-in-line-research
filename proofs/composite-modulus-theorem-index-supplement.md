@@ -34,10 +34,11 @@ supplement mirrors the collision-free live range recorded in
 | CMR502--506 | Exact derangement restoration marginals, weighted cheap-clean selection, frozen collateral versus unavailable depletion, incidence concentration/dispersion, and the combined availability endpoint | PROVED | `docs/158-prime-power-line-clean-weighted-selection.md` |
 | CMR507--511 | Adaptive maximum unavailable-edge absorption, exact extension identity, König row-column cover, heavy unavailable-star concentration, and rooted/bottleneck application | PROVED | `docs/159-prime-power-adaptive-line-clean-unavailable-cover.md` |
 | CMR512--516 | Exact unavailable-star prefix occupancy, tunable heavy/dispersed token alternative, disjoint token packing, square-root endpoint, and adaptive line-clean token splice | PROVED | `docs/160-prime-power-unavailable-star-token-splice.md` |
+| CMR517--521 | One-token persistence/stock bound, exact global labelled stock, absence-run/reintroduction ledger, three-way temporal endpoint, and free-absorption episode bound | PROVED | `docs/161-prime-power-unavailable-token-temporal-ledger.md` |
+| CMR522--526 | Maximum-allowed persistent-edge criterion, exact two-endpoint deficiency, persistent-aware absorption, row-column cross incidence, and rooted trace witnesses | PROVED | `docs/162-prime-power-persistent-blocker-absorption-deficiency.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR516, one-shot line-clean selection and adaptive unavailable-edge geometry are
-closed. The immediate target is temporal payment for repeated free absorption,
-heavy unavailable tokens, and dispersed unavailable-token banks across parent
-epochs, through reserve depletion, ancestor-return incidence, or envelope
-expansion.
+CMR526, one-shot selection and nonpersistent temporal reuse are closed. The
+immediate target is geometric conversion of a continuously unavailable
+row-column cross into a Hall wall, fixed prefix/quotient/carry signature,
+protected-reserve depletion, deletion ancestry, or envelope expansion.
