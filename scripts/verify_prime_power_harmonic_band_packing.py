@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact checks for CMR382--CMR386."""
+"""Exact checks for CMR398--CMR402."""
 
 from __future__ import annotations
 
@@ -36,9 +36,6 @@ def harmonic_band(lower: int) -> Fraction:
 
 
 def verify_two_band_budget() -> None:
-    # Check the exact recurrence on a bounded range. The symbolic difference is
-    # negative for every positive lower endpoint, so the H=5 check controls all
-    # larger bands.
     for lower in range(1, 100):
         current = harmonic_band(lower)
         following = harmonic_band(lower + 1)
