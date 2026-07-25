@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Exact arithmetic checks for CMR347--CMR350."""
+"""Exact arithmetic checks for CMR364--CMR367."""
 
 from __future__ import annotations
 
@@ -42,8 +42,6 @@ def count_token_pairs(t: int, p: int, d: int, b: int, slope: int | None) -> int:
 
 
 def verify_exact_counts() -> None:
-    # Exhaustive endpoint-pair enumeration is deliberately restricted to small
-    # boards; the large-range checks below use only the closed formulas.
     cases = ((3, 2), (3, 3), (3, 4), (5, 2), (5, 3), (7, 2))
     for p, h in cases:
         t = p**h
