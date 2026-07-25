@@ -4,7 +4,7 @@
 
 This branch studies simultaneous structure of a multiplicative set and its image under the rational secant map, including collision involutions, subgroup-coset overlap, quotient cycles, order-two obstructions, and the physical-lift interface needed by absorber banks. Canonical proofs are under `docs/`.
 
-> **Status:** The quotient-level collision and cycle structure is highly constrained, but quotient density alone does not install a physical coset block. The current bottleneck is lift coherence: localize enough paid fixed-edge fibres to one physical scale and anchor geometry, or return a scale-growth/physical-star obstruction that the alternating or bounded-denominator routes can consume.
+> **Status:** Quotient-level fixed edges are now separated from their physical installation debt. After scale localization, the target block decomposes exactly into directly installable permutation cycles and boundary alternating paths. The remaining bottleneck is to control the collateral of the cycle switches and route the boundary paths through alternating-core, carry, or bounded-denominator structure.
 
 ## Branch map
 
@@ -21,12 +21,13 @@ This branch studies simultaneous structure of a multiplicative set and its image
 - [`docs/rational-inverse-quotient-cycles.md`](docs/rational-inverse-quotient-cycles.md)
 - [`docs/rational-inverse-fixed-edge-bank.md`](docs/rational-inverse-fixed-edge-bank.md)
 - [`docs/rational-inverse-lift-coherence.md`](docs/rational-inverse-lift-coherence.md)
+- [`docs/rational-inverse-completion-debt.md`](docs/rational-inverse-completion-debt.md): cycle/path decomposition of physical completion debt.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch-specific theorem ledger.
 
 ## Highest-value frontier
 
-1. Upgrade the RI5e scale audit to a paid localization theorem with controlled loss.
-2. Convert the physical-star or scale-growth alternatives into alternating-core or bounded-denominator transitions.
-3. Install the conditional fixed-edge coset bank only after row/column-disjoint physical lifts are certified.
+1. Bound collateral for the installable RI5f cycle family and feed failure into the paid-bank profile machinery.
+2. Convert a heavy or long RI5g boundary path into an alternating-core transition, physical star, or bounded-denominator chain.
+3. Install the conditional fixed-edge coset bank only after the remaining boundary debt is eliminated.
 
 The scripts verify finite-field identities and small quotient/lift models; they do not replace the arbitrary-size proofs.
