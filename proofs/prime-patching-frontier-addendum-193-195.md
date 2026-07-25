@@ -1,10 +1,10 @@
 # Prime-patching frontier addendum: credited-bank and domain-support closure
 
 This addendum extends `proofs/prime-patching-recent-index.md` after PP3afm.
-It records the paid resource-bank, fixed-cell, and direct allocation-domain
-reductions in `docs/193` through `docs/200` without replacing the larger
-historical ledger.  The filename is retained for continuity with earlier
-references.
+It records the paid resource-bank, fixed-cell, direct allocation-domain, and
+composite source-star reductions in `docs/193` through `docs/201` without
+replacing the larger historical ledger.  The filename is retained for
+continuity with earlier references.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -16,6 +16,7 @@ references.
 | PP3agu--PP3agz | A fixed-cell fan removes at most `n` controller entries per label and at most `2n` values from one paired macro domain; robust allocation margin bypasses arbitrary fan multiplicity | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/198-fixed-cell-fan-allocation-domain-bypass.md` |
 | PP3aha--PP3ahg | Every binary shadow of an `s`-cell source-valid endpoint state is supported on `binom(s,2)` line matchings and costs at most `s(s-1)` values from one macro domain | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/199-small-endpoint-binary-shadow-allocation-bypass.md` |
 | PP3ahh--PP3ahn | Unary witness multiplicity is one for a fixed inserted cell and candidate; `o(R)` unary weight is domain-absorbed, while failed arc-petal completion forces `A_2=Omega(RW)` | PROVED / CONDITIONAL DIRECT-COMPLETION INTERFACE | `docs/200-unary-shadow-domain-margin-threshold.md` |
+| PP3aho--PP3ahu | Unary domain failure creates a post-trade source star of degree `Omega(R/s)`; a second marked trade cancels the created incidences exactly in a composite potential identity | PROVED / CONDITIONAL COMPOSITE PAID INTERFACE | `docs/201-unary-domain-failure-composite-source-star.md` |
 
 ## Updated resource-bank endpoint
 
@@ -162,10 +163,47 @@ Rank-three path-petal, rank-four partner, and choice-grid local costs are binary
 and are already absorbed by the complete binary-shadow bypass in the robust
 margin branch.
 
+## Composite cancellation of unary domain failure
+
+Suppose an `s`-cell source-valid trade starts from domains of size at least
+`(gamma+xi)R` and unary insertion shadow pushes one paired macro domain below
+`gamma R`.  Assign each removed value to a causing inserted cell and to movement
+or refill type.  One class has size
+
+```text
+C > xi R/(2s).
+```
+
+In the post-trade source, the causing inserted cell is a common blocker endpoint
+in those `C` distinct entries, with distinct retained partners.  It is therefore
+a genuine source-star centre carrying `C` units of dynamic credit.
+
+Let the first trade have removal credit `R_1` and other insertion cost `J_1`.
+Let a second marked trade move the new centre, with selected-line self-recapture
+`I_self` and foreign cost `J_2`.  The exact two-step identity is
+
+```text
+Xi(S_2)-Xi(S_0)
+<=
+J_1+I_self+J_2-R_1.
+```
+
+The `C` incidences created in the first state and destroyed in the second cancel
+exactly.  If `R_1->infinity`, `C<=R`, and the post-trade marked layer has size
+`Omega(R)`, the second subbank may be chosen slowly enough that
+
+```text
+E I_self=o(R_1).
+```
+
+Thus diffuse first-step and second-step foreign cost gives a strict composite
+improvement.  Domain-scale unary failure is a second-generation marked
+source-star, not a new terminal weight table.
+
 ## Revised open objects
 
-The frontier now separates the monotone paid route from the robust direct
-allocation route.
+The frontier now separates the monotone paid route, robust direct allocation,
+and two-step composite conversion.
 
 In the robust-domain direct-completion branch, positive-density rank-three and
 rank-four binary stars, fixed-cell heavy pencils, weighted choice grids,
@@ -173,25 +211,29 @@ candidate-rich projective covers, arbitrary binary `Xi` multiplicity, and
 `o(R)` unary `Xi` weight of one active endpoint state are no longer independent
 obstructions.
 
+Unary shadow that destroys a robust domain margin is also localized: it creates
+a post-trade source-star centre of degree `Omega(R/s)` and cancels in a composite
+marked trade whenever the uncancelled collateral is diffuse.
+
 The remaining concentrated problems are:
 
 1. positive-density ambient unary insertion shadow whose witness structure gives
-   a resource bank rather than one marked source centre;
-2. controller-domain-scale unary shadow, including an arc-petal core
-   `A_2=Omega(RW)`;
-3. failure of the nonbinary `Omega(R)` domain margin or of the global allocation
-   criterion;
-4. marked source, transition, anchor, or endpoint-host failure;
+   a resource bank before a source-valid first trade is available;
+2. uncancelled first-step or second-step foreign insertion cost;
+3. failure of the nonbinary `Omega(R)` base domain margin or of the global
+   allocation criterion;
+4. marked source, transition, anchor, or distinguished endpoint-host failure;
 5. conditional-Hall or alternating-host structure before a source-valid trade is
    selected;
-6. branches that still require a monotone `Xi` decrease because no direct final
-   allocation is available;
-7. endpoint states too large for `s^2=o(R)`.
+6. branches that still require a one-step monotone `Xi` decrease and cannot use
+   direct or composite completion;
+7. endpoint states too large for `s^2=o(R)`;
+8. first trades with no growing removal credit.
 
 Rich designated recapture fibres, selected-credit self-recreation, diffuse
 foreign support cores, source-star self-recapture, unstructured fixed-cell
 candidate multiplicity, binary multiplicity on small source-valid endpoint
-states, and credit-scale path-petal binary cost are no longer separate
-frontiers.
+states, credit-scale path-petal binary cost, and raw unary domain failure are no
+longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
