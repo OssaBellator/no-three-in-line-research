@@ -109,3 +109,9 @@ An affine no-three set in \(\mathbb F_p^2\) has at most \(p+2\) points by the di
 **Status:** REFUTED FOR EVERY BLOCK SIZE \(t\ge2\).
 
 Choose any derangement \(\sigma\) and replace a permutation layer \(f\) by \(f\circ\sigma\). This moves every old point. Applying \(\sigma^{-1}\) is also old-cell-clean and returns exactly to \(f\), restoring every occupied cell and every state-only carry token after two steps. Repeated-token control therefore needs a reintroduction charge or a time-oriented ancestry invariant; static token counting is insufficient. See `docs/130-prime-power-token-reintroduction-ledger.md`.
+
+## 19. “A recreated selected packet triple contains a returned old edge.”
+
+**Status:** ORIENTATION CORRECTED; NUMERICAL BOUNDS UNCHANGED.
+
+For a selected-state reset \(M\to M'\), a triple absent from \(M\) and present in \(M'\) contains an **entering** edge of \(M'\setminus M\). The edges returned to the complementary available host are the opposite set \(M\setminus M'\). Since both sets have the same cardinality for perfect matchings, all CMR418--CMR421 counting bounds remain valid after replacing the support statement by entering-edge support and charging its size to leaving-edge churn. See `docs/141-prime-power-packet-recreation-churn-ledger.md`.
