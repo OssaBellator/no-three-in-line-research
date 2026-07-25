@@ -91,7 +91,10 @@ def check_safety_text(manifest: dict) -> None:
     assert f"\\frac9{{(c)_r}}" in doc153 or "9/(c)_r" in doc153
     assert "D/18" in doc153
     assert "four" in doc155.lower()
-    assert "two label families" in doc155.lower()
+    assert (
+        "two label families" in doc155.lower()
+        or "two column-label families" in doc155.lower()
+    )
 
 
 def logsumexp(first: float, second: float) -> float:
