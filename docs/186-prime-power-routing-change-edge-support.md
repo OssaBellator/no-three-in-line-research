@@ -2,8 +2,8 @@
 
 CMR659--CMR663 give a finite vertex-routing skeleton for every factor matching.
 This chapter attaches physical edge support to every change of routing skeleton.
-That closes the bookkeeping gap between finite routing stock and the existing
-entering-edge, token-incidence, and recreation ledgers.
+The support may be distributed over several alternating-cycle components, so all
+payment statements are made for their union rather than for one component.
 
 Fix one factor host `H` of side `d` inside a parent of side
 
@@ -19,16 +19,13 @@ perfect matching `M`, the routing skeleton records both
 x\longmapsto s(M(x))
 \]
 
-for every source and
+and
 
 \[
-y\longmapsto r(M^{-1}(y))
+y\longmapsto r(M^{-1}(y)).
 \]
 
-for every target.
-
-Let `M,N` be two perfect matchings of `H`.  Define the changed source and target
-sets
+For perfect matchings `M,N`, define
 
 \[
 A_X(M,N)
@@ -46,8 +43,7 @@ A_Y(M,N)
 
 ### Theorem CMR671 — PROVED
 
-Each of `A_X(M,N)` and `A_Y(M,N)` has size zero or at least two.
-Furthermore,
+Each of `A_X(M,N)` and `A_Y(M,N)` has size zero or at least two.  Furthermore,
 
 \[
 \boxed{
@@ -59,18 +55,15 @@ A_X(M,N)\cup A_Y(M,N)\ne\varnothing.
 
 ### Proof
 
-The number of matching edges entering each target child is determined by the
-number of target vertices in that child and is therefore the same for `M` and
-`N`.  If one source changed target-child label, the old target child would lose
-one unit and the new target child would gain one unit, so at least one other
-source must compensate.  Thus `A_X` cannot have size one.
+The number of matching edges entering each target child is fixed by the number
+of target vertices in that child.  If exactly one source changed target-child
+label, one child would lose one unit and another would gain one unit without
+compensation.  Thus `A_X` cannot have size one.  The symmetric argument, using
+the fixed source-child populations, handles `A_Y`.
 
-The symmetric argument uses the fixed number of source vertices in each source
-child and shows that `A_Y` cannot have size one.
-
-The source routing subsets `X_{rs}` are determined exactly by the first map, and
-the target routing subsets `Y_{rs}` are determined exactly by the second map.
-Hence both changed sets are empty exactly when the routing skeletons agree. ∎
+The sets `X_{rs}` are determined by the first routing map and the sets `Y_{rs}`
+by the second, so both changed sets are empty exactly when the skeletons agree.
+∎
 
 ## 2. Explicit entering and leaving routing support
 
@@ -101,19 +94,16 @@ Every edge of `E^+_\Gamma(M,N)` belongs to `N\setminus M`, and every edge of
 
 ### Proof
 
-By CMR671, one of the changed vertex sets has size at least two.  Matching edges
-incident with distinct source vertices are distinct, and matching edges incident
-with distinct target vertices are distinct, giving the two cardinality bounds.
+By CMR671, one changed vertex set has size at least two.  Matching edges incident
+with distinct sources are distinct, as are matching edges incident with distinct
+targets, giving both cardinality bounds.
 
-If a changed source `x` had the same matching edge in `M` and `N`, its target-
-child label would be unchanged.  Likewise, if a changed target `y` had the same
-incident edge, its source-child label would be unchanged.  Thus all displayed
-support edges lie in the stated set differences. ∎
+A changed source cannot have the same edge in both matchings because its target-
+child label changed.  A changed target cannot have the same incident edge because
+its source-child label changed.  Hence the support lies in the stated set
+differences. ∎
 
-The support is physical edge churn, not merely a change of an abstract routing
-label.
-
-## 3. Alternating-cycle localization
+## 3. Alternating-component union support
 
 ### Theorem CMR673 — PROVED
 
@@ -124,33 +114,34 @@ E^+_\Gamma(M,N)\cup E^-_\Gamma(M,N)
 \]
 
 lies on an alternating-cycle component of `M\triangle N` whose routing data
-changes.  At least one such component contains two entering and two leaving
-routing-support edges.
+changes.  Let `\mathcal K_\Gamma(M,N)` be the union of all such components.
+Then
+
+\[
+\boxed{
+|N\cap\mathcal K_\Gamma(M,N)|\ge2,
+\qquad
+|M\cap\mathcal K_\Gamma(M,N)|\ge2.
+}
+\]
+
+The compensating changes may occur on different alternating cycles.
 
 ### Proof
 
 The symmetric difference of two perfect matchings is a disjoint union of even
 alternating cycles.  CMR672 places every routing-support edge in that symmetric
-difference.
+difference.  A component containing such an edge changes at least one source or
+target routing label and is therefore included in `\mathcal K_\Gamma`.
 
-If every routing-changing component contained only one entering support edge,
-it would also contain only one leaving support edge.  Following the cycle would
-then change one source or target child assignment without a compensating change,
-contradicting the child-count conservation used in CMR671.  Equivalently, select
-a nonempty changed vertex set of size at least two; its incident support edges
-belong to routing-changing components, and the union of those components
-contains at least two edges in each direction.  If they lie in different
-components, choose their union as the routing-changing support; if they lie in
-one component, that component itself has the asserted support. ∎
-
-The payment may be distributed across several alternating components, but its
-total entering and leaving multiplicity is at least two.
+The union contains all of `E^+_\Gamma` and all of `E^-_\Gamma`, so CMR672 gives
+the two lower bounds.  No assertion about one individual component is needed or
+made. ∎
 
 ## 4. Finite routing-change stock or one recurrent edge
 
 Consider `R` transitions at one fixed owner-labelled factor and envelope for
-which the routing skeleton changes.  Count the entering routing-support edges
-with multiplicity.
+which the routing skeleton changes.
 
 ### Theorem CMR674 — PROVED
 
@@ -178,8 +169,8 @@ The same statement holds for leaving routing-support edges.
 ### Proof
 
 CMR672 contributes at least two entering incidences per routing-changing
-transition.  If no physical edge occurs `\lambda` times, every edge contributes
-at most `\lambda-1` incidences.  Hence
+transition.  If no edge occurs `\lambda` times, every edge contributes at most
+`\lambda-1` incidences, so
 
 \[
 2R
@@ -200,11 +191,11 @@ Let
 \[
 C^+_\Gamma
 =
-\sum_{j=1}^{R}|E^+_\Gamma(M_j,M_{j+1})|
+\sum_{j=1}^{R}|E^+_\Gamma(M_j,M_{j+1})|.
 \]
 
-be the total entering routing-support multiplicity.  Its exact labelled nonroot
-full-token incidence in the parent of side `t=p^h` is
+Its exact labelled nonroot full-token incidence in the parent of side `t=p^h`
+is
 
 \[
 \boxed{
@@ -220,20 +211,20 @@ In particular, `R` routing changes carry at least
 
 labelled entering-edge incidences.  Every selected conflict recreated across a
 routing-changing transition contains an entering edge of the complete matching
-transition; if its recreation is supported on the changed routing data, it
-contains an edge in the routing-changing alternating components of CMR673.
+transition.  Any recreation assigned specifically to changed routing data is
+supported on the alternating-component union `\mathcal K_\Gamma`.
 
 ### Proof
 
 CMR413 assigns exactly `(p+1)(h-1)` labelled nonroot full-token incidences to
 every physical parent edge.  Apply this with multiplicity and use CMR672.
 
-The recreation statement is CMR418--CMR421 applied to the full matching
-transition.  Routing-supported recreation lies on a component in which the
-routing data changed, hence on the component support identified in CMR673. ∎
+The recreation statement is CMR418--CMR421.  A recreation assigned to changed
+routing data must use an entering edge on a component where that routing data
+changes, which is precisely the union in CMR673. ∎
 
-This statement does not declare repeated occurrences fresh: CMR674 isolates a
-recurrent physical edge first.
+Repeated occurrences are not declared fresh; CMR674 isolates a recurrent
+physical edge first.
 
 ## 6. Routing-history endpoint
 
