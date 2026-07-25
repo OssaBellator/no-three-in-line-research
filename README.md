@@ -4,7 +4,7 @@
 
 This branch studies simultaneous structure of a multiplicative set and its image under the rational secant map, including collision involutions, subgroup-coset overlap, quotient cycles, order-two obstructions, and the physical-lift interface needed by absorber banks. Canonical proofs are under `docs/`.
 
-> **Status:** Scale-localized physical completion debt decomposes into closed permutation components, and every opposite-layer occupancy pattern is executable. A singleton blocker is moved through an `n-1` state auxiliary-transposition bank. If its collateral test fails, the raw obstruction is now forced into a vertical fixed-column star, a horizontal fixed-row star, or an opposite-rectangle diagonal profile, followed by one heavy auxiliary rectangle or quantitative physical spread. The remaining bottleneck is to classify those explicit outputs arithmetically and complete the bank-ready collateral audit.
+> **Status:** Scale-localized physical completion debt now has a full two-layer product bank. Whole completion components toggle independently, active collateral has exact rank-at-most-three probabilities, and every blocker occupancy is repaired conditionally. Failed singleton repair profiles have exact primitive direction and signed affine offset addresses, yielding slope spread, parallel-line spread, or one heavy line. A failed global toggle comparison now returns active rank one, two, three, or an explicit blocker-repair average. The remaining bottleneck is arithmetic classification of one selected profile and the final bank-ready comparison.
 
 ## Branch map
 
@@ -26,12 +26,14 @@ This branch studies simultaneous structure of a multiplicative set and its image
 - [`docs/rational-inverse-singleton-rigidity.md`](docs/rational-inverse-singleton-rigidity.md): proof that partial current/target installation cannot bypass one blocker.
 - [`docs/rational-inverse-singleton-transposition.md`](docs/rational-inverse-singleton-transposition.md): auxiliary blocker transposition and exact `1/(n-1)` collateral bank.
 - [`docs/rational-inverse-crossed-channel-localization.md`](docs/rational-inverse-crossed-channel-localization.md): vertical, horizontal, and rectangle-diagonal failure outputs.
+- [`docs/rational-inverse-crossed-affine-addresses.md`](docs/rational-inverse-crossed-affine-addresses.md): exact direction/offset addresses and concentration routing.
+- [`docs/rational-inverse-component-toggle-bank.md`](docs/rational-inverse-component-toggle-bank.md): Boolean active toggles and conditional blocker repair.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch-specific theorem ledger.
 
 ## Highest-value frontier
 
-1. Classify the RI5o vertical, horizontal, and paired-rectangle profiles using their quotient, scale, carry, and physical incidence labels.
-2. Bound the fixed active collateral of the completed RI5f component family and combine it with the RI5m auxiliary average.
-3. Complete the bank-ready audit and invoke the conditional fixed-edge coset bank.
+1. Classify the RI5u active rank-one component profile and the rank-two/rank-three interactions by quotient, scale, direction, and offset labels.
+2. Split the heavy blocker-repair average into the singleton affine-address profiles and the finite/normalized derangement profiles.
+3. Complete the bank-ready collateral audit and invoke the conditional fixed-edge coset bank.
 
 The scripts verify finite-field identities and small quotient/lift models; they do not replace the arbitrary-size proofs.
