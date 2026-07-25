@@ -5,8 +5,8 @@ trade frontier on `research/all-n-prime-patching`.
 
 The earlier PP3gj--PP3tm architecture, allocation, Hall, rectangle, cross-block,
 and chromatic chains remain in `docs/78` through `docs/142` and in the
-repository-wide theorem ledger. The table below begins with the current
-non-superregular and concentrated-core frontier.
+repository-wide theorem ledger. The separate transition addendum is
+[`prime-patching-transition-index.md`](prime-patching-transition-index.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -35,14 +35,10 @@ non-superregular and concentrated-core frontier.
 | PP3yx--PP3zd | Single-cycle states give exact spread and reduce captive failure to nine cores | PROVED | `docs/165-single-cycle-marked-filler-states.md` |
 | PP3ze--PP3zi | Complete two-resource grids reduce to weighted multiplicity and projective covers | PROVED / FROM SUPERREGULAR SPREAD | `docs/166-paid-two-resource-choice-grid-selection.md` |
 | PP3zj--PP3zp | Fixed-centre transition roles reduce to clean chains or outer-role stars | PROVED | `docs/167-fixed-centre-transition-role-localization.md` |
-| PP3zq--PP3zv | No clean chain gives a two-valued outer relation outside a square-root core | PROVED | `docs/168-fixed-centre-transition-choice-core.md` |
-| PP3zw--PP3aac | Two-valued choice families are pseudoforests or bicyclic Hall cores and yield bounded-overlap path banks | PROVED | `docs/169-two-valued-transition-pseudoforest-states.md` |
-| PP3aad--PP3aag | Two injective outer designs give a clean chain or a square-root state side | PROVED | `docs/170-two-sided-transition-pseudoforest-product.md` |
-| PP3aah--PP3aal | Konig matching-star extraction gives m^(19/40)-scale transition path banks | PROVED | `docs/171-transition-choice-matching-star-extraction.md` |
-| PP3aam--PP3aap | Middle no-chain products are projective partial-matching covers by source anchors | PROVED | `docs/172-transition-middle-projective-cover.md` |
-| PP3aaq--PP3aat | Saturation converts projective anchor covers to stars or disjoint resource banks | PROVED | `docs/173-projective-anchor-resource-bank.md` |
-| PP3aau--PP3aay | Bounded-support averaging localizes path-bank failure to one- or two-centre cores | PROVED | `docs/174-path-bank-support-load-localization.md` |
-| PP3aaz--PP3abe | Fixed path cores are unary boundary stars or paid two-boundary choice grids | PROVED | `docs/175-fixed-path-boundary-choice-grids.md` |
+| PP3zq--PP3zv | No clean chain gives a two-valued outer relation and support-ranked clean-chain average | PROVED | `docs/168-fixed-centre-transition-choice-core.md` |
+| PP3zw--PP3zz | Failed transition stars yield linear resource-disjoint witness-petal sunflowers | PROVED | `docs/169-fixed-centre-transition-disjoint-petal-bank.md` |
+| PP3aaa--PP3aae | Every transition sunflower yields a free or one-pool credited endpoint bank | PROVED | `docs/170-transition-sunflower-credited-endpoint-bank.md` |
+| PP3aaf--PP3aaj | Bounded-support averaging localizes sunflower collateral to the shared centre | PROVED / FREE-BANK INTERFACE | `docs/171-transition-sunflower-collateral-localization.md` |
 
 ## Current scale
 
@@ -61,19 +57,17 @@ gives the full patch by PP3hq.
 
 ## Current transition endpoint
 
-The fixed-centre transition branch no longer contains a diffuse transition table.
-It reduces to:
+The fixed-centre transition branch yields a paid clean-chain completion or a
+linear disjoint-petal sunflower. Layer and pool pigeonholing converts the sunflower
+to a free or one-pool credited endpoint bank of size at least `W`.
 
-1. a support-ranked paid clean five-index chain bank;
-2. an `m^(19/40)` path bank with disjoint auxiliaries;
-3. an `m^(19/40)` fixed-predecessor or fixed-successor path star;
-4. a projective source-anchor cover, which yields a rich star or a
-   row/column-disjoint blocker bank;
-5. a one-centre unary boundary star or two-centre paid boundary grid;
-6. fixed-core or global support-ranked weight at the path-credit scale.
+PP3aaf--PP3aaj additionally close diffuse collateral on the disjoint petals.
+Remaining transition failure is:
 
-Pseudoforest Hall failure itself is not terminal: Konig extraction either retains
-a large injective subbank or exposes the fixed-resource star.
+1. a source or Xi core supported at the shared captive centre;
+2. global support-ranked petal-touching weight at the bank-credit scale;
+3. hard-unary or residual endpoint-host failure;
+4. source or paid concentration on the clean-chain bank.
 
 ## Remaining theorem
 
@@ -82,19 +76,19 @@ The all-n branch is reduced to the following concentrated conversion problems.
 1. Convert controller denominator failure, insufficient local Ore slack, or
    weighted anchor energy in one canonical ownership core.
 2. Pay source-star/resource-bank trades produced by hard unary support, forced Hall
-   cuts, and projective transition-anchor banks.
+   cuts, and transition sunflowers.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
 4. Convert remaining marked Xi ranks, full-pool Xi thresholds, or fixed-centre
-   support/weight cores after the transition reductions above.
+   source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
    conditional Hall families, or support-ranked residual collateral.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic Xi
-terms, diffuse binary dual mass, raw resource stars, generic two-valued transition
-tables, unstructured non-superregularity, and termination are no longer separate
-open problems.
+terms, diffuse binary dual mass, raw resource stars, transition petal collateral,
+unstructured non-superregularity, and termination are no longer separate open
+problems.
 
 The no-three-in-line conjecture remains unproved.
