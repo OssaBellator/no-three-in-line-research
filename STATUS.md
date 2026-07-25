@@ -115,7 +115,7 @@ an `Omega(H)` unary-forbidden resource matching.
 Raw unary density is therefore not terminal. The unresolved issue is paid
 conversion of the resulting star/resource structures.
 
-## Binary dual packings and conditional stars
+## Binary dual packings, conditional stars, and paid grids
 
 Binary shadow is governed by minimum endpoint-resource cover congestion. A
 linear dual value has support on `Omega(q)` conflicts and yields either:
@@ -124,8 +124,8 @@ linear dual value has support on `Omega(q)` conflicts and yields either:
 - an unsafe opposite-diagonal unary matching;
 - or a small high-price endpoint core carrying `Omega(q)` dual mass.
 
-A weighted resource star is further reduced by conditioning on the unique centre
-cell selected by a perfect matching.
+A weighted resource star is reduced by conditioning on the unique centre cell
+selected by a perfect matching.
 
 - A subquadratic star has a sparse partner fibre and completes in a superregular
   host.
@@ -135,8 +135,11 @@ cell selected by a perfect matching.
 - A repeated secondary resource becomes a two-choice forbidden matrix.
 - Superregular failure forces a complete quadratic two-resource choice grid.
 
-The remaining binary objects are quadratic cell fans, complete choice grids,
-conditional Hall families, or paid/source concentration.
+A complete support grid is not itself a paid obstruction. Jointly averaging the
+local pair and its residual matching closes the grid whenever average binary
+multiplicity plus residual collateral is below the combined removal credit.
+Failure forces a quadratic weighted grid, a candidate-rich projective matching
+cover, residual concentration, or a non-superregular conditional host.
 
 ## Matchable non-superregular hosts
 
@@ -152,7 +155,7 @@ The unresolved component objects are fixed-spine/distinct-signature support core
 or source/shadow cost comparable with cycle credit. Unbounded SCC size itself is
 not open.
 
-## Dynamic excess potential and marked fillers
+## Dynamic excess potential and single-cycle fillers
 
 The dynamic potential is
 
@@ -179,27 +182,31 @@ N=m^(19/20+o(1)),
 force one credited endpoint into a filler block of size `b=m^kappa`, with
 `kappa<19/80`.
 
-All but `o(H)` credited endpoints are simultaneously light for:
+All but `o(H)` credited endpoints are simultaneously light for support-rank-four
+anchored pairs, inserted triples of support rank four through six, and anchored
+transitions. Adaptive filler size also removes diffuse unary support. Hence a
+large resource bank has no independent pool-local source-pair, triple,
+transition, or diffuse unary obstruction.
 
-- support-rank-four anchored pairs;
-- inserted triples of support rank four, five, and six;
-- anchored transitions.
+The filler state may be chosen as a uniform single-cycle permutation. Exact
+counting gives cylinder probability `1/(b-1)_r` for directed path forests and zero
+for every proper directed cycle. It moves every selected endpoint and
+identically removes:
 
-Adaptive filler size also removes diffuse unary support. Hence a large resource
-bank has no independent pool-local source-pair, triple, transition, or diffuse
-unary obstruction.
+- diagonal arcs;
+- transpositions;
+- directed triangles.
 
-Support-ranked formulas now separate:
+No separately prepared spread host is required in this branch.
 
-- unmarked full-pool unary/binary Xi weight;
-- marked Xi load caused by forcing one credited endpoint;
-- and weight diluted by filler selection.
+The support-ranked `Xi` expression therefore has no rank-one unary term and no
+rank-two binary transposition term. The remaining marked loads are rank-two unary
+and rank-three/rank-four binary weights; the corresponding unmarked full-pool
+terms are explicit. Diffuse remaining weight gives a strict dynamic decrease.
 
-Diffuse marked and unmarked Xi weight gives a strict dynamic decrease.
-
-A fixed captive centre either succeeds or carries one of eleven explicit support
-degree cores: unary, transition, anchored-pair, three triple ranks, two unary Xi
-ranks, or three binary Xi ranks.
+A fixed captive centre either succeeds or carries one of nine explicit support
+degree cores: unary, transition, anchored-pair, three triple ranks, rank-two unary
+`Xi`, or rank-three/rank-four binary `Xi`.
 
 ## What remains conditional
 
@@ -211,12 +218,13 @@ The missing conversion theorem has these structured forms.
    cuts.
 3. Convert chromatically concentrated unary or binary controller-shadow weight
    in the global rectangle branch.
-4. Convert marked endpoint Xi-load cores, full-pool Xi-weight thresholds, or the
-   explicit support core of one fixed captive centre.
+4. Convert marked endpoint `Xi`-load cores, full-pool `Xi`-weight thresholds, or
+   one of the nine explicit support cores of a fixed captive centre.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
-6. Convert quadratic binary cell fans, complete two-resource choice grids,
-   conditional Hall families, or paid collateral on their rectangle states.
+6. Convert quadratic binary cell fans, weighted two-resource choice grids,
+   candidate-rich projective covers, conditional Hall families, or residual paid
+   collateral.
 
 ## Important cautions
 
@@ -224,9 +232,10 @@ The missing conversion theorem has these structured forms.
 - Fixed-core domains do not handle unselected active-pool edges.
 - The canonical anchor bound controls same-slot anchor weight, not all controller
   defects.
-- The marked-filler source theorem applies to a large credited resource bank;
-  one predetermined centre may remain exceptional.
-- The support-ranked Xi theorem is conditional on its displayed weight bounds.
+- The single-cycle marked-filler theorem applies to a large credited resource
+  bank; one predetermined centre may remain exceptional.
+- The reduced support-ranked `Xi` theorem is conditional on its displayed weight
+  bounds.
 - Finite diagnostics verify identities and examples, not asymptotic conversion.
 
 ## Bottom line
@@ -235,7 +244,8 @@ There is no complete proof. The branch closes matching supply, optimal macro
 width, four allocation interfaces, external weighted geometry, rectangle
 extraction, superregular and non-superregular state decompositions, canonical
 weighted anchor deficiency, conditional resource stars, diffuse pool-local source
-mass, and diffuse binary dual mass.
+mass, universal marked single-cycle spread, low-rank cyclic `Xi` terms, and
+diffuse binary dual mass.
 
-The concentrated local-Ore, paid star/resource, global-shadow, marked-Xi,
-cycle-support, and quadratic binary cores above remain open.
+The concentrated local-Ore, paid star/resource, global-shadow, marked-`Xi`,
+cycle-support, and weighted binary-grid cores above remain open.
