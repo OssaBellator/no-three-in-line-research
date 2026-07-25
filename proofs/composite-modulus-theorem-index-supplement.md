@@ -16,9 +16,10 @@ supplement mirrors the collision-free live range recorded in
 | CMR413--417 | Exact full-token edge-incidence multiplicity, scale-filtered prefix and packet budgets, two-edge matching churn, and polynomial state-expansion payment | PROVED | `docs/140-prime-power-edge-incidence-state-expansion.md` |
 | CMR418--421 | Entering-edge support for recreated selected conflicts, equality with leaving-edge churn, harmonic packet recreation bounds, and the first-dirty packet ledger | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
 | CMR422--425 | Lossy packet reset deletion/forced-ancestry dichotomy, finite deletion budget, packet-installation bound, and conditional ancestry-width closure | PROVED / PROVED UNDER THE ANCESTRY-WIDTH HYPOTHESIS | `docs/142-prime-power-packet-loss-deletion-ancestry.md` |
+| CMR426--428 | Essentiality persistence, fully forced packet terminality, and polynomial completion-or-ancestry bound | PROVED | `docs/143-prime-power-fully-forced-packet-terminality.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR425, packet scheduling inside one deletion pass is reduced to fully forced
-exchange-ancestry width. The immediate remaining targets are an incoming-width
-bound for CMR217 ancestry, a simultaneous exchange-cycle resampling theorem, and
-an analogous monotone payment for repeated local ancestor resets.
+CMR428, harmonic-packet scheduling has an unconditional local endpoint: it
+finishes in polynomially many installations or reaches one terminal fully
+forced CMR217 certificate. The immediate remaining targets are resolving that
+ancestry endpoint and paying repeated local ancestor resets.
