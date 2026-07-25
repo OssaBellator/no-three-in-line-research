@@ -19,7 +19,7 @@ This ledger records only branch-specific statements.
 | BDA4a | Complete finite profile quotients reduce nontermination to directed cycles | PROVED | `docs/bounded-denominator-finite-transition.md` |
 | BDA4b | Common-scale prime division has finite valuation height | PROVED | `docs/bounded-denominator-valuation-charts.md` |
 | BDA4c–BDA4d | Repeated factor lifts form separated radial progressions with bounded primitive shape | PROVED | `docs/bounded-denominator-lift-separation.md` |
-| BDA4e | Co-anchored adjacent radial pairs regularize unless one of five anchor chains appears | PROVED | `docs/bounded-denominator-radial-pair-regularization.md` |
+| BDA4e | Co-anchored adjacent radial pairs regularize to a compatible family or one of five affine support roles | PROVED; HIGH-LOAD OUTPUT COLLAPSED BY BDA5ap–BDA5ar | `docs/bounded-denominator-radial-pair-regularization.md` |
 | BDA4f | High capped radial occupancy yields a quantified parity matching of adjacent pairs | PROVED | `docs/bounded-denominator-radial-pair-regularization.md` |
 | BDA5a | Rectangle geometry and blocker occupancy trichotomy | PROVED; PHASE-FLIP PAYMENT SUPERSEDED | `docs/bounded-denominator-radial-rectangle-decoder.md` |
 | BDA5b | A radial decoder improves below its explicit collateral threshold | PROVED WITH UNION-SAFE MENU | `docs/bounded-denominator-radial-rectangle-decoder.md` |
@@ -54,6 +54,9 @@ This ledger records only branch-specific statements.
 | BDA5al | Every clean pair has exactly two canonical union-safe role states supported on its five columns | PROVED | `docs/bounded-denominator-union-safe-products.md` |
 | BDA5am–BDA5an | Arbitrary support-disjoint role choices form a legal product with exact probability `m_C/2^{|J(C)|}` | PROVED | `docs/bounded-denominator-union-safe-products.md` |
 | BDA5ao | Floor/imbalance suppression and the `4,8` higher-rank losses survive unchanged under the union-safe product | PROVED | `docs/bounded-denominator-union-safe-products.md` |
+| BDA5ap | A high row or column localizes at least one tenth of its paid record weight to one exact current role cell | PROVED | `docs/bounded-denominator-affine-chain-collapse.md` |
+| BDA5aq | Fixing the selected role cell determines both anchor coordinates and places every retained support on one radial line | PROVED | `docs/bounded-denominator-affine-chain-collapse.md` |
+| BDA5ar | Every five-role affine-chain output terminates as a fixed-anchor or translated fixed-cell radial profile | PROVED | `docs/bounded-denominator-affine-chain-collapse.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
