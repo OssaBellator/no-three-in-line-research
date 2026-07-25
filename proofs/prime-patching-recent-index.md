@@ -51,6 +51,8 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3adn--PP3adt | Full-pool binary Xi truncation gives a paid heavy-pattern-avoiding cycle or fixed-centre rank-three/rank-four support-degree cores | PROVED / CONDITIONAL PAID INTERFACE | `docs/185-full-pool-binary-xi-truncation.md` |
 | PP3adu--PP3aea | The fixed-centre Xi centre core has an exact five-chain normal form; failure is local cost, quantified rank-four partner mass, or residual off-centre concentration | PROVED / CONDITIONAL PAID INTERFACE | `docs/186-fixed-centre-xi-five-chain-normal-form.md` |
 | PP3aeb--PP3aeg | Dense deterministic local-credit failure splits into heavy unary arcs, rank-three paths/grids, or rank-four cross-pair families | PROVED / CONDITIONAL PAID INTERFACE | `docs/187-fixed-centre-local-credit-role-splitting.md` |
+| PP3aeh--PP3aem | A thresholded outer-choice count gives `N^(4-o(1))` source-clean five-chains or a near-complete transition role-star feeding the credited petal chain | PROVED | `docs/188-source-clean-five-chain-supply.md` |
+| PP3aen--PP3aet | Clean-chain conditioning has sharp inverse-density loss; off-centre Xi and source objectives retain full-pool thinning up to `N^(o(1))` | PROVED / CONDITIONAL PAID INTERFACE | `docs/189-clean-chain-inverse-density-averaging.md` |
 
 ## Current scale
 
@@ -69,17 +71,21 @@ gives the full patch by PP3hq.
 
 ## Current transition endpoint
 
-The fixed-centre transition branch yields a paid clean-chain completion or a
-linear disjoint-petal sunflower. Layer and pool pigeonholing converts the sunflower
-to a free or one-pool credited endpoint bank of size at least `W`.
+At threshold `q=ceil(N/log N)`, the sparse middle relation gives an exact
+dichotomy. Either there are at least `N^4/(3log^4 N)` source-clean ordered
+five-chains through the captive centre, or all but `o(N)` middle indices lie in
+a near-complete predecessor or successor forbidden role-star. The star branch
+feeds the disjoint-petal, credited-bank, and collateral-averaging chain
+PP3zw--PP3aaj.
 
-PP3aaf--PP3aaj additionally close diffuse collateral on the disjoint petals.
-Remaining transition failure is:
+Thus failure of dense clean-chain supply is no longer independent. Remaining
+transition failure is:
 
-1. a source core supported at the shared captive centre;
+1. an explicit residual source threshold after the clean-family
+   inverse-density factor;
 2. global support-ranked petal-touching weight at the bank-credit scale;
 3. hard-unary or residual endpoint-host failure;
-4. source or paid concentration on the clean-chain bank.
+4. payment or conversion of the credited transition-petal/resource bank.
 
 ## Current marked-Xi endpoint
 
@@ -93,21 +99,22 @@ and robust Hall localization to the existing conditional Hall/grid or
 alternating-host branches. Full-pool binary truncation sends hard aggregate
 terms to fixed-centre rank-three/rank-four support-degree cores.
 
-The formerly opaque centre-core term now has the exact five-chain formula
-PP3adx: deterministic rank-two/rank-three/local-cross-pair cost plus boundary
-rank-four partner mass with coefficient `1/(N-5)` and fully remote partner mass
-with coefficient `(b-6)/((N-5)(N-6))`.
+The centre-supported cost has the exact five-chain formula PP3adx.
+Deterministic local-credit failure splits into seven existing roles. The
+source-clean supply theorem gives a clean family of density at least
+`1/(3log^4 N)` unless the transition-petal branch occurs.
 
-Dense deterministic local-credit failure then splits among seven roles and
-forces `Omega(N)` heavy unary arcs, `Omega(N^2)` heavy rank-three paths, or
-`Omega(N^3)` heavy rank-four cross-pairs, all of which feed the preceding
-localization chains.
+Every ordered five-chain has the same number of marked block-cycle
+completions. Restriction to the clean family therefore multiplies any
+nonnegative residual source or off-centre insertion expectation by at most
+`3log^4 N=N^(o(1))`. Hence the full-pool support-ranked thinning bounds survive,
+and hard off-centre Xi weight returns through PP3adh--PP3adt to the same
+fixed-centre arc/path/partner cores.
 
-The remaining marked-`Xi` work is therefore payment of the extracted
-arc/path-petal, weighted-grid, conditional-Hall, or alternating-host objects,
-together with residual source/off-centre concentration and failure of dense
-source-clean chain supply. An unstructured centre-core or local-credit table is
-no longer an independent frontier.
+The remaining marked-`Xi` work is payment or conversion of the extracted
+arc/path-petal, weighted-grid, projective-cover, conditional-Hall, and
+alternating-host objects, plus explicit residual source thresholds and local
+pattern cost already comparable with removal credit.
 
 ## Remaining theorem
 
@@ -119,8 +126,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
    hard unary support, forced Hall cuts, transitions, and marked `Xi` localization.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
-4. Convert remaining fixed-centre source/off-centre weight cores or failure of
-   dense source-clean chain supply.
+4. Convert explicit fixed-centre residual source thresholds after the
+   polylogarithmic clean-chain conditioning loss.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
@@ -133,7 +140,8 @@ full-pool support-ranked `Xi` thresholds, unstructured rank-three and rank-four
 binary `Xi` tables, weighted rank-three middle rectangles, small-core heavy
 rank-three outer families, fixed rank-four multiplicity cores, fixed-cell
 rank-four petal banks, square-root rank-four partner stars, opaque centre-core
-`Xi` terms, deterministic local-credit tables, unstructured non-superregularity,
-and termination are no longer separate open problems.
+`Xi` terms, deterministic local-credit tables, failure of dense source-clean
+chain supply, unstructured off-centre `Xi` concentration, unstructured
+non-superregularity, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
