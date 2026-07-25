@@ -293,13 +293,15 @@ templates to row-column-preserving absorber states.
 RI4b localizes arbitrary paid point or orbit weight inside those
 templates. One fixed endpoint-coset pair and target colour carries at
 least one quarter of the weight in the square and at least one third in
-the collapsed template. Thus the order-two RI5 conversion may be built
-for a single quotient edge rather than a mixture of finite templates.
+the collapsed template. Thus the order-two RI5 lift and conversion
+problem may be restricted to a single quotient edge rather than a
+mixture of finite templates.
 
 [`rational-inverse-fixed-edge-bank.md`](rational-inverse-fixed-edge-bank.md)
-proves RI5a--RI5b. Completing the at most four source cosets of an
-order-two component installs the existing I6 matching bank. A paid
-current orbit is neutralized with probability at least
+proves the conditional RI5a--RI5b bank theorem.  Once the at most four
+source cosets of an order-two component are certified as one installed
+physical hyperbola block, the existing I6 matching bank applies.  A
+paid current orbit is neutralized with probability at least
 \(1-1/(m|H|)\), while distinct-coset collateral prescriptions have the
 exact I6 cylinder probability \(1/((m)_r|H|^r)\). This gives an
 explicit expected-destruction versus normalized-collateral criterion
@@ -307,6 +309,16 @@ for a row-column-preserving improving state. RI5c composes the paid
 localization and bank estimates: a square component pays a \(1/4\)
 factor and a collapsed component a \(1/3\) factor before the exact
 collateral comparison.
+
+[`rational-inverse-lift-coherence.md`](rational-inverse-lift-coherence.md)
+proves RI5d--RI5e and corrects the entrance condition.  Normalized
+roots \(c=z/x\) do not determine their occurrence bases \(x\); arbitrary
+base scales preserve the rational secant identity, and a dense root
+coset can lift to one physical anchor star.  The exact audit now
+returns a scale mismatch, scale-coset growth, a heavy physical star,
+or a scale-localized physical family.  RI5a--RI5c may be invoked only
+after that family passes the full installed-block audit.  Paying the
+remaining completion debt is still open.
 
 ## RI5 — Absorber interface
 

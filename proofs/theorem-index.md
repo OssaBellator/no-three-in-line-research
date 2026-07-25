@@ -109,9 +109,11 @@ The numbering is local to this repository.
 | RI3b | Bipartite components have an exact side-ratio subgroup, while odd cycles collapse source support to one coset | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
 | RI4a | Every order-two colour-ratio component is contained in an alternating square or a loop-and-edge collapse | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
 | RI4b | Paid order-two orbit weight localizes to one endpoint-coset edge with a \(1/4\) or \(1/3\) guarantee | PROVED | `tracks/rational-inverse-quotient-cycles.md` |
-| RI5a | The I6 bank on at most four source cosets neutralizes paid fixed-edge orbits with probability at least \(1-1/(m|H|)\) | PROVED | `tracks/rational-inverse-fixed-edge-bank.md` |
-| RI5b | Paid fixed-edge destruction exceeding the exact normalized I6 collateral sum yields an improving matching state | PROVED | `tracks/rational-inverse-fixed-edge-bank.md` |
-| RI5c | An order-two square or collapsed component improves under an explicit \(1/4\)- or \(1/3\)-weighted collateral inequality | PROVED | `tracks/rational-inverse-fixed-edge-bank.md` |
+| RI5a | On a bank-ready installed physical block, the I6 bank neutralizes paid fixed-edge objects with probability at least \(1-1/(m|H|)\) | PROVED (CONDITIONAL INTERFACE) | `tracks/rational-inverse-fixed-edge-bank.md` |
+| RI5b | On that installed block, paid destruction exceeding the exact normalized I6 collateral sum yields an improving matching state | PROVED (CONDITIONAL INTERFACE) | `tracks/rational-inverse-fixed-edge-bank.md` |
+| RI5c | A bank-ready order-two square or collapsed component improves under an explicit \(1/4\)- or \(1/3\)-weighted collateral inequality | PROVED (CONDITIONAL INTERFACE) | `tracks/rational-inverse-fixed-edge-bank.md` |
+| RI5d | The rational secant identity permits arbitrary occurrence base scales, so normalized coset density does not imply a physical coset block | PROVED | `tracks/rational-inverse-lift-coherence.md` |
+| RI5e | Complete fixed-edge fibres admit an exact scale-mismatch, scale-growth, physical-star, or scale-localized lift audit | PROVED | `tracks/rational-inverse-lift-coherence.md` |
 | RI1 | Dense-subset expansion with unrestricted \(H\) | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `tracks/rational-inverse-collision-and-obstructions.md` |
 | CR1 | Exact one-switch collateral identity for a common-ratio rectangle | PROVED | `docs/20-common-ratio-bank-conversion.md` |

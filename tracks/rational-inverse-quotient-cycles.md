@@ -436,9 +436,11 @@ involution orbits proves the last assertion. \(\square\)
 
 RI4b supplies the paid finite-channel input missing from the bare RI4
 classification.  The remaining RI5 task on the order-two branch is to
-construct and compare the row-column-preserving state family for one
-fixed endpoint-coset channel; no further quotient mixture has to be
-handled.
+lift one fixed normalized endpoint-coset channel to a physical
+row-column block and compare its state family; no further quotient
+mixture has to be handled.  RI5d--RI5e make the occurrence base scale
+and the installed-block audit explicit before the conditional I6 bank
+is used.
 
 RI3a is an exact simultaneous-structure alternative.  A quotient core
 with small colour-ratio subgroup is already confined to two source

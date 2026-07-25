@@ -1,11 +1,19 @@
-# Fixed-edge coset-bank conversion
+# Conditional fixed-edge coset-bank conversion
 
 RI4a confines every order-two colour-ratio component to at most four
 source \(H\)-cosets, and RI4b localizes a constant fraction of its paid
-weight to one quotient edge.  The full coset-union bank from I6 can now
-be installed on exactly those source cosets.  This note records the
-resulting survival probabilities and the executable collateral
-criterion.
+weight to one quotient edge.  If those normalized quotient cosets have
+already been certified as one installed physical hyperbola block, the
+full coset-union bank from I6 can be used on that block.  This note
+records the resulting survival probabilities and the executable
+collateral criterion under that physical-lift hypothesis.
+
+The hypothesis is not automatic.  The quotient vertices classify
+\(c=z/x\), while I6 acts on physical columns.  The occurrence base
+\(x\) may vary.
+[`rational-inverse-lift-coherence.md`](rational-inverse-lift-coherence.md)
+proves RI5d--RI5e, gives the exact scale-coset audit, and exhibits the
+normalization obstruction.
 
 Let \(H\leq\mathbb F_p^\times\) have order \(h\), and let
 
@@ -23,6 +31,12 @@ e_x=(x,a/x),
 \qquad
 x\in X.
 \]
+
+Assume explicitly that these are physical columns and current cells of
+one permutation layer, not merely normalized root labels; that the full
+block \(X\) and its row set \(aX^{-1}\) are installed; and that every
+paid orbit below is supported on this block.  These are the
+**bank-ready hypotheses** of RI5e.
 
 For \(\sigma\in S_m\) and \(t=(t_1,\ldots,t_m)\in H^m\), use the I6
 state
@@ -209,13 +223,18 @@ RI4b selects one quotient edge of weight at least
 \(W_{\mathrm{comp}}/3\) in the collapsed template.  Apply RI5b to that
 edge. \(\square\)
 
-RI5a--RI5c complete the finite-state conversion of a paid order-two
-quotient edge.  No new state construction is required: the source
-cosets install directly into I6, and the only remaining estimate is the
-explicit normalized collateral sum above.  Prescriptions with repeated
-source or target cosets must be placed in \(F\) or evaluated with their
-actual block correlation; they are not silently assigned the
-distinct-coset cylinder probability.
+RI5a--RI5c complete the finite-state comparison of a **bank-ready**
+paid order-two quotient edge.  No new state construction is required
+after physical installation: the source cosets use I6, and the only
+remaining estimate is the explicit normalized collateral sum above.
+Prescriptions with repeated source or target cosets must be placed in
+\(F\) or evaluated with their actual block correlation; they are not
+silently assigned the distinct-coset cylinder probability.
+
+They do not prove that normalized RI4b or OP4i density is bank-ready.
+RI5d shows that the base scales are algebraically free, while RI5e
+returns scale mismatch, scale growth, a physical point star, or a
+scale-localized partial lift before this theorem may be invoked.
 
 `scripts/verify_rational_fixed_edge_bank.py` enumerates every I6 state
 for small \(m,h\), checks same-block, cross-block, and all-rank cylinder
