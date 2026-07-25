@@ -1,0 +1,6 @@
+{
+  "bank_size": 8,
+  "subbank_size": 4,
+  "unary_supports": [[0,1]],
+  "binary_supports": [[0,2],[0,1,2],[0,1,2,3]]
+}
