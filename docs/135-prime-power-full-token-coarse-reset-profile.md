@@ -1,6 +1,6 @@
 # Full-prefix tokens inherit the coarse-reset return profile
 
-CMR389--CMR392 sharpen repeated-token accounting by fixing both endpoint
+CMR394--CMR397 sharpen repeated-token accounting by fixing both endpoint
 prefix coordinates. CMR378--CMR384 compute row-token return under laminar and
 recursive coarse prefix resets. The two results combine directly: one ancestor
 reset can return at most one old matching edge for each source column in the
@@ -37,7 +37,7 @@ Consider an old-cell-clean rematching of one depth-`r` prefix block, where
 
 ## 1. One ancestor reset
 
-### Theorem CMR393 — PROVED
+### Theorem CMR398 — PROVED
 
 One depth-`r` one-layer prefix rematching reintroduces at most
 
@@ -47,7 +47,7 @@ One depth-`r` one-layer prefix rematching reintroduces at most
 }
 \]
 
-old matching edges in `U_tau^(2)`.
+old matching edges in `U_\tau^{(2)}`.
 
 It reintroduces none unless both of the following compatibility conditions
 hold:
@@ -60,7 +60,7 @@ coordinate-dual opposite-layer reset.
 
 ### Proof
 
-By the exact host-churn statement CMR382, the only edges reintroduced at
+By the exact host-churn statement CMR378, the only edges reintroduced at
 full-host level are old matching edges of the rematched block. If the block
 column residue is incompatible with `a`, it contains no source column of the
 full token. If the row fibre is incompatible with `c`, it contains no target
@@ -80,13 +80,13 @@ edges can lie in the full-token universe. A persistent deletion mask can only
 reduce the returned set. The dual statement interchanges the two matching
 classes. ∎
 
-Unlike the row-token profile in CMR382, equality is not asserted: unless the
+Unlike the row-token profile in CMR379, equality is not asserted: unless the
 recursive depth-`b` descendant row fibre is retained, the old matching need not
 send every compatible source column to the prescribed depth-`b` row prefix.
 
 ## 2. One-pass reset budget
 
-Follow the descending one-pass prefix schedule of CMR380, with the sharper
+Follow the descending one-pass prefix schedule of CMR381, with the sharper
 post-exposure ancestor accounting of CMR383. Let
 
 \[
@@ -96,7 +96,7 @@ I_\tau^{(2),\mathrm{coarse}}
 be the full-token edge reintroduction mass caused by all later coarser prefix
 resets.
 
-### Theorem CMR394 — PROVED UNDER THE ONE-PASS HYPOTHESIS
+### Theorem CMR399 — PROVED UNDER THE ONE-PASS HYPOTHESIS
 
 For every full token,
 
@@ -127,13 +127,13 @@ If only the measured layer is rematched, both factors `2` may be removed.
 At each coarser depth `r=0,...,b-1` and in each moving layer, there is at most
 one block whose column prefix can extend `a`. The row-fibre condition can only
 remove that candidate. Under the one-pass hypothesis, each compatible
-block-layer slot is used at most once. There are at most `2b` slots, and CMR393
+block-layer slot is used at most once. There are at most `2b` slots, and CMR398
 charges at most `t/p^b` returned full-token edges to each. Combine with the
-initial-stock inventory CMR390. ∎
+initial-stock inventory CMR395. ∎
 
 ## 3. Deep full-token visit bounds
 
-### Corollary CMR395 — PROVED UNDER THE ONE-PASS HYPOTHESIS
+### Corollary CMR400 — PROVED UNDER THE ONE-PASS HYPOTHESIS
 
 1. If
    \[
@@ -162,11 +162,11 @@ initial-stock inventory CMR390. ∎
 
 ### Proof
 
-Use CMR394 and substitute the corresponding lower bound on `p^b`. Also use
+Use CMR399 and substitute the corresponding lower bound on `p^b`. Also use
 `b<=h`. ∎
 
 Thus a single descending prefix pass has a subquadratic—and at the tunable deep
-threshold, sublinear up to the initial `t^(2/3)` term—budget for repeated visits
+threshold, sublinear up to the initial `t^{2/3}` term—budget for repeated visits
 to one exact full token.
 
 ## 4. Exact reset-occurrence factorization
@@ -178,7 +178,7 @@ A_{\tau,r,\ell}^{(2)}
 \]
 
 be the number of old-cell-clean rematchings, after the token is exposed, of the
-unique depth-`r` block which can satisfy both CMR393 compatibility conditions.
+unique depth-`r` block which can satisfy both CMR398 compatibility conditions.
 If no such block exists, put this count equal to zero. Define
 
 \[
@@ -188,7 +188,7 @@ A_\tau^{(2)}
 A_{\tau,r,\ell}^{(2)}.
 \]
 
-### Theorem CMR396 — PROVED
+### Theorem CMR401 — PROVED
 
 For an arbitrary number of recursive prefix resets,
 
@@ -228,17 +228,17 @@ most `2b` compatible ancestor slots to be rematched more than `m` times.
 
 ### Proof
 
-CMR393 contributes at most `t/p^b` for every counted reset, proving the
+CMR398 contributes at most `t/p^b` for every counted reset, proving the
 factorization. There are `b` coarser depths and at most two moving layers, so
-the multiplicity hypothesis gives `A_tau^(2)<=2bm`. Apply CMR390 for the visit
-bound. The final statement is the contrapositive. ∎
+the multiplicity hypothesis gives `A_\tau^{(2)}<=2bm`. Apply CMR395 for the
+visit bound. The final statement is the contrapositive. ∎
 
-CMR396 identifies the only unbounded recursive-prefix source exactly: repeated
+CMR401 identifies the only unbounded recursive-prefix source exactly: repeated
 use of one fixed compatible ancestor slot.
 
 ## 5. Aggregate labelled return mass
 
-### Corollary CMR397 — PROVED UNDER THE ONE-PASS HYPOTHESIS
+### Corollary CMR402 — PROVED UNDER THE ONE-PASS HYPOTHESIS
 
 Summing over every nonroot full token in the parent block gives
 
@@ -250,7 +250,7 @@ Summing over every nonroot full token in the parent block gives
 I_{(b,a,c,\theta)}^{(2),\mathrm{coarse}}
 \le
 2(p+1)t
-\sum_{b=1}^{h-1}b p^b.
+\sum_{b=1}^{h-1}bp^b.
 }
 \]
 
@@ -268,8 +268,8 @@ so the direction-labelled aggregate is `O_p(t^2 log t)`.
 
 ### Proof
 
-At depth `b` there are `p^(2b)` prefix pairs `(a,c)` and `p+1` directions.
-Multiply this count by the per-token CMR394 bound `2bt/p^b`, obtaining
+At depth `b` there are `p^{2b}` prefix pairs `(a,c)` and `p+1` directions.
+Multiply this count by the per-token CMR399 bound `2bt/p^b`, obtaining
 `2(p+1)bt p^b`. Sum over `b`. Finally,
 
 \[
@@ -290,7 +290,7 @@ mass.
 
 A canonical descending prefix pass cannot freely replenish repeated full
 tokens. At cubic depth, one token has total executable endpoint stock at most
-`t^(2/3)+O(h t^(1/3))`; globally, all labelled full-token returns in the pass
+`t^{2/3}+O(h t^{1/3})`; globally, all labelled full-token returns in the pass
 have `O_p(t^2 log t)` mass. For unrestricted histories, excessive return forces
 repeated use of one exact ancestor slot.
 
