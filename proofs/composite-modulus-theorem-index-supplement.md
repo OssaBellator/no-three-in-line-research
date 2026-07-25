@@ -25,11 +25,14 @@ supplement mirrors the collision-free live range recorded in
 | CMR453--461 | Rollback-sensitive potential range, optimal-allowed edge criterion, exact SCC product, additive local rollback cost, active-level concentration, threshold endpoint, and transfer to marked ancestor-return slots | PROVED | `docs/149-prime-power-tight-rollback-scc-factorization.md` |
 | CMR462--466 | Exact level-cut flow conservation, at most `2k` cross-level edges, balanced residual levels, conditional level factorization, finite skeleton count, and marked-slot transfer | PROVED | `docs/150-prime-power-rollback-level-skeleton.md` |
 | CMR467--471 | Right-endpoint cost polarization inside one level, exact source-split products, mixed-colour cycle criterion, colour-separated factorization, and transfer to rollback/ancestor faces | PROVED | `docs/151-prime-power-same-level-colour-split.md` |
+| CMR472--476 | Cyclic colour-boundary criterion, canonical short mixed-cycle witnesses, vertex packing versus concentration, simultaneous flips, and sparse-tail deletion | PROVED | `docs/152-prime-power-mixed-cycle-packing-concentration.md` |
+| CMR477--481 | Vertex-to-boundary incidence reduction, exact return-path representation, directed Menger theta-fan/cut alternative, second-edge concentration, and boundary-source-switch interpretation | PROVED | `docs/153-prime-power-mixed-cycle-boundary-fan-cut.md` |
+| CMR482--486 | Theta-fan private entering-edge sunflower, blocker resilience, rooted-conflict dichotomy, aggregate conflict payment, and harmonic packet/token endpoint | PROVED | `docs/154-prime-power-theta-fan-private-edge-payment.md` |
+| CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR471, minimum rollback and repeated marked-return states reduce to sparse
-balanced cross-level skeletons and same-level factors. A same-level factor
-either decomposes by marked versus unmarked columns or contains an explicit
-mixed-colour zero-cost alternating cycle. The immediate target is geometric use
-of those mixed cycles or conversion of their overlap into prefix, carry, Hall,
-reserve, or envelope structure.
+CMR491, mixed zero-cost motion has been reduced to executable simultaneous
+flips, sparse matching-pair interfaces, private-route incidence payment,
+repeated-cell secant-star geometry, or a fixed compatible rank-two completion
+cylinder. The immediate target is to integrate the last two branches with the
+existing secant-star carry-dispersion and line-clean paid-pair banks.
