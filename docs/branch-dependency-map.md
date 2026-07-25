@@ -32,9 +32,11 @@ BDA5aa--BDA5ad close the reflected `CD` denominator scalar: `A(2h+q)` has the sa
 
 BDA5ae--BDA5ah replace the former dispersed-anchor inequality by an exact overlap-variation router. One scalar profile gives a paid pair bank, a paid endpoint front, or a parity-disjoint oriented missing-partner front. AC3du--AC3dx import these fronts, prove private scalar-slot payment, and route them through the scope-complete paid-bank-or-labelled-overload interface.
 
-AC3ec--AC3eg now audit every one-sided front at its formal adjacent scale `H=h±q`. The output is bounded lower scale `h<=q`, one of two exact mixed role collisions, an actual clean BDA5a pair, or a privately paid one- or two-cell missing-support bank. Immediate reversal across the same adjacent scale pair consumes one finite ticket.
+AC3ec--AC3eg audit every one-sided front at its formal adjacent scale `H=h±q`. The output is bounded lower scale `h<=q`, one of two exact mixed role collisions, an actual clean BDA5a pair, or a privately paid one- or two-cell missing-support bank. Immediate reversal across the same adjacent scale pair consumes one finite ticket.
 
-Paid and support faithfulness remain explicit hypotheses for the original ordinary and reflected co-anchor pair outputs. The remaining BDA interface work is the actual collateral comparison for clean pairs and missing-support banks, arithmetic termination of lower-scale/collision labels, and termination of affine-chain and higher-rank alternatives.
+AC3eh--AC3ek close the lower and mixed-collision arithmetic. A mixed collision has one coprime normal form, requires a divisor of `q`, and determines at most one unordered positive scale pair for the exact role word; lower fronts have only the `q` scales `1,...,q`. AC3el--AC3eo prove support faithfulness and executable heterogeneous decoder products for the actual-clean-partner class, with private occupied-side payment and failed-product returns to one of `F,T1,T2,T3` at the explicit `1/128` or `1/256` AC3am scales.
+
+Support faithfulness remains open only for ordinary or reflected co-anchor outputs which have not passed through the AC3ec actual-clean-partner audit. The remaining BDA interface work is the potential comparison for missing-support installation banks, arithmetic termination of finite decoder collateral/overload profiles, and termination of affine-chain and higher-rank alternatives.
 
 ### `research/rational-inverse-expansion`
 
@@ -74,7 +76,8 @@ The alternating branch imports only proved finite interfaces:
 - AC3ad--AC3af: literal-star drift and residual arms;
 - AC3ag--AC3ai: global fixed-centre contexts;
 - AC3aj--AC3am: cross-centre blockers and finite arithmetic roles;
-- AC3ay--AC3ba: exact OP4g--OP4i rational labels and factor-conservative payment.
+- AC3ay--AC3ba: exact OP4g--OP4i rational labels and factor-conservative payment;
+- AC3du--AC3eo: exact scalar fronts, finite collision/lower states, and support-faithful clean decoder products.
 
 No open wide-CSP, Tanner-expansion, recurrent-blocker, RI, or BDA terminal claim is silently imported.
 
