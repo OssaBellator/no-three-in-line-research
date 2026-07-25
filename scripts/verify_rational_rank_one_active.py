@@ -23,16 +23,25 @@ def matching_triples(columns, rows, prime):
                     yield triple
 
 
-def build_switch(prime, parameter, components):
+def build_switch(prime, parameter, components, outside_shift):
     columns = list(range(1, prime))
     target = {x: parameter * inverse(x, prime) % prime for x in columns}
-    current = dict(target)
+    current = {}
+    selected = set()
 
     for component in components:
         ordered = tuple(component)
+        selected.update(ordered)
         for index, column in enumerate(ordered):
             previous = ordered[(index - 1) % len(ordered)]
             current[column] = target[previous]
+
+    outside_columns = [x for x in columns if x not in selected]
+    outside_rows = [target[x] for x in outside_columns]
+    if outside_columns:
+        shift = outside_shift % len(outside_columns)
+        outside_rows = outside_rows[shift:] + outside_rows[:shift]
+        current.update(zip(outside_columns, outside_rows, strict=True))
 
     assert len(set(current.values())) == len(columns)
     assert len(set(target.values())) == len(columns)
@@ -154,84 +163,93 @@ def verify_toggle_profiles(primes=(5, 7)):
             }
 
             for components in component_families(columns):
-                columns_now, current, target = build_switch(
-                    prime, parameter, components
-                )
-                current_cells = {(x, current[x]) for x in columns_now}
-                controlled = {index: set() for index in range(len(components))}
+                selected = {
+                    column for component in components for column in component
+                }
+                outside_count = len([x for x in columns if x not in selected])
+                shift_count = max(1, outside_count)
 
-                for triple in triples:
-                    allowed = compatible_bits(
-                        triple, current, target, components
+                for outside_shift in range(shift_count):
+                    columns_now, current, target = build_switch(
+                        prime, parameter, components, outside_shift
                     )
-                    if allowed is None:
-                        continue
-                    prescribed = [
-                        (index, next(iter(states)))
-                        for index, states in enumerate(allowed)
-                        if len(states) == 1
-                    ]
-                    is_new = not triple <= current_cells
+                    current_cells = {(x, current[x]) for x in columns_now}
+                    controlled = {
+                        index: set() for index in range(len(components))
+                    }
 
-                    if is_new and len(prescribed) == 1:
-                        component_index, bit = prescribed[0]
-                        assert bit == 1
-                        assert len(triple & target_hyperbola) <= 2
-                        controlled[component_index].add(triple)
-                        rank_one_checks += 1
+                    for triple in triples:
+                        allowed = compatible_bits(
+                            triple, current, target, components
+                        )
+                        if allowed is None:
+                            continue
+                        prescribed = [
+                            (index, next(iter(states)))
+                            for index, states in enumerate(allowed)
+                            if len(states) == 1
+                        ]
+                        is_new = not triple <= current_cells
 
-                        component = components[component_index]
-                        exclusive = {
-                            (x, target[x])
-                            for x in component
-                            if target[x] != current[x]
+                        if is_new and len(prescribed) == 1:
+                            component_index, bit = prescribed[0]
+                            assert bit == 1
+                            assert len(triple & target_hyperbola) <= 2
+                            controlled[component_index].add(triple)
+                            rank_one_checks += 1
+
+                            component = components[component_index]
+                            exclusive = {
+                                (x, target[x])
+                                for x in component
+                                if target[x] != current[x]
+                            }
+                            local_target = triple & exclusive
+                            assert 1 <= len(local_target) <= 2
+
+                            if len(local_target) == 1:
+                                target_cell = next(iter(local_target))
+                                context = frozenset(triple - {target_cell})
+                                key = (prime, parameter, context)
+                                context_groups.setdefault(key, set()).add(
+                                    target_cell[0]
+                                )
+                            else:
+                                first, second = tuple(local_target)
+                                x, y = first[0], second[0]
+                                total = (x + y) % prime
+                                product_value = (x * y) % prime
+                                for column, row in local_target:
+                                    assert (
+                                        product_value * row
+                                        + parameter * column
+                                        - parameter * total
+                                    ) % prime == 0
+
+                    for bits in product((0, 1), repeat=len(components)):
+                        state = state_cells(
+                            columns_now, current, target, components, bits
+                        )
+                        actual = {
+                            triple
+                            for index, triples_for_component in controlled.items()
+                            if bits[index]
+                            for triple in triples_for_component
+                            if triple <= state
                         }
-                        local_target = triple & exclusive
-                        assert 1 <= len(local_target) <= 2
-
-                        if len(local_target) == 1:
-                            target_cell = next(iter(local_target))
-                            context = frozenset(triple - {target_cell})
-                            key = (prime, parameter, context)
-                            context_groups.setdefault(key, set()).add(
-                                target_cell[0]
-                            )
-                        else:
-                            first, second = tuple(local_target)
-                            x, y = first[0], second[0]
-                            total = (x + y) % prime
-                            product_value = (x * y) % prime
-                            for column, row in local_target:
-                                assert (
-                                    product_value * row
-                                    + parameter * column
-                                    - parameter * total
-                                ) % prime == 0
-
-                for bits in product((0, 1), repeat=len(components)):
-                    state = state_cells(
-                        columns_now, current, target, components, bits
-                    )
-                    actual = {
-                        triple
-                        for index, triples_for_component in controlled.items()
-                        if bits[index]
-                        for triple in triples_for_component
-                        if triple <= state
-                    }
-                    expected = {
-                        triple
-                        for index, triples_for_component in controlled.items()
-                        if bits[index]
-                        for triple in triples_for_component
-                    }
-                    assert actual == expected
-                    assert len(actual) == sum(
-                        len(controlled[index])
-                        for index, bit in enumerate(bits)
-                        if bit
-                    )
-                    state_checks += 1
+                        expected = {
+                            triple
+                            for index, triples_for_component in controlled.items()
+                            if bits[index]
+                            for triple in triples_for_component
+                        }
+                        assert actual == expected
+                        assert len(actual) == sum(
+                            len(controlled[index])
+                            for index, bit in enumerate(bits)
+                            if bit
+                        )
+                        state_checks += 1
 
     assert all(len(columns) <= 2 for columns in context_groups.values())
     return state_checks, rank_one_checks, len(context_groups)
