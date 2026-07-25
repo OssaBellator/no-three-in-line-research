@@ -130,6 +130,12 @@ AC3ki--AC3km give centred blocker targets their exact installation contract. Com
 
 AC3kn--AC3kq strengthen the AC3io petal bank. Exact statewise boundary and off-boundary creation replaces the candidate-union upper bound. If no child improves, one actual state realizes at least `D/2` in one category, one rank carries at least `D/6`, and the all-rank adapter gives payment `D/(6K)` or return `D/(18K)`. Once a common-parent paid petal family is installed, its collateral side is total; only parent/payment/context reset remains.
 
+AC3kr--AC3ku give every attempted two-block target correction one exact hard-witness trichotomy. A failure is centre-only with residual rank at most two, residual-block-only with residual rank at most two, or a joint centre/residual kernel with residual rank at most one. Common-residual and support-disjoint fans therefore reduce to complete target states, lower-depth hard charts, finite replacement-blocker tickets or exact resets.
+
+AC3kv--AC3ky use the active hard-literal chart to complete the generic case. A phase absent from the hard literal support of residual block `x` cannot activate any check containing `x`; if no centre-only replacement blocker exists, that phase completes the target. One unused phase completes an entire common-residual target subfan. Unresolved support-disjoint arms therefore expose distinct hard-literal-saturated residual blocks, exact replacement blockers or outer resets.
+
+AC3kz--AC3lc turn repeated macro edges into simple decorated cycles. For a fixed repeated edge, every return episode contains a simple cycle of length at most `P`; one exact cycle word concentrates among recurrent episodes, and the least field changed by the edge has a canonical first return on the cycle. Global closure follows only when every such cycle has current payment, strict bounded field progress, physical impossibility or a capacity-one cycle ticket.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -140,9 +146,9 @@ AC3kn--AC3kq strengthen the AC3io petal bank. Exact statewise boundary and off-b
 
 ## Current frontier
 
-1. Construct complete per-target states for unresolved common-residual and support-disjoint target alternatives, while leaving unconditional and prospective targets unpaid.
-2. Terminate each repeated decorated macro edge by current payment, strict bounded descent or a capacity-one macro ticket, and prove polynomial bounds for the outer profile/decorations needed by AC4.
-3. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset; the collateral side is closed by AC3kn--AC3kq.
+1. Classify or discharge hard-literal-saturated residual blocks and centre-only replacement blockers through exact phase/carry/BDA/RI roles without charging prospective target geometry.
+2. Prove payment, strict bounded descent, physical impossibility or a capacity-one ticket for each recurrent simple macro cycle, and prove polynomial outer-profile/decorations bounds.
+3. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset.
 4. Verify AC5 reverse-scale cleanliness and discharge AC6.
 
 ## Other independent inputs
