@@ -32,15 +32,18 @@ The composite branch now has the following reduction.
 7. CMR418--CMR421 prove that recreated selected conflicts meet entering edges,
    whose cardinality equals leaving-edge churn, and reduce first-dirty packet
    scheduling to that churn magnitude.
-8. CMR422--CMR425 show that inside a certificate-directed deletion pass every
-   lossy packet reset pays a permanent deletion or one fully forced ancestry
-   event. Permanent deletion responses occur at most `t(t-1)` times.
+8. CMR422--CMR425 show that every lossy packet reset in a deletion pass pays a
+   permanent deletion or one fully forced ancestry event, with at most
+   `t(t-1)` permanent deletion responses.
+9. CMR426--CMR428 prove essentiality persistence and show that the packet schedule
+   either completes in polynomially many installations or reaches one terminal
+   fully forced packet certificate in polynomially many installations.
 
 The inherited escape problem is no longer missing a local bank, packet
-construction, state-cycle lemma, recreation support theorem, or finite packet
-loss response. The principal fixed-envelope obstruction is now the width of
-fully forced exchange ancestry and the analogous payment for repeated local
-ancestor resets.
+construction, state-cycle lemma, recreation support theorem, or packet
+termination statement. The principal fixed-envelope obstruction is resolution
+of one terminal fully forced exchange-ancestry certificate and the analogous
+payment for repeated local ancestor resets.
 
 ## Bottleneck 3: selected-state dynamics
 
@@ -100,7 +103,7 @@ for packet weight `W`, the number of recreated triples is at most
 The earlier numerical packet-recreation bounds remain correct; only the edge
 orientation required correction.
 
-### Deletion-or-ancestry response
+### Completion or terminal ancestry
 
 Use the first-dirty packet order inside one certificate-directed deletion pass.
 After a lossy reset, choose one lost packet and one recreated triple. CMR422
@@ -111,26 +114,25 @@ says:
 2. all three edges are essential, producing a fully forced CMR217 certificate
    with backward exchange ancestry.
 
-If `P` is the packet count, `F` the number of fully forced packet events, and
-`T` the number of packet installations, then
+Essentiality is monotone under later deletions. Therefore the fully forced
+packet triple remains present in every later perfect matching and is terminal
+for the current pass.
 
-\[
-\boxed{
-T\le P\bigl(1+t(t-1)+F\bigr).
-}
-\]
+If `P` is the packet count and `T` the number of packet installations, CMR428
+gives the unconditional alternative:
 
-If every earlier deletion certificate receives at most `w` incoming links from
-fully forced packet events, then
+1. every packet becomes clean with
+   \[
+   \boxed{T\le P\bigl(1+t(t-1)\bigr)};
+   \]
+2. or one terminal fully forced packet certificate appears with
+   \[
+   \boxed{T\le P\bigl(2+t(t-1)\bigr)}.
+   \]
 
-\[
-\boxed{
-T\le P\bigl(1+(1+w)t(t-1)\bigr).
-}
-\]
-
-Therefore packet scheduling no longer needs a separate global churn potential.
-Its exact unresolved quantity is incoming ancestry width.
+Thus packet recurrence is closed locally. The unresolved operation is the
+resolution of the terminal ancestry certificate by envelope expansion, host
+decomposition, reserve replacement, or simultaneous exchange-cycle resampling.
 
 ### Remaining theorem
 
@@ -141,8 +143,9 @@ least one of:
   quotient, or carry signature;
 - a simultaneous alternating-cycle resampling theorem for several forced
   certificates;
-- or a monotone payment which converts repeated local ancestor resets into
-  deletion, envelope expansion, reserve depletion, or new bounded ancestry.
+- a theorem that wide ancestry forces strict envelope or host decomposition;
+- or a monotone payment converting repeated local ancestor resets into deletion,
+  reserve depletion, envelope expansion, or new bounded ancestry.
 
 Another raw per-reset edge-count estimate will not close the argument; those
 estimates are already exact at the required scales.
@@ -158,8 +161,9 @@ Generic pair-codegree estimates remain too weak at low height. The branch has:
 - universal line-clean paid-pair banks;
 - quotient and carry collateral ledgers.
 
-The open task is to feed these local alternatives into the ancestry-width or
-ancestor-reset payment rather than prove another isolated extraction lemma.
+The open task is to feed these local alternatives into terminal ancestry
+resolution or repeated-ancestor payment rather than prove another isolated
+extraction lemma.
 
 ## Bottleneck 5: all side lengths
 
@@ -188,20 +192,20 @@ The following broad pieces are closed:
 10. polynomial edge-incidence payment for distinct-state expansion;
 11. corrected entering-edge support and harmonic bounds for packet recreation;
 12. deletion-or-forced-ancestry response for every lossy packet reset;
-13. reduction of packet installation length to the incoming width of fully
-    forced ancestry.
+13. essentiality persistence and polynomial completion-or-terminal-ancestry
+    packet scheduling.
 
 ## Open lemmas in recommended order
 
-1. **Forced-ancestry incoming width.** Bound how many fully forced packet or
-   local certificates can point to one earlier deleted certificate at a fixed
-   p-adic or primitive-height signature.
+1. **Terminal forced-ancestry resolution.** Bound how many forced certificates
+   can point to one earlier deletion, or convert a wide family into simultaneous
+   exchange-cycle flips or strict host decomposition.
 2. **Simultaneous exchange resampling.** Use edge-disjoint or low-overlap
    alternating cycles to eliminate several forced certificates at once.
-3. **Repeated local ancestor-state payment.** Extend CMR422 to compatible prefix
-   ancestor resets not arising from harmonic packet loss.
+3. **Repeated local ancestor-state payment.** Extend the packet deletion/
+   ancestry mechanism to compatible prefix ancestor resets.
 4. **Low-height carry integration.** Convert carry alternatives into the same
-   ancestry or deletion budget.
+   ancestry, deletion, or envelope budget.
 5. **Prime-field transfer.** Rebuild the inherited-envelope and exact-covering
    endpoint for complementary-hyperbola carry cycles.
 6. **Further balanced prime families.** Extend the prime-seven factorization or
