@@ -61,6 +61,9 @@ exact-cover, lattice, absorber, and sign-quotient results developed on
 | PX149 | The sign-pair quotient host is `(p-3)`-regular with pair codegree two and triple codegree one | PROVED | `docs/82-sign-pair-quotient-matching.md` |
 | PX150 | Explicit odd seeds through order 67 have `mu<2p` and `tau<=12` | PROVED FINITE | `docs/82-sign-pair-quotient-matching.md` |
 | PX151 | Rank-three spread in the quotient host gives optimal fixed-bin secant and triangle expectations | PROVED CONDITIONALLY | `docs/82-sign-pair-quotient-matching.md` |
+| PX152 | At prime 23, the unique order-three absorber obstruction `(1,5,5)` has minimum absorber order four | PROVED FINITE | `docs/87-order-three-absorber-barrier.md` |
+| PX153 | Every one of the `(5!)^3` abstract order-three templates imposes exactly two affine parameter conditions | PROVED FINITE/SYMBOLIC | `docs/87-order-three-absorber-barrier.md` |
+| PX154 | For every prime above `102400000`, some lattice-admissible two-point leftover has no absorber of order at most three | PROVED | `docs/87-order-three-absorber-barrier.md` |
 
 ## Current exact boundary
 
@@ -71,16 +74,21 @@ for every sufficiently large prime and computes the complete lattice obstruction
 to exact completion. The sign-pair quotient supplies a smaller regular testbed
 with exact odd seeds through order 67 and the correct fixed-bin first moments.
 
-The next two proof obligations are now explicit.
+The absorber program now has a sharper boundary. Order two first fails at prime
+17, order three first fails at prime 23, and PX154 proves that order three is
+asymptotically impossible as a universal bound. The first order-three exception
+has an explicit order-four absorber.
+
+The next two proof obligations are:
 
 1. **Exact pseudorandom completion.** Complete PX141 while retaining subpower
    secant and triangle loads. The duplicated-reservoir reduction brings the
    Joos--Mubayi--Smith exact covering theorem into range; the remaining check is
    a bounded-conflict lemma for bucketed repeated-shape occurrences.
-2. **Lattice absorption.** Prove a uniform absorber theorem for moment-zero
-   leftovers. Two-point absorbers require order two through 13 and order three
-   at 17 and 19; larger orders are not yet classified in the repository.
+2. **Higher-order or collective absorption.** Determine whether order four is
+   universal for two-point lattice leftovers, find the first order-four
+   obstruction, or construct a collective absorber for many moment-zero circle
+   packets simultaneously.
 
-Neither route yet proves infinite exact product closure, but both have moved
-from an undifferentiated completion problem to finite-dimensional conflict and
-lattice statements.
+Neither route yet proves infinite exact product closure, but the former
+order-three absorber conjecture is now decisively resolved in the negative.
