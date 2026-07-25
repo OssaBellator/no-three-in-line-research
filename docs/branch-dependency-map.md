@@ -136,6 +136,19 @@ AC3kv--AC3ky use the active hard-literal chart to complete the generic case. A p
 
 AC3kz--AC3lc turn repeated macro edges into simple decorated cycles. For a fixed repeated edge, every return episode contains a simple cycle of length at most `P`; one exact cycle word concentrates among recurrent episodes, and the least field changed by the edge has a canonical first return on the cycle. Global closure follows only when every such cycle has current payment, strict bounded field progress, physical impossibility or a capacity-one cycle ticket.
 
+AC3ld--AC3lh strengthen unused-phase completion from one blocker to the complete activated bucket. A maximal residual matching gives a transversal of size at most twice the matching number. Assigning every transversal block a globally unused hard phase creates no new hard check and completes the target. Failure returns an unconditional exclusion, a large residual matching, a role-pure saturated block or an exact reset. The hard-check and replacement-ticket contribution is polynomial under the physical O1 registry, with `H_hard=O(qn^6)`.
+
+AC3li--AC3lm correct the interpretation of saturation. Each named phase is either an active current-context blocker or a latent check requiring another noncurrent literal. Canonical latent dependencies form a functional graph. In one fixed hard registry it has at most `U` edges and at most `floor(U/2)` vertex-disjoint cycles; registry changes remain decorated outer resets. Static dependency cycles are not assigned payment without an arithmetic or ticket theorem.
+
+AC5b--AC5f give the exact reverse-scale audit. Same-band collateral is permitted when `Psi_H` decreases. For a certified multicover batch `B`, every AC menu must prove
+
+```text
+N_{2H}(S,S') = 0
+N_H(S\B,S') < |B|.
+```
+
+The first condition preserves already settled bands; the second gives strict integer drift. Created-cell rank is not a scale certificate and must be refined by supporting-line height. This interface matches geometric cleaning's high-line blocker and sparse-batch counts, but verification for every pivot, BDA, RI, target and petal menu remains open.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -146,14 +159,14 @@ AC3kz--AC3lc turn repeated macro edges into simple decorated cycles. For a fixed
 
 ## Current frontier
 
-1. Classify or discharge hard-literal-saturated residual blocks and centre-only replacement blockers through exact phase/carry/BDA/RI roles without charging prospective target geometry.
-2. Prove payment, strict bounded descent, physical impossibility or a capacity-one ticket for each recurrent simple macro cycle, and prove polynomial outer-profile/decorations bounds.
-3. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset.
-4. Verify AC5 reverse-scale cleanliness and discharge AC6.
+1. Classify active and latent saturated-literal roles through exact phase/carry/BDA/RI/protected charts, and discharge or ticket fixed-registry dependency cycles without charging prospective target geometry.
+2. Prove payment, strict bounded descent, physical impossibility or a capacity-one ticket for every recurrent simple macro cycle, and prove polynomial bounds for the remaining outer-profile fields.
+3. Audit every installed AC menu by proving `N_{2H}=0`, `N_H<|B|` and intermediate-state stability at each dyadic scale.
+4. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset, then verify the remaining AC5 menus and discharge AC6.
 
 ## Other independent inputs
 
-- `research/geometric-cleaning`: removes geometric hypotheses and may feed AC5 or an independent matching endpoint.
+- `research/geometric-cleaning`: supplies the high-line blocker and sparse-batch framework needed by AC5, but its geometric caps and stability remain open.
 - `research/orbit-phase-expansion`: finite phase/literal interfaces imported only where proved.
 - `research/superregular-resampling`: dense-host local-load endpoint.
 - `research/sparse-algebraic-spread`: sparse-host spread and two-layer selection.
