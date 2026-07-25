@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR727--CMR733."""
+"""Finite checks for corrected CMR727--CMR733 unit Hall walls."""
 
 from itertools import combinations, permutations
 import random
@@ -17,6 +17,17 @@ def perfect_matchings(side, host):
     ]
 
 
+def maximum_matching_size(side, host):
+    best = 0
+    for size in range(1, side + 1):
+        for sources in combinations(range(side), size):
+            for targets in permutations(range(side), size):
+                candidate = set(zip(sources, targets))
+                if candidate <= host:
+                    best = size
+    return best
+
+
 def hall_witnesses(side, host):
     for size in range(1, side + 1):
         for source_tuple in combinations(range(side), size):
@@ -30,6 +41,21 @@ def hall_witnesses(side, host):
                 yield sources, targets
 
 
+def minimal_hall_witness(side, host):
+    witnesses = list(hall_witnesses(side, host))
+    minimal = []
+    for sources, targets in witnesses:
+        if not any(
+            other_sources < sources
+            for other_sources, _ in witnesses
+        ):
+            minimal.append((sources, targets))
+    return min(
+        minimal,
+        key=lambda item: tuple(sorted(item[0])),
+    )
+
+
 def check_case(side, host, old_matching, essential_edge):
     matchings = perfect_matchings(side, host)
     assert matchings
@@ -37,22 +63,54 @@ def check_case(side, host, old_matching, essential_edge):
         essential_edge in edges(permutation)
         for permutation in matchings
     )
+
+    source_endpoint, target_endpoint = essential_edge
     reduced = set(host)
     reduced.discard(essential_edge)
     assert not perfect_matchings(side, reduced)
+    assert maximum_matching_size(side, reduced) == side - 1
+
     witnesses = list(hall_witnesses(side, reduced))
     assert witnesses
     for sources, targets in witnesses:
-        deficiency = len(sources) - len(targets)
-        batch = {
+        assert len(sources) - len(targets) == 1
+        assert source_endpoint in sources
+        assert target_endpoint not in targets
+        neighbours_in_host = {
+            target
+            for source, target in host
+            if source in sources
+        }
+        assert neighbours_in_host == targets | {target_endpoint}
+
+        missing = {
             (source, target)
             for source, target in old_matching
             if source in sources and target not in targets
         }
-        assert len(batch) >= deficiency
-        assert batch <= (old_matching - host)
-        assert len({source for source, _ in batch}) == len(batch)
-        assert len({target for _, target in batch}) == len(batch)
+        assert missing
+        assert missing <= (old_matching - host)
+
+    sources, targets = minimal_hall_witness(side, reduced)
+    for source in sources:
+        neighbours_without_source = {
+            target
+            for left, target in reduced
+            if left in sources - {source}
+        }
+        assert neighbours_without_source == targets
+
+    if len(sources) == 1:
+        assert sources == {source_endpoint}
+        assert not targets
+    else:
+        for target in targets:
+            degree_from_wall = sum(
+                1
+                for source in sources
+                if (source, target) in reduced
+            )
+            assert degree_from_wall >= 2
 
 
 def exhaustive_small():
@@ -117,35 +175,15 @@ def sampled_side_four():
     return checked
 
 
-def arithmetic_checks():
-    checked = 0
-    for matching_size in range(1, 100):
-        for deficiency_threshold in range(1, matching_size + 1):
-            for recurrence_threshold in range(2, 10):
-                bound = (
-                    (recurrence_threshold - 1)
-                    * matching_size
-                    // deficiency_threshold
-                )
-                assert bound * deficiency_threshold <= (
-                    recurrence_threshold - 1
-                ) * matching_size
-                checked += 1
-    return checked
-
-
 def main():
     exhaustive = exhaustive_small()
     sampled = sampled_side_four()
-    arithmetic = arithmetic_checks()
     print(
-        "verified essential-return Hall batches:",
+        "verified essential-return unit Hall walls:",
         exhaustive,
-        "exhaustive cases,",
+        "exhaustive cases and",
         sampled,
-        "sampled side-four cases, and",
-        arithmetic,
-        "incidence bounds",
+        "sampled side-four cases",
     )
 
 
