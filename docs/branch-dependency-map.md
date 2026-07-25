@@ -76,20 +76,28 @@ AC3ig--AC3ik show repeated pivot-cell returns spend at most `L(n-1)^2` rectangle
 
 AC3il--AC3ip strengthen the static interface: arbitrary overlapping cycles in one common host are legal alternative states, all remove the same paid pivot, and a failed menu returns one realized created rank. Static two-hub overlap is not terminal. The residual historical output is an explicit host-drift profile.
 
+AC3iq--AC3it provide the quantitative bridge from distinct-state churn to that profile. Every nontrivial ordered two-layer change inserts at least two layer-cells. A simple history longer than
+
+```text
+H(n,L,lambda) = n^2(lambda [L(n-1)^2]^2 + L(n-1)^2 + 1)
+```
+
+forces one removal/long-return two-cross profile of multiplicity at least `lambda`. In a finite resource universe of size `B`, strict monotone-mask growth occurs at most `B` times; otherwise one constant-mask interval exceeds the same threshold. Thus factorial state-space size and pure mask drift are no longer terminal parameters.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
 
 - `research/all-n-prime-patching` has the strongest asymptotic patch architecture but remains at concentrated controller/source/credit cores. Its SCC cycle-star/theta geometry motivated AC3ig--AC3ip, while AC uses its own private pivot payment and does not import controller or asymptotic hypotheses.
-- `research/all-n-composite-modulus` reaches CMR545 and supplies exact cycle erasure, churn and prime-power signature ancestry. AC3hx imports only the arithmetic-free monotone-mask principle.
+- `research/all-n-composite-modulus` supplies exact cycle erasure, churn and prime-power signature ancestry. AC3hx and AC3iq import only arithmetic-free matching consequences.
 - `research/all-n-product-construction` has exact product encodings, SAT reductions and finite witnesses, but no unconditional global selector or stronger AC recurrence interface.
 
 ## Current frontier
 
-1. Pay or finitely classify host-drift profiles, parent/epoch changes, repeated off-boundary cells and the AC3ie boundary-supported/petal-specific terms.
-2. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
-3. Build the residual finite transition quotient from those context and arithmetic-role edges, then assemble AC4.
-4. Verify AC5 reverse-scale cleanliness and discharge AC6.
+1. Pay or finitely classify the state-derived host changes left by AC3it: reference matching, opposite-layer exclusion and derived allowed-host drift at fixed mask.
+2. Terminate genuine arithmetic/context and envelope-epoch changes, repeated off-boundary cells and the AC3ie boundary/petal terms.
+3. Prove physical occurrence realization for unresolved carry/BDA/RI role labels.
+4. Build the residual finite transition quotient and assemble AC4, then verify AC5 and discharge AC6.
 
 ## Other independent inputs
 
