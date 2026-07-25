@@ -14,230 +14,170 @@ remains open. This repository does **not** contain a complete proof.
 
 ## What is genuinely proved
 
-### General repair framework
-
-- Exact saturation decomposes into two permutation layers.
-- Reverse-scale target destruction, spread injections, local-bank drift,
-  tomographic trades, subgroup absorbers, and exact collateral identities are
-  proved under their stated hypotheses.
-- Clone-space and perfect-matching endpoints reduce a complete proof to explicit
-  conflict-mass, resampling, or absorption conditions.
-- Several natural purely local or one-colour descent claims are exactly
-  refuted; the branch does not rely on them.
-
-### Composite and prime-power algebra
+### Prime-power algebra and recursive banks
 
 - Every odd prime power admits nonlinear completed-reciprocal permutation
-  channels, disjoint companion layers, displacement/carry equations, and
+  channels, disjoint companion layers, exact displacement/carry identities, and
   recursive fibre banks.
-- Balanced completed-reciprocal laws exist exactly for
-  \(p\equiv1\pmod4\). No reweighting of that family works for
+- Balanced completed-reciprocal local laws exist exactly for
+  \(p\equiv1\pmod4\). No reweighting of that same family works when
   \(p\equiv3\pmod4\).
 - A non-reciprocal seven-map factorization gives balanced saturated recursive
-  banks for every \(N=7^k\), with a sharpened pair spectrum.
-- For fixed balanced prime bases, the recursive first-separation syndrome is
-  \(O_p(N^2\log N)\). Its logarithmic part is localized to one explicit binary
-  same-layer star geometry.
+  banks for every \(N=7^k\).
+- For fixed balanced prime base, the recursive first-separation calculation
+  gives expected syndrome \(O_p(N^2\log N)\). The logarithmic term is localized
+  to binary same-layer prefix stars.
 
 ### Prefix and joint-parent repair
 
-- Complete prefix rematching destroys every assigned binary star.
+- Complete prefix rematching destroys every binary star assigned to its unique
+  closest-pair block.
 - Rank-one quotient excess decomposes into modular third-point and collision
-  energies; the endpoint baseline cancels exactly.
-- Normalized rank-two and rank-three prefix collateral is quadratic.
-- Fine-to-coarse repairs preserve every unprocessed quotient charge.
-- Nonroot inherited layer row fibres are disjoint. Old-cell-clean joint-parent
-  banks reduce to independent derangements and have total expected collateral
-  \(O_p(N^2\log^2 N)\).
-- At a fixed prefix scale, joint-block target loads count each current triple
-  between one and three times. There is no uncontrolled static overlap.
+  carry energies; endpoint baselines cancel exactly.
+- Normalized rank-two and rank-three prefix collateral is universally
+  quadratic.
+- Fine-to-coarse processing preserves unprocessed quotient charges.
+- Nonroot inherited layer row fibres are disjoint, giving independent
+  old-cell-clean joint-parent derangement banks with total expected collateral
+  \(O_p(N^2\log^2N)\).
+- Every closure branch has a canonical prefix envelope; strict envelope
+  expansion occurs at most \(k\) times for \(N=p^k\).
 
-### Alternating closure
+### Alternating closure and terminal parent escape
 
 - Global-baseline transfer prevents recursive repair from resetting its
   comparison state.
-- Dense replacement-touching families compress to disjoint defects,
-  alternating banks, or heavy lines.
-- Every positive target load contracts to a four-endpoint, one-target core.
-- Universal normalized four-board descent is false: an exact \(N=4\)
-  potential-one two-cycle exists above a separate potential-zero state.
-- Complete \(N=5\) and prime-seven root censuses show that inherited parent
-  moves escape their terminal traps.
-- Every closure branch has a canonical prefix envelope with invariant row sets;
-  strict envelope expansion occurs at most \(k\) times for \(N=p^k\).
-- Global-baseline compression rules out infinite uncharged closure. The
-  inherited terminal object is an exact target-specific parent blocker rather
-  than an abstract infinite recursion.
+- Dense replacement collateral compresses to disjoint defects, alternating
+  banks, or heavy lines.
+- Every positive target load contracts to a four-endpoint one-target core.
+- Abstract four-point descent alone is false: an exact \(N=4\) positive-potential
+  two-cycle exists above a separate potential-zero state.
+- Exact \(N=5\) and prime-seven censuses show that full parent moves escape the
+  corresponding terminal traps.
+- Target-specific Hall theory proves that every family of at most \(t-2\)
+  nonaxis lines is simultaneously avoidable while one designated old endpoint
+  is moved.
+- A sharp \(t-1\)-line blocker is a singleton fan or a one-slack Hall-boundary
+  factor.
 
-### Target-specific parent blockers
+### Sharp blockers and line-clean banks
 
-- A target-specific move needs to omit only one designated old endpoint.
-  Every family of at most \(t-2\) nonaxis real lines is simultaneously
-  avoidable when all available cells on those lines are deleted.
-- A sharp \(t-1\)-line blocker is either a target-centred singleton fan or a
-  nontrivial Hall rectangle with at most one boundary-incidence slack unit.
-- Three same-side singleton blockers on the endpoints of one old triple cannot
-  recycle one common \(t-1\)-line family.
-- Broad Hall rectangles reduce to low primitive height. Widths four through six
-  contain linearly many full low-height transversals.
-- The only genuinely thin Hall geometries are width-two chord systems and
-  width-three almost-disjoint triple systems.
-- Their canonical events occupy at most \(1/(t-1)^2\) of target-specific
-  matching space. A frozen thin blocker therefore requires at least
-  \(t(t-2)^2\) additional candidate-only rank-three prescriptions.
-
-### Thin-blocker p-adic signatures
-
-- Every width-two or width-three blocker contains a population of size
-
+- Broad Hall factors reduce to low primitive height. Widths four through six
+  contain linearly many full transversals below height \(t/3\).
+- Width-two and width-three canonical events occupy at most
+  \(1/(t-1)^2\) of target-specific matching space, so a frozen thin blocker
+  forces at least
   \[
-  \Omega_p\!\left(\frac{t}{\log t}\right)
+  t(t-2)^2
   \]
-
-  with one first-separation depth and one direction in
-  \(\mathbb P^1(\mathbb F_p)\).
-- This population exposes either a carry cell of load
-  \(\Omega_p(\sqrt t/\log t)\) or that many distinct occupied carry cells.
-- Primitive line parameters route every heavy-cell certificate exactly:
-  external witnesses are binary stars, internal non-equilateral witnesses have
-  a deeper closest pair, and equilateral witnesses lie wholly in one common
-  prefix block.
-- **Every heavy-cell certificate opens an executable CMR75 prefix bank.**
-  Repeated internal closest-pair transfer strictly increases depth and has
-  length at most \(h-1-b\).
-- For one direction, the exact row-prefix token count inside one parent block is
-
+  additional candidate-only rank-three prescriptions.
+- Width three reduces to a seven-hole moment signature and an exact displacement
+  variance: either the variance is at least \(t-10\), or all retained lines are
+  parallel with one of 72 bounded shift pairs.
+- Width two has exact primitive continuation parameters and a common
+  first-separation/direction class of size \(\Omega_p(t/\log t)\).
+- Universal line-clean paid-pair banks apply to singleton, width-two,
+  width-three, and finite-width Hall families. They move the old target, remove
+  every other cell of the paid line, and eliminate all rank-two-on-that-line
+  collateral.
+- A frozen two-slice line-clean bank forces a dyadic band with
   \[
-  1+p+\cdots+p^{h-1}=\frac{t-1}{p-1}.
+  \Omega\left(\frac{H^3}{\log t}\right)
   \]
+  distinct replacement-line signatures.
+- Those lines convert to a matching-vertex wall, an executable heavy prefix
+  cell, or dispersed full prefix cells.
 
-  Pairwise fresh dispersion episodes therefore number only
-  \(O_p(\sqrt t\log t)\). A longer closure must revisit one exact absolute
-  depth--row-prefix--direction token.
-- Width-three blockers also have an exact seven-hole variance. Either the
-  direction variance is at least \(t-10\), or all retained lines are parallel
-  with one of only 72 signed shift pairs. For \(p\ge11\), the parallel case
-  forces equal valuations of the adjacent Hall-slice gaps.
+### High-height and intermediate-band cleaning
 
-### Dynamic repeated-token ledger
-
-- For one absolute token \(\tau=(b,c,\theta)\), the ambient Hall-endpoint stock
-  has exactly \(t^2/p^b\) candidate cells.
-- If \(D_\tau\) executable visits delete token endpoints and \(I_\tau\) counts
-  token-compatible edge reintroductions with multiplicity, then
-
+- Candidate-only triples above primitive height \(0.42t\) are exactly cleanable
+  in the unrestricted target-specific host for all sufficiently large odd
+  blocks, with a linear protected-line reserve.
+- The line-clean paid-pair host has the same \(0.42t\) high-slice cleaning and a
+  larger protected-line reserve.
+- For every fixed \(\eta>0\), every sufficiently large parent block, and every
+  one dyadic band
   \[
-  D_\tau\le \frac{t^2}{p^b}+I_\tau.
+  H\ge t^\eta,
   \]
+  the duplicated-row covering model satisfies the Joos--Mubayi--Smith host,
+  main-conflict, and mixed-conflict hypotheses. It gives an **exact
+  target-specific parent permutation** avoiding all candidate-only triples in
+  that band.
+- This upgrades the earlier almost-perfect band matching for one band. It does
+  not yet clean all \(O(\log t)\) bands simultaneously.
 
-- Every repeated token visit is separated into a token-paid endpoint deletion,
-  an off-token witness deletion, or a fully forced rank-\(1/2/3\) certificate
-  governed by the acyclic CMR217--CMR218 ancestry relation.
-- Static token consumption is not monotone: for every block size \(t\ge2\), two
-  old-cell-clean complete rematchings can return a permutation layer exactly to
-  its starting state. The reintroduction term is therefore necessary.
-- Unbounded fixed-envelope repetition is now localized to token-edge
-  reintroduction mass, off-token witness escapes, and the width of the forced
-  ancestry DAG.
+### Heavy and dispersed carry tokens
 
-### Mixed singleton fans
-
-- A fully recycled source/source/target fan has, apart from two shared-cell
-  exceptions, a linear population with one modular ratio
-  \(\rho=s(d-s)^{-1}\pmod p\). The coordinate-dual result also holds.
-- The two shared-cell lines satisfy an exact factorial identity. At
-  \(t=p^h\), their special row deviations have equal p-adic valuation and
-  reduced ratio \(-1\pmod p\).
-- The modular-ratio population supports an exact paid bank of equal-size
-  completion cylinders.
-- A stronger paid-pair bank fixes only two cells on the ratio line and forbids
-  every other cell of that line. Its completion cylinders are uniform
-  derangement boards, and **all rank-two-on-the-paid-line collateral vanishes**.
-- A frozen line-clean bank forces at least \(11/30\) normalized mass entirely in
-  residual rank-zero or rank-one collateral, unless it improves or exposes an
-  anchored continuation.
-- For odd \(t\ge1677\), every paid pair admits an exact line-clean completion
-  avoiding all candidate-only triples of primitive height at least \(0.42t\).
-- For odd \(t\ge2847\), the same completion may protect all available cells on
-  `floor(t/1000)` previously discovered lines. Hence a frozen paid-pair cylinder
-  exposes a linear reserve of genuinely new **low-height** replacement lines.
-
-### Exact high-slice endpoint
-
-- The mod-six load estimate is
-
+- Every heavy thin carry-cell certificate opens an executable prefix bank:
+  external witnesses return to the original binary-star block, internal
+  witnesses move to a deeper closest-pair block, and equilateral witnesses use
+  their common block.
+- Repeated internal ownership transfer strictly increases depth and terminates.
+- Fresh dispersed tokens have a finite static budget, but static token
+  monotonicity is false: two complete old-cell-clean rematchings can restore the
+  initial state exactly.
+- The correct dynamic inventory is
   \[
-  T_3(w)
-  \le
-  \frac{4}{3}S(H)+\frac{20}{9}t^2+2(t-1)R(H).
+  D_\tau\le \frac{t^2}{p^b}+I_\tau,
   \]
-
-- In the unrestricted target-specific host, candidate-only triples above
-  \(0.42t\) are exactly cleanable for odd \(t\ge1575\), with a
-  `floor(t/2000)` protected-line reserve for odd \(t\ge1983\).
-- In the stronger line-clean paid-pair host, the corresponding exact thresholds
-  are 1677 and 2847, with `floor(t/1000)` protected lines.
-- A published conflict-free matching theorem gives an almost-perfect matching
-  in every intermediate dyadic height band satisfying its degree/codegree
-  hypotheses. Exact completion of that almost-perfect object remains open.
+  where \(I_\tau\) counts token-compatible edge reintroductions.
+- For one fixed Hall-pair token, the exact line universe is explicitly counted.
+  In the deep regime it has at most \(t/p\) lines, so the complete universes of
+  any \(p-1\) deep tokens can be removed simultaneously by one target-specific
+  parent move.
+- A tunable threshold gives the cubic-root tradeoff
+  \[
+  \text{heavy load }
+  \Omega_p\left(\frac{t^{1/3}}{\log t}\right)
+  \]
+  or
+  \[
+  \text{deep support }
+  \Omega_p\left(\frac{t^{2/3}}{\log t}\right),
+  \qquad
+  \text{simultaneous batch capacity }\Omega(t^{1/3}).
+  \]
 
 ## Important correction
 
-The former CMR138 statement that naive sequential two-layer rematching destroys
+The former CMR138 claim that naive sequential two-layer rematching destroys
 every selected geometric target is **refuted as stated**. The second layer may
 reoccupy an old first-layer cell. Valid replacements are CMR129, CMR155, and
 CMR164. No later valid theorem depends on the refuted strengthening.
 
+Static carry-token consumption is also not monotone; CMR350 records exact
+two-step token-restoring cycles. All current no-return statements explicitly
+include edge reintroduction or are restricted to one simultaneous batch.
+
 ## What remains conditional
 
-1. **Reintroduction and ancestry closure.** Executable repeated-token visits now
-   have an exact initial-stock-plus-reintroduction bound. Charge
-   \(I_\tau\) to the coarse repair that restores the edge, route off-token
-   witness deletions, or bound the width of the fully forced ancestry DAG.
-2. **Low-height line-clean collateral.** Charge the rank-zero/rank-one mass and
-   the linear low-height line reserve from the paid-pair bank to the opposite-
-   deviation anchor, carry cells, or envelope expansion.
-3. **Exact intermediate-band completion.** Upgrade the almost-perfect
-   conflict-free matching below height \(0.42t\) to a complete permutation.
-4. **Coarse-to-fine recreation.** Pay fine stars and token-compatible candidate
-   edges recreated by later coarse prefix or joint-parent repairs.
+1. **Coarse-to-fine reintroduction.** Charge token-compatible cells and fine
+   stars restored by later coarse prefix or joint-parent repairs.
+2. **Band scheduling and no-return.** Combine the exact one-band covering theorem
+   across the \(O(\log t)\) intermediate bands without accumulating a forbidden
+   logarithm in the conflict degree or recreating previously cleaned bands.
+3. **Witness and ancestry width.** Route off-token witness deletions and bound
+   the width of the fully forced certificate-exchange DAG.
+4. **Low-height carry absorption.** Charge the remaining lower-height line
+   populations to first-separation, quotient, and primitive carry signatures.
 5. **Prime-field terminal conversion.** Transfer the inherited-envelope and
-   completion mechanism to prime-field carry cycles.
-6. **Square-root divisor boundary.** Remove or absorb the residual nearly
+   exact-covering mechanism to prime-field carry cycles.
+6. **Square-root divisor boundary.** Remove or absorb the remaining nearly
    singular collision terms.
 7. **Further balanced prime families.** Extend the non-reciprocal grid
    factorization beyond prime seven.
 8. **CRT and arbitrary side lengths.** Control mixed projections and cover all
    positive integers \(n\).
 
-## Refutations retained in the notebook
-
-- Dense constant-probability pruning cannot regularize all candidate-only
-  triples.
-- A large secant bank does not automatically certify destruction of current
-  defects.
-- Wall expansion and synchronized one-colour cycle moves can be trapped.
-- A spread matching measure does not automatically inherit the complete
-  permutation negative-dependency graph.
-- Affine modular permutations cannot solve the problem directly for \(N\ge5\).
-- Prime-field hyperbola line caps fail under natural composite substitution.
-- The recorded 64-point digital layer has no second-permutation no-three
-  completion.
-- The weak recursive child load is not the ordinary finer-prefix collateral.
-- Balanced reciprocal weights do not exist for \(p\equiv3\pmod4\).
-- Positive-potential saturated states may have no decreasing four-endpoint move.
-- A complete rematching does not permanently spend a carry token; exact
-  two-step token-restoring cycles exist at every block size \(t\ge2\).
-
 ## Bottom line
 
-There is no complete proof. The composite prime-power route now closes bank
-construction, first-separation summation, prefix and joint-parent collateral,
-target-load contraction, sharp parent blocker geometry, heavy-token local
-continuation, exact candidate-only cleaning above \(0.42t\), and a dynamic
-inventory bound for executable repeated-token visits. Mixed fans admit
-line-clean paid-pair banks with no rank-two collateral. The principal remaining
-prime-power theorem is dynamic: charge token-compatible edges and fine stars
-reintroduced by coarse repairs, route off-token witness escapes, and control the
-width of fully forced exchange ancestry. Arbitrary side-length coverage remains
-necessary afterward.
+There is no complete proof. The composite prime-power route now closes the
+generic recursive first moment, prefix and joint-parent collateral, terminal
+target contraction, sharp Hall blocker geometry, universal line-clean repair,
+heavy-token local continuation, exact high-slice cleaning, exact completion of
+one intermediate band, and one-step deep-token batch elimination.
+
+The principal remaining prime-power theorem is dynamic rather than local:
+control coarse-to-fine reintroduction while scheduling multiple height bands.
+Arbitrary side-length coverage remains necessary afterward.
