@@ -1,6 +1,6 @@
 # Arbitrary parent resets have a universal full-token return bound
 
-CMR393--CMR397 compute full-token edge return for recursive prefix resets. The
+CMR398--CMR402 compute full-token edge return for recursive prefix resets. The
 remaining schedule also uses whole-parent moves: exact harmonic-packet
 coverings and joint-parent repairs. Their internal construction is irrelevant
 to edge return. When one selected or forbidden matching is replaced, every
@@ -103,7 +103,7 @@ Apply CMR403 to each changed matching and sum with multiplicity. Overlaps,
 opposite-layer occupancy, and persistent deletion masks only reduce the true
 returned set. ∎
 
-In particular, every exact harmonic packet supplied by CMR401 costs at most
+In particular, every exact harmonic packet supplied by CMR388 costs at most
 `t/p^b` in one token ledger when installed by one layer replacement.
 
 ## 3. Combined endpoint-visit budget
@@ -140,8 +140,8 @@ t^{2/3}+(2h+R+2J)t^{1/3}.
 
 ### Proof
 
-CMR394 pays the prefix-pass return mass and CMR404 pays the non-prefix resets.
-Add the exact initial stock from CMR389 and apply the dynamic inventory CMR390.
+CMR399 pays the prefix-pass return mass and CMR404 pays the non-prefix resets.
+Add the exact initial stock from CMR394 and apply the dynamic inventory CMR395.
 Use `b\le h` for the specialization. ∎
 
 Exact packet and joint-parent moves are therefore no longer unquantified token
