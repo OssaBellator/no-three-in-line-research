@@ -74,7 +74,7 @@ repository-wide theorem ledger.
 | PP3sp--PP3su | Vanishing-density hard unary support regularizes to superregular blocks | PROVED | `docs/139-unary-density-to-superregular-blocks.md` |
 | PP3sv--PP3ta | Equitable colouring converts local paid weights into global chromatic totals | PROVED / FROM HAJNAL--SZEMEREDI AND SR1 | `docs/140-equitable-colour-paid-block-selection.md` |
 | PP3tb--PP3tf | Chromatically scaled source-pair and triple terms vanish for kappa below one-sixtieth | PROVED | `docs/141-chromatic-source-mass-closure.md` |
-| PP3tg--PP3tm | Pool-compatible cross-block states give diffuse dynamic-Xi trades | PROVED / FROM SR1 | `docs/142-pool-compatible-cross-block-xi-trades.md` |
+| PP3tg--PP3tm | Pool-compatible cross-block states give dynamic-Xi trades | PROVED / CONDITIONAL ON POOL-LOCAL SOURCE MASS | `docs/142-pool-compatible-cross-block-xi-trades.md` |
 
 ## Current scale
 
@@ -102,26 +102,25 @@ middle-density ownership Hall rectangles.
 ## Hall, block, and dynamic endpoint
 
 A recapture-dominated Hall core yields a linear rectangle bank. The original
-rectangle signatures and every sublinear-density hard-unary support are absorbed
-by cross-block states, unary-independent equitable colouring, recapture pruning,
+rectangle signatures and every zero-density hard-unary support are absorbed by
+cross-block states, unary-independent equitable colouring, recapture pruning,
 and superregular spread matching.
 
-At secondary exponent \(\kappa<1/60\), the chromatically scaled anchored-pair and
-inserted-triple terms vanish automatically. Both the ordinary paid rectangle
-branch and the pool-compatible dynamic-\(\Xi\) branch therefore reduce to the same
-shadow-only quantities:
+At secondary exponent \(\kappa<1/60\), the **global ordinary rectangle branch**
+has automatic chromatic source validity and reduces to the shadow-only
+quantities
 
 ```text
 k*A = Omega(H^2)
 
 or
 
-k^2*B = Omega(H^3),
+k^2*B = Omega(H^3).
 ```
 
-where `k` is the equitable-colouring count of the hard-unary rectangle
-interaction graph. The dynamic branch uses the pool-invariant weights from
-PP3kx and retains exact star/resource removal credit.
+The pool-compatible dynamic-\(\Xi\) branch uses the same block construction and
+exact removal credit, but retains pool-local source-pair and triple quantities in
+addition to its unary and binary \(\Xi\)-weights.
 
 ## Remaining theorem
 
@@ -133,15 +132,15 @@ The branch is reduced to the following structured cases.
    outside the superregular recapture branch.
 3. Convert positive-density hard-unary support and its Hall/line/resource cores.
 4. Convert chromatically concentrated unary or binary controller-shadow weight
-   at scales \(H^2/k\) and \(H^3/k^2\), including the dynamic-\(\Xi\) weights.
-5. Convert a linear-congestion original binary-shadow dual packing or
+   at scales \(H^2/k\) and \(H^3/k^2\) in the global rectangle branch.
+5. Convert pool-local pair/triple mass or unary/binary \(\Xi\)-weight at the same
+   chromatic scales, including captive-star collateral.
+6. Convert a linear-congestion original binary-shadow dual packing or
    witness-line pencil.
-6. Convert a captive star whose insertion collateral remains comparable with its
-   concentrated removal credit.
 
 Diffuse weighted residuals, external completion energy, source validity of the
-resource endpoint, sparse exceptional labels, arbitrary dense rectangle CSPs,
-original signed contradictions, hierarchical irregularity, superregular
+global resource endpoint, sparse exceptional labels, arbitrary dense rectangle
+CSPs, original signed contradictions, hierarchical irregularity, superregular
 residual installation, diffuse pool-compatible dynamic trades, controller
 relabelling, and termination are no longer separate open problems.
 
