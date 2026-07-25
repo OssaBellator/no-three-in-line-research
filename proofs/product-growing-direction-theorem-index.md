@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-iterated-packet-stage.md`](../tracks/all-n-product-iterated-packet-stage.md).
+[`tracks/all-n-product-adaptive-thinning-stage.md`](../tracks/all-n-product-adaptive-thinning-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -42,7 +42,7 @@ families and develop the complementary repair route. The active task ledger is
 | PX205 | Rank-two support sectors are exactly a two-cycle, a directed two-path, or two disjoint source-to-target arcs, with exact counts | PROVED | `docs/107-rank-two-support-path-reduction.md` |
 | PX206 | Under bounded line occupancy, support-two rank-two load is constant-scale and support-three load is linear after square-root thinning | PROVED | `docs/107-rank-two-support-path-reduction.md` |
 | PX207 | Every fixed background anchor supports at most `mathfrak d(N)t^2` compatible candidate pairs | PROVED | `docs/108-ambient-divisor-support-four.md` |
-| PX208 | Ambient divisor energy pays support-four collateral on blocks above the `N^(2/3+epsilon)` scale | PROVED | `docs/108-ambient-divisor-support-four.md` |
+| PX208 | Ambient divisor energy pays support-four collateral on blocks above the `N^(2/3+epsilon)` scale under fixed square-root thinning | PROVED | `docs/108-ambient-divisor-support-four.md` |
 | PX209 | Geometric-progression endpoints give one anchor with `Theta(t^3)` support-four pairs | PROVED | `docs/108-ambient-divisor-support-four.md` |
 | PX210 | Support-four pairs through one anchor are exactly vertex-disjoint pairs inside equal-product packets | PROVED | `docs/109-common-product-packet-extraction.md` |
 | PX211 | Large anchor-weighted support-four load forces a quantitative common-anchor/common-product packet | PROVED | `docs/109-common-product-packet-extraction.md` |
@@ -59,6 +59,9 @@ families and develop the complementary repair route. The active task ledger is
 | PX222 | Logarithmically many released packets retain polynomial-density and polynomial-spread bounds compatible with sufficient support excess | PROVED | `docs/113-packet-count-barrier-and-logarithmic-window.md` |
 | PX223 | Selected crosses from one product level form disjoint packet-arc transpositions and decompose old support-four defects exactly | PROVED | `docs/114-defect-heavy-product-levels.md` |
 | PX224 | Low-syndrome blocks have only logarithmically many linearly defect-heavy product levels | PROVED | `docs/114-defect-heavy-product-levels.md` |
+| PX225 | General-probability endpoint thinning gives support-four expectation quadratic in `q` and destroyed mass linear in `q` | PROVED | `docs/115-adaptive-thinning-square-root-ambient-threshold.md` |
+| PX226 | Adaptive ambient thinning pays support four on every block above the `N^(1/2+epsilon)` scale | PROVED | `docs/115-adaptive-thinning-square-root-ambient-threshold.md` |
+| PX227 | The same adaptive block has linear internal rank-three and rank-two support-three collateral | PROVED | `docs/115-adaptive-thinning-square-root-ambient-threshold.md` |
 
 ## Current exact boundary
 
@@ -74,24 +77,26 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now distinguishes candidate packet energy from old
-selected defect energy.
+The low-syndrome repair route now has two scale regimes.
 
-- PX183--PX220 provide the support-sensitive decoder, successive packet
-  extraction, joint release, conditioned spread, and linear internal rank-three
-  collateral after packet-compatible thinning.
-- PX221 refutes bounded packet termination for unrestricted candidate energy and
-  shows that `Omega(h)` levels can be necessary.
-- PX222 preserves a viable logarithmic packet window with polynomial spread.
-- PX223 proves that selected crosses in one packet are disjoint transpositions
-  and gives the exact old-defect packet decomposition.
-- PX224 proves that a block with `O(h log h)` old support-four defects has only
-  `O(log h)` product levels carrying a linear number of those defects; all such
-  heavy levels can be included in one logarithmic joint release.
+- PX183--PX224 provide the support-sensitive decoder, packet extraction and
+  release, conditioned spread, candidate-energy barriers, and defect-heavy
+  packet concentration.
+- PX225 observes that support-four creation is quadratic in the thinning
+  probability while destroyed endpoint mass is linear.
+- PX226 chooses the ambient-dependent retention probability
+  `q=min(1/log(2t),t/(1024e^(4Delta)N mathfrak d(N)))` and pays support four on
+  every fixed-depth block with `t>=N^(1/2+epsilon)`.
+- PX227 shows that this adaptive choice simultaneously leaves internal rank
+  three and rank-two support three only linear in the retained block order.
 
-The genuine packet frontier is now the **diffuse selected-defect regime**, where
-every remaining product level has sublinear old load. A termination theorem must
-show that this dispersion itself yields an improving average, another loaded
-line or clean star, or a decreasing defect-weighted packet potential. External
-rank one, minimal-support and short-cycle sectors, exact destruction-versus-
-creation constants, and infinite product closure remain open.
+The genuine packet and diffuse-defect frontier is therefore confined to
+
+\[
+t\le N^{1/2+o(1)}.
+\]
+
+The next obligations are an adaptive bound for rank-one/two-background
+certificates, control of the undamped directed-three-cycle sector, and constant
+sharpening sufficient for strict depth-two descent. Exact infinite product
+closure remains open.
