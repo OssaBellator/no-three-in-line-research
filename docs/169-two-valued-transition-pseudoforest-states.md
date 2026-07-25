@@ -1,27 +1,34 @@
 # Two-valued transition pseudoforest states
 
 PP3zq--PP3zv leave one exact support object at a fixed captive centre: outside a
-high-choice exceptional set of size `m^(1/2+o(1))`, every middle index has at most
-two safe predecessors, or symmetrically at most two safe successors.
+high-choice exceptional set of size `m^(1/2+o(1))`, every possible middle index
+has at most two safe predecessors, or symmetrically at most two safe successors.
 
-A family of one- and two-element choice sets is not an arbitrary matching
-problem. Regard every two-element set as an edge and every singleton as a loop on
-the predecessor ground set. An injective choice exists exactly when this labelled
-multigraph is a pseudoforest. Minimal failure is therefore one bicyclic component.
-When the pseudoforest criterion holds, every unicyclic component has exactly two
-states, while every tree component has one state for each possible unused root.
-Since the transition branch has `N-o(N)` middle indices in a ground set of size at
-most `N`, only `o(N)` tree components occur; the bulk state space is Boolean.
+The local paths
 
-The injective choice is a large partial endpoint matching, not automatically a
-complete endpoint permutation. Its unused left and right resource sets both have
-size `o(N)`. The final completion problem is therefore an explicit residual host
-of sublinear order.
+```text
+r -> p -> c
+```
+
+are alternative states sharing the centre `c`; they are not arcs to install
+simultaneously. The correct use of the two-valued relation is therefore to choose
+one safe predecessor for every possible middle so as to build a large, low-overlap
+bank of alternative local path states. A family of one- and two-element choice
+sets admits such an injective selection exactly when its labelled choice
+multigraph is a pseudoforest. Minimal failure is one bicyclic Hall core.
+
+When the pseudoforest criterion holds, its component orientations parameterize
+possible designs of the alternative-state bank: unicyclic components have two
+design states and tree components are indexed by an unused root. One injective
+design has overlap degree at most two away from `c`, so a linear subbank has
+pairwise disjoint noncentral resources. One local path from that subbank may then
+be fixed and completed by a residual single-cycle permutation.
 
 ## 1. The labelled predecessor multigraph
 
 Fix the predecessor version; the successor version is transposed. Let `P` be a
-set of middle indices outside the high-choice core, and for each `p in P` let
+set of possible middle indices outside the high-choice core, and for each `p in P`
+let
 
 ```text
 1 <= |A(p)| <= 2
@@ -44,20 +51,26 @@ Build a labelled multigraph `K_A` on vertex set `U`:
 Parallel edges and loops are retained because distinct middle indices are
 distinct choice obligations.
 
-An injective predecessor assignment is a map
+An injective predecessor design is a map
 
 ```text
 f:P->U
 ```
 
 such that `f(p) in A(p)` for every `p` and the values `f(p)` are pairwise
-distinct.
+distinct. It produces the alternative path bank
+
+```text
+H_f={f(p)->p->c : p in P}.
+```
+
+Only one member of `H_f` is selected in the final endpoint permutation.
 
 ## 2. Exact pseudoforest criterion
 
 ### Theorem PP3zw -- PROVED
 
-The family `{A(p):p in P}` has an injective predecessor assignment if and only if
+The family `{A(p):p in P}` has an injective predecessor design if and only if
 every connected subgraph of `K_A` has at most as many labelled edges as vertices.
 Equivalently, every connected component of `K_A` is a pseudoforest component: a
 tree or a unicyclic multigraph.
@@ -76,16 +89,13 @@ The edges labelled by `J` form a submultigraph whose nonisolated vertex set is
 exactly `union_{p in J} A(p)`. Thus Hall is exactly the assertion that every
 edge-induced submultigraph has at most as many edges as nonisolated vertices.
 This holds if and only if every connected subgraph has edge count at most vertex
-count, which is the standard pseudoforest condition. ∎
-
-Thus failure of the two-valued transition relation is already an exact Hall core
-with cyclomatic excess.
+count, which is the pseudoforest condition. ∎
 
 ## 3. Minimal failure is bicyclic
 
 ### Proposition PP3zx -- PROVED
 
-Suppose the injective predecessor assignment fails, and choose an inclusion-minimal
+Suppose the injective predecessor design fails, and choose an inclusion-minimal
 label set `J subseteq P` with
 
 ```text
@@ -120,26 +130,26 @@ the pseudoforest inequalities by minimality. The connected minimal graphs of
 cyclomatic number two are exactly the theta and the two handcuff types, including
 multigraph degeneracies. ∎
 
-So the failed bounded-choice branch is not a diffuse near-complete table. It is
-one explicit bicyclic Hall support core.
+Thus failure is one explicit bicyclic Hall support core, not a diffuse transition
+table.
 
-## 4. Exact states of a pseudoforest component
+## 4. Exact designs of a pseudoforest component
 
-Orient each labelled edge toward the predecessor selected for its label. An
-injective assignment is exactly an orientation in which every ground vertex has
+Orient each labelled choice edge toward the predecessor selected for its label.
+An injective design is exactly an orientation in which every ground vertex has
 indegree at most one; a loop contributes indegree one at its vertex.
 
 ### Proposition PP3zy -- PROVED
 
 Let `C` be a connected pseudoforest component.
 
-1. If `C` is a tree with `v` vertices, then it has exactly `v` injective states.
+1. If `C` is a tree with `v` vertices, then it has exactly `v` injective designs.
    They are indexed by the unique unused root `r`; every edge is oriented away
    from `r`.
 2. If `C` is unicyclic and its unique cycle has length at least two, then it has
-   exactly two injective states. Every tree attached to the cycle is oriented away
-   from the cycle, and the cycle is oriented in either cyclic direction.
-3. If the unique cycle is a loop, the component has exactly one injective state;
+   exactly two injective designs. Every tree attached to the cycle is oriented
+   away from the cycle, and the cycle is oriented in either cyclic direction.
+3. If the unique cycle is a loop, the component has exactly one injective design;
    the loop selects its vertex and every attached tree edge is oriented away from
    that vertex.
 
@@ -147,18 +157,17 @@ Let `C` be a connected pseudoforest component.
 
 In a tree, `|E|=|V|-1`, so every valid orientation has exactly one indegree-zero
 vertex and all other vertices have indegree one. Once that root is specified,
-induction from the leaves forces every edge away from the root, and that
-orientation is valid.
+induction from the leaves forces every edge away from the root.
 
-In a unicyclic component, `|E|=|V|`, so every vertex must have indegree one.
+In a unicyclic component, `|E|=|V|`, so every vertex has indegree one.
 Leaf-stripping forces every attached tree edge away from the cycle. On a cycle of
-length at least two, indegree one at each cycle vertex leaves exactly the two
-cyclic orientations. For a loop, the loop is forced and the attached trees are
-again forced outward. ∎
+length at least two, the two cyclic orientations are the only possibilities. A
+loop is forced. ∎
 
-The nontrivial flexible states are therefore exact alternating-cycle variables.
+These are design choices for the alternative-state bank; they are not simultaneous
+endpoint-permutation variables.
 
-## 5. Boolean bulk and small root surplus
+## 5. Boolean bulk of the bank-design space
 
 Let `t(K_A)` be the number of tree components containing at least one labelled
 edge. Put
@@ -169,13 +178,7 @@ delta_A=|U|-|P|.
 
 ### Corollary PP3zz -- PROVED
 
-If the pseudoforest criterion holds, then
-
-```text
-t(K_A) <= delta_A.
-```
-
-More precisely, after discarding isolated ground vertices,
+After discarding isolated ground vertices,
 
 ```text
 t(K_A)=|U|-|P|.
@@ -187,102 +190,132 @@ Hence when
 |P|=N-o(N),   |U|<=N,
 ```
 
-there are only `o(N)` tree components. Every remaining nontrivial component is a
-Boolean unicyclic variable, apart from forced loop components.
+there are only `o(N)` tree components. Every remaining nontrivial design component
+is a two-state unicyclic component, apart from forced loop components.
 
 #### Proof
 
 For each tree component, `|V|-|E|=1`; for each unicyclic component the difference
-is zero. Summing over all edge-containing components gives
+is zero. Sum over all edge-containing components. ∎
+
+Thus optimization over injective bank designs has a Boolean bulk plus a sublinear
+root surplus.
+
+## 6. Linear bounded-overlap path bank
+
+Fix one injective design `f`. Associate to each `p in P` the unordered pair of
+noncentral indices
 
 ```text
-|U|-|P|=t(K_A).
+E_p={f(p),p}.
 ```
 
-If isolated vertices were retained in `U`, they only increase the left side and
-give the displayed inequality. The asymptotic conclusion follows immediately. ∎
+Because the middles `p` are distinct and the selected predecessors `f(p)` are
+distinct, every endpoint index belongs to at most two of the pairs `E_p`: at most
+once as a selected predecessor and at most once as a middle.
 
-Thus the two-valued transition branch consists of a Boolean cycle bank plus only
-a sublinear collection of root variables.
+### Theorem PP3aaa -- PROVED
 
-## 6. Exact residual completion interface
-
-Let `V` be the full endpoint-index set of size `N`. For one injective assignment
-`f`, prescribe the endpoint arcs
+The alternative path bank `H_f` contains a subbank `H'_f` of size at least
 
 ```text
-F_f={f(p)->p : p in P}.
+|P|/3
 ```
 
-These arcs have distinct tails and distinct heads, so they form a bipartite partial
-matching. Put
-
-```text
-L_f=V\f(P),
-R_f=V\P,
-d=N-|P|.
-```
-
-Then `|L_f|=|R_f|=d`.
-
-### Theorem PP3aaa -- PROVED AS A RESIDUAL-HOST INTERFACE
-
-For every pseudoforest state `f`:
-
-1. in the complete coordinate host, every bijection `L_f->R_f` completes `F_f` to
-   a full endpoint permutation, giving exactly `d!` residual completions;
-2. in an allowed endpoint host `G`, the completions are exactly the perfect
-   matchings of the residual bipartite host `G[L_f,R_f]`;
-3. when `|P|=N-o(N)`, this residual host has order `d=o(N)`;
-4. after one residual matching is fixed, every source-invalid pattern touches at
-   most three pseudoforest component variables, and every insertion-shadow or
-   dynamic-`Xi` term touches at most two;
-5. if the residual matching is selected jointly, every remaining pattern is
-   ranked by the number of additional residual arcs it requires, exactly as in
-   PP3ze and PP3zu.
-
-The nonloop unicyclic bulk is Boolean. The only non-Boolean predecessor variables
-are the `o(N)` tree roots from PP3zz, together with the explicit residual matching
-on `o(N)` resources.
+such that distinct paths in `H'_f` are vertex-disjoint outside the common centre
+`c`.
 
 #### Proof
 
-The unused tail and head sets have equal size because `F_f` contains `|P|`
-compatible arcs. A full completion is therefore exactly a bijection between the
-unused sets; imposing an allowed host restricts this bijection to a residual
-perfect matching.
+The graph with edge set `{E_p:p in P}` has maximum degree at most two, so it is a
+disjoint union of paths, cycles, and possible doubled edges. Greedily choose one
+edge and delete it together with all incident edges. Each choice deletes at most
+three edges. The selected matching has size at least `|P|/3`. The corresponding
+two-arc paths share only `c`. ∎
 
-A source obstruction contains at most three newly selected endpoint cells, so
-after the residual cells are fixed it depends on at most three pseudoforest
-component states. Unary and binary paid incidences depend on at most one or two
-selected cells. When residual cells are random or selected jointly, condition on
-`f` and classify each pattern by its number of additional residual arcs. ∎
+When `|P|=N-o(N)`, this gives `Omega(N)` alternative clean local path states with
+pairwise disjoint auxiliary resources.
 
-Thus the pseudoforest theorem reduces the large transition table to a Boolean
-component bank plus a residual matching problem of sublinear order. It does not
-by itself assert that this residual host is matchable or source-valid.
+## 7. Joint local-state and single-cycle completion
 
-## 7. Revised transition endpoint
+For `h=(r,p,c) in H'_f`, fix the two arcs
 
-### Corollary PP3aab -- PROVED
+```text
+r->p,   p->c.
+```
+
+Contract this directed path to one ordered object. On the full `N`-index pool,
+there are exactly
+
+```text
+(N-3)!
+```
+
+single-cycle permutations containing `h`.
+
+For every source-invalid or paid pattern remaining after `h` is fixed, let `u` be
+the number of additional random arcs it requires. Let `S_h,u` be its count or
+nonnegative weight, `0<=u<=3`. Let `J_h` be the expected remaining insertion cost
+and let `R_h>=R_*>0` be the exact removal credit.
+
+### Theorem PP3aab -- PROVED
+
+Conditional on `h`, every compatible set of `u` additional arcs has probability
+at most
+
+```text
+1/(N-3)_u,
+```
+
+unless it creates a proper directed cycle with the fixed path, in which case its
+probability is zero.
+
+If
+
+```text
+(1/|H'_f|) sum_{h in H'_f} [
+  sum_{u=0}^3 K^u S_h,u/(N-2)^u
+  + J_h/R_*
+] < 1,
+```
+
+then one local path state and one conditional single-cycle completion are
+source-admissible and have insertion cost below removal credit.
+
+#### Proof
+
+Contract the two-arc path. There are `N-2` cyclic objects and `(N-3)!` directed
+cyclic orders. Each additional compatible arc that does not create a proper cycle
+contracts two current objects, giving the displayed cylinder probability.
+
+Choose `h` uniformly from `H'_f`, then choose a uniform conditional single cycle.
+The displayed expression bounds the expected number of source violations plus
+normalized paid cost. An outcome below one has no source-invalid event and cost
+below `R_*<=R_h`. ∎
+
+The denominator `(N-2)^u` is a harmless weaker normalization of the exact falling
+factorial for fixed `u` after adjusting the absolute constant `K`.
+
+## 8. Revised transition endpoint
+
+### Corollary PP3aac -- PROVED
 
 The bounded-choice alternatives of PP3zv reduce to one of:
 
-1. **Bicyclic Hall core:** one theta or handcuff support obstruction in the safe
+1. **Bicyclic Hall core:** one theta or handcuff obstruction in the safe
    predecessor or successor relation.
-2. **Boolean alternating-cycle bank:** the safe relation is a pseudoforest and its
-   unicyclic bulk gives exact two-state variables.
-3. **Sublinear root surplus:** at most `o(N)` tree components retain a choice of
-   unused predecessor or successor root.
-4. **Sublinear residual host:** the selected safe arcs leave an exact endpoint
-   matching problem on `o(N)` unused resources.
-5. **Paid finite-state concentration:** after residual completion, the resulting
-   rank-at-most-three source term or unary/binary cost reaches the cycle-credit
-   scale.
-6. **Clean-chain branch:** the support-ranked paid criterion PP3zu applies before
-   the bounded-choice reduction.
+2. **Linear alternative-state bank:** a pseudoforest design yields `Omega(N)` clean
+   two-arc paths sharing only the captive centre.
+3. **Paid path-state completion:** the joint source and cost average PP3aab lies
+   below the path's removal credit.
+4. **Path-bank concentration:** the support-ranked source or insertion cost is at
+   the credit scale on the linear alternative-state bank.
+5. **Bank-design concentration:** optimization over the injective design is trapped
+   in its Boolean unicyclic bulk or sublinear tree-root surplus.
+6. **Clean five-index chain branch:** PP3zu applies before the bounded-choice
+   reduction whenever both outer roles retain at least three choices.
 
 A generic two-valued relation and a diffuse near-complete transition star are no
-longer independent frontiers. The exact unresolved support objects are a minimal
-bicyclic Hall core, a paid Boolean cycle bank, the sublinear tree-root surplus, or
-the sublinear residual host.
+longer independent frontiers. The remaining support objects are a minimal
+bicyclic Hall core or paid concentration on a linear, auxiliary-resource-disjoint
+path-state bank.
