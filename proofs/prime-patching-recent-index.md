@@ -55,6 +55,7 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3aen--PP3aet | Clean-chain conditioning has sharp inverse-density loss; off-centre Xi and source objectives retain full-pool thinning up to `N^(o(1))` | PROVED / CONDITIONAL PAID INTERFACE | `docs/189-clean-chain-inverse-density-averaging.md` |
 | PP3aeu--PP3afa | Fixed-centre unique completion saves one pool power in every high-support source degree; residual failure is a target unary star | PROVED | `docs/190-fixed-centre-residual-source-degree-saving.md` |
 | PP3afb--PP3afg | An adaptive clean-choice threshold absorbs every vanishing marked residual objective or returns a near-complete transition role-star | PROVED / CONDITIONAL PAID INTERFACE | `docs/191-adaptive-clean-chain-threshold.md` |
+| PP3afh--PP3afm | Complete two-resource grids contain linear fixed-cell candidate fans; weighted failure gives an `Omega(R_*q)` candidate fan | PROVED / CONDITIONAL PAID INTERFACE | `docs/192-choice-grid-candidate-fan-localization.md` |
 
 ## Current scale
 
@@ -121,9 +122,15 @@ objective survives clean-chain conditioning automatically. Hard off-centre
 `Xi` weight returns through PP3adh--PP3adt to the same fixed-centre
 arc/path/partner cores.
 
+A complete two-resource choice grid is already a quadratic binary resource star.
+Candidate classes are matchings, so every grid row and column is a linear
+fixed-cell fan of distinct blocker candidates; weighted paid failure gives one
+fan with `Omega(R_*q)` candidate incidences. Candidate-rich projective covering
+therefore returns to the fixed-cell conditional-star/Hall chain.
+
 The remaining marked-`Xi` work is payment or conversion of the extracted
-unary/resource, arc/path-petal, weighted-grid, projective-cover, conditional-Hall,
-and alternating-host objects, plus local pattern cost or insertion load already
+unary/resource, arc/path-petal, fixed-cell binary-fan, conditional-Hall, and
+alternating-host objects, plus local pattern cost or insertion load already
 comparable with removal credit.
 
 ## Remaining theorem
@@ -139,8 +146,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
 4. Convert genuinely nonvanishing fixed-centre insertion-load certificates.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
-6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
-   conditional Hall families, or support-ranked residual collateral.
+6. Convert quadratic binary cell fans or weighted choice grids after fixing one
+   fan centre, conditional Hall families, or support-ranked residual collateral.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic Xi
 terms, diffuse binary dual mass, raw resource stars, transition petal collateral,
@@ -151,8 +158,8 @@ rank-three outer families, fixed rank-four multiplicity cores, fixed-cell
 rank-four petal banks, square-root rank-four partner stars, opaque centre-core
 `Xi` terms, deterministic local-credit tables, failure of dense source-clean
 chain supply, clean-conditioning rate loss, fixed-centre high-support source
-degrees, unstructured residual source thresholds, unstructured off-centre `Xi`
-concentration, unstructured non-superregularity, and termination are no longer
-separate open problems.
+degrees, unstructured residual source thresholds, candidate-rich projective
+covers, unstructured off-centre `Xi` concentration, unstructured
+non-superregularity, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
