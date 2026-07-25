@@ -1,9 +1,9 @@
 # Full-prefix token repetition has a two-dimensional edge inventory
 
-CMR381 reduces a long frozen two-slice closure to candidate walls, secant stars,
+CMR388 reduces a long frozen two-slice closure to candidate walls, secant stars,
 executable heavy prefix cells, or repeated visits to one exact absolute full
-prefix token.  CMR347 gives the correct dynamic accounting principle for
-repeated row-prefix tokens.  The full token exposed by CMR357 is sharper: it
+prefix token. CMR347 gives the correct dynamic accounting principle for
+repeated row-prefix tokens. The full token exposed by CMR357 is sharper: it
 fixes both a column prefix and a row prefix, so its candidate-edge stock is
 quadratically smaller.
 
@@ -46,7 +46,7 @@ further shrink the ambient cell stock.
 
 ## 1. Exact two-dimensional stock
 
-### Theorem CMR382 — PROVED
+### Theorem CMR389 — PROVED
 
 The full-token universe has exact size
 
@@ -73,7 +73,7 @@ Consequently every residual matching host `H` satisfies
 ### Proof
 
 There are exactly `t/p^b` source columns in the prescribed column residue and
-`t/p^b` rows in the prescribed row residue.  Their Cartesian product is the
+`t/p^b` rows in the prescribed row residue. Their Cartesian product is the
 full token universe, and a residual host is a subset of it. ∎
 
 This improves the row-prefix stock `t^2/p^b` from CMR348 by an additional
@@ -87,9 +87,9 @@ Consider an arbitrary sequence of available-edge sets
 A_0,A_1,\ldots,A_m
 \]
 
-inside one fixed closure-envelope epoch.  A **full-token endpoint visit** is a
+inside one fixed closure-envelope epoch. A **full-token endpoint visit** is a
 step which consumes one currently available Hall endpoint edge from
-`U_\tau^{(2)}` and leaves that exact edge absent immediately afterward.  Count
+`U_\tau^{(2)}` and leaves that exact edge absent immediately afterward. Count
 all later reintroductions into the token universe with multiplicity:
 
 \[
@@ -102,7 +102,7 @@ I_\tau^{(2)}
 \right|.
 \]
 
-### Theorem CMR383 — PROVED
+### Theorem CMR390 — PROVED
 
 If `D_\tau^{(2)}` full-token endpoint visits occur, then
 
@@ -130,11 +130,11 @@ D_\tau^{(2)}-
 ### Proof
 
 Apply the dynamic inventory lemma CMR347 with universe
-`U=U_\tau^{(2)}` and use the exact initial-stock bound from CMR382.  Every
+`U=U_\tau^{(2)}` and use the exact initial-stock bound from CMR389. Every
 initial edge and every reintroduced edge can pay for at most one subsequent
 consumption before it must be introduced again. ∎
 
-The statement allows arbitrary complete rematching resets.  Such a reset is
+The statement allows arbitrary complete rematching resets. Such a reset is
 charged exactly by the number of token-compatible cells it returns.
 
 ## 3. Endpoint, witness, or ancestry at full-token resolution
@@ -148,11 +148,11 @@ Process it by the same rule as CMR349:
    nonessential, delete that witness edge;
 3. if every prescribed edge is essential, attach the CMR217 ancestry links.
 
-### Theorem CMR384 — PROVED UNDER THE CMR349 HYPOTHESES
+### Theorem CMR391 — PROVED UNDER THE CMR349 HYPOTHESES
 
 Assume the residual hosts form a deletion pass beginning with no essential
 edge, every deletion retains a perfect matching, and every repeated
-`\tau`-visit is processed by the preceding rule.  Let
+`\tau`-visit is processed by the preceding rule. Let
 
 \[
 J_\tau^{(2)},
@@ -162,7 +162,7 @@ F_\tau^{(2)}
 \]
 
 be respectively the total, token-endpoint, witness-escape, and fully forced
-visit counts.  Then
+visit counts. Then
 
 \[
 J_\tau^{(2)}
@@ -191,18 +191,18 @@ earlier certificates, and the ancestry graph is acyclic within the pass.
 
 ### Proof
 
-The three processing cases are exhaustive.  CMR383 bounds the endpoint-paid
-visits.  CMR217 supplies at most one ancestry link per prescribed edge and
+The three processing cases are exhaustive. CMR390 bounds the endpoint-paid
+visits. CMR217 supplies at most one ancestry link per prescribed edge and
 CMR218 supplies acyclicity. ∎
 
 Thus repetition of one exact full token is no longer free even before a global
-coarse-to-fine estimate is available.  After its initial two-dimensional edge
+coarse-to-fine estimate is available. After its initial two-dimensional edge
 stock is exhausted, every further visit pays a returned exact cell, an
 off-token witness deletion, or a strictly earlier ancestry certificate.
 
 ## 4. Depth-dependent stock bounds
 
-### Corollary CMR385 — PROVED
+### Corollary CMR392 — PROVED
 
 For every real `alpha` with `0<=alpha<=1`, if
 
@@ -233,14 +233,14 @@ In particular:
 
 ### Proof
 
-Substitute `p^{2b}\ge t^{2\alpha}` into CMR382. ∎
+Substitute `p^{2b}\ge t^{2\alpha}` into CMR389. ∎
 
 The remaining dynamic theorem is now precisely quantitative: bound the
 full-token reintroduction mass `I_\tau^{(2)}`, the witness-escape mass, or the
 width of the acyclic forced-ancestry DAG across successive band and prefix
-repairs.  The same estimate would pay the fine structures recreated by later
+repairs. The same estimate would pay the fine structures recreated by later
 coarse moves.
 
-No all-`n` theorem is claimed here.  Exact full-token stocks, inventory
+No all-`n` theorem is claimed here. Exact full-token stocks, inventory
 inequalities, and threshold specializations are checked in
 [`scripts/verify_prime_power_full_token_reintroduction.py`](../scripts/verify_prime_power_full_token_reintroduction.py).
