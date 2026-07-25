@@ -1,0 +1,29 @@
+{
+  "inserted_points": [
+    [29, 26],
+    [25, 24],
+    [20, 28],
+    [24, 21],
+    [17, 6]
+  ],
+  "retained_points": [
+    [18, 30],
+    [6, 14],
+    [23, 0],
+    [28, 12],
+    [30, 25],
+    [2, 4],
+    [26, 19]
+  ],
+  "old_coordinate_max": 30,
+  "labels": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
+  "macro_modulus": 5,
+  "R": 10,
+  "xi": 0.5,
+  "initial_credit": 4,
+  "first_other_cost": 0.5,
+  "second_foreign_cost": 0.5,
+  "star_ambient_size": 100,
+  "star_subbank_size": 5,
+  "marked_distortion": 1
+}
