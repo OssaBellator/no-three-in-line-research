@@ -31,6 +31,8 @@ This ledger records only branch-specific statements.
 | BDA5h | Variable rank-one collateral splits exactly into a balanced floor and removable menu imbalance | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
 | BDA5i | Cheaper local decoder choices suppress rank one while costing factors at most `4` and `8` on ranks two and three | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
 | BDA5j | Failure after rank-one suppression localizes to a balanced floor or a heavy rank-two/rank-three term | PROVED | `docs/bounded-denominator-rank-one-collateral.md` |
+| BDA5k | A balanced floor localizes to one of four two-role blocker patterns and one finite arithmetic profile | PROVED | `docs/bounded-denominator-balanced-floor-localization.md` |
+| BDA5l | A failed bank with large balanced floor forces both role states to carry quantified exclusive collateral | PROVED | `docs/bounded-denominator-balanced-floor-localization.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
