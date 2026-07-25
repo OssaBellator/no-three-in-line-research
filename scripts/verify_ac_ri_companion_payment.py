@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify AC3dn--AC3dq on small rational fibres and conflict graphs."""
+"""Verify AC3dn--AC3dt on small rational fibres and conflict graphs."""
 
 from fractions import Fraction
 from itertools import combinations, product
@@ -21,6 +21,13 @@ def point(channel, column, prime):
     return channel % prime, column % prime, channel * inv(column, prime) % prime
 
 
+def collinear(first, second, third, prime):
+    x1, y1 = first[1], first[2]
+    x2, y2 = second[1], second[2]
+    x3, y3 = third[1], third[2]
+    return ((x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)) % prime == 0
+
+
 def records_for_profile(prime, ratio, root):
     image = f_map(ratio, root, prime)
     companion = tau(ratio, root, prime)
@@ -39,11 +46,23 @@ def records_for_profile(prime, ratio, root):
     return image, companion, records
 
 
+def support_line(prime, ratio, root, image, companion, base):
+    return {
+        point(1, base, prime),
+        point(1, image * base, prime),
+        point(ratio, root * base, prime),
+        point(ratio, companion * base, prime),
+    }
+
+
 def verify_fibres():
     profiles = 0
     records_checked = 0
     hall_subfamilies = 0
     involutions = 0
+    line_certificates = 0
+    ratio_checks = 0
+    support_graphs = 0
 
     for prime in (5, 7, 11, 13):
         for ratio in range(2, prime):
@@ -54,7 +73,7 @@ def verify_fibres():
                 if image in (0, 1):
                     continue
                 companion = tau(ratio, root, prime)
-                if companion in (0, 1, ratio):
+                if companion in (0, 1, ratio) or companion == root:
                     continue
 
                 image2, companion2, records = records_for_profile(
@@ -78,10 +97,58 @@ def verify_fibres():
                     assert len(eligible) == len(selected)
                     hall_subfamilies += 1
 
+                supports = {}
+                for base, _, _ in records:
+                    line = support_line(prime, ratio, root, image, companion, base)
+                    assert len(line) == 4
+                    for triple in combinations(line, 3):
+                        assert collinear(*triple, prime)
+                        line_certificates += 1
+                    supports[base] = line
+
+                column_multipliers = {1, image, root, companion}
+                row_multipliers = {
+                    1,
+                    inv(image, prime),
+                    root * inv(image, prime) % prime,
+                    companion * inv(image, prime) % prime,
+                }
+                ratios = {
+                    left * inv(right, prime) % prime
+                    for alphabet in (column_multipliers, row_multipliers)
+                    for left in alphabet
+                    for right in alphabet
+                }
+                assert len(ratios - {1}) <= 30
+
+                graph = {base: set() for base in supports}
+                for left, right in combinations(supports, 2):
+                    collision = any(
+                        first[1] == second[1] or first[2] == second[2]
+                        for first in supports[left]
+                        for second in supports[right]
+                    )
+                    predicted = right * inv(left, prime) % prime in ratios
+                    assert collision == predicted
+                    if collision:
+                        graph[left].add(right)
+                        graph[right].add(left)
+                    ratio_checks += 1
+                assert max((len(neighbours) for neighbours in graph.values()), default=0) <= 30
+                support_graphs += 1
+
                 records_checked += len(records)
                 profiles += 1
 
-    return profiles, records_checked, hall_subfamilies, involutions
+    return (
+        profiles,
+        records_checked,
+        hall_subfamilies,
+        involutions,
+        line_certificates,
+        ratio_checks,
+        support_graphs,
+    )
 
 
 def independent_weight(vertex_count, edges, weights):
@@ -151,14 +218,24 @@ def verify_ticket_potential(maximum_records=9):
 
 
 def main():
-    profiles, records, hall, involutions = verify_fibres()
+    (
+        profiles,
+        records,
+        hall,
+        involutions,
+        line_certificates,
+        ratio_checks,
+        support_graphs,
+    ) = verify_fibres()
     graphs, weighted = verify_weighted_conflict_router()
     tickets = verify_ticket_potential()
     print(
         "AC RI companion payment: verified "
-        f"{profiles} profiles, {records} private records, "
+        f"{profiles} nonfixed profiles, {records} private records, "
         f"{hall} Hall subfamilies, {involutions} involutions, "
-        f"{graphs} conflict graphs, {weighted} weighted AC2c cases, "
+        f"{line_certificates} four-point certificates, "
+        f"{ratio_checks} support-ratio pairs in {support_graphs} graphs, "
+        f"{graphs} abstract conflict graphs, {weighted} weighted AC2c cases, "
         f"and {tickets} ticket states"
     )
 
