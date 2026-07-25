@@ -26,6 +26,8 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3ao | One exact BDA profile has a canonical `q/gcd(det,q)` scalar-slot realization with exact paid aggregation | PROVED | `docs/alternating-core-bda-delegation.md` |
 | AC3ap | Capped scalar slots yield weighted co-anchored `h,h+q` pairs, a compatible family, or a BDA affine anchor chain | PROVED (imports BDA4e/BDA5z) | `docs/alternating-core-bda-delegation.md` |
 | AC3aq | Every paid- and support-faithful BDA role delegates to a heavy atom, dispersed inequality, executable decoder family, or affine chain | PROVED UNDER HYPOTHESES | `docs/alternating-core-bda-delegation.md` |
+| AC3ar | AC3am composes with the BDA adapter at exact loss `1/(2KρL)` | PROVED UNDER HYPOTHESES | `docs/alternating-core-bda-role-composition.md` |
+| AC3as | Every denominator role has a bounded-shape half or a paid large-direction half | PROVED | `docs/alternating-core-bda-role-composition.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
