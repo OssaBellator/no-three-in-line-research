@@ -9,12 +9,23 @@ def matching_cells(perm):
     return {(column, row) for column, row in enumerate(perm)}
 
 
+def collinear(triple):
+    first, second, third = tuple(triple)
+    return (
+        (second[0] - first[0]) * (third[1] - first[1])
+        - (second[1] - first[1]) * (third[0] - first[0])
+        == 0
+    )
+
+
 def matching_triples(n):
     triples = []
     for columns in combinations(range(n), 3):
         for rows in combinations(range(n), 3):
             for assignment in permutations(rows):
-                triples.append(frozenset(zip(columns, assignment, strict=True)))
+                triple = frozenset(zip(columns, assignment, strict=True))
+                if collinear(triple):
+                    triples.append(triple)
     return triples
 
 
@@ -113,7 +124,7 @@ def main():
     pigeonholes = verify_pigeonholes()
     print(
         "RI crossed-channel localization: verified "
-        f"{triples} variable triples, {paired} paired diagonals, "
+        f"{triples} variable collinear triples, {paired} paired diagonals, "
         f"and {pigeonholes} weighted routers"
     )
 
