@@ -14,9 +14,10 @@ m=|\mathcal R|,
 n=t-3,
 \]
 
-and sample uniformly from the bank `mathcal B(mathcal R)` of CMR324.  Equivalently:
+and sample uniformly from the bank \(\mathcal B(\mathcal R)\) of CMR324.
+Equivalently:
 
-1. choose `L` uniformly from `mathcal R`;
+1. choose `L` uniformly from `\mathcal R`;
 2. include `Q_L`;
 3. complete uniformly on the remaining `n` source and target vertices.
 
@@ -107,9 +108,9 @@ most two further blocks contain one prescribed cell.  All remaining blocks use
 two completion cells.  CMR326 gives the second inequality.
 
 For a triple, at most one block contains all three cells, at most three blocks
-contain a specified pair of them, and at most three further blocks contain one
-of them.  Use the rank `0,1,2,3` conditional probabilities from CMR326 and
-again overcount harmlessly. ∎
+contain one of its three prescribed pairs, and at most three further blocks
+contain one prescribed cell.  Use the rank `0,1,2,3` conditional probabilities
+from CMR326 and again overcount harmlessly. ∎
 
 When CMR309 supplies `m=Omega_p(t)`, the single-cell atom is `O_p(1/t)` and all
 three displayed atoms are `O_p(1/t)` because the bank deliberately fixes one
@@ -122,7 +123,7 @@ collinear triples `T` such that
 
 1. `T` is compatible with `Q_L`;
 2. `T` is not `Q_L`;
-3. `|T cap Q_L|=s`.
+3. \(|T\cap Q_L|=s\).
 
 Only `s=0,1,2` occur.
 
