@@ -154,28 +154,41 @@ D_\tau^{(2)}
   \]
   installations.
 
-### Polynomial essential-core ancestry ledger
+### Essential core and exchange corridors
 
 - Essential edges in any matchable balanced bipartite host form a matching.
-- Across one nested deletion pass, essential sets grow monotonically and all
-  first-essentiality layers partition one final essential core `E_*` with
+- Across one nested deletion pass, all first-essentiality layers partition one
+  final essential core `E_*` with
   \[
   |E_*|\le t.
   \]
-- After identifying certificates with the same prescribed edge set, the number
-  of fully forced rank-`1/2/3` certificates is at most
+- After identifying certificates with the same prescribed edge set, there are
+  fewer than \(t^3+t\) fully forced rank-`1/2/3` certificates and fewer than
+  \(3t^3\) distinct CMR217 ancestry links.
+- Relative to a perfect matching, contracting the matching edges turns
+  alternating exchange cycles into directed cycles.
+- If deleting `f=\ell_ur_v` makes a matching edge newly essential, its contracted
+  vertex lies on no directed cycle after the deletion and lies on a directed
+  `v`-to-`u` exchange corridor.
+- Reachability on one first-essentiality layer is a partial order. Every chain
+  lies on one alternating cycle through `f`, so all matching edges in the chain
+  can be exchanged simultaneously before `f` is deleted.
+- The minimum number of exchange cycles through `f` needed to cover the entire
+  layer equals the width of that reachability poset.
+- For a layer of size `n`, either one exchange cycle batches at least
+  \(\lceil\sqrt n\rceil\) newly essential edges, or there is an antichain of
+  that size which no one exchange cycle through `f` can address twice.
+- Across the full deletion pass, all first-essentiality edges are covered at
+  their valid historical times by at most
   \[
-  \binom t1+\binom t2+\binom t3<t^3+t.
+  \sum_i w_i\le |E_*|\le t
   \]
-- Their total distinct CMR217 ancestry links, counted once per prescribed edge,
-  are at most
-  \[
-  \binom t1+2\binom t2+3\binom t3<3t^3.
-  \]
-- Thus raw edge-set ancestry width is polynomial. The remaining challenge is to
-  exploit these links geometrically or algorithmically through simultaneous
-  low-overlap exchange flips, p-adic/carry concentration, host decomposition, or
-  envelope expansion.
+  batch exchange cycles.
+
+Thus the cubic edge-set ancestry ledger compresses to a linear family of
+historical batch cycles. Those cycles are valid relative to different selected
+matchings and different deletion times, so a common-epoch simultaneous flip is
+not yet proved.
 
 ## Important corrections
 
@@ -192,30 +205,33 @@ D_\tau^{(2)}
 
 ## What remains conditional
 
-1. **Geometric exchange-ancestry resolution.** From the fewer than `3t^3`
-   distinct exchange links, extract a large low-overlap family for simultaneous
-   flipping, or force p-adic/carry concentration, strict host decomposition, or
-   envelope expansion.
-2. **Repeated local ancestor resets.** Extend the deletion/ancestry payment to
+1. **Temporal exchange-cycle lifting.** Lift a large low-overlap subfamily of the
+   at most `t` historical batch cycles to one common host/matching epoch, or
+   prove that failure forces strict host decomposition or envelope expansion.
+2. **Exchange-antichain geometry.** Convert a large CMR437 reachability antichain
+   into a Hall separator, p-adic/carry concentration, or another executable
+   inherited repair.
+3. **Repeated local ancestor resets.** Extend the deletion/ancestry payment to
    repeated compatible prefix-ancestor slots not arising from packet loss.
-3. **Low-height carry absorption.** Charge the remaining lower-height lines to
+4. **Low-height carry absorption.** Charge the remaining lower-height lines to
    first-separation, quotient, and primitive carry signatures.
-4. **Prime-field terminal conversion.** Transfer the inherited-envelope and
+5. **Prime-field terminal conversion.** Transfer the inherited-envelope and
    exact-covering mechanism to prime-field carry cycles.
-5. **Square-root divisor boundary.** Remove or absorb the residual nearly
+6. **Square-root divisor boundary.** Remove or absorb the residual nearly
    singular collision terms.
-6. **Further balanced prime families.** Extend the non-reciprocal factorization
+7. **Further balanced prime families.** Extend the non-reciprocal factorization
    beyond prime seven.
-7. **CRT and arbitrary side lengths.** Control mixed projections and cover every
+8. **CRT and arbitrary side lengths.** Control mixed projections and cover every
    positive integer \(n\).
 
 ## Bottom line
 
 There is no complete proof. On the prime-power route, packet construction,
-packet recurrence, state-cycle erasure, polynomial packet termination, and raw
-edge-set ancestry width are now closed at their stated scales.
+packet recurrence, state-cycle erasure, polynomial packet termination, raw
+edge-set ancestry width, exact one-edge exchange corridors, and linear temporal
+cycle compression are closed at their stated scales.
 
-The principal remaining prime-power theorem is geometric use of the polynomial
-exchange-ancestry ledger, together with a corresponding payment for repeated
-local ancestor resets. Arbitrary side-length coverage remains necessary
-afterward.
+The principal remaining prime-power theorem is temporal or geometric use of the
+at most `t` historical batch exchange cycles, together with a corresponding
+payment for repeated local ancestor resets. Arbitrary side-length coverage
+remains necessary afterward.
