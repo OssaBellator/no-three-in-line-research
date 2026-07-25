@@ -88,7 +88,8 @@ This addendum records CMR102 onward. The main composite index remains in
 | CMR364--367 | Exact deep-token line universes, the \(t/p\) bound, simultaneous token-batch elimination, and frozen-state escape | PROVED | `docs/130-prime-power-dispersed-token-universe-elimination.md` |
 | CMR368--371 | Tunable heavy/dispersion threshold, deep-token line cost, batch capacity, and cubic-root specialization | PROVED | `docs/131-prime-power-tunable-token-batching.md` |
 | CMR372--377 | Duplicated-row decoding, host and mixed-conflict bounds, and exact target-specific completion of one intermediate-height band | PROVED; CMR376 from Joos--Mubayi--Smith | `docs/132-prime-power-exact-band-covering.md` |
-| CMR378--384 | Exact old-cell-clean host churn, flat fine-token return profile, ancestor-reset factorization, one-pass \(O_p(t\log^2t)\) return mass, reset multiplicity, and witness execution | PROVED / PROVED UNDER SCHEDULE HYPOTHESES | `docs/133-prime-power-coarse-reset-reintroduction-profile.md` |
+| CMR378--381 | Vacated-row accounting, per-depth disjoint-block bounds, and the complete one-pass laminar token-return budget | PROVED / PROVED UNDER THE SWEEP HYPOTHESIS | `docs/133-prime-power-laminar-reintroduction-budget.md` |
+| CMR382--384 | Exact recursive-fibre host churn, flat fine-token profile, compatible ancestor-slot factorization, one-pass sharpening, reset multiplicity, and witness execution | PROVED / PROVED UNDER THE DESCENDING RECURSIVE SCHEDULE | `docs/133-prime-power-coarse-reset-reintroduction-profile.md` |
 
 The valid replacements for the refuted CMR138 are the one-layer theorem CMR129,
 the disjoint-fibre joint bank CMR164, and the explicitly old-cell-clean bank
