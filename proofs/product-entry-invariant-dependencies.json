@@ -1,7 +1,7 @@
 {
-  "range": "PX397-PX498",
+  "range": "PX397-PX503",
   "root": "PX492",
-  "frontier_root": "PX498",
+  "frontier_root": "PX503",
   "nodes": {
     "PX397-403": {"document": "docs/153-px63-one-hit-derangement-entry.md", "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"], "move_space": "rectangle_label", "status": "entry_audited"},
     "PX404-410": {"document": "docs/154-px64-line-cap-return-depth.md", "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"], "move_space": "arithmetic_only", "status": "line_cap_audited"},
@@ -20,7 +20,9 @@
     "PX483-487": {"document": "docs/167-fourteenth-power-divisor-cutoff-compression.md", "depends_on": ["PX466-470", "PX479-482"], "move_space": "arithmetic_only", "status": "divisor_witness_optimized"},
     "PX488-492": {"document": "docs/168-rational-divisor-cutoff-compression.md", "depends_on": ["PX466", "PX483-487"], "move_space": "arithmetic_only", "status": "rational_divisor_witness_optimized"},
     "PX493-495": {"document": "docs/169-side-seven-relative-class-census.md", "depends_on": ["PX50", "PX492"], "move_space": "arithmetic_only", "status": "side_seven_classes_complete"},
-    "PX496-498": {"document": "docs/170-side-seven-insertion-recursion-barrier.md", "depends_on": ["PX56", "PX58", "PX59", "PX60", "PX493-495"], "move_space": "arithmetic_only", "status": "side_seven_insertion_barrier"}
+    "PX496-498": {"document": "docs/170-side-seven-insertion-recursion-barrier.md", "depends_on": ["PX56", "PX58", "PX59", "PX60", "PX493-495"], "move_space": "arithmetic_only", "status": "side_seven_insertion_barrier"},
+    "PX499-500": {"document": "docs/171-side-seven-two-column-selector-normal-form.md", "depends_on": ["PX50", "PX493-495"], "move_space": "arithmetic_only", "status": "side_seven_selector_normal_form"},
+    "PX501-503": {"document": "docs/172-side-seven-local-minimum-transposition-boxes.md", "depends_on": ["PX496-498", "PX499-500"], "move_space": "arithmetic_only", "status": "side_seven_local_transposition_barrier"}
   },
   "safety_rules": {
     "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
@@ -44,7 +46,11 @@
       "side_seven_configuration_count": 132,
       "side_seven_ordered_factor_count": 488,
       "side_seven_relative_class_count": 4,
-      "side_seven_inherited_extension_hosts": 21952
+      "side_seven_inherited_extension_hosts": 21952,
+      "side_seven_centre_minima": [4, 3, 4, 3],
+      "side_seven_local_box_hosts_per_class": 42592,
+      "side_seven_local_box_hosts_total": 170368,
+      "side_seven_local_box_nodes_total": 126633677
     }
   }
 }
