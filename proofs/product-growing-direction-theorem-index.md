@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-optimized-spread-stage.md`](../tracks/all-n-product-optimized-spread-stage.md).
+[`tracks/all-n-product-causal-sign-stage.md`](../tracks/all-n-product-causal-sign-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -69,6 +69,20 @@ families and develop the complementary repair route. The active task ledger is
 | PX232 | The optimized bounded-forbidden witness gives cylinder factor `mathcal C(t,Delta)` tending to `e^Delta` | PROVED | `docs/117-optimized-bounded-forbidden-spread.md` |
 | PX233 | The optimized spread factor survives arbitrary compatible exposure in residual order | PROVED | `docs/117-optimized-bounded-forbidden-spread.md` |
 | PX234 | Every cylinder-based collateral estimate upgrades uniformly from `e^(4Delta)` to at most `e^(2Delta)` | PROVED | `docs/117-optimized-bounded-forbidden-spread.md` |
+| PX235 | Forbidding every current block position deletes exactly all old certificates meeting the moved block | PROVED | `docs/118-causal-destruction-and-recreation-ledger.md` |
+| PX236 | Fixed-switch destruction and creation satisfy the exact cancellation identity `F_star-D_star=Delta_raw-Gamma_A(W)` | PROVED | `docs/118-causal-destruction-and-recreation-ledger.md` |
+| PX237 | Clean-star, loaded-line, and radial neutralizations receive one cancellation unit per designated prospective triple | PROVED | `docs/118-causal-destruction-and-recreation-ledger.md` |
+| PX238 | Packet constraints suppress prospective recreation separately from the base deletion of old packet defects | PROVED | `docs/118-causal-destruction-and-recreation-ledger.md` |
+| PX239 | Exact old deletion plus optimized external cylinders gives a unified strict-sign criterion | PROVED | `docs/118-causal-destruction-and-recreation-ledger.md` |
+| PX240 | Moving one endpoint from every old endpoint-disjoint star ray destroys at least one old certificate per endpoint | PROVED | `docs/119-exact-first-generation-destruction-coefficients.md` |
+| PX241 | Moving `s` of `ell` selected points on one line destroys exactly `binom(ell,3)-binom(ell-s,3)` old line certificates | PROVED | `docs/119-exact-first-generation-destruction-coefficients.md` |
+| PX242 | Layer-channel extraction from a loaded line gives destruction at least `s ell^2/32` and `ell^3/(64q)` | PROVED | `docs/119-exact-first-generation-destruction-coefficients.md` |
+| PX243 | Injectively assigned old radial certificates give one destruction unit per moved endpoint | PROVED | `docs/119-exact-first-generation-destruction-coefficients.md` |
+| PX244 | Sufficiently loaded lines beat every fixed linear creation coefficient | PROVED | `docs/119-exact-first-generation-destruction-coefficients.md` |
+| PX245 | Bounded-degree heavy rank-one cells can be forbidden while retaining an optimized spread matching bank | PROVED | `docs/120-rank-one-heavy-cell-avoidance.md` |
+| PX246 | The sharp Hall threshold gives one matching of rank-one cost below `ms` when `s>=2(Delta+lambda_m)` | PROVED | `docs/120-rank-one-heavy-cell-avoidance.md` |
+| PX247 | Failure of heavy-cell avoidance forces more than `s/2-Delta` heavy cells in one row or column | PROVED | `docs/120-rank-one-heavy-cell-avoidance.md` |
+| PX248 | A heavy coordinate contains linearly many candidate centres of quantitative endpoint-disjoint secant stars | PROVED | `docs/120-rank-one-heavy-cell-avoidance.md` |
 
 ## Current exact boundary
 
@@ -84,27 +98,26 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has explicit control of every rank-at-most-
-three asymptotic sector and an improved probability constant.
+The low-syndrome repair route now has an exact negative ledger as well as an
+optimized positive ledger.
 
-- PX225--PX227 pay support four above `N^(1/2+epsilon)` and keep higher-support
-  internal rank three linear.
-- PX228--PX231 turn rank one into a star outcome or linear load and give exact
-  counts for every minimal-support sector.
-- PX232 replaces the `e^(4Delta)` spread loss by the order-sensitive factor
-  `mathcal C(t,Delta)=e^(Delta+O(Delta^2/t))`.
-- PX233 preserves that improvement under sequential exposure.
-- PX234 gives the uniform `e^(2Delta)` substitution throughout the complete
-  collateral ledger.
+- PX225--PX234 control every rank-at-most-three creation sector and replace the
+  crude cylinder factor by `mathcal C(t,Delta)=e^(Delta+O(Delta^2/t))`.
+- PX235--PX239 separate old block deletion from prospective star/packet
+  suppression and give the exact causal sign inequality.
+- PX240--PX244 compute every first-generation destruction coefficient. Loaded
+  lines have cubic old shadow and strictly beat any fixed linear creation term.
+- PX245--PX248 eliminate high rank-one cells deterministically when they are
+  coordinate-sparse; failure forces a row or column field of large star centres.
 
-The packet and diffuse-defect frontier remains confined to
+The packet and diffuse-defect range remains confined to
 
 \[
 t\le N^{1/2+o(1)}.
 \]
 
-No rank-at-most-three sector now lacks either an explicit decoder or an at-most-
-linear expected-load estimate. The immediate obligation is an exact destruction
-ledger for clean stars, loaded lines, radial cores, and packet releases, followed
-by a strict linear-sign theorem. Small-block packet descent and exact infinite
+The immediate frontier is now geometric rather than probabilistic: decode a
+coordinate field of heavy star centres, or use the exact `Gamma_A(W)` and paid-
+bank destruction to prove a strict sign in the linear clean-star/radial regime.
+Conditioned depth-two assembly, small-block packet descent, and exact infinite
 product closure remain open.
