@@ -22,10 +22,15 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR439--443 | Sparse rollback escape, minimum rollback essential core, cost-or-factorization dichotomy, terminal-certificate rollback, and quadratic rollback-incidence packing/concentration | PROVED | `docs/146-prime-power-sparse-rollback-factorization.md` |
 | CMR444--447 | Exact rollback full-token incidence, cheap rollback payment, universal restored-edge recreation support, and harmonic packet rollback cost | PROVED | `docs/147-prime-power-rollback-incidence-payment.md` |
 | CMR448--452 | Minimum-cost rollback characterization, no-negative alternating cycles, zero-cycle connectivity, exact tight optimal host, and integral rollback-level potentials | PROVED | `docs/148-prime-power-rollback-optimal-face.md` |
+| CMR453--461 | Rollback-sensitive potential range, optimal-allowed edge criterion, exact SCC product, additive local rollback cost, active-level concentration, threshold endpoint, and transfer to marked ancestor-return slots | PROVED | `docs/149-prime-power-tight-rollback-scc-factorization.md` |
+| CMR462--466 | Exact level-cut flow conservation, at most `2k` cross-level edges, balanced residual levels, conditional level factorization, finite skeleton count, and marked-slot transfer | PROVED | `docs/150-prime-power-rollback-level-skeleton.md` |
+| CMR467--471 | Right-endpoint cost polarization inside one level, exact source-split products, mixed-colour cycle criterion, colour-separated factorization, and transfer to rollback/ancestor faces | PROVED | `docs/151-prime-power-same-level-colour-split.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR452 is geometric analysis of the layered tight rollback host
-and payment for repeated local ancestor resets. Minimum rollback states are
-exactly the perfect matchings of a canonical tight host. Its exchange arcs have
-nonnegative reduced cost and lie on integer potential levels in
-`[-(t-1),0]`; arbitrary positive-cost state excursions are unnecessary.
+frontier after CMR471 is geometric use of mixed-colour zero-cost alternating
+cycles inside one same-level residual block. Positive marked-cost excursions
+are eliminated, cross-level motion is confined to a balanced skeleton of at
+most `2k` edges, and absence of a mixed block gives exact lower-dimensional
+factorization. The next target is a low-overlap cycle family or a theorem that
+cycle overlap forces prefix, primitive-height, quotient, carry, Hall, reserve,
+or envelope concentration.
