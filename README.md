@@ -27,7 +27,7 @@ where `D(n)` is the maximum number of points that can be selected from an
 - [`docs/56-random-matching-block-sparsification.md`](docs/56-random-matching-block-sparsification.md) through [`docs/77-one-sided-slab-cross-macro-separation.md`](docs/77-one-sided-slab-cross-macro-separation.md): random sparsification, square-root macros, source cleaning, weighted event mass, global labels, and slab separation.
 - [`docs/78-ore-balanced-global-allocation.md`](docs/78-ore-balanced-global-allocation.md) through [`docs/89-controller-shadow-monotone-termination.md`](docs/89-controller-shadow-monotone-termination.md): complementary-degree allocation, slab-optimal exponents, external-energy closure, controller-aware domains, structural extraction, paid endpoint trades, and termination.
 - [`docs/90-superregular-paid-endpoint-trades.md`](docs/90-superregular-paid-endpoint-trades.md) through [`docs/96-shadow-support-permutation-cleaning.md`](docs/96-shadow-support-permutation-cleaning.md): endpoint-host regularisation, permutation local lemmas, transition divisor bounds, two-scale source-valid thinning, protected credit, and zero-cost shadow-support cleaning.
-- [`docs/97-zero-unary-shadow-hall-rectangles.md`](docs/97-zero-unary-shadow-hall-rectangles.md) through [`docs/101-dynamic-pool-excess-shadow-potential.md`](docs/101-dynamic-pool-excess-shadow-potential.md): zero-unary Hall endpoints, support cores, source-star correction, line/fan localisation, and pairing-invariant dynamic shadow.
+- [`docs/97-zero-unary-shadow-hall-rectangles.md`](docs/97-zero-unary-shadow-hall-rectangles.md) through [`docs/104-line-supported-binary-covers.md`](docs/104-line-supported-binary-covers.md): Hall endpoints, support cores, corrected source stars, dynamic shadow, congestion covers, rich-line assignment energy, and geometric line covers.
 - [`docs/12-failed-claims-ledger.md`](docs/12-failed-claims-ledger.md): corrected, weakened, and refuted claims.
 
 ## Research discipline
@@ -61,8 +61,8 @@ the exponent-optimal disjoint square-root-macro balance
 ```text
 macro variables M = m^(1/20+o(1))   = m^0.05
 source-pool size R = m^(19/20+o(1)) = m^0.95
-macro width W     = m^(19/40+o(1))  = m^0.475
-total width T=MW  = m^(21/40+o(1))  = m^0.525.
+macro width W     = m^(19/40+o(1)) = m^0.475
+total width T=MW  = m^(21/40+o(1)) = m^0.525.
 ```
 
 The branch proves:
@@ -79,8 +79,11 @@ The branch proves:
 - exact elimination of diffuse residual insertion shadow;
 - exact Hall rectangles for zero-unary endpoint failure;
 - linear unary/binary support-core extraction;
-- tomographic recapture-line and binary cell-fan localisation;
-- a pairing-invariant excess-shadow potential for dynamic within-pool trades.
+- a pairing-invariant excess-shadow potential for dynamic within-pool trades;
+- factor-two conversion of binary conflicts into unary covers measured by endpoint-resource congestion;
+- an exact fractional dual for high binary cover congestion;
+- source-valid rich-line assignment energy and a grid-rich pencil-core alternative;
+- congestion-one covers for every individual nonaxis witness line.
 
 For the resource bank, sparse unary endpoint shadow permits thinning to
 
@@ -103,10 +106,29 @@ single zero-unary host `G_0`. If it has no perfect matching, Hall supplies
 X\times Y\subseteq E(\overline{G_0}).
 \]
 
-A macroscopic rectangle contains a quadratic single-type witness core. A
-recapture core yields a linear bank of lines with linear endpoint intersections.
-A cubic binary support core yields either a linear endpoint-cell fan or a linear
-resource-disjoint conflict bank.
+Binary shadow can now be removed before matching. If `mathcal B` is the binary
+conflict family, its fractional congestion optimum `tau^*(mathcal B)` has a
+factor-two integral cover. When this is `o(q)`, binary shadow becomes a low-degree
+unary deletion; a residual matching failure still exposes an essentially
+original Hall rectangle. When it is linear, an exact LP dual gives a weighted
+binary-conflict packing normalized by endpoint-resource prices.
+
+The geometry sharpens this further. All allowed endpoint cells on one nonaxis
+candidate line form a matching, so every conflict class on that line has a unary
+cover of congestion one. The hard geometric binary case is therefore a linear
+pencil of distinct witness lines through common endpoint resources, not one rich
+line or one large line clique.
+
+A recapture-dominated Hall core has a separate assignment endpoint. Its current
+owner-line incidence `H_0` decreases whenever
+
+\[
+\frac Kq W_\mu<H_0,
+\]
+
+where `W_mu` is the complete permitted replacement-line energy and `K/q` is the
+source-valid one-cell spread. Failure forces a quadratic grid-rich pencil core
+and hence a linear matching of compatible rich owner/replacement lines.
 
 Within a controller pool, endpoint permutations preserve the pool's column and
 row sets and hence its complete candidate-cell universe. Every candidate has one
@@ -124,10 +146,9 @@ The remaining bottleneck has five forms:
 
 1. prove the controller-aware global graphs satisfy complementary degree;
 2. convert a Hall rectangle or a matchable but non-superregular zero-unary host;
-3. convert the rich recapture-line bank;
-4. convert the binary endpoint-cell fan or resource-disjoint binary bank;
-5. construct source-admissible pool-compatible trades with `Xi` insertion cost
-   below the star/resource removal credit.
+3. convert the grid-rich owner-line pencil core when the line-energy first moment fails;
+4. convert a linear-congestion binary dual packing or a linear witness-line-overlap pencil;
+5. construct source-admissible pool-compatible trades with `Xi` insertion cost below the star/resource removal credit.
 
 The focused statements and exact formulas are in
 [`proofs/prime-patching-recent-index.md`](proofs/prime-patching-recent-index.md).
@@ -147,6 +168,9 @@ python scripts/analyze_controller_aware_domains.py certificates/prime-patching-s
 python scripts/analyze_endpoint_trade_hosts.py certificates/prime-patching-small.json
 python scripts/analyze_endpoint_hall_rectangles.py certificates/prime-patching-small.json
 python scripts/analyze_dynamic_cell_shadow.py certificates/prime-patching-small.json --labels 12
+python scripts/check_binary_shadow_cover.py experiments/binary-shadow-cover-example.json
+python scripts/check_binary_shadow_cover.py experiments/line-supported-binary-cover-example.json
+python scripts/check_rich_line_energy.py experiments/rich-line-energy-example.json
 ```
 
 These programs are sanity checks or finite exhaustive checks, not proofs for
@@ -172,8 +196,9 @@ A useful contribution should do at least one of the following:
 - verify or repair a result tagged **PROVED**;
 - prove complementary-degree allocation for the controller-aware label graphs;
 - convert zero-unary Hall rectangles or non-superregular matchable hosts;
-- convert rich recapture-line banks;
-- convert binary endpoint-cell fans or resource-disjoint binary banks;
+- bound or convert the grid-rich owner-line pencil core;
+- bound the binary congestion LP or convert its dual packing;
+- convert a linear witness-line-overlap pencil;
 - construct source-admissible pool-compatible trades with negative `Xi` change;
 - prove the second-order concentration theorem for the alternating-neutralisation bank;
 - construct a monotone carry-signature potential or bounded-denominator absorber;
