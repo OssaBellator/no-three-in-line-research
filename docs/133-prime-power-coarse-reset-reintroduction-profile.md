@@ -265,4 +265,4 @@ fibres.
 
 No all-`n` theorem is claimed here. Exact host churn, flat p-adic returns,
 one-pass sums, reset multiplicity, and witness routing are checked in
-[`scripts/verify_prime_power_coarse_reset_profile.py`](../scripts/verify_prime_power_coarse-reset-profile.py).
+[`scripts/verify_prime_power_coarse_reset_profile.py`](../scripts/verify_prime_power_coarse_reset_profile.py).
