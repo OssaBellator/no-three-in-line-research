@@ -28,12 +28,12 @@ Unlike the full derangement notation `E(L)`, this set includes old diagonal
 cells other than `z_*`, because those cells are available in the target-specific
 host.
 
-## 1. One-exception boundary covering
+## 1. One-exception Cartesian covering
 
 ### Theorem CMR244 — PROVED
 
-Let `A,C` be finite real coordinate sets of sizes `a,c>=2`. If nonvertical,
-nonhorizontal real lines cover every point of
+Let `A,C` be nonempty finite real coordinate sets of sizes `a,c`. If
+nonvertical, nonhorizontal real lines cover every point of
 
 \[
 A\times C
@@ -47,7 +47,16 @@ except possibly one arbitrary point, then the number `q` of lines satisfies
 
 ### Proof
 
-The rectangle boundary contains exactly
+First suppose `a=1`. Every nonvertical line meets the unique vertical slice
+`A times C` in at most one point. At least `c-1` points must be covered, so
+
+\[
+q\ge c-1=a+c-2.
+\]
+
+The case `c=1` is symmetric.
+
+Now assume `a,c>=2`. The rectangle boundary contains exactly
 
 \[
 2a+2c-4
@@ -109,7 +118,7 @@ neighbourhood. Then
 |A|+|C|>t.
 \]
 
-Every cell of `A\times C` is absent from the residual host. At most the one cell
+Every cell of `A times C` is absent from the residual host. At most the one cell
 `z_*` is unavailable independently of the line family; every other absent cell
 belongs to `D` and is covered by the `q` nonaxis lines.
 
@@ -136,20 +145,20 @@ selected old triple. At least one of the following holds.
    certificate, yielding an executable anchored alternating continuation by
    CMR201.
 2. There are
-   
+
    \[
    t-1
    \]
-   
+
    distinct candidate-only real-line signatures
-   
+
    \[
    L_1,\ldots,L_{t-1},
    \]
-   
+
    and one target-specific parent permutation avoids every available candidate
    cell on
-   
+
    \[
    L_1,\ldots,L_{t-2}.
    \]
@@ -190,16 +199,21 @@ A\times C
 with
 
 \[
-|A|+|C|=t+1
+|A|+|C|=t+1.
 \]
 
-such that all of its boundary points except possibly `z_*` are covered. The
-blocking family has total boundary-incidence slack at most one:
+Exactly one of the following geometric descriptions applies.
 
-- if `z_*` is not a boundary point, every line meets the boundary twice and the
-  lines partition all boundary points;
-- if `z_*` is a boundary point, at most one boundary incidence is repeated or
-  missing from a two-point-per-line partition.
+1. **Singleton fan.** If `|A|=1` or `|C|=1`, the exceptional target cell `z_*`
+   belongs to `A times C`. Every one of the other `t-1` cells of that source row
+   or target column is covered, and each blocking line meets the singleton slice
+   in exactly one of those cells.
+2. **Nontrivial boundary factor.** If `|A|,|C|>=2`, all boundary points except
+   possibly `z_*` are covered. The total boundary-incidence slack is at most one:
+   - if `z_*` is not a boundary point, every line meets the boundary twice and
+     the lines partition all boundary points;
+   - if `z_*` is a boundary point, at most one boundary incidence is repeated or
+     missing from a two-point-per-line partition.
 
 ### Proof
 
@@ -209,12 +223,20 @@ The Hall rectangle satisfies
 t+1\le |A|+|C|\le q+2=t+1,
 \]
 
-so equality holds. Its boundary has `2t-2` points. If `z_*` is interior or
-outside the rectangle, all `2t-2` boundary points must be covered by `t-1`
-lines, each meeting the boundary at most twice; equality holds throughout.
+so equality holds.
 
-If `z_*` lies on the boundary, `2t-3` required boundary points are covered with
-capacity `2t-2`, leaving total slack one. ∎
+Suppose `|A|=1`; the other singleton case is symmetric. Then `|C|=t`. If `z_*`
+did not belong to `A times C`, all `t` cells of the slice would have to be
+covered, but each nonvertical line meets it at most once and only `t-1` lines
+are available. Hence `z_*` lies on the slice. The other `t-1` cells must all be
+covered, and equality forces every line to cover exactly one of them. This is
+the singleton fan.
+
+Now assume both sides have size at least two. The boundary has `2t-2` points. If
+`z_*` is interior or outside the rectangle, all `2t-2` boundary points must be
+covered by `t-1` lines, each meeting the boundary at most twice; equality holds
+throughout. If `z_*` lies on the boundary, `2t-3` required boundary points are
+covered with capacity `2t-2`, leaving total slack one. ∎
 
 ## 5. Revised terminal line obstruction
 
@@ -222,11 +244,11 @@ The candidate-only line endpoint for one selected target is now the sharp
 `t-1` case. Every smaller line family is avoidable by a complete parent
 permutation which moves the target endpoint.
 
-A complete inherited escape theorem may therefore focus on the CMR247 boundary
-factorization, or choose different endpoints of the same old triple and show
-that their three target-specific sharp blockers cannot coexist compatibly with
-the prefix and carry ancestry.
+A complete inherited escape theorem may therefore focus on either the singleton
+fan or the nontrivial CMR247 boundary factor, or choose different endpoints of
+the same old triple and show that their sharp blockers cannot coexist compatibly
+with the prefix and carry ancestry.
 
-No all-`n` theorem is claimed here. One-exception boundary counts and exhaustive
+No all-`n` theorem is claimed here. One-exception Cartesian counts and exhaustive
 small target-specific hosts are checked in
 [`scripts/verify_prime_power_target_specific_lines.py`](../scripts/verify_prime_power_target_specific_lines.py).
