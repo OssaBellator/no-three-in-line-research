@@ -3,7 +3,8 @@
 This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
-families and develop the complementary repair route.
+families and develop the complementary repair route. The active task ledger is
+[`tracks/all-n-product-recursive-rematching-stage.md`](../tracks/all-n-product-recursive-rematching-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -31,6 +32,9 @@ families and develop the complementary repair route.
 | PX195 | A collision-local minimum has a heavy off-matching anchor shadow, yielding a loaded line or clean star | PROVED | `docs/104-background-rainbow-transposition-decoder.md` |
 | PX196 | A matching graph with forbidden degree `Delta` has at least `e^(-4Delta)t!` allowed permutations and uniform `e^(4Delta)/(t)_r` spread | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
 | PX197 | Every fixed-depth recursive neutralization bank remains nonempty with an explicit spread constant | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
+| PX198 | Every compatible cylinder with residual order at least `8Delta` has two-sided `e^(plus/minus 4Delta)/(t)_r` probability bounds | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
+| PX199 | The bounded-forbidden spread estimate is stable under arbitrary compatible partial-matching conditioning | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
+| PX200 | Forbidden maximum degree `Delta` guarantees an allowed perfect matching at the sharp threshold `t>=2Delta` | PROVED | `docs/105-bounded-forbidden-matching-spread.md` |
 
 ## Current exact boundary
 
@@ -46,7 +50,7 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has a recursive decoder.
+The low-syndrome repair route now has a conditioning-stable recursive decoder.
 
 - PX183--PX184 identify the uniform-bank logarithmic barrier.
 - PX185--PX190 remove the internal rank-three logarithm, either structurally on
@@ -55,9 +59,15 @@ The low-syndrome repair route now has a recursive decoder.
   collisions and decode every large collision-local minimum back into a loaded
   line or clean star.
 - PX196--PX197 show that bounded-depth recursive neutralization remains
-  executable even after earlier positions are added to the forbidden set.
+  executable after earlier positions are added to the forbidden set.
+- PX198--PX199 show that bounded compatible exposure preserves two-sided
+  fixed-rank cylinder scale on the residual bank.
+- PX200 lowers the sharp executability threshold to `t>=2Delta`; quantitative
+  spread still uses `t>=8Delta`.
 
 The next exact obligation is termination: construct a monotone generational
 potential, or prove that an absolute recursion depth suffices to make destroyed
-old mass dominate all fixed-rank collateral. No exact infinite product closure
-is claimed yet.
+old mass dominate all fixed-rank collateral. The new conditioning theorem means
+that this accounting may be performed sequentially without paying a new spread
+constant at every bounded-rank exposure. No exact infinite product closure is
+claimed yet.
