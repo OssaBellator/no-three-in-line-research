@@ -1,33 +1,31 @@
-# Rank-one active collateral in the closed I6 bank
+# Source-coset-rank-one active collateral in the closed I6 bank
 
 **Branch:** `research/alternating-core-chain`
 
-AC3bi returns a heavy active rank-one term `C_1` when the closed fixed-edge bank fails. This note records the exact physical channel of its one moving cell, converts expected weight back to raw candidate weight, and applies the direction-offset concentration router.
+AC3bi returns a heavy term `C_1` of I6 source-coset rank one. Such a triple may contain one or two moving cells from the same source coset; all of them share one target coset and one subgroup shift. Three moving cells are impossible because one channel is a nondegenerate conic.
 
 ## I6 moving-cell channels
 
-Write the physical source block as
+Write
 
 $$
 X=\bigcup_{\alpha=1}^m U_\alpha H,
 \qquad 1\le m\le4.
 $$
 
-An I6 state sends the column
+An I6 state sends
 
 $$
 x=U_\alpha g,
 \qquad g\in H,
 $$
 
-to a row of the form
+to
 
 $$
 y=\frac{a}{U_\beta t g},
-\qquad t\in H,
+\qquad t\in H.
 $$
-
-where `β` is the target coset chosen for source coset `α` and `t` is its subgroup shift.
 
 Call
 
@@ -35,15 +33,13 @@ $$
 \chi=(\alpha,\beta,t)
 $$
 
-the **I6 moving-cell channel**. It has product parameter
+the moving-cell channel. Its product parameter is
 
 $$
-\lambda_\chi
-=
-\frac{aU_\alpha}{U_\beta t}.
+\lambda_\chi=\frac{aU_\alpha}{U_\beta t},
 $$
 
-Every cell in the channel satisfies
+and every cell in the channel satisfies
 
 $$
 \boxed{xy=\lambda_\chi\pmod p.}
@@ -55,108 +51,135 @@ $$
 \boxed{m^2h}
 $$
 
-moving-cell channels.
+channels.
 
-## AC3bp -- exact affine and channel address -- PROVED
+## AC3bp -- unique common channel for source-coset rank one -- PROVED
 
-Let `T` be a compatible active collateral triple which depends on exactly one I6 source-coset choice. Its other two cells are fixed in the closed bank; call them `A` and `B`. Let `Z` be its unique I6-dependent cell.
+Let `T` be a compatible active collateral triple with `r(T)=1`. Every moving cell of `T` belongs to one source coset `α`. Compatibility forces all moving cells to prescribe the same target coset `β` and the same shift `t`. Hence they all lie in one unique channel
 
-The triple has the exact records:
+$$
+\chi=(\alpha,\beta,t).
+$$
 
-1. the primitive integer direction
-   $$
-   e=\operatorname{prim}(B-A);
-   $$
-2. the signed affine offset
-   $$
-   O=\det(e,Z-A);
-   $$
-3. the unique I6 moving-cell channel
-   $$
-   \chi=(\alpha,\beta,t).
-   $$
-
-For a fixed context line and fixed channel `χ`, there are at most two possible moving cells `Z`.
+The physical coordinates of any one moving cell recover `α,β,t` uniquely.
 
 ### Proof
 
-The affine records are the standard primitive line address. The column of `Z` determines its source coset `α` and its unique `g in H`. Its row determines the target coset `β`; after those are fixed, the I6 row equation determines `t` uniquely.
+The column determines its source coset and its unique subgroup coordinate `g`. The row denominator divided by `g` determines the target coset and then the shift. Two cells from the same source coset can occur in one I6 state only when these recovered data agree. QED.
 
-The cells of one channel lie on the nondegenerate modular conic `xy=λ_χ`. The reduction modulo `p` of a primitive real affine line is a nonzero modular line. A line meets a nondegenerate conic in at most two points, proving the final assertion. QED.
+## AC3bq -- local conic-rank classification -- PROVED
 
-## AC3bq -- exact rank-one raw-weight amplification -- PROVED
-
-Let `T_1` be the total raw candidate weight of compatible active triples with exactly one I6 moving-cell prescription. Every such triple occurs with probability exactly
+Let `k(T)` be the number of moving cells in a source-coset-rank-one triple. Then
 
 $$
-\frac1{mh}.
+\boxed{k(T)\in\{1,2\}.}
+$$
+
+The two possibilities have exact geometries.
+
+1. **One moving cell.** The other two cells form a fixed context pair `A,B`. With
+   $$
+   e=\operatorname{prim}(B-A),
+   \qquad
+   O=\det(e,Z-A),
+   $$
+   the triple has one primitive affine direction and signed offset.
+2. **Two moving cells.** The moving pair `Z_1,Z_2` lies on one channel conic and the third cell is fixed. The unordered pair has exact secant address
+   $$
+   \left(x_1+x_2,\ x_1x_2\right)
+   =
+   \left(x_1+x_2,\lambda_\chi\right)
+   \pmod p.
+   $$
+   For fixed `χ` and fixed sum, the unordered moving pair is unique.
+
+### Proof
+
+All moving cells lie on the nondegenerate conic `xy=λ_χ`. The reduction modulo `p` of the primitive real line containing the triple is a nonzero modular line, so it meets the conic in at most two points. This excludes `k=3`. The one-cell affine address is standard. In the two-cell case the columns are the roots of
+
+$$
+X^2-(x_1+x_2)X+x_1x_2=0,
+$$
+
+so their sum and product determine the unordered pair. QED.
+
+## AC3br -- exact raw-weight amplification and channel localization -- PROVED
+
+Let `T_1` be the total raw weight of every compatible source-coset-rank-one triple, including both local multiplicities. Every such triple fixes one source-coset image and one common shift, so
+
+$$
+\Pr(T)=\frac1{mh}.
 $$
 
 Therefore
 
 $$
-\boxed{C_1=\frac{T_1}{mh}}
-$$
-
-and
-
-$$
+\boxed{C_1=\frac{T_1}{mh}},
+\qquad
 \boxed{T_1=mhC_1.}
 $$
 
-One moving-cell channel carries raw candidate weight at least
+One channel carries raw weight at least
 
 $$
 \boxed{\frac{T_1}{m^2h}=\frac{C_1}{m}.}
 $$
 
-In particular, if AC3bi gives
+Inside that channel, either the one-moving-cell class or the two-moving-cell class carries at least half its weight.
+
+In particular, if AC3bi gives `C_1>=G/4`, then one channel and one local multiplicity carry raw weight at least
 
 $$
-C_1\ge G/4,
+\boxed{G/(8m).}
 $$
-
-then one exact channel carries raw weight at least
-
-$$
-\boxed{\frac{G}{4m}.}
-$$
-
-The subgroup order cancels: a larger I6 bank lowers each rank-one probability by `h` but supplies exactly `h` shift channels.
 
 ### Proof
 
-A compatible rank-one prescription fixes one source-coset image and one subgroup shift. RI5a gives probability `1/(mh)`. Summing exact triple weights gives the first identity. Pigeonhole over at most `m^2h` channels gives the channel bound. QED.
+The exact probability follows from the I6 source-coset rank formula. Pigeonhole over at most `m^2h` channels and then over the two local multiplicities. QED.
 
-## AC3br -- direction-offset concentration inside one I6 channel -- PROVED
+The subgroup order cancels completely.
 
-Fix one moving-cell channel carrying raw weight `S`. For a primitive direction `e`, let `S_e` be the weight of triples whose context line has direction `e`.
+## AC3bs -- affine or secant concentration router -- PROVED
 
-For every threshold `gamma>0`, one of the following holds.
+### One-moving-cell side
 
-1. Some direction carries weight greater than `gamma`.
-2. At least
-   $$
-   \boxed{\lceil S/gamma\rceil}
-   $$
-   distinct primitive directions occur.
+Fix one channel and one-moving-cell raw weight `S`. For every direction threshold `gamma>0`, either one primitive context direction carries more than `gamma`, or at least
 
-Fix a direction of weight `R`, and partition it by signed affine offset `O`. For every threshold `beta>0`, one of the following holds.
+$$
+\lceil S/gamma\rceil
+$$
 
-1. One exact affine line carries weight greater than `beta`.
-2. At least
-   $$
-   \boxed{\lceil R/beta\rceil}
-   $$
-   distinct parallel offsets occur.
+directions occur. Inside one direction of weight `R`, for every offset threshold `beta>0`, either one exact affine line carries more than `beta`, or at least
 
-On one exact line and channel there are at most two possible moving cells. Thus a heavy exact line further yields a heavy moving cell, a heavy context-pair family through one of two cells, or a finite split between the two cells.
+$$
+\lceil R/beta\rceil
+$$
+
+parallel offsets occur.
+
+On one line and channel there are at most two possible moving cells.
+
+### Two-moving-cell side
+
+Fix one channel and two-moving-cell raw weight `S`. Partition by the modular secant sum
+
+$$
+s=x_1+x_2.
+$$
+
+For every threshold `beta>0`, either one exact secant sum carries more than `beta`, or at least
+
+$$
+\lceil S/beta\rceil
+$$
+
+distinct secant sums occur. A fixed channel and sum determine one unordered moving pair, so a heavy sum is a heavy exact pair together with its fixed-context incidence.
 
 ### Proof
 
-Both direction and offset assertions are weighted pigeonhole. The two-cell statement is AC3bp. QED.
+All assertions are weighted pigeonhole, followed by AC3bq's line-conic and quadratic uniqueness statements. QED.
 
-## AC3bs -- failed closed-bank rank-one output -- PROVED
+## Failed closed-bank output
 
 Let
 
@@ -164,27 +187,26 @@ $$
 G=\left(1-\frac1{mh}\right)W-F>0.
 $$
 
-If AC3bi returns `C_1`, then one exact I6 channel has raw rank-one candidate weight at least
+If AC3bi returns `C_1`, then one exact channel and one local multiplicity have raw weight at least
 
 $$
-\boxed{G/(4m).}
+\boxed{G/(8m).}
 $$
 
-Inside that channel, AC3br returns one of:
+The output is one of:
 
-1. many primitive context directions;
-2. many parallel affine offsets in one direction;
-3. one heavy exact affine line;
-4. one of at most two heavy moving cells together with its current context-pair incidence.
+- many primitive context directions;
+- many parallel affine offsets;
+- one heavy exact affine line and at most two moving cells;
+- many modular secant sums;
+- one heavy exact moving pair with its fixed context incidence.
 
-Every output retains the source coset, target coset, subgroup shift, product parameter, primitive direction, affine offset, physical moving cell, and fixed context pair.
+Every output retains its source coset, target coset, shift, product channel, physical cells, and affine or secant address.
 
 ## Frontier after AC3bp--AC3bs
 
-The active rank-one term is no longer an unlabelled expected cost. It becomes a raw physical incidence class with no loss in the subgroup order and with exact affine and modular-hyperbola addresses.
-
-The remaining active obstruction is rank two or rank three, or the heavy-line/context-pair geometry returned above.
+The source-coset-rank-one term is now a raw physical one-cell or two-cell conic incidence class with no subgroup-order loss. The remaining active obstruction is source-coset rank two or three, or the explicit heavy affine/secant incidence returned above.
 
 ## Finite check
 
-`scripts/verify_ac_ri_i6_rank_one.py` enumerates small primes and subgroup cosets, verifies unique moving-cell channel labels, exact product channels, line-conic intersection at most two, I6 rank-one probabilities, raw-weight cancellation, and the direction-offset routers.
+`scripts/verify_ac_ri_i6_rank_one.py` enumerates small primes and subgroup cosets, verifies unique common channel labels, one- and two-cell source-coset probabilities, impossibility of three collinear channel cells, secant-pair uniqueness, raw-weight cancellation, and the affine/secant routers.
