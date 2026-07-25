@@ -206,7 +206,7 @@ target-rich repeated lines, not one accidental carrier.
 
 ## 4. Resource structure of one good line
 
-### Proposition PP3ny -- PROVED
+### Resource-structure lemma -- PROVED
 
 If one nonaxis geometric line \(\ell\) has typed multiplicity \(m(\ell)\), then
 its representations
@@ -244,7 +244,7 @@ cells and Hall-target cells.
 
 ## 5. Combined line-energy dichotomy
 
-### Corollary PP3nz -- PROVED
+### Corollary PP3ny -- PROVED
 
 Fix \(\alpha>0\) and \(\delta>0\). Suppose the Hall-derived target set satisfies
 
@@ -274,7 +274,7 @@ If improvement fails, PP3nu gives
 \]
 
 For sufficiently large \(q\), apply PP3nx with any fixed \(\beta<1\), then use
-PP3ny on every line of \(\mathscr G\). ∎
+the resource-structure lemma on every line of \(\mathscr G\). ∎
 
 This replaces the second-generation grid-rich pencil by a positive-density
 family of target-rich common-line carriers. The next conversion may exploit the
