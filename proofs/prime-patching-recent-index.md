@@ -70,6 +70,7 @@ repository-wide theorem ledger.
 | PP3rq--PP3rx | Hierarchical cross-block amplification bypasses bounded-level contradictions | PROVED | `docs/135-hierarchical-cross-block-amplification.md` |
 | PP3ry--PP3sb | Growing-depth amplification produces growing-credit block banks | PROVED | `docs/136-growing-depth-cross-block-amplification.md` |
 | PP3sc--PP3sh | Sub-square-root unary degree yields superregular growing blocks and paid spread | PROVED / FROM SR1 | `docs/137-superregular-growing-cross-block-hosts.md` |
+| PP3si--PP3so | Unary-independent colouring gives superregular growing blocks for every sublinear unary degree | PROVED / FROM SR1 | `docs/138-unary-independent-cross-block-partition.md` |
 
 ## Current scale
 
@@ -102,24 +103,23 @@ Anchor energy cannot support a middle-density ownership Hall rectangle. At the
 PP3of threshold, failure is a sublinear exceptional label cluster or a macro
 rejecting all but a sublinear label set.
 
-## Hall, rectangle, and hierarchical endpoint
+## Hall, rectangle, and growing-block endpoint
 
 A recapture-dominated Hall core yields a linear resource-disjoint rectangle bank.
 In the superregular branch, residual matching, residual source validity, exact
 binary/multistate CSP installation, and diffuse paid selection are closed.
 
-The original two rectangle diagonals are no longer a binding state space. Under
-sublinear non-designated unary degree, almost the entire bank pairs into safe
-cross-block supervariables regardless of the original signed signature or
-cross-conflict geometry. Ramsey regularization and hierarchical amplification
-bypass every bounded-level contradiction.
+The original two rectangle diagonals are no longer a binding state space.
+Cross-block states bypass arbitrary signed signatures and bounded local
+contradictions. More strongly, properly colouring the non-designated unary
+rectangle-interaction graph partitions all but \(o(H)\) rectangles into growing
+unary-independent groups whenever the unary maximum degree is \(o(H)\).
 
-The depth may grow slowly: one obtains both block size \(b\to\infty\) and a
-growing number of blocks while discarding only \(o(H)\) original rectangles.
-If the unary maximum degree is \(o(\sqrt H)\), square-root-size blocks can be
-pruned to near-complete superregular directional hosts. Their local state law has
-fixed-rank \(O(b^{-r})\) spread, and paid completion reduces to the explicit
-PP3sg source/shadow expression.
+Each group can be split directly into two halves. After deleting \(o(b)\)
+recapture-heavy rectangles, both directional cross hosts are near-complete
+superregular and their product matching law has fixed-rank \(O(b^{-r})\) spread.
+Thus every sublinear unary-degree case reduces to the explicit paid source/shadow
+expression PP3sg; no infinite-depth irregular hierarchy remains.
 
 ## Remaining theorem
 
@@ -129,20 +129,19 @@ The branch is reduced to the following structured cases.
    simultaneous score concentration surviving all four allocation interfaces.
 2. Convert a Hall rectangle or a matchable but non-superregular zero-unary host
    outside the superregular recapture branch.
-3. Convert unary cross-block maximum degree at least square-root scale.
+3. Convert a unary endpoint resource with linear forbidden cross-block degree.
 4. Convert source or shadow weights concentrated in the growing-block paid
    expression PP3sg.
-5. Convert a growing-scale hierarchy that stays locally feasible but irregular
-   in the intermediate unary-degree regime.
-6. Convert a linear-congestion original binary-shadow dual packing or
+5. Convert a linear-congestion original binary-shadow dual packing or
    witness-line pencil.
-7. Construct source-admissible pool-compatible endpoint trades with `Xi`
+6. Construct source-admissible pool-compatible endpoint trades with `Xi`
    insertion cost below star/resource removal credit.
 
 Diffuse weighted residuals, external completion energy, source validity of the
 resource endpoint, sparse exceptional labels, arbitrary dense rectangle CSPs,
 original signed rectangle contradictions, common-line rectangle extraction,
-superregular residual installation, controller relabelling, and termination are
-no longer separate open problems.
+hierarchical irregularity under sublinear unary degree, superregular residual
+installation, controller relabelling, and termination are no longer separate
+open problems.
 
 The no-three-in-line conjecture remains unproved.
