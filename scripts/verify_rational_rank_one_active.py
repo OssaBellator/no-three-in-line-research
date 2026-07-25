@@ -57,6 +57,20 @@ def state_cells(columns, current, target, components, bits):
 
 
 def compatible_bits(triple, current, target, components):
+    selected_columns = {
+        column for component in components for column in component
+    }
+    outside = {
+        cell for cell in triple if cell[0] not in selected_columns
+    }
+    fixed_current = {
+        (column, current[column])
+        for column in current
+        if column not in selected_columns
+    }
+    if not outside <= fixed_current:
+        return None
+
     allowed = []
     for component in components:
         component_columns = set(component)
