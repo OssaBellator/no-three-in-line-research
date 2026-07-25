@@ -105,16 +105,38 @@ remains open. This repository does **not** contain a complete proof.
   created only through an alternating exchange cycle with an earlier deleted
   cell, giving an acyclic certificate-ancestry graph.
 
-### Exact parent line and local-load endpoint
+### Exact target-specific and Hall-blocker endpoint
 
 - A target-specific parent move needs to omit only one designated old endpoint.
   Every family of at most \(t-2\) real lines is simultaneously avoidable when
   all available cells on those lines are removed.
 - A sharp \(t-1\)-line blocker is either a complete target-centred singleton fan
-  or a nontrivial Hall rectangle whose boundary has at most one slack incidence.
-- Three sharp singleton blockers on the same board side cannot all recycle one
+  or a nontrivial Hall rectangle whose available boundary has at most one slack
+  incidence.
+- Three sharp singleton blockers on the same board side cannot recycle one
   common `(t-1)`-line family. Their common family has size at most \(t-3\), and
   their union contains at least \(t\) real-line signatures.
+- A broad nontrivial Hall factor has a blocker line of primitive height at most
+  \(2(t-1)/(n-2)\), where \(n\) is its smaller side. Hence widths at least seven
+  enter the sub-\(0.43t\) low-height regime.
+- Exact available-cell slack satisfies
+
+  \[
+  D+\Omega\le n(n-2)+1.
+  \]
+
+  Widths four through six contain linearly many full transversals below height
+  \(t/3\). The only genuinely thin Hall geometries are width-two chord systems
+  and width-three almost-disjoint triple systems.
+- The canonical width-two or width-three events are mutually exclusive and
+  occupy at most \(1/(t-1)^2\) of the target-specific matching space. An
+  anchored-free frozen thin blocker therefore requires at least
+
+  \[
+  t(t-2)^2
+  \]
+
+  additional candidate-only rank-three prescriptions.
 - Under the exact target-specific matching law, the rank-\(1/2/3\) cylinder
   maxima are
 
@@ -134,25 +156,22 @@ remains open. This repository does **not** contain a complete proof.
 
   candidate-only triples, occupying more than \(t/24\) distinct real-line
   signatures.
-- The refined three-point direction count gives
+- A mod-six totient sieve gives the exact high-slice load
 
   \[
   T_3(w)
   \le
-  \sum_K
-  \left[
-  2\varphi(K)(t-K)+2(t-1)(t-2K)
-  \right].
+  \frac43S(H)+\frac{20}{9}t^2+2(t-1)R(H).
   \]
 
-  For every odd \(t\ge347\), one complete target-specific parent permutation
+  For every odd \(t\ge1575\), one complete target-specific parent permutation
   avoids every candidate-only board triple of primitive height at least
-  \(0.44t\). This does not exclude anchored triples involving fixed outside
+  \(0.42t\). This does not exclude anchored triples involving fixed outside
   points.
-- For odd \(t\ge611\), the same exact cleaning remains possible while all
-  available cells on `floor(t/500)` previously discovered lines are forbidden.
+- For odd \(t\ge1983\), the same exact cleaning remains possible while all
+  available cells on `floor(t/2000)` previously discovered lines are forbidden.
   Thus anchored-free freezing exposes a linear reserve of distinct
-  candidate-only lines below height \(0.44t\).
+  candidate-only lines below height \(0.42t\).
 - In one dyadic band \(H\le\max(|u|,|v|)<2H\), one candidate cell lies in fewer
   than \(3t^2\) conflicts and one compatible pair has codegree below \(t/H\).
   For \(H\ge t^\varepsilon\), a published conflict-free matching theorem gives
@@ -174,11 +193,11 @@ No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-1. **Sharp blocker conversion.** Absorb mixed source/target singleton fans and
-   nontrivial Hall-boundary factors, or charge them to inherited prefix,
-   quotient, and carry signatures.
+1. **Thin and mixed blocker conversion.** Combine mixed source/target singleton
+   fans, width-two external-witness chords, or width-three almost-disjoint
+   triples with the forced cubic outside cover.
 2. **Exact intermediate-band completion.** Upgrade the almost-perfect
-   conflict-free matching below height \(0.44t\) to a complete parent
+   conflict-free matching below height \(0.42t\) to a complete parent
    permutation while retaining the line reserve and target omission.
 3. **Low-height carry absorption.** Control the remaining lower bands using
    first-separation, primitive direction, quotient, and carry signatures inside
@@ -218,10 +237,10 @@ No later valid theorem depends on the refuted strengthening.
 
 There is no complete proof. On the composite prime-power route, bank
 construction, first-separation summation, prefix collateral, target-load
-contraction, parent lifting, Hall peeling, and target-specific line avoidance
-are closed through the sharp \(t-1\)-line endpoint. Candidate-only triples above
-height \(0.44t\) are exactly cleanable, and same-side singleton blockers have an
-exact three-endpoint no-reuse invariant. The principal immediate theorem is
-conversion of mixed singleton fans or nontrivial Hall-boundary factors, or exact
-completion of the intermediate-height conflict system. A coarse-to-fine budget
-and arbitrary side-length coverage remain necessary afterward.
+contraction, parent lifting, Hall peeling, target-specific line avoidance, and
+exact high-slice cleaning are closed through the `0.42t` boundary. Broad Hall
+factors and widths four through six reduce to low height; thin widths two and
+three force a cubic outside cover. The principal immediate theorem is conversion
+of that thin/mixed geometry or exact completion of the intermediate-height
+conflict system. A coarse-to-fine budget and arbitrary side-length coverage
+remain necessary afterward.
