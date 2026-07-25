@@ -29,13 +29,13 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR477--481 | Vertex-to-boundary incidence reduction, exact return-path representation, directed Menger theta-fan/cut alternative, second-edge concentration, and boundary-source-switch interpretation | PROVED | `docs/153-prime-power-mixed-cycle-boundary-fan-cut.md` |
 | CMR482--486 | Theta-fan private entering-edge sunflower, blocker resilience, rooted-conflict dichotomy, aggregate conflict payment, and harmonic packet/token endpoint | PROVED | `docs/154-prime-power-theta-fan-private-edge-payment.md` |
 | CMR487--491 | Boundary-rooted triples form secant stars, exact route-arm presence, rooted theta endpoint, compatible two-edge rank-two cylinders, and the combined geometric endpoint | PROVED | `docs/155-prime-power-rooted-star-and-pair-cylinder.md` |
+| CMR492--496 | Universal compatible-pair derangement cylinder, rank-two-on-line elimination, rooted-arm cleaning, equal-size rooted-star banks, and bottleneck-pair line-clean splice | PROVED | `docs/156-prime-power-universal-compatible-pair-line-clean.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR491 has returned to established geometric repair objects.
-Mixed zero-cost motion now yields simultaneous vertex-disjoint flips, a sparse
-boundary interface, private theta-route edge payment, a repeated-cell secant
-star, or a fixed compatible rank-two completion cylinder. The next target is to
-splice the final two branches into the existing secant-star carry-dispersion and
-line-clean paid-pair machinery, converting them to target-load destruction,
-reserve depletion, prefix/carry concentration, strict factorization, or envelope
-expansion.
+frontier after CMR496 is availability and payment for the universal line-clean
+cylinders inside the current restricted envelope. The final mixed-cycle branches
+now have exact full-parent banks of size `D_{m-2}` with no rank-two collateral on
+their paid lines. The next target is to combine CMR334 frozen-bank averaging with
+rollback/private-edge accounting to force strict target-load decrease, reserve
+depletion, a heavy prefix or carry signature, lower-dimensional factorization,
+or envelope expansion.
