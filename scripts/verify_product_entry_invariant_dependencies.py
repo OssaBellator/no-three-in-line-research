@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Audit theorem IDs, dependency order, move tags, and active frontier constants."""
-
 from __future__ import annotations
 
 import json
@@ -16,6 +15,7 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX483-PX487.md",
     "product-growing-direction-theorem-index-PX488-PX492.md",
     "product-growing-direction-theorem-index-PX493-PX498.md",
+    "product-growing-direction-theorem-index-PX499-PX503.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -36,6 +36,8 @@ DOCS = [ROOT / "docs" / name for name in (
     "168-rational-divisor-cutoff-compression.md",
     "169-side-seven-relative-class-census.md",
     "170-side-seven-insertion-recursion-barrier.md",
+    "171-side-seven-two-column-selector-normal-form.md",
+    "172-side-seven-local-minimum-transposition-boxes.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
@@ -43,9 +45,9 @@ INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX498"
+    assert manifest["range"] == "PX397-PX503"
     assert manifest["root"] == "PX492"
-    assert manifest["frontier_root"] == "PX498"
+    assert manifest["frontier_root"] == "PX503"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -62,7 +64,7 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 499):
+    for theorem_id in range(397, 504):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
@@ -70,7 +72,7 @@ def main() -> None:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 499))
+    assert index_ids == list(range(397, 504))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
@@ -83,7 +85,10 @@ def main() -> None:
     assert "132" in text and "488" in text
     assert "21,952" in text and "82,002,575" in text
     assert "14,345,445" in text
-    print("PX397--PX498 dependency, cutoff, and side-seven frontier audit: PASS")
+    assert "A_0=T" in text and "A_1=QT" in text
+    assert "4,\\ 3,\\ 4,\\ 3" in text
+    assert "170{,}368" in text and "126{,}633{,}677" in text
+    print("PX397--PX503 dependency, cutoff, and side-seven local-barrier audit: PASS")
 
 
 if __name__ == "__main__":
