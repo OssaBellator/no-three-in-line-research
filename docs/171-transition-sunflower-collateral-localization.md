@@ -118,27 +118,35 @@ b=m^(kappa+o(1)),
 
 ### Corollary PP3aah -- PROVED
 
-If the averaged centre-core source term is `o(1)` and every global
+Assume the averaged centre-core source term is `o(1)` and every global
 petal-touching source class satisfies
 
 ```text
 W_r/(W b^r)=o(1)
 ```
 
-with its appropriate support-ranked selection factor, then all but `o(W)`
-sunflower endpoints are source-light. At least one endpoint admits a source-valid
-single-cycle marked filler state.
+with its appropriate support-ranked selection factor. Then at least one of the
+following holds.
+
+1. All but `o(W)` sunflower endpoints are light for every nonunary source class,
+   and some unary-light endpoint admits a source-valid single-cycle marked filler
+   state.
+2. The bank contains no unary-light endpoint, in which case PP3yf--PP3yi extract
+   an `Omega(W)` unary-forbidden resource matching.
 
 #### Proof
 
 PP3aag makes the averaged petal-touching contribution `o(1)`. Add the centre-core
-term and apply Markov's inequality over the `W` marked endpoints. The exact
-single-cycle source theorem PP3za then supplies a source-valid state through any
-remaining unary-light endpoint. ∎
+term and apply Markov's inequality over the `W` marked endpoints. This leaves all
+but `o(W)` endpoints light for the nonunary source classes.
+
+If one of them satisfies the unary hypotheses of PP3za, that theorem gives a
+source-valid single-cycle state. Otherwise unary failure holds throughout a
+linear subbank, and PP3yf--PP3yi give the resource-matching alternative. ∎
 
 The former pool-local source-mass problem is therefore even more localized on a
 transition sunflower: noncentral petal resources cannot support many exceptional
-endpoints.
+endpoints, while hard-unary failure remains an explicit resource bank.
 
 ## 4. Dynamic-Xi paid endpoint
 
@@ -148,7 +156,8 @@ petal-touching classes after their cylinder factors are included.
 
 ### Theorem PP3aai -- PROVED
 
-A source-valid strict dynamic decrease exists whenever
+Under the source-valid endpoint alternative of PP3aah, a strict dynamic decrease
+exists whenever
 
 ```text
 (1/|B|) sum_i J_i^core
@@ -162,8 +171,9 @@ global support-ranked petal-touching weight.
 #### Proof
 
 Use PP3aag for the petal-touching weights, add the centre-core expectation, and
-apply the exact insertion-cost-minus-removal-credit identity PP3kx to a marked
-endpoint whose total source and paid first moment is below one. ∎
+apply the exact insertion-cost-minus-removal-credit identity PP3kx to a
+source-valid marked endpoint whose total paid first moment lies below its credit.
+∎
 
 Negating the criterion gives one of:
 
@@ -195,7 +205,8 @@ Its exact remaining cases are:
 
 1. a source or `Xi` core supported at the shared captive centre;
 2. global support-ranked source or insertion weight of order the bank credit;
-3. hard-unary or residual endpoint-host failure;
-4. paid completion through a free or one-pool credited endpoint.
+3. a unary-forbidden resource matching;
+4. hard-unary or residual endpoint-host failure;
+5. paid completion through a free or one-pool credited endpoint.
 
 Diffuse collateral on the disjoint petals is closed by bounded-support averaging.
