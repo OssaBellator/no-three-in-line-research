@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-small-sector-constants-stage.md`](../tracks/all-n-product-small-sector-constants-stage.md).
+[`tracks/all-n-product-optimized-spread-stage.md`](../tracks/all-n-product-optimized-spread-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -66,6 +66,9 @@ families and develop the complementary repair route. The active task ledger is
 | PX229 | Outside the star outcome, the complete rank-one sector has linear expected load | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
 | PX230 | Rank-two transpositions and rank-three directed cycles have exact constant expected-load bounds | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
 | PX231 | Rank-two directed paths have exact expected load `e^(4Delta)L_Z(s-2)` | PROVED | `docs/116-rank-one-star-and-short-cycle-constants.md` |
+| PX232 | The optimized bounded-forbidden witness gives cylinder factor `mathcal C(t,Delta)` tending to `e^Delta` | PROVED | `docs/117-optimized-bounded-forbidden-spread.md` |
+| PX233 | The optimized spread factor survives arbitrary compatible exposure in residual order | PROVED | `docs/117-optimized-bounded-forbidden-spread.md` |
+| PX234 | Every cylinder-based collateral estimate upgrades uniformly from `e^(4Delta)` to at most `e^(2Delta)` | PROVED | `docs/117-optimized-bounded-forbidden-spread.md` |
 
 ## Current exact boundary
 
@@ -82,25 +85,26 @@ Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
 The low-syndrome repair route now has explicit control of every rank-at-most-
-three asymptotic sector.
+three asymptotic sector and an improved probability constant.
 
-- PX225--PX227 pay support four above `N^(1/2+epsilon)` and keep all higher-
-  support internal rank-three terms linear.
-- PX228--PX229 turn rank one into a clean-star outcome or a linear expected-load
-  term.
-- PX230 gives exact constant bounds for the transposition and directed-cycle
-  cores.
-- PX231 replaces the former coarse support-three coefficient by the direct
-  count `e^(4Delta)L_Z`.
+- PX225--PX227 pay support four above `N^(1/2+epsilon)` and keep higher-support
+  internal rank three linear.
+- PX228--PX231 turn rank one into a star outcome or linear load and give exact
+  counts for every minimal-support sector.
+- PX232 replaces the `e^(4Delta)` spread loss by the order-sensitive factor
+  `mathcal C(t,Delta)=e^(Delta+O(Delta^2/t))`.
+- PX233 preserves that improvement under sequential exposure.
+- PX234 gives the uniform `e^(2Delta)` substitution throughout the complete
+  collateral ledger.
 
-The packet and diffuse-defect frontier is confined to
+The packet and diffuse-defect frontier remains confined to
 
 \[
 t\le N^{1/2+o(1)}.
 \]
 
 No rank-at-most-three sector now lacks either an explicit decoder or an at-most-
-linear expected-load estimate. The next obligation is quantitative: sharpen the
-allowed-matching cylinder constant and the guaranteed destruction constants
-until the complete linear ledger has strict negative drift. Small-block packet
-descent and exact infinite product closure remain open.
+linear expected-load estimate. The immediate obligation is an exact destruction
+ledger for clean stars, loaded lines, radial cores, and packet releases, followed
+by a strict linear-sign theorem. Small-block packet descent and exact infinite
+product closure remain open.
