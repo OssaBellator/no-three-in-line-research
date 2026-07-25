@@ -41,6 +41,8 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3aaf--PP3aaj | Bounded-support averaging localizes sunflower collateral to the shared centre | PROVED / FREE-BANK INTERFACE | `docs/171-transition-sunflower-collateral-localization.md` |
 | PP3abf--PP3abm | Rank-two unary Xi cost gives a cheap conditioned centre segment or a near-complete fixed-axis heavy arc star | PROVED / CONDITIONAL PAID INTERFACE | `docs/176-fixed-centre-unary-xi-arc-star-localization.md` |
 | PP3abn--PP3abu | Rank-three binary Xi patterns reduce to cheap conditioned chains, weighted middle rectangles, or small-core heavy outer-role families | PROVED / CONDITIONAL PAID INTERFACE | `docs/177-fixed-centre-rank-three-binary-xi-path-localization.md` |
+| PP3abv--PP3acb | Rank-four binary Xi patterns reduce to exact one-arc fibres, uniform partner fans, or high-multiplicity disjoint-arc patterns | PROVED / CONDITIONAL PAID INTERFACE | `docs/178-fixed-centre-rank-four-binary-xi-fibre-localization.md` |
+| PP3acc--PP3ach | Sparse rank-four partner support is avoided exactly; failure gives large partner-resource stars or fixed-cell petal banks | PROVED / CONDITIONAL PAID INTERFACE | `docs/179-fixed-centre-rank-four-binary-xi-support-localization.md` |
 
 ## Current scale
 
@@ -79,7 +81,7 @@ an exact conditional single-cycle spread law. Either a locally clean segment has
 unary cost below the available budget, or `N-o(N)` heavy replacement arcs lie on
 one fixed old row or one fixed old column.
 
-Rank-three binary `Xi` weight is now localized as well. Every such pattern is a
+Rank-three binary `Xi` weight is localized as well. Every such pattern is a
 two-arc directed path, with the captive centre in the predecessor, middle, or
 successor role. Either one source-clean five-index chain has deterministic
 rank-three cost below the available budget, or failure yields a weighted heavy
@@ -87,9 +89,16 @@ middle rectangle, an `m^(1/2+o(1))` exceptional outer-choice core with a
 near-complete heavy predecessor/successor family, or an outer transition source
 core.
 
+Rank-four binary `Xi` weight now reduces to one exact partner fibre after fixing
+the incoming or outgoing centre arc. Sparse positive support can be avoided
+entirely, regardless of pattern multiplicity. Under fixed residual slack, failure
+forces `Omega(N^2/b)` supported remote arcs and hence a partner-resource star or
+fixed-cell remote matching of size `Omega(N/sqrt(b))`, far larger than `W`.
+
 The remaining marked-`Xi` conversion is therefore fixed-axis unary stars,
 conditioned residual concentration, weighted rank-three path rectangles or
-outer-role families, rank-four binary weight, and full-pool thresholds.
+outer-role families, large rank-four partner stars/fixed-cell petal banks, and
+full-pool thresholds.
 
 ## Remaining theorem
 
@@ -101,9 +110,9 @@ The all-n branch is reduced to the following concentrated conversion problems.
    cuts, and transition sunflowers.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
-4. Convert fixed-axis unary-`Xi` stars, weighted rank-three path cores, the
-   remaining rank-four binary `Xi` core, full-pool `Xi` thresholds, or fixed-centre
-   source/weight cores.
+4. Convert fixed-axis unary-`Xi` stars, weighted rank-three path cores, large
+   rank-four partner stars/fixed-cell petal banks, full-pool `Xi` thresholds, or
+   fixed-centre source/weight cores.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
@@ -111,8 +120,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
 
 Diffuse pool-local source mass, prepared marked spread hosts, low-rank cyclic Xi
 terms, diffuse binary dual mass, raw resource stars, transition petal collateral,
-unstructured rank-two unary `Xi` fibres, unstructured rank-three binary `Xi`
-tables, unstructured non-superregularity, and termination are no longer separate
-open problems.
+unstructured rank-two unary `Xi` fibres, unstructured rank-three and rank-four
+binary `Xi` tables, fixed rank-four multiplicity cores, unstructured
+non-superregularity, and termination are no longer separate open problems.
 
 The no-three-in-line conjecture remains unproved.
