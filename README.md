@@ -55,6 +55,9 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/155-prime-power-rooted-star-and-pair-cylinder.md`](docs/155-prime-power-rooted-star-and-pair-cylinder.md): secant-star identification of rooted conflicts and exact rank-two cylinders for two-edge bottlenecks.
 - [`docs/156-prime-power-universal-compatible-pair-line-clean.md`](docs/156-prime-power-universal-compatible-pair-line-clean.md): exact line-clean derangement cylinders for every compatible pair, rooted arm, and bottleneck pair.
 - [`docs/157-prime-power-line-clean-rollback-availability.md`](docs/157-prime-power-line-clean-rollback-availability.md): minimum line-clean restoration cost, forced restoration cores, cheap-or-factorization availability, and exact restoration payment.
+- [`docs/158-prime-power-line-clean-weighted-selection.md`](docs/158-prime-power-line-clean-weighted-selection.md): exact restoration marginals, weighted cheap-clean selection, frozen collateral versus unavailable depletion, and concentration/dispersion.
+- [`docs/159-prime-power-adaptive-line-clean-unavailable-cover.md`](docs/159-prime-power-adaptive-line-clean-unavailable-cover.md): adaptive unavailable matching absorption, König row-column covers, and heavy unavailable-star concentration.
+- [`docs/160-prime-power-unavailable-star-token-splice.md`](docs/160-prime-power-unavailable-star-token-splice.md): exact unavailable-star prefix occupancies and the heavy-prefix versus dispersed-token splice.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -168,23 +171,26 @@ repeated-cell secant star, or a compatible rank-two pair. Theta-state dirtiness
 either pays distinct private full-token incidences or exposes the secant-star
 branch.
 
-Every compatible paid pair now has a full-parent line-clean derangement cylinder
-of exact size \(D_{m-2}\), with no rank-two collateral on its joining line. In a
-restricted current host, the minimum restoration cost satisfies
+Every compatible paid pair has a full-parent line-clean derangement cylinder of
+exact size \(D_{m-2}\), with no rank-two collateral on its joining line. In a
+restricted current host, minimum restoration is either cheap and exactly priced
+or a forced matching core giving strict lower-dimensional factorization.
 
-\[
-0\le\kappa_L\le m-2.
-\]
+Weighted averaging over the full cylinder closes the one-shot selection step.
+If no clean completion restores fewer than `q` edges, then the bank produces
+CMR334 frozen rank-zero/rank-one collateral or a large unavailable-edge
+inventory. Choosing the forbidden matching adaptively absorbs a maximum
+compatible unavailable matching for free. König's theorem then places every
+remaining unavailable edge on the paid-line vertices or a small row-column
+cover, producing a heavy unavailable star. At every nonroot depth, that star
+gives either a heavy unavailable full-prefix token or a dispersed unavailable-
+token bank.
 
-Cheap restoration has exact token and recreated-conflict price; expensive
-restoration is a forced matching core and strict lower-dimensional
-factorization.
-
-The live prime-power frontier is therefore **selection inside the cheaply
-restored line-clean cylinder**: choose a completion whose destroyed inherited
-target load exceeds its recreated collateral, or force reserve depletion, a
-heavy prefix/carry signature, lower-dimensional factorization, or envelope
-expansion. Arbitrary side-length coverage remains necessary afterward.
+The live prime-power frontier is therefore **temporal reuse of unavailable-edge
+structure**: prove that repeated free absorption, heavy unavailable tokens, or
+dispersed unavailable-token banks pay protected-reserve depletion,
+ancestor-return incidence, or envelope expansion without double counting across
+parent epochs. Arbitrary side-length coverage remains necessary afterward.
 
 ## Running checks
 
@@ -231,6 +237,9 @@ python scripts/verify_prime_power_theta_fan_private_edges.py
 python scripts/verify_prime_power_rooted_star_pair_cylinder.py
 python scripts/verify_prime_power_universal_compatible_pair_line_clean.py
 python scripts/verify_prime_power_line_clean_rollback.py
+python scripts/verify_prime_power_line_clean_weighted_selection.py
+python scripts/verify_prime_power_adaptive_line_clean_cover.py
+python scripts/verify_prime_power_unavailable_star_tokens.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
