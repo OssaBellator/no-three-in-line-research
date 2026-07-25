@@ -23,7 +23,9 @@ Let \(\Omega_F\) be the set of permutations \(\pi\in S_t\) satisfying
 \qquad(i\in[t]).
 \]
 
-## Theorem PX196 -- PROVED
+## 1. Uniform allowed-matchings spread
+
+### Theorem PX196 -- PROVED
 
 If
 
@@ -118,7 +120,8 @@ There are at most \(\Delta t\) forbidden cells. For \(t\ge4\),
 
 \[
 \log\left(1-\frac2t\right)
-\ge-rac4t,
+\ge-
+\frac4t,
 \]
 
 so
@@ -150,7 +153,98 @@ The bound is intentionally simple. For \(\Delta=2\), AN1 gives the much better
 constant \(128\), while PX196 gives \(e^8\). The advantage is that PX196 scales
 uniformly with every fixed \(\Delta\).
 
-## 2. Recursive neutralization banks
+## 2. Residual cylinders and conditioning stability
+
+The same argument applies after fixing part of the replacement matching. This
+is useful in a recursive decoder because earlier generations become conditions,
+not merely additional forbidden positions.
+
+### Theorem PX198 -- PROVED
+
+Let \(E\) be a compatible partial matching of rank \(r\). If
+
+\[
+\boxed{t-r\ge8\Delta,}
+\]
+
+then the number of allowed extensions of \(E\) satisfies
+
+\[
+\boxed{
+|\{\pi\in\Omega_F:E\subseteq\pi\}|
+\ge e^{-4\Delta}(t-r)!.
+}
+\]
+
+Consequently, for the uniform measure on \(\Omega_F\),
+
+\[
+\boxed{
+\frac{e^{-4\Delta}}{(t)_r}
+\le
+\Pr(E\subseteq M)
+\le
+\frac{e^{4\Delta}}{(t)_r}.
+}
+\]
+
+### Proof
+
+Delete the \(r\) rows and \(r\) columns used by \(E\). The remaining forbidden
+position graph has order \(t-r\) and maximum row and column degree at most
+\(\Delta\). PX196 gives at least
+
+\[
+e^{-4\Delta}(t-r)!
+\]
+
+allowed residual permutations, each extending \(E\).
+
+For the lower probability bound, divide this extension count by the trivial
+upper bound \(|\Omega_F|\le t!\). The upper probability bound is PX196.
+\(\square\)
+
+### Corollary PX199 -- PROVED
+
+Let \(E_0\) be an extendable compatible partial matching of rank \(q\), and
+condition the uniform measure on \(\Omega_F\) on \(E_0\subseteq M\). If
+
+\[
+t-q\ge8\Delta,
+\]
+
+then every further compatible residual partial matching \(E_1\) of rank \(r\)
+satisfies
+
+\[
+\boxed{
+\Pr(E_1\subseteq M\mid E_0\subseteq M)
+\le
+\frac{e^{4\Delta}}{(t-q)_r}.
+}
+\]
+
+If also \(t-q-r\ge8\Delta\), then
+
+\[
+\boxed{
+\Pr(E_1\subseteq M\mid E_0\subseteq M)
+\ge
+\frac{e^{-4\Delta}}{(t-q)_r}.
+}
+\]
+
+### Proof
+
+After deleting the rows and columns fixed by \(E_0\), the conditional measure is
+exactly the uniform allowed-permutation measure for the residual forbidden graph.
+Its maximum degree is still at most \(\Delta\). Apply PX196 for the upper bound
+and PX198 for the lower bound. \(\square\)
+
+Thus bounded-rank exposure does not destroy the bank's fixed-rank spread. It
+only reduces the available order by the number of exposed rows.
+
+## 3. Recursive neutralization banks
 
 At first generation, a moved endpoint set must avoid:
 
@@ -193,11 +287,68 @@ The original positions, opposite layer, and at most \(d-1\) earlier replacement
 positions are each partial matchings on the same row and column sets. Their
 union has maximum degree at most \(d+1\). Apply PX196. \(\square\)
 
-## 3. Consequence for the rainbow decoder recursion
+PX199 also shows that this spread conclusion remains valid after any bounded
+compatible exposure, provided the residual order is still at least
+\(8(d+1)\).
+
+## 4. Sharp nonemptiness threshold
+
+Spread needs slack, but mere executability has a much smaller and sharp
+threshold.
+
+### Theorem PX200 -- PROVED
+
+If
+
+\[
+\boxed{t\ge2\Delta,}
+\]
+
+then \(\Omega_F\ne\varnothing\).
+
+The threshold is sharp for general degree-\(\Delta\) forbidden graphs, even when
+\(F\) is a union of \(\Delta\) partial matchings: at
+\(t=2\Delta-1\) there is such an \(F\) with no allowed permutation.
+
+### Proof
+
+Let \(G\) be the allowed-position bipartite graph. Every vertex of \(G\) has
+degree at least
+
+\[
+t-\Delta\ge\frac t2.
+\]
+
+To verify Hall's condition, take a set \(S\) of left vertices. If
+\(|S|\le t/2\), then one vertex of \(S\) already has at least \(t/2\) neighbours,
+so \(|N(S)|\ge t/2\ge|S|\). If \(|S|>t/2\) and \(|N(S)|<|S|\), then any right
+vertex outside \(N(S)\) has all its neighbours outside \(S\), hence degree at
+most \(t-|S|<t/2\), a contradiction. Thus \(G\) has a perfect matching.
+
+For sharpness, take \(t=2\Delta-1\), choose \(\Delta\) left vertices and
+\(\Delta\) right vertices, and let \(F\) be the complete bipartite graph between
+them. Its maximum degree is \(\Delta\), it decomposes into \(\Delta\) partial
+matchings, and those \(\Delta\) left vertices have only \(\Delta-1\) allowed
+neighbours. Hall's condition fails. \(\square\)
+
+Therefore a depth-\(d\) recursive endpoint bank is guaranteed to be nonempty
+already when
+
+\[
+\boxed{t\ge2(d+1),}
+\]
+
+although the present uniform spread theorem still requires
+\(t\ge8(d+1)\).
+
+## 5. Consequence for the rainbow decoder recursion
 
 PX195a converts a large second-generation \(T_2\) mass into a loaded line or
 clean star through a new outside cell. PX197 shows that a bounded number of such
 recursive neutralizations can be performed without undoing the earlier ones.
+PX199 adds the stronger fact that bounded-rank conditioning during the decoder
+does not degrade the cylinder constant, and PX200 separates the threshold for
+mere executability from the threshold for quantitative spread.
 
 This removes a combinatorial obstruction which was implicit in the earlier
 roadmap: the third forbidden matching does not destroy the replacement bank.
@@ -211,7 +362,9 @@ A bounded-depth proof can now proceed as follows.
 3. Minimize the background-rainbow collision potential using PX194.
 4. If PX195a extracts another star or line, apply a depth-two bank avoiding all
    three relevant position matchings.
-5. Repeat a fixed number of times if necessary, paying the explicit
+5. Expose bounded-rank certificates using PX199 without losing the residual
+   spread estimate.
+6. Repeat a fixed number of times if necessary, paying the explicit
    \(e^{4(d+1)}\) spread constants.
 
 What remains is a **depth bound**: prove that some absolute number of recursive
@@ -219,14 +372,15 @@ generations destroys more old mass than the accumulated fixed-rank collateral,
 or construct a monotone generational potential.
 
 PX156 shows that arbitrary lattice absorption can require unbounded support,
-but that negative result does not contradict PX197: the recursion here uses a
-growing endpoint block and only a fixed number of forbidden partial matchings.
+but that negative result does not contradict PX197 or PX200: the recursion here
+uses a growing endpoint block and only a fixed number of forbidden partial
+matchings.
 
-## 4. Quantitative boundary
+## 6. Quantitative boundary
 
 PX197 does not support recursion depth growing with \(t\) at no cost. The spread
-constant is exponential in \(d\), and the minimum viable block size is linear in
-\(d\). Thus a successful termination theorem should keep
+constant is exponential in \(d\), and the spread-capable minimum block size is
+linear in \(d\). Thus a successful termination theorem should keep
 
 \[
 d=O(1)
@@ -234,11 +388,14 @@ d=O(1)
 
 or at worst \(d=o(\log t)\) with additional quantitative savings.
 
-The immediate target is depth two or three. The rainbow decoder already returns
-exactly the same star/line geometry, so there is no evidence yet that new
-geometric types appear at later bounded depth.
+PX200 shows that bank nonemptiness itself survives to four times greater depth
+than the present spread proof: \(d+1\le t/2\) rather than \(d+1\le t/8\). The
+immediate target remains depth two or three, where PX199 gives conditioning
+stability with an absolute cylinder constant. The rainbow decoder already
+returns exactly the same star/line geometry, so there is no evidence yet that
+new geometric types appear at later bounded depth.
 
-## Verification
+## 7. Verification
 
 Run
 
@@ -247,6 +404,7 @@ python scripts/verify_product_bounded_forbidden_spread.py
 ```
 
 The verifier exactly counts allowed permutations for random unions of up to
-three forbidden permutations through order fourteen, checks the symbolic
-lopsided-LLL inequalities for \(t\ge8\Delta\), and records the recursion-depth
-forbidden-degree accounting.
+three forbidden permutations through order fourteen, checks conditioned
+cylinder estimates at the first nontrivial LLL thresholds, verifies the sharp
+Hall obstruction through degree seven, checks the symbolic lopsided-LLL
+inequalities for \(t\ge8\Delta\), and records both recursive-depth thresholds.
