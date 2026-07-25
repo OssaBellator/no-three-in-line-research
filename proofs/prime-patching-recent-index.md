@@ -53,6 +53,7 @@ repository-wide theorem ledger. The separate transition addendum is
 | PP3aeb--PP3aeg | Dense deterministic local-credit failure splits into heavy unary arcs, rank-three paths/grids, or rank-four cross-pair families | PROVED / CONDITIONAL PAID INTERFACE | `docs/187-fixed-centre-local-credit-role-splitting.md` |
 | PP3aeh--PP3aem | A thresholded outer-choice count gives `N^(4-o(1))` source-clean five-chains or a near-complete transition role-star feeding the credited petal chain | PROVED | `docs/188-source-clean-five-chain-supply.md` |
 | PP3aen--PP3aet | Clean-chain conditioning has sharp inverse-density loss; off-centre Xi and source objectives retain full-pool thinning up to `N^(o(1))` | PROVED / CONDITIONAL PAID INTERFACE | `docs/189-clean-chain-inverse-density-averaging.md` |
+| PP3aeu--PP3aez | An adaptive clean-choice threshold absorbs every vanishing marked residual objective or returns a near-complete transition role-star | PROVED / CONDITIONAL PAID INTERFACE | `docs/190-adaptive-clean-chain-threshold.md` |
 
 ## Current scale
 
@@ -78,11 +79,15 @@ a near-complete predecessor or successor forbidden role-star. The star branch
 feeds the disjoint-petal, credited-bank, and collateral-averaging chain
 PP3zw--PP3aaj.
 
-Thus failure of dense clean-chain supply is no longer independent. Remaining
-transition failure is:
+The clean threshold may also be chosen adaptively from the unrestricted
+residual objective `epsilon_c`. If `epsilon_c=o(1)`, the clean-family density is
+at least `Omega(sqrt(epsilon_c))`, so conditioning changes the residual
+expectation to `O(sqrt(epsilon_c))=o(1)`. No convergence rate is required.
 
-1. an explicit residual source threshold after the clean-family
-   inverse-density factor;
+Thus failure of dense clean-chain supply and conditioning-rate loss are no
+longer independent. Remaining transition failure is:
+
+1. a genuinely nonvanishing marked source or insertion-load certificate;
 2. global support-ranked petal-touching weight at the bank-credit scale;
 3. hard-unary or residual endpoint-host failure;
 4. payment or conversion of the credited transition-petal/resource bank.
@@ -105,16 +110,18 @@ source-clean supply theorem gives a clean family of density at least
 `1/(3log^4 N)` unless the transition-petal branch occurs.
 
 Every ordered five-chain has the same number of marked block-cycle
-completions. Restriction to the clean family therefore multiplies any
-nonnegative residual source or off-centre insertion expectation by at most
-`3log^4 N=N^(o(1))`. Hence the full-pool support-ranked thinning bounds survive,
-and hard off-centre Xi weight returns through PP3adh--PP3adt to the same
-fixed-centre arc/path/partner cores.
+completions. More strongly, choose the clean threshold from the unrestricted
+normalized residual load `epsilon_c`. The resulting clean-family density is at
+least `Omega(sqrt(epsilon_c))`, and the conditioned residual objective is
+`O(sqrt(epsilon_c))`. Therefore every merely vanishing marked source/off-centre
+objective survives clean-chain conditioning automatically. Hard off-centre
+`Xi` weight returns through PP3adh--PP3adt to the same fixed-centre
+arc/path/partner cores.
 
 The remaining marked-`Xi` work is payment or conversion of the extracted
 arc/path-petal, weighted-grid, projective-cover, conditional-Hall, and
-alternating-host objects, plus explicit residual source thresholds and local
-pattern cost already comparable with removal credit.
+alternating-host objects, plus local pattern cost already comparable with
+removal credit or a genuinely nonvanishing marked source/insertion certificate.
 
 ## Remaining theorem
 
@@ -126,8 +133,8 @@ The all-n branch is reduced to the following concentrated conversion problems.
    hard unary support, forced Hall cuts, transitions, and marked `Xi` localization.
 3. Convert chromatically concentrated unary or binary controller-shadow weight in
    the global rectangle branch.
-4. Convert explicit fixed-centre residual source thresholds after the
-   polylogarithmic clean-chain conditioning loss.
+4. Convert genuinely nonvanishing fixed-centre marked source or insertion-load
+   certificates.
 5. Convert alternating cycle-star/theta support cores or cost at the cycle-credit
    scale.
 6. Convert quadratic binary cell fans, weighted choice grids, projective covers,
@@ -141,7 +148,8 @@ binary `Xi` tables, weighted rank-three middle rectangles, small-core heavy
 rank-three outer families, fixed rank-four multiplicity cores, fixed-cell
 rank-four petal banks, square-root rank-four partner stars, opaque centre-core
 `Xi` terms, deterministic local-credit tables, failure of dense source-clean
-chain supply, unstructured off-centre `Xi` concentration, unstructured
-non-superregularity, and termination are no longer separate open problems.
+chain supply, clean-conditioning rate loss, unstructured off-centre `Xi`
+concentration, unstructured non-superregularity, and termination are no longer
+separate open problems.
 
 The no-three-in-line conjecture remains unproved.
