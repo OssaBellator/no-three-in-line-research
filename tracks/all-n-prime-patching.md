@@ -22,10 +22,11 @@ margins.
 
 ### Status: PROVED AS IMPLICATIONS
 
-The branch contains clone-space local lemmas, permutation and superregular
-matching distributions, exact finite-state CSPs, alternating-component
-factorization, cross-block amplification, weighted first moments, and local-lemma
-selection. The unresolved work is structured geometric and paid conversion.
+The branch contains clone-space local lemmas, exact permutation laws,
+superregular matching distributions, finite-state CSPs, alternating-component
+factorization, cross-block amplification, weighted first moments, and
+local-lemma selection. The unresolved work is structured geometric and paid
+conversion.
 
 ## PP3 — Robust seed preparation
 
@@ -59,7 +60,7 @@ Every candidate cell has one automatic axis blocker containing its controller.
 The pairing-invariant excess potential
 
 $$
-\Xi(S)=\sum_z (b_S(z)-1)
+\Xi(S)=\sum_z(b_S(z)-1)
 $$
 
 counts additional nonaxis blockers. Pool-compatible endpoint trades preserve the
@@ -185,10 +186,28 @@ In a superregular host:
 - a repeated secondary resource is a two-choice forbidden matrix;
 - failure of this matrix forces a complete quadratic two-resource choice grid.
 
-The remaining binary geometry is a quadratic cell fan, complete choice grid,
-conditional Hall family, or paid/source concentration.
+## 12. Paid two-resource choice grids
 
-## 12. Marked filler dilution inside one controller pool
+For every compatible local pair `s=(a,b)`, delete its four used resources and
+choose a spread residual perfect matching. Averaging the local pair and residual
+matching together gives strict improvement whenever
+
+```text
+average local blocker multiplicity
++ average residual collateral
+< combined removal credit.
+```
+
+Thus a complete support grid with one blocker per state is harmless whenever the
+move has more than unit combined credit.
+
+Persistent failure forces a quadratic weighted grid at the credit scale. For a
+fixed controller candidate, the local states it blocks form a matching between
+the two choice sets, so weighted failure also requires a candidate-rich
+projective cover, a rich candidate matching, residual concentration, or a
+non-superregular conditional host.
+
+## 13. Marked filler dilution inside one controller pool
 
 A credited resource bank inside one pool has size
 
@@ -207,76 +226,85 @@ Force one credited endpoint into a marked filler block of size
 full pool.
 
 Summed marked-load estimates show that all but `o(H)` credited endpoints are
-simultaneously light for:
-
-- support-rank-four anchored pairs;
-- inserted triples of support rank four, five, and six;
-- anchored transitions.
+simultaneously light for support-rank-four anchored pairs, inserted triples of
+support rank four through six, and anchored transitions.
 
 For unary source obstruction, the marked expectation is
 
 ```text
-O(d_U(c)/N + theta b).
+O(d_U(c)/N+theta b).
 ```
 
 Choose `b` adaptively so `theta b->0`. If one credited endpoint has
-`d_U(c)=o(N)`, the marked block is fully source-valid. If none does, Hall extracts
-an `Omega(H)` unary-forbidden resource matching, returning to the source-star or
-resource-bank trade branch.
+`d_U(c)=o(N)`, it is unary-light. If none does, Hall extracts an `Omega(H)`
+unary-forbidden resource matching.
 
-Pool-local pair, triple, transition, and diffuse unary mass are therefore not
-separate resource-bank obstructions.
+## 14. Universal single-cycle marked states
 
-## 13. Marked and unmarked Xi weights
+On the selected `b` endpoint indices, choose one uniform directed Hamilton cycle
+and use its successor map as the endpoint permutation.
 
-Decompose unary Xi weight into endpoint-support ranks `A_1,A_2` and binary Xi
-weight into `B_2,B_3,B_4`.
-
-For a marked endpoint `c`, the exact paid loads are
+For every prescribed compatible rank-`r` arc forest,
 
 ```text
-M_A(c)=K[D_A,1(c)/b + D_A,2(c)/N],
+Pr(F subseteq pi)=1/(b-1)_r,
+```
+
+while every proper directed cycle has probability zero. Hence the state:
+
+- moves every selected endpoint;
+- has no diagonal arc;
+- has no transposition;
+- has no directed triangle;
+- supplies the fixed-rank spread law without superregular preparation.
+
+Combining this exact law with marked dilution gives a fully source-valid state
+through every source-light credited endpoint. The prepared-spread-host hypothesis
+is removed.
+
+## 15. Reduced marked and unmarked Xi weights
+
+The single-cycle state kills rank-one unary `Xi` weight and rank-two binary
+transposition weight identically. The remaining marked loads are
+
+```text
+M_A^cyc(c)=O(D_A,2(c)/N),
 ```
 
 ```text
-M_B(c)=K^2[
- D_B,2(c)/(bN)
- + D_B,3(c)/N^2
- + D_B,4(c)b/N^3].
+M_B^cyc(c)=O(D_B,3(c)/N^2+D_B,4(c)b/N^3).
 ```
 
-The corresponding unmarked terms are
+The remaining unmarked terms are
 
 ```text
-U_A=K[A_1/N+A_2b/N^2],
+U_A^cyc=O(A_2b/N^2),
 ```
 
 ```text
-U_B=K^2[B_2/N^2+B_3b/N^3+B_4b^2/N^4].
+U_B^cyc=O(B_3b/N^3+B_4b^2/N^4).
 ```
 
 If the summed marked load is `o(H)` and the unmarked load is `o(1)`, almost every
-credited endpoint supports a source-valid strict Xi decrease.
+credited endpoint supports a source-valid strict `Xi` decrease.
 
-## 14. Fixed captive-centre certificates
+## 16. Fixed captive-centre certificates
 
 A predetermined captive star centre can remain exceptional even when almost every
-resource-bank endpoint is good. Its failure is now finite and quantitative.
-
-Negating the marked paid first moment forces one of eleven explicit support cores:
+resource-bank endpoint is good. Under the single-cycle state law, failure forces
+one of nine explicit support cores:
 
 - unary source degree;
 - transition degree;
 - anchored-pair degree;
 - rank-four, rank-five, or rank-six triple degree;
-- rank-one or rank-two unary Xi weight;
-- rank-two, rank-three, or rank-four binary Xi weight.
+- rank-two unary `Xi` weight;
+- rank-three or rank-four binary `Xi` weight.
 
-The rank-one unary Xi term is local state cost; rank-two binary Xi is a two-index
-transposition core; higher binary ranks re-enter the resource-star, conditional
-Hall, and choice-grid reductions.
+Rank-one unary state cost and rank-two binary transposition cost are no longer
+frontiers.
 
-## 15. Current exact bottleneck
+## 17. Current exact bottleneck
 
 The missing conversion theorem is reduced to:
 
@@ -286,12 +314,13 @@ The missing conversion theorem is reduced to:
    forced Hall cuts;
 3. chromatically concentrated unary or binary controller-shadow weight in the
    global rectangle branch;
-4. marked endpoint Xi-load cores, full-pool Xi thresholds, or one of the eleven
+4. marked endpoint `Xi`-load cores, full-pool `Xi` thresholds, or one of nine
    fixed-centre support cores;
 5. alternating cycle-star/theta support cores or cost comparable with cycle
    credit;
-6. quadratic binary cell fans, complete two-resource choice grids, conditional
-   Hall families, or paid collateral on their rectangle states.
+6. quadratic binary cell fans, weighted two-resource choice grids,
+   candidate-rich projective covers, conditional Hall families, or residual paid
+   collateral.
 
 A successful conversion gives the allocation directly or strictly decreases a
 nonnegative integer potential.
