@@ -42,6 +42,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/142-prime-power-packet-loss-deletion-ancestry.md`](docs/142-prime-power-packet-loss-deletion-ancestry.md): deletion-or-forced-ancestry response for lossy packet resets and the `t(t-1)` deletion budget.
 - [`docs/143-prime-power-fully-forced-packet-terminality.md`](docs/143-prime-power-fully-forced-packet-terminality.md): essentiality persistence and the polynomial completion-or-terminal-ancestry packet endpoint.
 - [`docs/144-prime-power-essential-core-ancestry-width.md`](docs/144-prime-power-essential-core-ancestry-width.md): monotone essential core, polynomial forced-certificate counts, and the fewer-than-`3t^3` edge-set ancestry ledger.
+- [`docs/145-prime-power-exchange-corridor-path-cover.md`](docs/145-prime-power-exchange-corridor-path-cover.md): matching contraction, exact one-edge exchange corridors, Dilworth batch-cycle covers, and linear temporal cycle compression.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -122,27 +123,23 @@ fully forced rank-three certificate. Deletion responses occur at most
 Thus packet processing completes or reaches one terminal ancestry certificate
 within a polynomial number of installations.
 
-The essential edges accumulated during the pass form one monotone matching core
-`E_*` of size at most `t`. After deduplicating identical prescribed edge sets,
-there are fewer than
+The final essential core has size at most `t`. Matching contraction turns each
+one-edge first-essentiality layer into a directed exchange corridor. Reachability
+chains lie on one alternating cycle and can be exchanged in a batch; the exact
+number of cycles needed to cover the layer is its poset width. Across the whole
+pass, all essential edges are covered at their valid historical times by at most
 
 \[
-t^3+t
+t
 \]
 
-fully forced rank-`1/2/3` certificates and fewer than
+batch exchange cycles.
 
-\[
-3t^3
-\]
-
-distinct CMR217 ancestry links.
-
-The live prime-power frontier is therefore geometric use of this polynomial
-exchange-ancestry ledger: extract a large low-overlap family for simultaneous
-flipping, or force p-adic/carry concentration, strict host decomposition, or
-envelope expansion. A corresponding payment for repeated local ancestor resets
-and arbitrary side-length coverage remain necessary afterward.
+The live prime-power frontier is therefore temporal or geometric use of this
+linear historical cycle family: lift many cycles to a common matching epoch, or
+turn a large reachability antichain into Hall decomposition, p-adic/carry
+concentration, or envelope expansion. A corresponding payment for repeated
+local ancestor resets and arbitrary side-length coverage remain necessary.
 
 ## Running checks
 
@@ -176,6 +173,7 @@ python scripts/verify_prime_power_packet_recreation_churn.py
 python scripts/verify_prime_power_packet_loss_ancestry.py
 python scripts/verify_prime_power_forced_packet_terminality.py
 python scripts/verify_prime_power_essential_core_ancestry.py
+python scripts/verify_prime_power_exchange_corridor.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
