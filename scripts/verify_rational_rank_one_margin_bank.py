@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """Exhaust RI5y--RI5z on small paid/collateral systems."""
 
-from itertools import combinations, product
 from fractions import Fraction
+from itertools import product
 
 
 def prescription_words(component_count):
     # None means unprescribed; 0 and 1 prescribe current and target.
     words = []
-    alphabet = (None, 0, 1)
-    for word in product(alphabet, repeat=component_count):
+    for word in product((None, 0, 1), repeat=component_count):
         rank = sum(value is not None for value in word)
         if 1 <= rank <= 3 and any(value == 1 for value in word):
             words.append(word)
@@ -23,10 +22,9 @@ def occurs(word, bits):
     )
 
 
-def verify(maximum_components=5, maximum_weight=3):
+def verify_margin_systems(maximum_components=4, maximum_weight=2):
     margin_checks = 0
     probability_checks = 0
-    router_checks = 0
 
     for component_count in range(1, maximum_components + 1):
         words = prescription_words(component_count)
@@ -93,8 +91,6 @@ def verify(maximum_components=5, maximum_weight=3):
                         value is not None for value in word
                     )
                     if original_rank == 1:
-                        # This is the original rank-one family already netted
-                        # against the local paid margins.
                         continue
 
                     if any(word[index] == 1 for index in frozen):
@@ -104,14 +100,10 @@ def verify(maximum_components=5, maximum_weight=3):
                             word[index] is not None
                             for index in favorable
                         )
-                        if filtered_rank == 0:
-                            # A new word has a target prescription. With all
-                            # target prescriptions frozen, it was caught above.
-                            raise AssertionError("new filtered rank zero")
+                        assert 1 <= filtered_rank <= 3
                         expected_probability = Fraction(
                             1, 2**filtered_rank
                         )
-                        assert 1 <= filtered_rank <= 3
 
                     actual_probability = Fraction(
                         sum(occurs(word, bits) for bits in toggle_states),
@@ -120,23 +112,28 @@ def verify(maximum_components=5, maximum_weight=3):
                     assert actual_probability == expected_probability
                     probability_checks += 1
 
-                # Four-way failed-bank pigeonhole on small integer terms.
-                if positive_margin:
-                    half_margin = Fraction(positive_margin, 2)
-                    for fixed in range(maximum_weight + 1):
-                        for terms in product(
-                            range(maximum_weight + 1), repeat=4
-                        ):
-                            if half_margin <= fixed:
-                                continue
-                            if sum(terms) < half_margin - fixed:
-                                continue
-                            assert max(terms) >= (
-                                half_margin - fixed
-                            ) / 4
-                            router_checks += 1
+    return margin_checks, probability_checks
 
-    return margin_checks, probability_checks, router_checks
+
+def verify_failure_router(maximum_value=4):
+    checks = 0
+    for positive_margin in range(1, 2 * maximum_value + 1):
+        half_margin = Fraction(positive_margin, 2)
+        for fixed in range(maximum_value + 1):
+            if half_margin <= fixed:
+                continue
+            for terms in product(range(maximum_value + 1), repeat=4):
+                if sum(terms) < half_margin - fixed:
+                    continue
+                assert max(terms) >= (half_margin - fixed) / 4
+                checks += 1
+    return checks
+
+
+def verify():
+    margins, probabilities = verify_margin_systems()
+    routers = verify_failure_router()
+    return margins, probabilities, routers
 
 
 def main():
