@@ -45,6 +45,7 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/145-prime-power-exchange-corridor-path-cover.md`](docs/145-prime-power-exchange-corridor-path-cover.md): matching contraction, exact one-edge exchange corridors, Dilworth batch-cycle covers, and linear temporal cycle compression.
 - [`docs/146-prime-power-sparse-rollback-factorization.md`](docs/146-prime-power-sparse-rollback-factorization.md): common-epoch rollback with at most `t` restored edges, minimum rollback essential cores, and cost-or-host-factorization.
 - [`docs/147-prime-power-rollback-incidence-payment.md`](docs/147-prime-power-rollback-incidence-payment.md): exact rollback full-token incidence and restored-edge support for harmonic packet recreation.
+- [`docs/148-prime-power-rollback-optimal-face.md`](docs/148-prime-power-rollback-optimal-face.md): minimum-cost rollback, no-negative alternating cycles, exact tight optimal host, and integer rollback levels.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -145,11 +146,19 @@ exact labelled full-token cost
 and every conflict from a packet family which was clean before rollback must use
 a restored edge.
 
-The live prime-power frontier is therefore a geometric progress certificate for
-the **cheap rollback** branch: turn a small restored-edge support into destroyed
-target load, protected-reserve depletion, prefix or line-clean continuation, or
-envelope expansion. Exchange-antichain conversion and payment for repeated local
-ancestor resets remain necessary, followed by arbitrary side-length coverage.
+Give deleted edges unit cost and final-host edges zero cost. The minimum rollback
+states are exactly the perfect matchings of a canonical tight subgraph. Relative
+to one optimum, every alternating cycle has nonnegative cost; all other optima
+are obtained by zero-cost cycle flips. Shortest-path potentials layer the tight
+exchange arcs by integers in `[-(t-1),0]`, with level change `-1`, `0`, or `1`
+according to rollback-cost change.
+
+The live prime-power frontier is therefore geometric analysis of this **tight
+rollback host**: turn a large level, dense zero-cost component, or many unit
+level changes into target-load destruction, reserve depletion, prefix or
+line-clean continuation, Hall decomposition, or envelope expansion. The same
+minimum-cost normalization must still be attached to repeated compatible local
+ancestor resets, followed by arbitrary side-length coverage.
 
 ## Running checks
 
@@ -186,6 +195,7 @@ python scripts/verify_prime_power_essential_core_ancestry.py
 python scripts/verify_prime_power_exchange_corridor.py
 python scripts/verify_prime_power_sparse_rollback.py
 python scripts/verify_prime_power_rollback_incidence.py
+python scripts/verify_prime_power_rollback_optimal_face.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
