@@ -30,7 +30,7 @@ with `H>=2`, one has
 \boxed{
 \sum_{K=H}^{m}\varphi(K)(t-K)
 \le
-\frac23\sum_{K=H}^{m}K(t-K)
+\frac{2}{3}\sum_{K=H}^{m}K(t-K)
 +
 \frac{10}{9}t^2.
 }
@@ -41,7 +41,7 @@ with `H>=2`, one has
 On the six residue classes modulo six, use
 
 \[
-\frac{\varphi(K)}K
+\frac{\varphi(K)}{K}
 \le
 \begin{cases}
 1/3,&K\equiv0\pmod6,\\
@@ -61,24 +61,24 @@ unpaired terms at each end. On one complete block, subtract `2/3` from the six
 coefficients. The deviations are
 
 \[
--\frac13,
+-\frac{1}{3},
 \quad
-\frac13,
+\frac{1}{3},
 \quad
--\frac16,
+-\frac{1}{6},
 \quad
 0,
 \quad
--\frac16,
+-\frac{1}{6},
 \quad
-\frac13.
+\frac{1}{3}.
 \]
 
 Their positive and negative masses are both `2/3`. Since `h_t(K)` is increasing
 for `K<=m`, the excess over the `2/3` baseline is at most
 
 \[
-\frac23\bigl(h_t(k+5)-h_t(k)\bigr)
+\frac{2}{3}\bigl(h_t(k+5)-h_t(k)\bigr)
 \le
 \frac{10}{3}t.
 \]
@@ -88,7 +88,7 @@ There are at most ten endpoint terms. For each, the excess over the `2/3`
 baseline is at most
 
 \[
-\frac13h_t(K)
+\frac{1}{3}h_t(K)
 \le
 \frac{t^2}{12}.
 \]
@@ -119,7 +119,7 @@ Then every parent board vertex satisfies
 \boxed{
 T_3(w)
 \le
-\frac43S(H)
+\frac{4}{3}S(H)
 +
 \frac{20}{9}t^2
 +
@@ -161,10 +161,10 @@ every parent board vertex satisfies
 
 \[
 \boxed{
-\frac1t+
+\frac{1}{t}+
 \frac{T_3(w)}{(t)_3}
 <
-\frac1{24}
+\frac{1}{24}
 }
 \]
 
@@ -180,7 +180,9 @@ S(H_3)
 \le
 \int_{21t/50}^{(t+1)/2}x(t-x)\,dx
 =
-\frac{1859}{93750}t^3+rac18t^2-rac1{24}.
+\frac{1859}{93750}t^3+
+\frac{1}{8}t^2-
+\frac{1}{24}.
 \]
 
 The function `t-2x` is decreasing, giving
@@ -190,7 +192,9 @@ R(H_3)
 \le
 \int_{21t/50-1}^{(t-1)/2}(t-2x)\,dx
 =
-\frac4{625}t^2+rac4{25}t+rac34.
+\frac{4}{625}t^2+
+\frac{4}{25}t+
+\frac{3}{4}.
 \]
 
 Substituting these bounds into CMR279 gives
@@ -252,7 +256,7 @@ t\ge1983,
 and put
 
 \[
-R_3(t)=\left\lfloor\frac t{2000}\right\rfloor.
+R_3(t)=\left\lfloor\frac{t}{2000}\right\rfloor.
 \]
 
 For every family of at most `R_3(t)` distinct nonaxis real lines, there is a
