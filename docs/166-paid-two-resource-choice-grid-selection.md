@@ -7,7 +7,8 @@ paid obstruction. After one compatible local pair is fixed, the remaining host i
 still superregular, so the local pair and the residual perfect matching can be
 selected in one averaged paid first moment.
 
-This chapter records that selection exactly. It also uses the geometry of two
+This chapter records that selection with source patterns ranked by the number of
+additional residual-matching arcs they require. It also uses the geometry of two
 fixed resource lines: for one controller candidate, the local pairs blocked by
 that candidate form a partial matching between the two choice sets. Failure is
 therefore weighted multiplicity or residual collateral, not the bare complete
@@ -31,9 +32,7 @@ mu(s)
 ```
 
 be the exact number, or exact nonnegative weight, of controller candidate cells
-whose binary insertion shadow is created by selecting both `a` and `b`. Thus a
-simple complete conflict grid has `mu(s)>=1` for every `s`, but different states
-may have different multiplicity.
+whose binary insertion shadow is created by selecting both `a` and `b`.
 
 Let `R(s)` be the exact removal credit guaranteed when the underlying tied
 endpoints used by the state are moved, and assume
@@ -44,14 +43,21 @@ R(s)>=R_*>0
 
 for every state under consideration.
 
-For the residual host `G_s=G_ab`, let:
+For the residual host `G_s=G_ab`, classify every remaining source-invalid
+canonical pattern by the number `u` of additional residual matching arcs required
+after `a,b` are fixed. Let
 
-- `P_s` be the number of remaining source-invalid anchored pair patterns;
-- `Q_s` be the number of remaining source-invalid inserted triple patterns;
-- `C_s` be the remaining non-grid insertion cost of the residual matching.
+```text
+S_s,u
+```
 
-These quantities include interactions involving the fixed cells `a,b` whenever
-those interactions have not already been excluded locally.
+be the number or total nonnegative weight of those patterns, where `0<=u<=3`.
+A term with `u=0` is a deterministic source invalidity of the local pair and
+contributes in full.
+
+Let `C_s` be the remaining non-grid insertion cost of the residual matching.
+Interactions involving one or both fixed cells are included at their correct
+additional-arc rank.
 
 ## 2. Joint local-pair and residual-matching selection
 
@@ -62,8 +68,7 @@ constant `K`. If
 
 ```text
 (1/H) sum_{s in S} [
-  K^2 P_s/(q-2)^2
-  + K^3 Q_s/(q-2)^3
+  sum_{u=0}^3 K^u S_s,u/(q-2)^u
   + (mu(s)+E[C_s])/R_*
 ] < 1,
 ```
@@ -78,9 +83,10 @@ such that the completed endpoint permutation:
 #### Proof
 
 Choose `s` uniformly from `S`. Conditional on `s`, choose a spread perfect
-matching of `G_s`. The first two terms bound the expected number of remaining
-source-invalid patterns. The third term bounds total expected insertion cost
-normalized by the lower credit `R_*`.
+matching of `G_s`. A source pattern requiring `u` additional residual arcs has
+probability at most `K^u/(q-2)^u`. The `u=0` term detects deterministic invalid
+local pairs. The final term is total expected insertion cost normalized by the
+lower credit `R_*`.
 
 The displayed average is the expectation of one nonnegative objective. If it is
 below one, some outcome has no source-invalid event and insertion cost below
@@ -97,8 +103,7 @@ Suppose the averaged source and residual terms satisfy
 
 ```text
 (1/H) sum_s [
-  K^2 P_s/(q-2)^2
-  + K^3 Q_s/(q-2)^3
+  sum_{u=0}^3 K^u S_s,u/(q-2)^u
   + E[C_s]/R_*
 ] = o(1).
 ```
@@ -129,8 +134,8 @@ W_grid=sum_{s in S} mu(s).
 
 ### Corollary PP3zg -- PROVED
 
-Under diffuse averaged source and residual completion, failure of strict paid
-selection forces
+Under diffuse support-ranked source and residual completion, failure of strict
+paid selection forces
 
 ```text
 W_grid >= (1-o(1))R_* H.
@@ -214,16 +219,17 @@ one witness to each state.
 A complete two-resource choice grid in the superregular branch now has one of the
 following forms.
 
-1. **Paid average completion:** the average local multiplicity plus residual cost
-   is below the combined removal credit.
+1. **Paid average completion:** the support-ranked source term, average local
+   multiplicity, and residual cost fit below the combined removal credit.
 2. **Quadratic weighted grid:** `W_grid` is at the credit scale `R_*H`.
 3. **Candidate-rich projective cover:** at least `Omega(R_*q)` distinct candidate
    cells are required, or one candidate matching is rich.
-4. **Residual concentration:** averaged source-invalid or non-grid insertion cost
-   is nonnegligible.
+4. **Residual concentration:** deterministic local invalidity, source-invalid
+   additional-arc mass, or non-grid insertion cost is nonnegligible.
 5. **Host failure:** some fixed local pair does not leave a superregular residual
    host, returning to conditional Hall or alternating-component analysis.
 
 Therefore a bare complete support grid is no longer an independent frontier. The
 remaining two-resource obstruction is paid multiplicity, candidate-rich
-projective covering, residual collateral, or residual-host structure.
+projective covering, support-ranked residual collateral, or residual-host
+structure.
