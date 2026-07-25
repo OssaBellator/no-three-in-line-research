@@ -30,16 +30,26 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3as | Every denominator role has a bounded-shape half or a paid large-direction half | PROVED | `docs/alternating-core-bda-role-composition.md` |
 | AC3at | A normalized quotient role gives paid scale mismatch, one heavy physical scale, or physical-scale dispersion | PROVED | `docs/alternating-core-ri-delegation.md` |
 | AC3au | One scale class has exact physical source, partner, anchor, and target-row cosets | PROVED | `docs/alternating-core-ri-delegation.md` |
-| AC3av | Physical completion debt routes to cycle mass, one paid boundary path, and an occupancy-executable two-layer state | PROVED (imports RI5f–RI5l) | `docs/alternating-core-ri-delegation.md` |
+| AC3av | Generic physical completion debt routes to cycles, boundary paths, and occupancy-executable two-layer states | PROVED (imports RI5f–RI5l) | `docs/alternating-core-ri-delegation.md` |
 | AC3aw | Any finite RI decoration localizes paid mass to one exact profile | PROVED | `docs/alternating-core-ri-delegation.md` |
-| AC3ax | A faithful AC3am quotient role delegates quantitatively to physical RI completion | PROVED UNDER HYPOTHESES | `docs/alternating-core-ri-delegation.md` |
+| AC3ax | A genuinely movable faithful quotient role delegates to physical RI completion | PROVED UNDER HYPOTHESES; NOT THE CANONICAL OP ROOT ROUTE | `docs/alternating-core-ri-delegation.md` |
 | AC3ay | Every real canonical two-channel factor supplies exact RI roots, image, scale coset, and cross-carry | PROVED (imports OP4g) | `docs/alternating-core-op-ri-realization.md` |
 | AC3az | The OP4h audit returns a compatible normalized RI component or an explicit carry/label conflict | PROVED (imports OP4h) | `docs/alternating-core-op-ri-realization.md` |
 | AC3ba | Paid fixed-edge occurrences split into a complete-fibre family or a one-sided family at loss at most `2P` | PROVED | `docs/alternating-core-op-ri-realization.md` |
-| AC3bb | Canonical OP quotient roles compose with the physical RI adapter at exact loss `1/(8RρPKL)` | PROVED UNDER HYPOTHESES | `docs/alternating-core-op-ri-realization.md` |
+| AC3bb | AC3am and OP payment produce one-sided growth or a paid complete-fibre family | PROVED | `docs/alternating-core-op-ri-realization.md` |
 | AC3bc | Complete-fibre root weights yield a scale-faithful quarter or a paid one-root scale imbalance | PROVED | `docs/alternating-core-ri-scale-pairing.md` |
 | AC3bd | Coherent scales and one-root imbalance admit exact finite-profile and atom/spread routers | PROVED | `docs/alternating-core-ri-scale-pairing.md` |
-| AC3be | Canonical OP-to-RI delegation no longer assumes scale faithfulness; one coherent class survives at loss `1/(16RρPKL)` | PROVED UNDER HYPOTHESES | `docs/alternating-core-ri-scale-pairing.md` |
+| AC3be | Canonical OP-to-RI fixed-edge composition retains one coherent class at loss `1/(16RρPKL)` | PROVED | `docs/alternating-core-ri-scale-pairing.md` |
+| AC3bf | Canonical paid hyperbola roots are fixed points of physical completion and cannot pay completion components | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bg | Every I6 state lifts through the same RI5f boundary closure | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bh | The closed-completion I6 bank has an exact paid-versus-active/blocker collateral criterion | PROVED (imports RI5a–RI5m) | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bi | Failed closed I6 comparison routes to active rank one, two, three, or blocker repair | PROVED | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bj | Canonical coherent OP payment enters the closed I6 bank without a completion-payment assignment | PROVED UNDER EXACT COLLATERAL AUDIT | `docs/alternating-core-ri-closed-fixed-edge-bank.md` |
+| AC3bk | The blocker average splits exactly into singleton, `t=2..6`, and `t>=7` occupancy regimes | PROVED | `docs/alternating-core-ri-blocker-average.md` |
+| AC3bl–AC3bo | Heavy blocker repair yields singleton affine, finite small-derangement, or normalized large-rank profiles | PROVED | `docs/alternating-core-ri-blocker-average.md` |
+| AC3bp | Every active I6 rank-one triple has an exact affine address and unique source-target-shift channel | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
+| AC3bq | Rank-one expectation amplifies to raw weight `mhC1`, and one channel retains `C1/m` | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
+| AC3br–AC3bs | Heavy rank one routes to direction spread, offset spread, a heavy line, or at most two moving cells | PROVED | `docs/alternating-core-ri-i6-rank-one.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
