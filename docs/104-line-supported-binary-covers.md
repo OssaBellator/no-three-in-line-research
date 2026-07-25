@@ -66,7 +66,7 @@ when the trace is nonempty and put
 C_{z,\ell}=P_E(\ell)\setminus\{a_\ell\}.
 \]
 
-Then `C_{z,ell}` covers every conflict in `mathcal B_{z,ell}`. Moreover
+Then \(C_{z,\ell}\) covers every conflict in \(\mathcal B_{z,\ell}\). Moreover
 
 \[
 \boxed{\Delta(C_{z,\ell})\le1.}
@@ -91,8 +91,8 @@ B\in\mathcal B
 \]
 
 one witness pair `(z_B,ell_B)` such that both cells of `B` lie in `P_E(ell_B)` and
-`z_B` lies on `ell_B`. Let `mathcal L` be the resulting set of typed witness
-lines. For each `lambda in mathcal L`, choose one survivor cell from its allowed
+`z_B` lies on `ell_B`. Let \(\mathcal L\) be the resulting set of typed witness
+lines. For each \(\lambda\in\mathcal L\), choose one survivor cell from its allowed
 trace and delete all other trace cells. Let
 
 \[
@@ -118,7 +118,7 @@ D_{\mathcal L}=\max_v d_{\mathcal L}(v).
 
 ### Theorem PP3lo -- PROVED
 
-The set `C_mathcal L` is a binary cover contained in `E`, and
+The set \(C_{\mathcal L}\) is a binary cover contained in `E`, and
 
 \[
 \boxed{
@@ -132,8 +132,8 @@ D_{\mathcal L}.
 
 Each assigned conflict is covered inside its witness line by PP3ln. For a fixed
 resource `v`, Proposition PP3lm gives at most one allowed trace cell incident with
-`v` on each typed witness line. Hence at most `d_mathcal L(v)` deleted cells of
-the simple union use `v`. ∎
+`v` on each typed witness line. Hence at most \(d_{\mathcal L}(v)\) deleted cells
+of the simple union use `v`. ∎
 
 Overlaps of the same deleted cell among several witness lines only improve the
 bound.
@@ -184,7 +184,7 @@ assignment in each instance. At least one of the following holds.
 
 #### Proof
 
-The cover of PP3lo has congestion at most `D_mathcal L`. If this quantity is
+The cover of PP3lo has congestion at most \(D_{\mathcal L}\). If this quantity is
 `o(q)`, use the first alternative. Otherwise its ratio to `q` is bounded below by
 some fixed positive constant along a subsequence, which is exactly the second
 alternative. ∎
@@ -198,10 +198,11 @@ trace.
 
 The binary branch is now separated into two independent parameters.
 
-- **Cover congestion** `tau^*(mathcal B)` from PP3le measures the best possible
+- **Cover congestion** \(\tau^*(\mathcal B)\) from PP3le measures the best possible
   unary absorption without choosing geometric witnesses.
-- **Witness-line overlap** `D_mathcal L` measures the congestion of the canonical
-  geometric cover obtained by leaving one survivor on every candidate line.
+- **Witness-line overlap** \(D_{\mathcal L}\) measures the congestion of the
+  canonical geometric cover obtained by leaving one survivor on every candidate
+  line.
 
 A single rich line, a line clique, or a resource-disjoint collection of rich
 lines is not an obstruction: each is covered with bounded congestion. The
