@@ -53,6 +53,8 @@ where \(D(n)\) is the maximum number of points that can be selected from an
 - [`docs/153-prime-power-mixed-cycle-boundary-fan-cut.md`](docs/153-prime-power-mixed-cycle-boundary-fan-cut.md): boundary-edge concentration, directed Menger theta fans, return cuts, and two-edge bottlenecks.
 - [`docs/154-prime-power-theta-fan-private-edge-payment.md`](docs/154-prime-power-theta-fan-private-edge-payment.md): private theta-route entering edges, rooted-conflict alternatives, and harmonic packet/token payment.
 - [`docs/155-prime-power-rooted-star-and-pair-cylinder.md`](docs/155-prime-power-rooted-star-and-pair-cylinder.md): secant-star identification of rooted conflicts and exact rank-two cylinders for two-edge bottlenecks.
+- [`docs/156-prime-power-universal-compatible-pair-line-clean.md`](docs/156-prime-power-universal-compatible-pair-line-clean.md): exact line-clean derangement cylinders for every compatible pair, rooted arm, and bottleneck pair.
+- [`docs/157-prime-power-line-clean-rollback-availability.md`](docs/157-prime-power-line-clean-rollback-availability.md): minimum line-clean restoration cost, forced restoration cores, cheap-or-factorization availability, and exact restoration payment.
 - [`proofs/composite-finite-constructions.md`](proofs/composite-finite-constructions.md): exact saturated constructions at \(N=4,6,8,9,10,12\).
 
 ## Research discipline
@@ -160,17 +162,28 @@ skeleton of at most `2k` edges; and, conditional on that skeleton, all remaining
 choices factor by potential level. Inside one residual level, markedness is
 determined solely by the right endpoint.
 
-Mixed same-level motion now has a finite endpoint. It yields a simultaneous
-vertex-disjoint cycle batch, a sparse boundary-tail interface, a boundary theta
-fan with pairwise private route edges, a repeated-cell secant star centered at
-one source-switch cell, or a compatible rank-two completion cylinder. Dirty
-theta states either pay distinct private full-token incidences or expose the
-secant-star branch.
+Mixed same-level motion yields a simultaneous vertex-disjoint cycle batch, a
+sparse boundary-tail interface, a boundary theta fan with private route edges, a
+repeated-cell secant star, or a compatible rank-two pair. Theta-state dirtiness
+either pays distinct private full-token incidences or exposes the secant-star
+branch.
 
-The live prime-power frontier is therefore to splice the last two structures
-into the existing secant-star carry-dispersion and line-clean paid-pair banks.
-The required output is target-load destruction, reserve depletion, a heavy
-prefix/carry signature, strict lower-dimensional factorization, or envelope
+Every compatible paid pair now has a full-parent line-clean derangement cylinder
+of exact size \(D_{m-2}\), with no rank-two collateral on its joining line. In a
+restricted current host, the minimum restoration cost satisfies
+
+\[
+0\le\kappa_L\le m-2.
+\]
+
+Cheap restoration has exact token and recreated-conflict price; expensive
+restoration is a forced matching core and strict lower-dimensional
+factorization.
+
+The live prime-power frontier is therefore **selection inside the cheaply
+restored line-clean cylinder**: choose a completion whose destroyed inherited
+target load exceeds its recreated collateral, or force reserve depletion, a
+heavy prefix/carry signature, lower-dimensional factorization, or envelope
 expansion. Arbitrary side-length coverage remains necessary afterward.
 
 ## Running checks
@@ -216,6 +229,8 @@ python scripts/verify_prime_power_mixed_cycle_packing.py
 python scripts/verify_prime_power_mixed_cycle_boundary_fan.py
 python scripts/verify_prime_power_theta_fan_private_edges.py
 python scripts/verify_prime_power_rooted_star_pair_cylinder.py
+python scripts/verify_prime_power_universal_compatible_pair_line_clean.py
+python scripts/verify_prime_power_line_clean_rollback.py
 python scripts/verify_prime_power_balanced_law_classification.py
 python scripts/verify_prime_seven_balanced_bank.py
 python scripts/verify_prime_seven_pair_spectrum.py
