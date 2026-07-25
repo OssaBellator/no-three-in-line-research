@@ -30,6 +30,12 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3gg–AC3gj | Every realized created certificate of ranks one through three orients losslessly to a union-safe paid pivot bucket | PROVED | `docs/alternating-core-all-rank-pivot-orientation.md` |
 | AC3gk–AC3gm | Expected rank profiles realize at full expected weight before pivoting; BDA failed outputs receive explicit pivot constants | PROVED | `docs/alternating-core-expected-rank-pivot.md` |
 | AC3gn–AC3gq | Canonical pivot rectangles have a `2Ln^8` signature alphabet; overload descent plus new-signature pivots terminate unless full partner saturation occurs | PROVED | `docs/alternating-core-pivot-reuse-router.md` |
+| AC3gr–AC3gu | Full partner saturation has a complete pivot cross, exact fused/split blocker law, heavy line profile and finite line-refined signature router | PROVED | `docs/alternating-core-saturation-cross-router.md` |
+| AC3gv–AC3gy | Empty saturated partners have pairwise-disjoint creation buckets and yield improvement or a cross-arm pivot at scales `W/(4K),W/(12K)` | PROVED | `docs/alternating-core-saturated-empty-menu.md` |
+| AC3gz–AC3ha | The unique `3 x 3` split saturation has one common final union and a direct `W/K,W/(3K)` pivot continuation | PROVED | `docs/alternating-core-n3-saturation.md` |
+| AC3hb–AC3he | Cross-arm pivots expose new physical cells or return old-axis saturation; support/signature/cell recursion has one bounded potential | PROVED | `docs/alternating-core-cross-arm-recurrence.md` |
+| AC3hf–AC3hh | BDA affine-chain outputs collapse to one fixed current radial cell, factor-conservative payment `H/10` and failed-rank return `H/30` | PROVED UNDER BDA4f PARITY/AGGREGATION | `docs/alternating-core-bda-affine-chain-import.md` |
+| AC3hi–AC3hk | Old-axis histories route to context-disjoint dispersion, a heavy fixed pair or one fixed context cell with many axis pivots | PROVED | `docs/alternating-core-old-axis-context-router.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
