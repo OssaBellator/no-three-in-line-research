@@ -4,7 +4,7 @@ This local index records the frontier after exact subpower strong-complete seeds
 and fixed-family protected spread. The main switching index reaches PX175; the
 results below sharpen the obstruction to polynomially growing direction
 families and develop the complementary repair route. The active task ledger is
-[`tracks/all-n-product-support-four-stage.md`](../tracks/all-n-product-support-four-stage.md).
+[`tracks/all-n-product-common-product-packet-stage.md`](../tracks/all-n-product-common-product-packet-stage.md).
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -44,6 +44,9 @@ families and develop the complementary repair route. The active task ledger is
 | PX207 | Every fixed background anchor supports at most `mathfrak d(N)t^2` compatible candidate pairs | PROVED | `docs/108-ambient-divisor-support-four.md` |
 | PX208 | Ambient divisor energy pays support-four collateral on blocks above the `N^(2/3+epsilon)` scale | PROVED | `docs/108-ambient-divisor-support-four.md` |
 | PX209 | Geometric-progression endpoints give one anchor with `Theta(t^3)` support-four pairs | PROVED | `docs/108-ambient-divisor-support-four.md` |
+| PX210 | Support-four pairs through one anchor are exactly vertex-disjoint pairs inside equal-product packets | PROVED | `docs/109-common-product-packet-extraction.md` |
+| PX211 | Large anchor-weighted support-four load forces a quantitative common-anchor/common-product packet | PROVED | `docs/109-common-product-packet-extraction.md` |
+| PX212 | Large common-product packets admit a constant-density fixed-rank-spread release bank avoiding all packet transpositions | PROVED | `docs/109-common-product-packet-extraction.md` |
 
 ## Current exact boundary
 
@@ -60,31 +63,22 @@ Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
 The low-syndrome repair route now has a scale-sensitive, conditioning-stable
-recursive decoder.
+recursive decoder with an executable support-four packet release.
 
-- PX183--PX184 identify the uniform-bank logarithmic barrier.
-- PX185--PX190 remove the internal rank-three logarithm, either structurally on
-  arithmetic blocks or universally by square-root thinning.
-- PX191--PX195 identify the remaining `T_2` sector with simultaneous-rainbow
-  collisions and decode every large collision-local minimum back into a loaded
-  line or clean star.
-- PX196--PX200 give bounded-depth bank existence, conditioning-stable spread,
-  and the sharp executability threshold.
-- PX201--PX204 convert endpoint support excess into thinning powers and an exact
-  destroyed-mass improvement criterion.
-- PX205--PX206 classify rank-two support and show that support two is constant
-  scale while support three is linear after thinning.
-- PX207--PX208 use ambient integer divisor energy to make support four `o(s)` on
-  every block with `t>=N^(2/3+epsilon)` at fixed recursion depth.
-- PX209 shows why this arithmetic loss is real: one anchor can already carry
-  cubic support-four energy.
+- PX183--PX190 isolate and remove the internal rematching logarithm.
+- PX191--PX195 decode large mixed `T_2` collision minima back into loaded lines
+  or clean stars.
+- PX196--PX204 provide bounded-depth bank existence, conditioned spread,
+  support-sensitive thinning, and the exact improvement criterion.
+- PX205--PX209 classify rank-two support, pay support two and support three, and
+  pay support four on blocks above `N^(2/3+epsilon)`.
+- PX210--PX211 turn large residual support-four mass into a common anchor/product
+  packet of quantitative size.
+- PX212 releases every sufficiently large packet through a constant-density
+  no-two-cycle matching bank while preserving fixed-rank spread.
 
-The remaining rank-two frontier is confined to medium and small decoder blocks
-
-\[
-t\le N^{2/3+o(1)}.
-\]
-
-The next obligation is a scale-sensitive decoder or aggregation theorem in this
-range. The rank-one and rank-three constants and an absolute recursion depth
-remain open; no exact infinite product closure is claimed yet.
+The immediate obligation is external collateral accounting for the PX212
+release measure: collisions through other anchors and product levels must be
+smaller than the packet-certified mass destroyed. Rank-one support two,
+rank-three short cycles, and an absolute recursion depth remain open; no exact
+infinite product closure is claimed yet.
