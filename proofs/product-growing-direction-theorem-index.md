@@ -39,6 +39,8 @@ families and develop the complementary repair route. The active task ledger is
 | PX202 | Conditioned bounded-forbidden spread transfers support-sector counts to expected certificate load | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
 | PX203 | The only undamped diagonal-free sectors are rematching transpositions and directed three-cycles | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
 | PX204 | A support-sector load smaller than the guaranteed destroyed mass yields a strictly improving rematching | PROVED | `docs/106-support-excess-thinning-and-cycle-core.md` |
+| PX205 | Rank-two support sectors are exactly a two-cycle, a directed two-path, or two disjoint source-to-target arcs, with exact counts | PROVED | `docs/107-rank-two-support-path-reduction.md` |
+| PX206 | Under bounded line occupancy, support-two rank-two load is constant-scale and support-three load is linear after square-root thinning | PROVED | `docs/107-rank-two-support-path-reduction.md` |
 
 ## Current exact boundary
 
@@ -75,9 +77,12 @@ recursive decoder.
   power saving; the transposition contribution is already bounded by selected
   line occupancy.
 - PX204 gives the exact destroyed-mass versus support-load improvement criterion.
+- PX205--PX206 close the rank-two support-three subproblem at the asymptotic
+  level: directed two-paths contribute only linearly in the thinned block order.
 
-The next obligation is now quantitative rather than organizational: bound the
-support-two rank-one load, the support-three/support-four rank-two loads, and the
-support-excess rank-three loads along one decoder generation strongly enough to
-apply PX204 twice. An absolute recursion depth or monotone generational potential
-is still open, and no exact infinite product closure is claimed yet.
+The unique potentially superlinear rank-two sector is now support four: two
+candidate arcs whose source and target endpoint-index sets are disjoint. The
+next obligation is to prove `W_(2,4)=O(t^3)` after decoder extraction, or show
+that larger support-four mass forces another executable geometric batch. The
+rank-one and rank-three constants and an absolute recursion depth remain open;
+no exact infinite product closure is claimed yet.
