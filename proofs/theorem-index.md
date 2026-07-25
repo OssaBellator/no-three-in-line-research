@@ -68,6 +68,12 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3dg–AC3di | Coherent scale dispersion has at most thirty conflict ratios and a row-column-disjoint `1/31` scale bank | PROVED | `docs/alternating-core-ri-scale-dispersion.md` |
 | AC3dj–AC3dk | Reflected `CD` roles have exact effective denominators and finite profiles without a cancellation-height label | PROVED (imports BDA5aa–BDA5ad) | `docs/alternating-core-bda-reflected-role.md` |
 | AC3dl–AC3dm | Reflected scales form one class modulo `q/gcd(2A,q)` and admit weighted genuine `h,h+q` co-anchor extraction | PROVED | `docs/alternating-core-bda-reflected-role.md` |
+| AC3dn–AC3do | Exact RI companion records have injective private current-factor payment and satisfy Hall with equality | PROVED | `docs/alternating-core-ri-companion-payment.md` |
+| AC3dp–AC3dq | Companion root changes have one capacity-one fibre ticket; absent anchors route to paid banks or labelled overloads | PROVED | `docs/alternating-core-ri-companion-payment.md` |
+| AC3dr–AC3dt | Off-family companions form four-point current lines and yield a `1/31` support bank before scoped extraction | PROVED | `docs/alternating-core-ri-companion-payment.md` |
+| AC3du | Every exact BDA scalar profile yields a paid pair bank, endpoint front, or oriented one-sided front | PROVED (imports BDA5ae–BDA5ah) | `docs/alternating-core-bda-one-sided-fronts.md` |
+| AC3dv–AC3dw | One-sided BDA fronts have private slot payment and a scope-complete paid-bank-or-labelled-overload router | PROVED | `docs/alternating-core-bda-one-sided-fronts.md` |
+| AC3dx | AC3am composes with the `theta=1/2` front router at losses `1/8,1/8,1/16` before scoped conflicts | PROVED | `docs/alternating-core-bda-one-sided-fronts.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
