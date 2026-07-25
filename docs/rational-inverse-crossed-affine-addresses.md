@@ -2,7 +2,7 @@
 
 **Branch:** `research/rational-inverse-expansion`
 
-RI5o--RI5p localize failure of the singleton auxiliary-transposition bank to a vertical, horizontal, or paired crossed-cell channel. This note assigns every such collateral triple an exact primitive direction and signed affine offset. The pair of values identifies the auxiliary state inside a fixed channel.
+RI5o--RI5p localize failure of the singleton auxiliary-transposition bank to a vertical, horizontal, or paired crossed-cell channel. This note assigns every such collateral triple an exact primitive direction and signed affine offset. Inside a fixed channel, that address identifies the auxiliary state.
 
 ## Auxiliary displacement coordinates
 
@@ -92,7 +92,7 @@ and every cell \(Z\) of the triple satisfies
 
 ### Horizontal channel
 
-Suppose the triple contains \(H_c\) but not \(V_c\). Its primitive direction \(e=(\alpha,\beta)\) has \(eta\ne0\), and
+Suppose the triple contains \(H_c\) but not \(V_c\). Its primitive direction \(e=(\alpha,\beta)\) has \(\beta\ne0\), and
 
 \[
 \boxed{
@@ -154,7 +154,7 @@ In the vertical channel, \(V_c-q_0=(0,\Delta r)\), so
 \det(e,V_c-q_0)=\alpha\Delta r.
 \]
 
-Every point on the same line has the same determinant against \(e\), proving the formula. Since \(\alpha>0\), the offset determines \(\Delta r\). The blocker matching has one column in each row, so \(r_c=r_0+\Delta r\) determines \(c\).
+Every point on the same line has the same determinant against \(e\). Since \(\alpha>0\), the offset determines \(\Delta r\). The blocker matching has one column in each row, so \(r_c=r_0+\Delta r\) determines \(c\).
 
 In the horizontal channel, \(H_c-q_0=(\Delta c,0)\), giving
 
@@ -179,11 +179,11 @@ so the primitive direction is \((a,-b)\). Moreover,
 =mab.
 \]
 
-The same value holds on the full line. A fixed primitive reflected direction determines \((a,b)\), while the nonzero product \(ab\) makes the offset determine \(m\). Hence it determines \(p_c=q_0+m(a,b)\), and therefore \(c\). \(\square\)
+A fixed reflected direction determines \((a,b)\), while the nonzero product \(ab\) makes the offset determine \(m\). Hence it determines \(p_c=q_0+m(a,b)\), and therefore \(c\). \(\square\)
 
 ## Explicit intersection addresses
 
-The one-cross formulas may also be written directly from the two context cells. Let
+Let the two context cells in a one-cross channel be
 
 \[
 X=(x_1,y_1),
@@ -215,38 +215,39 @@ Thus a fixed context pair cannot recur in the same channel for two different aux
 
 ## RI5r -- direction-offset concentration router -- PROVED
 
-Let one RI5o channel/profile class have total candidate weight \(S\). Group its candidates first by primitive line direction \(e\), writing \(S_e\) for the corresponding weight.
+Let one RI5o channel/profile class have total candidate weight \(S\). Group its candidates by primitive line direction \(e\), writing \(S_e\) for the corresponding weight.
 
-For every real threshold \(\gamma>0\), at least one of the following holds.
+For every real threshold \(\gamma>0\), either some direction satisfies
 
-1. **Heavy primitive line direction.** Some \(e\) satisfies
-   \[
-   \boxed{S_e>\gamma.}
-   \]
-2. **Direction spread.** At least
-   \[
-   \boxed{
-   \left\lceil\frac{S}{\gamma}\right\rceil
-   }
-   \]
-   distinct primitive directions occur.
+\[
+\boxed{S_e>\gamma,}
+\]
 
-Outcome 2 holds whenever outcome 1 fails.
+or at least
 
-Now fix a heavy direction \(e\) of weight \(R=S_e\), and group that class by signed offset \(O\), with weights \(R_O\). For every threshold \(eta>0\), at least one of the following holds.
+\[
+\boxed{
+\left\lceil\frac{S}{\gamma}\right\rceil
+}
+\]
 
-1. **Heavy exact affine line.** Some offset satisfies
-   \[
-   \boxed{R_O>\beta.}
-   \]
-   By RI5q this is also one heavy auxiliary state inside the selected channel.
-2. **Parallel-line spread.** At least
-   \[
-   \boxed{
-   \left\lceil\frac{R}{\beta}\right\rceil
-   }
-   \]
-   distinct offsets occur. These are distinct parallel affine lines and distinct auxiliary states.
+distinct primitive directions occur.
+
+Now fix a heavy direction \(e\) of weight \(R=S_e\), and group it by signed offset \(O\), with weights \(R_O\). For every threshold \(eta>0\), either some exact affine line satisfies
+
+\[
+\boxed{R_O>\beta,}
+\]
+
+or at least
+
+\[
+\boxed{
+\left\lceil\frac{R}{\beta}\right\rceil
+}
+\]
+
+distinct offsets occur. In the latter case they are distinct parallel affine lines and distinct auxiliary states.
 
 ### Proof
 
@@ -261,7 +262,7 @@ S\ge
 \frac{(n-1)(W-F)}{3L}.
 \]
 
-Therefore the failed bank returns one of the following fully geometric outputs:
+Therefore the failed bank returns one of:
 
 - at least
   \[
@@ -270,21 +271,21 @@ Therefore the failed bank returns one of the following fully geometric outputs:
   \right\rceil
   \]
   primitive collateral directions;
-- one primitive direction carrying more than \(\gamma\), followed by at least \(\lceil R/\beta\rceil\) distinct parallel offsets;
+- one primitive direction carrying more than \(\gamma\), followed by at least \(\lceil R/\betaceil\) distinct parallel offsets;
 - one exact affine line and auxiliary state carrying more than \(eta\).
 
 For the paired channel the primitive direction is the reflection of the old blocker-edge direction, and the offsets \(mab\) form a radial scale stack. For the vertical and horizontal channels, the offsets are respectively \(\alpha(r_c-r_0)\) and \(-\beta(c-c_0)\), so parallel-line spread is exactly crossed-row or crossed-column spread.
 
 ## Interface to RI6, AC3, and BDA
 
-The three crossed channels no longer require separate unstructured arithmetic classifications.
+The three crossed channels now share one arithmetic language.
 
 - Direction spread is genuine slope growth.
 - Parallel-line spread is a paid affine-offset stack.
 - A heavy exact line is localized to one auxiliary rectangle.
 - In the paired channel the old blocker direction \((a,b)\) and new collateral direction \((a,-b)\) form the same reflection pair that appears in the BDA \(CD\) decoder.
 
-The quotient label and physical scale class remain attached, so repeated heavy addresses can enter the finite profile quotient while spread enters the geometric or alternating-core cleaning routes.
+The quotient label and physical scale class remain attached, so repeated heavy addresses can enter the finite profile quotient while spread enters geometric or alternating-core cleaning.
 
 ## Finite check
 
