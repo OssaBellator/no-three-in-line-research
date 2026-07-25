@@ -21,10 +21,11 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR433--438 | Matching-contraction cycle criterion, exact one-edge exchange corridor, chain batch flips, exact Dilworth cycle-cover width, batch-or-branch dichotomy, and linear temporal cycle compression | PROVED | `docs/145-prime-power-exchange-corridor-path-cover.md` |
 | CMR439--443 | Sparse rollback escape, minimum rollback essential core, cost-or-factorization dichotomy, terminal-certificate rollback, and quadratic rollback-incidence packing/concentration | PROVED | `docs/146-prime-power-sparse-rollback-factorization.md` |
 | CMR444--447 | Exact rollback full-token incidence, cheap rollback payment, universal restored-edge recreation support, and harmonic packet rollback cost | PROVED | `docs/147-prime-power-rollback-incidence-payment.md` |
+| CMR448--452 | Minimum-cost rollback characterization, no-negative alternating cycles, zero-cycle connectivity, exact tight optimal host, and integral rollback-level potentials | PROVED | `docs/148-prime-power-rollback-optimal-face.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR447 is qualitative geometric payment for cheap rollback
-footprints and payment for repeated local ancestor resets. Every final forced
-edge can be escaped by restoring at most `t` deleted edges. A rollback of size
-`k` has exact labelled full-token cost `(p+1)(h-1)k`; large minimum rollback
-cost already forces exact lower-dimensional host factorization.
+frontier after CMR452 is geometric analysis of the layered tight rollback host
+and payment for repeated local ancestor resets. Minimum rollback states are
+exactly the perfect matchings of a canonical tight host. Its exchange arcs have
+nonnegative reduced cost and lie on integer potential levels in
+`[-(t-1),0]`; arbitrary positive-cost state excursions are unnecessary.
