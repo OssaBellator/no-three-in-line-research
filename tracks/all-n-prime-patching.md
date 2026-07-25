@@ -42,7 +42,7 @@ The unresolved work is geometric preparation of a sufficiently clean bank.
 
 ## 1. Permanent corrections
 
-Two earlier assumptions are refuted.
+Three shortcuts are ruled out.
 
 1. Independent old-column and old-row templates cannot retain constant
    matching-admissible density at sublinear width. Matching coordinates must be
@@ -50,10 +50,9 @@ Two earlier assumptions are refuted.
 2. Numerical labels are actual final grid coordinates. Unused labels cannot be
    discarded and then compressed without risking loss of saturation and
    collinearity preservation.
-
-A third correction is now explicit: the source-star alternative has a common
-source endpoint, whereas the older alternating-star bank assumes a common
-candidate point. Those two geometries are not interchangeable.
+3. The source-star alternative has a common source endpoint, whereas the older
+   alternating-star bank assumes a common candidate point. Those geometries are
+   not interchangeable.
 
 ## 2. Slab-optimal matching-pool architecture
 
@@ -205,36 +204,107 @@ insertion cost zero.
 ## 9. Support-core regularisation
 
 Deleting `o(q)` exceptional endpoint indices preserves `(1-o(1))q` credit units
-and decreases every support family. Therefore isolated rich fibres and binary
-stars are not terminal.
+and decreases every support family. Isolated rich fibres and binary stars are not
+terminal.
 
-Persistent failure forces either:
+Persistent failure forces either `Omega(q^2)` simple unary support or
+`Omega(q^3)` binary shadow support. Hall and binary cores then localise into
+recapture lines, endpoint-cell fans, or resource-disjoint conflict banks.
+
+## 10. Binary congestion-cover endpoint
+
+Let `mathcal B` be the simple binary insertion-shadow family on `E(G_0)`. A binary
+cover `C` contains at least one endpoint cell from every conflict. Its cost is
 
 \[
-\Omega(q^2)
+\Delta(C)=
+\max_{v\in L\cup R}|\{a\in C:v\in a\}|.
 \]
 
-simple unary support in a linear fibre core, or
+The fractional minimum congestion `tau^*(mathcal B)` satisfies the exact
+factor-two rounding theorem
 
 \[
-\Omega(q^3)
+\boxed{\Delta(C)\le2\tau^*(\mathcal B).}
 \]
 
-binary shadow support in a linear conflict core.
+Deleting `C` converts every binary conflict into unary host deletion. If the
+residual host is superregular and its source pair/triple counts are summable, a
+spread perfect matching gives a source-admissible trade with insertion shadow
+zero.
 
-The Hall rectangle and binary core localise further.
+If the covered host has no perfect matching, its Hall rectangle contains at least
 
-- A recapture-dominated Hall rectangle contains `Omega(q)` designated lines,
-  each meeting the endpoint rectangle in `Omega(q)` cells.
-- A cubic binary core contains either one endpoint cell with `Omega(q)` shadow
-  partners or `Omega(q)` resource-disjoint binary conflicts.
-- The endpoint-cell fan gives either a common-candidate line with many endpoint
-  intersections or many distinct controller candidates.
+\[
+|X||Y|-2\tau^*(\mathcal B)\min\{|X|,|Y|\}
+\]
 
-These are the exact rectangle, tomographic, and fan resources for the next
-conversion.
+cells already forbidden in `G_0`. Thus a low-congestion cover cannot manufacture
+a new macroscopic Hall obstruction.
 
-## 10. Dynamic pool excess-shadow potential
+The fractional problem also has an exact dual. Conflict weights are bounded at
+each cell by the sum of two endpoint-resource prices whose total mass is at most
+one. The hard combinatorial binary case is therefore a linear-congestion dual
+packing, not raw cubic conflict count.
+
+## 11. Line-supported binary covers
+
+For any nonaxis witness line, its allowed trace in `G_0` has at most one cell in
+every old row and column. It is a matching. Deleting every trace cell except one
+covers every binary conflict assigned to that line with congestion one.
+
+For a family of typed witness lines, the simple union cover has congestion at most
+
+\[
+D_{\mathcal L}
+=
+\max_v
+|\{\lambda:
+P_E(\lambda)\text{ contains a cell incident with }v\}|.
+\]
+
+Consequently all line-supported binary shadow is absorbed whenever
+`D_mathcal L=o(q)`. A single rich line, a complete conflict clique on one line,
+or a resource-disjoint family of rich lines is no longer open.
+
+The remaining geometric binary object is a linear pencil of distinct typed
+candidate lines through common endpoint resources.
+
+## 12. Rich owner-line assignment energy
+
+For owner candidate `z_i`, current endpoint `(x_i,y_i)`, and replacement
+`(x_i,y_j)`, let `h_ij` count the target endpoint cells on the corresponding
+owner line. Define
+
+\[
+H_0=\sum_i h_{ii},
+\qquad
+W_\mu=\sum_{(i,j)\text{ permitted}}h_{ij}.
+\]
+
+A source-valid endpoint distribution with one-cell marginal at most `K/q`
+satisfies
+
+\[
+\mathbb E H(\pi)
+\le
+\frac KqW_\mu.
+\]
+
+Hence the rich recapture-line obstruction decreases whenever
+
+\[
+\frac KqW_\mu<H_0.
+\]
+
+If a linear bank has at least `cq` current intersections per line and this
+inequality fails, a constant fraction of all owner/replacement assignments are
+grid-rich. Their bipartite graph contains a linear compatible matching.
+
+The unresolved recapture object is therefore a second-generation grid-rich
+pencil core, not compatible-resource extraction.
+
+## 13. Dynamic pool excess-shadow potential
 
 Inside one controller pool, endpoint permutations preserve the pool's old-column
 set `X_i` and old-row set `Y_i`. Hence they preserve the complete candidate-cell
@@ -266,7 +336,7 @@ For any fixed density threshold `eta`, a uniform pool-compatible improving trade
 terminates below `eta`. Uniform thresholds `eta_m=o(1)` yield `o(1)` bad cell
 density; improvement whenever `Xi>0` terminates at `Xi=0`.
 
-## 11. Current exact bottleneck
+## 14. Current exact bottleneck
 
 The missing theorem now has the following concrete forms.
 
@@ -275,15 +345,25 @@ The missing theorem now has the following concrete forms.
 Prove the controller-aware graphs satisfy the complementary-degree global
 allocation condition.
 
-### Hall/tomographic conversion
+### Hall conversion
 
-Convert a forbidden Hall rectangle, a matchable but non-superregular zero-unary
-host, or the linear bank of rich designated recapture lines.
+Convert a forbidden Hall rectangle or a matchable but non-superregular zero-unary
+host.
 
-### Binary conversion
+### Recapture-pencil conversion
 
-Convert the endpoint-cell fan or the linear resource-disjoint binary conflict
-bank.
+Convert the second-generation grid-rich owner-line pencil forced when
+
+\[
+K W_\mu/q\ge H_0.
+\]
+
+### Binary-congestion conversion
+
+Rule out or convert either:
+
+- a linear-congestion fractional binary packing; or
+- a linear witness-line-overlap pencil through common endpoint resources.
 
 ### Pool-compatible paid conversion
 
@@ -301,7 +381,7 @@ directly creates the dense global allocation needed by the macro theorem.
 The branch does not yet prove this final conversion theorem and therefore does
 not prove the no-three-in-line conjecture.
 
-## 12. Constant-width side analysis
+## 15. Constant-width side analysis
 
 The older width-two route remains diagnostic. It proves exact 36-state banks,
 clean-state packing criteria, deletion-aware profiles, and blocker-demand CSPs.
@@ -345,6 +425,15 @@ python scripts/analyze_endpoint_hall_rectangles.py \
 python scripts/analyze_dynamic_cell_shadow.py \
   certificates/prime-patching-small.json \
   --labels 12
+
+python scripts/check_binary_shadow_cover.py \
+  experiments/binary-shadow-cover-example.json
+
+python scripts/check_binary_shadow_cover.py \
+  experiments/line-supported-binary-cover-example.json
+
+python scripts/check_rich_line_energy.py \
+  experiments/rich-line-energy-example.json
 ```
 
 These are diagnostics or exact finite checks, not asymptotic proofs without the
