@@ -39,6 +39,8 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3hl–AC3hp | Historical line/fixed-context stars route to pair-core rematching, direct current-anchor rematching, a heavy certificate or a realized failed-bank rank | PROVED | `docs/alternating-core-historical-line-router.md` |
 | AC3hq–AC3hr | Occurrence-faithful ordinary co-anchor pairs automatically enter the collision/clean-support audit; complete AC3v envelopes replace conflict-faithfulness assumptions | PROVED | `docs/alternating-core-bda-support-correction.md` |
 | AC3hs–AC3ht | Raw reflected `CD` cells are nonradial; reflected profiles execute through separately proved radial support or realized-rank pivot routing | PROVED | `docs/alternating-core-bda-support-correction.md` |
+| AC3hu–AC3hv | Physical adjacent-scale moves form ticketed forests; strict denominator/scalar epochs have one bounded potential | PROVED | `docs/alternating-core-scalar-cycle-import.md` |
+| AC3hw | Every remaining arithmetic cycle contains a same-denominator non-scalar profile change in one explicit finite field | PROVED | `docs/alternating-core-scalar-cycle-import.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
