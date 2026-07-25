@@ -138,17 +138,13 @@ D_\tau^{(2)}
 ### Packet recreation, deletion, and ancestry
 
 - A selected conflict recreated by a reset `M -> M'` contains an **entering**
-  edge of `M'\setminus M`. The leaving set `M\setminus M'`, which is returned to
-  the complementary available host, has exactly the same cardinality. Thus the
-  earlier packet-recreation inequalities remain valid after correcting the edge
-  orientation.
+  edge of `M'\setminus M`. The leaving set `M\setminus M'`, returned to the
+  complementary available host, has exactly the same cardinality.
 - For packet weight \(W\), at most
   \[
   2(t-1)^2W\,|M'\setminus M|
   \]
   packet triples are recreated by one selected-state reset.
-- For the first-dirty packet schedule, packet losses and installations are
-  charged to the same entering/leaving churn magnitude.
 - Inside one certificate-directed deletion pass, every lossy packet reset has
   an immediate dichotomy:
   1. delete a nonessential edge of one recreated triple and preserve a perfect
@@ -159,20 +155,25 @@ D_\tau^{(2)}
   |E(G_0)|-t\le t(t-1)
   \]
   times.
-- If `P` is the packet count and `F` is the number of fully forced packet events,
-  the number `T` of packet installations satisfies
+- Essentiality is monotone under later matchability-preserving deletions. Hence
+  a packet triple whose three edges are essential remains present in every
+  later perfect matching of the same deletion pass and cannot be cleaned by
+  another selected-state reset.
+- The first-dirty packet schedule therefore has an unconditional local endpoint:
+  it either cleans every packet after at most
   \[
-  T\le P\bigl(1+t(t-1)+F\bigr).
+  P\bigl(1+t(t-1)\bigr)
   \]
-- If every earlier deletion certificate receives at most `w` incoming links
-  from fully forced packet events, then
+  installations, or reaches one terminal fully forced packet certificate after
+  at most
   \[
-  T
-  \le
-  P\bigl(1+(1+w)t(t-1)\bigr).
+  P\bigl(2+t(t-1)\bigr)
   \]
-  Thus packet scheduling inside one deletion pass is reduced to ancestry width,
-  not cumulative churn.
+  installations.
+- The terminal certificate has at most three backward CMR217 ancestry links.
+  Resolving it requires an operation outside the current deletion pass, such as
+  envelope expansion, host decomposition, reserve replacement, or simultaneous
+  exchange-cycle resampling.
 - Every off-token witness certificate already opens an executable prefix
   continuation. The residual forced branch is exchange ancestry.
 
@@ -194,9 +195,9 @@ D_\tau^{(2)}
 
 ## What remains conditional
 
-1. **Forced ancestry width.** Bound the incoming width of the fully forced
+1. **Terminal forced-ancestry resolution.** Bound the incoming width of the
    CMR217 certificate-exchange DAG, or simultaneously resample several exchange
-   cycles.
+   cycles, to escape the terminal certificate exposed by CMR428.
 2. **Repeated local ancestor resets.** Extend the deletion/ancestry payment to
    repeated compatible prefix-ancestor slots not arising from packet loss.
 3. **Low-height carry absorption.** Charge the remaining lower-height lines to
@@ -215,10 +216,11 @@ D_\tau^{(2)}
 There is no complete proof. On the prime-power route, the generic first moment,
 prefix and joint-parent collateral, terminal contraction, Hall-blocker repair,
 heavy-token continuation, exact harmonic-packet completion, one-sweep return
-costs, exact state-cycle erasure, polynomial state-expansion payment, packet
-recreation charging, and packet-loss deletion/ancestry reduction are closed.
+costs, exact state-cycle erasure, polynomial state-expansion payment, corrected
+packet-recreation charging, deletion/ancestry response, and polynomial
+completion-or-terminal-ancestry packet scheduling are closed.
 
-The principal remaining prime-power theorem is now a quantitative bound or
-simultaneous-resampling mechanism for fully forced exchange ancestry, together
-with a corresponding payment for repeated local ancestor resets. Arbitrary
-side-length coverage remains necessary afterward.
+The principal remaining prime-power theorem is now a mechanism to resolve one
+terminal fully forced exchange-ancestry certificate, together with a
+corresponding payment for repeated local ancestor resets. Arbitrary side-length
+coverage remains necessary afterward.
