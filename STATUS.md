@@ -147,8 +147,88 @@ failure forces a linear support core:
 - `Omega(q^2)` simple unary support; or
 - `Omega(q^3)` binary conflict support.
 
-The cubic binary core yields either a linear endpoint-cell fan with candidate-line
-structure or a linear family of resource-disjoint binary conflicts.
+The older localization gives either a linear endpoint-cell fan with candidate-line
+structure or a linear family of resource-disjoint binary conflicts. The new
+cover endpoint below replaces raw cubic size by a more precise congestion
+parameter.
+
+### Binary conflicts reduce to congestion covers
+
+Let `mathcal B` be the simple binary insertion-shadow family on the edges of
+`G_0`. A binary cover deletes at least one endpoint cell from every conflict. Its
+cost is the maximum number of deleted cells incident with one old row or column.
+
+The fractional minimum congestion `tau^*(mathcal B)` has a factor-two integral
+rounding:
+
+\[
+\Delta(C)\le2\tau^*(\mathcal B).
+\]
+
+Deleting `C` removes every binary insertion-shadow event before matching. If the
+residual host is superregular and the source pair/triple counts are summable, a
+spread perfect matching has complete insertion shadow zero.
+
+If the covered host has no perfect matching, a Hall rectangle contains at least
+
+\[
+|X||Y|-2\tau^*(\mathcal B)\min\{|X|,|Y|\}
+\]
+
+cells already forbidden before the binary cover. Thus an `o(q)`-congestion cover
+cannot create a new macroscopic Hall obstruction.
+
+The fractional problem has an exact dual: binary conflicts receive weights
+`y_B`, endpoint resources receive prices `lambda_v` of total mass at most one,
+and each cell's incident conflict weight is bounded by the sum of its two endpoint
+prices. A genuinely hard binary instance therefore has a linear-congestion
+fractional packing certificate, not merely many unweighted conflicts.
+
+### Line-supported binary conflicts are easy unless lines overlap
+
+For any nonaxis witness line, its allowed endpoint trace contains at most one cell
+in every old row and column. It is therefore a matching. Deleting all but one
+cell of that trace covers every binary conflict assigned to the line with resource
+congestion one.
+
+For a family of typed witness lines, the union cover has congestion at most the
+maximum number of line traces incident with one endpoint resource. Hence all
+binary shadow is absorbed whenever this witness-line overlap is `o(q)`.
+
+The remaining geometric binary obstruction is a linear pencil of distinct
+candidate lines through common endpoint resources. One rich line, one line clique,
+or a resource-disjoint collection of rich lines is no longer open.
+
+### Rich recapture lines have an assignment-energy endpoint
+
+For owner candidate `z_i`, current endpoint `(x_i,y_i)`, and possible replacement
+`(x_i,y_j)`, let `h_ij` be the number of target endpoint cells on the corresponding
+owner line. Put
+
+\[
+H_0=\sum_i h_{ii},
+\qquad
+W_\mu=\sum_{(i,j)\text{ permitted}}h_{ij}.
+\]
+
+A source-valid endpoint distribution with one-cell marginal at most `K/q`
+satisfies
+
+\[
+\mathbb E H(\pi)\le\frac KqW_\mu.
+\]
+
+Thus the rich recapture-line obstruction decreases whenever
+
+\[
+\frac KqW_\mu<H_0.
+\]
+
+If a linear bank has current line load at least `cq` per owner and this inequality
+fails, the permitted assignment matrix contains a quadratic family of entries
+whose lines each have linear endpoint-grid intersection. That family contains a
+linear compatible matching. The unresolved recapture case is therefore a
+grid-rich second-generation pencil core, not extraction of compatible lines.
 
 ### Dynamic pool excess-shadow potential
 
@@ -191,17 +271,18 @@ The remaining theorem is concentrated in the following structural endpoints:
   the complementary-degree criterion;
 - **unary Hall conversion:** convert a forbidden Hall rectangle or a matchable
   but non-superregular zero-unary endpoint host;
-- **recapture-line conversion:** convert the linear tomographic bank of rich
-  designated lines;
-- **binary-core conversion:** neutralize the endpoint-cell fan or the
-  resource-disjoint binary conflict bank;
+- **recapture pencil conversion:** convert the grid-rich owner-line pencil core
+  forced when the source-valid assignment-energy inequality fails;
+- **binary congestion conversion:** rule out or convert a linear-congestion dual
+  packing, equivalently a linear witness-line-overlap pencil in the geometric
+  cover;
 - **pool-compatible paid conversion:** construct source-admissible within-pool
   endpoint trades with excess-shadow insertion cost below the star/resource
   removal credit.
 
 Diffuse weighted residuals, endpoint source validity, isolated rich fibres,
-dynamic controller relabelling, cross-macro completion energy, and termination
-are no longer separate open problems.
+single rich binary lines, dynamic controller relabelling, cross-macro completion
+energy, and termination are no longer separate open problems.
 
 The older constant-width width-two route remains a secondary diagnostic and
 requires blocker-endpoint clustering or protected cross-block deletion trades.
@@ -230,10 +311,11 @@ There is no complete proof. The prime-patching branch now closes matching supply
 exponent-optimal macro width, degree restoration, fixed-rank spread,
 saturation-compatible global allocation interfaces, all external weighted
 completion energy, source-valid resource endpoint conversion, diffuse insertion
-shadow, exact unary Hall reduction, sublinear support pruning, binary-fan
-localisation, and pairing-invariant excess-shadow termination.
+shadow, exact unary Hall reduction, sublinear support pruning, low-congestion
+binary absorption, single-line binary conversion, rich-line assignment reduction,
+and pairing-invariant excess-shadow termination.
 
-The exact remaining theorem concerns direct allocation, Hall or tomographic-line
-conversion, binary-fan/resource-bank conversion, and source-admissible
-pool-compatible paid trades. Until those cases are closed, the branch does not
-prove the no-three-in-line conjecture.
+The exact remaining theorem concerns direct allocation, Hall/non-superregular
+conversion, grid-rich recapture pencils, linear-congestion binary pencils or dual
+packings, and source-admissible pool-compatible paid trades. Until those cases are
+closed, the branch does not prove the no-three-in-line conjecture.
