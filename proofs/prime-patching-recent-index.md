@@ -80,6 +80,9 @@ patch-plus-trade phase of `research/all-n-prime-patching`.
 | PP3ki--PP3kn | Free source-star distinguished endpoint conversion and captive-centre split | PROVED / CONDITIONAL ON HOST | `docs/99-source-endpoint-star-conversion.md` |
 | PP3ko--PP3kt | Hall support colouring, tomographic line banks, and binary fan localization | PROVED | `docs/100-hall-rectangle-and-binary-fan-localization.md` |
 | PP3ku--PP3kz | Pairing-invariant excess cell-shadow potential and dynamic pool termination | PROVED / CONDITIONAL ON CONVERSION | `docs/101-dynamic-pool-excess-shadow-potential.md` |
+| PP3la--PP3lf | Binary-shadow congestion cover, factor-two rounding, Hall inheritance, and LP dual | PROVED / FROM SR1 | `docs/102-binary-shadow-congestion-covers.md` |
+| PP3lg--PP3ll | Rich owner-line assignment energy, pencil-core extraction, and monotone reduction | PROVED / CONDITIONAL ON UNIFORM CONVERSION | `docs/103-rich-line-endpoint-energy.md` |
+| PP3lm--PP3lq | Congestion-one line covers and witness-line-overlap obstruction | PROVED | `docs/104-line-supported-binary-covers.md` |
 
 ## Current exact target
 
@@ -106,46 +109,61 @@ X times Y contained in the unary forbidden support,
 |X|+|Y| > q.
 ```
 
-A macroscopic rectangle contains a quadratic core of one witness type. A
-recapture-dominated core yields a linear bank of designated lines, each meeting
-the endpoint rectangle in linearly many cells. The cubic binary support core
-yields either a linear endpoint-cell fan with candidate-line structure or a
-linear resource-disjoint binary conflict bank.
+Binary conflicts may now be converted into unary host deletion. The fractional
+minimum endpoint-resource congestion `tau^*(mathcal B)` has a factor-two integral
+cover and an exact weighted dual. If it is `o(q)`, binary shadow is absorbed at
+low unary degree. A residual matching failure returns a Hall rectangle whose
+macroscopic part was already present before the cover.
 
-Isolated rich resources are prunable. Persistent failure forces `Omega(q^2)`
-unary support or `Omega(q^3)` binary support in a linear endpoint-resource core.
-
-The source-star geometry has been corrected: PP3hx gives a common source
-endpoint, not a common candidate point. The apparent captive-centre obstruction
-from fixed controller identities is removed by the dynamic excess potential
+Geometrically, every allowed trace of one nonaxis candidate line is a matching,
+so all conflicts assigned to that line have a cover of congestion one. The hard
+binary case is therefore either:
 
 ```text
-Xi(S) = sum_z (number of source blocker pairs through z - 1).
+linear fractional cover congestion,
 ```
 
-The subtracted unit is the unique automatic controller-containing axis blocker.
-Every additional blocker is nonaxis and controller-disjoint. Permuting matching
-endpoints inside one pool preserves its old-column set, old-row set, and complete
-candidate-cell universe, so `Xi` has an exact removal-credit-minus-insertion-cost
-identity even when controller pairings change. A captive star supplies its full
-linear credit to this potential.
+or
 
-For every fixed density threshold, a uniform pool-compatible conversion theorem
-terminates below that threshold; a uniform `o(1)` threshold sequence gives
-`o(1)` bad cell-entry density.
+```text
+one endpoint resource lying on traces of Omega(q) typed witness lines.
+```
+
+A recapture-dominated Hall core has an owner-line assignment matrix. A
+source-valid spread permutation decreases its incidence whenever
+
+```text
+K W_mu / q < H_0.
+```
+
+If a linear rich-line bank fails this endpoint, it contains a quadratic family of
+grid-rich owner/replacement assignments and a linear compatible matching inside
+that family. Compatible-line extraction is no longer open; the remaining object
+is a second-generation grid-rich pencil core.
+
+The pairing-invariant potential
+
+```text
+Xi(S) = sum_z (number of source blocker pairs through z - 1)
+```
+
+counts exactly the additional nonaxis cell blockers while allowing controller
+pairings to change inside fixed coordinate pools. Every pool-compatible trade has
+an exact insertion-cost-minus-removal-credit identity for `Xi`.
 
 The remaining bottleneck is now reduced to:
 
 - prove the controller-aware global label graphs satisfy PP3gl directly; or
 - convert the Hall rectangle or a matchable but non-superregular zero-unary host;
-- convert the tomographic recapture-line bank;
-- convert the binary endpoint-cell fan or resource-disjoint binary bank; and
+- convert the second-generation grid-rich owner-line pencil core;
+- convert a linear-congestion binary dual packing or linear witness-line-overlap
+  pencil; and
 - construct source-admissible pool-compatible endpoint trades whose `Xi`
   insertion cost is below the star/resource removal credit.
 
 Dynamic controller relabelling, diffuse weighted residuals, isolated rich
-fibres, and source admissibility of the resource endpoint trade are no longer
-separate obstructions.
+fibres, individual rich binary lines, raw binary-fan size, and source admissibility
+of the resource endpoint trade are no longer separate obstructions.
 
 The constant-width side analysis PP3el--PP3fc remains a diagnostic: independent
 deletion does not cover additional blockers, unary blocker-cover domains become
