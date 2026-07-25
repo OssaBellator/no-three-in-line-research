@@ -43,13 +43,14 @@ supplement mirrors the collision-free live range recorded in
 | CMR552--557 | Canonical forbidden matching, time-independent collateral profile, static/dynamic selector classification, exact dynamic history bounds, global labelled selector stock, and no-double-counting endpoint | PROVED | `docs/167-prime-power-canonical-selector-ledger.md` |
 | CMR558--563 | Exact support-line decomposition, static rank polarization, heavy/dispersed line-weight lemma, rank-zero residual-line endpoint, rank-one secant-fan endpoint, and canonical static-collateral geometry | PROVED | `docs/168-prime-power-static-selector-line-profile.md` |
 | CMR564--568 | Exact rank-one secant-star splice, linear rank-zero line systems, fan-or-packing extraction, square-root packing, and combined static-selector geometry | PROVED | `docs/169-prime-power-static-line-bank-splice.md` |
+| CMR569--573 | Matching-preserving packed-conflict deletion, fully forced packing bound, private deleted-edge code, distinct restoration payment, and rank-zero packing endpoint | PROVED | `docs/170-prime-power-disjoint-conflict-deletion.md` |
 
 The branch still does not contain a proof of the all-`n` conjecture. After
-CMR568, static selector collateral is a heavy single conflict line, an
-established repeated-cell secant star, or a pairwise cell-disjoint rank-zero
-line-certificate packing. Dynamic selector histories have polynomial labelled
-stock unless one canonical allowed edge pays reintroduction or remains
-persistently unavailable. The immediate targets are mixed-ratio/carry payment
-for the secant star, reserve or conflict-free payment for the rank-zero packing,
-and reserve-depletion or envelope-expansion payment for the persistent
-canonical blocker.
+CMR573, static selector collateral is reduced to heavy single conflict lines or
+established repeated-cell secant stars; the disjoint rank-zero packing branch
+is paid by deletion, forced-core terminality, and private restoration edges.
+Dynamic selector histories have polynomial labelled stock unless one canonical
+allowed edge pays reintroduction or remains persistently unavailable. The
+immediate targets are mixed-ratio/carry or line-energy execution for the static
+objects and reserve-depletion, deletion-ancestry, or envelope-expansion payment
+for the persistent canonical blocker.
