@@ -116,9 +116,12 @@ remains open. This repository does **not** contain a complete proof.
 - Three sharp singleton blockers on the same board side cannot recycle one
   common `(t-1)`-line family. Their common family has size at most \(t-3\), and
   their union contains at least \(t\) real-line signatures.
+- A fully recycled mixed source/source/target singleton fan has, apart from two
+  shared-cell exceptions, a linear population whose row deviations have one
+  common projective ratio modulo \(p\).  The target/target/source form is dual.
 - A broad nontrivial Hall factor has a blocker line of primitive height at most
   \(2(t-1)/(n-2)\), where \(n\) is its smaller side. Hence widths at least seven
-  enter the sub-\(0.43t\) low-height regime.
+  enter the low-height regime.
 - Exact available-cell slack satisfies
 
   \[
@@ -137,15 +140,28 @@ remains open. This repository does **not** contain a complete proof.
   \]
 
   additional candidate-only rank-three prescriptions.
+- Every thin blocker contains a population of size
+
+  \[
+  \Omega_p\!\left(\frac{t}{\log t}\right)
+  \]
+
+  with one first-separation scale and one direction in
+  \(\mathbb P^1(\mathbb F_p)\).  This population exposes either a carry cell of
+  load \(\Omega_p(\sqrt t/\log t)\) or that many distinct occupied carry cells.
+- A width-three seven-hole signature has an exact integer variance.  Either the
+  direction dispersion is at least \(t-10\), or all retained lines are parallel
+  with one of only `72` signed shift pairs.  For prime base \(p\ge11\), the
+  latter case forces equal valuations of the two adjacent source gaps.
 - Under the exact target-specific matching law, the rank-\(1/2/3\) cylinder
   maxima are
 
   \[
-  \frac1{t-1},
+  \frac{1}{t-1},
   \qquad
-  \frac1{(t-1)^2},
+  \frac{1}{(t-1)^2},
   \qquad
-  \frac1{(t-1)^2(t-2)}.
+  \frac{1}{(t-1)^2(t-2)}.
   \]
 - If no anchored rank-one or rank-two certificate exists, some parent source row
   or target column supports more than
@@ -161,7 +177,7 @@ remains open. This repository does **not** contain a complete proof.
   \[
   T_3(w)
   \le
-  \frac43S(H)+\frac{20}{9}t^2+2(t-1)R(H).
+  \frac{4}{3}S(H)+\frac{20}{9}t^2+2(t-1)R(H).
   \]
 
   For every odd \(t\ge1575\), one complete target-specific parent permutation
@@ -193,24 +209,26 @@ No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-1. **Thin and mixed blocker conversion.** Combine mixed source/target singleton
-   fans, width-two external-witness chords, or width-three almost-disjoint
-   triples with the forced cubic outside cover.
-2. **Exact intermediate-band completion.** Upgrade the almost-perfect
+1. **Bounded reuse of thin carry signatures.** Convert a heavy thin carry cell
+   into an absorber or strict envelope expansion, and charge dispersed cells or
+   width-three variance to a scale-direction ledger without repeated payment.
+2. **Weighted mixed-ratio conversion.** Attach destroyed target load to the
+   linear modular-ratio population forced by a recycled mixed singleton fan.
+3. **Exact intermediate-band completion.** Upgrade the almost-perfect
    conflict-free matching below height \(0.42t\) to a complete parent
    permutation while retaining the line reserve and target omission.
-3. **Low-height carry absorption.** Control the remaining lower bands using
+4. **Low-height carry absorption.** Control the remaining lower bands using
    first-separation, primitive direction, quotient, and carry signatures inside
    one fixed envelope.
-4. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
+5. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
    coarse prefix or joint-parent repairs.
-5. **Prime-field terminal conversion.** Transfer the inherited-envelope or
+6. **Prime-field terminal conversion.** Transfer the inherited-envelope or
    reserve-completion mechanism to prime-field carry cycles.
-6. **Square-root divisor boundary.** Remove or absorb the residual nearly
+7. **Square-root divisor boundary.** Remove or absorb the residual nearly
    singular collision terms.
-7. **Further balanced prime families.** Extend the non-reciprocal grid
+8. **Further balanced prime families.** Extend the non-reciprocal grid
    factorization beyond prime seven.
-8. **CRT, product, and side-length coverage.** Control mixed projections and
+9. **CRT, product, and side-length coverage.** Control mixed projections and
    cover arbitrary integer \(n\).
 
 ## Important refutations retained in the notebook
@@ -239,8 +257,10 @@ There is no complete proof. On the composite prime-power route, bank
 construction, first-separation summation, prefix collateral, target-load
 contraction, parent lifting, Hall peeling, target-specific line avoidance, and
 exact high-slice cleaning are closed through the `0.42t` boundary. Broad Hall
-factors and widths four through six reduce to low height; thin widths two and
-three force a cubic outside cover. The principal immediate theorem is conversion
-of that thin/mixed geometry or exact completion of the intermediate-height
-conflict system. A coarse-to-fine budget and arbitrary side-length coverage
-remain necessary afterward.
+factors reduce to low height. Thin widths two and three now concentrate in one
+p-adic direction and satisfy a carry-dispersion/heavy-cell dichotomy; width
+three also has an exact variance-or-bounded-parallelism certificate. Recycled
+mixed fans carry a linear modular-ratio population. The immediate theorem is a
+bounded-reuse/weighted-conversion result for these signatures. Exact
+intermediate-band completion, coarse-to-fine recreation, and arbitrary
+side-length coverage remain necessary afterward.
