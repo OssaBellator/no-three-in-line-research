@@ -257,7 +257,7 @@ classification problem. The remaining fixed-envelope terms are:
 - a monotone payment for repeated ancestor-slot resets;
 - the width of fully forced CMR217 exchange ancestry;
 - and, at full-token resolution, the two-dimensional return mass of
-  CMR389--CMR397.
+  CMR394--CMR402.
 
 Joint-parent resets still require a separate descendant-token profile because
 they preserve envelope row sets but need not preserve all recursive descendant
