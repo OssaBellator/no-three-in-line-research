@@ -28,6 +28,18 @@ This branch-specific ledger groups the long AC chain without duplicating the sha
 | AC3aq | Every paid- and support-faithful BDA role delegates to a heavy atom, dispersed inequality, executable decoder family, or affine chain | PROVED UNDER HYPOTHESES | `docs/alternating-core-bda-delegation.md` |
 | AC3ar | AC3am composes with the BDA adapter at exact loss `1/(2KρL)` | PROVED UNDER HYPOTHESES | `docs/alternating-core-bda-role-composition.md` |
 | AC3as | Every denominator role has a bounded-shape half or a paid large-direction half | PROVED | `docs/alternating-core-bda-role-composition.md` |
+| AC3at | A normalized quotient role gives paid scale mismatch, one heavy physical scale, or physical-scale dispersion | PROVED | `docs/alternating-core-ri-delegation.md` |
+| AC3au | One scale class has exact physical source, partner, anchor, and target-row cosets | PROVED | `docs/alternating-core-ri-delegation.md` |
+| AC3av | Physical completion debt routes to cycle mass, one paid boundary path, and an occupancy-executable two-layer state | PROVED (imports RI5f–RI5l) | `docs/alternating-core-ri-delegation.md` |
+| AC3aw | Any finite RI decoration localizes paid mass to one exact profile | PROVED | `docs/alternating-core-ri-delegation.md` |
+| AC3ax | A faithful AC3am quotient role delegates quantitatively to physical RI completion | PROVED UNDER HYPOTHESES | `docs/alternating-core-ri-delegation.md` |
+| AC3ay | Every real canonical two-channel factor supplies exact RI roots, image, scale coset, and cross-carry | PROVED (imports OP4g) | `docs/alternating-core-op-ri-realization.md` |
+| AC3az | The OP4h audit returns a compatible normalized RI component or an explicit carry/label conflict | PROVED (imports OP4h) | `docs/alternating-core-op-ri-realization.md` |
+| AC3ba | Paid fixed-edge occurrences split into a complete-fibre family or a one-sided family at loss at most `2P` | PROVED | `docs/alternating-core-op-ri-realization.md` |
+| AC3bb | Canonical OP quotient roles compose with the physical RI adapter at exact loss `1/(8RρPKL)` | PROVED UNDER HYPOTHESES | `docs/alternating-core-op-ri-realization.md` |
+| AC3bc | Complete-fibre root weights yield a scale-faithful quarter or a paid one-root scale imbalance | PROVED | `docs/alternating-core-ri-scale-pairing.md` |
+| AC3bd | Coherent scales and one-root imbalance admit exact finite-profile and atom/spread routers | PROVED | `docs/alternating-core-ri-scale-pairing.md` |
+| AC3be | Canonical OP-to-RI delegation no longer assumes scale faithfulness; one coherent class survives at loss `1/(16RρPKL)` | PROVED UNDER HYPOTHESES | `docs/alternating-core-ri-scale-pairing.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
