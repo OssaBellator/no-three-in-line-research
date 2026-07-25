@@ -71,9 +71,18 @@ remains open. This repository does **not** contain a complete proof.
   \sum_{K\in\mathcal K}\frac1K<\frac32.
   \]
 - In particular, any two dyadic intermediate-height bands beginning at height
-  at least five can be cleaned simultaneously. The total harmonic weight of all
-  intermediate bands is still \(\Theta(\log t)\), so packet scheduling and
-  no-return remain necessary.
+  at least five can be cleaned simultaneously.
+- All dyadic bands from \(\max\{5,t^\eta\}\) to \(t\) partition into
+  \[
+  P_\eta(t)
+  \le
+  \left\lceil\frac{1+\log_2t}{2}\right\rceil
+  \]
+  exact harmonic packets. One full packet sweep therefore uses only
+  \(O(\log t)\) whole-parent replacements.
+- The existence of one clean state for every packet is proved. Sequential
+  preservation of earlier packets is not; this is now a recurrence problem,
+  not a missing packet construction.
 
 ### Heavy, dispersed, and repeated full tokens
 
@@ -110,17 +119,33 @@ remains open. This repository does **not** contain a complete proof.
   t^{2/3}+2h t^{1/3}.
   \]
 - The direction-labelled full-token return mass over all nonroot tokens in one
-  pass is
-  \[
-  O_p(t^2\log t).
-  \]
+  prefix pass is \(O_p(t^2\log t)\).
 - Arbitrary recursive histories factor through reset multiplicity: excessive
   return forces repeated use of one of at most \(2b\) compatible ancestor
   depth-layer slots.
-- A whole-parent one-layer reset, including an exact-band replacement, returns
+- A whole-parent one-layer reset, including an exact-packet replacement, returns
   at most \(t/p^b\) full-token edges. One ordered joint-parent reset returns at
-  most \(2t/p^b\). Thus the combined prefix-plus-nonprefix schedule cost is
-  explicit.
+  most \(2t/p^b\).
+- One complete harmonic packet sweep contributes
+  \[
+  I_\tau^{(2),\mathrm{packet}}
+  \le
+  \frac{P_\eta(t)t}{p^b}
+  \]
+  to one token. At the deep threshold, one prefix pass plus one packet sweep
+  gives
+  \[
+  D_\tau^{(2)}
+  \le
+  t^{2/3}
+  +
+  \left(
+  2h+
+  \left\lceil\frac{1+\log_2t}{2}\right\rceil
+  \right)t^{1/3}.
+  \]
+- The aggregate direction-labelled return mass of one prefix pass plus one
+  packet sweep remains \(O_p(t^2\log t)\).
 - Every off-token witness certificate already opens an executable prefix
   continuation. The residual repeated-token branch is fully forced exchange
   ancestry together with repeated use of ancestor or packet states.
@@ -137,11 +162,13 @@ remains open. This repository does **not** contain a complete proof.
 
 ## What remains conditional
 
-1. **Repeated ancestor-state payment.** Charge repeated use of one compatible
-   ancestor or harmonic-packet state to destroyed coarse target load, envelope
-   expansion, reserve consumption, or new exchange ancestry.
-2. **Harmonic packet scheduling.** Combine \(O(\log t)\) exact packets without
-   recreating previously cleaned packets or accumulating excessive reset cost.
+1. **Repeated ancestor/packet-state payment.** Charge repeated use of one
+   compatible ancestor or harmonic-packet state to destroyed coarse target
+   load, envelope expansion, reserve consumption, or new exchange ancestry.
+2. **Packet no-return.** One exact state per packet and the complete one-sweep
+   return budget are proved. Show that installing later packets does not
+   recreate an unbounded number of earlier packet conflicts, or charge every
+   recreation to a monotone quantity.
 3. **Forced ancestry width.** Bound the width of the fully forced
    certificate-exchange DAG or resample several exchange cycles together.
 4. **Low-height carry absorption.** Charge the remaining lower-height lines to
@@ -159,8 +186,8 @@ remains open. This repository does **not** contain a complete proof.
 
 There is no complete proof. On the prime-power route, the generic first moment,
 prefix and joint-parent collateral, terminal contraction, Hall-blocker repair,
-heavy-token continuation, exact harmonic-packet completion, and per-move token
-return profiles are closed. The principal remaining theorem is dynamic:
-schedule all packets while preventing repeated ancestor states and fully forced
-exchange ancestry from recycling the same geometric defects. Arbitrary
-side-length coverage remains necessary afterward.
+heavy-token continuation, exact harmonic-packet completion, and the complete
+one-pass prefix-plus-packet token-return budget are closed. The principal
+remaining theorem is dynamic: prevent repeated ancestor and packet states, and
+fully forced exchange ancestry, from recycling the same geometric defects.
+Arbitrary side-length coverage remains necessary afterward.
