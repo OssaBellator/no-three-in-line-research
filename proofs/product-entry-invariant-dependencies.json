@@ -1,6 +1,6 @@
 {
-  "range": "PX397-PX478",
-  "root": "PX478",
+  "range": "PX397-PX482",
+  "root": "PX482",
   "nodes": {
     "PX397-403": {
       "document": "docs/153-px63-one-hit-derangement-entry.md",
@@ -79,6 +79,12 @@
       "depends_on": ["PX456-460", "PX461-465", "PX466-470", "PX471-473", "PX445-450"],
       "move_space": "arithmetic_only",
       "status": "common_cutoff_effective"
+    },
+    "PX479-482": {
+      "document": "docs/166-exact-depth-plateau-cutoff-compression.md",
+      "depends_on": ["PX461-465", "PX474-478"],
+      "move_space": "arithmetic_only",
+      "status": "common_cutoff_compressed"
     }
   },
   "safety_rules": {
@@ -99,7 +105,8 @@
       "divisor_exponent_denominator": 6,
       "effective_threshold_numerator": 3,
       "effective_threshold_denominator": 5,
-      "explicit_cutoff_power_of_ten": 4000,
+      "original_explicit_cutoff_power_of_ten": 4000,
+      "compressed_cutoff_power_of_ten": 3650,
       "active_joint_packet_count": 0
     }
   }
