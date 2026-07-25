@@ -1,0 +1,15 @@
+{
+  "n": 7,
+  "centre": 0,
+  "lambda": 7,
+  "role_weights": {
+    "unary_in": 0,
+    "unary_out": 0,
+    "rank3_left": 0,
+    "rank3_middle": 7,
+    "rank3_right": 0,
+    "rank4_in_cross": 0,
+    "rank4_out_cross": 0
+  },
+  "source_invalid_chains": []
+}
