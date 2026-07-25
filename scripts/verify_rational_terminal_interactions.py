@@ -9,16 +9,20 @@ def inverse(value, prime):
     return pow(value, prime - 2, prime)
 
 
-def collinear(points, prime):
-    (x1, y1), (x2, y2), (x3, y3) = tuple(points)
-    return ((x2 - x1) * (y3 - y1) - (y2 - y1) * (x3 - x1)) % prime == 0
+def determinant(point_1, point_2, point_3, prime):
+    x1, y1 = point_1
+    x2, y2 = point_2
+    x3, y3 = point_3
+    return (
+        (x2 - x1) * (y3 - y1)
+        - (y2 - y1) * (x3 - x1)
+    ) % prime
 
 
 def rank_two_words():
     words = []
     for bits in ((1, 0), (0, 1), (1, 1)):
         for sizes in ((1, 1, "N"), (2, 1), (1, 2)):
-            target_cells = 0
             if sizes == (1, 1, "N"):
                 target_cells = bits[0] + bits[1]
             else:
@@ -63,26 +67,18 @@ def verify_geometry(primes=(5, 7, 11)):
             }
 
             for triple in combinations(hyperbola, 3):
-                assert not collinear(frozenset(triple), prime)
+                assert determinant(*triple, prime) != 0
                 conic_checks += 1
 
-            line_targets = {}
             for context in combinations(all_points, 2):
-                if context[0][0] == context[1][0]:
-                    target_columns = {
-                        x for x, y in hyperbola if x == context[0][0]
-                    }
-                else:
-                    target_columns = {
-                        x
-                        for x, y in hyperbola
-                        if collinear(
-                            frozenset((context[0], context[1], (x, y))),
-                            prime,
-                        )
-                    }
+                target_columns = {
+                    x
+                    for x, y in hyperbola
+                    if determinant(
+                        context[0], context[1], (x, y), prime
+                    ) == 0
+                }
                 assert len(target_columns) <= 2
-                line_targets[context] = target_columns
                 context_checks += 1
 
             seen_secants = {}
