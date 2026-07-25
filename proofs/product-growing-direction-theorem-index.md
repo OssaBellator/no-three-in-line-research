@@ -53,6 +53,10 @@ families and develop the complementary repair route. The active task ledger is
 | PX216 | Every positive residual support-four load quantitatively extracts a new product packet | PROVED | `docs/111-iterated-product-packet-release.md` |
 | PX217 | Any fixed family of product packets admits one constant-density fixed-rank-spread joint release | PROVED | `docs/111-iterated-product-packet-release.md` |
 | PX218 | Joint packet release remains spread after exposure, with one complementary partial matching per packet | PROVED | `docs/111-iterated-product-packet-release.md` |
+| PX219 | Every designated packet has a square-root restriction with only `O(s^4)` internal candidate triples | PROVED | `docs/112-thinned-joint-packet-rank-three.md` |
+| PX220 | Joint release on the thinned packet has only linear expected internal rank-three collateral | PROVED | `docs/112-thinned-joint-packet-rank-three.md` |
+| PX221 | Geometric-progression packets require linearly many product levels to remove a fixed fraction of candidate support-four energy | PROVED | `docs/113-packet-count-barrier-and-logarithmic-window.md` |
+| PX222 | Logarithmically many released packets retain polynomial-density and polynomial-spread bounds compatible with sufficient support excess | PROVED | `docs/113-packet-count-barrier-and-logarithmic-window.md` |
 
 ## Current exact boundary
 
@@ -68,24 +72,25 @@ The direct protected route has three independent growth barriers.
 Therefore a successful protected construction must be globally mixed at the
 same scale as the direction family.
 
-The low-syndrome repair route now has a complete fixed-packet release and
-iteration interface.
+The low-syndrome repair route now has a complete packet-extraction and joint-
+release interface, plus a sharp candidate-energy limitation.
 
 - PX183--PX209 isolate the rematching collateral sectors, pay the internal and
   low-support terms, and control support four on large blocks.
-- PX210--PX214 extract one heavy product packet, release it, preserve spread
-  under exposure, and transfer all external rank-at-most-three loads.
-- PX215 proves exact two-cell overlap for distinct anchor-product levels.
-- PX216 shows that every positive residual support-four mass extracts another
-  explicit product packet, with linear packet size at cubic-per-anchor mass.
-- PX217 releases any fixed packet family simultaneously with density
-  `e^(-4Delta-4k)` and fixed-rank spread.
-- PX218 shows that conditioning adds only one complementary partial matching per
-  packet and transfers external loads with residual constant `e^(4Delta+8k)`.
+- PX210--PX218 extract successive product packets, release any fixed packet
+  family jointly, preserve spread under exposure, and transfer external loads.
+- PX219--PX220 combine square-root thinning with joint release, making internal
+  packet-subgrid rank-three collateral linear while a designated packet retains
+  a quadratic zero-probability cross family.
+- PX221 refutes an absolute packet-count theorem for unrestricted candidate
+  energy: geometric-progression grids can require `Omega(h)` product levels.
+- PX222 identifies a viable intermediate window: `O(log h)` packets cost only a
+  polynomial spread factor, which support-excess thinning can still overcome in
+  sufficiently nonminimal sectors.
 
-The missing input is now termination rather than second-packet existence or
-probability theory. One must prove that an absolute number of packet extractions
-pays all residual rank-two mass, or that continued extraction forces a loaded
-line, clean star, common-anchor family, or bounded composite structure. External
-rank-one and rank-three constants, destroyed-old-mass accounting, and exact
-infinite product closure remain open.
+The next termination theorem must therefore be defect weighted or scale
+sensitive. A promising target is to prove that old selected defects occupy only
+`O(log h)` heavy product levels even though unrestricted candidate energy can
+occupy `Theta(h)` levels. External rank one, minimal-support and short-cycle
+sectors, destroyed-old-mass accounting, and exact infinite product closure
+remain open.
