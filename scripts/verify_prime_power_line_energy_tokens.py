@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite and arithmetic checks for CMR390--CMR393."""
+"""Finite and arithmetic checks for CMR385--CMR388."""
 
 from __future__ import annotations
 
@@ -13,14 +13,17 @@ def verify_fan_split() -> None:
         if threshold * threshold < population:
             threshold += 1
 
-        for cells in (1, max(1, threshold - 1), threshold, min(population, 2 * threshold)):
+        for cells in (
+            1,
+            max(1, threshold - 1),
+            threshold,
+            min(population, 2 * threshold),
+        ):
             counts = Counter(index % cells for index in range(population))
             distinct = len(counts)
             maximum = max(counts.values())
             assert distinct >= threshold or maximum * maximum > population
 
-    # Exact geometric star: distinct lines through one point cannot share an
-    # additional grid cell.
     centre = (0, 0)
     outside_pairs = []
     for slope in range(1, 10):
