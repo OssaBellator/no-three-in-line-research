@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Audit theorem IDs, dependency order, move tags, and effective constants."""
+"""Audit theorem IDs, dependency order, move tags, and active frontier constants."""
 
 from __future__ import annotations
 
@@ -15,6 +15,7 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX479-PX482.md",
     "product-growing-direction-theorem-index-PX483-PX487.md",
     "product-growing-direction-theorem-index-PX488-PX492.md",
+    "product-growing-direction-theorem-index-PX493-PX498.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -33,15 +34,18 @@ DOCS = [ROOT / "docs" / name for name in (
     "166-exact-depth-plateau-cutoff-compression.md",
     "167-fourteenth-power-divisor-cutoff-compression.md",
     "168-rational-divisor-cutoff-compression.md",
+    "169-side-seven-relative-class-census.md",
+    "170-side-seven-insertion-recursion-barrier.md",
 )]
-HEADING = re.compile(r"^### (?:Theorem|Corollary) PX(\d+)\b", re.MULTILINE)
+HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX492"
+    assert manifest["range"] == "PX397-PX498"
     assert manifest["root"] == "PX492"
+    assert manifest["frontier_root"] == "PX498"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -58,7 +62,7 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 493):
+    for theorem_id in range(397, 499):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
@@ -66,7 +70,7 @@ def main() -> None:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 493))
+    assert index_ids == list(range(397, 499))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
@@ -76,7 +80,10 @@ def main() -> None:
     assert "N^{16/109}" in text
     assert "N_3=10^{2900}" in text
     assert "1508" in text and "29}{545" in text
-    print("PX397--PX492 dependency and rational-cutoff audit: PASS")
+    assert "132" in text and "488" in text
+    assert "21,952" in text and "82,002,575" in text
+    assert "14,345,445" in text
+    print("PX397--PX498 dependency, cutoff, and side-seven frontier audit: PASS")
 
 
 if __name__ == "__main__":
