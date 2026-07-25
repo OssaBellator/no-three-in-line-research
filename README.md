@@ -40,28 +40,11 @@ macro width W     = m^(19/40+o(1))  = m^0.475
 total width T=MW  = m^(21/40+o(1))  = m^0.525.
 ```
 
-The branch proves:
-
-- universal matching-pool supply and exact degree restoration;
-- internally no-three square-root macros and fixed-rank spread;
-- exponent optimality within disjoint `O(sqrt(R))` macro architectures;
-- saturation-compatible use of every final numerical label;
-- controller-aware source safety against the full active source;
-- `o(1)` weighted mass for all remaining external pair/triple classes;
-- blocker-star or resource-bank structure from positive controller shadow;
-- source-valid endpoint trades after adaptive near-uniform thinning;
-- exact zero-unary Hall rectangles and support-core localization;
-- binary-shadow congestion covers and exact LP duals;
-- a pairing-invariant excess-shadow potential for dynamic pool trades;
-- four controller-aware global label-allocation interfaces;
-- exact capacitated ownership Hall/slack cores;
-- divisor-energy localization of same-slot anchor ownership failures;
-- target-rich common-line families and linear alternating-rectangle banks;
-- superregular residual matching and source-valid installation;
-- exact rank-at-most-three rectangle and multistate CSPs;
-- signed Ramsey regularization and diffuse paid selection;
-- cross-block and hierarchical state amplification beyond every original
-  two-state rectangle signature.
+The branch proves matching-pool supply, exact degree restoration, internally
+no-three square-root macros, fixed-rank spread, exponent optimality, use of every
+final numerical label, controller-aware source safety, external weighted-energy
+closure, exact Hall and congestion endpoints, endpoint-trade potentials, and
+source-valid near-uniform endpoint permutations.
 
 ## Four allocation interfaces
 
@@ -69,14 +52,13 @@ The controller-defect scores support four independent ways to use every final
 movement and refill label.
 
 1. **One-sided bottleneck/slack:** balanced movement ownership completes when
-   its minimum bottleneck is at most every refill label's cumulative local slack.
+   its bottleneck is below every refill label's cumulative local slack.
 2. **Deterministic two-sided ownership:** assign `W` labels of each type to every
    macro; local Ore completes when `r+s<=W`.
 3. **Random two-sided ownership:** per-macro complementary degree with slack
-   `m^(23/80+o(1))` gives local perfect matchings after two balanced random
-   partitions.
+   `m^(23/80+o(1))` gives local perfect matchings.
 4. **Random one-sided ownership:** average-refill complementary degree remains
-   available with the smaller `sqrt(T log T)` ownership loss.
+   available with the smaller `sqrt(T log T)` loss.
 
 At threshold `r`, movement ownership is possible exactly when
 
@@ -91,9 +73,8 @@ exceptional label cluster or a nearly dead macro column.
 
 ## Hall, line, and rectangle endpoint
 
-All unary recapture and insertion-shadow cells are removed from a source-safe
-endpoint graph `G_0`. Failure of a perfect matching is exactly a forbidden Hall
-rectangle
+After deleting direct recapture and residual unary-shadow cells, failure of the
+source-safe endpoint graph is exactly a Hall rectangle
 
 \[
 |X|+|Y|>q,
@@ -101,46 +82,57 @@ rectangle
 X\times Y\subseteq E(\overline{G_0}).
 \]
 
-Binary conflicts can be converted into unary deletions. Their correct cost is
-minimum endpoint-resource congestion, not raw conflict count. The fractional
-congestion problem has factor-two rounding and an exact weighted dual.
+Binary conflicts are governed by minimum endpoint-resource congestion. The
+fractional cover problem has factor-two rounding and an exact weighted dual.
 
 A recapture-dominated Hall core survives adaptive source-valid thinning. Failed
 owner-line improvement gives a positive-density family of target-rich repeated
-nonaxis lines. Pairing the owner/replacement and Hall-target traces gives
-`Omega(q^3)` alternating rectangles, from which `Omega(q)` pairwise
-row/column-disjoint blocks are extracted.
+nonaxis lines. Their two matching traces supply `Omega(q^3)` alternating
+rectangle candidates and an `Omega(q)` row/column-disjoint rectangle bank.
 
-## Cross-block and hierarchical endpoint
+## Cross-block state amplification
 
-The two natural rectangle diagonals are not a terminal state space. Pair two
-resource-disjoint rectangles and use only the two cross resource blocks. This
-gives four equal-margin perfect-matching states and avoids every witness supported
-only on the original rectangle diagonals.
+The two natural rectangle diagonals are not a terminal state space. Pairing two
+resource-disjoint rectangles and using only the two cross resource blocks gives
+four equal-margin matching states. This bypasses every witness supported only on
+the original line and cross diagonals.
 
-Under sublinear non-designated unary endpoint degree:
+The construction generalizes to level-`b` blocks. A level-`b` block has `2b`
+resources per side and at least `b` designated credits. Pairing two such blocks
+gives `((2b)!)^2` formal cross states. Direct recapture deletes fewer edges than
+are required to destroy every perfect matching.
 
-- almost the entire rectangle bank pairs into source-safe four-state
-  supervariables;
-- each supervariable moves both designated owners and retains at least two
-  removal-credit units;
-- ternary bad boxes have vanishing density;
-- fixed-colour Ramsey reduces every dense finite-state CSP to a constant valid
-  state or a bounded local contradiction;
-- diffuse unary/binary state cost and diffuse residual matching cost give a
-  strict paid improvement.
+The stronger partition theorem removes the hierarchy's irregularity. If the
+non-designated unary endpoint graph has maximum degree `d=o(H)`, colour the
+rectangle-interaction graph, whose maximum degree is at most `4d`. Splitting its
+independent colour classes into growing groups discards only `o(H)` rectangles.
+Every group then has zero non-designated unary edges internally.
 
-The construction iterates. A level-`b` block has `2b` resources on each side and
-`b` designated credits. Pairing two level-`b` blocks gives `((2b)!)^2` cross
-states. Direct recapture deletes at most `b` edges per directional `K_(2b,2b)`,
-whereas at least `2b` deletions are required to destroy every perfect matching.
-With unary maximum degree `d`, each block has at most `4d` bad partners,
-independently of `b`.
+After deleting `o(b)` recapture-heavy rectangles from each group, both
+directional cross hosts are near-complete superregular. Their product matching
+law has fixed-rank probability `O(b^-r)`, and each block retains
+`(1-o(1))b` designated credits.
 
-Therefore every bounded-depth signed contradiction is bypassed under sparse
-unary degree. The remaining sparse-unary object is a possible infinite-depth
-hierarchy of locally feasible blocks whose paid cost stays concentrated at every
-fixed level.
+Thus every sublinear unary-degree rectangle bank reduces directly to the paid
+spread inequality
+
+\[
+K^2\frac{P_b}{b^2}
++
+K^3\frac{Q_b}{b^3}
++
+\frac1{R_b}
+\left(
+K\frac{A_b}{b}
++
+K^2\frac{B_b}{b^2}
+\right)
+<1.
+\]
+
+Arbitrary signed rectangle signatures, dense finite-state CSPs, bounded local
+contradictions, and infinite-depth hierarchy irregularity are no longer
+separate obstructions in the sublinear-unary regime.
 
 ## Current remaining theorem
 
@@ -151,30 +143,26 @@ The all-`n` branch is reduced to:
 2. converting a Hall rectangle or matchable but non-superregular zero-unary host
    outside the superregular recapture branch;
 3. converting a unary endpoint resource with linear forbidden cross-block degree;
-4. converting locally impossible hierarchical state sets or unary, binary, and
-   residual weighted shadow concentrated at block-credit scale;
-5. ruling out or converting an infinite-depth feasible cross-block hierarchy for
-   which no fixed level has diffuse paid completion;
-6. converting a linear-congestion original binary-shadow dual packing or
+4. converting source or shadow weights concentrated in the growing-block paid
+   expression above;
+5. converting a linear-congestion original binary-shadow dual packing or
    witness-line pencil;
-7. constructing source-admissible pool-compatible trades whose excess-shadow
+6. constructing source-admissible pool-compatible trades whose excess-shadow
    insertion cost is below their star/resource removal credit.
 
 The no-three-in-line conjecture remains unproved.
 
 ## Recent proof chapters
 
-- `docs/78`--`docs/101`: slab allocation, controller-aware external closure,
-  endpoint trades, Hall rectangles, and dynamic excess shadow.
-- `docs/102`--`docs/117`: binary congestion, rich-line energy and barriers,
-  ownership Hall/slack, four allocation interfaces, near-uniform source validity,
-  and incidence localization.
+- `docs/78`--`docs/117`: slab allocation, controller-aware external closure,
+  ownership interfaces, endpoint trades, Hall/congestion endpoints, source-valid
+  thinning, and incidence localization.
 - `docs/118`--`docs/130`: anchor-energy localization, rectangle extraction,
-  exact installation, superregular residual completion, signed Ramsey reduction,
-  support cleaning, and paid residual matching.
-- `docs/131`--`docs/135`: cross-block supervariables, sparse-unary host
-  regularization, multistate Ramsey completion, universal signature bypass, and
-  hierarchical amplification.
+  exact installation, signed Ramsey reduction, support cleaning, and paid
+  residual matching.
+- `docs/131`--`docs/138`: cross-block supervariables, host regularization,
+  multistate Ramsey completion, universal signature bypass, hierarchical and
+  growing-depth amplification, and unary-independent superregular grouping.
 
 ## Running current checks
 
