@@ -46,6 +46,8 @@ This compact branch ledger groups proved theorem blocks without duplicating ever
 | AC3ig–AC3ik | Repeated pivot-cell returns spend a finite `L(n-1)^2` rectangle-ticket stock or expose one repeated long return cross; common-host cycles give a one-hub menu or two-hub separator | PROVED | `docs/alternating-core-long-cycle-interface.md` |
 | AC3il–AC3ip | Every arbitrary overlapping cycle family in one current host is an executable common-pivot menu; failure returns a realized rank, so static two-hub overlap is not terminal | PROVED | `docs/alternating-core-common-host-cycle-menu.md` |
 | AC3iq–AC3it | Every nontrivial state change inserts at least two layer-cells; long simple histories force one repeated two-cross return after `O(L^2n^6)` steps, and monotone mask growth has a finite explicit budget | PROVED | `docs/alternating-core-state-churn-router.md` |
+| AC3iu–AC3iy | Historical targets project to one current reference cycle; blocker feasibility is an exact exchange-cycle-cover problem, complete hosts always repair for `n>=3`, and failure is a canonical minimal Hall core | PROVED | `docs/alternating-core-host-drift-normalization.md` |
+| AC3iz–AC3jc | Every failed blocker Hall core exposes at least `n-2` genuine missing base-host cells; weighted failure concentrates on one missing cell or one finite missing-reason class | PROVED | `docs/alternating-core-host-defect-cut-router.md` |
 | AC4a | Bounded integer growth implies finite alternating closure | PROVED | `docs/alternating-core-formal-termination.md` |
 | AC4 | Total alternating transition oracle | OPEN | `docs/alternating-core-chain.md` |
 | AC5a | Reverse-scale invariants imply finite descending cleanup | PROVED | `docs/alternating-core-formal-termination.md` |
