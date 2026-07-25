@@ -91,11 +91,11 @@ remains open. This repository does **not** contain a complete proof.
 - Every full parent cover needs at least \(t-1\) cylinders. A terminal Pareto
   subcover accounts for at most \(9/11\) of the parent law.
 - A batch of \(R\) terminal targets has a parent state producing at least
-  
+
   \[
   \left\lceil\frac{2R}{11}\right\rceil
   \]
-  
+
   actual new triples outside all selected terminal explanations.
 - Crossing new triples force strict envelope expansion. Internal covers use at
   least \(\lfloor t/2\rfloor\) real-line signatures and contain exact Hall walls.
@@ -107,29 +107,17 @@ remains open. This repository does **not** contain a complete proof.
 
 ### Exact parent line and local-load endpoint
 
-- At the top primitive-height slice, the exact rank-three vertex load is bounded
-  by
-  
-  \[
-  4t\sum_{K\ge H}\varphi(K).
-  \]
-  
-  For odd \(t\ge95\), one complete parent permutation avoids every
-  candidate-only board triple of height at least \(0.49t\). This statement does
-  not exclude anchored triples involving fixed outside points.
-- For odd \(t\ge175\), the same exact cleaning remains possible while all cells
-  from \(\lfloor t/100\rfloor\) previously discovered real lines are forbidden.
-  Thus an anchored-free frozen parent exposes a linear reserve of distinct
-  candidate-only lines below height \(0.49t\).
-- Boundary geometry sharpens the line-union model. Any \(t-3\) candidate-only
-  lines are simultaneously avoidable in the full derangement host.
 - A target-specific parent move needs to omit only one designated old endpoint.
-  In that host every family of at most \(t-2\) real lines is simultaneously
-  avoidable when all available cells on those lines are removed. A sharp
-  \(t-1\)-line blocker has a rigid one-slack Hall-boundary factorization.
+  Every family of at most \(t-2\) real lines is simultaneously avoidable when
+  all available cells on those lines are removed.
+- A sharp \(t-1\)-line blocker is either a complete target-centred singleton fan
+  or a nontrivial Hall rectangle whose boundary has at most one slack incidence.
+- Three sharp singleton blockers on the same board side cannot all recycle one
+  common `(t-1)`-line family. Their common family has size at most \(t-3\), and
+  their union contains at least \(t\) real-line signatures.
 - Under the exact target-specific matching law, the rank-\(1/2/3\) cylinder
   maxima are
-  
+
   \[
   \frac1{t-1},
   \qquad
@@ -137,17 +125,34 @@ remains open. This repository does **not** contain a complete proof.
   \qquad
   \frac1{(t-1)^2(t-2)}.
   \]
-- The target-specific matching-space local lemma gives a stronger
-  contrapositive. If no anchored rank-one or rank-two certificate exists, some
-  parent source row or target column supports more than
-  
+- If no anchored rank-one or rank-two certificate exists, some parent source row
+  or target column supports more than
+
   \[
   \frac{t(t-1)(t-2)}{48}
   \]
-  
+
   candidate-only triples, occupying more than \(t/24\) distinct real-line
-  signatures. A complete target-specific parent permutation can remove any
-  chosen \(\lfloor t/24\rfloor\) of those line signatures at once.
+  signatures.
+- The refined three-point direction count gives
+
+  \[
+  T_3(w)
+  \le
+  \sum_K
+  \left[
+  2\varphi(K)(t-K)+2(t-1)(t-2K)
+  \right].
+  \]
+
+  For every odd \(t\ge347\), one complete target-specific parent permutation
+  avoids every candidate-only board triple of primitive height at least
+  \(0.44t\). This does not exclude anchored triples involving fixed outside
+  points.
+- For odd \(t\ge611\), the same exact cleaning remains possible while all
+  available cells on `floor(t/500)` previously discovered lines are forbidden.
+  Thus anchored-free freezing exposes a linear reserve of distinct
+  candidate-only lines below height \(0.44t\).
 - In one dyadic band \(H\le\max(|u|,|v|)<2H\), one candidate cell lies in fewer
   than \(3t^2\) conflicts and one compatible pair has codegree below \(t/H\).
   For \(H\ge t^\varepsilon\), a published conflict-free matching theorem gives
@@ -169,16 +174,15 @@ No later valid theorem depends on the refuted strengthening.
 
 ## What remains conditional
 
-1. **Target-specific blocker conversion.** Classify or absorb the sharp
-   \(t-1\)-line Hall-boundary factorization, or show that the three possible
-   target-endpoint blockers of one old triple cannot coexist with the inherited
-   prefix and carry data.
+1. **Sharp blocker conversion.** Absorb mixed source/target singleton fans and
+   nontrivial Hall-boundary factors, or charge them to inherited prefix,
+   quotient, and carry signatures.
 2. **Exact intermediate-band completion.** Upgrade the almost-perfect
-   conflict-free matching in a dyadic primitive-height band to a complete
-   parent permutation while retaining the line reserve and target omission.
-3. **Low-height carry absorption.** Control bands below the exact top-slice
-   threshold using first-separation, primitive direction, quotient, and carry
-   signatures inside one fixed envelope.
+   conflict-free matching below height \(0.44t\) to a complete parent
+   permutation while retaining the line reserve and target omission.
+3. **Low-height carry absorption.** Control the remaining lower bands using
+   first-separation, primitive direction, quotient, and carry signatures inside
+   one fixed envelope.
 4. **Coarse-to-fine recreation budget.** Pay fine stars recreated by later
    coarse prefix or joint-parent repairs.
 5. **Prime-field terminal conversion.** Transfer the inherited-envelope or
@@ -216,8 +220,8 @@ There is no complete proof. On the composite prime-power route, bank
 construction, first-separation summation, prefix collateral, target-load
 contraction, parent lifting, Hall peeling, and target-specific line avoidance
 are closed through the sharp \(t-1\)-line endpoint. Candidate-only triples above
-height \(0.49t\) are exactly cleanable, and anchored-free freezing forces a cubic
-localized wall. The principal immediate theorem is conversion of the sharp
-Hall-boundary blocker or exact completion of the intermediate-height conflict
-system. A coarse-to-fine budget and arbitrary side-length coverage remain
-necessary afterward.
+height \(0.44t\) are exactly cleanable, and same-side singleton blockers have an
+exact three-endpoint no-reuse invariant. The principal immediate theorem is
+conversion of mixed singleton fans or nontrivial Hall-boundary factors, or exact
+completion of the intermediate-height conflict system. A coarse-to-fine budget
+and arbitrary side-length coverage remain necessary afterward.
