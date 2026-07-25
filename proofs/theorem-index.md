@@ -39,7 +39,7 @@ This ledger records only branch-specific statements.
 | BDA5p | Non-wall one-cell collateral yields one heavy primitive slope or quantified slope spread | PROVED | `docs/bounded-denominator-role-slope-dictionary.md` |
 | BDA5q | All one-cell channel determinants collapse modulo `q` to the scalar `h det(d,e)` | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
 | BDA5r | Mixed wall directions retain the radial projective class at the exact remaining prime-power precision | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
-| BDA5s | The reflected `CD` line has one explicit scalar valuation and cancellation profile | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
+| BDA5s | The reflected `CD` line has one explicit integer scalar valuation and cancellation profile | PROVED | `docs/bounded-denominator-role-valuation-collapse.md` |
 | BDA5t | Mixed wall invisibility is canonical descent to effective denominator `q/gcd(h,q)` | PROVED | `docs/bounded-denominator-wall-descent.md` |
 | BDA5u | A fixed scalar residue gives one radial class modulo `q/gcd(det(d,e),q)` and a complementary slope-separation modulus | PROVED | `docs/bounded-denominator-scalar-lift-spacing.md` |
 | BDA5v | Dense scalar lifts force a large projective divisor or repeated adjacent scalar increments | PROVED | `docs/bounded-denominator-scalar-lift-spacing.md` |
@@ -47,6 +47,9 @@ This ledger records only branch-specific statements.
 | BDA5x | Dense scalar recurrence confines the transverse increment `qk` to a finite shape-dependent library | PROVED | `docs/bounded-denominator-residual-determinant.md` |
 | BDA5y | Dense scalar-slot occupancy yields quantified disjoint genuine radial pairs `h,h+q` | PROVED | `docs/bounded-denominator-scalar-q-pairs.md` |
 | BDA5z | Weighted scalar occupancy yields a paid co-anchored `h,h+q` family or an explicit dispersed-anchor bound | PROVED | `docs/bounded-denominator-gstep-coanchor.md` |
+| BDA5aa–BDA5ab | Reflected offsets have exact content `gcd(2Ah,q)` and a coprime reduced-unit profile | PROVED | `docs/bounded-denominator-reflected-scalar.md` |
+| BDA5ac | A fixed reflected residue is one scalar class modulo `q/gcd(2A,q)` | PROVED | `docs/bounded-denominator-reflected-scalar.md` |
+| BDA5ad | Cancellation above the denominator exponent is invisible to every finite denominator transition | PROVED | `docs/bounded-denominator-reflected-scalar.md` |
 | BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN | `docs/bounded-denominator-absorbers.md` |
 
 No statement here proves the global conjecture.
