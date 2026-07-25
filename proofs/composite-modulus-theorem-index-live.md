@@ -14,11 +14,12 @@ its addendum. It is authoritative for CMR385 onward on branch
 | CMR406--409 | Harmonic-packet count, per-token packet-sweep return, combined deep-token visit bound, and aggregate quadratic-log sweep budget | PROVED / PROVED UNDER THE ONE-PASS PREFIX HYPOTHESIS | `docs/138-prime-power-harmonic-packet-sweep-budget.md` |
 | CMR410--412 | Monotone-mask cycle erasure, simple finite histories, and the outside-context dichotomy for repeated ancestor or packet states | PROVED | `docs/139-prime-power-state-cycle-erasure.md` |
 | CMR413--417 | Exact full-token edge-incidence multiplicity, scale-filtered prefix and packet budgets, two-edge matching churn, and polynomial state-expansion payment | PROVED | `docs/140-prime-power-edge-incidence-state-expansion.md` |
+| CMR418--421 | Universal returned-edge support for recreated conflicts, harmonic packet recreation bounds, cumulative packet-loss ledger, and first-dirty schedule reduction | PROVED | `docs/141-prime-power-packet-recreation-churn-ledger.md` |
 
 The branch still does not prove the all-`n` conjecture. The live prime-power
-frontier after CMR417 is to couple the exact churn payment to packet protection,
-target-load destruction, reserve depletion, or bounded fully forced exchange
-ancestry. Exact state cycles are erasable, and a long sequence of distinct
-selected states now forces proportionally large returned-edge and full-token
-incidence mass. One prefix pass plus one harmonic-packet sweep has the sharper
-aggregate bound `O_p(t log^2 t)`.
+frontier after CMR421 is a global upper bound on cumulative returned-edge churn,
+or a theorem converting excess churn into target-load destruction, reserve or
+envelope depletion, or bounded fully forced exchange ancestry. Exact state
+cycles, distinct-state expansion, and packet recreation are now all charged to
+the same churn variable. One prefix pass plus one harmonic-packet sweep has the
+sharper aggregate bound `O_p(t log^2 t)`.
