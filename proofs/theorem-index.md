@@ -28,6 +28,8 @@ This ledger records only branch-specific results and corrections.
 | RI5l | Any singleton desired blocker is removed by transposition with one auxiliary blocker cell | PROVED | `docs/rational-inverse-singleton-transposition.md` |
 | RI5m | The auxiliary-transposition bank has `n-1` states and variable cylinder cap `1/(n-1)` | PROVED | `docs/rational-inverse-singleton-transposition.md` |
 | RI5n | Failed auxiliary collateral comparison forces raw profile weight linear in `n-1` | PROVED | `docs/rational-inverse-singleton-transposition.md` |
+| RI5o | Failed auxiliary collateral localizes to a vertical star, horizontal star, or opposite-rectangle diagonal profile | PROVED | `docs/rational-inverse-crossed-channel-localization.md` |
+| RI5p | Each crossed-channel profile has one heavy auxiliary rectangle or quantified physical spread | PROVED | `docs/rational-inverse-crossed-channel-localization.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI6 | Paid physical-lift localization and unconditional bank installation | OPEN | `docs/rational-inverse-expansion.md` |
