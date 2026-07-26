@@ -17,7 +17,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1573.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1581.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -97,15 +97,12 @@ destroyed parent credit remains open.
 
 ## Extension-free line cleaning and exact rook rows
 
-No Hall-cut blocker of `H_e` is a partial matching.  Hence every allowed partial
-matching `X`, including the complete allowed trace of a nonaxis line, may be
-deleted while preserving at least one target-avoiding response.
+Every allowed partial matching, including the complete allowed trace of a
+nonaxis line, may be deleted from `H_e` while preserving at least one
+target-avoiding response.  The resulting response creates no new line-local
+collateral.
 
-The resulting response creates no new line-local collateral.  For a CMR1461
-owner-labelled loaded line, the same-owner, same-line offspring coordinate has
-policy coefficient zero.
-
-Put
+For a deleted trace `X`, put
 
 \[
 F=O\cup X\cup\{e\},
@@ -132,37 +129,20 @@ N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
 \frac{N_{d-r}(F/P)}{N_d(F)}.
 \]
 
-Every off-line collateral row is therefore an explicit rational component-rook
-dot product.
+Every off-line collateral row is an explicit rational component-rook dot
+product.
 
 ## Three exact line-clean coefficient classes
 
-CMR1534--CMR1557 give three finite trace classes.
-
-### Strong derangement-extendable trace
+The host-uniform coefficients are
 
 \[
 \boxed{
 \kappa_d^{\rm strong}
 =
-\left(\frac d{d-2}\right)^d.
+\left(\frac d{d-2}\right)^d,
 }
 \]
-
-### Target-disjoint singleton remainder
-
-The optimal fractional factor is
-
-\[
-\boxed{
-q_{\rm sing}
-=d-2-\frac1{d-2}
-=
-\frac{(d-1)(d-3)}{d-2},
-}
-\]
-
-with coefficient
 
 \[
 \boxed{
@@ -170,11 +150,11 @@ with coefficient
 =
 \left(
 \frac{d(d-2)}{(d-1)(d-3)}
-\right)^d.
+\right)^d,
 }
 \]
 
-### Target-endpoint overlap
+and
 
 \[
 \boxed{
@@ -184,17 +164,14 @@ with coefficient
 }
 \]
 
-The coefficients satisfy
+The singleton coefficient comes from the optimal fractional factor
 
 \[
-\kappa_d^{\rm strong}
-<
-\kappa_d^{\rm sing}
-<
-\kappa_d^{\rm overlap}.
+q_{\rm sing}
+=d-2-\frac1{d-2}.
 \]
 
-For the coefficient `kappa` belonging to the trace and
+For the applicable coefficient `kappa` and
 
 \[
 \mathcal C_{\rm off}^{\rm line}
@@ -209,60 +186,30 @@ For the coefficient `kappa` belonging to the trace and
 one has
 
 \[
-\boxed{
 \mathbb E N_{\rm off}(R)
 \le
 \kappa\mathcal C_{\rm off}^{\rm line}.
-}
 \]
 
-For `b` unavailable allowed edges and current potential `m`,
+Adding the unavailable-edge penalty gives an explicit sufficient strict-
+improvement inequality.  The exact component rook ratio remains available in
+all three classes.
+
+## Paid-pair selector to return splice
+
+For one exact paid-pair selector with `A_L<1`, put
 
 \[
-\kappa
-\left[
-\mathcal C_{\rm off}^{\rm line}
-+
-\frac{(m+1)b}{d}
-\right]
-<
-D_S(e)
-\]
-
-forces one feasible strict-improvement response.  The exact component rook ratio
-remains available in all three classes.
-
-## Repeated-token selector splice
-
-CMR1518--CMR1525 first reduce repeated-token history to finite stock, return,
-persistent absorption, a paid-pair selector, or a fixed trace incidence.
-CMR1558--CMR1565 sharpen the selector branch.
-
-For one exact selector with
-
-\[
-A_L<1,
-\]
-
-define
-
-\[
-\boxed{
 Q_*
 =
 \left\lfloor
 \frac{2+|B_L|/(n-1)}{1-A_L}
 \right\rfloor+1,
-}
+\qquad
+T_*=Q_*-1.
 \]
 
-and
-
-\[
-\boxed{T_*=Q_*-1.}
-\]
-
-There is a line-clean completion with
+There is a candidate-free completion with
 
 \[
 X_L(\delta)=0,
@@ -271,13 +218,8 @@ T_Z(\delta)\le T_*.
 \]
 
 First restoration labels are finite resources.  Repeated restorations enter the
-return row.  Thus a subunit selector has recurrent row bounded by
-
-\[
-\boxed{(T_*,0)}
-\]
-
-in columns `(return,selector)`.
+return row.  Thus a subunit selector has recurrent row `(T_*,0)` in columns
+`(return,selector)`.
 
 If the return row has coefficients `(alpha,beta)` and a selector class has cap
 `T`, the coupled block
@@ -295,37 +237,22 @@ is subcritical exactly when
 \boxed{\alpha+\beta T<1.}
 \]
 
-With rational coefficients this is one strict integer inequality after clearing
-denominators.  Only the critical candidate regime `A_L>=1`, or an explicitly
-chosen near-critical band, remains an independent candidate row.
+Only critical candidate hosts `A_L>=1`, or selected near-critical bands, remain
+independent candidate rows.
 
 ## Rooted trace-centre splice
 
-CMR1566--CMR1573 sharpen the fixed-trace branch.  For one fixed trace signature
-inside a side-`t` envelope, there are at most
+A fixed trace signature in one side-`t` envelope has at most `t^2` rooted
+centres.  If it occurs `J` times, one centre occurs at least
 
 \[
-\boxed{t^2}
+\left\lceil\frac{J}{t^2}\right\rceil
 \]
 
-physical rooted centres.  If the signature occurs `J` times, one centre occurs
-at least
+times.  A fixed centre and witness determine one nonaxis real line.
 
-\[
-\boxed{\left\lceil J/t^2\right\rceil}
-\]
-
-times.  Equivalently, for every `lambda>=2`, either
-
-\[
-J\le(\lambda-1)t^2
-\]
-
-or one exact centre recurs at least `lambda` times.
-
-A fixed centre and trace witness determine one nonaxis real line.  When the
-centre is used as the fixed target, the complete allowed line trace is
-automatically target-disjoint.  Therefore only
+When the rooted centre is used as the fixed target, the complete allowed trace
+is automatically target-disjoint.  Therefore only
 
 \[
 \kappa_d^{\rm strong}
@@ -335,25 +262,80 @@ automatically target-disjoint.  Therefore only
 
 can occur; the endpoint-overlap coefficient is excluded.
 
-This does not sum historical trace loads.  It identifies repeated access to one
-exact rooted line-clean response row and executes that policy when an occurrence
-is current.
+Trace-centre recurrence identifies repeated access to one exact response row.
+It does not make historical trace loads simultaneous.
+
+## Exact returned-edge exchange kernel
+
+Let an old perfect matching `M` be replaced by `M'`.  Put
+
+\[
+E^+=M'\setminus M,
+\qquad
+E^-=M\setminus M'.
+\]
+
+At each changed source vertex, the old and new selected edges give a canonical
+bijection
+
+\[
+\pi_{\rm src}:E^-\to E^+.
+\]
+
+Every genuinely recreated credit contains an entering edge.  Assign it to its
+absolute last-entering owner `o(C)` and then to the returned predecessor
+
+\[
+r(C)=\pi_{\rm src}^{-1}(o(C)).
+\]
+
+For any finite credit class `b`, define
+
+\[
+K_{f,b}(M,M')
+=
+|\{C:\ C\text{ recreated},\ \beta(C)=b,\ r(C)=f\}|.
+\]
+
+Then the return count has the exact identity
+
+\[
+\boxed{
+N_b(M,M')
+=
+\sum_{f\in E^-}K_{f,b}(M,M').
+}
+\]
+
+Grouping these entries by finite returned-edge/entering-owner exchange
+signatures gives an honest nonnegative integer upper quotient.  Rational
+response laws give rational rows, and clearing denominators gives strict integer
+certificate rows.
+
+The previously abstract return coefficients `(alpha,beta)` are now finite sums
+of this exchange kernel into return and selector classes.  The remaining work is
+to bound those sums by inherited owner, line-height, token, prefix and carry
+classes and verify
+
+\[
+\alpha+\beta T<1.
+\]
 
 ## Genuine current frontier
 
-1. **Line-clean credit comparison.**  Prove the relevant strong, singleton or
-   overlap envelope—or a sharper exact component row—is below destroyed parent
-   credit.  Rooted-target trace recurrence needs only the first two classes.
-2. **Return-row coefficient.**  Compute exact return-to-return and
-   return-to-selector coefficients and verify `alpha+beta T<1` for subunit
-   selector classes.
-3. **Critical candidate and residual trace rows.**  Treat selector hosts with
-   `A_L>=1` and trace incidences whose rooted centre cannot be chosen as target.
-4. **Root, fixed-interface and thin rows.**  Certify recurrent root-channel,
-   prime-field fixed-interface and thin scattered-factor inequalities.
-5. **Host-uniform quotient and CRT assembly.**  Assemble an exact rational or
-   integer upper quotient satisfying `Av<v`, then retain collision and local-line
-   credit labels during balanced/CRT gluing.
+1. **Return-kernel bounds.**  Bound the exact exchange kernel uniformly and
+   compute the return-to-return and return-to-selector coefficients.
+2. **Selector-return certificate.**  Insert exact or uniform selector caps and
+   verify `alpha+beta T<1` as a strict rational/integer inequality.
+3. **Line-clean credit comparison.**  Prove the strong, singleton or overlap
+   envelope—or a sharper exact component row—is below destroyed credit.  Rooted
+   trace recurrence requires only strong or singleton.
+4. **Critical candidate and residual base rows.**  Treat `A_L>=1`, trace
+   incidences whose rooted centre cannot be targeted, recurrent root/fixed-
+   interface rows and thin/prime-field factors.
+5. **Host-uniform quotient and CRT assembly.**  Assemble the surviving exact
+   rational/integer quotient `Av<v`, then retain collision and local-line labels
+   during balanced/CRT gluing.
 
 ## Corrections retained
 
@@ -372,22 +354,23 @@ is current.
 - Strict transfers and fresh resources are off-diagonal only when the policy
   actually executes the canonical handoff or monotone payment.
 - A loaded response witnessing a large expectation need not itself be the
-  minimum response.  Line cleaning removes its same-line coordinate but does
-  not silently certify all off-line collateral.
+  minimum response.
 - The line-clean permanent envelopes safely dominate the exact rook row; none is
   yet proved sharp enough for every host.
 - First restoration labels are finite, but repeated restorations are genuine
   return-row currency.
 - Trace-centre batching does not make historical trace lines simultaneous.
+- The return exchange kernel is exact, but its host-uniform numerical bounds are
+  not yet proved subcritical.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1573**, exact response probabilities,
+There is no complete proof.  Through **CMR1581**, exact response probabilities,
 owner weights, packed translations, private resources, transfer gluing, root
-channels, owner-disjoint packed/loaded bookkeeping, target-safe line cleaning,
-exact line-clean rook rows and coefficients, the selector-to-return splice, and
-the rooted trace-centre splice are proved.
+channels, target-safe line cleaning, exact line-clean coefficients, the
+selector-to-return splice, rooted trace-centre splice and exact returned-edge
+exchange kernel are proved.
 
-The remaining obstruction is numerical: compare the explicit line-clean and
-return-coupled recurrent rows with destroyed credit, certify the root/thin base
-rows, and complete the host-uniform quotient and CRT assembly.
+The remaining obstruction is numerical: bound the finite return and line-clean
+rows against destroyed credit, certify the root/thin base rows, and complete the
+host-uniform quotient and CRT assembly.
