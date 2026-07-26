@@ -16,7 +16,7 @@ same-layer target pair. The pair then becomes fixed in every surviving state and
 contracts exactly.
 
 Fix one owner with two labelled layer hosts on a board of side `n`. Let
-`mathcal F` be the nonempty family of feasible ordered, layer-disjoint saturated
+`\mathcal F` be the nonempty family of feasible ordered, layer-disjoint saturated
 states under the current mask. Every state contains exactly `2n` labelled edges.
 Choose an anchor
 
@@ -34,7 +34,7 @@ where `|S|` forgets the layer labels.
 
 ## 1. Distinct joint states have at least two entering edges
 
-For `S' in mathcal F`, define the labelled entering set relative to the anchor
+For `S'\in\mathcal F`, define the labelled entering set relative to the anchor
 
 \[
 A(S')=S'\setminus S.
@@ -42,7 +42,7 @@ A(S')=S'\setminus S.
 
 ### Theorem CMR785 -- PROVED
 
-If `S'!=S`, then
+If `S'\ne S`, then
 
 \[
 \boxed{|A(S')|\ge2.}
@@ -71,7 +71,7 @@ For a set `A` of labelled edges, put
 
 ### Theorem CMR786 -- PROVED
 
-For every candidate `S'!=S`, deleting the complete entering batch `A(S')`
+For every candidate `S'\ne S`, deleting the complete entering batch `A(S')`
 
 1. preserves the anchor `S` and hence leaves a nonempty feasible family;
 2. removes `S'`;
@@ -81,9 +81,9 @@ For every candidate `S'!=S`, deleting the complete entering batch `A(S')`
 
 ### Proof
 
-CMR785 gives `A(S') cap S=empty`, so `S` survives. The candidate contains every
-edge of its entering set and therefore does not survive. Restricting a state
-family cannot create a state or an extendable prescription. Since `S'` was
+CMR785 gives `A(S')\cap S=\varnothing`, so `S` survives. The candidate contains
+every edge of its entering set and therefore does not survive. Restricting a
+state family cannot create a state or an extendable prescription. Since `S'` was
 feasible under the current mask, none of its entering edges had been deleted
 earlier; CMR785 gives at least two new deletions. ∎
 
@@ -91,7 +91,7 @@ This is a joint two-layer no-good cut, not a sequential rematching claim.
 
 ## 3. Rejecting a nonimproving target-destroying candidate
 
-Let `Phi` be the real-triple potential. Call `S'` target-destroying when
+Let `\Phi` be the real-triple potential. Call `S'` target-destroying when
 
 \[
 T\not\subseteq |S'|.
@@ -99,17 +99,17 @@ T\not\subseteq |S'|.
 
 ### Theorem CMR787 -- PROVED
 
-For every feasible target-destroying candidate `S'`, exactly one of the following
-scheduler actions is valid.
+For every feasible target-destroying candidate `S'`, the canonical scheduler uses
+one of the following actions.
 
-1. If `Phi(S')<Phi(S)`, accept `S'` and obtain strict potential improvement.
-2. If `Phi(S')>=Phi(S)`, reject `S'`, delete `A(S')` by CMR786, and keep the
+1. If `\Phi(S')<\Phi(S)`, accept `S'` and obtain strict potential improvement.
+2. If `\Phi(S')\ge\Phi(S)`, reject `S'`, delete `A(S')` by CMR786, and keep the
    anchor `S` feasible with the original target `T` still selected.
 
 ### Proof
 
 The first branch is the desired potential endpoint. In the second branch CMR786
-preserves `S`; since `T subseteq |S|`, the anchor and target remain available for
+preserves `S`; since `T\subseteq |S|`, the anchor and target remain available for
 the next search step. ∎
 
 No target load is silently discarded by a rejected candidate.
@@ -140,7 +140,7 @@ and every batch deletes at least two.
 There are at most `2n^2` labelled physical edges in the two layer hosts. The
 anchor's `2n` labelled edges are never deleted. Every rejected batch deletes at
 least two new nonanchor edges by CMR786. Therefore at most `2n^2-2n` labelled
-edges are deleted and `2B<=2n^2-2n`. ∎
+edges are deleted and `2B\le2n^2-2n`. ∎
 
 This bound is independent of the number of feasible two-layer states.
 
@@ -204,10 +204,10 @@ frequency class.
 
 ## 7. Exact joint-state contraction of the forced pair
 
-Let `ell` be the layer containing `P`. Remove the two source and two target
-vertices of `P` from the layer-`ell` matching host. Keep the two physical cells of
-`P` fixed and forbidden to the opposite layer. Let `mathcal F/P` be the resulting
-residual joint-state family.
+Let `\ell` be the layer containing `P`. Remove the two source and two target
+vertices of `P` from the layer-`\ell` matching host. Keep the two physical cells
+of `P` fixed and forbidden to the opposite layer. Let `\mathcal F/P` be the
+resulting residual joint-state family.
 
 ### Theorem CMR791 -- PROVED
 
@@ -221,7 +221,7 @@ Restriction gives an exact bijection
 }
 \]
 
-The side of layer `ell` decreases by exactly two. The physical target `T`
+The side of layer `\ell` decreases by exactly two. The physical target `T`
 transfers to the residual singleton trigger
 
 \[
@@ -231,7 +231,7 @@ transfers to the residual singleton trigger
 ### Proof
 
 CMR790 puts `P` in every surviving joint state. Removing its two labelled edges
-and their matching endpoints in layer `ell` gives one residual state. Conversely,
+and their matching endpoints in layer `\ell` gives one residual state. Conversely,
 adjoining `P` to a residual state reconstructs the unique full state; the
 opposite layer continues to avoid the two fixed physical cells. The maps are
 inverse. Since `T` has three cells and `P` has two, one physical target cell
