@@ -65,8 +65,8 @@ another current factor incident with the correction.
 
 ## GC2m -- source-free latent-secants exist -- PROVED
 
-There is a line-blocked rectangle correction which creates a collinear triple
-but destroys no current collinear triple.
+There is a local permutation-compatible line-blocked rectangle configuration
+which creates a collinear triple but destroys no current collinear triple.
 
 Take
 
@@ -75,15 +75,16 @@ Take
 - `x=(0,1)` and `y=(1,0)`;
 - `a=(2,5)` and `c=(3,7)`.
 
-The four current cells `{b,u,a,c}` contain no collinear triple.  The non-axis
-line through `a,c` has equation `column=2*row+1`, so it also contains `x`.
-After the correction, `{x,a,c}` is collinear.  Therefore the latent witness has
-positive blocker weight while the same correction has zero destroyed current
-syndrome weight.
+The four current cells `{b,u,a,c}` use distinct rows and columns and contain no
+collinear triple.  The non-axis line through `a,c` has equation
+`column=2*row+1`, so it also contains `x`.  After the correction,
+`{x,a,c}` is collinear.  Therefore the latent witness has positive blocker
+weight while the same local correction has zero destroyed current syndrome
+weight.
 
 ### Proof
 
-The six determinants for triples from `{b,u,a,c}` are nonzero by direct
+The four determinants for triples from `{b,u,a,c}` are nonzero by direct
 substitution.  The displayed line contains `(0,1),(2,5),(3,7)`. QED.
 
 This refutes every unconditional rule that assigns positive current payment to
