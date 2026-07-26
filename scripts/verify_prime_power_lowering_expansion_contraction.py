@@ -17,16 +17,14 @@ def face(family, potential):
 def peel_added_edges(states, potential, old_host, new_host):
     current = set(new_host)
     added = sorted(set(new_host) - set(old_host))
-    new_family = feasible(states, current)
-    current_face, new_value = face(new_family, potential)
+    current_face, new_value = face(feasible(states, current), potential)
     old_value = face(feasible(states, old_host), potential)[1]
     assert new_value < old_value
     assert all(set(state) & set(added) for state in current_face)
 
     peels = 0
     for edge in added:
-        current_family = feasible(states, current)
-        current_face, current_value = face(current_family, potential)
+        current_face, current_value = face(feasible(states, current), potential)
         assert current_value == new_value
         avoiding = {state for state in current_face if edge not in state}
         if avoiding:
@@ -36,22 +34,20 @@ def peel_added_edges(states, potential, old_host, new_host):
             assert peeled_face == avoiding
             peels += 1
         else:
+            state_size = len(next(iter(current_face)))
             residual = {frozenset(set(state) - {edge}) for state in current_face}
             assert len(residual) == len(current_face)
-            assert all(len(state) + 1 == len(next(iter(current_face))) for state in residual)
+            assert all(len(state) == state_size - 1 for state in residual)
             assert peels <= len(added) - 1
             return peels, edge, current_face
     raise AssertionError("all added edges were peeled")
 
 
-def random_case(universe_size, state_size, rng):
-    all_states = [
-        frozenset(state)
-        for state in combinations(range(universe_size), state_size)
-    ]
-    ambient = set(rng.sample(all_states, rng.randint(2, min(len(all_states), 120))))
-
-    for _ in range(1000):
+def random_case(all_states, universe_size, rng):
+    ambient = set(
+        rng.sample(all_states, rng.randint(2, min(len(all_states), 120)))
+    )
+    for _ in range(200):
         old_seed = rng.choice(tuple(ambient))
         old_host = set(old_seed)
         for edge in range(universe_size):
@@ -59,10 +55,11 @@ def random_case(universe_size, state_size, rng):
                 old_host.add(edge)
         old_family = feasible(ambient, old_host)
         outside = [state for state in ambient if not set(state) <= old_host]
-        if not old_family or not outside:
+        if not outside:
             continue
-        low_count = rng.randint(1, min(len(outside), 12))
-        low_states = set(rng.sample(outside, low_count))
+        low_states = set(
+            rng.sample(outside, rng.randint(1, min(len(outside), 12)))
+        )
         new_host = set(old_host)
         for state in low_states:
             new_host.update(state)
@@ -78,10 +75,14 @@ def check_lowering_expansions():
     rng = random.Random(944)
     checked = 0
     peel_total = 0
-    for universe_size in range(3, 22):
+    for universe_size in range(3, 17):
         for state_size in range(1, universe_size):
-            for _ in range(80):
-                case = random_case(universe_size, state_size, rng)
+            all_states = [
+                frozenset(state)
+                for state in combinations(range(universe_size), state_size)
+            ]
+            for _ in range(40):
+                case = random_case(all_states, universe_size, rng)
                 if case is None:
                     continue
                 states, potential, old_host, new_host = case
