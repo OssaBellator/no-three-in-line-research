@@ -1,0 +1,26 @@
+{
+  "centre": "p",
+  "required_helpers": 4,
+  "chosen_helpers": ["h0", "h1", "h2", "h3"],
+  "cycle": ["p", "h0", "h1", "h2", "h3"],
+  "positive_supports": [
+    ["h4"],
+    ["h5", "h6"],
+    ["h4", "h6", "h7"],
+    ["h5", "h7"]
+  ],
+  "star_entries": [
+    {"entry": "z0", "controller": "e0"},
+    {"entry": "z1", "controller": "e1"},
+    {"entry": "z2", "controller": "e2"},
+    {"entry": "z3", "controller": "e3"},
+    {"entry": "z4", "controller": "e4"},
+    {"entry": "z5", "controller": "e5"},
+    {"entry": "z6", "controller": "e6"},
+    {"entry": "z7", "controller": "e7"},
+    {"entry": "z8", "controller": "e8"},
+    {"entry": "z9", "controller": "e9"},
+    {"entry": "z10", "controller": "e10"},
+    {"entry": "z11", "controller": "e11"}
+  ]
+}
