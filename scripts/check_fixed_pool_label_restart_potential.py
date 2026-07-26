@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Check the fixed pool-label universal restart potential on a finite model."""
+"""Check fixed candidate cells and zero-mass anchor activation after a pool repair."""
 
 from __future__ import annotations
 
@@ -33,25 +33,6 @@ def blocker_count(source: set[Point], candidate: Point) -> int:
     )
 
 
-def latent_anchor_weight(
-    point: Point,
-    pool_columns: Sequence[int],
-    pool_rows: Sequence[int],
-    movement_labels: Sequence[int],
-    refill_labels: Sequence[int],
-) -> int:
-    u, v = point
-    return sum(
-        1
-        for x in pool_columns
-        for y in pool_rows
-        for a in movement_labels
-        for b in refill_labels
-        if (a - v) * (b - u) == (x - u) * (y - v)
-        and (x - u) * (y - v) > 0
-    )
-
-
 def candidate_cells(
     pool_columns: Sequence[int],
     pool_rows: Sequence[int],
@@ -70,43 +51,47 @@ def excess_cell_potential(source: set[Point], candidates: Sequence[Point]) -> in
     return sum(values)
 
 
-def latent_anchor_potential(
+def edge_anchor_mass(
     source: set[Point],
-    pool_columns: Sequence[int],
-    pool_rows: Sequence[int],
+    edge: Point,
     movement_labels: Sequence[int],
     refill_labels: Sequence[int],
+    anchor_filter: set[Point] | None = None,
 ) -> int:
-    return sum(
-        latent_anchor_weight(
-            p, pool_columns, pool_rows, movement_labels, refill_labels
-        )
-        for p in source
-    )
+    x, y = edge
+    total = 0
+    for a in movement_labels:
+        for b in refill_labels:
+            for u, v in source:
+                point = (u, v)
+                if point == edge:
+                    continue
+                if anchor_filter is not None and point not in anchor_filter:
+                    continue
+                if (
+                    (a - v) * (b - u) == (x - u) * (y - v)
+                    and (x - u) * (y - v) > 0
+                ):
+                    total += 1
+    return total
 
 
-def actual_anchor_mass(
+def active_anchor_mass(
     source: set[Point],
     controller_perm: Sequence[int],
     pool_columns: Sequence[int],
     movement_labels: Sequence[int],
     refill_labels: Sequence[int],
 ) -> int:
-    total = 0
-    for x in pool_columns:
-        y = controller_perm[x]
-        controller = (x, y)
-        for a in movement_labels:
-            for b in refill_labels:
-                for u, v in source:
-                    if (u, v) == controller:
-                        continue
-                    if (
-                        (a - v) * (b - u) == (x - u) * (y - v)
-                        and (x - u) * (y - v) > 0
-                    ):
-                        total += 1
-    return total
+    return sum(
+        edge_anchor_mass(
+            source,
+            (x, controller_perm[x]),
+            movement_labels,
+            refill_labels,
+        )
+        for x in pool_columns
+    )
 
 
 def pair_weight(p: Point, q: Point, candidates: Sequence[Point]) -> int:
@@ -151,12 +136,26 @@ def main() -> None:
     )
     xi_initial = excess_cell_potential(initial_source, candidates)
     xi_final = excess_cell_potential(final_source, candidates)
-    anchor_initial = latent_anchor_potential(
-        initial_source, pool_columns, pool_rows, movement_labels, refill_labels
+
+    anchor_initial = active_anchor_mass(
+        initial_source,
+        initial_controller,
+        pool_columns,
+        movement_labels,
+        refill_labels,
     )
-    anchor_final = latent_anchor_potential(
-        final_source, pool_columns, pool_rows, movement_labels, refill_labels
+    anchor_final = active_anchor_mass(
+        final_source,
+        final_controller,
+        pool_columns,
+        movement_labels,
+        refill_labels,
     )
+
+    initial_edges = {(x, initial_controller[x]) for x in pool_columns}
+    final_edges = {(x, final_controller[x]) for x in pool_columns}
+    new_edges = final_edges - initial_edges
+    kept_edges = final_edges & initial_edges
 
     removed = {(x, initial_controller[x]) for x in moved_columns}
     inserted = {(x, final_controller[x]) for x in moved_columns}
@@ -164,44 +163,42 @@ def main() -> None:
     if fixed | inserted != final_source:
         raise AssertionError("repair decomposition is inconsistent")
 
+    new_edge_anchor_mass = sum(
+        edge_anchor_mass(
+            final_source, edge, movement_labels, refill_labels
+        )
+        for edge in new_edges
+    )
+    inserted_anchor_mass_on_kept = sum(
+        edge_anchor_mass(
+            final_source,
+            edge,
+            movement_labels,
+            refill_labels,
+            anchor_filter=inserted,
+        )
+        for edge in kept_edges
+    )
+    if new_edge_anchor_mass != 0:
+        raise AssertionError("new controller entries were activated with positive anchor mass")
+    if inserted_anchor_mass_on_kept != 0:
+        raise AssertionError("inserted source points created anchor mass on unchanged entries")
+    if anchor_final > anchor_initial:
+        raise AssertionError("active anchor potential increased despite zero-mass activation")
+
     cell_removal = sum(
         pair_weight(d, p, candidates) for d in removed for p in fixed
     ) + sum(pair_weight(d, e, candidates) for d, e in itertools.combinations(removed, 2))
     cell_insertion = sum(
         pair_weight(a, p, candidates) for a in inserted for p in fixed
     ) + sum(pair_weight(a, b, candidates) for a, b in itertools.combinations(inserted, 2))
-    anchor_removal = sum(
-        latent_anchor_weight(d, pool_columns, pool_rows, movement_labels, refill_labels)
-        for d in removed
-    )
-    anchor_insertion = sum(
-        latent_anchor_weight(a, pool_columns, pool_rows, movement_labels, refill_labels)
-        for a in inserted
-    )
+    if xi_final - xi_initial != cell_insertion - cell_removal:
+        raise AssertionError("fixed candidate-cell identity failed")
 
-    direct_delta = (xi_final + anchor_final) - (xi_initial + anchor_initial)
-    identity_delta = (cell_insertion + anchor_insertion) - (
-        cell_removal + anchor_removal
-    )
-    if direct_delta != identity_delta:
-        raise AssertionError("universal potential identity failed")
-
-    actual_anchor_initial = actual_anchor_mass(
-        initial_source,
-        initial_controller,
-        pool_columns,
-        movement_labels,
-        refill_labels,
-    )
-    actual_anchor_final = actual_anchor_mass(
-        final_source,
-        final_controller,
-        pool_columns,
-        movement_labels,
-        refill_labels,
-    )
-    if actual_anchor_initial > anchor_initial or actual_anchor_final > anchor_final:
-        raise AssertionError("latent anchor potential did not dominate actual anchor mass")
+    theta_initial = xi_initial + anchor_initial
+    theta_final = xi_final + anchor_final
+    if theta_final >= theta_initial:
+        raise AssertionError("restart potential did not strictly decrease")
 
     print("m", m)
     print("pool columns", pool_columns)
@@ -210,15 +207,15 @@ def main() -> None:
     print("candidate cell universe", len(candidates))
     print("initial no-three", True)
     print("final no-three", True)
-    print("actual anchor mass", [actual_anchor_initial, actual_anchor_final])
-    print("latent anchor potential", [anchor_initial, anchor_final])
+    print("new controller edges", sorted(new_edges))
+    print("new-edge anchor activation mass", new_edge_anchor_mass)
+    print("inserted-anchor mass on kept edges", inserted_anchor_mass_on_kept)
+    print("active anchor potential", [anchor_initial, anchor_final])
     print("excess cell potential", [xi_initial, xi_final])
-    print("combined universal potential", [xi_initial + anchor_initial, xi_final + anchor_final])
+    print("current restart potential", [theta_initial, theta_final])
     print("cell removal and insertion", [cell_removal, cell_insertion])
-    print("anchor removal and insertion", [anchor_removal, anchor_insertion])
-    print("identity change", identity_delta)
-    print("direct potential change", direct_delta)
-    print("outcome", "fixed_pool_label_universal_restart_potential")
+    print("direct potential change", theta_final - theta_initial)
+    print("outcome", "fixed_cells_zero_mass_anchor_activation")
 
 
 if __name__ == "__main__":
