@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR1390--CMR1397."""
+"""Finite checks for CMR1398--CMR1405."""
 
 from collections import Counter, defaultdict
 from fractions import Fraction
