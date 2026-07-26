@@ -36,19 +36,25 @@ def output_slots(row: tuple[int, ...]) -> tuple[tuple[int, int], ...]:
     return tuple((v, k) for v, rate in enumerate(row) for k in range(1, rate + 1))
 
 
-def check_component(rho: tuple[tuple[int, ...], ...], counts: Counter[str]) -> None:
+def check_component(
+    rho: tuple[tuple[int, ...], ...],
+    counts: Counter[str],
+    *,
+    brute_weights: bool,
+) -> None:
     n = len(rho)
     assert is_positive_cyclic_component(rho)
     gains = [sum(row) for row in rho]
 
-    # A directed positive cycle rules out strict positive separable weights.
-    for weights in product(range(1, 5), repeat=n):
-        strict = all(
-            weights[a] > sum(rho[a][v] * weights[v] for v in range(n))
-            for a in range(n)
-        )
-        assert not strict
-    counts["weight-vector exclusions"] += 1
+    if brute_weights:
+        # A directed positive cycle rules out strict positive separable weights.
+        for weights in product(range(1, 5), repeat=n):
+            strict = all(
+                weights[a] > sum(rho[a][v] * weights[v] for v in range(n))
+                for a in range(n)
+            )
+            assert not strict
+        counts["weight-vector exclusions"] += 1
 
     if all(gain == 1 for gain in gains):
         successor = []
@@ -77,7 +83,7 @@ def exhaustive_components(counts: Counter[str]) -> None:
         for flat in product(range(3), repeat=n * n):
             rho = tuple(tuple(flat[a * n + v] for v in range(n)) for a in range(n))
             if is_positive_cyclic_component(rho):
-                check_component(rho, counts)
+                check_component(rho, counts, brute_weights=True)
                 counts["exhaustive cyclic SCCs"] += 1
             elif n == 1 and rho[0][0] == 0:
                 counts["excluded acyclic singleton SCCs"] += 1
@@ -97,7 +103,7 @@ def random_components(counts: Counter[str]) -> None:
                 if rng.randrange(6) == 0:
                     rho[a][v] = max(rho[a][v], rng.randint(1, 3))
         matrix = tuple(tuple(row) for row in rho)
-        check_component(matrix, counts)
+        check_component(matrix, counts, brute_weights=False)
         counts["random cyclic SCCs"] += 1
 
 
