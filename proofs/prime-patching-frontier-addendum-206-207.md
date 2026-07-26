@@ -1,10 +1,9 @@
-# Prime-patching frontier addendum: original-reference, allocation, and complete marked-support reductions
+# Prime-patching frontier addendum: complete marked-support and history reductions
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air.  It records the original-reference, controller-domain,
-initial-allocation, ambient-support, marked-source, complete helper-support, and
-petal-conditioned reductions in `docs/206` through `docs/229` without replacing
-the larger historical ledgers.
+initial-allocation, marked-support, petal-conditioned, robust-atom, and
+controller-history reductions in `docs/206` through `docs/231`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -29,192 +28,121 @@ the larger historical ledgers.
 | PP3ang--PP3anm | A constant collection of optional-core pencils and empty-core disjoint banks is avoided simultaneously with target expectation `O(b^2/N)=o(1)` | PROVED / CONDITIONAL RESIDUAL-LOAD INTERFACE | `docs/224-simultaneous-finite-sunflower-host.md` |
 | PP3ann--PP3ant | A maximal residual-support-independent helper set either has the required size or produces a fixed core with `N^(1-o(1))` variable extensions | PROVED / CONDITIONAL EXTERNAL-HOST INTERFACE | `docs/225-maximal-independent-helper-core-localization.md` |
 | PP3anu--PP3aoc | Terminal high-support source pencils are converted: anchored pairs yield credited anchor banks, while inserted-triple pencils are impossible by unique completion | PROVED / CONDITIONAL ENDPOINT-HOST INTERFACE | `docs/226-terminal-source-pencil-closure.md` |
-| PP3aod--PP3aoj | Every nonzero canonical source or Xi event has nonempty helper support; an independent block has zero source violations and zero insertion cost, while terminal insertion pencils rejoin existing petal/grid/fan chains | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/227-complete-canonical-support-capture.md` |
+| PP3aod--PP3aoj | Every nonzero canonical source or `Xi` event has nonempty helper support; an independent block has zero source violations and zero insertion cost, while terminal insertion pencils rejoin existing petal/grid/fan chains | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/227-complete-canonical-support-capture.md` |
 | PP3aok--PP3aoq | After fixing one arc/path/fan petal, every nonlocal event has residual helper support; an independent completion leaves only a finite local-core objective | PROVED / CONDITIONAL INDEPENDENT-COMPLETION AND PETAL INTERFACES | `docs/228-petal-conditioned-complete-support-capture.md` |
 | PP3aor--PP3aox | A spanning path has at most ten local insertion atoms; one helper bridges a disconnected rank-four petal, and failed local payment yields a credit-scale `A_2`, `B_3`, or `B_4` pencil | PROVED / CONDITIONAL EXISTING INSERTION-PENCIL INTERFACES | `docs/229-one-helper-bridge-local-cost-atomization.md` |
+| PP3aoy--PP3ape | In the robust branch arbitrary local binary multiplicity and every `o(R)` unary table are domain-absorbed; domain-scale unary failure yields a super-target composite source star | PROVED / CONDITIONAL DIRECT-COMPLETION AND COMPOSITE INTERFACES | `docs/230-credit-scale-local-atom-robust-bypass.md` |
+| PP3apf--PP3apl | A `Theta(R)` puncture history localizes to a repeated candidate, partner/controller/label stack, or full chronological resource matching of target order | PROVED / CONDITIONAL STABLE-HISTORY INTERFACE | `docs/231-controller-puncture-history-resource-localization.md` |
 
-## Original-reference and robust target-cycle endpoint
+## Robust endpoint
 
-Fix an original permutation layer `M_0`.  A single-cycle seed followed by
-fresh-helper moves keeps one nontrivial relative cycle and satisfies
-
-```text
-S_(t+1)=S_t+q-1.
-```
-
-With
+Use
 
 ```text
 R=m^(19/20+o(1)),
-W=sqrt(R)=m^(19/40+o(1)),
+W=sqrt(R)=m^(19/40+o(1)).
 ```
 
-any divergent `q=o(W)` reaches a `Theta(W)` defect after `O(W/q)=o(W)`
-steps.  Final binary shadow remains below the reserved `Theta(R)` margin.  Final
-unary shadow either completes directly or produces another free target-size star.
+Fresh-helper cascades reach a `Theta(W)` alternating defect in `o(W)` generations.
+Retained-original controller domains only improve under deletion, so every initial
+balanced ownership and global label matching remains available.  Final binary
+shadow is `o(R)` and final unary failure creates another super-target source star.
 
-Controller-safe domains expand when noncontroller original points are deleted.
-Every original balanced ownership and global matching therefore survives in all
-retained-original base states.  Bare target cycles and ordinary chord geometry
-are not robust-domain endpoints.
+The initial numerical allocation is also closed conditionally: denominator
+collapse, fixed-label shadow, anchor energy, dead ownership rows, and random
+two-sided score failure all convert to a target star or credited bank.
 
-## Initial controller-aware allocation closure
+## Complete marked-support endpoint
 
-Positive-density blocker shadow, one collapsed movement/refill label, weighted
-same-slot anchor energy, a fixed-label anchor row or column, or a dead true
-ownership row all yield a target star or credited endpoint bank.
-
-After denominator collapse is split off, every controller-defect score denominator
-is at least `delta R`.  Failure of the random two-sided condition
-
-```text
-rho_i(A)+chi_i(B)<=T-h,
-h=o(T),
-```
-
-forces one numerator summand above
-
-```text
-delta R(T-h)/4=Omega(RT).
-```
-
-That summand is a fixed-label anchor mass or a fixed-macro controller-defect mass,
-already converted.  Hence nontrivial one-sided Hall bottlenecks, score truncation,
-capped refill concentration, and moderate complementary scores are no longer
-independent numerical frontiers.
-
-## Exact positive-support avoidance
-
-For one conditioned ambient resource, distinct positive binary signatures have
-probabilities
-
-```text
-rank three: 1/((Q-1)(Q-2)),
-rank four:  (q-3)/((Q-1)(Q-2)(Q-3)),
-```
-
-and a unary signature has probability `1/(Q-1)`.  Sparse support is avoided
-regardless of weight or event multiplicity.  Dense support becomes a simple
-fixed-resource pencil or a resource-disjoint link bank.
-
-For a marked source signature of endpoint rank `h` requiring `r` arcs, the exact
-probability is
-
-```text
-(b-1)_(h-1) / ((N-1)_(h-1)(b-1)_r).
-```
-
-The four high-support source classes therefore localize to fixed-core sunflowers
-or disjoint signature banks at scales `omega(W)`.
-
-## Uniform sunflower and pencil hosts
-
-For one fixed-core petal system, choose `b-1` distinct petals and one helper from
-each.  Every target signature is absent, and a residual pattern using `t` helper
-indices and `r` arcs has exact probability
-
-```text
-[(b-1)_t/(H)_t]
-[product 1/|P_j|]
-[1/(b-1)_r].
-```
-
-A constant number of exceptional classes can be handled simultaneously.  Omit
-one optional helper from every nonempty fixed core.  Every remaining empty-core
-family is a matching of support sets of size at least two, so a uniform marked
-block selects a target support with total expectation
+Sparse positive source or insertion support is avoided independently of weight or
+witness multiplicity.  Dense support becomes a fixed/nested pencil, fixed-core
+sunflower, or disjoint signature bank.  A transversal helper law annihilates those
+geometries, and a finite collection is avoided simultaneously with expectation
 
 ```text
 O(b^2/N)=o(1).
 ```
 
-Thus fixed/nested pencils and extracted fixed-core source sunflowers are not
-separate host obstructions under residual slack.
-
-## Complete residual-support reduction
-
-Let `H_all(c)` contain every nonempty helper support of every positive canonical
-source-invalid or insertion signature after the marked centre is fixed.  Take a
-maximal independent helper set.
-
-If it has size at least `b-1`, then every single-cycle state on that block has
-
-```text
-source-invalid count = 0,
-insertion cost = 0.
-```
-
-The only formal zero-helper insertion classes are a diagonal unary arc and a
-transposition, both absent from a single cycle.
-
-If the maximal independent set is too small, bounded support rank gives one fixed
-core with at least
+For the complete residual support hypergraph, a maximal independent helper set
+either has the required size or gives a fixed core with at least
 
 ```text
 (N-b)/sum_(r<k_0) binom(b-2,r)
 ```
 
-variable extensions.  With adaptive `b=N^(o(1))`, this is `N^(1-o(1)`.
-Diffuse residual support and support-free insertion weight therefore disappear.
+variable extensions.  With `b=N^(o(1))`, this is `N^(1-o(1))`.  High-support
+source pencils are then converted or excluded, while insertion pencils are exactly
+the existing `A_2`, `B_3`, and `B_4` geometries.
 
-The terminal source pencils are closed: anchored-pair pencils give credited
-anchor banks, while inserted-triple pencils are impossible by unique completion.
-The terminal insertion pencils are exactly the existing `A_2`, `B_3`, and `B_4`
-fixed-centre objects.
+## Petal-conditioned and local-atom endpoint
 
-## Petal-conditioned zero-collateral completion
-
-Condition on a compatible local arc forest `F` with at most four arcs and five
-fixed endpoint indices.  Contracting the fixed paths gives exactly
+After fixing a compatible local arc forest `F`, the conditional single-cycle count
+is
 
 ```text
-(b-|F|-1)!
+(b-|F|-1)!.
 ```
 
-single-cycle completions.  Every nonlocal canonical event has a nonempty residual
-helper support.  An independent residual helper block therefore removes all
-nonlocal source and insertion collateral, leaving only a finite local-core table.
-
-If `F` is one spanning path, the local table is deterministic.  Every compatible
-arc on the fixed vertices is either already a path arc or closes a forbidden
-proper cycle.
-
-For a directed path of `r<=4` arcs, the selected local insertion atoms are
+Every nonlocal event has residual helper support and vanishes on an independent
+completion.  A spanning path of `r<=4` arcs has exactly
 
 ```text
 r A_2 atoms,
 r-1 B_3 atoms,
-binom(r,2)-(r-1) B_4 atoms.
+binom(r,2)-(r-1) B_4 atoms,
 ```
 
-The total counts for `r=1,2,3,4` are `1,3,6,10`.  If local cost reaches the
-removal credit, one atom has at least a `1/10` share of that credit.
+so at most ten local atoms.  A disconnected `B_4` petal is bridged by one helper;
+failed payment yields a credit-scale atom in one of the same three geometries.
 
-A disconnected rank-four partner petal is bridged by one helper:
+In the robust branch this last obstruction disappears.  Arbitrary `B_3/B_4`
+weight costs at most `s(s-1)=o(R)` domain values.  A finite unary table of size
+`o(R)` is also absorbed.  If unary support destroys a fixed `xi R` margin, one
+inserted cell becomes a post-trade source-star centre of degree
 
 ```text
-a->b->x->c->d
+> xi R/(2s)=omega(W),
 ```
 
-or its reverse component order.  If no clean paid bridge exists, pigeonholing the
-two orientations and ten atom roles yields a credit-scale fixed-axis unary,
-fixed-centre path, or centre-arc partner pencil.  Thus diffuse residual collateral
-and a mixed finite local table are no longer separate petal endpoints.
+and enters the two-step composite conversion.  Credit-scale local atoms remain
+live only in monotone-only branches without robust final allocation.
+
+## Puncture-history endpoint
+
+A reserve-exhausting macro contains `H=Theta(R)` distinct puncture centres, each
+with `W` designated incidences.  The centre--candidate history graph has `HW`
+edges.  For every threshold `D`, either one candidate entry has degree `D`, or
+there is a centre--entry matching of size at least
+
+```text
+HW/(W+D).
+```
+
+At `D=W`, a second resource split yields one of:
+
+1. an exact candidate entry repeated through `W` centres;
+2. a chronological partner point used by `W` centres;
+3. one controller edge carrying `W` labels;
+4. one label carrying `W` controller edges;
+5. a full chronological resource matching of size `Omega(W)`.
+
+Therefore the puncture-history core is no longer diffuse.  Its only genuinely new
+feature is temporal stability: many recorded blocker endpoints may fail to coexist
+in one retained source state.
 
 ## Revised live frontier
 
 The remaining concentrated cases are now:
 
-1. payment or conversion of a **single credit-scale local `A_2`, `B_3`, or `B_4`
-   atom** inside the explicit arc-petal, path/grid, or partner/fan chains when
-   robust final allocation is unavailable;
-2. second-generation terminal pencils produced after conditioning a local petal,
-   which re-enter the same three insertion geometries;
-3. external controller-pool, distinguished-endpoint, Hall, alternating, or other
+1. payment or conversion of a single credit-scale `A_2`, `B_3`, or `B_4` atom in
+   monotone-only branches without robust final allocation;
+2. second-generation terminal pencils, which re-enter the same three insertion
+   geometries;
+3. conversion of the five puncture-history signatures when their witnesses are
+   mostly transient across epochs;
+4. external controller-pool, distinguished-endpoint, Hall, alternating, or other
    endpoint-host failure;
-4. a macro-local `Theta(R)` controller-puncture history core;
-5. paid mobility-hub or chord-cycle conversion in branches that cannot use robust
-   final allocation;
+5. paid mobility-hub or chord-cycle conversion outside robust final allocation;
 6. branches that cannot use the slab-optimal random two-sided architecture or
    preserve an original reference layer;
 7. branches that still require one-step monotone `Xi` descent rather than paid
@@ -224,7 +152,8 @@ Abstract cascade termination, retained-original base erosion, bare target cycles
 ordinary chord geometry in the robust branch, captive centres, controller--
 controller stars, numerical ownership arithmetic, raw support multiplicity,
 fixed-core source sunflowers, diffuse residual support, support-free insertion
-weight, high-support source terminal pencils, diffuse petal collateral, and mixed
-finite local-core tables are no longer separate frontiers.
+weight, high-support source terminal pencils, diffuse petal collateral, mixed
+finite local-core tables, robust credit-scale atoms, and unstructured puncture
+histories are no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
