@@ -191,6 +191,7 @@ def scc_checks(trials: int = 30_000) -> tuple[int, int]:
     for _ in range(trials):
         n = RNG.randint(1, 10)
         rates = [[0] * n for _ in range(n)]
+        beta = [RNG.randint(0, 2) for _ in range(n)]
         adj = [[] for _ in range(n)]
         for i in range(n):
             for j in range(n):
@@ -225,15 +226,18 @@ def scc_checks(trials: int = 30_000) -> tuple[int, int]:
             if not is_cyclic:
                 continue
             cyclic += 1
-            g = {v: sum(rates[v][u] for u in comp) for v in comp}
-            assert all(value >= 1 for value in g.values())
-            if all(value == 1 for value in g.values()):
+            internal = {v: sum(rates[v][u] for u in comp) for v in comp}
+            total = {v: sum(rates[v]) + beta[v] for v in comp}
+            assert all(value >= 1 for value in internal.values())
+            if all(value == 1 for value in total.values()):
                 for v in comp:
                     positives = [u for u in comp if rates[v][u] > 0]
                     assert len(positives) == 1 and rates[v][positives[0]] == 1
+                    assert beta[v] == 0
+                    assert all(rates[v][u] == 0 for u in range(n) if u not in comp)
             else:
                 multi += 1
-                assert any(value >= 2 for value in g.values())
+                assert any(value >= 2 for value in total.values())
     return cyclic, multi
 
 
