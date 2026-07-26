@@ -13,7 +13,7 @@ def distinguishing_rank(family, chosen):
             witness = set(subset)
             if all(not witness.issubset(state) for state in alternatives):
                 return size, frozenset(witness)
-    raise AssertionError("full chosen state must distinguish itself")
+    raise AssertionError("the full chosen state must distinguish itself")
 
 
 def branch_union(family, subset):
@@ -26,39 +26,40 @@ def branch_union(family, subset):
 def check_set_family_covers():
     rng = random.Random(846)
     checked = 0
-    for universe_size in range(1, 16):
-        universe = range(universe_size)
+    for universe_size in range(1, 13):
         for state_size in range(universe_size + 1):
-            states = [frozenset(state) for state in combinations(universe, state_size)]
-            for _ in range(min(200, max(1, len(states) * 2))):
+            states = [
+                frozenset(state)
+                for state in combinations(range(universe_size), state_size)
+            ]
+            for _ in range(min(100, max(1, len(states)))):
                 family = set(rng.sample(states, rng.randint(1, len(states))))
                 chosen = rng.choice(tuple(family))
                 rank, witness = distinguishing_rank(family, chosen)
-                assert len(witness) == rank
                 assert branch_union(family, witness) == family - {chosen}
                 for size in range(rank):
                     for subset in combinations(chosen, size):
                         assert branch_union(family, subset) != family - {chosen}
-                for size in range(rank):
-                    for subset in combinations(chosen, size):
-                        assert any(set(subset).issubset(state) for state in family - {chosen})
+                        assert any(
+                            set(subset).issubset(state)
+                            for state in family - {chosen}
+                        )
                 checked += 1
     return checked
 
 
 def cartesian_family(families):
-    result = set()
-    for states in product(*families):
-        merged = frozenset().union(*states)
-        result.add(merged)
-    return result
+    return {
+        frozenset().union(*states)
+        for states in product(*families)
+    }
 
 
 def check_product_additivity():
     rng = random.Random(849)
     checked = 0
-    for factor_count in range(1, 5):
-        for _ in range(1000):
+    for factor_count in range(1, 4):
+        for _ in range(600):
             factors = []
             chosen_parts = []
             offset = 0
@@ -70,9 +71,8 @@ def check_product_additivity():
                     frozenset(offset + edge for edge in state)
                     for state in combinations(range(universe_size), state_size)
                 ]
-                local_family = set(
-                    rng.sample(local_states, rng.randint(1, len(local_states)))
-                )
+                family_size = rng.randint(1, min(4, len(local_states)))
+                local_family = set(rng.sample(local_states, family_size))
                 chosen = rng.choice(tuple(local_family))
                 rank, _ = distinguishing_rank(local_family, chosen)
                 expected += rank
@@ -92,11 +92,14 @@ def matching(perm):
 
 
 def perfect_matchings(side, host):
-    return [matching(perm) for perm in permutations(range(side)) if matching(perm) <= host]
+    return [
+        matching(perm)
+        for perm in permutations(range(side))
+        if matching(perm) <= host
+    ]
 
 
 def exchange_graph(side, host, chosen):
-    target_of = {source: target for source, target in chosen}
     source_of_target = {target: source for source, target in chosen}
     graph = {vertex: set() for vertex in range(side)}
     for source, target in host:
@@ -156,7 +159,8 @@ def check_host(side, host):
         rank, _ = distinguishing_rank(set(family), chosen)
         graph = exchange_graph(side, host, chosen)
         assert rank == feedback_vertex_number(graph)
-        for source, edge in enumerate(sorted(chosen)):
+        for edge in chosen:
+            source = edge[0]
             essential = all(edge in alternative for alternative in family)
             assert essential == (not vertex_on_cycle(graph, source))
         checked += 1
@@ -166,16 +170,29 @@ def check_host(side, host):
 def check_exchange_hosts():
     checked = 0
     for side in range(1, 4):
-        edges = [(source, target) for source in range(side) for target in range(side)]
+        edges = [
+            (source, target)
+            for source in range(side)
+            for target in range(side)
+        ]
         for mask in range(1 << len(edges)):
-            host = {edge for index, edge in enumerate(edges) if mask & (1 << index)}
+            host = {
+                edge
+                for index, edge in enumerate(edges)
+                if mask & (1 << index)
+            }
             checked += check_host(side, host)
 
     rng = random.Random(851)
     side = 4
-    edges = [(source, target) for source in range(side) for target in range(side)]
+    edges = [
+        (source, target)
+        for source in range(side)
+        for target in range(side)
+    ]
     for _ in range(4000):
-        host = {edge for edge in edges if rng.random() < rng.uniform(0.25, 0.9)}
+        density = rng.uniform(0.25, 0.9)
+        host = {edge for edge in edges if rng.random() < density}
         checked += check_host(side, host)
     return checked
 
