@@ -36,47 +36,41 @@ The authoritative live ledger is split across:
 | CMR1390--1397 | Exact weighted candidate-transversal identity, clean and strict threshold criteria, Hall witnesses and minimal deficiency-one blockers, explicit failure of equal fractional ownership, and the side-five clean deletion transversal | PROVED; finite examples and blocker checks verified computationally | `docs/278-prime-power-candidate-transversal-hall-wall.md` |
 | CMR1398--1405 | Fixed pre-sampling owners, exact rook-class owner loads, conditional owner weights, line/height/carry refinements, assignment-dual certificates, exact unavailable-edge penalties, and the rook-owner endpoint | PROVED; finite bank enumeration used only for verification | `docs/278-prime-power-rook-owner-edge-weights.md` |
 | CMR1406--1413 | Exact extension-free wall size, sharp matching-preclusion number `n-2`, classification of the two minimum star blockers, small-transversal survival, canonical owner-support and owner-tail certificates, rank-three fractional covering, and dual dispersed-candidate packing | PROVED; exhaustive cut and small-deletion checks plus randomized owner and fractional-cover checks | `docs/279-prime-power-owner-support-matching-preclusion.md` |
+| CMR1414--1421 | Residual forbidden-board rook numbers, exact prescription completion counts and probabilities, linear-size probability classes, universal-bound comparison, exact expected collateral, exact unavailable-edge penalties, and the rook-probability endpoint | PROVED; reindexed after concurrent numbering collision | `docs/280-prime-power-cross-line-lattice-capacity-owner.md` |
+| CMR1422--1429 | Exact owner-line loads, owner partition, conditional edge weights, doubly stochastic marginals, assignment primal/dual, strict-improvement certificate, integer scaling, and the cross-line endpoint | PROVED | `docs/281-prime-power-eligible-owner-signature-fans.md` |
+| CMR1430--1437 | Candidate occurrence characterization, pre-sampling owner, exact owner/rook class sums, closed conditional owner weights, inherited geometric refinements, assignment and restricted-host certificates, and the rook-owner endpoint | PROVED | `docs/282-prime-power-rook-owner-edge-weights.md` |
+| CMR1438--1445 | Primitive-height line capacity, realized harmonic owner bound, exact conditional pair star, harmonic assignment certificate, dyadic decomposition, explicit high-height tail, and the harmonic endpoint | PROVED | `docs/283-prime-power-cross-line-harmonic-owner-bound.md` |
+| CMR1446--1453 | Integer lattice-capacity inequality, realized and conditional capacity stars, comparison with the harmonic envelope, exact high-height cutoff, assignment certificate, and dyadic capacity upper quotient | PROVED | `docs/284-prime-power-cross-line-lattice-capacity-owner.md` |
+| CMR1454--1461 | Response-independent owner eligibility, exact eligible capacity star, prime-power pair signatures, finite class stock, signature concentration, simultaneous realization, real-direction concentration, and the carry-fan endpoint | PROVED | `docs/285-prime-power-eligible-owner-signature-fans.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-The structural product issue is exact.  Every newly created triple is owned by
-one entering edge in the active coordinate factor.  Fixed interfaces and sibling
-factors receive no duplicate offspring.  The complete selected owner system is a
-finite DAG, so its reproduction matrix is block upper triangular and its spectral
-radius is the maximum same-owner diagonal spectral radius.  Finite off-diagonal
-cross-factor collateral changes only the scaling of the Lyapunov weights.
+The structural product issue remains closed: last-entering ownership makes the
+complete selected owner matrix block upper triangular, so only same-owner
+diagonal blocks require subcritical certificates.
 
-Same-owner blocks have exact finite representations.  Every candidate triple has
-a fixed canonical owner before a response is sampled.  Its exact occurrence
-probability is one finite rook-class value, so owner loads and assignment-dual
-edge weights are computable from geometric class histograms without enumerating
-the response bank.
+The same-owner target bank now has three compatible exact descriptions.
 
-Cross-line deterministic response selection now has two exact obstruction forms:
+1. Rook classes give exact probabilities for every residual prescription and
+   exact unavailable-edge penalties.
+2. Canonical owner fibres turn expected collateral into one doubly stochastic
+   edge-assignment cost with an exact rational dual.
+3. Integer lattice capacity bounds every owner load by an eligible conditional
+   pair star.  At prime-power side this star has at most
+   `2k(p+1)(1+floor(log_2(n-1)))` first-separation/direction/height classes.
 
-1. exempt a low-weight family, hit every remaining prescription, and preserve a
-   perfect matching; or
-2. delete the fixed canonical owner support and bound the remaining owner-weight
-   tail.
-
-For the extension-free graph `K_{n,n}\(O union {e})`, every blocker has at least
-`n-2` edges.  The only blockers of size `n-2` are the complete allowed star in
-the row of `e` and the complete allowed star in the column of `e`.  Therefore
-any transversal on at most `n-3` edges survives, and every nonexceptional
-transversal on `n-2` edges also survives.  A rank-three fractional transversal
-below `(n-2)/3` forces the same conclusion.
+A heavy eligible class is simultaneously realized in one response, lies in one
+prefix carry cell and projective direction, and concentrates quantitatively on
+one real line through the owner.  Independent line maxima are no longer part
+of the formal endpoint.
 
 The active frontier is therefore:
 
-1. bound the canonical owner-weight tail after retaining the best `n-2`
-   nonexceptional owner edges;
-2. rule out, or charge, the two exceptional owner stars through loaded-line,
-   secant-star, primitive-height, prefix, quotient, carry or protected-reserve
-   mechanisms;
-3. upper-bound the required fractional candidate packing in each geometric
-   owner/rook class and convert the result into a host-uniform rational
-   certificate `Av<v`;
-4. prove the corresponding diagonal certificates in prime-field and thin
-   regimes; and
-5. glue the diagonal blocks through owner triangularity and complete the
-   arbitrary-side CRT/balanced assembly.
+1. quantify the loaded-line or carry-cell execution gain produced by
+   CMR1458--CMR1461 and compare it with the parent credit weight;
+2. encode that comparison as a host-uniform same-owner upper quotient with an
+   exact rational or integer certificate `Av<v`;
+3. prove the analogous diagonal certificates in prime-field and thin regimes;
+4. glue the diagonal blocks through owner triangularity; and
+5. complete balanced/CRT assembly while retaining collision and local-line
+   credit classes.
