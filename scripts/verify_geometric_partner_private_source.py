@@ -94,6 +94,7 @@ def classify(
 ) -> str:
     if not destroyed:
         return "source-free"
+    assert all(target in factor or partner in factor for factor in destroyed)
     private = [factor for factor in destroyed if partner in factor and target not in factor]
     if not private:
         assert all(target in factor for factor in destroyed)
@@ -112,14 +113,19 @@ def verify_failure_router(counts: Counter[str]) -> None:
         for cells in combinations((0, 1, 2, 3, 4, 5), size)
     )
     capacities = {factor: 1 + (sum(factor) % 3) for factor in factors}
-    sample_destroyed = [
-        tuple(),
-        tuple(factor for factor in factors if target in factor)[:4],
-        tuple(factor for factor in factors if 1 in factor and target not in factor)[:4],
-        tuple(factor for factor in factors if target in factor or 1 in factor)[:6],
-    ]
+    choices_by_partner = []
+    for partner in partners:
+        target_common = tuple(factor for factor in factors if target in factor)[:4]
+        private = tuple(
+            factor for factor in factors if partner in factor and target not in factor
+        )[:4]
+        mixed = tuple(
+            factor for factor in factors if target in factor or partner in factor
+        )[:6]
+        choices_by_partner.append((tuple(), target_common, private, mixed))
+
     for kappa in (1, 2):
-        for destroyed_choices in product(sample_destroyed, repeat=len(partners)):
+        for destroyed_choices in product(*choices_by_partner):
             for weights in product((1, 2, 4), repeat=len(partners)):
                 roles = [
                     classify(
