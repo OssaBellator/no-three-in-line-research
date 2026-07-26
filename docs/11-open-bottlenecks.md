@@ -60,7 +60,7 @@ residue channel.  Its translation support contains a large endpoint-disjoint
 private subbank.  Loaded-owner and private translated currencies have disjoint
 canonical owner support.
 
-## 4. Extension-free line cleaning is exact
+## 4. Extension-free line cleaning
 
 CMR1510--CMR1517 show that every Hall-cut blocker of `H_e` has more edges than a
 partial matching can place in the same cut rectangle.  Hence
@@ -77,7 +77,9 @@ may therefore be forbidden while the response continues to avoid both `O` and
 owner-labelled loaded line, the same-owner, same-line offspring coordinate has
 policy coefficient zero.
 
-CMR1526--CMR1533 make the remaining off-line row exact.  Put
+## 5. Exact and uniform line-clean coefficients
+
+Put
 
 \[
 F=O\cup X\cup\{e\},
@@ -85,8 +87,9 @@ F=O\cup X\cup\{e\},
 D=O\cup X.
 \]
 
-`D` has maximum degree two and decomposes into alternating paths and even
-cycles.  Its rook polynomial factors by components.  If `e=uv`, then
+CMR1526--CMR1533 show that `D` has maximum degree two, decomposes into alternating
+paths and even cycles, and has a component-factorized rook polynomial.  If
+`e=uv`,
 
 \[
 \mathcal R_F(z)
@@ -94,21 +97,85 @@ cycles.  Its rook polynomial factors by components.  If `e=uv`, then
 \mathcal R_D(z)+z\mathcal R_{D-u-v}(z).
 \]
 
-The line-clean response count and every compatible prescription probability are
+Therefore
 
 \[
 N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
-\]
-
-\[
+\qquad
 \Pr(P\subseteq R)=\frac{N_{d-r}(F/P)}{N_d(F)}.
 \]
 
-Therefore the complete off-line collateral row is an explicit rational rook-
-class dot product.  The missing step is a host-uniform upper bound for that
-known expression, not a definition of the coefficient.
+CMR1534--CMR1541 add a host-uniform denominator.  Every such allowed graph
+contains a spanning `(d-3)`-regular subgraph, so
 
-## 5. Atomic repeated-token quotient
+\[
+\boxed{
+N_d(F)
+\ge
+ d!\left(\frac{d-3}{d}\right)^d.
+}
+\]
+
+Write
+
+\[
+\kappa_d^{line}
+=
+\left(\frac d{d-3}\right)^d.
+\]
+
+Every rank-one through rank-three allowed prescription satisfies
+
+\[
+\boxed{
+\Pr(P\subseteq R)
+\le
+\frac{\kappa_d^{line}}{(d)_r}.
+}
+\]
+
+Consequently the exact off-line rook row is bounded by
+
+\[
+\boxed{
+\mathbb E N_{off}(R)
+\le
+\kappa_d^{line}
+\left[
+\frac{V_1^{off}}d
++
+\frac{V_2^{off}}{(d)_2}
++
+\frac{V_3^{off}}{(d)_3}
+\right].
+}
+\]
+
+With `b` unavailable allowed edges and current potential `m`, the strict test
+
+\[
+\kappa_d^{line}
+\left[
+\frac{V_1^{off}}d
++
+\frac{V_2^{off}}{(d)_2}
++
+\frac{V_3^{off}}{(d)_3}
++
+\frac{(m+1)b}{d}
+\right]
+<
+D_S(e)
+\]
+
+forces one feasible lower-potential line-clean response.
+
+The line-clean coefficient is now defined both exactly and uniformly.  The
+remaining issue is whether the uniform envelope is strong enough in every
+recurrent geometric class; where it is not, the exact component signature must
+be used.
+
+## 6. Atomic repeated-token quotient
 
 For one nonroot full token in an envelope `t=p^h`, repeated heavy episodes first
 pay finite token-edge stock or identify one recurrent central edge.  Once that
@@ -145,12 +212,13 @@ numerical rows:
 
 Fresh stock and successful absorption are not independent recurrent classes.
 
-## 6. Genuine recurrent rows
+## 7. Genuine recurrent rows
 
 After all closed reductions, the host-uniform diagonal quotient needs
 coefficients for:
 
-1. **Line-clean rook row.**  The exact off-line component-signature dot product.
+1. **Line-clean credit row.**  Compare the explicit uniform envelope, or the
+   sharper exact component row, with destroyed target load.
 2. **Return row.**  New credits supported by one labelled edge return.
 3. **Persistent selector row.**  The CMR531 paid-pair selector with surcharge
    two.
@@ -160,36 +228,39 @@ coefficients for:
 6. **Thin row.**  Small scattered residual factors not covered by nonroot depth
    transfer.
 
-The broad labels “loaded line” and “repeated token” should no longer appear as
-single primitive rows.
+The broad labels “loaded line” and “repeated token” are no longer primitive
+rows.
 
-## 7. Recommended next lemmas
+## 8. Recommended next lemmas
 
-1. **Line-clean uniform envelope.**  Combine component rook probabilities with
-   inherited primitive-height capacity and owner/profile counts.
-2. **Return coefficient.**  Combine exact entering-edge recreation support with
+1. **Line-clean destroyed-credit comparison.**  Insert inherited line/height
+   candidate counts into the CMR1539 envelope and identify the classes where
+   the CMR1540 inequality is automatic.
+2. **Component-signature sharpening.**  For the remaining classes, optimize the
+   exact CMR1533 rook ratios over path/cycle signatures.
+3. **Return coefficient.**  Combine entering-edge recreation support with
    `(p+1)(h-1)` labelled incidence per returned edge.
-3. **Selector coefficient.**  Evaluate
+4. **Selector coefficient.**  Evaluate
    \[
    A_L+\frac2Q+\frac{|B_L|}{Q(n-1)}
    \]
-   over exact residual rook classes and optimise `Q`.
-4. **Trace coefficient.**  Convert one fixed trace incidence into a loaded-line,
+   over exact residual rook classes and optimize `Q`.
+5. **Trace coefficient.**  Convert one fixed trace incidence into a loaded-line,
    secant-star, prefix/carry, or fixed-interface row without losing provenance.
-5. **Root/fixed-interface coefficient.**  Enumerate exact offspring by partner
+6. **Root/fixed-interface coefficient.**  Enumerate exact offspring by partner
    type, source residue, quotient carry and local rank.
-6. **Core matrix.**  Assemble surviving rows into a finite rational upper
-   quotient and search for an integer certificate `Av<v`.
-7. **Prime-field, thin and CRT rows.**  Evaluate remaining base rows and glue
-   through owner triangularity while retaining collision/local-line labels.
+7. **Core matrix and CRT rows.**  Assemble surviving rows into an integer
+   certificate `Av<v`, then retain collision and local-line labels during CRT
+   gluing.
 
-## 8. Computational priorities
+## 9. Computational priorities
 
 The next finite calculations should target coefficients rather than new
 structural alternatives.
 
-- Enumerate the exact component signatures of line-clean forbidden boards and
-  aggregate candidate counts by rank, owner and height class.
+- Evaluate the CMR1540 line-clean criterion over exact inherited line/height
+  classes.
+- Enumerate extremal path/cycle signatures for the exact CMR1533 ratios.
 - Enumerate return-supported offspring with exact last-entering owner labels.
 - Evaluate the CMR531 selector bound over exact residual rook classes and
   restoration thresholds.
@@ -198,9 +269,9 @@ structural alternatives.
 - Search rational weights, clear denominators and verify strict integer row
   inequalities independently.
 
-## 9. Current proved endpoint
+## 10. Current proved endpoint
 
-Through **CMR1533**:
+Through **CMR1541**:
 
 - exact response probabilities and owner weights are known;
 - inherited-coordinate capacity is valid for scattered residual factors;
@@ -213,8 +284,10 @@ Through **CMR1533**:
 - repeated-token histories compress to return, persistent-selector or fixed-
   trace rows;
 - the complete off-line line-clean response row is an exact rational rook-
-  component dot product.
+  component dot product;
+- every line-clean host contains a spanning `(d-3)`-factor and obeys the
+  explicit uniform permanent and collateral bounds above.
 
-There is still no complete proof.  The next genuine advance is a uniform
-inequality for one explicit recurrent row, followed by a verified host-uniform
-recurrent-core certificate.
+There is still no complete proof.  The next genuine advance is to certify the
+CMR1540 inequality on a nontrivial uniform geometric range, or sharpen the
+exact component rows until such a range closes.
