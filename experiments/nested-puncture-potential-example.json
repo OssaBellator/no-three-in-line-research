@@ -1,0 +1,44 @@
+{
+  "initial_source": ["c0", "c1", "c2", "a", "b", "d"],
+  "entries": [
+    {
+      "id": "z1",
+      "controller": "c1",
+      "blocked_pairs": [["c0", "a"], ["b", "d"]]
+    },
+    {
+      "id": "z2",
+      "controller": "c1",
+      "blocked_pairs": [["c0", "b"], ["a", "d"]]
+    },
+    {
+      "id": "z3",
+      "controller": "c2",
+      "blocked_pairs": [["c0", "d"], ["a", "b"]]
+    },
+    {
+      "id": "z4",
+      "controller": "c0",
+      "blocked_pairs": [["a", "b"]]
+    },
+    {
+      "id": "z5",
+      "controller": "c2",
+      "blocked_pairs": [["c1", "a"], ["b", "d"]]
+    }
+  ],
+  "stages": [
+    {
+      "puncture": "c0",
+      "delete": ["c0"],
+      "insert": ["x0"],
+      "minimum_drop": 3
+    },
+    {
+      "puncture": "c1",
+      "delete": ["c1"],
+      "insert": ["x1"],
+      "minimum_drop": 1
+    }
+  ]
+}
