@@ -1,0 +1,12 @@
+{
+  "R": 1000,
+  "xi": 0.2,
+  "inserted_state_size": 8,
+  "local_unary_movement_degree": 70,
+  "local_unary_refill_degree": 20,
+  "binary_atom_weights": [100000, 50000, 75000],
+  "marked_credit": 20,
+  "local_atom_weights": [8, 7, 6, 5, 4, 3, 2, 1, 1, 1],
+  "failed_domain_unary_loss": 260,
+  "failed_domain_largest_cell_type_fibre": 20
+}
