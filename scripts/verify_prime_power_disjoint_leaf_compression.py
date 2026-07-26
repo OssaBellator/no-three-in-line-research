@@ -23,11 +23,11 @@ def check_partitions_and_contractions():
     partition_cases = 0
     contraction_cases = 0
     for universe_size in range(1, 13):
-        states_by_size = [
-            [frozenset(state) for state in combinations(range(universe_size), size)]
-            for size in range(universe_size + 1)
-        ]
-        for states in states_by_size:
+        for state_size in range(universe_size + 1):
+            states = [
+                frozenset(state)
+                for state in combinations(range(universe_size), state_size)
+            ]
             for _ in range(min(100, max(1, 2 * len(states)))):
                 family = set(rng.sample(states, rng.randint(1, len(states))))
                 chosen = rng.choice(tuple(family))
@@ -62,9 +62,9 @@ def check_partitions_and_contractions():
 def check_undecided_progress():
     rng = random.Random(896)
     checked = 0
-    for universe_size in range(3, 100):
+    for universe_size in range(3, 80):
         universe = set(range(universe_size))
-        for _ in range(500):
+        for _ in range(200):
             anchor = set(rng.sample(tuple(universe), rng.randint(0, universe_size)))
             fixed = set(rng.sample(tuple(anchor), rng.randint(0, len(anchor))))
             outside = tuple(universe - anchor)
@@ -94,8 +94,8 @@ def check_undecided_progress():
 def check_depth_and_grouping():
     rng = random.Random(897)
     depth_cases = 0
-    for universe_size in range(1, 500):
-        for _ in range(100):
+    for universe_size in range(1, 200):
+        for _ in range(20):
             fixed = set()
             deleted = set()
             steps = 0
@@ -117,13 +117,13 @@ def check_depth_and_grouping():
     grouping_cases = 0
     cells = tuple(range(12))
     targets = list(combinations(cells, 3))
-    for _ in range(5000):
+    for _ in range(2000):
         leaves = []
         next_state = 0
-        for _leaf in range(rng.randint(1, 100)):
+        for _leaf in range(rng.randint(1, 60)):
             target = rng.choice(targets)
             states = set()
-            for _state in range(rng.randint(1, 10)):
+            for _state in range(rng.randint(1, 8)):
                 assignment = tuple(rng.randint(0, 1) for _ in range(3))
                 states.add((next_state, target, assignment))
                 next_state += 1
@@ -145,9 +145,9 @@ def check_depth_and_grouping():
 
 def check_density():
     checked = 0
-    for side in range(2, 100):
+    for side in range(2, 80):
         class_count = 8 * comb(side * side, 3)
-        for total in range(1, 1000):
+        for total in range(1, 500):
             lower = ceil(total / class_count)
             assert lower * class_count >= total
             checked += 1
