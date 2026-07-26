@@ -24,6 +24,7 @@ transition addendum in
 | Complete second-host call matrix | Exact marked scale, helper supply, puncture/domain loss, credit ownership, source-host routing, terminal leaves, and global helper accounting | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
 | Raw second-host leaf elimination | Buffered role domains and the complete support table eliminate raw Hall, alternating, non-superregular, distinguished-endpoint, and role-host outputs | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
 | Current-row coordinate-cover elimination | The slab reservation census supplies every quadratic helper host and removes internal near-complete coordinate cover | PROVED / CONDITIONAL TYPED PAID ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
+| Typed current-host closure | Uniform bounded deletion removes choice-grid residual-host failure; sparse-or-dense heavy deletion removes fixed-cell fan host failure | PROVED / CONDITIONAL TYPED WEIGHTED ENDPOINTS | `docs/272`--`docs/273` |
 
 ## Exact late theorem ranges
 
@@ -48,6 +49,8 @@ transition addendum in
 | PP3baa--PP3bah | Complete second-host call-matrix audit | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
 | PP3bai--PP3ban | Raw second-host explicit-leaf elimination and revised trichotomy | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
 | PP3bao--PP3bas | Dense current-row coordinate supply and internal-cover elimination | PROVED / CONDITIONAL TYPED CONVERSION ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
+| PP3bat--PP3baz | Uniform residual superregularity and choice-grid host-leaf elimination | PROVED / CONDITIONAL WEIGHTED GRID ENDPOINTS | `docs/272-choice-grid-residual-host-elimination.md` |
+| PP3bba--PP3bbg | Sparse-or-dense fixed-cell fan host closure | PROVED / CONDITIONAL TYPED HEAVY-PENCIL ENDPOINTS | `docs/273-fixed-cell-fan-host-failure-elimination.md` |
 
 ## Current exact endpoint
 
@@ -57,14 +60,18 @@ by PP3bai--PP3ban: under the universal second-host hypotheses, buffered Hall
 assignment and the complete rank-three support table give only an independent
 cycle, dense current support, or dense source support.
 
-The dense current row also has automatic quadratic helper supply by
-PP3bao--PP3bas.  It cannot end in internal coordinate shortage, a near-complete
-slab-generated reservation cover, or a raw host-feasibility leaf.  Its remaining
-frontier is the finite family of typed paid endpoints such as arc/path petals,
-choice grids, fixed-cell or partner fans, insertion pencils, and fixed cores.
+The dense current row has automatic quadratic helper supply by PP3bao--PP3bas.
+It cannot end in internal coordinate shortage or a raw host-feasibility leaf.
+PP3bat--PP3baz further make the complete-grid and rank-three middle-grid residual
+hosts uniform after every compatible local pair, so their common spread law is
+automatic.  PP3bba--PP3bbg similarly replace fixed-cell fan Hall/host failure by
+either a uniform residual host or a typed heavy partner pencil.
 
-The dense source row remains the fixed-template and paired-switch conversion
-frontier.  Separately, the branch still assumes saturated no-three
+The remaining current-row frontier is weighted and geometric rather than host-
+existential: arc/path-petal bank payment, weighted grid or projective candidate
+covering, typed heavy partner pencils, and explicit source/off-fan or non-grid
+concentration.  The dense source row remains the fixed-template and paired-switch
+conversion frontier.  Separately, the branch still assumes saturated no-three
 configurations on `[p-1]^2` for every sufficiently large prime.  The
 no-three-in-line conjecture remains unproved.
 
@@ -77,4 +84,8 @@ python scripts/check_second_host_leaf_elimination.py \
   experiments/second-host-leaf-elimination-example.json
 python scripts/check_current_row_coordinate_supply.py \
   experiments/current-row-coordinate-supply-example.json
+python scripts/check_choice_grid_residual_hosts.py \
+  experiments/choice-grid-residual-hosts-example.json
+python scripts/check_fixed_cell_fan_host_elimination.py \
+  experiments/fixed-cell-fan-host-elimination-example.json
 ```
