@@ -1,0 +1,12 @@
+{
+  "R": 1000000,
+  "gamma": 0.35,
+  "xi": 0.20,
+  "Q": 1000000,
+  "q": 100,
+  "star_degree": 100000,
+  "foreign_cost": 1000,
+  "star_entry_controller_is_centre": false,
+  "beta": 0.10,
+  "punctures_per_macro": [3, 100000, 7, 0]
+}
