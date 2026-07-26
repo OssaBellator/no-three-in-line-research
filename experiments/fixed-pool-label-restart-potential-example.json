@@ -1,0 +1,10 @@
+{
+  "m": 7,
+  "initial_controller_layer": [2, 5, 4, 1, 0, 6, 3],
+  "final_controller_layer": [4, 1, 5, 2, 0, 6, 3],
+  "complementary_layer": [3, 0, 6, 4, 1, 5, 2],
+  "moved_columns": [0, 1, 2, 3],
+  "pool_columns": [0, 1, 2, 3, 4],
+  "movement_labels": [7, 8, 9, 10, 11],
+  "refill_labels": [7, 8, 9, 10, 11]
+}
