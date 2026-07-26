@@ -2,238 +2,215 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open.  The branch has exact structural
-and matching-bank reductions, but no theorem yet proves that every positive
-minimum of the real-triple potential reaches zero.
+The no-three-in-line conjecture remains open.  The branch has exact structural,
+matching-bank and inherited-coordinate reductions, but no theorem yet proves
+that every positive minimum of the real-triple potential becomes zero.
 
 The decisive honesty correction remains:
 
-> finite response and structural descent are not the same as potential
-> improvement.
+> finite response and structural descent are not potential improvement.
 
 A completion must exhibit an actual lower-potential response or an exact
-weighted inequality that guarantees one.
+weighted inequality guaranteeing one.
 
-## 2. What is structurally closed
+## 2. Structurally closed components
 
-The proved chain now contains finite canonical forms for:
+The proved chain contains finite canonical forms for inherited banks, Hall
+walls, closure envelopes, rollback, exchange-SCC and protected/free products,
+minimum-core contraction, selected routing, target handoff, loaded-line and
+star banks, blocker covers, small full-grid bases and owner-labelled restoration
+ancestry.
 
-1. inherited banks, Hall walls, closure envelopes and exchange ancestry;
-2. primitive-height, line-clean, carry, token and cycle-erasure geometry;
-3. exact rollback, SCC, protected/free, unit-wall and child products;
-4. minimum-face restriction, host-representable contraction and loss ledgers;
-5. target handoff, protected execution, loaded-line and star banks;
-6. terminal blocker covers and small full-grid bases;
-7. last-entering credit ownership and finite rational spectral certificates.
-
-The complete owner system is a finite DAG.  Its reproduction matrix is block
-upper triangular, so only the same-owner diagonal blocks require subcritical
-certificates.
-
-## 3. Exact same-owner probability law
-
-For one target `e` and opposite matching `O`, use
+Last-entering ownership makes the complete owner matrix block upper triangular:
 
 \[
-H_e=K_{n,n}\setminus(O\cup\{e\}).
+\rho(A)=\max_i\rho(A_{ii}).
 \]
 
-After relabeling `O` to the identity and `e=(0,1)`, every compatible residual
-prescription is assigned parameters
+Only same-owner diagonal blocks require subcritical certificates.
+
+## 3. Exact same-owner probability and assignment law
+
+For response side `d`, target `e` and opposite matching `O`, use
 
 \[
-(n,r,q,d,\varepsilon).
+H_e=K_{d,d}\setminus(O\cup\{e\}).
 \]
 
-The exact forbidden-board rook polynomial gives
+After normalizing `O`, every compatible prescription has a finite exact rook
+class.  Its completion count and probability are
 
 \[
-r_j=\binom qj+\varepsilon\binom{q-d}{j-1}
+B_d(P)=
+\sum_{j=0}^{d-r}(-1)^j
+\left[\binom qj+\varepsilon\binom{q-d_0}{j-1}\right](d-r-j)!,
 \]
-
-and
-
-\[
-B_n(P)=
-\sum_{j=0}^{n-r}(-1)^j
-\left[\binom qj+\varepsilon\binom{q-d}{j-1}\right](n-r-j)!.
-\]
-
-Thus
 
 \[
 \Pr(P\subseteq R)=
-\frac{B_n(P)}{D_n(n-2)/(n-1)}.
+\frac{B_d(P)}{D_d(d-2)/(d-1)}.
 \]
 
-There are only `O(n)` exact probability classes per rank.  Exact collateral
-and unavailable-edge expectations are finite rook-class dot products.
-
-## 4. Cross-line assignment is solved formally
-
-Each candidate triple has one fixed entering owner before the response is
-sampled.  For a response edge `a`, let `g_e(a)` be its conditional expected
-owned collateral and `p_e(a)` its marginal.  Then
+Every candidate triple has a fixed entering owner before sampling.  Therefore
 
 \[
-\mathbb E N(R)=\sum_ap_e(a)g_e(a).
+\mathbb E N(R)=\sum_ap_e(a)g_e(a),
 \]
 
-The marginal matrix is doubly stochastic.  Therefore expected collateral is
-one bipartite assignment cost, with exact dual
+where the marginal matrix `p_e(x,y)` is doubly stochastic.  Expected collateral
+is one bipartite assignment cost with exact rational dual.  Every owner weight
+is itself a finite geometric/rook dot product, so no perfect-matching
+enumeration is needed.
+
+## 4. Inherited-coordinate capacity
+
+A residual matching factor may use scattered coordinates.  Keep separate:
+
+- matching side `d`;
+- prime-power envelope side `t=p^k`;
+- coordinate span
+  \[
+  W_\omega=\max\{x_{\max}-x_{\min},y_{\max}-y_{\min}\}.
+  \]
+
+For primitive height `h`, define
 
 \[
-\min\left\{
-\sum_x\alpha_x+\sum_y\beta_y:
-\alpha_x+\beta_y\ge g_e(x,y)
-\right\}.
+c_\omega(h)=
+\max\left\{\left\lfloor\frac{W_\omega}{h}\right\rfloor-1,0\right\}.
 \]
 
-A dual sum below the destroyed target load forces an improving response.  This
-replaces independent line maxima by shared row/column potentials.
-
-Moreover, every `g_e(a)` is computable without enumerating the bank:
-
-\[
-c_e(a)=
-\sum_{r,q,d,\varepsilon,\eta}
-C_e(a;r,q,d,\varepsilon,\eta)\pi_n(r,q,d,\varepsilon),
-\qquad
-g_e(a)=\frac{c_e(a)}{p_e(a)}.
-\]
-
-Here `eta` may record inherited height, line, prefix, quotient and carry data.
-
-## 5. Lattice-capacity reduction
-
-For primitive direction height `h`, define
-
-\[
-c_n(h)=
-\max\left\{\left\lfloor\frac{n-1}{h}\right\rfloor-1,0\right\}.
-\]
-
-The exact owner-line identity gives
+The exact owner-line reduction is
 
 \[
 \gamma_e(a,R)
-\le
-\frac12\sum_{b\in E_a(R)}c_n(h(a,b)).
+\le\frac12\sum_{b\in E_a(R)}c_\omega(h(a,b)).
 \]
 
-Using exact pair rook probabilities yields a conditional capacity star and
+Using exact pair rook probabilities gives a conditional eligible envelope
+`Gamma_e^{elig}(a)` with `g_e(a)<=Gamma_e^{elig}(a)`.  Directions of height
+above `W_omega/2` contribute zero.
+
+## 5. One-owner prime-power signatures
+
+Inside envelope `p^k`, every eligible pair has one signature
 
 \[
-g_e(a)\le\Gamma_e^{\rm elig}(a).
+(t_{\rm pair},s,\delta,H),
 \]
 
-The eligibility indicator is fixed before sampling: a response partner is
-eligible exactly when it was in the old matching or follows the owner in the
-absolute entering-edge order.
-
-Directions with
+where `s` is first-separation depth, `delta` projective direction modulo `p`,
+and `H` a dyadic primitive-height band.  With
 
 \[
-h>\frac{n-1}{2}
+B_\omega=1+\lfloor\log_2\max\{1,W_\omega\}\rfloor,
 \]
 
-have coefficient zero.  Thus the unresolved owner mass is supported only on
-finitely many low-height directions.
-
-## 6. Prime-power signature endpoint
-
-At side `n=p^k`, every eligible owner-partner pair has one signature
+there are at most
 
 \[
-(t,s,\delta,H),
+2k(p+1)B_\omega
 \]
 
-where:
+classes for one owner.  A heavy eligible envelope forces one heavy class; some
+actual response realizes at least its ceiling mean.  A direction stock bound
+then concentrates that simultaneous class on one loaded real line through the
+owner.
 
-- `t` is fixed or response partner;
-- `s=v_p(G)` is first-separation depth;
-- `delta` is projective direction modulo `p`;
-- `H` is dyadic primitive-height band.
+## 6. Global fractional exact-displacement bank
 
-For a fixed owner, at most
+For a feasible candidate packing `z_T`, put `nu=sum_T z_T`.  The total packed
+eligible partner incidence is exactly `2nu`.  At a positive minimum,
+matching preclusion gives
 
 \[
-2k(p+1)\bigl(1+\lfloor\log_2(n-1)\rfloor\bigr)
+\nu\ge\frac{d-2}{3}.
 \]
 
-classes occur.  A large eligible owner envelope forces one heavy class.  Some
-actual response simultaneously realizes at least the ceiling of that class's
-conditional mean.
-
-All partners in the class occupy one prefix carry cell, separation depth,
-projective direction and height band.  A fixed projective/height class has at
-most
+Hence one signature has packed mass at least
 
 \[
-D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2
+\boxed{
+\mu_\sigma\ge
+\frac{d-2}{3k(p+1)B_\omega}.}
 \]
 
-exact primitive directions, so the simultaneous class concentrates on one
-real line through the owner.
+This mass is dispersed over at least `ceil(mu_sigma)` ordered owner-partner
+pairs and at least `ceil(mu_sigma/2)` owners.  In the response-partner branch,
+it also uses at least `ceil(mu_sigma)` distinct response edges.
+
+For
+
+\[
+D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2,
+\qquad
+S_{\omega,p}(s,H)=
+\left\lfloor\frac{W_\omega}{p^sH}\right\rfloor,
+\]
+
+one exact displacement class has mass at least
+
+\[
+\boxed{
+\frac{d-2}
+{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)}.}
+\]
+
+Thus the global obstruction contains a bank of parallel translated pairs with
+one depth, projective direction, height band and exact lattice displacement.
 
 ## 7. Genuine remaining inequality
 
-The remaining prime-power theorem is no longer an ownership, product,
-matching-probability or independent-line problem.  It is:
+The remaining prime-power theorem must compare two canonical outputs:
 
-> compare the target-credit weight removed by an owner response with the
-> weighted offspring produced after executing the forced heavy carry-cell fan
-> or loaded real line.
+1. the one-owner loaded-line/carry-cell class forced by CMR1458--CMR1461;
+2. the many-owner exact-displacement translation bank forced by CMR1469.
 
-A successful statement must populate a host-uniform same-owner upper quotient
-and produce an exact certificate
+The existing prefix-return, quotient/carry collision, protected-reserve,
+loaded-line and token machinery supplies possible payments.  What is missing is
+a weight assignment proving that at least one payment makes the same-owner
+offspring row strictly subcritical:
 
 \[
 Av<v.
 \]
 
-The existing loaded-line, star, protected-core, prefix, carry-cell and token
-responses give the available structural actions.  What is missing is a single
-quantitative weighting that makes their offspring subcritical.
-
 ## 8. Recommended next lemmas
 
-1. **Heavy-signature response row.**  Starting from the class forced by
-   CMR1458--CMR1461, calculate the exact destroyed-credit and created-credit
-   vector after loaded-line or carry-cell execution.
-2. **Carry-cell Lyapunov weights.**  Choose weights by separation depth, prefix
-   occupancy and height so deeper transfer or dispersed cells have strictly
-   smaller total weight.
-3. **Loaded-line assignment payment.**  Use the shared owner edge and protected
-   absorption to avoid charging one entering edge independently on every line.
-4. **Exact diagonal certificate.**  Search and then prove a rational/integer
-   `Av<v` certificate for the resulting finite classes.
-5. **Prime-field and thin blocks.**  Replace missing nonroot prefix depth with a
-   direct finite direction/line certificate.
-6. **CRT assembly.**  Retain collision/local-line types in each local diagonal
-   block and glue through the already-proved owner triangularity.
+1. **Exact-displacement prefix payment.**  Show that a bank of translated pairs
+   with displacement `mq` either consumes many distinct prefix/carry cells or
+   repeats one token-bearing cell beyond its finite capacity.
+2. **Packed-versus-loaded comparison.**  Relate dispersed CMR1469 mass to the
+   one-owner loaded-line gain, avoiding duplicate payment of one response edge.
+3. **Carry-cell Lyapunov weights.**  Choose weights by first-separation depth,
+   prefix occupancy, partner type and height band.
+4. **Exact diagonal certificate.**  Prove a rational/integer `Av<v` system for
+   the resulting finite rows.
+5. **Prime-field and thin blocks.**  Replace missing nonroot depth with direct
+   finite direction and line-distribution certificates.
+6. **CRT assembly.**  Retain collision/local-line types and glue through owner
+   triangularity.
 
 ## 9. Computational priorities
 
-- Enumerate exact owner/rook/signature rows in inherited coordinate sets.
-- Record the full offspring vector, not only total `(L,N)`.
-- Solve rational linear programs for candidate class weights and export strict
-  integer inequalities.
-- Measure loaded-signature execution gain by separation depth and prefix cell.
-- Test thin and prime-field owner blocks independently before CRT gluing.
+- Enumerate exact owner/rook/signature offspring vectors in inherited
+  coordinates.
+- Solve rational linear programs and export strict integer certificates.
+- Measure prefix/carry-cell multiplicity for exact displacement banks.
+- Compare packed translated-bank mass with protected-line absorption gain.
+- Test prime-field and thin diagonal blocks independently before CRT gluing.
 
 ## 10. Current proved endpoint
 
-Through **CMR1461**:
+Through **CMR1469**:
 
-- exact prescription probabilities use finite rook classes;
-- exact collateral is one shared-edge assignment cost;
-- every owner weight is a closed geometric/rook dot product;
-- harmonic and integer lattice-capacity pair envelopes are proved;
-- high-height directions vanish from the capacity envelope;
-- eligible low-height pairs occupy finitely many prime-power carry signatures;
-- a heavy signature is simultaneously realized and concentrates on one line.
+- prescription probabilities and host penalties are exact rook-class sums;
+- collateral is one shared-edge assignment cost;
+- owner weights have exact geometric/rook histograms;
+- lattice capacity is valid for scattered inherited factors;
+- one-owner heavy signatures concentrate on loaded lines;
+- global fractional obstructions contain exact-displacement translation banks.
 
-There is still no complete proof.  The next genuine advance is a subcritical
-weighted response row for that loaded signature, not another recurrence or
-matching-existence theorem.
+There is still no complete proof.  The next genuine advance is a quantitative
+prefix/carry or protected-reserve payment for the CMR1469 bank and its
+conversion into a subcritical same-owner certificate.
