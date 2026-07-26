@@ -75,14 +75,15 @@ new lineage rather than reviving the old occurrence.
 
 Assume the cohort `C` is an endpoint-disjoint rank-two or rank-three created-collateral star
 through one inserted cell `q`, as supplied by GC2cf, and has weight `W_C>0`.  At every later
-time, exactly one of the following quantitative alternatives holds:
+time, at least one of the following quantitative alternatives holds:
 
 1. `P_C(t)>=W_C/2`; later correction rows have already destroyed and paid at least half of the
    original star weight;
 2. `S_C(t)>=W_C/2`; at least half of the original exact star remains current.
 
-In the second alternative, the surviving factors are still pairwise disjoint outside `q` and
-all still contain the same exact current anchor `q`.
+For a canonical disjoint router, assign the equality case `P_C(t)=S_C(t)=W_C/2` to the first
+alternative.  In the second alternative, the surviving factors are still pairwise disjoint
+outside `q` and all still contain the same exact current anchor `q`.
 
 ### Proof
 
@@ -157,25 +158,25 @@ for a hard-legal event `j`, with the rank-three specialization
 `W_C >= (1-1/R_*)*Dsum_j/[6*(2Delta-1)]`.
 
 Execute `j`, tag every newly created exact lineage, and follow the resulting fixed-universe
-history.  Then at every chosen checkpoint one of the following holds:
+history.  The router is nested:
 
-1. exact later correction rows have paid at least `W_C/2` through first destructions of the
-   cohort;
-2. a current endpoint-disjoint star through the same inserted cell survives with weight at
-   least `W_C/2`;
-3. the global potential `Phi_tag` has strictly decreased by accumulated untagged destroyed
-   weight;
-4. the intervening steps are tagged-only recycling cycles.
+1. for the distinguished cohort, exact later correction rows have paid at least `W_C/2`, or a
+   current endpoint-disjoint star through the same inserted cell survives with weight at least
+   `W_C/2`;
+2. independently for the intervening history, the global potential `Phi_tag` has strictly
+   decreased by accumulated untagged destroyed weight, or every intervening event is a
+   tagged-only recycling step.
 
 Assume every tagged-only recycling cycle in the fixed exact lineage/signature state graph is
 quotient-stuttering, strictly descending, or consumes a finite exact cycle ticket, and every
 change of the physical universe, factor weights, lineage signature alphabet or payment
 semantics is an outer reset.  Then no created-collateral branch can sustain an infinite
-nonterminal history without producing alternatives 1--3 or an outer reset.
+nonterminal history without cohort payment, a surviving current star, strict tagged-potential
+descent or an outer reset.
 
 ### Proof
 
-GC2ci gives alternatives 1 or 2 for the distinguished star cohort at every checkpoint.
+GC2ci gives the first nested pair for the distinguished star cohort at every checkpoint.
 GC2cj sums all strict untagged destruction into the nonnegative potential `Phi_tag`.  If no
 strict decrease occurs, GC2ck says every event destroys tagged weight only.  Under the stated
 finite-state lineage-cycle contract, recurrent tagged-only segments erase, descend or spend
