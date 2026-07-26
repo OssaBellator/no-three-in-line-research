@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Audit theorem IDs, dependency order, move tags, and active frontier constants."""
 from __future__ import annotations
-
 import json
 import re
 from pathlib import Path
@@ -30,6 +29,15 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX551-PX554.md",
     "product-growing-direction-theorem-index-PX555-PX557.md",
     "product-growing-direction-theorem-index-PX558-PX561.md",
+    "product-growing-direction-theorem-index-PX562-PX564.md",
+    "product-growing-direction-theorem-index-PX565-PX567.md",
+    "product-growing-direction-theorem-index-PX568-PX570.md",
+    "product-growing-direction-theorem-index-PX571-PX575.md",
+    "product-growing-direction-theorem-index-PX576-PX579.md",
+    "product-growing-direction-theorem-index-PX580-PX582.md",
+    "product-growing-direction-theorem-index-PX583-PX585.md",
+    "product-growing-direction-theorem-index-PX586-PX588.md",
+    "product-growing-direction-theorem-index-PX589-PX591.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -66,16 +74,24 @@ DOCS = [ROOT / "docs" / name for name in (
     "184-side-seven-radius-two-support-sixteen-structure.md",
     "185-side-seven-shorter-classes-support-sixteen-csp.md",
     "186-side-seven-complete-support-sixteen-csp.md",
+    "187-side-seven-cycle52-support-eighteen-csp.md",
+    "188-side-seven-cycle52-support-twenty-csp.md",
+    "189-side-seven-cycle52-support-twenty-two-csp.md",
+    "190-side-seven-cycle52-complete-radius-two-obstruction.md",
+    "191-side-seven-cycle52-radius-three-selector-layer.md",
+    "192-side-seven-cycle52-radius-three-support-twelve-csp.md",
+    "193-side-seven-cycle52-radius-three-support-fourteen-csp.md",
+    "194-side-seven-cycle52-radius-three-support-sixteen-csp.md",
+    "195-side-seven-cycle52-radius-three-support-eighteen-csp.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
-
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX561"
+    assert manifest["range"] == "PX397-PX591"
     assert manifest["root"] == "PX492"
-    assert manifest["frontier_root"] == "PX561"
+    assert manifest["frontier_root"] == "PX591"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -92,34 +108,65 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 562):
+    for theorem_id in range(397, 592):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
     for path in INDEXES:
-        index_ids.extend(int(value) for value in INDEX_ROW.findall(
-            path.read_text(encoding="utf-8")
-        ))
-    assert index_ids == list(range(397, 562))
+        index_ids.extend(int(value) for value in INDEX_ROW.findall(path.read_text(encoding="utf-8")))
+    assert index_ids == list(range(397, 592))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
         assert phrase not in text
     for token in (
-        "A_3=320", "C_{8/109}<10^{59}", "N_3=10^{2900}",
-        "132", "488", "21,952", "170{,}368", "2{,}227{,}923",
-        "926,852", "806,548", "9,991,170", "1,748",
-        "1,201,997,452", "989,303", "45,477,868",
-        "1,594,005,329", "1,326,750,836", "5,461,931,168",
-        "6,712,968,934", "2,780,475,186", "9,442,860,381",
-        "77{,}026", "231{,}765", "308{,}791", "10{,}554",
-        "26,684", "9,824", "16,860", "3,016",
-        "4,080,834,197", "6,209,345,670", "15,435,560,520",
-        "21,644,906,190", "28{,}800",
+        "A_3=320",
+        "C_{8/109}<10^{59}",
+        "N_3=10^{2900}",
+        "132",
+        "488",
+        "21,952",
+        "170{,}368",
+        "2{,}227{,}923",
+        "926,852",
+        "806,548",
+        "9,991,170",
+        "1,748",
+        "1,201,997,452",
+        "989,303",
+        "45,477,868",
+        "1,594,005,329",
+        "1,326,750,836",
+        "5,461,931,168",
+        "6,712,968,934",
+        "2,780,475,186",
+        "9,442,860,381",
+        "77{,}026",
+        "231{,}765",
+        "308{,}791",
+        "10{,}554",
+        "26,684",
+        "9,824",
+        "16,860",
+        "3,016",
+        "4,080,834,197",
+        "6,209,345,670",
+        "15,435,560,520",
+        "21,644,906,190",
+        "2,766,686,696",
+        "5,423,810,214",
+        "2,767,130,810",
+        "20,354,897,736",
+        "468{,}452",
+        "15{,}767{,}760",
+        "2,627,071,477",
+        "1,628,663,322",
+        "15,477,173,554",
+        "14,581,646,651",
+        "71{,}860",
     ):
         assert token in text
-    print("PX397--PX561 dependency, cutoff, and support-sixteen audit: PASS")
-
+    print("PX397--PX591 dependency, cutoff, and cycle52 radius-three audit: PASS")
 
 if __name__ == "__main__":
     main()
