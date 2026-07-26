@@ -38,7 +38,8 @@ d(P)=
 \mathbf 1_{\{1\notin R(P),\ 1\notin C(P)\}}.
 \]
 
-Thus `d(P)` is the number, zero through two, of surviving diagonal forbidden
+When `epsilon(P)=0`, set `d(P)=0`.  Thus `d(P)` is always defined and, in the
+surviving case, is the number from zero through two of diagonal forbidden
 edges sharing an endpoint with `e`.
 
 ## Residual forbidden-board rook numbers
