@@ -19,41 +19,32 @@ The authoritative live ledger is split across:
 | CMR934--941 | Same-value expansion rollback, restoration-cycle erasure, intersection normalization, finite monotone restrictions, minimum-loss ancestry, and the expansion-rollback endpoint | PROVED | `docs/221-prime-power-minimum-expansion-rollback.md` |
 | CMR942--949 | Added-batch transversality under lowering expansion, minimum-preserving peeling, forced added-edge core contraction, peel budgets, record alternatives, mixed-transition transfer, and the lowering-expansion endpoint | PROVED | `docs/222-prime-power-lowering-expansion-core-contraction.md` |
 | CMR950--957 | Infeasible-base transversality, complete expansion normalization, arbitrary host-transition normal form, nested restriction segments, polynomial fixed-vertex execution bounds, restoration-capacity removal, and the complete same-vertex-set endpoint | PROVED | `docs/223-prime-power-complete-host-transition-normalization.md` |
+| CMR958--965 | Exact constant/pure/coupling decomposition, low local ranks, Cartesian coupling boxes, finite stock, contraction transport, minimum-preserving coupling deletion or minimum-face contraction, finite normalization, and the coupling-normalized endpoint | PROVED | `docs/224-prime-power-induced-product-potential-transport.md` |
+| CMR966--973 | Coordinate-fibre minimum inheritance, exact one-factor induced potential, target location trichotomy, anchored deletion/contraction, finite fibre normalization, pure residual potential, strict factor descent, and the coordinate-fibre endpoint | PROVED | `docs/225-prime-power-minimum-coordinate-fibre-descent.md` |
+| CMR974--981 | Conditioning preserves the exact minimum face, induced contraction, one-layer and joint two-layer host representation, factorwise conditioning, potential transport, iterated representable contraction, and the host-representable minimum-core endpoint | PROVED | `docs/226-prime-power-minimum-core-host-representability.md` |
 
-The branch still does not prove the all-`n` conjecture. Completeness branching
-can be made disjoint, and terminal leaves at one target-resolution stage compress
-to at most
+The branch still does not prove the all-`n` conjecture. Completeness branching is
+disjointly compressible, while minimum-anchor mode avoids global branch width.
+All same-vertex-set host dynamics normalize to finite restriction, rollback,
+minimum-core contraction, or strict potential improvement.
 
-\[
-8\binom{n^2}{3}
-\]
+Structural contractions now transport the real-triple potential exactly. With a
+fixed compatible core and exact product, every conflict is constant, pure in one
+factor, or a low-rank coupling box. Coupling atoms delete minimum-preservingly or
+contract on the minimum face after finite normalization. One selected minimum can
+then be frozen outside a coordinate and descended into a strict factor; former
+cross-factor triples become constants or rank-one/rank-two anchored triggers.
 
-fixed labelled-triple set-family classes. Unions carrying different masks are not
-silently treated as one matching-host family.
+Minimum-face contractions are host-representable: condition the complete current
+matching cylinder on the common prescription before contracting. The conditioned
+cylinder has exactly the old minimum face and contracts to a genuine residual
+one-layer host, joint two-layer system, or exact product, with every triple carried
+by the induced objective. Total contracted rank is bounded by state cardinality.
 
-For minimum-potential arguments, choose an actual minimum state. Outside-anchor
-deletions force a selected target or anchor prescription after at most
-`2n^2-2n` deletions, and exact contraction preserves minimum status for the
-induced residual objective.
-
-At one owner every edge is omitted by some minimum state and is therefore
-minimum-preservingly deletable, or belongs to the complete minimum core and
-contracts. Across owner transitions, same-value added batches roll back exactly;
-a lowering or infeasible-base expansion peels to an added edge which enters the
-minimum core and contracts. Therefore every canonical same-vertex-set history is
-a finite nested restriction sequence interrupted only by contraction, strict
-potential improvement, or structural owner/vertex-set exit. A coarse saturated
-side-`N` bound is
-
-\[
-(2N+1)2N^2
-\]
-
-strict restriction transitions before one of those exits.
-
-The active prime-power frontier is now structural vertex-set descent and induced-
-objective transport: carry the minimum face, target load, protected reserve, and
-cross-factor conflict potential through minimum-core contractions, unit-wall and
-child products, and closure-envelope changes. Set-family contractions are exact,
-but host representability and cross-factor potential remain genuine issues.
-Prime-field transfer and arbitrary side-length assembly remain necessary.
+The active prime-power frontier is now the persistent fixed-interface target
+branch. A physical triple lying in the accumulated conditioned core enters the
+one-target handoff, while pure targets descend strictly and anchored targets enter
+rank-one/rank-two machinery. The remaining task is to prove that repeated fixed-
+core target handoff forces minimum decrease, finite reserve/envelope expenditure,
+or a globally well-founded loss/restoration ancestry. Prime-field transfer and
+arbitrary side-length assembly remain necessary.
