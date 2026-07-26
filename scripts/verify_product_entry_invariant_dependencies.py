@@ -38,6 +38,7 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX583-PX585.md",
     "product-growing-direction-theorem-index-PX586-PX588.md",
     "product-growing-direction-theorem-index-PX589-PX591.md",
+    "product-growing-direction-theorem-index-PX592-PX598.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -83,15 +84,16 @@ DOCS = [ROOT / "docs" / name for name in (
     "193-side-seven-cycle52-radius-three-support-fourteen-csp.md",
     "194-side-seven-cycle52-radius-three-support-sixteen-csp.md",
     "195-side-seven-cycle52-radius-three-support-eighteen-csp.md",
+    "196-side-seven-cycle52-radius-three-support-twenty-cache-pilot.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX591"
+    assert manifest["range"] == "PX397-PX598"
     assert manifest["root"] == "PX492"
-    assert manifest["frontier_root"] == "PX591"
+    assert manifest["frontier_root"] == "PX598"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -108,13 +110,13 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 592):
+    for theorem_id in range(397, 599):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
     for path in INDEXES:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(path.read_text(encoding="utf-8")))
-    assert index_ids == list(range(397, 592))
+    assert index_ids == list(range(397, 599))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
@@ -164,9 +166,18 @@ def main() -> None:
         "15,477,173,554",
         "14,581,646,651",
         "71{,}860",
+        "1{,}669{,}828",
+        "699",
+        "43{,}726",
+        "38{,}553",
+        "29,632",
+        "65,296",
+        "1,584",
+        "601,405",
+        "71{,}814",
     ):
         assert token in text
-    print("PX397--PX591 dependency, cutoff, and cycle52 radius-three audit: PASS")
+    print("PX397--PX598 dependency, cutoff, and support-twenty cache audit: PASS")
 
 if __name__ == "__main__":
     main()
