@@ -12,340 +12,348 @@ D(n)=2n
 
 remains open.  This repository does **not** contain a complete proof.
 
-The collision-free theorem ledger is split across
+The collision-free theorem ledger is split across:
 
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` from CMR1198.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` from CMR1198
+  through the current CMR1373 range.
 
-## Structural normal forms
+## What is structurally closed
 
-- Same-value host expansions roll back; lowering or infeasible-base expansions peel
-  to added minimum-core contraction or strict improvement.
-- Between contractions, normalized same-vertex-set hosts are nested decreasing.
-- Minimum-core contraction is host-representable after conditioning the complete
-  current cylinder on the common prescription.
-- Exact protected/free, routing, unit-wall, essential-core, exchange-SCC and child
-  products preserve original geometric coordinates.
-- Cross-factor triples are constants, pure one-factor atoms, or low-rank Cartesian
-  coupling boxes.
-- Minimum-selected routing fixes one actual minimum skeleton immediately, so the
-  selected path has no routing-recurrence branch.
-- Inclusion-minimal response-bank blockers are exact deficiency-one unit Hall walls
-  and factor into strict lower-side children.
+The selected-minimum execution now has finite canonical forms for:
 
-These statements give finite response and structural descent.  They do not imply
-that a positive minimum becomes zero.
+- same-value rollback and lowering-expansion core contraction;
+- nested normalized hosts and permanent minimum-loss witnesses;
+- host-representable minimum-core contraction;
+- selected routing and strict child products;
+- unit Hall walls and complete wall trees;
+- protected/free, exchange-SCC and exact product decompositions;
+- low-rank cross-factor coupling boxes;
+- fixed-core target lifting and owner-independent restoration ancestry;
+- terminal fixed-target, loaded-line and small-side response banks.
 
-## Exact fixed-target collateral expectation
+These results prove finite response and strict structural descent.  They do not
+by themselves prove that a positive minimum becomes zero.
 
-Fix a selected target cell `e`, the opposite-layer matching `O`, and a disjoint
-forbidden extension `F` containing `e`.  The response graph
+## Last-entering ownership and product triangularity
 
-\[
-G=K_{n,n}\setminus(O\cup F)
-\]
+Every newly created physical triple has one absolute last-entering labelled edge.
+In a one-coordinate product response, all entering edges lie in the active factor.
+Fixed-core and sibling-factor cells may occur in the triple, but receive no owner
+charge.
 
-is `(n-2)`-regular.  Put
+Every surviving triple keeps its old owner through restriction and contraction.
+A target which becomes wholly fixed is answered at its unique lifted owner.
+Therefore fixed interfaces do not create upward offspring.
 
-\[
-\kappa_n=\left(\frac n{n-2}\right)^n\le16
-\qquad(n\ge4).
-\]
-
-Van der Waerden gives
+The complete selected structural owner system is a finite DAG.  After topological
+ordering, the global credit-reproduction matrix is block upper triangular:
 
 \[
-|\operatorname{PM}(G)|
-\ge n!\left(\frac{n-2}{n}\right)^n.
-\]
-
-A compatible rank-`r` prescription therefore has response-bank probability at
-most
-
-\[
-\frac{\kappa_n}{(n)_r}
-\qquad(1\le r\le3).
-\]
-
-If `V_r` counts genuinely new physical triples with residual response rank `r`,
-then
-
-\[
-\mathbb E N(Q)
-\le
-\kappa_n
-\left(
-\frac{V_1}{n}
-+
-\frac{V_2}{(n)_2}
-+
-\frac{V_3}{(n)_3}
-\right).
-\]
-
-Every response removes `e`, so it destroys at least its old target load `D_S(e)`.
-Consequently
-
-\[
-\kappa_n\mathcal C(S;O,F)<D_S(e)
-\]
-
-is an actual strict-improvement criterion.
-
-## Restricted-host penalty and target aggregation
-
-If `b` allowed response edges are unavailable in the current host and `m=Phi(S)`,
-then
-
-\[
-\kappa_n
-\left(
-\mathcal C(S;O,F)+\frac{(m+1)b}{n}
-\right)<D_S(e)
-\]
-
-forces a feasible improving response.  The coefficient `m+1` ensures that a
-negative weighted response cannot use an unavailable edge.
-
-The exact target-incidence identity is
-
-\[
-\sum_{e\in E(S)}D_S(e)=3\Phi(S).
-\]
-
-Optimizing the bank score over extensions for each selected cell gives a finite
-global criterion: if the optimized scores sum to less than `3Phi(S)`, one target
-bank improves.
-
-## Corrected line energy
-
-Let `S=O union M`, let `M_G=M cap E(G)`, and on a real line `L` put
-
-\[
-o_L=|O\cap L|,
-\quad
-g_L=|G\cap L|,
-\quad\m_L=|M_G\cap L|,
-\quad
-g_L^+=g_L-m_L.
-\]
-
-The exact new-collateral counts are
-
-\[
-V_1
-=
-\sum_L\binom{o_L}{2}g_L^+,
-\]
-
-\[
-V_2
-=
-\sum_L
- o_L
-\left(c_2(G_L)-\binom{m_L}{2}\right),
-\]
-
-\[
-V_3
-=
-\sum_L
-\left(c_3(G_L)-\binom{m_L}{3}\right).
-\]
-
-The subtraction is essential: an allowed response edge may already belong to the
-old rematched layer, and triples wholly supported by old edges are not new
-collateral.
-
-Every new triple has one absolute last-entering labelled edge owner and one real
-line owner.  Fixed-core cells contribute anchored geometry but receive no duplicate
-owner charge; exact products assign each entering owner edge to one residual
-factor.
-
-## Pointwise local collateral envelope
-
-For an allowed response edge `a`, let
-
-\[
-w_S(a)
-=
-\mathbf1_{a\notin M}
-\sum_{L\ni a}\binom{o_L}{2}.
-\]
-
-Let `Delta_2(a)` and `Delta_3(a)` be the maximum local rank-two and rank-three new
-collateral incidences over bank matchings containing `a`, and define
-
-\[
-\Lambda_S(a)
-=
-w_S(a)+\frac12\Delta_2(a)+\frac13\Delta_3(a).
-\]
-
-Every response matching satisfies the pointwise bound
-
-\[
-N(Q)\le\sum_{a\in R}\Lambda_S(a).
+A=
+\begin{pmatrix}
+A_{11}&B_{12}&\cdots\\
+0&A_{22}&\cdots\\
+\vdots&\vdots&\ddots
+\end{pmatrix}.
 \]
 
 Hence
 
 \[
-N(Q)\le
-\mathcal R_\Lambda(G,S)
-:=
-\min\left\{
-\sum_x\max_y\Lambda_S(x,y),
-\sum_y\max_x\Lambda_S(x,y)
-\right\}.
+\rho(A)=\max_i\rho(A_{ii}).
 \]
 
-If `mathcal R_Lambda(G,S)<D_S(e)`, every feasible response in that bank improves;
-if the complete bank is blocked, it enters unit-wall descent.
+Finite cross-factor and fixed-interface collateral affects only the scaling of
+local Lyapunov weights.  The unresolved spectral work is entirely in the
+same-owner diagonal blocks.
 
-Optimizing over host-feasible extensions gives `beta_H(e)`.  Unless some bank
-improves or is blocked,
+## Exact classes and upper quotients
+
+At one finite owner, exact state-target pairs form a finite credit-class system.
+Any proposed geometric compression
 
 \[
-\sum_{e\in E(S)}\beta_H(e)\ge3\Phi(S).
+\pi:\Sigma_{\mathrm{exact}}\to\overline\Sigma
 \]
 
-Therefore one absolute entering edge has local envelope at least
+has exact coarse offspring rows.  Taking the componentwise maximum over every
+exact row in one coarse fibre gives an honest upper quotient `A_hat`.
+
+If
 
 \[
-\frac{3\Phi(S)}{2n^2},
+\widehat A v<v,
 \]
 
-forcing a quantitative rank-one, rank-two or rank-three loaded-line/secant-star
-certificate.
+then the lifted vector satisfies the exact inequality on every state and host.
+The certificate can be stored as strict integer inequalities after clearing row
+and weight denominators.  Once `v` is fixed, deterministic bank rows suffice;
+rowwise randomization gives no additional existence power.
 
-## Last-creation credit ledger
+## Extension-free target banks
 
-Every current physical triple has a unique last creation time.  At that transition
-it receives one physical owner cell from its least entering labelled edge.
-
-- current potential is the number of live triple credits;
-- destroyed triples retire their previous credits;
-- created triples issue new credits;
-- surviving triples keep their owner;
-- removing an owner cell retires every live credit assigned to it;
-- layer reassignment without physical absence creates no new credit.
-
-Thus created collateral is immediately legitimate target load for a later response
-through its owner cell.
-
-## Reproduction-matrix frontier
-
-At one finite canonical owner, partition live credits into finitely many classes.
-Choose one feasible response law for each parent class and define
+Fix one target cell `e` outside the opposite matching `O` and put
 
 \[
-A_{\sigma\tau}
+H_e=K_{n,n}\setminus(O\cup\{e\}).
+\]
+
+The union over all forbidden extensions through `e` is exactly
+
+\[
+\operatorname{PM}(H_e).
+\]
+
+Every response in this family has a canonical realizing forbidden extension.
+
+Let `D_n` be the derangement number.  The response-bank size is exact:
+
+\[
+\boxed{
+|\operatorname{PM}(H_e)|
+=D_n\frac{n-2}{n-1}.
+}
+\]
+
+Define
+
+\[
+\lambda_n
 =
-\mathbb E N_\tau(Q).
+\frac{n!(n-1)}{D_n(n-2)}.
 \]
 
-A positive vector gives strict weighted descent exactly when
+For every `n>=4`,
 
 \[
-Av<v.
+\lambda_n\le4,
 \]
 
-For finite nonnegative matrices this is equivalent to
+and `lambda_n` tends to `e`.
+
+Every allowed response edge has marginal at most
 
 \[
-\rho(A)<1.
+\frac1{n-2}.
 \]
 
-If `rho(A)<1`, an explicit weight is
+Compatible rank-two and rank-three prescriptions have probabilities at most
 
 \[
-v=(I-A)^{-1}\mathbf1.
+\frac{\lambda_n}{(n)_2},
+\qquad
+\frac{\lambda_n}{(n)_3}.
 \]
 
-A successful proof can be certified by exact rational or integer inequalities.
-Such certificates tolerate bounded error and glue constructively across genuinely
-block-upper-triangular product matrices.  For a fixed weight vector, rowwise
-randomization is unnecessary: one deterministic bank row already satisfies every
-strict convex-combination inequality.
-
-No theorem yet constructs a globally valid upper offspring matrix with spectral
-radius below one.
-
-## Extension-free ambient response family
-
-Varying the forbidden extension through a target cell has the exact union
+Thus, for corrected extension-free candidate counts `V_r^e`,
 
 \[
-\bigcup_{F\ni e}
-\operatorname{PM}(K_{n,n}\setminus(O\cup F))
-=
-\operatorname{PM}(K_{n,n}\setminus(O\cup\{e\})).
+\mathbb E N(R)
+\le
+\frac{V_1^e}{n-2}
++
+\lambda_n
+\left[
+\frac{V_2^e}{(n)_2}
++
+\frac{V_3^e}{(n)_3}
+\right].
 \]
 
-The reverse inclusion follows because
-`K_{n,n}\setminus(O\cup R)` is regular and every remaining edge belongs to a
-perfect matching.  This form is appropriate for ambient lower-state searches and
-lowering expansions.  Fixed-extension banks remain necessary for pointwise
-collateral and blocker-wall arguments.
+Restricted-host unavailable edges use the same sharp rank-one coefficient.
+Complete blockage still minimalizes to an exact deficiency-one unit wall.
+
+## Corrected line profiles
+
+For a response graph `G`, old matching `M`, and opposite matching `O`, put
+
+\[
+M_G=M\cap E(G),
+\]
+
+and on each real line `L` define
+
+\[
+o_L=|O\cap L|,
+\qquad
+g_L=|E(G)\cap L|,
+\qquad
+m_L=|M_G\cap L|.
+\]
+
+Axis lines contribute no response-state triple.  On every nonaxis line, all cells
+are matching-compatible.  Therefore the corrected candidate counts are
+
+\[
+V_1=\sum_L\binom{o_L}{2}(g_L-m_L),
+\]
+
+\[
+V_2=\sum_Lo_L
+\left[
+\binom{g_L}{2}-\binom{m_L}{2}
+\right],
+\]
+
+\[
+V_3=\sum_L
+\left[
+\binom{g_L}{3}-\binom{m_L}{3}
+\right].
+\]
+
+The old-state subtraction is essential.
+
+The exact pair moments are
+
+\[
+\sum_L\binom{o_L}{2}=\binom n2,
+\qquad
+\sum_L\binom{g_L}{2}=P_2(G),
+\qquad
+\sum_L\binom{m_L}{2}=\binom{|M_G|}{2}.
+\]
+
+Using residual rank and dyadic bands for `(o_L,g_L,m_L)` gives at most
+
+\[
+3B_n^3,
+\qquad
+B_n=2+\lfloor\log_2n\rfloor,
+\]
+
+coarse profile classes.  Exact pair moments give explicit population-tail and
+rankwise band envelopes.
+
+## Exact line-composition kernel
+
+For disjoint layers `O,M`, let a nonaxis line contain:
+
+- `o` cells of `O`;
+- `m` cells of `M`;
+- `u` unselected board cells.
+
+Summing the extension-free candidate counts over every target cell `e in M`
+gives exactly
+
+\[
+\sum_eV_1^e(L)=n\binom o2u,
+\]
+
+\[
+\sum_eV_2^e(L)
+=o\left[(n-1)mu+n\binom u2\right],
+\]
+
+\[
+\sum_eV_3^e(L)
+=(n-2)\binom m2u
++(n-1)m\binom u2
++n\binom u3.
+\]
+
+The destroyed target incidence in that layer is
+
+\[
+m\binom{o+m-1}{2}.
+\]
+
+After adding both layers, the exact target contribution is
+
+\[
+3\binom{o+m}{3}.
+\]
+
+Inserting the sharp extension-free probability coefficients defines a symmetric
+line kernel `K_n`.  If
+
+\[
+\sum_L\mathcal K_n(o_L,m_L,u_L)<3\Phi(S),
+\]
+
+some target-cell response strictly improves the potential.
+
+## Why independent line bounds do not close the proof
+
+At `n=5`, the disjoint permutations
+
+\[
+M=(0,1,2,4,3),
+\qquad
+O=(1,3,4,0,2)
+\]
+
+have two target lines.  Their exact total target incidence is
+
+\[
+3\Phi(S)=6,
+\]
+
+but the independent-line extension-free upper kernel is
+
+\[
+\frac{160}{11}>6.
+\]
+
+This does not show that the state lacks an improving response.  It proves that
+pair moments and independent linewise maxima are too coarse to certify one.
+The next theorem must use cross-line correlation, shared response-edge assignment,
+primitive height, quotient/carry or prefix structure.
 
 ## Finite full-grid evidence and scope
 
-On the **standard full grids**, and common-affine copies:
+On standard full grids and verified common-affine copies:
 
-- side three has six physical states; every dirty target response is clean;
-- every dirty side-four state has an ambient strict target response;
-- every dirty side-five state has an ambient strict target response;
-- at side six, 189476 dirty ordered states improve immediately, 1184 more escape
-  after at most two equal target responses, and 24 ordered states form twelve
-  feeder/two-cycle physical traps; the recorded CMF1 clean state gives a two-layer
-  lowering expansion from those traps.
+- side three dirty target responses are clean;
+- every dirty side-four state has an ambient strict response;
+- every dirty side-five state has an ambient strict response;
+- at side six, almost every dirty state improves immediately or after at most two
+  equal target responses; twelve physical one-layer traps remain, and a recorded
+  clean two-layer state gives a lowering expansion.
 
-These are root/affine finite theorems only.  They do **not** apply by arbitrary
-relabeling to scattered residual factors, because real collinearity remains in the
-original parent coordinates.  For scattered factors, the inherited-coordinate
-bank, local-envelope and spectral analysis remains necessary.
+These finite classifications do **not** transfer by arbitrary relabelling to
+scattered residual factors.  Real collinearity always remains in original parent
+coordinates.
 
 ## Corrections retained
 
 - Sequential two-layer rematching may reoccupy an old first-layer cell.
 - Historical target lines and stars are not simultaneous families.
-- One edge return may serve several neutralisations in one absence run.
+- One edge return may serve several neutralizations in one absence run.
 - Removing one essential edge gives Hall deficiency exactly one.
 - Aggressive batch deletion is branch-local.
 - Differently masked leaf unions are not automatically one matching host.
-- An empty intersection host has no assigned minimum.
 - Conditioning on one support edge does not fix the other two layer labels.
-- Static token membership is not restoration payment until an edge returns.
 - Finite scheduler termination is not potential improvement.
-- Allowed response edges already present in the old layer contribute no new
-  rank-one collateral; old rank-two and rank-three subsets must also be subtracted.
-- Standard-grid finite classifications do not transfer to scattered residual
-  coordinates by relabelling.
-- The side-six closed one-layer trap graph has six two-cycles and twelve one-step
-  feeders, not fixed points.
+- Old response-layer edges and subsets create no new collateral and must be
+  subtracted.
+- The dyadic zero band is additional: `B_n=2+floor(log_2 n)`.
+- Candidate prescriptions have at most, not exactly, `(n-r)!` restricted-bank
+  completions.
+- Standard-grid finite classifications do not apply to scattered residual
+  coordinates.
+- The side-six closed one-layer graph has six two-cycles and twelve feeder states,
+  not fixed points.
 
 ## Current open frontier
 
-1. **Subcritical offspring matrix.**  Construct honest line/height/carry and
-   fixed-interface credit classes with an upper matrix satisfying `rho(A)<1`, or
-   exhibit an exact rational vector `Av<v`.
-2. **Product triangularity.**  Prove that last-entering ownership makes unit-wall,
-   child and lifted-interface offspring matrices block triangular up to a bounded
-   error absorbable by certificate slack.
-3. **Prime-field and thin regimes.**  Establish the same certificate without a
-   nonroot prefix-depth budget.
-4. **Arbitrary side lengths.**  Complete CRT/balanced assembly while retaining
-   collision/local-line credit classes.
+1. **Cross-line same-owner certificate.**  Use response-edge assignment,
+   primitive-height, prefix, quotient and carry information to improve the exact
+   line-composition kernel.
+2. **Subcritical upper quotient.**  Construct a host-uniform coarse matrix with an
+   exact rational or integer certificate `Av<v`.
+3. **Prime-field and thin regimes.**  Prove the same diagonal certificate without
+   a nonroot prefix-depth budget.
+4. **Arbitrary side lengths.**  Complete balanced/CRT assembly while retaining
+   collision and local-line credit classes.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1317**, fixed-target bank expectations,
-restricted feasibility, corrected line energy, unique collateral ownership,
-pointwise local envelopes, live-credit reproduction, exact spectral certificates,
-extension-free response unions and standard-grid sides three through six have
-precise normal forms.  The next genuine theorem must prove subcritical credit
-reproduction in inherited coordinates; finite response and root-grid enumeration
-are supporting evidence, not substitutes for that inequality.
+There is no complete proof.  Through **CMR1373**, product and fixed-interface
+coupling are spectrally triangular, exact extension-free bank probabilities are
+known, and the same-owner problem has a rigorous line-profile and line-composition
+form.  The remaining obstruction is a genuine cross-line quantitative inequality,
+not an uncontrolled recurrence or matching-structure endpoint.
