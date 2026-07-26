@@ -1,4 +1,4 @@
-// Exact radius-two support-eight/ten/twelve coordinate census for PX523--PX532.
+// Exact radius-two support-eight/ten/twelve/fourteen census for PX523--PX536.
 #include <array>
 #include <cassert>
 #include <cstdint>
@@ -15,24 +15,29 @@ struct Case {
  int count8; std::vector<uint64_t> nodes8;
  int count10; std::vector<uint64_t> nodes10;
  int count12; std::vector<uint64_t> nodes12;
+ int count14; std::vector<uint64_t> nodes14;
 };
 const std::array<Case,4> C={{
 {"cycle7",{1,2,3,4,5,6,0},{5,4,0,6,2,1,3},{0,3,0,3,5,2,2,2,2,3,0,5,5,2},1092,
  435,{19127017ULL,33614524ULL,67538237ULL,57041978ULL,64458064ULL,53624461ULL},
  400,{20597821ULL,23018169ULL,40816672ULL,46936004ULL,39311932ULL,61086054ULL},
- 3606,{131090413ULL,216370311ULL,404711510ULL,382077982ULL,503551541ULL,293314232ULL,324879897ULL,479206721ULL}},
+ 3606,{131090413ULL,216370311ULL,404711510ULL,382077982ULL,503551541ULL,293314232ULL,324879897ULL,479206721ULL},
+ 4424,{197342065ULL,246818321ULL,330593418ULL,357066034ULL,452213057ULL,301577180ULL,507452920ULL,568399610ULL}},
 {"cycle52",{1,2,3,4,0,6,5},{4,5,6,1,3,2,0},{2,2,2,2,2,2,2,2,2,2,2,5,0,2},364,
  533,{40030400ULL,57345887ULL,33981701ULL,44048868ULL,101572181ULL,69065925ULL},
  232,{27076183ULL,30286767ULL,58018025ULL,56658274ULL},
- 1584,{231405092ULL,251116181ULL,313695839ULL,307223426ULL}},
+ 1584,{231405092ULL,251116181ULL,313695839ULL,307223426ULL},
+ 1768,{240876479ULL,253501850ULL,349043610ULL,382044493ULL}},
 {"cycle43",{1,2,3,0,5,6,4},{3,5,4,2,1,0,6},{5,5,2,0,0,5,2,0,0,5,5,0,3,3},180,
  543,{42585761ULL,66347848ULL,76897952ULL,66169226ULL,103476284ULL,163009711ULL},
  328,{47475742ULL,35822742ULL,54770126ULL,76897799ULL,96188731ULL},
- 1004,{153242984ULL,190921908ULL,262696979ULL,308374840ULL}},
+ 1004,{153242984ULL,190921908ULL,262696979ULL,308374840ULL},
+ 2132,{350880977ULL,365965157ULL,475974767ULL,693598023ULL}},
 {"cycle322",{1,2,0,4,3,6,5},{4,6,5,3,1,2,0},{5,0,3,1,0,5,0,5,5,0,4,3,5,0},112,
  725,{26235664ULL,41988721ULL,22337561ULL,30670276ULL,78907092ULL,68401164ULL,110299561ULL,55229265ULL},
  904,{30876314ULL,41722256ULL,36689106ULL,58922044ULL,73943616ULL,69983797ULL,91619703ULL,79460595ULL,70781994ULL,57790370ULL},
- 1202,{124313599ULL,124201892ULL,220161743ULL,239374078ULL}}
+ 1202,{124313599ULL,124201892ULL,220161743ULL,239374078ULL},
+ 988,{155946577ULL,112051316ULL,157387617ULL,214235463ULL}}
 }};
 Selector centre(const Case&d){Selector s{};for(int sr=0;sr<14;sr++){int o=sr/7,u=sr%7,z=o?d.p[u]:u;int a[4]={z,d.h[z],7+z,7+d.h[z]};int r=7*o+z;for(int k=0;k<2;k++)s[r]|=1u<<a[PAIRS[d.opts[sr]][k]];}return s;}
 std::array<uint16_t,14> host(const Case&d){std::array<uint16_t,14>x{};for(int o=0;o<2;o++)for(int z=0;z<7;z++)x[7*o+z]=(1u<<z)|(1u<<d.h[z])|(1u<<(7+z))|(1u<<(7+d.h[z]));return x;}
@@ -77,8 +82,8 @@ std::array<std::array<CSP::Mask,196>,196> CSP::lines{}; bool CSP::lines_ready=fa
 int main(int argc,char**argv){
  assert(argc==4); std::string req=argv[1]; int support=std::stoi(argv[2]), shard=std::stoi(argv[3]);
  for(auto&d:C) if(req==d.name){
-  int expected_count=support==8?d.count8:support==10?d.count10:support==12?d.count12:-1;
-  const auto& expected_nodes=support==8?d.nodes8:support==10?d.nodes10:d.nodes12;
+  int expected_count=support==8?d.count8:support==10?d.count10:support==12?d.count12:support==14?d.count14:-1;
+  const auto& expected_nodes=support==8?d.nodes8:support==10?d.nodes10:support==12?d.nodes12:d.nodes14;
   assert(expected_count>=0 && shard>=0 && shard<(int)expected_nodes.size());
   Selector center=centre(d); auto ho=host(d); E e; e.s=center; e.h=ho; e.run(); assert((int)e.ns.size()==d.n1);
   std::unordered_set<Selector,Hash> n1=e.ns; std::set<Selector> layer;
