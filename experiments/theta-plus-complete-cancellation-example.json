@@ -1,0 +1,43 @@
+{
+  "block_order": ["E0", "E1", "Q"],
+  "blocks": {
+    "E0": ["d0", "d3"],
+    "E1": ["d1", "d4"],
+    "Q": ["d2", "d5"]
+  },
+  "first_removal_credit": 14,
+  "first_insertion_records": [
+    {"name": "u0", "table": "Xi_cell", "support": ["d0"], "weight": 1},
+    {"name": "u1", "table": "Xi_cell", "support": ["d1"], "weight": 2},
+    {"name": "u2", "table": "Xi_cell", "support": ["d2"], "weight": 1},
+    {"name": "u3", "table": "Xi_cell", "support": ["d3"], "weight": 2},
+    {"name": "u4", "table": "Xi_cell", "support": ["d4"], "weight": 1},
+    {"name": "u5", "table": "Xi_cell", "support": ["d5"], "weight": 2},
+    {"name": "b01", "table": "Xi_cell", "support": ["d0", "d1"], "weight": 2},
+    {"name": "b12", "table": "Xi_cell", "support": ["d1", "d2"], "weight": 2},
+    {"name": "b23", "table": "Xi_cell", "support": ["d2", "d3"], "weight": 2},
+    {"name": "b34", "table": "Xi_cell", "support": ["d3", "d4"], "weight": 2},
+    {"name": "b45", "table": "Xi_cell", "support": ["d4", "d5"], "weight": 2},
+    {"name": "b05", "table": "Xi_cell", "support": ["d0", "d5"], "weight": 2},
+
+    {"name": "o0", "table": "Xi_old", "support": ["d0"], "weight": 1},
+    {"name": "o1", "table": "Xi_old", "support": ["d1"], "weight": 1},
+    {"name": "o2", "table": "Xi_old", "support": ["d2"], "weight": 1},
+    {"name": "o3", "table": "Xi_old", "support": ["d3"], "weight": 1},
+    {"name": "o4", "table": "Xi_old", "support": ["d4"], "weight": 1},
+    {"name": "o5", "table": "Xi_old", "support": ["d5"], "weight": 1},
+    {"name": "ob02", "table": "Xi_old", "support": ["d0", "d2"], "weight": 3},
+    {"name": "ob14", "table": "Xi_old", "support": ["d1", "d4"], "weight": 3},
+    {"name": "ob35", "table": "Xi_old", "support": ["d3", "d5"], "weight": 3},
+
+    {"name": "a0", "table": "Lambda", "support": ["d0"], "weight": 2},
+    {"name": "a1", "table": "Lambda", "support": ["d1"], "weight": 2},
+    {"name": "a2", "table": "Lambda", "support": ["d2"], "weight": 2},
+    {"name": "a3", "table": "Lambda", "support": ["d3"], "weight": 2},
+    {"name": "a4", "table": "Lambda", "support": ["d4"], "weight": 2},
+    {"name": "a5", "table": "Lambda", "support": ["d5"], "weight": 2},
+    {"name": "aa04", "table": "Lambda", "support": ["d0", "d4"], "weight": 1},
+    {"name": "aa15", "table": "Lambda", "support": ["d1", "d5"], "weight": 1},
+    {"name": "aa23", "table": "Lambda", "support": ["d2", "d3"], "weight": 1}
+  ]
+}
