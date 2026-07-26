@@ -1,212 +1,174 @@
-# Every dirty side-three joint state has an exact clean target response
+# Every dirty full side-three grid state has an exact clean target response
 
 CMR1174--CMR1176 construct the unique side-three response matching for one target
-edge.  The earlier theorem used only the executable-or-blocked split.  The complete
-physical classification is stronger: every dirty saturated side-three state has
-exactly one collinear triple, and every labelled response through any cell of that
-triple produces a clean saturated state.
+edge on arbitrary labelled matching vertices.  The stronger geometric conclusion
+in this chapter uses the complete standard coordinate sets
 
-This gives an exact zero-offspring base row for the collateral reproduction matrix.
+\[
+\{0,1,2\}\times\{0,1,2\},
+\]
 
-Let `K=K_{3,3}`.  A saturated physical side-three state is the union of two disjoint
-perfect matchings.
+or an affine image obtained by translating and applying one common nonzero scale to
+both coordinate axes.  It does **not** apply merely by relabelling a scattered
+residual side-three factor, because arbitrary coordinate relabelling does not
+preserve real collinearity.
+
+Let `K=K_{3,3}` with the standard grid coordinates.  A saturated physical state is
+the union of two disjoint perfect matchings.
 
 ## 1. Six physical saturated states
 
-### Theorem CMR1278 -- PROVED
+### Theorem CMR1278 -- PROVED FOR THE FULL STANDARD/AFFINE GRID
 
-Every saturated physical side-three state is the complement in `K` of one perfect
-matching.  Conversely the complement of every perfect matching is the union of the
-other two matchings in one of the two 1-factorisations containing it.
-
+Every saturated physical state is the complement in `K` of one perfect matching.
 There are exactly six physical saturated states.
 
 ### Proof
 
 Two disjoint perfect matchings use six of the nine cells.  Every row and column has
-one unused cell, so the three unused cells form a perfect matching `F`.  Thus the
-state is `K\setminus F`.  Distinct omitted matchings give distinct complements, and
-`K_{3,3}` has `3!=6` perfect matchings. ∎
-
-Layer order gives several labelled representations of one physical complement but
-does not change its physical triple potential.
+one unused cell, so the three unused cells form a perfect matching.  Distinct
+omitted matchings give distinct complements, and `K_{3,3}` has `3!=6` perfect
+matchings. ∎
 
 ## 2. Exact potential classification
 
-Write an omitted matching as the permutation tuple
-
-\[
-(f(0),f(1),f(2)).
-\]
+Write an omitted matching as `(f(0),f(1),f(2))`.
 
 ### Theorem CMR1279 -- PROVED BY COMPLETE SIX-STATE CLASSIFICATION
 
-The six complements have the following physical triple potentials.
+On the full standard grid the six complements have potentials
 
 \[
 \begin{array}{c|c|c}
-\text{omitted matching}&\Phi(K\setminus F)&\text{unique target if dirty}\\
+\text{omitted matching}&\Phi&\text{unique target if dirty}\\
 \hline
 (0,1,2)&0&-\\
 (2,1,0)&0&-\\
 (0,2,1)&1&\{(0,2),(1,1),(2,0)\}\\
 (1,0,2)&1&\{(0,2),(1,1),(2,0)\}\\
 (1,2,0)&1&\{(0,0),(1,1),(2,2)\}\\
-(2,0,1)&1&\{(0,0),(1,1),(2,2)\}
+(2,0,1)&1&\{(0,0),(1,1),(2,2)\}.
 \end{array}
 \]
 
-Hence exactly two physical states are clean and every dirty state has exactly one
-collinear triple.
+Exactly two physical states are clean and every dirty state has one target.
 
 ### Proof
 
-For each of the six omitted permutations, list the remaining six cells and test
-the `binom(6,3)=20` triples by the integer determinant.  The table is the complete
-list.  Equivalently, row/column reflection pairs the first two clean complements,
-the next two anti-diagonal dirty complements, and the last two diagonal dirty
-complements. ∎
+For each omitted permutation, test the `binom(6,3)=20` triples by the integer
+determinant.  Translation and common scaling preserve the determinant-zero
+condition, so the same table holds on affine copies of the full grid. ∎
 
-This is a finite theorem, not an asymptotic claim.
+No claim is made for arbitrary scattered source and target coordinates.
 
 ## 3. The unique response changes the omitted matching
 
-Let a labelled dirty state be `S=O\cup M`, where `O,M` are disjoint perfect
-matchings, and let `F=K\setminus S` be the omitted matching.  Choose a target cell
-`e` in layer `M`.
+Let a labelled dirty state be `S=O\cup M`, and let `F=K\setminus S` be the omitted
+matching.  Choose a target cell `e` in layer `M`.
 
-### Theorem CMR1280 -- PROVED
+### Theorem CMR1280 -- PROVED COMBINATORIALLY
 
-The CMR1175 forbidden matching through `e` is exactly `M`, and the unique response
-matching is exactly `F`.  Thus the response state is
+The CMR1175 forbidden matching through `e` is `M`, the unique response matching is
+`F`, and
 
 \[
 \boxed{Q=O\cup F=K\setminus M.}
 \]
 
-The same statement holds with the two layers interchanged.
+The same holds with the layers interchanged.
 
 ### Proof
 
-Relative to the fixed opposite matching `O`, there are exactly two disjoint
-side-three completions.  One is the current layer `M`; since it contains `e`, it is
-the unique forbidden extension through `e`.  The other is the unused matching
-`F`, which is the response of CMR1175. ∎
+Relative to `O`, exactly two perfect matchings are disjoint from it.  One is the
+current layer `M` and contains `e`; the other is the omitted matching `F`. ∎
 
-Thus a response replaces the omitted matching by the old targeted layer matching.
+This combinatorial statement remains valid on arbitrary labelled side-three
+factors; only the cleanliness conclusion below needs the full-grid coordinates.
 
-## 4. Every target-cell response is clean
+## 4. Every full-grid target response is clean
 
-### Theorem CMR1281 -- PROVED
+### Theorem CMR1281 -- PROVED FOR THE FULL STANDARD/AFFINE GRID
 
-Let `S` be any dirty saturated side-three state and `T` its unique physical target.
-For either layer and every target cell `e` belonging to that layer, the unique
-response state `Q` of CMR1280 satisfies
+For every dirty full-grid state and every labelled cell of its unique target, the
+CMR1280 response satisfies
 
 \[
 \boxed{\Phi(Q)=0.}
 \]
 
-There are exactly twenty-four labelled target-cell response instances, and all are
-strict improvements from one to zero.
+There are twenty-four labelled target-cell response instances, all strict
+improvements from one to zero.
 
 ### Proof
 
-Use the six-state table CMR1279 and the response rule CMR1280.  For each of the four
-dirty omitted matchings, the target has three cells.  Each cell has one selected
-layer label, and exchanging the ordered layer representation gives the second
-labelled realization.  Direct substitution shows that the old targeted matching
-`M`, which becomes the new omitted matching, is either `(0,1,2)` or `(2,1,0)`, the
-two clean rows of the table.
+Apply the table CMR1279 and the response rule CMR1280.  Across the eight dirty
+ordered layer pairs, each of the three target cells gives a response whose new
+omitted matching is one of the two clean rows. ∎
 
-Equivalently, enumerate the twelve ordered disjoint layer pairs.  The eight dirty
-ordered pairs carry three target cells each, giving twenty-four responses, all with
-zero new potential. ∎
+## 5. Restricted hosts on the same full vertex sets
 
-No collateral triple is created in any side-three target response.
+### Theorem CMR1282 -- PROVED UNDER THE FULL-GRID COORDINATE HYPOTHESIS
 
-## 5. Restricted side-three hosts
+At a restricted host on the same complete standard/affine side-three vertex sets:
 
-### Theorem CMR1282 -- PROVED
-
-At a restricted side-three owner containing a dirty selected minimum, choose any
-cell of its unique target and form the singleton response matching.
-
-1. If the singleton is feasible, it is a strict improvement to potential zero.
-2. If it is infeasible, one missing response edge is an inclusion-minimal blocker;
-   restoring it gives the deficiency-one unit-wall product with child-side sum two.
+1. a feasible singleton response improves to zero;
+2. an infeasible singleton has a one-edge minimal blocker and gives the
+   deficiency-one unit-wall product with child-side sum two.
 
 ### Proof
 
-The first branch is CMR1281.  The second is CMR1176 and CMR1150--CMR1156. ∎
+Use CMR1281 in the feasible branch and CMR1176 with CMR1150--CMR1156 in the blocked
+branch. ∎
 
-Thus restricted availability cannot turn the side-three dirty state into a terminal
-positive minimum.
+A scattered residual factor retains only the executable-or-blocked statement of
+CMR1176 unless its actual coordinates are verified to be an affine full grid.
 
-## 6. Exact side-three offspring matrix
+## 6. Exact full-grid offspring block
 
-Take the four dirty physical target classes of CMR1279 as parent credit classes and
-use any of the CMR1281 target responses.
+### Theorem CMR1283 -- PROVED FOR THE FULL STANDARD/AFFINE GRID
 
-### Theorem CMR1283 -- PROVED
-
-Every chosen response creates zero new physical triple credits.  Hence the exact
-offspring matrix is
+For the four dirty full-grid state-target classes, every chosen response creates
+zero new physical triple credits.  Hence
 
 \[
-\boxed{A_3=0_{4\times4},}
+\boxed{A_3=0_{4\times4},\qquad\rho(A_3)=0.}
 \]
 
-and
-
-\[
-\boxed{\rho(A_3)=0.}
-\]
-
-The all-ones weight vector is an exact integer certificate with unit slack.
+The all-ones vector is an exact integer certificate with unit slack.
 
 ### Proof
 
-Every response state is clean by CMR1281.  Therefore every offspring count is zero.
-The remaining statements are immediate. ∎
+Every response is clean by CMR1281. ∎
 
-Any coarser dirty-target grouping has the same zero row.
+## 7. Conditional gluing
 
-## 7. Gluing the side-three base
+### Theorem CMR1284 -- PROVED UNDER BOTH STATED HYPOTHESES
 
-### Theorem CMR1284 -- PROVED UNDER THE BLOCK-TRIANGULAR OWNER HYPOTHESIS
-
-If a product, unit-wall or lifted-interface offspring matrix places the side-three
-base as a diagonal terminal block and all incoming collateral lies in upper
-off-diagonal blocks, then any subcritical earlier blocks glue with `A_3` by
-CMR1273.
+If a product or wall decomposition contains a diagonal terminal block whose actual
+coordinate sets form an affine full side-three grid, and if the offspring matrix is
+block upper triangular with that block last, then earlier subcritical blocks glue
+with `A_3` by CMR1273.
 
 ### Proof
 
-The diagonal side-three block has the positive certificate `A_3\mathbf1=0<\mathbf1`.
-Apply constructive block gluing upward. ∎
+Use `A_3\mathbf1=0<\mathbf1` and constructive block gluing. ∎
 
-The remaining issue is proving the required owner ordering for cross-factor
-collateral, not the side-three response itself.
+Neither an arbitrary three-vertex factor nor an arbitrary coordinate relabelling
+satisfies the geometric hypothesis automatically.
 
-## 8. Side-three endpoint
+## 8. Scoped endpoint
 
 ### Corollary CMR1285 -- PROVED
 
-The side-three joint factor is completely resolved for target-versus-collateral
-purposes.
+The full standard side-three root grid, and every verified affine copy of it, is
+resolved for target-versus-collateral purposes: two states are clean, each dirty
+state has one target, every target response is clean, and blockage gives strict
+wall descent.
 
-1. Two of its six physical saturated states are clean.
-2. Each dirty state has one target.
-3. Every labelled target-cell response is clean.
-4. Restricted blockage gives strict unit-wall descent to sides summing to two.
-5. Its exact credit-reproduction block has spectral radius zero.
+For scattered residual side-three factors, the valid endpoint remains CMR1176:
+the unique response is feasible or blocked, but its physical collateral must be
+computed in the inherited parent coordinates.
 
-Together with the clean root side-two base and rigid residual side-two contraction,
-the small matching base contributes no positive offspring obstruction.  The open
-spectral work begins at side four and in cross-factor/fixed-interface coupling.
-
-No all-`n` theorem is claimed.  Six-state classification, twenty-four target
-responses, restricted singleton blockage and the zero offspring matrix are checked
-in
+No all-`n` theorem is claimed.  The standard-grid six-state classification and
+twenty-four target responses are checked in
 [`scripts/verify_prime_power_side_three_strict_improvement.py`](../scripts/verify_prime_power_side_three_strict_improvement.py).
