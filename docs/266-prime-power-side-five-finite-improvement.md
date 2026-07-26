@@ -1,44 +1,31 @@
-# Every dirty side-five joint state has an ambient strict target response
+# Every dirty full side-five grid state has an ambient strict target response
 
-CMR1286--CMR1293 close the side-four selected-execution base by complete finite
-search.  The same response mechanism remains tractable at side five.  Every dirty
-ordered saturated state has a physical target cell, a disjoint forbidden extension
-and a response matching of strictly smaller physical triple potential.
+This chapter concerns the complete standard grid
 
-The search can be organized without enumerating the same bank repeatedly.  For
-each fixed opposite matching `O` and each cell `e notin O`, precompute the minimum
-potential over all response states obtained from all disjoint forbidden extensions
-through `e`.  Every target in every ordered state then consults this finite table.
+\[
+\{0,1,2,3,4\}\times\{0,1,2,3,4\},
+\]
 
-## 1. Complete side-five state stock
+and affine copies obtained by translation and one common nonzero scale.  Its
+potential tables and lowering policy do not transfer by arbitrary relabelling to a
+scattered residual factor.
+
+## 1. Complete full-grid state stock
 
 ### Theorem CMR1294 -- PROVED BY COMPLETE FINITE ENUMERATION
 
-There are
-
-\[
-\boxed{5280}
-\]
-
-ordered pairs of physically disjoint perfect matchings of `K_{5,5}` and
-
-\[
-\boxed{2040}
-\]
-
-distinct physical saturated states.
-
-The ordered-state potential distribution is
+The standard full grid has 5280 ordered disjoint permutation pairs and 2040
+physical saturated states.  Their ordered potential distribution is
 
 \[
 \begin{array}{c|rrrrrrrrrrrrrrrr}
 \Phi&0&1&2&3&4&5&6&7&8&9&10&11&12&13&14&15\\
 \hline
-\#&64&192&960&1200&904&616&560&336&96&64&32&104&80&32&24&16.
+\#&64&192&960&1200&904&616&560&336&96&64&32&104&80&32&24&16,
 \end{array}
 \]
 
-The physical-state distribution is
+and their physical distribution is
 
 \[
 \begin{array}{c|rrrrrrrrrrrrrrrr}
@@ -48,98 +35,64 @@ The physical-state distribution is
 \end{array}
 \]
 
-Hence 64 ordered states are clean and 5216 are dirty.
-
 ### Proof
 
-Enumerate the `5!=120` perfect matchings.  Relative to each fixed matching there
-are `!5=44` disjoint permutation matchings, giving `120*44=5280` ordered states.
-Deduplicate physical unions and test the 152 collinear three-cell subsets of the
-`5 x 5` board by the integer determinant.  The tables are the complete counts. ∎
+Enumerate the 120 matchings, the 44 derangements relative to each fixed matching,
+and the 152 collinear three-cell subsets of the standard `5 x 5` board.  Common
+affine translation and scaling preserve the determinant-zero relation. ∎
 
-The maximum physical potential in this state class is fifteen.
-
-## 2. Side-five response-bank stock
-
-Fix disjoint perfect matchings `O,F`.  The response graph
-
-\[
-G_{O,F}=K_{5,5}\setminus(O\cup F)
-\]
-
-is 3-regular.
+## 2. Response-bank stock
 
 ### Theorem CMR1295 -- PROVED BY COMPLETE FINITE ENUMERATION
 
-Across all 5280 ordered disjoint pairs `(O,F)`, the response bank has size either
+For disjoint perfect matchings `O,F`, the graph
 
 \[
-\boxed{12\text{ or }13.}
+K_{5,5}\setminus(O\cup F)
 \]
 
-More precisely, 2400 pairs have twelve response matchings and 2880 pairs have
-thirteen.
+is 3-regular and has twelve or thirteen perfect matchings.  Among the 5280 ordered
+pairs `(O,F)`, 2400 banks have size twelve and 2880 have size thirteen.
 
 ### Proof
 
-For every ordered disjoint pair, enumerate the 120 perfect matchings and retain
-those disjoint from `O union F`.  The displayed distribution is exhaustive. ∎
+Enumerate all 120 response matchings for every ordered pair. ∎
 
-In particular every forbidden extension has a nonempty complete response bank, as
-also follows from regular bipartite matchability.
+This bank-size statement is combinatorial and independent of coordinate geometry.
 
-## 3. Fixed-opposite target-response table
+## 3. Full-grid target-response table
 
-For a fixed perfect matching `O` and a cell `e notin O`, define
+For a fixed matching `O` and a cell `e notin O`, let `mu_5(O,e)` be the minimum
+standard-grid potential of `O union R` over every disjoint forbidden extension
+through `e` and every response matching.
 
-\[
-\mu_5(O,e)
-=
-\min
-\left\{
-\Phi(O\cup R):
-\begin{array}{l}
-F\text{ is a perfect matching},\\
-e\in F,\ F\cap O=\varnothing,\\
-R\in\operatorname{PM}(K_{5,5}\setminus(O\cup F))
-\end{array}
-\right\}.
-\]
+### Theorem CMR1296 -- PROVED FOR THE FULL STANDARD/AFFINE GRID
 
-### Theorem CMR1296 -- PROVED
-
-The table `mu_5(O,e)` is defined for all
+The table is defined for all
 
 \[
 \boxed{120\cdot20=2400}
 \]
 
-fixed-opposite, nonopposite-cell pairs.  A minimizing response always omits `e` and
-is physically disjoint from `O`.
+fixed-opposite/nonopposite-cell pairs.  Every minimizing response omits `e` and is
+disjoint from `O`.
 
 ### Proof
 
-CMR1198 supplies at least one disjoint forbidden extension through every
-`e notin O`, and CMR1295 supplies a nonempty response bank.  Every response avoids
-both `F` and `O`, hence omits `e` and preserves layer disjointness. ∎
+Use CMR1198 and CMR1295 for existence.  The potential values are evaluated in the
+standard full-grid coordinates. ∎
 
-This table is independent of the old targeted-layer matching and can be reused by
-all states with the same fixed opposite layer.
-
-## 4. Every dirty state has a lower response
+## 4. Every dirty full-grid state has a lower response
 
 ### Theorem CMR1297 -- PROVED BY COMPLETE FINITE ENUMERATION
 
-For every one of the 5216 dirty ordered side-five states `S=O union M`, there is a
-physical target cell `e` such that, after taking the other layer as fixed opposite,
+Each of the 5216 dirty ordered standard-grid states has a target cell with
 
 \[
-\boxed{
-\mu_5(O_e,e)<\Phi(S).
-}
+\boxed{\mu_5(O_e,e)<\Phi(S).}
 \]
 
-The best potential-change distribution is
+The best-change distribution is
 
 \[
 \begin{array}{c|rrrrrrrrrrrrrr}
@@ -151,26 +104,19 @@ The best potential-change distribution is
 \end{array}
 \]
 
-Thus every dirty ordered state has an ambient response improving by at least one.
-
 ### Proof
 
-For every dirty ordered state, enumerate its physical collinear triples and their
-three cells.  For a cell in one layer, query the precomputed table with the other
-layer fixed.  The minimum over all target-cell queries has the displayed negative
-distribution, covering all 5216 dirty states. ∎
+Enumerate every standard-grid target cell and query the 2400-entry table. ∎
 
-No extrapolation from smaller sides is used.
+For scattered coordinates, the same combinatorial response exists but these
+potential comparisons must be recomputed in the inherited parent geometry.
 
-## 5. Canonical side-five policy
-
-Fix total orders on target triples, target cells, forbidden extensions and response
-matchings.
+## 5. Canonical full-grid policy
 
 ### Theorem CMR1298 -- PROVED
 
-Every dirty ordered side-five state has a unique canonical first lower response.
-Repeated accepted canonical responses reach a clean side-five state after at most
+Fixed-order tie breaking selects an improving response for every dirty full-grid
+state.  Repeated accepted responses reach a clean state after at most
 
 \[
 \boxed{\Phi(S)\le15}
@@ -180,80 +126,54 @@ steps.
 
 ### Proof
 
-CMR1297 makes the improving response set nonempty.  Fixed-order tie breaking makes
-the policy deterministic.  Every accepted response lowers the nonnegative integer
-potential by at least one, and CMR1294 bounds the initial value by fifteen. ∎
+Each accepted move lowers the nonnegative integer potential by at least one. ∎
 
-## 6. Restricted-host lowering expansion
+## 6. Restricted hosts on the same full coordinate sets
 
-Let `H` be a restricted host whose selected minimum is a dirty side-five state `S`,
-and let `Q` be its canonical ambient improving response.  Put
+### Theorem CMR1299 -- PROVED UNDER THE FULL-GRID COORDINATE HYPOTHESIS
+
+Let `Q` be the canonical ambient lower response and `A=Q\setminus E(H)`.  If `A` is
+empty, `Q` is feasible.  Otherwise adding `A` gives
 
 \[
-A=Q\setminus E(H).
+\min_{R\in\mathcal F(H\cup A)}\Phi(R)
+\le\Phi(Q)<\Phi(S),
 \]
 
-### Theorem CMR1299 -- PROVED
-
-Exactly one of the following occurs.
-
-1. `A` is empty and `Q` is a feasible strict improvement.
-2. `A` is nonempty and adding it makes a lowering expansion:
-   \[
-   \min_{R\in\mathcal F(H\cup A)}\Phi(R)
-   \le\Phi(Q)<\Phi(S).
-   \]
-   Canonical expansion normalization accepts a lower minimum or contracts an added
-   minimum-core edge after minimum-preserving peels.
+so canonical expansion normalization accepts a lower minimum or contracts an added
+minimum-core edge.
 
 ### Proof
 
-Identical to CMR1290: the expanded host retains `S` and makes the strictly lower
-ambient state `Q` feasible.  Apply CMR942--CMR952. ∎
+The expansion retains `S` and makes `Q` feasible.  Apply CMR942--CMR952. ∎
 
-Thus side-five response unavailability is structural contraction, not a positive
-same-side terminal.
+This argument cannot import a standard-grid response into an arbitrary scattered
+factor without first verifying its actual potential.
 
-## 7. Finite side-five execution and credit descent
+## 7. Full-grid finite budget
 
 ### Theorem CMR1300 -- PROVED
 
-Along a selected side-five owner, every canonical dirty response gives strict
-potential decrease, added-core contraction or structural descent.  There are at
-most fifteen accepted potential decreases and at most ten labelled-edge
-contractions before the two-layer residual state cardinality is exhausted.
-
-Every accepted response strictly decreases the all-ones live-credit potential of
-CMR1256.
+On the standard/affine full-grid owner there are at most fifteen accepted potential
+decreases and at most ten labelled-edge contractions.  Every accepted response
+strictly decreases the all-ones live-credit potential.
 
 ### Proof
 
-Use CMR1298 for potential decreases.  A saturated side-five joint state has ten
-labelled edges, and every exact contraction removes at least one residual edge.
-The credit statement is the equality between physical potential and live-credit
-count. ∎
+Use CMR1298, the ten labelled state edges, and CMR1256. ∎
 
-As at side four, extra retired credits may be essential; no conservative one-parent
-row-sum claim is made.
-
-## 8. Side-five endpoint
+## 8. Scoped endpoint
 
 ### Corollary CMR1301 -- PROVED
 
-The selected-execution finite matching base now closes through side five.
+The complete standard side-five root grid, and verified affine copies, have a
+finite deterministic strict-improvement policy.  Restricted hosts on those same
+coordinates improve or contract by a lowering expansion.
 
-1. Sides one and two are rigid/clean bases.
-2. Every dirty side-three response is clean.
-3. Every dirty side-four state has an ambient lower response.
-4. Every dirty side-five state has an ambient lower response.
-5. Restricted unavailability at sides four and five gives lowering-expansion
-   improvement or added-core contraction.
+This is a finite root/affine base theorem.  Arbitrary residual side-five factors
+remain governed by inherited-coordinate response banks, local collateral
+envelopes and the spectral framework CMR1198--CMR1277.
 
-The first unclassified finite matching side is six.  The uniform proof still
-requires line/height/carry or spectral control for arbitrary side, fixed-interface
-and product owners; finite bases do not replace that theorem.
-
-No all-`n` theorem is claimed.  The 5280 ordered states, 2040 physical states,
-response-bank sizes, 2400 target-response table entries, complete lower-response
-distribution and restricted lowering expansion are checked in
+No all-`n` theorem is claimed.  The standard-grid 5280-state classification and
+2400 response-table entries are checked in
 [`scripts/verify_prime_power_side_five_finite_improvement.py`](../scripts/verify_prime_power_side_five_finite_improvement.py).
