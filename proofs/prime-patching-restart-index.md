@@ -28,6 +28,8 @@ transition addendum in
 | Current-row weighted and petal closure | Multiplicity-blind domain accounting absorbs weighted grids, projective covers, and heavy pencils; exact conditioned cycle spaces eliminate arc/path petal host leaves | PROVED / CONDITIONAL FINITE NAMED WEIGHTED CONCENTRATIONS | `docs/274`--`docs/275` |
 | Binary-current and source-call closure | Completed-state pair lines absorb every binary current multiplicity at the active scale; paired-secant calls lose raw source-host leaves | PROVED / CONDITIONAL UNARY/SOURCE/BASE-DOMAIN CURRENT SET | `docs/276`--`docs/277` |
 | Prime-minus-one seed CSP audit | Saturated seeds are exactly two edge-disjoint permutations satisfying all integer determinant constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
+| Terminal local call matrix | Complete insertion cancellation, direct paid current structures, and acyclic source routing close every fixed-attempt local leaf | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
+| Relative seed and line compression | Seeds are one permutation plus a relative derangement; relative cycles are incidence components and maximal-line inequalities replace triple constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
 
 ## Exact late theorem ranges
 
@@ -59,36 +61,37 @@ transition addendum in
 | PP3bbu--PP3bby | Completed-state binary secant support and allocation-margin absorption | PROVED / CONDITIONAL BASE ALLOCATION CRITERIA | `docs/276-completed-state-binary-support-absorption.md` |
 | PP3bbz--PP3bcf | Paired-secant raw-host elimination and acyclic dense-source routing | PROVED / CONDITIONAL NAMED CURRENT PAYMENT | `docs/277-paired-secant-source-host-leaf-elimination.md` |
 | PP3bcg--PP3bcm | Two-permutation determinant-CSP equivalence for prime-minus-one seeds | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
+| PP3bcn--PP3bcu | Terminal local current/source call matrix and fixed-attempt termination | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
+| PP3bcv--PP3bdd | Relative-permutation normal form, maximal-line compression, fixed-relative CSP, and affine-layer barrier | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
 
 ## Current exact endpoint
 
-The raw second-host explicit-host row is superseded by PP3bai--PP3ban.  Under the
-universal marked-scale, helper, puncture, role-domain, and complete-support hypotheses,
-a bounded call has only an independent cycle, dense current support, or dense source
-support.  Quadratic coordinate supply is automatic by PP3bao--PP3bas.
+The local call matrix is terminal inside the fixed-infrastructure slab
+architecture.  PP3bcn--PP3bcu compose the complete insertion-cancellation
+identity, raw second-host trichotomy, direct payment of canonical current
+structures, unary source-star conversion, and acyclic paired-secant source
+routing.  A failed fixed attempt therefore installs the patch or strictly
+decreases the current nonnegative integer potential.  Unary/binary
+multiplicity, base-domain or score failure, active-anchor failure, raw host
+failure, coordinate cover, and restart comparability are not terminal leaves.
 
-The current row is no longer host-existential or raw-multiplicity based.  Choice-grid,
-rank-three middle-grid, fixed-cell fan, and petal hosts are automatic; weighted grids,
-projective covers, and heavy pencils are allocation-margin perturbations; and
-PP3bbu--PP3bby absorb every binary pair-shadow term of a completed endpoint state
-because its simple secant support is `o(R)`.  The remaining current classes are unary
-inserted--retained-source, active-anchor/old-grid unary, explicit source, and nonbinary
-base-domain concentrations.
+Consequently, once a saturated no-three source is supplied, the heterogeneous
+exact-width fixed-slab process terminates locally.  This statement remains
+inside the stated slab setup and does not construct the initial sources.
 
-The dense source row no longer has raw Hall, alternating, non-superregular, role-host,
-or locally impossible leaves.  PP3bbz--PP3bcf route paired-switch source mass to a
-source-valid joint state or named current payment, while fixed-centre dense source
-support is a directly paid canonical source structure.  It cannot regenerate an
-untyped cumulative source-host problem.
+The global frontier is now an exact finite combinatorial existence theorem.  For
+`n=p-1`, a seed is equivalently one permutation `sigma` and one derangement
+`pi`, with `tau=sigma o pi`, satisfying occupancy at most two on every maximal
+Euclidean grid line.  The cycles of `pi` are exactly the alternating incidence
+components.  Affine permutation layers cannot work for `n>=3`, so a successful
+family must be genuinely nonlinear in Euclidean coordinates.  Stored
+certificates verify only `p=3,5,7,11`; they do not prove asymptotic existence.
 
-Restart comparability and repeated fixed attempts are already closed by the fixed
-candidate-cell universe and zero-mass activation potential of PP3aux--PP3avm.  Thus the
-remaining local proof-audit target is the finite unary/source/base-domain current set,
-not restart, coordinates, or endpoint host existence.
+The remaining theorem is:
 
-The separate global assumption is exact: for every sufficiently large prime `p`, the
-two-permutation determinant CSP of PP3bcj on `[p-1]^2` must be feasible.  Stored
-certificates verify only `p=3,5,7,11`; they do not prove the asymptotic seed theorem.
+> For every sufficiently large prime `p`, some derangement `pi` and permutation
+> `sigma` satisfy the maximal-line system on `[p-1]^2`.
+
 The no-three-in-line conjecture remains unproved.
 
 ## Diagnostics
@@ -114,4 +117,8 @@ python scripts/check_dense_source_call_routing.py \
   experiments/dense-source-call-routing-example.json
 python scripts/check_prime_minus_one_seed.py \
   experiments/prime-minus-one-seed-examples.json
+python scripts/check_local_frontier_terminal_routing.py \
+  experiments/local-frontier-terminal-routing-example.json
+python scripts/check_prime_seed_relative_cycles.py \
+  experiments/prime-seed-relative-cycle-example.json
 ```
