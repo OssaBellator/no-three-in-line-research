@@ -1,0 +1,15 @@
+{
+  "W": 64,
+  "marked_scale": 32,
+  "helper_reservoir": 1024,
+  "role_loss": 24,
+  "support_rank": 3,
+  "routes": {
+    "fixed_attempt_failure": ["source_valid_first_package", "paid_progress", "patch_completion"],
+    "source_valid_first_package": ["second_host"],
+    "second_host": ["independent", "dense_current", "dense_source"],
+    "independent": ["paid_progress"],
+    "dense_current": ["paid_progress", "patch_completion", "dense_source"],
+    "dense_source": ["source_valid_joint_completion", "paid_progress", "patch_completion"]
+  }
+}
