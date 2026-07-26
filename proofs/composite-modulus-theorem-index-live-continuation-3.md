@@ -52,6 +52,7 @@ The authoritative live ledger is split across:
 | CMR1518--1525 | Fixed-central pair/trace stocks, tunable repeated-token threshold, return-versus-long-run split, persistent absorption, paid-pair selector recurrence, fixed trace recurrence, and the atomic recurrent quotient | PROVED; threshold arithmetic and synthetic histories checked | `docs/293-prime-power-repeated-token-atomic-compression.md` |
 | CMR1526--1533 | Rook-polynomial inclusion--exclusion, degree-two path/cycle factorization, target deletion--contraction, exact line-clean response counts, prescription probabilities, finite component signatures, and the exact off-line collateral row | PROVED; component polynomials and brute-force completion counts checked | `docs/294-prime-power-extension-free-line-clean-rook-rows.md` |
 | CMR1534--1541 | Rectangle forbidden-width bound, capacitated Hall inequality, spanning `(d-3)`-factor, uniform permanent denominator, rank-one through rank-three probability bounds, off-line collateral envelope, restricted-host improvement test, and the uniform line-clean endpoint | PROVED; exhaustive/sampled Hall cuts, integral factors and exact prescription checks | `docs/295-prime-power-line-clean-uniform-permanent-envelope.md` |
+| CMR1542--1549 | Target-trace matching criterion, exact derangement extension, strong-factor dichotomy, `(d-2)` permanent denominator, sharpened prescription and collateral bounds, geometric sufficient classes, and the binary factor-signature endpoint | PROVED; exhaustive/sampled factor classification and exact probability checks | `docs/296-prime-power-line-clean-factor-signature-sharpening.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -61,26 +62,24 @@ private currencies have disjoint owner support.
 
 CMR1510--CMR1517 give a target-safe line-clean response with zero same-owner,
 same-line collateral.  CMR1526--CMR1533 make every remaining off-line
-prescription probability exact.  CMR1534--CMR1541 give the host-uniform bound
+prescription probability exact.  CMR1534--CMR1541 supply the universal
+coefficient
 
 \[
-|\operatorname{PM}(G)|
-\ge d!\left(\frac{d-3}{d}\right)^d
+\left(\frac d{d-3}\right)^d.
 \]
 
-and therefore
+CMR1542--CMR1549 sharpen it to an exact binary trace signature.  A trace whose
+union with the target edge extends to a perfect matching disjoint from the
+opposite layer has a spanning `(d-2)`-factor and coefficient
 
 \[
-\Pr(P\subseteq R)
-\le
-\frac{(d/(d-3))^d}{(d)_r}
-\qquad(1\le r\le3).
+\left(\frac d{d-2}\right)^d.
 \]
 
-The exact CMR1533 rook row is dominated by one explicit rank envelope, with a
-restricted-host strict-improvement criterion.  The remaining line-clean issue
-is to prove that this envelope, or a sharper component-signature evaluation,
-beats destroyed credit in every recurrent geometric class.
+The strong class fails only through target-endpoint overlap or one singleton
+opposite-edge remainder; those weak traces retain the `(d-3)` coefficient.  The
+exact CMR1533 component rook row remains available in both classes.
 
 CMR1518--CMR1525 compress repeated-token/reused-support recurrence to three
 atomic rows: labelled edge return, one persistent paid-pair selector, or one
@@ -89,8 +88,8 @@ are not additional recurrent classes.
 
 The active frontier is now:
 
-1. compare the explicit line-clean envelope with destroyed credit, sharpening
-   it by exact component signatures where necessary;
+1. compare the strong and weak line-clean envelopes with destroyed credit,
+   sharpening exceptional component signatures where necessary;
 2. calibrate the atomic return, persistent-selector and trace rows against
    destroyed parent credit;
 3. certify recurrent root/fixed-interface and thin/prime-field rows;
