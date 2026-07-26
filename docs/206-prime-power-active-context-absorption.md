@@ -114,9 +114,9 @@ Suppose one exact nonprivate edge `e` enables a target-destroying candidate whic
 is rejected. Then `e` enters the private union by CMR815 and cannot enable another
 normalized candidate while it remains absent.
 
-If `e` supports `r` later activation episodes, it undergoes at least `r-1`
-genuine restorations. Their exact labelled nonroot full-token incidence is at
-least
+If `e` supports `r` activation episodes in total, including the first rejected
+episode, it undergoes at least `r-1` genuine restorations. Their exact labelled
+nonroot full-token incidence is at least
 
 \[
 \boxed{(r-1)(p+1)(h-1).}
