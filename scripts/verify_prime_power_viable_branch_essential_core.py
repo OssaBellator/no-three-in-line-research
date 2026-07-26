@@ -2,6 +2,7 @@
 """Finite checks for CMR838--CMR845."""
 
 from itertools import combinations
+from math import comb
 import random
 
 
@@ -10,7 +11,8 @@ def all_states(universe_size, state_size):
 
 
 def random_family(universe_size, state_size, maximum, rng):
-    target = rng.randint(1, maximum)
+    available = comb(universe_size, state_size)
+    target = rng.randint(1, min(maximum, available))
     family = set()
     while len(family) < target:
         family.add(frozenset(rng.sample(range(universe_size), state_size)))
