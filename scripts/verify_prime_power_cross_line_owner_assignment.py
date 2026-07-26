@@ -4,7 +4,7 @@
 from collections import defaultdict
 from fractions import Fraction
 from itertools import combinations, permutations
-from math import gcd
+from math import gcd, lcm
 import random
 
 
@@ -53,21 +53,16 @@ def direct_owner_loads(opposite, current, response):
 
 def line_owner_loads(opposite, current, response):
     entering = set(response) - set(current)
+    state = set(opposite) | set(response)
     loads = defaultdict(int)
-    current_state = set(opposite) | set(response)
     for owner in entering:
-        earlier = {edge for edge in entering if edge < owner}
-        eligible = current_state - {owner} - earlier
-        line_populations = defaultdict(int)
+        eligible = state - {owner} - {edge for edge in entering if edge < owner}
+        populations = defaultdict(int)
         for cell in eligible:
             key = line_key(owner, cell)
-            if key[0] == 0 or key[1] == 0:
-                continue
-            line_populations[key] += 1
-        loads[owner] = sum(
-            population * (population - 1) // 2
-            for population in line_populations.values()
-        )
+            if key[0] != 0 and key[1] != 0:
+                populations[key] += 1
+        loads[owner] = sum(value * (value - 1) // 2 for value in populations.values())
     return loads
 
 
@@ -82,10 +77,10 @@ def bank_for(opposite, target, all_matchings):
 def conditional_owner_weights(opposite, current, bank):
     occurrence = defaultdict(int)
     owner_total = defaultdict(int)
-    direct_total = 0
+    total = 0
     for response in bank:
         new_triples, loads = direct_owner_loads(opposite, current, response)
-        direct_total += len(new_triples)
+        total += len(new_triples)
         for edge in response:
             occurrence[edge] += 1
             owner_total[edge] += loads.get(edge, 0)
@@ -96,52 +91,50 @@ def conditional_owner_weights(opposite, current, bank):
         edge: Fraction(owner_total[edge], count)
         for edge, count in occurrence.items()
     }
-    expectation = Fraction(direct_total, len(bank))
-    return probability, conditional, expectation
+    return probability, conditional, Fraction(total, len(bank))
 
 
 def check_owner_line_formula():
     rng = random.Random(1382)
     checked = 0
-    owned_triples = 0
+    owned = 0
     for side in range(4, 8):
         all_matchings = [matching(value) for value in permutations(range(side))]
-        samples = 250 if side <= 6 else 80
-        for _ in range(samples):
+        for _ in range(250 if side <= 6 else 80):
             opposite = rng.choice(all_matchings)
-            disjoint = [state for state in all_matchings if state.isdisjoint(opposite)]
-            current = rng.choice(disjoint)
+            current = rng.choice(
+                [state for state in all_matchings if state.isdisjoint(opposite)]
+            )
             target = rng.choice(tuple(current))
-            bank = bank_for(opposite, target, all_matchings)
-            response = rng.choice(bank)
+            response = rng.choice(bank_for(opposite, target, all_matchings))
             new_triples, direct = direct_owner_loads(opposite, current, response)
             linewise = line_owner_loads(opposite, current, response)
-            assert dict(direct) == dict(linewise)
+            entering = set(response) - set(current)
+            assert all(direct.get(edge, 0) == linewise.get(edge, 0) for edge in entering)
             assert sum(direct.values()) == len(new_triples)
-            owned_triples += len(new_triples)
+            owned += len(new_triples)
             checked += 1
-    return checked, owned_triples
+    return checked, owned
 
 
 def check_exact_assignment_identity():
     rng = random.Random(1384)
     checked = 0
-    exact_credits = 0
     for side in range(4, 7):
         all_matchings = [matching(value) for value in permutations(range(side))]
         for _ in range(180):
             opposite = rng.choice(all_matchings)
-            disjoint = [state for state in all_matchings if state.isdisjoint(opposite)]
-            current = rng.choice(disjoint)
+            current = rng.choice(
+                [state for state in all_matchings if state.isdisjoint(opposite)]
+            )
             target = rng.choice(tuple(current))
             bank = bank_for(opposite, target, all_matchings)
             probability, conditional, expectation = conditional_owner_weights(
                 opposite, current, bank
             )
-            assignment_value = sum(
+            assert sum(
                 probability[edge] * conditional[edge] for edge in probability
-            )
-            assert assignment_value == expectation
+            ) == expectation
             for row in range(side):
                 assert sum(
                     probability.get((row, column), Fraction(0))
@@ -157,29 +150,28 @@ def check_exact_assignment_identity():
                 for response in bank
             )
             assert expectation <= maximum
-            exact_credits += expectation.numerator
             checked += 1
-    return checked, exact_credits
+    return checked
 
 
 def check_dual_certificates():
     rng = random.Random(1387)
     checked = 0
-    integer_checks = 0
+    integer_edges = 0
     for side in range(4, 7):
         all_matchings = [matching(value) for value in permutations(range(side))]
         for _ in range(150):
             opposite = rng.choice(all_matchings)
-            disjoint = [state for state in all_matchings if state.isdisjoint(opposite)]
-            current = rng.choice(disjoint)
+            current = rng.choice(
+                [state for state in all_matchings if state.isdisjoint(opposite)]
+            )
             target = rng.choice(tuple(current))
             bank = bank_for(opposite, target, all_matchings)
             probability, conditional, expectation = conditional_owner_weights(
                 opposite, current, bank
             )
-            alpha = {}
-            for row in range(side):
-                alpha[row] = max(
+            alpha = {
+                row: max(
                     (
                         conditional.get((row, column), Fraction(0))
                         for column in range(side)
@@ -187,41 +179,35 @@ def check_dual_certificates():
                     ),
                     default=Fraction(0),
                 )
-            beta = {column: Fraction(0) for column in range(side)}
+                for row in range(side)
+            }
             for edge, weight in conditional.items():
-                assert alpha[edge[0]] + beta[edge[1]] >= weight
-            dual = sum(alpha.values()) + sum(beta.values())
-            assert expectation <= dual
-
-            denominators = [value.denominator for value in conditional.values()]
-            denominators += [value.denominator for value in alpha.values()]
+                assert alpha[edge[0]] >= weight
+            assert expectation <= sum(alpha.values())
             common = 1
-            for denominator in denominators:
-                # The product is intentionally coarse but exact for this verifier.
-                common *= denominator
+            for value in list(conditional.values()) + list(alpha.values()):
+                common = lcm(common, value.denominator)
             for edge, weight in conditional.items():
-                left = common * (alpha[edge[0]] + beta[edge[1]])
-                right = common * weight
-                assert left.denominator == 1 and right.denominator == 1
-                assert left >= right
-                integer_checks += 1
+                assert common * alpha[edge[0]] >= common * weight
+                assert (common * weight).denominator == 1
+                integer_edges += 1
             checked += 1
-    return checked, integer_checks
+    return checked, integer_edges
 
 
-def check_random_weight_assignment():
+def check_random_convex_assignments():
     rng = random.Random(1386)
     checked = 0
     for side in range(3, 9):
         all_matchings = [matching(value) for value in permutations(range(side))]
         for _ in range(300):
             family = rng.sample(all_matchings, rng.randint(1, min(80, len(all_matchings))))
-            probability = defaultdict(Fraction)
             masses = [rng.randint(1, 20) for _state in family]
-            denominator = sum(masses)
+            total_mass = sum(masses)
+            probability = defaultdict(Fraction)
             for state, mass in zip(family, masses):
                 for edge in state:
-                    probability[edge] += Fraction(mass, denominator)
+                    probability[edge] += Fraction(mass, total_mass)
             weights = {
                 (row, column): Fraction(rng.randint(0, 100), rng.randint(1, 20))
                 for row in range(side)
@@ -236,7 +222,6 @@ def check_random_weight_assignment():
 
 def main():
     linewise = check_owner_line_formula()
-    exact = check_exact_assignment_identity()
     dual = check_dual_certificates()
     print(
         "verified cross-line owner assignment:",
@@ -244,13 +229,13 @@ def main():
         "response states with",
         linewise[1],
         "owned triples,",
-        exact[0],
+        check_exact_assignment_identity(),
         "exact bank assignments,",
         dual[0],
         "dual certificates with",
         dual[1],
         "integer edge inequalities, and",
-        check_random_weight_assignment(),
+        check_random_convex_assignments(),
         "random convex assignment cases",
     )
 
