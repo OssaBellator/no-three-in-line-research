@@ -1,4 +1,4 @@
-# Excess-weight import from latent factor overloads into GC4
+# Excess-demand import from latent factor overloads into GC4 structure
 
 **Branch:** `research/geometric-cleaning`
 
@@ -6,9 +6,11 @@ GC2w--GC2aa classify every fixed-target latent residual as an isolated-cell
 star or an exact current-factor overload.  This note converts the overload
 branches into the weighted anchor-link language of GC4.
 
-The correct weight is not the full artificial demand.  It is the strict excess
-above the declared capacity multiple `kappa`.  That excess is positive on every
-used factor and sums exactly to the corresponding aggregate dominance failure.
+The correct structural weight is not the full artificial demand.  It is the
+strict excess above the declared capacity multiple `kappa`.  That excess is
+positive on every used factor and sums exactly to the corresponding aggregate
+dominance failure.  It is an overload-demand weight attached to an exact
+current factor, not factor-conservative paid mass.
 
 ## Private-overload excess
 
@@ -46,8 +48,8 @@ Summing the definition over `P_u` gives
 
 `lambda_u-kappa*sum_(Q in P_u)omega_Q=lambda_u-kappa*C_u`. QED.
 
-Thus every underweight partner carries a genuine positive paid-excess star in
-the current factor hypergraph, anchored at the exact current cell `u`.
+Thus every underweight partner carries a genuine positive overload-demand star
+in the current factor hypergraph, anchored at the exact current cell `u`.
 
 ## Target-link excess
 
@@ -114,7 +116,7 @@ the following holds:
 
 1. some exact pair `{v,x}` belongs to more than `Delta` selected current factors;
 2. there is a family `S_v` of selected rank-three factors, pairwise disjoint
-   outside `v`, carrying excess weight at least
+   outside `v`, carrying excess-demand weight at least
 
 `E_v/[r*(2*Delta-1)]`.
 
@@ -126,9 +128,12 @@ excess weights `e_Q`.  Its pair-concentration alternative gives route 1; its
 matching alternative retains a `1/(2*Delta-1)` fraction of the selected rank
 weight, proving route 2. QED.
 
-All weights here are occurrence-faithful current-factor excess.  Unlike the
-original latent secant weights, they need no further source-payment conversion
-before entering GC4's labelled overload or Hall machinery.
+The weights are occurrence-faithful overload demand attached to exact current
+factors.  GC4c accepts arbitrary nonnegative weights and therefore applies
+without further geometry.  However, the excess may exceed factor capacity and
+is not itself a paid reopening resource.  Entering GC4f--GC4i still requires a
+capacity-normalized allocation or use of the excess as a Hall-deficiency
+certificate.
 
 ## GC2af -- complete overload continuation router -- PROVED
 
@@ -138,7 +143,7 @@ continuation:
 1. a lower-rank current-factor excess concentration retaining at least `1/r` of
    its anchor excess;
 2. a pair-codegree concentration in the rank-three current link;
-3. an endpoint-disjoint paid rank-three star retaining at least
+3. an endpoint-disjoint rank-three overload-demand star retaining at least
    `1/[r(2*Delta-1)]` of the anchor excess.
 
 For a private underweight partner the anchor excess is
@@ -160,13 +165,14 @@ The fixed-target source-transfer residuals now terminate at explicit geometric
 objects:
 
 - source-free mass is an isolated-cell prospective rectangle star;
-- every capacity overload has a positive exact current-factor excess;
-- rank-three excess enters GC4c without any latent-payment caveat;
+- every capacity overload has positive exact demand excess on current factors;
+- rank-three excess enters the structural GC4c anchor-link dichotomy;
 - lower-rank or high-pair outputs are already concentrated certificates.
 
-The next geometric step is to classify the pair/lower-rank branches and to run
-GC4f--GC4k on the paid endpoint-disjoint excess stars.  The conversion from
-capacity overload to paid GC4 weight is no longer open.
+The next geometric step is to turn the endpoint-disjoint demand stars into an
+explicit weighted Hall-deficiency or capacity-normalized paid family before
+running GC4f--GC4k.  The geometric localization of overload demand is closed;
+its payment conversion is not.
 
 ## Finite check
 
