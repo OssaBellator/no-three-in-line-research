@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `6`:
+have closed every top-signature tier of multiplicity at least `5`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -35,12 +35,13 @@ have closed every top-signature tier of multiplicity at least `6`:
 | 8 | 277 | 2,216 | certified infeasible |
 | 7 | 100 | 700 | certified infeasible |
 | 6 | 524 | 3,144 | certified infeasible |
-| **Total** | **1,473 completed classes** | **13,776** | **492,069,563 shared bottom-CSP nodes** |
+| 5 | 725 | 3,625 | certified infeasible |
+| **Total** | **2,198 completed classes** | **17,401** | **737,975,588 shared bottom-CSP nodes** |
 
-Thus `58,084` support-twenty selectors remain active in this cache layer.
+Thus `54,459` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX683--PX686 in
-[`docs/217-side-seven-cycle52-radius-three-support-twenty-multiplicity-six.md`](../docs/217-side-seven-cycle52-radius-three-support-twenty-multiplicity-six.md).
+The latest exact results are PX687--PX690 in
+[`docs/218-side-seven-cycle52-radius-three-support-twenty-multiplicity-five.md`](../docs/218-side-seven-cycle52-radius-three-support-twenty-multiplicity-five.md).
 
 ## Solver improvement
 
@@ -48,20 +49,21 @@ The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
 live in `scripts/product_side_seven_cache_engine.hpp`.
 
-The multiplicity-six verifier replaces a large checked-in case table by a
-compact deterministic transcript digest. It still prints every per-signature
-count, while one asserted 64-bit digest commits the complete ordered transcript.
-This keeps exact verification compact without weakening the exhaustive search.
+The common transcript verifier in `scripts/product_side_seven_tier_digest.hpp`
+prints every per-signature count while one asserted 64-bit digest commits the
+complete ordered transcript. This keeps wide exact tiers compact without
+weakening the exhaustive search.
 
 PX641--PX642 give the stronger selector-choice CSP and proof-logged SAT route.
-Assumption-based conflict extraction and mechanically certified symmetry remain
-parallel solver-development tasks.
+A naive family-wide selector-choice prototype was exact but slower because it
+weakened top-variable propagation. Assumption-based conflict extraction and
+mechanically certified symmetry remain parallel solver-development tasks.
 
 ## Immediate task
 
-The next nonempty tier has multiplicity `5`: 725 top signatures containing
-`3,625` selectors. Run it through the shared engine and retain the
-transcript-digest verifier format. In parallel:
+The next nonempty tier has multiplicity `4`: 2,392 top signatures containing
+`9,568` selectors. Run it through independently reproducible shards and retain
+the transcript-digest verifier format. In parallel:
 
 1. add top-assignment assumption literals;
 2. extract deletion-minimal bottom infeasibility cores;
@@ -81,10 +83,10 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity6.cpp \
-  -o /tmp/m6
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity5.cpp \
+  -o /tmp/m5
 
-/tmp/m6
+/tmp/m5
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
