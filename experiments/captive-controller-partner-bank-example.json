@@ -1,0 +1,38 @@
+{
+  "cases": [
+    {
+      "name": "free-bank",
+      "partners": [
+        {"point": [0, 20], "layer": 0, "controller": false, "entry": "z0"},
+        {"point": [1, 21], "layer": 0, "controller": false, "entry": "z1"},
+        {"point": [2, 22], "layer": 0, "controller": false, "entry": "z2"},
+        {"point": [3, 23], "layer": 0, "controller": false, "entry": "z3"},
+        {"point": [4, 24], "layer": 0, "controller": false, "entry": "z4"},
+        {"point": [5, 25], "layer": 1, "controller": false, "entry": "z5"},
+        {"point": [6, 26], "layer": 1, "controller": false, "entry": "z6"},
+        {"point": [7, 27], "layer": 1, "controller": false, "entry": "z7"},
+        {"point": [8, 28], "layer": 0, "controller": true, "entry": "z8"},
+        {"point": [9, 29], "layer": 0, "controller": true, "entry": "z9"},
+        {"point": [10, 30], "layer": 1, "controller": true, "entry": "z10"},
+        {"point": [11, 31], "layer": 1, "controller": true, "entry": "z11"}
+      ]
+    },
+    {
+      "name": "controller-core",
+      "partners": [
+        {"point": [0, 40], "layer": 0, "controller": true, "entry": "w0"},
+        {"point": [1, 41], "layer": 1, "controller": true, "entry": "w1"},
+        {"point": [2, 42], "layer": 0, "controller": true, "entry": "w2"},
+        {"point": [3, 43], "layer": 1, "controller": true, "entry": "w3"},
+        {"point": [4, 44], "layer": 0, "controller": true, "entry": "w4"},
+        {"point": [5, 45], "layer": 1, "controller": true, "entry": "w5"},
+        {"point": [6, 46], "layer": 0, "controller": true, "entry": "w6"},
+        {"point": [7, 47], "layer": 1, "controller": true, "entry": "w7"},
+        {"point": [8, 48], "layer": 0, "controller": false, "entry": "w8"},
+        {"point": [9, 49], "layer": 1, "controller": false, "entry": "w9"},
+        {"point": [10, 50], "layer": 0, "controller": false, "entry": "w10"},
+        {"point": [11, 51], "layer": 1, "controller": false, "entry": "w11"}
+      ]
+    }
+  ]
+}
