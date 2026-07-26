@@ -1,36 +1,40 @@
 # Fractional candidate packings contain a heavy arithmetic signature fan
 
-CMR1412--CMR1413 show that, at a positive minimum, every candidate family below
-the destroyed-load threshold has fractional transversal and dual packing value at
-least `(n-2)/3`.  CMR1454--CMR1461 place every canonical-owner partner incidence
-in one finite prime-power signature.  Combining the two results turns the global
-LP obstruction into a quantitative geometric fan.
+CMR1412--CMR1413 show that, at a positive minimum, every subthreshold
+candidate family in an extension-free response graph of matching side `d` has
+fractional packing value at least `(d-2)/3`.  CMR1454--CMR1461 place every
+canonical-owner partner incidence in one finite prime-power signature.
 
 Retain one extension-free target bank
 
 \[
-H_e=K_{n,n}\setminus(O\cup\{e\}),
-\qquad n=p^h\ge4.
+H_e=K_{d,d}\setminus(O\cup\{e\}),
+\qquad d\ge4,
 \]
 
-Let `C` be a candidate family.  Every `T in C` has a nonempty matching-compatible
-residual prescription `P_T`, a fixed canonical owner
+inside an inherited prime-power envelope of side
+
+\[
+t=p^k
+\]
+
+and ambient coordinate span `W_omega<=t-1`.
+Every candidate `T` has residual prescription `P_T`, canonical owner
 
 \[
 a(T)=\min_\prec(P_T\setminus M),
 \]
 
-and two nonowner cells.  By CMR1454--CMR1456 those cells are eligible owner
-partners and each has one signature
+and two eligible nonowner cells.  Each owner-partner incidence has signature
 
 \[
-\sigma=(\text{partner type},d,\theta,\beta),
+\sigma=(\text{partner type},s,\theta,H),
 \]
 
-where `d` is the first-separation depth, `theta` the projective direction and
-`beta` the dyadic primitive-height band.
+where `s` is first-separation depth, `theta` projective direction and `H`
+dyadic primitive-height band.
 
-Let `z_T` be any feasible fractional packing:
+Let `z_T` be a feasible fractional packing:
 
 \[
 z_T\ge0,
@@ -42,299 +46,189 @@ z_T\ge0,
 Put
 
 \[
-\nu(z)=\sum_{T\in\mathcal C}z_T.
+\nu(z)=\sum_Tz_T.
 \]
 
-For a signature `sigma`, let `m_sigma(T)` be the number, zero, one or two, of
-nonowner cells of `T` having that signature relative to `a(T)`, and define
+If `m_sigma(T)` is the number, zero through two, of nonowner cells of `T` with
+signature `sigma`, define
 
 \[
 \mu_\sigma(z)=\sum_Tz_Tm_\sigma(T).
 \]
 
-## 1. Exact packed-incidence identity
-
 ### Theorem CMR1462 -- PROVED
 
 \[
-\boxed{
-\sum_\sigma\mu_\sigma(z)=2\nu(z).
-}
+\boxed{\sum_\sigma\mu_\sigma(z)=2\nu(z).}
 \]
 
 ### Proof
 
-Every candidate has exactly two nonowner cells, and both are eligible by the
-canonical-owner rule.  A candidate of mass `z_T` therefore contributes exactly
-`2z_T` to the signature-incidence sum. ∎
+Every candidate has exactly two eligible nonowner incidences. ∎
 
-## 2. Finite signature extraction
-
-Recall
+Put
 
 \[
-B_n=1+\lfloor\log_2(n-1)\rfloor,
+B_\omega=1+\left\lfloor\log_2\max\{1,W_\omega\}\right\rfloor,
 \qquad
-C_n=2h(p+1)B_n
+C_\omega=2k(p+1)B_\omega.
 \]
-
-from CMR1457.
 
 ### Theorem CMR1463 -- PROVED
 
 Some eligible signature satisfies
 
 \[
-\boxed{
-\mu_\sigma(z)
-\ge
-\frac{2\nu(z)}{C_n}.
-}
+\boxed{\mu_\sigma(z)\ge\frac{2\nu(z)}{C_\omega}.}
 \]
 
 ### Proof
 
-There are at most `C_n` signature positions.  Apply CMR1462 and pigeonhole. ∎
-
-## 3. Positive-minimum quantitative fan
-
-Let `B subseteq C` be an exempt family, and apply the definitions to the
-nonexempt candidates `C setminus B`.
+Apply CMR1462 and pigeonhole over the CMR1457 signature stock. ∎
 
 ### Theorem CMR1464 -- PROVED
 
 At a positive minimum with guaranteed destroyed load `L`, every exempt family
-satisfying
-
-\[
-\sum_{T\in B}v_T<L
-\]
-
-admits a feasible dual packing and an eligible signature `sigma` with
+of weight below `L` admits a feasible dual packing and a signature with
 
 \[
 \boxed{
-\mu_\sigma
-\ge
-\frac{n-2}{3h(p+1)B_n}.
-}
+\mu_\sigma\ge
+\frac{d-2}{3k(p+1)B_\omega}.}
 \]
 
 ### Proof
 
-CMR1412--CMR1413 give a feasible packing of mass at least `(n-2)/3`.  Insert
-that value into CMR1463. ∎
+CMR1412--CMR1413 give packing mass at least `(d-2)/3`.  Insert this into
+CMR1463. ∎
 
-This is the first direct quantitative passage from the global transversal
-obstruction to one prefix-depth, projective-direction and height class.
-
-## 4. Pair and owner dispersion
-
-For one signature define the packed mass on an ordered owner-partner pair by
+For one signature define packed mass on ordered owner-partner pair `(a,b)` by
 
 \[
-\mu_\sigma(a,b)
-=
-\sum_{
-T:\ a(T)=a,\ b\in T\setminus\{a\},\ \sigma(a,b)=\sigma
-}z_T.
+\mu_\sigma(a,b)=
+\sum_{T:a(T)=a,\ b\in T\setminus\{a\},\ \sigma(a,b)=\sigma}z_T.
 \]
 
 ### Theorem CMR1465 -- PROVED
 
-For every ordered pair `(a,b)`,
+For every ordered pair,
 
 \[
 \boxed{\mu_\sigma(a,b)\le1.}
 \]
 
-For every owner `a`, the total packed eligible-partner incidence is at most two:
+For every owner,
 
 \[
-\boxed{
-\sum_{\sigma,b}\mu_\sigma(a,b)\le2.
-}
+\boxed{\sum_{\sigma,b}\mu_\sigma(a,b)\le2.}
 \]
 
-Consequently a signature of mass `mu_sigma` is supported on at least
-
-\[
-\boxed{\lceil\mu_\sigma\rceil}
-\]
-
-distinct ordered owner-partner pairs and at least
-
-\[
-\boxed{\left\lceil\mu_\sigma/2\right\rceil}
-\]
-
-distinct canonical owners.
+Thus a class of mass `mu_sigma` uses at least `ceil(mu_sigma)` ordered pairs
+and at least `ceil(mu_sigma/2)` owners.
 
 ### Proof
 
-Every candidate owned by `a` contains `a` in its residual prescription, so the
-packing constraint on edge `a` gives total owner mass at most one.  A fixed pair
-uses a subfamily of those candidates.  Each candidate contributes exactly two
-eligible incidences, giving the owner bound.  Divide the class mass by the
-maximum mass per pair and per owner. ∎
-
-## 5. Response-partner dispersion
+Every candidate owned by `a` contains response edge `a`, so the packing
+constraint on `a` bounds owner mass by one.  Each candidate contributes two
+partner incidences. ∎
 
 ### Theorem CMR1466 -- PROVED
 
-If the signature has partner type `response`, then for every response edge `b`,
+For a response-partner signature and every response edge `b`,
 
 \[
 \sum_a\mu_\sigma(a,b)\le1.
 \]
 
-Hence a response-type signature of mass `mu_sigma` uses at least
-
-\[
-\boxed{\lceil\mu_\sigma\rceil}
-\]
-
-distinct response partner edges.
+Hence it uses at least `ceil(mu_sigma)` distinct response partner edges.
 
 ### Proof
 
-Every response-type partner belongs to the residual prescription of the
-candidate containing it.  Apply the packing constraint on `b`. ∎
+Every such partner lies in the residual prescription, so apply its packing
+constraint. ∎
 
-Fixed-layer partners lack this residual-edge constraint, but CMR1465 still gives
-pair and owner dispersion.
-
-## 6. One primitive direction carries definite mass
-
-For a dyadic band `beta`, put
+For a dyadic band `H`, put
 
 \[
-D_p(\beta)
-=
-(p-1)\left\lceil\frac{4\beta}{p}\right\rceil^2.
+D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2.
 \]
-
-Partition the signature mass by the canonically oriented primitive vector
-`q=(u,v)`.
 
 ### Theorem CMR1467 -- PROVED
 
-Some primitive vector in the signature satisfies
+Some primitive direction in the signature carries mass
 
 \[
-\boxed{
-\mu_{\sigma,q}
-\ge
-\frac{\mu_\sigma}{D_p(\beta)}.
-}
+\boxed{\mu_{\sigma,q}\ge\frac{\mu_\sigma}{D_p(H)}.}
 \]
 
-The selected class contains at least
-
-\[
-\left\lceil\frac{\mu_\sigma}{D_p(\beta)}\right\rceil
-\]
-
-distinct parallel ordered owner-partner pairs.
+The class contains at least `ceil(mu_sigma/D_p(H))` distinct parallel ordered
+owner-partner pairs.
 
 ### Proof
 
-CMR1460 bounds the primitive-direction stock by `D_p(beta)`.  Pigeonhole the
-signature mass and use the unit pair-mass bound from CMR1465. ∎
+Use the CMR1460 direction stock and CMR1465 pair-mass bound. ∎
 
-Unlike CMR1460, which fixes one owner and therefore one real line, this global
-packing statement yields a bank of parallel translated lines across many owners.
-
-## 7. One exact displacement carries definite mass
-
-Fix the primitive vector `q` from CMR1467.  Every corresponding partner has
+Fix that primitive vector `q`.  Every partner difference has form
 
 \[
-b-a=tq
+b-a=mq
 \]
 
-for a nonzero signed integer `t` with `v_p(|t|)=d`.  Put
+with nonzero signed integer `m` and `v_p(|m|)=s`.  Put
 
 \[
-S_{n,p}(d,\beta)
-=
-\left\lfloor\frac{n-1}{p^d\beta}\right\rfloor.
+S_{\omega,p}(s,H)=
+\left\lfloor\frac{W_\omega}{p^sH}\right\rfloor.
 \]
 
-A realized signature has `S_{n,p}(d,beta)>=1`.
+A realized class has `S_{omega,p}(s,H)>=1`.
 
 ### Theorem CMR1468 -- PROVED
 
-Some signed scale `t` satisfies
+Some signed scale `m` satisfies
 
 \[
 \boxed{
-\mu_{\sigma,q,t}
+\mu_{\sigma,q,m}
 \ge
 \frac{\mu_\sigma}
-{2D_p(\beta)S_{n,p}(d,\beta)}.
-}
+{2D_p(H)S_{\omega,p}(s,H)}.}
 \]
 
-All incidences in this subfamily have the same exact displacement vector `tq`,
-and they contain at least
-
-\[
-\left\lceil
-\frac{\mu_\sigma}
-{2D_p(\beta)S_{n,p}(d,\beta)}
-\right\rceil
-\]
-
-distinct translated owner-partner pairs.
+All incidences have one exact displacement vector `mq`, and there are at least
+the ceiling of this mass distinct translated owner-partner pairs.
 
 ### Proof
 
-The primitive height of `q` is at least `beta`.  Board containment gives
-`|t|beta<=n-1`.  There are at most
-
-\[
-2S_{n,p}(d,\beta)
-\]
-
-signed multiples of `p^d` in that range; requiring exact valuation only reduces
-the stock.  Apply CMR1467, pigeonhole the signed scales, and use CMR1465. ∎
-
-## 8. Packed-signature endpoint
+Board containment gives `|m|H<=W_omega`.  There are at most
+`2S_{omega,p}(s,H)` signed multiples of `p^s` in that range.  Pigeonhole and
+use CMR1465. ∎
 
 ### Corollary CMR1469 -- PROVED
 
-At a positive minimum, every exempt family of weight below the destroyed-load
-threshold yields an arithmetic signature of packed eligible-incidence mass at
-least
+Every subthreshold exempt family at a positive minimum yields a signature of
+packed incidence mass at least
 
 \[
 \boxed{
-\frac{n-2}{3h(p+1)B_n}.
-}
+\frac{d-2}{3k(p+1)B_\omega}}
 \]
 
-Inside it there is an exact displacement class of mass at least
+and an exact-displacement class of mass at least
 
 \[
 \boxed{
-\frac{n-2}
-{6h(p+1)B_nD_p(\beta)S_{n,p}(d,\beta)}.
-}
+\frac{d-2}
+{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)}.}
 \]
 
-The signature class is dispersed over many canonical owners and ordered pairs;
-in the response-partner branch it is also dispersed over many residual response
-edges.  The exact-displacement subclass is a bank of parallel translates with
-one lattice displacement.
+The class is dispersed over canonical owners and ordered pairs; in the response
+branch it is also dispersed over residual response edges.  The exact-
+displacement subclass is a bank of parallel translates.  The theorem applies
+to scattered residual factors because matching side `d`, envelope depth `k`
+and coordinate span `W_omega` are kept distinct.  The open task is to pay this
+bank through prefix return, quotient/carry collision, protected reserve or a
+subcritical owner/rook credit class.  No all-`n` theorem is claimed.
 
-The active quantitative target is now sharper than the one-owner loaded-line
-endpoint: rule out or pay this globally packed fixed-depth, fixed-direction and
-fixed-displacement bank using prefix return, quotient/carry collision, protected
-reserve, or a subcritical owner/rook credit class.  No all-`n` theorem is
-claimed.
-
-Packed-incidence identities, signature extraction, owner and partner dispersion,
-primitive-direction concentration and exact-displacement concentration are
-checked in
+Checked in full-grid and synthetic inherited-coordinate specializations by
 [`scripts/verify_prime_power_fractional_packed_signature_fans.py`](../scripts/verify_prime_power_fractional_packed_signature_fans.py).
