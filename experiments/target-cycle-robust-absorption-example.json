@@ -1,0 +1,10 @@
+{
+  "R": 1000000000000,
+  "xi": 0.2,
+  "alpha": 0.02,
+  "q": 100,
+  "cases": [
+    {"name": "direct", "unary_domain_loss": 190000000000},
+    {"name": "star", "unary_domain_loss": 210000000000}
+  ]
+}
