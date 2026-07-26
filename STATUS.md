@@ -19,75 +19,54 @@ The collision-free theorem ledger is split between
 
 ## Closed prime-power components
 
-### Recursive geometry and inherited closure
+### Geometry, closure, and matching products
 
-- Completed-reciprocal channels and the stated balanced recursive prime-power
-  banks are proved.
-- Prefix, quotient, carry, Hall-wall, line-clean, joint-parent, and harmonic
-  packet calculations are closed at their indexed scales.
-- Closure envelopes form a nested chain of at most `h+1` epochs with at most `h`
-  strict expansions.
-- Positive target load contracts to the four-endpoint one-target core under the
-  global-baseline closure.
+- The indexed completed-reciprocal, prefix, quotient, carry, Hall-wall,
+  line-clean, joint-parent, and harmonic-packet results remain proved at their
+  stated scales.
+- Closure envelopes form at most `h+1` nested epochs with at most `h` strict
+  expansions.
+- Protected/free, child-routing, essential-core, exchange-SCC, and unit-wall
+  matching products are exact.
+- Every matching-relevant edge has unique ownership in those products; a nonfixed
+  edge follows one strict side-descending factor lineage.
 
-### Matching, restoration, and product structure
-
-- Entering and leaving matching churn have equal cardinality; recreated selected
-  conflicts contain entering edges.
-- Every physical edge occurrence has exact labelled nonroot full-token incidence
-  `(p+1)(h-1)`.
-- Exact selected-state cycles are erasable under monotone masks.
-- Canonical selectors, unavailable-edge absorption, rollback, packet loss,
-  returned-edge ancestry, and forced certificates have finite stock,
-  deletion/essentiality responses, or explicit physical restoration payment.
-- Protected/free, child-routing, essential-core, and unit-wall products are exact.
-  A nonfixed selected edge belongs to one unique strict child factor.
-- One physical edge has at most
-  \[
-  (h+1)\left(1+\sum_{m=1}^{N}(2m^2+m+1)\right)
-  \]
-  structural owner slots, so branch-wide recurrence concentrates at one owner.
-
-### Returned targets, Hall walls, and protected lines
-
-- A recurrent target edge deletes while nonessential. On return, its stored
-  avoiding matching either survives or exposes a missing old matching edge.
-- Essential return creates Hall deficiency exactly one and an exact lower-side
-  unit-wall product. The full factor tree has at most `d` splits and cubic
-  owner-edge stock.
-- A recurrent physical target has at most six labelled same-layer pair types.
-  A recurrent type deletes one nonessential pair edge or contracts two essential
-  pair edges, lowering side by two.
-- A full-envelope layer rematching avoids `r` protected nonaxis lines whenever
-  `q>=2r+4`. Saturation produces a historical target-pair bank or a cell wall/star.
-- Historical targets are never treated as simultaneous. Ordered two-layer
-  rematching neutralises stored pair signatures, and temporal reuse is counted by
-  physical cell--absence-run slots.
-
-### Global restoration ancestry
+### Physical restoration and target recurrence
 
 - Physical restoration is defined in absolute parent coordinates and is not
   duplicated by envelope, routing, factor, wall, or certificate relabelling.
 - Structural deletion generations form a forward acyclic out-degree-one ancestry
-  forest. Long paths force many genuine restoration runs of one labelled edge.
-- Fresh unpaid structural roots have an explicit branch-wide polynomial stock.
-- A surviving stored anchor can re-delete every restored private edge in one
-  simultaneous operation. Anchor failure exposes one of only `2n` anchor edges.
-- Private-batch normalization is idempotent. Reopening only private edges
-  normalizes to the identical state and is cycle-erasable.
+  forest. Long paths force repeated genuine absence runs of one labelled edge.
+- A recurrent target edge deletes while nonessential. Essential return produces
+  a deficiency-one Hall wall and an exact lower-side product.
+- A recurrent physical target has at most six labelled same-layer pair types. A
+  recurrent type deletes one nonessential pair edge or contracts two essential
+  pair edges.
+- Historical protected-line targets are neutralised through stored labelled pairs,
+  and reuse is counted by cell--absence-run slots rather than raw episodes.
+
+### Aggressive anchor normalization
+
+- At one fixed owner, an anchor-preserving aggressive branch rejects a
+  nonimproving state by deleting its complete anchor-entering set.
+- Every such batch has at least two labelled edges; batches are pairwise disjoint
+  and total at most `n(n-1)` on that branch.
+- Reopened private batches restore distinct physical edges and carry exact token
+  payment. A surviving stored anchor re-closes all restored private edges at once.
+- Private normalization is idempotent. Pure reopening normalizes to the identical
+  state and is cycle-erasable.
 - A newly enabled nonimproving state uses a newly added edge, which is immediately
-  absorbed into the aggressive branch's private deletion union.
+  absorbed into the private union.
+
+These statements are rigorous **on the surviving aggressive branch**.
 
 ## Critical completeness correction
 
-CMR785--CMR821 describe a rigorous **aggressive normalization subbranch**. Deleting
-one candidate's complete anchor-entering batch preserves the anchor and gives
-strong private-edge accounting, but it may also remove other untested states,
-including an improving state. Branch-local forcing and contraction are not
-statements about the original full family.
+Deleting a complete entering batch may remove other untested states, including an
+improving state. Therefore the aggressive branch is not by itself a complete
+existence search.
 
-CMR830--CMR837 give the exact completeness-preserving response. For an
-equal-cardinality feasible state family,
+For an equal-cardinality state family and rejected state `Q`, CMR830--CMR837 give
 
 \[
 \mathcal F\setminus\{Q\}
@@ -95,18 +74,17 @@ equal-cardinality feasible state family,
 \bigcup_{f\in Q,\,\mathcal F-f\ne\varnothing}(\mathcal F-f).
 \]
 
-Every state other than `Q`, including every improving state, survives in at least
-one viable single-edge child. Every root-to-leaf path has at most `2n^2-2n`
-deletions. The aggressive batch branch is contained in the viable child branches
-but is not their union.
+Every alternative state survives in at least one viable single-edge child, and
+every root-to-leaf path has at most `2n^2-2n` deletions. Branch-local forcedness
+is never promoted to the original family without this union.
 
-CMR838--CMR845 identify the viable children exactly. With
+With
 
 \[
 E_*(\mathcal F)=\bigcap_{R\in\mathcal F}R,
 \]
 
-one has
+CMR838--CMR845 prove
 
 \[
 \mathcal F-f\ne\varnothing
@@ -114,8 +92,7 @@ one has
 f\notin E_*(\mathcal F).
 \]
 
-After contracting the full compatible core, the residual family has empty core,
-and at every node
+After complete-core contraction the residual family has empty core, and
 
 \[
 \boxed{
@@ -123,37 +100,84 @@ and at every node
 }
 \]
 
-The zero-child case is a singleton and the one-child case is deterministic.
-Total contracted core rank along a branch is at most `2n`.
+The zero-child case is a singleton, the one-child case is deterministic, and
+total contracted core rank along a branch is at most `2n`.
 
-## Other corrections retained
+## Distinguishing rank and exchange SCCs
+
+For a rejected state `Q`, define its distinguishing rank as the minimum number of
+its labelled edges which no alternative state contains simultaneously.
+
+- This rank is the transversal number of the difference-support hypergraph and
+  equals the minimum number of single-edge children needed to exclude only `Q`.
+- It is additive in exact Cartesian products.
+- For a full one-layer perfect-matching family, it equals the directed feedback-
+  vertex number of the exchange graph relative to `Q`.
+- Usable matching edges are exactly the exchange edges inside SCCs. The matching
+  family factors exactly over SCC blocks, and distinguishing rank adds over the
+  cyclic blocks.
+- Large local rank means every low-rank prescription of the base matching occurs
+  in another local matching.
+
+This localizes one-layer width exactly but does not yet bound the coupled
+layer-disjoint joint-state width.
+
+## Constant-arity geometric completeness
+
+Every nonimproving state which destroys positive designated target load creates a
+genuinely new physical collinear triple. Retain its exact three labelled edges
+`C`. Then
+
+\[
+\mathcal F
+=
+\left(\bigcup_{f\in C}(\mathcal F-f)\right)
+\cup
+\mathcal F_C.
+\]
+
+Thus the complete scheduler response has at most four branches:
+
+1. up to three single-edge deletion children covering every state which omits one
+   edge of `C`;
+2. one conditioned branch where `C` occurs in every surviving state and enters
+   forced-certificate handoff or exact contraction.
+
+Every state of the original family survives in at least one branch. Conditioning
+on `C` lowers state cardinality by three under contraction and decreases
+possible distinguishing rank by at most three.
+
+## Corrections retained
 
 - Naive sequential two-layer rematching may reoccupy an old first-layer cell.
-- One edge return may serve several neutralisations in one continuous absence run;
-  the ledger counts cell--run slots rather than raw episode-return pairs.
-- Removing one essential edge produces deficiency one, not a large Hall batch.
+- Historical target lines are not simultaneous target families.
+- One edge return may serve several neutralisations in one continuous absence run.
+- Removing one essential edge produces Hall deficiency exactly one.
 - Routing compensation and essentiality escape may be distributed across several
   alternating components.
-- Owner relabelling does not itself create physical restoration.
+- One physical restoration is counted once globally even when several nested
+  owners observe it.
+- Aggressive batch deletion is branch-local; completeness uses viable single-edge
+  unions or the rank-three prescription split.
 
 ## Current open frontier
 
-1. **Core-free branch-width control.** Compress or bound the width of the viable
-   single-edge state-exclusion tree after full essential-core contraction, or
-   prove that a canonical aggressive branch retains an improving witness.
-2. **Fixed-owner, fixed-edge closure.** Inside a retained branch, show that an edge
-   restored often enough to survive normalization, bulk redeletion, anchor-loss
-   ancestry, and deletion/contraction responses forces target-load decrease,
-   reserve exhaustion, or strict potential improvement.
+1. **Constant-arity tree compression.** Bound or compress the polynomial-depth
+   tree generated by the three deletion children plus one forced-triple branch,
+   or establish target-load/potential monotonicity across its side branches.
+2. **Forced-triple and fixed-edge closure.** Convert repeated conditioned
+   forced-triple branches and fixed-owner physical-edge restoration into target-
+   load decrease, reserve exhaustion, or strict global potential improvement.
 3. **Prime-field and low-height transfer.** Rebuild the owner-labelled endpoint
-   for prime fields and the remaining thin quotient/carry regimes.
-4. **Arbitrary side lengths.** Extend the balanced prime families and control CRT
+   for prime fields and remaining thin quotient/carry regimes.
+4. **Arbitrary side lengths.** Extend balanced prime families and control CRT
    assembly for every positive integer `n`.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR845**, the local geometric, matching,
-restoration, product, and aggressive-normalization loops have exact finite-stock,
-cycle-erasure, deletion/contraction, or payment normal forms. Completeness is now
-represented by an exact polynomial-depth branching tree, whose unresolved part
-is width in core-free equal-cardinality families.
+There is no complete proof. Through **CMR869**, local geometry, matching products,
+restoration ancestry, aggressive normalization, exact completeness branching,
+core contraction, distinguishing width, exchange-SCC factorization, and the
+rank-three geometric split have rigorous normal forms. The unresolved
+prime-power problem is global compression or potential descent across the
+remaining constant-arity completeness tree.
