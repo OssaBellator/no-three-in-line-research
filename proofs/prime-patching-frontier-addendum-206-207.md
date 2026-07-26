@@ -3,7 +3,7 @@
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air. It records the original-reference, controller-domain,
 initial-allocation, complete marked-support, separated-cycle, layerwise, epoch-reset,
-and nested controller-history reductions in `docs/206` through `docs/250`.
+and nested controller-history reductions in `docs/206` through `docs/251`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -52,8 +52,9 @@ and nested controller-history reductions in `docs/206` through `docs/250`.
 | PP3atv--PP3aub | The canonical endpoint checklist is exhaustive and has helper-support rank at most three; no unspecified global local-host condition remains | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/248-complete-endpoint-local-normal-form.md` |
 | PP3auc--PP3aui | A credited marked source set is itself the input to a zero-insertion paid cycle; stars and endpoint banks require no separate first endpoint trade | PROVED / CONDITIONAL EXISTING REFINEMENT INTERFACES | `docs/249-credited-marked-set-direct-paid-trade.md` |
 | PP3auj--PP3aup | The complete internal coordinate census leaves `(1-ab-o(1))m` free indices, so slab pools and all package commitments cannot create a near-complete cover | PROVED | `docs/250-internal-coordinate-reservation-census.md` |
+| PP3auq--PP3auw | One fixed controller-aware slab allocation attempt either installs the macro patch or produces a direct paid repair; the remaining issue is restart comparability across attempts | PROVED / CONDITIONAL ESTABLISHED SLAB INTERFACES | `docs/251-fixed-attempt-allocation-or-direct-repair.md` |
 
-## Complete canonical endpoint endpoint
+## Complete canonical endpoint
 
 Use
 
@@ -68,8 +69,8 @@ support rank at most three. Saturation is deterministic, selected controllers ar
 punctured after helper selection, and positive-margin ownership/global-label
 certificates survive the resulting `O(W)=o(R)` deletions.
 
-Every source-admissible saturated first state decomposes automatically into two
-current permutation layers. Cross-wired inserted cells are assigned by the post-trade
+Every source-admissible saturated state decomposes automatically into two current
+permutation layers. Cross-wired inserted cells are assigned by the post-trade
 decomposition, and layerwise helper demand stays below the global square budget.
 Historical original layers are not needed: one current layer serves as the reference
 inside an epoch and is reset after a completed paid package.
@@ -103,14 +104,30 @@ indices, far exceeding the complete `O(W^2)=O(R)=o(m)` helper demand. Controller
 density, common-layer failure, moderate coordinate erosion and internal near-complete
 covers are no longer separate frontiers.
 
+## Fixed-attempt allocation endpoint
+
+For fixed source, slabs, labels and candidate universe, individual label-margin
+failure gives a direct paid star or resource bank. Otherwise the random two-sided
+local Ore theorem either installs the patch or forces one of the four score-numerator
+masses above `Omega(RT)`; each mass converts to a canonical credited structure and
+pays directly. Therefore one fixed attempt has exactly two outcomes:
+
+```text
+completed macro patch,
+or strict decrease of the nested fixed-universe potential.
+```
+
 ## Revised live frontier
 
-The concentrated frontier is now:
+The sole concentrated frontier inside the slab-optimal controller-aware chain is
+**restart comparability across successive fixed allocation attempts**. After a paid
+source repair, one must retain, dominate or monotonically enlarge the old
+pool/label/candidate universe strongly enough that a restart cannot replenish the
+potential already removed.
 
-1. the initial controller-aware macro-patch allocation/completion theorem before a
-   credited repair structure is available; and
-2. genuinely different branches that do not use the slab-optimal random two-sided
-   allocation and dynamic-potential architecture.
+Sufficient endpoints include a fixed pool-and-label universe, a universal dominating
+candidate potential, a bounded-restart theorem with aggregate `o(R)` loss, or a
+restart rule whose newly introduced entries have zero initial blocker mass.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
 ordinary robust chord geometry, captive centres, controller--controller stars,
@@ -123,7 +140,9 @@ and chord-cycle payment, local Hall/alternating/matching host preparation, failu
 common-layering, cross-layer insertion payment, high controller density, moderate
 coordinate shortage, post-trade layer assignability, historical original-reference
 preservation, unspecified canonical endpoint-host conditions, separate first-trade
-existence for credited structures, and internal near-complete coordinate covers are
-no longer separate frontiers.
+existence for credited structures, internal near-complete coordinate covers, and
+single-attempt allocation arithmetic are no longer separate frontiers.
+
+Genuinely different architectures remain outside this focused chain.
 
 The no-three-in-line conjecture remains unproved.
