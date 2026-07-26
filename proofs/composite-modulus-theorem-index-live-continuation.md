@@ -20,38 +20,33 @@ This continuation is authoritative for CMR748 onward on branch
 | CMR822--829 | Unique edge ownership in exact products, strict single-child edge lineage, static-stage and envelope owner bounds, restoration concentration, fixed-owner response, interface escape payment, and the physical-edge lineage endpoint | PROVED | `docs/207-prime-power-physical-edge-lineage.md` |
 | CMR830--837 | Exact state-exclusion union, viable-child coverage, preservation of every improving state, polynomial root-to-leaf depth, witness-guided viable paths, aggressive-branch containment, leaf-local forcing, and the completeness-corrected endpoint | PROVED | `docs/208-prime-power-complete-state-exclusion-branching.md` |
 | CMR838--845 | Compatible common core, exact viability/nonessentiality equivalence, complete-core contraction, empty residual core, contraction-width conservation, deterministic zero/one-child cases, telescoping contraction rank, and the essential-core branch normal form | PROVED | `docs/209-prime-power-viable-branch-essential-core.md` |
+| CMR846--853 | Alternative-support transversals, exact minimum branch covers, low-rank exchange richness, product additivity, matching exchange cycles, feedback-vertex equality, essential-edge cycle characterisation, and the distinguishing-rank endpoint | PROVED | `docs/210-prime-power-distinguishing-rank-exchange-digraph.md` |
+| CMR854--861 | Generic usable-edge/SCC characterisation, exact matching-core and SCC products, additive component widths, concentration versus many flexible factors, componentwise minimum branch covers, low-rank local exchange, and the SCC-width endpoint | PROVED | `docs/211-prime-power-generic-exchange-scc-width.md` |
+| CMR862--869 | Exact prescription split, complete side-branch coverage, conditioned contraction, distinguishing-rank persistence, canonical new-triple existence, constant-arity response, forced-triple continuation, and the geometric completeness endpoint | PROVED | `docs/212-prime-power-new-triple-prescription-split.md` |
 
-The branch still does not prove the all-`n` conjecture. Through CMR845, owner
-relabelling and factor-tree branching cannot duplicate one physical restoration,
-and one aggressive anchor subbranch has exact private deletion, bulk redeletion,
-normalization, and active-context payment. That aggressive subbranch is not by
-itself a completeness-preserving search: deleting a complete entering batch may
-remove other untested states.
+The branch still does not prove the all-`n` conjecture. The aggressive anchor
+machinery remains a rigorous branch-local normalization but is not by itself a
+complete search. Completeness is represented by exact single-edge child unions.
+After contracting the full common core, viable child count equals residual state
+cardinality, and the minimum compressed width is the distinguishing rank.
 
-Completeness is restored by the exact viable-child identity
+For a full one-layer matching family this rank is exactly the directed feedback-
+vertex number of the exchange digraph. The matching family factors over exchange
+SCCs, and the rank adds across cyclic SCC blocks. Layer-disjointness can only
+reduce alternatives, but its exact two-layer width still requires control.
 
-\[
-\mathcal F\setminus\{Q\}
-=
-\bigcup_{f\in Q,\,\mathcal F-f\ne\varnothing}(\mathcal F-f).
-\]
+The target-driven scheduler gives a stronger local split. Every nonimproving
+state which destroys positive target load contains a canonical new labelled
+collinear triple `C`. The full family is covered by at most three deletion
+children for states omitting an edge of `C`, plus one conditioned branch where
+`C` is forced and enters target handoff or exact contraction. Thus local
+completeness arity is at most four, independent of exchange feedback width.
 
-Every alternative state, including every improving state, survives in at least
-one child. Each root-to-leaf path has at most `2n^2-2n` single-edge deletions.
-The viable children are exactly the nonessential edges of `Q`. After contracting
-the full common core, the residual family has empty core and
+The active prime-power frontier is now:
 
-\[
-\text{contracted rank}+\text{viable child count}=2n.
-\]
-
-Hence essential-edge proliferation and completeness width have been separated.
-The active prime-power frontier is now twofold:
-
-1. compress or control the width of the core-free viable-child branching tree, or
-   prove that a canonical aggressive branch retains an improving witness;
-2. inside a retained branch, close the final fixed-owner, fixed-edge restoration
-   loop by forcing target-load decrease, reserve exhaustion, or strict potential
-   improvement.
-
-Prime-field transfer and arbitrary side-length assembly remain necessary.
+1. compress the resulting constant-arity, polynomial-depth completeness tree, or
+   prove a potential/target-load monotonicity across its side branches;
+2. convert recurrent forced-triple branches and the final fixed-owner, fixed-edge
+   restoration loop into target-load decrease, reserve exhaustion, or strict
+   global potential improvement;
+3. transfer the endpoint to prime fields and arbitrary side lengths.
