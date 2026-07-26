@@ -1,0 +1,9 @@
+{
+  "W": 100,
+  "D_m": 5,
+  "R": 1000000,
+  "blocks": 4,
+  "block_side": 99,
+  "pair_multiplicity": 500,
+  "domain_lower": 550000
+}
