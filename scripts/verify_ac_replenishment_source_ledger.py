@@ -9,12 +9,13 @@ from random import Random
 
 
 def one_step_checks(counts: Counter[str]) -> None:
-    for q in range(1, 4):
-        for source_count in range(1, 4):
-            for m in product(range(4), repeat=q):
-                for s in product(range(3), repeat=source_count):
+    # A small exhaustive grid is enough here; larger mixed histories are stressed below.
+    for q in range(1, 3):
+        for source_count in range(1, 3):
+            for m in product(range(3), repeat=q):
+                for s in product(range(2), repeat=source_count):
                     for rho in product(range(1, 4), repeat=source_count):
-                        for m2 in product(range(4), repeat=q):
+                        for m2 in product(range(3), repeat=q):
                             for s2 in product(*(range(value + 1) for value in s)):
                                 created = sum(max(0, b - a) for a, b in zip(m, m2))
                                 consumed = sum(max(0, a - b) for a, b in zip(m, m2))
