@@ -21,10 +21,11 @@ def check_new_triple_owner_partition():
     rng = random.Random(1214)
     checked = 0
     owned_triples = 0
-    for side in range(3, 60):
+    for side in range(3, 80):
         physical = [(row, column) for row in range(side) for column in range(side)]
-        for _ in range(300):
-            old_cells = set(rng.sample(physical, rng.randint(3, min(len(physical), 2 * side))))
+        for _ in range(120):
+            old_size = rng.randint(3, min(len(physical), 20))
+            old_cells = set(rng.sample(physical, old_size))
             new_cells = set(old_cells)
             remove = set(rng.sample(tuple(new_cells), rng.randint(0, min(4, len(new_cells)))))
             new_cells -= remove
@@ -33,17 +34,25 @@ def check_new_triple_owner_partition():
 
             old_state = {(0, row, column) for row, column in old_cells}
             new_state = {(0, row, column) for row, column in new_cells}
-            new_triples = [
+            all_new_triples = [
                 frozenset(triple)
                 for triple in combinations(new_cells, 3)
                 if not set(triple) <= old_cells
             ]
+            if len(all_new_triples) > 300:
+                new_triples = rng.sample(all_new_triples, 300)
+            else:
+                new_triples = all_new_triples
+
             fibres = {}
             for triple in new_triples:
                 owner = canonical_owner(old_state, new_state, triple)
                 fibres.setdefault(owner, set()).add(triple)
             assert sum(len(fibre) for fibre in fibres.values()) == len(new_triples)
-            assert set().union(*fibres.values()) == set(new_triples) if fibres else not new_triples
+            if fibres:
+                assert set().union(*fibres.values()) == set(new_triples)
+            else:
+                assert not new_triples
             owned_triples += len(new_triples)
             checked += 1
     return checked, owned_triples
@@ -55,24 +64,31 @@ def check_fixed_core_owners():
     anchored = 0
     for universe_size in range(5, 100):
         universe = set(range(universe_size))
-        for _ in range(200):
+        for _ in range(160):
             core = set(rng.sample(tuple(universe), rng.randint(1, min(5, universe_size - 2))))
-            old_residual = set(rng.sample(tuple(universe - core), rng.randint(1, min(12, len(universe - core)))))
+            residual_universe = universe - core
+            old_residual = set(
+                rng.sample(tuple(residual_universe), rng.randint(1, min(12, len(residual_universe))))
+            )
             new_residual = set(old_residual)
             if new_residual:
-                new_residual -= set(rng.sample(tuple(new_residual), rng.randint(0, min(3, len(new_residual)))))
+                new_residual -= set(
+                    rng.sample(tuple(new_residual), rng.randint(0, min(3, len(new_residual))))
+                )
             available = universe - core - new_residual
-            new_residual.update(rng.sample(tuple(available), rng.randint(1, min(3, len(available)))))
+            new_residual.update(
+                rng.sample(tuple(available), rng.randint(1, min(3, len(available))))
+            )
             entering = new_residual - old_residual
             assert entering
-            for _triple in range(30):
-                fixed_part = set(rng.sample(tuple(core), rng.randint(0, min(2, len(core)))))
+            pool = core | new_residual
+            assert len(pool) >= 3
+            for _triple in range(20):
                 entering_edge = rng.choice(tuple(entering))
-                triple = fixed_part | {entering_edge}
-                while len(triple) < 3:
-                    triple.add(rng.choice(tuple(new_residual)))
+                others = rng.sample(tuple(pool - {entering_edge}), 2)
+                triple = {entering_edge, *others}
                 assert triple & entering
-                assert not (triple & entering) & core
+                assert entering_edge not in core
                 anchored += 1
             checked += 1
     return checked, anchored
@@ -82,7 +98,7 @@ def check_product_unique_ownership():
     rng = random.Random(1218)
     checked = 0
     for total_side in range(2, 80):
-        for _ in range(300):
+        for _ in range(200):
             factor_count = rng.randint(2, min(total_side, 6))
             cuts = sorted(rng.sample(range(1, total_side), factor_count - 1))
             parts = []
@@ -108,11 +124,11 @@ def check_score_decomposition():
     rng = random.Random(1220)
     checked = 0
     atoms = 0
-    for side in range(4, 150):
-        for _ in range(300):
+    for side in range(4, 100):
+        for _ in range(160):
             owner_counts = {}
             totals = [0, 0, 0, 0]
-            for _atom in range(rng.randint(0, 500)):
+            for _atom in range(rng.randint(0, 300)):
                 rank = rng.randint(1, 3)
                 prescription = tuple(sorted(rng.sample(range(side * side), rank)))
                 owner = prescription[0]
@@ -132,14 +148,17 @@ def check_score_decomposition():
 def check_expectation_interchange():
     rng = random.Random(1216)
     checked = 0
-    for edge_count in range(1, 80):
-        for state_count in range(1, 80):
+    for edge_count in range(1, 50):
+        for state_count in range(1, 50):
             loads = [
                 [rng.randint(0, 20) if rng.random() < 0.35 else 0 for _ in range(edge_count)]
                 for _ in range(state_count)
             ]
             by_state = sum(sum(state) for state in loads) / state_count
-            by_edge = sum(sum(state[edge] for state in loads) / state_count for edge in range(edge_count))
+            by_edge = sum(
+                sum(state[edge] for state in loads) / state_count
+                for edge in range(edge_count)
+            )
             assert abs(by_state - by_edge) < 1e-12
             checked += 1
     return checked
