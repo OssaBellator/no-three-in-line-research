@@ -34,6 +34,8 @@ The authoritative live ledger is split across:
 | CMR1374--1381 | Opposite-matching normalization, residual row-column incidence parameters, exact inclusion-exclusion cylinder counts, constant cylinder-type stock, exact created and destroyed credit expectations, weighted offspring rows, and exact upper-quotient histograms | PROVED | `docs/276-prime-power-extension-free-exact-cylinder-types.md` |
 | CMR1382--1389 | Candidate prescriptions, edge-selector domination, exact selector optimization, concave fractional perfect-matching form, selector/fractional duality, deterministic improvement, restricted-host Hall-wall branch, and the clean side-five policy witness | PROVED; side-five witness by complete finite check | `docs/277-prime-power-cross-line-edge-assignment-normal-form.md` |
 | CMR1390--1397 | Exact weighted candidate-transversal identity, clean and strict threshold criteria, Hall witnesses and minimal deficiency-one blockers, explicit failure of equal fractional ownership, and the side-five clean deletion transversal | PROVED; finite examples and blocker checks verified computationally | `docs/278-prime-power-candidate-transversal-hall-wall.md` |
+| CMR1398--1405 | Fixed pre-sampling owners, exact rook-class owner loads, conditional owner weights, line/height/carry refinements, assignment-dual certificates, exact unavailable-edge penalties, and the rook-owner endpoint | PROVED; finite bank enumeration used only for verification | `docs/278-prime-power-rook-owner-edge-weights.md` |
+| CMR1406--1413 | Exact extension-free wall size, sharp matching-preclusion number `n-2`, classification of the two minimum star blockers, small-transversal survival, canonical owner-support and owner-tail certificates, rank-three fractional covering, and dual dispersed-candidate packing | PROVED; exhaustive cut and small-deletion checks plus randomized owner and fractional-cover checks | `docs/279-prime-power-owner-support-matching-preclusion.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -44,43 +46,37 @@ finite DAG, so its reproduction matrix is block upper triangular and its spectra
 radius is the maximum same-owner diagonal spectral radius.  Finite off-diagonal
 cross-factor collateral changes only the scaling of the Lyapunov weights.
 
-Same-owner blocks now have rigorous finite representations.  Exact state-target
-classes admit arbitrary line/height/rank/carry compressions through componentwise
-upper quotient matrices; any rational certificate for the quotient lifts to every
-exact host row.  The first concrete quotient uses residual rank and dyadic line
-profiles `(o_L,g_L,m_L)`, with exact pair moments and explicit band envelopes.
+Same-owner blocks have exact finite representations.  Every candidate triple has
+a fixed canonical owner before a response is sampled.  Its exact occurrence
+probability is one finite rook-class value, so owner loads and assignment-dual
+edge weights are computable from geometric class histograms without enumerating
+the response bank.
 
-The extension-free response bank through one target cell has exact size
+Cross-line deterministic response selection now has two exact obstruction forms:
 
-\[
-D_n\frac{n-2}{n-1}.
-\]
+1. exempt a low-weight family, hit every remaining prescription, and preserve a
+   perfect matching; or
+2. delete the fixed canonical owner support and bound the remaining owner-weight
+   tail.
 
-Its rank-one and unavailable-edge marginals are at most `1/(n-2)`, while the
-rank-two/rank-three loss factor is
-
-\[
-\lambda_n=\frac{n!(n-1)}{D_n(n-2)}\le4.
-\]
-
-Summing these banks over all target cells gives an exact line-composition kernel.
-Pointwise line domination fails, but cross-line collateral is now equivalently:
-
-1. an exact edge-selector/minimum-matching problem; or
-2. an exact low-weight candidate-exemption problem in which one edge is deleted
-   from every nonexempt prescription and a perfect matching must survive.
-
-Every failed deletion transversal contains an inclusion-minimal deficiency-one
-Hall wall.  Equal fractional ownership is already refuted as a universal policy
-by an explicit side-four state with clean responses.
+For the extension-free graph `K_{n,n}\(O union {e})`, every blocker has at least
+`n-2` edges.  The only blockers of size `n-2` are the complete allowed star in
+the row of `e` and the complete allowed star in the column of `e`.  Therefore
+any transversal on at most `n-3` edges survives, and every nonexceptional
+transversal on `n-2` edges also survives.  A rank-three fractional transversal
+below `(n-2)/3` forces the same conclusion.
 
 The active frontier is therefore:
 
-1. charge every low-weight transversal Hall wall to primitive height, prefix,
-   quotient, carry, protected-reserve or owner-credit structure;
-2. convert that charge into a host-uniform coarse upper quotient with an exact
-   rational certificate `Av<v`;
-3. establish the corresponding diagonal certificates in prime-field and thin
+1. bound the canonical owner-weight tail after retaining the best `n-2`
+   nonexceptional owner edges;
+2. rule out, or charge, the two exceptional owner stars through loaded-line,
+   secant-star, primitive-height, prefix, quotient, carry or protected-reserve
+   mechanisms;
+3. upper-bound the required fractional candidate packing in each geometric
+   owner/rook class and convert the result into a host-uniform rational
+   certificate `Av<v`;
+4. prove the corresponding diagonal certificates in prime-field and thin
    regimes; and
-4. glue the resulting diagonal blocks through the already-proved owner
-   triangularity and complete CRT/balanced assembly.
+5. glue the diagonal blocks through owner triangularity and complete the
+   arbitrary-side CRT/balanced assembly.
