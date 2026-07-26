@@ -56,7 +56,7 @@ Every constraint destroyed by `omega` belongs to exactly one of the twelve words
 
 \[
 \boxed{
-\mathcal W_{m des}
+\mathcal W_{\mathrm{des}}
 =
 \{X_i,Y_i:1\le i\le3\}
 \cup
@@ -75,7 +75,7 @@ words
 
 \[
 \boxed{
-\mathcal W_{m rep}
+\mathcal W_{\mathrm{rep}}
 =
 \{X_i,Y_i:1\le i\le3\}
 \cup
