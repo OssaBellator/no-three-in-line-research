@@ -30,10 +30,10 @@ def one_step_checks(counts: Counter[str]) -> None:
                                 source_total = sum(s)
                                 source_total2 = sum(s2)
                                 assert phi2 <= phi - consumed
-                                if created > 0:
-                                    assert source_total2 < source_total
-                                elif consumed > 0:
+                                if consumed > 0:
                                     assert phi2 < phi
+                                elif sum(debits) > 0:
+                                    assert phi2 <= phi and source_total2 < source_total
                                 counts["one-step ledgers"] += 1
 
 
@@ -51,6 +51,7 @@ def random_histories(counts: Counter[str]) -> None:
         total_consumed = 0
         total_debit = [0] * source_count
         replenishment_steps = 0
+        source_only_steps = 0
         steps = 0
 
         for _step in range(100):
@@ -61,9 +62,20 @@ def random_histories(counts: Counter[str]) -> None:
 
             old_m = tuple(m)
             old_s = tuple(s)
-            do_replenish = can_debit and (not can_consume or rng.randrange(3) != 0)
+            source_only = can_debit and rng.randrange(10) == 0
+            do_replenish = (
+                not source_only
+                and can_debit
+                and (not can_consume or rng.randrange(3) != 0)
+            )
 
-            if do_replenish:
+            if source_only:
+                available_sources = [a for a, value in enumerate(s) if value > 0]
+                a = rng.choice(available_sources)
+                debit = rng.randint(1, s[a])
+                s[a] -= debit
+                source_only_steps += 1
+            elif do_replenish:
                 available_sources = [a for a, value in enumerate(s) if value > 0]
                 a = rng.choice(available_sources)
                 debit = rng.randint(1, s[a])
@@ -99,11 +111,13 @@ def random_histories(counts: Counter[str]) -> None:
         transition_bound = m0 + sum((rate + 1) * value for rate, value in zip(rho, s0))
         assert total_created <= source_budget
         assert replenishment_steps <= sum(s0)
+        assert source_only_steps <= sum(s0)
         assert total_consumed <= m0 + total_created
         assert steps <= total_consumed + sum(total_debit)
         assert steps <= transition_bound
         counts["random histories"] += 1
         counts["accepted transitions"] += steps
+        counts["source-only debits"] += source_only_steps
 
 
 def capped_gate_checks(counts: Counter[str]) -> None:
