@@ -253,8 +253,9 @@ python scripts/check_prime_minus_one_seed.py \
 The stored file contains verified seeds for
 
 ```text
-p=3,5,7,11
+p=3,5,7,11,13
 ```
 
-corresponding to side lengths `2,4,6,10`.  These are finite regression certificates,
-not evidence of an asymptotic construction theorem.
+corresponding to side lengths `2,4,6,10,12`.  The largest certificate has `24`
+points and passes all `2024` exact determinant checks.  These are finite
+regression certificates, not evidence of an asymptotic construction theorem.
