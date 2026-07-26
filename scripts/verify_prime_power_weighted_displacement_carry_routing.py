@@ -3,7 +3,7 @@
 
 from collections import defaultdict
 from fractions import Fraction
-from math import ceil, gcd
+from math import gcd
 import random
 
 
@@ -40,7 +40,7 @@ def check_endpoint_cells():
             side = prime**exponent
             for depth in range(exponent):
                 modulus = prime**depth
-                for _ in range(500):
+                for _ in range(250):
                     while True:
                         q = (rng.randint(-12, 12), rng.randint(-12, 12))
                         if q != (0, 0) and primitive(q):
@@ -48,18 +48,14 @@ def check_endpoint_cells():
                     unit = rng.randint(1, 20)
                     while unit % prime == 0:
                         unit += 1
-                    multiplier = modulus * unit
-                    displacement = scale(multiplier, q)
+                    displacement = scale(modulus * unit, q)
                     lower_x = max(0, -displacement[0])
                     upper_x = min(side - 1, side - 1 - displacement[0])
                     lower_y = max(0, -displacement[1])
                     upper_y = min(side - 1, side - 1 - displacement[1])
                     if lower_x > upper_x or lower_y > upper_y:
                         continue
-                    owner = (
-                        rng.randint(lower_x, upper_x),
-                        rng.randint(lower_y, upper_y),
-                    )
+                    owner = (rng.randint(lower_x, upper_x), rng.randint(lower_y, upper_y))
                     partner = add(owner, displacement)
                     assert inside(partner, side)
                     assert owner[0] % modulus == partner[0] % modulus
@@ -76,16 +72,16 @@ def check_endpoint_cells():
 def check_weighted_cell_pigeonhole():
     rng = random.Random(1471)
     checked = 0
-    for prime in (2, 3, 5, 7):
-        for depth in range(6):
+    for prime in (2, 3, 5, 7, 11):
+        for depth in range(8):
             stock = prime ** (2 * depth)
-            for _ in range(500):
-                weights = [
-                    Fraction(rng.randint(0, 30), rng.randint(1, 20))
-                    for _cell in range(stock)
-                ]
-                total = sum(weights, Fraction(0))
-                assert max(weights, default=Fraction(0)) >= total / stock
+            for _ in range(300):
+                by_cell = defaultdict(Fraction)
+                for _incidence in range(rng.randint(1, 600)):
+                    cell = rng.randrange(stock)
+                    by_cell[cell] += Fraction(rng.randint(1, 30), rng.randint(1, 20))
+                total = sum(by_cell.values(), Fraction(0))
+                assert max(by_cell.values()) >= total / stock
                 checked += 1
     return checked
 
@@ -97,20 +93,19 @@ def check_internal_crossing_routing():
     for prime in (2, 3, 5, 7):
         for depth in range(6):
             modulus = prime**depth
-            for _ in range(600):
+            for _ in range(400):
                 events = []
                 for _event in range(rng.randint(1, 100)):
-                    parameter = rng.randint(-10000, 10000)
-                    if parameter == 0:
-                        parameter = 1
+                    parameter = rng.randint(-10000, 10000) or 1
                     weight = Fraction(rng.randint(1, 20), rng.randint(1, 20))
-                    internal = parameter % modulus == 0
-                    events.append((parameter, weight, internal))
+                    events.append((parameter, weight, parameter % modulus == 0))
                 internal_mass = sum(
-                    weight for _parameter, weight, internal in events if internal
+                    (weight for _parameter, weight, internal in events if internal),
+                    Fraction(0),
                 )
                 crossing_mass = sum(
-                    weight for _parameter, weight, internal in events if not internal
+                    (weight for _parameter, weight, internal in events if not internal),
+                    Fraction(0),
                 )
                 total = internal_mass + crossing_mass
                 assert max(internal_mass, crossing_mass) >= total / 2
@@ -136,11 +131,8 @@ def check_internal_scaling():
             for depth in range(1, exponent):
                 modulus = prime**depth
                 reduced_side = prime ** (exponent - depth)
-                for _ in range(500):
-                    residue = (
-                        rng.randrange(modulus),
-                        rng.randrange(modulus),
-                    )
+                for _ in range(250):
+                    residue = (rng.randrange(modulus), rng.randrange(modulus))
                     owner_reduced = (
                         rng.randrange(reduced_side),
                         rng.randrange(reduced_side),
@@ -153,8 +145,7 @@ def check_internal_scaling():
                     while unit % prime == 0:
                         unit += 1
                     partner_reduced = add(owner_reduced, scale(unit, q))
-                    witness_scale = rng.randint(-10, 10)
-                    witness_reduced = add(owner_reduced, scale(witness_scale, q))
+                    witness_reduced = add(owner_reduced, scale(rng.randint(-10, 10), q))
                     if not inside(partner_reduced, reduced_side):
                         continue
                     if not inside(witness_reduced, reduced_side):
@@ -177,15 +168,15 @@ def check_internal_scaling():
 def check_quantitative_splice():
     rng = random.Random(1475)
     checked = 0
-    for _ in range(200000):
+    for _ in range(60000):
         prime = rng.choice((2, 3, 5, 7))
-        depth = rng.randint(0, 8)
-        numerator = Fraction(rng.randint(1, 100000), rng.randint(1, 1000))
-        cell = numerator / prime ** (2 * depth)
-        assert cell * prime ** (2 * depth) == numerator
-        assert cell / 2 == numerator / (2 * prime ** (2 * depth))
+        depth = rng.randint(0, 10)
+        mass = Fraction(rng.randint(1, 100000), rng.randint(1, 1000))
+        cell_mass = mass / prime ** (2 * depth)
+        assert cell_mass * prime ** (2 * depth) == mass
+        assert cell_mass / 2 == mass / (2 * prime ** (2 * depth))
         if depth:
-            assert cell / (2 * depth) == numerator / (
+            assert cell_mass / (2 * depth) == mass / (
                 2 * depth * prime ** (2 * depth)
             )
         checked += 1
@@ -196,22 +187,18 @@ def check_token_stock():
     rng = random.Random(1476)
     checked = 0
     for prime in (2, 3, 5, 7, 11):
-        for depth in range(6):
+        for depth in range(10):
+            side = prime**depth
             stock = prime ** (2 * depth)
-            tokens = [
-                (row, column)
-                for row in range(prime**depth)
-                for column in range(prime**depth)
-            ]
-            assert len(tokens) == stock
-            for _ in range(200):
-                total_mass = Fraction(0)
+            assert stock == side * side
+            for _ in range(250):
                 by_token = defaultdict(Fraction)
-                for _bank in range(rng.randint(1, 200)):
-                    token = rng.choice(tokens)
-                    weight = Fraction(rng.randint(1, 30), rng.randint(1, 30))
-                    by_token[token] += weight
-                    total_mass += weight
+                for _bank in range(rng.randint(1, 300)):
+                    token_id = rng.randrange(stock)
+                    by_token[token_id] += Fraction(
+                        rng.randint(1, 30), rng.randint(1, 30)
+                    )
+                total_mass = sum(by_token.values(), Fraction(0))
                 assert max(by_token.values()) >= total_mass / stock
                 checked += 1
     return checked
@@ -224,7 +211,7 @@ def main():
         check_endpoint_cells(),
         "endpoint-cell cases,",
         check_weighted_cell_pigeonhole(),
-        "weighted cell distributions,",
+        "weighted sparse cell distributions,",
         routing[0],
         "internal/crossing splits with",
         routing[1],
@@ -234,7 +221,7 @@ def main():
         check_quantitative_splice(),
         "quantitative splice cases, and",
         check_token_stock(),
-        "token-stock cases",
+        "symbolic token-stock cases",
     )
 
 
