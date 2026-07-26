@@ -2,8 +2,8 @@
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air. It records the original-reference, controller-domain,
-initial-allocation, complete marked-support, separated-cycle, and nested
-controller-history reductions in `docs/206` through `docs/242`.
+initial-allocation, complete marked-support, separated-cycle, layerwise, and nested
+controller-history reductions in `docs/206` through `docs/244`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -44,8 +44,10 @@ controller-history reductions in `docs/206` through `docs/242`.
 | PP3arp--PP3arw | Strict alternation lowers complete helper-support rank to three; at `N=Theta(W^2)` failure of an independent `W`-set yields a target star, matching, or fixed-core petal bank | PROVED / CONDITIONAL COMMON-LAYER AND EXTERNAL-HOST INTERFACES | `docs/240-critical-square-root-separated-helper-host.md` |
 | PP3arx--PP3asd | A zero-cost second cycle moving every first-cycle inserted cell destroys the complete first insertion table; target cycles become strict composite paid trades | PROVED / CONDITIONAL COMMON-LAYER AND EXTERNAL-HOST INTERFACES | `docs/241-target-cycle-complete-insertion-cancellation.md` |
 | PP3ase--PP3ask | All bounded local source, transition, anchor, distinguished-endpoint, edge-host, and insertion constraints fuse into one rank-three helper hypergraph; the explicit cycle bypasses separate Hall and alternating stages | PROVED / CONDITIONAL FINITE LOCAL NORMAL FORM | `docs/242-joint-local-constraint-support-fusion.md` |
+| PP3asl--PP3ass | A saturated source decomposes into two permutation layers; sequential zero-cost layer trades cancel the complete first insertion table, including cross-layer incidences | PROVED / CONDITIONAL GLOBAL-NORMAL-FORM AND LAYER-RESERVOIR INTERFACES | `docs/243-layerwise-complete-insertion-cancellation.md` |
+| PP3ast--PP3asz | Select helpers before controller puncturing; puncturing at most `2W=o(R)` selected marked/helper controllers preserves allocation margins and removes controller density from the host frontier | PROVED / CONDITIONAL FINITE LOCAL NORMAL FORM AND UNRESERVED-COORDINATE INTERFACES | `docs/244-selected-helper-controller-puncturing.md` |
 
-## Complete-support and critical square-root endpoint
+## Complete-support, layerwise, and critical square-root endpoint
 
 Use
 
@@ -54,30 +56,41 @@ R=m^(19/20+o(1)),
 W=sqrt(R)=m^(19/40+o(1)).
 ```
 
-Sparse positive support is avoided independently of weight or witness multiplicity.
 Strict alternation lowers every bounded local source, insertion, transition, anchor,
 distinguished-endpoint, and endpoint-edge constraint to ordinary-helper support rank
 at most three. On a `Theta(W^2)` reservoir, failure of a joint independent `W`-set
 forces a target-size canonical star, matching, fixed-core petal bank, or endpoint
-bank.
+bank. The selected cycle is itself a perfect matching, so no separate local Hall or
+alternating-SCC theorem is needed.
 
-The selected alternating cycle is itself a perfect matching. Once all actual
-edge-local and bounded-pattern constraints are fused into the joint support table,
-no separate Hall, matching, or alternating-SCC theorem is needed.
+A saturated source decomposes into two permutation layers. If a marked set splits as
+`D=D_0 dot-union D_1`, prepare one zero-cost cycle per occupied layer. The helper
+volume obeys
+
+```text
+|D_0|^2+|D_1|^2 <= |D|^2,
+```
+
+and the sequential removal terms cover every first insertion incidence exactly once,
+including cross-layer incidences.
+
+Controller density is bypassed by selecting helpers against the controller-blind
+joint support table and puncturing only selected controllers afterwards. At most
+`2W=o(R)` values are punctured, so every fixed positive allocation margin survives.
 
 ## Complete cycle-insertion cancellation
 
-Let a first endpoint-cycle trade have insertion and removal terms `I_1,R_1`, and
-let `D` be its newly inserted cells. Every incidence counted in `I_1` contains a
-member of `D`. A joint-support-free second cycle moving all of `D` has zero insertion
-cost and removal term at least `I_1`, so
+Let a first endpoint trade have insertion and removal terms `I_1,R_1`, and partition
+its inserted cells by permutation layer. Joint-support-free layerwise second cycles
+have zero insertion cost, while their total removal term is at least `I_1`. Therefore
 
 ```text
-Delta Xi_two-step <= -R_1.
+Delta Xi_composite <= -R_1.
 ```
 
-Target Hamilton cycles, alternating-cycle petals, mobility-hub states, and chord-
-cycle candidates are strictly paid or yield a target canonical local certificate.
+Target Hamilton cycles, alternating-cycle petals, mobility-hub states, chord-cycle
+candidates, and non-co-layered two-layer packages are strictly paid or yield a target
+canonical local certificate.
 
 ## Deleted-entry and punctured-star endpoint
 
@@ -99,9 +112,10 @@ The remaining concentrated cases are now:
 
 1. genuinely global conditions that cannot be represented by forbidden patterns on
    at most three selected endpoint cells;
-2. failure of the common-permutation-layer hypothesis, or controller density
-   `1-o(1)` in every eligible layer;
-3. endpoint packages that are not expressible as co-layered replacement trades;
+2. shortage of unreserved coordinates at the `Theta(s_a^2)` scale in an occupied
+   permutation layer;
+3. endpoint packages that cannot be assigned to the saturated two-layer replacement
+   architecture;
 4. branches that cannot use the slab-optimal random two-sided architecture or
    preserve an original reference layer.
 
@@ -112,7 +126,8 @@ sunflowers, diffuse residual support, local insertion atoms, second-generation
 pencils, paid puncture histories, temporal blocker instability, future-controller
 dependencies, canonical punctured-star insertion cost, bounded coordinate placement,
 critical target helper support, target-cycle insertion concentration, mobility-hub
-and chord-cycle payment, and local Hall/alternating/matching host preparation are no
+and chord-cycle payment, local Hall/alternating/matching host preparation, failure of
+common-layering, cross-layer insertion payment, and high controller density are no
 longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
