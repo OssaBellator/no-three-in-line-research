@@ -36,7 +36,7 @@ Let
 
 `D_ell={q:kappa(q)=ell}`
 
-be the donor class, of size `d`.  Define the donor-companion obstruction set
+be the donor class, of size `d>=1`.  Define the donor-companion obstruction set
 
 `C_z={q in D_ell:q=c(Q) for some Q in F_z}`.
 
@@ -152,18 +152,20 @@ record weight within each fibre, so no stronger record-incidence claim is made.
 
 ## SAS5bc -- weighted singleton companion router -- PROVED
 
-Let a singleton reflected-label defect family have total weight `W`, and retain one
-required-label class of weight `W_ell>=W/b` as in SAS5ae.  Fix `h>=0` and split its
-fibre weight into `W_good+W_bad=W_ell`.
+Let a singleton reflected-label defect family have total weight `W>0`.  Assume the
+number of labels `b>=1` and donor-class size `d>=1`.  Retain one required-label class
+of weight `W_ell>=W/b` as in SAS5ae.  Fix `h>=0` and split its fibre weight into
+`W_good+W_bad=W_ell`.
 
 One of the following holds:
 
-1. `W_good>=W_ell/2`; with `m=min(k_good,(d-2-h)_+)`, an original-plus-donor
-   whole-fibre batch repairs weight at least
+1. `W_good>=W_ell/2`; then `k_good>0`, and with
+   `m=min(k_good,(d-2-h)_+)`, an original-plus-donor whole-fibre batch repairs
+   weight at least
 
    `W*m/(2*b*k_good)`,
 
-   and under global incidence `Lambda` an additive compatible subbatch repairs at
+   while under global incidence `Lambda` an additive compatible subbatch repairs at
    least
 
    `W*m/[2*b*k_good*(4*Lambda+1)]`;
@@ -175,8 +177,9 @@ One of the following holds:
 ### Proof
 
 One of the good and bad weights is at least half of `W_ell`.  In the good branch,
-apply SAS5ba and substitute `W_good>=W/(2b)`.  In the bad branch, apply SAS5bb and
-substitute `W_bad>W/(2b)`. QED.
+positivity of `W_ell` implies `k_good>0`; apply SAS5ba and substitute
+`W_good>=W/(2b)`.  In the bad branch, apply SAS5bb and substitute
+`W_bad>W/(2b)`. QED.
 
 The second branch is an exact companion-column concentration suitable for the
 column-pair, arithmetic-dilation or high-incidence classifiers.  It is not asserted
