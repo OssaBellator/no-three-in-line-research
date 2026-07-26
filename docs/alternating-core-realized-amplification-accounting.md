@@ -5,9 +5,9 @@
 AC3pu--AC3pz isolate a canonical multi-output address inside every nonconservative
 cyclic source component.  Declared output slots are not created supply until a certified
 transition realizes them.  This note adds the exact realized-stock ledger.  Repeated
-binary realization either raises total source stock, is cancelled by genuine later stock
-loss, or consumes a finite joint ticket.  It therefore cannot be hidden inside the
-symbolic source graph.
+binary realization either raises total source stock, is balanced by genuine stock loss
+in the same epoch, or consumes a finite joint ticket.  It therefore cannot be hidden
+inside the symbolic source graph.
 
 ## Address-pure realized transitions
 
@@ -82,14 +82,15 @@ Sum AC3qa over the history and telescope.  The cap gives
 `S_tot(T)-S_tot(0)<=H-S_tot(0)`. QED.
 
 Thus bounded stock forces every long amplification history to expose comparable genuine
-stock loss.
+stock loss somewhere in the same epoch.
 
 ## AC3qc -- canonical surplus-to-loss matching -- PROVED
 
 Assume `S_tot(t)<=H`.  Expand every amplifying transition into `(h_t-1)` ordered surplus
-units and every lossy transition into `(1-h_t)` ordered loss units.  Match loss units to
-the earliest unmatched surplus units, and then match any remaining surplus units to the
-`H-S_tot(0)` ordered cap slots.
+units and every lossy transition into `(1-h_t)` ordered loss units.  Order both lists by
+transition time and internal unit index.  Match the first surplus units to the ordered
+loss units, and then match any remaining surplus units to the `H-S_tot(0)` ordered cap
+slots.
 
 This gives a canonical injection of all surplus units into
 
@@ -110,12 +111,13 @@ matched surplus units.
 
 ### Proof
 
-AC3qb gives `A<=L+H-S_tot(0)`, so the target stock has enough slots.  The chronological
-first-unmatched rule is deterministic and injective.  Weighted pigeonhole over the
-`K_loss` loss types gives the final bound. QED.
+AC3qb gives `A<=L+H-S_tot(0)`, so the ordered target list has enough slots.  Matching by
+list order is deterministic and injective.  Weighted pigeonhole over the `K_loss` loss
+types gives the final bound. QED.
 
-The theorem does not identify loss with progress automatically.  It localizes the exact
-consumption gate that must pay for bounded amplification.
+The matching is a whole-history accounting device; a matched loss may occur before or
+after its surplus.  The theorem does not identify loss with progress automatically.  It
+localizes the exact consumption gate that must pay for bounded amplification.
 
 ## AC3qd -- finite joint tickets bound full realization -- PROVED
 
@@ -183,5 +185,5 @@ cycles.
 
 `scripts/verify_ac_realized_amplification_accounting.py` exhausts small realized-output
 histories and randomly samples longer mixed histories.  It checks the exact stock
-identity, cap inequality, canonical surplus-to-loss matching, loss-type localization and
-joint-ticket bounds.
+identity, cap inequality, canonical whole-history surplus-to-loss matching,
+loss-type localization and joint-ticket bounds.
