@@ -147,15 +147,18 @@ The wall prevents current capacity from being silently counted as correction gai
 
 ## GC2bl -- capacity-deficient star continuation -- PROVED UNDER THE EXTERNAL-SOURCE CONTRACT
 
-For every endpoint-disjoint high-ratio star from GC2bd, exactly one of the following
-continuations is available:
+For every endpoint-disjoint high-ratio star from GC2bd, one top-level alternative holds:
 
 1. complete payment is impossible because external capacity is below `R_star`;
-2. external payment at least `R_star` exists and localizes to one exact physical source
-   role, and optionally one exact resource incidence under a fibre cap;
-3. that external allocation is gain-certified, in which case the rectangle event gives
-   executable descent greater than `(1-1/theta)W`;
-4. the allocation is only Hall-capacity payment and remains explicitly non-gain-certified.
+2. complete payment exists, uses external mass at least `R_star`, and localizes that mass
+   to one exact physical source role, and optionally one exact resource incidence under a
+   fibre cap.
+
+Inside the second alternative, exactly one provenance branch applies:
+
+- the forced external allocation is gain-certified, in which case the rectangle event
+  gives executable descent greater than `(1-1/theta)W`;
+- or it is only Hall-capacity payment and remains explicitly non-gain-certified.
 
 Thus the star is no longer an unquantified capacity shortage.  Its missing payment is an
 exact external-source mass.  The remaining GC obligation is to install gain provenance
