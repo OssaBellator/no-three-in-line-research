@@ -24,35 +24,55 @@ The authoritative live ledger is split across:
 | CMR1294--1301 | Full side-five state stock, 12/13-state response banks, target-response table, strict lower responses, canonical policy, restricted lowering expansion, finite budget, and the scoped endpoint | PROVED only for the standard full grid and verified common-affine copies | `docs/266-prime-power-side-five-finite-improvement.md` |
 | CMR1302--1309 | Edge-containing regular factorization, exact union of all forbidden-extension banks, canonical extension recovery, extension-free target optimization, target destruction, restricted lowering response, scope separation, and the extension-free endpoint | PROVED | `docs/267-prime-power-extension-free-target-response-family.md` |
 | CMR1310--1317 | Full side-six state stock, extension-free response table, immediate trap classification, equal-response escape graph, corrected feeder/two-cycle trap core, clean CMF1 two-layer escape, restricted lowering expansion, and the scoped endpoint | PROVED only for the standard full grid and verified common-affine copies; six two-cycles plus twelve one-step feeders, no fixed points | `docs/268-prime-power-side-six-target-response-traps.md` |
+| CMR1318--1325 | Persistent canonical structural credit owners, one-coordinate product ownership, fixed-interface no-upward-offspring, finite owner DAG, exact block upper triangularity, diagonal spectral reduction, constructive certificate gluing, and the triangular product endpoint | PROVED | `docs/269-prime-power-last-entering-owner-triangularity.md` |
+| CMR1326--1333 | Exact state-credit classes, rational same-owner matrices, arbitrary geometric coarse maps, componentwise upper quotients, host-uniform domination, deterministic weight-dependent policy selection, integer row certificates, and the exact-class endpoint | PROVED | `docs/270-prime-power-exact-credit-classes-upper-quotients.md` |
+| CMR1334--1341 | Axis exclusion, nonaxis automatic compatibility, corrected `(o,g,m)` line-profile formulas, exact profile histogram, corrected dyadic class count, honest profile upper coefficients, band concentration, and the line-profile endpoint | PROVED; dyadic band count corrected to `B_n=2+floor(log_2 n)` | `docs/271-prime-power-degree-two-bank-line-profile-classes.md` |
+| CMR1342--1349 | Exact opposite/response/old pair moments, population tails, dyadic profile multiplicity, rank-one/two/three band envelopes, explicit profile upper quotient, and the pair-moment endpoint | PROVED | `docs/272-prime-power-line-profile-pair-moment-envelopes.md` |
+| CMR1350--1357 | Explicit doubly stochastic scaling of the extension-free graph, maximum-entry bound, permanent lower bound, prescription probabilities, extension-free collateral and restricted-host criteria, canonical realizing extension, and the endpoint | PROVED | `docs/273-prime-power-extension-free-bank-permanent-bound.md` |
+| CMR1358--1365 | Exact derangement bank size, universal constant `lambda_n<=4`, sharp rank-one marginal `1/(n-2)`, higher-rank probabilities, sharpened collateral and unavailable-edge penalties, profile coefficients, and the exact-derangement endpoint | PROVED | `docs/274-prime-power-extension-free-derangement-marginals.md` |
+| CMR1366--1373 | Exact rank-one/two/three candidate sums over all target cells in one layer, exact layer target incidence, symmetric extension-free line kernel, global sufficient criterion, explicit realizable failure of independent linewise domination, and the line-composition endpoint | PROVED | `docs/275-prime-power-extension-free-line-composition-kernel.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-The target-versus-collateral frontier now has exact finite quantities.  For one
-fixed-target degree-two bank, compatible rank-`r` prescriptions have explicit
-permanent-ratio bounds; restricted availability has an explicit penalty; and a
-pointwise full-collateral envelope assigns every created triple to one absolute
-entering edge and one real line.  Optimizing those envelopes over target cells
-forces either strict improvement, unit-wall descent, or one quantitatively heavy
-rank-one/rank-two/rank-three line or star certificate.
+The structural product issue is now exact.  Every newly created triple is owned by
+one entering edge in the active coordinate factor.  Fixed interfaces and sibling
+factors receive no duplicate offspring.  The complete selected owner system is a
+finite DAG, so its reproduction matrix is block upper triangular and its spectral
+radius is the maximum same-owner diagonal spectral radius.  Finite off-diagonal
+cross-factor collateral changes only the scaling of the Lyapunov weights.
 
-The dynamic version is a live-credit reproduction system.  Every triple has one
-last creation time and one physical owner cell.  A finite response policy has an
-expected offspring matrix `A`; a positive rational vector with `Av<v`, equivalently
-`rho(A)<1`, is an exact weighted-potential certificate.  Rational certificates can
-be checked by integer arithmetic, tolerate bounded error, and glue constructively
-across genuinely block-upper-triangular products.
+Same-owner blocks now have rigorous finite representations.  Exact state-target
+classes admit arbitrary line/height/rank/carry compressions through componentwise
+upper quotient matrices; any rational certificate for the quotient lifts to every
+exact host row.  The first concrete quotient uses residual rank and dyadic line
+profiles `(o_L,g_L,m_L)`, with exact pair moments and explicit band envelopes.
 
-The standard full grids of sides three through six now have explicit finite
-response classifications.  This is root/affine finite evidence only.  It is not a
-statement about scattered residual factor coordinates, where real collinearity
-must remain in the inherited parent geometry.
+The extension-free response bank through one target cell has exact size
+
+\[
+D_n\frac{n-2}{n-1}.
+\]
+
+Its rank-one and unavailable-edge marginals are at most `1/(n-2)`, while the
+rank-two/rank-three loss factor is
+
+\[
+\lambda_n=\frac{n!(n-1)}{D_n(n-2)}\le4.
+\]
+
+Summing these banks over all target cells gives an exact line-composition kernel.
+A strict global kernel inequality forces improvement, but an explicit realizable
+side-five state has independent-line upper kernel `160/11` against target
+incidence `6`.  Thus pair moments and independent line maxima do not close the
+diagonal block.
 
 The active frontier is therefore:
 
-1. construct an honest line/height/carry/fixed-interface upper offspring matrix
-   with spectral radius below one, or a rational vector proving `Av<v`;
-2. prove that last-entering ownership makes unit-wall and child-product matrices
-   block triangular up to a quantitatively absorbable interface block;
-3. establish the same certificate in prime-field and low-height regimes; and
-4. assemble arbitrary side lengths while retaining CRT collision/local-line
-   offspring classes.
+1. exploit cross-line correlation, shared response-edge assignment, primitive
+   height, prefix, quotient and carry structure to improve the same-owner kernel;
+2. build a host-uniform coarse upper quotient with an exact rational certificate
+   `Av<v`;
+3. establish the corresponding diagonal certificates in prime-field and thin
+   regimes; and
+4. glue the resulting diagonal blocks through the already-proved owner
+   triangularity and complete CRT/balanced assembly.
