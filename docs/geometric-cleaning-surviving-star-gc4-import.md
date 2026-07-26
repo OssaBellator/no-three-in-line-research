@@ -86,7 +86,7 @@ star mass is already paid current structure.
 
 ## GC2co -- paid conflict regularization of surviving stars -- PROVED
 
-For every real `K>=1`, exactly one of the following GC4e alternatives may be selected:
+For every real `K>=1`, at least one of the following GC4e alternatives holds:
 
 1. some surviving star has paid closed-neighbourhood overload
 
@@ -96,8 +96,8 @@ For every real `K>=1`, exactly one of the following GC4e alternatives may be sel
 
    `sum_(i in J)S_i>=S_tot/K`.
 
-The second family is a current paid star family ready for the existing GC4 installation or
-neutralization interface.
+If both witnesses exist, choose the overload branch canonically first.  The second family is a
+current paid star family ready for the existing GC4 installation or neutralization interface.
 
 ### Proof
 
