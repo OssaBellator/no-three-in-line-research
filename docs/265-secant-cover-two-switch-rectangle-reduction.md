@@ -1,38 +1,38 @@
 # Secant-cover two-switch rectangle reduction
 
 PP3ayp--PP3ayw extract a fixed-centre fan or a four-resource-disjoint bank from a
-complete secant-shadow cover.  The missing degree-restoration observation is a
-standard two-by-two switch.
+complete secant-shadow cover.  A covered witness-host cell `z` and one tentative
+template cell `a` form one diagonal of a rectangle.  Replacing that diagonal by the
+cross diagonal preserves the **total** row and column degree vector and omits both
+cells lying in the designated source-invalid triple.
 
-A covered witness-host cell `z` and one tentative template cell `a` form one diagonal
-of a rectangle.  Replacing that diagonal by the cross diagonal preserves every old
-row and column degree and omits both cells lying in the designated source-invalid
-triple.  Consequently the secant-cover branch rejoins the existing alternating
-rectangle and preferred cross-orientation machinery.
+A fixed-infrastructure qualification is essential.  The direct switch preserves each
+permanent controller block only when the two pivots lie in one common block.  When they
+lie in different blocks, the pool-compatible paired construction PP3azk--PP3azr must be
+used instead.  The propositions below record the direct saturation identity and its
+same-block rectangle interpretation.
 
 ## 1. One secant rectangle
 
-Let the tentative endpoint state contain the arc cell
+Let the tentative endpoint state contain
 
 ```text
-a=(x_i,y_j).
+a=(x_i,y_j),
 ```
 
-Let a witness-clearing endpoint host contain the possible arc cell
+and let a witness-clearing endpoint host contain
 
 ```text
 z=(x_u,y_v),
 ```
 
-where the four endpoint resources are distinct.  Suppose one target certificate is
+with four distinct endpoint resources.  Suppose
 
 ```text
-a,b,z collinear,
+a,b,z are collinear
 ```
 
-with `b` another cell of the tentative internally no-three state.
-
-Define the cross cells
+for another tentative cell `b`.  Define
 
 ```text
 c=(x_i,y_v),
@@ -41,191 +41,157 @@ d=(x_u,y_j).
 
 ### Proposition PP3ayx -- PROVED
 
-The two states
+The states
 
 ```text
 state 0: {a,z},
 state 1: {c,d}
 ```
 
-use exactly the same two old columns and the same two old rows, each once.  Replacing
-state 0 by state 1 therefore preserves every row and column degree.
-
-State 1 does not contain either `a` or `z`, so it cannot contain the designated triple
-`{a,b,z}`.
+use the same two old columns and old rows, each once.  Replacing state 0 by state 1
+preserves the total row/column degree vector.  State 1 contains neither `a` nor `z`, so
+it does not contain the designated triple `{a,b,z}`.
 
 #### Proof
 
-Both diagonals are perfect matchings of the two-by-two resource rectangle
+The two states are the two perfect matchings of the two-by-two rectangle
 
 ```text
 {x_i,x_u} x {y_j,y_v}.
 ```
 
-The designated triple requires both `a` and `z`; neither belongs to the opposite
-diagonal. ∎
+The opposite diagonal omits both original diagonal cells. ∎
 
 The cross cells may create other source, internal-triple, candidate-shadow, or anchor
-incidences.  Those are residual rectangle-state costs rather than recreation of the
+incidences.  Those are residual state costs rather than direct recreation of the
 designated secant certificate.
 
 ## 2. Joint source-trade interpretation
 
-Let `D` be the original marked source set whose tentative endpoint state contains
-`a`, and let `P` be the source-witness bank whose tentative clearing state contains
-`z`.  The joint source trade deletes the corresponding source endpoints from both
-packages.
+Let `D` be the original marked source package whose tentative state contains `a`, and
+let `P` be the witness-clearing package whose tentative state contains `z`.
 
 ### Proposition PP3ayy -- PROVED
 
-Selecting state 1 still moves the source endpoint contributing old column `x_i`, the
-source endpoint contributing old row `y_j`, and the two witness-bank endpoint
-resources `x_u,y_v`.  Thus:
+Selecting state 1:
 
-1. the original allocation-failure incidence attached to the moved `D` endpoint
-   remains in the removal term;
-2. the witness source endpoint is moved;
-3. exact saturation is preserved by the cross pair; and
-4. the targeted host certificate is absent.
+1. deletes the current source endpoints whose resources generated `a` and `z`;
+2. preserves the total degree vector;
+3. retains every original removal-credit record attached to those deleted endpoints;
+4. removes the targeted host certificate.
 
 #### Proof
 
-The cross cells retain each of the four endpoint resources but pair them oppositely.
-No original matching edge on those resources remains fixed.  The removal-credit
-record depends on deletion of the current source endpoint, not on which opposite
-row or column is used in its replacement.  Apply PP3ayx. ∎
+The cross cells use all four resources but no original diagonal cell.  Removal credit
+is attached to deletion of the current source endpoint, not to the replacement pairing.
+Apply PP3ayx. ∎
 
-This is the source-host analogue of the designated-credit cross orientation PP3pm--PP3pn.
+This proposition is a global saturation statement.  It does not by itself assert that
+the cross cells remain inside the permanent macro rectangles.
 
-## 3. Resource-disjoint secant banks become rectangle banks
+## 3. Resource-disjoint secant banks
 
-Take the four-resource-disjoint family from PP3ayq:
+Take the four-resource-disjoint family
 
 ```text
 (z_r,{a_r,b_r}),  r in [h].
 ```
 
-Choose `a_r` as the pivot template point in each record.  Assume the witness-bank
-coordinate resources are disjoint from the tentative-state resources, as supplied by
-the resource refinement preceding the clearing host.
+### Theorem PP3ayz -- PROVED AS A DEGREE-PRESERVING RECTANGLE BANK / CONDITIONAL COMMON-BLOCK INTERFACE
 
-### Theorem PP3ayz -- PROVED
+The pairs `(a_r,z_r)` define resource-disjoint two-by-two rectangles.  Arbitrary
+choices of their two diagonals preserve the total degree vector, and the cross state in
+rectangle `r` deletes its designated secant certificate.
 
-The pairs `(a_r,z_r)` define `h` pairwise resource-disjoint two-by-two rectangles.
-For every subset `J subseteq [h]`, independently choosing state 0 or state 1 in each
-rectangle preserves the complete row/column degree vector on the union of their
-resources.
+If, in addition, the resources of `a_r` and `z_r` belong to one common permanent
+matching block for every `r`, the bank is pool-compatible and enters the preferred
+cross-orientation rectangle chain directly.
 
-Putting rectangle `r` in state 1 deletes its designated secant certificate
-`a_r,b_r,z_r`.
+For pivots in different permanent blocks, use the paired internal product switches
+PP3azk--PP3azr.
 
 #### Proof
 
-PP3ayt gives distinct endpoint rows and columns for the cells `z_r` and pairwise
-disjoint template pairs.  The tentative endpoint state is a matching, so distinct
-pivot cells `a_r` use distinct rows and columns.  Cross-package resource refinement
-makes the two coordinate pairs disjoint.  Hence the rectangles are resource-disjoint.
-Apply PP3ayx independently in every block. ∎
+Resource disjointness and PP3ayx give the global degree statement.  A same-block
+rectangle uses only `X_i x Y_i`.  The different-block correction is PP3azq. ∎
 
-The resulting object is exactly an alternating rectangle bank with a preferred cross
-orientation.
+## 4. Fixed-centre covers
 
-## 4. Fixed-centre covers become conditional rectangle stars
-
-Suppose PP3ayr gives one tentative template point `a` incident with a family of covered
-cells
+Suppose one tentative pivot `a` is incident with covered witness cells
 
 ```text
 z_1,...,z_h.
 ```
 
-The rectangles `(a,z_r)` share the two resources of `a`, so at most one of them can be
-selected in one matching state.
+### Proposition PP3aza -- PROVED AS A CONDITIONAL DEGREE INTERFACE
 
-### Proposition PP3aza -- PROVED
+Globally, choosing one rectangle `(a,z_r)` in the cross state is an exact conditional
+rectangle-star operation: fix the centre choice, delete its resources, and complete
+the residual matching/CSP.
 
-A fixed-centre secant fan is an exact conditional rectangle-star problem:
+For fixed infrastructure:
 
-1. choose one allowed centre rectangle `(a,z_r)`;
-2. put that rectangle in the cross state;
-3. delete its four used resources; and
-4. complete the residual endpoint matching and finite-state CSP.
-
-If every conditioned choice fails, the failures give the same conditional Hall
-rectangles, heavy partner fibres, or residual paid/source cores as the fixed-cell
-binary-fan chain.
+1. use this direct state when `a,z_r` lie in one permanent block;
+2. otherwise use one tentative-block filler and one witness-block filler as in
+   PP3azp, producing a conditional paired-switch star.
 
 #### Proof
 
-A perfect matching uses one replacement at the fixed resources of `a`, so exactly one
-centre choice is active.  After it is fixed, all remaining decisions lie on the
-residual resources.  This is the conditional-host identity of PP3wv--PP3wx, with the
-cross diagonal as the preferred centre state. ∎
+A matching uses one cell at the resources of `a`, so exactly one centre choice is
+active.  PP3ayx gives the direct degree identity; PP3azp supplies the blockwise
+correction. ∎
 
-The weights now record source-host and current-potential residuals, but the matching
-factorization is identical.
-
-## 5. Preferred orientation preserves designated credit
+## 5. Preferred orientation and designated credit
 
 ### Theorem PP3azb -- PROVED / CONDITIONAL EXISTING RECTANGLE CONVERSION INTERFACES
 
-For a resource-disjoint secant rectangle bank, the all-cross state has the following
-properties.
+For a same-block direct secant rectangle bank, or for the pool-compatible paired bank
+of PP3azk--PP3azr, the preferred all-cross state has the following properties.
 
-1. Every designated secant certificate assigned to the bank is absent.
-2. Every original marked source endpoint used by a rectangle is moved.
-3. The complete original allocation-failure credit attached to those endpoints remains
-   available.
-4. Direct recreation of the targeted secant certificates contributes zero.
-5. The remaining objective consists only of residual source validity, cross-rectangle
-   finite-state conflicts, and insertion cost in `Theta_E^+`.
+1. Every assigned secant certificate is absent.
+2. Every designated original source endpoint is moved.
+3. The complete original allocation-failure credit remains available.
+4. Direct recreation of the targeted certificates has zero cost.
+5. The residual objective consists only of source validity, finite-state interactions,
+   and insertion cost in `Theta_E^+`.
 
-Consequently the bank enters the preferred cross-orientation chain
-PP3pm--PP3pr and its later cross-block, signed-CSP, and paid-residual refinements.
+Consequently the bank enters the preferred cross-orientation and multistate rectangle
+chain.
 
 #### Proof
 
-Items 1--3 are PP3ayy--PP3ayz.  Item 4 is the same opposite-diagonal observation as
-PP3pm.  Every other triple or potential incidence is a residual state signature on one,
-two, or three rectangle variables, exactly the finite-state normal form used by the
-rectangle chain. ∎
-
-This theorem is conditional only on the existing rectangle conversion endpoints; it
-introduces no new geometric state type.
+In the direct same-block case use PP3ayx--PP3ayz.  In the general fixed-infrastructure
+case use PP3azk--PP3azo.  The opposite diagonal or all-cross product omits every
+designated pivot.  All remaining events form the bounded finite-state normal form. ∎
 
 ## 6. Complete secant-cover endpoint
 
 ### Corollary PP3azc -- PROVED / CONDITIONAL EXISTING RECTANGLE CONVERSION INTERFACES
 
-A complete or positive-density secant-shadow cover of a permitted endpoint host has
-one of the following outcomes.
+A complete or positive-density secant-shadow cover has one of:
 
-1. A fixed-centre conditional rectangle star.
-2. A target-size resource-disjoint alternating rectangle bank with preferred cross
-   orientation.
-3. An axis secant pencil.
-4. A current paid structure, source-valid joint completion, conditional Hall core,
-   signed cross-conflict core, or residual paid/source concentration produced by the
-   existing rectangle chain.
+1. a fixed-centre conditional paired-switch star;
+2. a target-size resource-disjoint paired four-state bank;
+3. an axis secant pencil;
+4. a current paid structure, source-valid joint completion, conditional Hall core,
+   signed/multistate conflict core, or residual current concentration from the existing
+   rectangle chain.
 
 #### Proof
 
-Apply PP3ayr--PP3ayu and then PP3aza--PP3azb. ∎
-
-Thus complete secant-shadow coverage is not a new terminal geometry.  It is a route
-back into the already developed rectangle conversion architecture.
+Apply PP3ayr--PP3ayu, then the direct same-block theorem or the paired correction
+PP3azk--PP3azr. ∎
 
 ## 7. Revised source-host closure
 
 ### Corollary PP3azd -- PROVED / CONDITIONAL EXISTING RECTANGLE ENDPOINTS
 
 After adjoining the old-grid endpoint-shadow potential, fixed-template witness descent,
-and the two-switch reduction, the source-certificate host interface has been reduced
-to the existing endpoint/rectangle terminal alternatives.
+and the corrected pool-compatible secant switch, the source-certificate host interface
+is reduced to existing endpoint/rectangle terminal alternatives.
 
-The remaining assembly task is no longer an arbitrary cumulative rich-line theorem.
-It is the exact call-site audit that the rectangle endpoints invoked in PP3azb supply
-one of:
+The remaining assembly task is the exact call-site audit that those rectangle endpoints
+supply one of:
 
 ```text
 current Theta_E^+ payment,
@@ -233,7 +199,6 @@ source-valid joint completion preserving the original credit,
 or robust final-state completion.
 ```
 
-Any rectangle endpoint that returns only another host certificate must be followed
-through the same typed credit distinction of PP3axq--PP3axx.
+The direct cross-pool switch is not used in the fixed-infrastructure argument.
 
 The no-three-in-line conjecture remains unproved.
