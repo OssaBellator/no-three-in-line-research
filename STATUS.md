@@ -12,61 +12,36 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The collision-free theorem ledger is split between
+The collision-free theorem ledger is split across
 
-- `proofs/composite-modulus-theorem-index-live.md` through CMR747; and
-- `proofs/composite-modulus-theorem-index-live-continuation.md` from CMR748 onward.
+- `proofs/composite-modulus-theorem-index-live.md` through CMR747;
+- `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
+- `proofs/composite-modulus-theorem-index-live-continuation-2.md` from CMR870.
 
-## Closed prime-power components
+## Established prime-power structure
 
-### Geometry, closure, and matching products
-
-- The indexed completed-reciprocal, prefix, quotient, carry, Hall-wall,
-  line-clean, joint-parent, and harmonic-packet results remain proved at their
-  stated scales.
 - Closure envelopes form at most `h+1` nested epochs with at most `h` strict
   expansions.
 - Protected/free, child-routing, essential-core, exchange-SCC, and unit-wall
   matching products are exact.
-- Every matching-relevant edge has unique ownership in those products; a nonfixed
-  edge follows one strict side-descending factor lineage.
-
-### Physical restoration and target recurrence
-
 - Physical restoration is defined in absolute parent coordinates and is not
-  duplicated by envelope, routing, factor, wall, or certificate relabelling.
-- Structural deletion generations form a forward acyclic out-degree-one ancestry
-  forest. Long paths force repeated genuine absence runs of one labelled edge.
-- A recurrent target edge deletes while nonessential. Essential return produces
-  a deficiency-one Hall wall and an exact lower-side product.
+  duplicated by owner relabelling.
+- Returned structural deletions form a forward acyclic ancestry forest. A
+  recurrent target edge deletes while nonessential; essential return produces a
+  deficiency-one Hall wall and exact lower-side factorisation.
+- Historical protected-line targets are neutralised through stored labelled
+  pairs, and reuse is counted by physical cell--absence-run slots.
 - A recurrent physical target has at most six labelled same-layer pair types. A
   recurrent type deletes one nonessential pair edge or contracts two essential
   pair edges.
-- Historical protected-line targets are neutralised through stored labelled pairs,
-  and reuse is counted by cell--absence-run slots rather than raw episodes.
-
-### Aggressive anchor normalization
-
-- At one fixed owner, an anchor-preserving aggressive branch rejects a
-  nonimproving state by deleting its complete anchor-entering set.
-- Every such batch has at least two labelled edges; batches are pairwise disjoint
-  and total at most `n(n-1)` on that branch.
-- Reopened private batches restore distinct physical edges and carry exact token
-  payment. A surviving stored anchor re-closes all restored private edges at once.
-- Private normalization is idempotent. Pure reopening normalizes to the identical
-  state and is cycle-erasable.
-- A newly enabled nonimproving state uses a newly added edge, which is immediately
-  absorbed into the private union.
-
-These statements are rigorous **on the surviving aggressive branch**.
 
 ## Critical completeness correction
 
-Deleting a complete entering batch may remove other untested states, including an
-improving state. Therefore the aggressive branch is not by itself a complete
-existence search.
+The anchor-preserving complete-entering-batch deletion of CMR785--CMR821 is a
+rigorous **aggressive subbranch**, but it may remove other untested states. Its
+forcing and contraction conclusions are branch-local.
 
-For an equal-cardinality state family and rejected state `Q`, CMR830--CMR837 give
+Completeness is restored by CMR830--CMR837:
 
 \[
 \mathcal F\setminus\{Q\}
@@ -74,25 +49,12 @@ For an equal-cardinality state family and rejected state `Q`, CMR830--CMR837 giv
 \bigcup_{f\in Q,\,\mathcal F-f\ne\varnothing}(\mathcal F-f).
 \]
 
-Every alternative state survives in at least one viable single-edge child, and
-every root-to-leaf path has at most `2n^2-2n` deletions. Branch-local forcedness
-is never promoted to the original family without this union.
+Every alternative state, including every improving state, survives in at least
+one viable single-edge child. Every root-to-leaf path has at most `2n^2-2n`
+deletions.
 
-With
-
-\[
-E_*(\mathcal F)=\bigcap_{R\in\mathcal F}R,
-\]
-
-CMR838--CMR845 prove
-
-\[
-\mathcal F-f\ne\varnothing
-\iff
-f\notin E_*(\mathcal F).
-\]
-
-After complete-core contraction the residual family has empty core, and
+The viable children are exactly the nonessential edges of `Q`. After contracting
+the complete common core,
 
 \[
 \boxed{
@@ -103,30 +65,23 @@ After complete-core contraction the residual family has empty core, and
 The zero-child case is a singleton, the one-child case is deterministic, and
 total contracted core rank along a branch is at most `2n`.
 
-## Distinguishing rank and exchange SCCs
+## Distinguishing width and exchange factors
 
-For a rejected state `Q`, define its distinguishing rank as the minimum number of
-its labelled edges which no alternative state contains simultaneously.
+- The minimum number of children needed to exclude one state is the transversal
+  number of its alternative-difference hypergraph.
+- This distinguishing rank is additive in exact products.
+- For a complete one-layer matching family, it equals the minimum directed
+  feedback-vertex-set size of the exchange graph.
+- Usable matching edges lie exactly inside exchange SCCs; the matching family
+  factors over SCC blocks and the distinguishing ranks add.
 
-- This rank is the transversal number of the difference-support hypergraph and
-  equals the minimum number of single-edge children needed to exclude only `Q`.
-- It is additive in exact Cartesian products.
-- For a full one-layer perfect-matching family, it equals the directed feedback-
-  vertex number of the exchange graph relative to `Q`.
-- Usable matching edges are exactly the exchange edges inside SCCs. The matching
-  family factors exactly over SCC blocks, and distinguishing rank adds over the
-  cyclic blocks.
-- Large local rank means every low-rank prescription of the base matching occurs
-  in another local matching.
-
-This localizes one-layer width exactly but does not yet bound the coupled
-layer-disjoint joint-state width.
+These results localise one-layer completeness width exactly, but do not alone
+control the coupled two-layer branch tree.
 
 ## Constant-arity geometric completeness
 
-Every nonimproving state which destroys positive designated target load creates a
-genuinely new physical collinear triple. Retain its exact three labelled edges
-`C`. Then
+Every nonimproving state which destroys positive target load creates a canonical
+new labelled collinear triple `C`. The exact family split is
 
 \[
 \mathcal F
@@ -136,38 +91,51 @@ genuinely new physical collinear triple. Retain its exact three labelled edges
 \mathcal F_C.
 \]
 
-Thus the complete scheduler response has at most four branches:
+Thus the scheduler has at most three deletion children plus one conditioned
+forced-triple branch. Every original state survives in at least one branch.
+Conditioning on `C` lowers state cardinality by three under contraction.
 
-1. up to three single-edge deletion children covering every state which omits one
-   edge of `C`;
-2. one conditioned branch where `C` occurs in every surviving state and enters
-   forced-certificate handoff or exact contraction.
+Encode each new triple by its three physical cells and six layer-labelled
+matching endpoints. Along one stable-owner path, pairwise support-disjoint
+triples consume distinct deletion or contraction resources. Hence their matching
+number is at most
 
-Every state of the original family survives in at least one branch. Conditioning
-on `C` lowers state cardinality by three under contraction and decreases
-possible distinguishing rank by at most three.
+\[
+B_n=2n^2-2n+\left\lfloor\frac{2n}{3}\right\rfloor
+\]
+
+unless there is structural exit or strict potential improvement. A maximal
+packing gives a support cover of size at most `9B_n`, so every long path
+concentrates on one physical cell or one labelled matching vertex.
+
+If one support atom belongs to `d` distinct canonical triples, one exact labelled
+edge belongs to at least
+
+\[
+\left\lceil\frac{d}{2n}\right\rceil
+\]
+
+of them. One binary edge split then batches those candidates: delete the edge, or
+condition on and contract it, converting the triples to rank-two residual pairs.
 
 ## Corrections retained
 
 - Naive sequential two-layer rematching may reoccupy an old first-layer cell.
 - Historical target lines are not simultaneous target families.
-- One edge return may serve several neutralisations in one continuous absence run.
+- One edge return may serve several neutralisations in one absence run.
 - Removing one essential edge produces Hall deficiency exactly one.
-- Routing compensation and essentiality escape may be distributed across several
-  alternating components.
-- One physical restoration is counted once globally even when several nested
-  owners observe it.
-- Aggressive batch deletion is branch-local; completeness uses viable single-edge
-  unions or the rank-three prescription split.
+- Owner relabelling does not itself create physical restoration.
+- Aggressive batch deletion is branch-local; completeness uses viable child
+  unions or the new-triple prescription split.
 
 ## Current open frontier
 
-1. **Constant-arity tree compression.** Bound or compress the polynomial-depth
-   tree generated by the three deletion children plus one forced-triple branch,
-   or establish target-load/potential monotonicity across its side branches.
-2. **Forced-triple and fixed-edge closure.** Convert repeated conditioned
-   forced-triple branches and fixed-owner physical-edge restoration into target-
-   load decrease, reserve exhaustion, or strict global potential improvement.
+1. **Global branch merging.** Merge or charge side branches which concentrate on
+   the same labelled edge, rank-two residual pair, support atom, or forced
+   certificate.
+2. **Fixed-edge restoration closure.** Convert a repeatedly restored edge which
+   survives deletion, normalization, and contraction responses into target-load
+   decrease, reserve exhaustion, or strict global potential improvement.
 3. **Prime-field and low-height transfer.** Rebuild the owner-labelled endpoint
    for prime fields and remaining thin quotient/carry regimes.
 4. **Arbitrary side lengths.** Extend balanced prime families and control CRT
@@ -175,9 +143,7 @@ possible distinguishing rank by at most three.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR869**, local geometry, matching products,
-restoration ancestry, aggressive normalization, exact completeness branching,
-core contraction, distinguishing width, exchange-SCC factorization, and the
-rank-three geometric split have rigorous normal forms. The unresolved
-prime-power problem is global compression or potential descent across the
-remaining constant-arity completeness tree.
+There is no complete proof. Through **CMR893**, completeness has a constant-arity
+geometric split, polynomial root-to-leaf resource bounds, and a branch-batching
+mechanism at recurrent support atoms. The remaining prime-power problem is global
+merging or common-budget charging across those side branches.
