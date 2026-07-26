@@ -10,7 +10,8 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `5`:
+have closed every top-signature tier of multiplicity at least `5` and the first
+one hundred signatures of multiplicity `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -36,12 +37,13 @@ have closed every top-signature tier of multiplicity at least `5`:
 | 7 | 100 | 700 | certified infeasible |
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
-| **Total** | **2,198 completed classes** | **17,401** | **737,975,588 shared bottom-CSP nodes** |
+| 4, shard 0 | 100 of 2,392 | 400 | certified infeasible |
+| **Total** | **2,298 completed classes** | **17,801** | **766,914,256 shared bottom-CSP nodes** |
 
-Thus `54,459` support-twenty selectors remain active in this cache layer.
+Thus `54,059` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX687--PX690 in
-[`docs/218-side-seven-cycle52-radius-three-support-twenty-multiplicity-five.md`](../docs/218-side-seven-cycle52-radius-three-support-twenty-multiplicity-five.md).
+The latest exact results are PX691--PX694 in
+[`docs/219-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-zero.md`](../docs/219-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-zero.md).
 
 ## Solver improvement
 
@@ -49,10 +51,11 @@ The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
 live in `scripts/product_side_seven_cache_engine.hpp`.
 
-The common transcript verifier in `scripts/product_side_seven_tier_digest.hpp`
-prints every per-signature count while one asserted 64-bit digest commits the
-complete ordered transcript. This keeps wide exact tiers compact without
-weakening the exhaustive search.
+The common transcript verifiers print every per-signature count while one
+asserted 64-bit digest commits each complete ordered tier or shard transcript.
+`scripts/product_side_seven_tier_shard_digest.hpp` adds independently
+reproducible lexicographic shard intervals without checking in large case data
+tables.
 
 PX641--PX642 give the stronger selector-choice CSP and proof-logged SAT route.
 A naive family-wide selector-choice prototype was exact but slower because it
@@ -61,12 +64,12 @@ mechanically certified symmetry remain parallel solver-development tasks.
 
 ## Immediate task
 
-The next nonempty tier has multiplicity `4`: 2,392 top signatures containing
-`9,568` selectors. Run it through independently reproducible shards and retain
-the transcript-digest verifier format. In parallel:
+The remaining multiplicity-four frontier contains `2,292` top signatures and
+`9,168` selectors. Continue from global case index `100` in independently
+reproducible intervals using the shard-digest verifier. In parallel:
 
 1. add top-assignment assumption literals;
-2. extract deletion-minimal bottom infeasibility cores;
+2. extract mechanically rechecked bottom infeasibility cores;
 3. learn a master nogood covering every top order extending one core;
 4. export one selector-choice shard to CNF and check an UNSAT proof independently;
 5. add only mechanically verified host/reflection symmetry constraints.
@@ -83,10 +86,10 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity5.cpp \
-  -o /tmp/m5
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard0.cpp \
+  -o /tmp/m4s0
 
-/tmp/m5
+/tmp/m4s0
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
