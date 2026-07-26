@@ -84,10 +84,10 @@ pool, as shown by GC1-wall.
 
 ## Exact high-line blockers
 
-Let `L_b` be a finite set of exact non-axis grid lines.  A partner is line-blocked
-when at least one of its two prospective cross-cells lies on one of those lines.
-Rows and columns are excluded because permutation preservation handles them
-exactly and they are not high-line defects.
+Let `\mathcal L_b` be a finite set of exact non-axis grid lines.  A partner is
+line-blocked when at least one of its two prospective cross-cells lies on one of
+those lines.  Rows and columns are excluded because permutation preservation
+handles them exactly and they are not high-line defects.
 
 ## GC1d -- exact line inventory costs at most two partners per line -- PROVED
 
@@ -105,7 +105,7 @@ The line-blocked partner set satisfies
 
 GC3l gives at most two partners for one fixed target and one exact non-axis line:
 one whose first cross-cell lies on the line and one whose second cross-cell lies
-on it.  Take the union over `L_b`. QED.
+on it.  Take the union over `\mathcal L_b`. QED.
 
 The same partner may be blocked by several lines; union counting only lowers the
 true cardinality.
@@ -113,16 +113,16 @@ true cardinality.
 ## Global residual blockers
 
 Let `J_b subseteq P` be the exact partner values forbidden by predicates not
-represented by `Q_b` or `L_b`.  Examples include a global arithmetic context,
-discretionary candidate filter or a nonlocal protected contract.  Its cost is
-retained exactly as `|J_b|`.
+represented by `Q_b` or `\mathcal L_b`.  Examples include a global arithmetic
+context, discretionary candidate filter or a nonlocal protected contract.  Its
+cost is retained exactly as `|J_b|`.
 
 ## GC1e -- explicit per-target admissibility bound -- PROVED
 
 Assume every inadmissible partner for target `b` is blocked by at least one of:
 
 1. physical rectangle-support intersection with `Q_b`;
-2. a prospective cross-cell on one line in `L_b`;
+2. a prospective cross-cell on one line in `\mathcal L_b`;
 3. direct membership in `J_b`.
 
 Then
@@ -176,7 +176,7 @@ D_b\le\delta p
 \qquad
 t\le\beta p,
 \qquad
-delta+beta<1.
+\delta+\beta<1.
 \]
 
 Then the admissibility graph has a distribution on injections covering all
@@ -196,9 +196,9 @@ directly.
 
 ### Proof
 
-GC1e gives `d_Gamma(b)>=(1-delta)p` for every target.  Apply L1: expose targets
+GC1e gives `d_\Gamma(b)>=(1-\delta)p` for every target.  Apply L1: expose targets
 sequentially and choose uniformly from unused admissible partners.  At every step
-at least `(1-delta-beta)p=p/K` choices remain, so prescribed compatible choices
+at least `(1-\delta-\beta)p=p/K` choices remain, so prescribed compatible choices
 have probability at most `(K/p)^r`. QED.
 
 ## Pool restriction
@@ -222,7 +222,7 @@ For each target it is now enough to bound four explicit quantities:
 
 - current partners physically contained in `Q_b`;
 - the total forbidden physical support size `|Q_b|`;
-- the number of exact dangerous non-axis lines `|L_b|`;
+- the number of exact dangerous non-axis lines `|\mathcal L_b|`;
 - the global residual partner set `|J_b|`.
 
 The first three have exact rectangle-incidence coefficients `1,2,2`.  Any failure
@@ -234,6 +234,8 @@ alternating-core context router respectively.
 ## Finite check
 
 `scripts/verify_geometric_partner_blocker_inventory.py` exhausts permutation
-layers through order six, every target and partner pool, physical blocker sets of
-rank at most three and every family of up to three non-axis lines.  It verifies
-GC1c--GC1e and the sequential choice lower bound used by GC1f.
+layers through order five, every target and nonempty partner subpool, physical
+blocker sets of rank at most two and every individual non-axis line.  A smaller
+fully crossed audit checks simultaneous physical, residual and up-to-two-line
+blockers, and a parameter grid checks the sequential choice lower bound used by
+GC1f.
