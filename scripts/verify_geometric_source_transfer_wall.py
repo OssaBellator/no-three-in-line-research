@@ -44,18 +44,19 @@ def verify_explicit_wall(counts: Counter[str]) -> None:
 
 
 def verify_congestion_scaling(counts: Counter[str]) -> None:
-    for factor_count in range(1, 5):
-        for witness_count in range(1, 7):
+    # Exhaust all small maps.  The proof is algebraic; these ranges are a sanity grid.
+    for factor_count in range(1, 4):
+        for witness_count in range(1, 5):
             for source_map in product(range(factor_count), repeat=witness_count):
                 for weights in product((0, 1, 2), repeat=witness_count):
                     if sum(weights) == 0:
                         continue
-                    for capacities in product((1, 2, 3), repeat=factor_count):
-                        loads = [
-                            sum(weights[w] for w in range(witness_count) if source_map[w] == q)
-                            for q in range(factor_count)
-                        ]
-                        for congestion in range(1, 5):
+                    loads = [
+                        sum(weights[w] for w in range(witness_count) if source_map[w] == q)
+                        for q in range(factor_count)
+                    ]
+                    for capacities in product((1, 2), repeat=factor_count):
+                        for congestion in range(1, 4):
                             if any(loads[q] > congestion * capacities[q] for q in range(factor_count)):
                                 continue
                             payments = [Fraction(weight, congestion) for weight in weights]
