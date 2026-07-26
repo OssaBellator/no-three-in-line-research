@@ -1,0 +1,16 @@
+{
+  "cycle_size": 6,
+  "helper_ranks": {
+    "source_unary": 1,
+    "source_transition": 2,
+    "source_anchored_pair": 3,
+    "source_triple_rank4": 3,
+    "source_triple_rank5": 4,
+    "source_triple_rank6": 5,
+    "xi_A2": 1,
+    "xi_B3": 2,
+    "xi_B4": 3
+  },
+  "support_edges": [[1], [2, 3], [4, 5], [1, 2, 4]],
+  "independent_helpers": [2, 4]
+}
