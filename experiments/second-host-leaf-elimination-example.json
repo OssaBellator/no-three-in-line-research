@@ -1,0 +1,28 @@
+{
+  "macro_width": 16,
+  "kappa": 2,
+  "require_all_raw_outcomes": true,
+  "blocks": [
+    {
+      "marked_size": 4,
+      "helper_count": 24,
+      "max_role_exclusions": 7,
+      "support_rank": 3,
+      "outcome": "independent_cycle"
+    },
+    {
+      "marked_size": 3,
+      "helper_count": 16,
+      "max_role_exclusions": 5,
+      "support_rank": 2,
+      "outcome": "dense_current_support"
+    },
+    {
+      "marked_size": 2,
+      "helper_count": 9,
+      "max_role_exclusions": 3,
+      "support_rank": 3,
+      "outcome": "dense_source_support"
+    }
+  ]
+}
