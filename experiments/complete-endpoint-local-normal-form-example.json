@@ -1,0 +1,7 @@
+{
+  "marked_size": 10,
+  "R": 10000,
+  "gamma": 0.4,
+  "xi": 0.2,
+  "all_selected_are_controllers": true
+}
