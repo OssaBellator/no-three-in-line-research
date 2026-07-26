@@ -1,0 +1,16 @@
+{
+  "entries": {
+    "z0": {
+      "puncture_stage": null,
+      "counts": [3, 5, 2, 4]
+    },
+    "z1": {
+      "puncture_stage": 1,
+      "counts": [4, 0, 0, 0]
+    },
+    "z2": {
+      "puncture_stage": 3,
+      "counts": [2, 6, 8, 0]
+    }
+  }
+}
