@@ -1,7 +1,7 @@
 {
-  "range": "PX397-PX550",
+  "range": "PX397-PX554",
   "root": "PX492",
-  "frontier_root": "PX550",
+  "frontier_root": "PX554",
   "nodes": {
     "PX397-403": {"document": "docs/153-px63-one-hit-derangement-entry.md", "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"], "move_space": "rectangle_label", "status": "entry_audited"},
     "PX404-410": {"document": "docs/154-px64-line-cap-return-depth.md", "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"], "move_space": "arithmetic_only", "status": "line_cap_audited"},
@@ -33,7 +33,8 @@
     "PX533-536": {"document": "docs/180-side-seven-radius-two-support-fourteen-csp.md", "depends_on": ["PX529-532"], "move_space": "arithmetic_only", "status": "side_seven_radius_two_support_fourteen_obstruction"},
     "PX537-540": {"document": "docs/181-side-seven-cycle322-complete-radius-two-obstruction.md", "depends_on": ["PX533-536"], "move_space": "arithmetic_only", "status": "side_seven_cycle322_radius_two_complete"},
     "PX541-545": {"document": "docs/182-side-seven-cycle43-complete-radius-two-obstruction.md", "depends_on": ["PX537-540"], "move_space": "arithmetic_only", "status": "side_seven_cycle43_radius_two_complete"},
-    "PX546-550": {"document": "docs/183-side-seven-radius-three-selector-layers.md", "depends_on": ["PX540", "PX545"], "move_space": "arithmetic_only", "status": "side_seven_completed_classes_radius_three"}
+    "PX546-550": {"document": "docs/183-side-seven-radius-three-selector-layers.md", "depends_on": ["PX540", "PX545"], "move_space": "arithmetic_only", "status": "side_seven_completed_classes_radius_three"},
+    "PX551-554": {"document": "docs/184-side-seven-radius-two-support-sixteen-structure.md", "depends_on": ["PX535-536", "PX540", "PX545"], "move_space": "arithmetic_only", "status": "side_seven_support_sixteen_structure"}
   },
   "safety_rules": {
     "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
@@ -88,7 +89,10 @@
       "side_seven_cycle43_radius_two_nodes": 9442860381,
       "side_seven_completed_radius_three_selectors": 308791,
       "side_seven_completed_radius_three_directed_moves": 4446724,
-      "side_seven_completed_radius_three_support_twelve": 10554
+      "side_seven_completed_radius_three_support_twelve": 10554,
+      "side_seven_support_sixteen_disjoint_cycle_count": 9824,
+      "side_seven_support_sixteen_overlap_count": 16860,
+      "side_seven_support_sixteen_short_cycle_path_count": 3016
     }
   }
 }
