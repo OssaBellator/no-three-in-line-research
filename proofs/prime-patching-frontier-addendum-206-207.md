@@ -2,8 +2,8 @@
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air. It records the original-reference, controller-domain,
-initial-allocation, complete marked-support, separated-cycle, layerwise, and nested
-controller-history reductions in `docs/206` through `docs/245`.
+initial-allocation, complete marked-support, separated-cycle, layerwise, epoch-reset,
+and nested controller-history reductions in `docs/206` through `docs/250`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -47,8 +47,13 @@ controller-history reductions in `docs/206` through `docs/245`.
 | PP3asl--PP3ass | A saturated source decomposes into two permutation layers; sequential zero-cost layer trades cancel the complete first insertion table, including cross-layer incidences | PROVED / CONDITIONAL GLOBAL-NORMAL-FORM AND LAYER-RESERVOIR INTERFACES | `docs/243-layerwise-complete-insertion-cancellation.md` |
 | PP3ast--PP3asz | Select helpers before controller puncturing; puncturing at most `2W=o(R)` selected marked/helper controllers preserves allocation margins and removes controller density from the host frontier | PROVED / CONDITIONAL FINITE LOCAL NORMAL FORM AND UNRESERVED-COORDINATE INTERFACES | `docs/244-selected-helper-controller-puncturing.md` |
 | PP3ata--PP3atg | Layerwise helper demand is `O(R)=o(m)`; standard `o(m)` reservations leave automatic quadratic reservoirs, and failure is a near-complete global coordinate cover | PROVED / CONDITIONAL GLOBAL RESERVATION INTERFACE | `docs/245-automatic-layerwise-coordinate-reservoir.md` |
+| PP3ath--PP3atn | Every source-admissible saturation-preserving first trade is automatically assigned to the two permutation layers of its post-trade source, including fully cross-wired replacement cells | PROVED / CONDITIONAL JOINT LOCAL NORMAL FORM | `docs/246-post-trade-two-layer-assignment.md` |
+| PP3ato--PP3atu | A cascade may use a fresh current reference in each epoch; selected-controller puncturing costs only `O(W)=o(R)`, and historical original-layer preservation is unnecessary | PROVED / CONDITIONAL JOINT LOCAL NORMAL FORM | `docs/247-current-reference-epoch-reset.md` |
+| PP3atv--PP3aub | The canonical endpoint checklist is exhaustive and has helper-support rank at most three; no unspecified global local-host condition remains | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/248-complete-endpoint-local-normal-form.md` |
+| PP3auc--PP3aui | A credited marked source set is itself the input to a zero-insertion paid cycle; stars and endpoint banks require no separate first endpoint trade | PROVED / CONDITIONAL EXISTING REFINEMENT INTERFACES | `docs/249-credited-marked-set-direct-paid-trade.md` |
+| PP3auj--PP3aup | The complete internal coordinate census leaves `(1-ab-o(1))m` free indices, so slab pools and all package commitments cannot create a near-complete cover | PROVED | `docs/250-internal-coordinate-reservation-census.md` |
 
-## Complete-support, layerwise, and critical square-root endpoint
+## Complete canonical endpoint endpoint
 
 Use
 
@@ -57,72 +62,55 @@ R=m^(19/20+o(1)),
 W=sqrt(R)=m^(19/40+o(1)).
 ```
 
-Strict alternation lowers every bounded local source, insertion, transition, anchor,
-distinguished-endpoint, and endpoint-edge constraint to ordinary-helper support rank
-at most three. On a `Theta(W^2)` reservoir, failure of a joint independent `W`-set
-forces a target-size canonical star, matching, fixed-core petal bank, or endpoint
-bank. The selected cycle is itself a perfect matching, so no separate local Hall or
-alternating-SCC theorem is needed.
+Strict alternation lowers every actual canonical source, insertion, transition,
+anchor, distinguished-endpoint and endpoint-edge restriction to ordinary-helper
+support rank at most three. Saturation is deterministic, selected controllers are
+punctured after helper selection, and positive-margin ownership/global-label
+certificates survive the resulting `O(W)=o(R)` deletions.
 
-A saturated source decomposes into two permutation layers. If a marked set splits as
-`D=D_0 dot-union D_1`, prepare one zero-cost cycle per occupied layer. The helper
-volume obeys
+Every source-admissible saturated first state decomposes automatically into two
+current permutation layers. Cross-wired inserted cells are assigned by the post-trade
+decomposition, and layerwise helper demand stays below the global square budget.
+Historical original layers are not needed: one current layer serves as the reference
+inside an epoch and is reset after a completed paid package.
 
-```text
-|D_0|^2+|D_1|^2 <= |D|^2,
-```
+## Direct payment endpoint
 
-and the sequential removal terms cover every first insertion incidence exactly once,
-including cross-layer incidences.
-
-Controller density is bypassed by selecting helpers against the controller-blind
-joint support table and puncturing only selected controllers afterwards. At most
-`2W=o(R)` values are punctured, so every fixed positive allocation margin survives.
-
-The layerwise helper demand is at most `O(W^2)=O(R)=o(m)`. Therefore every standard
-`o(m)` global reservation leaves the required reservoirs automatically. Failure of
-coordinate supply means that one occupied layer has a genuine reserved-coordinate
-cover of size `(1-o(1))m`.
-
-## Complete cycle-insertion cancellation
-
-Let a first endpoint trade have insertion and removal terms `I_1,R_1`, and partition
-its inserted cells by permutation layer. Joint-support-free layerwise second cycles
-have zero insertion cost, while their total removal term is at least `I_1`. Therefore
+A target credited source star or endpoint bank is used directly as the marked set of
+the complete-support cycle theorem. In the independent branch, zero insertion cost
+and complete designated-credit removal give
 
 ```text
-Delta Xi_composite <= -R_1.
+Delta Xi<=-c(D).
 ```
 
-Target Hamilton cycles, alternating-cycle petals, mobility-hub states, chord-cycle
-candidates, and non-co-layered two-layer packages are strictly paid or yield a target
-canonical local certificate.
+In the dense branch, a target canonical star, matching, endpoint bank, transition
+sunflower, anchor bank, fixed-core petal bank, or `A_2/B_3/B_4` structure is produced.
+Thus no separate source-admissible first-trade theorem remains after a credited
+structure has been extracted.
 
-## Deleted-entry and punctured-star endpoint
+## Coordinate and controller endpoint
 
-For a final puncture set `F`, entrywise telescoping gives
+The slab pools reserve `(ab+o(1))m` old coordinates with fixed `ab<1`. Every other
+internal commitment has scale at most `O(MW+W)=o(m)`. Hence every occupied current
+layer retains
 
 ```text
-Psi_F(S_H)-Psi_(X_0)(S_0)
-=
-sum_j (I_j^F-R_j^F)-D_0(F).
+(1-ab-o(1))m
 ```
 
-Every deleted entry contributes the negative of its initial mass. Canonical captive-
-star stages have zero insertion cost and terminate by the nested chronological
-potential.
+indices, far exceeding the complete `O(W^2)=O(R)=o(m)` helper demand. Controller
+density, common-layer failure, moderate coordinate erosion and internal near-complete
+covers are no longer separate frontiers.
 
 ## Revised live frontier
 
-The remaining concentrated cases are now:
+The concentrated frontier is now:
 
-1. genuinely global conditions that cannot be represented by forbidden patterns on
-   at most three selected endpoint cells, including a near-complete global coordinate
-   cover in one occupied layer;
-2. endpoint packages that cannot be assigned to the saturated two-layer replacement
-   architecture;
-3. branches that cannot use the slab-optimal random two-sided architecture or
-   preserve an original reference layer.
+1. the initial controller-aware macro-patch allocation/completion theorem before a
+   credited repair structure is available; and
+2. genuinely different branches that do not use the slab-optimal random two-sided
+   allocation and dynamic-potential architecture.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
 ordinary robust chord geometry, captive centres, controller--controller stars,
@@ -132,7 +120,10 @@ pencils, paid puncture histories, temporal blocker instability, future-controlle
 dependencies, canonical punctured-star insertion cost, bounded coordinate placement,
 critical target helper support, target-cycle insertion concentration, mobility-hub
 and chord-cycle payment, local Hall/alternating/matching host preparation, failure of
-common-layering, cross-layer insertion payment, high controller density, and moderate
-coordinate-reservoir shortage are no longer separate frontiers.
+common-layering, cross-layer insertion payment, high controller density, moderate
+coordinate shortage, post-trade layer assignability, historical original-reference
+preservation, unspecified canonical endpoint-host conditions, separate first-trade
+existence for credited structures, and internal near-complete coordinate covers are
+no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
