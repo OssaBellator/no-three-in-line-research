@@ -11,7 +11,7 @@ finite obstruction census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have closed every top-signature tier of multiplicity at least `5` and the first
-380 signatures of multiplicity `4`:
+480 signatures of multiplicity `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -37,13 +37,13 @@ have closed every top-signature tier of multiplicity at least `5` and the first
 | 7 | 100 | 700 | certified infeasible |
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
-| 4, shards 0--3 | 380 of 2,392 | 1,520 | certified infeasible |
-| **Total** | **2,578 completed classes** | **18,921** | **871,230,508 shared bottom-CSP nodes** |
+| 4, shards 0--4 | 480 of 2,392 | 1,920 | certified infeasible |
+| **Total** | **2,678 completed classes** | **19,321** | **901,698,409 shared bottom-CSP nodes** |
 
-Thus `52,939` support-twenty selectors remain active in this cache layer.
+Thus `52,539` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX703--PX706 in
-[`docs/222-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-three.md`](../docs/222-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-three.md).
+The latest exact results are PX707--PX710 in
+[`docs/223-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-four.md`](../docs/223-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-four.md).
 
 ## Solver improvement
 
@@ -64,8 +64,8 @@ mechanically certified symmetry remain parallel solver-development tasks.
 
 ## Immediate task
 
-The remaining multiplicity-four frontier begins at global case index `380` and
-contains `2,012` top signatures and `8,048` selectors. Continue in independently
+The remaining multiplicity-four frontier begins at global case index `480` and
+contains `1,912` top signatures and `7,648` selectors. Continue in independently
 reproducible intervals using the shard-digest verifier. In parallel:
 
 1. add top-assignment assumption literals;
@@ -86,10 +86,10 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard3.cpp \
-  -o /tmp/m4s3
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard4.cpp \
+  -o /tmp/m4s4
 
-/tmp/m4s3
+/tmp/m4s4
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
