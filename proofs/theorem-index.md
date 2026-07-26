@@ -26,6 +26,7 @@ This ledger contains the branch-specific results only.
 | SAS5q–SAS5t | Every singleton-scope word has an exact primitive two-gap dilation model; one primitive row shape and exact row-triple family retain polynomially quantified weight | PROVED | `docs/sparse-singleton-scope-dilations.md` |
 | SAS5u–SAS5y | Primitive parameter families have an exact board-length bound; diffuse mass forces bounded shape, while dense support yields disjoint adjacent parameter pairs with one common increment | PROVED | `docs/sparse-parameter-chain-density.md` |
 | SAS5z–SAS5ad | Column reflection canonically pairs every destruction word with one repair word; failure localizes to one boundary or at most two reflected-label defects, and primitive increments reverse exactly | PROVED | `docs/sparse-swap-reflection-router.md` |
-| SAS6 | Arithmetic batching or classification of concentrated swap certificates | OPEN; CROSS-SIDE COMPARISON NOW REDUCES TO THE CANONICAL MIRROR REPAIR WORD, A BOUNDARY ROLE OR AT MOST TWO REFLECTED-LABEL DEFECTS, WITH COMPATIBLE INSTALLATION AND MULTI-SWAP COLLATERAL REMAINING | `docs/sparse-algebraic-spread.md` |
+| SAS5ae–SAS5ai | A heavy reflected-label role yields an exact defect column or a disjoint balanced donor-swap bank; bounded column-scope incidence gives a compatible subbank | PROVED UNDER THE DECLARED INCIDENCE CAP FOR SAS5ah | `docs/sparse-reflected-label-defect-router.md` |
+| SAS6 | Arithmetic batching or classification of concentrated swap certificates | OPEN; REFLECTED LABEL DEFECTS NOW ROUTE TO AN EXACT COLUMN DISCREPANCY OR A BALANCED DONOR-SWAP BANK, WITH GEOMETRIC GAIN COMPARISON, DONOR-COLUMN COLLATERAL AND BOUNDARY PROFILES REMAINING | `docs/sparse-algebraic-spread.md` |
 
 No statement here proves the global conjecture.
