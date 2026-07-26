@@ -267,17 +267,19 @@ The stored exact seed certificates have relative cycle partitions:
 p=3:  [2]
 p=5:  [2,2]
 p=7:  [6]
-p=11: [10].
+p=11: [10]
+p=13: [4,4,2,2].
 ```
 
 Thus the `p=7` and `p=11` examples have connected alternating incidence graphs,
-while the `p=5` example has two four-edge incidence components.
+while the `p=5` and `p=13` examples have multiple alternating components.
 
 #### Verification
 
 Run the diagnostic below.  It reconstructs `pi`, verifies that it is a
 derangement, computes its cycles, and checks every compressed maximal-line
-constraint. ∎
+constraint.  The `p=13` certificate checks `898` maximal lines and has maximum
+selected occupancy two. ∎
 
 ## 9. Revised global seed frontier
 
