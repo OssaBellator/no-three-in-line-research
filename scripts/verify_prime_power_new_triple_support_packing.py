@@ -2,7 +2,7 @@
 """Finite checks for CMR870--CMR877."""
 
 from collections import Counter
-from math import ceil
+from math import ceil, comb
 import random
 
 
@@ -21,8 +21,12 @@ def check_packing_cover():
     checked = 0
     for universe_size in range(9, 200):
         universe = list(range(universe_size))
+        maximum_distinct = comb(universe_size, 9)
         for _ in range(100):
-            count = rng.randint(1, min(100, 3 * universe_size))
+            count = rng.randint(
+                1,
+                min(100, 3 * universe_size, maximum_distinct),
+            )
             supports = []
             seen = set()
             while len(supports) < count:
@@ -37,8 +41,7 @@ def check_packing_cover():
             assert len(cover) <= 9 * (threshold - 1)
             loads = Counter()
             for support in supports:
-                witness = min(support & cover)
-                loads[witness] += 1
+                loads[min(support & cover)] += 1
             assert max(loads.values()) >= ceil(len(supports) / len(cover))
             checked += 1
     return checked
@@ -100,7 +103,11 @@ def check_support_compatibility():
             cells = {(source, target) for _, source, target in union}
             assert len(cells) == len(union)
             for layer in (0, 1):
-                edges = [(source, target) for ell, source, target in union if ell == layer]
+                edges = [
+                    (source, target)
+                    for ell, source, target in union
+                    if ell == layer
+                ]
                 assert len({source for source, _ in edges}) == len(edges)
                 assert len({target for _, target in edges}) == len(edges)
             chosen_deletions = [min(triple) for triple in triples]
