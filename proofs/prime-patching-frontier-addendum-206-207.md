@@ -1,9 +1,9 @@
 # Prime-patching frontier addendum: complete marked-support and nested-history reductions
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
-after PP3air.  It records the original-reference, controller-domain,
-initial-allocation, marked-support, petal-conditioned, robust-atom, and nested
-controller-history reductions in `docs/206` through `docs/234`.
+after PP3air. It records the original-reference, controller-domain,
+initial-allocation, complete marked-support, bounded-multimarked, and nested
+controller-history reductions in `docs/206` through `docs/236`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -36,6 +36,8 @@ controller-history reductions in `docs/206` through `docs/234`.
 | PP3apm--PP3apr | Candidate universes are nested under puncturing; every strict paid puncture stage decreases a globally ordered nonnegative integer potential, so paid reserve exhaustion is impossible | PROVED / CONDITIONAL MARKED-HOST INTERFACE | `docs/232-nested-puncture-potential-monotonicity.md` |
 | PP3aps--PP3apz | Multi-step puncture identities telescope in the final universe; failure of aggregate payment forces target-scale future-controller credit dependencies | PROVED / CONDITIONAL AGGREGATE-SLACK INTERFACE | `docs/233-final-universe-credit-telescoping.md` |
 | PP3aqa--PP3aqg | Every local `A_2`, `B_3`, or `B_4` atom becomes exact removal credit for a second marked move and cancels from the composite potential budget | PROVED / CONDITIONAL COMPOSITE MARKED-HOST INTERFACE | `docs/234-local-atom-two-step-cancellation.md` |
+| PP3aqh--PP3aqn | A separated cycle through all bounded local cells gives a zero-cost second trade; moving the full marked set cancels the complete local atom table simultaneously | PROVED / CONDITIONAL BOUNDED-MARKED HOST INTERFACE | `docs/235-bounded-marked-set-zero-cost-cancellation.md` |
+| PP3aqo--PP3aqt | Terminal pencils from a failed bounded-marked host preserve their canonical type and re-enter already closed source or `A_2/B_3/B_4` conversion chains | PROVED / CONDITIONAL COMBINED HOST INTERFACE | `docs/236-bounded-marked-terminal-pencil-closure.md` |
 
 ## Robust and complete-support endpoint
 
@@ -48,17 +50,17 @@ W=sqrt(R)=m^(19/40+o(1)).
 
 Fresh-helper cascades reach a `Theta(W)` alternating defect in `o(W)` generations.
 Retained-original domains only improve, so the initial balanced ownership and
-global label matching remain available.  Final binary shadow is `o(R)`, while
+global label matching remain available. Final binary shadow is `o(R)`, while
 final unary failure creates a super-target source star.
 
 Sparse positive source or insertion support is avoided independently of weight or
-witness multiplicity.  Dense support becomes a fixed/nested pencil, fixed-core
-sunflower, or disjoint signature bank.  A maximal support-independent helper set
+witness multiplicity. Dense support becomes a fixed/nested pencil, fixed-core
+sunflower, or disjoint signature bank. A maximal support-independent helper set
 either supplies a zero-cost host or gives a fixed core with `N^(1-o(1))` variable
-extensions.  High-support source pencils are converted or excluded; insertion
+extensions. High-support source pencils are converted or excluded; insertion
 pencils are exactly the existing `A_2`, `B_3`, and `B_4` geometries.
 
-## Petal and local-atom endpoint
+## Petal, local-table, and bounded-marked endpoint
 
 After fixing a compatible local arc forest `F`, the conditional single-cycle count
 is
@@ -68,35 +70,34 @@ is
 ```
 
 Every nonlocal event has residual helper support and vanishes on an independent
-completion.  A spanning path of `r<=4` arcs has
+completion. A spanning path of `r<=4` arcs has at most ten local `A_2/B_3/B_4`
+atoms. In the robust branch their simple support is absorbed.
+
+Outside the robust branch, move all at most four inserted local cells in one
+second trade. A separated cycle alternates the distinguished cells with ordinary
+helpers, so every nonzero source or insertion event has ordinary-helper support.
+An independent helper block gives
 
 ```text
-r A_2 atoms,
-r-1 B_3 atoms,
-binom(r,2)-(r-1) B_4 atoms,
+second-step source-invalid count=0,
+second-step insertion cost=0.
 ```
 
-so at most ten local atoms.  A disconnected `B_4` petal is bridged by one helper.
-
-In the robust branch arbitrary `B_3/B_4` weight costs only `s(s-1)=o(R)` domain
-values, and every `o(R)` unary table is absorbed.  Outside the robust branch, any
-one local atom of weight `C` becomes post-trade incidence credit centred at one
-inserted point.  A second marked move gives
+Every local atom incidence is destroyed, and the complete two-step change is
 
 ```text
 Delta Xi_two-step
 <=
-first-step nonatom cost
-+
-second-step self-recapture
-+
-second-step foreign cost
+first-step nonlocal cost
 -
 first-step removal credit.
 ```
 
-The complete atom weight cancels exactly.  Thus weighted local multiplicity is no
-longer an independent endpoint in either architecture.
+If the independent helper set is too small, maximality gives a near-linear fixed-
+core pencil. Bounded conditioning preserves its canonical type: source pencils
+convert or are impossible by unique completion, while insertion pencils return to
+`A_2/B_3/B_4` and are absorbed or cancelled. Thus neither local multiplicity nor
+second-generation terminal pencils remain internal endpoints.
 
 ## Nested puncture and final-universe endpoint
 
@@ -107,12 +108,11 @@ V_Y subseteq V_X,
 Psi_Y(S)<=Psi_X(S).
 ```
 
-A puncture followed by a strict paid trade for the new universe therefore strictly
-decreases the chronological nested potential.  Successful paid punctures cannot
-exhaust any positive reserve.
+A puncture followed by a strict paid trade for the new universe strictly decreases
+the chronological nested potential. Successful paid punctures cannot exhaust any
+positive reserve.
 
-For a nonmonotone multi-step package, fix its final universe `V_F`.  The exact
-identity
+For a nonmonotone package, fix its final universe `V_F`. The identity
 
 ```text
 Psi_F(S_H)-Psi_F(S_0)
@@ -120,10 +120,9 @@ Psi_F(S_H)-Psi_F(S_0)
 sum_j (I_j^F-R_j^F)
 ```
 
-telescopes regardless of blocker-endpoint coexistence.  Designated credit is lost
-only when its candidate entry is controlled by a point punctured later.  If total
-final-universe insertion has slack `eta C`, failure forces at least `eta C` such
-forward credit dependencies.  At the slab scale these localize to:
+telescopes regardless of blocker-endpoint coexistence. Designated credit is lost
+only when its candidate entry is controlled by a point punctured later. Failure
+with aggregate slack localizes to:
 
 1. a repeated exact lost candidate;
 2. a chronological partner stack;
@@ -138,17 +137,16 @@ credit loss and residual final-universe insertion cost are.
 
 The remaining concentrated cases are now:
 
-1. first-step nonatom collateral or second-step foreign/self-recapture cost at the
-   original removal-credit scale in the composite atom and source-star trades;
-2. target-scale future-controller dependency stacks or forward dependency
+1. target-scale future-controller dependency stacks or forward dependency
    matchings created by credit entries punctured later;
-3. final-universe insertion cost already comparable with the aggregate surviving
+2. final-universe insertion cost already comparable with the aggregate surviving
    removal credit;
-4. second-generation source/support pencils arising from that residual collateral;
-5. external controller-pool, distinguished-endpoint, Hall, alternating, or other
-   marked-host failure;
-6. paid mobility-hub or chord-cycle conversion outside robust final allocation;
-7. branches that cannot use the slab-optimal random two-sided architecture or
+3. genuinely external bounded-multimarked controller-pool, distinguished-endpoint,
+   source-clean, transition, Hall, alternating, or matching-host failure;
+4. inability to move all bounded local cells together while preserving the
+   required controller and pool coordinates;
+5. paid mobility-hub or chord-cycle conversion outside robust final allocation;
+6. branches that cannot use the slab-optimal random two-sided architecture or
    preserve an original reference layer.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
@@ -156,8 +154,8 @@ ordinary chord geometry in the robust branch, captive centres, controller--
 controller stars, numerical ownership arithmetic, raw support multiplicity,
 fixed-core source sunflowers, diffuse residual support, support-free insertion
 weight, high-support source terminal pencils, diffuse petal collateral, mixed
-finite local-core tables, credit-scale local atoms, paid puncture reserve
-histories, and generic temporal blocker instability are no longer separate
-frontiers.
+finite local-core tables, credit-scale local atoms, second-generation terminal
+pencils, paid puncture reserve histories, and generic temporal blocker instability
+are no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
