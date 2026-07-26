@@ -31,7 +31,8 @@ orientation where the defect coefficient is `A_0` and the companion coefficient 
 with `gcd(|A_0|,|B_0|)=1` and `s!=0`.
 
 The word and ordered row roles fix the sign of `A_0`; hence the sign of `s` is fixed
-throughout the fibre.  Write that sign as `epsilon in {+1,-1}`.
+throughout the fibre.  Write that sign as `epsilon in {+1,-1}`.  As in the reflected-
+label setup, `z` has the wrong label and therefore `z notin D_ell`.
 
 For every positive divisor `g` of `D`, let `F_(z,g)` be the record subfamily with
 `|s|=g`, and let
@@ -142,18 +143,25 @@ In particular, when `d>=4`,
 
 `g <= floor((N-1)/(d-3))`.
 
-Hence a donor class of density `d>=delta*N+2` forces
+More generally, if `delta>0` and
 
-`g < 1/delta`
+`d-3 >= delta*(N-1)`,
 
-up to the displayed integer rounding.
+then
+
+`g <= 1/delta`.
 
 ### Proof
 
 Every donor outside `{x,y}` lies in the board interval and in the residue class
 `x mod g`.  An interval of `N` consecutive columns contains at most
 `1+floor((N-1)/g)` members of one residue class.  There are at least `d-2` retained
-donors.  Rearranging the inequality gives the bound for `d>=4`. QED.
+donors.  Rearranging the inequality gives the bound for `d>=4`.  Under the final
+hypothesis,
+
+`g <= (N-1)/(d-3) <= 1/delta`.
+
+QED.
 
 The coprimality restriction from SAS5bk can only reduce the number of available
 progression slots.
