@@ -1,0 +1,8 @@
+{
+  "marked_size": 12,
+  "helper_reservoir": 144,
+  "removal_credit": 20,
+  "singleton_weights": [11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11, 11],
+  "binary_clique_vertices": 60,
+  "binary_edge_weight": 1
+}
