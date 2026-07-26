@@ -17,7 +17,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1533.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1541.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -25,21 +25,21 @@ separate parameters throughout the current endpoint.
 ## Structural and spectral endpoint
 
 Every new physical triple has one absolute last-entering edge owner.  Product,
-wall, routing, host and envelope exits form a finite owner DAG.  After
-ordering owners topologically,
+wall, routing, host and envelope exits form a finite owner DAG.  After ordering
+owners topologically,
 
 \[
 \boxed{\rho(A)=\max_i\rho(A_{ii}).}
 \]
 
 Only genuinely recurrent same-owner blocks require numerical subcriticality.
-Finite response, finite resource use and structural descent are not by
-themselves potential improvement.
-
 Strict internal scaling, earlier-depth handoff, first token use, first private-
 edge use and ordinary structural exits are off-diagonal.  Once recurrent core
 blocks have rational certificates, all finite off-diagonal collateral glues
 constructively into one certificate `Av<v`.
+
+Finite response, finite resource use and structural descent are not by
+themselves potential improvement.
 
 ## Exact extension-free response law
 
@@ -101,97 +101,122 @@ destroyed parent credit remains open.
 
 ## Extension-free line cleaning
 
-Normalize `O` to the identity.  A Hall-cut core with source size `k` and target
-size `z=d-k+1` satisfies
+No Hall-cut blocker of `H_e` is a partial matching.  Therefore
 
 \[
-\boxed{|Q|\ge\min\{k,z\}+1.}
-\]
-
-A partial matching in the same rectangle has at most `min(k,z)` edges.
-Therefore no Hall-cut blocker is a partial matching and
-
-\[
-\boxed{
 \operatorname{PM}(H_e\setminus X)\ne\varnothing
-}
 \]
 
-for every partial matching `X subseteq E(H_e)`.
+for every allowed partial matching `X`.  Every nonaxis real line is a partial
+matching, so its complete allowed response trace can be deleted while the
+response continues to avoid both `O` and `e`.
 
-Every nonaxis line is a partial matching.  Its complete allowed response trace
-can therefore be deleted while continuing to avoid both `O` and `e`.  The
-resulting physical line contains only fixed opposite-layer cells and creates no
-new line-local collateral.  For a CMR1461 owner-labelled loaded line, the
-same-owner, same-line offspring coordinate has a policy row coefficient zero.
+The resulting response creates no new line-local collateral.  For a CMR1461
+owner-labelled loaded line, the same-owner, same-line offspring coordinate has
+policy coefficient zero.
 
-## Exact line-clean rook row
+## Exact and uniform line-clean rows
 
 Let `X` be the deleted line trace and put
 
 \[
-F=O\cup X\cup\{e\}.
+F=O\cup X\cup\{e\},
+\qquad
+D=O\cup X.
 \]
 
-The graph
+The graph `D` has maximum degree two and decomposes into alternating paths and
+even cycles.  Its rook polynomial factors by components.  If `e=uv`,
 
 \[
-D=O\cup X
-\]
-
-has maximum degree two and decomposes into alternating paths and even cycles.
-For a forbidden graph `J`, let
-
-\[
-\mathcal R_J(z)=\sum_jr_j(J)z^j
-\]
-
-be its rook polynomial.  Path and cycle factors satisfy
-
-\[
-P_0=1,
-\quad
-P_1=1+z,
-\quad
-P_\ell=P_{\ell-1}+zP_{\ell-2},
-\]
-
-\[
-C_\ell=P_{\ell-1}+zP_{\ell-3}.
-\]
-
-Writing `e=uv`, one target-edge deletion--contraction gives
-
-\[
-\boxed{
 \mathcal R_F(z)
 =
 \mathcal R_D(z)+z\mathcal R_{D-u-v}(z).
-}
 \]
 
-The exact line-clean response count is
+Thus
+
+\[
+N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
+\]
+
+and for every compatible rank-`r` prescription `P`,
+
+\[
+\Pr(P\subseteq R)
+=
+\frac{N_{d-r}(F/P)}{N_d(F)}.
+\]
+
+CMR1534--CMR1541 add one host-uniform denominator.  The allowed graph contains
+a spanning `(d-3)`-regular subgraph, so
 
 \[
 \boxed{
-N_d(F)=
-\sum_{j=0}^d(-1)^jr_j(F)(d-j)!>0.
+N_d(F)
+\ge
+ d!\left(\frac{d-3}{d}\right)^d.
 }
 \]
 
-For a compatible allowed prescription `P` of rank `r`,
+Put
+
+\[
+\kappa_d^{\rm line}
+=
+\left(\frac d{d-3}\right)^d.
+\]
+
+Then every rank-one through rank-three prescription satisfies
 
 \[
 \boxed{
 \Pr(P\subseteq R)
-=
-\frac{N_{d-r}(F/P)}{N_d(F)}.
+\le
+\frac{\kappa_d^{\rm line}}{(d)_r}.
 }
 \]
 
-Thus every remaining off-line collateral row is an explicit rational rook-
-class dot product.  Perfect-matching enumeration is unnecessary.  The open
-line-clean problem is now a host-uniform upper bound for that exact dot product.
+If `V_r^{off}` counts corrected off-line rank-`r` candidates and
+
+\[
+\mathcal C_{off}^{line}
+=
+\frac{V_1^{off}}d
++
+\frac{V_2^{off}}{(d)_2}
++
+\frac{V_3^{off}}{(d)_3},
+\]
+
+then
+
+\[
+\boxed{
+\mathbb E N_{off}(R)
+\le
+\kappa_d^{line}\mathcal C_{off}^{line}.
+}
+\]
+
+For `b` unavailable line-clean edges and current potential `m`,
+
+\[
+\kappa_d^{line}
+\left[
+\mathcal C_{off}^{line}
++
+\frac{(m+1)b}{d}
+\right]
+<
+D_S(e)
+\]
+
+forces one feasible strict-improvement response.
+
+The first line-clean numerical frontier is therefore explicit.  What remains is
+to prove this envelope, or the sharper exact component row, beats destroyed
+credit in every recurrent geometric class.
 
 ## Repeated-token atomic compression
 
@@ -199,9 +224,9 @@ Fix a nonroot token in an envelope `t=p^h`.  Once one persistent central edge is
 fixed, the exact pair and trace stocks are
 
 \[
-\boxed{(t-1)^2}
+(t-1)^2
 \qquad\text{and}\qquad
-\boxed{2(t-1)}.
+2(t-1).
 \]
 
 Choose integers `q,R>=1` and set
@@ -210,16 +235,10 @@ Choose integers `q,R>=1` and set
 \lambda=2Rq(t-1)^2.
 \]
 
-For `J` episodes each containing at least `H` unavailable token edges,
-CMR1518--CMR1525 give at least one of:
+For `J` episodes each containing at least `H` unavailable token edges, one gets
+at least one of:
 
-1. the finite bound
-   \[
-   J\le
-   \left\lfloor
-   \frac{(\lambda-1)t^2}{Hp^{2b}}
-   \right\rfloor;
-   \]
+1. an explicit finite episode bound;
 2. at least `R` reintroductions of one labelled edge, paying
    `R(p+1)(h-1)` exact token incidences;
 3. adaptive absorption of the persistent edge;
@@ -238,8 +257,9 @@ Fresh token-edge stock and successful absorption are not extra recurrent rows.
 
 ## Genuine current frontier
 
-1. **Line-clean inequality.**  Bound the exact component-rook dot product
-   uniformly by inherited line/height/carry classes.
+1. **Line-clean credit comparison.**  Prove the explicit uniform envelope, or a
+   sharper exact component-signature row, is below destroyed parent credit in
+   every recurrent geometric class.
 2. **Atomic token coefficients.**  Calibrate edge return, persistent paid-pair
    selection and fixed trace incidence against destroyed parent credit.
 3. **Root and fixed-interface rows.**  Certify recurrent root-channel,
@@ -268,15 +288,17 @@ Fresh token-edge stock and successful absorption are not extra recurrent rows.
 - A loaded response witnessing a large expectation need not itself be the
   minimum response.  Line cleaning removes its same-line coordinate but does
   not silently certify all off-line collateral.
+- The uniform line-clean envelope is a safe domination of the exact rook row;
+  it is not yet proved sharp enough for every host.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1533**, exact response probabilities,
+There is no complete proof.  Through **CMR1541**, exact response probabilities,
 owner weights, packed translations, private resources, transfer gluing, root
-channels, owner-disjoint packed/loaded bookkeeping, target-safe nonaxis line
-cleaning, atomic repeated-token compression and exact line-clean rook rows are
-proved.
+channels, owner-disjoint packed/loaded bookkeeping, target-safe line cleaning,
+atomic repeated-token compression, exact line-clean rook rows and a uniform
+line-clean permanent envelope are proved.
 
-The remaining obstruction is numerical: bound the exact line-clean dot product
-and atomic recurrent rows against destroyed credit, then complete the host-
-uniform quotient and CRT assembly.
+The remaining obstruction is numerical: compare the explicit line-clean and
+atomic recurrent rows with destroyed credit, then complete the host-uniform
+quotient and CRT assembly.
