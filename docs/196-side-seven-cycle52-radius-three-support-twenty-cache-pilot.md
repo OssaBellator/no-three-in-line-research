@@ -199,14 +199,22 @@ support-twenty selectors, the `(5,2)` canonical class, universal
 
 ## 5. Verification
 
-Compile and run
+Compile and run the reuse census:
+
+```bash
+g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_reuse.cpp \
+  -o /tmp/side7_c52_r3_s20_reuse
+/tmp/side7_c52_r3_s20_reuse
+```
+
+Compile and run the shared-top coordinate verifier:
 
 ```bash
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_cache.cpp \
   -o /tmp/side7_c52_r3_s20_cache
 
-/tmp/side7_c52_r3_s20_cache census
 /tmp/side7_c52_r3_s20_cache interleaved
 for orientation in 0 2; do
   for shard in {0..15}; do
@@ -215,7 +223,8 @@ for orientation in 0 2; do
 done
 ```
 
-The census regenerates `L_1,L_2,C_20`, checks all incidence, signature, and
-greedy-cover counts, and identifies the recorded 46-selector signature class.
-The coordinate cases regenerate the exact clean top orders and assert every
-recorded shared bottom-CSP node total using integer collinearity on `[14]^2`.
+The reuse census regenerates `L_1,L_2,C_20`, checks all incidence, signature,
+and greedy-cover counts, and identifies the recorded 46-selector signature
+class.  The coordinate cases regenerate the exact clean top orders and assert
+every recorded shared bottom-CSP node total using integer collinearity on
+`[14]^2`.
