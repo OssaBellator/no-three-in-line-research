@@ -2,11 +2,9 @@
 
 CMR755--CMR762 convert one saturated protected-line reserve into a current
 saturated state in which many historical target signatures are globally absent.
-This chapter supplies the temporal bookkeeping. A neutralised signature is not
-fresh on its next occurrence: one of its recorded absent cells must have returned.
-Across repeated reserve-saturation episodes, either a finite owner-labelled
-certificate stock is permanently retired or one exact physical cell is
-reintroduced many times.
+The temporal accounting must use physical **absence runs**. Several
+neutralisations made while one cell stays continuously absent may share the same
+later return, so raw episode-to-return charging would overcount.
 
 Fix one closure-envelope epoch of side `q`. Let `U_E` be the union of the two
 invariant layer boards over the envelope. Then
@@ -29,10 +27,8 @@ episode the key is accompanied by a nonempty witness set
 W\subseteq P
 \]
 
-whose physical cells are globally absent in the neutralising state. In the
-compatible-pair branch `W=P`; in a wall or repeated-cell branch `W` may be one
-chosen cell. The witness set is episode data, not part of the finite certificate
-key.
+whose cells are globally absent in the neutralising state. The witness set is
+episode data, not part of the finite certificate key.
 
 ## 1. Finite owner-labelled certificate stock
 
@@ -41,218 +37,216 @@ key.
 At one envelope epoch, the number of neutralisation certificate keys is at most
 
 \[
-\boxed{
-S(q)=6\binom{2q^2}{3}.
-}
+\boxed{S(q)=6\binom{2q^2}{3}.}
 \]
 
 ### Proof
 
 Every target triple is a three-cell subset of `U_E`, giving at most
-`binom(2q^2,3)` physical target signatures. For a fixed triple there are at most
-two chosen layer labels and three unordered target pairs. Multiplying gives the
-displayed coarse stock. ∎
-
-The factor six deliberately keeps the layer owner; it avoids identifying two
-historical uses of the same physical triple with different layer assignments.
+`binom(2q^2,3)` physical signatures. A fixed triple has at most two layer labels
+and three unordered pairs. ∎
 
 ## 2. Neutralisation is permanent until a witness returns
 
 ### Theorem CMR764 -- PROVED
 
-Let `sigma=(owner,T,ell,P)` be neutralised in a state `S_0` with witness set
-`W subseteq P`, so every cell of `W` is absent from `S_0`.
+Let a certificate key be neutralised in state `S_0` with witness set `W`.
 
-1. As long as every cell of `W` remains absent, the exact target `T` cannot occur.
-2. If `T` occurs later, every cell of `W` has undergone an absent-to-present
-   transition after `S_0`.
-3. In particular, a one-cell certificate pays at least one reintroduction and a
-   compatible two-cell certificate pays at least two distinct reintroductions
-   before its target can recur.
+1. As long as one cell of `W` remains absent, the exact target cannot occur.
+2. If the target occurs later, every cell of `W` has undergone an
+   absent-to-present transition after `S_0`.
+3. A one-cell certificate therefore requires one return, while a compatible
+   two-cell certificate requires both distinct cells to return before recurrence.
 
 ### Proof
 
-The witness set is a subset of the stored target pair and hence of `T`. An
-occurrence of `T` requires every target cell to be selected. Every witness was
-absent at `S_0`, so it must return before or at the first later occurrence. The
-two cells of a compatible pair are distinct. ∎
-
-A certificate which never returns is genuinely retired target stock.
+The witness set is contained in the stored target pair and hence in the target.
+Every witness is absent in `S_0`, while a later target occurrence contains every
+one of its cells. ∎
 
 ## 3. Canonical fresh-certificate discipline
 
 ### Theorem CMR765 -- PROVED
 
 There is a canonical accounting in which an owner-labelled certificate key is
-charged as fresh at most once.
+charged as fresh at most once while it remains inactive.
 
 After its first neutralisation, exactly one of the following happens before it
-can be charged again.
+can be selected as fresh again.
 
-1. It remains absent forever in the epoch and consumes one unit of the finite
-   stock `S(q)`.
-2. Its target recurs, and CMR764 records the required witness-cell
-   reintroduction before any later neutralisation of the same certificate.
-3. The envelope or host owner changes, and the certificate enters a new owner
-   namespace already charged by the finite envelope and owner ledgers.
+1. It remains inactive for the rest of the epoch and consumes one unit of
+   `S(q)`.
+2. Its target recurs, and CMR764 records the required witness returns.
+3. The owner changes and the key enters a new owner namespace already charged by
+   the finite owner ledgers.
 
 ### Proof
 
-Order certificate keys lexicographically. Mark a key retired at its first
-neutralisation and do not call it fresh again while it remains inactive. If it
-becomes active, CMR764 supplies the return payment. If the owner changes, retain
-the physical signature but replace the owner label, which is exactly the owner
-transition already counted elsewhere. ∎
+Order the keys lexicographically. Mark a key retired at its first
+neutralisation, and do not select it again while any recorded witness remains
+absent. Reactivation requires the returns in CMR764. ∎
 
-Thus repeated line discovery cannot silently recycle the same historical target.
+This discipline prevents repeated selection of the same historical target during
+one continuous witness absence.
 
-## 4. Distinct-witness episode packing
+## 4. Cell--absence-run slots
 
-Consider `K` neutralisation episodes at the same epoch owner. Suppose episode
-`j` records a family of certificates with `w_j` pairwise distinct absent witness
-cells, and every recorded certificate in that family later recurs.
+For a physical cell `e`, let `rho(e)` be its number of maximal absence runs in
+the epoch and let `I(e)` be its number of absent-to-present returns.
 
 ### Theorem CMR766 -- PROVED
 
-For every integer `lambda>=2`, at least one of the following holds.
+One has
 
-1. One exact physical witness cell is reintroduced in at least `lambda`
-   certificate returns.
-2. The total witness mass satisfies
+\[
+\boxed{\rho(e)\le1+I(e).}
+\]
 
-   \[
-   \boxed{
-   \sum_{j=1}^{K}w_j
-   \le
-   (\lambda-1)2q^2.
-   }
-   \]
-
-If every episode has `w_j>=W>=1`, then
+Consequently the total number of cell--absence-run slots in the epoch satisfies
 
 \[
 \boxed{
-K\le
+\sum_{e\in U_E}\rho(e)
+\le
+2q^2+\sum_{e\in U_E}I(e).
+}
+\]
+
+If no cell is reintroduced `lambda` times, then
+
+\[
+\boxed{
+\sum_{e\in U_E}\rho(e)
+\le
+2\lambda q^2.
+}
+\]
+
+### Proof
+
+The first inequality is CMR519. Sum over at most `2q^2` cells. If every
+`I(e)<=lambda-1`, then the total return count is at most
+`(lambda-1)2q^2`. ∎
+
+The slot, not the episode, is the correct unit for persistent neutralisation.
+
+## 5. A run slot carries only finite fresh certificate stock
+
+### Theorem CMR767 -- PROVED
+
+Fix one cell `e` and one maximal absence run `R` of that cell. Under the fresh
+certificate discipline, at most
+
+\[
+\boxed{S(q)}
+\]
+
+neutralisation incidences can use `e` as a witness during `R`.
+
+More generally, if `K` neutralisation episodes each record at least `W>=1`
+pairwise distinct witness cells, then
+
+\[
+\boxed{
+KW
+\le
+S(q)
+\sum_{e\in U_E}\rho(e).
+}
+\]
+
+Hence, unless one cell is reintroduced at least `lambda` times,
+
+\[
+\boxed{
+K
+\le
 \left\lfloor
-\frac{(\lambda-1)2q^2}{W}
+\frac{2\lambda q^2 S(q)}{W}
 \right\rfloor.
 }
 \]
 
 ### Proof
 
-CMR764 assigns at least one absent-to-present occurrence to every distinct
-recorded witness cell in each episode. There are at most `2q^2` physical cells
-in the epoch universe. If no cell receives `lambda` incidences, each receives at
-most `lambda-1`. Double counting gives the first bound; divide by `W` for the
-second. ∎
+A fixed certificate key cannot be selected twice as fresh while `e` remains
+continuously absent: after its first selection it is inactive, and reactivation
+would require `e` to return, ending the run. Thus the incidences attached to one
+cell--run slot have distinct keys and are bounded by `S(q)`.
 
-For a compatible pair bank of size `R`, one may take `w_j=2R`. For a wall branch
-with `C-2` distinct witnesses, one may take `w_j=C-2`.
+Double-count the episode witness incidences over cell--run slots. Apply CMR766 for
+the final bound. ∎
 
-## 5. Permanent retirement or paid episode history
+For a compatible pair bank of size `R`, one may take `W=2R`. For a distinct-cell
+wall branch one may take `W=C-2` when this is positive.
 
-Assume every neutralisation episode is built using the fresh-certificate
-discipline CMR765. Fix `W>=1`, and suppose each episode either
-
-- permanently retires at least one fresh certificate; or
-- has at least `W` distinct witness cells attached to certificates which later
-  recur.
-
-### Theorem CMR767 -- PROVED
-
-For every integer `lambda>=2`, at least one of the following holds.
-
-1. One exact witness cell is reintroduced in at least `lambda` returns.
-2. The number of episodes is at most
-
-   \[
-   \boxed{
-   K
-   \le
-   S(q)
-   +
-   \left\lfloor
-   \frac{(\lambda-1)2q^2}{W}
-   \right\rfloor.
-   }
-   \]
-
-### Proof
-
-Charge an episode with a permanently retired certificate to the first such key
-in the fixed order. CMR765 makes those charges injective, so there are at most
-`S(q)` of them. Every remaining episode is paid by at least `W` distinct
-reintroduced witness cells, and CMR766 bounds their number unless one cell
-recurs `lambda` times. ∎
-
-This bound allows an episode to contain both permanent and returning
-certificates; one permanent certificate is enough to use the finite-stock charge.
-
-## 6. Repeated-cell stars have the same temporal endpoint
+## 6. Repeated-cell stars use the same run ledger
 
 A repeated-cell target star from CMR757 has one cell `z` belonging to many stored
-target-pair signatures. CMR758 makes `z` globally absent.
+signatures. CMR758 makes `z` globally absent.
 
 ### Theorem CMR768 -- PROVED
 
-Across `K` repeated-cell-star neutralisation episodes at one epoch owner, for
-every `lambda>=2`, at least one of the following holds.
+Across `K` repeated-cell-star neutralisation episodes at one epoch owner,
 
-1. One exact physical star cell is reintroduced in at least `lambda` episodes.
-2. One has
+\[
+\boxed{
+K
+\le
+S(q)
+\sum_{e\in U_E}\rho(e).
+}
+\]
 
-   \[
-   \boxed{K\le S(q)+(\lambda-1)2q^2.}
-   \]
+In particular, for every `lambda>=2`, either one star cell is reintroduced in at
+least `lambda` absence runs or
+
+\[
+\boxed{K\le2\lambda q^2S(q).}
+\]
 
 ### Proof
 
-In each episode, if none of the neutralised star targets ever returns, charge one
-fresh certificate key permanently. Otherwise the common cell `z` must return by
-CMR764. There are at most `S(q)` permanent charges. If no cell returns in
-`lambda` episodes, the at most `2q^2` possible star cells supply at most
-`(lambda-1)2q^2` further episode charges. ∎
+Charge each episode to its globally absent star cell and the absence run
+containing that episode. The fresh discipline makes the attached certificate
+keys distinct within one slot, so CMR767 applies with one witness per episode.
+Use CMR766 for the threshold form. ∎
 
-A single return of `z` may permit several stored targets to become active, but it
-is still one exact owner-cell reintroduction and is not counted as fresh stock.
+One return of `z` may reactivate several target signatures. It is counted once,
+through the end of one absence run, exactly as required.
 
-## 7. Exact token and absence-run payment
+## 7. Exact token payment and corrected endpoint
 
 ### Theorem CMR769 -- PROVED
 
 Suppose one physical witness cell `e` is reintroduced `r` times in an ambient
 prime-power parent of side `p^h`. Then
 
-1. the `r` returns contribute `r` entering-edge incidences;
+1. the returns contribute `r` entering-edge incidences;
 2. their exact labelled nonroot full-token incidence is
 
    \[
    \boxed{r(p+1)(h-1);}
    \]
 
-3. if `rho(e)` is the number of maximal absence runs and `I(e)` the number of
-   absent-to-present returns, then
+3. they create at most `r+1` absence runs of `e`.
 
-   \[
-   \boxed{\rho(e)\le1+I(e).}
-   \]
+Consequently repeated protected-reserve saturation in one fixed envelope reaches
+one of:
 
-Consequently repeated reserve saturation in one fixed envelope reaches one of:
-
-- finite permanent target-certificate retirement;
-- finite distinct-witness episode stock;
-- one recurrent physical witness cell with exact token payment;
+- finitely many cell--absence-run slots, each carrying at most `S(q)` fresh
+  certificate keys;
+- one physical cell with many distinct reintroduction runs and exact token
+  payment;
 - matching-preserving deletion or returned-edge ancestry for that cell;
 - strict contraction, owner change, envelope expansion, or potential
   improvement.
 
 ### Proof
 
-The incidence statements are CMR413 and CMR519 applied with multiplicity. Combine
-CMR763--CMR768 with the recurrent-target deletion and returned-edge alternatives
-CMR713--CMR747. ∎
+The token incidence is CMR413 and the run count is CMR519. Combine
+CMR763--CMR768 with CMR713--CMR747. ∎
 
-No all-`n` theorem is claimed. The certificate-stock, retirement, witness
-incidence, episode-packing, and star-history arithmetic are checked in
+No all-`n` theorem is claimed. The certificate stock, absence-run slots, fresh-key
+capacity, episode bounds, and token arithmetic are checked in
 [`scripts/verify_prime_power_neutralized_pair_temporal_ledger.py`](../scripts/verify_prime_power_neutralized_pair_temporal_ledger.py).
