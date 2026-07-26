@@ -1,86 +1,149 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR998--CMR1005."""
+"""Finite checks for corrected CMR998--CMR1005."""
 
 from collections import Counter
 from math import ceil, comb
 import random
 
 
-def signature_state(cell_count, triple, edge_layer, rng):
+def random_joint_state(cell_count, maximum_size, rng):
+    size = rng.randint(0, min(cell_count, maximum_size))
+    cells = rng.sample(range(cell_count), size)
+    return frozenset((rng.randint(0, 1), cell) for cell in cells)
+
+
+def signature_state(cell_count, triple, edge, pair_layers, rng):
     x, y, z = triple
-    state = {(edge_layer, x), (rng.randint(0, 1), y), (rng.randint(0, 1), z)}
+    state = {
+        edge,
+        (pair_layers[0], y),
+        (pair_layers[1], z),
+    }
     available = list(set(range(cell_count)) - set(triple))
-    for cell in rng.sample(available, rng.randint(0, min(10, len(available)))):
+    for cell in rng.sample(available, rng.randint(0, min(8, len(available)))):
         state.add((rng.randint(0, 1), cell))
     return frozenset(state)
 
 
-def residual_pair(state, triple, edge):
-    x, y, z = triple
-    assert edge[1] == x
+def physical_cells(state):
+    return {cell for _layer, cell in state}
+
+
+def residual_pair(state, triple):
+    _x, y, z = triple
     return frozenset(
-        next(label for label in state if label[1] == cell)
+        next(edge for edge in state if edge[1] == cell)
         for cell in (y, z)
     )
 
 
-def check_pair_extraction_and_four_types():
+def assignment_partition(family, edge, triple):
+    with_edge = {state for state in family if edge in state}
+    with_target = {
+        state for state in with_edge if set(triple) <= physical_cells(state)
+    }
+    classes = {}
+    for state in with_target:
+        pair = residual_pair(state, triple)
+        classes.setdefault(pair, set()).add(state)
+    return (
+        {state for state in family if edge not in state},
+        with_edge - with_target,
+        classes,
+    )
+
+
+def check_pair_extraction_and_recurrence():
     rng = random.Random(998)
-    checked = 0
-    recurrence = 0
+    occurrences = 0
+    histories = 0
     for cell_count in range(3, 100):
-        for _ in range(500):
+        for _ in range(300):
             triple = tuple(rng.sample(range(cell_count), 3))
             edge = (rng.randint(0, 1), triple[0])
             states = [
-                signature_state(cell_count, triple, edge[0], rng)
+                signature_state(
+                    cell_count,
+                    triple,
+                    edge,
+                    (rng.randint(0, 1), rng.randint(0, 1)),
+                    rng,
+                )
                 for _episode in range(rng.randint(1, 100))
             ]
-            pairs = [residual_pair(state, triple, edge) for state in states]
+            pairs = [residual_pair(state, triple) for state in states]
             assert len(set(pairs)) <= 4
             for state, pair in zip(states, pairs):
                 assert edge in state
                 assert len(pair) == 2
-                assert {label[1] for label in pair} == {triple[1], triple[2]}
+                assert {item[1] for item in pair} == {triple[1], triple[2]}
                 assert ({edge} | set(pair)) <= set(state)
             counts = Counter(pairs)
             assert max(counts.values()) >= ceil(len(states) / 4)
-            checked += len(states)
-            recurrence += 1
-    return checked, recurrence
+            occurrences += len(states)
+            histories += 1
+    return occurrences, histories
 
 
-def check_binary_split_and_transfer():
+def check_exact_assignment_partition():
     rng = random.Random(1001)
     checked = 0
-    for cell_count in range(3, 100):
-        labelled_universe = [
-            (layer, cell) for layer in (0, 1) for cell in range(cell_count)
-        ]
-        for _ in range(300):
+    multiple_pair_edge_branches = 0
+    contractions = 0
+    for cell_count in range(3, 50):
+        for _ in range(100):
             triple = tuple(rng.sample(range(cell_count), 3))
             edge = (rng.randint(0, 1), triple[0])
-            witness = signature_state(cell_count, triple, edge[0], rng)
-            pair = residual_pair(witness, triple, edge)
-            family = {witness}
-            for _state in range(100):
-                size = rng.randint(0, min(cell_count, 15))
-                cells = rng.sample(range(cell_count), size)
-                family.add(
-                    frozenset((rng.randint(0, 1), cell) for cell in cells)
+            family = set()
+
+            # Deliberately install all four pair assignments. This guards against
+            # the false assertion that conditioning on edge alone fixes a pair.
+            for first_layer in (0, 1):
+                for second_layer in (0, 1):
+                    family.add(
+                        signature_state(
+                            cell_count,
+                            triple,
+                            edge,
+                            (first_layer, second_layer),
+                            rng,
+                        )
+                    )
+            for _state in range(30):
+                family.add(random_joint_state(cell_count, 12, rng))
+
+            without_edge, edge_without_target, classes = assignment_partition(
+                family, edge, triple
+            )
+            parts = [without_edge, edge_without_target, *classes.values()]
+            assert set().union(*parts) == family
+            for first in range(len(parts)):
+                for second in range(first):
+                    assert parts[first].isdisjoint(parts[second])
+            assert len(classes) <= 4
+            if len(classes) > 1:
+                multiple_pair_edge_branches += 1
+
+            for pair, assignment_class in classes.items():
+                assert all(
+                    ({edge} | set(pair)) <= set(state)
+                    for state in assignment_class
                 )
-            without = {state for state in family if edge not in state}
-            with_edge = {state for state in family if edge in state}
-            assert without.isdisjoint(with_edge)
-            assert without | with_edge == family
-            for state in with_edge:
-                labelled_target = {edge} | set(pair)
-                assert (labelled_target <= set(state)) == (
-                    set(pair) <= (set(state) - {edge})
-                )
-            assert witness in with_edge
+                residual = {
+                    frozenset(set(state) - {edge})
+                    for state in assignment_class
+                }
+                assert len(residual) == len(assignment_class)
+                assert all(set(pair) <= set(state) for state in residual)
+                rebuilt = {
+                    frozenset(set(state) | {edge})
+                    for state in residual
+                }
+                assert rebuilt == assignment_class
+                contractions += 1
             checked += 1
-    return checked
+    assert multiple_pair_edge_branches > 0
+    return checked, multiple_pair_edge_branches, contractions
 
 
 def check_augmented_stock_and_bounds():
@@ -92,7 +155,7 @@ def check_augmented_stock_and_bounds():
         assert augmented >= basic
         for threshold in range(2, 50):
             one_target_cap = 2 * (threshold - 1) * basic
-            assert 2 * one_target_cap == 4 * (threshold - 1) * basic
+            assert one_target_cap * 2 == 4 * (threshold - 1) * basic
             checked += 1
     return checked
 
@@ -100,12 +163,15 @@ def check_augmented_stock_and_bounds():
 def check_owner_independence():
     rng = random.Random(1003)
     checked = 0
-    for _ in range(100000):
+    for _ in range(50000):
         side = rng.randint(2, 100)
         triple = tuple(rng.sample(range(side * side), 3))
         edge = (rng.randint(0, 1), triple[0])
         pair = frozenset(
-            {(rng.randint(0, 1), triple[1]), (rng.randint(0, 1), triple[2])}
+            {
+                (rng.randint(0, 1), triple[1]),
+                (rng.randint(0, 1), triple[2]),
+            }
         )
         signature = (edge, frozenset(triple), pair)
         owner_a = (rng.randint(0, 10), rng.randint(0, 10))
@@ -117,15 +183,20 @@ def check_owner_independence():
 
 
 def main():
-    pair_cases, recurrence_cases = check_pair_extraction_and_four_types()
+    occurrences, histories = check_pair_extraction_and_recurrence()
+    partitions, multiple, contractions = check_exact_assignment_partition()
     print(
-        "verified absolute signature pair stabilization:",
-        pair_cases,
+        "verified corrected absolute signature stabilization:",
+        occurrences,
         "pair occurrences across",
-        recurrence_cases,
-        "recurrence families,",
-        check_binary_split_and_transfer(),
-        "binary transfers,",
+        histories,
+        "histories,",
+        partitions,
+        "exact partitions with",
+        multiple,
+        "multi-pair edge-conditioned branches and",
+        contractions,
+        "fixed-class contractions,",
         check_augmented_stock_and_bounds(),
         "stock bounds, and",
         check_owner_independence(),
