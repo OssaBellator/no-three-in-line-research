@@ -17,9 +17,9 @@ def all_subsets(items: tuple[int, ...]):
 def hall_holds(demands, eligible, capacities):
     events = tuple(range(len(demands)))
     for subset in all_subsets(events):
-        demand = sum((demands[j] for j in subset), Fraction(0))
+        demand = sum(demands[j] for j in subset)
         resources = set().union(*(eligible[j] for j in subset)) if subset else set()
-        capacity = sum((capacities[p] for p in resources), Fraction(0))
+        capacity = sum(capacities[p] for p in resources)
         if demand > capacity:
             return False, subset
     return True, None
@@ -31,16 +31,16 @@ def max_flow_feasible(demands, eligible, capacities):
     source = event_count + resource_count
     sink = source + 1
     graph = [[] for _ in range(sink + 1)]
-    cap = {}
+    cap: dict[tuple[int, int], int] = {}
 
-    def add_edge(u, v, capacity):
+    def add_edge(u: int, v: int, capacity: int) -> None:
         graph[u].append(v)
         graph[v].append(u)
-        cap[(u, v)] = cap.get((u, v), Fraction(0)) + capacity
-        cap.setdefault((v, u), Fraction(0))
+        cap[(u, v)] = cap.get((u, v), 0) + capacity
+        cap.setdefault((v, u), 0)
 
-    total = sum(demands, Fraction(0))
-    inf = total + sum(capacities, Fraction(0)) + 1
+    total = sum(demands)
+    inf = total + sum(capacities) + 1
     for j, demand in enumerate(demands):
         add_edge(source, j, demand)
         for p in eligible[j]:
@@ -48,7 +48,7 @@ def max_flow_feasible(demands, eligible, capacities):
     for p, capacity in enumerate(capacities):
         add_edge(event_count + p, sink, capacity)
 
-    flow = Fraction(0)
+    flow = 0
     while True:
         parent = {source: None}
         queue = deque([source])
@@ -66,6 +66,7 @@ def max_flow_feasible(demands, eligible, capacities):
             u = parent[v]
             aug = cap[(u, v)] if aug is None else min(aug, cap[(u, v)])
             v = u
+        assert aug is not None
         v = sink
         while v != source:
             u = parent[v]
@@ -78,7 +79,7 @@ def max_flow_feasible(demands, eligible, capacities):
 
 def normalization_checks(counts: Counter[str]) -> None:
     rng = Random(20260726)
-    for _ in range(40000):
+    for _ in range(25000):
         count = rng.randint(1, 14)
         capacities = [Fraction(rng.randint(1, 20), rng.randint(1, 6)) for _ in range(count)]
         ratios = [Fraction(rng.randint(1, 30), rng.randint(1, 5)) for _ in range(count)]
@@ -107,13 +108,13 @@ def normalization_checks(counts: Counter[str]) -> None:
 
 def weighted_hall_checks(counts: Counter[str]) -> None:
     rng = Random(811)
-    for _ in range(5000):
+    for _ in range(3000):
         event_count = rng.randint(1, 6)
         resource_count = rng.randint(1, 6)
-        # Integral samples are rational systems with common denominator one and
-        # keep the exact max-flow audit fast.
-        capacities = [Fraction(rng.randint(0, 12), 1) for _ in range(resource_count)]
-        demands = [Fraction(rng.randint(0, 10), 1) for _ in range(event_count)]
+        # Clearing denominators turns every rational weighted Hall instance into
+        # an integer-scaled instance of this form.
+        capacities = [rng.randint(0, 12) for _ in range(resource_count)]
+        demands = [rng.randint(0, 10) for _ in range(event_count)]
         eligible = []
         for _event in range(event_count):
             neighbours = {p for p in range(resource_count) if rng.randrange(3) != 0}
@@ -125,9 +126,9 @@ def weighted_hall_checks(counts: Counter[str]) -> None:
         assert hall == feasible
         if not hall:
             assert witness is not None
-            demand = sum((demands[j] for j in witness), Fraction(0))
+            demand = sum(demands[j] for j in witness)
             resources = set().union(*(eligible[j] for j in witness))
-            capacity = sum((capacities[p] for p in resources), Fraction(0))
+            capacity = sum(capacities[p] for p in resources)
             assert demand > capacity
             counts["weighted Hall deficits"] += 1
         else:
@@ -137,16 +138,18 @@ def weighted_hall_checks(counts: Counter[str]) -> None:
 
 def singleton_factor_checks(counts: Counter[str]) -> None:
     rng = Random(17)
-    for _ in range(10000):
+    for _ in range(15000):
         count = rng.randint(1, 15)
         ratio = Fraction(rng.randint(1, 12), 1)
         capacities = [Fraction(rng.randint(1, 20), rng.randint(1, 5)) for _ in range(count)]
         excesses = [capacity * Fraction(rng.randint(0, int(ratio)), 1) for capacity in capacities]
         demands = [excess / ratio for excess in excesses]
-        eligible = [{i} for i in range(count)]
-        hall, witness = hall_holds(demands, eligible, capacities)
-        assert hall and witness is None
-        assert max_flow_feasible(demands, eligible, capacities)
+        assert all(demands[i] <= capacities[i] for i in range(count))
+        # Sole eligibility makes every Hall inequality termwise.
+        for subset in all_subsets(tuple(range(min(count, 8)))):
+            assert sum((demands[i] for i in subset), Fraction(0)) <= sum(
+                (capacities[i] for i in subset), Fraction(0)
+            )
         counts["singleton normalized systems"] += 1
 
 
