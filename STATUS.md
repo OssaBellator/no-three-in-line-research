@@ -17,7 +17,7 @@ The authoritative collision-free ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1461.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1469.
 
 CMR1414--CMR1461 was deliberately reindexed after concurrent branch work had
 already occupied CMR1374--CMR1413.  The obsolete colliding draft files were
@@ -274,6 +274,57 @@ D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2
 exact primitive directions.  Therefore a heavy simultaneous signature
 concentrates quantitatively on one real line through the owner.
 
+## Fractional packed signature endpoint
+
+The dual of the candidate-transversal LP assigns masses `z_T` satisfying
+
+\[
+z_T\ge0,
+\qquad
+\sum_{T:a\in P_T}z_T\le1
+\]
+
+on every residual response edge.  Every candidate contributes exactly two
+eligible owner-partner incidences.  If `nu=sum_T z_T`, then
+
+\[
+\boxed{
+\sum_\sigma\mu_\sigma=2\nu.
+}
+\]
+
+At a positive minimum, every exempt family below the destroyed-load threshold
+has `nu>=(n-2)/3`.  Consequently one prime-power signature has packed incidence
+mass at least
+
+\[
+\boxed{
+\frac{n-2}
+{3k(p+1)(1+\lfloor\log_2(n-1)\rfloor)}.
+}
+\]
+
+A signature of mass `mu` uses at least `ceil(mu)` distinct ordered
+owner-partner pairs and at least `ceil(mu/2)` distinct owners.  In the response
+partner branch it also uses at least `ceil(mu)` distinct residual response
+edges.
+
+After partitioning by actual primitive direction and signed scale, one exact
+lattice displacement class has mass at least
+
+\[
+\boxed{
+\frac{\mu}
+{2D_p(H)\left\lfloor(n-1)/(p^sH)\right\rfloor}.
+}
+\]
+
+Thus the global fractional obstruction contains a translated bank of
+owner-partner pairs with one first-separation depth, one projective direction,
+one height band and one exact displacement vector.  This is distinct from the
+one-owner loaded-line class: it is dispersed across owners but arithmetically
+identical.
+
 ## Corrections retained
 
 - Sequential two-layer rematching may reoccupy an old first-layer cell.
@@ -294,21 +345,25 @@ concentrates quantitatively on one real line through the owner.
 
 ## Current open frontier
 
-1. **Loaded-signature execution inequality.**  Quantify the target reduction or
-   structural payment obtained from the simultaneous carry-cell fan or loaded
-   line forced by CMR1458--CMR1461.
-2. **Subcritical same-owner quotient.**  Encode that comparison as a
+1. **Packed exact-displacement payment.**  Quantify prefix-return,
+   quotient/carry or protected-reserve payment for the CMR1469 translated
+   owner-partner bank.
+2. **Loaded-line comparison.**  Compare that global payment with the one-owner
+   simultaneous line gain forced by CMR1458--CMR1461.
+3. **Subcritical same-owner quotient.**  Encode the comparison as a
    host-uniform rational or integer certificate `Av<v`.
-3. **Prime-field and thin regimes.**  Prove the analogous diagonal certificate
+4. **Prime-field and thin regimes.**  Prove the analogous diagonal certificate
    without a nonroot prefix-depth budget.
-4. **Arbitrary side lengths.**  Glue the diagonal blocks through owner
+5. **Arbitrary side lengths.**  Glue the diagonal blocks through owner
    triangularity and complete balanced/CRT assembly with collision/local-line
    credit classes retained.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1461**, matching probabilities,
-canonical owner weights, cross-line assignment, lattice-capacity reduction and
-prime-power carry signatures are exact.  The remaining obstruction is the
-quantitative gain from executing one heavy eligible signature class, not an
-uncontrolled recurrence, product interaction or anonymous line maximum.
+There is no complete proof.  Through **CMR1469**, matching probabilities,
+canonical owner weights, cross-line assignment, lattice-capacity reduction,
+prime-power carry signatures and the global fractional packed-signature
+extraction are exact.  The remaining obstruction is the quantitative payment
+for one arithmetically identical exact-displacement translation bank and its
+comparison with the one-owner loaded-line execution gain, not an uncontrolled
+recurrence, product interaction or anonymous line maximum.
