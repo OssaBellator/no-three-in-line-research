@@ -78,7 +78,7 @@ For every globally compatible labelled cylinder `F` of rank `s` with
 }
 \]
 
-In particular, for ranks at most three and `L>=2`,
+In particular, for `s<=min{3,L}` and `L>=2`,
 
 \[
 \boxed{
@@ -88,13 +88,13 @@ In particular, for ranks at most three and `L>=2`,
 }
 \]
 
-Thus in AC5's `K/p` notation with partner scale `p=N`, the uniform dense-host
-menu is rank-three spread with
+When `L>=3`, the uniform dense-host menu is rank-three spread in AC5's
+`K/p` notation with partner scale `p=N` and
 
 \[
 \boxed{
-K_{\rm dense}=\frac{N}{L-1}
-=\frac{N}{2d_{\min}-N-4}.
+K_{\rm dense}=rac{N}{L-1}
+=rac{N}{2d_{\min}-N-4}.
 }
 \]
 
@@ -106,7 +106,7 @@ at most one, giving probability at most `1/(L+1)`.  For a compatible ordered
 cylinder, expose its edges successively.  After `t` prescribed edges have been
 fixed, discard at most `t` switch rows to preserve them.  The next conditional
 probability is at most `1/(L-t+1)`.  Multiplication gives `1/(L+1)_s`.  For
-`s<=3`, every falling-factorial term is at least `L-1`. QED.
+`s<=min{3,L}`, every falling-factorial term is at least `L-1`. QED.
 
 The theorem is state-normalized: no regularity of the number of switches across
 flawed states is required.
@@ -137,7 +137,7 @@ If
 then `Omega_2(G)` is nonempty.  If moreover
 
 \[
-N-2h-4>0,
+N-2h\ge6,
 \]
 
 then every compatible labelled cylinder of rank at most three satisfies
@@ -150,7 +150,7 @@ then every compatible labelled cylinder of rank at most three satisfies
 }
 \]
 
-Equivalently the AC5 spread constant may be taken as
+Equivalently the rank-three AC5 spread constant may be taken as
 
 \[
 \boxed{
@@ -161,7 +161,7 @@ K_{\rm hole}
 \]
 
 For `h<=cN` with fixed `c<1/2`, this is bounded by
-`(1-2c-o(1))^{-1}`.
+`(1-2c-o(1))^{-1}` once `N` is large enough for the rank-three condition.
 
 ### Proof
 
@@ -169,17 +169,18 @@ Every vertex loses at most `h` incident edges, giving the degree bound and hence
 the lower bound for `L`.  Under the uniform complete two-layer measure, one
 specified cell appears in exactly one of the two layers with probability `2/N`.
 A union bound shows positive probability of avoiding all `h` holes when
-`2h<N`; therefore `Omega_2(G)` is nonempty.  Apply AC5v. QED.
+`2h<N`; therefore `Omega_2(G)` is nonempty.  The condition `N-2h>=6` gives
+`L>=3`.  Apply AC5v. QED.
 
 The total-hole estimate is safe rather than sharp.  Per-row and per-column hole
 caps give the stronger direct value of `d_min`.
 
 ## AC5x -- direct substitution into the AC5 event audit -- PROVED
 
-Assume one complete AC menu is exactly `Omega_2(G)` and every possible current-
-or protected-band created triple has a complete labelled-cylinder inventory of
-rank two or three.  In AC5l--AC5t, replace the externally supplied spread
-constant by
+Assume `L>=3`, one complete AC menu is exactly `Omega_2(G)`, and every possible
+current- or protected-band created triple has a complete labelled-cylinder
+inventory of rank two or three.  In AC5l--AC5t, replace the externally supplied
+spread constant by
 
 \[
 K=K_{\rm dense}.
@@ -208,7 +209,7 @@ of one host, AC5 no longer needs a separately constructed spread law.  It is
 enough to prove:
 
 1. nonemptiness of the two-layer host space;
-2. a minimum-degree or sparse-hole bound;
+2. a minimum-degree or sparse-hole bound with `L>=3`;
 3. complete rank-two and rank-three geometric event inventories;
 4. the numerical AC5t inequality.
 
@@ -228,6 +229,5 @@ geometric inventory or local-dependency frontiers.
 
 `scripts/verify_ac_dense_host_spread_import.py` enumerates ordered edge-disjoint
 perfect-matching pairs in complete and small hole-deleted bipartite hosts.  It
-checks the four-cycle forward-degree bound, unique reverse predecessor, exact
-rank-one probabilities and all compatible cylinder inequalities through rank
-three.
+checks the four-cycle forward-degree bound, unique reverse predecessor and every
+compatible cylinder inequality whose rank is at most `min{3,L}`.
