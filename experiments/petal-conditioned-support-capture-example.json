@@ -1,0 +1,18 @@
+{
+  "path_vertices": [0, 1, 2, 3, 5, 7],
+  "path_fixed_arcs": [[0, 1], [1, 2]],
+  "path_core_vertices": [0, 1, 2],
+  "path_residual_supports": [[3, 4], [5, 6], [7, 8]],
+  "path_independent_helpers": [3, 5, 7],
+  "path_credit": 10,
+  "path_local_cost": 7,
+  "fan_vertices": [0, 1, 2, 3, 4, 5],
+  "fan_fixed_arcs": [[0, 1], [2, 3]],
+  "fan_core_vertices": [0, 1, 2, 3],
+  "fan_residual_supports": [[4, 6], [5, 7]],
+  "fan_independent_helpers": [4, 5],
+  "fan_local_bridge_weights": {
+    "1->2": 3,
+    "3->0": 4
+  }
+}
