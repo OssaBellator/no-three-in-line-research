@@ -22,29 +22,30 @@ The authoritative live ledger is split across:
 | CMR958--965 | Exact constant/pure/coupling decomposition, low local ranks, Cartesian coupling boxes, finite stock, contraction transport, minimum-preserving coupling deletion or minimum-face contraction, finite normalization, and the coupling-normalized endpoint | PROVED | `docs/224-prime-power-induced-product-potential-transport.md` |
 | CMR966--973 | Coordinate-fibre minimum inheritance, exact one-factor induced potential, target location trichotomy, anchored deletion/contraction, finite fibre normalization, pure residual potential, strict factor descent, and the coordinate-fibre endpoint | PROVED | `docs/225-prime-power-minimum-coordinate-fibre-descent.md` |
 | CMR974--981 | Conditioning preserves the exact minimum face, induced contraction, one-layer and joint two-layer host representation, factorwise conditioning, potential transport, iterated representable contraction, and the host-representable minimum-core endpoint | PROVED | `docs/226-prime-power-minimum-core-host-representability.md` |
+| CMR982--989 | Minimum-face target variability, physical two-label cell cuts, finite same-value handoff depth, restoration payment, bank-expansion trichotomy, labelled target conditioning, physical-cell recurrence, and the target-handoff endpoint | PROVED | `docs/227-prime-power-minimum-face-target-handoff.md` |
 
-The branch still does not prove the all-`n` conjecture. Completeness branching is
-disjointly compressible, while minimum-anchor mode avoids global branch width.
-All same-vertex-set host dynamics normalize to finite restriction, rollback,
-minimum-core contraction, or strict potential improvement.
+The branch still does not prove the all-`n` conjecture. Same-vertex-set dynamics,
+minimum-core contraction, cross-factor potential transport, and host
+representability now have exact normal forms.
 
-Structural contractions now transport the real-triple potential exactly. With a
-fixed compatible core and exact product, every conflict is constant, pure in one
-factor, or a low-rank coupling box. Coupling atoms delete minimum-preservingly or
-contract on the minimum face after finite normalization. One selected minimum can
-then be frozen outside a coordinate and descended into a strict factor; former
-cross-factor triples become constants or rank-one/rank-two anchored triggers.
+A selected global minimum descends through strict product coordinates after
+low-rank coupling normalization. Minimum-face contractions remain genuine
+matching or joint-state cylinders by conditioning the full feasible family before
+contraction.
 
-Minimum-face contractions are host-representable: condition the complete current
-matching cylinder on the common prescription before contracting. The conditioned
-cylinder has exactly the old minimum face and contracts to a genuine residual
-one-layer host, joint two-layer system, or exact product, with every triple carried
-by the induced objective. Total contracted rank is bounded by state cardinality.
+For a physical target in the minimum face, a same-value target-destroying minimum
+permits deletion of both layer copies of one omitted target cell. This preserves
+the minimum and removes the physical target from every surviving state. Handoff
+chains are finite without restoration, and recurrence pays a genuine labelled
+edge return. A four-endpoint bank expansion therefore gives strict improvement,
+a same-value physical-cell handoff, or a target common to the expanded minimum
+face. The latter has at most eight labelled conditioned cylinders and exact
+host-representable contraction.
 
-The active prime-power frontier is now the persistent fixed-interface target
-branch. A physical triple lying in the accumulated conditioned core enters the
-one-target handoff, while pure targets descend strictly and anchored targets enter
-rank-one/rank-two machinery. The remaining task is to prove that repeated fixed-
-core target handoff forces minimum decrease, finite reserve/envelope expenditure,
-or a globally well-founded loss/restoration ancestry. Prime-field transfer and
-arbitrary side-length assembly remain necessary.
+The active prime-power frontier is the **minimum-robust target** branch: a physical
+triple remains common to every minimum state even after its four-endpoint escape
+expansion, while the target-destroying bank states lie strictly above the minimum.
+The next theorem must convert that positive energy barrier into target-load
+surplus, protected-line/reserve expenditure, recurrent cell/line payment, or
+strict envelope expansion. Prime-field transfer and arbitrary side-length
+assembly remain necessary.
