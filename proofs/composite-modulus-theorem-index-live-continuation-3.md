@@ -48,44 +48,34 @@ The authoritative live ledger is split across:
 | CMR1486--1493 | Existing-mask versus fresh-private-mass dichotomy, exact host and monotone reserve stock, fresh-token alternative, augmented depth/resource transfer DAG, block triangularity, rational gluing, and the recurrent-core reduction | PROVED; random weighted masks, monotone resource episodes, transfer systems and rational gluing checks | `docs/289-prime-power-transfer-resource-triangularity.md` |
 | CMR1494--1501 | Root residue channels, deterministic quotient carry, lossless private channel extraction, residual blocker payment, injective quotient normalization, low-rank cross-child atoms, strict child-factor descent, and the prime-field terminal channel | PROVED; residue/carry, weighted channel, low-rank factor and child-side checks | `docs/290-prime-power-root-displacement-child-channels.md` |
 | CMR1502--1509 | Unit exact-displacement mass per owner, loaded-owner exclusion, unloaded private extraction, token and root-channel preservation, disjoint additive bookkeeping, quantitative routed splice, and the packed-versus-loaded endpoint | PROVED; random weighted owner exclusions and root-channel checks | `docs/291-prime-power-owner-disjoint-packed-loaded.md` |
+| CMR1510--1517 | Hall-cut matching-capacity excess, arbitrary partial-matching deletion, target-safe nonaxis line cleaning, exact line-local collateral removal, and zero same-owner/same-line loaded-coordinate response | PROVED; exhaustive Hall cuts, partial deletions and nonaxis line traces checked | `docs/292-prime-power-extension-free-partial-matching-line-clean.md` |
+| CMR1518--1525 | Fixed-central pair/trace stocks, tunable repeated-token threshold, return-versus-long-run split, persistent absorption, paid-pair selector recurrence, fixed trace recurrence, and the atomic recurrent quotient | PROVED; threshold arithmetic and synthetic histories checked | `docs/293-prime-power-repeated-token-atomic-compression.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-CMR1486--CMR1493 remove four apparent frontiers from the diagonal spectral
-problem.  Strict internal scaling, earlier-depth handoff, first use of a
-private residual edge and first use of an absolute token form a finite
-acyclic transfer graph.  Their finite offspring may be arbitrarily large:
-once each recurrent core has a rational certificate, constructive block
-gluing absorbs every such off-diagonal term.
+CMR1486--CMR1501 remove strict depth transfer, first-use private resources and
+anonymous depth-zero translations from the diagonal spectral problem.  Those
+terms lie on a finite acyclic transfer graph and glue after the recurrent cores
+are certified.
 
-The depth-zero branch is also no longer anonymous.  A fixed unit displacement
-splits into at most `p^2` root source channels.  One channel has mass at least
+CMR1502--CMR1509 close the overlap between global packed displacement and
+one-owner loaded-line currencies.  CMR1510--CMR1517 then add a target-safe
+extension-free line-clean response: every partial matching, including a complete
+nonaxis line trace, may be deleted from `H_e` without losing all perfect
+matchings.  The same-owner, same-line loaded coordinate therefore has a response
+row coefficient zero, although off-line offspring remain to be bounded.
 
-\[
-\frac{M_0}{p^2}
-\]
-
-on automatically endpoint-disjoint pairs, has one deterministic quotient
-carry, and becomes an anchored or cross-factor low-rank atom after selected
-root routing.  For `k>=2` the owner factor has strict side `p^(k-1)`; for
-`k=1` it is a side-one terminal/fixed-interface channel.
-
-CMR1502--CMR1509 close the overlap part of the packed-versus-loaded
-frontier.  A fixed displacement carries at most one unit of packing mass per
-owner.  Removing owners assigned to loaded-line execution either already
-produces many loaded owners or leaves a quantitatively large translated
-private family on disjoint owners.  The two currencies can therefore be added
-without inclusion-exclusion loss.
+CMR1518--CMR1525 sharpen the repeated-token core.  For a fixed central edge the
+pair and trace stocks are only `(t-1)^2` and `2(t-1)`.  A sufficiently long
+fixed-token history now gives an explicit finite bound, labelled return
+incidence, successful absorption, one persistent paid-pair selector, or one
+fixed trace-line incidence.
 
 The active frontier is now:
 
-1. construct rational/integer certificates for the genuinely recurrent cores:
-   repeated absolute tokens, reused residual supports, recurrent root
-   channels/fixed interfaces, and loaded-line owners;
-2. calibrate one unit of loaded-owner or private residual/token payment against
-   destroyed parent credit;
-3. prove the remaining thin residual and prime-field fixed-interface core
-   certificates;
-4. export the recurrent-core inequalities as a host-uniform `Av<v`
-   certificate; and
+1. bound the off-line offspring of the extension-free line-clean response;
+2. calibrate the three atomic repeated-token rows -- edge return, persistent
+   paid-pair selector and fixed trace incidence -- against destroyed credit;
+3. certify recurrent root/fixed-interface and thin/prime-field rows;
+4. assemble the resulting host-uniform rational/integer quotient `Av<v`; and
 5. complete balanced/CRT assembly with collision and local-line classes.
