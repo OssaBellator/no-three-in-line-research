@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have now closed every top-signature tier of multiplicity at least `24`:
+have now closed every top-signature tier of multiplicity at least `20`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -22,21 +22,23 @@ have now closed every top-signature tier of multiplicity at least `24`:
 | 27 | 6 | 162 | certified infeasible |
 | 26 | 6 | 156 | certified infeasible |
 | 24 | 8 | 192 | certified infeasible |
-| **Total** | **35** | **1,094** | **16,259,764 shared bottom-CSP nodes** |
+| 23 | 10 | 230 | certified infeasible |
+| 20 | 1 | 20 | certified infeasible |
+| **Total** | **46** | **1,344** | **20,687,852 shared bottom-CSP nodes** |
 
-Thus `70,766` support-twenty selectors remain active in this cache layer.
+Thus `70,516` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX625--PX628 in
-[`docs/203-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty-four.md`](../docs/203-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty-four.md).
+The latest exact results are PX633--PX636 in
+[`docs/205-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty.md`](../docs/205-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty.md).
 
 ## Immediate task
 
-The next tier has multiplicity `23`: ten top signatures containing `230`
+The next tier has multiplicity `19`: forty-two top signatures containing `798`
 selectors. Regenerate the exact layer, record both clean-top order counts, and
 exhaust all four radix orientations with the shared active-selector bottom CSP.
-A complete tier result must assert the exact histogram, every top-search count,
-every bottom-search node count, and either an explicit surviving configuration
-or exact infeasibility.
+Because this tier is substantially wider than the completed tiers, batch the
+signatures into independently reproducible verifier shards with exact aggregate
+counts.
 
 ## Stage completion criterion
 
@@ -50,13 +52,11 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity24.cpp \
-  -o /tmp/side7_c52_s20_m24
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity20.cpp \
+  -o /tmp/side7_c52_s20_m20
 
-for case_index in 0 1 2 3 4 5 6 7; do
-  for orientation in 0 1 2 3; do
-    /tmp/side7_c52_s20_m24 "$case_index" "$orientation"
-  done
+for orientation in 0 1 2 3; do
+  /tmp/side7_c52_s20_m20 "$orientation"
 done
 ```
 
