@@ -28,15 +28,18 @@ def strongly_connected(rho: tuple[tuple[int, ...], ...]) -> bool:
     return len(reach(0)) == n and len(reach(0, True)) == n
 
 
+def is_positive_cyclic_component(rho: tuple[tuple[int, ...], ...]) -> bool:
+    return strongly_connected(rho) and all(sum(row) >= 1 for row in rho)
+
+
 def output_slots(row: tuple[int, ...]) -> tuple[tuple[int, int], ...]:
     return tuple((v, k) for v, rate in enumerate(row) for k in range(1, rate + 1))
 
 
 def check_component(rho: tuple[tuple[int, ...], ...], counts: Counter[str]) -> None:
     n = len(rho)
-    assert strongly_connected(rho)
+    assert is_positive_cyclic_component(rho)
     gains = [sum(row) for row in rho]
-    assert all(gain >= 1 for gain in gains)
 
     # A directed positive cycle rules out strict positive separable weights.
     for weights in product(range(1, 5), repeat=n):
@@ -73,9 +76,11 @@ def exhaustive_components(counts: Counter[str]) -> None:
     for n in range(1, 4):
         for flat in product(range(3), repeat=n * n):
             rho = tuple(tuple(flat[a * n + v] for v in range(n)) for a in range(n))
-            if strongly_connected(rho):
+            if is_positive_cyclic_component(rho):
                 check_component(rho, counts)
-                counts["exhaustive SCCs"] += 1
+                counts["exhaustive cyclic SCCs"] += 1
+            elif n == 1 and rho[0][0] == 0:
+                counts["excluded acyclic singleton SCCs"] += 1
 
 
 def random_components(counts: Counter[str]) -> None:
@@ -93,7 +98,7 @@ def random_components(counts: Counter[str]) -> None:
                     rho[a][v] = max(rho[a][v], rng.randint(1, 3))
         matrix = tuple(tuple(row) for row in rho)
         check_component(matrix, counts)
-        counts["random SCCs"] += 1
+        counts["random cyclic SCCs"] += 1
 
 
 def conservative_histories(counts: Counter[str]) -> None:
