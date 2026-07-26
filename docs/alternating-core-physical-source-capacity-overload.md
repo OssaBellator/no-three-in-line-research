@@ -4,7 +4,7 @@
 
 AC3qa--AC3qe close realized multi-output amplification under an assumed total stock cap.
 This note derives that cap whenever every source unit is an occurrence-faithful use of one
-atom from a finite physical capacity universe.  Crossing the derived cap is not an
+atom from a finite physical capacity universe.  Crossing physical feasibility is not an
 unstructured large number: it creates one canonical overloaded physical atom, and the
 first such atom must receive a realized output in the crossing transition.
 
@@ -68,24 +68,27 @@ gives the final bound. QED.
 
 The overload is physical occurrence excess, not merely equality of symbolic source names.
 
-## AC3qh -- first cap crossing is a realized-output overload -- PROVED
+## AC3qh -- first feasibility crossing is a realized-output overload -- PROVED
 
 Suppose an alpha-pure transition starts from a physically feasible occupancy vector and
-ends with `S_tot'>B_phys`.  Then at least one atom becomes overloaded in that transition.
-Every newly overloaded atom has positive net occupancy increment and hence receives at
-least one of the transition's certified realized output units.
+ends in a physically infeasible vector.  Then at least one atom becomes overloaded in that
+transition.  Every newly overloaded atom has positive net occupancy increment and hence
+receives at least one of the transition's certified realized output units.
 
-The least newly overloaded atom is the canonical first-crossing certificate.
+The least newly overloaded atom is the canonical first-crossing certificate.  If the final
+total also satisfies `S_tot'>B_phys`, AC3qg supplies the additional quantitative total-
+excess bound.
 
 ### Proof
 
-AC3qf makes the initial total at most `B_phys`, while the final total is larger.  Therefore
-some coordinate is feasible before and overloaded after.  A coordinate with nonpositive
-net increment cannot cross upward through its fixed capacity, so each newly overloaded
-coordinate has positive increment.  Under alpha-purity the only positive component
-increments come from certified realized outputs. QED.
+Physical infeasibility of the final vector gives an atom that was feasible before and is
+overloaded after.  A coordinate with nonpositive net increment cannot cross upward through
+its fixed capacity, so each newly overloaded coordinate has positive increment.  Under
+alpha-purity the only positive component increments come from certified realized outputs.
+The final statement is AC3qg. QED.
 
-In particular, a transition cannot hide a cap crossing in a declared but unrealized slot.
+In particular, a transition cannot hide a local or total cap crossing in a declared but
+unrealized slot.
 
 ## AC3qi -- physical capacity bounds realized surplus -- PROVED
 
