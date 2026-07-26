@@ -29,38 +29,55 @@ The authoritative live ledger is split across:
 | CMR1014--1021 | Exact layer-pattern polarization, common-layer compatible outside-pair banks, protected star execution, cross-layer rooted paid pairs, explicit two-layer line-clean response, and the polarized-star endpoint | PROVED | `docs/231-prime-power-secant-star-layer-polarization.md` |
 | CMR1022--1029 | Loaded-line layer split, majority-layer matching compatibility, protected-touch bound, simultaneous line absorption, robust-surplus growth formula, large-core alternative, finite two-layer line capacity, and the entering-pair endpoint | PROVED | `docs/232-prime-power-entering-pair-line-absorption.md` |
 | CMR1030--1037 | Parameterized robust rank-one and higher-rank execution scales, layer-polarized protected alternatives, two-layer protected-capacity budget, finite large-growth episodes, no-growth certificates, and the robust protected-execution endpoint | PROVED | `docs/233-prime-power-robust-surplus-protected-execution.md` |
+| CMR1038--1045 | Minimum-selected skeleton class, exact protected/free product, minimum coupling normalization, coordinate-fibre descent, sparse-interface stock, essential-core and strict-prefix recursion, normalized host changes, and the large-core endpoint | PROVED | `docs/234-prime-power-large-protected-core-minimum-descent.md` |
+| CMR1046--1053 | Majority-layer loaded target profile, protected-touch bound, simultaneous old-line absorption, explicit old-profile destruction, large-core alternative, finite capacity, and loaded-line descent | PROVED | `docs/235-prime-power-loaded-target-line-minimum-absorption.md` |
+| CMR1054--1061 | Simultaneous common-layer star compatibility, direct full-subbank absorption, stronger core bound, robust scale, finite capacity, scope separation from historical stars, and the direct-star endpoint | PROVED | `docs/236-prime-power-simultaneous-star-direct-absorption.md` |
+| CMR1062--1069 | Simultaneous cross-star endpoint matchings, free-side counts, degree-two Hall rematching, one-side absorption, two-core alternative, normalized host execution, finite capacity, and the cross-star endpoint | PROVED | `docs/237-prime-power-simultaneous-cross-star-absorption.md` |
+| CMR1070--1077 | Minimum target-hypergraph packing/cover, compatible disjoint-target prescription, rooted line decomposition, loaded line versus simultaneous star, direct layer-polarized execution, finite contraction rank, and the hypergraph endpoint | PROVED | `docs/238-prime-power-minimum-target-hypergraph-packing.md` |
+| CMR1078--1085 | Common-majority target layer, compatible representatives, degree-two Hall layer escape, simultaneous destruction of half a disjoint target bank, minimum trichotomy, robust scale transfer, restricted-host scope, and the disjoint-target escape endpoint | PROVED | `docs/239-prime-power-disjoint-target-simultaneous-escape.md` |
+| CMR1086--1093 | Per-owner protected capacity, strict-path polynomial stock, complete wall-tree and envelope aggregation, global growth bounds, zero-growth structural alternatives, and the branch-wide protected-capacity endpoint | PROVED | `docs/240-prime-power-global-protected-owner-capacity.md` |
 
 The branch still does not prove the all-`n` conjecture. Same-vertex-set dynamics,
-minimum-core contraction, cross-factor potential transport, and host
-representability have exact normal forms.
+minimum-core contraction, cross-factor potential transport, host representability,
+and robust-surplus geometry have exact normal forms.
 
-A minimum-robust target-destroying bank state creates at least one more new triple
-than the destroyed target load. The resulting surplus is no longer anonymous.
-It splits by physical entry rank:
+A dirty minimum has a static target-hypergraph dichotomy. It either contains many
+physically disjoint targets, which admit one degree-two Hall escape destroying at
+least half of them simultaneously, or a small cell cover concentrates many
+targets at one selected cell. The concentrated branch gives a loaded target line
+or a simultaneous common-layer/cross-layer star.
 
-- rank-one surplus gives one entering-cell line decomposition, hence an old loaded
-  target line or a cell-disjoint geometric secant star;
-- higher-rank surplus gives one entering pair with many third cells on a nonaxis
-  line and therefore a majority-layer heavy-line profile.
+All simultaneous branches have direct protected executions:
 
-The rank-one star is polarized by actual layer labels. A common-layer subbank
-enters protected star absorption; a cross-layer subbank gives rooted same-layer
-paid pairs plus an explicit opposite-layer cell response. The higher-rank line
-absorbs every majority-layer cell outside the protected core.
+- common-layer star outside cells form one partial matching and absorb without a
+  matching-vertex wall loss;
+- a cross-layer star absorbs one complete endpoint side while the other layer is
+  kept fixed;
+- loaded old lines and entering-pair lines absorb their majority-layer cells;
+- no-growth large cores enter the selected-skeleton product descent.
 
-Across both layers, total fresh protected growth is at most
+Protected growth cannot restart indefinitely under new owners. In the
+nonrecurrent-routing branch, the complete closure branch has the explicit
+owner-labelled capacity
 
 \[
-2n-k_0^{(0)}-k_0^{(1)}.
+\mathfrak P(N,h,\lambda)
+=
+(h+1)(2N+1)
+\sum_{m=1}^{N}
+2m(2m^2+m+1)
+\left(
+1+\left\lfloor\frac{(\lambda-1)m^2}{2}\right\rfloor
+\right).
 \]
 
-After this capacity is saturated, further robust episodes must produce a loaded
-old target line, matching-vertex wall, large protected core, cross-layer rooted
-bank, cubic bank-state line load, restoration/rollback payment, structural descent,
-envelope expansion, or strict potential improvement.
+After this capacity is spent, every further target execution must produce
+large-core product descent, loaded-line or target-cell recurrence, lost-minimum
+ancestry, recurrent routing support, envelope expansion, finite base handling, or
+strict potential improvement.
 
-The active prime-power frontier is therefore the **post-saturation large-core and
-cross-layer rooted-bank endpoint**. It remains to turn those outputs into an
-unconditional minimum decrease, Hall/prefix/carry factorization, finite reserve
-exhaustion, or closure-envelope progress. Prime-field transfer and arbitrary
+The active prime-power frontier is therefore the **residual structural and
+loss/restoration ancestry loop after global protected-capacity exhaustion**. The
+local target, line, star, large-core, host-transition, and owner-reset branches no
+longer supply uncontrolled repetition. Prime-field transfer and arbitrary
 side-length assembly remain necessary.
