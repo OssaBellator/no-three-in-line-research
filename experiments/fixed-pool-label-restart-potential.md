@@ -1,4 +1,4 @@
-# Fixed pool-label universal restart-potential diagnostic
+# Fixed pool-label restart-potential diagnostic
 
 Run
 
@@ -11,44 +11,50 @@ The stored saturated no-three source has two permutation layers on seven rows an
 columns.  One controller layer contains a fixed pool rectangle with
 
 ```text
-|X|=|Y|=5
+|X|=|Y|=5.
 ```
 
-and five movement and five refill labels.  A four-edge tied permutation changes the
-controller pairing inside the pool while preserving the same column and row sets.
+A four-edge tied permutation changes the controller matching inside that rectangle
+while preserving the same column set, row set, and fixed numerical labels
+
+```text
+A=7,
+B=9.
+```
+
 Both the initial and final sources remain saturated and no-three.
 
-The fixed movement/refill candidate-cell universe has size 50.  Its excess-cell
-potential changes from 59 to 55.  The complete latent same-slot anchor potential,
-which counts every pair in `X x Y` rather than only the active controller matching,
-changes from 96 to 97.  The actual active-matching anchor mass is much smaller:
+The fixed candidate-cell universe contains ten cells.  Its excess-shadow potential is
+unchanged:
 
 ```text
-20 before the repair,
-17 after the repair.
+Xi_cell: 14 -> 14.
 ```
 
-The exact pair and linear incidence terms are
+The old controller matching has two active same-slot anchor incidences.  All four new
+controller edges have zero anchor mass in the repaired source, and the inserted source
+points create no anchor incidence for the one unchanged controller edge.  Hence
 
 ```text
-cell removal credit       67
-cell insertion cost       63
-anchor removal credit      0
-anchor insertion cost      1
+Lambda_E: 2 -> 0.
 ```
 
-so the universal identity gives
+The current restart potential therefore satisfies
 
 ```text
-(63+1)-(67+0)=-3.
+Theta_initial=14+2=16,
+Theta_final  =14+0=14.
 ```
 
-The direct potential values agree:
+The fixed candidate-cell identity has equal removal and insertion terms,
 
 ```text
-Omega_initial=59+96=155,
-Omega_final  =55+97=152.
+cell removal credit 16,
+cell insertion cost 16,
 ```
+
+so the complete decrease comes exactly from deleting old active anchor mass while
+activating every new same-slot entry at zero mass.
 
 The expected output is
 
@@ -57,20 +63,20 @@ m 7
 pool columns [0, 1, 2, 3, 4]
 pool rows [0, 1, 2, 4, 5]
 pool size 5
-candidate cell universe 50
+candidate cell universe 10
 initial no-three True
 final no-three True
-actual anchor mass [20, 17]
-latent anchor potential [96, 97]
-excess cell potential [59, 55]
-combined universal potential [155, 152]
-cell removal and insertion [67, 63]
-anchor removal and insertion [0, 1]
-identity change -3
-direct potential change -3
-outcome fixed_pool_label_universal_restart_potential
+new controller edges [(0, 4), (1, 1), (2, 5), (3, 2)]
+new-edge anchor activation mass 0
+inserted-anchor mass on kept edges 0
+active anchor potential [2, 0]
+excess cell potential [14, 14]
+current restart potential [16, 14]
+cell removal and insertion [16, 16]
+direct potential change -2
+outcome fixed_cells_zero_mass_anchor_activation
 ```
 
-This verifies PP3aux--PP3ava on an actual geometric source: controller pairings may
-change, but the fixed coordinate-label universe and its exact dynamic potential do
-not restart.
+This verifies PP3aux--PP3ava in an actual geometric source.  Controller pairings may
+change, but candidate cells remain fixed and every new anchor entry starts at zero
+mass.
