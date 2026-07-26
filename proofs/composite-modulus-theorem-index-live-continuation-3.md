@@ -31,10 +31,13 @@ The authoritative live ledger is split across:
 | CMR1350--1357 | Explicit doubly stochastic scaling of the extension-free graph, maximum-entry bound, permanent lower bound, prescription probabilities, extension-free collateral and restricted-host criteria, canonical realizing extension, and the endpoint | PROVED | `docs/273-prime-power-extension-free-bank-permanent-bound.md` |
 | CMR1358--1365 | Exact derangement bank size, universal constant `lambda_n<=4`, sharp rank-one marginal `1/(n-2)`, higher-rank probabilities, sharpened collateral and unavailable-edge penalties, profile coefficients, and the exact-derangement endpoint | PROVED | `docs/274-prime-power-extension-free-derangement-marginals.md` |
 | CMR1366--1373 | Exact rank-one/two/three candidate sums over all target cells in one layer, exact layer target incidence, symmetric extension-free line kernel, global sufficient criterion, explicit realizable failure of independent linewise domination, and the line-composition endpoint | PROVED | `docs/275-prime-power-extension-free-line-composition-kernel.md` |
+| CMR1374--1381 | Opposite-matching normalization, residual row-column incidence parameters, exact inclusion-exclusion cylinder counts, constant cylinder-type stock, exact created and destroyed credit expectations, weighted offspring rows, and exact upper-quotient histograms | PROVED | `docs/276-prime-power-extension-free-exact-cylinder-types.md` |
+| CMR1382--1389 | Candidate prescriptions, edge-selector domination, exact selector optimization, concave fractional perfect-matching form, selector/fractional duality, deterministic improvement, restricted-host Hall-wall branch, and the clean side-five policy witness | PROVED; side-five witness by complete finite check | `docs/277-prime-power-cross-line-edge-assignment-normal-form.md` |
+| CMR1390--1397 | Exact weighted candidate-transversal identity, clean and strict threshold criteria, Hall witnesses and minimal deficiency-one blockers, explicit failure of equal fractional ownership, and the side-five clean deletion transversal | PROVED; finite examples and blocker checks verified computationally | `docs/278-prime-power-candidate-transversal-hall-wall.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-The structural product issue is now exact.  Every newly created triple is owned by
+The structural product issue is exact.  Every newly created triple is owned by
 one entering edge in the active coordinate factor.  Fixed interfaces and sibling
 factors receive no duplicate offspring.  The complete selected owner system is a
 finite DAG, so its reproduction matrix is block upper triangular and its spectral
@@ -61,17 +64,22 @@ rank-two/rank-three loss factor is
 \]
 
 Summing these banks over all target cells gives an exact line-composition kernel.
-A strict global kernel inequality forces improvement, but an explicit realizable
-side-five state has independent-line upper kernel `160/11` against target
-incidence `6`.  Thus pair moments and independent line maxima do not close the
-diagonal block.
+Pointwise line domination fails, but cross-line collateral is now equivalently:
+
+1. an exact edge-selector/minimum-matching problem; or
+2. an exact low-weight candidate-exemption problem in which one edge is deleted
+   from every nonexempt prescription and a perfect matching must survive.
+
+Every failed deletion transversal contains an inclusion-minimal deficiency-one
+Hall wall.  Equal fractional ownership is already refuted as a universal policy
+by an explicit side-four state with clean responses.
 
 The active frontier is therefore:
 
-1. exploit cross-line correlation, shared response-edge assignment, primitive
-   height, prefix, quotient and carry structure to improve the same-owner kernel;
-2. build a host-uniform coarse upper quotient with an exact rational certificate
-   `Av<v`;
+1. charge every low-weight transversal Hall wall to primitive height, prefix,
+   quotient, carry, protected-reserve or owner-credit structure;
+2. convert that charge into a host-uniform coarse upper quotient with an exact
+   rational certificate `Av<v`;
 3. establish the corresponding diagonal certificates in prime-field and thin
    regimes; and
 4. glue the resulting diagonal blocks through the already-proved owner
