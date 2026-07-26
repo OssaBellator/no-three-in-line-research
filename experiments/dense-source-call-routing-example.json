@@ -1,0 +1,35 @@
+{
+  "macro_width": 20,
+  "kappa": 2,
+  "require_all_call_types": true,
+  "require_all_raw_outcomes": true,
+  "calls": [
+    {
+      "call_type": "paired_switch_bank",
+      "marked_size": 6,
+      "helper_count": 40,
+      "max_role_exclusions": 8,
+      "support_rank": 3,
+      "source_mass_mode": "vanishing_after_amplification",
+      "raw_outcome": "independent_cycle"
+    },
+    {
+      "call_type": "paired_switch_bank",
+      "marked_size": 5,
+      "helper_count": 30,
+      "max_role_exclusions": 7,
+      "support_rank": 2,
+      "source_mass_mode": "vanishing_after_amplification",
+      "raw_outcome": "dense_current_support"
+    },
+    {
+      "call_type": "fixed_centre_fillers",
+      "marked_size": 4,
+      "helper_count": 20,
+      "max_role_exclusions": 6,
+      "support_rank": 3,
+      "source_mass_mode": "canonical_credited_source",
+      "raw_outcome": "dense_source_support"
+    }
+  ]
+}
