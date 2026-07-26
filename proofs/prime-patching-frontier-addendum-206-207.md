@@ -2,9 +2,9 @@
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air.  It records the original-reference, controller-domain,
-initial-allocation, ambient-support, marked-source, and complete helper-support
-reductions in `docs/206` through `docs/227` without replacing the larger
-historical ledgers.
+initial-allocation, ambient-support, marked-source, complete helper-support, and
+petal-conditioned reductions in `docs/206` through `docs/229` without replacing
+the larger historical ledgers.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -30,6 +30,8 @@ historical ledgers.
 | PP3ann--PP3ant | A maximal residual-support-independent helper set either has the required size or produces a fixed core with `N^(1-o(1))` variable extensions | PROVED / CONDITIONAL EXTERNAL-HOST INTERFACE | `docs/225-maximal-independent-helper-core-localization.md` |
 | PP3anu--PP3aoc | Terminal high-support source pencils are converted: anchored pairs yield credited anchor banks, while inserted-triple pencils are impossible by unique completion | PROVED / CONDITIONAL ENDPOINT-HOST INTERFACE | `docs/226-terminal-source-pencil-closure.md` |
 | PP3aod--PP3aoj | Every nonzero canonical source or Xi event has nonempty helper support; an independent block has zero source violations and zero insertion cost, while terminal insertion pencils rejoin existing petal/grid/fan chains | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/227-complete-canonical-support-capture.md` |
+| PP3aok--PP3aoq | After fixing one arc/path/fan petal, every nonlocal event has residual helper support; an independent completion leaves only a finite local-core objective | PROVED / CONDITIONAL INDEPENDENT-COMPLETION AND PETAL INTERFACES | `docs/228-petal-conditioned-complete-support-capture.md` |
+| PP3aor--PP3aox | A spanning path has at most ten local insertion atoms; one helper bridges a disconnected rank-four petal, and failed local payment yields a credit-scale `A_2`, `B_3`, or `B_4` pencil | PROVED / CONDITIONAL EXISTING INSERTION-PENCIL INTERFACES | `docs/229-one-helper-bridge-local-cost-atomization.md` |
 
 ## Original-reference and robust target-cycle endpoint
 
@@ -142,8 +144,8 @@ source-invalid count = 0,
 insertion cost = 0.
 ```
 
-Indeed the only formal zero-helper insertion classes are a diagonal unary arc and
-a transposition, both absent from a single cycle.
+The only formal zero-helper insertion classes are a diagonal unary arc and a
+transposition, both absent from a single cycle.
 
 If the maximal independent set is too small, bounded support rank gives one fixed
 core with at least
@@ -152,53 +154,77 @@ core with at least
 (N-b)/sum_(r<k_0) binom(b-2,r)
 ```
 
-variable extensions.  With adaptive `b=N^(o(1))`, this is `N^(1-o(1))`.
+variable extensions.  With adaptive `b=N^(o(1))`, this is `N^(1-o(1)`.
 Diffuse residual support and support-free insertion weight therefore disappear.
 
-## Terminal-pencil endpoint
+The terminal source pencils are closed: anchored-pair pencils give credited
+anchor banks, while inserted-triple pencils are impossible by unique completion.
+The terminal insertion pencils are exactly the existing `A_2`, `B_3`, and `B_4`
+fixed-centre objects.
 
-The terminal source pencils are closed.
+## Petal-conditioned zero-collateral completion
 
-1. A rank-four anchored-pair pencil uses distinct retained anchors and yields a
-   free or one-pool credited endpoint bank of size `m^(9/10-o(1))`.
-2. Rank-four, rank-five, and rank-six inserted-triple pencils are impossible:
-   fixing all other endpoint indices determines the variable index by the
-   line--coordinate completion theorem.
-3. Unary and transition source pencils were already converted to source stars or
-   credited endpoint banks.
+Condition on a compatible local arc forest `F` with at most four arcs and five
+fixed endpoint indices.  Contracting the fixed paths gives exactly
 
-The terminal insertion pencils are exactly the existing fixed-centre objects.
+```text
+(b-|F|-1)!
+```
 
-1. `A_2`: a fixed-axis arc star and comparable-cost arc-petal bank.
-2. `B_3`: a directed path pencil entering a middle choice grid or an outer
-   resource-disjoint path-petal bank.
-3. `B_4`: a centre-arc partner fibre entering support avoidance,
-   partner-star/matching extraction, fixed-cell fan thresholding, or the final
-   allocation-domain bypass.
+single-cycle completions.  Every nonlocal canonical event has a nonempty residual
+helper support.  An independent residual helper block therefore removes all
+nonlocal source and insertion collateral, leaving only a finite local-core table.
 
-Hence no new insertion-support geometry remains after PP3aoj.
+If `F` is one spanning path, the local table is deterministic.  Every compatible
+arc on the fixed vertices is either already a path arc or closes a forbidden
+proper cycle.
+
+For a directed path of `r<=4` arcs, the selected local insertion atoms are
+
+```text
+r A_2 atoms,
+r-1 B_3 atoms,
+binom(r,2)-(r-1) B_4 atoms.
+```
+
+The total counts for `r=1,2,3,4` are `1,3,6,10`.  If local cost reaches the
+removal credit, one atom has at least a `1/10` share of that credit.
+
+A disconnected rank-four partner petal is bridged by one helper:
+
+```text
+a->b->x->c->d
+```
+
+or its reverse component order.  If no clean paid bridge exists, pigeonholing the
+two orientations and ten atom roles yields a credit-scale fixed-axis unary,
+fixed-centre path, or centre-arc partner pencil.  Thus diffuse residual collateral
+and a mixed finite local table are no longer separate petal endpoints.
 
 ## Revised live frontier
 
 The remaining concentrated cases are now:
 
-1. the paid endpoints of the explicit unary arc-petal, rank-three path/grid, and
-   rank-four partner/fan chains when robust final allocation is unavailable;
-2. external controller-pool, distinguished-endpoint, Hall, alternating, or other
+1. payment or conversion of a **single credit-scale local `A_2`, `B_3`, or `B_4`
+   atom** inside the explicit arc-petal, path/grid, or partner/fan chains when
+   robust final allocation is unavailable;
+2. second-generation terminal pencils produced after conditioning a local petal,
+   which re-enter the same three insertion geometries;
+3. external controller-pool, distinguished-endpoint, Hall, alternating, or other
    endpoint-host failure;
-3. a macro-local `Theta(R)` controller-puncture history core;
-4. paid mobility-hub or chord-cycle conversion in branches that cannot use robust
+4. a macro-local `Theta(R)` controller-puncture history core;
+5. paid mobility-hub or chord-cycle conversion in branches that cannot use robust
    final allocation;
-5. branches that cannot use the slab-optimal random two-sided architecture or
+6. branches that cannot use the slab-optimal random two-sided architecture or
    preserve an original reference layer;
-6. branches that still require one-step monotone `Xi` descent rather than paid
+7. branches that still require one-step monotone `Xi` descent rather than paid
    multi-step or robust final-state completion.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
 ordinary chord geometry in the robust branch, captive centres, controller--
 controller stars, numerical ownership arithmetic, raw support multiplicity,
 fixed-core source sunflowers, diffuse residual support, support-free insertion
-weight, and high-support source terminal pencils are no longer separate
-frontiers.
+weight, high-support source terminal pencils, diffuse petal collateral, and mixed
+finite local-core tables are no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
