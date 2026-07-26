@@ -54,55 +54,60 @@ The authoritative live ledger is split across:
 | CMR1534--1541 | Rectangle forbidden-width bound, capacitated Hall inequality, spanning `(d-3)`-factor, uniform permanent denominator, rank-one through rank-three probability bounds, off-line collateral envelope, restricted-host improvement test, and the uniform line-clean endpoint | PROVED; exhaustive/sampled Hall cuts, integral factors and exact prescription checks | `docs/295-prime-power-line-clean-uniform-permanent-envelope.md` |
 | CMR1542--1549 | Target-trace matching criterion, exact derangement extension, strong-factor dichotomy, `(d-2)` permanent denominator, sharpened prescription and collateral bounds, geometric sufficient classes, and the binary factor-signature endpoint | PROVED; exhaustive/sampled factor classification and exact probability checks | `docs/296-prime-power-line-clean-factor-signature-sharpening.md` |
 | CMR1550--1557 | Exact singleton deficient cut, optimal fractional-factor capacity, scaled integral flow certificate, intermediate permanent denominator, prescription/collateral bounds, restricted-host criterion, ternary coefficient classification, and the singleton endpoint | PROVED; exact cut, scaled-flow and prescription checks | `docs/297-prime-power-line-clean-singleton-fractional-factor.md` |
+| CMR1558--1565 | Optimal paid-pair threshold, candidate-free bounded restoration, first-restoration stock, exact selector-to-return row, two-row spectral criterion, integer certificate form, uniform gap cap, and the selector-return endpoint | PROVED; exact thresholds, restoration histories, two-row systems and uniform-gap caps checked | `docs/298-prime-power-paid-pair-selector-return-splice.md` |
+| CMR1566--1573 | Root-centre stock, trace batching, fixed nonaxis line, target-disjoint rooted trace, strong/singleton coefficient classification, rooted trace execution, master trace alternative, and the trace-row endpoint | PROVED; centre batching and exact rooted-line classes checked | `docs/299-prime-power-trace-centre-line-clean-splice.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-Strict depth transfers, first-use private resources and depth-zero child
-channels lie on finite acyclic transfer graphs.  Loaded-owner and translated
-private currencies have disjoint owner support.
+Strict depth transfers, first-use private resources and depth-zero child channels
+lie on finite acyclic transfer graphs.  Loaded-owner and translated private
+currencies have disjoint owner support.
 
 The line-clean response has zero same-owner/same-line collateral and an exact
-component rook row.  CMR1534--CMR1557 now give three host-uniform line-clean
-coefficients:
+component rook row.  Its three host-uniform coefficients are
 
 \[
-\left(\frac d{d-2}\right)^d
-\]
-
-for derangement-extendable strong traces,
-
-\[
-\left(
-\frac{d(d-2)}{(d-1)(d-3)}
-\right)^d
-\]
-
-for the target-disjoint singleton remainder, and
-
-\[
+\left(\frac d{d-2}\right)^d,
+\qquad
+\left(\frac{d(d-2)}{(d-1)(d-3)}\right)^d,
+\qquad
 \left(\frac d{d-3}\right)^d
 \]
 
-for target-endpoint overlap.  The singleton value comes from the optimal
-fractional factor
+for strong, singleton and endpoint-overlap traces respectively.
+
+CMR1558--CMR1565 remove the subunit paid-pair selector as an independent
+candidate self-row.  If `A_L<1`, define
 
 \[
-d-2-\frac1{d-2}.
+T_*
+=
+\left\lfloor
+\frac{2+|B_L|/(n-1)}{1-A_L}
+\right\rfloor.
 \]
 
-The exact CMR1533 component rook row remains available in all three classes.
+There is a candidate-free completion with at most `T_*` restorations.  First
+restoration labels are finite; repeated restorations enter the return row.  If a
+return row has coefficients `(alpha,beta)`, coupling to a selector cap `T` is
+subcritical exactly when
 
-CMR1518--CMR1525 compress repeated-token/reused-support recurrence to three
-atomic rows: labelled edge return, one persistent paid-pair selector, or one
-fixed trace-line incidence.  Finite labelled stock and successful absorption
-are not additional recurrent classes.
+\[
+\alpha+\beta T<1.
+\]
+
+CMR1566--CMR1573 reduce rooted trace recurrence to finite centre stock at most
+`t^2`, followed by one fixed nonaxis line.  Cleaning at the rooted target is
+automatically target-disjoint, so only the strong or singleton line-clean
+coefficient occurs; the endpoint-overlap coefficient is excluded.
 
 The active frontier is now:
 
-1. compare the three line-clean coefficient classes with destroyed credit,
-   sharpening exact component signatures where necessary;
-2. calibrate the atomic return, persistent-selector and trace rows against
-   destroyed parent credit;
-3. certify recurrent root/fixed-interface and thin/prime-field rows;
-4. assemble the resulting exact rational/integer quotient `Av<v`; and
+1. compare the line-clean coefficient classes with destroyed credit, using the
+   stronger rooted-trace exclusion of endpoint overlap where applicable;
+2. compute the return-row coefficients and verify `alpha+beta T<1` for subunit
+   selector classes, while treating critical candidate bands `A_L>=1`;
+3. treat trace incidences whose rooted centre cannot be chosen as target and
+   certify recurrent root/fixed-interface and thin/prime-field rows;
+4. assemble the surviving exact rational/integer quotient `Av<v`; and
 5. complete balanced/CRT assembly with collision and local-line classes.
