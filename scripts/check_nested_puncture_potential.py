@@ -6,7 +6,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Dict, FrozenSet, Iterable, List, Set, Tuple
+from typing import FrozenSet, List, Set
 
 Point = str
 Pair = FrozenSet[Point]
@@ -24,20 +24,16 @@ def pair(a: Point, b: Point) -> Pair:
 def potential(source: Set[Point], entries: List[dict]) -> int:
     total = 0
     for entry in entries:
-        controller = pair(*entry["controller"])
+        controller: Point = entry["controller"]
         for a, b in entry["blocked_pairs"]:
             blocker = pair(a, b)
-            if blocker.issubset(source) and blocker != controller:
+            if blocker.issubset(source) and controller not in blocker:
                 total += 1
     return total
 
 
 def active_entries(all_entries: List[dict], punctured: Set[Point]) -> List[dict]:
-    return [
-        entry
-        for entry in all_entries
-        if not pair(*entry["controller"]).intersection(punctured)
-    ]
+    return [entry for entry in all_entries if entry["controller"] not in punctured]
 
 
 def main() -> None:
