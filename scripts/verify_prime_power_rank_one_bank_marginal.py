@@ -44,14 +44,29 @@ def line_key(first, second):
     return a, b, c
 
 
-def secant_weights(side, opposite, graph):
+def secant_weights(opposite, old_matching, graph):
     weights = {edge: 0 for edge in graph}
     opposite_pairs = list(combinations(opposite, 2))
     for edge in graph:
+        if edge in old_matching:
+            continue
         for first, second in opposite_pairs:
             if line_key(first, second) == line_key(first, edge):
                 weights[edge] += 1
     return weights
+
+
+def direct_rank_one_new(opposite, old_matching, response):
+    old_state = set(opposite) | set(old_matching)
+    count = 0
+    for first, second in combinations(opposite, 2):
+        key = line_key(first, second)
+        for edge in response:
+            triple = {first, second, edge}
+            if edge not in old_matching and line_key(first, edge) == key:
+                assert not triple <= old_state
+                count += 1
+    return count
 
 
 def check_rank_one_identity_and_marginals():
@@ -60,52 +75,85 @@ def check_rank_one_identity_and_marginals():
     rank_one_total = 0
     for side in range(4, 8):
         opposite = matching(tuple(range(side)))
-        forbidden_list = derangements(side)
+        old_list = derangements(side)
         if side >= 6:
-            forbidden_list = rng.sample(forbidden_list, min(30, len(forbidden_list)))
+            old_list = rng.sample(old_list, min(24, len(old_list)))
         complete = {(row, column) for row in range(side) for column in range(side)}
-        for forbidden in forbidden_list:
-            bank = response_bank(side, forbidden)
-            graph = complete - set(opposite) - set(matching(forbidden))
-            weights = secant_weights(side, opposite, graph)
+        for old_permutation in old_list:
+            old_matching = matching(old_permutation)
+            target_edge = rng.choice(tuple(old_matching))
+            extensions = [
+                permutation
+                for permutation in derangements(side)
+                if target_edge in matching(permutation)
+            ]
+            extensions = rng.sample(extensions, min(4, len(extensions)))
+            for forbidden in extensions:
+                bank = response_bank(side, forbidden)
+                graph = complete - set(opposite) - set(matching(forbidden))
+                weights = secant_weights(opposite, old_matching, graph)
 
-            state_weights = {state: sum(weights[edge] for edge in state) for state in bank}
-            for state in bank:
-                direct = 0
-                for edge in state:
-                    direct += weights[edge]
-                assert direct == state_weights[state]
-                rank_one_total += direct
+                state_weights = {state: sum(weights[edge] for edge in state) for state in bank}
+                for state in bank:
+                    direct = direct_rank_one_new(opposite, old_matching, state)
+                    assert direct == state_weights[state]
+                    rank_one_total += direct
 
-            raw = [rng.random() for _ in bank]
-            total_raw = sum(raw)
-            probabilities = [value / total_raw for value in raw]
-            marginals = {edge: 0.0 for edge in graph}
-            for state, probability in zip(bank, probabilities):
-                for edge in state:
-                    marginals[edge] += probability
+                raw = [rng.random() for _ in bank]
+                total_raw = sum(raw)
+                probabilities = [value / total_raw for value in raw]
+                marginals = {edge: 0.0 for edge in graph}
+                for state, probability in zip(bank, probabilities):
+                    for edge in state:
+                        marginals[edge] += probability
 
-            for row in range(side):
-                assert abs(sum(marginals[(row, column)] for column in range(side) if (row, column) in graph) - 1) < 1e-10
-            for column in range(side):
-                assert abs(sum(marginals[(row, column)] for row in range(side) if (row, column) in graph) - 1) < 1e-10
+                for row in range(side):
+                    assert abs(
+                        sum(
+                            marginals[(row, column)]
+                            for column in range(side)
+                            if (row, column) in graph
+                        )
+                        - 1
+                    ) < 1e-10
+                for column in range(side):
+                    assert abs(
+                        sum(
+                            marginals[(row, column)]
+                            for row in range(side)
+                            if (row, column) in graph
+                        )
+                        - 1
+                    ) < 1e-10
 
-            expectation = sum(probability * state_weights[state] for state, probability in zip(bank, probabilities))
-            marginal_expectation = sum(weights[edge] * marginals[edge] for edge in graph)
-            assert abs(expectation - marginal_expectation) < 1e-10
+                expectation = sum(
+                    probability * state_weights[state]
+                    for state, probability in zip(bank, probabilities)
+                )
+                marginal_expectation = sum(weights[edge] * marginals[edge] for edge in graph)
+                assert abs(expectation - marginal_expectation) < 1e-10
 
-            row_bound = sum(
-                max(weights[(row, column)] for column in range(side) if (row, column) in graph)
-                for row in range(side)
-            )
-            column_bound = sum(
-                max(weights[(row, column)] for row in range(side) if (row, column) in graph)
-                for column in range(side)
-            )
-            maximum_matching_weight = max(state_weights.values())
-            assert expectation <= maximum_matching_weight + 1e-10
-            assert maximum_matching_weight <= min(row_bound, column_bound)
-            checked += 1
+                row_bound = sum(
+                    max(
+                        weights[(row, column)]
+                        for column in range(side)
+                        if (row, column) in graph
+                    )
+                    for row in range(side)
+                )
+                column_bound = sum(
+                    max(
+                        weights[(row, column)]
+                        for row in range(side)
+                        if (row, column) in graph
+                    )
+                    for column in range(side)
+                )
+                maximum_matching_weight = max(state_weights.values())
+                assert expectation <= maximum_matching_weight + 1e-10
+                assert maximum_matching_weight <= min(row_bound, column_bound)
+                assert all(weights[edge] == 0 for edge in graph & set(old_matching))
+                checked += 1
     return checked, rank_one_total
 
 
@@ -116,17 +164,19 @@ def check_heavy_edge_and_star_arithmetic():
     for side in range(4, 200):
         for _ in range(300):
             edge_weights = [rng.randint(0, side * side) for _ in range(side * (side - 2))]
-            row_bound = sum(max(edge_weights[row * (side - 2):(row + 1) * (side - 2)]) for row in range(side))
+            row_bound = sum(
+                max(edge_weights[row * (side - 2):(row + 1) * (side - 2)])
+                for row in range(side)
+            )
             maximum = max(edge_weights)
             assert maximum >= row_bound / side
 
             threshold = rng.randint(2, max(2, side))
             weight = rng.randint(0, side * side)
             maximum_line_contribution = comb(threshold, 2)
-            if maximum_line_contribution:
-                required = ceil(weight / maximum_line_contribution)
-                assert required * maximum_line_contribution >= weight
-                star_lines += required
+            required = ceil(weight / maximum_line_contribution)
+            assert required * maximum_line_contribution >= weight
+            star_lines += required
             checked += 1
     return checked, star_lines
 
@@ -144,7 +194,9 @@ def check_refined_expectation_arithmetic():
             missing = rng.randint(0, side * side)
             potential = rng.randint(0, 1000)
             destroyed = rng.randint(0, 2 * side * side)
-            upper = rank_one_bound + kappa * (c2 + c3 + (potential + 1) * missing / side)
+            upper = rank_one_bound + kappa * (
+                c2 + c3 + (potential + 1) * missing / side
+            )
             if upper < destroyed:
                 assert upper - destroyed < 0
                 improvements += 1
@@ -157,11 +209,11 @@ def main():
     heavy = check_heavy_edge_and_star_arithmetic()
     refined = check_refined_expectation_arithmetic()
     print(
-        "verified rank-one bank marginals:",
+        "verified corrected rank-one bank marginals:",
         marginals[0],
         "response banks with",
         marginals[1],
-        "rank-one incidences,",
+        "new rank-one incidences,",
         heavy[0],
         "heavy-edge cases producing",
         heavy[1],
