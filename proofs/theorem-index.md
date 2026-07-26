@@ -22,6 +22,7 @@ This ledger contains the branch-specific results only.
 | SAS5h | Swap descent lowers energy or returns a quantified near-conflict bank | PROVED | `docs/sparse-balanced-compression-energy.md` |
 | SAS5i | A positive swap-local minimum has one column pair concentrating destroyed conflicts and repairs | PROVED | `docs/sparse-balanced-compression-energy.md` |
 | SAS5j–SAS5l | Concentrated swaps have twelve destruction and repair words; double-scope words have unique rational addresses and one word pair retains explicit weight | PROVED | `docs/sparse-concentrated-swap-words.md` |
-| SAS6 | Arithmetic batching or classification of concentrated swap certificates | OPEN; REDUCED TO ONE OF 144 ORDERED WORD PAIRS AND RATIONAL ROW-TRIPLE ADDRESSES | `docs/sparse-algebraic-spread.md` |
+| SAS5m–SAS5p | Every double-scope rational address has an exact reduced-denominator criterion and lies on one primitive progression; one direction and exact parallel line retain polynomially quantified weight | PROVED | `docs/sparse-double-scope-divisor-progressions.md` |
+| SAS6 | Arithmetic batching or classification of concentrated swap certificates | OPEN; DOUBLE-SCOPE WORDS REDUCED TO PRIMITIVE PARALLEL PROGRESSIONS, WITH SINGLETON WORDS, DESTRUCTION/REPAIR INTERACTION AND COMPATIBLE PROGRESSION BATCHING REMAINING | `docs/sparse-algebraic-spread.md` |
 
 No statement here proves the global conjecture.
