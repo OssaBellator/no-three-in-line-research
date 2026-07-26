@@ -17,12 +17,13 @@ The authoritative collision-free ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1477.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1485.
 
 CMR1414--CMR1461 was reindexed after concurrent work had occupied
 CMR1374--CMR1413.  The concurrent chain was preserved.  CMR1462--CMR1469 was
 also retained and corrected so matching side, envelope depth and inherited
-coordinate span are not conflated.
+coordinate span are not conflated.  Concurrent displacement routing occupies
+CMR1470--CMR1477; the complementary private-path payment is CMR1478--CMR1485.
 
 ## Structural endpoint
 
@@ -193,6 +194,49 @@ For fixed structural owner, layer, depth, direction and displacement, there are
 exactly `p^{2s}` full-cell tokens.  Across repeated banks, total mass either
 consumes fresh tokens or concentrates on one exact absolute token.
 
+## Private path and residual-token payment
+
+For one fixed nonzero displacement, the directed support
+
+\[
+a\longmapsto a+\Delta
+\]
+
+is a finite path forest.  Alternating its arcs extracts at least half the packed
+mass on endpoint-disjoint owner-partner pairs.  Since packed mass on one ordered
+pair is at most one, a class of mass `mu` contains at least
+
+\[
+\boxed{\lceil\mu/2\rceil}
+\]
+
+private pairs.  Their residual supports are pairwise disjoint: one owner edge
+per pair in the fixed-partner branch and both endpoints in the response-partner
+branch.  Any residual blocker meeting every pair must therefore spend at least
+one distinct response edge per pair.
+
+Applied after weighted carry routing, this gives at least
+
+\[
+\boxed{\left\lceil\frac{M_0}{4p^{2s}}\right\rceil}
+\]
+
+private pairs in the strict internal branch,
+
+\[
+\boxed{\left\lceil\frac{M_0}{4sp^{2s}}\right\rceil}
+\]
+
+in the earlier-exit branch, and
+
+\[
+\boxed{\lceil M_0/2\rceil}
+\]
+
+at depth zero.  At nonroot depth the private pairs partition exactly by full
+prefix token.  They give either one token containing many private identical-
+displacement pairs or many pairwise token-disjoint private witnesses.
+
 ## Corrections retained
 
 - Sequential two-layer rematching may reoccupy an old first-layer cell.
@@ -212,20 +256,22 @@ consumes fresh tokens or concentrates on one exact absolute token.
 
 1. **Strict transfer weights.**  Assign Lyapunov payment to internal scaling and
    earlier-depth crossing transfer.
-2. **Depth-zero and token payment.**  Pay parent-scale exact translations or
-   repeated absolute full-cell tokens through prefix return, quotient/carry
-   collision or protected reserve.
-3. **Packed-versus-loaded comparison.**  Compare those global payments with the
-   one-owner loaded-line gain.
-4. **Subcritical same-owner quotient.**  Encode the result as a host-uniform
-   rational or integer certificate `Av<v`.
+2. **Private residual payment.**  Compare the CMR1484 private-edge/token cost
+   with destroyed parent credit and protected-reserve depletion.
+3. **Depth-zero and repeated-token payment.**  Pay parent-scale exact
+   translations or repeated absolute full-cell tokens through prefix return or
+   quotient/carry collision.
+4. **Packed-versus-loaded comparison.**  Compare global routed/private payments
+   with the one-owner loaded-line gain and encode a host-uniform rational or
+   integer certificate `Av<v`.
 5. **Prime-field/thin and CRT endpoints.**  Prove remaining diagonal blocks and
    glue through owner triangularity.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1477**, matching probabilities,
+There is no complete proof.  Through **CMR1485**, matching probabilities,
 canonical owner weights, inherited-coordinate capacity, loaded signatures,
-fractional exact-displacement banks and their weighted carry routing are exact.
-The remaining obstruction is the Lyapunov payment of strict depth transfer,
-depth-zero translated banks and repeated absolute tokens.
+fractional exact-displacement banks, weighted carry routing and private
+residual-edge/token payment are exact.  The remaining obstruction is the
+Lyapunov comparison of strict transfer and private reserve consumption with the
+parent credit weight, together with the depth-zero and repeated-token branches.
