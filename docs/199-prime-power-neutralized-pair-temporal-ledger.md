@@ -15,22 +15,30 @@ invariant layer boards over the envelope. Then
 |U_E|\le 2q^2.
 \]
 
-A **neutralisation certificate** records
+A **neutralisation certificate key** is
 
 \[
-\sigma=(\text{epoch owner},T,\ell,P,W),
+\sigma=(\text{epoch owner},T,\ell,P),
 \]
 
 where `T` is one exact historical target triple, `ell` is the chosen majority
-layer, `P` is its chosen same-layer pair, and `W` is the nonempty set of physical
-witness cells made globally absent by the neutralising state. In the compatible
-pair branch `W=P`; in a wall or repeated-cell branch `W` may be one chosen cell.
+layer, and `P` is its chosen same-layer pair. In a particular neutralisation
+episode the key is accompanied by a nonempty witness set
+
+\[
+W\subseteq P
+\]
+
+whose physical cells are globally absent in the neutralising state. In the
+compatible-pair branch `W=P`; in a wall or repeated-cell branch `W` may be one
+chosen cell. The witness set is episode data, not part of the finite certificate
+key.
 
 ## 1. Finite owner-labelled certificate stock
 
 ### Theorem CMR763 -- PROVED
 
-At one envelope epoch, the number of neutralisation certificates is at most
+At one envelope epoch, the number of neutralisation certificate keys is at most
 
 \[
 \boxed{
@@ -42,9 +50,8 @@ S(q)=6\binom{2q^2}{3}.
 
 Every target triple is a three-cell subset of `U_E`, giving at most
 `binom(2q^2,3)` physical target signatures. For a fixed triple there are at most
-two chosen layer labels and three unordered target pairs. The deterministic
-neutralisation rule chooses at most one witness set for each such labelled pair.
-Multiplying gives the displayed coarse stock. ∎
+two chosen layer labels and three unordered target pairs. Multiplying gives the
+displayed coarse stock. ∎
 
 The factor six deliberately keeps the layer owner; it avoids identifying two
 historical uses of the same physical triple with different layer assignments.
@@ -53,20 +60,20 @@ historical uses of the same physical triple with different layer assignments.
 
 ### Theorem CMR764 -- PROVED
 
-Let `sigma=(owner,T,ell,P,W)` be neutralised in a state `S_0`, so every cell of
-`W` is absent from `S_0`.
+Let `sigma=(owner,T,ell,P)` be neutralised in a state `S_0` with witness set
+`W subseteq P`, so every cell of `W` is absent from `S_0`.
 
 1. As long as every cell of `W` remains absent, the exact target `T` cannot occur.
-2. If `T` occurs later, every cell of `W` which belongs to the stored pair `P`
-   has undergone an absent-to-present transition after `S_0`.
+2. If `T` occurs later, every cell of `W` has undergone an absent-to-present
+   transition after `S_0`.
 3. In particular, a one-cell certificate pays at least one reintroduction and a
    compatible two-cell certificate pays at least two distinct reintroductions
    before its target can recur.
 
 ### Proof
 
-The witness set is a subset of the stored target pair, hence a subset of `T`.
-An occurrence of `T` requires every target cell to be selected. Every witness was
+The witness set is a subset of the stored target pair and hence of `T`. An
+occurrence of `T` requires every target cell to be selected. Every witness was
 absent at `S_0`, so it must return before or at the first later occurrence. The
 two cells of a compatible pair are distinct. ∎
 
@@ -76,7 +83,7 @@ A certificate which never returns is genuinely retired target stock.
 
 ### Theorem CMR765 -- PROVED
 
-There is a canonical accounting in which an owner-labelled certificate is
+There is a canonical accounting in which an owner-labelled certificate key is
 charged as fresh at most once.
 
 After its first neutralisation, exactly one of the following happens before it
@@ -91,7 +98,7 @@ can be charged again.
 
 ### Proof
 
-Order certificates lexicographically. Mark a certificate retired at its first
+Order certificate keys lexicographically. Mark a key retired at its first
 neutralisation and do not call it fresh again while it remains inactive. If it
 becomes active, CMR764 supplies the return payment. If the owner changes, retain
 the physical signature but replace the owner label, which is exactly the owner
@@ -173,11 +180,11 @@ For every integer `lambda>=2`, at least one of the following holds.
 
 ### Proof
 
-Charge an episode with a permanently retired certificate to the first such
-certificate in the fixed order. CMR765 makes those charges injective, so there
-are at most `S(q)` of them. Every remaining episode is paid by at least `W`
-distinct reintroduced witness cells, and CMR766 bounds their number unless one
-cell recurs `lambda` times. ∎
+Charge an episode with a permanently retired certificate to the first such key
+in the fixed order. CMR765 makes those charges injective, so there are at most
+`S(q)` of them. Every remaining episode is paid by at least `W` distinct
+reintroduced witness cells, and CMR766 bounds their number unless one cell
+recurs `lambda` times. ∎
 
 This bound allows an episode to contain both permanent and returning
 certificates; one permanent certificate is enough to use the finite-stock charge.
@@ -192,10 +199,8 @@ target-pair signatures. CMR758 makes `z` globally absent.
 Across `K` repeated-cell-star neutralisation episodes at one epoch owner, for
 every `lambda>=2`, at least one of the following holds.
 
-1. At least `K-(\lambda-1)2q^2` episodes permanently retire a fresh target
-   certificate.
-2. One exact physical star cell is reintroduced in at least `lambda` episodes.
-3. One has
+1. One exact physical star cell is reintroduced in at least `lambda` episodes.
+2. One has
 
    \[
    \boxed{K\le S(q)+(\lambda-1)2q^2.}
@@ -204,9 +209,10 @@ every `lambda>=2`, at least one of the following holds.
 ### Proof
 
 In each episode, if none of the neutralised star targets ever returns, charge one
-fresh certificate permanently. Otherwise the common cell `z` must return by
-CMR764. There are at most `S(q)` permanent charges and at most
-`(lambda-1)2q^2` nonrecurrent cell-return charges. ∎
+fresh certificate key permanently. Otherwise the common cell `z` must return by
+CMR764. There are at most `S(q)` permanent charges. If no cell returns in
+`lambda` episodes, the at most `2q^2` possible star cells supply at most
+`(lambda-1)2q^2` further episode charges. ∎
 
 A single return of `z` may permit several stored targets to become active, but it
 is still one exact owner-cell reintroduction and is not counted as fresh stock.
