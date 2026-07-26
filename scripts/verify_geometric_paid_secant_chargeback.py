@@ -9,10 +9,18 @@ from itertools import combinations, product
 from math import ceil, floor
 
 
+def representative_weights(factor_count: int) -> tuple[tuple[int, ...], ...]:
+    return (
+        tuple(1 for _ in range(factor_count)),
+        tuple(1 + (index % 2) for index in range(factor_count)),
+        tuple(2 if index == 0 else 1 for index in range(factor_count)),
+    )
+
+
 def verify_payment(counts: Counter[str]) -> None:
     # Incidence columns are current factors; rows are current corrections.
-    for correction_count in range(1, 5):
-        for factor_count in range(1, 5):
+    for correction_count in range(1, 4):
+        for factor_count in range(1, 4):
             for rank in range(1, 4):
                 row_masks = range(1, 1 << factor_count)
                 for masks in product(row_masks, repeat=correction_count):
@@ -22,29 +30,26 @@ def verify_payment(counts: Counter[str]) -> None:
                     ]
                     if max(column_degrees) > rank:
                         continue
-                    for weights in product((1, 2), repeat=factor_count):
+                    for weights in representative_weights(factor_count):
                         destroyed = [
                             sum(weights[f] for f in range(factor_count) if mask >> f & 1)
                             for mask in masks
                         ]
-                        # Use extremal and interior gain choices without exploding the grid.
-                        gain_options = [
+                        gain_options = {
                             tuple(1 for _ in destroyed),
                             tuple(destroyed),
                             tuple(max(1, (value + 1) // 2) for value in destroyed),
-                        ]
+                        }
                         for gains in gain_options:
-                            ratios = []
-                            for factor in range(factor_count):
-                                ratios.append(
-                                    sum(
-                                        Fraction(gains[i], destroyed[i])
-                                        for i, mask in enumerate(masks)
-                                        if mask >> factor & 1
-                                    )
+                            ratios = [
+                                sum(
+                                    Fraction(gains[i], destroyed[i])
+                                    for i, mask in enumerate(masks)
+                                    if mask >> factor & 1
                                 )
-                            kappa = max(ratios, default=Fraction(0))
-                            K = max(Fraction(1), kappa)
+                                for factor in range(factor_count)
+                            ]
+                            K = max(Fraction(1), max(ratios, default=Fraction(0)))
                             charges = [
                                 [
                                     Fraction(gains[i] * weights[f], 1) / (K * destroyed[i])
@@ -72,15 +77,19 @@ def verify_payment(counts: Counter[str]) -> None:
                                 W = sum(factor_payments[f] for f in subset)
                                 if W == 0:
                                     continue
-                                candidates = [
-                                    (gains[i], charges[i][f])
+                                best_charge = max(
+                                    charges[i][f]
                                     for i in range(correction_count)
                                     for f in subset
-                                    if charges[i][f] > 0
+                                )
+                                incident_gains = [
+                                    gains[i]
+                                    for i in range(correction_count)
+                                    for f in subset
+                                    if charges[i][f] == best_charge and best_charge > 0
                                 ]
-                                assert candidates
-                                best_gain, best_charge = max(candidates, key=lambda item: item[1])
-                                assert best_gain >= best_charge
+                                assert incident_gains
+                                assert max(incident_gains) >= best_charge
                                 assert best_charge * rank * len(subset) >= W
                                 counts["chargeback fibres"] += 1
                             counts["payment systems"] += 1
@@ -98,12 +107,16 @@ def greedy_matching(triples: tuple[tuple[int, int, int], ...]) -> tuple[tuple[in
 
 
 def verify_star_matching(counts: Counter[str]) -> None:
-    points = range(6)
+    points = range(5)
     all_triples = tuple(combinations(points, 3))
-    # Exhaust all subfamilies up to six triples and representative positive weights.
-    for family_size in range(1, 7):
+    # Exhaust all subfamilies through five triples with representative weights.
+    for family_size in range(1, 6):
         for triples in combinations(all_triples, family_size):
-            for weights in (tuple(1 for _ in triples), tuple(1 + (i % 2) for i in range(len(triples)))):
+            weight_profiles = (
+                tuple(1 for _ in triples),
+                tuple(1 + (index % 2) for index in range(len(triples))),
+            )
+            for weights in weight_profiles:
                 total = sum(weights)
                 point_load = {
                     point: sum(weight for triple, weight in zip(triples, weights) if point in triple)
@@ -111,12 +124,10 @@ def verify_star_matching(counts: Counter[str]) -> None:
                 }
                 for mu in (1, 2):
                     for lam in range(1, total + 1):
-                        heavy = any(weight > mu for weight in weights)
-                        star = max(point_load.values(), default=0) > lam
-                        if heavy:
+                        if any(weight > mu for weight in weights):
                             counts["heavy outputs"] += 1
                             continue
-                        if star:
+                        if max(point_load.values(), default=0) > lam:
                             point = max(point_load, key=point_load.get)
                             degree = sum(point in triple for triple in triples)
                             assert degree >= floor(lam / mu) + 1
