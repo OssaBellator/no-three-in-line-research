@@ -63,6 +63,12 @@ def collinear(triple):
     return line_key(triple[0], triple[1]) == line_key(triple[0], triple[2])
 
 
+def compatible(prescription):
+    return len({row for row, _column in prescription}) == len(prescription) and len(
+        {column for _row, column in prescription}
+    ) == len(prescription)
+
+
 def line_formula_sums(side, opposite, current, lines):
     sums = [0, 0, 0, 0]
     target_layer = 0
@@ -78,8 +84,8 @@ def line_formula_sums(side, opposite, current, lines):
             + (side - 1) * m * comb(u, 2)
             + side * comb(u, 3)
         )
-        target_layer += m * comb(o + m - 1, 2)
         if o + m >= 3:
+            target_layer += m * comb(o + m - 1, 2)
             profiles.append((len(line_cells), o, m, u))
     return sums, target_layer, profiles
 
@@ -94,8 +100,10 @@ def direct_candidate_sums(side, opposite, current):
             triple_set = set(triple)
             if triple_set <= old_state or not collinear(triple):
                 continue
-            rank = len(triple_set - set(opposite))
-            totals[rank] += 1
+            residual = triple_set - set(opposite)
+            if not compatible(residual):
+                continue
+            totals[len(residual)] += 1
     return totals
 
 
