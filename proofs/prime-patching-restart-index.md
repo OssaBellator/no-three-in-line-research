@@ -30,6 +30,8 @@ transition addendum in
 | Prime-minus-one seed CSP audit | Saturated seeds are exactly two edge-disjoint permutations satisfying all integer determinant constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
 | Terminal local call matrix | Complete insertion cancellation, direct paid current structures, and acyclic source routing close every fixed-attempt local leaf | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
 | Relative seed and line compression | Seeds are one permutation plus a relative derangement; relative cycles are incidence components and maximal-line inequalities replace triple constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
+| Uniform random seed barrier | Fixed-relative triple cylinders have exact probability `1/(n)_3`; expected defects are `Theta(n log n)` and the natural symmetric LLL misses by `Omega(log n)` | PROVED BARRIER / STRONGER METHODS OPEN | `docs/281-fixed-relative-random-permutation-barrier.md` |
+| Geometric seed symmetry and p=13 | Only square symmetries and layer swap are valid generic quotients; arbitrary coordinate relabeling is invalid; a new exact `p=13` seed is certified | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
 
 ## Exact late theorem ranges
 
@@ -63,6 +65,8 @@ transition addendum in
 | PP3bcg--PP3bcm | Two-permutation determinant-CSP equivalence for prime-minus-one seeds | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
 | PP3bcn--PP3bcu | Terminal local current/source call matrix and fixed-attempt termination | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
 | PP3bcv--PP3bdd | Relative-permutation normal form, maximal-line compression, fixed-relative CSP, and affine-layer barrier | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
+| PP3bde--PP3bdk | Exact fixed-relative triple cylinders, grid-triple count, expectation barrier, and symmetric-LLL barrier | PROVED | `docs/281-fixed-relative-random-permutation-barrier.md` |
+| PP3bdl--PP3bdq | Geometric seed symmetry group, coordinate-relabel barrier, and verified `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
 
 ## Current exact endpoint
 
@@ -79,13 +83,24 @@ Consequently, once a saturated no-three source is supplied, the heterogeneous
 exact-width fixed-slab process terminates locally.  This statement remains
 inside the stated slab setup and does not construct the initial sources.
 
-The global frontier is now an exact finite combinatorial existence theorem.  For
+The global frontier is an exact finite combinatorial existence theorem.  For
 `n=p-1`, a seed is equivalently one permutation `sigma` and one derangement
 `pi`, with `tau=sigma o pi`, satisfying occupancy at most two on every maximal
 Euclidean grid line.  The cycles of `pi` are exactly the alternating incidence
-components.  Affine permutation layers cannot work for `n>=3`, so a successful
-family must be genuinely nonlinear in Euclidean coordinates.  Stored
-certificates verify only `p=3,5,7,11`; they do not prove asymptotic existence.
+components.  Affine permutation layers cannot work for `n>=3`, and arbitrary
+row/column relabeling is not a Euclidean symmetry, so a successful family must
+use genuinely nonlinear geometric structure.
+
+The uniform fixed-relative model is now audited exactly.  It has
+`Theta(n log n)` expected forbidden triples for every `pi`, while the natural
+canonical-event symmetric permutation LLL has left side `Omega(log n)`.  Thus
+neither the unconditioned first moment nor that symmetric LLL closes the seed
+theorem.  This does not exclude nonuniform measures, stronger local-lemma
+criteria, resampling/repair methods, or explicit constructions.
+
+Stored certificates now verify `p=3,5,7,11,13`.  The `p=13` seed has relative
+cycle partition `[4,4,2,2]`, showing that disconnected relative cycle types
+remain useful.  Finite certificates do not prove asymptotic existence.
 
 The remaining theorem is:
 
@@ -121,4 +136,8 @@ python scripts/check_local_frontier_terminal_routing.py \
   experiments/local-frontier-terminal-routing-example.json
 python scripts/check_prime_seed_relative_cycles.py \
   experiments/prime-seed-relative-cycle-example.json
+python scripts/check_fixed_relative_random_barrier.py \
+  experiments/fixed-relative-random-barrier-example.json
+python scripts/check_prime_seed_geometric_orbit.py \
+  experiments/prime-seed-geometric-orbit-example.json
 ```
