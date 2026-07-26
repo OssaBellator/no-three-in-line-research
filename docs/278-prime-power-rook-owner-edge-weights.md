@@ -44,7 +44,7 @@ P_U:=U\setminus O
 
 is nonempty, matching-compatible and not contained in `M`.
 
-### Theorem CMR1390 -- PROVED
+### Theorem CMR1398 -- PROVED
 
 For every response `R in PM(H_e)`,
 
@@ -78,7 +78,7 @@ It is nonempty.  Put
 a(U)=\min_\prec A_U.
 \]
 
-### Theorem CMR1391 -- PROVED
+### Theorem CMR1399 -- PROVED
 
 Whenever `U` occurs in a response, its CMR1215 owner is exactly `a(U)`.
 In particular, the owner does not depend on which other bank edges occur.
@@ -120,7 +120,7 @@ Let
 
 be the exact prescription probability from CMR1376.
 
-### Theorem CMR1392 -- PROVED
+### Theorem CMR1400 -- PROVED
 
 The unconditional expected collateral owned by `a` is
 
@@ -137,8 +137,8 @@ C_e(a;r,q,d,\varepsilon)
 
 ### Proof
 
-By CMR1391, a candidate is assigned to `a` independently of the sampled
-response.  By CMR1390 it occurs exactly when `P_U subseteq R`, whose probability
+By CMR1399, a candidate is assigned to `a` independently of the sampled
+response.  By CMR1398 it occurs exactly when `P_U subseteq R`, whose probability
 is the rook-class value `pi_n`.  Sum the indicators over the candidates owned
 by `a`. ∎
 
@@ -155,7 +155,7 @@ p_e(a)=\pi_n(1,q(a),d(a),\varepsilon(a)).
 Every allowed edge has positive marginal because it belongs to a perfect
 matching of `H_e`.
 
-### Theorem CMR1393 -- PROVED
+### Theorem CMR1401 -- PROVED
 
 \[
 \boxed{
@@ -174,7 +174,7 @@ Consequently
 ### Proof
 
 The first identity is the definition of conditional expectation together with
-CMR1392.  Sum over owners and use the exact owner partition. ∎
+CMR1400.  Sum over owners and use the exact owner partition. ∎
 
 Thus the complete cross-line assignment weights are obtained from geometric
 candidate counts and a linear-size rook probability table, without enumerating
@@ -190,7 +190,7 @@ geometric signature by `eta(U)` and refine the count to
 C_e(a;r,q,d,\varepsilon,\eta).
 \]
 
-### Theorem CMR1394 -- PROVED
+### Theorem CMR1402 -- PROVED
 
 The refined counts still partition `c_e(a)` exactly:
 
@@ -218,7 +218,7 @@ primitive-height, prefix and carry classes.
 
 ## Assignment dual using closed weights
 
-### Theorem CMR1395 -- PROVED
+### Theorem CMR1403 -- PROVED
 
 Let `alpha_x,beta_y` be rational potentials satisfying
 
@@ -242,7 +242,7 @@ exists.
 
 ### Proof
 
-The displayed edge value is exactly `g_e(x,y)` by CMR1392--CMR1393.  Apply the
+The displayed edge value is exactly `g_e(x,y)` by CMR1400--CMR1401.  Apply the
 assignment dual and strict-improvement theorem CMR1386--CMR1387. ∎
 
 No perfect-matching enumeration occurs in this certificate.
@@ -251,7 +251,7 @@ No perfect-matching enumeration occurs in this certificate.
 
 Let `U_H` be the unavailable allowed edges in a restricted current host.
 
-### Theorem CMR1396 -- PROVED
+### Theorem CMR1404 -- PROVED
 
 The unavailable-edge term is
 
@@ -259,6 +259,7 @@ The unavailable-edge term is
 \boxed{
 \sum_{a\in U_H}p_e(a),
 }
+\]
 
 where every `p_e(a)` is the exact rank-one rook value.  Hence a sufficient
 host-feasible improvement condition is
@@ -271,12 +272,12 @@ host-feasible improvement condition is
 
 ### Proof
 
-Use CMR1380 for exact expected unavailable-edge use and CMR1395 for collateral.
+Use CMR1380 for exact expected unavailable-edge use and CMR1403 for collateral.
 The usual penalty argument then excludes every unavailable response. ∎
 
 ## Rook-owner assignment endpoint
 
-### Corollary CMR1397 -- PROVED
+### Corollary CMR1405 -- PROVED
 
 For one extension-free target bank:
 
