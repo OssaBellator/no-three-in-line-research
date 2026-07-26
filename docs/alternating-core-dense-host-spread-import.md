@@ -93,8 +93,10 @@ When `L>=3`, the uniform dense-host menu is rank-three spread in AC5's
 
 \[
 \boxed{
-K_{\rm dense}=rac{N}{L-1}
-=rac{N}{2d_{\min}-N-4}.
+K_{\rm dense}=
+\dfrac{N}{L-1}
+=
+\dfrac{N}{2d_{\min}-N-4}.
 }
 \]
 
@@ -156,7 +158,7 @@ Equivalently the rank-three AC5 spread constant may be taken as
 \boxed{
 K_{\rm hole}
 =
-\frac{N}{N-2h-4}.
+\dfrac{N}{N-2h-4}.
 }
 \]
 
