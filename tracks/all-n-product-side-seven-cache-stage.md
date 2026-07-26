@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `9`:
+have closed every top-signature tier of multiplicity at least `8`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -32,42 +32,40 @@ have closed every top-signature tier of multiplicity at least `9`:
 | 12 | 128 | 1,536 | certified infeasible |
 | 10 | 164 | 1,640 | certified infeasible |
 | 9 | 64 | 576 | certified infeasible |
-| **Total** | **572 completed classes** | **7,716** | **205,718,054 shared bottom-CSP nodes** |
+| 8 | 277 | 2,216 | certified infeasible |
+| **Total** | **849 completed classes** | **9,932** | **290,506,260 shared bottom-CSP nodes** |
 
-Thus `64,144` support-twenty selectors remain active in this cache layer.
+Thus `61,928` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX671--PX674 in
-[`docs/214-side-seven-cycle52-radius-three-support-twenty-multiplicity-nine.md`](../docs/214-side-seven-cycle52-radius-three-support-twenty-multiplicity-nine.md).
+The latest exact results are PX675--PX678 in
+[`docs/215-side-seven-cycle52-radius-three-support-twenty-multiplicity-eight.md`](../docs/215-side-seven-cycle52-radius-three-support-twenty-multiplicity-eight.md).
 
 ## Solver improvement
 
 The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
-live in `scripts/product_side_seven_cache_engine.hpp`. New tier scripts are data
-tables plus one generic `verify_tier` call. Wide data tables are split into
-include shards to keep proof data reviewable and connector writes small.
+live in `scripts/product_side_seven_cache_engine.hpp`.
 
-PX641--PX642 give a stronger exact formulation: one selector-choice CSP, or
-one one-hot CNF, can decide an entire selector family at once. The intended
-upgrade is assumption-based conflict extraction from the bottom subproblem,
-followed by proof-logged SAT or certified dominance and symmetry breaking. See
-[`docs/207-selector-choice-csp-and-certified-symmetry.md`](../docs/207-selector-choice-csp-and-certified-symmetry.md).
+The multiplicity-eight verifier replaces a large checked-in case table by a
+compact deterministic transcript digest. It still prints every per-signature
+count, while one asserted 64-bit digest commits the complete ordered transcript.
+This keeps exact verification compact without weakening the exhaustive search.
+
+PX641--PX642 give the stronger selector-choice CSP and proof-logged SAT route.
+Assumption-based conflict extraction and mechanically certified symmetry remain
+parallel solver-development tasks.
 
 ## Immediate task
 
-The next nonempty tier has multiplicity `8`: two hundred seventy-seven top
-signatures containing `2,216` selectors. Split the tier into independently
-reproducible verifier shards using the shared engine. In parallel:
+The next nonempty tier has multiplicity `7`: one hundred top signatures
+containing `700` selectors. Run it through the shared engine and retain the
+transcript-digest verifier format. In parallel:
 
 1. add top-assignment assumption literals;
 2. extract deletion-minimal bottom infeasibility cores;
 3. learn a master nogood covering every top order extending one core;
 4. export one selector-choice shard to CNF and check an UNSAT proof independently;
 5. add only mechanically verified host/reflection symmetry constraints.
-
-A complete shard result must assert the exact histogram, every clean-top order
-and top-node count, every bottom-node count, and either an explicit surviving
-configuration or exact infeasibility.
 
 ## Stage completion criterion
 
@@ -81,14 +79,10 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity9.cpp \
-  -o /tmp/m9
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity8.cpp \
+  -o /tmp/m8
 
-for case_index in $(seq 0 63); do
-  for orientation in 0 1 2 3; do
-    /tmp/m9 "$case_index" "$orientation"
-  done
-done
+/tmp/m8
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
