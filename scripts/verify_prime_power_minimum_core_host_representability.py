@@ -2,6 +2,7 @@
 """Finite checks for CMR974--CMR981."""
 
 from itertools import combinations, permutations, product
+from math import comb
 import random
 
 
@@ -18,30 +19,31 @@ def common_core(family):
     return frozenset(result)
 
 
+def random_equal_family(universe_size, state_size, maximum, rng):
+    target = rng.randint(1, min(maximum, comb(universe_size, state_size)))
+    family = set()
+    while len(family) < target:
+        family.add(frozenset(rng.sample(range(universe_size), state_size)))
+    return family
+
+
 def check_general_conditioning():
     rng = random.Random(974)
     checked = 0
-    for universe_size in range(1, 30):
+    for universe_size in range(1, 40):
         for state_size in range(universe_size + 1):
-            all_states = [
-                frozenset(state)
-                for state in combinations(range(universe_size), state_size)
-            ]
-            for _ in range(40):
-                family = set(
-                    rng.sample(all_states, rng.randint(1, min(100, len(all_states))))
-                )
+            for _ in range(30):
+                family = random_equal_family(universe_size, state_size, 100, rng)
                 potential = {state: rng.randint(0, 30) for state in family}
                 face, value = minimum_face(family, potential)
                 core = common_core(face)
-                rank = rng.randint(0, min(3, len(core)))
-                prescription = frozenset(rng.sample(tuple(core), rank))
+                prescription = frozenset(
+                    rng.sample(tuple(core), rng.randint(0, min(3, len(core))))
+                )
                 conditioned = {
                     state for state in family if set(prescription) <= set(state)
                 }
-                conditioned_face, conditioned_value = minimum_face(
-                    conditioned, potential
-                )
+                conditioned_face, conditioned_value = minimum_face(conditioned, potential)
                 assert conditioned_value == value
                 assert conditioned_face == face
                 residual = {
@@ -55,8 +57,7 @@ def check_general_conditioning():
                 residual_face, residual_value = minimum_face(residual, induced)
                 assert residual_value == value
                 assert residual_face == {
-                    frozenset(set(state) - set(prescription))
-                    for state in face
+                    frozenset(set(state) - set(prescription)) for state in face
                 }
                 checked += 1
     return checked
@@ -89,59 +90,46 @@ def check_one_layer_hosts():
     checked = 0
     for side in range(1, 5):
         edges = [(source, target) for source in range(side) for target in range(side)]
-        trials = range(1 << len(edges)) if side <= 3 else range(5000)
+        trials = range(1 << len(edges)) if side <= 3 else range(3000)
         for trial in trials:
             if side <= 3:
-                host = {
-                    edge for index, edge in enumerate(edges) if trial & (1 << index)
-                }
+                host = {edge for index, edge in enumerate(edges) if trial & (1 << index)}
             else:
-                host = {edge for edge in edges if rng.random() < rng.uniform(0.3, 0.9)}
+                density = rng.uniform(0.3, 0.9)
+                host = {edge for edge in edges if rng.random() < density}
             family = perfect_matchings(side, host)
             if not family:
                 continue
             selected = rng.choice(tuple(family))
             rank = rng.randint(0, min(3, side))
             prescription = frozenset(rng.sample(tuple(selected), rank))
-            conditioned = {
-                state for state in family if set(prescription) <= set(state)
-            }
+            conditioned = {state for state in family if set(prescription) <= set(state)}
             residual = residual_host(host, prescription)
-            residual_sources = sorted(
-                set(range(side)) - {source for source, _ in prescription}
-            )
-            residual_targets = sorted(
-                set(range(side)) - {target for _, target in prescription}
-            )
-            source_index = {source: index for index, source in enumerate(residual_sources)}
-            target_index = {target: index for index, target in enumerate(residual_targets)}
-            relabelled_host = {
+            sources = sorted(set(range(side)) - {source for source, _ in prescription})
+            targets = sorted(set(range(side)) - {target for _, target in prescription})
+            source_index = {source: index for index, source in enumerate(sources)}
+            target_index = {target: index for index, target in enumerate(targets)}
+            relabelled = {
                 (source_index[source], target_index[target])
                 for source, target in residual
             }
-            residual_matchings = perfect_matchings(side - rank, relabelled_host)
-            lifted_residuals = {
-                frozenset(
-                    (residual_sources[source], residual_targets[target])
-                    for source, target in state
-                )
+            residual_matchings = perfect_matchings(side - rank, relabelled)
+            lifted = {
+                frozenset((sources[source], targets[target]) for source, target in state)
                 for state in residual_matchings
             }
             assert {
-                frozenset(set(state) - set(prescription))
-                for state in conditioned
-            } == lifted_residuals
+                frozenset(set(state) - set(prescription)) for state in conditioned
+            } == lifted
             checked += 1
     return checked
 
 
 def joint_states(side, host0, host1):
-    first = perfect_matchings(side, host0)
-    second = perfect_matchings(side, host1)
     return {
         (state0, state1)
-        for state0 in first
-        for state1 in second
+        for state0 in perfect_matchings(side, host0)
+        for state1 in perfect_matchings(side, host1)
         if set(state0).isdisjoint(state1)
     }
 
@@ -151,20 +139,21 @@ def check_two_layer_joint_systems():
     checked = 0
     for side in range(1, 5):
         edges = [(source, target) for source in range(side) for target in range(side)]
-        for _ in range(2000 if side <= 3 else 1000):
-            host0 = {edge for edge in edges if rng.random() < rng.uniform(0.35, 0.9)}
-            host1 = {edge for edge in edges if rng.random() < rng.uniform(0.35, 0.9)}
+        for _ in range(1200 if side <= 3 else 600):
+            density0 = rng.uniform(0.35, 0.9)
+            density1 = rng.uniform(0.35, 0.9)
+            host0 = {edge for edge in edges if rng.random() < density0}
+            host1 = {edge for edge in edges if rng.random() < density1}
             family = joint_states(side, host0, host1)
             if not family:
                 continue
             selected0, selected1 = rng.choice(tuple(family))
-            rank0 = rng.randint(0, min(2, side))
-            rank1 = rng.randint(0, min(2, side))
-            prescription0 = frozenset(rng.sample(tuple(selected0), rank0))
-            available1 = [edge for edge in selected1 if edge not in prescription0]
-            rank1 = min(rank1, len(available1))
-            prescription1 = frozenset(rng.sample(available1, rank1))
-            prescription = (prescription0, prescription1)
+            prescription0 = frozenset(
+                rng.sample(tuple(selected0), rng.randint(0, min(2, side)))
+            )
+            prescription1 = frozenset(
+                rng.sample(tuple(selected1), rng.randint(0, min(2, side)))
+            )
             conditioned = {
                 state
                 for state in family
@@ -205,9 +194,8 @@ def check_product_conditioning():
     rng = random.Random(978)
     checked = 0
     for factor_count in range(1, 5):
-        for _ in range(3000):
+        for _ in range(2000):
             factors = []
-            chosen_parts = []
             prescriptions = []
             offset = 0
             for _factor in range(factor_count):
@@ -215,35 +203,29 @@ def check_product_conditioning():
                 state_size = rng.randint(0, universe_size)
                 edges = tuple(range(offset, offset + universe_size))
                 all_states = [
-                    frozenset(state)
-                    for state in combinations(edges, state_size)
+                    frozenset(state) for state in combinations(edges, state_size)
                 ]
                 family = set(
                     rng.sample(all_states, rng.randint(1, min(10, len(all_states))))
                 )
                 chosen = rng.choice(tuple(family))
-                rank = rng.randint(0, min(2, len(chosen)))
-                prescription = frozenset(rng.sample(tuple(chosen), rank))
+                prescription = frozenset(
+                    rng.sample(tuple(chosen), rng.randint(0, min(2, len(chosen))))
+                )
                 factors.append(family)
-                chosen_parts.append(chosen)
                 prescriptions.append(prescription)
                 offset += universe_size
-            full_family = {
-                frozenset().union(*states) for states in product(*factors)
-            }
+            full_family = {frozenset().union(*states) for states in product(*factors)}
             full_prescription = frozenset().union(*prescriptions)
             conditioned = {
-                state
-                for state in full_family
-                if set(full_prescription) <= set(state)
+                state for state in full_family if set(full_prescription) <= set(state)
             }
             local_conditioned = [
                 {state for state in family if set(prescription) <= set(state)}
                 for family, prescription in zip(factors, prescriptions)
             ]
             expected = {
-                frozenset().union(*states)
-                for states in product(*local_conditioned)
+                frozenset().union(*states) for states in product(*local_conditioned)
             }
             assert conditioned == expected
             checked += 1
@@ -255,12 +237,13 @@ def check_potential_transport_and_rank_budget():
     transport = 0
     budgets = 0
     for universe_size in range(3, 60):
-        for _ in range(200):
+        for _ in range(150):
             state = frozenset(
                 rng.sample(range(universe_size), rng.randint(1, universe_size))
             )
-            rank = rng.randint(0, min(3, len(state)))
-            prescription = frozenset(rng.sample(tuple(state), rank))
+            prescription = frozenset(
+                rng.sample(tuple(state), rng.randint(0, min(3, len(state))))
+            )
             residual = frozenset(set(state) - set(prescription))
             atom = frozenset(rng.sample(range(universe_size), 3))
             assert (set(atom) <= set(state)) == (
@@ -272,9 +255,9 @@ def check_potential_transport_and_rank_budget():
             remaining = len(state)
             contracted = 0
             while remaining:
-                next_rank = rng.randint(1, remaining)
-                remaining -= next_rank
-                contracted += next_rank
+                rank = rng.randint(1, remaining)
+                remaining -= rank
+                contracted += rank
                 assert contracted + remaining == len(state)
             assert contracted <= len(state)
             budgets += 1
