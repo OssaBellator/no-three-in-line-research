@@ -11,7 +11,7 @@ MANIFEST = ROOT / "proofs" / "product-entry-invariant-dependencies.json"
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 FIRST = 397
-LAST = 608
+LAST = 616
 
 
 def node_start(name: str) -> int:
@@ -90,20 +90,24 @@ def main() -> None:
         "3{,}472{,}655",
         "927{,}673",
         "4{,}400{,}328",
-        "71{,}442",
-        "70",
+        "1,919,466",
+        "1,375,574",
+        "7{,}695{,}368",
+        "71{,}276",
+        "162",
     ):
         assert token in text, token
 
     constants = manifest["safety_rules"]["required_constants"]
     assert constants["active_cutoff_power_of_ten"] == 2900
-    assert constants["side_seven_cycle52_support_twenty_cached_selector_count"] == 418
-    assert constants["side_seven_cycle52_support_twenty_cached_bottom_nodes"] == 4_400_328
-    assert constants["side_seven_cycle52_radius_three_support_twenty_remaining"] == 71_442
-    assert constants["side_seven_cycle52_support_twenty_next_selector_count"] == 70
+    assert constants["side_seven_cycle52_support_twenty_cached_selector_count"] == 584
+    assert constants["side_seven_cycle52_support_twenty_cached_bottom_nodes"] == 7_695_368
+    assert constants["side_seven_cycle52_radius_three_support_twenty_remaining"] == 71_276
+    assert constants["side_seven_cycle52_support_twenty_next_signature_multiplicity"] == 27
+    assert constants["side_seven_cycle52_support_twenty_next_selector_count"] == 162
 
     print(
-        "PX397--PX608 dependency, cutoff, and support-twenty multiplicity audit: PASS"
+        "PX397--PX616 dependency, cutoff, and support-twenty multiplicity audit: PASS"
     )
 
 
