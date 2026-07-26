@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have now closed every top-signature tier of multiplicity at least `26`:
+have now closed every top-signature tier of multiplicity at least `24`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -21,21 +21,22 @@ have now closed every top-signature tier of multiplicity at least `26`:
 | 32 | 3 | 96 | certified infeasible |
 | 27 | 6 | 162 | certified infeasible |
 | 26 | 6 | 156 | certified infeasible |
-| **Total** | **27** | **902** | **12,928,516 shared bottom-CSP nodes** |
+| 24 | 8 | 192 | certified infeasible |
+| **Total** | **35** | **1,094** | **16,259,764 shared bottom-CSP nodes** |
 
-Thus `70,958` support-twenty selectors remain active in this cache layer.
+Thus `70,766` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX621--PX624 in
-[`docs/202-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty-six.md`](../docs/202-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty-six.md).
+The latest exact results are PX625--PX628 in
+[`docs/203-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty-four.md`](../docs/203-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty-four.md).
 
 ## Immediate task
 
-There is no multiplicity-25 tier. The next tier has multiplicity `24`: eight
-top signatures containing `192` selectors. Regenerate the exact layer, record
-both clean-top order counts, and exhaust all four radix orientations with the
-shared active-selector bottom CSP. A complete tier result must assert the exact
-histogram, every top-search count, every bottom-search node count, and either an
-explicit surviving configuration or exact infeasibility.
+The next tier has multiplicity `23`: ten top signatures containing `230`
+selectors. Regenerate the exact layer, record both clean-top order counts, and
+exhaust all four radix orientations with the shared active-selector bottom CSP.
+A complete tier result must assert the exact histogram, every top-search count,
+every bottom-search node count, and either an explicit surviving configuration
+or exact infeasibility.
 
 ## Stage completion criterion
 
@@ -49,12 +50,12 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity26.cpp \
-  -o /tmp/side7_c52_s20_m26
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity24.cpp \
+  -o /tmp/side7_c52_s20_m24
 
-for case_index in 0 1 2 3 4 5; do
+for case_index in 0 1 2 3 4 5 6 7; do
   for orientation in 0 1 2 3; do
-    /tmp/side7_c52_s20_m26 "$case_index" "$orientation"
+    /tmp/side7_c52_s20_m24 "$case_index" "$orientation"
   done
 done
 ```
