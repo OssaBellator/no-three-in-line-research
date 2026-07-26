@@ -1,0 +1,10 @@
+{
+  "layer_sizes": [7, 5],
+  "first_removal_credit": 12,
+  "second_insertion_costs": [0, 0],
+  "first_insertion_records": [
+    {"weight": 420, "layers": [0]},
+    {"weight": 330, "layers": [1]},
+    {"weight": 250, "layers": [0, 1]}
+  ]
+}
