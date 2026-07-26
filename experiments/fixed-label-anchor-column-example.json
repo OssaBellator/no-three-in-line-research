@@ -1,0 +1,7 @@
+{
+  "W": 100,
+  "R": 10000,
+  "blocks": 4,
+  "block_side": 99,
+  "column_mass_factor": 3.0
+}
