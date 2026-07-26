@@ -1,0 +1,53 @@
+{
+  "paid_case": {
+    "credit": 120,
+    "lost_credit": 20,
+    "final_insertion": 80
+  },
+  "boundary_case": {
+    "history_centres": 36,
+    "width": 6,
+    "lost_credit": 18,
+    "final_insertion": 198,
+    "repeated_records": [
+      {"earlier_centre": "p0", "partner": "q0", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p1", "partner": "q1", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p2", "partner": "q2", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p3", "partner": "q3", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p4", "partner": "q4", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p5", "partner": "q5", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p6", "partner": "q6", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p7", "partner": "q7", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p8", "partner": "q8", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p9", "partner": "q9", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p10", "partner": "q10", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p11", "partner": "q11", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p12", "partner": "q12", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p13", "partner": "q13", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p14", "partner": "q14", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p15", "partner": "q15", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p16", "partner": "q16", "later_controller": "p35", "label": "A7", "candidate": "z_common"},
+      {"earlier_centre": "p17", "partner": "q17", "later_controller": "p35", "label": "A7", "candidate": "z_common"}
+    ],
+    "diffuse_records": [
+      {"earlier_centre": "p0", "partner": "q0", "later_controller": "p18", "label": "A0", "candidate": "z0"},
+      {"earlier_centre": "p1", "partner": "q1", "later_controller": "p19", "label": "A1", "candidate": "z1"},
+      {"earlier_centre": "p2", "partner": "q2", "later_controller": "p20", "label": "A2", "candidate": "z2"},
+      {"earlier_centre": "p3", "partner": "q3", "later_controller": "p21", "label": "A3", "candidate": "z3"},
+      {"earlier_centre": "p4", "partner": "q4", "later_controller": "p22", "label": "A4", "candidate": "z4"},
+      {"earlier_centre": "p5", "partner": "q5", "later_controller": "p23", "label": "A5", "candidate": "z5"},
+      {"earlier_centre": "p6", "partner": "q6", "later_controller": "p24", "label": "A6", "candidate": "z6"},
+      {"earlier_centre": "p7", "partner": "q7", "later_controller": "p25", "label": "A7", "candidate": "z7"},
+      {"earlier_centre": "p8", "partner": "q8", "later_controller": "p26", "label": "A8", "candidate": "z8"},
+      {"earlier_centre": "p9", "partner": "q9", "later_controller": "p27", "label": "A9", "candidate": "z9"},
+      {"earlier_centre": "p10", "partner": "q10", "later_controller": "p28", "label": "A10", "candidate": "z10"},
+      {"earlier_centre": "p11", "partner": "q11", "later_controller": "p29", "label": "A11", "candidate": "z11"},
+      {"earlier_centre": "p12", "partner": "q12", "later_controller": "p30", "label": "A12", "candidate": "z12"},
+      {"earlier_centre": "p13", "partner": "q13", "later_controller": "p31", "label": "A13", "candidate": "z13"},
+      {"earlier_centre": "p14", "partner": "q14", "later_controller": "p32", "label": "A14", "candidate": "z14"},
+      {"earlier_centre": "p15", "partner": "q15", "later_controller": "p33", "label": "A15", "candidate": "z15"},
+      {"earlier_centre": "p16", "partner": "q16", "later_controller": "p34", "label": "A16", "candidate": "z16"},
+      {"earlier_centre": "p17", "partner": "q17", "later_controller": "p35", "label": "A17", "candidate": "z17"}
+    ]
+  }
+}
