@@ -1,7 +1,7 @@
 # Prime-patching restart and exact-width index
 
-This focused index records the late fixed-infrastructure, restart, exact-width,
-source-host, and complete-insertion-cancellation chain on
+This focused index records the terminal fixed-infrastructure patching chain
+and the remaining prime-minus-one seed frontier on
 `research/all-n-prime-patching`.
 
 The earlier allocation and endpoint localization chain is indexed in
@@ -9,103 +9,79 @@ The earlier allocation and endpoint localization chain is indexed in
 transition addendum in
 [`prime-patching-transition-index.md`](prime-patching-transition-index.md).
 
-## Phase index
+## Late phase index
 
 | Phase | Result | Status | Location |
 |---|---|---|---|
-| Fixed-centre normal form | Five-chain normal form, local-credit role splitting, clean-chain supply, inverse-density conditioning, residual source saving, adaptive thresholds, and candidate-fan localization | PROVED / CONDITIONAL NAMED PAID INTERFACES | `docs/186`--`docs/192` |
-| Recapture and endpoint-bank preparation | Credited-line thinning, recapture-free banks, ambient support thinning, source-star amortization, fixed-cell fan payment, binary-shadow bypass, unary-domain margins, and bounded final-shadow cascades | PROVED / CONDITIONAL NAMED ENDPOINT INTERFACES | `docs/193`--`docs/205` |
-| Cycle and captive-controller closure | Original-reference defect growth, target-cycle cascades, chord localization, retained-controller monotonicity, target-cycle absorption, captive-controller partner banks, controller punctures, and initial blocker conversion | PROVED / CONDITIONAL NAMED HOST INTERFACES | `docs/206`--`docs/214` |
-| Allocation and complete support capture | Anchor-core conversion, fixed-label fibres and anchor columns, fully blocked ownership rows, random score-mass conversion, ambient positive-support decomposition, sunflower hosts, helper-core localization, terminal source pencils, complete support capture, and local atom bypass | PROVED / CONDITIONAL NAMED CONVERSION INTERFACES | `docs/215`--`docs/230` |
-| Puncture, cancellation, and endpoint normal form | Puncture history, nested potentials, telescoping credit, local cancellation, bounded marked layers, coordinate reservoirs, epoch reset, complete endpoint normal form, and direct paid marked trades | PROVED / CONDITIONAL NAMED CONVERSION INTERFACES | `docs/231`--`docs/249` |
-| Exact-width assembly | Coordinate census, fixed-attempt repair, restart potential, infrastructure termination, anchor activation, dependency audit, buffered role hosts, exact-width prime transfer, designated-credit audit, and master patch lemma | PROVED / CONDITIONAL FINITE CURRENT INTERFACE SET | `docs/250`--`docs/260` |
-| Corrected source-host closure | Source-credit audit, old-grid endpoint-shadow potential, fixed-template secant descent, complete secant-cover extraction, pool-compatible paired secant switches, and acyclic source-host closure | PROVED / CONDITIONAL NAMED CURRENT AND ENDPOINT INTERFACES | `docs/261`--`docs/267` |
-| Complete insertion cancellation | Every first-step current incidence meets the inserted set; blockwise second cycles cancel the complete insertion table without rank decomposition | PROVED / CONDITIONAL NAMED SECOND-HOST INTERFACES | `docs/268-theta-plus-complete-insertion-cancellation.md` |
-| Complete second-host call matrix | Exact marked scale, helper supply, puncture/domain loss, credit ownership, source-host routing, terminal leaves, and global helper accounting | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
-| Raw second-host leaf elimination | Buffered role domains and the complete support table eliminate raw Hall, alternating, non-superregular, distinguished-endpoint, and role-host outputs | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
-| Current-row coordinate-cover elimination | The slab reservation census supplies every quadratic helper host and removes internal near-complete coordinate cover | PROVED / CONDITIONAL TYPED PAID ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
-| Typed current-host closure | Uniform bounded deletion removes choice-grid residual-host failure; sparse-or-dense heavy deletion removes fixed-cell fan host failure | PROVED / CONDITIONAL TYPED WEIGHTED ENDPOINTS | `docs/272`--`docs/273` |
-| Current-row weighted and petal closure | Multiplicity-blind domain accounting absorbs weighted grids, projective covers, and heavy pencils; exact conditioned cycle spaces eliminate arc/path petal host leaves | PROVED / CONDITIONAL FINITE NAMED WEIGHTED CONCENTRATIONS | `docs/274`--`docs/275` |
-| Binary-current and source-call closure | Completed-state pair lines absorb every binary current multiplicity at the active scale; paired-secant calls lose raw source-host leaves | PROVED / CONDITIONAL UNARY/SOURCE/BASE-DOMAIN CURRENT SET | `docs/276`--`docs/277` |
-| Prime-minus-one seed CSP audit | Saturated seeds are exactly two edge-disjoint permutations satisfying all integer determinant constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
-| Terminal local call matrix | Complete insertion cancellation, direct paid current structures, and acyclic source routing close every fixed-attempt local leaf | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
-| Relative seed and line compression | Seeds are one permutation plus a relative derangement; relative cycles are incidence components and maximal-line inequalities replace triple constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
-| Uniform random seed barrier | Fixed-relative triple cylinders have exact probability `1/(n)_3`; expected defects are `Theta(n log n)` and the natural symmetric LLL misses by `Omega(log n)` | PROVED BARRIER / STRONGER METHODS OPEN | `docs/281-fixed-relative-random-permutation-barrier.md` |
-| Geometric seed symmetry and p=13 | Only square symmetries and layer swap are valid generic quotients; arbitrary coordinate relabeling is invalid; a new exact `p=13` seed is certified | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
+| Corrected source-host closure | Source-credit audit, old-grid shadow potential, secant descent, paired switches, and acyclic source routing | PROVED / CONDITIONAL NAMED CURRENT INTERFACES | `docs/261`--`docs/267` |
+| Complete insertion cancellation | Blockwise second cycles cancel the complete first insertion table in `Theta_E^+` | PROVED / CONDITIONAL NAMED SECOND-HOST INTERFACES | `docs/268` |
+| Complete second-host closure | Raw host leaves, coordinate shortages, grids, fans, petals, weighted multiplicity, binary shadow, and dense source routing are eliminated | PROVED / CONDITIONAL FINITE NAMED INTERFACES | `docs/269`--`docs/277` |
+| Exact seed CSP | Saturated seeds are exactly two edge-disjoint permutations satisfying integer determinant, equivalently maximal-line, constraints | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/278`, `docs/280` |
+| Terminal local call matrix | Every fixed attempt installs the patch or strictly decreases the current nonnegative integer potential | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279` |
+| Uniform random barrier | Fixed-relative uniform permutations have `Theta(n log n)` expected bad triples and the natural symmetric permutation LLL misses by `Omega(log n)` | PROVED | `docs/281` |
+| Geometric symmetry and internal certificates | Exact square-symmetry quotient, row-relabel barrier, and internally generated `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282` |
+| Inverse-conic extension CSP | Scaled inverse layers are clean; fixed-layer completion is an exact line-capacity CSP; finite non-extension and two-sided-repair barriers | PROVED / VERIFIED FINITELY | `docs/283` |
+| Archived code decoding | Standard row-pair codes are independently decoded, decomposed, and determinant-verified, adding eight prime certificates | PROVED / VERIFIED FINITELY | `docs/284` |
 
 ## Exact late theorem ranges
 
 | IDs | Statement | Status | Location |
 |---|---|---|---|
-| PP3adu--PP3aea | Fixed-centre Xi five-chain normal form | PROVED / CONDITIONAL PAID INTERFACE | `docs/186-fixed-centre-xi-five-chain-normal-form.md` |
-| PP3aeb--PP3aeg | Deterministic local-credit role splitting | PROVED / CONDITIONAL PAID INTERFACE | `docs/187-fixed-centre-local-credit-role-splitting.md` |
-| PP3aeh--PP3aem | Source-clean five-chain supply | PROVED | `docs/188-source-clean-five-chain-supply.md` |
-| PP3aen--PP3aet | Inverse-density clean-chain averaging | PROVED / CONDITIONAL PAID INTERFACE | `docs/189-clean-chain-inverse-density-averaging.md` |
-| PP3aeu--PP3afa | Fixed-centre residual source-degree saving | PROVED | `docs/190-fixed-centre-residual-source-degree-saving.md` |
-| PP3afb--PP3afg | Adaptive clean-chain threshold | PROVED / CONDITIONAL PAID INTERFACE | `docs/191-adaptive-clean-chain-threshold.md` |
-| PP3afh--PP3afm | Choice-grid candidate-fan localization | PROVED / CONDITIONAL PAID INTERFACE | `docs/192-choice-grid-candidate-fan-localization.md` |
-| PP3axi--PP3axp | Master exact-width patch package and next audit target | PROVED / CONDITIONAL NAMED CURRENT INTERFACES | `docs/260-master-exact-width-prime-patching-lemma.md` |
-| PP3axq--PP3axx | Source-credit versus current-potential audit | PROVED / CONDITIONAL EXISTING CURRENT INTERFACES | `docs/261-source-certificate-versus-potential-credit-audit.md` |
-| PP3axy--PP3ayf | Old-grid endpoint-shadow potential | PROVED / CONDITIONAL EXISTING CURRENT INTERFACES | `docs/262-old-grid-endpoint-shadow-potential.md` |
-| PP3ayg--PP3ayo | Fixed-template secant-shadow descent | PROVED / CONDITIONAL ONE-CLEAN-ARC INTERFACE | `docs/263-fixed-template-secant-shadow-descent.md` |
-| PP3ayp--PP3ayw | Complete secant-cover resource extraction | PROVED / CONDITIONAL TEMPLATE-SWITCH INTERFACE | `docs/264-complete-secant-cover-resource-extraction.md` |
-| PP3ayx--PP3azd | Secant-cover rectangle reduction | PROVED / CONDITIONAL RECTANGLE INTERFACES | `docs/265-secant-cover-two-switch-rectangle-reduction.md` |
-| PP3aze--PP3azj | Acyclic source-host closure through current potential | PROVED / CONDITIONAL NAMED CURRENT INTERFACES | `docs/266-source-host-closure-through-secant-rectangles.md` |
-| PP3azk--PP3azr | Pool-compatible paired secant switches | PROVED / CONDITIONAL NAMED CURRENT RECTANGLE INTERFACES | `docs/267-pool-compatible-paired-secant-switches.md` |
-| PP3azs--PP3azz | Complete insertion cancellation in `Theta_E^+` | PROVED / CONDITIONAL NAMED CURRENT CONVERSION INTERFACES | `docs/268-theta-plus-complete-insertion-cancellation.md` |
-| PP3baa--PP3bah | Complete second-host call-matrix audit | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
-| PP3bai--PP3ban | Raw second-host explicit-leaf elimination and revised trichotomy | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
-| PP3bao--PP3bas | Dense current-row coordinate supply and internal-cover elimination | PROVED / CONDITIONAL TYPED CONVERSION ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
-| PP3bat--PP3baz | Uniform residual superregularity and choice-grid host-leaf elimination | PROVED / CONDITIONAL WEIGHTED GRID ENDPOINTS | `docs/272-choice-grid-residual-host-elimination.md` |
-| PP3bba--PP3bbg | Sparse-or-dense fixed-cell fan host closure | PROVED / CONDITIONAL TYPED HEAVY-PENCIL ENDPOINTS | `docs/273-fixed-cell-fan-host-failure-elimination.md` |
-| PP3bbh--PP3bbn | Multiplicity-blind allocation bypass for current-row grids and fans | PROVED / CONDITIONAL BASE ALLOCATION CRITERIA | `docs/274-current-row-multiplicity-blind-allocation-bypass.md` |
-| PP3bbo--PP3bbt | Exact arc/path conditioned cycle spaces and petal host-leaf elimination | PROVED / CONDITIONAL TYPED WEIGHTED CONCENTRATIONS | `docs/275-arc-path-petal-host-leaf-elimination.md` |
-| PP3bbu--PP3bby | Completed-state binary secant support and allocation-margin absorption | PROVED / CONDITIONAL BASE ALLOCATION CRITERIA | `docs/276-completed-state-binary-support-absorption.md` |
-| PP3bbz--PP3bcf | Paired-secant raw-host elimination and acyclic dense-source routing | PROVED / CONDITIONAL NAMED CURRENT PAYMENT | `docs/277-paired-secant-source-host-leaf-elimination.md` |
-| PP3bcg--PP3bcm | Two-permutation determinant-CSP equivalence for prime-minus-one seeds | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
-| PP3bcn--PP3bcu | Terminal local current/source call matrix and fixed-attempt termination | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
-| PP3bcv--PP3bdd | Relative-permutation normal form, maximal-line compression, fixed-relative CSP, and affine-layer barrier | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
-| PP3bde--PP3bdk | Exact fixed-relative triple cylinders, grid-triple count, expectation barrier, and symmetric-LLL barrier | PROVED | `docs/281-fixed-relative-random-permutation-barrier.md` |
-| PP3bdl--PP3bdq | Geometric seed symmetry group, coordinate-relabel barrier, and verified `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
+| PP3azs--PP3azz | Complete insertion cancellation in `Theta_E^+` | PROVED / CONDITIONAL NAMED CURRENT CONVERSION | `docs/268-theta-plus-complete-insertion-cancellation.md` |
+| PP3baa--PP3bah | Complete second-host call-matrix audit | PROVED / CONDITIONAL FINITE NAMED INTERFACES | `docs/269-complete-second-host-call-matrix-audit.md` |
+| PP3bai--PP3ban | Raw explicit-leaf elimination and revised trichotomy | PROVED / CONDITIONAL DOWNSTREAM CONVERSION | `docs/270-second-host-explicit-leaf-elimination.md` |
+| PP3bao--PP3bas | Coordinate supply and internal-cover elimination | PROVED / CONDITIONAL TYPED PAYMENT | `docs/271-current-row-coordinate-cover-elimination.md` |
+| PP3bat--PP3baz | Choice-grid residual-host elimination | PROVED / CONDITIONAL WEIGHTED GRID ENDPOINTS | `docs/272-choice-grid-residual-host-elimination.md` |
+| PP3bba--PP3bbg | Fixed-cell fan host closure | PROVED / CONDITIONAL HEAVY-PENCIL ENDPOINTS | `docs/273-fixed-cell-fan-host-failure-elimination.md` |
+| PP3bbh--PP3bbn | Multiplicity-blind allocation bypass | PROVED / CONDITIONAL BASE ALLOCATION | `docs/274-current-row-multiplicity-blind-allocation-bypass.md` |
+| PP3bbo--PP3bbt | Arc/path conditioned cycle spaces and petal closure | PROVED / CONDITIONAL TYPED CONCENTRATIONS | `docs/275-arc-path-petal-host-leaf-elimination.md` |
+| PP3bbu--PP3bby | Completed-state binary support absorption | PROVED / CONDITIONAL BASE ALLOCATION | `docs/276-completed-state-binary-support-absorption.md` |
+| PP3bbz--PP3bcf | Paired-secant source-host leaf elimination | PROVED / CONDITIONAL NAMED CURRENT PAYMENT | `docs/277-paired-secant-source-host-leaf-elimination.md` |
+| PP3bcg--PP3bcm | Two-permutation determinant-CSP equivalence | PROVED EQUIVALENCE | `docs/278-prime-minus-one-seed-csp-audit.md` |
+| PP3bcn--PP3bcu | Terminal local current/source call matrix | PROVED / CONDITIONAL FIXED SLAB SETUP | `docs/279-terminal-local-current-source-call-matrix.md` |
+| PP3bcv--PP3bdd | Relative-permutation normal form and maximal-line compression | PROVED EQUIVALENCE | `docs/280-prime-seed-relative-permutation-and-line-compression.md` |
+| PP3bde--PP3bdk | Uniform fixed-relative first-moment and symmetric-LLL barriers | PROVED | `docs/281-fixed-relative-random-permutation-barrier.md` |
+| PP3bdl--PP3bdq | Geometric symmetry group and `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
+| PP3bdr--PP3bdx | Inverse-conic layers, exact extension CSP, and two-sided repair barrier | PROVED / VERIFIED FINITELY | `docs/283-inverse-conic-layer-extension-csp.md` |
+| PP3bdy--PP3bee | Archive-code decoding, exact decomposition, and additional prime certificates | PROVED / VERIFIED FINITELY | `docs/284-archived-seed-code-decoding-and-prime-certificates.md` |
 
 ## Current exact endpoint
 
 The local call matrix is terminal inside the fixed-infrastructure slab
-architecture.  PP3bcn--PP3bcu compose the complete insertion-cancellation
-identity, raw second-host trichotomy, direct payment of canonical current
-structures, unary source-star conversion, and acyclic paired-secant source
-routing.  A failed fixed attempt therefore installs the patch or strictly
-decreases the current nonnegative integer potential.  Unary/binary
-multiplicity, base-domain or score failure, active-anchor failure, raw host
-failure, coordinate cover, and restart comparability are not terminal leaves.
+architecture.  Once a saturated no-three source is supplied, a failed fixed
+attempt either installs the heterogeneous exact-width patch or strictly
+decreases the fixed nonnegative integer potential.  Unary/binary
+multiplicity, base-domain or score failure, active-anchor failure, source
+host failure, coordinate cover, and restart comparability are not terminal
+local leaves.
 
-Consequently, once a saturated no-three source is supplied, the heterogeneous
-exact-width fixed-slab process terminates locally.  This statement remains
-inside the stated slab setup and does not construct the initial sources.
+The remaining global theorem is exact.  For `n=p-1`, find one permutation
+`sigma` and one derangement `pi`, put `tau=sigma o pi`, and require occupancy
+at most two on every maximal Euclidean grid line.
 
-The global frontier is an exact finite combinatorial existence theorem.  For
-`n=p-1`, a seed is equivalently one permutation `sigma` and one derangement
-`pi`, with `tau=sigma o pi`, satisfying occupancy at most two on every maximal
-Euclidean grid line.  The cycles of `pi` are exactly the alternating incidence
-components.  Affine permutation layers cannot work for `n>=3`, and arbitrary
-row/column relabeling is not a Euclidean symmetry, so a successful family must
-use genuinely nonlinear geometric structure.
+The most direct uniform fixed-relative random arguments do not close this:
+the expected bad-triple count is `Theta(n log n)`, and the natural symmetric
+permutation-LLL expression is `Omega(log n)`.  Scaled inverse layers give a
+uniform family of individually clean nonlinear permutations, but exact
+fixed-layer searches show that this one-layer ansatz does not extend for
+`p=13,17,19,23,29,31`.  A one-defect `p=17` state also proves that a general
+repair may need coordinated changes in both layers.
 
-The uniform fixed-relative model is now audited exactly.  It has
-`Theta(n log n)` expected forbidden triples for every `pi`, while the natural
-canonical-event symmetric permutation LLL has left side `Omega(log n)`.  Thus
-neither the unconditioned first moment nor that symmetric LLL closes the seed
-theorem.  This does not exclude nonuniform measures, stronger local-lemma
-criteria, resampling/repair methods, or explicit constructions.
+The canonical exact certificate suite now verifies
 
-Stored certificates now verify `p=3,5,7,11,13`.  The `p=13` seed has relative
-cycle partition `[4,4,2,2]`, showing that disconnected relative cycle types
-remain useful.  Finite certificates do not prove asymptotic existence.
+```text
+p=3,5,7,11,13,17,19,23,29,31,61,67,73.
+```
+
+The cases through `p=13` were generated on this branch.  The later cases are
+independently decoded and determinant-verified from compact public archive
+codes.  These isolated finite certificates do not interpolate and do not
+prove asymptotic existence.
 
 The remaining theorem is:
 
-> For every sufficiently large prime `p`, some derangement `pi` and permutation
-> `sigma` satisfy the maximal-line system on `[p-1]^2`.
+> For every sufficiently large prime `p`, some derangement `pi` and
+> permutation `sigma` satisfy the maximal-line system on `[p-1]^2`.
 
 The no-three-in-line conjecture remains unproved.
 
@@ -114,30 +90,23 @@ The no-three-in-line conjecture remains unproved.
 ```bash
 python scripts/check_second_host_call_matrix.py \
   experiments/second-host-call-matrix-example.json
-python scripts/check_second_host_leaf_elimination.py \
-  experiments/second-host-leaf-elimination-example.json
-python scripts/check_current_row_coordinate_supply.py \
-  experiments/current-row-coordinate-supply-example.json
-python scripts/check_choice_grid_residual_hosts.py \
-  experiments/choice-grid-residual-hosts-example.json
-python scripts/check_fixed_cell_fan_host_elimination.py \
-  experiments/fixed-cell-fan-host-elimination-example.json
-python scripts/check_current_row_multiplicity_bypass.py \
-  experiments/current-row-multiplicity-bypass-example.json
-python scripts/check_petal_conditioned_cycle_spaces.py \
-  experiments/petal-conditioned-cycle-spaces-example.json
-python scripts/check_completed_state_binary_support.py \
-  experiments/completed-state-binary-support-example.json
-python scripts/check_dense_source_call_routing.py \
-  experiments/dense-source-call-routing-example.json
-python scripts/check_prime_minus_one_seed.py \
-  experiments/prime-minus-one-seed-examples.json
 python scripts/check_local_frontier_terminal_routing.py \
   experiments/local-frontier-terminal-routing-example.json
+python scripts/check_prime_minus_one_seed.py \
+  experiments/prime-minus-one-seed-examples.json
 python scripts/check_prime_seed_relative_cycles.py \
   experiments/prime-seed-relative-cycle-example.json
 python scripts/check_fixed_relative_random_barrier.py \
   experiments/fixed-relative-random-barrier-example.json
 python scripts/check_prime_seed_geometric_orbit.py \
   experiments/prime-seed-geometric-orbit-example.json
+python scripts/check_inverse_layer_extension.py \
+  experiments/inverse-layer-extension-example.json
+python scripts/check_archived_prime_seed_codes.py \
+  experiments/archived-prime-seed-codes.json
 ```
+
+The earlier finite lists in `docs/278`, `docs/280`, and `docs/282` record the
+state at those chapters.  The current canonical suite and superseding finite
+frontier are `docs/284` and
+`experiments/prime-minus-one-seed-examples.json`.
