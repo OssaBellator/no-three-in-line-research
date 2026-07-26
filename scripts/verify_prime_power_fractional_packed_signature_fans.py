@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite checks for CMR1422--CMR1429."""
+"""Finite checks for CMR1462--CMR1469."""
 
 from collections import defaultdict
 from fractions import Fraction
@@ -8,24 +8,23 @@ from math import ceil, floor, gcd, log2
 import random
 
 
-def matching(permutation):
-    return frozenset((row, permutation[row]) for row in range(len(permutation)))
+def matching(value):
+    return frozenset((row, value[row]) for row in range(len(value)))
 
 
-def line_key(first, second):
-    x1, y1 = first
-    x2, y2 = second
-    a = y1 - y2
-    b = x2 - x1
-    c = x1 * y2 - x2 * y1
-    divisor = gcd(gcd(abs(a), abs(b)), abs(c))
+def line_key(a, b):
+    x1, y1 = a
+    x2, y2 = b
+    value = [y1 - y2, x2 - x1, x1 * y2 - x2 * y1]
+    divisor = gcd(gcd(abs(value[0]), abs(value[1])), abs(value[2]))
     if divisor:
-        a //= divisor
-        b //= divisor
-        c //= divisor
-    if a < 0 or (a == 0 and b < 0) or (a == 0 and b == 0 and c < 0):
-        a, b, c = -a, -b, -c
-    return a, b, c
+        value = [entry // divisor for entry in value]
+    if value[0] < 0 or (
+        value[0] == 0
+        and (value[1] < 0 or (value[1] == 0 and value[2] < 0))
+    ):
+        value = [-entry for entry in value]
+    return tuple(value)
 
 
 def collinear(triple):
@@ -40,17 +39,13 @@ def compatible(edges):
 
 
 def candidate_family(side, opposite, current, target):
-    cells = {
-        (row, column)
-        for row in range(side)
-        for column in range(side)
-    }
+    cells = {(row, column) for row in range(side) for column in range(side)}
     graph = cells - set(opposite) - {target}
-    old_state = set(opposite) | set(current)
+    old = set(opposite) | set(current)
     result = []
-    for value in combinations(tuple(set(opposite) | graph), 3):
-        triple = frozenset(value)
-        if triple <= old_state or not collinear(value):
+    for values in combinations(tuple(set(opposite) | graph), 3):
+        triple = frozenset(values)
+        if triple <= old or not collinear(values):
             continue
         prescription = frozenset(triple - set(opposite))
         if not prescription or not compatible(prescription):
@@ -60,11 +55,11 @@ def candidate_family(side, opposite, current, target):
             continue
         owner = min(entering)
         partners = tuple(sorted(triple - {owner}))
-        for partner in partners:
-            if partner in opposite or partner in current or owner < partner:
-                continue
-            raise AssertionError("noneligible partner in an owned candidate")
-        result.append((triple, prescription, owner, partners))
+        assert all(
+            partner in opposite or partner in current or owner < partner
+            for partner in partners
+        )
+        result.append((prescription, owner, partners))
     return tuple(result)
 
 
@@ -72,8 +67,7 @@ def primitive_data(owner, partner):
     dx = partner[0] - owner[0]
     dy = partner[1] - owner[1]
     scale = gcd(abs(dx), abs(dy))
-    u = dx // scale
-    v = dy // scale
+    u, v = dx // scale, dy // scale
     signed_scale = scale
     if u < 0 or (u == 0 and v < 0):
         u, v = -u, -v
@@ -90,11 +84,9 @@ def valuation(value, prime):
 
 
 def projective_direction(u, v, prime):
-    u %= prime
-    v %= prime
+    u, v = u % prime, v % prime
     if u:
-        inverse = pow(u, -1, prime)
-        return 1, (v * inverse) % prime
+        return 1, v * pow(u, -1, prime) % prime
     return 0, 1
 
 
@@ -112,45 +104,35 @@ def direction_stock(prime, band):
     return (prime - 1) * ceil(4 * band / prime) ** 2
 
 
-def greedy_fractional_packing(candidates, rng, denominator=12):
+def greedy_packing(candidates, rng):
     residual = defaultdict(lambda: Fraction(1))
     weights = [Fraction(0) for _ in candidates]
     order = list(range(len(candidates)))
     rng.shuffle(order)
     for index in order:
-        prescription = candidates[index][1]
+        prescription = candidates[index][0]
         available = min(residual[edge] for edge in prescription)
         if available <= 0:
             continue
-        if rng.random() < 0.7:
-            value = available
-        else:
-            units = max(1, int(available * denominator))
-            value = min(available, Fraction(rng.randint(1, units), denominator))
+        value = available
+        if rng.random() >= 0.7:
+            units = max(1, int(12 * available))
+            value = min(available, Fraction(rng.randint(1, units), 12))
         weights[index] = value
         for edge in prescription:
             residual[edge] -= value
-    for edge in {
-        edge
-        for _triple, prescription, _owner, _partners in candidates
-        for edge in prescription
-    }:
+    for edge in {edge for candidate in candidates for edge in candidate[0]}:
         assert sum(
-            weights[index]
-            for index, candidate in enumerate(candidates)
-            if edge in candidate[1]
+            weight
+            for weight, candidate in zip(weights, candidates)
+            if edge in candidate[0]
         ) <= 1
     return tuple(weights)
 
 
-def check_packed_signature_extraction():
-    rng = random.Random(1424)
-    banks = 0
-    candidates_checked = 0
-    positive_threshold_banks = 0
-    signature_classes = 0
-    translated_classes = 0
-
+def check_banks():
+    rng = random.Random(1464)
+    totals = [0, 0, 0, 0, 0]
     for side, prime, repetitions in ((5, 5, 100), (7, 7, 40)):
         opposite = matching(tuple(range(side)))
         derangements = [
@@ -158,104 +140,79 @@ def check_packed_signature_extraction():
             for value in permutations(range(side))
             if all(value[index] != index for index in range(side))
         ]
-        exponent = 1
         bands = 1 + int(log2(side - 1))
-        class_stock = 2 * exponent * (prime + 1) * bands
-
+        class_stock = 2 * (prime + 1) * bands
         for _ in range(repetitions):
             current = rng.choice(derangements)
             target = rng.choice(tuple(current))
             candidates = candidate_family(side, opposite, current, target)
-            weights = greedy_fractional_packing(candidates, rng)
-            total_mass = sum(weights)
+            weights = greedy_packing(candidates, rng)
+            mass = sum(weights)
 
-            class_mass = defaultdict(Fraction)
-            owner_mass = defaultdict(Fraction)
-            pair_mass = defaultdict(Fraction)
-            response_partner_mass = defaultdict(Fraction)
-            direction_mass = defaultdict(Fraction)
-            displacement_mass = defaultdict(Fraction)
+            classes = defaultdict(Fraction)
+            owners = defaultdict(Fraction)
+            pairs = defaultdict(Fraction)
+            response_partners = defaultdict(Fraction)
+            directions = defaultdict(Fraction)
+            displacements = defaultdict(Fraction)
 
-            for weight, candidate in zip(weights, candidates):
+            for weight, (prescription, owner, partners) in zip(weights, candidates):
                 if not weight:
                     continue
-                _triple, _prescription, owner, partners = candidate
-                owner_mass[owner] += 2 * weight
+                owners[owner] += 2 * weight
                 for partner in partners:
                     key = signature(owner, partner, opposite, prime)
-                    class_mass[key] += weight
-                    pair_mass[(owner, partner)] += weight
+                    classes[key] += weight
+                    pairs[(owner, partner)] += weight
                     if partner not in opposite:
-                        response_partner_mass[partner] += weight
-                    (
-                        _scale,
-                        u,
-                        v,
-                        _height,
-                        signed_scale,
-                    ) = primitive_data(owner, partner)
-                    direction_mass[(key, (u, v))] += weight
-                    displacement_mass[(key, (u, v), signed_scale)] += weight
+                        response_partners[partner] += weight
+                    _scale, u, v, _height, signed = primitive_data(owner, partner)
+                    directions[(key, (u, v))] += weight
+                    displacements[(key, (u, v), signed)] += weight
 
-            assert sum(class_mass.values()) == 2 * total_mass
-            assert len(class_mass) <= class_stock
-            if class_mass:
-                assert max(class_mass.values()) * class_stock >= 2 * total_mass
-            assert max(owner_mass.values(), default=Fraction(0)) <= 2
-            assert max(pair_mass.values(), default=Fraction(0)) <= 1
-            assert max(
-                response_partner_mass.values(), default=Fraction(0)
-            ) <= 1
+            assert sum(classes.values()) == 2 * mass
+            assert len(classes) <= class_stock
+            assert max(classes.values()) * class_stock >= 2 * mass
+            assert max(owners.values(), default=0) <= 2
+            assert max(pairs.values(), default=0) <= 1
+            assert max(response_partners.values(), default=0) <= 1
 
-            for key, mass in class_mass.items():
-                _partner_type, depth, _theta, band = key
-                directions = [
+            for key, class_mass in classes.items():
+                _kind, depth, _theta, band = key
+                direction_bound = direction_stock(prime, band)
+                direction_values = [
                     value
-                    for (candidate_key, _direction), value in direction_mass.items()
+                    for (candidate_key, _direction), value in directions.items()
                     if candidate_key == key
                 ]
-                direction_bound = direction_stock(prime, band)
-                assert max(directions) * direction_bound >= mass
+                assert max(direction_values) * direction_bound >= class_mass
 
                 scale_bound = floor((side - 1) / (prime**depth * band))
                 assert scale_bound >= 1
-                displacements = [
+                displacement_values = [
                     value
-                    for (
-                        candidate_key,
-                        _direction,
-                        _signed_scale,
-                    ), value in displacement_mass.items()
+                    for (candidate_key, _direction, _signed), value
+                    in displacements.items()
                     if candidate_key == key
                 ]
                 assert (
-                    max(displacements)
+                    max(displacement_values)
                     * direction_bound
                     * 2
                     * scale_bound
-                    >= mass
+                    >= class_mass
                 )
-                signature_classes += 1
-                translated_classes += len(displacements)
+                totals[3] += 1
+                totals[4] += len(displacement_values)
 
-            if total_mass >= Fraction(side - 2, 3):
-                positive_threshold_banks += 1
-                heavy = max(class_mass.values())
-                assert (
-                    heavy
-                    >= Fraction(side - 2, 3 * (prime + 1) * bands)
+            if mass >= Fraction(side - 2, 3):
+                assert max(classes.values()) >= Fraction(
+                    side - 2, 3 * (prime + 1) * bands
                 )
-
-            banks += 1
-            candidates_checked += len(candidates)
-
-    return (
-        banks,
-        candidates_checked,
-        positive_threshold_banks,
-        signature_classes,
-        translated_classes,
-    )
+                totals[2] += 1
+            totals[0] += 1
+            totals[1] += len(candidates)
+    return tuple(totals)
 
 
 def check_direction_stock():
@@ -270,18 +227,20 @@ def check_direction_stock():
                         continue
                     if not (band <= max(abs(u), abs(v)) < 2 * band):
                         continue
-                    x, y = u, v
-                    if x < 0 or (x == 0 and y < 0):
-                        x, y = -x, -y
-                    classes[projective_direction(x, y, prime)].add((x, y))
-            actual = max((len(value) for value in classes.values()), default=0)
-            assert actual <= direction_stock(prime, band)
+                    if u < 0 or (u == 0 and v < 0):
+                        u0, v0 = -u, -v
+                    else:
+                        u0, v0 = u, v
+                    classes[projective_direction(u0, v0, prime)].add((u0, v0))
+            assert max(map(len, classes.values()), default=0) <= direction_stock(
+                prime, band
+            )
             checks += 1
     return checks
 
 
 def main():
-    result = check_packed_signature_extraction()
+    result = check_banks()
     print(
         "verified fractional packed signature fans:",
         result[0],
