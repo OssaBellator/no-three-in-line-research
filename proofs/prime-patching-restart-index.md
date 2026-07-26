@@ -26,6 +26,8 @@ transition addendum in
 | Current-row coordinate-cover elimination | The slab reservation census supplies every quadratic helper host and removes internal near-complete coordinate cover | PROVED / CONDITIONAL TYPED PAID ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
 | Typed current-host closure | Uniform bounded deletion removes choice-grid residual-host failure; sparse-or-dense heavy deletion removes fixed-cell fan host failure | PROVED / CONDITIONAL TYPED WEIGHTED ENDPOINTS | `docs/272`--`docs/273` |
 | Current-row weighted and petal closure | Multiplicity-blind domain accounting absorbs weighted grids, projective covers, and heavy pencils; exact conditioned cycle spaces eliminate arc/path petal host leaves | PROVED / CONDITIONAL FINITE NAMED WEIGHTED CONCENTRATIONS | `docs/274`--`docs/275` |
+| Binary-current and source-call closure | Completed-state pair lines absorb every binary current multiplicity at the active scale; paired-secant calls lose raw source-host leaves | PROVED / CONDITIONAL UNARY/SOURCE/BASE-DOMAIN CURRENT SET | `docs/276`--`docs/277` |
+| Prime-minus-one seed CSP audit | Saturated seeds are exactly two edge-disjoint permutations satisfying all integer determinant constraints | PROVED EQUIVALENCE / ASYMPTOTIC SEED OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
 
 ## Exact late theorem ranges
 
@@ -54,37 +56,40 @@ transition addendum in
 | PP3bba--PP3bbg | Sparse-or-dense fixed-cell fan host closure | PROVED / CONDITIONAL TYPED HEAVY-PENCIL ENDPOINTS | `docs/273-fixed-cell-fan-host-failure-elimination.md` |
 | PP3bbh--PP3bbn | Multiplicity-blind allocation bypass for current-row grids and fans | PROVED / CONDITIONAL BASE ALLOCATION CRITERIA | `docs/274-current-row-multiplicity-blind-allocation-bypass.md` |
 | PP3bbo--PP3bbt | Exact arc/path conditioned cycle spaces and petal host-leaf elimination | PROVED / CONDITIONAL TYPED WEIGHTED CONCENTRATIONS | `docs/275-arc-path-petal-host-leaf-elimination.md` |
+| PP3bbu--PP3bby | Completed-state binary secant support and allocation-margin absorption | PROVED / CONDITIONAL BASE ALLOCATION CRITERIA | `docs/276-completed-state-binary-support-absorption.md` |
+| PP3bbz--PP3bcf | Paired-secant raw-host elimination and acyclic dense-source routing | PROVED / CONDITIONAL NAMED CURRENT PAYMENT | `docs/277-paired-secant-source-host-leaf-elimination.md` |
+| PP3bcg--PP3bcm | Two-permutation determinant-CSP equivalence for prime-minus-one seeds | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/278-prime-minus-one-seed-csp-audit.md` |
 
 ## Current exact endpoint
 
-The open-ended call-matrix audit requested by PP3axp, PP3azj, and PP3azz is
-closed.  The raw explicit-host row retained in PP3azu and PP3bae is superseded
-by PP3bai--PP3ban: under the universal second-host hypotheses, buffered Hall
-assignment and the complete rank-three support table give only an independent
-cycle, dense current support, or dense source support.
+The raw second-host explicit-host row is superseded by PP3bai--PP3ban.  Under the
+universal marked-scale, helper, puncture, role-domain, and complete-support hypotheses,
+a bounded call has only an independent cycle, dense current support, or dense source
+support.  Quadratic coordinate supply is automatic by PP3bao--PP3bas.
 
-The dense current row has automatic quadratic helper supply by PP3bao--PP3bas.
-It cannot end in internal coordinate shortage or a raw host-feasibility leaf.
-PP3bat--PP3baz make the complete-grid and rank-three middle-grid residual hosts
-uniform, and PP3bba--PP3bbg replace fixed-cell fan Hall/host failure by a typed
-heavy partner pencil.
+The current row is no longer host-existential or raw-multiplicity based.  Choice-grid,
+rank-three middle-grid, fixed-cell fan, and petal hosts are automatic; weighted grids,
+projective covers, and heavy pencils are allocation-margin perturbations; and
+PP3bbu--PP3bby absorb every binary pair-shadow term of a completed endpoint state
+because its simple secant support is `o(R)`.  The remaining current classes are unary
+inserted--retained-source, active-anchor/old-grid unary, explicit source, and nonbinary
+base-domain concentrations.
 
-PP3bbh--PP3bbn then show that weighted grids, projective candidate covers,
-fixed-cell multiplicity, and heavy partner pencils create only `o(R)` simple
-domain loss at their actual fixed-attempt call sites.  Either the base margin
-already fails and yields separate paid credit, or a source-valid endpoint state
-is absorbed by the surviving allocation margin.  PP3bbo--PP3bbt also remove
-arc/path-petal endpoint-host failure: after a filler block is supplied, the
-conditioned Hamilton-cycle spaces have exact positive sizes, so failure is a
-finite named source or weighted-cost concentration.
+The dense source row no longer has raw Hall, alternating, non-superregular, role-host,
+or locally impossible leaves.  PP3bbz--PP3bcf route paired-switch source mass to a
+source-valid joint state or named current payment, while fixed-centre dense source
+support is a directly paid canonical source structure.  It cannot regenerate an
+untyped cumulative source-host problem.
 
-Thus the remaining dense current-row frontier is no longer host-existential or
-raw-multiplicity based.  It is the finite set of explicitly named source,
-centre-core, local-petal, variable bounded-support, non-grid, and base-domain
-concentrations.  The dense source row remains the fixed-template and paired-switch
-conversion frontier.  Separately, the branch still assumes saturated no-three
-configurations on `[p-1]^2` for every sufficiently large prime.  The
-no-three-in-line conjecture remains unproved.
+Restart comparability and repeated fixed attempts are already closed by the fixed
+candidate-cell universe and zero-mass activation potential of PP3aux--PP3avm.  Thus the
+remaining local proof-audit target is the finite unary/source/base-domain current set,
+not restart, coordinates, or endpoint host existence.
+
+The separate global assumption is exact: for every sufficiently large prime `p`, the
+two-permutation determinant CSP of PP3bcj on `[p-1]^2` must be feasible.  Stored
+certificates verify only `p=3,5,7,11`; they do not prove the asymptotic seed theorem.
+The no-three-in-line conjecture remains unproved.
 
 ## Diagnostics
 
@@ -103,4 +108,10 @@ python scripts/check_current_row_multiplicity_bypass.py \
   experiments/current-row-multiplicity-bypass-example.json
 python scripts/check_petal_conditioned_cycle_spaces.py \
   experiments/petal-conditioned-cycle-spaces-example.json
+python scripts/check_completed_state_binary_support.py \
+  experiments/completed-state-binary-support-example.json
+python scripts/check_dense_source_call_routing.py \
+  experiments/dense-source-call-routing-example.json
+python scripts/check_prime_minus_one_seed.py \
+  experiments/prime-minus-one-seed-examples.json
 ```
