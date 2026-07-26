@@ -137,12 +137,48 @@ For fixed owner stage, layer, depth, direction and displacement, there are
 exactly `p^{2s}` full-cell tokens.  Repeated banks either consume fresh tokens
 or concentrate on one exact absolute token.
 
-## 7. Genuine remaining inequality
+## 7. Private path and blocker payment
+
+For one fixed nonzero displacement, the translation support
+
+\[
+a\longmapsto a+\Delta
+\]
+
+is a finite path forest.  Alternating the path edges extracts at least half the
+packed mass on endpoint-disjoint pairs.  Their residual supports are pairwise
+disjoint, so any blocker meeting all extracted pairs must spend one distinct
+response edge per pair.
+
+Applied after CMR1470--CMR1477, the routed branches contain at least
+
+\[
+\left\lceil\frac{M_0}{4p^{2s}}\right\rceil,
+\qquad
+\left\lceil\frac{M_0}{4sp^{2s}}\right\rceil,
+\qquad
+\left\lceil\frac{M_0}{2}\right\rceil
+\]
+
+private translated pairs in the internal, earlier-exit and depth-zero branches,
+respectively.  The middle count applies for `s>=1`.
+
+At nonroot depth, these pairs partition exactly by full-prefix token.  They
+therefore give either:
+
+- one token carrying many private identical-displacement pairs; or
+- many token-disjoint private witnesses.
+
+This is a genuine protected-reserve currency: one common residual edge cannot
+neutralize the whole translated bank.
+
+## 8. Genuine remaining inequality
 
 The remaining prime-power theorem must assign strict weighted payment to:
 
 - internal envelope scaling;
 - earlier-depth crossing transfer;
+- private residual-edge or token consumption;
 - depth-zero translated pairs;
 - repeated absolute full-cell tokens;
 - and the alternative one-owner loaded-line response.
@@ -155,40 +191,47 @@ missing is a single weight assignment proving
 Av<v.
 \]
 
-## 8. Recommended next lemmas
+## 9. Recommended next lemmas
 
-1. **Depth-transfer Lyapunov weight.**  Choose weights decreasing under strict
+1. **Private-reserve Lyapunov weight.**  Compare one unit of endpoint-disjoint
+   residual blocker cost with destroyed parent credit and protected-reserve
+   depletion.
+2. **Depth-transfer Lyapunov weight.**  Choose weights decreasing under strict
    internal scaling and earlier exit depth.
-2. **Depth-zero translation payment.**  Show a parent-scale exact displacement
-   bank forces many distinct quotient/carry cells, a protected reserve, or one
-   recurrent token-bearing edge.
-3. **Repeated-token response.**  Convert repeated use of one absolute full-cell
+3. **Depth-zero translation payment.**  Show the private parent-scale bank
+   forces many quotient/carry cells, permanent mask depletion or one recurrent
+   token-bearing edge.
+4. **Repeated-token response.**  Convert repeated use of one absolute full-cell
    token into prefix return, contraction or target-load decrease.
-4. **Packed-versus-loaded comparison.**  Combine global translated-bank payment
-   with one-owner loaded-line gain without double counting a response edge.
-5. **Exact diagonal certificate.**  Export the final finite inequalities as a
+5. **Packed-versus-loaded comparison.**  Combine the global private translated
+   payment with the one-owner loaded-line gain without double counting.
+6. **Exact diagonal certificate.**  Export the final inequalities as a
    rational/integer `Av<v` certificate.
-6. **Prime-field, thin and CRT endpoints.**  Prove the remaining diagonal blocks
+7. **Prime-field, thin and CRT endpoints.**  Prove the remaining diagonal blocks
    and glue them through owner triangularity.
 
-## 9. Computational priorities
+## 10. Computational priorities
 
-- Enumerate exact depth-transfer offspring vectors in inherited coordinates.
+- Enumerate exact depth-transfer and private-reserve offspring vectors.
 - Search rational weights by depth, envelope side, partner type and token state.
 - Measure depth-zero translation multiplicity in quotient/carry cells.
-- Compare repeated-token histories with stored prefix-return ledgers.
+- Compare private blocker histories with stored protected-reserve and
+  prefix-return ledgers.
 - Test prime-field and thin diagonal blocks before CRT gluing.
 
-## 10. Current proved endpoint
+## 11. Current proved endpoint
 
-Through **CMR1477**:
+Through **CMR1485**:
 
 - exact rook probabilities and owner weights are known;
 - collateral is one shared-edge assignment cost;
 - lattice capacity is valid for scattered inherited factors;
 - one-owner and global packed signatures have quantitative lower bounds;
-- exact-displacement banks route to strict scaling, earlier exit depth,
-  depth zero, or finite absolute token reuse.
+- exact-displacement banks route to strict scaling, earlier exit depth, depth
+  zero or finite absolute-token reuse;
+- every routed branch also contains an endpoint-disjoint private translated
+  subbank with linear residual-blocker cost.
 
 There is still no complete proof.  The next genuine advance is the Lyapunov
-payment for those four routed branches.
+comparison of private reserve consumption and strict depth transfer with the
+parent credit weight.
