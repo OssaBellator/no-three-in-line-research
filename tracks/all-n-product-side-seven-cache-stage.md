@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `7`:
+have closed every top-signature tier of multiplicity at least `6`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -34,12 +34,13 @@ have closed every top-signature tier of multiplicity at least `7`:
 | 9 | 64 | 576 | certified infeasible |
 | 8 | 277 | 2,216 | certified infeasible |
 | 7 | 100 | 700 | certified infeasible |
-| **Total** | **949 completed classes** | **10,632** | **329,836,133 shared bottom-CSP nodes** |
+| 6 | 524 | 3,144 | certified infeasible |
+| **Total** | **1,473 completed classes** | **13,776** | **492,069,563 shared bottom-CSP nodes** |
 
-Thus `61,228` support-twenty selectors remain active in this cache layer.
+Thus `58,084` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX679--PX682 in
-[`docs/216-side-seven-cycle52-radius-three-support-twenty-multiplicity-seven.md`](../docs/216-side-seven-cycle52-radius-three-support-twenty-multiplicity-seven.md).
+The latest exact results are PX683--PX686 in
+[`docs/217-side-seven-cycle52-radius-three-support-twenty-multiplicity-six.md`](../docs/217-side-seven-cycle52-radius-three-support-twenty-multiplicity-six.md).
 
 ## Solver improvement
 
@@ -47,7 +48,7 @@ The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
 live in `scripts/product_side_seven_cache_engine.hpp`.
 
-The multiplicity-seven verifier replaces a large checked-in case table by a
+The multiplicity-six verifier replaces a large checked-in case table by a
 compact deterministic transcript digest. It still prints every per-signature
 count, while one asserted 64-bit digest commits the complete ordered transcript.
 This keeps exact verification compact without weakening the exhaustive search.
@@ -58,8 +59,8 @@ parallel solver-development tasks.
 
 ## Immediate task
 
-The next nonempty tier has multiplicity `6`: 524 top signatures containing
-`3,144` selectors. Run it through the shared engine and retain the
+The next nonempty tier has multiplicity `5`: 725 top signatures containing
+`3,625` selectors. Run it through the shared engine and retain the
 transcript-digest verifier format. In parallel:
 
 1. add top-assignment assumption literals;
@@ -80,10 +81,10 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity7.cpp \
-  -o /tmp/m7
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity6.cpp \
+  -o /tmp/m6
 
-/tmp/m7
+/tmp/m6
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
