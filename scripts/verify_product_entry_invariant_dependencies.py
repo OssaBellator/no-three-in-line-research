@@ -22,6 +22,7 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX515-PX518.md",
     "product-growing-direction-theorem-index-PX519-PX522.md",
     "product-growing-direction-theorem-index-PX523-PX528.md",
+    "product-growing-direction-theorem-index-PX529-PX532.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -50,6 +51,7 @@ DOCS = [ROOT / "docs" / name for name in (
     "176-side-seven-radius-one-coordinate-csp.md",
     "177-side-seven-radius-two-selector-layer.md",
     "178-side-seven-radius-two-support-eight-ten-csp.md",
+    "179-side-seven-radius-two-support-twelve-csp.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
@@ -57,9 +59,9 @@ INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX528"
+    assert manifest["range"] == "PX397-PX532"
     assert manifest["root"] == "PX492"
-    assert manifest["frontier_root"] == "PX528"
+    assert manifest["frontier_root"] == "PX532"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -76,7 +78,7 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 529):
+    for theorem_id in range(397, 533):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
@@ -84,7 +86,7 @@ def main() -> None:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 529))
+    assert index_ids == list(range(397, 533))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
@@ -94,10 +96,11 @@ def main() -> None:
         "132", "488", "21,952", "170{,}368", "2{,}227{,}923",
         "926,852", "806,548", "9,991,170", "1,748",
         "1,201,997,452", "989,303", "45,477,868",
-        "1,594,005,329", "1,326,750,836", "7,396",
+        "1,594,005,329", "1,326,750,836", "5,461,931,168",
+        "9,312",
     ):
         assert token in text
-    print("PX397--PX528 dependency, cutoff, and radius-two support audit: PASS")
+    print("PX397--PX532 dependency, cutoff, and support-twelve frontier audit: PASS")
 
 
 if __name__ == "__main__":
