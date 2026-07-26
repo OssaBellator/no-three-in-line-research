@@ -17,6 +17,7 @@ This index is branch-specific. The shared proved inputs remain documented on `ma
 | GC2o–GC2r | Partner-private destroyed factors have reuse at most their rank and give automatic `r*kappa`-congestion payment; failure localizes to source-free, target-common or private-underweight mass | PROVED UNDER THE LOCAL DOMINANCE PARAMETER `kappa` | `docs/geometric-cleaning-partner-private-source-transfer.md` |
 | GC2s–GC2v | Aggregate private capacity pays fractionally with rank loss `r`; all target-common factors form one shared pool paying with loss `kappa`, and failure is an exact source-free or capacity-overload witness | PROVED UNDER THE AGGREGATE DOMINANCE PARAMETER `kappa` | `docs/geometric-cleaning-shared-source-capacity.md` |
 | GC2w–GC2aa | Source-free corrections are exactly isolated deleted pairs; aggregate-private and target-link failures produce exact factor families with demand/capacity ratio greater than `kappa` | PROVED | `docs/geometric-cleaning-overload-structure.md` |
+| GC2ab–GC2af | Capacity overload has positive exact excess equal to the dominance deficit; a rank split sends it to lower-rank concentration, high pair codegree or a paid GC4 endpoint-disjoint anchor star | PROVED | `docs/geometric-cleaning-overload-anchor-import.md` |
 | GC3a | Paid partner consumption bounds total pool depletion | PROVED | `docs/geometric-cleaning-budget-and-wall.md` |
 | GC3b | Paid incidence bounds creation of exceptional anchors | PROVED | `docs/geometric-cleaning-load-accounting.md` |
 | GC3c–GC3d | Pair-shadow threshold crossings equal new-cell pair incidence and admit a margin/reuse charging bound | PROVED | `docs/geometric-cleaning-pool-and-shadow-stability.md` |
@@ -36,6 +37,6 @@ This index is branch-specific. The shared proved inputs remain documented on `ma
 | GC4k | A Hall-deficient paid incidence contains a same-label compatible fan or a conflict overload | PROVED | `docs/geometric-cleaning-anchor-link.md` |
 | GC4l | A weighted deficient fibre retains at least `1/(T(Γ+1))` of its star weight in one compatible role class, unless it has degree greater than `Γ` | PROVED | `docs/geometric-cleaning-weighted-labelled-fan.md` |
 | GC5a–GC5c | Near-complete clone local load or dense two-layer global triple mass gives an exact all-`n` endpoint; endpoint failure returns explicit hole/load/mass witnesses | PROVED | `docs/geometric-cleaning-all-n-endpoint-router.md` |
-| GC5 | Clean-host endpoint theorem | OPEN; FIXED-TARGET LATENT RESIDUALS NOW CLASSIFY AS ISOLATED-CELL STARS OR EXACT PRIVATE/TARGET FACTOR OVERLOADS, WITH GEOMETRIC USE OF THOSE CERTIFICATES, POOL DEPLETION, GLOBAL CONTEXT CAUSES AND LOCAL SUPERREGULAR RESAMPLING REMAINING | `docs/geometric-cleaning.md` |
+| GC5 | Clean-host endpoint theorem | OPEN; FIXED-TARGET CAPACITY OVERLOAD NOW ENTERS GC4 AS PAID EXCESS WEIGHT, WITH LOWER-RANK/HIGH-PAIR CLASSIFICATION, GC4 LABELLED RECURSION, ISOLATED-CELL PROSPECTIVE STARS, POOL DEPLETION, GLOBAL CONTEXT CAUSES AND LOCAL SUPERREGULAR RESAMPLING REMAINING | `docs/geometric-cleaning.md` |
 
 No row in this file upgrades the global conjecture.
