@@ -50,32 +50,31 @@ The authoritative live ledger is split across:
 | CMR1502--1509 | Unit exact-displacement mass per owner, loaded-owner exclusion, unloaded private extraction, token and root-channel preservation, disjoint additive bookkeeping, quantitative routed splice, and the packed-versus-loaded endpoint | PROVED; random weighted owner exclusions and root-channel checks | `docs/291-prime-power-owner-disjoint-packed-loaded.md` |
 | CMR1510--1517 | Hall-cut matching-capacity excess, arbitrary partial-matching deletion, target-safe nonaxis line cleaning, exact line-local collateral removal, and zero same-owner/same-line loaded-coordinate response | PROVED; exhaustive Hall cuts, partial deletions and nonaxis line traces checked | `docs/292-prime-power-extension-free-partial-matching-line-clean.md` |
 | CMR1518--1525 | Fixed-central pair/trace stocks, tunable repeated-token threshold, return-versus-long-run split, persistent absorption, paid-pair selector recurrence, fixed trace recurrence, and the atomic recurrent quotient | PROVED; threshold arithmetic and synthetic histories checked | `docs/293-prime-power-repeated-token-atomic-compression.md` |
+| CMR1526--1533 | Rook-polynomial inclusion--exclusion, degree-two path/cycle factorization, target deletion--contraction, exact line-clean response counts, prescription probabilities, finite component signatures, and the exact off-line collateral row | PROVED; component polynomials and brute-force completion counts checked | `docs/294-prime-power-extension-free-line-clean-rook-rows.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-CMR1486--CMR1501 remove strict depth transfer, first-use private resources and
-anonymous depth-zero translations from the diagonal spectral problem.  Those
-terms lie on a finite acyclic transfer graph and glue after the recurrent cores
-are certified.
+Strict depth transfers, first-use private resources and depth-zero child
+channels lie on finite acyclic transfer graphs.  Loaded-owner and translated
+private currencies have disjoint owner support.
 
-CMR1502--CMR1509 close the overlap between global packed displacement and
-one-owner loaded-line currencies.  CMR1510--CMR1517 then add a target-safe
-extension-free line-clean response: every partial matching, including a complete
-nonaxis line trace, may be deleted from `H_e` without losing all perfect
-matchings.  The same-owner, same-line loaded coordinate therefore has a response
-row coefficient zero, although off-line offspring remain to be bounded.
+CMR1510--CMR1517 give a target-safe line-clean response with zero same-owner,
+same-line collateral.  CMR1526--CMR1533 now make every remaining off-line
+prescription probability exact.  The forbidden board is `O union X union {e}`;
+`O union X` factors into paths and even cycles, and one target-edge deletion--
+contraction produces the complete rook polynomial.  The off-line response row
+is therefore an explicit rational rook-class dot product.
 
-CMR1518--CMR1525 sharpen the repeated-token core.  For a fixed central edge the
-pair and trace stocks are only `(t-1)^2` and `2(t-1)`.  A sufficiently long
-fixed-token history now gives an explicit finite bound, labelled return
-incidence, successful absorption, one persistent paid-pair selector, or one
-fixed trace-line incidence.
+CMR1518--CMR1525 compress repeated-token/reused-support recurrence to three
+atomic rows: labelled edge return, one persistent paid-pair selector, or one
+fixed trace-line incidence.  Finite labelled stock and successful absorption
+are not additional recurrent classes.
 
 The active frontier is now:
 
-1. bound the off-line offspring of the extension-free line-clean response;
-2. calibrate the three atomic repeated-token rows -- edge return, persistent
-   paid-pair selector and fixed trace incidence -- against destroyed credit;
+1. prove a host-uniform upper bound for the exact line-clean rook dot product;
+2. calibrate the atomic return, persistent-selector and trace rows against
+   destroyed parent credit;
 3. certify recurrent root/fixed-interface and thin/prime-field rows;
-4. assemble the resulting host-uniform rational/integer quotient `Av<v`; and
+4. assemble the resulting exact rational/integer quotient `Av<v`; and
 5. complete balanced/CRT assembly with collision and local-line classes.
