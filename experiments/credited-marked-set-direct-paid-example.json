@@ -1,0 +1,8 @@
+{
+  "layer_marked_sizes": [6, 4],
+  "within_layer_credit": [18, 12],
+  "cross_layer_credit": 7,
+  "second_insertion_costs": [0, 0],
+  "R": 10000,
+  "all_selected_are_controllers": true
+}
