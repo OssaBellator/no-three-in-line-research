@@ -1,0 +1,13 @@
+{
+  "R": 10000,
+  "T": 1000,
+  "delta": 0.2,
+  "h": 100,
+  "movement_unsafe": 1500,
+  "refill_unsafe": 1000,
+  "rho": 520,
+  "chi": 410,
+  "numerator_masses": [120000, 280000, 510000, 130000],
+  "direct_repair_credit": 160,
+  "direct_repair_insertion": 0
+}
