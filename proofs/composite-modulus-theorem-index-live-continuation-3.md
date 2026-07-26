@@ -44,6 +44,7 @@ The authoritative live ledger is split across:
 | CMR1454--1461 | Eligible prime-power signatures with separate matching, envelope and span parameters | PROVED | `docs/285-prime-power-eligible-owner-signature-fans.md` |
 | CMR1462--1469 | Fractional packed-signature identity, owner/pair dispersion, primitive-direction concentration and exact-displacement translation banks | PROVED; inherited-coordinate parameters corrected before endpoint snapshot | `docs/286-prime-power-fractional-packed-signature-fans.md` |
 | CMR1470--1477 | Exact endpoint prefix cells, weighted full-cell concentration, internal/crossing carry routing, common exit-depth extraction, strict internal scaling, quantitative CMR1469 splice, absolute token stock, and the displacement-routing endpoint | PROVED; sparse weighted and scaling checks | `docs/287-prime-power-weighted-displacement-carry-routing.md` |
+| CMR1478--1485 | Exact-displacement path forest, half-mass endpoint-disjoint extraction, linear residual-blocker payment, private full-prefix token placement, heavy private-token versus dispersed-token alternatives, and the quantitative splice after carry routing | PROVED; random weighted forests, blocker tests, nonroot token systems and geometric packed-bank specialisations checked computationally | `docs/288-prime-power-exact-displacement-private-path-payment.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -57,24 +58,31 @@ M_0=
 \]
 
 CMR1470--CMR1477 route this mass through one depth-`s` full prefix cell.  They
-produce one of:
+produce strict internal scaling, one earlier exit depth, the depth-zero branch,
+or reuse of an absolute token.  CMR1478--CMR1485 then extract private translated
+pairs inside the routed branch.  The guaranteed private-pair counts are at least
 
-1. a strict internally scaled bank of mass at least
-   \[
-   M_0/(2p^{2s});
-   \]
-2. for `s>=1`, one earlier exit depth of mass at least
-   \[
-   M_0/(2sp^{2s});
-   \]
-3. the depth-zero parent-scale exact-displacement branch; or
-4. finite consumption/reuse of one absolute full-cell token.
+\[
+\left\lceil\frac{M_0}{4p^{2s}}\right\rceil
+\]
+
+in the internal branch,
+
+\[
+\left\lceil\frac{M_0}{4sp^{2s}}\right\rceil
+\]
+
+in the earlier-exit branch, and `ceil(M_0/2)` at depth zero.  Every residual
+blocker meeting all extracted pairs spends one distinct response edge per pair.
+At nonroot depth, the pairs additionally give one heavy private translated token
+or many pairwise token-disjoint private witnesses.
 
 The active frontier is now:
 
 1. assign strict Lyapunov payment to internal scaling and earlier-depth transfer;
-2. pay the depth-zero translated bank or repeated absolute token through
+2. compare private residual-edge/token consumption with destroyed parent credit;
+3. pay the depth-zero translated bank or repeated absolute token through
    quotient/carry collision, prefix return or protected reserve;
-3. compare those global payments with the one-owner loaded-line gain;
-4. encode the result as a host-uniform rational/integer `Av<v` certificate;
+4. compare the global translated-token payment with the one-owner loaded-line
+   gain and encode a host-uniform rational/integer `Av<v` certificate; and
 5. prove prime-field/thin diagonal blocks and complete CRT assembly.
