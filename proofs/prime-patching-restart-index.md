@@ -23,6 +23,7 @@ transition addendum in
 | Complete insertion cancellation | Every first-step current incidence meets the inserted set; blockwise second cycles cancel the complete insertion table without rank decomposition | PROVED / CONDITIONAL NAMED SECOND-HOST INTERFACES | `docs/268-theta-plus-complete-insertion-cancellation.md` |
 | Complete second-host call matrix | Exact marked scale, helper supply, puncture/domain loss, credit ownership, source-host routing, terminal leaves, and global helper accounting | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
 | Raw second-host leaf elimination | Buffered role domains and the complete support table eliminate raw Hall, alternating, non-superregular, distinguished-endpoint, and role-host outputs | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
+| Current-row coordinate-cover elimination | The slab reservation census supplies every quadratic helper host and removes internal near-complete coordinate cover | PROVED / CONDITIONAL TYPED PAID ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
 
 ## Exact late theorem ranges
 
@@ -46,6 +47,7 @@ transition addendum in
 | PP3azs--PP3azz | Complete insertion cancellation in `Theta_E^+` | PROVED / CONDITIONAL NAMED CURRENT CONVERSION INTERFACES | `docs/268-theta-plus-complete-insertion-cancellation.md` |
 | PP3baa--PP3bah | Complete second-host call-matrix audit | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
 | PP3bai--PP3ban | Raw second-host explicit-leaf elimination and revised trichotomy | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
+| PP3bao--PP3bas | Dense current-row coordinate supply and internal-cover elimination | PROVED / CONDITIONAL TYPED CONVERSION ENDPOINTS | `docs/271-current-row-coordinate-cover-elimination.md` |
 
 ## Current exact endpoint
 
@@ -55,14 +57,16 @@ by PP3bai--PP3ban: under the universal second-host hypotheses, buffered Hall
 assignment and the complete rank-three support table give only an independent
 cycle, dense current support, or dense source support.
 
-Thus role-host, distinguished-endpoint, conditional Hall, alternating, and
-non-superregular failure are not independent outputs of the raw second-host
-selector.  Conditional leaves may still occur downstream after a typed current
-or source object has entered its own conversion chain.
+The dense current row also has automatic quadratic helper supply by
+PP3bao--PP3bas.  It cannot end in internal coordinate shortage, a near-complete
+slab-generated reservation cover, or a raw host-feasibility leaf.  Its remaining
+frontier is the finite family of typed paid endpoints such as arc/path petals,
+choice grids, fixed-cell or partner fans, insertion pencils, and fixed cores.
 
-Separately, the branch still assumes saturated no-three configurations on
-`[p-1]^2` for every sufficiently large prime.  The no-three-in-line conjecture
-remains unproved.
+The dense source row remains the fixed-template and paired-switch conversion
+frontier.  Separately, the branch still assumes saturated no-three
+configurations on `[p-1]^2` for every sufficiently large prime.  The
+no-three-in-line conjecture remains unproved.
 
 ## Diagnostics
 
@@ -71,4 +75,6 @@ python scripts/check_second_host_call_matrix.py \
   experiments/second-host-call-matrix-example.json
 python scripts/check_second_host_leaf_elimination.py \
   experiments/second-host-leaf-elimination-example.json
+python scripts/check_current_row_coordinate_supply.py \
+  experiments/current-row-coordinate-supply-example.json
 ```
