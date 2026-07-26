@@ -10,216 +10,303 @@ The classical no-three-in-line conjecture
 D(n)=2n
 \]
 
-remains open. This repository does **not** contain a complete proof.
+remains open.  This repository does **not** contain a complete proof.
 
 The collision-free theorem ledger is split across
 
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
-- `proofs/composite-modulus-theorem-index-live-continuation-2.md` from CMR870.
+- `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` from CMR1198.
 
-## Established normal forms
+## Structural normal forms
 
-- Same-value host expansions roll back exactly; lowering or infeasible-base
-  expansions peel to added minimum-core contraction or strict improvement.
-- Between contractions, normalized same-vertex-set hosts form nested decreasing
-  chains.
+- Same-value host expansions roll back; lowering or infeasible-base expansions peel
+  to added minimum-core contraction or strict improvement.
+- Between contractions, normalized same-vertex-set hosts are nested decreasing.
 - Minimum-core contraction is host-representable after conditioning the complete
   current cylinder on the common prescription.
 - Exact protected/free, routing, unit-wall, essential-core, exchange-SCC and child
-  products retain original geometric coordinates.
+  products preserve original geometric coordinates.
 - Cross-factor triples are constants, pure one-factor atoms, or low-rank Cartesian
   coupling boxes.
-- Physical restorations and edge lineages are owner-independent.
+- Minimum-selected routing fixes one actual minimum skeleton immediately, so the
+  selected path has no routing-recurrence branch.
+- Inclusion-minimal response-bank blockers are exact deficiency-one unit Hall walls
+  and factor into strict lower-side children.
 
-## Selected-minimum mode
+These statements give finite response and structural descent.  They do not imply
+that a positive minimum becomes zero.
 
-For an actual minimum state `S`, every restriction preserving `S` preserves one
-minimum. A chosen target and compatible labelled prescription can be forced using
-at most
+## Exact fixed-target collateral expectation
+
+Fix a selected target cell `e`, the opposite-layer matching `O`, and a disjoint
+forbidden extension `F` containing `e`.  The response graph
 
 \[
-2n^2-2n
+G=K_{n,n}\setminus(O\cup F)
 \]
 
-outside-anchor deletions. Exact contraction preserves minimum status for the
-induced objective.
-
-Routing recurrence is unnecessary on this selected path. At each factor host,
-restrict immediately to the routing skeleton of one actual minimum. The resulting
-child product is exact and every nonempty child has strictly smaller side.
-
-Define
+is `(n-2)`-regular.  Put
 
 \[
-\mathcal A(d)=\sum_{m=1}^{d}(2m^2+m+1).
+\kappa_n=\left(\frac n{n-2}\right)^n\le16
+\qquad(n\ge4).
 \]
 
-One selected strict-descent path has at most `mathcal A(d)` normalized host/routing
-stages.
-
-## Target banks and robust geometry
-
-The targets of a dirty minimum form a 3-uniform hypergraph. For every `q>=2`,
-either there are `q` physically disjoint targets or a cell cover of size at most
-`3(q-1)`. The cover branch concentrates at least
+Van der Waerden gives
 
 \[
-\left\lceil\frac{\Phi(S)}{3(q-1)}\right\rceil
+|\operatorname{PM}(G)|
+\ge n!\left(\frac{n-2}{n}\right)^n.
 \]
 
-targets on one selected cell.
-
-A disjoint target bank has a degree-two Hall escape destroying at least
-`ceil(q/2)` targets simultaneously. A positive-gap target-destroying state which
-loses load `D` and lies `g>=1` above the minimum creates at least `D+g` new
-triples.
-
-New triples split by physical entry rank:
-
-- rank one gives a loaded old line or simultaneous secant star;
-- rank at least two gives an entering pair with many third cells on one nonaxis
-  line.
-
-Simultaneous common-layer, cross-layer and loaded-line banks have direct protected
-executions. No-growth large cores enter exact product descent.
-
-## Parameter-free finite stocks
-
-On the selected path, the branch-wide protected capacity is
+A compatible rank-`r` prescription therefore has response-bank probability at
+most
 
 \[
-\mathfrak P_{\min}(N,h)
+\frac{\kappa_n}{(n)_r}
+\qquad(1\le r\le3).
+\]
+
+If `V_r` counts genuinely new physical triples with residual response rank `r`,
+then
+
+\[
+\mathbb E N(Q)
+\le
+\kappa_n
+\left(
+\frac{V_1}{n}
++
+\frac{V_2}{(n)_2}
++
+\frac{V_3}{(n)_3}
+\right).
+\]
+
+Every response removes `e`, so it destroys at least its old target load `D_S(e)`.
+Consequently
+
+\[
+\kappa_n\mathcal C(S;O,F)<D_S(e)
+\]
+
+is an actual strict-improvement criterion.
+
+## Restricted-host penalty and target aggregation
+
+If `b` allowed response edges are unavailable in the current host and `m=Phi(S)`,
+then
+
+\[
+\kappa_n
+\left(
+\mathcal C(S;O,F)+\frac{(m+1)b}{n}
+\right)<D_S(e)
+\]
+
+forces a feasible improving response.  The coefficient `m+1` ensures that a
+negative weighted response cannot use an unavailable edge.
+
+The exact target-incidence identity is
+
+\[
+\sum_{e\in E(S)}D_S(e)=3\Phi(S).
+\]
+
+Optimizing the bank score over extensions for each selected cell gives a finite
+global criterion: if the optimized scores sum to less than `3Phi(S)`, one target
+bank improves.
+
+## Corrected line energy
+
+Let `S=O union M`, let `M_G=M cap E(G)`, and on a real line `L` put
+
+\[
+o_L=|O\cap L|,
+\quad
+g_L=|G\cap L|,
+\quad\m_L=|M_G\cap L|,
+\quad
+g_L^+=g_L-m_L.
+\]
+
+The exact new-collateral counts are
+
+\[
+V_1
 =
-(h+1)(2N+1)
-\sum_{m=1}^{N}2m(2m^2+m+1).
+\sum_L\binom{o_L}{2}g_L^+,
 \]
 
-The fresh deletion-root stock is
-
 \[
-\mathfrak D_{\min}(N,h)
+V_2
 =
-(h+1)(2N+1)
-\sum_{m=1}^{N}2m^2(2m^2+m+1).
+\sum_L
+ o_L
+\left(c_2(G_L)-\binom{m_L}{2}\right),
 \]
 
-Canonical minimum-loss witnesses are permanent and distinct inside one normalized
-segment. A coarse complete-branch stock is
-
 \[
-\mathfrak L(N,h)
+V_3
 =
-(h+1)(2N+1)
-\sum_{m=1}^{N}
-(2m^2+m+1)(2m+1)(2m^2-2m).
+\sum_L
+\left(c_3(G_L)-\binom{m_L}{3}\right).
 \]
 
-Rolled-back banks have a greedy missing-edge cover of size at most `2N^2`,
-independent of bank cardinality. Returned cover edges are bulk-redeleted while the
-stored minimum anchor survives.
+The subtraction is essential: an allowed response edge may already belong to the
+old rematched layer, and triples wholly supported by old edges are not new
+collateral.
 
-A contracted core either reconditions and recontracts while its lifted anchor
-survives, yields strict improvement, exposes a real missing anchor edge, contracts
-an added core edge, or enters strict structural descent.
+Every new triple has one absolute last-entering labelled edge owner and one real
+line owner.  Fixed-core cells contribute anchored geometry but receive no duplicate
+owner charge; exact products assign each entering owner edge to one residual
+factor.
 
-## Blocker covers and unit walls
+## Pointwise local collateral envelope
 
-If a blocker cover meets every perfect matching of a response graph, deleting the
-cover destroys matchability and gives a Hall-deficient cut.
-
-For an inclusion-minimal blocker cover `C`, every Hall witness `X` with
-`Y=N_{G-C}(X)` satisfies
+For an allowed response edge `a`, let
 
 \[
-C=E(G)\cap(X\times(R\setminus Y)),
-\qquad
-|X|-|Y|=1.
+w_S(a)
+=
+\mathbf1_{a\notin M}
+\sum_{L\ni a}\binom{o_L}{2}.
 \]
 
-Restoring any one blocker makes it essential. Its matching family factors exactly
-as
+Let `Delta_2(a)` and `Delta_3(a)` be the maximum local rank-two and rank-three new
+collateral incidences over bank matchings containing `a`, and define
 
 \[
-\operatorname{PM}(G_e)
-\cong
-\{e\}
-\times
-\operatorname{PM}(G_A)
-\times
-\operatorname{PM}(G_B),
-\qquad a+b=n-1.
+\Lambda_S(a)
+=
+w_S(a)+\frac12\Delta_2(a)+\frac13\Delta_3(a).
 \]
 
-Thus complete bank blockage is a strict unit-wall descent, not an arbitrary
-terminal inventory.
-
-## Universal and small-factor banks
-
-Every active fixed target or loaded line in side at least four has a degree-two
-full-layer response bank. A feasible response enters the minimum scheduler; a
-fully blocked response gives the unit-wall descent.
-
-Side three is exact: for every opposite permutation and target edge absent from
-it, one 3-cycle contains the target edge and the other 3-cycle is the unique
-response matching.
-
-Side two is physically rigid. The two disjoint layers cover the complete `2x2`
-board; a root side-two state is clean, while a residual side-two block conditions
-and contracts into the induced fixed interface. Side-one factors are forced or
-empty.
-
-Every target surviving only in a small fixed interface has a canonical last-active
-edge and a unique lifted response-bank owner of side at least three, unless the
-whole root is the clean side-two base.
-
-## Finite selected-scheduler response
-
-After erasing exact duplicate bank attempts, same-value rollbacks, repeated
-reconditioning and repeated unchanged skeleton selections, every nontrivial
-canonical episode consumes finite owner, protected, deletion, loss, blocker-cover
-or contraction currency, or strictly descends.
-
-This proves finite response and structural descent. It does **not** prove that the
-minimum value becomes zero.
-
-## Critical nonclosure correction
-
-A finite response tree can terminate at a dirty conditioned anchor when every
-escape state has higher potential. The abstract family
+Every response matching satisfies the pointwise bound
 
 \[
-\Phi(S)=1,
-\qquad
-\Phi(Q_1)=\Phi(Q_2)=2
+N(Q)\le\sum_{a\in R}\Lambda_S(a).
 \]
 
-already demonstrates this: both responses may destroy the old target and create
-two replacements, while `S` remains the positive minimum. Conditioning on `S` can
-produce a dirty singleton with the same induced minimum.
-
-Therefore finite currency exhaustion, unit-wall descent and small-factor
-classification are supporting reductions, not a minimum-zero proof.
-
-For a response state `Q`, put
+Hence
 
 \[
-L(Q)=|\mathcal T(S)\setminus\mathcal T(Q)|,
-\qquad
-N(Q)=|\mathcal T(Q)\setminus\mathcal T(S)|.
+N(Q)\le
+\mathcal R_\Lambda(G,S)
+:=
+\min\left\{
+\sum_x\max_y\Lambda_S(x,y),
+\sum_y\max_x\Lambda_S(x,y)
+\right\}.
 \]
 
-The exact identity is
+If `mathcal R_Lambda(G,S)<D_S(e)`, every feasible response in that bank improves;
+if the complete bank is blocked, it enters unit-wall descent.
+
+Optimizing over host-feasible extensions gives `beta_H(e)`.  Unless some bank
+improves or is blocked,
 
 \[
-\Phi(Q)-\Phi(S)=N(Q)-L(Q).
+\sum_{e\in E(S)}\beta_H(e)\ge3\Phi(S).
 \]
 
-A response distribution forces improvement only when
+Therefore one absolute entering edge has local envelope at least
 
 \[
-\mathbb E N(Q)<\mathbb E L(Q).
+\frac{3\Phi(S)}{2n^2},
 \]
+
+forcing a quantitative rank-one, rank-two or rank-three loaded-line/secant-star
+certificate.
+
+## Last-creation credit ledger
+
+Every current physical triple has a unique last creation time.  At that transition
+it receives one physical owner cell from its least entering labelled edge.
+
+- current potential is the number of live triple credits;
+- destroyed triples retire their previous credits;
+- created triples issue new credits;
+- surviving triples keep their owner;
+- removing an owner cell retires every live credit assigned to it;
+- layer reassignment without physical absence creates no new credit.
+
+Thus created collateral is immediately legitimate target load for a later response
+through its owner cell.
+
+## Reproduction-matrix frontier
+
+At one finite canonical owner, partition live credits into finitely many classes.
+Choose one feasible response law for each parent class and define
+
+\[
+A_{\sigma\tau}
+=
+\mathbb E N_\tau(Q).
+\]
+
+A positive vector gives strict weighted descent exactly when
+
+\[
+Av<v.
+\]
+
+For finite nonnegative matrices this is equivalent to
+
+\[
+\rho(A)<1.
+\]
+
+If `rho(A)<1`, an explicit weight is
+
+\[
+v=(I-A)^{-1}\mathbf1.
+\]
+
+A successful proof can be certified by exact rational or integer inequalities.
+Such certificates tolerate bounded error and glue constructively across genuinely
+block-upper-triangular product matrices.  For a fixed weight vector, rowwise
+randomization is unnecessary: one deterministic bank row already satisfies every
+strict convex-combination inequality.
+
+No theorem yet constructs a globally valid upper offspring matrix with spectral
+radius below one.
+
+## Extension-free ambient response family
+
+Varying the forbidden extension through a target cell has the exact union
+
+\[
+\bigcup_{F\ni e}
+\operatorname{PM}(K_{n,n}\setminus(O\cup F))
+=
+\operatorname{PM}(K_{n,n}\setminus(O\cup\{e\})).
+\]
+
+The reverse inclusion follows because
+`K_{n,n}\setminus(O\cup R)` is regular and every remaining edge belongs to a
+perfect matching.  This form is appropriate for ambient lower-state searches and
+lowering expansions.  Fixed-extension banks remain necessary for pointwise
+collateral and blocker-wall arguments.
+
+## Finite full-grid evidence and scope
+
+On the **standard full grids**, and common-affine copies:
+
+- side three has six physical states; every dirty target response is clean;
+- every dirty side-four state has an ambient strict target response;
+- every dirty side-five state has an ambient strict target response;
+- at side six, 189476 dirty ordered states improve immediately, 1184 more escape
+  after at most two equal target responses, and 24 ordered states form twelve
+  feeder/two-cycle physical traps; the recorded CMF1 clean state gives a two-layer
+  lowering expansion from those traps.
+
+These are root/affine finite theorems only.  They do **not** apply by arbitrary
+relabeling to scattered residual factors, because real collinearity remains in the
+original parent coordinates.  For scattered factors, the inherited-coordinate
+bank, local-envelope and spectral analysis remains necessary.
 
 ## Corrections retained
 
@@ -230,35 +317,35 @@ A response distribution forces improvement only when
 - Aggressive batch deletion is branch-local.
 - Differently masked leaf unions are not automatically one matching host.
 - An empty intersection host has no assigned minimum.
-- Conditioning on one support edge does not fix the other two layer labels of a
-  physical target; four assignment classes are required.
-- A one-layer line-clean cylinder does not itself remove an opposite-layer selected
-  cell.
-- Static token membership is not called restoration payment until an edge returns.
-- Finite scheduler termination is not called potential improvement.
+- Conditioning on one support edge does not fix the other two layer labels.
+- Static token membership is not restoration payment until an edge returns.
+- Finite scheduler termination is not potential improvement.
+- Allowed response edges already present in the old layer contribute no new
+  rank-one collateral; old rank-two and rank-three subsets must also be subtracted.
+- Standard-grid finite classifications do not transfer to scattered residual
+  coordinates by relabelling.
+- The side-six closed one-layer trap graph has six two-cycles and twelve one-step
+  feeders, not fixed points.
 
 ## Current open frontier
 
-1. **Global target-versus-collateral inequality.** Construct canonical response-bank
-   weights satisfying
-   \[
-   \sum_Bw_B\,\mathbb E_BN(Q)
-   <
-   \sum_Bw_B\,\mathbb E_BL(Q),
-   \]
-   or explicitly exhibit a lower-potential state.
-2. **Lifted fixed-interface accounting.** Include anchored rank-zero/rank-one/rank-
-   two collateral without double counting across unit-wall, child and envelope
-   owners.
-3. **Prime-field and thin regimes.** Establish the required weighted inequality in
-   prime-field and low-height quotient/carry cases.
-4. **Arbitrary side lengths.** Complete balanced-prime and CRT assembly while
-   controlling mixed local-line/collision collateral.
+1. **Subcritical offspring matrix.**  Construct honest line/height/carry and
+   fixed-interface credit classes with an upper matrix satisfying `rho(A)<1`, or
+   exhibit an exact rational vector `Av<v`.
+2. **Product triangularity.**  Prove that last-entering ownership makes unit-wall,
+   child and lifted-interface offspring matrices block triangular up to a bounded
+   error absorbable by certificate slack.
+3. **Prime-field and thin regimes.**  Establish the same certificate without a
+   nonroot prefix-depth budget.
+4. **Arbitrary side lengths.**  Complete CRT/balanced assembly while retaining
+   collision/local-line credit classes.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR1197**, response banks, routing,
-rollbacks, protected growth, blocker covers, unit walls, small factors and lifted
-interface ancestry have finite canonical forms. The remaining problem is a genuine
-quantitative inequality comparing destroyed targets with created collateral—not an
-uncontrolled recurrence or terminal matching obstruction.
+There is no complete proof.  Through **CMR1317**, fixed-target bank expectations,
+restricted feasibility, corrected line energy, unique collateral ownership,
+pointwise local envelopes, live-credit reproduction, exact spectral certificates,
+extension-free response unions and standard-grid sides three through six have
+precise normal forms.  The next genuine theorem must prove subcritical credit
+reproduction in inherited coordinates; finite response and root-grid enumeration
+are supporting evidence, not substitutes for that inequality.
