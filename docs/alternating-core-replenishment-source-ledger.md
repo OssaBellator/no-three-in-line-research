@@ -79,9 +79,9 @@ stock. QED.
 
 ## AC3pl -- exact transition-count bound with consumption and replenishment -- PROVED
 
-Assume every accepted multiplicity-changing transition has either `C>=1` or a
-positive source debit.  Then the total number of accepted multiplicity-changing
-transitions is at most
+Assume every accepted supply-ledger transition has either `C>=1` or a positive source
+debit.  This includes source-only debit steps with `m'=m`.  Then the total number of
+accepted supply-ledger transitions is at most
 
 `M(m^(0)) + sum_(a in A)(rho_a+1)*s_a^(0)`.
 
@@ -113,28 +113,27 @@ Define
 
 `S=sum_a s_a`.
 
-On a source-faithful transition:
+On every accepted source-faithful supply-ledger transition:
 
-- a transition with `C>=1` and no multiplicity creation strictly decreases `Phi`;
-- a positive-replenishment transition does not increase `Phi` and strictly decreases
-  `S`.
+- if `C>=1`, then `Phi` strictly decreases;
+- if `C=0`, the acceptance condition forces a positive source debit, `Phi` does not
+  increase, and `S` strictly decreases.
 
 Thus the ordered pair `(Phi,S)`, in lexicographic order, strictly decreases on every
-accepted transition after splitting a mixed transition into its declared consumption
-and replenishment ledger atoms.
+accepted supply-ledger transition, including mixed consume/replenish and source-only
+debit steps.
 
 ### Proof
 
-For a replenishment atom, `Delta M=R` and
+The source inequality gives
 
-`Delta Phi=R-sum_a rho_a*d_a<=0`,
+`Delta Phi=R-C-sum_a rho_a*d_a <= -C`.
 
-while positive replenishment forces `sum_a d_a>=1`, so `S` decreases.  A consumption
-atom reduces `M` by at least one and does not increase any source counter, so `Phi`
-strictly decreases. QED.
+If `C>=1`, this is strictly negative.  If `C=0`, a positive source debit is required;
+then `Delta Phi<=0` and `S` decreases by at least one. QED.
 
-The atom split is accounting only; AC3pl already gives the transition bound without
-physically splitting the move.
+AC3pl supplies the sharper explicit count, while AC3pm records the conceptual
+termination potential.
 
 ## AC3pn -- closure with a finite replenishment source ledger -- PROVED UNDER THE CAPPED-SOURCE CONTRACT
 
@@ -146,19 +145,20 @@ Inside one reconstructed source epoch assume:
 3. every multiplicity creation satisfies AC3pj for a finite exact source set `A`;
 4. source counters are coordinatewise nonincreasing and their conversion rates are
    fixed inside the epoch;
-5. every accepted multiplicity-changing transition consumes a multiplicity unit or a
-   source unit;
+5. every accepted supply-ledger transition consumes a multiplicity unit or a source
+   unit;
 6. capped recreation gates close by the AC3pi routes; and
 7. any source replenishment, rate change, new source address or nonfactoring semantic
    change is a higher outer reset.
 
 Then replenishable multiplicity cannot sustain an infinite nonterminal history inside
-the source epoch.  The number of multiplicity-changing transitions is bounded by
-AC3pl, while structural returns use the finite capped gate stock.
+the source epoch.  The total number of accepted supply-ledger transitions, including
+source-only debits, is bounded by AC3pl, while structural returns use the finite capped
+gate stock.
 
 ### Proof
 
-AC3pl bounds all multiplicity-changing transitions.  AC3pg and AC3pi bound structural
+AC3pl bounds all supply-ledger transitions.  AC3pg and AC3pi bound structural
 false-to-true returns.  Recreation-free common-owner segments are bounded by AC3nz.
 Every forbidden source change exits the epoch. QED.
 
@@ -180,4 +180,4 @@ cases are:
 `scripts/verify_ac_replenishment_source_ledger.py` exhausts small multiplicity/source
 histories and random larger ledgers.  It checks the source-faithful inequality,
 telescoping replenishment bound, transition-count bound, lexicographic potential and
-closure accounting with mixed consume/replenish moves.
+closure accounting with mixed consume/replenish and source-only debit moves.
