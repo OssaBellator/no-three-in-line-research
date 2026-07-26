@@ -18,7 +18,7 @@ The authoritative live ledger is split across:
 | CMR926--933 | Restriction/expansion minimum-face formulas, arbitrary-transition witnesses, canonical minimum changes, minimum-core growth and shrinkage, finite witness stock, and the owner-transition minimum-face endpoint | PROVED | `docs/220-prime-power-minimum-face-owner-transition.md` |
 | CMR934--941 | Same-value expansion rollback, restoration-cycle erasure, intersection normalization, finite monotone restrictions, minimum-loss ancestry, and the expansion-rollback endpoint | PROVED | `docs/221-prime-power-minimum-expansion-rollback.md` |
 | CMR942--949 | Added-batch transversality under lowering expansion, minimum-preserving peeling, forced added-edge core contraction, peel budgets, record alternatives, mixed-transition transfer, and the lowering-expansion endpoint | PROVED | `docs/222-prime-power-lowering-expansion-core-contraction.md` |
-| CMR950--957 | Infeasible-base transversality, complete expansion normalization, arbitrary host-transition normal form, nested restriction segments, polynomial fixed-vertex execution bounds, restoration-capacity removal, and the complete same-vertex-set endpoint | PROVED | `docs/223-prime-power-complete-host-transition-normalization.md` |
+| CMR950--957 | Infeasible-base transversality, complete expansion normalization, arbitrary-transition normal form, nested restriction segments, polynomial fixed-vertex execution bounds, restoration-capacity removal, and the complete same-vertex-set endpoint | PROVED | `docs/223-prime-power-complete-host-transition-normalization.md` |
 | CMR958--965 | Exact constant/pure/coupling decomposition, low local ranks, Cartesian coupling boxes, finite stock, contraction transport, minimum-preserving coupling deletion or minimum-face contraction, finite normalization, and the coupling-normalized endpoint | PROVED | `docs/224-prime-power-induced-product-potential-transport.md` |
 | CMR966--973 | Coordinate-fibre minimum inheritance, exact one-factor induced potential, target location trichotomy, anchored deletion/contraction, finite fibre normalization, pure residual potential, strict factor descent, and the coordinate-fibre endpoint | PROVED | `docs/225-prime-power-minimum-coordinate-fibre-descent.md` |
 | CMR974--981 | Conditioning preserves the exact minimum face, induced contraction, one-layer and joint two-layer host representation, factorwise conditioning, potential transport, iterated representable contraction, and the host-representable minimum-core endpoint | PROVED | `docs/226-prime-power-minimum-core-host-representability.md` |
@@ -41,46 +41,35 @@ The authoritative live ledger is split across:
 | CMR1110--1117 | Lifted contracted anchors, minimum-preserving reconditioning, strict-improvement test, physical missing-edge witnesses, same-value rollback, reopening loss stock, and the fixed-core endpoint | PROVED | `docs/243-prime-power-fixed-core-reopening-normalization.md` |
 | CMR1118--1125 | Generic bank missing supports, rollback certificates, duplicate erasure, blocker concentration/dispersion, recurrent-blocker response, branch stock, and the target-bank rollback endpoint | PROVED | `docs/244-prime-power-target-bank-rollback-support.md` |
 | CMR1126--1133 | Greedy parameter-free blocker cover, distinct unavailable blockers, exact bank coverage, bulk redeletion, anchor-failure response, branch-wide cover stock, and the blocker-cover endpoint | PROVED | `docs/245-prime-power-rollback-blocker-cover-normalization.md` |
-| CMR1134--1141 | Dirty-minimum bank selector, executable-or-covered bank dichotomy, minimum trichotomy, robust/protected execution, fixed-core response, finite currency stocks, episode bound, and the selected-scheduler endpoint | PROVED as a finite-response theorem; terminal obstruction remains | `docs/246-prime-power-selected-scheduler-finite-response.md` |
+| CMR1134--1141 | Dirty-minimum bank selector, executable-or-covered bank dichotomy, minimum trichotomy, robust/protected execution, fixed-core response, finite currency stocks, episode bound, and the selected-scheduler endpoint | PROVED as a finite-response theorem | `docs/246-prime-power-selected-scheduler-finite-response.md` |
+| CMR1142--1149 | Bank coverage versus matchability, canonical Hall cut, blocked cross-cut, quantitative wall bounds, linear blocker degree, sparse-cover escape, prefix/token wall witnesses, and the terminal-blocker endpoint | PROVED | `docs/247-prime-power-terminal-blocker-hall-wall.md` |
+| CMR1150--1157 | Minimal blocker cores, exact Hall-cut equality, unit deficiency, essential single-edge restoration, private matchings, exact unit-wall product, finite wall tree, and the minimal-blocker endpoint | PROVED | `docs/248-prime-power-minimal-blocker-unit-wall.md` |
+| CMR1158--1165 | Degree-two banks for fixed targets and loaded lines, executable-versus-blocked split, minimum response, minimal-cover unit wall, finite descent, and the terminal-certificate endpoint | PROVED for the universal range | `docs/249-prime-power-terminal-certificate-bank-descent.md` |
+| CMR1166--1173 | Target-location trichotomy, residual and lifted-owner target banks, blocked-bank unit-wall descent, finite currency execution, no dirty terminal owner at side at least four, and finite structural descent | PROVED as a selected-execution descent theorem | `docs/250-prime-power-universal-range-target-descent.md` |
+| CMR1174--1181 | Exact side-three permutation bank, singleton blocker response, side-two physical rigidity and root cleanliness, rigid-block contraction, side-one factors, and the small joint-factor endpoint | PROVED | `docs/251-prime-power-small-joint-factor-base.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-For minimum-anchor analysis, routing recurrence is unnecessary: each host stage is
-restricted immediately to the routing skeleton of one actual minimum. The exact
-child product has strict positive child sides, so the selected owner-stage,
-protected-growth, and deletion-root stocks are parameter-free.
+Minimum-selected routing removes routing recurrence from the chosen proof path.
+Normalized minimum losses, fixed-core reopenings, protected growth, deletion roots,
+and rolled-back bank blockers all have parameter-free finite stocks.
 
-Between contractions, normalized hosts form nested decreasing chains. Canonical
-lost-minimum witnesses are distinct and permanent inside one segment. A contracted
-minimum core either reconditions while its stored lifted anchor survives, rolls
-back same-value additions, improves, or exposes a real missing anchor edge.
+A complete blocker cover of a response bank has an inclusion-minimal subcover
+which is exactly an allowed Hall cut of deficiency one. Restoring any blocker makes
+it essential and yields the exact unit-wall product with strict lower-side children.
+Thus permanent bank blockage is structural descent rather than a terminal inventory.
 
-Rolled-back target banks have a missing-edge cover of size at most `2N^2`,
-independent of bank cardinality. Returned cover edges are bulk-redeleted while the
-stored anchor survives; anchor failure enters the finite loss stock.
+Fixed targets and loaded lines have degree-two full-layer response banks. A feasible
+response enters the finite minimum scheduler; a fully blocked response gives the
+unit-wall descent. Consequently a cycle-erased selected owner of active side at
+least four cannot be terminal while dirty.
 
-A cycle-erased selected-minimum response history has the explicit finite currency
-sum
+The small joint base is explicit: side three has a unique response matching for
+every target edge and opposite permutation; a root side-two saturated board is the
+complete `2x2` grid and is clean; residual side-two blocks are physically rigid and
+contract into the induced fixed interface; side-one factors contract or are empty.
 
-\[
-\mathfrak E
-=
-\mathfrak O_{\min}
-+
-\mathfrak P_{\min}
-+
-\mathfrak D_{\min}
-+
-\mathfrak L
-+
-\mathfrak B
-+
-\mathfrak C.
-\]
-
-After those local currencies are exhausted, the remaining prime-power task is the
-**terminal obstruction theorem**: rule out, factor, or clean a final residual host
-whose selected target-response banks are permanently covered by unavailable edges,
-or whose surviving obstruction is a terminal loaded-line/Hall/prefix/carry/core
-certificate. Prime-field transfer and arbitrary side-length assembly remain
-necessary.
+The active frontier is now **induced fixed-interface bookkeeping across the final
+small factors, prime-field/thin structural owners, and arbitrary-length assembly**.
+The universal matching-bank and blocker-wall parts no longer leave a terminal
+obstruction of side at least three.
