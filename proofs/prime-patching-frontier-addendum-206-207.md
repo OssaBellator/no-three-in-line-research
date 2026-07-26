@@ -3,7 +3,7 @@
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air. It records the original-reference, controller-domain,
 initial-allocation, complete marked-support, bounded-multimarked, and nested
-controller-history reductions in `docs/206` through `docs/238`.
+controller-history reductions in `docs/206` through `docs/239`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -40,6 +40,7 @@ controller-history reductions in `docs/206` through `docs/238`.
 | PP3aqo--PP3aqt | Terminal pencils from a failed bounded-marked host preserve their canonical type and re-enter already closed source or `A_2/B_3/B_4` conversion chains | PROVED / CONDITIONAL COMBINED HOST INTERFACE | `docs/236-bounded-marked-terminal-pencil-closure.md` |
 | PP3aqu--PP3ara | Every later-deleted candidate entry contributes exactly its negative initial blocker mass; all future-controller dependency history on that entry cancels automatically | PROVED | `docs/237-controller-entry-deletion-exact-telescoping.md` |
 | PP3arb--PP3arh | Complete marked-support selection gives a zero-insertion-cost punctured-star trade; repeated internally supported punctures terminate by nested potential | PROVED / CONDITIONAL EXTERNAL-HOST INTERFACE | `docs/238-zero-cost-punctured-star-nested-termination.md` |
+| PP3ari--PP3aro | A bounded marked set in one permutation layer has a linear controller-disjoint helper reservoir; bounded puncturing and a separated cycle preserve saturation and every active controller | PROVED / CONDITIONAL COMMON-LAYER AND SOURCE-SUPPORT INTERFACES | `docs/239-bounded-marked-permutation-layer-embedding.md` |
 
 ## Robust and complete-support endpoint
 
@@ -64,23 +65,22 @@ pencils are exactly the existing `A_2`, `B_3`, and `B_4` geometries.
 
 ## Petal, local-table, and bounded-marked endpoint
 
-After fixing a compatible local arc forest `F`, every nonlocal event has residual
+After fixing a compatible local arc forest, every nonlocal event has residual
 helper support and vanishes on an independent completion. A path with at most four
 arcs has at most ten local `A_2/B_3/B_4` atoms. In the robust branch their simple
 support is absorbed.
 
 Outside the robust branch, move all at most four inserted local cells in one
-separated second cycle. An independent ordinary-helper block gives
+separated second cycle. An independent ordinary-helper block has zero source and
+insertion cost, so the full local table cancels against the original removal
+credit. Terminal pencils preserve their canonical type and re-enter closed chains.
 
-```text
-second-step source-invalid count=0,
-second-step insertion cost=0.
-```
-
-Every local atom incidence is destroyed, so the full local table cancels against
-the original removal credit. If the helper set is too small, the resulting
-near-linear terminal pencil preserves its canonical type and re-enters an already
-closed source or insertion chain.
+If the marked cells lie in one permutation layer with active controller density at
+most `rho<1`, bounded batch puncturing costs only `O(1)` domain values and leaves a
+`Theta(m)` controller-disjoint helper reservoir. The separated cycle then preserves
+the permutation layer, saturation, and every unpunctured controller. Coordinate
+placement is no longer an independent obstruction under the common-layer
+hypothesis.
 
 ## Deleted-entry and punctured-star endpoint
 
@@ -101,21 +101,19 @@ future-controller dependencies. Hence strict progress follows whenever
 I_F < R_F + D_0(F).
 ```
 
-More strongly, a canonical captive-star stage has zero insertion cost after
-complete marked-support selection. Its full star credit survives the puncture, so
-the stage is strict paid in the post-puncture universe and decreases the nested
-chronological potential. Repeated internally supported punctures therefore
-terminate; future-controller dependency graphs and final-universe insertion cost
-do not arise as unpaid endpoints on this branch.
+A canonical captive-star stage has zero insertion cost after complete marked-
+support selection. Its full star credit survives the puncture, so repeated
+internally supported punctures terminate by the nested chronological potential.
 
 ## Revised live frontier
 
 The remaining concentrated cases are now:
 
-1. genuinely external controller-disjoint pool, distinguished-endpoint,
-   source-clean, transition, anchor, Hall, alternating, or matching-host failure;
-2. inability to move the required one-point or bounded marked set while preserving
-   controller, permutation-layer, and pool coordinates;
+1. genuinely external source-clean, transition, anchor, distinguished-endpoint,
+   Hall, alternating, or matching constraints that delete almost all of an otherwise
+   linear controller-disjoint helper reservoir;
+2. failure of the common-permutation-layer hypothesis, or controller density
+   `1-o(1)` in every eligible layer;
 3. insertion concentration in noncanonical packages not covered by the finite
    marked source and `A_2/B_3/B_4` normal form;
 4. paid mobility-hub or chord-cycle conversion outside robust final allocation;
@@ -129,7 +127,8 @@ fixed-core source sunflowers, diffuse residual support, support-free insertion
 weight, high-support source terminal pencils, diffuse petal collateral, mixed
 finite local-core tables, credit-scale local atoms, second-generation terminal
 pencils, paid puncture reserve histories, generic temporal blocker instability,
-future-controller dependency structures, and canonical punctured-star insertion
-cost are no longer separate frontiers.
+future-controller dependency structures, canonical punctured-star insertion cost,
+and bounded marked coordinate placement in a common layer are no longer separate
+frontiers.
 
 The no-three-in-line conjecture remains unproved.
