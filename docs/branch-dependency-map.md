@@ -144,6 +144,10 @@ AC3ln--AC3ls attach a payment-safe provenance record to every active or latent l
 
 AC3lt--AC3ly audit the remaining physical outer alphabets. Constant-support owner tokens and bounded-scope hard/protected atoms have polynomial address dictionaries, and every set-valued host/envelope/registry change has a polynomial least-atom add/remove label. However a universe of `U` atoms still has `2^U` exact subsets. Full set-valued profiles are polynomial only after deterministic reconstruction, monotonicity, bounded ticket state or another polynomial quotient; repeated atom labels alone are not progress.
 
+AC3lz--AC3me reconstruct the unary blocker base host and least-reason map from the exact hard registry and builder context. A fixed context gives a one-cell Lipschitz bound per changed hard check; context changes affect only checks meeting the changed literals. Monotone registry evolution induces opposite monotone host evolution. The derived blocker host is therefore removed as an independent outer-profile field, while active-layer hosts and noncanonical filters remain live.
+
+AC3mf--AC3mk canonicalize AC3v envelopes. The unique minimal private envelope is the union of the exact local states. Rebuilding the primal graph from these unions preserves exact scope completion and payment, while arbitrary supersets only add artificial conflicts. Envelope changes are projections of state-cell incidence or generator changes, so the private envelope subset is removed as an independent outer coordinate. The state-family generator and the factor/hard/protected registries retain their own entropy.
+
 AC5b--AC5f give the exact reverse-scale audit. Same-band collateral is permitted when `Psi_H` decreases. For a certified multicover batch `B`, every AC menu must prove
 
 ```text
@@ -173,7 +177,7 @@ forces one state which is protected-safe and has strict current-scale drift. For
 
 ## Current frontier
 
-1. For each provenance-classified literal edge and nonmonotone host/envelope/registry atom, prove current payment, bounded arithmetic descent, physical impossibility or a capacity-one ticket.
+1. For each provenance-classified literal edge and nonmonotone active-host, hard/protected-registry or state-generator atom, prove current payment, bounded arithmetic descent, physical impossibility or a capacity-one ticket.
 2. Bound the remaining denominator and same-denominator arithmetic multiplicities, then close every recurrent simple macro cycle.
 3. For every installed AC menu, construct complete current/protected event inventories and prove `Gamma_cur+|B| Gamma_high<|B|`, with the summed AC5p bound for multistep paths.
 4. Prove the GC1--GC3 partner, anchored pair-shadow and pool-stability estimates uniformly after earlier switches; obtain common-parent/private-payment petal families or classify their reset, then discharge AC6.
