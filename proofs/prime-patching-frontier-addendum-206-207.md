@@ -1,9 +1,9 @@
-# Prime-patching frontier addendum: complete marked-support and history reductions
+# Prime-patching frontier addendum: complete marked-support and nested-history reductions
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air.  It records the original-reference, controller-domain,
-initial-allocation, marked-support, petal-conditioned, robust-atom, and
-controller-history reductions in `docs/206` through `docs/231`.
+initial-allocation, marked-support, petal-conditioned, robust-atom, and nested
+controller-history reductions in `docs/206` through `docs/234`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -14,7 +14,7 @@ controller-history reductions in `docs/206` through `docs/231`.
 | PP3ajs--PP3ajx | Under the initial robust certificate, the current target-cycle state completes or yields another free target-size star | PROVED / CONDITIONAL INITIAL ROBUST-CERTIFICATE INTERFACE | `docs/210-robust-target-cycle-absorption.md` |
 | PP3ajy--PP3akd | A captive controller star has a controller-preserving free-partner bank or a controller--controller star | PROVED / CONDITIONAL ENDPOINT-HOST INTERFACE | `docs/211-captive-controller-star-partner-bank.md` |
 | PP3ake--PP3akj | Removing one captive centre from its controller pool costs one domain value, preserves all designated star entries, and frees the centre | PROVED / CONDITIONAL MARKED-HOST OR INITIAL ROBUST-CERTIFICATE INTERFACE | `docs/212-one-controller-puncture-free-star-conversion.md` |
-| PP3akk--PP3akp | Repeated punctures form finite fixed-universe potential epochs until completion, explicit obstruction, or a macro-local `Theta(R)` puncture-history core | PROVED / CONDITIONAL CONVERSION INTERFACE | `docs/213-controller-puncture-reserve-termination.md` |
+| PP3akk--PP3akp | Repeated punctures form finite fixed-universe potential epochs until completion, explicit obstruction, or a macro-local puncture-history core | PROVED / CONDITIONAL CONVERSION INTERFACE | `docs/213-controller-puncture-reserve-termination.md` |
 | PP3akq--PP3aku | Positive-density initial movement/refill blocker shadow converts to stars or a recapture-free resource bank | PROVED / CONDITIONAL COMBINED CONVERSION INTERFACE | `docs/214-initial-blocker-density-conversion-closure.md` |
 | PP3akv--PP3alb | Slot-expanded anchor-core energy above `D_mW^3` yields a target-size source star or endpoint-disjoint controller--anchor bank | PROVED / CONDITIONAL ENDPOINT-HOST INTERFACE | `docs/215-anchor-core-energy-resource-conversion.md` |
 | PP3alc--PP3alh | A fixed movement/refill label with `Omega(R)` unsafe controllers yields a target star or full fixed-label resource bank | PROVED / CONDITIONAL CONVERSION INTERFACE | `docs/216-fixed-label-blocker-fibre-conversion.md` |
@@ -33,8 +33,11 @@ controller-history reductions in `docs/206` through `docs/231`.
 | PP3aor--PP3aox | A spanning path has at most ten local insertion atoms; one helper bridges a disconnected rank-four petal, and failed local payment yields a credit-scale `A_2`, `B_3`, or `B_4` pencil | PROVED / CONDITIONAL EXISTING INSERTION-PENCIL INTERFACES | `docs/229-one-helper-bridge-local-cost-atomization.md` |
 | PP3aoy--PP3ape | In the robust branch arbitrary local binary multiplicity and every `o(R)` unary table are domain-absorbed; domain-scale unary failure yields a super-target composite source star | PROVED / CONDITIONAL DIRECT-COMPLETION AND COMPOSITE INTERFACES | `docs/230-credit-scale-local-atom-robust-bypass.md` |
 | PP3apf--PP3apl | A `Theta(R)` puncture history localizes to a repeated candidate, partner/controller/label stack, or full chronological resource matching of target order | PROVED / CONDITIONAL STABLE-HISTORY INTERFACE | `docs/231-controller-puncture-history-resource-localization.md` |
+| PP3apm--PP3apr | Candidate universes are nested under puncturing; every strict paid puncture stage decreases a globally ordered nonnegative integer potential, so paid reserve exhaustion is impossible | PROVED / CONDITIONAL MARKED-HOST INTERFACE | `docs/232-nested-puncture-potential-monotonicity.md` |
+| PP3aps--PP3apz | Multi-step puncture identities telescope in the final universe; failure of aggregate payment forces target-scale future-controller credit dependencies | PROVED / CONDITIONAL AGGREGATE-SLACK INTERFACE | `docs/233-final-universe-credit-telescoping.md` |
+| PP3aqa--PP3aqg | Every local `A_2`, `B_3`, or `B_4` atom becomes exact removal credit for a second marked move and cancels from the composite potential budget | PROVED / CONDITIONAL COMPOSITE MARKED-HOST INTERFACE | `docs/234-local-atom-two-step-cancellation.md` |
 
-## Robust endpoint
+## Robust and complete-support endpoint
 
 Use
 
@@ -44,37 +47,18 @@ W=sqrt(R)=m^(19/40+o(1)).
 ```
 
 Fresh-helper cascades reach a `Theta(W)` alternating defect in `o(W)` generations.
-Retained-original controller domains only improve under deletion, so every initial
-balanced ownership and global label matching remains available.  Final binary
-shadow is `o(R)` and final unary failure creates another super-target source star.
-
-The initial numerical allocation is also closed conditionally: denominator
-collapse, fixed-label shadow, anchor energy, dead ownership rows, and random
-two-sided score failure all convert to a target star or credited bank.
-
-## Complete marked-support endpoint
+Retained-original domains only improve, so the initial balanced ownership and
+global label matching remain available.  Final binary shadow is `o(R)`, while
+final unary failure creates a super-target source star.
 
 Sparse positive source or insertion support is avoided independently of weight or
 witness multiplicity.  Dense support becomes a fixed/nested pencil, fixed-core
-sunflower, or disjoint signature bank.  A transversal helper law annihilates those
-geometries, and a finite collection is avoided simultaneously with expectation
+sunflower, or disjoint signature bank.  A maximal support-independent helper set
+either supplies a zero-cost host or gives a fixed core with `N^(1-o(1))` variable
+extensions.  High-support source pencils are converted or excluded; insertion
+pencils are exactly the existing `A_2`, `B_3`, and `B_4` geometries.
 
-```text
-O(b^2/N)=o(1).
-```
-
-For the complete residual support hypergraph, a maximal independent helper set
-either has the required size or gives a fixed core with at least
-
-```text
-(N-b)/sum_(r<k_0) binom(b-2,r)
-```
-
-variable extensions.  With `b=N^(o(1))`, this is `N^(1-o(1))`.  High-support
-source pencils are then converted or excluded, while insertion pencils are exactly
-the existing `A_2`, `B_3`, and `B_4` geometries.
-
-## Petal-conditioned and local-atom endpoint
+## Petal and local-atom endpoint
 
 After fixing a compatible local arc forest `F`, the conditional single-cycle count
 is
@@ -84,7 +68,7 @@ is
 ```
 
 Every nonlocal event has residual helper support and vanishes on an independent
-completion.  A spanning path of `r<=4` arcs has exactly
+completion.  A spanning path of `r<=4` arcs has
 
 ```text
 r A_2 atoms,
@@ -92,68 +76,88 @@ r-1 B_3 atoms,
 binom(r,2)-(r-1) B_4 atoms,
 ```
 
-so at most ten local atoms.  A disconnected `B_4` petal is bridged by one helper;
-failed payment yields a credit-scale atom in one of the same three geometries.
+so at most ten local atoms.  A disconnected `B_4` petal is bridged by one helper.
 
-In the robust branch this last obstruction disappears.  Arbitrary `B_3/B_4`
-weight costs at most `s(s-1)=o(R)` domain values.  A finite unary table of size
-`o(R)` is also absorbed.  If unary support destroys a fixed `xi R` margin, one
-inserted cell becomes a post-trade source-star centre of degree
-
-```text
-> xi R/(2s)=omega(W),
-```
-
-and enters the two-step composite conversion.  Credit-scale local atoms remain
-live only in monotone-only branches without robust final allocation.
-
-## Puncture-history endpoint
-
-A reserve-exhausting macro contains `H=Theta(R)` distinct puncture centres, each
-with `W` designated incidences.  The centre--candidate history graph has `HW`
-edges.  For every threshold `D`, either one candidate entry has degree `D`, or
-there is a centre--entry matching of size at least
+In the robust branch arbitrary `B_3/B_4` weight costs only `s(s-1)=o(R)` domain
+values, and every `o(R)` unary table is absorbed.  Outside the robust branch, any
+one local atom of weight `C` becomes post-trade incidence credit centred at one
+inserted point.  A second marked move gives
 
 ```text
-HW/(W+D).
+Delta Xi_two-step
+<=
+first-step nonatom cost
++
+second-step self-recapture
++
+second-step foreign cost
+-
+first-step removal credit.
 ```
 
-At `D=W`, a second resource split yields one of:
+The complete atom weight cancels exactly.  Thus weighted local multiplicity is no
+longer an independent endpoint in either architecture.
 
-1. an exact candidate entry repeated through `W` centres;
-2. a chronological partner point used by `W` centres;
-3. one controller edge carrying `W` labels;
-4. one label carrying `W` controller edges;
-5. a full chronological resource matching of size `Omega(W)`.
+## Nested puncture and final-universe endpoint
 
-Therefore the puncture-history core is no longer diffuse.  Its only genuinely new
-feature is temporal stability: many recorded blocker endpoints may fail to coexist
-in one retained source state.
+If `X subseteq Y`, then
+
+```text
+V_Y subseteq V_X,
+Psi_Y(S)<=Psi_X(S).
+```
+
+A puncture followed by a strict paid trade for the new universe therefore strictly
+decreases the chronological nested potential.  Successful paid punctures cannot
+exhaust any positive reserve.
+
+For a nonmonotone multi-step package, fix its final universe `V_F`.  The exact
+identity
+
+```text
+Psi_F(S_H)-Psi_F(S_0)
+=
+sum_j (I_j^F-R_j^F)
+```
+
+telescopes regardless of blocker-endpoint coexistence.  Designated credit is lost
+only when its candidate entry is controlled by a point punctured later.  If total
+final-universe insertion has slack `eta C`, failure forces at least `eta C` such
+forward credit dependencies.  At the slab scale these localize to:
+
+1. a repeated exact lost candidate;
+2. a chronological partner stack;
+3. a later puncture centre controlling `W` lost entries;
+4. a fixed-label lost-credit stack;
+5. a full forward dependency matching of size `Omega(W)`.
+
+Temporal blocker stability is therefore not the primary issue; future-controller
+credit loss and residual final-universe insertion cost are.
 
 ## Revised live frontier
 
 The remaining concentrated cases are now:
 
-1. payment or conversion of a single credit-scale `A_2`, `B_3`, or `B_4` atom in
-   monotone-only branches without robust final allocation;
-2. second-generation terminal pencils, which re-enter the same three insertion
-   geometries;
-3. conversion of the five puncture-history signatures when their witnesses are
-   mostly transient across epochs;
-4. external controller-pool, distinguished-endpoint, Hall, alternating, or other
-   endpoint-host failure;
-5. paid mobility-hub or chord-cycle conversion outside robust final allocation;
-6. branches that cannot use the slab-optimal random two-sided architecture or
-   preserve an original reference layer;
-7. branches that still require one-step monotone `Xi` descent rather than paid
-   multi-step or robust final-state completion.
+1. first-step nonatom collateral or second-step foreign/self-recapture cost at the
+   original removal-credit scale in the composite atom and source-star trades;
+2. target-scale future-controller dependency stacks or forward dependency
+   matchings created by credit entries punctured later;
+3. final-universe insertion cost already comparable with the aggregate surviving
+   removal credit;
+4. second-generation source/support pencils arising from that residual collateral;
+5. external controller-pool, distinguished-endpoint, Hall, alternating, or other
+   marked-host failure;
+6. paid mobility-hub or chord-cycle conversion outside robust final allocation;
+7. branches that cannot use the slab-optimal random two-sided architecture or
+   preserve an original reference layer.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
 ordinary chord geometry in the robust branch, captive centres, controller--
 controller stars, numerical ownership arithmetic, raw support multiplicity,
 fixed-core source sunflowers, diffuse residual support, support-free insertion
 weight, high-support source terminal pencils, diffuse petal collateral, mixed
-finite local-core tables, robust credit-scale atoms, and unstructured puncture
-histories are no longer separate frontiers.
+finite local-core tables, credit-scale local atoms, paid puncture reserve
+histories, and generic temporal blocker instability are no longer separate
+frontiers.
 
 The no-three-in-line conjecture remains unproved.
