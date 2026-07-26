@@ -1,0 +1,30 @@
+{
+  "parent_epsilon": 0.25,
+  "parent_delta": 1.0,
+  "residual_epsilon": 0.3,
+  "residual_delta": 0.75,
+  "max_exhaustive_order": 10,
+  "require_both_outcomes": true,
+  "adjacency": [
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1],
+    [1,1,1,1,1,1,1,1]
+  ],
+  "cases": [
+    {
+      "name": "sparse_matching_deletion",
+      "eta": 0.25,
+      "heavy_edges": [[0,0,3],[1,1,3],[2,2,3],[3,3,3],[4,4,3],[5,5,3],[6,6,3],[7,7,3]]
+    },
+    {
+      "name": "dense_left_resource_pencil",
+      "eta": 0.25,
+      "heavy_edges": [[0,0,3],[0,1,3],[0,2,3],[0,3,3],[0,4,3],[0,5,3]]
+    }
+  ]
+}
