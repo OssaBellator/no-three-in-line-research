@@ -12,60 +12,23 @@ def ordered_partition(family, prescription):
     for index, edge in enumerate(prescription):
         prefix = set(prescription[:index])
         parts.append(
-            {
-                state
-                for state in family
-                if prefix.issubset(state) and edge not in state
-            }
+            {state for state in family if prefix <= set(state) and edge not in state}
         )
-    parts.append(
-        {state for state in family if set(prescription).issubset(state)}
-    )
+    parts.append({state for state in family if set(prescription) <= set(state)})
     return parts
 
 
-def contract_family(family, fixed):
-    fixed = set(fixed)
-    return {frozenset(set(state) - fixed) for state in family}
-
-
-def check_ordered_partitions():
+def check_partitions_and_contractions():
     rng = random.Random(894)
-    checked = 0
+    partition_cases = 0
+    contraction_cases = 0
     for universe_size in range(1, 13):
-        universe = range(universe_size)
-        for state_size in range(universe_size + 1):
-            states = [
-                frozenset(state)
-                for state in combinations(universe, state_size)
-            ]
+        states_by_size = [
+            [frozenset(state) for state in combinations(range(universe_size), size)]
+            for size in range(universe_size + 1)
+        ]
+        for states in states_by_size:
             for _ in range(min(100, max(1, 2 * len(states)))):
-                family = set(rng.sample(states, rng.randint(1, len(states))))
-                chosen = rng.choice(tuple(family))
-                if not chosen:
-                    continue
-                rank = rng.randint(1, min(3, len(chosen)))
-                prescription = rng.sample(tuple(chosen), rank)
-                parts = ordered_partition(family, prescription)
-                assert set().union(*parts) == family
-                for first in range(len(parts)):
-                    for second in range(first):
-                        assert parts[first].isdisjoint(parts[second])
-                checked += 1
-    return checked
-
-
-def check_prefix_contraction():
-    rng = random.Random(895)
-    checked = 0
-    for universe_size in range(1, 13):
-        universe = range(universe_size)
-        for state_size in range(universe_size + 1):
-            states = [
-                frozenset(state)
-                for state in combinations(universe, state_size)
-            ]
-            for _ in range(min(80, max(1, len(states)))):
                 family = set(rng.sample(states, rng.randint(1, len(states))))
                 chosen = rng.choice(tuple(family))
                 if not chosen:
@@ -73,6 +36,12 @@ def check_prefix_contraction():
                 rank = rng.randint(1, min(3, len(chosen)))
                 prescription = tuple(rng.sample(tuple(chosen), rank))
                 parts = ordered_partition(family, prescription)
+                assert set().union(*parts) == family
+                for first in range(len(parts)):
+                    for second in range(first):
+                        assert parts[first].isdisjoint(parts[second])
+                partition_cases += 1
+
                 for index, part in enumerate(parts):
                     if not part:
                         continue
@@ -81,19 +50,16 @@ def check_prefix_contraction():
                         if index < rank
                         else set(prescription)
                     )
-                    assert all(fixed.issubset(state) for state in part)
-                    residual = contract_family(part, fixed)
-                    rebuilt = {
-                        frozenset(set(state) | fixed)
-                        for state in residual
-                    }
+                    assert all(fixed <= set(state) for state in part)
+                    residual = {frozenset(set(state) - fixed) for state in part}
+                    rebuilt = {frozenset(set(state) | fixed) for state in residual}
                     assert rebuilt == part
                     assert len(residual) == len(part)
-                    checked += 1
-    return checked
+                    contraction_cases += 1
+    return partition_cases, contraction_cases
 
 
-def check_undecided_edge_progress():
+def check_undecided_progress():
     rng = random.Random(896)
     checked = 0
     for universe_size in range(3, 100):
@@ -101,27 +67,22 @@ def check_undecided_edge_progress():
         for _ in range(500):
             anchor = set(rng.sample(tuple(universe), rng.randint(0, universe_size)))
             fixed = set(rng.sample(tuple(anchor), rng.randint(0, len(anchor))))
-            available_for_deleted = tuple(universe - anchor)
-            deleted = set(
-                rng.sample(
-                    available_for_deleted,
-                    rng.randint(0, len(available_for_deleted)),
-                )
-            )
+            outside = tuple(universe - anchor)
+            deleted = set(rng.sample(outside, rng.randint(0, len(outside))))
             feasible_pool = tuple(universe - deleted)
+            if not feasible_pool:
+                continue
             candidate = set(
-                rng.sample(
-                    feasible_pool,
-                    rng.randint(1, min(12, len(feasible_pool))),
-                )
+                rng.sample(feasible_pool, rng.randint(1, min(12, len(feasible_pool))))
             )
             outside_anchor = tuple(candidate - anchor)
             if not outside_anchor:
                 continue
-            required = {rng.choice(outside_anchor)}
-            remaining = tuple(candidate - required)
-            extra_count = rng.randint(0, min(2, len(remaining)))
-            prescription = required | set(rng.sample(remaining, extra_count))
+            prescription = {rng.choice(outside_anchor)}
+            remaining = tuple(candidate - prescription)
+            prescription.update(
+                rng.sample(remaining, rng.randint(0, min(2, len(remaining))))
+            )
             residual = prescription - fixed
             assert residual
             assert residual.isdisjoint(deleted)
@@ -130,9 +91,9 @@ def check_undecided_edge_progress():
     return checked
 
 
-def check_status_depth():
+def check_depth_and_grouping():
     rng = random.Random(897)
-    checked = 0
+    depth_cases = 0
     for universe_size in range(1, 500):
         for _ in range(100):
             fixed = set()
@@ -151,71 +112,64 @@ def check_status_depth():
                 steps += 1
                 assert fixed.isdisjoint(deleted)
                 assert steps <= universe_size
-            checked += 1
-    return checked
+            depth_cases += 1
 
-
-def check_target_and_layer_grouping():
-    rng = random.Random(899)
-    checked = 0
-    physical_cells = tuple(range(12))
-    targets = list(combinations(physical_cells, 3))
+    grouping_cases = 0
+    cells = tuple(range(12))
+    targets = list(combinations(cells, 3))
     for _ in range(5000):
-        leaf_count = rng.randint(1, 100)
         leaves = []
-        used_state_ids = set()
-        for leaf_index in range(leaf_count):
+        next_state = 0
+        for _leaf in range(rng.randint(1, 100)):
             target = rng.choice(targets)
             states = set()
-            for _state_index in range(rng.randint(1, 10)):
-                state_id = len(used_state_ids)
-                used_state_ids.add(state_id)
+            for _state in range(rng.randint(1, 10)):
                 assignment = tuple(rng.randint(0, 1) for _ in range(3))
-                states.add((state_id, target, assignment))
+                states.add((next_state, target, assignment))
+                next_state += 1
             leaves.append((target, states))
-
-        target_groups = {}
-        for target, states in leaves:
-            target_groups.setdefault(target, set()).update(states)
         all_states = set().union(*(states for _, states in leaves))
-        assert set().union(*target_groups.values()) == all_states
-
-        labelled_groups = {}
-        for target, states in target_groups.items():
+        by_target = {}
+        for target, states in leaves:
+            by_target.setdefault(target, set()).update(states)
+        assert set().union(*by_target.values()) == all_states
+        by_label = {}
+        for target, states in by_target.items():
             for state in states:
-                assignment = state[2]
-                labelled_groups.setdefault((target, assignment), set()).add(state)
-        assert set().union(*labelled_groups.values()) == all_states
-        assert len(labelled_groups) <= 8 * len(target_groups)
-        checked += 1
-    return checked
+                by_label.setdefault((target, state[2]), set()).add(state)
+        assert set().union(*by_label.values()) == all_states
+        assert len(by_label) <= 8 * len(by_target)
+        grouping_cases += 1
+    return depth_cases, grouping_cases
 
 
-def check_density_arithmetic():
+def check_density():
     checked = 0
     for side in range(2, 100):
-        classes = 8 * comb(side * side, 3)
+        class_count = 8 * comb(side * side, 3)
         for total in range(1, 1000):
-            lower = ceil(total / classes)
-            assert lower * classes >= total
+            lower = ceil(total / class_count)
+            assert lower * class_count >= total
             checked += 1
     return checked
 
 
 def main():
+    partitions, contractions = check_partitions_and_contractions()
+    depths, groupings = check_depth_and_grouping()
     print(
         "verified disjoint leaf certificate compression:",
-        check_ordered_partitions(),
+        partitions,
         "ordered partitions,",
-        check_prefix_contraction(),
+        contractions,
         "prefix contractions,",
-        check_undecided_edge_progress(),
+        check_undecided_progress(),
         "undecided-edge cases,",
-        check_status_depth(),
+        depths,
         "status paths,",
-        check_target_and_layer_grouping(),
+        groupings,
         "leaf-grouping cases, and",
-        check_density_arithmetic(),
+        check_density(),
         "density cases",
     )
 
