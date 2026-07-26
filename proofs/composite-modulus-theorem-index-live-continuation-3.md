@@ -43,45 +43,38 @@ The authoritative live ledger is split across:
 | CMR1446--1453 | Inherited lattice-capacity owner envelope and exact height cutoff | PROVED | `docs/284-prime-power-cross-line-lattice-capacity-owner.md` |
 | CMR1454--1461 | Eligible prime-power signatures with separate matching, envelope and span parameters | PROVED | `docs/285-prime-power-eligible-owner-signature-fans.md` |
 | CMR1462--1469 | Fractional packed-signature identity, owner/pair dispersion, primitive-direction concentration and exact-displacement translation banks | PROVED; inherited-coordinate parameters corrected before endpoint snapshot | `docs/286-prime-power-fractional-packed-signature-fans.md` |
+| CMR1470--1477 | Exact endpoint prefix cells, weighted full-cell concentration, internal/crossing carry routing, common exit-depth extraction, strict internal scaling, quantitative CMR1469 splice, absolute token stock, and the displacement-routing endpoint | PROVED; sparse weighted and scaling checks | `docs/287-prime-power-weighted-displacement-carry-routing.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-The complete selected owner matrix is block upper triangular, so only
-same-owner diagonal blocks require subcritical certificates.  Exact rook
-classes give prescription probabilities; canonical owner fibres give one
-doubly stochastic edge-assignment cost; and inherited lattice capacity reduces
-owner load to finite first-separation/projective-direction/height classes.
-
-For a response matching side `d` inside envelope `p^k` with ambient coordinate
-span `W_omega`, a positive-minimum fractional obstruction contains a signature
-of packed incidence mass at least
+For response side `d` inside envelope `p^k` with coordinate span `W_omega`,
+CMR1469 gives an exact-displacement class of mass at least
 
 \[
-\frac{d-2}{3k(p+1)B_\omega},
-\qquad
-B_\omega=1+\lfloor\log_2\max\{1,W_\omega\}\rfloor.
-\]
-
-It further contains an exact-displacement translation class of mass at least
-
-\[
+M_0=
 \frac{d-2}
-{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)},
+{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)}.
 \]
 
-where
+CMR1470--CMR1477 route this mass through one depth-`s` full prefix cell.  They
+produce one of:
 
-\[
-S_{\omega,p}(s,H)=\left\lfloor\frac{W_\omega}{p^sH}\right\rfloor.
-\]
+1. a strict internally scaled bank of mass at least
+   \[
+   M_0/(2p^{2s});
+   \]
+2. for `s>=1`, one earlier exit depth of mass at least
+   \[
+   M_0/(2sp^{2s});
+   \]
+3. the depth-zero parent-scale exact-displacement branch; or
+4. finite consumption/reuse of one absolute full-cell token.
 
-The active frontier is:
+The active frontier is now:
 
-1. pay the CMR1469 exact-displacement bank through prefix return,
-   quotient/carry collision or protected reserve;
-2. compare that global payment with the one-owner loaded-line gain of
-   CMR1458--CMR1461;
-3. encode the comparison as a host-uniform rational/integer certificate
-   `Av<v`;
-4. prove analogous diagonal certificates for prime-field and thin owners; and
-5. glue them through owner triangularity and complete balanced/CRT assembly.
+1. assign strict Lyapunov payment to internal scaling and earlier-depth transfer;
+2. pay the depth-zero translated bank or repeated absolute token through
+   quotient/carry collision, prefix return or protected reserve;
+3. compare those global payments with the one-owner loaded-line gain;
+4. encode the result as a host-uniform rational/integer `Av<v` certificate;
+5. prove prime-field/thin diagonal blocks and complete CRT assembly.
