@@ -1,7 +1,15 @@
 # Eligible owner pairs form finite prime-power signature fans
 
 Retain old matching `M`, the absolute edge order, and an allowed entering owner
-`a notin M`.  For another allowed response edge `b`, define
+`a notin M`.  Let the owner have matching side `d` inside an inherited
+prime-power envelope of side
+
+\[
+t=p^k,
+\]
+
+with ambient coordinate span `W_omega<=t-1`.
+For another allowed response edge `b`, define
 
 \[
 \chi_a^M(b)=\mathbf1_{\{b\in M\text{ or }a\prec b\}}.
@@ -21,16 +29,16 @@ owner `a` are exactly
 An edge in `M` is old and never precedes `a` among entering edges.  An edge
 outside `M` is entering and is eligible exactly when it follows `a`. ∎
 
-Define the exact eligible capacity star
+Define
 
 \[
 \mathscr C_e^{\rm elig}(a)=
-\sum_{\substack{b\in O\\a,b\text{ nonaxis}}}c_n(h(a,b))
+\sum_{\substack{b\in O\\a,b\text{ nonaxis}}}c_\omega(h(a,b))
 +
 \frac1{p_e(a)}
 \sum_{\substack{b\in E(H_e)\setminus\{a\}\\
-                 \{a,b\}\text{ compatible}\\a,b\text{ nonaxis}}}
-\chi_a^M(b)p_e(a,b)c_n(h(a,b)).
+\{a,b\}\text{ compatible}\\a,b\text{ nonaxis}}}
+\chi_a^M(b)p_e(a,b)c_\omega(h(a,b)).
 \]
 
 ### Theorem CMR1455 -- PROVED
@@ -44,17 +52,17 @@ g_e(a)\le\Gamma_e^{\rm elig}(a)
 
 ### Proof
 
-Use CMR1454 and the exact conditional pair probability in the realized
-capacity inequality CMR1447.  Dropping `chi_a^M` gives CMR1449. ∎
+Use CMR1454 in the realized capacity bound CMR1447 and exact conditional pair
+probabilities.  Dropping `chi_a^M` gives CMR1449. ∎
 
-For old edge `a in M`, set the owner weight to zero.
+For an old edge `a in M`, set the owner weight to zero.
 
 ## Prime-power signatures
 
-Assume the inherited side is `n=p^k`.  For a nonaxis pair, write
+For a nonaxis pair, write
 
 \[
-b-a=G(u,v),
+b-a=G(u,v)
 \]
 
 with `G>0` and canonically oriented primitive `(u,v)`.  Put
@@ -70,10 +78,10 @@ also whether the partner is fixed in `O` or belongs to the response layer.
 
 ### Theorem CMR1456 -- PROVED
 
-Every eligible owner-partner pair has one signature
+Every eligible pair has one signature
 
 \[
-\boxed{\sigma(a,b)=(t,s,\delta,H).}
+\boxed{\sigma(a,b)=(t_{\rm pair},s,\delta,H).}
 \]
 
 Here `0<=s<=k-1`.  At depth `s`, both cells lie in the same prefix carry cell
@@ -81,35 +89,40 @@ and separate at the next digit in projective direction `delta`.
 
 ### Proof
 
-The gcd scale and primitive direction are unique after fixing orientation.
-Dividing by the exact `p`-adic scale leaves a nonzero projective direction.
+The gcd scale and primitive direction are unique.  Since all coordinates lie
+in one side-`p^k` envelope, a nonzero difference has valuation at most `k-1`.
+Division by the exact `p`-adic scale leaves a nonzero projective direction.
 The common prefix residue is determined by the owner and `s`. ∎
 
 Let `m_{e,sigma}(a)` be the conditional expected number of eligible selected
-partners in signature class `sigma`.
+partners in signature class `sigma`.  Put
+
+\[
+B_\omega=1+\left\lfloor\log_2\max\{1,W_\omega\}\right\rfloor.
+\]
 
 ### Theorem CMR1457 -- PROVED
 
 \[
 \boxed{
 \mathscr C_e^{\rm elig}(a)
-\le\sum_{\sigma=(t,s,\delta,H)}c_{n,H}m_{e,\sigma}(a).}
+\le\sum_{\sigma=(t_{\rm pair},s,\delta,H)}
+ c_{\omega,H}m_{e,\sigma}(a).}
 \]
 
 For fixed owner `a`, at most
 
 \[
-\boxed{C_n=2k(p+1)B_n,
-\qquad B_n=1+\lfloor\log_2(n-1)\rfloor}
+\boxed{C_\omega=2k(p+1)B_\omega}
 \]
 
-signature positions are nonempty.
+signature positions occur.
 
 ### Proof
 
 Use the band coefficient CMR1453.  There are two partner types, `k` separation
-depths, `p+1` projective directions and `B_n` height bands.  The prefix cell is
-determined by `a` and `s`. ∎
+depths, `p+1` projective directions and `B_omega` height bands.  The prefix
+cell is determined by `a` and `s`. ∎
 
 ### Theorem CMR1458 -- PROVED
 
@@ -117,20 +130,21 @@ If `Gamma_e^{elig}(a)>=G_0`, some nonzero class satisfies
 
 \[
 \boxed{
-\frac12c_{n,H}m_{e,\sigma}(a)\ge\frac{G_0}{C_n}.}
+\frac12c_{\omega,H}m_{e,\sigma}(a)
+\ge\frac{G_0}{C_\omega}.}
 \]
 
 Hence
 
 \[
 \boxed{m_{e,\sigma}(a)\ge
-\frac{2G_0}{C_nc_{n,H}}.}
+\frac{2G_0}{C_\omega c_{\omega,H}}.}
 \]
 
 ### Proof
 
-The nonnegative class contributions number at most `C_n` and sum to at least
-`2G_0`.  Pigeonhole. ∎
+The nonnegative class contributions number at most `C_omega` and sum to at
+least `2G_0`. ∎
 
 ### Theorem CMR1459 -- PROVED
 
@@ -146,8 +160,6 @@ eligible selected partners of that class.
 
 The class population is a nonnegative integer random variable with that
 conditional expectation. ∎
-
-## Exact real-direction concentration
 
 Put
 
@@ -177,19 +189,18 @@ partners on one real line through `a`.
 
 For each nonzero projective scalar, each coordinate lies in one residue class
 modulo `p` inside an interval of length below `4H`, giving at most
-`ceil(4H/p)^2` vectors.  Sum over `p-1` scalars.  One primitive direction
-through `a` determines one real line. ∎
+`ceil(4H/p)^2` vectors.  Sum over `p-1` scalars. ∎
 
 ### Corollary CMR1461 -- PROVED
 
 Failure of the eligible-edge assignment certificate produces, in one actual
 response, a simultaneous owner-labelled family with one separation depth, one
-prefix carry cell, one projective direction and one primitive-height band.
-It further concentrates on a quantitatively loaded real line through the
-owner.  Thus the remaining same-owner row is expressed in the exact carry-cell
-and loaded-line currencies already handled structurally.  What remains open
-is the quantitative comparison between that execution gain and the parent
-credit weight.  No all-`n` theorem is claimed.
+prefix carry cell, one projective direction and one primitive-height band.  It
+concentrates quantitatively on one real line through the owner.  The theorem
+applies to scattered residual factors because matching side `d`, envelope
+height `k` and ambient coordinate span `W_omega` are kept separate.  The open
+step is the weighted execution gain of that loaded signature.  No all-`n`
+theorem is claimed.
 
-Checked by
+Checked in full-grid and synthetic prime-power specializations by
 [`scripts/verify_prime_power_eligible_owner_signature_fans.py`](../scripts/verify_prime_power_eligible_owner_signature_fans.py).
