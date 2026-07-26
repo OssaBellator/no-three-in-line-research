@@ -9,7 +9,7 @@ and SCC condensation/cyclic-core classification.
 from __future__ import annotations
 
 import random
-from collections import defaultdict, deque
+from collections import deque
 from itertools import product
 
 SEED = 20260726
@@ -135,10 +135,11 @@ def combined_checks(trials: int = 80_000) -> int:
         L = RNG.randint(0, 20)
         G = RNG.randint(0, Y0)
         D = RNG.randint(0, 20)
+        A_min = max(0, L - S0)
         A_max = L + (B0 - S0) + G - D
-        if A_max < 0:
+        if A_max < A_min:
             continue
-        A = RNG.randint(0, A_max)
+        A = RNG.randint(A_min, A_max)
         ST = S0 + A - L
         BT = B0 + G - D
         assert 0 <= ST <= BT
