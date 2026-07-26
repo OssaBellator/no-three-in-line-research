@@ -24,12 +24,13 @@ def check_new_triple_owner_partition():
     for side in range(3, 80):
         physical = [(row, column) for row in range(side) for column in range(side)]
         for _ in range(120):
-            old_size = rng.randint(3, min(len(physical), 20))
+            old_size = rng.randint(3, min(len(physical) - 1, 20))
             old_cells = set(rng.sample(physical, old_size))
             new_cells = set(old_cells)
             remove = set(rng.sample(tuple(new_cells), rng.randint(0, min(4, len(new_cells)))))
             new_cells -= remove
             addable = list(set(physical) - new_cells)
+            assert addable
             new_cells.update(rng.sample(addable, rng.randint(1, min(4, len(addable)))))
 
             old_state = {(0, row, column) for row, column in old_cells}
@@ -68,7 +69,10 @@ def check_fixed_core_owners():
             core = set(rng.sample(tuple(universe), rng.randint(1, min(5, universe_size - 2))))
             residual_universe = universe - core
             old_residual = set(
-                rng.sample(tuple(residual_universe), rng.randint(1, min(12, len(residual_universe))))
+                rng.sample(
+                    tuple(residual_universe),
+                    rng.randint(1, min(12, len(residual_universe) - 1)),
+                )
             )
             new_residual = set(old_residual)
             if new_residual:
@@ -76,6 +80,7 @@ def check_fixed_core_owners():
                     rng.sample(tuple(new_residual), rng.randint(0, min(3, len(new_residual))))
                 )
             available = universe - core - new_residual
+            assert available
             new_residual.update(
                 rng.sample(tuple(available), rng.randint(1, min(3, len(available))))
             )
