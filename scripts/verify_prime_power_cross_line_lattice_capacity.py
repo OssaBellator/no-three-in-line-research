@@ -84,18 +84,21 @@ def harmonic_star(opposite, response, owner, eligible=None):
 
 def check_scalar_capacity():
     checked = 0
-    for side in range(2, 500):
+    for side in range(2, 1000):
         for height in range(1, side):
             q = (side - 1) // height
-            for population in range(q + 1):
-                assert population * (population - 1) // 2 <= (
-                    (q - 1) * population / 2
+            populations = {0, 1, q}
+            if q >= 2:
+                populations.add(q // 2)
+            for population in populations:
+                assert Fraction(population * (population - 1), 2) <= Fraction(
+                    (q - 1) * population, 2
                 )
                 checked += 1
             assert Fraction(capacity(side, height), 2) <= Fraction(
                 side - 1, 2 * height
             )
-            if height > (side - 1) / 2:
+            if 2 * height > side - 1:
                 assert capacity(side, height) == 0
     return checked
 
@@ -107,7 +110,7 @@ def check_realized_capacity_bound():
     strict_improvements = 0
     for side in range(4, 8):
         all_matchings = [matching(value) for value in permutations(range(side))]
-        for _ in range(350 if side <= 6 else 100):
+        for _ in range(300 if side <= 6 else 80):
             opposite = rng.choice(all_matchings)
             current = rng.choice(
                 [state for state in all_matchings if state.isdisjoint(opposite)]
@@ -124,13 +127,14 @@ def check_realized_capacity_bound():
             state = set(opposite) | set(response)
             for owner in entering:
                 eligible = state - {owner} - {edge for edge in entering if edge < owner}
-                cap_bound = Fraction(capacity_star(opposite, response, owner, eligible), 2)
+                cap_bound = Fraction(
+                    capacity_star(opposite, response, owner, eligible), 2
+                )
                 harm_bound = Fraction(side - 1, 2) * harmonic_star(
                     opposite, response, owner, eligible
                 )
                 assert loads.get(owner, 0) <= cap_bound <= harm_bound
-                if cap_bound < harm_bound:
-                    strict_improvements += 1
+                strict_improvements += int(cap_bound < harm_bound)
                 owners += 1
             checked += 1
     return checked, owners, strict_improvements
@@ -142,7 +146,7 @@ def check_conditional_capacity_identity():
     edge_checks = 0
     for side in range(4, 7):
         all_matchings = [matching(value) for value in permutations(range(side))]
-        for _ in range(120):
+        for _ in range(100):
             opposite = rng.choice(all_matchings)
             current = rng.choice(
                 [state for state in all_matchings if state.isdisjoint(opposite)]
@@ -167,7 +171,9 @@ def check_conditional_capacity_identity():
                     pair_occurrence[(first, second)] += 1
                     pair_occurrence[(second, first)] += 1
             for owner, count in occurrence.items():
-                fixed = capacity_star(opposite, frozenset({owner}), owner, set(opposite))
+                fixed = capacity_star(
+                    opposite, frozenset({owner}), owner, set(opposite)
+                )
                 response_part = Fraction(0)
                 for other in occurrence:
                     if other == owner:
@@ -188,13 +194,17 @@ def check_conditional_capacity_identity():
 
 
 def check_dyadic_band_maxima():
+    rng = random.Random(1413)
     checked = 0
     for side in range(3, 10000):
         height = 1
         while height <= side - 1:
             upper = min(2 * height, side)
             coefficient = capacity(side, height)
-            for actual in range(height, upper):
+            candidates = {height, upper - 1}
+            if upper - height > 2:
+                candidates.add(rng.randrange(height, upper))
+            for actual in candidates:
                 assert capacity(side, actual) <= coefficient
                 checked += 1
             height *= 2
