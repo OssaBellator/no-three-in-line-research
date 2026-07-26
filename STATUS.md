@@ -29,37 +29,29 @@ The collision-free theorem ledger is split across
 - Returned structural deletions form a forward acyclic ancestry forest.
 - A recurrent target edge deletes while nonessential; essential return produces a
   deficiency-one Hall wall and exact lower-side factorisation.
-- Historical protected-line targets are neutralised through stored labelled
-  pairs, with reuse counted by physical cell--absence-run slots.
+- Historical protected-line targets are neutralised through stored labelled pairs,
+  with reuse counted by physical cell--absence-run slots.
 - A recurrent physical target has at most six labelled same-layer pair types. A
   recurrent type deletes one nonessential pair edge or contracts two essential
   pair edges.
 
-## Completeness correction and branch compression
+## Completeness and branch compression
 
-The anchor-preserving complete-entering-batch deletion of CMR785--CMR821 is a
-rigorous **aggressive subbranch**, but it may remove other untested states. Its
-forcing and contraction conclusions are branch-local.
+The complete-entering-batch anchor deletion of CMR785--CMR821 is a rigorous
+**aggressive subbranch**, but its forcing conclusions are branch-local. Complete
+search uses exact viable-child unions or the rank-three prescription split.
 
-Completeness is restored by exact single-edge child unions and by the
-rank-three prescription split. Every nonimproving target-destroying candidate
-has at most three deletion children plus one conditioned forced-triple branch.
-Every state survives in at least one branch.
-
-The split can be made disjoint by assigning each state to the first prescription
-edge it omits. Every internal step fixes or deletes a previously undecided edge,
-so the disjoint target-resolution tree has depth at most `2n^2`.
-
-Terminal leaves forced by the same physical target may be unioned as set
-families. Splitting by the eight layer assignments of that target gives at most
+The rank-three split can be made disjoint by assigning each state to its first
+missing prescription edge. Every internal step fixes or deletes a previously
+undecided edge, so the disjoint target-resolution tree has depth at most `2n^2`.
+At one resolution stage, terminal leaves compress to at most
 
 \[
 8\binom{n^2}{3}
 \]
 
-fixed labelled-triple classes at one resolution stage. These unions are not
-assumed to be the perfect-matching family of one common host when their inherited
-masks differ.
+fixed labelled-triple set-family classes. Unions with different inherited masks
+are not silently identified with one matching host.
 
 Along one stable-owner path, canonical new triples have support matching number at
 most
@@ -68,56 +60,31 @@ most
 B_n=2n^2-2n+\left\lfloor\frac{2n}{3}\right\rfloor.
 \]
 
-A maximal support packing gives a cover of size at most `9B_n`. Long paths
-therefore concentrate on one physical cell or labelled matching vertex. One exact
-labelled edge then batches many candidates through a binary delete/condition
-split, with rank-two transfer in the conditioned branch.
+A support cover has size at most `9B_n`. Long paths concentrate on one physical
+cell or labelled matching vertex, and one exact labelled edge batches many
+candidates through a binary delete/condition split with rank-two transfer.
 
-## Minimum-anchor proof mode
+## Minimum-anchor and minimum-face mode
 
-A proof which analyses an actual minimum-potential state does not need to retain
-an unknown improving witness. If `S` minimises the current finite state family,
-any restriction preserving `S` preserves one minimum.
-
-For a chosen target of `S`, every target-destroying alternative supplies a
-canonical new triple containing an edge outside `S`. Deleting one such edge
-rejects the alternative and preserves the minimum. After at most
+If `S` is an actual minimum-potential state, every restriction preserving `S`
+preserves one minimum. Forcing a chosen physical target and then a chosen labelled
+anchor prescription uses at most
 
 \[
 2n^2-2n
 \]
 
-outside-anchor deletions, the chosen physical target—and then any chosen labelled
-anchor prescription—becomes fixed in the surviving minimum branch.
-
-Exact contraction preserves minimum status for the induced objective
+outside-anchor deletions. Exact contraction preserves minimum status for the
+induced objective
 
 \[
 \Phi_P(R')=\Phi(P\cup R').
 \]
 
-Thus completeness-tree width is not an obstruction in minimum-anchor mode. The
-remaining issue there is dynamic restoration, anchor loss, and structural owner
-change.
-
-## Minimum-face edge dichotomy
-
-Let `\mathcal M` be the complete face of minimum-potential states at one owner.
-Every labelled physical edge has exactly one response:
-
-1. some minimum state omits it, so the edge can be deleted while preserving the
-   minimum value; or
-2. every minimum state contains it, so it belongs to the common minimum core and
-   contracts exactly.
-
-Contracting the complete minimum core leaves a residual minimum family with empty
-common core. Strict core growth occurs at most `2n` times for a saturated
-side-`n` two-layer state.
-
-Repeated restoration of a noncore edge is pure paid reopening: it is deleted
-again against an avoiding minimum and carries exact full-token incidence.
-
-## Physical-edge lineage budget
+For the complete minimum face at one host, every labelled edge is either omitted
+by some minimum state and minimum-preservingly deletable, or belongs to the common
+minimum core and contracts. Contracting the whole core leaves a residual minimum
+family with empty common core.
 
 One labelled physical edge has at most
 
@@ -127,32 +94,41 @@ L_{\mathrm{edge}}(N,h)
 (h+1)\left(1+\sum_{m=1}^{N}(2m^2+m+1)\right)
 \]
 
-structural owner slots along a closure branch.
+structural owner slots. Each slot receives at most one uncharged first closure.
+Every later active appearance is a genuine restoration unless the edge contracts.
 
-Each owner slot receives at most one uncharged first closure of that edge. If the
-edge has `J` active appearances and does not contract, then the genuine
-restoration count satisfies
+## Complete same-vertex-set transition normalization
+
+For restriction `H'\subseteq H`, the minimum can only rise. If an old minimum
+survives, the new minimum face is exactly the surviving part of the old face.
+For expansion `H\subseteq H'`, the minimum can only fall; every genuinely new
+minimum state uses an added edge.
+
+A same-value expansion is exactly rollbackable. If an expansion lowers the
+minimum, added edges omitted by some new minimum peel away while preserving that
+lower value; before the added batch is exhausted, one added edge enters the
+minimum core and contracts. The same conclusion holds when the intersection/base
+host has no feasible state.
+
+Therefore every arbitrary same-vertex-set transition factors through its
+intersection and normalizes to:
+
+1. a monotone restriction preserving an old minimum;
+2. a lost edge of the old canonical minimum;
+3. exact contraction of an added minimum-core edge;
+4. strict potential improvement.
+
+Between contractions, normalized hosts form a nested decreasing chain. A coarse
+saturated side-`N` bound is
 
 \[
-R\ge J-L_{\mathrm{edge}}(N,h),
+(2N+1)2N^2
 \]
 
-with labelled nonroot token incidence at least
-
-\[
-\max\{0,J-L_{\mathrm{edge}}(N,h)\}(p+1)(h-1).
-\]
-
-For every threshold `\lambda>=2`, either one fixed owner sees `\lambda`
-restorations or
-
-\[
-J\le\lambda L_{\mathrm{edge}}(N,h).
-\]
-
-Consequently the former fixed-owner, fixed-edge recurrence now has finite owner
-stock, minimum-preserving deletion, exact minimum-core contraction, or explicit
-full-token payment.
+strict same-vertex-set restriction transitions before contraction, potential
+improvement, or structural owner/vertex-set exit. Restoration-only activity no
+longer needs an independent local capacity bound: at unchanged minimum value it
+rolls back, and at lower value it contracts or improves.
 
 ## Corrections retained
 
@@ -161,29 +137,31 @@ full-token payment.
 - One edge return may serve several neutralisations in one absence run.
 - Removing one essential edge produces Hall deficiency exactly one.
 - Owner relabelling does not itself create physical restoration.
-- Aggressive batch deletion is branch-local; completeness uses viable child
-  unions or disjoint prescription partitions.
+- Aggressive batch deletion is branch-local; completeness uses viable child unions
+  or disjoint prescription partitions.
 - A union of differently masked terminal leaves is a valid set family but is not
   silently treated as one matching host.
+- An empty intersection host has no assigned minimum; it enters the lost-minimum
+  or added-edge contraction branch directly.
 
 ## Current open frontier
 
-1. **Owner-transition minimum faces.** Control how the minimum face and its common
-   core change when the host, routing skeleton, factor, unit wall, or closure
-   envelope changes.
-2. **Full-token return capacity.** Convert accumulated genuine restorations into
-   an unconditional target-load decrease, protected-reserve exhaustion, or strict
-   global potential improvement.
-3. **Host representability.** Reconnect set-family minimum-core contraction and
-   terminal-leaf unions with the geometric matching-host selectors when masks
-   differ.
+1. **Structural vertex-set descent.** Transport the induced minimum objective,
+   target load, and protected reserves through common-core contractions, unit-wall
+   products, strict child products, and closure-envelope changes.
+2. **Cross-factor potential.** The real-triple potential is not automatically
+   additive across exact matching products; mixed triples must be transferred or
+   charged using the product-rectangle machinery.
+3. **Host representability.** Reconnect exact set-family contractions and merged
+   terminal-leaf classes with geometric matching hosts when masks differ.
 4. **Prime-field and arbitrary-length transfer.** Rebuild the endpoint for prime
    fields, thin quotient/carry regimes, and every positive integer side length.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR925**, local completeness has disjoint
-polynomial certificate compression, minimum-anchor analysis avoids branch width,
-and every fixed-owner edge deletes against the minimum face or contracts. The
-remaining prime-power problem is dynamic owner-transition and full-token capacity,
-not another local fixed-edge classification.
+There is no complete proof. Through **CMR957**, local completeness has polynomial
+certificate compression, minimum-anchor mode avoids branch width, fixed-owner
+edges delete or contract, and all same-vertex-set host dynamics normalize to
+finite restriction, rollback, contraction, or strict improvement. The remaining
+prime-power problem is structural vertex-set descent and cross-factor potential
+transport.
