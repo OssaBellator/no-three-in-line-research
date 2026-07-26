@@ -58,6 +58,8 @@ Proved AC interfaces include:
 
 AC3fe--AC3fo classify fixed, moving and blocker collateral by pre-transition current/new words. These are collateral of the already paid parent bank; no closure path, quadratic tuple or crossed-cell tuple is assigned payment merely at classification time.
 
+AC3mw--AC3nb now reconstruct the canonical prime-field quotient labels used by these routes. A multiplicative subgroup is determined by its order, every coset has a canonical exponent address, and the root, image, companion and scale cosets are reconstructed from the physical factor. The remaining RI recurrence is attached to source-family generators, physical occurrence assignment, component payability and exact repeated addresses rather than unnamed subgroup or root symbols.
+
 ## Universal AC interfaces
 
 AC3fa--AC3fd give every failed executable bank the exact created-cell-rank split. AC3fp--AC3fr give dense conflict returns an explicit finite role dictionary. AC3fs--AC3gm orient every realized or expected rank profile to a private union-safe pivot bucket.
@@ -150,7 +152,11 @@ AC3mf--AC3mk canonicalize AC3v envelopes. The unique minimal private envelope is
 
 AC3ml--AC3mq reconstruct the canonical one-cell active host and maximal realised protected registry. Active-host changes localize to arithmetic base support, exclusion atoms or context literals; compatible monotone inputs give at most `n^2` strict host changes. Protected-registry changes localize to atoms meeting changed physical cells or changed protection context. Arbitrary active filters, selected protected subbanks and independent owner/capacity assignments remain live generator data.
 
-AC3mr--AC3mv close the physical determinant-rational portion of the arithmetic multiplicity frontier. Grid directions have norm at most `n-1`, determinant-realized reduced denominators satisfy `q<=2(n-1)^2`, exact BDA profiles have stock `O(n^8)`, and complete board-anchored same-denominator non-scalar addresses have stock `O(L_ext n^10)`. Abstract RI subgroup/coset labels, outside-board anchors and unbounded external role dictionaries remain separate.
+AC3mr--AC3mv close the physical determinant-rational portion of the arithmetic multiplicity frontier. Grid directions have norm at most `n-1`, determinant-realized reduced denominators satisfy `q<=2(n-1)^2`, exact BDA profiles have stock `O(n^8)`, and complete board-anchored same-denominator non-scalar addresses have stock `O(L_ext n^10)`.
+
+AC3mw--AC3nb close the symbolic prime-field RI quotient alphabet. Subgroups are determined by divisor orders, all quotient cosets have canonical exponent addresses, and each occurrence reconstructs its root, image, companion and scale cosets from `(a,b,x,u,z)`. Scale-localized normalized component words have stock `O(L_RI n^9)` and exact physical occurrence addresses have stock `O(L_RI n^6)` in the prime-minus-one regime. Source-family generators, occurrence assignment and component payability remain live.
+
+AC3nc--AC3nh canonicalize private capacity-one owner selection. The lexicographically least maximum demand--owner matching reconstructs the selected subbank and assignment; failure returns a canonical Hall core. One eligibility or availability atom changes matching rank by at most one although the assignment may rotate on many pairs. Every persistent consuming epoch has at most the number of initially available capacity units many accepted transitions. Shared owners, non-unit capacities and nonpersistent masks remain live.
 
 AC5b--AC5f give the exact reverse-scale audit. Same-band collateral is permitted when `Psi_H` decreases. For a certified multicover batch `B`, every AC menu must prove
 
@@ -181,8 +187,8 @@ forces one state which is protected-safe and has strict current-scale drift. For
 
 ## Current frontier
 
-1. For each provenance-classified literal edge, selected protected subbank, owner assignment or nonmonotone state-generator atom, prove current payment, bounded arithmetic descent, physical impossibility or a capacity-one ticket.
-2. Reconstruct or polynomially bound the remaining abstract RI subgroup/coset and external arithmetic labels, then close every recurrent exact macro cycle.
+1. For each provenance-classified literal edge, shared/non-unit owner edge and nonmonotone demand, eligibility, source-family or state-generator atom, prove current payment, bounded descent, physical impossibility or a capacity-one ticket.
+2. Close every recurrent exact macro cycle, especially physical-occurrence, owner-status, destruction-contract and generator returns.
 3. For every installed AC menu, construct complete current/protected event inventories and prove `Gamma_cur+|B| Gamma_high<|B|`, with the summed AC5p bound for multistep paths.
 4. Prove the GC1--GC3 partner, anchored pair-shadow and pool-stability estimates uniformly after earlier switches; obtain common-parent/private-payment petal families or classify their reset, then discharge AC6.
 
