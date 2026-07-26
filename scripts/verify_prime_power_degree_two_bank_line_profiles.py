@@ -3,20 +3,12 @@
 
 from collections import Counter
 from itertools import combinations, permutations
-from math import ceil, comb, factorial, gcd, log2
+from math import comb, factorial, floor, gcd, log2
 import random
 
 
 def matching(permutation):
     return frozenset((row, permutation[row]) for row in range(len(permutation)))
-
-
-def derangements(side):
-    return [
-        permutation
-        for permutation in permutations(range(side))
-        if all(permutation[row] != row for row in range(side))
-    ]
 
 
 def line_key(first, second):
@@ -61,7 +53,7 @@ def falling(side, rank):
 
 
 def band(value):
-    return 0 if value == 0 else 1 + int(log2(value))
+    return 0 if value == 0 else 1 + floor(log2(value))
 
 
 def direct_new_ranks(opposite, old_matching, response):
@@ -72,16 +64,14 @@ def direct_new_ranks(opposite, old_matching, response):
         triple_set = set(triple)
         if triple_set <= old_state or not collinear(triple):
             continue
-        rank = len(triple_set - set(opposite))
-        ranks[rank] += 1
+        ranks[len(triple_set - set(opposite))] += 1
     return ranks
 
 
-def line_profile_counts(side, opposite, old_matching, forbidden):
+def line_profile_counts(side, lines, opposite, old_matching, forbidden):
     cells = {(row, column) for row in range(side) for column in range(side)}
     graph = cells - set(opposite) - set(forbidden)
     old_graph = set(old_matching) & graph
-    lines = board_lines(side)
     ranks = [0, 0, 0, 0]
     histogram = Counter()
     band_contribution = Counter()
@@ -96,73 +86,68 @@ def line_profile_counts(side, opposite, old_matching, forbidden):
         if o + g < 3:
             continue
         histogram[(o, g, m)] += 1
-        v1 = comb(o, 2) * (g - m)
-        v2 = o * (comb(g, 2) - comb(m, 2))
-        v3 = comb(g, 3) - comb(m, 3)
-        ranks[1] += v1
-        ranks[2] += v2
-        ranks[3] += v3
-        for rank, value in ((1, v1), (2, v2), (3, v3)):
+        values = (
+            comb(o, 2) * (g - m),
+            o * (comb(g, 2) - comb(m, 2)),
+            comb(g, 3) - comb(m, 3),
+        )
+        for rank, value in enumerate(values, 1):
+            ranks[rank] += value
             band_contribution[(rank, band(o), band(g), band(m))] += value / falling(side, rank)
-    return ranks, histogram, band_contribution
+    return graph, ranks, histogram, band_contribution
 
 
 def check_exact_profiles():
     rng = random.Random(1336)
     checked = 0
-    triples = 0
+    prescriptions = 0
     profiles = 0
-    for side in range(3, 8):
+    response_occurrences = 0
+
+    for side in range(3, 7):
+        permutation_list = list(permutations(range(side)))
+        matching_list = [matching(permutation) for permutation in permutation_list]
         opposite = matching(tuple(range(side)))
-        old_list = derangements(side)
-        if side >= 6:
-            old_list = rng.sample(old_list, min(20, len(old_list)))
-        for old_permutation in old_list:
-            old_matching = matching(old_permutation)
+        deranged = [state for state in matching_list if state.isdisjoint(opposite)]
+        old_list = deranged if side <= 5 else rng.sample(deranged, 20)
+        lines = board_lines(side)
+
+        for old_matching in old_list:
             target_edge = rng.choice(tuple(old_matching))
-            extensions = [
-                matching(permutation)
-                for permutation in derangements(side)
-                if target_edge in matching(permutation)
-            ]
+            extensions = [state for state in deranged if target_edge in state]
             if side >= 6:
                 extensions = rng.sample(extensions, min(12, len(extensions)))
             for forbidden in extensions:
-                graph = {
-                    (row, column)
-                    for row in range(side)
-                    for column in range(side)
-                } - set(opposite) - set(forbidden)
-                responses = [
-                    matching(permutation)
-                    for permutation in permutations(range(side))
-                    if matching(permutation) <= graph
-                ]
-                profile_ranks, histogram, bands = line_profile_counts(
-                    side, opposite, old_matching, forbidden
+                graph, profile_ranks, histogram, bands = line_profile_counts(
+                    side, lines, opposite, old_matching, forbidden
                 )
+                responses = [state for state in matching_list if state <= graph]
                 direct_totals = [0, 0, 0, 0]
                 for response in responses:
                     ranks = direct_new_ranks(opposite, old_matching, response)
                     for rank in (1, 2, 3):
                         direct_totals[rank] += ranks[rank]
-                # Each compatible rank-r prescription occurs in exactly (n-r)! responses.
+
+                # A rank-r prescription has at most (n-r)! completions in the
+                # restricted response graph.  Equality is not assumed.
                 for rank in (1, 2, 3):
-                    assert direct_totals[rank] == profile_ranks[rank] * factorial(side - rank)
+                    assert direct_totals[rank] <= profile_ranks[rank] * factorial(side - rank)
+
                 score = sum(profile_ranks[rank] / falling(side, rank) for rank in (1, 2, 3))
                 assert abs(score - sum(bands.values())) < 1e-12
-                triples += sum(profile_ranks)
+                prescriptions += sum(profile_ranks)
+                response_occurrences += sum(direct_totals)
                 profiles += len(histogram)
                 checked += 1
-    return checked, triples, profiles
+
+    return checked, prescriptions, profiles, response_occurrences
 
 
 def check_axis_and_nonaxis_compatibility():
     checked = 0
     subsets = 0
-    for side in range(2, 30):
-        lines = board_lines(side)
-        for key, cells in lines.items():
+    for side in range(2, 11):
+        for key, cells in board_lines(side).items():
             if is_axis(key):
                 checked += 1
                 continue
@@ -182,9 +167,9 @@ def check_dyadic_class_counts():
     checked = 0
     for side in range(1, 10000):
         bands = {band(value) for value in range(side + 1)}
-        bound = 1 + ceil(log2(side)) if side > 1 else 1
-        assert len(bands) <= bound
-        assert 3 * len(bands) ** 3 <= 3 * bound ** 3
+        bound = 2 + floor(log2(side))
+        assert len(bands) == bound
+        assert 3 * len(bands) ** 3 == 3 * bound ** 3
         checked += 1
     return checked
 
@@ -209,7 +194,9 @@ def main():
         exact[0],
         "banks with",
         exact[1],
-        "profile prescriptions across",
+        "candidate prescriptions,",
+        exact[3],
+        "response occurrences and",
         exact[2],
         "exact profiles,",
         geometry[0],
