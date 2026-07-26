@@ -17,12 +17,12 @@ The authoritative collision-free ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1469.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1477.
 
-CMR1414--CMR1461 was reindexed after concurrent work had already occupied
-CMR1374--CMR1413.  The concurrent files were preserved, obsolete colliding
-drafts were removed, and CMR1462--CMR1469 was retained and corrected for
-inherited-coordinate scope.
+CMR1414--CMR1461 was reindexed after concurrent work had occupied
+CMR1374--CMR1413.  The concurrent chain was preserved.  CMR1462--CMR1469 was
+also retained and corrected so matching side, envelope depth and inherited
+coordinate span are not conflated.
 
 ## Structural endpoint
 
@@ -39,58 +39,33 @@ envelope exits form a finite owner DAG, so
 \]
 
 Only same-owner diagonal blocks still require subcritical certificates.
-Structural finiteness alone does not imply that a positive minimum reaches
-zero.
+Structural finiteness does not imply that a positive minimum reaches zero.
 
-## Exact extension-free probability law
+## Exact matching-bank and owner law
 
-For one response matching side `d`, target edge `e` and opposite matching `O`,
-put
+For response side `d`, target `e` and opposite matching `O`, use
 
 \[
 H_e=K_{d,d}\setminus(O\cup\{e\}).
 \]
 
-After relabeling `O` to the identity, a compatible rank-`r` prescription has
-parameters `(q,d_0,epsilon)`.  Its residual rook numbers are
+After normalizing `O`, every compatible prescription has a finite exact rook
+class.  Its completion count is
 
 \[
-\boxed{
-r_j(P)=\binom qj+\varepsilon(P)\binom{q-d_0}{j-1}.}
-\]
-
-Hence
-
-\[
-\boxed{
 B_d(P)=
 \sum_{j=0}^{d-r}(-1)^j
-\left[\binom qj+\varepsilon\binom{q-d_0}{j-1}\right](d-r-j)!}
+\left[\binom qj+\varepsilon\binom{q-d_0}{j-1}\right](d-r-j)!,
 \]
 
 and
 
 \[
-\boxed{
 \Pr(P\subseteq R)=
-\frac{B_d(P)}{D_d(d-2)/(d-1)}.}
+\frac{B_d(P)}{D_d(d-2)/(d-1)}.
 \]
 
-Expected collateral and unavailable-edge use are exact finite rook-class dot
-products.
-
-## Exact shared-edge assignment
-
-Every candidate triple has a fixed entering owner before the response is
-sampled.  For an entering edge `a`,
-
-\[
-\gamma_e(a,R)=\sum_{L\ni a}\binom{z_{a,L}(R)}2,
-\qquad
-N(R)=\sum_a\gamma_e(a,R).
-\]
-
-With
+Every candidate triple has a fixed entering owner before sampling.  If
 
 \[
 p_e(a)=\Pr(a\in R),
@@ -98,59 +73,39 @@ p_e(a)=\Pr(a\in R),
 g_e(a)=\mathbb E[\gamma_e(a,R)\mid a\in R],
 \]
 
-one has
+then
 
 \[
-\boxed{\mathbb E N(R)=\sum_ap_e(a)g_e(a).}
+\mathbb E N(R)=\sum_ap_e(a)g_e(a).
 \]
 
-The marginal matrix is doubly stochastic.  Therefore expected collateral is
-one bipartite assignment cost.  Rational row/column potentials satisfying
+The marginal matrix is doubly stochastic, so expected collateral is one
+bipartite assignment cost with an exact rational dual.  Owner weights are
+finite geometric/rook dot products and require no perfect-matching enumeration.
 
-\[
-\alpha_x+\beta_y\ge g_e(x,y)
-\]
-
-and total below the destroyed target load certify strict improvement.  After
-clearing denominators this is a finite integer certificate.
-
-Every owner weight is closed algebraically:
-
-\[
-c_e(a)=
-\sum C_e(a;r,q,d_0,\varepsilon,\eta)
-\pi_d(r,q,d_0,\varepsilon),
-\qquad
-g_e(a)=\frac{c_e(a)}{p_e(a)}.
-\]
-
-Here `eta` may retain primitive height, line population, prefix, quotient and
-carry data in the original parent coordinates.
-
-## Inherited-coordinate capacity envelope
+## Inherited-coordinate capacity
 
 A residual factor may use scattered coordinates.  Keep separate:
 
-- response matching side `d`;
+- matching side `d`;
 - prime-power envelope side `t=p^k`;
 - ambient coordinate span
   \[
   W_\omega=\max\{x_{\max}-x_{\min},y_{\max}-y_{\min}\}.
   \]
 
-For primitive height `h`, define
+For primitive direction height `h`, define
 
 \[
 c_\omega(h)=
 \max\left\{\left\lfloor\frac{W_\omega}{h}\right\rfloor-1,0\right\}.
 \]
 
-Then
+Then every entering owner satisfies
 
 \[
-\boxed{
 \gamma_e(a,R)
-\le\frac12\sum_{b\in E_a(R)}c_\omega(h(a,b)).}
+\le\frac12\sum_{b\in E_a(R)}c_\omega(h(a,b)).
 \]
 
 Exact pair rook probabilities give a conditional eligible envelope
@@ -160,95 +115,83 @@ Exact pair rook probabilities give a conditional eligible envelope
 g_e(a)\le\Gamma_e^{\rm elig}(a).
 \]
 
-Directions with
+Directions of height above `W_omega/2` contribute zero.
 
-\[
-h>\frac{W_\omega}{2}
-\]
+## One-owner and fractional prime-power signatures
 
-have zero coefficient.  Geometry is governed by `W_omega`, not by the matching
-side `d`.
-
-## Prime-power eligible signatures
-
-Inside envelope `t=p^k`, every eligible owner-partner pair has one signature
+Inside envelope `p^k`, every eligible pair has one signature
 
 \[
 (t_{\rm pair},s,\delta,H),
 \]
 
-where `s=v_p(G)` is first-separation depth, `delta` is projective direction
-modulo `p`, and `H` is a dyadic primitive-height band.  Put
+where `s` is first-separation depth, `delta` projective direction modulo `p`,
+and `H` dyadic primitive-height band.  Put
 
 \[
-B_\omega=1+\left\lfloor\log_2\max\{1,W_\omega\}\right\rfloor.
+B_\omega=1+\lfloor\log_2\max\{1,W_\omega\}\rfloor.
 \]
 
-At most
+At most `2k(p+1)B_omega` classes occur for one owner.  A heavy owner class is
+simultaneously realized and concentrates on one loaded real line.
+
+For a feasible fractional candidate packing, the total eligible incidence is
+twice the packing mass.  Matching preclusion gives a signature class of mass
+at least
 
 \[
-\boxed{2k(p+1)B_\omega}
+\frac{d-2}{3k(p+1)B_\omega}.
 \]
 
-classes occur for one owner.  A large eligible owner envelope forces one heavy
-class.  Some actual response simultaneously realizes at least its ceiling
-mean, all in one prefix carry cell, projective class and height band.
-
-A fixed projective/height class has at most
+After primitive-direction and signed-scale pigeonholing, one exact displacement
+class has mass at least
 
 \[
-D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2
+M_0=
+\frac{d-2}
+{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)},
 \]
 
-primitive directions, so the one-owner class concentrates on one loaded real
-line.
-
-## Fractional packed-signature endpoint
-
-For a feasible candidate packing `z_T`, let `nu=sum_T z_T` and let
-`mu_sigma` be the packed eligible owner-partner incidence mass in one signature.
-Then
+where
 
 \[
-\sum_\sigma\mu_\sigma=2\nu.
-\]
-
-At a positive minimum, the matching-preclusion theorem gives
-
-\[
-\nu\ge\frac{d-2}{3}.
-\]
-
-Therefore one signature has mass at least
-
-\[
-\boxed{
-\mu_\sigma\ge
-\frac{d-2}{3k(p+1)B_\omega}.}
-\]
-
-This mass uses at least `ceil(mu_sigma)` ordered owner-partner pairs and at
-least `ceil(mu_sigma/2)` owners.  In the response-partner branch it also uses
-at least `ceil(mu_sigma)` distinct response edges.
-
-After fixing one primitive direction and signed scale, put
-
-\[
+D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2,
+\qquad
 S_{\omega,p}(s,H)=
 \left\lfloor\frac{W_\omega}{p^sH}\right\rfloor.
 \]
 
-One exact displacement class has mass at least
+The class is a bank of parallel translated owner-partner pairs with one exact
+lattice displacement.
+
+## Weighted displacement carry routing
+
+Every exact-displacement incidence has endpoints in one depth-`s` full prefix
+cell and in two fixed distinct depth-`s+1` child cells.  Among at most
+`p^{2s}` full cells, one carries mass at least
 
 \[
-\boxed{
-\frac{d-2}
-{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)}.}
+\frac{M_0}{p^{2s}}.
 \]
 
-Thus the global fractional obstruction contains a bank of parallel translated
-owner-partner pairs with one first-separation depth, one projective direction,
-one height band and one exact lattice displacement.
+Using the third cell of each candidate as a witness gives an exact weighted
+internal/crossing split.
+
+- **Internal branch:** mass at least
+  \[
+  \frac{M_0}{2p^{2s}}
+  \]
+  scales injectively to a strict envelope of side `p^{k-s}` when `s>=1`.
+- **Crossing branch:** for `s>=1`, one common earlier exit depth `c<s` carries
+  mass at least
+  \[
+  \frac{M_0}{2sp^{2s}}.
+  \]
+- **Depth zero:** all incidences remain at parent scale.
+
+For fixed structural owner, layer, depth, direction and displacement, there are
+exactly `p^{2s}` full-cell tokens.  Across repeated banks, total mass either
+consumes fresh tokens or concentrates on one exact absolute token.
 
 ## Corrections retained
 
@@ -261,31 +204,28 @@ one height band and one exact lattice displacement.
 - Conditioning on one support edge does not fix the other two layer labels.
 - Finite scheduler termination is not potential improvement.
 - Old response edges and old subsets create no new collateral.
-- Candidate prescriptions have at most, not exactly, `(d-r)!` unrestricted
-  completions.
 - Standard-grid classifications do not transfer to scattered residual
   coordinates.
 - Geometric capacities and displacement stocks use `W_omega`, not `d`.
 
 ## Current open frontier
 
-1. **Packed exact-displacement payment.**  Quantify prefix-return,
-   quotient/carry or protected-reserve payment for the CMR1469 translated
-   owner-partner bank.
-2. **Loaded-line comparison.**  Compare that global payment with the one-owner
-   simultaneous line gain from CMR1458--CMR1461.
-3. **Subcritical same-owner quotient.**  Encode the comparison as a
-   host-uniform rational or integer certificate `Av<v`.
-4. **Prime-field and thin regimes.**  Prove the analogous diagonal certificate
-   without a nonroot prefix-depth budget.
-5. **Arbitrary side lengths.**  Glue diagonal blocks through owner
-   triangularity and complete balanced/CRT assembly with collision/local-line
-   classes retained.
+1. **Strict transfer weights.**  Assign Lyapunov payment to internal scaling and
+   earlier-depth crossing transfer.
+2. **Depth-zero and token payment.**  Pay parent-scale exact translations or
+   repeated absolute full-cell tokens through prefix return, quotient/carry
+   collision or protected reserve.
+3. **Packed-versus-loaded comparison.**  Compare those global payments with the
+   one-owner loaded-line gain.
+4. **Subcritical same-owner quotient.**  Encode the result as a host-uniform
+   rational or integer certificate `Av<v`.
+5. **Prime-field/thin and CRT endpoints.**  Prove remaining diagonal blocks and
+   glue through owner triangularity.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1469**, matching probabilities,
-canonical owner weights, cross-line assignment, inherited-coordinate capacity
-reduction, one-owner carry signatures and global fractional exact-displacement
-banks are exact.  The remaining obstruction is the weighted payment for those
-loaded or translated signature banks.
+There is no complete proof.  Through **CMR1477**, matching probabilities,
+canonical owner weights, inherited-coordinate capacity, loaded signatures,
+fractional exact-displacement banks and their weighted carry routing are exact.
+The remaining obstruction is the Lyapunov payment of strict depth transfer,
+depth-zero translated banks and repeated absolute tokens.
