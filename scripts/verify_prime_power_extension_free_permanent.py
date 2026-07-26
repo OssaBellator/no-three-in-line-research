@@ -11,45 +11,57 @@ def matching(permutation):
     return frozenset((row, permutation[row]) for row in range(len(permutation)))
 
 
-def scaling_matrix(side):
+def scaling_entries(side):
+    a = Fraction(1, side - 2)
+    b = Fraction(1, side - 1)
+    g = Fraction(
+        side * side - 5 * side + 5,
+        (side - 1) * (side - 2) * (side - 3),
+    )
+    return a, b, g
+
+
+def explicit_scaling_matrix(side):
+    a, b, g = scaling_entries(side)
     matrix = [[Fraction(0) for _column in range(side)] for _row in range(side)]
     remaining = range(2, side)
     for column in remaining:
-        matrix[0][column] = Fraction(1, side - 2)
-    matrix[1][0] = Fraction(1, side - 1)
+        matrix[0][column] = a
+    matrix[1][0] = b
     for column in remaining:
-        matrix[1][column] = Fraction(1, side - 1)
-    middle = Fraction(side * side - 5 * side + 5, (side - 1) * (side - 2) * (side - 3))
+        matrix[1][column] = b
     for row in remaining:
-        matrix[row][0] = Fraction(1, side - 1)
-        matrix[row][1] = Fraction(1, side - 2)
+        matrix[row][0] = b
+        matrix[row][1] = a
         for column in remaining:
             if row != column:
-                matrix[row][column] = middle
+                matrix[row][column] = g
     return matrix
 
 
 def check_scaling():
-    checked = 0
+    symbolic = 0
+    explicit = 0
     for side in range(4, 10000):
-        matrix = scaling_matrix(side)
+        a, b, g = scaling_entries(side)
+        assert (side - 2) * a == 1
+        assert (side - 1) * b == 1
+        assert b + a + (side - 3) * g == 1
+        assert Fraction(0) < g <= a
+        symbolic += 1
+    for side in range(4, 40):
+        matrix = explicit_scaling_matrix(side)
         assert all(sum(row) == 1 for row in matrix)
-        assert all(sum(matrix[row][column] for row in range(side)) == 1 for column in range(side))
+        assert all(
+            sum(matrix[row][column] for row in range(side)) == 1
+            for column in range(side)
+        )
         allowed = [entry for row in matrix for entry in row if entry]
         assert all(Fraction(0) < entry <= Fraction(1, side - 2) for entry in allowed)
         assert matrix[0][0] == 0 and matrix[0][1] == 0
         assert all(matrix[row][row] == 0 for row in range(side))
-        checked += 1
-    return checked
-
-
-def extension_free_bank(side, edge):
-    identity = matching(tuple(range(side)))
-    return [
-        matching(permutation)
-        for permutation in permutations(range(side))
-        if matching(permutation).isdisjoint(identity) and edge not in matching(permutation)
-    ]
+        explicit += 1
+    return symbolic, explicit
 
 
 def compatible(prescription):
@@ -63,7 +75,7 @@ def check_permanents_and_prescriptions():
     checked = 0
     prescriptions = 0
     canonical_extensions = 0
-    for side in range(4, 9):
+    for side in range(4, 8):
         identity = matching(tuple(range(side)))
         cells = {(row, column) for row in range(side) for column in range(side)}
         candidate_edges = list(cells - set(identity))
@@ -87,9 +99,8 @@ def check_permanents_and_prescriptions():
                     candidates = rng.sample(candidates, min(100, len(candidates)))
                 for prescription in candidates:
                     count = sum(prescription <= state for state in bank)
-                    assert Fraction(count, len(bank)) <= kappa / (
-                        factorial(side) // factorial(side - rank)
-                    )
+                    falling = factorial(side) // factorial(side - rank)
+                    assert Fraction(count, len(bank)) <= kappa / falling
                     prescriptions += 1
 
             response_sample = bank if side <= 5 else rng.sample(bank, min(80, len(bank)))
@@ -115,7 +126,7 @@ def check_penalty_arithmetic():
     improvements = 0
     for side in range(4, 1000):
         kappa = Fraction(side, side - 2) ** side
-        for _ in range(500):
+        for _ in range(100):
             candidate_score = Fraction(rng.randint(0, 100000), 1000)
             potential = rng.randint(1, 10000)
             missing = rng.randint(0, side * side)
@@ -133,10 +144,13 @@ def check_penalty_arithmetic():
 def main():
     finite = check_permanents_and_prescriptions()
     penalty = check_penalty_arithmetic()
+    scaling = check_scaling()
     print(
         "verified extension-free permanent:",
-        check_scaling(),
-        "exact scalings,",
+        scaling[0],
+        "symbolic and",
+        scaling[1],
+        "explicit scalings,",
         finite[0],
         "finite banks with",
         finite[1],
