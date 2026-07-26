@@ -1,0 +1,7 @@
+{
+  "cycle_length": 12,
+  "first_removal_credit": 12,
+  "first_insertion_cost": 1000,
+  "second_insertion_cost": 0,
+  "destroyed_first_insertion": 1000
+}
