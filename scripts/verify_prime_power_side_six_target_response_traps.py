@@ -4,20 +4,13 @@
 from collections import Counter, deque
 from itertools import combinations, permutations
 
-
 SIDE = 6
-CELLS = [(row, column) for row in range(SIDE) for column in range(SIDE)]
-CELL_INDEX = {cell: index for index, cell in enumerate(CELLS)}
-PERMUTATIONS = list(permutations(range(SIDE)))
-MATCHING_SETS = [
-    frozenset((row, permutation[row]) for row in range(SIDE))
-    for permutation in PERMUTATIONS
-]
-MATCHING_MASKS = [
-    sum(1 << CELL_INDEX[cell] for cell in matching)
-    for matching in MATCHING_SETS
-]
-FULL_MASK = (1 << (SIDE * SIDE)) - 1
+CELLS = [(x, y) for x in range(SIDE) for y in range(SIDE)]
+INDEX = {cell: index for index, cell in enumerate(CELLS)}
+PERMS = list(permutations(range(SIDE)))
+SETS = [frozenset((x, permutation[x]) for x in range(SIDE)) for permutation in PERMS]
+MASKS = [sum(1 << INDEX[cell] for cell in state) for state in SETS]
+FULL = (1 << (SIDE * SIDE)) - 1
 
 
 def collinear(first, second, third):
@@ -25,304 +18,202 @@ def collinear(first, second, third):
     return (x2 - x1) * (y3 - y1) == (x3 - x1) * (y2 - y1)
 
 
-COLLINEAR_TRIPLES = [
-    (sum(1 << index for index in triple), triple)
+TRIPLES = [
+    sum(1 << index for index in triple)
     for triple in combinations(range(SIDE * SIDE), 3)
     if collinear(*(CELLS[index] for index in triple))
 ]
 
 
-def potential_and_target_cells(mask):
+def state_info(mask):
     value = 0
     target_cells = 0
-    for triple_mask, _triple in COLLINEAR_TRIPLES:
-        if mask & triple_mask == triple_mask:
+    for triple in TRIPLES:
+        if mask & triple == triple:
             value += 1
-            target_cells |= triple_mask
+            target_cells |= triple
     return value, target_cells
 
 
-def disjoint_lists():
-    return [
-        [
-            second
-            for second in range(len(PERMUTATIONS))
-            if not MATCHING_MASKS[first] & MATCHING_MASKS[second]
-        ]
-        for first in range(len(PERMUTATIONS))
+def build_data():
+    disjoint = [
+        [second for second in range(len(PERMS)) if not MASKS[first] & MASKS[second]]
+        for first in range(len(PERMS))
     ]
+    assert all(len(values) == 265 for values in disjoint)
 
-
-def build_state_stock(disjoint):
     ordered = []
-    state_info = {}
-    for opposite in range(len(PERMUTATIONS)):
+    information = {}
+    for opposite in range(len(PERMS)):
         for current in disjoint[opposite]:
-            mask = MATCHING_MASKS[opposite] | MATCHING_MASKS[current]
+            mask = MASKS[opposite] | MASKS[current]
             ordered.append((opposite, current, mask))
-            if mask not in state_info:
-                state_info[mask] = potential_and_target_cells(mask)
+            if mask not in information:
+                information[mask] = state_info(mask)
 
-    ordered_distribution = Counter(state_info[mask][0] for _, _, mask in ordered)
-    physical_distribution = Counter(value for value, _targets in state_info.values())
-    assert len(COLLINEAR_TRIPLES) == 372
+    assert len(TRIPLES) == 372
     assert len(ordered) == 190800
-    assert len(state_info) == 67950
-    assert ordered_distribution == Counter({
-        0: 116,
-        1: 1880,
-        2: 11616,
-        3: 24544,
-        4: 30356,
-        5: 26920,
-        6: 27164,
-        7: 22360,
-        8: 13688,
-        9: 7192,
-        10: 4828,
-        11: 4152,
-        12: 5380,
-        13: 3160,
-        14: 2080,
-        15: 1680,
-        16: 1248,
-        17: 240,
-        18: 32,
-        19: 64,
-        20: 332,
-        21: 312,
-        22: 768,
-        23: 200,
-        24: 248,
-        25: 96,
-        26: 80,
-        27: 16,
-        30: 40,
-        40: 8,
-    })
-    assert physical_distribution == Counter({
-        0: 50,
-        1: 712,
-        2: 4060,
-        3: 8936,
-        4: 10752,
-        5: 9356,
-        6: 9308,
-        7: 8116,
-        8: 4857,
-        9: 2616,
-        10: 1810,
-        11: 1544,
-        12: 2120,
-        13: 1252,
-        14: 752,
-        15: 580,
-        16: 416,
-        17: 72,
-        18: 8,
-        19: 16,
-        20: 88,
-        21: 108,
-        22: 228,
-        23: 76,
-        24: 66,
-        25: 24,
-        26: 14,
-        27: 4,
-        30: 8,
-        40: 1,
-    })
-    return ordered, state_info, ordered_distribution, physical_distribution
+    assert len(information) == 67950
+    assert sum(information[mask][0] == 0 for _, _, mask in ordered) == 116
+    assert sum(value == 0 for value, _ in information.values()) == 50
+    assert max(value for value, _ in information.values()) == 40
+    return disjoint, ordered, information
 
 
-def build_extension_free_minima(disjoint, state_info):
+def build_minimum_table(disjoint, information):
     minimum = {}
-    minimizer = {}
-    for opposite in range(len(PERMUTATIONS)):
-        opposite_mask = MATCHING_MASKS[opposite]
-        outside = FULL_MASK ^ opposite_mask
+    for opposite in range(len(PERMS)):
+        opposite_mask = MASKS[opposite]
+        outside = FULL ^ opposite_mask
         bits = outside
         while bits:
             bit = bits & -bits
-            cell_index = bit.bit_length() - 1
-            minimum[(opposite, cell_index)] = 10**9
-            minimizer[(opposite, cell_index)] = None
+            minimum[(opposite, bit.bit_length() - 1)] = 10**9
             bits -= bit
-
         for response in disjoint[opposite]:
-            response_mask = MATCHING_MASKS[response]
-            value = state_info[opposite_mask | response_mask][0]
-            eligible = outside & ~response_mask
-            bits = eligible
+            response_mask = MASKS[response]
+            value = information[opposite_mask | response_mask][0]
+            bits = outside & ~response_mask
             while bits:
                 bit = bits & -bits
-                cell_index = bit.bit_length() - 1
-                if value < minimum[(opposite, cell_index)]:
-                    minimum[(opposite, cell_index)] = value
-                    minimizer[(opposite, cell_index)] = response
+                key = (opposite, bit.bit_length() - 1)
+                minimum[key] = min(minimum[key], value)
                 bits -= bit
-
     assert len(minimum) == 21600
     assert all(value < 10**9 for value in minimum.values())
-    return minimum, minimizer
+    return minimum
 
 
-def state_best_change(opposite, current, state_info, minimum):
-    mask = MATCHING_MASKS[opposite] | MATCHING_MASKS[current]
-    value, target_cells = state_info[mask]
+def best_change(opposite, current, information, minimum):
+    value, targets = information[MASKS[opposite] | MASKS[current]]
     if value == 0:
         return None
-    best = 10**9
-    bits = target_cells
+    answer = 10**9
+    bits = targets
     while bits:
         bit = bits & -bits
-        cell_index = bit.bit_length() - 1
-        fixed = opposite if MATCHING_MASKS[current] & bit else current
-        best = min(best, minimum[(fixed, cell_index)] - value)
+        fixed = opposite if MASKS[current] & bit else current
+        answer = min(answer, minimum[(fixed, bit.bit_length() - 1)] - value)
         bits -= bit
-    return best
+    return answer
 
 
-def classify_immediate_traps(ordered, state_info, minimum):
-    best_change = {}
-    distribution = Counter()
-    for opposite, current, _mask in ordered:
-        change = state_best_change(opposite, current, state_info, minimum)
-        best_change[(opposite, current)] = change
-        if change is not None:
-            distribution[change] += 1
-
-    immediate_traps = {
-        state for state, change in best_change.items() if change == 0
+def classify_traps(disjoint, ordered, information, minimum):
+    changes = {
+        (opposite, current): best_change(opposite, current, information, minimum)
+        for opposite, current, _ in ordered
     }
-    assert sum(count for change, count in distribution.items() if change < 0) == 189476
-    assert len(immediate_traps) == 1208
-    trap_potentials = Counter(
-        state_info[MATCHING_MASKS[first] | MATCHING_MASKS[second]][0]
-        for first, second in immediate_traps
-    )
-    assert trap_potentials == Counter({1: 1128, 2: 80})
-    return best_change, immediate_traps, distribution
+    assert sum(change is not None and change < 0 for change in changes.values()) == 189476
+    traps = {state for state, change in changes.items() if change == 0}
+    assert len(traps) == 1208
+    assert Counter(
+        information[MASKS[first] | MASKS[second]][0]
+        for first, second in traps
+    ) == Counter({1: 1128, 2: 80})
 
-
-def build_equal_graph(immediate_traps, best_change, disjoint, state_info):
-    equal_destinations = {}
-    reverse = {state: set() for state in immediate_traps}
+    destinations = {}
+    reverse = {state: set() for state in traps}
     direct_exit = set()
-
-    for opposite, current in immediate_traps:
-        mask = MATCHING_MASKS[opposite] | MATCHING_MASKS[current]
-        value, target_cells = state_info[mask]
-        destinations = set()
+    for opposite, current in traps:
+        value, target_cells = information[MASKS[opposite] | MASKS[current]]
+        found = set()
         bits = target_cells
         while bits:
             bit = bits & -bits
-            cell_index = bit.bit_length() - 1
-            fixed = opposite if MATCHING_MASKS[current] & bit else current
+            fixed = opposite if MASKS[current] & bit else current
             for response in disjoint[fixed]:
-                if MATCHING_MASKS[response] & bit:
+                if MASKS[response] & bit:
                     continue
-                new_mask = MATCHING_MASKS[fixed] | MATCHING_MASKS[response]
-                if state_info[new_mask][0] == value:
-                    destinations.add((fixed, response))
+                if information[MASKS[fixed] | MASKS[response]][0] == value:
+                    found.add((fixed, response))
             bits -= bit
-        assert destinations
-        equal_destinations[(opposite, current)] = destinations
-        if any(
-            best_change[destination] is not None
-            and best_change[destination] < 0
-            for destination in destinations
-        ):
+        assert found
+        destinations[(opposite, current)] = found
+        if any(changes[state] is not None and changes[state] < 0 for state in found):
             direct_exit.add((opposite, current))
-        for destination in destinations:
-            if destination in immediate_traps:
-                reverse[destination].add((opposite, current))
+        for state in found:
+            if state in traps:
+                reverse[state].add((opposite, current))
 
     distance = {state: 1 for state in direct_exit}
     queue = deque(direct_exit)
     while queue:
         state = queue.popleft()
-        for predecessor in reverse[state]:
-            if predecessor not in distance:
-                distance[predecessor] = distance[state] + 1
-                queue.append(predecessor)
-
+        for previous in reverse[state]:
+            if previous not in distance:
+                distance[previous] = distance[state] + 1
+                queue.append(previous)
     assert Counter(distance.values()) == Counter({1: 1120, 2: 64})
-    closed = immediate_traps - set(distance)
+    closed = traps - set(distance)
     assert len(closed) == 24
-    return equal_destinations, distance, closed
+    assert len({MASKS[first] | MASKS[second] for first, second in closed}) == 12
+    assert all(information[MASKS[first] | MASKS[second]][0] == 1 for first, second in closed)
 
-
-def classify_closed_core(equal_destinations, closed, state_info):
-    assert len({MATCHING_MASKS[first] | MATCHING_MASKS[second] for first, second in closed}) == 12
-    assert all(
-        state_info[MATCHING_MASKS[first] | MATCHING_MASKS[second]][0] == 1
-        for first, second in closed
-    )
     successor = {}
     for state in closed:
-        internal = [destination for destination in equal_destinations[state] if destination in closed]
+        internal = [candidate for candidate in destinations[state] if candidate in closed]
         assert len(internal) == 1
         successor[state] = internal[0]
 
-    unvisited = set(closed)
-    cycle_lengths = []
-    while unvisited:
-        start = next(iter(unvisited))
-        order = {}
+    cycle_nodes = set()
+    cycles = []
+    globally_seen = set()
+    for start in closed:
+        if start in globally_seen:
+            continue
         path = []
+        position = {}
         state = start
-        while state not in order:
-            order[state] = len(path)
+        while state not in position and state not in globally_seen:
+            position[state] = len(path)
             path.append(state)
             state = successor[state]
-        cycle = path[order[state]:]
-        cycle_lengths.append(len(cycle))
-        unvisited -= set(path)
-    assert Counter(cycle_lengths) == Counter({1: 12, 2: 6})
-    return Counter(cycle_lengths)
+        if state in position:
+            cycle = path[position[state]:]
+            cycles.append(cycle)
+            cycle_nodes.update(cycle)
+        globally_seen.update(path)
+
+    assert Counter(len(cycle) for cycle in cycles) == Counter({2: 6})
+    assert len(cycle_nodes) == 12
+    assert Counter(
+        0 if state in cycle_nodes else 1
+        for state in closed
+    ) == Counter({0: 12, 1: 12})
+    assert all(successor[state] in cycle_nodes for state in closed - cycle_nodes)
+    return changes, traps, distance, closed, cycles
 
 
 def verify_clean_construction():
-    first = (4, 3, 5, 0, 2, 1)
-    second = (3, 1, 0, 5, 4, 2)
-    first_index = PERMUTATIONS.index(first)
-    second_index = PERMUTATIONS.index(second)
-    assert not MATCHING_MASKS[first_index] & MATCHING_MASKS[second_index]
-    mask = MATCHING_MASKS[first_index] | MATCHING_MASKS[second_index]
-    value, target_cells = potential_and_target_cells(mask)
-    assert value == 0
-    assert target_cells == 0
-    return mask
+    first = PERMS.index((4, 3, 5, 0, 2, 1))
+    second = PERMS.index((3, 1, 0, 5, 4, 2))
+    assert not MASKS[first] & MASKS[second]
+    assert state_info(MASKS[first] | MASKS[second]) == (0, 0)
 
 
 def main():
-    disjoint = disjoint_lists()
-    assert all(len(values) == 265 for values in disjoint)
-    stock = build_state_stock(disjoint)
-    minima = build_extension_free_minima(disjoint, stock[1])
-    traps = classify_immediate_traps(stock[0], stock[1], minima[0])
-    equal = build_equal_graph(traps[1], traps[0], disjoint, stock[1])
-    cycles = classify_closed_core(equal[0], equal[2], stock[1])
+    disjoint, ordered, information = build_data()
+    minimum = build_minimum_table(disjoint, information)
+    result = classify_traps(disjoint, ordered, information, minimum)
     verify_clean_construction()
     print(
         "verified side-six target-response traps:",
-        len(stock[0]),
+        len(ordered),
         "ordered states,",
-        len(stock[1]),
+        len(information),
         "physical states,",
-        len(minima[0]),
-        "response-table entries,",
-        sum(count for change, count in traps[2].items() if change < 0),
+        len(minimum),
+        "response entries,",
+        sum(change is not None and change < 0 for change in result[0].values()),
         "immediate improvements,",
-        len(traps[1]),
+        len(result[1]),
         "immediate traps, distances",
-        dict(sorted(Counter(equal[1].values()).items())),
+        dict(sorted(Counter(result[2].values()).items())),
         ",",
-        len(equal[2]),
-        "closed ordered traps with cycles",
-        dict(sorted(cycles.items())),
-        "and one clean CMF1 escape",
+        len(result[3]),
+        "closed ordered traps with",
+        len(result[4]),
+        "two-cycles and twelve feeders, plus one clean CMF1 escape",
     )
 
 
