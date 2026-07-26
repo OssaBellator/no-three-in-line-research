@@ -11,6 +11,7 @@ This index is branch-specific. The shared proved inputs remain documented on `ma
 | GC2-wall | Uniform latent anchor load survives small target deletion | PROVED | `docs/geometric-cleaning-load-accounting.md` |
 | GC2a | Target and partner restriction is monotone for possible-cell pair-shadow | PROVED | `docs/geometric-cleaning-pool-and-shadow-stability.md` |
 | GC2b | One genuinely new possible cell contributes at most `3(ell_H-2)_+/2` pair-shadow at one unchanged anchor | PROVED | `docs/geometric-cleaning-new-cell-event-inventory.md` |
+| GC2c–GC2f | Weighted line-blocked partners route to one role-pure current-anchor star or an endpoint-disjoint secant matching retaining `1/[2(2Delta-1)]` of the weight | PROVED | `docs/geometric-cleaning-line-blocker-router.md` |
 | GC3a | Paid partner consumption bounds total pool depletion | PROVED | `docs/geometric-cleaning-budget-and-wall.md` |
 | GC3b | Paid incidence bounds creation of exceptional anchors | PROVED | `docs/geometric-cleaning-load-accounting.md` |
 | GC3c–GC3d | Pair-shadow threshold crossings equal new-cell pair incidence and admit a margin/reuse charging bound | PROVED | `docs/geometric-cleaning-pool-and-shadow-stability.md` |
@@ -29,6 +30,6 @@ This index is branch-specific. The shared proved inputs remain documented on `ma
 | GC4j | Minimum paid incidence and bounded token reuse imply the star-reopening Hall condition | PROVED | `docs/geometric-cleaning-anchor-link.md` |
 | GC4k | A Hall-deficient paid incidence contains a same-label compatible fan or a conflict overload | PROVED | `docs/geometric-cleaning-anchor-link.md` |
 | GC4l | A weighted deficient fibre retains at least `1/(T(Γ+1))` of its star weight in one compatible role class, unless it has degree greater than `Γ` | PROVED | `docs/geometric-cleaning-weighted-labelled-fan.md` |
-| GC5 | Clean-host endpoint theorem | OPEN; BOUNDED PHYSICAL AND LINE INCIDENCE IS EXPLICIT, WITH INITIAL SUPPORT/LINE COUNTS, POOL DEPLETION, GLOBAL CONTEXT CAUSES AND PAID/TICKETED REUSE REMAINING | `docs/geometric-cleaning.md` |
+| GC5 | Clean-host endpoint theorem | OPEN; BOUNDED PHYSICAL/LINE INCIDENCE AND DENSE LINE-BLOCKER TOPOLOGY ARE EXPLICIT, WITH INITIAL SUPPORT COUNTS, POOL DEPLETION, LATENT-TO-PAID SECANT CONVERSION, GLOBAL CONTEXT CAUSES AND TICKETED REUSE REMAINING | `docs/geometric-cleaning.md` |
 
 No row in this file upgrades the global conjecture.
