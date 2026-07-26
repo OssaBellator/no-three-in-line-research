@@ -14,6 +14,7 @@ This index is branch-specific. The shared proved inputs remain documented on `ma
 | GC2c–GC2f | Weighted line-blocked partners route to one role-pure current-anchor star or an endpoint-disjoint secant matching retaining `1/[2(2Delta-1)]` of the weight | PROVED | `docs/geometric-cleaning-line-blocker-router.md` |
 | GC2g–GC2j | Incidence-resolved correction gain pays at least a `1/r` fraction on current factors; paid stars/matchings recur only through ledger growth or executable chargeback | PROVED; LATENT USE REQUIRES THE SOURCE-PAYMENT CONTRACT | `docs/geometric-cleaning-paid-secant-chargeback.md` |
 | GC2k–GC2n | A dangerous cross-cell secant line avoids both removed cells, so direct same-line payment is impossible; any valid transfer must use a different destroyed factor with bounded source congestion | PROVED; PAYMENT AFTER A CROSS-LINE SOURCE MAP | `docs/geometric-cleaning-source-transfer-wall.md` |
+| GC2o–GC2r | Partner-private destroyed factors have reuse at most their rank and give automatic `r*kappa`-congestion payment; failure localizes to source-free, target-common or private-underweight mass | PROVED UNDER THE LOCAL DOMINANCE PARAMETER `kappa` | `docs/geometric-cleaning-partner-private-source-transfer.md` |
 | GC3a | Paid partner consumption bounds total pool depletion | PROVED | `docs/geometric-cleaning-budget-and-wall.md` |
 | GC3b | Paid incidence bounds creation of exceptional anchors | PROVED | `docs/geometric-cleaning-load-accounting.md` |
 | GC3c–GC3d | Pair-shadow threshold crossings equal new-cell pair incidence and admit a margin/reuse charging bound | PROVED | `docs/geometric-cleaning-pool-and-shadow-stability.md` |
@@ -33,6 +34,6 @@ This index is branch-specific. The shared proved inputs remain documented on `ma
 | GC4k | A Hall-deficient paid incidence contains a same-label compatible fan or a conflict overload | PROVED | `docs/geometric-cleaning-anchor-link.md` |
 | GC4l | A weighted deficient fibre retains at least `1/(T(Γ+1))` of its star weight in one compatible role class, unless it has degree greater than `Γ` | PROVED | `docs/geometric-cleaning-weighted-labelled-fan.md` |
 | GC5a–GC5c | Near-complete clone local load or dense two-layer global triple mass gives an exact all-`n` endpoint; endpoint failure returns explicit hole/load/mass witnesses | PROVED | `docs/geometric-cleaning-all-n-endpoint-router.md` |
-| GC5 | Clean-host endpoint theorem | OPEN; THE SOURCE-TRANSFER GAP IS NOW A BOUNDED-CONGESTION CROSS-LINE INCIDENCE PROBLEM, WITH POOL DEPLETION, GLOBAL CONTEXT CAUSES AND LOCAL SUPERREGULAR RESAMPLING ALSO REMAINING | `docs/geometric-cleaning.md` |
+| GC5 | Clean-host endpoint theorem | OPEN; PARTNER-PRIVATE LATENT SOURCES NOW PAY WITH RANK-CONTROLLED CONGESTION, WITH SOURCE-FREE, TARGET-COMMON AND PRIVATE-UNDERWEIGHT RESIDUALS, POOL DEPLETION, GLOBAL CONTEXT CAUSES AND LOCAL SUPERREGULAR RESAMPLING REMAINING | `docs/geometric-cleaning.md` |
 
 No row in this file upgrades the global conjecture.
