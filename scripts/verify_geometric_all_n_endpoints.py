@@ -96,7 +96,6 @@ def verify_host(size: int, holes: frozenset[Cell], counts: Counter[str]) -> None
     for triple in real_triples:
         for layers in product((0, 1), repeat=3):
             labelled = tuple(sorted((layers[index],) + triple[index] for index in range(3)))
-            # Global compatibility requires distinct rows and columns in each layer.
             compatible = True
             for layer in (0, 1):
                 layer_cells = [(row, col) for assigned, row, col in labelled if assigned == layer]
@@ -123,11 +122,30 @@ def verify_host(size: int, holes: frozenset[Cell], counts: Counter[str]) -> None
     counts["states"] += len(omega)
 
 
+def verify_complete_order_six_rank_three(counts: Counter[str]) -> None:
+    """Exercise the first nonvacuous rank-three switching denominator."""
+    size = 6
+    omega = host_states(size, frozenset())
+    assert len(omega) == 190_800
+    state_edges = [state_labelled_edges(state) for state in omega]
+    triple = ((0, 0), (1, 1), (2, 2))
+    assert collinear(*triple)
+    lower = size - 3
+    denominator = falling(lower + 1, 3)
+    assert denominator == 24
+    for layers in product((0, 1), repeat=3):
+        labelled = tuple(sorted((layers[index],) + triple[index] for index in range(3)))
+        multiplicity = sum(set(labelled).issubset(edges) for edges in state_edges)
+        assert multiplicity * denominator <= len(omega)
+        counts["order-six rank-three samples"] += 1
+
+
 def main() -> None:
     counts: Counter[str] = Counter()
     for size in range(3, 6):
         for holes in host_samples(size):
             verify_host(size, holes, counts)
+    verify_complete_order_six_rank_three(counts)
     print("GC5a--GC5c all-n endpoint audit passed")
     for name in sorted(counts):
         print(f"  {name}: {counts[name]:,}")
