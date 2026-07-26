@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Finite checks for CMR1094--CMR1101."""
 
-from itertools import permutations, product
+from itertools import permutations, product as cartesian_product
 from math import factorial
 import random
 
@@ -28,8 +28,6 @@ def check_minimum_restriction():
             values = {state: rng.randint(0, 30) for state in family}
             minimum = min(values.values())
             anchor = next(state for state in family if values[state] == minimum)
-            # An arbitrary finite class label containing the anchor models its
-            # realized routing skeleton.
             labels = {state: rng.randint(0, max(0, side - 1)) for state in family}
             anchor_label = labels[anchor]
             restricted = {state for state in family if labels[state] == anchor_label}
@@ -37,6 +35,13 @@ def check_minimum_restriction():
             assert min(values[state] for state in restricted) == minimum
             checked += 1
     return checked
+
+
+def multiply(values):
+    result = 1
+    for value in values:
+        result *= value
+    return result
 
 
 def routed_product(child_sizes):
@@ -47,23 +52,19 @@ def routed_product(child_sizes):
         offsets.append(total)
         total += size
     host = set()
-    factors = []
-    for offset, size in zip(offsets, child_sizes):
-        vertices = range(offset, offset + size)
-        child_host = {(x, y) for x in vertices for y in vertices}
-        host.update(child_host)
-        factors.append(perfect_matchings(total, child_host) if size == total else None)
-    # Enumerate local permutations directly, then shift them.
     local_families = []
     for offset, size in zip(offsets, child_sizes):
-        local = {
-            frozenset((offset + i, offset + pi[i]) for i in range(size))
-            for pi in permutations(range(size))
-        }
-        local_families.append(local)
+        vertices = range(offset, offset + size)
+        host.update((x, y) for x in vertices for y in vertices)
+        local_families.append(
+            {
+                frozenset((offset + i, offset + pi[i]) for i in range(size))
+                for pi in permutations(range(size))
+            }
+        )
     expected = {
         frozenset().union(*states)
-        for states in product(*local_families)
+        for states in cartesian_product(*local_families)
     }
     actual = perfect_matchings(total, host)
     return actual, expected
@@ -89,16 +90,9 @@ def check_exact_products_and_strict_children():
             if total <= 7 and max(child_sizes) <= 5:
                 actual, expected = routed_product(child_sizes)
                 assert actual == expected
-                assert len(actual) == product(factorial(size) for size in child_sizes)
+                assert len(actual) == multiply(factorial(size) for size in child_sizes)
                 product_cases += 1
     return product_cases, strict_cases
-
-
-def product(values):
-    result = 1
-    for value in values:
-        result *= value
-    return result
 
 
 def host_stages(side):
