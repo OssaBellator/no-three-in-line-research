@@ -1,0 +1,23 @@
+{
+  "m": 100000000000000000000,
+  "delta": 0.10,
+  "cases": [
+    {
+      "name": "free",
+      "kind": "free_star",
+      "degree": 4000000000
+    },
+    {
+      "name": "captive",
+      "kind": "captive_star",
+      "degree": 4000000000,
+      "puncture_host": true,
+      "free_partner_bank": 0
+    },
+    {
+      "name": "bank",
+      "kind": "resource_bank",
+      "size": 30000000000
+    }
+  ]
+}
