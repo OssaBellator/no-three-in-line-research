@@ -17,7 +17,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1541.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1549.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -115,7 +115,7 @@ The resulting response creates no new line-local collateral.  For a CMR1461
 owner-labelled loaded line, the same-owner, same-line offspring coordinate has
 policy coefficient zero.
 
-## Exact and uniform line-clean rows
+## Exact line-clean rook row
 
 Let `X` be the deleted line trace and put
 
@@ -148,36 +148,77 @@ and for every compatible rank-`r` prescription `P`,
 \frac{N_{d-r}(F/P)}{N_d(F)}.
 \]
 
-CMR1534--CMR1541 add one host-uniform denominator.  The allowed graph contains
-a spanning `(d-3)`-regular subgraph, so
+Every remaining off-line collateral row is therefore an explicit rational
+component-rook dot product.
+
+## Uniform and sharpened line-clean factors
+
+CMR1534--CMR1541 show that every line-clean allowed graph contains a spanning
+`(d-3)`-regular subgraph.  Hence
+
+\[
+N_d(F)
+\ge
+ d!\left(\frac{d-3}{d}\right)^d
+\]
+
+and every rank-one through rank-three prescription satisfies
+
+\[
+\Pr(P\subseteq R)
+\le
+\frac{(d/(d-3))^d}{(d)_r}.
+\]
+
+CMR1542--CMR1549 attach an exact binary factor signature to the trace.  Put
+
+\[
+Y=X\cup\{e\}.
+\]
+
+The host contains a spanning `(d-2)`-factor exactly when:
+
+1. `Y` is a partial matching, equivalently `X` uses neither endpoint of `e`;
+2. `Y` does not leave one unmatched source and target joined by the opposite
+   matching.
+
+In that strong class,
 
 \[
 \boxed{
 N_d(F)
 \ge
- d!\left(\frac{d-3}{d}\right)^d.
+ d!\left(\frac{d-2}{d}\right)^d
 }
 \]
 
-Put
-
-\[
-\kappa_d^{\rm line}
-=
-\left(\frac d{d-3}\right)^d.
-\]
-
-Then every rank-one through rank-three prescription satisfies
+and
 
 \[
 \boxed{
 \Pr(P\subseteq R)
 \le
-\frac{\kappa_d^{\rm line}}{(d)_r}.
+\frac{(d/(d-2))^d}{(d)_r}.
 }
 \]
 
-If `V_r^{off}` counts corrected off-line rank-`r` candidates and
+The strong class fails only through target-endpoint overlap or one singleton
+opposite-edge remainder.  Those weak traces retain the `(d-3)` bound.  The
+exact component rook ratio remains available in both classes.
+
+Define
+
+\[
+q_X=
+\begin{cases}
+ d-2,&\text{strong trace},\\
+ d-3,&\text{weak trace},
+\end{cases}
+\qquad
+\kappa_d(X,e)=\left(\frac d{q_X}\right)^d.
+\]
+
+If
 
 \[
 \mathcal C_{off}^{line}
@@ -195,14 +236,14 @@ then
 \boxed{
 \mathbb E N_{off}(R)
 \le
-\kappa_d^{line}\mathcal C_{off}^{line}.
+\kappa_d(X,e)\mathcal C_{off}^{line}.
 }
 \]
 
-For `b` unavailable line-clean edges and current potential `m`,
+For `b` unavailable allowed edges and current potential `m`,
 
 \[
-\kappa_d^{line}
+\kappa_d(X,e)
 \left[
 \mathcal C_{off}^{line}
 +
@@ -214,9 +255,8 @@ D_S(e)
 
 forces one feasible strict-improvement response.
 
-The first line-clean numerical frontier is therefore explicit.  What remains is
-to prove this envelope, or the sharper exact component row, beats destroyed
-credit in every recurrent geometric class.
+The line-clean numerical frontier is now a two-signature destroyed-credit
+comparison, with exact component sharpening reserved for exceptional classes.
 
 ## Repeated-token atomic compression
 
@@ -257,9 +297,9 @@ Fresh token-edge stock and successful absorption are not extra recurrent rows.
 
 ## Genuine current frontier
 
-1. **Line-clean credit comparison.**  Prove the explicit uniform envelope, or a
-   sharper exact component-signature row, is below destroyed parent credit in
-   every recurrent geometric class.
+1. **Strong/weak line-clean comparison.**  Prove the appropriate two-level
+   envelope, or a sharper exact component row, is below destroyed parent credit
+   in every recurrent geometric class.
 2. **Atomic token coefficients.**  Calibrate edge return, persistent paid-pair
    selection and fixed trace incidence against destroyed parent credit.
 3. **Root and fixed-interface rows.**  Certify recurrent root-channel,
@@ -288,17 +328,17 @@ Fresh token-edge stock and successful absorption are not extra recurrent rows.
 - A loaded response witnessing a large expectation need not itself be the
   minimum response.  Line cleaning removes its same-line coordinate but does
   not silently certify all off-line collateral.
-- The uniform line-clean envelope is a safe domination of the exact rook row;
-  it is not yet proved sharp enough for every host.
+- The two line-clean permanent envelopes are safe dominations of the exact rook
+  row; neither is yet proved sharp enough for every host.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1541**, exact response probabilities,
+There is no complete proof.  Through **CMR1549**, exact response probabilities,
 owner weights, packed translations, private resources, transfer gluing, root
 channels, owner-disjoint packed/loaded bookkeeping, target-safe line cleaning,
-atomic repeated-token compression, exact line-clean rook rows and a uniform
-line-clean permanent envelope are proved.
+atomic repeated-token compression, exact line-clean rook rows, a universal
+line-clean factor, and the exact strong/weak factor signature are proved.
 
-The remaining obstruction is numerical: compare the explicit line-clean and
+The remaining obstruction is numerical: compare the two-level line-clean and
 atomic recurrent rows with destroyed credit, then complete the host-uniform
 quotient and CRT assembly.
