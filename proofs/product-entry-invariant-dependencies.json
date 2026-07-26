@@ -1,7 +1,7 @@
 {
-  "range": "PX397-PX532",
+  "range": "PX397-PX536",
   "root": "PX492",
-  "frontier_root": "PX532",
+  "frontier_root": "PX536",
   "nodes": {
     "PX397-403": {"document": "docs/153-px63-one-hit-derangement-entry.md", "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"], "move_space": "rectangle_label", "status": "entry_audited"},
     "PX404-410": {"document": "docs/154-px64-line-cap-return-depth.md", "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"], "move_space": "arithmetic_only", "status": "line_cap_audited"},
@@ -29,7 +29,8 @@
     "PX515-518": {"document": "docs/176-side-seven-radius-one-coordinate-csp.md", "depends_on": ["PX504-507", "PX512-514"], "move_space": "arithmetic_only", "status": "side_seven_radius_one_obstruction"},
     "PX519-522": {"document": "docs/177-side-seven-radius-two-selector-layer.md", "depends_on": ["PX512-514", "PX515-518"], "move_space": "arithmetic_only", "status": "side_seven_radius_two_selector_layer"},
     "PX523-528": {"document": "docs/178-side-seven-radius-two-support-eight-ten-csp.md", "depends_on": ["PX515-518", "PX519-522"], "move_space": "arithmetic_only", "status": "side_seven_radius_two_support_obstruction"},
-    "PX529-532": {"document": "docs/179-side-seven-radius-two-support-twelve-csp.md", "depends_on": ["PX523-528"], "move_space": "arithmetic_only", "status": "side_seven_radius_two_support_twelve_obstruction"}
+    "PX529-532": {"document": "docs/179-side-seven-radius-two-support-twelve-csp.md", "depends_on": ["PX523-528"], "move_space": "arithmetic_only", "status": "side_seven_radius_two_support_twelve_obstruction"},
+    "PX533-536": {"document": "docs/180-side-seven-radius-two-support-fourteen-csp.md", "depends_on": ["PX529-532"], "move_space": "arithmetic_only", "status": "side_seven_radius_two_support_fourteen_obstruction"}
   },
   "safety_rules": {
     "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
@@ -74,8 +75,10 @@
       "side_seven_radius_two_support_ten_nodes": 1326750836,
       "side_seven_radius_two_support_twelve_count": 7396,
       "side_seven_radius_two_support_twelve_nodes": 5461931168,
-      "side_seven_distance_two_support_lower_bound": 14,
-      "side_seven_radius_two_support_fourteen_count": 9312
+      "side_seven_radius_two_support_fourteen_count": 9312,
+      "side_seven_radius_two_support_fourteen_nodes": 6712968934,
+      "side_seven_distance_two_support_lower_bound": 16,
+      "side_seven_radius_two_support_sixteen_count": 26684
     }
   }
 }
