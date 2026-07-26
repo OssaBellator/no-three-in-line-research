@@ -1,0 +1,13 @@
+{
+  "side_length": 1000000,
+  "macro_count": 5,
+  "pool_size": 120000,
+  "macro_width": 300,
+  "additional_internal_reserved": 25000,
+  "helper_constant": 3,
+  "marked_blocks": [
+    120,
+    80,
+    40
+  ]
+}
