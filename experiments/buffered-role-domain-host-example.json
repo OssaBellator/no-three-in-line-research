@@ -1,0 +1,6 @@
+{
+  "marked_size": 12,
+  "helper_reservoir": 144,
+  "domain_loss_constant": 3,
+  "cyclic_exclusion_step": 7
+}
