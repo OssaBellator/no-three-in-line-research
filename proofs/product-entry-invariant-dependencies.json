@@ -1,7 +1,7 @@
 {
-  "range": "PX397-PX514",
+  "range": "PX397-PX518",
   "root": "PX492",
-  "frontier_root": "PX514",
+  "frontier_root": "PX518",
   "nodes": {
     "PX397-403": {"document": "docs/153-px63-one-hit-derangement-entry.md", "depends_on": ["PX43", "PX44", "PX61", "PX63", "PX196", "PX200"], "move_space": "rectangle_label", "status": "entry_audited"},
     "PX404-410": {"document": "docs/154-px64-line-cap-return-depth.md", "depends_on": ["PX64", "PX361", "PX363", "PX366", "PX368", "PX386", "PX387"], "move_space": "arithmetic_only", "status": "line_cap_audited"},
@@ -25,7 +25,8 @@
     "PX501-503": {"document": "docs/172-side-seven-local-minimum-transposition-boxes.md", "depends_on": ["PX496-498", "PX499-500"], "move_space": "arithmetic_only", "status": "side_seven_local_transposition_barrier"},
     "PX504-507": {"document": "docs/173-side-seven-selector-coordinate-orbit-csp.md", "depends_on": ["PX499-500", "PX501-503"], "move_space": "arithmetic_only", "status": "side_seven_coordinate_orbit_barrier"},
     "PX508-511": {"document": "docs/174-side-seven-cross-half-obstruction-profile.md", "depends_on": ["PX504-507"], "move_space": "arithmetic_only", "status": "side_seven_cross_half_obstruction"},
-    "PX512-514": {"document": "docs/175-side-seven-selector-cycle-graph.md", "depends_on": ["PX500", "PX508-511"], "move_space": "arithmetic_only", "status": "side_seven_selector_cycle_graph"}
+    "PX512-514": {"document": "docs/175-side-seven-selector-cycle-graph.md", "depends_on": ["PX500", "PX508-511"], "move_space": "arithmetic_only", "status": "side_seven_selector_cycle_graph"},
+    "PX515-518": {"document": "docs/176-side-seven-radius-one-coordinate-csp.md", "depends_on": ["PX504-507", "PX512-514"], "move_space": "arithmetic_only", "status": "side_seven_radius_one_obstruction"}
   },
   "safety_rules": {
     "allowed_terminal_move_spaces": ["rectangle_label", "arithmetic_only"],
@@ -60,7 +61,9 @@
       "side_seven_half_compatible_pairs": 806548,
       "side_seven_selector_count_total": 9991170,
       "side_seven_selector_cycle_diameter_bound": 14,
-      "side_seven_radius_one_neighbours_total": 1748
+      "side_seven_radius_one_neighbours_total": 1748,
+      "side_seven_radius_one_csp_nodes_total": 1201997452,
+      "side_seven_certified_selector_distance_lower_bound": 2
     }
   }
 }
