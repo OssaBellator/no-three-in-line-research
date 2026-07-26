@@ -48,12 +48,8 @@ def collinear(first, second, third):
     return line_key(first, second) == line_key(first, third)
 
 
-def opposite_line_counts(opposite):
-    counts = {}
-    for first, second in combinations(opposite, 2):
-        key = line_key(first, second)
-        counts.setdefault(key, set()).update((first, second))
-    return {key: len(cells) for key, cells in counts.items()}
+def opposite_cells_on_line(first, second, opposite):
+    return sum(collinear(first, second, cell) for cell in opposite)
 
 
 def rank_one_weight(edge, opposite, old_matching):
@@ -62,12 +58,12 @@ def rank_one_weight(edge, opposite, old_matching):
     return sum(collinear(first, second, edge) for first, second in combinations(opposite, 2))
 
 
-def tau2(edge, state, opposite_counts, old_matching):
+def tau2(edge, state, opposite, old_matching):
     total = 0
     for other in state - {edge}:
         if edge in old_matching and other in old_matching:
             continue
-        total += opposite_counts.get(line_key(edge, other), 0)
+        total += opposite_cells_on_line(edge, other, opposite)
     return total
 
 
@@ -102,7 +98,6 @@ def check_exact_local_identities_and_envelopes():
     triples = 0
     for side in range(4, 7):
         opposite = matching(tuple(range(side)))
-        opposite_counts = opposite_line_counts(opposite)
         old_list = derangements(side)
         if side >= 5:
             old_list = rng.sample(old_list, min(12, len(old_list)))
@@ -131,7 +126,10 @@ def check_exact_local_identities_and_envelopes():
                 state_data = {}
                 for state in bank:
                     ranks = direct_new_ranks(opposite, old_matching, state)
-                    local2 = {edge: tau2(edge, state, opposite_counts, old_matching) for edge in state}
+                    local2 = {
+                        edge: tau2(edge, state, opposite, old_matching)
+                        for edge in state
+                    }
                     local3 = {edge: tau3(edge, state, old_matching) for edge in state}
                     assert ranks[1] == sum(weights[edge] for edge in state)
                     assert 2 * ranks[2] == sum(local2.values())
@@ -147,11 +145,19 @@ def check_exact_local_identities_and_envelopes():
                     for edge in graph
                 }
                 row_bound = sum(
-                    max(envelope[(row, column)] for column in range(side) if (row, column) in graph)
+                    max(
+                        envelope[(row, column)]
+                        for column in range(side)
+                        if (row, column) in graph
+                    )
                     for row in range(side)
                 )
                 column_bound = sum(
-                    max(envelope[(row, column)] for row in range(side) if (row, column) in graph)
+                    max(
+                        envelope[(row, column)]
+                        for row in range(side)
+                        if (row, column) in graph
+                    )
                     for column in range(side)
                 )
                 global_bound = min(row_bound, column_bound)
@@ -170,7 +176,6 @@ def check_rank_two_assignment_representation():
     checked = 0
     for side in range(4, 8):
         opposite = matching(tuple(range(side)))
-        opposite_counts = opposite_line_counts(opposite)
         old_list = derangements(side)
         if side >= 6:
             old_list = rng.sample(old_list, min(20, len(old_list)))
@@ -188,14 +193,17 @@ def check_rank_two_assignment_representation():
             graph = set().union(*bank)
             for edge in rng.sample(tuple(graph), min(8, len(graph))):
                 conditioned = [state for state in bank if edge in state]
-                direct_max = max(tau2(edge, state, opposite_counts, old_matching) for state in conditioned)
+                direct_max = max(
+                    tau2(edge, state, opposite, old_matching)
+                    for state in conditioned
+                )
                 residual_weights = []
                 for state in conditioned:
                     residual_weights.append(
                         sum(
                             0
                             if edge in old_matching and other in old_matching
-                            else opposite_counts.get(line_key(edge, other), 0)
+                            else opposite_cells_on_line(edge, other, opposite)
                             for other in state - {edge}
                         )
                     )
