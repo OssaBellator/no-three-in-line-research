@@ -78,7 +78,8 @@ t<=O(s),
 N=Theta(s^2),
 ```
 
-all gap domains have size `(1-o(1))N`.
+all gap domains have size `(1-o(1))N` and each role omits at most `kappa s` helpers
+for one fixed constant `kappa`.
 
 ## 3. Deterministic distinct-helper assignment
 
@@ -102,13 +103,16 @@ For bounded `t`, use the same argument with a fixed finite padding reservoir.  A
 fixed-anchor star (`t=1`) is therefore easier than the target bank case even when it
 carries `Theta(s)` target lines.
 
+This theorem handles target-line avoidance alone.  Fusion with the current support
+table uses the buffered role-domain host PP3awj--PP3awp.
+
 ## 4. Fusion with the current restart support table
 
 Target-line avoidance is role-specific domain pruning, not an additional global
-hypergraph obstruction.  After PP3avx, expose the ordinary current restart-support
-table on the surviving near-full helper domains.  It contains source validity,
-candidate-cell insertion, unchanged-controller anchor insertion, and new-controller
-activation outside the targeted line family.
+hypergraph obstruction.  On the surviving role domains, expose the ordinary current
+restart-support table.  It contains source validity, candidate-cell insertion,
+unchanged-controller anchor insertion, and new-controller activation outside the
+targeted line family.
 
 ### Theorem PP3avy -- PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES
 
@@ -123,11 +127,11 @@ exactly one of the following occurs.
 
 #### Proof
 
-PP3avw leaves `Theta(s^2)` values in every role domain.  The rank-three critical
-support theorem and its role-domain version apply with unchanged constants.  The
-independent branch gives item 1.  Target-line constraints have already been removed
-deterministically, so any dense-support branch comes from the current source or
-potential table and is converted by PP3aug and PP3aqo--PP3aqt. ∎
+PP3avw gives role domains omitting at most `kappa s` helpers from a quadratic
+reservoir.  Apply the buffered role-domain theorem PP3awo to the complete rank-three
+restart-support table.  Its role-respecting independent branch gives item 1.  Its
+dense branch gives an `Omega(s)` canonical current structure by PP3awm, which is
+converted and paid by PP3aug and PP3aqo--PP3aqt. ∎
 
 This separates future-target clearing from current-potential payment.
 
@@ -187,12 +191,14 @@ has strictly fewer witnesses in the cleared resource class or enters item 2.
 
 ### Corollary PP3awb -- PROVED / CONDITIONAL ESTABLISHED CONVERSION INTERFACES
 
-The anchor-clearing interface in PP3avt and PP3avu is discharged by PP3avv--PP3awa.
+The anchor-clearing interface in PP3avt and PP3avu is discharged by
+PP3avv--PP3awa together with the buffered role-domain theorem PP3awj--PP3awp.
 Therefore the fixed-infrastructure termination theorem PP3avj--PP3avk no longer has a
 separate same-slot activation hypothesis.
 
-The only remaining work inside the focused chain is a dependency audit ensuring that
-the cited current canonical conversion theorems are invoked with pool-compatible
-block refinements and without circular reliance on PP3avk.
+The remaining work inside the focused chain is a hypothesis audit ensuring that the
+cited current canonical conversion theorems preserve designated credit and
+source-valid marked endpoints under permanent-block refinement, without circular
+reliance on PP3avk.
 
 The no-three-in-line conjecture remains unproved.
