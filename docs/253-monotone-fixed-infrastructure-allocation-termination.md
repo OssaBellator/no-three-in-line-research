@@ -1,26 +1,30 @@
 # Monotone fixed-infrastructure allocation termination
 
-PP3aux--PP3avf replace pairing-dependent allocation attempts by one permanent
-coordinate-label universe and one nonnegative integer potential `Omega`.  This chapter
-feeds that invariant back into the random two-sided allocation theorem.
+PP3aux--PP3avf provide the restart rule needed after a paid source repair.  The slab
+coordinates, numerical labels, and candidate-cell universe remain fixed.  Controller
+pairings may evolve inside the fixed pool rectangles, but every newly activated
+same-slot entry is required to start with zero anchor mass.
 
-The result is a finite termination theorem: keep the slab coordinates and numerical
-labels fixed forever.  After every failed allocation, spend the extracted credited
-structure by a pool-compatible universal repair.  The controller pairings may evolve,
-but the infrastructure and potential do not.  Since every failed attempt strictly
-decreases `Omega`, some attempt must install the patch.
+The current numerical potential is
+
+```text
+Theta_E(S)=Xi_cell(S)+Lambda_E(S),
+```
+
+where `E` is the current pool matching.  Although the active anchor entry set changes,
+PP3auz--PP3ava compare consecutive values exactly: old entries may disappear, new
+entries contribute zero at activation, and all candidate-cell insertion is excluded.
+Every failed allocation therefore gives a strict decrease of a nonnegative integer.
 
 ## 1. Permanent slab infrastructure
 
-Fix once and for all:
+Fix once and for all
 
 ```text
 (X_i,Y_i)_(i in [M]),
 Aset,
 Bset,
-V_cell,
-Lambda,
-Omega=Xi_cell+Lambda.
+V_cell.
 ```
 
 Assume the current distinguished source layer has the form
@@ -45,12 +49,12 @@ to another permanent-infrastructure state.
 Each block trade is a tied permutation inside one current matching block and fixes all
 other blocks.  Hence every `E_i` remains a perfect matching between the same
 `X_i,Y_i`, while `E_*` and `Q` retain their coordinate sets.  Source validity and
-saturation are supplied by the complete support cycle. ∎
+saturation are supplied by the complete restart-support cycle. ∎
 
 ## 2. Uniform completion energies
 
 The patch-only external event table depends only on the fixed slab coordinates,
-numerical labels, and the proposed patch points.  The ordinary two-slot source-anchor
+numerical labels, and proposed patch points.  The ordinary two-slot source-anchor
 estimate PP3hk uses only:
 
 1. two source points in every old row and column;
@@ -70,23 +74,23 @@ Pool-compatible repairs do not change the slab or label geometry, so the patch-o
 relations are unchanged.  Every repaired source is still saturated, so the proof of
 PP3hg--PP3hk applies verbatim to the current source. ∎
 
-Thus every restart satisfies the same completion-energy hypotheses as the first
-attempt.
+Thus every attempt satisfies the same completion-energy hypotheses as the first.
 
-## 3. Allocation failure produces universal credit
+## 3. Allocation failure produces current potential credit
 
-Perform the controller-aware random two-sided allocation using the *current* pool
-matchings `E_i`, but the fixed labels `Aset,Bset`.
+Perform the controller-aware random two-sided allocation using the current pool
+matchings `E_i` and the fixed labels `Aset,Bset`.
 
 ### Proposition PP3avi -- PROVED / CONDITIONAL ESTABLISHED CONVERSION INTERFACES
 
 If the allocation does not install the macro patch, it produces a marked source set
-`D`, `|D|<=W`, carrying positive designated credit in the fixed potential `Omega`.
+`D`, `|D|<=W`, carrying positive designated credit in the current potential
+`Theta_E(S)`.
 
 More precisely:
 
 1. a movement/refill blocker star or bank carries `Xi_cell` credit;
-2. a same-slot anchor star or endpoint bank carries `Lambda` credit;
+2. a same-slot anchor star or endpoint bank carries `Lambda_E` credit;
 3. fixed-macro defect and fixed-label score masses refine to one of these two types;
 4. every terminal source pencil converts to one of these credited types; and
 5. every insertion pencil enters the established bounded cancellation chain.
@@ -94,37 +98,41 @@ More precisely:
 #### Proof
 
 Apply PP3aur--PP3aut to the current attempt.  Candidate-cell defects are incidences in
-`V_cell`, hence in `Xi_cell`.  Every actual same-slot anchor tuple uses one current
-edge `(x,y) in E_i`, so PP3auy places it in the latent anchor universe.  The remaining
-refinements and terminal conversions are PP3aug and PP3aqo--PP3aqt. ∎
+`V_cell`, hence in `Xi_cell`.  Same-slot anchor defects are exactly active incidences
+in `Lambda_E`.  The remaining refinements and terminal conversions are PP3aug and
+PP3aqo--PP3aqt. ∎
 
-The credit is measured in the same `Omega` before and after every attempt.
+No credit is transferred to an inactive latent anchor entry.
 
 ## 4. One permanent-infrastructure step
 
 ### Theorem PP3avj -- PROVED / CONDITIONAL ESTABLISHED CONVERSION INTERFACES
 
-From every permanent-infrastructure state, exactly one of the following occurs.
+From every permanent-infrastructure state `(S,E)`, exactly one of the following
+occurs.
 
 1. The random two-sided controller-aware allocation installs the simultaneous
    saturated no-three macro patch.
 2. A finite pool-compatible repair package produces another
-   permanent-infrastructure state `S'` satisfying
+   permanent-infrastructure state `(S',E')` satisfying
 
    ```text
-   Omega(S')<Omega(S).
+   Theta_(E')(S')<Theta_E(S).
    ```
+
+Every newly activated same-slot entry in item 2 has zero anchor mass at `S'`.
 
 #### Proof
 
 The fixed-attempt theorem PP3auu and the uniform budgets PP3avh give either successful
-allocation or the credited structure of PP3avi.  Apply the universal pool-compatible
-paid theorem PP3avd.  Its direct branch strictly decreases `Omega` and preserves the
-infrastructure by PP3avg.  Its dense-support branch belongs to the already closed
-canonical conversion chain and terminates in the same direct branch. ∎
+allocation or the credited structure of PP3avi.  Apply PP3avd.  Its independent
+branch has zero candidate-cell insertion and zero anchor activation, strictly
+reduces the current potential, and preserves the infrastructure by PP3avg.  Its
+dense-support branch belongs to the established canonical conversion chain and
+terminates in the same paid branch. ∎
 
-No pool, row set, column set, numerical label, or candidate universe is replaced in
-item 2.
+No pool coordinate set, row set, numerical label, or candidate-cell universe is
+replaced.
 
 ## 5. Finite monotone termination
 
@@ -135,13 +143,13 @@ attempt.  After finitely many repairs, an allocation attempt installs the macro 
 
 #### Proof
 
-`Omega` is a nonnegative integer by PP3auz.  Every failed attempt is followed by a
-strict decrease.  Therefore failed attempts cannot occur indefinitely.  PP3avj has no
-third outcome, so the first attempt after the last possible decrease must be the
-successful allocation branch. ∎
+For every state `(S,E)`, `Theta_E(S)` is a nonnegative integer by PP3auy.  PP3avj
+compares consecutive values and makes each failed attempt strictly decrease that
+integer.  Therefore failed attempts cannot occur indefinitely.  Since PP3avj has no
+third outcome, a later attempt must take the successful allocation branch. ∎
 
-An explicit upper bound on the number of repair packages is `Omega(S_0)`, although no
-quantitative bound is needed for existence.
+An explicit upper bound on the number of repair packages is the initial value
+`Theta_(E_0)(S_0)`.
 
 ## 6. Slab-optimal completion theorem
 
@@ -173,8 +181,7 @@ The slab pools exist by PP3gr.  The complete fixed infrastructure and helper
 reservoirs are supplied by PP3auj--PP3aup.  Apply PP3avk.  A successful allocation
 completes by PP3ho, PP3hk, and the patch-only energy theorem. ∎
 
-The statement is conditional only on the already named conversion and local-host
-interfaces; restart comparability itself is no longer an additional assumption.
+Restart comparability itself is no longer an additional hypothesis.
 
 ## 7. Revised focused frontier
 
@@ -187,15 +194,15 @@ independent frontier:
 2. changing active safe domains after a paid repair;
 3. reassigning ownership or label matchings;
 4. replenishment of same-slot anchor mass;
-5. addition of new candidate cells; or
+5. addition of positive-mass candidate entries; or
 6. an unbounded sequence of failed fixed attempts.
 
-All attempts are compared by one permanent potential `Omega`, and every failure
-strictly decreases it.
+All attempts use one fixed coordinate-label infrastructure.  New anchor entries are
+activated only at zero mass, and every failed attempt strictly decreases the current
+nonnegative integer potential.
 
-The remaining work is no longer a new combinatorial frontier inside this chain.  It is
-a proof-audit and assembly task: verify that every previously conditional conversion
-interface used in PP3avi and PP3avd has been discharged with matching hypotheses, then
+The remaining work is a proof-audit and assembly task: verify that every conditional
+conversion interface used in PP3avi and PP3avd has matching hypotheses, and then
 connect the slab patch theorem to the global prime-gap induction.
 
 The no-three-in-line conjecture remains unproved.
