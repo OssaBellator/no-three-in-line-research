@@ -1,0 +1,11 @@
+{
+  "W": 100,
+  "R": 10000,
+  "T": 1000,
+  "delta": 0.20,
+  "h": 100,
+  "rho": 620,
+  "chi": 310,
+  "macro_refill_defect_mass": 900000,
+  "movement_anchor_row_mass": 340000
+}
