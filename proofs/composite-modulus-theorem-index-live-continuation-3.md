@@ -47,6 +47,7 @@ The authoritative live ledger is split across:
 | CMR1478--1485 | Exact-displacement path forest, half-mass endpoint-disjoint extraction, linear residual-blocker payment, private full-prefix token placement, heavy private-token versus dispersed-token alternatives, and the quantitative splice after carry routing | PROVED; random weighted forests, blocker tests, nonroot token systems and geometric packed-bank specialisations checked computationally | `docs/288-prime-power-exact-displacement-private-path-payment.md` |
 | CMR1486--1493 | Existing-mask versus fresh-private-mass dichotomy, exact host and monotone reserve stock, fresh-token alternative, augmented depth/resource transfer DAG, block triangularity, rational gluing, and the recurrent-core reduction | PROVED; random weighted masks, monotone resource episodes, transfer systems and rational gluing checks | `docs/289-prime-power-transfer-resource-triangularity.md` |
 | CMR1494--1501 | Root residue channels, deterministic quotient carry, lossless private channel extraction, residual blocker payment, injective quotient normalization, low-rank cross-child atoms, strict child-factor descent, and the prime-field terminal channel | PROVED; residue/carry, weighted channel, low-rank factor and child-side checks | `docs/290-prime-power-root-displacement-child-channels.md` |
+| CMR1502--1509 | Unit exact-displacement mass per owner, loaded-owner exclusion, unloaded private extraction, token and root-channel preservation, disjoint additive bookkeeping, quantitative routed splice, and the packed-versus-loaded endpoint | PROVED; random weighted owner exclusions and root-channel checks | `docs/291-prime-power-owner-disjoint-packed-loaded.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -69,13 +70,20 @@ carry, and becomes an anchored or cross-factor low-rank atom after selected
 root routing.  For `k>=2` the owner factor has strict side `p^(k-1)`; for
 `k=1` it is a side-one terminal/fixed-interface channel.
 
+CMR1502--CMR1509 close the overlap part of the packed-versus-loaded
+frontier.  A fixed displacement carries at most one unit of packing mass per
+owner.  Removing owners assigned to loaded-line execution either already
+produces many loaded owners or leaves a quantitatively large translated
+private family on disjoint owners.  The two currencies can therefore be added
+without inclusion-exclusion loss.
+
 The active frontier is now:
 
 1. construct rational/integer certificates for the genuinely recurrent cores:
    repeated absolute tokens, reused residual supports, recurrent root
-   channels/fixed interfaces, and the one-owner loaded-line alternative;
-2. compare the global packed/private currencies with destroyed parent credit
-   without double counting the loaded-line currency;
+   channels/fixed interfaces, and loaded-line owners;
+2. calibrate one unit of loaded-owner or private residual/token payment against
+   destroyed parent credit;
 3. prove the remaining thin residual and prime-field fixed-interface core
    certificates;
 4. export the recurrent-core inequalities as a host-uniform `Av<v`
