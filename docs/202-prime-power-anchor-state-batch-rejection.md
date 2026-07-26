@@ -1,24 +1,24 @@
-# Anchor-state batch rejection closes fixed-owner target churn
+# Anchor-state batch rejection gives a strong normalization branch
 
 CMR777--CMR784 reduce branch-wide returned-edge ancestry to finite fresh
 deletions, paid state/routing churn, or repeated physical restoration. At one
-fixed owner there is a stronger monotone response which does not need an a priori
-full-token return bound.
+fixed owner there is a strong monotone normalization response.
 
-Keep one feasible saturated two-layer state as an anchor. Every nonimproving
+Keep one feasible saturated two-layer state as an anchor. A nonimproving
 candidate which destroys the live target has a labelled entering set relative to
-the anchor. Delete that entire entering set from the matching hosts and retain
-the anchor. The candidate disappears, no inactive state becomes active, and at
-least two previously available labelled edges are removed. If all target-
-destroying states are exhausted, the physical target is unavoidable. Continue
-the same deletion pass against states which change one chosen labelled
-same-layer target pair. The pair then becomes fixed in every surviving state and
-contracts exactly.
+the anchor. Deleting that entire entering set preserves the anchor, removes the
+candidate, and deletes at least two currently available labelled edges.
+
+This operation is **branch-local**. It may also remove other untested states, so
+it is one rigorous structural subbranch rather than a completeness-preserving
+search of the original family. The exact completeness correction is CMR830--
+CMR837: the union of viable single-edge deletion children preserves every state
+except the rejected candidate.
 
 Fix one owner with two labelled layer hosts on a board of side `n`. Let
-`\mathcal F` be the nonempty family of feasible ordered, layer-disjoint saturated
-states under the current mask. Every state contains exactly `2n` labelled edges.
-Choose an anchor
+`\mathcal F` be the current nonempty family of feasible ordered, layer-disjoint
+saturated states. Every state contains exactly `2n` labelled edges. Choose an
+anchor
 
 \[
 S\in\mathcal F
@@ -30,11 +30,11 @@ and one physical target triple
 T\subseteq |S|,
 \]
 
-where `|S|` forgets the layer labels.
+where `|S|` forgets layer labels.
 
 ## 1. Distinct joint states have at least two entering edges
 
-For `S'\in\mathcal F`, define the labelled entering set relative to the anchor
+For `S'\in\mathcal F`, put
 
 \[
 A(S')=S'\setminus S.
@@ -45,23 +45,21 @@ A(S')=S'\setminus S.
 If `S'\ne S`, then
 
 \[
-\boxed{|A(S')|\ge2.}
+\boxed{|A(S')|\ge2,}
+\qquad
+\boxed{A(S')\cap S=\varnothing.}
 \]
-
-Moreover `A(S')` is disjoint from the anchor.
 
 ### Proof
 
 Some permutation layer differs between `S` and `S'`. The symmetric difference
-of two perfect matchings in that layer is a nonempty disjoint union of even
-alternating cycles. Hence that layer contributes at least two edges of
-`S'\setminus S`. Disjointness from `S` is definitional. ∎
-
-The bound remains valid if both layers change.
+of two perfect matchings in that layer is a nonempty union of even alternating
+cycles, so that layer contributes at least two edges of `S'\setminus S`.
+Disjointness is definitional. ∎
 
 ## 2. Entering-batch deletion preserves the anchor
 
-For a set `A` of labelled edges, put
+For a labelled edge set `A`, write
 
 \[
 \mathcal F-A
@@ -71,25 +69,23 @@ For a set `A` of labelled edges, put
 
 ### Theorem CMR786 -- PROVED
 
-For every candidate `S'\ne S`, deleting the complete entering batch `A(S')`
+For every candidate `S'\ne S`, deleting `A(S')`
 
-1. preserves the anchor `S` and hence leaves a nonempty feasible family;
+1. preserves the anchor and leaves a nonempty surviving family;
 2. removes `S'`;
-3. cannot activate any state or matching prescription which was inactive before
-   the deletion;
+3. cannot activate a previously inactive state or prescription;
 4. removes at least two currently available labelled edges.
 
 ### Proof
 
-CMR785 gives `A(S')\cap S=\varnothing`, so `S` survives. The candidate contains
-every edge of its entering set and therefore does not survive. Restricting a
-state family cannot create a state or an extendable prescription. Since `S'` was
-feasible under the current mask, none of its entering edges had been deleted
-earlier; CMR785 gives at least two new deletions. ∎
+The anchor avoids `A(S')`. The candidate contains the whole batch. Restricting a
+state family cannot create a state or extendable prescription. Every entering
+edge was available because `S'` was feasible, and CMR785 gives at least two. ∎
 
-This is a joint two-layer no-good cut, not a sequential rematching claim.
+The surviving family may be a proper subfamily of the union of all viable
+single-edge children from CMR831.
 
-## 3. Rejecting a nonimproving target-destroying candidate
+## 3. Canonical aggressive response to a target-destroying candidate
 
 Let `\Phi` be the real-triple potential. Call `S'` target-destroying when
 
@@ -99,25 +95,23 @@ T\not\subseteq |S'|.
 
 ### Theorem CMR787 -- PROVED
 
-For every feasible target-destroying candidate `S'`, the canonical scheduler uses
-one of the following actions.
+The aggressive anchor scheduler uses one of two actions.
 
-1. If `\Phi(S')<\Phi(S)`, accept `S'` and obtain strict potential improvement.
-2. If `\Phi(S')\ge\Phi(S)`, reject `S'`, delete `A(S')` by CMR786, and keep the
-   anchor `S` feasible with the original target `T` still selected.
+1. If `\Phi(S')<\Phi(S)`, accept `S'` and obtain strict improvement.
+2. If `\Phi(S')\ge\Phi(S)`, pass to the surviving branch
+   `\mathcal F-A(S')` and retain `S` and `T`.
 
 ### Proof
 
-The first branch is the desired potential endpoint. In the second branch CMR786
-preserves `S`; since `T\subseteq |S|`, the anchor and target remain available for
-the next search step. ∎
+The first action is the desired endpoint. The second is CMR786, and the target
+remains selected in the surviving anchor. ∎
 
-No target load is silently discarded by a rejected candidate.
+The theorem does not assert that the second action retains every improving state
+of the original family.
 
-## 4. Exact fixed-owner batch budget
+## 4. Exact aggressive-branch deletion budget
 
-Run CMR787 repeatedly, always choosing the first feasible target-destroying state
-in a fixed order and rejecting it unless it improves.
+Run CMR787 repeatedly inside its current surviving branch.
 
 ### Theorem CMR788 -- PROVED
 
@@ -127,91 +121,66 @@ Before strict improvement, the number `B` of rejected entering batches satisfies
 \boxed{B\le n(n-1).}
 \]
 
-More precisely, the total number of deleted labelled edges is at most
+The total number of deleted labelled edges is at most
 
 \[
-\boxed{2n^2-2n,}
+\boxed{2n^2-2n.}
 \]
-
-and every batch deletes at least two.
 
 ### Proof
 
-There are at most `2n^2` labelled physical edges in the two layer hosts. The
-anchor's `2n` labelled edges are never deleted. Every rejected batch deletes at
-least two new nonanchor edges by CMR786. Therefore at most `2n^2-2n` labelled
-edges are deleted and `2B\le2n^2-2n`. ∎
+The two labelled hosts contain at most `2n^2` edges, and the anchor's `2n` edges
+are never deleted. Every batch deletes at least two new nonanchor edges. ∎
 
-This bound is independent of the number of feasible two-layer states.
-
-## 5. Exhaustion makes the physical target unavoidable
+## 5. Exhaustion forces the target in the surviving branch
 
 ### Theorem CMR789 -- PROVED
 
-If the CMR787 pass terminates without strict improvement because no feasible
-target-destroying candidate remains, then
+If no target-destroying state remains in the current surviving branch, then
 
 \[
-\boxed{T\subseteq |R|\quad\text{for every surviving }R\in\mathcal F.}
+\boxed{T\subseteq |R|\quad\text{for every surviving }R.}
 \]
-
-Thus `T` is a forced physical target certificate for the current owner and mask.
 
 ### Proof
 
-A surviving state which omitted one physical cell of `T` would be a feasible
-target-destroying candidate, contradicting termination. ∎
+A surviving state omitting a target cell would itself be target-destroying. ∎
 
-Layer assignments of the three target cells may still vary; they are normalised
-next rather than assumed fixed.
+This forcedness is branch-local and is not promoted to the original family.
 
-## 6. The same pass forces one labelled target pair
+## 6. Branch-local labelled-pair normalization
 
-Choose from the anchor target `T` the lexicographically first same-layer pair
+Choose the lexicographically first same-layer pair
 
 \[
-P=\{a,b\}\subseteq S.
+P=\{a,b\}\subseteq S\cap T.
 \]
 
-Such a pair exists because three target cells occupy two layers. Continue the
-same monotone deletion pass: while a surviving state `R` does not contain the
-exact labelled pair `P`, delete `A(R)=R\setminus S` and retain `S`.
+Continue the same aggressive pass while a surviving state omits `P`.
 
 ### Theorem CMR790 -- PROVED
 
-The combined target-destruction and labelled-pair-normalisation pass still uses
-at most
+The combined target and pair normalization still uses at most `n(n-1)` batches,
+and at termination
 
 \[
-\boxed{n(n-1)}
-\]
-
-rejected batches in total. At termination,
-
-\[
-\boxed{P\subseteq R\quad\text{for every surviving }R.}
+\boxed{P\subseteq R\quad\text{for every state in the surviving branch}.}
 \]
 
 ### Proof
 
-Every additional candidate differs from the same fixed anchor and is processed
-by CMR786. All batches over both phases delete disjoint new subsets of the same
-`2n^2-2n` nonanchor edge universe, so the single CMR788 budget applies to the
-combined pass. Termination means no surviving state omits `P`. ∎
+All batches are disjoint subsets of the same `2n^2-2n` nonanchor edge universe.
+Termination means no surviving state omits `P`. ∎
 
-The result fixes a labelled matching prescription, not merely a majority-layer
-frequency class.
+## 7. Exact contraction inside the surviving branch
 
-## 7. Exact joint-state contraction of the forced pair
-
-Let `\ell` be the layer containing `P`. Remove the two source and two target
-vertices of `P` from the layer-`\ell` matching host. Keep the two physical cells
-of `P` fixed and forbidden to the opposite layer. Let `\mathcal F/P` be the
-resulting residual joint-state family.
+Let `\ell` be the layer containing `P`. Remove the matching endpoints of `P` from
+that layer and keep the physical cells of `P` unavailable to the opposite layer.
+Let `\mathcal F/P` be the residual branch family.
 
 ### Theorem CMR791 -- PROVED
 
-Restriction gives an exact bijection
+Restriction gives an exact branch-local bijection
 
 \[
 \boxed{
@@ -221,48 +190,40 @@ Restriction gives an exact bijection
 }
 \]
 
-The side of layer `\ell` decreases by exactly two. The physical target `T`
-transfers to the residual singleton trigger
+The side of layer `\ell` decreases by two, and the physical target transfers to
 
 \[
-\boxed{T\setminus P.}
+\boxed{T\setminus P,}
 \]
+
+a rank-one trigger.
 
 ### Proof
 
-CMR790 puts `P` in every surviving joint state. Removing its two labelled edges
-and their matching endpoints in layer `\ell` gives one residual state. Conversely,
-adjoining `P` to a residual state reconstructs the unique full state; the
-opposite layer continues to avoid the two fixed physical cells. The maps are
-inverse. Since `T` has three cells and `P` has two, one physical target cell
-remains. ∎
+Every surviving state contains `P`. Restriction and adjoining `P` are inverse
+operations, and exactly one target cell remains. ∎
 
-The residual rank-one trigger enters the established essential-transfer,
-anchored-deletion, or strict-factor recursion.
-
-## 8. Fixed-owner target-churn endpoint
+## 8. Corrected aggressive-branch endpoint
 
 ### Corollary CMR792 -- PROVED
 
-At one fixed owner and mask, the anchor-state scheduler reaches at least one of:
+At one fixed owner, the aggressive anchor subbranch reaches at least one of:
 
-1. a target-destroying state of strictly smaller real-triple potential;
-2. at most `n(n-1)` monotone entering-batch deletions;
-3. a forced physical target;
-4. one exact labelled same-layer target pair fixed in every surviving state;
-5. exact double contraction of that pair and a rank-one residual trigger;
-6. owner change, edge restoration, or envelope expansion, entering CMR777--CMR784.
+1. strict potential improvement;
+2. at most `n(n-1)` entering-batch deletions;
+3. a physical target forced in the surviving branch;
+4. a labelled same-layer target pair forced in the surviving branch;
+5. exact branch-local double contraction and a rank-one trigger;
+6. owner change, restoration, or envelope expansion.
 
-Consequently unbounded selected-state churn is not required to resolve a fixed
-owner. Every rejected nonimproving reset permanently deletes at least two
-nonanchor labelled edges, and terminal failure produces strict factor descent.
+For a completeness-preserving existence argument, replace one rejected state by
+the viable single-edge child union of CMR830--CMR837, or prove separately that a
+chosen aggressive branch retains a desired improving witness.
 
 ### Proof
 
-Use CMR787--CMR790. If the first phase exhausts, CMR789 gives a forced physical
-target; normalise its anchor pair by CMR790 and contract by CMR791. Any departure
-from the fixed owner or monotone mask enters the global return-ancestry forest. ∎
+Use CMR785--CMR791 and the completeness correction CMR830--CMR837. ∎
 
-No all-`n` theorem is claimed. Entering-set size, anchor preservation, deletion
-budgets, target forcing, pair normalisation, and contraction are checked in
-[`scripts/verify_prime_power_anchor_state_batch_rejection.py`](../scripts/verify_prime_power_anchor_state_batch_rejection.py).
+No all-`n` theorem is claimed. Entering-set size, anchor preservation, aggressive
+branch budgets, branch-local forcing, and contraction are checked in
+[`scripts/verify_prime-power-anchor-state-batch-rejection.py`](../scripts/verify_prime_power_anchor_state_batch_rejection.py).
