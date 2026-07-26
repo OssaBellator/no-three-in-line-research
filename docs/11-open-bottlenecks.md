@@ -3,235 +3,223 @@
 ## 1. Current proof status
 
 The no-three-in-line conjecture remains open.  The branch has exact structural,
-matching-bank and inherited-coordinate reductions, but no theorem yet proves
-that every positive minimum of the real-triple potential becomes zero.
+matching-bank, inherited-coordinate and displacement reductions, but no
+theorem yet proves that every positive minimum of the real-triple potential
+becomes zero.
 
-The decisive honesty correction remains:
+The decisive honesty condition is unchanged:
 
-> finite response and structural descent are not potential improvement.
+> finite response, finite resource use and structural descent are not by
+> themselves potential improvement.
 
-A completion must exhibit an actual lower-potential response or an exact
-weighted inequality guaranteeing one.
+A completion must exhibit a lower-potential response or an exact weighted
+inequality guaranteeing one.
 
-## 2. Structurally closed components
+## 2. Closed structural components
 
-The proved chain has finite canonical forms for inherited banks, Hall walls,
-closure envelopes, rollback, exchange-SCC and protected/free products,
-minimum-core contraction, selected routing, target handoff, loaded-line and
-star banks, blocker covers, small full-grid bases and owner-labelled
-restoration ancestry.
+The selected execution has finite canonical forms for:
 
-Last-entering ownership makes the complete owner matrix block upper triangular:
+- inherited response banks and exact rook probabilities;
+- Hall walls, unit-wall products and blocker covers;
+- rollback, exchange-SCC and protected/free products;
+- selected routing, strict children and fixed-interface lifting;
+- owner-labelled restoration ancestry;
+- loaded-line and star response banks;
+- small-side joint factors.
+
+Last-entering ownership makes the complete offspring matrix block upper
+triangular:
 
 \[
 \rho(A)=\max_i\rho(A_{ii}).
 \]
 
-Only same-owner diagonal blocks require subcritical certificates.
+Only genuinely recurrent same-owner diagonal blocks need numerical
+certificates.
 
-## 3. Exact probability and assignment law
+## 3. Exact same-owner probability law
 
-For response side `d`, target `e` and opposite matching `O`, use
+For response side `d`, opposite matching `O` and target `e`, use
 
 \[
 H_e=K_{d,d}\setminus(O\cup\{e\}).
 \]
 
-Every compatible prescription has an exact finite rook class, and every
-candidate triple has one fixed entering owner before sampling.  Therefore
+Every compatible prescription has one finite residual rook class.  Every
+candidate triple has one canonical owner before the response is sampled.
+Thus
 
 \[
-\mathbb E N(R)=\sum_ap_e(a)g_e(a),
+\mathbb E N(R)=\sum_a p_e(a)g_e(a),
 \]
 
-where `p_e(x,y)` is doubly stochastic.  Expected collateral is one bipartite
-assignment cost with an exact rational dual.  Every owner weight is a finite
-geometric/rook dot product, so perfect-matching enumeration is unnecessary.
+where `p_e(x,y)` is doubly stochastic.  Expected collateral is one exact
+bipartite assignment cost, with rational primal and dual descriptions.
 
-## 4. Inherited-coordinate capacity
+## 4. Inherited geometry and packed signatures
 
 Keep separate:
 
-- response matching side `d`;
-- prime-power envelope side `t=p^k`;
-- coordinate span
-  \[
-  W_\omega=\max\{x_{\max}-x_{\min},y_{\max}-y_{\min}\}.
-  \]
+- matching side `d`;
+- envelope side `p^k`;
+- coordinate span `W_omega`.
 
-For primitive height `h`, define
+Primitive-height capacity gives a finite owner envelope.  Prime-power
+eligible pairs split into classes
 
 \[
-c_\omega(h)=
-\max\left\{\left\lfloor\frac{W_\omega}{h}\right\rfloor-1,0\right\}.
+(t_{\rm pair},s,\delta,H).
 \]
 
-Then
-
-\[
-\gamma_e(a,R)
-\le\frac12\sum_{b\in E_a(R)}c_\omega(h(a,b)).
-\]
-
-Exact pair rook probabilities yield a conditional eligible owner envelope.
-Directions above `W_omega/2` have zero capacity.
-
-## 5. Prime-power signature banks
-
-Inside envelope `p^k`, every eligible pair has one signature
-
-\[
-(t_{\rm pair},s,\delta,H),
-\]
-
-where `s` is first-separation depth, `delta` projective direction and `H`
-primitive-height band.  Put
-
-\[
-B_\omega=1+\lfloor\log_2\max\{1,W_\omega\}\rfloor.
-\]
-
-At most `2k(p+1)B_omega` classes occur for one owner.  A heavy owner class is
-simultaneously realized and concentrates on one loaded line.
-
-A global fractional obstruction contains an exact-displacement class of mass
-at least
+At a positive minimum, a subthreshold candidate family yields one exact
+displacement class of mass at least
 
 \[
 M_0=
 \frac{d-2}
-{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)},
+{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)}.
 \]
 
-with
+This is a weighted bank of parallel translated owner-partner pairs.
+
+## 5. Closed displacement routing
+
+CMR1470--CMR1501 give the following exact chain.
+
+### Nonroot depth
+
+The displacement bank routes into:
+
+1. strict internal scaling;
+2. one earlier exit depth;
+3. an absolute full-cell token.
+
+Its translation support is a path forest.  At least half its mass lies on
+endpoint-disjoint private pairs, so a residual blocker spends one distinct
+edge per pair.  Nonroot private pairs give one heavy repeated token or many
+token-disjoint witnesses.
+
+### Fresh resources
+
+The current mask and used-token set satisfy exact existing-versus-fresh
+alternatives.  Within a monotone owner epoch:
+
+- at most `d^2-d-1` residual host edges can be spent for the first time;
+- at depth `s`, at most `p^(2s)` absolute tokens can be used for the first
+  time.
+
+Strict scaling, earlier-depth handoff and first-use resources form an acyclic
+transfer graph.  They are off-diagonal and require only constructive rational
+gluing after recurrent cores are certified.
+
+### Depth zero
+
+A unit displacement splits into at most `p^2` root source channels.  One
+channel has mass at least `M_0/p^2`, has a deterministic quotient carry and is
+already endpoint-disjoint.
+
+After selected root routing it becomes an anchored or cross-factor atom of
+local rank at most two.  For `k>=2` the owner child has strict side
+`p^(k-1)`; for `k=1` the channel reaches a side-one or fixed-interface
+terminal trigger.
+
+## 6. Closed packed-versus-loaded overlap
+
+For one exact displacement, one owner determines one partner and carries at
+most one unit of packing mass.
+
+Let `L` be any owner set reserved for loaded-line execution.  Then
 
 \[
-D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2,
-\qquad
-S_{\omega,p}(s,H)=
-\left\lfloor\frac{W_\omega}{p^sH}\right\rfloor.
+\max\{|L|,\mu_{\bar L}\}\ge\mu_\Delta/2.
 \]
 
-This class is a bank of parallel translated owner-partner pairs with one exact
-lattice displacement.
+Therefore either:
 
-## 6. Weighted carry routing
+1. many distinct owners enter the loaded-line ledger; or
+2. a large translated private bank survives on owners outside `L`.
 
-Every exact-displacement pair lies in one depth-`s` full prefix cell.  One of
-the `p^{2s}` cells carries mass at least `M_0/p^{2s}`.  Routing the third cell
-of each candidate gives:
+The second bank retains its blocker, token, carry and root-channel payments.
+The two currencies have disjoint owner support and can be added without
+double counting.
 
-1. an internal bank of mass at least
-   \[
-   M_0/(2p^{2s})
-   \]
-   which scales to a strict envelope `p^{k-s}` when `s>=1`;
-2. a crossing bank with one common earlier exit depth and mass at least
-   \[
-   M_0/(2sp^{2s})
-   \]
-   when `s>=1`;
-3. the depth-zero parent-scale exact-displacement branch.
+The missing issue is no longer overlap.  It is the numerical value assigned
+to one unit of each currency.
 
-For fixed owner stage, layer, depth, direction and displacement, there are
-exactly `p^{2s}` full-cell tokens.  Repeated banks either consume fresh tokens
-or concentrate on one exact absolute token.
+## 7. Genuine recurrent cores
 
-## 7. Private path and blocker payment
+After the closed transfer reductions, the same-owner diagonal problem consists
+of the following recurrent mechanisms.
 
-For one fixed nonzero displacement, the translation support
+1. **Repeated absolute token.**  A nonroot full-cell token is reused after its
+   first-use stock is exhausted.
+2. **Reused residual support.**  Private translated pairs repeatedly meet
+   already masked or returned response edges.
+3. **Recurrent root channel.**  The same depth-zero source residue, partner
+   child and quotient carry returns at one structural owner.
+4. **Fixed-interface root trigger.**  Prime-field or child-normalized
+   rank-one/rank-two anchored prescriptions return to their lifted owner.
+5. **Loaded-line owner.**  The one-owner eligible signature realizes a
+   quantitatively loaded real line.
 
-\[
-a\longmapsto a+\Delta
-\]
+These are the only mechanisms which still need their own diagonal contraction
+inequalities.  Strict descendants and fresh resources are not additional
+diagonal types.
 
-is a finite path forest.  Alternating the path edges extracts at least half the
-packed mass on endpoint-disjoint pairs.  Their residual supports are pairwise
-disjoint, so any blocker meeting all extracted pairs must spend one distinct
-response edge per pair.
+## 8. Recommended next lemmas
 
-Applied after CMR1470--CMR1477, the routed branches contain at least
+1. **Repeated-token coefficient.**  Bound the exact offspring row when one
+   absolute token is revisited, using prefix return, state-cycle erasure and
+   full-token incidence.
+2. **Reused-edge coefficient.**  Relate repeated use of one private residual
+   edge to protected-reserve depletion, unavailable-edge return or fixed-core
+   contraction.
+3. **Root-channel coefficient.**  Compute the exact cross-child/fixed-interface
+   offspring weights for one source residue and quotient carry.
+4. **Loaded-owner coefficient.**  Convert one loaded-line execution into
+   destroyed-credit units in the same owner class.
+5. **Core matrix.**  Assemble the four recurrent mechanisms into a finite
+   rational upper quotient and search for `Av<v`.
+6. **Prime-field and thin rows.**  Evaluate the root/fixed-interface quotient
+   when no nonroot prefix depth is available and for small scattered residual
+   factors.
+7. **CRT interface rows.**  Retain collision and local-line credit labels while
+   gluing certified prime-power diagonal blocks.
 
-\[
-\left\lceil\frac{M_0}{4p^{2s}}\right\rceil,
-\qquad
-\left\lceil\frac{M_0}{4sp^{2s}}\right\rceil,
-\qquad
-\left\lceil\frac{M_0}{2}\right\rceil
-\]
+## 9. Computational priorities
 
-private translated pairs in the internal, earlier-exit and depth-zero branches,
-respectively.  The middle count applies for `s>=1`.
+The next finite calculations should target coefficients, not additional
+structural alternatives.
 
-At nonroot depth, these pairs partition exactly by full-prefix token.  They
-therefore give either:
+- Enumerate exact recurrent root-channel rows by
+  `(partner type, source residue, quotient carry, local rank)`.
+- Enumerate repeated-token rows by depth, direction, height band and mask
+  status.
+- Enumerate reused-edge rows with exact rook probability and unavailable-edge
+  penalties.
+- Compute loaded-owner rows from exact owner/rook class histograms.
+- Search rational and integer certificates on the resulting recurrent-core
+  quotient.
+- Test prime-field and scattered thin-factor rows separately before CRT
+  gluing.
+- Record counterexamples whenever a coarse four-mechanism quotient is too
+  crude; refine only the failing fibre.
 
-- one token carrying many private identical-displacement pairs; or
-- many token-disjoint private witnesses.
+## 10. Current proved endpoint
 
-This is a genuine protected-reserve currency: one common residual edge cannot
-neutralize the whole translated bank.
+Through **CMR1509**:
 
-## 8. Genuine remaining inequality
+- response probabilities and owner weights are exact;
+- inherited-coordinate lattice capacity is valid;
+- global fractional obstructions yield exact-displacement banks;
+- nonroot displacement mass routes to strict transfer or finite token use;
+- private translated pairs have linear residual-blocker cost;
+- strict transfer and first-use resources are off-diagonal;
+- depth-zero mass has deterministic root child channels;
+- packed and loaded-owner payments have disjoint canonical support.
 
-The remaining prime-power theorem must assign strict weighted payment to:
+There is still no complete proof.
 
-- internal envelope scaling;
-- earlier-depth crossing transfer;
-- private residual-edge or token consumption;
-- depth-zero translated pairs;
-- repeated absolute full-cell tokens;
-- and the alternative one-owner loaded-line response.
-
-The existing prefix-return, quotient/carry collision, protected-reserve,
-loaded-line and token machinery supplies the structural actions.  What is
-missing is a single weight assignment proving
-
-\[
-Av<v.
-\]
-
-## 9. Recommended next lemmas
-
-1. **Private-reserve Lyapunov weight.**  Compare one unit of endpoint-disjoint
-   residual blocker cost with destroyed parent credit and protected-reserve
-   depletion.
-2. **Depth-transfer Lyapunov weight.**  Choose weights decreasing under strict
-   internal scaling and earlier exit depth.
-3. **Depth-zero translation payment.**  Show the private parent-scale bank
-   forces many quotient/carry cells, permanent mask depletion or one recurrent
-   token-bearing edge.
-4. **Repeated-token response.**  Convert repeated use of one absolute full-cell
-   token into prefix return, contraction or target-load decrease.
-5. **Packed-versus-loaded comparison.**  Combine the global private translated
-   payment with the one-owner loaded-line gain without double counting.
-6. **Exact diagonal certificate.**  Export the final inequalities as a
-   rational/integer `Av<v` certificate.
-7. **Prime-field, thin and CRT endpoints.**  Prove the remaining diagonal blocks
-   and glue them through owner triangularity.
-
-## 10. Computational priorities
-
-- Enumerate exact depth-transfer and private-reserve offspring vectors.
-- Search rational weights by depth, envelope side, partner type and token state.
-- Measure depth-zero translation multiplicity in quotient/carry cells.
-- Compare private blocker histories with stored protected-reserve and
-  prefix-return ledgers.
-- Test prime-field and thin diagonal blocks before CRT gluing.
-
-## 11. Current proved endpoint
-
-Through **CMR1485**:
-
-- exact rook probabilities and owner weights are known;
-- collateral is one shared-edge assignment cost;
-- lattice capacity is valid for scattered inherited factors;
-- one-owner and global packed signatures have quantitative lower bounds;
-- exact-displacement banks route to strict scaling, earlier exit depth, depth
-  zero or finite absolute-token reuse;
-- every routed branch also contains an endpoint-disjoint private translated
-  subbank with linear residual-blocker cost.
-
-There is still no complete proof.  The next genuine advance is the Lyapunov
-comparison of private reserve consumption and strict depth transfer with the
-parent credit weight.
+The next genuine advance is a rational or integer contraction certificate for
+the recurrent token, reused-edge, root/fixed-interface and loaded-line cores,
+followed by prime-field/thin verification and balanced/CRT assembly.
