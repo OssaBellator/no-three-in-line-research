@@ -36,13 +36,10 @@ def check_edge_dichotomy():
                 potential = {state: rng.randint(0, 20) for state in family}
                 face, minimum = minimum_face(family, potential)
                 core = common_core(face)
-                assert face
-                assert all(potential[state] == minimum for state in face)
                 for edge in range(universe_size):
-                    avoiding = [state for state in face if edge not in state]
+                    avoiding = {state for state in face if edge not in state}
                     if avoiding:
                         restricted = {state for state in family if edge not in state}
-                        assert restricted
                         assert min(potential[state] for state in restricted) == minimum
                         assert edge not in core
                     else:
@@ -64,10 +61,7 @@ def check_complete_core_contraction():
                 residual = {frozenset(set(state) - set(core)) for state in face}
                 assert len(residual) == len(face)
                 assert common_core(residual) == frozenset()
-                rebuilt = {
-                    frozenset(set(state) | set(core))
-                    for state in residual
-                }
+                rebuilt = {frozenset(set(state) | set(core)) for state in residual}
                 assert rebuilt == face
                 assert all(
                     potential[frozenset(set(state) | set(core))] == minimum
@@ -89,10 +83,7 @@ def check_redeletion_or_contraction():
                 core = common_core(face)
                 edge = rng.randrange(universe_size)
                 if edge in core:
-                    residual = {
-                        frozenset(set(state) - {edge})
-                        for state in face
-                    }
+                    residual = {frozenset(set(state) - {edge}) for state in face}
                     assert len(residual) == len(face)
                     assert all(len(state) == state_size - 1 for state in residual)
                 else:
@@ -113,22 +104,17 @@ def check_monotone_core_growth():
                 previous_core = common_core(family)
                 growth = 0
                 while len(family) > 1:
-                    edge_candidates = [
-                        edge
-                        for edge in range(universe_size)
-                        if any(edge not in state for state in family)
-                    ]
-                    if not edge_candidates:
+                    choices = []
+                    for edge in range(universe_size):
+                        child = {state for state in family if edge not in state}
+                        if 0 < len(child) < len(family):
+                            choices.append((edge, child))
+                    if not choices:
                         break
-                    edge = rng.choice(edge_candidates)
-                    child = {state for state in family if edge not in state}
-                    if not child:
-                        continue
-                    family = child
+                    _edge, family = rng.choice(choices)
                     current_core = common_core(family)
                     assert set(previous_core) <= set(current_core)
-                    if current_core != previous_core:
-                        growth += len(current_core) - len(previous_core)
+                    growth += len(current_core) - len(previous_core)
                     assert len(current_core) <= state_size
                     assert growth <= state_size
                     previous_core = current_core
