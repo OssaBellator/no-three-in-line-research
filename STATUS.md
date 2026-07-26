@@ -18,94 +18,75 @@ The collision-free theorem ledger is split across
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` from CMR870.
 
-## Stable prime-power normal forms
+## Established normal forms
 
-- Closure envelopes have at most `h+1` epochs and at most `h` strict expansions.
-- Protected/free, child-routing, essential-core, exchange-SCC, and unit-wall
-  matching products are exact.
-- Physical restoration is owner-independent.
-- Same-value expansions roll back; lowering or infeasible-base expansions peel to
-  added minimum-core contraction or strict improvement.
-- Between contractions, canonical same-vertex-set hosts form nested decreasing
+- Same-value host expansions roll back exactly; lowering or infeasible-base
+  expansions peel to added minimum-core contraction or strict improvement.
+- Between contractions, normalized same-vertex-set hosts form nested decreasing
   chains.
 - Minimum-core contraction is host-representable after conditioning the complete
   current cylinder on the common prescription.
-- Cross-factor triples transport as constants, pure atoms, or low-rank Cartesian
+- Exact protected/free, routing, unit-wall, essential-core, exchange-SCC and child
+  products retain original geometric coordinates.
+- Cross-factor triples are constants, pure one-factor atoms, or low-rank Cartesian
   coupling boxes.
+- Physical restorations and edge lineages are owner-independent.
 
-## Completeness and selected-minimum mode
+## Selected-minimum mode
 
-The aggressive whole-entering-batch deletion is a rigorous branch-local
-normalization. Complete search uses viable-child unions or the disjoint rank-three
-prescription split.
-
-For analysis of an actual minimum state `S`, every restriction preserving `S`
-preserves one minimum. A target or compatible anchor prescription may be forced
-with at most
+For an actual minimum state `S`, every restriction preserving `S` preserves one
+minimum. A chosen target and compatible labelled prescription can be forced using
+at most
 
 \[
 2n^2-2n
 \]
 
-outside-anchor deletions. Exact contraction preserves minimality for the induced
-objective.
+outside-anchor deletions. Exact contraction preserves minimum status for the
+induced objective.
 
-Terminal leaves at one complete target-resolution stage compress to at most
+Routing recurrence is unnecessary on this selected path. At each factor host,
+restrict immediately to the routing skeleton of one actual minimum. The resulting
+child product is exact and every nonempty child has strictly smaller side.
 
-\[
-8\binom{n^2}{3}
-\]
-
-fixed labelled-triple set-family classes. Differently masked unions are not
-silently identified with one matching host.
-
-## Target geometry
-
-The physical targets of a dirty minimum form a 3-uniform hypergraph. For every
-`q>=2`, either there are `q` vertex-disjoint targets or a cell cover of size at
-most `3(q-1)`. In the cover branch, one selected cell belongs to at least
-
-\[
-\left\lceil\frac{\Phi(S)}{3(q-1)}\right\rceil
-\]
-
-targets, yielding a loaded line or simultaneous secant star.
-
-A disjoint target bank has a degree-two Hall escape destroying at least
-`ceil(q/2)` targets simultaneously. A nonimproving target-destroying state creates
-at least `D+g` new triples when it destroys load `D` with positive integer gap `g`.
-
-New triples split by physical entry rank:
-
-- rank one gives an entering-cell line decomposition and hence a loaded old target
-  line or simultaneous secant star;
-- rank at least two gives one entering pair with many third cells on a nonaxis line.
-
-Simultaneous common-layer, cross-layer, and loaded-line banks have direct protected
-executions. No-growth large cores enter exact protected/free product descent.
-
-## Minimum-selected routing
-
-Routing recurrence is unnecessary on one selected minimum path. At every factor
-host choose one actual minimum `M_*` and restrict immediately to its realized
-vertex-routing skeleton. This preserves the minimum and gives the exact product
-
-\[
-\operatorname{PM}(H;\Gamma_*)
-\cong
-\prod_{r,s}\operatorname{PM}(H[X_{rs},Y_{rs}]).
-\]
-
-Every nonempty child has side at most `d-1`. Define
+Define
 
 \[
 \mathcal A(d)=\sum_{m=1}^{d}(2m^2+m+1).
 \]
 
-One selected strict descent path has at most `mathcal A(d)` host-and-routing owner
-stages, with no routing recurrence parameter.
+One selected strict-descent path has at most `mathcal A(d)` normalized host/routing
+stages.
 
-The parameter-free branch-wide protected capacity is
+## Target banks and robust geometry
+
+The targets of a dirty minimum form a 3-uniform hypergraph. For every `q>=2`,
+either there are `q` physically disjoint targets or a cell cover of size at most
+`3(q-1)`. The cover branch concentrates at least
+
+\[
+\left\lceil\frac{\Phi(S)}{3(q-1)}\right\rceil
+\]
+
+targets on one selected cell.
+
+A disjoint target bank has a degree-two Hall escape destroying at least
+`ceil(q/2)` targets simultaneously. A positive-gap target-destroying state which
+loses load `D` and lies `g>=1` above the minimum creates at least `D+g` new
+triples.
+
+New triples split by physical entry rank:
+
+- rank one gives a loaded old line or simultaneous secant star;
+- rank at least two gives an entering pair with many third cells on one nonaxis
+  line.
+
+Simultaneous common-layer, cross-layer and loaded-line banks have direct protected
+executions. No-growth large cores enter exact product descent.
+
+## Parameter-free finite stocks
+
+On the selected path, the branch-wide protected capacity is
 
 \[
 \mathfrak P_{\min}(N,h)
@@ -114,7 +95,7 @@ The parameter-free branch-wide protected capacity is
 \sum_{m=1}^{N}2m(2m^2+m+1).
 \]
 
-The corresponding fresh structural-deletion-root stock is
+The fresh deletion-root stock is
 
 \[
 \mathfrak D_{\min}(N,h)
@@ -123,11 +104,8 @@ The corresponding fresh structural-deletion-root stock is
 \sum_{m=1}^{N}2m^2(2m^2+m+1).
 \]
 
-## Minimum-loss and fixed-core reopening
-
-Inside one normalized restriction segment, a lost minimum edge remains absent and
-canonical loss witnesses are pairwise distinct. A side-`m` segment has at most
-`2m^2-2m` such witnesses. A coarse complete-branch stock is
+Canonical minimum-loss witnesses are permanent and distinct inside one normalized
+segment. A coarse complete-branch stock is
 
 \[
 \mathfrak L(N,h)
@@ -137,82 +115,111 @@ canonical loss witnesses are pairwise distinct. A side-`m` segment has at most
 (2m^2+m+1)(2m+1)(2m^2-2m).
 \]
 
-A contracted core does not reopen freely. Store the lifted minimum anchor `S`.
-At a later host:
+Rolled-back banks have a greedy missing-edge cover of size at most `2N^2`,
+independent of bank cardinality. Returned cover edges are bulk-redeleted while the
+stored minimum anchor survives.
 
-1. if `S` survives, recondition on the old core and recontract;
-2. if a lower minimum appears, improve;
-3. if `S` fails, expose an actual missing edge of `S`;
-4. same-value added edges roll back;
-5. lowering or infeasible additions contract an added core edge.
+A contracted core either reconditions and recontracts while its lifted anchor
+survives, yields strict improvement, exposes a real missing anchor edge, contracts
+an added core edge, or enters strict structural descent.
 
-Thus nontrivial fixed-core reopening attempts are charged to the finite loss stock,
-contraction, structural exit, or improvement.
+## Blocker covers and unit walls
 
-## Rolled-back banks
+If a blocker cover meets every perfect matching of a response graph, deleting the
+cover destroys matchability and gives a Hall-deficient cut.
 
-Every infeasible target-response state `Q` has nonempty missing support
-
-\[
-A_H(Q)=Q\setminus E(H).
-\]
-
-A greedy missing-edge cover blocks the complete rolled-back bank with at most
-`2N^2` labelled edges, regardless of bank cardinality. All cover edges lie outside
-the stored minimum anchor. If some return while the anchor survives, the complete
-returned subset is deleted again simultaneously.
-
-Fresh blocker-cover edges have the coarse branch-wide stock
+For an inclusion-minimal blocker cover `C`, every Hall witness `X` with
+`Y=N_{G-C}(X)` satisfies
 
 \[
-\mathfrak B(N,h)
-=
-2N^2(h+1)(2N+1)\mathcal A(N).
+C=E(G)\cap(X\times(R\setminus Y)),
+\qquad
+|X|-|Y|=1.
 \]
 
-Exact duplicate attempts, same-value rollbacks, repeated reconditioning, and
-repeated selection of an unchanged skeleton class are erased from a shortest
-canonical response history.
-
-## Selected-scheduler finite response
-
-Let
+Restoring any one blocker makes it essential. Its matching family factors exactly
+as
 
 \[
-\mathfrak O_{\min}(N,h)
-=
-(h+1)(2N+1)\mathcal A(N)
+\operatorname{PM}(G_e)
+\cong
+\{e\}
+\times
+\operatorname{PM}(G_A)
+\times
+\operatorname{PM}(G_B),
+\qquad a+b=n-1.
 \]
 
-and use the coarse contraction-rank stock
+Thus complete bank blockage is a strict unit-wall descent, not an arbitrary
+terminal inventory.
+
+## Universal and small-factor banks
+
+Every active fixed target or loaded line in side at least four has a degree-two
+full-layer response bank. A feasible response enters the minimum scheduler; a
+fully blocked response gives the unit-wall descent.
+
+Side three is exact: for every opposite permutation and target edge absent from
+it, one 3-cycle contains the target edge and the other 3-cycle is the unique
+response matching.
+
+Side two is physically rigid. The two disjoint layers cover the complete `2x2`
+board; a root side-two state is clean, while a residual side-two block conditions
+and contracts into the induced fixed interface. Side-one factors are forced or
+empty.
+
+Every target surviving only in a small fixed interface has a canonical last-active
+edge and a unique lifted response-bank owner of side at least three, unless the
+whole root is the clean side-two base.
+
+## Finite selected-scheduler response
+
+After erasing exact duplicate bank attempts, same-value rollbacks, repeated
+reconditioning and repeated unchanged skeleton selections, every nontrivial
+canonical episode consumes finite owner, protected, deletion, loss, blocker-cover
+or contraction currency, or strictly descends.
+
+This proves finite response and structural descent. It does **not** prove that the
+minimum value becomes zero.
+
+## Critical nonclosure correction
+
+A finite response tree can terminate at a dirty conditioned anchor when every
+escape state has higher potential. The abstract family
 
 \[
-\mathfrak C(N,h)=\mathfrak P_{\min}(N,h).
+\Phi(S)=1,
+\qquad
+\Phi(Q_1)=\Phi(Q_2)=2
 \]
 
-The cycle-erased selected-minimum scheduler has the finite currency sum
+already demonstrates this: both responses may destroy the old target and create
+two replacements, while `S` remains the positive minimum. Conditioning on `S` can
+produce a dirty singleton with the same induced minimum.
+
+Therefore finite currency exhaustion, unit-wall descent and small-factor
+classification are supporting reductions, not a minimum-zero proof.
+
+For a response state `Q`, put
 
 \[
-\mathfrak E
-=
-\mathfrak O_{\min}
-+
-\mathfrak P_{\min}
-+
-\mathfrak D_{\min}
-+
-\mathfrak L
-+
-\mathfrak B
-+
-\mathfrak C.
+L(Q)=|\mathcal T(S)\setminus\mathcal T(Q)|,
+\qquad
+N(Q)=|\mathcal T(Q)\setminus\mathcal T(S)|.
 \]
 
-Every nonimproving canonical target-response episode consumes at least one owner,
-protected, deletion, loss, blocker-cover, or contraction unit. Therefore local
-routing changes, protected resets, same-value rollbacks, target-cell handoffs,
-fixed-core reopenings, and repeated bank enumeration cannot support an unbounded
-selected-minimum response history.
+The exact identity is
+
+\[
+\Phi(Q)-\Phi(S)=N(Q)-L(Q).
+\]
+
+A response distribution forces improvement only when
+
+\[
+\mathbb E N(Q)<\mathbb E L(Q).
+\]
 
 ## Corrections retained
 
@@ -223,34 +230,35 @@ selected-minimum response history.
 - Aggressive batch deletion is branch-local.
 - Differently masked leaf unions are not automatically one matching host.
 - An empty intersection host has no assigned minimum.
-- Conditioning on one support edge does not fix a residual pair; the four
-  assignment classes are required.
-- A one-layer line-clean cylinder does not by itself remove an opposite-layer
-  selected cell.
-- Whole-subbank absorption is used only for arms simultaneously present in one
-  permutation state.
-- Static token membership of unavailable blockers is not called restoration
-  payment until those edges actually return.
+- Conditioning on one support edge does not fix the other two layer labels of a
+  physical target; four assignment classes are required.
+- A one-layer line-clean cylinder does not itself remove an opposite-layer selected
+  cell.
+- Static token membership is not called restoration payment until an edge returns.
+- Finite scheduler termination is not called potential improvement.
 
 ## Current open frontier
 
-1. **Terminal blocker obstruction.** A final residual host may permanently omit a
-   small cover meeting every selected target-response bank. Convert that cover into
-   Hall deficiency, prefix/carry concentration, strict factorisation, or a clean
-   state.
-2. **Terminal loaded-line/core obstruction.** Resolve surviving line, Hall,
-   prefix, carry, or protected-core certificates in the final strict residual
-   factor.
-3. **Prime-field and thin-regime transfer.** Rebuild the terminal endpoint for
-   prime fields and remaining low-height quotient/carry cases.
-4. **Arbitrary side lengths.** Complete balanced-prime and CRT assembly for every
-   positive integer `n`.
+1. **Global target-versus-collateral inequality.** Construct canonical response-bank
+   weights satisfying
+   \[
+   \sum_Bw_B\,\mathbb E_BN(Q)
+   <
+   \sum_Bw_B\,\mathbb E_BL(Q),
+   \]
+   or explicitly exhibit a lower-potential state.
+2. **Lifted fixed-interface accounting.** Include anchored rank-zero/rank-one/rank-
+   two collateral without double counting across unit-wall, child and envelope
+   owners.
+3. **Prime-field and thin regimes.** Establish the required weighted inequality in
+   prime-field and low-height quotient/carry cases.
+4. **Arbitrary side lengths.** Complete balanced-prime and CRT assembly while
+   controlling mixed local-line/collision collateral.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR1141**, local completeness,
-minimum-selected routing, host transition normalization, robust target geometry,
-protected execution, minimum-loss accounting, fixed-core reconditioning, and
-rolled-back-bank compression have finite normal forms. The remaining prime-power
-problem is a terminal obstruction theorem, not an uncontrolled recurrence or
-owner-reset loop.
+There is no complete proof. Through **CMR1197**, response banks, routing,
+rollbacks, protected growth, blocker covers, unit walls, small factors and lifted
+interface ancestry have finite canonical forms. The remaining problem is a genuine
+quantitative inequality comparing destroyed targets with created collateral—not an
+uncontrolled recurrence or terminal matching obstruction.
