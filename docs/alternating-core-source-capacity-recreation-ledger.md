@@ -151,8 +151,10 @@ Inside one reconstructed source epoch assume:
    `P`;
 2. every positive capacity increment satisfies the source-faithful contract for the
    fixed finite source set `A_cap`;
-3. every state is physically feasible, or its least newly overloaded atom is impossible,
-   terminal, descending or finitely ticketed as in AC3qh;
+3. every ordinary internal state is physically feasible; a transition leaving feasibility
+   is impossible, terminal, descending, or consumes one unit from a finite exact overload-
+   crossing ticket stock and ends the current feasible segment; internal re-entry into the
+   feasible ledger is separately ticketed, while unticketed re-entry is an outer reset;
 4. source-unit losses are impossible, terminal, descending or finitely ticketed;
 5. conservative source transitions are quotient-stuttering, descending or finitely
    ticketed;
@@ -164,11 +166,16 @@ nonterminal internal history.
 
 ### Proof
 
-AC3ql gives a finite gross capacity-creation budget.  AC3qm bounds realized amplification
-and gross capacity destruction by initial headroom, the finite capacity-source budget and
-the finite paid loss stock.  A feasibility crossing routes through AC3qh and assumption 3.
-Conservative transitions close by assumption 5, and forbidden changes leave the epoch.
-QED.
+AC3ql gives a finite gross capacity-creation budget.  On every maximal feasible segment,
+AC3qm bounds realized amplification and gross capacity destruction by the segment's finite
+initial headroom, the remaining capacity-source budget and the paid loss stock.  A
+transition leaving feasibility routes through AC3qh and ends that segment by assumption 3.
+Only finitely many ticketed crossings and ticketed re-entries exist; an unticketed re-entry
+leaves the epoch.  Conservative transitions close by assumption 5, and forbidden changes
+leave the epoch. QED.
+
+The segment clause is essential: paying once for a first overload does not authorize an
+uncharged infinite tail that remains physically infeasible.
 
 ## Corrected AC4 source frontier
 
