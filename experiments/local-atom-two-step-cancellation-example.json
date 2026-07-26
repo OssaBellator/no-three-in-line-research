@@ -1,0 +1,7 @@
+{
+  "first_removal_credit": 100,
+  "atom_weight": 1000,
+  "first_other_cost": 20,
+  "second_self_recapture": 5,
+  "second_foreign_cost": 30
+}
