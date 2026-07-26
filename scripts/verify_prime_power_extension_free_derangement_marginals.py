@@ -7,15 +7,21 @@ from math import factorial
 import random
 
 
-def derangement_number(side):
-    if side == 0:
-        return 1
-    if side == 1:
-        return 0
-    first, second = 1, 0
-    for value in range(2, side + 1):
-        first, second = second, (value - 1) * (first + second)
-    return second
+def derangement_table(limit):
+    values = [0] * (limit + 1)
+    values[0] = 1
+    if limit >= 1:
+        values[1] = 0
+    for side in range(2, limit + 1):
+        values[side] = (side - 1) * (values[side - 1] + values[side - 2])
+    return values
+
+
+def factorial_table(limit):
+    values = [1] * (limit + 1)
+    for side in range(1, limit + 1):
+        values[side] = side * values[side - 1]
+    return values
 
 
 def matching(permutation):
@@ -30,6 +36,7 @@ def compatible(prescription):
 
 def check_exact_bank_sizes_and_marginals():
     rng = random.Random(1358)
+    derangement = derangement_table(8)
     checked = 0
     edges_checked = 0
     prescriptions = 0
@@ -38,7 +45,7 @@ def check_exact_bank_sizes_and_marginals():
         identity = matching(tuple(range(side)))
         all_matchings = [matching(permutation) for permutation in permutations(range(side))]
         derangements = [state for state in all_matchings if state.isdisjoint(identity)]
-        assert len(derangements) == derangement_number(side)
+        assert len(derangements) == derangement[side]
         cells = {(row, column) for row in range(side) for column in range(side)}
         target_edges = list(cells - set(identity))
         if side >= 7:
@@ -46,10 +53,10 @@ def check_exact_bank_sizes_and_marginals():
 
         for edge in target_edges:
             bank = [state for state in derangements if edge not in state]
-            expected_size = derangement_number(side) * (side - 2) // (side - 1)
+            expected_size = derangement[side] * (side - 2) // (side - 1)
             assert len(bank) == expected_size
             allowed = list(cells - set(identity) - {edge})
-            full_edge_count = derangement_number(side) // (side - 1)
+            full_edge_count = derangement[side] // (side - 1)
 
             edge_sample = allowed if side <= 6 else rng.sample(allowed, min(40, len(allowed)))
             for candidate in edge_sample:
@@ -63,7 +70,7 @@ def check_exact_bank_sizes_and_marginals():
 
             lambda_value = Fraction(
                 factorial(side) * (side - 1),
-                derangement_number(side) * (side - 2),
+                derangement[side] * (side - 2),
             )
             assert lambda_value <= 4
             for rank in (2, 3):
@@ -85,29 +92,34 @@ def check_exact_bank_sizes_and_marginals():
 
 
 def check_derangement_constants():
+    limit = 2000
+    derangement = derangement_table(limit)
+    factorials = factorial_table(limit)
     checked = 0
-    previous_ratio = None
-    for side in range(4, 2000):
-        value = derangement_number(side)
-        lambda_value = Fraction(factorial(side) * (side - 1), value * (side - 2))
+    for side in range(4, limit):
+        lambda_value = Fraction(
+            factorials[side] * (side - 1),
+            derangement[side] * (side - 2),
+        )
         assert lambda_value <= 4
-        assert Fraction(value, factorial(side)) >= Fraction(1, 3)
-        if previous_ratio is not None and side > 20:
-            # The values need not be monotone at small sides; they stabilize near e.
+        assert Fraction(derangement[side], factorials[side]) >= Fraction(1, 3)
+        if side > 20:
             assert abs(float(lambda_value) - 2.718281828459045) < 0.2
-        previous_ratio = lambda_value
         checked += 1
     return checked
 
 
 def check_sharpened_penalty_arithmetic():
     rng = random.Random(1363)
+    limit = 1000
+    derangement = derangement_table(limit)
+    factorials = factorial_table(limit)
     checked = 0
     improvements = 0
-    for side in range(4, 1000):
+    for side in range(4, limit):
         lambda_value = Fraction(
-            factorial(side) * (side - 1),
-            derangement_number(side) * (side - 2),
+            factorials[side] * (side - 1),
+            derangement[side] * (side - 2),
         )
         for _ in range(120):
             rank_one = rng.randint(0, 100000)
@@ -119,11 +131,11 @@ def check_sharpened_penalty_arithmetic():
             upper = Fraction(rank_one + (potential + 1) * missing, side - 2)
             upper += lambda_value * Fraction(
                 rank_two,
-                factorial(side) // factorial(side - 2),
+                side * (side - 1),
             )
             upper += lambda_value * Fraction(
                 rank_three,
-                factorial(side) // factorial(side - 3),
+                side * (side - 1) * (side - 2),
             )
             if upper < destroyed:
                 assert upper - destroyed < 0
