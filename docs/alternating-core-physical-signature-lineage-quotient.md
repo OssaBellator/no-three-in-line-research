@@ -85,8 +85,8 @@ its capacity rather than receiving separate alias tickets.
 ## AC3pb -- finite and polynomial quotient-gate stock -- PROVED
 
 Let `S=|Sigma|`, let `K_sig` be the number of continuation kinds and let
-`d_sig` be the maximum outdegree in the kind-decorated signature graph.  The exact
-gate stock satisfies
+`d_sig` be the maximum number of target signatures available from one source
+signature for one fixed continuation kind.  The exact gate stock satisfies
 
 `E_sig <= |E(D_Sigma)| <= K_sig*S*d_sig`
 
