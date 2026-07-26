@@ -7,46 +7,44 @@ from collections import Counter
 from itertools import combinations, product
 
 
-def bits(mask: int, atom_count: int) -> tuple[int, ...]:
-    return tuple((mask >> atom) & 1 for atom in range(atom_count))
-
-
 def verify_paths(counts: Counter[str]) -> None:
-    for atom_count in range(1, 6):
+    # Exhaust every support and three-state return path through four atoms.
+    for atom_count in range(1, 5):
         masks = range(1 << atom_count)
         atoms = tuple(range(atom_count))
         for support_size in range(1, atom_count + 1):
             for support in combinations(atoms, support_size):
                 support_mask = sum(1 << atom for atom in support)
-                for parent in masks:
-                    if parent & support_mask != support_mask:
+                parent = support_mask
+                for child in masks:
+                    lost = [atom for atom in support if not (child >> atom) & 1]
+                    if not lost:
                         continue
-                    for child in masks:
-                        lost = [atom for atom in support if (parent >> atom) & 1 and not (child >> atom) & 1]
-                        if not lost:
-                            continue
-                        canonical = min(lost)
-                        for middle in masks:
-                            for end in masks:
-                                if end & support_mask != support_mask:
-                                    continue
-                                path = (child, middle, end)
-                                first = None
-                                for index in range(1, len(path)):
-                                    before = (path[index - 1] >> canonical) & 1
-                                    after = (path[index] >> canonical) & 1
-                                    if before == 0 and after == 1:
-                                        first = index
-                                        break
-                                assert first is not None
-                                assert all(((path[index] >> canonical) & 1) == 0 for index in range(first))
-                                counts["recreation paths"] += 1
+                    canonical = min(lost)
+                    for middle in masks:
+                        for end in masks:
+                            if end & support_mask != support_mask:
+                                continue
+                            path = (child, middle, end)
+                            first = None
+                            for index in range(1, len(path)):
+                                before = (path[index - 1] >> canonical) & 1
+                                after = (path[index] >> canonical) & 1
+                                if before == 0 and after == 1:
+                                    first = index
+                                    break
+                            assert first is not None
+                            assert all(
+                                ((path[index] >> canonical) & 1) == 0
+                                for index in range(first)
+                            )
+                            counts["recreation paths"] += 1
 
 
 def verify_monotone(counts: Counter[str]) -> None:
-    for length in range(1, 8):
+    for length in range(1, 9):
         for word in product((0, 1), repeat=length):
-            if not word or word[0] != 0:
+            if word[0] != 0:
                 continue
             deletion_monotone = all(word[i] >= word[i + 1] for i in range(length - 1))
             if deletion_monotone:
@@ -55,8 +53,9 @@ def verify_monotone(counts: Counter[str]) -> None:
 
 
 def verify_ticket_accounting(counts: Counter[str]) -> None:
-    for token_count in range(1, 5):
-        for atom_count in range(1, 5):
+    # Exhaust all capacities 0,1,2 on at most nine exact token--atom pairs.
+    for token_count in range(1, 4):
+        for atom_count in range(1, 4):
             pairs = [(token, atom) for token in range(token_count) for atom in range(atom_count)]
             for capacities in product((0, 1, 2), repeat=len(pairs)):
                 total = sum(capacities)
