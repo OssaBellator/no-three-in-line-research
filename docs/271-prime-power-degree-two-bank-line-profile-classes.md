@@ -153,7 +153,7 @@ b_n(x)=1+\lfloor\log_2x\rfloor\quad(x>0),
 and let
 
 \[
-B_n=1+\lceil\log_2n\rceil.
+\boxed{B_n=2+\lfloor\log_2n\rfloor.}
 \]
 
 ### Theorem CMR1338 -- PROVED
@@ -175,8 +175,9 @@ absolute entering-edge owner.
 
 ### Proof
 
-There are three residual ranks and at most `B_n` bands for each count.  Exact
-profiles partition the lines and last-entering ownership is unique. ∎
+The positive bands are `1,...,1+floor(log_2 n)` and the zero band is additional,
+so there are exactly `B_n` possible bands.  There are three residual ranks.
+Exact profiles partition the lines and last-entering ownership is unique. ∎
 
 ## Honest upper coefficients
 
