@@ -131,7 +131,7 @@ overcounted, so the sum is an upper bound.  The disjoint-support statement remov
 the target and partner terms. QED.
 
 A block atom which freezes current partner cells may use the sharper term
-`t|Q_q cap P|`; a cause containing target cells may genuinely have a `p`-sized
+`t|Q_q\cap P|`; a cause containing target cells may genuinely have a `p`-sized
 fibre and must retain that term.
 
 ## Non-axis line atoms
