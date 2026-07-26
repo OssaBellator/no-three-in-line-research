@@ -56,6 +56,7 @@ The authoritative live ledger is split across:
 | CMR1550--1557 | Exact singleton deficient cut, optimal fractional-factor capacity, scaled integral flow certificate, intermediate permanent denominator, prescription/collateral bounds, restricted-host criterion, ternary coefficient classification, and the singleton endpoint | PROVED; exact cut, scaled-flow and prescription checks | `docs/297-prime-power-line-clean-singleton-fractional-factor.md` |
 | CMR1558--1565 | Optimal paid-pair threshold, candidate-free bounded restoration, first-restoration stock, exact selector-to-return row, two-row spectral criterion, integer certificate form, uniform gap cap, and the selector-return endpoint | PROVED; exact thresholds, restoration histories, two-row systems and uniform-gap caps checked | `docs/298-prime-power-paid-pair-selector-return-splice.md` |
 | CMR1566--1573 | Root-centre stock, trace batching, fixed nonaxis line, target-disjoint rooted trace, strong/singleton coefficient classification, rooted trace execution, master trace alternative, and the trace-row endpoint | PROVED; centre batching and exact rooted-line classes checked | `docs/299-prime-power-trace-centre-line-clean-splice.md` |
+| CMR1574--1581 | Source/target exchange bijections, alternating-cycle labels, entering-owner support, returned-predecessor transport, exact classwise kernel, owner bounds, honest coarse return quotient, and return-selector coupling | PROVED; matching transitions and exact transported credit classes checked | `docs/300-prime-power-returned-edge-exchange-kernel.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -63,51 +64,39 @@ Strict depth transfers, first-use private resources and depth-zero child channel
 lie on finite acyclic transfer graphs.  Loaded-owner and translated private
 currencies have disjoint owner support.
 
-The line-clean response has zero same-owner/same-line collateral and an exact
-component rook row.  Its three host-uniform coefficients are
+The line-clean response has zero same-owner/same-line collateral and exact
+strong, singleton and endpoint-overlap coefficients.  Subunit paid-pair
+selectors have zero candidate self-row and a bounded splice into repeated edge
+return.  Rooted trace recurrence has finite centre stock and then enters only a
+strong or singleton line-clean row.
+
+CMR1574--CMR1581 now make the return coefficient exact.  For a reset `M to M'`,
+every vacated edge has one canonical same-source entering partner.  Every
+recreated credit is assigned to its absolute last-entering owner and transported
+to that owner's vacated predecessor.  For every coarse credit class `b`,
 
 \[
-\left(\frac d{d-2}\right)^d,
-\qquad
-\left(\frac{d(d-2)}{(d-1)(d-3)}\right)^d,
-\qquad
-\left(\frac d{d-3}\right)^d
-\]
-
-for strong, singleton and endpoint-overlap traces respectively.
-
-CMR1558--CMR1565 remove the subunit paid-pair selector as an independent
-candidate self-row.  If `A_L<1`, define
-
-\[
-T_*
+N_b(M,M')
 =
-\left\lfloor
-\frac{2+|B_L|/(n-1)}{1-A_L}
-\right\rfloor.
+\sum_{f\in M\setminus M'}K_{f,b}(M,M').
 \]
 
-There is a candidate-free completion with at most `T_*` restorations.  First
-restoration labels are finite; repeated restorations enter the return row.  If a
-return row has coefficients `(alpha,beta)`, coupling to a selector cap `T` is
-subcritical exactly when
+Grouping exact entries by finite returned-edge/entering-owner exchange signatures
+gives an honest integer or rational return upper quotient.  Its row sums into
+return and selector classes are the previously abstract coefficients
+`(alpha,beta)`.  Coupling to a selector cap `T` is subcritical exactly when
 
 \[
 \alpha+\beta T<1.
 \]
 
-CMR1566--CMR1573 reduce rooted trace recurrence to finite centre stock at most
-`t^2`, followed by one fixed nonaxis line.  Cleaning at the rooted target is
-automatically target-disjoint, so only the strong or singleton line-clean
-coefficient occurs; the endpoint-overlap coefficient is excluded.
-
 The active frontier is now:
 
-1. compare the line-clean coefficient classes with destroyed credit, using the
-   stronger rooted-trace exclusion of endpoint overlap where applicable;
-2. compute the return-row coefficients and verify `alpha+beta T<1` for subunit
-   selector classes, while treating critical candidate bands `A_L>=1`;
-3. treat trace incidences whose rooted centre cannot be chosen as target and
-   certify recurrent root/fixed-interface and thin/prime-field rows;
+1. bound the exact return exchange kernel by owner, line-height, token, prefix
+   and carry classes and verify `alpha+beta T<1`;
+2. compare the line-clean coefficient classes with destroyed credit, using the
+   rooted-trace exclusion of endpoint overlap where applicable;
+3. treat critical candidate bands `A_L>=1`, residual trace incidences, and
+   recurrent root/fixed-interface and thin/prime-field rows;
 4. assemble the surviving exact rational/integer quotient `Av<v`; and
 5. complete balanced/CRT assembly with collision and local-line classes.
