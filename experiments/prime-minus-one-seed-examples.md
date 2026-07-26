@@ -14,9 +14,10 @@ p=3   n=2
 p=5   n=4
 p=7   n=6
 p=11  n=10
+p=13  n=12
 ```
 
-The largest case has `20` points and performs all `1140` exact determinant checks.
+The largest case has `24` points and performs all `2024` exact determinant checks.
 Every case has two edge-disjoint permutation layers, exactly two points in each row and
 column, and no Euclidean collinear triple.
 
