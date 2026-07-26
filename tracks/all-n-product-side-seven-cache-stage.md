@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `19`:
+have closed every top-signature tier of multiplicity at least `15`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -25,16 +25,18 @@ have closed every top-signature tier of multiplicity at least `19`:
 | 23 | 10 | 230 | certified infeasible |
 | 20 | 1 | 20 | certified infeasible |
 | 19 | 42 | 798 | certified infeasible |
-| **Total** | **88 completed classes** | **2,142** | **38,444,709 shared bottom-CSP nodes** |
+| 16 | 38 | 608 | certified infeasible |
+| 15 | 2 | 30 | certified infeasible |
+| **Total** | **128 completed classes** | **2,780** | **54,953,627 shared bottom-CSP nodes** |
 
-Thus `69,718` support-twenty selectors remain active in this cache layer.
+Thus `69,080` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX643--PX646 in
-[`docs/208-side-seven-cycle52-radius-three-support-twenty-multiplicity-nineteen-completion.md`](../docs/208-side-seven-cycle52-radius-three-support-twenty-multiplicity-nineteen-completion.md).
+The latest exact results are PX647--PX654 in
+[`docs/209-side-seven-cycle52-radius-three-support-twenty-multiplicities-sixteen-and-fifteen.md`](../docs/209-side-seven-cycle52-radius-three-support-twenty-multiplicities-sixteen-and-fifteen.md).
 
 ## Solver improvement
 
-The multiplicity-19 verifiers hoist selector-to-edge incidence masks out of the
+The current verifiers hoist selector-to-edge incidence masks out of the
 clean-top loop and precompute fixed scalar point tables for each top order.
 This preserves the exact search tree and published node-count semantics while
 removing repeated setup and dynamic per-node allocations.
@@ -47,10 +49,9 @@ followed by proof-logged SAT or certified dominance and symmetry breaking. See
 
 ## Immediate task
 
-There are no multiplicity-18 or multiplicity-17 classes. The next nonempty tier
-has multiplicity `16`: thirty-eight top signatures containing `608` selectors.
-Split this tier into reproducible verifier shards using the hoisted-incidence
-engine. In parallel:
+The next nonempty tier has multiplicity `14`: forty top signatures containing
+`560` selectors. Split this tier into independently reproducible verifier shards
+using the hoisted-incidence engine. In parallel:
 
 1. add top-assignment assumption literals;
 2. extract deletion-minimal bottom infeasibility cores;
@@ -73,13 +74,18 @@ support layers and relative-cycle classes.
 ## Verification
 
 ```bash
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity19_shard1.cpp \
-  -o /tmp/side7_c52_s20_m19_s1
+g++ -O3 -std=c++17 scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity16.cpp -o /tmp/m16
+g++ -O3 -std=c++17 scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity15.cpp -o /tmp/m15
 
-for case_index in $(seq 0 24); do
+for case_index in $(seq 0 37); do
   for orientation in 0 1 2 3; do
-    /tmp/side7_c52_s20_m19_s1 "$case_index" "$orientation"
+    /tmp/m16 "$case_index" "$orientation"
+  done
+done
+
+for case_index in 0 1; do
+  for orientation in 0 1 2 3; do
+    /tmp/m15 "$case_index" "$orientation"
   done
 done
 ```
