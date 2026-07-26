@@ -1,0 +1,7 @@
+{
+  "tentative_diagonal": [[1, 1], [2, 2]],
+  "tentative_cross": [[1, 2], [2, 1]],
+  "witness_diagonal": [[5, 5], [6, 6]],
+  "witness_cross": [[5, 6], [6, 5]],
+  "designated_witnesses": [[3, 3], [4, 4]]
+}
