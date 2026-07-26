@@ -3,7 +3,7 @@
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air. It records the original-reference, controller-domain,
 initial-allocation, complete marked-support, separated-cycle, layerwise, and nested
-controller-history reductions in `docs/206` through `docs/244`.
+controller-history reductions in `docs/206` through `docs/245`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -46,6 +46,7 @@ controller-history reductions in `docs/206` through `docs/244`.
 | PP3ase--PP3ask | All bounded local source, transition, anchor, distinguished-endpoint, edge-host, and insertion constraints fuse into one rank-three helper hypergraph; the explicit cycle bypasses separate Hall and alternating stages | PROVED / CONDITIONAL FINITE LOCAL NORMAL FORM | `docs/242-joint-local-constraint-support-fusion.md` |
 | PP3asl--PP3ass | A saturated source decomposes into two permutation layers; sequential zero-cost layer trades cancel the complete first insertion table, including cross-layer incidences | PROVED / CONDITIONAL GLOBAL-NORMAL-FORM AND LAYER-RESERVOIR INTERFACES | `docs/243-layerwise-complete-insertion-cancellation.md` |
 | PP3ast--PP3asz | Select helpers before controller puncturing; puncturing at most `2W=o(R)` selected marked/helper controllers preserves allocation margins and removes controller density from the host frontier | PROVED / CONDITIONAL FINITE LOCAL NORMAL FORM AND UNRESERVED-COORDINATE INTERFACES | `docs/244-selected-helper-controller-puncturing.md` |
+| PP3ata--PP3atg | Layerwise helper demand is `O(R)=o(m)`; standard `o(m)` reservations leave automatic quadratic reservoirs, and failure is a near-complete global coordinate cover | PROVED / CONDITIONAL GLOBAL RESERVATION INTERFACE | `docs/245-automatic-layerwise-coordinate-reservoir.md` |
 
 ## Complete-support, layerwise, and critical square-root endpoint
 
@@ -77,6 +78,11 @@ including cross-layer incidences.
 Controller density is bypassed by selecting helpers against the controller-blind
 joint support table and puncturing only selected controllers afterwards. At most
 `2W=o(R)` values are punctured, so every fixed positive allocation margin survives.
+
+The layerwise helper demand is at most `O(W^2)=O(R)=o(m)`. Therefore every standard
+`o(m)` global reservation leaves the required reservoirs automatically. Failure of
+coordinate supply means that one occupied layer has a genuine reserved-coordinate
+cover of size `(1-o(1))m`.
 
 ## Complete cycle-insertion cancellation
 
@@ -111,12 +117,11 @@ potential.
 The remaining concentrated cases are now:
 
 1. genuinely global conditions that cannot be represented by forbidden patterns on
-   at most three selected endpoint cells;
-2. shortage of unreserved coordinates at the `Theta(s_a^2)` scale in an occupied
-   permutation layer;
-3. endpoint packages that cannot be assigned to the saturated two-layer replacement
+   at most three selected endpoint cells, including a near-complete global coordinate
+   cover in one occupied layer;
+2. endpoint packages that cannot be assigned to the saturated two-layer replacement
    architecture;
-4. branches that cannot use the slab-optimal random two-sided architecture or
+3. branches that cannot use the slab-optimal random two-sided architecture or
    preserve an original reference layer.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
@@ -127,7 +132,7 @@ pencils, paid puncture histories, temporal blocker instability, future-controlle
 dependencies, canonical punctured-star insertion cost, bounded coordinate placement,
 critical target helper support, target-cycle insertion concentration, mobility-hub
 and chord-cycle payment, local Hall/alternating/matching host preparation, failure of
-common-layering, cross-layer insertion payment, and high controller density are no
-longer separate frontiers.
+common-layering, cross-layer insertion payment, high controller density, and moderate
+coordinate-reservoir shortage are no longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
