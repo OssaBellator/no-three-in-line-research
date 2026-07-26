@@ -11,6 +11,10 @@ def edge_list(size: int) -> tuple[tuple[int, int], ...]:
     return tuple(combinations(range(size), 2))
 
 
+def membership_word(mask: int, size: int) -> tuple[int, ...]:
+    return tuple((mask >> index) & 1 for index in range(size))
+
+
 def independent(mask: int, graph_mask: int, edges: tuple[tuple[int, int], ...]) -> bool:
     for index, (u, v) in enumerate(edges):
         if graph_mask >> index & 1 and mask >> u & 1 and mask >> v & 1:
@@ -26,9 +30,10 @@ def canonical_set(size: int, available: int, graph_mask: int) -> int:
         if mask & ~available == 0 and independent(mask, graph_mask, edges)
     ]
     maximum = max(mask.bit_count() for mask in feasible)
-    # Integer mask order is the lexicographic order of the membership word read
-    # from the highest candidate to the lowest.  Only determinism is needed.
-    return min(mask for mask in feasible if mask.bit_count() == maximum)
+    return min(
+        (mask for mask in feasible if mask.bit_count() == maximum),
+        key=lambda mask: membership_word(mask, size),
+    )
 
 
 def blocker_fibres(
@@ -74,8 +79,7 @@ def verify_reconstruction_and_blockers(counts: Counter[str]) -> None:
                     assert blocked == available.bit_count() - alpha
                     maximum_fibre = max((len(values) for values in fibres.values()), default=0)
                     assert maximum_fibre * alpha >= blocked
-                    delta = max((len(values) for values in fibres.values()), default=0)
-                    assert available.bit_count() <= (delta + 1) * alpha
+                    assert available.bit_count() <= (maximum_fibre + 1) * alpha
                 counts["candidate systems"] += 1
 
 
@@ -108,8 +112,7 @@ def verify_atomic_rank_sensitivity(counts: Counter[str]) -> None:
 
 def verify_consumption(counts: Counter[str]) -> None:
     for size in range(1, 6):
-        edges = edge_list(size)
-        for graph_mask in range(1 << len(edges)):
+        for graph_mask in range(1 << len(edge_list(size))):
             available0 = (1 << size) - 1
             spent = 0
             steps = 0
