@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from collections import Counter, defaultdict, deque
+from collections import Counter, defaultdict
 from itertools import product
 from random import Random
 
@@ -12,40 +12,35 @@ def audit_history(s0: int, outputs: tuple[int, ...], loss_types: tuple[int, ...]
     assert len(outputs) == len(loss_types)
     stock = s0
     stocks = [stock]
-    amplification_units: list[int] = []
-    loss_units: list[tuple[int, int]] = []
+    amplification_units: list[tuple[int, int]] = []
+    loss_units: list[tuple[int, int, int]] = []
 
     for t, (h, loss_type) in enumerate(zip(outputs, loss_types)):
         assert stock >= 1
         stock += h - 1
         assert stock >= 0
         stocks.append(stock)
-        amplification_units.extend([t] * max(h - 1, 0))
-        loss_units.extend([(t, loss_type)] * max(1 - h, 0))
+        amplification_units.extend((t, k) for k in range(max(h - 1, 0)))
+        loss_units.extend((t, k, loss_type) for k in range(max(1 - h, 0)))
 
-    a_total = sum(max(h - 1, 0) for h in outputs)
-    l_total = sum(max(1 - h, 0) for h in outputs)
+    a_total = len(amplification_units)
+    l_total = len(loss_units)
     assert stock == s0 + a_total - l_total
     assert a_total == l_total + stock - s0
 
     cap = max(stocks)
-    assert a_total <= l_total + cap - s0
+    headroom = cap - s0
+    assert a_total <= l_total + headroom
 
-    unmatched = deque(amplification_units)
+    matched_losses = min(a_total, l_total)
     matched_by_type: dict[int, int] = defaultdict(int)
-    matched_losses = 0
-    for loss_time, loss_type in loss_units:
-        if unmatched and unmatched[0] < loss_time:
-            unmatched.popleft()
-            matched_by_type[loss_type] += 1
-            matched_losses += 1
+    for _surplus, loss in zip(amplification_units, loss_units):
+        matched_by_type[loss[2]] += 1
+    matched_cap = a_total - matched_losses
+    assert matched_cap <= headroom
+    assert matched_losses >= max(a_total - headroom, 0)
 
-    # Surplus not matched chronologically to later losses occupies final/cap headroom.
-    assert len(unmatched) == max(stock - s0, 0) or len(unmatched) <= cap - s0
-    required_loss_matches = max(a_total - (cap - s0), 0)
-    assert matched_losses >= required_loss_matches
-
-    if matched_by_type:
+    if matched_losses:
         k_loss = max(loss_types) + 1
         assert max(matched_by_type.values()) * k_loss >= matched_losses
 
@@ -53,7 +48,8 @@ def audit_history(s0: int, outputs: tuple[int, ...], loss_types: tuple[int, ...]
     counts["transitions"] += len(outputs)
     counts["amplification units"] += a_total
     counts["loss units"] += l_total
-    counts["matched surplus units"] += matched_losses
+    counts["matched loss units"] += matched_losses
+    counts["matched cap slots"] += matched_cap
 
 
 def exhaustive_histories(counts: Counter[str]) -> None:
