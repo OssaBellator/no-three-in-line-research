@@ -2,184 +2,263 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open.  The branch now has a large finite
-response and structural-descent theory, but no theorem yet forces a positive
-minimum of the real-triple potential to become zero.
+The no-three-in-line conjecture remains open.  The branch now has exact structural,
+matching-bank and collateral-accounting reductions, but no theorem yet proves that
+the resulting credit-reproduction system is subcritical for every inherited owner.
 
-The central correction is CMR1190--CMR1197:
+The critical honesty correction remains CMR1190--CMR1197:
 
 > finite scheduler termination is not potential improvement.
 
-A dirty minimum may have only higher-valued escape states.  Restriction and exact
-contraction can terminate at a dirty singleton with the same positive induced
-objective.  Every completion claim must therefore exhibit an actual lower-
-potential state or an averaging inequality which guarantees one.
+The current advance is more quantitative.  CMR1198--CMR1317 replace the unspecified
+bank-weight problem by explicit response-bank probabilities, pointwise local
+collateral envelopes, unique live-credit ownership and an exact finite spectral
+certificate target.
 
 ## 2. What is structurally closed
 
-The proved chain now includes the following normal forms.
+The proved chain includes:
 
 1. **Inherited banks and envelopes, CMR123--CMR218.**  Parent banks, Hall walls,
-   essentiality, exchange ancestry, and closure envelopes.
+   essentiality, exchange ancestry and closure envelopes.
 2. **Line, carry and token geometry, CMR219--CMR438.**  Primitive heights, thin
-   signatures, line-clean cylinders, stars, walls, packets, token return, and
-   cycle erasure.
-3. **Rollback and exact products, CMR439--CMR690.**  SCC factorisation, mixed
-   cycles, compatible paid pairs, protected/free products, child routing,
-   essential-core recursion, and forced-certificate escape.
-4. **Target and return normalization, CMR691--CMR893.**  Finite owner stocks,
-   target handoff, unit Hall walls, protected line reserves, global restoration
-   ancestry, completeness branching, and support concentration.
-5. **Minimum-face dynamics, CMR894--CMR989.**  Disjoint leaf compression,
-   minimum-anchor forcing, minimum-core deletion/contraction, complete host
-   transition normalization, cross-factor potential transport, host-
-   representability, and physical target handoff.
+   signatures, line-clean cylinders, stars, walls, packets and token return.
+3. **Rollback and exact products, CMR439--CMR690.**  SCC factorisation, compatible
+   paid pairs, protected/free products, child routing, essential-core recursion and
+   forced-certificate escape.
+4. **Target and return normalization, CMR691--CMR893.**  Finite owner stocks, target
+   handoff, unit walls, protected line reserves, restoration ancestry, completeness
+   branching and support concentration.
+5. **Minimum-face dynamics, CMR894--CMR989.**  Minimum-anchor forcing, core
+   deletion/contraction, complete host-transition normalization, cross-factor
+   potential transport, host representability and target handoff.
 6. **Robust target geometry, CMR990--CMR1093.**  Positive-gap surplus, corrected
-   four-assignment signatures, entry-rank line/star decompositions, simultaneous
-   common/cross-layer execution, target-hypergraph packing, and protected capacity.
-7. **Parameter-free selected scheduler, CMR1094--CMR1141.**  Minimum-selected
-   routing, permanent minimum-loss witnesses, fixed-core reconditioning,
-   parameter-free blocker covers, and finite response currencies.
-8. **Terminal matching structures, CMR1142--CMR1189.**  Linear Hall walls,
-   inclusion-minimal unit blocker walls, fixed-target and loaded-line degree-two
-   banks, side-three exact responses, side-two rigidity, and lifted small-interface
-   target ancestry.
+   assignment signatures, entry-rank line/star decompositions, simultaneous
+   execution, target-hypergraph packing and protected capacity.
+7. **Parameter-free selected scheduler, CMR1094--CMR1197.**  Minimum-selected
+   routing, permanent losses, fixed-core reconditioning, blocker covers, exact unit
+   walls, small interfaces and the finite-response nonclosure correction.
+8. **Exact target-collateral analysis, CMR1198--CMR1277.**  Permanent response-bank
+   bounds, restricted feasibility penalties, corrected line energies, absolute
+   entering-edge ownership, pointwise local envelopes, live-credit ledgers,
+   reproduction matrices and rational Lyapunov certificates.
+9. **Finite full-grid evidence, CMR1278--CMR1317.**  Standard/affine full-grid sides
+   three through six have exact finite response classifications.  These statements
+   are explicitly not transferred to scattered residual coordinates.
 
-No local routing, rollback, blocker, wall, loaded-line, small-factor, or owner-reset
+No local routing, rollback, blocker, wall, owner-reset or collateral-ownership
 recurrence remains anonymous.
 
-## 3. Principal bottleneck: target versus collateral
+## 3. Exact current target: a subcritical offspring matrix
 
-For a selected minimum `S` and response state `Q`, define
+Every current physical triple is a live credit.  A newly created credit receives a
+unique last-entering physical owner cell.  Targeting a parent credit class `sigma`
+with a chosen feasible bank law creates an expected offspring vector.  Collecting
+the rows gives a nonnegative matrix
 
 \[
-L(Q)=|\mathcal T(S)\setminus\mathcal T(Q)|,
+A_{\sigma\tau}=\mathbb E N_\tau(Q).
+\]
+
+A positive weighted potential decreases under every targeted response exactly when
+
+\[
+\boxed{Av<v.}
+\]
+
+For a finite nonnegative matrix this is equivalent to
+
+\[
+\boxed{\rho(A)<1.}
+\]
+
+A successful theorem may use an upper matrix `Ahat`; it is enough to show
+`rho(Ahat)<1`.  The certificate can be exact and rational:
+
+\[
+\widehat Av\le v-\delta,
 \qquad
-N(Q)=|\mathcal T(Q)\setminus\mathcal T(S)|.
+v,\delta\in\mathbb Q_{>0}^{\Sigma}.
 \]
 
-The exact identity is
+After clearing denominators, this is a finite integer inequality.  Bounded omitted
+collateral can be absorbed by the certificate slack.
+
+## 4. Available row bounds
+
+### Fixed-target permanent bound
+
+For one degree-two response graph
 
 \[
-\Phi(Q)-\Phi(S)=N(Q)-L(Q).
+G=K_{n,n}\setminus(O\cup F),
 \]
 
-A probability distribution on a response bank forces strict improvement only when
+put
 
 \[
-\boxed{
-\mathbb E N(Q)<\mathbb E L(Q).
-}
+\kappa_n=\left(\frac n{n-2}\right)^n\le16.
 \]
 
-The missing global theorem must produce this inequality for at least one canonical
-bank or a weighted combination of banks.
-
-### Required weighted form
-
-A sufficient statement is the existence of nonnegative weights `w_B`, not all
-zero, such that
+A compatible rank-`r` prescription has probability at most
 
 \[
-\boxed{
-\sum_Bw_B\,\mathbb E_BN(Q)
-<
-\sum_Bw_B\,\mathbb E_BL(Q).
-}
+\frac{\kappa_n}{(n)_r}.
 \]
 
-The bank classes have already been reduced to a finite list:
+This gives an exact finite-bank upper row after enumerating the genuinely new
+rank-one, rank-two and rank-three collateral atoms.
 
-- active residual target banks;
-- lifted fixed-core target banks;
-- loaded-line banks;
-- simultaneous common-layer and cross-layer star banks;
-- minimal blocker unit-wall children;
-- side-three singleton responses;
-- rigid side-one/two induced interfaces.
+### Corrected line energy
 
-## 4. Remaining technical bottlenecks
+For old state `S=O union M`, allowed response graph `G`, and
+`M_G=M cap G`, the genuinely new atom counts are
 
-### Fixed-interface collateral accounting
+\[
+V_1=\sum_L\binom{o_L}{2}(g_L-m_L),
+\]
 
-A response may destroy one active target while creating triples using contracted
-core edges.  The next theorem must count these anchored rank-zero, rank-one and
-rank-two contributions without charging the same physical triple at several
-factor, wall, envelope or lifted-owner levels.
+\[
+V_2=\sum_Lo_L\left(c_2(G_L)-\binom{m_L}{2}\right),
+\]
 
-A promising owner is the canonical last-active edge of CMR1182--CMR1189.  Assign
-every created triple to the last of its three edges to become active or fixed.
-This should give a disjoint ancestry partition of collateral.
+\[
+V_3=\sum_L\left(c_3(G_L)-\binom{m_L}{3}\right).
+\]
 
-### Bank averaging after blocker factorisation
+The old-edge subtraction is mandatory.
 
-An infeasible response bank minimalizes to a deficiency-one Hall wall.  Restoring
-one blocker gives an exact product with child-side sum `n-1`.  The weighted
-inequality must be stable under this product split:
+### Pointwise local envelope
 
-- either one child bank has negative expected new-minus-lost value;
-- or cross-child coupling atoms contribute a separately bounded correction.
+Every allowed response edge has
 
-CMR958--CMR973 supply the exact coupling boxes needed for this calculation.
+\[
+\Lambda_S(a)
+=
+w_S(a)+\frac12\Delta_2(a)+\frac13\Delta_3(a),
+\]
+
+and every response matching satisfies
+
+\[
+N(Q)\le\sum_{a\in R}\Lambda_S(a).
+\]
+
+Row/column maxima give a distribution-free bank bound.  Failure of the resulting
+improvement inequality forces a quantitatively loaded rank-one, rank-two or
+rank-three line/star certificate.
+
+### Target aggregation
+
+The exact identity
+
+\[
+\sum_{e\in E(S)}D_S(e)=3\Phi(S)
+\]
+
+implies that, absent improvement or complete bank blockage, one target cell and one
+absolute entering edge carry a local envelope of scale at least
+
+\[
+\frac{3\Phi(S)}{2n^2}.
+\]
+
+This is the current bridge from a global positive minimum to one local offspring
+row.
+
+## 5. Remaining technical bottlenecks
+
+### Line/height/carry matrix construction
+
+Partition last-entering owners by a finite signature containing enough information
+to bound their rank-one, rank-two and rank-three line profiles.  Populate an honest
+upper offspring matrix using:
+
+- primitive line height and dyadic bands;
+- prefix/full-token cells;
+- carry signatures;
+- loaded-line and secant-star absorption;
+- unavailable-edge and Hall-wall exits.
+
+The needed statement is not merely a large-line dichotomy.  The weighted sum of
+all offspring classes in each row must be strictly below the parent weight.
+
+### Product and wall triangularity
+
+CMR1218 assigns every entering edge to one unique residual factor, but a physical
+triple can touch several factors through fixed interfaces.  The next product lemma
+must order credit classes so that the upper offspring matrix is block triangular,
+or bound the off-diagonal interface block within the rational certificate slack.
+
+CMR1273 gives constructive gluing once that ordering is proved.
+
+### Scattered residual coordinates
+
+The standard-grid side-three/four/five/six classifications are root/affine finite
+theorems.  A residual factor may use scattered source and target coordinates in the
+parent board.  Its real-line energy must be recomputed in those inherited
+coordinates; the finite root tables cannot be imported by relabelling.
 
 ### Prime-field and thin regimes
 
-The selected response-bank construction is not intrinsically prime-power, but the
-available collateral estimates still use prefix height, carry, full-token and
-closure-envelope structure.  Prime-field and height-one owners need a replacement
-weighting or an explicit finite bank inequality.
+The response-bank and spectral formalism is not intrinsically prime-power, but the
+strongest row bounds still use nonroot prefix height, carry and envelope structure.
+Height-one and remaining thin owners need direct finite rows or a replacement
+signature system.
 
 ### CRT assembly
 
-Synchronized CRT saturation is exact, but real triples can project as
-collision/collision, collision/local-line, local-line/collision, or
-local-line/local-line.  A final assembly theorem must retain these local line and
-carry signatures; the invalid local modular-arc premise cannot be used.
+Synchronized CRT saturation is exact, but real triples project as
+collision/collision, collision/local-line, local-line/collision or
+local-line/local-line.  CRT offspring classes must retain these projection and
+carry types.  The invalid local modular-arc premise cannot be used.
 
-## 5. Open lemmas in recommended order
+## 6. Open lemmas in recommended order
 
-1. **Canonical collateral owner.**  Partition every created physical triple by one
-   last-active edge/owner so no collateral is counted twice.
-2. **One-bank expectation.**  Compute exact or upper-bounded `E N(Q)` for the
-   degree-two fixed-target bank, including fixed-core anchored triples.
-3. **Target matching bank inequality.**  Average the simultaneous escape from a
-   disjoint target family and compare its destroyed load with rank-split collateral.
-4. **Unit-wall stability.**  Prove the weighted target-collateral inequality is
-   inherited by at least one strict child of a minimal blocker wall.
-5. **Small-interface closure.**  Show rigid side-one/two interfaces contribute only
-   owner-assigned anchored collateral already counted at their lifted bank owner.
-6. **Prime-field/thin endpoint.**  Establish the weighted inequality without a
-   nonroot prefix-depth budget.
-7. **CRT weighted assembly.**  Combine local inequalities while controlling mixed
-   collision and local-line signatures.
+1. **Owner-signature matrix.**  Define a finite last-entering edge signature and
+   prove that its row counts dominate every exact created triple once.
+2. **Rank-two assignment bound by height.**  Bound `Delta_2(a)` using primitive-line
+   height or prefix/carry classes rather than a raw maximum-weight matching.
+3. **Rank-three rooted-star row.**  Convert `Delta_3(a)` into offspring classes whose
+   weighted return is below the parent target credit or is absorbed structurally.
+4. **Product triangularity.**  Order pure-child and anchored-interface credits so
+   unit-wall and child products admit the CMR1273 gluing certificate.
+5. **Rational certificate search.**  Enumerate finite rows on small inherited owners,
+   solve for a candidate `v`, and export exact integer inequalities.
+6. **Prime-field/thin certificate.**  Build the same rows without a nonroot prefix
+   budget.
+7. **CRT block assembly.**  Glue local matrices while controlling mixed collision
+   and local-line offspring.
 
-## 6. Computational priorities
+## 7. Computational priorities
 
-- Enumerate complete response banks for small sides and record the exact pair
-  `(L(Q),N(Q))`, split by residual/core rank and line ownership.
-- Solve linear programs for nonnegative bank weights satisfying strict expected
-  target advantage.
-- Test whether last-active-edge ownership makes all collateral classes disjoint.
-- Measure the correction caused by low-rank cross-factor coupling boxes under
-  unit-wall and child products.
-- Enumerate side-three and side-four fixed-target banks with arbitrary fixed-core
-  prescriptions, not only pure residual targets.
-- Test synchronized CRT products using the full four-pattern projection taxonomy.
+- Enumerate exact offspring vectors, not only `(L,N)` totals, for fixed-target banks
+  in inherited coordinate sets.
+- Search for rational `v>0` satisfying `Ahat v<v`; clear denominators and retain the
+  integer certificate and slack.
+- Test height/carry coarse partitions for honest upper-matrix domination.
+- Measure whether last-entering ownership makes cross-factor offspring genuinely
+  block triangular.
+- Extend standard-grid finite response searches cautiously; record equal-potential
+  trap SCCs rather than extrapolating strict descent.
+- Test synchronized CRT products using the complete four-pattern projection
+  taxonomy.
 
-## 7. Current proved endpoint
+## 8. Current proved endpoint
 
-Through **CMR1197**:
+Through **CMR1317**:
 
-- selected routing is fixed directly from an actual minimum;
-- same-vertex-set losses and fixed-core reopenings have finite parameter-free
-  stocks;
-- rolled-back banks have finite missing-edge covers;
-- minimal covers are exact deficiency-one unit walls;
-- fixed targets and loaded lines have executable-or-wall response banks;
-- side three has an exact response and root side two is clean;
-- small fixed-interface targets have lifted response-bank owners;
-- finite response is explicitly separated from the missing minimum-decrease
-  inequality.
+- one fixed-target bank has explicit permanent and availability inequalities;
+- every created triple has one absolute entering-edge and last-creation owner;
+- corrected rank-split line energy and pointwise local envelopes are exact;
+- optimized target-cell envelopes concentrate positive minima into quantitative
+  line/star certificates;
+- the weighting problem is exactly a finite spectral-radius problem with rational
+  certificates;
+- extension-free ambient response families have an exact matching description;
+- standard full grids through side six have explicit finite classifications, with
+  the side-six one-layer trap SCC and its two-layer clean escape recorded honestly.
 
-There is still no complete proof.  The next genuine advance must be a quantitative
-target-versus-collateral inequality, not another recurrence bound.
+There is still no complete proof.  The next genuine advance must prove a
+subcritical offspring matrix in inherited coordinates, not merely add another
+finite response or recurrence bound.
