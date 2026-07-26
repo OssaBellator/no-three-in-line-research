@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Finite checks for CMR982--CMR989."""
 
-from itertools import combinations
+from math import comb
 import random
 
 
@@ -20,7 +20,8 @@ def random_joint_state(cell_count, cardinality, rng):
 
 
 def random_joint_family(cell_count, cardinality, maximum, rng):
-    target = rng.randint(1, maximum)
+    state_count = comb(cell_count, cardinality) * (2 ** cardinality)
+    target = rng.randint(1, min(maximum, state_count))
     family = set()
     while len(family) < target:
         family.add(random_joint_state(cell_count, cardinality, rng))
@@ -51,9 +52,7 @@ def check_target_variability_and_cut():
                     checked += 1
                     continue
                 alternative = rng.choice(alternatives)
-                missing = sorted(set(target) - physical_cells(alternative))
-                assert missing
-                cell = missing[0]
+                cell = min(set(target) - physical_cells(alternative))
                 restricted = cell_cut(family, cell)
                 restricted_face, restricted_value = minimum_face(restricted, potential)
                 assert alternative in restricted
@@ -104,9 +103,7 @@ def check_expansion_response():
                     potential.setdefault(state, rng.randint(0, 20))
                 expanded_face, expanded_value = minimum_face(expanded, potential)
                 assert expanded_value <= old_value
-                if expanded_value < old_value:
-                    pass
-                else:
+                if expanded_value == old_value:
                     target_destroying = [
                         state
                         for state in expanded_face
@@ -136,11 +133,16 @@ def check_label_assignments_and_conditioning():
             family = set()
             for _state in range(rng.randint(1, 100)):
                 assignment = tuple(rng.randint(0, 1) for _ in range(3))
-                target_edges = {(assignment[index], cell) for index, cell in enumerate(target)}
-                extras = set()
+                target_edges = {
+                    (assignment[index], cell) for index, cell in enumerate(target)
+                }
                 available = list(set(range(cell_count)) - set(target))
-                for cell in rng.sample(available, rng.randint(0, min(10, len(available)))):
-                    extras.add((rng.randint(0, 1), cell))
+                extras = {
+                    (rng.randint(0, 1), cell)
+                    for cell in rng.sample(
+                        available, rng.randint(0, min(10, len(available)))
+                    )
+                }
                 family.add(frozenset(target_edges | extras))
             assignments = {}
             for state in family:
@@ -154,8 +156,7 @@ def check_label_assignments_and_conditioning():
             face, value = minimum_face(family, potential)
             selected = rng.choice(tuple(face))
             prescription = frozenset(
-                next(edge for edge in selected if edge[1] == cell)
-                for cell in target
+                next(edge for edge in selected if edge[1] == cell) for cell in target
             )
             conditioned = {
                 state for state in family if set(prescription) <= set(state)
