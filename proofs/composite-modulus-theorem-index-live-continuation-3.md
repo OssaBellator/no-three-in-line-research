@@ -39,42 +39,49 @@ The authoritative live ledger is split across:
 | CMR1414--1421 | Exact residual rook numbers, prescription probabilities and host penalties | PROVED; reindexed after concurrent collision | `docs/280-prime-power-extension-free-rook-probabilities.md` |
 | CMR1422--1429 | Exact owner-line loads, doubly stochastic assignment and integer dual certificate | PROVED | `docs/281-prime-power-cross-line-owner-assignment.md` |
 | CMR1430--1437 | Closed owner/rook class weights and geometric refinements | PROVED | `docs/282-prime-power-rook-owner-edge-weights.md` |
-| CMR1438--1445 | Harmonic conditional owner stars and high-height tail | PROVED | `docs/283-prime-power-cross-line-harmonic-owner-bound.md` |
-| CMR1446--1453 | Integer lattice-capacity owner envelope and exact height cutoff | PROVED | `docs/284-prime-power-cross-line-lattice-capacity-owner.md` |
-| CMR1454--1461 | Eligible prime-power pair signatures, simultaneous realization and line concentration | PROVED | `docs/285-prime-power-eligible-owner-signature-fans.md` |
-| CMR1462--1469 | Fractional dual-packing incidence identity, heavy prime-power signature extraction, owner/pair and response-partner dispersion, primitive-direction concentration, and exact-displacement translation banks | PROVED; randomized rational packings and exact direction stocks checked computationally | `docs/286-prime-power-fractional-packed-signature-fans.md` |
+| CMR1438--1445 | Harmonic conditional owner stars with inherited coordinate span | PROVED | `docs/283-prime-power-cross-line-harmonic-owner-bound.md` |
+| CMR1446--1453 | Inherited lattice-capacity owner envelope and exact height cutoff | PROVED | `docs/284-prime-power-cross-line-lattice-capacity-owner.md` |
+| CMR1454--1461 | Eligible prime-power signatures with separate matching, envelope and span parameters | PROVED | `docs/285-prime-power-eligible-owner-signature-fans.md` |
+| CMR1462--1469 | Fractional packed-signature identity, owner/pair dispersion, primitive-direction concentration and exact-displacement translation banks | PROVED; inherited-coordinate parameters corrected before endpoint snapshot | `docs/286-prime-power-fractional-packed-signature-fans.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 The complete selected owner matrix is block upper triangular, so only
-same-owner diagonal blocks require subcritical certificates.  At one such
-owner, exact rook classes give every prescription probability; canonical owner
-fibres turn expected collateral into one doubly stochastic edge-assignment
-cost; and integer lattice capacity reduces each owner load to finitely many
-eligible first-separation/projective-direction/height classes.
+same-owner diagonal blocks require subcritical certificates.  Exact rook
+classes give prescription probabilities; canonical owner fibres give one
+doubly stochastic edge-assignment cost; and inherited lattice capacity reduces
+owner load to finite first-separation/projective-direction/height classes.
 
-A heavy one-owner eligible class is simultaneously realized on one loaded line.
-The global fractional obstruction is now sharper as well.  Every subthreshold
-candidate family at a positive minimum supplies a signature class of packed
-incidence mass at least
+For a response matching side `d` inside envelope `p^k` with ambient coordinate
+span `W_omega`, a positive-minimum fractional obstruction contains a signature
+of packed incidence mass at least
 
 \[
-\frac{n-2}{3h(p+1)(1+\lfloor\log_2(n-1)\rfloor)}.
+\frac{d-2}{3k(p+1)B_\omega},
+\qquad
+B_\omega=1+\lfloor\log_2\max\{1,W_\omega\}\rfloor.
 \]
 
-That mass is dispersed over canonical owners and ordered owner-partner pairs; in
-the response branch it is dispersed over residual response edges.  After one
-more finite pigeonhole step it contains an exact lattice-displacement translation
-bank.  Independent line maxima are no longer the formal endpoint.
+It further contains an exact-displacement translation class of mass at least
+
+\[
+\frac{d-2}
+{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)},
+\]
+
+where
+
+\[
+S_{\omega,p}(s,H)=\left\lfloor\frac{W_\omega}{p^sH}\right\rfloor.
+\]
 
 The active frontier is:
 
-1. quantify prefix-return, quotient/carry or protected-reserve payment for the
-   CMR1469 exact-displacement translation bank;
+1. pay the CMR1469 exact-displacement bank through prefix return,
+   quotient/carry collision or protected reserve;
 2. compare that global payment with the one-owner loaded-line gain of
    CMR1458--CMR1461;
-3. encode the comparison as a host-uniform same-owner rational/integer
-   certificate `Av<v`;
-4. prove analogous diagonal certificates for prime-field and thin owners;
-5. glue them through owner triangularity; and
-6. complete balanced/CRT assembly with collision and local-line classes.
+3. encode the comparison as a host-uniform rational/integer certificate
+   `Av<v`;
+4. prove analogous diagonal certificates for prime-field and thin owners; and
+5. glue them through owner triangularity and complete balanced/CRT assembly.
