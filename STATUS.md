@@ -17,7 +17,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live.md` through CMR747;
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
-- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1549.
+- `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1557.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -69,14 +69,9 @@ bipartite assignment cost with a rational dual.
 
 ## Packed displacement and transfer endpoint
 
-A scattered residual factor keeps separate:
-
-- matching side `d`;
-- envelope side `t=p^k`;
-- coordinate span `W_omega`.
-
-At a positive minimum, every subthreshold exempt family yields an exact-
-displacement class of mass at least
+A scattered residual factor keeps separate matching side `d`, envelope side
+`t=p^k`, and coordinate span `W_omega`.  At a positive minimum, every
+subthreshold exempt family yields an exact-displacement class of mass at least
 
 \[
 \boxed{
@@ -99,25 +94,17 @@ Loaded-owner and private translated payments have disjoint canonical owner
 support.  The overlap problem is closed, but numerical calibration against
 destroyed parent credit remains open.
 
-## Extension-free line cleaning
+## Extension-free line cleaning and exact rook rows
 
-No Hall-cut blocker of `H_e` is a partial matching.  Therefore
-
-\[
-\operatorname{PM}(H_e\setminus X)\ne\varnothing
-\]
-
-for every allowed partial matching `X`.  Every nonaxis real line is a partial
-matching, so its complete allowed response trace can be deleted while the
-response continues to avoid both `O` and `e`.
+No Hall-cut blocker of `H_e` is a partial matching.  Hence every allowed partial
+matching `X`, including the complete allowed trace of a nonaxis line, may be
+deleted while preserving at least one target-avoiding response.
 
 The resulting response creates no new line-local collateral.  For a CMR1461
 owner-labelled loaded line, the same-owner, same-line offspring coordinate has
 policy coefficient zero.
 
-## Exact line-clean rook row
-
-Let `X` be the deleted line trace and put
+Put
 
 \[
 F=O\cup X\cup\{e\},
@@ -126,7 +113,7 @@ D=O\cup X.
 \]
 
 The graph `D` has maximum degree two and decomposes into alternating paths and
-even cycles.  Its rook polynomial factors by components.  If `e=uv`,
+even cycles.  If `e=uv`,
 
 \[
 \mathcal R_F(z)
@@ -138,87 +125,83 @@ Thus
 
 \[
 N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
-\]
-
-and for every compatible rank-`r` prescription `P`,
-
-\[
+\qquad
 \Pr(P\subseteq R)
 =
 \frac{N_{d-r}(F/P)}{N_d(F)}.
 \]
 
-Every remaining off-line collateral row is therefore an explicit rational
-component-rook dot product.
+Every off-line collateral row is therefore an explicit rational component-rook
+dot product.
 
-## Uniform and sharpened line-clean factors
+## Three exact line-clean coefficient classes
 
-CMR1534--CMR1541 show that every line-clean allowed graph contains a spanning
-`(d-3)`-regular subgraph.  Hence
+CMR1534--CMR1557 give three finite trace classes.
 
-\[
-N_d(F)
-\ge
- d!\left(\frac{d-3}{d}\right)^d
-\]
+### 1. Strong derangement-extendable trace
 
-and every rank-one through rank-three prescription satisfies
-
-\[
-\Pr(P\subseteq R)
-\le
-\frac{(d/(d-3))^d}{(d)_r}.
-\]
-
-CMR1542--CMR1549 attach an exact binary factor signature to the trace.  Put
-
-\[
-Y=X\cup\{e\}.
-\]
-
-The host contains a spanning `(d-2)`-factor exactly when:
-
-1. `Y` is a partial matching, equivalently `X` uses neither endpoint of `e`;
-2. `Y` does not leave one unmatched source and target joined by the opposite
-   matching.
-
-In that strong class,
+The target-plus-trace partial matching extends to a perfect matching disjoint
+from `O`.  The host contains a spanning `(d-2)`-factor and
 
 \[
 \boxed{
-N_d(F)
-\ge
- d!\left(\frac{d-2}{d}\right)^d
+\kappa_d^{strong}
+=
+\left(\frac d{d-2}\right)^d.
 }
 \]
 
-and
+### 2. Target-disjoint singleton remainder
+
+The target-plus-trace matching has size `d-1` and leaves one source and target
+joined by the sole residual opposite edge.  No `(d-2)`-factor exists, but the
+optimal fractional factor value is
 
 \[
 \boxed{
-\Pr(P\subseteq R)
-\le
-\frac{(d/(d-2))^d}{(d)_r}.
+q_{sing}
+=d-2-\frac1{d-2}
+=
+\frac{(d-1)(d-3)}{d-2}.
 }
 \]
 
-The strong class fails only through target-endpoint overlap or one singleton
-opposite-edge remainder.  Those weak traces retain the `(d-3)` bound.  The
-exact component rook ratio remains available in both classes.
-
-Define
+Its coefficient is
 
 \[
-q_X=
-\begin{cases}
- d-2,&\text{strong trace},\\
- d-3,&\text{weak trace},
-\end{cases}
-\qquad
-\kappa_d(X,e)=\left(\frac d{q_X}\right)^d.
+\boxed{
+\kappa_d^{sing}
+=
+\left(
+\frac{d(d-2)}{(d-1)(d-3)}
+\right)^d.
+}
 \]
 
-If
+### 3. Target-endpoint overlap
+
+A trace edge already uses a target endpoint, so one allowed-graph vertex has
+degree `d-3`.  The universal coefficient is
+
+\[
+\boxed{
+\kappa_d^{overlap}
+=
+\left(\frac d{d-3}\right)^d.
+}
+\]
+
+The coefficients satisfy
+
+\[
+\kappa_d^{strong}
+<
+\kappa_d^{sing}
+<
+\kappa_d^{overlap}.
+\]
+
+For the coefficient `kappa` belonging to the trace and
 
 \[
 \mathcal C_{off}^{line}
@@ -230,20 +213,20 @@ If
 \frac{V_3^{off}}{(d)_3},
 \]
 
-then
+one has
 
 \[
 \boxed{
 \mathbb E N_{off}(R)
 \le
-\kappa_d(X,e)\mathcal C_{off}^{line}.
+\kappa\mathcal C_{off}^{line}.
 }
 \]
 
 For `b` unavailable allowed edges and current potential `m`,
 
 \[
-\kappa_d(X,e)
+\kappa
 \left[
 \mathcal C_{off}^{line}
 +
@@ -255,28 +238,20 @@ D_S(e)
 
 forces one feasible strict-improvement response.
 
-The line-clean numerical frontier is now a two-signature destroyed-credit
-comparison, with exact component sharpening reserved for exceptional classes.
+The exact component rook ratio remains available in all three classes and may
+sharpen the corresponding uniform coefficient.
 
 ## Repeated-token atomic compression
 
 Fix a nonroot token in an envelope `t=p^h`.  Once one persistent central edge is
-fixed, the exact pair and trace stocks are
-
-\[
-(t-1)^2
-\qquad\text{and}\qquad
-2(t-1).
-\]
-
-Choose integers `q,R>=1` and set
+fixed, the exact pair and trace stocks are `(t-1)^2` and `2(t-1)`.  For chosen
+recurrence multiplicity `q` and return threshold `R`, put
 
 \[
 \lambda=2Rq(t-1)^2.
 \]
 
-For `J` episodes each containing at least `H` unavailable token edges, one gets
-at least one of:
+Repeated heavy episodes then reach at least one of:
 
 1. an explicit finite episode bound;
 2. at least `R` reintroductions of one labelled edge, paying
@@ -297,9 +272,9 @@ Fresh token-edge stock and successful absorption are not extra recurrent rows.
 
 ## Genuine current frontier
 
-1. **Strong/weak line-clean comparison.**  Prove the appropriate two-level
-   envelope, or a sharper exact component row, is below destroyed parent credit
-   in every recurrent geometric class.
+1. **Three-class line-clean comparison.**  Prove the relevant strong, singleton
+   or overlap envelope—or a sharper exact component row—is below destroyed
+   parent credit in every recurrent geometric class.
 2. **Atomic token coefficients.**  Calibrate edge return, persistent paid-pair
    selection and fixed trace incidence against destroyed parent credit.
 3. **Root and fixed-interface rows.**  Certify recurrent root-channel,
@@ -328,17 +303,17 @@ Fresh token-edge stock and successful absorption are not extra recurrent rows.
 - A loaded response witnessing a large expectation need not itself be the
   minimum response.  Line cleaning removes its same-line coordinate but does
   not silently certify all off-line collateral.
-- The two line-clean permanent envelopes are safe dominations of the exact rook
-  row; neither is yet proved sharp enough for every host.
+- The three line-clean permanent envelopes safely dominate the exact rook row;
+  none is yet proved sharp enough for every host.
 
 ## Bottom line
 
-There is no complete proof.  Through **CMR1549**, exact response probabilities,
+There is no complete proof.  Through **CMR1557**, exact response probabilities,
 owner weights, packed translations, private resources, transfer gluing, root
 channels, owner-disjoint packed/loaded bookkeeping, target-safe line cleaning,
-atomic repeated-token compression, exact line-clean rook rows, a universal
-line-clean factor, and the exact strong/weak factor signature are proved.
+atomic repeated-token compression, exact line-clean rook rows, and the exact
+strong/singleton/overlap permanent coefficients are proved.
 
-The remaining obstruction is numerical: compare the two-level line-clean and
+The remaining obstruction is numerical: compare those three line-clean and
 atomic recurrent rows with destroyed credit, then complete the host-uniform
 quotient and CRT assembly.
