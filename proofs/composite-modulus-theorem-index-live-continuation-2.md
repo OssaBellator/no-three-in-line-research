@@ -36,48 +36,51 @@ The authoritative live ledger is split across:
 | CMR1070--1077 | Minimum target-hypergraph packing/cover, compatible disjoint-target prescription, rooted line decomposition, loaded line versus simultaneous star, direct layer-polarized execution, finite contraction rank, and the hypergraph endpoint | PROVED | `docs/238-prime-power-minimum-target-hypergraph-packing.md` |
 | CMR1078--1085 | Common-majority target layer, compatible representatives, degree-two Hall layer escape, simultaneous destruction of half a disjoint target bank, minimum trichotomy, robust scale transfer, restricted-host scope, and the disjoint-target escape endpoint | PROVED | `docs/239-prime-power-disjoint-target-simultaneous-escape.md` |
 | CMR1086--1093 | Per-owner protected capacity, strict-path polynomial stock, complete wall-tree and envelope aggregation, global growth bounds, zero-growth structural alternatives, and the branch-wide protected-capacity endpoint | PROVED | `docs/240-prime-power-global-protected-owner-capacity.md` |
+| CMR1094--1101 | Minimum-selected routing restriction, exact child product, strict child sides, elimination of routing history, lambda-free owner/protected/deletion stocks, and the selected-routing endpoint | PROVED | `docs/241-prime-power-minimum-selected-routing-normalization.md` |
+| CMR1102--1109 | Nested normalized hosts, permanent distinct minimum-loss witnesses, one-segment and branch-wide loss bounds, target-cell charging, routing-recurrence removal, and the normalized-loss endpoint | PROVED | `docs/242-prime-power-minimum-loss-normalization.md` |
+| CMR1110--1117 | Lifted contracted anchors, minimum-preserving reconditioning, strict-improvement test, physical missing-edge witnesses, same-value rollback, reopening loss stock, and the fixed-core endpoint | PROVED | `docs/243-prime-power-fixed-core-reopening-normalization.md` |
+| CMR1118--1125 | Generic bank missing supports, rollback certificates, duplicate erasure, blocker concentration/dispersion, recurrent-blocker response, branch stock, and the target-bank rollback endpoint | PROVED | `docs/244-prime-power-target-bank-rollback-support.md` |
+| CMR1126--1133 | Greedy parameter-free blocker cover, distinct unavailable blockers, exact bank coverage, bulk redeletion, anchor-failure response, branch-wide cover stock, and the blocker-cover endpoint | PROVED | `docs/245-prime-power-rollback-blocker-cover-normalization.md` |
+| CMR1134--1141 | Dirty-minimum bank selector, executable-or-covered bank dichotomy, minimum trichotomy, robust/protected execution, fixed-core response, finite currency stocks, episode bound, and the selected-scheduler endpoint | PROVED as a finite-response theorem; terminal obstruction remains | `docs/246-prime-power-selected-scheduler-finite-response.md` |
 
-The branch still does not prove the all-`n` conjecture. Same-vertex-set dynamics,
-minimum-core contraction, cross-factor potential transport, host representability,
-and robust-surplus geometry have exact normal forms.
+The branch still does not prove the all-`n` conjecture.
 
-A dirty minimum has a static target-hypergraph dichotomy. It either contains many
-physically disjoint targets, which admit one degree-two Hall escape destroying at
-least half of them simultaneously, or a small cell cover concentrates many
-targets at one selected cell. The concentrated branch gives a loaded target line
-or a simultaneous common-layer/cross-layer star.
+For minimum-anchor analysis, routing recurrence is unnecessary: each host stage is
+restricted immediately to the routing skeleton of one actual minimum. The exact
+child product has strict positive child sides, so the selected owner-stage,
+protected-growth, and deletion-root stocks are parameter-free.
 
-All simultaneous branches have direct protected executions:
+Between contractions, normalized hosts form nested decreasing chains. Canonical
+lost-minimum witnesses are distinct and permanent inside one segment. A contracted
+minimum core either reconditions while its stored lifted anchor survives, rolls
+back same-value additions, improves, or exposes a real missing anchor edge.
 
-- common-layer star outside cells form one partial matching and absorb without a
-  matching-vertex wall loss;
-- a cross-layer star absorbs one complete endpoint side while the other layer is
-  kept fixed;
-- loaded old lines and entering-pair lines absorb their majority-layer cells;
-- no-growth large cores enter the selected-skeleton product descent.
+Rolled-back target banks have a missing-edge cover of size at most `2N^2`,
+independent of bank cardinality. Returned cover edges are bulk-redeleted while the
+stored anchor survives; anchor failure enters the finite loss stock.
 
-Protected growth cannot restart indefinitely under new owners. In the
-nonrecurrent-routing branch, the complete closure branch has the explicit
-owner-labelled capacity
+A cycle-erased selected-minimum response history has the explicit finite currency
+sum
 
 \[
-\mathfrak P(N,h,\lambda)
+\mathfrak E
 =
-(h+1)(2N+1)
-\sum_{m=1}^{N}
-2m(2m^2+m+1)
-\left(
-1+\left\lfloor\frac{(\lambda-1)m^2}{2}\right\rfloor
-\right).
+\mathfrak O_{\min}
++
+\mathfrak P_{\min}
++
+\mathfrak D_{\min}
++
+\mathfrak L
++
+\mathfrak B
++
+\mathfrak C.
 \]
 
-After this capacity is spent, every further target execution must produce
-large-core product descent, loaded-line or target-cell recurrence, lost-minimum
-ancestry, recurrent routing support, envelope expansion, finite base handling, or
-strict potential improvement.
-
-The active prime-power frontier is therefore the **residual structural and
-loss/restoration ancestry loop after global protected-capacity exhaustion**. The
-local target, line, star, large-core, host-transition, and owner-reset branches no
-longer supply uncontrolled repetition. Prime-field transfer and arbitrary
-side-length assembly remain necessary.
+After those local currencies are exhausted, the remaining prime-power task is the
+**terminal obstruction theorem**: rule out, factor, or clean a final residual host
+whose selected target-response banks are permanently covered by unavailable edges,
+or whose surviving obstruction is a terminal loaded-line/Hall/prefix/carry/core
+certificate. Prime-field transfer and arbitrary side-length assembly remain
+necessary.
