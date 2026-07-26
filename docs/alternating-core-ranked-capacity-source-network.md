@@ -173,26 +173,34 @@ recursive contribution is already present in the finite initial terminal-yield s
 For an arbitrary finite capacity-source dependency graph, contract its strongly
 connected components.  The condensation graph is acyclic, so AC3qp--AC3qs close all
 inter-component capacity creation once each cyclic component has an internal route.
-Inside a positive cyclic component, the structural classification AC3pu--AC3pz applies
-verbatim to the capacity-source types:
 
-1. an all-unit component is one conservative directed cycle and closes when its phase is
-   quotient-stuttering or finitely ticketed;
-2. otherwise there is one canonical capacity-source type with at least two declared
-   output slots;
+Fix one positive cyclic component `S`.  For `a in S`, count **all** declared output slots
+of a debit at `a`: internal slots returning to `S`, slots leaving to lower condensation
+components, and terminal physical-capacity slots to `beta`.  Strong connectivity gives
+at least one internal slot at every source.  Exactly one of the following holds:
+
+1. every source has exactly one total output slot; then that slot is internal, has rate
+   one, there are no exits from `S`, and `S` is one conservative directed unit cycle;
+2. one canonical source has at least two total output slots, possibly because an internal
+   unit-cycle edge is accompanied by an exit or terminal-capacity slot;
 3. a change of rates, addresses, terminal roles or payment semantics is an outer reset.
 
-Consequently ranked or acyclic capacity-source recreation is no longer open.  The exact
-cyclic residual is phase-sensitive unticketed capacity-source circulation or realized
-multi-output amplification inside one capacity-source SCC.
+The first case closes when phase is quotient-stuttering or finitely ticketed.  The second
+case is the canonical realized multi-output capacity-source residual.
+
+Consequently ranked or acyclic capacity-source recreation is no longer open.  A unit
+internal cycle with any positive outgoing or terminal edge is correctly routed to the
+multi-output case rather than misclassified as conservative circulation.
 
 ### Proof
 
 The condensation statement is AC3ps applied with `beta` as the terminal capacity sink.
-The unit-cycle/multi-output dichotomy uses only finiteness, positive integer rates and
-strong connectivity, so AC3pv--AC3pw apply without change.  AC3px closes the conservative
-case under its quotient/ticket contract; AC3py supplies the canonical multi-output
-address in the other case. QED.
+Inside `S`, strong connectivity supplies at least one positive internal output slot at
+each source.  If every source has one total slot, there can be no external or terminal
+slot; the internal positive graph is therefore the all-unit functional SCC of AC3pw and
+is one directed simple cycle.  Otherwise the least source with at least two total slots
+and its first two ordered slots give the AC3py address.  AC3px closes the conservative
+case under its quotient/ticket contract. QED.
 
 ## Corrected AC4 source frontier
 
@@ -216,4 +224,5 @@ gates, nonadditive owners and scalar/arithmetic macro cycles.
 `scripts/verify_ac_ranked_capacity_source_network.py` exhausts small capacity-source DAGs
 and rates and samples longer mixed histories.  It checks terminal-yield and strict
 path-product recurrences, the one-step inequalities, gross capacity-creation and
-transition bounds, the combined amplification inequality and SCC condensation routing.
+transition bounds, the combined amplification inequality and SCC condensation routing,
+including unit internal cycles with outgoing or terminal slots.
