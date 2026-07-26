@@ -2,273 +2,238 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open.  The branch contains a large
-finite-response and structural-descent theory, but no theorem yet forces every
-positive minimum of the real-triple potential to become zero.
+The no-three-in-line conjecture remains open.  The branch has exact structural
+and matching-bank reductions, but no theorem yet proves that every positive
+minimum of the real-triple potential reaches zero.
 
-The decisive honesty correction remains CMR1190--CMR1197:
+The decisive honesty correction remains:
 
-> finite scheduler termination is not potential improvement.
+> finite response and structural descent are not the same as potential
+> improvement.
 
-A completion must exhibit an actual lower-potential response or an exact weighted
-inequality which guarantees one.
+A completion must exhibit an actual lower-potential response or an exact
+weighted inequality that guarantees one.
 
-## 2. What is now structurally closed
+## 2. What is structurally closed
 
-The proved chain includes:
+The proved chain now contains finite canonical forms for:
 
-1. inherited parent banks, Hall walls, closure envelopes and exchange ancestry;
-2. primitive-height, line-clean, carry, token, packet and cycle-erasure geometry;
+1. inherited banks, Hall walls, closure envelopes and exchange ancestry;
+2. primitive-height, line-clean, carry, token and cycle-erasure geometry;
 3. exact rollback, SCC, protected/free, unit-wall and child products;
-4. minimum-face restriction, host-representable contraction and owner-normalized
-   loss/restoration ledgers;
-5. target handoff, protected execution, loaded-line and star response banks;
-6. terminal blocker covers as exact deficiency-one unit walls;
-7. small full-grid classifications through side six, with inherited-coordinate
-   scope retained for residual factors;
-8. last-entering collateral credits and exact rational spectral certificates.
+4. minimum-face restriction, host-representable contraction and loss ledgers;
+5. target handoff, protected execution, loaded-line and star banks;
+6. terminal blocker covers and small full-grid bases;
+7. last-entering credit ownership and finite rational spectral certificates.
 
-No routing, blocker, wall, fixed-core, small-factor or owner-reset recurrence
-remains anonymous.
+The complete owner system is a finite DAG.  Its reproduction matrix is block
+upper triangular, so only the same-owner diagonal blocks require subcritical
+certificates.
 
-## 3. Product and fixed-interface triangularity is solved
+## 3. Exact same-owner probability law
 
-CMR1318--CMR1325 prove the previously open product-gluing step.
-
-A one-coordinate product response changes edges in one residual factor only.
-Every newly created triple therefore has its last-entering owner edge in that
-factor, even when the triple also contains fixed-core or sibling-factor cells.
-Contraction creates no new credit, and a fully fixed target is answered at its
-existing lifted owner.
-
-The selected structural owner graph is finite and acyclic.  Its global offspring
-matrix is block upper triangular, so
+For one target `e` and opposite matching `O`, use
 
 \[
-\rho(A)=\max_i\rho(A_{ii}).
+H_e=K_{n,n}\setminus(O\cup\{e\}).
 \]
 
-Arbitrarily large but finite off-diagonal cross-factor collateral changes only
-the scale of the Lyapunov weights.  It is no longer a separate subcriticality
-obstruction.
-
-## 4. Exact same-owner matrices and coarse upper quotients
-
-At one finite owner, complete state-target pairs give exact credit classes.
-Any geometric compression
+After relabeling `O` to the identity and `e=(0,1)`, every compatible residual
+prescription is assigned parameters
 
 \[
-\pi:\Sigma_{\mathrm{exact}}\to\overline\Sigma
+(n,r,q,d,\varepsilon).
 \]
 
-has exact coarse row sums.  Componentwise maxima over exact rows produce an
-honest upper quotient `Ahat`.
-
-A certificate
+The exact forbidden-board rook polynomial gives
 
 \[
-\widehat A v<v
+r_j=\binom qj+\varepsilon\binom{q-d}{j-1}
 \]
 
-lifts to every exact host state.  It may be stored as finite strict integer
-inequalities after clearing denominators.  Deterministic response laws suffice
-once the weight vector is fixed.
-
-This removes the need to assume exact lumpability of line-height or carry classes.
-
-## 5. Extension-free target banks
-
-For one target cell `e` and opposite matching `O`, the complete response family is
+and
 
 \[
-\operatorname{PM}(K_{n,n}\setminus(O\cup\{e\})).
+B_n(P)=
+\sum_{j=0}^{n-r}(-1)^j
+\left[\binom qj+\varepsilon\binom{q-d}{j-1}\right](n-r-j)!.
 \]
 
-Every response has a canonical realizing forbidden extension.
-
-If `D_n` is the derangement number, the bank size is exactly
+Thus
 
 \[
-D_n\frac{n-2}{n-1}.
+\Pr(P\subseteq R)=
+\frac{B_n(P)}{D_n(n-2)/(n-1)}.
 \]
 
-Put
+There are only `O(n)` exact probability classes per rank.  Exact collateral
+and unavailable-edge expectations are finite rook-class dot products.
+
+## 4. Cross-line assignment is solved formally
+
+Each candidate triple has one fixed entering owner before the response is
+sampled.  For a response edge `a`, let `g_e(a)` be its conditional expected
+owned collateral and `p_e(a)` its marginal.  Then
 
 \[
-\lambda_n=\frac{n!(n-1)}{D_n(n-2)}.
+\mathbb E N(R)=\sum_ap_e(a)g_e(a).
 \]
 
-Then `lambda_n<=4`, while every allowed edge has marginal at most `1/(n-2)`.
-Thus corrected candidate counts satisfy
+The marginal matrix is doubly stochastic.  Therefore expected collateral is
+one bipartite assignment cost, with exact dual
 
 \[
-\mathbb E N(R)
+\min\left\{
+\sum_x\alpha_x+\sum_y\beta_y:
+\alpha_x+\beta_y\ge g_e(x,y)
+\right\}.
+\]
+
+A dual sum below the destroyed target load forces an improving response.  This
+replaces independent line maxima by shared row/column potentials.
+
+Moreover, every `g_e(a)` is computable without enumerating the bank:
+
+\[
+c_e(a)=
+\sum_{r,q,d,\varepsilon,\eta}
+C_e(a;r,q,d,\varepsilon,\eta)\pi_n(r,q,d,\varepsilon),
+\qquad
+g_e(a)=\frac{c_e(a)}{p_e(a)}.
+\]
+
+Here `eta` may record inherited height, line, prefix, quotient and carry data.
+
+## 5. Lattice-capacity reduction
+
+For primitive direction height `h`, define
+
+\[
+c_n(h)=
+\max\left\{\left\lfloor\frac{n-1}{h}\right\rfloor-1,0\right\}.
+\]
+
+The exact owner-line identity gives
+
+\[
+\gamma_e(a,R)
 \le
-\frac{V_1^e}{n-2}
-+
-\lambda_n
-\left[
-\frac{V_2^e}{(n)_2}
-+
-\frac{V_3^e}{(n)_3}
-\right].
+\frac12\sum_{b\in E_a(R)}c_n(h(a,b)).
 \]
 
-The same sharp rank-one coefficient controls unavailable-edge use.  Complete
-blockage still gives strict unit-wall descent.
-
-The fixed-extension optimization problem is therefore closed for averaging.
-
-## 6. Exact line profiles and pair moments
-
-Axis lines contribute no response-state triples.  Every subset of a nonaxis line
-is matching-compatible.
-
-For
+Using exact pair rook probabilities yields a conditional capacity star and
 
 \[
-o_L=|O\cap L|,
-\qquad
-g_L=|G\cap L|,
-\qquad
-m_L=|M_G\cap L|,
+g_e(a)\le\Gamma_e^{\rm elig}(a).
 \]
 
-the corrected counts are
+The eligibility indicator is fixed before sampling: a response partner is
+eligible exactly when it was in the old matching or follows the owner in the
+absolute entering-edge order.
+
+Directions with
 
 \[
-V_1=\sum_L\binom{o_L}{2}(g_L-m_L),
+h>\frac{n-1}{2}
 \]
+
+have coefficient zero.  Thus the unresolved owner mass is supported only on
+finitely many low-height directions.
+
+## 6. Prime-power signature endpoint
+
+At side `n=p^k`, every eligible owner-partner pair has one signature
 
 \[
-V_2=\sum_Lo_L
-\left[\binom{g_L}{2}-\binom{m_L}{2}\right],
+(t,s,\delta,H),
 \]
+
+where:
+
+- `t` is fixed or response partner;
+- `s=v_p(G)` is first-separation depth;
+- `delta` is projective direction modulo `p`;
+- `H` is dyadic primitive-height band.
+
+For a fixed owner, at most
 
 \[
-V_3=\sum_L
-\left[\binom{g_L}{3}-\binom{m_L}{3}\right].
+2k(p+1)\bigl(1+\lfloor\log_2(n-1)\rfloor\bigr)
 \]
 
-The exact pair moments are
+classes occur.  A large eligible owner envelope forces one heavy class.  Some
+actual response simultaneously realizes at least the ceiling of that class's
+conditional mean.
+
+All partners in the class occupy one prefix carry cell, separation depth,
+projective direction and height band.  A fixed projective/height class has at
+most
 
 \[
-\sum_L\binom{o_L}{2}=\binom n2,
-\qquad
-\sum_L\binom{g_L}{2}=P_2(G),
-\qquad
-\sum_L\binom{m_L}{2}=\binom{|M_G|}{2}.
+D_p(H)=(p-1)\left\lceil\frac{4H}{p}\right\rceil^2
 \]
 
-Residual rank plus dyadic bands for `(o_L,g_L,m_L)` gives at most
+exact primitive directions, so the simultaneous class concentrates on one
+real line through the owner.
+
+## 7. Genuine remaining inequality
+
+The remaining prime-power theorem is no longer an ownership, product,
+matching-probability or independent-line problem.  It is:
+
+> compare the target-credit weight removed by an owner response with the
+> weighted offspring produced after executing the forced heavy carry-cell fan
+> or loaded real line.
+
+A successful statement must populate a host-uniform same-owner upper quotient
+and produce an exact certificate
 
 \[
-3(2+\lfloor\log_2n\rfloor)^3
+Av<v.
 \]
 
-profile classes, with explicit pair-moment tail and band envelopes.
+The existing loaded-line, star, protected-core, prefix, carry-cell and token
+responses give the available structural actions.  What is missing is a single
+quantitative weighting that makes their offspring subcritical.
 
-## 7. Exact all-target line-composition kernel
+## 8. Recommended next lemmas
 
-For a nonaxis line with `o` opposite-layer cells, `m` targeted-layer cells and
-`u` unselected cells, summing all extension-free banks through the targeted
-layer gives
+1. **Heavy-signature response row.**  Starting from the class forced by
+   CMR1458--CMR1461, calculate the exact destroyed-credit and created-credit
+   vector after loaded-line or carry-cell execution.
+2. **Carry-cell Lyapunov weights.**  Choose weights by separation depth, prefix
+   occupancy and height so deeper transfer or dispersed cells have strictly
+   smaller total weight.
+3. **Loaded-line assignment payment.**  Use the shared owner edge and protected
+   absorption to avoid charging one entering edge independently on every line.
+4. **Exact diagonal certificate.**  Search and then prove a rational/integer
+   `Av<v` certificate for the resulting finite classes.
+5. **Prime-field and thin blocks.**  Replace missing nonroot prefix depth with a
+   direct finite direction/line certificate.
+6. **CRT assembly.**  Retain collision/local-line types in each local diagonal
+   block and glue through the already-proved owner triangularity.
 
-\[
-\sum_eV_1^e=n\binom o2u,
-\]
+## 9. Computational priorities
 
-\[
-\sum_eV_2^e
-=o\left[(n-1)mu+n\binom u2\right],
-\]
+- Enumerate exact owner/rook/signature rows in inherited coordinate sets.
+- Record the full offspring vector, not only total `(L,N)`.
+- Solve rational linear programs for candidate class weights and export strict
+  integer inequalities.
+- Measure loaded-signature execution gain by separation depth and prefix cell.
+- Test thin and prime-field owner blocks independently before CRT gluing.
 
-\[
-\sum_eV_3^e
-=(n-2)\binom m2u
-+(n-1)m\binom u2
-+n\binom u3.
-\]
+## 10. Current proved endpoint
 
-The exact destroyed target incidence is
+Through **CMR1461**:
 
-\[
-m\binom{o+m-1}{2}
-\]
+- exact prescription probabilities use finite rook classes;
+- exact collateral is one shared-edge assignment cost;
+- every owner weight is a closed geometric/rook dot product;
+- harmonic and integer lattice-capacity pair envelopes are proved;
+- high-height directions vanish from the capacity envelope;
+- eligible low-height pairs occupy finitely many prime-power carry signatures;
+- a heavy signature is simultaneously realized and concentrates on one line.
 
-in that layer and
-
-\[
-3\binom{o+m}{3}
-\]
-
-across both layers.
-
-After inserting the sharp response probabilities, a strict global symmetric
-kernel inequality gives an improving target-cell response.
-
-## 8. The new obstruction: independent lines are too coarse
-
-CMR1372 gives a realizable full-grid state at side five with exact target
-incidence
-
-\[
-3\Phi(S)=6
-\]
-
-but independent-line extension-free upper kernel
-
-\[
-\frac{160}{11}>6.
-\]
-
-This is not a counterexample to improvement.  It proves that pair moments and
-independent line maxima alone cannot certify improvement.
-
-The missing gain must use at least one of:
-
-- shared response-edge assignment across several lines;
-- primitive-height scarcity and line-energy distribution;
-- prefix, quotient or carry cancellation;
-- a stronger joint law for rank-two/rank-three response prescriptions;
-- cross-line weighted credits rather than independent line weights.
-
-## 9. Recommended next lemmas
-
-1. **Cross-line edge assignment.**  Express the symmetric kernel as an edge-weighted
-   matching cost so one response edge pays all lines through it only once.
-2. **Height-band joint moment.**  Bound the total rank-two/rank-three kernel inside
-   one primitive-height band using the existing prefix and carry ledgers.
-3. **Diagonal upper quotient.**  Populate exact rows for the rank/profile/height
-   classes and search for a rational `Av<v` certificate.
-4. **Thin and prime-field diagonal blocks.**  Replace nonroot prefix depth with a
-   direct line-distribution certificate.
-5. **CRT diagonal assembly.**  Retain collision/local-line classes in each local
-   factor, then use the already-proved structural triangularity.
-
-## 10. Computational priorities
-
-- Enumerate exact extension-free offspring rows by line profile and owner edge for
-  small inherited coordinate sets.
-- Solve exact rational linear programs for candidate Lyapunov weights.
-- Measure the gap between independent-line kernel bounds and exact bank
-  expectations, split by primitive height.
-- Test whether rank-two/rank-three pair marginals admit useful negative-correlation
-  or assignment inequalities.
-- Verify block-diagonal certificates before adding finite off-diagonal product
-  terms.
-
-## 11. Current proved endpoint
-
-Through **CMR1373**:
-
-- product and fixed-interface offspring are exactly block triangular;
-- arbitrary coarse geometric classes have honest upper quotients;
-- extension-free bank sizes and rank-one marginals are exact;
-- higher-rank probability loss is at most four;
-- line profiles and pair moments give explicit dyadic envelopes;
-- all-target candidate sums have a closed line-composition kernel;
-- independent linewise domination is explicitly insufficient.
-
-There is still no complete proof.  The next genuine advance must be a cross-line
-same-owner inequality or an exact subcritical diagonal certificate.
+There is still no complete proof.  The next genuine advance is a subcritical
+weighted response row for that loaded signature, not another recurrence or
+matching-existence theorem.
