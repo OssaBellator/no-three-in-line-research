@@ -47,29 +47,31 @@ The authoritative live ledger is split across:
 | CMR1158--1165 | Degree-two banks for fixed targets and loaded lines, executable-versus-blocked split, minimum response, minimal-cover unit wall, finite descent, and the terminal-certificate endpoint | PROVED for the universal range | `docs/249-prime-power-terminal-certificate-bank-descent.md` |
 | CMR1166--1173 | Target-location trichotomy, residual and lifted-owner target banks, blocked-bank unit-wall descent, finite currency execution, no dirty terminal owner at side at least four, and finite structural descent | PROVED as a selected-execution descent theorem | `docs/250-prime-power-universal-range-target-descent.md` |
 | CMR1174--1181 | Exact side-three permutation bank, singleton blocker response, side-two physical rigidity and root cleanliness, rigid-block contraction, side-one factors, and the small joint-factor endpoint | PROVED | `docs/251-prime-power-small-joint-factor-base.md` |
+| CMR1182--1189 | Unique backward edge lineage, canonical last-fixation target edge, lifted response-bank owner, small-owner lifting, root-base exclusion, finite target-owner ancestry, and the small-interface endpoint | PROVED as interface bookkeeping | `docs/252-prime-power-small-interface-target-ancestry.md` |
+| CMR1190--1197 | Abstract positive-minimum countermodel, dirty singleton contraction, finite-stock nonimplication, exact averaging criterion, destroyed-load/collateral identity, finite canonical bank reduction, open weighted inequality, and revised frontier | PROVED except CMR1196, which is an OPEN TARGET | `docs/253-prime-power-finite-response-nonclosure.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-Minimum-selected routing removes routing recurrence from the chosen proof path.
-Normalized minimum losses, fixed-core reopenings, protected growth, deletion roots,
-and rolled-back bank blockers all have parameter-free finite stocks.
+Minimum-selected routing, normalized losses, fixed-core reopenings, protected growth,
+rolled-back banks, blocker walls, unit-wall descent, and small-factor ancestry all
+have finite canonical forms. A complete blocker cover minimalizes to an exact
+unit Hall wall; fixed targets and loaded lines have degree-two response banks;
+side three has an exact singleton response; root side two is clean.
 
-A complete blocker cover of a response bank has an inclusion-minimal subcover
-which is exactly an allowed Hall cut of deficiency one. Restoring any blocker makes
-it essential and yields the exact unit-wall product with strict lower-side children.
-Thus permanent bank blockage is structural descent rather than a terminal inventory.
+These finite and descending responses do **not** by themselves imply minimum zero.
+A positive minimum can have only higher-valued escape states, and conditioning can
+terminate at a dirty singleton with the same positive induced objective.
 
-Fixed targets and loaded lines have degree-two full-layer response banks. A feasible
-response enters the finite minimum scheduler; a fully blocked response gives the
-unit-wall descent. Consequently a cycle-erased selected owner of active side at
-least four cannot be terminal while dirty.
+The active frontier is the **global target-versus-collateral inequality**. A
+completion must construct canonical bank weights satisfying
 
-The small joint base is explicit: side three has a unique response matching for
-every target edge and opposite permutation; a root side-two saturated board is the
-complete `2x2` grid and is clean; residual side-two blocks are physically rigid and
-contract into the induced fixed interface; side-one factors contract or are empty.
+\[
+\sum_Bw_B\,\mathbb E_B N(Q)
+<
+\sum_Bw_B\,\mathbb E_B L(Q),
+\]
 
-The active frontier is now **induced fixed-interface bookkeeping across the final
-small factors, prime-field/thin structural owners, and arbitrary-length assembly**.
-The universal matching-bank and blocker-wall parts no longer leave a terminal
-obstruction of side at least three.
+or otherwise exhibit an actual lower-potential state. The weights must incorporate
+host availability, lifted fixed interfaces, rank-zero/rank-one/rank-two collateral,
+prime-field/thin regimes, and CRT assembly. Finite response is a reduction to this
+inequality, not a substitute for it.
