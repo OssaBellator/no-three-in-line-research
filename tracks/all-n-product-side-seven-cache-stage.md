@@ -10,7 +10,7 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `14`:
+have closed every top-signature tier of multiplicity at least `13`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -28,12 +28,13 @@ have closed every top-signature tier of multiplicity at least `14`:
 | 16 | 38 | 608 | certified infeasible |
 | 15 | 2 | 30 | certified infeasible |
 | 14 | 40 | 560 | certified infeasible |
-| **Total** | **168 completed classes** | **3,340** | **73,726,685 shared bottom-CSP nodes** |
+| 13 | 48 | 624 | certified infeasible |
+| **Total** | **216 completed classes** | **3,964** | **90,056,398 shared bottom-CSP nodes** |
 
-Thus `68,520` support-twenty selectors remain active in this cache layer.
+Thus `67,896` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX655--PX658 in
-[`docs/210-side-seven-cycle52-radius-three-support-twenty-multiplicity-fourteen.md`](../docs/210-side-seven-cycle52-radius-three-support-twenty-multiplicity-fourteen.md).
+The latest exact results are PX659--PX662 in
+[`docs/211-side-seven-cycle52-radius-three-support-twenty-multiplicity-thirteen.md`](../docs/211-side-seven-cycle52-radius-three-support-twenty-multiplicity-thirteen.md).
 
 ## Solver improvement
 
@@ -50,9 +51,10 @@ followed by proof-logged SAT or certified dominance and symmetry breaking. See
 
 ## Immediate task
 
-The next nonempty tier has multiplicity `13`: forty-eight top signatures
-containing `624` selectors. Split this tier into independently reproducible
-verifier shards using the hoisted-incidence engine. In parallel:
+The next nonempty tier has multiplicity `12`: one hundred twenty-eight top
+signatures containing `1,536` selectors. This width makes the proof-producing
+solver route more urgent. Split the tier into independently reproducible
+verifier shards while implementing assumption-based conflict extraction:
 
 1. add top-assignment assumption literals;
 2. extract deletion-minimal bottom infeasibility cores;
@@ -76,12 +78,12 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity14.cpp \
-  -o /tmp/m14
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity13.cpp \
+  -o /tmp/m13
 
-for case_index in $(seq 0 39); do
+for case_index in $(seq 0 47); do
   for orientation in 0 1 2 3; do
-    /tmp/m14 "$case_index" "$orientation"
+    /tmp/m13 "$case_index" "$orientation"
   done
 done
 ```
