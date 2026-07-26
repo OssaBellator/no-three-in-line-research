@@ -1,9 +1,10 @@
-# Prime-patching frontier addendum: original-reference, allocation, and marked-support reductions
+# Prime-patching frontier addendum: original-reference, allocation, and complete marked-support reductions
 
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
-after PP3air. It records the original-reference, controller-domain, captive-star,
-initial-allocation, ambient-support, and marked-source reductions in `docs/206`
-through `docs/222` without replacing the larger historical ledgers.
+after PP3air.  It records the original-reference, controller-domain,
+initial-allocation, ambient-support, marked-source, and complete helper-support
+reductions in `docs/206` through `docs/227` without replacing the larger
+historical ledgers.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -23,12 +24,17 @@ through `docs/222` without replacing the larger historical ledgers.
 | PP3alu--PP3alz | Uniform denominator margin plus random two-sided local Ore either completes the initial allocation or forces an `Omega(RT)` converted score numerator | PROVED / CONDITIONAL COMBINED CONVERSION INTERFACE | `docs/219-random-two-sided-score-mass-conversion.md` |
 | PP3ama--PP3amj | Ambient rank-three/rank-four binary multiplicity is bypassed by positive-support avoidance; dense support becomes fixed-resource pencils or disjoint link banks | PROVED / CONDITIONAL RESIDUAL-SLACK AND ENDPOINT-HOST INTERFACES | `docs/220-ambient-binary-positive-support-link-decomposition.md` |
 | PP3amk--PP3amq | Ambient unary multiplicity is bypassed by exact support avoidance; dense support yields a source star or credited witness bank of size `Omega(sqrt(Q))` | PROVED / CONDITIONAL RESIDUAL-SLACK AND ENDPOINT-HOST INTERFACES | `docs/221-ambient-unary-positive-support-conversion.md` |
-| PP3amr--PP3amy | The four high-support marked-source classes admit exact support probabilities and localize to target-size fixed-core sunflowers or resource-disjoint signature banks | PROVED / CONDITIONAL RESIDUAL-SLACK AND SOURCE-HOST CONVERSION INTERFACES | `docs/222-marked-high-support-source-signature-localization.md` |
+| PP3amr--PP3amy | The four high-support marked-source classes admit exact support probabilities and localize to target-size fixed-core sunflowers or resource-disjoint signature banks | PROVED / CONDITIONAL RESIDUAL-SLACK AND SOURCE-HOST INTERFACES | `docs/222-marked-high-support-source-signature-localization.md` |
+| PP3amz--PP3anf | A sunflower-transversal helper law annihilates one fixed/nested pencil or disjoint signature bank and gives exact helper-and-arc cylinder probabilities | PROVED / CONDITIONAL RESIDUAL-LOAD INTERFACE | `docs/223-sunflower-transversal-single-cycle-host.md` |
+| PP3ang--PP3anm | A constant collection of optional-core pencils and empty-core disjoint banks is avoided simultaneously with target expectation `O(b^2/N)=o(1)` | PROVED / CONDITIONAL RESIDUAL-LOAD INTERFACE | `docs/224-simultaneous-finite-sunflower-host.md` |
+| PP3ann--PP3ant | A maximal residual-support-independent helper set either has the required size or produces a fixed core with `N^(1-o(1))` variable extensions | PROVED / CONDITIONAL EXTERNAL-HOST INTERFACE | `docs/225-maximal-independent-helper-core-localization.md` |
+| PP3anu--PP3aoc | Terminal high-support source pencils are converted: anchored pairs yield credited anchor banks, while inserted-triple pencils are impossible by unique completion | PROVED / CONDITIONAL ENDPOINT-HOST INTERFACE | `docs/226-terminal-source-pencil-closure.md` |
+| PP3aod--PP3aoj | Every nonzero canonical source or Xi event has nonempty helper support; an independent block has zero source violations and zero insertion cost, while terminal insertion pencils rejoin existing petal/grid/fan chains | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/227-complete-canonical-support-capture.md` |
 
 ## Original-reference and robust target-cycle endpoint
 
-Fix an original permutation layer `M_0`. A single-cycle seed followed by
-fresh-helper moves keeps exactly one nontrivial relative cycle and satisfies
+Fix an original permutation layer `M_0`.  A single-cycle seed followed by
+fresh-helper moves keeps one nontrivial relative cycle and satisfies
 
 ```text
 S_(t+1)=S_t+q-1.
@@ -41,197 +47,158 @@ R=m^(19/20+o(1)),
 W=sqrt(R)=m^(19/40+o(1)),
 ```
 
-any divergent `q=o(W)` reaches a `Theta(W)` defect after `O(W/q)=o(W)` steps.
-Final binary shadow remains below the reserved `Theta(R)` margin. Final unary
-shadow either completes directly or produces another free target-size star.
+any divergent `q=o(W)` reaches a `Theta(W)` defect after `O(W/q)=o(W)`
+steps.  Final binary shadow remains below the reserved `Theta(R)` margin.  Final
+unary shadow either completes directly or produces another free target-size star.
 
-For every retained-original source `S'` containing the fixed controllers,
-
-```text
-B_(S')^+(z;e) subseteq B_S^+(z;e).
-```
-
-Thus controller-safe sets expand and same-slot anchor witness sets shrink. Every
-original balanced ownership/global matching survives in all retained-original
-base states. The current target-cycle state alone completes or yields another
-star in the robust branch.
-
-## Captive stars and puncture epochs
-
-A captive star centre may be removed from its controller pool at one-value domain
-cost:
-
-```text
-|H_punctured| >= |H_original|-1.
-```
-
-Every designated star entry survives because it is controlled by the opposite
-endpoint. The centre is then free for the marked source-star theorem. For
-puncture sets `X_i subseteq E_i`,
-
-```text
-|H_(i,A,B)^punctured|
->=
-|H_(i,A,B)^original|-|X_i|.
-```
-
-An initial margin and allocation certificate survive while
-`|X_i|<=xi R/2`. Between punctures the controller universe is fixed and every
-strict paid trade decreases an integer potential. Reserve exhaustion records a
-chronological macro-local family of `Theta(R)` distinct star centres.
+Controller-safe domains expand when noncontroller original points are deleted.
+Every original balanced ownership and global matching therefore survives in all
+retained-original base states.  Bare target cycles and ordinary chord geometry
+are not robust-domain endpoints.
 
 ## Initial controller-aware allocation closure
 
-Positive-density blocker shadow gives a target star or `Omega(T)` full resource
-bank. Globally vanishing density cannot hide a fixed-label controller-margin
-collapse: one fixed macro--label fibre of size `Omega(R)` gives a target star or
-`Omega(W)` full resource matching.
+Positive-density blocker shadow, one collapsed movement/refill label, weighted
+same-slot anchor energy, a fixed-label anchor row or column, or a dead true
+ownership row all yield a target star or credited endpoint bank.
 
-Weighted same-slot anchor cores also convert. A physical controller--anchor pair
-is counted at most `W D_m` times in slot-expanded energy, so
-
-```text
-L_anchor >= E_slot/(W D_m).
-```
-
-Every core-energy obstruction at the active threshold exceeds `2D_mW^3` and
-therefore contains a target star or endpoint-disjoint anchor bank. A fixed
-movement/refill anchor row or column of mass `Omega(R)` has the same endpoint.
-
-If a true ownership row is dead and its controller denominator has margin
-`delta R`, then
-
-```text
-B_i+U_i(A)>delta R T.
-```
-
-The fixed-label anchor term or fixed-macro controller-defect term gives a target
-star/bank.
-
-More generally, after denominator collapse has been split off, every score
-denominator is at least `delta R`. Failure of the random two-sided local Ore
-condition
+After denominator collapse is split off, every controller-defect score denominator
+is at least `delta R`.  Failure of the random two-sided condition
 
 ```text
 rho_i(A)+chi_i(B)<=T-h,
 h=o(T),
 ```
 
-forces one score above `(T-h)/2` and hence one numerator summand above
+forces one numerator summand above
 
 ```text
 delta R(T-h)/4=Omega(RT).
 ```
 
-That summand is a fixed-label anchor mass or fixed-macro controller-defect mass,
-already converted above. Therefore the random two-sided theorem either completes
-the initial numerical allocation or enters an existing geometric conversion.
-Nontrivial one-sided ownership Hall bottlenecks, score truncation, capped refill
-concentration, and moderate complementary score pairs are no longer independent
-numerical frontiers.
+That summand is a fixed-label anchor mass or a fixed-macro controller-defect mass,
+already converted.  Hence nontrivial one-sided Hall bottlenecks, score truncation,
+capped refill concentration, and moderate complementary scores are no longer
+independent numerical frontiers.
 
-## Ambient foreign-support conversion
+## Exact positive-support avoidance
 
-For a distinct positive binary signature through one retained ambient resource,
-the exact conditioned single-cycle probabilities are
+For one conditioned ambient resource, distinct positive binary signatures have
+probabilities
 
 ```text
 rank three: 1/((Q-1)(Q-2)),
-rank four:  (q-3)/((Q-1)(Q-2)(Q-3)).
+rank four:  (q-3)/((Q-1)(Q-2)(Q-3)),
 ```
 
-Sparse positive support can be avoided regardless of weight or event multiplicity.
-Dense rank-three support becomes a graph link with a linear partner star or
-linear matching. Dense rank-four support becomes a 3-uniform link with a nested
-fixed-partner pencil or a disjoint signature bank of size
+and a unary signature has probability `1/(Q-1)`.  Sparse support is avoided
+regardless of weight or event multiplicity.  Dense support becomes a simple
+fixed-resource pencil or a resource-disjoint link bank.
+
+For a marked source signature of endpoint rank `h` requiring `r` arcs, the exact
+probability is
 
 ```text
-Omega(Q/q^(1/3)).
+(b-1)_(h-1) / ((N-1)_(h-1)(b-1)_r).
 ```
 
-For unary support, the exact probability is
+The four high-support source classes therefore localize to fixed-core sunflowers
+or disjoint signature banks at scales `omega(W)`.
+
+## Uniform sunflower and pencil hosts
+
+For one fixed-core petal system, choose `b-1` distinct petals and one helper from
+each.  Every target signature is absent, and a residual pattern using `t` helper
+indices and `r` arcs has exact probability
 
 ```text
-1/(Q-1).
+[(b-1)_t/(H)_t]
+[product 1/|P_j|]
+[1/(b-1)_r].
 ```
 
-Failure of support avoidance gives `Omega(Q)` distinct fixed-resource forbidden
-cells. Their retained-source witness graph yields a source star or credited
-endpoint bank of size `Omega(sqrt(Q))`, which is asymptotically larger than the
-adaptive state size under `q^3/Q=o(1)`.
-
-Thus raw unary/binary multiplicity and unstructured ambient support stars are no
-longer separate paid frontiers. The remaining objects are fixed-resource pencils,
-resource-disjoint banks, residual marked collateral, or explicit host failure.
-
-## High-support marked-source localization
-
-For a positive marked source signature of endpoint rank `h` requiring `r`
-prescribed arcs, the exact conditioned probability is
+A constant number of exceptional classes can be handled simultaneously.  Omit
+one optional helper from every nonempty fixed core.  Every remaining empty-core
+family is a matching of support sets of size at least two, so a uniform marked
+block selects a target support with total expectation
 
 ```text
-(b-1)_(h-1) / ((N-1)_(h-1) (b-1)_r).
+O(b^2/N)=o(1).
 ```
 
-This gives
+Thus fixed/nested pencils and extracted fixed-core source sunflowers are not
+separate host obstructions under residual slack.
+
+## Complete residual-support reduction
+
+Let `H_all(c)` contain every nonempty helper support of every positive canonical
+source-invalid or insertion signature after the marked centre is fixed.  Take a
+maximal independent helper set.
+
+If it has size at least `b-1`, then every single-cycle state on that block has
 
 ```text
-anchored pair: (b-3)/(N-1)_3,
-rank-four triple: 1/(N-1)_3,
-rank-five triple: (b-4)/(N-1)_4,
-rank-six triple: (b-4)(b-5)/(N-1)_5.
+source-invalid count = 0,
+insertion cost = 0.
 ```
 
-Sparse positive support is avoidable independently of witness multiplicity.
-Dense support gives a simple uniform link. The recursive link theorem supplies a
-fixed-core sunflower or resource-disjoint signature bank of size
+Indeed the only formal zero-helper insertion classes are a diagonal unary arc and
+a transposition, both absent from a single cycle.
+
+If the maximal independent set is too small, bounded support rank gives one fixed
+core with at least
 
 ```text
-anchored pair: Omega(N/b^(1/3)),
-rank-four triple: Omega(N),
-rank-five triple: Omega(N/b^(1/4)),
-rank-six triple: Omega(N/b^(2/5)).
+(N-b)/sum_(r<k_0) binom(b-2,r)
 ```
 
-All four scales are `omega(W)` throughout `0<kappa<19/80`. Together with the
-existing unary, transition, and dynamic-`Xi` reductions, the former nine-core
-exceptional-centre certificate now reduces to paid completion, residual
-credit-scale collateral, or three simple host geometries:
+variable extensions.  With adaptive `b=N^(o(1))`, this is `N^(1-o(1))`.
+Diffuse residual support and support-free insertion weight therefore disappear.
 
-1. a credited endpoint bank;
-2. a fixed-resource or nested-resource pencil;
-3. a fixed-core source-invalid sunflower with disjoint petals.
+## Terminal-pencil endpoint
 
-## Chord localization retained for paid branches
+The terminal source pencils are closed.
 
-Normalize a target cycle to loops plus one Hamilton successor cycle. Additional
-chords give a feedback hub, rooted chord-cycle star, distinct-signature cycle
-bank, or concentrated Hamilton-backbone support. These objects remain relevant
-only when robust final allocation is unavailable and one-step paid conversion is
-required.
+1. A rank-four anchored-pair pencil uses distinct retained anchors and yields a
+   free or one-pool credited endpoint bank of size `m^(9/10-o(1))`.
+2. Rank-four, rank-five, and rank-six inserted-triple pencils are impossible:
+   fixing all other endpoint indices determines the variable index by the
+   line--coordinate completion theorem.
+3. Unary and transition source pencils were already converted to source stars or
+   credited endpoint banks.
+
+The terminal insertion pencils are exactly the existing fixed-centre objects.
+
+1. `A_2`: a fixed-axis arc star and comparable-cost arc-petal bank.
+2. `B_3`: a directed path pencil entering a middle choice grid or an outer
+   resource-disjoint path-petal bank.
+3. `B_4`: a centre-arc partner fibre entering support avoidance,
+   partner-star/matching extraction, fixed-cell fan thresholding, or the final
+   allocation-domain bypass.
+
+Hence no new insertion-support geometry remains after PP3aoj.
 
 ## Revised live frontier
 
 The remaining concentrated cases are now:
 
-1. converting fixed-resource/nested-resource pencils and fixed-core source
-   sunflowers through a uniform source-valid host theorem;
-2. residual marked source or insertion collateral already at the removal-credit
-   scale;
+1. the paid endpoints of the explicit unary arc-petal, rank-three path/grid, and
+   rank-four partner/fan chains when robust final allocation is unavailable;
+2. external controller-pool, distinguished-endpoint, Hall, alternating, or other
+   endpoint-host failure;
 3. a macro-local `Theta(R)` controller-puncture history core;
-4. paid conversion of mobility hubs or chord-cycle support when robust final
-   allocation is unavailable;
+4. paid mobility-hub or chord-cycle conversion in branches that cannot use robust
+   final allocation;
 5. branches that cannot use the slab-optimal random two-sided architecture or
    preserve an original reference layer;
-6. branches that still require one-step monotone `Xi` descent rather than robust
-   final allocation.
+6. branches that still require one-step monotone `Xi` descent rather than paid
+   multi-step or robust final-state completion.
 
 Abstract cascade termination, retained-original base erosion, bare target cycles,
 ordinary chord geometry in the robust branch, captive centres, controller--
-controller stars, positive-density diffuse blocker shadow, weighted same-slot
-anchor cores, individual controller-margin collapse, capped fixed-label anchor
-columns, dead true ownership rows, nontrivial one-sided ownership Hall bottlenecks,
-score truncation, and raw ambient/marked support multiplicity are no longer
-separate frontiers.
+controller stars, numerical ownership arithmetic, raw support multiplicity,
+fixed-core source sunflowers, diffuse residual support, support-free insertion
+weight, and high-support source terminal pencils are no longer separate
+frontiers.
 
 The no-three-in-line conjecture remains unproved.
