@@ -2,13 +2,15 @@
 
 This addendum continues `proofs/prime-patching-frontier-addendum-206-207.md` after
 PP3auw.  It records the restart-comparability reductions in `docs/252` through
-`docs/254`.
+`docs/256`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
 | PP3aux--PP3avf | Fixed slab coordinates and labels preserve the candidate-cell potential; controller re-pairing is comparable when every newly activated same-slot entry starts at zero anchor mass | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/252-fixed-pool-label-universal-restart-potential.md` |
 | PP3avg--PP3avm | Under the activation-safe paid-repair interface, repeated fixed-infrastructure allocation attempts strictly decrease the current nonnegative integer potential and terminate in a successful patch | PROVED / CONDITIONAL ESTABLISHED CONVERSION INTERFACES | `docs/253-monotone-fixed-infrastructure-allocation-termination.md` |
 | PP3avn--PP3avu | Failure of cheap same-slot anchor activation forces `Omega(Cs)` unary mass or `Omega(Cs^2)` binary mass and localizes to a heavy support, retained-anchor star, or target resource-disjoint activation bank | PROVED / CONDITIONAL ANCHOR-CLEARING INTERFACE | `docs/254-same-slot-anchor-activation-restart-localization.md` |
+| PP3avv--PP3awb | Every target activation line removes at most two helpers from one cyclic gap; a quadratic reservoir gives a target-clean pool-compatible clearing trade or a current paid canonical structure | PROVED / CONDITIONAL EXISTING CONVERSION INTERFACES | `docs/255-line-sparse-anchor-activation-clearing.md` |
+| PP3awc--PP3awi | The focused proof dependencies admit an acyclic order from slab geometry to fixed-attempt extraction, local conversion, activation clearing, and finally integer termination | PROVED | `docs/256-acyclic-fixed-infrastructure-dependency-audit.md` |
 
 ## Fixed restart infrastructure
 
@@ -27,22 +29,21 @@ current perfect matching between each `X_i` and `Y_i`.  Its excess-shadow potent
 Xi_cell(S)=sum_(z in V_cell)(b_S(z)-1)
 ```
 
-is therefore fixed through every pool-compatible repair.
+is fixed through every pool-compatible repair.
 
-The active same-slot anchor table does depend on the current matching.  Do not count
-all inactive latent pairings.  Instead require:
+The active same-slot anchor table does depend on the current matching.  Comparability
+uses zero-mass activation:
 
 1. inserted anchors create no positive entry for unchanged controllers; and
-2. every new controller edge has zero same-slot anchor mass at activation.
+2. every new controller edge starts with zero same-slot anchor mass.
 
-Under those rules the current potential
+Under those rules
 
 ```text
 Theta_E(S)=Xi_cell(S)+Lambda_E(S)
 ```
 
-is comparable across consecutive controller pairings and strictly decreases whenever
-a credited repair has zero candidate-cell insertion.
+is comparable across consecutive controller pairings.
 
 ## Pool-compatible restart termination
 
@@ -59,12 +60,10 @@ remains a perfect matching between the same fixed coordinate sets, and
 sum_j |D_j|^2 <= |D|^2.
 ```
 
-Thus the complete helper demand remains square-root critical.  Patch-only completion
-energy is unchanged, and the ordinary two-slot source-anchor estimate is uniform over
-every saturated repaired source.
+Patch-only completion energy is unchanged, and the ordinary two-slot source-anchor
+estimate is uniform over every saturated repaired source.
 
-Conditional on activation-safe paid conversion, a fixed-infrastructure attempt has
-exactly two outcomes:
+An activation-safe fixed-infrastructure attempt has exactly two outcomes:
 
 ```text
 macro patch installed,
@@ -72,53 +71,63 @@ or
 Theta_(E')(S')<Theta_E(S).
 ```
 
-Nonnegative integer descent then rules out infinitely many failed attempts.
+Nonnegative integer descent rules out infinitely many failures.
 
-## Dense activation endpoint
+## Dense activation localization and clearing
 
 For a marked block of size `s`, helper reservoir `N=Theta(s^2)`, and available credit
-`C`, let `W_1,W_2` be the weighted rank-one and rank-two activation-support masses.
-If every state has activation cost at least `C`, then
+`C`, failure of every cheap activation state forces
 
 ```text
 W_1 >= C N/(2s)
 or
-W_2 >= C (N)_2/(2(s)_2).
+W_2 >= C (N)_2/(2(s)_2),
 ```
 
-Hence
+hence `Omega(Cs)` unary mass or `Omega(Cs^2)` binary mass.  Weighted
+star/matching refinement gives a retained-anchor star or resource-disjoint activation
+bank of target order.
+
+Each target signature is one fixed negative-slope line.  For one cyclic gap, one line
+forbids at most one helper row and one helper column.  Therefore `L=O(s)` target lines
+remove at most `2L=O(s)` values from a helper domain of size `Theta(s^2)`.
+Distinct target-clean helpers can be assigned greedily.
+
+Fusing the remaining current support table yields either:
+
+1. a potential-nonincreasing clearing trade that moves all target anchors and creates
+   no replacement witness; or
+2. a current canonical credited structure that pays directly.
+
+Thus the activation-clearing leaf is reduced to the existing current conversion
+interfaces rather than a new restart object.
+
+## Acyclic dependency order
+
+The focused proof order is
 
 ```text
-W_1=Omega(Cs)
-or
-W_2=Omega(Cs^2).
+slab geometry and uniform completion energy
+ -> fixed-attempt allocation extraction
+ -> local support conversion and direct payment
+ -> pool-compatible activation clearing
+ -> fixed-infrastructure integer termination.
 ```
 
-Weighted star/matching localization produces one of:
-
-1. a one-support activation core of weight at least `C`;
-2. a target family of distinct singleton supports;
-3. a helper star of weighted degree `Omega(Cs)`;
-4. a target matching of disjoint helper pairs;
-5. after witness refinement, one retained-anchor star or a resource-disjoint
-   activation bank.
+No local conversion theorem assumes repeated-attempt termination.  Pool-compatible
+block refinement is postprocessing of an already extracted marked source set, so it
+does not introduce a backward dependency.
 
 ## Revised live frontier
 
-The sole concentrated restart leaf is now:
+There is no remaining independent combinatorial restart frontier inside the focused
+slab-optimal chain.  The current work is an exact hypothesis audit and assembly task:
 
-> Given a target retained-anchor star or resource-disjoint activation bank, construct
-> a pool-compatible zero-cost preliminary trade that moves those anchors, creates no
-> new targeted activation witness, and therefore clears the bank without spending the
-> original allocation-failure credit.
-
-Equivalent closure is acceptable if failure of that clearing host directly produces
-current `Theta_E` credit.
-
-After this leaf is discharged, the fixed-infrastructure integer termination theorem
-is available.  A final proof audit must then verify that every earlier conditional
-conversion invokes the clearing theorem with matching pool, layer, and scale
-hypotheses before the slab patch result is inserted into the global prime-gap
-induction.
+1. verify pool size, marked size, source-validity, and role-domain hypotheses at every
+   conditional conversion call;
+2. consolidate the chain into one formal prime-patching lemma;
+3. verify the starting prime-order construction and quantitative prime-gap transfer;
+4. prove the patch-width iteration covers every sufficiently large integer; and
+5. handle the finite initial range.
 
 The no-three-in-line conjecture remains unproved.
