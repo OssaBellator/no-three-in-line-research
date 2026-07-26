@@ -102,12 +102,15 @@ occurrence.
 ## GC2ce -- lower-rank collapse or a created-collateral star -- PROVED
 
 Let `q` be the selected inserted-cell anchor and let its selected rank fibre have weight
-`W_q`.
+`W_q`.  Fix an integer `Delta>=1`.
 
-1. If the rank is one, the fibre is an atomic created-factor overload at the exact cell `q`.
-2. If the rank is two, every factor is an exact pair `{q,z}`; one such pair is the canonical
-   rank-two concentration address.
-3. If the rank is three, fix an integer `Delta>=1`.  Exactly one of the following holds:
+1. If the rank is one, the fibre is an atomic created-factor overload at the exact cell `q`
+   of total weight `W_q`.
+2. If the rank is two, exactly one of the following holds:
+   - some pair `{q,z}` has more than `Delta` created factor occurrences;
+   - there is a family of rank-two factors through `q`, pairwise disjoint outside `q`, of
+     total weight at least `W_q/Delta`.
+3. If the rank is three, exactly one of the following holds:
    - some pair `{q,z}` belongs to more than `Delta` created factor occurrences;
    - there is an endpoint-disjoint family of created rank-three factors through `q`, pairwise
      disjoint outside `q`, of total weight at least
@@ -116,34 +119,42 @@ Let `q` be the selected inserted-cell anchor and let its selected rank fibre hav
 
 ### Proof
 
-The first two cases are the definitions of rank one and rank two after the anchor is fixed.
+The rank-one statement is immediate.  In rank two, group parallel occurrences by their
+second endpoint `z`.  If every group has at most `Delta` occurrences, order the occurrences
+inside each group and colour them by their local index in `{1,...,Delta}`.  Every colour
+class contains at most one occurrence at each `z`, hence is disjoint outside `q`; one class
+carries at least `W_q/Delta` weight.  Otherwise one pair has multiplicity greater than
+`Delta`.
+
 For rank three, form the weighted link multigraph at `q`; one edge occurrence represents the
 other two cells of one created factor.  If every link vertex has occurrence degree at most
 `Delta`, a greedy edge colouring uses at most `2Delta-1` colours.  One colour class is a
 matching and carries at least a `1/(2Delta-1)` fraction of the total weight.  Otherwise one
 pair has codegree greater than `Delta`. QED.
 
-Parallel exact occurrences are retained in the codegree count and in the weight ledger.
+Parallel exact occurrences are retained in the multiplicity/codegree count and in the
+weight ledger.
 
 ## GC2cf -- quantitative collateral continuation -- PROVED
 
 Under the multiplicative overload ratio `R_*>1`, one of the following exact outputs holds:
 
-1. an atomic or rank-two created-factor concentration of weight at least
+1. an atomic created-factor fibre at one inserted cell of weight at least
 
    `(1-1/R_*)*Dsum_j/(2*r)`;
 2. a created pair through one inserted cell with occurrence codegree greater than `Delta`;
-3. an endpoint-disjoint created-collateral star of weight at least
+3. an endpoint-disjoint rank-two or rank-three created-collateral star of weight at least
 
    `(1-1/R_*)*Dsum_j/[2*r*(2*Delta-1)]`.
 
-For the rank-three ledger `r=3`, the star guarantee is
+For the rank-three ledger `r=3`, the uniform star guarantee is
 
 `(1-1/R_*)*Dsum_j/[6*(2*Delta-1)]`.
 
 ### Proof
 
-Apply GC2cb, then GC2cd and GC2ce. QED.
+Apply GC2cb, then GC2cd and GC2ce.  The rank-two star has the stronger denominator `Delta`,
+which is at most `2Delta-1`, so the displayed uniform bound holds. QED.
 
 The star is prospective newly created collateral, not current payment.  It must be installed,
 charged back, or routed through the existing GC4 conflict/overload machinery before it can
@@ -160,8 +171,8 @@ one exact continuation:
    structure of GC2cf at one of the event's two inserted cells.
 
 Thus the multiplicative ratio is no longer an unstructured terminal obstruction.  It returns
-an atomic/lower-rank created factor, a high created pair codegree, or an endpoint-disjoint
-created-collateral star with an explicit fraction of the destroyed weight.
+an atomic created factor, a high created pair codegree, or an endpoint-disjoint created-
+collateral star with an explicit fraction of the destroyed weight.
 
 ### Proof
 
@@ -180,4 +191,5 @@ pool depletion, global context causes and local superregular resampling.
 `scripts/verify_geometric_multiplicative_overload_collateral.py` exhausts small exact event
 ledgers and weighted created-factor links and samples larger systems.  It checks the
 multiplicative collateral inequality, inserted-cell support wall, rank localization,
-codegree/star dichotomy and the final quantitative constants.
+rank-two multiplicity extraction, rank-three codegree/star dichotomy and the final
+quantitative constants.
