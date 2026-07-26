@@ -38,8 +38,8 @@ def rook_parameters(side, prescription, target=(0, 1)):
     epsilon = int(target[0] not in rows and target[1] not in columns)
     adjacent = 0
     if epsilon:
-        adjacent += int(0 in surviving_diagonal)
-        adjacent += int(1 in surviving_diagonal)
+        adjacent += int(target[0] in surviving_diagonal)
+        adjacent += int(target[1] in surviving_diagonal)
     return len(surviving_diagonal), adjacent, epsilon
 
 
