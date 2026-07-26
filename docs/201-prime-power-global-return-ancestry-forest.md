@@ -77,7 +77,7 @@ At least one of the following occurs.
    edge.
 2. **Paid transient loss.** The first edge `f` of `M_alpha` absent from `H` was
    lost through a selected-state or routing transition. That transition has the
-   entering/leaving support and exact token payment of CMR416--CMR421 or
+   entering/leaving support and token payment of CMR416--CMR421 or
    CMR671--CMR676.
 3. **Forward structural witness.** The first absent edge `f` of `M_alpha` was
    removed by a later matching-preserving structural deletion. The current
@@ -144,7 +144,7 @@ Let a directed ancestry path contain `L` deletion generations. For every integer
 
 1. One exact labelled physical edge occurs in at least `mu` distinct generations
    on the path.
-2. 
+2.
    \[
    \boxed{L\le(\mu-1)2N^2.}
    \]
@@ -167,43 +167,30 @@ preceding absence run. Apply CMR413 with multiplicity. ∎
 Thus owner changes cannot manufacture repeated-edge payment without a physical
 return.
 
-## 5. Fresh unpaid roots have finite owner-edge stock
+## 5. Fresh unpaid roots have finite branch-wide stock
 
-Fix a recurrence threshold `lambda>=2` for routing changes. For one envelope
-of side `q`, let `mathcal E(q,lambda)` be the owner-edge stock of CMR694 and put
-
-\[
-F(q)=\frac{q(q+1)(2q+1)}6,
-\]
-
-the unit-wall tree owner-edge stock of CMR743. For a closure-envelope chain
-`E_0,...,E_s`, define
+Fix a recurrence threshold `lambda>=2` for routing changes. Let
+`mathcal O(N,lambda)` be the owner-stage stock of CMR693 for a strict descent
+path whose side is at most `N`. By CMR742, one complete unit-wall factor tree has
+at most `2N+1` nodes. At each such node, use the coarse upper bounds
+`mathcal O(N,lambda)` owner stages and `N^2` labelled host edges per stage. Define
 
 \[
-\mathfrak D(\lambda)
+\boxed{
+\mathfrak D(N,h,\lambda)
 =
-\sum_{i=0}^{s}
-\bigl(\mathcal E(|E_i|,\lambda)+F(|E_i|)\bigr).
+(h+1)(2N+1)\mathcal O(N,\lambda)N^2.
+}
 \]
 
 ### Theorem CMR781 -- PROVED
 
-Before one physical routing-support edge recurs `lambda` times at one owner,
-the number of fresh unpaid structural-deletion roots in the complete branch is
-at most
+Before one physical routing-support edge recurs `lambda` times at one owner, the
+number of fresh unpaid structural-deletion roots in the complete closure branch
+is at most
 
 \[
-\boxed{\mathfrak D(\lambda).}
-\]
-
-Since `s<=h` and `|E_i|<=N`,
-
-\[
-\boxed{
-\mathfrak D(\lambda)
-\le
-(h+1)\bigl(\mathcal E(N,\lambda)+F(N)\bigr).
-}
+\boxed{\mathfrak D(N,h,\lambda).}
 \]
 
 A loss caused by selected-state or routing churn is not an unpaid root; it is
@@ -211,15 +198,18 @@ already a paid endpoint of CMR778.
 
 ### Proof
 
-At a fixed owner-edge pair, the canonical monotone host discipline charges the
-first matching-preserving deletion once. CMR694 bounds all such owner-edge pairs
-on a strict descent path unless routing recurrence has already occurred.
-CMR743 bounds all factor edges over the complete unit-wall tree. Sum over the at
-most `h+1` envelope epochs. Both stock functions are nondecreasing in the side,
-giving the final bound. ∎
+A canonical fresh matching-preserving deletion is charged to its current
+owner-edge pair and is charged only once at that owner. There are at most `h+1`
+envelope epochs. Inside one epoch, CMR742 gives at most `2N+1` unit-wall factor
+nodes. Every node has side at most `N`, so CMR693 gives at most
+`mathcal O(N,lambda)` owner stages unless routing recurrence has already occurred,
+and every stage has at most `N^2` labelled host edges. Multiplying gives the
+displayed coarse stock. ∎
 
-Returned redeletions are descendants of their earlier generation and are not
-new roots.
+The bound intentionally overcounts smaller wall children and repeated absolute
+coordinates under different owners. Its role is validity across the whole
+branch, not sharpness. Returned redeletions are descendants of earlier
+generations and are not fresh roots.
 
 ## 6. Forest-wide bound without double counting
 
@@ -238,7 +228,7 @@ Then the total number `K` of structural deletion generations satisfies
 \boxed{
 K
 \le
-\mathfrak D(\lambda)(\mu-1)2N^2.
+\mathfrak D(N,h,\lambda)(\mu-1)2N^2.
 }
 \]
 
@@ -246,7 +236,7 @@ K
 
 CMR779 gives a finite acyclic graph of out-degree at most one. Every node lies on
 a directed path beginning at some indegree-zero root. There are at most
-`mathfrak D(lambda)` roots by CMR781. CMR780 bounds every root path by
+`mathfrak D(N,h,lambda)` roots by CMR781. CMR780 bounds every root path by
 `(mu-1)2N^2`. The union of the root paths contains every node, so summing their
 lengths gives the displayed upper bound; mergers only reduce the union size. ∎
 
@@ -284,10 +274,11 @@ part of a current target; those roles retain their existing paid ledgers.
 
 ### Corollary CMR784 -- PROVED
 
-Every prime-power target-driven branch reaches at least one of the following.
+Every canonical prime-power target-driven branch under the CMR691 structural
+scheduler reaches at least one of the following.
 
 1. Finite fresh structural-deletion stock and the forest bound CMR782.
-2. Paid selected-state or routing churn with exact entering/leaving support.
+2. Paid selected-state or routing churn with entering/leaving support.
 3. One labelled physical edge with many genuine restoration runs and exact
    full-token incidence.
 4. Matching-preserving redeletion, stored-avoidance ancestry, or recurrent
