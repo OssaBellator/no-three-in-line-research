@@ -22,6 +22,7 @@ transition addendum in
 | Corrected source-host closure | Source-credit audit, old-grid endpoint-shadow potential, fixed-template secant descent, complete secant-cover extraction, pool-compatible paired secant switches, and acyclic source-host closure | PROVED / CONDITIONAL NAMED CURRENT AND ENDPOINT INTERFACES | `docs/261`--`docs/267` |
 | Complete insertion cancellation | Every first-step current incidence meets the inserted set; blockwise second cycles cancel the complete insertion table without rank decomposition | PROVED / CONDITIONAL NAMED SECOND-HOST INTERFACES | `docs/268-theta-plus-complete-insertion-cancellation.md` |
 | Complete second-host call matrix | Exact marked scale, helper supply, puncture/domain loss, credit ownership, source-host routing, terminal leaves, and global helper accounting | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
+| Raw second-host leaf elimination | Buffered role domains and the complete support table eliminate raw Hall, alternating, non-superregular, distinguished-endpoint, and role-host outputs | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
 
 ## Exact late theorem ranges
 
@@ -44,23 +45,30 @@ transition addendum in
 | PP3azk--PP3azr | Pool-compatible paired secant switches | PROVED / CONDITIONAL NAMED CURRENT RECTANGLE INTERFACES | `docs/267-pool-compatible-paired-secant-switches.md` |
 | PP3azs--PP3azz | Complete insertion cancellation in `Theta_E^+` | PROVED / CONDITIONAL NAMED CURRENT CONVERSION INTERFACES | `docs/268-theta-plus-complete-insertion-cancellation.md` |
 | PP3baa--PP3bah | Complete second-host call-matrix audit | PROVED / CONDITIONAL FINITE NAMED INTERFACE SET | `docs/269-complete-second-host-call-matrix-audit.md` |
+| PP3bai--PP3ban | Raw second-host explicit-leaf elimination and revised trichotomy | PROVED / CONDITIONAL DOWNSTREAM CONVERSION INTERFACES | `docs/270-second-host-explicit-leaf-elimination.md` |
 
 ## Current exact endpoint
 
 The open-ended call-matrix audit requested by PP3axp, PP3azj, and PP3azz is
-closed.  The master exact-width patch theorem is now conditional on a finite,
-explicit collection of current and endpoint-host conversion leaves.  The audit
-establishes that every call carries the required marked scale, quadratic helper
-supply, source layer, permanent block, controller punctures, role-domain loss,
-conditioned resources, and designated-credit ownership.
+closed.  The raw explicit-host row retained in PP3azu and PP3bae is superseded
+by PP3bai--PP3ban: under the universal second-host hypotheses, buffered Hall
+assignment and the complete rank-three support table give only an independent
+cycle, dense current support, or dense source support.
 
-It does **not** prove those named conditional leaves.  Separately, the branch
-still assumes saturated no-three configurations on `[p-1]^2` for every
-sufficiently large prime.  The no-three-in-line conjecture remains unproved.
+Thus role-host, distinguished-endpoint, conditional Hall, alternating, and
+non-superregular failure are not independent outputs of the raw second-host
+selector.  Conditional leaves may still occur downstream after a typed current
+or source object has entered its own conversion chain.
 
-## Diagnostic
+Separately, the branch still assumes saturated no-three configurations on
+`[p-1]^2` for every sufficiently large prime.  The no-three-in-line conjecture
+remains unproved.
+
+## Diagnostics
 
 ```bash
 python scripts/check_second_host_call_matrix.py \
   experiments/second-host-call-matrix-example.json
+python scripts/check_second_host_leaf_elimination.py \
+  experiments/second-host-leaf-elimination-example.json
 ```
