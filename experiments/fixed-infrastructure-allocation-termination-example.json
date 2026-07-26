@@ -1,0 +1,5 @@
+{
+  "initial_potential": 155,
+  "repair_credits": [3, 11, 7, 19],
+  "final_outcome": "patch_installed"
+}
