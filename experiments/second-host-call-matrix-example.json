@@ -1,0 +1,54 @@
+{
+  "potential": "Theta_E_plus",
+  "maximum_marked_size": 8,
+  "domain_loss_constant": 2,
+  "blocks": [
+    {
+      "name": "P/E_1",
+      "marked_size": 3,
+      "available_helpers": 12,
+      "role_domain_loss": 4,
+      "controller_punctures": 3,
+      "support_rank": 3,
+      "outcome": "independent_cycle"
+    },
+    {
+      "name": "P/E_2",
+      "marked_size": 2,
+      "available_helpers": 6,
+      "role_domain_loss": 2,
+      "controller_punctures": 2,
+      "support_rank": 2,
+      "outcome": "current_structure"
+    },
+    {
+      "name": "Q/E_3",
+      "marked_size": 1,
+      "available_helpers": 1,
+      "role_domain_loss": 1,
+      "controller_punctures": 1,
+      "support_rank": 3,
+      "outcome": "source_host"
+    }
+  ],
+  "allowed_outcomes": [
+    "independent_cycle",
+    "current_structure",
+    "source_host",
+    "explicit_host_failure",
+    "robust_final_completion"
+  ],
+  "terminal_interfaces": [
+    "conditional_hall",
+    "alternating_component",
+    "non_superregular_host",
+    "distinguished_endpoint",
+    "role_host_failure"
+  ],
+  "all_independent_payment_example": {
+    "first_removal_credit": 5,
+    "first_insertion_multiplicity": 11,
+    "later_removal_multiplicity": 11,
+    "later_insertion_multiplicity": 0
+  }
+}
