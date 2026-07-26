@@ -1,6 +1,6 @@
 {
   "Q": 101,
-  "q": 5,
+  "q": 4,
   "tau": 0.30,
   "positive_signatures": 100,
   "witness_cycle_vertices": 100
