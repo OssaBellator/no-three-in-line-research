@@ -13,15 +13,17 @@ The second outcome is an amplification-capable address, not a claim that every a
 output is simultaneously realized.  A realization theorem, capacity ticket, or outer
 reset is still required before it becomes an executable amplification certificate.
 
-## Positive source component
+## Positive cyclic source component
 
 Let `S` be a finite nonempty source-type set.  For `a,v in S`, let
 
 `rho_(a,v) in Z_(>=0)`
 
 be the declared conversion rate.  Keep the directed edge `a->v` exactly when
-`rho_(a,v)>0`, and assume this positive dependency digraph is strongly connected.
-Self-loops are allowed.
+`rho_(a,v)>0`, and assume this positive dependency digraph is strongly connected and
+contains a directed cycle.  Equivalently, when `|S|=1`, require a positive self-loop.
+Self-loops are allowed.  The edge-free singleton SCC is acyclic and was already closed
+by AC3po--AC3pt.
 
 Put
 
@@ -71,10 +73,10 @@ address.
 
 ### Proof
 
-Every source has at least one positive outgoing edge because the positive digraph is
-strongly connected.  Therefore every `g_a>=1`.  If they are all one, use the first
-alternative.  Otherwise the least source with value at least two and its first two
-slots are well defined. QED.
+Every source has at least one positive outgoing edge: this follows from strong
+connectivity for `|S|>1`, and from the required self-loop for `|S|=1`.  Therefore every
+`g_a>=1`.  If they are all one, use the first alternative.  Otherwise the least source
+with value at least two and its first two slots are well defined. QED.
 
 A rate at least two and two distinct positive outgoing edges are treated uniformly:
 both create two declared output slots.
@@ -150,7 +152,8 @@ materialize.
 
 ## AC3pz -- cyclic-source SCC router -- PROVED
 
-Every finite positive strongly connected source component has one exact continuation:
+Every finite positive cyclic strongly connected source component has one exact
+continuation:
 
 1. a conservative unit cycle, closed under AC3px when phase is quotient-stuttering or
    finitely ticketed;
@@ -176,7 +179,7 @@ scalar/arithmetic macro cycles.
 
 ## Finite check
 
-`scripts/verify_ac_cyclic_source_scc_router.py` exhausts small positive strongly
+`scripts/verify_ac_cyclic_source_scc_router.py` exhausts small positive cyclic strongly
 connected integer-rate graphs and random larger components.  It checks the impossibility
 of strict separable weights, the unit-cycle/multi-output dichotomy, canonical output
 slots, conservative-cycle quotient histories and finite ticket closure.
