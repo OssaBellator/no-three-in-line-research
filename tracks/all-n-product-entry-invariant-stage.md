@@ -6,8 +6,9 @@ PX397--PX492 give an effective rectangle-label doubling reduction above
 `10^2900`. PX493--PX575 isolate side seven, exhaust radius one, enumerate radius
 two, and completely refute radius two in the `(3,2,2)`, `(4,3)`, and `(5,2)`
 classes. PX576--PX591 enumerate the `(5,2)` radius-three layer and reject its
-supports twelve through eighteen. PX592--PX608 develop an exact shared-state
-cache for radius-three support twenty and close its largest top-signature tiers.
+supports twelve through eighteen. PX592--PX616 develop an exact shared-state
+cache for radius-three support twenty and close its top-signature tiers of
+multiplicity `46`, `40`, `38`, `35`, and `32`.
 
 ## Current ledger
 
@@ -27,7 +28,7 @@ cache for radius-three support twenty and close its largest top-signature tiers.
 | `(7)` radius two | **OPEN** | Supports through sixteen fail; support eighteen and above remain. |
 | Radius-three selector layers | **ENUMERATED IN THREE CLASSES** | `(3,2,2)`: 77,026; `(4,3)`: 231,765; `(5,2)`: 468,452; total 777,243. |
 | `(5,2)` radius-three supports 12--18 | **REFUTED** | All 43,336 selectors fail after 34,314,555,004 CSP nodes. |
-| `(5,2)` radius-three support 20 | **ACTIVE CACHE FRONTIER** | 71,860 selectors initially; 418 in the multiplicity 46, 40, and 38 tiers fail, leaving 71,442. |
+| `(5,2)` radius-three support 20 | **ACTIVE CACHE FRONTIER** | 71,860 selectors initially; 584 in multiplicity tiers 46 through 32 fail, leaving 71,276. |
 | Universal side-seven doubling | **OPEN** | No canonical class has produced a side-fourteen template. |
 | Exact all-side closure | **OPEN** | No structural bridge covers every base below the cutoff. |
 
@@ -91,21 +92,23 @@ The shared-top coordinate cache has exhausted:
 | 46 | 4 | 184 | 2,303,855 | 0 |
 | 40 | 3 | 120 | 1,168,800 | 0 |
 | 38 | 3 | 114 | 927,673 | 0 |
-| **Total** | **10** | **418** | **4,400,328** | **0** |
+| 35 | 2 | 70 | 1,919,466 | 0 |
+| 32 | 3 | 96 | 1,375,574 | 0 |
+| **Total** | **15** | **584** | **7,695,368** | **0** |
 
 The active support-twenty count is
 
 \[
-71{,}860-418=\boxed{71{,}442}.
+71{,}860-584=\boxed{71{,}276}.
 \]
 
-The next tier contains exactly two top signatures of multiplicity 35, hence 70
+The next tier contains exactly six top signatures of multiplicity 27, hence 162
 selectors. No geometric symmetry identification between those signatures is
 assumed.
 
 ## Immediate frontier
 
-1. **Multiplicity-35 top tier.** Run the two 35-selector shared-top groups in all
+1. **Multiplicity-27 top tier.** Run the six 27-selector shared-top groups in all
    four orientations.
 2. **Remaining repeated signatures.** Continue in decreasing multiplicity,
    sharing each exact `(A_0,A_1)` top-order list.
@@ -133,6 +136,14 @@ g++ -O3 -std=c++17 \
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity38.cpp \
   -o /tmp/side7_c52_s20_m38
+
+g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity35.cpp \
+  -o /tmp/side7_c52_s20_m35
+
+g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity32.cpp \
+  -o /tmp/side7_c52_s20_m32
 ```
 
 Every finite certificate uses exact integer determinants and deterministic
