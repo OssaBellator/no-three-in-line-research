@@ -99,15 +99,19 @@ The collision-free theorem ledger is split between
   four, so Hall applies.
 - Fan signatures become many distinct absent wall cells or one globally forbidden
   repeated cell.
-- A neutralised target-pair certificate is fresh at most once. A later target
-  occurrence requires its recorded absent witness cells to be reintroduced.
-- At one envelope epoch, the certificate-key stock is at most
+- At one envelope epoch, the neutralisation certificate-key stock is at most
   \[
   6\binom{2q^2}{3}.
   \]
-- Repeated reserve-saturation episodes therefore consume finite permanent target
-  stock or force one exact physical witness cell to recur, with exact token and
-  absence-run payment.
+- Temporal reuse is counted by physical cell--absence-run slots. Several
+  neutralisations during one continuous absence are not charged as several edge
+  returns.
+- One cell--run slot carries at most the finite certificate-key stock. Unless one
+  cell has many return runs, repeated reserve-saturation histories are finite.
+- A recurrent physical target has at most six labelled same-layer pair types.
+  Once one type recurs, either one pair cell is nonessential and deletes
+  matching-preservingly, or both essential pair cells contract together,
+  decreasing factor side by two and leaving a rank-one trigger.
 
 ## Important corrections retained
 
@@ -115,7 +119,10 @@ The collision-free theorem ledger is split between
   CMR758--CMR759 construction explicitly forbids the live target in both ordered
   layer rematchings.
 - A historical family of target lines is not a simultaneous target family.
-  CMR755--CMR769 neutralise stored pair signatures instead.
+  CMR755--CMR776 neutralise stored pair signatures and stabilise labelled
+  recurrence instead.
+- One edge return may serve several neutralisations in the same absence run.
+  CMR766--CMR769 count cell--run slots, not raw episode-return incidences.
 - Removing one essential edge produces Hall deficiency exactly one, not a large
   deficiency batch.
 - Routing compensation and essentiality escape may be distributed across several
@@ -124,10 +131,11 @@ The collision-free theorem ledger is split between
 
 ## Current open frontier
 
-1. **Branch-wide owner-cell return budget.** Sum recurrent physical-cell returns
-   across envelope, routing, host, factor, and unit-wall owners. Convert excess
-   returns into permanent deletion ancestry, strict contraction, target-load
-   decrease, or a global potential improvement.
+1. **Branch-wide owner-edge return budget.** Sum genuinely restored physical edges
+   across envelope, routing, host, factor, and unit-wall owners after the
+   deletion/double-contraction responses. Convert excess returns into permanent
+   deletion ancestry, strict side descent, target-load decrease, or a global
+   potential improvement.
 2. **Full-token return closure.** Replace the remaining conditional one-pass token
    budgets by an unconditional bound compatible with owner changes and sparse
    rollback.
@@ -138,11 +146,11 @@ The collision-free theorem ledger is split between
 
 ## Bottom line
 
-There is no complete proof. Through **CMR769**, the local factor, routing,
+There is no complete proof. Through **CMR776**, the local factor, routing,
 forced-certificate, target-handoff, recurrent-target, returned-edge, unit-wall,
-protected-line, and historical-pair loops have exact finite-stock,
-deletion/contraction, or entering-edge payment normal forms.
+protected-line, historical-pair, absence-run, and labelled-pair loops have exact
+finite-stock, deletion/contraction, or entering-edge payment normal forms.
 
 The principal remaining prime-power theorem is a global, owner-consistent budget
-for recurrent edge returns. Arbitrary side-length coverage remains necessary
-afterward.
+for genuinely restored edges after those local responses. Arbitrary side-length
+coverage remains necessary afterward.
