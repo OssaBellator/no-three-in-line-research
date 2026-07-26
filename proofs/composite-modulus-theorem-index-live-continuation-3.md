@@ -42,6 +42,7 @@ The authoritative live ledger is split across:
 | CMR1438--1445 | Harmonic conditional owner stars and high-height tail | PROVED | `docs/283-prime-power-cross-line-harmonic-owner-bound.md` |
 | CMR1446--1453 | Integer lattice-capacity owner envelope and exact height cutoff | PROVED | `docs/284-prime-power-cross-line-lattice-capacity-owner.md` |
 | CMR1454--1461 | Eligible prime-power pair signatures, simultaneous realization and line concentration | PROVED | `docs/285-prime-power-eligible-owner-signature-fans.md` |
+| CMR1462--1469 | Fractional dual-packing incidence identity, heavy prime-power signature extraction, owner/pair and response-partner dispersion, primitive-direction concentration, and exact-displacement translation banks | PROVED; randomized rational packings and exact direction stocks checked computationally | `docs/286-prime-power-fractional-packed-signature-fans.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -52,17 +53,28 @@ fibres turn expected collateral into one doubly stochastic edge-assignment
 cost; and integer lattice capacity reduces each owner load to finitely many
 eligible first-separation/projective-direction/height classes.
 
-A heavy eligible class is simultaneously realized in one response, lies in one
-prefix carry cell and projective class, and concentrates quantitatively on one
-real line through the owner.  Independent line maxima are no longer the formal
-endpoint.
+A heavy one-owner eligible class is simultaneously realized on one loaded line.
+The global fractional obstruction is now sharper as well.  Every subthreshold
+candidate family at a positive minimum supplies a signature class of packed
+incidence mass at least
+
+\[
+\frac{n-2}{3h(p+1)(1+\lfloor\log_2(n-1)\rfloor)}.
+\]
+
+That mass is dispersed over canonical owners and ordered owner-partner pairs; in
+the response branch it is dispersed over residual response edges.  After one
+more finite pigeonhole step it contains an exact lattice-displacement translation
+bank.  Independent line maxima are no longer the formal endpoint.
 
 The active frontier is:
 
-1. quantify the loaded-line or carry-cell execution gain forced by
+1. quantify prefix-return, quotient/carry or protected-reserve payment for the
+   CMR1469 exact-displacement translation bank;
+2. compare that global payment with the one-owner loaded-line gain of
    CMR1458--CMR1461;
-2. encode the comparison as a host-uniform same-owner rational/integer
+3. encode the comparison as a host-uniform same-owner rational/integer
    certificate `Av<v`;
-3. prove analogous diagonal certificates for prime-field and thin owners;
-4. glue them through owner triangularity; and
-5. complete balanced/CRT assembly with collision and local-line classes.
+4. prove analogous diagonal certificates for prime-field and thin owners;
+5. glue them through owner triangularity; and
+6. complete balanced/CRT assembly with collision and local-line classes.
