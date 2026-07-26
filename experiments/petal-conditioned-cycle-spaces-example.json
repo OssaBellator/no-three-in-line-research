@@ -1,0 +1,11 @@
+{
+  "block_size": 7,
+  "arc": [0, 1],
+  "path": [[0, 1], [1, 2]],
+  "arc_extra_forest": [[2, 3], [4, 5]],
+  "path_extra_forest": [[3, 4]],
+  "allowed_outcomes": [
+    "paid_completion",
+    "typed_weighted_concentration"
+  ]
+}
