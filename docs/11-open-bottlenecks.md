@@ -62,34 +62,21 @@ canonical owner support.
 
 ## 4. Extension-free line cleaning
 
-CMR1510--CMR1517 show that every Hall-cut blocker of `H_e` has more edges than a
-partial matching can place in the same cut rectangle.  Hence
+Every nonaxis line is a partial matching.  CMR1510--CMR1517 prove that deleting
+its complete allowed trace from `H_e` leaves at least one perfect matching.
+The resulting response still avoids the target and opposite layer, creates no
+new line-local collateral, and gives zero same-owner/same-line offspring for a
+CMR1461 loaded owner line.
 
-\[
-\operatorname{PM}(H_e\setminus X)\ne\varnothing
-\]
-
-for every partial matching `X` of allowed response edges.
-
-Every nonaxis line is a partial matching.  Its complete allowed response trace
-may therefore be forbidden while the response continues to avoid both `O` and
-`e`.  The resulting state creates no new line-local collateral.  For a CMR1461
-owner-labelled loaded line, the same-owner, same-line offspring coordinate has
-policy coefficient zero.
-
-## 5. Exact and uniform line-clean coefficients
-
-Put
+CMR1526--CMR1533 make the remaining off-line response row exact.  If
 
 \[
 F=O\cup X\cup\{e\},
 \qquad
-D=O\cup X.
+D=O\cup X,
 \]
 
-CMR1526--CMR1533 show that `D` has maximum degree two, decomposes into alternating
-paths and even cycles, and has a component-factorized rook polynomial.  If
-`e=uv`,
+then `D` decomposes into alternating paths and even cycles, and
 
 \[
 \mathcal R_F(z)
@@ -97,7 +84,7 @@ paths and even cycles, and has a component-factorized rook polynomial.  If
 \mathcal R_D(z)+z\mathcal R_{D-u-v}(z).
 \]
 
-Therefore
+Thus
 
 \[
 N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
@@ -105,42 +92,68 @@ N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
 \Pr(P\subseteq R)=\frac{N_{d-r}(F/P)}{N_d(F)}.
 \]
 
-CMR1534--CMR1541 add a host-uniform denominator.  Every such allowed graph
-contains a spanning `(d-3)`-regular subgraph, so
+## 5. Exact strong/weak line-clean factor signatures
+
+CMR1534--CMR1541 give a universal spanning `(d-3)`-factor and coefficient
 
 \[
-\boxed{
-N_d(F)
-\ge
- d!\left(\frac{d-3}{d}\right)^d.
-}
-\]
-
-Write
-
-\[
-\kappa_d^{line}
-=
 \left(\frac d{d-3}\right)^d.
 \]
 
-Every rank-one through rank-three allowed prescription satisfies
+CMR1542--CMR1549 sharpen this to an exact binary trace signature.  Put
 
 \[
-\boxed{
-\Pr(P\subseteq R)
-\le
-\frac{\kappa_d^{line}}{(d)_r}.
-}
+Y=X\cup\{e\}.
 \]
 
-Consequently the exact off-line rook row is bounded by
+The line-clean host contains a spanning `(d-2)`-factor exactly when:
+
+1. `Y` is a partial matching, so the trace uses neither endpoint of `e`;
+2. `Y` does not leave one unmatched source and target joined by `O`.
+
+In the strong class,
 
 \[
-\boxed{
+N_d(F)
+\ge
+ d!\left(\frac{d-2}{d}\right)^d,
+\qquad
+\Pr(P\subseteq R)
+\le
+\frac{(d/(d-2))^d}{(d)_r}.
+\]
+
+The strong class fails only through target-endpoint overlap or one singleton
+opposite-edge remainder.  Weak traces retain
+
+\[
+N_d(F)
+\ge
+ d!\left(\frac{d-3}{d}\right)^d,
+\qquad
+\Pr(P\subseteq R)
+\le
+\frac{(d/(d-3))^d}{(d)_r}.
+\]
+
+Define
+
+\[
+q_X=
+\begin{cases}
+ d-2,&\text{strong trace},\\
+ d-3,&\text{weak trace},
+\end{cases}
+\qquad
+\kappa_d(X,e)=\left(\frac d{q_X}\right)^d.
+\]
+
+Then
+
+\[
 \mathbb E N_{off}(R)
 \le
-\kappa_d^{line}
+\kappa_d(X,e)
 \left[
 \frac{V_1^{off}}d
 +
@@ -148,13 +161,12 @@ Consequently the exact off-line rook row is bounded by
 +
 \frac{V_3^{off}}{(d)_3}
 \right].
-}
 \]
 
-With `b` unavailable allowed edges and current potential `m`, the strict test
+With `b` unavailable allowed edges and current potential `m`, the inequality
 
 \[
-\kappa_d^{line}
+\kappa_d(X,e)
 \left[
 \frac{V_1^{off}}d
 +
@@ -168,12 +180,11 @@ With `b` unavailable allowed edges and current potential `m`, the strict test
 D_S(e)
 \]
 
-forces one feasible lower-potential line-clean response.
+forces one feasible lower-potential response.
 
-The line-clean coefficient is now defined both exactly and uniformly.  The
-remaining issue is whether the uniform envelope is strong enough in every
-recurrent geometric class; where it is not, the exact component signature must
-be used.
+The line-clean numerical frontier is therefore a two-signature destroyed-credit
+comparison.  Exact component rook ratios remain available when either uniform
+coefficient is too weak.
 
 ## 6. Atomic repeated-token quotient
 
@@ -217,15 +228,17 @@ Fresh stock and successful absorption are not independent recurrent classes.
 After all closed reductions, the host-uniform diagonal quotient needs
 coefficients for:
 
-1. **Line-clean credit row.**  Compare the explicit uniform envelope, or the
-   sharper exact component row, with destroyed target load.
-2. **Return row.**  New credits supported by one labelled edge return.
-3. **Persistent selector row.**  The CMR531 paid-pair selector with surcharge
+1. **Strong line-clean row.**  Compare the `(d-2)` coefficient, or the exact
+   component row, with destroyed target load.
+2. **Weak line-clean row.**  Treat endpoint-overlap and singleton-remainder
+   signatures with the `(d-3)` coefficient or exact component sharpening.
+3. **Return row.**  New credits supported by one labelled edge return.
+4. **Persistent selector row.**  The CMR531 paid-pair selector with surcharge
    two.
-4. **Trace row.**  One fixed real trace line or row/column incidence slot.
-5. **Root/fixed-interface row.**  Recurrence of one source residue, quotient
+5. **Trace row.**  One fixed real trace line or row/column incidence slot.
+6. **Root/fixed-interface row.**  Recurrence of one source residue, quotient
    carry and lifted low-rank prescription.
-6. **Thin row.**  Small scattered residual factors not covered by nonroot depth
+7. **Thin row.**  Small scattered residual factors not covered by nonroot depth
    transfer.
 
 The broad labels “loaded line” and “repeated token” are no longer primitive
@@ -233,11 +246,11 @@ rows.
 
 ## 8. Recommended next lemmas
 
-1. **Line-clean destroyed-credit comparison.**  Insert inherited line/height
-   candidate counts into the CMR1539 envelope and identify the classes where
-   the CMR1540 inequality is automatic.
-2. **Component-signature sharpening.**  For the remaining classes, optimize the
-   exact CMR1533 rook ratios over path/cycle signatures.
+1. **Strong-trace credit comparison.**  Insert inherited line/height candidate
+   counts into the `(d-2)` envelope and identify the geometric range where the
+   strict inequality is automatic.
+2. **Weak-trace component sharpening.**  Optimize exact path/cycle rook ratios
+   for endpoint-overlap and singleton-remainder signatures.
 3. **Return coefficient.**  Combine entering-edge recreation support with
    `(p+1)(h-1)` labelled incidence per returned edge.
 4. **Selector coefficient.**  Evaluate
@@ -258,9 +271,9 @@ rows.
 The next finite calculations should target coefficients rather than new
 structural alternatives.
 
-- Evaluate the CMR1540 line-clean criterion over exact inherited line/height
-  classes.
-- Enumerate extremal path/cycle signatures for the exact CMR1533 ratios.
+- Evaluate the strong `(d-2)` criterion over inherited line/height classes.
+- Enumerate extremal weak path/cycle signatures and their exact prescription
+  ratios.
 - Enumerate return-supported offspring with exact last-entering owner labels.
 - Evaluate the CMR531 selector bound over exact residual rook classes and
   restoration thresholds.
@@ -271,7 +284,7 @@ structural alternatives.
 
 ## 10. Current proved endpoint
 
-Through **CMR1541**:
+Through **CMR1549**:
 
 - exact response probabilities and owner weights are known;
 - inherited-coordinate capacity is valid for scattered residual factors;
@@ -285,9 +298,10 @@ Through **CMR1541**:
   trace rows;
 - the complete off-line line-clean response row is an exact rational rook-
   component dot product;
-- every line-clean host contains a spanning `(d-3)`-factor and obeys the
-  explicit uniform permanent and collateral bounds above.
+- every line-clean host has a universal `(d-3)` factor;
+- every trace has an exact strong/weak factor signature, with a `(d-2)` factor
+  outside the two explicit exception classes.
 
-There is still no complete proof.  The next genuine advance is to certify the
-CMR1540 inequality on a nontrivial uniform geometric range, or sharpen the
-exact component rows until such a range closes.
+There is still no complete proof.  The next genuine advance is to close a
+nontrivial geometric range of the strong-trace destroyed-credit inequality and
+then isolate the truly exceptional weak signatures.
