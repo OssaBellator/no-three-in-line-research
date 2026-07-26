@@ -142,6 +142,8 @@ AC3li--AC3lm correct the interpretation of saturation. Each named phase is eithe
 
 AC3ln--AC3ls attach a payment-safe provenance record to every active or latent literal. The target-containing phase/carry/BDA/RI/protected hard pattern is absent from the current state and therefore prospective. A separate current owner may pay only through its transition-relative destruction route. With seven installed provenance families the role alphabet is at most `714q`, and the physical active/latent decoration stock is `O(qn^4)` before exact compatibility is imposed.
 
+AC3lt--AC3ly audit the remaining physical outer alphabets. Constant-support owner tokens and bounded-scope hard/protected atoms have polynomial address dictionaries, and every set-valued host/envelope/registry change has a polynomial least-atom add/remove label. However a universe of `U` atoms still has `2^U` exact subsets. Full set-valued profiles are polynomial only after deterministic reconstruction, monotonicity, bounded ticket state or another polynomial quotient; repeated atom labels alone are not progress.
+
 AC5b--AC5f give the exact reverse-scale audit. Same-band collateral is permitted when `Psi_H` decreases. For a certified multicover batch `B`, every AC menu must prove
 
 ```text
@@ -153,6 +155,14 @@ The first condition preserves already settled bands; the second gives strict int
 
 AC5g--AC5k turn that audit into an exact finite-menu router. Delete every state which creates a protected-band triple. On the surviving menu, an expected current-band count below `|B|` supplies a valid AC5 state. If every state is deleted, one exact high-line triple carries at least a polynomial pigeonhole fraction of the failed menu. Multistep installations must satisfy the high-line exclusion at every intermediate step, not merely in the final state.
 
+AC5l--AC5p import the `K/p`-spread bank into this filter. Complete two-choice and three-choice event inventories give exact expectation bounds in the current and protected bands. The single inequality
+
+```text
+Gamma_cur + |B| Gamma_high < |B|
+```
+
+forces one state which is protected-safe and has strict current-scale drift. For multistep installations, replace `Gamma_high` by the sum of the expected protected counts over all steps; the selected path then remains upper-`2H`-clean throughout.
+
 ## All-n branch audit
 
 `docs/alternating-core-all-n-branch-audit.md` records the current safe interfaces.
@@ -163,10 +173,10 @@ AC5g--AC5k turn that audit into an exact finite-menu router. Delete every state 
 
 ## Current frontier
 
-1. For each provenance-classified active or latent literal edge, prove a separate current owner is destroyed, a bounded arithmetic field descends, the edge is impossible, or a capacity-one ticket is consumed.
-2. Prove payment, strict bounded descent, physical impossibility or a capacity-one ticket for every recurrent simple macro cycle, and prove polynomial bounds for the remaining denominator, owner-token, protected-contract and envelope fields.
-3. For every installed AC menu, bound the protected-filter survivor current-band expectation below `|B|` and prove intermediate-state bank stability.
-4. Obtain common-parent/private-payment petal families or classify their exact parent/payment reset, then verify the remaining AC5 menus and discharge AC6.
+1. For each provenance-classified literal edge and nonmonotone host/envelope/registry atom, prove current payment, bounded arithmetic descent, physical impossibility or a capacity-one ticket.
+2. Bound the remaining denominator and same-denominator arithmetic multiplicities, then close every recurrent simple macro cycle.
+3. For every installed AC menu, construct complete current/protected event inventories and prove `Gamma_cur+|B| Gamma_high<|B|`, with the summed AC5p bound for multistep paths.
+4. Prove the GC1--GC3 partner, anchored pair-shadow and pool-stability estimates uniformly after earlier switches; obtain common-parent/private-payment petal families or classify their reset, then discharge AC6.
 
 ## Other independent inputs
 
