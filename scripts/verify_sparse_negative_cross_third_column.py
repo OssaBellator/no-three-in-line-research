@@ -3,7 +3,7 @@
 
 from __future__ import annotations
 
-from collections import Counter, defaultdict
+from collections import Counter
 from itertools import permutations
 from math import gcd
 from random import Random
@@ -85,12 +85,11 @@ def weighted_localization(counts: Counter[str]) -> None:
         counts["weighted records"] += total
 
         eta_num = rng.randint(1, 99)
-        eta_den = 100
         lg = rng.randint(1, 10000)
-        negative_mass = (eta_num * lg + eta_den - 1) // eta_den
-        endpoint_type_mass = negative_mass / 24
-        outside_bound = negative_mass / (576 * (n - 1) ** 2)
-        assert endpoint_type_mass / (24 * (n - 1) ** 2) >= outside_bound
+        negative_numerator = eta_num * lg
+        left_denominator = 24 * 24 * (n - 1) ** 2
+        right_denominator = 576 * (n - 1) ** 2
+        assert negative_numerator * right_denominator == negative_numerator * left_denominator
         counts["quantitative routers"] += 1
 
 
