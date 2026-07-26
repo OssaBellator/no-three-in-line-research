@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Finite checks for CMR1110--CMR1117."""
 
-from itertools import combinations
+from math import comb
 import random
 
 
@@ -21,19 +21,11 @@ def check_reconditioning_and_contraction():
     for universe_size in range(1, 25):
         universe = tuple(range(universe_size))
         for state_size in range(universe_size + 1):
-            all_count = 1
-            # Keep large cases sampled rather than materialising all combinations.
-            states = []
-            seen = set()
-            target = min(120, max(1, universe_size * 5))
-            while len(states) < target:
-                state = frozenset(rng.sample(universe, state_size))
-                if state not in seen:
-                    seen.add(state)
-                    states.append(state)
-                if len(seen) == len(list(combinations(universe, state_size))):
-                    break
-            family = set(states)
+            total_states = comb(universe_size, state_size)
+            target = min(total_states, 120, max(1, universe_size * 5))
+            family = set()
+            while len(family) < target:
+                family.add(frozenset(rng.sample(universe, state_size)))
             potential = {state: rng.randint(0, 40) for state in family}
             face, value = minimum_face(family, potential)
             anchor = rng.choice(tuple(face))
@@ -99,7 +91,6 @@ def check_later_host_trichotomy():
                 missing_cases += 1
             checked += 1
 
-            # Add a synthetic lower state to test strict improvement independently.
             lower = frozenset(rng.sample(tuple(universe), state_size))
             expanded = set(later)
             expanded.add(lower)
@@ -119,9 +110,11 @@ def check_same_value_rollback():
             state_size = rng.randint(1, min(universe_size, 12))
             anchor = frozenset(rng.sample(tuple(universe), state_size))
             base_host = set(anchor)
-            base_host.update(rng.sample(tuple(universe - set(anchor)), rng.randint(0, len(universe - set(anchor)))))
+            complement = tuple(universe - set(anchor))
+            base_host.update(rng.sample(complement, rng.randint(0, len(complement))))
             expanded_host = set(base_host)
-            expanded_host.update(rng.sample(tuple(universe - base_host), rng.randint(0, len(universe - base_host))))
+            expansion = tuple(universe - base_host)
+            expanded_host.update(rng.sample(expansion, rng.randint(0, len(expansion))))
             assert base_host <= expanded_host
             states = {anchor}
             for _state in range(100):
