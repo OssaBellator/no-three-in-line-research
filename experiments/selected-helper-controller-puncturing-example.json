@@ -1,0 +1,11 @@
+{
+  "R": 1000000,
+  "W": 1000,
+  "selected_size": 1000,
+  "gamma": 0.4,
+  "xi": 0.2,
+  "ambient_controller_density": 1.0,
+  "selected_marked_controllers": 1000,
+  "selected_helper_controllers": 1000,
+  "selected_positive_supports": 0
+}
