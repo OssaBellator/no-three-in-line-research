@@ -139,22 +139,27 @@ there is no remaining ambiguity about the payment obstruction.
 
 ## GC2ak -- complete excess normalization/Hall router -- PROVED
 
-Fix `theta>=1` for an overload-demand anchor family of total excess `E`.  There is
-one exact continuation:
+Fix `theta>=1` for an overload-demand anchor family of total excess `E`.  Exactly one
+of the two top-level routes holds:
 
-1. factor-conservative normalized payment at least `E/(2*theta)`;
-2. a heavy-ratio factor family carrying more than `E/2` excess with
-   `e_Q/omega_Q>theta` on every retained factor;
-3. after any downstream event/eligibility system is declared on a normalized
-   factor class, a fractional payment satisfying every event demand;
-4. or an exact weighted Hall-deficient event subset whose total demand exceeds the
-   capacity of its complete eligible current-factor neighbourhood.
+1. **moderate normalization:** factor-conservative payment of at least
+   `E/(2*theta)` is available on `M_theta`;
+2. **heavy ratio:** a factor family carries more than `E/2` excess and satisfies
+   `e_Q/omega_Q>theta` on every retained factor.
+
+In the moderate route, the canonical one-event-per-factor system is paid by GC2aj.
+For any richer downstream event/eligibility system declared on the normalized
+factors, exactly one further outcome holds:
+
+- a fractional payment satisfies every event demand; or
+- an exact weighted Hall-deficient event subset has total demand greater than the
+  capacity of its complete eligible current-factor neighbourhood.
 
 ### Proof
 
-Apply GC2ah.  The moderate route gives outcome 1 and its singleton eligibility
-system satisfies GC2aj.  If a richer event system is used, apply GC2ai to obtain
-outcome 3 or 4.  The heavy branch is outcome 2. QED.
+GC2ah gives the top-level moderate/heavy split.  In the moderate route, GC2aj pays
+the singleton eligibility system.  Apply GC2ai to any richer declared event system
+to obtain the nested payment or deficiency outcome. QED.
 
 ## Corrected GC frontier
 
