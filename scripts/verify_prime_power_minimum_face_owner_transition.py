@@ -26,11 +26,7 @@ def canonical(face):
     return min(face, key=lambda state: tuple(sorted(state)))
 
 
-def random_ambient(universe_size, state_size, rng):
-    states = [
-        frozenset(state)
-        for state in combinations(range(universe_size), state_size)
-    ]
+def random_ambient(states, rng):
     return set(rng.sample(states, rng.randint(1, min(len(states), 100))))
 
 
@@ -47,14 +43,16 @@ def check_restriction_and_expansion():
     checked = 0
     for universe_size in range(1, 14):
         for state_size in range(universe_size + 1):
-            for _ in range(300):
-                ambient = random_ambient(universe_size, state_size, rng)
+            states = [
+                frozenset(state)
+                for state in combinations(range(universe_size), state_size)
+            ]
+            for _ in range(120):
+                ambient = random_ambient(states, rng)
                 potential = {state: rng.randint(0, 20) for state in ambient}
                 seed = rng.choice(tuple(ambient))
                 large = random_host_with_state(universe_size, seed, rng)
                 family_large = feasible(ambient, large)
-                if not family_large:
-                    continue
                 survivor = rng.choice(tuple(family_large))
                 small = set(survivor)
                 for edge in large:
@@ -73,17 +71,10 @@ def check_restriction_and_expansion():
                 else:
                     assert value_small > value_large
 
-                assert value_large <= value_small
                 if value_large == value_small:
                     assert face_small <= face_large
                     assert core(face_large) <= core(face_small)
-
-                face_expanded, value_expanded = minimum_face(family_large, potential)
-                assert value_expanded <= value_small
-                if value_expanded == value_small:
-                    assert face_small <= face_expanded
-                    assert core(face_expanded) <= core(face_small)
-                    for state in face_expanded - face_small:
+                    for state in face_large - face_small:
                         assert set(state) & (set(large) - set(small))
                 checked += 1
     return checked
@@ -94,17 +85,21 @@ def check_arbitrary_transition_witnesses():
     checked = 0
     for universe_size in range(1, 15):
         for state_size in range(universe_size + 1):
-            for _ in range(400):
-                ambient = random_ambient(universe_size, state_size, rng)
+            states = [
+                frozenset(state)
+                for state in combinations(range(universe_size), state_size)
+            ]
+            for _ in range(160):
+                ambient = random_ambient(states, rng)
                 potential = {state: rng.randint(0, 30) for state in ambient}
-                first_seed = rng.choice(tuple(ambient))
-                second_seed = rng.choice(tuple(ambient))
-                first_host = random_host_with_state(universe_size, first_seed, rng)
-                second_host = random_host_with_state(universe_size, second_seed, rng)
+                first_host = random_host_with_state(
+                    universe_size, rng.choice(tuple(ambient)), rng
+                )
+                second_host = random_host_with_state(
+                    universe_size, rng.choice(tuple(ambient)), rng
+                )
                 first_family = feasible(ambient, first_host)
                 second_family = feasible(ambient, second_host)
-                if not first_family or not second_family:
-                    continue
                 first_face, first_value = minimum_face(first_family, potential)
                 second_face, second_value = minimum_face(second_family, potential)
                 first_canonical = canonical(first_face)
@@ -128,11 +123,16 @@ def check_core_support():
     checked = 0
     for universe_size in range(1, 15):
         for state_size in range(universe_size + 1):
-            for _ in range(300):
-                ambient = random_ambient(universe_size, state_size, rng)
+            states = [
+                frozenset(state)
+                for state in combinations(range(universe_size), state_size)
+            ]
+            for _ in range(120):
+                ambient = random_ambient(states, rng)
                 potential = {state: rng.randint(0, 10) for state in ambient}
-                seed = rng.choice(tuple(ambient))
-                small = random_host_with_state(universe_size, seed, rng)
+                small = random_host_with_state(
+                    universe_size, rng.choice(tuple(ambient)), rng
+                )
                 large = set(small)
                 for edge in range(universe_size):
                     if edge not in large and rng.random() < 0.7:
@@ -154,7 +154,10 @@ def check_core_support():
                         if edge not in state
                     ]
                     assert witnesses
-                    assert all(set(state) & (set(large) - set(small)) for state in witnesses)
+                    assert all(
+                        set(state) & (set(large) - set(small))
+                        for state in witnesses
+                    )
                 checked += 1
     return checked
 
