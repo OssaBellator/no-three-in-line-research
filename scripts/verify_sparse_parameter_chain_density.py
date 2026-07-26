@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 from collections import Counter
-from itertools import combinations, product
 from math import ceil, floor, gcd
 
 
@@ -20,8 +19,27 @@ def disjoint_adjacent_pairs(occupied: set[int]) -> list[tuple[int, int]]:
     return pairs
 
 
+def weight_profiles(length: int, occupied: set[int]) -> tuple[tuple[int, ...], ...]:
+    profiles: list[tuple[int, ...]] = []
+    for mode in range(4):
+        weights = []
+        for value in range(length):
+            if value not in occupied:
+                weights.append(0)
+            elif mode == 0:
+                weights.append(1)
+            elif mode == 1:
+                weights.append(1 + value % 2)
+            elif mode == 2:
+                weights.append(3 if value == min(occupied) else 1)
+            else:
+                weights.append(1 + (value % 3))
+        profiles.append(tuple(weights))
+    return tuple(profiles)
+
+
 def verify_interval_combinatorics(counts: Counter[str]) -> None:
-    for length in range(1, 12):
+    for length in range(1, 13):
         interval = set(range(length))
         for mask in range(1 << length):
             occupied = {value for value in interval if mask >> value & 1}
@@ -34,20 +52,17 @@ def verify_interval_combinatorics(counts: Counter[str]) -> None:
             assert len({endpoint for pair in selected for endpoint in pair}) == 2 * len(selected)
             counts["occupied subsets"] += 1
 
-            for weights in product(range(4), repeat=length):
-                total = sum(weights[value] for value in occupied)
-                if total == 0:
-                    continue
+            if not occupied:
+                continue
+            for weights in weight_profiles(length, occupied):
+                total = sum(weights)
                 for threshold in (1, 2, 3):
-                    if any(weights[value] > threshold for value in occupied):
+                    positive = [weights[value] for value in occupied if weights[value] > 0]
+                    if any(weight > threshold for weight in positive):
                         counts["heavy parameters"] += 1
                     else:
-                        support = sum(weights[value] > 0 for value in occupied)
-                        assert support >= ceil(total / threshold)
+                        assert len(positive) >= ceil(total / threshold)
                         counts["diffuse parameters"] += 1
-                # Limit the weight grid after short intervals to keep the check fast.
-                if length >= 7:
-                    break
 
 
 def valid_double_parameters(
@@ -92,7 +107,8 @@ def verify_board_bounds(counts: Counter[str]) -> None:
                 for base_row in range(size):
                     for base_col in range(size):
                         values = valid_double_parameters(size, base_row, base_col, u, v)
-                        assert values == list(range(values[0], values[-1] + 1)) if values else True
+                        if values:
+                            assert values == list(range(values[0], values[-1] + 1))
                         assert len(values) <= bound
                         if len(values) >= 2:
                             assert size >= height * (len(values) - 1) + 1
@@ -106,7 +122,8 @@ def verify_board_bounds(counts: Counter[str]) -> None:
                     continue
                 for fixed_col in range(size):
                     values = valid_single_parameters(size, fixed_col, u, v)
-                    assert values == list(range(values[0], values[-1] + 1)) if values else True
+                    if values:
+                        assert values == list(range(values[0], values[-1] + 1))
                     assert len(values) <= bound
                     if len(values) >= 2:
                         assert size >= height * (len(values) - 1) + 1
