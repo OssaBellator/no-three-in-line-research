@@ -10,7 +10,8 @@ finite obstruction census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have now closed every top-signature tier of multiplicity at least `20`:
+have closed every top-signature tier of multiplicity at least `20` and the first
+seventeen signatures of multiplicity `19`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -24,21 +25,43 @@ have now closed every top-signature tier of multiplicity at least `20`:
 | 24 | 8 | 192 | certified infeasible |
 | 23 | 10 | 230 | certified infeasible |
 | 20 | 1 | 20 | certified infeasible |
-| **Total** | **46** | **1,344** | **20,687,852 shared bottom-CSP nodes** |
+| 19, shard 0 | 17 of 42 | 323 | certified infeasible |
+| **Total** | **63 completed classes** | **1,667** | **27,609,128 shared bottom-CSP nodes** |
 
-Thus `70,516` support-twenty selectors remain active in this cache layer.
+Thus `70,193` support-twenty selectors remain active in this cache layer.
 
-The latest exact results are PX633--PX636 in
-[`docs/205-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty.md`](../docs/205-side-seven-cycle52-radius-three-support-twenty-multiplicity-twenty.md).
+The latest exact results are PX637--PX640 in
+[`docs/206-side-seven-cycle52-radius-three-support-twenty-multiplicity-nineteen-shard-zero.md`](../docs/206-side-seven-cycle52-radius-three-support-twenty-multiplicity-nineteen-shard-zero.md).
+
+## Solver improvement
+
+The multiplicity-19 verifier hoists selector-to-edge incidence masks out of the
+clean-top loop and precomputes fixed scalar point tables for each top order.
+This preserves the exact search tree and published node-count semantics while
+removing repeated setup and dynamic per-node allocations.
+
+PX641--PX642 also give a stronger exact formulation: one selector-choice CSP,
+or equivalently one one-hot CNF, can decide an entire selector family at once.
+The intended next upgrade is assumption-based conflict extraction from the
+bottom subproblem, followed by proof-logged SAT or certified dominance and
+symmetry breaking. See
+[`docs/207-selector-choice-csp-and-certified-symmetry.md`](../docs/207-selector-choice-csp-and-certified-symmetry.md).
 
 ## Immediate task
 
-The next tier has multiplicity `19`: forty-two top signatures containing `798`
-selectors. Regenerate the exact layer, record both clean-top order counts, and
-exhaust all four radix orientations with the shared active-selector bottom CSP.
-Because this tier is substantially wider than the completed tiers, batch the
-signatures into independently reproducible verifier shards with exact aggregate
-counts.
+Twenty-five multiplicity-19 signatures containing `475` selectors remain.
+Complete them as independently reproducible shards using the hoisted-incidence
+verifier. In parallel:
+
+1. add top-assignment assumption literals;
+2. extract deletion-minimal bottom infeasibility cores;
+3. learn a master nogood covering every top order extending one core;
+4. export one selector-choice shard to CNF and check an UNSAT proof independently;
+5. add only mechanically verified host/reflection symmetry constraints.
+
+A complete shard result must assert the exact histogram, every clean-top order
+and top-node count, every bottom-node count, and either an explicit surviving
+configuration or exact infeasibility.
 
 ## Stage completion criterion
 
@@ -52,11 +75,13 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity20.cpp \
-  -o /tmp/side7_c52_s20_m20
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity19_shard0.cpp \
+  -o /tmp/side7_c52_s20_m19_s0
 
-for orientation in 0 1 2 3; do
-  /tmp/side7_c52_s20_m20 "$orientation"
+for case_index in $(seq 0 16); do
+  for orientation in 0 1 2 3; do
+    /tmp/side7_c52_s20_m19_s0 "$case_index" "$orientation"
+  done
 done
 ```
 
