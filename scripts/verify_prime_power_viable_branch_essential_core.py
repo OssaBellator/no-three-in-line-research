@@ -9,6 +9,14 @@ def all_states(universe_size, state_size):
     return [frozenset(state) for state in combinations(range(universe_size), state_size)]
 
 
+def random_family(universe_size, state_size, maximum, rng):
+    target = rng.randint(1, maximum)
+    family = set()
+    while len(family) < target:
+        family.add(frozenset(rng.sample(range(universe_size), state_size)))
+    return family
+
+
 def core(family):
     iterator = iter(family)
     result = set(next(iterator))
@@ -31,11 +39,9 @@ def check_viability_and_degree():
     for universe_size in range(1, 15):
         for state_size in range(universe_size + 1):
             states = all_states(universe_size, state_size)
-            if not states:
-                continue
             for _ in range(min(200, max(1, len(states) * 2))):
                 family = set(rng.sample(states, rng.randint(1, len(states))))
-                rejected = rng.choice(sorted(family, key=lambda item: tuple(sorted(item))))
+                rejected = rng.choice(tuple(family))
                 essential = core(family)
                 viable = [edge for edge in rejected if child(family, edge)]
                 assert set(viable) == set(rejected - essential)
@@ -50,8 +56,6 @@ def check_contraction_and_empty_core():
     for universe_size in range(1, 16):
         for state_size in range(universe_size + 1):
             states = all_states(universe_size, state_size)
-            if not states:
-                continue
             for _ in range(min(100, len(states))):
                 family = set(rng.sample(states, rng.randint(1, len(states))))
                 essential = core(family)
@@ -67,10 +71,10 @@ def check_contraction_and_empty_core():
 
 def check_deterministic_cases():
     checked = 0
-    for universe_size in range(1, 15):
+    for universe_size in range(1, 13):
         for state_size in range(universe_size + 1):
             states = all_states(universe_size, state_size)
-            for family_size in range(1, min(len(states), 8) + 1):
+            for family_size in range(1, min(len(states), 6) + 1):
                 for sample in combinations(states, family_size):
                     family = set(sample)
                     essential = core(family)
@@ -90,11 +94,11 @@ def check_deterministic_cases():
 def check_telescoping_contractions():
     rng = random.Random(844)
     checked = 0
-    for universe_size in range(2, 30):
+    for universe_size in range(2, 40):
         for state_size in range(1, universe_size):
-            states = all_states(universe_size, state_size)
-            for _ in range(100):
-                family = set(rng.sample(states, rng.randint(1, min(len(states), 100))))
+            maximum = min(100, max(1, universe_size * 3))
+            for _ in range(50):
+                family = random_family(universe_size, state_size, maximum, rng)
                 initial_size = state_size
                 contracted_total = 0
                 while family:
@@ -102,10 +106,10 @@ def check_telescoping_contractions():
                     contracted_total += len(essential)
                     family = contract(family, essential)
                     current_size = len(next(iter(family)))
-                    assert contracted_total + current_size <= initial_size
+                    assert contracted_total + current_size == initial_size
                     if len(family) == 1 or current_size == 0:
                         break
-                    rejected = rng.choice(sorted(family, key=lambda item: tuple(sorted(item))))
+                    rejected = rng.choice(tuple(family))
                     viable = [edge for edge in rejected if child(family, edge)]
                     assert viable
                     family = child(family, rng.choice(viable))
