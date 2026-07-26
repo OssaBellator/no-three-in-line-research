@@ -45,44 +45,39 @@ The authoritative live ledger is split across:
 | CMR1462--1469 | Fractional packed-signature identity, owner/pair dispersion, primitive-direction concentration and exact-displacement translation banks | PROVED; inherited-coordinate parameters corrected before endpoint snapshot | `docs/286-prime-power-fractional-packed-signature-fans.md` |
 | CMR1470--1477 | Exact endpoint prefix cells, weighted full-cell concentration, internal/crossing carry routing, common exit-depth extraction, strict internal scaling, quantitative CMR1469 splice, absolute token stock, and the displacement-routing endpoint | PROVED; sparse weighted and scaling checks | `docs/287-prime-power-weighted-displacement-carry-routing.md` |
 | CMR1478--1485 | Exact-displacement path forest, half-mass endpoint-disjoint extraction, linear residual-blocker payment, private full-prefix token placement, heavy private-token versus dispersed-token alternatives, and the quantitative splice after carry routing | PROVED; random weighted forests, blocker tests, nonroot token systems and geometric packed-bank specialisations checked computationally | `docs/288-prime-power-exact-displacement-private-path-payment.md` |
+| CMR1486--1493 | Existing-mask versus fresh-private-mass dichotomy, exact host and monotone reserve stock, fresh-token alternative, augmented depth/resource transfer DAG, block triangularity, rational gluing, and the recurrent-core reduction | PROVED; random weighted masks, monotone resource episodes, transfer systems and rational gluing checks | `docs/289-prime-power-transfer-resource-triangularity.md` |
+| CMR1494--1501 | Root residue channels, deterministic quotient carry, lossless private channel extraction, residual blocker payment, injective quotient normalization, low-rank cross-child atoms, strict child-factor descent, and the prime-field terminal channel | PROVED; residue/carry, weighted channel, low-rank factor and child-side checks | `docs/290-prime-power-root-displacement-child-channels.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-For response side `d` inside envelope `p^k` with coordinate span `W_omega`,
-CMR1469 gives an exact-displacement class of mass at least
+CMR1486--CMR1493 remove four apparent frontiers from the diagonal spectral
+problem.  Strict internal scaling, earlier-depth handoff, first use of a
+private residual edge and first use of an absolute token form a finite
+acyclic transfer graph.  Their finite offspring may be arbitrarily large:
+once each recurrent core has a rational certificate, constructive block
+gluing absorbs every such off-diagonal term.
+
+The depth-zero branch is also no longer anonymous.  A fixed unit displacement
+splits into at most `p^2` root source channels.  One channel has mass at least
 
 \[
-M_0=
-\frac{d-2}
-{6k(p+1)B_\omega D_p(H)S_{\omega,p}(s,H)}.
+\frac{M_0}{p^2}
 \]
 
-CMR1470--CMR1477 route this mass through one depth-`s` full prefix cell.  They
-produce strict internal scaling, one earlier exit depth, the depth-zero branch,
-or reuse of an absolute token.  CMR1478--CMR1485 then extract private translated
-pairs inside the routed branch.  The guaranteed private-pair counts are at least
-
-\[
-\left\lceil\frac{M_0}{4p^{2s}}\right\rceil
-\]
-
-in the internal branch,
-
-\[
-\left\lceil\frac{M_0}{4sp^{2s}}\right\rceil
-\]
-
-in the earlier-exit branch, and `ceil(M_0/2)` at depth zero.  Every residual
-blocker meeting all extracted pairs spends one distinct response edge per pair.
-At nonroot depth, the pairs additionally give one heavy private translated token
-or many pairwise token-disjoint private witnesses.
+on automatically endpoint-disjoint pairs, has one deterministic quotient
+carry, and becomes an anchored or cross-factor low-rank atom after selected
+root routing.  For `k>=2` the owner factor has strict side `p^(k-1)`; for
+`k=1` it is a side-one terminal/fixed-interface channel.
 
 The active frontier is now:
 
-1. assign strict Lyapunov payment to internal scaling and earlier-depth transfer;
-2. compare private residual-edge/token consumption with destroyed parent credit;
-3. pay the depth-zero translated bank or repeated absolute token through
-   quotient/carry collision, prefix return or protected reserve;
-4. compare the global translated-token payment with the one-owner loaded-line
-   gain and encode a host-uniform rational/integer `Av<v` certificate; and
-5. prove prime-field/thin diagonal blocks and complete CRT assembly.
+1. construct rational/integer certificates for the genuinely recurrent cores:
+   repeated absolute tokens, reused residual supports, recurrent root
+   channels/fixed interfaces, and the one-owner loaded-line alternative;
+2. compare the global packed/private currencies with destroyed parent credit
+   without double counting the loaded-line currency;
+3. prove the remaining thin residual and prime-field fixed-interface core
+   certificates;
+4. export the recurrent-core inequalities as a host-uniform `Av<v`
+   certificate; and
+5. complete balanced/CRT assembly with collision and local-line classes.
