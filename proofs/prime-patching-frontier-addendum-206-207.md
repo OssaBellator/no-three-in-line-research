@@ -3,7 +3,7 @@
 This addendum continues `proofs/prime-patching-frontier-addendum-193-195.md`
 after PP3air. It records the original-reference, controller-domain,
 initial-allocation, complete marked-support, separated-cycle, and nested
-controller-history reductions in `docs/206` through `docs/241`.
+controller-history reductions in `docs/206` through `docs/242`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -43,6 +43,7 @@ controller-history reductions in `docs/206` through `docs/241`.
 | PP3ari--PP3aro | A bounded marked set in one permutation layer has a linear controller-disjoint helper reservoir and a controller-preserving separated cycle | PROVED / CONDITIONAL COMMON-LAYER AND SOURCE-SUPPORT INTERFACES | `docs/239-bounded-marked-permutation-layer-embedding.md` |
 | PP3arp--PP3arw | Strict alternation lowers complete helper-support rank to three; at `N=Theta(W^2)` failure of an independent `W`-set yields a target star, matching, or fixed-core petal bank | PROVED / CONDITIONAL COMMON-LAYER AND EXTERNAL-HOST INTERFACES | `docs/240-critical-square-root-separated-helper-host.md` |
 | PP3arx--PP3asd | A zero-cost second cycle moving every first-cycle inserted cell destroys the complete first insertion table; target cycles become strict composite paid trades | PROVED / CONDITIONAL COMMON-LAYER AND EXTERNAL-HOST INTERFACES | `docs/241-target-cycle-complete-insertion-cancellation.md` |
+| PP3ase--PP3ask | All bounded local source, transition, anchor, distinguished-endpoint, edge-host, and insertion constraints fuse into one rank-three helper hypergraph; the explicit cycle bypasses separate Hall and alternating stages | PROVED / CONDITIONAL FINITE LOCAL NORMAL FORM | `docs/242-joint-local-constraint-support-fusion.md` |
 
 ## Complete-support and critical square-root endpoint
 
@@ -54,28 +55,29 @@ W=sqrt(R)=m^(19/40+o(1)).
 ```
 
 Sparse positive support is avoided independently of weight or witness multiplicity.
-Dense support becomes a canonical pencil, star, matching, fixed-core sunflower, or
-resource bank. For a target marked set, strict alternation lowers ordinary-helper
-support rank to three. On a `Theta(W^2)` reservoir, failure of an independent
-`W`-set forces `Omega(W^2)` rank-two or `Omega(W^3)` rank-three support, hence a
-target-size converted object.
+Strict alternation lowers every bounded local source, insertion, transition, anchor,
+distinguished-endpoint, and endpoint-edge constraint to ordinary-helper support rank
+at most three. On a `Theta(W^2)` reservoir, failure of a joint independent `W`-set
+forces a target-size canonical star, matching, fixed-core petal bank, or endpoint
+bank.
+
+The selected alternating cycle is itself a perfect matching. Once all actual
+edge-local and bounded-pattern constraints are fused into the joint support table,
+no separate Hall, matching, or alternating-SCC theorem is needed.
 
 ## Complete cycle-insertion cancellation
 
 Let a first endpoint-cycle trade have insertion and removal terms `I_1,R_1`, and
 let `D` be its newly inserted cells. Every incidence counted in `I_1` contains a
-member of `D`. A source-valid second trade moving all of `D` therefore has removal
-term at least `I_1`. Under the critical separated host its own insertion cost is
-zero, so
+member of `D`. A joint-support-free second cycle moving all of `D` has zero insertion
+cost and removal term at least `I_1`, so
 
 ```text
 Delta Xi_two-step <= -R_1.
 ```
 
-Thus arbitrary first-cycle insertion multiplicity cancels. Target Hamilton cycles,
-alternating-cycle petals, mobility-hub cycle states, and chord-cycle candidates are
-strictly paid or yield a target canonical support structure, unless a genuinely
-external second-host condition fails.
+Target Hamilton cycles, alternating-cycle petals, mobility-hub states, and chord-
+cycle candidates are strictly paid or yield a target canonical local certificate.
 
 ## Deleted-entry and punctured-star endpoint
 
@@ -88,16 +90,15 @@ sum_j (I_j^F-R_j^F)-D_0(F).
 ```
 
 Every deleted entry contributes the negative of its initial mass. Canonical captive-
-star stages have zero insertion cost after complete marked-support selection and
-terminate by the nested chronological potential.
+star stages have zero insertion cost and terminate by the nested chronological
+potential.
 
 ## Revised live frontier
 
 The remaining concentrated cases are now:
 
-1. genuinely external source-clean, transition, anchor, distinguished-endpoint,
-   Hall, alternating, or matching constraints that erase almost all of an otherwise
-   square-root-critical controller-disjoint helper reservoir;
+1. genuinely global conditions that cannot be represented by forbidden patterns on
+   at most three selected endpoint cells;
 2. failure of the common-permutation-layer hypothesis, or controller density
    `1-o(1)` in every eligible layer;
 3. endpoint packages that are not expressible as co-layered replacement trades;
@@ -111,6 +112,7 @@ sunflowers, diffuse residual support, local insertion atoms, second-generation
 pencils, paid puncture histories, temporal blocker instability, future-controller
 dependencies, canonical punctured-star insertion cost, bounded coordinate placement,
 critical target helper support, target-cycle insertion concentration, mobility-hub
-cycle payment, and chord-cycle payment are no longer separate frontiers.
+and chord-cycle payment, and local Hall/alternating/matching host preparation are no
+longer separate frontiers.
 
 The no-three-in-line conjecture remains unproved.
