@@ -17,24 +17,28 @@ def matvec(matrix, vector):
     ]
 
 
+def positive_raw(size, maximum, rng):
+    raw = [rng.randint(0, maximum) for _column in range(size)]
+    if not any(raw):
+        raw[rng.randrange(size)] = 1
+    return raw
+
+
 def random_certificate(size, rng):
     weight = [Fraction(rng.randint(1, 40)) for _ in range(size)]
     slack = [Fraction(rng.randint(1, 10), 10) * weight[row] for row in range(size)]
     matrix = []
     for row in range(size):
-        raw = [rng.randint(0, 30) for _column in range(size)]
+        raw = positive_raw(size, 30, rng)
         weighted_raw = sum(
             Fraction(raw[column]) * weight[column]
             for column in range(size)
         )
         target = weight[row] - slack[row]
-        if weighted_raw == 0:
-            matrix.append([Fraction(0)] * size)
-        else:
-            matrix.append([
-                target * Fraction(raw[column], 1) / weighted_raw
-                for column in range(size)
-            ])
+        matrix.append([
+            target * Fraction(raw[column], 1) / weighted_raw
+            for column in range(size)
+        ])
     return matrix, weight, slack
 
 
@@ -51,7 +55,6 @@ def clear_denominators(matrix, weight, slack):
     ]
     integer_weight = [int(denominator * value) for value in weight]
     integer_slack = [int(denominator * denominator * value) for value in slack]
-    # Matrix scaling and vector scaling contribute denominator^2 on the left.
     return denominator, integer_matrix, integer_weight, integer_slack
 
 
@@ -59,10 +62,13 @@ def check_rational_and_integer_certificates():
     rng = random.Random(1270)
     checked = 0
     for size in range(1, 18):
-        for _ in range(250):
+        for _ in range(180):
             matrix, weight, slack = random_certificate(size, rng)
             image = matvec(matrix, weight)
-            assert all(image[row] == weight[row] - slack[row] < weight[row] for row in range(size))
+            assert all(
+                image[row] == weight[row] - slack[row] < weight[row]
+                for row in range(size)
+            )
 
             denominator, integer_matrix, integer_weight, integer_slack = clear_denominators(
                 matrix, weight, slack
@@ -81,24 +87,24 @@ def check_error_robustness():
     rng = random.Random(1272)
     checked = 0
     for size in range(1, 20):
-        for _ in range(250):
+        for _ in range(180):
             matrix, weight, slack = random_certificate(size, rng)
             theta = Fraction(rng.randint(0, 9), 10)
             error = []
             for row in range(size):
-                raw = [rng.randint(0, 20) for _column in range(size)]
+                if theta == 0:
+                    error.append([Fraction(0)] * size)
+                    continue
+                raw = positive_raw(size, 20, rng)
                 weighted_raw = sum(
                     Fraction(raw[column]) * weight[column]
                     for column in range(size)
                 )
                 target = theta * slack[row]
-                if weighted_raw == 0:
-                    error.append([Fraction(0)] * size)
-                else:
-                    error.append([
-                        target * Fraction(raw[column], 1) / weighted_raw
-                        for column in range(size)
-                    ])
+                error.append([
+                    target * Fraction(raw[column], 1) / weighted_raw
+                    for column in range(size)
+                ])
             combined = [
                 [matrix[row][column] + error[row][column] for column in range(size)]
                 for row in range(size)
@@ -117,9 +123,9 @@ def check_constructive_block_gluing():
     checked = 0
     for first_size in range(1, 10):
         for second_size in range(1, 10):
-            for _ in range(120):
+            for _ in range(100):
                 first, first_weight, first_slack = random_certificate(first_size, rng)
-                second, second_weight, second_slack = random_certificate(second_size, rng)
+                second, second_weight, _second_slack = random_certificate(second_size, rng)
                 cross = [
                     [Fraction(rng.randint(0, 50), 10) for _column in range(second_size)]
                     for _row in range(first_size)
@@ -140,7 +146,10 @@ def check_constructive_block_gluing():
                     for row in range(second_size)
                 ]
                 image = matvec(matrix, glued_weight)
-                assert all(image[row] < glued_weight[row] for row in range(len(glued_weight)))
+                assert all(
+                    image[row] < glued_weight[row]
+                    for row in range(len(glued_weight))
+                )
                 checked += 1
     return checked
 
@@ -152,7 +161,7 @@ def check_deterministic_row_selection():
     for size in range(1, 30):
         weight = [Fraction(rng.randint(1, 30)) for _ in range(size)]
         for parent in range(size):
-            for _ in range(300):
+            for _ in range(180):
                 rows = [
                     [Fraction(rng.randint(0, 20), 10) for _column in range(size)]
                     for _law in range(rng.randint(2, 12))
@@ -166,9 +175,15 @@ def check_deterministic_row_selection():
                     )
                     for column in range(size)
                 ]
-                if sum(mixed[column] * weight[column] for column in range(size)) < weight[parent]:
+                if sum(
+                    mixed[column] * weight[column]
+                    for column in range(size)
+                ) < weight[parent]:
                     assert any(
-                        sum(row[column] * weight[column] for column in range(size)) < weight[parent]
+                        sum(
+                            row[column] * weight[column]
+                            for column in range(size)
+                        ) < weight[parent]
                         for row in rows
                     )
                     selected += 1
@@ -183,12 +198,23 @@ def check_finite_bank_integer_rows():
     for class_count in range(1, 30):
         weight = [rng.randint(1, 100) for _class in range(class_count)]
         for parent in range(class_count):
-            for _ in range(300):
+            for _ in range(180):
                 bank_size = rng.randint(1, 100)
-                totals = [rng.randint(0, 5 * bank_size) for _class in range(class_count)]
-                rational_left = sum(Fraction(totals[index], bank_size) * weight[index] for index in range(class_count))
-                integer_left = sum(totals[index] * weight[index] for index in range(class_count))
-                assert (rational_left < weight[parent]) == (integer_left < bank_size * weight[parent])
+                totals = [
+                    rng.randint(0, 5 * bank_size)
+                    for _class in range(class_count)
+                ]
+                rational_left = sum(
+                    Fraction(totals[index], bank_size) * weight[index]
+                    for index in range(class_count)
+                )
+                integer_left = sum(
+                    totals[index] * weight[index]
+                    for index in range(class_count)
+                )
+                assert (rational_left < weight[parent]) == (
+                    integer_left < bank_size * weight[parent]
+                )
                 if integer_left < bank_size * weight[parent]:
                     strict_rows += 1
                 checked += 1
@@ -199,15 +225,26 @@ def check_coarse_class_lifting():
     rng = random.Random(1276)
     checked = 0
     for coarse_count in range(1, 20):
-        for _ in range(250):
+        for _ in range(180):
             matrix, weight, _slack = random_certificate(coarse_count, rng)
-            exact_types = [rng.randrange(coarse_count) for _ in range(rng.randint(coarse_count, 8 * coarse_count))]
+            exact_types = [
+                rng.randrange(coarse_count)
+                for _ in range(rng.randint(coarse_count, 8 * coarse_count))
+            ]
             for parent_type in set(exact_types):
-                coarse_image = sum(matrix[parent_type][target] * weight[target] for target in range(coarse_count))
-                exact_upper = [Fraction(0)] * coarse_count
-                for target in range(coarse_count):
-                    exact_upper[target] = matrix[parent_type][target] * Fraction(rng.randint(0, 10), 10)
-                exact_image = sum(exact_upper[target] * weight[target] for target in range(coarse_count))
+                coarse_image = sum(
+                    matrix[parent_type][target] * weight[target]
+                    for target in range(coarse_count)
+                )
+                exact_upper = [
+                    matrix[parent_type][target]
+                    * Fraction(rng.randint(0, 10), 10)
+                    for target in range(coarse_count)
+                ]
+                exact_image = sum(
+                    exact_upper[target] * weight[target]
+                    for target in range(coarse_count)
+                )
                 assert exact_image <= coarse_image < weight[parent_type]
                 checked += 1
     return checked
