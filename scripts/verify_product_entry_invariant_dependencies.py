@@ -27,6 +27,7 @@ INDEXES = [ROOT / "proofs" / name for name in (
     "product-growing-direction-theorem-index-PX537-PX540.md",
     "product-growing-direction-theorem-index-PX541-PX545.md",
     "product-growing-direction-theorem-index-PX546-PX550.md",
+    "product-growing-direction-theorem-index-PX551-PX554.md",
 )]
 DOCS = [ROOT / "docs" / name for name in (
     "153-px63-one-hit-derangement-entry.md",
@@ -60,6 +61,7 @@ DOCS = [ROOT / "docs" / name for name in (
     "181-side-seven-cycle322-complete-radius-two-obstruction.md",
     "182-side-seven-cycle43-complete-radius-two-obstruction.md",
     "183-side-seven-radius-three-selector-layers.md",
+    "184-side-seven-radius-two-support-sixteen-structure.md",
 )]
 HEADING = re.compile(r"^### (?:Theorem|Corollary|Lemma) PX(\d+)\b", re.MULTILINE)
 INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
@@ -67,9 +69,9 @@ INDEX_ROW = re.compile(r"^\| PX(\d+) \|", re.MULTILINE)
 
 def main() -> None:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    assert manifest["range"] == "PX397-PX550"
+    assert manifest["range"] == "PX397-PX554"
     assert manifest["root"] == "PX492"
-    assert manifest["frontier_root"] == "PX550"
+    assert manifest["frontier_root"] == "PX554"
     nodes = manifest["nodes"]
     starts = {name: int(name[2:].split("-")[0]) for name in nodes}
     for name, data in nodes.items():
@@ -86,7 +88,7 @@ def main() -> None:
         full_text.append(text)
         for match in HEADING.finditer(text):
             occurrences.setdefault(int(match.group(1)), []).append(path.name)
-    for theorem_id in range(397, 551):
+    for theorem_id in range(397, 555):
         assert len(occurrences.get(theorem_id, [])) == 1
 
     index_ids = []
@@ -94,7 +96,7 @@ def main() -> None:
         index_ids.extend(int(value) for value in INDEX_ROW.findall(
             path.read_text(encoding="utf-8")
         ))
-    assert index_ids == list(range(397, 551))
+    assert index_ids == list(range(397, 555))
 
     text = "\n".join(full_text)
     for phrase in manifest["safety_rules"]["forbidden_unlifted_move_phrases"]:
@@ -107,9 +109,10 @@ def main() -> None:
         "1,594,005,329", "1,326,750,836", "5,461,931,168",
         "6,712,968,934", "2,780,475,186", "9,442,860,381",
         "77{,}026", "231{,}765", "308{,}791", "10{,}554",
+        "26,684", "9,824", "16,860", "3,016",
     ):
         assert token in text
-    print("PX397--PX550 dependency, cutoff, and radius-three frontier audit: PASS")
+    print("PX397--PX554 dependency, cutoff, and support-sixteen audit: PASS")
 
 
 if __name__ == "__main__":
