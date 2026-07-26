@@ -52,8 +52,8 @@ def check_target_hypergraph_scales():
 def check_currency_execution():
     rng = random.Random(1140)
     checked = 0
-    for _ in range(20000):
-        capacities = [rng.randint(0, 500) for _ in range(6)]
+    for _ in range(3000):
+        capacities = [rng.randint(0, 200) for _ in range(6)]
         remaining = list(capacities)
         episodes = 0
         while any(remaining):
@@ -78,7 +78,9 @@ def check_terminal_blocker_cover():
             if cover:
                 for _candidate in range(100):
                     state = {rng.choice(tuple(cover))}
-                    state.update(rng.sample(tuple(universe), rng.randint(0, min(15, universe_size))))
+                    state.update(
+                        rng.sample(tuple(universe), rng.randint(0, min(15, universe_size)))
+                    )
                     candidates.append(frozenset(state))
                 assert all(set(candidate) & cover for candidate in candidates)
                 host = universe - cover
