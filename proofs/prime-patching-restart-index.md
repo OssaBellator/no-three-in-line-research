@@ -30,6 +30,7 @@ transition addendum in
 | Hall-propagated orbit radius | Residual line domains and exact Hall tests exclude every `p=37` orbit repair through support twelve | PROVED / VERIFIED FINITELY | `docs/290` |
 | Conditioned swapped first moment | Even uniform edge-disjoint signed covers retain `Theta(n log n)` expected generic first-layer collinear triples | PROVED / VERIFIED FINITELY | `docs/291` |
 | Exact `p=37` repair | A support-thirteen signed-orbit repair gives a verified seed and proves the near-state radius is exactly thirteen | PROVED / VERIFIED FINITELY | `docs/292` |
+| `p=41` near-state and Hall radius | A verified four-line near-state has one common three-owner bad-line orbit and no canonical repair through support twelve | PROVED / VERIFIED FINITELY | `docs/293` |
 
 ## Exact late theorem ranges
 
@@ -60,30 +61,31 @@ transition addendum in
 | PP3bfs--PP3bfz | Residual line domains, Hall-propagated branch-and-bound, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/290-p37-swapped-orbit-hall-branch-and-bound-radius.md` |
 | PP3bga--PP3bgf | Generic signed cylinders and conditioned swapped-quarter-turn first-moment barrier | PROVED / VERIFIED FINITELY | `docs/291-edge-disjoint-swapped-first-moment-barrier.md` |
 | PP3bgg--PP3bgm | Support-thirteen completion, verified `p=37` seed, exact repair radius, and compact code | PROVED / VERIFIED FINITELY | `docs/292-p37-support-thirteen-repair-certificate.md` |
+| PP3bgn--PP3bgu | Bad-line owner invariance, verified `p=41` near-state, exact Hall census, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/293-p41-four-line-near-state-and-hall-radius.md` |
 
 ## Current exact endpoint
 
 The local call matrix is terminal inside the fixed-infrastructure slab
-architecture.  Once a saturated no-three source is supplied, a failed fixed
+architecture. Once a saturated no-three source is supplied, a failed fixed
 attempt either installs the heterogeneous exact-width patch or strictly
-decreases the fixed nonnegative integer potential.  Unary/binary multiplicity,
+decreases the fixed nonnegative integer potential. Unary/binary multiplicity,
 base-domain or score failure, active-anchor failure, source-host failure,
 coordinate cover, and restart comparability are not terminal local leaves.
 
-The remaining global theorem is exact.  For `n=p-1`, find one permutation
+The remaining global theorem is exact. For `n=p-1`, find one permutation
 `sigma` and one derangement `pi`, put `tau=sigma o pi`, and require occupancy at
 most two on every maximal Euclidean grid line.
 
 The direct uniform fixed-relative random arguments do not close this: the
 expected bad-triple count is `Theta(n log n)`, and the natural symmetric
-permutation-LLL expression is `Omega(log n)`.  Scaled inverse layers give a
+permutation-LLL expression is `Omega(log n)`. Scaled inverse layers give a
 uniform family of individually clean nonlinear permutations, but exact
 fixed-layer searches show that this one-layer ansatz does not extend for
 `p=13,17,19,23,29,31`.
 
-Quarter-turn symmetry supplies a smaller exact structured class.  Writing
+Quarter-turn symmetry supplies a smaller exact structured class. Writing
 `n=2m`, one signed assignment between two reversal-pair vertices selects a
-complete four-cell quarter-turn orbit.  Swapped-equivariant seeds are exactly
+complete four-cell quarter-turn orbit. Swapped-equivariant seeds are exactly
 signed directed cycle covers with
 
 ```text
@@ -93,43 +95,49 @@ one incoming and one outgoing edge per pair vertex,
 and one linear capacity inequality per maximal nonaxis line.
 ```
 
-The pair-cycle lift determines the full relative structure.  On a `rho`-cycle
+The pair-cycle lift determines the full relative structure. On a `rho`-cycle
 of length `ell`, an odd cycle gives one relative cycle of length `2ell`; an
 even cycle gives either two cycles of length `ell` or four cycles of length
-`ell/2`, according to one orientation-xor bit.  Exact counting shows that
+`ell/2`, according to one orientation-xor bit. Exact counting shows that
 edge-disjointness has limiting probability `exp(-1/4)` in the signed cover
 space, so duplicate-orbit avoidance is only a constant-factor issue.
 
 Conditioning the uniform signed-cover model on exact edge-disjointness still
-does not remove the probabilistic barrier.  Generic nonaxis triples retain
+does not remove the probabilistic barrier. Generic nonaxis triples retain
 cylinder probability of order `n^-3`, and their total expected first-layer
-violations remain `Theta(n log n)`.  The maximal-line geometry, not collision
+violations remain `Theta(n log n)`. The maximal-line geometry, not collision
 removal, is therefore the dominant obstruction for uniform measures.
 
-At `p=37`, the exact search now gives a closed local story.  A four-line
-near-state has pair-cycle partition `[11,6,1]`.  Raw enumeration excludes
-supports one through six, and Hall-propagated branch-and-bound excludes seven
-through twelve.  A support-thirteen completion gives a valid seed with
+At `p=37`, the exact search gives a closed local story. Raw enumeration and
+Hall propagation exclude supports one through twelve, while a support-thirteen
+completion gives a valid seed. Its pair cycles are `[14,3,1]`, its orientation
+parities are `[0,1,1]`, its relative cycles are `[14,14,6,2]`, and all `59640`
+determinants are nonzero. Thus the recorded near-state has exact orbit repair
+radius thirteen.
+
+At `p=41`, guided signed-cycle search gives a verified near-state with exactly
+four bad triples, one quarter-turn orbit, and common owner set `{15,18,20}`.
+Its pair cycles are `[10,5,4,1]`, with relative cycles
+`[10,10,10,4,4,2]`. The exact Hall search exhausts
 
 ```text
-pair cycles [14,3,1],
-orientation parities [0,1,1],
-relative cycles [14,14,6,2],
-and 59640 nonzero determinant checks.
+782738 support subsets,
+9148401 branch nodes,
+and every canonical support through twelve,
 ```
 
-Thus the canonical signed-orbit repair radius of that near-state is exactly
-thirteen.
+without a repair. Therefore this near-state has `h_orbit>=13`. No `p=41` seed
+is claimed.
 
-The canonical exact certificate suite now verifies
+The canonical exact certificate suite remains
 
 ```text
 p=3,5,7,11,13,17,19,23,29,31,37,61,67,73.
 ```
 
-The cases through `p=13` and the new `p=37` case were generated on this branch.
-The other larger cases are independently decoded and determinant-verified from
-compact public archive codes.  These isolated finite certificates do not
+The cases through `p=13` and the `p=37` case were generated on this branch. The
+other larger cases are independently decoded and determinant-verified from
+compact public archive codes. These isolated finite certificates do not
 interpolate and do not prove asymptotic existence.
 
 The next finite certificate gaps are
@@ -163,8 +171,9 @@ python scripts/check_swapped_relative_cycle_lift.py \
 python scripts/check_p37_swapped_orbit_support13_certificate.py \
   experiments/p37-swapped-orbit-support13-certificate.json \
   experiments/p37-swapped-quarter-turn-near-example.json
+python scripts/check_p41_swapped_orbit_near_state.py \
+  experiments/p41-swapped-quarter-turn-near-example.json
 ```
 
 For the exact support exclusions, compile and run the C++ checkers documented
-in `experiments/p37-swapped-orbit-repair-support.md` and
-`experiments/p37-swapped-orbit-repair-branch-bound.md`.
+in the `p37` and `p41` swapped-orbit repair experiment notes.
