@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite audit for AC3uh--AC3ul."""
+"""Finite audit for AC3um--AC3uq."""
 
 from functools import lru_cache
 from itertools import product
@@ -59,8 +59,6 @@ def audit_system(vectors, consumptions, counts, l_macro, l_gate, counters):
     for idx in order:
         v = expanded[idx]
         assert all(prefix[i] >= -q * b for i in range(q))
-        # Duplicate net vectors may have different gross consumptions.  Use
-        # their coordinatewise maximum to make the resource test conservative.
         matching = [consumptions[j] for j, vv in enumerate(vectors) if vv == v]
         c = tuple(max(row[i] for row in matching) for i in range(q))
         assert all(m[i] >= c[i] for i in range(q))
@@ -88,7 +86,6 @@ def main():
         "buffer_addresses": 0,
     }
 
-    # Exhaust small one-dimensional primitive multisets.
     for vals in product(range(-2, 3), repeat=3):
         if all(v == 0 for v in vals):
             continue
@@ -101,7 +98,6 @@ def main():
             consumptions = [(max(-v, 0) + rng.randint(0, 2),) for v in vals]
             audit_system(vectors, consumptions, counts, 4, 7, counters)
 
-    # Random two- and three-dimensional systems with short primitive words.
     attempts = 0
     while counters["systems"] < 6000 and attempts < 200000:
         attempts += 1
@@ -117,9 +113,7 @@ def main():
         z = [sum(counts[j] * vectors[j][i] for j in range(k)) for i in range(q)]
         if any(x < 0 for x in z):
             continue
-        consumptions = []
-        for v in vectors:
-            consumptions.append(tuple(max(-v[i], 0) + rng.randint(0, 2) for i in range(q)))
+        consumptions = [tuple(max(-v[i], 0) + rng.randint(0, 2) for i in range(q)) for v in vectors]
         audit_system(vectors, consumptions, counts, rng.randint(1, 8), rng.randint(1, 12), counters)
 
     assert counters["systems"] >= 5000
