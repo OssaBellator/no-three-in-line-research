@@ -1,0 +1,96 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 7,
+  "cases": [
+    {
+      "m": 4,
+      "hamilton_cycles": 6,
+      "parity_satisfiable_cycles": 6,
+      "parity_unsatisfiable_cycles": 0,
+      "directed_successor_rotations": 24,
+      "rotation_transition_counts": {
+        "satisfiable_to_satisfiable": 24,
+        "satisfiable_to_unsatisfiable": 0,
+        "unsatisfiable_to_satisfiable": 0,
+        "unsatisfiable_to_unsatisfiable": 0
+      },
+      "satisfiable_induced_components": 1,
+      "largest_satisfiable_component": 6,
+      "minimum_satisfiable_neighbours_from_satisfiable_cycle": 4,
+      "maximum_satisfiable_neighbours_from_satisfiable_cycle": 4,
+      "maximum_distance_to_satisfiable_cycle": 0,
+      "distance_to_satisfiable_distribution": {"0": 6},
+      "changed_constraint_count_distribution": {"0": 8, "1": 16},
+      "maximum_changed_parity_constraints": 1,
+      "changed_constraint_outside_rotated_sources": 0
+    },
+    {
+      "m": 5,
+      "hamilton_cycles": 24,
+      "parity_satisfiable_cycles": 22,
+      "parity_unsatisfiable_cycles": 2,
+      "directed_successor_rotations": 240,
+      "rotation_transition_counts": {
+        "satisfiable_to_satisfiable": 200,
+        "satisfiable_to_unsatisfiable": 20,
+        "unsatisfiable_to_satisfiable": 20,
+        "unsatisfiable_to_unsatisfiable": 0
+      },
+      "satisfiable_induced_components": 1,
+      "largest_satisfiable_component": 22,
+      "minimum_satisfiable_neighbours_from_satisfiable_cycle": 9,
+      "maximum_satisfiable_neighbours_from_satisfiable_cycle": 10,
+      "maximum_distance_to_satisfiable_cycle": 1,
+      "distance_to_satisfiable_distribution": {"0": 22, "1": 2},
+      "changed_constraint_count_distribution": {"0": 16, "1": 54, "2": 58, "3": 84, "4": 24, "5": 4},
+      "maximum_changed_parity_constraints": 5,
+      "changed_constraint_outside_rotated_sources": 0
+    },
+    {
+      "m": 6,
+      "hamilton_cycles": 120,
+      "parity_satisfiable_cycles": 112,
+      "parity_unsatisfiable_cycles": 8,
+      "directed_successor_rotations": 2400,
+      "rotation_transition_counts": {
+        "satisfiable_to_satisfiable": 2092,
+        "satisfiable_to_unsatisfiable": 148,
+        "unsatisfiable_to_satisfiable": 148,
+        "unsatisfiable_to_unsatisfiable": 12
+      },
+      "satisfiable_induced_components": 1,
+      "largest_satisfiable_component": 112,
+      "minimum_satisfiable_neighbours_from_satisfiable_cycle": 16,
+      "maximum_satisfiable_neighbours_from_satisfiable_cycle": 20,
+      "maximum_distance_to_satisfiable_cycle": 1,
+      "distance_to_satisfiable_distribution": {"0": 112, "1": 8},
+      "changed_constraint_count_distribution": {"0": 206, "1": 556, "2": 664, "3": 558, "4": 294, "5": 98, "6": 22, "7": 2},
+      "maximum_changed_parity_constraints": 7,
+      "changed_constraint_outside_rotated_sources": 0
+    },
+    {
+      "m": 7,
+      "hamilton_cycles": 720,
+      "parity_satisfiable_cycles": 664,
+      "parity_unsatisfiable_cycles": 56,
+      "directed_successor_rotations": 25200,
+      "rotation_transition_counts": {
+        "satisfiable_to_satisfiable": 21616,
+        "satisfiable_to_unsatisfiable": 1624,
+        "unsatisfiable_to_satisfiable": 1624,
+        "unsatisfiable_to_unsatisfiable": 336
+      },
+      "satisfiable_induced_components": 1,
+      "largest_satisfiable_component": 664,
+      "minimum_satisfiable_neighbours_from_satisfiable_cycle": 26,
+      "maximum_satisfiable_neighbours_from_satisfiable_cycle": 35,
+      "maximum_distance_to_satisfiable_cycle": 1,
+      "distance_to_satisfiable_distribution": {"0": 664, "1": 56},
+      "changed_constraint_count_distribution": {"0": 1880, "1": 5592, "2": 7314, "3": 5344, "4": 3046, "5": 1366, "6": 486, "7": 142, "8": 22, "9": 8},
+      "maximum_changed_parity_constraints": 9,
+      "changed_constraint_outside_rotated_sources": 0
+    }
+  ],
+  "all_changed_constraints_touch_a_rotated_source": true,
+  "asymptotic_seed_theorem_proved": false
+}
