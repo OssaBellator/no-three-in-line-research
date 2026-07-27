@@ -4,7 +4,7 @@
 
 This branch studies exact resampling for one or two perfect-matching layers in dense and superregular bipartite hosts. Branch proofs are stored in `docs/`, and finite state-space checks are stored in `scripts/`.
 
-> **Status:** Exact stationary resampling is proved for complete hosts and several dense or sparse-hole models, together with deterministic locality and uniform fixed-rank spread. The central open step is a lopsided remote-cylinder comparison in arbitrary superregular hosts; spread alone does not supply it.
+> **Status:** Exact stationary resampling is proved for complete hosts and several dense or sparse-hole models, together with deterministic locality and uniform fixed-rank spread. SRR2c--SRR2e now give the exact post-resampling cylinder law: every remote-cylinder bias is precisely the average reverse flaw-entry column load of the feasible switching flow. The central open step is therefore to construct a bounded-cycle fractional Hall flow whose reverse column loads are nearly balanced on all relevant remote partial-matching cylinders in arbitrary superregular hosts; spread alone does not supply it.
 
 ## Branch map
 
@@ -17,13 +17,14 @@ This branch studies exact resampling for one or two perfect-matching layers in d
 - [`docs/two-layer-sparse-hole-locality.md`](docs/two-layer-sparse-hole-locality.md)
 - [`docs/superregular-hall-resampling.md`](docs/superregular-hall-resampling.md)
 - [`docs/superregular-switching-criterion.md`](docs/superregular-switching-criterion.md)
+- [`docs/superregular-reverse-flow-cylinder-law.md`](docs/superregular-reverse-flow-cylinder-law.md): exact reverse-flow identity and cylinder-balance criterion.
 - [`docs/superregular-first-moment-endpoint.md`](docs/superregular-first-moment-endpoint.md): direct conflict-free endpoint from the dense-host cylinder bound.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch theorem ledger.
 
 ## Highest-value frontier
 
-1. Prove a remote-cylinder ratio bound after conditioning on one local flaw in a general superregular host.
-2. Control the loss of forward switches caused by a bounded remote partial matching without replacing it by a crude global hole count.
+1. Construct a feasible bounded-cycle switching flow whose reverse column load is nearly constant on every relevant remote partial-matching cylinder.
+2. Control the loss of forward switches caused by a bounded remote partial matching in a way that implies the SRR2d average column-load bound, rather than a crude global hole count.
 3. Upgrade the first-moment endpoint to local conflict families whose global mass is too large but whose dependency neighbourhoods are sparse.
 
 ## Checks
