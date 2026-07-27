@@ -1,0 +1,30 @@
+{
+  "p": 41,
+  "near_state": "experiments/p41-swapped-quarter-turn-near-example.json",
+  "bad_orbit_owners": [15,18,20],
+  "supports": {
+    "1": {"support_subsets": 3, "search_nodes": 0, "hall_failures": 0, "initial_domain_failures": 3},
+    "2": {"support_subsets": 54, "search_nodes": 0, "hall_failures": 0, "initial_domain_failures": 54},
+    "3": {"support_subsets": 460, "search_nodes": 0, "hall_failures": 0, "initial_domain_failures": 460},
+    "4": {"support_subsets": 2465, "search_nodes": 1, "hall_failures": 1, "initial_domain_failures": 2464},
+    "5": {"support_subsets": 9316, "search_nodes": 17, "hall_failures": 12, "initial_domain_failures": 9303},
+    "6": {"support_subsets": 26384, "search_nodes": 145, "hall_failures": 140, "initial_domain_failures": 26242},
+    "7": {"support_subsets": 58072, "search_nodes": 2184, "hall_failures": 1976, "initial_domain_failures": 56003},
+    "8": {"support_subsets": 101660, "search_nodes": 22084, "hall_failures": 16722, "initial_domain_failures": 82799},
+    "9": {"support_subsets": 143650, "search_nodes": 125989, "hall_failures": 57848, "initial_domain_failures": 68038},
+    "10": {"support_subsets": 165308, "search_nodes": 473569, "hall_failures": 136125, "initial_domain_failures": 25492},
+    "11": {"support_subsets": 155584, "search_nodes": 1660399, "hall_failures": 428754, "initial_domain_failures": 4030},
+    "12": {"support_subsets": 119782, "search_nodes": 6864013, "hall_failures": 1763428, "initial_domain_failures": 248}
+  },
+  "totals": {
+    "support_subsets": 782738,
+    "search_nodes": 9148401,
+    "hall_failures": 2405006,
+    "initial_domain_failures": 275136
+  },
+  "repair_found_through_support": 12,
+  "repair_found": false,
+  "minimum_canonical_pair_orbit_repair_support_lower_bound": 13,
+  "p41_seed_proved": false,
+  "asymptotic_seed_theorem_proved": false
+}
