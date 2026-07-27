@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify SAS5gl--SAS5go by table reversal and explicit commuting swaps."""
+"""Verify SAS5gq--SAS5gt by table reversal and explicit commuting swaps."""
 from itertools import product, permutations
 
 
