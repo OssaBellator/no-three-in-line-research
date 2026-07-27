@@ -145,8 +145,9 @@ def main() -> None:
         total_instances += extendable
         forced_instances += forced
 
-    assert total_instances == 15_473
+    assert total_instances == 15_469
     assert forced_instances == 32
+    assert capacity_checks == 15_437
 
     print(
         "verified normalized rank-three thin census: "
