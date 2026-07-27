@@ -24,37 +24,30 @@ The authoritative live ledger is split across:
 | CMR1910--1917 | Canonical source serialization, exact denominator inheritance, source/export coefficient equality, omission/addition exclusion, transparent domination multiplicity, source fingerprint linkage, composition with the assignment certificate, and the executable bundle endpoint | PROVED; 300 deterministic bundles containing 4,072 source witnesses, 3,125 exact bins and 4,138 exported coefficient units accepted, and ten corrupted bundles rejected | `docs/342-prime-power-geometric-assignment-bundle.md` |
 | CMR1918--1925 | Exact destroyed-current-triple reconstruction, surviving-background linkage, unique deletion evidence, injective credit reservation, responsewise cancellation, unused destruction credit, strict average/uniform criteria, and the executable cancellation endpoint | PROVED; 300 deterministic systems containing 3,761 witnesses, 832 deleted witnesses, 1,304 destroyed triples, 472 unused credits and 2,310 responsewise inequalities checked; ten corrupted manifests rejected | `docs/343-prime-power-destroyed-triple-cancellation-manifest.md` |
 | CMR1926--1933 | Common cancellation/coefficient source identity, exact exported response numerator, average and uniform destruction-credit slacks, strictness criteria, integration with exact/nested assignments, and the executable composed endpoint | PROVED; 300 deterministic systems containing 3,717 witnesses, 1,766 deleted witnesses, 1,881 unused credits and 4,557 exported numerator units checked; 129 average-strict and 105 uniform-strict systems; ten corruptions rejected | `docs/344-prime-power-cancellation-certified-assignment-bundle.md` |
+| CMR1934--1941 | Exact deleted-witness conflict graph, response-compatible credit reuse, proper destroyed-credit colorings, chromatic static minimum, clique optimality certificates, residual colored credit, static strictness criteria, and the executable endpoint | PROVED; 300 systems containing 3,061 witnesses and 657 deletions used 363 credits, saved 294 credits, retained 300 unused credits, certified 213 optimal colorings and checked 1,923 response inequalities; ten corruptions rejected | `docs/345-prime-power-conflict-colored-destroyed-credit-reuse.md` |
+| CMR1942--1949 | Common colored/coefficient source, exact gain over global injection, average and uniform slack-gain identities, reuse-only strictness, optimal static slack, nested/outer integration, and the executable bundle endpoint | PROVED; 300 systems containing 2,734 witnesses and 1,180 deletions saved 556 credits, gained 6,816 average-slack units, produced 124 average-strict and 107 uniform-strict systems, including 100 reuse-only cases of each type; ten corruptions rejected | `docs/346-prime-power-conflict-colored-cancellation-bundle.md` |
+| CMR1950--1957 | Exact simultaneous deleted load, response-pool sufficiency and minimality, maximal unused scalar credit, responsewise pool inequality, dominance over coloring and injection, strict/nested criteria, and the executable pool endpoint | PROVED; 300 systems containing 4,477 witnesses and 1,317 deletions had pool capacity 420 versus coloring capacity 520, saved 100 further credits beyond coloring and 897 beyond injection, and produced 127 average-strict systems including 100 pool-only average certificates; ten corruptions rejected | `docs/347-prime-power-response-pool-cancellation.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact certificate surfaces
 
-### Exact response-averaged line moments
+### Exact response-averaged line moments and rank-three slack
 
 For every host and nonaxis line,
 
 \[
-z_r(G,\ell)
-=
-\sum_{Q\in\operatorname{PM}(G)}
-\binom{|Q\cap\ell|}{r},
+z_r(G,\ell)=\sum_{Q\in\operatorname{PM}(G)}\binom{|Q\cap\ell|}{r},
 \qquad r=1,2,3.
 \]
 
-For background line loads `h_ell`, the exact uniform-response numerator is
+For background line loads `h_ell`,
 
 \[
-A_G(B)
-=
-\sum_\ell
-\left[
- \binom{h_\ell}{2}z_1(G,\ell)
- +h_\ell z_2(G,\ell)
- +z_3(G,\ell)
-\right].
+A_G(B)=\sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)+z_3(G,\ell)\right].
 \]
 
-The identities
+The global identities
 
 \[
 \sum_\ell z_2(G,\ell)=Z(G)\binom d2,
@@ -62,97 +55,93 @@ The identities
 \sum_\ell z_3(G,\ell)=A_3(G)
 \]
 
-fix the total rank-two and rank-three moments.
-
-### Rank-three slack
-
-On a rank-three-strict host,
+fix the total pair and triple moments.  On a rank-three-strict host, the remaining
+background-dependent numerator is strict when
 
 \[
-S_3(G)=Z(G)-A_3(G)>0,
-\]
-
-and the retained background-dependent geometric numerator is strict whenever
-
-\[
-\sum_\ell
-\left[
- \binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)
-\right]
+\sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)\right]
 \le S_3(G)-1.
 \]
 
 There are 651 strict hosts, 44 critical hosts and 45 excess hosts.
 
-### Primitive witnesses, owners and total fates
+### Primitive witnesses, owners and exact coefficient handoff
 
-The raw source reconstructs every rank-one, rank-two and rank-three primitive
-witness. A strict total order on extendable response edges gives
+Every primitive rank-one, rank-two and rank-three witness is reconstructed before
+aggregation.  A strict response-edge order gives
 
 \[
 \operatorname{own}(w)=\max_\prec P(w).
 \]
 
-Every witness has exactly one fate: retained, deleted, transferred or dominated.
-Recurrent retained/dominated routes preserve the exact owner. The source exports
-one labelled integer table `c^(r)_j(P)`, and the downstream coefficient bundle must
-equal this table exactly.
+Every witness has one fate: retained, deleted, transferred or dominated.  Recurrent
+retained and dominated routes preserve the owner.  The owner/fate source exports one
+integer table `c^(r)_j(P)`, and the geometric coefficient bundle must equal it
+exactly with denominator `|PM(G)|`.
 
-### Destroyed-triple cancellation
+### Destroyed-current-triple pool
 
-Let `P` be the exact pre-response point set and `R` the removed subset. The exact
-current triples destroyed by removal are
-
-\[
-\mathcal D(P,R)
-=
-\{T\in\binom P3:T\text{ collinear and }T\cap R\ne\varnothing\}.
-\]
-
-An accepted cancellation manifest injects every deleted primitive witness into a
-distinct member of `\mathcal D(P,R)`. If `C` is the reserved image, put
+Let `P` be the exact pre-response point set and `R` the removed subset.  The exact
+destroyed current triples are
 
 \[
-U=|\mathcal D(P,R)|-|C|.
+\mathcal D(P,R)=\{T\in\binom P3:T\text{ collinear and }T\cap R\ne\varnothing\}.
 \]
 
-For every response,
+For each response, let
 
 \[
-\boxed{N_{\rm raw}(Q)-|\mathcal D(P,R)|\le B(Q)-U,}
+d(Q)=\#\{w\in W_{\rm del}:P(w)\subseteq Q\},
+\qquad
+K=\max_Q d(Q),
+\qquad
+U_{\rm pool}=|\mathcal D(P,R)|-K.
 \]
 
-where `B(Q)` is the accepted nondeleted/dominated export score.
-
-With
+The exact reservation hierarchy is
 
 \[
-A_B=\sum_QB(Q),
-\qquad M_B=\max_QB(Q),
+\boxed{K\le\chi(\Gamma_{\rm del})\le\#W_{\rm del}.}
 \]
 
-the exact strict criteria are
+Thus response-pool cancellation dominates static conflict coloring, which in turn
+dominates global injection.  Every response satisfies
 
 \[
-\boxed{A_B<ZU}
+\boxed{
+N_{\rm raw}(Q)-|\mathcal D(P,R)|
+\le
+B(Q)-U_{\rm pool}.
+}
 \]
 
-for existence of an improving response, and
+With `A_B=sum_Q B(Q)`, `M_B=max_Q B(Q)` and `Z=|PM(G)|`, the exact scalar criteria
+are
 
 \[
-\boxed{M_B<U}
+\boxed{A_B<ZU_{\rm pool}}
 \]
 
-for every response to improve. Any proved numerator upper bound `L` may replace
-`A_B`; in nested assignment currency it is enough that
+for some improving response and
 
 \[
-6l_1+3l_2+l_3<6ZU.
+\boxed{M_B<U_{\rm pool}}
 \]
+
+for every response to improve.  Any proved numerator upper bound may replace `A_B`;
+in nested assignment currency it is enough that
+
+\[
+6l_1+3l_2+l_3<6ZU_{\rm pool}.
+\]
+
+Static conflict coloring remains a useful witness-level publication surface and can
+carry clique-matched optimality evidence.  The pool is the exact optimum for the
+unlabelled scalar real-triple potential.
 
 ### Publication-grade labelled certificate
 
-After geometric source, fate evidence, cancellation and coefficient handoff are
+After source geometry, fate semantics, cancellation and coefficient handoff are
 verified, the downstream integer assignment manifest stores all labelled
 coefficients, contracted duals, one unified outer dual and positive row slacks.
 Passing every recurrent row proves `AX<X` for the declared exact or honest upper
@@ -161,15 +150,18 @@ table.
 ## Active frontier
 
 1. Generate the actual pre-response point sets, removed subsets, surviving
-   backgrounds and strict entry orders for the 740 raw hosts.
-2. Reconstruct the true destroyed-current-triple sets and use injective cancellation
-   for every deletion fate that is genuinely paid by potential destruction.
-3. Attach and verify owner, collision, local-line, interface, root, thin and CRT
-   semantics for every nondeleted witness.
-4. On the 651 rank-three-strict hosts, combine `S_3-1` and any unused destruction
-   credit `U` with exact averaged line, return and selector coefficients.
-5. On the 89 critical/excess hosts, build explicit corrected fate maps, nonuniform
+   backgrounds and strict entry orders for the 740 raw host fibres.
+2. Compute the exact deleted-load histogram `d(Q)`, pool capacity `K` and unused
+   destruction credit `U_pool` for each genuine removal/fate map.
+3. Retain static conflict colorings only where witness-level credit provenance is
+   useful; use the response pool for scalar strictness.
+4. Attach and verify owner, collision, local-line, interface, root, thin and CRT
+   semantics for every nondeleted witness and prove every remaining domination or
+   transfer obligation.
+5. On the 651 rank-three-strict hosts, combine `S_3-1` and `U_pool` with exact
+   averaged line, return and selector coefficients.
+6. On the 89 critical/excess hosts, build explicit corrected fate maps, nonuniform
    child weights, finer state splits or certified off-diagonal/auxiliary transfers.
-6. Export accepted cancellation-certified bundles to the integer assignment checker,
-   solve all recurrent rows, eliminate certified auxiliaries and publish the global
-   integer quotient before CRT gluing.
+7. Export accepted pool-certified coefficient bundles to the integer assignment
+   checker, solve all recurrent rows, eliminate certified auxiliaries and publish
+   the global integer quotient before CRT gluing.
