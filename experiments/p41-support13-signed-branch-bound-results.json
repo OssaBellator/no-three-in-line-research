@@ -1,0 +1,33 @@
+{
+  "p": 41,
+  "near_state": "experiments/p41-swapped-quarter-turn-near-example.json",
+  "support": 13,
+  "bad_orbit_owners": [15, 18, 20],
+  "owner_feasible_supports": 75140,
+  "owner_feasible_supports_including_pair_fixed_vertex_6": 48568,
+  "owner_feasible_supports_excluding_pair_fixed_vertex_6": 26572,
+  "target_map_outer_spaces": {
+    "target_change_only_derangements": 172130180910480,
+    "full_signed_support_fixed_points_allowed": 444634193203200
+  },
+  "target_change_only_search": {
+    "shards": 1024,
+    "supports": 75140,
+    "search_nodes": 16503767,
+    "hall_failures": 1412973,
+    "initial_empty_domains": 7,
+    "repair_found": false
+  },
+  "full_signed_support_search": {
+    "shards": 1024,
+    "supports": 75140,
+    "search_nodes": 21604931,
+    "hall_failures": 1851407,
+    "initial_empty_domains": 5,
+    "repair_found": false
+  },
+  "minimum_canonical_pair_orbit_repair_support_lower_bound": 14,
+  "support_fourteen_decided": false,
+  "p41_seed_proved": false,
+  "asymptotic_seed_theorem_proved": false
+}
