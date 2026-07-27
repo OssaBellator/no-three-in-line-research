@@ -37,8 +37,8 @@ supports.
 
 ## SAS5fw -- exact aggregate final-positive table split -- PROVED
 
-Let `C_fin^+` be the total weight of exact records absent in the base colouring and present after their
-unique selected square.  Partition them into:
+Let `C_fin^+` be the total weight of exact records assigned to squares `a in J_high`, absent in the
+base colouring and present after their unique high-bank square.  Partition this high-bank output into:
 
 - `P_comp`: composed-only positive records with table `(0,0,0,1)`;
 - `N_neu`: neutral persistent records with table `(0,1,0,1)` or `(0,0,1,1)`.
@@ -47,13 +47,14 @@ Then
 
 `C_fin^+=P_comp+N_neu`.
 
-The two banks are alias-disjoint, and every record belongs to a unique selected square.
+The two banks are alias-disjoint, and every record belongs to a unique square of `J_high`.
 
 ### Proof
 
 The final-positive conditions are `I_0=0` and `I_(sigma tau)=1`.  SAS5fr leaves exactly the three
-displayed tables.  Complete alias aggregation and interaction independence assign each exact record
-to one square and one table class.  Summing weights proves the identity. QED.
+displayed tables.  Restriction to `J_high`, complete alias aggregation and interaction independence
+assign each exact record to one high-bank square and one table class.  Summing weights proves the
+identity. QED.
 
 ## SAS5fx -- high barriers force aggregate final-positive mass -- PROVED
 
