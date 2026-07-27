@@ -1,0 +1,46 @@
+name: Product side-seven multiplicity-two semantic cover core
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-semantic-cover-core.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    name: semantic-cover-core
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-semantic-cover-core' .github/product-side-seven-m2-semantic-cover-core-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile semantic minimizer
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_cover_core.cpp
+          -o /tmp/measure-semantic-cover-core
+      - name: Measure semantic cover core
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          /tmp/measure-semantic-cover-core
+          | tee product-side-seven-m2-semantic-cover-core.txt
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-semantic-cover-core
+          path: product-side-seven-m2-semantic-cover-core.txt
+          if-no-files-found: warn
