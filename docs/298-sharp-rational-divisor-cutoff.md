@@ -103,12 +103,12 @@ d_*(N_4)=15,
 \]
 
 Using PX953, the logarithm of the divisor-controlled retained-order ratio is
-strictly greater than `0.09`. The other starting margins are:
+strictly greater than `0.1002`. The other starting margins are:
 
 - logarithmic retained-order margin greater than `3800`;
-- four-return margin greater than `12`;
-- two-variable-return margin greater than `420`;
-- terminal-partner margin greater than `6600`.
+- four-return margin greater than `12.43`;
+- two-variable-return margin greater than `426`;
+- terminal-partner margin greater than `6615`.
 
 Across the exact-depth plateau, the divisor-controlled ratio increases with
 derivative
@@ -123,8 +123,15 @@ For `log N>=9000`, the smooth-envelope derivative remains positive because
 \frac{29}{545}-6\overline\Delta'(\log N)>0,
 \]
 
-and the handoff margin is greater than `118`. Hence every inequality remains
+and the handoff margin is greater than `118.76`. Hence every inequality remains
 valid for all larger orders. \(\square\)
+
+The same exact calculation at `N=10^2874` gives divisor-controlled retained-order
+logarithmic margin less than `-0.0223`. Therefore `2875` is the least integral
+decimal exponent certified by this fixed `8/109` divisor witness and the current
+paired retained-order inequalities. Lowering the cutoff further requires a new
+witness, a sharper inequality, or interval-specific arithmetic rather than a
+rounding adjustment.
 
 ## 4. Revised frontier
 
@@ -153,5 +160,5 @@ python scripts/verify_product_sharp_rational_divisor_cutoff.py
 ```
 
 The verifier checks all `1508` local maxima, both exact 109th-power product
-comparisons, the depth plateau, every starting cutoff margin, and the smooth
-handoff derivative.
+comparisons, the depth plateau, every starting cutoff margin, the failure at
+`10^2874`, and the smooth handoff derivative.
