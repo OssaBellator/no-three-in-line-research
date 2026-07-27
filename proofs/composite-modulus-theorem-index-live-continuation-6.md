@@ -23,116 +23,91 @@ The authoritative live ledger is split across:
 | CMR2062--2069 | Exact source identity, survivor-background identity, responsewise operation composition, minimizer agreement, strict destroyed-threshold criterion, declared-policy penalty, deterministic composed suite, and executable linked-operation endpoint | PROVED; 240 linked operations, 2,944 responsewise identities, 3,363 witnesses, 589 destroyed triples and 230 strict full selectors checked; fourteen corruptions rejected | `docs/361-prime-power-linked-operation-selector.md` |
 | CMR2070--2077 | Tracked-line pair partition, nonnegative residual realizability inequalities, Vandermonde line-cluster identity, exact residual score factorization, residual row/column gauge, residual signature equivalence, deterministic regression, and executable residual endpoint | PROVED; selector dimensions remain 32/99; 500 host/background systems check residual nonnegativity and responsewise equality; twelve corruptions rejected | `docs/362-prime-power-background-residual-signature.md` |
 | CMR2078--2085 | Exact labelled response vectors, scalar coordinate-sum identity, duplicate-vector quotient, componentwise dominance pruning, strictly-positive weighted Pareto theorem, deterministic weighted selector, scalar/labelled policy separation, and executable Pareto endpoint | PROVED; 300 accepted owner/fate systems exercise exact vectors, duplicate quotients and positive-weight selectors; twelve corruptions rejected | `docs/363-prime-power-labelled-response-pareto.md` |
-| CMR2086--2093 | Exact three-certificate entry linkage, canonical operation records, unique fibre ordering, reconstructed aggregate censuses, explicit expected-ID coverage, undeclared incompleteness, reloadable batch digest, and executable real-fibre batch endpoint | PROVED as an interface; 120 distinct accepted synthetic operations check incomplete and declared-complete modes; twelve corruptions rejected; no genuine population claimed | `docs/364-prime-power-real-fibre-batch-manifest.md` |
-| CMR2094--2101 | Per-line and tracked-pair budgets, parallel-class budgets, concurrent-pencil budgets, exact 7/11 line concurrency, local residual inequalities, common feasibility certificate, deterministic census, and executable feasibility endpoint | PROVED as necessary conditions; 9/18 parallel classes, 129/1,637 rational pencils and 16/25 local constraints; 500 systems and twelve corruptions checked; fixed basis digest | `docs/365-prime-power-background-signature-feasibility.md` |
-| CMR2102--2109 | Exact response vectors, positive integer supporting weights, rational convex obstructions, exclusivity and finite separation alternative, tie/uniqueness semantics, deterministic and handcrafted regressions, and executable exposure endpoint | PROVED; 120 systems contain 767 responses, 699 vectors and 275 Pareto vectors, all random-suite Pareto vectors supported; an exact unsupported regression and twelve corruptions checked | `docs/366-prime-power-labelled-weight-exposure.md` |
-| CMR2110--2117 | Exact exceptional-host linkage, zero-selector chamber union, 232-chamber census, sparse inequality compression, complete 20-chamber hard-core atlas, background-instability correction, deterministic regression, and executable worklist endpoint | PROVED; 78 zero-capable and 11 hard-core hosts; 2,134/18 hostwise inequalities reduce to 349/2 unique conditions; fixed worklist digest; twelve corruptions rejected | `docs/367-prime-power-exceptional-selector-chamber-worklist.md` |
-| CMR2118--2125 | Source-independent operation slots, canonical expected registry, slot-to-fibre population mapping, exact population-gap reconstruction, noncircular completeness, synthetic regression census, and executable registry endpoint | PROVED as an interface; synthetic 180-slot registry validates partial, complete and corrupted gap modes; fixed digest; twelve corruptions rejected; genuine parent-rule registry still absent | `docs/368-prime-power-operation-slot-registry.md` |
+| CMR2086--2093 | Exact three-certificate entry linkage, canonical operation records, unique fibre ordering, reconstructed aggregate censuses, explicit expected-ID coverage, undeclared incompleteness, reloadable batch digest, and executable real-fibre batch endpoint | PROVED as an entry interface; source-dependent expected-fibre completeness is superseded by CMR2118--CMR2133; no genuine population claimed | `docs/364-prime-power-real-fibre-batch-manifest.md` |
+| CMR2094--2101 | Per-line and tracked-pair budgets, parallel-class budgets, concurrent-pencil budgets, exact 7/11 line concurrency, local residual inequalities, common feasibility certificate, deterministic census, and executable feasibility endpoint | PROVED as necessary conditions; 9/18 parallel classes, 129/1,637 rational pencils and 16/25 local constraints; 500 systems and twelve corruptions checked | `docs/365-prime-power-background-signature-feasibility.md` |
+| CMR2102--2109 | Exact response vectors, positive integer supporting weights, rational convex obstructions, exclusivity and finite separation alternative, tie/uniqueness semantics, deterministic and handcrafted regressions, and executable exposure endpoint | PROVED; 120 systems contain 767 responses, 699 vectors and 275 Pareto vectors; exact unsupported regression and twelve corruptions checked | `docs/366-prime-power-labelled-weight-exposure.md` |
+| CMR2110--2117 | Exact exceptional-host linkage, zero-selector chamber union, 232-chamber census, sparse inequality compression, complete 20-chamber hard-core atlas, background-instability correction, deterministic regression, and executable worklist endpoint | PROVED; 78 zero-capable and 11 hard-core hosts; 2,134/18 hostwise inequalities reduce to 349/2 unique conditions; twelve corruptions rejected | `docs/367-prime-power-exceptional-selector-chamber-worklist.md` |
+| CMR2118--2125 | Source-independent operation slots, canonical expected registry, slot-to-fibre population mapping, exact population-gap reconstruction, noncircular completeness, synthetic regression census, and executable registry endpoint | PROVED as an interface; synthetic 180-slot registry validates partial, complete and corrupted gap modes; genuine parent-rule registry still absent | `docs/368-prime-power-operation-slot-registry.md` |
+| CMR2126--2133 | Exact slot/fibre assignment, host/source/fibre/label equality, rejection of source-dependent completeness, bijective batch coverage, inherited population audit, exact completeness criterion, aggregate census binding, and executable conformance endpoint | PROVED as a composition interface; deterministic 60-slot complete and 50-operation partial batches; twelve corruptions rejected; genuine registry/population still absent | `docs/369-prime-power-slot-fibre-batch-conformance.md` |
+| CMR2134--2141 | Unrestricted, rank-three-constrained and zero-constrained selectors, exact penalties, threshold hierarchy, 78-host zero policy, complete hard-core policy, responsewise tradeoff records, and executable endpoint | PROVED; exact scalar identities over all 89 exceptional hosts; deterministic 500-system threshold regression and twelve corruptions | `docs/370-prime-power-exceptional-selector-tradeoff.md` |
+| CMR2142--2149 | Common linked/exposure source, exact supported weights, response-local routed-credit budgets, integer row-load identity, deterministic margin selector, strict/critical/excess partition, support/credit separation, and executable row endpoint | PROVED as arithmetic accounting; deterministic 100-operation suite and twelve corruptions; route semantics and global SCC weights remain unproved | `docs/371-prime-power-labelled-recurrent-row-margin.md` |
+| CMR2150--2157 | Exact intersection occupancy bits, pencil incidence identity, sharpened occupied/unoccupied bounds, global point-degree identity, concurrency inheritance, digested intersection signature, feasibility composition, and executable endpoint | PROVED for populated backgrounds; deterministic 500-system finite-pencil suite and twelve corruptions; no abstract realizability characterization claimed | `docs/372-prime-power-background-intersection-signature.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Stronger survivor-signature feasibility
+## Noncircular covered batches
 
-For `n=|B|`, every genuine background satisfies
+The expected universe is fixed by exact operation-slot tuples before source population.
+A populated batch is complete only after every batch fibre is assigned bijectively to one
+expected slot and host, source, fibre identity and ordered labels all agree. The older
+source-dependent `expected_fibre_ids` field must remain unset.
+
+This composition still assumes a supplied registry. The missing genuine theorem is an
+exhaustive, duplicate-free parent-rule slot enumerator.
+
+## Exceptional policy tradeoffs
+
+For survivor background `B` and destroyed threshold `T`, define
 
 \[
-0\le h_B(L)\le n,
+M(B)=\min_QN_B(Q),
 \qquad
-\sum_L\binom{h_B(L)}2\le\binom n2.
+M_3(B)=\min_{\psi_3(Q)=m_3}N_B(Q).
 \]
 
-For every tracked parallel class `P` and every concurrent pencil of `k` tracked lines,
+Then
 
 \[
-\sum_{L\in P}h_B(L)\le n,
+\pi_3(B)=M_3(B)-M(B)\ge0.
+\]
+
+On a zero-capable host also define `M_0(B)` and `pi_0(B)=M_0(B)-M(B)`. Full,
+rank-three-constrained and zero-constrained strictness are respectively `M<T`, `M_3<T`
+and `M_0<T`. The eleven-host hard core is evaluated over all 20 full-selector chambers.
+
+## Labelled recurrent-row accounting
+
+For exact positive child weights `w`, response vector `v(Q)`, response-local routed
+credit `r(Q)`, fixed load `a` and parent budget `W`, the row surface is
+
+\[
+L(Q)=a+w\cdot v(Q)-w\cdot r(Q),
 \qquad
-\sum_{i=1}^k h_B(L_i)\le n+k-1.
+\operatorname{margin}(Q)=W-L(Q).
 \]
 
-The exact maximum tracked-line concurrencies are `mu_4=7` and `mu_5=11`, hence
+The row is strict, critical or excess according as `W-min_Q L(Q)` is positive, zero or
+negative. Passing this arithmetic check does not prove routed-credit semantics or one
+global SCC Lyapunov vector.
+
+## Exact pencil occupancy refinement
+
+For the complete tracked pencil `L_1,...,L_k` through rational point `x`,
 
 \[
-\sum_L h_B(L)\le\mu_s n.
+\sum_i h_B(L_i)
+=
+\left|B\cap\bigcup_iL_i\right|+(k-1)\epsilon_B(x).
 \]
 
-Together with
-
-\[
-p_B(q)-\sum_{L\ni q}\binom{h_B(L)}2\ge0,
-\]
-
-these give a common finite necessary-feasibility certificate. They are not a complete
-characterization of geometrically realizable signatures.
-
-## Exact labelled weight exposure
-
-For one response-vector set `V`, a Pareto vector `v` is positive-weight supported when
-there is an exact integer `w>0` with
-
-\[
-w\cdot v\le w\cdot u\quad(u\in V).
-\]
-
-When no such support exists, the checker requires a direct rational obstruction
-
-\[
-\sum_{u\ne v}\lambda_u u\le v,
-\qquad
-\lambda_u\ge0,
-\qquad
-\sum_u\lambda_u=1,
-\]
-
-with strict inequality in at least one coordinate. Optimizer status is never accepted
-as proof without exact integer or rational verification. Positive support, Pareto
-minimality and recurrent labelled contraction remain different statements.
-
-## Exceptional-host chamber atlas
-
-The 78 zero-rank-three-capable exceptional hosts have exactly 232 zero-selector
-chambers, with per-host distribution
-
-\[
-[[1,13],[2,13],[3,22],[4,23],[5,7]].
-\]
-
-The eleven positive-minimum hosts require the complete 20-response chamber atlas. Only
-11 of those chambers select a raw rank-three minimum: background rank-one and rank-two
-terms may select the other nine. A hard-core proof may therefore restrict to raw
-rank-three minima only after proving the relevant chamber inequalities.
-
-## Noncircular expected population
-
-A source-dependent `fibre_id` is an exact identity for a populated source, but cannot be
-the sole independently expected key. The expected layer is now the exact operation-slot
-tuple
-
-\[
-(\text{parent state},\text{operation kind},\text{operation key},
- \text{expected host},\text{ordered labels}).
-\]
-
-The actual parent rule must enumerate these slots before witness/source population.
-Population then maps each slot to one host, fibre ID and source digest. Completeness
-holds exactly when the missing, unexpected, duplicate and host-mismatch lists are all
-empty. The synthetic registry proves this interface only; it is not the genuine slot
-enumerator.
+Thus an unoccupied intersection gives `sum_i h_B(L_i)<=|B|`, while an occupied
+intersection permits `|B|+k-1`. The signature also stores each background point's exact
+tracked-line degree and verifies `sum_L h_B(L)=sum_b d(b)`.
 
 ## Active frontier
 
-1. Derive and publish the exhaustive operation-slot registry from the actual parent
-   rule, proving the slot enumeration complete and duplicate-free.
-2. Populate exactly one genuine linked fibre for every expected slot, with true point,
-   removal, survivor, entry-order, owner/fate and state-label data.
-3. Run all line, pair, parallel, pencil, concurrency and residual feasibility checks on
-   every genuine survivor signature before accepting its selector chamber.
-4. Publish every genuine fibre's exact child-vector quotient, Pareto frontier and either
-   positive-weight support or a rational convex obstruction for each Pareto vector.
-5. Use the 232 zero-selector chambers to close the 78 zero-capable exceptional hosts;
-   retain complete background, threshold, return, interface and labelled-child terms.
-6. Use the full 20-chamber atlas on the eleven hard-core hosts; resolve the nine
-   one-triple and two four-triple rows by proved payment, legal operation change,
-   supported weights, sharper routing or certified auxiliary targets.
-7. Complete every deleted-load pool, domination, transfer and state-semantic proof.
-8. Prove strict contraction for every recurrent labelled SCC, eliminate certified
-   auxiliaries and publish the denominator-cleared global CRT quotient.
+1. Implement the actual parent-rule operation-slot enumerator and prove its output
+   exhaustive and duplicate-free without consulting populated fibres.
+2. Populate exactly one genuine linked operation for every expected slot and validate the
+   slot-covered batch composition.
+3. Run feasibility and exact intersection signatures on every genuine survivor
+   background before accepting its affine selector chamber.
+4. Compute `M`, `M_3`, `M_0`, all policy penalties and the destroyed threshold on every
+   exceptional fibre.
+5. Publish every exact child-vector quotient and support/obstruction certificate; prove
+   the specific child weights used by recurrent rows.
+6. Prove the semantic legality and nonovercounting of every response-local routed credit.
+7. Close the 232 zero-selector chambers, the complete 20-chamber hard core and all other
+   return/interface/labelled terms.
+8. Assemble one global positive SCC weight vector, prove strict row margins, eliminate
+   certified auxiliaries and publish the denominator-cleared global CRT quotient.
