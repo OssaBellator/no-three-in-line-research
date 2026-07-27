@@ -24,7 +24,10 @@ final-positive output,
 
 `I_sigmatau=1`.
 
-Assume the existing conjunction-table and two-swap realization contracts.  Define
+Assume the existing conjunction-table and two-swap realization contracts.  For the mixed-energy
+continuation, also assume that both constituent balanced swaps are individually admissible from the
+base colouring, so swap-local minimality controls both `Delta_sigma` and `Delta_tau`.  Failure returns
+the least single-swap admissibility field.  Define
 
 `chi_Q=I_0-I_sigma-I_tau+I_sigmatau`.
 
@@ -57,8 +60,8 @@ possibilities. QED.
 In the composed-only branch, `Q` contributes exact positive mixed-curvature weight `H` for the fixed
 square `(sigma,tau)`.
 
-If either single swap improves the energy, that swap is an immediate descent.  Otherwise
-`Delta_sigma,Delta_tau>=0`.  For every `eta in (0,1)`, either
+If either base-admissible single swap improves the energy, that swap is an immediate descent.
+Otherwise `Delta_sigma,Delta_tau>=0`.  For every `eta in (0,1)`, either
 
 `C_minus>=eta*H`
 
@@ -72,8 +75,8 @@ Any improving composed square necessarily satisfies
 
 ### Proof
 
-The table `(0,0,0,1)` has curvature `+1`.  If a single-swap increment is negative, use it directly.
-Otherwise substitute the full `+H` contribution into
+The table `(0,0,0,1)` has curvature `+1`.  If a constituent single-swap increment is negative, use the
+corresponding admissible swap directly.  Otherwise substitute the full `+H` contribution into
 
 `Delta_a=Delta_sigma+Delta_tau+H+C_plus-C_minus`
 
@@ -105,7 +108,7 @@ has weight
 
 That full lower bound has one continuation:
 
-1. one of its two single swaps gives direct energy descent;
+1. one of its two base-admissible single swaps gives direct energy descent;
 2. it is composed-only positive and, for every `eta in (0,1)`, gives negative mixed collateral greater
    than or equal to
 
@@ -115,7 +118,8 @@ That full lower bound has one continuation:
 
    `(1-eta)*lambda*M/[2(D_sq+1)K_out]`;
 3. it is neutral persistent and enters one exact realized one-swap repair ledger with the same weight;
-4. or one output-stock, conjunction-table, square-address, legality or boundary field fails.
+4. or one output-stock, conjunction-table, square-address, single-swap admissibility, legality or
+   boundary field fails.
 
 ### Proof
 
@@ -150,16 +154,18 @@ loss. QED.
 A heavy final current record from the matched-square barrier router no longer waits for a new
 classifier.  Its unique square address and final-positive table send its full mass directly to a
 single-swap descent, the existing positive-curvature barrier/negative-collateral ledger, or a neutral
-persistent repair bank.
+persistent repair bank whenever both constituent swaps are base-admissible.
 
 The remaining sparse work is choosing and paying a useful global barrier-density scale, resolving the
-resulting positive barriers or negative collateral, batching the imported neutral repairs when their
-incidence cap fails, realizing matched-square contracts for every word family, positive base-row
-realization and reflected-boundary/high-incidence branches.
+resulting positive barriers or negative collateral, establishing base-state admissibility where it is
+not automatic, batching the imported neutral repairs when their incidence cap fails, realizing
+matched-square contracts for every word family, positive base-row realization and reflected-boundary/
+high-incidence branches.
 
 ## Finite check
 
 `scripts/verify_sparse_final_output_curvature_import.py` enumerates all conjunction-compatible
 final-positive four-state tables, checks the two-case curvature classification, samples exact
 barrier/negative-collateral identities and verifies propagation of the general, neutral and common-step
-heavy-record bounds without further loss.
+heavy-record bounds without further loss.  Base-state single-swap admissibility remains the explicit
+physical contract used by the energy router.
