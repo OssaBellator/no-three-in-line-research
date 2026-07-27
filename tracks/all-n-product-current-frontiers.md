@@ -2,172 +2,144 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This map reconciles the finite selector census, the paired asymptotic repair
-path, recursive produced-base searches, and the independent geometric and
-matching frontiers. It records what is actually open after PX1012.
-
-No item below is a proof of the classical no-three-in-line conjecture unless it
-is explicitly promoted to an all-side theorem; no such promotion has occurred.
+This map records the active frontiers after PX1025. No item below is a proof of
+the classical no-three-in-line conjecture or an all-side product theorem.
 
 ## 1. Effective asymptotic repair path
 
-**Status: proved reduction above an explicit, family-optimal cutoff.**
+**Status: effective for `N>=10^2874`; baseline divisor routes optimized or
+refuted.**
 
-The paired rectangle-label path is effective for every
-
-\[
-\boxed{N\ge10^{2874}}
-\]
-
-using
+The paired repair path uses
 
 \[
-\mathfrak d(N)<10^{2469/41}N^{6/41}.
+\mathfrak d(N)<10^{2469/41}N^{6/41}
 \]
 
-PX966--PX969 optimize the complete universal Euler-product exponent family and
-show that it cannot lower the integral decimal cutoff. PX994--PX996 audit the
-classical Nicolas--Robin subexponential divisor bound; inserted unchanged, it
-reaches only `N>=10^14104`.
+and closes every active inequality for `N>=10^2874`. The universal
+Euler-product exponent family cannot lower the integral cutoff. The classical
+Nicolas--Robin subexponential bound reaches only `10^14104` when inserted
+unchanged.
 
-**Frontier:** cover the interval below `10^2874` using interval-specific
-arithmetic, a retained-order inequality with less ambient-divisor loss,
-structural extension chains, exact absorbers, or recursive produced-base
-closure. The two baseline universal divisor routes are closed.
+At `N=10^2873`, the optimal retained-order margin lies between `-0.093413` and
+`-0.093412`. A uniform 10% improvement in the ambient divisor cap is sufficient
+through the complete decimal-2873 slab, while 9% is insufficient.
+
+**Frontier:** prove that 10% interval-specific improvement, reduce the effective
+divisor loss in the retained-order inequality, or build a structural extension
+or absorber chain below `10^2874`.
 
 ## 2. Finite side-seven full-selector census
 
-**Status: exact through multiplicity-two case 399; cases 400--479 running.**
+**Status: exact through multiplicity-two case 479; cases 480--559 launched.**
 
 All selectors of multiplicity at least three are classified: `37,600` are
-infeasible and one multiplicity-four selector is constructive. The first `400`
-multiplicity-two signatures add another `800` infeasible selectors.
+infeasible and one multiplicity-four selector is constructive. The first `480`
+multiplicity-two signatures add another `960` infeasible selectors.
 
 Current committed boundary:
 
-- `38,400` certified-infeasible selectors;
+- `38,560` certified-infeasible selectors;
 - one constructive selector;
-- `33,459` unclassified selectors;
-- `2,922,421,260` certified rejection-CSP nodes.
+- `33,299` unclassified selectors;
+- `2,975,018,807` certified rejection-CSP nodes.
 
 The unresolved cache is exactly:
 
-- `3,440` multiplicity-two signatures containing `6,880` selectors;
+- `3,360` multiplicity-two signatures containing `6,720` selectors;
 - `26,579` multiplicity-one selectors.
 
-A durable eight-shard matrix covers cases `400` through `479`. It is not counted
-until its exact transcripts are promoted.
+A durable eight-shard matrix covers cases `480` through `559`. It is not counted
+until exact transcripts are promoted.
 
 **Frontier:** continue canonical ten-signature proof units while replacing raw
-bottom DFS where possible by compact cover-based master nogoods.
+bottom DFS by compact cover-based master nogoods where possible.
 
 ## 3. Low-multiplicity certificate compression
 
-**Status: bottom-cover compression and semantic two-selector learning proved.**
+**Status: seven-triple covers and repeated semantic mask vocabulary proved.**
 
-For one fixed top order, bottom infeasibility is equivalent to covering all
-`5,040` bottom permutations by collinear abstract triples.
+For case zero, orientation three, 128 selector/top obligations through 64 top
+orders all have seven-triple covers. A 55-triple dictionary and 93 cover lists
+encode all 896 entries.
 
-For multiplicity-two case zero, orientation three:
+The most frequent syntactic support mask `6975` occurs for both selectors at
+twelve top orders. Semantic deletion gives only two pair-mask shapes:
 
-- 128 selector/top obligations through 64 top orders all have seven-triple
-  covers;
-- 55 triples and 93 cover lists encode 896 cover entries;
-- only 37 syntactic top-support masks occur;
-- every support fixes at most 11 of 14 top columns.
+- `6936`, size six, at eleven top orders;
+- `6920`, size five, at one top order.
 
-At top order `35`, semantic deletion shrinks the selector supports to sizes six
-and five. Their seven-column union mask `11546` refutes both selectors across
-four clean top extensions and 40,320 exact bottom checks. This is an
-inclusion-minimal master nogood for the stored cover pair.
+The twelve pair cores certify 40 clean top extensions and 403,200 bottom checks.
+At every measured reference, both selectors have the same semantic mask.
 
-**Frontier:** minimize repeated cover/support classes across the 64-top prefix,
-measure master-nogood coverage of the complete top-order family, and construct a
-small replay vocabulary before multiplicity one.
+**Frontier:** deduplicate the actual partial assignments on those shapes,
+measure the union of their extension families against all clean top orders, and
+extend semantic learning to other support classes and orientations.
 
 ## 4. Recursive closure from produced bases
 
-**Status: affine-column recursion ruled out at bases 8, 10, and 12; the smallest
-non-affine double coset is partly closed.**
+**Status: affine recursion closed at bases 8, 10, and 12; smallest non-affine
+double coset partly closed.**
 
-Exact factor-independent products include
+Exact products include `2x3 -> 6`, `2x4 -> 8`, `2x5 -> 10`, and `2x6 -> 12`.
+Every rectangle output lies in the all-transposition relative class.
 
-\[
-2\times3\to6,
-\quad
-2\times4\to8,
-\quad
-2\times5\to10,
-\quad
-2\times6\to12.
-\]
+At side ten, the three affine transposition double cosets have sizes `800`,
+`800`, and `200`. The complete opposite-pair coarse-row searches are infeasible:
 
-Every rectangle output lies in the all-transposition relative class. At side
-ten, transpositions split into affine double cosets of sizes `800`, `800`, and
-`200`. The complete opposite-pair coarse-row searches are infeasible:
+- `cc`: 8,000 geometries and 152,056,230 nodes;
+- `cf`: 8,000 geometries and 114,391,525 nodes.
 
-- `cc`: `8,000` geometries and `152,056,230` nodes;
-- `cf`: `8,000` geometries and `114,391,525` nodes.
-
-Thus any template in that double coset must use `fc` or `ff`. Those fine-row
-families and both larger double cosets remain open.
+Any template in that double coset must use `fc` or `ff`.
 
 **Frontier:** finish the opposite-pair fine-row orientations in bounded replay
-intervals, then enumerate the two 800-map double cosets or prove a produced-base
-extension theorem. Representative left cosets are not complete double cosets.
+intervals, then enumerate the two larger double cosets or prove a produced-base
+extension theorem.
 
 ## 5. Global product repair and exact-cover selection
 
 **Status: open.**
 
 The full product host has exact SAT encodings, alternating-cycle connectivity,
-carry multiplicity bounds, and finite repair-barrier classifications. Natural
-triple-count and pair-energy potentials are refuted as monotone objectives.
-Dense superregular hosts support spread two-layer selections, but spread alone
-does not supply the required negative-dependency or local resampling theorem.
+carry bounds, and finite repair-barrier classifications. Triple-count and
+pair-energy potentials are not monotone. Dense superregular hosts support spread
+selections, but not yet the required negative-dependency or resampling theorem.
 
-**Frontier:** prove a global repair/resampling theorem coordinating many
-projection fibres, or an exact conflict-free perfect-matching/cover theorem with
-the required local-load endpoint.
+**Frontier:** prove a global repair/resampling theorem or an exact conflict-free
+perfect-matching/cover theorem with the required local-load endpoint.
 
 ## 6. Hyperbola, carry, and bounded-denominator geometry
 
 **Status: open after first-generation neutralization.**
 
-Weighted quotient extraction, common-ratio bank conversion, universal
-secant-star carry dispersion, perfect-alignment arithmetic, wrap-center
-factorization, and alternating endpoint neutralization are proved. One-colour
-carry-cycle dispersion is refuted.
+Weighted quotient extraction, common-ratio conversion, secant-star carry
+dispersion, perfect-alignment arithmetic, wrap-center factorization, and
+alternating endpoint neutralization are proved.
 
 **Frontier:** establish second-generation collateral concentration, a monotone
 alternating carry-complexity potential, or row-column-preserving absorbers for
-bounded-denominator interpolation chambers.
+bounded-denominator chambers.
 
 ## 7. Operational priorities
 
-1. Promote the `400--479` side-seven transcripts and continue the finite census.
-2. Extend semantic cover minimization from one master nogood to a reusable
-   vocabulary over the 64-top prefix.
-3. Seek interval-specific arithmetic or reduced divisor loss below `10^2874`.
+1. Promote cases `480--559` and continue the finite census.
+2. Measure coverage of the two-mask semantic vocabulary over the complete
+   orientation-three top-order family.
+3. Prove the 10% decimal-2873 arithmetic improvement or reduce divisor loss.
 4. Complete the side-ten opposite-pair fine-row double-coset searches.
-5. Develop the global exact-cover/resampling theorem and independent
-   hyperbola/carry termination routes.
+5. Develop the global exact-cover/resampling and hyperbola/carry closure routes.
 
 ## Verification entry points
 
 ```bash
-python scripts/verify_product_three_forty_first_divisor_cutoff.py
-python scripts/verify_product_universal_divisor_cutoff_optimality.py
+python scripts/verify_product_2873_divisor_improvement_target.py
 python scripts/verify_product_nicolas_robin_divisor_baseline.py
 python scripts/verify_product_transposition_double_coset_opposite_coarse_ten.py
-python scripts/verify_product_side_seven_multiplicity2_case0_bottom_cover8.py
-python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_bottom_cover64.py
-python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_cover_support64.py
-python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_cover_core.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_repeated_semantic_cores.py
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..39}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..47}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
