@@ -5,13 +5,13 @@
 This stage continues the exact full-selector classification at base side seven.
 It studies the `(5,2)` relative-cycle class inside the radius-three,
 support-twenty selector layer of the canonical `[14]^2` host. The task is a
-finite obstruction census, not an infinite closure theorem.
+finite obstruction-and-witness census, not an infinite closure theorem.
 
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have closed every top-signature tier of multiplicity at least `5` and the first
-1,380 signatures of multiplicity `4`:
+have classified every top-signature tier of multiplicity at least `5` and the
+first 1,480 signatures of multiplicity `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -38,12 +38,22 @@ have closed every top-signature tier of multiplicity at least `5` and the first
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
 | 4, shards 0--13 | 1,380 of 2,392 | 5,520 | certified infeasible |
-| **Total** | **3,578 completed classes** | **22,921** | **1,155,933,381 shared bottom-CSP nodes** |
+| 4, mixed shard 14 | 100 | 400 | 399 infeasible; 1 witnessed |
+| **Total** | **3,678 completed classes** | **23,320 rejected; 1 witnessed** | **1,182,736,279 rejection-CSP nodes** |
 
-Thus `48,939` support-twenty selectors remain active in this cache layer.
+Thus `48,539` support-twenty selectors remain unclassified and active in this
+cache layer.
 
-The latest complete cache results are PX745--PX748 in
-[`docs/233-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-thirteen.md`](../docs/233-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-thirteen.md).
+The latest classified results are PX751--PX755 in
+[`docs/235-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fourteen-mixed.md`](../docs/235-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fourteen-mixed.md).
+
+## First constructive witness
+
+Global multiplicity-four case `1392`, selector zero, has a verified no-three
+embedding in orientation `1`. The mixed verifier checks the selector state,
+clean top assignment, bottom permutation, 28 distinct points, and all 3,276
+nonzero integer determinants. The other three selectors in that signature are
+jointly certified infeasible in all four orientations.
 
 ## Solver improvement
 
@@ -55,7 +65,8 @@ The common transcript verifiers print every per-signature count while one
 asserted 64-bit digest commits each complete ordered tier or shard transcript.
 `scripts/product_side_seven_tier_shard_digest.hpp` adds independently
 reproducible lexicographic shard intervals without checking in large case data
-tables.
+tables. Mixed shard fourteen uses a dedicated verifier because it combines 399
+obstructions with one constructive witness.
 
 PX743--PX744 add the first explicit proof-object pilot. For case `1180`,
 orientation `0`, and the first clean concatenated top order,
@@ -67,18 +78,17 @@ calling `BottomGroupSolver`.
 
 PX749--PX750 extend the format to the first two clean top orders. A shared
 dictionary of `84` triples represents `40,320` obligations in a `40,648`-byte
-proof object with anchored digest `10705560690873782484`. The checker again
-validates only explicit geometry and dictionary references, not the bottom CSP.
+proof object with anchored digest `10705560690873782484`.
 
 PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
-route. A naive family-wide selector-choice prototype was exact but slower
-because it weakened top-variable propagation.
+route.
 
 ## Immediate task
 
-The remaining multiplicity-four frontier begins at global case index `1380` and
-contains `1,012` top signatures and `4,048` selectors. Continue in independently
-reproducible intervals using the shard-digest verifier. In parallel:
+The remaining multiplicity-four frontier begins at global case index `1480` and
+contains `912` top signatures and `3,648` selectors. Continue in independently
+reproducible intervals, with scan workers retaining witness data rather than
+terminating a range. In parallel:
 
 1. stream more clean top orders into the shared triple dictionary and measure saturation;
 2. extract mechanically rechecked partial top-assignment cores from repeated certificates;
@@ -98,10 +108,11 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard13.cpp \
-  -o /tmp/m4s13
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard14_mixed.cpp \
+  -o /tmp/m4s14
 
-/tmp/m4s13
+/tmp/m4s14
+/tmp/m4s14 1392
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_case1180_two_top_dictionary_certificate.cpp \
