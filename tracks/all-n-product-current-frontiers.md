@@ -4,7 +4,7 @@
 
 This map reconciles the finite selector census, the paired asymptotic repair
 path, recursive produced-base searches, and the independent geometric and
-matching frontiers. It records what is actually open after PX975.
+matching frontiers. It records what is actually open after PX979.
 
 No item below is a proof of the classical no-three-in-line conjecture unless it
 is explicitly promoted to an all-side theorem; no such promotion has occurred.
@@ -38,31 +38,27 @@ inequalities, or finite classification.
 
 ## 2. Finite side-seven full-selector census
 
-**Status: exact through multiplicity-two case 79; cases 80--159 launched.**
+**Status: exact through multiplicity-two case 159.**
 
 All selectors of multiplicity at least three are classified: `37,600` are
-infeasible and one multiplicity-four selector is constructive. The first eighty
-multiplicity-two signatures add another `160` infeasible selectors.
+infeasible and one multiplicity-four selector is constructive. The first 160
+multiplicity-two signatures add another `320` infeasible selectors.
 
 Current committed exact boundary:
 
-- `37,760` certified-infeasible selectors;
+- `37,920` certified-infeasible selectors;
 - one constructive selector;
-- `34,099` unclassified selectors;
-- `2,797,478,913` certified rejection-CSP nodes.
+- `33,939` unclassified selectors;
+- `2,829,870,112` certified rejection-CSP nodes.
 
 The unresolved committed cache consists exactly of:
 
-- `3,760` multiplicity-two signatures, containing `7,520` selectors;
+- `3,680` multiplicity-two signatures, containing `7,360` selectors;
 - `26,579` multiplicity-one signatures/selectors.
 
-A durable eight-shard batch covers multiplicity-two cases `80` through `159`.
-Its results are not counted until exact transcripts are downloaded, replayed,
-and committed.
-
-**Frontier:** continue fixed ten-signature proof shards, while replacing raw DFS
-where possible by explicit bottom-permutation triple covers and
-assumption-minimized top nogoods.
+**Frontier:** continue fixed ten-signature proof shards from global case `160`,
+while replacing raw DFS where possible by explicit bottom-permutation triple
+covers and assumption-minimized top nogoods.
 
 ## 3. Low-multiplicity certificate compression
 
@@ -106,13 +102,17 @@ selection. They now rule out affine column pairs `(T,Q)` at:
 - side ten: `6,400` geometries and `165,874,408` nodes;
 - side twelve: `9,216` geometries and `175,715,546` nodes.
 
+A deterministic exact side-ten experiment also tests 1,000 genuinely non-affine
+column pairs with no witness. This is evidence, not an obstruction theorem.
+
 Thus neither produced base ten nor twelve iterates by keeping both column
 labelings affine and hiding all nonlinearity in row assignment or selector
 choice.
 
-**Frontier:** search genuinely non-affine column double cosets or larger map
-groups, prove a produced-base extension mechanism, or use the general
-low-syndrome repair/resampling path instead of a fixed template.
+**Frontier:** enumerate complete non-affine affine-double-coset families or larger
+map groups, prove a produced-base extension mechanism, or use the general
+low-syndrome repair/resampling path instead of a fixed template. Representative
+left cosets must not be confused with complete double cosets.
 
 ## 5. Global product repair and exact-cover selection
 
@@ -143,13 +143,13 @@ bounded-denominator interpolation chambers.
 
 ## 7. Operational priorities
 
-1. Promote durable side-seven multiplicity-two transcripts into replay verifiers
-   and advance the finite boundary.
+1. Continue side-seven multiplicity-two classification from case `160` and
+   promote every transcript into a replay verifier.
 2. Measure and minimize bottom triple covers, then add top assumption learning.
 3. Build a finite-range bridge below `10^2874`; universal exponent tuning is now
    closed at integral decimal scale.
-4. Enumerate non-affine column double cosets for produced-base recursion, rather
-   than repeating affine-column searches.
+4. Enumerate complete non-affine column double cosets for produced-base recursion,
+   rather than repeating affine or representative-left-coset searches.
 5. Develop the exact-cover/resampling theorem and the independent hyperbola
    termination/absorber routes.
 
@@ -162,6 +162,7 @@ python scripts/verify_product_entry_invariant_dependencies.py
 python scripts/verify_product_splice_interface.py
 python scripts/verify_product_transposition_class_ten.py
 python scripts/verify_product_transposition_class_twelve.py
+python scripts/verify_product_transposition_nonaffine_sample_ten.py
 
 g++ -O3 -std=c++17 \
   scripts/measure_product_side_seven_bottom_certificate_dictionary.cpp \
@@ -173,7 +174,7 @@ g++ -O3 -std=c++17 \
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1,2,3,4,5,6,7}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
