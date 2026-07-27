@@ -2,180 +2,153 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2021 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2045 the branch has:
 
 - exact structural/SCC reductions and label-preserving CRT gluing;
-- the corrected 740-host side-four/five raw layer with stable primary keys;
-- exact response lists, line moments, uniform rank-three slacks and priority records;
-- deterministic rank-three selectors on every raw host;
-- an exact blocker classification of the eleven positive-minimum hosts;
-- a 17-unit selected-response rank-three correction worklist;
-- primitive witnesses, absolute owners, total fate maps and exact coefficient export;
-- canonical raw-host linkage for owner/provenance fibre sources;
-- exact destroyed-triple pools, literal response deltas and gap decompositions; and
+- 740 canonical side-four/five raw hosts and mechanically linked fibre identities;
+- exact uniform and deterministic rank-three worklists;
+- an exact eleven-host blocker classification;
+- fixed-response correction burden 17 and operation-rollback distance 12;
+- a complete 9,260-response, 79,736-line incidence kernel;
+- exact background-dependent full response selectors;
+- primitive witnesses, owners, total fate maps and coefficient export;
+- exact destroyed-triple pools, direct deltas and gap decompositions; and
 - denominator-cleared labelled assignment-certificate machinery.
 
-No theorem proves that every positive minimum becomes zero. Finite scheduling,
-resource exhaustion or structural descent is not potential improvement.
+No theorem proves that every positive minimum becomes zero.
 
-## 2. Canonical raw-host and fibre keys
+## 2. Canonical keys and operation identities
 
-A raw host is `(side, deletion matching)`. The 740-record catalogue contains every
-forbidden edge, response permutation, rank-three response count, `Z`, `A_3`, `S_3`,
-histogram and record digest. Its fixed digest is
+Every raw host is `(side, deletion matching)` and has a stable record digest. Every
+actual owner/provenance fibre must cite that record, reproduce the full response family
+and denominator, declare its response policy, and carry the ordered state labels.
 
-\[
-\texttt{f333bc7dda6fc5aa0de25336f641d4d444b601be0ff27ab59c9853361f6d1d92}.
-\]
+The next data population must reject any unkeyed or mismatched fibre before geometric
+or LP work begins. Linkage alone does not prove state semantics or that the parent
+operation executes.
 
-A linked owner/provenance fibre must be reconstructed from its allowed-edge set and
-must cite the matching host ID and record digest. It must reproduce the full response
-list and denominator, declare a canonical-selector or explicit response policy, and
-carry the ordered labels `(provenance, collision, local_line, interface, root, thin,
-crt)`.
+## 3. Three hard-core currencies
 
-The linkage checker proves identity and label presence only. Rule-specific verifiers
-must still prove label meaning and parent-operation execution.
+The eleven positive-minimum hosts admit three different finite measurements:
 
-## 3. Uniform and deterministic rank-three worklists
+1. selected-response occurrence correction: 17 units;
+2. minimum rollback of deletion restrictions: total distance 12;
+3. independent uniform numerator correction: 44 units on these eleven hosts.
 
-The uniform split is 651 strict, 44 critical and 45 excess hosts. Independent uniform
-correction for a non-strict host is `1-S_3`; the 89-host total is 179.
+Rollback distances are ten at one and one at two. The distance-two host is
+`s4-59ac56096a7f627f`. The 21 minimum rollback options restore deterministic zero
+rank-three load but remain uniform-excess with slack `-2` or `-1`.
 
-The deterministic minimum distribution is
+These currencies answer different policy questions. None is automatic slack for
+another.
 
-\[
-729\text{ at }0,\qquad9\text{ at }1,\qquad2\text{ at }4.
-\]
+## 4. Response line-incidence kernel
 
-All 654 side-five hosts and 78 of the 89 uniform-exceptional hosts have an explicit
-zero-rank-three response.
-
-Uniform averages and deterministic choices are different response policies and must
-not be interchanged silently.
-
-## 4. Exact eleven-host blocker structure
-
-The side-four base host has six responses with rank-three counts `0,0,0,1,0,4`.
-A canonical deletion matching has positive minimum exactly when it hits all four zero
-responses and leaves at least one response.
-
-The minimal blockers are
+For every response `Q`, store every line with at least two response points and its
+occupancy `r_Q(L)`. Then
 
 \[
-\{(0,2),(2,0)\},\qquad
-\{(0,2),(3,1)\},\qquad
-\{(1,3),(3,1)\}.
+W_2(Q;B)=\sum_L\binom{r_Q(L)}2|B\cap L|,
+\qquad
+W_3(Q)=\sum_L\binom{r_Q(L)}3.
 \]
 
-Exactly eleven canonical hosts contain such a blocker and retain a response. Nine
-select `(3,0,1,2)`, whose one triple lies on `x-y-1=0`. Two have only
-`(3,2,1,0)`, whose four points lie on `x+y-3=0` and create four triples.
+Rank one is computed from the response point list and background pairs. The full
+kernel has 9,260 responses, 79,736 line records, 39 coordinate-labelled response
+geometries and seven occupancy profiles.
 
-For selected-response occurrence deletion, the independent burden is 17. Independent
-uniform correction of those eleven hosts costs 44. The two four-triple hosts have no
-alternate raw response.
+This kernel is now the default finite engine for background-dependent response work.
 
-## 5. Exact scalar and labelled paths
+## 5. Full background selector and destroyed threshold
 
-For actual operation data,
+For survivor background `B`, define `N_B(Q)=W_1+W_2+W_3`. For any actual operation
+with destroyed-current-triple count `T`,
 
 \[
-\Delta\Psi(Q)=W_1(Q)+W_2(Q)+W_3(Q)-|\mathcal D(P,R)|.
+\Delta\Psi(Q)=N_B(Q)-T.
 \]
 
-The response-pool gap is exactly
+Therefore:
 
-\[
-(B(Q)-U_{\rm pool})-\Delta\Psi(Q)=(K-d(Q))+E_+(Q).
-\]
+1. compute the exact full selector `Q_B^*` from the linked host and `B`;
+2. independently certify the actual survivor relation and destroyed count `T`;
+3. accept strict scalar improvement exactly when `N_B(Q_B^*)<T`.
 
-Thus every scalar loss is either unused worst-case deletion capacity or explicit
-domination inflation.
-
-Scalar improvement does not erase labelled obligations. Owner, provenance,
-collision, local-line, interface, root, thin and CRT states remain until proved
-equivalent or honestly dominated. Every recurrent SCC needs `AX<X`; certified
-auxiliaries may then be eliminated by exact rational resolvents.
+The raw rank-three selector is only a starting candidate. In the deterministic stress
+suite it changes in 166 of 400 systems and has positive full-score penalty in 160.
 
 ## 6. Immediate execution order
 
-### Priority 1: populate fibre linkage
+### Priority 1: populate linked fibres
 
-Wrap every actual owner/provenance source in the linkage certificate. Reject host,
-response-list, denominator, policy, source-digest or parent-label mismatches.
+Wrap every actual owner/provenance source in the linkage certificate. Verify host ID,
+record digest, response family, denominator, policy, source digest and ordered labels.
 
 ### Priority 2: instantiate operation geometry
 
-For each linked fibre, record the exact pre-response points, removed set, surviving
-background, destroyed current triples, entry order and rule-specific state semantics.
+Record exact pre-response points, removed indices, survivor background, destroyed
+current triples, entry order and rule-specific transition evidence.
 
-### Priority 3: close zero-minimum raw hosts
+### Priority 3: run the full background selector
 
-On all 729 zero-`m_3` hosts, evaluate the canonical response against the complete
-background-dependent delta. Enumerate every response when rank-one, rank-two, return,
-selector or interface terms change the minimizer.
+Use the line kernel on every response. Publish `N_B`, the exact minimizer, minimizer
+count, raw-selector penalty and response-record digest. Use the actual destroyed count
+to decide strictness.
 
-### Priority 4: close the nine one-triple blockers
+### Priority 4: resolve the hard core
 
-Seek one proved occurrence cancellation, destroyed-triple payment, exact routed child
-or nonuniform weighted certificate per host.
+For each of the nine one-triple hosts, test one proved occurrence payment, a legal
+minimum rollback, a nonuniform weight or a sharper labelled route.
 
-### Priority 5: close the two four-triple one-response blockers
+For each of the two four-triple one-response hosts, test four proved units, legal
+rollback, changed operation, finer state split, off-diagonal route or certified
+auxiliary target.
 
-Seek four proved occurrence units or change the parent operation, removal set, state
-split, child weights, off-diagonal route or certified auxiliary target.
+### Priority 5: close zero-rank-three exceptional rows
 
-### Priority 6: exploit the other 78 exceptional selectors
+On the other 78 uniform-exceptional hosts, keep a zero-rank-three response only when it
+also survives the full background selector. Then certify return, selector, interface
+and labelled child terms.
 
-Retain the explicit rank-three-free response and certify all background, return,
-selector, interface and labelled recurrent contributions.
+### Priority 6: complete pool and fate semantics
 
-### Priority 7: complete pool and fate semantics
+Compute every deleted-load histogram, `K`, `U_pool` and exact gap audit. Prove every
+deletion, domination multiplicity, transfer, structural descent and auxiliary target.
 
-Compute every deleted-load histogram, `K`, `U_pool` and gap audit. Prove every
-nonretained fate, domination multiplicity, structural descent and auxiliary target.
+### Priority 7: close and publish recurrent blocks
 
-### Priority 8: close and publish recurrent blocks
-
-Combine exact selectors, uniform budgets where applicable, destroyed-triple credits,
-line and marginal terms, return/selector coefficients and child weights. Generate all
-integer duals, prove positive row slacks, eliminate certified auxiliaries, solve the
-remaining SCCs and publish the global CRT quotient.
+Combine exact selectors, uniform budgets where applicable, destroyed credits, line and
+marginal terms, return/selector coefficients and child weights. Generate integer
+duals, prove positive row slacks, eliminate certified auxiliaries, solve remaining
+SCCs and publish the global CRT quotient.
 
 ## 7. Genuine unresolved modules
 
 1. Actual linked-fibre population.
 2. Actual point/removal/background and transition semantics.
-3. Complete background-dependent response censuses.
-4. Nine one-triple blocker corrections.
-5. Two four-triple one-response blocker corrections or structural replacements.
-6. Seventy-eight zero-rank-three exceptional complete rows.
-7. Remaining domination, transfer and state-label semantic proofs.
+3. Full background-selector certificates on every real fibre.
+4. Nine one-triple hard-core resolutions.
+5. Two four-triple one-response resolutions.
+6. Seventy-eight exceptional complete rows.
+7. Remaining domination, transfer and state-label proofs.
 8. Collision/local-line recurrent SCC certificates.
 9. The global denominator-cleared integer quotient.
 
-## 8. Corrections that remain active
+## 8. Honesty boundaries
 
-- Canonical keys and signatures are not geometric or semantic quotients.
-- Fibre linkage proves identity, not state semantics.
-- A zero-rank-three response is not a complete-row certificate.
-- Deterministic and uniform response are different policies.
-- The raw selector need not minimize the full background-dependent delta.
-- Silent witness deletion is invalid.
-- Pool credit applies only to the unlabelled scalar potential after response choice.
-- Literal deltas require actual operation data.
-- Scalar decrease does not automatically contract a labelled SCC.
-- Evidence strings do not prove corrections, transfers or auxiliary subcriticality.
-- Passing finite checkers proves only their declared equalities.
+- Canonical keys and line profiles are not semantic quotients.
+- Linkage proves identity, not execution.
+- A raw zero-rank-three response may lose after background terms are added.
+- Rollback changes the response family and parent operation.
+- Occurrence correction, rollback, selector penalty and uniform slack are distinct.
+- Literal strictness requires the actual destroyed threshold.
+- Scalar improvement does not automatically contract a labelled SCC.
+- Finite checkers prove only their declared equalities.
 
 ## 9. Current endpoint
 
-Through CMR2021, the unidentified 89-host rank-three obstruction has been replaced by
-an exact worklist: 78 zero-rank-three exceptional hosts, nine one-triple blockers and
-two four-triple one-response blockers. The raw hosts and future fibres have stable,
-mechanically checked identities.
-
-There is still no all-`n` proof. Completion requires real linked fibre data, proved
-operation and fate semantics, strict certificates for every recurrent labelled block,
-and one published global integer CRT quotient.
+Through CMR2045, the unknown response-choice part of a populated fibre has been reduced
+to an exact finite computation: calculate `N_B(Q)` for every canonical response and
+compare its minimum with the certified destroyed count. The unresolved core is no
+longer response geometry; it is actual fibre population, legal operation/fate
+semantics, recurrent labelled contraction and the final global integer quotient.
