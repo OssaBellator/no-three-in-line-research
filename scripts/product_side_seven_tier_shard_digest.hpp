@@ -12,6 +12,15 @@ struct TierShardDigestExpectations {
     uint64_t transcript_digest;
 };
 
+inline void print_sig(Signature const& signature) {
+    std::cout << '[';
+    for (int row = 0; row < N; ++row) {
+        if (row) std::cout << ',';
+        std::cout << signature[row];
+    }
+    std::cout << ']';
+}
+
 inline uint64_t tier_shard_digest_mix(uint64_t hash,uint64_t value) {
     hash ^= value;
     return hash * 1099511628211ULL;
