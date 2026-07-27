@@ -48,6 +48,7 @@ theorem remains open.
 | Two-owner parity preprocessing | For a fixed Hamilton cycle, all two-owner flaws form a signed-graph XOR system solvable and countable in linear time | PROVED / VERIFIED FINITELY | `docs/312` |
 | Two-owner mass bound | The complete two-owner atomic family has size `O(n^3)` and expected count `O(n)` | PROVED | `docs/313` |
 | Locality--charge tradeoff | Immediate actions have sparse causality but constant charge; fully mixed actions have near-probability charge but global possible causality | PROVED | `docs/314` |
+| Parity-preserving cycle mobility | A three-edge rotation changes parity constraints only at its three source stars; the satisfiable induced cycle graph is connected through `m=7` | PROVED / VERIFIED FINITELY | `docs/315` |
 
 ## Exact theorem ranges
 
@@ -66,6 +67,7 @@ theorem remains open.
 | PP3bkv--PP3bkz | Reflection parity invariance, exact two-owner XOR reduction, signed-graph solution count, finite parity census, and orientation preprocessing | PROVED / VERIFIED FINITELY | `docs/312-two-owner-hamilton-flaws-as-a-parity-csp.md` |
 | PP3bla--PP3bld | Orbit-coordinate fibres, cubic two-owner flaw count, linear expected mass, and generic-family scale separation | PROVED | `docs/313-two-owner-flaw-count-and-lower-order-expectation.md` |
 | PP3ble--PP3blg | Exact immediate action charges, global causality after full mixing, and the locality--charge endpoint tradeoff | PROVED | `docs/314-locality-charge-endpoint-tradeoff.md` |
+| PP3blh--PP3bll | Local parity updates, finite rotation audit, connected satisfiable induced graph, and parity-maintaining repair frontier | PROVED / VERIFIED FINITELY | `docs/315-parity-satisfiable-hamilton-rotation-graph.md` |
 
 ## Current exact probability interface
 
@@ -171,6 +173,12 @@ depends only on `e_i xor e_j`. For a fixed Hamilton cycle, all such flaws form a
 signed parity graph. Consistency is decided by cycle parity, and a satisfiable
 graph with `c` components has exactly `2^c` clean orientation vectors.
 
+A successor rotation changes only parity constraints incident to its three
+source vertices, at most `3m-6` predicates. Through `m=7`, the parity-satisfiable
+Hamilton-cycle subgraph is connected, every inconsistent cycle is one rotation
+from it, and every satisfiable cycle has at least `4,9,16,26` satisfiable
+rotation neighbors at `m=4,5,6,7`.
+
 Globally, the complete two-owner atomic family has size `O(n^3)` and contributes
 only `O(n)` expected flaws. The `Theta(n log n)` first-moment barrier is carried
 by the generic three-owner family.
@@ -231,12 +239,16 @@ python scripts/check_hamilton_immediate_flaw_causality.py \
 
 python scripts/check_hamilton_two_owner_parity_csp.py \
   experiments/hamilton-two-owner-parity-csp-audit.json
+
+python scripts/check_hamilton_parity_rotation_graph.py \
+  experiments/hamilton-parity-rotation-graph-audit.json
 ```
 
 The exact suites now include `92,160` signed Hamilton states and `4,427,088`
 directed combined-flaw edges at `m=7`, `10,416` atomic deletion-image checks
-through `m=6`, `2,376,384` immediate causal edges through `m=6`, and all
-Hamilton-cycle parity systems through `m=7`.
+through `m=6`, `2,376,384` immediate causal edges through `m=6`, all
+Hamilton-cycle parity systems through `m=7`, and `27,864` directed
+parity-rotation transitions through `m=7`.
 
 ## Current constructive targets
 
@@ -253,14 +265,16 @@ The remaining plausible routes are sharper:
 
 1. prove a uniform bounded strict-descent horizon or a weighted multi-step
    Lyapunov theorem;
-2. combine parity preprocessing with the residual three-owner
+2. prove existence and large connected components of parity-satisfiable Hamilton
+   cycles for all sufficiently large `m`;
+3. combine parity preprocessing with the residual three-owner
    `O(log n/n)` causal scale in a directed flaw-walk or witness-sequence theorem;
-3. prove an intermediate-time charge--causality interpolation theorem for
+4. prove an intermediate-time charge--causality interpolation theorem for
    partially mixed deletion actions;
-4. prove that sequences of deletion outputs remain polynomially warm, avoiding
+5. prove that sequences of deletion outputs remain polynomially warm, avoiding
    full regeneration after each local action;
-5. introduce a biased cyclic-order measure that suppresses high-collateral
+6. introduce a biased cyclic-order measure that suppresses high-collateral
    assignments while retaining tractable cylinders.
 
-The next available theorem identifier is `PP3blh`. The asymptotic
+The next available theorem identifier is `PP3blm`. The asymptotic
 prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
