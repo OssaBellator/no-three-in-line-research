@@ -84,8 +84,9 @@ If `F_fix>0`, one exact fixed-only certificate has weight at least
 
 `F_fix/K_fix`.
 
-It is a genuinely realized current occurrence after the fixed preparation and may immediately receive
-one lineage tag.
+It is present in every completed matching state after the fixed preparation.  When one such complete
+state is installed, the certificate is a genuinely realized current occurrence and receives one
+lineage tag.
 
 ### Proof
 
@@ -168,10 +169,10 @@ leaves by an outer reset.
 
 ### Proof
 
-Tag each fixed-only output at its deterministic creation and each matching-dependent output when its
-realizing matching state is installed.  The hypotheses are exactly the fixed signature, capacity and
-signature-Markov assumptions of GC2cs--GC2cw.  Apply GC2ct for the state stock and GC2cv--GC2cw for
-cycle extraction and closure. QED.
+Tag each fixed-only output when a completed matching state containing it is installed, and tag each
+matching-dependent output when its realizing matching state is installed.  The hypotheses are exactly
+the fixed signature, capacity and signature-Markov assumptions of GC2cs--GC2cw.  Apply GC2ct for the
+state stock and GC2cv--GC2cw for cycle extraction and closure. QED.
 
 A segment that destroys an untagged current factor is not tagged-only; it returns to the ordinary
 first-destruction or potential-descent ledger instead.
