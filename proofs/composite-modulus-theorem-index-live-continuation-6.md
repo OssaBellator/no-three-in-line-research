@@ -21,96 +21,87 @@ The authoritative live ledger is split across:
 | CMR2046--2053 | Finite response-line universe, absolute survivor-background signature, perfect-matching row/column gauge, reduced selector signature, exact rank-one reconstruction, exact affine score factorization, scalar signature equivalence, and executable signature endpoint | PROVED; side line universes 23/83, full dimensions 39/108, reduced selector dimensions 32/99; 500 systems, 6,166 response scores and 1,706 background points checked; twelve corruptions rejected | `docs/359-prime-power-survivor-background-signature.md` |
 | CMR2054--2061 | Affine response rows, 39-row global library, exact host chamber criterion, integer polyhedral selector chambers, complete comparison census, exact selector reconstruction, deterministic chamber stress test, and executable chamber endpoint | PROVED; six side-four and 33 side-five rows, 125,448 host comparisons and 1,086 unique ordered row pairs; 5,876 chamber inequalities checked; twelve corruptions rejected | `docs/360-prime-power-affine-selector-chambers.md` |
 | CMR2062--2069 | Exact source identity, survivor-background identity, responsewise operation composition, minimizer agreement, strict destroyed-threshold criterion, declared-policy penalty, deterministic composed suite, and executable linked-operation endpoint | PROVED; 240 linked operations, 2,944 responsewise identities, 3,363 witnesses, 589 destroyed triples and 230 strict full selectors checked; fourteen corruptions rejected | `docs/361-prime-power-linked-operation-selector.md` |
+| CMR2070--2077 | Tracked-line pair partition, nonnegative residual realizability inequalities, Vandermonde line-cluster identity, exact residual score factorization, residual row/column gauge, residual signature equivalence, deterministic regression, and executable residual endpoint | PROVED; selector dimensions remain 32/99; 500 host/background systems check residual nonnegativity and responsewise equality; twelve corruptions rejected | `docs/362-prime-power-background-residual-signature.md` |
+| CMR2078--2085 | Exact labelled response vectors, scalar coordinate-sum identity, duplicate-vector quotient, componentwise dominance pruning, strictly-positive weighted Pareto theorem, deterministic weighted selector, scalar/labelled policy separation, and executable Pareto endpoint | PROVED; 300 accepted owner/fate systems exercise exact vectors, duplicate quotients and positive-weight selectors; twelve corruptions rejected | `docs/363-prime-power-labelled-response-pareto.md` |
+| CMR2086--2093 | Exact three-certificate entry linkage, canonical operation records, unique fibre ordering, reconstructed aggregate censuses, explicit expected-ID coverage, undeclared incompleteness, reloadable batch digest, and executable real-fibre batch endpoint | PROVED as an interface; 120 distinct accepted synthetic operations check incomplete and declared-complete modes; twelve corruptions rejected; no genuine population claimed | `docs/364-prime-power-real-fibre-batch-manifest.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Exact finite background quotient
+## Residual realizability structure
 
-For side `s`, the absolute scalar background signature contains the grid point-pair
-counts `p_B(q)` and the occupancies of the finite canonical response-line universe.
-There are 23 such lines on side four and 83 on side five.
-
-Every perfect response matching uses every row and every column once. Therefore the
-rank-one grid weights are selector-equivalent modulo row and column potentials. With
+For each grid point `q`, let
 
 \[
-d_{ij}=p_{ij}-p_{i0}-p_{0j}+p_{00}\qquad(i,j>0),
-\]
-
-the exact reduced selector dimensions are
-
-\[
-\boxed{32\text{ on side four},\qquad99\text{ on side five}.}
-\]
-
-For every response `Q`,
-
-\[
-N_B(Q)=C_B+F_Q(\widehat\Sigma_s(B)),
-\]
-
-where `C_B` is common to all responses and `F_Q` is one affine integer row. Equal
-reduced signatures give identical score differences and selectors, but do not prove
-labelled or transition equivalence.
-
-## Exact affine chambers
-
-All 9,260 response occurrences use only 39 affine rows: six on side four and 33 on
-side five. If host responses are lexicographically ordered `Q_0,...,Q_{Z-1}`, then
-`Q_i` is selected exactly when
-
-\[
-F_{Q_i}<F_{Q_j}\quad(j<i),
+t_B(q)=\sum_{L\in L_s:q\in L}\binom{h_B(L)}2,
 \qquad
-F_{Q_i}\le F_{Q_j}\quad(j>i).
+u_B(q)=p_B(q)-t_B(q).
 \]
 
-The complete catalogue has 125,448 ordered host comparisons but only 1,086 distinct
-ordered affine-row pairs. These chambers are exact for the scalar selector only.
-
-## Linked operation selector
-
-A composed certificate now forces one source to agree on:
-
-1. canonical host and fibre identity;
-2. complete response family and denominator;
-3. survivor background;
-4. literal rank-one, rank-two and rank-three counts for every response;
-5. destroyed-current-triple count `T`;
-6. full selector and exact minimum delta; and
-7. the response chosen by the declared parent policy.
-
-Responsewise,
+Every genuine background satisfies `u_B(q)>=0`.  For every response,
 
 \[
-\boxed{\Delta\Psi(Q)=N_B(Q)-T.}
+\boxed{
+N_B(Q)=
+\sum_{q\in Q}u_B(q)+
+\sum_{L\in L_s}
+\left[
+\binom{h_B(L)+r_Q(L)}3-\binom{h_B(L)}3
+\right].
+}
 \]
 
-The full selector is strictly improving exactly when `N_B^*<T`. For the parent policy,
+The residual grid weights have the same perfect-matching row/column gauge, so the
+selector dimensions remain 32 and 99.  These inequalities are necessary realizability
+conditions, not a complete characterization of all possible signatures.
+
+## Labelled response frontier
+
+For one accepted coefficient table, every response has exact nonnegative child vector
 
 \[
-\pi_{\rm pol}=N_B(Q_{\rm pol})-N_B^*\ge0
+v(Q)=(v_c(Q))_{c\in C}.
 \]
 
-is an exact policy penalty. It is not deletion credit, rollback distance, uniform
-slack or labelled routing slack.
+Its coordinate sum is the exported all-ones scalar score.  Duplicate vectors are
+weight-indistinguishable.  If one vector is componentwise no larger and is strictly
+smaller somewhere, the dominated response cannot minimize any strictly positive child
+weighting.  Thus every positive-weight minimizer lies on the exact Pareto frontier.
+
+The full real-triple selector, all-ones exported selector and weighted labelled selector
+are different policies.  Unlabelled destroyed-triple credit still requires an explicit
+labelled routing theorem.
+
+## Canonical population batch
+
+Each operation entry now composes:
+
+1. linked literal operation geometry and the full scalar selector;
+2. the residual survivor-background signature; and
+3. the labelled vector/Pareto certificate.
+
+A batch record fixes the fibre, host, source, background, selector, threshold, policy,
+residual and labelled-vector data and protects them by digest.  Batch completeness is
+recognized only relative to an explicit sorted expected fibre-ID registry.  Without
+that registry, every batch remains incomplete regardless of size.
 
 ## Active frontier
 
-1. Populate canonical linkage certificates for every actual owner/provenance fibre.
-2. Populate true pre-response points, removal sets, survivor backgrounds, entry orders
-   and rule-specific transition evidence.
-3. Replace repeated geometric response enumeration by the certified reduced signature
-   and 39-row affine library; record the chamber and exact full selector of every fibre.
-4. Compose every genuine operation with the linked-operation selector and certify the
-   actual destroyed threshold `T`.
-5. Resolve the nine one-triple hard-core hosts by one proved payment, legal rollback,
+1. Derive and publish the exact expected fibre-ID registry from the actual parent
+   operation rule; no sample may substitute for this registry.
+2. Populate one canonical batch entry for every expected owner/provenance fibre,
+   including true point, removal, survivor, entry-order and state-label data.
+3. Validate the residual realizability inequalities and exact scalar selector on every
+   genuine background.
+4. Publish each fibre's labelled response vectors, duplicate quotient, Pareto frontier
+   and any proposed positive child weights.
+5. Compose every genuine operation with the destroyed threshold `T`, pool audit and
+   exact policy penalty.
+6. Resolve the nine one-triple hard-core hosts by one proved payment, legal rollback,
    nonuniform weighting or sharper labelled routing.
-6. Resolve the two four-triple one-response hosts by four units or structural
+7. Resolve the two four-triple one-response hosts by four units or structural
    replacement.
-7. Close the remaining 78 exceptional rows with full background, return, selector,
+8. Close the remaining 78 exceptional rows with full background, return, selector,
    interface and labelled child terms.
-8. Complete pool audits, domination, transfer and state-label semantics for every
-   genuine operation.
-9. Close every recurrent labelled row, eliminate certified auxiliaries and publish the
+9. Prove every deletion, domination, transfer and state-label semantic assertion;
+   close every recurrent labelled row, eliminate certified auxiliaries and publish the
    denominator-cleared global CRT quotient.
