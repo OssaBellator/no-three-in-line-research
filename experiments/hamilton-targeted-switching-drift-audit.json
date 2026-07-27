@@ -1,0 +1,49 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 6,
+  "cases": [
+    {
+      "m": 4,
+      "states": 96,
+      "valid_states": 16,
+      "targeted_occurrences": 416,
+      "potentials": {
+        "triples": {"state_mean":"5","random_targeted_mean_drift":"-28/13","random_negative":272,"random_zero":0,"random_positive":144,"best_sign_mean_drift":"-60/13","best_sign_nonnegative":144,"best_sign_max_drift":0,"state_classification":{"improvable":44,"local_min":36}},
+        "bad_lines": {"state_mean":"5","random_targeted_mean_drift":"-28/13","random_negative":272,"random_zero":0,"random_positive":144,"best_sign_mean_drift":"-60/13","best_sign_nonnegative":144,"best_sign_max_drift":0,"state_classification":{"improvable":44,"local_min":36}},
+        "excess": {"state_mean":"5","random_targeted_mean_drift":"-28/13","random_negative":272,"random_zero":0,"random_positive":144,"best_sign_mean_drift":"-60/13","best_sign_nonnegative":144,"best_sign_max_drift":0,"state_classification":{"improvable":44,"local_min":36}},
+        "targetable": {"state_mean":"13/3","random_targeted_mean_drift":"-32/13","random_negative":272,"random_zero":0,"random_positive":144,"best_sign_mean_drift":"-4","best_sign_nonnegative":144,"best_sign_max_drift":0,"state_classification":{"improvable":44,"local_min":36}}
+      },
+      "triple_increase_witness":{"rho":[1,3,0,2],"orientations":[0,0,0,0],"sources":[1,2,3],"old":4,"after":[8,4,8,8,8,4,8,8],"best_drift":0},
+      "triple_local_minimum_witness":{"kind":"local_min","rho":[1,3,0,2],"orientations":[0,0,0,0],"potentials":[4,4,4,4],"source_sets":[[1,2,3]]}
+    },
+    {
+      "m": 5,
+      "states": 768,
+      "valid_states": 16,
+      "targeted_occurrences": 7552,
+      "potentials": {
+        "triples": {"state_mean":"77/6","random_targeted_mean_drift":"-567/118","random_negative":4992,"random_zero":336,"random_positive":2224,"best_sign_mean_drift":"-567/59","best_sign_nonnegative":1488,"best_sign_max_drift":16,"state_classification":{"improvable":532,"local_min":188,"stuck_no_target":32}},
+        "bad_lines": {"state_mean":"227/24","random_targeted_mean_drift":"-3/2","random_negative":4288,"random_zero":704,"random_positive":2560,"best_sign_mean_drift":"-661/118","best_sign_nonnegative":1568,"best_sign_max_drift":6,"state_classification":{"improvable":564,"local_min":156,"stuck_no_target":32}},
+        "excess": {"state_mean":"169/16","random_targeted_mean_drift":"-1197/472","random_negative":5008,"random_zero":400,"random_positive":2144,"best_sign_mean_drift":"-387/59","best_sign_nonnegative":1424,"best_sign_max_drift":8,"state_classification":{"improvable":532,"local_min":188,"stuck_no_target":32}},
+        "targetable": {"state_mean":"59/6","random_targeted_mean_drift":"-585/118","random_negative":5232,"random_zero":336,"random_positive":1984,"best_sign_mean_drift":"-499/59","best_sign_nonnegative":1696,"best_sign_max_drift":12,"state_classification":{"improvable":504,"local_min":216}}
+      },
+      "triple_increase_witness":{"rho":[1,4,3,0,2],"orientations":[0,0,1,1,0],"sources":[1,3,4],"old":4,"after":[24,20,24,20,20,20,24,24],"best_drift":16},
+      "triple_local_minimum_witness":{"kind":"local_min","rho":[1,2,4,0,3],"orientations":[0,0,0,0,1],"potentials":[8,8,8,4],"source_sets":[[0,1,4]]}
+    },
+    {
+      "m": 6,
+      "states": 7680,
+      "valid_states": 0,
+      "targeted_occurrences": 126464,
+      "potentials": {
+        "triples": {"state_mean":"59/3","random_targeted_mean_drift":"-2057/494","random_negative":76624,"random_zero":4224,"random_positive":45616,"best_sign_mean_drift":"-281/26","best_sign_nonnegative":27680,"best_sign_max_drift":36,"state_classification":{"improvable":6600,"local_min":1048,"stuck_no_target":32}},
+        "bad_lines": {"state_mean":"3389/240","random_targeted_mean_drift":"-1195/1976","random_negative":64320,"random_zero":7072,"random_positive":55072,"best_sign_mean_drift":"-835/152","best_sign_nonnegative":34000,"best_sign_max_drift":16,"state_classification":{"local_min":980,"improvable":6668,"stuck_no_target":32}},
+        "excess": {"state_mean":"1897/120","random_targeted_mean_drift":"-749/494","random_negative":71984,"random_zero":8480,"random_positive":46000,"best_sign_mean_drift":"-13291/1976","best_sign_nonnegative":26144,"best_sign_max_drift":12,"state_classification":{"improvable":6580,"local_min":1068,"stuck_no_target":32}},
+        "targetable": {"state_mean":"247/15","random_targeted_mean_drift":"-2095/494","random_negative":77968,"random_zero":5392,"random_positive":43104,"best_sign_mean_drift":"-185/19","best_sign_nonnegative":28832,"best_sign_max_drift":40,"state_classification":{"improvable":6352,"local_min":1296}}
+      },
+      "triple_increase_witness":{"rho":[1,4,3,5,2,0],"orientations":[0,1,0,0,0,1],"sources":[1,2,5],"old":8,"after":[48,48,48,48,48,44,48,44],"best_drift":36},
+      "triple_local_minimum_witness":{"kind":"local_min","rho":[1,2,4,5,3,0],"orientations":[0,0,0,0,0,0],"potentials":[12,12,12,8],"source_sets":[[0,1,4],[0,2,4]]}
+    }
+  ],
+  "asymptotic_seed_theorem_proved": false
+}
