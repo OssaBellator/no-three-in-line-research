@@ -17,108 +17,137 @@ The authoritative live ledger is split across:
 | CMR1854--1861 | Moment dominance, exact denominator-preserving Pareto compression, integer-height active envelopes, terminal phases, line-length-stratified moment bounds, exact signature counts, and the Pareto-envelope endpoint | PROVED; all 740 hosts and 89,664 line capacities, 740 moment-dominance checks, exact active phases and terminal certificates, and 740 length-signature dominance checks | `docs/335-prime-power-geometric-fibre-moment-pareto-envelopes.md` |
 | CMR1862--1869 | Integer weighted coefficient aggregation, extendability-complete manifest surface, rank-two and rank-three dual checks, unified outer row check, global manifest theorem, gauge normalization, and the executable checker endpoint | PROVED; complete built-in labelled manifest accepted and twelve independently corrupted manifests rejected by exact integer arithmetic | `docs/336-prime-power-labelled-assignment-certificate-manifest.md` |
 | CMR1870--1877 | Exact residual rank-three budget, side-four/five slack distributions, denominator-localized strict/critical/excess classes, automatic scalar elimination, exceptional-host localization, slack-aware outer score, and the rank-three slack endpoint | PROVED; all 740 raw hosts and 9,260 response occurrences classified, with exact residual-budget checks | `docs/337-prime-power-rank-three-fibre-slack-classification.md` |
+| CMR1878--1885 | Exact response-averaged line moments, complete line-energy numerator, global pair/triple identities, rook-marginal equivalence, occupancy domination, exact uniform-height envelopes, Pareto/terminal census, and the averaged-line endpoint | PROVED; all 740 hosts, 89,664 host-line moment triples, 1,188,144 response-line occurrences, 537,984 exact line-height identities, 740 global identities, 103 Pareto triples and 48 active triples checked | `docs/338-prime-power-exact-response-averaged-line-moment-census.md` |
+| CMR1886--1893 | Exact residual geometric numerator, strict rank-three line budget, line-budget allocation, one-line residual criterion, load-one and load-two censuses, weighted labelled allocation, and the line-budget endpoint | PROVED; all 740 hosts, 651 strict hosts, 80,602 strict host-line pairs and 106,810 exact active-line budget equivalences checked | `docs/339-prime-power-rank-three-slack-line-budget-allocation.md` |
+| CMR1894--1901 | Primitive geometric witness sets, extendability-complete routing, rank-one/two/three route conservation, integer coefficient export, corrected-row fate requirement, and the executable routing-checker endpoint | PROVED; 500 deterministic random systems containing 6,063 primitive witnesses accepted and ten corrupted manifests rejected | `docs/340-prime-power-geometric-candidate-routing-manifest.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact certificate surfaces
 
-### Pareto-compressed background-height envelopes
+### Exact response-averaged line moments
 
-For every host,
+For every host and nonaxis line, define
 
 \[
-M_r(G)=\sum_\ell\binom{\tau_G(\ell)}r,
+z_r(G,\ell)
+=
+\sum_{Q\in\operatorname{PM}(G)}
+\binom{|Q\cap\ell|}{r},
 \qquad r=1,2,3.
 \]
 
-For a uniform background height `H`,
+For background line loads `h_ell`, the exact uniform-response numerator is
 
 \[
-F_H(G)=\binom H2M_1(G)+HM_2(G)+M_3(G).
-\]
-
-The 740 raw hosts compress denominator-by-denominator to 69 Pareto triples, and
-only 57 triples are ever maximal for an integer `H`.  Every side-four envelope is
-terminal by `H=4`; every side-five envelope is terminal by `H=16`.
-
-If the height cap depends on line length `L`, use
-
-\[
-\sum_L\left[
- \binom{H_L}{2}M_{1,L}(G)
- +H_LM_{2,L}(G)
- +M_{3,L}(G)
+A_G(B)
+=
+\sum_\ell
+\left[
+ \binom{h_\ell}{2}z_1(G,\ell)
+ +h_\ell z_2(G,\ell)
+ +z_3(G,\ell)
 \right].
 \]
 
-The exact denominator-preserving length-stratified table has 20 side-four and 225
-side-five Pareto signatures.
-
-### Rank-three slack split
-
-For every raw host, put
+The global identities are
 
 \[
-S_3(G)=Z(G)-A_3(G).
+\sum_\ell z_2(G,\ell)=Z(G)\binom d2,
+\qquad
+\sum_\ell z_3(G,\ell)=A_3(G).
 \]
 
-The exact split is:
+Thus the global pair moment is fixed by side and denominator, while the triple
+moment is the completed rank-three census.  Exact line moments are always at most
+the corresponding occupancy-capacity numerators.
 
-| class | side four | side five | total |
-|---|---:|---:|---:|
-| `S_3>0` | 53 | 598 | 651 |
-| `S_3=0` | 6 | 38 | 44 |
-| `S_3<0` | 27 | 18 | 45 |
+For a uniform height cap `H`, exact averaged moment triples compress to 13 Pareto
+triples on side four and 90 on side five.  Only 48 are active for an integer `H`.
+Every exact averaged side-four envelope is terminal by `H=2`, and every side-five
+envelope is terminal by `H=4`.
 
-On a strict host, the exact residual scalar numerator budget after rank three is
+### Rank-three slack as an exact line budget
+
+On a rank-three-strict host,
 
 \[
-B\le S_3-1.
+S_3(G)=Z(G)-A_3(G)>0.
 \]
 
-Thus only 89 raw hosts require special rank-three correction or weighted routing;
-the other 651 provide an explicit budget for shorter-line and return-selector
-terms.
+The remaining exact geometric numerator is
+
+\[
+R_G(h)
+=
+\sum_\ell
+\left[
+ \binom{h_\ell}{2}z_1(G,\ell)
+ +h_\ell z_2(G,\ell)
+\right],
+\]
+
+and the complete scalar geometric row is strict exactly when
+
+\[
+\boxed{R_G(h)\le S_3(G)-1.}
+\]
+
+Equivalently, each line may receive a nonnegative integer budget and the budget
+total must not exceed `S_3-1`.
+
+Across the 651 strict hosts:
+
+| profile | active host-line pairs | individually fitting `S_3-1` | hosts with at least one fitting active line | hosts whose every active line fits |
+|---|---:|---:|---:|---:|
+| load one | 34,618 | 27,192 | 594 | 26 |
+| load two | 72,192 | 16,838 | 492 | 0 |
+
+Individual fits become complete row certificates only when all other retained
+line contributions are separately budgeted, corrected or routed away.
+
+### Geometric candidate-source manifest
+
+For each extendable prescription, the raw geometric checker enumerates primitive
+witnesses rather than only aggregate multiplicities:
+
+- rank one: every unordered background pair collinear with the response edge;
+- rank two: every background point collinear with the response pair;
+- rank three: the unique primitive witness for every collinear response triple.
+
+Every witness must occur exactly once with a declared child label.  Aggregation by
+`(rank,child,prescription)` exports the exact geometric coefficient table for the
+integer assignment manifest.
+
+`scripts/check_geometric_candidate_routing_manifest.py` recomputes response
+matchings, extendability, collinearity and witness conservation.  It validates raw
+candidate completeness but does not prove that a declared child-label string has
+the correct owner, collision, interface or CRT semantics.
 
 ### Publication-grade labelled certificate
 
-For integer state weights `X_j`, aggregate declared labelled coefficient numerators
-before peeling.  Row `i` has sixfold outer score
+The downstream integer manifest retains state weights, all labelled edge/pair/
+triple coefficients, complete contracted dual families, one unified outer dual
+and one positive integer row slack.  Passing every row proves `AX<X` relative to
+the declared exact or componentwise upper table.
 
-\[
-\Theta_i(e)=6q_i(e)+3j_{2,i}(e)+h_{3,i}(e).
-\]
-
-A manifest stores every inner and middle dual, one outer dual and a positive slack
-`delta_i`.  The exact row check is
-
-\[
-U_{i,u}+V_{i,v}\ge\Theta_i((u,v))
-\]
-
-and
-
-\[
-\sum_uU_{i,u}+\sum_vV_{i,v}
-\le
-6D_iX_i-\delta_i.
-\]
-
-The standalone checker recomputes host extendability, validates all coefficient and
-dual surfaces and accepts only complete recurrent blocks.  Passing every row gives
-`AX<X` and a denominator-cleared integer certificate.
+A corrected or upper offspring table must provide an explicit fate for every raw
+geometric witness: retained, deleted by a verified rule, transferred to a
+separately certified state, or honestly dominated.  Silent deletion is invalid.
 
 ## Active frontier
 
-1. Attach actual background-height, owner and provenance classes to the 740 raw
-   hosts and map each class to an exact marginal, a 57-vector uniform envelope or
-   a 245-signature line-length envelope.
-2. Prioritize the 89 rank-three critical/excess hosts; on the other 651, spend the
-   exact `S_3-1` residual budget on return, selector and shorter-line terms.
-3. Populate the integer certificate manifest with the true labelled edge, pair and
-   triple coefficients and generate all inner, middle and outer duals.
-4. Produce strict row certificates for every surviving thin, fixed-interface and
-   reused-support state.
-5. Eliminate certified auxiliary modules through exact rational resolvents.
-6. Certify the remaining collision/local-line SCCs, clear all denominators and
-   publish the global integer quotient before CRT gluing.
+1. Generate the actual background-point, owner and provenance routing manifests
+   for the 740 raw hosts and verify raw witness conservation.
+2. Use exact response-averaged line moments in place of occupancy maxima whenever
+   the response law is uniform; retain occupancy capacities only as a fallback.
+3. On the 651 rank-three-strict hosts, allocate the exact `S_3-1` budget across
+   return, selector and all retained line coefficients.
+4. On the 89 critical/excess hosts, record an explicit correction, nonuniform
+   child-weight route, finer state split or certified off-diagonal transfer for
+   every raw witness.
+5. Export the routed coefficients to the integer assignment manifest and generate
+   all inner, middle and unified outer duals.
+6. Certify thin, fixed-interface and reused-support modules, eliminate them through
+   exact resolvents, then finish the collision/local-line SCCs and publish the
+   global integer quotient before CRT gluing.
