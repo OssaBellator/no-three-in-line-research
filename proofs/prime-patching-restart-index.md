@@ -25,18 +25,13 @@ transition addendum in
 | Quarter-turn normal forms | Fixed action is a square-root system; swapped action is one signed permutation with forced second layer | PROVED / VERIFIED FINITELY | `docs/285` |
 | Coordinated repair census | The audited one-defect `p=17` state has no repair changing at most seven assignment positions | VERIFIED FINITELY | `docs/286` |
 | Signed orbit cycle-cover CSP | Swapped quarter-turn seeds are signed cycle covers whose four-cell orbit variables satisfy matching, duplicate-orbit, and line-capacity constraints | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/287` |
-| `p=37` near-state | A four-line swapped-orbit near-state has no raw canonical repair through support six | VERIFIED FINITELY | `docs/288` |
-| Relative cycle lift and count | Pair cycles lift independently; odd relative multiplicities are divisible by four; edge-disjointness costs asymptotic factor `exp(-1/4)` | PROVED / VERIFIED FINITELY | `docs/289` |
-| Hall-propagated orbit radius | Residual line domains and exact Hall tests exclude every `p=37` orbit repair through support twelve | PROVED / VERIFIED FINITELY | `docs/290` |
-| Conditioned swapped first moment | Even uniform edge-disjoint signed covers retain `Theta(n log n)` expected generic first-layer collinear triples | PROVED / VERIFIED FINITELY | `docs/291` |
-| Exact `p=37` repair | A support-thirteen signed-orbit repair gives a verified seed and proves the near-state radius is exactly thirteen | PROVED / VERIFIED FINITELY | `docs/292` |
-| `p=41` near-state and Hall radius | A verified four-line near-state has one common three-owner bad-line orbit and no canonical repair through support twelve | PROVED / VERIFIED FINITELY | `docs/293` |
+| `p=37` exact local story | A four-line near-state has exact canonical signed repair radius thirteen and yields a valid seed | PROVED / VERIFIED FINITELY | `docs/288`--`docs/292` |
+| `p=41` near-state | A verified four-line near-state has common bad-owner set `{15,18,20}` | PROVED / VERIFIED FINITELY | `docs/293` |
 | Public `p=47` RLE certificate | The first public `c4-46` RLE record is independently decoded, decomposed, and determinant-verified | VERIFIED FINITELY | `docs/294` |
 | Wikimedia `p=59` coordinate certificate | The complete public `N=58` coordinate record is independently decomposed and determinant-verified with attribution retained | VERIFIED FINITELY | `docs/295` |
-| Repair owner-cover and cycle normal form | Bad lines impose weighted owner covers; exact target repairs are support derangements and disjoint cycle switches | PROVED / VERIFIED FINITELY | `docs/296` |
-| `p=41` cycle-first deterministic sampling | Two schedule-independent support-thirteen trial streams are completely decided by exact orientation search | VERIFIED FINITELY / NONEXHAUSTIVE | `docs/297` |
-| `p=41` residual target permanents | Every owner-feasible support is audited by exact binary and weighted permanents of its one-edge residual matrix | PROVED / VERIFIED FINITELY | `docs/298` |
-| Residual support signatures and Hall witnesses | Candidate options have monotone weighted support signatures; all eight zero-permanent supports receive elementary Hall certificates | PROVED / VERIFIED FINITELY | `docs/299` |
+| Repair owner covers and target cycles | Bad lines impose weighted owner covers; target-change supports are derangements and disjoint cycle switches | PROVED / VERIFIED FINITELY | `docs/296` |
+| `p=41` target-change diagnostics | Deterministic sampling, exact residual permanents, monotone option signatures, and Hall witnesses audit the derangement-only subspace | PROVED / VERIFIED FINITELY / PARTLY NONEXHAUSTIVE | `docs/297`--`docs/299` |
+| `p=41` signed support thirteen | Pure orientation fixed points are separated from target cycles; every signed support thirteen is exhausted | PROVED / VERIFIED FINITELY | `docs/300` |
 
 ## Exact late theorem ranges
 
@@ -70,19 +65,18 @@ transition addendum in
 | PP3bgn--PP3bgu | Bad-line owner invariance, verified `p=41` near-state, exact Hall census, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/293-p41-four-line-near-state-and-hall-radius.md` |
 | PP3bgv--PP3bhb | Public RLE decoding, swapped decomposition, signed lift, verified `p=47` seed, and suite expansion | VERIFIED FINITELY | `docs/294-p47-public-rle-prime-seed-certificate.md` |
 | PP3bhc--PP3bhi | Attributed coordinate reconstruction, swapped decomposition, signed lift, verified `p=59` seed, and suite expansion | VERIFIED FINITELY | `docs/295-p59-wikimedia-coordinate-prime-seed-certificate.md` |
-| PP3bhj--PP3bhq | Exact repair derangements, cycle switches, weighted owner covers, and support-thirteen cycle census | PROVED / VERIFIED FINITELY | `docs/296-repair-owner-cover-and-derangement-cycle-normal-form.md` |
-| PP3bhr--PP3bhw | Fixed-target orientation completeness and reproducible support-thirteen trial ledgers | PROVED / VERIFIED FINITELY / NONEXHAUSTIVE | `docs/297-p41-support-thirteen-cycle-first-sampling.md` |
+| PP3bhj--PP3bhq | Target-change derangements, cycle switches, weighted owner covers, and support-thirteen cycle census | PROVED / VERIFIED FINITELY | `docs/296-repair-owner-cover-and-derangement-cycle-normal-form.md` |
+| PP3bhr--PP3bhw | Fixed-target orientation completeness and reproducible target-change trial ledgers | PROVED / VERIFIED FINITELY / NONEXHAUSTIVE | `docs/297-p41-support-thirteen-cycle-first-sampling.md` |
 | PP3bhx--PP3bic | Residual target matrices, exact permanent census, and one-edge outer-space reduction | PROVED / VERIFIED FINITELY | `docs/298-p41-support-thirteen-residual-target-permanents.md` |
 | PP3bid--PP3bii | Monotone option support signatures, permanent reconstruction, and zero-support Hall witnesses | PROVED / VERIFIED FINITELY | `docs/299-p41-residual-option-support-signatures-and-hall-witnesses.md` |
+| PP3bij--PP3bip | Signed-support fixed-point decomposition, symmetric MRV, exhaustive support thirteen, and radius-fourteen lower bound | PROVED / VERIFIED FINITELY | `docs/300-signed-support-fixed-points-and-p41-radius-fourteen.md` |
 
 ## Current exact endpoint
 
 The local call matrix is terminal inside the fixed-infrastructure slab
 architecture. Once a saturated no-three source is supplied, a failed fixed
 attempt either installs the heterogeneous exact-width patch or strictly
-decreases the fixed nonnegative integer potential. Unary/binary multiplicity,
-base-domain or score failure, active-anchor failure, source-host failure,
-coordinate cover, and restart comparability are not terminal local leaves.
+decreases the fixed nonnegative integer potential.
 
 The remaining global theorem is exact. For `n=p-1`, find one permutation
 `sigma` and one derangement `pi`, put `tau=sigma o pi`, and require occupancy at
@@ -100,39 +94,39 @@ determinants are nonzero. The recorded near-state has exact orbit repair radius
 thirteen.
 
 At `p=41`, the verified four-line near-state has one quarter-turn bad-line
-orbit and owner set `{15,18,20}`. Its pair cycles are `[10,5,4,1]`, with
-relative cycles `[10,10,10,4,4,2]`. Exact Hall search excludes every support
-through twelve, proving `h_orbit>=13`; support thirteen remains unresolved.
-
-For support thirteen, weighted owner covers leave `75,140` supports. Exact
-target repairs are derangements and split into only `24` cycle types. Across
-all owner-feasible supports, the one-edge residual matrices have exact totals
+orbit, owner set `{15,18,20}`, pair cycles `[10,5,4,1]`, and relative cycles
+`[10,10,10,4,4,2]`. Exact signed searches now exclude every support through
+thirteen. The support-thirteen ledger is
 
 ```text
-zero binary permanents                         8,
-positive binary permanents                75,132,
-total target permanent         2,356,482,881,132,
-total weighted permanent     178,613,770,154,696.
+75,140 owner-feasible supports,
+21,604,931 branch nodes,
+1,851,407 Hall failures,
+5 initial empty-domain supports,
+and no repair.
 ```
 
-Thus one-edge residual tests retain exactly
-`0.013690120283772545...` of owner-filtered target derangements and
-`0.00012666830781364404...` of the crude signed upper bound. Seven of the eight
-zero-permanent supports have an empty source row; the eighth has an empty target
-column. Positive-permanent supports still require changed-block duplicate and
-joint line-capacity propagation.
+Thus this near-state has `h_orbit>=14`. Support fourteen and the existence of a
+`p=41` seed remain open.
 
-Two reproducible, schedule-independent trial streams completely decide
-500,000 single-cycle and 500,000 uniformly sampled derangement targets. No
-repair is found, but the samples are nonexhaustive and do not raise the radius
-lower bound.
+The support correction is structural. Full signed support splits into a
+pure-orientation fixed set and a deranged target-change set. For the audited
+support-thirteen family, the raw target-map space is
+
+```text
+444,634,193,203,200
+```
+
+rather than the derangement-only count `172,130,180,910,480`. The permanent and
+sampling results in `docs/297`--`docs/299` audit the target-change-only subspace;
+`docs/300` closes the broader signed-support search.
 
 At `p=47`, the first public `c4-46` RLE record independently decodes to a
 quarter-turn swapped seed with all `125580` determinants nonzero. At `p=59`, an
 attributed public coordinate record gives a quarter-turn swapped seed with all
 `253460` determinants nonzero.
 
-The canonical exact certificate suite now verifies
+The canonical exact certificate suite verifies
 
 ```text
 p=3,5,7,11,13,17,19,23,29,31,37,47,59,61,67,73.
@@ -164,8 +158,6 @@ python scripts/check_quarter_turn_seed_normal_forms.py \
   experiments/archived-prime-seed-codes.json
 python scripts/check_swapped_quarter_turn_orbit_csp.py \
   experiments/archived-prime-seed-codes.json
-python scripts/check_swapped_relative_cycle_lift.py \
-  experiments/swapped-relative-cycle-lift-example.json
 python scripts/check_p37_swapped_orbit_support13_certificate.py \
   experiments/p37-swapped-orbit-support13-certificate.json \
   experiments/p37-swapped-quarter-turn-near-example.json
@@ -175,21 +167,13 @@ python scripts/check_p47_public_rle_certificate.py \
   experiments/p47-public-rle-certificate.json
 python scripts/check_p59_wikimedia_coordinate_certificate.py \
   experiments/p59-wikimedia-coordinate-certificate.json
-python scripts/check_repair_owner_cover_and_derangement_cycles.py \
-  experiments/p37-swapped-quarter-turn-near-example.json \
-  experiments/p41-swapped-quarter-turn-near-example.json
-python scripts/check_p41_zero_permanent_hall_witnesses.py \
-  experiments/p41-swapped-quarter-turn-near-example.json \
-  experiments/p41-support13-residual-target-permanents.json
-
-g++ -O3 -std=c++17 \
-  scripts/check_p41_support13_residual_target_permanents.cpp \
-  -o /tmp/check_p41_support13_permanents
 
 g++ -O3 -std=c++17 -fopenmp \
-  scripts/sample_p41_support13_derangement_orientations.cpp \
-  -o /tmp/sample_p41_support13
+  scripts/check_p41_support13_signed_branch_bound.cpp \
+  -o /tmp/check_p41_support13_signed
+/tmp/check_p41_support13_signed \
+  experiments/p41-swapped-quarter-turn-near-example.json signed 8
 ```
 
-For the exact support exclusions, compile and run the C++ checkers documented
-in the `p37` and `p41` swapped-orbit repair experiment notes.
+For the remaining exact support experiments, use the commands recorded in the
+corresponding `experiments/*.md` notes.
