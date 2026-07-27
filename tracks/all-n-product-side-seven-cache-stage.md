@@ -10,8 +10,7 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have classified every top-signature tier of multiplicity at least `5` and the
-first 1,780 signatures of multiplicity `4`:
+have classified every top-signature tier of multiplicity at least `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -37,16 +36,14 @@ first 1,780 signatures of multiplicity `4`:
 | 7 | 100 | 700 | certified infeasible |
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
-| 4, shards 0--13 | 1,380 of 2,392 | 5,520 | certified infeasible |
-| 4, mixed shard 14 | 100 | 400 | 399 infeasible; 1 witnessed |
-| 4, shards 15--17 | 300 | 1,200 | certified infeasible |
-| **Total** | **3,978 completed classes** | **24,520 rejected; 1 witnessed** | **1,281,085,746 rejection-CSP nodes** |
+| 4 | 2,392 | 9,568 | 9,567 infeasible; 1 witnessed |
+| **Total** | **4,590 completed classes** | **26,968 rejected; 1 witnessed** | **1,486,167,944 rejection-CSP nodes** |
 
-Thus `47,339` support-twenty selectors remain unclassified and active in this
+Thus `44,891` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The latest classified results are PX766--PX769 in
-[`docs/239-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-seventeen.md`](../docs/239-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-seventeen.md).
+The complete multiplicity-four classification is PX796--PX799 in
+[`docs/247-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-completion.md`](../docs/247-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-completion.md).
 
 ## Constructive witness
 
@@ -81,22 +78,29 @@ PX749--PX750 extend the format to two clean top orders. A shared dictionary of
 PX764--PX765 measure dictionary saturation across eight clean top orders. The
 cumulative dictionary sizes are `66, 84, 107, 120, 122, 124, 142, 152`; only
 `152` triples cover `161,280` obligations. The projected shared proof payload is
-`161,896` bytes rather than `484,288` bytes for eight raw certificates, with
-anchored digest `3733902510478128199`.
+`161,896` bytes rather than `484,288` bytes for eight raw certificates.
+
+PX774--PX775 give the first exact top-assumption core. For case `1180`,
+orientation `0`, every one of the fourteen top literals can be deleted: the
+signature alone refutes all `70,376` clean concatenated top orders after
+`95,298` shared bottom-CSP nodes. This is an empty top-assumption core and a
+signature-level master nogood.
 
 PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
-route.
+route. No external SAT solver or DRAT/FRAT checker is available in the current
+execution environment, so independently checked native certificates remain the
+active proof-producing route.
 
 ## Immediate task
 
-The remaining multiplicity-four frontier begins at global case index `1780` and
-contains `612` top signatures and `2,448` selectors. Continue in independently
-reproducible witness-preserving intervals. In parallel:
+The next exact frontier is multiplicity `3`, containing `3,544` top signatures
+and `10,632` selectors. Continue in independently reproducible,
+witness-preserving intervals. In parallel:
 
-1. extract mechanically rechecked partial top-assignment cores from dictionary-backed certificates;
-2. learn a master nogood covering every top order extending one core;
-3. export one selector-choice shard to CNF and check an UNSAT proof independently;
-4. continue measuring dictionary saturation over wider top-order batches;
+1. test whether empty or small top-assumption cores recur across signatures;
+2. generalize signature-level master nogoods across mechanically checked incidence features;
+3. continue measuring dictionary saturation over wider top-order batches;
+4. export one selector-choice shard to CNF when an independent proof checker is available;
 5. add only mechanically verified host/reflection symmetry constraints.
 
 ## Stage completion criterion
@@ -111,19 +115,19 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard17.cpp \
-  -o /tmp/m4s17
-/tmp/m4s17
-
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_case1180_eight_top_dictionary_saturation.cpp \
-  -o /tmp/case1180-saturation
-/tmp/case1180-saturation
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_final12.cpp \
+  -o /tmp/m4-final12
+/tmp/m4-final12
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard14_mixed.cpp \
   -o /tmp/m4s14
 /tmp/m4s14 1392
+
+g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_case1180_orientation0_empty_top_core.cpp \
+  -o /tmp/case1180-empty-core
+/tmp/case1180-empty-core
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
