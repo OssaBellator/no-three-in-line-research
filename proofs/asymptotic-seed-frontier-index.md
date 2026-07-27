@@ -1,9 +1,9 @@
 # Asymptotic prime-minus-one seed frontier
 
 This index begins after the finite certificate suite was completed for every odd
-prime through `73`. It records the remaining asymptotic seed problem and the
-most compressed verified probability, repair, parity, causality, regeneration,
-and scheduling interfaces.
+prime through `73`. It records the most compressed verified probability,
+repair, parity, causality, regeneration, and scheduling interfaces for the
+remaining asymptotic problem.
 
 ## Current global theorem
 
@@ -15,36 +15,39 @@ tau = sigma o pi,
 
 and require every maximal Euclidean line of `[n]^2` to contain at most two cells
 of the two permutation graphs. Equivalently, inside swapped quarter-turn action,
-find a canonical signed pair cycle cover satisfying all maximal-line capacities.
+find a canonical signed pair cycle cover satisfying every maximal-line capacity.
 The asymptotic existence theorem remains open.
 
-## Current reductions and barriers
+## Current reductions, constructions, and barriers
 
 | Phase | Result | Status | Location |
 |---|---|---|---|
 | Signed orbit CSP | Swapped seeds are signed pair permutations with matching, duplicate-orbit, and line-capacity constraints | PROVED EQUIVALENCE | `docs/287` |
-| Relative lift and cover count | Pair cycles lift exactly; duplicate-orbit avoidance costs only a limiting factor `exp(-1/4)` | PROVED | `docs/289` |
+| Relative lift and cover count | Pair cycles lift exactly; duplicate-orbit avoidance costs a limiting factor `exp(-1/4)` | PROVED | `docs/289` |
 | Uniform edge-disjoint barrier | Uniform edge-disjoint signed covers have `Theta(n log n)` expected generic same-layer triples | PROVED | `docs/291` |
 | Complete finite suite | Exact certificates exist for every odd prime through `73` | VERIFIED FINITELY | `docs/301` |
 | Two-cycle-free Hamilton reduction | Pair 2-cycles can be excluded at constant asymptotic cost; Hamilton cylinders have exact path-forest probabilities | PROVED / VERIFIED FINITELY | `docs/302` |
-| Hamilton first-moment barrier | Hamilton and one-fixed measures still have `Theta(n log n)` expected strongly generic triples | PROVED | `docs/302` |
+| Hamilton first-moment barrier | Hamilton and one-fixed measures retain `Theta(n log n)` expected generic triples | PROVED | `docs/302` |
 | Complete flaw targeting | Two-owner flaws are deleted by one sign flip; three-owner flaws by one successor rotation | PROVED / VERIFIED FINITELY | `docs/303`, `docs/307` |
 | One-step drift barrier | Mean targeted drift is negative, but raw potentials have increasing moves and local minima | PROVED / VERIFIED FINITELY | `docs/304` |
 | Static dependency barrier | Coordinate overlap defeats symmetric LLL and standard cluster expansion by `Omega(log n)` | PROVED | `docs/305` |
 | Exact-oracle dichotomy | Guaranteed deletion is incompatible with exact restoration of the uniform Hamilton measure | PROVED | `docs/306` |
-| Finite bounded-horizon descent | Every signed Hamilton state through `m=7` reaches its optimum within four targeted moves | VERIFIED FINITELY | `docs/310` |
 | Polynomial regeneration | The lazy combined chain has gap `Omega(m^-5)`; delete-then-mix gives approximate regeneration | PROVED / VERIFIED FINITELY | `docs/308`, `docs/309` |
 | Immediate causal locality | A newly created flaw touches a newly inserted block; immediate outdegree is `O(n^2 log n)` | PROVED / VERIFIED FINITELY | `docs/311` |
 | Residual three-owner scale | Three-owner probability times immediate causal degree is `O(log n/n)=o(1)` | PROVED | `docs/311` |
 | Two-owner parity preprocessing | Fixed-cycle two-owner flaws form a signed XOR system solvable and countable in linear time | PROVED / VERIFIED FINITELY | `docs/312` |
 | Two-owner mass bound | The complete two-owner family has size `O(n^3)` and expected count `O(n)` | PROVED | `docs/313` |
 | Locality--charge endpoint tradeoff | Immediate actions have sparse causality but constant charge; fully mixed actions have near-probability charge but global possible causality | PROVED | `docs/314` |
-| Parity-clean macro repair | Local parity updates and nearest recleaning give a conditional macro action; the clean cycle graph is connected through `m=7` | PROVED / VERIFIED FINITELY | `docs/315` |
-| Owner-intersecting macro deletion | Every owner triple has a clean intersecting rotation through `m=8`; direct prescribed rotation is unnecessary | PROVED / VERIFIED FINITELY | `docs/316` |
+| Parity-clean macro repair | Local parity updates and nearest recleaning give a conditional macro action | PROVED / VERIFIED FINITELY | `docs/315` |
+| Owner-intersecting macro deletion | A clean rotation touching one flaw owner deletes the flaw; universal clean targetability holds through `m=9` | PROVED / VERIFIED FINITELY | `docs/316`, `docs/320` |
 | Trajectory-local causal light cone | One realized `t`-step path creates only `O((t+1)n^2 log n)` distinct collateral flaws | PROVED | `docs/317` |
 | Logarithmic charge lower scale | Laziness forces at least `3 log_2 n-O(1)` steps before three-owner charge can reach `O(n^-3)` | PROVED | `docs/317` |
 | Quarter-turn defect divisibility | Every swapped bad-triple count is divisible by four; `Psi=B_3/4` is the natural integer potential | PROVED | `docs/318` |
-| Exact `m=8` signed census | All `1,290,240` signed Hamilton states were scored; exactly `28` are valid on `10` cycles | VERIFIED FINITELY | `docs/318` |
+| Exact `m=8` signed census | All `1,290,240` signed Hamilton states were scored; exactly `28` are valid | VERIFIED FINITELY | `docs/318` |
+| Exact `m=8` targeted reachability | Every signed Hamilton state reaches validity; maximum directed distance is five | VERIFIED FINITELY | `docs/319` |
+| Exact clean-fibre regeneration | Independent parity-component roots give the uniform clean orientation fibre | PROVED / VERIFIED FINITELY | `docs/320` |
+| Parity topology transition | Every clean parity graph is a forest through `m=9`; 1,588 rank-one clean graphs first occur at `m=10` | VERIFIED FINITELY | `docs/320` |
+| Exact labelled fibre charge | A labelled clean rotation has column mass `2^(c-c'-r)`; charge-aware choices give at most `1/8` through `m=9` | PROVED / VERIFIED FINITELY | `docs/321` |
 
 ## Exact theorem ranges
 
@@ -67,6 +70,9 @@ The asymptotic existence theorem remains open.
 | PP3blo--PP3blr | Owner-intersection deletion, clean-degree criterion, exact `m=8` extension, and universal finite macro targetability | PROVED / VERIFIED FINITELY | `docs/316-owner-intersecting-parity-clean-macro-deletion.md` |
 | PP3bls--PP3blv | Trajectory block locality, pathwise flaw fanout, lazy charge lower bound, and logarithmic interpolation scale | PROVED | `docs/317-trajectory-local-causal-light-cones-and-logarithmic-interpolation.md` |
 | PP3blw--PP3blz | Quarter-turn defect divisibility, owner-interaction decomposition, exact `m=8` census, and normalized descent potential | PROVED / VERIFIED FINITELY | `docs/318-quarter-turn-defect-divisibility-and-m8-hamilton-census.md` |
+| PP3bma--PP3bmc | Implicit reverse neighbours, exact `m=8` reachability, and five-step descent upper bound | PROVED / VERIFIED FINITELY | `docs/319-compressed-m8-targeted-reachability-and-five-step-descent.md` |
+| PP3bmd--PP3bmi | Exact fibre regeneration, component atom bound, forest transition, `m=9` clean mobility, and fibre-randomized macro | PROVED / VERIFIED FINITELY | `docs/320-parity-fibre-regeneration-forest-transition-and-m9-mobility.md` |
+| PP3bmj--PP3bmm | Exact labelled fibre charge, forest formula, universal finite `1/8` charge-aware rotations, and remaining label-merging gap | PROVED / VERIFIED FINITELY | `docs/321-exact-parity-fibre-action-charge-and-charge-aware-rotations.md` |
 
 ## Exact probability and defect scale
 
@@ -76,27 +82,18 @@ For a directed path forest `F` of `r` prescribed oriented pair edges,
 Pr_Hamilton(F) = 1/[2^r (m-1)_r].
 ```
 
-If `F` uses `v` pair vertices in the one-fixed near-Hamilton measure,
-
-```text
-Pr_one-fixed(F) = (m-v)/m * 1/[2^r (m-2)_r].
-```
-
 Strongly generic three-owner triples have probability `Theta(n^-3)` and total
 expected mass `Theta(n log n)`. Two-owner flaws have probability `Theta(n^-2)`,
 but their complete family has only `O(n^3)` members and contributes `O(n)`
 expected mass.
 
-Quarter-turn symmetry partitions every bad triple into an orbit of size four.
-Hence
+Quarter-turn symmetry gives the integer potential
 
 ```text
-Psi = B_3/4
+Psi = B_3/4.
 ```
 
-is a nonnegative integer and vanishes exactly on valid states.
-
-## Complete repair and bounded-horizon interface
+## Complete repair and finite descent interface
 
 Every flaw has exactly two or three orbit owners:
 
@@ -105,42 +102,60 @@ two owners:   flip either owner orientation;
 three owners: rotate three successors and choose new signs.
 ```
 
-Exhaustive signed-state reachability through `m=7` gives a four-step strict-
-descent horizon. The exact state census now extends through `m=8`:
+The complete finite results are:
 
-| `m` | signed states | minimum `B_3` | valid states | valid cycles |
+| `m` | signed states | optimum `B_3` | optimum states | maximum directed distance to optimum |
 |---:|---:|---:|---:|---:|
-| 4 | 96 | 0 | 16 | 2 |
-| 5 | 768 | 0 | 16 | 2 |
-| 6 | 7,680 | 4 | 0 | 0 |
-| 7 | 92,160 | 0 | 36 | 10 |
-| 8 | 1,290,240 | 0 | 28 | 10 |
+| 4 | 96 | 0 | 16 | at most 3 |
+| 5 | 768 | 0 | 16 | at most 3 |
+| 6 | 7,680 | 4 | 84 | at most 3 |
+| 7 | 92,160 | 0 | 36 | 4 |
+| 8 | 1,290,240 | 0 | 28 | 5 |
 
-The complete directed `m=8` reachability graph and descent horizon remain open.
-A uniform asymptotic horizon for `Psi` would telescope to polynomial
-termination.
+At `m=8` the exact distance distribution to validity is
 
-## Parity-clean macro interface
+```text
+0: 28, 1: 1,560, 2: 57,408, 3: 736,212, 4: 493,728, 5: 1,304.
+```
 
-For a fixed Hamilton cycle, two-owner flaws are exactly a signed parity CSP. A
-rotation on source set `T` changes at most `3m-6` parity predicates. If the new
-cycle is parity satisfiable, a nearest clean orientation is found in linear time
-and differs in at most `floor(m/2)` bits.
+A uniform asymptotic bound for `Psi`, or a weighted replacement, remains open.
 
-A three-owner flaw with owner set `S` is deleted by any rotation with
-`T intersect S != empty`. The exact audit through `m=8` gives:
+## Parity-clean regeneration and charge interface
 
-| `m` | cycles | parity-satisfiable | minimum clean degree | disjoint triples `C(m-3,3)` | minimum clean rotations meeting every owner triple |
-|---:|---:|---:|---:|---:|---:|
-| 4 | 6 | 6 | 4 | 0 | 4 |
-| 5 | 24 | 22 | 9 | 0 | 9 |
-| 6 | 120 | 112 | 16 | 1 | 15 |
-| 7 | 720 | 664 | 26 | 4 | 22 |
-| 8 | 5,040 | 3,542 | 27 | 10 | 19 |
+For a clean cycle with `c` parity components, independent component-root bits
+produce the exact uniform distribution on its `2^c` clean orientations. If the
+constraint graph has `q` edges, then
 
-At `m=8`, the `1,498` inconsistent cycles split into `480` cycles with one owner
-pair forbidding both XOR values and `1,018` cycles with a nonzero-XOR signed
-cycle of shortest length three or four.
+```text
+c >= m-q,
+maximum fibre atom <= 2^(q-m).
+```
+
+Every satisfiable constraint graph through `m=9` is a forest. At `m=10`, exactly
+1,588 satisfiable cycles have cyclomatic rank one; the remaining 296,298 clean
+cycles are forests.
+
+At `m=9`:
+
+```text
+clean cycles:                                      31,688
+clean induced components:                               1
+minimum clean degree:                                  43
+minimum clean rotations meeting any owner triple:      26
+maximum distance from inconsistent to clean:             1
+```
+
+For one labelled fibre-randomized action, let `c,c'` be the source and target
+component counts and let `r` be the number of source components met by the flaw
+owners. Its exact column mass is
+
+```text
+2^(c-c'-r).
+```
+
+Through `m=9`, every clean cycle and owner triple admits a clean intersecting
+rotation with `r+c'-c>=3`, hence labelled mass at most `1/8`. This does not yet
+bound an action that merges multiple rotation labels.
 
 ## Regeneration, causality, and the logarithmic window
 
@@ -159,44 +174,45 @@ gamma_A(t) >= 2^(-t) gamma_A(0).
 
 Thus three-owner probability-scale charge requires at least
 `3 log_2 n-O(1)` steps. At `t=O(log n)`, the pathwise flaw light cone is only
-`O(n^2 log^2 n)`, but no matching action-charge upper bound is yet proved.
+`O(n^2 log^2 n)`. The missing upper bound is now concentrated in the cycle
+coordinate and in rotation-label merging; the clean sign fibre itself can be
+regenerated exactly in one step.
 
 ## Finite diagnostics
 
 ```bash
-python scripts/check_hamilton_owner_intersecting_parity_macro.py \
-  experiments/hamilton-owner-intersecting-parity-macro-audit.json
-
 g++ -O3 -std=c++17 \
-  scripts/check_hamilton_signed_defect_census_m8.cpp \
-  -o /tmp/check_hamilton_signed_defect_census_m8
-/tmp/check_hamilton_signed_defect_census_m8
+  scripts/check_hamilton_combined_flaw_reachability_m8.cpp \
+  -o /tmp/check_hamilton_combined_flaw_reachability_m8
+/tmp/check_hamilton_combined_flaw_reachability_m8
 
-g++ -O3 -std=c++17 \
-  scripts/check_hamilton_combined_flaw_reachability_m7.cpp \
-  -o /tmp/check_hamilton_combined_flaw_reachability_m7
-/tmp/check_hamilton_combined_flaw_reachability_m7
+python scripts/check_hamilton_parity_fibre_regeneration.py \
+  experiments/hamilton-parity-fibre-regeneration-audit.json
+
+python scripts/check_hamilton_parity_fibre_charge.py \
+  experiments/hamilton-parity-fibre-charge-audit.json
 ```
 
-The exact suites include all `282,240` Hamilton-cycle rotations at `m=8`, all
-`1,290,240` signed Hamilton states at `m=8`, and the full `4,427,088`-edge
-directed targeted graph at `m=7`.
+The exact suites now include the full `m=8` signed state space, the implicit
+complete `m=8` targeted graph, every parity fibre through `m=10`, every
+`m=9` successor rotation, and every clean-cycle/owner-triple charge-aware choice
+through `m=9`.
 
 ## Current constructive targets
 
-1. build the complete or parity-clean targeted graph at `m=8` and determine its
-   strict-descent horizon for `Psi`;
-2. prove nonemptiness and useful connectivity of parity-satisfiable Hamilton
-   cycles for all sufficiently large `m`;
-3. prove that every owner triple has a parity-satisfiable intersecting rotation,
-   or classify exceptional triples asymptotically;
+1. prove a uniform bounded strict-descent horizon or weighted multi-step
+   Lyapunov theorem for `Psi`;
+2. prove asymptotic nonemptiness and useful connectivity of parity-satisfiable
+   Hamilton cycles;
+3. prove asymptotic clean owner-intersecting mobility;
 4. classify and avoid owner pairs that forbid both XOR values;
-5. prove an upper charge bound in the `t=Theta(log n)` trajectory-local window;
-6. control exponential moments or witness sequences of the pathwise flaw light
-   cone;
-7. prove that consecutive parity-clean macro outputs remain polynomially warm;
-8. introduce a biased cyclic-order measure suppressing high-collateral
+5. control consistent signed parity cycles, which first appear at `m=10`;
+6. choose or weight rotation labels so merged fibre-action charge remains small;
+7. prove a cycle-coordinate charge upper bound in the `t=Theta(log n)` window;
+8. convert trajectory-local light cones into an exponential-moment or witness
+   theorem;
+9. introduce a biased cyclic-order measure suppressing high-collateral
    assignments while retaining tractable cylinders.
 
-The next available theorem identifier is `PP3bma`. The asymptotic
+The next available theorem identifier is `PP3bmn`. The asymptotic
 prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
