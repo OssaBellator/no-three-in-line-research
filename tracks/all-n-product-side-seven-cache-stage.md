@@ -9,36 +9,35 @@ closure theorem.
 
 ## Current exact ledger
 
-The support-twenty layer contains `71,860` selectors grouped into `38,553` top
-signatures. The complete multiplicity histogram is independently verified.
-
-All selectors of multiplicity at least three are classified:
+The layer contains `71,860` selectors grouped into `38,553` top signatures. All
+selectors of multiplicity at least three are classified:
 
 - `37,600` are certified infeasible in all four radix orientations;
 - one multiplicity-four selector has a verified no-three embedding.
 
 Multiplicity two contains `3,840` signatures and `7,680` selectors. The first
-`320` signatures, global cases `0` through `319`, are now closed in thirty-two
-canonical ten-signature proof units:
+`400` signatures, global cases `0` through `399`, are closed in forty canonical
+ten-signature proof units:
 
-- `640` multiplicity-two selectors are certified infeasible;
+- `800` multiplicity-two selectors are certified infeasible;
 - every shard has a standalone ordered-transcript digest verifier;
-- the complete multiplicity-two prefix uses `133,108,986` shared bottom-CSP
+- the complete multiplicity-two prefix uses `155,966,016` shared bottom-CSP
   nodes.
 
-Therefore the current support-twenty boundary is:
+Therefore the committed support-twenty boundary is:
 
-- `38,240` certified-infeasible selectors;
+- `38,400` certified-infeasible selectors;
 - one constructive selector;
-- `33,619` unclassified selectors;
-- `2,899,564,230` certified rejection-CSP nodes.
+- `33,459` unclassified selectors;
+- `2,922,421,260` certified rejection-CSP nodes.
 
 The unresolved cache consists exactly of:
 
-- `3,520` multiplicity-two signatures containing `7,040` selectors;
+- `3,440` multiplicity-two signatures containing `6,880` selectors;
 - all `26,579` multiplicity-one signatures and selectors.
 
-The next canonical finite frontier begins at multiplicity-two case `320`.
+A durable exact matrix covers cases `400` through `479`. It is not counted until
+all eight transcripts are promoted to replay verifiers.
 
 ## Constructive witness
 
@@ -48,59 +47,67 @@ clean top assignment, bottom permutation, 28 distinct points, and all 3,276
 nonzero integer determinants. The other three selectors in that signature are
 jointly certified infeasible in all four orientations.
 
-## Exact proof objects
+## Exact finite proof units
 
 The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
 live in `scripts/product_side_seven_cache_engine.hpp`.
 
-The canonical finite proof unit is a ten-signature shard. Each wrapper asserts:
-
-- the multiplicity-two tier size `3,840`;
-- its exact lexicographic case interval;
-- clean-top counts and top-search nodes in both column orders;
-- bottom-CSP nodes in all four orientations;
-- an ordered 64-bit transcript digest.
-
-The committed shard family is:
+The committed multiplicity-two shard family is:
 
 - `multiplicity2_pilot10.cpp` for cases `0`--`9`;
-- `multiplicity2_shard1.cpp` through `multiplicity2_shard31.cpp` for cases
-  `10`--`319`.
+- `multiplicity2_shard1.cpp` through `multiplicity2_shard39.cpp` for cases
+  `10`--`399`.
 
-## Certificate compression frontier
+Each wrapper asserts the tier size `3,840`, its exact lexicographic interval,
+clean-top and top-node totals in both column orders, all four bottom-CSP totals,
+and one ordered transcript digest.
 
-PX960--PX961 prove that fixed-top bottom infeasibility is equivalent to an
-explicit set cover of all `5,040` bottom permutations by collinear abstract
-triples. Two generic generators are committed:
+## Certificate compression and master learning
 
-1. a first-bad-triple dictionary format;
-2. a deterministic greedy triple-subcover format.
+PX960--PX961 reduce fixed-top bottom infeasibility to explicit covers of all
+`5,040` bottom permutations by collinear abstract triples.
 
-A durable experiment is measuring multiplicity-two case zero on the first eight
-clean top orders in each orientation. The next proof-object target is to
-quantify repeated triple and cover reuse across selectors and top orders, then
-combine stored covers with assumption-minimized top nogoods.
+For multiplicity-two case zero, orientation three:
+
+- the first 64 top orders give 128 selector obligations;
+- every obligation has a seven-triple cover;
+- 55 unique triples and 93 covers encode all 896 cover entries;
+- only 37 top-support masks occur;
+- every support fixes at most 11 of 14 columns.
+
+PX1010--PX1012 semantically minimize the two covers at top order `35`:
+
+- selector zero needs six top columns;
+- selector one needs five;
+- their seven-column union mask `11546` refutes both selectors across four clean
+  top extensions and 40,320 exact bottom checks.
+
+This is the first compact two-selector partial-top master nogood at multiplicity
+two. The next target is to minimize and deduplicate the repeated cover/support
+classes over the 64-top prefix.
 
 ## Immediate tasks
 
-1. Continue multiplicity-two classification from global case `320` in fixed
-   ten-signature proof shards.
-2. Promote every completed transcript immediately; never count queued or
-   unpromoted jobs in the exact boundary.
-3. Measure and deduplicate explicit bottom-permutation covers.
-4. Add exact top-assumption minimization and signature-level master nogoods where
-   the bottom verifier supports them.
-5. Defer multiplicity one until the multiplicity-two proof size and symmetry
-   structure are understood.
-6. Keep every finite result explicitly separate from an all-`n` claim.
+1. Promote the `400--479` transcripts, then continue from case `480`.
+2. Apply semantic support deletion to repeated cover and support classes.
+3. Measure how much of the complete top-order family is covered by a small
+   master-nogood vocabulary.
+4. Defer multiplicity one until multiplicity-two proof size and symmetry are
+   understood.
+5. Keep every finite result explicitly separate from an all-`n` claim.
 
 ## Verification
 
 ```bash
+python scripts/verify_product_side_seven_multiplicity2_case0_bottom_cover8.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_bottom_cover64.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_cover_support64.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_cover_core.py
+
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..31}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..39}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
