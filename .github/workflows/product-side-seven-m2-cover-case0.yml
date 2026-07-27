@@ -1,0 +1,51 @@
+name: Product side-seven multiplicity-two cover case zero
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-cover-case0.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    name: cover-orientation-${{ matrix.orientation }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        orientation: [0, 1, 2, 3]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-cover-case0' .github/product-side-seven-m2-cover-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact cover tool
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_bottom_triple_cover.cpp
+          -o /tmp/measure-product-side-seven-bottom-cover
+      - name: Measure eight top orders
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          /tmp/measure-product-side-seven-bottom-cover
+          2 0 "${{ matrix.orientation }}" 8
+          | tee "product-side-seven-m2-cover-case0-o${{ matrix.orientation }}.txt"
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-cover-case0-o${{ matrix.orientation }}
+          path: product-side-seven-m2-cover-case0-o${{ matrix.orientation }}.txt
+          if-no-files-found: warn
