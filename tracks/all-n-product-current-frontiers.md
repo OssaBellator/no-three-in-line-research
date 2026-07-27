@@ -4,7 +4,7 @@
 
 This map reconciles the finite selector census, the paired asymptotic repair
 path, recursive produced-base searches, and the independent geometric and
-matching frontiers. It records what is actually open after PX979.
+matching frontiers. It records what is actually open after PX989.
 
 No item below is a proof of the classical no-three-in-line conjecture unless it
 is explicitly promoted to an all-side theorem; no such promotion has occurred.
@@ -29,8 +29,8 @@ and verifies every active numerical hypothesis for
 
 PX966--PX969 optimize the entire universal Euler-product exponent family. At
 decimal order `2873`, the concave cutoff margin is globally maximized at
-`log(2)/log(13033)` but remains below `-0.0934`. Therefore further tuning of the
-same universal divisor family cannot lower the integral decimal cutoff.
+`log(2)/log(13033)` but remains below `-0.0934`. Further tuning of that same
+universal family cannot lower the integral decimal cutoff.
 
 **Frontier:** cover every order below `10^2874` by a structural extension chain,
 interval-specific arithmetic, exact absorbers, stronger retained-order
@@ -38,25 +38,25 @@ inequalities, or finite classification.
 
 ## 2. Finite side-seven full-selector census
 
-**Status: exact through multiplicity-two case 159.**
+**Status: exact through multiplicity-two case 239.**
 
 All selectors of multiplicity at least three are classified: `37,600` are
-infeasible and one multiplicity-four selector is constructive. The first 160
-multiplicity-two signatures add another `320` infeasible selectors.
+infeasible and one multiplicity-four selector is constructive. The first 240
+multiplicity-two signatures add another `480` infeasible selectors.
 
 Current committed exact boundary:
 
-- `37,920` certified-infeasible selectors;
+- `38,080` certified-infeasible selectors;
 - one constructive selector;
-- `33,939` unclassified selectors;
-- `2,829,870,112` certified rejection-CSP nodes.
+- `33,779` unclassified selectors;
+- `2,864,005,979` certified rejection-CSP nodes.
 
-The unresolved committed cache consists exactly of:
+The unresolved cache consists exactly of:
 
-- `3,680` multiplicity-two signatures, containing `7,360` selectors;
+- `3,600` multiplicity-two signatures, containing `7,200` selectors;
 - `26,579` multiplicity-one signatures/selectors.
 
-**Frontier:** continue fixed ten-signature proof shards from global case `160`,
+**Frontier:** continue fixed ten-signature proof shards from global case `240`,
 while replacing raw DFS where possible by explicit bottom-permutation triple
 covers and assumption-minimized top nogoods.
 
@@ -69,18 +69,17 @@ coverage sets of its collinear abstract triples cover all `5,040` bottom
 permutations. The selector-family subproblem is infeasible exactly when every
 selector has such a cover.
 
-Two generic tools now compare:
-
-- first-bad-triple dictionary compression;
-- deterministic greedy triple-subcover compression.
+Two generic tools compare first-bad-triple dictionary compression and
+deterministic greedy triple-subcover compression.
 
 **Frontier:** measure case zero in all orientations, deduplicate repeated covers
-across top orders and selector pairs, then combine them with minimized top
-assumption cores. Promote only independently replayed stored covers.
+across top orders and selector pairs, combine them with minimized top assumption
+cores, and promote only independently replayed stored covers.
 
 ## 4. Recursive closure from produced bases
 
-**Status: affine-column recursion ruled out at bases 8, 10, and 12.**
+**Status: affine-column recursion ruled out at bases 8, 10, and 12; the smallest
+non-affine double coset is partly closed.**
 
 Exact factor-independent products currently include
 
@@ -96,23 +95,22 @@ Exact factor-independent products currently include
 
 Every rectangle output belongs to the all-transposition relative class. Exact
 row-pattern searches absorb arbitrary `P` and arbitrary spanning degree-two
-selection. They now rule out affine column pairs `(T,Q)` at:
+selection. They rule out affine column pairs at sides eight, ten, and twelve.
 
-- side eight: `4,096` geometries;
-- side ten: `6,400` geometries and `165,874,408` nodes;
-- side twelve: `9,216` geometries and `175,715,546` nodes.
+At side ten, transpositions split into affine double cosets of sizes `800`,
+`800`, and `200`. The smallest, opposite-pair double coset contains `8,000`
+geometries per orientation. Its complete coarse-row searches are infeasible:
 
-A deterministic exact side-ten experiment also tests 1,000 genuinely non-affine
-column pairs with no witness. This is evidence, not an obstruction theorem.
+- `cc`: `152,056,230` nodes;
+- `cf`: `114,391,525` nodes.
 
-Thus neither produced base ten nor twelve iterates by keeping both column
-labelings affine and hiding all nonlinearity in row assignment or selector
-choice.
+Thus any template in that double coset must use `fc` or `ff`. Those fine-row
+families, and both larger double cosets, remain open. A deterministic exact sample
+of 1,000 arbitrary non-affine pairs also finds no witness, but is only evidence.
 
-**Frontier:** enumerate complete non-affine affine-double-coset families or larger
-map groups, prove a produced-base extension mechanism, or use the general
-low-syndrome repair/resampling path instead of a fixed template. Representative
-left cosets must not be confused with complete double cosets.
+**Frontier:** finish the opposite-pair fine-row orientations, then enumerate the
+two 800-map double cosets or find a produced-base extension theorem. Representative
+left cosets are not complete double cosets.
 
 ## 5. Global product repair and exact-cover selection
 
@@ -143,13 +141,12 @@ bounded-denominator interpolation chambers.
 
 ## 7. Operational priorities
 
-1. Continue side-seven multiplicity-two classification from case `160` and
+1. Continue side-seven multiplicity-two classification from case `240` and
    promote every transcript into a replay verifier.
 2. Measure and minimize bottom triple covers, then add top assumption learning.
-3. Build a finite-range bridge below `10^2874`; universal exponent tuning is now
+3. Build a finite-range bridge below `10^2874`; universal exponent tuning is
    closed at integral decimal scale.
-4. Enumerate complete non-affine column double cosets for produced-base recursion,
-   rather than repeating affine or representative-left-coset searches.
+4. Complete the side-ten non-affine double-coset searches.
 5. Develop the exact-cover/resampling theorem and the independent hyperbola
    termination/absorber routes.
 
@@ -162,7 +159,8 @@ python scripts/verify_product_entry_invariant_dependencies.py
 python scripts/verify_product_splice_interface.py
 python scripts/verify_product_transposition_class_ten.py
 python scripts/verify_product_transposition_class_twelve.py
-python scripts/verify_product_transposition_nonaffine_sample_ten.py
+python scripts/verify_product_transposition_double_coset_ten.py
+python scripts/verify_product_transposition_double_coset_opposite_coarse_ten.py
 
 g++ -O3 -std=c++17 \
   scripts/measure_product_side_seven_bottom_certificate_dictionary.cpp \
@@ -174,7 +172,7 @@ g++ -O3 -std=c++17 \
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
