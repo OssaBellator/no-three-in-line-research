@@ -21,7 +21,7 @@ S,\quad \gamma S,\quad \delta S,\quad \gamma\delta S.
 
 Let the composed state `S'=gamma delta S` become the new base, retaining the same unordered operation square.
 
-## SAS5gl -- exact table-reversal involution -- PROVED
+## SAS5gq -- exact table-reversal involution -- PROVED
 
 \[
 \boxed{
@@ -48,7 +48,7 @@ S'=\gamma\delta S,
 
 using commutativity and involutivity. Reading the old indicators in that order gives the displayed reversal. QED.
 
-## SAS5gm -- composed-only becomes current-only -- PROVED
+## SAS5gr -- composed-only becomes current-only -- PROVED
 
 The two positive-curvature tables are exchanged:
 
@@ -62,21 +62,21 @@ Hence every record in a composed-only output bank is an exact current-only recor
 
 ### Proof
 
-Substitute the two tables into SAS5gl. QED.
+Substitute the two tables into SAS5gq. QED.
 
-## SAS5gn -- lossless weighted-bank reversal -- PROVED
+## SAS5gs -- lossless weighted-bank reversal -- PROVED
 
 Let `P_comp` be any alias-aggregated weighted composed-only bank assigned to an interaction-independent family of operation squares. After installing every composed move, the same total weight `P_comp` is a current-only payment bank for the reverse squares. No signature split, incidence loss or new arithmetic classification is needed.
 
 ### Proof
 
-SAS5gm applies record by record. Table reversal does not change record identity, weight or its assigned square. Alias aggregation is therefore preserved and the full weight transfers. QED.
+SAS5gr applies record by record. Table reversal does not change record identity, weight or its assigned square. Alias aggregation is therefore preserved and the full weight transfers. QED.
 
-## SAS5go -- corrected recycling router -- PROVED
+## SAS5gt -- corrected recycling router -- PROVED
 
 After a composed-only bank is installed, one of the following must occur before that mass can be returned as composed-only output again.
 
-1. The same exact operation square is used: the bank is current-only payment by SAS5gn, not composed-only output.
+1. The same exact operation square is used: the bank is current-only payment by SAS5gs, not composed-only output.
 2. At least one operation-square field changes: an endpoint column, label pair, row-shape/record address, boundary role or base-state signature changes.
 3. A legality or interaction-independence contract fails and is returned as a named obstruction.
 
@@ -84,7 +84,7 @@ Thus immediate same-square composed-only recycling is impossible. Any longer rec
 
 ### Proof
 
-Outcome 1 is SAS5gn. If the table is again composed-only but the same square is not being interpreted in reverse, some field determining the square or its record assignment has changed, giving outcome 2. If the square cannot be retained because a declared hypothesis fails, return outcome 3. QED.
+Outcome 1 is SAS5gs. If the table is again composed-only but the same square is not being interpreted in reverse, some field determining the square or its record assignment has changed, giving outcome 2. If the square cannot be retained because a declared hypothesis fails, return outcome 3. QED.
 
 ## Consequence for SAS6
 
