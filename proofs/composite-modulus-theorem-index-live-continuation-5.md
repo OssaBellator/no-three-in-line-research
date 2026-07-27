@@ -27,12 +27,14 @@ The authoritative live ledger is split across:
 | CMR1934--1941 | Exact deleted-witness conflict graph, response-compatible credit reuse, proper destroyed-credit colorings, chromatic static minimum, clique optimality certificates, residual colored credit, static strictness criteria, and the executable endpoint | PROVED; 300 systems containing 3,061 witnesses and 657 deletions used 363 credits, saved 294 credits, retained 300 unused credits, certified 213 optimal colorings and checked 1,923 response inequalities; ten corruptions rejected | `docs/345-prime-power-conflict-colored-destroyed-credit-reuse.md` |
 | CMR1942--1949 | Common colored/coefficient source, exact gain over global injection, average and uniform slack-gain identities, reuse-only strictness, optimal static slack, nested/outer integration, and the executable bundle endpoint | PROVED; 300 systems containing 2,734 witnesses and 1,180 deletions saved 556 credits, gained 6,816 average-slack units, produced 124 average-strict and 107 uniform-strict systems, including 100 reuse-only cases of each type; ten corruptions rejected | `docs/346-prime-power-conflict-colored-cancellation-bundle.md` |
 | CMR1950--1957 | Exact simultaneous deleted load, response-pool sufficiency and minimality, maximal unused scalar credit, responsewise pool inequality, dominance over coloring and injection, strict/nested criteria, and the executable pool endpoint | PROVED; 300 systems containing 4,477 witnesses and 1,317 deletions had pool capacity 420 versus coloring capacity 520, saved 100 further credits beyond coloring and 897 beyond injection, and produced 127 average-strict systems including 100 pool-only average certificates; ten corruptions rejected | `docs/347-prime-power-response-pool-cancellation.md` |
+| CMR1958--1965 | Literal post-response point sets, response-rank triple partition, primitive-witness/direct-triple bijection, destroyed-triple identity, exact response delta, end-to-end pool comparison, deterministic exact minimizer, and the executable direct-delta endpoint | PROVED; direct integer triple counts and rankwise witness identities are checked on every response in a 300-system deterministic suite, with ten corrupted certificates rejected | `docs/348-prime-power-direct-response-triple-delta.md` |
+| CMR1966--1973 | Unit export and domination surplus, exact pointwise pool/direct gap identity, tightness criterion, global gap decomposition, exact corrected average slack, exact-only improvement, domination-free/full-load cases, and the executable gap endpoint | PROVED; 300 deterministic systems verify that total pool/direct gap equals capacity slack plus domination surplus; 100 inflated-upper regression systems expose exact-only average certificates; ten corruptions rejected | `docs/349-prime-power-response-pool-gap-decomposition.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact certificate surfaces
 
-### Exact response-averaged line moments and rank-three slack
+### Exact averaged geometry and rank-three slack
 
 For every host and nonaxis line,
 
@@ -47,16 +49,8 @@ For background line loads `h_ell`,
 A_G(B)=\sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)+z_3(G,\ell)\right].
 \]
 
-The global identities
-
-\[
-\sum_\ell z_2(G,\ell)=Z(G)\binom d2,
-\qquad
-\sum_\ell z_3(G,\ell)=A_3(G)
-\]
-
-fix the total pair and triple moments.  On a rank-three-strict host, the remaining
-background-dependent numerator is strict when
+On a rank-three-strict host, the retained background-dependent numerator is strict
+when
 
 \[
 \sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)\right]
@@ -68,76 +62,82 @@ There are 651 strict hosts, 44 critical hosts and 45 excess hosts.
 ### Primitive witnesses, owners and exact coefficient handoff
 
 Every primitive rank-one, rank-two and rank-three witness is reconstructed before
-aggregation.  A strict response-edge order gives
+aggregation. A strict response-edge order gives
 
 \[
 \operatorname{own}(w)=\max_\prec P(w).
 \]
 
-Every witness has one fate: retained, deleted, transferred or dominated.  Recurrent
-retained and dominated routes preserve the owner.  The owner/fate source exports one
+Every witness has one fate: retained, deleted, transferred or dominated. Recurrent
+retained and dominated routes preserve the owner. The owner/fate source exports one
 integer table `c^(r)_j(P)`, and the geometric coefficient bundle must equal it
 exactly with denominator `|PM(G)|`.
 
-### Destroyed-current-triple pool
+### Exact scalar response pool and literal delta
 
-Let `P` be the exact pre-response point set and `R` the removed subset.  The exact
-destroyed current triples are
+For exact pre-response points `P`, removed subset `R`, and surviving background `B`,
 
 \[
 \mathcal D(P,R)=\{T\in\binom P3:T\text{ collinear and }T\cap R\ne\varnothing\}.
 \]
 
-For each response, let
+Let
 
 \[
 d(Q)=\#\{w\in W_{\rm del}:P(w)\subseteq Q\},
-\qquad
-K=\max_Q d(Q),
-\qquad
-U_{\rm pool}=|\mathcal D(P,R)|-K.
+\qquad K=\max_Qd(Q),
+\qquad U_{\rm pool}=|\mathcal D(P,R)|-K.
 \]
 
-The exact reservation hierarchy is
+Then
 
 \[
-\boxed{K\le\chi(\Gamma_{\rm del})\le\#W_{\rm del}.}
+K\le\chi(\Gamma_{\rm del})\le\#W_{\rm del}
 \]
 
-Thus response-pool cancellation dominates static conflict coloring, which in turn
-dominates global injection.  Every response satisfies
+and every response satisfies
+
+\[
+\Delta\Psi(Q)
+=
+\Psi(B\cup Q)-\Psi(P)
+=
+W_1(Q)+W_2(Q)+W_3(Q)-|\mathcal D(P,R)|
+\le
+B(Q)-U_{\rm pool}.
+\]
+
+The direct checker computes the literal before/after count, verifies each rankwise
+witness bijection, and publishes the lexicographically first exact minimizer.
+
+### Exact pool-bound gap
+
+Let `E_+(Q)` be the explicit dominated multiplicity surplus. The complete pointwise
+gap is
 
 \[
 \boxed{
-N_{\rm raw}(Q)-|\mathcal D(P,R)|
-\le
-B(Q)-U_{\rm pool}.
+(B(Q)-U_{\rm pool})-\Delta\Psi(Q)
+=
+(K-d(Q))+E_+(Q).
 }
 \]
 
-With `A_B=sum_Q B(Q)`, `M_B=max_Q B(Q)` and `Z=|PM(G)|`, the exact scalar criteria
-are
+Thus the pool bound loses only through unused simultaneous deletion capacity or
+honest domination inflation. Summing gives
 
 \[
-\boxed{A_B<ZU_{\rm pool}}
+-\sum_Q\Delta\Psi(Q)
+=
+(ZU_{\rm pool}-A_B)
++
+\sum_Q(K-d(Q))
++
+\sum_QE_+(Q).
 \]
 
-for some improving response and
-
-\[
-\boxed{M_B<U_{\rm pool}}
-\]
-
-for every response to improve.  Any proved numerator upper bound may replace `A_B`;
-in nested assignment currency it is enough that
-
-\[
-6l_1+3l_2+l_3<6ZU_{\rm pool}.
-\]
-
-Static conflict coloring remains a useful witness-level publication surface and can
-carry clique-matched optimality evidence.  The pool is the exact optimum for the
-unlabelled scalar real-triple potential.
+The exact direct average can therefore prove improvement even when the pool
+sufficient inequality fails.
 
 ### Publication-grade labelled certificate
 
@@ -151,17 +151,21 @@ table.
 
 1. Generate the actual pre-response point sets, removed subsets, surviving
    backgrounds and strict entry orders for the 740 raw host fibres.
-2. Compute the exact deleted-load histogram `d(Q)`, pool capacity `K` and unused
-   destruction credit `U_pool` for each genuine removal/fate map.
-3. Retain static conflict colorings only where witness-level credit provenance is
-   useful; use the response pool for scalar strictness.
-4. Attach and verify owner, collision, local-line, interface, root, thin and CRT
+2. For each genuine operation, compute literal post-response triple counts,
+   rankwise witness counts, exact deleted-load histogram `d(Q)`, pool capacity `K`
+   and unused credit `U_pool`.
+3. Use the deterministic direct minimizer whenever exact finite response enumeration
+   already proves scalar decrease; use pool/nested bounds as scalable sufficient
+   certificates and for labelled routing.
+4. Audit every loose row using the exact decomposition into capacity slack and
+   domination surplus; refine only the component that causes the loss.
+5. Attach and verify owner, collision, local-line, interface, root, thin and CRT
    semantics for every nondeleted witness and prove every remaining domination or
    transfer obligation.
-5. On the 651 rank-three-strict hosts, combine `S_3-1` and `U_pool` with exact
-   averaged line, return and selector coefficients.
-6. On the 89 critical/excess hosts, build explicit corrected fate maps, nonuniform
+6. On the 651 rank-three-strict hosts, combine `S_3-1`, exact direct deltas and
+   `U_pool` with line, return and selector coefficients.
+7. On the 89 critical/excess hosts, build explicit corrected fate maps, nonuniform
    child weights, finer state splits or certified off-diagonal/auxiliary transfers.
-7. Export accepted pool-certified coefficient bundles to the integer assignment
+8. Export accepted exact/pool-certified coefficient bundles to the integer assignment
    checker, solve all recurrent rows, eliminate certified auxiliaries and publish
    the global integer quotient before CRT gluing.
