@@ -68,10 +68,28 @@ def main():
         routed_weight = exact_lower_bound
         assert routed_weight == exact_lower_bound
         counts["weighted_routes"] += 1
+
         if table in NEGATIVE:
             counts["negative_routes"] += 1
         elif table in POSITIVE:
             counts["positive_routes"] += 1
+            eta = rng.uniform(0.01, 0.99)
+            delta_omega = rng.uniform(0.0, 10000.0)
+            delta_tau = rng.uniform(0.0, 10000.0)
+            c_plus = rng.uniform(0.0, 10000.0)
+            c_minus = rng.uniform(0.0, 2.0 * routed_weight + 10000.0)
+            delta_comb = (
+                delta_omega
+                + delta_tau
+                + routed_weight
+                + c_plus
+                - c_minus
+            )
+            if c_minus < eta * routed_weight:
+                assert delta_comb > (1.0 - eta) * routed_weight
+            if delta_comb < 0:
+                assert c_minus > routed_weight
+            counts["barrier_systems"] += 1
         else:
             creating_swap = "omega" if table[1] else "tau"
             assert creating_swap in ("omega", "tau")
@@ -85,6 +103,7 @@ def main():
     print(f"  negative routes: {counts['negative_routes']}")
     print(f"  positive routes: {counts['positive_routes']}")
     print(f"  neutral routes: {counts['neutral_routes']}")
+    print(f"  positive barrier systems: {counts['barrier_systems']}")
 
 
 if __name__ == "__main__":
