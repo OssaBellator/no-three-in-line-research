@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX985
+# Product growing-direction theorem index: PX952--PX989
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -36,3 +36,7 @@
 | PX983 | The opposite-pair double coset is infeasible in side-ten orientations `cc` and `cf` | PROVED FINITE | `docs/308-side-ten-opposite-pair-double-coset-coarse-obstruction.md` |
 | PX984 | Any opposite-pair double-coset recursive template must use orientation `fc` or `ff` | PROVED REDUCTION | `docs/308-side-ten-opposite-pair-double-coset-coarse-obstruction.md` |
 | PX985 | The coarse-row opposite-pair obstruction is partitioned into exact 100-geometry replay intervals | PROVED IMPLEMENTATION REDUCTION | `docs/308-side-ten-opposite-pair-double-coset-coarse-obstruction.md` |
+| PX986 | Multiplicity-two cases `160` through `239` contain 160 selectors, all infeasible in every orientation | PROVED FINITE | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
+| PX987 | Exact clean-top census for multiplicity-two cases `160` through `239` | PROVED FINITE | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
+| PX988 | Exact shared bottom-CSP census for multiplicity-two cases `160` through `239` | PROVED FINITE | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
+| PX989 | The finite cache boundary advances to `38,080` infeasible selectors with `33,779` unclassified | PROVED REDUCTION | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
