@@ -2,9 +2,9 @@
 """Finite audit for AC3rp--AC3rt.
 
 The script checks exact common-centre defect multiplication, interleaved bounded-expansion
-budgets, zero-multiplier absorption, same-sign translation budgets and the finite residual
-classification, including the fact that different-centre involutions belong to the mixed-centre
-branch.
+budgets, zero-multiplier absorption, identity-only quotienting, same-sign translation budgets and
+the finite residual classification, including the fact that different-centre involutions belong
+to the mixed-centre branch.
 """
 
 from __future__ import annotations
@@ -16,6 +16,9 @@ import random
 
 
 def classify(maps: list[tuple[int, int]]) -> str:
+    if all((A, B) == (1, 0) for A, B in maps):
+        return "identity_only"
+
     centre: Fraction | None = None
     common = True
     for A, B in maps:
@@ -34,7 +37,7 @@ def classify(maps: list[tuple[int, int]]) -> str:
         return "common_center"
     if all(A == 1 for A, _ in maps):
         signs = {1 if B > 0 else -1 for _, B in maps if B}
-        return "same_sign_translation" if len(signs) <= 1 else "mixed_sign_translation"
+        return "same_sign_translation" if len(signs) == 1 else "mixed_sign_translation"
     return "mixed_center"
 
 
@@ -127,6 +130,7 @@ def main() -> None:
             stats["translation_moves"] += nonidentity
 
     samples = [
+        [(1, 0), (1, 0)],
         [(2, -1), (-1, 2)],
         [(1, 2), (1, 5)],
         [(1, 2), (1, -3)],
@@ -136,6 +140,7 @@ def main() -> None:
         [(0, 0), (-1, 2), (-1, 6)],
     ]
     expected = [
+        "identity_only",
         "common_center",
         "same_sign_translation",
         "mixed_sign_translation",
@@ -149,7 +154,6 @@ def main() -> None:
         assert got == want, (maps, got, want)
         stats[f"classified_{got}"] += 1
 
-    # Two different-centre involutions compose to a translation.
     h = 7
     first = -h + 2
     second = -first + 6
