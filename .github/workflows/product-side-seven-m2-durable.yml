@@ -1,0 +1,51 @@
+name: Product side-seven multiplicity-two durable batch
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-durable.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    name: measure-${{ matrix.first_case }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        first_case: [80, 90, 100, 110, 120, 130, 140, 150]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-80-159' .github/product-side-seven-m2-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact shard tool
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_tier_shard.cpp
+          -o /tmp/measure-product-side-seven-tier-shard
+      - name: Measure exact ten-signature shard
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          /tmp/measure-product-side-seven-tier-shard
+          "${{ matrix.first_case }}" 10 2
+          | tee "product-side-seven-m2-${{ matrix.first_case }}.txt"
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-${{ matrix.first_case }}
+          path: product-side-seven-m2-${{ matrix.first_case }}.txt
+          if-no-files-found: warn
