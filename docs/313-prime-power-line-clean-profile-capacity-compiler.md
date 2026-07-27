@@ -11,7 +11,7 @@ Fix response side `d>=4`, destroyed target load `D>=0`, current potential `m`,
 and one line-clean coefficient class represented by the fractional factor
 
 \[
-q=\frac uv.
+q=u/v.
 \]
 
 For residual rank `r in {1,2,3}`, put
@@ -94,19 +94,19 @@ Thus one class-capacity table certifies an entire family of exact hosts.
 Let `B_univ` be the applicable universal budget from CMR1641:
 
 \[
-\left\lceil\frac{D(d)_3}{16}\right\rceil-1
+\left\lceil D(d)_3/16\right\rceil-1
 \]
 
 for strong traces,
 
 \[
-\left\lceil\frac{81D(d)_3}{4096}\right\rceil-1
+\left\lceil 81D(d)_3/4096\right\rceil-1
 \]
 
 for singleton traces, or
 
 \[
-\left\lceil\frac{D(d)_3}{256}\right\rceil-1
+\left\lceil D(d)_3/256\right\rceil-1
 \]
 
 for endpoint-overlap traces.
@@ -116,7 +116,7 @@ for endpoint-overlap traces.
 The host-uniform condition
 
 \[
-\boxed{\widehat W\le B_{\rm univ}}
+\boxed{\widehat W\le B_{\mathrm{univ}}}
 \]
 
 certifies strict improvement without evaluating the side-dependent permanent
@@ -153,7 +153,7 @@ then one coordinate satisfies
 \[
 \boxed{
 w_i\ge
-\left\lfloor\frac{B_*}{K}\right\rfloor+1.
+\left\lfloor B_*/K\right\rfloor+1.
 }
 \]
 
@@ -183,7 +183,7 @@ If `chi` witnesses CMR1681 at threshold `L`, then
 \[
 \boxed{
 N_\chi\ge
-\left\lceil\frac{L}{c_r}\right\rceil.
+\left\lceil L/c_r\right\rceil.
 }
 \]
 
@@ -213,7 +213,7 @@ If the unavailable coordinate witnesses CMR1681 at threshold `L`, then
 \boxed{
 b\ge
 \left\lceil
-\frac{L}{(m+1)(d-1)(d-2)}
+L/[(m+1)(d-1)(d-2)]
 \right\rceil.
 }
 \]
@@ -240,7 +240,7 @@ W_E=
 and
 
 \[
-\widehat W_{\rm mix}
+\widehat W_{\mathrm{mix}}
 =
 W_E+
 \sum_{\chi\in R}c_{r(\chi)}C_\chi
@@ -254,10 +254,10 @@ All conclusions of CMR1679--CMR1683 remain valid with `widehat W` replaced by
 
 \[
 \boxed{
-\mathfrak S_{m mix}
+S_{\mathrm{mix}}
 =
 D u^d d(d-1)(d-2)
--(dv)^d\widehat W_{\rm mix}.
+-(dv)^d\widehat W_{\mathrm{mix}}.
 }
 \]
 
