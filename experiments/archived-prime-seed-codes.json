@@ -40,12 +40,36 @@
     "expected_pair_cycles": [10, 4, 1]
   },
   {
+    "p": 41,
+    "archive_path": "n40_rot4:first-record",
+    "code": "oIPNTDZ8A2XHS4SFNRaCM1a568UPb0DIW179YOdJKJK0F5UWc7LQd2E9VXY3cHR3CGOBZBM6bTV4QAGEL",
+    "expected_cycles": [38, 2],
+    "expected_quarter_turn_modes": ["swapped"],
+    "expected_pair_cycles": [19, 1]
+  },
+  {
+    "p": 43,
+    "archive_path": "n42_rot4:first-record",
+    "code": "oBNEJPUAXHV7RPXHa36CD4c2fSWCW5eIJ26Yb0QQeKLKL1FFf47ZdMN1a9T9D0d3bSTZc5O8GEYAO8VBGMRIU",
+    "expected_cycles": [34, 6, 2],
+    "expected_quarter_turn_modes": ["swapped"],
+    "expected_pair_cycles": [17, 3, 1]
+  },
+  {
     "p": 47,
     "archive_path": "mvr/no-three-in-line:results/c4-46.out:first-record",
     "code": "oQX3UHLYiERMbQYDH5AGREb360OGcZf1MWach4906KPChUe5F2XKPdjaf279DNi4A7TLjdg8VITZeSWBJ8NIV1BOSFgCJ",
     "expected_cycles": [11, 11, 11, 11, 2],
     "expected_quarter_turn_modes": ["swapped"],
     "expected_pair_cycles": [22, 1]
+  },
+  {
+    "p": 53,
+    "archive_path": "n52_rot4:first-record",
+    "code": "oNPCZ9CUfIPGj5T8eIiMn3F7DnoWeKWHf1kUahlDENb3H6gVpORlp04OR0K9jYmESbc48FL5oAYJVBJ12ciam2T7XBhMk6ZQXALdgGdQS",
+    "expected_cycles": [10, 8, 8, 6, 6, 6, 6, 2],
+    "expected_quarter_turn_modes": ["swapped"],
+    "expected_pair_cycles": [12, 8, 5, 1]
   },
   {
     "p": 59,
