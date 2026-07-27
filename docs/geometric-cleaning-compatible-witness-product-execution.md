@@ -91,8 +91,7 @@ and the total margin
 
 `M_I=sum_(v in I)m_v`.
 
-If `M_I>0`, some legal product choice lowers the cleaning potential by at least `M_I` relative to the
-product average; in particular one product state satisfies
+If `M_I>0`, some legal product choice satisfies
 
 `Delta Phi_I<=-M_I<0`.
 
@@ -106,8 +105,8 @@ for one `epsilon>0`, then one product state decreases the potential by at least
 
 ### Proof
 
-GC2ds gives `E[Delta Phi_I]<=-M_I`.  A finite average cannot be strictly below `-M_I` unless some state
-is at most that value.  The uniform-margin statement follows from
+GC2ds gives `E[Delta Phi_I]<=-M_I`.  Some finite product state is at most the product average, and is
+therefore at most `-M_I`.  The uniform-margin statement follows from
 
 `M_I>=epsilon*sum_v a_v=epsilon*A`. QED.
 
