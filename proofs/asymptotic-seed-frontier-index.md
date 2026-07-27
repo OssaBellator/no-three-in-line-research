@@ -48,8 +48,7 @@ theorem remains open.
 | Two-owner parity preprocessing | Fixed-cycle two-owner flaws form a signed XOR system solvable and countable in linear time | PROVED / VERIFIED FINITELY | `docs/312` |
 | Two-owner mass bound | The complete two-owner atomic family has size `O(n^3)` and expected count `O(n)` | PROVED | `docs/313` |
 | Locality--charge tradeoff | Immediate actions have sparse causality but constant charge; fully mixed actions have near-probability charge but global possible causality | PROVED | `docs/314` |
-| Parity-preserving cycle mobility | A rotation changes only three source-stars in the parity graph; the satisfiable induced cycle graph is connected through `m=7` | PROVED / VERIFIED FINITELY | `docs/315` |
-| Parity-clean macro repair | Nearest parity recleaning conditionally deletes a three-owner flaw and returns to the two-owner-clean manifold | PROVED | `docs/316` |
+| Parity-clean macro repair | Rotations change only three parity source-stars; nearest recleaning conditionally deletes a target, and the satisfiable cycle graph is connected through `m=7` | PROVED / VERIFIED FINITELY | `docs/315` |
 
 ## Exact theorem ranges
 
@@ -68,8 +67,7 @@ theorem remains open.
 | PP3bkv--PP3bkz | Reflection invariance, exact XOR reduction, signed-graph solution count, finite parity census, and preprocessing | PROVED / VERIFIED FINITELY | `docs/312-two-owner-hamilton-flaws-as-a-parity-csp.md` |
 | PP3bla--PP3bld | Orbit-coordinate fibres, cubic two-owner count, linear expected mass, and scale separation | PROVED | `docs/313-two-owner-flaw-count-and-lower-order-expectation.md` |
 | PP3ble--PP3blg | Immediate action charges, global causality after full mixing, and endpoint tradeoff | PROVED | `docs/314-locality-charge-endpoint-tradeoff.md` |
-| PP3blh--PP3bll | Local parity updates, finite rotation audit, connected satisfiable induced graph, and parity-preserving frontier | PROVED / VERIFIED FINITELY | `docs/315-parity-satisfiable-hamilton-rotation-graph.md` |
-| PP3blm--PP3blp | Nearest parity recleaning, conditional macro repair, construction complexity, and target-specific gap | PROVED | `docs/316-nearest-parity-recleaning-and-conditional-macro-repair.md` |
+| PP3blh--PP3bln | Local parity updates, nearest recleaning, conditional macro repair, finite rotation connectivity, update-width census, and construction complexity | PROVED / VERIFIED FINITELY | `docs/315-parity-local-successor-rotations-and-macro-repair.md` |
 
 ## Current exact probability interface
 
@@ -212,5 +210,5 @@ rotations through `m=7`.
 6. introduce a biased cyclic-order measure suppressing high-collateral
    assignments while retaining tractable cylinders.
 
-The next available theorem identifier is `PP3blq`. The asymptotic
+The next available theorem identifier is `PP3blo`. The asymptotic
 prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
