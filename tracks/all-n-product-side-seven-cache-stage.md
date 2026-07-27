@@ -11,7 +11,7 @@ finite obstruction census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have closed every top-signature tier of multiplicity at least `5` and the first
-1,280 signatures of multiplicity `4`:
+1,380 signatures of multiplicity `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -37,13 +37,13 @@ have closed every top-signature tier of multiplicity at least `5` and the first
 | 7 | 100 | 700 | certified infeasible |
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
-| 4, shards 0--12 | 1,280 of 2,392 | 5,120 | certified infeasible |
-| **Total** | **3,478 completed classes** | **22,521** | **1,132,723,104 shared bottom-CSP nodes** |
+| 4, shards 0--13 | 1,380 of 2,392 | 5,520 | certified infeasible |
+| **Total** | **3,578 completed classes** | **22,921** | **1,155,933,381 shared bottom-CSP nodes** |
 
-Thus `49,339` support-twenty selectors remain active in this cache layer.
+Thus `48,939` support-twenty selectors remain active in this cache layer.
 
-The latest complete cache results are PX739--PX742 in
-[`docs/231-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-twelve.md`](../docs/231-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-twelve.md).
+The latest complete cache results are PX745--PX748 in
+[`docs/233-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-thirteen.md`](../docs/233-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-thirteen.md).
 
 ## Solver improvement
 
@@ -65,18 +65,23 @@ for each of `20,160` selector-permutation obligations. Its checker validates
 edge membership, exact zero determinants, file length, and digest without
 calling `BottomGroupSolver`.
 
+PX749--PX750 extend the format to the first two clean top orders. A shared
+dictionary of `84` triples represents `40,320` obligations in a `40,648`-byte
+proof object with anchored digest `10705560690873782484`. The checker again
+validates only explicit geometry and dictionary references, not the bottom CSP.
+
 PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
 route. A naive family-wide selector-choice prototype was exact but slower
 because it weakened top-variable propagation.
 
 ## Immediate task
 
-The remaining multiplicity-four frontier begins at global case index `1280` and
-contains `1,112` top signatures and `4,448` selectors. Continue in independently
+The remaining multiplicity-four frontier begins at global case index `1380` and
+contains `1,012` top signatures and `4,048` selectors. Continue in independently
 reproducible intervals using the shard-digest verifier. In parallel:
 
-1. extend explicit bottom certificates across additional clean top orders;
-2. dictionary-compress repeated triples and extract mechanically rechecked top-assignment cores;
+1. stream more clean top orders into the shared triple dictionary and measure saturation;
+2. extract mechanically rechecked partial top-assignment cores from repeated certificates;
 3. learn a master nogood covering every top order extending one core;
 4. export one selector-choice shard to CNF and check an UNSAT proof independently;
 5. add only mechanically verified host/reflection symmetry constraints.
@@ -93,17 +98,17 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard12.cpp \
-  -o /tmp/m4s12
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard13.cpp \
+  -o /tmp/m4s13
 
-/tmp/m4s12
+/tmp/m4s13
 
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_case1180_orientation0_bottom_certificate.cpp \
-  -o /tmp/case1180-cert
+  scripts/verify_product_side_seven_case1180_two_top_dictionary_certificate.cpp \
+  -o /tmp/case1180-dict-cert
 
-/tmp/case1180-cert generate /tmp/case1180-orientation0.cert
-/tmp/case1180-cert check /tmp/case1180-orientation0.cert
+/tmp/case1180-dict-cert generate /tmp/case1180-two-top.cert
+/tmp/case1180-dict-cert check /tmp/case1180-two-top.cert
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
