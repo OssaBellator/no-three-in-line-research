@@ -27,12 +27,15 @@ The checker independently:
 The stored suite verifies:
 
 ```text
-p=17,19,23,29,31,47,59,61,67,73
+p=17,19,23,29,31,41,43,47,53,59,61,67,73
 ```
 
-and performs `1,609,168` exact determinant checks in total. The largest case
+and performs `1,968,716` exact determinant checks in total. The largest case
 has `144` selected points on `[72]^2`.
 
+The `p=41,43,53` compact codes are the first records of the public
+`n40_rot4`, `n42_rot4`, and `n52_rot4` files; their complete archive digests
+are retained in `experiments/public-rot4-prime-certificates-p41-p43-p53.json`.
 The `p=47` compact code is independently generated from the first public RLE
 record in `mvr/no-three-in-line:results/c4-46.out`. The `p=59` compact code is
 independently generated from Prellberg's attributed Wikimedia Commons
