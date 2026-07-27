@@ -4,7 +4,7 @@
 
 This branch studies simultaneous structure of a multiplicative set and its image under the rational secant map, including collision involutions, subgroup-coset overlap, quotient cycles, order-two obstructions, and the physical-lift interface needed by absorber banks. Canonical proofs are under `docs/`.
 
-> **Status:** Scale-localized completion debt now has a full two-layer product bank. Every blocker occupancy is executable, singleton repair profiles have exact direction/offset addresses, and active collateral has exact component-cylinder probabilities. Original and shadow rank one terminate by hyperbola localization or finite margin pruning. The terminal active core has only thirteen canonical rank-two/rank-three words, and every word reduces to one-target incidence or an exact two-target hyperbola secant. The remaining bottleneck is classification of the quotient/scale/carry labels inside one selected interaction class, splitting the blocker-repair average, and completing the final bank-ready comparison.
+> **Status:** Scale-localized completion debt now has a full two-layer product bank. Every blocker occupancy is executable, singleton repair profiles have exact direction/offset addresses, and active collateral has exact component-cylinder probabilities. Original and shadow rank one terminate by hyperbola localization or finite margin pruning. The terminal active core has only thirteen canonical rank-two/rank-three words, and every word reduces to one-target incidence or an exact two-target hyperbola secant. RI5ak--RI5ao now split the conditional blocker average exactly into singleton, five finite small-derangement, and normalized large-rank outputs with explicit raw-weight constants. The remaining bottleneck is arithmetic classification of one selected terminal interaction or blocker profile, physical owner/coherence recurrence, and the final bank-ready comparison.
 
 ## Branch map
 
@@ -32,12 +32,14 @@ This branch studies simultaneous structure of a multiplicative set and its image
 - [`docs/rational-inverse-rank-one-margin-bank.md`](docs/rational-inverse-rank-one-margin-bank.md): positive-margin filtering of original rank one.
 - [`docs/rational-inverse-shadow-pruning.md`](docs/rational-inverse-shadow-pruning.md): finite removal of all residual rank-one shadows.
 - [`docs/rational-inverse-terminal-interactions.md`](docs/rational-inverse-terminal-interactions.md): thirteen terminal words and two hyperbola incidence geometries.
+- [`docs/rational-inverse-quotient-reconstruction.md`](docs/rational-inverse-quotient-reconstruction.md): canonical prime-field subgroup, coset and physical occurrence addresses.
+- [`docs/rational-inverse-blocker-average-splitting.md`](docs/rational-inverse-blocker-average-splitting.md): exact occupancy and rank router for the conditional blocker average.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch-specific theorem ledger.
 
 ## Highest-value frontier
 
 1. Classify the quotient, scale, carry, direction/offset, and secant labels inside one RI5ae interaction class and connect it to the fixed-edge bank.
-2. Split the heavy blocker-repair average into singleton affine-address profiles and finite/normalized derangement profiles.
+2. Classify or terminate one selected singleton affine, finite small-derangement, or normalized large-rank blocker profile from RI5ao.
 3. Complete the bank-ready collateral audit and invoke the conditional fixed-edge coset bank.
 
 The scripts verify finite-field identities and small quotient/lift models; they do not replace the arbitrary-size proofs.
