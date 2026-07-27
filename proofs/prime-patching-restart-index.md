@@ -21,7 +21,7 @@ transition addendum in
 | Uniform random barrier | Fixed-relative uniform permutations have `Theta(n log n)` expected bad triples and the natural symmetric permutation LLL misses by `Omega(log n)` | PROVED | `docs/281` |
 | Geometric symmetry and internal certificates | Exact square-symmetry quotient, row-relabel barrier, and internally generated `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282` |
 | Inverse-conic extension CSP | Scaled inverse layers are clean; fixed-layer completion is an exact line-capacity CSP; finite non-extension and two-sided-repair barriers | PROVED / VERIFIED FINITELY | `docs/283` |
-| Archived code decoding | Standard row-pair codes are independently decoded, decomposed, and determinant-verified, adding eight prime certificates | PROVED / VERIFIED FINITELY | `docs/284` |
+| Archived code decoding | Standard row-pair codes are independently decoded, decomposed, and determinant-verified | PROVED / VERIFIED FINITELY | `docs/284` |
 | Quarter-turn normal forms | Fixed action is a square-root system; swapped action is one signed permutation with forced second layer | PROVED / VERIFIED FINITELY | `docs/285` |
 | Coordinated repair census | The audited one-defect `p=17` state has no repair changing at most seven assignment positions | VERIFIED FINITELY | `docs/286` |
 | Signed orbit cycle-cover CSP | Swapped quarter-turn seeds are signed cycle covers whose four-cell orbit variables satisfy matching, duplicate-orbit, and line-capacity constraints | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/287` |
@@ -31,6 +31,7 @@ transition addendum in
 | Conditioned swapped first moment | Even uniform edge-disjoint signed covers retain `Theta(n log n)` expected generic first-layer collinear triples | PROVED / VERIFIED FINITELY | `docs/291` |
 | Exact `p=37` repair | A support-thirteen signed-orbit repair gives a verified seed and proves the near-state radius is exactly thirteen | PROVED / VERIFIED FINITELY | `docs/292` |
 | `p=41` near-state and Hall radius | A verified four-line near-state has one common three-owner bad-line orbit and no canonical repair through support twelve | PROVED / VERIFIED FINITELY | `docs/293` |
+| Public `p=47` RLE certificate | The first public `c4-46` RLE record is independently decoded, decomposed, and determinant-verified | VERIFIED FINITELY | `docs/294` |
 
 ## Exact late theorem ranges
 
@@ -62,6 +63,7 @@ transition addendum in
 | PP3bga--PP3bgf | Generic signed cylinders and conditioned swapped-quarter-turn first-moment barrier | PROVED / VERIFIED FINITELY | `docs/291-edge-disjoint-swapped-first-moment-barrier.md` |
 | PP3bgg--PP3bgm | Support-thirteen completion, verified `p=37` seed, exact repair radius, and compact code | PROVED / VERIFIED FINITELY | `docs/292-p37-support-thirteen-repair-certificate.md` |
 | PP3bgn--PP3bgu | Bad-line owner invariance, verified `p=41` near-state, exact Hall census, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/293-p41-four-line-near-state-and-hall-radius.md` |
+| PP3bgv--PP3bhb | Public RLE decoding, swapped decomposition, signed lift, verified `p=47` seed, and suite expansion | VERIFIED FINITELY | `docs/294-p47-public-rle-prime-seed-certificate.md` |
 
 ## Current exact endpoint
 
@@ -127,23 +129,34 @@ and every canonical support through twelve,
 ```
 
 without a repair. Therefore this near-state has `h_orbit>=13`. No `p=41` seed
-is claimed.
+is claimed, and support thirteen remains unresolved.
 
-The canonical exact certificate suite remains
+At `p=47`, the first public `c4-46` RLE record independently decodes to a
+quarter-turn swapped seed. Its pair cycles are `[22,1]`, with orientation
+parities `[1,0]` and relative cycles `[11,11,11,11,2]`. All
 
 ```text
-p=3,5,7,11,13,17,19,23,29,31,37,61,67,73.
+C(92,3)=125580
+```
+
+integer determinants are nonzero, with minimum absolute value one.
+
+The canonical exact certificate suite now verifies
+
+```text
+p=3,5,7,11,13,17,19,23,29,31,37,47,61,67,73.
 ```
 
 The cases through `p=13` and the `p=37` case were generated on this branch. The
-other larger cases are independently decoded and determinant-verified from
-compact public archive codes. These isolated finite certificates do not
-interpolate and do not prove asymptotic existence.
+`p=47` case is independently decoded from a public RLE record. The other larger
+cases are independently decoded and determinant-verified from compact public
+archive codes. These isolated finite certificates do not interpolate and do
+not prove asymptotic existence.
 
 The next finite certificate gaps are
 
 ```text
-p=41,43,47,53,59.
+p=41,43,53,59.
 ```
 
 The remaining theorem is:
@@ -173,6 +186,8 @@ python scripts/check_p37_swapped_orbit_support13_certificate.py \
   experiments/p37-swapped-quarter-turn-near-example.json
 python scripts/check_p41_swapped_orbit_near_state.py \
   experiments/p41-swapped-quarter-turn-near-example.json
+python scripts/check_p47_public_rle_certificate.py \
+  experiments/p47-public-rle-certificate.json
 ```
 
 For the exact support exclusions, compile and run the C++ checkers documented
