@@ -18,7 +18,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
 - `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1629;
-- `proofs/composite-modulus-theorem-index-live-continuation-4.md` from CMR1630 through CMR1773.
+- `proofs/composite-modulus-theorem-index-live-continuation-4.md` from CMR1630 through CMR1789.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -133,7 +133,7 @@ failed budget localizes one large candidate or unavailable-edge coordinate.
 ## Exact geometric prescription multiplicity
 
 For every response law and residual rank `r`, the total probability mass of
-**distinct** rank-`r` prescriptions is exactly
+distinct rank-`r` prescriptions is exactly
 
 \[
 \sum_{P:\operatorname{rank}P=r}\Pr(P\subseteq Q)=C(d,r).
@@ -154,11 +154,7 @@ background point set `B`, the exact multiplicities are:
   \sum_{\ell\ni x}C(|B\cap\ell|,2).
   \]
 
-The rank-one sum is indexed exactly by primitive unoriented directions through
-`x`.
-
-If `|B|=qH+r`, with `0<=r<H`, and every relevant background line has load at
-most `H`, convex packing gives
+If `|B|=qH+r`, with `0<=r<H`, convex packing gives
 
 \[
 \Phi(|B|,H)=qC(H,2)+C(r,2).
@@ -182,9 +178,7 @@ Let
 \Psi(B)=|\{T\subseteq B:|T|=3\text{ and }T\text{ is collinear}\}|.
 \]
 
-Pair-only secants through one response point form a matching on `B`, hence there
-are at most `floor(|B|/2)` of them. Background triple shadows are at most
-`Psi(B)`. Therefore
+Pair-only secants through one response point form a matching on `B`, hence
 
 \[
 m_1\le\lfloor |B|/2\rfloor+3\Psi(B),
@@ -194,27 +188,25 @@ m_2\le2+\Psi(B),
 m_3=1.
 \]
 
-The packed-height and background-potential multiplicity bounds are simultaneous;
-one may use their rankwise minimum.
+The packed-height and background-potential bounds are simultaneous; use their
+rankwise minimum.
 
-The local charge inequalities are
+The local charge inequalities
 
 \[
 C(h,2)\le\mathbf 1_{h=2}+3C(h,3),
 \qquad
-h\le2+C(h,3).
+h\le2+C(h,3)
 \]
 
-They admit deterministic bounded-congestion maps: rank-one pairs on a line of
-load at least three charge to one of three slots of a current background triple,
-and all but two rank-two point choices charge injectively to current background
-triples. This charge may enter the final quotient only with current labelled
-triple credits and the stated congestion; historical or already-spent triples
-may not be reused.
+admit deterministic bounded-congestion maps. These maps may enter the final
+potential only when the charged background triples are current labelled credits
+and the congestion is retained. Historical or already-spent triples may not be
+charged again.
 
 ## Exact line-energy profile
 
-For an actual response point set `Q`, define on each real line
+For an actual response set `Q`, define on each real line
 
 \[
 h_\ell=|B\cap\ell|,
@@ -262,13 +254,7 @@ R_2(B,Q)+2C(d,2)+\Psi(Q)
 \Psi(B)\left[3K_3+C(K_3,2)\right].
 \]
 
-Also
-
-\[
-R_2(B,Q)\le d\lfloor |B|/2\rfloor.
-\]
-
-If `Q` is triple-free, `Psi(Q)=0` and `K_3<=2`, giving
+If `Q` is triple-free, this becomes
 
 \[
 N_{\mathrm{new}}(B,Q)
@@ -276,8 +262,85 @@ N_{\mathrm{new}}(B,Q)
 R_2(B,Q)+2C(d,2)+7\Psi(B).
 \]
 
-This replaces the previous full-side congestion by the actual response load on
-background-triple lines.
+## Geometric-fibre correction
+
+Matching normalization remains exact for perfect-matching counts, rook numbers
+and contracted prescription probabilities. It is not automatically a quotient
+of standard-grid geometry.
+
+For every `d>=3`, the only simultaneous coordinate permutation fixing `0,1` and
+preserving all standard-grid collinear triples is the identity. In particular,
+the residual `S_{d-2}` matching stabilizer generally changes collinearity,
+primitive directions, line heights, multiplicities and geometric offspring rows.
+
+Therefore the 45 side-four and 124 side-five canonical hosts are matching
+denominator classes only. A geometric table must do one of the following:
+
+1. expand every exact geometric state in each matching fibre;
+2. quotient only by a verified automorphism of the complete line-incidence and
+   provenance signature; or
+3. take an explicit componentwise maximum over the geometric fibre.
+
+One arbitrary matching-orbit representative is not an honest geometric row.
+
+## Exact line-energy marginal and rook compiler
+
+For fixed background `B`, define
+
+\[
+a_1(x)=\sum_{\ell\ni x}C(|B\cap\ell|,2),
+\]
+
+\[
+a_2(\{x,y\})=|B\cap\ell(x,y)|,
+\]
+
+and let `a_3(P)` be the indicator that a response triple is collinear.
+
+For every response law,
+
+\[
+\mathbb E[\Psi(B\cup Q)-\Psi(B)]
+=
+\sum_xa_1(x)p(x)
++
+\sum_{|P|=2}a_2(P)p(P)
++
+\sum_{|P|=3}a_3(P)p(P).
+\]
+
+The rank-one term is an ordinary bipartite assignment score. Its expectation is
+bounded by one assignment dual or the superlevel cover compiler. Rank-two and
+rank-three are exact joint prescription marginals.
+
+For a uniform response host with
+
+\[
+Z=N_d(F),
+\qquad
+z(P)=N_{d-|P|}(F/P),
+\]
+
+the exact integer line-energy numerator is
+
+\[
+A_{\mathrm{line}}
+=
+\sum_xa_1(x)z(x)
++
+\sum_{|P|=2}a_2(P)z(P)
++
+\sum_{|P|=3}a_3(P)z(P).
+\]
+
+The direct strict-improvement certificate is
+
+\[
+A_{\mathrm{line}}<ZD.
+\]
+
+Corrected genuinely new rows can only reduce this numerator. The numerator must
+be computed separately in each exact geometric fibre.
 
 ## Combined return-selector assignment
 
@@ -291,30 +354,12 @@ h_T(a)=g_{\mathrm{ret}}(a)+Tg_{\mathrm{sel}}(a).
 The coupled scalar is
 
 \[
-\alpha+T\beta=\sum_a p(a)h_T(a),
+\alpha+T\beta=\sum_a p(a)h_T(a).
 \]
 
-where `p` is a doubly stochastic response-edge marginal. One rational assignment
-dual below one certifies the complete block.
-
-For score superlevels `E_j={a:h_T(a)>=tau_j}`,
-
-\[
-\max_Q\sum_{a\in Q}h_T(a)
-\le
-\sum_j(\tau_j-\tau_{j-1})\nu(E_j).
-\]
-
-By Konig's theorem, every matching number may be replaced by an explicit
-source/target cover. If class `s` has score cap `H_s` and cover `C_s`, nested
-covers give the feasible dual objective
-
-\[
-\sum_{z\in L\cup R}\max\{H_s:z\in C_s\}.
-\]
-
-An objective below one, or its strict denominator-cleared form, proves
-`alpha+T beta<1` without adding incompatible return and selector maxima.
+One rational assignment dual or class-supported superlevel cover objective below
+one certifies the complete block. The exact line-energy coefficients and owner
+supports now provide geometric score inputs.
 
 ## Owner-support capacities
 
@@ -326,30 +371,12 @@ at most
 \mu(A)C(d-1,r-1).
 \]
 
-A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With packed
-multiplicity caps, expected new owned collateral is at most
-
-\[
-\mu(A)
-\left[
-\Phi(|B|,H_1)+H_2(d-1)+C(d-1,2)
-\right].
-\]
-
-The background-potential version replaces the first two terms by
-
-\[
-\lfloor |B|/2\rfloor+3\Psi(B)
-+
-(2+\Psi(B))(d-1).
-\]
-
-Destruction above either applicable quantity gives a strict response, provided
-every retained recurrent child owner lies in `A` and all other child classes have
-already been included or routed away.
+A source/target vertex cover of size `k` may replace `mu(A)` by `k`. Geometric
+multiplicity coefficients may be taken from exact line loads, packed secants,
+background potential or the full line-energy marginal row.
 
 Prime-field reused-support states have fixed support size one or two. They enter
-this closure when every retained child owner lies in that terminal support.
+this closure only when every retained child owner lies in that terminal support.
 
 ## Critical-selector capacity compiler
 
@@ -364,53 +391,38 @@ criticality is impossible and
 
 \[
 \eta=(D-C)/D,
-\]
-
-with restoration cap
-
-\[
+\qquad
 T_C=
 \left\lfloor
 D[2(n-1)+B]/((n-1)(D-C))
 \right\rfloor.
 \]
 
-This cap feeds directly into `h_{T_C}` and the shared assignment/cover
-certificate. Exact rook numerators, thin probability caps, distinct rank mass,
-owner supports and line-profile multiplicity bounds are simultaneous constraints.
+This cap feeds directly into the shared assignment/cover certificate. Exact rook
+numerators, thin probability caps, distinct rank mass, owner supports and
+line-energy coefficients are simultaneous constraints.
 
 ## Prime-field root, fixed-interface and thin bases
 
 For envelope exponent `k>=2`, root-channel normalization enters a strict child
 factor. At `k=1`, every root channel contains at most one ordered pair and a
 support of size one or two. First support use is finite resource. Recurrence is
-reused support, returned-edge currency or one exact fixed-interface atom; the
-broad prime-field root-translation row is removed.
+reused support, returned-edge currency or one exact fixed-interface atom.
 
-Every opposite matching and forbidden target may be normalized to
+The normalized matching-level census remains:
 
-\[
-(O,e)=(I_d,(0,1)).
-\]
-
-The residual stabilizer is `S_{d-2}`. Deleted traces, interface prescriptions and
-all owner/collision/local-line/CRT labels are canonicalized equivariantly. One
-exact row is computed per orbit and every orbit certificate lifts to the fully
-labelled table.
-
-The exhaustive normalized matching-level census through side five is:
-
-| side | canonical hosts | endpoint |
+| side | matching-level canonical hosts | endpoint |
 |---:|---:|---|
 | 2 | 0 | no extension-free response |
 | 3 | 4 | every positive rank-at-most-three prescription is forced |
 | 4 | 45 | nonforced caps `3/4`, `2/3`, `1/2` in ranks one, two, three |
 | 5 | 124 | caps `2/3`, `2/5`, `1/4`; no forced positive rank-at-most-three prescriptions |
 
-The next census must retain each geometric line profile, candidate multiplicity
-and absolute owner.
+These counts provide denominator fibres. The final geometric row count must be
+obtained by the geometric-fibre compiler, not by assuming residual permutation
+symmetry.
 
-## Certified auxiliary-block elimination
+## Certified auxiliary elimination and CRT assembly
 
 For a labelled recurrent block
 
@@ -419,13 +431,7 @@ M=\begin{pmatrix}A&B\\C&D\end{pmatrix}
 \]
 
 with an already certified auxiliary module satisfying `rho(D)<1`, the exact
-nonnegative resolvent is
-
-\[
-R_D=(I-D)^{-1}.
-\]
-
-CMR1694--CMR1701 prove
+nonnegative resolvent is `(I-D)^{-1}` and
 
 \[
 \rho(M)<1
@@ -433,46 +439,23 @@ CMR1694--CMR1701 prove
 \rho\bigl(A+B(I-D)^{-1}C\bigr)<1.
 \]
 
-The lift is constructive and rational. Clearing denominators gives a finite
-strict integer certificate. Certified thin, fixed-interface or support modules
-may therefore be eliminated before the final core search. Uncertified
-reused-support modules remain explicit.
-
-## Label-preserving balanced/CRT assembly
-
-Collision, local-line, factor and fixed-interface provenance must remain in the
-exact state. Premature label merging can create artificial cycles.
-
-After retaining those labels, contract exact strongly connected components. If
-every recurrent block `D_i` has
-
-\[
-D_iv_i\le v_i-s_i,
-\qquad s_i>0,
-\]
-
-reverse-topological rational scaling glues all finite transfer collateral into
-one global vector `Av<v`. Clearing denominators gives an independently checkable
-integer certificate.
+All geometric, owner, collision, local-line and CRT labels remain until exact
+orbit equivalence or honest domination is proved. Certified SCCs then glue by
+reverse-topological rational scaling and denominator clearing.
 
 ## Genuine current frontier
 
-1. **Response line-profile control.** Bound `R_2(B,Q)`, `K_3(B,Q)` and `Psi(Q)`
-   through response selection, exact owner/height/token/prefix/carry classes, or
-   canonical thin-host enumeration.
-2. **Line-clean integer slacks.** Insert the best of the packed-height,
-   background-potential and exact line-energy rows into the exact/universal
-   line-clean budgets.
-3. **Return class geometry.** Use the same line profiles, multiplicities and
-   owner covers to control `h_T` and produce a shared dual below one.
-4. **Selector capacities.** Combine exact rook numerators, thin caps, distinct
-   rank mass and line-profile multiplicity capacities.
-5. **Canonical geometric offspring.** Enumerate line profiles and absolute owners
-   on the 45 side-four and 124 side-five hosts; certify and eliminate their orbit
-   tables.
-6. **Reused support.** Apply the one/two-edge owner-support and line-energy
-   closures, then certify surviving high-load or out-of-support rows.
-7. **Final labelled quotient.** Certify remaining collision/local-line SCCs,
+1. **Geometric fibre census.** Expand the side-four/five matching denominator
+   classes into exact standard-grid geometric fibres or honest fibre maxima.
+2. **Exact line-energy numerators.** Compute `a_1,a_2,a_3` and every contraction
+   numerator `z(P)` in each fibre.
+3. **Rank-one assignment covers.** Certify the `a_1` score by source/target covers;
+   compute or bound rank-two and rank-three marginals exactly.
+4. **Return and selector rows.** Insert the same geometric marginal coefficients
+   into `h_T` and selector denominator capacities.
+5. **Auxiliary orbit certificates.** Certify and eliminate geometric thin,
+   fixed-interface and small-support modules by exact resolvents.
+6. **Final labelled quotient.** Certify remaining collision/local-line SCCs,
    publish one strict integer quotient and apply CRT gluing.
 
 ## Corrections retained
@@ -499,16 +482,15 @@ integer certificate.
 - First restoration/support/signature labels are finite, but repeated labels are
   genuine recurrent currency.
 - Rooted trace and prime-field batching do not add historical destroyed loads.
-- Superlevel matching numbers at different thresholds need not be attained by
-  one response; they form an upper certificate, not an exact assignment identity.
-- Symmetry normalization may rename labels but may not discard collision,
-  local-line, owner or CRT provenance.
 - Rank-mass conservation is for distinct prescriptions in one current response
   law. Candidate multiplicity and historical families are separate.
-- Background triple counts become spendable currency only through the explicit
-  labelled congestion maps.
+- Background triple counts become spendable currency only through explicit
+  current labelled congestion maps.
 - Triple-free response bounds are conditional on the chosen host containing such
   a response.
+- Matching-level permutation symmetry does not preserve Euclidean collinearity.
+- One geometric representative cannot stand for an entire matching fibre without
+  exact equivalence or honest domination.
 - Owner-support closure applies only when every retained child owner lies in the
   claimed support.
 - Auxiliary resolvent elimination applies only after the auxiliary block has a
@@ -516,13 +498,12 @@ integer certificate.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR1773**, the broad recurrent fronts are
-reduced to class-supported return assignment covers, exact geometric
-multiplicity and line-energy formulas, packed and potential-based line-clean
-closures, selector denominator slacks, a complete matching-level rank-one/two/
-three census through side five, certified auxiliary resolvents and a label-
-preserving CRT certificate protocol.
+There is no complete proof. Through **CMR1789**, the broad recurrent fronts are
+reduced to exact geometric-fibre rows, line-energy marginal and integer rook
+certificates, class-supported return assignment covers, selector denominator
+slacks, matching denominator censuses through side five, certified auxiliary
+resolvents and a label-preserving CRT protocol.
 
-The remaining obstruction is geometric and numerical: control the exact response
-line profiles, certify every surviving labelled block, and publish the final
+The remaining obstruction is numerical and geometric: execute the geometric
+fibre census, certify every surviving labelled block, and publish the final
 strict integer quotient.
