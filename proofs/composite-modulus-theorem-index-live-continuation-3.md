@@ -57,46 +57,53 @@ The authoritative live ledger is split across:
 | CMR1558--1565 | Optimal paid-pair threshold, candidate-free bounded restoration, first-restoration stock, exact selector-to-return row, two-row spectral criterion, integer certificate form, uniform gap cap, and the selector-return endpoint | PROVED; exact thresholds, restoration histories, two-row systems and uniform-gap caps checked | `docs/298-prime-power-paid-pair-selector-return-splice.md` |
 | CMR1566--1573 | Root-centre stock, trace batching, fixed nonaxis line, target-disjoint rooted trace, strong/singleton coefficient classification, rooted trace execution, master trace alternative, and the trace-row endpoint | PROVED; centre batching and exact rooted-line classes checked | `docs/299-prime-power-trace-centre-line-clean-splice.md` |
 | CMR1574--1581 | Source/target exchange bijections, alternating-cycle labels, entering-owner support, returned-predecessor transport, exact classwise kernel, owner bounds, honest coarse return quotient, and return-selector coupling | PROVED; matching transitions and exact transported credit classes checked | `docs/300-prime-power-returned-edge-exchange-kernel.md` |
+| CMR1582--1589 | Rational response marginals, exact return/selector owner expansions, scalarized combined score, shared assignment primal/dual, direct spectral certificate, integer clearing, coarse exchange classes, and the assignment endpoint | PROVED; rational laws, conditional owner loads, shared assignment bounds and integer dual checks | `docs/301-prime-power-return-selector-assignment-scalarization.md` |
+| CMR1590--1597 | Common weighted line-clean count, rational-factor clearing, three class inequalities, exact integer budgets, rank-pure ranges, availability budget, positive slack, and the integer-budget endpoint | PROVED; mixed rational/integer comparisons, maximal thresholds and slack checks | `docs/302-prime-power-line-clean-integer-credit-budgets.md` |
+| CMR1598--1605 | Exact selector class decomposition, gap dichotomy, probability-to-count conversion, uniform candidate lower bounds, integer localization, refined geometric concentration, selector normal form, and the critical-selector endpoint | PROVED; class systems, candidate-count bounds, restoration gaps and integer localization checked | `docs/303-prime-power-critical-selector-profile-localization.md` |
+| CMR1606--1613 | Prime-field singleton root channels, exact pair stock, support size, first-use resources, terminal signatures, batching, reused-support/fixed-interface splice, and the prime-field root endpoint | PROVED; ordered pairs, supports, histories and signature batching checked | `docs/304-prime-field-root-channel-support-splice.md` |
+| CMR1614--1621 | Exact prescription stocks, first/repeated interface signatures, rook probabilities, rational offspring rows, finite thin-board stock, certificate compiler, and the fixed-interface/thin endpoint | PROVED; prescription enumeration, exact contractions, rational rows and thin-table bounds checked | `docs/305-prime-power-fixed-interface-thin-exact-table.md` |
+| CMR1622--1629 | Exact interface-label refinement, labelled SCC reduction, spectral maximum, constructive rational gluing, integer scaling, artificial-cycle warning, recurrent block schema, and label-preserving CRT assembly | PROVED; random block systems, projections, integer checks and honest fibre maxima checked | `docs/306-prime-power-label-preserving-crt-certificate-assembly.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-Strict depth transfers, first-use private resources and depth-zero child channels
-lie on finite acyclic transfer graphs.  Loaded-owner and translated private
-currencies have disjoint owner support.
-
-The line-clean response has zero same-owner/same-line collateral and exact
-strong, singleton and endpoint-overlap coefficients.  Subunit paid-pair
-selectors have zero candidate self-row and a bounded splice into repeated edge
-return.  Rooted trace recurrence has finite centre stock and then enters only a
-strong or singleton line-clean row.
-
-CMR1574--CMR1581 now make the return coefficient exact.  For a reset `M to M'`,
-every vacated edge has one canonical same-source entering partner.  Every
-recreated credit is assigned to its absolute last-entering owner and transported
-to that owner's vacated predecessor.  For every coarse credit class `b`,
+The return-selector block is now one shared assignment problem.  With selector
+cap `T`, its exact scalar score is
 
 \[
-N_b(M,M')
-=
-\sum_{f\in M\setminus M'}K_{f,b}(M,M').
+h_T(a)=g_{\rm ret}(a)+Tg_{\rm sel}(a),
 \]
 
-Grouping exact entries by finite returned-edge/entering-owner exchange signatures
-gives an honest integer or rational return upper quotient.  Its row sums into
-return and selector classes are the previously abstract coefficients
-`(alpha,beta)`.  Coupling to a selector cap `T` is subcritical exactly when
+and one rational assignment dual of objective below one proves the complete
+coupled block subcritical.  Separate worst return and selector matchings need not
+be added.
+
+Every line-clean class has the common integer weighted count
 
 \[
-\alpha+\beta T<1.
+W_d=(d-1)(d-2)V_1+(d-2)V_2+V_3+(m+1)b(d-1)(d-2)
 \]
 
-The active frontier is now:
+and one exact positive integer slack.  Critical selectors either lie in a
+bounded return-splice gap class or concentrate in one finite rank/profile/
+geometric class.  Prime-field root channels are singleton support states; first
+support use is finite resource, and recurrence is reused support, return or one
+exact fixed-interface atom.
 
-1. bound the exact return exchange kernel by owner, line-height, token, prefix
-   and carry classes and verify `alpha+beta T<1`;
-2. compare the line-clean coefficient classes with destroyed credit, using the
-   rooted-trace exclusion of endpoint overlap where applicable;
-3. treat critical candidate bands `A_L>=1`, residual trace incidences, and
-   recurrent root/fixed-interface and thin/prime-field rows;
-4. assemble the surviving exact rational/integer quotient `Av<v`; and
-5. complete balanced/CRT assembly with collision and local-line classes.
+Repeated fixed-interface atoms have rank at most two and exact rook-ratio rows.
+For every chosen thin-side cap, the complete base table is finite and admits an
+exact integer-certificate search.  Collision and local-line labels must be
+retained through balanced/CRT assembly; once each labelled recurrent block is
+certified, reverse-topological rational scaling glues all finite transfer
+collateral.
+
+The active frontier is now numerical:
+
+1. bound the combined return-selector edge score by owner, line-height, token,
+   prefix and carry classes and construct a shared assignment dual below one;
+2. prove positive line-clean integer slacks from inherited geometric candidate
+   and unavailable-edge bounds;
+3. certify the finitely concentrated critical selector classes;
+4. execute and certify the required fixed-interface and thin-side base tables,
+   including residual trace incidences whose rooted centre cannot be targeted;
+5. certify every remaining labelled recurrent collision/local-line block and
+   publish the final integer quotient certificate before CRT gluing.
