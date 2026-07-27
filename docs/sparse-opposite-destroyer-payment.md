@@ -2,11 +2,11 @@
 
 **Branch:** `research/sparse-algebraic-spread`
 
-SAS5gb--SAS5gf physically install a large current bank of negative mixed-curvature records.  Every
-installed record retains a legal opposite constituent swap which destroys it after its creator.  The
-remaining issue is payment: destroying the bank may create other exact records.
+SAS5gg--SAS5gk give a lossless table-and-energy trichotomy for a low-cost installed negative bank.
+That theorem can stop at an opposite base barrier, current-only payment or composed-only output without
+executing the retained destroyers.  This note adds the physical continuation: every installed record
+retains a legal opposite constituent swap, and the complete opposite-destroyer stage is executed.
 
-This note executes the complete opposite-destroyer stage on an interaction-independent installed bank.
 Either the destruction stage pays the bank by quantified energy descent, or its complete new-output
 ledger is itself a large realized one-swap word/column bank.  Combining the creator and destroyer stages
 gives an actual net descent whenever the creator-density scale is smaller than the destruction margin.
@@ -39,7 +39,7 @@ Assume the **opposite-destroyer payment contract**:
 
 Additional destroyed current records are allowed and only improve the payment estimate.
 
-## SAS5gg -- exact opposite-destroyer payment inequality -- PROVED
+## SAS5gl -- exact opposite-destroyer payment inequality -- PROVED
 
 For every selected square,
 
@@ -56,7 +56,7 @@ counted in `F_a`, while additional destroyed records only lower the energy chang
 inequality.  Complete-scope independence makes every exact record respond to at most one selected
 destroyer, so the simultaneous complete-ledger difference is the sum of the local differences. QED.
 
-## SAS5gh -- destruction descent or realized output bank -- PROVED
+## SAS5gm -- destruction descent or realized output bank -- PROVED
 
 Fix `epsilon in (0,1)`.  Exactly one of the following weighted alternatives holds:
 
@@ -66,13 +66,13 @@ Fix `epsilon in (0,1)`.  Exactly one of the following weighted alternatives hold
 
 ### Proof
 
-In the first branch apply SAS5gg.  In the second branch, the complete output ledger consists of exact
+In the first branch apply SAS5gl.  In the second branch, the complete output ledger consists of exact
 records present after the jointly legal destruction stage; alias aggregation makes their union distinct
 and its weight is `F`. QED.
 
-## SAS5gi -- fresh word and column localization -- PROVED
+## SAS5gn -- fresh word and column localization -- PROVED
 
-In the output-bank branch of SAS5gh, one of the twelve retained one-swap word classes has realized weight
+In the output-bank branch of SAS5gm, one of the twelve retained one-swap word classes has realized weight
 greater than
 
 `(1-epsilon)R/12`,
@@ -90,7 +90,7 @@ contributes its weight to three distinct physical columns.  Pigeonhole over the 
 The output is physically present after the destruction stage.  It enters the realized repair-bank
 router once its declared opposite ledger is supplied.
 
-## SAS5gj -- net two-stage descent or recycling -- PROVED
+## SAS5go -- net two-stage descent or recycling -- PROVED
 
 Suppose the creator stage has energy cost at most `kappa_0 R`, with
 
@@ -104,17 +104,17 @@ Then either:
    `(epsilon-kappa_0)R`;
 
 2. the final state contains realized output weight greater than `(1-epsilon)R`, with the word and column
-   bounds of SAS5gi;
+   bounds of SAS5gn;
 
 3. or one creator-stage or opposite-destroyer payment field fails.
 
 ### Proof
 
 In the destruction-descent branch, add creator cost at most `kappa_0R` to destruction change at most
-`-epsilon R`.  The net change is at most `-(epsilon-kappa_0)R`.  The other branch is SAS5gh--SAS5gi.
+`-epsilon R`.  The net change is at most `-(epsilon-kappa_0)R`.  The other branch is SAS5gm--SAS5gn.
 QED.
 
-## SAS5gk -- integrated installed-negative-bank payment router -- PROVED UNDER THE DECLARED CONTRACTS
+## SAS5gp -- integrated installed-negative-bank payment router -- PROVED UNDER THE DECLARED CONTRACTS
 
 Let the original matched bank have weight `M` and square interaction degree `D_sq`.  In the low-cost
 installation branch of SAS5gf,
@@ -140,15 +140,15 @@ For `0<kappa_0<epsilon<1`, one has:
 
 ### Proof
 
-Apply SAS5gj and substitute the strict lower bound for `R`.  The word denominator gains the factor
+Apply SAS5go and substitute the strict lower bound for `R`.  The word denominator gains the factor
 twelve; the column denominator gains the factor `4N`.  Retain the high creator-barrier and failed
 contract alternatives from SAS5gf. QED.
 
 ## Corrected SAS6 frontier
 
-A low-cost installed negative bank no longer stops at current-record mass.  Its known opposite destroyers
-either convert creator cost into strict net two-stage descent or recycle a constant fraction into a
-physically realized one-swap word and column bank.
+The algebraic installed-bank trichotomy now has a physical destroyer continuation.  A low-cost installed
+negative bank either converts creator cost into strict net two-stage descent or recycles a constant
+fraction into a physically realized one-swap word and column bank.
 
 The remaining sparse work is supplying and paying the recycled output's opposite ledger, choosing global
 `lambda,theta,kappa_0,epsilon` scales, proving creator/destroyer joint legality in every arithmetic word
