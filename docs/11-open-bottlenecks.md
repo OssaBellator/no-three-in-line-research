@@ -2,19 +2,22 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR1973 the branch has:
+The no-three-in-line conjecture remains open. Through CMR1997 the branch has:
 
 - exact structural/SCC reductions and label-preserving CRT gluing;
 - exact rook response laws and line-clean integer budgets;
 - a corrected 740-host side-four/five geometric layer;
+- stable canonical primary keys for all 740 raw hosts;
 - exact response-averaged line moments and rank-three slack budgets;
+- a deterministic 89-host uniform-exceptional priority manifest;
+- exact rank-three best-response selectors on all raw hosts;
+- an explicit eleven-host positive-minimum rank-three core;
 - primitive geometric witness reconstruction;
 - absolute last-entering owners and total witness fate maps;
 - exact source-to-assignment coefficient bundles;
 - exact destroyed-current-triple reconstruction;
 - static conflict-compatible credit reuse and the exact scalar response pool;
 - literal before/after triple counts for every finite response;
-- deterministic exact best-response selection;
 - an exact decomposition of every pool-bound loss;
 - nested assignment bounds, one unified outer score and an integer checker.
 
@@ -26,8 +29,8 @@ The honesty condition remains:
 > finite response, finite resource use and structural descent are not by themselves
 > potential improvement.
 
-A completion must exhibit a lower-potential response or an exact weighted
-inequality guaranteeing one.
+A completion must exhibit a lower-potential response or an exact weighted inequality
+guaranteeing one.
 
 ## 2. Closed structural components
 
@@ -46,15 +49,37 @@ modules eliminate through
 A+B(I-D)^{-1}C.
 \]
 
-Reverse-topological rational scaling absorbs finite off-diagonal transfers and
-clears to one global integer certificate.
+Reverse-topological rational scaling absorbs finite off-diagonal transfers and clears
+to one global integer certificate.
 
-## 3. Current finite geometric data
+## 3. Canonical raw-host catalogue
 
-The corrected geometric layer contains 86 side-four and 654 side-five raw hosts.
-For every one of these 740 hosts the exact response denominator, every matching,
-every nonaxis occupancy capacity, every response-averaged line moment, the exact
-rank-three numerator and the rank-three slack are known.
+A raw host is the exact pair `(s,D)` of side and canonical partial-matching deletion
+set. Its fixed diagonal and target edge determine the full forbidden set.
+
+The canonical catalogue reconstructs:
+
+1. the complete forbidden edge set;
+2. all surviving perfect response matchings;
+3. every literal response triple count;
+4. the denominator `Z`;
+5. the uniform numerator `A_3`;
+6. the slack `S_3`;
+7. the response-triple histogram; and
+8. a stable record digest.
+
+The catalogue has 740 unique host IDs, 9,260 response records and fixed digest
+
+\[
+\texttt{f333bc7dda6fc5aa0de25336f641d4d444b601be0ff27ab59c9853361f6d1d92}.
+\]
+
+Every actual operation fibre must cite one canonical host ID and source-record digest.
+The ID is a primary key, not a quotient by symmetry, background or state semantics.
+
+## 4. Uniform rank-three priority manifest
+
+The exact uniform rank-three split is:
 
 | class | side four | side five | total |
 |---|---:|---:|---:|
@@ -62,14 +87,102 @@ rank-three numerator and the rank-three slack are known.
 | critical `S_3=0` | 6 | 38 | 44 |
 | excess `S_3<0` | 27 | 18 | 45 |
 
-For a strict host,
+For a critical or excess host, the minimum integer scalar correction required for
+uniform rank-three strictness is
 
 \[
-R_G(h)=\sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)\right]
-\le S_3-1.
+c_{\min}=1-S_3.
 \]
 
-## 4. Exact source, fate and coefficient path
+The 89 exceptional hosts have correction distribution
+
+| `c_min` | 1 | 2 | 3 | 4 | 5 |
+|---:|---:|---:|---:|---:|---:|
+| hosts | 44 | 14 | 18 | 12 | 1 |
+
+and total independent burden 179.
+
+They occupy 49 exact signatures
+
+\[
+(s,Z,S_3,|D|,\operatorname{hist}(\psi_3)).
+\]
+
+These signatures are reproducible work-sharing keys only. They do not establish
+Euclidean equivalence, common backgrounds, common owner/fate states or identical
+labelled offspring rows.
+
+## 5. Deterministic rank-three selector collapse
+
+For each raw host define
+
+\[
+m_3(H)=\min_{Q\in\operatorname{PM}(H)}\psi_3(Q)
+\]
+
+and choose the lexicographically first minimizer `Q_3^*(H)`.
+
+The exact minimum distribution is
+
+| `m_3` | 0 | 1 | 4 |
+|---:|---:|---:|---:|
+| hosts | 729 | 9 | 2 |
+
+In particular:
+
+- every side-five host has `m_3=0`;
+- every uniform-strict host has `m_3=0`;
+- every critical host has `m_3=0`;
+- 34 of 45 excess hosts have `m_3=0`;
+- 78 of 89 uniform-exceptional hosts have a zero-rank-three response;
+- the remaining eleven are side-four excess hosts with `S_3=-3`.
+
+Nine of the eleven have response histogram `{1^1,4^1}` and minimum one. Two have one
+available response with four collinear triples.
+
+This changes the worklist:
+
+1. uniform-average difficulty is no longer the correct first diagnostic when
+   deterministic response choice is allowed;
+2. the eleven positive-minimum hosts are the exact raw rank-three selector core;
+3. the other 729 raw hosts still require background and labelled-row verification.
+
+The selector cannot be substituted silently into a theorem whose policy is fixed to
+uniform response.
+
+## 6. Exact averaged geometry and residual budgets
+
+For every host and nonaxis line,
+
+\[
+z_r(G,\ell)=\sum_{Q\in\operatorname{PM}(G)}\binom{|Q\cap\ell|}{r},
+\qquad r=1,2,3.
+\]
+
+For background line loads `h_ell`,
+
+\[
+A_G(B)=\sum_\ell\left[
+\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)+z_3(G,\ell)
+\right].
+\]
+
+On a uniform rank-three-strict host,
+
+\[
+\sum_\ell\left[
+\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)
+\right]
+\le S_3-1
+\]
+
+is the exact remaining integer budget criterion.
+
+The deterministic selector should be tried first on an actual fibre. If background
+rank-one/rank-two terms change the best response, the complete literal census remains
+authoritative.
+
+## 7. Exact source, fate and coefficient path
 
 The raw source enumerates rank-one background-pair witnesses, rank-two
 background-point witnesses and rank-three response-triple witnesses. A strict
@@ -79,24 +192,29 @@ response-edge order gives
 \operatorname{own}(w)=\max_\prec P(w).
 \]
 
-Every witness is retained, deleted, transferred or dominated. The source exports
-one integer coefficient table, and the geometric bundle requires exact equality
-with the downstream edge/pair/triple table and the true denominator.
+Every witness is retained, deleted, transferred or dominated. The source exports one
+integer coefficient table, and the geometric bundle requires exact equality with the
+downstream edge/pair/triple table and true denominator.
 
-## 5. Exact removal geometry and scalar cancellation
+Canonical raw host linkage is now the first field of every future owner/fate source.
+
+## 8. Exact removal geometry and scalar cancellation
 
 For pre-response points `P` and removed subset `R`,
 
 \[
-\mathcal D(P,R)=\{T\in\binom P3:T\text{ collinear and }T\cap R\ne\varnothing\}.
+\mathcal D(P,R)=
+\{T\in\binom P3:T\text{ collinear and }T\cap R\ne\varnothing\}.
 \]
 
 Deleting `R` must leave exactly the source background. For each response,
 
 \[
 d(Q)=\#\{w\in W_{\rm del}:P(w)\subseteq Q\},
-\qquad K=\max_Qd(Q),
-\qquad U_{\rm pool}=|\mathcal D(P,R)|-K.
+\qquad
+K=\max_Qd(Q),
+\qquad
+U_{\rm pool}=|\mathcal D(P,R)|-K.
 \]
 
 The exact capacity hierarchy is
@@ -108,7 +226,7 @@ K\le\chi(\Gamma_{\rm del})\le\#W_{\rm del}.
 Static coloring is useful for fixed witness-level provenance. The response pool is
 the exact optimum for the unlabelled scalar potential after response selection.
 
-## 6. Literal response delta and exact selector
+## 9. Literal response delta and gap audit
 
 For each response matching `Q`, construct
 
@@ -116,28 +234,15 @@ For each response matching `Q`, construct
 P_Q^+=(P\setminus R)\cup Q.
 \]
 
-The direct checker counts every post-response triple and verifies
+The direct checker verifies
 
 \[
-W_r(Q)=n_r(Q),\qquad r=1,2,3,
-\]
-
-so that
-
-\[
-\boxed{
 \Delta\Psi(Q)
 =
 \Psi(P_Q^+)-\Psi(P)
 =
 W_1(Q)+W_2(Q)+W_3(Q)-|\mathcal D(P,R)|.
-}
 \]
-
-It publishes the lexicographically first response minimizing `Delta Psi(Q)`. A
-negative minimum is a constructive scalar improvement certificate.
-
-## 7. Exact upper-bound loss audit
 
 Let `B(Q)` be the coefficient-table score and `E_+(Q)` the occurring dominated
 multiplicity surplus. Then
@@ -150,26 +255,14 @@ multiplicity surplus. Then
 }
 \]
 
-The pool bound is tight exactly when `d(Q)=K` and `E_+(Q)=0`. Summing gives
+A failed pool sufficient inequality has exactly two possible causes:
 
-\[
--\sum_Q\Delta\Psi(Q)
-=
-(ZU_{\rm pool}-A_B)
-+
-\sum_Q(K-d(Q))
-+
-\sum_QE_+(Q).
-\]
+1. unused worst-case deletion capacity; or
+2. honest domination inflation.
 
-Therefore a failed pool sufficient inequality has only two possible causes:
+No third scalar loss term remains.
 
-1. the response does not use the worst-case deletion capacity; or
-2. the labelled table contains honest domination inflation.
-
-No other scalar error term remains.
-
-## 8. Direct versus scalable certificates
+## 10. Direct versus scalable certificates
 
 Use the literal response census whenever the complete finite parent fibre is
 available. It is authoritative for scalar real-triple improvement.
@@ -181,72 +274,94 @@ Use the pool, exact marginals, nested assignments and unified outer duals when:
 - multiple fibres must be dominated simultaneously; or
 - the recurrent matrix, rather than one scalar row, must be contracted.
 
-A negative direct scalar delta does not erase the need for labelled recurrent
-certificates when the selected child remains in a nontrivial SCC.
+A negative direct scalar delta does not erase the need for a labelled recurrent
+certificate when the selected child remains in a nontrivial SCC.
 
-## 9. Immediate execution order
+## 11. Immediate execution order
 
-### Priority 1: instantiate actual operation geometry
+### Priority 1: key every actual fibre
 
-For each of the 740 raw hosts and each retained background/provenance fibre:
+For each actual owner/provenance fibre:
 
-1. record the exact pre-response point set;
-2. record the points actually removed;
-3. verify the surviving ordered background;
-4. enumerate the actual destroyed current triples;
-5. record the response-edge entry order.
+1. cite the canonical raw `host_id`;
+2. cite the full source-record digest;
+3. verify side, deletion set, response denominator and response list;
+4. reject any unkeyed or mismatched fibre.
 
-### Priority 2: run the literal response census
+### Priority 2: instantiate actual operation geometry
 
-For every genuine operation/fate map:
+Record:
 
-1. construct every literal post-response point set;
-2. count rank-one, rank-two and rank-three new triples independently;
-3. verify the primitive-witness bijections;
-4. compute every exact `Delta Psi(Q)`;
-5. publish the deterministic exact minimizer and minimizer count.
+1. the exact pre-response point set;
+2. the points actually removed;
+3. the surviving ordered background;
+4. the actual destroyed current triples;
+5. the response-edge entry order;
+6. all owner/provenance/state labels.
 
-### Priority 3: compute and audit the pool certificate
+### Priority 3: try the canonical rank-three minimizer
 
-1. enumerate the deleted-load histogram `d(Q)`;
+For each actual fibre:
+
+1. load `Q_3^*(H)`;
+2. evaluate its literal background rank-one and rank-two triples;
+3. compute its complete direct delta;
+4. accept it when it is genuinely minimizing and improving;
+5. otherwise enumerate every response and publish the full direct minimizer.
+
+### Priority 4: resolve the eleven-host rank-three selector core
+
+For the eleven positive-minimum side-four hosts, test:
+
+1. destroyed-triple cancellation;
+2. corrected genuinely-new witness deletion;
+3. nonuniform child weights;
+4. exact rather than peeled marginal rows;
+5. finer owner/interface state splitting;
+6. certified off-diagonal or auxiliary transfer.
+
+These hosts already have positive raw rank-three load before background terms.
+
+### Priority 5: exploit the other 78 uniform-exceptional selectors
+
+For each zero-rank-three exceptional host:
+
+1. keep the explicit rank-three-free response;
+2. compute its actual line and background costs;
+3. verify return and selector terms;
+4. attach the exact labelled child;
+5. retain correction/routing only when the complete row still requires it.
+
+### Priority 6: compute and audit pool certificates
+
+1. enumerate `d(Q)`;
 2. compute `K` and `U_pool`;
-3. compare the pool bound with every direct delta;
+3. compare every pool bound with the literal delta;
 4. separate capacity slack from domination surplus;
-5. refine only the component responsible for a failed strict inequality.
+5. refine only the component causing a failed inequality.
 
-### Priority 4: prove remaining fate semantics
+### Priority 7: prove remaining fate semantics
 
 For transferred or dominated witnesses:
 
-1. verify the exact child state and owner/provenance labels;
-2. verify strict structural descent or an already-certified auxiliary target;
-3. verify every domination multiplicity by an explicit upper argument;
-4. reject any fate whose evidence cannot be proved.
+1. verify exact child state and owner/provenance labels;
+2. verify strict structural descent or a certified auxiliary target;
+3. verify every domination multiplicity;
+4. reject any fate whose evidence is not proved.
 
-### Priority 5: close the 651 budgeted hosts
+### Priority 8: close all labelled rows
 
-For each rank-three-strict host and retained fibre:
+Combine:
 
-1. load `S_3-1`;
-2. add exact destroyed-triple information and `U_pool`;
-3. use the direct minimizer when it closes the scalar row;
-4. otherwise evaluate exact response-averaged line costs;
-5. insert return and selector coefficients;
-6. generate the unified labelled outer dual.
+1. exact direct selectors;
+2. uniform `S_3-1` budgets when applicable;
+3. destroyed-triple pool credits;
+4. exact line and marginal terms;
+5. return and selector coefficients;
+6. complete child weights;
+7. one unified outer dual.
 
-### Priority 6: resolve the 89 exceptional hosts
-
-Test, in order:
-
-1. literal exact response improvement;
-2. response-pool cancellation;
-3. corrected genuinely-new witness deletion;
-4. nonuniform child weights and owner-preserving routing;
-5. exact rather than peeled marginal rows;
-6. finer owner/interface state splitting;
-7. certified off-diagonal or auxiliary transfer.
-
-### Priority 7: publish and eliminate
+### Priority 9: publish and eliminate
 
 For each successful recurrent block:
 
@@ -254,55 +369,62 @@ For each successful recurrent block:
 2. generate all contracted and outer duals;
 3. record positive integer row slacks;
 4. pass the arithmetic checker;
-5. eliminate certified auxiliary modules through exact rational resolvents;
+5. eliminate certified auxiliary modules;
 6. solve remaining collision/local-line SCCs;
 7. clear denominators and publish the global CRT quotient.
 
-## 10. Genuine unresolved modules
+## 12. Genuine unresolved modules
 
-1. **Actual pre-response geometry.** The true point/removal data are not populated
-   for all 740 fibres.
-2. **Literal host censuses.** Exact post-response deltas and selectors are not yet
-   computed on every real owner/provenance fibre.
-3. **Pool-certified fate maps.** Deleted-load histograms and `K` values are not yet
+1. **Actual fibre linkage.** Real owner/provenance fibres have not all been attached to
+   canonical raw host IDs and record digests.
+2. **Actual operation geometry.** True point/removal/background data are not populated
+   for all fibres.
+3. **Full direct censuses.** The raw rank-three selector is known, but complete
+   background-dependent deltas are not yet computed everywhere.
+4. **Eleven-host rank-three core.** These side-four hosts need correction or routing
+   even before background terms.
+5. **Zero-rank-three exceptional rows.** The other 78 exceptional hosts still need
+   background and labelled-row closure.
+6. **Pool-certified fate maps.** Deleted-load histograms and `K` values are not yet
    populated everywhere.
-4. **Non-cancellation fate proofs.** Some domination and transfer evidence still
+7. **Non-cancellation fate proofs.** Some domination and transfer evidence still
    needs rule-specific verification.
-5. **Budgeted host rows.** The 651 strict hosts have not all combined `S_3-1`, direct
-   deltas, `U_pool`, line, return and selector coefficients.
-6. **Exceptional hosts.** The 89 critical/excess hosts still need corrected or
-   weighted fate maps.
-7. **Collision/local-line SCCs.** Fully labelled recurrent blocks still need strict
+8. **Collision/local-line SCCs.** Fully labelled recurrent blocks still need strict
    numerical certificates.
-8. **Global integer quotient.** No complete denominator-cleared certificate has
-   been published.
+9. **Global integer quotient.** No complete denominator-cleared certificate has been
+   published.
 
-## 11. Corrections that must remain active
+## 13. Corrections that must remain active
 
 - Historical selectors, traces, target lines and destroyed loads are not one
   simultaneous current family.
 - Finite scheduler termination is not potential improvement.
 - Rank-mass conservation counts prescriptions, not geometric multiplicities.
 - Matching normalization does not quotient Euclidean geometry.
+- Canonical response signatures are not semantic or geometric quotients.
+- A zero-rank-three response does not certify the complete row.
+- A raw rank-three minimizer need not minimize the full background-dependent delta.
+- A deterministic selector changes the policy relative to fixed uniform response.
 - Silent witness deletion is invalid.
 - Pool reuse is valid only for the unlabelled scalar triple potential after response
   selection.
-- A literal delta is valid only for the actual operation's point, removal and
-  insertion data.
+- A literal delta is valid only for actual point, removal and insertion data.
 - A negative literal scalar delta does not automatically certify a labelled SCC.
 - An upper-table failure does not imply failure of the exact literal row.
 - A transfer-role declaration does not prove the transition executes.
 - An evidence identifier does not prove domination or auxiliary subcriticality.
-- Passing source, direct, pool and coefficient checkers proves their stated finite
-  equalities only.
+- Passing source, selector, direct, pool and coefficient checkers proves their stated
+  finite equalities only.
 - Auxiliary resolvent elimination requires an already-proved strict certificate.
 
-## 12. Current endpoint
+## 14. Current endpoint
 
-Through **CMR1973**, the data path from primitive geometry to exact scalar
-improvement and the integer assignment LP is explicit and independently checkable.
-The literal response census now verifies the complete before/after triple change,
-and every loss in the pool upper table has an exact two-term decomposition. The
-unresolved core is to instantiate the real 740-host operation/fate data, prove the
-remaining state semantics, solve every labelled recurrent row and publish the final
-strict integer quotient.
+Through **CMR1997**, the raw finite layer has stable primary keys, an exact uniform
+priority worklist and a deterministic rank-three selector. The uniform 89-host
+exceptional set is no longer the right deterministic obstruction: 78 of those hosts
+have a zero-rank-three response, leaving eleven explicit side-four hosts in the raw
+rank-three selector core.
+
+The unresolved core is to instantiate the actual background/state fibres behind the
+canonical keys, verify complete direct deltas and semantic transitions, solve every
+labelled recurrent row and publish the final strict integer quotient.
