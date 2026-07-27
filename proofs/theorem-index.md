@@ -46,8 +46,9 @@ This ledger records only branch-specific results and corrections.
 | RI5ad | Every terminal interaction reduces to one-target incidence or an exact two-target hyperbola secant | PROVED | `docs/rational-inverse-terminal-interactions.md` |
 | RI5ae | Failed terminal active collateral localizes to one finite word/profile class with explicit raw weight | PROVED | `docs/rational-inverse-terminal-interactions.md` |
 | RI5af–RI5aj | Prime-field subgroup/coset addresses, physical root/image/scale reconstruction and polynomial RI component stocks | PROVED UNDER THE PRIME-FIELD PHYSICAL CONTRACT | `docs/rational-inverse-quotient-reconstruction.md` |
+| RI5ak–RI5ao | The conditional blocker average splits exactly into singleton, finite small-derangement and normalized large-rank profiles with explicit raw-weight constants | PROVED | `docs/rational-inverse-blocker-average-splitting.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
-| RI6 | Paid physical-lift localization and unconditional bank installation | OPEN; ABSTRACT PRIME-FIELD QUOTIENT LABELS RECONSTRUCTED | `docs/rational-inverse-expansion.md` |
+| RI6 | Paid physical-lift localization and unconditional bank installation | OPEN; ABSTRACT PRIME-FIELD QUOTIENT LABELS RECONSTRUCTED AND BLOCKER-REPAIR PROBABILITY SPLIT CLOSED | `docs/rational-inverse-expansion.md` |
 
 No statement here proves the global conjecture.
