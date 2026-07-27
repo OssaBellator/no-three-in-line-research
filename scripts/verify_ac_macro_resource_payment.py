@@ -75,11 +75,8 @@ def main():
                 break
 
             source_credit = sum(rho[u] * d_vec[u] for u in range(r))
-            creation_coords = [i for i in range(q) if c_vec[i] == 0]
-            r_total = rng.randint(0, source_credit) if creation_coords else 0
-            r_vec = [0] * q
-            for _unit in range(r_total):
-                r_vec[rng.choice(creation_coords)] += 1
+            r_total = rng.randint(0, source_credit)
+            r_vec = distribute(r_total, q, rng)
 
             old_m = m[:]
             old_s = s[:]
@@ -91,29 +88,24 @@ def main():
             assert all(value >= 0 for value in m)
             assert all(value >= 0 for value in s)
 
-            created = sum(max(m[i] - old_m[i], 0) for i in range(q))
-            consumed = sum(max(old_m[i] - m[i], 0) for i in range(q))
-
-            net_created = sum(max(m[i] - old_m[i], 0) for i in range(q))
-            net_consumed = sum(max(old_m[i] - m[i], 0) for i in range(q))
-            assert net_created == sum(r_vec)
-            assert net_consumed == sum(c_vec)
-            assert sum(m) - sum(old_m) == net_created - net_consumed
-            assert net_created <= source_credit
+            gross_created = sum(r_vec)
+            gross_consumed = sum(c_vec)
+            assert sum(m) - sum(old_m) == gross_created - gross_consumed
+            assert gross_created <= source_credit
 
             phi_new = sum(m) + sum(rho[u] * s[u] for u in range(r))
             stock_new = sum(s)
-            assert phi_new - phi_old <= -net_consumed
-            if net_consumed >= 1:
+            assert phi_new - phi_old <= -gross_consumed
+            if gross_consumed >= 1:
                 assert phi_new < phi_old
             else:
                 assert stock_new < stock_old
 
-            total_r += net_created
-            total_c += net_consumed
+            total_r += gross_created
+            total_c += gross_consumed
             for u in range(r):
                 total_d[u] += d_vec[u]
-            if net_created > 0:
+            if gross_created > 0:
                 positive_creation_steps += 1
 
             gate_len = rng.randint(1, l_cyc)
@@ -124,8 +116,8 @@ def main():
 
             assert cycles <= cycle_cap
             counts["accepted_cycles"] += 1
-            counts["created_units"] += net_created
-            counts["consumed_units"] += net_consumed
+            counts["created_units"] += gross_created
+            counts["consumed_units"] += gross_consumed
             counts["completed_gates"] += gate_len
             counts["control_edges"] += edge_len
 
