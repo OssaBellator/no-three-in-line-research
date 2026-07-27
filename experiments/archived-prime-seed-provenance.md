@@ -36,10 +36,21 @@ blob:       2b978710f7c315ad49020f449e81842e1c88fd06
 ```
 
 The RLE is retained verbatim in
-`experiments/p47-public-rle-certificate.json`. The standard row-pair code in
-the shared compact-code suite is regenerated from that independently decoded
-cell set.
+`experiments/p47-public-rle-certificate.json`.
 
-No proof claim is imported from either source. Repository checkers decode each
+The `p=59` record is derived from the complete coordinate description on
+
+```text
+https://commons.wikimedia.org/wiki/File:No-Three-In-Line_for_N=58.png
+```
+
+The page attributes the record to `Prellberg`, dated `2025-10-29`, under
+`CC BY-SA 4.0`. The 116 coordinates and attribution metadata are retained in
+`experiments/p59-wikimedia-coordinate-certificate.json`.
+
+The standard row-pair codes in the shared suite are regenerated from the
+independently decoded RLE or coordinate sets.
+
+No proof claim is imported from any source. Repository checkers decode each
 record, verify saturation, test every exact integer determinant, and derive
 their own two-permutation decomposition and relative cycle partition.
