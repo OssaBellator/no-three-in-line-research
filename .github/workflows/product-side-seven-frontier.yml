@@ -9,6 +9,14 @@ on:
       - scripts/product_side_seven_cache_engine.hpp
       - scripts/product_side_seven_tier_shard_digest.hpp
       - .github/workflows/product-side-seven-frontier.yml
+  pull_request:
+    branches:
+      - main
+    paths:
+      - scripts/measure_product_side_seven_tier_shard.cpp
+      - scripts/product_side_seven_cache_engine.hpp
+      - scripts/product_side_seven_tier_shard_digest.hpp
+      - .github/workflows/product-side-seven-frontier.yml
   workflow_dispatch:
     inputs:
       first_case:
