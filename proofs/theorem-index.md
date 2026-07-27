@@ -10,7 +10,8 @@ This is the branch-specific theorem ledger. Shared inputs on `main` are not dupl
 | SRR1d | Dense missing-edge hosts admit a state-normalized stationary four-cycle oracle | PROVED | `docs/dense-host-stationary-resampling.md` |
 | SRR2a | Deleted host matchings have exact extension counts and remote-cylinder locality | PROVED | `docs/deleted-matching-locality.md` |
 | SRR2b | Arbitrary sublinear missing-cell sets have rook-polynomial remote-cylinder locality | PROVED | `docs/sparse-hole-locality.md` |
-| SRR2 | General superregular lopsided remote-cylinder comparison | OPEN | `docs/superregular-resampling.md` |
+| SRR2c–SRR2e | Post-resampling cylinder probabilities equal conditional-uniform mass times the average reverse flaw-entry load ratio; Hall flows reduce the problem to cylinder-balanced column loads | PROVED | `docs/superregular-reverse-flow-cylinder-law.md` |
+| SRR2 | General superregular lopsided remote-cylinder comparison | OPEN; EXACT REVERSE-FLOW TARGET IDENTIFIED, CYLINDER-BALANCED BOUNDED-CYCLE HALL FLOW REMAINS | `docs/superregular-resampling.md` |
 | SRR3a | Two disjoint complete matchings admit a stationary four-cycle flaw-removal oracle | PROVED | `docs/complete-two-layer-resampling.md` |
 | SRR3b–SRR3e | Complete-host same-layer, untouched-layer, and mixed-layer locality | PROVED | `docs/complete-two-layer-resampling.md` |
 | SRR3f | Two dense host matchings admit a state-normalized stationary flaw-removal oracle | PROVED | `docs/dense-host-stationary-resampling.md` |
