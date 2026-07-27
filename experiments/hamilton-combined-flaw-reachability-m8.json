@@ -1,0 +1,18 @@
+{
+  "distance_distribution": {
+    "0": 28,
+    "1": 1560,
+    "2": 57408,
+    "3": 736212,
+    "4": 493728,
+    "5": 1304
+  },
+  "m": 8,
+  "maximum_distance_to_minimum": 5,
+  "maximum_strict_descent_horizon_upper_bound": 5,
+  "minimum_states": 28,
+  "minimum_triples": 0,
+  "states": 1290240,
+  "unreachable_states": 0,
+  "verified": true
+}
