@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX959
+# Product growing-direction theorem index: PX952--PX961
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -10,3 +10,5 @@
 | PX957 | Exact clean-top census for multiplicity-two cases `40` through `79` | PROVED FINITE | `docs/299-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-four-through-seven.md` |
 | PX958 | Exact shared bottom-CSP census for multiplicity-two cases `40` through `79` | PROVED FINITE | `docs/299-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-four-through-seven.md` |
 | PX959 | The finite cache boundary advances to `37,760` infeasible selectors with `34,099` unclassified | PROVED REDUCTION | `docs/299-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-four-through-seven.md` |
+| PX960 | A fixed selector has no clean bottom completion exactly when its collinear-triple coverage sets cover all bottom permutations | PROVED REDUCTION | `docs/300-low-multiplicity-bottom-triple-cover-certificates.md` |
+| PX961 | A fixed-top selector-family subproblem is infeasible exactly when every selector has a full bottom-permutation triple cover | PROVED REDUCTION | `docs/300-low-multiplicity-bottom-triple-cover-certificates.md` |
