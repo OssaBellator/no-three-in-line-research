@@ -30,6 +30,7 @@ def exact_stock_audit(counts):
             for y in range(n):
                 if x == y:
                     continue
+                counts["ordered_operations"] += 1
 
                 for i in range(3):
                     for j in range(3):
@@ -73,20 +74,33 @@ def weighted_pigeonhole_audit(counts):
     for _ in range(100000):
         n = rng.randint(4, 100)
         row_stock = math.comb(n, 3)
+        operation_stock = n * (n - 1)
         interaction_degree = rng.randint(0, 100)
         pair_mass = rng.randint(1, 10_000_000)
         word_type = rng.choice(("double", "singleton"))
 
-        stock = row_stock if word_type == "double" else (n - 2) * row_stock
+        record_stock = row_stock if word_type == "double" else (n - 2) * row_stock
         fresh_word_mass = pair_mass / (24 * (interaction_degree + 1))
 
-        used = min(stock, rng.randint(1, 500))
-        raw = [rng.random() for _ in range(used)]
-        scale = fresh_word_mass / sum(raw)
-        weights = [value * scale for value in raw]
+        used_operations = min(operation_stock, rng.randint(1, 300))
+        raw_operations = [rng.random() for _ in range(used_operations)]
+        operation_scale = fresh_word_mass / sum(raw_operations)
+        operation_weights = [value * operation_scale for value in raw_operations]
+        operation_mass = max(operation_weights)
 
-        assert max(weights) + 1e-12 >= fresh_word_mass / used
-        assert fresh_word_mass / used >= fresh_word_mass / stock - 1e-12
+        assert operation_mass + 1e-12 >= fresh_word_mass / used_operations
+        assert fresh_word_mass / used_operations >= fresh_word_mass / operation_stock - 1e-12
+
+        used_records = min(record_stock, rng.randint(1, 500))
+        raw_records = [rng.random() for _ in range(used_records)]
+        record_scale = operation_mass / sum(raw_records)
+        record_weights = [value * record_scale for value in raw_records]
+
+        assert max(record_weights) + 1e-12 >= operation_mass / used_records
+        assert operation_mass / used_records >= operation_mass / record_stock - 1e-12
+        assert max(record_weights) + 1e-12 >= (
+            fresh_word_mass / (operation_stock * record_stock)
+        )
 
         counts["weighted_systems"] += 1
         counts[f"{word_type}_weighted"] += 1
@@ -98,12 +112,13 @@ def main():
     weighted_pigeonhole_audit(counts)
 
     print("SAS fresh repair exact-record audit passed")
+    print(f"  ordered repair operations: {counts['ordered_operations']}")
     print(f"  double-scope words: {counts['double_words']}")
     print(f"  valid double-scope records: {counts['double_records']}")
     print(f"  singleton words: {counts['singleton_words']}")
     print(f"  valid singleton records: {counts['singleton_records']}")
     print(f"  canonical singleton addresses: {counts['singleton_addresses']}")
-    print(f"  weighted systems: {counts['weighted_systems']}")
+    print(f"  weighted operation/record systems: {counts['weighted_systems']}")
     print(f"  weighted double branches: {counts['double_weighted']}")
     print(f"  weighted singleton branches: {counts['singleton_weighted']}")
 
