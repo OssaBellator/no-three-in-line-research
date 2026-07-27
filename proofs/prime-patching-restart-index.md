@@ -26,12 +26,11 @@ transition addendum in
 | Coordinated repair census | The audited one-defect `p=17` state has no repair changing at most seven assignment positions | VERIFIED FINITELY | `docs/286` |
 | Signed orbit cycle-cover CSP | Swapped quarter-turn seeds are signed cycle covers whose four-cell orbit variables satisfy matching, duplicate-orbit, and line-capacity constraints | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/287` |
 | `p=37` exact local story | A four-line near-state has exact canonical signed repair radius thirteen and yields a valid seed | PROVED / VERIFIED FINITELY | `docs/288`--`docs/292` |
-| `p=41` near-state | A verified four-line near-state has common bad-owner set `{15,18,20}` | PROVED / VERIFIED FINITELY | `docs/293` |
+| `p=41` local obstruction | A verified four-line near-state has common bad-owner set `{15,18,20}` and no signed repair through support thirteen | PROVED / VERIFIED FINITELY | `docs/293`, `docs/297`--`docs/300` |
 | Public `p=47` RLE certificate | The first public `c4-46` RLE record is independently decoded, decomposed, and determinant-verified | VERIFIED FINITELY | `docs/294` |
 | Wikimedia `p=59` coordinate certificate | The complete public `N=58` coordinate record is independently decomposed and determinant-verified with attribution retained | VERIFIED FINITELY | `docs/295` |
 | Repair owner covers and target cycles | Bad lines impose weighted owner covers; target-change supports are derangements and disjoint cycle switches | PROVED / VERIFIED FINITELY | `docs/296` |
-| `p=41` target-change diagnostics | Deterministic sampling, exact residual permanents, monotone option signatures, and Hall witnesses audit the derangement-only subspace | PROVED / VERIFIED FINITELY / PARTLY NONEXHAUSTIVE | `docs/297`--`docs/299` |
-| `p=41` signed support thirteen | Pure orientation fixed points are separated from target cycles; every signed support thirteen is exhausted | PROVED / VERIFIED FINITELY | `docs/300` |
+| Public `p=41,43,53` archive certificates | First records of `n40_rot4`, `n42_rot4`, and `n52_rot4` are archive-hash, permutation, signed-cover, and determinant verified | PROVED / VERIFIED FINITELY | `docs/301` |
 
 ## Exact late theorem ranges
 
@@ -70,6 +69,7 @@ transition addendum in
 | PP3bhx--PP3bic | Residual target matrices, exact permanent census, and one-edge outer-space reduction | PROVED / VERIFIED FINITELY | `docs/298-p41-support-thirteen-residual-target-permanents.md` |
 | PP3bid--PP3bii | Monotone option support signatures, permanent reconstruction, and zero-support Hall witnesses | PROVED / VERIFIED FINITELY | `docs/299-p41-residual-option-support-signatures-and-hall-witnesses.md` |
 | PP3bij--PP3bip | Signed-support fixed-point decomposition, symmetric MRV, exhaustive support thirteen, and radius-fourteen lower bound | PROVED / VERIFIED FINITELY | `docs/300-signed-support-fixed-points-and-p41-radius-fourteen.md` |
+| PP3biq--PP3bix | Archive snapshot, exact row-pair decoding, swapped colouring, verified `p=41,43,53` seeds, and complete odd-prime suite through 73 | PROVED / VERIFIED FINITELY | `docs/301-public-rot4-prime-certificates-p41-p43-p53.md` |
 
 ## Current exact endpoint
 
@@ -93,10 +93,9 @@ orientation parities `[0,1,1]`, relative cycles `[14,14,6,2]`, and all `59640`
 determinants are nonzero. The recorded near-state has exact orbit repair radius
 thirteen.
 
-At `p=41`, the verified four-line near-state has one quarter-turn bad-line
-orbit, owner set `{15,18,20}`, pair cycles `[10,5,4,1]`, and relative cycles
-`[10,10,10,4,4,2]`. Exact signed searches now exclude every support through
-thirteen. The support-thirteen ledger is
+At `p=41`, the recorded four-line near-state remains a sharp local obstruction.
+Its bad-owner set is `{15,18,20}`, and exact signed searches exclude every
+support through thirteen:
 
 ```text
 75,140 owner-feasible supports,
@@ -106,8 +105,9 @@ thirteen. The support-thirteen ledger is
 and no repair.
 ```
 
-Thus this near-state has `h_orbit>=14`. Support fourteen and the existence of a
-`p=41` seed remain open.
+Thus that particular near-state has `h_orbit>=14`; support fourteen remains
+open as a local repair question. Independently, the first public `n40_rot4`
+record gives a valid `p=41` seed, so seed existence at `p=41` is closed.
 
 The support correction is structural. Full signed support splits into a
 pure-orientation fixed set and a deranged target-change set. For the audited
@@ -117,26 +117,19 @@ support-thirteen family, the raw target-map space is
 444,634,193,203,200
 ```
 
-rather than the derangement-only count `172,130,180,910,480`. The permanent and
-sampling results in `docs/297`--`docs/299` audit the target-change-only subspace;
-`docs/300` closes the broader signed-support search.
+rather than the derangement-only count `172,130,180,910,480`.
 
-At `p=47`, the first public `c4-46` RLE record independently decodes to a
-quarter-turn swapped seed with all `125580` determinants nonzero. At `p=59`, an
-attributed public coordinate record gives a quarter-turn swapped seed with all
-`253460` determinants nonzero.
-
-The canonical exact certificate suite verifies
+The independently decoded first archive records for `n=40,42,52` give valid
+swapped quarter-turn seeds for `p=41,43,53`. Together with the earlier internal,
+RLE, coordinate, and archive certificates, the canonical exact suite now
+covers every odd prime through `73`:
 
 ```text
-p=3,5,7,11,13,17,19,23,29,31,37,47,59,61,67,73.
+p=3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,73.
 ```
 
-The next finite certificate gaps are
-
-```text
-p=41,43,53.
-```
+There is no remaining finite certificate gap in this range. These isolated
+certificates do not interpolate and do not prove asymptotic existence.
 
 The remaining theorem is:
 
@@ -158,6 +151,8 @@ python scripts/check_quarter_turn_seed_normal_forms.py \
   experiments/archived-prime-seed-codes.json
 python scripts/check_swapped_quarter_turn_orbit_csp.py \
   experiments/archived-prime-seed-codes.json
+python scripts/check_public_rot4_prime_certificates.py \
+  experiments/public-rot4-prime-certificates-p41-p43-p53.json
 python scripts/check_p37_swapped_orbit_support13_certificate.py \
   experiments/p37-swapped-orbit-support13-certificate.json \
   experiments/p37-swapped-quarter-turn-near-example.json
