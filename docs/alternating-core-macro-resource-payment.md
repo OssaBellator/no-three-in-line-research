@@ -24,11 +24,20 @@ Fix one root-boundary epoch.  Let:
 
 A completed canonical auxiliary cycle is **resource accepted** when it returns to the same finite
 boundary state and primitive lift and its resource/source update satisfies the contract below.
-For one execution put
+For one execution let `r_i,c_i` be the gross numbers of newly created and consumed occurrence
+units of resource type `i`, with
 
-`R=sum_i (m_i'-m_i)_+`,
+`0<=c_i<=m_i`
 
-`C=sum_i (m_i-m_i')_+`
+and
+
+`m_i'=m_i-c_i+r_i`.
+
+Created units receive new occurrence identities even when their type equals a consumed unit.  Put
+
+`R=sum_i r_i`,
+
+`C=sum_i c_i`
 
 and
 
@@ -70,9 +79,9 @@ hidden inside a finite auxiliary-state return.
 
 ### Proof
 
-Coordinatewise positive and negative parts give the first identity.  The second statement is item 3
-of the contract.  If `R>0` and every `d_u=0`, the right side vanishes, contradicting the strict
-positivity of `R`. QED.
+Summing `m_i'=m_i-c_i+r_i` over the resource types gives the first identity.  The second statement
+is item 3 of the contract.  If `R>0` and every `d_u=0`, the right side vanishes, contradicting the
+strict positivity of `R`. QED.
 
 The source address includes every field affecting conversion or payment status; equal geometric
 support alone is not a valid debit.
@@ -191,6 +200,6 @@ payment/ownership fields, and changes of law not declared as outer resets.
 ## Finite check
 
 `scripts/verify_ac_macro_resource_payment.py` samples integer resource/source systems and accepted
-macro histories.  It checks exact positive/negative-part accounting, source-faithful recreation,
+macro histories.  It checks exact gross occurrence accounting, source-faithful recreation,
 telescoping creation bounds, the accepted-cycle bound, lexicographic descent and the expanded
 root-return/control-edge budget.
