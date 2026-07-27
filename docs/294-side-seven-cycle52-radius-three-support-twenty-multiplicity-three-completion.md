@@ -98,9 +98,9 @@ Together with the one constructive multiplicity-four witness, this leaves
 71{,}860-37{,}600-1=\boxed{34{,}259}
 \]
 
-unclassified support-twenty selectors. None of the remaining selectors has multiplicity three.
+unclassified support-twenty selectors. The exact histogram in PX940--PX943 shows that these are precisely the `26,579` multiplicity-one selectors and `7,680` multiplicity-two selectors. Every selector of multiplicity at least three is now classified.
 
-The next finite target is therefore the next nonempty multiplicity tier, not another multiplicity-three shard. This sharpens the finite side-seven census but does not supply recursive product closure for arbitrary side length.
+The next finite target is therefore the multiplicity-two tier, followed by a cost audit before the much larger multiplicity-one census. This sharpens the finite side-seven census but does not supply recursive product closure for arbitrary side length.
 
 ## 5. Verification
 
