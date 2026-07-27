@@ -2,7 +2,6 @@
 """Check relative-permutation cycles and maximal-line constraints for seed certificates."""
 from __future__ import annotations
 import argparse, json, math
-from itertools import combinations
 from pathlib import Path
 from typing import Any
 
@@ -17,23 +16,24 @@ def is_prime(p:int)->bool:
         d+=2
     return True
 
-def norm_line(a:Point,b:Point)->tuple[int,int,int]:
-    x1,y1=a;x2,y2=b
-    A=y2-y1;B=x1-x2;C=-(A*x1+B*y1)
-    g=math.gcd(math.gcd(abs(A),abs(B)),abs(C))
-    A//=g;B//=g;C//=g
-    if A<0 or (A==0 and B<0):
-        A=-A;B=-B;C=-C
-    return A,B,C
-
 def maximal_lines(n:int)->list[tuple[Point,...]]:
-    pts=[(x,y) for x in range(1,n+1) for y in range(1,n+1)]
-    keys={norm_line(a,b) for a,b in combinations(pts,2)}
+    """Generate every maximal grid line containing at least three cells exactly once."""
     lines=[]
-    for A,B,C in keys:
-        line=tuple(p for p in pts if A*p[0]+B*p[1]+C==0)
-        if len(line)>=3:
-            lines.append(line)
+    for y in range(1,n+1):
+        lines.append(tuple((x,y) for x in range(1,n+1)))
+    for x in range(1,n+1):
+        lines.append(tuple((x,y) for y in range(1,n+1)))
+    for dx in range(1,n):
+        for dy in range(-(n-1),n):
+            if dy==0 or math.gcd(dx,abs(dy))!=1:continue
+            for x in range(1,n+1):
+                for y in range(1,n+1):
+                    px=x-dx;py=y-dy
+                    if 1<=px<=n and 1<=py<=n:continue
+                    line=[];X=x;Y=y
+                    while 1<=X<=n and 1<=Y<=n:
+                        line.append((X,Y));X+=dx;Y+=dy
+                    if len(line)>=3:lines.append(tuple(line))
     return lines
 
 def cycles(pi:list[int])->list[list[int]]:
