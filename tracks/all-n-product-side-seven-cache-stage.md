@@ -11,7 +11,7 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have classified every top-signature tier of multiplicity at least `5` and the
-first 1,480 signatures of multiplicity `4`:
+first 1,580 signatures of multiplicity `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -39,13 +39,14 @@ first 1,480 signatures of multiplicity `4`:
 | 5 | 725 | 3,625 | certified infeasible |
 | 4, shards 0--13 | 1,380 of 2,392 | 5,520 | certified infeasible |
 | 4, mixed shard 14 | 100 | 400 | 399 infeasible; 1 witnessed |
-| **Total** | **3,678 completed classes** | **23,320 rejected; 1 witnessed** | **1,182,736,279 rejection-CSP nodes** |
+| 4, shard 15 | 100 | 400 | certified infeasible |
+| **Total** | **3,778 completed classes** | **23,720 rejected; 1 witnessed** | **1,211,934,171 rejection-CSP nodes** |
 
-Thus `48,539` support-twenty selectors remain unclassified and active in this
+Thus `48,139` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The latest classified results are PX751--PX755 in
-[`docs/235-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fourteen-mixed.md`](../docs/235-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fourteen-mixed.md).
+The latest classified results are PX756--PX759 in
+[`docs/236-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fifteen.md`](../docs/236-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fifteen.md).
 
 ## First constructive witness
 
@@ -66,7 +67,8 @@ asserted 64-bit digest commits each complete ordered tier or shard transcript.
 `scripts/product_side_seven_tier_shard_digest.hpp` adds independently
 reproducible lexicographic shard intervals without checking in large case data
 tables. Mixed shard fourteen uses a dedicated verifier because it combines 399
-obstructions with one constructive witness.
+obstructions with one constructive witness. Subsequent scan workers preserve
+witness metadata and continue rather than terminating a range.
 
 PX743--PX744 add the first explicit proof-object pilot. For case `1180`,
 orientation `0`, and the first clean concatenated top order,
@@ -85,8 +87,8 @@ route.
 
 ## Immediate task
 
-The remaining multiplicity-four frontier begins at global case index `1480` and
-contains `912` top signatures and `3,648` selectors. Continue in independently
+The remaining multiplicity-four frontier begins at global case index `1580` and
+contains `812` top signatures and `3,248` selectors. Continue in independently
 reproducible intervals, with scan workers retaining witness data rather than
 terminating a range. In parallel:
 
@@ -108,10 +110,15 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard15.cpp \
+  -o /tmp/m4s15
+
+/tmp/m4s15
+
+g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard14_mixed.cpp \
   -o /tmp/m4s14
 
-/tmp/m4s14
 /tmp/m4s14 1392
 
 g++ -O3 -std=c++17 \
