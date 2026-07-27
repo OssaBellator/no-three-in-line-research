@@ -1,0 +1,64 @@
+{
+  "p": 37,
+  "base_bad_line_count": 4,
+  "bad_orbit_owners": [3, 15, 17],
+  "support_results": [
+    {
+      "support": 7,
+      "support_subsets": 25389,
+      "search_nodes": 2778,
+      "hall_failures": 2115,
+      "initial_domain_failures": 22980,
+      "repair_found": false
+    },
+    {
+      "support": 8,
+      "support_subsets": 37323,
+      "search_nodes": 22050,
+      "hall_failures": 11475,
+      "initial_domain_failures": 22317,
+      "repair_found": false
+    },
+    {
+      "support": 9,
+      "support_subsets": 43615,
+      "search_nodes": 96108,
+      "hall_failures": 28122,
+      "initial_domain_failures": 8499,
+      "repair_found": false
+    },
+    {
+      "support": 10,
+      "support_subsets": 40755,
+      "search_nodes": 338766,
+      "hall_failures": 82859,
+      "initial_domain_failures": 1050,
+      "repair_found": false
+    },
+    {
+      "support": 11,
+      "support_subsets": 30459,
+      "search_nodes": 1391239,
+      "hall_failures": 339893,
+      "initial_domain_failures": 36,
+      "repair_found": false
+    },
+    {
+      "support": 12,
+      "support_subsets": 18109,
+      "search_nodes": 6792398,
+      "hall_failures": 1670204,
+      "initial_domain_failures": 0,
+      "repair_found": false
+    }
+  ],
+  "total_support_subsets": 195650,
+  "total_search_nodes": 8643339,
+  "total_hall_failures": 2134668,
+  "total_initial_domain_failures": 54882,
+  "previous_exact_radius_excluded_through": 6,
+  "new_exact_radius_excluded_through": 12,
+  "minimum_pair_orbit_repair_support_lower_bound": 13,
+  "valid_seed_found": false,
+  "p37_infeasibility_proved": false
+}
