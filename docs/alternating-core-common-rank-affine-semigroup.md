@@ -90,7 +90,7 @@ the total number of expanding-address occurrences in the entire epoch is at most
 
 `floor(log_2(C/|c_0|))`.
 
-This bound is independent of how the finite-order addresses are interleaved.
+This bound is independent of how the common-centre unit-modulus addresses are interleaved.
 
 ### Proof
 
@@ -141,14 +141,14 @@ words and require a separate relation, ticket or descent theorem.
 For the finite live affine cycle-address family, at least one of the following explicit cases
 applies:
 
-1. **common rational centre:** use the integral defect `c=dh-a`;
+1. **common rational centre:** use the integral defect `c=dh-a`; this case includes any reset or
+   involution maps only when they share that centre with the whole family;
 2. **same-sign translation family:** use the monotone coordinate `h`;
-3. **finite-order/reset-only family:** quotient identities, resets and involutions using AC3rl;
-4. **mixed-sign translation family:** expose the finite increment set `{B_lambda}` and its
+3. **mixed-sign translation family:** expose the finite increment set `{B_lambda}` and its
    zero-sum cancellation relations;
-5. **mixed-centre affine family:** expose two addresses with no common fixed centre;
-6. **changed coefficients or interpretation:** outer reset;
-7. **non-affine memory:** outside the scalar-affine theorem.
+4. **mixed-centre affine family:** expose two addresses with no common fixed centre;
+5. **changed coefficients or interpretation:** outer reset;
+6. **non-affine memory:** outside the scalar-affine theorem.
 
 In cases 1 and 2, every bounded epoch has one common global repetition budget even under arbitrary
 interleaving.  In the unbounded case, the displayed defect or translation coordinate is a common
@@ -157,9 +157,10 @@ monotone gate unless a zero multiplier reaches the common fixed centre.
 ### Proof
 
 Test the finite family for the common-centre equations.  If they hold, use AC3rp--AC3rq.  If all
-multipliers equal one, inspect the finite increment signs and use AC3rr when they agree.  If only
-finite-order/reset maps remain, use AC3rl.  Failure of these algebraic tests gives the stated
-finite residual witnesses. QED.
+multipliers equal one, inspect the finite increment signs and use AC3rr when they agree.  Failure
+of these algebraic tests gives the stated finite residual witnesses.  Individual maps of order
+two are not quotiented separately when their centres differ: two such involutions may compose to
+a nontrivial translation, so they belong to the mixed-centre branch. QED.
 
 ## AC3rt -- conditional closure of ranked affine phase memory -- PROVED UNDER THE COMMON-RANK CONTRACT
 
@@ -172,31 +173,33 @@ More explicitly:
 
 - common-centre bounded defects admit finitely many expansions;
 - same-sign bounded translations admit finitely many nonidentity occurrences;
-- reset maps enter the fixed centre permanently;
-- unit-modulus maps belong to the finite quotient;
+- common-centre reset maps enter the shared fixed centre permanently;
+- common-centre unit-modulus maps preserve the finite centred quotient;
 - every remaining extracted cycle spends a finite ticket, decreases a common well-founded rank,
   or exits the epoch;
 - the acyclic residue between extracted cycles has the finite bound from AC3rd.
 
 ### Proof
 
-Use AC3rq and AC3rr for the two global interleaving budgets.  Remove quotient-stuttering and
-finite-order cycles.  Every remaining cycle occurrence is paid by the declared rank, ticket or
-exit contract.  Infinite continuation would force infinitely many bounded expansions,
-monotone bounded translations, rank decreases or ticket expenditures. QED.
+Use AC3rq and AC3rr for the two global interleaving budgets.  Absorb only the reset and
+unit-modulus maps already controlled by the common-centre coordinate.  Every remaining cycle
+occurrence is paid by the declared rank, ticket or exit contract.  Infinite continuation would
+force infinitely many bounded expansions, monotone bounded translations, rank decreases or
+ticket expenditures. QED.
 
 ## Corrected AC4 phase-memory frontier
 
 The unranked affine-semigroup obstruction is now reduced to two exact finite witnesses:
 
 - mixed-sign translation cancellation relations;
-- mixed-centre affine maps with no common rational fixed point.
+- mixed-centre affine maps with no common rational fixed point, including involutions or resets
+  whose different centres can generate translations under composition.
 
-Common-centre affine families, same-sign translations, resets, involutions, bounded defects and
-bounded translation ranges now have one global interleaving-safe rank.  Genuinely nonlinear
-path memory and changes not recorded as outer resets remain outside the theorem.  The other AC4
-interfaces remain fresh/recreated weighted capacity, unaddressed or nonadditive outputs, unpaid
-weighted loss, nonfactoring continuations, recreatable non-source tickets and unresolved
+Common-centre affine families, same-sign translations, common-centre resets/involutions, bounded
+defects and bounded translation ranges now have one global interleaving-safe rank.  Genuinely
+nonlinear path memory and changes not recorded as outer resets remain outside the theorem.  The
+other AC4 interfaces remain fresh/recreated weighted capacity, unaddressed or nonadditive outputs,
+unpaid weighted loss, nonfactoring continuations, recreatable non-source tickets and unresolved
 availability/conflict/reverse gates.
 
 ## Finite check
@@ -204,4 +207,4 @@ availability/conflict/reverse gates.
 `scripts/verify_ac_common_rank_affine_semigroup.py` exhausts small common-centre families and
 same-sign translation systems, then samples arbitrary interleavings.  It checks the exact defect
 product law, zero-multiplier absorption, global expansion counts, same-sign displacement budgets
-and the finite residual classification.
+and the finite residual classification, including distinct-centre involutions.
