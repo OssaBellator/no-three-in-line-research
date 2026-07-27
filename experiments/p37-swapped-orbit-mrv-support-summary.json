@@ -1,0 +1,48 @@
+{
+  "p": 37,
+  "near_state": "experiments/p37-swapped-quarter-turn-near-example.json",
+  "shard_count": 16,
+  "support_results": [
+    {
+      "support": 7,
+      "eligible_subsets": 25389,
+      "mrv_nodes": 53370,
+      "complete_feasible_leaves": 0,
+      "repair_found": false
+    },
+    {
+      "support": 8,
+      "eligible_subsets": 37323,
+      "mrv_nodes": 104270,
+      "complete_feasible_leaves": 0,
+      "repair_found": false
+    },
+    {
+      "support": 9,
+      "eligible_subsets": 43615,
+      "mrv_nodes": 221859,
+      "complete_feasible_leaves": 0,
+      "repair_found": false
+    },
+    {
+      "support": 10,
+      "eligible_subsets": 40755,
+      "mrv_nodes": 685654,
+      "complete_feasible_leaves": 0,
+      "repair_found": false
+    },
+    {
+      "support": 11,
+      "eligible_subsets": 30459,
+      "mrv_nodes": 2804211,
+      "complete_feasible_leaves": 0,
+      "repair_found": false
+    }
+  ],
+  "total_eligible_subsets": 177541,
+  "total_mrv_nodes": 3869364,
+  "minimum_pair_orbit_repair_support_lower_bound": 12,
+  "support_12_resolved": false,
+  "valid_p37_seed_found": false,
+  "asymptotic_seed_theorem_proved": false
+}
