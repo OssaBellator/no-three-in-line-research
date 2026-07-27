@@ -8,8 +8,9 @@ branch whenever the complete certificate decoration above one physical triple ha
 stock, and then executes the paid star through the existing one-block matching neutralization.
 
 The result is quantitative: after the survival and anchor losses, either one matching state descends,
-one fixed-switch term is heavy, or one new exact prospective certificate retains an explicit fraction
-of the original installed birth weight and re-enters the occurrence-faithful lineage router.
+the fixed-switch collateral total is heavy, or one new exact prospective certificate retains an
+explicit fraction of the original installed birth weight and re-enters the occurrence-faithful
+lineage router.
 
 ## Decorated current-certificate model
 
@@ -86,7 +87,7 @@ AN matching block of size `t>=7`, with source weight
 
 Let:
 
-- `F_fix` be the exact fixed-switch collateral;
+- `F_fix` be the exact aggregate fixed-switch collateral;
 - `T_r` be the complete prospective rank-`r` certificate inventory, for `r=1,2,3`;
 - `E_AN=128*sum_(r=1)^3 T_r/(t)_r`;
 - `D` be the exact current source weight destroyed by the matching state.
@@ -129,7 +130,7 @@ birth-weight bound. QED.
 
 If the hypothesis of GC2es fails, then at least one of the following holds:
 
-1. **heavy fixed switch**
+1. **heavy aggregate fixed switch**
 
    `F_fix>(1-epsilon)*a/2`;
 
@@ -185,7 +186,7 @@ For every installed exact-certificate bank, one of the following nested continua
 
    `3*epsilon*rho*W_B/[2N^2(2Delta_cap-1)]`;
 
-5. one fixed-switch collateral term exceeds
+5. the exact aggregate fixed-switch collateral exceeds
 
    `3(1-epsilon)rho W_B/[4N^2(2Delta_cap-1)]`;
 
@@ -207,13 +208,13 @@ GC2eg--GC2ep.  All excluded hypotheses are named contract failures. QED.
 
 A finite complete decoration stock eliminates the unstructured high current-pair branch.  The
 surviving exact-certificate bank now gives first-destruction payment, explicit current-star descent,
-a heavy fixed-switch term or one quantitatively heavy exact prospective certificate that re-enters
-the lineage machinery.
+a heavy aggregate fixed-switch total or one quantitatively heavy exact prospective certificate that
+re-enters the lineage machinery.
 
 The remaining geometry is construction of the declared `rho`-fraction AN block in every current-star
-role, payment of heavy fixed-switch collateral, control of repeated certificate-feedback loops,
-block-tuple overload recursion, unbounded decoration or lineage contexts, isolated-cell prospective
-stars, pool depletion, global-context causes and local superregular resampling.
+role, payment of heavy aggregate fixed-switch collateral, control of repeated certificate-feedback
+loops, block-tuple overload recursion, unbounded decoration or lineage contexts, isolated-cell
+prospective stars, pool depletion, global-context causes and local superregular resampling.
 
 ## Finite check
 
