@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX975
+# Product growing-direction theorem index: PX952--PX979
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -26,3 +26,7 @@
 | PX973 | No affine-column side-twelve all-transposition geometry contains a no-three degree-two state, even with arbitrary `P` and selector | PROVED FINITE | `docs/304-side-twelve-all-transposition-affine-column-obstruction.md` |
 | PX974 | Neither produced base ten nor twelve recursively doubles in the all-transposition class with affine column labelings | PROVED REDUCTION | `docs/304-side-twelve-all-transposition-affine-column-obstruction.md` |
 | PX975 | The complete side-twelve affine-column census uses `175,715,546` search nodes | PROVED FINITE OBSERVATION | `docs/304-side-twelve-all-transposition-affine-column-obstruction.md` |
+| PX976 | Multiplicity-two cases `80` through `159` contain 160 selectors, all infeasible in every orientation | PROVED FINITE | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
+| PX977 | Exact clean-top census for multiplicity-two cases `80` through `159` | PROVED FINITE | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
+| PX978 | Exact shared bottom-CSP census for multiplicity-two cases `80` through `159` | PROVED FINITE | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
+| PX979 | The finite cache boundary advances to `37,920` infeasible selectors with `33,939` unclassified | PROVED REDUCTION | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
