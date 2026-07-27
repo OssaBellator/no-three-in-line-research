@@ -16,6 +16,8 @@
   ],
   "determinant_checks": 82160,
   "zero_determinants": 4,
-  "repair_support_lower_bound": 13,
+  "repair_support_lower_bound": 14,
+  "support_thirteen_decided": true,
+  "support_thirteen_results": "experiments/p41-support13-signed-branch-bound-results.json",
   "valid_seed": false
 }
