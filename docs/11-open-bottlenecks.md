@@ -2,10 +2,11 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open.  The branch has exact structural,
-matching-bank, inherited-coordinate, displacement, temporal and line-clean
-reductions, but no theorem yet proves that every positive minimum of the real-
-triple potential becomes zero.
+The no-three-in-line conjecture remains open.  The branch now has exact
+structural, matching-bank, inherited-coordinate, displacement, temporal,
+line-clean, return, fixed-interface and certificate-assembly reductions, but no
+theorem yet proves that every positive minimum of the real-triple potential
+becomes zero.
 
 The honesty condition is unchanged:
 
@@ -17,17 +18,21 @@ inequality guaranteeing one.
 
 ## 2. Closed structural components
 
-Last-entering ownership makes the complete offspring matrix block upper
-triangular:
+Last-entering ownership and retained interface provenance make the exact
+offspring matrix block upper triangular after labelled SCC contraction:
 
 \[
 \rho(A)=\max_i\rho(A_{ii}).
 \]
 
 Strict internal scaling, earlier-depth transfer, first private-edge use, first
-absolute-token use, first restoration-label use and ordinary structural exits
-are off-diagonal.  Only genuinely recurrent same-owner blocks need numerical
-certificates.
+absolute-token use, first restoration/support/signature use and ordinary later-
+owner exits are off-diagonal when the selected policy executes them.  Only
+genuinely recurrent labelled blocks need numerical certificates.
+
+Collision and local-line labels must be retained until an honest upper quotient
+is proved.  Premature identification can create an artificial self-loop or
+cycle.
 
 ## 3. Exact response and packed-displacement law
 
@@ -38,8 +43,8 @@ H_e=K_{d,d}\setminus(O\cup\{e\}).
 \]
 
 Every compatible prescription has an exact rook class and every candidate has
-one canonical owner before sampling.  Expected collateral is one exact
-bipartite assignment cost with a rational dual.
+one canonical owner before sampling.  Expected collateral is an exact bipartite
+assignment cost with a rational dual.
 
 A positive-minimum fractional obstruction contains one exact-displacement class
 of mass at least
@@ -55,7 +60,7 @@ residue channel.  Its translation support contains a large endpoint-disjoint
 private subbank.  Loaded-owner and private translated currencies have disjoint
 canonical owner support.
 
-## 4. Exact line-clean rows
+## 4. Exact line-clean rows and integer slacks
 
 Deleting the complete allowed trace of a nonaxis line from `H_e` preserves at
 least one target-avoiding response and creates no new line-local collateral.
@@ -84,22 +89,16 @@ N_d(F)=\sum_j(-1)^jr_j(F)(d-j)!,
 \Pr(P\subseteq R)=\frac{N_{d-r}(F/P)}{N_d(F)}.
 \]
 
-The complete off-line row is an exact rational component-rook dot product.
-
-## 5. Three line-clean coefficient classes
-
-The host-uniform coefficients are
+The host-uniform coefficient classes are
 
 \[
 \kappa_d^{\rm strong}
-=
-\left(\frac d{d-2}\right)^d,
+=\left(\frac d{d-2}\right)^d,
 \]
 
 \[
 \kappa_d^{\rm sing}
-=
-\left(
+=\left(
 \frac{d(d-2)}{(d-1)(d-3)}
 \right)^d,
 \]
@@ -108,176 +107,232 @@ and
 
 \[
 \kappa_d^{\rm overlap}
-=
-\left(\frac d{d-3}\right)^d.
+=\left(\frac d{d-3}\right)^d.
 \]
 
-For the applicable coefficient `kappa`,
+For corrected rank counts and unavailable edges, put
 
 \[
-\mathbb E N_{\rm off}(R)
-\le
-\kappa
-\left[
-\frac{V_1^{\rm off}}d
-+
-\frac{V_2^{\rm off}}{(d)_2}
-+
-\frac{V_3^{\rm off}}{(d)_3}
-\right].
+W_d
+=(d-1)(d-2)V_1
++(d-2)V_2
++V_3
++(m+1)b(d-1)(d-2).
 \]
 
-The exact component ratio remains available when a uniform coefficient is too
-weak.
-
-## 6. Subunit paid-pair selectors splice into return
-
-For one exact selector with `A_L<1`, put
-
-\[
-Q_*
-=
-\left\lfloor
-\frac{2+|B_L|/(n-1)}{1-A_L}
-\right\rfloor+1,
-\qquad
-T_*=Q_*-1.
-\]
-
-There is a candidate-free completion with at most `T_*` restored edges.  First
-restoration labels are finite resources; repeated restorations enter the return
-row.  Thus the selector row is `(T_*,0)` in `(return,selector)` columns.
-
-If a return row has coefficients `(alpha,beta)` and a selector cap is `T`, the
-coupled block is subcritical exactly when
-
-\[
-\boxed{\alpha+\beta T<1.}
-\]
-
-Critical hosts `A_L>=1`, or selected near-critical bands, remain geometric
-candidate rows.
-
-## 7. Rooted trace recurrence is line-clean recurrence
-
-A fixed trace signature in one side-`t` envelope has at most `t^2` rooted
-centres.  Excess recurrence fixes one centre and one nonaxis line.  Cleaning at
-the rooted target is automatically target-disjoint, so only
-
-\[
-\kappa_d^{\rm strong}
-\qquad\text{or}\qquad
-\kappa_d^{\rm sing}
-\]
-
-can occur.  Endpoint overlap is excluded in this rooted-target subregime.
-Historical trace loads are not treated as simultaneous.
-
-## 8. The return row is an exact exchange kernel
-
-For a reset from perfect matching `M` to `M'`, put
-
-\[
-E^+=M'\setminus M,
-\qquad
-E^-=M\setminus M'.
-\]
-
-Every vacated edge has one canonical entering partner at the same source.  Every
-recreated credit contains an entering edge; assign it to its absolute
-last-entering owner and then to that owner's vacated predecessor.
-
-For any finite credit class `b`, define
-
-\[
-K_{f,b}(M,M')
-=
-|\{C:\ C\text{ recreated},\ \beta(C)=b,\ r(C)=f\}|.
-\]
-
-Then
+If the applicable fractional factor is `q=u/v`, strict improvement against
+`D_S(e)=D` is exactly
 
 \[
 \boxed{
-N_b(M,M')
-=
-\sum_{f\in E^-}K_{f,b}(M,M').
+(dv)^dW_d
+<
+D u^d d(d-1)(d-2).
 }
 \]
 
-Grouping exact entries by finite returned-edge/entering-owner signatures gives
-an honest integer upper quotient.  Rational response laws give rational rows.
-The return-to-return and return-to-selector coefficients `(alpha,beta)` are now
-finite sums of this kernel rather than undefined churn constants.
+The line-clean frontier is therefore an integer-slack problem.  Exact component
+rook ratios may replace the uniform coefficient when the uniform slack fails.
+Rooted-target traces use only the strong or singleton class.
 
-## 9. Genuine recurrent rows
+## 5. The return-selector block is one assignment problem
 
-The host-uniform diagonal quotient still needs numerical bounds for:
+For a reset from `M` to `M'`, every vacated edge has one canonical same-source
+entering partner.  Every recreated credit is assigned to its absolute last-
+entering owner and transported to that owner's vacated predecessor.  This gives
+an exact returned-edge exchange kernel.
 
-1. **Return exchange row.**  Bound the exact kernel by entering-owner geometry.
-2. **Selector-return block.**  Insert exact or uniform `T` and prove
-   `alpha+beta T<1`.
-3. **Strong and singleton line-clean rows.**  Compare the uniform or exact
-   component coefficients with destroyed target load.
-4. **Endpoint-overlap row.**  Treat the true degree-`d-3` obstruction; rooted
-   trace recurrence does not enter it.
-5. **Critical selector candidate row.**  Localize `A_L>=1` into explicit
-   line/height/prefix/carry classes.
-6. **Residual trace row.**  Treat incidences whose rooted centre cannot be chosen
-   as target.
-7. **Root/fixed-interface and thin rows.**  Certify the remaining prime-field and
-   scattered-factor bases.
+For a rational response law, let
+
+\[
+g_{\rm ret}(a),
+\qquad
+g_{\rm sel}(a)
+\]
+
+be the conditional entering-owner loads.  For selector cap `T`, define
+
+\[
+\boxed{h_T(a)=g_{\rm ret}(a)+Tg_{\rm sel}(a).}
+\]
+
+The exact coupled scalar is
+
+\[
+\alpha+T\beta
+=
+\sum_ap(a)h_T(a),
+\]
+
+where `p` is doubly stochastic.  Therefore
+
+\[
+\alpha+T\beta
+\le
+\max_{Q\in\operatorname{PM}(G)}
+\sum_{a\in Q}h_T(a).
+\]
+
+One shared rational assignment dual with objective below one certifies the whole
+return-selector block.  Separate worst return and selector matchings should not
+be added.
+
+## 6. Critical selectors are concentrated finite classes
+
+For any rational gap `0<eta<=1`, a paid-pair selector satisfies one of:
+
+1. `A_L<=1-eta`, giving a candidate-free completion with restoration cap
+   \[
+   T_L\le
+   \left\lfloor
+   \frac{2+B_0/(n-1)}{\eta}
+   \right\rfloor;
+   \]
+2. one exact residual-rank/profile class carries more than
+   \[
+   \frac{1-\eta}{3B_n^3}
+   \]
+   of the selector candidate expectation.
+
+If `A_L>=1`, one class carries at least `1/(3B_n^3)`.  Exact or uniform rook
+probabilities convert this to a candidate-count lower bound.  Further owner,
+height, prefix, carry, root and thin labels preserve finite concentration with
+only their explicit class-count factor.
+
+There is no remaining diffuse critical-selector row.
+
+## 7. Rooted traces and prime-field root channels
+
+A fixed trace signature in a side-`t` envelope has at most `t^2` rooted centres.
+Excess recurrence fixes one centre and one nonaxis line.  Cleaning at the rooted
+target excludes endpoint overlap, so only strong or singleton line-clean rows
+occur.
+
+For exponent `k>=2`, a root channel enters a strict child factor.  For `k=1`, a
+source residue is the complete physical source cell.  Every root channel is one
+ordered pair with support size one or two.  Across all pairs, the exact stock is
+
+\[
+p^2(p^2-1).
+\]
+
+First support labels are finite resources.  Recurrent support is reused support,
+return, or one exact fixed-interface atom.  The broad prime-field root-
+translation row is closed.
+
+## 8. Fixed-interface and thin rows are exact finite tables
+
+Every surviving fixed-interface atom has a compatible prescription of rank at
+most two.  The ambient positive prescription stock is
+
+\[
+\boxed{
+d^2+2\binom d2^2.
+}
+\]
+
+First exact signatures are finite-state transitions.  Repeated signatures have
+exact contracted rook probabilities and finite rational offspring rows.
+
+For any chosen thin-side cap `H`, all opposite matchings, targets, deletion
+traces, fixed-interface prescriptions and rank-at-most-three offspring
+prescriptions form a finite table.  Exact response counts produce rational rows;
+denominator clearing produces a finite strict integer certificate problem.
+
+The table compiler is proved.  The required tables still need to be executed and
+certified for the final regime split.
+
+## 9. Label-preserving CRT assembly protocol
+
+Retain structural owner, active prime-power factor, collision class, local-line
+class and fixed-interface provenance in every exact state.  Contract labelled
+SCCs and topologically order the condensation DAG.
+
+If every recurrent block satisfies
+
+\[
+D_iv_i\le v_i-s_i,
+\qquad s_i>0,
+\]
+
+then reverse-topological rational scales `c_i` may be chosen so that
+
+\[
+v=(c_1v_1,\ldots,c_sv_s)
+\]
+
+satisfies `Av<v`.  Clearing denominators gives one strict integer certificate.
+Finite off-diagonal CRT collateral changes only the scales once the recurrent
+blocks are certified.
+
+## 10. Genuine recurrent blocks
+
+After all current reductions, the labelled diagonal quotient needs numerical
+certificates only for:
+
+1. **Combined return-selector assignment blocks.**  One shared score `h_T` and
+   one assignment dual.
+2. **Strong and singleton line-clean blocks.**  Uniform integer slack or exact
+   component-row improvement.
+3. **Endpoint-overlap line-clean blocks.**  The true degree-`d-3` obstruction,
+   absent from rooted-target trace recurrence.
+4. **Concentrated critical selector classes.**  Exact rank/profile/geometric
+   witnesses.
+5. **Reused-support blocks.**  Exact labels not paid by first use, with response
+   reintroduction routed through return.
+6. **Repeated fixed-interface prescriptions.**  Exact rank-one/rank-two rook
+   rows.
+7. **Thin rows.**  Exact finite tables for the selected side cap.
+8. **Residual collision/local-line SCCs.**  States preserving all structural and
+   monotone labels and genuinely recurring under CRT assembly.
 
 The broad labels “loaded line”, “repeated token”, “persistent selector”, “fixed
-trace” and “return churn” are no longer primitive undefined rows in the regimes
-already reduced.
+trace”, “root translation”, “fixed-interface coefficient”, “thin row” and
+“return churn” should no longer be used as undefined primitive classes.
 
-## 10. Recommended next lemmas
+## 11. Recommended next lemmas
 
-1. **Exchange-kernel owner envelope.**  Bound every kernel entry by the existing
-   conditional owner weights `g_e(a)` refined by exchange-cycle, height, prefix
-   and carry labels.
-2. **Return-selector integer certificate.**  Aggregate the kernel into
-   `(alpha,beta)`, insert `T`, clear denominators and test
-   `alpha+beta T<1`.
-3. **Critical-selector localization.**  Show `A_L>=1` forces one quantitative
-   geometric candidate class or strict descent.
-4. **Rooted line-clean comparison.**  Insert inherited candidate counts into the
-   strong/singleton envelopes and close a nontrivial destroyed-credit range.
-5. **Endpoint-overlap exact sharpening.**  Separate one-endpoint and two-endpoint
-   overlap and enumerate their component rook ratios.
-6. **Root/fixed-interface and thin coefficients.**  Enumerate exact offspring by
-   source residue, quotient carry, local rank and inherited coordinates.
-7. **Core matrix and CRT rows.**  Assemble surviving rows into an integer
-   certificate `Av<v`, retaining collision and local-line labels during CRT
-   gluing.
+1. **Combined return owner envelope.**  Bound `h_T(a)` using existing owner,
+   line-height, token, prefix, carry and exchange-cycle labels, then construct a
+   shared rational dual below one.
+2. **Positive line-clean slack ranges.**  Insert inherited candidate and
+   unavailable-edge bounds into `W_d` and close explicit strong/singleton/
+   overlap regimes.
+3. **Critical-class certification.**  Compare each concentrated selector class
+   with destroyed target load or place it on strict depth/product/host descent.
+4. **Residual trace certification.**  Treat trace incidences whose rooted centre
+   cannot be selected as the target.
+5. **Fixed-interface/thin table execution.**  Generate exact rational rows for
+   the required base caps and search strict integer certificates.
+6. **Labelled collision/local-line blocks.**  Enumerate the remaining recurrent
+   CRT SCCs without merging provenance.
+7. **Final certificate.**  Combine all local integer certificates by the proved
+   reverse-topological scaling and publish the final labelled quotient.
 
-## 11. Computational priorities
+## 12. Computational priorities
 
-- Enumerate exchange-kernel entries with exact last-entering owner labels.
-- Aggregate return-to-return and return-to-selector rows and test integer
-  certificates.
-- Evaluate critical selector bands over exact residual rook classes.
-- Evaluate rooted strong/singleton line-clean criteria over inherited line and
-  height classes.
-- Enumerate extremal endpoint-overlap component signatures.
-- Enumerate recurrent root/fixed-interface and thin rows.
+- Compute conditional combined owner scores `h_T`, not separate worst-case
+  return and selector maxima.
+- Solve exact assignment duals and clear them to integer inequalities.
+- Compute `W_d` and integer slacks by exact line/height/prefix/carry class.
+- Enumerate concentrated critical selector classes from exact rook terms.
+- Run the fixed-interface/thin table compiler for the necessary side caps.
+- Enumerate residual collision/local-line SCCs with full labels retained.
+- Verify every local and global integer certificate independently.
 
-## 12. Current proved endpoint
+## 13. Current proved endpoint
 
-Through **CMR1581**:
+Through **CMR1629**:
 
-- exact response probabilities and owner weights are known;
-- inherited-coordinate capacity is valid for scattered residual factors;
-- packed displacement banks have quantitative lower bounds;
-- strict transfers and fresh resources are off-diagonal;
-- depth-zero banks split into deterministic root child channels;
-- packed and loaded-owner currencies are owner-disjoint;
-- line-clean rows are exact and have strong/singleton/overlap coefficients;
-- subunit paid-pair selectors have an exact bounded return splice;
-- rooted trace recurrence batches to strong/singleton line-clean rows;
-- returned-edge reproduction is an exact finite exchange-signature kernel.
+- response probabilities, owner weights and return exchange kernels are exact;
+- the return-selector scalar is one shared assignment cost;
+- line-clean rows have exact strong/singleton/overlap integer slack tests;
+- critical selectors localize to finite quantitative classes;
+- rooted trace recurrence uses only strong/singleton line-clean rows;
+- prime-field root channels are singleton support states;
+- repeated fixed-interface atoms and fixed thin caps form exact finite tables;
+- collision/local-line labels have an exact CRT certificate-gluing protocol.
 
-There is still no complete proof.  The next genuine advance is a numerical bound
-for the exchange kernel or a nontrivial destroyed-credit range for the rooted
-line-clean rows, followed by a verified recurrent-core certificate.
+There is still no complete proof.  The next genuine advance is a strict
+host-uniform certificate for one of the surviving labelled recurrent blocks,
+followed by the exact global integer assembly.
