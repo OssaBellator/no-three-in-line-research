@@ -2,8 +2,8 @@
 
 This index begins after the finite certificate suite was completed for every odd
 prime through `73`. It records the remaining asymptotic seed problem and the
-most compressed currently verified probability, dependency, repair, and
-regeneration interfaces.
+most compressed currently verified probability, dependency, repair,
+regeneration, causality, and scheduling interfaces.
 
 ## Current global theorem
 
@@ -40,6 +40,12 @@ theorem remains open.
 | Short finite reachability | Every signed Hamilton state through `m=6` reaches its global minimum defect level in at most three flaw-targeted moves | VERIFIED FINITELY | `docs/307` |
 | Polynomial unconditioned mixing | A balanced lazy combined chain has spectral gap `Omega(m^-5)` by adjacent-transposition comparison | PROVED / VERIFIED FINITELY | `docs/308` |
 | Delete-then-mix regeneration | Targeted deletion followed by polynomial mixing restores the uniform measure pointwise within `1+-epsilon` and gives charge at most `(1+epsilon)mu(A)` | PROVED | `docs/308` |
+| Atomic warm starts | Exact deletion images are polynomially warm and total-variation regeneration takes `O(m^5[log m+log(1/epsilon)])` | PROVED / VERIFIED FINITELY | `docs/309` |
+| Bounded-horizon descent | A uniform `D`-step strict-descent property would give termination in at most `D Phi(x_0)` moves | PROVED | `docs/310` |
+| Exact `m=7` reachability | All `92,160` signed Hamilton states reach one of `36` valid states; maximum distance and strict-descent horizon are four | VERIFIED FINITELY | `docs/310` |
+| Immediate causal locality | A newly created flaw must touch a newly inserted orbit block; immediate outdegree is `O(n^2 log n)` | PROVED / VERIFIED FINITELY | `docs/311` |
+| Residual three-owner scale | Three-owner atomic flaws have probability--causal-degree product `O(log n/n)=o(1)` | PROVED | `docs/311` |
+| Two-owner parity preprocessing | For a fixed Hamilton cycle, all two-owner flaws form a signed-graph XOR system solvable and countable in linear time | PROVED / VERIFIED FINITELY | `docs/312` |
 
 ## Exact theorem ranges
 
@@ -52,6 +58,10 @@ theorem remains open.
 | PP3bju--PP3bjw | Guaranteed-deletion versus exact-restoration impossibility and stationarity-targeting dichotomy | PROVED | `docs/306-targeted-switching-resampling-oracle-dichotomy.md` |
 | PP3bjx--PP3bkc | Orbit-owner dichotomy, orientation-flip repair, complete combined targeting, reversible combined graph, and short finite reachability | PROVED / VERIFIED FINITELY | `docs/307-complete-hamilton-flaw-targeting-and-short-reachability.md` |
 | PP3bkd--PP3bkh | Balanced lazy chain, adjacent-transposition comparison, polynomial spectral gap, pointwise mixing, and delete-then-mix approximate regeneration | PROVED / VERIFIED FINITELY | `docs/308-delete-then-mix-approximate-regeneration.md` |
+| PP3bki--PP3bkl | Atomic flaw probabilities, injective deletion images, exact warmness, spectral contraction, and faster total-variation regeneration | PROVED / VERIFIED FINITELY | `docs/309-atomic-flaw-warm-start-regeneration.md` |
+| PP3bkm--PP3bkp | Bounded-horizon descent lemma, exact `m=7` reachability, four-step finite descent, and revised scheduling frontier | PROVED / VERIFIED FINITELY | `docs/310-bounded-horizon-hamilton-descent-and-m7-reachability.md` |
+| PP3bkq--PP3bku | New-block locality, fixed-block flaw count, sparse immediate causality, residual probability scale, and finite causality census | PROVED / VERIFIED FINITELY | `docs/311-immediate-hamilton-flaw-causality-and-residual-scale.md` |
+| PP3bkv--PP3bkz | Reflection parity invariance, exact two-owner XOR reduction, signed-graph solution count, finite parity census, and orientation preprocessing | PROVED / VERIFIED FINITELY | `docs/312-two-owner-hamilton-flaws-as-a-parity-csp.md` |
 
 ## Current exact probability interface
 
@@ -78,7 +88,7 @@ event probability and one clique size is `Omega(log n)`. This blocks both the
 symmetric local lemma and the standard cluster-expansion criterion on that
 graph.
 
-## Current complete repair interface
+## Current complete repair and descent interface
 
 A four-cell quarter-turn orbit is a square, so a line contains at most two cells
 from one owner. Every bad triple therefore has exactly two or three owners.
@@ -95,44 +105,72 @@ space. The unconditioned union is connected, symmetric, and regular of degree
 m + 8 C(m,3).
 ```
 
-The one-step raw potentials still have local minima, but exhaustive directed
-reachability for `m=4,5,6` shows maximum distance at most three from every state
-to the global minimum defect level. Thus targetability is closed; scheduling
-and collateral control remain open.
+The one-step raw potentials still have local minima. However, exhaustive
+directed reachability through `m=7` shows that every nonoptimal state reaches a
+strictly lower total triple count within at most four flaw-targeted moves. At
+`m=4,5,7` the global minimum is zero; at `m=6` the Hamilton subfamily minimum is
+four.
+
+A uniform bounded-horizon theorem would immediately telescope to termination.
+The finite value four is evidence, not an asymptotic bound.
 
 ## Current regeneration interface
 
 Let `K_m` be the balanced lazy combined chain: hold with probability `1/2`, flip
 a random orientation with probability `1/4`, and perform a random signed
-three-edge rotation with probability `1/4`.
-
-Its spectral gap satisfies
+three-edge rotation with probability `1/4`. Its spectral gap satisfies
 
 ```text
 gap(K_m) = Omega(m^-5).
 ```
 
-Consequently worst-case pointwise `epsilon`-mixing takes
+Worst-case pointwise regeneration takes
 
 ```text
 O(m^6 log m + m^5 log(1/epsilon))
 ```
 
-steps. If `R_A` is any targeted deletion kernel for flaw `A`, then
+steps. Atomic deletion outputs are only polynomially warm, so total-variation
+regeneration improves to
 
 ```text
-S_A = R_A K_m^t
+O(m^5[log m + log(1/epsilon)]).
 ```
 
-has pointwise output density in `[1-epsilon,1+epsilon]` relative to the uniform
-measure and uniform-measure flaw charge
+The delete-then-mix charge remains within a factor `1+epsilon` of the stationary
+atomic flaw probability.
+
+## Current causal and parity interface
+
+Immediate deletion causality is much sparser than static coordinate overlap.
+A newly created flaw contains a newly inserted block, and one fixed block lies
+in only `O(n^2 log n)` atomic flaws. Hence immediate causal outdegree is
+`O(n^2 log n)`.
+
+Atomic probabilities split by owner count:
 
 ```text
-gamma_A <= (1+epsilon) mu(A).
+two owners:   Theta(n^-2),
+three owners: Theta(n^-3).
 ```
 
-This is approximate regeneration. The flaw may recur after mixing, as required
-by the exact-oracle impossibility.
+Thus the probability--causal-degree products are
+
+```text
+two owners:   O(log n),
+three owners: O(log n/n)=o(1).
+```
+
+The two-owner subsystem can be removed before dynamic repair. Horizontal board
+reflection complements both signs on an owner pair, so every two-owner predicate
+depends only on `e_i xor e_j`. For a fixed Hamilton cycle, all such flaws form a
+signed parity graph. Consistency is decided by cycle parity, and a satisfiable
+graph with `c` components has exactly `2^c` clean orientation vectors.
+
+After parity preprocessing, every remaining flaw has three owners and lies at
+the favorable `O(log n/n)` immediate-causal scale. Turning this scale into a
+valid directed flaw-walk or witness theorem is the main remaining probabilistic
+task.
 
 ## Finite diagnostics
 
@@ -150,19 +188,28 @@ python scripts/check_hamilton_targeted_switching_drift.py \
 python scripts/check_hamilton_combined_flaw_reachability.py \
   experiments/hamilton-combined-flaw-reachability-audit.json
 
+g++ -O3 -std=c++17 \
+  scripts/check_hamilton_combined_flaw_reachability_m7.cpp \
+  -o /tmp/check_hamilton_combined_flaw_reachability_m7
+/tmp/check_hamilton_combined_flaw_reachability_m7
+
 python scripts/check_hamilton_adjacent_transposition_embedding.py \
   experiments/hamilton-adjacent-transposition-embedding-audit.json
+
+python scripts/check_hamilton_atomic_flaw_warmness.py \
+  experiments/hamilton-atomic-flaw-warmness-audit.json
+
+python scripts/check_hamilton_immediate_flaw_causality.py \
+  experiments/hamilton-immediate-flaw-causality-audit.json
+
+python scripts/check_hamilton_two_owner_parity_csp.py \
+  experiments/hamilton-two-owner-parity-csp-audit.json
 ```
 
-The cycle-family diagnostic verifies thirteen pair-2-cycle-free public/code
-cases, nine Hamilton or one-fixed cases, `46,234` weighted pair permutations,
-and `39,380` path-forest cylinders. The switching diagnostic verifies `5,910`
-Hamilton states and `310,104` directed moves. The drift diagnostic exhausts
-`8,544` signed Hamilton states and `134,432` targeted bad-triple occurrences.
-The combined-repair diagnostic constructs `269,392` directed flaw-targeted
-edges and proves distance at most three to global minima through `m=6`. The
-mixing comparison diagnostic verifies `34,404` exact adjacent-transposition
-embeddings through `m=8`.
+The exact suites now include `92,160` signed Hamilton states and `4,427,088`
+directed combined-flaw edges at `m=7`, `10,416` atomic deletion-image checks
+through `m=6`, `2,376,384` immediate causal edges through `m=6`, and all
+Hamilton-cycle parity systems through `m=7`.
 
 ## Current constructive targets
 
@@ -172,20 +219,20 @@ Several naive endpoints are closed:
 2. source/target coordinate overlap is too dense for ordinary or standard
    cluster-expansion LLL criteria;
 3. guaranteed immediate flaw deletion is not an exact resampling oracle;
-4. the former two-owner targetability gap is closed by orientation flips.
+4. the former two-owner targetability gap is closed by orientation flips;
+5. the full two-owner orientation subsystem is now an exact parity CSP.
 
 The remaining plausible routes are sharper:
 
-1. prove a geometrically weighted or two/three-step Lyapunov theorem using the
-   complete flaw kernel;
-2. prove a substantially smaller lopsided or causal graph using slope,
-   cyclic-separation, incompatibility, or witness information;
-3. combine delete-then-mix charges with a nonexact flaw-walk, partial-rejection,
-   or witness-sequence criterion;
-4. prove warm-start mixing so full worst-case regeneration is not paid after
-   every deletion;
-5. introduce a biased stationary cyclic-order measure that suppresses
-   high-collateral assignments while retaining tractable cylinders.
+1. prove a uniform bounded strict-descent horizon or a weighted multi-step
+   Lyapunov theorem;
+2. combine parity preprocessing with the residual three-owner
+   `O(log n/n)` causal scale in a directed flaw-walk or witness-sequence theorem;
+3. exploit delete-then-mix charges without paying full mixing after every local
+   deletion;
+4. prove that sequences of deletion outputs remain polynomially warm;
+5. introduce a biased cyclic-order measure that suppresses high-collateral
+   assignments while retaining tractable cylinders.
 
-The asymptotic prime-minus-one seed theorem and the no-three-in-line conjecture
-remain open.
+The next available theorem identifier is `PP3bla`. The asymptotic
+prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
