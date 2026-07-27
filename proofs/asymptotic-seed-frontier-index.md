@@ -43,6 +43,8 @@ The asymptotic existence theorem remains open.
 | Owner-intersecting macro deletion | Every owner triple has a clean intersecting rotation through `m=8`; direct prescribed rotation is unnecessary | PROVED / VERIFIED FINITELY | `docs/316` |
 | Trajectory-local causal light cone | One realized `t`-step path creates only `O((t+1)n^2 log n)` distinct collateral flaws | PROVED | `docs/317` |
 | Logarithmic charge lower scale | Laziness forces at least `3 log_2 n-O(1)` steps before three-owner charge can reach `O(n^-3)` | PROVED | `docs/317` |
+| Quarter-turn defect divisibility | Every swapped bad-triple count is divisible by four; `Psi=B_3/4` is the natural integer potential | PROVED | `docs/318` |
+| Exact `m=8` signed census | All `1,290,240` signed Hamilton states were scored; exactly `28` are valid on `10` cycles | VERIFIED FINITELY | `docs/318` |
 
 ## Exact theorem ranges
 
@@ -64,6 +66,7 @@ The asymptotic existence theorem remains open.
 | PP3blh--PP3bln | Local parity updates, nearest recleaning, conditional macro repair, finite rotation connectivity, update-width census, and construction complexity | PROVED / VERIFIED FINITELY | `docs/315-parity-local-successor-rotations-and-macro-repair.md` |
 | PP3blo--PP3blr | Owner-intersection deletion, clean-degree criterion, exact `m=8` extension, and universal finite macro targetability | PROVED / VERIFIED FINITELY | `docs/316-owner-intersecting-parity-clean-macro-deletion.md` |
 | PP3bls--PP3blv | Trajectory block locality, pathwise flaw fanout, lazy charge lower bound, and logarithmic interpolation scale | PROVED | `docs/317-trajectory-local-causal-light-cones-and-logarithmic-interpolation.md` |
+| PP3blw--PP3blz | Quarter-turn defect divisibility, owner-interaction decomposition, exact `m=8` census, and normalized descent potential | PROVED / VERIFIED FINITELY | `docs/318-quarter-turn-defect-divisibility-and-m8-hamilton-census.md` |
 
 ## Exact probability and defect scale
 
@@ -84,6 +87,15 @@ expected mass `Theta(n log n)`. Two-owner flaws have probability `Theta(n^-2)`,
 but their complete family has only `O(n^3)` members and contributes `O(n)`
 expected mass.
 
+Quarter-turn symmetry partitions every bad triple into an orbit of size four.
+Hence
+
+```text
+Psi = B_3/4
+```
+
+is a nonnegative integer and vanishes exactly on valid states.
+
 ## Complete repair and bounded-horizon interface
 
 Every flaw has exactly two or three orbit owners:
@@ -93,23 +105,30 @@ two owners:   flip either owner orientation;
 three owners: rotate three successors and choose new signs.
 ```
 
-The one-step potential is not monotone. Exhaustive signed-state reachability
-through `m=7` nevertheless gives a four-step strict-descent horizon. A uniform
-asymptotic horizon would telescope to polynomial termination; the finite value
-four does not prove it.
+Exhaustive signed-state reachability through `m=7` gives a four-step strict-
+descent horizon. The exact state census now extends through `m=8`:
+
+| `m` | signed states | minimum `B_3` | valid states | valid cycles |
+|---:|---:|---:|---:|---:|
+| 4 | 96 | 0 | 16 | 2 |
+| 5 | 768 | 0 | 16 | 2 |
+| 6 | 7,680 | 4 | 0 | 0 |
+| 7 | 92,160 | 0 | 36 | 10 |
+| 8 | 1,290,240 | 0 | 28 | 10 |
+
+The complete directed `m=8` reachability graph and descent horizon remain open.
+A uniform asymptotic horizon for `Psi` would telescope to polynomial
+termination.
 
 ## Parity-clean macro interface
 
 For a fixed Hamilton cycle, two-owner flaws are exactly a signed parity CSP. A
-satisfiable graph with `c` components has `2^c` clean orientation vectors.
+rotation on source set `T` changes at most `3m-6` parity predicates. If the new
+cycle is parity satisfiable, a nearest clean orientation is found in linear time
+and differs in at most `floor(m/2)` bits.
 
-A rotation on source set `T` changes only parity predicates incident to `T`, at
-most `3m-6`. If the new cycle is parity satisfiable, a nearest clean orientation
-is found in linear time and differs in at most `floor(m/2)` bits.
-
-A three-owner flaw with owner set `S` is deleted by **any** rotation with
-`T intersect S != empty`, because at least one old owner block disappears. The
-exact audit through `m=8` gives:
+A three-owner flaw with owner set `S` is deleted by any rotation with
+`T intersect S != empty`. The exact audit through `m=8` gives:
 
 | `m` | cycles | parity-satisfiable | minimum clean degree | disjoint triples `C(m-3,3)` | minimum clean rotations meeting every owner triple |
 |---:|---:|---:|---:|---:|---:|
@@ -119,78 +138,58 @@ exact audit through `m=8` gives:
 | 7 | 720 | 664 | 26 | 4 | 22 |
 | 8 | 5,040 | 3,542 | 27 | 10 | 19 |
 
-Thus finite macro targetability is closed through `m=8`, even when the direct
-rotation on exactly the three flaw owners is parity inconsistent.
-
 At `m=8`, the `1,498` inconsistent cycles split into `480` cycles with one owner
 pair forbidding both XOR values and `1,018` cycles with a nonzero-XOR signed
-cycle; the latter have shortest witness length three or four.
+cycle of shortest length three or four.
 
 ## Regeneration, causality, and the logarithmic window
 
-The lazy combined chain has spectral gap `Omega(m^-5)`. Worst-case pointwise
-regeneration and warm-start total-variation regeneration are polynomial, but
-full possible causality becomes global.
-
-For one realized deletion followed by `t` chain steps:
+For one realized deletion followed by `t` lazy chain steps,
 
 ```text
 inserted blocks <= 3(t+1),
 new or first-appearing flaws = O((t+1)n^2 log n).
 ```
 
-The all-hold trajectory gives the charge lower bound
+The all-hold trajectory gives
 
 ```text
 gamma_A(t) >= 2^(-t) gamma_A(0).
 ```
 
-Hence probability-scale three-owner charge `O(n^-3)` requires at least
-`3 log_2 n-O(1)` lazy steps. At `t=O(log n)`, the realized flaw light cone is only
-`O(n^2 log^2 n)`, whose product with the stationary three-owner probability is
-`O(log^2 n/n)=o(1)`. This product is not yet a valid action-charge or witness
-criterion; it identifies the desired interpolation window.
+Thus three-owner probability-scale charge requires at least
+`3 log_2 n-O(1)` steps. At `t=O(log n)`, the pathwise flaw light cone is only
+`O(n^2 log^2 n)`, but no matching action-charge upper bound is yet proved.
 
 ## Finite diagnostics
 
 ```bash
-python scripts/check_hamilton_combined_flaw_reachability.py \
-  experiments/hamilton-combined-flaw-reachability-audit.json
+python scripts/check_hamilton_owner_intersecting_parity_macro.py \
+  experiments/hamilton-owner-intersecting-parity-macro-audit.json
+
+g++ -O3 -std=c++17 \
+  scripts/check_hamilton_signed_defect_census_m8.cpp \
+  -o /tmp/check_hamilton_signed_defect_census_m8
+/tmp/check_hamilton_signed_defect_census_m8
 
 g++ -O3 -std=c++17 \
   scripts/check_hamilton_combined_flaw_reachability_m7.cpp \
   -o /tmp/check_hamilton_combined_flaw_reachability_m7
 /tmp/check_hamilton_combined_flaw_reachability_m7
-
-python scripts/check_hamilton_atomic_flaw_warmness.py \
-  experiments/hamilton-atomic-flaw-warmness-audit.json
-
-python scripts/check_hamilton_immediate_flaw_causality.py \
-  experiments/hamilton-immediate-flaw-causality-audit.json
-
-python scripts/check_hamilton_two_owner_parity_csp.py \
-  experiments/hamilton-two-owner-parity-csp-audit.json
-
-python scripts/check_hamilton_parity_rotation_graph.py \
-  experiments/hamilton-parity-rotation-graph-audit.json
-
-python scripts/check_hamilton_owner_intersecting_parity_macro.py \
-  experiments/hamilton-owner-intersecting-parity-macro-audit.json
 ```
 
-The exact suites include `92,160` signed Hamilton states and `4,427,088` directed
-combined-flaw edges at `m=7`, `2,376,384` immediate causal edges through `m=6`,
-and all `282,240` directed Hamilton-cycle rotations at `m=8` in the new parity
-macro audit.
+The exact suites include all `282,240` Hamilton-cycle rotations at `m=8`, all
+`1,290,240` signed Hamilton states at `m=8`, and the full `4,427,088`-edge
+directed targeted graph at `m=7`.
 
 ## Current constructive targets
 
-1. prove a uniform bounded strict-descent horizon or a weighted multi-step
-   Lyapunov theorem;
+1. build the complete or parity-clean targeted graph at `m=8` and determine its
+   strict-descent horizon for `Psi`;
 2. prove nonemptiness and useful connectivity of parity-satisfiable Hamilton
    cycles for all sufficiently large `m`;
 3. prove that every owner triple has a parity-satisfiable intersecting rotation,
-   or classify the exceptional triples asymptotically;
+   or classify exceptional triples asymptotically;
 4. classify and avoid owner pairs that forbid both XOR values;
 5. prove an upper charge bound in the `t=Theta(log n)` trajectory-local window;
 6. control exponential moments or witness sequences of the pathwise flaw light
@@ -199,5 +198,5 @@ macro audit.
 8. introduce a biased cyclic-order measure suppressing high-collateral
    assignments while retaining tractable cylinders.
 
-The next available theorem identifier is `PP3blw`. The asymptotic
+The next available theorem identifier is `PP3bma`. The asymptotic
 prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
