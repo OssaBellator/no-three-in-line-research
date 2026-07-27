@@ -2,22 +2,23 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open.  Through CMR1853 the branch has:
+The no-three-in-line conjecture remains open.  Through CMR1877 the branch has:
 
 - exact structural/SCC reductions and CRT gluing;
 - exact rook response laws and line-clean integer budgets;
 - geometric prescription multiplicities and exact line energy;
 - a corrected 740-host side-four/five geometric layer;
-- complete rank-three and longest-line data through side five;
-- line-occupancy, moment and background-height compilers;
+- complete rank-three and full-length-line data through side five;
+- exact occupancy, moment, Pareto and background-height compilers;
 - nested assignment bounds for rank two and rank three;
 - one unified return-selector-geometric outer score;
-- a finite label-weighted rational LP for the final Lyapunov search.
+- a finite label-weighted rational LP;
+- a denominator-cleared JSON-compatible integer certificate checker.
 
-No theorem yet proves that every positive minimum of the real-triple potential
-becomes zero.
+No theorem proves that every positive minimum of the real-triple potential becomes
+zero.
 
-The honesty condition is unchanged:
+The honesty condition remains:
 
 > finite response, finite resource use and structural descent are not by
 > themselves potential improvement.
@@ -34,208 +35,218 @@ triangular after exact SCC contraction:
 \rho(A)=\max_i\rho(A_{ii}).
 \]
 
-Strict child descent, earlier-depth handoff and first-use resources are
-structural arcs only when the chosen response actually executes them.  All owner,
-collision, local-line, interface, root, thin and CRT labels remain until exact
-state equivalence or honest componentwise domination is proved.
+All owner, collision, local-line, interface, root, thin and CRT labels remain until
+exact equivalence or honest componentwise domination is proved.
 
-Already-certified auxiliary blocks eliminate through
+Already-certified auxiliary modules eliminate through
 
 \[
 A+B(I-D)^{-1}C.
 \]
 
-Reverse-topological rational scaling glues certified blocks and finite transfers.
+Reverse-topological rational scaling then absorbs finite off-diagonal transfers
+and clears to one global integer certificate.
 
 ## 3. Current finite geometric data
 
-The matching denominator classes expand to exactly:
-
-\[
-86
-\]
-
-raw side-four hosts and
-
-\[
-654
-\]
-
-raw side-five hosts.  These 740 coordinate-labelled hosts are the first exact
-geometric layer before owner/provenance refinement.
-
-For every raw host:
+The matching denominator classes expand to exactly 86 side-four and 654 side-five
+raw coordinate-labelled hosts.  For every one of these 740 hosts:
 
 1. the exact response denominator is known;
 2. every response matching is enumerated;
-3. every nonaxis grid line has an exact occupancy capacity
-   \[
-   \tau_G(\ell)=\max_Q|Q\cap\ell|;
-   \]
-4. the moments
-   \[
-   M_r(G)=\sum_\ell\binom{\tau_G(\ell)}r
-   \]
-   are known;
-5. the exact uniform rank-three numerator is known;
-6. every line length and capacity is included in the completed census.
+3. every nonaxis line has exact occupancy capacity `tau_G(ell)`;
+4. the complete line-length/occupancy census is known;
+5. the moments `M_1,M_2,M_3` are known;
+6. the exact uniform rank-three numerator `A_3` is known;
+7. the anti-diagonal capacity is known exactly.
 
-Every response through side five has `Psi(Q)` in `{0,1,2,4}`.  Thirty-seven
-side-four hosts have rank-three row zero.  Side five satisfies `5A_3<=7Z`, with
-sharper denominator-specific caps.
+Every response has `Psi(Q)` in `{0,1,2,4}`.  Side five satisfies `5A_3<=7Z`, with
+sharper exact denominator entries.
 
-The only full-length nonaxis lines are the diagonals.  The main diagonal has
-capacity zero.  The anti-diagonal has capacity `d` on an untouched even-side
-host, but at most `d-2` on odd side.
+## 4. Pareto-compressed background classes
 
-## 4. Current geometric certificate choices
-
-For background line loads `h_ell`, the exact deterministic capacity row is
+For a uniform background height `H`, define
 
 \[
-\mathcal C_G(B)
-=
-\sum_\ell
+F_H(G)=\binom H2M_1(G)+HM_2(G)+M_3(G).
+\]
+
+The 740 raw hosts reduce denominator-by-denominator to:
+
+- 69 componentwise Pareto moment triples;
+- 57 triples active for at least one integer `H`;
+- one terminal triple per denominator after `H=4` on side four and `H=16` on side
+  five.
+
+If line length `L` has its own height cap `H_L`, use
+
+\[
+\sum_L
 \left[
- \tau_G(\ell)\binom{h_\ell}{2}
- +\binom{\tau_G(\ell)}2h_\ell
- +\binom{\tau_G(\ell)}3
+ \binom{H_L}{2}M_{1,L}(G)
+ +H_LM_{2,L}(G)
+ +M_{3,L}(G)
 \right].
 \]
 
-If all relevant background lines have load at most `H`, use
+The length-stratified denominator-preserving table has 20 side-four and 225
+side-five Pareto signatures.
+
+These envelopes are upper certificates for stated background classes.  They do
+not merge exact provenance states.
+
+## 5. Rank-three slack localization
+
+For every raw host,
 
 \[
-\mathcal C_G(B)
+S_3=Z-A_3.
+\]
+
+The exact classification is:
+
+| class | side four | side five | total |
+|---|---:|---:|---:|
+| strict `S_3>0` | 53 | 598 | 651 |
+| critical `S_3=0` | 6 | 38 | 44 |
+| excess `S_3<0` | 27 | 18 | 45 |
+
+For every strict host, the remaining scalar numerator budget after exact rank
+three is
+
+\[
+B\le S_3-1.
+\]
+
+This divides the immediate computation into:
+
+- **651 budgeted hosts:** rank three is already strict; certify the remaining
+  return, selector and shorter-line contributions within `S_3-1`;
+- **44 critical hosts:** any positive extra scalar self-load requires correction or
+  labelled routing;
+- **45 excess hosts:** rank three itself requires correction, nontrivial child
+  weights, off-diagonal routing or a sharper state split.
+
+No side-five host with denominator at least seventeen is rank-three non-strict.
+
+## 6. Exact, nested and unified row choices
+
+For each populated background/provenance fibre, choose the smallest honest
+certificate classwise:
+
+1. exact rook marginal numerator;
+2. nested rank-two/rank-three assignments;
+3. exact line-capacity table;
+4. one of the 57 uniform-height envelopes;
+5. one of the 245 line-length signatures;
+6. explicit corrected and provenance-routed offspring counts.
+
+Return, bounded selector, rank one, peeled rank two and peeled rank three all enter
+one outer edge score.  Separate incompatible maxima should not be added.
+
+## 7. Publication-grade integer manifest
+
+For positive integer child weights `X_j`, aggregate every declared labelled
+coefficient numerator before peeling.  Row `i` uses
+
+\[
+\Theta_i(e)=6q_i(e)+3j_{2,i}(e)+h_{3,i}(e).
+\]
+
+The certificate manifest stores:
+
+- state weights;
+- one denominator per row;
+- all labelled edge, pair and triple coefficient numerators;
+- complete rank-two contracted duals;
+- complete rank-three inner and middle duals;
+- one unified outer dual;
+- one positive integer row slack.
+
+The exact row inequalities are
+
+\[
+U_{i,u}+V_{i,v}\ge\Theta_i((u,v))
+\]
+
+and
+
+\[
+\sum_uU_{i,u}+\sum_vV_{i,v}
 \le
-\binom H2M_1(G)+HM_2(G)+M_3(G).
+6D_iX_i-\delta_i.
 \]
 
-For nonuniform heights, use the exact layer expansion
+`scripts/check_label_weighted_assignment_certificate.py` recomputes host perfect
+matchings and extendable prescriptions, validates every coefficient and dual
+surface and accepts only complete recurrent blocks.  Its self-test accepts one
+full manifest and rejects twelve corrupted variants.
 
-\[
-\mathcal C_G(B)
-=
-M_3(G)
-+
-\sum_{s\ge2}(s-1)
-\sum_{\ell:h_\ell\ge s}\tau_G(\ell)
-+
-\sum_{s\ge1}
-\sum_{\ell:h_\ell\ge s}\binom{\tau_G(\ell)}2.
-\]
+Passing the checker proves `AX<X` relative to the declared exact or componentwise
+upper coefficient table.  Separate geometric verifiers must establish that the
+table correctly encodes ownership, correction and provenance.
 
-For exact uniform response laws, use the rook numerator
+## 8. Immediate execution order
 
-\[
-A_{\mathrm{line}}
-=
-\sum_xa_1(x)z(x)
-+
-\sum_{|P|=2}a_2(P)z(P)
-+
-\sum_{|P|=3}a_3(P)z(P).
-\]
+### Priority 1: populate the 651 budgeted hosts
 
-For a smaller upper certificate, use nested assignments for ranks two and three.
-These methods may be mixed by rank, host or geometric class.
+For each strict rank-three host and retained background/provenance class:
 
-## 5. Final label-weighted LP
+1. load the exact `S_3-1` residual budget;
+2. compute shorter-line rank-one coefficients;
+3. compute exact or nested rank-two coefficients;
+4. insert return and selector scores;
+5. seek one unified outer dual within the budget.
 
-Let `x_j>0` be proposed Lyapunov weights on all surviving labelled states.  For
-parent `i`, aggregate every child coefficient against `x_j` before peeling and
-form
+This is the largest automatic host class and should be attempted before the 89
+rank-three exceptions.
 
-\[
-\gamma_i(e;x)
-=q_i(e;x)+\frac12J_{2,i}(e;x)+\frac16H_{3,i}(e;x).
-\]
+### Priority 2: resolve the 89 exceptional hosts
 
-The row condition is
+For the 44 critical and 45 excess hosts, test in order:
 
-\[
-\sum_jA_{ij}x_j
-\le
-\mathcal A_{G_i}(\gamma_i(.;x))<x_i.
-\]
+1. corrected genuinely-new triple deletion;
+2. child-label routing and nonuniform Lyapunov weights;
+3. exact rather than peeled rank-three marginals;
+4. finer owner/interface state splitting;
+5. auxiliary-module transfer or honest off-diagonal descent.
 
-All contracted and outer assignment maxima may be replaced by rational dual
-variables.  The complete certificate search is therefore one finite rational LP
-with constraints
+### Priority 3: publish row manifests
 
-\[
-U_{i,u}+V_{i,v}\ge
-6q_i((u,v);x)+3j_{2,i}(u,v)+h_{3,i}(u,v)
-\]
+For every successful parent row:
 
-and strict row objectives below `6x_i`.
+1. record the exact labelled coefficient table;
+2. generate all contracted duals;
+3. generate the unified outer dual;
+4. record the positive integer slack;
+5. validate the manifest with the standalone checker.
 
-A strict rational solution clears to:
+### Priority 4: eliminate auxiliary modules
 
-- integer state weights;
-- signed integer inner and outer dual potentials;
-- positive integer row slacks;
-- a directly checkable global `Ax<x` certificate after SCC gluing.
-
-Failure of this upper LP is not evidence that the exact row is supercritical.  It
-identifies the parent, outer edge class or contracted inner score needing a
-sharper geometric model.
-
-## 6. Immediate execution order
-
-### Priority 1: populate the 740-host coefficient layer
-
-For each raw host and each retained background/provenance class, compute:
-
-- exact background line heights;
-- `a_1` edge scores;
-- exact or nested `a_2` pair scores;
-- the already-tabulated `a_3` numerator;
-- absolute last-entering owners;
-- collision, local-line, interface, root, thin and CRT child labels.
-
-Use the diagonal and rank-three tables immediately rather than recomputing them.
-
-### Priority 2: produce row certificates
-
-For every surviving parent state:
-
-1. aggregate child labels against trial weights;
-2. choose exact marginal, occupancy or nested bounds classwise;
-3. generate inner assignment duals;
-4. generate the unified outer assignment dual;
-5. record the strict row slack.
-
-The preferred certificate is one unified dual, not the sum of independently
-optimized return, selector and geometric maxima.
-
-### Priority 3: eliminate auxiliary modules
-
-Once thin, fixed-interface or reused-support modules have strict certificates,
+Once thin, fixed-interface or reused-support modules have strict manifests,
 eliminate them through exact rational resolvents and update the effective core.
 
-### Priority 4: finish the labelled SCC quotient
+### Priority 5: finish the labelled SCC quotient
 
-Retain every surviving collision/local-line/CRT label, solve the LP on each
-recurrent SCC, apply reverse-topological scaling, clear all denominators and
-publish the global integer quotient.
+Retain every surviving collision/local-line/CRT label, solve each recurrent SCC,
+apply reverse-topological scaling, clear all denominators and publish the global
+integer quotient.
 
-## 7. Genuine unresolved modules
+## 9. Genuine unresolved modules
 
-1. **Background/provenance fibres.** Actual geometric coefficients are not yet
+1. **Background/provenance fibres.** The true labelled coefficients are not yet
    populated for every retained owner and interface class.
-2. **Return-selector outer rows.** The unified score is proved, but a universal
-   strict dual below the required parent weight is not yet known.
-3. **Shorter-line rank-one/rank-two rows.** Rank three and full-length lines are
-   complete; remaining geometry lies on shorter lines and provenance routing.
-4. **Reused-support survivors.** Small-support rows not closed by owner-support,
-   moment or line-capacity bounds remain explicit.
-5. **Collision/local-line SCCs.** Fully labelled recurrent blocks still need
+2. **Budgeted host rows.** The 651 positive rank-three slacks have not yet all been
+   filled with return, selector and shorter-line coefficients.
+3. **Exceptional rank-three rows.** The 89 critical/excess hosts need correction or
+   weighted routing.
+4. **Reused-support survivors.** Some small-support rows remain explicit.
+5. **Collision/local-line SCCs.** Fully labelled recurrent blocks still require
    numerical row certificates.
 6. **Global integer quotient.** No complete denominator-cleared certificate has
-   yet been published.
+   been published.
 
-## 8. Corrections that must remain active
+## 10. Corrections that must remain active
 
 - Historical selectors, traces, target lines and destroyed loads are not one
   simultaneous current family.
@@ -245,17 +256,19 @@ publish the global integer quotient.
 - Background triples become payment only through explicit current labelled charge
   maps.
 - Matching normalization does not quotient Euclidean geometry.
-- One matching-fibre representative is invalid without exact geometric
-  equivalence or honest domination.
+- One matching-fibre representative is invalid without exact geometric equivalence
+  or honest domination.
 - Owner-support closure requires every retained child owner to lie in the claimed
   support.
 - Auxiliary resolvent elimination requires an already-proved strict certificate.
-- A failed peeled LP may indicate a coarse upper model rather than a true
-  recurrent obstruction.
+- Failure of a Pareto or peeled upper model may indicate a coarse certificate,
+  not a supercritical exact row.
+- Passing the integer checker validates arithmetic relative to declared
+  coefficients; it does not prove the geometric coefficient generator.
 
-## 9. Current endpoint
+## 11. Current endpoint
 
-Through **CMR1853**, the remaining problem is finite and explicit but unsolved:
-populate the true labelled coefficients, solve the assignment-dual LP on every
-surviving recurrent block, eliminate certified auxiliaries and publish the final
-strict integer quotient.
+Through **CMR1877**, the remaining problem is finite and explicit but unsolved:
+populate the true labelled coefficients, use exact rank-three slack to certify the
+651 budgeted hosts, resolve the 89 exceptions, publish accepted integer row
+manifests, eliminate auxiliary blocks and assemble the final global quotient.
