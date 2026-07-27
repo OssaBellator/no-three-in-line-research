@@ -2,6 +2,7 @@
 """Verify the signed orbit cycle-cover CSP for swapped quarter-turn seed codes."""
 from __future__ import annotations
 import argparse, json, math, sys
+from itertools import combinations
 from pathlib import Path
 from typing import Any
 
@@ -9,26 +10,26 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import check_quarter_turn_seed_normal_forms as qt
 
 Point = tuple[int, int]
+LineKey = tuple[int, int, int]
 
 def orbit(i:int,j:int,e:int,n:int)->set[Point]:
     I=n-1-i; J=n-1-j
     if e==0:return {(i,j),(I,J),(j,I),(J,i)}
     return {(i,J),(I,j),(j,i),(J,I)}
 
-def maximal_nonaxis_lines(n:int)->list[set[Point]]:
-    lines=[]
-    for dx in range(1,n):
-        for dy in range(-(n-1),n):
-            if dy==0 or math.gcd(dx,abs(dy))!=1:continue
-            for x in range(n):
-                for y in range(n):
-                    px,py=x-dx,y-dy
-                    if 0<=px<n and 0<=py<n:continue
-                    line=[];X=x;Y=y
-                    while 0<=X<n and 0<=Y<n:
-                        line.append((X,Y));X+=dx;Y+=dy
-                    if len(line)>=3:lines.append(set(line))
-    return lines
+def line_key(a:Point,b:Point)->LineKey|None:
+    dx=b[0]-a[0];dy=b[1]-a[1]
+    if dx==0 or dy==0:return None
+    g=math.gcd(abs(dx),abs(dy));dx//=g;dy//=g
+    if dx<0:dx=-dx;dy=-dy
+    return dx,dy,dy*a[0]-dx*a[1]
+
+def on_line(point:Point,key:LineKey)->bool:
+    dx,dy,c=key
+    return dy*point[0]-dx*point[1]==c
+
+def occupied_nonaxis_lines(points:set[Point])->set[LineKey]:
+    return {key for a,b in combinations(sorted(points),2) if (key:=line_key(a,b)) is not None}
 
 def partition(p:list[int])->list[int]:
     seen=[False]*len(p);out=[]
@@ -66,17 +67,15 @@ def verify_case(raw:Any,index:int)->dict[str,Any]:
         reconstructed |= block;blocks.append(block)
     if reconstructed!=points:raise ValueError(f"case {index}: orbit union changed selected set")
 
-    forbidden_two_cycles=0
     for i in range(m):
         j=rho[i]
-        if i<j and rho[j]==i:
-            forbidden_two_cycles += sign[i]^sign[j]
-    if forbidden_two_cycles:raise ValueError(f"case {index}: opposite-sign two-cycle")
+        if i<j and rho[j]==i and (sign[i]^sign[j]):
+            raise ValueError(f"case {index}: opposite-sign two-cycle")
 
-    lines=maximal_nonaxis_lines(n);maximum=0
-    for line in lines:
-        linear=sum(len(line & block) for block in blocks)
-        direct=len(line & points)
+    lines=occupied_nonaxis_lines(points);maximum=0
+    for key in lines:
+        linear=sum(sum(on_line(point,key) for point in block) for block in blocks)
+        direct=sum(on_line(point,key) for point in points)
         if linear!=direct:raise ValueError(f"case {index}: line coefficient sum mismatch")
         maximum=max(maximum,linear)
         if linear>2:raise ValueError(f"case {index}: maximal-line capacity exceeded")
@@ -92,7 +91,7 @@ def verify_case(raw:Any,index:int)->dict[str,Any]:
         "duplicate_orbit_inequalities":m*(m-1),
         "chosen_orbits":m,"selected_points":len(points),
         "pair_cycle_partition":pair_cycles,"orientation_one_count":sum(sign),
-        "maximal_nonaxis_lines":len(lines),"maximum_line_occupancy":maximum,
+        "occupied_nonaxis_lines":len(lines),"maximum_line_occupancy":maximum,
         "determinant_checks":determinant_checks,
         "orbit_cycle_cover_valid":True
     }
