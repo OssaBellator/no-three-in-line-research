@@ -28,6 +28,7 @@ This branch-specific ledger groups the completed phase-code and routing statemen
 | OP4m | Paid current defects route to a heavy factor, point star, or point-disjoint matching | PROVED | `docs/orbit-phase-defect-router.md` |
 | OP4n | Paid recurrent defect signatures yield direct current correction descent | PROVED | `docs/orbit-phase-chargeback.md` |
 | OP4o | Every nonempty current structured output has an executable centre with gain at least its average retained weight | PROVED | `docs/orbit-phase-centre-fallback.md` |
-| OP5 | Simultaneous arithmetic completion/absorption of the remaining bounded structured outputs | OPEN | `docs/orbit-phase-expansion.md` |
+| OP4p–OP4s | Real two-channel factors reconstruct exact RI roots and physical scales; a paid fixed edge routes to incomplete companions, scale imbalance, scale dispersion or one coherent physical class | PROVED | `docs/orbit-phase-ri-physical-lift.md` |
+| OP5 | Simultaneous arithmetic completion/absorption of the remaining bounded structured outputs | OPEN; FIXED-EDGE QUOTIENT/SCALE RECONSTRUCTION CLOSED, PHYSICAL COMPLETION AND BLOCKER-SAFE INSTALLATION REMAIN | `docs/orbit-phase-expansion.md` |
 
 No statement here proves the global no-three-in-line conjecture.
