@@ -11,7 +11,7 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have classified every top-signature tier of multiplicity at least `5` and the
-first 1,580 signatures of multiplicity `4`:
+first 1,780 signatures of multiplicity `4`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -39,16 +39,16 @@ first 1,580 signatures of multiplicity `4`:
 | 5 | 725 | 3,625 | certified infeasible |
 | 4, shards 0--13 | 1,380 of 2,392 | 5,520 | certified infeasible |
 | 4, mixed shard 14 | 100 | 400 | 399 infeasible; 1 witnessed |
-| 4, shard 15 | 100 | 400 | certified infeasible |
-| **Total** | **3,778 completed classes** | **23,720 rejected; 1 witnessed** | **1,211,934,171 rejection-CSP nodes** |
+| 4, shards 15--17 | 300 | 1,200 | certified infeasible |
+| **Total** | **3,978 completed classes** | **24,520 rejected; 1 witnessed** | **1,281,085,746 rejection-CSP nodes** |
 
-Thus `48,139` support-twenty selectors remain unclassified and active in this
+Thus `47,339` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The latest classified results are PX756--PX759 in
-[`docs/236-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fifteen.md`](../docs/236-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-fifteen.md).
+The latest classified results are PX766--PX769 in
+[`docs/239-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-seventeen.md`](../docs/239-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-shard-seventeen.md).
 
-## First constructive witness
+## Constructive witness
 
 Global multiplicity-four case `1392`, selector zero, has a verified no-three
 embedding in orientation `1`. The mixed verifier checks the selector state,
@@ -56,7 +56,7 @@ clean top assignment, bottom permutation, 28 distinct points, and all 3,276
 nonzero integer determinants. The other three selectors in that signature are
 jointly certified infeasible in all four orientations.
 
-## Solver improvement
+## Solver and proof-object improvements
 
 The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
@@ -66,36 +66,37 @@ The common transcript verifiers print every per-signature count while one
 asserted 64-bit digest commits each complete ordered tier or shard transcript.
 `scripts/product_side_seven_tier_shard_digest.hpp` adds independently
 reproducible lexicographic shard intervals without checking in large case data
-tables. Mixed shard fourteen uses a dedicated verifier because it combines 399
-obstructions with one constructive witness. Subsequent scan workers preserve
-witness metadata and continue rather than terminating a range.
+tables. Witness-preserving scan workers retain constructive data and continue
+rather than terminating a range.
 
 PX743--PX744 add the first explicit proof-object pilot. For case `1180`,
-orientation `0`, and the first clean concatenated top order,
-`scripts/verify_product_side_seven_case1180_orientation0_bottom_certificate.cpp`
-generates a `60,536`-byte certificate containing one concrete collinear triple
-for each of `20,160` selector-permutation obligations. Its checker validates
-edge membership, exact zero determinants, file length, and digest without
+orientation `0`, and the first clean concatenated top order, a `60,536`-byte
+certificate supplies one concrete collinear triple for each of `20,160`
+selector-permutation obligations. Its checker validates exact geometry without
 calling `BottomGroupSolver`.
 
-PX749--PX750 extend the format to the first two clean top orders. A shared
-dictionary of `84` triples represents `40,320` obligations in a `40,648`-byte
-proof object with anchored digest `10705560690873782484`.
+PX749--PX750 extend the format to two clean top orders. A shared dictionary of
+`84` triples represents `40,320` obligations in `40,648` bytes.
+
+PX764--PX765 measure dictionary saturation across eight clean top orders. The
+cumulative dictionary sizes are `66, 84, 107, 120, 122, 124, 142, 152`; only
+`152` triples cover `161,280` obligations. The projected shared proof payload is
+`161,896` bytes rather than `484,288` bytes for eight raw certificates, with
+anchored digest `3733902510478128199`.
 
 PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
 route.
 
 ## Immediate task
 
-The remaining multiplicity-four frontier begins at global case index `1580` and
-contains `812` top signatures and `3,248` selectors. Continue in independently
-reproducible intervals, with scan workers retaining witness data rather than
-terminating a range. In parallel:
+The remaining multiplicity-four frontier begins at global case index `1780` and
+contains `612` top signatures and `2,448` selectors. Continue in independently
+reproducible witness-preserving intervals. In parallel:
 
-1. stream more clean top orders into the shared triple dictionary and measure saturation;
-2. extract mechanically rechecked partial top-assignment cores from repeated certificates;
-3. learn a master nogood covering every top order extending one core;
-4. export one selector-choice shard to CNF and check an UNSAT proof independently;
+1. extract mechanically rechecked partial top-assignment cores from dictionary-backed certificates;
+2. learn a master nogood covering every top order extending one core;
+3. export one selector-choice shard to CNF and check an UNSAT proof independently;
+4. continue measuring dictionary saturation over wider top-order batches;
 5. add only mechanically verified host/reflection symmetry constraints.
 
 ## Stage completion criterion
@@ -110,23 +111,19 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard15.cpp \
-  -o /tmp/m4s15
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard17.cpp \
+  -o /tmp/m4s17
+/tmp/m4s17
 
-/tmp/m4s15
+g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_case1180_eight_top_dictionary_saturation.cpp \
+  -o /tmp/case1180-saturation
+/tmp/case1180-saturation
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard14_mixed.cpp \
   -o /tmp/m4s14
-
 /tmp/m4s14 1392
-
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_case1180_two_top_dictionary_certificate.cpp \
-  -o /tmp/case1180-dict-cert
-
-/tmp/case1180-dict-cert generate /tmp/case1180-two-top.cert
-/tmp/case1180-dict-cert check /tmp/case1180-two-top.cert
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
