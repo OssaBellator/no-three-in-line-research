@@ -106,11 +106,19 @@ walk has zero ledger drift.
 
 ### Proof
 
-Closing edge `e` with root paths gives a closed walk of drift `a_e`, so every closed-walk gcd divides
-every `a_e`.  Conversely, telescoping `a_e=p(y)+b_e-p(y')` around a closed walk gives its original
-drift as a sum of edge addresses, so `g` divides every closed-walk drift.  The residue and lift update
-identities follow by substitution.  Simple root paths have at most `q-1` edges, giving
-`|a_e|<=(2q-1)B`. QED.
+For each target `y'`, choose one directed return path `R_(y',r)`.  The two rooted closed walks
+
+`P_y e R_(y',r)`
+
+and
+
+`P_(y') R_(y',r)`
+
+have drift difference exactly `a_e`.  Hence the gcd of all directed closed-walk drifts divides every
+`a_e`.  Conversely, telescoping `a_e=p(y)+b_e-p(y')` around any directed closed walk expresses its
+drift as a sum of edge addresses, so `g` divides every closed-walk drift.  The two gcds are therefore
+equal.  The residue and lift update identities follow by substitution.  Simple root paths have at most
+`q-1` edges, giving `|a_e|<=(2q-1)B`. QED.
 
 ## AC3tu -- chronological primitive lift relations at gate level -- PROVED
 
