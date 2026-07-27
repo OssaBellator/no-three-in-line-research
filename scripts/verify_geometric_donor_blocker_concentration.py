@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite audit for GC2fp--GC2ft."""
+"""Finite audit for GC2fu--GC2fy."""
 
 import math
 import random
@@ -23,7 +23,7 @@ def main():
         k_blk = rng.randint(1, 20)
         d0 = rng.randint(1, 200)
         h = rng.randint(1, 1000)
-        assignments = [rng.randint(-1, k_blk - 1) for _ in range(d0)]  # -1 means legal
+        assignments = [rng.randint(-1, k_blk - 1) for _ in range(d0)]
         d = assignments.count(-1)
         n = [assignments.count(p) for p in range(k_blk)]
         assert d0 == d + sum(n)
@@ -51,7 +51,6 @@ def main():
                 assert d >= 1
             counts["capacity_certified_menus"] += 1
 
-        # Integrated heavy-lineage scale check.
         n_board = rng.randint(5, 50)
         q_ch = rng.randint(1, 8)
         l_cert = rng.randint(1, 10)
