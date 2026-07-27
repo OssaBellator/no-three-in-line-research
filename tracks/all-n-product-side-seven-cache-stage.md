@@ -11,7 +11,7 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have classified every top-signature tier of multiplicity at least `4` and the
-first nine hundred signatures of multiplicity `3`:
+first eleven hundred signatures of multiplicity `3`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -38,14 +38,14 @@ first nine hundred signatures of multiplicity `3`:
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
 | 4 | 2,392 | 9,568 | 9,567 infeasible; 1 witnessed |
-| 3, shards 0--8 | 900 of 3,544 | 2,700 | certified infeasible |
-| **Total** | **5,490 completed classes** | **29,668 rejected; 1 witnessed** | **1,833,179,721 rejection-CSP nodes** |
+| 3, shards 0--10 | 1,100 of 3,544 | 3,300 | certified infeasible |
+| **Total** | **5,690 completed classes** | **30,268 rejected; 1 witnessed** | **1,890,386,873 rejection-CSP nodes** |
 
-Thus `42,191` support-twenty selectors remain unclassified and active in this
+Thus `41,591` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The latest exact results are PX842--PX845 in
-[`docs/261-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-eight.md`](../docs/261-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-eight.md).
+The latest exact results are PX852--PX855 in
+[`docs/264-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-ten.md`](../docs/264-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-ten.md).
 
 ## Constructive witness
 
@@ -112,8 +112,12 @@ signature-level master nogood.
 PX840--PX841 prove the same phenomenon at multiplicity three. For case `0`,
 orientation `0`, all fourteen literals of the first clean top order can be
 deleted; the bare signature jointly refutes all `75,600` clean concatenated top
-orders after `110,263` bottom-CSP nodes. Empty top cores therefore recur across
-both classified multiplicities.
+orders after `110,263` bottom-CSP nodes.
+
+PX850--PX851 repeat the exact deletion experiment on multiplicity-three case `1`.
+Its bare signature refutes all `62,416` clean concatenated top orders after
+`96,353` bottom-CSP nodes. Consecutive multiplicity-three signatures therefore
+both yield empty top cores and signature-level master nogoods.
 
 PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
 route. No external SAT solver or DRAT/FRAT checker is available in the current
@@ -122,8 +126,8 @@ active proof-producing route.
 
 ## Immediate task
 
-The remaining multiplicity-three frontier begins at global case index `900` and
-contains `2,644` top signatures and `7,932` selectors. Continue in independently
+The remaining multiplicity-three frontier begins at global case index `1100` and
+contains `2,444` top signatures and `7,332` selectors. Continue in independently
 reproducible, witness-preserving intervals. In parallel:
 
 1. test whether empty or small top-assumption cores recur across signatures;
@@ -144,14 +148,14 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard8.cpp \
-  -o /tmp/m3s8
-/tmp/m3s8
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard10.cpp \
+  -o /tmp/m3s10
+/tmp/m3s10
 
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity3_case0_orientation0_empty_top_core.cpp \
-  -o /tmp/m3-case0-empty-core
-/tmp/m3-case0-empty-core
+  scripts/verify_product_side_seven_multiplicity3_case1_orientation0_empty_top_core.cpp \
+  -o /tmp/m3-case1-empty-core
+/tmp/m3-case1-empty-core
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_multiplicity3_case0_orientation0_dictionary_saturation64.cpp \
