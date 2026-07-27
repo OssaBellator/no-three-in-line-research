@@ -1,0 +1,19 @@
+{
+  "p": 47,
+  "source_repository": "mvr/no-three-in-line",
+  "source_path": "results/c4-46.out",
+  "source_blob_sha": "2b978710f7c315ad49020f449e81842e1c88fd06",
+  "source_record_index": 1,
+  "rle": "26bo6bo$3bo26bo$17bo3bo$34bo9bo$14bo12bo$22bo14bo$26bo7bo$13bo3bo$5bo4bo$16bo10bo$14bo22bo$3bo2bo$o23bo$16bo21bo$35bo5bo$bo20bo$32bo3bo$38bo4bo$4bo4bo$o5bo$20bo4bo$12bo30bo$30bo9bo$5bo9bo$2bo30bo$20bo4bo$39bo5bo$36bo4bo$2bo4bo$9bo3bo$23bo20bo$4bo5bo$7bo21bo$21bo23bo$39bo2bo$8bo22bo$18bo10bo$35bo4bo$28bo3bo$11bo7bo$8bo14bo$18bo12bo$bo9bo$24bo3bo$15bo26bo$12bo6bo!",
+  "standard_code": "oQX3UHLYiERMbQYDH5AGREb360OGcZf1MWach4906KPChUe5F2XKPdjaf279DNi4A7TLjdg8VITZeSWBJ8NIV1BOSFgCJ",
+  "pair_permutation": [13,4,18,12,15,23,20,14,6,19,9,7,22,17,11,2,10,8,5,1,21,3,16],
+  "pair_orientations": [0,1,1,0,1,1,0,1,1,0,0,1,0,1,0,1,0,0,1,1,0,0,0],
+  "pair_cycle_partition": [22,1],
+  "pair_cycle_orientation_parities": [1,0],
+  "relative_cycle_partition": [11,11,11,11,2],
+  "sigma": [13,43,29,12,32,24,20,33,41,19,9,40,22,30,11,45,10,8,42,46,21,3,16,31,44,26,1,5,39,37,2,36,17,25,7,38,28,6,14,27,23,15,35,18,4,34],
+  "tau": [20,16,25,2,19,9,12,29,36,30,32,43,46,8,5,24,14,3,37,40,26,34,6,41,13,21,7,10,44,33,23,42,39,1,4,15,17,11,18,35,38,28,45,22,31,27],
+  "determinant_checks": 125580,
+  "minimum_absolute_determinant": 1,
+  "valid_seed": true
+}
