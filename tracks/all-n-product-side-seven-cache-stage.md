@@ -11,7 +11,7 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have classified every top-signature tier of multiplicity at least `4` and the
-first six hundred signatures of multiplicity `3`:
+first seven hundred signatures of multiplicity `3`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -38,14 +38,14 @@ first six hundred signatures of multiplicity `3`:
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
 | 4 | 2,392 | 9,568 | 9,567 infeasible; 1 witnessed |
-| 3, shards 0--5 | 600 of 3,544 | 1,800 | certified infeasible |
-| **Total** | **5,190 completed classes** | **28,768 rejected; 1 witnessed** | **1,736,336,879 rejection-CSP nodes** |
+| 3, shards 0--6 | 700 of 3,544 | 2,100 | certified infeasible |
+| **Total** | **5,290 completed classes** | **29,068 rejected; 1 witnessed** | **1,788,607,134 rejection-CSP nodes** |
 
-Thus `43,091` support-twenty selectors remain unclassified and active in this
+Thus `42,791` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The latest exact results are PX826--PX829 in
-[`docs/256-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-five.md`](../docs/256-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-five.md).
+The latest exact results are PX830--PX833 in
+[`docs/257-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-six.md`](../docs/257-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-six.md).
 
 ## Constructive witness
 
@@ -98,6 +98,11 @@ thirty-two clean top orders in a projected `485,059`-byte payload. This removes
 about `66.6%` of the raw triple payload and confirms that the proof compression
 is not confined to multiplicity four.
 
+PX834--PX835 double the multiplicity-three prefix to sixty-four clean top orders.
+Only `283` triples cover `967,680` obligations in a projected `969,473`-byte
+payload, rather than `2,903,984` bytes for raw triples. The second block of
+thirty-two orders introduces only 42 new triples.
+
 PX774--PX775 give the first exact top-assumption core. For case `1180`,
 orientation `0`, every one of the fourteen top literals can be deleted: the
 signature alone refutes all `70,376` clean concatenated top orders after
@@ -111,8 +116,8 @@ active proof-producing route.
 
 ## Immediate task
 
-The remaining multiplicity-three frontier begins at global case index `600` and
-contains `2,944` top signatures and `8,832` selectors. Continue in independently
+The remaining multiplicity-three frontier begins at global case index `700` and
+contains `2,844` top signatures and `8,532` selectors. Continue in independently
 reproducible, witness-preserving intervals. In parallel:
 
 1. test whether empty or small top-assumption cores recur across signatures;
@@ -133,14 +138,14 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard5.cpp \
-  -o /tmp/m3s5
-/tmp/m3s5
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard6.cpp \
+  -o /tmp/m3s6
+/tmp/m3s6
 
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity3_case0_orientation0_dictionary_saturation32.cpp \
-  -o /tmp/m3-case0-dict32
-/tmp/m3-case0-dict32
+  scripts/verify_product_side_seven_multiplicity3_case0_orientation0_dictionary_saturation64.cpp \
+  -o /tmp/m3-case0-dict64
+/tmp/m3-case0-dict64
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard14_mixed.cpp \
