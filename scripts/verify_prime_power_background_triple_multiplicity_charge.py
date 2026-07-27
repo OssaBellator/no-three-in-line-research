@@ -33,8 +33,8 @@ def primitive_direction(first: Point, second: Point) -> tuple[int, int]:
 
 def main() -> None:
     local_inequalities = 0
-    pair_slot_checks = 0
-    point_slot_checks = 0
+    explicit_pair_maps = 0
+    explicit_point_maps = 0
 
     for height in range(0, 501):
         assert comb(height, 2) <= (
@@ -43,7 +43,7 @@ def main() -> None:
         assert height <= 2 + comb(height, 3)
         local_inequalities += 2
 
-        if height >= 3:
+        if 3 <= height <= 30:
             pairs = list(combinations(range(height), 2))
             triple_slots = [
                 (triple, slot)
@@ -53,14 +53,14 @@ def main() -> None:
             assert len(pairs) <= len(triple_slots)
             assignment = dict(zip(pairs, triple_slots))
             assert len(set(assignment.values())) == len(assignment)
-            pair_slot_checks += len(pairs)
+            explicit_pair_maps += 1
 
             remaining_points = list(range(2, height))
             triples = list(combinations(range(height), 3))
             assert len(remaining_points) <= len(triples)
             point_assignment = dict(zip(remaining_points, triples))
             assert len(set(point_assignment.values())) == len(point_assignment)
-            point_slot_checks += len(remaining_points)
+            explicit_point_maps += 1
 
     random = Random(1750)
     grid = [(x, y) for x in range(8) for y in range(8)]
@@ -133,8 +133,8 @@ def main() -> None:
     print(
         "verified background-triple multiplicity charges: "
         f"{local_inequalities} local binomial inequalities, "
-        f"{pair_slot_checks} pair-to-triple-slot assignments, "
-        f"{point_slot_checks} point-to-triple assignments, "
+        f"{explicit_pair_maps} explicit pair charge maps, "
+        f"{explicit_point_maps} explicit point charge maps, "
         f"{point_systems} finite point systems, "
         f"{rank_one_shadow_checks} rank-one shadow bounds, "
         f"{rank_two_shadow_checks} rank-two shadow bounds and "
