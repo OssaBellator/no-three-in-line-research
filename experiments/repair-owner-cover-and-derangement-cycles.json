@@ -1,0 +1,26 @@
+{
+  "cases": [
+    {
+      "p": 37,
+      "m": 18,
+      "owner_multiset": {"3": 1, "15": 1, "17": 1},
+      "minimum_owner_cover": 1,
+      "minimum_owner_covers": [[3], [15], [17]],
+      "support_13_subsets_after_owner_filter": 8463
+    },
+    {
+      "p": 41,
+      "m": 20,
+      "owner_multiset": {"15": 1, "18": 1, "20": 1},
+      "minimum_owner_cover": 1,
+      "minimum_owner_covers": [[15], [18], [20]],
+      "support_13_subsets_after_owner_filter": 75140
+    }
+  ],
+  "derangements_through_13": [1, 0, 1, 2, 9, 44, 265, 1854, 14833, 133496, 1334961, 14684570, 176214841, 2290792932],
+  "support_13_all_target_bijections": 6227020800,
+  "support_13_target_derangements": 2290792932,
+  "factorial_to_derangement_ratio": 2.718281828538486,
+  "support_13_cycle_type_count": 24,
+  "support_13_single_cycle_count": 479001600
+}
