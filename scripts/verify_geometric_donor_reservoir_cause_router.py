@@ -95,6 +95,10 @@ def partition_audit(rng, counts):
         if p > d_phys and k_res == 0:
             assert legal > 0
             counts["automatic nonempty menus"] += 1
+        if p <= d_phys:
+            counts["bounded budget dominated reservoirs"] += 1
+            if legal == 0:
+                counts["fully blocked small reservoirs"] += 1
 
 
 def main():
