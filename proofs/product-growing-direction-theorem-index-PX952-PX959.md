@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX969
+# Product growing-direction theorem index: PX952--PX975
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -20,3 +20,9 @@
 | PX967 | At decimal order `2873`, exact derivative products place the global margin maximum at `log(2)/log(13033)` | PROVED FINITE/ARITHMETIC | `docs/302-universal-divisor-cutoff-optimality.md` |
 | PX968 | The global universal-family margin at decimal order `2873` is less than `-0.0934` | PROVED FINITE/ARITHMETIC | `docs/302-universal-divisor-cutoff-optimality.md` |
 | PX969 | `10^2874` is the least integral decimal cutoff available in the current universal Euler-product divisor family | PROVED REDUCTION | `docs/302-universal-divisor-cutoff-optimality.md` |
+| PX970 | No affine-column side-ten all-transposition geometry contains a no-three degree-two state, even with arbitrary `P` and selector | PROVED FINITE | `docs/303-side-ten-all-transposition-affine-column-obstruction.md` |
+| PX971 | The exact side-five rectangle output cannot recursively double `10 -> 20` with affine column labelings | PROVED REDUCTION | `docs/303-side-ten-all-transposition-affine-column-obstruction.md` |
+| PX972 | The generic even-base affine-column row-pattern search is an exact interval-replay implementation | PROVED IMPLEMENTATION REDUCTION | `docs/303-side-ten-all-transposition-affine-column-obstruction.md` |
+| PX973 | No affine-column side-twelve all-transposition geometry contains a no-three degree-two state, even with arbitrary `P` and selector | PROVED FINITE | `docs/304-side-twelve-all-transposition-affine-column-obstruction.md` |
+| PX974 | Neither produced base ten nor twelve recursively doubles in the all-transposition class with affine column labelings | PROVED REDUCTION | `docs/304-side-twelve-all-transposition-affine-column-obstruction.md` |
+| PX975 | The complete side-twelve affine-column census uses `175,715,546` search nodes | PROVED FINITE OBSERVATION | `docs/304-side-twelve-all-transposition-affine-column-obstruction.md` |
