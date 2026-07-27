@@ -27,6 +27,20 @@ def heaviest_color(vertices, weights, color):
     return [vertex for vertex in vertices if color[vertex] == best], totals[best]
 
 
+def interaction_graph(vertices, operations, scopes):
+    graph = {i: set() for i in vertices}
+    for i, j in combinations(vertices, 2):
+        endpoints_i = set(operations[i])
+        endpoints_j = set(operations[j])
+        if any(
+            endpoints_i & set(scope) and endpoints_j & set(scope)
+            for scope in scopes
+        ):
+            graph[i].add(j)
+            graph[j].add(i)
+    return graph
+
+
 def main():
     rng = random.Random(SEED)
     counts = defaultdict(int)
@@ -96,16 +110,7 @@ def main():
                 incidence[column] += 1
         lam = max(incidence)
 
-        interaction = {i: set() for i in first_bank}
-        for i, j in combinations(first_bank, 2):
-            endpoints_i = set(operations[i])
-            endpoints_j = set(operations[j])
-            if any(
-                endpoints_i & set(scope) and endpoints_j & set(scope)
-                for scope in scopes
-            ):
-                interaction[i].add(j)
-                interaction[j].add(i)
+        interaction = interaction_graph(first_bank, operations, scopes)
         assert max(map(len, interaction.values()), default=0) <= 4 * lam
 
         second_colors = greedy_coloring(first_bank, interaction)
@@ -150,6 +155,45 @@ def main():
             simultaneous += delta
         assert simultaneous == single_sum
 
+        gains = {
+            i: max(0, rng.randint(-5000, 10000))
+            for i in range(operation_count)
+        }
+        positive = [i for i in range(operation_count) if gains[i] > 0]
+        total_gain = sum(gains[i] for i in positive)
+        if positive:
+            positive_set = set(positive)
+            overlap_positive = {
+                i: overlap[i] & positive_set
+                for i in positive
+            }
+            colors_gain_1 = greedy_coloring(positive, overlap_positive)
+            gain_bank_1, gain_1 = heaviest_color(
+                positive, gains, colors_gain_1
+            )
+            assert gain_1 * (2 * n - 3) >= total_gain
+            for i, j in combinations(gain_bank_1, 2):
+                assert not (set(operations[i]) & set(operations[j]))
+
+            interaction_positive = interaction_graph(
+                gain_bank_1, operations, scopes
+            )
+            assert max(
+                map(len, interaction_positive.values()), default=0
+            ) <= 4 * lam
+            colors_gain_2 = greedy_coloring(
+                gain_bank_1, interaction_positive
+            )
+            gain_bank_2, gain_2 = heaviest_color(
+                gain_bank_1, gains, colors_gain_2
+            )
+            assert gain_2 * (4 * lam + 1) >= gain_1
+            assert all(gains[i] > 0 for i in gain_bank_2)
+            simultaneous_descent = sum(gains[i] for i in gain_bank_2)
+            assert simultaneous_descent == gain_2
+            counts["positive_gain_systems"] += 1
+            counts["selected_improving_operations"] += len(gain_bank_2)
+
         declared_cap = rng.randint(1, max(1, lam + 3))
         if lam > declared_cap:
             assert max(incidence) > declared_cap
@@ -167,6 +211,11 @@ def main():
     print(f"  neutral creating operations: {counts['operations']}")
     print(f"  selected compatible operations: {counts['selected_operations']}")
     print(f"  selected exact records: {counts['selected_records']}")
+    print(f"  positive-gain systems: {counts['positive_gain_systems']}")
+    print(
+        "  selected improving operations: "
+        f"{counts['selected_improving_operations']}"
+    )
     print(f"  cap-respecting systems: {counts['cap_respecting_systems']}")
     print(f"  high-incidence branches: {counts['high_incidence_branches']}")
 
