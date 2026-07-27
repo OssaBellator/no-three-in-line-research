@@ -18,7 +18,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
 - `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1629;
-- `proofs/composite-modulus-theorem-index-live-continuation-4.md` from CMR1630 through CMR1749.
+- `proofs/composite-modulus-theorem-index-live-continuation-4.md` from CMR1630 through CMR1773.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -140,14 +140,14 @@ For every response law and residual rank `r`, the total probability mass of
 \]
 
 Several geometric credits may share one response prescription. For a finite
-background point set `B`, CMR1734--CMR1741 give the exact multiplicities.
+background point set `B`, the exact multiplicities are:
 
-- A compatible rank-three prescription has multiplicity one.
-- For rank two, with response points `x,y`,
+- rank three: one;
+- rank two, for response points `x,y`:
   \[
-  m(\{x,y\})=|B\cap\ell(x,y)|.
+  m(\{x,y\})=|B\cap\ell(x,y)|;
   \]
-- For rank one,
+- rank one:
   \[
   m(\{x\})
   =
@@ -158,7 +158,7 @@ The rank-one sum is indexed exactly by primitive unoriented directions through
 `x`.
 
 If `|B|=qH+r`, with `0<=r<H`, and every relevant background line has load at
-most `H`, convex packing gives the exact uniform cap
+most `H`, convex packing gives
 
 \[
 \Phi(|B|,H)=qC(H,2)+C(r,2).
@@ -174,18 +174,110 @@ m_2\le H_2,
 m_3=1.
 \]
 
-The complete multiplicity-aware line-clean expectation is therefore bounded by
+## Background-potential and charged multiplicity
+
+Let
 
 \[
-\Phi(|B|,H_1)C(d,1)+H_2C(d,2)+C(d,3),
+\Psi(B)=|\{T\subseteq B:|T|=3\text{ and }T\text{ is collinear}\}|.
 \]
 
-or by the corresponding expression with `C(d,r)-F_r` after forced common
-prescriptions are routed to contraction.
+Pair-only secants through one response point form a matching on `B`, hence there
+are at most `floor(|B|/2)` of them. Background triple shadows are at most
+`Psi(B)`. Therefore
 
-An actual nonempty line-clean host has a strict-improvement response whenever
-destroyed load exceeds the applicable multiplicity-corrected mass. The pure
-threshold `(d^3+5d)/6+1` is valid only for injective candidate families.
+\[
+m_1\le\lfloor |B|/2\rfloor+3\Psi(B),
+\qquad
+m_2\le2+\Psi(B),
+\qquad
+m_3=1.
+\]
+
+The packed-height and background-potential multiplicity bounds are simultaneous;
+one may use their rankwise minimum.
+
+The local charge inequalities are
+
+\[
+C(h,2)\le\mathbf 1_{h=2}+3C(h,3),
+\qquad
+h\le2+C(h,3).
+\]
+
+They admit deterministic bounded-congestion maps: rank-one pairs on a line of
+load at least three charge to one of three slots of a current background triple,
+and all but two rank-two point choices charge injectively to current background
+triples. This charge may enter the final quotient only with current labelled
+triple credits and the stated congestion; historical or already-spent triples
+may not be reused.
+
+## Exact line-energy profile
+
+For an actual response point set `Q`, define on each real line
+
+\[
+h_\ell=|B\cap\ell|,
+\qquad
+k_\ell=|Q\cap\ell|.
+\]
+
+The exact uncorrected number of collinear triples containing at least one response
+point is
+
+\[
+\Psi(B\cup Q)-\Psi(B)
+=
+\sum_\ell
+\left[
+ k_\ell C(h_\ell,2)
+ +C(k_\ell,2)h_\ell
+ +C(k_\ell,3)
+\right].
+\]
+
+Every corrected genuinely new row is bounded by this exact line energy.
+Furthermore,
+
+\[
+\sum_\ell C(k_\ell,2)=C(d,2),
+\qquad
+\sum_\ell C(k_\ell,3)=\Psi(Q).
+\]
+
+Define
+
+\[
+R_2(B,Q)=\sum_{\ell:h_\ell=2}k_\ell
+\]
+
+and let `K_3(B,Q)` be the maximum response load on a line containing a background
+triple. Then
+
+\[
+N_{\mathrm{new}}(B,Q)
+\le
+R_2(B,Q)+2C(d,2)+\Psi(Q)
++
+\Psi(B)\left[3K_3+C(K_3,2)\right].
+\]
+
+Also
+
+\[
+R_2(B,Q)\le d\lfloor |B|/2\rfloor.
+\]
+
+If `Q` is triple-free, `Psi(Q)=0` and `K_3<=2`, giving
+
+\[
+N_{\mathrm{new}}(B,Q)
+\le
+R_2(B,Q)+2C(d,2)+7\Psi(B).
+\]
+
+This replaces the previous full-side congestion by the actual response load on
+background-triple lines.
 
 ## Combined return-selector assignment
 
@@ -234,8 +326,8 @@ at most
 \mu(A)C(d-1,r-1).
 \]
 
-A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With the
-geometric multiplicity caps above, expected new owned collateral is at most
+A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With packed
+multiplicity caps, expected new owned collateral is at most
 
 \[
 \mu(A)
@@ -244,15 +336,20 @@ geometric multiplicity caps above, expected new owned collateral is at most
 \right].
 \]
 
-Destruction above this quantity gives a strict response, provided every retained
-recurrent child owner lies in `A` and all other child classes have already been
-included or routed away.
+The background-potential version replaces the first two terms by
+
+\[
+\lfloor |B|/2\rfloor+3\Psi(B)
++
+(2+\Psi(B))(d-1).
+\]
+
+Destruction above either applicable quantity gives a strict response, provided
+every retained recurrent child owner lies in `A` and all other child classes have
+already been included or routed away.
 
 Prime-field reused-support states have fixed support size one or two. They enter
-this closure when every retained child owner lies in that terminal support. A
-failed packed support certificate identifies a large owner support, a large
-background line height, a large packed rank-one secant value, or insufficient
-destroyed load.
+this closure when every retained child owner lies in that terminal support.
 
 ## Critical-selector capacity compiler
 
@@ -279,10 +376,8 @@ D[2(n-1)+B]/((n-1)(D-C))
 \]
 
 This cap feeds directly into `h_{T_C}` and the shared assignment/cover
-certificate. If `C>=D`, only classes meeting the necessary capacity threshold
-need sharper enumeration. Exact rook numerators, thin probability caps, distinct
-rank mass, owner supports and line-load multiplicities are simultaneous
-constraints.
+certificate. Exact rook numerators, thin probability caps, distinct rank mass,
+owner supports and line-profile multiplicity bounds are simultaneous constraints.
 
 ## Prime-field root, fixed-interface and thin bases
 
@@ -312,11 +407,8 @@ The exhaustive normalized matching-level census through side five is:
 | 4 | 45 | nonforced caps `3/4`, `2/3`, `1/2` in ranks one, two, three |
 | 5 | 124 | caps `2/3`, `2/5`, `1/4`; no forced positive rank-at-most-three prescriptions |
 
-The rank-three census contains 448 extendable side-four instances, 28 forced,
-and 15,017 side-five instances, none forced. These are distinct-prescription
-statistics. Geometric candidate multiplicities are now supplied by exact line-
-load and secant formulas, but the required background loads still need to be
-enumerated on the canonical geometric hosts.
+The next census must retain each geometric line profile, candidate multiplicity
+and absolute owner.
 
 ## Certified auxiliary-block elimination
 
@@ -365,22 +457,23 @@ integer certificate.
 
 ## Genuine current frontier
 
-1. **Background height bounds.** Prove host-uniform `H_1,H_2` bounds for exact
-   owner, height, token, prefix, carry and interface classes.
-2. **Line-clean packed slacks.** Insert `Phi(|B|,H_1)`, `H_2` and forced-mass data
-   into exact or universal line-clean budgets; certify the low-load/high-height
-   survivors.
-3. **Return class geometry.** Use the same multiplicity and owner-support bounds
-   to control `h_T` and produce a shared assignment dual below one.
+1. **Response line-profile control.** Bound `R_2(B,Q)`, `K_3(B,Q)` and `Psi(Q)`
+   through response selection, exact owner/height/token/prefix/carry classes, or
+   canonical thin-host enumeration.
+2. **Line-clean integer slacks.** Insert the best of the packed-height,
+   background-potential and exact line-energy rows into the exact/universal
+   line-clean budgets.
+3. **Return class geometry.** Use the same line profiles, multiplicities and
+   owner covers to control `h_T` and produce a shared dual below one.
 4. **Selector capacities.** Combine exact rook numerators, thin caps, distinct
-   rank mass, owner supports and packed line-load multiplicities.
-5. **Canonical geometric offspring.** Enumerate background line heights,
-   genuinely new offspring and absolute owners on the 45 side-four and 124 side-
-   five hosts; certify and eliminate their orbit tables.
-6. **Reused support.** Apply the one/two-edge packed owner-support closure, then
-   certify the surviving high-height or out-of-support rows.
+   rank mass and line-profile multiplicity capacities.
+5. **Canonical geometric offspring.** Enumerate line profiles and absolute owners
+   on the 45 side-four and 124 side-five hosts; certify and eliminate their orbit
+   tables.
+6. **Reused support.** Apply the one/two-edge owner-support and line-energy
+   closures, then certify surviving high-load or out-of-support rows.
 7. **Final labelled quotient.** Certify remaining collision/local-line SCCs,
-   publish one strict integer quotient certificate and apply CRT gluing.
+   publish one strict integer quotient and apply CRT gluing.
 
 ## Corrections retained
 
@@ -412,8 +505,10 @@ integer certificate.
   local-line, owner or CRT provenance.
 - Rank-mass conservation is for distinct prescriptions in one current response
   law. Candidate multiplicity and historical families are separate.
-- Rank-one multiplicity is a secant-pair sum, not merely a count of heavy
-  directions.
+- Background triple counts become spendable currency only through the explicit
+  labelled congestion maps.
+- Triple-free response bounds are conditional on the chosen host containing such
+  a response.
 - Owner-support closure applies only when every retained child owner lies in the
   claimed support.
 - Auxiliary resolvent elimination applies only after the auxiliary block has a
@@ -421,13 +516,13 @@ integer certificate.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR1749**, the broad recurrent fronts are
+There is no complete proof. Through **CMR1773**, the broad recurrent fronts are
 reduced to class-supported return assignment covers, exact geometric
-multiplicity formulas, packed line-clean and owner-support closures, selector
-denominator slacks, a complete matching-level rank-one/two/three census through
-side five, certified auxiliary resolvents and a label-preserving CRT certificate
-protocol.
+multiplicity and line-energy formulas, packed and potential-based line-clean
+closures, selector denominator slacks, a complete matching-level rank-one/two/
+three census through side five, certified auxiliary resolvents and a label-
+preserving CRT certificate protocol.
 
-The remaining obstruction is geometric and numerical: bound the relevant
-background line heights, certify every surviving labelled block, and publish the
-final strict integer quotient.
+The remaining obstruction is geometric and numerical: control the exact response
+line profiles, certify every surviving labelled block, and publish the final
+strict integer quotient.
