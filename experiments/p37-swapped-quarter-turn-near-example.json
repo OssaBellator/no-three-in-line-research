@@ -5,6 +5,7 @@
   "pair_permutation": [15, 1, 13, 16, 12, 9, 14, 6, 5, 8, 11, 17, 7, 4, 18, 3, 2, 10],
   "pair_orientations": [1, 1, 1, 0, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 1],
   "pair_cycle_partition": [11, 6, 1],
+  "pair_cycle_orientation_parities": [1, 0, 1],
   "predicted_relative_cycle_partition": [22, 6, 6, 2],
   "bad_orbit_owners": [3, 15, 17],
   "bad_triples": [
@@ -65,5 +66,7 @@
   "branch_and_bound_total_hall_failures": 2134668,
   "branch_and_bound_total_initial_domain_failures": 54882,
   "minimum_pair_orbit_repair_support_lower_bound": 13,
+  "minimum_pair_orbit_repair_support": 13,
+  "support_13_certificate": "experiments/p37-swapped-orbit-support13-certificate.json",
   "valid_seed": false
 }
