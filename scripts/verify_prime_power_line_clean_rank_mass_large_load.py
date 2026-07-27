@@ -21,7 +21,8 @@ def main() -> None:
     random = Random(1710)
     systems = 0
     rank_identities = 0
-    corrected_family_checks = 0
+    multiplicity_bounds = 0
+    pointwise_mass_minima = 0
     forced_subtractions = 0
     large_load_checks = 0
 
@@ -44,9 +45,8 @@ def main() -> None:
                             + response_probability
                         )
 
-            corrected_total = Fraction(0, 1)
-            forced_total = 0
-            universal_mass = 0
+            exact_expectation = Fraction(0, 1)
+            multiplicity_mass_bound = 0
 
             for rank in range(1, min(3, side) + 1):
                 ranked = {
@@ -58,37 +58,62 @@ def main() -> None:
                 rank_identities += 1
 
                 forced = [item for item, value in ranked.items() if value == 1]
-                forced_total += len(forced)
                 assert len(forced) <= comb(side, rank)
                 forced_subtractions += 1
 
                 nonforced = [item for item, value in ranked.items() if value < 1]
-                corrected = {
-                    item
+                multiplicity = {
+                    item: random.randint(0, 5)
                     for item in nonforced
-                    if random.random() < 0.55
                 }
-                corrected_mass = sum(
-                    (ranked[item] for item in corrected),
+                maximum_multiplicity = max(multiplicity.values(), default=0)
+                rank_expectation = sum(
+                    (
+                        multiplicity[item] * ranked[item]
+                        for item in nonforced
+                    ),
                     Fraction(0, 1),
                 )
-                assert corrected_mass <= comb(side, rank) - len(forced)
-                corrected_total += corrected_mass
-                universal_mass += comb(side, rank) - len(forced)
-                corrected_family_checks += 1
+                rank_mass_bound = (
+                    maximum_multiplicity
+                    * (comb(side, rank) - len(forced))
+                )
+                assert rank_expectation <= rank_mass_bound
+                multiplicity_bounds += 1
 
-            assert corrected_total <= universal_mass
-            destroyed_load = universal_mass + 1
-            assert corrected_total < destroyed_load
-            assert corrected_total * denominator < destroyed_load * denominator
+                candidate_count = sum(multiplicity.values())
+                probability_cap = max(
+                    (ranked[item] for item in nonforced),
+                    default=Fraction(0, 1),
+                )
+                pointwise_bound = candidate_count * probability_cap
+                assert rank_expectation <= min(pointwise_bound, rank_mass_bound)
+                pointwise_mass_minima += 1
+
+                integer_numerator = sum(
+                    multiplicity[item]
+                    * int(ranked[item] * denominator)
+                    for item in nonforced
+                )
+                assert integer_numerator == rank_expectation * denominator
+                assert integer_numerator <= denominator * rank_mass_bound
+
+                exact_expectation += rank_expectation
+                multiplicity_mass_bound += rank_mass_bound
+
+            assert exact_expectation <= multiplicity_mass_bound
+            destroyed_load = multiplicity_mass_bound + 1
+            assert exact_expectation < destroyed_load
+            assert exact_expectation * denominator < destroyed_load * denominator
             large_load_checks += 1
             systems += 1
 
     print(
-        "verified line-clean rank-mass large-load closure: "
+        "verified multiplicity-aware line-clean rank mass: "
         f"{systems} rational response laws, "
         f"{rank_identities} exact rank identities, "
-        f"{corrected_family_checks} corrected-family bounds, "
+        f"{multiplicity_bounds} multiplicity bounds, "
+        f"{pointwise_mass_minima} pointwise/mass minima, "
         f"{forced_subtractions} forced-mass subtractions and "
         f"{large_load_checks} strict large-load certificates"
     )
