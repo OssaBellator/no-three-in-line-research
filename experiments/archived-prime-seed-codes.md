@@ -1,4 +1,4 @@
-# Archived prime-seed code diagnostic
+# Archived and public prime-seed code diagnostic
 
 Run:
 
@@ -10,7 +10,7 @@ python scripts/check_archived_prime_seed_codes.py \
 Each JSON record contains:
 
 - the prime `p`;
-- the source archive path;
+- the source archive or repository path;
 - the exact standard row-pair code; and
 - the expected relative cycle partition.
 
@@ -27,12 +27,17 @@ The checker independently:
 The stored suite verifies:
 
 ```text
-p=17,19,23,29,31,61,67,73
+p=17,19,23,29,31,47,61,67,73
 ```
 
-and performs `1,230,128` exact determinant checks in total.  The largest
-case has `144` selected points on `[72]^2`.
+and performs `1,355,708` exact determinant checks in total. The largest case
+has `144` selected points on `[72]^2`.
 
-The archive code is used only as compact input.  No geometric validity is
-trusted without the independent determinant check.  These finite
-certificates do not prove the asymptotic seed theorem.
+The `p=47` compact code is independently generated from the first public RLE
+record in `mvr/no-three-in-line:results/c4-46.out`; its dedicated RLE-level
+checker is `scripts/check_p47_public_rle_certificate.py`. The other records are
+transcribed from the Flammenkamp configuration archive.
+
+The source code or RLE is used only as compact input. No geometric validity is
+trusted without the independent determinant check. These finite certificates
+do not prove the asymptotic seed theorem.
