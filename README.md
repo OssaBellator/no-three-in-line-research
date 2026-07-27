@@ -4,7 +4,7 @@
 
 This branch develops the finite-denominator exception route produced by perfect-alignment and wrap-center concentration. Canonical proof notes are under `docs/`; verification programs are under `scripts/`.
 
-> **Status:** Scalar lifts and reflected offsets have exact finite denominator profiles. Dense scalar recurrence gives paid adjacent radial pairs or explicit one-sided fronts. BDA5ai--BDA5ak correct the radial rectangle decoder for the full two-layer union, and BDA5al--BDA5ao propagate the canonical binary menu through heterogeneous products and rank-one suppression. BDA5ap--BDA5ar close the five affine-anchor-chain output by fixing one current role cell and one radial line at loss `1/10`. BDA5as--BDA5au close every transition cycle made solely from physical `h <-> h+q` moves and strict effective-denominator descent. BDA5av--BDA5ay now reconstruct every determinant-realized denominator, primitive direction, board anchor and finite role into a polynomial physical address stock of size `O(L_ext n^10)`. The remaining frontier is balanced-floor and higher-rank arithmetic, physical realization of unresolved roles, and payment, descent or ticketing of recurrent exact same-denominator non-scalar addresses.
+> **Status:** Scalar lifts and reflected offsets have exact finite denominator profiles. Dense scalar recurrence gives paid adjacent radial pairs or explicit one-sided fronts. BDA5ai--BDA5ak correct the radial rectangle decoder for the full two-layer union, and BDA5al--BDA5ao propagate the canonical binary menu through heterogeneous products and rank-one suppression. BDA5ap--BDA5ar close the five affine-anchor-chain output by fixing one current role cell and one radial line at loss `1/10`. BDA5as--BDA5au close every transition cycle made solely from physical `h <-> h+q` moves and strict effective-denominator descent. BDA5av--BDA5ay reconstruct every determinant-realized denominator, primitive direction, board anchor and finite role into a polynomial physical address stock of size `O(L_ext n^10)`. BDA5az--BDA5bb now extract a simple same-denominator cycle of length at most that stock and give an explicit `L_op K^2` decorated-edge ticket budget. The remaining frontier is cycle-local payment/descent/erasure, balanced-floor and higher-rank arithmetic, and physical realization of unresolved roles.
 
 ## Branch map
 
@@ -23,6 +23,7 @@ This branch develops the finite-denominator exception route produced by perfect-
 - [`docs/bounded-denominator-affine-chain-collapse.md`](docs/bounded-denominator-affine-chain-collapse.md): fixed-current-cell collapse of every high-coordinate affine chain.
 - [`docs/bounded-denominator-scalar-cycle-termination.md`](docs/bounded-denominator-scalar-cycle-termination.md): ticketed scale forests and strict denominator-cycle termination.
 - [`docs/bounded-denominator-physical-address-stock.md`](docs/bounded-denominator-physical-address-stock.md): polynomial determinant-realized profile and non-scalar address dictionaries.
+- [`docs/bounded-denominator-profile-cycle-extraction.md`](docs/bounded-denominator-profile-cycle-extraction.md): simple recurrent-cycle extraction and decorated edge-ticket bound.
 - [`docs/bounded-denominator-radial-rectangle-decoder.md`](docs/bounded-denominator-radial-rectangle-decoder.md): original rectangle geometry; union payment is corrected below.
 - [`docs/bounded-denominator-union-safe-rectangle-repair.md`](docs/bounded-denominator-union-safe-rectangle-repair.md): union-safe repairs for all three blocker occupancies.
 - [`docs/bounded-denominator-heterogeneous-decoder-product.md`](docs/bounded-denominator-heterogeneous-decoder-product.md): original product ledger; union use is superseded below.
@@ -43,8 +44,8 @@ This branch develops the finite-denominator exception route produced by perfect-
 
 ## Highest-value frontier
 
-1. Convert balanced-floor and heavy rank-two/rank-three profiles into terminating arithmetic or exported pivot transitions.
-2. Pay, descend, erase or ticket recurrence of one exact polynomially addressed same-denominator non-scalar profile.
+1. Pay, descend, erase or ticket one explicit simple same-denominator non-scalar cycle from BDA5bb.
+2. Convert balanced-floor and heavy rank-two/rank-three profiles into terminating arithmetic or exported pivot transitions.
 3. Prove physical occurrence realization for unresolved ordinary roles; keep raw reflected `CD` profiles on the nonradial route.
 4. Import fixed-cell radial fans wherever factor-conservative current payment is available.
 
