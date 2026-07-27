@@ -40,6 +40,14 @@
     "expected_pair_cycles": [10, 4, 1]
   },
   {
+    "p": 47,
+    "archive_path": "mvr/no-three-in-line:results/c4-46.out:first-record",
+    "code": "oQX3UHLYiERMbQYDH5AGREb360OGcZf1MWach4906KPChUe5F2XKPdjaf279DNi4A7TLjdg8VITZeSWBJ8NIV1BOSFgCJ",
+    "expected_cycles": [11, 11, 11, 11, 2],
+    "expected_quarter_turn_modes": ["swapped"],
+    "expected_pair_cycles": [22, 1]
+  },
+  {
     "p": 61,
     "archive_path": "n60_rot4",
     "code": "oKkZdVgFJQf9n8NTkIrbs5VLgCl07UeRuNP2B4pEu1xOm9Xhr1cRhMtYi2AEq7jnvFP4bGWLw6GQoBZ0w3j8tmvYa3WJTqxClHcSs5M6fDUapAoIXeiHSKODd",
