@@ -1,9 +1,9 @@
 # Exact normalized rank-three offspring census through side five
 
 CMR1662--CMR1669 execute the normalized fixed-interface response census through
-side five and determine exact rank-one and rank-two prescription caps.  The
+side five and determine exact rank-one and rank-two prescription caps. The
 remaining fixed-interface and line-clean offspring rows may also contain
-residual-rank-three prescriptions.  This chapter extends the same exhaustive
+residual-rank-three prescriptions. This chapter extends the same exhaustive
 census to rank three.
 
 The normalized host is
@@ -18,7 +18,7 @@ with a deleted partial matching `X subseteq H_d`, executable board
 G_X=H_d\setminus X,
 \]
 
-and residual `S_{d-2}` canonicalization.  A rank-three prescription is a
+and residual `S_{d-2}` canonicalization. A rank-three prescription is a
 three-edge partial matching contained in at least one response matching.
 
 ## 1. Ambient rank-three prescription stock
@@ -28,9 +28,7 @@ three-edge partial matching contained in at least one response matching.
 The complete bipartite board `K_{d,d}` has exactly
 
 \[
-\boxed{
-R_3(d)=6\binom d3^2
-}
+\boxed{R_3(d)=6\binom d3^2}
 \]
 
 rank-three prescriptions.
@@ -78,17 +76,15 @@ Across the 45 canonical executable side-four hosts:
    are forced;
 3. every nonforced instance satisfies
    \[
-   \boxed{
-   \Pr(P\subseteq Q)\le\frac12;
-   }
+   \boxed{\Pr(P\subseteq Q)\le 1/2};
    \]
 4. the cap `1/2` is attained.
 
 ### Proof
 
 For every canonical host, enumerate all response permutations and every
-three-edge subset of each response.  Deduplicate prescriptions, count containing
-responses and divide by the exact host denominator.  Separate numerator equal to
+three-edge subset of each response. Deduplicate prescriptions, count containing
+responses and divide by the exact host denominator. Separate numerator equal to
 the denominator and maximize the remaining fractions. ∎
 
 Forced instances enter the existing common-prescription contraction branch.
@@ -107,9 +103,7 @@ Across the 124 canonical executable side-five hosts:
 2. none is forced;
 3. every instance satisfies
    \[
-   \boxed{
-   \Pr(P\subseteq Q)\le\frac14;
-   }
+   \boxed{\Pr(P\subseteq Q)\le 1/4};
    \]
 4. the cap `1/4` is attained.
 
@@ -156,9 +150,9 @@ The following matching-level expectation bounds hold.
 
 \[
 \boxed{
-A_{\rm class}
+A_{\mathrm{class}}
 \le
-\frac34N_1+rac23N_2+rac12N_3.
+(3/4)N_1+(2/3)N_2+(1/2)N_3.
 }
 \]
 
@@ -166,9 +160,9 @@ A_{\rm class}
 
 \[
 \boxed{
-A_{\rm class}
+A_{\mathrm{class}}
 \le
-\frac23N_1+rac25N_2+rac14N_3.
+(2/3)N_1+(2/5)N_2+(1/4)N_3.
 }
 \]
 
@@ -198,9 +192,9 @@ numerator capacities.
 \boxed{
 C_4(Z;N_1,N_2,N_3)
 =
-N_1\left\lfloor\frac{3Z}{4}\right\rfloor
-+N_2\left\lfloor\frac{2Z}{3}\right\rfloor
-+N_3\left\lfloor\frac{Z}{2}\right\rfloor.
+N_1\lfloor 3Z/4\rfloor
++N_2\lfloor 2Z/3\rfloor
++N_3\lfloor Z/2\rfloor.
 }
 \]
 
@@ -210,22 +204,22 @@ N_1\left\lfloor\frac{3Z}{4}\right\rfloor
 \boxed{
 C_5(Z;N_1,N_2,N_3)
 =
-N_1\left\lfloor\frac{2Z}{3}\right\rfloor
-+N_2\left\lfloor\frac{2Z}{5}\right\rfloor
-+N_3\left\lfloor\frac{Z}{4}\right\rfloor.
+N_1\lfloor 2Z/3\rfloor
++N_2\lfloor 2Z/5\rfloor
++N_3\lfloor Z/4\rfloor.
 }
 \]
 
 If `a_class` is the exact expectation numerator over denominator `Z`, then
 
 \[
-\boxed{a_{\rm class}\le C_d(Z;N_1,N_2,N_3).}
+\boxed{a_{\mathrm{class}}\le C_d(Z;N_1,N_2,N_3).}
 \]
 
 ### Proof
 
 Each prescription numerator is an integer and is bounded by its probability cap
-times `Z`; hence it is at most the corresponding floor.  Sum over the class. ∎
+times `Z`; hence it is at most the corresponding floor. Sum over the class. ∎
 
 These capacities feed directly into the selector gap compiler CMR1646--CMR1653
 and the line-profile capacity compiler CMR1678--CMR1685.
@@ -245,7 +239,7 @@ residual ranks one through three.
    rank counts are known.
 
 The remaining thin work is geometric offspring classification on these
-canonical hosts and any larger side not eliminated structurally.  No all-`n`
+canonical hosts and any larger side not eliminated structurally. No all-`n`
 theorem is claimed.
 
 All `15,465` extendable rank-three prescription instances on canonical sides
