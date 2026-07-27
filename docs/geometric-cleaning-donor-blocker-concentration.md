@@ -2,11 +2,12 @@
 
 **Branch:** `research/geometric-cleaning`
 
-GC2fk--GC2fo neutralize one heavy current lineage whenever its balanced-donor menu is nonempty.  The
-remaining donor-side failure is not geometric diffusion: every unavailable donor row fails at one least
-physical legality field.  This note partitions a complete candidate reservoir into legal donors and a
-finite exact blocker dictionary.  A small or empty legal menu therefore exposes one blocker atom with
-large donor-incidence demand, or violates its declared capacity.
+GC2fp--GC2ft already split donor scarcity into explicit collision, line, target-disjoint support,
+target-common and global cause classes.  This note adds a capacity-and-weight refinement to that physical
+partition: every unavailable donor row still has one least exact blocker address, but each address now
+comes with an optional certified blocking capacity and carries the full heavy-lineage donor demand.  A
+small or empty legal menu therefore exposes one blocker atom with large donor-incidence demand, or
+violates its declared capacity.
 
 ## Candidate donor reservoir
 
@@ -41,7 +42,7 @@ put
 
 A capacity change, new blocker address, pool replenishment or context change is an outer reset.
 
-## GC2fp -- exact legal/blocker partition -- PROVED
+## GC2fu -- exact legal/blocker partition -- PROVED
 
 The candidate reservoir satisfies
 
@@ -61,7 +62,7 @@ Every candidate is legal or has one least blocker address, and these classes are
 the identity.  If every `n_p<=Gamma`, the illegal stock is at most `K_blk Gamma`, proving the legal-menu
 bound. QED.
 
-## GC2fq -- empty-menu blocker concentration -- PROVED
+## GC2fv -- empty-menu blocker concentration -- PROVED
 
 If `d=0`, one exact blocker address has
 
@@ -79,7 +80,7 @@ lineage `Q`.
 With no legal donors, the counts `n_p` sum to `d_0`.  Pigeonhole gives the count bound; multiply by the
 common lineage demand `h`. QED.
 
-## GC2fr -- capacity-certified donor existence or overload -- PROVED
+## GC2fw -- capacity-certified donor existence or overload -- PROVED
 
 At least one of the following occurs:
 
@@ -96,13 +97,13 @@ If no address exceeds capacity, then
 
 `sum_p n_p<=sum_p b_p=B_blk`.
 
-Use GC2fp's partition identity.  The final statement is integrality. QED.
+Use GC2fu's partition identity.  The final statement is integrality. QED.
 
 A capacity overload retains the exact blocker address, excess `n_p-b_p`, field type and complete physical
 cause.  It enters the existing cause-load, raw-gain, Hall-deficiency, GC4 or pool-depletion routers
 according to that field type.
 
-## GC2fs -- heavy-lineage donor/blocker router -- PROVED UNDER THE DECLARED CONTRACTS
+## GC2fx -- heavy-lineage donor/blocker router -- PROVED UNDER THE DECLARED CONTRACTS
 
 Fix `epsilon in (0,1)`.  One heavy exact current lineage of weight `h` has one continuation:
 
@@ -121,17 +122,17 @@ Fix `epsilon in (0,1)`.  One heavy exact current lineage of weight `h` has one c
 
 ### Proof
 
-If `d>0`, apply GC2fl--GC2fm to the complete legal donor menu.  If `d=0`, apply GC2fq.  Independently,
-GC2fr gives the capacity-certified lower bound or overload.  Failed hypotheses are retained explicitly.
+If `d>0`, apply GC2fl--GC2fm to the complete legal donor menu.  If `d=0`, apply GC2fv.  Independently,
+GC2fw gives the capacity-certified lower bound or overload.  Failed hypotheses are retained explicitly.
 QED.
 
-## GC2ft -- installed-bank blocker-localized continuation -- PROVED
+## GC2fy -- installed-bank blocker-localized continuation -- PROVED
 
 Suppose the heavy lineage comes from an installed bank of birth weight `W_B`, so
 
 `h>W_B/[8q_ch N^2(2Delta_cap-1)]`.
 
-Then the empty-menu blocker branch of GC2fs gives one exact blocker address with incidence demand greater
+Then the empty-menu blocker branch of GC2fx gives one exact blocker address with incidence demand greater
 than
 
 `d_0 W_B/[8K_blk q_ch N^2(2Delta_cap-1)]`.
@@ -141,13 +142,13 @@ no longer an unstructured endpoint: it is one quantitative exact physical blocke
 
 ### Proof
 
-Substitute the strict heavy-lineage bound into GC2fq.  The other alternatives are GC2fn and GC2fs. QED.
+Substitute the strict heavy-lineage bound into GC2fv.  The other alternatives are GC2fn and GC2fx. QED.
 
 ## Corrected GC frontier
 
-A missing balanced-donor menu now localizes to one least blocker atom or a declared capacity overload.
-For direct two-layer hosts, any candidate reservoir larger than the total blocker capacity automatically
-contains a legal donor.
+Beyond the physical cause budgets of GC2fp--GC2ft, a missing balanced-donor menu now localizes to one
+least blocker atom or a declared capacity overload.  For direct two-layer hosts, any candidate reservoir
+larger than the total blocker capacity automatically contains a legal donor.
 
 The remaining geometry is payment or removal of the concentrated blocker atom, construction of complete
 candidate reservoirs outside direct two-layer hosts, repeated non-tagged feedback lineage growth,
