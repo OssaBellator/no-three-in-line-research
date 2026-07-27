@@ -2,50 +2,43 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This stage continues the exact full-selector classification at base side seven.
-It studies the `(5,2)` relative-cycle class inside the radius-three,
-support-twenty selector layer of the canonical `[14]^2` host. The task is a
-finite obstruction-and-witness census, not an infinite closure theorem.
+This stage is the exact full-selector classification of the `(5,2)` relative
+cycle class inside the radius-three, support-twenty layer of the canonical
+`[14]^2` host. It is a finite obstruction-and-witness census, not an infinite
+closure theorem.
 
-## Current ledger
+## Current exact ledger
 
-The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have classified every top-signature tier of multiplicity at least `4` and the
-first twenty-two hundred signatures of multiplicity `3`:
+The support-twenty layer contains `71,860` selectors grouped into `38,553` top
+signatures. The complete multiplicity histogram is independently verified.
 
-| Multiplicity | Signatures | Selectors | Status |
-|---:|---:|---:|---|
-| 46 | 4 | 184 | certified infeasible |
-| 40 | 3 | 120 | certified infeasible |
-| 38 | 3 | 114 | certified infeasible |
-| 35 | 2 | 70 | certified infeasible |
-| 32 | 3 | 96 | certified infeasible |
-| 27 | 6 | 162 | certified infeasible |
-| 26 | 6 | 156 | certified infeasible |
-| 24 | 8 | 192 | certified infeasible |
-| 23 | 10 | 230 | certified infeasible |
-| 20 | 1 | 20 | certified infeasible |
-| 19 | 42 | 798 | certified infeasible |
-| 16 | 38 | 608 | certified infeasible |
-| 15 | 2 | 30 | certified infeasible |
-| 14 | 40 | 560 | certified infeasible |
-| 13 | 48 | 624 | certified infeasible |
-| 12 | 128 | 1,536 | certified infeasible |
-| 10 | 164 | 1,640 | certified infeasible |
-| 9 | 64 | 576 | certified infeasible |
-| 8 | 277 | 2,216 | certified infeasible |
-| 7 | 100 | 700 | certified infeasible |
-| 6 | 524 | 3,144 | certified infeasible |
-| 5 | 725 | 3,625 | certified infeasible |
-| 4 | 2,392 | 9,568 | 9,567 infeasible; 1 witnessed |
-| 3, shards 0--21 | 2,200 of 3,544 | 6,600 | certified infeasible |
-| **Total** | **6,790 completed classes** | **33,568 rejected; 1 witnessed** | **2,261,682,464 rejection-CSP nodes** |
+All selectors of multiplicity at least three are classified:
 
-Thus `38,291` support-twenty selectors remain unclassified and active in this
-cache layer.
+- `37,600` are certified infeasible in all four radix orientations;
+- one multiplicity-four selector has a verified no-three embedding.
 
-The latest exact results are PX932--PX935 in
-[`docs/293-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-twenty-one.md`](../docs/293-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-twenty-one.md).
+Multiplicity two contains `3,840` signatures and `7,680` selectors. The first
+`320` signatures, global cases `0` through `319`, are now closed in thirty-two
+canonical ten-signature proof units:
+
+- `640` multiplicity-two selectors are certified infeasible;
+- every shard has a standalone ordered-transcript digest verifier;
+- the complete multiplicity-two prefix uses `133,108,986` shared bottom-CSP
+  nodes.
+
+Therefore the current support-twenty boundary is:
+
+- `38,240` certified-infeasible selectors;
+- one constructive selector;
+- `33,619` unclassified selectors;
+- `2,899,564,230` certified rejection-CSP nodes.
+
+The unresolved cache consists exactly of:
+
+- `3,520` multiplicity-two signatures containing `7,040` selectors;
+- all `26,579` multiplicity-one signatures and selectors.
+
+The next canonical finite frontier begins at multiplicity-two case `320`.
 
 ## Constructive witness
 
@@ -55,92 +48,63 @@ clean top assignment, bottom permutation, 28 distinct points, and all 3,276
 nonzero integer determinants. The other three selectors in that signature are
 jointly certified infeasible in all four orientations.
 
-## Solver and proof-object improvements
+## Exact proof objects
 
 The common radius-layer generation, clean-top enumeration, hoisted incidence
 masks, scalar point tables, active-selector propagation, and exact count checks
 live in `scripts/product_side_seven_cache_engine.hpp`.
 
-The common transcript verifiers print every per-signature count while one
-asserted 64-bit digest commits each complete ordered tier or shard transcript.
-`scripts/product_side_seven_tier_shard_digest.hpp` adds independently
-reproducible lexicographic shard intervals without checking in large case data
-tables. Witness-preserving scan workers retain constructive data and continue
-rather than terminating a range.
+The canonical finite proof unit is a ten-signature shard. Each wrapper asserts:
 
-PX743--PX744 add the first explicit proof-object pilot. For multiplicity-four
-case `1180`, orientation `0`, and one clean top order, a `60,536`-byte
-certificate supplies a concrete collinear triple for every selector-permutation
-obligation and is checked without calling `BottomGroupSolver`.
+- the multiplicity-two tier size `3,840`;
+- its exact lexicographic case interval;
+- clean-top counts and top-search nodes in both column orders;
+- bottom-CSP nodes in all four orientations;
+- an ordered 64-bit transcript digest.
 
-PX749--PX750 introduce a shared triple dictionary, and PX764--PX765 measure its
-saturation over eight top orders. PX804--PX805 and PX810--PX811 extend the
-multiplicity-four experiment to 32 and 64 top orders.
+The committed shard family is:
 
-PX816--PX817 transfer the dictionary format to multiplicity-three case `0`.
-PX834--PX835, PX876--PX877, PX890--PX891, PX898--PX899, PX906--PX907,
-PX914--PX915, PX922--PX923, and PX930--PX931 extend the exact prefix through
-64, 128, 256, 512, 1,024, 2,048, 4,096, and 8,192 clean top orders. At 8,192
-orders, only `1,408` triples cover `123,863,040` obligations in a projected
-`123,982,000`-byte payload, rather than `371,703,856` bytes for direct triples.
-The ordered proof transcript has digest `7207755927317802285`, and the final 134
-orders introduce no new triple.
+- `multiplicity2_pilot10.cpp` for cases `0`--`9`;
+- `multiplicity2_shard1.cpp` through `multiplicity2_shard31.cpp` for cases
+  `10`--`319`.
 
-PX774--PX775 give the first exact top-assumption core. For multiplicity-four
-case `1180`, orientation `0`, every top literal can be deleted: the bare
-signature refutes all `70,376` clean concatenated top orders after `95,298`
-shared bottom-CSP nodes.
+## Certificate compression frontier
 
-PX840--PX841, PX850--PX851, PX860--PX861, PX866--PX867, PX872--PX873,
-PX874--PX875, PX882--PX883, PX888--PX889, PX896--PX897, PX904--PX905,
-PX912--PX913, PX920--PX921, and PX928--PX929 repeat the experiment on
-multiplicity-three cases `0` through `12`. Every one of those thirteen
-consecutive signatures has an empty orientation-zero top core and therefore
-supplies a signature-level master nogood covering its entire clean concatenated
-top-order family.
+PX960--PX961 prove that fixed-top bottom infeasibility is equivalent to an
+explicit set cover of all `5,040` bottom permutations by collinear abstract
+triples. Two generic generators are committed:
 
-PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
-route. No external SAT solver or DRAT/FRAT checker is available in the current
-execution environment, so independently checked native certificates remain the
-active proof-producing route.
+1. a first-bad-triple dictionary format;
+2. a deterministic greedy triple-subcover format.
 
-## Immediate task
+A durable experiment is measuring multiplicity-two case zero on the first eight
+clean top orders in each orientation. The next proof-object target is to
+quantify repeated triple and cover reuse across selectors and top orders, then
+combine stored covers with assumption-minimized top nogoods.
 
-The remaining multiplicity-three frontier begins at global case index `2200`
-and contains `1,344` top signatures and `4,032` selectors. Continue in
-independently reproducible, witness-preserving intervals. In parallel:
+## Immediate tasks
 
-1. test how far the empty top-core recurrence extends;
-2. generalize signature-level master nogoods across mechanically checked incidence features;
-3. continue measuring dictionary saturation over wider top-order batches;
-4. export one selector-choice shard to CNF when an independent proof checker is available;
-5. add only mechanically verified host/reflection symmetry constraints.
-
-## Stage completion criterion
-
-This cache stage is complete when every selector in the radius-three,
-support-twenty `(5,2)` layer is either certified infeasible in all four
-orientations or accompanied by an independently checked no-three witness.
-Afterward the side-seven classification must still address the remaining
-support layers and relative-cycle classes.
+1. Continue multiplicity-two classification from global case `320` in fixed
+   ten-signature proof shards.
+2. Promote every completed transcript immediately; never count queued or
+   unpromoted jobs in the exact boundary.
+3. Measure and deduplicate explicit bottom-permutation covers.
+4. Add exact top-assumption minimization and signature-level master nogoods where
+   the bottom verifier supports them.
+5. Defer multiplicity one until the multiplicity-two proof size and symmetry
+   structure are understood.
+6. Keep every finite result explicitly separate from an all-`n` claim.
 
 ## Verification
 
 ```bash
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard21.cpp \
-  -o /tmp/m3s21
-/tmp/m3s21
-
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity3_case12_orientation0_empty_top_core.cpp \
-  -o /tmp/m3-case12-empty-core
-/tmp/m3-case12-empty-core
-
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity3_case0_orientation0_dictionary_saturation8192.cpp \
-  -o /tmp/m3-case0-dict8192
-/tmp/m3-case0-dict8192
+for source in \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..31}.cpp; do
+  binary="/tmp/$(basename "$source" .cpp)"
+  g++ -O3 -std=c++17 "$source" -o "$binary"
+  "$binary"
+done
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
