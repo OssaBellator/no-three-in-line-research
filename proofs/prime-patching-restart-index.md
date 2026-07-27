@@ -33,6 +33,7 @@ transition addendum in
 | `p=41` near-state and Hall radius | A verified four-line near-state has one common three-owner bad-line orbit and no canonical repair through support twelve | PROVED / VERIFIED FINITELY | `docs/293` |
 | Public `p=47` RLE certificate | The first public `c4-46` RLE record is independently decoded, decomposed, and determinant-verified | VERIFIED FINITELY | `docs/294` |
 | Wikimedia `p=59` coordinate certificate | The complete public `N=58` coordinate record is independently decomposed and determinant-verified with attribution retained | VERIFIED FINITELY | `docs/295` |
+| Repair owner-cover and cycle normal form | Bad lines impose weighted owner covers; exact target repairs are support derangements and disjoint cycle switches | PROVED / VERIFIED FINITELY | `docs/296` |
 
 ## Exact late theorem ranges
 
@@ -66,6 +67,7 @@ transition addendum in
 | PP3bgn--PP3bgu | Bad-line owner invariance, verified `p=41` near-state, exact Hall census, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/293-p41-four-line-near-state-and-hall-radius.md` |
 | PP3bgv--PP3bhb | Public RLE decoding, swapped decomposition, signed lift, verified `p=47` seed, and suite expansion | VERIFIED FINITELY | `docs/294-p47-public-rle-prime-seed-certificate.md` |
 | PP3bhc--PP3bhi | Attributed coordinate reconstruction, swapped decomposition, signed lift, verified `p=59` seed, and suite expansion | VERIFIED FINITELY | `docs/295-p59-wikimedia-coordinate-prime-seed-certificate.md` |
+| PP3bhj--PP3bhq | Exact repair derangements, cycle switches, weighted owner covers, and support-thirteen cycle census | PROVED / VERIFIED FINITELY | `docs/296-repair-owner-cover-and-derangement-cycle-normal-form.md` |
 
 ## Current exact endpoint
 
@@ -112,17 +114,15 @@ cylinder probability of order `n^-3`, and their total expected first-layer
 violations remain `Theta(n log n)`. The maximal-line geometry, not collision
 removal, is therefore the dominant obstruction for uniform measures.
 
-At `p=37`, the exact search gives a closed local story. Raw enumeration and
-Hall propagation exclude supports one through twelve, while a support-thirteen
-completion gives a valid seed. Its pair cycles are `[14,3,1]`, its orientation
-parities are `[0,1,1]`, its relative cycles are `[14,14,6,2]`, and all `59640`
-determinants are nonzero. Thus the recorded near-state has exact orbit repair
-radius thirteen.
+At `p=37`, exact support searches exclude one through twelve and a
+support-thirteen completion gives a valid seed. Its pair cycles are `[14,3,1]`,
+orientation parities `[0,1,1]`, relative cycles `[14,14,6,2]`, and all `59640`
+determinants are nonzero. The recorded near-state has exact orbit repair radius
+thirteen.
 
-At `p=41`, guided signed-cycle search gives a verified near-state with exactly
-four bad triples, one quarter-turn orbit, and common owner set `{15,18,20}`.
-Its pair cycles are `[10,5,4,1]`, with relative cycles
-`[10,10,10,4,4,2]`. The exact Hall search exhausts
+At `p=41`, the verified four-line near-state has one quarter-turn bad-line
+orbit and owner set `{15,18,20}`. Its pair cycles are `[10,5,4,1]`, with
+relative cycles `[10,10,10,4,4,2]`. The exact Hall search exhausts
 
 ```text
 782738 support subsets,
@@ -130,18 +130,35 @@ Its pair cycles are `[10,5,4,1]`, with relative cycles
 and every canonical support through twelve,
 ```
 
-without a repair. Therefore this near-state has `h_orbit>=13`. No `p=41` seed
-is claimed, and support thirteen remains unresolved.
+without a repair. Therefore this near-state has `h_orbit>=13`; support thirteen
+remains unresolved.
+
+The repair target map on a fixed support `A` is now exactly
+
+```text
+rho'=rho o g_A,
+```
+
+where `g_A` is a derangement of `A`. Every repair is a disjoint family of cycle
+switches. Bad lines additionally impose weighted owner-cover inequalities
+
+```text
+sum_(i in A) mu_L(i) >= q_L-2.
+```
+
+For the `p=41` support-thirteen frontier, the exact outer search has `75,140`
+owner-feasible supports and `24` target cycle types on each support. The total
+number of target derangements is `!13=2,290,792,932`.
 
 At `p=47`, the first public `c4-46` RLE record independently decodes to a
-quarter-turn swapped seed. Its pair cycles are `[22,1]`, with orientation
-parities `[1,0]` and relative cycles `[11,11,11,11,2]`. All
-`C(92,3)=125580` integer determinants are nonzero.
+quarter-turn swapped seed. Its pair cycles are `[22,1]`, orientation parities
+`[1,0]`, relative cycles `[11,11,11,11,2]`, and all `125580` determinants are
+nonzero.
 
 At `p=59`, the attributed Wikimedia coordinate record independently gives a
-quarter-turn swapped seed. Its pair cycles are `[28,1]`, with zero orientation
-parity on both cycles and relative cycles `[14,14,14,14,2]`. All
-`C(116,3)=253460` integer determinants are nonzero.
+quarter-turn swapped seed. Its pair cycles are `[28,1]`, both orientation
+parities are zero, relative cycles are `[14,14,14,14,2]`, and all `253460`
+determinants are nonzero.
 
 The canonical exact certificate suite now verifies
 
@@ -193,6 +210,9 @@ python scripts/check_p47_public_rle_certificate.py \
   experiments/p47-public-rle-certificate.json
 python scripts/check_p59_wikimedia_coordinate_certificate.py \
   experiments/p59-wikimedia-coordinate-certificate.json
+python scripts/check_repair_owner_cover_and_derangement_cycles.py \
+  experiments/p37-swapped-quarter-turn-near-example.json \
+  experiments/p41-swapped-quarter-turn-near-example.json
 ```
 
 For the exact support exclusions, compile and run the C++ checkers documented
