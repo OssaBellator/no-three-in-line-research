@@ -1,0 +1,64 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 7,
+  "cases": [
+    {
+      "m": 4,
+      "hamilton_cycles": 6,
+      "pair_constraints_total": 2,
+      "required_xor_zero_constraints": 0,
+      "required_xor_one_constraints": 2,
+      "owner_pairs_forbidding_both_xor_values": 0,
+      "cycles_with_satisfiable_two_owner_system": 6,
+      "cycles_with_unsatisfiable_two_owner_system": 0,
+      "two_owner_clean_orientation_vectors_total": 80,
+      "clean_orientation_count_distribution": {"8": 2, "16": 4},
+      "minimum_constraints_on_one_cycle": 0,
+      "maximum_constraints_on_one_cycle": 1
+    },
+    {
+      "m": 5,
+      "hamilton_cycles": 24,
+      "pair_constraints_total": 32,
+      "required_xor_zero_constraints": 12,
+      "required_xor_one_constraints": 20,
+      "owner_pairs_forbidding_both_xor_values": 0,
+      "cycles_with_satisfiable_two_owner_system": 22,
+      "cycles_with_unsatisfiable_two_owner_system": 2,
+      "two_owner_clean_orientation_vectors_total": 376,
+      "clean_orientation_count_distribution": {"0": 2, "4": 2, "8": 6, "16": 8, "32": 6},
+      "minimum_constraints_on_one_cycle": 0,
+      "maximum_constraints_on_one_cycle": 3
+    },
+    {
+      "m": 6,
+      "hamilton_cycles": 120,
+      "pair_constraints_total": 180,
+      "required_xor_zero_constraints": 84,
+      "required_xor_one_constraints": 96,
+      "owner_pairs_forbidding_both_xor_values": 0,
+      "cycles_with_satisfiable_two_owner_system": 112,
+      "cycles_with_unsatisfiable_two_owner_system": 8,
+      "two_owner_clean_orientation_vectors_total": 3576,
+      "clean_orientation_count_distribution": {"0": 8, "4": 2, "8": 14, "16": 32, "32": 36, "64": 28},
+      "minimum_constraints_on_one_cycle": 0,
+      "maximum_constraints_on_one_cycle": 4
+    },
+    {
+      "m": 7,
+      "hamilton_cycles": 720,
+      "pair_constraints_total": 1296,
+      "required_xor_zero_constraints": 624,
+      "required_xor_one_constraints": 672,
+      "owner_pairs_forbidding_both_xor_values": 0,
+      "cycles_with_satisfiable_two_owner_system": 664,
+      "cycles_with_unsatisfiable_two_owner_system": 56,
+      "two_owner_clean_orientation_vectors_total": 36736,
+      "clean_orientation_count_distribution": {"0": 56, "4": 4, "8": 34, "16": 82, "32": 222, "64": 206, "128": 116},
+      "minimum_constraints_on_one_cycle": 0,
+      "maximum_constraints_on_one_cycle": 6
+    }
+  ],
+  "simultaneous_orientation_complement_preserves_two_owner_flaws": true,
+  "asymptotic_seed_theorem_proved": false
+}
