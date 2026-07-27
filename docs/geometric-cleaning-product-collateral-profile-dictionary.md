@@ -112,9 +112,9 @@ Fix a profile carrying mass `V`.  Then one exact physical block tuple carries at
 - `V/k` for any one-block profile `(1)`, `(2)` or `(3)`;
 - `V/binom(k,2)` for `(1,1)`;
 - `V/[k(k-1)]` for the oriented profile `(2,1)`;
-- `V/binom(k,3)^(-1)` for `(1,1,1)`.
+- `V/binom(k,3)` for `(1,1,1)`.
 
-The last expression means `V/binom(k,3)` when `k>=3`.
+The last expression applies when `k>=3`.
 
 ### Proof
 
