@@ -1,120 +1,109 @@
-# All-n product track: terminal-core classification stage
+# All-n product track: paired terminal integration and finite-range frontier
 
 **Branch:** `research/all-n-product-construction`
 
-This stage continues
-[`tracks/all-n-product-nested-mixed-decoder-stage.md`](all-n-product-nested-mixed-decoder-stage.md).
-PX256--PX269 restore the mixed-sector decoder, nested log-log depth, and exact
-two-layer spread. PX270--PX293 now classify the terminal matching obstruction,
-make terminal optimization exact and subpower, prove causal lexicographic
-nonrecurrence, absorb every maximally deficient Hall core, and reduce genuine
-immobility to trajectory-saturated rows and columns.
+This track began with terminal Hall-core classification. The later historical,
+packet, buffer, and paired-label chapters now carry those local terminal
+interfaces into one factor-compatible rectangle-label repair tree. The active
+remaining obstruction is no longer an unclassified terminal core: it is finite
+coverage below the explicit asymptotic cutoff.
+
+The classical no-three-in-line conjecture and exact all-side product closure
+remain open.
 
 ## Current ledger
 
 | Item | Status | Current result |
 |---|---|---|
-| Missing PX256--PX269 bundle | **RESTORED** | Four theorem chapters, four verifiers, the mixed/nested stage ledger, and a theorem-index continuation are committed. |
 | Terminal Hall failure | **CLASSIFIED** | PX270 localizes every failure to a complete forbidden rectangle and bounds deficiency by `2Delta-m`. |
-| Sharp Hall obstruction | **ABSORBED** | PX271 and PX281--PX283 classify the saturated `K_(Delta,Delta)` core and rematch all but one common label. |
-| Maximal near-threshold deficiency | **ABSORBED** | PX284--PX286 delete exactly `r=2Delta-m` common labels and rematch every other endpoint. |
-| Terminal exact optimization | **SUBPOWER** | PX273--PX276 enumerate one- and two-block terminal states in `N^o(1)` time and output auditable obstruction certificates. |
-| Paid-certificate recurrence | **CLOSED** | PX277--PX280 give causal lexicographic descent; historical positions and packet complements prevent paid defects from returning. |
-| Principal trade below Hall threshold | **AVAILABLE** | PX287--PX290 give a directed cycle trade whenever `m>Delta` and an exact subpower cycle optimizer. |
-| Cycle-free core | **CLASSIFIED** | PX291--PX293 force a completely forbidden row and column and at least `m-Delta_0` distinct historical positions. |
-| Strict-sign-or-child interface | **OPEN** | Diffuse unassigned clean-star/radial and small-packet collateral still needs immediate descent or child conversion. |
-| Trajectory-saturated absorber | **OPEN** | Cores with `m<=Delta` and full historical rows/columns need a reset, coupled move, or finite classification. |
-| Infinite exact closure | **OPEN** | No all-side product closure follows yet. |
+| Sharp and maximal Hall cores | **ABSORBED** | PX271 and PX281--PX286 delete the common-label deficiency and rematch every remaining endpoint. |
+| Terminal exact optimization | **SUBPOWER** | PX273--PX276 enumerate one- and two-block terminal states in `N^o(1)` time and emit replayable obstruction certificates. |
+| Paid-certificate recurrence | **CLOSED** | PX277--PX280 give causal lexicographic descent and prevent paid defects from returning. |
+| Principal cycle escape | **AVAILABLE** | PX287--PX290 give an executable directed cycle trade whenever one exists. |
+| Trajectory-saturated core | **INTEGRATED** | PX291--PX293 classify it; the historical reset, overlap, antichain, coupled-absorber, and buffer chapters 134--152 feed it back into the rectangle-label tree. |
+| Strict-sign-or-child interface | **INTEGRATED** | The diffuse packet, line, radial, mixed-shadow, and terminal-return branches are lifted to exact rectangle-label moves through PX397--PX449. |
+| Dependency audit | **CLOSED FOR ACTIVE PATH** | PX451--PX455 and the repository scanner audit move-space tags, constants, theorem uniqueness, and the paired-label dependency chain. |
+| Effective asymptotic cutoff | **EXPLICIT** | PX952--PX955 sharpen the active divisor witness and lower the common cutoff to `N>=10^2875`. |
+| Below-cutoff coverage | **OPEN** | Orders below `10^2875` need a structural bridge, exact extension chain, interval-specific theorem, or finite classification. |
+| Infinite exact closure | **OPEN** | No theorem currently covers every side length. |
 
-## 1. Terminal Hall structure
+## 1. Terminal structure now used by the active path
 
 For an order-`m` allowed graph with forbidden degree `Delta`, every positive
-matching deficiency `delta` produces a complete forbidden rectangle `S x B`
-with
+matching deficiency produces a complete forbidden rectangle `S x B` with
 
 \[
 |S|+|B|=m+\delta,
 \qquad
-|S|,|B|\le\Delta.
-\]
-
-Hence
-
-\[
+|S|,|B|\le\Delta,
+\qquad
 \delta\le2\Delta-m.
 \]
 
-At equality, both Hall sides have size `Delta`, are saturated, and share at
-least `2Delta-m` labels. Deleting those common labels exposes two complete
-allowed cross-blocks and gives a principal rematching of all remaining
-endpoints.
+Maximal deficiency is removed by deleting exactly the shared labels and
+rematching the exposed cross-blocks. When a principal directed cycle exists,
+PX287--PX290 execute it. When it does not, PX291--PX293 force a fully forbidden
+row and column and hence a trajectory-saturation certificate.
 
-## 2. Terminal computation
+The later historical-reset and buffer-return chapters no longer treat that
+certificate as a terminal dead end. They convert it into a deeper causal child,
+a coupled move, or an audited finite obstruction, all in rectangle-label move
+space.
 
-A terminal block has order
+## 2. Paired-label splice
+
+PX397--PX403 audit the actual PX63 entry. PX404--PX410 use the true PX64 line
+cap. PX411--PX444 lift terminal, first-generation, packet, mixed-shadow, and
+recurrence moves to exact permutations of the two rectangle labels. PX445--PX450
+then give the conditional asymptotic strict-decrease loop.
+
+The combined causal vector decreases lexicographically at every repair
+transition. Consequently every positive factor-compatible rectangle state above
+the common cutoff has a finite repair subtree ending in a strict reduction of
+the integer bad-triple potential.
+
+## 3. Active numerical root
+
+The exact nested depth, Cartesian incidence constant, packet-family-free path,
+and rational divisor witnesses make the asymptotic branch effective. The sharp
+`8/109` product certificate gives
 
 \[
-m=O(\Delta_0+\log\log N).
+\mathfrak d(N)<10^{6425/109}N^{16/109}
 \]
 
-The exact one-block rank-at-most-three optimizer costs
+and the current common cutoff
 
 \[
-O(m!m^6),
+\boxed{N\ge10^{2875}}.
 \]
 
-and the dependent two-block optimizer costs
-
-\[
-O((m!)^2m^6).
-\]
-
-Both are `N^o(1)`. Failure is therefore an explicit replayable obstruction,
-not an asymptotic black box.
-
-## 3. Causal nonrecurrence
-
-Historical-position constraints form one partial matching per ancestor level.
-A designated star, line, radial, coordinate-field, or mixed-shadow certificate
-can recur only at its unique historical row position. Packet crosses recur only
-as the complementary packet two-cycle. Consequently the designated vector is
-lexicographically decreasing and cannot cycle. The remaining debt is solely
-unassigned collateral.
-
-## 4. Principal cycle escape
-
-When the current diagonal is forbidden and `m>Delta`, every row has an allowed
-off-diagonal cell. The allowed label digraph has minimum outdegree at least one
-and therefore contains a directed cycle. This gives an executable principal
-cyclic trade moving at least two endpoints even when a full perfect matching
-fails.
-
-If no directed cycle exists, the allowed digraph is acyclic and has a sink and
-a source. Thus one row and one column are completely forbidden. When the
-forbidden graph is a bounded base plus historical position matchings, the
-corresponding endpoint has visited at least `m-Delta_0` distinct historical
-positions.
+The verifier also confirms that `10^2874` does not satisfy the same
+divisor-controlled retained-order inequality. Further decimal compression in
+this universal divisor framework is therefore secondary to the finite-range
+bridge.
 
 ## Immediate frontier
 
-1. **Trajectory reset.** Use the full historical row/column to build a composite
-   reset trade or coupled-block escape for `m<=Delta`.
-2. **Strict-sign-or-child.** Convert every diffuse unassigned linear-sector
-   residue into immediate descent or a deeper designated child.
-3. **Terminal obstruction census.** Run the PX273/PX290 exact optimizers on the
-   trajectory-saturated templates and identify the minimal frozen cores.
-4. **Small packet range.** Apply causal lexicographic charging to
-   `t<=N^(1/2+o(1))` diffuse packet defects.
-5. **Closure conversion.** Assemble the nested decoder and terminal treatment
-   into PX63.
+1. **Finite-range bridge.** Construct an extension or absorber chain covering
+   every order below `10^2875`, or replace the universal divisor estimate by
+   interval-specific bounds that descend through the range.
+2. **Recursive produced-base closure.** Prove an iteration theorem from the
+   existing exact sides `6`, `8`, `10`, or `12`, especially a closure based at
+   side ten or twelve.
+3. **Side-seven finite classification.** Continue the exact multiplicity-two
+   selector census from global case `80`; postpone multiplicity one until its
+   certificate structure is understood.
+4. **General repair/resampling.** Seek a theorem coordinating many product
+   projection fibres, or a conflict-free exact-cover/resampling result that
+   subsumes the finite host searches.
+5. **Independent geometric frontiers.** The hyperbola pathway still needs
+   second-generation collateral concentration, monotone alternating closure, or
+   bounded-denominator chamber absorption.
 
 ## Verification
 
 ```bash
-python scripts/verify_product_two_block_rainbow_decoder.py
-python scripts/verify_product_mixed_rank_three_decoder.py
-python scripts/verify_product_nested_recursion_depth.py
-python scripts/verify_product_two_layer_regular_spread.py
 python scripts/verify_product_terminal_hall_core.py
 python scripts/verify_product_terminal_core_optimizer.py
 python scripts/verify_product_causal_lexicographic_descent.py
@@ -122,7 +111,7 @@ python scripts/verify_product_sharp_hall_absorber.py
 python scripts/verify_product_maximal_deficiency_absorber.py
 python scripts/verify_product_terminal_cycle_escape.py
 python scripts/verify_product_trajectory_saturated_core.py
+python scripts/verify_product_splice_interface.py
+python scripts/verify_product_entry_invariant_dependencies.py
+python scripts/verify_product_sharp_rational_divisor_cutoff.py
 ```
-
-The classical no-three-in-line conjecture and exact infinite product closure
-remain open.
