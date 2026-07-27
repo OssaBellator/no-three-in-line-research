@@ -1,0 +1,16 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 8,
+  "cases": [
+    {"m": 4, "hamilton_cycles": 6, "states": 96, "minimum_triples": 0, "valid_states": 16, "valid_cycles": 2},
+    {"m": 5, "hamilton_cycles": 24, "states": 768, "minimum_triples": 0, "valid_states": 16, "valid_cycles": 2},
+    {"m": 6, "hamilton_cycles": 120, "states": 7680, "minimum_triples": 4, "valid_states": 0, "valid_cycles": 0},
+    {"m": 7, "hamilton_cycles": 720, "states": 92160, "minimum_triples": 0, "valid_states": 36, "valid_cycles": 10},
+    {"m": 8, "hamilton_cycles": 5040, "states": 1290240, "minimum_triples": 0, "valid_states": 28, "valid_cycles": 10}
+  ],
+  "m8_valid_orientation_count_per_cycle_distribution": {"0": 5030, "2": 6, "4": 4},
+  "m8_first_valid_pair_permutation": [2, 5, 3, 6, 7, 4, 1, 0],
+  "m8_first_valid_orientations": [1, 0, 0, 1, 1, 0, 0, 0],
+  "all_defect_counts_divisible_by_four": true,
+  "asymptotic_seed_theorem_proved": false
+}
