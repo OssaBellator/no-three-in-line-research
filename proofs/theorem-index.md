@@ -61,6 +61,7 @@ This ledger records only branch-specific statements.
 | BDA5at | Capacity-one unordered adjacent-support tickets forbid every scalar closed walk | PROVED | `docs/bounded-denominator-scalar-cycle-termination.md` |
 | BDA5au | Strict divisor descent plus new adjacent tickets has one bounded integer potential | PROVED | `docs/bounded-denominator-scalar-cycle-termination.md` |
 | BDA5av–BDA5ay | Determinant-realized denominators, physical directions and board anchors give `O(n^8)` profiles and `O(L_ext n^10)` complete non-scalar addresses | PROVED UNDER THE DETERMINANT-REALIZATION, BOARD-ANCHOR AND FINITE-ROLE CONTRACTS | `docs/bounded-denominator-physical-address-stock.md` |
-| BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN; PURE SCALE/DENOMINATOR CYCLES CLOSED AND PHYSICAL NON-SCALAR ADDRESSES POLYNOMIALLY INDEXED | `docs/bounded-denominator-absorbers.md`; `docs/bounded-denominator-scalar-cycle-termination.md`; `docs/bounded-denominator-physical-address-stock.md` |
+| BDA5az–BDA5bb | Long same-denominator histories yield simple polynomially addressed cycles; capacity-one decorated-edge tickets give an explicit epoch bound | PROVED; TERMINATION UNDER THE EDGE-TICKET CONTRACT | `docs/bounded-denominator-profile-cycle-extraction.md` |
+| BDA6 | Global finite-denominator absorber and transition-cycle termination | OPEN; PURE SCALE/DENOMINATOR CYCLES CLOSED AND PHYSICAL NON-SCALAR RECURRENCE REDUCED TO ONE EXPLICIT SIMPLE PROFILE CYCLE | `docs/bounded-denominator-absorbers.md`; `docs/bounded-denominator-scalar-cycle-termination.md`; `docs/bounded-denominator-physical-address-stock.md`; `docs/bounded-denominator-profile-cycle-extraction.md` |
 
 No statement here proves the global conjecture.
