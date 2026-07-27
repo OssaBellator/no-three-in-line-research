@@ -8,7 +8,7 @@ square barrier itself. The bank is still an energy-ledger object. This note make
 
 Every negative conjunction record has exactly one single-swap-only orientation. For each independent
 square, choose the constituent swap which creates the heavier orientation. Under a mixed-orientation
-joint-legality contract, all chosen creators execute simultaneously, installing at least half of the
+creator-stage contract, all chosen creators execute simultaneously, installing at least half of the
 aggregate negative bank as genuinely current exact records. A second density split gives a large
 low-cost installation or a quantified aggregate first-stage barrier.
 
@@ -28,16 +28,18 @@ and
 
 `C_J^-=sum_(a in J_high)C_a^-`.
 
-Assume the **mixed-orientation first-stage contract**:
+Assume the **mixed-orientation creator-stage contract**:
 
 1. both constituent swaps of every square are individually legal from the common base colouring;
 2. for every interaction-independent square family and every choice of one constituent swap per
    square, the chosen swaps are jointly legal when executed simultaneously from the base state;
-3. no complete exact record scope meets two selected square supports;
-4. exact aliases are aggregated before orientation and square assignment;
-5. every selected negative record retains its square, creating-swap and opposite-destroyer address;
-6. failure returns the least base-legality, mixed-stage-legality, support, scope, alias, record,
-   orientation or boundary field.
+3. after the chosen creator of one square, its unchosen constituent is legal and destroys every
+   selected record in that creator orientation;
+4. no complete exact record scope meets two selected square supports;
+5. exact aliases are aggregated before orientation and square assignment;
+6. every selected negative record retains its square, creating-swap and opposite-destroyer address;
+7. failure returns the least base-legality, mixed-stage-legality, opposite-destroyer legality, support,
+   scope, alias, record, orientation or boundary field.
 
 ## SAS5gb -- exact negative-orientation partition -- PROVED
 
@@ -78,7 +80,7 @@ for every square and
 The larger of two nonnegative numbers is at least half their sum. Sum over the high square bank.
 QED.
 
-## SAS5gd -- simultaneous physical negative-bank installation -- PROVED UNDER THE FIRST-STAGE CONTRACT
+## SAS5gd -- simultaneous physical negative-bank installation -- PROVED UNDER THE CREATOR-STAGE CONTRACT
 
 Execute all chosen creator swaps `gamma_a` simultaneously. Then:
 
@@ -91,16 +93,17 @@ Execute all chosen creator swaps `gamma_a` simultaneously. Then:
    `T(kappa^Gamma)-T(kappa)=sum_a Delta_(gamma_a)`.
 
 At a swap-local minimum this total first-stage cost is nonnegative. Every installed record retains the
-opposite constituent swap as an exact destruction address.
+opposite constituent swap as an exact legal destruction address after its creator.
 
 ### Proof
 
-Item 2 of the first-stage contract gives simultaneous legality. SAS5gb says that the chosen
+Item 2 of the creator-stage contract gives simultaneous legality. SAS5gb says that the chosen
 constituent creates every record in its selected orientation. Complete-scope independence prevents
 any other selected square from changing that record, and alias aggregation gives disjoint exact
 banks. Record-by-record summation of the complete ledger gives energy additivity. Swap-local
-minimality makes every individually base-admissible increment nonnegative. The unchosen constituent
-is the opposite destroyer by the negative table. QED.
+minimality makes every individually base-admissible increment nonnegative. Item 3 makes the unchosen
+constituent a legal opposite destroyer after the creator, and the negative table shows that it removes
+the selected records. QED.
 
 This is a physical installation statement, not a claim that the installed conflicts are free.
 
@@ -148,11 +151,11 @@ for `lambda>0` and `theta in (0,1)`. For every `kappa_0>0`, one has:
 
    `kappa_0(1-theta)lambda M/[16(D_sq+1)]`;
 
-3. or one mixed-orientation first-stage, base-admissibility, interaction-independence, complete-ledger,
-   record, alias or boundary field fails.
+3. or one mixed-orientation creator-stage, opposite-destroyer legality, base-admissibility,
+   interaction-independence, complete-ledger, record, alias or boundary field fails.
 
 The installed bank enters the exact current-record and realized repair/opposite-destruction ledgers
-with its full selected mass and known opposite destroyers.
+with its full selected mass and known legal opposite destroyers.
 
 ### Proof
 
@@ -172,8 +175,8 @@ opposite destroyers or a comparably quantified aggregate base single-swap barrie
 
 The remaining sparse work is paying or recycling the installed negative-record bank, choosing global
 `lambda,theta,kappa_0` scales whose barrier alternatives are globally bounded, proving mixed-orientation
-joint legality in every arithmetic word family, batching neutral outputs under failed incidence caps,
-and the positive-base-row, reflected-boundary and high-incidence branches.
+creator and opposite-destroyer legality in every arithmetic word family, batching neutral outputs
+under failed incidence caps, and the positive-base-row, reflected-boundary and high-incidence branches.
 
 ## Finite check
 
