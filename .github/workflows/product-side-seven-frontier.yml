@@ -1,14 +1,6 @@
 name: Product side-seven frontier
 
 on:
-  push:
-    branches:
-      - research/all-n-product-construction
-    paths:
-      - scripts/measure_product_side_seven_tier_shard.cpp
-      - scripts/product_side_seven_cache_engine.hpp
-      - scripts/product_side_seven_tier_shard_digest.hpp
-      - .github/workflows/product-side-seven-frontier.yml
   pull_request:
     branches:
       - main
@@ -18,31 +10,35 @@ on:
       - scripts/product_side_seven_tier_shard_digest.hpp
       - .github/workflows/product-side-seven-frontier.yml
   workflow_dispatch:
-    inputs:
-      first_case:
-        description: First multiplicity-tier case index
-        required: true
-        default: '2200'
-      case_count:
-        description: Number of consecutive cases
-        required: true
-        default: '100'
-      multiplicity:
-        description: Multiplicity tier
-        required: true
-        default: '3'
 
 permissions:
   contents: read
+  issues: write
+  pull-requests: write
 
 jobs:
   measure-shard:
+    name: measure-shard-${{ matrix.shard }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
-    env:
-      FIRST_CASE: ${{ github.event_name == 'workflow_dispatch' && inputs.first_case || '2200' }}
-      CASE_COUNT: ${{ github.event_name == 'workflow_dispatch' && inputs.case_count || '100' }}
-      MULTIPLICITY: ${{ github.event_name == 'workflow_dispatch' && inputs.multiplicity || '3' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { shard: 22, first_case: 2200, case_count: 100 }
+          - { shard: 23, first_case: 2300, case_count: 100 }
+          - { shard: 24, first_case: 2400, case_count: 100 }
+          - { shard: 25, first_case: 2500, case_count: 100 }
+          - { shard: 26, first_case: 2600, case_count: 100 }
+          - { shard: 27, first_case: 2700, case_count: 100 }
+          - { shard: 28, first_case: 2800, case_count: 100 }
+          - { shard: 29, first_case: 2900, case_count: 100 }
+          - { shard: 30, first_case: 3000, case_count: 100 }
+          - { shard: 31, first_case: 3100, case_count: 100 }
+          - { shard: 32, first_case: 3200, case_count: 100 }
+          - { shard: 33, first_case: 3300, case_count: 100 }
+          - { shard: 34, first_case: 3400, case_count: 100 }
+          - { shard: 35, first_case: 3500, case_count: 44 }
     steps:
       - uses: actions/checkout@v4
       - name: Compile measurement tool
@@ -53,11 +49,50 @@ jobs:
       - name: Measure exact shard
         run: >-
           /tmp/measure_product_side_seven_tier_shard
-          "$FIRST_CASE" "$CASE_COUNT" "$MULTIPLICITY"
-          | tee product-side-seven-shard.txt
+          "${{ matrix.first_case }}" "${{ matrix.case_count }}" 3
+          | tee "product-side-seven-shard-${{ matrix.first_case }}.txt"
       - name: Upload transcript
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: product-side-seven-${{ env.MULTIPLICITY }}-${{ env.FIRST_CASE }}-${{ env.CASE_COUNT }}
-          path: product-side-seven-shard.txt
+          name: product-side-seven-3-${{ matrix.first_case }}-${{ matrix.case_count }}
+          path: product-side-seven-shard-${{ matrix.first_case }}.txt
+          if-no-files-found: warn
+
+  summarize:
+    if: always()
+    needs: measure-shard
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download shard transcripts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: product-side-seven-3-*
+          merge-multiple: true
+      - name: Build compact frontier summary
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(product-side-seven-shard-*.txt)
+          if ((${#files[@]} == 0)); then
+            printf 'No shard transcript was produced.\n' > frontier-summary.md
+            exit 1
+          fi
+          printf '## Exact side-seven multiplicity-three frontier\n\n' > frontier-summary.md
+          for file in $(printf '%s\n' "${files[@]}" | sort -V); do
+            printf '### `%s`\n\n```cpp\n' "$file" >> frontier-summary.md
+            tail -n 12 "$file" >> frontier-summary.md
+            printf '```\n\n' >> frontier-summary.md
+          done
+      - name: Upload compact summary
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-frontier-summary
+          path: frontier-summary.md
           if-no-files-found: error
+      - name: Comment on pull request
+        if: github.event_name == 'pull_request'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: gh pr comment "$PR_NUMBER" --body-file frontier-summary.md
