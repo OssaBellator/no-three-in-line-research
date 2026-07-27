@@ -12,7 +12,8 @@ This is the branch-specific theorem ledger. Shared inputs on `main` are not dupl
 | SRR2b | Arbitrary sublinear missing-cell sets have rook-polynomial remote-cylinder locality | PROVED | `docs/sparse-hole-locality.md` |
 | SRR2c–SRR2e | Post-resampling cylinder probabilities equal conditional-uniform mass times the average reverse flaw-entry load ratio; Hall flows reduce the problem to cylinder-balanced column loads | PROVED | `docs/superregular-reverse-flow-cylinder-law.md` |
 | SRR2f–SRR2i | Optimal cylinder balance is a minimax transportation problem; aggregate event inventories are exact min-cost Hall-flow objectives | PROVED | `docs/superregular-cylinder-flow-minimax.md` |
-| SRR2 | General superregular lopsided remote-cylinder comparison | OPEN; EXACT REVERSE-FLOW AND MINIMAX TARGETS IDENTIFIED, CYLINDER-BALANCED BOUNDED-CYCLE HALL FLOW REMAINS | `docs/superregular-resampling.md` |
+| SRR2j–SRR2m | Integer endpoint-cost Hall flows have integral optimizers and exact sublevel-rank/Hall-deficiency formulas; failed low-cost flow yields one threshold cut | PROVED | `docs/superregular-endpoint-cost-cuts.md` |
+| SRR2 | General superregular lopsided remote-cylinder comparison | OPEN; EXACT REVERSE-FLOW, MINIMAX AND LOW-EVENT HALL-CUT TARGETS IDENTIFIED; UNIFORM SUPERREGULAR DEFICIENCY BOUNDS REMAIN | `docs/superregular-resampling.md` |
 | SRR3a | Two disjoint complete matchings admit a stationary four-cycle flaw-removal oracle | PROVED | `docs/complete-two-layer-resampling.md` |
 | SRR3b–SRR3e | Complete-host same-layer, untouched-layer, and mixed-layer locality | PROVED | `docs/complete-two-layer-resampling.md` |
 | SRR3f | Two dense host matchings admit a state-normalized stationary flaw-removal oracle | PROVED | `docs/dense-host-stationary-resampling.md` |
