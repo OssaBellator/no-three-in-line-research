@@ -23,6 +23,8 @@ The authoritative live ledger is split across:
 | CMR1710--1717 | Multiplicity-weighted line-clean expectation, rank-mass bound, forced subtraction, pointwise/count/mass minimum, large-load closure, integer numerator certificate, rooted-trace specialization, and the multiplicity-aware endpoint | PROVED; 720 rational laws, 2,040 rank identities, multiplicity bounds and strict large-load checks | `docs/317-prime-power-line-clean-rank-mass-large-load-closure.md` |
 | CMR1718--1725 | Response-wise owned-submatching bound, owner-support expectation capacity, row/column cover form, fixed-owner conditional mass, weighted capacity, return-selector edge-score specialization, integer numerator form, and the owner-support endpoint | PROVED; 600 rational systems, 16,332 response-wise checks, 1,700 support capacities and 9,834 conditional-owner checks | `docs/318-prime-power-owner-support-rank-mass-capacities.md` |
 | CMR1726--1733 | Support-local expectation, strict large-load closure, vertex-cover threshold, fixed finite-support threshold, prime-field reused-support specialization, weighted version, integer slack and multiplicity overflow, and the small-support endpoint | PROVED; 660 rational systems, 1,870 rankwise capacities, 660 strict closures and 601 overflow localizations | `docs/319-prime-power-owner-support-large-load-closure.md` |
+| CMR1734--1741 | Rank-three injectivity, exact rank-two line-load formula, exact rank-one secant formula, line-load/secant bounds, primitive-direction form, explicit line-clean mass, owner-support specialization, and the geometric multiplicity endpoint | PROVED; 1,200 point systems, 16,649 collinear triples and exact rank-one/two/three multiplicity checks | `docs/320-prime-power-geometric-prescription-multiplicity-formulas.md` |
+| CMR1742--1749 | Convex packing lemma, rank-one packed bound, linear relaxation, combined rankwise caps, explicit line-clean threshold, owner-support threshold, integer slack alternatives, and the packed-secant endpoint | PROVED; 100,000 exact packing systems and 1,200 finite-grid line-height systems checked | `docs/321-prime-power-packed-secant-multiplicity-bounds.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -49,7 +51,7 @@ An objective below one, or its denominator-cleared integer form, proves the
 complete coupled block subcritical without adding incompatible return and
 selector maxima.
 
-### Line-clean capacities
+### Line-clean capacities and geometric multiplicity
 
 The exact strong, singleton and overlap response ratios have universal floors
 
@@ -82,27 +84,42 @@ If `widehat W` fits the exact or universal budget, one positive integer slack
 certifies the whole class family. Failure forces one candidate or unavailable-
 edge coordinate above an explicit integer threshold.
 
-The exact CMR1533 row may contain several candidate triples sharing one response
-prescription. If `m_r` is the maximum rank-`r` multiplicity, rank mass gives the
-additional bound
+For a background point set `B`, geometric prescription multiplicities are now
+exact:
+
+1. rank three has multiplicity one;
+2. rank two multiplicity is `|B cap ell(x,y)|`;
+3. rank one multiplicity is
+   \[
+   \sum_{\ell\ni x}C(|B\cap\ell|,2).
+   \]
+
+If `|B|=qH+r` with `0<=r<H` and every relevant background line has load at most
+`H`, the exact packed rank-one cap is
 
 \[
-\mathbb E N_{\rm off}
-\le
-\sum_{r=1}^3m_r C(d,r),
+\Phi(|B|,H)=qC(H,2)+C(r,2).
 \]
 
-or, after forced contractions,
+Thus one may take
 
 \[
-\mathbb E N_{\rm off}
-\le
-\sum_{r=1}^3m_r\bigl(C(d,r)-F_r\bigr).
+m_1\le\Phi(|B|,H_1),
+\qquad
+m_2\le H_2,
+\qquad
+m_3=1.
 \]
 
-A nonempty line-clean host is therefore a strict improvement whenever destroyed
-load exceeds this multiplicity-corrected mass. The pure `(d^3+5d)/6+1`
-threshold applies only to injective candidate families.
+The resulting explicit line-clean mass bound is
+
+\[
+\Phi(|B|,H_1)C(d,1)+H_2C(d,2)+C(d,3),
+\]
+
+with `C(d,r)-F_r` replacing the rank masses after forced contractions. A nonempty
+line-clean host is a strict improvement whenever destroyed load exceeds the
+applicable multiplicity-corrected mass.
 
 ### Selector capacity gaps
 
@@ -131,17 +148,20 @@ at most
 \mu(A)C(d-1,r-1).
 \]
 
-A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With
-rankwise multiplicity caps `m_r`, expected new owned collateral is at most
+A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With the
+geometric multiplicity caps above, expected new owned collateral is at most
 
 \[
-\mu(A)\sum_{r=1}^3m_r C(d-1,r-1).
+\mu(A)
+\left[
+\Phi(|B|,H_1)+H_2(d-1)+C(d-1,2)
+\right].
 \]
 
 Destruction above this quantity gives a strict response. Prime-field reused-
-support states have support size one or two, subject to the explicit condition
-that every retained child owner lies in that support. Failure of the closure
-localizes one large rankwise prescription multiplicity.
+support states have support size one or two, subject to the condition that every
+retained child owner lies in that support. Failure localizes a large owner
+support, line height, secant packing value, or insufficient destroyed load.
 
 ### Symmetry-normalized thin tables
 
@@ -161,8 +181,8 @@ The residual stabilizer is `S_{d-2}`. The exact census through side five is:
 | 5 | 124 | caps `2/3`, `2/5`, `1/4`; no forced positive rank-at-most-three prescriptions |
 
 For every response law and rank `r`, distinct prescription probability mass is
-exactly `C(d,r)`. Candidate multiplicity must be retained separately when several
-geometric credits share one prescription.
+exactly `C(d,r)`. Candidate multiplicity is now supplied by the line-load and
+secant formulas rather than treated as an unnamed correction.
 
 ### Auxiliary-module elimination
 
@@ -194,19 +214,19 @@ integer certificate after denominator clearing. The selector formula
 
 ## Active frontier
 
-1. Prove host-uniform score caps and small source/target covers for the geometric
-   classes of `h_T`, including explicit candidate multiplicities, and produce a
-   shared return-selector dual below one.
-2. Bound line-clean prescription multiplicities and put the resulting weighted
-   mass or inherited candidate capacities inside an exact or universal budget;
-   certify the finitely many low-load/high-multiplicity overflow classes.
-3. Compile selector capacities using exact rook numerators, thin-table caps,
-   conserved distinct-prescription rank mass and geometric multiplicity bounds.
-4. Enumerate genuinely new geometric offspring on the 45 side-four and 124 side-
-   five canonical hosts, including prescription multiplicities and absolute
-   owners; certify and eliminate the resulting orbit tables.
-5. Apply the small-support closure to reused-support states, then certify the
-   remaining high-multiplicity or out-of-support reused rows and fully labelled
-   collision/local-line SCCs.
-6. Publish one strict integer quotient certificate and apply the proved CRT
+1. Prove host-uniform background line-height caps `H_1,H_2` for the exact owner,
+   height, token, prefix, carry and interface classes.
+2. Insert the packed secant caps into line-clean exact/universal budgets and
+   certify the remaining low-load or high-height overflow classes.
+3. Use the same geometric multiplicities and owner supports to bound the class
+   scores of `h_T` and produce a shared return-selector dual below one.
+4. Compile selector capacities using exact rook numerators, thin-table caps,
+   distinct rank mass and the new line-load multiplicity formulas.
+5. Enumerate genuinely new geometric offspring on the 45 side-four and 124 side-
+   five canonical hosts, retaining line loads, multiplicities and absolute owners;
+   certify and eliminate the resulting orbit tables.
+6. Apply the packed small-support closure to reused-support states, then certify
+   the surviving high-height or out-of-support rows and fully labelled collision/
+   local-line SCCs.
+7. Publish one strict integer quotient certificate and apply the proved CRT
    gluing protocol.
