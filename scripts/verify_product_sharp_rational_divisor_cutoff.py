@@ -73,6 +73,21 @@ def delta_bar_derivative(log_n: float) -> float:
     return 2.0 / (LOG2 * (log_n + 2.0 * LOG2))
 
 
+def divisor_retained_margin(decimal_power: float) -> float:
+    log_n = decimal_power * LOG10
+    log_t = 0.6 * log_n
+    log_b = math.log(256.0) + 2.0 * DELTA
+    log_q2 = (
+        math.log(ETA)
+        + log_t
+        - math.log(32768.0)
+        - DIVISOR_LOG10_BOUND * LOG10
+        - 4.0 * DELTA
+        - (1.0 + 16.0 / 109.0) * log_n
+    )
+    return log_q2 + log_t - log_b
+
+
 def check_cutoff() -> None:
     margin = 1.0 / 5.0 - 16.0 / 109.0
     assert abs(margin - 29.0 / 545.0) < 1e-15
@@ -90,17 +105,10 @@ def check_cutoff() -> None:
         - 2.0 * DELTA
         - math.log(math.log(4.0) + log_t)
     )
-    log_q2 = (
-        math.log(ETA)
-        + log_t
-        - math.log(32768.0)
-        - DIVISOR_LOG10_BOUND * LOG10
-        - 4.0 * DELTA
-        - (1.0 + 16.0 / 109.0) * LOG_N4
-    )
 
     assert log_q1 + log_t - log_b > 3800.0
-    assert log_q2 + log_t - log_b > 0.09
+    assert divisor_retained_margin(2875.0) > 0.09
+    assert divisor_retained_margin(2874.0) < -0.02
 
     log_d_seed = (
         math.log(32780.0)
