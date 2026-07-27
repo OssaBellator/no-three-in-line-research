@@ -1,0 +1,32 @@
+{
+  "m": 7,
+  "states": 92160,
+  "defective_states": 92124,
+  "global_minimum_triples": 0,
+  "global_minimum_states": 36,
+  "bad_triple_occurrences_by_owner_count": {
+    "2": 344064,
+    "3": 2219520
+  },
+  "states_with_defects_but_no_three_owner_triple": 56,
+  "maximum_points_from_one_owner_on_a_bad_line": 2,
+  "unique_directed_flaw_targeted_edges": 4427088,
+  "states_with_no_legal_flaw_targeted_move": 0,
+  "all_states_reach_global_minimum": true,
+  "maximum_distance_to_global_minimum": 4,
+  "distance_distribution": {
+    "0": 36,
+    "1": 1576,
+    "2": 31112,
+    "3": 58712,
+    "4": 724
+  },
+  "one_step_local_minima_including_global_minima": 6712,
+  "nonminimal_one_step_local_minima": 6676,
+  "nonminimal_local_minimum_distance_distribution": {
+    "2": 1344,
+    "3": 5060,
+    "4": 272
+  },
+  "asymptotic_seed_theorem_proved": false
+}
