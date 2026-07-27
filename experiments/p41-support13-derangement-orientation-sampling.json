@@ -1,0 +1,32 @@
+{
+  "p": 41,
+  "support": 13,
+  "single_cycle_mode": {
+    "mode": 0,
+    "seed": 20260731,
+    "trials": 500000,
+    "owner_cover_pass": 484660,
+    "initial_empty_orientation_domain": 477997,
+    "nonempty_initial_orientation_domain": 6663,
+    "orientation_search_nodes": 14673,
+    "duplicate_orbit_rejections": 0,
+    "node_cap_hits": 0,
+    "repair_found": false
+  },
+  "uniform_derangement_mode": {
+    "mode": 1,
+    "seed": 20260801,
+    "trials": 500000,
+    "owner_cover_pass": 484660,
+    "initial_empty_orientation_domain": 478071,
+    "nonempty_initial_orientation_domain": 6589,
+    "orientation_search_nodes": 14417,
+    "duplicate_orbit_rejections": 0,
+    "node_cap_hits": 0,
+    "repair_found": false
+  },
+  "thread_counts_reproduced": [8, 32],
+  "samples_are_distinct": false,
+  "support_13_infeasibility_proved": false,
+  "p41_seed_proved": false
+}
