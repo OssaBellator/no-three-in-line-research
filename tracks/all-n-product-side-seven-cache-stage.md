@@ -11,7 +11,7 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
 have classified every top-signature tier of multiplicity at least `4` and the
-first thirteen hundred signatures of multiplicity `3`:
+first sixteen hundred signatures of multiplicity `3`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -38,14 +38,14 @@ first thirteen hundred signatures of multiplicity `3`:
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
 | 4 | 2,392 | 9,568 | 9,567 infeasible; 1 witnessed |
-| 3, shards 0--12 | 1,300 of 3,544 | 3,900 | certified infeasible |
-| **Total** | **5,890 completed classes** | **30,868 rejected; 1 witnessed** | **1,950,833,875 rejection-CSP nodes** |
+| 3, shards 0--15 | 1,600 of 3,544 | 4,800 | certified infeasible |
+| **Total** | **6,190 completed classes** | **31,768 rejected; 1 witnessed** | **2,054,101,613 rejection-CSP nodes** |
 
-Thus `40,991` support-twenty selectors remain unclassified and active in this
+Thus `40,091` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The latest exact results are PX862--PX865 in
-[`docs/267-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-twelve.md`](../docs/267-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-twelve.md).
+The latest exact results are PX884--PX887 in
+[`docs/275-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-fifteen.md`](../docs/275-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-fifteen.md).
 
 ## Constructive witness
 
@@ -68,60 +68,34 @@ reproducible lexicographic shard intervals without checking in large case data
 tables. Witness-preserving scan workers retain constructive data and continue
 rather than terminating a range.
 
-PX743--PX744 add the first explicit proof-object pilot. For case `1180`,
-orientation `0`, and the first clean concatenated top order, a `60,536`-byte
-certificate supplies one concrete collinear triple for each of `20,160`
-selector-permutation obligations. Its checker validates exact geometry without
-calling `BottomGroupSolver`.
+PX743--PX744 add the first explicit proof-object pilot. For multiplicity-four
+case `1180`, orientation `0`, and one clean top order, a `60,536`-byte
+certificate supplies a concrete collinear triple for every selector-permutation
+obligation and is checked without calling `BottomGroupSolver`.
 
-PX749--PX750 extend the format to two clean top orders. A shared dictionary of
-`84` triples represents `40,320` obligations in `40,648` bytes.
+PX749--PX750 introduce a shared triple dictionary, and PX764--PX765 measure its
+saturation over eight top orders. PX804--PX805 and PX810--PX811 extend the
+multiplicity-four experiment to 32 and 64 top orders.
 
-PX764--PX765 measure dictionary saturation across eight clean top orders. The
-cumulative dictionary sizes are `66, 84, 107, 120, 122, 124, 142, 152`; only
-`152` triples cover `161,280` obligations. The projected shared proof payload is
-`161,896` bytes rather than `484,288` bytes for eight raw certificates.
+PX816--PX817 transfer the dictionary format to multiplicity-three case `0`.
+PX834--PX835 extend that case to 64 clean top orders: `283` triples cover
+`967,680` obligations in a projected `969,473`-byte payload.
 
-PX804--PX805 extend the same exact experiment through thirty-two clean top
-orders. A dictionary of `363` triples covers `645,120` obligations in a projected
-`646,705`-byte proof payload, rather than `1,937,152` bytes for thirty-two raw
-certificates.
+PX876--PX877 double the prefix to 128 clean top orders. Only `521` triples cover
+`1,935,360` obligations in a projected `1,938,763`-byte payload, rather than
+`5,807,920` bytes for direct triples. The exact ordered proof transcript has
+digest `13354808297163209304`.
 
-PX810--PX811 double the prefix to sixty-four top orders. Only `404` triples cover
-`1,290,240` obligations in a projected `1,292,396`-byte payload, rather than
-`3,874,304` bytes for sixty-four raw certificates. The second block of thirty-two
-orders introduces only 41 new triples, and order 64 introduces none.
+PX774--PX775 give the first exact top-assumption core. For multiplicity-four
+case `1180`, orientation `0`, every top literal can be deleted: the bare
+signature refutes all `70,376` clean concatenated top orders after `95,298`
+shared bottom-CSP nodes.
 
-PX816--PX817 transfer the dictionary format to multiplicity-three case `0`,
-orientation `0`. Only `241` triples cover `483,840` obligations across the first
-thirty-two clean top orders in a projected `485,059`-byte payload. This removes
-about `66.6%` of the raw triple payload and confirms that the proof compression
-is not confined to multiplicity four.
-
-PX834--PX835 double the multiplicity-three prefix to sixty-four clean top orders.
-Only `283` triples cover `967,680` obligations in a projected `969,473`-byte
-payload, rather than `2,903,984` bytes for raw triples. The second block of
-thirty-two orders introduces only 42 new triples.
-
-PX774--PX775 give the first exact top-assumption core. For case `1180`,
-orientation `0`, every one of the fourteen top literals can be deleted: the
-signature alone refutes all `70,376` clean concatenated top orders after
-`95,298` shared bottom-CSP nodes. This is an empty top-assumption core and a
-signature-level master nogood.
-
-PX840--PX841 prove the same phenomenon at multiplicity three. For case `0`,
-orientation `0`, all fourteen literals of the first clean top order can be
-deleted; the bare signature jointly refutes all `75,600` clean concatenated top
-orders after `110,263` bottom-CSP nodes.
-
-PX850--PX851 repeat the exact deletion experiment on multiplicity-three case `1`.
-Its bare signature refutes all `62,416` clean concatenated top orders after
-`96,353` bottom-CSP nodes.
-
-PX860--PX861 repeat the experiment on multiplicity-three case `2`. Its bare
-signature refutes all `51,276` clean concatenated top orders after `83,589`
-bottom-CSP nodes. The first three multiplicity-three signatures therefore all
-yield empty top cores and signature-level master nogoods.
+PX840--PX841, PX850--PX851, PX860--PX861, PX866--PX867, PX872--PX873,
+PX874--PX875, and PX882--PX883 repeat the experiment on multiplicity-three
+cases `0` through `6`. Every one of those seven consecutive signatures has an
+empty orientation-zero top core and therefore supplies a signature-level master
+nogood covering its entire clean concatenated top-order family.
 
 PX641--PX642 remain the stronger full selector-choice CSP and proof-logged SAT
 route. No external SAT solver or DRAT/FRAT checker is available in the current
@@ -130,11 +104,11 @@ active proof-producing route.
 
 ## Immediate task
 
-The remaining multiplicity-three frontier begins at global case index `1300` and
-contains `2,244` top signatures and `6,732` selectors. Continue in independently
-reproducible, witness-preserving intervals. In parallel:
+The remaining multiplicity-three frontier begins at global case index `1600`
+and contains `1,944` top signatures and `5,832` selectors. Continue in
+independently reproducible, witness-preserving intervals. In parallel:
 
-1. test whether empty or small top-assumption cores recur across signatures;
+1. test how far the empty top-core recurrence extends;
 2. generalize signature-level master nogoods across mechanically checked incidence features;
 3. continue measuring dictionary saturation over wider top-order batches;
 4. export one selector-choice shard to CNF when an independent proof checker is available;
@@ -152,19 +126,19 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard12.cpp \
-  -o /tmp/m3s12
-/tmp/m3s12
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard15.cpp \
+  -o /tmp/m3s15
+/tmp/m3s15
 
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity3_case2_orientation0_empty_top_core.cpp \
-  -o /tmp/m3-case2-empty-core
-/tmp/m3-case2-empty-core
+  scripts/verify_product_side_seven_multiplicity3_case6_orientation0_empty_top_core.cpp \
+  -o /tmp/m3-case6-empty-core
+/tmp/m3-case6-empty-core
 
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity3_case0_orientation0_dictionary_saturation64.cpp \
-  -o /tmp/m3-case0-dict64
-/tmp/m3-case0-dict64
+  scripts/verify_product_side_seven_multiplicity3_case0_orientation0_dictionary_saturation128.cpp \
+  -o /tmp/m3-case0-dict128
+/tmp/m3-case0-dict128
 ```
 
 The classical no-three-in-line conjecture and infinite product closure remain
