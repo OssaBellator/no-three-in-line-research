@@ -30,55 +30,48 @@ The authoritative live ledger is split across:
 | CMR1766--1773 | Exact linewise binomial identity, global line-energy census, corrected-row domination, response-pair/triple identities, background-triple charge, maximum response-load specialization, triple-free response bound, and the line-energy endpoint | PROVED; 1,500 exact line-energy systems and 638 triple-free response specializations checked | `docs/324-prime-power-line-energy-profile-census.md` |
 | CMR1774--1781 | Residual collinearity failure, trivial geometric stabilizer, matching/geometric invariant separation, exact geometric signature, honest fibre expansion, certificate lifting, finite geometric census compiler, and the geometric-fibre endpoint | PROVED; all 154 residual permutations through side seven and 1,000 matching/geometric fibre systems checked | `docs/325-prime-power-geometric-orbit-fibre-correction.md` |
 | CMR1782--1789 | Exact geometric prescription coefficients, response-law expectation, corrected-row domination, rank-one assignment certificate, rank-two/three marginal rows, charged alternative, exact uniform rook numerator, and the hybrid strict certificate | PROVED; 900 geometric hosts, 9,909 response energies and 900 integer certificates checked | `docs/326-prime-power-line-energy-marginal-rook-compiler.md` |
+| CMR1790--1797 | Peeling identity, rank-two and rank-three nested assignments, rational dual cascade, strict integer form, line-energy specialization, class-supported nested covers, and the nested-assignment endpoint | PROVED; 400 random hosts, 237,157 contracted-matching checks and 800 higher-rank bounds | `docs/327-prime-power-nested-assignment-line-energy-certificates.md` |
+| CMR1798--1805 | Raw geometric fibre interpretation, exact orbit-size distributions, 740-host count, denominator reuse, response-line occupancy, rank-two background cap, deterministic fibre certificate, and the host-census endpoint | PROVED; all 740 raw hosts and 9,260 response occurrences checked | `docs/328-prime-power-geometric-fibre-host-census-and-line-caps.md` |
+| CMR1806--1813 | Response-level triple values, host maxima, triple-free host count, side-four/five denominator-specific rank-three numerators, sharp uniform caps, aggregate totals, and the rank-three fibre endpoint | PROVED; 740 raw hosts, 9,260 responses and 6,485 response triples checked | `docs/329-prime-power-exact-rank-three-geometric-fibre-census.md` |
+| CMR1814--1821 | Exact line occupancy assignments, linewise monotone energy, complete line-capacity row, rank-one dual, rank-two/three occupancy bounds, strict integer certificate, and the line-occupancy endpoint | PROVED; 96,892 host-line capacities and 9,260 complete response-energy checks | `docs/330-prime-power-line-occupancy-capacity-certificate.md` |
+| CMR1822--1829 | Peeled geometric outer score, combined return-selector-geometric score, one outer assignment, class-supported cover compiler, strict integer form, line-clean and recurrent specializations, and the unified endpoint | PROVED; 400 random hosts, 12,761 complete response checks and 400 strict outer certificates | `docs/331-prime-power-unified-outer-assignment-response-score.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact certificate surfaces
 
-### Geometric-fibre rule
+### Exact geometric host layer
 
-Matching normalization remains exact for response denominators and contracted
-prescription probabilities. It is not a geometric quotient: the only residual
-simultaneous permutation fixing `0,1` and preserving standard-grid collinearity
-is the identity for `d>=3`.
+Matching normalization remains exact for denominators, but the corrected
+standard-grid computation expands the 45 side-four classes to 86 raw hosts and
+the 124 side-five classes to 654 raw hosts.  The exact orbit-size distributions
+are
 
-Every matching-level canonical state must therefore be expanded into exact
-geometric fibres, quotiented only by verified automorphisms of the full
-line-incidence signature, or replaced by an explicit componentwise fibre maximum.
-The 45 side-four and 124 side-five hosts are matching denominator classes, not
-the final geometric row count.
+\[
+4\cdot1+41\cdot2=86
+\]
 
-### Exact line-energy marginal row
+and
 
-For fixed background `B`, define on response prescriptions
+\[
+2\cdot1+2\cdot2+24\cdot3+96\cdot6=654.
+\]
+
+Thus the first corrected geometric layer has exactly 740 coordinate-labelled
+hosts before owner and provenance refinements.  Denominators are reused within a
+matching fibre; geometric numerators are not.
+
+### Exact and alternative line-energy rows
+
+For fixed background `B`, define
 
 \[
 a_1(x)=\sum_{\ell\ni x}C(|B\cap\ell|,2),
-\]
-
-\[
+\qquad
 a_2(\{x,y\})=|B\cap\ell(x,y)|,
 \]
 
-and let `a_3(P)` be the indicator that a response triple is collinear. For every
-response law,
-
-\[
-\mathbb E[\Psi(B\cup Q)-\Psi(B)]
-=
-\sum_xa_1(x)p(x)
-+
-\sum_{|P|=2}a_2(P)p(P)
-+
-\sum_{|P|=3}a_3(P)p(P).
-\]
-
-The rank-one term is an ordinary assignment score and admits the full
-superlevel/vertex-cover dual compiler. Rank-two and rank-three terms are exact
-joint marginals.
-
-For a uniform response host with denominator `Z=N_d(F)` and contraction counts
-`z(P)=N_{d-|P|}(F/P)`, the exact integer numerator is
+and let `a_3(P)` indicate a collinear response triple.  Exact rook marginals give
 
 \[
 A_{\mathrm{line}}
@@ -87,88 +80,115 @@ A_{\mathrm{line}}
 +
 \sum_{|P|=2}a_2(P)z(P)
 +
-\sum_{|P|=3}a_3(P)z(P).
+\sum_{|P|=3}a_3(P)z(P),
 \]
 
-The direct strict certificate is
+with strict certificate `A_line<ZD`.
+
+The higher ranks also admit nested ordinary assignments.  If `L_1,L_2,L_3` are
+the rank-one outer, rank-two cascade and rank-three cascade objectives, then
 
 \[
-A_{\mathrm{line}}<ZD.
+\mathbb E N_{\mathrm{new}}
+\le
+L_1+L_2/2+L_3/6.
 \]
 
-Corrected genuinely new rows only lower this numerator.
-
-### Multiplicity and line-profile alternatives
-
-For each line profile `(h_ell,k_ell)`,
+After denominator clearing, the strict integer test is
 
 \[
-\Psi(B\cup Q)-\Psi(B)
+6l_1+3l_2+l_3<6ZD.
+\]
+
+### Exact rank-three fibre census
+
+Across all 740 raw hosts, every response has `Psi(Q)` in `{0,1,2,4}`.  Thirty-seven
+side-four hosts have rank-three row zero.  Every side-five host satisfies the
+sharp uniform integer inequality
+
+\[
+5A_3\le7Z,
+\]
+
+and every denominator has a sharper exact numerator cap tabulated in CMR1809--
+CMR1810.
+
+### Line-occupancy capacity table
+
+For each exact host and grid line, compute
+
+\[
+\tau_G(\ell)=\max_{Q\in\operatorname{PM}(G)}|Q\cap\ell|,
+\]
+
+an exact zero-one assignment optimum.  The complete deterministic response energy
+is bounded by
+
+\[
+\mathcal C_G(B)
 =
 \sum_\ell
 \left[
- k_\ell C(h_\ell,2)
- +C(k_\ell,2)h_\ell
- +C(k_\ell,3)
+\tau_G(\ell)C(h_\ell,2)
++C(\tau_G(\ell),2)h_\ell
++C(\tau_G(\ell),3)
 \right].
 \]
 
-The charged bound is
+Each rank may be replaced by a smaller exact marginal, nested-assignment or
+rank-three census value.
+
+### Unified outer assignment
+
+Return, bounded selector and geometric collateral share one outer edge score
 
 \[
-R_2(B,Q)+2C(d,2)+\Psi(Q)
-+
-\Psi(B)\left[3K_3+C(K_3,2)\right].
+\gamma_T(e)
+=
+g_{\mathrm{ret}}(e)
++Tg_{\mathrm{sel}}(e)
++a_1(e)
++J_2(e)/2
++H_3(e)/6.
 \]
 
-Packed-height and background-potential multiplicity rows remain available and
-may be minimized rank by rank against the exact marginal row.
-
-### Combined return-selector assignment
-
-For selector cap `T`, use the shared score
+Every complete response is bounded by the score of its matching, and one
+assignment dual for `gamma_T` certifies the entire coupled row.  With common
+denominator `Z`, the denominator-cleared edge score is
 
 \[
-h_T=g_{\rm ret}+Tg_{\rm sel}.
+\Gamma_T(e)
+=
+6(R(e)+TS(e)+A(e))+3J(e)+H(e).
 \]
 
-One rational assignment dual or class-supported superlevel cover objective below
-one proves the coupled block subcritical. The line-energy coefficients and owner
-supports now provide exact geometric score inputs.
-
-### Owner-support and selector capacities
-
-If possible owner edges lie in support `A` of matching number `mu(A)`, distinct
-rank-`r` owned prescription mass is at most
+Integer vertex weights satisfying `U_i+V_j>=Gamma_T(i,j)` and
 
 \[
-\mu(A)C(d-1,r-1).
+\sum_iU_i+\sum_jV_j<6ZD
 \]
 
-Multiplicities are inserted from exact line loads, packed secants, potential
-shadows or exact line-energy coefficients.
-
-For a selector denominator `D` and integer class capacities `C_chi`, positive
-slack `D-sum C_chi` eliminates criticality, gives the exact restoration cap, and
-feeds the shared return assignment.
+form one strict certificate.
 
 ### Auxiliary elimination and CRT assembly
 
 Certified geometric thin, fixed-interface or support modules eliminate by the
-nonnegative resolvent `(I-D)^{-1}`. All geometric, owner, collision, local-line
+nonnegative resolvent `(I-D)^{-1}`.  All geometric, owner, collision, local-line
 and CRT labels remain until exact orbit equivalence or honest domination is
-proved. Certified SCCs then glue by reverse-topological rational scaling and
+proved.  Certified SCCs then glue by reverse-topological rational scaling and
 denominator clearing.
 
 ## Active frontier
 
-1. Build the geometric fibres over the known side-four/five matching denominator
-   classes; do not use one arbitrary matching-orbit representative.
-2. Compute exact `a_1,a_2,a_3` and rook contraction numerators in every fibre.
-3. Certify the rank-one assignment score by source/target covers and the rank-two/
-   rank-three marginals by exact contraction or class capacities.
-4. Insert the resulting integer rows into line-clean, selector, return and reused-
-   support blocks.
-5. Certify and eliminate the geometric thin/fixed-interface auxiliary tables.
-6. Certify remaining labelled collision/local-line SCCs, publish one strict
+1. Attach the actual background, owner and provenance data to the 740 raw side-
+   four/five hosts and compute `a_1,a_2` or `tau_G(ell)` classwise.
+2. Use the completed rank-three numerator tables immediately in every thin and
+   fixed-interface fibre.
+3. Build the unified outer score `gamma_T` for return, selector and geometric
+   collateral and prove one shared assignment dual below the required threshold.
+4. Insert exact or nested rank-two values and line-occupancy rank-one covers into
+   line-clean, selector, return and reused-support rows.
+5. Certify and eliminate geometric thin, fixed-interface and small-support
+   auxiliary modules through exact resolvents.
+6. Certify the remaining labelled collision/local-line SCCs, publish one strict
    integer quotient and apply CRT gluing.
