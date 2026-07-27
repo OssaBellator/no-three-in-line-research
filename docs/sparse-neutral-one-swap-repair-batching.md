@@ -139,7 +139,8 @@ be the total positive one-swap energy gain available in the neutral operation ba
 following holds:
 
 1. one exact creating swap, neutral table or record address is unrealized;
-2. a compatible endpoint-disjoint batch gives energy descent at least
+2. a compatible endpoint-disjoint batch consisting only of individually improving swaps gives
+   energy descent at least
 
    `G_neu/[(2N-3)(4Lambda+1)]`;
 3. at a swap-local minimum, a compatible batch installs a distinct exact neutral repair union of
@@ -153,10 +154,19 @@ following holds:
 
 ### Proof
 
-Apply SAS5ey and SAS5ez with vertex weights `(D_sigma-R_sigma)_+` to obtain alternative 2, then use
-SAS5fa for additive descent.  If every creating swap is nonimproving, apply the same two colourings
-with weights `A_sigma`.  SAS5fa gives the exact repaired union and energy sum.  The remaining
-alternatives are precisely the failed hypotheses of the two extraction and additivity steps. QED.
+For alternative 2, restrict first to the induced bank
+
+`P={sigma:D_sigma>R_sigma}`
+
+and give `sigma in P` vertex weight `D_sigma-R_sigma`.  Apply SAS5ey and SAS5ez to this induced bank.
+After each colouring, discard every zero-weight vertex; the retained set stays independent and
+contains only improving swaps.  Its gain is at least the displayed fraction of `G_neu`, and SAS5fa
+turns the sum of its one-swap gains into an additive simultaneous descent.
+
+At a swap-local minimum every creating swap is nonimproving.  Apply the same two colourings to the
+full operation bank with weights `A_sigma`.  SAS5fa gives the exact repaired union and the
+nonnegative energy sum.  The remaining alternatives are precisely the failed hypotheses of the two
+extraction and additivity steps. QED.
 
 The theorem batches the neutral records themselves; it does not claim that a nonimproving repair
 batch lowers energy.
@@ -174,4 +184,5 @@ the reflected-boundary or high-incidence branches.
 `scripts/verify_sparse_neutral_one_swap_batching.py` samples weighted creating-swap systems, exact
 neutral records and complete rank-three scope ledgers.  It checks the `2N-4` endpoint degree, the
 `4Lambda` interaction degree, both weighted colour extractions, simultaneous record persistence,
-distinct repaired unions, exact recordwise energy additivity and the high-incidence alternative.
+distinct repaired unions, exact recordwise energy additivity, positive-gain restriction and the
+high-incidence alternative.
