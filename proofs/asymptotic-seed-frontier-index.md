@@ -34,183 +34,127 @@ theorem remains open.
 | Three-edge repair kernel | Cyclic successor rotation is an involutive, connected, reversible support-three switching that destroys a targeted triple | PROVED / VERIFIED FINITELY | `docs/303` |
 | Targeted drift census | Fresh signs give negative average finite drift, but raw potentials have increasing moves, local minima, and targetability gaps | PROVED / VERIFIED FINITELY | `docs/304` |
 | Coordinate-overlap LLL barrier | A source-coordinate clique has size `Omega(n^3 log n)` and defeats symmetric LLL by `Omega(log n)` | PROVED | `docs/305` |
-| Coordinate-overlap cluster barrier | The same clique defeats the standard cluster-expansion criterion even with arbitrary positive event weights | PROVED | `docs/305` |
+| Coordinate-overlap cluster barrier | The same clique defeats standard cluster expansion even with arbitrary positive event weights | PROVED | `docs/305` |
 | Exact-oracle dichotomy | Guaranteed deletion by one targeted move is incompatible with exact restoration of the uniform Hamilton measure | PROVED | `docs/306` |
-| Complete flaw targeting | Every bad triple has two or three orbit owners and is deleted by a support-one orientation flip or support-three successor rotation | PROVED / VERIFIED FINITELY | `docs/307` |
-| Short finite reachability | Every signed Hamilton state through `m=7` reaches its global minimum defect level in at most four flaw-targeted moves | VERIFIED FINITELY | `docs/307`, `docs/310` |
-| Polynomial unconditioned mixing | A balanced lazy combined chain has spectral gap `Omega(m^-5)` by adjacent-transposition comparison | PROVED / VERIFIED FINITELY | `docs/308` |
-| Delete-then-mix regeneration | Targeted deletion followed by polynomial mixing restores the uniform measure pointwise within `[1-epsilon,1+epsilon]` and gives charge at most `(1+epsilon)mu(A)` | PROVED | `docs/308` |
+| Complete flaw targeting | Every bad triple has two or three orbit owners and is deleted by a support-one flip or support-three rotation | PROVED / VERIFIED FINITELY | `docs/307` |
+| Short finite reachability | Every signed Hamilton state through `m=7` reaches its global minimum defect level in at most four targeted moves | VERIFIED FINITELY | `docs/307`, `docs/310` |
+| Polynomial unconditioned mixing | A balanced lazy combined chain has spectral gap `Omega(m^-5)` | PROVED / VERIFIED FINITELY | `docs/308` |
+| Delete-then-mix regeneration | Polynomial mixing restores the uniform measure pointwise within `[1-epsilon,1+epsilon]` and gives charge at most `(1+epsilon)mu(A)` | PROVED | `docs/308` |
 | Atomic warm starts | Exact deletion images are polynomially warm and total-variation regeneration takes `O(m^5[log m+log(1/epsilon)])` | PROVED / VERIFIED FINITELY | `docs/309` |
 | Bounded-horizon descent | A uniform `D`-step strict-descent property would give termination in at most `D Phi(x_0)` moves | PROVED | `docs/310` |
-| Exact `m=7` reachability | All `92,160` signed Hamilton states reach one of `36` valid states; maximum distance and strict-descent horizon are four | VERIFIED FINITELY | `docs/310` |
-| Immediate causal locality | A newly created flaw must touch a newly inserted orbit block; immediate outdegree is `O(n^2 log n)` | PROVED / VERIFIED FINITELY | `docs/311` |
-| Residual three-owner scale | Three-owner atomic flaws have probability--causal-degree product `O(log n/n)=o(1)` | PROVED | `docs/311` |
-| Two-owner parity preprocessing | For a fixed Hamilton cycle, all two-owner flaws form a signed-graph XOR system solvable and countable in linear time | PROVED / VERIFIED FINITELY | `docs/312` |
+| Exact `m=7` reachability | All `92,160` signed Hamilton states reach one of `36` valid states; maximum distance and descent horizon are four | VERIFIED FINITELY | `docs/310` |
+| Immediate causal locality | A newly created flaw touches a newly inserted orbit block; immediate outdegree is `O(n^2 log n)` | PROVED / VERIFIED FINITELY | `docs/311` |
+| Residual three-owner scale | Three-owner event probability times immediate causal degree is `O(log n/n)=o(1)` | PROVED | `docs/311` |
+| Two-owner parity preprocessing | Fixed-cycle two-owner flaws form a signed XOR system solvable and countable in linear time | PROVED / VERIFIED FINITELY | `docs/312` |
 | Two-owner mass bound | The complete two-owner atomic family has size `O(n^3)` and expected count `O(n)` | PROVED | `docs/313` |
 | Locality--charge tradeoff | Immediate actions have sparse causality but constant charge; fully mixed actions have near-probability charge but global possible causality | PROVED | `docs/314` |
-| Parity-clean macro repair | Successor rotations change only three parity stars; a nearest parity-clean orientation yields conditional support at most `3+floor(m/2)` | PROVED / VERIFIED FINITELY | `docs/315` |
+| Parity-preserving cycle mobility | A rotation changes only three source-stars in the parity graph; the satisfiable induced cycle graph is connected through `m=7` | PROVED / VERIFIED FINITELY | `docs/315` |
+| Parity-clean macro repair | Nearest parity recleaning conditionally deletes a three-owner flaw and returns to the two-owner-clean manifold | PROVED | `docs/316` |
 
 ## Exact theorem ranges
 
 | IDs | Statement | Status | Location |
 |---|---|---|---|
-| PP3biy--PP3bjf | Two-cycle-free generating function, near-Hamilton counts, exact cylinders, retained first-moment barrier, and finite suite audit | PROVED / VERIFIED FINITELY | `docs/302-two-cycle-free-near-hamilton-signed-cover-measures.md` |
-| PP3bjg--PP3bjl | Three-edge Hamilton closure, involution, connectivity, reversible signed kernel, and targeted triple destruction | PROVED / VERIFIED FINITELY | `docs/303-hamilton-three-edge-switching-repair-kernel.md` |
-| PP3bjm--PP3bjp | Reversible zero-drift identity, negative average targeted drift, best-sign increases, local minima, and targetability gaps | PROVED / VERIFIED FINITELY | `docs/304-targeted-hamilton-switching-drift-and-local-minima.md` |
-| PP3bjq--PP3bjs | Coordinate clique, logarithmic symmetric-LLL failure, and arbitrary-weight cluster-expansion failure | PROVED | `docs/305-hamilton-coordinate-clique-lll-and-cluster-barriers.md` |
-| PP3bju--PP3bjw | Guaranteed-deletion versus exact-restoration impossibility and stationarity-targeting dichotomy | PROVED | `docs/306-targeted-switching-resampling-oracle-dichotomy.md` |
-| PP3bjx--PP3bkc | Orbit-owner dichotomy, orientation-flip repair, complete combined targeting, reversible combined graph, and short finite reachability | PROVED / VERIFIED FINITELY | `docs/307-complete-hamilton-flaw-targeting-and-short-reachability.md` |
-| PP3bkd--PP3bkh | Balanced lazy chain, adjacent-transposition comparison, polynomial spectral gap, pointwise mixing, and delete-then-mix approximate regeneration | PROVED / VERIFIED FINITELY | `docs/308-delete-then-mix-approximate-regeneration.md` |
-| PP3bki--PP3bkl | Atomic flaw probabilities, injective deletion images, exact warmness, spectral contraction, and faster total-variation regeneration | PROVED / VERIFIED FINITELY | `docs/309-atomic-flaw-warm-start-regeneration.md` |
-| PP3bkm--PP3bkp | Bounded-horizon descent lemma, exact `m=7` reachability, four-step finite descent, and revised scheduling frontier | PROVED / VERIFIED FINITELY | `docs/310-bounded-horizon-hamilton-descent-and-m7-reachability.md` |
-| PP3bkq--PP3bku | New-block locality, fixed-block flaw count, sparse immediate causality, residual probability scale, and finite causality census | PROVED / VERIFIED FINITELY | `docs/311-immediate-hamilton-flaw-causality-and-residual-scale.md` |
-| PP3bkv--PP3bkz | Reflection parity invariance, exact two-owner XOR reduction, signed-graph solution count, finite parity census, and orientation preprocessing | PROVED / VERIFIED FINITELY | `docs/312-two-owner-hamilton-flaws-as-a-parity-csp.md` |
-| PP3bla--PP3bld | Orbit-coordinate fibres, cubic two-owner flaw count, linear expected mass, and generic-family scale separation | PROVED | `docs/313-two-owner-flaw-count-and-lower-order-expectation.md` |
-| PP3ble--PP3blg | Exact immediate action charges, global causality after full mixing, and the locality--charge endpoint tradeoff | PROVED | `docs/314-locality-charge-endpoint-tradeoff.md` |
-| PP3blh--PP3blm | Local parity updates, nearest clean orientation, conditional parity-clean macro repair, connected finite satisfiable graph, and update-width census | PROVED / VERIFIED FINITELY | `docs/315-parity-local-successor-rotations-and-macro-repair.md` |
+| PP3biy--PP3bjf | Two-cycle-free counts, near-Hamilton cylinders, retained first-moment barrier, and finite audit | PROVED / VERIFIED FINITELY | `docs/302-two-cycle-free-near-hamilton-signed-cover-measures.md` |
+| PP3bjg--PP3bjl | Three-edge Hamilton closure, involution, connectivity, reversible kernel, and targeted deletion | PROVED / VERIFIED FINITELY | `docs/303-hamilton-three-edge-switching-repair-kernel.md` |
+| PP3bjm--PP3bjp | Zero stationary drift, negative mean targeted drift, best-sign increases, and local minima | PROVED / VERIFIED FINITELY | `docs/304-targeted-hamilton-switching-drift-and-local-minima.md` |
+| PP3bjq--PP3bjs | Coordinate clique, symmetric-LLL failure, and arbitrary-weight cluster-expansion failure | PROVED | `docs/305-hamilton-coordinate-clique-lll-and-cluster-barriers.md` |
+| PP3bju--PP3bjw | Guaranteed-deletion versus exact-restoration impossibility | PROVED | `docs/306-targeted-switching-resampling-oracle-dichotomy.md` |
+| PP3bjx--PP3bkc | Owner dichotomy, orientation-flip repair, complete targeting, reversible combined graph, and short reachability | PROVED / VERIFIED FINITELY | `docs/307-complete-hamilton-flaw-targeting-and-short-reachability.md` |
+| PP3bkd--PP3bkh | Lazy chain, adjacent-transposition comparison, polynomial gap, pointwise mixing, and approximate regeneration | PROVED / VERIFIED FINITELY | `docs/308-delete-then-mix-approximate-regeneration.md` |
+| PP3bki--PP3bkl | Atomic probabilities, injective deletion images, exact warmness, and faster TV regeneration | PROVED / VERIFIED FINITELY | `docs/309-atomic-flaw-warm-start-regeneration.md` |
+| PP3bkm--PP3bkp | Bounded-horizon descent, exact `m=7` reachability, four-step finite descent, and scheduling frontier | PROVED / VERIFIED FINITELY | `docs/310-bounded-horizon-hamilton-descent-and-m7-reachability.md` |
+| PP3bkq--PP3bku | New-block locality, fixed-block flaw count, sparse causality, residual scale, and finite census | PROVED / VERIFIED FINITELY | `docs/311-immediate-hamilton-flaw-causality-and-residual-scale.md` |
+| PP3bkv--PP3bkz | Reflection invariance, exact XOR reduction, signed-graph solution count, finite parity census, and preprocessing | PROVED / VERIFIED FINITELY | `docs/312-two-owner-hamilton-flaws-as-a-parity-csp.md` |
+| PP3bla--PP3bld | Orbit-coordinate fibres, cubic two-owner count, linear expected mass, and scale separation | PROVED | `docs/313-two-owner-flaw-count-and-lower-order-expectation.md` |
+| PP3ble--PP3blg | Immediate action charges, global causality after full mixing, and endpoint tradeoff | PROVED | `docs/314-locality-charge-endpoint-tradeoff.md` |
+| PP3blh--PP3bll | Local parity updates, finite rotation audit, connected satisfiable induced graph, and parity-preserving frontier | PROVED / VERIFIED FINITELY | `docs/315-parity-satisfiable-hamilton-rotation-graph.md` |
+| PP3blm--PP3blp | Nearest parity recleaning, conditional macro repair, construction complexity, and target-specific gap | PROVED | `docs/316-nearest-parity-recleaning-and-conditional-macro-repair.md` |
 
 ## Current exact probability interface
 
-For a directed path forest `F` of `r` prescribed oriented pair edges, the full
-Hamilton signed measure satisfies
+For a directed path forest `F` of `r` prescribed oriented pair edges,
 
 ```text
-Pr(F) = 1/[2^r (m-1)_r].
+Pr_Hamilton(F) = 1/[2^r (m-1)_r].
 ```
 
-If `F` uses `v` pair vertices, the one-fixed near-Hamilton measure satisfies
+If `F` uses `v` vertices in the one-fixed near-Hamilton measure,
 
 ```text
-Pr(F) = (m-v)/m * 1/[2^r (m-2)_r].
+Pr_one-fixed(F) = (m-v)/m * 1/[2^r (m-2)_r].
 ```
 
-For strongly generic collinear triples these probabilities are `Theta(m^-3)`.
-There are `Theta(n^4 log n)` such triples, giving the retained
-`Theta(n log n)` first moment.
+Strongly generic three-owner triples have probability `Theta(n^-3)` and total
+expected mass `Theta(n log n)`. Two-owner flaws have probability `Theta(n^-2)`,
+but their complete family has only `O(n^3)` members and contributes only `O(n)`
+expected mass.
 
-The static coordinate-overlap graph is closed as a direct route. Its largest
-source-coordinate clique has size `Omega(n^3 log n)`, so the product of one
-event probability and one clique size is `Omega(log n)`. This blocks both the
-symmetric local lemma and the standard cluster-expansion criterion on that
-graph.
+The static coordinate-overlap graph remains too dense: its source-coordinate
+clique gives an event-probability product `Omega(log n)`.
 
-## Current complete repair and descent interface
+## Complete repair and bounded-horizon interface
 
-A four-cell quarter-turn orbit is a square, so a line contains at most two cells
-from one owner. Every bad triple therefore has exactly two or three owners.
+Every flaw has exactly two or three orbit owners:
 
 ```text
 two owners:   flip either owner orientation;
 three owners: rotate the three pair successors and choose fresh signs.
 ```
 
-Both moves delete the selected flaw and remain inside the signed Hamilton state
-space. The unconditioned union is connected, symmetric, and regular of degree
+Both moves remain inside the signed Hamilton space. The unconditioned union is
+connected, symmetric, and regular of degree
 
 ```text
 m + 8 C(m,3).
 ```
 
-The one-step raw potentials still have local minima. However, exhaustive
-directed reachability through `m=7` shows that every nonoptimal state reaches a
-strictly lower total triple count within at most four flaw-targeted moves. At
-`m=4,5,7` the global minimum is zero; at `m=6` the Hamilton subfamily minimum is
-four.
+Raw one-step potentials have local minima, but the finite graphs through `m=7`
+satisfy a four-step strict-descent horizon. A uniform asymptotic horizon would
+telescope to polynomial termination; the finite value four does not prove it.
 
-A uniform bounded-horizon theorem would immediately telescope to termination.
-The finite value four is evidence, not an asymptotic bound.
+## Regeneration and locality--charge interface
 
-## Current regeneration interface
-
-Let `K_m` be the balanced lazy combined chain: hold with probability `1/2`, flip
-a random orientation with probability `1/4`, and perform a random signed
-three-edge rotation with probability `1/4`. Its spectral gap satisfies
+The balanced lazy chain has
 
 ```text
-gap(K_m) = Omega(m^-5).
+gap(K_m)=Omega(m^-5).
 ```
 
-Worst-case pointwise regeneration takes
+Worst-case pointwise regeneration costs
 
 ```text
-O(m^6 log m + m^5 log(1/epsilon))
+O(m^6 log m + m^5 log(1/epsilon)),
 ```
 
-steps. Atomic deletion outputs are only polynomially warm, so total-variation
-regeneration improves to
+while atomic warm starts give total-variation regeneration in
 
 ```text
 O(m^5[log m + log(1/epsilon)]).
 ```
 
-The delete-then-mix charge remains within a factor `1+epsilon` of the stationary
-atomic flaw probability.
+Immediate deletion has causal outdegree `O(n^2 log n)` but constant charge `1/2`
+for two-owner flaws and `1/8` for three-owner flaws. Full mixing contracts charge
+to the stationary scale but makes possible causality global. The missing object
+is an intermediate-time or weighted causal light cone with subcritical combined
+charge.
 
-## Current causal, parity, and scale interface
+## Parity-clean dynamic interface
 
-Immediate deletion causality is much sparser than static coordinate overlap. A
-newly created flaw contains a newly inserted block, and one fixed block lies in
-only `O(n^2 log n)` atomic flaws. Hence immediate causal outdegree is
-`O(n^2 log n)`.
+For a fixed Hamilton cycle, two-owner flaws are exactly a signed parity CSP. A
+satisfiable graph with `c` components has `2^c` clean orientation vectors.
 
-Atomic probabilities split by owner count:
+A successor rotation on source set `S` changes no parity predicate whose owner
+pair is disjoint from `S`; at most `3m-6` constraints change. Through `m=7`, the
+parity-satisfiable Hamilton cycles form one connected induced rotation component,
+and every inconsistent audited cycle is one rotation from it.
 
-```text
-two owners:   Theta(n^-2),
-three owners: Theta(n^-3).
-```
-
-Thus the probability--causal-degree products are
-
-```text
-two owners:   O(log n),
-three owners: O(log n/n)=o(1).
-```
-
-The two-owner subsystem can be removed before dynamic repair. Horizontal board
-reflection complements both signs on an owner pair, so every two-owner predicate
-depends only on `e_i xor e_j`. For a fixed Hamilton cycle, all such flaws form a
-signed parity graph. Consistency is decided by cycle parity, and a satisfiable
-graph with `c` components has exactly `2^c` clean orientation vectors.
-
-A successor rotation changes only parity constraints incident to its three
-source vertices, at most `3m-6` predicates. If the rotated cycle's parity system
-is satisfiable, a nearest clean orientation can be found in linear time at
-Hamming distance at most `floor(m/2)`. The resulting macro action deletes the
-targeted three-owner flaw, restores complete two-owner cleanliness, and changes
-at most `3+floor(m/2)` signed assignments.
-
-Through `m=7`, the parity-satisfiable Hamilton-cycle subgraph is connected,
-every inconsistent cycle is one rotation from it, and every satisfiable cycle
-has at least `4,9,16,26` satisfiable rotation neighbors at `m=4,5,6,7`.
-
-Globally, the complete two-owner atomic family has size `O(n^3)` and contributes
-only `O(n)` expected flaws. The `Theta(n log n)` first-moment barrier is carried
-by the generic three-owner family.
-
-After parity preprocessing, every remaining flaw has three owners and lies at
-the favorable `O(log n/n)` immediate-causal scale. Turning this scale into a
-valid directed flaw-walk or witness theorem is the main remaining probabilistic
-task.
-
-## Current locality--charge interpolation problem
-
-Immediate labelled deletion has exact charge
-
-```text
-two-owner:   1/2,
-three-owner: 1/8,
-```
-
-while preserving `O(n^2 log n)` possible causality. Full pointwise mixing lowers
-charge to the stationary `Theta(n^-2)` or `Theta(n^-3)` scale, but possible
-causality becomes global. For three-owner flaws the fully mixed endpoint again
-has product `Theta(n log n)`.
-
-The missing quantitative object is therefore an intermediate-time or weighted
-causal estimate: charge must contract before the likely causal light cone grows
-too large. Pure possible reachability is probably too pessimistic once even a
-few lazy mixing steps are allowed.
+If a targeted rotation lands on a parity-satisfiable cycle, a nearest clean
+orientation can be found componentwise in linear time and changes at most
+`floor(m/2)` bits. The macro action deletes the target, preserves Hamiltonicity
+and duplicate-orbit validity, and returns to a state with no two-owner flaw.
+The unresolved target-specific issue is that a flaw fixes its source triple; not
+every such rotation is known to remain parity satisfiable.
 
 ## Finite diagnostics
 
@@ -249,39 +193,24 @@ python scripts/check_hamilton_parity_rotation_graph.py \
   experiments/hamilton-parity-rotation-graph-audit.json
 ```
 
-The exact suites now include `92,160` signed Hamilton states and `4,427,088`
-directed combined-flaw edges at `m=7`, `10,416` atomic deletion-image checks
-through `m=6`, `2,376,384` immediate causal edges through `m=6`, all
-Hamilton-cycle parity systems through `m=7`, and `27,864` directed
-parity-rotation transitions through `m=7`.
+The exact suites include `92,160` signed Hamilton states and `4,427,088` directed
+combined-flaw edges at `m=7`, `2,376,384` immediate causal edges through `m=6`,
+every Hamilton-cycle parity system through `m=7`, and `27,864` directed parity
+rotations through `m=7`.
 
 ## Current constructive targets
 
-Several naive endpoints are closed:
-
-1. raw one-step defect potentials are not monotone and have local minima;
-2. source/target coordinate overlap is too dense for ordinary or standard
-   cluster-expansion LLL criteria;
-3. guaranteed immediate flaw deletion is not an exact resampling oracle;
-4. the former two-owner targetability gap is closed by orientation flips;
-5. the full two-owner orientation subsystem is now an exact parity CSP.
-
-The remaining plausible routes are sharper:
-
 1. prove a uniform bounded strict-descent horizon or a weighted multi-step
    Lyapunov theorem;
-2. prove existence and suitably large connected components of
-   parity-satisfiable Hamilton cycles for all sufficiently large `m`;
-3. show that every residual three-owner flaw admits a parity-satisfiable
-   successor rotation, or enlarge the macro move;
-4. combine parity-clean macro repair with the residual `O(log n/n)` causal scale
-   in a directed flaw-walk or witness-sequence theorem;
-5. prove an intermediate-time charge--causality interpolation theorem for
-   partially mixed deletion actions;
-6. prove that sequences of deletion outputs remain polynomially warm, avoiding
-   full regeneration after each local action;
-7. introduce a biased cyclic-order measure that suppresses high-collateral
+2. prove nonemptiness and useful connectivity of parity-satisfiable Hamilton
+   cycles for all sufficiently large `m`;
+3. show every relevant three-owner flaw admits a parity-satisfiable macro
+   rotation, or design a larger parity-clean move;
+4. prove an intermediate-time charge--causality interpolation theorem;
+5. control witness sequences or partial rejection on the parity-clean residual
+   three-owner process;
+6. introduce a biased cyclic-order measure suppressing high-collateral
    assignments while retaining tractable cylinders.
 
-The next available theorem identifier is `PP3bln`. The asymptotic
+The next available theorem identifier is `PP3blq`. The asymptotic
 prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
