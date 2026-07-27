@@ -3,15 +3,15 @@
 **Branch:** `research/all-n-product-construction`
 
 This map reconciles the finite selector census, the paired asymptotic repair
-path, and the independent geometric and matching frontiers. It records what is
-actually open after PX965.
+path, recursive produced-base searches, and the independent geometric and
+matching frontiers. It records what is actually open after PX975.
 
 No item below is a proof of the classical no-three-in-line conjecture unless it
 is explicitly promoted to an all-side theorem; no such promotion has occurred.
 
 ## 1. Effective asymptotic repair path
 
-**Status: proved reduction above an explicit cutoff.**
+**Status: proved reduction above an explicit, family-optimal cutoff.**
 
 The paired rectangle-label path has audited entry, line-cap, packet, mixed,
 terminal-return, recurrence, and causal-descent interfaces. The current rational
@@ -27,40 +27,46 @@ and verifies every active numerical hypothesis for
 \boxed{N\ge10^{2874}}.
 \]
 
-For this fixed `3/41` witness, `10^2873` fails the retained-order inequality.
-The substantive next step is therefore a new witness or inequality, but more
-importantly a structural finite-range bridge.
+PX966--PX969 optimize the entire universal Euler-product exponent family. At
+decimal order `2873`, the concave cutoff margin is globally maximized at
+`log(2)/log(13033)` but remains below `-0.0934`. Therefore further tuning of the
+same universal divisor family cannot lower the integral decimal cutoff.
 
 **Frontier:** cover every order below `10^2874` by a structural extension chain,
-interval-specific arithmetic, exact absorbers, or finite classification.
+interval-specific arithmetic, exact absorbers, stronger retained-order
+inequalities, or finite classification.
 
 ## 2. Finite side-seven full-selector census
 
-**Status: exact through multiplicity-two case 79.**
+**Status: exact through multiplicity-two case 79; cases 80--159 launched.**
 
 All selectors of multiplicity at least three are classified: `37,600` are
 infeasible and one multiplicity-four selector is constructive. The first eighty
 multiplicity-two signatures add another `160` infeasible selectors.
 
-Current exact boundary:
+Current committed exact boundary:
 
 - `37,760` certified-infeasible selectors;
 - one constructive selector;
 - `34,099` unclassified selectors;
 - `2,797,478,913` certified rejection-CSP nodes.
 
-The unresolved cache consists exactly of:
+The unresolved committed cache consists exactly of:
 
 - `3,760` multiplicity-two signatures, containing `7,520` selectors;
 - `26,579` multiplicity-one signatures/selectors.
 
-**Frontier:** continue fixed ten-signature proof shards from global case `80`,
-while replacing raw DFS where possible by explicit bottom-permutation triple
-covers and assumption-minimized top nogoods.
+A durable eight-shard batch covers multiplicity-two cases `80` through `159`.
+Its results are not counted until exact transcripts are downloaded, replayed,
+and committed.
+
+**Frontier:** continue fixed ten-signature proof shards, while replacing raw DFS
+where possible by explicit bottom-permutation triple covers and
+assumption-minimized top nogoods.
 
 ## 3. Low-multiplicity certificate compression
 
-**Status: exact reduction implemented; finite measurements pending.**
+**Status: exact reduction and generic generators implemented.**
 
 For a fixed clean top order, selector `F` is bottom-infeasible exactly when the
 coverage sets of its collinear abstract triples cover all `5,040` bottom
@@ -78,7 +84,7 @@ assumption cores. Promote only independently replayed stored covers.
 
 ## 4. Recursive closure from produced bases
 
-**Status: open.**
+**Status: affine-column recursion ruled out at bases 8, 10, and 12.**
 
 Exact factor-independent products currently include
 
@@ -92,13 +98,21 @@ Exact factor-independent products currently include
 2\times6\to12.
 \]
 
-The arbitrary-map one-inner-layer family is completely classified through base
-eight and cannot simply iterate the side-four template. Full side-six selector
-classes are solved, but no theorem recursively closes sides ten or twelve.
+Every rectangle output belongs to the all-transposition relative class. Exact
+row-pattern searches absorb arbitrary `P` and arbitrary spanning degree-two
+selection. They now rule out affine column pairs `(T,Q)` at:
 
-**Frontier:** prove a produced-base iteration theorem, find larger successful
-cycle-type templates, or construct an extension mechanism compatible with the
-paired repair path.
+- side eight: `4,096` geometries;
+- side ten: `6,400` geometries and `165,874,408` nodes;
+- side twelve: `9,216` geometries and `175,715,546` nodes.
+
+Thus neither produced base ten nor twelve iterates by keeping both column
+labelings affine and hiding all nonlinearity in row assignment or selector
+choice.
+
+**Frontier:** search genuinely non-affine column double cosets or larger map
+groups, prove a produced-base extension mechanism, or use the general
+low-syndrome repair/resampling path instead of a fixed template.
 
 ## 5. Global product repair and exact-cover selection
 
@@ -132,9 +146,10 @@ bounded-denominator interpolation chambers.
 1. Promote durable side-seven multiplicity-two transcripts into replay verifiers
    and advance the finite boundary.
 2. Measure and minimize bottom triple covers, then add top assumption learning.
-3. Build a finite-range bridge below `10^2874`; treat further universal cutoff
-   compression as secondary.
-4. Target recursive closure at side ten or twelve.
+3. Build a finite-range bridge below `10^2874`; universal exponent tuning is now
+   closed at integral decimal scale.
+4. Enumerate non-affine column double cosets for produced-base recursion, rather
+   than repeating affine-column searches.
 5. Develop the exact-cover/resampling theorem and the independent hyperbola
    termination/absorber routes.
 
@@ -142,8 +157,11 @@ bounded-denominator interpolation chambers.
 
 ```bash
 python scripts/verify_product_three_forty_first_divisor_cutoff.py
+python scripts/verify_product_universal_divisor_cutoff_optimality.py
 python scripts/verify_product_entry_invariant_dependencies.py
 python scripts/verify_product_splice_interface.py
+python scripts/verify_product_transposition_class_ten.py
+python scripts/verify_product_transposition_class_twelve.py
 
 g++ -O3 -std=c++17 \
   scripts/measure_product_side_seven_bottom_certificate_dictionary.cpp \
