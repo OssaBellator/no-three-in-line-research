@@ -115,30 +115,29 @@ enter the existing current-anchor pair-codegree and GC4 star routers.
 
 ## GC2ek -- exact prospective-certificate continuation -- PROVED UNDER THE LINEAGE-CYCLE CONTRACT
 
-For every compatible bank of exact certificates returned by GC2ee--GC2ef, one of the following
-holds:
+For every compatible bank of exact certificates returned by GC2ee--GC2ef, the router is nested:
 
-1. one exact matching extension or product-realization field fails;
-2. the chosen product state installs the alias-aggregated bank `B` with weight `W_B`;
-3. at a later checkpoint, first-destruction payment has weight at least `W_B/2`;
-4. at that checkpoint, one current physical cell supports surviving exact-certificate incidence at
+1. either one exact matching extension or product-realization field fails;
+2. or the chosen product state installs the alias-aggregated bank `B` with weight `W_B`;
+3. after installation, at every later checkpoint, either first-destruction payment has weight at
+   least `W_B/2`, or one current physical cell supports surviving exact-certificate incidence at
    least `3W_B/(2N^2)`;
-5. or the intervening history is a tagged-only recycling segment, an outer reset, or a named lineage
-   contract failure.
+4. independently, the intervening history has strict tagged-potential descent, is a tagged-only
+   recycling segment, leaves by an outer reset, or returns one named lineage contract failure.
 
 Under the fixed-universe lineage-cycle contract of GC2cl, tagged-only recurrence erases, descends or
-spends finite exact tickets.  Thus installed exact prospective mass cannot disappear without full
-first-destruction payment or current anchored structure.
+spends finite exact tickets.  Thus installed exact prospective mass cannot disappear without
+first-destruction accounting or surviving current anchored structure.
 
 ### Proof
 
 Use GC2eh to install the bank.  GC2ei gives `W_B=S_B+P_B`, so at least one summand is at least
-`W_B/2`.  The paid branch is alternative 3.  In the surviving branch apply GC2ej.  The global tagged
-potential and tagged-only classification are GC2cj--GC2cl.  All omitted hypotheses return the least
-failed field by item 7 of the realization contract. QED.
+`W_B/2`.  The paid branch is the first part of item 3.  In the surviving branch apply GC2ej.  The
+global tagged potential and tagged-only classification are GC2cj--GC2cl.  All omitted hypotheses
+return the least failed field by item 7 of the realization contract. QED.
 
-For a one-certificate bank, alternatives 3 and 4 preserve the full exact weight before the optional
-`3/N^2` anchor localization.
+For a one-certificate bank, the survival/first-destruction split preserves the full exact weight
+before the optional `3/N^2` anchor localization.
 
 ## Corrected GC frontier
 
