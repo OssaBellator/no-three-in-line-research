@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX993
+# Product growing-direction theorem index: PX952--PX996
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -44,3 +44,6 @@
 | PX991 | Exact clean-top census for multiplicity-two cases `240` through `319` | PROVED FINITE | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
 | PX992 | Exact shared bottom-CSP census for multiplicity-two cases `240` through `319` | PROVED FINITE | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
 | PX993 | The finite cache boundary advances to `38,240` infeasible selectors with `33,619` unclassified | PROVED REDUCTION | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
+| PX994 | The Nicolas--Robin theorem gives an ambient subexponential divisor cap with rational constant `1.538` | PROVED USING NICOLAS--ROBIN | `docs/311-nicolas-robin-subexponential-divisor-baseline.md` |
+| PX995 | The Nicolas--Robin divisor input makes every active paired inequality hold from `N>=10^14104`, while `10^14103` fails | PROVED FINITE/ARITHMETIC | `docs/311-nicolas-robin-subexponential-divisor-baseline.md` |
+| PX996 | The baseline universal subexponential divisor estimate does not improve the active `10^2874` cutoff | PROVED REDUCTION | `docs/311-nicolas-robin-subexponential-divisor-baseline.md` |
