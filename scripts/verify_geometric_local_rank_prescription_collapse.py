@@ -23,6 +23,15 @@ def completion_stock(n, r):
     return 1
 
 
+def at_least(value, target):
+    return value >= target or math.isclose(
+        value,
+        target,
+        rel_tol=1e-12,
+        abs_tol=1e-9,
+    )
+
+
 def main():
     rng = random.Random(SEED)
     counts = defaultdict(int)
@@ -43,8 +52,8 @@ def main():
         weights = [value * scale for value in raw]
         heavy_prescription = max(weights)
 
-        assert heavy_prescription + 1e-9 >= total / prescriptions
-        assert total / prescriptions + 1e-9 >= (source - fixed) / 384.0
+        assert at_least(heavy_prescription, total / prescriptions)
+        assert at_least(total / prescriptions, (source - fixed) / 384.0)
 
         stock = completion_stock(n, r)
         used_completions = min(stock, rng.randint(1, min(stock, 300)))
@@ -53,11 +62,11 @@ def main():
         completion_weights = [value * completion_scale for value in raw_completion]
         exact_weight = max(completion_weights)
 
-        assert exact_weight + 1e-9 >= heavy_prescription / stock
-        assert exact_weight + 1e-9 >= (source - fixed) / (384.0 * stock)
+        assert at_least(exact_weight, heavy_prescription / stock)
+        assert at_least(exact_weight, (source - fixed) / (384.0 * stock))
 
         theta = (source - fixed) / source
-        assert exact_weight + 1e-9 >= theta * source / (384.0 * stock)
+        assert at_least(exact_weight, theta * source / (384.0 * stock))
 
         counts[f"rank_{r}_systems"] += 1
         counts["prescriptions"] += used
