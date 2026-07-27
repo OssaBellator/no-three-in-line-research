@@ -3,7 +3,8 @@
 
 The script checks exact common-centre defect multiplication, interleaved bounded-expansion
 budgets, zero-multiplier absorption, same-sign translation budgets and the finite residual
-classification.
+classification, including the fact that different-centre involutions belong to the mixed-centre
+branch.
 """
 
 from __future__ import annotations
@@ -34,8 +35,6 @@ def classify(maps: list[tuple[int, int]]) -> str:
     if all(A == 1 for A, _ in maps):
         signs = {1 if B > 0 else -1 for _, B in maps if B}
         return "same_sign_translation" if len(signs) <= 1 else "mixed_sign_translation"
-    if all((A, B) == (1, 0) or A in (0, -1) for A, B in maps):
-        return "finite_order_reset"
     return "mixed_center"
 
 
@@ -133,6 +132,8 @@ def main() -> None:
         [(1, 2), (1, -3)],
         [(0, 4), (-1, 8), (1, 0)],
         [(2, 0), (3, 1)],
+        [(-1, 2), (-1, 6)],
+        [(0, 0), (-1, 2), (-1, 6)],
     ]
     expected = [
         "common_center",
@@ -140,11 +141,20 @@ def main() -> None:
         "mixed_sign_translation",
         "common_center",
         "mixed_center",
+        "mixed_center",
+        "mixed_center",
     ]
     for maps, want in zip(samples, expected):
         got = classify(maps)
         assert got == want, (maps, got, want)
         stats[f"classified_{got}"] += 1
+
+    # Two different-centre involutions compose to a translation.
+    h = 7
+    first = -h + 2
+    second = -first + 6
+    assert second == h + 4
+    stats["distinct_centre_involution_compositions"] += 1
 
     print("AC common-rank affine semigroup audit passed")
     for key in sorted(stats):
