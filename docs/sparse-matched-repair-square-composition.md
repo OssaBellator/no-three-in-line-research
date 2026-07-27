@@ -8,9 +8,9 @@ operation and the opposite destruction operation need not yet form one legal chr
 
 This note isolates the missing physical contract and proves the corresponding batching theorem.
 Once every matched record is assigned to a legal repair-then-destroy operation square, bounded
-support and complete-scope incidence give a compatible subbank.  All selected matched records are
-then physically created in the first stage and destroyed in the second, with exact energy
-additivity across the selected squares.
+support and complete-scope incidence give a compatible subbank.  Under an explicit joint two-stage
+legality clause, all selected matched records are physically created in the first stage and destroyed
+in the second, with exact energy additivity across the selected squares.
 
 ## Matched operation-square model
 
@@ -40,12 +40,15 @@ Assume the **matched-square realization contract**:
 1. every `Q in R_a` is absent in `kappa`, present after `sigma_a`, and absent after
    `sigma_a tau_a`;
 2. the complete exact rank-three ledger contains every record affected by either operation;
-3. the two-stage operation is legal in the declared local state;
-4. distinct exact aliases were aggregated before assignment;
-5. every combined support has size at most `r`;
-6. every physical column belongs to at most `mu` combined supports;
-7. every physical column belongs to at most `Lambda_sq` exact record scopes in the complete ledger;
-8. failure returns the least square, operation, record, alias, support, scope, label or boundary field.
+3. each local two-stage operation is legal in its declared state;
+4. every interaction-independent square family has a legal simultaneous repair stage, followed by a
+   legal simultaneous destruction stage after those repairs;
+5. distinct exact aliases were aggregated before assignment;
+6. every combined support has size at most `r`;
+7. every physical column belongs to at most `mu` combined supports;
+8. every physical column belongs to at most `Lambda_sq` exact record scopes in the complete ledger;
+9. failure returns the least square, operation, joint-legality, record, alias, support, scope, label
+   or boundary field.
 
 For two balanced swaps one may take the safe support bound `r<=4`.
 
@@ -104,13 +107,14 @@ weight. QED.
 Execute every repair operation `sigma_a`, `a in J`, simultaneously, and then every destruction
 operation `tau_a`, `a in J`, simultaneously.  Under the matched-square contract:
 
-1. after the repair stage, every selected matched record is present;
-2. after the destruction stage, every selected matched record is absent;
-3. selected exact record sets from distinct vertices are disjoint;
-4. the transient physically created-and-destroyed matched weight is exactly
+1. both simultaneous stages are legal in their stated order;
+2. after the repair stage, every selected matched record is present;
+3. after the destruction stage, every selected matched record is absent;
+4. selected exact record sets from distinct vertices are disjoint;
+5. the transient physically created-and-destroyed matched weight is exactly
 
    `H_J=sum_(a in J) H_a`;
-5. if
+6. if
 
    `Delta_a=T(kappa^(sigma_a tau_a))-T(kappa)`,
 
@@ -120,14 +124,15 @@ operation `tau_a`, `a in J`, simultaneously.  Under the matched-square contract:
 
 ### Proof
 
-Independence makes the combined supports pairwise disjoint.  If an exact scope met two selected
-supports, the corresponding vertices would be adjacent by the second interaction rule.  Hence every
-complete-ledger record indicator is affected by at most one selected square.
+Independence makes the combined supports pairwise disjoint.  Item 4 of the realization contract gives
+joint legality of the two simultaneous stages.  If an exact scope met two selected supports, the
+corresponding vertices would be adjacent by the second interaction rule.  Hence every complete-ledger
+record indicator is affected by at most one selected square.
 
 For a selected matched record, its own square gives the absent--present--absent table from SAS5fh,
 and every other selected square leaves its scope unchanged.  This proves the two-stage cancellation.
-If the same exact record were assigned to two selected vertices, its scope would meet both supports,
-contradicting independence; alias aggregation also forbids duplicate physical addresses.
+Every matched exact record was assigned to exactly one square vertex, and alias aggregation forbids
+duplicate physical addresses, so the selected record sets are disjoint.
 
 Finally sum the complete exact energy ledger record by record.  Every scope has either one local
 square change or zero change, so the simultaneous energy difference is the sum of the local square
@@ -148,7 +153,7 @@ and total positive square gain
 
 One of the following holds:
 
-1. one matched-square realization field fails;
+1. one matched-square realization or joint-legality field fails;
 2. one support or complete-scope incidence cap fails;
 3. a compatible square batch gives energy descent at least
 
@@ -170,7 +175,8 @@ transient cancellation bank and exact energy sum
 
 `sum_a Delta_a=sum_a (-g_a)>=0`.
 
-The remaining alternatives are precisely failed realization or incidence hypotheses. QED.
+The remaining alternatives are precisely failed realization, joint-legality or incidence
+hypotheses. QED.
 
 The theorem does not claim that a nonimproving square batch lowers energy; it exposes the exact
 barrier attached to a physically cancelled matched bank.
@@ -202,14 +208,14 @@ and failed-contract alternatives are unchanged. QED.
 ## Corrected SAS6 frontier
 
 Matched repair/opposite-destruction mass no longer stops at signed-ledger cancellation once the
-local repair-then-destroy square is realized.  Bounded support and complete-scope incidence retain an
-explicit compatible fraction whose matched records are physically created and then destroyed with
-exact additive energy.
+local and joint repair-then-destroy square contracts are realized.  Bounded support and complete-scope
+incidence retain an explicit compatible fraction whose matched records are physically created and
+then destroyed with exact additive energy.
 
-The remaining sparse work is realization of the matched-square contract for every word family,
-payment or descent through the resulting nonnegative square barriers, resolution of composed-only
-positive curvature by negative collateral, positive base-row realization, and the reflected-boundary
-or high-incidence branches.
+The remaining sparse work is realization of the local and joint matched-square contracts for every
+word family, payment or descent through the resulting nonnegative square barriers, resolution of
+composed-only positive curvature by negative collateral, positive base-row realization, and the
+reflected-boundary or high-incidence branches.
 
 ## Finite check
 
@@ -217,4 +223,4 @@ or high-incidence branches.
 combined supports and complete rank-three scope ledgers.  It checks the `D_sq` degree bound, weighted
 independent extraction, absent--present--absent matched tables, distinct transient unions, exact
 two-stage energy additivity, positive-gain restriction and the integrated neutral/common-step
-constants.
+constants.  Joint operation legality remains the explicit physical contract audited by the theorem.
