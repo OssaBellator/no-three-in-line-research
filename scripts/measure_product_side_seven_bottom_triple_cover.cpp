@@ -126,6 +126,7 @@ int main(int argc, char** argv) {
 
     std::set<std::array<uint8_t, 3>> triple_dictionary;
     std::set<std::vector<std::array<uint8_t, 3>>> cover_dictionary;
+    std::set<uint16_t> support_dictionary;
     uint64_t total_cover_entries = 0;
 
     for (size_t top_index = 0; top_index < top_count; ++top_index) {
@@ -192,16 +193,26 @@ int main(int argc, char** argv) {
                     uncovered[word] &= ~coverages[best].words[word];
             }
 
-            for (auto const& triple : chosen)
-                for (auto edge : triple) digest = cover_mix(digest, edge);
+            uint16_t support_mask = 0;
+            for (auto const& triple : chosen) {
+                for (auto edge : triple) {
+                    digest = cover_mix(digest, edge);
+                    support_mask |= uint16_t(1u << (edge % SIDE));
+                }
+            }
             digest = cover_mix(digest, chosen.size());
             total_cover_entries += chosen.size();
             cover_dictionary.insert(chosen);
+            support_dictionary.insert(support_mask);
 
             std::cout << "top_index=" << top_index
                       << " selector=" << selector
                       << " available_triples=" << coverages.size()
                       << " greedy_cover=" << chosen.size()
+                      << " top_support="
+                      << __builtin_popcount(unsigned(support_mask))
+                      << " support_mask=" << support_mask
+                      << " support_dictionary=" << support_dictionary.size()
                       << " triple_dictionary=" << triple_dictionary.size()
                       << " cover_dictionary=" << cover_dictionary.size()
                       << " digest=" << digest << "\n";
