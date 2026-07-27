@@ -10,7 +10,8 @@ finite obstruction-and-witness census, not an infinite closure theorem.
 ## Current ledger
 
 The exact support-twenty layer contains `71,860` selectors. Shared-top searches
-have classified every top-signature tier of multiplicity at least `4`:
+have classified every top-signature tier of multiplicity at least `4` and the
+first one hundred signatures of multiplicity `3`:
 
 | Multiplicity | Signatures | Selectors | Status |
 |---:|---:|---:|---|
@@ -37,13 +38,14 @@ have classified every top-signature tier of multiplicity at least `4`:
 | 6 | 524 | 3,144 | certified infeasible |
 | 5 | 725 | 3,625 | certified infeasible |
 | 4 | 2,392 | 9,568 | 9,567 infeasible; 1 witnessed |
-| **Total** | **4,590 completed classes** | **26,968 rejected; 1 witnessed** | **1,486,167,944 rejection-CSP nodes** |
+| 3, shard 0 | 100 of 3,544 | 300 | certified infeasible |
+| **Total** | **4,690 completed classes** | **27,268 rejected; 1 witnessed** | **1,514,183,709 rejection-CSP nodes** |
 
-Thus `44,891` support-twenty selectors remain unclassified and active in this
+Thus `44,591` support-twenty selectors remain unclassified and active in this
 cache layer.
 
-The complete multiplicity-four classification is PX796--PX799 in
-[`docs/247-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-completion.md`](../docs/247-side-seven-cycle52-radius-three-support-twenty-multiplicity-four-completion.md).
+The latest exact results are PX800--PX803 in
+[`docs/248-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-zero.md`](../docs/248-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-shard-zero.md).
 
 ## Constructive witness
 
@@ -93,9 +95,9 @@ active proof-producing route.
 
 ## Immediate task
 
-The next exact frontier is multiplicity `3`, containing `3,544` top signatures
-and `10,632` selectors. Continue in independently reproducible,
-witness-preserving intervals. In parallel:
+The remaining multiplicity-three frontier begins at global case index `100` and
+contains `3,444` top signatures and `10,332` selectors. Continue in independently
+reproducible, witness-preserving intervals. In parallel:
 
 1. test whether empty or small top-assumption cores recur across signatures;
 2. generalize signature-level master nogoods across mechanically checked incidence features;
@@ -115,9 +117,9 @@ support layers and relative-cycle classes.
 
 ```bash
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_final12.cpp \
-  -o /tmp/m4-final12
-/tmp/m4-final12
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard0.cpp \
+  -o /tmp/m3s0
+/tmp/m3s0
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity4_shard14_mixed.cpp \
