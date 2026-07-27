@@ -127,19 +127,20 @@ pigeonhole cancels the donor count. QED.
 
 Every heavy current lineage in the singleton-target two-layer host has one continuation:
 
-1. a legal donor menu of size at least `max(p-D_phys,0)`, nonempty whenever `p>D_phys`, and hence the
-   descent/feedback router of GC2fo;
-2. one exact target-common hard atom or global context/generator atom with donor load at least
-   `R_don/K_res`;
-3. an empty candidate reservoir;
+1. `p>D_phys` and a legal donor menu of size at least `p-D_phys>=1`, hence the descent/feedback router
+   of GC2fo;
+2. `R_don>0` and one exact target-common hard atom or global context/generator atom with donor load at
+   least `R_don/K_res`;
+3. `p<=D_phys`, so the explicit bounded physical cause budget can cover the whole candidate reservoir
+   and no nonempty legal menu follows from counting alone;
 4. or one cause-completeness, occurrence, support, line, donor, legality, label, context or outer-reset
    field fails.
 
 ### Proof
 
-Apply GC2fr.  A positive legal reservoir enters GC2fs and GC2fo.  Positive residual shortage enters the
-concentrated target/global branch.  The remaining cases are the empty reservoir and named contract
-failures. QED.
+If `R_don>0`, apply GC2fr to obtain alternative 2.  Otherwise `d>=p-D_phys`.  When `p>D_phys`, this is
+positive and GC2fs/GC2fo give alternative 1.  When `p<=D_phys`, the count supplies only alternative 3.
+Every excluded hypothesis is retained as alternative 4. QED.
 
 ## Corrected GC frontier
 
@@ -149,8 +150,9 @@ any excess shortage localizes to one current-target-common hard atom or one glob
 atom.
 
 The remaining geometry is payment or neutralization of those concentrated target/global blockers,
-repeated non-tagged feedback cycles, roles not represented by a singleton rectangle target, block-tuple
-overload recursion, pool depletion and local superregular resampling.
+small reservoirs dominated by the explicit bounded physical budget, repeated non-tagged feedback
+cycles, roles not represented by a singleton rectangle target, block-tuple overload recursion, pool
+depletion and local superregular resampling.
 
 ## Finite check
 
