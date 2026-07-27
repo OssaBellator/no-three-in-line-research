@@ -34,6 +34,9 @@ transition addendum in
 | Public `p=47` RLE certificate | The first public `c4-46` RLE record is independently decoded, decomposed, and determinant-verified | VERIFIED FINITELY | `docs/294` |
 | Wikimedia `p=59` coordinate certificate | The complete public `N=58` coordinate record is independently decomposed and determinant-verified with attribution retained | VERIFIED FINITELY | `docs/295` |
 | Repair owner-cover and cycle normal form | Bad lines impose weighted owner covers; exact target repairs are support derangements and disjoint cycle switches | PROVED / VERIFIED FINITELY | `docs/296` |
+| `p=41` cycle-first deterministic sampling | Two schedule-independent support-thirteen trial streams are completely decided by exact orientation search | VERIFIED FINITELY / NONEXHAUSTIVE | `docs/297` |
+| `p=41` residual target permanents | Every owner-feasible support is audited by exact binary and weighted permanents of its one-edge residual matrix | PROVED / VERIFIED FINITELY | `docs/298` |
+| Residual support signatures and Hall witnesses | Candidate options have monotone weighted support signatures; all eight zero-permanent supports receive elementary Hall certificates | PROVED / VERIFIED FINITELY | `docs/299` |
 
 ## Exact late theorem ranges
 
@@ -68,6 +71,9 @@ transition addendum in
 | PP3bgv--PP3bhb | Public RLE decoding, swapped decomposition, signed lift, verified `p=47` seed, and suite expansion | VERIFIED FINITELY | `docs/294-p47-public-rle-prime-seed-certificate.md` |
 | PP3bhc--PP3bhi | Attributed coordinate reconstruction, swapped decomposition, signed lift, verified `p=59` seed, and suite expansion | VERIFIED FINITELY | `docs/295-p59-wikimedia-coordinate-prime-seed-certificate.md` |
 | PP3bhj--PP3bhq | Exact repair derangements, cycle switches, weighted owner covers, and support-thirteen cycle census | PROVED / VERIFIED FINITELY | `docs/296-repair-owner-cover-and-derangement-cycle-normal-form.md` |
+| PP3bhr--PP3bhw | Fixed-target orientation completeness and reproducible support-thirteen trial ledgers | PROVED / VERIFIED FINITELY / NONEXHAUSTIVE | `docs/297-p41-support-thirteen-cycle-first-sampling.md` |
+| PP3bhx--PP3bic | Residual target matrices, exact permanent census, and one-edge outer-space reduction | PROVED / VERIFIED FINITELY | `docs/298-p41-support-thirteen-residual-target-permanents.md` |
+| PP3bid--PP3bii | Monotone option support signatures, permanent reconstruction, and zero-support Hall witnesses | PROVED / VERIFIED FINITELY | `docs/299-p41-residual-option-support-signatures-and-hall-witnesses.md` |
 
 ## Current exact endpoint
 
@@ -82,37 +88,10 @@ The remaining global theorem is exact. For `n=p-1`, find one permutation
 `sigma` and one derangement `pi`, put `tau=sigma o pi`, and require occupancy at
 most two on every maximal Euclidean grid line.
 
-The direct uniform fixed-relative random arguments do not close this: the
-expected bad-triple count is `Theta(n log n)`, and the natural symmetric
-permutation-LLL expression is `Omega(log n)`. Scaled inverse layers give a
-uniform family of individually clean nonlinear permutations, but exact
-fixed-layer searches show that this one-layer ansatz does not extend for
-`p=13,17,19,23,29,31`.
-
-Quarter-turn symmetry supplies a smaller exact structured class. Writing
-`n=2m`, one signed assignment between two reversal-pair vertices selects a
-complete four-cell quarter-turn orbit. Swapped-equivariant seeds are exactly
-signed directed cycle covers with
-
-```text
-2m^2-m canonical orbit variables,
-m(m-1) duplicate-orbit inequalities,
-one incoming and one outgoing edge per pair vertex,
-and one linear capacity inequality per maximal nonaxis line.
-```
-
-The pair-cycle lift determines the full relative structure. On a `rho`-cycle
-of length `ell`, an odd cycle gives one relative cycle of length `2ell`; an
-even cycle gives either two cycles of length `ell` or four cycles of length
-`ell/2`, according to one orientation-xor bit. Exact counting shows that
-edge-disjointness has limiting probability `exp(-1/4)` in the signed cover
-space, so duplicate-orbit avoidance is only a constant-factor issue.
-
-Conditioning the uniform signed-cover model on exact edge-disjointness still
-does not remove the probabilistic barrier. Generic nonaxis triples retain
-cylinder probability of order `n^-3`, and their total expected first-layer
-violations remain `Theta(n log n)`. The maximal-line geometry, not collision
-removal, is therefore the dominant obstruction for uniform measures.
+Uniform fixed-relative permutations and uniform edge-disjoint swapped covers
+both retain `Theta(n log n)` first-moment barriers. A probabilistic proof must
+therefore use a geometrically biased measure, a stronger dependency criterion,
+or a distributed repair mechanism.
 
 At `p=37`, exact support searches exclude one through twelve and a
 support-thirteen completion gives a valid seed. Its pair cycles are `[14,3,1]`,
@@ -122,56 +101,42 @@ thirteen.
 
 At `p=41`, the verified four-line near-state has one quarter-turn bad-line
 orbit and owner set `{15,18,20}`. Its pair cycles are `[10,5,4,1]`, with
-relative cycles `[10,10,10,4,4,2]`. The exact Hall search exhausts
+relative cycles `[10,10,10,4,4,2]`. Exact Hall search excludes every support
+through twelve, proving `h_orbit>=13`; support thirteen remains unresolved.
+
+For support thirteen, weighted owner covers leave `75,140` supports. Exact
+target repairs are derangements and split into only `24` cycle types. Across
+all owner-feasible supports, the one-edge residual matrices have exact totals
 
 ```text
-782738 support subsets,
-9148401 branch nodes,
-and every canonical support through twelve,
+zero binary permanents                         8,
+positive binary permanents                75,132,
+total target permanent         2,356,482,881,132,
+total weighted permanent     178,613,770,154,696.
 ```
 
-without a repair. Therefore this near-state has `h_orbit>=13`; support thirteen
-remains unresolved.
+Thus one-edge residual tests retain exactly
+`0.013690120283772545...` of owner-filtered target derangements and
+`0.00012666830781364404...` of the crude signed upper bound. Seven of the eight
+zero-permanent supports have an empty source row; the eighth has an empty target
+column. Positive-permanent supports still require changed-block duplicate and
+joint line-capacity propagation.
 
-The repair target map on a fixed support `A` is now exactly
-
-```text
-rho'=rho o g_A,
-```
-
-where `g_A` is a derangement of `A`. Every repair is a disjoint family of cycle
-switches. Bad lines additionally impose weighted owner-cover inequalities
-
-```text
-sum_(i in A) mu_L(i) >= q_L-2.
-```
-
-For the `p=41` support-thirteen frontier, the exact outer search has `75,140`
-owner-feasible supports and `24` target cycle types on each support. The total
-number of target derangements is `!13=2,290,792,932`.
+Two reproducible, schedule-independent trial streams completely decide
+500,000 single-cycle and 500,000 uniformly sampled derangement targets. No
+repair is found, but the samples are nonexhaustive and do not raise the radius
+lower bound.
 
 At `p=47`, the first public `c4-46` RLE record independently decodes to a
-quarter-turn swapped seed. Its pair cycles are `[22,1]`, orientation parities
-`[1,0]`, relative cycles `[11,11,11,11,2]`, and all `125580` determinants are
-nonzero.
-
-At `p=59`, the attributed Wikimedia coordinate record independently gives a
-quarter-turn swapped seed. Its pair cycles are `[28,1]`, both orientation
-parities are zero, relative cycles are `[14,14,14,14,2]`, and all `253460`
-determinants are nonzero.
+quarter-turn swapped seed with all `125580` determinants nonzero. At `p=59`, an
+attributed public coordinate record gives a quarter-turn swapped seed with all
+`253460` determinants nonzero.
 
 The canonical exact certificate suite now verifies
 
 ```text
 p=3,5,7,11,13,17,19,23,29,31,37,47,59,61,67,73.
 ```
-
-The cases through `p=13` and the `p=37` case were generated on this branch. The
-`p=47` case is independently decoded from a public RLE record, and `p=59` from
-an attributed CC BY-SA Wikimedia coordinate record. The other larger cases are
-independently decoded and determinant-verified from compact public archive
-codes. These isolated finite certificates do not interpolate and do not prove
-asymptotic existence.
 
 The next finite certificate gaps are
 
@@ -213,6 +178,17 @@ python scripts/check_p59_wikimedia_coordinate_certificate.py \
 python scripts/check_repair_owner_cover_and_derangement_cycles.py \
   experiments/p37-swapped-quarter-turn-near-example.json \
   experiments/p41-swapped-quarter-turn-near-example.json
+python scripts/check_p41_zero_permanent_hall_witnesses.py \
+  experiments/p41-swapped-quarter-turn-near-example.json \
+  experiments/p41-support13-residual-target-permanents.json
+
+g++ -O3 -std=c++17 \
+  scripts/check_p41_support13_residual_target_permanents.cpp \
+  -o /tmp/check_p41_support13_permanents
+
+g++ -O3 -std=c++17 -fopenmp \
+  scripts/sample_p41_support13_derangement_orientations.cpp \
+  -o /tmp/sample_p41_support13
 ```
 
 For the exact support exclusions, compile and run the C++ checkers documented
