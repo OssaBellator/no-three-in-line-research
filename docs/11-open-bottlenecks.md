@@ -2,98 +2,87 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2069 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2093 the branch has:
 
 - exact structural/SCC reductions and label-preserving CRT gluing;
 - 740 canonical side-four/five raw hosts and mechanically linked fibre identities;
-- exact uniform and deterministic rank-three worklists;
-- an exact eleven-host blocker classification and rollback alternatives;
-- a complete 9,260-response line-incidence kernel;
-- exact 32/99-dimensional reduced survivor-background signatures;
-- a 39-row affine selector library and exact selector chambers;
+- exact hard-core blocker, correction and rollback worklists;
+- a complete response-line kernel and 39-row affine selector library;
+- exact 32/99-dimensional survivor-background signatures;
+- nonnegative residual realizability inequalities and a unified line-cluster score;
 - composed host/source/background/removal/full-selector certificates;
-- primitive witnesses, owners, fate maps, destroyed-triple pools and gap audits; and
-- denominator-cleared labelled assignment-certificate machinery.
+- exact labelled response vectors and Pareto pruning; and
+- a canonical batch manifest ready for the genuine operation population.
 
 No theorem proves that every positive minimum becomes zero.
 
-## 2. Canonical keys and operation identities
+## 2. Exact population prerequisite
 
-Every raw host is `(side, deletion matching)` and has a stable record digest. Every
-actual owner/provenance fibre must cite that record, reproduce the response family and
-denominator, declare its response policy, and carry ordered state labels.
+Before a batch can be called complete, the actual parent operation rule must publish a
+sorted expected fibre-ID registry. The registry must be derived from the parent-state
+and operation enumeration itself, not inferred from the records that happened to be
+produced.
 
-The next data population must reject any unkeyed or mismatched fibre before geometric
-or LP work begins. Linkage alone does not prove state semantics or execution.
+A supplied batch without this registry is incomplete by theorem, even if it is large,
+contains all 740 raw hosts or passes every entry-level checker.
 
-## 3. Exact finite background interface
+## 3. Residual survivor-background signature
 
-For survivor background `B`, define grid pair counts
-
-\[
-p_B(q)=\#\{\{b_1,b_2\}\subset B:q,b_1,b_2\text{ collinear}\}
-\]
-
-and line occupancies `h_B(L)` on the canonical response-line universe. There are 23
-side-four and 83 side-five response lines.
-
-Because every response is a perfect matching, row/column additions to the grid weights
-shift every response equally. The selector therefore uses only the cross-differences
+For grid point `q`, let `p_B(q)` count collinear background pairs. Remove the tracked
+response-line contribution
 
 \[
-d_{ij}=p_{ij}-p_{i0}-p_{0j}+p_{00}\qquad(i,j>0)
+t_B(q)=\sum_{L\ni q}\binom{h_B(L)}2
 \]
 
-plus the line occupancies. Exact selector dimensions are 32 on side four and 99 on
-side five.
-
-This is the default finite serialization for populated survivor backgrounds. It is a
-scalar selector quotient only, not a state-semantic quotient.
-
-## 4. Affine selector chambers
-
-Every response score has the form
+and define `u_B(q)=p_B(q)-t_B(q)`. Every genuine background has `u_B(q)>=0`. The exact
+response score is
 
 \[
-N_B(Q)=C_B+F_Q(d,h).
+N_B(Q)=
+\sum_{q\in Q}u_B(q)+
+\sum_L\left[
+\binom{h_B(L)+r_Q(L)}3-
+\binom{h_B(L)}3
+\right].
 \]
 
-Only 39 affine rows occur globally. A host's lexicographic selector is determined by
-strict comparisons against earlier rows and non-strict comparisons against later rows.
-The full catalogue has 125,448 host comparisons but only 1,086 unique ordered row
-pairs.
+The residual cross-differences retain selector dimensions 32 and 99. Future fibre
+records should store this residual signature because it exposes necessary realizability
+constraints while preserving exact scalar selection.
 
-Future fibre tables should store the reduced signature, selected chamber, minimizer
-count and policy penalty instead of rerunning unstructured collinearity enumeration.
+## 4. Labelled response Pareto interface
 
-## 5. Composed operation threshold
+For each accepted fibre, reconstruct every child coefficient vector `v(Q)`. Store:
 
-For an actual operation whose removal leaves `B` and destroys `T` current triples,
+1. the complete response-to-vector table;
+2. duplicate-vector classes;
+3. the exact componentwise Pareto frontier;
+4. the all-ones exported selector; and
+5. every proposed strictly positive weighted selector.
 
-\[
-\Delta\Psi(Q)=N_B(Q)-T.
-\]
+A dominated response is useless for all strictly positive child weights. A Pareto
+response is only a candidate: it still needs an actual weight certificate or recurrent
+row proof.
 
-Therefore:
+## 5. Canonical batch entry
 
-1. certify the canonical fibre and exact survivor background;
-2. compute the reduced signature and affine full selector;
-3. certify the pre-response point/removal data and destroyed count `T`;
-4. compare every direct response record with the affine score record; and
-5. accept scalar strictness exactly when `N_B^*<T`.
+Each genuine operation entry must bind:
 
-The declared parent response carries exact penalty
+- canonical host and fibre identity;
+- true source, response family and labels;
+- pre-response points, removal set and survivor background;
+- residual signature and scalar selector;
+- destroyed threshold and direct response deltas;
+- coefficient bundle, labelled vectors and Pareto frontier; and
+- all component and record digests.
 
-\[
-\pi_{\rm pol}=N_B(Q_{\rm pol})-N_B^*.
-\]
-
-A positive policy penalty identifies response-choice loss, not deletion, rollback or
-labelled-routing slack.
+The batch checker reconstructs all aggregate counts and rejects duplicate fibres,
+ordering drift, source mismatches and undeclared completeness.
 
 ## 6. Hard-core alternatives
 
-The eleven positive-minimum hosts admit three distinct measurements:
+The eleven positive-minimum hosts retain three distinct measurements:
 
 1. selected-response occurrence correction: 17 units;
 2. minimum rollback of deletion restrictions: total distance 12;
@@ -106,25 +95,25 @@ auxiliary target.
 
 ## 7. Immediate execution order
 
-### Priority 1: populate linked fibres
+### Priority 1: publish expected fibre registry
 
-Wrap every actual owner/provenance source in the linkage certificate. Verify host ID,
-record digest, response family, denominator, policy, source digest and ordered labels.
+Derive the exact canonical fibre-ID set from the parent rule and prove that the
+enumeration is exhaustive and duplicate-free.
 
-### Priority 2: instantiate operation geometry
+### Priority 2: populate genuine batch entries
 
-Record exact pre-response points, removed indices, survivor background, destroyed
-current triples, entry order and rule-specific transition evidence.
+For every expected ID, instantiate the real host linkage, source manifest, points,
+removals, survivor background, entry order and state labels.
 
-### Priority 3: certify background signatures and chambers
+### Priority 3: certify scalar geometry
 
-Store `p_B(q)`, `h_B(L)`, the reduced cross-differences, common baseline, affine score
-vector, minimizer set, lexicographic selector and exact policy penalty.
+Validate residual nonnegativity, the exact line-cluster formula, affine chamber, full
+selector, destroyed threshold and responsewise direct-delta identity.
 
-### Priority 4: compose the operation threshold
+### Priority 4: certify labelled response choices
 
-Require responsewise equality between direct deltas and `N_B(Q)-T`. Reject source,
-background, response-family, selected-response or threshold mismatches.
+Build exact child vectors, discard dominated responses, choose or solve for positive
+weights, and preserve every unresolved state label.
 
 ### Priority 5: resolve the hard core
 
@@ -133,8 +122,8 @@ operation changes, weights, routes or certified auxiliary targets.
 
 ### Priority 6: close the other exceptional rows
 
-On the other 78 uniform-exceptional hosts, keep a zero-rank-three response only when it
-also survives the exact full selector and complete labelled row.
+On the other 78 uniform-exceptional hosts, retain a response only when it survives both
+the exact scalar selector and the complete labelled row.
 
 ### Priority 7: complete pool and fate semantics
 
@@ -143,37 +132,38 @@ deletion, domination multiplicity, transfer, structural descent and auxiliary ta
 
 ### Priority 8: close and publish recurrent blocks
 
-Combine exact selectors, destroyed credits, line and marginal terms, return/selector
-coefficients and child weights. Generate integer duals, prove positive row slacks,
-eliminate certified auxiliaries, solve remaining SCCs and publish the global CRT
-quotient.
+Combine exact selectors, routed destroyed credits, return/selector coefficients and
+child weights. Generate integer duals, prove positive row slacks, eliminate certified
+auxiliaries, solve remaining SCCs and publish the global CRT quotient.
 
 ## 8. Genuine unresolved modules
 
-1. Actual linked-fibre population.
-2. Actual point/removal/background and transition semantics.
-3. Signature/chamber/composed-operation certificates on every real fibre.
-4. Nine one-triple hard-core resolutions.
-5. Two four-triple one-response resolutions.
-6. Seventy-eight exceptional complete rows.
-7. Remaining domination, transfer and state-label proofs.
-8. Collision/local-line recurrent SCC certificates.
-9. The global denominator-cleared integer quotient.
+1. Exhaustive expected fibre-ID registry.
+2. Actual linked-fibre population.
+3. Actual point/removal/background and transition semantics.
+4. Residual/signature/composed certificates on every real fibre.
+5. Labelled Pareto and weight certificates on every recurrent fibre.
+6. Nine one-triple hard-core resolutions.
+7. Two four-triple one-response resolutions.
+8. Seventy-eight exceptional complete rows.
+9. Remaining domination, transfer and state-label proofs.
+10. Collision/local-line recurrent SCC certificates.
+11. The global denominator-cleared integer quotient.
 
 ## 9. Honesty boundaries
 
-- Canonical keys, signatures and affine chambers are not semantic quotients.
-- Linkage proves identity, not execution.
-- Equal scalar score vectors need not give equal labelled child vectors.
-- Rollback changes the response family and parent operation.
-- Occurrence correction, rollback, selector penalty, policy penalty and uniform slack are distinct.
-- Literal strictness requires the actual destroyed threshold.
+- Necessary residual inequalities do not characterize realizability.
+- Canonical keys and scalar signatures are not labelled semantic quotients.
+- Duplicate child vectors do not imply duplicate transitions.
+- A positive-weight minimizer is Pareto-minimal; the converse is not asserted.
+- Batch completeness requires an independently derived expected fibre registry.
+- Unlabelled destruction credit still requires explicit labelled routing.
 - Scalar improvement does not automatically contract a labelled SCC.
 - Finite checkers prove only their declared equalities.
 
 ## 10. Current endpoint
 
-Through CMR2069, the response-choice component of a populated fibre is a compact exact
-integer calculation rather than a fresh geometric search. The unresolved core is now
-actual fibre population, legal operation/fate semantics, labelled recurrent
-contraction and the final global integer quotient.
+Through CMR2093, every genuine operation can be serialized into one exact, reloadable
+record covering identity, scalar geometry and labelled response candidates. The next
+irreducible task is no longer interface design: it is deriving the expected fibre
+registry and populating every real operation with proved transition and fate semantics.
