@@ -1,0 +1,30 @@
+name: Product side-seven signature histogram
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-histogram.yml
+
+permissions:
+  contents: read
+
+jobs:
+  histogram:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile histogram tool
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_signature_histogram.cpp
+          -o /tmp/side-seven-histogram
+      - name: Measure histogram
+        run: /tmp/side-seven-histogram | tee side-seven-histogram.txt
+      - name: Upload histogram
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-signature-histogram
+          path: side-seven-histogram.txt
+          if-no-files-found: error
