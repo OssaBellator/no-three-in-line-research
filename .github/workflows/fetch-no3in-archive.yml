@@ -1,4 +1,4 @@
-name: Fetch no-three archive files
+name: Verify recovered no-three certificates
 
 on:
   pull_request:
@@ -8,9 +8,10 @@ permissions:
   contents: read
 
 jobs:
-  fetch:
+  verify:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - name: Fetch archive files
         shell: bash
         run: |
@@ -22,10 +23,20 @@ jobs:
             test -s "archive/n${n}_rot4"
             sha256sum "archive/n${n}_rot4"
           done
-      - name: Upload archive files
-        uses: actions/upload-artifact@v4
-        with:
-          name: no3in-archive-configurations
-          path: archive/
-          if-no-files-found: error
-          retention-days: 1
+      - name: Run certificate regressions
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/check_public_rot4_prime_certificates.py \
+            experiments/public-rot4-prime-certificates-p41-p43-p53.json \
+            --archive-dir archive
+          python scripts/check_prime_minus_one_seed.py \
+            experiments/prime-minus-one-seed-examples.json
+          python scripts/check_prime_seed_relative_cycles.py \
+            experiments/prime-seed-relative-cycle-example.json
+          python scripts/check_archived_prime_seed_codes.py \
+            experiments/archived-prime-seed-codes.json
+          python scripts/check_quarter_turn_seed_normal_forms.py \
+            experiments/archived-prime-seed-codes.json
+          python scripts/check_swapped_quarter_turn_orbit_csp.py \
+            experiments/archived-prime-seed-codes.json
