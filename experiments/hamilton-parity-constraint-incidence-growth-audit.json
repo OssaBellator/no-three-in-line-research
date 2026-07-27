@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {"m":4,"one_xor_pairs":8,"impossible_pairs":0,"maximum_constraint_degree":2,"compatible_constraint_triangles":0,"compatible_frustrated_triangles":0},
+    {"m":5,"one_xor_pairs":26,"impossible_pairs":0,"maximum_constraint_degree":5,"compatible_constraint_triangles":2,"compatible_frustrated_triangles":2},
+    {"m":6,"one_xor_pairs":45,"impossible_pairs":0,"maximum_constraint_degree":6,"compatible_constraint_triangles":2,"compatible_frustrated_triangles":2},
+    {"m":7,"one_xor_pairs":75,"impossible_pairs":0,"maximum_constraint_degree":10,"compatible_constraint_triangles":6,"compatible_frustrated_triangles":6},
+    {"m":8,"one_xor_pairs":128,"impossible_pairs":4,"maximum_constraint_degree":13,"compatible_constraint_triangles":58,"compatible_frustrated_triangles":58},
+    {"m":9,"one_xor_pairs":164,"impossible_pairs":4,"maximum_constraint_degree":15,"compatible_constraint_triangles":58,"compatible_frustrated_triangles":58},
+    {"m":10,"one_xor_pairs":221,"impossible_pairs":4,"maximum_constraint_degree":19,"compatible_constraint_triangles":74,"compatible_frustrated_triangles":74},
+    {"m":20,"one_xor_pairs":1648,"impossible_pairs":8,"maximum_constraint_degree":46,"compatible_constraint_triangles":1534,"compatible_frustrated_triangles":1406},
+    {"m":30,"one_xor_pairs":4453,"impossible_pairs":12,"maximum_constraint_degree":89,"compatible_constraint_triangles":4776,"compatible_frustrated_triangles":4340},
+    {"m":40,"one_xor_pairs":9056,"impossible_pairs":24,"maximum_constraint_degree":115,"compatible_constraint_triangles":10706,"compatible_frustrated_triangles":9910},
+    {"m":50,"one_xor_pairs":15875,"impossible_pairs":32,"maximum_constraint_degree":143,"compatible_constraint_triangles":21992,"compatible_frustrated_triangles":20556},
+    {"m":60,"one_xor_pairs":24404,"impossible_pairs":44,"maximum_constraint_degree":168,"compatible_constraint_triangles":36150,"compatible_frustrated_triangles":33954}
+  ],
+  "maximum_pair_size":60,
+  "asymptotic_seed_theorem_proved":false
+}
