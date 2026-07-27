@@ -9,8 +9,8 @@ The result is an exact flaw interface: every collinear triple in a signed
 Hamilton state can be deleted by a move changing at most three signed
 assignments while preserving Hamiltonicity, matching, pair-2-cycle-freeness,
 and duplicate-orbit validity.  The natural raw potentials still have one-step
-local minima, but exhaustive directed reachability through pair size six shows
-that all such minima escape within at most three flaw-targeted moves.
+local minima, but exhaustive directed reachability through pair size seven
+shows that all such minima escape within at most four flaw-targeted moves.
 
 No asymptotic termination theorem is claimed.
 
@@ -144,7 +144,7 @@ a flaw walk rather than as the unconditioned reversible chain.
 
 ### Proposition PP3bkc -- VERIFIED FINITELY / LOOK-AHEAD FRONTIER
 
-For every signed Hamilton state with `4<=m<=6`, form the directed graph whose
+For every signed Hamilton state with `4<=m<=7`, form the directed graph whose
 outgoing edges are all combined moves targeted at a currently present bad
 triple.  Then every state reaches a state of globally minimum total collinear
 triple count.
@@ -156,51 +156,77 @@ The exact results are:
 | 4 | 96 | 0 | 16 | 864 | 2 |
 | 5 | 768 | 0 | 16 | 15,632 | 3 |
 | 6 | 7,680 | 4 | 84 | 252,896 | 3 |
+| 7 | 92,160 | 0 | 36 | 4,427,088 | 4 |
 
-No defective state has zero legal combined moves.  The `32` targetability-gap
-states at each of `m=5,6` from `docs/304` are repaired by orientation flips.
+No defective state has zero legal combined moves.  The former support-three
+targetability gaps are repaired by orientation flips: there are `32`, `32`,
+and `56` defective states with no three-owner flaw at `m=5,6,7`, respectively.
 
 The nonminimal one-step local minima and their distances to the global minimum
 are:
 
-| `m` | local minima | distance two | distance three |
-|---:|---:|---:|---:|
-| 4 | 36 | 36 | 0 |
-| 5 | 140 | 96 | 44 |
-| 6 | 764 | 736 | 28 |
+| `m` | local minima | distance two | distance three | distance four |
+|---:|---:|---:|---:|---:|
+| 4 | 36 | 36 | 0 | 0 |
+| 5 | 140 | 96 | 44 | 0 |
+| 6 | 764 | 736 | 28 | 0 |
+| 7 | 6,676 | 1,344 | 5,060 | 272 |
+
+At `m=7`, an additional forward search computes the shortest horizon to any
+strictly lower triple count:
+
+```text
+horizon 1: 85,448 states,
+horizon 2:  5,936 states,
+horizon 3:    692 states,
+horizon 4:     48 states.
+```
+
+Thus every nonminimum state through `m=7` has a strictly descending path of
+length at most four, even though one-step descent fails on thousands of states.
 
 #### Verification
 
-Run
+For `m=4,5,6`, run
 
 ```bash
 python scripts/check_hamilton_combined_flaw_reachability.py \
   experiments/hamilton-combined-flaw-reachability-audit.json
 ```
 
-The checker exhaustively reconstructs every signed orbit set, every exact bad
-line, and every bad-triple owner set.  It generates all legal targeted
-orientation flips and successor rotations, then performs reverse breadth-first
-search from the global minima. ∎
+For the larger `m=7` graph, run
 
-For `m=4,5`, the global minimum is zero, so every signed Hamilton state reaches
+```bash
+g++ -O3 -std=c++17 \
+  scripts/check_hamilton_combined_flaw_reachability_m7.cpp \
+  -o /tmp/check_hamilton_combined_flaw_reachability_m7
+/tmp/check_hamilton_combined_flaw_reachability_m7
+```
+
+The compiled checker reconstructs all `92,160` signed Hamilton states, all
+`2,563,584` bad-triple occurrences, and all `4,427,088` directed targeted
+edges.  It builds forward and reverse CSR graphs and verifies both the distance
+to the global minimum and the strict-descent horizon. ∎
+
+For `m=4,5,7`, the global minimum is zero, so every signed Hamilton state reaches
 a valid no-three state under some targeted path.  For `m=6`, the Hamilton
 subfamily contains no valid state, and the conclusion is only reachability of
 the four-triple optimum.
 
 ## 5. Revised constructive frontier
 
-The targetability obstruction is closed: every flaw now has a support-one or
+The targetability obstruction is closed: every flaw has a support-one or
 support-three deletion move.  The remaining obstruction is scheduling and
 collateral control.
 
-The finite diameter-three result suggests three concrete next routes:
+The finite horizon-four result suggests three concrete next routes:
 
-1. define a two- or three-step Lyapunov function rather than a one-step defect
+1. define a bounded-look-ahead Lyapunov function rather than a one-step defect
    count;
 2. encode short escaping paths as witness atoms and prove a charge bound;
 3. add geometric weights predicting collateral lines before selecting a move.
 
-The exact finite reachability does not imply a uniform asymptotic diameter or a
-termination theorem.  The asymptotic seed theorem and the no-three-in-line
-conjecture remain open.
+The observed horizon grows from two to four across `m=4,...,7`, so the data do
+not support claiming a uniform constant bound.  The exact finite reachability
+does not imply an asymptotic termination theorem.  The asymptotic seed theorem
+and the no-three-in-line conjecture remain open.
