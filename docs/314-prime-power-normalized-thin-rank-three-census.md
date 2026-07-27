@@ -248,7 +248,7 @@ The remaining thin work is geometric offspring classification on these
 canonical hosts and any larger side not eliminated structurally.  No all-`n`
 theorem is claimed.
 
-All `15,469` extendable rank-three prescription instances on canonical sides
-four and five, together with the four forced side-three instances, are checked
-in
+All `15,465` extendable rank-three prescription instances on canonical sides
+four and five, together with the four forced side-three instances (`15,469`
+total), are checked in
 [`scripts/verify_prime_power_normalized_thin_rank_three_census.py`](../scripts/verify_prime_power_normalized_thin_rank_three_census.py).
