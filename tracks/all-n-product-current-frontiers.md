@@ -4,7 +4,7 @@
 
 This map reconciles the finite selector census, the paired asymptotic repair
 path, and the independent geometric and matching frontiers. It records what is
-actually open after PX959.
+actually open after PX965.
 
 No item below is a proof of the classical no-three-in-line conjecture unless it
 is explicitly promoted to an all-side theorem; no such promotion has occurred.
@@ -14,24 +14,24 @@ is explicitly promoted to an all-side theorem; no such promotion has occurred.
 **Status: proved reduction above an explicit cutoff.**
 
 The paired rectangle-label path has audited entry, line-cap, packet, mixed,
-terminal-return, recurrence, and causal-descent interfaces. The sharp rational
+terminal-return, recurrence, and causal-descent interfaces. The current rational
 divisor certificate gives
 
 \[
-\mathfrak d(N)<10^{6425/109}N^{16/109}
+\mathfrak d(N)<10^{2469/41}N^{6/41}
 \]
 
 and verifies every active numerical hypothesis for
 
 \[
-\boxed{N\ge10^{2875}}.
+\boxed{N\ge10^{2874}}.
 \]
 
-Within the same universal divisor framework, `10^2874` fails the
-retained-order inequality. The substantive next step is therefore not another
-small decimal optimization.
+For this fixed `3/41` witness, `10^2873` fails the retained-order inequality.
+The substantive next step is therefore a new witness or inequality, but more
+importantly a structural finite-range bridge.
 
-**Frontier:** cover every order below `10^2875` by a structural extension chain,
+**Frontier:** cover every order below `10^2874` by a structural extension chain,
 interval-specific arithmetic, exact absorbers, or finite classification.
 
 ## 2. Finite side-seven full-selector census
@@ -55,10 +55,28 @@ The unresolved cache consists exactly of:
 - `26,579` multiplicity-one signatures/selectors.
 
 **Frontier:** continue fixed ten-signature proof shards from global case `80`,
-while searching for a two-candidate symmetry quotient or direct obstruction
-certificate before starting multiplicity one.
+while replacing raw DFS where possible by explicit bottom-permutation triple
+covers and assumption-minimized top nogoods.
 
-## 3. Recursive closure from produced bases
+## 3. Low-multiplicity certificate compression
+
+**Status: exact reduction implemented; finite measurements pending.**
+
+For a fixed clean top order, selector `F` is bottom-infeasible exactly when the
+coverage sets of its collinear abstract triples cover all `5,040` bottom
+permutations. The selector-family subproblem is infeasible exactly when every
+selector has such a cover.
+
+Two generic tools now compare:
+
+- first-bad-triple dictionary compression;
+- deterministic greedy triple-subcover compression.
+
+**Frontier:** measure case zero in all orientations, deduplicate repeated covers
+across top orders and selector pairs, then combine them with minimized top
+assumption cores. Promote only independently replayed stored covers.
+
+## 4. Recursive closure from produced bases
 
 **Status: open.**
 
@@ -82,7 +100,7 @@ classes are solved, but no theorem recursively closes sides ten or twelve.
 cycle-type templates, or construct an extension mechanism compatible with the
 paired repair path.
 
-## 4. Global product repair and exact-cover selection
+## 5. Global product repair and exact-cover selection
 
 **Status: open.**
 
@@ -96,7 +114,7 @@ does not supply the required negative-dependency or local resampling theorem.
 projection fibres, or an exact conflict-free perfect-matching/cover theorem with
 the required local-load endpoint.
 
-## 5. Hyperbola, carry, and bounded-denominator geometry
+## 6. Hyperbola, carry, and bounded-denominator geometry
 
 **Status: open after first-generation neutralization.**
 
@@ -109,13 +127,12 @@ is refuted.
 alternating carry-complexity potential, or row-column-preserving absorbers for
 bounded-denominator interpolation chambers.
 
-## 6. Operational priorities
+## 7. Operational priorities
 
 1. Promote durable side-seven multiplicity-two transcripts into replay verifiers
    and advance the finite boundary.
-2. Seek a direct two-candidate certificate or symmetry reduction using repeated
-   top-order and bottom-node profiles.
-3. Build a finite-range bridge below `10^2875`; treat further universal cutoff
+2. Measure and minimize bottom triple covers, then add top assumption learning.
+3. Build a finite-range bridge below `10^2874`; treat further universal cutoff
    compression as secondary.
 4. Target recursive closure at side ten or twelve.
 5. Develop the exact-cover/resampling theorem and the independent hyperbola
@@ -124,9 +141,17 @@ bounded-denominator interpolation chambers.
 ## Verification entry points
 
 ```bash
-python scripts/verify_product_sharp_rational_divisor_cutoff.py
+python scripts/verify_product_three_forty_first_divisor_cutoff.py
 python scripts/verify_product_entry_invariant_dependencies.py
 python scripts/verify_product_splice_interface.py
+
+g++ -O3 -std=c++17 \
+  scripts/measure_product_side_seven_bottom_certificate_dictionary.cpp \
+  -o /tmp/m2-dictionary
+
+g++ -O3 -std=c++17 \
+  scripts/measure_product_side_seven_bottom_triple_cover.cpp \
+  -o /tmp/m2-cover
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
