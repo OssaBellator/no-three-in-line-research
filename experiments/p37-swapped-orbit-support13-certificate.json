@@ -1,6 +1,14 @@
 {
   "p": 37,
   "base_near_state": "experiments/p37-swapped-quarter-turn-near-example.json",
+  "search_provenance": {
+    "support": 13,
+    "shard": 6,
+    "shards": 64,
+    "support_subsets_in_shard_before_hit": 26,
+    "branch_nodes_before_hit": 78466,
+    "complete_feasible_leaves": 1
+  },
   "repair_support": [1, 2, 3, 4, 6, 7, 10, 12, 13, 15, 16, 17, 18],
   "repair_assignments": [
     {"source": 1, "target": 14, "orientation": 0},
