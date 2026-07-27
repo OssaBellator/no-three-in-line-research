@@ -1,10 +1,10 @@
 # Prime-patching restart and exact-width index
 
-This focused index records the terminal fixed-infrastructure patching chain
-and the remaining prime-minus-one seed frontier on
+This focused index records the terminal fixed-infrastructure patching chain and
+the remaining prime-minus-one seed frontier on
 `research/all-n-prime-patching`.
 
-The earlier allocation and endpoint localization chain is indexed in
+The earlier allocation and endpoint-localisation chain is indexed in
 [`prime-patching-recent-index.md`](prime-patching-recent-index.md), with the
 transition addendum in
 [`prime-patching-transition-index.md`](prime-patching-transition-index.md).
@@ -22,13 +22,14 @@ transition addendum in
 | Geometric symmetry and internal certificates | Exact square-symmetry quotient, row-relabel barrier, and internally generated `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282` |
 | Inverse-conic extension CSP | Scaled inverse layers are clean; fixed-layer completion is an exact line-capacity CSP; finite non-extension and two-sided-repair barriers | PROVED / VERIFIED FINITELY | `docs/283` |
 | Archived code decoding | Standard row-pair codes are independently decoded, decomposed, and determinant-verified, adding eight prime certificates | PROVED / VERIFIED FINITELY | `docs/284` |
-| Quarter-turn equivariant normal forms | Fixed action is a square-root system; swapped action is one signed permutation with forced second layer | PROVED / VERIFIED FINITELY | `docs/285` |
-| Coordinated repair support census | The audited one-defect `p=17` state has no repair changing at most seven assignment positions | VERIFIED FINITELY | `docs/286` |
+| Quarter-turn normal forms | Fixed action is a square-root system; swapped action is one signed permutation with forced second layer | PROVED / VERIFIED FINITELY | `docs/285` |
+| Coordinated repair census | The audited one-defect `p=17` state has no repair changing at most seven assignment positions | VERIFIED FINITELY | `docs/286` |
 | Signed orbit cycle-cover CSP | Swapped quarter-turn seeds are signed cycle covers whose four-cell orbit variables satisfy matching, duplicate-orbit, and line-capacity constraints | PROVED EQUIVALENCE / ASYMPTOTIC EXISTENCE OPEN | `docs/287` |
-| First missing-prime near-state | A `p=37` four-line near-state has no raw canonical signed-orbit repair changing at most six pair assignments | VERIFIED FINITELY | `docs/288` |
-| Relative cycle lift and count | Pair cycles lift independently to the full relative permutation; odd relative multiplicities are divisible by four; edge-disjointness costs asymptotic factor `exp(-1/4)` | PROVED / VERIFIED FINITELY | `docs/289` |
+| `p=37` near-state | A four-line swapped-orbit near-state has no raw canonical repair through support six | VERIFIED FINITELY | `docs/288` |
+| Relative cycle lift and count | Pair cycles lift independently; odd relative multiplicities are divisible by four; edge-disjointness costs asymptotic factor `exp(-1/4)` | PROVED / VERIFIED FINITELY | `docs/289` |
 | Hall-propagated orbit radius | Residual line domains and exact Hall tests exclude every `p=37` orbit repair through support twelve | PROVED / VERIFIED FINITELY | `docs/290` |
-| Conditioned swapped first moment | Even uniform edge-disjoint signed covers have `Theta(n log n)` expected generic first-layer collinear triples | PROVED / VERIFIED FINITELY | `docs/291` |
+| Conditioned swapped first moment | Even uniform edge-disjoint signed covers retain `Theta(n log n)` expected generic first-layer collinear triples | PROVED / VERIFIED FINITELY | `docs/291` |
+| Exact `p=37` repair | A support-thirteen signed-orbit repair gives a verified seed and proves the near-state radius is exactly thirteen | PROVED / VERIFIED FINITELY | `docs/292` |
 
 ## Exact late theorem ranges
 
@@ -41,7 +42,7 @@ transition addendum in
 | PP3bat--PP3baz | Choice-grid residual-host elimination | PROVED / CONDITIONAL WEIGHTED GRID ENDPOINTS | `docs/272-choice-grid-residual-host-elimination.md` |
 | PP3bba--PP3bbg | Fixed-cell fan host closure | PROVED / CONDITIONAL HEAVY-PENCIL ENDPOINTS | `docs/273-fixed-cell-fan-host-failure-elimination.md` |
 | PP3bbh--PP3bbn | Multiplicity-blind allocation bypass | PROVED / CONDITIONAL BASE ALLOCATION | `docs/274-current-row-multiplicity-blind-allocation-bypass.md` |
-| PP3bbo--PP3bbt | Arc/path conditioned cycle spaces and petal closure | PROVED / CONDITIONAL TYPED CONCENTRATIONS | `docs/275-arc-path-petal-host-leaf-elimination.md` |
+| PP3bbo--PP3bbt | Arc/path-conditioned cycle spaces and petal closure | PROVED / CONDITIONAL TYPED CONCENTRATIONS | `docs/275-arc-path-petal-host-leaf-elimination.md` |
 | PP3bbu--PP3bby | Completed-state binary support absorption | PROVED / CONDITIONAL BASE ALLOCATION | `docs/276-completed-state-binary-support-absorption.md` |
 | PP3bbz--PP3bcf | Paired-secant source-host leaf elimination | PROVED / CONDITIONAL NAMED CURRENT PAYMENT | `docs/277-paired-secant-source-host-leaf-elimination.md` |
 | PP3bcg--PP3bcm | Two-permutation determinant-CSP equivalence | PROVED EQUIVALENCE | `docs/278-prime-minus-one-seed-csp-audit.md` |
@@ -51,44 +52,39 @@ transition addendum in
 | PP3bdl--PP3bdq | Geometric symmetry group and `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
 | PP3bdr--PP3bdx | Inverse-conic layers, exact extension CSP, and two-sided repair barrier | PROVED / VERIFIED FINITELY | `docs/283-inverse-conic-layer-extension-csp.md` |
 | PP3bdy--PP3bee | Archive-code decoding, exact decomposition, and additional prime certificates | PROVED / VERIFIED FINITELY | `docs/284-archived-seed-code-decoding-and-prime-certificates.md` |
-| PP3bef--PP3bem | Quarter-turn action, parity colouring, signed-permutation and square-root normal forms, and relative-cycle parity | PROVED / VERIFIED FINITELY | `docs/285-quarter-turn-equivariant-seed-normal-forms.md` |
-| PP3ben--PP3beu | Exact support normal form, line-delta census, and `p=17` coordinated-repair lower bound | PROVED / VERIFIED FINITELY | `docs/286-p17-coordinated-repair-support-census.md` |
+| PP3bef--PP3bem | Quarter-turn action, parity colouring, signed-permutation and square-root normal forms | PROVED / VERIFIED FINITELY | `docs/285-quarter-turn-equivariant-seed-normal-forms.md` |
+| PP3ben--PP3beu | Exact support normal form, line-delta census, and `p=17` repair lower bound | PROVED / VERIFIED FINITELY | `docs/286-p17-coordinated-repair-support-census.md` |
 | PP3bev--PP3bfb | Four-cell orbit variables, signed cycle-cover bijection, duplicate-orbit criterion, and exact orbit CSP | PROVED EQUIVALENCE / VERIFIED FINITELY | `docs/287-swapped-quarter-turn-orbit-cycle-cover-csp.md` |
 | PP3bfc--PP3bfk | `p=37` four-line near-state, canonical signed-orbit support, raw repair census, and initial radius lower bound | PROVED / VERIFIED FINITELY | `docs/288-p37-swapped-orbit-near-seed-and-repair-radius.md` |
-| PP3bfl--PP3bfr | Exact pair-cycle lift, swapped odd-cycle divisibility, and signed-cover generating functions | PROVED / VERIFIED FINITELY | `docs/289-swapped-quarter-turn-relative-cycle-lift-and-count.md` |
-| PP3bfs--PP3bfz | Residual line domains, Hall-propagated branch-and-bound, and `p=37` radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/290-p37-swapped-orbit-hall-branch-and-bound-radius.md` |
-| PP3bga--PP3bgf | Generic signed cylinders and the conditioned swapped-quarter-turn first-moment barrier | PROVED / VERIFIED FINITELY | `docs/291-edge-disjoint-swapped-first-moment-barrier.md` |
+| PP3bfl--PP3bfr | Exact pair-cycle lift, odd-cycle divisibility, and signed-cover generating functions | PROVED / VERIFIED FINITELY | `docs/289-swapped-quarter-turn-relative-cycle-lift-and-count.md` |
+| PP3bfs--PP3bfz | Residual line domains, Hall-propagated branch-and-bound, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/290-p37-swapped-orbit-hall-branch-and-bound-radius.md` |
+| PP3bga--PP3bgf | Generic signed cylinders and conditioned swapped-quarter-turn first-moment barrier | PROVED / VERIFIED FINITELY | `docs/291-edge-disjoint-swapped-first-moment-barrier.md` |
+| PP3bgg--PP3bgm | Support-thirteen completion, verified `p=37` seed, exact repair radius, and compact code | PROVED / VERIFIED FINITELY | `docs/292-p37-support-thirteen-repair-certificate.md` |
 
 ## Current exact endpoint
 
 The local call matrix is terminal inside the fixed-infrastructure slab
-architecture. Once a saturated no-three source is supplied, a failed fixed
+architecture.  Once a saturated no-three source is supplied, a failed fixed
 attempt either installs the heterogeneous exact-width patch or strictly
-decreases the fixed nonnegative integer potential. Unary/binary multiplicity,
+decreases the fixed nonnegative integer potential.  Unary/binary multiplicity,
 base-domain or score failure, active-anchor failure, source-host failure,
 coordinate cover, and restart comparability are not terminal local leaves.
 
-The remaining global theorem is exact. For `n=p-1`, find one permutation
-`sigma` and one derangement `pi`, put `tau=sigma o pi`, and require occupancy
-at most two on every maximal Euclidean grid line.
+The remaining global theorem is exact.  For `n=p-1`, find one permutation
+`sigma` and one derangement `pi`, put `tau=sigma o pi`, and require occupancy at
+most two on every maximal Euclidean grid line.
 
 The direct uniform fixed-relative random arguments do not close this: the
 expected bad-triple count is `Theta(n log n)`, and the natural symmetric
-permutation-LLL expression is `Omega(log n)`. Scaled inverse layers give a
+permutation-LLL expression is `Omega(log n)`.  Scaled inverse layers give a
 uniform family of individually clean nonlinear permutations, but exact
 fixed-layer searches show that this one-layer ansatz does not extend for
 `p=13,17,19,23,29,31`.
 
-Quarter-turn symmetry supplies a smaller exact structured class. In swapped
-action, `sigma` commutes with coordinate reversal and
-
-```text
-tau=sigma^(-1) o J.
-```
-
-Writing `n=2m`, one signed assignment between two reversal-pair vertices
-selects a complete four-cell quarter-turn orbit. Swapped-equivariant seeds are
-therefore exactly signed directed cycle covers with:
+Quarter-turn symmetry supplies a smaller exact structured class.  Writing
+`n=2m`, one signed assignment between two reversal-pair vertices selects a
+complete four-cell quarter-turn orbit.  Swapped-equivariant seeds are exactly
+signed directed cycle covers with
 
 ```text
 2m^2-m canonical orbit variables,
@@ -97,98 +93,65 @@ one incoming and one outgoing edge per pair vertex,
 and one linear capacity inequality per maximal nonaxis line.
 ```
 
-The relative incidence structure inside this class is explicit. On a
-`rho`-cycle of length `ell`:
+The pair-cycle lift determines the full relative structure.  On a `rho`-cycle
+of length `ell`, an odd cycle gives one relative cycle of length `2ell`; an
+even cycle gives either two cycles of length `ell` or four cycles of length
+`ell/2`, according to one orientation-xor bit.  Exact counting shows that
+edge-disjointness has limiting probability `exp(-1/4)` in the signed cover
+space, so duplicate-orbit avoidance is only a constant-factor issue.
+
+Conditioning the uniform signed-cover model on exact edge-disjointness still
+does not remove the probabilistic barrier.  Generic nonaxis triples retain
+cylinder probability of order `n^-3`, and their total expected first-layer
+violations remain `Theta(n log n)`.  The maximal-line geometry, not collision
+removal, is therefore the dominant obstruction for uniform measures.
+
+At `p=37`, the exact search now gives a closed local story.  A four-line
+near-state has pair-cycle partition `[11,6,1]`.  Raw enumeration excludes
+supports one through six, and Hall-propagated branch-and-bound excludes seven
+through twelve.  A support-thirteen completion gives a valid seed with
 
 ```text
-ell odd             -> one relative cycle of length 2ell;
-ell even, delta=1   -> two relative cycles of length ell;
-ell even, delta=0   -> four relative cycles of length ell/2.
+pair cycles [14,3,1],
+orientation parities [0,1,1],
+relative cycles [14,14,6,2],
+and 59640 nonzero determinant checks.
 ```
 
-Here `delta=(ell/2 mod 2) xor` the orientation parity on the pair cycle. Thus
-every odd relative-cycle length in swapped action has multiplicity divisible
-by four. Exact signed-cover counting shows that edge-disjointness has limiting
-probability `exp(-1/4)` among ordered signed permutations and among canonical
-orbit covers. Duplicate-orbit avoidance is therefore a constant-factor issue.
+Thus the canonical signed-orbit repair radius of that near-state is exactly
+thirteen.
 
-Conditioning on that exact edge-disjointness does not remove the probabilistic
-barrier. Generic nonaxis triples still number `Theta(n^4 log n)`, and each has
-conditional first-layer cylinder probability `Theta(n^-3)`. A uniform
-edge-disjoint signed cover therefore has `Theta(n log n)` expected generic
-first-layer collinear triples. The maximal-line geometry, not collision removal,
-remains the dominant obstacle for uniform measures.
-
-The repair frontier is sharp at two scales. For the one-defect `p=17` state, a
-complete census of `46,975,993` exact two-sided candidates proves that no repair
-changes at most seven assignment positions, while a stored seed gives
+The canonical exact certificate suite now verifies
 
 ```text
-8 <= h_min <= 29.
+p=3,5,7,11,13,17,19,23,29,31,37,61,67,73.
 ```
 
-At `p=37`, the swapped-orbit CSP has
+The cases through `p=13` and the new `p=37` case were generated on this branch.
+The other larger cases are independently decoded and determinant-verified from
+compact public archive codes.  These isolated finite certificates do not
+interpolate and do not prove asymptotic existence.
+
+The next finite certificate gaps are
 
 ```text
-m=18,
-630 canonical binary variables,
-306 duplicate-orbit inequalities,
-70726 maximal nonaxis line inequalities.
+p=41,43,47,53,59.
 ```
-
-A heuristic search produced a verified near-state with exactly four bad lines,
-one quarter-turn orbit, and pair-cycle partition `[11,6,1]`; it is explicitly
-not a seed. Its relative partition is forced by the lift law to be
-`[22,6,6,2]`. Every bad line uses the same three old orbit blocks.
-
-The raw support-six census checks `326,715,225` signed assignments. The
-Hall-propagated extension exhausts all `195,650` exact support subsets from
-seven through twelve, visits `8,643,339` branch nodes, and finds no repair.
-Therefore the local canonical orbit radius is
-
-```text
-h_orbit >= 13.
-```
-
-This does not prove `p=37` infeasible. A support-thirteen or larger switch, a
-different search basin, global branch-and-cut, or an independently verified
-public `n=36` configuration may still produce a certificate.
-
-The canonical exact certificate suite remains
-
-```text
-p=3,5,7,11,13,17,19,23,29,31,61,67,73.
-```
-
-The cases through `p=13` were generated on this branch. The later cases are
-independently decoded and determinant-verified from compact public archive
-codes. These isolated finite certificates do not interpolate and do not prove
-asymptotic existence.
 
 The remaining theorem is:
 
-> For every sufficiently large prime `p`, some derangement `pi` and
-> permutation `sigma` satisfy the maximal-line system on `[p-1]^2`.
+> For every sufficiently large prime `p`, some derangement `pi` and permutation
+> `sigma` satisfy the maximal-line system on `[p-1]^2`.
 
 The no-three-in-line conjecture remains unproved.
 
 ## Diagnostics
 
 ```bash
-python scripts/check_second_host_call_matrix.py \
-  experiments/second-host-call-matrix-example.json
-python scripts/check_local_frontier_terminal_routing.py \
-  experiments/local-frontier-terminal-routing-example.json
 python scripts/check_prime_minus_one_seed.py \
   experiments/prime-minus-one-seed-examples.json
 python scripts/check_prime_seed_relative_cycles.py \
   experiments/prime-seed-relative-cycle-example.json
-python scripts/check_fixed_relative_random_barrier.py \
-  experiments/fixed-relative-random-barrier-example.json
-python scripts/check_prime_seed_geometric_orbit.py \
-  experiments/prime-seed-geometric-orbit-example.json
-python scripts/check_inverse_layer_extension.py \
-  experiments/inverse-layer-extension-example.json
 python scripts/check_archived_prime_seed_codes.py \
   experiments/archived-prime-seed-codes.json
 python scripts/check_quarter_turn_seed_normal_forms.py \
@@ -197,37 +160,11 @@ python scripts/check_swapped_quarter_turn_orbit_csp.py \
   experiments/archived-prime-seed-codes.json
 python scripts/check_swapped_relative_cycle_lift.py \
   experiments/swapped-relative-cycle-lift-example.json
-python scripts/check_swapped_edge_disjoint_first_moment.py \
-  experiments/swapped-edge-disjoint-first-moment-example.json
-
-g++ -O3 -std=c++17 \
-  scripts/check_p17_coordinated_repair_support.cpp \
-  -o /tmp/check_p17_repair
-/tmp/check_p17_repair \
-  experiments/p17-coordinated-repair-support-example.json
-
-g++ -O3 -std=c++17 \
-  scripts/check_p37_swapped_orbit_repair_support.cpp \
-  -o /tmp/check_p37_orbit_repair
-/tmp/check_p37_orbit_repair 5
-for shard in 0 1 2 3 4 5 6 7; do
-  /tmp/check_p37_orbit_repair 6 "$shard" 8
-done
-
-g++ -O3 -std=c++17 \
-  scripts/check_p37_swapped_orbit_repair_branch_bound.cpp \
-  -o /tmp/check_p37_orbit_branch
-for support in 7 8 9 10; do
-  /tmp/check_p37_orbit_branch \
-    experiments/p37-swapped-quarter-turn-near-example.json \
-    "$support" 0 1
-done
+python scripts/check_p37_swapped_orbit_support13_certificate.py \
+  experiments/p37-swapped-orbit-support13-certificate.json \
+  experiments/p37-swapped-quarter-turn-near-example.json
 ```
 
-The larger support-eleven and support-twelve shard commands are recorded in
+For the exact support exclusions, compile and run the C++ checkers documented
+in `experiments/p37-swapped-orbit-repair-support.md` and
 `experiments/p37-swapped-orbit-repair-branch-bound.md`.
-
-The earlier finite lists in `docs/278`, `docs/280`, and `docs/282` record the
-state at those chapters. The current canonical suite and superseding frontier
-are `docs/284`--`docs/291` and
-`experiments/prime-minus-one-seed-examples.json`.
