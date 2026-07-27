@@ -29,10 +29,72 @@ The authoritative live ledger is split across:
 | CMR1950--1957 | Exact simultaneous deleted load, response-pool sufficiency and minimality, maximal unused scalar credit, responsewise pool inequality, dominance over coloring and injection, strict/nested criteria, and the executable pool endpoint | PROVED; 300 systems containing 4,477 witnesses and 1,317 deletions had pool capacity 420 versus coloring capacity 520, saved 100 further credits beyond coloring and 897 beyond injection, and produced 127 average-strict systems including 100 pool-only average certificates; ten corruptions rejected | `docs/347-prime-power-response-pool-cancellation.md` |
 | CMR1958--1965 | Literal post-response point sets, response-rank triple partition, primitive-witness/direct-triple bijection, destroyed-triple identity, exact response delta, end-to-end pool comparison, deterministic exact minimizer, and the executable direct-delta endpoint | PROVED; direct integer triple counts and rankwise witness identities are checked on every response in a 300-system deterministic suite, with ten corrupted certificates rejected | `docs/348-prime-power-direct-response-triple-delta.md` |
 | CMR1966--1973 | Unit export and domination surplus, exact pointwise pool/direct gap identity, tightness criterion, global gap decomposition, exact corrected average slack, exact-only improvement, domination-free/full-load cases, and the executable gap endpoint | PROVED; 300 deterministic systems verify that total pool/direct gap equals capacity slack plus domination surplus; 100 inflated-upper regression systems expose exact-only average certificates; ten corruptions rejected | `docs/349-prime-power-response-pool-gap-decomposition.md` |
+| CMR1974--1981 | Exact raw-host identity, response reconstruction, rank-three response records, record/catalogue fingerprints, complete 740-host census, exact reload equality, common downstream primary keys, and the executable catalogue endpoint | PROVED; 740 unique host IDs and record digests, 9,260 response records, fixed whole-catalogue digest, exact 651/44/45 sign census, and ten corrupted catalogues rejected | `docs/350-prime-power-canonical-raw-host-catalogue.md` |
+| CMR1982--1989 | Minimum rank-three correction, exact 89-host extraction, correction distribution, response-profile fields, 49 exact signature classes, non-quotient honesty boundary, deterministic priority order, and the executable priority endpoint | PROVED; 89 exceptional hosts in 49 signatures, exact correction distribution 44/14/18/12/1, total correction burden 179, fixed priority digest, and ten corruptions rejected | `docs/351-prime-power-exceptional-host-priority-manifest.md` |
+| CMR1990--1997 | Exact rank-three minima, deterministic best-response selectors, zero-rank-three criterion, complete minimum distribution, side-five elimination, sign-localized selector census, exact eleven-host hard core, policy-separation theorem, and the executable selector endpoint | PROVED; all 740 hosts checked, minimum distribution 729 at zero, 9 at one and 2 at four; all 654 side-five hosts and 78 of 89 exceptional hosts admit zero-rank-three responses; ten corruptions rejected | `docs/352-prime-power-rank-three-exact-best-response.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact certificate surfaces
+
+### Canonical raw-host keys
+
+Every raw host is the exact pair `(s,D)` of side and canonical deletion matching.
+The catalogue reconstructs the complete forbidden edge set, every response
+permutation, every response triple count, `Z`, `A_3`, `S_3`, and the exact histogram.
+
+The complete catalogue has 740 unique host IDs and digest
+
+\[
+\texttt{f333bc7dda6fc5aa0de25336f641d4d444b601be0ff27ab59c9853361f6d1d92}.
+\]
+
+These IDs are primary keys, not symmetry quotients.
+
+### Uniform rank-three difficulty and deterministic minima
+
+The uniform split remains
+
+\[
+651\text{ strict},\qquad44\text{ critical},\qquad45\text{ excess}.
+\]
+
+For a critical or excess host, the minimum integer rank-three numerator correction
+required for uniform strictness is
+
+\[
+\boxed{c_{\min}=1-S_3.}
+\]
+
+The 89 values have distribution
+
+\[
+[[1,44],[2,14],[3,18],[4,12],[5,1]]
+\]
+
+and occupy 49 exact response-summary signatures. Signature equality is not geometric
+or semantic equivalence.
+
+For deterministic rank-three selection, define
+
+\[
+m_3(H)=\min_{Q\in\operatorname{PM}(H)}\psi_3(Q).
+\]
+
+The exact minimum distribution is
+
+\[
+\boxed{729\text{ at }0,\qquad9\text{ at }1,\qquad2\text{ at }4.}
+\]
+
+Every side-five host, every uniform-strict host, every critical host and 34 of 45
+excess hosts have a zero-rank-three response. Hence 78 of the 89 uniform-exceptional
+hosts are rank-three-free under exact deterministic selection. The remaining eleven
+are explicit side-four excess hosts with `S_3=-3`.
+
+Uniform averages and deterministic selectors are different policy surfaces. A
+zero-rank-three response does not certify rank-one, rank-two, background, return,
+interface or labelled recurrent terms.
 
 ### Exact averaged geometry and rank-three slack
 
@@ -49,15 +111,13 @@ For background line loads `h_ell`,
 A_G(B)=\sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)+z_3(G,\ell)\right].
 \]
 
-On a rank-three-strict host, the retained background-dependent numerator is strict
-when
+On a rank-three-strict uniform host, the retained background-dependent numerator is
+strict when
 
 \[
 \sum_\ell\left[\binom{h_\ell}{2}z_1(G,\ell)+h_\ell z_2(G,\ell)\right]
 \le S_3(G)-1.
 \]
-
-There are 651 strict hosts, 44 critical hosts and 45 excess hosts.
 
 ### Primitive witnesses, owners and exact coefficient handoff
 
@@ -95,7 +155,7 @@ Then
 K\le\chi(\Gamma_{\rm del})\le\#W_{\rm del}
 \]
 
-and every response satisfies
+and
 
 \[
 \Delta\Psi(Q)
@@ -103,17 +163,12 @@ and every response satisfies
 \Psi(B\cup Q)-\Psi(P)
 =
 W_1(Q)+W_2(Q)+W_3(Q)-|\mathcal D(P,R)|
-\le
-B(Q)-U_{\rm pool}.
+\le B(Q)-U_{\rm pool}.
 \]
-
-The direct checker computes the literal before/after count, verifies each rankwise
-witness bijection, and publishes the lexicographically first exact minimizer.
 
 ### Exact pool-bound gap
 
-Let `E_+(Q)` be the explicit dominated multiplicity surplus. The complete pointwise
-gap is
+Let `E_+(Q)` be the explicit dominated multiplicity surplus. Then
 
 \[
 \boxed{
@@ -123,21 +178,7 @@ gap is
 }
 \]
 
-Thus the pool bound loses only through unused simultaneous deletion capacity or
-honest domination inflation. Summing gives
-
-\[
--\sum_Q\Delta\Psi(Q)
-=
-(ZU_{\rm pool}-A_B)
-+
-\sum_Q(K-d(Q))
-+
-\sum_QE_+(Q).
-\]
-
-The exact direct average can therefore prove improvement even when the pool
-sufficient inequality fails.
+There is no hidden third scalar loss term.
 
 ### Publication-grade labelled certificate
 
@@ -149,23 +190,21 @@ table.
 
 ## Active frontier
 
-1. Generate the actual pre-response point sets, removed subsets, surviving
-   backgrounds and strict entry orders for the 740 raw host fibres.
-2. For each genuine operation, compute literal post-response triple counts,
-   rankwise witness counts, exact deleted-load histogram `d(Q)`, pool capacity `K`
-   and unused credit `U_pool`.
-3. Use the deterministic direct minimizer whenever exact finite response enumeration
-   already proves scalar decrease; use pool/nested bounds as scalable sufficient
-   certificates and for labelled routing.
-4. Audit every loose row using the exact decomposition into capacity slack and
-   domination surplus; refine only the component that causes the loss.
-5. Attach and verify owner, collision, local-line, interface, root, thin and CRT
-   semantics for every nondeleted witness and prove every remaining domination or
-   transfer obligation.
-6. On the 651 rank-three-strict hosts, combine `S_3-1`, exact direct deltas and
-   `U_pool` with line, return and selector coefficients.
-7. On the 89 critical/excess hosts, build explicit corrected fate maps, nonuniform
-   child weights, finer state splits or certified off-diagonal/auxiliary transfers.
-8. Export accepted exact/pool-certified coefficient bundles to the integer assignment
-   checker, solve all recurrent rows, eliminate certified auxiliaries and publish
-   the global integer quotient before CRT gluing.
+1. Attach every actual owner/provenance fibre to one canonical `host_id` and source
+   record digest; reject unkeyed or mismatched operation geometry.
+2. For each actual fibre, evaluate the canonical rank-three minimizer first against
+   the real background, removal set and labelled child state; if it does not minimize
+   the full literal delta, enumerate the complete response list.
+3. Treat the eleven positive-`m_3` side-four hosts as the raw rank-three selector hard
+   core. They require correction or nontrivial routing before added background terms.
+4. For the other 78 uniform-exceptional hosts, exploit the explicit zero-rank-three
+   response but still certify rank-one, rank-two, return, interface and labelled
+   recurrent contributions.
+5. Compute actual direct deltas, deleted-load histograms, pool capacities and exact
+   capacity/domination gap audits on every genuine operation.
+6. Attach and verify owner, collision, local-line, interface, root, thin and CRT
+   semantics and prove every remaining domination or transfer obligation.
+7. Combine uniform budgets, exact selectors, destroyed-triple credits, line, return
+   and selector coefficients into complete labelled rows.
+8. Export accepted exact/pool-certified bundles, solve all recurrent rows, eliminate
+   certified auxiliaries and publish the global integer quotient before CRT gluing.
