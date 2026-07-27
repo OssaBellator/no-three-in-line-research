@@ -55,11 +55,25 @@ support  subsets     search nodes   Hall failures   initial empty domains
  total   195,650        8,643,339       2,134,668                  54,882
 ```
 
-No repair is found.  Together with the earlier exhaustive census through
-support six, the exact local lower bound is now
+No repair is found through support twelve.  Together with the earlier
+exhaustive census through support six, this proves
 
 ```text
 minimum canonical swapped-orbit repair support >= 13.
+```
+
+The same exact checker at support thirteen finds a feasible leaf in shard 6 of
+64 after 26 support subsets and 78,466 branch nodes.  The resulting assignment
+is stored and independently determinant-verified in
+
+```text
+experiments/p37-swapped-orbit-support13-certificate.json.
+```
+
+Therefore the lower bound is sharp:
+
+```text
+minimum canonical swapped-orbit repair support = 13.
 ```
 
 The branch-and-bound enumerates every support subset meeting the necessary bad
@@ -68,6 +82,5 @@ the cycle-cover equations.  Every legal target assignment and orientation is
 then searched, while residual line overflows, duplicate orbit blocks, used
 targets, and Hall-deficient remaining domains are rejected exactly.
 
-This is a local result for the recorded four-line near-state.  It neither proves
-that `p=37` is infeasible nor rules out a different nearby state with a smaller
-repair radius.
+The positive support-thirteen leaf is a finite `p=37` seed certificate.  It
+does not imply an asymptotic seed family.
