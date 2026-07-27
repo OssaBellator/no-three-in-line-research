@@ -1,0 +1,24 @@
+{
+  "m": 8,
+  "states": 1290240,
+  "defect_levels": 46,
+  "unreachable_to_strictly_lower": 0,
+  "maximum_strict_descent_horizon": 5,
+  "relaxations": 4033716,
+  "strict_descent_horizon_distribution": {
+    "1": 1232660,
+    "2": 53444,
+    "3": 3616,
+    "4": 448,
+    "5": 44
+  },
+  "minimum_positive_level_distribution": {
+    "1": 4,
+    "2": 32,
+    "3": 88,
+    "4": 204,
+    "5": 44
+  },
+  "every_state_with_at_least_40_triples_has_immediate_descent": true,
+  "verified": true
+}
