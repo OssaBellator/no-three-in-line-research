@@ -10,7 +10,7 @@ python scripts/check_archived_prime_seed_codes.py \
 Each JSON record contains:
 
 - the prime `p`;
-- the source archive or repository path;
+- the source archive, repository, or coordinate-record path;
 - the exact standard row-pair code; and
 - the expected relative cycle partition.
 
@@ -27,17 +27,18 @@ The checker independently:
 The stored suite verifies:
 
 ```text
-p=17,19,23,29,31,47,61,67,73
+p=17,19,23,29,31,47,59,61,67,73
 ```
 
-and performs `1,355,708` exact determinant checks in total. The largest case
+and performs `1,609,168` exact determinant checks in total. The largest case
 has `144` selected points on `[72]^2`.
 
 The `p=47` compact code is independently generated from the first public RLE
-record in `mvr/no-three-in-line:results/c4-46.out`; its dedicated RLE-level
-checker is `scripts/check_p47_public_rle_certificate.py`. The other records are
+record in `mvr/no-three-in-line:results/c4-46.out`. The `p=59` compact code is
+independently generated from Prellberg's attributed Wikimedia Commons
+coordinate record for `N=58`, licensed CC BY-SA 4.0. The other records are
 transcribed from the Flammenkamp configuration archive.
 
-The source code or RLE is used only as compact input. No geometric validity is
-trusted without the independent determinant check. These finite certificates
-do not prove the asymptotic seed theorem.
+The source code, RLE, or coordinate list is used only as compact input. No
+geometric validity is trusted without the independent determinant check. These
+finite certificates do not prove the asymptotic seed theorem.
