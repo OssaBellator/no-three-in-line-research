@@ -6,11 +6,11 @@ import argparse
 import json
 from collections import Counter, defaultdict, deque
 from itertools import combinations
-from math import comb
+from math import comb, gcd
 from pathlib import Path
 from typing import Any
 
-ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#$%&@?!()[]<>{}=*+|-/~^_:;,."
+ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#$%&@?!()[]<>{}=*+|-/~^_:;, .".replace(" ", "")
 Point = tuple[int, int]
 
 
@@ -21,6 +21,29 @@ def determinant(a: Point, b: Point, c: Point) -> int:
 def rotate(point: Point, n: int) -> Point:
     x, y = point
     return n - 1 - y, x
+
+
+def maximal_line_count(n: int) -> int:
+    """Count maximal grid lines containing at least three cells."""
+    count = n  # vertical lines
+    for dx in range(1, n):
+        for dy in range(-(n - 1), n):
+            if gcd(dx, abs(dy)) != 1:
+                continue
+            for x in range(n):
+                for y in range(n):
+                    if 0 <= x - dx < n and 0 <= y - dy < n:
+                        continue
+                    x_steps = (n - 1 - x) // dx
+                    if dy > 0:
+                        y_steps = (n - 1 - y) // dy
+                    elif dy < 0:
+                        y_steps = y // (-dy)
+                    else:
+                        y_steps = n
+                    if 1 + min(x_steps, y_steps) >= 3:
+                        count += 1
+    return count
 
 
 def equivariant_colour(points: set[Point], n: int, rotation_parity: int) -> tuple[list[int], list[int]] | None:
@@ -179,8 +202,9 @@ def main() -> None:
             raise ValueError("standard code mismatch")
         if checks != raw.get("determinant_checks") or minimum != raw.get("minimum_absolute_determinant"):
             raise ValueError("stored determinant statistics mismatch")
-        if raw.get("maximal_grid_lines_checked") != 476358:
-            raise ValueError("stored maximal-line count mismatch")
+        line_count = maximal_line_count(n)
+        if line_count != raw.get("maximal_grid_lines_checked") or line_count != 476358:
+            raise ValueError("maximal-line count mismatch")
         if raw.get("valid_seed") is not True:
             raise ValueError("valid_seed must be true")
         if raw.get("source_author") != "Prellberg" or raw.get("source_license") != "CC BY-SA 4.0":
@@ -195,7 +219,7 @@ def main() -> None:
         "selected_points": len(points),
         "determinant_checks": checks,
         "minimum_absolute_determinant": minimum,
-        "maximal_grid_lines_checked": raw.get("maximal_grid_lines_checked"),
+        "maximal_grid_lines_checked": line_count,
         "quarter_turn_mode": "swapped",
         "pair_cycle_partition": pair_cycles,
         "relative_cycle_partition": relative_cycles,
