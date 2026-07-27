@@ -2,233 +2,188 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2125 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2157 the branch has:
 
-- exact structural/SCC reductions and label-preserving CRT gluing;
-- 740 canonical side-four/five raw hosts and mechanically linked fibre identities;
-- exact hard-core blocker, correction and rollback worklists;
-- a complete response-line kernel and 39-row affine selector library;
-- exact 32/99-dimensional survivor-background signatures;
-- residual, pair, parallel, pencil and concurrency feasibility inequalities;
-- composed host/source/background/removal/full-selector certificates;
-- exact labelled response vectors, Pareto pruning and support/obstruction certificates;
-- a 232-chamber zero-capable exceptional worklist and complete 20-chamber hard-core atlas;
-- a canonical real-fibre batch manifest; and
-- a source-independent operation-slot registry interface for noncircular completeness.
+- 740 canonical raw hosts and 9,260 response records;
+- noncircular operation-slot registries and slot-covered batch conformance;
+- exact survivor signatures, feasibility inequalities and tracked-intersection identities;
+- a 39-row affine selector library and complete exceptional chamber worklists;
+- exact unrestricted, rank-three-constrained and zero-constrained threshold penalties;
+- labelled vector quotients, Pareto pruning and support/obstruction certificates;
+- linked integer recurrent-row margin accounting; and
+- exact hard-core correction and rollback worklists.
 
-No theorem proves that every positive minimum becomes zero.
+No theorem proves that every expected operation exists in the current data, that every
+routed credit is semantically legal, or that all recurrent rows share one strict weight
+vector.
 
-## 2. Noncircular population prerequisite
+## 2. Parent-rule enumeration is now the first irreducible data task
 
-The current `fibre_id` includes a digest of already populated source data. It is an
-exact identity for an existing record, but cannot independently specify which records
-must exist.
-
-The parent operation rule must instead publish an exhaustive registry of operation
-slots. One slot is the exact tuple
+A genuine completeness proof must implement the actual parent operation rule as an
+enumerator of exact slot tuples
 
 \[
 (\text{parent state},\text{operation kind},\text{operation key},
- \text{expected host},\text{ordered state labels}).
+ \text{expected host},\text{ordered labels}).
 \]
 
-The slot registry must be generated before witness/source population and proved
-exhaustive and duplicate-free. Population then maps each slot to one host, fibre ID and
-source digest. Completeness means exactly zero missing, unexpected, duplicate and
-host-mismatched slots.
+The enumerator must be proved exhaustive and duplicate-free before any populated source
+is consulted. A synthetic slot registry or a list reconstructed from existing fibres
+cannot substitute.
 
-The built-in 180-slot registry is only a synthetic interface regression. It is not the
-genuine parent-rule registry.
+## 3. Slot-covered genuine operation records
 
-## 3. Strong survivor-signature feasibility
+For every expected slot, populate exactly one record containing:
 
-For `n=|B|`, tracked line occupancies satisfy
-
-\[
-0\le h_B(L)\le n,
-\qquad
-\sum_L\binom{h_B(L)}2\le\binom n2.
-\]
-
-For every parallel class `P` and concurrent pencil of `k` lines,
-
-\[
-\sum_{L\in P}h_B(L)\le n,
-\qquad
-\sum_{i=1}^k h_B(L_i)\le n+k-1.
-\]
-
-The exact maximum tracked-line concurrencies are `mu_4=7` and `mu_5=11`, giving
-
-\[
-\sum_L h_B(L)\le\mu_s n.
-\]
-
-At every response-grid point,
-
-\[
-u_B(q)=p_B(q)-\sum_{L\ni q}\binom{h_B(L)}2\ge0.
-\]
-
-The exact response score remains
-
-\[
-N_B(Q)=
-\sum_{q\in Q}u_B(q)+
-\sum_L\left[
-\binom{h_B(L)+r_Q(L)}3-
-\binom{h_B(L)}3
-\right].
-\]
-
-These constraints should be run before selector, threshold or LP work. They are
-necessary, not sufficient, for geometric realizability.
-
-## 4. Exact labelled weight exposure
-
-For every accepted fibre, reconstruct the finite child-vector set
-
-\[
-V=\{v(Q):Q\in\operatorname{PM}(H)\}.
-\]
-
-After duplicate compression and componentwise Pareto pruning, each Pareto vector must
-carry one exact certificate:
-
-1. positive integer support `w>0` with `w·v <= w·u` for all `u in V`; or
-2. a rational convex combination of competitors lying componentwise below `v`, strict
-   in at least one coordinate.
-
-A supported vector may be uniquely selected or lie on a positive-weight tie face.
-Duplicate vector classes do not identify transitions. Positive support still does not
-route destruction credit or prove a recurrent Lyapunov inequality.
-
-## 5. Exceptional-host selector worklists
-
-The 78 zero-rank-three-capable exceptional hosts contain 232 exact zero-selector
-chambers:
-
-\[
-[[1,13],[2,13],[3,22],[4,23],[5,7]]
-\]
-
-chambers per host. Their 2,134 hostwise inequalities reduce to 349 unique ordered-row
-conditions.
-
-The eleven positive-minimum hosts require all 20 full-selector chambers. Only 11 select
-a raw rank-three minimum. Background rank-one and rank-two terms can select the other
-nine, so hard-core work must use the complete atlas unless separate inequalities rule
-those chambers out.
-
-## 6. Canonical genuine-operation entry
-
-Each populated operation must bind:
-
-- one independently expected operation slot;
 - canonical host and source-dependent fibre identity;
-- true source, response family and ordered labels;
+- true source, response family, denominator and ordered labels;
 - pre-response points, removal set and survivor background;
-- all feasibility slacks and the residual signature;
-- affine selector chamber and exact full selector;
-- destroyed threshold and responsewise direct deltas;
-- coefficient bundle, child vectors, Pareto quotient and support/obstruction data; and
+- owner/fate and transition data;
+- feasibility, residual and intersection signatures;
+- affine chamber, selectors and destroyed threshold;
+- coefficient bundle, child vectors and support/obstruction data;
+- routed-credit vectors, row loads and margins; and
 - all component and record digests.
 
-The batch checker should reject duplicate slots, missing expected slots, unexpected
-slots, host mismatches, source drift and undeclared completeness.
+Completeness is the exact slot audit plus bijective assignment of every batch fibre.
+
+## 4. Reject impossible survivor signatures early
+
+Run, in order:
+
+1. line and tracked-pair budgets;
+2. parallel-class budgets;
+3. unconditional pencil and global concurrency budgets;
+4. local residual pair nonnegativity;
+5. exact intersection occupancy and sharpened pencil identities;
+6. exact point-degree incidence identity;
+7. affine chamber reconstruction.
+
+These tests reduce wasted selector and LP work but remain necessary rather than
+sufficient realizability conditions.
+
+## 5. Exceptional selector policies
+
+For every exceptional fibre compute
+
+\[
+M=\min_QN_B(Q),
+\qquad
+M_3=\min_{\psi_3(Q)=m_3}N_B(Q),
+\qquad
+\pi_3=M_3-M.
+\]
+
+For the 78 zero-capable hosts also compute `M_0` and `pi_0=M_0-M`. Compare all three
+thresholds with the exact destroyed count `T`.
+
+Use the 232 zero-selector chambers for the zero-capable rows. Use all 20 full-selector
+chambers for the eleven-host hard core; do not restrict to the eleven raw rank-three
+minima without separate background inequalities.
+
+## 6. Labelled row margins
+
+For each candidate positive child-weight vector and response-local route, reconstruct
+
+\[
+L(Q)=a+w\cdot v(Q)-w\cdot r(Q),
+\qquad
+W-L(Q).
+\]
+
+A strict row requires positive maximum margin. This arithmetic certificate must then be
+upgraded by three genuine semantic proofs:
+
+1. every routed destroyed triple belongs to the declared child state;
+2. credits are not reused illegally across simultaneous obligations; and
+3. the parent and child weights are restrictions of one common positive SCC vector.
 
 ## 7. Hard-core alternatives
 
-The eleven positive-minimum hosts retain three distinct scalar measurements:
+The eleven positive-minimum hosts retain three independent scalar measurements:
 
-1. selected-response occurrence correction: 17 units;
-2. minimum rollback of deletion restrictions: total distance 12;
-3. independent uniform numerator correction: 44 units.
+1. fixed-response occurrence correction: 17 units;
+2. minimum rollback distance: 12;
+3. independent uniform correction: 44 units.
 
-For the nine one-triple hosts, seek one proved payment, legal rollback, supported
-nonuniform weights or sharper labelled routing. For the two four-triple one-response
-hosts, seek four units, legal rollback, changed operation, finer state split,
-off-diagonal route or certified auxiliary target.
+For the nine one-triple hosts seek one proved labelled payment, legal rollback, supported
+weight or sharper route. For the two four-triple one-response hosts seek four labelled
+units, a legal operation change, finer state split, off-diagonal route or certified
+auxiliary target.
 
 ## 8. Immediate execution order
 
-### Priority 1: derive the genuine operation-slot registry
+### Priority 1: implement the genuine slot enumerator
 
-Implement the actual parent-rule enumerator. Publish every slot tuple and prove the
-enumeration exhaustive and duplicate-free without consulting populated fibres.
+Publish the actual rule clauses, finite parameter domains and exact slot output. Prove
+exhaustiveness and duplicate exclusion independently of population.
 
-### Priority 2: populate every expected slot
+### Priority 2: populate and cover every slot
 
-For each slot, instantiate the real host linkage, source manifest, points, removals,
-survivor background, entry order, owner/fate data and state labels. Attach the exact
-source-dependent fibre ID only after the slot is fixed.
+Generate one real operation certificate per slot and pass the slot/fibre batch
+conformance checker.
 
-### Priority 3: reject impossible survivor signatures
+### Priority 3: certify geometry and thresholds
 
-Run line, tracked-pair, parallel-class, pencil, global-concurrency and local-residual
-checks. Preserve all exact slack vectors in the fibre record.
+Run all feasibility/intersection checks, reconstruct the affine chamber, calculate all
+policy penalties and validate the direct delta against `T`.
 
-### Priority 4: certify scalar geometry
+### Priority 4: certify labelled rows
 
-Evaluate the affine chamber, full selector, minimizer set, destroyed threshold,
-responsewise direct-delta identity and parent-policy penalty.
+Publish complete child vectors, support/obstruction certificates, routed credits, exact
+row margins and the proposed parent/child weights.
 
-### Priority 5: certify labelled response choices
+### Priority 5: prove route and fate semantics
 
-Build exact child vectors, remove dominated vectors, classify every Pareto vector by
-positive support or convex obstruction, and prove the specific weights used by the
-candidate recurrent row.
+Prove every deletion, domination multiplicity, transfer, routed credit, structural
+descent, interface transition and auxiliary target.
 
 ### Priority 6: close exceptional rows
 
-Use the 232 zero-selector chambers on the 78 zero-capable hosts, retaining complete
-background, return, interface and labelled-child terms. Use the complete 20-chamber
-atlas on the eleven hard-core hosts.
+Close all 232 zero-selector chamber obligations and the complete 20-chamber hard core,
+including return, selector, interface and labelled-child terms.
 
-### Priority 7: complete pool and fate semantics
+### Priority 7: assemble recurrent SCC certificates
 
-Compute every deleted-load histogram, `K`, `U_pool` and exact gap audit. Prove every
-deletion, domination multiplicity, transfer, structural descent and auxiliary target.
+Find one common positive rational weight vector per SCC, clear denominators, prove every
+row strict, eliminate certified auxiliaries and solve collision/local-line recurrence.
 
-### Priority 8: close and publish recurrent blocks
+### Priority 8: publish the global quotient
 
-Combine exact selectors, routed destroyed credits, return/selector coefficients and
-supported child weights. Generate integer duals, prove positive row slacks, eliminate
-certified auxiliaries, solve remaining SCCs and publish the global CRT quotient.
+Assemble the denominator-cleared CRT quotient and verify every local and interface block
+against the final integer certificate.
 
 ## 9. Genuine unresolved modules
 
-1. Exhaustive actual operation-slot registry.
+1. Exhaustive actual operation-slot enumerator.
 2. Complete slot-to-fibre population.
 3. Actual point/removal/background and transition semantics.
-4. Feasibility/signature/composed certificates on every real fibre.
-5. Labelled support/obstruction and weight certificates on every recurrent fibre.
-6. Nine one-triple hard-core resolutions.
-7. Two four-triple one-response resolutions.
-8. Seventy-eight exceptional complete rows.
-9. Remaining domination, transfer and state-label proofs.
-10. Collision/local-line recurrent SCC certificates.
-11. The global denominator-cleared integer quotient.
+4. Feasibility/intersection certificates on every real fibre.
+5. Exceptional policy penalties and thresholds on every real fibre.
+6. Labelled support and row-margin certificates on every recurrent fibre.
+7. Semantic routed-credit and nonovercounting proofs.
+8. Nine one-triple hard-core resolutions.
+9. Two four-triple one-response resolutions.
+10. Seventy-eight exceptional complete rows.
+11. Remaining domination, transfer and state-label proofs.
+12. Collision/local-line recurrent SCC certificates.
+13. The global denominator-cleared integer quotient.
 
 ## 10. Honesty boundaries
 
-- Source-dependent fibre IDs cannot define the expected population universe.
-- Slot registry completeness must be proved from the parent rule before population.
-- Necessary feasibility inequalities do not characterize realizability.
-- Canonical keys and scalar signatures are not labelled semantic quotients.
-- Duplicate child vectors do not imply duplicate transitions.
-- Pareto minimality does not imply positive-weight support.
-- Positive-weight support does not imply strict recurrent contraction.
-- Hard-core analysis requires all 20 full-selector chambers unless further inequalities are proved.
-- Unlabelled destruction credit still requires explicit labelled routing.
-- Scalar improvement does not automatically contract a labelled SCC.
+- A supplied slot registry is not a proof of parent-rule exhaustiveness.
+- A slot-covered complete batch is complete only relative to that registry.
+- Necessary feasibility and intersection identities do not characterize realizability.
+- Scalar policy penalties do not prove labelled contraction.
+- Positive support does not prove a row strict.
+- A row strict under declared routes does not prove those routes legal.
+- Response-local credit capacity does not imply simultaneous global reuse.
+- Row-level margins do not produce one common SCC weight vector automatically.
 - Finite checkers prove only their declared equalities.
 
 ## 11. Current endpoint
 
-Through CMR2125, the finite interfaces now distinguish expected operation slots from
-populated fibres, reject several broad classes of impossible survivor signatures,
-classify positive linear exposure of labelled response vectors and publish the complete
-exceptional-host scalar chamber worklists. The next irreducible task is the genuine
-parent-rule slot enumerator and complete real population with proved transition, fate
-and recurrent-state semantics.
+Through CMR2157 the interface design is nearly complete from expected operation slot to
+integer labelled row margin. The unresolved centre is now genuinely semantic and global:
+actual parent-rule enumeration, full population, legal fate and credit routing, and one
+strict common recurrent certificate leading to the global CRT quotient.
