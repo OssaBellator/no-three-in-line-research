@@ -4,7 +4,7 @@
 
 This map reconciles the finite selector census, the paired asymptotic repair
 path, recursive produced-base searches, and the independent geometric and
-matching frontiers. It records what is actually open after PX993.
+matching frontiers. It records what is actually open after PX999.
 
 No item below is a proof of the classical no-three-in-line conjecture unless it
 is explicitly promoted to an all-side theorem; no such promotion has occurred.
@@ -32,13 +32,18 @@ decimal order `2873`, the concave cutoff margin is globally maximized at
 `log(2)/log(13033)` but remains below `-0.0934`. Further tuning of that same
 universal family cannot lower the integral decimal cutoff.
 
+PX994--PX996 audit the classical Nicolas--Robin subexponential divisor estimate.
+Inserted unchanged, it reaches only `N>=10^14104`; it is therefore substantially
+weaker than the active power-law certificate in the relevant range.
+
 **Frontier:** cover every order below `10^2874` by a structural extension chain,
-interval-specific arithmetic, exact absorbers, stronger retained-order
-inequalities, or finite classification.
+interval-specific arithmetic, exact absorbers, or a stronger retained-order
+inequality with less ambient-divisor loss. Neither universal exponent tuning nor
+the baseline Nicolas--Robin estimate improves the current cutoff.
 
 ## 2. Finite side-seven full-selector census
 
-**Status: exact through multiplicity-two case 319.**
+**Status: exact through multiplicity-two case 319; cases 320--399 launched.**
 
 All selectors of multiplicity at least three are classified: `37,600` are
 infeasible and one multiplicity-four selector is constructive. The first `320`
@@ -56,28 +61,37 @@ The unresolved cache consists exactly of:
 - `3,520` multiplicity-two signatures, containing `7,040` selectors;
 - `26,579` multiplicity-one signatures/selectors.
 
+A durable eight-shard matrix covers multiplicity-two cases `320` through `399`.
+It is not counted until exact transcripts are promoted to replay verifiers.
+
 **Frontier:** continue fixed ten-signature proof shards from global case `320`,
 while replacing raw DFS where possible by explicit bottom-permutation triple
 covers and assumption-minimized top nogoods.
 
 ## 3. Low-multiplicity certificate compression
 
-**Status: exact reduction and generic generators implemented; first comparative
-measurement running.**
+**Status: exact reduction, generic generators, and first comparative theorem.**
 
 For a fixed clean top order, selector `F` is bottom-infeasible exactly when the
 coverage sets of its collinear abstract triples cover all `5,040` bottom
 permutations. The selector-family subproblem is infeasible exactly when every
 selector has such a cover.
 
-Two generic tools compare first-bad-triple dictionary compression and
-deterministic greedy triple-subcover compression. A durable four-orientation
-experiment is measuring the first eight top orders of multiplicity-two case
-zero.
+PX997--PX999 measure the first eight top orders of multiplicity-two case zero in
+all four orientations. Across 64 selector/top obligations, every greedy cover is
+explicitly checked. Orientation three is exceptional:
 
-**Frontier:** quantify cover sizes and dictionary reuse, deduplicate repeated
-covers across top orders and selector pairs, combine them with minimized top
-assumption cores, and promote only independently replayed stored covers.
+- every obligation has a seven-triple cover;
+- all 112 cover entries use only 19 unique triples;
+- only ten distinct covers are needed for sixteen obligations.
+
+The other orientations require 57--60 unique triples and have little or no
+complete-cover reuse on this prefix. A 64-top orientation-three saturation
+experiment is running.
+
+**Frontier:** measure dictionary growth over wider prefixes, deduplicate repeated
+covers across top orders and selector pairs, combine stored covers with minimized
+top-assumption cores, and promote only independently replayed proof objects.
 
 ## 4. Recursive closure from produced bases
 
@@ -111,9 +125,9 @@ Thus any template in that double coset must use `fc` or `ff`. Those fine-row
 families, and both larger double cosets, remain open. A deterministic exact sample
 of 1,000 arbitrary non-affine pairs also finds no witness, but is only evidence.
 
-**Frontier:** finish the opposite-pair fine-row orientations, then enumerate the
-two 800-map double cosets or find a produced-base extension theorem.
-Representative left cosets are not complete double cosets.
+**Frontier:** finish the opposite-pair fine-row orientations with bounded replay
+intervals, then enumerate the two 800-map double cosets or find a produced-base
+extension theorem. Representative left cosets are not complete double cosets.
 
 ## 5. Global product repair and exact-cover selection
 
@@ -144,12 +158,13 @@ bounded-denominator interpolation chambers.
 
 ## 7. Operational priorities
 
-1. Continue side-seven multiplicity-two classification from case `320` and
-   promote every transcript into a replay verifier.
-2. Complete the case-zero bottom-cover measurement and reduce proof-object size.
-3. Build a finite-range bridge below `10^2874`; universal exponent tuning is
-   closed at integral decimal scale.
-4. Complete the side-ten non-affine double-coset searches.
+1. Promote the `320--399` side-seven transcripts and continue the multiplicity-two
+   census.
+2. Complete the 64-top orientation-three cover saturation experiment and add
+   top-assumption learning.
+3. Seek interval-specific divisor bounds or reduced divisor loss below
+   `10^2874`; the two baseline universal routes are closed.
+4. Complete the side-ten opposite-pair fine-row double-coset searches.
 5. Develop the exact-cover/resampling theorem and the independent hyperbola
    termination/absorber routes.
 
@@ -158,16 +173,14 @@ bounded-denominator interpolation chambers.
 ```bash
 python scripts/verify_product_three_forty_first_divisor_cutoff.py
 python scripts/verify_product_universal_divisor_cutoff_optimality.py
+python scripts/verify_product_nicolas_robin_divisor_baseline.py
 python scripts/verify_product_entry_invariant_dependencies.py
 python scripts/verify_product_splice_interface.py
 python scripts/verify_product_transposition_class_ten.py
 python scripts/verify_product_transposition_class_twelve.py
 python scripts/verify_product_transposition_double_coset_ten.py
 python scripts/verify_product_transposition_double_coset_opposite_coarse_ten.py
-
-g++ -O3 -std=c++17 \
-  scripts/measure_product_side_seven_bottom_triple_cover.cpp \
-  -o /tmp/m2-cover
+python scripts/verify_product_side_seven_multiplicity2_case0_bottom_cover8.py
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
