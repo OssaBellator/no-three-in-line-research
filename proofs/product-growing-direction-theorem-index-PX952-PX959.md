@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX965
+# Product growing-direction theorem index: PX952--PX969
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -16,3 +16,7 @@
 | PX963 | The ambient divisor maximum satisfies `d(N)<10^(2469/41) N^(6/41)` | PROVED | `docs/301-three-forty-first-divisor-cutoff.md` |
 | PX964 | Every active paired asymptotic repair inequality holds for `N>=10^2874` | PROVED FINITE/ARITHMETIC | `docs/301-three-forty-first-divisor-cutoff.md` |
 | PX965 | The active common asymptotic cutoff may be replaced by `10^2874` | PROVED REDUCTION | `docs/301-three-forty-first-divisor-cutoff.md` |
+| PX966 | The universal cutoff margin is concave and piecewise affine in the Euler-product exponent | PROVED | `docs/302-universal-divisor-cutoff-optimality.md` |
+| PX967 | At decimal order `2873`, exact derivative products place the global margin maximum at `log(2)/log(13033)` | PROVED FINITE/ARITHMETIC | `docs/302-universal-divisor-cutoff-optimality.md` |
+| PX968 | The global universal-family margin at decimal order `2873` is less than `-0.0934` | PROVED FINITE/ARITHMETIC | `docs/302-universal-divisor-cutoff-optimality.md` |
+| PX969 | `10^2874` is the least integral decimal cutoff available in the current universal Euler-product divisor family | PROVED REDUCTION | `docs/302-universal-divisor-cutoff-optimality.md` |
