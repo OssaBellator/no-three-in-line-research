@@ -1,0 +1,53 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 8,
+  "cases": [
+    {
+      "m": 4,
+      "hamilton_cycles": 6,
+      "adjacent_transposition_checks": 12,
+      "adjacent_generators_per_cycle": 2,
+      "unsigned_rotation_degree": 4,
+      "signed_combined_degree": 36,
+      "dirichlet_comparison_coefficient": "1/16"
+    },
+    {
+      "m": 5,
+      "hamilton_cycles": 24,
+      "adjacent_transposition_checks": 72,
+      "adjacent_generators_per_cycle": 3,
+      "unsigned_rotation_degree": 10,
+      "signed_combined_degree": 85,
+      "dirichlet_comparison_coefficient": "3/80"
+    },
+    {
+      "m": 6,
+      "hamilton_cycles": 120,
+      "adjacent_transposition_checks": 480,
+      "adjacent_generators_per_cycle": 4,
+      "unsigned_rotation_degree": 20,
+      "signed_combined_degree": 166,
+      "dirichlet_comparison_coefficient": "1/40"
+    },
+    {
+      "m": 7,
+      "hamilton_cycles": 720,
+      "adjacent_transposition_checks": 3600,
+      "adjacent_generators_per_cycle": 5,
+      "unsigned_rotation_degree": 35,
+      "signed_combined_degree": 287,
+      "dirichlet_comparison_coefficient": "1/56"
+    },
+    {
+      "m": 8,
+      "hamilton_cycles": 5040,
+      "adjacent_transposition_checks": 30240,
+      "adjacent_generators_per_cycle": 6,
+      "unsigned_rotation_degree": 56,
+      "signed_combined_degree": 456,
+      "dirichlet_comparison_coefficient": "3/224"
+    }
+  ],
+  "total_adjacent_transposition_checks": 34404,
+  "asymptotic_seed_theorem_proved": false
+}
