@@ -38,6 +38,59 @@ def egf_count(m: int, linear: int, quadratic: int) -> int:
     return value.numerator
 
 
+def permutation_cycle_counts(permutation: tuple[int, ...]) -> tuple[int, int]:
+    seen = [False] * len(permutation)
+    one_cycles = 0
+    two_cycles = 0
+    for start in range(len(permutation)):
+        if seen[start]:
+            continue
+        current = start
+        length = 0
+        while not seen[current]:
+            seen[current] = True
+            length += 1
+            current = permutation[current]
+        if length == 1:
+            one_cycles += 1
+        elif length == 2:
+            two_cycles += 1
+    return one_cycles, two_cycles
+
+
+def exhaustive_coefficient_audit(max_m: int) -> dict[str, Any]:
+    permutations_checked = 0
+    cases = []
+    for m in range(max_m + 1):
+        edge_disjoint = 0
+        two_cycle_free = 0
+        for permutation in permutations(range(m)):
+            permutations_checked += 1
+            one_cycles, two_cycles = permutation_cycle_counts(permutation)
+            edge_disjoint += 2 ** (m - one_cycles - two_cycles)
+            if two_cycles == 0:
+                two_cycle_free += 2 ** (m - one_cycles)
+        expected_edge_disjoint = egf_count(m, -1, -1)
+        expected_two_cycle_free = egf_count(m, -1, -2)
+        if edge_disjoint != expected_edge_disjoint:
+            raise ValueError(f"edge-disjoint coefficient mismatch at m={m}")
+        if two_cycle_free != expected_two_cycle_free:
+            raise ValueError(f"two-cycle-free coefficient mismatch at m={m}")
+        cases.append(
+            {
+                "m": m,
+                "permutations": math.factorial(m),
+                "canonical_edge_disjoint": edge_disjoint,
+                "canonical_two_cycle_free": two_cycle_free,
+            }
+        )
+    return {
+        "maximum_pair_size": max_m,
+        "permutations_checked": permutations_checked,
+        "cases": cases,
+    }
+
+
 def cycles_on(vertices: tuple[int, ...]) -> list[tuple[tuple[int, int], ...]]:
     first = min(vertices)
     rest = tuple(v for v in vertices if v != first)
@@ -143,13 +196,21 @@ def main() -> None:
                 raise ValueError(f"{key} mismatch: {value!r} != {expected.get(key)!r}")
 
         coefficient_max_m = expected.get("coefficient_max_m")
+        coefficient_exhaustion_max_m = expected.get("coefficient_exhaustion_max_m")
         cylinder_max_m = expected.get("cylinder_exhaustion_max_m")
         cylinder_max_edges = expected.get("cylinder_max_edges")
         if any(
             isinstance(v, bool) or not isinstance(v, int)
-            for v in (coefficient_max_m, cylinder_max_m, cylinder_max_edges)
+            for v in (
+                coefficient_max_m,
+                coefficient_exhaustion_max_m,
+                cylinder_max_m,
+                cylinder_max_edges,
+            )
         ):
             raise ValueError("audit limits must be integers")
+        if coefficient_exhaustion_max_m > coefficient_max_m:
+            raise ValueError("coefficient exhaustion exceeds coefficient table")
 
         coefficients = []
         for m in range(coefficient_max_m + 1):
@@ -163,6 +224,9 @@ def main() -> None:
                 }
             )
 
+        coefficient_exhaustion = exhaustive_coefficient_audit(
+            coefficient_exhaustion_max_m
+        )
         cylinders = exhaustive_cylinder_audit(cylinder_max_m, cylinder_max_edges)
 
     except (OSError, TypeError, ValueError, json.JSONDecodeError) as exc:
@@ -184,6 +248,7 @@ def main() -> None:
                 ),
                 "pair_cycle_partitions": partitions,
                 "coefficient_table": coefficients,
+                "coefficient_exhaustion": coefficient_exhaustion,
                 "cylinder_audit": cylinders,
                 "asymptotic_seed_theorem_proved": False,
             },
