@@ -4,6 +4,7 @@
   "expected_hamilton_primes": [17, 73],
   "expected_one_fixed_near_hamilton_primes": [23, 29, 41, 47, 59, 61, 67],
   "coefficient_max_m": 10,
+  "coefficient_exhaustion_max_m": 8,
   "cylinder_exhaustion_max_m": 8,
   "cylinder_max_edges": 3
 }
