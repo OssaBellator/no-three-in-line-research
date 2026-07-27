@@ -3,48 +3,56 @@
     "p": 17,
     "archive_path": "n16_rot4",
     "code": "oBC36570E0A4D7E9D26182B5F1F8A9C34",
-    "expected_cycles": [8, 8]
+    "expected_cycles": [8, 8],
+    "expected_quarter_turn_modes": ["fixed", "swapped"]
   },
   {
     "p": 19,
     "archive_path": "n18_rot4",
     "code": "o6ACD68CD1313FH08AF279H02EGEG459B457B",
-    "expected_cycles": [10, 2, 2, 2, 2]
+    "expected_cycles": [10, 2, 2, 2, 2],
+    "expected_quarter_turn_modes": ["swapped"]
   },
   {
     "p": 23,
     "archive_path": "n22_rot4",
     "code": "oDF89FH792G4702GI0KIKABAB131L35JLEH5JCE46CD68",
-    "expected_cycles": [5, 5, 5, 5, 2]
+    "expected_cycles": [5, 5, 5, 5, 2],
+    "expected_quarter_turn_modes": ["swapped"]
   },
   {
     "p": 29,
     "archive_path": "n28_rot4",
     "code": "o8H5LAFJL5GNQ13GI3R7C0P472IDEDE9PKN2RFK0O9BOQ14BM68CH6MAJ",
-    "expected_cycles": [26, 2]
+    "expected_cycles": [26, 2],
+    "expected_quarter_turn_modes": ["swapped"]
   },
   {
     "p": 31,
     "archive_path": "n30_rot4",
     "code": "oKQCD7805HMKQBD4RJR058BJN4SNSEFEF161P6AILOT2A2PGI397COTLMGH39",
-    "expected_cycles": [5, 5, 5, 5, 2, 2, 2, 2, 2]
+    "expected_cycles": [5, 5, 5, 5, 2, 2, 2, 2, 2],
+    "expected_quarter_turn_modes": ["swapped"]
   },
   {
     "p": 61,
     "archive_path": "n60_rot4",
     "code": "oKkZdVgFJQf9n8NTkIrbs5VLgCl07UeRuNP2B4pEu1xOm9Xhr1cRhMtYi2AEq7jnvFP4bGWLw6GQoBZ0w3j8tmvYa3WJTqxClHcSs5M6fDUapAoIXeiHSKODd",
-    "expected_cycles": [58, 2]
+    "expected_cycles": [58, 2],
+    "expected_quarter_turn_modes": ["swapped"]
   },
   {
     "p": 67,
     "archive_path": "n66_rot4",
     "code": "oVaap2$KNFeFZDd8bjwOqLhCcLs9x1nyzEWPhOgWc8#rtAHI#lu4m6UBJ7V015db&knGJ0SQy%&YwksZxHz9I3lmtAC3vRXNfMeXp45G%6uBiRrMiDf7KSvQqUoPogj2$ETTY",
-    "expected_cycles": [16, 16, 16, 16, 2]
+    "expected_cycles": [16, 16, 16, 16, 2],
+    "expected_quarter_turn_modes": ["swapped"]
   },
   {
     "p": 73,
     "archive_path": "n72_rot4",
     "code": "oYdXgMSflKiS#AKEGHm5qV&RfOmFGe%oww%Z$PT9b&?FXa(8C3xQrWk4y@(1r3BEz0jo)J[MsHn0q1LQ[Avy!I)25B?PdIjC!x$2Zcu46Y#gk8a7DDL7VtuNlUi6eJ@Nstvpz9hRpOUhnTcWb",
-    "expected_cycles": [36, 36]
+    "expected_cycles": [36, 36],
+    "expected_quarter_turn_modes": ["fixed", "swapped"]
   }
 ]
