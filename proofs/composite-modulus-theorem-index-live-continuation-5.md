@@ -20,6 +20,8 @@ The authoritative live ledger is split across:
 | CMR1878--1885 | Exact response-averaged line moments, complete line-energy numerator, global pair/triple identities, rook-marginal equivalence, occupancy domination, exact uniform-height envelopes, Pareto/terminal census, and the averaged-line endpoint | PROVED; all 740 hosts, 89,664 host-line moment triples, 1,188,144 response-line occurrences, 537,984 exact line-height identities, 740 global identities, 103 Pareto triples and 48 active triples checked | `docs/338-prime-power-exact-response-averaged-line-moment-census.md` |
 | CMR1886--1893 | Exact residual geometric numerator, strict rank-three line budget, line-budget allocation, one-line residual criterion, load-one and load-two censuses, weighted labelled allocation, and the line-budget endpoint | PROVED; all 740 hosts, 651 strict hosts, 80,602 strict host-line pairs and 106,810 exact active-line budget equivalences checked | `docs/339-prime-power-rank-three-slack-line-budget-allocation.md` |
 | CMR1894--1901 | Primitive geometric witness sets, extendability-complete routing, rank-one/two/three route conservation, integer coefficient export, corrected-row fate requirement, and the executable routing-checker endpoint | PROVED; 500 deterministic random systems containing 6,063 primitive witnesses accepted and ten corrupted manifests rejected | `docs/340-prime-power-geometric-candidate-routing-manifest.md` |
+| CMR1902--1909 | Unique absolute last-entering owner, exact owner partition, owner-preserving recurrent routes, owner-support closure, total witness fate partition, structural transfer surface, exact coefficient export, and the executable owner/fate endpoint | PROVED; 400 deterministic systems containing 5,586 witnesses accepted with exact fate counts, and eleven corrupted manifests rejected | `docs/341-prime-power-geometric-owner-fate-manifest.md` |
+| CMR1910--1917 | Canonical source serialization, exact denominator inheritance, source/export coefficient equality, omission/addition exclusion, transparent domination multiplicity, source fingerprint linkage, composition with the assignment certificate, and the executable bundle endpoint | PROVED; 300 deterministic bundles containing 4,072 source witnesses, 3,125 exact bins and 4,138 exported coefficient units accepted, and ten corrupted bundles rejected | `docs/342-prime-power-geometric-assignment-bundle.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -27,7 +29,7 @@ The branch still does not prove the all-`n` conjecture.
 
 ### Exact response-averaged line moments
 
-For every host and nonaxis line, define
+For every host and nonaxis line,
 
 \[
 z_r(G,\ell)
@@ -50,22 +52,16 @@ A_G(B)
 \right].
 \]
 
-The global identities are
+The global identities
 
 \[
 \sum_\ell z_2(G,\ell)=Z(G)\binom d2,
 \qquad
-\sum_\ell z_3(G,\ell)=A_3(G).
+\sum_\ell z_3(G,\ell)=A_3(G)
 \]
 
-Thus the global pair moment is fixed by side and denominator, while the triple
-moment is the completed rank-three census.  Exact line moments are always at most
-the corresponding occupancy-capacity numerators.
-
-For a uniform height cap `H`, exact averaged moment triples compress to 13 Pareto
-triples on side four and 90 on side five.  Only 48 are active for an integer `H`.
-Every exact averaged side-four envelope is terminal by `H=2`, and every side-five
-envelope is terminal by `H=4`.
+fix the total rank-two and rank-three moments.  Only the rank-one incidence
+numerator varies freely.
 
 ### Rank-three slack as an exact line budget
 
@@ -75,7 +71,7 @@ On a rank-three-strict host,
 S_3(G)=Z(G)-A_3(G)>0.
 \]
 
-The remaining exact geometric numerator is
+The remaining geometric numerator
 
 \[
 R_G(h)
@@ -84,70 +80,80 @@ R_G(h)
 \left[
  \binom{h_\ell}{2}z_1(G,\ell)
  +h_\ell z_2(G,\ell)
-\right],
+\right]
 \]
 
-and the complete scalar geometric row is strict exactly when
+is strict exactly when
 
 \[
 \boxed{R_G(h)\le S_3(G)-1.}
 \]
 
-Equivalently, each line may receive a nonnegative integer budget and the budget
-total must not exceed `S_3-1`.
+There are 651 strict hosts, 44 critical hosts and 45 excess hosts.
 
-Across the 651 strict hosts:
+### Primitive witnesses and absolute owners
 
-| profile | active host-line pairs | individually fitting `S_3-1` | hosts with at least one fitting active line | hosts whose every active line fits |
-|---|---:|---:|---:|---:|
-| load one | 34,618 | 27,192 | 594 | 26 |
-| load two | 72,192 | 16,838 | 492 | 0 |
+The raw candidate source reconstructs every primitive witness:
 
-Individual fits become complete row certificates only when all other retained
-line contributions are separately budgeted, corrected or routed away.
+- rank one: a response edge and one collinear unordered background pair;
+- rank two: a compatible response pair and one collinear background point;
+- rank three: one collinear response triple.
 
-### Geometric candidate-source manifest
+A strict total order on extendable response edges gives the unique owner
 
-For each extendable prescription, the raw geometric checker enumerates primitive
-witnesses rather than only aggregate multiplicities:
+\[
+\operatorname{own}(w)=\max_\prec P(w).
+\]
 
-- rank one: every unordered background pair collinear with the response edge;
-- rank two: every background point collinear with the response pair;
-- rank three: the unique primitive witness for every collinear response triple.
+The owner/fate manifest requires every raw witness exactly once and assigns one
+explicit fate:
 
-Every witness must occur exactly once with a declared child label.  Aggregation by
-`(rank,child,prescription)` exports the exact geometric coefficient table for the
-integer assignment manifest.
+1. retained in the same recurrent owner class;
+2. deleted with a correction-evidence identifier;
+3. transferred to a lower-stratum off-diagonal or auxiliary child; or
+4. dominated by an explicit positive upper multiplicity in the same owner class.
 
-`scripts/check_geometric_candidate_routing_manifest.py` recomputes response
-matchings, extendability, collinearity and witness conservation.  It validates raw
-candidate completeness but does not prove that a declared child-label string has
-the correct owner, collision, interface or CRT semantics.
+No accepted manifest can silently omit a witness.  The checker validates owner and
+fate syntax, but rule-specific verifiers must prove deletion, domination and
+auxiliary-transfer evidence.
+
+### Exact geometric-to-assignment handoff
+
+The owner/fate source exports one integer table
+
+\[
+c^{(r)}_j(P).
+\]
+
+A downstream bundle carries the source inline, its canonical SHA-256 fingerprint,
+the exact denominator
+
+\[
+D=|\operatorname{PM}(G)|,
+\]
+
+and the labelled edge, pair and triple table.  Acceptance requires exact equality
+with the recomputed source export.  Thus there is no unchecked coefficient
+conversion between primitive geometry and the assignment LP.
 
 ### Publication-grade labelled certificate
 
-The downstream integer manifest retains state weights, all labelled edge/pair/
-triple coefficients, complete contracted dual families, one unified outer dual
-and one positive integer row slack.  Passing every row proves `AX<X` relative to
-the declared exact or componentwise upper table.
-
-A corrected or upper offspring table must provide an explicit fate for every raw
-geometric witness: retained, deleted by a verified rule, transferred to a
-separately certified state, or honestly dominated.  Silent deletion is invalid.
+After source and fate evidence are verified, the downstream integer assignment
+manifest retains state weights, all labelled coefficients, complete contracted
+dual families, one unified outer dual and one positive integer row slack.  Passing
+every row proves `AX<X` for the declared exact or componentwise upper table.
 
 ## Active frontier
 
-1. Generate the actual background-point, owner and provenance routing manifests
-   for the 740 raw hosts and verify raw witness conservation.
-2. Use exact response-averaged line moments in place of occupancy maxima whenever
-   the response law is uniform; retain occupancy capacities only as a fallback.
-3. On the 651 rank-three-strict hosts, allocate the exact `S_3-1` budget across
-   return, selector and all retained line coefficients.
-4. On the 89 critical/excess hosts, record an explicit correction, nonuniform
-   child-weight route, finer state split or certified off-diagonal transfer for
-   every raw witness.
-5. Export the routed coefficients to the integer assignment manifest and generate
-   all inner, middle and unified outer duals.
-6. Certify thin, fixed-interface and reused-support modules, eliminate them through
-   exact resolvents, then finish the collision/local-line SCCs and publish the
-   global integer quotient before CRT gluing.
+1. Generate the actual 740-host background-point manifests and strict entry orders.
+2. Attach the correct owner, collision, local-line, interface, root, thin and CRT
+   state semantics to every primitive witness.
+3. Prove every nonretained fate using rule-specific correction, domination,
+   structural-transition or auxiliary-module verifiers.
+4. On the 651 rank-three-strict hosts, allocate `S_3-1` across all retained line,
+   return and selector coefficients using exact response-averaged moments.
+5. On the 89 critical/excess hosts, construct explicit corrected fate maps,
+   nonuniform child weights, finer state splits or certified off-diagonal transfers.
+6. Export accepted owner/fate bundles to the integer assignment checker, solve all
+   recurrent rows, eliminate certified auxiliaries and publish the global integer
+   quotient before CRT gluing.
