@@ -23,8 +23,8 @@ remain open.
 | Trajectory-saturated core | **INTEGRATED** | PX291--PX293 classify it; the historical reset, overlap, antichain, coupled-absorber, and buffer chapters 134--152 feed it back into the rectangle-label tree. |
 | Strict-sign-or-child interface | **INTEGRATED** | The diffuse packet, line, radial, mixed-shadow, and terminal-return branches are lifted to exact rectangle-label moves through PX397--PX449. |
 | Dependency audit | **CLOSED FOR ACTIVE PATH** | PX451--PX455 and the repository scanner audit move-space tags, constants, theorem uniqueness, and the paired-label dependency chain. |
-| Effective asymptotic cutoff | **EXPLICIT** | PX952--PX955 sharpen the active divisor witness and lower the common cutoff to `N>=10^2875`. |
-| Below-cutoff coverage | **OPEN** | Orders below `10^2875` need a structural bridge, exact extension chain, interval-specific theorem, or finite classification. |
+| Effective asymptotic cutoff | **EXPLICIT** | PX962--PX965 give `d(N)<10^(2469/41)N^(6/41)` and lower the common cutoff to `N>=10^2874`. |
+| Below-cutoff coverage | **OPEN** | Orders below `10^2874` need a structural bridge, exact extension chain, interval-specific theorem, or finite classification. |
 | Infinite exact closure | **OPEN** | No theorem currently covers every side length. |
 
 ## 1. Terminal structure now used by the active path
@@ -65,28 +65,27 @@ the integer bad-triple potential.
 ## 3. Active numerical root
 
 The exact nested depth, Cartesian incidence constant, packet-family-free path,
-and rational divisor witnesses make the asymptotic branch effective. The sharp
-`8/109` product certificate gives
+and rational divisor witnesses make the asymptotic branch effective. The current
+`3/41` product certificate gives
 
 \[
-\mathfrak d(N)<10^{6425/109}N^{16/109}
+\mathfrak d(N)<10^{2469/41}N^{6/41}
 \]
 
-and the current common cutoff
+and the common cutoff
 
 \[
-\boxed{N\ge10^{2875}}.
+\boxed{N\ge10^{2874}}.
 \]
 
-The verifier also confirms that `10^2874` does not satisfy the same
-divisor-controlled retained-order inequality. Further decimal compression in
-this universal divisor framework is therefore secondary to the finite-range
-bridge.
+The verifier confirms that `10^2873` fails the same divisor-controlled
+retained-order inequality for this witness. Further universal-exponent tuning is
+secondary to the finite-range bridge.
 
 ## Immediate frontier
 
 1. **Finite-range bridge.** Construct an extension or absorber chain covering
-   every order below `10^2875`, or replace the universal divisor estimate by
+   every order below `10^2874`, or replace the universal divisor estimate by
    interval-specific bounds that descend through the range.
 2. **Recursive produced-base closure.** Prove an iteration theorem from the
    existing exact sides `6`, `8`, `10`, or `12`, especially a closure based at
@@ -94,10 +93,12 @@ bridge.
 3. **Side-seven finite classification.** Continue the exact multiplicity-two
    selector census from global case `80`; postpone multiplicity one until its
    certificate structure is understood.
-4. **General repair/resampling.** Seek a theorem coordinating many product
+4. **Low-multiplicity proof compression.** Measure explicit bottom-permutation
+   triple covers and combine them with minimized top-assumption nogoods.
+5. **General repair/resampling.** Seek a theorem coordinating many product
    projection fibres, or a conflict-free exact-cover/resampling result that
    subsumes the finite host searches.
-5. **Independent geometric frontiers.** The hyperbola pathway still needs
+6. **Independent geometric frontiers.** The hyperbola pathway still needs
    second-generation collateral concentration, monotone alternating closure, or
    bounded-denominator chamber absorption.
 
@@ -113,5 +114,5 @@ python scripts/verify_product_terminal_cycle_escape.py
 python scripts/verify_product_trajectory_saturated_core.py
 python scripts/verify_product_splice_interface.py
 python scripts/verify_product_entry_invariant_dependencies.py
-python scripts/verify_product_sharp_rational_divisor_cutoff.py
+python scripts/verify_product_three_forty_first_divisor_cutoff.py
 ```
