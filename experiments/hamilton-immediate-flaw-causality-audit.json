@@ -1,0 +1,85 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 6,
+  "cases": [
+    {
+      "m": 4,
+      "states": 96,
+      "atomic_flaws": 224,
+      "deletion_transitions_by_owner_count": {
+        "2": 128,
+        "3": 3328
+      },
+      "maximum_new_flaws_in_one_transition": {
+        "2": 8,
+        "3": 12
+      },
+      "mean_new_flaws_per_transition": {
+        "2": "4",
+        "3": "60/13"
+      },
+      "maximum_immediate_causal_outdegree": {
+        "2": 24,
+        "3": 48
+      },
+      "mean_immediate_causal_outdegree": {
+        "2": "24",
+        "3": "432/13"
+      },
+      "total_directed_causal_edges": 7296
+    },
+    {
+      "m": 5,
+      "states": 768,
+      "atomic_flaws": 2032,
+      "deletion_transitions_by_owner_count": {
+        "2": 4608,
+        "3": 60416
+      },
+      "maximum_new_flaws_in_one_transition": {
+        "2": 24,
+        "3": 40
+      },
+      "mean_new_flaws_per_transition": {
+        "2": "235/36",
+        "3": "1409/118"
+      },
+      "maximum_immediate_causal_outdegree": {
+        "2": 152,
+        "3": 176
+      },
+      "mean_immediate_causal_outdegree": {
+        "2": "668/9",
+        "3": "5052/59"
+      },
+      "total_directed_causal_edges": 172352
+    },
+    {
+      "m": 6,
+      "states": 7680,
+      "atomic_flaws": 8160,
+      "deletion_transitions_by_owner_count": {
+        "2": 49152,
+        "3": 1011712
+      },
+      "maximum_new_flaws_in_one_transition": {
+        "2": 36,
+        "3": 76
+      },
+      "mean_new_flaws_per_transition": {
+        "2": "785/96",
+        "3": "9153/494"
+      },
+      "maximum_immediate_causal_outdegree": {
+        "2": 364,
+        "3": 704
+      },
+      "mean_immediate_causal_outdegree": {
+        "2": "271",
+        "3": "66480/247"
+      },
+      "total_directed_causal_edges": 2196736
+    }
+  ],
+  "asymptotic_seed_theorem_proved": false
+}
