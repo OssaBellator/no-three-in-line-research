@@ -48,8 +48,9 @@ This ledger records only branch-specific results and corrections.
 | RI5af–RI5aj | Prime-field subgroup/coset addresses, physical root/image/scale reconstruction and polynomial RI component stocks | PROVED UNDER THE PRIME-FIELD PHYSICAL CONTRACT | `docs/rational-inverse-quotient-reconstruction.md` |
 | RI5ak–RI5ao | The conditional blocker average splits exactly into singleton, finite small-derangement and normalized large-rank profiles with explicit raw-weight constants | PROVED | `docs/rational-inverse-blocker-average-splitting.md` |
 | RI5ap–RI5at | Derangement extensions have an exact overlap formula, sharp `3/(t)_s` universal cap and improved large-profile amplification | PROVED | `docs/rational-inverse-derangement-extension-formula.md` |
+| RI5au–RI5ax | Rank-at-most-three blocker prescriptions have nine canonical path/cycle types; exact type localization loses at most a factor two | PROVED | `docs/rational-inverse-partial-permutation-types.md` |
 | RI1 | Dense-subset expansion with unrestricted subgroup | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
 | RI4 | Bounded periodicity from an order-two coset cover | REFUTED AS STATED | `docs/rational-inverse-collision-and-obstructions.md` |
-| RI6 | Paid physical-lift localization and unconditional bank installation | OPEN; ABSTRACT PRIME-FIELD QUOTIENT LABELS RECONSTRUCTED AND BLOCKER-REPAIR PROBABILITY LAW CLOSED EXACTLY | `docs/rational-inverse-expansion.md` |
+| RI6 | Paid physical-lift localization and unconditional bank installation | OPEN; ABSTRACT PRIME-FIELD QUOTIENT LABELS RECONSTRUCTED AND BLOCKER-REPAIR PROBABILITY/TYPE LAW CLOSED EXACTLY | `docs/rational-inverse-expansion.md` |
 
 No statement here proves the global conjecture.
