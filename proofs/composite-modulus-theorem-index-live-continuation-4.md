@@ -20,6 +20,9 @@ The authoritative live ledger is split across:
 | CMR1686--1693 | Ambient rank-three stock, side-three forced rank-three rows, exact side-four/five rank-three censuses, complete probability table, expectation capacities, integer numerator capacities, and the rank-three endpoint | PROVED; all 15,469 canonical extendable rank-three instances checked exhaustively | `docs/314-prime-power-normalized-thin-rank-three-census.md` |
 | CMR1694--1701 | Nonnegative auxiliary resolvent, effective core, constructive certificate lift, exact subcriticality equivalence, zero-self reduction, rational/integer certificates, block-diagonal elimination, and the auxiliary-block endpoint | PROVED; exact rational block systems, zero-self reductions and denominator clearings checked | `docs/315-prime-power-subcritical-auxiliary-block-elimination.md` |
 | CMR1702--1709 | Exact prescription rank-mass identity, corrected-family bound, integer numerator conservation, forced-mass removal, pointwise/mass minimum, side-four/five capacities, integer capacity form, and the rank-mass endpoint | PROVED; rational response laws, rank identities, forced decompositions and combined capacities checked | `docs/316-prime-power-prescription-rank-mass-conservation.md` |
+| CMR1710--1717 | Multiplicity-weighted line-clean expectation, rank-mass bound, forced subtraction, pointwise/count/mass minimum, large-load closure, integer numerator certificate, rooted-trace specialization, and the multiplicity-aware endpoint | PROVED; 720 rational laws, 2,040 rank identities, multiplicity bounds and strict large-load checks | `docs/317-prime-power-line-clean-rank-mass-large-load-closure.md` |
+| CMR1718--1725 | Response-wise owned-submatching bound, owner-support expectation capacity, row/column cover form, fixed-owner conditional mass, weighted capacity, return-selector edge-score specialization, integer numerator form, and the owner-support endpoint | PROVED; 600 rational systems, 16,332 response-wise checks, 1,700 support capacities and 9,834 conditional-owner checks | `docs/318-prime-power-owner-support-rank-mass-capacities.md` |
+| CMR1726--1733 | Support-local expectation, strict large-load closure, vertex-cover threshold, fixed finite-support threshold, prime-field reused-support specialization, weighted version, integer slack and multiplicity overflow, and the small-support endpoint | PROVED; 660 rational systems, 1,870 rankwise capacities, 660 strict closures and 601 overflow localizations | `docs/319-prime-power-owner-support-large-load-closure.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -34,7 +37,7 @@ h_T=g_{\rm ret}+Tg_{\rm sel}.
 \]
 
 The block may be certified by one exact assignment dual, a superlevel matching-
-number bound, or explicit class-supported source/target covers.  If class `s`
+number bound, or explicit class-supported source/target covers. If class `s`
 has score cap `H_s` and cover `C_s`, nested threshold unions give the dual
 objective
 
@@ -51,11 +54,11 @@ selector maxima.
 The exact strong, singleton and overlap response ratios have universal floors
 
 \[
-\frac1{16},
+1/16,
 \qquad
-\frac{81}{4096},
+81/4096,
 \qquad
-\frac1{256}.
+1/256.
 \]
 
 Rank/profile/geometric class capacities compile into
@@ -76,16 +79,38 @@ c_1=(d-1)(d-2),
 \]
 
 If `widehat W` fits the exact or universal budget, one positive integer slack
-certifies the whole class family.  Failure forces one candidate or unavailable-
+certifies the whole class family. Failure forces one candidate or unavailable-
 edge coordinate above an explicit integer threshold.
+
+The exact CMR1533 row may contain several candidate triples sharing one response
+prescription. If `m_r` is the maximum rank-`r` multiplicity, rank mass gives the
+additional bound
+
+\[
+\mathbb E N_{\rm off}
+\le
+\sum_{r=1}^3m_r C(d,r),
+\]
+
+or, after forced contractions,
+
+\[
+\mathbb E N_{\rm off}
+\le
+\sum_{r=1}^3m_r\bigl(C(d,r)-F_r\bigr).
+\]
+
+A nonempty line-clean host is therefore a strict improvement whenever destroyed
+load exceeds this multiplicity-corrected mass. The pure `(d^3+5d)/6+1`
+threshold applies only to injective candidate families.
 
 ### Selector capacity gaps
 
 If exact selector class numerators have common denominator `D` and capacities
-`a_chi<=C_chi`, put `C=sum C_chi`.  When `C<D`, criticality is impossible and
+`a_chi<=C_chi`, put `C=sum C_chi`. When `C<D`, criticality is impossible and
 
 \[
-\eta=\frac{D-C}{D},
+\eta=(D-C)/D,
 \qquad
 T_C=
 \left\lfloor
@@ -93,8 +118,30 @@ T_C=
 \right\rfloor.
 \]
 
-The cap `T_C` feeds directly into the shared return assignment.  Critical
+The cap `T_C` feeds directly into the shared return assignment. Critical
 survivors must meet the exact capacity threshold retained by CMR1652.
+
+### Owner-support capacities and small-support closure
+
+Let `A` be an exact possible-owner edge set and let `mu(A)` be its matching
+number. Distinct rank-`r` prescriptions owned in `A` have total probability mass
+at most
+
+\[
+\mu(A)C(d-1,r-1).
+\]
+
+A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With
+rankwise multiplicity caps `m_r`, expected new owned collateral is at most
+
+\[
+\mu(A)\sum_{r=1}^3m_r C(d-1,r-1).
+\]
+
+Destruction above this quantity gives a strict response. Prime-field reused-
+support states have support size one or two, subject to the explicit condition
+that every retained child owner lies in that support. Failure of the closure
+localizes one large rankwise prescription multiplicity.
 
 ### Symmetry-normalized thin tables
 
@@ -104,7 +151,7 @@ Every opposite matching and forbidden target is relabelled to
 (I_d,(0,1)).
 \]
 
-The residual stabilizer is `S_{d-2}`.  The exact census through side five is:
+The residual stabilizer is `S_{d-2}`. The exact census through side five is:
 
 | side | canonical executable hosts | matching-level endpoint |
 |---:|---:|---|
@@ -113,15 +160,9 @@ The residual stabilizer is `S_{d-2}`.  The exact census through side five is:
 | 4 | 45 | nonforced caps `3/4`, `2/3`, `1/2` in ranks one, two, three |
 | 5 | 124 | caps `2/3`, `2/5`, `1/4`; no forced positive rank-at-most-three prescriptions |
 
-For every response law and rank `r`, prescription probability mass is exactly
-
-\[
-\sum_{P:\operatorname{rank}P=r}\Pr(P\subseteq Q)=\binom dr.
-\]
-
-Thus a geometric class uses the minimum of its pointwise probability capacity
-and the conserved rank-mass capacity.  Forced contractions subtract one full
-unit each.
+For every response law and rank `r`, distinct prescription probability mass is
+exactly `C(d,r)`. Candidate multiplicity must be retained separately when several
+geometric credits share one prescription.
 
 ### Auxiliary-module elimination
 
@@ -148,20 +189,24 @@ one has
 \]
 
 The reduction and certificate lift are rational and become a finite strict
-integer certificate after denominator clearing.  The selector formula
+integer certificate after denominator clearing. The selector formula
 `alpha+beta T<1` is the one-dimensional zero-self case.
 
 ## Active frontier
 
 1. Prove host-uniform score caps and small source/target covers for the geometric
-   classes of `h_T`, producing a shared return-selector dual below one.
-2. Put inherited candidate and unavailable-edge capacities inside the exact or
-   universal line-clean budgets; certify only the finitely many overflow classes.
-3. Compile selector capacities using exact rook numerators, thin-table caps and
-   conserved rank mass, eliminating every class with positive denominator slack.
+   classes of `h_T`, including explicit candidate multiplicities, and produce a
+   shared return-selector dual below one.
+2. Bound line-clean prescription multiplicities and put the resulting weighted
+   mass or inherited candidate capacities inside an exact or universal budget;
+   certify the finitely many low-load/high-multiplicity overflow classes.
+3. Compile selector capacities using exact rook numerators, thin-table caps,
+   conserved distinct-prescription rank mass and geometric multiplicity bounds.
 4. Enumerate genuinely new geometric offspring on the 45 side-four and 124 side-
-   five canonical hosts, certify the resulting orbit tables, and eliminate each
-   certified auxiliary table by its exact resolvent.
-5. Certify the remaining reused-support and fully labelled collision/local-line
-   SCCs, publish one strict integer quotient certificate, and apply the proved
-   CRT gluing protocol.
+   five canonical hosts, including prescription multiplicities and absolute
+   owners; certify and eliminate the resulting orbit tables.
+5. Apply the small-support closure to reused-support states, then certify the
+   remaining high-multiplicity or out-of-support reused rows and fully labelled
+   collision/local-line SCCs.
+6. Publish one strict integer quotient certificate and apply the proved CRT
+   gluing protocol.
