@@ -18,7 +18,7 @@ The authoritative collision-free theorem ledger is split across:
 - `proofs/composite-modulus-theorem-index-live-continuation.md` through CMR869;
 - `proofs/composite-modulus-theorem-index-live-continuation-2.md` through CMR1197;
 - `proofs/composite-modulus-theorem-index-live-continuation-3.md` through CMR1629;
-- `proofs/composite-modulus-theorem-index-live-continuation-4.md` from CMR1630 through CMR1733.
+- `proofs/composite-modulus-theorem-index-live-continuation-4.md` from CMR1630 through CMR1749.
 
 Matching side, prime-power envelope side and inherited coordinate span remain
 separate parameters throughout the current endpoint.
@@ -130,7 +130,7 @@ Rooted-target trace recurrence uses only the strong and singleton classes.
 Rank/profile/geometric capacities compile into the same integer currency, and a
 failed budget localizes one large candidate or unavailable-edge coordinate.
 
-## Multiplicity-aware rank mass
+## Exact geometric prescription multiplicity
 
 For every response law and residual rank `r`, the total probability mass of
 **distinct** rank-`r` prescriptions is exactly
@@ -139,34 +139,53 @@ For every response law and residual rank `r`, the total probability mass of
 \sum_{P:\operatorname{rank}P=r}\Pr(P\subseteq Q)=C(d,r).
 \]
 
-Several geometric credits may share one response prescription. If `m(P)` is the
-candidate multiplicity of prescription `P` and `m_r` is the maximum rank-`r`
-multiplicity, then a line-clean row satisfies
+Several geometric credits may share one response prescription. For a finite
+background point set `B`, CMR1734--CMR1741 give the exact multiplicities.
+
+- A compatible rank-three prescription has multiplicity one.
+- For rank two, with response points `x,y`,
+  \[
+  m(\{x,y\})=|B\cap\ell(x,y)|.
+  \]
+- For rank one,
+  \[
+  m(\{x\})
+  =
+  \sum_{\ell\ni x}C(|B\cap\ell|,2).
+  \]
+
+The rank-one sum is indexed exactly by primitive unoriented directions through
+`x`.
+
+If `|B|=qH+r`, with `0<=r<H`, and every relevant background line has load at
+most `H`, convex packing gives the exact uniform cap
 
 \[
-\mathbb E N_{\mathrm{off}}
-\le
-\sum_{r=1}^3m_r C(d,r).
+\Phi(|B|,H)=qC(H,2)+C(r,2).
 \]
 
-After `F_r` forced common prescriptions are routed to contraction,
+Consequently one may use
 
 \[
-\mathbb E N_{\mathrm{off}}
-\le
-\sum_{r=1}^3m_r\bigl(C(d,r)-F_r\bigr).
+m_1\le\Phi(|B|,H_1),
+\qquad
+m_2\le H_2,
+\qquad
+m_3=1.
 \]
 
-Therefore an actual nonempty line-clean host has a strict-improvement response
-whenever destroyed load exceeds this multiplicity-corrected mass. The pure
-threshold
+The complete multiplicity-aware line-clean expectation is therefore bounded by
 
 \[
-D\ge(d^3+5d)/6+1
+\Phi(|B|,H_1)C(d,1)+H_2C(d,2)+C(d,3),
 \]
 
-is valid only when the candidate-to-prescription map is injective. In general,
-proving small multiplicities remains part of the geometric frontier.
+or by the corresponding expression with `C(d,r)-F_r` after forced common
+prescriptions are routed to contraction.
+
+An actual nonempty line-clean host has a strict-improvement response whenever
+destroyed load exceeds the applicable multiplicity-corrected mass. The pure
+threshold `(d^3+5d)/6+1` is valid only for injective candidate families.
 
 ## Combined return-selector assignment
 
@@ -215,12 +234,14 @@ at most
 \mu(A)C(d-1,r-1).
 \]
 
-A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With
-rankwise prescription multiplicity caps `m_r`, expected new owned collateral is
-at most
+A source/target vertex cover of size `k` may replace `mu(A)` by `k`. With the
+geometric multiplicity caps above, expected new owned collateral is at most
 
 \[
-\mu(A)\sum_{r=1}^3m_r C(d-1,r-1).
+\mu(A)
+\left[
+\Phi(|B|,H_1)+H_2(d-1)+C(d-1,2)
+\right].
 \]
 
 Destruction above this quantity gives a strict response, provided every retained
@@ -228,9 +249,10 @@ recurrent child owner lies in `A` and all other child classes have already been
 included or routed away.
 
 Prime-field reused-support states have fixed support size one or two. They enter
-this closure when every retained child owner lies in that terminal support. If a
-small-support certificate fails, one rankwise multiplicity satisfies the
-explicit overflow threshold of CMR1732.
+this closure when every retained child owner lies in that terminal support. A
+failed packed support certificate identifies a large owner support, a large
+background line height, a large packed rank-one secant value, or insufficient
+destroyed load.
 
 ## Critical-selector capacity compiler
 
@@ -259,7 +281,8 @@ D[2(n-1)+B]/((n-1)(D-C))
 This cap feeds directly into `h_{T_C}` and the shared assignment/cover
 certificate. If `C>=D`, only classes meeting the necessary capacity threshold
 need sharper enumeration. Exact rook numerators, thin probability caps, distinct
-rank mass and geometric multiplicity bounds must all be retained.
+rank mass, owner supports and line-load multiplicities are simultaneous
+constraints.
 
 ## Prime-field root, fixed-interface and thin bases
 
@@ -291,7 +314,9 @@ The exhaustive normalized matching-level census through side five is:
 
 The rank-three census contains 448 extendable side-four instances, 28 forced,
 and 15,017 side-five instances, none forced. These are distinct-prescription
-statistics; geometric candidate multiplicities must be enumerated separately.
+statistics. Geometric candidate multiplicities are now supplied by exact line-
+load and secant formulas, but the required background loads still need to be
+enumerated on the canonical geometric hosts.
 
 ## Certified auxiliary-block elimination
 
@@ -340,20 +365,21 @@ integer certificate.
 
 ## Genuine current frontier
 
-1. **Return class geometry.** Prove host-uniform score and multiplicity caps plus
-   small source/target owner covers for the exact classes of `h_T`.
-2. **Line-clean low-load/high-multiplicity classes.** Bound prescription
-   multiplicities and put the resulting weighted mass or inherited counts inside
-   an exact or universal budget.
-3. **Selector capacities.** Combine exact rook numerators, thin caps, distinct
-   rank mass, owner-support bounds and geometric multiplicities; eliminate every
-   class with positive denominator slack.
-4. **Canonical geometric offspring.** Enumerate genuinely new offspring,
-   prescription multiplicities and absolute owners on the 45 side-four and 124
-   side-five hosts; certify and eliminate their orbit tables.
-5. **Reused support.** Apply the one/two-edge owner-support closure, then certify
-   the surviving high-multiplicity or out-of-support rows.
-6. **Final labelled quotient.** Certify remaining collision/local-line SCCs,
+1. **Background height bounds.** Prove host-uniform `H_1,H_2` bounds for exact
+   owner, height, token, prefix, carry and interface classes.
+2. **Line-clean packed slacks.** Insert `Phi(|B|,H_1)`, `H_2` and forced-mass data
+   into exact or universal line-clean budgets; certify the low-load/high-height
+   survivors.
+3. **Return class geometry.** Use the same multiplicity and owner-support bounds
+   to control `h_T` and produce a shared assignment dual below one.
+4. **Selector capacities.** Combine exact rook numerators, thin caps, distinct
+   rank mass, owner supports and packed line-load multiplicities.
+5. **Canonical geometric offspring.** Enumerate background line heights,
+   genuinely new offspring and absolute owners on the 45 side-four and 124 side-
+   five hosts; certify and eliminate their orbit tables.
+6. **Reused support.** Apply the one/two-edge packed owner-support closure, then
+   certify the surviving high-height or out-of-support rows.
+7. **Final labelled quotient.** Certify remaining collision/local-line SCCs,
    publish one strict integer quotient certificate and apply CRT gluing.
 
 ## Corrections retained
@@ -386,6 +412,8 @@ integer certificate.
   local-line, owner or CRT provenance.
 - Rank-mass conservation is for distinct prescriptions in one current response
   law. Candidate multiplicity and historical families are separate.
+- Rank-one multiplicity is a secant-pair sum, not merely a count of heavy
+  directions.
 - Owner-support closure applies only when every retained child owner lies in the
   claimed support.
 - Auxiliary resolvent elimination applies only after the auxiliary block has a
@@ -393,12 +421,13 @@ integer certificate.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR1733**, the broad recurrent fronts are
-reduced to class-supported return assignment covers, multiplicity-aware
-line-clean and owner-support closures, selector denominator slacks, a complete
-matching-level rank-one/two/three census through side five, certified auxiliary
-resolvents and a label-preserving CRT certificate protocol.
+There is no complete proof. Through **CMR1749**, the broad recurrent fronts are
+reduced to class-supported return assignment covers, exact geometric
+multiplicity formulas, packed line-clean and owner-support closures, selector
+denominator slacks, a complete matching-level rank-one/two/three census through
+side five, certified auxiliary resolvents and a label-preserving CRT certificate
+protocol.
 
-The remaining obstruction is geometric and numerical: prove small candidate
-multiplicities and owner supports, certify every surviving labelled block, and
-publish the final strict integer quotient.
+The remaining obstruction is geometric and numerical: bound the relevant
+background line heights, certify every surviving labelled block, and publish the
+final strict integer quotient.
