@@ -42,13 +42,28 @@ total:   326,715,225
 
 No candidate repairs the state.  The enumeration includes every canonical
 combination of target-pair reassignment and orientation change on the selected
-support, including pure and mixed orientation flips.  The exact local lower
-bound is therefore
+support, including pure and mixed orientation flips.
+
+This raw census originally established
 
 ```text
 minimum swapped-orbit repair support >= 7.
 ```
 
+It has now been superseded by the Hall-propagated exact branch-and-bound in
+
+```text
+scripts/check_p37_swapped_orbit_repair_branch_bound.cpp
+experiments/p37-swapped-orbit-repair-branch-bound.md
+```
+
+which exhausts supports seven through twelve and raises the exact local bound
+to
+
+```text
+minimum swapped-orbit repair support >= 13.
+```
+
 The base state itself is not a seed: all `59,640` determinants contain exactly
-four zero values, forming one quarter-turn orbit of bad lines.  The diagnostic
-is a finite local repair result and does not prove `p=37` infeasible.
+four zero values, forming one quarter-turn orbit of bad lines.  Both diagnostics
+are finite local repair results and do not prove `p=37` infeasible.
