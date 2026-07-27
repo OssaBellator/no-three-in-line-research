@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite audit for SAS5gg--SAS5gk."""
+"""Finite audit for SAS5gl--SAS5gp."""
 
 import random
 
@@ -27,7 +27,6 @@ def main():
         epsilon = rng.uniform(0.2, 0.9)
         kappa = rng.uniform(0.01, epsilon * 0.9)
 
-        # Build complete new-output ledgers square by square.
         f_weights = []
         word_totals = [0] * 12
         word_columns = [[0] * n_board for _ in range(12)]
@@ -46,7 +45,6 @@ def main():
                 counts["output_records"] += 1
         f_total = sum(f_weights)
 
-        # Local and simultaneous payment inequality using optional extra destruction.
         extra_destroyed = [rng.randint(0, r) for r in r_weights]
         xi = [f - r - extra for f, r, extra in zip(f_weights, r_weights, extra_destroyed)]
         assert all(x <= f - r for x, f, r in zip(xi, f_weights, r_weights))
@@ -67,7 +65,6 @@ def main():
             counts["word_mass"] += word_totals[best_word]
             counts["column_incidence"] += best_col
 
-        # Integrated substitution check.
         theta = rng.uniform(0.05, 0.95)
         lam = rng.uniform(0.05, 3.0)
         d_sq = rng.randint(0, 100)
