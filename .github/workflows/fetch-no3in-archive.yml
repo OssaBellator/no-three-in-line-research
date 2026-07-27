@@ -1,0 +1,31 @@
+name: Fetch no-three archive files
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch archive files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir archive
+          for n in 40 42 52; do
+            url="https://wwwhomes.uni-bielefeld.de/~achim/no3in/download/configurations/n${n}_rot4"
+            curl --fail --location --retry 5 --retry-all-errors --connect-timeout 30 --max-time 300 "$url" -o "archive/n${n}_rot4"
+            test -s "archive/n${n}_rot4"
+            sha256sum "archive/n${n}_rot4"
+          done
+      - name: Upload archive files
+        uses: actions/upload-artifact@v4
+        with:
+          name: no3in-archive-configurations
+          path: archive/
+          if-no-files-found: error
+          retention-days: 1
