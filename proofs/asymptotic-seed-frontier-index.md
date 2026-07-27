@@ -94,9 +94,17 @@ python scripts/check_hamilton_three_edge_switchings.py \
 
 The first diagnostic verifies thirteen pair-2-cycle-free public/code cases,
 nine Hamilton or one-fixed cases, exact generating-function coefficients
-through `m=10`, and `39,380` path-forest cylinders through `m=8`.  The second
-verifies `5,910` Hamilton states and `310,104` directed switching moves through
-cycle length eight.
+through `m=10`, an independent weighted enumeration of `46,234` pair
+permutations through `m=8`, and `39,380` path-forest cylinders through `m=8`.
+The second verifies `5,910` Hamilton states and `310,104` directed switching
+moves through cycle length eight.
+
+Machine-readable aggregate ledgers are stored in
+
+```text
+experiments/two-cycle-free-near-hamilton-family-results.json
+experiments/hamilton-three-edge-switching-results.json.
+```
 
 ## Next theorem target
 
