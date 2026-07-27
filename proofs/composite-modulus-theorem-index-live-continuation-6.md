@@ -18,93 +18,99 @@ The authoritative live ledger is split across:
 | CMR2022--2029 | Finite hard-core rollback, exact 10/1 distance split, unique distance-two host, 21 minimum options, restored zero-response and uniform-slack census, exact 12-unit independent rollback distance, policy separation from occurrence correction, and executable rollback endpoint | PROVED; ten hosts need one rollback edge and one needs two; 21 minimum options land in 13 restored hosts; restored slacks are 19 at -2 and 2 at -1; ten corruptions rejected | `docs/356-prime-power-rank-three-hard-core-rollback.md` |
 | CMR2030--2037 | Canonical response-line records, exact rank-two and rank-three kernels, rank-one point kernel, complete line-incidence census, seven occupancy profiles, exact background response score, and executable kernel endpoint | PROVED; all 740 hosts and 9,260 responses produce 79,736 line records, 6,485 rank-three occurrences, 39 coordinate-labelled response geometries and seven profiles; ten corruptions rejected | `docs/357-prime-power-response-line-incidence-kernel.md` |
 | CMR2038--2045 | Direct/kernel rank agreement, post-response identity, minimizer independence from removed prehistory, deterministic full selector, exact raw-selector penalty, instability criterion, deterministic stress census, and executable background-selector endpoint | PROVED; 400 systems with 5,077 responses and 1,260 background points checked; raw selector changes in 166 cases, has positive penalty in 160, total penalty 239; twelve corruptions rejected | `docs/358-prime-power-background-response-selector.md` |
+| CMR2046--2053 | Finite response-line universe, absolute survivor-background signature, perfect-matching row/column gauge, reduced selector signature, exact rank-one reconstruction, exact affine score factorization, scalar signature equivalence, and executable signature endpoint | PROVED; side line universes 23/83, full dimensions 39/108, reduced selector dimensions 32/99; 500 systems, 6,166 response scores and 1,706 background points checked; twelve corruptions rejected | `docs/359-prime-power-survivor-background-signature.md` |
+| CMR2054--2061 | Affine response rows, 39-row global library, exact host chamber criterion, integer polyhedral selector chambers, complete comparison census, exact selector reconstruction, deterministic chamber stress test, and executable chamber endpoint | PROVED; six side-four and 33 side-five rows, 125,448 host comparisons and 1,086 unique ordered row pairs; 5,876 chamber inequalities checked; twelve corruptions rejected | `docs/360-prime-power-affine-selector-chambers.md` |
+| CMR2062--2069 | Exact source identity, survivor-background identity, responsewise operation composition, minimizer agreement, strict destroyed-threshold criterion, declared-policy penalty, deterministic composed suite, and executable linked-operation endpoint | PROVED; 240 linked operations, 2,944 responsewise identities, 3,363 witnesses, 589 destroyed triples and 230 strict full selectors checked; fourteen corruptions rejected | `docs/361-prime-power-linked-operation-selector.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Exact hard-core alternatives
+## Exact finite background quotient
 
-The eleven positive-minimum side-four hosts admit two exact but incomparable
-structural currencies:
+For side `s`, the absolute scalar background signature contains the grid point-pair
+counts `p_B(q)` and the occupancies of the finite canonical response-line universe.
+There are 23 such lines on side four and 83 on side five.
 
-1. fixed selected-response occurrence correction: independent burden 17;
-2. restoration of canonical deletion restrictions: independent minimum distance 12.
-
-The rollback distribution is
+Every perfect response matching uses every row and every column once. Therefore the
+rank-one grid weights are selector-equivalent modulo row and column potentials. With
 
 \[
-\boxed{10\text{ hosts at distance }1,\qquad1\text{ at distance }2.}
+d_{ij}=p_{ij}-p_{i0}-p_{0j}+p_{00}\qquad(i,j>0),
 \]
 
-The unique distance-two host is `s4-59ac56096a7f627f`. Minimum rollback restores a
-zero-rank-three response but not uniform strictness: the 21 options have restored
-slacks `19` at `-2` and `2` at `-1`. Rollback changes the operation and cannot be
-charged as witness deletion inside the original row.
-
-## Exact response geometry kernel
-
-For every response `Q`, let `r_Q(L)=|Q cap L|` on every line with at least two response
-points. For every background `B`,
+the exact reduced selector dimensions are
 
 \[
-W_2(Q;B)=\sum_L\binom{r_Q(L)}2|B\cap L|,
+\boxed{32\text{ on side four},\qquad99\text{ on side five}.}
+\]
+
+For every response `Q`,
+
+\[
+N_B(Q)=C_B+F_Q(\widehat\Sigma_s(B)),
+\]
+
+where `C_B` is common to all responses and `F_Q` is one affine integer row. Equal
+reduced signatures give identical score differences and selectors, but do not prove
+labelled or transition equivalence.
+
+## Exact affine chambers
+
+All 9,260 response occurrences use only 39 affine rows: six on side four and 33 on
+side five. If host responses are lexicographically ordered `Q_0,...,Q_{Z-1}`, then
+`Q_i` is selected exactly when
+
+\[
+F_{Q_i}<F_{Q_j}\quad(j<i),
 \qquad
-W_3(Q)=\sum_L\binom{r_Q(L)}3.
+F_{Q_i}\le F_{Q_j}\quad(j>i).
 \]
 
-Together with
+The complete catalogue has 125,448 ordered host comparisons but only 1,086 distinct
+ordered affine-row pairs. These chambers are exact for the scalar selector only.
 
-\[
-W_1(Q;B)=\sum_{q\in Q}p_B(q),
-\]
+## Linked operation selector
 
-this computes the exact new-triple score
+A composed certificate now forces one source to agree on:
 
-\[
-N_B(Q)=W_1(Q;B)+W_2(Q;B)+W_3(Q).
-\]
+1. canonical host and fibre identity;
+2. complete response family and denominator;
+3. survivor background;
+4. literal rank-one, rank-two and rank-three counts for every response;
+5. destroyed-current-triple count `T`;
+6. full selector and exact minimum delta; and
+7. the response chosen by the declared parent policy.
 
-The complete kernel digest is
-
-\[
-\texttt{b591356b800b44ae1a20c9f57cdad0782aecc43ca0a2ee699c4c0337d3010697}.
-\]
-
-## Exact background-dependent selector
-
-For actual pre-response points `P`, removed set `R`, survivor background `B=P\setminus
-R`, and destroyed count `T=|D(P,R)|`,
+Responsewise,
 
 \[
 \boxed{\Delta\Psi(Q)=N_B(Q)-T.}
 \]
 
-Therefore the response minimizing the literal delta depends only on the linked raw
-host and `B`; the removed prehistory changes the sign threshold through `T`, but not
-the minimizer. Let `Q_B^*` minimize `N_B` and let `Q_3^*` minimize only `W_3`. The exact
-raw-selector penalty is
+The full selector is strictly improving exactly when `N_B^*<T`. For the parent policy,
 
 \[
-\pi_B=N_B(Q_3^*)-N_B(Q_B^*)\ge0.
+\pi_{\rm pol}=N_B(Q_{\rm pol})-N_B^*\ge0
 \]
 
-A zero-rank-three response is not a complete selector certificate. The deterministic
-stress suite has positive penalty in 160 of 400 systems and changes the selected
-response in 166; these are regression facts, not estimates for the real fibres.
+is an exact policy penalty. It is not deletion credit, rollback distance, uniform
+slack or labelled routing slack.
 
 ## Active frontier
 
-1. Wrap every actual owner/provenance source in the canonical fibre-linkage certificate.
-2. Populate true pre-response points, removed sets, survivor backgrounds, entry orders
-   and rule-specific transition semantics.
-3. Run the exact background-dependent selector on every linked fibre; use `N_B^*<T` as
-   the literal improvement test once the true destroyed count is certified.
-4. On the nine one-triple hard-core hosts, prove one occurrence payment, a legal
-   rollback, or a sharper labelled route.
-5. On the two one-response four-triple hosts, prove four units or replace the operation,
-   state split, weights, route or auxiliary target.
-6. Treat rollback, occurrence correction and selector penalty as separate currencies;
-   transfer none across policies without a theorem.
-7. Complete deleted-load histograms, pool capacities, gap audits, domination and
-   transfer semantics for every genuine operation.
-8. Close every recurrent labelled row, eliminate certified auxiliaries and publish the
+1. Populate canonical linkage certificates for every actual owner/provenance fibre.
+2. Populate true pre-response points, removal sets, survivor backgrounds, entry orders
+   and rule-specific transition evidence.
+3. Replace repeated geometric response enumeration by the certified reduced signature
+   and 39-row affine library; record the chamber and exact full selector of every fibre.
+4. Compose every genuine operation with the linked-operation selector and certify the
+   actual destroyed threshold `T`.
+5. Resolve the nine one-triple hard-core hosts by one proved payment, legal rollback,
+   nonuniform weighting or sharper labelled routing.
+6. Resolve the two four-triple one-response hosts by four units or structural
+   replacement.
+7. Close the remaining 78 exceptional rows with full background, return, selector,
+   interface and labelled child terms.
+8. Complete pool audits, domination, transfer and state-label semantics for every
+   genuine operation.
+9. Close every recurrent labelled row, eliminate certified auxiliaries and publish the
    denominator-cleared global CRT quotient.
