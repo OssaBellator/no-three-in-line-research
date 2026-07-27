@@ -1,0 +1,15 @@
+{
+  "minimum_cycle_length": 4,
+  "maximum_cycle_length": 8,
+  "cases": [
+    {"cycle_length": 4, "unsigned_states": 6, "unsigned_degree": 4, "signed_degree": 32, "directed_unsigned_moves": 24, "inverse_checks": 24, "connected": true},
+    {"cycle_length": 5, "unsigned_states": 24, "unsigned_degree": 10, "signed_degree": 80, "directed_unsigned_moves": 240, "inverse_checks": 240, "connected": true},
+    {"cycle_length": 6, "unsigned_states": 120, "unsigned_degree": 20, "signed_degree": 160, "directed_unsigned_moves": 2400, "inverse_checks": 2400, "connected": true},
+    {"cycle_length": 7, "unsigned_states": 720, "unsigned_degree": 35, "signed_degree": 280, "directed_unsigned_moves": 25200, "inverse_checks": 25200, "connected": true},
+    {"cycle_length": 8, "unsigned_states": 5040, "unsigned_degree": 56, "signed_degree": 448, "directed_unsigned_moves": 282240, "inverse_checks": 282240, "connected": true}
+  ],
+  "total_unsigned_states": 5910,
+  "total_directed_unsigned_moves": 310104,
+  "all_switching_graphs_connected": true,
+  "asymptotic_seed_theorem_proved": false
+}
