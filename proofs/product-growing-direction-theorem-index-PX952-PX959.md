@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX989
+# Product growing-direction theorem index: PX952--PX993
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -40,3 +40,7 @@
 | PX987 | Exact clean-top census for multiplicity-two cases `160` through `239` | PROVED FINITE | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
 | PX988 | Exact shared bottom-CSP census for multiplicity-two cases `160` through `239` | PROVED FINITE | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
 | PX989 | The finite cache boundary advances to `38,080` infeasible selectors with `33,779` unclassified | PROVED REDUCTION | `docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md` |
+| PX990 | Multiplicity-two cases `240` through `319` contain 160 selectors, all infeasible in every orientation | PROVED FINITE | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
+| PX991 | Exact clean-top census for multiplicity-two cases `240` through `319` | PROVED FINITE | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
+| PX992 | Exact shared bottom-CSP census for multiplicity-two cases `240` through `319` | PROVED FINITE | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
+| PX993 | The finite cache boundary advances to `38,240` infeasible selectors with `33,619` unclassified | PROVED REDUCTION | `docs/310-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-twenty-four-through-thirty-one.md` |
