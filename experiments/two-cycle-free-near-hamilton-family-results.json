@@ -33,6 +33,21 @@
     {"m": 9, "canonical_edge_disjoint": 87761825, "canonical_two_cycle_free": 68334209},
     {"m": 10, "canonical_edge_disjoint": 1755259091, "canonical_two_cycle_free": 1366734401}
   ],
+  "coefficient_exhaustion": {
+    "maximum_pair_size": 8,
+    "permutations_checked": 46234,
+    "cases": [
+      {"m": 0, "permutations": 1, "canonical_edge_disjoint": 1, "canonical_two_cycle_free": 1},
+      {"m": 1, "permutations": 1, "canonical_edge_disjoint": 1, "canonical_two_cycle_free": 1},
+      {"m": 2, "permutations": 2, "canonical_edge_disjoint": 3, "canonical_two_cycle_free": 1},
+      {"m": 3, "permutations": 6, "canonical_edge_disjoint": 23, "canonical_two_cycle_free": 17},
+      {"m": 4, "permutations": 24, "canonical_edge_disjoint": 185, "canonical_two_cycle_free": 161},
+      {"m": 5, "permutations": 120, "canonical_edge_disjoint": 1809, "canonical_two_cycle_free": 1409},
+      {"m": 6, "permutations": 720, "canonical_edge_disjoint": 21739, "canonical_two_cycle_free": 16609},
+      {"m": 7, "permutations": 5040, "canonical_edge_disjoint": 304807, "canonical_two_cycle_free": 237649},
+      {"m": 8, "permutations": 40320, "canonical_edge_disjoint": 4876017, "canonical_two_cycle_free": 3805633}
+    ]
+  },
   "cylinder_audit": {
     "maximum_pair_size": 8,
     "maximum_prescribed_edges": 3,
