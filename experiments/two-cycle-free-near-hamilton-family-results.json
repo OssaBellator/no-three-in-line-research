@@ -1,0 +1,43 @@
+{
+  "public_code_cases": 13,
+  "all_public_code_cases_two_cycle_free": true,
+  "no_pair_two_cycle_primes": [17, 19, 23, 29, 31, 41, 43, 47, 53, 59, 61, 67, 73],
+  "hamilton_primes": [17, 73],
+  "one_fixed_near_hamilton_primes": [23, 29, 41, 47, 59, 61, 67],
+  "hamilton_or_one_fixed_case_count": 9,
+  "pair_cycle_partitions": {
+    "17": [8],
+    "19": [5, 4],
+    "23": [10, 1],
+    "29": [13, 1],
+    "31": [10, 4, 1],
+    "41": [19, 1],
+    "43": [17, 3, 1],
+    "47": [22, 1],
+    "53": [12, 8, 5, 1],
+    "59": [28, 1],
+    "61": [29, 1],
+    "67": [32, 1],
+    "73": [36]
+  },
+  "coefficient_table": [
+    {"m": 0, "canonical_edge_disjoint": 1, "canonical_two_cycle_free": 1},
+    {"m": 1, "canonical_edge_disjoint": 1, "canonical_two_cycle_free": 1},
+    {"m": 2, "canonical_edge_disjoint": 3, "canonical_two_cycle_free": 1},
+    {"m": 3, "canonical_edge_disjoint": 23, "canonical_two_cycle_free": 17},
+    {"m": 4, "canonical_edge_disjoint": 185, "canonical_two_cycle_free": 161},
+    {"m": 5, "canonical_edge_disjoint": 1809, "canonical_two_cycle_free": 1409},
+    {"m": 6, "canonical_edge_disjoint": 21739, "canonical_two_cycle_free": 16609},
+    {"m": 7, "canonical_edge_disjoint": 304807, "canonical_two_cycle_free": 237649},
+    {"m": 8, "canonical_edge_disjoint": 4876017, "canonical_two_cycle_free": 3805633},
+    {"m": 9, "canonical_edge_disjoint": 87761825, "canonical_two_cycle_free": 68334209},
+    {"m": 10, "canonical_edge_disjoint": 1755259091, "canonical_two_cycle_free": 1366734401}
+  ],
+  "cylinder_audit": {
+    "maximum_pair_size": 8,
+    "maximum_prescribed_edges": 3,
+    "full_hamilton_forests_checked": 19846,
+    "one_fixed_forests_checked": 19534
+  },
+  "asymptotic_seed_theorem_proved": false
+}
