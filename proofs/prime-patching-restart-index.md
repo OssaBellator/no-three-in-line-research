@@ -32,6 +32,7 @@ transition addendum in
 | Exact `p=37` repair | A support-thirteen signed-orbit repair gives a verified seed and proves the near-state radius is exactly thirteen | PROVED / VERIFIED FINITELY | `docs/292` |
 | `p=41` near-state and Hall radius | A verified four-line near-state has one common three-owner bad-line orbit and no canonical repair through support twelve | PROVED / VERIFIED FINITELY | `docs/293` |
 | Public `p=47` RLE certificate | The first public `c4-46` RLE record is independently decoded, decomposed, and determinant-verified | VERIFIED FINITELY | `docs/294` |
+| Wikimedia `p=59` coordinate certificate | The complete public `N=58` coordinate record is independently decomposed and determinant-verified with attribution retained | VERIFIED FINITELY | `docs/295` |
 
 ## Exact late theorem ranges
 
@@ -64,6 +65,7 @@ transition addendum in
 | PP3bgg--PP3bgm | Support-thirteen completion, verified `p=37` seed, exact repair radius, and compact code | PROVED / VERIFIED FINITELY | `docs/292-p37-support-thirteen-repair-certificate.md` |
 | PP3bgn--PP3bgu | Bad-line owner invariance, verified `p=41` near-state, exact Hall census, and radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/293-p41-four-line-near-state-and-hall-radius.md` |
 | PP3bgv--PP3bhb | Public RLE decoding, swapped decomposition, signed lift, verified `p=47` seed, and suite expansion | VERIFIED FINITELY | `docs/294-p47-public-rle-prime-seed-certificate.md` |
+| PP3bhc--PP3bhi | Attributed coordinate reconstruction, swapped decomposition, signed lift, verified `p=59` seed, and suite expansion | VERIFIED FINITELY | `docs/295-p59-wikimedia-coordinate-prime-seed-certificate.md` |
 
 ## Current exact endpoint
 
@@ -134,29 +136,30 @@ is claimed, and support thirteen remains unresolved.
 At `p=47`, the first public `c4-46` RLE record independently decodes to a
 quarter-turn swapped seed. Its pair cycles are `[22,1]`, with orientation
 parities `[1,0]` and relative cycles `[11,11,11,11,2]`. All
+`C(92,3)=125580` integer determinants are nonzero.
 
-```text
-C(92,3)=125580
-```
-
-integer determinants are nonzero, with minimum absolute value one.
+At `p=59`, the attributed Wikimedia coordinate record independently gives a
+quarter-turn swapped seed. Its pair cycles are `[28,1]`, with zero orientation
+parity on both cycles and relative cycles `[14,14,14,14,2]`. All
+`C(116,3)=253460` integer determinants are nonzero.
 
 The canonical exact certificate suite now verifies
 
 ```text
-p=3,5,7,11,13,17,19,23,29,31,37,47,61,67,73.
+p=3,5,7,11,13,17,19,23,29,31,37,47,59,61,67,73.
 ```
 
 The cases through `p=13` and the `p=37` case were generated on this branch. The
-`p=47` case is independently decoded from a public RLE record. The other larger
-cases are independently decoded and determinant-verified from compact public
-archive codes. These isolated finite certificates do not interpolate and do
-not prove asymptotic existence.
+`p=47` case is independently decoded from a public RLE record, and `p=59` from
+an attributed CC BY-SA Wikimedia coordinate record. The other larger cases are
+independently decoded and determinant-verified from compact public archive
+codes. These isolated finite certificates do not interpolate and do not prove
+asymptotic existence.
 
 The next finite certificate gaps are
 
 ```text
-p=41,43,53,59.
+p=41,43,53.
 ```
 
 The remaining theorem is:
@@ -188,6 +191,8 @@ python scripts/check_p41_swapped_orbit_near_state.py \
   experiments/p41-swapped-quarter-turn-near-example.json
 python scripts/check_p47_public_rle_certificate.py \
   experiments/p47-public-rle-certificate.json
+python scripts/check_p59_wikimedia_coordinate_certificate.py \
+  experiments/p59-wikimedia-coordinate-certificate.json
 ```
 
 For the exact support exclusions, compile and run the C++ checkers documented
