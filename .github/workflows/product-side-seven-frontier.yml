@@ -1,0 +1,55 @@
+name: Product side-seven frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-product-construction
+    paths:
+      - scripts/measure_product_side_seven_tier_shard.cpp
+      - scripts/product_side_seven_cache_engine.hpp
+      - scripts/product_side_seven_tier_shard_digest.hpp
+      - .github/workflows/product-side-seven-frontier.yml
+  workflow_dispatch:
+    inputs:
+      first_case:
+        description: First multiplicity-tier case index
+        required: true
+        default: '2200'
+      case_count:
+        description: Number of consecutive cases
+        required: true
+        default: '100'
+      multiplicity:
+        description: Multiplicity tier
+        required: true
+        default: '3'
+
+permissions:
+  contents: read
+
+jobs:
+  measure-shard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      FIRST_CASE: ${{ github.event_name == 'workflow_dispatch' && inputs.first_case || '2200' }}
+      CASE_COUNT: ${{ github.event_name == 'workflow_dispatch' && inputs.case_count || '100' }}
+      MULTIPLICITY: ${{ github.event_name == 'workflow_dispatch' && inputs.multiplicity || '3' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile measurement tool
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_tier_shard.cpp
+          -o /tmp/measure_product_side_seven_tier_shard
+      - name: Measure exact shard
+        run: >-
+          /tmp/measure_product_side_seven_tier_shard
+          "$FIRST_CASE" "$CASE_COUNT" "$MULTIPLICITY"
+          | tee product-side-seven-shard.txt
+      - name: Upload transcript
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-${{ env.MULTIPLICITY }}-${{ env.FIRST_CASE }}-${{ env.CASE_COUNT }}
+          path: product-side-seven-shard.txt
+          if-no-files-found: error
