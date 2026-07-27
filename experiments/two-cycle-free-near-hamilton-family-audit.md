@@ -53,7 +53,16 @@ canonical two-cycle-free covers `C_m`:
 | 9 | 87,761,825 | 68,334,209 | 0.778632 |
 | 10 | 1,755,259,091 | 1,366,734,401 | 0.778651 |
 
-The ratio approaches `exp(-1/4)=0.778800...`, as proved in PP3biy.
+The ratio approaches `exp(-1/4)=0.778800...`, as proved in PP3biy.  The values
+through `m=8` are also independently recovered by exhaustive weighted
+enumeration of all
+
+```text
+0!+1!+...+8! = 46,234
+```
+
+pair permutations, using the cycle weights from PP3bfo rather than the
+generating functions.
 
 The cylinder audit exhaustively enumerates directed cycles through pair size
 `m=8` and checks every compatible path forest of at most three prescribed
@@ -70,6 +79,9 @@ For a full Hamilton cycle, every `r`-edge path forest occurs in exactly
 occurs in exactly `(m-v)(m-r-2)!` choices of fixed vertex and cyclic order.
 Independent orientation bits then give the cylinder probabilities in PP3bjc
 and PP3bjd.
+
+The complete machine-readable ledger is stored in
+`experiments/two-cycle-free-near-hamilton-family-results.json`.
 
 This diagnostic verifies a structural reduction and a probability barrier.  It
 does not prove the asymptotic seed theorem.
