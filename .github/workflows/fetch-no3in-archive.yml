@@ -23,20 +23,15 @@ jobs:
             test -s "archive/n${n}_rot4"
             sha256sum "archive/n${n}_rot4"
           done
-      - name: Run certificate regressions
-        shell: bash
-        run: |
-          set -euo pipefail
-          python scripts/check_public_rot4_prime_certificates.py \
-            experiments/public-rot4-prime-certificates-p41-p43-p53.json \
-            --archive-dir archive
-          python scripts/check_prime_minus_one_seed.py \
-            experiments/prime-minus-one-seed-examples.json
-          python scripts/check_prime_seed_relative_cycles.py \
-            experiments/prime-seed-relative-cycle-example.json
-          python scripts/check_archived_prime_seed_codes.py \
-            experiments/archived-prime-seed-codes.json
-          python scripts/check_quarter_turn_seed_normal_forms.py \
-            experiments/archived-prime-seed-codes.json
-          python scripts/check_swapped_quarter_turn_orbit_csp.py \
-            experiments/archived-prime-seed-codes.json
+      - name: Verify recovered archive records
+        run: python scripts/check_public_rot4_prime_certificates.py experiments/public-rot4-prime-certificates-p41-p43-p53.json --archive-dir archive
+      - name: Verify canonical permutation suite
+        run: python scripts/check_prime_minus_one_seed.py experiments/prime-minus-one-seed-examples.json
+      - name: Verify relative-cycle suite
+        run: python scripts/check_prime_seed_relative_cycles.py experiments/prime-seed-relative-cycle-example.json
+      - name: Verify archived-code suite
+        run: python scripts/check_archived_prime_seed_codes.py experiments/archived-prime-seed-codes.json
+      - name: Verify quarter-turn normal forms
+        run: python scripts/check_quarter_turn_seed_normal_forms.py experiments/archived-prime-seed-codes.json
+      - name: Verify swapped orbit CSP
+        run: python scripts/check_swapped_quarter_turn_orbit_csp.py experiments/archived-prime-seed-codes.json
