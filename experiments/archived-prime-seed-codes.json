@@ -48,6 +48,14 @@
     "expected_pair_cycles": [22, 1]
   },
   {
+    "p": 59,
+    "archive_path": "Wikimedia:No-Three-In-Line_for_N=58.png:coordinate-description",
+    "code": "oLRchHcUV8B6gKqAdHrPSPoDrSgdk1Z5CMant7D12XpGvEfNYKQlm3X3vjm9C0sOs9AVbNYGh0f6Otuio28LZjqMuBIFT4i7WTW4eIl5bFpknQRJeEJUa",
+    "expected_cycles": [14, 14, 14, 14, 2],
+    "expected_quarter_turn_modes": ["swapped"],
+    "expected_pair_cycles": [28, 1]
+  },
+  {
     "p": 61,
     "archive_path": "n60_rot4",
     "code": "oKkZdVgFJQf9n8NTkIrbs5VLgCl07UeRuNP2B4pEu1xOm9Xhr1cRhMtYi2AEq7jnvFP4bGWLw6GQoBZ0w3j8tmvYa3WJTqxClHcSs5M6fDUapAoIXeiHSKODd",
