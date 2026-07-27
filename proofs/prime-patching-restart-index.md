@@ -28,6 +28,7 @@ transition addendum in
 | First missing-prime near-state | A `p=37` four-line near-state has no raw canonical signed-orbit repair changing at most six pair assignments | VERIFIED FINITELY | `docs/288` |
 | Relative cycle lift and count | Pair cycles lift independently to the full relative permutation; odd relative multiplicities are divisible by four; edge-disjointness costs asymptotic factor `exp(-1/4)` | PROVED / VERIFIED FINITELY | `docs/289` |
 | Hall-propagated orbit radius | Residual line domains and exact Hall tests exclude every `p=37` orbit repair through support twelve | PROVED / VERIFIED FINITELY | `docs/290` |
+| Conditioned swapped first moment | Even uniform edge-disjoint signed covers have `Theta(n log n)` expected generic first-layer collinear triples | PROVED / VERIFIED FINITELY | `docs/291` |
 
 ## Exact late theorem ranges
 
@@ -56,6 +57,7 @@ transition addendum in
 | PP3bfc--PP3bfk | `p=37` four-line near-state, canonical signed-orbit support, raw repair census, and initial radius lower bound | PROVED / VERIFIED FINITELY | `docs/288-p37-swapped-orbit-near-seed-and-repair-radius.md` |
 | PP3bfl--PP3bfr | Exact pair-cycle lift, swapped odd-cycle divisibility, and signed-cover generating functions | PROVED / VERIFIED FINITELY | `docs/289-swapped-quarter-turn-relative-cycle-lift-and-count.md` |
 | PP3bfs--PP3bfz | Residual line domains, Hall-propagated branch-and-bound, and `p=37` radius-thirteen lower bound | PROVED / VERIFIED FINITELY | `docs/290-p37-swapped-orbit-hall-branch-and-bound-radius.md` |
+| PP3bga--PP3bgf | Generic signed cylinders and the conditioned swapped-quarter-turn first-moment barrier | PROVED / VERIFIED FINITELY | `docs/291-edge-disjoint-swapped-first-moment-barrier.md` |
 
 ## Current exact endpoint
 
@@ -95,21 +97,27 @@ one incoming and one outgoing edge per pair vertex,
 and one linear capacity inequality per maximal nonaxis line.
 ```
 
-The relative incidence structure inside this class is now explicit. On a
+The relative incidence structure inside this class is explicit. On a
 `rho`-cycle of length `ell`:
 
 ```text
-ell odd        -> one relative cycle of length 2ell;
-ell even, delta=1 -> two relative cycles of length ell;
-ell even, delta=0 -> four relative cycles of length ell/2.
+ell odd             -> one relative cycle of length 2ell;
+ell even, delta=1   -> two relative cycles of length ell;
+ell even, delta=0   -> four relative cycles of length ell/2.
 ```
 
 Here `delta=(ell/2 mod 2) xor` the orientation parity on the pair cycle. Thus
 every odd relative-cycle length in swapped action has multiplicity divisible
 by four. Exact signed-cover counting shows that edge-disjointness has limiting
 probability `exp(-1/4)` among ordered signed permutations and among canonical
-orbit covers. Duplicate-orbit avoidance is therefore a constant-factor issue;
-the maximal-line system remains the main obstruction.
+orbit covers. Duplicate-orbit avoidance is therefore a constant-factor issue.
+
+Conditioning on that exact edge-disjointness does not remove the probabilistic
+barrier. Generic nonaxis triples still number `Theta(n^4 log n)`, and each has
+conditional first-layer cylinder probability `Theta(n^-3)`. A uniform
+edge-disjoint signed cover therefore has `Theta(n log n)` expected generic
+first-layer collinear triples. The maximal-line geometry, not collision removal,
+remains the dominant obstacle for uniform measures.
 
 The repair frontier is sharp at two scales. For the one-defect `p=17` state, a
 complete census of `46,975,993` exact two-sided candidates proves that no repair
@@ -134,9 +142,9 @@ not a seed. Its relative partition is forced by the lift law to be
 `[22,6,6,2]`. Every bad line uses the same three old orbit blocks.
 
 The raw support-six census checks `326,715,225` signed assignments. The
-Hall-propagated extension then exhausts all `195,650` exact support subsets from
+Hall-propagated extension exhausts all `195,650` exact support subsets from
 seven through twelve, visits `8,643,339` branch nodes, and finds no repair.
-Therefore the local canonical orbit radius is now
+Therefore the local canonical orbit radius is
 
 ```text
 h_orbit >= 13.
@@ -189,6 +197,8 @@ python scripts/check_swapped_quarter_turn_orbit_csp.py \
   experiments/archived-prime-seed-codes.json
 python scripts/check_swapped_relative_cycle_lift.py \
   experiments/swapped-relative-cycle-lift-example.json
+python scripts/check_swapped_edge_disjoint_first_moment.py \
+  experiments/swapped-edge-disjoint-first-moment-example.json
 
 g++ -O3 -std=c++17 \
   scripts/check_p17_coordinated_repair_support.cpp \
@@ -219,5 +229,5 @@ The larger support-eleven and support-twelve shard commands are recorded in
 
 The earlier finite lists in `docs/278`, `docs/280`, and `docs/282` record the
 state at those chapters. The current canonical suite and superseding frontier
-are `docs/284`--`docs/290` and
+are `docs/284`--`docs/291` and
 `experiments/prime-minus-one-seed-examples.json`.
