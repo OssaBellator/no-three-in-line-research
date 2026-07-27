@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX979
+# Product growing-direction theorem index: PX952--PX985
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -30,3 +30,9 @@
 | PX977 | Exact clean-top census for multiplicity-two cases `80` through `159` | PROVED FINITE | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
 | PX978 | Exact shared bottom-CSP census for multiplicity-two cases `80` through `159` | PROVED FINITE | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
 | PX979 | The finite cache boundary advances to `37,920` infeasible selectors with `33,939` unclassified | PROVED REDUCTION | `docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md` |
+| PX980 | Side-ten transpositions split into affine conjugacy orbits of sizes `20`, `20`, and `5` | PROVED FINITE/GROUP-THEORETIC | `docs/307-side-ten-transposition-double-coset-search-space.md` |
+| PX981 | The three affine transposition double cosets have sizes `800`, `800`, and `200` | PROVED FINITE/GROUP-THEORETIC | `docs/307-side-ten-transposition-double-coset-search-space.md` |
+| PX982 | The complete side-ten one-transposition double-coset search has `288,000` geometries across four orientations | PROVED REDUCTION | `docs/307-side-ten-transposition-double-coset-search-space.md` |
+| PX983 | The opposite-pair double coset is infeasible in side-ten orientations `cc` and `cf` | PROVED FINITE | `docs/308-side-ten-opposite-pair-double-coset-coarse-obstruction.md` |
+| PX984 | Any opposite-pair double-coset recursive template must use orientation `fc` or `ff` | PROVED REDUCTION | `docs/308-side-ten-opposite-pair-double-coset-coarse-obstruction.md` |
+| PX985 | The coarse-row opposite-pair obstruction is partitioned into exact 100-geometry replay intervals | PROVED IMPLEMENTATION REDUCTION | `docs/308-side-ten-opposite-pair-double-coset-coarse-obstruction.md` |
