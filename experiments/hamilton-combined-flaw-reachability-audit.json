@@ -1,0 +1,92 @@
+{
+  "minimum_pair_size": 4,
+  "maximum_pair_size": 6,
+  "cases": [
+    {
+      "m": 4,
+      "states": 96,
+      "defective_states": 80,
+      "global_minimum_triples": 0,
+      "global_minimum_states": 16,
+      "bad_triple_occurrences_by_owner_count": {
+        "2": 64,
+        "3": 416
+      },
+      "states_with_defects_but_no_three_owner_triple": 0,
+      "maximum_points_from_one_owner_on_a_bad_line": 2,
+      "unique_directed_flaw_targeted_edges": 864,
+      "states_with_no_legal_flaw_targeted_move": 0,
+      "all_states_reach_global_minimum": true,
+      "maximum_distance_to_global_minimum": 2,
+      "distance_distribution": {
+        "0": 16,
+        "1": 40,
+        "2": 40
+      },
+      "one_step_local_minima_including_global_minima": 52,
+      "nonminimal_one_step_local_minima": 36,
+      "nonminimal_local_minimum_distance_distribution": {
+        "2": 36
+      }
+    },
+    {
+      "m": 5,
+      "states": 768,
+      "defective_states": 752,
+      "global_minimum_triples": 0,
+      "global_minimum_states": 16,
+      "bad_triple_occurrences_by_owner_count": {
+        "2": 2304,
+        "3": 7552
+      },
+      "states_with_defects_but_no_three_owner_triple": 32,
+      "maximum_points_from_one_owner_on_a_bad_line": 2,
+      "unique_directed_flaw_targeted_edges": 15632,
+      "states_with_no_legal_flaw_targeted_move": 0,
+      "all_states_reach_global_minimum": true,
+      "maximum_distance_to_global_minimum": 3,
+      "distance_distribution": {
+        "0": 16,
+        "1": 168,
+        "2": 520,
+        "3": 64
+      },
+      "one_step_local_minima_including_global_minima": 156,
+      "nonminimal_one_step_local_minima": 140,
+      "nonminimal_local_minimum_distance_distribution": {
+        "2": 96,
+        "3": 44
+      }
+    },
+    {
+      "m": 6,
+      "states": 7680,
+      "defective_states": 7680,
+      "global_minimum_triples": 4,
+      "global_minimum_states": 84,
+      "bad_triple_occurrences_by_owner_count": {
+        "2": 24576,
+        "3": 126464
+      },
+      "states_with_defects_but_no_three_owner_triple": 32,
+      "maximum_points_from_one_owner_on_a_bad_line": 2,
+      "unique_directed_flaw_targeted_edges": 252896,
+      "states_with_no_legal_flaw_targeted_move": 0,
+      "all_states_reach_global_minimum": true,
+      "maximum_distance_to_global_minimum": 3,
+      "distance_distribution": {
+        "0": 84,
+        "1": 2156,
+        "2": 5384,
+        "3": 56
+      },
+      "one_step_local_minima_including_global_minima": 848,
+      "nonminimal_one_step_local_minima": 764,
+      "nonminimal_local_minimum_distance_distribution": {
+        "2": 736,
+        "3": 28
+      }
+    }
+  ],
+  "asymptotic_seed_theorem_proved": false
+}
