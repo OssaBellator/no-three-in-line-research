@@ -22,6 +22,8 @@ transition addendum in
 | Geometric symmetry and internal certificates | Exact square-symmetry quotient, row-relabel barrier, and internally generated `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282` |
 | Inverse-conic extension CSP | Scaled inverse layers are clean; fixed-layer completion is an exact line-capacity CSP; finite non-extension and two-sided-repair barriers | PROVED / VERIFIED FINITELY | `docs/283` |
 | Archived code decoding | Standard row-pair codes are independently decoded, decomposed, and determinant-verified, adding eight prime certificates | PROVED / VERIFIED FINITELY | `docs/284` |
+| Quarter-turn equivariant normal forms | Fixed action is a square-root system; swapped action is one signed permutation with forced second layer; relative odd cycles obey a parity law | PROVED / VERIFIED FINITELY | `docs/285` |
+| Coordinated repair support census | The audited one-defect `p=17` state has no repair changing at most seven assignment positions | VERIFIED FINITELY | `docs/286` |
 
 ## Exact late theorem ranges
 
@@ -44,6 +46,8 @@ transition addendum in
 | PP3bdl--PP3bdq | Geometric symmetry group and `p=13` certificate | PROVED / VERIFIED FINITELY | `docs/282-prime-seed-geometric-symmetry-and-p13-certificate.md` |
 | PP3bdr--PP3bdx | Inverse-conic layers, exact extension CSP, and two-sided repair barrier | PROVED / VERIFIED FINITELY | `docs/283-inverse-conic-layer-extension-csp.md` |
 | PP3bdy--PP3bee | Archive-code decoding, exact decomposition, and additional prime certificates | PROVED / VERIFIED FINITELY | `docs/284-archived-seed-code-decoding-and-prime-certificates.md` |
+| PP3bef--PP3bem | Quarter-turn action, parity colouring, signed-permutation and square-root normal forms, and relative-cycle parity | PROVED / VERIFIED FINITELY | `docs/285-quarter-turn-equivariant-seed-normal-forms.md` |
+| PP3ben--PP3beu | Exact support normal form, line-delta census, and `p=17` coordinated-repair lower bound | PROVED / VERIFIED FINITELY | `docs/286-p17-coordinated-repair-support-census.md` |
 
 ## Current exact endpoint
 
@@ -64,10 +68,38 @@ the expected bad-triple count is `Theta(n log n)`, and the natural symmetric
 permutation-LLL expression is `Omega(log n)`.  Scaled inverse layers give a
 uniform family of individually clean nonlinear permutations, but exact
 fixed-layer searches show that this one-layer ansatz does not extend for
-`p=13,17,19,23,29,31`.  A one-defect `p=17` state also proves that a general
-repair may need coordinated changes in both layers.
+`p=13,17,19,23,29,31`.
 
-The canonical exact certificate suite now verifies
+Quarter-turn symmetry now supplies a smaller structured search class.  In the
+swapped-layer mode, `sigma` commutes with coordinate reversal and
+
+```text
+tau=sigma^(-1) o J.
+```
+
+Thus the candidate space is one signed permutation of the `n/2` reversal
+pairs, of cardinality `2^(n/2)(n/2)!`, rather than an unrestricted ordered
+pair of permutations.  Fixed action instead requires two square roots of `J`
+and is possible only when `4|n`.  In either action the relative permutation
+commutes with `J`, so every odd relative-cycle length has even multiplicity.
+All eight stored quarter-turn archive cases admit swapped action; the `p=17`
+and `p=73` cases also admit fixed action.
+
+The repair frontier is also sharper.  The one-defect `p=17` state admits no
+one-sided repair.  A complete census of `46,975,993` exact two-sided candidates
+proves that no repair changes at most seven assignment positions.  Hence its
+minimum labelled repair support is at least eight; comparison with the stored
+valid `p=17` seed gives the finite interval
+
+```text
+8 <= h_min <= 29.
+```
+
+This rules out a general repair theorem based only on one-layer moves or very
+small coordinated supports, but does not rule out a larger bounded switch, a
+slowly growing support, or a structured global absorption move.
+
+The canonical exact certificate suite verifies
 
 ```text
 p=3,5,7,11,13,17,19,23,29,31,61,67,73.
@@ -104,9 +136,16 @@ python scripts/check_inverse_layer_extension.py \
   experiments/inverse-layer-extension-example.json
 python scripts/check_archived_prime_seed_codes.py \
   experiments/archived-prime-seed-codes.json
+python scripts/check_quarter_turn_seed_normal_forms.py \
+  experiments/archived-prime-seed-codes.json
+g++ -O3 -std=c++17 \
+  scripts/check_p17_coordinated_repair_support.cpp \
+  -o /tmp/check_p17_repair
+/tmp/check_p17_repair \
+  experiments/p17-coordinated-repair-support-example.json
 ```
 
 The earlier finite lists in `docs/278`, `docs/280`, and `docs/282` record the
 state at those chapters.  The current canonical suite and superseding finite
-frontier are `docs/284` and
+frontier are `docs/284`, `docs/285`, `docs/286`, and
 `experiments/prime-minus-one-seed-examples.json`.
