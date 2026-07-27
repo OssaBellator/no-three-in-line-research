@@ -1,4 +1,4 @@
-# Product growing-direction theorem index: PX952--PX996
+# Product growing-direction theorem index: PX952--PX999
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
@@ -47,3 +47,6 @@
 | PX994 | The Nicolas--Robin theorem gives an ambient subexponential divisor cap with rational constant `1.538` | PROVED USING NICOLAS--ROBIN | `docs/311-nicolas-robin-subexponential-divisor-baseline.md` |
 | PX995 | The Nicolas--Robin divisor input makes every active paired inequality hold from `N>=10^14104`, while `10^14103` fails | PROVED FINITE/ARITHMETIC | `docs/311-nicolas-robin-subexponential-divisor-baseline.md` |
 | PX996 | The baseline universal subexponential divisor estimate does not improve the active `10^2874` cutoff | PROVED REDUCTION | `docs/311-nicolas-robin-subexponential-divisor-baseline.md` |
+| PX997 | The first eight clean top orders of multiplicity-two case zero have explicit bottom covers for both selectors in every orientation | PROVED FINITE | `docs/312-side-seven-multiplicity-two-case-zero-eight-top-bottom-covers.md` |
+| PX998 | Exact cover-size, triple-dictionary, cover-dictionary, and digest census for the 64 fixed-top obligations | PROVED FINITE | `docs/312-side-seven-multiplicity-two-case-zero-eight-top-bottom-covers.md` |
+| PX999 | Low-multiplicity cover compression is orientation-sensitive; orientation three uses only 19 triples and 10 covers on the prefix | PROVED REDUCTION | `docs/312-side-seven-multiplicity-two-case-zero-eight-top-bottom-covers.md` |
