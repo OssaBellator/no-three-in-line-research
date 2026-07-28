@@ -57,7 +57,7 @@ def exact_candidate(record: dict[str, Any], path: str, weights: dict[str, int]) 
         "minimum_row_load": claims["minimum_row_load"],
         "maximum_margin": claims["maximum_margin"],
         "selected_response": claims["selected_response"],
-        "minimizer_count": claims["minimizer_count"],
+        "minimizer_count": claims["minimum_row_load_count"],
         "strict_row": claims["strict_row"],
         "routing_certificate": route_certificate,
         "routing_certificate_sha256": route_certificate["certificate_sha256"],
