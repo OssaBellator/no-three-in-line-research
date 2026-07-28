@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2381 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2389 the branch has:
 
 - 740 canonical raw hosts and 9,260 response records;
 - source-traceable clause expansion into source-independent operation slots;
@@ -17,13 +17,13 @@ The no-three-in-line conjecture remains open. Through CMR2381 the branch has:
 - spanning equivalence evidence for shared state classes;
 - support SCC condensation and exact critical-rank path bounds;
 - a fixed nineteen-obligation semantic closure DAG;
-- typed obligation artifacts, exact blocker scheduling and noncircular artifact support;
+- typed obligation artifacts, exact blocker scheduling and canonical noncircular artifact support;
 - an optional edgewise lexicographic termination audit;
 - a fixed ten-premise pre-root implication contract and typed premise artifacts;
-- a strict final dossier-integrity gate;
 - predicate-level semantics for every global state;
-- theorem-level semantics for every final quotient row; and
-- a fixed six-assertion documentary handoff to ordinary induction review.
+- theorem-level semantics for every final quotient row;
+- a fixed six-assertion documentary handoff to ordinary induction review; and
+- a transparent seven-gate final dossier-integrity audit with exact blocker publication.
 
 No theorem supplies the genuine exhaustive recurrence, complete real population, proved
 external semantics, genuine complete strict blocks and interface rows, or a proof that the
@@ -207,7 +207,17 @@ support DAG and complete quotient semantic refinement.
 
 The handoff remains documentary and always publishes `all_n_proved_by_checker = 0`.
 
-## 16. Immediate execution order
+## 16. Pass the final dossier-integrity audit
+
+The CMR2382--CMR2389 audit reconstructs seven nested gates from one final handoff certificate:
+finite-interface readiness, root-dependency closure, premise-contract readiness, typed premise
+coverage, exact support-DAG integrity, quotient semantic refinement and handoff readiness.
+
+It publishes every open semantic obligation, current actionable frontier, open final premise,
+open handoff assertion and the root implication's closure/actionability state. A ready audit is
+an internally consistent documentary endpoint, not a theorem proof.
+
+## 17. Immediate execution order
 
 ### Priority 1: source truth and exhaustive skeleton
 
@@ -238,9 +248,9 @@ Close all 232 zero-selector obligations and the complete 20-chamber hard core.
 ### Priority 7: proof artifacts and final handoff
 
 Populate noncircular typed artifact bundles, close the blocker schedule, finish all ten premises
-and all six handoff assertions, and review the final induction.
+and all six handoff assertions, pass the seven-gate audit and review the final induction.
 
-## 17. Fixed semantic obligation DAG
+## 18. Fixed semantic obligation DAG
 
 The executable closure surface fixes these nineteen obligations:
 
@@ -266,7 +276,7 @@ The executable closure surface fixes these nineteen obligations:
 
 An obligation cannot close while any exact dependency remains open.
 
-## 18. Honesty boundaries
+## 19. Honesty boundaries
 
 - Traceability and evidence digests do not prove cited statements true.
 - Finite clause expansion and family skeletons do not prove the supplied rule exhaustive.
@@ -281,15 +291,16 @@ An obligation cannot close while any exact dependency remains open.
 - Typed artifact completeness and support acyclicity do not prove truth or sufficiency.
 - Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is only a sufficient termination mode.
-- A ready premise contract, integrity dossier or induction handoff remains subject to ordinary
+- A ready premise contract, induction handoff or final audit remains subject to ordinary
   mathematical review.
 - Every final checker permanently reports `all_n_proved_by_checker = 0`.
 - Finite checker publication does not imply full dependency suites ran here.
 
-## 19. Current endpoint
+## 20. Current endpoint
 
-Through CMR2381 the finite interface reaches from source-traceable rule clauses through a
-noncircular expected global family, typed noncircular documentary proof structure and explicit
-predicate/theorem semantics to a six-assertion final induction handoff. The unresolved center
-is the genuine mathematics: actual exhaustive data, proof of every semantic statement,
-exceptional and hard-core closure, and ordinary review of the final implication to all `n`.
+Through CMR2389 the finite interface reaches from source-traceable rule clauses through a
+noncircular expected global family, typed exact-coverage documentary proof structure, explicit
+predicate/theorem semantics and a six-assertion final induction handoff to a transparent
+seven-gate integrity audit. The unresolved center is the genuine mathematics: actual exhaustive
+data, proof of every semantic statement, exceptional and hard-core closure, and ordinary review
+of the final implication to all `n`.
