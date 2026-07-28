@@ -9,7 +9,6 @@ execution family.
 """
 from __future__ import annotations
 
-import copy
 import json
 import sys
 from collections import Counter
@@ -89,6 +88,7 @@ def exact_selected_row(record: dict[str, Any], path: str) -> dict[str, Any]:
         "selected_response": selected_response,
         "selected_assignments": assignments,
         "selected_routed_units": len(assignments),
+        "routing_certificate": certificate,
         "routing_certificate_sha256": certificate["certificate_sha256"],
     }
     output["selected_row_sha256"] = catalogue.canonical_digest(output)
