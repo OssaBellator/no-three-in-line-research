@@ -1,0 +1,16 @@
+{
+  "m":10,
+  "representatives":[
+    {"orientation":478,"signature":"nested:2,3","pareto_profile":"3,12,2"},
+    {"orientation":293,"signature":"alternating:3,5","pareto_profile":"tradeoff"},
+    {"orientation":382,"signature":"alternating:2,2","pareto_profile":"3,12,1"},
+    {"orientation":209,"signature":"alternating:4,4","pareto_profile":"2,8,2"},
+    {"orientation":42,"signature":"nested:2,3","pareto_profile":"3,12,2"},
+    {"orientation":311,"signature":"alternating:3,5","pareto_profile":"tradeoff"},
+    {"orientation":25,"signature":"alternating:2,2","pareto_profile":"3,12,1"},
+    {"orientation":402,"signature":"alternating:4,4","pareto_profile":"2,8,2"}
+  ],
+  "complement_pairs_per_signature":2,
+  "support_chord_signature_classifies_all_four_pareto_types":true,
+  "global_sign_complement_invariant":true
+}
