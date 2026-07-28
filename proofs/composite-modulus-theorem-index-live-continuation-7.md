@@ -32,9 +32,9 @@ The authoritative live ledger is split across:
 | CMR2318--2325 | Fixed obligation-specific artifact kinds, canonical artifact records, exact proved/open bundle rules, reconstructed bundle digests, closure-to-bundle binding, aggregate census, artifact boundary, and executable endpoint | PROVED as typed documentary coverage; checker syntax-compiled; artifact truth and sufficiency remain unverified | `docs/393-prime-power-obligation-artifact-registry.md` |
 | CMR2326--2333 | Transitive obligation dependencies, exact open blocker sets, actionable frontier, parallel completion waves, canonical blocker chains, downstream impacts, planning boundary, and executable endpoint | PROVED as exact dependency scheduling over declared status; checker syntax-compiled; no difficulty or time estimate claimed | `docs/394-prime-power-obligation-blocker-schedule.md` |
 | CMR2334--2341 | Edgewise global-weight/rank drops, exact edge classification, explicit nondecreasing failures, descending-graph topological order, exact longest path, complete optional termination flag, sufficiency boundary, and executable endpoint | PROVED as a stronger optional pathwise audit; checker syntax-compiled; edgewise descent is not required for semantic multiset induction | `docs/395-prime-power-edgewise-lexicographic-support.md` |
-| CMR2342--2349 | Ten fixed implication premises, exact obligation dependencies, proof modes, effective premise closure, termination-mode gate, final readiness criterion, proof boundary, and executable endpoint | PROVED as a final dossier contract; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no dossier is claimed ready | `docs/396-prime-power-final-implication-premise-contract.md` |
+| CMR2342--2349 | Ten fixed implication premises, exact obligation dependencies, proof modes, effective premise closure, pre-root readiness criterion, proof boundary, and executable endpoint | PROVED as a pre-root final dossier contract; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no dossier is claimed ready | `docs/396-prime-power-final-implication-premise-contract.md` |
 | CMR2350--2357 | Exact artifact-support edges, dependency-aligned citations, support-DAG acyclicity, transitive support closures and depths, complete immediate-dependency artifact support, aggregate records, support boundary, and executable endpoint | PROVED as noncircular documentary support; checker syntax-compiled and graph fixtures passed; artifact truth and logical sufficiency remain unverified | `docs/397-prime-power-obligation-artifact-support-dag.md` |
-| CMR2358--2365 | Shared-registry composition, artifact-support integrity gate, inherited final contract gate, strict combined readiness, exact blocker publication, permanent nonproof flag, final integrity boundary, and executable endpoint | PROVED as a final documentary integrity gate; checker syntax-compiled; `all_n_proved_by_checker` remains zero and current readiness is unsatisfied | `docs/398-prime-power-final-dossier-integrity.md` |
+| CMR2358--2365 | Typed final-premise artifacts, exact contract and shared-registry binding, obligation-artifact support integrity, pre-root contract inheritance, strict three-gate readiness, exact publication, permanent nonproof flag, final integrity boundary, and executable endpoint | PROVED as a final pre-root documentary integrity gate; checkers syntax-compiled; `all_n_proved_by_checker` remains zero and current readiness is unsatisfied | `docs/398-prime-power-final-dossier-integrity.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -79,10 +79,11 @@ bundle digest is rebound into the closure certificate. The fixed DAG publishes e
 blocker, the currently actionable frontier, a canonical longest dependency chain and the
 minimum number of parallel completion waves.
 
-The artifact-support graph must now be acyclic and may cite only the same obligation or a
-transitive prerequisite. Every proved bundle must reach every artifact in each immediate
-prerequisite bundle. The final integrity endpoint combines this noncircular support condition
-with the ten-premise implication contract. Every checker retains
+The obligation-artifact support graph must be acyclic and may cite only the same obligation or
+a transitive prerequisite. Every proved bundle must reach every artifact in each immediate
+prerequisite bundle. Every proved final premise also requires one exact typed artifact citing
+all of its semantic dependency modules. The final integrity endpoint combines those two
+artifact layers with the pre-root ten-premise contract. Every checker retains
 `all_n_proved_by_checker = 0`.
 
 ## Active frontier
