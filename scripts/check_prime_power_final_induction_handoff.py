@@ -147,8 +147,9 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     ready = int(
         contract_exact["claims"]["final_implication_contract_ready"]
         and premise_registry_exact["claims"]["exact_typed_premise_artifact_coverage"]
-        and artifact_dag_exact["claims"]["acyclic_artifact_support"]
-        and artifact_dag_exact["claims"]["immediate_dependency_artifact_coverage"]
+        and artifact_dag_exact["claims"]["artifact_support_acyclic"]
+        and artifact_dag_exact["claims"]["artifact_support_dependency_aligned"]
+        and artifact_dag_exact["claims"]["exact_dependency_artifact_support_coverage"]
         and refinement_exact["claims"]["complete_state_semantic_coverage"]
         and refinement_exact["claims"]["complete_row_semantic_coverage"]
         and all_effective
