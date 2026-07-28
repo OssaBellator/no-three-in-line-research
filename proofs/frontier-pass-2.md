@@ -13,9 +13,10 @@ This addendum records the mixed-orientation legality results proved after the cu
 | SAS5im--SAS5iq | Nonnegative additive fan output separates at any fixed threshold into a concentrated terminal-barrier ledger or a concentrated neutral ledger; neutral capacity pays the branch or returns one exact overload | PROVED UNDER THE COMPLETE BARRIER/NEUTRAL LEDGER CLASSIFICATION CONTRACT | `docs/sparse-barrier-neutral-ledger-separation.md` |
 | SAS5ir--SAS5iv | Nonnegative bounded boundary profiles aggregate into at most `(B+1)^d` signatures; nonzero total output yields one heavy exact boundary coordinate, while zero total profile means every used ledger is boundary-neutral | PROVED UNDER THE COMPLETE NONNEGATIVE BOUNDARY-PROFILE CONTRACT | `docs/sparse-boundary-profile-quotient.md` |
 | SAS5iw--SAS5ja | Signed bounded boundary profiles have exact coordinate cancellation `C=(V-||Z||_1)/2`; either one signed coordinate is heavy or a quantified fraction of variation pairs neutrally | PROVED UNDER THE COMPLETE SIGNED ADDITIVE BOUNDARY AND LEGAL-PAIRING CONTRACTS | `docs/sparse-signed-boundary-cancellation.md` |
+| SAS5jb--SAS5jf | For each boundary coordinate, maximum legal opposite-sign cancellation is an exact bipartite matching; residual variation is unavoidable net boundary plus twice the sign-pair Hall deficiency | PROVED UNDER THE COMPLETE PHYSICAL SIGN-PAIR GRAPH CONTRACT | `docs/sparse-legal-cancellation-transport.md` |
 
 ## Updated frontier
 
-Mixed-orientation legality now has heavy-core, capacity and output-ledger routes. Compatible fan output compresses through nonnegative or signed boundary profiles; signed output splits exactly into heavy residual boundary or coordinatewise cancellation. Remaining SAS6 work is proving concrete core shareability and output lower bounds, validating physical opposite-sign pairing, and completing exact balanced compression.
+Mixed-orientation legality now has heavy-core, capacity and output-ledger routes. Signed boundary output has both an algebraic cancellation identity and a physical matching criterion, with every extra residual unit localized to a sign-pair Hall cut. Remaining SAS6 work is proving concrete core shareability and output lower bounds, sign-pair Hall inequalities and exact balanced compression.
 
 No statement here proves SAS6 or the no-three-in-line conjecture.
