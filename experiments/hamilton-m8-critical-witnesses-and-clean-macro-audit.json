@@ -1,0 +1,37 @@
+{
+  "m": 8,
+  "sharp_five_step_states": 44,
+  "sharp_distinct_hamilton_cycles": 14,
+  "sharp_orientation_complement_orbits": 22,
+  "sharp_support_type_distribution": {
+    "pair=0,triple=1": 32,
+    "pair=1,triple=0": 12
+  },
+  "sharp_minimum_first_neighbour_defect": {
+    "4": 4,
+    "8": 8,
+    "12": 8,
+    "16": 20,
+    "20": 4
+  },
+  "sharp_shortest_move_profile": {
+    "F,R,R,R,R": 12,
+    "R,R,R,R,R": 32
+  },
+  "parity_clean_states": 404080,
+  "parity_clean_macro_unreachable": 0,
+  "parity_clean_macro_maximum_distance": 3,
+  "parity_clean_macro_distance_distribution": {
+    "0": 28,
+    "1": 66844,
+    "2": 303576,
+    "3": 33632
+  },
+  "sharp_three_owner_macro_distance_distribution": {
+    "1": 12,
+    "2": 4,
+    "3": 16
+  },
+  "verified": true,
+  "asymptotic_seed_theorem_proved": false
+}
