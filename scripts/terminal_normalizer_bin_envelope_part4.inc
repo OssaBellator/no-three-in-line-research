@@ -78,6 +78,15 @@ int main(int argc,char**argv){
   };
   const long long expectedNum[11]={0,0,0,0,0,0,0,0,285067172,18995653877059LL,8507693248751944LL};
   const long long expectedDen[11]={1,1,1,1,1,1,1,1,383360387,17049712431135LL,21711076395041385LL};
+  const long long expectedCorrNum[11]={0,0,0,0,0,0,0,0,203200918,148937290752LL,7972033929088LL};
+  const long long expectedCorrDen[11]={1,1,1,1,1,1,1,1,383360387,183330241195LL,35188130299905LL};
+  const long long expectedCorrCounts[11][5]={
+    {},{},{},{},{},{},{},{},
+    {16,384,1344,0,0},
+    {0,256,5376,1536,0},
+    {0,896,4096,3072,0}
+  };
+  const int expectedCorrComponents[11]={0,0,0,0,0,0,0,0,8,8,9};
   const char* expectedExactNum[11]={"0","0","0","0","0","0","0","0",
     "1468416446839930521721999",
     "406616023430754819367780545483294984597292560691",
@@ -91,10 +100,14 @@ int main(int argc,char**argv){
     Result r=run_case(m);
     bool ok=r.normalizer_min==expectedMin[m]&&r.normalizer_max==expectedMax[m]&&
       r.normalizer_bin_count==expectedBins[m]&&r.bin_envelope_num==expectedNum[m]&&
-      r.bin_envelope_den==expectedDen[m]&&r.reverse_num==uint256_t(expectedExactNum[m])&&
+      r.bin_envelope_den==expectedDen[m]&&r.correlated_bin_num==uint256_t(expectedCorrNum[m])&&
+      r.correlated_bin_den==uint256_t(expectedCorrDen[m])&&
+      r.correlated_bin_target_components==expectedCorrComponents[m]&&
+      r.correlated_bin_target_cycles_tied==2&&r.reverse_num==uint256_t(expectedExactNum[m])&&
       r.reverse_den==uint256_t(expectedExactDen[m]);
     for(int j=0;j<r.normalizer_bin_count;j++)
-      ok=ok&&r.maximum_target_labels_in_bin[j]==expectedCounts[m][j];
+      ok=ok&&r.maximum_target_labels_in_bin[j]==expectedCounts[m][j]&&
+        r.correlated_bin_counts[j]==expectedCorrCounts[m][j];
     if(!ok){cerr<<"terminal normalizer-bin regression mismatch at m="<<m<<"\n";return 2;}
     cout<<"    {\"m\":"<<m
         <<",\"normalizer_range\":["<<r.normalizer_min<<","<<r.normalizer_max<<"]"
@@ -108,6 +121,13 @@ int main(int argc,char**argv){
     cout<<"],\"bin_envelope\":\""<<r.bin_envelope_num<<"/"<<r.bin_envelope_den<<"\""
         <<",\"bin_envelope_decimal\":"<<(double)r.bin_envelope_num/r.bin_envelope_den
         <<",\"bin_envelope_contractive\":"<<(r.bin_envelope_num<r.bin_envelope_den?"true":"false")
+        <<",\"correlated_bin_envelope\":\""<<r.correlated_bin_num<<"/"<<r.correlated_bin_den<<"\""
+        <<",\"correlated_bin_envelope_decimal\":"<<(long double)r.correlated_bin_num.convert_to<long double>()/r.correlated_bin_den.convert_to<long double>()
+        <<",\"correlated_bin_counts\":[";
+    for(int j=0;j<r.normalizer_bin_count;j++)cout<<r.correlated_bin_counts[j]<<(j+1<r.normalizer_bin_count?",":"");
+    cout<<"]"
+        <<",\"correlated_bin_target_components\":"<<r.correlated_bin_target_components
+        <<",\"correlated_bin_target_cycles_tied\":"<<r.correlated_bin_target_cycles_tied
         <<",\"exact_capacity_weighted_maximum\":\""<<r.reverse_num<<"/"<<r.reverse_den<<"\""
         <<",\"exact_capacity_weighted_maximum_decimal\":"<<(double)r.reverse_decimal
         <<"}"<<(m<last?",":"")<<"\n";
@@ -116,7 +136,11 @@ int main(int argc,char**argv){
       <<"  \"bins_are_disjoint_integer_normalizer_intervals\": true,\n"
       <<"  \"bin_bound_uses_maximum_target_population_divided_by_bin_lower_edge\": true,\n"
       <<"  \"m8_bin_certificate_below_three_quarters\": true,\n"
-      <<"  \"m9_bin_certificate_contractive\": false,\n"
+      <<"  \"m9_independent_bin_certificate_contractive\": false,\n"
+      <<"  \"all_correlated_bin_envelopes_contractive\": true,\n"
+      <<"  \"m8_correlated_bin_certificate_below_eight_fifteenths\": true,\n"
+      <<"  \"m9_correlated_bin_certificate_below_thirteen_sixteenths\": true,\n"
+      <<"  \"m10_correlated_bin_certificate_below_one_quarter\": true,\n"
       <<"  \"m10_bin_certificate_below_two_fifths\": true,\n"
       <<"  \"asymptotic_bin_population_bound_proved\": false,\n"
       <<"  \"all_exact_regressions_verified\": true\n"
