@@ -2,14 +2,14 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2541 the branch contains exact documentary
-work banks from T01 through T11, a typed proof stack through all 43 atomic targets, an exact
+The no-three-in-line conjecture remains open. Through CMR2549 the branch contains exact documentary
+work banks from T01 through T12, a typed proof stack through all 43 atomic targets, an exact
 252-chamber exceptional worklist and a final dossier audit.
 
 The branch still lacks the genuine source statements, exhaustive recurrence, actual complete T03/T04
 population, proof that T05 finite systems cover every all-`n` case, truth of all T07 semantic claims
 and T06 score statements, genuine T08 simultaneous-row completeness, T09 physical resource-model
-exhaustiveness, T10 route semantics, genuine T11 block semantics, downstream auxiliary and
+exhaustiveness, T10 route semantics, genuine T11 block and T12 auxiliary semantics, downstream
 cross-block/interface semantics, complete chamber proofs and the reviewed implication to `D(n)=2n`.
 
 ## 2. Close T01 source statements
@@ -27,15 +27,10 @@ use, not proof difficulty.
 
 ## 3. Close T02 rule exhaustiveness
 
-Populate and prove every:
+Populate and prove every parent case, clause, finite parameter axis, excluded parameter row and
+global-parent application.
 
-- parent case;
-- clause;
-- finite parameter axis;
-- excluded parameter row; and
-- global-parent application.
-
-Every global parent must bind the exact triple:
+Every global parent must bind:
 
 ```text
 source_case_id
@@ -44,10 +39,8 @@ operation_slot_id
 ```
 
 The selected slot must come from an admitted rule row and match its case, clause, local parent,
-expected host, labels and operation kind.
-
-Then separately review the ordinary theorem that the supplied rule bank is the genuine exhaustive
-recurrence.
+expected host, labels and operation kind. Then separately review the ordinary theorem that the
+supplied rule bank is the genuine exhaustive recurrence.
 
 ## 4. Complete T03 and T04 population
 
@@ -74,10 +67,8 @@ Keep useful data `populated` until its exact T02 support and proof review exist.
 ### T04 block and interface population
 
 For every skeleton-derived recurrent block and return/interface/off-diagonal row, enter the literal
-assembly payload and exact T03 ancestry.
-
-Keep useful assembly `populated` until all source T03 slots are proved and the assembly has passed
-ordinary review.
+assembly payload and exact T03 ancestry. Keep useful assembly `populated` until all source T03 slots
+are proved and the assembly has passed ordinary review.
 
 ## 5. Complete T05 finite geometry and genuine coverage
 
@@ -88,19 +79,16 @@ scripts/check_prime_power_geometry_selector_frontier_v2.py
 ```
 
 For every slot, provide the exact finite linked-operation certificate projected into the T03 point,
-removal, survivor, fate, response and selector data.
+removal, survivor, fate, response and selector data. The finite checker verifies every responsewise
+direct-delta identity and threshold equivalence.
 
-The finite checker verifies every responsewise direct-delta identity and threshold equivalence. After
-the bank is populated, prove separately that these finite raw-host systems cover every genuine
+After the bank is populated, prove separately that these finite raw-host systems cover every genuine
 recurrence geometry for arbitrary `n`.
 
 ## 6. Close T07 fate, transition and state semantics
 
-For each T03 slot, the T07 checker reconstructs exact subjects for:
-
-- every owner/fate witness;
-- the parent state and every labelled state vector; and
-- every literal transition.
+For each T03 slot, the T07 checker reconstructs exact subjects for every owner/fate witness, the parent
+state, every labelled state vector and every literal transition.
 
 Give every subject exactly one canonical claim:
 
@@ -113,10 +101,8 @@ support_claim_ids
 evidence
 ```
 
-Prove the claim support graph acyclic and supply one
-`slot-fate-transition-state-proof` artifact with exact T03/T04 support.
-
-Then bind the complete banks through:
+Prove the claim support graph acyclic and supply one `slot-fate-transition-state-proof` artifact with
+exact T03/T04 support. Bind the complete banks through:
 
 ```text
 state-semantics-proof
@@ -138,21 +124,15 @@ T05 + T07 -> T06 -> T11
 For every slot:
 
 1. prove the exact integer `minimum_labelled_row_load`;
-2. bind the T03 `row_loads` digest, T05 selector summary and T07 semantic certificate;
+2. bind the T03 `row_loads` digest, T05 selector summary and T07 semantic certificate; and
 3. supply one `candidate-score-proof` citing the exact T05/T07 slot artifacts.
 
-For every local parent:
+For every local parent, reconstruct the complete candidate set from the independent slot registry,
+select the least pair `(minimum_labelled_row_load, slot_id)`, publish all score gaps and minimizer
+flags, and supply one `parent-candidate-policy-proof`.
 
-1. reconstruct the complete candidate set from the independent slot registry;
-2. select the least pair `(minimum_labelled_row_load, slot_id)`;
-3. publish all score gaps and minimizer flags;
-4. supply one `parent-candidate-policy-proof`.
-
-For every T02 global parent:
-
-1. bind the exact T02 application record;
-2. prove its applied slot equals the parent-policy winner;
-3. supply one `candidate-policy-application-proof`.
+For every T02 global parent, bind the exact application record, prove its applied slot equals the
+parent-policy winner, and supply one `candidate-policy-application-proof`.
 
 Finally bind the aggregate bank through `CANDIDATE_POLICY_CORRECT` and
 `T06_CANDIDATE_POLICY`.
@@ -166,40 +146,17 @@ scripts/check_prime_power_transition_resource_frontier.py
 ```
 
 The active-row census is reconstructed from the complete T06 application bank. Every T06 global
-parent contributes exactly one row with ID:
+parent contributes exactly one row with ID `active::<parent global state ID>`.
 
-```text
-active::<parent global state ID>
-```
-
-For every row, populate and prove the exact bindings:
-
-```text
-parent_global_state_id
-local_parent_state_id
-selected_slot_id
-candidate_policy_application_record_sha256
-slot_population_payload_sha256
-row_loads_sha256
-response_family_sha256
-routed_credits_sha256
-transitions_sha256
-slot_semantic_certificate_sha256
-using_t04_unit_ids
-```
+For every row, populate and prove the exact parent, selected slot, T06 application, T03 payload,
+row-load, response, credit, transition, T07 semantic and T04 assembly bindings.
 
 A proved row requires one `active-row-member-proof` citing the exact T06 application artifact, every
-using T04 population artifact and the selected slot's T07 semantic artifact.
+using T04 population artifact and the selected slot's T07 semantic artifact. Bind the aggregate bank
+through `ACTIVE_ROW_FAMILY_EXHAUSTIVE` and `T08_ACTIVE_ROW_FAMILY`.
 
-Bind the aggregate bank through:
-
-```text
-ACTIVE_ROW_FAMILY_EXHAUSTIVE
-T08_ACTIVE_ROW_FAMILY
-```
-
-The derived census eliminates a freely supplied active-row list. Ordinary review must still prove
-that the supplied recurrence skeleton produces the genuine complete simultaneous-row family.
+The derived census eliminates a freely supplied active-row list. Ordinary review must still prove that
+the supplied recurrence skeleton produces the genuine complete simultaneous-row family.
 
 ## 9. Close T09 destroyed-resource-model exhaustiveness
 
@@ -207,35 +164,20 @@ For each T08 row, reconstruct every literal destroyed current triple from the se
 T05 linked-operation geometry certificate. Identify equal resources by sorted point coordinates, not
 by local point indices or destroyed IDs.
 
-The checker derives:
-
-1. the complete literal resource universe of every active row;
-2. the exact row-overlap graph;
-3. its connected components; and
-4. one canonical resource-scope ID per component.
+The checker derives the complete literal resource universe of every active row, the exact row-overlap
+graph, its connected components and one canonical resource-scope ID per component.
 
 A proved row requires one `row-destroyed-resource-model-proof` citing its T08 active-row artifact and
-T05 geometry artifact.
-
-Bind the aggregate bank through:
-
-```text
-DESTROYED_RESOURCE_MODEL_EXHAUSTIVE
-T09_RESOURCE_MODEL
-```
-
-The older `check_prime_power_resource_overlap_scope_partition.py` remains a useful lower-level
-consistency audit. It no longer defines the T09 row census.
+T05 geometry artifact. Bind the aggregate bank through `DESTROYED_RESOURCE_MODEL_EXHAUSTIVE` and
+`T09_RESOURCE_MODEL`.
 
 After documentary closure, prove the ordinary theorem that destroyed current triples are the complete
 physical shared-resource model and that no additional physical coupling is omitted.
 
 ## 10. Close T10 routed-credit semantics
 
-Every literal selected-slot `routed_credits` entry becomes one indexed subject. Equal JSON values at
-different indices remain separate obligations.
-
-For every subject, provide one exact assignment:
+Every literal selected-slot `routed_credits` entry becomes one indexed subject. For every subject,
+provide one exact assignment:
 
 ```text
 credit_subject_sha256
@@ -249,28 +191,14 @@ evidence
 ```
 
 The destroyed key must belong to the row's complete T09 resource universe. Fate, state and transition
-claim IDs must come from the selected slot's T07 semantic certificate. Transition support must be
-nonempty, sorted and duplicate-free.
+claim IDs must come from the selected slot's T07 semantic certificate.
 
-Prove:
-
-- exact one-to-one subject/assignment coverage;
-- no destroyed-resource or fate-witness reuse inside one row;
-- global destroyed-resource injectivity across all active rows; and
-- global injectivity of `(fate claim, state claim, child state)` obligations.
+Prove exact subject/assignment coverage, no destroyed-resource or fate-witness reuse inside one row,
+global destroyed-resource injectivity and global injectivity of `(fate claim, state claim, child
+state)` obligations.
 
 Every proved row requires one `row-routed-credit-semantics-proof` citing its exact T08, T09 and T07
-artifacts.
-
-Bind the aggregate bank through:
-
-```text
-CREDIT_ROUTING_SEMANTIC
-T10_CREDIT_ROUTING
-```
-
-The older witness-routing and simultaneous-credit checkers remain useful local consistency audits.
-They do not replace proof of the route statements or child-state meanings.
+artifacts. Bind the aggregate bank through `CREDIT_ROUTING_SEMANTIC` and `T10_CREDIT_ROUTING`.
 
 ## 11. Close T11 recurrent-block closure
 
@@ -280,12 +208,10 @@ Use:
 scripts/check_prime_power_recurrent_block_closure_frontier.py
 ```
 
-The recurrent-block worklist is reconstructed from the T04 units of kind `recurrent-block`. Every
-block's parent and row banks are reconstructed from its T04 parent bindings and the exact T08 active
-rows.
+The recurrent-block worklist is reconstructed from T04 recurrent-block units. Every block's parent and
+row banks are reconstructed from its T04 parent bindings and exact T08 active rows.
 
-A proved block must provide one validated common-weight certificate whose SCC parent list equals the
-complete local-parent set. For every selected active row, prove the exact bridge:
+For every selected active row, prove the exact bridge:
 
 ```text
 same local parent and T03 fibre
@@ -296,30 +222,12 @@ T06 minimum score = common minimum row load
 T10 selected credit units = common selected-response credit vector
 ```
 
-The T11 credit units have the exact literal schema:
+The T11 credit units have exact fields `child_state_id`, `unit_index` and
+`selected_response_sha256`. For each child, unit indices must be exactly `0, 1, ..., count - 1`.
 
-```text
-child_state_id
-unit_index
-selected_response_sha256
-```
-
-For each child, unit indices must be exactly `0, 1, ..., routed_count - 1`. Each T10 route assignment
-must name the same child as its literal unit.
-
-The common-weight certificate must establish:
-
-1. one positive integer weight for every shared row state;
-2. greatest common divisor one;
-3. one row for every local SCC parent;
-4. exact restriction of the common weights to every row;
-5. the exact recurrent support graph;
-6. no recurrent edge leaving the SCC;
-7. strong connectivity; and
-8. positive margin on every row.
-
-The T04 `local_states` list must equal the common shared-state registry, and T04 `recurrent_rows` must
-equal the exact T08 active-row IDs.
+The common-weight certificate must establish one primitive positive common state-weight vector, one
+row for every local SCC parent, exact weight restriction to every row, the exact recurrent support
+graph, no recurrent edge leaving the SCC, strong connectivity and positive margin on every row.
 
 Every proved block requires:
 
@@ -328,65 +236,129 @@ recurrent-block-common-weight-proof
 recurrent-block-closure-proof
 ```
 
-The common-weight artifact cites the exact T04 block artifact, selected-slot T05 and T06 score
-artifacts, all block T06 application artifacts and all block T10 credit artifacts. The closure artifact
-cites the common-weight artifact. The per-block verification seal uses a record-core digest that
-excludes the verification digest itself.
-
-Bind the aggregate banks through:
-
-```text
-CLOSED_STRICT_RECURRENT_BLOCKS/block-closure-proof
-CLOSED_STRICT_RECURRENT_BLOCKS/common-weight-proof
-T11_RECURRENT_BLOCK_CLOSURE
-```
+Bind the aggregate banks through the `CLOSED_STRICT_RECURRENT_BLOCKS` common-weight and closure
+artifacts and `T11_RECURRENT_BLOCK_CLOSURE`.
 
 Recurrent-core closure means no external recurrent edge. Nonrecurrent auxiliary and interface exits
-remain explicit T12 and T15 work and must not be erased from the certificate.
-
-After documentary closure, review the ordinary theorem that the selected finite rows and semantic
-credit assignments really define the intended recurrent contraction.
+remain explicit T12 and T15 work.
 
 ## 12. Close T12 auxiliary semantics
 
-For every auxiliary state or child:
+Use the canonical corrected endpoint:
 
-1. provide the exact semantic expansion into nonauxiliary states;
-2. bind every expansion edge to the relevant T07 state/transition claims;
-3. prove the expansion dependency graph acyclic;
-4. prove no auxiliary receives routed credit unless explicitly justified by the intended theorem;
-5. prove responsewise substitution preserves or improves every selected row load; and
-6. prove recursive elimination preserves the selected recurrence meaning and strict margins.
+```text
+scripts/check_prime_power_auxiliary_semantics_frontier_v2.py
+```
 
-The existing one-step and acyclic weighted-elimination checkers remain arithmetic interfaces. T12 must
-bind them to the exact T07/T11 semantic rows rather than accepting a parallel auxiliary population.
+The exact dependency order is:
 
-## 13. Close cross-block, interface and rank semantics
+```text
+T07_FATE_TRANSITION_STATE + T11_RECURRENT_BLOCK_CLOSURE
+    -> T12_AUXILIARY_SEMANTICS
+```
 
-Prove:
+For every T11 recurrent block, create one open/proved T12 record. A proved block must reuse the exact
+T11 common-weight certificate; a parallel common-row population is rejected.
 
-- every cross-block state equivalence;
-- every component scale;
-- every global-state predicate;
-- every final row theorem and fixed-offset interpretation;
-- the complete return/interface/off-diagonal family; and
-- a genuinely well-founded global rank.
+The embedded acyclic elimination certificate must cover exactly the recursive closure of every
+positively used auxiliary state, publish an acyclic topological order, prove local and effective
+common-weight domination, forbid routed credit on eliminated auxiliaries and reconstruct every fully
+substituted response row.
 
-Finite quotient identities and support condensation remain interfaces until these theorems are proved.
+For every expansion provide:
 
-## 14. Close all 252 exceptional chambers
+```text
+auxiliary_state_id
+expansion_record_sha256
+source_state_claim_ids
+fixed_load_transition_claim_ids
+expansion_statement
+evidence
+no_auxiliary_credit_statement
+no_auxiliary_credit_evidence
+```
 
-The exact worklist is:
+For every target edge provide:
+
+```text
+target_state_id
+multiplicity
+target_record_sha256
+target_state_claim_ids
+transition_claim_ids
+edge_statement
+evidence
+```
+
+All claim IDs must come from the exact T07 state and transition banks of the slots selected by the T11
+block. Every target edge requires nonempty state and transition support; a positive fixed load requires
+nonempty transition support.
+
+For every recurrent row prove:
+
+```text
+eliminated selected response = T11 selected response
+eliminated selected row load <= T11 minimum row load
+eliminated selected margin >= T11 strict margin
+```
+
+Every proved block requires one `recurrent-block-auxiliary-elimination-proof` citing its T11
+common-weight artifact, T11 closure artifact and every selected-slot T07 semantic artifact.
+
+Bind the aggregate bank through:
+
+```text
+AUXILIARY_EXPANSIONS_SEMANTIC
+T12_AUXILIARY_SEMANTICS
+```
+
+The obligation artifact must cite the two immediate T07 artifacts and the two immediate T11 artifacts.
+Exact weighted substitution and claim coverage do not prove the expansion statements, multiplicities
+or target-state meanings true.
+
+## 13. Close T13--T18 cross-block, interface and rank semantics
+
+### T13 cross-block state equivalence
+
+Bind every claimed local-to-global state equality to exact T07 state semantics. Require complete class
+coverage, connected evidence spanning each class and ordinary proof that every equality is genuine.
+
+### T14 component scales
+
+Using exact T11 common weights and proved T13 identifications, prove every shared-state scale equation,
+cycle consistency and the primitive integer multiplier for every disconnected component.
+
+### T15 interface exhaustiveness
+
+Derive the complete return/interface/off-diagonal row bank from T04 and bind every row to exact T07
+semantics and T14 scales. Prove no row is omitted, duplicated or assigned to the wrong component.
+
+### T16 global rank
+
+Prove the published rank is genuinely well founded on every non-strict support edge. Finite
+condensation arithmetic is not enough without semantic support-edge identity.
+
+### T17 state predicates
+
+Give every global state one exact predicate theorem and prove it agrees across all T13-identified local
+representatives.
+
+### T18 final row theorems
+
+Bind every final quotient row and fixed offset to the exact T05, T07, T10, T11, T12 and T14--T17 proof
+banks. Prove each row theorem and its external recurrence interpretation.
+
+## 14. Close T19--T21 global and exceptional fronts
+
+Prove the skeleton-derived global family exhaustive and close the exact worklist:
 
 \[
 232\text{ zero-selector chambers}+20\text{ hard-core chambers}=252.
 \]
 
 Give every chamber one proved disposition: final row theorem, direct chamber proof,
-survivor-signature infeasibility proof or host-union proof.
-
-Keep fixed-response correction 17, rollback distance 12 and uniform correction 44 as distinct scalar
-quantities.
+survivor-signature infeasibility proof or host-union proof. Keep fixed-response correction 17,
+rollback distance 12 and uniform correction 44 as distinct scalar quantities.
 
 ## 15. Complete the typed proof stack
 
@@ -399,18 +371,9 @@ target's sealed proof bank.
 
 ## 16. Complete premises, handoff and root review
 
-Close the ten final premises:
-
-- base cases;
-- recurrence exhaustiveness;
-- invariant preservation;
-- operation selection;
-- resource and credit soundness;
-- block and auxiliary contraction;
-- cross-block assembly;
-- exceptional closure;
-- termination; and
-- objective translation.
+Close the ten final premises: base cases, recurrence exhaustiveness, invariant preservation, operation
+selection, resource and credit soundness, block and auxiliary contraction, cross-block assembly,
+exceptional closure, termination and objective translation.
 
 Then close all six handoff assertions, pass the seven-gate dossier audit and review the ordinary
 mathematical implication from the quotient conclusion to `D(n)=2n`.
@@ -431,11 +394,12 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 12. Reconstruct and prove every T09 literal resource model and scope partition.
 13. Populate and prove every T10 routed-credit semantic assignment.
 14. Populate and prove every T11 common-weight bridge and block-closure record.
-15. Prove and eliminate every T12 recursive auxiliary semantically.
-16. Prove cross-block, interface, rank, predicate and row-theorem semantics.
-17. Prove all 252 chamber dispositions.
-18. Complete every typed artifact, premise, handoff assertion and atomic target.
-19. Pass all synchronized gates and review the final all-`n` implication.
+15. Populate and prove every T12 expansion semantic and stability record.
+16. Prove T13 state equivalence and T14 component scales.
+17. Prove T15 interface completeness, T16 rank, T17 predicates and T18 final row theorems.
+18. Prove T19 global-family exhaustiveness and all 252 T20/T21 chamber dispositions.
+19. Complete every typed artifact, premise, handoff assertion and atomic target.
+20. Pass all synchronized gates and review the final all-`n` implication.
 
 ## 18. Honesty boundaries
 
@@ -446,7 +410,6 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 - The original T05 closure lookup is not the canonical executable endpoint.
 - T07 exact subject coverage and acyclic support do not prove semantic truth.
 - T06 minimization arithmetic does not prove the supplied scores are correct.
-- The old common-weight policy checker belongs downstream of T06.
 - A T06-application-derived T08 census remains relative to the supplied recurrence skeleton.
 - Exact T08 row binding does not prove genuine simultaneous-row completeness.
 - Coordinate-canonical T09 resources and scopes do not prove physical resource exhaustiveness.
@@ -454,10 +417,11 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 - A standalone common-weight certificate does not identify the exact selected T08/T10 population.
 - Exact T11 row bridges do not prove the underlying T07/T10 semantic statements true.
 - Recurrent-core closure does not prove nonrecurrent auxiliary or interface exits semantically valid.
-- Primitive common weights, strong connectivity and positive margins remain relative to the supplied
-  finite row family.
-- Weighted auxiliary substitution does not prove external auxiliary-state meaning.
+- The original T12 aggregate support check predates the corrected T07+T11 dependency root.
+- Exact T12 edge support and weighted domination do not prove expansion truth or target-state meaning.
+- Selected-response stability does not prove the selected recurrence is the genuine all-`n` policy.
 - State links do not prove cross-block identity.
+- Component scale equations do not prove shared-state identity.
 - Support condensation does not prove recurrence semantics.
 - A chamber disposition record does not verify its proof.
 - Typed artifacts and readiness flags are documentary.
@@ -466,10 +430,11 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 
 ## 19. Current endpoint
 
-Through CMR2541 the branch has exact executable work banks for source statements, recurrence records,
+Through CMR2549 the branch has exact executable work banks for source statements, recurrence records,
 slot and block/interface population, corrected finite geometry, literal semantic claims, complete
 candidate minimization/application identity, application-derived active rows, literal destroyed
-resources, routed-credit semantic assignments, and T11 common-weight recurrent-core closure records.
+resources, routed-credit semantic assignments, T11 strict recurrent-core closure and T12 acyclic
+auxiliary substitution with exact T07/T11 ancestry.
 
 The unresolved center remains the genuine mathematics: actual source and recurrence theorems, real
 population, proof of all-`n` geometry coverage, truth of every semantic and score statement, genuine
