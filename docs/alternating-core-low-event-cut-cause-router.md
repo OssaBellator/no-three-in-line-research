@@ -94,12 +94,13 @@ Sum AC5am over the thresholds and divide by `d`. Apply AC5ah, or AC5ai for the m
 
 ## AC5ao -- low-event cut/cause router -- PROVED UNDER THE DECLARED CONTRACTS
 
-Every restricted-menu AC5 flow has one continuation:
+Every restricted-menu AC5 instance has one deterministic continuation:
 
-1. the total threshold-cause capacity is below `d t|A|`, giving a protected-safe state or path;
-2. one threshold/address capacity is exceeded;
-3. one failed-flow Hall cut returns an exact threshold-bad cause with load at least `d t|A|/(C_t K_k)`;
-4. or one balanced-degree, candidate-completeness, endpoint-cost, operation, blocker, ownership, context, event-inventory or boundary field fails.
+1. a protected-safe state or multistep path exists;
+2. otherwise AC5aj returns one threshold Hall cut and AC5al returns an exact threshold-bad cause with load at least `d t|A|/(C_t K_k)`;
+3. or one balanced-degree, candidate-completeness, endpoint-cost, operation, blocker, ownership, context, event-inventory or boundary field fails.
+
+When threshold/address capacities are declared, a returned load above its capacity is an exact overload. If their total is below `d t|A|`, AC5an forces alternative 1 before a failed-flow cut can occur.
 
 Thus a failed sublevel Hall expansion no longer remains an abstract cut. It is localized to one high-event or physical blocker address with an explicit candidate-incidence load.
 
