@@ -25,7 +25,7 @@ R\subseteq A,
 
 Let `X` be the finite non-reservoir boundary state: target role, clean-height band, blocker class, current owner status, local context and legality word. Put `Q=|X|`.
 
-## GC2ge -- exact bounded-reservoir state stock -- PROVED
+## GC2gj -- exact bounded-reservoir state stock -- PROVED
 
 The number of complete states `(x,R)` is at most
 
@@ -49,7 +49,7 @@ Choose the finite boundary state and then choose a reservoir subset of size at m
 
 The theorem deliberately counts exact subsets; it does not replace them by cardinality alone.
 
-## GC2gf -- long small-reservoir histories contain exact cycles -- PROVED
+## GC2gk -- long small-reservoir histories contain exact cycles -- PROVED
 
 Inside one fixed donor dictionary and boundary-state family, any history longer than
 
@@ -63,7 +63,7 @@ repeats a complete state. The first repeated-state segment contains a simple exa
 
 Pigeonhole gives a repeated complete state. Delete internal closed subwalks until the repeated segment has no internal repeated state. QED.
 
-## GC2gg -- canonical donor-membership restoration gate -- PROVED
+## GC2gl -- canonical donor-membership restoration gate -- PROVED
 
 Fix a total order on `A`. Every nonconstant exact reservoir cycle has a least donor atom `a` whose membership changes. Rotate the cycle at the first change of the bit
 
@@ -82,7 +82,7 @@ The first later edge restoring the initial bit is the canonical **donor restorat
 
 A nonconstant cycle changes the membership of at least one donor atom or changes the finite boundary state. In the donor-changing case choose the least atom. Its Boolean membership leaves one value and must later return because the complete reservoir returns. First-change and first-return conventions make the gate canonical. If only the boundary state changes, use the existing finite boundary-cycle router. QED.
 
-## GC2gh -- monotone depletion or capacity-one restoration closes recurrence -- PROVED UNDER THE RESTORATION CONTRACT
+## GC2gm -- monotone depletion or capacity-one restoration closes recurrence -- PROVED UNDER THE RESTORATION CONTRACT
 
 Suppose donor membership can reappear only by one of the following exact routes:
 
@@ -104,9 +104,9 @@ If reservoir membership is monotone decreasing, no nonconstant reservoir cycle e
 
 ### Proof
 
-Apply GC2gg. A monotone Boolean membership cannot leave and restore its initial value. Otherwise the canonical restoration edge enters one declared route. There are two restored bit values, `Q` boundary states and `K` donor atoms, giving the coarse stock. Capacity-one use forbids recurrence of one address. QED.
+Apply GC2gl. A monotone Boolean membership cannot leave and restore its initial value. Otherwise the canonical restoration edge enters one declared route. There are two restored bit values, `Q` boundary states and `K` donor atoms, giving the coarse stock. Capacity-one use forbids recurrence of one address. QED.
 
-## GC2gi -- bounded small-reservoir router -- PROVED UNDER THE COMPLETE-LINEAGE CONTRACT
+## GC2gn -- bounded small-reservoir router -- PROVED UNDER THE COMPLETE-LINEAGE CONTRACT
 
 The branch `p<=D_phys` from GC2ft is no longer an unstructured exception. It has one of the following continuations:
 
@@ -121,7 +121,7 @@ Thus bounded donor reservoirs are closed conditionally without discarding the co
 
 ### Proof
 
-Use GC2ge--GC2gf for the finite quotient and GC2gg--GC2gh for recurrence. The blocker/column witness remains a field of the finite boundary state and is therefore preserved across the reduction. QED.
+Use GC2gj--GC2gk for the finite quotient and GC2gl--GC2gm for recurrence. The blocker/column witness remains a field of the finite boundary state and is therefore preserved across the reduction. QED.
 
 ## Updated GC frontier
 
