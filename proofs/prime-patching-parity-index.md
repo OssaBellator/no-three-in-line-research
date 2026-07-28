@@ -39,6 +39,10 @@ no-three-in-line conjecture.
 | PP3boz--PP3bpc | Three-owner rotations are exactly owner-support local, with an explicit quadratic one-step atomic envelope and an `O(km^2)` trajectory light cone | PROVED | `docs/338-owner-local-atomic-collateral-and-trajectory-light-cone.md` |
 | PP3bpd--PP3bpf | The eight one-support `m=9` hard states form four complement pairs and have sharp shortest-path peaks of two supports and eight atomic triples, attained by four explicit words | VERIFIED FINITELY | `docs/339-m9-single-support-collateral-words.md` |
 | PP3bpg--PP3bpi | Failed strict-cancellation sources at `m=8,9` bridge to validity within the existing three- and four-move clean-macro horizons | PROVED / VERIFIED FINITELY | `docs/340-strict-repair-to-clean-macro-bridge-through-m9.md` |
+| PP3bpj--PP3bpm | Strict-repair predecessor mass compresses to an inherited clean-cycle load; switch charge is exactly weighted Hall transport or heat evolution of its fibre-relative density | PROVED | `docs/341-inherited-load-action-switch-charge.md` |
+| PP3bpn--PP3bpo | Three prescribed Hamilton arcs have `(m-4)!` containing cycles, and global sign complementation halves the exact signed transport audit | PROVED | `docs/342-compressed-m9-weighted-hall-transport.md` |
+| PP3bpp--PP3bpq | The compressed min-cut algorithm reproduces all `m<=8` ledgers and completes exact weighted-Hall transport at `m=9` | VERIFIED FINITELY | `docs/342-compressed-m9-weighted-hall-transport.md` |
+| PP3bpr--PP3bpu | Recleaning after a covered three-owner rotation is an exact boundary-component XOR system and is polynomial-time for `O(log m)` parity graphs | PROVED | `docs/343-component-local-recleaning-for-sparse-parity-cores.md` |
 
 ## Current exact frontier
 
@@ -50,6 +54,14 @@ path. At the first nonforest size `m=10`, all 74 fixed-sign exceptions are
 repaired by changing at most two signs, both among the three rotated owners.
 Every selected minimum-core edge remains targetable.
 
+For a satisfiable target parity graph, once a rotated source triple covers every
+currently violated edge, all sign recleaning is confined to the three rotated
+owners and the boundary components of the graph with those owners deleted. The
+exact boundary XOR system has at most `3+q` variables for a `q`-edge parity
+graph, so an `O(log m)` sparse core can be recleaned exactly in polynomial time.
+The missing asymptotic step is now existence of useful covering rotations and a
+uniformly low owner-Hamming boundary solution, not global sign optimization.
+
 The exact two-owner atomic defect can also be decreased while preserving target
 optimality and fixed signs through `m=9`. This does not extend automatically to
 the complete atomic defect. Of the one-step total-atomic obstructions, only 122
@@ -58,15 +70,16 @@ strict parity-repair step. No audited state first succeeds only at distance
 three. Almost every unresolved state already has frustration one, so parity
 termination itself prevents further cancellation inside the strict-repair DAG.
 
-The action switch at parity-clean termination is now exact through `m=9`. Every
-one of the 4,186 failed strict-cancellation sources at `m=8` reaches validity in
-at most three total strict-plus-macro moves. Every one of the 25,894 sources at
-`m=9` reaches validity in at most four. Thus strict preprocessing does not
-increase the known finite macro horizon, although asymptotic predecessor charge
-across the switch remains open.
+The action switch at parity-clean termination is exact both for reachability and
+charge. Finite hybrid paths remain within three moves at `m=8` and four at
+`m=9`. For an arbitrary strict policy, all predecessor merging compresses to an
+inherited terminal load `a_F(rho)`; the optimal switch charge is its weighted
+Hall ratio, and a reversible clean trajectory has charge
+`||K^t(a_F/v)||_infinity`. The open quantitative task is to bound inherited-load
+warmness and mixing, not to track terminal orientations.
 
-Atomic collateral is nevertheless owner-local. One three-owner rotation can
-alter only `3m-6` pair supports and `(3m^2-15m+20)/2` three-owner supports, with
+Atomic collateral is owner-local. One three-owner rotation can alter only
+`3m-6` pair supports and `(3m^2-15m+20)/2` three-owner supports, with
 `|Delta Z|<=96m^2-336m+352`. A trajectory touching `r` owners changes no support
 disjoint from those owners, giving a deterministic `O(km^2)` light cone for a
 `k`-step bounded-owner repair word.
@@ -78,33 +91,32 @@ m=8: maximum macro distance 3,
 m=9: maximum macro distance 4.
 ```
 
-The eight one-support distance-four `m=9` states are now fully classified as
-four global-sign-complement pairs. Every shortest path must expand from one to
-two supports and from four to eight atomic triples, and four explicit words
-attain exactly those sharp peaks before reaching validity.
+The eight one-support distance-four `m=9` states are four global-sign-complement
+pairs. Every shortest path must expand from one to two supports and from four to
+eight atomic triples, and four explicit words attain exactly those sharp peaks.
 
-Weighted Hall optimization no longer requires source-subset enumeration. Exact
-maximum-closure min-cuts reproduce every `m<=7` result and complete `m=8`. At
-`m=8`, 11,952 of 12,048 flaws have a proper bottleneck, the worst charge is
-`1/93`, and the worst absolute obstruction is a two-source proper cut. The
-maximum local/global label-merging penalty is `10338/4891>2`.
+Exact weighted-Hall transport now reaches `m=9` without enumerating clean signed
+states. There are 25,540 atomic signed-assignment flaws, 25,520 with a proper
+bottleneck. The worst charge is `223/29271`, or `5.55386/m^3` after scaling, and
+its maximizing cut uses 77 of 96 source cycles. Thus the worst finite obstruction
+has moved from the two-source local cut at `m=8` to a genuinely intermediate cut
+at `m=9`; neither global mass nor constant-size expansion alone is sufficient.
 
 ## Remaining tasks
 
-1. Prove bounded target-optimal or local-sign repair for the asymptotic
-   `O(log m)` frustration core.
-2. Prove an asymptotic action-switching theorem with controlled predecessor
-   charge from locally coupled strict repair into the clean fibre macro.
+1. Prove existence of pair-safe rotations that cover the active sparse
+   frustration residue and yield low-cost solutions of the boundary XOR system.
+2. Bound the inherited terminal density `a_F/v` produced by strict repair and
+   control predecessor charge across the switch by Hall expansion or mixing.
 3. Generalize the four explicit one-support words to a structural bounded-
    collateral rule with controlled predecessor charge.
 4. Extend compressed clean-macro reachability to `m=10` without storing all
    `115,586,396` clean orientations.
-5. Prove a uniform weighted expansion bound for small and intermediate Hall
-   cuts, or show that a short heat-kernel trajectory expands them before charge
-   is measured.
-6. Extend the exact min-cut audit to `m=9` with compressed clean-fibre and flaw
-   generation.
-7. Combine locally coupled repair, the owner light cone, and heat-kernel mixing
-   with compensated atomic three-owner drift.
+5. Prove a uniform weighted expansion or heat-kernel bound for local,
+   intermediate, and global Hall cuts; the `m=9` worst cut is intermediate.
+6. Extend compressed exact Hall transport to `m=10`, where one flaw has at most
+   `6!=720` source cycles.
+7. Combine locally coupled repair, inherited-load heat evolution, the owner light
+   cone, and compensated atomic three-owner drift.
 
-The next available theorem identifier is `PP3bpj`.
+The next available theorem identifier is `PP3bpv`.
