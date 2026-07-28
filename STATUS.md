@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2365;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2381;
 CMR2190 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-7.md`.
 
@@ -27,94 +27,93 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - spanning evidence trees for every shared state class;
 - exact support SCC condensation and critical-rank path bounds;
 - a fixed nineteen-obligation semantic closure DAG;
-- typed proof-artifact bundles bound back into each proved obligation;
-- exact blocker/frontier and parallel completion-wave analysis;
+- typed proof-artifact bundles and an exact blocker schedule;
 - an optional edgewise lexicographic support audit;
 - a fixed ten-premise pre-root implication contract;
-- typed proof artifacts bound to each declared proved final premise;
-- an acyclic dependency-aligned obligation-artifact support DAG; and
-- a final dossier-integrity gate over one shared typed obligation registry.
+- typed final-premise artifacts and an acyclic obligation-artifact support DAG;
+- a strict three-gate final dossier-integrity endpoint;
+- explicit mathematical predicates for every global state;
+- explicit recurrence-theorem records for every final quotient row; and
+- a fixed six-assertion documentary handoff to ordinary induction review.
 
-These interfaces do not supply the missing genuine mathematical data or semantics.
+These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
 ## Noncircular expected family
 
-The expected block, interface-row and parent registries are now derived from one canonical
-parent clause per expected global parent. Those clauses contain no selected fibre, response,
-row digest or computed margin. The global quotient manifest must match the derived manifest
+The expected block, interface-row and parent registries are derived from one canonical parent
+clause per expected global parent. Those clauses contain no selected fibre, response, row
+digest or computed margin. The global quotient manifest must match the derived manifest
 exactly, and every populated row is rebound to its source rule/case clause.
 
-This prevents a populated family from declaring itself complete relative to a list copied
-from its own rows. It remains relative to the supplied recurrence skeleton.
+This prevents a populated family from declaring itself complete relative to a list copied from
+its own rows. It remains relative to the supplied recurrence skeleton.
 
-## State equivalence evidence
+## State equivalence, support and termination
 
-Every global state class with `n>1` members requires exactly `n-1` pairwise evidence edges and
-the resulting graph must be connected. The checker publishes the unique evidence path from a
-canonical root to every member.
+Every shared state class requires a connected `n-1` evidence tree. The positive-support graph
+and its SCC condensation are reconstructed from the final quotient. Every critical edge
+strictly decreases nonnegative rank, so the critical-edge graph is acyclic and its exact
+longest path is bounded by the rank span. Every full support cycle therefore contains a strict
+edge.
 
-This proves complete documentary support. It does not prove that the cited equivalence
-statements are true.
+An optional stronger audit classifies every individual target edge by lexicographic change in
+`(global weight, rank)` and publishes every nondecreasing edge. That criterion is sufficient,
+not necessary, for termination.
 
-## Global support and critical descent
+## Typed artifacts and exact proof frontier
 
-The positive-support graph and its SCC condensation are reconstructed from the final quotient.
-Every critical edge strictly decreases nonnegative rank, so the critical-edge graph is acyclic
-and its exact longest path is bounded by the global rank span. Every full support cycle must
-therefore contain at least one strict edge.
+The closure checker fixes nineteen required semantic obligations. A proved obligation must
+carry its exact typed artifact bundle, and the reconstructed bundle digest must equal the one
+cited by the closure certificate. Open obligations may not contain placeholder artifacts.
 
-This is finite quotient arithmetic, not a proof that the quotient models the genuine
-recurrence.
+The blocker scheduler computes every transitive blocker set, current actionable frontier,
+downstream impact, canonical longest open chain and minimum parallel dependency-wave depth.
+These are exact DAG quantities, not estimates of time or proof difficulty.
 
-## Exact semantic proof frontier
+The obligation-artifact support graph must be acyclic, may cite only the same obligation or a
+transitive prerequisite, and must reach every artifact in every immediate prerequisite bundle
+of a proved obligation.
 
-The closure checker fixes nineteen required obligations, including source truth, rule
-exhaustiveness, genuine population, geometry and policy correctness, resource and credit
-semantics, closed recurrent blocks, auxiliary semantics, cross-block identity/scales,
-interface and rank exhaustiveness, exceptional closure, hard-core closure and the final
-quotient implication.
+## Final premise and dossier integrity
 
-An obligation closes only when it has a proof artifact and all dependencies are closed. The
-checker publishes the full unclosed set and current frontier. Its conditional readiness flag
-cannot turn on while any required module remains open, and it always publishes
-`all_n_proved_by_checker = 0`.
+The pre-root contract fixes ten ordinary mathematical premises from base cases through the
+translation to `D(n)=2n`. Each declared proved premise requires one exact typed artifact that
+cites artifacts from every semantic obligation on which the premise depends. Edgewise
+termination additionally binds the exact edgewise certificate.
 
-## Typed artifacts and blocker schedule
+The final dossier-integrity gate composes the pre-root contract, typed premise registry and
+canonical obligation-artifact support DAG over one shared typed obligation registry. It remains
+documentary and permanently publishes `all_n_proved_by_checker = 0`.
 
-Every proved obligation must carry its exact obligation-specific artifact kinds. The
-reconstructed bundle digest must equal the digest cited by the closure certificate. Open
-obligations may not contain placeholder artifacts.
+## Quotient semantic refinement
 
-The dependency scheduler computes every transitive blocker set, the currently actionable
-frontier, downstream impact, a canonical longest open dependency chain and the minimum number
-of parallel dependency waves. These are exact DAG quantities, not estimates of research time.
+Every final global state has one predicate record containing its mathematical statement,
+source locator and digest. The record is bound to the state's role, stratum, owner, complete
+local-member list and spanning equivalence evidence.
 
-## Edgewise support and final implication premises
+Every final quotient row has one theorem record. The checker reconstructs its parent predicate,
+complete target predicate multiset, fixed-offset interpretation, row classification, margin and
+original global-row digest. State and row semantic records must cover the complete quotient
+exactly.
 
-Every support edge is audited against the lexicographic pair `(global weight, rank)`. The
-stronger edgewise path certificate is published when every target decreases that pair; all
-nondecreasing edges are otherwise listed explicitly. Edgewise descent is sufficient but not
-necessary for a branching or multiset induction.
+This is complete semantic documentation relative to supplied statements. It does not verify
+those statements.
 
-The final contract fixes ten ordinary mathematical premises from base cases through the
-translation to `D(n)=2n`. It is a pre-root handoff: every dependency of
-`GLOBAL_QUOTIENT_IMPLIES_ALL_N` and every final premise may be closed while that root obligation
-remains open and actionable. The contract never declares the theorem proved.
+## Final induction handoff
 
-## Typed premise artifacts and noncircular support
+The documentary handoff fixes six assertions:
 
-Each declared proved final premise has one exact premise-specific artifact kind. That artifact
-must cite obligation artifacts covering every semantic dependency of the premise, and its
-reconstructed bundle digest must bind back into the contract. Edgewise termination additionally
-binds the exact edgewise certificate.
+1. the complete base domain is established;
+2. the nonbase recurrence covers every case;
+3. state and resource invariants are preserved;
+4. every recurrence branch terminates;
+5. exceptional and hard-core cases are closed; and
+6. the quotient conclusion translates to `D(n)=2n`.
 
-Every obligation-artifact support citation must remain inside one obligation or point to a
-transitive prerequisite obligation. The complete support graph must be acyclic, and every proved
-bundle must reach every artifact in each immediate prerequisite bundle.
-
-The final integrity checker composes the pre-root contract, typed premise registry and stronger
-support DAG over the same typed obligation registry. Its readiness flag remains documentary,
-and `all_n_proved_by_checker` remains permanently zero.
+An assertion closes only when it is declared proved and every fixed final-premise dependency
+is effective. Handoff readiness additionally requires typed premise artifacts, canonical
+artifact-support integrity and complete quotient semantic refinement. The checker permanently
+publishes `all_n_proved_by_checker = 0`.
 
 ## Hard-core scalar worklists
 
@@ -125,47 +124,44 @@ core retains all 20 full-selector chambers. Fixed-response correction 17, rollba
 ## Genuine current frontier
 
 1. Prove source truth and the genuine exhaustive recurrence skeleton.
-2. Populate every expected slot, candidate row, block and interface row with actual data.
+2. Populate every expected slot, candidate row, recurrent block and interface row with actual
+   geometry, fate, route and transition data.
 3. Prove real geometry, selector and candidate-policy correctness.
-4. Prove fate, transition and state semantics.
-5. Prove the complete simultaneous row family, resource model and routed-credit semantics.
-6. Exhibit closed strongly connected recurrent blocks with strict common weights.
-7. Prove and eliminate every recursive auxiliary expansion.
-8. Prove every cross-block equivalence and component scale.
-9. Prove the complete interface family and global rank semantics.
+4. Prove fate, transition, state, resource and routed-credit semantics.
+5. Exhibit closed strongly connected recurrent blocks with strict common weights.
+6. Prove and eliminate every recursive auxiliary expansion.
+7. Prove every cross-block equivalence, component scale, state predicate and row theorem.
+8. Prove the complete interface family and global rank semantics.
+9. Supply genuine typed semantic and premise artifacts with noncircular support.
 10. Prove the skeleton-derived global family exhaustive.
 11. Close the 78 zero-capable rows and complete 20-chamber hard core.
-12. Prove the final global quotient implies the all-`n` result.
+12. Complete and review all ten final premises and six induction-handoff assertions.
+13. Prove the reviewed global quotient and handoff establish `D(n)=2n` for all `n`.
 
 ## Corrections retained
 
-- Source provenance proves traceability, not mathematical truth.
+- Traceability and digests do not prove cited statements true.
 - Clause expansion and family skeletons remain relative to supplied rule data.
 - Candidate coverage and policy remain relative to populated candidate rows.
 - Overlap-derived scopes do not prove the active row family or resource model exhaustive.
 - Common weights do not imply closure, connectivity or strictness.
 - Acyclic weighted elimination does not prove transition semantics.
-- Local-to-global links and evidence trees do not prove external state identity.
+- State links, evidence trees and predicate records do not prove external state identity.
 - Shared states do not fix scales between disconnected components.
 - Strict-or-ranked rows do not prove the interface family exhaustive.
 - Support condensation does not prove recurrence semantics.
-- Proof-artifact closure does not machine-verify artifact truth.
-- Exact artifact kinds and dependency waves do not measure proof validity or difficulty.
+- Typed artifact coverage and support acyclicity do not prove artifact truth or sufficiency.
+- Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
-- A complete premise contract remains a documentary pre-root dossier.
-- Typed premise coverage does not prove any premise true.
-- Acyclic artifact support does not establish logical sufficiency or mathematical truth.
-- A final dossier-integrity flag is not a proof of the conjecture.
-- A ready dossier would still require ordinary mathematical review.
+- A ready contract, integrity dossier or induction handoff remains subject to mathematical review.
+- Every final checker permanently reports `all_n_proved_by_checker = 0`.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2365**, the finite certificate surface reaches a
-noncircular expected global family, explicit state-equivalence evidence, exact support/rank
-termination structure, typed obligation-artifact coverage, exact blocker scheduling, a ten-
-premise pre-root contract, typed final-premise artifacts, noncircular dependency-aligned
-artifact support and a strict three-gate final dossier-integrity endpoint. Completion still
-requires the actual exhaustive rule and population, proved policy/resource/transition and
-cross-block semantics, genuine strict blocks, exceptional closure and a reviewed proof that
-the global quotient establishes the conjecture.
+There is no complete proof. Through **CMR2381**, the finite certificate surface reaches a
+noncircular expected global family, typed noncircular proof documentation, explicit predicate-
+and theorem-level refinement of the quotient, and a six-assertion documentary induction
+handoff. Completion still requires the actual exhaustive rule and population, proof of every
+semantic statement, genuine strict blocks, exceptional closure and ordinary mathematical
+review of the final implication to all `n`.
