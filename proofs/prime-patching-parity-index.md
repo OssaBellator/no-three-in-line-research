@@ -68,6 +68,8 @@ no-three-in-line conjecture.
 | PP3bsp--PP3bsr | All 47,512 supported `m=10` weighted-Hall instances are solved and have proper bottlenecks; the exact global maximum is `2397/349898` | VERIFIED FINITELY | `docs/366-complete-exact-m10-weighted-hall-transport.md` |
 | PP3bss--PP3bsu | The exact values `m^3 gamma_m` increase strictly for `4<=m<=10` but remain below seven, giving the finite envelope `gamma_m<7/m^3` | PROVED / VERIFIED FINITELY | `docs/367-exact-weighted-hall-m-cubed-scale-through-m10.md` |
 | PP3bsv--PP3bsw | The terminal normalizer cumulative profile is exact through `m=10`; its square-root envelope alone gives charge below `5/8` at `m=10` | PROVED / VERIFIED FINITELY | `docs/368-terminal-normalizer-cumulative-profile-through-m10.md` |
+| PP3bsx--PP3bsy | Disjoint normalizer bins give a scale-by-scale terminal envelope; the exact bounds are below `3/4` at `m=8`, fail at `m=9`, and are below `2/5` at `m=10` | PROVED / VERIFIED FINITELY | `docs/369-disjoint-terminal-normalizer-bin-envelopes-through-m10.md` |
+| PP3bsz--PP3bta | Every supported `m=10` Hall flaw obeys `gamma(f)<4/s(f)`; the exact maximum of `s(f)gamma(f)` is `3152400/791819` at source count 600 | PROVED / VERIFIED FINITELY | `docs/370-m10-inverse-compatible-source-weighted-hall-envelope.md` |
 
 ## Current exact frontier
 
@@ -115,21 +117,23 @@ Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
 clean fibre has width at most one. Uniform terminal-gate weights are strongly
 overloaded after fibre regeneration, but fibre-capacity weighting contracts.
-The complete cumulative normalizer profiles are now exact through `m=10`. At
-`m=10`, the bound `C_eta(t)^2/t <= 313600/333` together with the minimum
-normalizer `9872` gives the counting-only certificate
-`sqrt(78400/205461)<5/8`. The same coarse square-root certificate fails at
-`m=8,9`, although the exact capacity policy contracts there. The remaining
-horizon problem is shell depth plus an asymptotic cumulative low-normalizer
-counting theorem.
+The complete cumulative normalizer profiles and disjoint scale-bin populations
+are exact through `m=10`. Independent-bin envelopes are `0.743...`, `1.114...`,
+and `0.392...` at `m=8,9,10`: they certify contraction at `m=8` and `m=10`,
+while `m=9` shows that binwise maxima can lose essential cross-scale
+correlation. The remaining horizon problem is shell depth plus asymptotic
+scale-wise population bounds, with correlation where independent bins are too
+coarse.
 
 Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
 supported `m=10` signed flaws have proper bottlenecks, with exact global maximum
 `2397/349898`. Across `4<=m<=10`, the scaled extrema `m^3 gamma_m` increase
-strictly at every audited size, but the largest value is still
-`1198500/174949<7`; hence `gamma_m<7/m^3` throughout the finite range. This is
-finite evidence only. The remaining transport task is structural all-scale
-weighted expansion or an equivalent heat-kernel bound.
+strictly but remain below seven. At `m=10`, every flaw additionally satisfies
+`gamma(f)<4/s(f)`, where `s(f)` is its compatible source-cycle count; the exact
+maximum of `s(f)gamma(f)` is `3152400/791819` at source count 600. This identifies
+inverse compatible-source support as a concrete structural route to cubic
+charge, but both a general inverse-support inequality and a cubic source-support
+lower bound remain open.
 
 ## Remaining tasks
 
@@ -143,13 +147,15 @@ weighted expansion or an equivalent heat-kernel bound.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and establish a sublinear cumulative bound for
-   the terminal normalizer profile `C_eta(t)` throughout the frustration window.
+   adjacent-shell fibre width, and establish either a sublinear cumulative bound
+   or a summable disjoint-bin population bound for terminal normalizers, with
+   cross-scale correlation where independent maxima are too coarse.
 6. Prove uniform weighted expansion or heat-kernel control for local,
-   intermediate, and global flaw-transport Hall cuts; explain structurally the
-   finite increasing sequence `m^3 gamma_m` and obtain an asymptotic constant.
+   intermediate, and global flaw-transport Hall cuts; prove a general inverse-
+   compatible-source envelope and lower-bound compatible source support at the
+   relevant scales.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bsx`.
+The next available theorem identifier is `PP3btb`.
