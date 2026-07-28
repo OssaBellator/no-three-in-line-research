@@ -6,17 +6,11 @@ This compact addendum records the cycle-local restoration results proved after t
 |---|---|---|---|
 | BDA5bl--BDA5bp | Every nonconstant simple same-denominator profile cycle has a canonical least-field leave/restore excursion; monotone fields forbid recurrence, while exact restoration edges admit payment, descent, impossibility, outer-reset or capacity-one ticket routing | PROVED UNDER THE COMPLETE-PROFILE AND RESTORATION-TICKET CONTRACTS | `docs/bounded-denominator-least-field-restoration-gates.md` |
 | BDA5bq--BDA5bu | A recurrent bounded-jump floor coordinate has a canonical minimum-floor restoration edge; that edge is a negative wall crossing with overshoot at most `B-1`, has a finite address stock under the finite numerator-range contract, and routes to payment, descent, impossibility, tickets or reset | PROVED UNDER THE COMPLETE-WALL AND FINITE-NUMERATOR-RANGE CONTRACTS | `docs/bounded-denominator-balanced-floor-wall-restoration.md` |
-| BDA5bv--BDA5bz | Every unbounded negative floor-restoration jump in a closed numerator cycle has a canonical positive source edge of size at least the jump divided by `P-1`; the dyadic scale gap is bounded by `ceil(log_2(P-1))`, reducing large-jump recurrence to one exact source/restoration pair | PROVED UNDER THE COMPLETE-EDGE AND BOUNDED-CYCLE-LENGTH CONTRACTS | `docs/bounded-denominator-large-jump-compensation.md` |
+| BDA5bv--BDA5bz | Every unbounded negative floor-restoration jump in a closed word has a canonical positive source edge of comparable size; the source/restoration dyadic scales differ by at most `ceil(log_2(P-1))` | PROVED UNDER THE COMPLETE CLOSED-WORD AND EDGE-ADDRESS CONTRACTS | `docs/bounded-denominator-large-jump-compensation.md` |
+| BDA5ca--BDA5ce | If decorated positive sources have finite nonreplenishing numerator-mass capacities and word length is at most `L`, the number of restorations of size at least `J_0` is at most `floor((L-1)C_tot/J_0)`; failure is a replenishment or dictionary reset | PROVED UNDER THE COMPLETE SOURCE-MASS BANK CONTRACT | `docs/bounded-denominator-source-mass-bank.md` |
 
 ## Updated frontier
 
-The recurrent non-scalar cycle is now localized in four complementary ways:
-
-1. BDA5bc--BDA5bf expose one cycle-space chord from a stock of size `E-V+c`;
-2. BDA5bl--BDA5bp expose one exact restoration of the least changing physical field;
-3. BDA5bq--BDA5bu identify bounded-jump balanced-floor restoration as one downward wall crossing `(field,level,overshoot,jump,edge)`;
-4. BDA5bv--BDA5bz pair every unbounded restoration jump with a comparable positive physical source edge.
-
-The remaining BDA6 work is edge-pair specific: pay, descend, ticket or exclude the reachable wall/source classes for rank-two/rank-three and unresolved ordinary-role profiles. Unbounded jump magnitude is no longer by itself an unstructured recurrence regime; genuinely unbounded cycle length, changing physical edge dictionaries and replenishable sources remain outside the contract.
+The recurrent non-scalar cycle is localized by cycle-space chords, least-field restoration gates and exact balanced-floor wall/source pairs. Bounded source multiplicity now pays even unbounded jump magnitudes through a finite numerator-mass bank. Remaining BDA6 work is payment or impossibility of the selected exact pairs in rank-two/rank-three and unresolved ordinary-role profiles, plus genuinely replenishable sources, unbounded word length or changing edge dictionaries.
 
 No statement here proves BDA6 or the no-three-in-line conjecture.
