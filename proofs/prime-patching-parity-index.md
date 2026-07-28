@@ -60,6 +60,8 @@ no-three-in-line conjecture.
 | PP3bru--PP3brv | The terminal clean-macro shells at `m=8,9,10` have no two-layer shortcuts and dense predecessor gates with minimum root multiplicities 13, 29, and 70 | PROVED / VERIFIED FINITELY | `docs/358-terminal-clean-macro-gate-spectrum-through-m10.md` |
 | PP3brw--PP3bry | Uniform choice across the dense terminal gate amplifies after fibre regeneration; exact maximum loads are `1.693...`, `3.562...`, and `2.612...` at `m=8,9,10` | PROVED / VERIFIED FINITELY | `docs/359-uniform-terminal-gate-reverse-concentration-through-m10.md` |
 | PP3brz--PP3bsa | All 412 `m=10` flaws with the full 720-cycle source support have proper Hall bottlenecks; their worst exact charge is `3897/719620` | VERIFIED FINITELY | `docs/360-exact-m10-full-source-weighted-hall-tranche.md` |
+| PP3bsb--PP3bsd | Weighting each terminal closing target by its clean-fibre size cancels the regeneration penalty and gives exact charge below `3/5` through `m=10` | PROVED / VERIFIED FINITELY | `docs/361-fibre-capacity-weighted-terminal-descent-through-m10.md` |
+| PP3bse--PP3bsg | The complete `106--399` source bands add 2,760 exact `m=10` Hall closures; together with the 720-source tranche, 3,172 instances are certified across local, intermediate, and near-global cuts | VERIFIED FINITELY | `docs/362-exact-low-source-m10-weighted-hall-bands.md` |
 
 ## Current exact frontier
 
@@ -105,18 +107,20 @@ m=10: maximum macro distance 5.
 
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
-clean fibre has width at most one. The outer shells have many predecessor-shell
-choices, but uniform weighting is strongly overloaded after fibre regeneration:
-the exact maximum column loads are `1.693...`, `3.562...`, and `2.612...` at
-`m=8,9,10`. Thus the horizon charge problem is shell depth plus capacitated
-reverse balancing, not lack of terminal forward choices.
+clean fibre has width at most one. Uniform terminal-gate weights are strongly
+overloaded after fibre regeneration, but weighting each target cycle
+proportionally to its clean-fibre size cancels the reciprocal-fibre penalty. The
+resulting exact maximum loads are `0.387...`, `0.574...`, and `0.155...` at
+`m=8,9,10`, uniformly below `3/5`. The remaining horizon problem is shell depth
+plus an asymptotic bound on capacity-normalised reverse concentration.
 
 Exact weighted-Hall flaw transport reaches `m=9`. At `m=10`, source-side
-compression is complete and the first exact closure block is certified. All 412
-flaws with the full 720-cycle source support have proper bottlenecks; their worst
-charge is `3897/719620`, with scaled value `5.41536...`, below the complete
-`m=9` maximum. The remaining finite step is the other 47,100 closures; the
-asymptotic step remains uniform control of local, intermediate, and global cuts.
+compression is complete and three exact source-scale blocks are certified. The
+`106--199`, `200--399`, and exactly-`720` blocks contain `3,172` signed flaws,
+all with proper bottlenecks. Their maximizing cuts range from 16 of 137 sources
+to 235 of 386 and 686 of 720, while the largest scaled charge is `5.53441...`,
+still below the complete `m=9` maximum. The remaining finite step is the other
+`44,340` closures; the asymptotic step remains all-scale weighted expansion.
 
 ## Remaining tasks
 
@@ -130,14 +134,14 @@ asymptotic step remains uniform control of local, intermediate, and global cuts.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and construct capacitated or Hall-balanced weights
-   across the overloaded terminal predecessor gate.
+   adjacent-shell fibre width, and bound the capacity-normalised terminal sum
+   `sup_eta sum_x m(x,eta)/Z(x)` throughout the frustration window.
 6. Prove uniform weighted expansion or heat-kernel control for local,
    intermediate, and global flaw-transport Hall cuts.
-7. Complete the remaining 47,100 exact compressed `m=10` weighted-Hall min-cut
+7. Complete the remaining 44,340 exact compressed `m=10` weighted-Hall min-cut
    instances using resumable source-count bands and reusable flow workspaces.
 8. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bsb`.
+The next available theorem identifier is `PP3bsh`.
