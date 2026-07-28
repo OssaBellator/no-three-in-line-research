@@ -1,1 +1,1 @@
-run-case1287-selector1
+done-case1287-selector1
