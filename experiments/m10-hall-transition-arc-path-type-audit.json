@@ -1,0 +1,59 @@
+{
+  "m": 10,
+  "source_cycle_range": [209, 287],
+  "nonempty_source_counts": 43,
+  "supported_signed_flaws": 284,
+  "proper_hall_bottlenecks": 284,
+  "constant_one_violations": 68,
+  "constant_one_violation_fraction": "17/71",
+  "arc_path_type_profile": [
+    {
+      "path_components": 1,
+      "path_type": "three_edge_path",
+      "signed_flaws": 40,
+      "constant_one_violations": 8,
+      "constant_one_violation_fraction": "1/5",
+      "maximum_support_normalized_charge": "14076/11845",
+      "maximizing_source_count": 276,
+      "maximizer_source_owners": [6, 8, 9],
+      "maximizer_targets": [1, 9, 6]
+    },
+    {
+      "path_components": 2,
+      "path_type": "two_edge_path_plus_arc",
+      "signed_flaws": 124,
+      "constant_one_violations": 20,
+      "constant_one_violation_fraction": "5/31",
+      "maximum_support_normalized_charge": "51152/38383",
+      "maximizing_source_count": 278,
+      "maximizer_source_owners": [5, 6, 8],
+      "maximizer_targets": [2, 9, 5]
+    },
+    {
+      "path_components": 3,
+      "path_type": "three_disjoint_arcs",
+      "signed_flaws": 120,
+      "constant_one_violations": 40,
+      "constant_one_violation_fraction": "1/3",
+      "maximum_support_normalized_charge": "1984/1563",
+      "maximizing_source_count": 248,
+      "maximizer_source_owners": [2, 4, 9],
+      "maximizer_targets": [7, 6, 3]
+    }
+  ],
+  "count_maximum_path_type_profile": [
+    {"path_components": 1, "path_type": "three_edge_path", "nonempty_source_counts_with_this_maximizer_type": 4, "violating_count_maxima_with_this_type": 1},
+    {"path_components": 2, "path_type": "two_edge_path_plus_arc", "nonempty_source_counts_with_this_maximizer_type": 17, "violating_count_maxima_with_this_type": 2},
+    {"path_components": 3, "path_type": "three_disjoint_arcs", "nonempty_source_counts_with_this_maximizer_type": 22, "violating_count_maxima_with_this_type": 10}
+  ],
+  "landmarks": {
+    "first_count_maximum_violation": {"source_count": 209, "value": "45980/45691", "path_type": "three_disjoint_arcs"},
+    "closest_later_count_maximum_nonviolation": {"source_count": 279, "value": "29574/29677", "path_type": "two_edge_path_plus_arc"},
+    "last_count_maximum_nonviolation": {"source_count": 287, "value": "861/1133", "path_type": "three_edge_path"}
+  },
+  "source_count_profile_reused": "experiments/m10-hall-support-count-profile-106-399-audit.json",
+  "scope_note": "arc path type is computed from the three prescribed directed arcs before parity-clean filtering; each supported signed flaw is counted, including complement partners",
+  "arc_connectivity_sufficient_to_characterize_constant_one_violation": false,
+  "asymptotic_arc_type_theorem_proved": false,
+  "all_exact_regressions_verified": true
+}
