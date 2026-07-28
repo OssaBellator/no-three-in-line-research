@@ -21,6 +21,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5bo--AC5bs | Exact conditioned menu layers aggregate by subtracting endpoint-overlap excess; union reverse load is at most the sum of layer loads, giving explicit threshold Hall and obstruction-bank routing | PROVED UNDER THE COMPLETE LAYER, CONDITIONING AND ENDPOINT-IDENTITY CONTRACTS | `docs/alternating-core-layered-menu-incidence.md` |
 | AC5bt--AC5bx | Uniform local degree/reverse-load ratios imply the same aggregate ratio; every deficient aggregate retains one exact positive-load layer whose local relative deficit is at least the global deficit | PROVED UNDER THE COMPLETE LAYER-RATIO AND POSITIVE-LOAD CONTRACTS | `docs/alternating-core-layer-witness-concentration.md` |
 | AC5by--AC5cc | Aggregate ratio shortfall is dominated by the sum of exact local layer shortfalls; partitioning those charges by obstruction class either pays the aggregate deficit or returns one exact overloaded class | PROVED UNDER THE COMPLETE LAYER-SHORTFALL AND OBSTRUCTION-BANK CONTRACTS | `docs/alternating-core-weighted-layer-shortfall-bank.md` |
+| AC5cd--AC5ch | Scaled exact layer defects and compatible finite certificate capacities form an integral transport problem; full payment preserves layer and obstruction-class addresses, while failure returns one canonical deficient layer/certificate cut | PROVED UNDER THE COMPLETE LAYER-DEFECT CERTIFICATE GRAPH CONTRACT | `docs/alternating-core-layer-defect-certificate-transport.md` |
 
 ## Updated AC4 frontier
 
@@ -28,6 +29,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has a closed-form restricted-menu audit, a finite exact obstruction-capacity bank, exact reverse-load transportation, Hall-core obstruction routing, finite-layer aggregation, local bad-layer concentration and a classwise weighted shortfall bank. Remaining work is proving the concrete local layer ratios, obstruction assignments, thresholds, capacities and deposits, plus physical payment of returned overloads.
+The deterministic GC1--GC3 inventory now has exact reverse-load transportation, Hall-core obstruction routing, finite-layer aggregation, local shortfall concentration, classwise obstruction banks and a complete layer-defect certificate transport criterion. Remaining work is constructing the concrete certificate graph and proving its layer demands, compatibility arcs, obstruction assignments, capacities and deposits, plus physical payment of returned cuts or overloads.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
