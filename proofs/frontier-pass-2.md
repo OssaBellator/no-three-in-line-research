@@ -26,6 +26,6 @@ This addendum records the bounded blocker-fibre and action-kernel quotient prove
 
 ## Updated frontier
 
-Bounded recurrent blocker/action states have finite physical, valuation, unit and holonomy quotients; factor creation has a multiplicative account. Residual and edit demand now has exact cut localization and canonical irreducible typed cores. Remaining OP5 work is proving that the returned local residual-or-edit marginal shortage is paid or impossible, together with concrete source classes, capacities, deposits and unbounded creation.
+Bounded recurrent blocker/action states have finite physical, valuation, unit and holonomy quotients; factor creation has a multiplicative account. Residual and edit demand now have exact cut localization and canonical irreducible typed cores. Remaining OP5 work is proving that the returned local residual-or-edit marginal shortage is paid or impossible, together with concrete source classes, capacities, deposits and unbounded creation.
 
 No statement here proves OP5 or the no-three-in-line conjecture.
