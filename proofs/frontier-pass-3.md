@@ -2,7 +2,7 @@
 
 **Branch:** `research/geometric-cleaning`
 
-This compact addendum records same-token and concentrated-blocker reductions proved after the current canonical theorem-index compaction.
+This compact addendum records same-token and concentrated-blocker reductions proved after the current canonical theorem-index compaction. The blocker-removal theorem is also recorded in the main branch theorem index.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
