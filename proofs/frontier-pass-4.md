@@ -27,6 +27,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5cs--AC5cw | Physical source capacities, certificate throughput capacities and layer-defect demands form one integral split-certificate network; full payment is max-flow, while failure returns one canonical mixed source/certificate/defect cut | PROVED UNDER THE COMPLETE INTEGRATED SOURCE/CERTIFICATE/DEFECT NETWORK CONTRACT | `docs/alternating-core-integrated-source-certificate-flow.md` |
 | AC5cx--AC5db | Across repeated epochs, the integrated source/certificate/defect network uses exact current source and certificate balances, named deposits and actual two-layer debits; the first unpaid epoch returns one canonical mixed cut | PROVED UNDER THE COMPLETE CUMULATIVE INTEGRATED SOURCE/CERTIFICATE DEPOSIT CONTRACT | `docs/alternating-core-cumulative-integrated-source-certificate-bank.md` |
 | AC5dc--AC5dg | Physical source mass, existing source balances, certificate throughputs and defect demands form one four-layer integral network; simultaneous issuance and payment are max-flow, while failure returns one exact physical/source/certificate/defect cut | PROVED UNDER THE COMPLETE PHYSICAL-SOURCE/CERTIFICATE NETWORK CONTRACT | `docs/alternating-core-physical-source-certificate-network.md` |
+| AC5dh--AC5dl | Residual reachability decomposes every unpaid physical/source/certificate/defect flow into exact finite barrier sets; compatibility closure holds and unpaid demand equals outside defect demand minus the three barrier capacities | PROVED UNDER THE GUARDED COMPLETE MIXED-CUT CONTRACT | `docs/alternating-core-mixed-cut-decomposition.md` |
 
 ## Updated AC4 frontier
 
@@ -34,6 +35,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances and a physical source/source/certificate/defect network that removes preissuance loss. Remaining work is constructing the concrete geometric graph and proving its layer demands, both compatibility relations, source and certificate capacities, exogenous deposits, and payment or impossibility of returned mixed cuts.
+The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances and a physical source/source/certificate/defect network. Every failure now returns an exact outside defect set and physical/source/certificate barrier vector. Remaining work is proving the concrete geometric cut inequality, exogenous deposits, and payment or impossibility of that returned address.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
