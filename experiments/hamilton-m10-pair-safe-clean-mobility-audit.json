@@ -1,0 +1,36 @@
+{
+  "m": 10,
+  "hamilton_cycles": 362880,
+  "pair_safe_cycles": 342720,
+  "clean_cycles": 297886,
+  "total_clean_orientations": 115586396,
+  "lambda_distribution": {
+    "0": 297886,
+    "1": 42190,
+    "2": 2582,
+    "3": 62
+  },
+  "clean_rank_distribution": {
+    "0": 296298,
+    "1": 1588
+  },
+  "minimum_clean_degree": 69,
+  "maximum_clean_degree": 120,
+  "minimum_clean_rotations_intersecting_any_owner_triple": 40,
+  "clean_induced_components": 1,
+  "largest_clean_component": 297886,
+  "pair_safe_distance_to_clean_distribution": {
+    "0": 297886,
+    "1": 44834
+  },
+  "pair_safe_unreachable_to_clean": 0,
+  "maximum_pair_safe_distance_to_clean": 1,
+  "lambda_source_to_best_target_distribution": {
+    "1->0": 42190,
+    "2->0": 2582,
+    "3->0": 62
+  },
+  "pair_safe_nonclean_without_immediate_lambda_descent": 0,
+  "verified": true,
+  "asymptotic_seed_theorem_proved": false
+}
