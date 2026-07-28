@@ -1,0 +1,27 @@
+# Frontier pass 4: low-buffer macro returns and GC1--GC3 inventories
+
+This compact addendum records the next proved theorem blocks after the AC5 cut-cause localization addendum. It supplements `proofs/theorem-index.md` without changing the status of AC4, AC5, AC6 or the global conjecture.
+
+| ID | Statement | Status | Location |
+|---|---|---|---|
+| AC3ur--AC3uv | Every exact low-buffer macro recurrence has a canonical minimum face; it gives resource-dimension descent, first-destruction/source payment, a capacity-one threshold-lineage ticket, or an explicit recreation/reset gate | PROVED UNDER THE THRESHOLD-LINEAGE CONTRACT | `docs/alternating-core-low-buffer-recurrence.md` |
+| AC5ap--AC5at | Paid pool depletion preserves partner density `1-delta/rho`; restriction creates no pair-shadow mass, every new exception is an exact old--new or new--new event, and margin crossings have pathwise charge bound `RW/eta` | PROVED UNDER THE COMPLETE PARTNER/NEW-CELL/CHARGE INVENTORY CONTRACT | `docs/alternating-core-gc-pool-shadow-import.md` |
+
+## Updated AC4 frontier
+
+Buffer-rich coupled-resource circulations and threshold-lineage low-buffer returns now reduce to chronological words, strict resource-dimension descent, first-destruction/source payment, capacity-one threshold tickets or explicit recreation/reset gates.
+
+The remaining recurrent cases are freely or cyclically recreated resources, upper guards, hidden or nonadditive balances, dynamic dictionaries, omitted payment fields, and undisclosed recreation or positive-output gates.
+
+## Updated AC5 frontier
+
+The deterministic GC1--GC3 partner, pool and pair-shadow inventory is complete under explicit `delta,rho,eta,R` contracts:
+
+1. paid pool restriction retains partner density `1-delta/rho`;
+2. pure restriction creates no pair-shadow mass;
+3. every new pair-shadow exception is an old--new or new--new event cylinder;
+4. pathwise margin crossings consume at most the declared paid-incidence reuse budget.
+
+The remaining work is menu-specific: prove the constants, list every genuinely new possible cell, control charge reuse, and establish the quantitative per-cylinder, sublevel-cut or aggregate min-cost flow inequality through all intermediate states.
+
+No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
