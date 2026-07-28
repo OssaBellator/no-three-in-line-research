@@ -37,12 +37,10 @@ The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committe
 
 - `multiplicity2_pilot10.cpp` for cases `0`--`9`;
 - `multiplicity2_shard1.cpp` through `multiplicity2_shard127.cpp` for cases `10`--`1279`;
-- `multiplicity2_shard128_prefix7.cpp` for cases `1280`--`1286`;
-- the constructive witness and independent selector-one verifier for case `1287`;
-- `multiplicity2_shard128_tail2.cpp` for cases `1288`--`1289`;
+- `multiplicity2_shard128_special.cpp` for the nineteen rejections and one construction in cases `1280`--`1289`;
 - `multiplicity2_shard129.cpp` through `multiplicity2_shard135.cpp` for cases `1290`--`1359`.
 
-Each rejection wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest. The constructive verifier rebuilds the canonical signature and state, extracts the surviving bottom permutation, and independently checks the 28-point geometry.
+Each ordinary rejection wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest. The special shard rebuilds the case-`1287` signature and state, independently checks the 28-point construction, and separately rejects selector one.
 
 ## Certificate compression and master learning
 
@@ -73,15 +71,13 @@ The next compression target is to solve a compact set-cover problem against the 
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full192_relaxed.py
 
 g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_multiplicity2_case1287_constructive_witness.cpp \
-  -o /tmp/m2-case1287-witness
-/tmp/m2-case1287-witness
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_special.cpp \
+  -o /tmp/m2-shard128-special
+/tmp/m2-shard128-special
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..127}.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_prefix7.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_tail2.cpp \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{129..135}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
