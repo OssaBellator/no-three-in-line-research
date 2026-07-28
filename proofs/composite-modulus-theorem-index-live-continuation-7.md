@@ -25,69 +25,60 @@ The authoritative live ledger is split across:
 | CMR2262--2269 | Shared-state scale equations, exact rational propagation, cycle consistency, componentwise denominator clearing, global component weights, scaled block rows, scale boundary, and executable endpoint | PROVED as exact integer weight synchronization; checker syntax-compiled; genuine populated block family remains absent | `docs/386-prime-power-cross-block-weight-synchronization.md` |
 | CMR2270--2277 | Global component multipliers, complete state-rank registry, return/interface row records, exact margin reconstruction, strict-or-ranked descent, aggregate digests, interface boundary, and executable endpoint | PROVED as a global interface-row arithmetic layer; checker syntax-compiled; genuine rows, ranks and component scales remain absent | `docs/387-prime-power-interface-return-rows.md` |
 | CMR2278--2285 | Expected family manifest, exact block and interface coverage, globally lifted recurrent rows, exact parent coverage, canonical `(A,b,W,mu,rho)` package, complete-family criterion, global boundary, and executable endpoint | PROVED as an exhaustive-family interface relative to a supplied manifest; checker syntax-compiled; no genuine complete global family or all-`n` proof claimed | `docs/388-prime-power-global-integer-quotient-family.md` |
+| CMR2286--2293 | Source-independent parent clauses, exact clause typing, derived block/interface/parent registries, exact manifest equality, row-to-clause binding, census and digests, exhaustiveness boundary, and executable endpoint | PROVED as a noncircular expected-family interface; checker syntax-compiled; genuine exhaustive recurrence skeleton remains absent | `docs/389-prime-power-global-family-skeleton.md` |
+| CMR2294--2301 | Pairwise state-equivalence evidence, exact class membership, `n-1` edge coverage, connected spanning trees, canonical root paths, aggregate digests, truth boundary, and executable endpoint | PROVED as documentary equivalence coverage; checker syntax-compiled; cited equivalence statements remain mathematically unverified | `docs/390-prime-power-state-equivalence-spanning-evidence.md` |
+| CMR2302--2309 | Global support graph, exact SCC condensation, critical rank descent, critical-edge acyclicity, longest critical path, strict edge on every cycle, termination boundary, and executable endpoint | PROVED as finite support/rank arithmetic; checker syntax-compiled; genuine recurrence semantics remain absent | `docs/391-prime-power-global-support-condensation.md` |
+| CMR2310--2317 | Fixed nineteen-obligation semantic DAG, exact proof-artifact records, dependency closure, machine-readable frontier, finite-interface gate, conditional all-`n` readiness, proof boundary, and executable endpoint | PROVED as a documentary closure interface; checker syntax-compiled; `all_n_proved_by_checker` is permanently zero and current readiness is unsatisfied | `docs/392-prime-power-all-n-implication-closure.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Cross-block state and weight assembly
+## Source-independent expected family
 
-Every local state in every supplied integer block now has exactly one explicit global-state
-link. Members of one global class must agree on role, stratum and owner. Shared classes
-generate a block-ratio graph whose exact rational scale constraints are propagated and
-denominator-cleared componentwise.
+One parent clause is required for every expected global parent. The expected block IDs,
+interface-row IDs and parent registry are derived from those clauses before populated rows are
+read. Every final row is then rebound to its rule/case clause. This removes circular family
+completeness relative to the supplied skeleton, but does not prove that the skeleton is the
+genuine exhaustive recurrence.
 
-For a local member `(b,s)` of global state `g`,
+## Cross-block equivalence and global support
 
-\[
-W_g=m_b w_b(s),
-\]
-
-and every scaled recurrent row satisfies
-
-\[
-W_p-B_p-\sum_g A_{p,g}W_g=M_p.
-\]
-
-This remains relative to the supplied state links and populated integer blocks.
-
-## Return and interface rows
-
-Disconnected scale components receive one globally primitive positive component-multiplier
-family. Every global state also receives a nonnegative rank. Return, interface and
-off-diagonal rows are accepted exactly when they have positive integer-weight margin or zero
-margin with strict rank descent on every positive target.
-
-Thus critical rows are no longer silently treated as strict; their secondary well-founded
-descent is explicit and checkable.
-
-## Global integer quotient family
-
-An expected family manifest lists every block, interface row and global parent state. The
-checker lifts recurrent rows into the final global scale, appends interface rows, forbids
-surviving auxiliary coordinates and publishes one canonical package
+Every shared global state class now requires a connected `n-1` edge evidence tree, with a
+canonical evidence path from one root member to every other member. The support graph of the
+final quotient is reconstructed exactly. Critical edges strictly decrease nonnegative rank,
+so the critical subgraph is acyclic and
 
 \[
-(A,b,W,\mu,\rho).
+\text{longest critical path}
+\le \max\rho-\min\rho.
 \]
 
-The `complete_global_integer_family` flag means complete only relative to that supplied
-manifest, state-identification table, component scales, rank registry and populated rows.
+Every cycle in the full support graph consequently contains at least one strict-row edge.
+These are finite consequences of supplied evidence and rows, not proofs of their external
+semantics.
+
+## Exact semantic closure frontier
+
+The final checker contains a fixed dependency DAG of nineteen named semantic obligations. An
+obligation closes only when it is declared proved with an artifact and all dependencies are
+already closed. It publishes the complete unclosed set and the current dependency frontier.
+
+The conditional `all_n_implication_dossier_ready` flag additionally requires the complete
+finite global family, skeleton equality, spanning equivalence evidence and support/rank gate.
+The checker always publishes `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
-1. Supply the genuine parent cases, clauses, domains, exclusions and source proofs, and
-   prove that rule source correct and exhaustive.
-2. Populate every expected slot, every candidate row and every recurrent/interface block
-   with actual geometry, fate, route and transition data.
-3. Prove the common-weight candidate minimum is the intended recurrence policy.
-4. Publish the genuine simultaneous selected-row family and prove the destroyed-triple
-   shared-resource model exhaustive.
-5. Produce genuinely closed, strongly connected, common-weight strict recurrent blocks.
-6. Supply and prove every recursive auxiliary expansion DAG and eliminate all auxiliaries.
-7. Prove every cross-block state identification, scale component, return/interface row and
-   global rank semantically.
-8. Populate the expected global block/row/parent manifest and pass the complete global
-   integer quotient family.
-9. Close the 232 zero-selector obligations and complete 20-chamber hard core with all
-   labelled-child, return and interface terms.
-10. Finish deletion, domination, transfer and state-label semantics and prove that the
-    resulting denominator-cleared global quotient establishes the all-`n` statement.
+1. Prove the cited source statements and genuine exhaustive recurrence skeleton.
+2. Populate every operation slot, candidate row, recurrent block and interface row with real
+   geometry, fate, route and transition data.
+3. Prove selector correctness and that common-weight candidate minimization is the intended
+   recurrence policy.
+4. Prove the actual simultaneous row family and destroyed-triple resource model exhaustive,
+   and prove routed-credit semantics.
+5. Produce genuinely closed, strongly connected, strict recurrent blocks and semantic
+   auxiliary expansion DAGs.
+6. Prove every cross-block equivalence edge and every disconnected component scale.
+7. Prove the complete return/interface row family and global rank well-foundedness.
+8. Prove the skeleton-derived global family exhaustive.
+9. Close all 232 zero-selector obligations and the complete 20-chamber hard core.
+10. Prove that the resulting global integer quotient implies the all-`n` statement.
