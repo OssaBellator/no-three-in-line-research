@@ -1,0 +1,8 @@
+{
+  "cases":[
+    {"m":8,"clean_signed_states":404080,"valid_states":28,"failed_strict_cancellation_sources":4186,"minimum_terminal_macro_distance_distribution":{"1":3020,"2":1166},"maximum_terminal_macro_distance_distribution":{"2":1068,"3":3118},"minimum_hybrid_length_distribution":{"2":3014,"3":1172},"source_frustration_distribution":{"1":4170,"2":16},"maximum_minimum_hybrid_length":3},
+    {"m":9,"clean_signed_states":6727728,"valid_states":8,"failed_strict_cancellation_sources":25894,"minimum_terminal_macro_distance_distribution":{"1":3816,"2":19226,"3":2852},"maximum_terminal_macro_distance_distribution":{"2":146,"3":10680,"4":15068},"minimum_hybrid_length_distribution":{"2":3792,"3":19250,"4":2852},"source_frustration_distribution":{"1":25862,"2":32},"maximum_minimum_hybrid_length":4}
+  ],
+  "strict_repair_then_clean_macro_bridge_verified":true,
+  "asymptotic_hybrid_repair_proved":false
+}
