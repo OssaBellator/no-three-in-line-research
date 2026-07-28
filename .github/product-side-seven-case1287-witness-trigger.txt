@@ -1,1 +1,1 @@
-run-case1287-witness
+done-case1287-witness
