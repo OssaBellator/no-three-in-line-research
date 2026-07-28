@@ -56,6 +56,8 @@ no-three-in-line conjecture.
 | PP3brk--PP3brm | The sixteen-state `m=10` sparse core has four owner-cover Pareto types, attained by a complete bank of ten canonical five-step words | PROVED / VERIFIED FINITELY | `docs/354-m10-sparse-core-owner-cover-pareto-words.md` |
 | PP3brn--PP3brp | The complete locally coupled `m=10` direct-clean graph has minimum source degree two, layer capacity two, and exact optimal reverse-column load `1/2` | PROVED / VERIFIED FINITELY | `docs/355-exact-m10-direct-clean-charge-optimum-and-layer-packing.md` |
 | PP3brq--PP3brr | A support-chord signature exactly classifies the four owner-cover Pareto types in the sixteen-state `m=10` sparse core | PROVED / VERIFIED FINITELY | `docs/356-m10-sparse-core-support-chord-signature.md` |
+| PP3brs--PP3brt | The compressed `m=10` flaw family has 47,512 supported signed instances, each with 106--720 source cycles and at most 61,200 raw transport incidences | PROVED / VERIFIED FINITELY | `docs/357-exact-m10-compressed-flaw-source-census.md` |
+| PP3bru--PP3brv | The terminal clean-macro shells at `m=8,9,10` have no two-layer shortcuts and dense predecessor gates with minimum root multiplicities 13, 29, and 70 | PROVED / VERIFIED FINITELY | `docs/358-terminal-clean-macro-gate-spectrum-through-m10.md` |
 
 ## Current exact frontier
 
@@ -74,17 +76,16 @@ blocked by three-owner collateral. Most unresolved states reach parity-clean
 termination before strict repair can lower total atomic defect, so a clean
 macro or joint action remains necessary.
 
-The strict-to-clean charge interface is now sharp through the first nonforest
-size. A fixed repair word has at most one predecessor; exact Hall-balanced
-strict weights give one-step charge at most `489/1726` through `m=9`; and the
-complete locally coupled direct-clean action at `m=10` has exact optimal
-reverse-column load `1/2`. Two globally target-disjoint deterministic layers
-attain the upper bound, while eight sources with exactly two distinct clean
-targets force the matching lower bound and forbid a third layer. Fibre
-regeneration and clean heat evolution can only contract this inherited density
-further.
+The strict-to-clean charge interface is sharp through the first nonforest size.
+A fixed repair word has at most one predecessor; exact Hall-balanced strict
+weights give one-step charge at most `489/1726` through `m=9`; and the complete
+locally coupled direct-clean action at `m=10` has exact optimal reverse-column
+load `1/2`. Two globally target-disjoint deterministic layers attain the upper
+bound, while eight sources with exactly two distinct clean targets force the
+matching lower bound and forbid a third layer. Fibre regeneration and clean
+heat evolution can only contract this inherited density further.
 
-Atomic collateral is owner-local. The explicit `m=9` and `m=10` word banks now
+Atomic collateral is owner-local. The explicit `m=9` and `m=10` word banks
 separate support/atomic cost from owner-cover locality. In the sixteen-state
 `m=10` minimum core, the four Pareto types are classified exactly by the cyclic
 support-chord signature: alternating leaf distances `{4,4}`, `{2,2}`, `{3,5}`,
@@ -102,17 +103,18 @@ m=10: maximum macro distance 5.
 
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
-clean fibre has width at most one. At `m=10`, only 38 of 297,882 nonvalid clean
-cycles mix adjacent distances; the other 297,844 lie in one complete shell. The
-1,260 fifth-shell cycles contain the entire 535,072-state terminal layer. The
-asymptotic horizon problem is therefore primarily a bound on the cycle minimum,
-plus one adjacent-shell boundary.
+clean fibre has width at most one. The outer shells are not narrow final gates:
+every terminal root has at least 13, 29, and 70 predecessor-shell rotations at
+`m=8,9,10`, respectively, while no terminal cycle has a two-layer shortcut.
+The asymptotic horizon problem is therefore shell depth and reverse
+concentration, not lack of terminal forward choices.
 
-Exact weighted-Hall flaw transport reaches `m=9` without enumerating clean
-signed states. There are 25,540 atomic signed-assignment flaws, 25,520 with a
-proper bottleneck. The worst charge is `223/29271`, or `5.55386/m^3` after
-scaling, and its maximizing cut uses 77 of 96 source cycles. Thus neither global
-mass nor constant-size expansion alone controls the finite obstruction.
+Exact weighted-Hall flaw transport reaches `m=9`. At `m=10`, source-side
+compression is now complete: 47,512 supported signed flaws have 106--720
+compatible source cycles, with median 612, and each min-cut instance has at most
+720 sources and 61,200 raw source--rotation incidences. The remaining finite
+step is to execute and certify all weighted closures; the remaining asymptotic
+step is uniform control of local, intermediate, and global Hall cuts.
 
 ## Remaining tasks
 
@@ -125,14 +127,14 @@ mass nor constant-size expansion alone controls the finite obstruction.
 4. Extend the support-chord signature beyond the finite minimum core and turn
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
-5. Bound the clean-macro cycle minimum by a decreasing invariant and prove a
-   uniform adjacent-shell fibre-width theorem.
+5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
+   adjacent-shell fibre width, and control reverse multiplicity across the dense
+   terminal predecessor gate.
 6. Prove uniform weighted expansion or heat-kernel control for local,
    intermediate, and global flaw-transport Hall cuts.
-7. Extend compressed exact flaw transport to `m=10`, where one flaw has at most
-   `6!=720` source cycles.
+7. Complete the 47,512 exact compressed `m=10` weighted-Hall min-cut instances.
 8. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3brs`.
+The next available theorem identifier is `PP3brw`.
