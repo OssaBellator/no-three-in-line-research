@@ -2,15 +2,15 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2533 the branch contains exact documentary
-work banks from T01 through T10, a typed proof stack through all 43 atomic targets, an exact
+The no-three-in-line conjecture remains open. Through CMR2541 the branch contains exact documentary
+work banks from T01 through T11, a typed proof stack through all 43 atomic targets, an exact
 252-chamber exceptional worklist and a final dossier audit.
 
 The branch still lacks the genuine source statements, exhaustive recurrence, actual complete T03/T04
 population, proof that T05 finite systems cover every all-`n` case, truth of all T07 semantic claims
 and T06 score statements, genuine T08 simultaneous-row completeness, T09 physical resource-model
-exhaustiveness, T10 route semantics, downstream block/interface semantics, complete chamber proofs
-and the reviewed implication to `D(n)=2n`.
+exhaustiveness, T10 route semantics, genuine T11 block semantics, downstream auxiliary and
+cross-block/interface semantics, complete chamber proofs and the reviewed implication to `D(n)=2n`.
 
 ## 2. Close T01 source statements
 
@@ -272,25 +272,96 @@ T10_CREDIT_ROUTING
 The older witness-routing and simultaneous-credit checkers remain useful local consistency audits.
 They do not replace proof of the route statements or child-state meanings.
 
-## 11. Close recurrent blocks and auxiliaries
+## 11. Close T11 recurrent-block closure
 
-For every recurrent block prove:
+Use:
 
-\[
-\boxed{\text{closed}\land\text{strongly connected}\land\min_p\mu_p>0.}
-\]
+```text
+scripts/check_prime_power_recurrent_block_closure_frontier.py
+```
 
-Only after T06 and T10 are closed should the common-weight candidate-policy audit be used as a
-recurrent-block consistency check.
+The recurrent-block worklist is reconstructed from the T04 units of kind `recurrent-block`. Every
+block's parent and row banks are reconstructed from its T04 parent bindings and the exact T08 active
+rows.
 
-T11 must bind the exact T04 block population, T06 selected policy, T10 routed credits and one primitive
-positive common state-weight vector. Prove exact parent coverage, no recurrent exits, strong
-connectivity and positive margin on every row.
+A proved block must provide one validated common-weight certificate whose SCC parent list equals the
+complete local-parent set. For every selected active row, prove the exact bridge:
 
-Prove every recursive auxiliary expansion semantically and eliminate all auxiliaries without changing
-the selected recurrence meaning.
+```text
+same local parent and T03 fibre
+same T05 linked-operation certificate
+T03 labelled_vectors = common exposure response_vectors
+T03 row_loads = complete common row arithmetic table
+T06 minimum score = common minimum row load
+T10 selected credit units = common selected-response credit vector
+```
 
-## 12. Close cross-block, interface and rank semantics
+The T11 credit units have the exact literal schema:
+
+```text
+child_state_id
+unit_index
+selected_response_sha256
+```
+
+For each child, unit indices must be exactly `0, 1, ..., routed_count - 1`. Each T10 route assignment
+must name the same child as its literal unit.
+
+The common-weight certificate must establish:
+
+1. one positive integer weight for every shared row state;
+2. greatest common divisor one;
+3. one row for every local SCC parent;
+4. exact restriction of the common weights to every row;
+5. the exact recurrent support graph;
+6. no recurrent edge leaving the SCC;
+7. strong connectivity; and
+8. positive margin on every row.
+
+The T04 `local_states` list must equal the common shared-state registry, and T04 `recurrent_rows` must
+equal the exact T08 active-row IDs.
+
+Every proved block requires:
+
+```text
+recurrent-block-common-weight-proof
+recurrent-block-closure-proof
+```
+
+The common-weight artifact cites the exact T04 block artifact, selected-slot T05 and T06 score
+artifacts, all block T06 application artifacts and all block T10 credit artifacts. The closure artifact
+cites the common-weight artifact. The per-block verification seal uses a record-core digest that
+excludes the verification digest itself.
+
+Bind the aggregate banks through:
+
+```text
+CLOSED_STRICT_RECURRENT_BLOCKS/block-closure-proof
+CLOSED_STRICT_RECURRENT_BLOCKS/common-weight-proof
+T11_RECURRENT_BLOCK_CLOSURE
+```
+
+Recurrent-core closure means no external recurrent edge. Nonrecurrent auxiliary and interface exits
+remain explicit T12 and T15 work and must not be erased from the certificate.
+
+After documentary closure, review the ordinary theorem that the selected finite rows and semantic
+credit assignments really define the intended recurrent contraction.
+
+## 12. Close T12 auxiliary semantics
+
+For every auxiliary state or child:
+
+1. provide the exact semantic expansion into nonauxiliary states;
+2. bind every expansion edge to the relevant T07 state/transition claims;
+3. prove the expansion dependency graph acyclic;
+4. prove no auxiliary receives routed credit unless explicitly justified by the intended theorem;
+5. prove responsewise substitution preserves or improves every selected row load; and
+6. prove recursive elimination preserves the selected recurrence meaning and strict margins.
+
+The existing one-step and acyclic weighted-elimination checkers remain arithmetic interfaces. T12 must
+bind them to the exact T07/T11 semantic rows rather than accepting a parallel auxiliary population.
+
+## 13. Close cross-block, interface and rank semantics
 
 Prove:
 
@@ -303,7 +374,7 @@ Prove:
 
 Finite quotient identities and support condensation remain interfaces until these theorems are proved.
 
-## 13. Close all 252 exceptional chambers
+## 14. Close all 252 exceptional chambers
 
 The exact worklist is:
 
@@ -317,7 +388,7 @@ survivor-signature infeasibility proof or host-union proof.
 Keep fixed-response correction 17, rollback distance 12 and uniform correction 44 as distinct scalar
 quantities.
 
-## 14. Complete the typed proof stack
+## 15. Complete the typed proof stack
 
 For every proved semantic obligation, final premise, handoff assertion and atomic target, supply the
 fixed artifact kind, exact external proof pointer, exact noncircular support and exact
@@ -326,7 +397,7 @@ completion-to-bundle digest.
 Do not include an ancestor certificate containing the current target's own completion digest in that
 target's sealed proof bank.
 
-## 15. Complete premises, handoff and root review
+## 16. Complete premises, handoff and root review
 
 Close the ten final premises:
 
@@ -344,7 +415,7 @@ Close the ten final premises:
 Then close all six handoff assertions, pass the seven-gate dossier audit and review the ordinary
 mathematical implication from the quotient conclusion to `D(n)=2n`.
 
-## 16. Immediate execution order
+## 17. Immediate execution order
 
 1. Populate and prove high-use T01 source statements.
 2. Close T01 and the source-root gate.
@@ -359,13 +430,14 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 11. Populate and prove every T08 active-row record.
 12. Reconstruct and prove every T09 literal resource model and scope partition.
 13. Populate and prove every T10 routed-credit semantic assignment.
-14. Close strict recurrent blocks and semantic auxiliaries.
-15. Prove cross-block, interface, rank, predicate and row-theorem semantics.
-16. Prove all 252 chamber dispositions.
-17. Complete every typed artifact, premise, handoff assertion and atomic target.
-18. Pass all synchronized gates and review the final all-`n` implication.
+14. Populate and prove every T11 common-weight bridge and block-closure record.
+15. Prove and eliminate every T12 recursive auxiliary semantically.
+16. Prove cross-block, interface, rank, predicate and row-theorem semantics.
+17. Prove all 252 chamber dispositions.
+18. Complete every typed artifact, premise, handoff assertion and atomic target.
+19. Pass all synchronized gates and review the final all-`n` implication.
 
-## 17. Honesty boundaries
+## 18. Honesty boundaries
 
 - Exact source text and hashes do not prove source truth.
 - Exact rule records do not prove genuine recurrence exhaustiveness.
@@ -379,8 +451,12 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 - Exact T08 row binding does not prove genuine simultaneous-row completeness.
 - Coordinate-canonical T09 resources and scopes do not prove physical resource exhaustiveness.
 - T10 route linkage and injectivity do not prove route statements or child-state semantics.
-- Resource and credit accounting do not prove state semantics automatically.
-- Common weights do not imply block closure, connectivity or strictness.
+- A standalone common-weight certificate does not identify the exact selected T08/T10 population.
+- Exact T11 row bridges do not prove the underlying T07/T10 semantic statements true.
+- Recurrent-core closure does not prove nonrecurrent auxiliary or interface exits semantically valid.
+- Primitive common weights, strong connectivity and positive margins remain relative to the supplied
+  finite row family.
+- Weighted auxiliary substitution does not prove external auxiliary-state meaning.
 - State links do not prove cross-block identity.
 - Support condensation does not prove recurrence semantics.
 - A chamber disposition record does not verify its proof.
@@ -388,14 +464,15 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 - Every final checker reports `all_n_proved_by_checker = 0`.
 - Syntax compilation and helper tests are not a full dependency-backed regression suite.
 
-## 18. Current endpoint
+## 19. Current endpoint
 
-Through CMR2533 the branch has exact executable work banks for source statements, recurrence records,
+Through CMR2541 the branch has exact executable work banks for source statements, recurrence records,
 slot and block/interface population, corrected finite geometry, literal semantic claims, complete
 candidate minimization/application identity, application-derived active rows, literal destroyed
-resources and routed-credit semantic assignments.
+resources, routed-credit semantic assignments, and T11 common-weight recurrent-core closure records.
 
 The unresolved center remains the genuine mathematics: actual source and recurrence theorems, real
 population, proof of all-`n` geometry coverage, truth of every semantic and score statement, genuine
-simultaneous-row completeness, physical resource exhaustiveness, routed-credit meaning, strict block
-closure, cross-block/interface/rank semantics, all chamber proofs and the final reviewed implication.
+simultaneous-row completeness, physical resource exhaustiveness, routed-credit meaning, genuine block
+and auxiliary semantics, cross-block/interface/rank semantics, all chamber proofs and the final
+reviewed implication.
