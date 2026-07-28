@@ -1,0 +1,18 @@
+{
+  "cases": [
+    {"m":4,"worst_charge":"1/24","m_cubed_scaled_charge":"8/3"},
+    {"m":5,"worst_charge":"1/37","m_cubed_scaled_charge":"125/37"},
+    {"m":6,"worst_charge":"4/215","m_cubed_scaled_charge":"864/215"},
+    {"m":7,"worst_charge":"12/931","m_cubed_scaled_charge":"84/19"},
+    {"m":8,"worst_charge":"1/93","m_cubed_scaled_charge":"512/93"},
+    {"m":9,"worst_charge":"223/29271","m_cubed_scaled_charge":"54189/9757"},
+    {"m":10,"worst_charge":"2397/349898","m_cubed_scaled_charge":"1198500/174949"}
+  ],
+  "scaled_sequence_strictly_increasing_from_m4_through_m10": true,
+  "uniform_bound":"gamma_m < 7/m^3 for 4<=m<=10",
+  "largest_scaled_value_at_m":10,
+  "largest_scaled_value":"1198500/174949",
+  "margin_below_7":"26143/174949",
+  "complete_exact_transport_through_m10": true,
+  "asymptotic_m_cubed_bound_proved": false
+}
