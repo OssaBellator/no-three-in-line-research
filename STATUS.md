@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2381;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2389;
 CMR2190 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-7.md`.
 
@@ -30,11 +30,11 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - typed proof-artifact bundles and an exact blocker schedule;
 - an optional edgewise lexicographic support audit;
 - a fixed ten-premise pre-root implication contract;
-- typed final-premise artifacts and an acyclic obligation-artifact support DAG;
-- a strict three-gate final dossier-integrity endpoint;
+- typed final-premise artifacts and one canonical exact-coverage obligation-artifact support DAG;
 - explicit mathematical predicates for every global state;
-- explicit recurrence-theorem records for every final quotient row; and
-- a fixed six-assertion documentary handoff to ordinary induction review.
+- explicit recurrence-theorem records for every final quotient row;
+- a fixed six-assertion documentary handoff to ordinary induction review; and
+- a transparent seven-gate final dossier-integrity audit with exact blocker publication.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -70,20 +70,21 @@ The blocker scheduler computes every transitive blocker set, current actionable 
 downstream impact, canonical longest open chain and minimum parallel dependency-wave depth.
 These are exact DAG quantities, not estimates of time or proof difficulty.
 
-The obligation-artifact support graph must be acyclic, may cite only the same obligation or a
-transitive prerequisite, and must reach every artifact in every immediate prerequisite bundle
-of a proved obligation.
+The canonical obligation-artifact support graph must be acyclic, may cite only the same
+obligation or a transitive prerequisite, and must reach every artifact in every immediate
+prerequisite bundle of a proved obligation. The earlier support command now delegates to this
+same exact-coverage implementation.
 
-## Final premise and dossier integrity
+## Final premise artifact integrity
 
 The pre-root contract fixes ten ordinary mathematical premises from base cases through the
 translation to `D(n)=2n`. Each declared proved premise requires one exact typed artifact that
 cites artifacts from every semantic obligation on which the premise depends. Edgewise
 termination additionally binds the exact edgewise certificate.
 
-The final dossier-integrity gate composes the pre-root contract, typed premise registry and
-canonical obligation-artifact support DAG over one shared typed obligation registry. It remains
-documentary and permanently publishes `all_n_proved_by_checker = 0`.
+The pre-root contract may be ready while `GLOBAL_QUOTIENT_IMPLIES_ALL_N` remains open and
+actionable. Typed premise coverage and support integrity are documentary and permanently
+publish `all_n_proved_by_checker = 0`.
 
 ## Quotient semantic refinement
 
@@ -114,6 +115,18 @@ An assertion closes only when it is declared proved and every fixed final-premis
 is effective. Handoff readiness additionally requires typed premise artifacts, canonical
 artifact-support integrity and complete quotient semantic refinement. The checker permanently
 publishes `all_n_proved_by_checker = 0`.
+
+## Final dossier-integrity audit
+
+The final audit accepts one complete induction-handoff certificate and reconstructs seven gates:
+finite-interface readiness, closure of every root dependency, final premise-contract readiness,
+typed premise-artifact coverage, exact obligation-artifact support integrity, complete quotient
+semantic refinement and induction-handoff readiness.
+
+It also publishes every open semantic obligation, the current actionable frontier, every open
+final premise, every open handoff assertion, root closure/actionability and all nested certificate
+digests. The audit remains documentary and permanently reports
+`all_n_proved_by_checker = 0`.
 
 ## Hard-core scalar worklists
 
@@ -153,15 +166,15 @@ core retains all 20 full-selector chambers. Fixed-response correction 17, rollba
 - Typed artifact coverage and support acyclicity do not prove artifact truth or sufficiency.
 - Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
-- A ready contract, integrity dossier or induction handoff remains subject to mathematical review.
+- A ready contract, induction handoff or integrity audit remains subject to mathematical review.
 - Every final checker permanently reports `all_n_proved_by_checker = 0`.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2381**, the finite certificate surface reaches a
-noncircular expected global family, typed noncircular proof documentation, explicit predicate-
-and theorem-level refinement of the quotient, and a six-assertion documentary induction
-handoff. Completion still requires the actual exhaustive rule and population, proof of every
-semantic statement, genuine strict blocks, exceptional closure and ordinary mathematical
-review of the final implication to all `n`.
+There is no complete proof. Through **CMR2389**, the finite certificate surface reaches a
+noncircular expected global family, typed exact-coverage proof documentation, explicit
+predicate- and theorem-level refinement of the quotient, a six-assertion documentary induction
+handoff and a transparent seven-gate integrity audit. Completion still requires the actual
+exhaustive rule and population, proof of every semantic statement, genuine strict blocks,
+exceptional closure and ordinary mathematical review of the final implication to all `n`.
