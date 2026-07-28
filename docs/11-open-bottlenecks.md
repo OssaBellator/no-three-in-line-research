@@ -2,12 +2,12 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2573**, the branch contains exact
-noncircular documentary work banks from T01 through T15, typed proof registries for all 43 atomic
+The no-three-in-line conjecture remains open. Through **CMR2581**, the branch contains exact
+noncircular documentary work banks from T01 through T16, typed proof registries for all 43 atomic
 targets, an exact 252-chamber exceptional worklist and a final dossier audit.
 
 The branch still lacks the genuine source statements, exhaustive recurrence theorem, actual complete
-population, arbitrary-`n` coverage, truth of the semantic claims, a genuine rank theorem, complete
+population, arbitrary-`n` coverage, truth of the semantic claims, complete predicate and row theorems,
 chamber proofs and the reviewed implication to `D(n)=2n`.
 
 Every final checker permanently reports:
@@ -209,14 +209,9 @@ supported by every T14 component artifact. The final global weight is
 
 ### 9.3 Exact row semantics
 
-Every proved row must bind:
-
-- its exact T04 payload and the separate target/route/transition/source-clause digests;
-- its exact slot's T07 state and transition claims;
-- exact T13 parent and target classes;
-- exact T14 component and final weights;
-- one integer fixed offset and positive target multiplicities; and
-- row statements and evidence.
+Every proved row must bind its exact T04 field digests, exact slot T07 claims, exact T13 parent and target
+classes, exact T14 weights, one integer fixed offset, positive target multiplicities, statements and
+evidence.
 
 Reconstruct
 
@@ -244,9 +239,6 @@ terminal-sink
 A row disposition must use a proved row with the exact source and sufficient target multiplicity. A
 terminal disposition is allowed only for an exact T13 sink.
 
-When later T12 population introduces new exit subjects, affected T15 verification bundles must be
-regenerated.
-
 ### 9.5 Typed sealing
 
 Every proved row requires one `interface-row-semantic-proof` with exact T04/T07/T12/T13/T14 and
@@ -259,81 +251,172 @@ T15_INTERFACE_EXHAUSTIVENESS
 
 with `interface-exhaustiveness-proof` artifacts and noncircular digests.
 
-## 10. T16: prove genuine global-rank well-foundedness
+## 10. T16: global-rank well-foundedness
 
-T16 is the next executable frontier. It must consume T15 rather than accept an independent rank table.
+Use:
+
+```text
+scripts/check_prime_power_global_rank_frontier.py
+```
+
+T16 consumes T15 directly and does not accept an independent support graph or rank table.
 
 ### 10.1 Derived critical-edge census
 
-Take every T15 semantic row classified `critical-unranked`. For every positive target multiplicity,
-derive one exact critical edge containing:
+Every T15 semantic row classified `critical-unranked` contributes one subject for every positive target
+multiplicity. Each subject binds:
 
 ```text
 row_id
 parent_global_state_id
 target_global_state_id
+multiplicity
 interface_row_semantic_certificate_sha256
 interface_target_semantic_sha256
+t15_interface_row_artifact_id
+parent_t13_class_artifact_id
+target_t13_class_artifact_id
+parent_final_global_weight
+target_final_global_weight
 ```
 
-Reject missing, duplicate, reordered or independently supplied critical edges.
-
-Strict T15 rows need no rank edge because their weight margin is already positive.
+Reject missing, duplicate, reordered or independently supplied edges. Strict T15 rows need no rank edge.
 
 ### 10.2 Exact rank domain
 
-Give every global state occurring in a critical edge one exact rank value and theorem. The rank domain
-must be explicitly well founded—for example a nonnegative integer or a proved lexicographic product of
-well-founded domains. A finite list alone is not the external well-foundedness proof.
+A nonempty edge bank requires one open/proved domain of kind:
 
-### 10.3 Edgewise descent
+```text
+nonnegative-integer
+lexicographic-nonnegative-integers
+```
 
-For every derived critical edge prove:
+The lexicographic domain uses a fixed finite coordinate count and nonnegative integer coordinates. A
+proved domain requires one:
+
+```text
+rank-domain-well-foundedness-proof
+```
+
+with statement, locator, digest and evidence. A finite state table alone is not the external
+well-foundedness proof.
+
+If the T15 critical bank is empty, T16 is vacuous and requires no artificial domain.
+
+### 10.3 Exact state-rank bank
+
+The state census is the sorted union of all critical-edge endpoints. Every record binds its exact T13
+class artifact and the single rank domain.
+
+Open records have null rank and verification fields. A proved state requires one:
+
+```text
+global-state-rank-proof
+```
+
+supported by the domain artifact and its exact T13 class artifact.
+
+### 10.4 Exact edgewise descent
+
+Every edge is open or proved. A proved edge must satisfy:
 
 ```text
 rank(target) < rank(parent)
 ```
 
-Bind the proof to the exact T15 row artifact, exact T13 parent/target classes and all semantic evidence
-needed to interpret the edge.
-
-### 10.4 Graph audit
-
-Reconstruct the critical support graph and require:
-
-1. every edge has strict rank descent;
-2. no self-edge;
-3. no directed cycle;
-4. every critical target is in the declared rank domain; and
-5. the rank theorem applies under the genuine recurrence semantics.
-
-The graph acyclicity check is a finite consistency audit, not a substitute for the external rank theorem.
-
-### 10.5 Typed proof bank
-
-Every proved rank subject should receive a typed artifact such as:
+and requires one:
 
 ```text
-global-rank-state-proof
 critical-edge-rank-descent-proof
 ```
 
-The aggregate bank must synchronize:
+supported by the exact T15 row artifact and both endpoint rank artifacts.
+
+### 10.5 Complete graph audit
+
+When all T16 work is proved, reconstruct the complete critical graph and require:
+
+1. exact T15-derived edge coverage;
+2. no self-edge;
+3. strict rank descent on every edge;
+4. no directed cycle;
+5. a deterministic topological order; and
+6. the exact longest critical path.
+
+Strict descent forces every critical strongly connected component to be a singleton. The finite audit is
+not a substitute for proving that the rank has its claimed recurrence meaning.
+
+### 10.6 Typed sealing
+
+The aggregate bank commits to the independent T15 proof-bank digest, the domain/state/edge records and
+artifacts, and the graph audit. It synchronizes:
 
 ```text
 GLOBAL_RANK_WELL_FOUNDED
 T16_GLOBAL_RANK
 ```
 
-through `rank-well-foundedness-proof` artifacts with exact T15 support.
+through `rank-well-foundedness-proof` artifacts with exact T15 obligation support.
 
-## 11. T17 and T18: predicates and final rows
+## 11. T17: exact global-state predicates
 
-Give every T13 global class one exact predicate theorem and prove agreement across all representatives
-and scaled occurrences. Bind every final row and fixed offset to the exact T05, T07, T10, T11, T12,
-T14, T15, T16 and T17 banks, then prove its external recurrence interpretation.
+The older `check_prime_power_global_quotient_semantic_refinement.py` reads a separately assembled global
+family and opaque predicate locators. Do not use it as the final T17 endpoint.
 
-## 12. T19--T21: global family and exceptional chambers
+The new T17 checker should:
+
+1. derive the complete state census from exact T13 classes;
+2. bind every predicate to the exact T13 class core and member bank;
+3. require agreement across every local representative;
+4. bind rank-sensitive predicates to the exact T16 state-rank record and artifact;
+5. use open/proved state-predicate records;
+6. require one `global-state-predicate-proof` artifact per proved state; and
+7. publish one noncircular aggregate predicate bank.
+
+For each state, record at least:
+
+```text
+global_state_id
+global_state_record_sha256
+t13_class_artifact_id
+predicate_id
+predicate_statement
+representative_agreement_statement
+support_state_claim_ids
+status
+verification_locator
+verification_digest
+evidence
+```
+
+The predicate theorem remains external mathematics even after exact documentary sealing.
+
+## 12. T18: exact final row theorems
+
+T18 must derive its row census from the exact selected recurrent and interface surfaces rather than an
+older global quotient package.
+
+The row bank should include:
+
+- every exact T11 recurrent row after T12 elimination;
+- every exact T15 interface/return/off-diagonal row;
+- exact T16 rank data for every critical interface target; and
+- exact T17 parent/target predicate records.
+
+Every row theorem must bind the relevant T05, T07, T10, T11, T12, T14, T15, T16 and T17 artifacts. It
+must reconstruct the parent predicate, target predicate multiset, fixed offset, multiplicities, weight
+margin, strict/critical classification and rank descent where applicable.
+
+Use open/proved row-theorem records and one:
+
+```text
+global-row-theorem-proof
+```
+
+per proved row. The aggregate bank must bind `T18_ROW_THEOREMS` without importing a parallel global
+family or treating an opaque theorem digest as proof.
+
+## 13. T19--T21: global family and exceptional chambers
 
 Prove the skeleton-derived global family exhaustive and close the exact worklist
 
@@ -344,7 +427,7 @@ Prove the skeleton-derived global family exhaustive and close the exact worklist
 Every chamber needs one reviewed disposition. Keep fixed-response correction `17`, rollback distance
 `12` and uniform correction `44` distinct.
 
-## 13. T22--T43: typed support and final handoff
+## 14. T22--T43: typed support and final handoff
 
 Complete every genuine semantic-obligation artifact, the ten final premises, six handoff assertions and
 the seven-gate dossier audit. Then prove the ordinary implication from the reviewed quotient and
@@ -352,7 +435,7 @@ handoff to `D(n)=2n`.
 
 Do not place a target's own completion digest inside an ancestor used to seal that target.
 
-## 14. Immediate execution order
+## 15. Immediate execution order
 
 1. Populate and prove high-use T01 source statements.
 2. Close T01 and every T02 rule record; prove recurrence exhaustiveness.
@@ -362,7 +445,8 @@ Do not place a target's own completion digest inside an ancestor used to seal th
 6. Prove every T11 block and T12 auxiliary expansion.
 7. Populate and prove every T13 identity and T14 scale equation.
 8. Populate and prove every T15 multiplier, row theorem and exit disposition.
-9. Implement T16 from the exact T15 critical-edge census and prove genuine rank descent.
-10. Prove T17 predicates and T18 final rows.
-11. Prove T19 global-family exhaustiveness and all 252 chamber dispositions.
-12. Complete T22--T43 and review the final implication.
+9. Populate and prove every T16 domain, state rank and critical-edge theorem.
+10. Implement exact T17 predicates from T13/T16.
+11. Implement exact T18 row theorems from T11/T12/T15/T16/T17 and all semantic ancestors.
+12. Prove T19 global-family exhaustiveness and all 252 chamber dispositions.
+13. Complete T22--T43 and review the final implication.
