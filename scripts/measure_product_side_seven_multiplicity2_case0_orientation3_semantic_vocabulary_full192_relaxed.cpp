@@ -76,13 +76,15 @@ int main() {
 
         if (top_index == 127) {
             baseline128_vocabulary = vocabulary;
+            const std::map<int,int> expected_selector0{{7,125},{12,3}};
+            const std::map<int,int> expected_selector1{{7,128}};
             assert(baseline128_vocabulary.size() == 102);
             assert(equal_selector_masks == 40);
             assert(extension_sum == 316);
             assert(covered_top_orders.size() == 164);
             assert(bottom_checks == 3185280);
-            assert(cover_size_counts[0] == std::map<int,int>({{7,125},{12,3}}));
-            assert(cover_size_counts[1] == std::map<int,int>({{7,128}}));
+            assert(cover_size_counts[0] == expected_selector0);
+            assert(cover_size_counts[1] == expected_selector1);
         }
     }
 
