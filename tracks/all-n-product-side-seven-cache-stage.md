@@ -16,27 +16,27 @@ selectors of multiplicity at least three are classified:
 - one multiplicity-four selector has a verified no-three embedding.
 
 Multiplicity two contains `3,840` signatures and `7,680` selectors. The first
-`480` signatures, global cases `0` through `479`, are closed in forty-eight
+`560` signatures, global cases `0` through `559`, are closed in fifty-six
 canonical ten-signature proof units:
 
-- `960` multiplicity-two selectors are certified infeasible;
+- `1,120` multiplicity-two selectors are certified infeasible;
 - every shard has a standalone ordered-transcript digest verifier;
-- the prefix uses `208,563,563` shared bottom-CSP nodes.
+- the prefix uses `239,816,072` shared bottom-CSP nodes.
 
 Therefore the committed support-twenty boundary is:
 
-- `38,560` certified-infeasible selectors;
+- `38,720` certified-infeasible selectors;
 - one constructive selector;
-- `33,299` unclassified selectors;
-- `2,975,018,807` certified rejection-CSP nodes.
+- `33,139` unclassified selectors;
+- `3,006,271,316` certified rejection-CSP nodes.
 
 The unresolved cache consists exactly of:
 
-- `3,360` multiplicity-two signatures containing `6,720` selectors;
+- `3,280` multiplicity-two signatures containing `6,560` selectors;
 - all `26,579` multiplicity-one selectors.
 
-A durable exact matrix covers cases `480` through `559`. It is not counted until
-all eight transcripts are promoted.
+An exact eight-shard workflow is registered for cases `560` through `639`. It is
+not counted until every transcript is promoted.
 
 ## Constructive witness
 
@@ -51,8 +51,8 @@ The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committe
 multiplicity-two shard family is:
 
 - `multiplicity2_pilot10.cpp` for cases `0`--`9`;
-- `multiplicity2_shard1.cpp` through `multiplicity2_shard47.cpp` for cases
-  `10`--`479`.
+- `multiplicity2_shard1.cpp` through `multiplicity2_shard55.cpp` for cases
+  `10`--`559`.
 
 Each wrapper asserts the tier size, exact interval, both clean-top and top-node
 totals, all four bottom-CSP totals, and one ordered transcript digest.
@@ -68,24 +68,27 @@ permutations by collinear abstract triples. For case zero, orientation three:
 - only 37 syntactic top-support masks occur.
 
 The repeated support mask `6975` occurs for both selectors at twelve top orders.
-Semantic deletion gives only two pair-mask shapes:
+Semantic deletion gives pair-mask `6936` at eleven references and pair-mask
+`6920` at one. Deduplicating the actual partial assignments yields only five
+master-nogood keys:
 
-- mask `6936`, size six, at eleven top orders;
-- mask `6920`, size five, at one top order.
+- four six-column assignments on mask `6936`;
+- one five-column assignment on mask `6920`.
 
-The twelve pair cores certify 40 clean top extensions and 403,200 exact bottom
-checks. At every measured reference, the two selector masks coincide, so no
-union penalty is required.
+Their extension lists contain 40 occurrences but only 14 distinct clean top
+orders, so 26 occurrences are overlap. Both selectors are replayed on every
+extension, for 403,200 exact bottom checks.
 
-The next compression target is to deduplicate the actual partial assignments on
-these shapes and measure the union of their clean-extension families against the
-complete orientation-three top-order set.
+The next compression target is to generate semantic cores for the remaining
+support classes, deduplicate their actual assignments, and measure total coverage
+against the complete orientation-three top-order family.
 
 ## Immediate tasks
 
-1. Promote cases `480--559`, then continue the multiplicity-two census.
-2. Deduplicate semantic partial assignments and quantify master-nogood coverage.
-3. Extend semantic learning to additional support classes and orientations.
+1. Promote cases `560--639`, then continue the multiplicity-two census.
+2. Extend semantic support deletion beyond the repeated `6975` class.
+3. Measure union coverage of the full semantic vocabulary and select a compact
+   set-cover basis for the top-master problem.
 4. Defer multiplicity one until multiplicity-two proof size and symmetry are
    understood.
 5. Keep every finite result explicitly separate from an all-`n` claim.
@@ -97,10 +100,11 @@ python scripts/verify_product_side_seven_multiplicity2_case0_bottom_cover8.py
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_bottom_cover64.py
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_cover_support64.py
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_repeated_semantic_cores.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary.py
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..47}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..55}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
