@@ -2,18 +2,18 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This stage refines the general rectangle route after PX63--PX80.  Low primitive
+This stage refines the general rectangle route after PX63--PX80. Low primitive
 directions can be protected, and additive cosets supply local states, but affine
-local maps have only rank-two spread.  The protected nonlinear problem is now an
-exact simultaneous-rainbow matching problem.
+local maps have only rank-two spread. The protected nonlinear problem is an exact
+simultaneous-rainbow matching problem.
 
 ## Current endpoint
 
-Let one prime-order coset be `F_ell`.  For every protected direction `(a,b)`,
+Let one prime-order coset be `F_ell`. For every protected direction `(a,b)`,
 colour the edge `(x,y)` of `K_(ell,ell)` by
 
 \[
-\chi_{a,b}(x,y)=bx-amy.
+\chi_{a,b}(x,y)=bx-am y.
 \]
 
 PX85 proves:
@@ -22,7 +22,7 @@ PX85 proves:
    simultaneously in all `chi_(a,b)`;
 2. conditioned on `Phi`, the protected row permutation `P` is exactly a second
    perfect matching simultaneously rainbow in the proper colourings
-   
+
    \[
    \psi_{a,b}^\Phi(x,w)=bw-am\Phi(x).
    \]
@@ -44,6 +44,28 @@ for both stages yield joint protected spread
 
 This is the exact missing probabilistic input.
 
+## Exact small-order cylinder census
+
+PX1033--PX1035 compute the complete two-direction families for slope `m=2` at
+orders five and seven.
+
+- First-stage family sizes are `10` and `28`.
+- Every admissible first-stage matching has exactly the same number of
+  conditional second-stage matchings.
+- The exact rank-three cylinder constants are `6` and `15/2` at both stages.
+- Every occurring rank-two and rank-three cylinder is unique.
+
+For any nonempty permutation family `F`,
+
+\[
+K_3(F)\ge\frac{(\ell)_3}{|F|}.
+\]
+
+Therefore an absolute rank-three constant requires `|F|=Omega(ell^3)`.
+Existence, completion, or merely quadratic abundance cannot establish PX86.
+The missing theorem must produce genuinely cubic entropy while controlling
+cylinder multiplicities uniformly after conditioning.
+
 ## What is proved around it
 
 - PX63: unrestricted rectangle permutations give `O(n log n)` defects for every
@@ -56,38 +78,26 @@ This is the exact missing probabilistic input.
 - PX78: translation cosets provide protected local variables.
 - PX79--PX80: a constant-load LLL criterion is exact, but the first translation
   bank misses it by more than four orders of magnitude.
-- PX81--PX82: independent affine row and column parameters enlarge each local
-  bank quadratically.
-- PX83--PX84: the affine bank has ideal rank-two cylinders but freezes after two
-  point images.
+- PX81--PX84: affine local banks have ideal rank-two cylinders but freeze after
+  two point images.
 - PX85--PX86: nonlinear protected entropy is a sequential simultaneous-rainbow
   matching problem.
-
-## Literature boundary
-
-Known rainbow-perfect-matching and `n`-queens work proves existence, completion,
-or asymptotic abundance in closely related proper colourings.  The product proof
-needs the stronger uniform statement above: simultaneous rainbow constraints,
-rank-three cylinder bounds, and a bound that remains uniform after conditioning
-on the first protected matching.
-
-Therefore existing existence or counting theorems cannot simply be quoted as
-PX86.  A switching, entropy-completion, or conflict-free matching refinement is
-still required.
+- PX1033--PX1035: rank-three spread requires at least cubic family size.
 
 ## Next proof tasks
 
-1. **One-stage spread.** Prove the rank-three cylinder estimate for common-rainbow
-   matchings in the linear colourings `chi_(a,b)`.
-2. **Conditional stability.** Prove the same estimate for `psi_(a,b)^Phi`
-   uniformly over every first-stage matching in a high-probability regular class.
-3. **Exceptional first-stage absorption.** Show that irregular `Phi` can be
-   repaired or absorbed without losing protected capacities.
-4. **Local-load conversion.** Insert the resulting joint cylinder bounds into
+1. **Cubic abundance.** Prove at least `c ell^3` common-rainbow matchings, with a
+   bound robust under conditioning on up to three edges.
+2. **Cylinder multiplicity control.** Bound the number of common-rainbow
+   completions containing each fixed rank-three cylinder.
+3. **Conditional stability.** Prove the same estimates for
+   `psi_(a,b)^Phi` uniformly over every first-stage matching in a regular class.
+4. **Exceptional first-stage absorption.** Repair or absorb irregular `Phi`
+   without losing protected capacities.
+5. **Local-load conversion.** Insert the resulting joint cylinder bounds into
    the PX79 certificate loads.
-5. **Combine with direction cutoff.** Choose `H` so PX71 has polynomial
-   high-direction codegree saving while the rainbow family still has enough
-   entropy.
+6. **Direction cutoff.** Choose `H` so PX71 retains polynomial high-direction
+   codegree saving while the rainbow family still has cubic entropy.
 
 ## Verification
 
@@ -95,6 +105,7 @@ still required.
 python scripts/verify_product_two_coordinate_coset_bank.py
 python scripts/verify_product_protected_affine_cylinders.py
 python scripts/verify_product_protected_rainbow_reduction.py
+python scripts/verify_product_protected_rainbow_cylinder_census.py
 ```
 
 No exact all-side doubling theorem is claimed at this stage.
