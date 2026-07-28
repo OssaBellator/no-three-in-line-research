@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "m": 9,
+      "hamilton_cycles": 40320,
+      "parity_satisfiable_cycles": 31688,
+      "clean_signed_states": 6727728,
+      "line_valid_signed_states": 8,
+      "unreached_signed_states": 0,
+      "maximum_clean_macro_distance": 4,
+      "distance_distribution": {"0": 8, "1": 59008, "2": 1317376, "3": 4873296, "4": 478040}
+    },
+    {
+      "m": 10,
+      "hamilton_cycles": 362880,
+      "parity_satisfiable_cycles": 297886,
+      "clean_signed_states": 115586396,
+      "line_valid_signed_states": 12,
+      "unreached_signed_states": 0,
+      "maximum_clean_macro_distance": 5,
+      "distance_distribution": {"0": 12, "1": 205376, "2": 5534564, "3": 52044980, "4": 57266392, "5": 535072}
+    }
+  ],
+  "root_cube_bitset_compression": true,
+  "complete_m9_regression_verified": true,
+  "complete_m10_reachability_verified": true,
+  "asymptotic_macro_horizon_proved": false
+}
