@@ -1,0 +1,20 @@
+{
+  "m": 10,
+  "optimal_positive_signed_states": 12786720,
+  "maximum_violated_edges_in_optimum": 3,
+  "states_with_some_three_owner_vertex_cover": 12786720,
+  "states_without_any_three_owner_vertex_cover": 0,
+  "covering_fixed_sign_clean_rotations": 423160022,
+  "states_without_covering_fixed_sign_clean_rotation": 74,
+  "minimum_covering_fixed_sign_choices_when_nonempty": 1,
+  "covering_local_clean_rotations": 652008272,
+  "states_without_covering_local_clean_rotation": 0,
+  "minimum_covering_local_choices_when_nonempty": 1,
+  "maximum_minimum_covering_local_hamming_change": 2,
+  "covering_local_minimum_hamming_distribution": {"0": 12786646, "1": 70, "2": 4, "3": 0},
+  "optimal_state_frustration_distribution": {"1": 12393720, "2": 387456, "3": 5544, "4": 0},
+  "uncovered_local_failure_by_frustration": {"1": 0, "2": 0, "3": 0, "4": 0},
+  "violation_cover_necessity_verified": true,
+  "complete_covering_local_repair_verified": true,
+  "asymptotic_covering_rotation_theorem_proved": false
+}
