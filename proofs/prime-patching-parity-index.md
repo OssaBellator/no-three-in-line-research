@@ -66,6 +66,8 @@ no-three-in-line conjecture.
 | PP3bsk--PP3bsm | Every `m=10` flaw with `400--575` compatible source cycles has a proper Hall bottleneck; 13,712 instances are closed, the worst charge is `2397/349898`, and 16,884 total closures are certified | VERIFIED FINITELY | `docs/364-exact-m10-weighted-hall-source-400-575.md` |
 | PP3bsn--PP3bso | Capacity-weighted terminal charge has an exact layer-cake representation; a sublinear cumulative low-normalizer count gives an explicit contraction bound | PROVED | `docs/365-capacity-layer-cake-terminal-criterion.md` |
 | PP3bsp--PP3bsr | All 47,512 supported `m=10` weighted-Hall instances are solved and have proper bottlenecks; the exact global maximum is `2397/349898` | VERIFIED FINITELY | `docs/366-complete-exact-m10-weighted-hall-transport.md` |
+| PP3bss--PP3bsu | The exact values `m^3 gamma_m` increase strictly for `4<=m<=10` but remain below seven, giving the finite envelope `gamma_m<7/m^3` | PROVED / VERIFIED FINITELY | `docs/367-exact-weighted-hall-m-cubed-scale-through-m10.md` |
+| PP3bsv--PP3bsw | The terminal normalizer cumulative profile is exact through `m=10`; its square-root envelope alone gives charge below `5/8` at `m=10` | PROVED / VERIFIED FINITELY | `docs/368-terminal-normalizer-cumulative-profile-through-m10.md` |
 
 ## Current exact frontier
 
@@ -112,24 +114,22 @@ m=10: maximum macro distance 5.
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
 clean fibre has width at most one. Uniform terminal-gate weights are strongly
-overloaded after fibre regeneration, but weighting each target cycle
-proportionally to its clean-fibre size cancels the reciprocal-fibre penalty. A
-two-scale threshold `T_m=2^(m+5)` further separates the load into an exact
-low-normalizer harmonic tail and a high-normalizer count divided by `T_m`.
-The exact envelope maxima are `0.387...`, `0.585...`, and `0.274...` at
-`m=8,9,10`, all below `3/5`. More generally, the charge is the exact layer-cake
-integral of the cumulative incoming-label count `C_eta(t)`. A uniform sublinear
-bound on this cumulative profile, together with a growing minimum normalizer,
-would give terminal contraction. The remaining horizon problem is shell depth
-plus this cumulative low-capacity counting theorem.
+overloaded after fibre regeneration, but fibre-capacity weighting contracts.
+The complete cumulative normalizer profiles are now exact through `m=10`. At
+`m=10`, the bound `C_eta(t)^2/t <= 313600/333` together with the minimum
+normalizer `9872` gives the counting-only certificate
+`sqrt(78400/205461)<5/8`. The same coarse square-root certificate fails at
+`m=8,9`, although the exact capacity policy contracts there. The remaining
+horizon problem is shell depth plus an asymptotic cumulative low-normalizer
+counting theorem.
 
-Exact weighted-Hall flaw transport reaches `m=9` and is now complete at `m=10`.
-All `47,512` supported signed flaws have proper Hall bottlenecks. The exact global
-maximum is `2397/349898`, attained at source count `550`, with scaled value
-`6.85057...`; the maximum merging penalty is `1500597/656230`. Thus the finite
-computational frontier is closed, the scaled maximum is nonmonotone in the
-audited data, and the remaining task is purely structural all-scale weighted
-expansion or an equivalent heat-kernel bound.
+Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
+supported `m=10` signed flaws have proper bottlenecks, with exact global maximum
+`2397/349898`. Across `4<=m<=10`, the scaled extrema `m^3 gamma_m` increase
+strictly at every audited size, but the largest value is still
+`1198500/174949<7`; hence `gamma_m<7/m^3` throughout the finite range. This is
+finite evidence only. The remaining transport task is structural all-scale
+weighted expansion or an equivalent heat-kernel bound.
 
 ## Remaining tasks
 
@@ -146,10 +146,10 @@ expansion or an equivalent heat-kernel bound.
    adjacent-shell fibre width, and establish a sublinear cumulative bound for
    the terminal normalizer profile `C_eta(t)` throughout the frustration window.
 6. Prove uniform weighted expansion or heat-kernel control for local,
-   intermediate, and global flaw-transport Hall cuts, using the complete `m=10`
-   cut census to identify the necessary source scales.
+   intermediate, and global flaw-transport Hall cuts; explain structurally the
+   finite increasing sequence `m^3 gamma_m` and obtain an asymptotic constant.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bss`.
+The next available theorem identifier is `PP3bsx`.
