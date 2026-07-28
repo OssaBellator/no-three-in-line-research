@@ -1,9 +1,9 @@
 # Asymptotic prime-minus-one seed frontier
 
 This index begins after the finite certificate suite was completed for every odd
-prime through `73`.  It records the compressed verified probability, repair,
-parity, causality, regeneration, descent, and clean-cycle mixing interfaces for
-the remaining asymptotic problem.
+prime through `73`. It records the compressed probability, repair, parity,
+causality, regeneration, descent, clean-macro, and clean-cycle mixing interfaces
+for the remaining asymptotic problem.
 
 ## Current global theorem
 
@@ -14,9 +14,9 @@ tau = sigma o pi,
 ```
 
 and require every maximal Euclidean line of `[n]^2` to contain at most two cells
-of the two permutation graphs.  Equivalently, inside swapped quarter-turn
-action, find a canonical signed pair cycle cover satisfying every maximal-line
-capacity.  The asymptotic existence theorem remains open.
+of the two permutation graphs. Equivalently, inside swapped quarter-turn action,
+find a canonical signed pair cycle cover satisfying every maximal-line capacity.
+The asymptotic existence theorem remains open.
 
 ## Current reductions, constructions, and barriers
 
@@ -51,6 +51,10 @@ capacity.  The asymptotic existence theorem remains open.
 | Exact `m=8` clean macro graph | All `404,080` parity-clean states reach validity within three macro steps | VERIFIED FINITELY | `docs/328` |
 | Exact `m=10` clean mobility | The 297,886 clean cycles form one component; every owner triple has at least 40 clean intersecting rotations | VERIFIED FINITELY | `docs/329` |
 | Heat-kernel charge identity | Reversible clean-cycle mixing gives exact charge `||K^t f_A||_infinity` | PROVED | `docs/330` |
+| Local signed parity repair | Through `m=9` signs remain fixed; at `m=10` at most two rotated-owner signs change | VERIFIED FINITELY | `docs/331` |
+| Exact `m=9` clean macro graph | All `6,727,728` parity-clean signed states reach validity within four macro steps | VERIFIED FINITELY | `docs/332` |
+| Sparse collateral-core barrier | Support and atomic counts have joint local minima, reduced to 68 sparse distance-four states | VERIFIED FINITELY | `docs/332` |
+| Exact small weighted Hall audit | Every atomic flaw and every Hall subset are exhausted through `m=7`; worst charge is at most `4.422/m^3` | VERIFIED FINITELY | `docs/333` |
 
 ## Exact theorem ranges
 
@@ -81,10 +85,13 @@ capacity.  The asymptotic existence theorem remains open.
 | PP3bmv--PP3bmy | Merged-column formula, weighted Hall optimum, lower bound, and expansion criterion | PROVED | `docs/324-merged-fibre-charge-as-weighted-hall-transport.md` |
 | PP3bmz--PP3bnc | Incremental lower-level BFS, exact `m=8` horizon, critical level, and policy | PROVED / VERIFIED FINITELY | `docs/325-exact-m8-strict-descent-horizon-and-critical-level.md` |
 | PP3bnd--PP3bnh | Frustration basis, deletion core, logarithmic near-clean seed, and finite audit | PROVED / VERIFIED FINITELY | `docs/326-parity-frustration-basis-and-logarithmic-near-clean-seeds.md` |
-| PP3bni--PP3bnk | One-step pair-safe frustration descent, marked-edge targeting, and finite termination through `m=9` | VERIFIED FINITELY | `docs/327-pair-safe-frustration-strict-descent-through-m9.md` |
-| PP3bnl--PP3bnp | Sharp `m=8` witness classification, implicit macro graph, and three-step clean reachability | PROVED / VERIFIED FINITELY | `docs/328-m8-critical-witnesses-and-parity-clean-macro-graph.md` |
-| PP3bnq--PP3bnu | Exact `m=10` frustration census, direct clean repair, connectivity, marked-core targeting, and interface | VERIFIED FINITELY | `docs/329-m10-pair-safe-frustration-repair-and-clean-mobility.md` |
+| PP3bni--PP3bnk | Pair-safe frustration descent, marked-edge targeting, and termination through `m=9` | VERIFIED FINITELY | `docs/327-pair-safe-frustration-strict-descent-through-m9.md` |
+| PP3bnl--PP3bnp | Sharp `m=8` witnesses, implicit macro graph, and three-step clean reachability | PROVED / VERIFIED FINITELY | `docs/328-m8-critical-witnesses-and-parity-clean-macro-graph.md` |
+| PP3bnq--PP3bnu | Exact `m=10` frustration census, direct clean repair, connectivity, and marked-core targeting | VERIFIED FINITELY | `docs/329-m10-pair-safe-frustration-repair-and-clean-mobility.md` |
 | PP3bnv--PP3bny | Fibre-weighted Metropolis kernel, exact heat charge, spectral bound, and pointwise endpoint | PROVED | `docs/330-clean-cycle-heat-kernel-charge-and-fibre-weighted-metropolis-chain.md` |
+| PP3bnz--PP3bod | Fixed-sign descent through `m=9`, first exceptions at `m=10`, and two-sign locally coupled repair | VERIFIED FINITELY | `docs/331-local-sign-coupled-parity-repair-through-m10.md` |
+| PP3boe--PP3boh | Exact `m=9` clean reachability, terminal covers, natural-potential barrier, and sparse collateral cores | VERIFIED FINITELY | `docs/332-exact-m9-clean-macro-reachability-and-sparse-collateral-cores.md` |
+| PP3boi--PP3bok | Exact small weighted Hall audit, label-merging penalty census, and cubic-scale consistency | VERIFIED FINITELY | `docs/333-exact-small-size-weighted-hall-transport.md` |
 
 ## Exact probability, parity, and defect scales
 
@@ -95,7 +102,7 @@ Pr_Hamilton(F)=1/[2^r (m-1)_r].
 ```
 
 Strongly generic three-owner triples have probability `Theta(n^-3)` and total
-expected mass `Theta(n log n)`.  The reduced pairwise parity structures are much
+expected mass `Theta(n log n)`. The reduced pairwise parity structures are much
 sparser:
 
 ```text
@@ -105,80 +112,77 @@ one-XOR compatible assignment pairs = O(m^2 log m),
 E[number of parity edges]=O(log m).
 ```
 
-Consequently some pair-safe Hamilton cycle has only `O(log m)` parity edges and,
-by the frustration-core theorem, an orientation violating only `O(log m)` of
-them.
-
-Quarter-turn symmetry gives the integer potential
-
-```text
-Psi=B_3/4.
-```
+Consequently some pair-safe Hamilton cycle has only `O(log m)` parity edges and
+an orientation violating only `O(log m)` of them. Quarter-turn symmetry gives the
+integer potential `Psi=B_3/4`.
 
 ## Finite descent and preprocessing interface
 
-The unrestricted targeted graph has the following exact frontier:
+The unrestricted targeted graph has exact maximum strict-descent horizons at
+most three through `m=6`, four at `m=7`, and five at `m=8`. At `m=8`, exactly 44
+states require five moves to lower `Psi`, all at `B_3=4`.
 
-| `m` | signed states | optimum `B_3` | optimum states | maximum strict-descent horizon |
-|---:|---:|---:|---:|---:|
-| 4 | 96 | 0 | 16 | at most 3 |
-| 5 | 768 | 0 | 16 | at most 3 |
-| 6 | 7,680 | 4 | 84 | at most 3 |
-| 7 | 92,160 | 0 | 36 | 4 |
-| 8 | 1,290,240 | 0 | 28 | 5 |
-
-At `m=8`, exactly 44 states require five moves to lower `Psi`; all lie at
-`B_3=4`.  They split into 12 single two-owner supports and 32 single three-owner
-supports.  On the parity-clean macro graph, all 404,080 states reach validity in
-at most three macro steps:
+The clean-macro distance distributions are
 
 ```text
-0:28, 1:66,844, 2:303,576, 3:33,632.
+m=8: 0:28, 1:66,844, 2:303,576, 3:33,632;
+m=9: 0:8, 1:59,008, 2:1,317,376, 3:4,873,296, 4:478,040.
 ```
 
-The cycle-level parity preprocessing frontier now extends through `m=10`:
+The 68 distance-four states at `m=9` that are local minima for both support and
+atomic counts have only one to three supports. Sixty reach a lower count after
+two steps; eight one-support states first decrease on reaching validity after
+four steps.
+
+Cycle-level parity preprocessing extends through `m=10`:
 
 ```text
-pair-safe cycles:                        342,720,
-clean cycles:                            297,886,
-positive-frustration cycles:              44,834,
-maximum frustration index:                     3,
-maximum pair-safe distance to clean:           1.
+pair-safe cycles:                  342,720,
+clean cycles:                      297,886,
+positive-frustration cycles:        44,834,
+maximum frustration index:               3,
+maximum pair-safe distance to clean:     1.
 ```
 
-Every edge violated by every minimum-frustration orientation at `m=10` is hit by
-a direct clean rotation; the worst audited edge still has six choices.
+The signed coupling is local:
+
+```text
+m<=9: strict descent with zero sign changes;
+m=10: direct clean repair with at most two sign changes,
+      both on the rotated source triple.
+```
+
+Only 74 of `12,786,720` optimal positive signed states at `m=10` fail fixed-sign
+repair; 70 need one local sign change and four need two.
 
 ## Clean-cycle mobility and charge interface
 
-At `m=10`, the clean induced successor-rotation graph is connected, has minimum
-degree 69, and every owner triple is met by at least 40 clean rotations.  The
-first 1,588 clean rank-one parity graphs do not break connectivity or
-owner-intersecting targetability.
+At `m=10`, the clean successor-rotation graph is connected, has minimum degree
+69, and every owner triple is met by at least 40 clean rotations. The first 1,588
+clean rank-one parity graphs do not break connectivity or targetability.
 
-For one atomic three-owner flaw `A`, define on clean cycles
-
-```text
-v(rho)=2^c(rho),
-w_A(rho)=2^(c(rho)-r_A(rho)),
-f_A(rho)=w_A(rho)/v(rho).
-```
-
-The optimal one-step merged charge is the weighted Hall ratio
+For one atomic flaw `A`, the optimal one-step merged charge is
 
 ```text
 gamma_A^*=max_(empty != U subseteq X_A) w_A(U)/v(N(U)).
 ```
 
-For the canonical fibre-weighted reversible clean-cycle kernel `K`, running `t`
-cycle steps and then regenerating the target clean fibre gives the exact charge
+For the canonical fibre-weighted reversible kernel `K`,
 
 ```text
 gamma_A(t)=||K^t f_A||_infinity.
 ```
 
-Thus weighted expansion, spectral mixing, and pointwise mixing are equivalent
-routes to controlling label merging in the cycle coordinate.
+The exact one-step audit through `m=7` gives
+
+```text
+max_A gamma_A^* <= 4.422/m^3.
+```
+
+Proper Hall bottlenecks occur for 884 of 1,692 flaws at `m=6` and 4,864 of 5,100
+flaws at `m=7`; the largest finite local/global penalty is `1.69555`. The worst
+absolute charge at each audited size is nevertheless attained by the full source
+set.
 
 ## Regeneration, causality, and the logarithmic window
 
@@ -189,63 +193,52 @@ inserted blocks <= 3(t+1),
 new or first-appearing flaws = O((t+1)n^2 log n).
 ```
 
-The all-hold trajectory gives
-
-```text
-gamma_A(t)>=2^(-t)gamma_A(0).
-```
-
-Therefore three-owner probability-scale charge requires at least
-`3 log_2 n-O(1)` steps.  At `t=O(log n)`, the realized flaw light cone is only
-`O(n^2 log^2 n)`.  The remaining upper-bound problem is quantitative mixing of
-the clean cycle coordinate together with a signed implementation that retains
-this geometric locality.
+The all-hold trajectory gives `gamma_A(t)>=2^(-t)gamma_A(0)`. Therefore
+three-owner probability-scale charge requires at least `3 log_2 n-O(1)` steps.
+At `t=O(log n)`, the realized flaw light cone is only `O(n^2 log^2 n)`.
 
 ## Finite diagnostics
 
 ```bash
-g++ -O3 -std=c++17 \
-  scripts/check_hamilton_strict_descent_horizon_m8.cpp \
+g++ -O3 -std=c++17 scripts/check_hamilton_strict_descent_horizon_m8.cpp \
   -o /tmp/check_hamilton_strict_descent_horizon_m8
-/tmp/check_hamilton_strict_descent_horizon_m8
-
-g++ -O3 -std=c++17 \
-  scripts/check_hamilton_m8_critical_witnesses_and_clean_macro.cpp \
-  -o /tmp/check_hamilton_m8_critical_witnesses_and_clean_macro
-/tmp/check_hamilton_m8_critical_witnesses_and_clean_macro
-
-g++ -O3 -std=c++17 \
-  scripts/check_hamilton_parity_frustration_descent.cpp \
-  -o /tmp/check_hamilton_parity_frustration_descent
-/tmp/check_hamilton_parity_frustration_descent
-
-g++ -O3 -std=c++17 \
-  scripts/check_hamilton_m10_pair_safe_clean_mobility.cpp \
+g++ -O3 -std=c++17 scripts/check_hamilton_m10_pair_safe_clean_mobility.cpp \
   -o /tmp/check_hamilton_m10_pair_safe_clean_mobility
-/tmp/check_hamilton_m10_pair_safe_clean_mobility
+g++ -O3 -std=c++17 scripts/check_hamilton_parity_frustration_fixed_orientation.cpp \
+  -o /tmp/check_hamilton_parity_frustration_fixed_orientation
+g++ -O3 -std=c++17 scripts/check_hamilton_m10_local_sign_coupling.cpp \
+  -o /tmp/check_hamilton_m10_local_sign_coupling
+g++ -O3 -std=c++17 scripts/check_parity_clean_macro_terminal_core_m8.cpp \
+  -o /tmp/check_parity_clean_macro_terminal_core_m8
+g++ -O3 -std=c++17 scripts/check_parity_clean_macro_reachability_m9.cpp \
+  -o /tmp/check_parity_clean_macro_reachability_m9
+g++ -O3 -std=c++17 scripts/check_weighted_hall_transport_small.cpp \
+  -o /tmp/check_weighted_hall_transport_small
 ```
 
-The exact suites now include all compatible owner pairs through `m=80`, selected
-constraint-incidence censuses through `m=60`, every `m=8` signed state and clean
-macro state, every pair-safe frustration core through `m=10`, and all
-`43,545,600` successor rotations at `m=10`.
+The exact suites now include every `m=8` signed and clean-macro state, every
+`m=9` clean signed state, every pair-safe frustration core through `m=10`, all
+`43,545,600` successor rotations at `m=10`, and every weighted Hall subset for
+every atomic flaw through `m=7`.
 
 ## Current constructive targets
 
-1. prove an asymptotic bounded clean-macro horizon or a weighted Lyapunov theorem;
-2. prove that the `O(log m)` frustration core can be hit and cleaned by bounded or
-   logarithmically many successor rotations while retaining pair safety;
-3. prove asymptotic connectedness and polynomial owner-intersecting degree of the
-   clean-cycle graph;
-4. prove a spectral gap, log-Sobolev inequality, evolving-set bound, or weighted
-   Hall expansion for the fibre-weighted clean-cycle kernel;
-5. compare the stationary clean flaw mass `mu_cl(A)` with `Theta(m^-3)`;
-6. implement clean-cycle heat flow on signed states without losing the
-   trajectory-local geometric light cone;
-7. convert the resulting charge and light-cone estimates into a witness-sequence
-   or partial-rejection termination theorem;
-8. construct a biased cyclic-order measure suppressing frustrated parity cycles
-   and high-collateral assignments while retaining tractable cylinders.
+1. Prove bounded local-sign repair for the asymptotic `O(log m)` frustration core.
+2. Give a uniform collateral-repair word or structural Lyapunov function for the
+   eight one-support four-step states.
+3. Extend clean-macro reachability to `m=10` without storing all `115,586,396`
+   clean orientations.
+4. Prove asymptotic connectedness and polynomial owner-intersecting degree of the
+   clean-cycle graph.
+5. Prove a spectral gap, log-Sobolev inequality, evolving-set bound, or weighted
+   Hall expansion for the fibre-weighted clean-cycle kernel.
+6. Replace Hall subset enumeration at `m=8` by exact parametric min-cut and seek
+   a uniform constant-factor bound over proper cuts.
+7. Compare the stationary clean flaw mass `mu_cl(A)` with `Theta(m^-3)`.
+8. Implement clean-cycle heat flow on signed states without losing the
+   trajectory-local geometric light cone.
+9. Convert charge and light-cone estimates into a witness-sequence or
+   partial-rejection termination theorem.
 
-The next available theorem identifier is `PP3bnz`.  The asymptotic
+The next available theorem identifier is `PP3bol`. The asymptotic
 prime-minus-one seed theorem and the no-three-in-line conjecture remain open.
