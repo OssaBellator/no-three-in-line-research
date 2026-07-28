@@ -48,7 +48,7 @@
   R.reverse_decimal=reverse_lower[floatingBest];
   R.second_decimal=floatingSecond>=0?reverse_lower[floatingSecond]:0;
 
-  // Outward-rounded intervals enclose every exact positive sum.  A target is
+  // Outward-rounded intervals enclose every exact positive sum. A target is
   // retained precisely when its upper endpoint can still meet the largest
   // lower endpoint; all retained targets are recomputed as exact rationals.
   vector<int> candidates;
@@ -123,8 +123,26 @@
   }
   R.bin_envelope_num=binNum;R.bin_envelope_den=binDen;
 
+  // Preserve cross-scale correlation by maximizing the lower-edge envelope
+  // target by target before taking the global maximum.
+  cpp_int corrBestNum=0,corrBestDen=1;int corrBest=-1;long long corrTies=0;
+  for(int y=0;y<NC;y++){
+    map<long long,long long> counts;
+    for(int j=0;j<bin_count;j++)if(normalizer_bin_counts[y][j])
+      counts[R.normalizer_bin_lower[j]]+=normalizer_bin_counts[y][j];
+    auto [num,den]=exact_sum(counts);
+    cpp_int left=num*corrBestDen,right=corrBestNum*den;
+    if(corrBest<0||left>right){corrBestNum=num;corrBestDen=den;corrBest=y;corrTies=1;}
+    else if(left==right)corrTies++;
+  }
+  R.correlated_bin_num=uint256_t(corrBestNum);
+  R.correlated_bin_den=uint256_t(corrBestDen);
+  R.correlated_bin_counts=normalizer_bin_counts[corrBest];
+  R.correlated_bin_target_components=infos[corrBest].components;
+  R.correlated_bin_target_cycles_tied=corrTies;
+
   // A two-scale envelope separates the low-normalizer harmonic tail from the
-  // high-normalizer bulk.  For threshold T=2^(m+5), terms with Z<T are kept
+  // high-normalizer bulk. For threshold T=2^(m+5), terms with Z<T are kept
   // exactly, while every term with Z>=T is bounded by 1/T.
   const long long threshold=1LL<<(m+5);
   vector<long double> env_lower(NC,0.0L),env_upper(NC,0.0L);
