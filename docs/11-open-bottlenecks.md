@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2349 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2365 the branch has:
 
 - 740 canonical raw hosts and 9,260 response records;
 - source-traceable finite clause expansion into operation slots;
@@ -15,12 +15,15 @@ The no-three-in-line conjecture remains open. Through CMR2349 the branch has:
 - a global integer quotient `(A,b,W,mu,rho)`;
 - source-independent derivation of the expected global family;
 - spanning equivalence evidence for shared state classes;
-- support SCC condensation and exact critical-rank path bounds; and
+- support SCC condensation and exact critical-rank path bounds;
 - a fixed nineteen-obligation semantic closure DAG;
 - exact typed artifact bundles for proved obligations;
 - blocker/frontier and parallel completion-wave analysis;
-- an optional edgewise lexicographic support audit; and
-- a fixed ten-premise final implication contract.
+- an optional edgewise lexicographic support audit;
+- a fixed ten-premise pre-root implication contract;
+- typed artifacts for declared proved final premises;
+- an acyclic dependency-aligned obligation-artifact support DAG; and
+- a strict three-gate final dossier-integrity endpoint.
 
 No theorem supplies the genuine exhaustive recurrence, complete real population, proved
 external semantics, genuine complete strict blocks and interface rows, or a proof that the
@@ -164,8 +167,8 @@ Prove that strict weight decrease and bounded critical-rank descent control the 
 recurrence, terminate every branch, preserve all invariants and imply the target no-three-in-
 line lower bound for every `n`. This closes `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
 
-The checker can mark an implication dossier ready only after all dependencies and proof
-artifacts are present. It never declares the theorem proved by itself.
+The finite contract can prepare a complete pre-root handoff after every dependency and premise
+is closed. It does not close the root implication or declare the theorem proved.
 
 ## 14. Immediate execution order
 
@@ -231,7 +234,7 @@ The current executable closure surface fixes these nineteen obligations:
 The exact dependency lists are code-defined. An obligation cannot close while any dependency
 remains open.
 
-## 16. Typed artifact bundles and exact blocker scheduling
+## 16. Typed obligation artifacts and exact blocker scheduling
 
 Each proved obligation must contain its exact required artifact kinds. The artifact-bundle
 digest is rebound into the closure certificate, preventing an opaque locator from drifting
@@ -239,21 +242,38 @@ away from the documents actually audited.
 
 The blocker scheduler publishes every transitive open blocker, the current actionable
 frontier, downstream impact, a canonical longest open chain and the minimum dependency-wave
-depth to the final root. These quantities should guide work ordering but do not estimate proof
+depth to the final root. These quantities guide work ordering but do not estimate proof
 difficulty.
 
-## 17. Termination modes and final implication premises
+## 17. Termination modes and the pre-root premise contract
 
 Audit every final support edge for the stronger lexicographic decrease of `(W,rho)`. When that
 fails, preserve the exact nondecreasing edge list and supply a semantic multiset or other
 well-founded termination proof instead.
 
-The final dossier must close ten premises: base cases, recurrence exhaustiveness, invariant
+The pre-root dossier must close ten premises: base cases, recurrence exhaustiveness, invariant
 preservation, operation selection, resource/credit soundness, block and auxiliary contraction,
-cross-block assembly, exceptional closure, termination and objective translation.
+cross-block assembly, exceptional closure, termination and objective translation. Its root
+implication obligation may remain open and actionable.
 
+## 18. Typed premise artifacts and support integrity
 
-## 18. Honesty boundaries
+Every declared proved final premise requires one exact premise-specific artifact. The artifact
+must cite obligation artifacts covering every semantic dependency, bind its reconstructed bundle
+digest into the premise contract, and bind the exact edgewise certificate when that termination
+mode is used.
+
+Obligation artifacts form one canonical support DAG. Support may remain inside an obligation or
+point to a transitive prerequisite, never to an unrelated or downstream module. The graph must
+be acyclic, and each proved bundle must reach every artifact in every immediate prerequisite
+bundle. The compatibility command delegates to this stronger exact-coverage checker rather than
+maintaining a second algorithm.
+
+The final dossier-integrity gate requires simultaneously the pre-root contract, exact typed
+premise-artifact coverage and exact obligation-artifact support integrity, all over one shared
+obligation registry.
+
+## 19. Honesty boundaries
 
 - Traceability and evidence digests do not prove cited statements true.
 - Finite clause expansion and family skeletons do not prove the supplied rule exhaustive.
@@ -266,19 +286,20 @@ cross-block assembly, exceptional closure, termination and objective translation
 - Strict-or-ranked rows do not prove the interface family exhaustive.
 - Support condensation does not prove the quotient models the original recurrence.
 - Proof-obligation artifacts are not machine-verified mathematical proofs.
-- Typed bundle completeness does not prove any artifact true.
+- Typed obligation or premise bundle completeness does not prove any artifact true.
 - Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is only a sufficient termination mode.
-- A ready final premise contract remains subject to mathematical review.
+- Acyclic dependency support does not prove logical sufficiency.
+- A ready pre-root contract or integrity dossier remains subject to mathematical review.
 - A ready dossier is not itself a proof of the conjecture.
 - Finite checker publication does not imply full dependency suites ran here.
 
-## 19. Current endpoint
+## 20. Current endpoint
 
-Through CMR2349 the finite interface reaches from source-traceable rule clauses to a
+Through CMR2365 the finite interface reaches from source-traceable rule clauses to a
 noncircular expected global family, documentary cross-block equivalence, exact support/rank
-termination structure, typed proof-artifact coverage, exact blocker scheduling and a fixed
-final implication-premise contract. The unresolved
-center is the genuine mathematics: actual exhaustive data, proof of every semantic obligation,
-exceptional and hard-core closure, and the reviewed implication from the global quotient to
-all `n`.
+termination structure, typed obligation-artifact coverage, exact blocker scheduling, a fixed
+pre-root implication-premise contract, typed premise artifacts, noncircular dependency-aligned
+support and a strict three-gate final dossier-integrity endpoint. The unresolved center is the
+genuine mathematics: actual exhaustive data, proof of every semantic obligation, exceptional
+and hard-core closure, and the reviewed implication from the global quotient to all `n`.
