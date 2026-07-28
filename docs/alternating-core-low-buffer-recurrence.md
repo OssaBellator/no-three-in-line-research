@@ -62,7 +62,7 @@ Assume the **threshold-lineage contract** for coordinate `i` and level `h`:
 The fifth item is exactly the capacity-one ticket hypothesis. It is not inferred from additive
 arithmetic alone.
 
-## AC3ur -- canonical minimum-face rotation -- PROVED
+## AC3uw -- canonical minimum-face rotation -- PROVED
 
 Every exact low-buffer closed macro word has a unique canonical low-buffer rotation and exactly one of
 these two forms for its selected coordinate `i` and level `h`:
@@ -78,9 +78,9 @@ rotation. Since `h` is the minimum endpoint level in coordinate `i`, an edge lea
 below `h`. If the coordinate is not constant, the first changing edge therefore ends above `h`.
 Because the word closes at level `h`, a later edge returns to `h`. QED.
 
-## AC3us -- constant minimum face gives resource-dimension descent -- PROVED
+## AC3ux -- constant minimum face gives resource-dimension descent -- PROVED
 
-In the first branch of AC3ur every macro occurrence in the word has
+In the first branch of AC3uw every macro occurrence in the word has
 
 `v_(lambda_t,i)=0`.
 
@@ -101,9 +101,9 @@ preserves the complete word and its return. QED.
 
 This is a strict dimension descent, not an erasure of the finite level field.
 
-## AC3ut -- canonical threshold excursion -- PROVED
+## AC3uy -- canonical threshold excursion -- PROVED
 
-In the second branch of AC3ur there is a unique canonical interval
+In the second branch of AC3uw there is a unique canonical interval
 
 `[a,b]`
 
@@ -120,14 +120,14 @@ interval is a positive-length exact `h`-excursion and has the finite address
 
 ### Proof
 
-Take the first changing edge after the canonical rotation. AC3ur makes it an upward departure. The
+Take the first changing edge after the canonical rotation. AC3uw makes it an upward departure. The
 closed word eventually returns to `h`; choose the first such endpoint. Minimality of that return gives
 strict inequality at all intervening endpoints. Every field in the displayed address belongs to a
 finite dictionary or to one of the `K_buf=sum_i beta_i` low-buffer coordinate-level slots. QED.
 
-## AC3uu -- capacity-one threshold ticket or recreation gate -- PROVED UNDER THE THRESHOLD-LINEAGE CONTRACT
+## AC3uz -- capacity-one threshold ticket or recreation gate -- PROVED UNDER THE THRESHOLD-LINEAGE CONTRACT
 
-For the canonical `h`-excursion of AC3ut, let `u` be the designated least crossing unit.
+For the canonical `h`-excursion of AC3uy, let `u` be the designated least crossing unit.
 Exactly one of the following occurs:
 
 1. `u` survives until the return edge and the excursion spends the capacity-one ticket `(i,h,u)`;
@@ -144,7 +144,7 @@ its complete lineage until the first return. The survival, first-destruction, re
 cases are exhaustive by item 4 of the contract. In the survival case item 5 makes the lineage address
 capacity one. There are only `U_(i,h)` such addresses. QED.
 
-## AC3uv -- low-buffer exact-cycle router -- PROVED UNDER THE DECLARED CONTRACTS
+## AC3va -- low-buffer exact-cycle router -- PROVED UNDER THE DECLARED CONTRACTS
 
 Let
 
@@ -166,8 +166,8 @@ recreation gate, which enters AC3nx--AC3qt and AC3tx--AC3ub.
 
 ### Proof
 
-Apply AC3ur. The constant-face branch is AC3us. Otherwise AC3ut selects one canonical excursion and
-AC3uu classifies it. Summing the coordinate-level and lineage stocks gives the displayed bounds. QED.
+Apply AC3uw. The constant-face branch is AC3ux. Otherwise AC3uy selects one canonical excursion and
+AC3uz classifies it. Summing the coordinate-level and lineage stocks gives the displayed bounds. QED.
 
 ## Corrected AC4 frontier
 
