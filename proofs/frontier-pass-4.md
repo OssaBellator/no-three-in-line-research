@@ -15,6 +15,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC3wk--AC3wo | A moving threshold with finite co-moving residue control reduces to the exact gap `x-h`; every eventual phase cycle has drift divisible by the modulus and gives positive escape, zero return or an exact negative-headroom budget | PROVED UNDER THE COMPLETE MOVING-THRESHOLD CONTRACT | `docs/alternating-core-moving-threshold-gap-router.md` |
 | AC5ap--AC5at | Paid pool depletion preserves partner density `1-delta/rho`; restriction creates no pair-shadow mass, every new exception is an exact old--new or new--new event, and margin crossings have pathwise charge bound `RW/eta` | PROVED UNDER THE COMPLETE PARTNER/NEW-CELL/CHARGE INVENTORY CONTRACT | `docs/alternating-core-gc-pool-shadow-import.md` |
 | AC5au--AC5ay | Absolute blocker, depletion and new-blocker counts give retained degree, an explicit `sigma^(-r)` injection law, closed-form intermediate current/protected event expectations and either AC5 drift or one six-way heavy obstruction | PROVED UNDER THE COMPLETE RESTRICTED-MENU EVENT CONTRACT | `docs/alternating-core-restricted-menu-closed-form-audit.md` |
+| AC5az--AC5bd | A finite exact obstruction dictionary with class thresholds and initial-plus-deposited capacities pays only finitely many restricted-menu failures; exhausted capacity returns one exact class overload and unrecorded replenishment or relabelling returns reset | PROVED UNDER THE COMPLETE OBSTRUCTION-CLASS AND PAID-CAPACITY CONTRACTS | `docs/alternating-core-menu-obstruction-capacity-bank.md` |
 
 ## Updated AC4 frontier
 
@@ -22,6 +23,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory has a closed-form restricted-menu audit. Positive slack gives the explicit cylinder law and intermediate event bounds; nonpositive slack returns a heavy exact obstruction. Remaining work is menu-specific computation, payment of the returned obstruction and quantitative reverse-load/min-cost control through intermediate states.
+The deterministic GC1--GC3 inventory has a closed-form restricted-menu audit. Positive slack gives the explicit cylinder law and intermediate event bounds; nonpositive slack returns a heavy exact obstruction. A finite exact obstruction dictionary now pays repeated failures up to its initial-plus-deposited class capacities and otherwise returns one exact overload. Remaining work is menu-specific computation of the capacities, thresholds and deposits, plus quantitative reverse-load/min-cost control through intermediate states.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
