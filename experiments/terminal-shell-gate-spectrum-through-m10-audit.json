@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {"m":8,"maximum_distance":3,"terminal_cycles":436,"terminal_states":33624,"active_closing_gate_triples_range":[13,47],"minimum_root_gate_multiplicity_range":[13,47],"total_active_closing_gate_triples":13674,"total_minimum_root_gate_multiplicity":13608},
+    {"m":9,"maximum_distance":4,"terminal_cycles":2298,"terminal_states":478040,"active_closing_gate_triples_range":[29,75],"minimum_root_gate_multiplicity_range":[29,75],"total_active_closing_gate_triples":128592,"total_minimum_root_gate_multiplicity":128176},
+    {"m":10,"maximum_distance":5,"terminal_cycles":1260,"terminal_states":535072,"active_closing_gate_triples_range":[70,118],"minimum_root_gate_multiplicity_range":[70,118],"total_active_closing_gate_triples":123852,"total_minimum_root_gate_multiplicity":123374}
+  ],
+  "terminal_shell_has_no_two_layer_shortcut": true,
+  "closing_predecessor_shell_covers_every_root": true,
+  "all_exact_regressions_verified": true,
+  "asymptotic_terminal_gate_bound_proved": false
+}
