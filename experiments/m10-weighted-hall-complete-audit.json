@@ -1,0 +1,31 @@
+{
+  "m": 10,
+  "supported_signed_flaws": 47512,
+  "compatible_source_cycle_range": [106, 720],
+  "completed_ranges": [
+    {"source_cycle_range": [106, 199], "signed_flaws": 132, "proper_bottlenecks": 132, "worst_charge": "256/57011"},
+    {"source_cycle_range": [200, 399], "signed_flaws": 2628, "proper_bottlenecks": 2628, "worst_charge": "1560/281873"},
+    {"source_cycle_range": [400, 575], "signed_flaws": 13712, "proper_bottlenecks": 13712, "worst_charge": "2397/349898"},
+    {"source_cycle_range": [576, 649], "signed_flaws": 16552, "proper_bottlenecks": 16552, "worst_charge": "5254/791819"},
+    {"source_cycle_range": [650, 719], "signed_flaws": 14076, "proper_bottlenecks": 14076, "worst_charge": "5344/970989"},
+    {"source_cycle_range": [720, 720], "signed_flaws": 412, "proper_bottlenecks": 412, "worst_charge": "3897/719620"}
+  ],
+  "exact_mincuts_completed": 47512,
+  "proper_bottlenecks": 47512,
+  "global_worst_charge": "2397/349898",
+  "global_worst_charge_decimal": 0.0068505678797821075,
+  "m_cubed_scaled_global_worst_charge": 6.850567879782108,
+  "global_worst_source_count": 550,
+  "global_worst_subset_size": 489,
+  "global_worst_supply": 38352,
+  "global_worst_capacity": 5598368,
+  "global_worst_flaw_source_owners": [5, 7, 8],
+  "global_worst_flaw_targets": [6, 8, 2],
+  "global_worst_flaw_orientations": [0, 0, 0],
+  "worst_complete_source_ratio": "2558/376281",
+  "maximum_merging_penalty": "1500597/656230",
+  "maximum_dinkelbach_cuts": 9,
+  "all_supported_flaws_have_proper_bottlenecks": true,
+  "all_47512_weighted_hall_mincuts_completed": true,
+  "asymptotic_weighted_expansion_proved": false
+}
