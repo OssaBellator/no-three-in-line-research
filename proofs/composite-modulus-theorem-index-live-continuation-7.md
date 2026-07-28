@@ -35,6 +35,8 @@ The authoritative live ledger is split across:
 | CMR2342--2349 | Ten fixed implication premises, exact obligation dependencies, proof modes, effective premise closure, pre-root readiness criterion, proof boundary, and executable endpoint | PROVED as a pre-root final dossier contract; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no dossier is claimed ready | `docs/396-prime-power-final-implication-premise-contract.md` |
 | CMR2350--2357 | Exact artifact-support edges, dependency-aligned citations, support-DAG acyclicity, transitive support closures and depths, complete immediate-dependency artifact support, aggregate records, support boundary, and executable endpoint | PROVED as noncircular documentary support; checker syntax-compiled and graph fixtures passed; artifact truth and logical sufficiency remain unverified | `docs/397-prime-power-obligation-artifact-support-dag.md` |
 | CMR2358--2365 | Typed final-premise artifacts, exact contract and shared-registry binding, obligation-artifact support integrity, pre-root contract inheritance, strict three-gate readiness, exact publication, permanent nonproof flag, final integrity boundary, and executable endpoint | PROVED as a final pre-root documentary integrity gate; checkers syntax-compiled; `all_n_proved_by_checker` remains zero and current readiness is unsatisfied | `docs/398-prime-power-final-dossier-integrity.md` |
+| CMR2366--2373 | Complete global-state predicate records, inherited state/equivalence data, complete final-row theorem records, exact predicate-multiset reconstruction, state/row coverage, shared certificate identity, semantic boundary, and executable endpoint | PROVED as a quotient semantic-refinement interface; checker syntax-compiled; predicate and row-theorem truth remain unverified | `docs/399-prime-power-global-quotient-semantic-refinement.md` |
+| CMR2374--2381 | Six fixed induction-handoff assertions, exact premise dependencies, proved/open artifact records, effective assertion closure, cross-certificate identity, conditional ready flag, final review boundary, and executable endpoint | PROVED as a documentary induction-handoff interface; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no handoff is claimed ready | `docs/400-prime-power-final-induction-handoff.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -50,27 +52,16 @@ genuine exhaustive recurrence.
 
 Every shared global state class now requires a connected `n-1` edge evidence tree, with a
 canonical evidence path from one root member to every other member. The support graph of the
-final quotient is reconstructed exactly. Critical edges strictly decrease nonnegative rank,
-so the critical subgraph is acyclic and
+final quotient is reconstructed exactly. Critical edges strictly decrease nonnegative rank, so
+the critical subgraph is acyclic and
 
 \[
 \text{longest critical path}
 \le \max\rho-\min\rho.
 \]
 
-Every cycle in the full support graph consequently contains at least one strict-row edge.
-These are finite consequences of supplied evidence and rows, not proofs of their external
-semantics.
-
-## Exact semantic closure frontier
-
-The final checker contains a fixed dependency DAG of nineteen named semantic obligations. An
-obligation closes only when it is declared proved with an artifact and all dependencies are
-already closed. It publishes the complete unclosed set and the current dependency frontier.
-
-The conditional `all_n_implication_dossier_ready` flag additionally requires the complete
-finite global family, skeleton equality, spanning equivalence evidence and support/rank gate.
-The checker always publishes `all_n_proved_by_checker = 0`.
+Every cycle in the full support graph consequently contains at least one strict-row edge. These
+are finite consequences of supplied evidence and rows, not proofs of their external semantics.
 
 ## Typed artifacts, support integrity and final premise contract
 
@@ -86,6 +77,20 @@ all of its semantic dependency modules. The final integrity endpoint combines th
 artifact layers with the pre-root ten-premise contract. Every checker retains
 `all_n_proved_by_checker = 0`.
 
+## Quotient semantic refinement and induction handoff
+
+Every final global state now has one explicit predicate record bound to its complete local
+member class and spanning-equivalence evidence. Every final quotient row has one explicit
+theorem record whose parent predicate and complete target predicate multiset are reconstructed
+from the integer quotient.
+
+A final documentary handoff fixes six assertions: base-domain completeness, exhaustive nonbase
+recurrence, invariant preservation, branch termination, exceptional/hard-core closure and
+translation of the quotient conclusion to `D(n)=2n`. Each assertion closes only after all of
+its fixed final-premise dependencies are effective. The handoff readiness flag additionally
+requires typed premise artifacts, canonical artifact-support integrity and complete quotient
+semantic refinement, while permanently publishing `all_n_proved_by_checker = 0`.
+
 ## Active frontier
 
 1. Prove the cited source statements and genuine exhaustive recurrence skeleton.
@@ -97,8 +102,12 @@ artifact layers with the pre-root ten-premise contract. Every checker retains
    and prove routed-credit semantics.
 5. Produce genuinely closed, strongly connected, strict recurrent blocks and semantic
    auxiliary expansion DAGs.
-6. Prove every cross-block equivalence edge and every disconnected component scale.
+6. Prove every cross-block equivalence, disconnected component scale, global state predicate
+   and final row theorem.
 7. Prove the complete return/interface row family and global rank well-foundedness.
-8. Prove the skeleton-derived global family exhaustive.
+8. Supply genuine typed semantic and premise artifacts with noncircular dependency support.
 9. Close all 232 zero-selector obligations and the complete 20-chamber hard core.
-10. Prove that the resulting global integer quotient implies the all-`n` statement.
+10. Complete and mathematically review all ten final premises and six induction-handoff
+    assertions.
+11. Prove that the reviewed global quotient and induction handoff establish `D(n)=2n` for all
+    `n`.
