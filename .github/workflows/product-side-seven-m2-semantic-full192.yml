@@ -47,4 +47,4 @@ jobs:
           path: product-side-seven-m2-semantic-full192.txt
           if-no-files-found: error
 
-# Durable registration: retain until the exact compact transcript is promoted.
+# Durable registration: corrected baseline assertions; retain until the exact compact transcript is promoted.
