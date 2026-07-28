@@ -1,0 +1,22 @@
+{
+  "m":10,
+  "hamilton_cycles":362880,
+  "parity_satisfiable_cycles":297886,
+  "clean_signed_states":115586396,
+  "nonempty_three_arc_keys":60480,
+  "maximum_raw_source_cycles_per_arc_assignment":720,
+  "complement_reduced_geometric_candidates":24762,
+  "atomic_signed_assignment_flaws_with_clean_sources":47512,
+  "compatible_source_cycles_range":[106,720],
+  "compatible_source_cycle_quantiles":{"25_percent":545,"median":612,"75_percent":658,"90_percent":687,"99_percent":718},
+  "flaws_with_all_720_source_cycles":412,
+  "total_flaw_source_cycle_incidences":27939188,
+  "total_flaw_source_signed_weight":1485249312,
+  "maximum_single_flaw_source_signed_weight":65256,
+  "maximum_weight_flaw_source_cycles":720,
+  "maximum_weight_flaw_source_owners":[1,6,8],
+  "maximum_weight_flaw_targets":[8,2,3],
+  "maximum_weight_flaw_orientations":[1,0,0],
+  "three_arc_factorial_compression_verified":true,
+  "full_weighted_hall_mincuts_completed":false
+}
