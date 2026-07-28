@@ -2,12 +2,12 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2453 the branch has a complete finite
+The no-three-in-line conjecture remains open. Through CMR2461 the branch has a complete finite
 certificate architecture from source-traceable rule clauses to a global integer quotient,
 semantic predicates and row theorems, typed obligation/premise/handoff artifacts, a seven-gate
 pre-root integrity audit, an exact 252-chamber exceptional worklist, a 43-target execution schedule
 over thirteen genuine research frontiers, synchronized chamber/target gates, sealed atomic-target
-evidence, and an exact source-statement/T01 root bank.
+evidence, and an exact source-statement/T01 root bank with sealed verification artifacts.
 
 The branch still lacks the literal genuine source statements, the genuine exhaustive recurrence,
 complete real population, proved external semantics, complete strict blocks and interface rows,
@@ -35,11 +35,23 @@ The required artifact kinds are:
 | `exclusion` | `exclusion-proof` |
 | `computation` | `reproducible-computation-proof` |
 
+CMR2454--CMR2461 require each proved statement to have one canonical verification artifact. For
+source ID `S`, the statement record must bind
+
+```text
+source-verification-artifact-registry://S
+```
+
+and the reconstructed artifact-bundle digest. The artifact carries a separate external proof
+locator/digest, the exact statement hash, a proof statement, evidence and a sorted list of
+supporting source-verification artifact IDs. Open statements carry no artifacts. The complete
+support graph must be acyclic.
+
 The registry reconstructs the exact case/clause/axis/exclusion footprint of every source and orders
 open source IDs by decreasing downstream use. Use that order to choose high-leverage proof work,
 not as an estimate of difficulty.
 
-The complete bundle must be bound by the unique `source-truth-proof` artifact for
+The complete source-truth bundle must be bound by the unique `source-truth-proof` artifact for
 `SOURCE_STATEMENTS_TRUE`. CMR2446--CMR2453 require the same obligation registry to appear in the
 current-frontier stack and require exact agreement with `T01_SOURCE_STATEMENTS`.
 
@@ -137,6 +149,11 @@ qualified. The atomic completion locator is
 `atomic-target-artifact-registry://<target ID>` and the completion digest equals the reconstructed
 bundle digest.
 
+For each proved source statement `S`, the verification locator is
+`source-verification-artifact-registry://S` and its digest equals the reconstructed per-source
+artifact bundle. The artifact's external proof pointer is separate, and source-proof support must
+be acyclic.
+
 For the source root, the `source-truth-proof` artifact locator is
 `source-statement-truth-registry://SOURCE_STATEMENTS_TRUE` and its digest equals the complete source
 truth bundle digest.
@@ -169,20 +186,22 @@ arithmetic, not time or difficulty estimates.
 
 CMR2414--CMR2421 synchronize the atomic schedule with the typed handoff-assertion artifact registry
 and exact 252-chamber disposition registry. CMR2422--CMR2437 add sealed target-artifact evidence.
-CMR2446--CMR2453 add the source-root gate.
+CMR2446--CMR2461 add the exact and sealed source-root path.
 
 A claimed all-frontier dossier must therefore agree with:
 
 - six handoff artifact bundles;
 - independent 232/20 chamber readiness flags;
-- the exact sealed artifact bank for completed targets; and
-- the exact source statement census used by `T01_SOURCE_STATEMENTS`.
+- the exact sealed artifact bank for completed targets;
+- the exact literal source statement census used by `T01_SOURCE_STATEMENTS`; and
+- one sealed, acyclically supported verification artifact for every proved source statement.
 
 Passing these gates proves documentary identity and coverage only, not the mathematics.
 
 ## 14. Immediate execution order
 
-1. Populate the literal source statement bank and prove the highest-use open source statements.
+1. Populate the literal source statement bank and prove the highest-use open source statements
+   using sealed, noncircular verification artifacts.
 2. Close all source statements and pass the source-root/T01 synchronization gate.
 3. Prove the exhaustive parent-clause recurrence skeleton.
 4. Populate every genuine slot, candidate, block and interface row.
@@ -210,14 +229,17 @@ The nineteen exact obligations are:
 `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`, `EXCEPTIONAL_ZERO_ROWS_CLOSED`,
 `HARD_CORE_ROWS_CLOSED`, and `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
 
-An obligation cannot close while an exact dependency remains open. The new source registry makes
-the root obligation's internal statement census explicit; it does not change the DAG.
+An obligation cannot close while an exact dependency remains open. The source registry makes the
+root obligation's internal statement and sealed-verification census explicit; it does not change
+the DAG.
 
 ## 16. Honesty boundaries
 
-- A source locator and unattached statement digest do not prove or even identify literal text.
+- A source locator and unattached statement digest do not identify literal text.
 - Exact text and a matching SHA-256 do not prove the statement true.
-- Typed source artifacts do not verify mathematical validity.
+- Repeating an external proof locator/digest is not statement-to-proof binding.
+- Typed and sealed source artifacts do not verify mathematical validity.
+- Acyclic source-proof support does not prove logical sufficiency.
 - Source-truth readiness does not establish recurrence exhaustiveness.
 - Rule and family completeness remain relative to supplied data until proved externally.
 - Candidate coverage does not prove the intended policy.
@@ -238,10 +260,11 @@ the root obligation's internal statement census explicit; it does not change the
 
 ## 17. Current endpoint
 
-Through CMR2453 the finite interface reaches a noncircular global quotient dossier, typed support
+Through CMR2461 the finite interface reaches a noncircular global quotient dossier, typed support
 through final handoff assertions and every atomic frontier target, an explicit 252-chamber closure
 registry, synchronized execution/evidence gates, and an exact statement-by-statement source root
-synchronized with T01. The unresolved center is the genuine mathematics: literal source content,
-valid proofs of those statements, the actual exhaustive recurrence and population, proof of every
-semantic statement and chamber disposition, strict block closure and the reviewed implication to
-all `n`.
+synchronized with T01. Every proved source entry now requires a sealed verification artifact and
+the complete source-proof support graph must be acyclic. The unresolved center is the genuine
+mathematics: literal source content, valid proofs of those statements, the actual exhaustive
+recurrence and population, proof of every semantic statement and chamber disposition, strict
+block closure and the reviewed implication to all `n`.
