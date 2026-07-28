@@ -24,6 +24,7 @@ The authoritative live ledger is split across:
 | CMR2446--2453 | Shared obligation-registry identity, exact source-census/T01 synchronization, strict source-root gate, prioritized source blockers, certificate identity bindings, noncircular composition, honesty boundary, and executable endpoint | PROVED as documentary synchronization of the source truth bank with `T01_SOURCE_STATEMENTS`; checker syntax-compiled locally; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/409-prime-power-source-truth-frontier-execution.md` |
 | CMR2454--2461 | Opaque verification-pointer defect, exact per-source verification artifacts, proved/open artifact coverage, statement-to-bundle sealing, acyclic source-proof support, strengthened aggregate source-truth binding, honesty boundary, and executable endpoint | PROVED as noncircular source-proof evidence sealing; source registry version 2 syntax-compiled and isolated sealing/cycle tests passed; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/410-prime-power-source-verification-artifact-sealing.md` |
 | CMR2462--2469 | Fixed case/clause/axis/exclusion/application work bank, exact source and internal rule-artifact support, global-parent-to-operation-slot binding, sealed rule-manifest and rule-exhaustiveness bundles, exact `RULE_EXHAUSTIVE`/T02 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T02 rule-exhaustiveness frontier; checker syntax-compiled locally; the actual parent rule, exhaustiveness theorem, slot population and all-`n` implication remain unproved | `docs/411-prime-power-rule-exhaustiveness-frontier.md` |
+| CMR2470--2477 | Exact open/populated/proved slot bank, literal population payloads, canonical fibre/source binding, exact T02 case/clause/application support, payload-to-proof sealing, aggregate population certificate, exact `SLOT_AND_CANDIDATE_POPULATION`/T03 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T03 slot/candidate population frontier; checker syntax-compiled locally; no genuine population semantics, T04 population or all-`n` implication claimed | `docs/412-prime-power-slot-candidate-population-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -133,6 +134,25 @@ with both `RULE_EXHAUSTIVE` and `T02_RULE_EXHAUSTIVENESS`.
 This is an exact review surface only. It does not prove that the supplied rule data are genuine or
 exhaustive, and it does not populate the slots required by T03.
 
+## Exact T03 slot and candidate population frontier
+
+Every independently expected operation slot now has one exact `open`, `populated` or `proved`
+record. A non-open record carries the literal population payload for points, removals, survivor
+background, owner/fate witnesses, response family, feasibility signatures, selector data, labelled
+vectors, routed credits, row loads and transitions.
+
+The payload's source hash is recomputed from those literal fields. Its fibre ID is reconstructed from
+the expected host and source hash. A proved slot has one `slot-candidate-population-proof` artifact
+citing the exact T02 case and clause artifacts and every global-parent application that selects the
+slot. Populated-but-unproved slots remain visible as research progress without closing T03.
+
+The aggregate `population-certificate` binds the complete slot record, payload, proof-artifact and
+per-slot bundle banks. Reconstructed readiness must agree exactly with
+`SLOT_AND_CANDIDATE_POPULATION` and `T03_SLOT_CANDIDATE_POPULATION`.
+
+This is documentary identity and coverage only. It does not verify the supplied population data or
+populate the separate T04 recurrent-block and interface-row bank.
+
 ## Active frontier
 
 1. Transcribe every cited source statement exactly, confirm its stored hash, and provide one sealed
@@ -140,17 +160,19 @@ exhaustive, and it does not populate the slots required by T03.
 2. Populate and prove every T02 case, clause, axis, exclusion and global-parent application record;
    bind each global parent to its exact admitted operation slot; then review the genuine
    parent-rule exhaustiveness theorem.
-3. Populate every operation slot, candidate row, recurrent block and interface row with real
-   geometry, fate, route and transition data.
-4. Prove selector correctness and the intended operation policy.
-5. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
+3. Enter actual data for every T03 expected slot, prove each slot with exact T02 support, and review
+   the complete candidate-family population theorem.
+4. Populate every T04 recurrent block and return/interface row with real geometry, fate, route and
+   transition data.
+5. Prove selector correctness and the intended operation policy.
+6. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
    semantics.
-6. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
-7. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-8. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
+7. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
+8. Prove every cross-block equivalence, component scale, state predicate and row theorem.
+9. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
    noncircular support and completion-to-bundle sealing.
-9. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
-   every closed disposition mathematically.
-10. Complete all forty-three atomic targets, all ten final premises and all six induction-handoff
+10. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
+    every closed disposition mathematically.
+11. Complete all forty-three atomic targets, all ten final premises and all six induction-handoff
     assertions, then prove that the reviewed global quotient and handoff establish `D(n)=2n` for
     every `n`.
