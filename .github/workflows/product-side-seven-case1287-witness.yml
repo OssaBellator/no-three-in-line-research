@@ -1,0 +1,50 @@
+name: Product side-seven case 1287 constructive witness
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-case1287-witness.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-case1287-witness' .github/product-side-seven-case1287-witness-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile witness extractor
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/extract_product_side_seven_case1287_orientation0_top42984_witness.cpp
+          -o /tmp/extract-case1287-witness
+      - name: Extract and independently verify witness
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/extract-case1287-witness \
+            | tee product-side-seven-case1287-witness.txt
+          grep -q '^FEASIBLE .* PASS$' product-side-seven-case1287-witness.txt
+      - name: Upload exact witness
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-case1287-witness
+          path: product-side-seven-case1287-witness.txt
+          if-no-files-found: error
+
+# Durable registration: retain until the exact witness is promoted.
