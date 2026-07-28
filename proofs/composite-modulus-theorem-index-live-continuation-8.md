@@ -20,6 +20,8 @@ The authoritative live ledger is split across:
 | CMR2414--2421 | Shared handoff/refinement identity, exact handoff-target artifact synchronization, exact 232/20 chamber-target synchronization, integrated three-component readiness, current blocker publication, execution boundary, and executable endpoint | PROVED as synchronized current-frontier execution integrity; checker syntax-compiled locally; no target, assertion, chamber closure or all-`n` proof claimed | `docs/405-prime-power-current-frontier-execution.md` |
 | CMR2422--2429 | Fixed target artifact kinds, canonical completion-to-bundle binding, exact immediate target-artifact support, namespace-qualified obligation/premise/handoff support, role-qualified selected certificate bindings, canonical target bundles, post-frontier artifact gate, documentary boundary, and executable endpoint | PROVED as typed documentary evidence for every effectively complete atomic target; checker version 2 syntax-compiled and isolated schema tests passed; no artifact truth, target completion or all-`n` proof claimed | `docs/406-prime-power-atomic-target-artifact-registry.md` |
 | CMR2430--2437 | Opaque-echo defect isolation, proof-pointer/completion-seal separation, exact registry locator and bundle digest, namespace-qualified external references, role-qualified certificates, noncircular ancestor binding, strengthened post-frontier claims, and executable endpoint | PROVED as a noncircular hardening of atomic target completion sealing; checker version 2 syntax-compiled and isolated schema tests passed; no mathematical target or all-`n` proof claimed | `docs/407-prime-power-atomic-target-completion-sealing.md` |
+| CMR2438--2445 | Exact source statement text, UTF-8 statement-hash binding, source-kind-specific verification artifacts, rule/skeleton identity, complete source-use footprints, source-truth census synchronization, existing `source-truth-proof` bundle binding, honesty boundary, and executable endpoint | PROVED as an exact source-statement proof-work interface; checker syntax-compiled and isolated statement-digest tests passed; the actual source statements and parent rule remain unproved/unpopulated | `docs/408-prime-power-source-statement-truth-registry.md` |
+| CMR2446--2453 | Shared obligation-registry identity, exact source-census/T01 synchronization, strict source-root gate, prioritized source blockers, certificate identity bindings, noncircular composition, honesty boundary, and executable endpoint | PROVED as documentary synchronization of the source truth bank with `T01_SOURCE_STATEMENTS`; checker syntax-compiled locally; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/409-prime-power-source-truth-frontier-execution.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -86,21 +88,37 @@ the registry certificate binds that current-frontier certificate at the registry
 The post-frontier gate remains documentary and permanently reports
 `all_n_proved_by_checker = 0`.
 
+## Exact source-statement root
+
+Every source cited by the parent-rule provenance layer now has one canonical record containing the
+literal statement text, a recomputed UTF-8 SHA-256 and an exact verification status. Proved records
+require a source-kind-specific artifact; open records require null artifact fields.
+
+The source registry reconstructs each source's complete case/clause/axis/exclusion footprint and
+orders open source IDs by decreasing downstream use. The complete source-truth bundle is bound by
+the existing `source-truth-proof` obligation artifact rather than by a parallel closure path.
+
+A separate source-root execution certificate requires the source registry, nested obligation
+registry and `T01_SOURCE_STATEMENTS` target to agree exactly. Until every source statement is
+proved, the current atomic source target remains T01; only then does the source front advance to
+`T02_RULE_EXHAUSTIVENESS`.
+
 ## Active frontier
 
-1. Prove the cited source statements and genuine exhaustive recurrence skeleton.
-2. Populate every operation slot, candidate row, recurrent block and interface row with real
+1. Transcribe every cited source statement exactly, confirm its stored hash, and provide the fixed
+   source-kind-specific verification artifact.
+2. Prove the genuine exhaustive parent-clause skeleton once the complete source bank closes.
+3. Populate every operation slot, candidate row, recurrent block and interface row with real
    geometry, fate, route and transition data.
-3. Prove selector correctness and the intended operation policy.
-4. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
+4. Prove selector correctness and the intended operation policy.
+5. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
    semantics.
-5. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
-6. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-7. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
+6. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
+7. Prove every cross-block equivalence, component scale, state predicate and row theorem.
+8. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
    noncircular support and completion-to-bundle sealing.
-8. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
+9. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
    every closed disposition mathematically.
-9. Complete all forty-three atomic targets, all ten final premises and all six induction-
-   handoff assertions.
-10. Pass the synchronized current-frontier and sealed typed-target-artifact gates, then prove that
-    the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
+10. Complete all forty-three atomic targets, all ten final premises and all six induction-handoff
+    assertions, then prove that the reviewed global quotient and handoff establish `D(n)=2n` for
+    every `n`.
