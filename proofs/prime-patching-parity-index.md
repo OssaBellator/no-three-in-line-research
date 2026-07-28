@@ -28,6 +28,9 @@ no-three-in-line conjecture.
 | PP3bnf | A pair-safe Hamilton cycle admits an orientation with only `O(log m)` violated owner-pair constraints | PROVED | `docs/326-parity-frustration-basis-and-logarithmic-near-clean-seeds.md` |
 | PP3bng | Exact frustration distributions through `m=9`; the maximum values are `0,1,1,1,2,3` for `m=4,...,9` | VERIFIED FINITELY | `docs/326-parity-frustration-basis-and-logarithmic-near-clean-seeds.md` |
 | PP3bnh | The signed-cycle frontier reduces to repair or descent of a logarithmic marked parity-edge core | PROVED / REDUCTION | `docs/326-parity-frustration-basis-and-logarithmic-near-clean-seeds.md` |
+| PP3bni | Every positive-frustration pair-safe cycle through `m=9` has an immediate pair-safe successor rotation of lower frustration | VERIFIED FINITELY | `docs/327-pair-safe-frustration-strict-descent-through-m9.md` |
+| PP3bnj | Every violated edge of every optimal orientation through `m=9` is hit by at least one pair-safe strict-descent rotation | VERIFIED FINITELY | `docs/327-pair-safe-frustration-strict-descent-through-m9.md` |
+| PP3bnk | Reoptimized cycle-coordinate descent reaches a parity-satisfiable pair-safe cycle in at most `lambda(rho_0)<=3` moves through `m=9` | VERIFIED FINITELY | `docs/327-pair-safe-frustration-strict-descent-through-m9.md` |
 
 ## Current exact frontier
 
@@ -35,15 +38,17 @@ The clean orientation coordinate can be regenerated exactly.  Pair-local
 impossibility is asymptotically negligible, and a pair-safe cycle with only
 `O(log m)` parity edges exists.  After the frustration-basis reduction, one can
 choose an orientation with only `O(log m)` violated owner-pair constraints.
+Through `m=9`, the pair-safe cycle graph has no positive-frustration local
+minimum, and every optimal violated edge can be targeted by an immediate
+strict-descent rotation.
 
-The remaining tasks are concentrated in the Hamilton-cycle coordinate:
+The remaining tasks are concentrated in the asymptotic Hamilton-cycle and
+coupling interfaces:
 
-1. repair or descend the logarithmic frustration core while retaining pair
-   safety and owner-intersecting mobility;
-2. prove weighted Hall expansion at the `Theta(m^3)` scale, possibly after a
+1. prove pair-safe frustration descent beyond the audited finite sizes;
+2. couple cycle descent to exact fibre regeneration or a bounded sign update;
+3. prove weighted Hall expansion at the `Theta(m^3)` scale, possibly after a
    logarithmic clean trajectory;
-3. control label merging and predecessor multiplicity under the chosen cycle
+4. control label merging and predecessor multiplicity under the chosen cycle
    kernel;
-4. convert near-clean owner-pair control into atomic three-owner flaw control;
-5. extend bounded-horizon descent or parity-clean mobility beyond the audited
-   finite sizes.
+5. convert near-clean owner-pair descent into atomic three-owner flaw descent.
