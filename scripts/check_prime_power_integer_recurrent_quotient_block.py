@@ -84,6 +84,11 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
                             for record in auxiliary_exact["eliminated_row_records"]}
     block_row_by_parent = {record["parent_state_id"]: record
                            for record in block_exact["row_records"]}
+    selected_response_by_parent = {}
+    for routed in block["routed_row_certificates"]:
+        row_certificate = routed["row_margin_certificate"]
+        parent = row_certificate["linked_operation_certificate"]["linkage_certificate"]["source_manifest"]["parent"]
+        selected_response_by_parent[parent] = row_certificate["claims"]["selected_response"]
     require(set(policy_by_parent) == set(eliminated_by_parent) == set(block_row_by_parent),
             "parent sets differ across policy, block and elimination certificates")
 
@@ -101,9 +106,10 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         original = block_row_by_parent[parent]
         require(policy_record["selected_fibre_id"] == eliminated["fibre_id"] == original["fibre_id"],
                 f"parent {parent}: selected fibre mismatch")
-        if eliminated["selected_response"] != original["selected_response"]:
+        original_selected_response = selected_response_by_parent[parent]
+        if eliminated["selected_response"] != original_selected_response:
             selection_preserved = 0
-        require(eliminated["selected_response"] == original["selected_response"],
+        require(eliminated["selected_response"] == original_selected_response,
                 f"parent {parent}: auxiliary elimination changes selected response; reroute required")
 
         target_map = {state_id: multiplicity
