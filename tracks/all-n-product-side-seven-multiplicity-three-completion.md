@@ -11,34 +11,38 @@ The layer contains `71,860` selectors grouped into `38,553` top signatures. All 
 - `37,600` are certified infeasible in all four radix orientations;
 - one multiplicity-four selector has a verified no-three embedding.
 
-Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `1,280` signatures, global cases `0` through `1279`, are closed in 128 canonical ten-signature proof units:
+Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `1,360` signatures, global cases `0` through `1359`, are classified:
 
-- `2,560` multiplicity-two selectors are certified infeasible;
-- every shard has a standalone ordered-transcript digest verifier;
-- the prefix uses `476,301,309` shared bottom-CSP nodes.
+- `2,719` multiplicity-two selectors are certified infeasible;
+- case `1287`, selector zero, supplies a second verified no-three embedding;
+- the classified prefix uses `499,208,119` certified rejection-CSP nodes.
 
 Therefore the committed support-twenty boundary is:
 
-- `40,160` certified-infeasible selectors;
-- one constructive selector;
-- `31,699` unclassified selectors;
-- `3,242,756,553` certified rejection-CSP nodes.
+- `40,319` certified-infeasible selectors;
+- two constructive selectors;
+- `31,539` unclassified selectors;
+- `3,265,663,363` certified rejection-CSP nodes.
 
 The unresolved cache consists exactly of:
 
-- `2,560` multiplicity-two signatures containing `5,120` selectors;
+- `2,480` multiplicity-two signatures containing `4,960` selectors;
 - all `26,579` multiplicity-one selectors.
 
-Cases `1280` through `1359` are registered but uncounted.
+The next canonical multiplicity-two case is `1360`.
 
 ## Exact finite proof units
 
-The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committed multiplicity-two shard family is:
+The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committed multiplicity-two proof family is:
 
 - `multiplicity2_pilot10.cpp` for cases `0`--`9`;
-- `multiplicity2_shard1.cpp` through `multiplicity2_shard127.cpp` for cases `10`--`1279`.
+- `multiplicity2_shard1.cpp` through `multiplicity2_shard127.cpp` for cases `10`--`1279`;
+- `multiplicity2_shard128_prefix7.cpp` for cases `1280`--`1286`;
+- the constructive witness and independent selector-one verifier for case `1287`;
+- `multiplicity2_shard128_tail2.cpp` for cases `1288`--`1289`;
+- `multiplicity2_shard129.cpp` through `multiplicity2_shard135.cpp` for cases `1290`--`1359`.
 
-Each wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest.
+Each rejection wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest. The constructive verifier rebuilds the canonical signature and state, extracts the surviving bottom permutation, and independently checks the 28-point geometry.
 
 ## Certificate compression and master learning
 
@@ -46,30 +50,39 @@ For multiplicity-two case zero, orientation three:
 
 - the first 64 references reduce to 49 actual keys covering 92 clean top orders;
 - the first 128 references reduce to 102 actual keys covering 164 clean top orders;
-- seven later references reuse first-prefix keys, while 53 genuinely new keys appear;
-- selector masks align at 40 references and require pair unions at 88;
-- selector zero has three twelve-triple greedy covers; selector one retains seven-triple covers throughout;
-- all extension replays use 3,185,280 exact bottom checks.
+- the first 192 references reduce to 150 actual keys covering 204 clean top orders;
+- 15 references in indices `128`--`191` reuse first-128 keys, while 48 genuinely new keys appear;
+- selector masks align at 52 of 192 references;
+- all 64 newly measured selector covers use seven triples;
+- the complete 192-reference replay uses `4,465,440` exact bottom checks.
 
-The next compression target is to extend beyond top index 127, measure vocabulary growth and reuse, and solve a compact set-cover problem against the complete clean-top family.
+The next compression target is to solve a compact set-cover problem against the accumulated 150-key vocabulary and then extend only where uncovered clean tops remain.
 
 ## Immediate tasks
 
-1. Promote cases `1280--1359`, then continue multiplicity two.
-2. Extend semantic master learning beyond top index 127 and measure vocabulary saturation.
-3. Build and verify a compact set-cover basis from the accumulated master keys.
-4. Defer multiplicity one until multiplicity-two proof size and symmetry are understood.
+1. Continue multiplicity two from case `1360`, treating constructive hits as first-class classifications rather than assumed failures.
+2. Build and verify a compact set-cover basis from the 192-reference semantic vocabulary.
+3. Test whether the case-`1287` construction has a symmetry orbit or a reusable local template.
+4. Defer multiplicity one until multiplicity-two proof size, construction frequency, and symmetry are understood.
 5. Continue the finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and carry/absorber fronts.
 6. Keep every finite result separate from an all-`n` claim.
 
 ## Verification
 
 ```bash
-python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full128_relaxed.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full192_relaxed.py
+
+g++ -O3 -std=c++17 \
+  scripts/verify_product_side_seven_multiplicity2_case1287_constructive_witness.cpp \
+  -o /tmp/m2-case1287-witness
+/tmp/m2-case1287-witness
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..127}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..127}.cpp \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_prefix7.cpp \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_tail2.cpp \
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{129..135}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
