@@ -1,0 +1,51 @@
+name: Product side-seven multiplicity-two rescue cases 1287 through 1289
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-rescue-1287-1289.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-rescue-1287-1289' .github/product-side-seven-m2-rescue-1287-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact shard tool
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_tier_shard.cpp
+          -o /tmp/measure-product-side-seven-tier-shard
+      - name: Measure exact rescue interval
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/measure-product-side-seven-tier-shard 1287 3 2 \
+            | tee product-side-seven-m2-rescue-1287-1289.txt
+          grep -q '^const TierShardDigestExpectations EXPECTED = {' product-side-seven-m2-rescue-1287-1289.txt
+          grep -q '^aggregate_bottom_nodes=' product-side-seven-m2-rescue-1287-1289.txt
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-rescue-1287-1289
+          path: product-side-seven-m2-rescue-1287-1289.txt
+          if-no-files-found: error
+
+# Durable registration: retain until the exact rescue transcript is promoted.
