@@ -85,6 +85,10 @@ struct Result{
   array<long long,5> maximum_target_labels_in_bin{};
   long long normalizer_min=0,normalizer_max=0;
   long long bin_envelope_num=0,bin_envelope_den=1;
+  uint256_t correlated_bin_num=0,correlated_bin_den=1;
+  array<long long,5> correlated_bin_counts{};
+  int correlated_bin_target_components=0;
+  long long correlated_bin_target_cycles_tied=0;
 };
 Result run_case(int m){
   const int ROOTS=1<<m;
