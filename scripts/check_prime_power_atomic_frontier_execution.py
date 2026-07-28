@@ -10,7 +10,7 @@ from __future__ import annotations
 import heapq
 import json
 import sys
-from collections import Counter, defaultdict, deque
+from collections import Counter, deque
 from pathlib import Path
 from typing import Any
 
@@ -67,7 +67,7 @@ TARGET_ROWS = [
 ("T14_COMPONENT_SCALES","F07_CROSS_BLOCK_SEMANTICS","prove every cross-block component scale","component-scale-proof","T11_RECURRENT_BLOCK_CLOSURE T13_STATE_EQUIVALENCE","T13_STATE_EQUIVALENCE","COMPONENT_SCALE_SEMANTIC","","",0),
 ("T15_INTERFACE_EXHAUSTIVENESS","F08_INTERFACE_RANK","prove every return and interface row present","interface-exhaustiveness-proof","T04_BLOCK_INTERFACE_POPULATION T07_FATE_TRANSITION_STATE T12_AUXILIARY_SEMANTICS T14_COMPONENT_SCALES","T12_AUXILIARY_SEMANTICS T14_COMPONENT_SCALES","INTERFACE_RETURN_ROWS_EXHAUSTIVE","","",0),
 ("T16_GLOBAL_RANK","F08_INTERFACE_RANK","prove the global rank genuinely well-founded","rank-well-foundedness-proof","T15_INTERFACE_EXHAUSTIVENESS","T15_INTERFACE_EXHAUSTIVENESS","GLOBAL_RANK_WELL_FOUNDED","","",0),
-("T17_STATE_PREDICATES","F07_CROSS_BLOCK_SEMANTICS","prove every global-state predicate","global-state-predicate-proof","T13_STATE_EQUIVALENCE","","","","",0),
+("T17_STATE_PREDICATES","F07_CROSS_BLOCK_SEMANTICS","prove every global-state predicate","global-state-predicate-proof","T13_STATE_EQUIVALENCE T16_GLOBAL_RANK","T13_STATE_EQUIVALENCE","","","",0),
 ("T18_ROW_THEOREMS","F07_CROSS_BLOCK_SEMANTICS","prove every final quotient row theorem and fixed-offset interpretation","global-row-theorem-proof","T05_GEOMETRY_SELECTORS T07_FATE_TRANSITION_STATE T10_CREDIT_ROUTING T11_RECURRENT_BLOCK_CLOSURE T12_AUXILIARY_SEMANTICS T14_COMPONENT_SCALES T15_INTERFACE_EXHAUSTIVENESS T16_GLOBAL_RANK T17_STATE_PREDICATES","T17_STATE_PREDICATES","","","",0),
 ("T19_GLOBAL_FAMILY","F10_GLOBAL_FAMILY","prove the skeleton-derived global family exhaustive","global-family-proof","T02_RULE_EXHAUSTIVENESS T11_RECURRENT_BLOCK_CLOSURE T15_INTERFACE_EXHAUSTIVENESS","","EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE","","",0),
 ("T20_EXCEPTIONAL_ZERO_ROWS","F11_EXCEPTIONAL_CORE","close all zero-selector exceptional rows","exceptional-zero-proof","T05_GEOMETRY_SELECTORS T10_CREDIT_ROUTING T15_INTERFACE_EXHAUSTIVENESS","","EXCEPTIONAL_ZERO_ROWS_CLOSED","","",0),
@@ -118,7 +118,7 @@ TARGETS["T32_OBLIGATION_ARTIFACTS"]["proof_dependency_target_ids"] = tuple(
 
 def topological_order(key: str) -> list[str]:
     indegree = {target_id: 0 for target_id in TARGETS}
-    dependents: dict[str, list[str]] = defaultdict(list)
+    dependents: dict[str, list[str]] = {target_id: [] for target_id in TARGETS}
     for target_id, definition in TARGETS.items():
         for dependency in definition[key]:
             require(dependency in TARGETS, f"target {target_id}: unknown dependency {dependency}")
@@ -127,7 +127,7 @@ def topological_order(key: str) -> list[str]:
             dependents[dependency].append(target_id)
     queue = [target_id for target_id, degree in indegree.items() if degree == 0]
     heapq.heapify(queue)
-    output = []
+    output: list[str] = []
     while queue:
         current = heapq.heappop(queue)
         output.append(current)
@@ -151,8 +151,7 @@ def validate_definitions() -> dict[str, int]:
     ):
         counts = Counter(item for definition in TARGETS.values() for item in definition[field])
         require(set(counts) == expected, f"{label} coverage mismatch")
-        require(all(value == 1 for value in counts.values()),
-                f"each {label} requires exactly one target")
+        require(all(value == 1 for value in counts.values()), f"each {label} requires exactly one target")
     require(sum(value["requires_final_dossier_gate"] for value in TARGETS.values()) == 1,
             "exactly one final dossier gate target required")
     return {"frontiers": len(FRONTIERS), "targets": len(TARGETS),
@@ -207,38 +206,27 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     require(isinstance(raw_completions, list), "target_completion_records: expected list")
     dossier.validate_certificate(dossier_certificate)
     dossier_exact = dossier.exact_certificate(dossier_certificate)
-
     handoff_certificate = dossier_certificate["final_induction_handoff_certificate"]
     premise_registry = handoff_certificate["premise_artifact_registry_certificate"]
     contract_certificate = premise_registry["final_implication_premise_contract_certificate"]
     obligation_registry = contract_certificate["obligation_artifact_registry_certificate"]
-    closure_certificate = obligation_registry["all_n_implication_closure_certificate"]
-    closure_exact = closure.exact_certificate(closure_certificate)
+    closure_exact = closure.exact_certificate(obligation_registry["all_n_implication_closure_certificate"])
     contract_exact = contract.exact_certificate(contract_certificate)
     handoff_exact = handoff.exact_certificate(handoff_certificate)
 
     target_ids = list(TARGETS)
     require([record.get("target_id") for record in raw_completions] == target_ids,
             "target_completion_records: exact canonical order required")
-    completions = [
-        exact_completion(record, target_id)
-        for record, target_id in zip(raw_completions, target_ids)
-    ]
+    completions = [exact_completion(record, target_id)
+                   for record, target_id in zip(raw_completions, target_ids)]
     require(raw_completions == completions, "target_completion_records: noncanonical records")
     completion_by_id = {record["target_id"]: record for record in completions}
-
-    obligation_closed = {
-        record["obligation_id"]: bool(record["closed"])
-        for record in closure_exact["obligation_closure_records"]
-    }
-    premise_effective = {
-        record["premise_id"]: bool(record["effective_premise_closed"])
-        for record in contract_exact["premise_result_records"]
-    }
-    assertion_effective = {
-        record["assertion_id"]: bool(record["effective_assertion_closed"])
-        for record in handoff_exact["handoff_assertion_result_records"]
-    }
+    obligation_closed = {record["obligation_id"]: bool(record["closed"])
+                         for record in closure_exact["obligation_closure_records"]}
+    premise_effective = {record["premise_id"]: bool(record["effective_premise_closed"])
+                         for record in contract_exact["premise_result_records"]}
+    assertion_effective = {record["assertion_id"]: bool(record["effective_assertion_closed"])
+                           for record in handoff_exact["handoff_assertion_result_records"]}
     dossier_ready = bool(dossier_exact["claims"]["final_dossier_integrity_ready"])
 
     effective: dict[str, bool] = {}
@@ -296,12 +284,9 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         research_wave[target_id] = 0 if effective[target_id] else (
             1 + max((research_wave[value] for value in open_dependencies), default=0)
         )
-        record = {
-            "target_id": target_id,
-            "research_actionable": actionable,
-            "open_research_dependency_target_ids": open_dependencies,
-            "earliest_research_start_wave": research_wave[target_id],
-        }
+        record = {"target_id": target_id, "research_actionable": actionable,
+                  "open_research_dependency_target_ids": open_dependencies,
+                  "earliest_research_start_wave": research_wave[target_id]}
         record["research_schedule_sha256"] = catalogue.canonical_digest(record)
         research_records.append(record)
 
@@ -316,43 +301,36 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
                 if current in definition["proof_dependency_target_ids"] and target_id not in seen:
                     seen.add(target_id)
                     queue.append(target_id)
-        downstream[source] = [
-            value for value in TARGETS if value in seen and value != source and not effective[value]
-        ]
+        downstream[source] = [value for value in TARGETS
+                              if value in seen and value != source and not effective[value]]
 
     frontier_records = []
     for frontier_id, title in FRONTIERS.items():
-        target_ids = [
-            target_id for target_id, definition in TARGETS.items()
-            if definition["frontier_id"] == frontier_id
-        ]
+        frontier_targets = [target_id for target_id, definition in TARGETS.items()
+                            if definition["frontier_id"] == frontier_id]
         record = {
             "frontier_id": frontier_id,
             "title": title,
-            "target_ids": target_ids,
-            "completed_target_ids": [value for value in target_ids if effective[value]],
-            "research_actionable_target_ids": [
-                value for value in target_ids if research_by_id[value]["research_actionable"]
-            ],
-            "proof_actionable_target_ids": [
-                value for value in target_ids
-                if not effective[value] and result_by_id[value]["proof_dependencies_complete"]
-            ],
-            "open_target_ids": [value for value in target_ids if not effective[value]],
+            "target_ids": frontier_targets,
+            "completed_target_ids": [value for value in frontier_targets if effective[value]],
+            "research_actionable_target_ids": [value for value in frontier_targets
+                                                if research_by_id[value]["research_actionable"]],
+            "proof_actionable_target_ids": [value for value in frontier_targets
+                                             if not effective[value]
+                                             and result_by_id[value]["proof_dependencies_complete"]],
+            "open_target_ids": [value for value in frontier_targets if not effective[value]],
             "maximum_downstream_unclosed_impact": max(
-                (len(downstream[value]) for value in target_ids), default=0),
+                (len(downstream[value]) for value in frontier_targets), default=0),
         }
         record["frontier_execution_sha256"] = catalogue.canonical_digest(record)
         frontier_records.append(record)
 
-    proof_actionable = [
-        value for value in TARGETS
-        if not effective[value] and result_by_id[value]["proof_dependencies_complete"]
-    ]
-    research_actionable = [
-        value for value in TARGETS if research_by_id[value]["research_actionable"]
-    ]
+    proof_actionable = [value for value in TARGETS if not effective[value]
+                        and result_by_id[value]["proof_dependencies_complete"]]
+    research_actionable = [value for value in TARGETS
+                           if research_by_id[value]["research_actionable"]]
     all_complete = int(all(effective.values()))
+    definitions = target_definition_records()
     claims = {
         "frontier_groups": len(FRONTIERS),
         "atomic_targets": len(TARGETS),
@@ -368,52 +346,43 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         "research_actionable_target_ids": research_actionable,
         "proof_actionable_target_ids": proof_actionable,
         "final_dossier_integrity_sha256": dossier_certificate["certificate_sha256"],
-        "target_definitions_sha256": catalogue.canonical_digest(target_definition_records()),
+        "target_definitions_sha256": catalogue.canonical_digest(definitions),
         "target_completions_sha256": catalogue.canonical_digest(completions),
         "target_results_sha256": catalogue.canonical_digest(results),
         "research_schedule_sha256": catalogue.canonical_digest(research_records),
         "frontier_records_sha256": catalogue.canonical_digest(frontier_records),
     }
-    return {
-        "target_definition_records": target_definition_records(),
-        "target_completion_records": completions,
-        "target_result_records": results,
-        "research_schedule_records": research_records,
-        "frontier_execution_records": frontier_records,
-        "claims": claims,
-    }
+    return {"target_definition_records": definitions,
+            "target_completion_records": completions,
+            "target_result_records": results,
+            "research_schedule_records": research_records,
+            "frontier_execution_records": frontier_records,
+            "claims": claims}
 
 
 def validate_certificate(certificate: Any) -> dict[str, int]:
     require(isinstance(certificate, dict), "certificate: expected object")
     require(certificate.get("version") == 1, "version: expected 1")
     exact = exact_certificate(certificate)
-    for key in (
-        "target_definition_records", "target_completion_records", "target_result_records",
-        "research_schedule_records", "frontier_execution_records", "claims",
-    ):
+    for key in ("target_definition_records", "target_completion_records", "target_result_records",
+                "research_schedule_records", "frontier_execution_records", "claims"):
         require(certificate.get(key) == exact[key], f"{key}: incorrect")
     payload = {key: value for key, value in certificate.items() if key != "certificate_sha256"}
     require(certificate.get("certificate_sha256") == catalogue.canonical_digest(payload),
             "certificate_sha256: incorrect")
     claims = exact["claims"]
-    return {
-        "frontiers": claims["frontier_groups"],
-        "targets": claims["atomic_targets"],
-        "completed": claims["completed_targets"],
-        "research_actionable": claims["research_actionable_targets"],
-        "proof_actionable": claims["proof_actionable_targets"],
-        "ready": claims["final_frontier_execution_ready"],
-    }
+    return {"frontiers": claims["frontier_groups"], "targets": claims["atomic_targets"],
+            "completed": claims["completed_targets"],
+            "research_actionable": claims["research_actionable_targets"],
+            "proof_actionable": claims["proof_actionable_targets"],
+            "ready": claims["final_frontier_execution_ready"]}
 
 
 def build_certificate(dossier_certificate: dict[str, Any],
                       records: list[dict[str, Any]]) -> dict[str, Any]:
-    certificate: dict[str, Any] = {
-        "version": 1,
-        "final_dossier_integrity_certificate": dossier_certificate,
-        "target_completion_records": records,
-    }
+    certificate: dict[str, Any] = {"version": 1,
+                                  "final_dossier_integrity_certificate": dossier_certificate,
+                                  "target_completion_records": records}
     certificate.update(exact_certificate(certificate))
     certificate["certificate_sha256"] = catalogue.canonical_digest(certificate)
     return certificate
