@@ -78,6 +78,8 @@ no-three-in-line conjecture.
 | PP3btq--PP3bts | In the `m=10` source-count transition window, all three prescribed-arc path types contain both constant-one violations and nonviolations; connectivity alone is insufficient | PROVED / VERIFIED FINITELY | `docs/376-exact-m10-hall-transition-by-prescribed-arc-path-type.md` |
 | PP3btt--PP3btv | The dimensionless relative-cut inequality holds generally, and the same threshold `z_* >= (16/5)z_min` gives relaxed terminal envelopes `99/137`, `92/93`, and `196/617` at `m=8,9,10` | PROVED / VERIFIED FINITELY | `docs/377-fixed-relative-terminal-normalizer-cut-through-m10.md` |
 | PP3btw--PP3bty | In the `m=10` transition window, `A=G Lambda` separates full-neighbourhood mass from Hall localization; only 8 of 68 violations are global, while 60 arise solely from proper subsets | PROVED / VERIFIED FINITELY | `docs/378-m10-hall-transition-global-mass-versus-localization.md` |
+| PP3btz--PP3bub | The same terminal cuts and low/high populations persist for every `q` in `(595/186,298/93]`, with uniform relaxed envelope below `54752/55335` | PROVED / VERIFIED FINITELY | `docs/379-robust-relative-terminal-normalizer-cuts-through-m10.md` |
+| PP3buc--PP3bue | Weighted Bonferroni expansion reduces localized Hall charge to one-source capacity and pairwise neighbourhood overlap, with an exact two-source obstruction criterion | PROVED | `docs/380-weighted-neighborhood-overlap-criteria-for-localized-hall-transport.md` |
 
 ## Current exact frontier
 
@@ -125,27 +127,25 @@ Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
 clean fibre has width at most one. Uniform terminal-gate weights are strongly
 overloaded after fibre regeneration, but fibre-capacity weighting contracts.
-The complete cumulative normalizer profiles are exact through `m=10`. Beyond the
-size-optimized cuts, the same dimensionless rule works at every audited size:
-choose the first observed normalizer at least `(16/5)z_min`. Even after replacing
-the selected threshold by the weaker lower bound `(16/5)z_min`, the exact
-worst-target envelopes are `99/137`, `92/93`, and `196/617` at `m=8,9,10`.
-Thus the finite terminal problem has a common relative scale. The remaining
-horizon problem is shell depth plus a uniform fixed-relative low-tail/high-bulk
-inequality at `(16/5)z_min`, or another constant ratio, together with adjacent-
-fibre control or a stronger correlated cumulative estimate.
+The complete cumulative normalizer profiles are exact through `m=10`. The same
+selected cut and low/high populations persist for every relative threshold
+`q in (595/186,298/93]`, an interval containing `16/5`. Throughout that interval
+the relaxed worst-target envelope is uniformly below `54752/55335`, with margin
+`583/55335`. Thus the finite common-scale certificate is robust rather than
+finely tuned. The remaining horizon problem is shell depth plus a uniform
+fixed-relative low-tail/high-bulk inequality on a nonzero threshold interval,
+together with adjacent-fibre control or a stronger correlated cumulative bound.
 
 Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
 supported signed flaws have proper bottlenecks. In the intermittent source-count
-window `209--287`, factor the support-normalized charge as `A(f)=G(f)Lambda(f)`,
-where `G` is the full-neighbourhood normalized mass and `Lambda` is the proper-
-subset localization factor. Only 8 of the 68 constant-one violations already
-have `G>1`; the other 60, or `15/17` of all violations, arise solely from proper
-Hall subsets. Every violating three-disjoint-arc flaw is localized in this
-sense. Thus neither source support, arc connectivity, nor full reached capacity
-is sufficient: a uniform theorem must control localized weighted expansion over
-proper source subsets. A uniform inverse-support inequality and cubic compatible-
-source lower bound remain open.
+window `209--287`, only 8 of 68 constant-one violations are visible from the
+full reached capacity; the other 60 arise solely on proper source subsets.
+Weighted Bonferroni expansion now reduces such localized cuts to one-source
+neighbourhood capacity and pairwise weighted overlap. For a two-source subset,
+constant-one failure is exactly an excessive-overlap inequality. The remaining
+frontier is to prove uniform small-subset overlap control, add higher-order or
+heat-kernel expansion for larger subsets, and combine this with a compatible-
+source lower bound to obtain an all-scale inverse-support theorem.
 
 ## Remaining tasks
 
@@ -160,14 +160,14 @@ source lower bound remain open.
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
    adjacent-shell fibre width, and establish a fixed-relative low-tail/high-bulk
-   normalizer balance at `(16/5)z_min` or another uniform ratio, or prove a
-   stronger correlated cumulative estimate.
-6. Prove localized weighted expansion or heat-kernel control for every proper
-   source subset in the flaw-transport graph; control the product of global mass
-   and localization beyond source count, arc type, and full-neighbourhood
-   capacity, then prove a uniform inverse-support constant and support lower bound.
+   normalizer balance on a nonzero threshold interval, or prove a stronger
+   correlated cumulative estimate.
+6. Prove uniform one-source capacity and pair-overlap bounds for localized Hall
+   cuts, supplement them by higher-order or heat-kernel expansion for larger
+   subsets, and combine the resulting inverse-support constant with a compatible-
+   source lower bound.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3btz`.
+The next available theorem identifier is `PP3buf`.
