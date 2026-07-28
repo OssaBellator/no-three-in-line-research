@@ -33,10 +33,11 @@ The authoritative live ledger is split across:
 | CMR2326--2333 | Transitive obligation dependencies, exact open blocker sets, actionable frontier, parallel completion waves, canonical blocker chains, downstream impacts, planning boundary, and executable endpoint | PROVED as exact dependency scheduling over declared status; checker syntax-compiled; no difficulty or time estimate claimed | `docs/394-prime-power-obligation-blocker-schedule.md` |
 | CMR2334--2341 | Edgewise global-weight/rank drops, exact edge classification, explicit nondecreasing failures, descending-graph topological order, exact longest path, complete optional termination flag, sufficiency boundary, and executable endpoint | PROVED as a stronger optional pathwise audit; checker syntax-compiled; edgewise descent is not required for semantic multiset induction | `docs/395-prime-power-edgewise-lexicographic-support.md` |
 | CMR2342--2349 | Ten fixed implication premises, exact obligation dependencies, proof modes, effective premise closure, pre-root readiness criterion, proof boundary, and executable endpoint | PROVED as a pre-root final dossier contract; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no dossier is claimed ready | `docs/396-prime-power-final-implication-premise-contract.md` |
-| CMR2350--2357 | Exact artifact-support edges, dependency-aligned citations, support-DAG acyclicity, transitive support closures and depths, complete immediate-dependency artifact support, aggregate records, support boundary, and executable endpoint | PROVED as noncircular documentary support; checker syntax-compiled and graph fixtures passed; artifact truth and logical sufficiency remain unverified | `docs/397-prime-power-obligation-artifact-support-dag.md` |
-| CMR2358--2365 | Typed final-premise artifacts, exact contract and shared-registry binding, obligation-artifact support integrity, pre-root contract inheritance, strict three-gate readiness, exact publication, permanent nonproof flag, final integrity boundary, and executable endpoint | PROVED as a final pre-root documentary integrity gate; checkers syntax-compiled; `all_n_proved_by_checker` remains zero and current readiness is unsatisfied | `docs/398-prime-power-final-dossier-integrity.md` |
-| CMR2366--2373 | Complete global-state predicate records, inherited state/equivalence data, complete final-row theorem records, exact predicate-multiset reconstruction, state/row coverage, shared certificate identity, semantic boundary, and executable endpoint | PROVED as a quotient semantic-refinement interface; checker syntax-compiled; predicate and row-theorem truth remain unverified | `docs/399-prime-power-global-quotient-semantic-refinement.md` |
-| CMR2374--2381 | Six fixed induction-handoff assertions, exact premise dependencies, proved/open artifact records, effective assertion closure, cross-certificate identity, conditional ready flag, final review boundary, and executable endpoint | PROVED as a documentary induction-handoff interface; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no handoff is claimed ready | `docs/400-prime-power-final-induction-handoff.md` |
+| CMR2350--2357 | Exact artifact-support edges, dependency-aligned citations, support-DAG acyclicity, support roots/closures/depths, complete immediate-dependency artifact-bundle reachability, aggregate records, support boundary, and canonical executable endpoint | PROVED as noncircular exact documentary support; checker syntax-compiled and graph fixtures passed; artifact truth and logical sufficiency remain unverified | `docs/397-prime-power-artifact-support-dag.md` |
+| CMR2358--2365 | Fixed premise-specific artifact kinds, canonical premise artifact records, exact proved/open coverage, semantic-obligation artifact support, edgewise certificate binding, premise-to-bundle identity, premise boundary, and executable endpoint | PROVED as typed final-premise documentary coverage; checker syntax-compiled; premise truth and logical sufficiency remain unverified | `docs/398-prime-power-premise-artifact-registry.md` |
+| CMR2366--2373 | Complete global-state predicate records, complete final-row theorem records, predicate-level row reconstruction, exact semantic coverage, shared skeleton/equivalence identity, refinement boundary, and executable endpoint | PROVED as semantic refinement coverage; checker syntax-compiled; predicate equivalence and row theorem truth remain unverified | `docs/399-prime-power-global-quotient-semantic-refinement.md` |
+| CMR2374--2381 | Six final induction assertions, fixed premise dependencies, exact assertion records, effective closure, shared certificate identities, conditional handoff readiness, final boundary, and executable endpoint | PROVED as a final documentary induction handoff; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no handoff is claimed ready | `docs/400-prime-power-final-induction-handoff.md` |
+| CMR2382--2389 | Single-handoff integrity input, shared-registry/skeleton/equivalence audit, seven reconstructed readiness gates, strict final gate, exact blocker publication, complete digest census, permanent nonproof flag, final audit boundary, and executable endpoint | PROVED as a transparent final dossier-integrity audit; checker syntax-compiled; the root implication remains open and current readiness is unsatisfied | `docs/401-prime-power-final-dossier-integrity.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -52,8 +53,8 @@ genuine exhaustive recurrence.
 
 Every shared global state class now requires a connected `n-1` edge evidence tree, with a
 canonical evidence path from one root member to every other member. The support graph of the
-final quotient is reconstructed exactly. Critical edges strictly decrease nonnegative rank, so
-the critical subgraph is acyclic and
+final quotient is reconstructed exactly. Critical edges strictly decrease nonnegative rank,
+so the critical subgraph is acyclic and
 
 \[
 \text{longest critical path}
@@ -63,33 +64,17 @@ the critical subgraph is acyclic and
 Every cycle in the full support graph consequently contains at least one strict-row edge. These
 are finite consequences of supplied evidence and rows, not proofs of their external semantics.
 
-## Typed artifacts, support integrity and final premise contract
+## Final documentary stack
 
-Every declared proved semantic obligation requires an exact typed artifact bundle, and its
-bundle digest is rebound into the closure certificate. The fixed DAG publishes every open
-blocker, the currently actionable frontier, a canonical longest dependency chain and the
-minimum number of parallel completion waves.
+Every declared proved semantic obligation requires an exact typed artifact bundle. The canonical
+support DAG is acyclic, dependency-aligned and requires every proved bundle to reach every
+artifact in each immediate prerequisite bundle. Every proved final premise requires one typed
+artifact citing all of its semantic dependency modules.
 
-The obligation-artifact support graph must be acyclic and may cite only the same obligation or
-a transitive prerequisite. Every proved bundle must reach every artifact in each immediate
-prerequisite bundle. Every proved final premise also requires one exact typed artifact citing
-all of its semantic dependency modules. The final integrity endpoint combines those two
-artifact layers with the pre-root ten-premise contract. Every checker retains
-`all_n_proved_by_checker = 0`.
-
-## Quotient semantic refinement and induction handoff
-
-Every final global state now has one explicit predicate record bound to its complete local
-member class and spanning-equivalence evidence. Every final quotient row has one explicit
-theorem record whose parent predicate and complete target predicate multiset are reconstructed
-from the integer quotient.
-
-A final documentary handoff fixes six assertions: base-domain completeness, exhaustive nonbase
-recurrence, invariant preservation, branch termination, exceptional/hard-core closure and
-translation of the quotient conclusion to `D(n)=2n`. Each assertion closes only after all of
-its fixed final-premise dependencies are effective. The handoff readiness flag additionally
-requires typed premise artifacts, canonical artifact-support integrity and complete quotient
-semantic refinement, while permanently publishing `all_n_proved_by_checker = 0`.
+The global quotient receives complete state-predicate and final-row theorem coverage. Six final
+induction assertions then compose the premise, support and semantic-refinement layers. The final
+integrity audit reconstructs all seven nested gates and exact open obligation, premise and
+handoff-assertion blocker sets. Every checker retains `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
