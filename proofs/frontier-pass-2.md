@@ -4,7 +4,7 @@ This addendum records the bounded blocker-fibre and action-kernel quotient prove
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| OP4ad--OP4ah | A blocker fibre of size at most `B` over `K` exact physical atoms, coupled to a width-`w` finite action kernel, has a complete finite subset/assignment/factor quotient; every recurrent residual exposes a canonical blocker, variable, factor or boundary restoration gate | PROVED UNDER THE COMPLETE-PHYSICAL-STATE AND RESTORATION CONTRACTS | `docs/orbit-phase-bounded-fibre-kernel-quotient.md` |
+| OP4ai--OP4am | A blocker fibre of size at most `B` over `K` exact physical atoms, coupled to a width-`w` finite action kernel, has a complete finite subset/assignment/factor quotient; every recurrent residual exposes a canonical blocker, variable, factor or boundary restoration gate | PROVED UNDER THE COMPLETE-PHYSICAL-STATE AND RESTORATION CONTRACTS | `docs/orbit-phase-bounded-fibre-kernel-quotient.md` |
 
 ## Updated frontier
 
