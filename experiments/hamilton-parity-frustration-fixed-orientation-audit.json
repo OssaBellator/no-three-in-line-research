@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {"m": 5, "hamilton_cycles": 24, "pair_safe_cycles": 24, "positive_frustration_cycles": 2, "maximum_frustration": 1, "optimal_signed_states": 48, "fixed_orientation_strict_descent_rotations": 244, "minimum_fixed_orientation_descents_per_optimal_state": 3, "optimal_violated_edge_checks": 48, "fixed_orientation_targeted_descent_incidences": 244, "minimum_targeted_descents_per_violated_edge": 3},
+    {"m": 6, "hamilton_cycles": 120, "pair_safe_cycles": 120, "positive_frustration_cycles": 8, "maximum_frustration": 1, "optimal_signed_states": 272, "fixed_orientation_strict_descent_rotations": 2596, "minimum_fixed_orientation_descents_per_optimal_state": 5, "optimal_violated_edge_checks": 272, "fixed_orientation_targeted_descent_incidences": 2596, "minimum_targeted_descents_per_violated_edge": 5},
+    {"m": 7, "hamilton_cycles": 720, "pair_safe_cycles": 720, "positive_frustration_cycles": 56, "maximum_frustration": 1, "optimal_signed_states": 2752, "fixed_orientation_strict_descent_rotations": 37020, "minimum_fixed_orientation_descents_per_optimal_state": 6, "optimal_violated_edge_checks": 2752, "fixed_orientation_targeted_descent_incidences": 37020, "minimum_targeted_descents_per_violated_edge": 6},
+    {"m": 8, "hamilton_cycles": 5040, "pair_safe_cycles": 4560, "positive_frustration_cycles": 1018, "maximum_frustration": 2, "optimal_signed_states": 93980, "fixed_orientation_strict_descent_rotations": 1674032, "minimum_fixed_orientation_descents_per_optimal_state": 5, "optimal_violated_edge_checks": 97224, "fixed_orientation_targeted_descent_incidences": 1724790, "minimum_targeted_descents_per_violated_edge": 5},
+    {"m": 9, "hamilton_cycles": 40320, "pair_safe_cycles": 37440, "positive_frustration_cycles": 5752, "maximum_frustration": 3, "optimal_signed_states": 977312, "fixed_orientation_strict_descent_rotations": 25073346, "minimum_fixed_orientation_descents_per_optimal_state": 4, "optimal_violated_edge_checks": 1001344, "fixed_orientation_targeted_descent_incidences": 25538574, "minimum_targeted_descents_per_violated_edge": 4}
+  ],
+  "orientation_bits_changed": 0,
+  "finite_clean_reachability_proved": true,
+  "asymptotic_theorem_proved": false
+}
