@@ -1,0 +1,45 @@
+{
+  "cases": [
+    {
+      "m": 8,
+      "fine_bin_count": 3,
+      "coarsening_profile": [
+        {"segment_count": 1, "cut_mask": 0, "maximum_envelope": "218/137", "maximum_envelope_decimal": 1.5912408759124088, "contractive": false, "maximizing_fine_counts": [16,384,1344], "target_components": 8, "target_cycles_tied": 2},
+        {"segment_count": 2, "cut_mask": 2, "maximum_envelope": "390310/561289", "maximum_envelope_decimal": 0.6953815236001418, "contractive": true, "maximizing_fine_counts": [0,592,636], "target_components": 8, "target_cycles_tied": 2},
+        {"segment_count": 3, "cut_mask": 3, "maximum_envelope": "203200918/383360387", "maximum_envelope_decimal": 0.5300519430036991, "contractive": true, "maximizing_fine_counts": [16,384,1344], "target_components": 8, "target_cycles_tied": 2}
+      ],
+      "minimum_contractive_segment_count": 2,
+      "fine_correlated_envelope": "203200918/383360387"
+    },
+    {
+      "m": 9,
+      "fine_bin_count": 4,
+      "coarsening_profile": [
+        {"segment_count": 1, "cut_mask": 0, "maximum_envelope": "1429/496", "maximum_envelope_decimal": 2.881048387096774, "contractive": false, "maximizing_fine_counts": [0,256,3966,4352], "target_components": 9, "target_cycles_tied": 2},
+        {"segment_count": 2, "cut_mask": 2, "maximum_envelope": "279706/253983", "maximum_envelope_decimal": 1.1012784320210407, "contractive": false, "maximizing_fine_counts": [0,256,3966,4352], "target_components": 9, "target_cycles_tied": 2},
+        {"segment_count": 3, "cut_mask": 6, "maximum_envelope": "3478755928/4161511455", "maximum_envelope_decimal": 0.8359356848147856, "contractive": true, "maximizing_fine_counts": [0,256,5376,1536], "target_components": 8, "target_cycles_tied": 2},
+        {"segment_count": 4, "cut_mask": 7, "maximum_envelope": "148937290752/183330241195", "maximum_envelope_decimal": 0.81239892437376, "contractive": true, "maximizing_fine_counts": [0,256,5376,1536], "target_components": 8, "target_cycles_tied": 2}
+      ],
+      "minimum_contractive_segment_count": 3,
+      "fine_correlated_envelope": "148937290752/183330241195"
+    },
+    {
+      "m": 10,
+      "fine_bin_count": 4,
+      "coarsening_profile": [
+        {"segment_count": 1, "cut_mask": 0, "maximum_envelope": "560/617", "maximum_envelope_decimal": 0.9076175040518638, "contractive": true, "maximizing_fine_counts": [0,256,3584,5120], "target_components": 10, "target_cycles_tied": 2},
+        {"segment_count": 2, "cut_mask": 2, "maximum_envelope": "6257720/20218473", "maximum_envelope_decimal": 0.30950507488869217, "contractive": true, "maximizing_fine_counts": [0,896,4096,3072], "target_components": 9, "target_cycles_tied": 2},
+        {"segment_count": 3, "cut_mask": 6, "maximum_envelope": "348002942008/1325058065001", "maximum_envelope_decimal": 0.262632220579509, "contractive": true, "maximizing_fine_counts": [0,896,4096,3072], "target_components": 9, "target_cycles_tied": 2},
+        {"segment_count": 4, "cut_mask": 7, "maximum_envelope": "7972033929088/35188130299905", "maximum_envelope_decimal": 0.22655463251792957, "contractive": true, "maximizing_fine_counts": [0,896,4096,3072], "target_components": 9, "target_cycles_tied": 2}
+      ],
+      "minimum_contractive_segment_count": 1,
+      "fine_correlated_envelope": "7972033929088/35188130299905"
+    }
+  ],
+  "coarsenings_are_contiguous_unions_of_fine_dyadic_bins": true,
+  "best_profile_minimizes_the_worst_target_envelope_at_fixed_segment_count": true,
+  "minimum_contractive_segment_counts": {"8": 2, "9": 3, "10": 1},
+  "coarsening_refinement_weakly_decreases_each_target_envelope": true,
+  "all_exact_regressions_verified": true,
+  "asymptotic_coarsening_theorem_proved": false
+}
