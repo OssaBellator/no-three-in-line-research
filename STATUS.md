@@ -30,9 +30,10 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - typed proof-artifact bundles bound back into each proved obligation;
 - exact blocker/frontier and parallel completion-wave analysis;
 - an optional edgewise lexicographic support audit;
-- a fixed ten-premise final implication contract;
-- an acyclic dependency-aligned artifact-support DAG; and
-- a final dossier-integrity gate over one shared typed registry.
+- a fixed ten-premise pre-root implication contract;
+- typed proof artifacts bound to each declared proved final premise;
+- an acyclic dependency-aligned obligation-artifact support DAG; and
+- a final dossier-integrity gate over one shared typed obligation registry.
 
 These interfaces do not supply the missing genuine mathematical data or semantics.
 
@@ -80,7 +81,7 @@ cannot turn on while any required module remains open, and it always publishes
 
 ## Typed artifacts and blocker schedule
 
-Every proved obligation must now carry its exact obligation-specific artifact kinds. The
+Every proved obligation must carry its exact obligation-specific artifact kinds. The
 reconstructed bundle digest must equal the digest cited by the closure certificate. Open
 obligations may not contain placeholder artifacts.
 
@@ -96,19 +97,24 @@ nondecreasing edges are otherwise listed explicitly. Edgewise descent is suffici
 necessary for a branching or multiset induction.
 
 The final contract fixes ten ordinary mathematical premises from base cases through the
-translation to `D(n)=2n`. A contract may be ready only after the semantic closure, typed
-artifact registry, blocker root and every premise agree. It still never declares the theorem
-proved.
+translation to `D(n)=2n`. It is a pre-root handoff: every dependency of
+`GLOBAL_QUOTIENT_IMPLIES_ALL_N` and every final premise may be closed while that root obligation
+remains open and actionable. The contract never declares the theorem proved.
 
-## Noncircular artifact support and final integrity
+## Typed premise artifacts and noncircular support
 
-Every artifact-support citation must remain inside one obligation or point to a transitive
-prerequisite obligation. The complete artifact-support graph must be acyclic, and every proved
+Each declared proved final premise has one exact premise-specific artifact kind. That artifact
+must cite obligation artifacts covering every semantic dependency of the premise, and its
+reconstructed bundle digest must bind back into the contract. Edgewise termination additionally
+binds the exact edgewise certificate.
+
+Every obligation-artifact support citation must remain inside one obligation or point to a
+transitive prerequisite obligation. The complete support graph must be acyclic, and every proved
 bundle must reach every artifact in each immediate prerequisite bundle.
 
-The final integrity checker composes that support DAG with the ten-premise contract over the
-same typed registry. Its readiness flag remains documentary, and
-`all_n_proved_by_checker` remains permanently zero.
+The final integrity checker composes the pre-root contract, typed premise registry and stronger
+support DAG over the same typed obligation registry. Its readiness flag remains documentary,
+and `all_n_proved_by_checker` remains permanently zero.
 
 ## Hard-core scalar worklists
 
@@ -146,7 +152,8 @@ core retains all 20 full-selector chambers. Fixed-response correction 17, rollba
 - Proof-artifact closure does not machine-verify artifact truth.
 - Exact artifact kinds and dependency waves do not measure proof validity or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
-- A complete premise contract remains a documentary dossier.
+- A complete premise contract remains a documentary pre-root dossier.
+- Typed premise coverage does not prove any premise true.
 - Acyclic artifact support does not establish logical sufficiency or mathematical truth.
 - A final dossier-integrity flag is not a proof of the conjecture.
 - A ready dossier would still require ordinary mathematical review.
@@ -156,8 +163,9 @@ core retains all 20 full-selector chambers. Fixed-response correction 17, rollba
 
 There is no complete proof. Through **CMR2365**, the finite certificate surface reaches a
 noncircular expected global family, explicit state-equivalence evidence, exact support/rank
-termination structure, typed artifact coverage, exact blocker scheduling, a ten-premise final
-implication contract, noncircular dependency-aligned artifact support and a strict final
-dossier-integrity gate. Completion still requires the actual exhaustive rule and population,
-proved policy/resource/transition and cross-block semantics, genuine strict blocks, exceptional
-closure and a reviewed proof that the global quotient establishes the conjecture.
+termination structure, typed obligation-artifact coverage, exact blocker scheduling, a ten-
+premise pre-root contract, typed final-premise artifacts, noncircular dependency-aligned
+artifact support and a strict three-gate final dossier-integrity endpoint. Completion still
+requires the actual exhaustive rule and population, proved policy/resource/transition and
+cross-block semantics, genuine strict blocks, exceptional closure and a reviewed proof that
+the global quotient establishes the conjecture.
