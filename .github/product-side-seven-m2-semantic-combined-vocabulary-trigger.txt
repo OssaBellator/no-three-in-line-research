@@ -1,1 +1,1 @@
-run-semantic-combined-vocabulary
+done-semantic-combined-vocabulary
