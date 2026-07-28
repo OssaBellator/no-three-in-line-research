@@ -49,3 +49,5 @@ jobs:
           name: product-side-seven-m2-${{ matrix.first_case }}
           path: product-side-seven-m2-${{ matrix.first_case }}.txt
           if-no-files-found: warn
+
+# Durable registration: keep this workflow until every transcript is promoted.
