@@ -1,92 +1,73 @@
 # Status and honesty ledger
 
-**Last updated:** 27 July 2026
+**Last updated:** 28 July 2026
 
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2157;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2189;
 CMR1998 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-6.md`.
 
-## Canonical hosts, fibres and expected slots
+## Expected operations and finite rule clauses
 
-The corrected first layer contains 86 side-four and 654 side-five raw hosts, 740 unique
-canonical IDs and 9,260 responses. A populated fibre must reproduce its exact host,
-response family, denominator, source digest, policy and ordered labels.
+Expected population remains keyed by source-independent operation slots. A new
+declarative clause checker expands exact parent cases, applicable clauses, finite
+parameter axes and explicit exclusion rows into that slot registry.
 
-Expected population is keyed by source-independent operation slots. A covered batch now
-requires every populated fibre to map bijectively to one expected slot and to agree on
-host, source, fibre identity and ordered labels. The older source-dependent
-`expected_fibre_ids` completeness flag must remain unset.
+This proves exhaustive expansion relative to supplied clause data only. The genuine
+parent-rule source, complete parent-case registry and mathematical justification of every
+clause and exclusion remain absent.
 
-This proves conformance to a supplied registry only. The genuine parent-rule slot
-enumerator and real population are still absent.
+## Populated fibres and exceptional policy batches
 
-## Survivor-background feasibility and exact intersections
+A slot-covered batch requires one bijective slot assignment for every populated fibre,
+with exact host, source, fibre and ordered-label agreement. Exceptional fibres are now
+identified mechanically from canonical host IDs and must carry linked `M`, `M_3`, `M_0`,
+policy-penalty and destroyed-threshold certificates.
 
-The scalar selector uses 23/83 tracked lines, 32/99 reduced signature coordinates and a
-39-row affine library. Every genuine background satisfies line, tracked-pair,
-parallel-class, pencil, global concurrency and local residual inequalities.
+This is complete relative to the supplied slot registry. It is not a proof that the
+registry is the genuine exhaustive parent rule.
 
-For a tracked pencil `L_1,...,L_k` through rational point `x`, the new exact identity is
+## Survivor geometry
 
-\[
-\sum_i h_B(L_i)
-=
-\left|B\cap\bigcup_iL_i\right|+(k-1)\epsilon_B(x).
-\]
+The scalar selector still uses 23/83 tracked lines, 32/99 reduced signature coordinates
+and the 39-row affine library. Populated backgrounds carry line, pair, parallel, pencil,
+concurrency, residual and exact intersection-occupancy identities. These remain necessary
+conditions and exact finite identities, not an abstract realizability characterization.
 
-An unoccupied intersection therefore sharpens the pencil bound from `|B|+k-1` to
-`|B|`. Every background point also carries its exact tracked-line degree, with
+## Witness-bound destroyed credit
 
-\[
-\sum_Lh_B(L)=\sum_{b\in B}d(b),
-\qquad d(b)\le7\text{ or }11.
-\]
-
-These are necessary conditions and exact identities for populated backgrounds, not a
-complete abstract realizability characterization.
-
-## Exceptional selector tradeoffs
-
-For one exceptional host and survivor background,
+Every positive response-local credit unit can now be represented as
 
 \[
-M=\min_QN_B(Q),
-\qquad
-M_3=\min_{\psi_3(Q)=m_3}N_B(Q),
-\qquad
-\pi_3=M_3-M\ge0.
+\text{literal destroyed triple}
+\longmapsto
+\text{nondeleted child-bearing witness occurring in the response}.
 \]
 
-On the 78 zero-capable hosts, `M_0` and `pi_0=M_0-M` are also reconstructed. With
-destroyed threshold `T`, the full, rank-three-constrained and zero-constrained policies
-are strict exactly when `M<T`, `M_3<T` and `M_0<T` respectively.
+Inside one response the mapping is injective on both destroyed triples and target
+witnesses, and its child counts equal the labelled row credit vector exactly.
 
-The eleven-host hard core still requires all 20 full-selector chambers; background terms
-may select one of the nine nonminimum-rank-three chambers.
+This is stronger than count-only capacity. It still relies on the supplied owner/fate
+child labels and does not prove global nonreuse across simultaneous rows or operations.
 
-## Labelled response exposure and row margins
+## Common recurrent-block weights
 
-Every response has an exact child vector. Pareto vectors carry either an exact positive
-supporting weight or a rational convex obstruction.
+A recurrent block may now be checked under one primitive positive integer state-weight
+vector. Every row parent budget and child-weight coordinate must be the exact restriction
+of that common vector. The complete response-vector tables reconstruct internal recurrent
+edges, recurrent exits and nonrecurrent exits.
 
-A linked recurrent-row certificate now checks
+A complete strict SCC certificate is recognized only when:
 
-\[
-L(Q)=a+w\cdot v(Q)-w\cdot r(Q),
-\qquad
-\operatorname{margin}(Q)=W-L(Q),
-\]
+1. every declared recurrent state has exactly one row;
+2. the internal recurrent graph is strongly connected;
+3. there are no recurrent exits; and
+4. every common-weight row margin is positive.
 
-where each response-local routed-credit vector uses at most the exact destroyed count
-`T`. The deterministic selector minimizes `L(Q)`, and the row is strict, critical or
-excess according as `W-min_Q L(Q)` is positive, zero or negative.
-
-This is exact arithmetic only. It does not prove that the credit routes are semantically
-legal, nonovercounted across actual transitions, or compatible with one global SCC
-weight vector.
+The embedded regressions include strict open blocks and graph tests. No genuine complete
+closed strict SCC is claimed.
 
 ## Hard-core scalar worklists
 
@@ -98,42 +79,43 @@ Deterministic rank-three minima remain
 \qquad2\text{ at }4.
 \]
 
-Fixed-response occurrence correction has burden 17, minimum operation rollback has total
-distance 12, and independent uniform correction costs 44. These remain distinct policy
-currencies.
+The 78 zero-capable exceptional hosts retain 232 zero-selector chambers. The eleven-host
+hard core retains all 20 full-selector chambers. Fixed-response correction 17, rollback
+distance 12 and uniform correction 44 remain distinct currencies.
 
 ## Genuine current frontier
 
-1. Derive and prove the exhaustive genuine operation-slot registry.
-2. Populate one complete linked record per slot and validate slot-covered batch
-   completeness.
-3. Prove actual point, removal, survivor, entry-order, owner/fate and transition data.
-4. Validate all feasibility and intersection identities on every real survivor.
-5. Compute all exceptional policy penalties and destroyed thresholds.
-6. Prove labelled child weights and the semantic legality of every routed credit.
-7. Close the 78 zero-capable rows and the complete 20-chamber eleven-host hard core.
-8. Complete deletion, domination, transfer, interface and state-label semantics.
-9. Produce one strict recurrent SCC certificate, eliminate auxiliaries and publish the
-   denominator-cleared global CRT quotient.
+1. Supply and prove the actual exhaustive parent-rule clause manifest.
+2. Populate one genuine fibre for every enumerated slot.
+3. Validate every real survivor geometry and exceptional selector tradeoff.
+4. Publish witness-bound routed credits on every recurrent row.
+5. Prove external child-state meaning and global credit nonreuse.
+6. Find one common primitive positive vector for each closed recurrent SCC and prove every
+   row strict.
+7. Close the 78 zero-capable rows and complete 20-chamber hard core.
+8. Finish deletion, domination, transfer, interface, auxiliary and state-label semantics.
+9. Eliminate certified auxiliaries and publish the denominator-cleared global CRT
+   quotient.
 
 ## Corrections retained
 
-- Source-dependent fibre IDs cannot define their own expected population universe.
-- Slot-covered completeness still assumes an independently proved parent-rule registry.
-- Necessary feasibility inequalities do not characterize realizability.
-- Exact intersection signatures apply to populated backgrounds; they do not manufacture them.
-- Full, rank-three-constrained, zero-constrained and parent-policy selectors are distinct.
-- Positive support does not imply strict recurrent contraction.
-- Response-local credit capacity does not prove route semantics or global nonovercounting.
-- A row-level positive margin does not prove one common SCC Lyapunov vector exists.
-- Hard-core analysis requires all 20 full-selector chambers unless further inequalities exclude some.
-- Passing finite checkers proves only their stated equalities.
+- Declarative clause expansion is exhaustive only relative to supplied rule data.
+- A supplied slot registry is not proof of genuine parent-rule exhaustiveness.
+- A slot-covered batch is complete only relative to that registry.
+- Witness-bound routes do not prove external child-label semantics.
+- Per-response injectivity does not prove simultaneous global nonreuse.
+- Common weights do not imply recurrent closure.
+- Strong connectivity and closure do not imply positive margins.
+- Rowwise strictness under unrelated weights does not imply a common SCC certificate.
+- Scalar exceptional penalties do not prove labelled contraction.
+- Finite checker publication does not imply the embedded dependency suites ran in this
+  environment.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2157**, the branch has noncircular slot-to-batch
-conformance, exact exceptional-policy threshold penalties, integer labelled row-margin
-accounting and sharpened tracked-intersection signatures. Completion still requires the
-actual parent-rule enumeration, genuine operation population, legal routed-credit and
-state semantics, one global strict recurrent certificate and the final integer CRT
-quotient.
+There is no complete proof. Through **CMR2189**, the finite interface now reaches from a
+declarative parent-rule clause table through noncircular slots and populated fibres to
+witness-bound credit routes, common recurrent-block weights and slot-covered exceptional
+tradeoff batches. Completion still requires the actual rule data and population, legal
+state and credit semantics, genuinely closed strict SCC certificates, auxiliary
+elimination and the global integer CRT quotient.
