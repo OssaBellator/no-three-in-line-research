@@ -1,0 +1,22 @@
+{
+  "m": 10,
+  "optimal_positive_signed_states": 12786720,
+  "fixed_orientation_direct_clean_rotations": 423160022,
+  "minimum_fixed_orientation_clean_rotations_per_optimal_state": 0,
+  "optimal_violated_edge_checks": 13185264,
+  "fixed_orientation_targeted_clean_incidences": 429279344,
+  "minimum_fixed_orientation_targeted_clean_rotations_per_edge": 0,
+  "optimal_states_without_fixed_orientation_clean_rotation": 74,
+  "violated_edges_without_fixed_orientation_targeted_clean_rotation": 218,
+  "local_three_owner_clean_rotations": 652008272,
+  "minimum_local_rotations_per_optimal_state": 1,
+  "maximum_minimum_local_hamming_change": 2,
+  "optimal_states_without_local_three_owner_repair": 0,
+  "local_targeted_clean_incidences": 661435264,
+  "minimum_local_targeted_rotations_per_edge": 1,
+  "maximum_targeted_minimum_hamming_change": 2,
+  "violated_edges_without_local_targeted_repair": 0,
+  "minimum_hamming_distribution_over_optimal_states": {"0": 12786646, "1": 70, "2": 4, "3": 0},
+  "fixed_sign_exception_hamming_distribution": {"1": 70, "2": 4, "3": 0},
+  "asymptotic_theorem_proved": false
+}
