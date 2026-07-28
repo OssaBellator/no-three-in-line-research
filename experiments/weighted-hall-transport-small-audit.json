@@ -1,0 +1,10 @@
+{
+  "cases": [
+    {"m": 4, "clean_signed_states": 80, "atomic_signed_assignment_flaws": 52, "maximum_source_cycles_per_worst_flaw": 1, "worst_hall_subset_size": 1, "optimal_charge_numerator": 2, "optimal_charge_denominator": 48, "optimal_charge_max": 0.0416667, "m_cubed_scaled_charge": 2.66667, "global_subset_charge_numerator": 2, "global_subset_charge_denominator": 48, "proper_hall_bottleneck_flaws": 0, "maximum_local_to_global_ratio": 1},
+    {"m": 5, "clean_signed_states": 376, "atomic_signed_assignment_flaws": 368, "maximum_source_cycles_per_worst_flaw": 1, "worst_hall_subset_size": 1, "optimal_charge_numerator": 4, "optimal_charge_denominator": 148, "optimal_charge_max": 0.027027, "m_cubed_scaled_charge": 3.37838, "global_subset_charge_numerator": 4, "global_subset_charge_denominator": 148, "proper_hall_bottleneck_flaws": 0, "maximum_local_to_global_ratio": 1},
+    {"m": 6, "clean_signed_states": 3576, "atomic_signed_assignment_flaws": 1692, "maximum_source_cycles_per_worst_flaw": 2, "worst_hall_subset_size": 2, "optimal_charge_numerator": 16, "optimal_charge_denominator": 860, "optimal_charge_max": 0.0186047, "m_cubed_scaled_charge": 4.0186, "global_subset_charge_numerator": 16, "global_subset_charge_denominator": 860, "proper_hall_bottleneck_flaws": 884, "maximum_local_to_global_ratio": 1.44962},
+    {"m": 7, "clean_signed_states": 36736, "atomic_signed_assignment_flaws": 5100, "maximum_source_cycles_per_worst_flaw": 6, "worst_hall_subset_size": 6, "optimal_charge_numerator": 96, "optimal_charge_denominator": 7448, "optimal_charge_max": 0.0128894, "m_cubed_scaled_charge": 4.42105, "global_subset_charge_numerator": 96, "global_subset_charge_denominator": 7448, "proper_hall_bottleneck_flaws": 4864, "maximum_local_to_global_ratio": 1.69555}
+  ],
+  "all_hall_subsets_enumerated": true,
+  "asymptotic_expansion_proved": false
+}
