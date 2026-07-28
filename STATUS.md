@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2461;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2469;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -38,9 +38,11 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - noncircular, bundle-sealed typed artifact records for every effectively complete atomic target;
 - one exact literal statement record for every cited rule source;
 - one sealed source-kind-specific verification artifact for every proved source statement, with an
-  acyclic source-proof support graph; and
+  acyclic source-proof support graph;
 - a source-root gate synchronizing that statement bank with `SOURCE_STATEMENTS_TRUE` and
-  `T01_SOURCE_STATEMENTS`.
+  `T01_SOURCE_STATEMENTS`; and
+- an exact T02 work bank covering every case, clause, parameter axis, exclusion and global-parent
+  application, with each application bound to one enumerated operation slot.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -125,6 +127,32 @@ verification artifact are present.
 The repository still states that the actual parent rule is absent. No source statement or
 recurrence-exhaustiveness theorem is claimed proved for genuine data.
 
+## Exact T02 rule-exhaustiveness frontier
+
+CMR2462--CMR2469 derive one canonical open/proved record for every parent case, rule clause,
+parameter axis, excluded row and global recurrence-skeleton parent. Every proved record has one
+fixed-kind artifact. Its source support is reconstructed from the provenance certificate, while its
+internal rule support follows the exact acyclic hierarchy
+
+```text
+axis/exclusion -> clause -> case -> global-parent application.
+```
+
+Every global-parent application must identify a source case, source clause and exact expected
+operation slot. The checker requires agreement of the skeleton rule and case, clause/case
+incidence, local parent state, expected host, ordered labels and operation kind. Because expected
+slots are generated only from admitted parameter rows, the application also identifies one exact
+admitted rule row.
+
+The existing `rule-manifest` artifact binds the rule source, clause manifest, expected slot registry,
+recurrence skeleton, cases and clauses. The existing `rule-exhaustiveness-proof` artifact binds the
+complete record and artifact banks. Reconstructed readiness must agree exactly with both the
+semantic obligation `RULE_EXHAUSTIVE` and atomic target `T02_RULE_EXHAUSTIVENESS`.
+
+This still does not prove that the supplied cases and clauses are the genuine exhaustive recurrence.
+The checker validates a proof dossier; ordinary mathematical review must establish that the dossier
+is true and sufficient.
+
 ## Exceptional and hard-core chamber front
 
 The canonical exceptional-selector worklist contains exactly
@@ -163,18 +191,19 @@ CMR2414--CMR2421 synchronize the atomic target certificate with the typed handof
 artifact registry and exact 252-chamber disposition registry. CMR2422--CMR2437 additionally require
 sealed evidence for every effectively complete target.
 
-CMR2446--CMR2461 add the exact and sealed source-root path. An otherwise consistent
-current-frontier certificate cannot pass that gate unless it presents the exact source-statement
-registry used by the same obligation stack and agrees with `T01_SOURCE_STATEMENTS`.
+CMR2446--CMR2461 add the exact and sealed source-root path. CMR2462--CMR2469 add the T02 rule-
+exhaustiveness bank and require its readiness to agree with both the obligation and atomic target.
 
 Every gate remains documentary. Every final checker permanently reports
 `all_n_proved_by_checker = 0`.
 
 ## Genuine current frontier
 
-1. Transcribe every cited source statement exactly, confirm its provenance hash and supply one
-   sealed source-kind-specific verification artifact with noncircular support.
-2. Prove the genuine exhaustive parent-clause recurrence skeleton.
+1. Transcribe every cited source statement exactly, confirm its provenance hash and supply the
+   fixed sealed source-kind-specific verification artifact.
+2. Populate and prove every T02 case, clause, axis, exclusion and global-parent application record;
+   bind every global parent to its exact admitted operation slot; then review the genuine
+   recurrence-exhaustiveness theorem.
 3. Populate every expected slot, candidate row, recurrent block and interface row with actual
    geometry, fate, route and transition data.
 4. Prove real geometry, selector and candidate-policy correctness.
@@ -188,8 +217,8 @@ Every gate remains documentary. Every final checker permanently reports
 11. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
 12. Prove the skeleton-derived global family exhaustive.
 13. Complete and review all ten final premises and six induction-handoff assertions.
-14. Complete all 43 atomic proof targets and pass the synchronized chamber, source-root and sealed
-    target-artifact gates.
+14. Complete all 43 atomic proof targets and pass the synchronized chamber, source-root, T02 and
+    sealed target-artifact gates.
 15. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
 
 ## Corrections retained
@@ -198,6 +227,7 @@ Every gate remains documentary. Every final checker permanently reports
 - Exact statement text and a matching hash do not prove the statement true.
 - Repeating an external source-proof locator/digest is not statement-to-proof binding.
 - Acyclic source-proof support does not establish logical sufficiency.
+- Exact global-parent-to-slot binding does not prove the supplied rule is genuine or exhaustive.
 - Source-truth readiness does not prove recurrence exhaustiveness.
 - Clause expansion and expected-family skeletons remain relative to supplied rule data.
 - Candidate coverage does not prove the external policy intended.
@@ -221,11 +251,11 @@ Every gate remains documentary. Every final checker permanently reports
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2461**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2469**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support through all forty-three atomic
-frontier targets, an explicit 252-chamber closure registry, sealed execution gates and an exact
-source-statement/T01 work bank whose proved entries require sealed, acyclically supported
-verification artifacts. Completion still requires the literal genuine source statements, valid
-proofs of each statement, the actual exhaustive rule and population, proof of every semantic
+frontier targets, an explicit 252-chamber closure registry, sealed execution gates, an exact
+source-statement/T01 work bank and an exact T02 rule-exhaustiveness bank with global-parent-to-slot
+binding. Completion still requires the literal genuine source statements, valid proofs of each
+statement and rule record, the actual exhaustive recurrence and population, proof of every semantic
 statement and chamber disposition, genuine strict blocks, exceptional closure and ordinary
 mathematical review of the final implication to all `n`.
