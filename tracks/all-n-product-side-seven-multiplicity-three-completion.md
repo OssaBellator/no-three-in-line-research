@@ -54,21 +54,25 @@ For multiplicity-two case zero, orientation three:
 - all 64 newly measured selector covers use seven triples;
 - the complete 192-reference replay uses `4,465,440` exact bottom checks.
 
-The next compression target is to solve a compact set-cover problem against the accumulated 150-key vocabulary and then extend only where uncovered clean tops remain.
+A deterministic greedy set cover followed by reverse deletion compresses the 150-key vocabulary to a 115-key irredundant basis for the exact 204-top union. The basis has 231 incidences, 177 private top-order witnesses, maximum overlap two, and replay digest `12529763722981785837`. It is an exact upper bound, not a minimum-cardinality proof and not a cover of the complete clean-top family.
+
+The next compression target is to attack the 177 private witnesses: find stronger shared covers or certified equivalences that merge them, while separately measuring the clean top orders outside the current 204-top union.
 
 ## Immediate tasks
 
 1. Continue multiplicity two from case `1360`, treating constructive hits as first-class classifications rather than assumed failures.
-2. Build and verify a compact set-cover basis from the 192-reference semantic vocabulary.
-3. Test whether the case-`1287` construction has a symmetry orbit or a reusable local template.
-4. Defer multiplicity one until multiplicity-two proof size, construction frequency, and symmetry are understood.
-5. Continue the finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and carry/absorber fronts.
-6. Keep every finite result separate from an all-`n` claim.
+2. Target the 177 private top-order witnesses in the 115-key semantic basis.
+3. Measure which clean top orders remain outside the current 204-top semantic union.
+4. Test whether the case-`1287` construction has a symmetry orbit or a reusable local template.
+5. Defer multiplicity one until multiplicity-two proof size, construction frequency, and symmetry are understood.
+6. Continue the finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and carry/absorber fronts.
+7. Keep every finite result separate from an all-`n` claim.
 
 ## Verification
 
 ```bash
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full192_relaxed.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_set_cover192.py
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_special.cpp \
