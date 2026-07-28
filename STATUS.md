@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2317;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2349;
 CMR2190 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-7.md`.
 
@@ -26,7 +26,11 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - source-independent derivation of its expected family manifest;
 - spanning evidence trees for every shared state class;
 - exact support SCC condensation and critical-rank path bounds; and
-- a fixed nineteen-obligation semantic closure DAG.
+- a fixed nineteen-obligation semantic closure DAG;
+- typed proof-artifact bundles bound back into each proved obligation;
+- exact blocker/frontier and parallel completion-wave analysis;
+- an optional edgewise lexicographic support audit; and
+- a fixed ten-premise final implication contract.
 
 These interfaces do not supply the missing genuine mathematical data or semantics.
 
@@ -72,6 +76,28 @@ checker publishes the full unclosed set and current frontier. Its conditional re
 cannot turn on while any required module remains open, and it always publishes
 `all_n_proved_by_checker = 0`.
 
+## Typed artifacts and blocker schedule
+
+Every proved obligation must now carry its exact obligation-specific artifact kinds. The
+reconstructed bundle digest must equal the digest cited by the closure certificate. Open
+obligations may not contain placeholder artifacts.
+
+The dependency scheduler computes every transitive blocker set, the currently actionable
+frontier, downstream impact, a canonical longest open dependency chain and the minimum number
+of parallel dependency waves. These are exact DAG quantities, not estimates of research time.
+
+## Edgewise support and final implication premises
+
+Every support edge is audited against the lexicographic pair `(global weight, rank)`. The
+stronger edgewise path certificate is published when every target decreases that pair; all
+nondecreasing edges are otherwise listed explicitly. Edgewise descent is sufficient but not
+necessary for a branching or multiset induction.
+
+The final contract fixes ten ordinary mathematical premises from base cases through the
+translation to `D(n)=2n`. A contract may be ready only after the semantic closure, typed
+artifact registry, blocker root and every premise agree. It still never declares the theorem
+proved.
+
 ## Hard-core scalar worklists
 
 The 78 zero-capable exceptional hosts retain 232 zero-selector chambers. The eleven-host hard
@@ -106,14 +132,18 @@ core retains all 20 full-selector chambers. Fixed-response correction 17, rollba
 - Strict-or-ranked rows do not prove the interface family exhaustive.
 - Support condensation does not prove recurrence semantics.
 - Proof-artifact closure does not machine-verify artifact truth.
+- Exact artifact kinds and dependency waves do not measure proof validity or difficulty.
+- Edgewise lexicographic descent is sufficient, not necessary.
+- A complete premise contract remains a documentary dossier.
 - A ready dossier would still require ordinary mathematical review.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2317**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2349**, the finite certificate surface reaches a
 noncircular expected global family, explicit state-equivalence evidence, exact support/rank
-termination structure and a machine-readable semantic proof frontier. Completion still
+termination structure, typed artifact coverage, exact blocker scheduling and a ten-premise
+final implication contract. Completion still
 requires the actual exhaustive rule and population, proved policy/resource/transition and
 cross-block semantics, genuine strict blocks, exceptional closure and a reviewed proof that
 the global quotient establishes the conjecture.
