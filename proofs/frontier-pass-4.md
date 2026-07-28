@@ -27,7 +27,8 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5cs--AC5cw | Physical source capacities, certificate throughput capacities and layer-defect demands form one integral split-certificate network; full payment is max-flow, while failure returns one canonical mixed source/certificate/defect cut | PROVED UNDER THE COMPLETE INTEGRATED SOURCE/CERTIFICATE/DEFECT NETWORK CONTRACT | `docs/alternating-core-integrated-source-certificate-flow.md` |
 | AC5cx--AC5db | Across repeated epochs, the integrated source/certificate/defect network uses exact current source and certificate balances, named deposits and actual two-layer debits; the first unpaid epoch returns one canonical mixed cut | PROVED UNDER THE COMPLETE CUMULATIVE INTEGRATED SOURCE/CERTIFICATE DEPOSIT CONTRACT | `docs/alternating-core-cumulative-integrated-source-certificate-bank.md` |
 | AC5dc--AC5dg | Physical source mass, existing source balances, certificate throughputs and defect demands form one four-layer integral network; simultaneous issuance and payment are max-flow, while failure returns one exact physical/source/certificate/defect cut | PROVED UNDER THE COMPLETE PHYSICAL-SOURCE/CERTIFICATE NETWORK CONTRACT | `docs/alternating-core-physical-source-certificate-network.md` |
-| AC5dh--AC5dl | Residual reachability decomposes every unpaid physical/source/certificate/defect flow into exact finite barrier sets; compatibility closure holds and unpaid demand equals outside defect demand minus the three barrier capacities | PROVED UNDER THE GUARDED COMPLETE MIXED-CUT CONTRACT | `docs/alternating-core-mixed-cut-decomposition.md` |
+| AC5dh--AC5dl | Residual reachability decomposes an unpaid flow into exact outside defect demand and physical, issued-source and certificate barriers; guarded compatibility cannot cross the cut | PROVED UNDER THE COMPLETE RESIDUAL MIXED-CUT CONTRACT | `docs/alternating-core-mixed-cut-decomposition.md` |
+| AC5dm--AC5dq | Every unpaid complete network has a canonical minimum-cardinality defect core; every proper subset is payable and each retained defect has exact marginal shortfall equal to the full core deficit | PROVED UNDER THE COMPLETE IRREDUCIBLE DEFECT-CORE CONTRACT | `docs/alternating-core-irreducible-defect-core.md` |
 
 ## Updated AC4 frontier
 
@@ -35,6 +36,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances and a physical source/source/certificate/defect network. Every failure now returns an exact outside defect set and physical/source/certificate barrier vector. Remaining work is proving the concrete geometric cut inequality, exogenous deposits, and payment or impossibility of that returned address.
+The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers and canonical irreducible defect cores. Remaining work is constructing the concrete geometric graph and proving that each returned local marginal shortage is paid or impossible, together with source/certificate capacities and exogenous deposits.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
