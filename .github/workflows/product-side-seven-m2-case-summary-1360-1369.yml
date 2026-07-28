@@ -52,4 +52,4 @@ jobs:
           path: side-seven-m2-case-${{ matrix.case }}.txt
           if-no-files-found: error
 
-# Durable registration: retain until the ten compact case summaries are promoted.
+# Durable registration: corrected digest helper; retain until the ten compact summaries are promoted.
