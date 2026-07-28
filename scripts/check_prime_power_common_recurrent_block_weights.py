@@ -11,6 +11,10 @@ The checker reconstructs recurrent support edges from positive child-vector coor
 checks exact parent-row coverage, reports recurrent exits, tests strong connectivity of
 the declared block and verifies every row margin. A complete strict SCC certificate is
 recognized only when the block is closed, strongly connected and every row is strict.
+
+Passing an open block still proves common-weight consistency and exact row margins, but
+not closure. Passing a complete strict SCC certificate remains relative to the supplied
+row sources and does not prove that the genuine parent-rule population is complete.
 """
 from __future__ import annotations
 
@@ -59,14 +63,18 @@ def strongly_connected(nodes: list[str], edges: set[tuple[str, str]]) -> bool:
     for left, right in edges:
         adjacency[left].add(right)
         reverse[right].add(left)
+
     def reachable(start: str, graph: dict[str, set[str]]) -> set[str]:
-        seen = {start}; queue = deque([start])
+        seen = {start}
+        queue = deque([start])
         while queue:
             current = queue.popleft()
             for nxt in graph.get(current, set()):
                 if nxt not in seen:
-                    seen.add(nxt); queue.append(nxt)
+                    seen.add(nxt)
+                    queue.append(nxt)
         return seen
+
     return reachable(nodes[0], adjacency) >= set(nodes) and reachable(nodes[0], reverse) >= set(nodes)
 
 
@@ -213,11 +221,11 @@ def build_certificate(route_certificates: list[dict[str, Any]], scc_state_ids: l
     ordered_routes = sorted(route_certificates, key=lambda cert: (
         cert["row_margin_certificate"]["linked_operation_certificate"]["linkage_certificate"]["source_manifest"]["parent"],
         cert["row_margin_certificate"]["claims"]["fibre_id"]))
-    divisor = math.gcd(*weights.values())
-    normalized = {state_id: value // divisor for state_id, value in weights.items()}
+    require(weights and math.gcd(*weights.values()) == 1,
+            "weights: supplied vector must already be primitive")
     weight_records = []
-    for state_id in sorted(normalized):
-        record = {"state_id": state_id, "weight": normalized[state_id]}
+    for state_id in sorted(weights):
+        record = {"state_id": state_id, "weight": weights[state_id]}
         record["weight_record_sha256"] = catalogue.canonical_digest(record)
         weight_records.append(record)
     certificate: dict[str, Any] = {"version": 1, "scc_state_ids": sorted(scc_state_ids),
@@ -265,8 +273,10 @@ def synthetic_open_block(random: Random) -> dict[str, Any]:
 
 
 def run_random_tests() -> tuple[int, Counter[str]]:
-    random = Random(2174); totals: Counter[str] = Counter()
-    for _ in range(30): totals.update(validate_certificate(synthetic_open_block(random)))
+    random = Random(2174)
+    totals: Counter[str] = Counter()
+    for _ in range(30):
+        totals.update(validate_certificate(synthetic_open_block(random)))
     return 30, totals
 
 
@@ -277,10 +287,16 @@ def run_graph_regressions() -> None:
 
 
 def run_mutation_tests() -> int:
-    random = Random(173); certificate = synthetic_open_block(random); validate_certificate(certificate)
+    random = Random(173)
+    certificate = synthetic_open_block(random)
+    validate_certificate(certificate)
     mutations = []
+
     def add(mutator: Any) -> None:
-        candidate = copy.deepcopy(certificate); mutator(candidate); mutations.append(candidate)
+        candidate = copy.deepcopy(certificate)
+        mutator(candidate)
+        mutations.append(candidate)
+
     add(lambda data: data.update(certificate_sha256="0" * 64))
     add(lambda data: data.update(version=2))
     add(lambda data: data["state_weights"].reverse())
@@ -296,19 +312,24 @@ def run_mutation_tests() -> int:
     add(lambda data: data["routed_row_certificates"][0].update(certificate_sha256="0" * 64))
     rejected = 0
     for candidate in mutations:
-        try: validate_certificate(candidate)
+        try:
+            validate_certificate(candidate)
         except (CommonWeightError, routing.WitnessRoutingError, row_margin.RowMarginError,
-                linked.LinkedOperationError, exposure.ExposureError, catalogue.CatalogueError): rejected += 1
+                linked.LinkedOperationError, exposure.ExposureError, catalogue.CatalogueError):
+            rejected += 1
     require(rejected == len(mutations), "mutation tests: corrupted common-weight certificate accepted")
     return rejected
 
 
 def main() -> None:
     if len(sys.argv) == 2:
-        print(validate_certificate(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8")))); return
+        print(validate_certificate(json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))))
+        return
     require(len(sys.argv) == 1,
             "usage: check_prime_power_common_recurrent_block_weights.py [certificate.json]")
-    run_graph_regressions(); systems, totals = run_random_tests(); rejected = run_mutation_tests()
+    run_graph_regressions()
+    systems, totals = run_random_tests()
+    rejected = run_mutation_tests()
     print("verified common recurrent-block weights: "
           f"{systems} deterministic strict row blocks, {totals['states']} state records, {totals['rows']} rows, "
           f"{totals['internal_edges']} internal recurrent edges, {totals['external_edges']} recurrent exits, "
@@ -316,4 +337,5 @@ def main() -> None:
           f"and {rejected} corruptions rejected")
 
 
-if __name__ == "__main__": main()
+if __name__ == "__main__":
+    main()
