@@ -2,14 +2,15 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2509 the branch contains exact documentary
-work banks from T01 through T07, a typed proof stack through all 43 atomic targets, an exact
+The no-three-in-line conjecture remains open. Through CMR2533 the branch contains exact documentary
+work banks from T01 through T10, a typed proof stack through all 43 atomic targets, an exact
 252-chamber exceptional worklist and a final dossier audit.
 
 The branch still lacks the genuine source statements, exhaustive recurrence, actual complete T03/T04
-population, proof that T05 finite systems cover every all-`n` case, truth of all T07 semantic claims,
-truth of all T06 score statements, downstream resource/block/interface semantics, complete chamber
-proofs and the reviewed implication to `D(n)=2n`.
+population, proof that T05 finite systems cover every all-`n` case, truth of all T07 semantic claims
+and T06 score statements, genuine T08 simultaneous-row completeness, T09 physical resource-model
+exhaustiveness, T10 route semantics, downstream block/interface semantics, complete chamber proofs
+and the reviewed implication to `D(n)=2n`.
 
 ## 2. Close T01 source statements
 
@@ -156,39 +157,120 @@ For every T02 global parent:
 Finally bind the aggregate bank through `CANDIDATE_POLICY_CORRECT` and
 `T06_CANDIDATE_POLICY`.
 
-## 8. Build T08 active-row-family exhaustiveness
+## 8. Close T08 active-row-family exhaustiveness
 
-After T06 closes, reconstruct the complete simultaneously active row family independently of supplied
-row certificates.
-
-For each active row, bind:
-
-- exact parent and selected slot;
-- exact T06 policy record;
-- exact T07 transition/state meaning;
-- exact T04 block/interface assembly;
-- all literal row-load and response data.
-
-Prove no simultaneously active row is omitted or duplicated.
-
-## 9. Build T09 destroyed-resource-model exhaustiveness
-
-Reconstruct every destroyed current triple literally from T05 point/removal data and prove that this
-is the complete shared resource model for the active row family.
-
-Separate alternative-response reuse from simultaneous-row reuse. Prove all resource scopes,
-capacities and exclusions explicitly.
-
-## 10. Build T10 routed-credit semantics
-
-Bind every positive routed credit to:
+Use:
 
 ```text
-literal destroyed triple -> nondeleted witness -> intended child state
+scripts/check_prime_power_transition_resource_frontier.py
 ```
 
-Prove exact injectivity in the required scope, exact child counts and the external meaning of every
-child state. Then bind `CREDIT_ROUTING_SEMANTIC` and T10.
+The active-row census is reconstructed from the complete T06 application bank. Every T06 global
+parent contributes exactly one row with ID:
+
+```text
+active::<parent global state ID>
+```
+
+For every row, populate and prove the exact bindings:
+
+```text
+parent_global_state_id
+local_parent_state_id
+selected_slot_id
+candidate_policy_application_record_sha256
+slot_population_payload_sha256
+row_loads_sha256
+response_family_sha256
+routed_credits_sha256
+transitions_sha256
+slot_semantic_certificate_sha256
+using_t04_unit_ids
+```
+
+A proved row requires one `active-row-member-proof` citing the exact T06 application artifact, every
+using T04 population artifact and the selected slot's T07 semantic artifact.
+
+Bind the aggregate bank through:
+
+```text
+ACTIVE_ROW_FAMILY_EXHAUSTIVE
+T08_ACTIVE_ROW_FAMILY
+```
+
+The derived census eliminates a freely supplied active-row list. Ordinary review must still prove
+that the supplied recurrence skeleton produces the genuine complete simultaneous-row family.
+
+## 9. Close T09 destroyed-resource-model exhaustiveness
+
+For each T08 row, reconstruct every literal destroyed current triple from the selected slot's exact
+T05 linked-operation geometry certificate. Identify equal resources by sorted point coordinates, not
+by local point indices or destroyed IDs.
+
+The checker derives:
+
+1. the complete literal resource universe of every active row;
+2. the exact row-overlap graph;
+3. its connected components; and
+4. one canonical resource-scope ID per component.
+
+A proved row requires one `row-destroyed-resource-model-proof` citing its T08 active-row artifact and
+T05 geometry artifact.
+
+Bind the aggregate bank through:
+
+```text
+DESTROYED_RESOURCE_MODEL_EXHAUSTIVE
+T09_RESOURCE_MODEL
+```
+
+The older `check_prime_power_resource_overlap_scope_partition.py` remains a useful lower-level
+consistency audit. It no longer defines the T09 row census.
+
+After documentary closure, prove the ordinary theorem that destroyed current triples are the complete
+physical shared-resource model and that no additional physical coupling is omitted.
+
+## 10. Close T10 routed-credit semantics
+
+Every literal selected-slot `routed_credits` entry becomes one indexed subject. Equal JSON values at
+different indices remain separate obligations.
+
+For every subject, provide one exact assignment:
+
+```text
+credit_subject_sha256
+destroyed_resource_key
+fate_claim_id
+state_claim_id
+transition_claim_ids
+child_state_id
+route_statement
+evidence
+```
+
+The destroyed key must belong to the row's complete T09 resource universe. Fate, state and transition
+claim IDs must come from the selected slot's T07 semantic certificate. Transition support must be
+nonempty, sorted and duplicate-free.
+
+Prove:
+
+- exact one-to-one subject/assignment coverage;
+- no destroyed-resource or fate-witness reuse inside one row;
+- global destroyed-resource injectivity across all active rows; and
+- global injectivity of `(fate claim, state claim, child state)` obligations.
+
+Every proved row requires one `row-routed-credit-semantics-proof` citing its exact T08, T09 and T07
+artifacts.
+
+Bind the aggregate bank through:
+
+```text
+CREDIT_ROUTING_SEMANTIC
+T10_CREDIT_ROUTING
+```
+
+The older witness-routing and simultaneous-credit checkers remain useful local consistency audits.
+They do not replace proof of the route statements or child-state meanings.
 
 ## 11. Close recurrent blocks and auxiliaries
 
@@ -200,6 +282,10 @@ For every recurrent block prove:
 
 Only after T06 and T10 are closed should the common-weight candidate-policy audit be used as a
 recurrent-block consistency check.
+
+T11 must bind the exact T04 block population, T06 selected policy, T10 routed credits and one primitive
+positive common state-weight vector. Prove exact parent coverage, no recurrent exits, strong
+connectivity and positive margin on every row.
 
 Prove every recursive auxiliary expansion semantically and eliminate all auxiliaries without changing
 the selected recurrence meaning.
@@ -270,12 +356,14 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 8. Prove genuine all-`n` coverage of the T05 bank.
 9. Populate and prove every T07 semantic claim.
 10. Prove every T06 slot score, parent policy and application-to-winner record.
-11. Build and close T08, T09 and T10.
-12. Close strict recurrent blocks and semantic auxiliaries.
-13. Prove cross-block, interface, rank, predicate and row-theorem semantics.
-14. Prove all 252 chamber dispositions.
-15. Complete every typed artifact, premise, handoff assertion and atomic target.
-16. Pass all synchronized gates and review the final all-`n` implication.
+11. Populate and prove every T08 active-row record.
+12. Reconstruct and prove every T09 literal resource model and scope partition.
+13. Populate and prove every T10 routed-credit semantic assignment.
+14. Close strict recurrent blocks and semantic auxiliaries.
+15. Prove cross-block, interface, rank, predicate and row-theorem semantics.
+16. Prove all 252 chamber dispositions.
+17. Complete every typed artifact, premise, handoff assertion and atomic target.
+18. Pass all synchronized gates and review the final all-`n` implication.
 
 ## 17. Honesty boundaries
 
@@ -287,6 +375,10 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 - T07 exact subject coverage and acyclic support do not prove semantic truth.
 - T06 minimization arithmetic does not prove the supplied scores are correct.
 - The old common-weight policy checker belongs downstream of T06.
+- A T06-application-derived T08 census remains relative to the supplied recurrence skeleton.
+- Exact T08 row binding does not prove genuine simultaneous-row completeness.
+- Coordinate-canonical T09 resources and scopes do not prove physical resource exhaustiveness.
+- T10 route linkage and injectivity do not prove route statements or child-state semantics.
 - Resource and credit accounting do not prove state semantics automatically.
 - Common weights do not imply block closure, connectivity or strictness.
 - State links do not prove cross-block identity.
@@ -298,11 +390,12 @@ mathematical implication from the quotient conclusion to `D(n)=2n`.
 
 ## 18. Current endpoint
 
-Through CMR2509 the branch has exact executable work banks for source statements, recurrence records,
-slot and block/interface population, corrected finite geometry, literal semantic claims and complete
-candidate minimization/application identity.
+Through CMR2533 the branch has exact executable work banks for source statements, recurrence records,
+slot and block/interface population, corrected finite geometry, literal semantic claims, complete
+candidate minimization/application identity, application-derived active rows, literal destroyed
+resources and routed-credit semantic assignments.
 
 The unresolved center remains the genuine mathematics: actual source and recurrence theorems, real
-population, proof of all-`n` geometry coverage, truth of every semantic and score statement, active-row
-and resource exhaustiveness, routed-credit meaning, strict block closure, cross-block/interface/rank
-semantics, all chamber proofs and the final reviewed implication.
+population, proof of all-`n` geometry coverage, truth of every semantic and score statement, genuine
+simultaneous-row completeness, physical resource exhaustiveness, routed-credit meaning, strict block
+closure, cross-block/interface/rank semantics, all chamber proofs and the final reviewed implication.
