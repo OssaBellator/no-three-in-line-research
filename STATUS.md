@@ -1,6 +1,6 @@
 # Status and honesty ledger
 
-**Last updated:** 27 July 2026
+**Last updated:** 28 July 2026
 
 ## External status
 
@@ -9,8 +9,8 @@ known for which the maximum is strictly below `2n`. Exact `2n` configurations
 are known for every `2 <= n <= 66`, and also for `n=68` and `n=70`.
 
 The analogous no-`(k+1)`-in-line problem is resolved for every fixed `k>=3` and
-sufficiently large `n`: the maximum is exactly `kn`. This does not settle the
-exceptional `k=2` case studied here.
+sufficiently large `n`; this does not settle the exceptional `k=2` case studied
+here.
 
 ## What this branch genuinely proves
 
@@ -32,25 +32,24 @@ track ledgers. Principal endpoints include:
    Nicolas--Robin estimate reaches only `10^14104`. At `10^2873`, a uniform 10%
    improvement of the optimal ambient-divisor cap is sufficient through the
    missing decimal slab, while 9% is insufficient.
-6. **Finite side-seven census.** In the `(5,2)` radius-three support-twenty
-   layer, all selectors of multiplicity at least three are classified. Cases
-   `0` through `479` of multiplicity two add `960` exact rejections. The
-   committed cache contains:
-   - `38,560` certified-infeasible selectors;
+6. **Finite side-seven census.** All selectors of multiplicity at least three
+   are classified. Multiplicity-two cases `0` through `559` add `1,120` exact
+   rejections. The committed cache contains:
+   - `38,720` certified-infeasible selectors;
    - one constructive selector;
-   - `33,299` unclassified selectors;
-   - `2,975,018,807` certified rejection-CSP nodes.
+   - `33,139` unclassified selectors;
+   - `3,006,271,316` certified rejection-CSP nodes.
 7. **Bottom-cover compression.** Fixed-top infeasibility is equivalent to
    covering all `5,040` bottom permutations by collinear triples. In case zero,
    orientation three, 128 obligations through 64 top orders all have
    seven-triple covers; 55 triples and 93 covers encode 896 entries.
-8. **Semantic top-master learning.** The repeated syntactic support mask `6975`
-   occurs for both selectors at twelve top orders. Eleven pair cores minimize to
-   six-column mask `6936`; one minimizes to five-column mask `6920`. Together
-   they certify 40 clean extensions and 403,200 bottom checks.
+8. **Semantic top-master learning.** Twelve repeated-support references collapse
+   to five actual partial assignments: four use mask `6936`, one uses mask
+   `6920`. Their extension lists contain 40 occurrences but only 14 distinct
+   clean top orders, with 403,200 exact bottom checks.
 9. **Produced-base recursion barriers.** Affine-column all-transposition
    templates are impossible at bases 8, 10, and 12. At side ten, the complete
-   opposite-pair double coset is also infeasible in orientations `cc` and `cf`,
+   opposite-pair double coset is infeasible in orientations `cc` and `cf`,
    covering 16,000 geometries and 266,447,755 nodes.
 10. **Global matching, hyperbola/carry, and terminal repair endpoints.** Dense
     hosts have spread-selection theorems; the hyperbola path has exact extraction
@@ -62,16 +61,18 @@ track ledgers. Principal endpoints include:
 The side-seven support-twenty cache contains `71,860` selectors. The committed
 classification is:
 
-- `38,560` certified infeasible;
+- `38,720` certified infeasible;
 - `1` constructive;
-- `33,299` unclassified.
+- `33,139` unclassified.
 
 The unresolved set is exactly:
 
-- `3,360` multiplicity-two signatures containing `6,720` selectors;
+- `3,280` multiplicity-two signatures containing `6,560` selectors;
 - `26,579` multiplicity-one selectors.
 
-The next canonical multiplicity-two case is `480`.
+The next canonical multiplicity-two case is `560`. An eight-shard workflow for
+cases `560` through `639` is registered but is not counted until its exact
+transcripts are promoted.
 
 ## What remains conditional or open
 
@@ -81,7 +82,7 @@ The next canonical multiplicity-two case is `480`.
 - Infinite exact product closure or arithmetic coverage of every side length.
 - Completion of the side-ten opposite-pair `fc` and `ff` double-coset searches,
   followed by the two larger transposition double cosets.
-- Deduplication of actual semantic partial assignments and measurement of their
+- Semantic cores for the remaining support classes and measurement of their
   coverage of the complete top-order family.
 - A global repair/resampling theorem or conflict-free exact-cover theorem with
   the required local-load endpoint.
@@ -107,6 +108,6 @@ There is no complete proof of the classical no-three-in-line conjecture and no
 all-side product theorem. The branch contains exact finite classifications,
 small factor-independent products, an effective asymptotic repair reduction,
 compact semantic master nogoods, and replayable recursion barriers. The active
-fronts are the case-`480` census, finite-range coverage, semantic vocabulary
-coverage, genuinely non-affine recursion, global resampling, and
+fronts are the case-`560` census, finite-range coverage, broader semantic
+vocabulary coverage, genuinely non-affine recursion, global resampling, and
 hyperbola/carry termination or absorption.
