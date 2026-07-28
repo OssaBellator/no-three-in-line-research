@@ -1,0 +1,11 @@
+{
+  "cases": [
+    {"m":8,"maximum_distance":3,"terminal_cycles":436,"terminal_states":33624,"minimum_root_gate_multiplicity":13,"maximum_uniform_regenerated_reverse_load":"26505864814807098079/15651819467971542784","maximum_raw_incoming_terminal_labels":1744,"maximizing_target_components":4,"maximizing_target_cycles_tied":2,"overloaded_target_cycles":20,"overloaded_signed_columns":304},
+    {"m":9,"maximum_distance":4,"terminal_cycles":2298,"terminal_states":478040,"minimum_root_gate_multiplicity":29,"maximum_uniform_regenerated_reverse_load":"5777802011707659599/1622228211421303600","maximum_raw_incoming_terminal_labels":8574,"maximizing_target_components":3,"maximizing_target_cycles_tied":2,"overloaded_target_cycles":94,"overloaded_signed_columns":2216},
+    {"m":10,"maximum_distance":5,"terminal_cycles":1260,"terminal_states":535072,"minimum_root_gate_multiplicity":70,"maximum_uniform_regenerated_reverse_load":"448666200353603124/171755029822863697","maximum_raw_incoming_terminal_labels":8960,"maximizing_target_components":1,"maximizing_target_cycles_tied":2,"overloaded_target_cycles":6,"overloaded_signed_columns":28}
+  ],
+  "uniform_terminal_policy_contracts": false,
+  "target_fibre_regeneration_included": true,
+  "all_exact_regressions_verified": true,
+  "asymptotic_balanced_terminal_policy_proved": false
+}
