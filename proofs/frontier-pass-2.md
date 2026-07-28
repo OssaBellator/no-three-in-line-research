@@ -6,16 +6,11 @@ This addendum records the threshold-degree transportation bounds proved after th
 |---|---|---|---|
 | SRR2s--SRR2w | At every endpoint-cost threshold, left minimum degree and right maximum load bound the complete Hall deficiency; bounded remote conditioning subtracts only its actual local switching incidence, and the resulting degree-deficiency sums bound one-step, two-layer and multistep endpoint cost | PROVED UNDER THE LOCAL-INCIDENCE AND DETERMINISTIC-LOCALITY CONTRACTS | `docs/superregular-threshold-degree-cost-bound.md` |
 | SRR2x--SRR2ab | Relative threshold imbalance `epsilon=(1-(d-b)/D)_+` bounds exact conditioned Hall deficiencies and endpoint cost; failed event budget forces one threshold with quantified relative degree/load imbalance | PROVED UNDER THE LOCAL-INCIDENCE AND DETERMINISTIC-LOCALITY CONTRACTS | `docs/superregular-relative-threshold-slack.md` |
-| SRR2ac--SRR2ag | If a threshold switching graph is near-biregular around reference degree `rho`, then forward deficit `eta`, reverse overload `zeta` and conditioning loss `beta` give `epsilon <= (eta+beta+zeta)/(1+zeta)` and an explicit integral endpoint-cost criterion | PROVED UNDER THE REFERENCE-DEGREE AND LOCAL-INCIDENCE CONTRACTS | `docs/superregular-near-biregular-threshold-slack.md` |
+| SRR2ac--SRR2ag | Near-biregular reference degree errors combine as `(eta+beta+zeta)/(1+zeta)` to bound conditioned threshold deficiency and integral endpoint cost | PROVED UNDER THE NEAR-BIREGULAR AND LOCAL-CONDITIONING CONTRACTS | `docs/superregular-near-biregular-threshold-slack.md` |
+| SRR2ah--SRR2al | Coordinatewise tensor products factor left minimum degree and right maximum load exactly; local layer errors multiply into a global conditioned imbalance, and failure identifies one bad layer | PROVED UNDER THE TENSOR-FACTOR AND LOCAL-CONDITIONING CONTRACTS | `docs/superregular-tensor-product-threshold-slack.md` |
 
 ## Updated frontier
 
-The min-cost endpoint objective now has:
-
-1. an exact threshold degree/load bound;
-2. a dimensionless relative-slack target;
-3. a near-biregular sufficient criterion in which forward deficit, reverse overload and conditioning loss enter additively.
-
-Remaining work is geometric: construct bounded-cycle switching graphs for the actual rank-two/rank-three event inventories in arbitrary superregular hosts and prove small reference-degree errors `eta_k,zeta_k,beta_k`, then feed the resulting pathwise transportation cost into the local conflict endpoint beyond global first moment.
+The endpoint min-cost objective now has exact degree/load, relative-slack, near-biregular and bounded-layer tensor criteria. For switching families admitting a genuine bounded tensor decomposition, it remains to prove small forward deficit, reverse overload and conditioned loss in each geometric layer. Nonproduct interactions and the local conflict endpoint beyond first moment remain open.
 
 No statement here proves SRR2, SRR4 or the no-three-in-line conjecture.
