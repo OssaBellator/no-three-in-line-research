@@ -21,71 +21,73 @@ The authoritative live ledger is split across:
 | CMR2230--2237 | Common-weight candidate rows, exact complete candidate coverage, populated slot/fibre binding, minimum row-load policy, deterministic tie-break, exact candidate gaps, policy boundary, and executable endpoint | PROVED as a finite common-weight policy; checker syntax-compiled; genuine candidate population and external policy semantics remain absent | `docs/382-prime-power-common-weight-candidate-policy.md` |
 | CMR2238--2245 | Recursive auxiliary closure, acyclic dependency graph, local domination, effective nonauxiliary expansion, zero auxiliary credit, full response substitution, strictness preservation, and executable endpoint | PROVED as acyclic weighted elimination; checker syntax-compiled; genuine expansion DAG and transition semantics remain absent | `docs/383-prime-power-acyclic-auxiliary-elimination.md` |
 | CMR2246--2253 | Exact policy/scope/elimination composition, selected-response stability, integer row identity, canonical matrix/vector package, positive margins, complete integer-block criterion, global boundary, and executable endpoint | PROVED as a denominator-cleared block interface; checker syntax-compiled; no genuine complete block or global CRT quotient claimed | `docs/384-prime-power-integer-recurrent-quotient-block.md` |
+| CMR2254--2261 | Complete local state reconstruction, exact local-to-global coverage, semantic-core equality, canonical global classes, block-overlap graph, aggregate census, identity boundary, and executable endpoint | PROVED as a cross-block identification interface; checker syntax-compiled; genuine external state identity remains absent | `docs/385-prime-power-cross-block-state-identification.md` |
+| CMR2262--2269 | Shared-state scale equations, exact rational propagation, cycle consistency, componentwise denominator clearing, global component weights, scaled block rows, scale boundary, and executable endpoint | PROVED as exact integer weight synchronization; checker syntax-compiled; genuine populated block family remains absent | `docs/386-prime-power-cross-block-weight-synchronization.md` |
+| CMR2270--2277 | Global component multipliers, complete state-rank registry, return/interface row records, exact margin reconstruction, strict-or-ranked descent, aggregate digests, interface boundary, and executable endpoint | PROVED as a global interface-row arithmetic layer; checker syntax-compiled; genuine rows, ranks and component scales remain absent | `docs/387-prime-power-interface-return-rows.md` |
+| CMR2278--2285 | Expected family manifest, exact block and interface coverage, globally lifted recurrent rows, exact parent coverage, canonical `(A,b,W,mu,rho)` package, complete-family criterion, global boundary, and executable endpoint | PROVED as an exhaustive-family interface relative to a supplied manifest; checker syntax-compiled; no genuine complete global family or all-`n` proof claimed | `docs/388-prime-power-global-integer-quotient-family.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Literal resource scopes
+## Cross-block state and weight assembly
 
-For selected row `r`, let `U(r)` be its complete literal destroyed-triple universe. The
-resource-overlap graph joins `r` and `r'` exactly when `U(r)` and `U(r')` intersect. Its
-connected components are the canonical minimal resource scopes. Distinct scopes are
-resource-disjoint by construction, so scope names are no longer freely supplied.
+Every local state in every supplied integer block now has exactly one explicit global-state
+link. Members of one global class must agree on role, stratum and owner. Shared classes
+generate a block-ratio graph whose exact rational scale constraints are propagated and
+denominator-cleared componentwise.
 
-This proves independence only for modeled destroyed-triple resources and only for the
-supplied selected-row family.
-
-## Exact candidate-operation policy
-
-Every populated candidate slot for parent `p` carries one row certificate under the same
-common state weights. The selected slot is
+For a local member `(b,s)` of global state `g`,
 
 \[
-\operatorname*{argmin}_{s\in C(p)}(\min_Q L_s(Q),\text{slot ID}).
+W_g=m_b w_b(s),
 \]
 
-Every unselected candidate receives an exact nonnegative load gap. The result remains
-relative to the supplied exhaustive clause universe and populated candidate rows.
-
-## Acyclic auxiliary elimination
-
-Auxiliary expansions may target other auxiliaries only through a finite DAG. Reverse
-topological substitution produces exact nonauxiliary effective expansions. No credit may
-land on any eliminated auxiliary, and every response satisfies
+and every scaled recurrent row satisfies
 
 \[
-L_{\rm full}(Q)\le L(Q),
-\qquad
-\mu_{\rm full}(Q)\ge\mu(Q).
+W_p-B_p-\sum_g A_{p,g}W_g=M_p.
 \]
 
-The expansion graph still needs genuine transition semantics.
+This remains relative to the supplied state links and populated integer blocks.
 
-## Integer recurrent quotient block
+## Return and interface rows
 
-When candidate policy, overlap-derived scopes, common weights, selected-response stability
-and full auxiliary elimination agree, every parent row has the exact integer form
+Disconnected scale components receive one globally primitive positive component-multiplier
+family. Every global state also receives a nonnegative rank. Return, interface and
+off-diagonal rows are accepted exactly when they have positive integer-weight margin or zero
+margin with strict rank descent on every positive target.
+
+Thus critical rows are no longer silently treated as strict; their secondary well-founded
+descent is explicit and checkable.
+
+## Global integer quotient family
+
+An expected family manifest lists every block, interface row and global parent state. The
+checker lifts recurrent rows into the final global scale, appends interface rows, forbids
+surviving auxiliary coordinates and publishes one canonical package
 
 \[
-w_p-b_p-\sum_t a_{p,t}w_t=\mu_p>0.
+(A,b,W,\mu,\rho).
 \]
 
-The canonical package `(A,b,w,mu)` is denominator-cleared and reloadable. It certifies one
-finite recurrent block, not the complete cross-block CRT quotient.
+The `complete_global_integer_family` flag means complete only relative to that supplied
+manifest, state-identification table, component scales, rank registry and populated rows.
 
 ## Active frontier
 
 1. Supply the genuine parent cases, clauses, domains, exclusions and source proofs, and
    prove that rule source correct and exhaustive.
-2. Populate every expected slot with actual operation, geometry, fate and transition data.
-3. Populate every candidate row under one common state-weight registry and prove that the
-   common-weight minimum is the intended recurrence policy.
-4. Publish the genuine simultaneous selected-row family; derive its literal overlap scopes
-   and prove that destroyed triples are the complete shared-resource model.
+2. Populate every expected slot, every candidate row and every recurrent/interface block
+   with actual geometry, fate, route and transition data.
+3. Prove the common-weight candidate minimum is the intended recurrence policy.
+4. Publish the genuine simultaneous selected-row family and prove the destroyed-triple
+   shared-resource model exhaustive.
 5. Produce genuinely closed, strongly connected, common-weight strict recurrent blocks.
 6. Supply and prove every recursive auxiliary expansion DAG and eliminate all auxiliaries.
-7. Generate complete integer recurrent quotient blocks for every recurrent/interface
-   component and prove cross-block state identification.
-8. Close the 232 zero-selector obligations and complete 20-chamber hard core with all
-   return, interface and labelled-child terms.
-9. Finish deletion, domination, transfer and state-label semantics and assemble the final
-   denominator-cleared global CRT quotient.
+7. Prove every cross-block state identification, scale component, return/interface row and
+   global rank semantically.
+8. Populate the expected global block/row/parent manifest and pass the complete global
+   integer quotient family.
+9. Close the 232 zero-selector obligations and complete 20-chamber hard core with all
+   labelled-child, return and interface terms.
+10. Finish deletion, domination, transfer and state-label semantics and prove that the
+    resulting denominator-cleared global quotient establishes the all-`n` statement.
