@@ -19,7 +19,8 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5be--AC5bi | Restricted-menu minimum endpoint cost is the exact threshold Hall-deficiency layer cake; left degree, conditioned loss and right reverse load bound every threshold deficit, while failure retains one canonical Hall core | PROVED UNDER THE COMPLETE ENDPOINT-COST AND REVERSE-LOAD CONTRACTS | `docs/alternating-core-reverse-load-transportation.md` |
 | AC5bj--AC5bn | Every threshold Hall core exposes a complete missing rectangle whose incidences partition into exact obstruction classes; the rectangle is paid by class capacities or returns one exact overloaded class | PROVED UNDER THE COMPLETE MISSING-INCIDENCE AND OBSTRUCTION-CAPACITY CONTRACTS | `docs/alternating-core-hall-core-obstruction-bridge.md` |
 | AC5bo--AC5bs | Exact conditioned menu layers aggregate by subtracting endpoint-overlap excess; union reverse load is at most the sum of layer loads, giving explicit threshold Hall and obstruction-bank routing | PROVED UNDER THE COMPLETE LAYER, CONDITIONING AND ENDPOINT-IDENTITY CONTRACTS | `docs/alternating-core-layered-menu-incidence.md` |
-| AC5bt--AC5bx | If the aggregate layer degree/reverse-load ratio fails, one exact positive-load layer has local relative deficiency at least the global deficiency; uniform local ratios imply the same global ratio | PROVED UNDER THE COMPLETE LAYER-PARAMETER CONTRACT | `docs/alternating-core-layer-witness-concentration.md` |
+| AC5bt--AC5bx | Uniform local degree/reverse-load ratios imply the same aggregate ratio; every deficient aggregate retains one exact positive-load layer whose local relative deficit is at least the global deficit | PROVED UNDER THE COMPLETE LAYER-RATIO AND POSITIVE-LOAD CONTRACTS | `docs/alternating-core-layer-witness-concentration.md` |
+| AC5by--AC5cc | Aggregate ratio shortfall is dominated by the sum of exact local layer shortfalls; partitioning those charges by obstruction class either pays the aggregate deficit or returns one exact overloaded class | PROVED UNDER THE COMPLETE LAYER-SHORTFALL AND OBSTRUCTION-BANK CONTRACTS | `docs/alternating-core-weighted-layer-shortfall-bank.md` |
 
 ## Updated AC4 frontier
 
@@ -27,6 +28,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has a closed-form restricted-menu audit, obstruction and transportation banks, a complete Hall-core bridge, exact layer aggregation and a local bad-layer witness. Remaining work is proving concrete per-layer degree, conditioning, overlap and reverse-load ratios, obstruction thresholds/capacities/deposits, and physical payment of returned overloads.
+The deterministic GC1--GC3 inventory now has a closed-form restricted-menu audit, a finite exact obstruction-capacity bank, exact reverse-load transportation, Hall-core obstruction routing, finite-layer aggregation, local bad-layer concentration and a classwise weighted shortfall bank. Remaining work is proving the concrete local layer ratios, obstruction assignments, thresholds, capacities and deposits, plus physical payment of returned overloads.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
