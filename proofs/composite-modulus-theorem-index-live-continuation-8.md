@@ -32,13 +32,14 @@ The authoritative live ledger is split across:
 | CMR2510--2533 | Application-derived active rows, literal resources/scopes and exact routed-credit assignments | PROVED as documentary T08/T09/T10; simultaneous, physical and route semantics remain open | `docs/417-prime-power-transition-resource-frontier.md` |
 | CMR2534--2541 | Exact T11 row bridges, primitive common weights, recurrent support, closure and strict margins | PROVED as documentary T11; genuine block semantics remain open | `docs/418-prime-power-recurrent-block-closure-frontier.md` |
 | CMR2542--2549 | Exact T12 recursive auxiliary closure, T07 edge support and selected-response stability | PROVED as documentary T12; expansion truth and target meaning remain open | `docs/419-prime-power-auxiliary-semantics-frontier.md` |
-| CMR2550--2565 | T04-derived local-state census, exact T07-supported identity links, canonical class trees, T11/T13-rooted scale components, rational cycle consistency, primitive multipliers, global component weights and typed synchronization | PROVED as documentary T13/T14 frontiers; state identity and external scale semantics remain open | `docs/420-prime-power-state-equivalence-component-scale-frontiers.md` |
+| CMR2550--2565 | T04-derived local-state census, exact T07-supported identity links, canonical class trees, T11/T13-rooted scale components, rational cycle consistency, primitive multipliers and global component weights | PROVED as documentary T13/T14; state identity and external scale semantics remain open | `docs/420-prime-power-state-equivalence-component-scale-frontiers.md` |
+| CMR2566--2573 | Parallel interface-family defect, corrected T07/T12/T14 dependency root, T04-derived row census, primitive intercomponent multipliers, exact T07/T13/T14 row arithmetic, complete T11/T12 final-exit dispositions, typed noncircular sealing and T16 boundary | PROVED as documentary T15; genuine interface exhaustiveness, scale semantics and rank descent remain open | `docs/421-prime-power-interface-exhaustiveness-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The branch now supplies exact executable work banks through T14:
+The executable work banks now reach T15:
 
 ```text
 T01 source statements
@@ -55,46 +56,38 @@ T11 recurrent-block closure and common weights
 T12 recursive auxiliary semantics
 T13 cross-block state equivalence
 T14 component-scale synchronization
+T15 interface-row exhaustiveness
 ```
 
 Each layer is synchronized to its fixed semantic obligation and atomic target by typed, noncircular
 artifact bundles. Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
-## Exact T13 state-equivalence frontier
+## Exact T15 interface-row frontier
 
-T13 derives every recurrent block and local state from T04 before reading any global-state link. Every
-local state receives exactly one link supported by nonempty exact T07 state-claim IDs from the slots used
-by that block.
+T15 derives every return/interface/off-diagonal row from T04 before reading any row theorem. It binds
+row parents and targets to exact T13 classes, exact T14 weights and exact T07 state/transition claims.
+The literal T04 target, route, transition and source-clause fields are bound by separate digests.
 
-The complete link bank derives canonical global classes. Members of one class must have the same
-`(role, stratum, owner)` core, and at most one member may come from each block. Every proved class,
-including a singleton, has one canonical spanning proof tree and one
-`global-state-equivalence-class-proof` artifact with exact T07 semantic-artifact support.
+T14 components receive one globally primitive positive multiplier vector. T15 reconstructs final global
+weights and every interface margin. Positive rows are `strict`; zero-margin rows remain
+`critical-unranked` and are passed to T16 rather than being assigned a free rank witness.
 
-The aggregate `state-equivalence-proof` binds both `CROSS_BLOCK_STATE_IDENTITY_SEMANTIC` and
-`T13_STATE_EQUIVALENCE`. Exact documentary ancestry does not prove that any asserted equivalence is true.
+The final nonrecurrent exit census is reconstructed from T11 and T12. Every exit has exactly one proved
+interface-row disposition or one terminal-sink disposition. A terminal disposition is allowed only for
+an exact T13 sink class.
 
-## Exact T14 component-scale frontier
+Every proved row has one `interface-row-semantic-proof` with exact T04, T07, T12, T13, T14 and
+interface-scale support. The aggregate `interface-exhaustiveness-proof` binds both
+`INTERFACE_RETURN_ROWS_EXHAUSTIVE` and `T15_INTERFACE_EXHAUSTIVENESS`.
 
-T14 requires the T13 and T11 certificates to share the same T07 root. The T13 block set must equal the
-T11 common-weight block set, and every T13 local state must have an exact T11 primitive weight.
+The corrected root is:
 
-Shared global classes generate the block-overlap graph and exact equations
+```text
+T04 + T07 + T12 + T14 -> T15
+```
 
-\[
-\alpha_b w_b(s)=\alpha_c w_c(t).
-\]
-
-The checker propagates exact rational scales, rejects inconsistent cycles, clears denominators and
-divides the componentwise gcd. It publishes the canonical primitive positive integer multiplier for
-every block, one component weight for every global class and a positive scaled minimum margin for every
-T11 block.
-
-Every proved component has one semantic certificate and one `component-scale-synchronization-proof`
-artifact citing all T13 class artifacts and all T11 common-weight/closure artifacts in the component.
-The aggregate `component-scale-proof` binds `COMPONENT_SCALE_SEMANTIC` and `T14_COMPONENT_SCALES`.
-
-Disconnected components remain independently normalized. Their relative scales are T15 interface work.
+Concrete downstream certificates generated under the previous T15 definition digests must be
+regenerated.
 
 ## Active frontier
 
@@ -102,11 +95,10 @@ Disconnected components remain independently normalized. Their relative scales a
 2. Enter real T03/T04 data and prove T05 arbitrary-`n` coverage.
 3. Prove every T07 claim, T06 score, T08 simultaneous row, T09 physical resource and T10 route theorem.
 4. Prove every T11 block and T12 expansion semantically genuine.
-5. Populate and prove every T13 local identity, class edge and class artifact.
-6. Populate and prove every T14 equation semantic record, component certificate and scale artifact.
-7. Build T15 from the exact T04 interface-row census and T14 component weights; prove the complete
-   interface family and all relative component-scale choices.
-8. Prove T16 global rank, T17 state predicates and T18 final row theorems.
+5. Populate and prove every T13 identity and every T14 scale equation.
+6. Populate and prove every T15 interface row, relative component multiplier and final-exit disposition.
+7. Build T16 from the exact T15 `critical-unranked` edge census and prove genuine well-founded rank descent.
+8. Prove T17 state predicates and T18 final row theorems.
 9. Prove T19 global-family exhaustiveness and all 252 T20/T21 exceptional chambers.
 10. Complete the typed premise/handoff stack and review the ordinary implication to `D(n)=2n`.
 
