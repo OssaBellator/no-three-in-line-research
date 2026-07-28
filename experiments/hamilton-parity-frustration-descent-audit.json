@@ -1,0 +1,69 @@
+{
+  "minimum_pair_size": 5,
+  "maximum_pair_size": 9,
+  "cases": [
+    {
+      "m": 5,
+      "hamilton_cycles": 24,
+      "pair_safe_cycles": 24,
+      "positive_frustration_cycles": 2,
+      "pair_safe_successor_rotations": 240,
+      "strict_descent_rotations": 20,
+      "optimal_violated_edge_checks": 48,
+      "maximum_strict_descent_horizon": 1,
+      "minimum_descent_rotations_per_positive_cycle": 10,
+      "minimum_descent_rotations_hitting_each_optimal_violated_edge": 9
+    },
+    {
+      "m": 6,
+      "hamilton_cycles": 120,
+      "pair_safe_cycles": 120,
+      "positive_frustration_cycles": 8,
+      "pair_safe_successor_rotations": 2400,
+      "strict_descent_rotations": 148,
+      "optimal_violated_edge_checks": 272,
+      "maximum_strict_descent_horizon": 1,
+      "minimum_descent_rotations_per_positive_cycle": 18,
+      "minimum_descent_rotations_hitting_each_optimal_violated_edge": 14
+    },
+    {
+      "m": 7,
+      "hamilton_cycles": 720,
+      "pair_safe_cycles": 720,
+      "positive_frustration_cycles": 56,
+      "pair_safe_successor_rotations": 25200,
+      "strict_descent_rotations": 1624,
+      "optimal_violated_edge_checks": 2752,
+      "maximum_strict_descent_horizon": 1,
+      "minimum_descent_rotations_per_positive_cycle": 25,
+      "minimum_descent_rotations_hitting_each_optimal_violated_edge": 20
+    },
+    {
+      "m": 8,
+      "hamilton_cycles": 5040,
+      "pair_safe_cycles": 4560,
+      "positive_frustration_cycles": 1018,
+      "pair_safe_successor_rotations": 239040,
+      "strict_descent_rotations": 34102,
+      "optimal_violated_edge_checks": 97224,
+      "maximum_strict_descent_horizon": 1,
+      "minimum_descent_rotations_per_positive_cycle": 19,
+      "minimum_descent_rotations_hitting_each_optimal_violated_edge": 13
+    },
+    {
+      "m": 9,
+      "hamilton_cycles": 40320,
+      "pair_safe_cycles": 37440,
+      "positive_frustration_cycles": 5752,
+      "pair_safe_successor_rotations": 3009600,
+      "strict_descent_rotations": 292584,
+      "optimal_violated_edge_checks": 1001344,
+      "maximum_strict_descent_horizon": 1,
+      "minimum_descent_rotations_per_positive_cycle": 28,
+      "minimum_descent_rotations_hitting_each_optimal_violated_edge": 19
+    }
+  ],
+  "one_step_pair_safe_frustration_descent_verified": true,
+  "targeted_optimal_violated_edge_descent_verified": true,
+  "asymptotic_descent_theorem_proved": false
+}
