@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {"m":5,"positive_optimal_states":48,"one_step_total_atomic_obstructions":14,"resolved_at_distance_two":0,"resolved_at_distance_three":0,"unresolved_before_parity_clean":14,"maximum_minimum_temporary_atomic_excess":0,"unresolved_by_source_frustration":{"1":14},"resolved_minimum_barrier_distribution":{},"unresolved_best_reachable_excess_distribution":{"0":12,"4":2}},
+    {"m":6,"positive_optimal_states":272,"one_step_total_atomic_obstructions":0,"resolved_at_distance_two":0,"resolved_at_distance_three":0,"unresolved_before_parity_clean":0,"maximum_minimum_temporary_atomic_excess":0,"unresolved_by_source_frustration":{},"resolved_minimum_barrier_distribution":{},"unresolved_best_reachable_excess_distribution":{}},
+    {"m":7,"positive_optimal_states":2752,"one_step_total_atomic_obstructions":170,"resolved_at_distance_two":0,"resolved_at_distance_three":0,"unresolved_before_parity_clean":170,"maximum_minimum_temporary_atomic_excess":0,"unresolved_by_source_frustration":{"1":170},"resolved_minimum_barrier_distribution":{},"unresolved_best_reachable_excess_distribution":{"0":128,"4":40,"8":2}},
+    {"m":8,"positive_optimal_states":93980,"one_step_total_atomic_obstructions":4308,"resolved_at_distance_two":122,"resolved_at_distance_three":0,"unresolved_before_parity_clean":4186,"maximum_minimum_temporary_atomic_excess":16,"unresolved_by_source_frustration":{"1":4170,"2":16},"resolved_minimum_barrier_distribution":{"0":60,"4":30,"8":24,"12":4,"16":4},"unresolved_best_reachable_excess_distribution":{"0":3102,"4":888,"8":178,"12":16,"16":2}},
+    {"m":9,"positive_optimal_states":977312,"one_step_total_atomic_obstructions":26164,"resolved_at_distance_two":270,"resolved_at_distance_three":0,"unresolved_before_parity_clean":25894,"maximum_minimum_temporary_atomic_excess":28,"unresolved_by_source_frustration":{"1":25862,"2":32},"resolved_minimum_barrier_distribution":{"0":124,"4":76,"8":40,"12":14,"16":6,"20":4,"24":4,"28":2},"unresolved_best_reachable_excess_distribution":{"0":19240,"4":5554,"8":944,"12":140,"16":14,"20":2}}
+  ],
+  "target_optimal_fixed_sign_paths_only": true,
+  "third_step_only_cancellation_states": 0,
+  "asymptotic_cancellation_theorem_proved": false
+}
