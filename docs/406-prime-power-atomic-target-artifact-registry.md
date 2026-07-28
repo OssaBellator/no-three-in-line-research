@@ -2,8 +2,8 @@
 
 CMR2406--CMR2421 introduced forty-three atomic targets and synchronized their completion states
 with the semantic, premise, handoff and exceptional-chamber layers. The target completion records
-still contained opaque locator/digest pairs. This chapter replaces that final opaque link with one
-canonical typed artifact bundle for every effectively complete target.
+still contained opaque locator/digest pairs. This chapter assigns those pairs one canonical,
+noncircular meaning through a typed target-artifact registry.
 
 ## Theorem CMR2422 — PROVED AS AN INTERFACE
 
@@ -14,11 +14,11 @@ are globally unique.
 Every artifact contains:
 
 - its target ID and exact required kind;
-- a locator, digest and mathematical statement;
+- a separate external proof locator and proof digest;
+- a mathematical statement and nonempty evidence description;
 - exact immediate target-artifact support;
-- exact external obligation, premise or handoff-artifact support;
-- exact selected certificate-digest support; and
-- a nonempty evidence description.
+- namespace-qualified obligation, premise or handoff-artifact support; and
+- role-qualified selected certificate support.
 
 ## Theorem CMR2423 — PROVED
 
@@ -26,10 +26,13 @@ Artifact presence is synchronized with effective target completion.
 
 - Every effectively complete target must have exactly one typed target artifact.
 - Every open or ineffective target must have no target artifact.
-- The target-artifact locator and digest must equal the locator and digest in the atomic target
-  completion record.
+- A completed target's atomic completion locator must be exactly
+  `atomic-target-artifact-registry://<target ID>`.
+- Its atomic completion digest must equal the reconstructed target-artifact bundle digest.
 
-Thus a target cannot close using an untyped or differently identified evidence object.
+The artifact's external proof locator/digest is therefore distinct from the completion seal. This
+avoids a self-referential bundle hash while preventing an arbitrary completion digest from merely
+being repeated inside the artifact record.
 
 ## Theorem CMR2424 — PROVED
 
@@ -43,7 +46,9 @@ acyclic target-artifact support graph without trusting a separately supplied edg
 ## Theorem CMR2425 — PROVED
 
 Targets linked to semantic obligations, final premises or handoff assertions must cite the exact
-artifacts in the corresponding authoritative registries.
+artifacts in the corresponding authoritative registries. References are namespace-qualified as
+`obligation:...`, `premise:...` or `handoff:...`, so equal raw artifact IDs in different registries
+cannot be confused.
 
 Consequently:
 
@@ -51,23 +56,21 @@ Consequently:
 - premise targets cite the unique typed artifact of their linked premise; and
 - handoff targets cite the unique assertion-specific handoff artifact.
 
-The checker reconstructs these support sets from the nested validated registries.
-
 ## Theorem CMR2426 — PROVED
 
-Selected integration targets additionally bind the exact certificate surfaces on which their
-meaning depends:
+Selected integration targets additionally bind role-qualified certificate surfaces:
 
 - state-predicate and row-theorem targets bind the quotient semantic refinement;
 - the global-family target binds the source-independent skeleton;
 - exceptional-zero and hard-core targets bind the chamber registry and their separate 232/20
   aggregate disposition digests;
-- typed-support targets bind the obligation registry, support DAG and premise registry;
-- handoff-review and dossier targets bind the exact final handoff and dossier certificates; and
-- the root target binds the synchronized current-frontier certificate.
+- typed-support targets bind the obligation registry, support DAG and premise registry; and
+- handoff-review and dossier targets bind the exact final handoff and dossier certificates.
 
-These bindings prevent evidence prepared for one finite dossier from being silently reused in a
-different dossier.
+The current-frontier certificate is an ancestor containing the atomic completion records, so it is
+bound by the registry as a whole and is not inserted into the root target bundle. This avoids a
+circular equation in which the root bundle digest would depend on a certificate that already
+contains that same digest.
 
 ## Theorem CMR2427 — PROVED
 
@@ -80,16 +83,18 @@ It separately reports:
 - completed and open target-artifact bundle counts;
 - exact typed target-artifact coverage;
 - exact immediate dependency-artifact support;
-- exact external registry binding;
+- namespace-qualified external registry binding;
+- role-qualified certificate binding;
+- exact completion-to-bundle binding;
 - completeness of the forty-three-artifact bank; and
 - a post-frontier target-artifact gate requiring both the synchronized current-frontier gate and
   a complete target-artifact bank.
 
 ## Theorem CMR2428 — HONEST EXECUTION BOUNDARY
 
-A typed artifact, exact support list, locator/digest equality or certificate binding does not prove
-that the artifact statement is true, logically sufficient or correctly reviewed. This checker is
-a documentary integrity layer and permanently publishes
+A typed artifact, exact support list, bundle digest or certificate binding does not prove that the
+artifact statement is true, logically sufficient or correctly reviewed. This checker is a
+documentary integrity layer and permanently publishes
 
 ```text
 all_n_proved_by_checker = 0
@@ -97,10 +102,10 @@ all_n_proved_by_checker = 0
 
 ## Corollary CMR2429 — EXECUTABLE ENDPOINT
 
-`scripts/check_prime_power_atomic_target_artifact_registry.py` validates the complete typed
-artifact bank for all forty-three atomic targets, exact immediate target support and exact external
-registry/certificate bindings.
+`scripts/check_prime_power_atomic_target_artifact_registry.py` version 2 validates the complete
+typed artifact bank for all forty-three atomic targets, exact immediate support, namespace- and
+role-qualified external support, and exact completion-to-bundle sealing.
 
-The script syntax-compiled in the publication environment. A full dependency-backed certificate
-suite was not available here. No atomic target, exceptional chamber, handoff assertion or all-`n`
-implication is claimed proved by this chapter.
+The script syntax-compiled in the publication environment and isolated schema rejection tests
+passed. A full dependency-backed certificate suite was not available here. No atomic target,
+exceptional chamber, handoff assertion or all-`n` implication is claimed proved by this chapter.
