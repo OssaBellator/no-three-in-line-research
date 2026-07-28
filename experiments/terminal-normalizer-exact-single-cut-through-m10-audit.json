@@ -1,0 +1,47 @@
+{
+  "cases": [
+    {
+      "m": 8,
+      "distinct_normalizers": 166,
+      "best_cut_between_consecutive_observed_normalizers": [3152, 3168],
+      "best_two_segment_envelope": "2852/4521",
+      "best_two_segment_envelope_decimal": 0.6308338863083388,
+      "maximizing_target_low_labels": 160,
+      "maximizing_target_high_labels": 1536,
+      "maximizing_target_components": 6,
+      "maximizing_target_cycles_tied": 2,
+      "clean_upper_bound": "2/3",
+      "margin_below_clean_upper_bound": "54/1507"
+    },
+    {
+      "m": 9,
+      "distinct_normalizers": 704,
+      "best_cut_between_consecutive_observed_normalizers": [9648, 9664],
+      "best_two_segment_envelope": "13760/14043",
+      "best_two_segment_envelope_decimal": 0.9798476109093499,
+      "maximizing_target_low_labels": 1024,
+      "maximizing_target_high_labels": 6144,
+      "maximizing_target_components": 8,
+      "maximizing_target_cycles_tied": 2,
+      "clean_upper_bound": "49/50",
+      "margin_below_clean_upper_bound": "107/702150"
+    },
+    {
+      "m": 10,
+      "distinct_normalizers": 684,
+      "best_cut_between_consecutive_observed_normalizers": [39584, 39824],
+      "best_two_segment_envelope": "415800/1535713",
+      "best_two_segment_envelope_decimal": 0.2707537150496219,
+      "maximizing_target_low_labels": 896,
+      "maximizing_target_high_labels": 7168,
+      "maximizing_target_components": 9,
+      "maximizing_target_cycles_tied": 2,
+      "clean_upper_bound": "3/10",
+      "margin_below_clean_upper_bound": "449139/15357130"
+    }
+  ],
+  "cut_definition": "low segment uses the global minimum normalizer; high segment begins at the upper cut value, the next observed normalizer after the lower cut value",
+  "all_best_exact_two_segment_envelopes_contractive": true,
+  "asymptotic_single_cut_theorem_proved": false,
+  "all_exact_regressions_verified": true
+}
