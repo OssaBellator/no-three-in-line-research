@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2453;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2461;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -36,7 +36,9 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - an atomic execution schedule for 13 frontiers and 43 proof targets;
 - a synchronized current-frontier gate binding target, handoff-artifact and chamber layers;
 - noncircular, bundle-sealed typed artifact records for every effectively complete atomic target;
-- one exact literal statement record and verification slot for every cited rule source; and
+- one exact literal statement record for every cited rule source;
+- one sealed source-kind-specific verification artifact for every proved source statement, with an
+  acyclic source-proof support graph; and
 - a source-root gate synchronizing that statement bank with `SOURCE_STATEMENTS_TRUE` and
   `T01_SOURCE_STATEMENTS`.
 
@@ -84,13 +86,13 @@ registry URI, and its atomic completion digest equals the reconstructed artifact
 Immediate target support is exact; external references are namespace- or role-qualified; and a
 target does not cite an ancestor certificate containing its own completion digest.
 
-## Exact source-statement root
+## Exact and sealed source-statement root
 
 CMR2438--CMR2445 give every source in the rule-provenance certificate one canonical statement
 record containing the literal UTF-8 statement, its recomputed SHA-256, its source kind and locator,
 and an exact open/proved verification status.
 
-The fixed verification artifacts are:
+The fixed verification artifact kinds are:
 
 - `definition-conformance-proof` for definitions;
 - `case-split-exhaustiveness-proof` for case splits;
@@ -99,15 +101,26 @@ The fixed verification artifacts are:
 - `exclusion-proof` for excluded cases; and
 - `reproducible-computation-proof` for computations.
 
-A proved statement must carry the exact artifact kind and nonempty locator/digest. An open
-statement must carry no artifact fields. The registry reconstructs each source's complete
-case/clause/axis/exclusion use footprint and prioritizes open sources by decreasing total use.
+CMR2454--CMR2461 require every proved statement to have exactly one canonical verification
+artifact. The statement record binds
 
-The complete source bundle is bound through the existing `source-truth-proof` obligation artifact,
-not through a parallel closure locator. CMR2446--CMR2453 then require the source registry, nested
-obligation registry, `SOURCE_STATEMENTS_TRUE` closure and `T01_SOURCE_STATEMENTS` target to agree.
-The source front advances to `T02_RULE_EXHAUSTIVENESS` only after every exact source statement is
-proved.
+```text
+source-verification-artifact-registry://<source ID>
+```
+
+and the reconstructed per-source artifact-bundle digest. The artifact carries a separate external
+proof locator/digest, the exact statement hash, a proof statement, evidence and a sorted support
+list. Open statements contain no artifact. Artifact IDs are globally unique and the complete
+source-proof support graph must be acyclic.
+
+The registry reconstructs each source's complete case/clause/axis/exclusion use footprint and
+prioritizes open sources by decreasing total use. The complete source bundle is bound through the
+existing `source-truth-proof` obligation artifact, not through a parallel closure locator.
+
+CMR2446--CMR2453 require the source registry, nested obligation registry,
+`SOURCE_STATEMENTS_TRUE` closure and `T01_SOURCE_STATEMENTS` target to agree. The source front
+advances to `T02_RULE_EXHAUSTIVENESS` only after every exact source statement and sealed
+verification artifact are present.
 
 The repository still states that the actual parent rule is absent. No source statement or
 recurrence-exhaustiveness theorem is claimed proved for genuine data.
@@ -150,17 +163,17 @@ CMR2414--CMR2421 synchronize the atomic target certificate with the typed handof
 artifact registry and exact 252-chamber disposition registry. CMR2422--CMR2437 additionally require
 sealed evidence for every effectively complete target.
 
-CMR2446--CMR2453 add the source-root gate. An otherwise consistent current-frontier certificate
-cannot pass that gate unless it presents the exact source-statement registry used by the same
-obligation stack and agrees with `T01_SOURCE_STATEMENTS`.
+CMR2446--CMR2461 add the exact and sealed source-root path. An otherwise consistent
+current-frontier certificate cannot pass that gate unless it presents the exact source-statement
+registry used by the same obligation stack and agrees with `T01_SOURCE_STATEMENTS`.
 
 Every gate remains documentary. Every final checker permanently reports
 `all_n_proved_by_checker = 0`.
 
 ## Genuine current frontier
 
-1. Transcribe every cited source statement exactly, confirm its provenance hash and supply the
-   fixed source-kind-specific verification artifact.
+1. Transcribe every cited source statement exactly, confirm its provenance hash and supply one
+   sealed source-kind-specific verification artifact with noncircular support.
 2. Prove the genuine exhaustive parent-clause recurrence skeleton.
 3. Populate every expected slot, candidate row, recurrent block and interface row with actual
    geometry, fate, route and transition data.
@@ -181,8 +194,10 @@ Every gate remains documentary. Every final checker permanently reports
 
 ## Corrections retained
 
-- Traceability, statement hashes and typed coverage do not prove cited statements true.
-- A provenance digest unattached to literal text is not a verified source statement.
+- A source locator and unattached statement digest do not identify literal mathematical text.
+- Exact statement text and a matching hash do not prove the statement true.
+- Repeating an external source-proof locator/digest is not statement-to-proof binding.
+- Acyclic source-proof support does not establish logical sufficiency.
 - Source-truth readiness does not prove recurrence exhaustiveness.
 - Clause expansion and expected-family skeletons remain relative to supplied rule data.
 - Candidate coverage does not prove the external policy intended.
@@ -206,10 +221,11 @@ Every gate remains documentary. Every final checker permanently reports
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2453**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2461**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support through all forty-three atomic
 frontier targets, an explicit 252-chamber closure registry, sealed execution gates and an exact
-source-statement/T01 work bank. Completion still requires the literal genuine source statements,
-valid proofs of each statement, the actual exhaustive rule and population, proof of every semantic
+source-statement/T01 work bank whose proved entries require sealed, acyclically supported
+verification artifacts. Completion still requires the literal genuine source statements, valid
+proofs of each statement, the actual exhaustive rule and population, proof of every semantic
 statement and chamber disposition, genuine strict blocks, exceptional closure and ordinary
 mathematical review of the final implication to all `n`.
