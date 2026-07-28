@@ -4,7 +4,7 @@ This addendum records the bounded small-reservoir results proved after the curre
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| GC2ge--GC2gi | A donor reservoir of size at most `D` over `K` exact physical donor addresses has `Q sum_{i<=D} binom(K,i)` complete states; recurrent donor churn exposes one canonical membership-restoration gate and closes by monotone depletion, payment, source debit, capacity-one tickets, impossibility or reset | PROVED UNDER THE COMPLETE-LINEAGE AND RESTORATION CONTRACTS | `docs/geometric-cleaning-bounded-small-reservoir-quotient.md` |
+| GC2gj--GC2gn | A donor reservoir of size at most `D` over `K` exact physical donor addresses has `Q sum_{i<=D} binom(K,i)` complete states; recurrent donor churn exposes one canonical membership-restoration gate and closes by monotone depletion, payment, source debit, capacity-one tickets, impossibility or reset | PROVED UNDER THE COMPLETE-LINEAGE AND RESTORATION CONTRACTS | `docs/geometric-cleaning-bounded-small-reservoir-quotient.md` |
 
 ## Updated frontier
 
