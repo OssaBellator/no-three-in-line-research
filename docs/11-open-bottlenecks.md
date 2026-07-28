@@ -2,120 +2,113 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2221 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2253 the branch has:
 
 - 740 canonical raw hosts and 9,260 response records;
-- source-traceable declarative clause expansion into noncircular operation slots;
-- slot-covered populated-fibre and exceptional-tradeoff batches;
-- exact survivor feasibility, intersection and affine-selector certificates;
-- labelled response vectors, Pareto support and common row weights;
-- literal witness-bound routes and scoped simultaneous nonreuse;
-- selected-slot coverage of declared recurrent parents; and
-- one-step common-weight auxiliary elimination.
+- source-traceable finite clause expansion into operation slots;
+- slot-covered populated-fibre and exceptional-tradeoff interfaces;
+- exact survivor geometry and affine selectors;
+- labelled vectors, witness-bound credit and common weights;
+- literal resource-overlap scope derivation;
+- exact common-weight selection across populated candidate slots;
+- acyclic multi-step auxiliary elimination; and
+- denominator-cleared integer recurrent quotient blocks.
 
-No theorem supplies the genuine exhaustive rule, complete real population, justified row
-selection and resource scopes, a real closed strict SCC, or genuine auxiliary expansions.
+No theorem supplies the genuine exhaustive rule, complete real candidate population,
+proved external policy and resource semantics, a genuine complete strict block, or the
+complete global CRT quotient.
 
-## 2. Prove the actual rule source
+## 2. Prove the actual rule and source
 
-Populate the clause manifest with the real parent cases, rule clauses, finite axes and
-excluded rows. For every item, provide exact source provenance.
+Populate the clause manifest with the real parent cases, rule clauses, finite domains and
+excluded rows. Link every ingredient to exact source records, then prove both traceability
+and mathematical correctness/exhaustiveness.
 
-The proof must establish both:
-
-\[
-\text{source traceability}
-\quad\text{and}\quad
-\text{mathematical correctness/exhaustiveness}.
-\]
-
-The checker supplies the first obligation only.
-
-## 3. Populate every expected slot
+## 3. Populate every expected slot and candidate row
 
 For every clause-generated slot, produce one exact linked operation containing:
 
 - canonical host and fibre identity;
 - pre-response points, removals and survivor background;
-- owner/fate witnesses and complete response family;
+- owner/fate witnesses and response family;
 - feasibility, residual and intersection signatures;
-- selector chambers, thresholds and exceptional policy penalties;
-- labelled child vectors and support/obstruction data;
-- literal routed-credit assignments; and
+- selector chambers, thresholds and exceptional penalties;
+- labelled vectors and support data;
+- witness-bound routed-credit assignments; and
 - common weights, row loads and margins.
 
-Pass slot/fibre and exceptional-batch coverage against the same expected registry.
+For each recurrent parent, populate the entire candidate set `C(p)`, not merely the chosen
+operation.
 
-## 4. Prove recurrent row selection
+## 4. Prove the recurrent operation policy
 
-For every recurrent parent `p`, publish the complete candidate set
+Under one primitive global state-weight vector compute
 
 \[
-C(p)=\{\text{clause-generated slots with parent }p\}.
+\lambda_s=\min_Q L_s(Q)
 \]
 
-Then prove why the selected populated slot is the operation used by the recurrence. The
-current checker verifies complete candidate publication and exact row linkage, but not the
-mathematical selection reason or domination of unselected candidates.
+for every populated candidate slot. The finite checker selects the minimum `(lambda_s,
+slot ID)` and publishes every gap. The mathematical proof must still establish that this
+common-weight minimum is the recurrence's intended operation policy and that the candidate
+universe is genuinely exhaustive.
 
-## 5. Prove simultaneous credit semantics
+## 5. Prove simultaneous resource semantics
 
-For each actual recurrence step, define the active row family, operation-instance IDs and
-physical resource scopes. The selected deterministic response in every row then supplies
-literal route assignments.
+For the actual recurrence step, publish the complete active row family. Reconstruct each
+row's complete literal destroyed-triple universe and derive the overlap-component scopes.
+Then prove:
 
-Prove:
-
-1. two distinct scopes are physically independent;
-2. every active row has been included;
-3. every global destroyed-resource key is used at most once; and
-4. every global child-obligation key is paid at most once.
-
-This upgrades per-response injectivity to genuine cross-row nonreuse.
+1. every genuinely simultaneous row is present;
+2. destroyed triples are the complete shared-resource model;
+3. global destroyed-resource keys are injective; and
+4. global child-obligation keys are injective.
 
 ## 6. Close common recurrent blocks
 
-For every candidate block, provide one primitive positive global state-weight vector. The
-block must have exact parent-row coverage and satisfy
+For every candidate block, provide one primitive positive state-weight vector and prove
+exact parent coverage together with
 
 \[
 \boxed{
-\text{closed}
-\land
-\text{strongly connected}
-\land
+\text{closed}\land
+\text{strongly connected}\land
 \min_p\mu_p>0.
 }
 \]
 
-Bind every parent row to one selected populated slot from the complete candidate set.
-Open blocks and rows strict under unrelated weights remain diagnostics only.
+All parent rows must be the exact winners of the populated common-weight candidate policy.
 
-## 7. Eliminate auxiliaries
+## 7. Eliminate the complete auxiliary DAG
 
-For every positively used auxiliary `a`, prove an actual expansion
+For every positively used auxiliary, prove an actual finite expansion. Auxiliary targets
+may occur only through an acyclic graph. Compute every effective nonauxiliary expansion and
+prove local and fully expanded domination under the common weights. Route no destroyed
+credit to an eliminated coordinate.
+
+If elimination changes a selected response, regenerate and re-audit the literal routes for
+the new response before quotient assembly.
+
+## 8. Produce integer recurrent quotient blocks
+
+For every block publish canonical integer data
 
 \[
-a\rightsquigarrow f_a+\sum_t m_{a,t}t
+(A,b,w,\mu),
+\qquad
+w-b-Aw=\mu>0.
 \]
 
-with nonauxiliary targets and
+Verify exact candidate policy, overlap-derived scopes, selected-response stability,
+auxiliary elimination and strict margins. Then prove cross-block state identity and assemble
+all recurrent, off-diagonal, return and interface blocks.
 
-\[
-f_a+\sum_t m_{a,t}w_t\le w_a.
-\]
+## 9. Close exceptional and hard-core rows
 
-Ensure no destroyed credit is routed directly to an eliminated auxiliary coordinate.
-Apply the responsewise substitution and retain the transformed vectors and margins.
-
-## 8. Close exceptional and hard-core rows
-
-For every exceptional selected operation, retain the exact values `M`, `M_3`, `M_0`, the
-destroyed threshold `T`, all policy penalties and the full labelled row.
-
-Use all 232 zero-selector chambers on the 78 zero-capable hosts and all 20 full-selector
-chambers on the eleven-host hard core. Compose scalar improvement with simultaneous
-nonreuse, common weights, return/interface terms and auxiliary elimination.
+For every exceptional selected operation retain `M`, `M_3`, `M_0`, destroyed threshold `T`,
+all penalties and the full labelled row. Use all 232 zero-selector chambers and all 20
+hard-core full-selector chambers, composed with common weights, resource nonreuse,
+interface terms and full auxiliary elimination.
 
 The eleven positive-minimum hosts retain three independent scalar measurements:
 
@@ -123,76 +116,80 @@ The eleven positive-minimum hosts retain three independent scalar measurements:
 2. minimum rollback distance: 12; and
 3. independent uniform correction: 44 units.
 
-## 9. Immediate execution order
+## 10. Immediate execution order
 
 ### Priority 1: real rule and provenance
 
-Write and prove the exhaustive parent cases, clauses, domains, exclusions and source links.
+Write and prove the exhaustive clauses, domains, exclusions and source links.
 
 ### Priority 2: complete genuine population
 
-Generate one real linked operation for every expected slot and pass exact coverage.
+Generate one real linked operation per expected slot and one row certificate per candidate.
 
-### Priority 3: selected recurrent rows
+### Priority 3: genuine operation policy
 
-Publish every parent candidate set and prove the selected operation policy.
+Prove the common-weight minimum policy and all unselected candidate gaps.
 
 ### Priority 4: real geometry and exceptional batches
 
-Run feasibility, intersection, selector, threshold and labelled-vector certificates on all
-selected operations.
+Run every selector, threshold, feasibility and labelled certificate on actual operations.
 
 ### Priority 5: genuine simultaneous nonreuse
 
-Publish the actual active execution scopes and prove global resource/obligation injectivity.
+Publish the actual active row family, derive overlap scopes and prove resource-model
+exhaustiveness plus global injectivity.
 
-### Priority 6: closed common-weight SCCs
+### Priority 6: closed strict blocks
 
 Prove exact coverage, closure, strong connectivity and positive common margins.
 
-### Priority 7: auxiliary elimination
+### Priority 7: full auxiliary elimination
 
-Supply semantically valid expansion tables and eliminate all auxiliary coordinates.
+Supply semantically valid acyclic expansion DAGs and eliminate every auxiliary coordinate.
 
-### Priority 8: final quotient
+### Priority 8: integer block and global quotient assembly
 
-Close every exceptional row, finish fate/interface/state semantics and publish the
-integer denominator-cleared CRT quotient.
+Publish every integer block, identify cross-block states, close exceptional/interface terms
+and assemble the final denominator-cleared CRT quotient.
 
-## 10. Genuine unresolved modules
+## 11. Genuine unresolved modules
 
 1. Genuine exhaustive parent-case and clause manifest.
 2. Mathematical source correctness and provenance.
-3. Complete slot-to-fibre population.
+3. Complete slot and candidate-row population.
 4. Actual point/removal/background and transition semantics.
-5. Proven row-selection policy.
+5. Proven common-weight candidate policy.
 6. Real geometry and exceptional-tradeoff batches.
-7. Genuine simultaneous execution and scope semantics.
-8. Global cross-row resource and obligation nonreuse.
+7. Genuine active simultaneous row family.
+8. Exhaustiveness of the destroyed-triple shared-resource model.
 9. Closed strict common-weight recurrent SCCs.
-10. Genuine auxiliary expansion tables and elimination.
-11. Nine one-triple hard-core resolutions.
-12. Two four-triple one-response resolutions.
-13. Seventy-eight exceptional complete rows.
-14. Remaining deletion, domination, transfer, interface and state-label proofs.
-15. The global denominator-cleared integer quotient.
+10. Genuine acyclic auxiliary expansion DAGs.
+11. Complete integer recurrent and interface blocks.
+12. Cross-block state identification and return/interface assembly.
+13. Nine one-triple hard-core resolutions.
+14. Two four-triple one-response resolutions.
+15. Seventy-eight exceptional complete rows.
+16. Remaining deletion, domination, transfer and state-label proofs.
+17. The global denominator-cleared integer quotient.
 
-## 11. Honesty boundaries
+## 12. Honesty boundaries
 
 - Traceability does not prove source statements true.
 - Finite clause expansion does not prove the supplied rule complete.
-- Slot and recurrent-population completeness remain relative to that rule registry.
-- Complete candidate sets do not prove the selected policy correct.
-- Scoped nonreuse does not prove the scope partition physically valid.
+- Complete candidate rows do not prove the external policy intended.
+- Overlap-derived scopes do not prove the active row family complete or the resource model
+  exhaustive.
 - Common weights do not imply closure, connectivity or strictness.
-- Auxiliary weighted domination does not prove the declared expansion semantic.
-- Scalar exceptional thresholds do not prove labelled SCC contraction.
+- Acyclic weighted elimination does not prove transition semantics.
+- Integer block identities do not prove global block coverage or cross-block composition.
+- Scalar exceptional thresholds do not prove labelled contraction.
 - Finite checker publication does not imply full dependency suites ran here.
 
-## 12. Current endpoint
+## 13. Current endpoint
 
-Through CMR2221 the finite interface now reaches from source-traceable rule clauses through
-selected populated recurrent rows to scoped simultaneous credit nonreuse and exact
-margin-preserving auxiliary elimination. The unresolved center is the genuine mathematics:
-actual exhaustive rule data, complete population, proved selection/scope/transition
-semantics, closed strict recurrent blocks and the final global CRT quotient.
+Through CMR2253 the finite interface reaches from source-traceable rule clauses through
+literal scope derivation and complete common-weight candidate selection to acyclic
+auxiliary elimination and exact denominator-cleared integer recurrent blocks. The
+unresolved center is the genuine mathematics: actual exhaustive data, policy/resource and
+transition semantics, complete strict block coverage, exceptional closure and the final
+global CRT quotient.
