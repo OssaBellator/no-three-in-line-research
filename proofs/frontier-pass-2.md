@@ -23,9 +23,10 @@ This addendum records the threshold-degree transportation bounds proved after th
 | SRR2cu--SRR2cy | Physical source mass, existing atom balances and exact burden demands form one integral physical/atom/burden network; simultaneous issuance and payment are max-flow, while failure returns one exact physical-source/atom/burden cut | PROVED UNDER THE COMPLETE PHYSICAL ATOM-BURDEN NETWORK CONTRACT | `docs/superregular-integrated-physical-atom-burden-flow.md` |
 | SRR2cz--SRR2dd | Residual reachability returns exact outside burden and physical-source/atom barriers while preserving the complete witness dictionary | PROVED UNDER THE COMPLETE GEOMETRIC ATOM-CUT CONTRACT | `docs/superregular-geometric-atom-cut-extraction.md` |
 | SRR2de--SRR2di | Every unpaid complete burden network has a canonical minimum-cardinality burden core; every proper subset is payable and each retained burden has marginal shortfall equal to the full core deficit | PROVED UNDER THE COMPLETE IRREDUCIBLE BURDEN-CORE CONTRACT | `docs/superregular-irreducible-burden-core.md` |
+| SRR2dj--SRR2dn | Every non-singleton irreducible burden core has exact physical-source/atom competition equal to its full deficit across every bipartition; singleton cores are direct burden shortages and any split with smaller overlap excludes the core | PROVED UNDER THE COMPLETE FIXED-NETWORK AND EXACT SUBSET MAX-FLOW CONTRACT | `docs/superregular-core-overlap-certificate.md` |
 
 ## Updated frontier
 
-The endpoint objective now has transportation, tensor/perturbation, witness-atom budgets, exact cut barriers and canonical irreducible burden cores. Remaining work is constructing the actual geometric tensor reference and proving that the returned local burden marginal shortage is impossible or paid through concrete forward, reverse, conditioning, capacity and physical-source estimates.
+The endpoint objective now has transportation, tensor/perturbation, witness-atom budgets, exact cut barriers, irreducible burden cores and exact overlap certificates. Remaining work is constructing the actual geometric tensor reference and proving that each returned singleton burden shortage or canonical physical-source/atom overlap is impossible or paid through concrete forward, reverse, conditioning, capacity and source estimates.
 
 No statement here proves SRR2, SRR4 or the no-three-in-line conjecture.
