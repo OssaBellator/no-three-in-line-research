@@ -2,34 +2,38 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2285 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2317 the branch has:
 
 - 740 canonical raw hosts and 9,260 response records;
 - source-traceable finite clause expansion into operation slots;
 - slot-covered populated-fibre and exceptional-tradeoff interfaces;
-- exact survivor geometry and affine selectors;
-- labelled vectors, witness-bound credit and common weights;
-- literal resource-overlap scope derivation;
-- exact common-weight selection across populated candidate slots;
-- acyclic multi-step auxiliary elimination;
-- denominator-cleared integer recurrent quotient blocks;
-- exact cross-block state classes and componentwise weight synchronization;
-- strict-or-ranked global return/interface rows; and
-- an expected-family global integer quotient package `(A,b,W,mu,rho)`.
+- exact survivor geometry, affine selectors and labelled response vectors;
+- witness-bound credit, common weights and literal resource scopes;
+- complete candidate-operation comparison within supplied populations;
+- acyclic auxiliary elimination and integer recurrent blocks;
+- cross-block state classes, exact scale synchronization and interface rows;
+- a global integer quotient `(A,b,W,mu,rho)`;
+- source-independent derivation of the expected global family;
+- spanning equivalence evidence for shared state classes;
+- support SCC condensation and exact critical-rank path bounds; and
+- a fixed nineteen-obligation semantic closure DAG.
 
-No theorem supplies the genuine exhaustive rule, complete real population, proved external
-policy/resource/transition semantics, genuine complete blocks and interface rows, or a proof
-that the assembled global quotient is the actual exhaustive recurrence.
+No theorem supplies the genuine exhaustive recurrence, complete real population, proved
+external semantics, genuine complete strict blocks and interface rows, or a proof that the
+global quotient implies `D(n)=2n`.
 
-## 2. Prove the actual rule and source
+## 2. Prove source truth and the actual recurrence skeleton
 
-Populate the clause manifest with the real parent cases, rule clauses, finite domains and
-excluded rows. Link every ingredient to exact source records, then prove both traceability
-and mathematical correctness/exhaustiveness.
+Populate the source records with the actual mathematical statements. Prove those statements
+true, then give one canonical source-independent parent clause for every genuine global
+parent. The parent-clause list must derive the complete expected block, interface-row and
+parent registries without inspecting populated rows.
 
-## 3. Populate every expected slot and candidate row
+This closes obligations `SOURCE_STATEMENTS_TRUE` and `RULE_EXHAUSTIVE`.
 
-For every clause-generated slot, produce one exact linked operation containing:
+## 3. Populate every slot and candidate operation
+
+For every clause-generated operation slot, produce one exact linked operation containing:
 
 - canonical host and fibre identity;
 - pre-response points, removals and survivor background;
@@ -40,96 +44,101 @@ For every clause-generated slot, produce one exact linked operation containing:
 - witness-bound routed-credit assignments; and
 - common weights, row loads and margins.
 
-For each recurrent parent, populate the entire candidate set `C(p)`, not merely the chosen
-operation.
+For every recurrent parent, populate the entire candidate set `C(p)`, not merely the selected
+operation. This closes `SLOT_AND_CANDIDATE_POPULATION` only after exact completeness is proved.
 
-## 4. Prove the recurrent operation policy
+## 4. Prove geometry, selectors and operation policy
 
-Under one primitive block weight vector compute
+Validate every real background and exceptional threshold. For every populated candidate slot
+compute
 
 \[
-\lambda_s=\min_Q L_s(Q)
+\lambda_s=\min_Q L_s(Q).
 \]
 
-for every populated candidate slot. The finite checker selects the minimum
-`(lambda_s, slot ID)` and publishes every gap. The mathematical proof must establish that
-this common-weight minimum is the recurrence's intended policy and that the candidate
-universe is genuinely exhaustive.
+The finite policy selects the minimum `(lambda_s, slot ID)` and publishes all gaps. The proof
+must establish that the geometric and labelled row formulas are correct for the actual
+operation and that this minimum is the intended recurrence policy.
 
-## 5. Prove simultaneous resource semantics
+This closes `GEOMETRY_SELECTOR_CORRECT` and `CANDIDATE_POLICY_CORRECT`.
 
-For the actual recurrence step, publish the complete active row family. Reconstruct each
-row's complete literal destroyed-triple universe and derive the overlap-component scopes.
+## 5. Prove fate, transition and state semantics
 
-Prove that every simultaneous row is present, destroyed triples are the complete shared
-resource model, and global destroyed-resource and child-obligation keys are injective.
+Prove every owner/fate witness, child state, deletion, domination and transfer statement.
+Show that local state definitions and their role/stratum/owner data represent the intended
+mathematical conditions.
 
-## 6. Close common recurrent blocks
+This closes `FATE_TRANSITION_STATE_SEMANTICS` and supplies the semantic basis for auxiliary,
+credit and cross-block arguments.
 
-For every candidate block, provide one primitive positive state-weight vector and prove
+## 6. Prove simultaneous resource and credit semantics
+
+Publish the complete active row family for every genuine recurrence step. Derive the literal
+destroyed-triple overlap scopes and prove:
+
+1. every simultaneous row is present;
+2. destroyed triples are the complete shared-resource model;
+3. global destroyed-resource keys are injective;
+4. global child-obligation keys are injective; and
+5. every routed credit belongs to its declared child transition.
+
+This closes `ACTIVE_ROW_FAMILY_EXHAUSTIVE`, `DESTROYED_RESOURCE_MODEL_EXHAUSTIVE` and
+`CREDIT_ROUTING_SEMANTIC`.
+
+## 7. Close every recurrent block
+
+For every recurrent block, prove exact parent coverage and
 
 \[
 \boxed{
-\text{exact parent coverage}
-\land\text{closed}
+\text{closed}
 \land\text{strongly connected}
 \land\min_p\mu_p>0.
 }
 \]
 
-All parent rows must be the exact winners of the populated candidate policy.
+Every selected parent row must be the exact winner of the complete populated candidate policy.
+This closes `CLOSED_STRICT_RECURRENT_BLOCKS`.
 
-## 7. Eliminate the complete auxiliary DAG
+## 8. Prove and eliminate the auxiliary DAG
 
 For every positively used auxiliary, prove an actual finite acyclic expansion. Compute every
-effective nonauxiliary expansion and prove local and fully expanded domination under the
-common weights. Route no destroyed credit to an eliminated coordinate.
+effective nonauxiliary expansion and verify local and fully expanded weight domination. Route
+no destroyed credit to an eliminated coordinate. If elimination changes a selected response,
+regenerate and re-audit its literal routes.
 
-If elimination changes a selected response, regenerate and re-audit its literal routes.
+This closes `AUXILIARY_EXPANSIONS_SEMANTIC`.
 
-## 8. Produce every integer recurrent block
+## 9. Prove cross-block state equivalence and scales
 
-For every block publish canonical integer data
+For every shared global class, prove the pairwise statements on a spanning evidence tree and
+justify transitive equivalence. Prove unlinked classes genuinely distinct where needed.
+Then prove every exact block-ratio relation and the positive relative multipliers between
+disconnected components.
 
-\[
-(A,b,w,\mu),\qquad w-b-Aw=\mu>0.
-\]
+This closes `CROSS_BLOCK_STATE_IDENTITY_SEMANTIC` and `COMPONENT_SCALE_SEMANTIC`.
 
-Verify policy, scopes, selected-response stability, auxiliary elimination and strict margins.
+## 10. Prove return/interface rows and ranks
 
-## 9. Prove cross-block state identity and scales
+Publish every genuine return, interface and off-diagonal row. Prove the family exhaustive and
+every row has positive global margin or zero margin with strict descent in a genuinely
+well-founded rank. The finite support checker then gives an exact bound on every consecutive
+critical-only chain and proves every support cycle contains a strict edge.
 
-For every local block state publish one global-state link. Prove that each global class is
-the intended mathematical state, not merely a matching role/stratum/owner tuple.
+This closes `INTERFACE_RETURN_ROWS_EXHAUSTIVE` and `GLOBAL_RANK_WELL_FOUNDED`.
 
-Use shared states to derive exact block-scale ratios. For disconnected scale components,
-prove the positive component multipliers used by the global Lyapunov vector.
+## 11. Prove the global family exhaustive
 
-## 10. Close return, interface and off-diagonal rows
-
-Publish every genuine return/interface row and one complete global state-rank registry.
-Prove each row has positive global margin or zero margin with strict well-founded rank
-descent. Prove that the supplied row family and rank semantics are exhaustive and correct.
-
-## 11. Assemble the genuine global integer quotient
-
-Publish the expected family manifest containing every recurrent block, interface row and
-global parent state. Require exact coverage and assemble
-
-\[
-\boxed{(A,b,W,\mu,\rho).}
-\]
-
-Then prove the manifest is the genuine exhaustive recurrence, all state identifications and
-rows have their intended semantics, and the strict/ranked integer package implies the target
-all-`n` inequality.
+Use the actual recurrence skeleton to derive the expected blocks, interface rows and parents.
+Populate all of them, pass exact family coverage and prove no additional recurrence cases
+exist. This closes `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`.
 
 ## 12. Close exceptional and hard-core rows
 
 For every exceptional selected operation retain `M`, `M_3`, `M_0`, destroyed threshold `T`,
 all penalties and the full labelled row. Use all 232 zero-selector chambers and all 20
-hard-core full-selector chambers, composed with common weights, resource nonreuse,
-interface terms and full auxiliary elimination.
+hard-core full-selector chambers, composed with common weights, resource nonreuse, interface
+terms and full auxiliary elimination.
 
 The eleven positive-minimum hosts retain three independent scalar measurements:
 
@@ -137,91 +146,108 @@ The eleven positive-minimum hosts retain three independent scalar measurements:
 2. minimum rollback distance: 12; and
 3. independent uniform correction: 44 units.
 
-## 13. Immediate execution order
+This closes `EXCEPTIONAL_ZERO_ROWS_CLOSED` and `HARD_CORE_ROWS_CLOSED`.
 
-### Priority 1: real rule and provenance
+## 13. Prove the global quotient implication
 
-Write and prove the exhaustive clauses, domains, exclusions and source links.
+After all prior obligations close, assemble the genuine package
+
+\[
+\boxed{(A,b,W,\mu,\rho).}
+\]
+
+Prove that strict weight decrease and bounded critical-rank descent control the actual
+recurrence, terminate every branch, preserve all invariants and imply the target no-three-in-
+line lower bound for every `n`. This closes `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
+
+The checker can mark an implication dossier ready only after all dependencies and proof
+artifacts are present. It never declares the theorem proved by itself.
+
+## 14. Immediate execution order
+
+### Priority 1: source truth and exhaustive skeleton
+
+Write and prove the genuine source statements and parent-clause registry.
 
 ### Priority 2: complete genuine population
 
 Generate one real linked operation per expected slot and one row certificate per candidate.
 
-### Priority 3: genuine operation policy
+### Priority 3: real geometry and policy
 
-Prove the common-weight minimum policy and all unselected candidate gaps.
+Run every selector, threshold, feasibility and labelled certificate and prove the chosen
+candidate policy.
 
-### Priority 4: real geometry and exceptional batches
+### Priority 4: transition and resource semantics
 
-Run every selector, threshold, feasibility and labelled certificate on actual operations.
+Prove fate/state transitions, active-row completeness, resource-model exhaustiveness and
+routed-credit legality.
 
-### Priority 5: genuine simultaneous nonreuse
+### Priority 5: closed blocks and auxiliaries
 
-Publish the actual active row family, derive overlap scopes and prove resource-model
-exhaustiveness plus global injectivity.
+Prove strict closed SCCs and semantically valid auxiliary expansion DAGs.
 
-### Priority 6: closed strict blocks
+### Priority 6: cross-block and interface semantics
 
-Prove exact coverage, closure, strong connectivity and positive common margins.
+Prove global state equivalences, component scales, complete interface rows and rank descent.
 
-### Priority 7: full auxiliary elimination
+### Priority 7: exceptional closure
 
-Supply semantically valid acyclic expansion DAGs and eliminate every auxiliary coordinate.
+Close all 232 zero-selector obligations and the complete 20-chamber hard core.
 
-### Priority 8: cross-block and interface semantics
+### Priority 8: final implication
 
-Prove global state classes, component scales, return/interface rows and rank descent.
+Pass the complete skeleton-derived global family and prove the integer quotient implies the
+all-`n` theorem.
 
-### Priority 9: genuine global quotient
+## 15. Fixed semantic obligation DAG
 
-Populate the expected global family, pass exact coverage and prove the resulting integer
-quotient is the exhaustive recurrence needed for the conjecture.
+The current executable closure surface fixes these nineteen obligations:
 
-## 14. Genuine unresolved modules
+1. `SOURCE_STATEMENTS_TRUE`;
+2. `RULE_EXHAUSTIVE`;
+3. `SLOT_AND_CANDIDATE_POPULATION`;
+4. `GEOMETRY_SELECTOR_CORRECT`;
+5. `FATE_TRANSITION_STATE_SEMANTICS`;
+6. `CANDIDATE_POLICY_CORRECT`;
+7. `ACTIVE_ROW_FAMILY_EXHAUSTIVE`;
+8. `DESTROYED_RESOURCE_MODEL_EXHAUSTIVE`;
+9. `CREDIT_ROUTING_SEMANTIC`;
+10. `CLOSED_STRICT_RECURRENT_BLOCKS`;
+11. `AUXILIARY_EXPANSIONS_SEMANTIC`;
+12. `CROSS_BLOCK_STATE_IDENTITY_SEMANTIC`;
+13. `COMPONENT_SCALE_SEMANTIC`;
+14. `INTERFACE_RETURN_ROWS_EXHAUSTIVE`;
+15. `GLOBAL_RANK_WELL_FOUNDED`;
+16. `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`;
+17. `EXCEPTIONAL_ZERO_ROWS_CLOSED`;
+18. `HARD_CORE_ROWS_CLOSED`; and
+19. `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
 
-1. Genuine exhaustive parent-case and clause manifest.
-2. Mathematical source correctness and provenance.
-3. Complete slot and candidate-row population.
-4. Actual point/removal/background and transition semantics.
-5. Proven common-weight candidate policy.
-6. Real geometry and exceptional-tradeoff batches.
-7. Genuine active simultaneous row family.
-8. Exhaustiveness of the destroyed-triple shared-resource model.
-9. Closed strict common-weight recurrent SCCs.
-10. Genuine acyclic auxiliary expansion DAGs.
-11. Complete integer recurrent blocks.
-12. Semantically proved cross-block state identification.
-13. Semantically proved relative block/component scales.
-14. Complete genuine return/interface/off-diagonal rows.
-15. Complete global state-rank semantics.
-16. Genuine expected global block/row/parent manifest.
-17. Nine one-triple hard-core resolutions.
-18. Two four-triple one-response resolutions.
-19. Seventy-eight exceptional complete rows.
-20. Remaining deletion, domination, transfer and state-label proofs.
-21. Proof that the global denominator-cleared quotient establishes all `n`.
+The exact dependency lists are code-defined. An obligation cannot close while any dependency
+remains open.
 
-## 15. Honesty boundaries
+## 16. Honesty boundaries
 
-- Traceability does not prove source statements true.
-- Finite clause expansion does not prove the supplied rule complete.
+- Traceability and evidence digests do not prove cited statements true.
+- Finite clause expansion and family skeletons do not prove the supplied rule exhaustive.
 - Complete candidate rows do not prove the external policy intended.
-- Overlap-derived scopes do not prove the active row family complete or the resource model
-  exhaustive.
+- Overlap-derived scopes do not prove active-row or resource-model completeness.
 - Common weights do not imply closure, connectivity or strictness.
 - Acyclic weighted elimination does not prove transition semantics.
-- Local-to-global link consistency does not prove external state identity.
-- Shared states do not fix scales between disconnected block components.
-- Strict-or-ranked interface rows do not prove the interface family exhaustive.
-- Expected-family coverage remains relative to the supplied expected manifest.
-- Scalar exceptional thresholds do not prove labelled contraction.
+- Spanning state-evidence trees do not prove external equivalence.
+- Shared states do not fix scales between disconnected components.
+- Strict-or-ranked rows do not prove the interface family exhaustive.
+- Support condensation does not prove the quotient models the original recurrence.
+- Proof-obligation artifacts are not machine-verified mathematical proofs.
+- A ready dossier is not itself a proof of the conjecture.
 - Finite checker publication does not imply full dependency suites ran here.
 
-## 16. Current endpoint
+## 17. Current endpoint
 
-Through CMR2285 the finite interface reaches from source-traceable rule clauses through
-literal scopes, complete candidate selection and acyclic auxiliary elimination to exact
-cross-block state/weight assembly, global strict-or-ranked interface rows and one canonical
-expected-family integer quotient. The unresolved center is the genuine mathematics: actual
-exhaustive data, policy/resource/transition/cross-block semantics, complete strict blocks,
-exceptional closure and the proof that the global quotient settles the conjecture.
+Through CMR2317 the finite interface reaches from source-traceable rule clauses to a
+noncircular expected global family, documentary cross-block equivalence, exact support/rank
+termination structure and a fixed machine-readable semantic proof frontier. The unresolved
+center is the genuine mathematics: actual exhaustive data, proof of every semantic obligation,
+exceptional and hard-core closure, and the reviewed implication from the global quotient to
+all `n`.
