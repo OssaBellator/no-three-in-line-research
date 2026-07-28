@@ -113,31 +113,69 @@ all 120 possible owner triples gives the exact minimum 40. ∎
 Therefore the owner-intersecting macro targetability of PP3blr and PP3bmg
 extends through `m=10`, despite the appearance of rank-one clean parity graphs.
 
-## 4. Finite preprocessing and macro interface through `m=10`
+## 4. Every optimal violated edge can be hit by a direct clean rotation
 
-### Corollary PP3bnt -- VERIFIED FINITELY / FRONTIER EXTENDED
+### Theorem PP3bnt -- VERIFIED FINITELY / MARKED CORE TARGETABILITY
+
+For every pair-safe `m=10` cycle `rho`, every orientation attaining
+`lambda(rho)>0`, and every parity edge violated by that orientation, there is a
+successor rotation satisfying all three properties:
+
+1. its target cycle is parity satisfiable;
+2. its source triple meets an endpoint of the selected violated edge;
+3. it therefore replaces at least one directed assignment supporting that edge.
+
+The complete audit contains
+
+```text
+13,185,264
+```
+
+optimal violated-edge instances.  None is untargetable.  The minimum number of
+direct clean rotations meeting one selected violated edge is six, and every
+positive-frustration cycle has at least 11 direct clean rotations before an edge
+is specified.
+
+#### Verification
+
+For every pair-safe positive-frustration cycle, the checker enumerates all
+minimum orientations, records every violated parity edge, constructs the mask
+of rotations whose target cycle is clean, and intersects that mask with the
+source triples meeting either endpoint of the selected edge.  The exact minimum
+and total-check counts are compared with the stored ledger. ∎
+
+This extends the marked-core targeting theorem PP3bnj from `m<=9` to the first
+nonforest size.
+
+## 5. Finite preprocessing and macro interface through `m=10`
+
+### Corollary PP3bnu -- VERIFIED FINITELY / FRONTIER EXTENDED
 
 At `m=10`, any pair-safe Hamilton cycle can be brought to the parity-clean
 manifold by at most one successor rotation and global parity reoptimization.
-Once clean, it lies in the unique clean rotation component and every three-owner
-set has at least 40 clean intersecting rotations.
+Every edge in every minimum frustration core can be selected in advance and hit
+by such a direct clean rotation.  Once clean, the cycle lies in the unique clean
+rotation component and every three-owner set has at least 40 clean intersecting
+rotations.
 
 #### Proof
 
 If the source is clean there is nothing to do.  Otherwise PP3bnr supplies a
-direct clean rotation.  PP3bns supplies connected clean mobility and the
-owner-intersection bound. ∎
+direct clean rotation, while PP3bnt permits any selected optimal violated edge
+to be hit.  PP3bns supplies connected clean mobility and the owner-intersection
+bound. ∎
 
 The reoptimization is cycle-level and may change many orientation bits.  The
 result does not yet control atomic three-owner collateral, weighted predecessor
 charge, or the distance to a line-valid signed state.
 
-## 5. Revised asymptotic frontier
+## 6. Revised asymptotic frontier
 
 The favorable finite pattern now survives the first nonforest parity fibres:
 
 ```text
 m<=10 pair-safe inconsistent cycle -> clean cycle in one rotation,
+m<=10 every optimal violated edge is targetable by a descending rotation,
 m<=10 clean induced rotation graph connected,
 m=10 every owner triple has at least 40 clean intersecting rotations.
 ```
