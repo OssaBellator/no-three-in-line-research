@@ -1,0 +1,19 @@
+{
+  "audited_sizes": [8, 9, 10],
+  "reference_relative_threshold": "16/5",
+  "common_stability_interval": {
+    "lower_open": "595/186",
+    "upper_closed": "298/93"
+  },
+  "cases": [
+    {"m": 8, "minimum_normalizer": 1096, "previous_observed_normalizer": 3488, "selected_observed_normalizer": 3524, "selection_interval": ["436/137", "881/274"], "low_labels": 432, "high_labels": 1152, "lower_endpoint_limit_envelope": "58914/81515"},
+    {"m": 9, "minimum_normalizer": 2976, "previous_observed_normalizer": 9520, "selected_observed_normalizer": 9536, "selection_interval": ["595/186", "298/93"], "low_labels": 1024, "high_labels": 6144, "lower_endpoint_limit_envelope": "54752/55335"},
+    {"m": 10, "minimum_normalizer": 9872, "previous_observed_normalizer": 31520, "selected_observed_normalizer": 31648, "selection_interval": ["1970/617", "1978/617"], "low_labels": 896, "high_labels": 7168, "lower_endpoint_limit_envelope": "16664/52445"}
+  ],
+  "uniform_upper_limit": "54752/55335",
+  "uniform_margin_below_one": "583/55335",
+  "same_selected_cut_throughout_common_interval": true,
+  "reference_threshold_is_strictly_inside_interval": true,
+  "asymptotic_robust_interval_proved": false,
+  "all_exact_regressions_verified": true
+}
