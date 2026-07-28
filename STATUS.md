@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not**
-contain a complete proof. The authoritative theorem ledger reaches CMR2509; CMR2390 onward is in
+contain a complete proof. The authoritative theorem ledger reaches CMR2533; CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 ## Current finite endpoint
@@ -23,6 +23,9 @@ include:
 - exact T07 fate, state and transition semantic subjects and claims;
 - exact T06 candidate scores, complete candidate sets, deterministic winners and T02
   application-to-winner records;
+- exact T08 active rows derived from every T06 global-parent application;
+- exact T09 literal destroyed-resource universes, overlap graph and canonical scopes;
+- exact T10 routed-credit subjects, semantic route assignments and global injectivity tests;
 - typed artifact registries for obligations, premises, handoff assertions and all 43 atomic targets;
 - an exact 252-chamber exceptional worklist;
 - a synchronized current-frontier gate and seven-gate final dossier audit.
@@ -63,14 +66,8 @@ Every subject has exactly one canonical claim containing a statement, evidence a
 claim IDs. The checker reconstructs the complete support graph and canonical topological order and
 rejects cycles, unknown support, duplicates and self-support.
 
-A proved slot requires one:
-
-```text
-slot-fate-transition-state-proof
-```
-
-artifact. Its exact support is the slot's T03 population artifact plus every T04 assembly artifact
-whose skeleton parent uses that slot.
+A proved slot requires one `slot-fate-transition-state-proof` artifact. Its exact support is the
+slot's T03 population artifact plus every T04 assembly artifact whose skeleton parent uses that slot.
 
 The aggregate state and transition banks are bound by the required
 `FATE_TRANSITION_STATE_SEMANTICS` artifacts:
@@ -99,13 +96,9 @@ T05_GEOMETRY_SELECTORS + T07_FATE_TRANSITION_STATE
 The older common-weight candidate-policy checker imports recurrent-block common weights and therefore
 cannot define T06 without a dependency cycle. It remains a later recurrent-block consistency audit.
 
-Every expected slot now has one open/proved candidate-score record. A proved record binds:
-
-- the exact T03 population payload and `row_loads` digest;
-- the exact T05 selector summary;
-- the exact T07 semantic certificate;
-- an externally proved integer `minimum_labelled_row_load`; and
-- one `candidate-score-proof` artifact citing the exact T05 and T07 slot artifacts.
+Every expected slot has one open/proved candidate-score record. A proved record binds the exact T03
+payload and `row_loads` digest, the exact T05 selector summary, the exact T07 semantic certificate, an
+externally proved integer `minimum_labelled_row_load`, and one `candidate-score-proof` artifact.
 
 For every local parent, the complete candidate set is reconstructed from all expected slots with that
 `parent_state_id`. A proved parent record computes the winner by:
@@ -114,30 +107,82 @@ For every local parent, the complete candidate set is reconstructed from all exp
 (minimum_labelled_row_load, slot_id)
 ```
 
-and publishes the minimum, minimizer count, selected slot and every nonnegative score gap. Its
-`parent-candidate-policy-proof` cites every candidate-score artifact.
-
-Every T02 global-parent application has one application-policy record. A proved application requires
-the T02 applied slot to equal the reconstructed parent winner. Its
-`candidate-policy-application-proof` cites the parent-policy artifact and exact T02 application
-artifact.
+and publishes the minimum, minimizer count, selected slot and every nonnegative score gap. Every T02
+global-parent application must use that reconstructed winner.
 
 The aggregate bank is bound by the `CANDIDATE_POLICY_CORRECT` obligation artifact and the T06 target
-artifact, both of kind:
-
-```text
-candidate-policy-proof
-```
+artifact, both of kind `candidate-policy-proof`.
 
 This verifies candidate-set and minimization identity. It does not verify the external score theorem.
+
+## Exact T08 active-row frontier
+
+CMR2510--CMR2517 derive exactly one active row from every T06 global-parent application. The active-row
+list is therefore not supplied independently.
+
+Every row binds the global and local parent IDs, selected slot, exact T06 application record, T03
+payload plus row-load/response/credit/transition digests, selected-slot T07 semantic certificate, and
+every T04 assembly unit containing that global parent.
+
+A proved row requires one `active-row-member-proof` citing exactly:
+
+- the T06 application artifact;
+- every using T04 population artifact; and
+- the selected slot's T07 semantic artifact.
+
+The aggregate bank is bound by the `ACTIVE_ROW_FAMILY_EXHAUSTIVE`
+`active-family-exhaustiveness-proof` and the T08 `active-family-proof` target artifact. The bank
+excludes ancestors containing the T08 completion digest.
+
+This proves exact row identity relative to the supplied recurrence skeleton. It does not prove that
+those rows are the genuine complete simultaneous recurrence family.
+
+## Exact T09 destroyed-resource frontier
+
+CMR2518--CMR2525 reconstruct every literal destroyed current triple from the selected slot's T05
+linked geometry certificate. Equal triples are identified by sorted point coordinates rather than
+local point indices or destroyed IDs.
+
+The checker reconstructs the complete active-row overlap graph and defines resource scopes as its
+connected components. Arbitrary supplied scope names no longer determine the partition.
+
+Every proved row requires one `row-destroyed-resource-model-proof` citing its T08 active-row artifact
+and T05 geometry artifact. The aggregate `resource-model-proof` binds
+`DESTROYED_RESOURCE_MODEL_EXHAUSTIVE` and `T09_RESOURCE_MODEL` through separate obligation and target
+locators.
+
+Literal triple reconstruction and canonical scopes do not prove that destroyed triples are the
+complete physical shared-resource model.
+
+## Exact T10 routed-credit frontier
+
+CMR2526--CMR2533 give every literal selected-slot `routed_credits` entry one indexed subject. Equal
+literal values at different indices remain distinct proof obligations.
+
+A proved row assigns every subject to:
+
+```text
+one T09 destroyed resource
+one T07 fate claim
+one T07 state claim
+nonempty T07 transition-claim support
+one declared child state
+```
+
+No destroyed resource or fate witness may repeat inside one row. Across the complete proved active-row
+family, canonical destroyed-resource keys and child-bearing witness-obligation keys are injective.
+
+Each proved row requires one `row-routed-credit-semantics-proof` with exact T08/T09/T07 support. The
+aggregate `credit-routing-proof` binds `CREDIT_ROUTING_SEMANTIC` and `T10_CREDIT_ROUTING` through
+separate obligation and target locators.
+
+Exact route linkage and injectivity do not prove the route statements, T07 claims or child-state
+meanings mathematically true.
 
 ## Remaining semantic fronts
 
 The next exact fronts are:
 
-- T08: simultaneous active-row-family exhaustiveness;
-- T09: destroyed-resource-model exhaustiveness;
-- T10: routed-credit semantics;
 - T11: closed, strongly connected recurrent blocks with strict common weights;
 - T12: semantic recursive auxiliary expansion and elimination;
 - T13--T18: cross-block identity, component scales, interfaces, rank, state predicates and final row
@@ -155,7 +200,7 @@ The next exact fronts are:
 6. Populate every T07 semantic claim and prove all owner, fate, state and transition statements.
 7. Supply genuine T06 score proofs, close every parent policy and verify every T02 application uses
    the winner.
-8. Prove active-row, destroyed-resource and routed-credit semantics.
+8. Populate and prove every T08 active row, T09 resource model and T10 routed-credit semantic record.
 9. Exhibit closed strongly connected recurrent blocks with strict common weights.
 10. Prove auxiliary, cross-block, interface, rank, predicate and row-theorem semantics.
 11. Prove all 232 zero-selector and 20 hard-core chamber dispositions.
@@ -175,8 +220,10 @@ The next exact fronts are:
 - A T06 integer score remains an external theorem requiring ordinary mathematical review.
 - Deterministic minimization does not prove that the score is the intended recurrence objective.
 - The old common-weight candidate checker cannot define T06 without reversing the proof DAG.
+- A T06-application-derived T08 census remains relative to the supplied recurrence skeleton.
+- Coordinate-canonical T09 scopes do not prove physical resource-model exhaustiveness.
+- T10 route linkage and injectivity do not prove route statements or child-state semantics.
 - Common weights do not imply block closure, connectivity or strictness.
-- Resource scopes do not prove active-row or destroyed-resource exhaustiveness.
 - State links and predicate records do not prove external state identity.
 - Strict-or-ranked rows do not prove interface exhaustiveness.
 - A closed chamber disposition does not verify its proof.
@@ -186,10 +233,12 @@ The next exact fronts are:
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2509**, the finite certificate surface reaches exact work
-banks from T01 through T07, including a corrected executable T05 path, literal T07 semantic-claim
-coverage and a noncircular T06 candidate-policy hierarchy tied to every T02 application.
+There is no complete proof. Through **CMR2533**, the finite certificate surface reaches exact work
+banks from T01 through T10, including a corrected executable T05 path, literal T07 semantic-claim
+coverage, noncircular T06 candidate policy, application-derived T08 active rows, literal T09 resource
+geometry and exact T10 routed-credit linkage and injectivity.
 
 Completion still requires genuine source and recurrence theorems, actual T03/T04 data, proof of T05
-all-`n` geometric coverage, truth of every T07 claim and T06 score, all downstream resource, block,
+all-`n` geometric coverage, truth of every T07 claim and T06 score, genuine T08 simultaneous-row
+completeness, T09 physical resource exhaustiveness, T10 route semantics, all downstream block,
 interface, rank and chamber semantics, and ordinary review of the final implication to all `n`.
