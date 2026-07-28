@@ -74,6 +74,8 @@ no-three-in-line conjecture.
 | PP3bte--PP3btg | The exact maxima of `s(f)gamma(f)` are below one through `m=9`, first exceed one at `m=10`, and remain below four throughout `4<=m<=10` | PROVED / VERIFIED FINITELY | `docs/372-inverse-source-weighted-hall-phase-transition-through-m10.md` |
 | PP3bth--PP3btj | The exact `m=10` support-count profile has its first constant-one violation at source count 209, is intermittent through 287, and has `A_s>1` at every nonempty count from 288 onward | PROVED / VERIFIED FINITELY | `docs/373-exact-m10-hall-support-count-phase-profile.md` |
 | PP3btk--PP3btm | Exact contiguous normalizer coarsenings need minimally 2, 3, and 1 scale segments to certify terminal contraction at `m=8,9,10` | PROVED / VERIFIED FINITELY | `docs/374-minimal-terminal-normalizer-scale-resolution-through-m10.md` |
+| PP3btn--PP3btp | Optimizing one cut over the complete observed normalizer support gives exact terminal envelopes `2852/4521`, `13760/14043`, and `415800/1535713` at `m=8,9,10` | PROVED / VERIFIED FINITELY | `docs/375-exact-single-cut-terminal-normalizer-envelopes-through-m10.md` |
+| PP3btq--PP3bts | In the `m=10` source-count transition window, all three prescribed-arc path types contain both constant-one violations and nonviolations; connectivity alone is insufficient | PROVED / VERIFIED FINITELY | `docs/376-exact-m10-hall-transition-by-prescribed-arc-path-type.md` |
 
 ## Current exact frontier
 
@@ -121,24 +123,24 @@ Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
 clean fibre has width at most one. Uniform terminal-gate weights are strongly
 overloaded after fibre regeneration, but fibre-capacity weighting contracts.
-The complete cumulative normalizer profiles and correlated scale-bin populations
-are exact through `m=10`. The fine-bin envelopes are `0.530...`, `0.812...`, and
-`0.227...`. Exact contiguous coarsening shows that contraction needs minimally
-2, 3, and 1 normalizer segments at `m=8,9,10`: two scales suffice at `m=8`, three
-remain necessary at `m=9`, while the single raw-multiplicity/minimum-normalizer
-ratio `560/617` already contracts at `m=10`. The remaining horizon problem is
-shell depth plus an asymptotic bounded or summably weighted coarsening theorem
-for the joint target profile, or an equivalent correlated cumulative estimate.
+The complete cumulative normalizer profiles are exact through `m=10`. Optimizing
+one cut over every consecutive pair in the observed support gives exact envelopes
+`2852/4521`, `13760/14043`, and `415800/1535713` at `m=8,9,10`; in particular,
+one adaptive cut resolves the `m=9` failure of coarsely placed dyadic boundaries.
+At `m=10`, even the zero-cut ratio `560/617` already contracts. The remaining
+horizon problem is shell depth plus an asymptotic one-threshold balance between
+the low-normalizer population and the high-normalizer reverse multiplicity, or
+a stronger correlated cumulative estimate.
 
 Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
-supported `m=10` signed flaws have proper bottlenecks, with exact global maximum
-`2397/349898`. The count-resolved inverse-source profile first exceeds one at
-source count 209, remains intermittent through 287, and has `A_s>1` at every
-nonempty count from 288 through 720; its global maximum remains
-`3152400/791819` at count 600. Thus source support alone does not explain the
-transition window: weighted neighbourhood geometry must also be controlled.
-A uniform inverse-support inequality and a cubic compatible-source lower bound
-remain open.
+supported signed flaws have proper bottlenecks. In the intermittent source-count
+window `209--287`, the three prescribed-arc path types all contain both
+constant-one violations and nonviolations. Their violation frequencies are
+`1/5`, `5/31`, and `1/3`, while the largest type-conditioned obstruction occurs
+for a two-edge path plus one arc. Thus neither source support nor arc connectivity
+is a sufficient statistic: the weighted clean-target neighbourhood and parity
+compatibility must also be controlled. A uniform inverse-support inequality and
+a cubic compatible-source lower bound remain open.
 
 ## Remaining tasks
 
@@ -152,15 +154,15 @@ remain open.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and establish a bounded or summably weighted
-   contiguous coarsening for the joint target normalizer profile, or an
-   equivalent correlated cumulative estimate.
+   adjacent-shell fibre width, and establish a one-threshold low-tail/high-bulk
+   normalizer balance uniformly in the frustration window, or a stronger
+   correlated cumulative estimate.
 6. Prove uniform weighted expansion or heat-kernel control for local,
-   intermediate, and global flaw-transport Hall cuts; explain the exact
-   onset/intermittent/permanent support phase at `m=10`, prove a uniform inverse-
-   support constant, and lower-bound compatible source support at relevant scales.
+   intermediate, and global flaw-transport Hall cuts; control the weighted
+   target-neighbourhood geometry beyond source count and prescribed-arc path type,
+   prove a uniform inverse-support constant, and lower-bound compatible support.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3btn`.
+The next available theorem identifier is `PP3btt`.
