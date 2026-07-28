@@ -11,32 +11,32 @@ The layer contains `71,860` selectors grouped into `38,553` top signatures. All 
 - `37,600` are certified infeasible in all four radix orientations;
 - one multiplicity-four selector has a verified no-three embedding.
 
-Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `1,040` signatures, global cases `0` through `1039`, are closed in 104 canonical ten-signature proof units:
+Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `1,120` signatures, global cases `0` through `1119`, are closed in 112 canonical ten-signature proof units:
 
-- `2,080` multiplicity-two selectors are certified infeasible;
+- `2,240` multiplicity-two selectors are certified infeasible;
 - every shard has a standalone ordered-transcript digest verifier;
-- the prefix uses `399,139,256` shared bottom-CSP nodes.
+- the prefix uses `422,791,999` shared bottom-CSP nodes.
 
 Therefore the committed support-twenty boundary is:
 
-- `39,680` certified-infeasible selectors;
+- `39,840` certified-infeasible selectors;
 - one constructive selector;
-- `32,179` unclassified selectors;
-- `3,165,594,500` certified rejection-CSP nodes.
+- `32,019` unclassified selectors;
+- `3,189,247,243` certified rejection-CSP nodes.
 
 The unresolved cache consists exactly of:
 
-- `2,800` multiplicity-two signatures containing `5,600` selectors;
+- `2,720` multiplicity-two signatures containing `5,440` selectors;
 - all `26,579` multiplicity-one selectors.
 
-The next canonical multiplicity-two case is `1040`.
+Cases `1120` through `1199` are registered but uncounted.
 
 ## Exact finite proof units
 
 The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committed multiplicity-two shard family is:
 
 - `multiplicity2_pilot10.cpp` for cases `0`--`9`;
-- `multiplicity2_shard1.cpp` through `multiplicity2_shard103.cpp` for cases `10`--`1039`.
+- `multiplicity2_shard1.cpp` through `multiplicity2_shard111.cpp` for cases `10`--`1119`.
 
 Each wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest.
 
@@ -44,34 +44,32 @@ Each wrapper asserts the tier size, exact interval, both clean-top and top-node 
 
 For multiplicity-two case zero, orientation three:
 
-- the first 64 top orders give 128 selector obligations;
-- every obligation has a seven-triple cover;
-- 55 triples and 93 covers encode 896 cover entries;
-- all 64 reference cores have been semantically minimized;
-- 30 references retain aligned selector masks and 34 require selector-mask unions;
-- the 64 cores deduplicate to 49 actual partial-assignment keys on 30 mask shapes;
-- their 169 extension occurrences have an exact union of 92 clean top orders;
-- both selector covers are replayed using 1,703,520 exact bottom checks.
+- the first 64 references reduce to 49 actual keys covering 92 clean top orders;
+- the first 128 references reduce to 102 actual keys covering 164 clean top orders;
+- seven later references reuse first-prefix keys, while 53 genuinely new keys appear;
+- selector masks align at 40 references and require pair unions at 88;
+- selector zero has three twelve-triple greedy covers; selector one retains seven-triple covers throughout;
+- all extension replays use 3,185,280 exact bottom checks.
 
-An exact census through top index 127 is active. It separately measures reuse of the established 49 keys, new keys, new covered top orders, and incremental bottom verification; it is not counted until promoted.
+The next compression target is to extend beyond top index 127, measure vocabulary growth and reuse, and solve a compact set-cover problem against the complete clean-top family.
 
 ## Immediate tasks
 
-1. Continue multiplicity-two classification from case `1040`.
-2. Promote the semantic vocabulary census through top index 127 and measure vocabulary saturation.
+1. Promote cases `1120--1199`, then continue multiplicity two.
+2. Extend semantic master learning beyond top index 127 and measure vocabulary saturation.
 3. Build and verify a compact set-cover basis from the accumulated master keys.
 4. Defer multiplicity one until multiplicity-two proof size and symmetry are understood.
-5. Continue the independent finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and hyperbola/carry fronts.
+5. Continue the finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and carry/absorber fronts.
 6. Keep every finite result separate from an all-`n` claim.
 
 ## Verification
 
 ```bash
-python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full64.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full128_relaxed.py
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..103}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..111}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
