@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not**
-contain a complete proof. The authoritative theorem ledger reaches CMR2541; CMR2390 onward is in
+contain a complete proof. The authoritative theorem ledger reaches CMR2549; CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 ## Current finite endpoint
@@ -27,8 +27,9 @@ include:
 - exact T09 literal destroyed-resource universes, overlap graph and canonical scopes;
 - exact T10 routed-credit subjects, semantic route assignments and global injectivity tests;
 - exact T11 common-weight row bridges, primitive block weights, recurrent support and strict margins;
+- exact T12 recursive auxiliary closure, T07 edge support and selected-response stability;
 - typed artifact registries for obligations, premises, handoff assertions and all 43 atomic targets;
-- an exact 252-chamber exceptional worklist;
+- an exact 252-chamber exceptional worklist; and
 - a synchronized current-frontier gate and seven-gate final dossier audit.
 
 These interfaces expose and seal proof work. They do not supply the missing genuine mathematical data
@@ -40,7 +41,7 @@ The original T05 checker reconstructed the correct geometry and selector banks b
 `closed` from raw `proof_obligations`. The closure checker publishes that field in
 `obligation_closure_records`.
 
-The canonical executable endpoint is now:
+The canonical executable endpoint is:
 
 ```text
 scripts/check_prime_power_geometry_selector_frontier_v2.py
@@ -60,7 +61,7 @@ CMR2495--CMR2501 give every expected slot one open/proved semantic record.
 For each non-open T03 payload, the checker reconstructs:
 
 - one fate subject per literal owner/fate witness;
-- one parent-state subject and one state subject per labelled vector;
+- one parent-state subject and one state subject per labelled vector; and
 - one transition subject per literal transition.
 
 Every subject has exactly one canonical claim containing a statement, evidence and sorted support
@@ -217,14 +218,57 @@ combined digest.
 Recurrent-core closure does not erase nonrecurrent exits. Auxiliary and interface exits remain visible
 T12 and T15 work, and the checker does not prove their semantic validity.
 
+## Exact T12 auxiliary-semantics frontier
+
+CMR2542--CMR2549 give every exact T11 block one open/proved T12 record. The canonical endpoint is:
+
+```text
+scripts/check_prime_power_auxiliary_semantics_frontier_v2.py
+```
+
+The version-2 adapter preserves the base T12 record and arithmetic schemas while correcting the fixed
+proof flow to:
+
+```text
+T07_FATE_TRANSITION_STATE + T11_RECURRENT_BLOCK_CLOSURE
+    -> T12_AUXILIARY_SEMANTICS
+```
+
+The `AUXILIARY_EXPANSIONS_SEMANTIC` obligation has the corresponding T07 and T11 immediate dependency
+bundles.
+
+Every proved block must reuse the exact T11 common-weight certificate. The auxiliary expansion table
+must cover exactly the recursive closure of all positively used auxiliary states. The checker rejects
+cycles, verifies local and effective common-weight domination, forbids routed credit to eliminated
+auxiliaries, and reconstructs every fully substituted response row.
+
+Every expansion source, fixed-load term and target edge has explicit support from the selected slots'
+exact T07 state and transition claim banks. Every target edge requires nonempty state and transition
+support.
+
+Complete elimination must preserve the exact T11 selected response and satisfy:
+
+```text
+eliminated selected load <= T11 minimum load
+eliminated selected margin >= T11 strict margin
+```
+
+Every proved block requires one `recurrent-block-auxiliary-elimination-proof` citing its T11
+common-weight artifact, T11 closure artifact and every selected-slot T07 semantic artifact. The
+aggregate `auxiliary-expansion-proof` obligation artifact cites the two T07 and two T11 immediate
+obligation artifacts; the T12 `auxiliary-semantics-proof` target binds the same noncircular proof bank.
+
+Exact acyclic weighted substitution and claim support do not prove expansion statements,
+multiplicities or target-state meanings mathematically true.
+
 ## Remaining semantic fronts
 
 The next exact fronts are:
 
-- T12: semantic recursive auxiliary expansion and elimination;
-- T13--T18: cross-block identity, component scales, interfaces, rank, state predicates and final row
-  theorems;
-- T19--T21: global-family exhaustiveness and all 252 exceptional chambers;
+- T13: cross-block state-equivalence truth;
+- T14: cross-block component scales;
+- T15--T18: interface exhaustiveness, global rank, state predicates and final row theorems;
+- T19--T21: global-family exhaustiveness and all 252 exceptional chambers; and
 - T22--T43: final premises, handoff assertions, dossier audit and reviewed root implication.
 
 ## Genuine current frontier
@@ -240,10 +284,11 @@ The next exact fronts are:
 8. Populate and prove every T08 active row, T09 resource model and T10 routed-credit semantic record.
 9. Populate every T11 common-weight bridge and prove every recurrent core closed, strongly connected
    and strict.
-10. Prove auxiliary, cross-block, interface, rank, predicate and row-theorem semantics.
-11. Prove all 232 zero-selector and 20 hard-core chamber dispositions.
-12. Complete every genuine obligation, premise, handoff and atomic-target artifact.
-13. Review the ordinary proof that the quotient and handoff imply `D(n)=2n` for every `n`.
+10. Populate and prove every T12 expansion semantic record and selected-response stability record.
+11. Prove cross-block state identity, component scales, interfaces, rank, predicates and row theorems.
+12. Prove all 232 zero-selector and 20 hard-core chamber dispositions.
+13. Complete every genuine obligation, premise, handoff and atomic-target artifact.
+14. Review the ordinary proof that the quotient and handoff imply `D(n)=2n` for every `n`.
 
 ## Corrections retained
 
@@ -264,6 +309,9 @@ The next exact fronts are:
 - A standalone common-weight certificate does not identify the exact T08/T10 row population.
 - Exact T11 bridges and strict margins remain relative to supplied T07/T10 semantics.
 - Recurrent-core closure does not prove auxiliary or interface exits semantically valid.
+- The original T12 aggregate support check predates the corrected T07+T11 dependency root.
+- Exact T12 edge support and weighted domination do not prove expansion truth or target-state meaning.
+- Selected-response stability does not prove the selected recurrence is the genuine all-`n` policy.
 - State links and predicate records do not prove external state identity.
 - Strict-or-ranked rows do not prove interface exhaustiveness.
 - A closed chamber disposition does not verify its proof.
@@ -273,13 +321,13 @@ The next exact fronts are:
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2541**, the finite certificate surface reaches exact work
-banks from T01 through T11, including a corrected executable T05 path, literal T07 semantic-claim
-coverage, noncircular T06 candidate policy, application-derived T08 active rows, literal T09 resource
-geometry, exact T10 routed-credit linkage, and T11 common-weight recurrent-core bridges and strictness.
+There is no complete proof. Through **CMR2549**, the finite certificate surface reaches exact work
+banks from T01 through T12, including corrected executable T05 and T12 paths, literal T07 semantic
+coverage, noncircular T06 policy, application-derived T08 rows, literal T09 resources, exact T10 routed
+credits, T11 strict recurrent cores and T12 acyclic auxiliary substitution tied to exact T07/T11 data.
 
 Completion still requires genuine source and recurrence theorems, actual T03/T04 data, proof of T05
 all-`n` geometric coverage, truth of every T07 claim and T06 score, genuine T08 simultaneous-row
-completeness, T09 physical resource exhaustiveness, T10 route semantics, genuine T11 block semantics,
-all auxiliary, cross-block, interface, rank and chamber semantics, and ordinary review of the final
-implication to all `n`.
+completeness, T09 physical resource exhaustiveness, T10 route semantics, genuine T11 and T12 semantics,
+all cross-block, interface, rank and chamber semantics, and ordinary review of the final implication to
+all `n`.
