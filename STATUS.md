@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2413;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2421;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -32,8 +32,9 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - a fixed six-assertion documentary induction handoff;
 - a transparent seven-gate final dossier-integrity audit;
 - typed artifact bundles for all six handoff assertions;
-- one exact open/closed disposition for each of the 252 exceptional selector chambers; and
-- an atomic execution schedule for 13 frontiers and 43 proof targets.
+- one exact open/closed disposition for each of the 252 exceptional selector chambers;
+- an atomic execution schedule for 13 frontiers and 43 proof targets; and
+- a synchronized current-frontier gate binding the target, handoff-artifact and chamber layers.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -69,7 +70,7 @@ each immediate prerequisite bundle.
 
 The pre-root contract fixes ten ordinary mathematical premises. Each proved premise has one
 exact typed artifact citing all dependent semantic modules. The final induction handoff fixes
-six assertions. CMR2390--CMR2397 now require one assertion-specific artifact whose support list
+six assertions. CMR2390--CMR2397 require one assertion-specific artifact whose support list
 equals the complete typed premise-artifact set of that assertion's fixed dependencies.
 
 The reconstructed assertion bundle digest must equal the locator/digest pair stored by the
@@ -109,6 +110,20 @@ longest open chains and per-frontier downstream impact. It is planning arithmeti
 not verify proof artifacts, difficulty, timing or truth and always reports
 `all_n_proved_by_checker = 0`.
 
+## Synchronized current-frontier execution
+
+CMR2414--CMR2421 compose the atomic target certificate with the typed handoff-assertion artifact
+registry and the exact 252-chamber disposition registry. All three layers must use the same final
+handoff and quotient semantic refinement.
+
+Every handoff target must agree with its typed assertion artifact bundle. The exceptional zero
+and hard-core targets must agree exactly with the independent 232- and 20-chamber readiness
+flags. The integrated blocker record publishes actionable targets, proof-wave depth, open
+chambers and open handoff bundles.
+
+This makes the execution surface current across every known frontier without turning any
+planning, artifact or chamber record into a mathematical proof.
+
 ## Final handoff and integrity audit
 
 The six documentary handoff assertions cover the base domain, nonbase recurrence coverage,
@@ -135,7 +150,7 @@ may remain open and actionable even when every pre-root documentary gate is read
 10. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
 11. Prove the skeleton-derived global family exhaustive.
 12. Complete and review all ten final premises and six induction-handoff assertions.
-13. Complete all 43 atomic proof targets and reconcile their linked gates.
+13. Complete all 43 atomic proof targets and pass their synchronized artifact/chamber gate.
 14. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
 
 ## Corrections retained
@@ -154,17 +169,18 @@ may remain open and actionable even when every pre-root documentary gate is read
 - Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
 - A closed chamber disposition does not verify its proof artifact.
-- Atomic target completion records are planning metadata, not proof verification.
+- Atomic target completion and synchronized frontier records are planning metadata, not proof
+  verification.
 - A ready contract, handoff or integrity audit remains subject to mathematical review.
 - Every final checker permanently reports `all_n_proved_by_checker = 0`.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2413**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2421**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support from semantic obligations
 through final handoff assertions, an explicit 252-chamber exceptional/hard-core closure
-registry and an exact 43-target all-frontier execution schedule. Completion still requires
-the actual exhaustive rule and population, proof of every
-semantic statement and chamber disposition, genuine strict blocks, exceptional closure and
-ordinary mathematical review of the final implication to all `n`.
+registry, an exact 43-target all-frontier execution schedule and a synchronized artifact/chamber
+execution gate. Completion still requires the actual exhaustive rule and population, proof of
+every semantic statement and chamber disposition, genuine strict blocks, exceptional closure
+and ordinary mathematical review of the final implication to all `n`.
