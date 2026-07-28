@@ -50,3 +50,5 @@ jobs:
           name: side-ten-opposite-fine-${{ matrix.orientation }}-${{ matrix.first_pair }}
           path: side-ten-opposite-fine-${{ matrix.orientation }}-${{ matrix.first_pair }}.txt
           if-no-files-found: warn
+
+# Durable registration: retain until every exact interval transcript is secured.
