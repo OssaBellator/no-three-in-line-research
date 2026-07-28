@@ -46,10 +46,10 @@ Safe and unsafe operations partition `I`; least protected-event addresses partit
 
 ## GC4v -- safe half or one exact protected-event cause -- PROVED
 
-Exactly one of the following weighted alternatives holds:
+Use the following deterministic router:
 
-1. `W_safe>=W/2`;
-2. one exact protected-event address satisfies
+1. if `W_safe>=W/2`, take the safe-half branch;
+2. otherwise one exact protected-event address satisfies
 
    `H_p>W/(2K_H)`.
 
