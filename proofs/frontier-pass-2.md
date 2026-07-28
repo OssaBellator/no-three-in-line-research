@@ -21,9 +21,10 @@ This addendum records the threshold-degree transportation bounds proved after th
 | SRR2ck--SRR2co | Across repeated accepted thresholds, exact conditioning removals, conflict additions and named atom deposits preserve current balances; paid epochs retain `W^2/(W+sum L_a)` and the first overload returns one exact atom | PROVED UNDER THE COMPLETE CUMULATIVE CONDITIONED ATOM-CAPACITY CONTRACT | `docs/superregular-cumulative-conditioned-atom-bank.md` |
 | SRR2cp--SRR2ct | Occurrence-faithful physical source transitions and atom-capacity issuance conserve one joint mass account; source-less deposits, splitting, mass increase or missing predecessor lineage return the first exact witness | PROVED UNDER THE COMPLETE ATOM-DEPOSIT SOURCE-LINEAGE CONTRACT | `docs/superregular-atom-deposit-source-conservation.md` |
 | SRR2cu--SRR2cy | Physical source mass, existing atom balances and exact burden demands form one integral physical/atom/burden network; simultaneous issuance and payment are max-flow, while failure returns one exact physical-source/atom/burden cut | PROVED UNDER THE COMPLETE PHYSICAL ATOM-BURDEN NETWORK CONTRACT | `docs/superregular-integrated-physical-atom-burden-flow.md` |
+| SRR2cz--SRR2dd | Residual reachability returns exact physical-source and atom barriers; complete witness closure holds and unpaid burden equals outside burden minus both barrier totals | PROVED UNDER THE GUARDED COMPLETE WITNESS-ATOM CUT CONTRACT | `docs/superregular-geometric-atom-cut-extraction.md` |
 
 ## Updated frontier
 
-The endpoint objective now has transportation, tensor/perturbation, higher-order thinning, witness-atom budgets and an integrated physical-source/atom-burden payment interface. Remaining work is constructing the actual geometric tensor reference and complete witness-atom dictionary, then proving small forward, reverse, conditioning, capacity and physical-source estimates.
+The endpoint objective now has transportation, tensor/perturbation, higher-order thinning, witness-atom budgets and an integrated physical-source/atom-burden interface. Every failure now exposes one complete outside burden set and exact physical/atom barriers. Remaining work is constructing the geometric tensor reference and proving the returned source/atom cut inequality.
 
 No statement here proves SRR2, SRR4 or the no-three-in-line conjecture.
