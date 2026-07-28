@@ -38,7 +38,7 @@ Let the action kernel use at most `w` variables, each with an alphabet of size a
 
 Let the non-kernel boundary stock be `Q`.
 
-## OP4ad -- exact bounded fibre/kernel stock -- PROVED
+## OP4ai -- exact bounded fibre/kernel stock -- PROVED
 
 The complete state stock is at most
 
@@ -64,17 +64,17 @@ Choose the finite boundary state, the blocker subset of size at most `B`, the `w
 
 The exact factor subset is retained; cardinality alone is not a complete action-kernel state.
 
-## OP4ae -- long bounded residual histories contain exact cycles -- PROVED
+## OP4aj -- long bounded residual histories contain exact cycles -- PROVED
 
-Inside one fixed physical blocker dictionary, variable set, normalized factor dictionary and boundary interpretation, every history longer than the stock in OP4ad repeats a complete state. The first repeated-state segment contains a simple exact cycle of no greater length.
+Inside one fixed physical blocker dictionary, variable set, normalized factor dictionary and boundary interpretation, every history longer than the stock in OP4ai repeats a complete state. The first repeated-state segment contains a simple exact cycle of no greater length.
 
 ### Proof
 
 Apply pigeonhole to the complete state and erase internal closed subwalks. QED.
 
-## OP4af -- canonical least residual restoration gate -- PROVED
+## OP4ak -- canonical least residual restoration gate -- PROVED
 
-Fix total orders on blocker atoms, action variables, alphabet values and normalized factors. Every nonconstant exact cycle from OP4ae has a canonical restoration gate of the first applicable kind:
+Fix total orders on blocker atoms, action variables, alphabet values and normalized factors. Every nonconstant exact cycle from OP4aj has a canonical restoration gate of the first applicable kind:
 
 1. the least blocker atom whose membership changes, with the first later restoration of its membership bit;
 2. if the blocker fibre is constant, the least action variable whose value changes, with the first later restoration of its initial value;
@@ -85,7 +85,7 @@ Fix total orders on blocker atoms, action variables, alphabet values and normali
 
 A nonconstant complete state cycle changes at least one listed coordinate. Choose the first nonconstant coordinate in the declared order. Its finite value leaves an attained value and must later return because the cycle closes. First-change and first-return conventions give a canonical restoration edge. QED.
 
-## OP4ag -- bounded blocker/action recurrence router -- PROVED UNDER THE RESTORATION CONTRACT
+## OP4al -- bounded blocker/action recurrence router -- PROVED UNDER THE RESTORATION CONTRACT
 
 Suppose every canonical restoration gate has one declared continuation:
 
@@ -102,9 +102,9 @@ If blocker membership is monotone, the blocker part cannot recur. If action-fact
 
 ### Proof
 
-Use OP4ae to extract a simple exact cycle and OP4af to expose its canonical restoration edge. A monotone finite coordinate cannot leave and restore its initial value. Capacity-one addresses cannot repeat, while every omitted changing interpretation is returned as a reset. QED.
+Use OP4aj to extract a simple exact cycle and OP4ak to expose its canonical restoration edge. A monotone finite coordinate cannot leave and restore its initial value. Capacity-one addresses cannot repeat, while every omitted changing interpretation is returned as a reset. QED.
 
-## OP4ah -- bounded residual decoder interface -- PROVED UNDER THE COMPLETE-PHYSICAL-STATE CONTRACT
+## OP4am -- bounded residual decoder interface -- PROVED UNDER THE COMPLETE-PHYSICAL-STATE CONTRACT
 
 The bounded residual branch of the orbit-phase decoder now has a total finite interface:
 
@@ -120,7 +120,7 @@ Thus bounded recurrent rank-three blocker fibres and bounded action-literal kern
 
 ### Proof
 
-Combine OP4ad--OP4ag with the existing exact completion and fixed-edge interfaces. QED.
+Combine OP4ai--OP4al with the existing exact completion and fixed-edge interfaces. QED.
 
 ## Finite check
 
