@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2469;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2477;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -40,9 +40,11 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - one sealed source-kind-specific verification artifact for every proved source statement, with an
   acyclic source-proof support graph;
 - a source-root gate synchronizing that statement bank with `SOURCE_STATEMENTS_TRUE` and
-  `T01_SOURCE_STATEMENTS`; and
+  `T01_SOURCE_STATEMENTS`;
 - an exact T02 work bank covering every case, clause, parameter axis, exclusion and global-parent
-  application, with each application bound to one enumerated operation slot.
+  application, with each application bound to one enumerated operation slot; and
+- an exact T03 bank giving every expected slot an open/populated/proved record, literal population
+  payload, canonical fibre identity and exact T02-backed proof slot.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -153,6 +155,45 @@ This still does not prove that the supplied cases and clauses are the genuine ex
 The checker validates a proof dossier; ordinary mathematical review must establish that the dossier
 is true and sufficient.
 
+## Exact T03 slot and candidate population frontier
+
+CMR2470--CMR2477 give every independently expected operation slot exactly one `open`, `populated`
+or `proved` record. This preserves the distinction between useful population research and a
+T02-backed completion claim.
+
+Every non-open record contains a literal population payload with the exact fields:
+
+```text
+points
+removals
+survivor_background
+owner_fate_witnesses
+response_family
+feasibility_signatures
+selector_data
+labelled_vectors
+routed_credits
+row_loads
+transitions
+```
+
+The source SHA-256 is recomputed from those fields. The fibre ID is reconstructed from the expected
+host and the first sixteen hexadecimal characters of that source digest. Thus neither the fibre ID
+nor the population digest can float independently of the literal payload.
+
+A proved slot has one `slot-candidate-population-proof` artifact citing the exact T02 case and clause
+artifacts plus every global-parent application that selects the slot. A `populated` slot carries the
+literal data but no proof artifact, allowing T03 research to proceed before T02 closure without
+claiming proof completion.
+
+The aggregate `population-certificate` binds the expected slot registry and the complete T02 record,
+T02 artifact, slot record, literal payload, slot proof-artifact and per-slot bundle banks.
+Reconstructed readiness must agree exactly with `SLOT_AND_CANDIDATE_POPULATION` and
+`T03_SLOT_CANDIDATE_POPULATION`.
+
+This layer verifies documentary identity and coverage only. It does not prove the population data
+mathematically correct and does not populate the separate T04 recurrent-block/interface-row bank.
+
 ## Exceptional and hard-core chamber front
 
 The canonical exceptional-selector worklist contains exactly
@@ -192,7 +233,9 @@ artifact registry and exact 252-chamber disposition registry. CMR2422--CMR2437 a
 sealed evidence for every effectively complete target.
 
 CMR2446--CMR2461 add the exact and sealed source-root path. CMR2462--CMR2469 add the T02 rule-
-exhaustiveness bank and require its readiness to agree with both the obligation and atomic target.
+exhaustiveness bank. CMR2470--CMR2477 add the exact T03 slot/candidate population bank. Each layer
+requires its reconstructed readiness to agree with the corresponding semantic obligation and
+atomic target.
 
 Every gate remains documentary. Every final checker permanently reports
 `all_n_proved_by_checker = 0`.
@@ -204,22 +247,24 @@ Every gate remains documentary. Every final checker permanently reports
 2. Populate and prove every T02 case, clause, axis, exclusion and global-parent application record;
    bind every global parent to its exact admitted operation slot; then review the genuine
    recurrence-exhaustiveness theorem.
-3. Populate every expected slot, candidate row, recurrent block and interface row with actual
-   geometry, fate, route and transition data.
-4. Prove real geometry, selector and candidate-policy correctness.
-5. Prove fate, transition, state, resource and routed-credit semantics.
-6. Exhibit closed strongly connected recurrent blocks with strict common weights.
-7. Prove and eliminate every recursive auxiliary expansion.
-8. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-9. Prove the complete interface family and global rank semantics.
-10. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
+3. Enter actual payload data for every T03 slot, prove every slot with exact T02 support, and review
+   the complete slot/candidate population theorem.
+4. Populate every T04 recurrent block and return/interface row with actual geometry, fate, route and
+   transition data.
+5. Prove real geometry, selector and candidate-policy correctness.
+6. Prove fate, transition, state, resource and routed-credit semantics.
+7. Exhibit closed strongly connected recurrent blocks with strict common weights.
+8. Prove and eliminate every recursive auxiliary expansion.
+9. Prove every cross-block equivalence, component scale, state predicate and row theorem.
+10. Prove the complete interface family and global rank semantics.
+11. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
     noncircular support and completion-to-bundle sealing.
-11. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
-12. Prove the skeleton-derived global family exhaustive.
-13. Complete and review all ten final premises and six induction-handoff assertions.
-14. Complete all 43 atomic proof targets and pass the synchronized chamber, source-root, T02 and
-    sealed target-artifact gates.
-15. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
+12. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
+13. Prove the skeleton-derived global family exhaustive.
+14. Complete and review all ten final premises and six induction-handoff assertions.
+15. Complete all 43 atomic proof targets and pass the synchronized chamber, source-root, T02, T03
+    and sealed target-artifact gates.
+16. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
 
 ## Corrections retained
 
@@ -228,6 +273,9 @@ Every gate remains documentary. Every final checker permanently reports
 - Repeating an external source-proof locator/digest is not statement-to-proof binding.
 - Acyclic source-proof support does not establish logical sufficiency.
 - Exact global-parent-to-slot binding does not prove the supplied rule is genuine or exhaustive.
+- Literal slot-population data and canonical fibre hashes do not prove the payload semantically
+  correct or complete.
+- A populated T03 record is research progress, not a proved slot.
 - Source-truth readiness does not prove recurrence exhaustiveness.
 - Clause expansion and expected-family skeletons remain relative to supplied rule data.
 - Candidate coverage does not prove the external policy intended.
@@ -251,11 +299,12 @@ Every gate remains documentary. Every final checker permanently reports
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2469**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2477**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support through all forty-three atomic
 frontier targets, an explicit 252-chamber closure registry, sealed execution gates, an exact
-source-statement/T01 work bank and an exact T02 rule-exhaustiveness bank with global-parent-to-slot
-binding. Completion still requires the literal genuine source statements, valid proofs of each
-statement and rule record, the actual exhaustive recurrence and population, proof of every semantic
-statement and chamber disposition, genuine strict blocks, exceptional closure and ordinary
-mathematical review of the final implication to all `n`.
+source-statement/T01 bank, an exact T02 rule-exhaustiveness bank and an exact T03 slot/candidate
+population bank with literal payload and T02-backed proof sealing. Completion still requires the
+literal genuine source statements, valid proofs of each statement and rule record, actual population
+data and proof review, the separate T04 block/interface population, proof of every semantic statement
+and chamber disposition, genuine strict blocks, exceptional closure and ordinary mathematical
+review of the final implication to all `n`.
