@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2349;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2365;
 CMR2190 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-7.md`.
 
@@ -25,12 +25,14 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - a global integer quotient package `(A,b,W,mu,rho)`;
 - source-independent derivation of its expected family manifest;
 - spanning evidence trees for every shared state class;
-- exact support SCC condensation and critical-rank path bounds; and
+- exact support SCC condensation and critical-rank path bounds;
 - a fixed nineteen-obligation semantic closure DAG;
 - typed proof-artifact bundles bound back into each proved obligation;
 - exact blocker/frontier and parallel completion-wave analysis;
-- an optional edgewise lexicographic support audit; and
-- a fixed ten-premise final implication contract.
+- an optional edgewise lexicographic support audit;
+- a fixed ten-premise final implication contract;
+- an acyclic dependency-aligned artifact-support DAG; and
+- a final dossier-integrity gate over one shared typed registry.
 
 These interfaces do not supply the missing genuine mathematical data or semantics.
 
@@ -98,6 +100,16 @@ translation to `D(n)=2n`. A contract may be ready only after the semantic closur
 artifact registry, blocker root and every premise agree. It still never declares the theorem
 proved.
 
+## Noncircular artifact support and final integrity
+
+Every artifact-support citation must remain inside one obligation or point to a transitive
+prerequisite obligation. The complete artifact-support graph must be acyclic, and every proved
+bundle must reach every artifact in each immediate prerequisite bundle.
+
+The final integrity checker composes that support DAG with the ten-premise contract over the
+same typed registry. Its readiness flag remains documentary, and
+`all_n_proved_by_checker` remains permanently zero.
+
 ## Hard-core scalar worklists
 
 The 78 zero-capable exceptional hosts retain 232 zero-selector chambers. The eleven-host hard
@@ -135,15 +147,17 @@ core retains all 20 full-selector chambers. Fixed-response correction 17, rollba
 - Exact artifact kinds and dependency waves do not measure proof validity or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
 - A complete premise contract remains a documentary dossier.
+- Acyclic artifact support does not establish logical sufficiency or mathematical truth.
+- A final dossier-integrity flag is not a proof of the conjecture.
 - A ready dossier would still require ordinary mathematical review.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2349**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2365**, the finite certificate surface reaches a
 noncircular expected global family, explicit state-equivalence evidence, exact support/rank
-termination structure, typed artifact coverage, exact blocker scheduling and a ten-premise
-final implication contract. Completion still
-requires the actual exhaustive rule and population, proved policy/resource/transition and
-cross-block semantics, genuine strict blocks, exceptional closure and a reviewed proof that
-the global quotient establishes the conjecture.
+termination structure, typed artifact coverage, exact blocker scheduling, a ten-premise final
+implication contract, noncircular dependency-aligned artifact support and a strict final
+dossier-integrity gate. Completion still requires the actual exhaustive rule and population,
+proved policy/resource/transition and cross-block semantics, genuine strict blocks, exceptional
+closure and a reviewed proof that the global quotient establishes the conjecture.
