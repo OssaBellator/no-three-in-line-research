@@ -29,6 +29,7 @@ The authoritative live ledger is split across:
 | CMR2486--2493 | Slotwise geometry/selector bank, exact T03 projection, responsewise delta/threshold identity, exact T03/T04 support, separate obligation banks, noncircular T05 target binding, readiness synchronization, honesty boundary, and endpoint | PROVED as an exact documentary T05 finite geometry/selector frontier; the original endpoint required the CMR2494 closure-record execution correction | `docs/414-prime-power-geometry-selector-frontier.md` |
 | CMR2494--2501 | Corrected T05 closure-record execution, exact T07 semantic subjects, complete claim coverage, acyclic claim support, exact T03/T04 ancestry, separate state/transition banks, noncircular T07 binding, honesty boundary, and endpoint | PROVED as an exact documentary T07 fate/transition/state semantic frontier; semantic truth remains externally unverified | `docs/415-prime-power-fate-transition-state-frontier.md` |
 | CMR2502--2509 | Common-weight cycle isolation, exact slot-score bank, registry-derived candidate sets, deterministic minimization, T02 application-to-winner binding, three-level support hierarchy, obligation/target sealing, honesty boundary, and endpoint | PROVED as an exact documentary T06 candidate-policy frontier; score truth and genuine recurrence correctness remain unverified | `docs/416-prime-power-candidate-policy-frontier.md` |
+| CMR2510--2533 | T06-application-derived active-row census, exact selected-row ancestry, T08 artifacts and sealing, literal destroyed-resource reconstruction, overlap graph and canonical scopes, T09 artifacts and sealing, exact routed-credit subjects, semantic route linkage, row/global injectivity, T10 artifacts and sealing, honesty boundary, and executable endpoint | PROVED as exact documentary T08/T09/T10 transition-resource frontiers; genuine simultaneous-row completeness, physical resource exhaustiveness and route semantics remain externally unverified | `docs/417-prime-power-transition-resource-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -103,6 +104,27 @@ slot score -> parent policy -> global-parent application
 The aggregate `candidate-policy-proof` binds both `CANDIDATE_POLICY_CORRECT` and
 `T06_CANDIDATE_POLICY`.
 
+## Exact T08--T10 transition-resource frontiers
+
+T08 reconstructs one active row from every exact T06 global-parent application. Each row binds the
+selected slot, T03 row-load/response/credit/transition digests, its T07 semantic certificate and every
+T04 assembly unit containing that global parent. A proved row has one `active-row-member-proof` with
+exact T06/T04/T07 support.
+
+T09 reconstructs every literal destroyed current triple from the selected slot's T05 geometry
+certificate. Coordinate-canonical resource keys generate the exact active-row overlap graph and its
+connected-component scope partition. A proved row has one `row-destroyed-resource-model-proof` with
+exact T08/T05 support.
+
+T10 gives every literal T03 routed-credit entry one indexed subject. A proved row binds each subject to
+one row resource, one T07 fate claim, one T07 state claim and nonempty T07 transition support. Destroyed
+resources and child-bearing witness obligations are injective across the complete proved active-row
+family. A proved row has one `row-routed-credit-semantics-proof` with exact T08/T09/T07 support.
+
+Separate noncircular banks bind the three semantic obligations and the T08, T09 and T10 atomic target
+artifacts. These banks prove documentary identity and accounting only; they do not establish genuine
+simultaneous-row completeness, physical resource exhaustiveness or external route semantics.
+
 ## Typed support, chambers and final handoff
 
 Every effectively complete semantic obligation, final premise, handoff assertion and atomic target
@@ -124,7 +146,7 @@ No genuine chamber closure is claimed.
 4. Populate and prove every T07 fate/state/transition claim.
 5. Supply externally reviewed T06 slot scores, close every parent policy and prove every T02
    application uses the winner.
-6. Build the exact T08 active-row-family, T09 destroyed-resource and T10 routed-credit semantic banks.
+6. Populate and prove every T08 active row, T09 resource model and T10 routed-credit semantic record.
 7. Prove closed strongly connected strict recurrent blocks and semantic auxiliary elimination.
 8. Prove cross-block identity, scales, interfaces, rank, predicates and final row theorems.
 9. Prove all 252 exceptional dispositions.
