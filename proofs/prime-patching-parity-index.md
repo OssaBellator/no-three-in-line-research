@@ -38,6 +38,7 @@ no-three-in-line conjecture.
 | PP3box--PP3boy | The min-cut algorithm reproduces every `m<=7` exhaustive ledger and completes the exact `m=8` transport audit | VERIFIED FINITELY | `docs/337-exact-m8-weighted-hall-mincut.md` |
 | PP3boz--PP3bpc | Three-owner rotations are exactly owner-support local, with an explicit quadratic one-step atomic envelope and an `O(km^2)` trajectory light cone | PROVED | `docs/338-owner-local-atomic-collateral-and-trajectory-light-cone.md` |
 | PP3bpd--PP3bpf | The eight one-support `m=9` hard states form four complement pairs and have sharp shortest-path peaks of two supports and eight atomic triples, attained by four explicit words | VERIFIED FINITELY | `docs/339-m9-single-support-collateral-words.md` |
+| PP3bpg--PP3bpi | Failed strict-cancellation sources at `m=8,9` bridge to validity within the existing three- and four-move clean-macro horizons | PROVED / VERIFIED FINITELY | `docs/340-strict-repair-to-clean-macro-bridge-through-m9.md` |
 
 ## Current exact frontier
 
@@ -56,6 +57,13 @@ of 4,308 at `m=8` and 270 of 26,164 at `m=9` reach a lower total after one more
 strict parity-repair step. No audited state first succeeds only at distance
 three. Almost every unresolved state already has frustration one, so parity
 termination itself prevents further cancellation inside the strict-repair DAG.
+
+The action switch at parity-clean termination is now exact through `m=9`. Every
+one of the 4,186 failed strict-cancellation sources at `m=8` reaches validity in
+at most three total strict-plus-macro moves. Every one of the 25,894 sources at
+`m=9` reaches validity in at most four. Thus strict preprocessing does not
+increase the known finite macro horizon, although asymptotic predecessor charge
+across the switch remains open.
 
 Atomic collateral is nevertheless owner-local. One three-owner rotation can
 alter only `3m-6` pair supports and `(3m^2-15m+20)/2` three-owner supports, with
@@ -85,8 +93,8 @@ maximum local/global label-merging penalty is `10338/4891>2`.
 
 1. Prove bounded target-optimal or local-sign repair for the asymptotic
    `O(log m)` frustration core.
-2. Classify the parity-clean terminal states left by failed strict cancellation
-   and connect them to clean-macro or joint parity/three-owner repair words.
+2. Prove an asymptotic action-switching theorem with controlled predecessor
+   charge from locally coupled strict repair into the clean fibre macro.
 3. Generalize the four explicit one-support words to a structural bounded-
    collateral rule with controlled predecessor charge.
 4. Extend compressed clean-macro reachability to `m=10` without storing all
@@ -99,4 +107,4 @@ maximum local/global label-merging penalty is `10338/4891>2`.
 7. Combine locally coupled repair, the owner light cone, and heat-kernel mixing
    with compensated atomic three-owner drift.
 
-The next available theorem identifier is `PP3bpg`.
+The next available theorem identifier is `PP3bpj`.
