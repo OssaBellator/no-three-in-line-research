@@ -23,6 +23,7 @@ The authoritative live ledger is split across:
 | CMR2438--2445 | Exact source statement text, UTF-8 statement-hash binding, source-kind-specific verification artifacts, rule/skeleton identity, complete source-use footprints, source-truth census synchronization, existing `source-truth-proof` bundle binding, honesty boundary, and executable endpoint | PROVED as an exact source-statement proof-work interface; checker syntax-compiled and isolated statement-digest tests passed; the actual source statements and parent rule remain unproved/unpopulated | `docs/408-prime-power-source-statement-truth-registry.md` |
 | CMR2446--2453 | Shared obligation-registry identity, exact source-census/T01 synchronization, strict source-root gate, prioritized source blockers, certificate identity bindings, noncircular composition, honesty boundary, and executable endpoint | PROVED as documentary synchronization of the source truth bank with `T01_SOURCE_STATEMENTS`; checker syntax-compiled locally; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/409-prime-power-source-truth-frontier-execution.md` |
 | CMR2454--2461 | Opaque verification-pointer defect, exact per-source verification artifacts, proved/open artifact coverage, statement-to-bundle sealing, acyclic source-proof support, strengthened aggregate source-truth binding, honesty boundary, and executable endpoint | PROVED as noncircular source-proof evidence sealing; source registry version 2 syntax-compiled and isolated sealing/cycle tests passed; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/410-prime-power-source-verification-artifact-sealing.md` |
+| CMR2462--2469 | Fixed case/clause/axis/exclusion/application work bank, exact source and internal rule-artifact support, global-parent-to-operation-slot binding, sealed rule-manifest and rule-exhaustiveness bundles, exact `RULE_EXHAUSTIVE`/T02 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T02 rule-exhaustiveness frontier; checker syntax-compiled locally; the actual parent rule, exhaustiveness theorem, slot population and all-`n` implication remain unproved | `docs/411-prime-power-rule-exhaustiveness-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -115,11 +116,30 @@ registry and `T01_SOURCE_STATEMENTS` target to agree exactly. Until every source
 sealed verification artifact are present, the current atomic source target remains T01; only then
 does the source front advance to `T02_RULE_EXHAUSTIVENESS`.
 
+## Exact T02 rule-exhaustiveness frontier
+
+The T02 checker derives one fixed record for every parent case, clause, finite parameter axis,
+excluded row and global recurrence-skeleton parent. Each proved record has one sealed artifact with
+exact source support. Clause artifacts depend on their axis and exclusion artifacts, case artifacts
+depend on all applicable clauses, and global-parent application artifacts depend on the exact case
+and selected clause.
+
+Each global parent must identify one exact operation slot. The checker verifies the skeleton rule
+and case, selected clause, admitted slot parameter row, local parent state, expected host, ordered
+labels and operation kind. The existing `rule-manifest` and `rule-exhaustiveness-proof` obligation
+artifacts bind reconstructed manifest and proof-bank bundles, and reconstructed readiness must agree
+with both `RULE_EXHAUSTIVE` and `T02_RULE_EXHAUSTIVENESS`.
+
+This is an exact review surface only. It does not prove that the supplied rule data are genuine or
+exhaustive, and it does not populate the slots required by T03.
+
 ## Active frontier
 
 1. Transcribe every cited source statement exactly, confirm its stored hash, and provide one sealed
    source-kind-specific verification artifact with noncircular support.
-2. Prove the genuine exhaustive parent-clause skeleton once the complete source bank closes.
+2. Populate and prove every T02 case, clause, axis, exclusion and global-parent application record;
+   bind each global parent to its exact admitted operation slot; then review the genuine
+   parent-rule exhaustiveness theorem.
 3. Populate every operation slot, candidate row, recurrent block and interface row with real
    geometry, fate, route and transition data.
 4. Prove selector correctness and the intended operation policy.
