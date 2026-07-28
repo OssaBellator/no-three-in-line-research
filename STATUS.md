@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2485;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2493;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -44,9 +44,12 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - an exact T02 work bank covering every case, clause, parameter axis, exclusion and global-parent
   application, with each application bound to one enumerated operation slot;
 - an exact T03 bank giving every expected slot an open/populated/proved record, literal population
-  payload, canonical fibre identity and exact T02-backed proof slot; and
+  payload, canonical fibre identity and exact T02-backed proof slot;
 - an exact T04 bank giving every skeleton-derived recurrent block and return/interface/off-diagonal
-  row an open/populated/proved record, exact T03 ancestry and a noncircular aggregate proof seal.
+  row an open/populated/proved record, exact T03 ancestry and a noncircular aggregate proof seal; and
+- an exact T05 bank giving every expected slot an open/proved finite geometry-selector record,
+  exact T03 projection, exact T04-use support, separate geometry/selector obligation seals and a
+  noncircular T05 target seal.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -229,6 +232,39 @@ readiness must agree exactly with `T04_BLOCK_INTERFACE_POPULATION`.
 This layer proves documentary population identity only. It does not prove geometry, selector,
 transition, block-closure, interface-exhaustiveness or rank semantics.
 
+## Exact T05 finite geometry and selector frontier
+
+CMR2486--CMR2493 give every expected slot one exact open/proved geometry-selector record. A proved
+record requires one validated linked-operation selector certificate and one
+`slot-geometry-selector-proof` artifact.
+
+The finite certificate is projected exactly into the T03 payload:
+
+```text
+pre-response points       -> points
+removed point indices     -> removals
+surviving background      -> survivor_background
+rank-1/2/3 fate records   -> owner_fate_witnesses
+all perfect matchings     -> response_family
+finite minima/thresholds  -> selector_data
+```
+
+The nested checker verifies every responsewise direct-delta identity and the equivalence between a
+negative minimum delta and the destroyed-triple threshold. The slot artifact must cite its exact T03
+population artifact and every proved T04 assembly artifact whose skeleton parent uses that slot.
+
+Separate aggregate geometry and selector banks are bound by the required `geometry-proof` and
+`selector-proof` artifacts for `GEOMETRY_SELECTOR_CORRECT`. A combined noncircular digest is bound by
+the T05 `geometry-selector-proof` target artifact. Ancestor obligation/current-frontier/target
+registry hashes are diagnostic only and are excluded from that sealed digest.
+
+Reconstructed readiness must agree exactly with closure of `GEOMETRY_SELECTOR_CORRECT` and effective
+completion of `T05_GEOMETRY_SELECTORS`.
+
+This proves exact finite arithmetic and documentary support only. It does not prove that the finite
+systems cover the genuine all-`n` recurrence, that state labels have their intended meaning, or that
+the later candidate policy is globally correct.
+
 ## Exceptional and hard-core chamber front
 
 The canonical exceptional-selector worklist contains exactly
@@ -270,8 +306,8 @@ sealed evidence for every effectively complete target.
 CMR2446--CMR2461 add the exact and sealed source-root path. CMR2462--CMR2469 add the T02 rule-
 exhaustiveness bank. CMR2470--CMR2477 add the exact T03 slot/candidate population bank.
 CMR2478--CMR2485 add the exact T04 block/interface population bank and bind its noncircular aggregate
-digest to the T04 target artifact. Each layer requires reconstructed readiness to agree with its
-corresponding obligation or atomic target.
+digest to the T04 target artifact. CMR2486--CMR2493 add the exact T05 finite geometry/selector bank,
+bind the two semantic obligation artifacts and synchronize the T05 target.
 
 Every gate remains documentary. Every final checker permanently reports
 `all_n_proved_by_checker = 0`.
@@ -287,20 +323,22 @@ Every gate remains documentary. Every final checker permanently reports
    the complete slot/candidate population theorem.
 4. Enter actual assembly data for every T04 skeleton-derived block and interface row, prove each unit
    with exact T03 support, and review the complete global population bank.
-5. Prove real geometry, selector and candidate-policy correctness.
-6. Prove fate, transition, state, resource and routed-credit semantics.
-7. Exhibit closed strongly connected recurrent blocks with strict common weights.
-8. Prove and eliminate every recursive auxiliary expansion.
-9. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-10. Prove the complete interface family and global rank semantics.
-11. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
+5. Populate and prove every T05 finite geometry/selector record, then prove that the finite raw-host
+   bank covers the genuine recurrence geometry.
+6. Prove the intended candidate policy and fate/transition/state semantics.
+7. Prove active-row, destroyed-resource and routed-credit semantics.
+8. Exhibit closed strongly connected recurrent blocks with strict common weights.
+9. Prove and eliminate every recursive auxiliary expansion.
+10. Prove every cross-block equivalence, component scale, state predicate and row theorem.
+11. Prove the complete interface family and global rank semantics.
+12. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
     noncircular support and completion-to-bundle sealing.
-12. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
-13. Prove the skeleton-derived global family exhaustive.
-14. Complete and review all ten final premises and six induction-handoff assertions.
-15. Complete all 43 atomic proof targets and pass the synchronized chamber, source-root, T02, T03,
-    T04 and sealed target-artifact gates.
-16. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
+13. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
+14. Prove the skeleton-derived global family exhaustive.
+15. Complete and review all ten final premises and six induction-handoff assertions.
+16. Complete all 43 atomic proof targets and pass the synchronized chamber, source-root, T02, T03,
+    T04, T05 and sealed target-artifact gates.
+17. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
 
 ## Corrections retained
 
@@ -314,6 +352,9 @@ Every gate remains documentary. Every final checker permanently reports
 - A populated T03 record is research progress, not a proved slot.
 - Literal block/interface assembly data do not prove geometry, transitions or global semantics.
 - A populated T04 record is research progress, not a proved block or interface row.
+- Exact finite response arithmetic does not prove that the supplied finite bank covers every
+  recurrence geometry for arbitrary `n`.
+- A proved T05 record does not establish candidate-policy, state-label or transition semantics.
 - An aggregate target proof digest must exclude any ancestor certificate containing that target's
   completion digest; otherwise the binding is circular.
 - Source-truth readiness does not prove recurrence exhaustiveness.
@@ -339,13 +380,14 @@ Every gate remains documentary. Every final checker permanently reports
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2485**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2493**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support through all forty-three atomic
 frontier targets, an explicit 252-chamber closure registry, sealed execution gates, an exact
-source-statement/T01 bank, an exact T02 rule-exhaustiveness bank, an exact T03 slot/candidate
-population bank and an exact T04 skeleton-derived block/interface population bank with T03 ancestry
-and a noncircular target-artifact proof seal. Completion still requires the literal genuine source
-statements, valid proofs of each statement and rule record, actual T03 and T04 data and proof review,
-proof of geometry, selector, transition, resource, block, interface and rank semantics, every chamber
-disposition, exceptional closure and ordinary mathematical review of the final implication to all
-`n`.
+source-statement/T01 bank, an exact T02 rule-exhaustiveness bank, exact T03 and T04 population banks,
+and an exact T05 finite geometry/selector bank with literal T03 projection, exact T04-use support,
+separate semantic-obligation seals and a noncircular target-artifact proof seal. Completion still
+requires the literal genuine source statements, valid proofs of each statement and rule record,
+actual T03/T04 data and review, proof that the finite T05 bank covers the genuine recurrence,
+candidate-policy and fate/transition/resource semantics, strict block closure, cross-block and
+interface/rank semantics, every chamber disposition, exceptional closure and ordinary mathematical
+review of the final implication to all `n`.
