@@ -1,0 +1,50 @@
+name: Product side-seven semantic 192-reference set cover
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-semantic-set-cover192.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-semantic-set-cover192' .github/product-side-seven-m2-semantic-set-cover192-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact set-cover measurement
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_set_cover192.cpp
+          -o /tmp/measure-semantic-set-cover192
+      - name: Measure compact exact summary
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/measure-semantic-set-cover192 \
+            | tee product-side-seven-m2-semantic-set-cover192.txt
+          grep -q '^FINAL .* PASS$' product-side-seven-m2-semantic-set-cover192.txt
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-semantic-set-cover192
+          path: product-side-seven-m2-semantic-set-cover192.txt
+          if-no-files-found: error
+
+# Durable registration: retain until the exact compact basis is promoted.
