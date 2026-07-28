@@ -52,6 +52,8 @@ no-three-in-line conjecture.
 | PP3bqx--PP3bqz | Clean-macro distance obeys an exact fibre-shell recursion; the 1,260 extremal `m=10` cycles are precisely the fifth-shell cycle gate | PROVED / VERIFIED FINITELY | `docs/350-clean-macro-fibre-shell-and-m10-cycle-gate.md` |
 | PP3bra--PP3brc | Every `m=10` sign fibre has a complete fixed-sign matching off 74 exceptions; local augmentation gives a globally injective direct-clean policy with reverse indegree one | PROVED / VERIFIED FINITELY | `docs/351-injective-locally-coupled-direct-clean-repair-m10.md` |
 | PP3brd--PP3brg | Clean-macro fibre width is extracted exactly; every nonvalid clean fibre through `m=10` lies in one shell or two adjacent shells | PROVED / VERIFIED FINITELY | `docs/352-clean-macro-fibre-width-through-m10.md` |
+| PP3brh--PP3brj | Two target-disjoint locally coupled direct-clean layers cover all `m=10` optimal sources; averaging them gives exact one-step charge at most `1/2` | PROVED / VERIFIED FINITELY | `docs/353-two-target-disjoint-direct-clean-repair-layers-m10.md` |
+| PP3brk--PP3brm | The sixteen-state `m=10` sparse core has four owner-cover Pareto types, attained by a complete bank of ten canonical five-step words | PROVED / VERIFIED FINITELY | `docs/354-m10-sparse-core-owner-cover-pareto-words.md` |
 
 ## Current exact frontier
 
@@ -70,19 +72,21 @@ blocked by three-owner collateral. Most unresolved states reach parity-clean
 termination before strict repair can lower total atomic defect, so a clean
 macro or joint action remains necessary.
 
-The strict-to-clean charge interface is exact at three levels. A fixed repair
-word has at most one predecessor, exact Hall-balanced strict weights give
-one-step charge at most `489/1726` through `m=9`, and the complete direct-clean
-covering graph at `m=10` has a globally injective deterministic policy. All
-1,024 fixed-sign fibres match their nonexception sources; the 74 locally
-coupled exceptions require alternating paths with at most two sources. Thus the
-first nonforest direct switch has reverse indegree at most one. The open step is
-a uniform margin below one, rather than merely nonamplification.
+The strict-to-clean charge interface is now exact at four levels. A fixed repair
+word has at most one predecessor; exact Hall-balanced strict weights give
+one-step charge at most `489/1726` through `m=9`; one injective direct-clean
+layer exists at `m=10`; and two globally target-disjoint layers now give the
+strict bound `1/2`. The twofold fixed-sign graph leaves 452 copy deficits, all
+resolved by locally coupled augmenting paths of at most two source vertices.
+Fibre regeneration and clean heat evolution can only contract the resulting
+inherited density further.
 
-Atomic collateral is owner-local. One three-owner rotation alters only
-`O(m^2)` support slots, and a bounded-owner trajectory has an `O(km^2)` light
-cone. The explicit sparse terminal banks at `m=9` and `m=10` show that monotone
-atomic repair is unnecessary but the sharp finite excursions remain small.
+Atomic collateral is owner-local. The explicit `m=9` and `m=10` word banks now
+separate support/atomic cost from owner-cover locality. In the sixteen-state
+`m=10` minimum core, eight states admit a star-local shortest path, eight require
+owner-cover two, and four of the star-local states pay exactly one extra support
+and four extra atomic triples. The remaining task is to predict these Pareto
+types structurally and control the predecessor charge of a uniform word rule.
 
 Complete clean-macro reachability holds through the first nonforest size:
 
@@ -93,12 +97,12 @@ m=10: maximum macro distance 5.
 ```
 
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
-orientation correction is now sharply localised. Through `m=10`, every
-nonvalid clean fibre has width at most one. At `m=10`, only 38 of 297,882
-nonvalid clean cycles mix adjacent distances; the other 297,844 lie in one
-complete shell. The 1,260 fifth-shell cycles contain the entire 535,072-state
-terminal layer. The asymptotic horizon problem is therefore primarily a bound
-on the cycle minimum, plus one adjacent-shell boundary.
+orientation correction is sharply localised. Through `m=10`, every nonvalid
+clean fibre has width at most one. At `m=10`, only 38 of 297,882 nonvalid clean
+cycles mix adjacent distances; the other 297,844 lie in one complete shell. The
+1,260 fifth-shell cycles contain the entire 535,072-state terminal layer. The
+asymptotic horizon problem is therefore primarily a bound on the cycle minimum,
+plus one adjacent-shell boundary.
 
 Exact weighted-Hall flaw transport reaches `m=9` without enumerating clean
 signed states. There are 25,540 atomic signed-assignment flaws, 25,520 with a
@@ -112,18 +116,19 @@ mass nor constant-size expansion alone controls the finite obstruction.
    reduced boundary solutions.
 2. Prove a geometric Hall bound, or construct explicit balanced weights, for
    target-optimal strict repair throughout the logarithmic frustration window.
-3. Strengthen the injective `m=10` covering policy to a quantitative margin
-   below one, for example by fractional balancing or several injective layers.
-4. Generalize the explicit `m=9` and `m=10` sparse terminal banks to a structural
-   bounded-collateral word with controlled predecessor charge.
+3. Generalize the two target-disjoint `m=10` layers to a uniform multi-layer
+   construction with asymptotic charge margin.
+4. Characterize the four sparse-core owner-cover Pareto types and turn the
+   `m=9,10` word banks into a structural bounded-collateral rule with controlled
+   predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant and prove a
    uniform adjacent-shell fibre-width theorem.
 6. Prove uniform weighted expansion or heat-kernel control for local,
    intermediate, and global flaw-transport Hall cuts.
 7. Extend compressed exact flaw transport to `m=10`, where one flaw has at most
    `6!=720` source cycles.
-8. Combine covering local repair, Hall-balanced reverse-collision contraction,
+8. Combine covering local repair, multi-layer reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3brh`.
+The next available theorem identifier is `PP3brn`.
