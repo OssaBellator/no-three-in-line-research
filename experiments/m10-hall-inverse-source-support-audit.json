@@ -1,0 +1,19 @@
+{
+  "m": 10,
+  "supported_signed_flaws": 47512,
+  "nonempty_ledger_rows_checked": 183,
+  "compatible_source_cycle_range": [106, 720],
+  "support_normalized_charge_definition": "s(f) * gamma(f)",
+  "maximum_support_normalized_charge": "3152400/791819",
+  "maximum_support_normalized_charge_decimal": 3.9812128781956484,
+  "maximizing_source_count": 600,
+  "maximizing_source_count_worst_charge": "5254/791819",
+  "margin_below_four": "14876/791819",
+  "global_charge_maximizer_source_count": 550,
+  "global_charge_maximizer_support_normalized_charge": "659175/174949",
+  "every_supported_flaw_satisfies": "gamma(f) < 4/s(f)",
+  "all_47512_weighted_hall_mincuts_completed": true,
+  "asymptotic_inverse_source_envelope_proved": false,
+  "asymptotic_source_support_lower_bound_proved": false,
+  "all_exact_regressions_verified": true
+}
