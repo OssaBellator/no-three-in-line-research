@@ -9,6 +9,12 @@
 #include <map>
 #include <vector>
 
+static uint64_t digest_mix(uint64_t hash, uint64_t value) {
+    hash ^= value;
+    hash *= 1099511628211ULL;
+    return hash;
+}
+
 int main(int argc, char** argv) {
     if (argc != 3) {
         std::cerr << "usage: " << argv[0] << " CASE MULTIPLICITY\n";
@@ -44,11 +50,11 @@ int main(int argc, char** argv) {
         }
 
         uint64_t digest = 1469598103934665603ULL;
-        digest = mix(digest, requested_case);
-        for (auto value : signature) digest = mix(digest, value);
+        digest = digest_mix(digest, requested_case);
+        for (auto value : signature) digest = digest_mix(digest, value);
         for (int mode = 0; mode < 2; ++mode) {
-            digest = mix(digest, top[mode].solutions.size());
-            digest = mix(digest, top[mode].nodes);
+            digest = digest_mix(digest, top[mode].solutions.size());
+            digest = digest_mix(digest, top[mode].nodes);
         }
 
         int constructive_selectors = 0;
@@ -70,15 +76,15 @@ int main(int argc, char** argv) {
                             bottom_nodes, signature, group[selector],
                             assignments[top_index], solver
                         );
-                        digest = mix(digest, selector);
-                        digest = mix(digest, orientation);
-                        digest = mix(digest, top_index);
-                        digest = mix(digest, bottom_nodes);
-                        digest = mix(digest, solver.nodes);
+                        digest = digest_mix(digest, selector);
+                        digest = digest_mix(digest, orientation);
+                        digest = digest_mix(digest, top_index);
+                        digest = digest_mix(digest, bottom_nodes);
+                        digest = digest_mix(digest, solver.nodes);
                         for (auto value : assignments[top_index])
-                            digest = mix(digest, uint8_t(value));
+                            digest = digest_mix(digest, uint8_t(value));
                         for (auto value : solver.bottom)
-                            digest = mix(digest, uint8_t(value));
+                            digest = digest_mix(digest, uint8_t(value));
                         orientation_constructive = true;
                         selector_constructive = true;
                         break;
@@ -96,9 +102,9 @@ int main(int argc, char** argv) {
                               << top[1].solutions.size()
                               << " top_nodes=" << top[0].nodes << ',' << top[1].nodes
                               << " bottom_nodes=" << bottom_nodes << " PASS\n";
-                    digest = mix(digest, selector);
-                    digest = mix(digest, orientation);
-                    digest = mix(digest, bottom_nodes);
+                    digest = digest_mix(digest, selector);
+                    digest = digest_mix(digest, orientation);
+                    digest = digest_mix(digest, bottom_nodes);
                 }
             }
             if (selector_constructive) {
@@ -113,10 +119,10 @@ int main(int argc, char** argv) {
         uint64_t rejection_total = 0;
         for (auto value : certified_rejection_nodes) {
             rejection_total += value;
-            digest = mix(digest, value);
+            digest = digest_mix(digest, value);
         }
-        digest = mix(digest, infeasible_selectors);
-        digest = mix(digest, constructive_selectors);
+        digest = digest_mix(digest, infeasible_selectors);
+        digest = digest_mix(digest, constructive_selectors);
         std::cout << "FINAL case=" << requested_case
                   << " signature=";
         print_signature(signature);
