@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2285;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2317;
 CMR2190 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-7.md`.
 
@@ -20,99 +20,100 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - common-weight minimization across every populated candidate slot;
 - acyclic multi-step auxiliary elimination;
 - denominator-cleared integer recurrent quotient blocks;
-- exact cross-block state identification and weight synchronization;
-- globally scaled strict-or-ranked return/interface rows; and
-- an expected-family global integer quotient package `(A,b,W,mu,rho)`.
+- cross-block state identification and weight synchronization;
+- globally scaled strict-or-ranked return/interface rows;
+- a global integer quotient package `(A,b,W,mu,rho)`;
+- source-independent derivation of its expected family manifest;
+- spanning evidence trees for every shared state class;
+- exact support SCC condensation and critical-rank path bounds; and
+- a fixed nineteen-obligation semantic closure DAG.
 
-These interfaces do not supply the missing genuine mathematical data.
+These interfaces do not supply the missing genuine mathematical data or semantics.
 
-## Cross-block state identification
+## Noncircular expected family
 
-Every local state of every supplied integer block must be linked exactly once to one global
-state. All members of a global class must agree on role, stratum and owner.
+The expected block, interface-row and parent registries are now derived from one canonical
+parent clause per expected global parent. Those clauses contain no selected fibre, response,
+row digest or computed margin. The global quotient manifest must match the derived manifest
+exactly, and every populated row is rebound to its source rule/case clause.
 
-This proves complete link coverage and semantic-core consistency relative to the supplied
-links. It does not prove that linked states are genuinely identical in the external proof.
+This prevents a populated family from declaring itself complete relative to a list copied
+from its own rows. It remains relative to the supplied recurrence skeleton.
 
-## Cross-block weights
+## State equivalence evidence
 
-Shared global states impose exact rational scale ratios between local block weight vectors.
-The checker propagates these ratios, rejects inconsistent cycles, clears denominators and
-publishes canonical minimal positive integer block multipliers inside each connected scale
-component.
+Every global state class with `n>1` members requires exactly `n-1` pairwise evidence edges and
+the resulting graph must be connected. The checker publishes the unique evidence path from a
+canonical root to every member.
 
-Disconnected components remain independently normalized until the interface layer supplies
-their relative positive multipliers.
+This proves complete documentary support. It does not prove that the cited equivalence
+statements are true.
 
-## Return and interface rows
+## Global support and critical descent
 
-After global component scaling, every return, interface and off-diagonal row is checked as
+The positive-support graph and its SCC condensation are reconstructed from the final quotient.
+Every critical edge strictly decreases nonnegative rank, so the critical-edge graph is acyclic
+and its exact longest path is bounded by the global rank span. Every full support cycle must
+therefore contain at least one strict edge.
 
-\[
-\mu_r=\widehat W_p-b_r-\sum_t a_{r,t}\widehat W_t.
-\]
+This is finite quotient arithmetic, not a proof that the quotient models the genuine
+recurrence.
 
-A row is accepted when `mu_r>0`, or when `mu_r=0` and every positive target strictly descends
-in a supplied nonnegative rank. Negative margins and non-descending critical rows are
-rejected.
+## Exact semantic proof frontier
 
-No genuine complete interface row family or semantically proved rank table is yet present.
+The closure checker fixes nineteen required obligations, including source truth, rule
+exhaustiveness, genuine population, geometry and policy correctness, resource and credit
+semantics, closed recurrent blocks, auxiliary semantics, cross-block identity/scales,
+interface and rank exhaustiveness, exceptional closure, hard-core closure and the final
+quotient implication.
 
-## Global integer family
-
-A family manifest fixes the expected block IDs, interface-row IDs and global parent states.
-The checker requires exact coverage, lifts every recurrent row into the final global scale,
-appends every interface row and publishes
-
-\[
-(A,b,W,\mu,\rho).
-\]
-
-A complete-family flag requires complete local-state links, consistent scales, complete
-integer blocks, accepted interface rows and exact block/row/parent coverage. It remains
-complete only relative to the supplied expected family manifest.
+An obligation closes only when it has a proof artifact and all dependencies are closed. The
+checker publishes the full unclosed set and current frontier. Its conditional readiness flag
+cannot turn on while any required module remains open, and it always publishes
+`all_n_proved_by_checker = 0`.
 
 ## Hard-core scalar worklists
 
-The 78 zero-capable exceptional hosts retain 232 zero-selector chambers. The eleven-host
-hard core retains all 20 full-selector chambers. Fixed-response correction 17, rollback
-distance 12 and uniform correction 44 remain distinct currencies.
+The 78 zero-capable exceptional hosts retain 232 zero-selector chambers. The eleven-host hard
+core retains all 20 full-selector chambers. Fixed-response correction 17, rollback distance
+12 and uniform correction 44 remain distinct currencies.
 
 ## Genuine current frontier
 
-1. Prove the genuine exhaustive parent-rule clause and source-provenance manifests.
-2. Populate every expected slot, candidate row and quotient block with actual data.
-3. Prove the common-weight candidate minimum is the genuine recurrence policy.
-4. Validate all real geometry, exceptional thresholds and labelled rows.
-5. Prove the actual simultaneous selected-row family complete and the literal resource
-   model exhaustive.
-6. Exhibit closed strongly connected recurrent blocks with one strict common weight vector.
+1. Prove source truth and the genuine exhaustive recurrence skeleton.
+2. Populate every expected slot, candidate row, block and interface row with actual data.
+3. Prove real geometry, selector and candidate-policy correctness.
+4. Prove fate, transition and state semantics.
+5. Prove the complete simultaneous row family, resource model and routed-credit semantics.
+6. Exhibit closed strongly connected recurrent blocks with strict common weights.
 7. Prove and eliminate every recursive auxiliary expansion.
-8. Prove cross-block state identities, component scales, interface rows and ranks.
-9. Populate and validate the complete expected global block/row/parent family.
-10. Close the 78 zero-capable rows and complete 20-chamber hard core.
-11. Finish fate, interface and state-label semantics and prove the global integer quotient
-    yields the all-`n` result.
+8. Prove every cross-block equivalence and component scale.
+9. Prove the complete interface family and global rank semantics.
+10. Prove the skeleton-derived global family exhaustive.
+11. Close the 78 zero-capable rows and complete 20-chamber hard core.
+12. Prove the final global quotient implies the all-`n` result.
 
 ## Corrections retained
 
 - Source provenance proves traceability, not mathematical truth.
-- Clause expansion remains relative to supplied rule data.
-- Candidate coverage and policy remain relative to supplied populated candidate rows.
-- Overlap-derived scopes prove destroyed-resource disjointness, not active-row completeness.
+- Clause expansion and family skeletons remain relative to supplied rule data.
+- Candidate coverage and policy remain relative to populated candidate rows.
+- Overlap-derived scopes do not prove the active row family or resource model exhaustive.
 - Common weights do not imply closure, connectivity or strictness.
-- Acyclic weighted elimination does not prove auxiliary transition semantics.
-- Cross-block state links do not prove external state identity.
-- Ratio synchronization does not determine relative scales of disconnected components.
-- Strict-or-ranked interface arithmetic does not prove the interface family genuine.
-- A complete global integer family remains relative to its expected manifest.
+- Acyclic weighted elimination does not prove transition semantics.
+- Local-to-global links and evidence trees do not prove external state identity.
+- Shared states do not fix scales between disconnected components.
+- Strict-or-ranked rows do not prove the interface family exhaustive.
+- Support condensation does not prove recurrence semantics.
+- Proof-artifact closure does not machine-verify artifact truth.
+- A ready dossier would still require ordinary mathematical review.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2285**, the finite certificate surface reaches from
-source-traceable rule clauses to exact cross-block state/weight assembly, globally scaled
-return/interface rows and one reloadable global integer quotient family. Completion still
+There is no complete proof. Through **CMR2317**, the finite certificate surface reaches a
+noncircular expected global family, explicit state-equivalence evidence, exact support/rank
+termination structure and a machine-readable semantic proof frontier. Completion still
 requires the actual exhaustive rule and population, proved policy/resource/transition and
-cross-block semantics, genuine complete strict blocks, exceptional closure and a proof that
-the resulting global quotient establishes the conjecture.
+cross-block semantics, genuine strict blocks, exceptional closure and a reviewed proof that
+the global quotient establishes the conjecture.
