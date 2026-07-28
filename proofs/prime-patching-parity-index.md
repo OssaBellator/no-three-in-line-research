@@ -64,6 +64,8 @@ no-three-in-line conjecture.
 | PP3bse--PP3bsg | The complete `106--399` source bands add 2,760 exact `m=10` Hall closures; together with the 720-source tranche, 3,172 instances are certified across local, intermediate, and near-global cuts | VERIFIED FINITELY | `docs/362-exact-low-source-m10-weighted-hall-bands.md` |
 | PP3bsh--PP3bsj | A threshold `2^(m+5)` splits capacity-weighted terminal charge into a low-normalizer harmonic tail and a bulk multiplicity term; the exact envelope remains below `3/5` through `m=10` | PROVED / VERIFIED FINITELY | `docs/363-two-scale-terminal-capacity-envelope-through-m10.md` |
 | PP3bsk--PP3bsm | Every `m=10` flaw with `400--575` compatible source cycles has a proper Hall bottleneck; 13,712 instances are closed, the worst charge is `2397/349898`, and 16,884 total closures are certified | VERIFIED FINITELY | `docs/364-exact-m10-weighted-hall-source-400-575.md` |
+| PP3bsn--PP3bso | Capacity-weighted terminal charge has an exact layer-cake representation; a sublinear cumulative low-normalizer count gives an explicit contraction bound | PROVED | `docs/365-capacity-layer-cake-terminal-criterion.md` |
+| PP3bsp--PP3bsr | All 47,512 supported `m=10` weighted-Hall instances are solved and have proper bottlenecks; the exact global maximum is `2397/349898` | VERIFIED FINITELY | `docs/366-complete-exact-m10-weighted-hall-transport.md` |
 
 ## Current exact frontier
 
@@ -115,18 +117,19 @@ proportionally to its clean-fibre size cancels the reciprocal-fibre penalty. A
 two-scale threshold `T_m=2^(m+5)` further separates the load into an exact
 low-normalizer harmonic tail and a high-normalizer count divided by `T_m`.
 The exact envelope maxima are `0.387...`, `0.585...`, and `0.274...` at
-`m=8,9,10`, all below `3/5`. The remaining horizon problem is shell depth plus
-separate asymptotic control of the low-capacity tail and bulk reverse
-multiplicity.
+`m=8,9,10`, all below `3/5`. More generally, the charge is the exact layer-cake
+integral of the cumulative incoming-label count `C_eta(t)`. A uniform sublinear
+bound on this cumulative profile, together with a growing minimum normalizer,
+would give terminal contraction. The remaining horizon problem is shell depth
+plus this cumulative low-capacity counting theorem.
 
-Exact weighted-Hall flaw transport reaches `m=9`. At `m=10`, source-side
-compression is complete and exact min-cuts now cover 16,884 signed flaws. The
-complete `400--575` source range adds 13,712 proper bottlenecks and has worst
-charge `2397/349898`, with scaled value `6.85057...`, exceeding both the
-complete `m=9` maximum and the earlier audited `m=10` blocks. Thus the scaled
-finite maximum is nonmonotone in the audited data. The remaining 30,628
-closures have exactly `576--719` compatible source cycles; the asymptotic task
-remains all-scale weighted expansion.
+Exact weighted-Hall flaw transport reaches `m=9` and is now complete at `m=10`.
+All `47,512` supported signed flaws have proper Hall bottlenecks. The exact global
+maximum is `2397/349898`, attained at source count `550`, with scaled value
+`6.85057...`; the maximum merging penalty is `1500597/656230`. Thus the finite
+computational frontier is closed, the scaled maximum is nonmonotone in the
+audited data, and the remaining task is purely structural all-scale weighted
+expansion or an equivalent heat-kernel bound.
 
 ## Remaining tasks
 
@@ -140,16 +143,13 @@ remains all-scale weighted expansion.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and bound both the low-normalizer harmonic tail
-   and the high-normalizer reverse multiplicity in the two-scale terminal
-   envelope throughout the frustration window.
+   adjacent-shell fibre width, and establish a sublinear cumulative bound for
+   the terminal normalizer profile `C_eta(t)` throughout the frustration window.
 6. Prove uniform weighted expansion or heat-kernel control for local,
-   intermediate, and global flaw-transport Hall cuts.
-7. Complete the remaining 30,628 exact compressed `m=10` weighted-Hall min-cut
-   instances with source counts `576--719` using independent one-count workers
-   and reusable flow workspaces.
-8. Combine covering local repair, sharp reverse-collision contraction,
+   intermediate, and global flaw-transport Hall cuts, using the complete `m=10`
+   cut census to identify the necessary source scales.
+7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bsn`.
+The next available theorem identifier is `PP3bss`.
