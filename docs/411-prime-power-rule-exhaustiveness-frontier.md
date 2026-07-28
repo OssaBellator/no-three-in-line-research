@@ -42,7 +42,7 @@ Every record is either `open` or `proved`. Open records have null verification f
 record binds the canonical locator
 
 ```text
-rule-exhaustiveness-artifact-registry::<record ID>
+rule-exhaustiveness-artifact-registry://<record ID>
 ```
 
 and the digest of its reconstructed one-artifact bundle.
