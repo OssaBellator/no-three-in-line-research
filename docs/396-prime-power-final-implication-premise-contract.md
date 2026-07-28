@@ -52,10 +52,14 @@ readiness, effective closure and the exact list of open semantic dependencies.
 
 The `final_implication_contract_ready` flag requires simultaneously:
 
-- the CMR2310 closure dossier ready;
+- the finite CMR2310 interface gate;
 - exact typed artifact coverage;
-- a closed root blocker schedule; and
+- every dependency of `GLOBAL_QUOTIENT_IMPLIES_ALL_N` closed; and
 - all ten implication premises effectively closed.
+
+The root implication obligation itself may remain open and actionable. The contract is
+therefore a pre-root dossier gate rather than a post-hoc certificate that assumes the desired
+implication.
 
 The checker always publishes
 
@@ -65,9 +69,10 @@ The checker always publishes
 
 ## Theorem CMR2348 — HONEST FINAL BOUNDARY
 
-A ready contract is a complete, internally linked proof dossier. It does not machine-verify
-ordinary mathematical reasoning, source truth or the final implication. Human-readable proof
-artifacts still require mathematical review.
+A ready contract is a complete, internally linked pre-root proof dossier. It does not close
+the root implication obligation, machine-verify ordinary mathematical reasoning, establish
+source truth or prove the final implication. Human-readable proof artifacts still require
+mathematical review before the root may be declared proved.
 
 ## Corollary CMR2349 — EXECUTABLE ENDPOINT
 
