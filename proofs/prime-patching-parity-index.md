@@ -43,80 +43,76 @@ no-three-in-line conjecture.
 | PP3bpn--PP3bpo | Three prescribed Hamilton arcs have `(m-4)!` containing cycles, and global sign complementation halves the exact signed transport audit | PROVED | `docs/342-compressed-m9-weighted-hall-transport.md` |
 | PP3bpp--PP3bpq | The compressed min-cut algorithm reproduces all `m<=8` ledgers and completes exact weighted-Hall transport at `m=9` | VERIFIED FINITELY | `docs/342-compressed-m9-weighted-hall-transport.md` |
 | PP3bpr--PP3bpu | Recleaning after a covered three-owner rotation is an exact boundary-component XOR system and is polynomial-time for `O(log m)` parity graphs | PROVED | `docs/343-component-local-recleaning-for-sparse-parity-cores.md` |
+| PP3bpv--PP3bpy | Local clean repair is equivalent to covering every active violation plus reduced boundary feasibility; complete covering local repair holds through `m=10` with at most two sign changes | PROVED / VERIFIED FINITELY | `docs/344-violation-cover-equivalence-and-direct-local-repair-through-m10.md` |
+| PP3bpz--PP3bqe | Fixed labelled strict-repair words are injective; inherited-load warmness is exactly endpoint collision between distinct path words and contracts after fibre regeneration | PROVED | `docs/345-path-labelled-strict-repair-charge-and-inherited-load-warmness.md` |
+| PP3bqf--PP3bqj | Affine root-cube bitsets reproduce `m=9` and prove all `115,586,396` clean signed states at `m=10` reach validity within five macro moves | PROVED / VERIFIED FINITELY | `docs/346-root-cube-compressed-clean-macro-reachability-through-m10.md` |
 
 ## Current exact frontier
 
-The parity coordinate is no longer merely globally reoptimizable in the audited
-range. Through `m=9`, an optimal orientation can be retained unchanged during
-strict frustration descent; more strongly, the unchanged vector remains a
-global optimum on every selected target and throughout the complete descent
-path. At the first nonforest size `m=10`, all 74 fixed-sign exceptions are
-repaired by changing at most two signs, both among the three rotated owners.
-Every selected minimum-core edge remains targetable.
+The parity coordinate no longer requires global sign optimization in the
+audited range. Any locally coupled clean repair must cover every active
+violated edge, and target recleaning is exactly the reduced boundary XOR
+system. Static covering of a `lambda`-edge residue is fixed-parameter tractable
+in `2^lambda poly(m)` time. At `m=10`, every one of the `12,786,720` optimal
+positive signed states has a direct covering clean rotation changing at most
+two signs. The missing asymptotic step is existence of useful covering
+successors with uniformly low boundary cost.
 
-For a satisfiable target parity graph, once a rotated source triple covers every
-currently violated edge, all sign recleaning is confined to the three rotated
-owners and the boundary components of the graph with those owners deleted. The
-exact boundary XOR system has at most `3+q` variables for a `q`-edge parity
-graph, so an `O(log m)` sparse core can be recleaned exactly in polynomial time.
-The missing asymptotic step is now existence of useful covering rotations and a
-uniformly low owner-Hamming boundary solution, not global sign optimization.
+The exact two-owner atomic defect can be decreased while preserving
+target-optimality and fixed signs through `m=9`, but complete atomic descent is
+blocked by three-owner collateral. Most unresolved states reach parity-clean
+termination before strict repair can lower total atomic defect, so a clean
+macro or joint action remains necessary.
 
-The exact two-owner atomic defect can also be decreased while preserving target
-optimality and fixed signs through `m=9`. This does not extend automatically to
-the complete atomic defect. Of the one-step total-atomic obstructions, only 122
-of 4,308 at `m=8` and 270 of 26,164 at `m=9` reach a lower total after one more
-strict parity-repair step. No audited state first succeeds only at distance
-three. Almost every unresolved state already has frustration one, so parity
-termination itself prevents further cancellation inside the strict-repair DAG.
+The strict-to-clean switch is exact for reachability and charge. All strict
+predecessor mass compresses to an inherited cycle load `a_F`; after fibre
+regeneration its density is the average signed terminal column mass.
+A fixed labelled repair word has at most one predecessor for any terminal
+state, so all inherited-load concentration comes from collisions between
+different words. Clean-cycle heat evolution is an `L^infinity` contraction of
+that collision density.
 
-The action switch at parity-clean termination is exact both for reachability and
-charge. Finite hybrid paths remain within three moves at `m=8` and four at
-`m=9`. For an arbitrary strict policy, all predecessor merging compresses to an
-inherited terminal load `a_F(rho)`; the optimal switch charge is its weighted
-Hall ratio, and a reversible clean trajectory has charge
-`||K^t(a_F/v)||_infinity`. The open quantitative task is to bound inherited-load
-warmness and mixing, not to track terminal orientations.
+Atomic collateral is owner-local. One three-owner rotation alters only
+`O(m^2)` support slots, and a bounded-owner trajectory has an `O(km^2)` light
+cone. The four explicit one-support `m=9` repair words attain the sharp
+temporary peaks of two supports and eight atomic triples.
 
-Atomic collateral is owner-local. One three-owner rotation can alter only
-`3m-6` pair supports and `(3m^2-15m+20)/2` three-owner supports, with
-`|Delta Z|<=96m^2-336m+352`. A trajectory touching `r` owners changes no support
-disjoint from those owners, giving a deterministic `O(km^2)` light cone for a
-`k`-step bounded-owner repair word.
-
-Complete clean-macro reachability still holds through `m=9`:
+Complete clean-macro reachability now holds through the first nonforest size:
 
 ```text
-m=8: maximum macro distance 3,
-m=9: maximum macro distance 4.
+m=8:  maximum macro distance 3,
+m=9:  maximum macro distance 4,
+m=10: maximum macro distance 5.
 ```
 
-The eight one-support distance-four `m=9` states are four global-sign-complement
-pairs. Every shortest path must expand from one to two supports and from four to
-eight atomic triples, and four explicit words attain exactly those sharp peaks.
+At `m=10`, all `115,586,396` parity-clean signed states are reached. There are
+12 line-valid states, and the distance-five terminal layer contains `535,072`
+states. Root-cube bitsets remove explicit signed-state storage as the
+computational bottleneck.
 
-Exact weighted-Hall transport now reaches `m=9` without enumerating clean signed
+Exact weighted-Hall transport reaches `m=9` without enumerating clean signed
 states. There are 25,540 atomic signed-assignment flaws, 25,520 with a proper
-bottleneck. The worst charge is `223/29271`, or `5.55386/m^3` after scaling, and
-its maximizing cut uses 77 of 96 source cycles. Thus the worst finite obstruction
-has moved from the two-source local cut at `m=8` to a genuinely intermediate cut
-at `m=9`; neither global mass nor constant-size expansion alone is sufficient.
+bottleneck. The worst charge is `223/29271`, or `5.55386/m^3` after scaling,
+and its maximizing cut uses 77 of 96 source cycles. Thus neither global mass
+nor constant-size expansion alone controls the finite obstruction.
 
 ## Remaining tasks
 
-1. Prove existence of pair-safe rotations that cover the active sparse
-   frustration residue and yield low-cost solutions of the boundary XOR system.
-2. Bound the inherited terminal density `a_F/v` produced by strict repair and
-   control predecessor charge across the switch by Hall expansion or mixing.
-3. Generalize the four explicit one-support words to a structural bounded-
-   collateral rule with controlled predecessor charge.
-4. Extend compressed clean-macro reachability to `m=10` without storing all
-   `115,586,396` clean orientations.
-5. Prove a uniform weighted expansion or heat-kernel bound for local,
-   intermediate, and global Hall cuts; the `m=9` worst cut is intermediate.
-6. Extend compressed exact Hall transport to `m=10`, where one flaw has at most
+1. Prove asymptotic existence of pair-safe covering rotations with low-cost
+   reduced boundary solutions.
+2. Bound endpoint collisions between distinct strict-repair words and hence the
+   inherited terminal density `a_F/v`.
+3. Generalize the four explicit one-support words to a structural
+   bounded-collateral rule with controlled predecessor charge.
+4. Classify the `535,072` distance-five `m=10` states and determine their sharp
+   support, owner-cover, and atomic-collateral barriers.
+5. Prove a structural clean-macro horizon bound explaining the finite
+   `3,4,5` progression.
+6. Prove uniform weighted expansion or heat-kernel control for local,
+   intermediate, and global Hall cuts.
+7. Extend compressed exact Hall transport to `m=10`, where one flaw has at most
    `6!=720` source cycles.
-7. Combine locally coupled repair, inherited-load heat evolution, the owner light
-   cone, and compensated atomic three-owner drift.
+8. Combine covering local repair, path-collision charge, inherited-load heat
+   evolution, the owner light cone, and compensated three-owner drift.
 
-The next available theorem identifier is `PP3bpv`.
+The next available theorem identifier is `PP3bqk`.
