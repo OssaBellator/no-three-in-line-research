@@ -1,0 +1,17 @@
+{
+  "m":10,
+  "sources":12786720,
+  "required_target_assignments":25573440,
+  "fixed_sign_twofold_edges":846320044,
+  "fixed_sign_twofold_matched":25572988,
+  "fixed_sign_twofold_deficits":452,
+  "fixed_sign_degree_one_sources":304,
+  "fixed_sign_masks_with_deficit":226,
+  "deficits_assigned_without_rerouting":232,
+  "maximum_augmenting_path_source_count":2,
+  "augmenting_bfs_source_visits":755,
+  "augmenting_bfs_target_visits":7032,
+  "occupied_distinct_targets":25573440,
+  "two_injective_layers_constructed":true,
+  "averaged_maximum_reverse_indegree":"1/2"
+}
