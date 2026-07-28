@@ -2,7 +2,7 @@
 
 **Branch:** `research/sparse-algebraic-spread`
 
-This compact addendum records the cycle-local barrier-payment theorem proved after the current canonical theorem-index compaction.
+This compact addendum records the cycle-local barrier-payment theorem proved after the current canonical theorem-index compaction. The canonical theorem is also recorded in the main branch theorem index.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
