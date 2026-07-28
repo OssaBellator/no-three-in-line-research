@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Finite audit for AC3ur--AC3uv."""
+"""Finite audit for AC3uw--AC3va."""
 
 from itertools import product
 
