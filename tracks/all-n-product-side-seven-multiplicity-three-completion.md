@@ -2,77 +2,80 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This finite stage continues the side-seven `(5,2)` radius-three support-twenty
-census, closes the complete multiplicity-three tier, identifies the exact
-low-multiplicity remainder, and advances the multiplicity-two classification.
+This stage is the exact full-selector classification of the `(5,2)` relative cycle class inside the radius-three, support-twenty layer of the canonical `[14]^2` host. It is a finite census, not an infinite closure theorem.
 
-This stage does **not** prove infinite product closure or the no-three-in-line
-conjecture.
+## Current exact ledger
 
-## Completed ledger
+The layer contains `71,860` selectors grouped into `38,553` top signatures. All selectors of multiplicity at least three are classified:
 
-| Item | Status | Result |
-|---|---|---|
-| Shared digest verifier | **REPAIRED** | `print_sig` is defined in the common header, so digest wrappers compile from a clean checkout. |
-| Generic shard measurement | **COMPLETED** | `measure_product_side_seven_tier_shard.cpp` measures any canonical multiplicity interval, aborts on feasibility, and emits exact verifier constants. |
-| Multiplicity-three cases `2200`--`3543` | **CLOSED** | All `1,344` remaining signatures and `4,032` selectors are infeasible in every orientation. |
-| Complete multiplicity-three tier | **CLOSED** | All `3,544` signatures and `10,632` selectors are infeasible. |
-| Exact signature histogram | **CERTIFIED** | `38,553` signatures partition all `71,860` selectors into the asserted 26 multiplicity tiers. |
-| Multiplicity at least three | **CLASSIFIED** | `37,600` selectors are infeasible and one multiplicity-four selector is constructive. |
-| Multiplicity-two cases `0`--`239` | **CLOSED** | `240` signatures and `480` selectors are infeasible; twenty-four ten-signature proof objects are committed. |
-| Current finite cache boundary | **ADVANCED** | `38,080` selectors are infeasible, one is constructive, and `33,779` remain unclassified. |
-| Exact computation | **COMPLETED TO CASE 239** | The cumulative certified cache uses `2,864,005,979` shared bottom-CSP nodes. |
-| Residual cache | **IDENTIFIED** | `3,600` multiplicity-two signatures (`7,200` selectors) and all `26,579` multiplicity-one selectors remain. |
-| Low-multiplicity proof compression | **REDUCED** | Fixed-top infeasibility is equivalent to explicit bottom-permutation triple covers; generic dictionary and greedy-cover generators are committed. |
-| Infinite exact closure | **OPEN** | No recursive all-side theorem follows from this finite census. |
+- `37,600` are certified infeasible in all four radix orientations;
+- one multiplicity-four selector has a verified no-three embedding.
 
-## Canonical artifacts
+Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `960` signatures, global cases `0` through `959`, are closed in ninety-six canonical ten-signature proof units:
 
-- [`docs/294-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-completion.md`](../docs/294-side-seven-cycle52-radius-three-support-twenty-multiplicity-three-completion.md)
-- [`docs/295-side-seven-cycle52-radius-three-support-twenty-signature-histogram.md`](../docs/295-side-seven-cycle52-radius-three-support-twenty-signature-histogram.md)
-- [`docs/296-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-pilot.md`](../docs/296-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-pilot.md)
-- [`docs/297-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-one-through-three.md`](../docs/297-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-one-through-three.md)
-- [`docs/299-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-four-through-seven.md`](../docs/299-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-four-through-seven.md)
-- [`docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md`](../docs/306-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-eight-through-fifteen.md)
-- [`docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md`](../docs/309-side-seven-cycle52-radius-three-support-twenty-multiplicity-two-shards-sixteen-through-twenty-three.md)
-- [`docs/300-low-multiplicity-bottom-triple-cover-certificates.md`](../docs/300-low-multiplicity-bottom-triple-cover-certificates.md)
-- [`scripts/measure_product_side_seven_tier_shard.cpp`](../scripts/measure_product_side_seven_tier_shard.cpp)
-- [`scripts/measure_product_side_seven_bottom_certificate_dictionary.cpp`](../scripts/measure_product_side_seven_bottom_certificate_dictionary.cpp)
-- [`scripts/measure_product_side_seven_bottom_triple_cover.cpp`](../scripts/measure_product_side_seven_bottom_triple_cover.cpp)
-- [`scripts/verify_product_side_seven_signature_histogram.cpp`](../scripts/verify_product_side_seven_signature_histogram.cpp)
-- `scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard22.cpp` through `...shard35.cpp`
-- `scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp`
-- `scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard1.cpp` through `...shard23.cpp`
+- `1,920` multiplicity-two selectors are certified infeasible;
+- every shard has a standalone ordered-transcript digest verifier;
+- the prefix uses `380,801,559` shared bottom-CSP nodes.
 
-## Immediate frontier
+Therefore the committed support-twenty boundary is:
 
-1. Continue multiplicity-two classification from global case `240` in fixed ten-signature proof shards.
-2. Measure and minimize explicit bottom-permutation triple covers, then combine them with assumption-minimized top nogoods.
-3. Audit repeated metric patterns for a symmetry quotient or direct two-candidate obstruction certificate.
-4. Defer the `26,579` multiplicity-one signatures until the multiplicity-two cost model and certificate structure are understood.
-5. Continue the independent finite-range bridge below `10^2874`, complete non-affine double-coset recursion searches, and global repair/resampling work.
-6. Keep every finite result explicitly separated from an all-`n` claim.
+- `39,520` certified-infeasible selectors;
+- one constructive selector;
+- `32,339` unclassified selectors;
+- `3,147,256,803` certified rejection-CSP nodes.
+
+The unresolved cache consists exactly of:
+
+- `2,880` multiplicity-two signatures containing `5,760` selectors;
+- all `26,579` multiplicity-one selectors.
+
+An exact run is registered for cases `960` through `1039`. It is not counted until one complete transcript set is promoted.
+
+## Exact finite proof units
+
+The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committed multiplicity-two shard family is:
+
+- `multiplicity2_pilot10.cpp` for cases `0`--`9`;
+- `multiplicity2_shard1.cpp` through `multiplicity2_shard95.cpp` for cases `10`--`959`.
+
+Each wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest.
+
+## Certificate compression and master learning
+
+For multiplicity-two case zero, orientation three:
+
+- the first 64 top orders give 128 selector obligations;
+- every obligation has a seven-triple cover;
+- 55 triples and 93 covers encode 896 cover entries;
+- all 64 reference cores have been semantically minimized;
+- 30 references retain aligned selector masks and 34 require selector-mask unions;
+- the 64 cores deduplicate to 49 actual partial-assignment keys on 30 mask shapes;
+- their 169 extension occurrences have an exact union of 92 clean top orders;
+- both selector covers are replayed using 1,703,520 exact bottom checks.
+
+The next compression target is to process top orders beyond index 63, measure reuse of the existing 49 keys, and select a minimum or near-minimum set-cover basis for the complete clean-top family.
+
+## Immediate tasks
+
+1. Promote cases `960--1039`, then continue the multiplicity-two census.
+2. Extend semantic support deletion beyond the first 64 top orders and measure vocabulary saturation.
+3. Build and verify a compact set-cover basis from the accumulated master keys.
+4. Defer multiplicity one until multiplicity-two proof size and symmetry are understood.
+5. Continue the independent finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and hyperbola/carry fronts.
+6. Keep every finite result separate from an all-`n` claim.
 
 ## Verification
 
 ```bash
-for shard in $(seq 22 35); do
-  source="scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity3_shard${shard}.cpp"
-  binary="/tmp/m3s${shard}"
-  g++ -O3 -std=c++17 "$source" -o "$binary"
-  "$binary"
-done
-
-g++ -O3 -std=c++17 \
-  scripts/verify_product_side_seven_signature_histogram.cpp \
-  -o /tmp/side-seven-histogram
-/tmp/side-seven-histogram
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full64.py
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..95}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
 done
 ```
+
+The classical no-three-in-line conjecture and infinite product closure remain open.
