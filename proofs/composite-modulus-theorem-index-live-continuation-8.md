@@ -26,6 +26,7 @@ The authoritative live ledger is split across:
 | CMR2462--2469 | Fixed case/clause/axis/exclusion/application work bank, exact source and internal rule-artifact support, global-parent-to-operation-slot binding, sealed rule-manifest and rule-exhaustiveness bundles, exact `RULE_EXHAUSTIVE`/T02 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T02 rule-exhaustiveness frontier; checker syntax-compiled locally; the actual parent rule, exhaustiveness theorem, slot population and all-`n` implication remain unproved | `docs/411-prime-power-rule-exhaustiveness-frontier.md` |
 | CMR2470--2477 | Exact open/populated/proved slot bank, literal population payloads, canonical fibre/source binding, exact T02 case/clause/application support, payload-to-proof sealing, aggregate population certificate, exact `SLOT_AND_CANDIDATE_POPULATION`/T03 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T03 slot/candidate population frontier; checker syntax-compiled locally; no genuine population semantics, T04 population or all-`n` implication claimed | `docs/412-prime-power-slot-candidate-population-frontier.md` |
 | CMR2478--2485 | Skeleton-derived block/interface unit bank, open/populated/proved assembly records, exact T03 source-slot binding, literal block/interface payloads, exact T03 artifact support, noncircular aggregate population bank, exact T04 target-artifact binding and synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T04 block/interface population frontier; checker syntax-compiled and isolated source-binding tests passed; no geometry, transition, block-closure, interface-exhaustiveness or all-`n` proof claimed | `docs/413-prime-power-block-interface-population-frontier.md` |
+| CMR2486--2493 | Exact slotwise geometry/selector work bank, exact T03 finite-geometry projection, responsewise delta/threshold identity, exact T03/T04 proof support, separate geometry and selector obligation banks, noncircular T05 target binding, exact readiness synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T05 finite geometry/selector frontier; checker syntax-compiled and isolated status/projection helper tests passed; no genuine recurrence coverage, global candidate-policy theorem or all-`n` proof claimed | `docs/414-prime-power-geometry-selector-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -174,6 +175,27 @@ agree exactly with `T04_BLOCK_INTERFACE_POPULATION`.
 This remains population identity only. It does not prove geometry, transition semantics, recurrent-
 block closure, interface exhaustiveness or rank well-foundedness.
 
+## Exact T05 finite geometry and selector frontier
+
+Every expected slot has one open/proved T05 record. A proved slot contains one validated
+linked-operation selector certificate whose finite geometry projection must equal the T03 literal
+points, removals, survivor background, flattened owner/fate witnesses, complete response family and
+selector data.
+
+The nested finite certificate verifies every response delta and the equivalence between negative
+minimum delta and the destroyed-triple threshold. Each proved slot has one
+`slot-geometry-selector-proof` artifact citing its exact T03 population artifact and every T04
+assembly artifact whose skeleton parent uses that slot.
+
+Separate aggregate geometry and selector banks are bound by the two required
+`GEOMETRY_SELECTOR_CORRECT` artifacts. A noncircular combined digest is bound by the T05
+`geometry-selector-proof` target artifact, and reconstructed readiness must agree with both the
+semantic obligation and `T05_GEOMETRY_SELECTORS`.
+
+This is exact finite arithmetic and documentary support. It does not prove that the supplied finite
+systems form the genuine exhaustive all-`n` recurrence or that the later candidate policy is
+globally correct.
+
 ## Active frontier
 
 1. Transcribe every cited source statement exactly, confirm its stored hash, and provide one sealed
@@ -185,15 +207,17 @@ block closure, interface exhaustiveness or rank well-foundedness.
    the complete candidate-family population theorem.
 4. Populate and prove every skeleton-derived T04 recurrent block and return/interface/off-diagonal
    row with exact T03 ancestry, then review the complete global population bank.
-5. Prove selector correctness and the intended operation policy.
-6. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
+5. Populate and prove every T05 slotwise finite geometry/selector record, then prove that this finite
+   bank covers the genuine recurrence geometry.
+6. Prove the intended operation policy and the complete fate/transition/state semantics.
+7. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
    semantics.
-7. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
-8. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-9. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
-   noncircular support and completion-to-bundle sealing.
-10. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
+8. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
+9. Prove every cross-block equivalence, component scale, state predicate and row theorem.
+10. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
+    noncircular support and completion-to-bundle sealing.
+11. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
     every closed disposition mathematically.
-11. Complete all forty-three atomic targets, all ten final premises and all six induction-handoff
+12. Complete all forty-three atomic targets, all ten final premises and all six induction-handoff
     assertions, then prove that the reviewed global quotient and handoff establish `D(n)=2n` for
     every `n`.
