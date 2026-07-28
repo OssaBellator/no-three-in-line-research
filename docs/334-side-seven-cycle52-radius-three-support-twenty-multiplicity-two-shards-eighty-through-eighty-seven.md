@@ -37,7 +37,7 @@ GitHub Actions run `30320492357` completed all eight jobs.
 | 3 | 5,520,437 |
 | Total | 25,096,759 |
 
-The first 880 multiplicity-two signatures therefore use `374,208,231` bottom-CSP nodes.
+The first 880 multiplicity-two signatures therefore use `353,338,127` bottom-CSP nodes.
 
 ## PX1075 — revised cache boundary
 
@@ -46,7 +46,7 @@ The exact support-twenty cache now contains:
 - `39,360` certified-infeasible selectors;
 - one constructive selector;
 - `32,499` unclassified selectors;
-- `3,119,793,475` certified rejection-CSP nodes.
+- `3,119,793,371` certified rejection-CSP nodes.
 
 The unresolved selectors are exactly `2,960` multiplicity-two signatures (`5,920` selectors) and `26,579` multiplicity-one selectors. The next canonical multiplicity-two case is `880`.
 
