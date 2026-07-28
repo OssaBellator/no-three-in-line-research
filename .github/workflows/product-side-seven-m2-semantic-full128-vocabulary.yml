@@ -1,0 +1,48 @@
+name: Product side-seven complete 128-reference semantic vocabulary
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-semantic-full128-vocabulary.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    name: semantic-full128-vocabulary
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-semantic-full128-vocabulary' .github/product-side-seven-m2-semantic-full128-vocabulary-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile complete vocabulary measurement
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full128.cpp
+          -o /tmp/measure-semantic-full128-vocabulary
+      - name: Measure complete vocabulary coverage
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          /tmp/measure-semantic-full128-vocabulary
+          | tee product-side-seven-m2-semantic-full128-vocabulary.txt
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-semantic-full128-vocabulary
+          path: product-side-seven-m2-semantic-full128-vocabulary.txt
+          if-no-files-found: warn
+
+# Durable registration: retain until the exact transcript is secured.
