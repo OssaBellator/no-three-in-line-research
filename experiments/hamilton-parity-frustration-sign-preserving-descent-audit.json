@@ -1,0 +1,80 @@
+{
+  "minimum_pair_size": 5,
+  "maximum_pair_size": 9,
+  "cases": [
+    {
+      "m": 5,
+      "hamilton_cycles": 24,
+      "pair_safe_cycles": 24,
+      "positive_frustration_cycles": 2,
+      "optimal_oriented_states": 48,
+      "optimal_violated_edge_checks": 48,
+      "sign_preserving_descent_transitions": 244,
+      "targeted_sign_preserving_descent_transitions": 244,
+      "clearing_sign_preserving_descent_transitions": 244,
+      "minimum_sign_preserving_descents_per_optimal_state": 3,
+      "minimum_targeted_sign_preserving_descents_per_violated_edge": 3,
+      "minimum_clearing_sign_preserving_descents_per_violated_edge": 3
+    },
+    {
+      "m": 6,
+      "hamilton_cycles": 120,
+      "pair_safe_cycles": 120,
+      "positive_frustration_cycles": 8,
+      "optimal_oriented_states": 272,
+      "optimal_violated_edge_checks": 272,
+      "sign_preserving_descent_transitions": 2596,
+      "targeted_sign_preserving_descent_transitions": 2596,
+      "clearing_sign_preserving_descent_transitions": 2596,
+      "minimum_sign_preserving_descents_per_optimal_state": 5,
+      "minimum_targeted_sign_preserving_descents_per_violated_edge": 5,
+      "minimum_clearing_sign_preserving_descents_per_violated_edge": 5
+    },
+    {
+      "m": 7,
+      "hamilton_cycles": 720,
+      "pair_safe_cycles": 720,
+      "positive_frustration_cycles": 56,
+      "optimal_oriented_states": 2752,
+      "optimal_violated_edge_checks": 2752,
+      "sign_preserving_descent_transitions": 37020,
+      "targeted_sign_preserving_descent_transitions": 37020,
+      "clearing_sign_preserving_descent_transitions": 37020,
+      "minimum_sign_preserving_descents_per_optimal_state": 6,
+      "minimum_targeted_sign_preserving_descents_per_violated_edge": 6,
+      "minimum_clearing_sign_preserving_descents_per_violated_edge": 6
+    },
+    {
+      "m": 8,
+      "hamilton_cycles": 5040,
+      "pair_safe_cycles": 4560,
+      "positive_frustration_cycles": 1018,
+      "optimal_oriented_states": 93980,
+      "optimal_violated_edge_checks": 97224,
+      "sign_preserving_descent_transitions": 1642058,
+      "targeted_sign_preserving_descent_transitions": 1681654,
+      "clearing_sign_preserving_descent_transitions": 1680944,
+      "minimum_sign_preserving_descents_per_optimal_state": 5,
+      "minimum_targeted_sign_preserving_descents_per_violated_edge": 5,
+      "minimum_clearing_sign_preserving_descents_per_violated_edge": 5
+    },
+    {
+      "m": 9,
+      "hamilton_cycles": 40320,
+      "pair_safe_cycles": 37440,
+      "positive_frustration_cycles": 5752,
+      "optimal_oriented_states": 977312,
+      "optimal_violated_edge_checks": 1001344,
+      "sign_preserving_descent_transitions": 24730616,
+      "targeted_sign_preserving_descent_transitions": 25074724,
+      "clearing_sign_preserving_descent_transitions": 25068372,
+      "minimum_sign_preserving_descents_per_optimal_state": 4,
+      "minimum_targeted_sign_preserving_descents_per_violated_edge": 4,
+      "minimum_clearing_sign_preserving_descents_per_violated_edge": 4
+    }
+  ],
+  "identical_orientation_strict_descent_verified": true,
+  "every_optimal_violated_edge_has_clearing_descent_verified": true,
+  "maximum_orientation_hamming_change": 0,
+  "asymptotic_sign_preserving_descent_theorem_proved": false
+}
