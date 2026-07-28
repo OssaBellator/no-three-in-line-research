@@ -1,0 +1,56 @@
+name: Product side-seven hard ranged multiplicity-two case 1287 orientation zero
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-m2-range-1287-o0-hard.yml
+
+permissions:
+  contents: read
+
+jobs:
+  measure:
+    name: top-${{ matrix.first_top }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        first_top: [40000, 45000]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-range-1287-o0-hard' .github/product-side-seven-m2-range-1287-o0-hard-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile ranged exact tool
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_single_case_orientation_range.cpp
+          -o /tmp/measure-product-side-seven-range
+      - name: Measure exact hard range
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/measure-product-side-seven-range 1287 0 2 \
+            "${{ matrix.first_top }}" 5000 \
+            | tee "product-side-seven-m2-1287-o0-${{ matrix.first_top }}.txt"
+          grep -q ' INFEASIBLE$' "product-side-seven-m2-1287-o0-${{ matrix.first_top }}.txt"
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-m2-1287-o0-${{ matrix.first_top }}
+          path: product-side-seven-m2-1287-o0-${{ matrix.first_top }}.txt
+          if-no-files-found: error
+
+# Durable registration: retain until both hard ranges are promoted.
