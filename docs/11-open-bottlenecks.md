@@ -2,12 +2,12 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2461 the branch has a complete finite
+The no-three-in-line conjecture remains open. Through CMR2469 the branch has a complete finite
 certificate architecture from source-traceable rule clauses to a global integer quotient,
 semantic predicates and row theorems, typed obligation/premise/handoff artifacts, a seven-gate
 pre-root integrity audit, an exact 252-chamber exceptional worklist, a 43-target execution schedule
 over thirteen genuine research frontiers, synchronized chamber/target gates, sealed atomic-target
-evidence, and an exact source-statement/T01 root bank with sealed verification artifacts.
+evidence, an exact source-statement/T01 root bank, and an exact T02 rule-exhaustiveness work bank.
 
 The branch still lacks the literal genuine source statements, the genuine exhaustive recurrence,
 complete real population, proved external semantics, complete strict blocks and interface rows,
@@ -55,15 +55,51 @@ The complete source-truth bundle must be bound by the unique `source-truth-proof
 `SOURCE_STATEMENTS_TRUE`. CMR2446--CMR2453 require the same obligation registry to appear in the
 current-frontier stack and require exact agreement with `T01_SOURCE_STATEMENTS`.
 
-## 3. Prove the exhaustive recurrence skeleton
+## 3. Close the exact T02 rule-exhaustiveness bank
 
-After the complete source bank closes, prove that the genuine parent rule has one canonical
-source-independent clause for every global parent and that the parent-case, parameter-axis and
-exclusion registries are exhaustive. This closes `RULE_EXHAUSTIVE` and advances the atomic source
-front from `T01_SOURCE_STATEMENTS` to `T02_RULE_EXHAUSTIVENESS`.
+CMR2462--CMR2469 make `T02_RULE_EXHAUSTIVENESS` an exact proof-work interface. After the source bank
+closes, populate one open/proved record for every:
 
-The existing clause enumerator explicitly states that the actual parent rule is not yet present.
-Do not treat synthetic or supplied clause data as the genuine recurrence.
+- parent case;
+- rule clause;
+- finite parameter axis;
+- excluded parameter row; and
+- global parent in the recurrence skeleton.
+
+Each proved record requires one artifact of its fixed kind. Its exact source support is reconstructed
+from the provenance certificate. Internal support is fixed by
+
+```text
+axis/exclusion -> clause -> case -> global-parent application.
+```
+
+For every global parent, provide the exact triple
+
+```text
+source_case_id
+source_clause_id
+operation_slot_id
+```
+
+The selected slot must be one of the source-independent expected slots generated from an admitted
+parameter row. It must match the skeleton case, case/clause incidence, local parent state, expected
+host, ordered labels and operation kind.
+
+The existing typed artifacts for `RULE_EXHAUSTIVE` must bind:
+
+```text
+rule-exhaustiveness-registry://RULE_EXHAUSTIVE/rule-manifest
+rule-exhaustiveness-registry://RULE_EXHAUSTIVE/rule-exhaustiveness-proof
+```
+
+The first digest seals the rule source, clause manifest, expected slot registry, recurrence skeleton,
+cases and clauses. The second seals the complete T02 record and artifact banks together with the
+source-statement registry.
+
+Reconstructed readiness must agree exactly with both `RULE_EXHAUSTIVE` and
+`T02_RULE_EXHAUSTIVENESS`. The existing clause enumerator explicitly states that the actual parent
+rule is not yet present. Exact application-to-slot identity is therefore a review surface, not proof
+that the supplied cases and clauses are the genuine exhaustive recurrence.
 
 ## 4. Complete genuine population
 
@@ -154,6 +190,10 @@ For each proved source statement `S`, the verification locator is
 artifact bundle. The artifact's external proof pointer is separate, and source-proof support must
 be acyclic.
 
+For each proved T02 record `R`, the verification locator is
+`rule-exhaustiveness-artifact-registry://R`. Source and internal rule support must equal the
+reconstructed support sets; neither omitted nor unrelated support is accepted.
+
 For the source root, the `source-truth-proof` artifact locator is
 `source-statement-truth-registry://SOURCE_STATEMENTS_TRUE` and its digest equals the complete source
 truth bundle digest.
@@ -186,15 +226,17 @@ arithmetic, not time or difficulty estimates.
 
 CMR2414--CMR2421 synchronize the atomic schedule with the typed handoff-assertion artifact registry
 and exact 252-chamber disposition registry. CMR2422--CMR2437 add sealed target-artifact evidence.
-CMR2446--CMR2461 add the exact and sealed source-root path.
+CMR2446--CMR2461 add the exact and sealed source-root path. CMR2462--CMR2469 add the exact T02 bank.
 
 A claimed all-frontier dossier must therefore agree with:
 
 - six handoff artifact bundles;
 - independent 232/20 chamber readiness flags;
 - the exact sealed artifact bank for completed targets;
-- the exact literal source statement census used by `T01_SOURCE_STATEMENTS`; and
-- one sealed, acyclically supported verification artifact for every proved source statement.
+- the exact literal source statement census used by `T01_SOURCE_STATEMENTS`;
+- one sealed, acyclically supported verification artifact for every proved source statement; and
+- the exact case/clause/axis/exclusion/application census used by `T02_RULE_EXHAUSTIVENESS`, with
+  every global parent bound to one expected operation slot.
 
 Passing these gates proves documentary identity and coverage only, not the mathematics.
 
@@ -203,17 +245,19 @@ Passing these gates proves documentary identity and coverage only, not the mathe
 1. Populate the literal source statement bank and prove the highest-use open source statements
    using sealed, noncircular verification artifacts.
 2. Close all source statements and pass the source-root/T01 synchronization gate.
-3. Prove the exhaustive parent-clause recurrence skeleton.
-4. Populate every genuine slot, candidate, block and interface row.
-5. Prove geometry, selectors, fate, transitions, resources and candidate policy.
-6. Close strict recurrent blocks and semantic auxiliary expansions.
-7. Prove cross-block identities, scales, interface rows, ranks, predicates and row theorems.
-8. Populate and prove all 252 exceptional chamber dispositions.
-9. Populate genuine noncircular obligation, premise, handoff and sealed atomic-target artifacts.
-10. Close all ten premises, all six handoff assertions and all 43 atomic targets.
-11. Pass the source-root, synchronized current-frontier, sealed target-artifact and seven-gate
+3. Populate the exact T02 case, clause, axis, exclusion and global-parent application bank.
+4. Prove each T02 record with exact source/internal support and pass the T02 synchronization gate.
+5. Review the ordinary theorem that the resulting parent-rule bank is genuinely exhaustive.
+6. Populate every genuine slot, candidate, block and interface row.
+7. Prove geometry, selectors, fate, transitions, resources and candidate policy.
+8. Close strict recurrent blocks and semantic auxiliary expansions.
+9. Prove cross-block identities, scales, interface rows, ranks, predicates and row theorems.
+10. Populate and prove all 252 exceptional chamber dispositions.
+11. Populate genuine noncircular obligation, premise, handoff and sealed atomic-target artifacts.
+12. Close all ten premises, all six handoff assertions and all 43 atomic targets.
+13. Pass the source-root, T02, synchronized current-frontier, sealed target-artifact and seven-gate
     pre-root audits.
-12. Write and review the ordinary proof that the quotient and handoff imply `D(n)=2n`.
+14. Write and review the ordinary proof that the quotient and handoff imply `D(n)=2n`.
 
 ## 15. Fixed semantic obligation DAG
 
@@ -229,9 +273,8 @@ The nineteen exact obligations are:
 `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`, `EXCEPTIONAL_ZERO_ROWS_CLOSED`,
 `HARD_CORE_ROWS_CLOSED`, and `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
 
-An obligation cannot close while an exact dependency remains open. The source registry makes the
-root obligation's internal statement and sealed-verification census explicit; it does not change
-the DAG.
+An obligation cannot close while an exact dependency remains open. The source and T02 registries
+make the first two obligations' internal evidence censuses explicit; they do not change the DAG.
 
 ## 16. Honesty boundaries
 
@@ -240,6 +283,8 @@ the DAG.
 - Repeating an external proof locator/digest is not statement-to-proof binding.
 - Typed and sealed source artifacts do not verify mathematical validity.
 - Acyclic source-proof support does not prove logical sufficiency.
+- Exact global-parent-to-slot binding does not prove the supplied rule genuine or exhaustive.
+- Sealed T02 records do not verify their external proof artifacts.
 - Source-truth readiness does not establish recurrence exhaustiveness.
 - Rule and family completeness remain relative to supplied data until proved externally.
 - Candidate coverage does not prove the intended policy.
@@ -260,11 +305,12 @@ the DAG.
 
 ## 17. Current endpoint
 
-Through CMR2461 the finite interface reaches a noncircular global quotient dossier, typed support
+Through CMR2469 the finite interface reaches a noncircular global quotient dossier, typed support
 through final handoff assertions and every atomic frontier target, an explicit 252-chamber closure
-registry, synchronized execution/evidence gates, and an exact statement-by-statement source root
-synchronized with T01. Every proved source entry now requires a sealed verification artifact and
-the complete source-proof support graph must be acyclic. The unresolved center is the genuine
-mathematics: literal source content, valid proofs of those statements, the actual exhaustive
-recurrence and population, proof of every semantic statement and chamber disposition, strict
-block closure and the reviewed implication to all `n`.
+registry, synchronized execution/evidence gates, an exact statement-by-statement source root
+synchronized with T01, and an exact T02 case/clause/axis/exclusion/application bank synchronized
+with `RULE_EXHAUSTIVE` and `T02_RULE_EXHAUSTIVENESS`. Every proved source or T02 entry requires a
+sealed artifact with exact support. The unresolved center is the genuine mathematics: literal
+source content, valid proofs of those statements and rule records, the actual exhaustive recurrence
+and population, proof of every semantic statement and chamber disposition, strict block closure
+and the reviewed implication to all `n`.
