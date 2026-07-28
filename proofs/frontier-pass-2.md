@@ -13,9 +13,10 @@ This addendum records the bounded small-reservoir results proved after the curre
 | GC2hn--GC2hr | One-for-one occurrence-faithful transitions conserve adverse-token mass inside every SCC; each token crosses at most `R-1` condensation boundaries, while splitting or source-less creation returns an exact adverse-amplification obstruction | PROVED UNDER THE CONSERVATIVE SCC ADVERSE-LINEAGE CONTRACT | `docs/geometric-cleaning-scc-adverse-conservation.md` |
 | GC2hs--GC2hw | Exact cause demands and finite compatible remedy capacities form an integral transportation problem; full cause payment is equivalent to capacitated Hall inequalities, and failure returns one canonical deficient cause/remedy cut | PROVED UNDER THE COMPLETE CAUSE/REMEDY COMPATIBILITY CONTRACT | `docs/geometric-cleaning-cause-remedy-transport.md` |
 | GC2hx--GC2ib | Integral cause-to-remedy transport with nonnegative remedy height costs has minimum clean-height loss equal to the exact threshold-deficiency layer cake; failure returns a threshold Hall core or infeasible cut | PROVED UNDER THE COMPLETE ADDITIVE CLEAN-HEIGHT TRANSPORT CONTRACT | `docs/geometric-cleaning-clean-height-transport.md` |
+| GC2ic--GC2ig | Minimum clean-height losses debit an initial-plus-deposited reserve; zero loss is exact preservation, thresholded positive-loss epochs are finite, and the first unpaid feasible epoch returns a height overload | PROVED UNDER THE COMPLETE CLEAN-HEIGHT RESERVE AND DEPOSIT CONTRACT | `docs/geometric-cleaning-clean-height-bank.md` |
 
 ## Updated frontier
 
-The branch now has an exact reservoir quotient, Hall-core/missing-rectangle causes, finite cause and adverse-source accounts, a complete physical cause-to-remedy criterion and an exact additive clean-height objective. Remaining GC5 work is proving the concrete remedy graph, capacities and height costs, nonamplification for actual adverse cycles, untagged feedback and local resampling.
+The branch now has exact cause/remedy feasibility, minimum clean-height loss and a cumulative clean-height reserve. Remaining GC5 work is proving the concrete remedy graph, capacities, height costs and deposits, nonamplification for actual adverse cycles, untagged feedback and local resampling.
 
 No statement here proves GC5 or the no-three-in-line conjecture.
