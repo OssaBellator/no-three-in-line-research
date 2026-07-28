@@ -2,7 +2,7 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This map records the active frontiers after PX1025. No item below is a proof of
+This map records the active frontiers after PX1032. No item below is a proof of
 the classical no-three-in-line conjecture or an all-side product theorem.
 
 ## 1. Effective asymptotic repair path
@@ -31,50 +31,53 @@ or absorber chain below `10^2874`.
 
 ## 2. Finite side-seven full-selector census
 
-**Status: exact through multiplicity-two case 479; cases 480--559 launched.**
+**Status: exact through multiplicity-two case 559; cases 560--639 registered.**
 
 All selectors of multiplicity at least three are classified: `37,600` are
-infeasible and one multiplicity-four selector is constructive. The first `480`
-multiplicity-two signatures add another `960` infeasible selectors.
+infeasible and one multiplicity-four selector is constructive. The first `560`
+multiplicity-two signatures add another `1,120` infeasible selectors.
 
 Current committed boundary:
 
-- `38,560` certified-infeasible selectors;
+- `38,720` certified-infeasible selectors;
 - one constructive selector;
-- `33,299` unclassified selectors;
-- `2,975,018,807` certified rejection-CSP nodes.
+- `33,139` unclassified selectors;
+- `3,006,271,316` certified rejection-CSP nodes.
 
 The unresolved cache is exactly:
 
-- `3,360` multiplicity-two signatures containing `6,720` selectors;
+- `3,280` multiplicity-two signatures containing `6,560` selectors;
 - `26,579` multiplicity-one selectors.
 
-A durable eight-shard matrix covers cases `480` through `559`. It is not counted
-until exact transcripts are promoted.
+An eight-shard workflow is registered for cases `560` through `639`. It is not
+counted until exact transcripts are promoted.
 
 **Frontier:** continue canonical ten-signature proof units while replacing raw
 bottom DFS by compact cover-based master nogoods where possible.
 
 ## 3. Low-multiplicity certificate compression
 
-**Status: seven-triple covers and repeated semantic mask vocabulary proved.**
+**Status: seven-triple covers, semantic deletion, and actual-key deduplication
+proved for the dominant repeated support class.**
 
 For case zero, orientation three, 128 selector/top obligations through 64 top
 orders all have seven-triple covers. A 55-triple dictionary and 93 cover lists
 encode all 896 entries.
 
 The most frequent syntactic support mask `6975` occurs for both selectors at
-twelve top orders. Semantic deletion gives only two pair-mask shapes:
+twelve top orders. Semantic deletion gives mask `6936` at eleven references and
+mask `6920` at one. Deduplicating the actual partial assignments yields only five
+keys:
 
-- `6936`, size six, at eleven top orders;
-- `6920`, size five, at one top order.
+- four assignments on mask `6936`;
+- one assignment on mask `6920`.
 
-The twelve pair cores certify 40 clean top extensions and 403,200 bottom checks.
-At every measured reference, both selectors have the same semantic mask.
+Their extension lists contain 40 occurrences but only 14 distinct clean top
+orders, with 26 overlaps and 403,200 exact bottom checks.
 
-**Frontier:** deduplicate the actual partial assignments on those shapes,
-measure the union of their extension families against all clean top orders, and
-extend semantic learning to other support classes and orientations.
+**Frontier:** extend semantic deletion to the other support classes and
+orientations, deduplicate all actual assignments, and solve a compact set-cover
+problem against the complete clean-top family.
 
 ## 4. Recursive closure from produced bases
 
@@ -122,11 +125,10 @@ bounded-denominator chambers.
 
 ## 7. Operational priorities
 
-1. Promote cases `480--559` and continue the finite census.
-2. Measure coverage of the two-mask semantic vocabulary over the complete
-   orientation-three top-order family.
+1. Promote cases `560--639` and continue the finite census.
+2. Extend semantic-core generation to all support classes in the 64-top prefix.
 3. Prove the 10% decimal-2873 arithmetic improvement or reduce divisor loss.
-4. Complete the side-ten opposite-pair fine-row double-coset searches.
+4. Complete bounded side-ten `fc`/`ff` opposite-pair intervals.
 5. Develop the global exact-cover/resampling and hyperbola/carry closure routes.
 
 ## Verification entry points
@@ -136,10 +138,11 @@ python scripts/verify_product_2873_divisor_improvement_target.py
 python scripts/verify_product_nicolas_robin_divisor_baseline.py
 python scripts/verify_product_transposition_double_coset_opposite_coarse_ten.py
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_repeated_semantic_cores.py
+python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary.py
 
 for source in \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_pilot10.cpp \
-  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..47}.cpp; do
+  scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard{1..55}.cpp; do
   binary="/tmp/$(basename "$source" .cpp)"
   g++ -O3 -std=c++17 "$source" -o "$binary"
   "$binary"
