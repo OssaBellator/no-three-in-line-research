@@ -11,25 +11,25 @@ The layer contains `71,860` selectors grouped into `38,553` top signatures. All 
 - `37,600` are certified infeasible in all four radix orientations;
 - one multiplicity-four selector has a verified no-three embedding.
 
-Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `1,370` signatures, global cases `0` through `1369`, are classified:
+Multiplicity two contains `3,840` signatures and `7,680` selectors. The first `1,380` signatures, global cases `0` through `1379`, are classified:
 
-- `2,739` multiplicity-two selectors are certified infeasible;
+- `2,759` multiplicity-two selectors are certified infeasible;
 - case `1287`, selector zero, supplies a second verified no-three embedding;
-- the classified prefix uses `505,816,508` certified rejection-CSP nodes.
+- the classified prefix uses `509,107,709` certified rejection-CSP nodes.
 
 Therefore the committed support-twenty boundary is:
 
-- `40,339` certified-infeasible selectors;
+- `40,359` certified-infeasible selectors;
 - two constructive selectors;
-- `31,519` unclassified selectors;
-- `3,272,271,752` certified rejection-CSP nodes.
+- `31,499` unclassified selectors;
+- `3,275,562,953` certified rejection-CSP nodes.
 
 The unresolved cache consists exactly of:
 
-- `2,470` multiplicity-two signatures containing `4,940` selectors;
+- `2,460` multiplicity-two signatures containing `4,920` selectors;
 - all `26,579` multiplicity-one selectors.
 
-The next canonical multiplicity-two case is `1370`.
+The next canonical multiplicity-two case is `1380`.
 
 ## Exact finite proof units
 
@@ -39,7 +39,7 @@ The common engine is `scripts/product_side_seven_cache_engine.hpp`. The committe
 - `multiplicity2_shard1.cpp` through `multiplicity2_shard127.cpp` for cases `10`--`1279`;
 - `multiplicity2_shard128_special.cpp` for the nineteen rejections and one construction in cases `1280`--`1289`;
 - `multiplicity2_shard129.cpp` through `multiplicity2_shard135.cpp` for cases `1290`--`1359`;
-- `verify_product_side_seven_multiplicity2_cases1360_1369.py` for the selector-aware ten-case continuation.
+- `verify_product_side_seven_multiplicity2_cases1360_1369.py` and `verify_product_side_seven_multiplicity2_cases1370_1379.py` for the selector-aware continuation.
 
 Each ordinary rejection wrapper asserts the tier size, exact interval, both clean-top and top-node totals, all four bottom-CSP totals, and one ordered transcript digest. The special shard rebuilds the case-`1287` signature and state, independently checks the 28-point construction, and separately rejects selector one. The selector-aware continuation treats a verified construction as a successful classification rather than a failed shard.
 
@@ -62,12 +62,12 @@ The complete clean-top family has 35,112 orders, so the current semantic union c
 
 ## Immediate tasks
 
-1. Continue multiplicity two from case `1370` with selector-aware classification.
+1. Continue multiplicity two from case `1380` with selector-aware classification.
 2. Generate semantic references from clean top orders outside the current 204-top union.
 3. Target the 177 private top-order witnesses in the 115-key basis only after the union has expanded materially.
 4. Test whether the case-`1287` construction has a symmetry orbit or a reusable local template.
 5. Defer multiplicity one until multiplicity-two proof size, construction frequency, and symmetry are understood.
-6. Continue the finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and carry/absorber fronts.
+6. Continue the side-ten fine-row frontier from pair index `4400` and the finite-range, non-affine recursion, protected-spread, bounded-barrier repair, and carry/absorber fronts.
 7. Keep every finite result separate from an all-`n` claim.
 
 ## Verification
@@ -82,6 +82,7 @@ g++ -O3 -std=c++17 \
 /tmp/verify-semantic-complement192
 
 python scripts/verify_product_side_seven_multiplicity2_cases1360_1369.py
+python scripts/verify_product_side_seven_multiplicity2_cases1370_1379.py
 
 g++ -O3 -std=c++17 \
   scripts/verify_product_side_seven_cycle52_radius_three_support_twenty_multiplicity2_shard128_special.cpp \
