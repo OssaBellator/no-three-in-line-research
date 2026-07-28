@@ -2,11 +2,12 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2413 the branch has a complete finite
+The no-three-in-line conjecture remains open. Through CMR2421 the branch has a complete finite
 certificate architecture from source-traceable rule clauses to a global integer quotient,
 semantic predicates and row theorems, typed obligation/premise/handoff artifacts, a seven-gate
-pre-root integrity audit, an exact 252-chamber exceptional worklist, and a 43-target execution
-schedule over thirteen genuine research frontiers.
+pre-root integrity audit, an exact 252-chamber exceptional worklist, a 43-target execution
+schedule over thirteen genuine research frontiers, and one synchronized target/artifact/chamber
+execution gate.
 
 The branch still lacks the genuine exhaustive recurrence, complete real population, proved
 external semantics, complete strict blocks and interface rows, mathematically closed chamber
@@ -110,7 +111,21 @@ Use research-actionable targets to begin independent work without claiming closu
 proof-actionable targets and proof waves to sequence completion. These quantities are planning
 arithmetic, not time or difficulty estimates.
 
-## 12. Immediate execution order
+## 12. Use the synchronized current-frontier gate
+
+CMR2414--CMR2421 compose the atomic schedule with the typed handoff-assertion artifact registry
+and the exact 252-chamber disposition registry.
+
+Every handoff target must agree with its assertion-specific artifact bundle. The exceptional-zero
+and hard-core targets must agree with the independent 232- and 20-chamber readiness flags. The
+combined blocker record publishes research-actionable and proof-actionable targets, minimum
+proof-wave depth, open chamber counts and open handoff bundles.
+
+Use this synchronized surface as the current execution source of truth. It prevents a high-level
+target from closing while its underlying artifact or chamber registry remains open, but it does
+not verify the mathematics.
+
+## 13. Immediate execution order
 
 1. Prove source truth and the exhaustive parent-clause skeleton.
 2. Populate every genuine slot, candidate, block and interface row.
@@ -120,10 +135,10 @@ arithmetic, not time or difficulty estimates.
 6. Populate and prove all 252 exceptional chamber dispositions.
 7. Populate genuine noncircular obligation, premise and handoff artifacts.
 8. Close all ten premises, all six handoff assertions and all 43 atomic targets.
-9. Pass the seven-gate pre-root audit.
+9. Pass the synchronized current-frontier gate and seven-gate pre-root audit.
 10. Write and review the ordinary proof that the quotient and handoff imply `D(n)=2n`.
 
-## 13. Fixed semantic obligation DAG
+## 14. Fixed semantic obligation DAG
 
 The nineteen exact obligations are:
 
@@ -139,7 +154,7 @@ The nineteen exact obligations are:
 
 An obligation cannot close while an exact dependency remains open.
 
-## 14. Honesty boundaries
+## 15. Honesty boundaries
 
 - Traceability, digests and typed coverage do not prove statements true.
 - Rule and family completeness remain relative to supplied data until proved externally.
@@ -152,16 +167,16 @@ An obligation cannot close while an exact dependency remains open.
 - Support condensation does not prove the quotient models the recurrence.
 - Typed artifact support does not prove truth or logical sufficiency.
 - A closed chamber disposition does not verify its proof.
-- Atomic completion records and dependency waves are planning metadata.
+- Atomic completion, synchronization records and dependency waves are planning metadata.
 - Edgewise lexicographic descent is sufficient, not necessary.
 - A ready contract, handoff or audit remains subject to mathematical review.
 - Every final checker reports `all_n_proved_by_checker = 0`.
 - Syntax compilation does not imply dependency-backed suites ran here.
 
-## 15. Current endpoint
+## 16. Current endpoint
 
-Through CMR2413 the finite interface reaches a noncircular global quotient dossier, typed
-support through final handoff assertions, an explicit 252-chamber closure registry and an exact
-43-target execution schedule. The unresolved center is the genuine mathematics: actual
-exhaustive data, proof of every semantic statement and chamber disposition, strict block
-closure and the reviewed implication to all `n`.
+Through CMR2421 the finite interface reaches a noncircular global quotient dossier, typed
+support through final handoff assertions, an explicit 252-chamber closure registry, an exact
+43-target execution schedule and a synchronized target/artifact/chamber gate. The unresolved
+center is the genuine mathematics: actual exhaustive data, proof of every semantic statement
+and chamber disposition, strict block closure and the reviewed implication to all `n`.
