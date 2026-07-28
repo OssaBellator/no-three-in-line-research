@@ -23,9 +23,10 @@ This addendum records the bounded small-reservoir results proved after the curre
 | GC2jl--GC2jp | Physical source mass, existing remedy and height balances, and cause demands form one integral physical/remedy/height/cause network; simultaneous issuance and payment are max-flow, while failure returns one exact mixed cut | PROVED UNDER THE COMPLETE PHYSICAL REMEDY-HEIGHT NETWORK CONTRACT | `docs/geometric-cleaning-integrated-physical-remedy-height-flow.md` |
 | GC2jq--GC2ju | Residual reachability returns exact outside cause demand and physical, remedy and height barriers; guarded compatibility preserves every cause/remedy/height address | PROVED UNDER THE COMPLETE PHYSICAL REMEDY-HEIGHT CUT CONTRACT | `docs/geometric-cleaning-physical-remedy-height-cuts.md` |
 | GC2jv--GC2jz | Every unpaid complete cleaning network has a canonical minimum-cardinality cause core; every proper subset is payable and each retained cause has marginal shortfall equal to the full core deficit | PROVED UNDER THE COMPLETE IRREDUCIBLE CAUSE-CORE CONTRACT | `docs/geometric-cleaning-irreducible-cause-core.md` |
+| GC2ka--GC2ke | Every non-singleton irreducible cause core has exact physical/remedy/height competition equal to its full deficit across every bipartition; singleton cores are direct cause shortages and any split with smaller overlap excludes the core | PROVED UNDER THE COMPLETE FIXED-NETWORK AND EXACT SUBSET MAX-FLOW CONTRACT | `docs/geometric-cleaning-core-overlap-certificate.md` |
 
 ## Updated frontier
 
-The branch has exact Hall-core causes, clean-height costs, mixed physical/remedy/height barriers and canonical irreducible cause cores. Remaining GC5 work is proving that the returned local cause marginal shortage is geometrically impossible or paid, together with concrete capacities, deposits, height costs, untagged feedback and local resampling.
+The branch has exact Hall-core causes, clean-height costs, mixed physical/remedy/height barriers, irreducible cause cores and exact overlap certificates. Remaining GC5 work is proving that each returned singleton cause shortage or canonical physical/remedy/height overlap is geometrically impossible or paid, together with concrete capacities, deposits, height costs, untagged feedback and local resampling.
 
 No statement here proves GC5 or the no-three-in-line conjecture.
