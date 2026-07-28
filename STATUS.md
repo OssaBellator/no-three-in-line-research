@@ -12,50 +12,43 @@ The classical no-three-in-line problem remains unresolved. The analogous no-`(k+
 2. The branch proves factor-independent products `2x3 -> 6`, `2x4 -> 8`, `2x5 -> 10`, and `2x6 -> 12`.
 3. Every saturated side-`n` factor has a factor-compatible side-`2n` state with `O(n log n)` bad triples.
 4. The audited paired repair path is effective for every `N >= 10^2874`.
-5. Universal divisor-exponent tuning cannot lower that integral cutoff. The Nicolas--Robin baseline reaches only `10^14104`; at `10^2873`, a uniform 10% divisor-cap improvement suffices while 9% does not.
-6. All side-seven support-twenty selectors of multiplicity at least three are classified. Multiplicity-two cases `0` through `1039` add `2,080` exact rejections. The committed cache contains:
-   - `39,680` certified-infeasible selectors;
+5. At decimal order `2873`, the unchanged divisor-improvement threshold lies between `1.0979139` and `1.0979151`; factor `1.097913` is insufficient and `1.097916` is sufficient.
+6. All side-seven support-twenty selectors of multiplicity at least three are classified. Multiplicity-two cases `0` through `1119` add `2,240` exact rejections. The committed cache contains:
+   - `39,840` certified-infeasible selectors;
    - one constructive selector;
-   - `32,179` unclassified selectors;
-   - `3,165,594,500` certified rejection-CSP nodes.
-7. Case-zero orientation-three bottom covers compress 128 obligations into 55 triples and 93 cover lists. The complete first-64 semantic census reduces 64 reference cores to 49 actual partial-assignment keys covering 92 distinct clean top orders, verified by 1,703,520 exact bottom checks.
-8. At side ten, the complete opposite-pair double coset is infeasible in `cc` and `cf`. Pair indices `0` through `2399` are also infeasible in each of `fc` and `ff`, using 40,119,413 and 41,948,761 nodes respectively.
-9. Exact protected-rainbow censuses show that an absolute rank-three cylinder bound requires at least cubic family size.
-10. In the canonical side-six repair graph, every state is within two unweighted moves of a solution; exactly ten states require a temporary defect increase, never more than one.
+   - `32,019` unclassified selectors;
+   - `3,189,247,243` certified rejection-CSP nodes.
+7. For case zero, orientation three, the first 128 semantic reference cores reduce to 102 actual partial-assignment keys. Their 316 extension occurrences cover 164 distinct clean top orders, verified by 3,185,280 exact bottom checks. Three selector-zero references require twelve-triple rather than seven-triple greedy covers.
+8. At side ten, the complete opposite-pair double coset is infeasible in `cc` and `cf`. Pair indices `0` through `2799` are also infeasible in each of `fc` and `ff`, using 56,828,308 and 50,704,601 nodes respectively.
+9. Protected-rainbow cylinder bounds require cubic entropy in every nonempty slice conditioned on at most three edges; the exact order-five and order-seven families collapse to singleton slices after two compatible edges.
+10. In the canonical side-six repair graph, every state is within two unweighted moves of a solution. Exactly 102 nonsolutions have a forced minimax-optimal first move, while every bounded-uphill state has at least three optimal exits.
+11. Exact carry multiplicity at sides two through five is at most three-fifths of the general cap, with sharp maxima 12, 36, 48, and 72.
 
 ## Current exact finite boundary
 
 The side-seven support-twenty cache contains `71,860` selectors:
 
-- `39,680` certified infeasible;
+- `39,840` certified infeasible;
 - `1` constructive;
-- `32,179` unclassified.
+- `32,019` unclassified.
 
 The unresolved set is exactly:
 
-- `2,800` multiplicity-two signatures containing `5,600` selectors;
+- `2,720` multiplicity-two signatures containing `5,440` selectors;
 - `26,579` multiplicity-one selectors.
 
-The next canonical multiplicity-two case is `1040`.
+The next canonical multiplicity-two case is `1120`. Cases `1120` through `1199` are registered but are not counted until their transcripts are promoted.
 
 ## Active frontiers
 
-- Cover every order below `10^2874`, either by a 10% decimal-2873 divisor improvement, reduced divisor loss, or a structural extension/absorber chain.
-- Continue the side-ten `fc` and `ff` search from pair index `2400`, then address the two larger double cosets.
-- Complete the semantic vocabulary census through top index 127, measure reuse of the established 49 keys, and solve a compact set-cover problem over the complete clean-top family.
-- Prove cubic simultaneous-rainbow abundance with controlled rank-three completion multiplicities.
-- Prove a global bounded-barrier repair/resampling theorem.
-- Establish second-generation hyperbola/carry concentration, termination, or bounded-denominator absorbers.
+- Prove the approximately `9.7914%` interval-specific decimal-2873 divisor improvement, reduce effective divisor loss, or construct a structural extension below `10^2874`.
+- Promote side-ten pair indices `2800` through `3199`, then continue the opposite-pair coset and address the two larger double cosets.
+- Extend semantic master learning beyond top index 127 and compute a compact set-cover basis from the 102-key vocabulary.
+- Prove cubic simultaneous-rainbow abundance with cubic residual entropy after every rank-at-most-three conditioning.
+- Prove a global bounded-barrier repair/resampling theorem that coordinates forced states and the multiple exits at uphill states.
+- Improve carry multiplicity asymptotically or prove second-generation collateral concentration, termination, or bounded-denominator absorbers.
 - Complete multiplicity two and multiplicity one in the side-seven census.
-
-## Important barriers
-
-- Strict triple-count and natural pair-energy descent are not monotone.
-- Shortest repair paths need not minimize peak defect.
-- Existence or quadratic abundance of protected rainbow matchings cannot yield constant rank-three spread.
-- Representative left cosets are not complete double-coset obstructions.
-- The current universal divisor family is exhausted at `10^2874`.
 
 ## Bottom line
 
-There is no complete proof of the classical no-three-in-line conjecture and no all-side product theorem. The complete semantic census through top index 127 is active but excluded until promoted; the next finite side-seven case is `1040` and the next side-ten pair index is `2400`.
+There is no complete proof of the classical no-three-in-line conjecture and no all-side product theorem. The active exact matrices are side-seven cases `1120--1199` and side-ten fine-row indices `2800--3199`; both are excluded from the certified boundary until promoted.
