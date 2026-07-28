@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Compose the final implication contract with noncircular artifact-support integrity.
+"""Compose the final pre-root contract with typed and noncircular artifact integrity.
 
-The final implication-premise contract checks semantic closure, typed artifact coverage,
-blocker closure, termination mode, and ten ordinary proof premises. This checker adds the
-missing requirement that the typed proof artifacts form an acyclic, dependency-aligned support
-graph whose proved bundles reach all immediate prerequisite artifacts.
+The final implication-premise contract checks semantic closure, obligation artifact coverage,
+termination mode and ten ordinary proof premises. This checker additionally requires exact
+typed artifacts for those ten premises and an acyclic, dependency-aligned support graph for the
+underlying obligation artifacts whose proved bundles reach all immediate prerequisite artifacts.
 
 A ready integrity dossier is still documentary. This checker never verifies ordinary
 mathematical proofs and never declares the no-three-in-line conjecture proved.
@@ -19,10 +19,11 @@ from typing import Any
 import check_prime_power_canonical_raw_host_catalogue as catalogue
 import check_prime_power_final_implication_premise_contract as final_contract
 import check_prime_power_obligation_artifact_support_dag as support_dag
+import check_prime_power_premise_artifact_registry as premise_artifacts
 
 
 class FinalDossierIntegrityError(ValueError):
-    """Raised when the final contract and artifact-support dossier do not compose."""
+    """Raised when the final contract and artifact-integrity dossiers do not compose."""
 
 
 def require(condition: bool, message: str) -> None:
@@ -32,20 +33,35 @@ def require(condition: bool, message: str) -> None:
 
 def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     contract_certificate = certificate.get("final_implication_premise_contract_certificate")
+    premise_certificate = certificate.get("premise_artifact_registry_certificate")
     support_certificate = certificate.get("obligation_artifact_support_dag_certificate")
     require(isinstance(contract_certificate, dict),
             "final_implication_premise_contract_certificate: expected object")
+    require(isinstance(premise_certificate, dict),
+            "premise_artifact_registry_certificate: expected object")
     require(isinstance(support_certificate, dict),
             "obligation_artifact_support_dag_certificate: expected object")
     final_contract.validate_certificate(contract_certificate)
+    premise_artifacts.validate_certificate(premise_certificate)
     support_dag.validate_certificate(support_certificate)
     contract_exact = final_contract.exact_certificate(contract_certificate)
+    premise_exact = premise_artifacts.exact_certificate(premise_certificate)
     support_exact = support_dag.exact_certificate(support_certificate)
 
+    require(
+        premise_certificate["final_implication_premise_contract_certificate"]["certificate_sha256"]
+        == contract_certificate["certificate_sha256"],
+        "final contract and premise artifact registry use different contracts",
+    )
     contract_registry = contract_certificate["obligation_artifact_registry_certificate"]
+    premise_registry = premise_certificate[
+        "final_implication_premise_contract_certificate"
+    ]["obligation_artifact_registry_certificate"]
     support_registry = support_certificate["obligation_artifact_registry_certificate"]
+    require(contract_registry["certificate_sha256"] == premise_registry["certificate_sha256"],
+            "final contract and premise artifact registry use different obligation registries")
     require(contract_registry["certificate_sha256"] == support_registry["certificate_sha256"],
-            "final contract and artifact-support DAG use different artifact registries")
+            "final contract and artifact-support DAG use different obligation registries")
 
     support_claims = support_exact["claims"]
     support_ready = int(
@@ -53,8 +69,9 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         and support_claims["artifact_support_dependency_aligned"]
         and support_claims["exact_dependency_artifact_support_coverage"]
     )
+    premise_ready = int(premise_exact["claims"]["exact_typed_premise_artifact_coverage"])
     contract_ready = int(contract_exact["claims"]["final_implication_contract_ready"])
-    integrity_ready = int(contract_ready and support_ready)
+    integrity_ready = int(contract_ready and premise_ready and support_ready)
     incomplete_support_obligations = [
         record["obligation_id"]
         for record in support_exact["obligation_support_records"]
@@ -62,7 +79,8 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     ]
     gate_record = {
         "final_implication_contract_ready": contract_ready,
-        "artifact_support_integrity_ready": support_ready,
+        "typed_premise_artifact_coverage_ready": premise_ready,
+        "obligation_artifact_support_integrity_ready": support_ready,
         "final_dossier_integrity_ready": integrity_ready,
         "open_premise_ids": contract_exact["claims"]["open_premise_ids"],
         "incomplete_artifact_support_obligation_ids": incomplete_support_obligations,
@@ -71,15 +89,18 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
 
     claims = {
         "final_implication_contract_ready": contract_ready,
-        "artifact_support_integrity_ready": support_ready,
+        "typed_premise_artifact_coverage_ready": premise_ready,
+        "obligation_artifact_support_integrity_ready": support_ready,
         "final_dossier_integrity_ready": integrity_ready,
         "all_n_proved_by_checker": 0,
         "open_premises": len(contract_exact["claims"]["open_premise_ids"]),
+        "premise_artifacts": premise_exact["claims"]["premise_artifacts"],
         "incomplete_artifact_support_obligations": len(incomplete_support_obligations),
         "maximum_artifact_support_depth": support_claims["maximum_artifact_support_depth"],
         "final_contract_sha256": contract_certificate["certificate_sha256"],
-        "artifact_support_dag_sha256": support_certificate["certificate_sha256"],
-        "artifact_registry_sha256": contract_registry["certificate_sha256"],
+        "premise_artifact_registry_sha256": premise_certificate["certificate_sha256"],
+        "obligation_artifact_support_dag_sha256": support_certificate["certificate_sha256"],
+        "obligation_artifact_registry_sha256": contract_registry["certificate_sha256"],
         "final_dossier_gate_sha256": gate_record["final_dossier_gate_sha256"],
     }
     return {"final_dossier_gate": gate_record, "claims": claims}
@@ -97,17 +118,20 @@ def validate_certificate(certificate: Any) -> dict[str, int]:
     claims = exact["claims"]
     return {
         "contract_ready": claims["final_implication_contract_ready"],
-        "support_ready": claims["artifact_support_integrity_ready"],
+        "premise_artifacts_ready": claims["typed_premise_artifact_coverage_ready"],
+        "support_ready": claims["obligation_artifact_support_integrity_ready"],
         "ready": claims["final_dossier_integrity_ready"],
         "proved": claims["all_n_proved_by_checker"],
     }
 
 
 def build_certificate(contract_certificate: dict[str, Any],
+                      premise_certificate: dict[str, Any],
                       support_certificate: dict[str, Any]) -> dict[str, Any]:
     certificate: dict[str, Any] = {
         "version": 1,
         "final_implication_premise_contract_certificate": contract_certificate,
+        "premise_artifact_registry_certificate": premise_certificate,
         "obligation_artifact_support_dag_certificate": support_certificate,
     }
     certificate.update(exact_certificate(certificate))
