@@ -47,7 +47,11 @@ PREMISE_DEPENDENCIES: dict[str, tuple[str, ...]] = {
     ),
     "EXCEPTIONAL_CASES_CLOSED": ("EXCEPTIONAL_ZERO_ROWS_CLOSED", "HARD_CORE_ROWS_CLOSED"),
     "TERMINATION_ARGUMENT": ("CLOSED_STRICT_RECURRENT_BLOCKS", "GLOBAL_RANK_WELL_FOUNDED"),
-    "OBJECTIVE_TRANSLATION_TO_D_EQ_2N": ("GLOBAL_QUOTIENT_IMPLIES_ALL_N",),
+    "OBJECTIVE_TRANSLATION_TO_D_EQ_2N": (
+        "EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE", "GLOBAL_RANK_WELL_FOUNDED",
+        "EXCEPTIONAL_ZERO_ROWS_CLOSED", "HARD_CORE_ROWS_CLOSED",
+        "AUXILIARY_EXPANSIONS_SEMANTIC",
+    ),
 }
 
 
@@ -148,10 +152,18 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         result_records.append(result)
 
     all_effective = int(all(record["effective_premise_closed"] for record in result_records))
+    root_id = "GLOBAL_QUOTIENT_IMPLIES_ALL_N"
+    root_dependencies_closed = int(all(
+        closure_by_id[obligation_id]["closed"]
+        for obligation_id in closure.OBLIGATION_DEPENDENCIES[root_id]
+    ))
+    root_open_and_actionable = int(
+        not closure_by_id[root_id]["closed"] and root_dependencies_closed
+    )
     ready = int(
-        closure_exact["claims"]["all_n_implication_dossier_ready"]
+        closure_exact["claims"]["finite_interface_ready"]
         and artifacts.exact_certificate(registry_certificate)["claims"]["exact_typed_artifact_coverage"]
-        and schedule.exact_certificate(schedule_certificate)["claims"]["root_ready"]
+        and root_dependencies_closed
         and all_effective
     )
     open_premises = [record["premise_id"] for record in result_records
@@ -162,6 +174,8 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         "open_premises": len(open_premises),
         "all_premises_effective": all_effective,
         "edgewise_lex_termination_available": edgewise_exact["claims"]["complete_edgewise_lex_termination"],
+        "root_implication_dependencies_closed": root_dependencies_closed,
+        "root_implication_open_and_actionable": root_open_and_actionable,
         "final_implication_contract_ready": ready,
         "all_n_proved_by_checker": 0,
         "open_premise_ids": open_premises,
