@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2429;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2437;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -36,7 +36,7 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - an atomic execution schedule for 13 frontiers and 43 proof targets;
 - a synchronized current-frontier gate binding the target, handoff-artifact and chamber layers;
   and
-- exact typed artifact bundles for every effectively complete atomic target.
+- noncircular, bundle-sealed typed artifact records for every effectively complete atomic target.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -79,12 +79,15 @@ The reconstructed assertion bundle digest must equal the locator/digest pair sto
 handoff assertion. This removes the opaque documentary link above the premise layer without
 verifying any artifact or implication.
 
-CMR2422--CMR2429 extend the same discipline to all forty-three atomic frontier targets. Every
-effectively complete target requires one artifact of its fixed target-specific kind. Its locator
-and digest must equal the target completion record, its target support must equal every immediate
-proof dependency artifact, and its external support must equal the exact linked obligation,
-premise or handoff artifact set. Selected integration targets additionally bind the exact chamber,
-semantic-refinement, support-DAG, handoff, dossier or current-frontier certificate digests.
+CMR2422--CMR2437 extend the same discipline to all forty-three atomic frontier targets. Every
+effectively complete target requires one artifact of its fixed target-specific kind carrying a
+separate external proof locator/digest. Its atomic completion locator is the canonical target-
+registry URI, and its atomic completion digest equals the reconstructed artifact-bundle digest.
+
+Immediate target support is exact. Obligation, premise and handoff references are namespace-
+qualified, selected certificate references are role-qualified, and ancestor certificates that
+already contain a target completion digest are not inserted into that target's own bundle. The
+current-frontier certificate is instead bound by the target-artifact registry as a whole.
 
 ## Exceptional and hard-core chamber front
 
@@ -119,7 +122,7 @@ longest open chains and per-frontier downstream impact. It is planning arithmeti
 not verify proof artifacts, difficulty, timing or truth and always reports
 `all_n_proved_by_checker = 0`.
 
-## Synchronized current-frontier and target-artifact execution
+## Synchronized current-frontier and sealed target-artifact execution
 
 CMR2414--CMR2421 compose the atomic target certificate with the typed handoff-assertion artifact
 registry and the exact 252-chamber disposition registry. All three layers must use the same final
@@ -130,10 +133,10 @@ and hard-core targets must agree exactly with the independent 232- and 20-chambe
 flags. The integrated blocker record publishes actionable targets, proof-wave depth, open
 chambers and open handoff bundles.
 
-CMR2422--CMR2429 then require typed evidence for each effectively complete target. The post-
+CMR2422--CMR2437 require typed and sealed evidence for each effectively complete target. The post-
 frontier artifact gate requires both the synchronized current-frontier gate and a complete bank of
-forty-three exact target artifacts. Open targets cannot contain artifacts. This removes opaque
-target completion records but does not turn target metadata or evidence files into proofs.
+forty-three exact target artifacts. Open targets cannot contain artifacts. A completion must bind
+its reconstructed bundle rather than merely repeat an arbitrary locator/digest pair.
 
 ## Final handoff and integrity audit
 
@@ -158,12 +161,12 @@ may remain open and actionable even when every pre-root documentary gate is read
 7. Prove every cross-block equivalence, component scale, state predicate and row theorem.
 8. Prove the complete interface family and global rank semantics.
 9. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
-   noncircular support.
+   noncircular support and completion-to-bundle sealing.
 10. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
 11. Prove the skeleton-derived global family exhaustive.
 12. Complete and review all ten final premises and six induction-handoff assertions.
-13. Complete all 43 atomic proof targets and pass their synchronized artifact/chamber and typed-
-    target-artifact gates.
+13. Complete all 43 atomic proof targets and pass their synchronized artifact/chamber and sealed
+    typed-target-artifact gates.
 14. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
 
 ## Corrections retained
@@ -179,10 +182,12 @@ may remain open and actionable even when every pre-root documentary gate is read
 - Strict-or-ranked rows do not prove the interface family exhaustive.
 - Support condensation does not prove recurrence semantics.
 - Artifact support acyclicity does not prove logical sufficiency.
+- Repeating an opaque completion locator/digest inside an artifact is not a bundle binding.
+- A target bundle cannot noncircularly bind an ancestor certificate containing its own digest.
 - Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
 - A closed chamber disposition does not verify its proof artifact.
-- Atomic target completion, synchronization and typed target-artifact records are documentary
+- Atomic target completion, synchronization and sealed target-artifact records are documentary
   metadata, not proof verification.
 - A ready contract, handoff or integrity audit remains subject to mathematical review.
 - Every final checker permanently reports `all_n_proved_by_checker = 0`.
@@ -190,10 +195,10 @@ may remain open and actionable even when every pre-root documentary gate is read
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2429**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2437**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support from semantic obligations through
 handoff assertions and all forty-three atomic frontier targets, an explicit 252-chamber
-exceptional/hard-core closure registry, and synchronized execution gates. Completion still
-requires the actual exhaustive rule and population, proof of every semantic statement and
-chamber disposition, genuine strict blocks, exceptional closure and ordinary mathematical review
-of the final implication to all `n`.
+exceptional/hard-core closure registry, synchronized execution gates and noncircular completion-
+to-bundle sealing. Completion still requires the actual exhaustive rule and population, proof of
+every semantic statement and chamber disposition, genuine strict blocks, exceptional closure and
+ordinary mathematical review of the final implication to all `n`.
