@@ -22,6 +22,7 @@ The authoritative live ledger is split across:
 | CMR2430--2437 | Opaque-echo defect isolation, proof-pointer/completion-seal separation, exact registry locator and bundle digest, namespace-qualified external references, role-qualified certificates, noncircular ancestor binding, strengthened post-frontier claims, and executable endpoint | PROVED as a noncircular hardening of atomic target completion sealing; checker version 2 syntax-compiled and isolated schema tests passed; no mathematical target or all-`n` proof claimed | `docs/407-prime-power-atomic-target-completion-sealing.md` |
 | CMR2438--2445 | Exact source statement text, UTF-8 statement-hash binding, source-kind-specific verification artifacts, rule/skeleton identity, complete source-use footprints, source-truth census synchronization, existing `source-truth-proof` bundle binding, honesty boundary, and executable endpoint | PROVED as an exact source-statement proof-work interface; checker syntax-compiled and isolated statement-digest tests passed; the actual source statements and parent rule remain unproved/unpopulated | `docs/408-prime-power-source-statement-truth-registry.md` |
 | CMR2446--2453 | Shared obligation-registry identity, exact source-census/T01 synchronization, strict source-root gate, prioritized source blockers, certificate identity bindings, noncircular composition, honesty boundary, and executable endpoint | PROVED as documentary synchronization of the source truth bank with `T01_SOURCE_STATEMENTS`; checker syntax-compiled locally; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/409-prime-power-source-truth-frontier-execution.md` |
+| CMR2454--2461 | Opaque verification-pointer defect, exact per-source verification artifacts, proved/open artifact coverage, statement-to-bundle sealing, acyclic source-proof support, strengthened aggregate source-truth binding, honesty boundary, and executable endpoint | PROVED as noncircular source-proof evidence sealing; source registry version 2 syntax-compiled and isolated sealing/cycle tests passed; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/410-prime-power-source-verification-artifact-sealing.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -88,25 +89,36 @@ the registry certificate binds that current-frontier certificate at the registry
 The post-frontier gate remains documentary and permanently reports
 `all_n_proved_by_checker = 0`.
 
-## Exact source-statement root
+## Exact and sealed source-statement root
 
-Every source cited by the parent-rule provenance layer now has one canonical record containing the
-literal statement text, a recomputed UTF-8 SHA-256 and an exact verification status. Proved records
-require a source-kind-specific artifact; open records require null artifact fields.
+Every source cited by the parent-rule provenance layer has one canonical record containing literal
+statement text, a recomputed UTF-8 SHA-256 and an exact verification status.
+
+A proved statement now requires exactly one source-kind-specific verification artifact. Its
+statement record binds the canonical URI
+
+```text
+source-verification-artifact-registry://<source ID>
+```
+
+and the reconstructed per-source artifact-bundle digest. The artifact carries a separate external
+proof locator/digest, proof statement, evidence and supporting source-proof artifact IDs. The
+support graph must be acyclic and a canonical topological proof-artifact order is published.
 
 The source registry reconstructs each source's complete case/clause/axis/exclusion footprint and
-orders open source IDs by decreasing downstream use. The complete source-truth bundle is bound by
-the existing `source-truth-proof` obligation artifact rather than by a parallel closure path.
+orders open source IDs by decreasing downstream use. The complete source-truth bundle remains
+bound by the existing `source-truth-proof` obligation artifact rather than by a parallel closure
+path.
 
 A separate source-root execution certificate requires the source registry, nested obligation
-registry and `T01_SOURCE_STATEMENTS` target to agree exactly. Until every source statement is
-proved, the current atomic source target remains T01; only then does the source front advance to
-`T02_RULE_EXHAUSTIVENESS`.
+registry and `T01_SOURCE_STATEMENTS` target to agree exactly. Until every source statement and its
+sealed verification artifact are present, the current atomic source target remains T01; only then
+does the source front advance to `T02_RULE_EXHAUSTIVENESS`.
 
 ## Active frontier
 
-1. Transcribe every cited source statement exactly, confirm its stored hash, and provide the fixed
-   source-kind-specific verification artifact.
+1. Transcribe every cited source statement exactly, confirm its stored hash, and provide one sealed
+   source-kind-specific verification artifact with noncircular support.
 2. Prove the genuine exhaustive parent-clause skeleton once the complete source bank closes.
 3. Populate every operation slot, candidate row, recurrent block and interface row with real
    geometry, fate, route and transition data.
