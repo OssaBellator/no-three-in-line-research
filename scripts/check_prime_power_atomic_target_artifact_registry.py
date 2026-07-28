@@ -4,9 +4,11 @@
 For a completed target, the atomic completion locator is the canonical registry URI and the
 completion digest is the reconstructed target-artifact bundle digest. The artifact inside the
 bundle carries a separate external proof locator/digest, exact immediate target-artifact support,
-namespace-qualified obligation/premise/handoff support, and role-qualified certificate bindings.
+namespace-qualified obligation/premise/handoff support, and role-qualified legacy certificate
+bindings where those remain canonical.
 
-This is documentary integrity only. It does not verify proof truth or sufficiency and permanently
+T17 and T18 deliberately have no legacy global-quotient-refinement certificate binding: their exact
+frontier checkers seal the T13--T18 banks directly. This is documentary integrity only and permanently
 reports ``all_n_proved_by_checker = 0``.
 """
 from __future__ import annotations
@@ -37,23 +39,17 @@ def require(condition: bool, message: str) -> None:
 
 def exact_artifact(record: dict[str, Any], path: str) -> dict[str, Any]:
     target_id = record.get("target_id")
-    values = {
-        key: record.get(key)
-        for key in (
-            "artifact_id", "artifact_kind", "proof_locator", "proof_digest",
-            "statement", "evidence",
-        )
-    }
+    values = {key: record.get(key) for key in (
+        "artifact_id", "artifact_kind", "proof_locator", "proof_digest", "statement", "evidence"
+    )}
     target_support = record.get("support_target_artifact_ids")
     external_support = record.get("support_external_artifact_refs")
     certificate_support = record.get("support_certificate_refs")
     require(target_id in atomic.TARGETS, f"{path}.target_id: unknown")
     for key, value in values.items():
         require(isinstance(value, str) and value, f"{path}.{key}: required")
-    require(
-        values["artifact_kind"] == atomic.TARGETS[target_id]["required_artifact_kind"],
-        f"{path}.artifact_kind: wrong target artifact kind",
-    )
+    require(values["artifact_kind"] == atomic.TARGETS[target_id]["required_artifact_kind"],
+            f"{path}.artifact_kind: wrong target artifact kind")
     for key, items in (
         ("support_target_artifact_ids", target_support),
         ("support_external_artifact_refs", external_support),
@@ -84,8 +80,7 @@ def certificate_ref(role: str, sha256: str) -> str:
 def special_certificate_support(target_id: str, surfaces: dict[str, Any]) -> list[str]:
     refs: list[str] = []
     add = lambda role, sha: refs.append(certificate_ref(role, sha))
-    if target_id in {"T17_STATE_PREDICATES", "T18_ROW_THEOREMS"}:
-        add("global-quotient-semantic-refinement", surfaces["refinement"]["certificate_sha256"])
+    # T17/T18 are sealed by their exact frontier proof banks, not the older parallel refinement.
     if target_id == "T19_GLOBAL_FAMILY":
         add("global-family-skeleton", surfaces["skeleton"]["certificate_sha256"])
     if target_id == "T20_EXCEPTIONAL_ZERO_ROWS":
@@ -152,15 +147,11 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
 
     target_order = list(atomic.TARGETS)
     order = {target_id: index for index, target_id in enumerate(target_order)}
-    artifacts = [
-        exact_artifact(record, f"atomic_target_artifacts[{index}]")
-        for index, record in enumerate(raw_artifacts)
-    ]
+    artifacts = [exact_artifact(record, f"atomic_target_artifacts[{index}]")
+                 for index, record in enumerate(raw_artifacts)]
     require(raw_artifacts == artifacts, "atomic_target_artifacts: canonical records required")
-    require(
-        artifacts == sorted(artifacts, key=lambda item: (order[item["target_id"]], item["artifact_id"])),
-        "atomic_target_artifacts: canonical target/artifact order required",
-    )
+    require(artifacts == sorted(artifacts, key=lambda item: (order[item["target_id"]], item["artifact_id"])),
+            "atomic_target_artifacts: canonical target/artifact order required")
     artifact_ids = [record["artifact_id"] for record in artifacts]
     target_ids = [record["target_id"] for record in artifacts]
     require(len(artifact_ids) == len(set(artifact_ids)), "atomic_target_artifacts: duplicate artifact_id")
@@ -169,18 +160,13 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
 
     completions = {record["target_id"]: record for record in atomic_exact["target_completion_records"]}
     results = {record["target_id"]: record for record in atomic_exact["target_result_records"]}
-    obligation_ids = {
-        obligation_id: [] for obligation_id in obligation_artifacts.REQUIRED_ARTIFACT_KINDS
-    }
+    obligation_ids = {obligation_id: [] for obligation_id in obligation_artifacts.REQUIRED_ARTIFACT_KINDS}
     for record in obligation_exact["proof_artifacts"]:
         obligation_ids[record["obligation_id"]].append(record["artifact_id"])
-    premise_ids = {
-        record["premise_id"]: record["artifact_id"] for record in premise_exact["premise_artifacts"]
-    }
-    handoff_ids = {
-        record["assertion_id"]: record["artifact_id"]
-        for record in handoff_exact["handoff_assertion_artifacts"]
-    }
+    premise_ids = {record["premise_id"]: record["artifact_id"]
+                   for record in premise_exact["premise_artifacts"]}
+    handoff_ids = {record["assertion_id"]: record["artifact_id"]
+                   for record in handoff_exact["handoff_assertion_artifacts"]}
 
     bundles = []
     kind_counts: Counter[str] = Counter()
@@ -190,15 +176,12 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         effective = bool(results[target_id]["effective_target_complete"])
         artifact = artifact_by_target.get(target_id)
         dependency_ids = list(definition["proof_dependency_target_ids"])
-        target_support = sorted(
-            artifact_by_target[dependency]["artifact_id"]
-            for dependency in dependency_ids if dependency in artifact_by_target
-        )
+        target_support = sorted(artifact_by_target[dependency]["artifact_id"]
+                                for dependency in dependency_ids if dependency in artifact_by_target)
         external_support: list[str] = []
         for obligation_id in definition["obligation_ids"]:
-            external_support.extend(
-                f"obligation:{artifact_id}" for artifact_id in obligation_ids[obligation_id]
-            )
+            external_support.extend(f"obligation:{artifact_id}"
+                                    for artifact_id in obligation_ids[obligation_id])
         for premise_id in definition["premise_ids"]:
             if premise_id in premise_ids:
                 external_support.append(f"premise:{premise_ids[premise_id]}")
@@ -241,14 +224,10 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         }
         bundle["atomic_target_artifact_bundle_sha256"] = catalogue.canonical_digest(bundle)
         if effective:
-            require(
-                completion["artifact_locator"] == f"atomic-target-artifact-registry://{target_id}",
-                f"target {target_id}: completion locator does not bind target registry",
-            )
-            require(
-                completion["artifact_digest"] == bundle["atomic_target_artifact_bundle_sha256"],
-                f"target {target_id}: completion digest does not bind target bundle",
-            )
+            require(completion["artifact_locator"] == f"atomic-target-artifact-registry://{target_id}",
+                    f"target {target_id}: completion locator does not bind target registry")
+            require(completion["artifact_digest"] == bundle["atomic_target_artifact_bundle_sha256"],
+                    f"target {target_id}: completion digest does not bind target bundle")
         bundles.append(bundle)
 
     completed = atomic_exact["claims"]["completed_targets"]
@@ -269,6 +248,7 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         "role_qualified_certificate_binding": 1,
         "exact_completion_to_bundle_binding": 1,
         "noncircular_ancestor_certificate_binding": 1,
+        "legacy_t17_t18_refinement_binding_removed": 1,
         "complete_atomic_target_artifact_bank": complete_bank,
         "post_frontier_target_artifact_gate_ready": final_ready,
         "all_n_proved_by_checker": 0,
@@ -282,11 +262,9 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         "atomic_target_artifacts_sha256": catalogue.canonical_digest(artifacts),
         "atomic_target_artifact_bundles_sha256": catalogue.canonical_digest(bundles),
     }
-    return {
-        "atomic_target_artifacts": artifacts,
-        "atomic_target_artifact_bundle_records": bundles,
-        "claims": claims,
-    }
+    return {"atomic_target_artifacts": artifacts,
+            "atomic_target_artifact_bundle_records": bundles,
+            "claims": claims}
 
 
 def validate_certificate(certificate: Any) -> dict[str, int]:
@@ -299,24 +277,19 @@ def validate_certificate(certificate: Any) -> dict[str, int]:
     require(certificate.get("certificate_sha256") == catalogue.canonical_digest(payload),
             "certificate_sha256: incorrect")
     claims = exact["claims"]
-    return {
-        "targets": claims["atomic_targets"],
-        "artifacts": claims["atomic_target_artifacts"],
-        "complete": claims["complete_atomic_target_artifact_bank"],
-        "ready": claims["post_frontier_target_artifact_gate_ready"],
-        "proved": claims["all_n_proved_by_checker"],
-    }
+    return {"targets": claims["atomic_targets"], "artifacts": claims["atomic_target_artifacts"],
+            "complete": claims["complete_atomic_target_artifact_bank"],
+            "ready": claims["post_frontier_target_artifact_gate_ready"],
+            "proved": claims["all_n_proved_by_checker"]}
 
 
 def build_certificate(current: dict[str, Any], artifacts: list[dict[str, Any]]) -> dict[str, Any]:
     canonical = [exact_artifact(record, "atomic_target_artifact") for record in artifacts]
     order = {target_id: index for index, target_id in enumerate(atomic.TARGETS)}
     canonical.sort(key=lambda item: (order[item["target_id"]], item["artifact_id"]))
-    certificate: dict[str, Any] = {
-        "version": 2,
-        "current_frontier_execution_certificate": current,
-        "atomic_target_artifacts": canonical,
-    }
+    certificate: dict[str, Any] = {"version": 2,
+                                  "current_frontier_execution_certificate": current,
+                                  "atomic_target_artifacts": canonical}
     certificate.update(exact_certificate(certificate))
     certificate["certificate_sha256"] = catalogue.canonical_digest(certificate)
     return certificate
@@ -324,9 +297,7 @@ def build_certificate(current: dict[str, Any], artifacts: list[dict[str, Any]]) 
 
 def main() -> None:
     if len(sys.argv) != 2:
-        raise SystemExit(
-            "usage: check_prime_power_atomic_target_artifact_registry.py certificate.json"
-        )
+        raise SystemExit("usage: check_prime_power_atomic_target_artifact_registry.py certificate.json")
     certificate = json.loads(Path(sys.argv[1]).read_text(encoding="utf-8"))
     print(validate_certificate(certificate))
 
