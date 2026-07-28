@@ -2,291 +2,166 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2405 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2413 the branch has a complete finite
+certificate architecture from source-traceable rule clauses to a global integer quotient,
+semantic predicates and row theorems, typed obligation/premise/handoff artifacts, a seven-gate
+pre-root integrity audit, an exact 252-chamber exceptional worklist, and a 43-target execution
+schedule over thirteen genuine research frontiers.
 
-- 740 canonical raw hosts and 9,260 response records;
-- source-traceable clause expansion into source-independent operation slots;
-- slot-covered populated-fibre and exceptional-tradeoff interfaces;
-- exact survivor geometry, affine selectors and labelled response vectors;
-- witness-bound credit, common weights and literal resource scopes;
-- complete candidate-operation comparison within supplied populations;
-- acyclic auxiliary elimination and integer recurrent blocks;
-- cross-block state classes, exact scale synchronization and interface rows;
-- a global integer quotient `(A,b,W,mu,rho)`;
-- source-independent derivation of the expected global family;
-- spanning equivalence evidence for shared state classes;
-- support SCC condensation and exact critical-rank path bounds;
-- a fixed nineteen-obligation semantic closure DAG;
-- typed obligation artifacts, blocker scheduling and canonical noncircular support;
-- an optional edgewise lexicographic termination audit;
-- a fixed ten-premise pre-root contract with typed premise artifacts;
-- predicate-level semantics for every global state and theorem-level semantics for every row;
-- a six-assertion induction handoff and transparent seven-gate integrity audit;
-- typed assertion artifacts supported by the exact dependent premise artifacts; and
-- an exact open/closed registry for all 232 zero-selector and 20 hard-core chambers.
+The branch still lacks the genuine exhaustive recurrence, complete real population, proved
+external semantics, complete strict blocks and interface rows, mathematically closed chamber
+proofs and the reviewed implication to `D(n)=2n`.
 
-No theorem supplies the genuine exhaustive recurrence, complete real population, proved
-external semantics, genuine complete strict blocks and interface rows, complete chamber proofs
-or a proof that the global quotient implies `D(n)=2n`.
+## 2. Source truth and exhaustive recurrence skeleton
 
-## 2. Prove source truth and the actual recurrence skeleton
+Prove every cited source statement. Give one canonical source-independent parent clause for
+every genuine global parent and prove that the derived block, interface-row and parent
+registries are exhaustive. This closes `SOURCE_STATEMENTS_TRUE` and `RULE_EXHAUSTIVE`.
 
-Populate the source records with the actual mathematical statements and prove them true. Give
-one canonical source-independent parent clause for every genuine global parent. The clause list
-must derive the complete expected block, interface-row and parent registries without inspecting
-populated rows.
+## 3. Complete genuine population
 
-This closes `SOURCE_STATEMENTS_TRUE` and `RULE_EXHAUSTIVE`.
+For every expected slot, populate the actual host, fibre, points, removals, survivor background,
+owner/fate witnesses, response family, feasibility signatures, selector data, labelled vectors,
+routed credits, row loads and transitions. Populate the entire candidate family for every
+parent, not only the selected operation.
 
-## 3. Populate every slot and candidate operation
+## 4. Geometry, selectors and candidate policy
 
-For every clause-generated operation slot, produce one exact linked operation containing:
-
-- canonical host and fibre identity;
-- pre-response points, removals and survivor background;
-- owner/fate witnesses and response family;
-- feasibility, residual and intersection signatures;
-- selector chambers, thresholds and exceptional penalties;
-- labelled vectors and support data;
-- witness-bound routed-credit assignments; and
-- common weights, row loads and margins.
-
-Populate the entire candidate set `C(p)` for each recurrent parent. This closes
-`SLOT_AND_CANDIDATE_POPULATION` only after exact completeness is proved.
-
-## 4. Prove geometry, selectors and operation policy
-
-Validate every real background and exceptional threshold. For each candidate slot compute
+Prove every real geometric identity, threshold and selector chamber. Compute
 
 \[
-\lambda_s=\min_Q L_s(Q).
+\lambda_s=\min_Q L_s(Q)
 \]
 
-Prove the geometric and labelled row formulas correct and prove that minimizing
-`(lambda_s, slot ID)` is the intended recurrence policy. This closes
-`GEOMETRY_SELECTOR_CORRECT` and `CANDIDATE_POLICY_CORRECT`.
+for every candidate and prove that minimizing `(lambda_s, slot ID)` is the intended recurrence
+policy. This closes `GEOMETRY_SELECTOR_CORRECT` and `CANDIDATE_POLICY_CORRECT`.
 
-## 5. Prove fate, transition, state, resource and credit semantics
+## 5. Fate, transition, resource and credit semantics
 
-Prove every owner/fate witness, child state, deletion, domination and transfer statement.
-Publish the complete simultaneously active row family and prove:
+Prove all owner/fate, deletion, domination, transfer, child-state and transition statements.
+Publish the complete simultaneously active row family and prove destroyed triples are the
+complete shared-resource model. Prove global resource/obligation injectivity and every routed
+credit's child-state meaning.
 
-1. every genuine simultaneous row is present;
-2. destroyed triples are the complete shared-resource model;
-3. global destroyed-resource keys are injective;
-4. global child-obligation keys are injective; and
-5. every routed credit belongs to the declared child transition.
+## 6. Closed recurrent blocks and auxiliary elimination
 
-This closes `FATE_TRANSITION_STATE_SEMANTICS`, `ACTIVE_ROW_FAMILY_EXHAUSTIVE`,
-`DESTROYED_RESOURCE_MODEL_EXHAUSTIVE` and `CREDIT_ROUTING_SEMANTIC`.
-
-## 6. Close every recurrent block and auxiliary expansion
-
-For every recurrent block, prove exact parent coverage and
+For every recurrent block prove exact parent coverage and
 
 \[
 \boxed{\text{closed}\land\text{strongly connected}\land\min_p\mu_p>0.}
 \]
 
-Every parent row must be the winner of the complete populated candidate policy. For every
-positively used auxiliary, prove an actual finite acyclic expansion and fully eliminate it
-without weakening the common-weight margin. Regenerate literal routes if elimination changes a
-selected response.
+Prove every recursive auxiliary expansion semantically, eliminate all auxiliaries and regenerate
+literal routes whenever elimination changes a selected response.
 
-This closes `CLOSED_STRICT_RECURRENT_BLOCKS` and `AUXILIARY_EXPANSIONS_SEMANTIC`.
+## 7. Cross-block and interface semantics
 
-## 7. Prove cross-block identity, scales and quotient semantics
+Prove every state-equivalence edge, relative block/component scale, global-state predicate,
+final-row theorem and signed fixed-offset interpretation. Publish and prove the complete return,
+interface and off-diagonal family and a genuinely well-founded rank.
 
-Prove every equivalence-tree edge in each shared global state class and justify transitive
-identity. Prove the exact block-ratio relations and positive relative multipliers between
-disconnected components.
+## 8. Close all 252 exceptional chambers
 
-For every global state, prove its recorded predicate. For every final row, prove its theorem,
-signed fixed-offset interpretation and target-predicate multiset. This closes
-`CROSS_BLOCK_STATE_IDENTITY_SEMANTIC`, `COMPONENT_SCALE_SEMANTIC` and the external meaning of
-the finite quotient.
-
-## 8. Prove return/interface rows and rank well-foundedness
-
-Publish every genuine return, interface and off-diagonal row. Prove the family exhaustive and
-each row strict in global weight or critical with strict descent in a genuinely well-founded
-rank. This closes `INTERFACE_RETURN_ROWS_EXHAUSTIVE` and `GLOBAL_RANK_WELL_FOUNDED`.
-
-The support checker then gives the exact critical-only path bound and proves every support cycle
-contains a strict edge. The stronger edgewise audit may be used when every individual target
-decreases `(W,rho)`.
-
-## 9. Close the 252 exceptional selector chambers
-
-CMR2398--CMR2405 reconstruct the canonical chamber universe:
+CMR2398--CMR2405 fix
 
 \[
 232\text{ zero-selector chambers}+20\text{ hard-core chambers}=252.
 \]
 
-For every chamber, provide exactly one disposition:
-
-- final global-row theorem;
-- direct chamber proof;
-- survivor-signature infeasibility proof; or
-- host-union proof.
-
-Row-theorem dispositions must match the exact theorem ID, locator and digest in the quotient
-semantic refinement. Prove every supplied disposition mathematically. All 232 zero-selector
-records are required for `EXCEPTIONAL_ZERO_ROWS_CLOSED`; all 20 hard-core records are required
-for `HARD_CORE_ROWS_CLOSED`.
+Give one exact disposition for every chamber: final row theorem, direct proof, survivor-signature
+infeasibility or host-union proof. Prove every disposition. All 232 zero-selector dispositions
+are required for `EXCEPTIONAL_ZERO_ROWS_CLOSED`; all 20 hard-core dispositions are required for
+`HARD_CORE_ROWS_CLOSED`.
 
 The hard core retains three distinct scalar measurements: fixed-response correction 17,
 minimum rollback distance 12 and uniform correction 44.
 
-## 10. Prove the global family exhaustive
+## 9. Noncircular typed proof stack
 
-Use the actual recurrence skeleton to derive expected blocks, interface rows and parents.
-Populate all of them and prove no additional recurrence cases exist. This closes
-`EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`.
+Supply and prove the exact required artifact kinds for every semantic obligation. The
+obligation-artifact support graph must be acyclic, dependency aligned and complete over every
+immediate prerequisite bundle.
 
-## 11. Build genuine noncircular proof artifacts
+Supply one typed artifact for each final premise and one typed artifact for each handoff
+assertion. CMR2390--CMR2397 require each proved handoff assertion to cite exactly the complete
+premise-artifact set of its fixed dependencies and to bind its reconstructed bundle digest.
 
-For every proved semantic obligation, supply its exact required artifact kinds and prove the
-artifact statements. The obligation-artifact support graph must be acyclic, dependency aligned
-and complete over every artifact in each immediate prerequisite bundle.
+## 10. Complete the ten premises and six handoff assertions
 
-For every proved final premise, supply its exact premise artifact supported by all dependent
-obligation modules. For every proved handoff assertion, CMR2390--CMR2397 require exactly one
-assertion artifact whose support IDs equal the complete typed premise-artifact set of its fixed
-premise dependencies.
+Close the ten final premises: base cases, recurrence exhaustiveness, invariant preservation,
+operation selection, resource/credit soundness, block/auxiliary contraction, cross-block
+assembly, exceptional closure, termination and objective translation.
 
-Typed coverage prevents documentary drift and circularity. It does not replace mathematical
-review of the artifacts.
+Then close the six handoff assertions: base domain, nonbase recurrence coverage, invariant
+preservation, branch termination, exceptional closure and translation to `D(n)=2n`.
 
-## 12. Complete the ten final premises
+## 11. Use the atomic all-frontier schedule
 
-Close:
+CMR2406--CMR2413 refine the work into thirteen frontier groups and forty-three atomic targets.
+The checker publishes:
 
-1. complete base cases;
-2. exhaustive recurrence;
-3. preserved state invariants;
-4. sound operation selection;
-5. sound resource and credit accounting;
-6. recurrent-block and auxiliary contraction;
-7. sound cross-block assembly;
-8. exceptional and hard-core closure;
-9. termination; and
-10. translation of the quotient conclusion to `D(n)=2n`.
+- separate acyclic proof-closure and research-start dependency graphs;
+- exact links to all 19 obligations, 10 premises, 6 handoff assertions and one dossier gate;
+- proof-actionable and research-actionable target sets;
+- parallel completion/start waves and canonical longest blocker chains; and
+- per-frontier downstream impact.
 
-Termination may use the optional edgewise-lex certificate or a reviewed semantic multiset or
-well-founded argument.
+Use research-actionable targets to begin independent work without claiming closure. Use
+proof-actionable targets and proof waves to sequence completion. These quantities are planning
+arithmetic, not time or difficulty estimates.
 
-## 13. Complete the six induction-handoff assertions
+## 12. Immediate execution order
 
-Close:
+1. Prove source truth and the exhaustive parent-clause skeleton.
+2. Populate every genuine slot, candidate, block and interface row.
+3. Prove geometry, selectors, fate, transitions, resources and candidate policy.
+4. Close strict recurrent blocks and semantic auxiliary expansions.
+5. Prove cross-block identities, scales, interface rows, ranks, predicates and row theorems.
+6. Populate and prove all 252 exceptional chamber dispositions.
+7. Populate genuine noncircular obligation, premise and handoff artifacts.
+8. Close all ten premises, all six handoff assertions and all 43 atomic targets.
+9. Pass the seven-gate pre-root audit.
+10. Write and review the ordinary proof that the quotient and handoff imply `D(n)=2n`.
 
-1. the complete base domain is established;
-2. the nonbase recurrence covers every case;
-3. state and resource invariants are preserved;
-4. every recurrence branch terminates;
-5. exceptional and hard-core cases are closed; and
-6. the quotient conclusion translates to `D(n)=2n`.
+## 13. Fixed semantic obligation DAG
 
-A handoff assertion cannot bypass an open premise. Its typed artifact cannot omit or add a
-premise artifact relative to the fixed assertion dependency set.
+The nineteen exact obligations are:
 
-## 14. Pass the final audit and prove the root implication
-
-The seven-gate final audit reconstructs finite-interface readiness, closure of every root
-dependency, premise-contract readiness, typed premise coverage, support-DAG integrity, semantic
-refinement and handoff readiness. It publishes every remaining semantic, premise and assertion
-blocker and permanently reports `all_n_proved_by_checker = 0`.
-
-After every pre-root gate is ready, write and review the ordinary proof that the quotient and
-handoff establish `D(n)=2n`. Only that reviewed argument can close
-`GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
-
-## 15. Immediate execution order
-
-### Priority 1: source truth and exhaustive skeleton
-
-Write and prove the genuine source statements and parent-clause registry.
-
-### Priority 2: complete genuine population
-
-Generate one real linked operation per expected slot and one row certificate per candidate.
-
-### Priority 3: real geometry, policy and transitions
-
-Run every selector, threshold, feasibility and labelled certificate and prove operation,
-fate, transition, resource and credit semantics.
-
-### Priority 4: closed blocks and auxiliaries
-
-Prove strict closed SCCs and semantically valid auxiliary expansion DAGs.
-
-### Priority 5: cross-block, interface and predicate semantics
-
-Prove state equivalences, component scales, interface rows, ranks, global predicates and row
-theorems.
-
-### Priority 6: exceptional chamber closure
-
-Populate and prove all 232 zero-selector and 20 hard-core dispositions.
-
-### Priority 7: proof artifacts and final handoff
-
-Populate noncircular typed obligation, premise and assertion bundles; close all ten premises
-and six handoff assertions; pass the seven-gate audit; and review the final induction.
-
-## 16. Fixed semantic obligation DAG
-
-The executable closure surface fixes these nineteen obligations:
-
-1. `SOURCE_STATEMENTS_TRUE`;
-2. `RULE_EXHAUSTIVE`;
-3. `SLOT_AND_CANDIDATE_POPULATION`;
-4. `GEOMETRY_SELECTOR_CORRECT`;
-5. `FATE_TRANSITION_STATE_SEMANTICS`;
-6. `CANDIDATE_POLICY_CORRECT`;
-7. `ACTIVE_ROW_FAMILY_EXHAUSTIVE`;
-8. `DESTROYED_RESOURCE_MODEL_EXHAUSTIVE`;
-9. `CREDIT_ROUTING_SEMANTIC`;
-10. `CLOSED_STRICT_RECURRENT_BLOCKS`;
-11. `AUXILIARY_EXPANSIONS_SEMANTIC`;
-12. `CROSS_BLOCK_STATE_IDENTITY_SEMANTIC`;
-13. `COMPONENT_SCALE_SEMANTIC`;
-14. `INTERFACE_RETURN_ROWS_EXHAUSTIVE`;
-15. `GLOBAL_RANK_WELL_FOUNDED`;
-16. `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`;
-17. `EXCEPTIONAL_ZERO_ROWS_CLOSED`;
-18. `HARD_CORE_ROWS_CLOSED`; and
-19. `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
+`SOURCE_STATEMENTS_TRUE`, `RULE_EXHAUSTIVE`, `SLOT_AND_CANDIDATE_POPULATION`,
+`GEOMETRY_SELECTOR_CORRECT`, `FATE_TRANSITION_STATE_SEMANTICS`,
+`CANDIDATE_POLICY_CORRECT`, `ACTIVE_ROW_FAMILY_EXHAUSTIVE`,
+`DESTROYED_RESOURCE_MODEL_EXHAUSTIVE`, `CREDIT_ROUTING_SEMANTIC`,
+`CLOSED_STRICT_RECURRENT_BLOCKS`, `AUXILIARY_EXPANSIONS_SEMANTIC`,
+`CROSS_BLOCK_STATE_IDENTITY_SEMANTIC`, `COMPONENT_SCALE_SEMANTIC`,
+`INTERFACE_RETURN_ROWS_EXHAUSTIVE`, `GLOBAL_RANK_WELL_FOUNDED`,
+`EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE`, `EXCEPTIONAL_ZERO_ROWS_CLOSED`,
+`HARD_CORE_ROWS_CLOSED`, and `GLOBAL_QUOTIENT_IMPLIES_ALL_N`.
 
 An obligation cannot close while an exact dependency remains open.
 
-## 17. Honesty boundaries
+## 14. Honesty boundaries
 
-- Traceability and evidence digests do not prove cited statements true.
-- Finite clause expansion and expected-family skeletons do not prove rule exhaustiveness.
-- Complete candidate rows do not prove the intended external policy.
-- Resource scopes do not prove active-row or resource-model completeness.
+- Traceability, digests and typed coverage do not prove statements true.
+- Rule and family completeness remain relative to supplied data until proved externally.
+- Candidate coverage does not prove the intended policy.
+- Resource scopes do not prove active-row or resource-model exhaustiveness.
 - Common weights do not imply closure, connectivity or strictness.
-- Acyclic weighted elimination does not prove transition semantics.
-- State links, evidence trees and predicate records do not prove external state identity.
-- Shared states do not fix scales between disconnected components.
+- Auxiliary elimination does not prove transition semantics.
+- State links and predicate records do not prove external state identity.
 - Strict-or-ranked rows do not prove the interface family exhaustive.
-- Support condensation does not prove the quotient models the original recurrence.
-- Typed artifact completeness and support acyclicity do not prove truth or sufficiency.
-- A typed handoff assertion artifact does not prove the assertion.
-- A closed chamber disposition does not verify the cited chamber proof.
-- Dependency waves measure logical depth, not time or difficulty.
-- Edgewise lexicographic descent is only a sufficient termination mode.
-- A ready contract, handoff or final audit remains subject to ordinary mathematical review.
-- Every final checker permanently reports `all_n_proved_by_checker = 0`.
-- Syntax compilation does not imply dependency-backed regression suites ran here.
+- Support condensation does not prove the quotient models the recurrence.
+- Typed artifact support does not prove truth or logical sufficiency.
+- A closed chamber disposition does not verify its proof.
+- Atomic completion records and dependency waves are planning metadata.
+- Edgewise lexicographic descent is sufficient, not necessary.
+- A ready contract, handoff or audit remains subject to mathematical review.
+- Every final checker reports `all_n_proved_by_checker = 0`.
+- Syntax compilation does not imply dependency-backed suites ran here.
 
-## 18. Current endpoint
+## 15. Current endpoint
 
-Through CMR2405 the finite interface reaches from source-traceable rule clauses through a
-noncircular global quotient dossier and typed proof stack to exact artifact support for all six
-handoff assertions and one explicit disposition for every exceptional selector chamber. The
-unresolved center is the genuine mathematics: actual exhaustive data, proof of every semantic
-statement and chamber disposition, genuine strict blocks, exceptional closure and ordinary
-review of the final implication to all `n`.
+Through CMR2413 the finite interface reaches a noncircular global quotient dossier, typed
+support through final handoff assertions, an explicit 252-chamber closure registry and an exact
+43-target execution schedule. The unresolved center is the genuine mathematics: actual
+exhaustive data, proof of every semantic statement and chamber disposition, strict block
+closure and the reviewed implication to all `n`.
