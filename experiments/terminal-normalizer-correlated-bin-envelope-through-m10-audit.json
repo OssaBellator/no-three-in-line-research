@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "m": 8,
+      "normalizer_range": [1096,7056],
+      "bins": [
+        {"lower":1096,"upper":2048,"maximum_target_labels":96},
+        {"lower":2049,"upper":4096,"maximum_target_labels":672},
+        {"lower":4097,"upper":8192,"maximum_target_labels":1344}
+      ],
+      "bin_envelope": "285067172/383360387",
+      "bin_envelope_decimal": 0.7436010126940945,
+      "bin_envelope_contractive": true,
+      "correlated_bin_envelope": "203200918/383360387",
+      "correlated_bin_envelope_decimal": 0.5300519430036991,
+      "correlated_bin_counts": [16,384,1344],
+      "correlated_bin_target_components": 8,
+      "correlated_bin_target_cycles_tied": 2,
+      "exact_capacity_weighted_maximum": "1468416446839930521721999/3789940340738886748063650",
+      "exact_capacity_weighted_maximum_decimal": 0.38745107173735827,
+      "clean_correlated_bound": "8/15",
+      "margin_below_clean_bound": "18869326/5750405805"
+    },
+    {
+      "m": 9,
+      "normalizer_range": [2976,28160],
+      "bins": [
+        {"lower":2976,"upper":4096,"maximum_target_labels":32},
+        {"lower":4097,"upper":8192,"maximum_target_labels":616},
+        {"lower":8193,"upper":16384,"maximum_target_labels":5376},
+        {"lower":16385,"upper":32768,"maximum_target_labels":4864}
+      ],
+      "bin_envelope": "18995653877059/17049712431135",
+      "bin_envelope_decimal": 1.1141333881016349,
+      "bin_envelope_contractive": false,
+      "correlated_bin_envelope": "148937290752/183330241195",
+      "correlated_bin_envelope_decimal": 0.81239892437376,
+      "correlated_bin_counts": [0,256,5376,1536],
+      "correlated_bin_target_components": 8,
+      "correlated_bin_target_cycles_tied": 2,
+      "exact_capacity_weighted_maximum": "406616023430754819367780545483294984597292560691/708943793924084504981546740829982708967717363200",
+      "exact_capacity_weighted_maximum_decimal": 0.5735518484195888,
+      "clean_correlated_bound": "13/16",
+      "margin_below_clean_bound": "296483503/2933283859120"
+    },
+    {
+      "m": 10,
+      "normalizer_range": [9872,85248],
+      "bins": [
+        {"lower":9872,"upper":16384,"maximum_target_labels":128},
+        {"lower":16385,"upper":32768,"maximum_target_labels":1344},
+        {"lower":32769,"upper":65536,"maximum_target_labels":6656},
+        {"lower":65537,"upper":131072,"maximum_target_labels":6144}
+      ],
+      "bin_envelope": "8507693248751944/21711076395041385",
+      "bin_envelope_decimal": 0.39185957867547394,
+      "bin_envelope_contractive": true,
+      "correlated_bin_envelope": "7972033929088/35188130299905",
+      "correlated_bin_envelope_decimal": 0.22655463251792957,
+      "correlated_bin_counts": [0,896,4096,3072],
+      "correlated_bin_target_components": 9,
+      "correlated_bin_target_cycles_tied": 2,
+      "exact_capacity_weighted_maximum": "5252950050653541320261353842660696885393101/33843848222070502440710524758866309866934400",
+      "exact_capacity_weighted_maximum_decimal": 0.15521137006009697,
+      "clean_correlated_bound": "1/4",
+      "margin_below_clean_bound": "3299994583553/140752521199620"
+    }
+  ],
+  "correlated_bin_definition": "for each target eta, sum target-specific bin population divided by bin lower edge; then maximize over eta",
+  "all_correlated_bin_envelopes_contractive": true,
+  "m9_independent_bin_envelope_contractive": false,
+  "m9_correlated_bin_envelope_contractive": true,
+  "maximizing_target_cycles_tied_in_each_case": 2,
+  "asymptotic_correlated_bin_bound_proved": false,
+  "all_exact_regressions_verified": true
+}
