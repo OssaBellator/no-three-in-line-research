@@ -17,6 +17,7 @@ The authoritative live ledger is split across:
 | CMR2390--2397 | Fixed handoff artifact kinds, canonical assertion-artifact records, exact premise-registry identity, proved/open coverage, complete dependent-premise artifact support, assertion-to-bundle binding, documentary boundary, and executable endpoint | PROVED as typed handoff-assertion documentary linkage; checker syntax-compiled locally; assertion truth and logical sufficiency remain unverified | `docs/402-prime-power-handoff-assertion-artifact-registry.md` |
 | CMR2398--2405 | Canonical 252-chamber reconstruction, exact disposition coverage, open/closed proof kinds, final-row theorem linkage, separate zero/hard-core censuses, independent 232/20 readiness flags, chamber boundary, and executable endpoint | PROVED as an exceptional-worklist disposition interface; checker syntax-compiled locally; no genuine chamber closure bank or mathematical closure claimed | `docs/403-prime-power-exceptional-chamber-disposition-registry.md` |
 | CMR2406--2413 | Fixed thirteen-frontier and forty-three-target system, proof/research DAG acyclicity, exact obligation/premise/assertion/gate coverage, completion records, proof waves and chains, research-start schedule, frontier impact records, execution boundary, and executable endpoint | PROVED as documentary all-frontier execution arithmetic; committed schema audited; self-test and dependency-backed certificate execution not run here; no frontier completion or all-`n` proof claimed | `docs/404-prime-power-atomic-frontier-execution.md` |
+| CMR2414--2421 | Shared handoff/refinement identity, exact handoff-target artifact synchronization, exact 232/20 chamber-target synchronization, integrated three-component readiness, current blocker publication, execution boundary, and executable endpoint | PROVED as synchronized current-frontier execution integrity; checker syntax-compiled locally; no target, assertion, chamber closure or all-`n` proof claimed | `docs/405-prime-power-current-frontier-execution.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -58,6 +59,17 @@ The checker publishes exact proof-actionable and research-actionable targets, pa
 longest open chains and per-frontier downstream impact. This is planning arithmetic only and
 always reports `all_n_proved_by_checker = 0`.
 
+## Synchronized current-frontier execution
+
+The atomic target certificate is composed with the typed handoff-assertion artifact registry and
+the exact 252-chamber disposition registry. All three layers must share the same final handoff
+and quotient semantic refinement.
+
+Each handoff target must agree with its typed assertion artifact bundle. The zero-selector and
+hard-core targets must agree exactly with the independent 232- and 20-chamber readiness flags.
+The integrated blocker record publishes actionable targets, proof-wave depth, open chambers and
+open handoff bundles without reinterpreting any documentary flag as a proof.
+
 ## Active frontier
 
 1. Prove the cited source statements and genuine exhaustive recurrence skeleton.
@@ -73,4 +85,5 @@ always reports `all_n_proved_by_checker = 0`.
    every closed disposition mathematically.
 9. Complete all forty-three atomic targets, all ten final premises and all six induction-
    handoff assertions.
-10. Prove that the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
+10. Pass the synchronized current-frontier gate and prove that the reviewed global quotient and
+    handoff establish `D(n)=2n` for every `n`.
