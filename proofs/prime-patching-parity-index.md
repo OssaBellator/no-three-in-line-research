@@ -33,6 +33,9 @@ no-three-in-line conjecture.
 | PP3bol--PP3bon | Through `m=9`, every optimal signed state has a zero-sign-change descent on which the unchanged orientation remains target-optimal; every marked core edge can be cleared and the same optimum persists to termination | VERIFIED FINITELY | `docs/334-optimality-preserving-fixed-sign-frustration-descent.md` |
 | PP3boo--PP3bop | Exact owner-support decomposition and target-optimal fixed-sign descent of the exact two-owner atomic flaw count through `m=9` | PROVED / VERIFIED FINITELY | `docs/335-exact-two-owner-atomic-descent-and-three-owner-collateral-barrier.md` |
 | PP3boq | Universal one-step total atomic descent fails inside the target-optimal fixed-sign repair family because of three-owner collateral | VERIFIED FINITELY / REFUTED AS UNIVERSAL | `docs/335-exact-two-owner-atomic-descent-and-three-owner-collateral-barrier.md` |
+| PP3bor--PP3bou | Exact strict-repair depth recursion, bounded-cancellation census, terminal-frustration localization, and temporary-collateral barriers through `m=9` | PROVED / VERIFIED FINITELY | `docs/336-target-optimal-atomic-cancellation-depth.md` |
+| PP3bov--PP3bow | Weighted Hall ratios are exact maximum-closure min-cuts and finite rational Dinkelbach iteration returns the optimum | PROVED | `docs/337-exact-m8-weighted-hall-mincut.md` |
+| PP3box--PP3boy | The min-cut algorithm reproduces every `m<=7` exhaustive ledger and completes the exact `m=8` transport audit | VERIFIED FINITELY | `docs/337-exact-m8-weighted-hall-mincut.md` |
 
 ## Current exact frontier
 
@@ -46,12 +49,13 @@ Every selected minimum-core edge remains targetable.
 
 The exact two-owner atomic defect can also be decreased while preserving target
 optimality and fixed signs through `m=9`. This does not extend automatically to
-the complete atomic defect: explicit near-clean states have no target-optimal
-fixed-sign frustration descent decreasing total two- plus three-owner atomic
-collinality. This complements the clean-macro local minima in `docs/332` and
-isolates three-owner collateral as a separate priced or multi-step frontier.
+the complete atomic defect. Of the one-step total-atomic obstructions, only 122
+of 4,308 at `m=8` and 270 of 26,164 at `m=9` reach a lower total after one more
+strict parity-repair step. No audited state first succeeds only at distance
+three. Almost every unresolved state already has frustration one, so parity
+termination itself prevents further cancellation inside the strict-repair DAG.
 
-Complete clean-macro reachability now holds through `m=9`:
+Complete clean-macro reachability still holds through `m=9`:
 
 ```text
 m=8: maximum macro distance 3,
@@ -63,23 +67,28 @@ atomic defect counts. They have only one to three flaw supports and form a spars
 collateral-repair core; eight single-support states require the full four-step
 route to validity.
 
-Exact one-step weighted transport through `m=7` remains on the cubic stationary
-scale. Proper Hall bottlenecks already occur frequently, but the worst absolute
-charge is still attained by a global source-set cut.
+Weighted Hall optimization no longer requires source-subset enumeration. Exact
+maximum-closure min-cuts reproduce every `m<=7` result and complete `m=8`. At
+`m=8`, 11,952 of 12,048 flaws have a proper bottleneck, the worst charge is
+`1/93`, and the worst absolute obstruction is a two-source proper cut. The
+maximum local/global label-merging penalty is `10338/4891>2`.
 
 ## Remaining tasks
 
 1. Prove bounded target-optimal or local-sign repair for the asymptotic
    `O(log m)` frustration core.
-2. Classify the target-optimal fixed-sign states where three-owner collateral
-   prevents total atomic descent, and seek bounded cancellation words.
+2. Classify the parity-clean terminal states left by failed strict cancellation
+   and connect them to clean-macro or joint parity/three-owner repair words.
 3. Classify and repair the eight one-support four-step clean-macro states by a
    uniform collateral word or structural Lyapunov function.
 4. Extend compressed clean-macro reachability to `m=10` without storing all
    `115,586,396` clean orientations.
-5. Replace subset enumeration at `m=8` by exact parametric min-cut and seek a
-   uniform weighted expansion bound including atomic collateral.
-6. Combine locally coupled repair and heat-kernel mixing with atomic three-owner
+5. Prove a uniform weighted expansion bound for small and intermediate Hall
+   cuts, or show that a short heat-kernel trajectory expands them before charge
+   is measured.
+6. Extend the exact min-cut audit to `m=9` with compressed clean-fibre and flaw
+   generation.
+7. Combine locally coupled repair and heat-kernel mixing with atomic three-owner
    drift and the trajectory-local causal light cone.
 
-The next available theorem identifier is `PP3bor`.
+The next available theorem identifier is `PP3boz`.
