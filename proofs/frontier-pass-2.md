@@ -13,9 +13,10 @@ This addendum records the threshold-degree transportation bounds proved after th
 | SRR2aw--SRR2ba | Exact conflict-atom loads bound every candidate degree by `sum_{a in S_v}(lambda_a-1)`, yielding an executable weighted subfamily and the uniform fraction `1/[1+r(Lambda-1)]` | PROVED UNDER THE COMPLETE CONFLICT-ATOM SUPPORT CONTRACT | `docs/superregular-conflict-atom-degree-bound.md` |
 | SRR2bb--SRR2bf | At every endpoint-cost threshold, the retained candidate weight and exact conflict-atom loads compose to give an executable low-cost subfamily of weight at least `W_t/[1+r(Lambda_t-1)]` | PROVED UNDER THE COMPLETE THRESHOLD-TRANSPORT AND CONFLICT-ATOM CONTRACTS | `docs/superregular-threshold-conflict-composition.md` |
 | SRR2bg--SRR2bk | A complete finite higher-order conflict hypergraph has a conservative clique shadow; weighted graph thinning gives an executable family with explicit loss from hyperedge rank and incidence | PROVED UNDER THE COMPLETE CONFLICT-HYPERGRAPH AND AT-MOST-ONE CONTRACTS | `docs/superregular-higher-order-conflict-shadow.md` |
+| SRR2bl--SRR2bp | If every conflict hyperedge has a common retained witness atom, the clique-shadow degree is bounded by the sum of witnessed atom loads; support rank `r` and load `M` retain weight at least `W/(1+rM)` | PROVED UNDER THE COMPLETE WITNESSED-HYPEREDGE ATOM CONTRACT | `docs/superregular-witnessed-hyperedge-atoms.md` |
 
 ## Updated frontier
 
-The endpoint objective now has exact transportation, tensor/perturbation, atom-degree, pairwise and higher-order conflict-thinning criteria, and these stages compose without changing the cost threshold. Remaining work is constructing the actual geometric tensor reference, complete atom/hyperedge dictionary and proving small forward, reverse, conditioning, perturbation and incidence errors.
+The endpoint objective now has exact transportation, tensor/perturbation and pairwise/higher-order conflict criteria. Higher-order incidence is reduced to the local witnessed load `M(v,a)`. Remaining work is constructing the actual tensor reference and complete witness-atom dictionary, then proving small forward, reverse, conditioning, perturbation and witnessed-load bounds.
 
 No statement here proves SRR2, SRR4 or the no-three-in-line conjecture.
