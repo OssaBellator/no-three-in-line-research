@@ -1,0 +1,18 @@
+{
+  "m":9,
+  "clean_signed_states":6727728,
+  "valid_states":8,
+  "one_support_distance_four_states":8,
+  "hamilton_cycles":4,
+  "global_sign_complement_pairs":4,
+  "minimum_peak_atomic_count":8,
+  "minimum_peak_support_count":2,
+  "canonical_words":[
+    {"source_orientation_pair":[136,375],"rho":[3,6,7,4,2,8,5,1,0],"source_support":[0,1,5],"rotation_word":[[0,1,2],[3,5,8],[0,2,6],[1,2,3]],"atomic_sequence":[4,8,8,8,0],"support_sequence":[1,2,2,2,0]},
+    {"source_orientation_pair":[59,452],"rho":[4,3,7,6,1,8,5,0,2],"source_support":[3,4,5],"rotation_word":[[0,2,3],[0,2,5],[1,6,7],[3,4,5]],"atomic_sequence":[4,8,8,8,0],"support_sequence":[1,2,2,2,0]},
+    {"source_orientation_pair":[165,346],"rho":[7,4,8,1,0,6,3,2,5],"source_support":[1,6,8],"rotation_word":[[4,6,7],[4,6,8],[0,3,5],[1,4,7]],"atomic_sequence":[4,8,8,8,0],"support_sequence":[1,2,2,2,0]},
+    {"source_orientation_pair":[18,493],"rho":[8,7,4,0,3,6,1,2,5],"source_support":[3,6,8],"rotation_word":[[0,6,8],[3,5,6],[3,5,7],[3,4,5]],"atomic_sequence":[4,4,8,8,0],"support_sequence":[1,1,2,2,0]}
+  ],
+  "exact_shortest_path_barrier_verified":true,
+  "asymptotic_collateral_word_proved":false
+}
