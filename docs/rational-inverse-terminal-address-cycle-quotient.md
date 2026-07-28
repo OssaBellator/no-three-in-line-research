@@ -25,7 +25,7 @@ A **terminal record** consists of:
 
 The physical occurrences are ordered by the fixed role order of the word/type.
 
-## RI5ay -- terminal quotient and secant labels are reconstructed -- PROVED UNDER THE PRIME-FIELD PHYSICAL CONTRACT
+## RI5bd -- terminal quotient and secant labels are reconstructed -- PROVED UNDER THE PRIME-FIELD PHYSICAL CONTRACT
 
 For one terminal record, the following data are derived from the finite word/type and its at most three physical occurrences:
 
@@ -44,7 +44,7 @@ RI5af--RI5ah reconstruct subgroup and quotient-coset arithmetic, roots, companio
 
 A change of primitive-root convention, ambient field, occurrence interpretation or external role dictionary is an outer reset.
 
-## RI5az -- polynomial complete terminal stock -- PROVED
+## RI5be -- polynomial complete terminal stock -- PROVED
 
 Let `K_occ` be any valid complete physical occurrence stock. The number of complete active and blocker terminal records is at most
 
@@ -73,7 +73,7 @@ There are at most `13+9=22` word/type choices. Retain at most `12` safe `(s,q)` 
 
 The exponent is an ambient safe bound, not an optimized count.
 
-## RI5ba -- long terminal histories contain short exact cycles -- PROVED
+## RI5bf -- long terminal histories contain short exact cycles -- PROVED
 
 Inside one fixed external role dictionary and prime-field interpretation, any terminal-record history of length greater than `K_term` repeats a complete record. The first repeated-record segment contains a simple exact terminal cycle of length at most `K_term`.
 
@@ -83,19 +83,11 @@ Pigeonhole gives a repeated complete record. Delete closed subwalks from the rep
 
 Because the address is complete, returning to one record returns every reconstructed quotient, scale, direction/offset, secant, owner and blocker field.
 
-## RI5bb -- canonical least-field restoration gate -- PROVED
+## RI5bg -- canonical restoration gate and recurrence router -- PROVED UNDER THE RESTORATION CONTRACT
 
-Fix total orders on the finite terminal fields. Every nonconstant simple exact terminal cycle has a canonical least changing field, a least value on that field, a first edge leaving that value and a first later edge restoring it.
+Fix total orders on the finite terminal fields. Every nonconstant simple exact terminal cycle has a canonical least changing field, a least value on that field, a first edge leaving that value and a first later edge restoring it. The final edge of this excursion is the **terminal restoration gate**, addressed by the complete decorated edge together with the restored field/value.
 
-The final edge of this excursion is the **terminal restoration gate**. It is addressed by the complete decorated edge together with the restored field/value.
-
-### Proof
-
-Apply the finite product-state leave/restore argument to the complete address of RI5ay--RI5az. A nonconstant cyclic coordinate leaves some attained value and must later return because the cycle closes. Least-field, least-value and first-edge conventions make the gate canonical. QED.
-
-## RI5bc -- terminal recurrence router -- PROVED UNDER THE RESTORATION CONTRACT
-
-Every recurrent exact active or blocker terminal cycle has one continuation:
+Every recurrent exact active or blocker terminal cycle then has one continuation:
 
 1. current payment through its selected physical owner or source factor;
 2. strict descent in scale, carry, completion debt or blocker rank;
@@ -108,7 +100,7 @@ If every reachable restoration address is capacity one whenever the first five a
 
 ### Proof
 
-RI5ba extracts a simple exact cycle and RI5bb supplies its canonical restoration edge. The declared alternatives are edge-local outcomes. Capacity-one addresses cannot repeat. A change not represented in the complete record violates the fixed-epoch contract and is returned as an outer reset. QED.
+Apply the finite product-state leave/restore argument to the complete address of RI5bd--RI5be. A nonconstant cyclic coordinate leaves some attained value and must later return because the cycle closes. Least-field, least-value and first-edge conventions make the gate canonical. RI5bf extracts a simple exact cycle. The declared alternatives are edge-local outcomes; capacity-one addresses cannot repeat. A change not represented in the complete record violates the fixed-epoch contract and is returned as an outer reset. QED.
 
 ## Updated RI frontier
 
