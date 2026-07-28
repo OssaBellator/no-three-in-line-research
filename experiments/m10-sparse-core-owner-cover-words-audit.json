@@ -1,0 +1,23 @@
+{
+  "m":10,
+  "minimum_core_states":16,
+  "minimum_core_complement_pairs":8,
+  "pareto_profile_distribution":{"2,8,2":4,"3,12,1":4,"3,12,2":4,"tradeoff_3,12,2_or_4,16,1":4},
+  "states_with_star_local_shortest_path":8,
+  "states_requiring_owner_cover_two_on_every_shortest_path":8,
+  "states_paying_one_support_and_four_atoms_for_star_locality":4,
+  "canonical_words":[
+    {"orientation":478,"peak":[3,12,2],"triple_masks":[13,50,896,88,577],"orientation_trace":[478,379,526,235,163,235]},
+    {"orientation":293,"peak":[3,12,2],"triple_masks":[161,42,84,67,800],"orientation_trace":[293,33,79,24,206,474]},
+    {"orientation":293,"peak":[4,16,1],"triple_masks":[259,200,7,577,276],"orientation_trace":[293,289,223,335,10,267]},
+    {"orientation":382,"peak":[3,12,1],"triple_masks":[416,81,577,522,324],"orientation_trace":[382,230,175,57,40,321]},
+    {"orientation":209,"peak":[2,8,2],"triple_masks":[290,131,784,133,74],"orientation_trace":[209,58,42,64,790,321]},
+    {"orientation":42,"peak":[3,12,2],"triple_masks":[82,276,648,69,546],"orientation_trace":[42,398,380,137,51,474]},
+    {"orientation":311,"peak":[3,12,2],"triple_masks":[81,552,262,592,273],"orientation_trace":[311,510,333,432,772,235]},
+    {"orientation":311,"peak":[4,16,1],"triple_masks":[88,262,592,321,56],"orientation_trace":[311,152,137,163,499,235]},
+    {"orientation":25,"peak":[3,12,1],"triple_masks":[84,296,289,386,529],"orientation_trace":[25,57,57,46,132,474]},
+    {"orientation":402,"peak":[2,8,2],"triple_masks":[44,176,11,112,896],"orientation_trace":[402,550,582,256,868,474]}
+  ],
+  "owner_cover_pareto_classification_verified":true,
+  "canonical_shortest_word_bank_verified":true
+}
