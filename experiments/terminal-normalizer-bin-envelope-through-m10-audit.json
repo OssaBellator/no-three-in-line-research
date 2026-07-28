@@ -1,0 +1,55 @@
+{
+  "cases": [
+    {
+      "m": 8,
+      "normalizer_range": [1096, 7056],
+      "bins": [
+        {"lower": 1096, "upper": 2048, "maximum_target_labels": 96},
+        {"lower": 2049, "upper": 4096, "maximum_target_labels": 672},
+        {"lower": 4097, "upper": 8192, "maximum_target_labels": 1344}
+      ],
+      "bin_envelope": "285067172/383360387",
+      "bin_envelope_decimal": 0.7436010126940945,
+      "bin_envelope_contractive": true,
+      "exact_capacity_weighted_maximum": "1468416446839930521721999/3789940340738886748063650",
+      "exact_capacity_weighted_maximum_decimal": 0.38745107173735827
+    },
+    {
+      "m": 9,
+      "normalizer_range": [2976, 28160],
+      "bins": [
+        {"lower": 2976, "upper": 4096, "maximum_target_labels": 32},
+        {"lower": 4097, "upper": 8192, "maximum_target_labels": 616},
+        {"lower": 8193, "upper": 16384, "maximum_target_labels": 5376},
+        {"lower": 16385, "upper": 32768, "maximum_target_labels": 4864}
+      ],
+      "bin_envelope": "18995653877059/17049712431135",
+      "bin_envelope_decimal": 1.1141333881016349,
+      "bin_envelope_contractive": false,
+      "exact_capacity_weighted_maximum": "406616023430754819367780545483294984597292560691/708943793924084504981546740829982708967717363200",
+      "exact_capacity_weighted_maximum_decimal": 0.5735518484195888
+    },
+    {
+      "m": 10,
+      "normalizer_range": [9872, 85248],
+      "bins": [
+        {"lower": 9872, "upper": 16384, "maximum_target_labels": 128},
+        {"lower": 16385, "upper": 32768, "maximum_target_labels": 1344},
+        {"lower": 32769, "upper": 65536, "maximum_target_labels": 6656},
+        {"lower": 65537, "upper": 131072, "maximum_target_labels": 6144}
+      ],
+      "bin_envelope": "8507693248751944/21711076395041385",
+      "bin_envelope_decimal": 0.39185957867547394,
+      "bin_envelope_contractive": true,
+      "exact_capacity_weighted_maximum": "5252950050653541320261353842660696885393101/33843848222070502440710524758866309866934400",
+      "exact_capacity_weighted_maximum_decimal": 0.15521137006009697
+    }
+  ],
+  "bins_are_disjoint_integer_normalizer_intervals": true,
+  "bin_bound_uses_maximum_target_population_divided_by_bin_lower_edge": true,
+  "m8_bin_certificate_below_three_quarters": true,
+  "m9_bin_certificate_contractive": false,
+  "m10_bin_certificate_below_two_fifths": true,
+  "asymptotic_bin_population_bound_proved": false,
+  "all_exact_regressions_verified": true
+}
