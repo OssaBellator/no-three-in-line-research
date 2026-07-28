@@ -21,9 +21,10 @@ This addendum records the bounded small-reservoir results proved after the curre
 | GC2jb--GC2jf | Across repeated epochs, the integrated cause/remedy/height network uses current remedy and height-source balances with exact named deposits and debits; the first unpaid epoch returns a canonical mixed cut | PROVED UNDER THE COMPLETE CUMULATIVE INTEGRATED REMEDY-HEIGHT DEPOSIT CONTRACT | `docs/geometric-cleaning-cumulative-integrated-remedy-height-bank.md` |
 | GC2jg--GC2jk | Occurrence-faithful physical source transitions and remedy/height issuance conserve one joint mass account; source-less deposits, splitting, mass increase or missing predecessor lineage return the first exact witness | PROVED UNDER THE COMPLETE REMEDY/HEIGHT DEPOSIT SOURCE-LINEAGE CONTRACT | `docs/geometric-cleaning-remedy-height-deposit-source-conservation.md` |
 | GC2jl--GC2jp | Physical source mass, existing remedy and height balances, and cause demands form one integral physical/remedy/height/cause network; simultaneous issuance and payment are max-flow, while failure returns one exact mixed cut | PROVED UNDER THE COMPLETE PHYSICAL REMEDY-HEIGHT NETWORK CONTRACT | `docs/geometric-cleaning-integrated-physical-remedy-height-flow.md` |
+| GC2jq--GC2ju | Residual reachability returns exact physical, remedy and height barriers; compatibility closes and unpaid cause demand equals outside cause demand minus the three barrier totals | PROVED UNDER THE GUARDED PHYSICAL REMEDY-HEIGHT CUT CONTRACT | `docs/geometric-cleaning-physical-remedy-height-cuts.md` |
 
 ## Updated frontier
 
-The branch has exact Hall-core causes, clean-height costs and an integrated physical source/remedy/height/cause network. Remaining GC5 work is constructing the concrete graph, proving physical capacities, deposits, height costs and compatibility, and handling untagged feedback and local resampling.
+The branch has exact Hall-core causes, clean-height costs and an integrated physical source/remedy/height/cause network. Every failure now returns one outside cause set and exact three-stage barrier vector. Remaining GC5 work is proving the concrete geometric cut inequality, height costs and physical deposits, plus handling untagged feedback and local resampling.
 
 No statement here proves GC5 or the no-three-in-line conjecture.
