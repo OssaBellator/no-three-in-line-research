@@ -31,6 +31,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5dm--AC5dq | Every unpaid complete network has a canonical minimum-cardinality defect core; every proper subset is payable and each retained defect has exact marginal shortfall equal to the full core deficit | PROVED UNDER THE COMPLETE IRREDUCIBLE DEFECT-CORE CONTRACT | `docs/alternating-core-irreducible-defect-core.md` |
 | AC5dr--AC5dv | Every non-singleton irreducible defect core has exact shared-capacity competition equal to its full deficit across every bipartition; a singleton is a direct shortage, and any retained split with smaller overlap excludes the core | PROVED UNDER THE COMPLETE FIXED-NETWORK AND EXACT SUBSET MAX-FLOW CONTRACT | `docs/alternating-core-core-overlap-certificate.md` |
 | AC5dw--AC5ea | Canonical full flows for the two payable sides induce signed pressure on the canonical residual minimum cut summing exactly to the core deficit; positive forward pressure totals at least the deficit and one named cut arc has pressure at least `ceil(delta/|K+|)` | PROVED UNDER THE COMPLETE CANONICAL-FLOW AND CUT-ADDRESS CONTRACT | `docs/alternating-core-canonical-cut-pressure.md` |
+| AC5eb--AC5ef | Every named positive-pressure cut arc has a canonical unit-path decomposition with exactly its pressure many cross-side defect-path collision pairs; one retained defect-class pair carries the corresponding pigeonhole share | PROVED UNDER THE COMPLETE CYCLE-CANCELLED PATH AND CAPACITY-SLOT CONTRACT | `docs/alternating-core-cut-arc-collision-pairs.md` |
 
 ## Updated AC4 frontier
 
@@ -38,6 +39,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers, irreducible defect cores, exact core-overlap certificates and canonical cut-pressure localization. Remaining work is constructing the concrete geometric graph and proving that each returned singleton shortage or named forward cut-arc pressure is paid or impossible, together with source/certificate capacities and exogenous deposits.
+The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers, irreducible defect cores, overlap and cut-pressure certificates, and exact cross-side path collisions. Remaining work is constructing the concrete geometric graph and proving that each returned singleton shortage or named defect-path collision is paid or impossible, together with source/certificate capacities and exogenous deposits.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
