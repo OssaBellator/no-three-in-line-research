@@ -4,7 +4,7 @@ This addendum records the terminal-address recurrence results proved after the c
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| RI5ay--RI5bc | Every active or blocker terminal record is reconstructed from one of 22 finite word/types and at most three physical RI occurrence addresses; the complete stock is at most `264N(K_occ+1)^3`, long histories contain short exact cycles, and every nonconstant cycle exposes one canonical restoration gate | PROVED UNDER THE PRIME-FIELD PHYSICAL AND RESTORATION CONTRACTS | `docs/rational-inverse-terminal-address-cycle-quotient.md` |
+| RI5bd--RI5bg | Every active or blocker terminal record is reconstructed from one of 22 finite word/types and at most three physical RI occurrence addresses; the complete stock is at most `264N(K_occ+1)^3`, long histories contain short exact cycles, and every nonconstant cycle exposes one canonical restoration gate | PROVED UNDER THE PRIME-FIELD PHYSICAL AND RESTORATION CONTRACTS | `docs/rational-inverse-terminal-address-cycle-quotient.md` |
 
 ## Updated frontier
 
