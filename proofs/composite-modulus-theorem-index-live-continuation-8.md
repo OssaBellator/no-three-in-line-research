@@ -14,210 +14,121 @@ The authoritative live ledger is split across:
 
 | IDs | Contents | Status | Location |
 |---|---|---|---|
-| CMR2390--2397 | Fixed handoff artifact kinds, canonical assertion-artifact records, exact premise-registry identity, proved/open coverage, complete dependent-premise artifact support, assertion-to-bundle binding, documentary boundary, and executable endpoint | PROVED as typed handoff-assertion documentary linkage; checker syntax-compiled locally; assertion truth and logical sufficiency remain unverified | `docs/402-prime-power-handoff-assertion-artifact-registry.md` |
-| CMR2398--2405 | Canonical 252-chamber reconstruction, exact disposition coverage, open/closed proof kinds, final-row theorem linkage, separate zero/hard-core censuses, independent 232/20 readiness flags, chamber boundary, and executable endpoint | PROVED as an exceptional-worklist disposition interface; checker syntax-compiled locally; no genuine chamber closure bank or mathematical closure claimed | `docs/403-prime-power-exceptional-chamber-disposition-registry.md` |
-| CMR2406--2413 | Fixed thirteen-frontier and forty-three-target system, proof/research DAG acyclicity, exact obligation/premise/assertion/gate coverage, completion records, proof waves and chains, research-start schedule, frontier impact records, execution boundary, and executable endpoint | PROVED as documentary all-frontier execution arithmetic; committed schema audited; self-test and dependency-backed certificate execution not run here; no frontier completion or all-`n` proof claimed | `docs/404-prime-power-atomic-frontier-execution.md` |
-| CMR2414--2421 | Shared handoff/refinement identity, exact handoff-target artifact synchronization, exact 232/20 chamber-target synchronization, integrated three-component readiness, current blocker publication, execution boundary, and executable endpoint | PROVED as synchronized current-frontier execution integrity; checker syntax-compiled locally; no target, assertion, chamber closure or all-`n` proof claimed | `docs/405-prime-power-current-frontier-execution.md` |
-| CMR2422--2429 | Fixed target artifact kinds, canonical completion-to-bundle binding, exact immediate target-artifact support, namespace-qualified obligation/premise/handoff support, role-qualified selected certificate bindings, canonical target bundles, post-frontier artifact gate, documentary boundary, and executable endpoint | PROVED as typed documentary evidence for every effectively complete atomic target; checker version 2 syntax-compiled and isolated schema tests passed; no artifact truth, target completion or all-`n` proof claimed | `docs/406-prime-power-atomic-target-artifact-registry.md` |
-| CMR2430--2437 | Opaque-echo defect isolation, proof-pointer/completion-seal separation, exact registry locator and bundle digest, namespace-qualified external references, role-qualified certificates, noncircular ancestor binding, strengthened post-frontier claims, and executable endpoint | PROVED as a noncircular hardening of atomic target completion sealing; checker version 2 syntax-compiled and isolated schema tests passed; no mathematical target or all-`n` proof claimed | `docs/407-prime-power-atomic-target-completion-sealing.md` |
-| CMR2438--2445 | Exact source statement text, UTF-8 statement-hash binding, source-kind-specific verification artifacts, rule/skeleton identity, complete source-use footprints, source-truth census synchronization, existing `source-truth-proof` bundle binding, honesty boundary, and executable endpoint | PROVED as an exact source-statement proof-work interface; checker syntax-compiled and isolated statement-digest tests passed; the actual source statements and parent rule remain unproved/unpopulated | `docs/408-prime-power-source-statement-truth-registry.md` |
-| CMR2446--2453 | Shared obligation-registry identity, exact source-census/T01 synchronization, strict source-root gate, prioritized source blockers, certificate identity bindings, noncircular composition, honesty boundary, and executable endpoint | PROVED as documentary synchronization of the source truth bank with `T01_SOURCE_STATEMENTS`; checker syntax-compiled locally; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/409-prime-power-source-truth-frontier-execution.md` |
-| CMR2454--2461 | Opaque verification-pointer defect, exact per-source verification artifacts, proved/open artifact coverage, statement-to-bundle sealing, acyclic source-proof support, strengthened aggregate source-truth binding, honesty boundary, and executable endpoint | PROVED as noncircular source-proof evidence sealing; source registry version 2 syntax-compiled and isolated sealing/cycle tests passed; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/410-prime-power-source-verification-artifact-sealing.md` |
-| CMR2462--2469 | Fixed case/clause/axis/exclusion/application work bank, exact source and internal rule-artifact support, global-parent-to-operation-slot binding, sealed rule-manifest and rule-exhaustiveness bundles, exact `RULE_EXHAUSTIVE`/T02 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T02 rule-exhaustiveness frontier; checker syntax-compiled locally; the actual parent rule, exhaustiveness theorem, slot population and all-`n` implication remain unproved | `docs/411-prime-power-rule-exhaustiveness-frontier.md` |
-| CMR2470--2477 | Exact open/populated/proved slot bank, literal population payloads, canonical fibre/source binding, exact T02 case/clause/application support, payload-to-proof sealing, aggregate population certificate, exact `SLOT_AND_CANDIDATE_POPULATION`/T03 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T03 slot/candidate population frontier; checker syntax-compiled locally; no genuine population semantics, T04 population or all-`n` implication claimed | `docs/412-prime-power-slot-candidate-population-frontier.md` |
-| CMR2478--2485 | Skeleton-derived block/interface unit bank, open/populated/proved assembly records, exact T03 source-slot binding, literal block/interface payloads, exact T03 artifact support, noncircular aggregate population bank, exact T04 target-artifact binding and synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T04 block/interface population frontier; checker syntax-compiled and isolated source-binding tests passed; no geometry, transition, block-closure, interface-exhaustiveness or all-`n` proof claimed | `docs/413-prime-power-block-interface-population-frontier.md` |
-| CMR2486--2493 | Exact slotwise geometry/selector work bank, exact T03 finite-geometry projection, responsewise delta/threshold identity, exact T03/T04 proof support, separate geometry and selector obligation banks, noncircular T05 target binding, exact readiness synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T05 finite geometry/selector frontier; checker syntax-compiled and isolated status/projection helper tests passed; no genuine recurrence coverage, global candidate-policy theorem or all-`n` proof claimed | `docs/414-prime-power-geometry-selector-frontier.md` |
+| CMR2390--2397 | Fixed handoff artifact kinds, canonical assertion-artifact records, exact premise-registry identity, proved/open coverage, complete dependent-premise artifact support, assertion-to-bundle binding, documentary boundary, and executable endpoint | PROVED as typed handoff-assertion documentary linkage; assertion truth and logical sufficiency remain unverified | `docs/402-prime-power-handoff-assertion-artifact-registry.md` |
+| CMR2398--2405 | Canonical 252-chamber reconstruction, exact disposition coverage, open/closed proof kinds, final-row theorem linkage, separate zero/hard-core censuses, independent 232/20 readiness flags, chamber boundary, and executable endpoint | PROVED as an exceptional-worklist disposition interface; no genuine chamber closure bank or mathematical closure claimed | `docs/403-prime-power-exceptional-chamber-disposition-registry.md` |
+| CMR2406--2413 | Fixed thirteen-frontier and forty-three-target system, proof/research DAG acyclicity, exact obligation/premise/assertion/gate coverage, completion records, proof waves and chains, research-start schedule, frontier impact records, execution boundary, and executable endpoint | PROVED as documentary all-frontier execution arithmetic; no frontier completion or all-`n` proof claimed | `docs/404-prime-power-atomic-frontier-execution.md` |
+| CMR2414--2421 | Shared handoff/refinement identity, exact handoff-target artifact synchronization, exact 232/20 chamber-target synchronization, integrated readiness, current blockers, execution boundary, and executable endpoint | PROVED as synchronized current-frontier documentary integrity | `docs/405-prime-power-current-frontier-execution.md` |
+| CMR2422--2429 | Fixed target artifact kinds, completion-to-bundle binding, exact immediate support, qualified external references, selected certificate bindings, canonical target bundles, post-frontier gate, and executable endpoint | PROVED as typed documentary evidence for effectively complete atomic targets | `docs/406-prime-power-atomic-target-artifact-registry.md` |
+| CMR2430--2437 | Opaque-echo defect isolation, proof-pointer/completion-seal separation, exact registry locator and digest, qualified references, noncircular ancestor binding, strengthened claims, and executable endpoint | PROVED as noncircular atomic-target completion sealing | `docs/407-prime-power-atomic-target-completion-sealing.md` |
+| CMR2438--2445 | Exact source text, UTF-8 hash binding, source-kind artifacts, rule/skeleton identity, source-use footprints, source census, source-truth bundle binding, honesty boundary, and endpoint | PROVED as an exact source-statement proof-work interface; genuine statements remain unproved/unpopulated | `docs/408-prime-power-source-statement-truth-registry.md` |
+| CMR2446--2453 | Shared obligation registry, exact source-census/T01 synchronization, source-root gate, prioritized blockers, identity bindings, noncircular composition, honesty boundary, and endpoint | PROVED as documentary synchronization with `T01_SOURCE_STATEMENTS` | `docs/409-prime-power-source-truth-frontier-execution.md` |
+| CMR2454--2461 | Opaque source-proof defect, exact verification artifacts, proved/open coverage, statement-to-bundle sealing, acyclic source support, aggregate binding, honesty boundary, and endpoint | PROVED as noncircular source-proof evidence sealing | `docs/410-prime-power-source-verification-artifact-sealing.md` |
+| CMR2462--2469 | Fixed case/clause/axis/exclusion/application bank, exact support, global-parent-to-slot binding, sealed rule manifest and proof bank, T02 synchronization, honesty boundary, and endpoint | PROVED as an exact documentary T02 frontier; genuine recurrence exhaustiveness remains unproved | `docs/411-prime-power-rule-exhaustiveness-frontier.md` |
+| CMR2470--2477 | Open/populated/proved slot bank, literal payloads, canonical fibre binding, exact T02 support, payload sealing, aggregate population certificate, T03 synchronization, honesty boundary, and endpoint | PROVED as an exact documentary T03 population frontier | `docs/412-prime-power-slot-candidate-population-frontier.md` |
+| CMR2478--2485 | Skeleton-derived block/interface bank, open/populated/proved assembly, exact T03 ancestry, literal payloads, exact support, noncircular aggregate bank, T04 binding, honesty boundary, and endpoint | PROVED as an exact documentary T04 population frontier | `docs/413-prime-power-block-interface-population-frontier.md` |
+| CMR2486--2493 | Slotwise geometry/selector bank, exact T03 projection, responsewise delta/threshold identity, exact T03/T04 support, separate obligation banks, noncircular T05 target binding, readiness synchronization, honesty boundary, and endpoint | PROVED as an exact documentary T05 finite geometry/selector frontier; the original endpoint required the CMR2494 closure-record execution correction | `docs/414-prime-power-geometry-selector-frontier.md` |
+| CMR2494--2501 | Corrected T05 closure-record execution, exact T07 semantic subjects, complete claim coverage, acyclic claim support, exact T03/T04 ancestry, separate state/transition banks, noncircular T07 binding, honesty boundary, and endpoint | PROVED as an exact documentary T07 fate/transition/state semantic frontier; semantic truth remains externally unverified | `docs/415-prime-power-fate-transition-state-frontier.md` |
+| CMR2502--2509 | Common-weight cycle isolation, exact slot-score bank, registry-derived candidate sets, deterministic minimization, T02 application-to-winner binding, three-level support hierarchy, obligation/target sealing, honesty boundary, and endpoint | PROVED as an exact documentary T06 candidate-policy frontier; score truth and genuine recurrence correctness remain unverified | `docs/416-prime-power-candidate-policy-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Typed handoff-assertion artifacts
+## Exact source and recurrence root
 
-Every declared proved induction-handoff assertion now requires exactly one assertion-specific
-artifact. Its support list must equal the complete typed premise-artifact list of every fixed
-premise dependency; neither omission nor unrelated premise support is accepted. The
-reconstructed bundle digest must equal the locator/digest pair stored by the handoff assertion.
+Every cited source has literal text, a recomputed hash and one open/proved record. A proved statement
+requires a fixed source-kind artifact and noncircular source-proof support. T01 cannot close until the
+complete source bank is present.
 
-This closes the remaining opaque documentary link above the ten final premises. It does not
-verify any premise artifact or induction assertion.
+T02 reconstructs every case, clause, finite axis, exclusion and global-parent application. Every
+global parent identifies one admitted operation slot. This is an exact review surface; it does not
+prove that the supplied recurrence is genuine or exhaustive.
 
-## Exceptional and hard-core chamber dispositions
+## Exact T03 and T04 population fronts
 
-The canonical CMR2110 worklist is rebuilt directly and produces 252 source-independent chamber
-IDs:
+Every expected operation slot has one open/populated/proved T03 record with literal geometry,
+witness, response, selector, vector, credit, load and transition data. A proved slot has exact T02
+support.
 
-\[
-\boxed{232\text{ zero-selector chambers}+20\text{ hard-core chambers}.}
-\]
+Every skeleton block and return/interface/off-diagonal row has one open/populated/proved T04 record
+with exact T03 ancestry. The aggregate T04 digest excludes ancestors containing the T04 completion
+digest.
 
-Every chamber now has one exact open/closed disposition. A closed disposition may bind to a
-final quotient row theorem, a direct chamber proof, a survivor-signature infeasibility proof or
-a host-union proof. Row-linked dispositions must match the exact theorem ID, locator and digest
-in the quotient semantic-refinement certificate.
+Population identity does not prove the mathematical meaning of the populated objects.
 
-The registry separately reports `exceptional_zero_rows_ready` and `hard_core_rows_ready`.
-Neither flag is asserted for genuine data in this branch.
+## Exact T05 finite geometry front and execution correction
 
-## Atomic all-frontier execution schedule
+T05 projects each finite linked-operation certificate into the exact T03 point, removal, survivor,
+owner/fate, response and selector fields. It checks every responsewise direct-delta identity and the
+destroyed-triple threshold equivalence.
 
-The thirteen current mathematical frontiers are refined into forty-three atomic targets. Proof
-closure and useful research-start dependencies are separate acyclic graphs. Each semantic
-obligation, final premise and handoff assertion is bound to exactly one target, and exactly one
-target is bound to the final dossier gate.
-
-The checker publishes exact proof-actionable and research-actionable targets, parallel waves,
-longest open chains and per-frontier downstream impact. This is planning arithmetic only and
-always reports `all_n_proved_by_checker = 0`.
-
-## Synchronized current-frontier execution
-
-The atomic target certificate is composed with the typed handoff-assertion artifact registry and
-the exact 252-chamber disposition registry. All three layers must share the same final handoff
-and quotient semantic refinement.
-
-Each handoff target must agree with its typed assertion artifact bundle. The zero-selector and
-hard-core targets must agree exactly with the independent 232- and 20-chamber readiness flags.
-The integrated blocker record publishes actionable targets, proof-wave depth, open chambers and
-open handoff bundles without reinterpreting any documentary flag as a proof.
-
-## Typed and sealed artifacts for every atomic target
-
-Every effectively complete atomic target requires one target-specific typed artifact carrying a
-separate external proof locator/digest. Its completion locator is the canonical target-registry URI
-and its completion digest is the reconstructed bundle digest.
-
-Immediate target support is reconstructed from the proof DAG. Obligation, premise and handoff
-support is namespace-qualified, while selected certificate support is role-qualified. The root
-bundle does not cite the current-frontier ancestor certificate, avoiding a self-referential digest;
-the registry certificate binds that current-frontier certificate at the registry level.
-
-The post-frontier gate remains documentary and permanently reports
-`all_n_proved_by_checker = 0`.
-
-## Exact and sealed source-statement root
-
-Every source cited by the parent-rule provenance layer has one canonical record containing literal
-statement text, a recomputed UTF-8 SHA-256 and an exact verification status.
-
-A proved statement now requires exactly one source-kind-specific verification artifact. Its
-statement record binds the canonical URI
+CMR2494 corrects the executable synchronization path: `closed` is read from
+`obligation_closure_records`, not raw `proof_obligations`. The corrected canonical endpoint is:
 
 ```text
-source-verification-artifact-registry://<source ID>
+scripts/check_prime_power_geometry_selector_frontier_v2.py
 ```
 
-and the reconstructed per-source artifact-bundle digest. The artifact carries a separate external
-proof locator/digest, proof statement, evidence and supporting source-proof artifact IDs. The
-support graph must be acyclic and a canonical topological proof-artifact order is published.
+Finite arithmetic still does not prove coverage of every recurrence geometry for arbitrary `n`.
 
-The source registry reconstructs each source's complete case/clause/axis/exclusion footprint and
-orders open source IDs by decreasing downstream use. The complete source-truth bundle remains
-bound by the existing `source-truth-proof` obligation artifact rather than by a parallel closure
-path.
+## Exact T07 fate, transition and state semantics
 
-A separate source-root execution certificate requires the source registry, nested obligation
-registry and `T01_SOURCE_STATEMENTS` target to agree exactly. Until every source statement and its
-sealed verification artifact are present, the current atomic source target remains T01; only then
-does the source front advance to `T02_RULE_EXHAUSTIVENESS`.
+For every slot, T07 reconstructs a subject for every fate witness, the parent state, every labelled
+state vector and every transition. Every subject has exactly one canonical claim with a statement,
+evidence and acyclic claim support.
 
-## Exact T02 rule-exhaustiveness frontier
+A proved slot cites its exact T03 artifact and every T04 assembly artifact using it. Separate
+`state-semantics-proof` and `transition-proof` obligation artifacts bind independent aggregate banks.
+The T07 target artifact binds their combined noncircular digest.
 
-The T02 checker derives one fixed record for every parent case, clause, finite parameter axis,
-excluded row and global recurrence-skeleton parent. Each proved record has one sealed artifact with
-exact source support. Clause artifacts depend on their axis and exclusion artifacts, case artifacts
-depend on all applicable clauses, and global-parent application artifacts depend on the exact case
-and selected clause.
+These records seal semantic assertions; the checker does not prove those assertions true.
 
-Each global parent must identify one exact operation slot. The checker verifies the skeleton rule
-and case, selected clause, admitted slot parameter row, local parent state, expected host, ordered
-labels and operation kind. The existing `rule-manifest` and `rule-exhaustiveness-proof` obligation
-artifacts bind reconstructed manifest and proof-bank bundles, and reconstructed readiness must agree
-with both `RULE_EXHAUSTIVE` and `T02_RULE_EXHAUSTIVENESS`.
+## Exact T06 candidate policy
 
-This is an exact review surface only. It does not prove that the supplied rule data are genuine or
-exhaustive, and it does not populate the slots required by T03.
+The old common-weight candidate-policy checker is downstream of recurrent-block weights and therefore
+cannot define T06 without reversing the fixed proof DAG.
 
-## Exact T03 slot and candidate population frontier
+The T06 frontier instead gives every slot one externally proved minimum labelled-row score supported
+by its exact T05 and T07 artifacts. Candidate sets are reconstructed from all expected slots sharing a
+parent state. The winner is the least pair:
 
-Every independently expected operation slot now has one exact `open`, `populated` or `proved`
-record. A non-open record carries the literal population payload for points, removals, survivor
-background, owner/fate witnesses, response family, feasibility signatures, selector data, labelled
-vectors, routed credits, row loads and transitions.
+```text
+(minimum_labelled_row_load, slot_id)
+```
 
-The payload's source hash is recomputed from those literal fields. Its fibre ID is reconstructed from
-the expected host and source hash. A proved slot has one `slot-candidate-population-proof` artifact
-citing the exact T02 case and clause artifacts and every global-parent application that selects the
-slot. Populated-but-unproved slots remain visible as research progress without closing T03.
+Every T02 global-parent application must use that exact winner. The three-level proof hierarchy is:
 
-The aggregate `population-certificate` binds the complete slot record, payload, proof-artifact and
-per-slot bundle banks. Reconstructed readiness must agree exactly with
-`SLOT_AND_CANDIDATE_POPULATION` and `T03_SLOT_CANDIDATE_POPULATION`.
+```text
+slot score -> parent policy -> global-parent application
+```
 
-This is documentary identity and coverage only. It does not verify the supplied population data or
-populate the separate T04 recurrent-block and interface-row bank.
+The aggregate `candidate-policy-proof` binds both `CANDIDATE_POLICY_CORRECT` and
+`T06_CANDIDATE_POLICY`.
 
-## Exact T04 block and interface population frontier
+## Typed support, chambers and final handoff
 
-The T04 checker derives one expected population unit for every skeleton block and every skeleton
-return/interface/off-diagonal row. Every unit has an `open`, `populated` or `proved` record, so
-literal assembly work remains visible before proof completion.
+Every effectively complete semantic obligation, final premise, handoff assertion and atomic target
+requires its fixed typed artifact and exact noncircular support.
 
-Every non-open unit binds the exact T03 source slot, payload digest, fibre ID and source digest for
-each of its skeleton parents. Recurrent blocks carry literal local-state, recurrent-row, return-route,
-interface-attachment and source-clause data. Interface units carry literal target-state, route,
-transition and source-clause data.
+The exceptional worklist remains:
 
-A proved unit has one fixed-kind artifact citing the complete unique T03 slot-artifact set used by
-that unit. The aggregate bank excludes current-frontier and target-registry hashes to avoid hashing
-itself through the T04 atomic completion record. The T04 `global-population-bank` target artifact's
-external proof digest must equal this noncircular aggregate digest, and reconstructed readiness must
-agree exactly with `T04_BLOCK_INTERFACE_POPULATION`.
+\[
+232\text{ zero-selector chambers}+20\text{ hard-core chambers}=252.
+\]
 
-This remains population identity only. It does not prove geometry, transition semantics, recurrent-
-block closure, interface exhaustiveness or rank well-foundedness.
-
-## Exact T05 finite geometry and selector frontier
-
-Every expected slot has one open/proved T05 record. A proved slot contains one validated
-linked-operation selector certificate whose finite geometry projection must equal the T03 literal
-points, removals, survivor background, flattened owner/fate witnesses, complete response family and
-selector data.
-
-The nested finite certificate verifies every response delta and the equivalence between negative
-minimum delta and the destroyed-triple threshold. Each proved slot has one
-`slot-geometry-selector-proof` artifact citing its exact T03 population artifact and every T04
-assembly artifact whose skeleton parent uses that slot.
-
-Separate aggregate geometry and selector banks are bound by the two required
-`GEOMETRY_SELECTOR_CORRECT` artifacts. A noncircular combined digest is bound by the T05
-`geometry-selector-proof` target artifact, and reconstructed readiness must agree with both the
-semantic obligation and `T05_GEOMETRY_SELECTORS`.
-
-This is exact finite arithmetic and documentary support. It does not prove that the supplied finite
-systems form the genuine exhaustive all-`n` recurrence or that the later candidate policy is
-globally correct.
+No genuine chamber closure is claimed.
 
 ## Active frontier
 
-1. Transcribe every cited source statement exactly, confirm its stored hash, and provide one sealed
-   source-kind-specific verification artifact with noncircular support.
-2. Populate and prove every T02 case, clause, axis, exclusion and global-parent application record;
-   bind each global parent to its exact admitted operation slot; then review the genuine
-   parent-rule exhaustiveness theorem.
-3. Enter actual data for every T03 expected slot, prove each slot with exact T02 support, and review
-   the complete candidate-family population theorem.
-4. Populate and prove every skeleton-derived T04 recurrent block and return/interface/off-diagonal
-   row with exact T03 ancestry, then review the complete global population bank.
-5. Populate and prove every T05 slotwise finite geometry/selector record, then prove that this finite
-   bank covers the genuine recurrence geometry.
-6. Prove the intended operation policy and the complete fate/transition/state semantics.
-7. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
-   semantics.
-8. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
-9. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-10. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
-    noncircular support and completion-to-bundle sealing.
-11. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
-    every closed disposition mathematically.
-12. Complete all forty-three atomic targets, all ten final premises and all six induction-handoff
-    assertions, then prove that the reviewed global quotient and handoff establish `D(n)=2n` for
-    every `n`.
+1. Populate and prove every literal source statement and T02 recurrence record.
+2. Populate genuine T03 slot data and T04 block/interface assembly.
+3. Populate and prove every T05 finite geometry/selector record and prove genuine all-`n` coverage.
+4. Populate and prove every T07 fate/state/transition claim.
+5. Supply externally reviewed T06 slot scores, close every parent policy and prove every T02
+   application uses the winner.
+6. Build the exact T08 active-row-family, T09 destroyed-resource and T10 routed-credit semantic banks.
+7. Prove closed strongly connected strict recurrent blocks and semantic auxiliary elimination.
+8. Prove cross-block identity, scales, interfaces, rank, predicates and final row theorems.
+9. Prove all 252 exceptional dispositions.
+10. Complete all typed obligation, premise, handoff and atomic-target artifacts.
+11. Review the ordinary implication from the global quotient and handoff to `D(n)=2n` for every `n`.
+
+Every final checker permanently reports `all_n_proved_by_checker = 0`.
