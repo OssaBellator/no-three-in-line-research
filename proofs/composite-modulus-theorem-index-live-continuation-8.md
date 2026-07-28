@@ -30,6 +30,7 @@ The authoritative live ledger is split across:
 | CMR2494--2501 | Corrected T05 closure-record execution, exact T07 semantic subjects, complete claim coverage, acyclic claim support, exact T03/T04 ancestry, separate state/transition banks, noncircular T07 binding, honesty boundary, and endpoint | PROVED as an exact documentary T07 fate/transition/state semantic frontier; semantic truth remains externally unverified | `docs/415-prime-power-fate-transition-state-frontier.md` |
 | CMR2502--2509 | Common-weight cycle isolation, exact slot-score bank, registry-derived candidate sets, deterministic minimization, T02 application-to-winner binding, three-level support hierarchy, obligation/target sealing, honesty boundary, and endpoint | PROVED as an exact documentary T06 candidate-policy frontier; score truth and genuine recurrence correctness remain unverified | `docs/416-prime-power-candidate-policy-frontier.md` |
 | CMR2510--2533 | T06-application-derived active-row census, exact selected-row ancestry, T08 artifacts and sealing, literal destroyed-resource reconstruction, overlap graph and canonical scopes, T09 artifacts and sealing, exact routed-credit subjects, semantic route linkage, row/global injectivity, T10 artifacts and sealing, honesty boundary, and executable endpoint | PROVED as exact documentary T08/T09/T10 transition-resource frontiers; genuine simultaneous-row completeness, physical resource exhaustiveness and route semantics remain externally unverified | `docs/417-prime-power-transition-resource-frontier.md` |
+| CMR2534--2541 | Parallel common-weight population defect, skeleton-derived block census, exact common-row identity, selected-credit-unit bridge, primitive weights and strict recurrent support, typed per-block artifacts, obligation/target synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T11 recurrent-block closure frontier; genuine recurrence, semantic route truth and nonrecurrent exit semantics remain externally unverified | `docs/418-prime-power-recurrent-block-closure-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -125,6 +126,34 @@ Separate noncircular banks bind the three semantic obligations and the T08, T09 
 artifacts. These banks prove documentary identity and accounting only; they do not establish genuine
 simultaneous-row completeness, physical resource exhaustiveness or external route semantics.
 
+## Exact T11 recurrent-block closure
+
+T11 derives the recurrent-block census from T04 and the row census from T08 before reading any common
+weights. Every common routed row must reuse the exact selected T05 geometry, T03 labelled-vector and
+row-load tables, the proved T06 minimum score and the exact T10 selected-credit unit bank.
+
+The selected credit units have the exact schema:
+
+```text
+child_state_id
+unit_index
+selected_response_sha256
+```
+
+and aggregate exactly to the selected response's common row credit vector.
+
+Every proved block carries one primitive positive common state-weight vector, one row for every local
+SCC parent, the exact recurrent support graph, no external recurrent edge, strong connectivity and a
+positive margin on every row. T04 local states and recurrent rows must equal the common state registry
+and exact T08 row bank.
+
+Separate per-block common-weight and closure artifacts feed separate aggregate proof banks. The two
+`CLOSED_STRICT_RECURRENT_BLOCKS` artifacts bind those banks, while the T11 target binds their combined
+noncircular digest. Nonrecurrent exits remain explicit downstream T12/T15 work.
+
+This is exact finite identity and arithmetic relative to supplied semantics; it is not proof that the
+recurrence, routed-credit meaning or nonrecurrent exits are mathematically valid.
+
 ## Typed support, chambers and final handoff
 
 Every effectively complete semantic obligation, final premise, handoff assertion and atomic target
@@ -147,10 +176,11 @@ No genuine chamber closure is claimed.
 5. Supply externally reviewed T06 slot scores, close every parent policy and prove every T02
    application uses the winner.
 6. Populate and prove every T08 active row, T09 resource model and T10 routed-credit semantic record.
-7. Prove closed strongly connected strict recurrent blocks and semantic auxiliary elimination.
-8. Prove cross-block identity, scales, interfaces, rank, predicates and final row theorems.
-9. Prove all 252 exceptional dispositions.
-10. Complete all typed obligation, premise, handoff and atomic-target artifacts.
-11. Review the ordinary implication from the global quotient and handoff to `D(n)=2n` for every `n`.
+7. Populate and prove every T11 common-weight bridge and recurrent-block closure record.
+8. Prove semantic recursive auxiliary expansion and elimination.
+9. Prove cross-block identity, scales, interfaces, rank, predicates and final row theorems.
+10. Prove all 252 exceptional dispositions.
+11. Complete all typed obligation, premise, handoff and atomic-target artifacts.
+12. Review the ordinary implication from the global quotient and handoff to `D(n)=2n` for every `n`.
 
 Every final checker permanently reports `all_n_proved_by_checker = 0`.
