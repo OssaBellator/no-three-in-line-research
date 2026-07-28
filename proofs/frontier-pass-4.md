@@ -1,17 +1,17 @@
 # Frontier pass 4: low-buffer macro returns and GC1--GC3 inventories
 
-This compact addendum records the next proved theorem blocks after the AC5 cut-cause localization addendum. It supplements `proofs/theorem-index.md` without changing the status of AC4, AC5, AC6 or the global conjecture.
+This compact addendum records the next proved theorem blocks after the positive-circulation and AC5 cut-cause addendum. It supplements `proofs/theorem-index.md` without changing the status of AC4, AC5, AC6 or the global conjecture.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| AC3ur--AC3uv | Every exact low-buffer macro recurrence has a canonical minimum face; it gives resource-dimension descent, first-destruction/source payment, a capacity-one threshold-lineage ticket, or an explicit recreation/reset gate | PROVED UNDER THE THRESHOLD-LINEAGE CONTRACT | `docs/alternating-core-low-buffer-recurrence.md` |
+| AC3uw--AC3va | Every exact low-buffer macro recurrence has a canonical minimum face; it gives resource-dimension descent, first-destruction/source payment, a capacity-one threshold-lineage ticket, or an explicit recreation/reset gate | PROVED UNDER THE THRESHOLD-LINEAGE CONTRACT | `docs/alternating-core-low-buffer-recurrence.md` |
 | AC5ap--AC5at | Paid pool depletion preserves partner density `1-delta/rho`; restriction creates no pair-shadow mass, every new exception is an exact old--new or new--new event, and margin crossings have pathwise charge bound `RW/eta` | PROVED UNDER THE COMPLETE PARTNER/NEW-CELL/CHARGE INVENTORY CONTRACT | `docs/alternating-core-gc-pool-shadow-import.md` |
 
 ## Updated AC4 frontier
 
-Buffer-rich coupled-resource circulations and threshold-lineage low-buffer returns now reduce to chronological words, strict resource-dimension descent, first-destruction/source payment, capacity-one threshold tickets or explicit recreation/reset gates.
+Buffer-rich positive-output circulations now have the upstream AC3ur--AC3uv payment route. The remaining low-buffer exact returns reduce here to strict resource-dimension descent, first-destruction/source payment, capacity-one threshold tickets or explicit recreation/reset gates.
 
-The remaining recurrent cases are freely or cyclically recreated resources, upper guards, hidden or nonadditive balances, dynamic dictionaries, omitted payment fields, and undisclosed recreation or positive-output gates.
+The remaining recurrent cases are freely or cyclically recreated resources, upper guards, hidden or nonadditive balances, dynamic dictionaries, omitted payment fields, and undisclosed recreation gates.
 
 ## Updated AC5 frontier
 
