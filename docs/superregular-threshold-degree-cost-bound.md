@@ -41,7 +41,7 @@ For positive `d<=D`, define
 \left(s-\left\lceil\frac{ds}{D}\right\rceil\right)_+.
 \]
 
-## SRR2n -- degree/load Hall-deficiency bound -- PROVED
+## SRR2s -- degree/load Hall-deficiency bound -- PROVED
 
 For every threshold `k`, the low-cost Hall deficiency satisfies
 
@@ -77,7 +77,7 @@ Hence the deficiency of `X` is bounded by the displayed expression for `s`. Maxi
 
 The criterion is sharp for degree data alone: disjoint unions of complete bipartite pieces can attain the edge-count lower bound.
 
-## SRR2o -- explicit endpoint-cost bound -- PROVED
+## SRR2t -- explicit endpoint-cost bound -- PROVED
 
 Under the hypotheses above,
 
@@ -99,7 +99,7 @@ then an integral saturating switching matching has total endpoint event cost bel
 
 ### Proof
 
-SRR2l gives `OPT(c)=sum_k delta_k`. Apply SRR2n term by term. Integrality is SRR2j. QED.
+SRR2l gives `OPT(c)=sum_k delta_k`. Apply SRR2s term by term. Integrality is SRR2j. QED.
 
 This converts the min-cost flow problem to threshold-local degree and congestion estimates.
 
@@ -109,7 +109,7 @@ Let a bounded remote partial matching or other deterministic condition delete sw
 
 Let the conditioned threshold graph have degree parameters `d_k',D_k'`.
 
-## SRR2p -- local conditioning loss -- PROVED
+## SRR2u -- local conditioning loss -- PROVED
 
 The conditioned parameters satisfy
 
@@ -135,11 +135,11 @@ using the value `n` when the conditioned minimum degree is zero.
 
 ### Proof
 
-Each exposed assignment deletes at most `kappa_k` incident low-cost edges at one flawed state, so at most `h kappa_k` are lost from its degree. Deletion cannot increase any endpoint load. Apply SRR2n to the conditioned graph. QED.
+Each exposed assignment deletes at most `kappa_k` incident low-cost edges at one flawed state, so at most `h kappa_k` are lost from its degree. Deletion cannot increase any endpoint load. Apply SRR2s to the conditioned graph. QED.
 
 The loss depends on local switching incidence, not the total number of host holes.
 
-## SRR2q -- conditioned endpoint-cost criterion -- PROVED
+## SRR2v -- conditioned endpoint-cost criterion -- PROVED
 
 Under the conditioning contract,
 
@@ -156,9 +156,9 @@ Thus any actual rank-two/rank-three event inventory is bank-ready whenever the r
 
 ### Proof
 
-Apply SRR2o to the conditioned threshold graphs and substitute SRR2p. QED.
+Apply SRR2t to the conditioned threshold graphs and substitute SRR2u. QED.
 
-## SRR2r -- multistep and two-layer accumulation -- PROVED UNDER DETERMINISTIC LOCALITY
+## SRR2w -- multistep and two-layer accumulation -- PROVED UNDER DETERMINISTIC LOCALITY
 
 Consider a deterministic sequence of one- or two-layer resampling steps indexed by `j`. At step `j`, let the active endpoint-cost inventory have threshold parameters `n_j,C_j,d_{j,k},D_{j,k}` and conditioned incidence losses `h_j kappa_{j,k}`. If every switching step preserves the declared deterministic locality region, then the total endpoint event cost along the path is at most
 
@@ -173,7 +173,7 @@ A current/protected drift audit may use this sum directly; no independence betwe
 
 ### Proof
 
-SRR2q bounds each step conditionally on the complete preceding history. Deterministic locality ensures that the event inventory and deletion constants used at step `j` are valid for that history. Sum the pathwise bounds. QED.
+SRR2v bounds each step conditionally on the complete preceding history. Deterministic locality ensures that the event inventory and deletion constants used at step `j` are valid for that history. Sum the pathwise bounds. QED.
 
 ## Updated SRR frontier
 
