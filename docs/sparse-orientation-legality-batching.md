@@ -32,7 +32,7 @@ Every rejected orientation receives its least failure reason from a fixed finite
 
 A base-legal candidate carries a set `S(m)` of physical **constraint atoms**: used columns, endpoints, exact records, labels, boundary resources and any other atom whose sharing would invalidate additive execution.
 
-## SAS5hd -- exact orientation-legality inventory -- PROVED
+## SAS5hi -- exact orientation-legality inventory -- PROVED
 
 Every oriented square candidate is either base legal or has one canonical least failure reason from the displayed dictionary together with the exact square, orientation, operation stage and physical witness atom.
 
@@ -59,7 +59,7 @@ Assume:
 
 for every retained candidate, and every physical constraint atom belongs to at most `Lambda` retained candidates globally.
 
-## SAS5he -- bounded candidate conflict degree -- PROVED
+## SAS5hj -- bounded candidate conflict degree -- PROVED
 
 The maximum degree of `H` is at most
 
@@ -73,7 +73,7 @@ The maximum degree of `H` is at most
 
 A candidate conflicts with the other `m-1` alternatives of its own square. Each of its at most `r` atoms belongs to at most `Lambda-1` other retained candidates. Union counting gives the bound; overlaps only reduce the true degree. QED.
 
-## SAS5hf -- quantified compatible oriented subbatch -- PROVED
+## SAS5hk -- quantified compatible oriented subbatch -- PROVED
 
 There is an independent set of retained candidates whose total square weight is at least
 
@@ -87,7 +87,7 @@ The selected candidates use distinct squares and form a simultaneously constrain
 
 ### Proof
 
-A graph of maximum degree `Gamma` is `(Gamma+1)`-colourable. The total weight of all retained candidate vertices is exactly `mW`, because each square contributes `m` alternatives of weight `w_Q`. One colour class has weight at least `mW/(Gamma+1)`. It is independent, and substituting SAS5he's value of `Gamma+1` gives the bound. Same-square adjacency ensures at most one selected orientation per square. QED.
+A graph of maximum degree `Gamma` is `(Gamma+1)`-colourable. The total weight of all retained candidate vertices is exactly `mW`, because each square contributes `m` alternatives of weight `w_Q`. One colour class has weight at least `mW/(Gamma+1)`. It is independent, and substituting SAS5hj's value of `Gamma+1` gives the bound. Same-square adjacency ensures at most one selected orientation per square. QED.
 
 This theorem treats orientations as a menu. It does not charge the weight of all `m` alternatives as simultaneously realized output.
 
@@ -101,7 +101,7 @@ U=\sum_Q w_Q\,(m-|M_Q^{\rm legal}|)_+.
 
 Let the failure dictionary have `L_fail` exact reason classes after fixing the finite word and physical role alphabets.
 
-## SAS5hg -- failed legality concentrates on one exact obstruction -- PROVED
+## SAS5hl -- failed legality concentrates on one exact obstruction -- PROVED
 
 One exact failure-reason class carries missing incidence weight at least
 
@@ -111,26 +111,26 @@ U/L_{\rm fail}.
 }
 \]
 
-It is one of the base creator, base destroyer, cross-interaction, collision, constraint/label or boundary/context outputs of SAS5hd.
+It is one of the base creator, base destroyer, cross-interaction, collision, constraint/label or boundary/context outputs of SAS5hi.
 
 ### Proof
 
 Assign every missing canonical orientation slot its least failure reason. These classes partition the total missing incidence `U`. Weighted pigeonhole gives the claim. QED.
 
-## SAS5hh -- mixed-orientation legality router -- PROVED UNDER THE ADDITIVE-EXECUTION CONTRACT
+## SAS5hm -- mixed-orientation legality router -- PROVED UNDER THE ADDITIVE-EXECUTION CONTRACT
 
 For every weighted family of localized operation squares and a declared target menu size `m`, one of the following occurs:
 
-1. every square has `m` base-legal orientations and SAS5hf supplies a compatible subbatch of weight at least `mW/[m+r(Lambda-1)]`;
+1. every square has `m` base-legal orientations and SAS5hk supplies a compatible subbatch of weight at least `mW/[m+r(Lambda-1)]`;
 2. a positive creator/destroyer execution margin on that subbatch gives the existing aggregate descent/payment route;
 3. the selected subbatch returns the existing current-only, neutral-repair, barrier or recycled-word outputs with no additional orientation loss;
-4. or missing orientation mass localizes by SAS5hg to one exact base-swap, cross-stage, collision, constraint/label or boundary/context obstruction.
+4. or missing orientation mass localizes by SAS5hl to one exact base-swap, cross-stage, collision, constraint/label or boundary/context obstruction.
 
 Thus mixed-orientation legality is reduced to finite local tests plus one explicit conflict-incidence parameter `Lambda`. Base-state single-swap admissibility is not assumed implicitly.
 
 ### Proof
 
-Use SAS5hd to classify every orientation. If all menus have size at least `m`, apply SAS5he--SAS5hf and then the existing additive two-stage energy ledgers to the independent set. Otherwise apply SAS5hg. QED.
+Use SAS5hi to classify every orientation. If all menus have size at least `m`, apply SAS5hj--SAS5hk and then the existing additive two-stage energy ledgers to the independent set. Otherwise apply SAS5hl. QED.
 
 ## Updated SAS frontier
 
