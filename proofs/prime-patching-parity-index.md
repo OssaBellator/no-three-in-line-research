@@ -58,6 +58,8 @@ no-three-in-line conjecture.
 | PP3brq--PP3brr | A support-chord signature exactly classifies the four owner-cover Pareto types in the sixteen-state `m=10` sparse core | PROVED / VERIFIED FINITELY | `docs/356-m10-sparse-core-support-chord-signature.md` |
 | PP3brs--PP3brt | The compressed `m=10` flaw family has 47,512 supported signed instances, each with 106--720 source cycles and at most 61,200 raw transport incidences | PROVED / VERIFIED FINITELY | `docs/357-exact-m10-compressed-flaw-source-census.md` |
 | PP3bru--PP3brv | The terminal clean-macro shells at `m=8,9,10` have no two-layer shortcuts and dense predecessor gates with minimum root multiplicities 13, 29, and 70 | PROVED / VERIFIED FINITELY | `docs/358-terminal-clean-macro-gate-spectrum-through-m10.md` |
+| PP3brw--PP3bry | Uniform choice across the dense terminal gate amplifies after fibre regeneration; exact maximum loads are `1.693...`, `3.562...`, and `2.612...` at `m=8,9,10` | PROVED / VERIFIED FINITELY | `docs/359-uniform-terminal-gate-reverse-concentration-through-m10.md` |
+| PP3brz--PP3bsa | All 412 `m=10` flaws with the full 720-cycle source support have proper Hall bottlenecks; their worst exact charge is `3897/719620` | VERIFIED FINITELY | `docs/360-exact-m10-full-source-weighted-hall-tranche.md` |
 
 ## Current exact frontier
 
@@ -103,18 +105,18 @@ m=10: maximum macro distance 5.
 
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
-clean fibre has width at most one. The outer shells are not narrow final gates:
-every terminal root has at least 13, 29, and 70 predecessor-shell rotations at
-`m=8,9,10`, respectively, while no terminal cycle has a two-layer shortcut.
-The asymptotic horizon problem is therefore shell depth and reverse
-concentration, not lack of terminal forward choices.
+clean fibre has width at most one. The outer shells have many predecessor-shell
+choices, but uniform weighting is strongly overloaded after fibre regeneration:
+the exact maximum column loads are `1.693...`, `3.562...`, and `2.612...` at
+`m=8,9,10`. Thus the horizon charge problem is shell depth plus capacitated
+reverse balancing, not lack of terminal forward choices.
 
 Exact weighted-Hall flaw transport reaches `m=9`. At `m=10`, source-side
-compression is now complete: 47,512 supported signed flaws have 106--720
-compatible source cycles, with median 612, and each min-cut instance has at most
-720 sources and 61,200 raw source--rotation incidences. The remaining finite
-step is to execute and certify all weighted closures; the remaining asymptotic
-step is uniform control of local, intermediate, and global Hall cuts.
+compression is complete and the first exact closure block is certified. All 412
+flaws with the full 720-cycle source support have proper bottlenecks; their worst
+charge is `3897/719620`, with scaled value `5.41536...`, below the complete
+`m=9` maximum. The remaining finite step is the other 47,100 closures; the
+asymptotic step remains uniform control of local, intermediate, and global cuts.
 
 ## Remaining tasks
 
@@ -128,13 +130,14 @@ step is uniform control of local, intermediate, and global Hall cuts.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and control reverse multiplicity across the dense
-   terminal predecessor gate.
+   adjacent-shell fibre width, and construct capacitated or Hall-balanced weights
+   across the overloaded terminal predecessor gate.
 6. Prove uniform weighted expansion or heat-kernel control for local,
    intermediate, and global flaw-transport Hall cuts.
-7. Complete the 47,512 exact compressed `m=10` weighted-Hall min-cut instances.
+7. Complete the remaining 47,100 exact compressed `m=10` weighted-Hall min-cut
+   instances using resumable source-count bands and reusable flow workspaces.
 8. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3brw`.
+The next available theorem identifier is `PP3bsb`.
