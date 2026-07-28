@@ -18,6 +18,7 @@ The authoritative live ledger is split across:
 | CMR2398--2405 | Canonical 252-chamber reconstruction, exact disposition coverage, open/closed proof kinds, final-row theorem linkage, separate zero/hard-core censuses, independent 232/20 readiness flags, chamber boundary, and executable endpoint | PROVED as an exceptional-worklist disposition interface; checker syntax-compiled locally; no genuine chamber closure bank or mathematical closure claimed | `docs/403-prime-power-exceptional-chamber-disposition-registry.md` |
 | CMR2406--2413 | Fixed thirteen-frontier and forty-three-target system, proof/research DAG acyclicity, exact obligation/premise/assertion/gate coverage, completion records, proof waves and chains, research-start schedule, frontier impact records, execution boundary, and executable endpoint | PROVED as documentary all-frontier execution arithmetic; committed schema audited; self-test and dependency-backed certificate execution not run here; no frontier completion or all-`n` proof claimed | `docs/404-prime-power-atomic-frontier-execution.md` |
 | CMR2414--2421 | Shared handoff/refinement identity, exact handoff-target artifact synchronization, exact 232/20 chamber-target synchronization, integrated three-component readiness, current blocker publication, execution boundary, and executable endpoint | PROVED as synchronized current-frontier execution integrity; checker syntax-compiled locally; no target, assertion, chamber closure or all-`n` proof claimed | `docs/405-prime-power-current-frontier-execution.md` |
+| CMR2422--2429 | Fixed target artifact kinds, completion-to-artifact binding, exact immediate target-artifact support, exact obligation/premise/handoff artifact support, selected certificate bindings, canonical target bundles, post-frontier artifact gate, documentary boundary, and executable endpoint | PROVED as typed documentary evidence for every effectively complete atomic target; checker syntax-compiled locally; no artifact truth, target completion or all-`n` proof claimed | `docs/406-prime-power-atomic-target-artifact-registry.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -70,6 +71,18 @@ hard-core targets must agree exactly with the independent 232- and 20-chamber re
 The integrated blocker record publishes actionable targets, proof-wave depth, open chambers and
 open handoff bundles without reinterpreting any documentary flag as a proof.
 
+## Typed artifacts for every atomic target
+
+Every effectively complete atomic target now requires one target-specific typed artifact. Its
+locator and digest must equal the target completion record, and its support list must equal the
+artifacts of every immediate proof dependency.
+
+Targets linked to obligations, premises or handoff assertions must additionally cite the exact
+artifacts from those registries. Selected integration targets bind the exact quotient refinement,
+global-family skeleton, chamber aggregates, support DAG, final handoff, final dossier or current-
+frontier certificate. The resulting post-frontier gate remains documentary and permanently
+reports `all_n_proved_by_checker = 0`.
+
 ## Active frontier
 
 1. Prove the cited source statements and genuine exhaustive recurrence skeleton.
@@ -80,10 +93,11 @@ open handoff bundles without reinterpreting any documentary flag as a proof.
    semantics.
 5. Produce genuine closed strict recurrent blocks and semantic auxiliary expansions.
 6. Prove every cross-block equivalence, component scale, state predicate and row theorem.
-7. Supply genuine typed obligation, premise and handoff artifacts with noncircular support.
+7. Supply genuine typed obligation, premise, handoff and atomic-target artifacts with exact
+   noncircular support.
 8. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
    every closed disposition mathematically.
 9. Complete all forty-three atomic targets, all ten final premises and all six induction-
    handoff assertions.
-10. Pass the synchronized current-frontier gate and prove that the reviewed global quotient and
-    handoff establish `D(n)=2n` for every `n`.
+10. Pass the synchronized current-frontier and typed-target-artifact gates, then prove that the
+    reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
