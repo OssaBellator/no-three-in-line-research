@@ -1,1 +1,1 @@
-run-semantic-full64-vocabulary
+done-semantic-full64-vocabulary
