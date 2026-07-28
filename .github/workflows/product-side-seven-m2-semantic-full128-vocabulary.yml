@@ -32,17 +32,20 @@ jobs:
           g++ -O3 -std=c++17
           scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full128.cpp
           -o /tmp/measure-semantic-full128-vocabulary
-      - name: Measure complete vocabulary coverage
+      - name: Measure compact exact summary
         if: steps.gate.outputs.run == 'true'
-        run: >-
-          /tmp/measure-semantic-full128-vocabulary
-          | tee product-side-seven-m2-semantic-full128-vocabulary.txt
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/measure-semantic-full128-vocabulary \
+            | grep '^FINAL ' \
+            | tee product-side-seven-m2-semantic-full128-vocabulary.txt
       - name: Upload exact transcript
         if: always() && steps.gate.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: product-side-seven-m2-semantic-full128-vocabulary
+          name: product-side-seven-m2-semantic-full128-vocabulary-compact
           path: product-side-seven-m2-semantic-full128-vocabulary.txt
-          if-no-files-found: warn
+          if-no-files-found: error
 
-# Durable registration: retain until the exact transcript is secured.
+# Durable registration: retain until the compact exact transcript is secured.
