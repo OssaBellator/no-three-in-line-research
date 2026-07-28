@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does
-**not** contain a complete proof. The authoritative theorem ledger reaches CMR2405;
+**not** contain a complete proof. The authoritative theorem ledger reaches CMR2413;
 CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
@@ -31,8 +31,9 @@ The branch now contains exact interfaces from source-traceable parent-rule claus
 - explicit theorem records for every final quotient row;
 - a fixed six-assertion documentary induction handoff;
 - a transparent seven-gate final dossier-integrity audit;
-- typed artifact bundles for all six handoff assertions; and
-- one exact open/closed disposition for each of the 252 exceptional selector chambers.
+- typed artifact bundles for all six handoff assertions;
+- one exact open/closed disposition for each of the 252 exceptional selector chambers; and
+- an atomic execution schedule for 13 frontiers and 43 proof targets.
 
 These interfaces do not supply the missing genuine mathematical data or prove their semantics.
 
@@ -96,6 +97,18 @@ The registry publishes independent flags:
 Neither flag is claimed for genuine data in this branch. Fixed-response correction 17,
 rollback distance 12 and uniform correction 44 remain distinct scalar currencies.
 
+## Atomic all-frontier execution
+
+CMR2406--CMR2413 refine the thirteen genuine current frontiers into forty-three atomic proof
+targets. The proof-closure and research-start dependency graphs are checked separately for
+acyclicity. All nineteen semantic obligations, ten final premises and six handoff assertions
+are covered exactly once, and exactly one target is linked to the final dossier gate.
+
+The checker publishes proof-actionable and research-actionable target sets, parallel waves,
+longest open chains and per-frontier downstream impact. It is planning arithmetic only; it does
+not verify proof artifacts, difficulty, timing or truth and always reports
+`all_n_proved_by_checker = 0`.
+
 ## Final handoff and integrity audit
 
 The six documentary handoff assertions cover the base domain, nonbase recurrence coverage,
@@ -122,7 +135,8 @@ may remain open and actionable even when every pre-root documentary gate is read
 10. Populate and mathematically prove all 232 zero-selector and 20 hard-core dispositions.
 11. Prove the skeleton-derived global family exhaustive.
 12. Complete and review all ten final premises and six induction-handoff assertions.
-13. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
+13. Complete all 43 atomic proof targets and reconcile their linked gates.
+14. Prove the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
 
 ## Corrections retained
 
@@ -140,15 +154,17 @@ may remain open and actionable even when every pre-root documentary gate is read
 - Dependency waves measure logical depth, not time or difficulty.
 - Edgewise lexicographic descent is sufficient, not necessary.
 - A closed chamber disposition does not verify its proof artifact.
+- Atomic target completion records are planning metadata, not proof verification.
 - A ready contract, handoff or integrity audit remains subject to mathematical review.
 - Every final checker permanently reports `all_n_proved_by_checker = 0`.
 - Syntax compilation does not imply dependency-backed regression suites ran here.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2405**, the finite certificate surface reaches a
+There is no complete proof. Through **CMR2413**, the finite certificate surface reaches a
 noncircular global quotient dossier, typed documentary support from semantic obligations
-through final handoff assertions, and an explicit 252-chamber exceptional/hard-core closure
-registry. Completion still requires the actual exhaustive rule and population, proof of every
+through final handoff assertions, an explicit 252-chamber exceptional/hard-core closure
+registry and an exact 43-target all-frontier execution schedule. Completion still requires
+the actual exhaustive rule and population, proof of every
 semantic statement and chamber disposition, genuine strict blocks, exceptional closure and
 ordinary mathematical review of the final implication to all `n`.
