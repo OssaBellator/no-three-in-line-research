@@ -29,6 +29,10 @@ The authoritative live ledger is split across:
 | CMR2294--2301 | Pairwise state-equivalence evidence, exact class membership, `n-1` edge coverage, connected spanning trees, canonical root paths, aggregate digests, truth boundary, and executable endpoint | PROVED as documentary equivalence coverage; checker syntax-compiled; cited equivalence statements remain mathematically unverified | `docs/390-prime-power-state-equivalence-spanning-evidence.md` |
 | CMR2302--2309 | Global support graph, exact SCC condensation, critical rank descent, critical-edge acyclicity, longest critical path, strict edge on every cycle, termination boundary, and executable endpoint | PROVED as finite support/rank arithmetic; checker syntax-compiled; genuine recurrence semantics remain absent | `docs/391-prime-power-global-support-condensation.md` |
 | CMR2310--2317 | Fixed nineteen-obligation semantic DAG, exact proof-artifact records, dependency closure, machine-readable frontier, finite-interface gate, conditional all-`n` readiness, proof boundary, and executable endpoint | PROVED as a documentary closure interface; checker syntax-compiled; `all_n_proved_by_checker` is permanently zero and current readiness is unsatisfied | `docs/392-prime-power-all-n-implication-closure.md` |
+| CMR2318--2325 | Fixed obligation-specific artifact kinds, canonical artifact records, exact proved/open bundle rules, reconstructed bundle digests, closure-to-bundle binding, aggregate census, artifact boundary, and executable endpoint | PROVED as typed documentary coverage; checker syntax-compiled; artifact truth and sufficiency remain unverified | `docs/393-prime-power-obligation-artifact-registry.md` |
+| CMR2326--2333 | Transitive obligation dependencies, exact open blocker sets, actionable frontier, parallel completion waves, canonical blocker chains, downstream impacts, planning boundary, and executable endpoint | PROVED as exact dependency scheduling over declared status; checker syntax-compiled; no difficulty or time estimate claimed | `docs/394-prime-power-obligation-blocker-schedule.md` |
+| CMR2334--2341 | Edgewise global-weight/rank drops, exact edge classification, explicit nondecreasing failures, descending-graph topological order, exact longest path, complete optional termination flag, sufficiency boundary, and executable endpoint | PROVED as a stronger optional pathwise audit; checker syntax-compiled; edgewise descent is not required for semantic multiset induction | `docs/395-prime-power-edgewise-lexicographic-support.md` |
+| CMR2342--2349 | Ten fixed implication premises, exact obligation dependencies, proof modes, effective premise closure, termination-mode gate, final readiness criterion, proof boundary, and executable endpoint | PROVED as a final dossier contract; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no dossier is claimed ready | `docs/396-prime-power-final-implication-premise-contract.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -65,6 +69,17 @@ already closed. It publishes the complete unclosed set and the current dependenc
 The conditional `all_n_implication_dossier_ready` flag additionally requires the complete
 finite global family, skeleton equality, spanning equivalence evidence and support/rank gate.
 The checker always publishes `all_n_proved_by_checker = 0`.
+
+## Typed artifacts, blocker schedule and final premise contract
+
+Every declared proved semantic obligation now requires an exact typed artifact bundle, and its
+bundle digest is rebound into the closure certificate. The fixed DAG publishes every open
+blocker, the currently actionable frontier, a canonical longest dependency chain and the
+minimum number of parallel completion waves.
+
+The final implication is separated into ten ordinary mathematical premises. Termination may be
+certified by the stronger optional edgewise lexicographic condition or by an external semantic
+multiset/well-founded proof. Every checker retains `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
