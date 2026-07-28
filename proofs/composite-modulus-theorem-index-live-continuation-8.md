@@ -16,6 +16,7 @@ The authoritative live ledger is split across:
 |---|---|---|---|
 | CMR2390--2397 | Fixed handoff artifact kinds, canonical assertion-artifact records, exact premise-registry identity, proved/open coverage, complete dependent-premise artifact support, assertion-to-bundle binding, documentary boundary, and executable endpoint | PROVED as typed handoff-assertion documentary linkage; checker syntax-compiled locally; assertion truth and logical sufficiency remain unverified | `docs/402-prime-power-handoff-assertion-artifact-registry.md` |
 | CMR2398--2405 | Canonical 252-chamber reconstruction, exact disposition coverage, open/closed proof kinds, final-row theorem linkage, separate zero/hard-core censuses, independent 232/20 readiness flags, chamber boundary, and executable endpoint | PROVED as an exceptional-worklist disposition interface; checker syntax-compiled locally; no genuine chamber closure bank or mathematical closure claimed | `docs/403-prime-power-exceptional-chamber-disposition-registry.md` |
+| CMR2406--2413 | Fixed thirteen-frontier and forty-three-target system, proof/research DAG acyclicity, exact obligation/premise/assertion/gate coverage, completion records, proof waves and chains, research-start schedule, frontier impact records, execution boundary, and executable endpoint | PROVED as documentary all-frontier execution arithmetic; committed schema audited; self-test and dependency-backed certificate execution not run here; no frontier completion or all-`n` proof claimed | `docs/404-prime-power-atomic-frontier-execution.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -46,6 +47,17 @@ in the quotient semantic-refinement certificate.
 The registry separately reports `exceptional_zero_rows_ready` and `hard_core_rows_ready`.
 Neither flag is asserted for genuine data in this branch.
 
+## Atomic all-frontier execution schedule
+
+The thirteen current mathematical frontiers are refined into forty-three atomic targets. Proof
+closure and useful research-start dependencies are separate acyclic graphs. Each semantic
+obligation, final premise and handoff assertion is bound to exactly one target, and exactly one
+target is bound to the final dossier gate.
+
+The checker publishes exact proof-actionable and research-actionable targets, parallel waves,
+longest open chains and per-frontier downstream impact. This is planning arithmetic only and
+always reports `all_n_proved_by_checker = 0`.
+
 ## Active frontier
 
 1. Prove the cited source statements and genuine exhaustive recurrence skeleton.
@@ -59,5 +71,6 @@ Neither flag is asserted for genuine data in this branch.
 7. Supply genuine typed obligation, premise and handoff artifacts with noncircular support.
 8. Populate one exact disposition for all 232 zero-selector and 20 hard-core chambers and prove
    every closed disposition mathematically.
-9. Complete and review all ten final premises and six induction-handoff assertions.
+9. Complete all forty-three atomic targets, all ten final premises and all six induction-
+   handoff assertions.
 10. Prove that the reviewed global quotient and handoff establish `D(n)=2n` for every `n`.
