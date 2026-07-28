@@ -25,6 +25,7 @@ The authoritative live ledger is split across:
 | CMR2454--2461 | Opaque verification-pointer defect, exact per-source verification artifacts, proved/open artifact coverage, statement-to-bundle sealing, acyclic source-proof support, strengthened aggregate source-truth binding, honesty boundary, and executable endpoint | PROVED as noncircular source-proof evidence sealing; source registry version 2 syntax-compiled and isolated sealing/cycle tests passed; no source theorem, recurrence exhaustiveness or all-`n` proof claimed | `docs/410-prime-power-source-verification-artifact-sealing.md` |
 | CMR2462--2469 | Fixed case/clause/axis/exclusion/application work bank, exact source and internal rule-artifact support, global-parent-to-operation-slot binding, sealed rule-manifest and rule-exhaustiveness bundles, exact `RULE_EXHAUSTIVE`/T02 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T02 rule-exhaustiveness frontier; checker syntax-compiled locally; the actual parent rule, exhaustiveness theorem, slot population and all-`n` implication remain unproved | `docs/411-prime-power-rule-exhaustiveness-frontier.md` |
 | CMR2470--2477 | Exact open/populated/proved slot bank, literal population payloads, canonical fibre/source binding, exact T02 case/clause/application support, payload-to-proof sealing, aggregate population certificate, exact `SLOT_AND_CANDIDATE_POPULATION`/T03 synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T03 slot/candidate population frontier; checker syntax-compiled locally; no genuine population semantics, T04 population or all-`n` implication claimed | `docs/412-prime-power-slot-candidate-population-frontier.md` |
+| CMR2478--2485 | Skeleton-derived block/interface unit bank, open/populated/proved assembly records, exact T03 source-slot binding, literal block/interface payloads, exact T03 artifact support, noncircular aggregate population bank, exact T04 target-artifact binding and synchronization, honesty boundary, and executable endpoint | PROVED as an exact documentary T04 block/interface population frontier; checker syntax-compiled and isolated source-binding tests passed; no geometry, transition, block-closure, interface-exhaustiveness or all-`n` proof claimed | `docs/413-prime-power-block-interface-population-frontier.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -153,6 +154,26 @@ per-slot bundle banks. Reconstructed readiness must agree exactly with
 This is documentary identity and coverage only. It does not verify the supplied population data or
 populate the separate T04 recurrent-block and interface-row bank.
 
+## Exact T04 block and interface population frontier
+
+The T04 checker derives one expected population unit for every skeleton block and every skeleton
+return/interface/off-diagonal row. Every unit has an `open`, `populated` or `proved` record, so
+literal assembly work remains visible before proof completion.
+
+Every non-open unit binds the exact T03 source slot, payload digest, fibre ID and source digest for
+each of its skeleton parents. Recurrent blocks carry literal local-state, recurrent-row, return-route,
+interface-attachment and source-clause data. Interface units carry literal target-state, route,
+transition and source-clause data.
+
+A proved unit has one fixed-kind artifact citing the complete unique T03 slot-artifact set used by
+that unit. The aggregate bank excludes current-frontier and target-registry hashes to avoid hashing
+itself through the T04 atomic completion record. The T04 `global-population-bank` target artifact's
+external proof digest must equal this noncircular aggregate digest, and reconstructed readiness must
+agree exactly with `T04_BLOCK_INTERFACE_POPULATION`.
+
+This remains population identity only. It does not prove geometry, transition semantics, recurrent-
+block closure, interface exhaustiveness or rank well-foundedness.
+
 ## Active frontier
 
 1. Transcribe every cited source statement exactly, confirm its stored hash, and provide one sealed
@@ -162,8 +183,8 @@ populate the separate T04 recurrent-block and interface-row bank.
    parent-rule exhaustiveness theorem.
 3. Enter actual data for every T03 expected slot, prove each slot with exact T02 support, and review
    the complete candidate-family population theorem.
-4. Populate every T04 recurrent block and return/interface row with real geometry, fate, route and
-   transition data.
+4. Populate and prove every skeleton-derived T04 recurrent block and return/interface/off-diagonal
+   row with exact T03 ancestry, then review the complete global population bank.
 5. Prove selector correctness and the intended operation policy.
 6. Prove the complete simultaneous row family, destroyed-resource model and routed-credit
    semantics.
