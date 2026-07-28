@@ -38,7 +38,6 @@ The authoritative live ledger is split across:
 | CMR2366--2373 | Complete global-state predicate records, complete final-row theorem records, predicate-level row reconstruction, exact semantic coverage, shared skeleton/equivalence identity, refinement boundary, and executable endpoint | PROVED as semantic refinement coverage; checker syntax-compiled; predicate equivalence and row theorem truth remain unverified | `docs/399-prime-power-global-quotient-semantic-refinement.md` |
 | CMR2374--2381 | Six final induction assertions, fixed premise dependencies, exact assertion records, effective closure, shared certificate identities, conditional handoff readiness, final boundary, and executable endpoint | PROVED as a final documentary induction handoff; checker syntax-compiled; `all_n_proved_by_checker` remains zero and no handoff is claimed ready | `docs/400-prime-power-final-induction-handoff.md` |
 | CMR2382--2389 | Single-handoff integrity input, shared-registry/skeleton/equivalence audit, seven reconstructed readiness gates, strict final gate, exact blocker publication, complete digest census, permanent nonproof flag, final audit boundary, and executable endpoint | PROVED as a transparent final dossier-integrity audit; checker syntax-compiled; the root implication remains open and current readiness is unsatisfied | `docs/401-prime-power-final-dossier-integrity.md` |
-| CMR2390--2397 | Thirteen fixed frontier groups, forty-three atomic targets, dual research/proof dependency DAGs, exact obligation/premise/handoff coverage, canonical completion records, synchronized target closure, exact parallel schedules, honesty boundary, and executable endpoint | PROVED as an all-frontier execution interface; checker syntax-compiled and definition self-test passed; no mathematical frontier target is claimed complete | `docs/402-prime-power-atomic-frontier-execution.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -76,17 +75,6 @@ The global quotient receives complete state-predicate and final-row theorem cove
 induction assertions then compose the premise, support and semantic-refinement layers. The final
 integrity audit reconstructs all seven nested gates and exact open obligation, premise and
 handoff-assertion blocker sets. Every checker retains `all_n_proved_by_checker = 0`.
-
-## Atomic execution across all current frontiers
-
-The thirteen genuine frontiers are decomposed into forty-three fixed targets. A research-start
-DAG exposes provisional parallel work, while a proof-closure DAG preserves the dependencies
-required before a target can close. Every semantic obligation, final premise and handoff assertion
-has exactly one target owner.
-
-The checker publishes research-actionable and proof-actionable target sets, earliest waves,
-canonical longest open chains and downstream impact for every frontier. These schedules do not
-establish truth, completion, difficulty or research time.
 
 ## Active frontier
 
