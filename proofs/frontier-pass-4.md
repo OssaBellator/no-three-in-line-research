@@ -16,6 +16,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5ap--AC5at | Paid pool depletion preserves partner density `1-delta/rho`; restriction creates no pair-shadow mass, every new exception is an exact old--new or new--new event, and margin crossings have pathwise charge bound `RW/eta` | PROVED UNDER THE COMPLETE PARTNER/NEW-CELL/CHARGE INVENTORY CONTRACT | `docs/alternating-core-gc-pool-shadow-import.md` |
 | AC5au--AC5ay | Absolute blocker, depletion and new-blocker counts give retained degree, an explicit `sigma^(-r)` injection law, closed-form intermediate current/protected event expectations and either AC5 drift or one six-way heavy obstruction | PROVED UNDER THE COMPLETE RESTRICTED-MENU EVENT CONTRACT | `docs/alternating-core-restricted-menu-closed-form-audit.md` |
 | AC5az--AC5bd | A finite exact obstruction dictionary with class thresholds and initial-plus-deposited capacities pays only finitely many restricted-menu failures; exhausted capacity returns one exact class overload and unrecorded replenishment or relabelling returns reset | PROVED UNDER THE COMPLETE OBSTRUCTION-CLASS AND PAID-CAPACITY CONTRACTS | `docs/alternating-core-menu-obstruction-capacity-bank.md` |
+| AC5be--AC5bi | Restricted-menu minimum endpoint cost is the exact threshold Hall-deficiency layer cake; left degree, conditioned loss and right reverse load bound every threshold deficit, while failure retains one canonical Hall core | PROVED UNDER THE COMPLETE ENDPOINT-COST AND REVERSE-LOAD CONTRACTS | `docs/alternating-core-reverse-load-transportation.md` |
 
 ## Updated AC4 frontier
 
@@ -23,6 +24,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory has a closed-form restricted-menu audit. Positive slack gives the explicit cylinder law and intermediate event bounds; nonpositive slack returns a heavy exact obstruction. A finite exact obstruction dictionary now pays repeated failures up to its initial-plus-deposited class capacities and otherwise returns one exact overload. Remaining work is menu-specific computation of the capacities, thresholds and deposits, plus quantitative reverse-load/min-cost control through intermediate states.
+The deterministic GC1--GC3 inventory has a closed-form restricted-menu audit, a finite exact obstruction-capacity bank and an exact reverse-load/minimum-cost transportation interface. Remaining work is menu-specific computation of forward degrees, conditioned losses, reverse loads, obstruction thresholds/capacities/deposits, and payment of any returned Hall core or exact overload.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
