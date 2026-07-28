@@ -31,6 +31,10 @@
     "3->0": 62
   },
   "pair_safe_nonclean_without_immediate_lambda_descent": 0,
+  "optimal_violated_edge_checks": 13185264,
+  "minimum_targeted_clean_rotations_per_optimal_violated_edge": 6,
+  "minimum_clean_rotations_from_positive_cycle": 11,
+  "untargetable_optimal_violated_edges": 0,
   "verified": true,
   "asymptotic_seed_theorem_proved": false
 }
