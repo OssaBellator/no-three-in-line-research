@@ -2,12 +2,13 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2429 the branch has a complete finite
+The no-three-in-line conjecture remains open. Through CMR2437 the branch has a complete finite
 certificate architecture from source-traceable rule clauses to a global integer quotient,
 semantic predicates and row theorems, typed obligation/premise/handoff artifacts, a seven-gate
 pre-root integrity audit, an exact 252-chamber exceptional worklist, a 43-target execution
 schedule over thirteen genuine research frontiers, a synchronized target/artifact/chamber
-execution gate, and exact typed evidence requirements for every effectively complete target.
+execution gate, and noncircular bundle-sealed evidence requirements for every effectively
+complete target.
 
 The branch still lacks the genuine exhaustive recurrence, complete real population, proved
 external semantics, complete strict blocks and interface rows, mathematically closed chamber
@@ -87,11 +88,15 @@ Supply one typed artifact for each final premise and one typed artifact for each
 assertion. CMR2390--CMR2397 require each proved handoff assertion to cite exactly the complete
 premise-artifact set of its fixed dependencies and to bind its reconstructed bundle digest.
 
-CMR2422--CMR2429 require one typed artifact for every effectively complete atomic target. The
-artifact must use the target's fixed kind, match the completion locator/digest, cite every
-immediate proof-dependency target artifact, and cite the exact linked obligation, premise or
-handoff artifacts. The exceptional, semantic-refinement, support, handoff, dossier and root
-integration targets must also bind their exact authoritative certificate digests.
+CMR2422--CMR2437 require one typed artifact for every effectively complete atomic target. The
+artifact must use the target's fixed kind, carry a separate external proof locator/digest, cite
+every immediate proof-dependency target artifact, and cite the exact linked obligation, premise
+or handoff artifacts.
+
+The atomic completion locator must be `atomic-target-artifact-registry://<target ID>` and the
+completion digest must equal the reconstructed bundle digest. External artifact references are
+namespace-qualified and certificate references are role-qualified. A target bundle must not cite
+an ancestor certificate that already contains its own completion digest.
 
 ## 10. Complete the ten premises and six handoff assertions
 
@@ -131,17 +136,21 @@ Use this synchronized surface as the current execution source of truth. It preve
 target from closing while its underlying handoff artifact or chamber registry remains open, but
 it does not verify the mathematics.
 
-## 13. Use the typed atomic-target artifact gate
+## 13. Use the sealed atomic-target artifact gate
 
-CMR2422--CMR2429 remove the opaque locator/digest layer from atomic target completion records.
-Every effectively complete target must have exactly one typed artifact, and every open target
-must have none.
+CMR2422--CMR2437 remove the opaque completion layer from atomic target records. Every effectively
+complete target must have exactly one typed artifact, and every open target must have none.
 
-The checker reconstructs immediate target-artifact support from the proof DAG and reconstructs
-external support from the obligation, premise and handoff registries. Selected targets bind the
-exact skeleton, semantic-refinement, chamber, support-DAG, handoff, dossier or current-frontier
-certificate digest. A post-frontier gate requires both synchronized execution readiness and a
-complete bank of forty-three target artifacts.
+The checker reconstructs immediate target support from the proof DAG and external support from the
+obligation, premise and handoff registries. The target artifact's proof pointer is separate from
+the completion seal. The completion itself binds the canonical registry URI and exact bundle
+digest.
+
+Selected targets bind role-qualified skeleton, semantic-refinement, chamber, support-DAG,
+handoff or dossier certificates. The current-frontier certificate is bound by the registry as a
+whole rather than inserted into the root target bundle, avoiding a self-referential digest. A
+post-frontier gate requires synchronized execution readiness and a complete bank of forty-three
+sealed target artifacts.
 
 Use this registry when reviewing any claimed target completion. Passing it proves documentary
 identity and support coverage only, not the mathematical statement.
@@ -154,9 +163,9 @@ identity and support coverage only, not the mathematical statement.
 4. Close strict recurrent blocks and semantic auxiliary expansions.
 5. Prove cross-block identities, scales, interface rows, ranks, predicates and row theorems.
 6. Populate and prove all 252 exceptional chamber dispositions.
-7. Populate genuine noncircular obligation, premise, handoff and atomic-target artifacts.
+7. Populate genuine noncircular obligation, premise, handoff and sealed atomic-target artifacts.
 8. Close all ten premises, all six handoff assertions and all 43 atomic targets.
-9. Pass the synchronized current-frontier gate, typed-target-artifact gate and seven-gate pre-root
+9. Pass the synchronized current-frontier gate, sealed target-artifact gate and seven-gate pre-root
    audit.
 10. Write and review the ordinary proof that the quotient and handoff imply `D(n)=2n`.
 
@@ -188,8 +197,10 @@ An obligation cannot close while an exact dependency remains open.
 - Strict-or-ranked rows do not prove the interface family exhaustive.
 - Support condensation does not prove the quotient models the recurrence.
 - Typed artifact support does not prove truth or logical sufficiency.
+- Repeating one opaque locator/digest pair is not completion-to-bundle binding.
+- A target cannot noncircularly cite an ancestor certificate containing its own completion digest.
 - A closed chamber disposition does not verify its proof.
-- Atomic completion, synchronization records, typed target artifacts and dependency waves are
+- Atomic completion, synchronization records, sealed target artifacts and dependency waves are
   documentary metadata.
 - Edgewise lexicographic descent is sufficient, not necessary.
 - A ready contract, handoff or audit remains subject to mathematical review.
@@ -198,9 +209,9 @@ An obligation cannot close while an exact dependency remains open.
 
 ## 17. Current endpoint
 
-Through CMR2429 the finite interface reaches a noncircular global quotient dossier, typed
+Through CMR2437 the finite interface reaches a noncircular global quotient dossier, typed
 support through final handoff assertions and every atomic frontier target, an explicit 252-chamber
 closure registry, an exact 43-target execution schedule and synchronized execution/evidence
-gates. The unresolved center is the genuine mathematics: actual exhaustive data, proof of every
-semantic statement and chamber disposition, strict block closure and the reviewed implication to
-all `n`.
+gates with noncircular completion-to-bundle sealing. The unresolved center is the genuine
+mathematics: actual exhaustive data, proof of every semantic statement and chamber disposition,
+strict block closure and the reviewed implication to all `n`.
