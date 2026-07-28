@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through CMR2317 the branch has:
+The no-three-in-line conjecture remains open. Through CMR2349 the branch has:
 
 - 740 canonical raw hosts and 9,260 response records;
 - source-traceable finite clause expansion into operation slots;
@@ -16,7 +16,11 @@ The no-three-in-line conjecture remains open. Through CMR2317 the branch has:
 - source-independent derivation of the expected global family;
 - spanning equivalence evidence for shared state classes;
 - support SCC condensation and exact critical-rank path bounds; and
-- a fixed nineteen-obligation semantic closure DAG.
+- a fixed nineteen-obligation semantic closure DAG;
+- exact typed artifact bundles for proved obligations;
+- blocker/frontier and parallel completion-wave analysis;
+- an optional edgewise lexicographic support audit; and
+- a fixed ten-premise final implication contract.
 
 No theorem supplies the genuine exhaustive recurrence, complete real population, proved
 external semantics, genuine complete strict blocks and interface rows, or a proof that the
@@ -227,7 +231,29 @@ The current executable closure surface fixes these nineteen obligations:
 The exact dependency lists are code-defined. An obligation cannot close while any dependency
 remains open.
 
-## 16. Honesty boundaries
+## 16. Typed artifact bundles and exact blocker scheduling
+
+Each proved obligation must contain its exact required artifact kinds. The artifact-bundle
+digest is rebound into the closure certificate, preventing an opaque locator from drifting
+away from the documents actually audited.
+
+The blocker scheduler publishes every transitive open blocker, the current actionable
+frontier, downstream impact, a canonical longest open chain and the minimum dependency-wave
+depth to the final root. These quantities should guide work ordering but do not estimate proof
+difficulty.
+
+## 17. Termination modes and final implication premises
+
+Audit every final support edge for the stronger lexicographic decrease of `(W,rho)`. When that
+fails, preserve the exact nondecreasing edge list and supply a semantic multiset or other
+well-founded termination proof instead.
+
+The final dossier must close ten premises: base cases, recurrence exhaustiveness, invariant
+preservation, operation selection, resource/credit soundness, block and auxiliary contraction,
+cross-block assembly, exceptional closure, termination and objective translation.
+
+
+## 18. Honesty boundaries
 
 - Traceability and evidence digests do not prove cited statements true.
 - Finite clause expansion and family skeletons do not prove the supplied rule exhaustive.
@@ -240,14 +266,19 @@ remains open.
 - Strict-or-ranked rows do not prove the interface family exhaustive.
 - Support condensation does not prove the quotient models the original recurrence.
 - Proof-obligation artifacts are not machine-verified mathematical proofs.
+- Typed bundle completeness does not prove any artifact true.
+- Dependency waves measure logical depth, not time or difficulty.
+- Edgewise lexicographic descent is only a sufficient termination mode.
+- A ready final premise contract remains subject to mathematical review.
 - A ready dossier is not itself a proof of the conjecture.
 - Finite checker publication does not imply full dependency suites ran here.
 
-## 17. Current endpoint
+## 19. Current endpoint
 
-Through CMR2317 the finite interface reaches from source-traceable rule clauses to a
+Through CMR2349 the finite interface reaches from source-traceable rule clauses to a
 noncircular expected global family, documentary cross-block equivalence, exact support/rank
-termination structure and a fixed machine-readable semantic proof frontier. The unresolved
+termination structure, typed proof-artifact coverage, exact blocker scheduling and a fixed
+final implication-premise contract. The unresolved
 center is the genuine mathematics: actual exhaustive data, proof of every semantic obligation,
 exceptional and hard-core closure, and the reviewed implication from the global quotient to
 all `n`.
