@@ -1,0 +1,23 @@
+{
+  "cases": [
+    {"m":4,"supported_signed_flaws":52,"compatible_source_cycle_range":[1,1],"maximum_support_normalized_charge":"1/24","maximizing_source_count":1,"maximizing_raw_charge":"1/24","global_worst_charge":"1/24"},
+    {"m":5,"supported_signed_flaws":368,"compatible_source_cycle_range":[1,1],"maximum_support_normalized_charge":"1/37","maximizing_source_count":1,"maximizing_raw_charge":"1/37","global_worst_charge":"1/37"},
+    {"m":6,"supported_signed_flaws":1692,"compatible_source_cycle_range":[1,2],"maximum_support_normalized_charge":"8/215","maximizing_source_count":2,"maximizing_raw_charge":"4/215","global_worst_charge":"4/215"},
+    {"m":7,"supported_signed_flaws":5100,"compatible_source_cycle_range":[1,6],"maximum_support_normalized_charge":"72/931","maximizing_source_count":6,"maximizing_raw_charge":"12/931","global_worst_charge":"12/931"},
+    {"m":8,"supported_signed_flaws":12048,"compatible_source_cycle_range":[2,24],"maximum_support_normalized_charge":"192/745","maximizing_source_count":24,"maximizing_raw_charge":"8/745","global_worst_charge":"1/93"},
+    {"m":9,"supported_signed_flaws":25540,"compatible_source_cycle_range":[17,120],"maximum_support_normalized_charge":"83040/96029","maximizing_source_count":120,"maximizing_raw_charge":"692/96029","global_worst_charge":"223/29271"},
+    {"m":10,"supported_signed_flaws":47512,"compatible_source_cycle_range":[106,720],"maximum_support_normalized_charge":"3152400/791819","maximizing_source_count":600,"maximizing_raw_charge":"5254/791819","global_worst_charge":"2397/349898"}
+  ],
+  "all_complete_exact_weighted_hall_audits_through_m10": true,
+  "every_supported_flaw_m4_through_m9_satisfies": "gamma(f) < 1/s(f)",
+  "worst_margin_below_one_through_m9": "12989/96029",
+  "constant_one_first_fails_at_m": 10,
+  "every_supported_flaw_m4_through_m10_satisfies": "gamma(f) < 4/s(f)",
+  "worst_margin_below_four_through_m10": "14876/791819",
+  "support_normalized_maximizer_has_full_factorial_support_through_m9": true,
+  "m10_support_normalized_maximizer_uses_source_count": 600,
+  "m10_full_factorial_source_count": 720,
+  "asymptotic_inverse_source_bound_proved": false,
+  "all_exact_regressions_verified": true,
+  "witness_identity_not_regression_locked_due_to_exact_ties": true
+}
