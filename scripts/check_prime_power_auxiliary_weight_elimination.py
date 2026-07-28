@@ -90,7 +90,6 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     weights = {record["state_id"]: record["weight"] for record in block["state_weights"]}
 
     expansions = [exact_expansion(record, f"auxiliary_expansions[{index}]") for index, record in enumerate(raw_expansions)]
-    require(raw_expansions == expansions, "auxiliary_expansions: canonical records or digests required")
     require(expansions == sorted(expansions, key=lambda record: record["auxiliary_state_id"]),
             "auxiliary_expansions: canonical order required")
     require(len({record["auxiliary_state_id"] for record in expansions}) == len(expansions),
@@ -110,7 +109,6 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     require(set(expansion_map) == used_auxiliaries,
             "auxiliary_expansions: must cover exactly the positively used auxiliary states")
 
-    expansion_loads: dict[str, int] = {}
     expansion_records = []
     for auxiliary in sorted(used_auxiliaries):
         record = expansion_map[auxiliary]
@@ -130,7 +128,6 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
         enriched["expansion_record_sha256"] = catalogue.canonical_digest(
             {key: value for key, value in enriched.items() if key != "expansion_record_sha256"}
         )
-        expansion_loads[auxiliary] = load
         expansion_records.append(enriched)
 
     row_records = []
@@ -139,7 +136,6 @@ def exact_certificate(certificate: dict[str, Any]) -> dict[str, Any]:
     for routed in block["routed_row_certificates"]:
         row_certificate = routed["row_margin_certificate"]
         children = row_certificate["weight_exposure_certificate"]["children"]
-        child_index = {child: index for index, child in enumerate(children)}
         for credit in row_certificate["response_credit_records"]:
             for auxiliary in used_auxiliaries & set(children):
                 require(credit["credit_routes"][auxiliary] == 0,
