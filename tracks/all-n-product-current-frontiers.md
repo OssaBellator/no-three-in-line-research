@@ -2,7 +2,7 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This map records the active frontiers after PX1121. It is not a proof of the classical conjecture or an all-side product theorem.
+This map records the active frontiers after PX1128. It is not a proof of the classical conjecture or an all-side product theorem.
 
 ## Effective asymptotic repair
 
@@ -12,14 +12,14 @@ The paired path is effective for `N>=10^2874`. At decimal order `2873`, the exac
 
 ## Side-seven finite census
 
-Cases `0--1119` of multiplicity two are exact. The committed cache contains:
+Cases `0--1199` of multiplicity two are exact. The committed cache contains:
 
-- `39,840` infeasible selectors;
+- `40,000` infeasible selectors;
 - one constructive selector;
-- `32,019` unclassified selectors;
-- `3,189,247,243` rejection-CSP nodes.
+- `31,859` unclassified selectors;
+- `3,215,626,032` rejection-CSP nodes.
 
-The unresolved set is `2,720` multiplicity-two signatures and all `26,579` multiplicity-one selectors. Cases `1120--1199` are registered but uncounted.
+The unresolved set is `2,640` multiplicity-two signatures and all `26,579` multiplicity-one selectors. Cases `1200--1279` are registered but uncounted.
 
 ## Certificate compression
 
@@ -34,12 +34,12 @@ For case zero, orientation three:
 
 ## Produced-base recursion
 
-The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--2799` are obstructed in both remaining orientations:
+The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--3199` are obstructed in both remaining orientations:
 
-- `fc`: 56,828,308 nodes;
-- `ff`: 50,704,601 nodes.
+- `fc`: 91,512,849 nodes;
+- `ff`: 64,396,059 nodes.
 
-Pair indices `2800--3199` are registered but uncounted.
+Pair indices `3200--3599` are registered but uncounted.
 
 ## Protected spread
 
@@ -61,7 +61,7 @@ For sides two through five, exact fixed-level carry multiplicity is at most thre
 
 ## Operational priorities
 
-1. Promote side-seven cases `1120--1199`.
-2. Promote side-ten fine intervals `2800--3199`.
+1. Promote side-seven cases `1200--1279`.
+2. Promote side-ten fine intervals `3200--3599`.
 3. Extend semantic master learning beyond top index 127.
 4. Advance the exact decimal-2873 target, protected residual entropy, bounded-barrier repair, and carry/absorber closure.
