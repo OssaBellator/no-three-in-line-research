@@ -36,6 +36,8 @@ no-three-in-line conjecture.
 | PP3bor--PP3bou | Exact strict-repair depth recursion, bounded-cancellation census, terminal-frustration localization, and temporary-collateral barriers through `m=9` | PROVED / VERIFIED FINITELY | `docs/336-target-optimal-atomic-cancellation-depth.md` |
 | PP3bov--PP3bow | Weighted Hall ratios are exact maximum-closure min-cuts and finite rational Dinkelbach iteration returns the optimum | PROVED | `docs/337-exact-m8-weighted-hall-mincut.md` |
 | PP3box--PP3boy | The min-cut algorithm reproduces every `m<=7` exhaustive ledger and completes the exact `m=8` transport audit | VERIFIED FINITELY | `docs/337-exact-m8-weighted-hall-mincut.md` |
+| PP3boz--PP3bpc | Three-owner rotations are exactly owner-support local, with an explicit quadratic one-step atomic envelope and an `O(km^2)` trajectory light cone | PROVED | `docs/338-owner-local-atomic-collateral-and-trajectory-light-cone.md` |
+| PP3bpd--PP3bpf | The eight one-support `m=9` hard states form four complement pairs and have sharp shortest-path peaks of two supports and eight atomic triples, attained by four explicit words | VERIFIED FINITELY | `docs/339-m9-single-support-collateral-words.md` |
 
 ## Current exact frontier
 
@@ -55,6 +57,12 @@ strict parity-repair step. No audited state first succeeds only at distance
 three. Almost every unresolved state already has frustration one, so parity
 termination itself prevents further cancellation inside the strict-repair DAG.
 
+Atomic collateral is nevertheless owner-local. One three-owner rotation can
+alter only `3m-6` pair supports and `(3m^2-15m+20)/2` three-owner supports, with
+`|Delta Z|<=96m^2-336m+352`. A trajectory touching `r` owners changes no support
+disjoint from those owners, giving a deterministic `O(km^2)` light cone for a
+`k`-step bounded-owner repair word.
+
 Complete clean-macro reachability still holds through `m=9`:
 
 ```text
@@ -62,10 +70,10 @@ m=8: maximum macro distance 3,
 m=9: maximum macro distance 4.
 ```
 
-At `m=9`, 68 distance-four states are simultaneous local minima for support and
-atomic defect counts. They have only one to three flaw supports and form a sparse
-collateral-repair core; eight single-support states require the full four-step
-route to validity.
+The eight one-support distance-four `m=9` states are now fully classified as
+four global-sign-complement pairs. Every shortest path must expand from one to
+two supports and from four to eight atomic triples, and four explicit words
+attain exactly those sharp peaks before reaching validity.
 
 Weighted Hall optimization no longer requires source-subset enumeration. Exact
 maximum-closure min-cuts reproduce every `m<=7` result and complete `m=8`. At
@@ -79,8 +87,8 @@ maximum local/global label-merging penalty is `10338/4891>2`.
    `O(log m)` frustration core.
 2. Classify the parity-clean terminal states left by failed strict cancellation
    and connect them to clean-macro or joint parity/three-owner repair words.
-3. Classify and repair the eight one-support four-step clean-macro states by a
-   uniform collateral word or structural Lyapunov function.
+3. Generalize the four explicit one-support words to a structural bounded-
+   collateral rule with controlled predecessor charge.
 4. Extend compressed clean-macro reachability to `m=10` without storing all
    `115,586,396` clean orientations.
 5. Prove a uniform weighted expansion bound for small and intermediate Hall
@@ -88,7 +96,7 @@ maximum local/global label-merging penalty is `10338/4891>2`.
    is measured.
 6. Extend the exact min-cut audit to `m=9` with compressed clean-fibre and flaw
    generation.
-7. Combine locally coupled repair and heat-kernel mixing with atomic three-owner
-   drift and the trajectory-local causal light cone.
+7. Combine locally coupled repair, the owner light cone, and heat-kernel mixing
+   with compensated atomic three-owner drift.
 
-The next available theorem identifier is `PP3boz`.
+The next available theorem identifier is `PP3bpg`.
