@@ -1,0 +1,11 @@
+{
+  "m":10,
+  "sources":12786720,
+  "minimum_distinct_local_targets":2,
+  "maximum_distinct_local_targets":420,
+  "small_degree_distribution":{"2":8,"4":24,"6":28,"8":36},
+  "degree_two_sources":[{"mask":425,"rho":[1,3,5,9,6,8,0,2,4,7]},{"mask":427,"rho":[1,3,5,9,6,8,0,2,4,7]},{"mask":596,"rho":[1,3,5,9,6,8,0,2,4,7]},{"mask":598,"rho":[1,3,5,9,6,8,0,2,4,7]},{"mask":225,"rho":[6,0,7,1,8,2,4,9,5,3]},{"mask":233,"rho":[6,0,7,1,8,2,4,9,5,3]},{"mask":790,"rho":[6,0,7,1,8,2,4,9,5,3]},{"mask":798,"rho":[6,0,7,1,8,2,4,9,5,3]}],
+  "three_layers_degree_obstruction":true,
+  "two_layer_packing_from_docs_353":true,
+  "exact_optimal_maximum_reverse_indegree":"1/2"
+}
