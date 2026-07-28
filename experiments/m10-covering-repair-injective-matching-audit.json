@@ -1,0 +1,17 @@
+{
+  "m":10,
+  "optimal_positive_signed_states":12786720,
+  "clean_signed_states":115586396,
+  "cycle_level_clean_rotation_labels":35746320,
+  "fixed_sign_nonexception_sources":12786646,
+  "fixed_sign_edges":423160022,
+  "fixed_sign_masks_without_complete_matching":0,
+  "fixed_sign_exceptions":74,
+  "exception_distinct_local_targets":564,
+  "exceptions_assigned_without_rerouting":34,
+  "maximum_augmenting_path_source_count":2,
+  "augmenting_bfs_source_visits":114,
+  "augmenting_bfs_target_visits":410,
+  "global_injective_direct_clean_policy_constructed":true,
+  "maximum_reverse_indegree":1
+}
