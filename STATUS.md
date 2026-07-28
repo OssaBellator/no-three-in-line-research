@@ -5,7 +5,7 @@
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not**
-contain a complete proof. The authoritative theorem ledger reaches CMR2533; CMR2390 onward is in
+contain a complete proof. The authoritative theorem ledger reaches CMR2541; CMR2390 onward is in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 ## Current finite endpoint
@@ -26,6 +26,7 @@ include:
 - exact T08 active rows derived from every T06 global-parent application;
 - exact T09 literal destroyed-resource universes, overlap graph and canonical scopes;
 - exact T10 routed-credit subjects, semantic route assignments and global injectivity tests;
+- exact T11 common-weight row bridges, primitive block weights, recurrent support and strict margins;
 - typed artifact registries for obligations, premises, handoff assertions and all 43 atomic targets;
 - an exact 252-chamber exceptional worklist;
 - a synchronized current-frontier gate and seven-gate final dossier audit.
@@ -179,11 +180,47 @@ separate obligation and target locators.
 Exact route linkage and injectivity do not prove the route statements, T07 claims or child-state
 meanings mathematically true.
 
+## Exact T11 recurrent-block closure frontier
+
+CMR2534--CMR2541 derive every T11 block from the T04 recurrent-block census and every block row from the
+exact T08 active-row bank. The older common-weight checker cannot introduce a second row population.
+
+For every active row, the common-weight bridge requires:
+
+- the same local parent and selected T03 fibre;
+- the exact selected T05 linked-operation certificate;
+- exact equality of the T03 `labelled_vectors` and common exposure table;
+- exact equality of the T03 `row_loads` and complete common row arithmetic table;
+- equality of the common minimum load and proved T06 score; and
+- exact aggregation of unit-level T10 credits to the selected common response's credit vector.
+
+The exact T11 routed-credit unit schema is:
+
+```text
+child_state_id
+unit_index
+selected_response_sha256
+```
+
+For each selected response and child, the indices must be exactly `0` through `count - 1`.
+
+Every proved block has one primitive positive common state-weight vector, one common row for every
+local SCC parent, the exact recurrent support graph, no external recurrent edge, strong connectivity
+and positive margin on every row. The T04 `local_states` and `recurrent_rows` fields must equal the
+common state registry and exact T08 row IDs.
+
+A proved block requires separate `recurrent-block-common-weight-proof` and
+`recurrent-block-closure-proof` artifacts. Separate noncircular aggregate banks bind the required
+`common-weight-proof` and `block-closure-proof` obligation artifacts; the T11 target binds their
+combined digest.
+
+Recurrent-core closure does not erase nonrecurrent exits. Auxiliary and interface exits remain visible
+T12 and T15 work, and the checker does not prove their semantic validity.
+
 ## Remaining semantic fronts
 
 The next exact fronts are:
 
-- T11: closed, strongly connected recurrent blocks with strict common weights;
 - T12: semantic recursive auxiliary expansion and elimination;
 - T13--T18: cross-block identity, component scales, interfaces, rank, state predicates and final row
   theorems;
@@ -201,7 +238,8 @@ The next exact fronts are:
 7. Supply genuine T06 score proofs, close every parent policy and verify every T02 application uses
    the winner.
 8. Populate and prove every T08 active row, T09 resource model and T10 routed-credit semantic record.
-9. Exhibit closed strongly connected recurrent blocks with strict common weights.
+9. Populate every T11 common-weight bridge and prove every recurrent core closed, strongly connected
+   and strict.
 10. Prove auxiliary, cross-block, interface, rank, predicate and row-theorem semantics.
 11. Prove all 232 zero-selector and 20 hard-core chamber dispositions.
 12. Complete every genuine obligation, premise, handoff and atomic-target artifact.
@@ -223,7 +261,9 @@ The next exact fronts are:
 - A T06-application-derived T08 census remains relative to the supplied recurrence skeleton.
 - Coordinate-canonical T09 scopes do not prove physical resource-model exhaustiveness.
 - T10 route linkage and injectivity do not prove route statements or child-state semantics.
-- Common weights do not imply block closure, connectivity or strictness.
+- A standalone common-weight certificate does not identify the exact T08/T10 row population.
+- Exact T11 bridges and strict margins remain relative to supplied T07/T10 semantics.
+- Recurrent-core closure does not prove auxiliary or interface exits semantically valid.
 - State links and predicate records do not prove external state identity.
 - Strict-or-ranked rows do not prove interface exhaustiveness.
 - A closed chamber disposition does not verify its proof.
@@ -233,12 +273,13 @@ The next exact fronts are:
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2533**, the finite certificate surface reaches exact work
-banks from T01 through T10, including a corrected executable T05 path, literal T07 semantic-claim
+There is no complete proof. Through **CMR2541**, the finite certificate surface reaches exact work
+banks from T01 through T11, including a corrected executable T05 path, literal T07 semantic-claim
 coverage, noncircular T06 candidate policy, application-derived T08 active rows, literal T09 resource
-geometry and exact T10 routed-credit linkage and injectivity.
+geometry, exact T10 routed-credit linkage, and T11 common-weight recurrent-core bridges and strictness.
 
 Completion still requires genuine source and recurrence theorems, actual T03/T04 data, proof of T05
 all-`n` geometric coverage, truth of every T07 claim and T06 score, genuine T08 simultaneous-row
-completeness, T09 physical resource exhaustiveness, T10 route semantics, all downstream block,
-interface, rank and chamber semantics, and ordinary review of the final implication to all `n`.
+completeness, T09 physical resource exhaustiveness, T10 route semantics, genuine T11 block semantics,
+all auxiliary, cross-block, interface, rank and chamber semantics, and ordinary review of the final
+implication to all `n`.
