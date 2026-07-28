@@ -15,9 +15,10 @@ This addendum records the threshold-degree transportation bounds proved after th
 | SRR2bg--SRR2bk | A complete finite higher-order conflict hypergraph has a conservative clique shadow; weighted graph thinning gives an executable family with explicit loss from hyperedge rank and incidence | PROVED UNDER THE COMPLETE CONFLICT-HYPERGRAPH AND AT-MOST-ONE CONTRACTS | `docs/superregular-higher-order-conflict-shadow.md` |
 | SRR2bl--SRR2bp | If every higher-order conflict has a retained common witness atom, shadow degree is bounded by witnessed atom loads and support rank, yielding an executable fraction `1/(1+rM)` | PROVED UNDER THE COMPLETE WITNESSED-HYPEREDGE ATOM CONTRACT | `docs/superregular-witnessed-hyperedge-atoms.md` |
 | SRR2bq--SRR2bu | Weighted conflict burden partitions exactly over retained witness atoms; one atom carries at least the average burden, while an executable family has weight at least `W^2/(W+B)` | PROVED UNDER THE COMPLETE WEIGHTED WITNESS-ATOM CONTRACT | `docs/superregular-weighted-atom-burden-concentration.md` |
+| SRR2bv--SRR2bz | Exact per-atom burden budgets either bound total weighted conflict burden and retain executable weight at least `W^2/(W+sum_a C_a)`, or return the least overloaded witness atom | PROVED UNDER THE COMPLETE THRESHOLD ATOM-BUDGET CONTRACT | `docs/superregular-threshold-atom-budget.md` |
 
 ## Updated frontier
 
-The endpoint objective now has exact transportation, tensor/perturbation, pairwise and higher-order conflict thinning, witnessed atom loads and weighted atom-burden concentration. Remaining work is constructing the actual geometric tensor reference and complete witness-atom dictionary, then proving small forward, reverse, conditioning, perturbation and per-atom burden bounds.
+The endpoint objective now has exact transportation, tensor/perturbation, pairwise and higher-order conflict thinning, witness-atom burden concentration and a direct per-atom budget endpoint. Remaining work is constructing the actual geometric tensor reference and complete witness-atom dictionary, then proving small forward, reverse, conditioning, perturbation and atom-budget estimates.
 
 No statement here proves SRR2, SRR4 or the no-three-in-line conjecture.
