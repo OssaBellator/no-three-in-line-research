@@ -2,7 +2,7 @@
 
 **Branch:** `research/all-n-product-construction`
 
-This map records the active frontiers after PX1087. It is not a proof of the classical conjecture or an all-side product theorem.
+This map records the active frontiers after PX1094. It is not a proof of the classical conjecture or an all-side product theorem.
 
 ## Effective asymptotic repair
 
@@ -12,29 +12,31 @@ The paired path is effective for `N>=10^2874`. At decimal order `2873`, a unifor
 
 ## Side-seven finite census
 
-Cases `0--959` of multiplicity two are exact. The committed cache contains:
+Cases `0--1039` of multiplicity two are exact. The committed cache contains:
 
-- `39,520` infeasible selectors;
+- `39,680` infeasible selectors;
 - one constructive selector;
-- `32,339` unclassified selectors;
-- `3,147,256,803` rejection-CSP nodes.
+- `32,179` unclassified selectors;
+- `3,165,594,500` rejection-CSP nodes.
 
-The unresolved set is `2,880` multiplicity-two signatures and all `26,579` multiplicity-one selectors. Cases `960--1039` are registered but not counted.
+The unresolved set is `2,800` multiplicity-two signatures and all `26,579` multiplicity-one selectors. The next case is `1040`.
 
 ## Certificate compression
 
 For case zero, orientation three, the first 64 reference cores reduce to 49 actual partial-assignment keys. Their 169 extension occurrences cover 92 distinct clean top orders, with 1,703,520 exact bottom checks.
 
-**Next:** extend beyond top index 63, measure reuse of the 49 keys, and compute a compact set-cover basis.
+A complete census through top index 127 is active and uncounted.
+
+**Next:** measure reuse of the 49 keys, vocabulary saturation, and a compact set-cover basis.
 
 ## Produced-base recursion
 
-The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--1999` are obstructed in both remaining orientations:
+The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--2399` are obstructed in both remaining orientations:
 
-- `fc`: 22,001,684 nodes;
-- `ff`: 31,399,506 nodes.
+- `fc`: 40,119,413 nodes;
+- `ff`: 41,948,761 nodes.
 
-Pair indices `2000--2399` are registered but not counted.
+The next pair index is `2400`.
 
 **Next:** finish the fine-row orientations, then address the two larger double cosets or prove an extension theorem.
 
@@ -58,7 +60,7 @@ Weighted quotient extraction, common-ratio conversion, carry dispersion, wrap-ce
 
 ## Operational priorities
 
-1. Promote side-seven cases `960--1039` from one transcript set.
-2. Promote side-ten fine intervals `2000--2399`.
-3. Extend the semantic vocabulary beyond the first 64 top orders.
+1. Continue side-seven multiplicity two from case `1040`.
+2. Continue side-ten fine-row search from pair index `2400`.
+3. Promote the semantic vocabulary census through top index 127.
 4. Advance cubic protected spread, decimal-2873 arithmetic, bounded-barrier repair, and hyperbola/carry closure.
