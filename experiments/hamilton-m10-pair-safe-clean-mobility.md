@@ -43,6 +43,24 @@ successor rotation directly to a parity-satisfiable cycle:
 
 Thus the pair-safe distance to the clean set is zero or one.
 
+## Marked frustration-core targeting
+
+Every edge violated by every orientation attaining the minimum frustration
+index was tested.  Across
+
+```text
+13,185,264 optimal violated-edge instances
+```
+
+each instance has a direct clean successor rotation whose source triple meets
+an endpoint of the selected edge.  The exact minima are
+
+```text
+clean rotations from one positive-frustration cycle: 11
+targeted clean rotations for one optimal violated edge: 6
+untargetable optimal violated edges: 0
+```
+
 ## Clean induced graph
 
 ```text
