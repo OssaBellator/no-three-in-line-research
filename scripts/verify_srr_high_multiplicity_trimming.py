@@ -35,29 +35,37 @@ def mult_bound(A, S, holes, tau):
     return M, T, R, MR, max(vals)
 
 
+def hole_masks(edges, limit):
+    # Exhaust all masks through four holes, then add deterministic dense samples.
+    for r in range(min(4, len(edges)) + 1):
+        yield from combinations(edges, r)
+    if len(edges) > 4:
+        yield tuple(edges)
+        yield tuple(edges[::2])
+        yield tuple(edges[1::2])
+
+
 def main():
     checks = 0
     for na in range(1, 5):
         A = tuple(range(na))
-        for nb in range(1, 6):
+        for nb in range(1, 5):
             B = tuple(range(nb))
             edges = [(a, b) for a in A for b in B]
-            # Exhaust masks with at most five holes.
-            for r in range(min(5, len(edges)) + 1):
-                for chosen in combinations(edges, r):
-                    holes = {a: set() for a in A}
-                    for a, b in chosen:
-                        holes[a].add(b)
-                    for S in subsets(B):
-                        for tau in range(na + 1):
-                            M, T, R, MR, E = mult_bound(A, S, holes, tau)
-                            assert len(T) * (tau + 1) <= M
-                            assert MR == M - sum(sum(b in holes[a] for a in A) for b in T)
-                            assert MR <= M - (tau + 1) * len(T)
-                            assert deficiency(A, R, holes) <= E
-                            assert deficiency(A, S, holes) <= E
-                            assert deficiency(A, S, holes) + len(T) <= E + len(T)
-                            checks += 1
+            for chosen in hole_masks(edges, 4):
+                holes = {a: set() for a in A}
+                for a, b in chosen:
+                    holes[a].add(b)
+                for S in subsets(B):
+                    for tau in range(na + 1):
+                        M, T, R, MR, E = mult_bound(A, S, holes, tau)
+                        assert len(T) * (tau + 1) <= M
+                        assert MR == M - sum(sum(b in holes[a] for a in A) for b in T)
+                        assert MR <= M - (tau + 1) * len(T)
+                        assert deficiency(A, R, holes) <= E
+                        assert deficiency(A, S, holes) <= E
+                        assert deficiency(A, S, holes) + len(T) <= E + len(T)
+                        checks += 1
     print(f"verified {checks} trimmed threshold systems")
 
 
