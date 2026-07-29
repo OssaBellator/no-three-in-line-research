@@ -2,13 +2,13 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2597**, the branch contains exact
-noncircular documentary work banks from T01 through T18, typed proof registries for all 43 atomic
-targets, an exact 252-chamber exceptional worklist and a final dossier audit.
+The no-three-in-line conjecture remains open. Through **CMR2613**, the branch contains exact
+noncircular documentary work banks from T01 through T21, typed registries for all 43 atomic targets, the
+complete 252-chamber worklist and a final dossier audit.
 
 The branch still lacks the genuine source statements, exhaustive recurrence theorem, actual complete
 population, arbitrary-`n` coverage, truth of the semantic claims, global-family exhaustiveness, chamber
-proofs and the reviewed implication to `D(n)=2n`.
+proofs, final premises and the reviewed implication to `D(n)=2n`.
 
 Every final checker permanently reports:
 
@@ -35,29 +35,25 @@ source-clause bindings. Interface rows need target, route, transition and source
 
 ## 3. T05--T10: geometry, policy, state, resources and credits
 
-Use the corrected T05 endpoint:
+Use:
 
 ```text
 scripts/check_prime_power_geometry_selector_frontier_v2.py
+scripts/check_prime_power_transition_resource_frontier.py
 ```
 
-Prove every responsewise finite delta, threshold and selector theorem, then prove arbitrary-`n` coverage.
+Prove every responsewise finite delta, threshold and selector theorem, then prove arbitrary-`n` geometry
+coverage.
 
-For T07, prove every exact fate, state and transition statement. An acyclic support graph is necessary
-metadata, not semantic proof.
+For T07, prove every exact fate, state and transition statement. An acyclic support graph is metadata, not
+semantic proof.
 
 For T06, prove every integer candidate score, reconstruct every complete candidate set, select the least
 `(score, slot_id)` pair and prove every T02 application uses that winner.
 
-Use the combined T08--T10 endpoint:
-
-```text
-scripts/check_prime_power_transition_resource_frontier.py
-```
-
-Prove the application-derived active-row census is the genuine simultaneous family, the coordinate-
-canonical resource bank is physically exhaustive, and every routed-credit assignment has the claimed
-resource, witness, child-state and transition meaning.
+Prove the T08 application-derived active-row census is the genuine simultaneous family, the T09
+coordinate-canonical resource bank is physically exhaustive, and every T10 routed-credit assignment has
+the claimed resource, witness, child-state and transition meaning.
 
 ## 4. T11 and T12: block contraction and auxiliary elimination
 
@@ -93,72 +89,35 @@ inconsistent cycles and publishes primitive component weights.
 
 T15 derives every interface row from T04, supplies a primitive intercomponent multiplier bank, reconstructs
 final weights and margins, and covers every T11/T12 final exit. Strict rows have positive margin; zero-
-margin rows remain explicit T16 work.
+margin rows remain T16 work.
 
 T16 derives every critical edge from T15, requires an explicit nonnegative-integer or fixed lexicographic
-rank domain, proves exact endpoint ranks and edge descent, rejects cycles and publishes the exact longest
-critical path.
+rank domain, proves exact endpoint ranks and edge descent, rejects cycles and publishes the longest critical
+path.
 
-The finite checks do not prove that state identities, scale equations, interface statements or ranks have
-their intended recurrence meaning.
+These finite checks do not prove that state identities, scale equations, interface statements or ranks
+have their intended recurrence meaning.
 
-## 6. T17: exact global-state predicates
+## 6. T17 and T18: predicates and final row theorems
 
 Use:
 
 ```text
 scripts/check_prime_power_state_predicate_frontier.py
+scripts/check_prime_power_row_theorem_frontier.py
 ```
 
-The corrected target dependency is:
+The corrected predicate flow is:
 
 ```text
 T13_STATE_EQUIVALENCE + T16_GLOBAL_RANK
     -> T17_STATE_PREDICATES
 ```
 
-Research can begin after T13, but proof closure waits for T16. The old parallel semantic-refinement
-certificate is not a T17 support requirement.
+Every proved T17 predicate must bind the exact T13 class, cover every literal representative with T07
+claim support and cite its exact T16 rank record exactly when rank-sensitive.
 
-Every T13 global class contributes one canonical open/proved record containing:
-
-```text
-global_state_id
-global_state_record_sha256
-t13_class_artifact_id
-predicate_id
-status
-verification_locator
-verification_digest
-note
-```
-
-Every proved predicate must:
-
-1. bind the exact T13 role, stratum, owner and class artifact;
-2. contain one agreement record for every literal local representative;
-3. bind each representative's exact T07 state-claim support;
-4. bind the exact proved T16 rank record and artifact exactly when rank-sensitive;
-5. state the predicate, representative agreement and external meaning; and
-6. carry one `global-state-predicate-proof` artifact with exact T13/T16 support.
-
-The aggregate noncircular bank synchronizes `T17_STATE_PREDICATES` through:
-
-```text
-state-predicate-frontier://T17_STATE_PREDICATES
-```
-
-Representative coverage and typed evidence do not prove predicate truth.
-
-## 7. T18: exact final row theorems
-
-Use:
-
-```text
-scripts/check_prime_power_row_theorem_frontier.py
-```
-
-T18 does not accept an independent quotient row list. Its exact census is:
+T18 derives its final row census as:
 
 ```text
 all T12-eliminated selected recurrent rows
@@ -166,124 +125,232 @@ all T12-eliminated selected recurrent rows
 all T15 return/interface/off-diagonal rows
 ```
 
-### 7.1 Recurrent final rows
+Every recurrent row is rescaled from the T11 local weight to the final T14/T15 global weight. Every
+interface row reuses exact T15 arithmetic. Critical rows require complete T16 edge descent. Every theorem
+reconstructs the exact parent and target T17 predicate multiset, fixed offset, load, margin and
+strict/critical classification.
 
-For every selected recurrent row:
+Typed support and exact arithmetic do not prove predicate truth, fixed-offset meaning or row-theorem truth.
 
-1. bind its exact T11 row bridge and selected slot;
-2. bind its exact T12 row and block elimination digests;
-3. map its parent and final targets through T13;
-4. derive the exact integer scale from the T11 local parent weight and T14/T15 final global weight;
-5. aggregate equal global targets; and
-6. verify the scaled fixed offset, row load and positive margin.
+## 7. T19: exact global-family exhaustiveness
 
-### 7.2 Interface final rows
-
-Reuse each exact T15 row. A positive-margin row remains `strict`. A zero-margin row becomes
-`critical-descending` only if every positive target has its exact proved T16 descent edge.
-
-### 7.3 Predicate and theorem semantics
-
-Every proved row must reconstruct:
+Use:
 
 ```text
-parent T17 predicate
-target T17 predicate multiset and multiplicities
-fixed offset
-row load
-margin
-strict/critical classification
-critical T16 edge IDs, when applicable
-row theorem statement
-fixed-offset interpretation
-external recurrence statement
-evidence
+scripts/check_prime_power_global_family_exhaustiveness_frontier.py
 ```
 
-Every proved row carries one `global-row-theorem-proof`. Recurrent rows cite the relevant T05, T07, T10,
-T11, T12, T14, T15-scale and T17 artifacts. Interface rows cite the relevant T07, T14, T15, T17 and, when
-critical, T16 artifacts.
-
-The aggregate bank synchronizes:
+The canonical checker uses the scoped corrected flow:
 
 ```text
-T18_ROW_THEOREMS
+T02_RULE_EXHAUSTIVENESS + T18_ROW_THEOREMS
+    -> T19_GLOBAL_FAMILY
 ```
 
-through `row-theorem-frontier://T18_ROW_THEOREMS`. Exact arithmetic and predicate multisets do not prove
-the external row theorem or fixed-offset meaning.
+and excludes the old `global-family-skeleton` special target-certificate support.
 
-## 8. T19: build the exact global-family exhaustiveness frontier
+### 7.1 Exact expected-parent census
 
-T19 is the next executable frontier. Do not use an independently supplied global integer family as the
-population root.
-
-### 8.1 Expected application census
-
-Derive every expected global application from the exact T02 recurrence skeleton. Each expected item must
-bind at least:
+Take every T02 `global-parent-application` record in canonical T02 order. Each coverage unit binds:
 
 ```text
+parent_global_state_id
 source_case_id
 source_clause_id
-parent_global_state_id
 operation_slot_id
-application_identity_sha256
+T02 application record digest
 ```
 
-### 8.2 Exact final-row census
+No independent recurrence skeleton or parent manifest is accepted by T19.
 
-Take the complete T18 final-row subject bank. Partition it into recurrent and interface families and bind
-each row to its exact `global-row-theorem-proof` artifact.
+### 7.2 Exact final-row census
 
-### 8.3 Parent-to-row coverage
+Take the complete T18 final-row subject bank. Every row must have a T02 parent and the exact T02 selected
+slot. Recurrent rows bind their T04 recurrent-block unit; interface rows bind their T04 interface-row unit.
 
-For every T02 global parent, reconstruct exactly which T18 rows are permitted by its selected slot,
-recurrent-block membership, return/interface attachments and source-clause bindings. Require:
+### 7.3 Exact source-clause ancestry
 
-1. every expected parent has at least one permitted final row or a proved terminal disposition;
-2. every permitted row is present exactly once;
-3. no T18 row is unrelated to the T02 skeleton;
-4. no extra parent, slot, row or terminal disposition is supplied; and
-5. every row theorem has the exact source-case and source-clause ancestry.
+For every row, require exact agreement among T02, T04 and T18 on:
 
-### 8.4 Exhaustiveness theorem
+```text
+parent_global_state_id
+source_case_id
+source_clause_id
+operation_slot_id
+```
 
-For each T02 case and clause, supply a statement and evidence proving that the reconstructed final-row
-alternatives cover every genuine recurrence outcome. The checker can verify finite coverage and identity;
-the ordinary exhaustiveness statement remains external mathematics.
+Seal the T04 unit identity, parent-binding digest and population digest into the row ancestry record.
 
-### 8.5 Typed sealing
+### 7.4 Per-parent exhaustiveness theorem
 
-Give every proved case/clause coverage unit a typed artifact supported by its exact T02 and T18 artifacts.
-Build one noncircular aggregate bank that synchronizes:
+Every T02 parent has one open/proved record whose final-row IDs are derived rather than supplied. A proved
+record requires a nonempty row bank, a proved T02 application and proved T18 row theorem for every
+alternative.
+
+Supply distinct statements for:
+
+```text
+application exhaustiveness
+row-alternative exhaustiveness
+source-clause interpretation
+```
+
+The checker verifies finite coverage. The genuine recurrence-exhaustiveness theorem remains external.
+
+### 7.5 Typed sealing
+
+Every proved parent requires one:
+
+```text
+global-family-parent-coverage-proof
+```
+
+supported exactly by its T02 application artifact, all relevant T04 population artifacts and all relevant
+T18 row-theorem artifacts.
+
+The aggregate noncircular bank synchronizes:
 
 ```text
 EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE
 T19_GLOBAL_FAMILY
 ```
 
-with `global-family-exhaustiveness-proof` / `global-family-proof` artifacts and exact immediate support.
+through canonical `global-family-exhaustiveness-frontier://` locators.
 
-The target-artifact registry must not reintroduce the older `global_family_skeleton` or global-integer-
-quotient certificate as independent proof of the final row population.
+## 8. T20 and T21: exact exceptional-chamber closure
 
-## 9. T20 and T21: exceptional chamber closure
+Use:
 
-After T19, close the exact worklist:
+```text
+scripts/check_prime_power_exceptional_chamber_frontier.py
+```
+
+The scoped corrected proof flow is:
+
+```text
+T05_GEOMETRY_SELECTORS
+T18_ROW_THEOREMS
+T19_GLOBAL_FAMILY
+    -> T20_EXCEPTIONAL_ZERO_ROWS
+    -> T21_HARD_CORE_ROWS
+```
+
+Both targets wait for T19. The obsolete semantic-refinement and chamber-registry special certificate
+bindings are not canonical support.
+
+### 8.1 Canonical chamber census
+
+Reconstruct exactly:
 
 \[
 232\text{ zero-selector chambers}+20\text{ hard-core chambers}=252.
 \]
 
-Every chamber needs one reviewed disposition and exact row ancestry. Keep fixed-response correction `17`,
-rollback distance `12` and uniform correction `44` distinct.
+Every chamber retains the exact host, selected index, selected-row digest, permutation, rank-three triple
+count, rank minimum and worklist digests.
 
-## 10. T22--T43: final premises and handoff
+### 8.2 Exact host support
 
-Complete every genuine semantic-obligation artifact, the ten final premises, six handoff assertions and
-the seven-gate dossier audit. Then prove the ordinary implication from the reviewed quotient and handoff
-to `D(n)=2n`.
+Every closed chamber must cite the complete exact T05 geometry-artifact bank for its host. A chamber whose
+host has no exact T05 geometry remains open.
+
+### 8.3 Closure modes
+
+Choose exactly one reviewed proof mode:
+
+```text
+global-row-theorem
+direct-chamber-proof
+signature-infeasibility
+host-union-proof
+```
+
+A row-theorem proof cites one exact same-host T18 theorem and its T19 parent coverage. A host-union proof
+cites every T18/T19 row represented at that host. Direct and signature-infeasibility proofs cite exact T05
+host geometry and require chamber-specific statements and evidence.
+
+### 8.4 Typed chamber artifacts
+
+Every closed zero-selector chamber requires `exceptional-zero-chamber-proof`. Every closed hard-core
+chamber requires `hard-core-chamber-proof`. Open chambers contain no proof fields or artifact.
+
+Separate noncircular banks synchronize:
+
+```text
+EXCEPTIONAL_ZERO_ROWS_CLOSED / T20_EXCEPTIONAL_ZERO_ROWS
+HARD_CORE_ROWS_CLOSED / T21_HARD_CORE_ROWS
+```
+
+Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct.
+
+## 9. T22--T31: rebuild the ten final premise contracts
+
+The next executable layer is the premise stack. Do not accept a free summary statement merely because all
+dependency target flags are present.
+
+### T22: base cases
+
+Derive the complete base-domain census from T01 source statements. State the exact range, every boundary
+case and the theorem proving the base construction. Seal it with `base-case-domain-proof`.
+
+### T23: recurrence exhaustiveness
+
+Bind the exact T02 rule bank and T19 global-family bank. Prove that every nonbase object enters exactly one
+permitted recurrence alternative. Seal it with `recurrence-premise-proof`.
+
+### T24: invariant preservation
+
+Bind exact T05 geometry and T07 fate/state/transition claims. State every invariant before and after each
+operation and prove preservation. Seal it with `invariant-premise-proof`.
+
+### T25: operation selection
+
+Bind exact T03 slot populations and T06 policy winners. Prove every selected operation exists, is admissible
+and has the claimed score-minimizing property. Seal it with `selection-premise-proof`.
+
+### T26: resource and credit soundness
+
+Bind T08 active rows, T09 resources and T10 routed credits. Prove physical exhaustiveness, nonreuse and
+credit meaning. Seal it with `resource-credit-premise-proof`.
+
+### T27: block and auxiliary contraction
+
+Bind T11 recurrent blocks and T12 elimination. Prove the strict block inequalities and recursive
+substitution imply genuine contraction. Seal it with `contraction-premise-proof`.
+
+### T28: cross-block assembly
+
+Bind T13--T18. Prove state identities, scales, interface coverage, rank descent, predicates and row theorems
+assemble into one valid global quotient. Seal it with `cross-block-premise-proof`.
+
+### T29: exceptional cases
+
+Bind the complete T20/T21 chamber banks. Prove every exceptional signature is assigned to exactly one
+reviewed closed chamber. Seal it with `exceptional-premise-proof`.
+
+### T30: termination
+
+Bind T11 strict recurrent contraction, T16 well-founded descent and T18 final row theorems. Prove every
+recurrence branch terminates. Seal it with `termination-premise-proof`.
+
+### T31: objective translation
+
+Bind T12, T16, T18--T21 and the exact global family. Prove that the quotient conclusion translates to the
+original no-three-in-line objective. Seal it with `objective-translation-proof`.
+
+Every premise must derive its support census from the exact dependency targets, state one externally
+reviewed implication, carry its fixed-kind artifact and exclude ancestors containing its own completion
+digest.
+
+## 10. T32--T43: typed support, handoff and root implication
+
+After all ten premises close:
+
+1. complete the obligation artifact bank and support DAG;
+2. bind every premise artifact;
+3. close the six handoff assertions;
+4. complete final handoff review and the seven-gate dossier audit; and
+5. prove the ordinary implication from the reviewed quotient and handoff to `D(n)=2n`.
 
 Do not place a target's own completion digest inside an ancestor used to seal that target.
 
@@ -292,11 +359,10 @@ Do not place a target's own completion digest inside an ancestor used to seal th
 1. Populate and prove high-use T01 source statements.
 2. Close T01 and every T02 rule record; prove recurrence exhaustiveness.
 3. Enter actual T03/T04 data.
-4. Prove T05 arbitrary-`n` coverage and every T06/T07 theorem.
-5. Prove T08/T09/T10 simultaneous resource and credit semantics.
-6. Prove every T11 block and T12 auxiliary expansion.
-7. Prove every T13 identity, T14 scale equation, T15 interface theorem and T16 rank theorem.
-8. Populate and prove every T17 predicate and T18 final row theorem.
-9. Implement exact T19 coverage from T02 and T18; prove genuine global-family exhaustiveness.
-10. Prove all 252 T20/T21 chamber dispositions.
-11. Complete T22--T43 and review the final implication.
+4. Prove T05 arbitrary-`n` coverage and every T06--T18 theorem.
+5. Prove genuine T19 global-family exhaustiveness.
+6. Prove all 252 T20/T21 chamber dispositions.
+7. Implement exact T22--T31 premise contracts over T01--T21.
+8. Complete T32--T43 and review the final implication.
+
+No documentary checker substitutes for the missing mathematical proofs.
