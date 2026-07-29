@@ -41,36 +41,23 @@ The authoritative live ledger is split across:
 | CMR2630--2647 | Canonical T32--T43 registry, exact immediate-target census, typed obligation/support/premise aggregation, six handoff frontiers, final review and dossier gates, stable root cores, exact three-artifact root bank and noncircular T43 dual binding | PROVED as documentary T32--T43 support/handoff/root frontiers; every handoff, review and root theorem remains open until genuinely proved and reviewed | `docs/426-prime-power-final-support-handoff-frontiers.md` |
 | CMR2648--2663 | Fixed canonical T19--T21 root registry, exact proof/research dependencies, obsolete support removal, one-time installation, compatibility-context idempotence, DAG and T32 stability, exact downstream impact and canonical v2 T43 endpoint | PROVED as cross-frontier dependency integrity; no mathematical target is closed | `docs/427-prime-power-canonical-frontier-roots.md` |
 | CMR2664--2675 | Branch-wide syntax inventory, exact 13/43 source census, canonical endpoint and honesty gates, document synchronization, two executable root self-tests, deterministic subprocesses and Python 3.10/3.12 continuous regression | PROVED as software/documentary regression infrastructure; no mathematical target is closed | `docs/428-prime-power-current-frontier-regression.md` |
+| CMR2676--2691 | Negative validator tests, pure literal-table checks, endpoint/document/subprocess mutation rejection, exact all-open 43-target fixture, seven fixture mutations and continuous negative validation | PROVED as validator and fixture infrastructure; no mathematical target is closed | `docs/429-prime-power-negative-regression-open-fixture.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
-## Current exact finite stack
-
-Canonical execution installs:
+## Current validation stack
 
 ```text
-T19 <- T02, T18
-T20 <- T05, T18, T19
-T21 <- T05, T18, T19
-```
-
-and validates the existing T01--T43 schema through:
-
-```text
-scripts/check_prime_power_final_support_handoff_frontiers_v2.py
-```
-
-The branch-wide regression is:
-
-```text
+scripts/check_prime_power_canonical_frontier_roots.py --self-test
+scripts/check_prime_power_all_open_target_fixture.py --self-test
+scripts/test_prime_power_current_frontier_regression.py
 scripts/run_prime_power_current_frontier_regression.py
+scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-It checks syntax across every prime-power checker and retained verifier, parses the exact thirteen-frontier and
-forty-three-target source tables, checks the canonical endpoint/honesty manifest, synchronizes the public
-status documents and executes both canonical-root self-tests. GitHub Actions runs it on Python 3.10 and 3.12.
-
-Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The all-open fixture contains exactly 43 open completions and zero proof artifacts. The negative suite requires
+deliberate target, frontier, endpoint, document and subprocess corruptions to fail. GitHub Actions runs the suite
+on Python 3.10 and 3.12. Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
