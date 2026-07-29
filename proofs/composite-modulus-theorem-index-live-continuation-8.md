@@ -42,7 +42,8 @@ The authoritative live ledger is split across:
 | CMR2648--2663 | Fixed canonical T19--T21 root registry, exact proof/research dependencies, obsolete support removal, one-time installation, compatibility-context idempotence, DAG and T32 stability, exact downstream impact and canonical v2 T43 endpoint | PROVED as cross-frontier dependency integrity; no mathematical target is closed | `docs/427-prime-power-canonical-frontier-roots.md` |
 | CMR2664--2675 | Branch-wide syntax inventory, exact 13/43 source census, canonical endpoint and honesty gates, document synchronization, two executable root self-tests, deterministic subprocesses and Python 3.10/3.12 continuous regression | PROVED as software/documentary regression infrastructure; no mathematical target is closed | `docs/428-prime-power-current-frontier-regression.md` |
 | CMR2676--2691 | Negative validator tests, pure literal-table checks, endpoint/document/subprocess mutation rejection, exact all-open 43-target fixture, seven fixture mutations and continuous negative validation | PROVED as validator and fixture infrastructure; no mathematical target is closed | `docs/429-prime-power-negative-regression-open-fixture.md` |
-| CMR2692--2705 | Fresh-process import smoke for every prime-power module, bounded deterministic probes, exact success markers, AST-backed executable all-n-zero semantics, eight controls/mutations and dual-version CI | PROVED as runtime/software honesty infrastructure; no mathematical target is closed | `docs/430-prime-power-isolated-import-honesty-audit.md` |
+| CMR2692--2705 | Fresh-process imports, bounded probes, exact import markers and AST-backed executable all-n-zero semantics | PROVED as runtime/honesty infrastructure except the original `-I` environment-control claim, which is explicitly superseded by CMR2706--CMR2712 | `docs/430-prime-power-isolated-import-honesty-audit.md` |
+| CMR2706--2721 | Corrected controlled launcher, scrubbed import paths, doubled runtime fingerprint, per-module source identity, endpoint evidence classes, sealed schema-v1 manifest, tamper tests and Python-version workflow artifacts | PROVED as reproducible runtime-manifest infrastructure; no mathematical target is closed | `docs/431-prime-power-reproducible-runtime-manifest.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -52,17 +53,14 @@ The branch still does not prove the all-`n` conjecture.
 scripts/check_prime_power_canonical_frontier_roots.py --self-test
 scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
-scripts/check_prime_power_import_smoke.py --self-test
+scripts/check_prime_power_import_smoke.py --self-test --manifest artifacts/current-frontier-runtime.json
 scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The all-open fixture contains exactly 43 open completions and zero proof artifacts. The negative suite requires
-deliberate target, frontier, endpoint, document and subprocess corruptions to fail. The import audit loads each
-prime-power module in a fresh process and requires executable zero-valued honesty semantics at all thirteen
-canonical endpoints. GitHub Actions runs the stack on Python 3.10 and 3.12.
-
-Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The manifest records exactly which sources imported and which executable honesty forms were found. GitHub Actions is
+configured to upload separate Python 3.10 and 3.12 manifests. Every final checker permanently reports
+`all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
@@ -76,4 +74,4 @@ Every final checker permanently reports `all_n_proved_by_checker = 0`.
 8. Complete T41 review and T42 dossier sign-off.
 9. Prove the ordinary T43 implication to `D(n)=2n`.
 
-No documentary checker substitutes for the missing mathematical proofs.
+No documentary checker or runtime manifest substitutes for the missing mathematical proofs.
