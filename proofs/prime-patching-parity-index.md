@@ -82,6 +82,8 @@ no-three-in-line conjecture.
 | PP3buc--PP3bue | Weighted Bonferroni expansion reduces localized Hall charge to one-source capacity and pairwise neighbourhood overlap, with an exact two-source obstruction criterion | PROVED | `docs/380-weighted-neighborhood-overlap-criteria-for-localized-hall-transport.md` |
 | PP3buf--PP3buh | The 43 transition-window count maxima have an exact Hall-subset scale profile; 7 of 13 violations use at most three sources, 9 use at most six, and every witness uses fewer than half the compatible sources | PROVED / VERIFIED FINITELY | `docs/381-exact-m10-hall-transition-count-maximizer-subset-scale.md` |
 | PP3bui--PP3buk | Reverse-column norms multiply across cycle-minimum shells, reducing full clean-macro charge to local adjacent-shell bounds; a common local constant `rho<1` yields charge at most `rho^h` | PROVED | `docs/382-shellwise-reverse-column-composition-for-clean-macro-charge.md` |
+| PP3bul--PP3bun | Weighted second moments give a positive union-capacity bound; normalised overlap Gram spectra reduce localized Hall charge to one-source capacity density and a spectral congestion constant | PROVED | `docs/383-weighted-second-moment-spectral-overlap-localized-hall.md` |
+| PP3buo--PP3buq | Exact terminal contraction leaves reciprocal expansion reserves; a common nonterminal-shell bound `6/5` would keep the full audited horizons contractive | PROVED / VERIFIED FINITELY (CONDITIONAL ON NONTERMINAL BOUNDS) | `docs/384-exact-terminal-shell-expansion-reserves-through-m10.md` |
 
 ## Current exact frontier
 
@@ -127,24 +129,25 @@ m=10: maximum macro distance 5.
 
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
-clean fibre has width at most one. The terminal relative-threshold certificate
-is robust on `q in (595/186,298/93]`, with local relaxed load below
-`54752/55335`. Reverse-column norms now multiply across cycle-minimum shells, so
-an all-shell charge theorem needs only a local contraction audit at each
-adjacent boundary; path enumeration and intermediate orientation bookkeeping
-are unnecessary. The remaining horizon problem is to bound cycle-minimum depth,
-prove uniform adjacent-fibre width, and establish the robust local normalizer
-bound at every shell.
+clean fibre has width at most one. Reverse-column norms multiply across the
+cycle-minimum shells. More sharply, the exact terminal factors leave enough
+reserve that every nonterminal shell could have norm as large as `6/5` and the
+complete audited horizons would still contract; the tight `m=9` composed bound
+is `0.9910975941...`. Thus the next all-shell audit need not prove contraction
+at each boundary. It may instead prove a common `6/5` bound, or any nonuniform
+product below the exact reciprocal terminal reserve, while the geometric
+frontier remains cycle-minimum depth and adjacent-fibre width.
 
 Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
 supported signed flaws have proper bottlenecks. For the 43 count maxima in the
 intermittent window, 7 of the 13 constant-one violations are witnessed by at
 most three sources and 9 by at most six; the other four use subset sizes
-`27,29,85,124`. No violating count maximum occurs at sizes `7--26` or `30--84`,
-but subset size alone still fails to classify the transition. The revised split
-is microscopic one-source/overlap control through bounded subset size, followed
-by localized expansion or heat-kernel control at the separated mesoscopic
-scales, together with a compatible-source lower bound.
+`27,29,85,124`. Weighted second moments now give a positive larger-subset bound,
+and the normalised overlap Gram matrix reduces mesoscopic localized charge to
+one-source capacity density and a spectral overlap constant. The revised split
+is exact low-order overlap control for microscopic subsets, followed by spectral
+or heat-kernel expansion at the separated mesoscopic scales, together with a
+compatible-source lower bound.
 
 ## Remaining tasks
 
@@ -158,15 +161,14 @@ scales, together with a compatible-source lower bound.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and prove a local capacity-normalizer contraction
-   at every cycle-minimum boundary so the shell-product theorem closes the full
-   trajectory.
-6. Prove one-source capacity, pair-overlap, and bounded higher-order control for
-   the microscopic Hall subsets, supplement it by expansion or heat-kernel
-   estimates at the separated mesoscopic scales, and combine the resulting
-   inverse-support constant with a compatible-source lower bound.
+   adjacent-shell fibre width, and prove a nonterminal local norm bound of `6/5`
+   or a nonuniform product fitting the exact terminal reserve.
+6. Prove one-source capacity and low-order overlap control for microscopic Hall
+   subsets, bound the normalised overlap Gram spectrum or an equivalent heat
+   kernel at mesoscopic scales, and combine the inverse-support constant with a
+   compatible-source lower bound.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bul`.
+The next available theorem identifier is `PP3bur`.
