@@ -39,106 +39,43 @@ The authoritative live ledger is split across:
 | CMR2598--2613 | T02/T18-derived global-family coverage, exact T04 clause ancestry, corrected T19--T21 roots, canonical 232+20 chamber census, T05 host support and typed chamber closure modes | PROVED as documentary T19/T20/T21; family exhaustiveness and every chamber theorem remain open | `docs/424-prime-power-global-family-exceptional-chamber-frontiers.md` |
 | CMR2614--2629 | Exact premise-to-target registry, T01--T21 dependency support records, no-premature-proof gate, reviewed premise semantics, stable artifact cores, noncircular per-premise bundles, contract/premise/target synchronization and aggregate T22--T31 bank | PROVED as documentary T22--T31 premise frontiers; every mathematical premise remains open until supplied and reviewed | `docs/425-prime-power-final-premise-frontiers.md` |
 | CMR2630--2647 | Canonical T32--T43 registry, exact immediate-target census, typed obligation/support/premise aggregation, six handoff frontiers, final review and dossier gates, stable root cores, exact three-artifact root bank and noncircular T43 dual binding | PROVED as documentary T32--T43 support/handoff/root frontiers; every handoff, review and root theorem remains open until genuinely proved and reviewed | `docs/426-prime-power-final-support-handoff-frontiers.md` |
+| CMR2648--2663 | Fixed canonical T19--T21 root registry, exact proof/research dependencies, obsolete support removal, one-time installation, compatibility-context idempotence, DAG and T32 stability, exact downstream impact and canonical v2 T43 endpoint | PROVED as cross-frontier dependency integrity; no mathematical target is closed | `docs/427-prime-power-canonical-frontier-roots.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The executable documentary work banks now reach all 43 atomic targets:
+The executable documentary work banks cover all 43 atomic targets. Canonical execution now begins by
+installing the exact T19--T21 roots:
 
 ```text
-T01 source statements
-T02 recurrence exhaustiveness
-T03 slot/candidate population
-T04 block/interface population
-T05 finite geometry and selectors
-T06 candidate policy
-T07 fate/state/transition semantics
-T08 active-row-family exhaustiveness
-T09 destroyed-resource model
-T10 routed-credit semantics
-T11 recurrent-block closure and common weights
-T12 recursive auxiliary semantics
-T13 cross-block state equivalence
-T14 component-scale synchronization
-T15 interface-row exhaustiveness
-T16 global-rank well-foundedness
-T17 global-state predicates
-T18 final row theorems
-T19 global-family exhaustiveness
-T20 exceptional zero-selector chamber closure
-T21 hard-core chamber closure
-T22 base-case premise
-T23 recurrence-exhaustiveness premise
-T24 invariant-preservation premise
-T25 operation-selection premise
-T26 resource-and-credit premise
-T27 block-and-auxiliary contraction premise
-T28 cross-block assembly premise
-T29 exceptional-case premise
-T30 termination premise
-T31 objective-translation premise
-T32 typed obligation artifacts
-T33 obligation-artifact support DAG
-T34 typed final-premise artifacts
-T35 base-domain handoff
-T36 nonbase recurrence handoff
-T37 invariant/resource handoff
-T38 branch-termination handoff
-T39 exceptional/hard-core handoff
-T40 objective-translation handoff
-T41 final handoff review
-T42 final dossier audit
-T43 root implication
+T19 <- T02, T18
+T20 <- T05, T18, T19
+T21 <- T05, T18, T19
+```
+
+and then validates the existing T01--T43 certificate schema through:
+
+```text
+scripts/check_prime_power_final_support_handoff_frontiers_v2.py
 ```
 
 Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
-## Exact T19 global-family frontier
+## Canonical-root audit
 
-T19 derives every expected parent from T02 and every final row from T18. Each row is rebound to the exact
-T04 case, clause and operation slot. Every proved parent coverage unit cites its T02 application artifact,
-all relevant T04 population artifacts and all relevant T18 row-theorem artifacts.
+The structural audit publishes:
 
-The aggregate bank synchronizes `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE` and `T19_GLOBAL_FAMILY` without using
-the independently assembled global integer family as its population root.
+- exact T19--T21 proof and research roots;
+- removal of legacy special-certificate support;
+- target-definition identity before, during and after the old correction contexts;
+- proof and research DAG acyclicity across all 43 targets;
+- stability of the derived T32 obligation-target census;
+- exact proof and research descendants of each corrected root; and
+- mandatory propagation of all three corrections to T43.
 
-## Exact T20/T21 chamber frontier
-
-The canonical worklist contains exactly 232 zero-selector and 20 hard-core chambers. Every closed chamber
-cites the exact T05 geometry artifacts for its host. Row-based and host-union modes additionally cite exact
-T18 row-theorem and T19 coverage artifacts. Direct and signature-infeasibility modes remain external
-chamber theorems but now have chamber-specific typed artifacts.
-
-Separate noncircular banks synchronize the T20 and T21 obligations and atomic targets. No chamber is
-mathematically closed merely because its metadata is complete.
-
-## Exact T22--T31 premise frontier
-
-Each final premise reconstructs its complete dependency-target census from T01--T21, including target
-result/completion digests, typed target artifacts and target artifact-bundle digests. Proved premises require
-one reviewed semantic implication and every dependency target effectively complete.
-
-Each per-premise bundle hashes stable premise and target artifact cores with the exact lower-target support.
-The outward premise and target locator/digest fields and ancestor certificate SHAs are excluded from the
-bundle definition. The resulting digest is then bound into both the typed premise artifact and the atomic
-T22--T31 target artifact.
-
-The checker synchronizes every premise with the fixed final contract and atomic execution DAG. It does not
-prove the lower targets, the dependency implication or the arbitrary-`n` statement.
-
-## Exact T32--T43 final support and root frontier
-
-The final checker derives every immediate atomic dependency and every external support surface for T32--T43.
-T32 aggregates the exact non-root obligation artifacts; T33 binds the stable support DAG; T34 aggregates all
-ten T22--T31 premise frontiers; T35--T40 bind the six typed handoff assertions; T41 and T42 synchronize the
-final handoff and dossier gates; and T43 binds stable root-obligation, root-closure, root-artifact and target
-cores.
-
-Every proved target requires one reviewed semantic certificate and a canonical
-`final-support-handoff-frontier://TARGET-ID` target proof pointer. T43 additionally requires exactly three root
-obligation artifacts and binds the same noncircular digest into all three. The checker proves documentary
-identity only, not any mathematical handoff or root implication.
+The certificate schema is unchanged. Certificates carrying former target-definition, result, completion or
+artifact-bundle hashes must be regenerated.
 
 ## Active frontier
 
