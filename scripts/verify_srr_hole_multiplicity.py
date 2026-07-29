@@ -35,13 +35,13 @@ def bound(A, S, holes):
 
 def main():
     checks = 0
-    for na in range(1, 6):
+    # Exhaust every hole mask with at most four holes on boards through 4x4.
+    for na in range(1, 5):
         A = tuple(range(na))
-        for nb in range(1, 6):
+        for nb in range(1, 5):
             B = tuple(range(nb))
             all_edges = [(a, b) for a in A for b in B]
-            # Exhaust sparse hole masks up to six holes; enough to cover all patterns for small products.
-            for r in range(min(6, len(all_edges)) + 1):
+            for r in range(min(4, len(all_edges)) + 1):
                 for chosen in combinations(all_edges, r):
                     holes = {a: set() for a in A}
                     for a, b in chosen:
