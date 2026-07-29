@@ -30,7 +30,7 @@ The authoritative live ledger is split across:
 | CMR2494--2501 | Corrected T05 execution plus exact T07 fate/state/transition claims | PROVED as documentary T07; semantic truth remains open | `docs/415-prime-power-fate-transition-state-frontier.md` |
 | CMR2502--2509 | Exact slot scores, registry-derived candidate sets and application-to-winner binding | PROVED as documentary T06; score truth remains open | `docs/416-prime-power-candidate-policy-frontier.md` |
 | CMR2510--2533 | Application-derived active rows, literal resources/scopes and exact routed-credit assignments | PROVED as documentary T08/T09/T10; simultaneous, physical and route semantics remain open | `docs/417-prime-power-transition-resource-frontier.md` |
-| CMR2534--2541 | Exact T11 row bridges, primitive common weights, recurrent support, closure and strict margins | PROVED as documentary T11; genuine block semantics remain open | `docs/418-prime-power-recurrent-block-closure-frontier.md` |
+| CMR2534--2541 | Exact T11 row bridges, primitive common weights, recurrent closure and margins | PROVED as documentary T11; genuine block semantics remain open | `docs/418-prime-power-recurrent-block-closure-frontier.md` |
 | CMR2542--2549 | Exact T12 recursive auxiliary closure, T07 edge support and selected-response stability | PROVED as documentary T12; expansion truth and target meaning remain open | `docs/419-prime-power-auxiliary-semantics-frontier.md` |
 | CMR2550--2565 | T04-derived local-state census, T07-supported identity links, canonical class trees, T11/T13-rooted scale components, rational cycle consistency and primitive weights | PROVED as documentary T13/T14; state identity and external scale semantics remain open | `docs/420-prime-power-state-equivalence-component-scale-frontiers.md` |
 | CMR2566--2573 | Corrected T15 roots, T04-derived interface rows, intercomponent multipliers, exact row arithmetic and T11/T12 exit dispositions | PROVED as documentary T15; genuine interface exhaustiveness remains open | `docs/421-prime-power-interface-exhaustiveness-frontier.md` |
@@ -50,6 +50,7 @@ The authoritative live ledger is split across:
 | CMR2752--2761 | Arbitrary-background pair-potential decomposition, collinear compression by supporting-line pivot balance, exact pure-line quadratic polynomials, sharp `K_-`/`K_30`/`K_03`/clean-pencil thresholds, negative and neutral exclusion, bounded collinear census and corruption rejection | PROVED as exact finite T21 arbitrary-cardinality collinear geometry; genuine recurrence collinearity, labelled semantics and all twenty chamber arguments remain open | `docs/435-prime-power-hard-core-collinear-backgrounds.md` |
 | CMR2762--2771 | Pivot-pencil partitions, exact arbitrary-background energy identity, integer pressure criterion, insertion/deletion marginal, per-pivot convexity, sharp global cardinality bounds with `K_-`/`K_+` equality cases, exact all-cardinality `Q4` feasibility, exhaustive small-set census and corruption rejection | PROVED as exact finite T21 arbitrary-background scalar geometry; genuine recurrence backgrounds, labelled semantics and all twenty chamber arguments remain open | `docs/436-prime-power-hard-core-pivot-line-energy.md` |
 | CMR2772--2781 | Exact upper/lower defect decompositions, quantitative off-support losses, sharp `2m` and `2m+3` extremal stability gaps, complete equality mechanisms, all-size sharp witnesses, exhaustive small-set census and corruption rejection | PROVED as exact finite T21 extremal scalar stability; genuine recurrence backgrounds, labelled semantics and all twenty chamber arguments remain open | `docs/437-prime-power-hard-core-extremal-stability.md` |
+| CMR2782--2793 | Exact eleven-host T03 projection, expected-slot ancestry, literal survivor validation, response-family binding, arbitrary-background energy recomputation, canonical selector-data sealing, open/populated/proved separation, population-gap manifest, readiness separation and ten corruption rejections | PROVED as an exact T03-to-T21 scalar consistency bridge; the parent rule, genuine populations and all semantic chamber proofs remain absent | `docs/438-prime-power-hard-core-population-bridge.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -65,21 +66,22 @@ scripts/check_prime_power_hard_core_two_point_classification.py
 scripts/check_prime_power_hard_core_collinear_backgrounds.py
 scripts/check_prime_power_hard_core_pivot_line_energy.py
 scripts/check_prime_power_hard_core_extremal_stability.py
+scripts/check_prime_power_hard_core_population_bridge.py --self-test
 scripts/check_prime_power_reproducible_runtime_manifest.py --self-test --manifest artifacts/current-frontier-runtime.json
 scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The hard-core checkers now prove one scalar exchange functional, the sharp two-background-point threshold, exact two-point and collinear geometry, an arbitrary-background pivot-line energy identity, sharp cardinality extremes and the first support-line stability gaps with classified equality. They do not supply genuine recurrence signatures or labelled chamber semantics. GitHub Actions is configured to run all six finite theorems and upload separate Python 3.10 and 3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The six hard-core theorem checkers prove finite scalar geometry and stability. The population bridge validates the exact T03/T21 interface but supplies no parent rule, slot population or chamber semantics. GitHub Actions is configured to run all six finite theorems, the bridge self-test and separate Python 3.10/3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
 1. Populate and prove every genuine T01 source statement and T02 recurrence record.
-2. Enter real T03/T04 data and prove T05 arbitrary-`n` coverage.
+2. Enter real T03/T04 data, including every genuine hard-core survivor background, and prove T05 arbitrary-`n` coverage.
 3. Prove every T06--T18 semantic and row theorem genuinely.
 4. Prove T19 global-family exhaustiveness for the actual recurrence.
 5. Supply and review all 232 T20 zero-selector chamber proofs.
-6. Populate genuine signatures and prove all 20 T21 semantic arguments, using the exact energy and stability theorems on each real survivor background.
+6. Use the bridge on every genuine hard-core T03 slot, then prove all 20 T21 semantic arguments.
 7. Supply and review all ten exact T22--T31 premise implications.
 8. Prove and review all six T35--T40 handoff arguments.
 9. Complete T41 review and T42 dossier sign-off.
