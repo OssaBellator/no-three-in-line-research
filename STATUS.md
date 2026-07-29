@@ -77,7 +77,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 python scripts/check_prime_power_canonical_frontier_roots.py --self-test
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/test_prime_power_current_frontier_regression.py
-python scripts/check_prime_power_import_smoke.py --self-test \
+python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
@@ -93,22 +93,22 @@ T21 <- T05, T18, T19
 
 ## Corrected runtime audit
 
-The original CMR2694/CMR2697 launcher used Python `-I` while claiming that `PYTHONHASHSEED` and
-`PYTHONDONTWRITEBYTECODE` controlled child processes. Because `-I` ignores `PYTHON*` variables, that deterministic
-environment claim was not established.
+The original `check_prime_power_import_smoke.py` CMR2694/CMR2697 launcher used Python `-I` while claiming that
+`PYTHONHASHSEED` and `PYTHONDONTWRITEBYTECODE` controlled child processes. Because `-I` ignores `PYTHON*`
+variables, that deterministic environment claim was not established.
 
 CMR2706--CMR2721 replace it with:
 
 ```text
 inherited PYTHON* removal
 exact PYTHONHASHSEED=0 and PYTHONDONTWRITEBYTECODE=1 installation
-python -B -s child startup
+python -B -S -s child startup with automatic site initialization disabled
 working-directory and third-party path removal
 two-child startup reproducibility probe
-per-module hash, bytecode, user-site and path gates
+per-module hash, bytecode, no-site, user-site and path gates
 source SHA-256 and byte-count records
 endpoint honesty evidence classes
-canonical schema-v1 JSON manifest with SHA-256 seal
+canonical schema-v1 JSON manifest with top-level manifest_sha256 seal
 six accepted controls and six rejected mutations
 separate Python 3.10 and 3.12 workflow artifacts
 ```
