@@ -19,4 +19,10 @@ The remaining geometric task is finite-type: for each of at most 510 signatures,
 bound its total packing mass across pair-safe covering rotations or convert a
 dense fixed-signature core into a new improving rotation or trade.
 
+The signature counts are exhaustively checked by
+
+```bash
+python scripts/check_boundary_conflict_signature_count.py
+```
+
 The next available theorem identifier is `PP3bwi`.
