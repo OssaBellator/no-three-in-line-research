@@ -76,6 +76,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_hard_core_extremal_stability.py
 
+      - name: Validate T03 hard-core population bridge
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_population_bridge.py --self-test
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
