@@ -53,18 +53,21 @@ Let `S=B_{<k}` be one endpoint-cost sublevel. Its Hall deficiency satisfies
 \boxed{
 \delta_k
 \le
+\max\left\{
+(|A|-|S|)_+,
 \max_{1\le x\le \min\{|A|,\mu_S\}}
 \left(
  x-|S|+\left\lfloor\frac{M_S}{x}\right\rfloor
-\right)_+.
+\right)_+
+\right\}.
 }
 \]
 
-If the maximum is zero, `S` supports a matching saturating `A`.
+If the displayed maximum is zero, `S` supports a matching saturating `A`.
 
 ### Proof
 
-Insert SRR2ag into the exact common-hole formula SRR2ac. Terms with `x>mu_S` have zero common-hole contribution, and are already nonpositive whenever `|S|>=|A|`; retaining only `x<=mu_S` gives the displayed safe bound. If it is zero, every Hall deficiency term vanishes. QED.
+Insert SRR2ag into the exact common-hole formula SRR2ac. For `x<=mu_S` use the mass bound. For `x>mu_S`, the common-hole term vanishes, and the largest remaining cardinality term is `( |A|-|S| )_+`. Taking the maximum of the two ranges proves the claim. QED.
 
 ## SRR2ai -- uniform endpoint-multiplicity criterion -- PROVED
 
@@ -75,10 +78,13 @@ Suppose every endpoint is excluded by at most `mu` sources and the threshold hol
 \delta_k
 \le
 \epsilon_k:=
+\max\left\{
+(|A|-|B_{<k}|)_+,
 \max_{1\le x\le \min\{|A|,\mu\}}
 \left(
  x-|B_{<k}|+\left\lfloor\frac{M_k}{x}\right\rfloor
-\right)_+.
+\right)_+
+\right\}.
 }
 \]
 
