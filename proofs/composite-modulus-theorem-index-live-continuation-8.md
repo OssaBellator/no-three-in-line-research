@@ -43,7 +43,7 @@ The authoritative live ledger is split across:
 | CMR2664--2675 | Branch-wide syntax inventory, exact 13/43 source census, canonical endpoint and honesty gates, document synchronization, two executable root self-tests, deterministic subprocesses and Python 3.10/3.12 continuous regression | PROVED as software/documentary regression infrastructure; no mathematical target is closed | `docs/428-prime-power-current-frontier-regression.md` |
 | CMR2676--2691 | Negative validator tests, pure literal-table checks, endpoint/document/subprocess mutation rejection, exact all-open 43-target fixture, seven fixture mutations and continuous negative validation | PROVED as validator and fixture infrastructure; no mathematical target is closed | `docs/429-prime-power-negative-regression-open-fixture.md` |
 | CMR2692--2705 | Fresh-process imports, bounded probes, exact import markers and AST-backed executable all-n-zero semantics | PROVED as runtime/honesty infrastructure except the original `-I` environment-control claim, which is explicitly superseded by CMR2706--CMR2712 | `docs/430-prime-power-isolated-import-honesty-audit.md` |
-| CMR2706--2721 | Corrected controlled launcher, scrubbed import paths, doubled runtime fingerprint, per-module source identity, endpoint evidence classes, sealed schema-v1 manifest, tamper tests and Python-version workflow artifacts | PROVED as reproducible runtime-manifest infrastructure; no mathematical target is closed | `docs/431-prime-power-reproducible-runtime-manifest.md` |
+| CMR2706--2721 | Corrected `-B -S -s` launcher, disabled site initialization, scrubbed import paths, doubled runtime fingerprint, per-module source identity, endpoint evidence classes, sealed schema-v1 manifest, tamper tests and Python-version workflow artifacts | PROVED as reproducible runtime-manifest infrastructure; no mathematical target is closed | `docs/431-prime-power-reproducible-runtime-manifest.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -53,7 +53,7 @@ The branch still does not prove the all-`n` conjecture.
 scripts/check_prime_power_canonical_frontier_roots.py --self-test
 scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
-scripts/check_prime_power_import_smoke.py --self-test --manifest artifacts/current-frontier-runtime.json
+scripts/check_prime_power_reproducible_runtime_manifest.py --self-test --manifest artifacts/current-frontier-runtime.json
 scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
