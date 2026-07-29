@@ -2,29 +2,32 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2721**, this branch contains exact documentary
+The no-three-in-line conjecture remains open. Through **CMR2733**, this branch contains exact documentary
 interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, negative validator coverage, an
-all-open fixture and a corrected reproducible runtime-manifest audit.
+all-open fixture, corrected reproducible runtime manifests and an explicit finite normal form for the side-four
+hard-core scalar selector.
 
-Every final checker, fixture and validation runner permanently reports or preserves:
+Every final checker, finite theorem checker, fixture and validation runner permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
 ```
 
-The branch still lacks the genuine source proofs, exhaustive recurrence theorem, complete populated construction,
-arbitrary-`n` geometry theorem, semantic proofs, global-family theorem, all chamber proofs, all premise
-implications, all handoff arguments, final mathematical review and the root implication to `D(n)=2n`.
+The branch still lacks genuine source proofs, an exhaustive recurrence theorem, the complete populated
+construction, arbitrary-`n` geometry, semantic row proofs, the global-family theorem, all 252 chamber arguments,
+all premise implications, all handoff arguments, final mathematical review and the root implication to
+`D(n)=2n`.
 
-A locator, digest, status flag, successful import, manifest, workflow artifact or complete metadata bank is not
-evidence that the underlying theorem is true.
+A locator, digest, affine halfspace, finite stress test, successful import, manifest or workflow artifact is not
+evidence that the underlying all-`n` theorem is true.
 
-## 2. Canonical execution and corrected runtime audit
+## 2. Canonical execution and validation
 
 Run:
 
 ```text
 python scripts/test_prime_power_current_frontier_regression.py
+python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -46,16 +49,10 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-The original `check_prime_power_import_smoke.py` CMR2694/CMR2697 launcher used `-I`, which ignores `PYTHON*`
-variables. CMR2706--CMR2721 replace it with an audited `-B -S -s` child launcher, inherited-`PYTHON*` removal,
-explicit seed and bytecode settings, disabled automatic site initialization and scrubbed third-party paths,
-doubled child-runtime fingerprints and a sealed schema-v1 manifest.
-
-Every module record contains its filename, source SHA-256 and byte count. Every endpoint record contains the
-source identity and exact AST honesty evidence classes. The manifest itself has a canonical SHA-256 seal.
-
-GitHub Actions is configured to write and upload separate Python 3.10 and Python 3.12 manifests. Inspect the
-actual workflow run and artifact before claiming that CI passed.
+The corrected runtime layer uses `-B -S -s`, removes inherited `PYTHON*` variables, scrubs third-party paths,
+records source identities and endpoint honesty evidence, and seals one schema-v1 manifest per Python version.
+The workflow also executes the finite hard-core exchange theorem. Inspect the actual workflow run and artifacts
+before claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
 
@@ -116,44 +113,87 @@ T02_RULE_EXHAUSTIVENESS + T18_ROW_THEOREMS
 For every T02 parent application, prove that the exact nonempty T18 row bank exhausts every genuine recurrence
 alternative and has the intended T04 source-clause interpretation.
 
-## 7. T20--T21: all 252 exceptional chambers
+## 7. T20: 232 zero-selector chambers
+
+Every zero-selector chamber needs its genuine T05 host geometry and a chamber-specific proof that the selected
+zero-rank-three response has the claimed destroyed-threshold, labelled-child, return, interface and recurrent-row
+semantics. Typed dispositions and affine inequalities do not establish those meanings.
+
+All 232 mathematical arguments remain open.
+
+## 8. T21: one scalar exchange functional, twenty semantic chambers
+
+The eleven positive-minimum side-four hosts have response families
 
 ```text
-232 zero-selector chambers + 20 hard-core chambers = 252 chambers
+9 hosts: Q1=(3,0,1,2), Q4=(3,2,1,0)
+2 hosts: Q4 only
 ```
 
-Every closed chamber needs exact T05 host geometry. Row-based modes additionally need exact T18 row theorems and
-T19 parent coverage. Direct and signature-infeasibility modes require chamber-specific statements and evidence.
-All 252 mathematical dispositions remain open.
+The two responses differ on one alternating four-cycle. On every two-response host define
 
-Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct.
+\[
+\Delta=d_{32}-d_{12}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}-5h_{x+y-3}-3.
+\]
 
-## 8. T22--T31: ten final premise implications
+Then
+
+```text
+Q1 is selected iff Delta <= 0
+Q4 is selected iff Delta > 0
+```
+
+and, because all coordinates are integral,
+
+\[
+Q_4\text{ is selected}
+\iff
+d_{32}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}
+\ge d_{12}+5h_{x+y-3}+4.
+\]
+
+Therefore the twenty scalar chambers use one nontrivial functional: nine weak `Q1` halfspaces, nine strict
+`Q4` halfspaces and two singleton-response full spaces.
+
+This reduces the finite selector calculation but closes no chamber. The next T21 work is concrete:
+
+1. populate each genuine survivor-background signature;
+2. evaluate the displayed functional on that signature;
+3. prove the destroyed-threshold and labelled child-vector consequences of the selected response;
+4. retain return, interface and recurrent-row terms;
+5. supply ordinary proof review for all twenty chambers.
+
+Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct. The two
+singleton `Q4` hosts remain irreducible on their current raw allowed-edge sets.
+
+## 9. T22--T31: ten final premise implications
 
 Each premise reconstructs its exact T01--T21 dependency-target census and requires one reviewed implication with
 explicit arbitrary-`n` scope. Stable premise and target artifact cores prevent circular outward hashes. The
 dependency interfaces exist; all ten mathematical implications remain open.
 
-## 9. T32--T43: typed aggregation, handoff and root implication
+## 10. T32--T43: typed aggregation, handoff and root implication
 
 T32--T34 aggregate genuine typed obligation and premise artifacts. T35--T40 require six ordinary induction
 handoff arguments. T41 requires final mathematical review. T42 requires dossier sign-off. T43 requires the
 reviewed implication from the global quotient and handoff to `D(n)=2n`.
 
-The canonical-root audit, all-open fixture, negative tests and runtime manifests prove only software/documentary
-consistency.
+The canonical-root audit, finite hard-core normal form, all-open fixture, negative tests and runtime manifests
+prove only their stated finite or software claims.
 
-## 10. Immediate execution order
+## 11. Immediate execution order
 
 1. Prove and seal high-use T01 source statements.
 2. Close every T02 case, clause, exclusion and global-parent record; prove recurrence exhaustiveness.
 3. Enter actual T03/T04 data.
 4. Prove T05 arbitrary-`n` coverage and every T06--T18 theorem.
 5. Prove genuine T19 global-family exhaustiveness.
-6. Prove all 252 T20/T21 chamber dispositions.
-7. Supply and review all ten T22--T31 premise implications.
-8. Prove all six T35--T40 handoff assertions.
-9. Complete T41 review and T42 dossier sign-off.
-10. Prove the T43 implication to `D(n)=2n`.
+6. Prove all 232 T20 zero-selector chamber arguments.
+7. Populate genuine signatures and prove all 20 T21 hard-core semantic chamber arguments using the exchange normal form.
+8. Supply and review all ten T22--T31 premise implications.
+9. Prove all six T35--T40 handoff assertions.
+10. Complete T41 review and T42 dossier sign-off.
+11. Prove the T43 implication to `D(n)=2n`.
 
-No documentary checker or runtime manifest substitutes for the missing mathematical proofs.
+No finite selector theorem, documentary checker or runtime manifest substitutes for the missing mathematical
+proofs.
