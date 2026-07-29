@@ -22,7 +22,7 @@ def pi_samples(rows):
         tuple(rows),
         tuple(reversed(rows)),
         tuple((i + 1) % n for i in rows),
-        tuple((2 * i) % n for i in rows) if n % 2 else tuple((3 * i) % n for i in rows),
+        tuple((i + 2) % n for i in rows),
     ]
 
 
@@ -31,6 +31,7 @@ def main():
     for n in range(2, 8):
         rows = tuple(range(n))
         for pi in pi_samples(rows):
+            assert sorted(pi) == list(rows)
             # Rotate the current image list to obtain a rowwise-disjoint second layer.
             rho = tuple(pi[(i + 1) % n] for i in rows)
             assert all(rho[i] != pi[i] for i in rows)
