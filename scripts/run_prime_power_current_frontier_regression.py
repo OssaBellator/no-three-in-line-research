@@ -55,6 +55,7 @@ FINITE_THEOREM_CHECKS = (
     "check_prime_power_hard_core_two_point_classification.py",
     "check_prime_power_hard_core_collinear_backgrounds.py",
     "check_prime_power_hard_core_pivot_line_energy.py",
+    "check_prime_power_hard_core_extremal_stability.py",
 )
 DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "README.md": (
@@ -62,31 +63,23 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2771",
+        "CMR2781",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
-        "check_prime_power_hard_core_exchange_normal_form.py",
-        "check_prime_power_hard_core_exchange_realisability.py",
-        "check_prime_power_hard_core_two_point_classification.py",
-        "check_prime_power_hard_core_collinear_backgrounds.py",
-        "check_prime_power_hard_core_pivot_line_energy.py",
+        *FINITE_THEOREM_CHECKS,
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2762--2771",
+        "CMR2772--2781",
         "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2771",
+        "CMR2781",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
-        "check_prime_power_hard_core_exchange_normal_form.py",
-        "check_prime_power_hard_core_exchange_realisability.py",
-        "check_prime_power_hard_core_two_point_classification.py",
-        "check_prime_power_hard_core_collinear_backgrounds.py",
-        "check_prime_power_hard_core_pivot_line_energy.py",
+        *FINITE_THEOREM_CHECKS,
         "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
@@ -137,13 +130,14 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "a88ddee378c70d2713734a836aa3c18683d6db193ebbb89d52921efa55efa4f3",
         "all_n_proved_by_checker = 0",
     ),
+    "docs/437-prime-power-hard-core-extremal-stability.md": (
+        "CMR2772--CMR2781",
+        "0bddec3bea04c1e38a6b3d11919d9f1f23566e6284644f37223a7c290b4a6131",
+        "all_n_proved_by_checker = 0",
+    ),
     ".github/workflows/current-frontier-regression.yml": (
         "actions/upload-artifact@v4",
-        "check_prime_power_hard_core_exchange_normal_form.py",
-        "check_prime_power_hard_core_exchange_realisability.py",
-        "check_prime_power_hard_core_two_point_classification.py",
-        "check_prime_power_hard_core_collinear_backgrounds.py",
-        "check_prime_power_hard_core_pivot_line_energy.py",
+        *FINITE_THEOREM_CHECKS,
         "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
@@ -201,15 +195,24 @@ def validate_target_frontier_literals(
     require(len(target_rows) == 43, "atomic target table must contain exactly 43 targets")
     require(len(frontiers) == 13, "frontier table must contain exactly 13 groups")
     require(all(isinstance(key, str) and key for key in frontiers), "frontier IDs must be nonempty strings")
-    require(all(isinstance(value, str) and value for value in frontiers.values()), "frontier titles must be nonempty strings")
+    require(
+        all(isinstance(value, str) and value for value in frontiers.values()),
+        "frontier titles must be nonempty strings",
+    )
 
     target_ids: list[str] = []
     frontier_ids: list[str] = []
     for index, row in enumerate(target_rows, start=1):
-        require(isinstance(row, tuple) and len(row) == 10, f"target row {index}: exact ten-field tuple required")
+        require(
+            isinstance(row, tuple) and len(row) == 10,
+            f"target row {index}: exact ten-field tuple required",
+        )
         target_id, frontier_id = row[0], row[1]
         require(isinstance(target_id, str), f"target row {index}: string target ID required")
-        require(target_id.startswith(f"T{index:02d}_"), f"target row {index}: sequential target ID required")
+        require(
+            target_id.startswith(f"T{index:02d}_"),
+            f"target row {index}: sequential target ID required",
+        )
         require(frontier_id in frontiers, f"target {target_id}: unknown frontier {frontier_id}")
         target_ids.append(target_id)
         frontier_ids.append(frontier_id)
@@ -244,7 +247,11 @@ def endpoint_audit(scripts_dir: Path) -> list[str]:
     return audited
 
 
-def validate_document_markers(relative_path: str, text: str, markers: tuple[str, ...]) -> None:
+def validate_document_markers(
+    relative_path: str,
+    text: str,
+    markers: tuple[str, ...],
+) -> None:
     """Reject an empty synchronized document or any missing required marker."""
     require(text.strip(), f"{relative_path}: empty document")
     for marker in markers:
@@ -265,7 +272,11 @@ def subprocess_environment() -> dict[str, str]:
     return environment
 
 
-def run_script(root: Path, script: str, arguments: tuple[str, ...] = ()) -> dict[str, Any]:
+def run_script(
+    root: Path,
+    script: str,
+    arguments: tuple[str, ...] = (),
+) -> dict[str, Any]:
     command = [sys.executable, str(root / "scripts" / script), *arguments]
     completed = subprocess.run(
         command,
