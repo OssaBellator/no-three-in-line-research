@@ -34,7 +34,6 @@ def canonical_path(alpha):
         for j in reversed(cyc[1:]):
             state = swap(state, p, j)
             path.append(state)
-    # The convention above may produce the inverse. Reverse cycle direction if needed.
     if state != tuple(alpha):
         state = tuple(range(len(alpha)))
         path = [state]
@@ -59,32 +58,35 @@ def main():
             cyc = cycles(alpha)
             if moved == 0:
                 continue
-            path = canonical_path(alpha)
-            assert len(path) - 1 == moved - len(cyc)
-            assert len(path) <= moved
+            P = canonical_path(alpha)
+            assert len(P) - 1 == moved - len(cyc)
+            assert len(P) <= moved
 
             K = 5
-            assert K * len(path) <= K * moved
-            assert 2 * moved * (len(path) - 1) <= 2 * moved * (moved - 1)
+            assert K * len(P) <= K * moved
+            assert 2 * moved * (len(P) - 1) <= 2 * moved * (moved - 1)
 
-            potential = {state: sum((i + 1) * state[i] for i in range(n)) for state in path}
+            potential = {state: sum((i + 1) * state[i] for i in range(n)) for state in P}
             cob = lambda x, y: potential[y] - potential[x]
-            assert path_charge(path, cob) == potential[path[-1]] - potential[path[0]]
+            assert path_charge(P, cob) == potential[P[-1]] - potential[P[0]]
 
-            # Compare with a direct two-edge detour when available.
-            if len(path) >= 2:
-                P = path
-                Q = [path[0], path[-1]]
-                # Define one antisymmetric charge on the used directed edges.
-                def charge(x, y):
-                    return sum(x) - sum(y) + (hash(x) % 7) - (hash(y) % 7)
-                cp = path_charge(P, charge)
-                cq = path_charge(Q, charge)
-                closed = P + list(reversed(Q[:-1]))
-                assert cp - cq == path_charge(closed, charge)
+            # Insert one legal swap/backtrack detour to obtain a second legal path Q.
+            detour = swap(P[0], 0, 1)
+            Q = [P[0], detour, P[0]] + P[1:]
+            assert Q[-1] == P[-1]
+
+            def charge(x, y):
+                # Lexicographic orientation of each undirected transposition edge.
+                return 1 if x < y else -1
+
+            assert all(charge(y, x) == -charge(x, y) for x, y in zip(Q, Q[1:]))
+            cp = path_charge(P, charge)
+            cq = path_charge(Q, charge)
+            closed = P + list(reversed(Q[:-1]))
+            assert cp - cq == path_charge(closed, charge)
             checks += 1
 
-    print(f"verified {checks} canonical paths and history identities")
+    print(f"verified {checks} canonical paths and legal history identities")
 
 
 if __name__ == "__main__":
