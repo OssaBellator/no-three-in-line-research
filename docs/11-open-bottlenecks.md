@@ -2,10 +2,9 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2733**, this branch contains exact documentary
-interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, negative validator coverage, an
-all-open fixture, corrected reproducible runtime manifests and an explicit finite normal form for the side-four
-hard-core scalar selector.
+The no-three-in-line conjecture remains open. Through **CMR2741**, this branch contains exact documentary
+interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, corrected runtime manifests, one
+explicit hard-core exchange functional and a sharp background-cardinality theorem for both scalar halfspaces.
 
 Every final checker, finite theorem checker, fixture and validation runner permanently reports or preserves:
 
@@ -18,8 +17,8 @@ construction, arbitrary-`n` geometry, semantic row proofs, the global-family the
 all premise implications, all handoff arguments, final mathematical review and the root implication to
 `D(n)=2n`.
 
-A locator, digest, affine halfspace, finite stress test, successful import, manifest or workflow artifact is not
-evidence that the underlying all-`n` theorem is true.
+A locator, digest, affine halfspace, finite witness, stress test, successful import, manifest or workflow artifact
+is not evidence that the underlying all-`n` theorem is true.
 
 ## 2. Canonical execution and validation
 
@@ -28,6 +27,7 @@ Run:
 ```text
 python scripts/test_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
+python scripts/check_prime_power_hard_core_exchange_realisability.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -51,8 +51,8 @@ T21 <- T05, T18, T19
 
 The corrected runtime layer uses `-B -S -s`, removes inherited `PYTHON*` variables, scrubs third-party paths,
 records source identities and endpoint honesty evidence, and seals one schema-v1 manifest per Python version.
-The workflow also executes the finite hard-core exchange theorem. Inspect the actual workflow run and artifacts
-before claiming CI success.
+The workflow executes both finite hard-core theorems. Inspect the actual workflow run and artifacts before
+claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
 
@@ -121,7 +121,7 @@ semantics. Typed dispositions and affine inequalities do not establish those mea
 
 All 232 mathematical arguments remain open.
 
-## 8. T21: one scalar exchange functional, twenty semantic chambers
+## 8. T21: one functional, both halfspaces realizable
 
 The eleven positive-minimum side-four hosts have response families
 
@@ -130,38 +130,58 @@ The eleven positive-minimum side-four hosts have response families
 2 hosts: Q4 only
 ```
 
-The two responses differ on one alternating four-cycle. On every two-response host define
+For every two-response host,
 
 \[
-\Delta=d_{32}-d_{12}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}-5h_{x+y-3}-3.
+\Delta=d_{32}-d_{12}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}-5h_{x+y-3}-3,
 \]
 
-Then
+with exact deterministic selection
 
 ```text
-Q1 is selected iff Delta <= 0
-Q4 is selected iff Delta > 0
+Q1 iff Delta <= 0
+Q4 iff Delta > 0
 ```
 
-and, because all coordinates are integral,
+and integer threshold
 
 \[
-Q_4\text{ is selected}
-\iff
+Q_4\iff
 d_{32}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}
 \ge d_{12}+5h_{x+y-3}+4.
 \]
 
-Therefore the twenty scalar chambers use one nontrivial functional: nine weak `Q1` halfspaces, nine strict
-`Q4` halfspaces and two singleton-response full spaces.
+The twenty scalar chambers therefore use one nontrivial functional: nine weak `Q1` halfspaces, nine strict `Q4`
+halfspaces and two singleton-response full spaces.
 
-This reduces the finite selector calculation but closes no chamber. The next T21 work is concrete:
+### Sharp realisability result
 
-1. populate each genuine survivor-background signature;
-2. evaluate the displayed functional on that signature;
-3. prove the destroyed-threshold and labelled child-vector consequences of the selected response;
+For an outside-grid background `B`, pair-count terms vanish when `|B|<=1`. All intersections of the four relevant
+lines lie in the forbidden response grid, so one legal point contributes at most the positive coefficient `3`.
+Therefore
+
+\[
+|B|\le1\Longrightarrow\Delta(B)\le0.
+\]
+
+The lower bound is attained sharply:
+
+```text
+B=empty: Delta=-3, strict Q1
+B={(-1,-2)}: Delta=0, tie Q1
+B={(-1,-2),(4,3)}: Delta=5, strict Q4
+```
+
+Thus two background points are necessary and sufficient for strict `Q4` scalar selection. Both halfspaces are
+legally realizable; feasibility alone cannot eliminate either response.
+
+This sharpens the next T21 work:
+
+1. populate every genuine survivor background produced by the real recurrence;
+2. evaluate `Delta` exactly for each resulting signature;
+3. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
 4. retain return, interface and recurrent-row terms;
-5. supply ordinary proof review for all twenty chambers.
+5. review all twenty host-labelled semantic arguments.
 
 Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct. The two
 singleton `Q4` hosts remain irreducible on their current raw allowed-edge sets.
@@ -178,8 +198,8 @@ T32--T34 aggregate genuine typed obligation and premise artifacts. T35--T40 requ
 handoff arguments. T41 requires final mathematical review. T42 requires dossier sign-off. T43 requires the
 reviewed implication from the global quotient and handoff to `D(n)=2n`.
 
-The canonical-root audit, finite hard-core normal form, all-open fixture, negative tests and runtime manifests
-prove only their stated finite or software claims.
+The finite hard-core theorems, canonical-root audit, all-open fixture, negative tests and runtime manifests prove
+only their stated finite or software claims.
 
 ## 11. Immediate execution order
 
@@ -189,7 +209,7 @@ prove only their stated finite or software claims.
 4. Prove T05 arbitrary-`n` coverage and every T06--T18 theorem.
 5. Prove genuine T19 global-family exhaustiveness.
 6. Prove all 232 T20 zero-selector chamber arguments.
-7. Populate genuine signatures and prove all 20 T21 hard-core semantic chamber arguments using the exchange normal form.
+7. Populate genuine signatures and prove all 20 T21 semantic arguments on both realizable scalar halfspaces.
 8. Supply and review all ten T22--T31 premise implications.
 9. Prove all six T35--T40 handoff assertions.
 10. Complete T41 review and T42 dossier sign-off.
