@@ -84,17 +84,22 @@ no-three-in-line conjecture.
 | PP3bui--PP3buk | Reverse-column norms multiply across cycle-minimum shells, reducing full clean-macro charge to local adjacent-shell bounds; a common local constant `rho<1` yields charge at most `rho^h` | PROVED | `docs/382-shellwise-reverse-column-composition-for-clean-macro-charge.md` |
 | PP3bul--PP3bun | Weighted second moments give a positive union-capacity bound; normalised overlap Gram spectra reduce localized Hall charge to one-source capacity density and a spectral congestion constant | PROVED | `docs/383-weighted-second-moment-spectral-overlap-localized-hall.md` |
 | PP3buo--PP3buq | Exact terminal contraction leaves reciprocal expansion reserves; a common nonterminal-shell bound `6/5` would keep the full audited horizons contractive | PROVED / VERIFIED FINITELY (CONDITIONAL ON NONTERMINAL BOUNDS) | `docs/384-exact-terminal-shell-expansion-reserves-through-m10.md` |
+| PP3bur--PP3but | The boundary XOR system is a labelled constraint graph of rank `n-r`, with at most eight solutions; exact minimum recleaning and `T`-only feasibility are linear-time propagation problems | PROVED | `docs/385-boundary-graph-rank-and-linear-time-exact-recleaning.md` |
+| PP3buu--PP3buw | Gershgorin row sums, pair coherence, and sparse overlap degree give directly combinatorial upper bounds for the spectral localized-Hall constant | PROVED | `docs/386-gershgorin-coherence-criteria-for-spectral-hall-localization.md` |
+| PP3bux--PP3buz | Total positive nonterminal-shell excess below `2/5` would keep every audited macro horizon contractive; exact products credit contractive shells multiplicatively | PROVED / VERIFIED FINITELY (CONDITIONAL ON NONTERMINAL BOUNDS) | `docs/387-positive-excess-and-compensated-shell-budgets.md` |
 
 ## Current exact frontier
 
 The parity coordinate no longer requires global sign optimization in the
 audited range. Any locally coupled clean repair must cover every active
-violated edge, and target recleaning is exactly the reduced boundary XOR
-system. Static covering of a `lambda`-edge residue is fixed-parameter tractable
-in `2^lambda poly(m)` time. At `m=10`, every one of the `12,786,720` optimal
-positive signed states has a direct covering clean rotation changing at most
-two signs. The missing asymptotic step is existence of useful covering
-successors with uniformly low boundary cost.
+violated edge, and target recleaning is a labelled boundary constraint graph.
+If that graph has `n` variables and `r` connected components, its rank is
+`n-r`, its affine solution count is `2^r<=8`, and exact minimum owner-Hamming
+cost plus `T`-only feasibility are computable by one linear-time propagation.
+At `m=10`, every one of the `12,786,720` optimal positive signed states has a
+direct covering clean rotation changing at most two signs. The missing
+asymptotic step is now purely structural: existence of useful covering
+successors whose boundary graph has uniformly low recleaning cost.
 
 The exact two-owner atomic defect can be decreased while preserving
 target-optimality and fixed signs through `m=9`, but complete atomic descent is
@@ -130,29 +135,31 @@ m=10: maximum macro distance 5.
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
 clean fibre has width at most one. Reverse-column norms multiply across the
-cycle-minimum shells. More sharply, the exact terminal factors leave enough
-reserve that every nonterminal shell could have norm as large as `6/5` and the
-complete audited horizons would still contract; the tight `m=9` composed bound
-is `0.9910975941...`. Thus the next all-shell audit need not prove contraction
-at each boundary. It may instead prove a common `6/5` bound, or any nonuniform
-product below the exact reciprocal terminal reserve, while the geometric
-frontier remains cycle-minimum depth and adjacent-fibre width.
+cycle-minimum shells. The exact terminal factors permit three nested analytic
+targets: an exact nonuniform product below the reciprocal reserve, a common
+per-shell ceiling `6/5`, or the amortized condition that total positive excess
+`sum_j max(kappa_j-1,0)` is at most `2/5`. The last gives full-horizon bounds
+`0.64575...`, `0.95591...`, and `0.25868...` at `m=8,9,10`, conditionally on the
+nonterminal factors. Thus local expansion is allowed and contractive shells can
+be credited, while the geometric frontier remains cycle-minimum depth and
+adjacent-fibre width.
 
 Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
 supported signed flaws have proper bottlenecks. For the 43 count maxima in the
 intermittent window, 7 of the 13 constant-one violations are witnessed by at
 most three sources and 9 by at most six; the other four use subset sizes
-`27,29,85,124`. Weighted second moments now give a positive larger-subset bound,
-and the normalised overlap Gram matrix reduces mesoscopic localized charge to
-one-source capacity density and a spectral overlap constant. The revised split
-is exact low-order overlap control for microscopic subsets, followed by spectral
-or heat-kernel expansion at the separated mesoscopic scales, together with a
-compatible-source lower bound.
+`27,29,85,124`. Weighted second moments give a positive larger-subset bound, and
+Gershgorin now replaces the normalised overlap Gram eigenvalue by a maximum
+normalised overlap row sum. Pair coherence gives a `(k-1)mu` microscopic bound,
+while sparse overlap degree can remain bounded on mesoscopic subsets. The
+remaining Hall task is therefore a direct one-source capacity and normalized
+overlap-degree estimate, plus a compatible-source lower bound.
 
 ## Remaining tasks
 
-1. Prove asymptotic existence of pair-safe covering rotations with low-cost
-   reduced boundary solutions.
+1. Prove asymptotic existence of pair-safe covering rotations whose labelled
+   boundary graph has a uniformly low-cost propagated solution, ideally with all
+   boundary-component variables zero.
 2. Prove a geometric Hall bound, or construct explicit balanced weights, for
    target-optimal strict repair throughout the logarithmic frustration window.
 3. Generalize the sharp `m=10` degree/layer coincidence to a uniform multi-layer
@@ -161,14 +168,15 @@ compatible-source lower bound.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and prove a nonterminal local norm bound of `6/5`
-   or a nonuniform product fitting the exact terminal reserve.
-6. Prove one-source capacity and low-order overlap control for microscopic Hall
-   subsets, bound the normalised overlap Gram spectrum or an equivalent heat
-   kernel at mesoscopic scales, and combine the inverse-support constant with a
+   adjacent-shell fibre width, and prove either a nonterminal `6/5` ceiling, a
+   total positive excess budget `2/5`, or a sharper compensated product fitting
+   the exact terminal reserve.
+6. Prove one-source capacity and pair coherence through the microscopic Hall
+   scale, bound normalized overlap row sums or sparse overlap degree at
+   mesoscopic scales, and combine the resulting inverse-support constant with a
    compatible-source lower bound.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bur`.
+The next available theorem identifier is `PP3bva`.
