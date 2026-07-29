@@ -60,7 +60,7 @@ Use OP4as and compare the two nonnegative totals. A positive sum forces one posi
 
 ## OP4au -- finite return-ticket criterion -- PROVED UNDER THE SCORE CONTRACT
 
-Assume every negative traversal score has one least physical cause from a finite obstruction dictionary, and every positive traversal consumes current demand or closes an absorber. Then a full reset-free return of the normalized profile has one exact continuation:
+Assume every debt term `D_j` is assigned to one least physical cause from a finite obstruction dictionary, and every positive traversal consumes current demand or closes an absorber. Then a full reset-free return of the normalized profile has one exact continuation:
 
 1. a positive-score traversal pays or absorbs;
 2. one obstruction class carries aggregate debt at least
@@ -71,11 +71,11 @@ Assume every negative traversal score has one least physical cause from a finite
    \]
    when the obstruction dictionary has size `K`;
 3. an exact balanced orbit has `G_j=0` for every phase and may receive one capacity-one return ticket;
-4. the score decomposition or fixed-profile contract fails at one named physical field.
+4. the score decomposition, debt classification or fixed-profile contract fails at one named physical field.
 
 ### Proof
 
-Apply OP4at. In the debt-dominant branch, pigeonhole the aggregate debt over the `K` obstruction classes. In the equal branch, if some score is positive then branch 1 applies; otherwise all scores are zero. QED.
+Apply OP4at. In the debt-dominant branch, pigeonhole the classified aggregate debt over the `K` obstruction classes. In the equal branch, if some score is positive then branch 1 applies; otherwise all scores are zero. QED.
 
 ## OP4av -- corrected OP5 frontier -- PROVED
 
