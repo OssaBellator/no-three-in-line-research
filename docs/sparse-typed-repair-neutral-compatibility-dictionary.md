@@ -6,7 +6,7 @@ Fix selected typed pair/completion repair incidences `R` and live boundary-neutr
 
 The preceding neutral-conservation block supplies an injective one-use debit map `d:R->S` with live tokens.
 
-## SAS5mn--SAS5mr
+## SAS5ms--SAS5mw
 
 1. Complete sign, profile, legality, move and physical-source addresses determine compatibility without hidden state.
 2. The stored graph is exact iff `E={(r,s):Compat(r,s)}`.
