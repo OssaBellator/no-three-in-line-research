@@ -52,7 +52,13 @@ The potential differences telescope. QED.
 
 ## SAS5hz -- exact cycle-defect router -- PROVED
 
-Let `P` be the original swap path and `Q` the canonical path with the same endpoints. For an arbitrary transition charge `c`,
+Let `P` be the original swap path and `Q` the canonical path with the same endpoints. Suppose the signed edge charge is antisymmetric:
+
+\[
+c(M',M)=-c(M,M').
+\]
+
+Then
 
 \[
 \boxed{C(P)-C(Q)=C(P\cdot\overline Q),}
@@ -65,11 +71,12 @@ Therefore one of the following holds:
 1. `c` is certified as a coboundary and canonical replacement preserves it;
 2. the closed-walk circulation is zero for this word and replacement is charge-safe;
 3. one nonzero cycle defect is returned as the exact history-dependence witness;
-4. one guard is not state-local because it refers to an earlier occurrence, chosen path, consumed donor or transition lineage.
+4. antisymmetry fails on one directed swap edge;
+5. one guard is not state-local because it refers to an earlier occurrence, chosen path, consumed donor or transition lineage.
 
 ### Proof
 
-Reverse-path charges subtract the canonical path sum, so concatenation gives the displayed identity. A coboundary has zero circulation on every closed walk by SAS5hy. QED.
+Antisymmetry makes the reversed-path charge equal to the negative canonical path sum, so concatenation gives the displayed identity. A coboundary has zero circulation on every closed walk by SAS5hy. QED.
 
 ## SAS5ia -- complete word-length-free audit -- PROVED UNDER THE LOCAL CONTRACT
 
@@ -85,7 +92,7 @@ has a canonical audit using at most
 \boxed{2r(r-1)+Kr}
 \]
 
-atomic structural/guard evaluations, plus endpoint evaluation of each potential. Any remaining failure is one structural atom, one state-local guard, one nonzero cycle defect, or one explicitly history-dependent field.
+atomic structural/guard evaluations, plus endpoint evaluation of each potential. Any remaining failure is one structural atom, one state-local guard, one nonzero cycle defect, one antisymmetry defect, or one explicitly history-dependent field.
 
 ## Corrected SAS6 frontier
 
@@ -93,4 +100,4 @@ Arbitrary word length is now removed from structural and state-local nonstructur
 
 ## Finite check
 
-`scripts/verify_sparse_state_local_guard_compression.py` enumerates small permutation paths, verifies canonical guard-count bounds, telescoping endpoint charges and the original-versus-canonical cycle-defect identity.
+`scripts/verify_sparse_state_local_guard_compression.py` enumerates small permutation paths, verifies canonical guard-count bounds, telescoping endpoint charges and the antisymmetric original-versus-canonical cycle-defect identity.
