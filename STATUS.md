@@ -12,11 +12,11 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2781**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2793**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
-Every final checker, finite theorem checker, fixture, runtime manifest and branch-wide regression permanently
-reports or preserves:
+Every final checker, finite theorem checker, population bridge, fixture, runtime manifest and branch-wide
+regression permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -29,8 +29,8 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
 | T01 | literal source statements, hashes and sealed source artifacts | genuine source statements remain unproved/unpopulated |
-| T02 | cases, clauses, axes, exclusions and global-parent applications | genuine recurrence exhaustiveness remains open |
-| T03 | open/populated/proved slot and candidate payloads | actual complete population remains absent |
+| T02 | cases, clauses, axes, exclusions and global-parent applications | the actual parent rule and genuine recurrence exhaustiveness remain open |
+| T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete population, including survivor backgrounds, remains absent |
 | T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
 | T05 | exact finite geometry and selector arithmetic | arbitrary-`n` coverage remains open |
 | T06 | exact slot scores, candidate sets and deterministic winners | score theorems and intended policy remain open |
@@ -48,7 +48,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | T18 | T12/T15-derived final rows and exact predicate multisets | row theorems and fixed-offset meaning remain open |
 | T19 | T02/T18-derived parent-to-final-row coverage with T04 clause ancestry | genuine global-family exhaustiveness remains open |
 | T20 | exact 232 zero-selector chamber dispositions with typed host/row support | every zero-selector chamber proof remains open until supplied and reviewed |
-| T21 | exact 20 hard-core chambers, one exchange functional, exact two-point/collinear/arbitrary-background energy, and sharp extremal stability | genuine recurrence signatures, labelled semantics and all 20 chamber arguments remain open |
+| T21 | exact 20 hard-core chambers, arbitrary-background energy and stability, and an exact T03 scalar bridge | genuine recurrence populations, labelled semantics and all 20 chamber arguments remain open |
 | T22 | exact T01 dependency census and base-case premise bundle | the complete base-domain theorem remains open |
 | T23 | exact T02/T19 dependency census and recurrence premise bundle | the nonbase recurrence-exhaustiveness implication remains open |
 | T24 | exact T05/T07 dependency census and invariant premise bundle | invariant preservation remains open |
@@ -59,7 +59,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | T29 | exact T20/T21 dependency census and exceptional premise bundle | all 252 chamber theorems remain open |
 | T30 | exact T11/T16/T18 dependency census and termination premise bundle | genuine branch termination remains open |
 | T31 | exact T12/T16/T18--T21 dependency census and translation bundle | translation to `D(n)=2n` remains open |
-| T32 | exact non-root obligation-to-target census and typed artifact-bank aggregation | genuine obligation proofs remain open with their lower mathematics |
+| T32 | exact non-root obligation-to-target census and typed artifact aggregation | genuine obligation proofs remain open with their lower mathematics |
 | T33 | exact stable obligation-artifact support DAG surface | acyclicity metadata does not prove semantic sufficiency |
 | T34 | exact aggregation of all ten T22--T31 premise artifacts and bundles | every final premise remains mathematically open |
 | T35 | exact base-domain assertion, premise support and typed handoff bundle | the base handoff argument remains open |
@@ -84,11 +84,15 @@ python scripts/check_prime_power_hard_core_two_point_classification.py
 python scripts/check_prime_power_hard_core_collinear_backgrounds.py
 python scripts/check_prime_power_hard_core_pivot_line_energy.py
 python scripts/check_prime_power_hard_core_extremal_stability.py
+python scripts/check_prime_power_hard_core_population_bridge.py --self-test
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
+
+Every runtime artifact contains a literal `manifest_sha256` seal. A manifest records validation execution and does not
+constitute a proof certificate.
 
 Canonical target roots remain:
 
@@ -98,148 +102,108 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-## T21 hard-core exchange normal form
+## Exact T21 scalar geometry
 
-The eleven positive-minimum side-four hosts have exactly two response-family types:
-
-```text
-9 hosts: Q1=(3,0,1,2) and Q4=(3,2,1,0)
-2 hosts: Q4 only
-```
-
-For the nine two-response hosts,
+For the nine two-response hard-core hosts,
 
 \[
-\Delta=d_{32}-d_{12}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}-5h_{x+y-3}-3,
+\Delta(B)=E_+(B)-E_-(B)+W(B)-3,
 \]
 
-with deterministic selection
+and
 
 ```text
 Q1 selected iff Delta <= 0
 Q4 selected iff Delta > 0
 ```
 
-or, integrally,
+The remaining two hard-core hosts admit only `Q4`.
+
+For every finite legal background with \(m=|B|\),
 
 \[
-Q_4\text{ selected}
-\iff
-d_{32}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}
-\ge d_{12}+5h_{x+y-3}+4.
+-(m+1)(m+3)\le\Delta(B)\le(m-1)(m+3).
 \]
 
-Thus the twenty scalar chambers are nine copies of each halfspace plus two singleton-response full spaces.
+The upper equality is exactly support on \(K_-:x-y-1=0\), and the lower equality is exactly support on
+\(K_+:x+y-3=0\), apart from the empty background.
 
-## Sharp realisability, two-point and collinear geometry
-
-No legal background with at most one point selects `Q4`, while two points suffice. For exactly two points, strict
-`Q4` occurs precisely in the double-`K_-` family with `Delta=5`, or in the mixed `K_-`/`K_30` or `K_-`/`K_03`
-family whose joining line avoids both negative pivots, where `Delta=1`.
-
-For a finite legal background `B` collinear on a line `L`,
+The exact first stability gaps are:
 
 \[
-\Delta(B)=\beta(L)\binom{|B|}{2}+\sum_{x\in B}\omega(x)-3.
+B\nsubseteq K_-
+\Longrightarrow
+\Delta(B)\le(m-1)(m+3)-2m,
 \]
-
-The exact pure and clean thresholds are:
-
-| Supporting-line family | Exact `Delta` | Strict-`Q4` threshold |
-|---|---:|---:|
-| `K_-` | `(m-1)(m+3)` | `m>=2` |
-| `K_30` | `(m-2)(m+3)/2` | `m>=3` |
-| `K_03` | `(m-2)(m+3)/2` | `m>=3` |
-| clean positive-pivot line | `m(m-1)/2-3` | `m>=4` |
-| `K_+` | `-(m+1)(m+3)` | never |
-| clean negative-pivot line | `-m(m-1)/2-3` | never |
-| clean neutral line | `-3` | never |
-
-## Arbitrary-background pivot-line energy
-
-For any finite legal background `B`, partition its points by the line through each of the two positive and two
-negative pivots. Let `E_+(B)` and `E_-(B)` be the corresponding sums of within-pencil pair counts, and let
-`W(B)` be the signed occupancy weight of the four relevant lines. Then
 
 \[
-\boxed{\Delta(B)=E_+(B)-E_-(B)+W(B)-3.}
+B\nsubseteq K_+
+\Longrightarrow
+\Delta(B)\ge-(m+1)(m+3)+2m+3.
 \]
 
-The exact integer selector is
+These finite statements evaluate and constrain any supplied background. They do not supply one.
 
-\[
-Q_4\text{ selected}\iff E_+(B)+W(B)\ge E_-(B)+4.
-\]
+## T03 hard-core population bridge
 
-Insertion of a legal point `x` has marginal
+The branch now contains:
 
-\[
-\Delta(B\cup\{x\})-\Delta(B)=\omega(x)+\sum_{y\in B}\chi(x,y).
-\]
+```text
+python scripts/check_prime_power_hard_core_population_bridge.py --self-test
+```
 
-For every `m=|B|`,
+Given an exact T03 certificate, the bridge:
 
-\[
-\boxed{-(m+1)(m+3)\le\Delta(B)\le(m-1)(m+3).}
-\]
+1. identifies slots whose independently expected host is one of the eleven hard-core hosts;
+2. validates literal, distinct, outside-grid `survivor_background` points;
+3. requires the exact host response family;
+4. recomputes both pivot energies, the signed point weight and `Delta`;
+5. requires a canonical sealed `selector_data` subrecord;
+6. keeps `open`, `populated`, `proved`, scalar-ready and T03-proved states separate.
 
-The upper equality is attained exactly by legal backgrounds on `K_-`, and the lower equality exactly by legal
-backgrounds on `K_+` (apart from the empty background, where both formulas give `-3`). Therefore strict `Q4` is
-realisable at cardinality `m` exactly when `m>=2`.
+The bridge contract permanently records:
 
-## Sharp extremal stability
+```text
+actual_parent_rule_present = 0
+actual_t03_population_supplied_by_bridge = 0
+t21_semantic_chambers_proved = 0
+all_n_proved_by_checker = 0
+```
 
-Write
+Its self-test uses eleven hard-core fixture slots, accepts both `Q1` and `Q4` scalar regimes, and rejects ten
+independent corruptions. The bridge contract digest is:
 
-\[
-U_m=(m-1)(m+3),\qquad L_m=-(m+1)(m+3).
-\]
+```text
+c7773e0f18779f6fa89db7d31e802c281e4e2618e60096a9a3d86471d08d528c
+```
 
-The upper and lower defects decompose into nonnegative energy and weight terms. If a nonempty background is not
-fully supported on `K_-`, then
-
-\[
-\boxed{\Delta(B)\le U_m-2m.}
-\]
-
-Equality holds exactly when one point lies off `K_-`, that point has weight `1`, and the background has zero
-negative-pivot energy.
-
-If a nonempty background is not fully supported on `K_+`, then
-
-\[
-\boxed{\Delta(B)\ge L_m+2m+3.}
-\]
-
-Equality holds exactly when one point lies off `K_+`, that point has weight `0`, and the background has zero
-positive-pivot energy.
-
-These formulas can turn a sufficiently near-extremal selector value into a geometric support conclusion. They do
-not supply the genuine recurrence backgrounds or prove any destroyed-threshold, labelled-child, return, interface
-or recurrent semantic statement.
-
-## Corrected runtime audit
+## Corrected runtime and regression audit
 
 CMR2706--CMR2721 use inherited `PYTHON*` removal, exact seed and bytecode controls, `-B -S -s` startup, path
-scrubbing, doubled runtime probes, source identities, AST honesty evidence and a sealed schema-v1 manifest. Each
-manifest contains a literal `manifest_sha256` seal. The manifest records what runtime validation executed; it is
-not a proof certificate.
+scrubbing, source identities, AST honesty evidence and a sealed schema-v1 manifest.
 
-GitHub Actions is configured to run all six hard-core finite theorems and upload one thirty-day runtime-manifest
-artifact per Python version. The branch-wide runner retains the pure validator APIs required by the negative test
-suite and executes all six theorem checkers. A committed workflow or uploaded artifact is not evidence that the
-conjecture is proved.
+GitHub Actions is configured for Python 3.10 and 3.12 to run:
+
+- the negative validator suite;
+- six hard-core finite theorem checkers;
+- the T03/T21 population-bridge self-test;
+- the strict runtime-manifest audit;
+- the complete current-frontier regression.
+
+The branch-wide runner retains the pure `validate_endpoint_text`, `validate_document_markers` and
+`run_self_test` interfaces required by the mutation suite. Configuration is not evidence that a workflow passed.
 
 ## Genuine current frontiers
 
 ```text
-T01--T02 source truth and genuine recurrence exhaustiveness
-T03--T04 actual complete population
+T01 source truth
+T02 the actual parent rule and genuine recurrence exhaustiveness
+T03--T04 actual complete population and assembly
 T05 arbitrary-n geometry coverage
 T06--T18 semantic, score, rank, predicate and row theorems
 T19 genuine global-family exhaustiveness
 T20 all 232 zero-selector chamber theorems
-T21 genuine recurrence backgrounds and all 20 semantic arguments; scalar evaluation and extremal stability are exact once a background is supplied
+T21 genuine hard-core slots, survivor backgrounds and all 20 semantic arguments
 T22--T31 all ten final premise implications
 T35--T40 all six ordinary handoff arguments
 T41 ordinary final review
@@ -252,22 +216,20 @@ complete.
 
 ## Corrections retained
 
-- A locator, hash, workflow result, fixture, manifest or sealed evidence record does not prove a theorem true.
-- Exact recurrence identity does not prove recurrence exhaustiveness.
+- A locator, hash, fixture, bridge manifest, runtime manifest or workflow result does not prove a theorem true.
+- The actual parent rule is not present; an exhaustive enumeration relative to supplied clauses is not genuine recurrence exhaustiveness.
 - Literal T03/T04 data do not prove their intended semantics.
+- Exact scalar selection does not prove destroyed-threshold, labelled-child, return, interface or recurrent consequences.
 - Finite T05 arithmetic does not prove arbitrary-`n` coverage.
 - T06 scores and T07--T18 semantic statements remain external mathematics.
 - T19 exact coverage does not prove the global family exhaustive.
-- Scalar T21 halfspaces, witnesses, classifications, energy identities and stability gaps do not supply genuine recurrence signatures or semantics.
 - Exact T22--T43 support does not prove any premise, handoff, review, dossier or root theorem.
-- Canonical roots, syntax compilation, isolated imports, AST honesty checks, mutation rejection, manifests, CI
-  and acyclic graphs are documentary or software metadata.
+- Canonical roots, syntax compilation, isolated imports, mutation rejection, manifests, CI and acyclic graphs are documentary or software evidence.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2781**, the repository has a synchronized finite documentary stack
-through all 43 targets, corrected runtime validation, one explicit hard-core exchange functional, exact two-point
-and collinear geometry, arbitrary-background pivot-line energy, sharp cardinality extremes and exact first
-stability gaps away from the two extremal support lines.
+There is no complete proof. Through **CMR2793**, the repository has a synchronized documentary stack through all
+43 targets, six exact finite T21 scalar theorems, and an executable bridge that will validate hard-core T03
+population data once a genuine parent rule and literal survivor backgrounds are supplied.
 
 The unresolved centre remains the genuine mathematics listed above.
