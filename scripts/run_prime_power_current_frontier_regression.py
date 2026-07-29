@@ -3,9 +3,9 @@
 
 The suite checks source syntax, the fixed thirteen-frontier/forty-three-target
 census, canonical endpoint presence, honesty-ledger synchronization, executable
-structural self-tests and finite theorem checkers. It validates research
-infrastructure and stated finite claims only and permanently reports
-``all_n_proved_by_checker = 0``.
+structural self-tests, finite theorem checkers and the T03/T21 population bridge.
+It validates research infrastructure and stated finite claims only and permanently
+reports ``all_n_proved_by_checker = 0``.
 """
 from __future__ import annotations
 
@@ -57,29 +57,34 @@ FINITE_THEOREM_CHECKS = (
     "check_prime_power_hard_core_pivot_line_energy.py",
     "check_prime_power_hard_core_extremal_stability.py",
 )
+FRONTIER_BRIDGE_CHECKS = (
+    ("check_prime_power_hard_core_population_bridge.py", ("--self-test",)),
+)
 DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "README.md": (
         "does **not** contain a complete proof",
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2781",
+        "CMR2793",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
         *FINITE_THEOREM_CHECKS,
+        "check_prime_power_hard_core_population_bridge.py",
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2772--2781",
+        "CMR2782--2793",
         "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2781",
+        "CMR2793",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
         *FINITE_THEOREM_CHECKS,
+        "check_prime_power_hard_core_population_bridge.py",
         "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
@@ -135,9 +140,17 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "0bddec3bea04c1e38a6b3d11919d9f1f23566e6284644f37223a7c290b4a6131",
         "all_n_proved_by_checker = 0",
     ),
+    "docs/438-prime-power-hard-core-population-bridge.md": (
+        "CMR2782--CMR2793",
+        "c7773e0f18779f6fa89db7d31e802c281e4e2618e60096a9a3d86471d08d528c",
+        "actual_parent_rule_present = 0",
+        "t21_semantic_chambers_proved = 0",
+        "all_n_proved_by_checker = 0",
+    ),
     ".github/workflows/current-frontier-regression.yml": (
         "actions/upload-artifact@v4",
         *FINITE_THEOREM_CHECKS,
+        "check_prime_power_hard_core_population_bridge.py",
         "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
@@ -325,6 +338,9 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
     theorem_checks = [] if static_only else [
         run_script(root, script) for script in FINITE_THEOREM_CHECKS
     ]
+    bridge_checks = [] if static_only else [
+        run_script(root, script, arguments) for script, arguments in FRONTIER_BRIDGE_CHECKS
+    ]
     claims = {
         "syntax_checked_prime_power_scripts": len(syntax_files),
         "frontier_groups": len(frontier_ids),
@@ -333,6 +349,7 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
         "synchronized_documents": len(documents),
         "executable_self_tests": len(self_tests),
         "finite_theorem_checks": len(theorem_checks),
+        "frontier_bridge_checks": len(bridge_checks),
         "static_only": int(static_only),
         "python_major_minor": f"{sys.version_info.major}.{sys.version_info.minor}",
         "all_n_proved_by_checker": 0,
@@ -345,6 +362,7 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
         "synchronized_document_files": documents,
         "self_test_results": self_tests,
         "finite_theorem_results": theorem_checks,
+        "frontier_bridge_results": bridge_checks,
         "claims": claims,
     }
 
@@ -354,7 +372,7 @@ def main() -> None:
     parser.add_argument(
         "--static-only",
         action="store_true",
-        help="skip executable structural and finite-theorem checks",
+        help="skip executable structural, finite-theorem and frontier-bridge checks",
     )
     args = parser.parse_args()
     result = exact_regression(repository_root(), static_only=args.static_only)
