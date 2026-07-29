@@ -2,19 +2,22 @@
 
 ## Scope
 
-This chapter closes a software-validation gap in the complete current T01--T43 stack. Syntax compilation alone
-cannot detect a missing sibling module, an exception raised while a module is imported, an import-time hang or
-an endpoint whose honesty phrase survives only in prose while executable code no longer fixes the all-`n` result
-at zero.
+This chapter records the first isolated-import audit, CMR2692--CMR2705. The audit introduced fresh-process
+imports, import timeouts and AST-backed executable honesty checks for all thirteen canonical endpoints.
 
-The executable audit is:
+> **Correction:** the original CMR2694/CMR2697 implementation launched children with Python `-I` while also
+> claiming that `PYTHONHASHSEED=0` and `PYTHONDONTWRITEBYTECODE=1` controlled those children. Python isolated mode
+> ignores `PYTHON*` environment variables, so that determinism claim was not established. CMR2706--CMR2721 in
+> `docs/431-prime-power-reproducible-runtime-manifest.md` replaces the launcher, proves the startup controls in
+> child processes and seals a machine-readable runtime manifest.
+
+The executable audit remains:
 
 ```text
 python scripts/check_prime_power_import_smoke.py --self-test
 ```
 
-It validates research infrastructure only. It does not inspect, supply or approve any mathematical proof and
-permanently reports:
+It validates research infrastructure only and permanently reports:
 
 ```text
 all_n_proved_by_checker = 0
@@ -24,119 +27,59 @@ all_n_proved_by_checker = 0
 
 ### CMR2692 — complete prime-power import-smoke entrypoint
 
-One standard-library checker discovers every top-level module beginning with:
-
-```text
-check_prime_power_
-verify_prime_power_
-run_prime_power_
-test_prime_power_
-```
-
-The inventory is derived from the working tree and therefore includes newly added current-frontier modules
-without a second manually maintained file list.
+The checker discovers every top-level `check_prime_power_*`, `verify_prime_power_*`, `run_prime_power_*` and
+`test_prime_power_*` module.
 
 ### CMR2693 — fresh interpreter per module
 
-Every discovered module is imported in its own Python process. No import cache, monkey patch, corrected-root
-installation or other global state from an earlier module can make a later module appear healthy.
+Every discovered module is imported in its own process so import caches and monkey patches cannot leak between
+modules.
 
-### CMR2694 — isolated import path
+### CMR2694 — initial isolated launcher, subsequently corrected
 
-The probe starts Python with `-I`, inserts only the checked module's sibling `scripts` directory for repository
-imports, constructs an exact file-location spec and installs the module under its real stem in `sys.modules`
-before execution. This supports dataclasses and other import-time mechanisms that inspect their own module.
+The initial implementation used Python `-I` and inserted the sibling `scripts` directory before import. The fresh
+process and sibling-module behaviour were real, but the associated environment-control claim was incomplete
+because `-I` ignores `PYTHON*` variables. CMR2706 supersedes this launcher.
 
 ### CMR2695 — missing dependency and import-exception rejection
 
-A nonzero import process fails the audit with the exact filename, captured standard output and captured standard
-error. This detects unresolved sibling imports and any exception raised by top-level definitions.
+A nonzero import process fails with the filename and captured output.
 
 ### CMR2696 — bounded import-time execution
 
-Each module has a thirty-second import deadline. A timeout is a validation failure rather than an indefinitely
-hung branch check.
+Each module has a thirty-second deadline.
 
-The bound is an engineering guard, not a complexity theorem about any mathematical construction.
+### CMR2697 — initial deterministic-environment claim, subsequently corrected
 
-### CMR2697 — deterministic import environment
-
-Every import process receives:
-
-```text
-PYTHONDONTWRITEBYTECODE=1
-PYTHONHASHSEED=0
-```
-
-The first prevents working-tree bytecode artifacts. The second removes hash-randomisation drift from
-import-time set and dictionary behaviour.
+The initial implementation supplied `PYTHONDONTWRITEBYTECODE=1` and `PYTHONHASHSEED=0` to the child environment.
+Under `-I`, those values were ignored. CMR2706--CMR2712 replace this with an audited launcher and runtime
+fingerprint.
 
 ### CMR2698 — exact successful-import marker
 
-The probe emits `IMPORTED:<module-stem>` only after `exec_module` returns. A zero exit code without that marker is
-rejected, preventing a prematurely terminated or incorrectly constructed probe from being counted as success.
+The child emits an exact success marker only after `exec_module` returns.
 
-### CMR2699 — canonical endpoint semantic honesty census
+### CMR2699--CMR2702 — executable honesty semantics
 
-The audit reuses the thirteen canonical endpoint filenames from the branch-wide regression runner and parses
-each endpoint with the Python AST. All thirteen must contain executable evidence fixing an all-`n` result at
-literal integer zero.
+All thirteen canonical endpoints are parsed with the Python AST. Literal-zero dictionary entries, assignments or
+comparisons involving `all_n`/`all_n_proved_by_checker` are accepted. Docstrings, exception messages and nonzero
+claims are rejected.
 
-### CMR2700 — literal zero-claim recognition
+### CMR2703--CMR2704 — mutation controls
 
-A dictionary entry or assignment whose target is `all_n` or `all_n_proved_by_checker` is accepted only when its
-value is the integer literal `0`. Boolean `False` is not treated as an integer-zero claim.
+The self-test accepts valid import and honesty controls and rejects import exceptions, timeouts, nonzero claims,
+docstring-only claims and message-only claims.
 
-### CMR2701 — explicit result-comparison recognition
+### CMR2705 — dual-version workflow integration
 
-Compatibility wrappers which obtain a nested summary may instead bind an `all_n` expression to literal zero in
-an executable comparison, such as requiring `summary.get("all_n") == 0` or rejecting a nonzero value.
-
-### CMR2702 — prose-only honesty rejection
-
-A docstring or exception message containing `all_n_proved_by_checker = 0` is insufficient. The AST audit requires
-a zero-valued assignment, dictionary field or comparison. A nonzero literal claim is also rejected.
-
-### CMR2703 — isolated-import mutation controls
-
-The checker self-test imports one valid temporary module, rejects a module that raises an exception and rejects
-a module that exceeds a deliberately short timeout.
-
-### CMR2704 — honesty mutation controls
-
-The self-test accepts a literal zero claim and an explicit zero comparison, then rejects:
-
-```text
-one nonzero all-n claim
-one docstring-only marker
-one exception-message-only marker
-```
-
-The exact self-test census is three accepted controls and five rejected mutations.
-
-### CMR2705 — dual-version continuous runtime audit
-
-The current-frontier workflow runs the import/honesty checker on Python 3.10 and Python 3.12 before the existing
-branch-wide regression. A workflow definition is not evidence of a passing run; the actual Actions result must
-be observed separately.
+The workflow invokes the audit under Python 3.10 and 3.12. The corrected launcher and reproducible manifest are
+specified by CMR2706--CMR2721.
 
 ## Mathematical status
 
-The audit spans the software implementing every current documentary frontier but proves none of the unresolved
-mathematics:
+A successful import or honesty audit proves no unresolved mathematical statement. T01--T43 remain open exactly
+as listed in `STATUS.md`. No checker in this chapter creates T44 or changes:
 
 ```text
-T01--T02 source truth and genuine recurrence exhaustiveness
-T03--T04 actual complete population
-T05 arbitrary-n geometry coverage
-T06--T18 semantic, score, rank, predicate and row theorems
-T19 genuine global-family exhaustiveness
-T20--T21 all 252 chamber theorems
-T22--T31 all ten final premise implications
-T35--T40 all six handoff arguments
-T41 final mathematical review
-T42 dossier sign-off
-T43 the reviewed implication to D(n)=2n
+all_n_proved_by_checker = 0
 ```
-
-A successful import proves only that Python can load the current module graph under the audited environment.
