@@ -40,6 +40,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/test_prime_power_current_frontier_regression.py
 
+      - name: Run isolated import and honesty audit
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_import_smoke.py --self-test
+
       - name: Run current-frontier regression
         env:
           PYTHONDONTWRITEBYTECODE: "1"
