@@ -2,7 +2,7 @@
 """Run dependency-free regression checks for the complete current prime-power frontier.
 
 The suite checks source syntax, the fixed thirteen-frontier/forty-three-target census, canonical endpoint
-presence, public-ledger synchronisation and executable structural self-tests. It validates research
+presence, honesty-ledger synchronization and executable structural self-tests. It validates research
 infrastructure only and permanently reports ``all_n_proved_by_checker = 0``.
 """
 from __future__ import annotations
@@ -53,23 +53,25 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2721",
+        "CMR2741",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
-        "check_prime_power_import_smoke.py",
+        "check_prime_power_hard_core_exchange_normal_form.py",
+        "check_prime_power_hard_core_exchange_realisability.py",
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2706--2721",
-        "No documentary checker or runtime manifest substitutes for the missing mathematical proofs.",
+        "CMR2734--2741",
+        "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2721",
+        "CMR2741",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
-        "check_prime_power_import_smoke.py",
+        "check_prime_power_hard_core_exchange_normal_form.py",
+        "check_prime_power_hard_core_exchange_realisability.py",
         "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
@@ -95,8 +97,20 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
+    "docs/432-prime-power-hard-core-exchange-normal-form.md": (
+        "CMR2722--CMR2733",
+        "ae35c2afa6574f602ccc2bb10124c0a5743ae4d712ebd967f93e56680928b1bf",
+        "all_n_proved_by_checker = 0",
+    ),
+    "docs/433-prime-power-hard-core-exchange-realisability.md": (
+        "CMR2734--CMR2741",
+        "2b4d743fc4e98d39d63c2c7415ec33639692f8bd7b484dcb630ddb2aefd8896c",
+        "all_n_proved_by_checker = 0",
+    ),
     ".github/workflows/current-frontier-regression.yml": (
         "actions/upload-artifact@v4",
+        "check_prime_power_hard_core_exchange_normal_form.py",
+        "check_prime_power_hard_core_exchange_realisability.py",
         "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
@@ -148,7 +162,7 @@ def validate_target_frontier_literals(
     target_rows: Any,
     frontiers: Any,
 ) -> tuple[list[str], list[str]]:
-    """Validate the literal target/frontier tables without importing the checker module."""
+    """Validate literal target/frontier tables without importing the checker module."""
     require(isinstance(target_rows, list), "TARGET_ROWS must be a literal list")
     require(isinstance(frontiers, dict), "FRONTIERS must be a literal dictionary")
     require(len(target_rows) == 43, "atomic target table must contain exactly 43 targets")
@@ -212,7 +226,7 @@ def endpoint_audit(scripts_dir: Path) -> list[str]:
 def validate_document_markers(relative_path: str, text: str, markers: tuple[str, ...]) -> None:
     require(text.strip(), f"{relative_path}: empty document")
     for marker in markers:
-        require(marker in text, f"{relative_path}: missing synchronisation marker {marker!r}")
+        require(marker in text, f"{relative_path}: missing synchronization marker {marker!r}")
 
 
 def document_audit(root: Path) -> list[str]:
@@ -223,22 +237,14 @@ def document_audit(root: Path) -> list[str]:
     return audited
 
 
-def controlled_subprocess_environment() -> dict[str, str]:
-    environment = {
-        key: value
-        for key, value in os.environ.items()
-        if not key.upper().startswith("PYTHON")
-    }
-    environment.update({"PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0"})
-    return environment
-
-
 def run_self_test(root: Path, script: str, argument: str) -> dict[str, Any]:
     command = [sys.executable, str(root / "scripts" / script), argument]
+    environment = dict(os.environ)
+    environment.update({"PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0"})
     completed = subprocess.run(
         command,
         cwd=root,
-        env=controlled_subprocess_environment(),
+        env=environment,
         check=False,
         capture_output=True,
         text=True,
@@ -273,7 +279,7 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
         "frontier_groups": len(frontier_ids),
         "atomic_targets": len(target_ids),
         "canonical_endpoints": len(endpoints),
-        "synchronised_documents": len(documents),
+        "synchronized_documents": len(documents),
         "executable_self_tests": len(self_tests),
         "static_only": int(static_only),
         "python_major_minor": f"{sys.version_info.major}.{sys.version_info.minor}",
@@ -284,7 +290,7 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
         "frontier_ids": frontier_ids,
         "target_ids": target_ids,
         "canonical_endpoint_files": endpoints,
-        "synchronised_document_files": documents,
+        "synchronized_document_files": documents,
         "self_test_results": self_tests,
         "claims": claims,
     }
