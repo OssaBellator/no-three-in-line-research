@@ -12,10 +12,10 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2691**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2705**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
-Every final checker, fixture and branch-wide regression permanently reports or preserves:
+Every final checker, fixture, import audit and branch-wide regression permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -77,6 +77,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 python scripts/check_prime_power_canonical_frontier_roots.py --self-test
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/test_prime_power_current_frontier_regression.py
+python scripts/check_prime_power_import_smoke.py --self-test
 python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
@@ -93,9 +94,16 @@ The all-open fixture reconstructs the exact 43 canonical target definitions and 
 target. Every artifact locator and digest is null and zero targets are marked proved. Its seven deliberate
 mutations must be rejected.
 
-The negative regression suite separately removes targets, corrupts target order and frontier membership,
-drops endpoint honesty markers and document markers, and simulates failed and silent subprocesses. GitHub
-Actions runs the negative tests and full regression on Python 3.10 and 3.12.
+The CMR2676--CMR2691 negative-regression layer removes targets, corrupts target order and frontier membership,
+drops endpoint and document markers, and simulates failed and silent subprocesses.
+
+The isolated import audit loads every `check_prime_power_*`, `verify_prime_power_*`, `run_prime_power_*` and
+`test_prime_power_*` module in a fresh interpreter with a thirty-second deadline. It also requires executable
+AST evidence that each of the thirteen canonical endpoints binds an all-`n` result to literal zero; prose-only
+or nonzero markers fail.
+
+GitHub Actions runs mutation tests, the isolated import/honesty audit and the full regression on Python 3.10 and
+3.12. A committed workflow is not evidence of a passing run.
 
 These checks exercise software and documentary integrity. They do not validate an external mathematical proof,
 close a target, or create T44.
@@ -129,12 +137,13 @@ complete.
 - T19 exact coverage does not prove the global family exhaustive.
 - T20/T21 typed chamber artifacts do not prove chamber closure.
 - Exact T22--T43 support does not prove any premise, handoff, review, dossier or root theorem.
-- Canonical roots, syntax compilation, mutation rejection, CI and acyclic graphs are documentary metadata.
+- Canonical roots, syntax compilation, isolated imports, AST honesty checks, mutation rejection, CI and acyclic
+  graphs are documentary metadata.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2691**, the repository has a synchronized finite documentary stack
-through all 43 targets, canonical T19--T21 ancestry through T43, an all-open completion fixture and negative
-regression coverage for the branch validators.
+There is no complete proof. Through **CMR2705**, the repository has a synchronized finite documentary stack
+through all 43 targets, canonical T19--T21 ancestry through T43, an all-open fixture, negative validator tests
+and isolated runtime import/honesty coverage.
 
 The unresolved centre remains the genuine mathematics listed above.
