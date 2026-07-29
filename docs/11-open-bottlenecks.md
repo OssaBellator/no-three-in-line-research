@@ -2,11 +2,11 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2675**, this branch contains exact documentary
-interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, and a branch-wide continuous
-regression contract.
+The no-three-in-line conjecture remains open. Through **CMR2691**, this branch contains exact documentary
+interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, a branch-wide regression, a
+negative validator suite and a canonical all-open target-completion fixture.
 
-Every final checker and the regression runner permanently report:
+Every final checker, fixture and regression runner permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -17,27 +17,21 @@ construction, arbitrary-`n` geometry theorem, semantic proofs, global-family the
 all premise implications, all handoff arguments, final mathematical review and the root implication to
 `D(n)=2n`.
 
-A locator, digest, status flag, acyclic graph, CI result or complete metadata bank is not evidence that the
-underlying theorem is true.
+A locator, digest, status flag, all-open fixture, rejected mutation, acyclic graph, CI result or complete
+metadata bank is not evidence that the underlying theorem is true.
 
 ## 2. Canonical execution and regression
 
-Run the complete branch regression:
+Run:
 
 ```text
+python scripts/test_prime_power_current_frontier_regression.py
 python scripts/run_prime_power_current_frontier_regression.py
-```
-
-It performs source compilation, exact thirteen-frontier/forty-three-target census checks, canonical endpoint
-and honesty-marker checks, document synchronization and both executable root self-tests.
-
-The structural root audit remains available directly:
-
-```text
+python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/check_prime_power_canonical_frontier_roots.py --self-test
 ```
 
-The canonical complete endpoint is:
+The canonical complete endpoint remains:
 
 ```text
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
@@ -51,15 +45,20 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-The GitHub Actions workflow runs the regression on Python 3.10 and 3.12. A workflow definition is not a passing
-result; inspect the actual run before claiming CI success.
+The all-open fixture reconstructs all 43 target-definition records and one open completion per target. It
+contains no proof locator or artifact digest. Its self-test rejects seven mutations. The separate regression
+tests reject missing or reordered targets, frontier corruption, lost honesty and document markers, and failed
+or silent subprocesses.
+
+GitHub Actions runs the negative tests followed by the complete regression on Python 3.10 and 3.12. Inspect the
+actual workflow run before claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
 
 ### T01 source statements
 
-Transcribe every cited statement literally, recompute its UTF-8 digest and supply the source-kind-specific
-proof artifact. Each statement needs ordinary mathematical review. A sealed literal statement is not a proof.
+Transcribe every cited statement literally, recompute its UTF-8 digest and supply the source-kind-specific proof
+artifact. Each statement needs ordinary mathematical review. A sealed literal statement is not a proof.
 
 ### T02 recurrence exhaustiveness
 
@@ -70,8 +69,8 @@ genuine exhaustive recurrence rather than merely an internally complete manifest
 ### T03 slot and candidate population
 
 Enter every literal operation-slot field: points, removals, survivors, fate witnesses, response families,
-selectors, vectors, routed credits, loads and transitions. Keep data `populated` rather than `proved` until
-its exact mathematical support exists.
+selectors, vectors, routed credits, loads and transitions. Keep data `populated` rather than `proved` until its
+exact mathematical support exists.
 
 ### T04 block and interface population
 
@@ -81,128 +80,65 @@ bindings. Interface rows need target, route, transition and source-clause data.
 
 ## 4. T05--T10: geometry, policy, state, resources and credits
 
-Canonical endpoints include:
-
-```text
-scripts/check_prime_power_geometry_selector_frontier_v2.py
-scripts/check_prime_power_candidate_policy_frontier.py
-scripts/check_prime_power_fate_transition_state_frontier.py
-scripts/check_prime_power_transition_resource_frontier.py
-```
-
-For T05, prove every finite delta, threshold and selector theorem, then prove that the bank covers every
-relevant configuration for arbitrary `n`.
+For T05, prove every responsewise finite delta, threshold and selector theorem, then prove that the finite
+geometry bank covers every relevant configuration for arbitrary `n`.
 
 For T06, prove every integer candidate score, reconstruct each complete candidate set, select the least
 `(score, slot_id)` pair and prove every T02 application uses the intended winner.
 
-For T07, prove every fate, state and transition statement. For T08, prove the simultaneous active-row family
-exhaustive. For T09, prove the resource bank physically exhaustive. For T10, prove every routed-credit
-assignment has the claimed resource, witness, child-state and transition meaning.
+For T07, prove every exact fate, state and transition statement. For T08, prove the application-derived rows
+form the genuine simultaneous active-row family. For T09, prove the coordinate-canonical resource bank is
+physically exhaustive. For T10, prove every routed-credit assignment has the claimed resource, witness,
+child-state and transition meaning.
 
-## 5. T11--T12: contraction and auxiliary elimination
+## 5. T11--T18: contraction, identity, interfaces, rank and rows
 
-Use:
+Every T11 block must bind the exact selected-row population and provide primitive positive weights, exact
+recurrent support, no recurrent exit, strong connectivity and positive margin. T12 must prove every auxiliary
+expansion and elimination has the claimed semantic meaning.
 
-```text
-scripts/check_prime_power_recurrent_block_closure_frontier.py
-scripts/check_prime_power_auxiliary_semantics_frontier_v2.py
-```
+T13 needs the actual cross-block identity theorem. T14 needs the external meaning of every scale equation and
+component weight. T15 must prove every interface row and final exit genuinely exhaustive. T16 must prove the
+supplied rank meaningful and well-founded. T17 predicates must be true on every representative. T18 must prove
+every reconstructed row theorem and fixed-offset interpretation.
 
-Every T11 block needs the exact selected rows, primitive positive weights, one row per recurrent parent,
-closed recurrent support, strong connectivity and positive margin, plus the theorem that these rows genuinely
-model the recurrence.
-
-Every T12 block must reuse the exact T11 weight certificate, prove the auxiliary graph acyclic, establish local
-and effective domination, forbid auxiliary credit, reconstruct every eliminated row and preserve the selected
-response and strict margin. Expansion truth and target-state meaning remain external mathematics.
-
-## 6. T13--T18: identity, scales, interfaces, rank, predicates and rows
-
-Use:
-
-```text
-scripts/check_prime_power_state_equivalence_frontier.py
-scripts/check_prime_power_component_scale_frontier.py
-scripts/check_prime_power_interface_exhaustiveness_frontier.py
-scripts/check_prime_power_global_rank_frontier.py
-scripts/check_prime_power_state_predicate_frontier.py
-scripts/check_prime_power_row_theorem_frontier.py
-```
-
-T13 needs the actual cross-block identity theorem. T14 needs the external meaning of each scale equation and
-component weight. T15 needs genuine interface-row and final-exit exhaustiveness. T16 needs a meaningful,
-well-founded rank. T17 needs true predicates on every representative. T18 needs every reconstructed row
-theorem and fixed-offset interpretation.
-
-Exact arithmetic and typed support do not establish those meanings.
-
-## 7. T19: genuine global-family exhaustiveness
-
-Use:
-
-```text
-scripts/check_prime_power_global_family_exhaustiveness_frontier.py
-```
-
-The canonical target flow is:
+## 6. T19: genuine global-family exhaustiveness
 
 ```text
 T02_RULE_EXHAUSTIVENESS + T18_ROW_THEOREMS
     -> T19_GLOBAL_FAMILY
 ```
 
-Every expected parent comes from a T02 global-parent application; every final row comes from T18; every row is
-rebound to exact T04 case, clause, slot and population ancestry. Prove that each exact nonempty row bank
-exhausts every genuine recurrence alternative and has the intended source-clause interpretation.
+For every T02 parent application, prove that the exact nonempty T18 row bank exhausts every genuine recurrence
+alternative and has the intended T04 source-clause interpretation.
 
-## 8. T20--T21: all 252 exceptional chambers
-
-Use:
+## 7. T20--T21: all 252 exceptional chambers
 
 ```text
-scripts/check_prime_power_exceptional_chamber_frontier.py
+232 zero-selector chambers + 20 hard-core chambers = 252 chambers
 ```
 
-The canonical roots are T05, T18 and T19. The census is exactly:
-
-\[
-232\text{ zero-selector chambers}+20\text{ hard-core chambers}=252.
-\]
-
-Every closed chamber needs exact T05 host geometry. Row-based modes also need exact T18 row theorems and T19
-parent coverage. Direct and signature-infeasibility modes need chamber-specific statements and evidence. All
-252 mathematical dispositions remain open.
+Every closed chamber needs exact T05 host geometry. Row-based modes additionally need exact T18 row theorems
+and T19 parent coverage. Direct and signature-infeasibility modes require chamber-specific statements and
+evidence. All 252 mathematical dispositions remain open.
 
 Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct.
 
-## 9. T22--T31: ten final premise implications
+## 8. T22--T31: ten final premise implications
 
-Use:
+Each premise reconstructs its exact T01--T21 dependency-target census and requires one reviewed implication
+with explicit arbitrary-`n` scope. Stable premise and target artifact cores prevent circular outward hashes.
+The dependency interfaces exist; all ten mathematical implications remain open.
 
-```text
-scripts/check_prime_power_final_premise_frontiers.py
-```
-
-Each premise reconstructs its exact T01--T21 dependency census and requires one reviewed implication with
-explicit arbitrary-`n` scope. Stable cores prevent circular outward hashes. All ten mathematical implications
-remain open.
-
-## 10. T32--T43: typed aggregation, handoff and root implication
-
-Use:
-
-```text
-scripts/check_prime_power_final_support_handoff_frontiers_v2.py
-```
+## 9. T32--T43: typed aggregation, handoff and root implication
 
 T32--T34 aggregate genuine typed obligation and premise artifacts. T35--T40 require six ordinary induction
 handoff arguments. T41 requires final mathematical review. T42 requires dossier sign-off. T43 requires the
 reviewed implication from the global quotient and handoff to `D(n)=2n`.
 
-The checkers prove only documentary identity and dependency integrity.
+The canonical-root audit, all-open fixture and regression suites prove only software/documentary consistency.
 
-## 11. Immediate execution order
+## 10. Immediate execution order
 
 1. Prove and seal high-use T01 source statements.
 2. Close every T02 case, clause, exclusion and global-parent record; prove recurrence exhaustiveness.
