@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2613**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2629**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 Every final checker permanently reports:
@@ -23,7 +23,7 @@ all_n_proved_by_checker = 0
 
 ## Current exact finite endpoint
 
-The branch contains synchronized documentary work banks through T21:
+The branch contains synchronized documentary work banks through T31:
 
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
@@ -48,6 +48,16 @@ The branch contains synchronized documentary work banks through T21:
 | T19 | T02/T18-derived parent-to-final-row coverage with T04 clause ancestry | genuine global-family exhaustiveness remains open |
 | T20 | exact 232 zero-selector chamber dispositions with typed host/row support | every chamber proof remains open until supplied and reviewed |
 | T21 | exact 20 hard-core chamber dispositions with typed host/row support | every chamber proof remains open until supplied and reviewed |
+| T22 | exact T01 dependency census and base-case premise bundle | the complete base-domain theorem remains open |
+| T23 | exact T02/T19 dependency census and recurrence premise bundle | the nonbase recurrence-exhaustiveness implication remains open |
+| T24 | exact T05/T07 dependency census and invariant premise bundle | invariant preservation remains open |
+| T25 | exact T03/T06 dependency census and selection premise bundle | operation admissibility and intended minimization remain open |
+| T26 | exact T08/T09/T10 dependency census and resource premise bundle | physical resource and credit semantics remain open |
+| T27 | exact T11/T12 dependency census and contraction premise bundle | genuine contraction remains open |
+| T28 | exact T13--T18 dependency census and cross-block premise bundle | validity of the assembled quotient remains open |
+| T29 | exact T20/T21 dependency census and exceptional premise bundle | all 252 chamber theorems remain open |
+| T30 | exact T11/T16/T18 dependency census and termination premise bundle | genuine branch termination remains open |
+| T31 | exact T12/T16/T18--T21 dependency census and translation bundle | translation to `D(n)=2n` remains open |
 
 ## Canonical endpoints
 
@@ -62,6 +72,7 @@ scripts/check_prime_power_state_predicate_frontier.py
 scripts/check_prime_power_row_theorem_frontier.py
 scripts/check_prime_power_global_family_exhaustiveness_frontier.py
 scripts/check_prime_power_exceptional_chamber_frontier.py
+scripts/check_prime_power_final_premise_frontiers.py
 ```
 
 ## Exact T19 global-family frontier
@@ -141,32 +152,60 @@ noncircular banks synchronize the two obligation and atomic-target pairs.
 The fixed-response correction `17`, rollback distance `12` and uniform correction `44` remain distinct
 mathematical claims. No checker infers or merges them.
 
-## Genuine current frontier
+## Exact T22--T31 final-premise frontiers
 
-The next executable layer is **T22--T31 final premise contracts**.
-
-The existing premise package is only acceptable after each premise is rebuilt from the exact T01--T21
-banks. The ten premises are:
+The premise checker reconstructs every dependency target from the fixed atomic target definitions:
 
 ```text
-T22 base cases
-T23 recurrence exhaustiveness
-T24 invariant preservation
-T25 operation selection
-T26 resource and credit soundness
-T27 block and auxiliary contraction
-T28 cross-block assembly
-T29 exceptional cases
-T30 termination
-T31 objective translation
+T22 <- T01
+T23 <- T02, T19
+T24 <- T05, T07
+T25 <- T03, T06
+T26 <- T08, T09, T10
+T27 <- T11, T12
+T28 <- T13, T14, T15, T16, T17, T18
+T29 <- T20, T21
+T30 <- T11, T16, T18
+T31 <- T12, T16, T18, T19, T20, T21
 ```
 
-Each premise must derive its exact support census from its dependency targets, state one externally reviewed
-mathematical implication, carry one fixed-kind premise artifact and exclude ancestors containing its own
-completion digest.
+For every dependency it publishes the exact target result/completion digests, target artifact and bundle
+digests, and external proof pointer. A premise cannot be declared proved before every dependency target is
+effectively complete.
 
-After T31, the remaining executable layers are T32--T43: obligation support, premise artifacts, six handoff
-assertions, final handoff review, dossier audit and the reviewed root implication.
+Every proved premise supplies one reviewed semantic implication with explicit arbitrary-`n` scope and review
+boundary. Its noncircular bundle hashes the premise record, semantic statement, lower-target support and
+stable cores of the typed premise and atomic target artifacts. The outward locator/digest fields and ancestor
+certificate SHAs are excluded from the bundle definition.
+
+The same bundle digest must be carried by:
+
+```text
+final-premise-frontier://PREMISE-ID
+final-premise-frontier://TARGET-ID
+```
+
+The checker synchronizes the exact frontier with both the old final implication contract and the atomic
+execution DAG. This closes a documentary gap; it does not prove any premise.
+
+## Genuine current frontier
+
+The next executable layer is **T32--T43 typed support, handoff, dossier and root implication**.
+
+The exact T22--T31 surfaces now exist, but all ten mathematical premises remain open until the T01--T21
+banks are genuinely proved and each dependency-to-premise implication receives ordinary review.
+
+T32--T43 must then:
+
+```text
+T32 supply genuine typed obligation artifacts
+T33 prove their noncircular support DAG
+T34 bind every genuine premise artifact
+T35--T40 close the six induction-handoff assertions
+T41 complete final handoff review
+T42 pass the final dossier audit
+T43 prove the reviewed root implication to D(n)=2n
+```
 
 ## Concrete mathematical work still required
 
@@ -177,7 +216,7 @@ assertions, final handoff review, dossier audit and the reviewed root implicatio
 5. Prove every T06--T18 semantic, score, rank, predicate and row theorem.
 6. Prove T19 global-family exhaustiveness for the genuine recurrence.
 7. Prove and review all 252 T20/T21 chamber dispositions.
-8. Rebuild and prove all ten T22--T31 final premises.
+8. Supply and review all ten T22--T31 final premise implications.
 9. Complete T32--T43 typed support, handoff and dossier review.
 10. Prove the ordinary implication from the reviewed quotient and handoff to `D(n)=2n`.
 
@@ -190,14 +229,16 @@ assertions, final handoff review, dossier audit and the reviewed root implicatio
 - T06 scores and T07--T18 semantic statements remain external mathematics.
 - T19 exact coverage does not prove the global family exhaustive.
 - T20/T21 typed chamber artifacts do not prove chamber closure.
+- Exact T22--T31 support does not prove any dependency implication or final premise.
 - Typed artifacts and readiness flags are documentary metadata.
 - Syntax compilation and isolated helper tests are not a dependency-backed certificate suite.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2613**, the repository has an exact finite documentary stack from
-source statements through global-family coverage and the complete exceptional-chamber worklist.
+There is no complete proof. Through **CMR2629**, the repository has an exact finite documentary stack from
+source statements through global-family coverage, the complete exceptional-chamber worklist and ten
+noncircular final-premise frontiers.
 
 The unresolved center remains the genuine mathematics: source and recurrence truth, actual population,
-arbitrary-`n` coverage, semantic correctness, global-family exhaustiveness, all 252 chamber proofs, final
-premises and the implication to all `n`.
+arbitrary-`n` coverage, semantic correctness, global-family exhaustiveness, all 252 chamber proofs, all ten
+final premises, the handoff/dossier layers and the implication to all `n`.
