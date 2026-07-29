@@ -20,7 +20,7 @@ def main():
     checks = 0
     for p in (2, 3, 5, 7):
         pts = list(product(range(p), repeat=2))
-        # Exhaust all triples for p<=3; deterministic samples for larger fields.
+        # Exhaust all affine families for p<=3; deterministic samples for larger fields.
         data = product(pts, repeat=6) if p <= 3 else (
             (pts[i % len(pts)], pts[(2*i+1) % len(pts)], pts[(3*i+2) % len(pts)],
              pts[(5*i+1) % len(pts)], pts[(7*i+3) % len(pts)], pts[(11*i+4) % len(pts)])
@@ -44,10 +44,14 @@ def main():
                 assert direct == poly
                 if direct == 0:
                     roots.append(t)
-            zero = c0 == c1 == c2 == 0
-            assert zero == (len(roots) == p)
-            if not zero:
+            zero_polynomial = c0 == c1 == c2 == 0
+            if zero_polynomial:
+                assert len(roots) == p
+            else:
                 assert len(roots) <= 2
+                # For fields larger than the degree, vanishing everywhere forces zero coefficients.
+                if p > 2:
+                    assert len(roots) < p
             checks += 1
     print(f"verified {checks} affine collinearity families")
 
