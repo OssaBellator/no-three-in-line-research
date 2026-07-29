@@ -2,11 +2,11 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2691**, this branch contains exact documentary
+The no-three-in-line conjecture remains open. Through **CMR2705**, this branch contains exact documentary
 interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, a branch-wide regression, a
-negative validator suite and a canonical all-open target-completion fixture.
+negative validator suite, a canonical all-open fixture and an isolated runtime import/honesty audit.
 
-Every final checker, fixture and regression runner permanently reports or preserves:
+Every final checker, fixture and validation runner permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -17,8 +17,8 @@ construction, arbitrary-`n` geometry theorem, semantic proofs, global-family the
 all premise implications, all handoff arguments, final mathematical review and the root implication to
 `D(n)=2n`.
 
-A locator, digest, status flag, all-open fixture, rejected mutation, acyclic graph, CI result or complete
-metadata bank is not evidence that the underlying theorem is true.
+A locator, digest, status flag, all-open fixture, successful import, rejected mutation, acyclic graph, CI result
+or complete metadata bank is not evidence that the underlying theorem is true.
 
 ## 2. Canonical execution and regression
 
@@ -26,6 +26,7 @@ Run:
 
 ```text
 python scripts/test_prime_power_current_frontier_regression.py
+python scripts/check_prime_power_import_smoke.py --self-test
 python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/check_prime_power_canonical_frontier_roots.py --self-test
@@ -45,13 +46,16 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-The all-open fixture reconstructs all 43 target-definition records and one open completion per target. It
-contains no proof locator or artifact digest. Its self-test rejects seven mutations. The separate regression
-tests reject missing or reordered targets, frontier corruption, lost honesty and document markers, and failed
-or silent subprocesses.
+The CMR2676--CMR2691 layer fixes the all-open 43-target completion fixture and negative regression suite.
+The import audit then loads every current prime-power checker, verifier, runner and test in a separate isolated
+interpreter, with a thirty-second deadline and deterministic environment.
 
-GitHub Actions runs the negative tests followed by the complete regression on Python 3.10 and 3.12. Inspect the
-actual workflow run before claiming CI success.
+The same audit parses all thirteen canonical endpoint sources. It accepts only executable zero-valued
+`all_n`/`all_n_proved_by_checker` assignments, dictionary fields or comparisons. A docstring, exception message
+or nonzero marker does not satisfy the honesty gate.
+
+GitHub Actions runs the negative tests, isolated import/honesty audit and complete regression on Python 3.10
+and 3.12. Inspect the actual workflow run before claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
 
