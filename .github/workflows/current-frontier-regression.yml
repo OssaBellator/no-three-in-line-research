@@ -46,6 +46,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_hard_core_exchange_normal_form.py
 
+      - name: Verify hard-core exchange realisability
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_exchange_realisability.py
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
