@@ -52,6 +52,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_hard_core_exchange_realisability.py
 
+      - name: Verify hard-core two-point classification
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_two_point_classification.py
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
