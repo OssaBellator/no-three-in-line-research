@@ -2,7 +2,7 @@
 """Run dependency-free regression checks for the complete current prime-power frontier.
 
 The suite checks source syntax, the fixed thirteen-frontier/forty-three-target census, canonical endpoint
-presence, honesty-ledger synchronisation and executable structural self-tests. It validates research
+presence, public-ledger synchronisation and executable structural self-tests. It validates research
 infrastructure only and permanently reports ``all_n_proved_by_checker = 0``.
 """
 from __future__ import annotations
@@ -53,20 +53,24 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2691",
+        "CMR2721",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
+        "check_prime_power_import_smoke.py",
+        "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2676--2691",
-        "No documentary checker substitutes for the missing mathematical proofs.",
+        "CMR2706--2721",
+        "No documentary checker or runtime manifest substitutes for the missing mathematical proofs.",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2691",
+        "CMR2721",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
+        "check_prime_power_import_smoke.py",
+        "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
     "docs/427-prime-power-canonical-frontier-roots.md": (
@@ -80,6 +84,21 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "docs/429-prime-power-negative-regression-open-fixture.md": (
         "CMR2676--CMR2691",
         "all_n_proved_by_checker = 0",
+    ),
+    "docs/430-prime-power-isolated-import-honesty-audit.md": (
+        "CMR2692--CMR2705",
+        "Correction:",
+        "all_n_proved_by_checker = 0",
+    ),
+    "docs/431-prime-power-reproducible-runtime-manifest.md": (
+        "CMR2706--CMR2721",
+        "manifest_sha256",
+        "all_n_proved_by_checker = 0",
+    ),
+    ".github/workflows/current-frontier-regression.yml": (
+        "actions/upload-artifact@v4",
+        "--manifest",
+        "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
 }
 
@@ -204,14 +223,22 @@ def document_audit(root: Path) -> list[str]:
     return audited
 
 
+def controlled_subprocess_environment() -> dict[str, str]:
+    environment = {
+        key: value
+        for key, value in os.environ.items()
+        if not key.upper().startswith("PYTHON")
+    }
+    environment.update({"PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0"})
+    return environment
+
+
 def run_self_test(root: Path, script: str, argument: str) -> dict[str, Any]:
     command = [sys.executable, str(root / "scripts" / script), argument]
-    environment = dict(os.environ)
-    environment.update({"PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0"})
     completed = subprocess.run(
         command,
         cwd=root,
-        env=environment,
+        env=controlled_subprocess_environment(),
         check=False,
         capture_output=True,
         text=True,
