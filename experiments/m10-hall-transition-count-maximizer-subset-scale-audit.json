@@ -1,0 +1,63 @@
+{
+  "m": 10,
+  "source_cycle_window": [
+    209,
+    287
+  ],
+  "nonempty_source_counts": 43,
+  "count_level_constant_one_violations": 13,
+  "definition": "For each nonempty source count s, use the deterministic exact Hall maximizer from the support-count profile and record its maximizing Hall subset size k_s.",
+  "exact_subset_size_histogram": [
+    {"hall_subset_size": 1, "count_maxima": 11, "constant_one_violations": 1, "maximum_support_normalized_charge": "4544/4315", "maximizing_source_count": 284},
+    {"hall_subset_size": 2, "count_maxima": 7, "constant_one_violations": 3, "maximum_support_normalized_charge": "1984/1563", "maximizing_source_count": 248},
+    {"hall_subset_size": 3, "count_maxima": 5, "constant_one_violations": 3, "maximum_support_normalized_charge": "564/445", "maximizing_source_count": 282},
+    {"hall_subset_size": 4, "count_maxima": 3, "constant_one_violations": 1, "maximum_support_normalized_charge": "2288/1957", "maximizing_source_count": 286},
+    {"hall_subset_size": 5, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "3136/4689", "maximizing_source_count": 224},
+    {"hall_subset_size": 6, "count_maxima": 2, "constant_one_violations": 1, "maximum_support_normalized_charge": "6744/6383", "maximizing_source_count": 281},
+    {"hall_subset_size": 7, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "6600/7361", "maximizing_source_count": 275},
+    {"hall_subset_size": 8, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "8352/10567", "maximizing_source_count": 261},
+    {"hall_subset_size": 11, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "46464/52597", "maximizing_source_count": 264},
+    {"hall_subset_size": 13, "count_maxima": 2, "constant_one_violations": 0, "maximum_support_normalized_charge": "12350/13743", "maximizing_source_count": 247},
+    {"hall_subset_size": 14, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "3159/3677", "maximizing_source_count": 243},
+    {"hall_subset_size": 17, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "393/508", "maximizing_source_count": 262},
+    {"hall_subset_size": 27, "count_maxima": 2, "constant_one_violations": 1, "maximum_support_normalized_charge": "41768/39613", "maximizing_source_count": 227},
+    {"hall_subset_size": 29, "count_maxima": 1, "constant_one_violations": 1, "maximum_support_normalized_charge": "45980/45691", "maximizing_source_count": 209},
+    {"hall_subset_size": 40, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "50932/66553", "maximizing_source_count": 214},
+    {"hall_subset_size": 49, "count_maxima": 1, "constant_one_violations": 0, "maximum_support_normalized_charge": "41220/59507", "maximizing_source_count": 229},
+    {"hall_subset_size": 85, "count_maxima": 1, "constant_one_violations": 1, "maximum_support_normalized_charge": "14076/11845", "maximizing_source_count": 276},
+    {"hall_subset_size": 124, "count_maxima": 1, "constant_one_violations": 1, "maximum_support_normalized_charge": "51152/38383", "maximizing_source_count": 278}
+  ],
+  "coarse_subset_scale_profile": [
+    {"band": "singleton", "count_maxima": 11, "constant_one_violations": 1, "maximum_support_normalized_charge": "4544/4315", "maximizing_source_count": 284, "maximizing_hall_subset_size": 1},
+    {"band": "pair_or_triple", "count_maxima": 12, "constant_one_violations": 6, "maximum_support_normalized_charge": "1984/1563", "maximizing_source_count": 248, "maximizing_hall_subset_size": 2},
+    {"band": "four_to_six", "count_maxima": 6, "constant_one_violations": 2, "maximum_support_normalized_charge": "2288/1957", "maximizing_source_count": 286, "maximizing_hall_subset_size": 4},
+    {"band": "seven_to_twenty_six", "count_maxima": 7, "constant_one_violations": 0, "maximum_support_normalized_charge": "12350/13743", "maximizing_source_count": 247, "maximizing_hall_subset_size": 13},
+    {"band": "twenty_seven_to_twenty_nine", "count_maxima": 3, "constant_one_violations": 2, "maximum_support_normalized_charge": "41768/39613", "maximizing_source_count": 227, "maximizing_hall_subset_size": 27},
+    {"band": "thirty_to_eighty_four", "count_maxima": 2, "constant_one_violations": 0, "maximum_support_normalized_charge": "50932/66553", "maximizing_source_count": 214, "maximizing_hall_subset_size": 40},
+    {"band": "eighty_five_or_more", "count_maxima": 2, "constant_one_violations": 2, "maximum_support_normalized_charge": "51152/38383", "maximizing_source_count": 278, "maximizing_hall_subset_size": 124}
+  ],
+  "violating_count_maxima": [
+    {"source_cycles": 209, "hall_subset_size": 29, "support_normalized_charge": "45980/45691", "hall_subset_supply": 3520, "hall_subset_capacity": 731056},
+    {"source_cycles": 215, "hall_subset_size": 3, "support_normalized_charge": "3440/3321", "hall_subset_supply": 384, "hall_subset_capacity": 79704},
+    {"source_cycles": 227, "hall_subset_size": 27, "support_normalized_charge": "41768/39613", "hall_subset_supply": 2944, "hall_subset_capacity": 633808},
+    {"source_cycles": 234, "hall_subset_size": 2, "support_normalized_charge": "234/193", "hall_subset_supply": 256, "hall_subset_capacity": 49408},
+    {"source_cycles": 248, "hall_subset_size": 2, "support_normalized_charge": "1984/1563", "hall_subset_supply": 256, "hall_subset_capacity": 50016},
+    {"source_cycles": 272, "hall_subset_size": 3, "support_normalized_charge": "3264/2893", "hall_subset_supply": 384, "hall_subset_capacity": 92576},
+    {"source_cycles": 276, "hall_subset_size": 85, "support_normalized_charge": "14076/11845", "hall_subset_supply": 9792, "hall_subset_capacity": 2274240},
+    {"source_cycles": 278, "hall_subset_size": 124, "support_normalized_charge": "51152/38383", "hall_subset_supply": 13248, "hall_subset_capacity": 2763576},
+    {"source_cycles": 280, "hall_subset_size": 2, "support_normalized_charge": "4480/3781", "hall_subset_supply": 256, "hall_subset_capacity": 60496},
+    {"source_cycles": 281, "hall_subset_size": 6, "support_normalized_charge": "6744/6383", "hall_subset_supply": 384, "hall_subset_capacity": 102128},
+    {"source_cycles": 282, "hall_subset_size": 3, "support_normalized_charge": "564/445", "hall_subset_supply": 384, "hall_subset_capacity": 85440},
+    {"source_cycles": 284, "hall_subset_size": 1, "support_normalized_charge": "4544/4315", "hall_subset_supply": 128, "hall_subset_capacity": 34520},
+    {"source_cycles": 286, "hall_subset_size": 4, "support_normalized_charge": "2288/1957", "hall_subset_supply": 512, "hall_subset_capacity": 125248}
+  ],
+  "violating_count_maxima_with_subset_size_at_most_3": 7,
+  "violating_count_maxima_with_subset_size_at_most_6": 9,
+  "largest_subset_fraction_among_violating_count_maxima": {"value": "62/139", "source_cycles": 278, "hall_subset_size": 124},
+  "violating_subset_sizes": [1, 2, 3, 4, 6, 27, 29, 85, 124],
+  "no_violating_count_maximum_in_ranges": ["7-26", "30-84"],
+  "subset_size_alone_characterizes_violation": false,
+  "source_ledger": "experiments/m10-hall-support-count-profile-106-399-audit.json",
+  "asymptotic_subset_scale_theorem_proved": false,
+  "all_exact_regressions_verified": true
+}
