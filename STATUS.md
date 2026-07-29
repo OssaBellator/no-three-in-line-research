@@ -12,10 +12,10 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2675**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2691**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
-Every final checker and branch-wide regression permanently reports:
+Every final checker, fixture and branch-wide regression permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -71,28 +71,17 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | T42 | exact seven-gate dossier and blocker audit binding | a ready dossier would still not prove the root theorem |
 | T43 | stable root cores, exact three-artifact bank and noncircular dual binding | the reviewed implication to `D(n)=2n` remains open |
 
-## Canonical endpoints
+## Canonical execution and validation
 
 ```text
-scripts/check_prime_power_geometry_selector_frontier_v2.py
-scripts/check_prime_power_auxiliary_semantics_frontier_v2.py
-scripts/check_prime_power_state_equivalence_frontier.py
-scripts/check_prime_power_component_scale_frontier.py
-scripts/check_prime_power_interface_exhaustiveness_frontier.py
-scripts/check_prime_power_global_rank_frontier.py
-scripts/check_prime_power_state_predicate_frontier.py
-scripts/check_prime_power_row_theorem_frontier.py
-scripts/check_prime_power_global_family_exhaustiveness_frontier.py
-scripts/check_prime_power_exceptional_chamber_frontier.py
-scripts/check_prime_power_final_premise_frontiers.py
-scripts/check_prime_power_canonical_frontier_roots.py
-scripts/check_prime_power_final_support_handoff_frontiers_v2.py
-scripts/run_prime_power_current_frontier_regression.py
+python scripts/check_prime_power_canonical_frontier_roots.py --self-test
+python scripts/check_prime_power_all_open_target_fixture.py --self-test
+python scripts/test_prime_power_current_frontier_regression.py
+python scripts/run_prime_power_current_frontier_regression.py
+python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-## Canonical T19--T21 roots
-
-Canonical execution installs:
+Canonical target roots remain:
 
 ```text
 T19 <- T02, T18
@@ -100,47 +89,18 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-with research-start roots:
+The all-open fixture reconstructs the exact 43 canonical target definitions and one open completion record per
+target. Every artifact locator and digest is null and zero targets are marked proved. Its seven deliberate
+mutations must be rejected.
 
-```text
-T19 <- T18
-T20 <- T19
-T21 <- T19
-```
+The negative regression suite separately removes targets, corrupts target order and frontier membership,
+drops endpoint honesty markers and document markers, and simulates failed and silent subprocesses. GitHub
+Actions runs the negative tests and full regression on Python 3.10 and 3.12.
 
-Legacy special-certificate support for the old global-family skeleton and exceptional-chamber registry is
-excluded. The canonical-root audit requires both 43-target DAGs to remain acyclic, the T32 obligation census
-to remain stable, the older scoped correction contexts to be idempotent, and all three corrections to reach
-T43. Hashes produced under the former roots are stale and must be regenerated.
-
-This is dependency integrity, not a proof of T19, T20 or T21.
-
-## Current-frontier regression
-
-The branch-wide standard-library regression is:
-
-```text
-python scripts/run_prime_power_current_frontier_regression.py
-```
-
-It checks:
-
-```text
-all check_prime_power_*, verify_prime_power_* and run_prime_power_* source syntax
-exact thirteen-frontier and forty-three-target literal census
-presence and honesty markers of all thirteen canonical endpoints
-README, status, theorem-ledger and roadmap synchronisation
-canonical-root executable self-test
-final v2 endpoint root self-test
-```
-
-The GitHub Actions workflow runs the same suite on Python 3.10 and 3.12 with read-only repository permission.
-A committed workflow is not evidence of a passing run; actual Actions results must be reported separately.
-The regression does not validate a mathematical certificate or create T44.
+These checks exercise software and documentary integrity. They do not validate an external mathematical proof,
+close a target, or create T44.
 
 ## Genuine current frontiers
-
-There is no further atomic documentary target beyond T43. The unresolved mathematics is:
 
 ```text
 T01--T02 source truth and genuine recurrence exhaustiveness
@@ -156,40 +116,25 @@ T42 final dossier sign-off
 T43 the reviewed root implication to D(n)=2n
 ```
 
-T32--T34 are documentary aggregation gates and become effective only when their lower proof banks are
-genuinely complete.
-
-## Concrete mathematical work still required
-
-1. Transcribe and prove every genuine source statement.
-2. Prove the supplied recurrence genuinely exhaustive.
-3. Populate all actual T03/T04 objects.
-4. Prove T05 covers every relevant geometry for arbitrary `n`.
-5. Prove every T06--T18 semantic, score, rank, predicate and row theorem.
-6. Prove T19 global-family exhaustiveness for the genuine recurrence.
-7. Prove and review all 252 T20/T21 chamber dispositions.
-8. Supply and review all ten T22--T31 final premise implications.
-9. Prove and review all six T35--T40 handoff assertions.
-10. Complete T41 review and T42 dossier sign-off.
-11. Prove the ordinary T43 implication from the reviewed quotient and handoff to `D(n)=2n`.
+T32--T34 are documentary aggregation gates and become effective only when their lower proof banks are genuinely
+complete.
 
 ## Corrections retained
 
-- A locator, hash, workflow result or sealed evidence record does not prove a theorem true.
+- A locator, hash, workflow result, fixture or sealed evidence record does not prove a theorem true.
 - Exact recurrence identity does not prove recurrence exhaustiveness.
 - Literal T03/T04 data do not prove their intended semantics.
 - Finite T05 arithmetic does not prove arbitrary-`n` coverage.
 - T06 scores and T07--T18 semantic statements remain external mathematics.
 - T19 exact coverage does not prove the global family exhaustive.
 - T20/T21 typed chamber artifacts do not prove chamber closure.
-- Exact T22--T31 support does not prove any dependency implication or final premise.
-- Exact T32--T43 support does not prove any handoff, review, dossier or root theorem.
-- Canonical dependency roots, syntax compilation, CI and acyclic graphs are documentary metadata.
+- Exact T22--T43 support does not prove any premise, handoff, review, dossier or root theorem.
+- Canonical roots, syntax compilation, mutation rejection, CI and acyclic graphs are documentary metadata.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2675**, the repository has a synchronized finite documentary stack
-through all 43 targets, canonical T19--T21 ancestry through T43, and a continuous regression contract over the
-current software and honesty ledgers.
+There is no complete proof. Through **CMR2691**, the repository has a synchronized finite documentary stack
+through all 43 targets, canonical T19--T21 ancestry through T43, an all-open completion fixture and negative
+regression coverage for the branch validators.
 
 The unresolved centre remains the genuine mathematics listed above.
