@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2761**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2771**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 Every final checker, finite theorem checker, fixture, runtime manifest and branch-wide regression permanently
@@ -48,7 +48,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | T18 | T12/T15-derived final rows and exact predicate multisets | row theorems and fixed-offset meaning remain open |
 | T19 | T02/T18-derived parent-to-final-row coverage with T04 clause ancestry | genuine global-family exhaustiveness remains open |
 | T20 | exact 232 zero-selector chamber dispositions with typed host/row support | every zero-selector chamber proof remains open until supplied and reviewed |
-| T21 | exact 20 hard-core chambers, one exchange functional, sharp cardinality threshold, exact two-point classification and arbitrary-cardinality collinear normal form | genuine recurrence signatures, collinearity, labelled semantics and all 20 chamber arguments remain open |
+| T21 | exact 20 hard-core chambers, one exchange functional, exact two-point and collinear geometry, and arbitrary-background pivot-line energy bounds | genuine recurrence signatures, labelled semantics and all 20 chamber arguments remain open |
 | T22 | exact T01 dependency census and base-case premise bundle | the complete base-domain theorem remains open |
 | T23 | exact T02/T19 dependency census and recurrence premise bundle | the nonbase recurrence-exhaustiveness implication remains open |
 | T24 | exact T05/T07 dependency census and invariant premise bundle | invariant preservation remains open |
@@ -82,6 +82,7 @@ python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
 python scripts/check_prime_power_hard_core_collinear_backgrounds.py
+python scripts/check_prime_power_hard_core_pivot_line_energy.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -111,7 +112,7 @@ For the nine two-response hosts,
 \Delta=d_{32}-d_{12}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}-5h_{x+y-3}-3,
 \]
 
-and
+with deterministic selection
 
 ```text
 Q1 selected iff Delta <= 0
@@ -129,51 +130,19 @@ d_{32}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}
 
 Thus the twenty scalar chambers are nine copies of each halfspace plus two singleton-response full spaces.
 
-## Sharp scalar realisability and exact two-point geometry
+## Sharp realisability, two-point and collinear geometry
 
-For an outside-grid background `B`, pair-count terms vanish when `|B|<=1`. Every pairwise intersection among the
-four relevant lines lies inside the forbidden response grid, so one legal background point contributes at most
-three positive line units. Therefore
+No legal background with at most one point selects `Q4`, while two points suffice. For exactly two points, strict
+`Q4` occurs precisely in the double-`K_-` family with `Delta=5`, or in the mixed `K_-`/`K_30` or `K_-`/`K_03`
+family whose joining line avoids both negative pivots, where `Delta=1`.
 
-\[
-|B|\le1\Longrightarrow\Delta(B)\le0.
-\]
-
-The bound is sharp:
-
-```text
-empty background: Delta=-3, strict Q1
-{(-1,-2)}: Delta=0, tie resolved to Q1
-{(-1,-2),(4,3)}: Delta=5, strict Q4
-```
-
-For a legal two-point background `B={u,v}`, strict `Q4` occurs exactly when either both points lie on
-`K_-:x-y-1=0`, giving `Delta=5`, or exactly one lies on `K_-` and the other lies on `K_30` or `K_03` while their
-joining line avoids the negative pivots `(3,0)` and `(1,2)`, giving `Delta=1`. A mixed negative-pivot alignment has
-`Delta=0`; every other legal two-point background has `Delta<=0`.
-
-## Arbitrary-cardinality collinear normal form
-
-For any finite legal background `B` collinear on a supporting line `L`, define
+For a finite legal background `B` collinear on a line `L`,
 
 \[
-\beta(L)=\#\{(3,2),(1,0)\in L\}-\#\{(3,0),(1,2)\in L\}
+\Delta(B)=\beta(L)\binom{|B|}{2}+\sum_{x\in B}\omega(x)-3.
 \]
 
-and
-
-\[
-\omega(x)=3\mathbf1_{x-y-1}(x)-5\mathbf1_{x+y-3}(x)
-+\mathbf1_{3x+y-3}(x)+\mathbf1_{x+3y-9}(x).
-\]
-
-Then, with `m=|B|`,
-
-\[
-\boxed{\Delta(B)=\beta(L)\binom m2+\sum_{x\in B}\omega(x)-3.}
-\]
-
-The exact pure and clean line formulas are:
+The exact pure and clean thresholds are:
 
 | Supporting-line family | Exact `Delta` | Strict-`Q4` threshold |
 |---|---:|---:|
@@ -185,20 +154,52 @@ The exact pure and clean line formulas are:
 | clean negative-pivot line | `-m(m-1)/2-3` | never |
 | clean neutral line | `-3` | never |
 
-This is arbitrary-cardinality scalar geometry for collinear backgrounds. It does not prove that any genuine
-recurrence background is collinear, nor any destroyed-threshold, labelled-child, return, interface or recurrent
-semantic statement.
+## Arbitrary-background pivot-line energy
+
+For any finite legal background `B`, partition its points by the line through each of the two positive and two
+negative pivots. Let `E_+(B)` and `E_-(B)` be the corresponding sums of within-pencil pair counts, and let
+`W(B)` be the signed occupancy weight of the four relevant lines. Then
+
+\[
+\boxed{\Delta(B)=E_+(B)-E_-(B)+W(B)-3.}
+\]
+
+The exact integer selector is
+
+\[
+Q_4\text{ selected}\iff E_+(B)+W(B)\ge E_-(B)+4.
+\]
+
+Insertion of a legal point `x` has marginal
+
+\[
+\Delta(B\cup\{x\})-\Delta(B)=\omega(x)+\sum_{y\in B}\chi(x,y).
+\]
+
+For every `m=|B|`,
+
+\[
+\boxed{-(m+1)(m+3)\le\Delta(B)\le(m-1)(m+3).}
+\]
+
+The upper equality is attained exactly by legal backgrounds on `K_-`, and the lower equality exactly by legal
+backgrounds on `K_+` (apart from the empty background, where both formulas give `-3`). Therefore strict `Q4` is
+realisable at cardinality `m` exactly when `m>=2`.
+
+These formulas evaluate any supplied background. They do not supply the genuine recurrence backgrounds or prove
+any destroyed-threshold, labelled-child, return, interface or recurrent semantic statement.
 
 ## Corrected runtime audit
 
 CMR2706--CMR2721 use inherited `PYTHON*` removal, exact seed and bytecode controls, `-B -S -s` startup, path
-scrubbing, doubled runtime probes, source identities, AST honesty evidence and a sealed schema-v1 manifest. The
-manifest records what runtime validation executed. It is not a proof certificate.
+scrubbing, doubled runtime probes, source identities, AST honesty evidence and a sealed schema-v1 manifest. Each
+manifest contains a literal `manifest_sha256` seal. The manifest records what runtime validation executed; it is
+not a proof certificate.
 
-GitHub Actions is configured to run all four hard-core finite theorems and upload one thirty-day runtime-manifest
-artifact per Python version. The branch-wide runner also restores the pure `validate_endpoint_text` and
-`validate_document_markers` APIs required by the negative test suite. A committed workflow or uploaded artifact is
-not evidence that the conjecture is proved.
+GitHub Actions is configured to run all five hard-core finite theorems and upload one thirty-day runtime-manifest
+artifact per Python version. The branch-wide runner retains the pure validator APIs required by the negative test
+suite and executes all five theorem checkers. A committed workflow or uploaded artifact is not evidence that the
+conjecture is proved.
 
 ## Genuine current frontiers
 
@@ -209,7 +210,7 @@ T05 arbitrary-n geometry coverage
 T06--T18 semantic, score, rank, predicate and row theorems
 T19 genuine global-family exhaustiveness
 T20 all 232 zero-selector chamber theorems
-T21 genuine signatures and all 20 semantic arguments; collinearity must be proved before using the new normal form
+T21 genuine recurrence backgrounds and all 20 semantic arguments; scalar evaluation is now exact once a background is supplied
 T22--T31 all ten final premise implications
 T35--T40 all six ordinary handoff arguments
 T41 ordinary final review
@@ -228,15 +229,15 @@ complete.
 - Finite T05 arithmetic does not prove arbitrary-`n` coverage.
 - T06 scores and T07--T18 semantic statements remain external mathematics.
 - T19 exact coverage does not prove the global family exhaustive.
-- Scalar T21 halfspaces, witnesses, classifications and collinear formulas do not supply genuine recurrence signatures or semantics.
+- Scalar T21 halfspaces, witnesses, classifications, collinear formulas and pivot-line energy identities do not supply genuine recurrence signatures or semantics.
 - Exact T22--T43 support does not prove any premise, handoff, review, dossier or root theorem.
 - Canonical roots, syntax compilation, isolated imports, AST honesty checks, mutation rejection, manifests, CI
   and acyclic graphs are documentary or software metadata.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2761**, the repository has a synchronized finite documentary stack
+There is no complete proof. Through **CMR2771**, the repository has a synchronized finite documentary stack
 through all 43 targets, corrected runtime validation, one explicit hard-core exchange functional, exact two-point
-geometry and an arbitrary-cardinality collinear normal form with sharp supporting-line thresholds.
+and collinear geometry, and an arbitrary-background pivot-line energy identity with sharp cardinality extremes.
 
 The unresolved centre remains the genuine mathematics listed above.
