@@ -34,6 +34,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5eb--AC5ef | Every named positive-pressure cut arc has a canonical unit-path decomposition with exactly its pressure many cross-side defect-path collision pairs; one retained defect-class pair carries the corresponding pigeonhole share | PROVED UNDER THE COMPLETE CYCLE-CANCELLED PATH AND CAPACITY-SLOT CONTRACT | `docs/alternating-core-cut-arc-collision-pairs.md` |
 | AC5eg--AC5ek | Every cross-side defect-path collision has a unique maximal common segment containing its named collision arc; the segment is a source prefix or an internal merge--segment--split witness, and collision multiplicity concentrates on one complete segment signature | PROVED UNDER THE COMPLETE CANONICAL PATH-PAIR AND SEGMENT-ADDRESS CONTRACT | `docs/alternating-core-collision-segment-localization.md` |
 | AC5el--AC5ep | Every localized collision has a canonical least occupied segment slot; complete occurrence lineage returns an exact duplicate physical occurrence, a non-injective slot dictionary or the first missing lineage record, while injective one-use slot debits forbid the collision | PROVED UNDER THE COMPLETE OCCURRENCE-SLOT INJECTIVITY AND ONE-USE DEBIT CONTRACT | `docs/alternating-core-occurrence-slot-collision-lineage.md` |
+| AC5eq--AC5eu | Complete localized defect-use/faithful-slot compatibility is a unit matching problem; full injective realization is equivalent to every Hall inequality, while failure returns the least maximum-deficit core, saturates all neighboring slots and makes every retained use essential | PROVED UNDER THE COMPLETE OCCURRENCE-SLOT COMPATIBILITY AND UNIT-CAPACITY CONTRACT | `docs/alternating-core-occurrence-slot-assignment-hall-core.md` |
 
 ## Updated AC4 frontier
 
@@ -41,6 +42,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers, irreducible defect cores, overlap and cut-pressure certificates, exact path collisions, canonical segments and occurrence-slot lineage. Remaining work is constructing the concrete geometric graph and proving every returned singleton shortage or occurrence-slot violation impossible, or verifying injective one-use physical lineage with exact source/certificate capacities and exogenous deposits.
+The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers, irreducible defect cores, pressure/path/segment localization, occurrence-slot lineage and exact assignment Hall cores. Remaining work is constructing the concrete geometric use/slot graph and proving every returned maximum-deficit core has enough faithful physical slots, is paid by named deposits or is geometrically impossible.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
