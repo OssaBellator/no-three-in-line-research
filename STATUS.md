@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2647**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2663**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 Every final checker permanently reports:
@@ -85,167 +85,52 @@ scripts/check_prime_power_row_theorem_frontier.py
 scripts/check_prime_power_global_family_exhaustiveness_frontier.py
 scripts/check_prime_power_exceptional_chamber_frontier.py
 scripts/check_prime_power_final_premise_frontiers.py
-scripts/check_prime_power_final_support_handoff_frontiers.py
+scripts/check_prime_power_canonical_frontier_roots.py
+scripts/check_prime_power_final_support_handoff_frontiers_v2.py
 ```
 
-## Exact T19 global-family frontier
+## Canonical T19--T21 roots
 
-The older global-family skeleton validates a separately assembled global integer family. The canonical T19
-endpoint instead derives:
+The original atomic target table carried legacy dependency roots. Canonical execution now installs:
 
 ```text
-expected parents and selected slots from T02
-final recurrent and interface rows from T18
-case/clause/slot ancestry from T04
+T19 <- T02, T18
+T20 <- T05, T18, T19
+T21 <- T05, T18, T19
 ```
 
-The corrected T19 target flow is scoped during validation:
+with research-start roots:
 
 ```text
-T02_RULE_EXHAUSTIVENESS + T18_ROW_THEOREMS
-    -> T19_GLOBAL_FAMILY
+T19 <- T18
+T20 <- T19
+T21 <- T19
 ```
 
-The old `global-family-skeleton` special target-certificate support is excluded. Concrete certificates
-carrying the former target-definition or support digests must be regenerated.
+Legacy special-certificate support for the old global-family skeleton and exceptional-chamber registry is
+excluded. The structural audit requires both complete 43-target DAGs to remain acyclic, the T32 obligation
+census to remain stable, the older scoped correction contexts to be idempotent, and all three corrections to
+propagate to T43.
 
-Every T02 application contributes one open/proved parent coverage record. A proved record requires a
-nonempty exact T18 final-row bank and verifies that every row has the same T02/T04 parent, source case,
-source clause and operation slot.
+Target-definition and artifact hashes produced under the former roots are stale and must be regenerated.
+This is a dependency correction, not a proof of T19, T20 or T21.
 
-Every proved parent carries one `global-family-parent-coverage-proof` supported by:
+## Exact T19--T43 stack
 
-- its T02 application artifact;
-- every relevant T04 population artifact; and
-- every relevant T18 `global-row-theorem-proof` artifact.
+T19 derives expected parents from T02, final rows from T18 and case/clause/slot ancestry from T04. T20 and
+T21 retain the canonical 232+20 chamber census and require exact T05 host geometry, with T18/T19 support for
+row-based closure modes.
 
-The aggregate bank synchronizes `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE` and `T19_GLOBAL_FAMILY` through
-canonical `global-family-exhaustiveness-frontier://` locators.
+T22--T31 reconstruct exact lower-target support for ten final premises and bind noncircular proof bundles
+into both premise and atomic target artifacts. T32--T43 aggregate typed obligations and premises, six handoff
+assertions, final review, dossier audit and the root implication interface.
 
-Exact finite parent-to-row coverage does not prove the recurrence genuinely exhaustive.
-
-## Exact T20/T21 chamber frontiers
-
-The canonical worklist is unchanged:
-
-\[
-232\text{ zero-selector chambers}+20\text{ hard-core chambers}=252.
-\]
-
-The corrected chamber target flow is scoped during validation:
-
-```text
-T05_GEOMETRY_SELECTORS
-T18_ROW_THEOREMS
-T19_GLOBAL_FAMILY
-    -> T20_EXCEPTIONAL_ZERO_ROWS
-    -> T21_HARD_CORE_ROWS
-```
-
-Both targets wait for T19. Legacy special support from the old exceptional-chamber registry is excluded.
-Certificates using the former target definitions must be regenerated.
-
-Every closed chamber must cite the complete exact T05 geometry-artifact bank for its host. One of four
-proof modes is required:
-
-```text
-global-row-theorem
-direct-chamber-proof
-signature-infeasibility
-host-union-proof
-```
-
-A row-theorem proof cites one exact same-host T18 theorem and its T19 parent coverage. A host-union proof
-cites every exact T18/T19 row represented at that host. Direct and signature-infeasibility proofs remain
-external theorems but now have exact host support and chamber-specific statements.
-
-Every closed chamber carries either `exceptional-zero-chamber-proof` or `hard-core-chamber-proof`. Separate
-noncircular banks synchronize the two obligation and atomic-target pairs.
-
-The fixed-response correction `17`, rollback distance `12` and uniform correction `44` remain distinct
-mathematical claims. No checker infers or merges them.
-
-## Exact T22--T31 final-premise frontiers
-
-The premise checker reconstructs every dependency target from the fixed atomic target definitions:
-
-```text
-T22 <- T01
-T23 <- T02, T19
-T24 <- T05, T07
-T25 <- T03, T06
-T26 <- T08, T09, T10
-T27 <- T11, T12
-T28 <- T13, T14, T15, T16, T17, T18
-T29 <- T20, T21
-T30 <- T11, T16, T18
-T31 <- T12, T16, T18, T19, T20, T21
-```
-
-For every dependency it publishes the exact target result/completion digests, target artifact and bundle
-digests, and external proof pointer. A premise cannot be declared proved before every dependency target is
-effectively complete.
-
-Every proved premise supplies one reviewed semantic implication with explicit arbitrary-`n` scope and review
-boundary. Its noncircular bundle hashes the premise record, semantic statement, lower-target support and
-stable cores of the typed premise and atomic target artifacts. The outward locator/digest fields and ancestor
-certificate SHAs are excluded from the bundle definition.
-
-The same bundle digest must be carried by:
-
-```text
-final-premise-frontier://PREMISE-ID
-final-premise-frontier://TARGET-ID
-```
-
-The checker synchronizes the exact frontier with both the old final implication contract and the atomic
-execution DAG. This closes a documentary gap; it does not prove any premise.
-
-## Exact T32--T43 final support and root frontiers
-
-The final checker reconstructs the fixed sequence:
-
-```text
-T32 typed obligation artifacts
-T33 obligation-artifact support DAG
-T34 typed final-premise artifacts
-T35--T40 six induction-handoff assertions
-T41 final handoff review
-T42 seven-gate dossier audit
-T43 root implication
-```
-
-Every target receives the exact immediate-target result/completion census and exact external support derived
-from the canonical nested registries. A proved target must have one reviewed semantic certificate and an
-atomic target artifact whose proof pointer is:
-
-```text
-final-support-handoff-frontier://TARGET-ID
-```
-
-T32 aggregates the existing T01--T21 obligation seals rather than replacing them. T34 likewise preserves the
-T22--T31 `final-premise-frontier://` seals, and T35--T40 preserve the existing
-`handoff-artifact-registry://` assertion seals.
-
-T41 must agree with `final_induction_handoff_ready`. T42 must agree with
-`final_dossier_integrity_ready`. T43 must agree with the closed root semantic obligation and requires exactly:
-
-```text
-all-n-implication-proof
-base-case-proof
-invariant-preservation-proof
-```
-
-The T43 bundle hashes stable root-obligation, root-closure, root-artifact and target-artifact cores. It excludes
-all outward locator/digest fields and the obligation-record digest that contains the root registry bundle. The
-same noncircular digest is bound into the T43 target artifact and all three root obligation artifacts.
-
-This completes the documentary interface through T43. It does not prove the root implication.
+The canonical v2 endpoint validates the T19--T21 root audit before loading the nested T32--T43 stack. Every
+proved target still requires its ordinary mathematical theorem and review.
 
 ## Genuine current frontiers
 
-There is no further atomic documentary target beyond T43. The current frontiers are the unresolved mathematics
-inside the existing work banks:
+There is no further atomic documentary target beyond T43. The current frontiers are the unresolved mathematics:
 
 ```text
 T01--T02 source truth and genuine recurrence exhaustiveness
@@ -289,16 +174,14 @@ genuinely complete.
 - T20/T21 typed chamber artifacts do not prove chamber closure.
 - Exact T22--T31 support does not prove any dependency implication or final premise.
 - Exact T32--T43 support does not prove any handoff, review, dossier or root theorem.
-- Typed artifacts and readiness flags are documentary metadata.
-- Syntax compilation and isolated helper tests are not a dependency-backed certificate suite.
+- Canonical dependency roots and acyclic graphs are documentary metadata.
+- Syntax compilation and structural self-tests are not a dependency-backed certificate suite.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2647**, the repository has an exact finite documentary stack from
-source statements through all 43 atomic targets, including the complete exceptional-chamber worklist, ten
-noncircular final-premise frontiers, six handoff frontiers, final review, dossier audit and root-implication
-interface.
+There is no complete proof. Through **CMR2663**, the repository has an exact finite documentary stack through
+all 43 atomic targets and a canonical T19--T21 dependency installation audited across the full T43 DAG.
 
-The unresolved center remains the genuine mathematics: source and recurrence truth, actual population,
+The unresolved centre remains the genuine mathematics: source and recurrence truth, actual population,
 arbitrary-`n` coverage, semantic correctness, global-family exhaustiveness, all 252 chamber proofs, all ten
 final premises, all six handoff arguments, final review and the implication to all `n`.
