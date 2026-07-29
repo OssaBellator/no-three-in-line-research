@@ -12,10 +12,11 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2721**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2733**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
-Every final checker, fixture, runtime manifest and branch-wide regression permanently reports or preserves:
+Every final checker, finite theorem checker, fixture, runtime manifest and branch-wide regression permanently
+reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -46,8 +47,8 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | T17 | T13-derived predicates and rank-sensitive binding | predicate truth remains open |
 | T18 | T12/T15-derived final rows and exact predicate multisets | row theorems and fixed-offset meaning remain open |
 | T19 | T02/T18-derived parent-to-final-row coverage with T04 clause ancestry | genuine global-family exhaustiveness remains open |
-| T20 | exact 232 zero-selector chamber dispositions with typed host/row support | every chamber proof remains open until supplied and reviewed |
-| T21 | exact 20 hard-core chamber dispositions with typed host/row support | every chamber proof remains open until supplied and reviewed |
+| T20 | exact 232 zero-selector chamber dispositions with typed host/row support | every zero-selector chamber proof remains open until supplied and reviewed |
+| T21 | exact 20 hard-core chambers and one explicit alternating-exchange selector functional | genuine survivor signatures, labelled semantics and all 20 chamber arguments remain open |
 | T22 | exact T01 dependency census and base-case premise bundle | the complete base-domain theorem remains open |
 | T23 | exact T02/T19 dependency census and recurrence premise bundle | the nonbase recurrence-exhaustiveness implication remains open |
 | T24 | exact T05/T07 dependency census and invariant premise bundle | invariant preservation remains open |
@@ -77,6 +78,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 python scripts/check_prime_power_canonical_frontier_roots.py --self-test
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/test_prime_power_current_frontier_regression.py
+python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -91,32 +93,54 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
+## T21 hard-core exchange normal form
+
+The eleven positive-minimum side-four hosts have exactly two response-family types:
+
+```text
+9 hosts: Q1=(3,0,1,2) and Q4=(3,2,1,0)
+2 hosts: Q4 only
+```
+
+The two responses differ on one alternating four-cycle. For the nine two-response hosts, put
+
+\[
+\Delta=d_{32}-d_{12}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}-5h_{x+y-3}-3.
+\]
+
+The deterministic selector is exactly
+
+```text
+Q1 selected iff Delta <= 0
+Q4 selected iff Delta > 0
+```
+
+or, integrally,
+
+\[
+Q_4\text{ selected}
+\iff
+d_{32}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}
+\ge d_{12}+5h_{x+y-3}+4.
+\]
+
+Thus the twenty scalar chambers are nine copies of each halfspace plus two singleton-response full spaces. This
+is one finite selector normal form, not a proof of any genuine hard-core chamber. The real survivor signatures,
+destroyed thresholds, labelled child vectors, return/interface terms and recurrent semantics remain absent.
+
 ## Corrected runtime audit
 
 The original `check_prime_power_import_smoke.py` CMR2694/CMR2697 launcher used Python `-I` while claiming that
 `PYTHONHASHSEED` and `PYTHONDONTWRITEBYTECODE` controlled child processes. Because `-I` ignores `PYTHON*`
 variables, that deterministic environment claim was not established.
 
-CMR2706--CMR2721 replace it with:
+CMR2706--CMR2721 replace it with inherited `PYTHON*` removal, exact seed and bytecode controls, `-B -S -s`
+startup, path scrubbing, doubled runtime probes, source identities, AST honesty evidence and a sealed schema-v1
+manifest. The manifest records what runtime validation executed. It is not a proof certificate.
 
-```text
-inherited PYTHON* removal
-exact PYTHONHASHSEED=0 and PYTHONDONTWRITEBYTECODE=1 installation
-python -B -S -s child startup with automatic site initialization disabled
-working-directory and third-party path removal
-two-child startup reproducibility probe
-per-module hash, bytecode, no-site, user-site and path gates
-source SHA-256 and byte-count records
-endpoint honesty evidence classes
-canonical schema-v1 JSON manifest with top-level manifest_sha256 seal
-six accepted controls and six rejected mutations
-separate Python 3.10 and 3.12 workflow artifacts
-```
-
-The manifest records what runtime validation executed. It is not a proof certificate.
-
-GitHub Actions is configured to upload one thirty-day runtime-manifest artifact per Python version. A committed
-workflow or uploaded artifact is not evidence that the mathematical conjecture is proved.
+GitHub Actions is configured to run the hard-core finite theorem and upload one thirty-day runtime-manifest
+artifact per Python version. A committed workflow or uploaded artifact is not evidence that the conjecture is
+proved.
 
 ## Genuine current frontiers
 
@@ -126,7 +150,8 @@ T03--T04 actual complete population
 T05 arbitrary-n geometry coverage
 T06--T18 semantic, score, rank, predicate and row theorems
 T19 genuine global-family exhaustiveness
-T20--T21 all 252 chamber theorems
+T20 all 232 zero-selector chamber theorems
+T21 genuine signature evaluation and all 20 semantic hard-core chamber arguments
 T22--T31 all ten final premise implications
 T35--T40 all six ordinary handoff arguments
 T41 ordinary final review
@@ -145,15 +170,15 @@ complete.
 - Finite T05 arithmetic does not prove arbitrary-`n` coverage.
 - T06 scores and T07--T18 semantic statements remain external mathematics.
 - T19 exact coverage does not prove the global family exhaustive.
-- T20/T21 typed chamber artifacts do not prove chamber closure.
+- An explicit scalar T21 halfspace does not supply genuine survivor signatures or labelled chamber semantics.
 - Exact T22--T43 support does not prove any premise, handoff, review, dossier or root theorem.
 - Canonical roots, syntax compilation, isolated imports, AST honesty checks, mutation rejection, manifests, CI
-  and acyclic graphs are documentary metadata.
+  and acyclic graphs are documentary or software metadata.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2721**, the repository has a synchronized finite documentary stack
-through all 43 targets, canonical T19--T21 ancestry through T43, an all-open fixture, negative validator tests
-and a corrected reproducible runtime-manifest audit.
+There is no complete proof. Through **CMR2733**, the repository has a synchronized finite documentary stack
+through all 43 targets, corrected runtime validation, and an explicit one-functional normal form for the twenty
+scalar side-four hard-core chambers.
 
 The unresolved centre remains the genuine mathematics listed above.
