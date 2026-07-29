@@ -43,9 +43,9 @@ jobs:
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
-      - name: Run isolated import and honesty audit
+      - name: Run strict runtime manifest audit
         run: >-
-          python scripts/check_prime_power_import_smoke.py
+          python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py
           --self-test
           --manifest artifacts/current-frontier-runtime-python-${{ matrix.python-version }}.json
 
