@@ -40,6 +40,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/test_prime_power_current_frontier_regression.py
 
+      - name: Verify hard-core exchange normal form
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_exchange_normal_form.py
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
