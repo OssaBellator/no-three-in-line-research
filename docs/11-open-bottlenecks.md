@@ -25,7 +25,7 @@ Run:
 
 ```text
 python scripts/test_prime_power_current_frontier_regression.py
-python scripts/check_prime_power_import_smoke.py --self-test \
+python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
@@ -46,9 +46,10 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-The original CMR2694/CMR2697 launcher used `-I`, which ignores `PYTHON*` variables. CMR2706--CMR2721 replace it
-with an audited `-B -s` child launcher, inherited-`PYTHON*` removal, explicit seed and bytecode settings, scrubbed
-third-party paths, doubled child-runtime fingerprints and a sealed schema-v1 manifest.
+The original `check_prime_power_import_smoke.py` CMR2694/CMR2697 launcher used `-I`, which ignores `PYTHON*`
+variables. CMR2706--CMR2721 replace it with an audited `-B -S -s` child launcher, inherited-`PYTHON*` removal,
+explicit seed and bytecode settings, disabled automatic site initialization and scrubbed third-party paths,
+doubled child-runtime fingerprints and a sealed schema-v1 manifest.
 
 Every module record contains its filename, source SHA-256 and byte count. Every endpoint record contains the
 source identity and exact AST honesty evidence classes. The manifest itself has a canonical SHA-256 seal.
