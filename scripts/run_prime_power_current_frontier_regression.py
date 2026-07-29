@@ -2,9 +2,10 @@
 """Run dependency-free regression checks for the current prime-power frontier.
 
 The suite checks source syntax, the fixed thirteen-frontier/forty-three-target
-census, canonical endpoint presence, honesty-ledger synchronization and executable
-structural self-tests. It validates research infrastructure only and permanently
-reports ``all_n_proved_by_checker = 0``.
+census, canonical endpoint presence, honesty-ledger synchronization, executable
+structural self-tests and finite theorem checkers. It validates research
+infrastructure and stated finite claims only and permanently reports
+``all_n_proved_by_checker = 0``.
 """
 from __future__ import annotations
 
@@ -48,33 +49,41 @@ SELF_TESTS = (
     ("check_prime_power_final_support_handoff_frontiers_v2.py", "--self-test-roots"),
     ("check_prime_power_all_open_target_fixture.py", "--self-test"),
 )
+FINITE_THEOREM_CHECKS = (
+    "check_prime_power_hard_core_exchange_normal_form.py",
+    "check_prime_power_hard_core_exchange_realisability.py",
+    "check_prime_power_hard_core_two_point_classification.py",
+    "check_prime_power_hard_core_collinear_backgrounds.py",
+)
 DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "README.md": (
         "does **not** contain a complete proof",
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2751",
+        "CMR2761",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
         "check_prime_power_hard_core_two_point_classification.py",
+        "check_prime_power_hard_core_collinear_backgrounds.py",
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2742--2751",
+        "CMR2752--2761",
         "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2751",
+        "CMR2761",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
         "check_prime_power_hard_core_two_point_classification.py",
+        "check_prime_power_hard_core_collinear_backgrounds.py",
         "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
@@ -115,11 +124,17 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "4ee3f69f653544853c04f0bf4822e839d537a52a41fe4612410604d7bc630f47",
         "all_n_proved_by_checker = 0",
     ),
+    "docs/435-prime-power-hard-core-collinear-backgrounds.md": (
+        "CMR2752--CMR2761",
+        "3e818c8ece650173676e3afaa94b0adfb65fd0185146dc4b49485131a020c99a",
+        "all_n_proved_by_checker = 0",
+    ),
     ".github/workflows/current-frontier-regression.yml": (
         "actions/upload-artifact@v4",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
         "check_prime_power_hard_core_two_point_classification.py",
+        "check_prime_power_hard_core_collinear_backgrounds.py",
         "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
@@ -171,6 +186,7 @@ def validate_target_frontier_literals(
     target_rows: Any,
     frontiers: Any,
 ) -> tuple[list[str], list[str]]:
+    """Validate literal target/frontier tables without importing the checker module."""
     require(isinstance(target_rows, list), "TARGET_ROWS must be a literal list")
     require(isinstance(frontiers, dict), "FRONTIERS must be a literal dictionary")
     require(len(target_rows) == 43, "atomic target table must contain exactly 43 targets")
@@ -201,51 +217,77 @@ def exact_target_frontier_census(atomic_path: Path) -> tuple[list[str], list[str
     )
 
 
+def validate_endpoint_text(filename: str, text: str) -> None:
+    """Reject empty, dishonest or syntactically invalid canonical endpoint source."""
+    require(text.strip(), f"canonical endpoint {filename}: empty source")
+    require(
+        "all_n_proved_by_checker" in text,
+        f"canonical endpoint {filename}: honesty marker missing",
+    )
+    compile(text, filename, "exec")
+
+
 def endpoint_audit(scripts_dir: Path) -> list[str]:
     audited: list[str] = []
     for filename in CANONICAL_ENDPOINTS:
-        text = source_text(scripts_dir / filename)
-        require(text.strip(), f"canonical endpoint {filename}: empty source")
-        require("all_n_proved_by_checker" in text, f"canonical endpoint {filename}: honesty marker missing")
-        compile(text, filename, "exec")
+        validate_endpoint_text(filename, source_text(scripts_dir / filename))
         audited.append(filename)
     return audited
+
+
+def validate_document_markers(relative_path: str, text: str, markers: tuple[str, ...]) -> None:
+    """Reject an empty synchronized document or any missing required marker."""
+    require(text.strip(), f"{relative_path}: empty document")
+    for marker in markers:
+        require(marker in text, f"{relative_path}: missing synchronization marker {marker!r}")
 
 
 def document_audit(root: Path) -> list[str]:
     audited: list[str] = []
     for relative_path, markers in DOCUMENT_EXPECTATIONS.items():
-        text = source_text(root / relative_path)
-        require(text.strip(), f"{relative_path}: empty document")
-        for marker in markers:
-            require(marker in text, f"{relative_path}: missing synchronization marker {marker!r}")
+        validate_document_markers(relative_path, source_text(root / relative_path), markers)
         audited.append(relative_path)
     return audited
 
 
-def run_self_test(root: Path, script: str, argument: str) -> dict[str, Any]:
-    command = [sys.executable, str(root / "scripts" / script), argument]
+def subprocess_environment() -> dict[str, str]:
     environment = dict(os.environ)
     environment.update({"PYTHONDONTWRITEBYTECODE": "1", "PYTHONHASHSEED": "0"})
+    return environment
+
+
+def run_script(root: Path, script: str, arguments: tuple[str, ...] = ()) -> dict[str, Any]:
+    command = [sys.executable, str(root / "scripts" / script), *arguments]
     completed = subprocess.run(
         command,
         cwd=root,
-        env=environment,
+        env=subprocess_environment(),
         check=False,
         capture_output=True,
         text=True,
     )
     require(
         completed.returncode == 0,
-        f"self-test failed: {' '.join(command)}\nstdout:\n{completed.stdout}\nstderr:\n{completed.stderr}",
+        f"script failed: {' '.join(command)}\nstdout:\n{completed.stdout}\nstderr:\n{completed.stderr}",
     )
     output = completed.stdout.strip()
-    require(output, f"self-test {script} produced no output")
+    require(output, f"script {script} produced no output")
     return {
         "script": script,
-        "argument": argument,
+        "arguments": list(arguments),
         "stdout": output,
         "returncode": completed.returncode,
+    }
+
+
+def run_self_test(root: Path, script: str, argument: str) -> dict[str, Any]:
+    """Compatibility wrapper retained for the negative regression test interface."""
+    result = run_script(root, script, (argument,))
+    return {
+        "script": result["script"],
+        "argument": argument,
+        "stdout": result["stdout"],
+        "returncode": result["returncode"],
     }
 
 
@@ -260,6 +302,9 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
     self_tests = [] if static_only else [
         run_self_test(root, script, argument) for script, argument in SELF_TESTS
     ]
+    theorem_checks = [] if static_only else [
+        run_script(root, script) for script in FINITE_THEOREM_CHECKS
+    ]
     claims = {
         "syntax_checked_prime_power_scripts": len(syntax_files),
         "frontier_groups": len(frontier_ids),
@@ -267,6 +312,7 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
         "canonical_endpoints": len(endpoints),
         "synchronized_documents": len(documents),
         "executable_self_tests": len(self_tests),
+        "finite_theorem_checks": len(theorem_checks),
         "static_only": int(static_only),
         "python_major_minor": f"{sys.version_info.major}.{sys.version_info.minor}",
         "all_n_proved_by_checker": 0,
@@ -278,6 +324,7 @@ def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
         "canonical_endpoint_files": endpoints,
         "synchronized_document_files": documents,
         "self_test_results": self_tests,
+        "finite_theorem_results": theorem_checks,
         "claims": claims,
     }
 
@@ -287,7 +334,7 @@ def main() -> None:
     parser.add_argument(
         "--static-only",
         action="store_true",
-        help="skip executable structural self-tests and run source/document checks only",
+        help="skip executable structural and finite-theorem checks",
     )
     args = parser.parse_args()
     result = exact_regression(repository_root(), static_only=args.static_only)
