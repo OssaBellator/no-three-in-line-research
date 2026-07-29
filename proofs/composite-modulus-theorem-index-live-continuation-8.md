@@ -51,6 +51,7 @@ The authoritative live ledger is split across:
 | CMR2762--2771 | Pivot-pencil partitions, exact arbitrary-background energy identity, integer pressure criterion, insertion/deletion marginal, per-pivot convexity, sharp global cardinality bounds with `K_-`/`K_+` equality cases, exact all-cardinality `Q4` feasibility, exhaustive small-set census and corruption rejection | PROVED as exact finite T21 arbitrary-background scalar geometry; genuine recurrence backgrounds, labelled semantics and all twenty chamber arguments remain open | `docs/436-prime-power-hard-core-pivot-line-energy.md` |
 | CMR2772--2781 | Exact upper/lower defect decompositions, quantitative off-support losses, sharp `2m` and `2m+3` extremal stability gaps, complete equality mechanisms, all-size sharp witnesses, exhaustive small-set census and corruption rejection | PROVED as exact finite T21 extremal scalar stability; genuine recurrence backgrounds, labelled semantics and all twenty chamber arguments remain open | `docs/437-prime-power-hard-core-extremal-stability.md` |
 | CMR2782--2793 | Exact eleven-host T03 projection, expected-slot ancestry, literal survivor validation, response-family binding, arbitrary-background energy recomputation, canonical selector-data sealing, open/populated/proved separation, population-gap manifest, readiness separation and ten corruption rejections | PROVED as an exact T03-to-T21 scalar consistency bridge; the parent rule, genuine populations and all semantic chamber proofs remain absent | `docs/438-prime-power-hard-core-population-bridge.md` |
+| CMR2794--2805 | First-missing prescription index, canonical disjoint branch partition, exact counting, empty-child pruning, rejected-state localisation, exact conditioned contraction, four-way labelled-triple rule, canonical operation keys, CMR866 trigger linkage, duplicate-free completeness, exhaustive family census and honesty boundary | PROVED as one genuine conditional T02 parent-rule clause; global trigger exhaustiveness, the complete parent rule and all downstream populations remain open | `docs/439-prime-power-canonical-prescription-parent-rule.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -60,6 +61,7 @@ The branch still does not prove the all-`n` conjecture.
 scripts/check_prime_power_canonical_frontier_roots.py --self-test
 scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
+scripts/check_prime_power_canonical_prescription_partition.py
 scripts/check_prime_power_hard_core_exchange_normal_form.py
 scripts/check_prime_power_hard_core_exchange_realisability.py
 scripts/check_prime_power_hard_core_two_point_classification.py
@@ -72,19 +74,19 @@ scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The six hard-core theorem checkers prove finite scalar geometry and stability. The population bridge validates the exact T03/T21 interface but supplies no parent rule, slot population or chamber semantics. GitHub Actions is configured to run all six finite theorems, the bridge self-test and separate Python 3.10/3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The seven finite theorem checkers include one duplicate-free conditional T02 clause and six hard-core scalar theorems. The population bridge validates the exact T03/T21 interface but supplies no complete parent rule, slot population or chamber semantics. GitHub Actions is configured to run all seven finite theorems, the bridge self-test and separate Python 3.10/3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
-1. Populate and prove every genuine T01 source statement and T02 recurrence record.
-2. Enter real T03/T04 data, including every genuine hard-core survivor background, and prove T05 arbitrary-`n` coverage.
-3. Prove every T06--T18 semantic and row theorem genuinely.
-4. Prove T19 global-family exhaustiveness for the actual recurrence.
-5. Supply and review all 232 T20 zero-selector chamber proofs.
-6. Use the bridge on every genuine hard-core T03 slot, then prove all 20 T21 semantic arguments.
-7. Supply and review all ten exact T22--T31 premise implications.
-8. Prove and review all six T35--T40 handoff arguments.
-9. Complete T41 review and T42 dossier sign-off.
-10. Prove the ordinary T43 implication to `D(n)=2n`.
+1. Extend the CMR866 first-missing clause into a complete parent-rule classification and prove every remaining trigger exhaustive.
+2. Populate and prove every genuine T01 source statement and all resulting T02 recurrence records.
+3. Enter real T03/T04 data, including every genuine hard-core survivor background, and prove T05 arbitrary-`n` coverage.
+4. Prove every T06--T18 semantic and row theorem genuinely.
+5. Prove T19 global-family exhaustiveness for the actual recurrence.
+6. Supply and review all 232 T20 zero-selector chamber proofs.
+7. Use the bridge on every genuine hard-core T03 slot, then prove all 20 T21 semantic arguments.
+8. Supply and review all ten exact T22--T31 premise implications.
+9. Prove and review all six T35--T40 handoff arguments.
+10. Complete T41 review and T42 dossier sign-off, then prove the ordinary T43 implication to `D(n)=2n`.
 
 No finite selector calculation, documentary checker or runtime manifest substitutes for the missing mathematical proofs.
