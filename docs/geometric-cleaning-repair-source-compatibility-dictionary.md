@@ -6,7 +6,7 @@ Fix selected cause-repair incidences `R` and live cleaning-source tokens `S`. Ea
 
 The preceding source-conservation block supplies an injective one-use debit map `d:R->S` with each token live at debit time.
 
-## GC2lo--GC2ls
+## GC2lt--GC2lx
 
 1. Complete donor/remedy/height and physical-source addresses determine compatibility without hidden geometry.
 2. The stored graph is exact iff `E={(r,s):Compat(r,s)}`.
