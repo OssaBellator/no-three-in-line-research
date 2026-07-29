@@ -6,7 +6,7 @@ Fix a finite ordered set `R` of selected repair incidences and a finite ordered 
 
 The preceding source-conservation block supplies an injective one-use debit map `d:R->S` and verifies that every debited token is live at its debit time.
 
-## AC5ff--AC5fj
+## AC5fk--AC5fo
 
 1. The complete retained addresses determine `Compat(r,s)` without hidden state.
 2. The dictionary is exact precisely when `E={(r,s):Compat(r,s)}`.
