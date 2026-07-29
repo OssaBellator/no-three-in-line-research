@@ -90,8 +90,7 @@ expectation even when the two records are fully correlated.
 The context pair determines one affine line. RI5w shows that a line meets the
 nondegenerate target hyperbola in at most two cells. QED.
 
-## RI5bg -- one-target fixed-edge comparison -- PROVED UNDER THE BANK-READY
-## HYPOTHESES
+## RI5bg -- one-target fixed-edge comparison -- PROVED UNDER THE BANK-READY HYPOTHESES
 
 Let `W` be the paid fixed-edge weight neutralized by the I6 bank, let `F` be
 state-independent collateral, let `Q_1` be the complete one-target terminal
