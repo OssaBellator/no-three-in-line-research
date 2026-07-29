@@ -32,15 +32,16 @@ The authoritative live ledger is split across:
 | CMR2510--2533 | Application-derived active rows, literal resources/scopes and exact routed-credit assignments | PROVED as documentary T08/T09/T10; simultaneous, physical and route semantics remain open | `docs/417-prime-power-transition-resource-frontier.md` |
 | CMR2534--2541 | Exact T11 row bridges, primitive common weights, recurrent support, closure and strict margins | PROVED as documentary T11; genuine block semantics remain open | `docs/418-prime-power-recurrent-block-closure-frontier.md` |
 | CMR2542--2549 | Exact T12 recursive auxiliary closure, T07 edge support and selected-response stability | PROVED as documentary T12; expansion truth and target meaning remain open | `docs/419-prime-power-auxiliary-semantics-frontier.md` |
-| CMR2550--2565 | T04-derived local-state census, exact T07-supported identity links, canonical class trees, T11/T13-rooted scale components, rational cycle consistency, primitive multipliers and global component weights | PROVED as documentary T13/T14; state identity and external scale semantics remain open | `docs/420-prime-power-state-equivalence-component-scale-frontiers.md` |
-| CMR2566--2573 | Parallel interface-family defect, corrected T07/T12/T14 dependency root, T04-derived row census, primitive intercomponent multipliers, exact T07/T13/T14 row arithmetic, complete T11/T12 final-exit dispositions, typed noncircular sealing and T16 boundary | PROVED as documentary T15; genuine interface exhaustiveness, scale semantics and rank descent remain open | `docs/421-prime-power-interface-exhaustiveness-frontier.md` |
-| CMR2574--2581 | Parallel-rank defect, exact T15-derived critical-edge census, explicit well-founded rank domains, exact critical-state rank bank, edgewise descent artifacts, complete graph audit, noncircular synchronization and T17/T18 boundary | PROVED as documentary T16; rank meaning and external well-foundedness remain open | `docs/422-prime-power-global-rank-frontier.md` |
+| CMR2550--2565 | T04-derived local-state census, T07-supported identity links, canonical class trees, T11/T13-rooted scale components, rational cycle consistency and primitive weights | PROVED as documentary T13/T14; state identity and external scale semantics remain open | `docs/420-prime-power-state-equivalence-component-scale-frontiers.md` |
+| CMR2566--2573 | Corrected T15 roots, T04-derived interface rows, intercomponent multipliers, exact row arithmetic and T11/T12 exit dispositions | PROVED as documentary T15; genuine interface exhaustiveness remains open | `docs/421-prime-power-interface-exhaustiveness-frontier.md` |
+| CMR2574--2581 | T15-derived critical edges, explicit well-founded domains, exact ranks, edge descent and graph audit | PROVED as documentary T16; rank meaning and external well-foundedness remain open | `docs/422-prime-power-global-rank-frontier.md` |
+| CMR2582--2597 | Corrected T17/T18 target ancestry, T13-derived predicates, representative agreement, rank-sensitive binding, T12/T15-derived final rows, global rescaling, exact predicate multisets, T16 edge binding and typed sealing | PROVED as documentary T17/T18; predicate meaning and row theorems remain open | `docs/423-prime-power-state-predicate-row-theorem-frontiers.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The executable work banks now reach T16:
+The executable work banks now reach T18:
 
 ```text
 T01 source statements
@@ -59,30 +60,32 @@ T13 cross-block state equivalence
 T14 component-scale synchronization
 T15 interface-row exhaustiveness
 T16 global-rank well-foundedness
+T17 global-state predicates
+T18 final row theorems
 ```
 
-Each layer is synchronized to its fixed semantic obligation and atomic target by typed, noncircular
-artifact bundles. Every final checker permanently reports `all_n_proved_by_checker = 0`.
+Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
-## Exact T16 global-rank frontier
+## Exact T17 predicate frontier
 
-T16 derives every critical edge from T15 `critical-unranked` rows before reading rank values or proofs.
-Every positive target multiplicity contributes one exact edge subject bound to the T15 row and target
-certificate, row artifact, endpoint T13 artifacts and final weights. Strict T15 rows contribute no rank
-edge.
+T17 derives every state from the exact T13 class bank. Every proved predicate covers every literal local
+representative with exact T07 claim support. States present in T16's critical rank bank must bind the
+exact T16 rank record and artifact; other states cannot import a rank.
 
-A nonempty critical bank requires one explicit well-founded domain: either the nonnegative integers or a
-fixed finite lexicographic product of nonnegative integers. Every critical endpoint receives one
-open/proved rank record and, when proved, one `global-state-rank-proof` artifact. Every proved edge
-requires one `critical-edge-rank-descent-proof` showing exact strict descent.
+Every proved state has one `global-state-predicate-proof`. The aggregate noncircular T17 bank binds the
+T13 and T16 proof banks and synchronizes `T17_STATE_PREDICATES`. T17 proof closure now depends on both
+T13 and T16, while research can begin after T13.
 
-When complete, T16 reconstructs the critical graph, rejects cycles, publishes a deterministic topological
-order and computes the exact longest critical path. The aggregate `rank-well-foundedness-proof` binds both
-`GLOBAL_RANK_WELL_FOUNDED` and `T16_GLOBAL_RANK`. A no-critical-row T15 family closes T16 vacuously without
-an artificial rank table.
+## Exact T18 row-theorem frontier
 
-The finite audit does not prove that the supplied rank theorem or state values have their intended
-recurrence meaning.
+T18 derives its final row family as the canonical union of T12-eliminated recurrent rows and exact T15
+interface rows. Recurrent rows are rescaled from T11 local weights to final T14/T15 global weights;
+interface rows retain exact T15 arithmetic. Every theorem reconstructs the parent and target T17
+predicate multiset, fixed offset, load, margin and strict/critical classification.
+
+Every critical interface target must cite its exact proved T16 descent edge. Every proved row has one
+`global-row-theorem-proof` with exact immediate support from the relevant T05, T07, T10--T17 artifacts.
+The aggregate bank synchronizes `T18_ROW_THEOREMS` without importing the older parallel global quotient.
 
 ## Active frontier
 
@@ -90,12 +93,11 @@ recurrence meaning.
 2. Enter real T03/T04 data and prove T05 arbitrary-`n` coverage.
 3. Prove every T07 claim, T06 score, T08 simultaneous row, T09 physical resource and T10 route theorem.
 4. Prove every T11 block and T12 expansion semantically genuine.
-5. Populate and prove every T13 identity and every T14 scale equation.
-6. Populate and prove every T15 interface row, relative component multiplier and final-exit disposition.
-7. Populate and prove every T16 domain, state rank and critical-edge descent theorem.
-8. Replace the older parallel global-family refinement with exact T17 predicates over T13/T16 and exact
-   T18 row theorems over T05/T07/T10/T11/T12/T14/T15/T16/T17.
-9. Prove T19 global-family exhaustiveness and all 252 T20/T21 exceptional chambers.
-10. Complete the typed premise/handoff stack and review the ordinary implication to `D(n)=2n`.
+5. Prove every T13 identity, T14 scale equation, T15 interface theorem and T16 rank theorem.
+6. Populate and prove every T17 predicate and T18 final row theorem.
+7. Replace the older independently assembled global-family package with exact T19 exhaustiveness over the
+   T02 skeleton and the T11/T15/T18 row banks.
+8. Close all 252 T20/T21 exceptional chambers.
+9. Complete the typed premise/handoff stack and review the ordinary implication to `D(n)=2n`.
 
 No documentary checker substitutes for the missing mathematical proofs.
