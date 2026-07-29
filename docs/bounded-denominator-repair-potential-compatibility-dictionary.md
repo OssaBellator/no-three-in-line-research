@@ -6,7 +6,7 @@ Fix selected restoration-repair incidences `R` and live primitive-potential toke
 
 The preceding potential-conservation block supplies an injective one-use debit map `d:R->S` and verifies that each debited token is live.
 
-## BDA5gq--BDA5gu
+## BDA5gv--BDA5gz
 
 1. Complete arithmetic addresses determine compatibility without hidden state.
 2. The stored graph is exact iff `E={(r,s):Compat(r,s)}`.
