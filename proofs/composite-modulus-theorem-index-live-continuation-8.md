@@ -45,6 +45,7 @@ The authoritative live ledger is split across:
 | CMR2692--2705 | Fresh-process imports, bounded probes, exact import markers and AST-backed executable all-n-zero semantics | PROVED as runtime/honesty infrastructure except the original `-I` environment-control claim, which is explicitly superseded by CMR2706--CMR2712 | `docs/430-prime-power-isolated-import-honesty-audit.md` |
 | CMR2706--2721 | Corrected `-B -S -s` launcher, disabled site initialization, scrubbed import paths, doubled runtime fingerprint, per-module source identity, endpoint evidence classes, sealed schema-v1 manifest, tamper tests and Python-version workflow artifacts | PROVED as reproducible runtime-manifest infrastructure; no mathematical target is closed | `docs/431-prime-power-reproducible-runtime-manifest.md` |
 | CMR2722--2733 | Exact eleven-host hard-core response normal form, one alternating four-cycle, explicit rank-one/rank-two/rank-three affine difference, weak/strict lexicographic halfspaces, integer pressure threshold, one nontrivial functional for twenty chambers, exhaustive signature tests and corruption rejection | PROVED as finite scalar T21 selector geometry; genuine survivor signatures, labelled semantics and all twenty chamber proofs remain open | `docs/432-prime-power-hard-core-exchange-normal-form.md` |
+| CMR2734--2741 | Exact background evaluation, vanishing sub-two-point pair terms, relevant-line intersection exclusion, empty/one-point `Q1` theorem, sharp two-point `Q4` witness, two-sided scalar realisability, bounded censuses and tamper rejection | PROVED as sharp finite T21 chamber-realisability geometry; genuine recurrence signatures and semantic chamber arguments remain open | `docs/433-prime-power-hard-core-exchange-realisability.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -55,16 +56,16 @@ scripts/check_prime_power_canonical_frontier_roots.py --self-test
 scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
 scripts/check_prime_power_hard_core_exchange_normal_form.py
+scripts/check_prime_power_hard_core_exchange_realisability.py
 scripts/check_prime_power_reproducible_runtime_manifest.py --self-test --manifest artifacts/current-frontier-runtime.json
 scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The hard-core checker proves that the nine two-response hosts share one scalar exchange functional; it does not
-supply their genuine survivor signatures or labelled chamber semantics. The runtime manifest records exactly
-which sources imported and which executable honesty forms were found. GitHub Actions is configured to run the
-finite theorem and upload separate Python 3.10 and 3.12 manifests. Every final checker permanently reports
-`all_n_proved_by_checker = 0`.
+The hard-core checkers prove one scalar exchange functional and the sharp two-background-point threshold for its
+strict `Q4` halfspace. They do not supply genuine recurrence signatures or labelled chamber semantics. GitHub
+Actions is configured to run both finite theorems and upload separate Python 3.10 and 3.12 runtime manifests.
+Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
@@ -73,7 +74,7 @@ finite theorem and upload separate Python 3.10 and 3.12 manifests. Every final c
 3. Prove every T06--T18 semantic and row theorem genuinely.
 4. Prove T19 global-family exhaustiveness for the actual recurrence.
 5. Supply and review all 232 T20 zero-selector chamber proofs.
-6. Populate genuine signatures and prove all 20 T21 hard-core semantic chamber arguments using the explicit exchange normal form.
+6. Populate genuine signatures and prove all 20 T21 semantic arguments on both realizable scalar halfspaces.
 7. Supply and review all ten exact T22--T31 premise implications.
 8. Prove and review all six T35--T40 handoff arguments.
 9. Complete T41 review and T42 dossier sign-off.
