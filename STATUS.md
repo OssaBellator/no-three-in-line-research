@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2629**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2647**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 Every final checker permanently reports:
@@ -23,7 +23,7 @@ all_n_proved_by_checker = 0
 
 ## Current exact finite endpoint
 
-The branch contains synchronized documentary work banks through T31:
+The branch contains synchronized documentary work banks through all 43 atomic targets:
 
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
@@ -58,6 +58,18 @@ The branch contains synchronized documentary work banks through T31:
 | T29 | exact T20/T21 dependency census and exceptional premise bundle | all 252 chamber theorems remain open |
 | T30 | exact T11/T16/T18 dependency census and termination premise bundle | genuine branch termination remains open |
 | T31 | exact T12/T16/T18--T21 dependency census and translation bundle | translation to `D(n)=2n` remains open |
+| T32 | exact non-root obligation-to-target census and typed artifact-bank aggregation | genuine obligation proofs remain open with their lower mathematics |
+| T33 | exact stable obligation-artifact support DAG surface | acyclicity metadata does not prove semantic sufficiency |
+| T34 | exact aggregation of all ten T22--T31 premise artifacts and bundles | every final premise remains mathematically open |
+| T35 | exact base-domain assertion, premise support and typed handoff bundle | the base handoff argument remains open |
+| T36 | exact recurrence/selection assertion support and typed handoff bundle | the exhaustive nonbase handoff remains open |
+| T37 | exact invariant/resource assertion support and typed handoff bundle | invariant preservation remains open |
+| T38 | exact contraction/cross-block/termination assertion support | termination of every genuine recurrence branch remains open |
+| T39 | exact exceptional assertion support and typed handoff bundle | all 252 chamber proofs and the exceptional implication remain open |
+| T40 | exact objective-translation assertion support and typed handoff bundle | the quotient-to-objective translation remains open |
+| T41 | exact six-assertion review census and final-handoff gate binding | ordinary mathematical review remains open |
+| T42 | exact seven-gate dossier and blocker audit binding | a ready dossier would still not prove the root theorem |
+| T43 | stable root cores, exact three-artifact bank and noncircular dual binding | the reviewed implication to `D(n)=2n` remains open |
 
 ## Canonical endpoints
 
@@ -73,6 +85,7 @@ scripts/check_prime_power_row_theorem_frontier.py
 scripts/check_prime_power_global_family_exhaustiveness_frontier.py
 scripts/check_prime_power_exceptional_chamber_frontier.py
 scripts/check_prime_power_final_premise_frontiers.py
+scripts/check_prime_power_final_support_handoff_frontiers.py
 ```
 
 ## Exact T19 global-family frontier
@@ -188,24 +201,68 @@ final-premise-frontier://TARGET-ID
 The checker synchronizes the exact frontier with both the old final implication contract and the atomic
 execution DAG. This closes a documentary gap; it does not prove any premise.
 
-## Genuine current frontier
+## Exact T32--T43 final support and root frontiers
 
-The next executable layer is **T32--T43 typed support, handoff, dossier and root implication**.
-
-The exact T22--T31 surfaces now exist, but all ten mathematical premises remain open until the T01--T21
-banks are genuinely proved and each dependency-to-premise implication receives ordinary review.
-
-T32--T43 must then:
+The final checker reconstructs the fixed sequence:
 
 ```text
-T32 supply genuine typed obligation artifacts
-T33 prove their noncircular support DAG
-T34 bind every genuine premise artifact
-T35--T40 close the six induction-handoff assertions
-T41 complete final handoff review
-T42 pass the final dossier audit
-T43 prove the reviewed root implication to D(n)=2n
+T32 typed obligation artifacts
+T33 obligation-artifact support DAG
+T34 typed final-premise artifacts
+T35--T40 six induction-handoff assertions
+T41 final handoff review
+T42 seven-gate dossier audit
+T43 root implication
 ```
+
+Every target receives the exact immediate-target result/completion census and exact external support derived
+from the canonical nested registries. A proved target must have one reviewed semantic certificate and an
+atomic target artifact whose proof pointer is:
+
+```text
+final-support-handoff-frontier://TARGET-ID
+```
+
+T32 aggregates the existing T01--T21 obligation seals rather than replacing them. T34 likewise preserves the
+T22--T31 `final-premise-frontier://` seals, and T35--T40 preserve the existing
+`handoff-artifact-registry://` assertion seals.
+
+T41 must agree with `final_induction_handoff_ready`. T42 must agree with
+`final_dossier_integrity_ready`. T43 must agree with the closed root semantic obligation and requires exactly:
+
+```text
+all-n-implication-proof
+base-case-proof
+invariant-preservation-proof
+```
+
+The T43 bundle hashes stable root-obligation, root-closure, root-artifact and target-artifact cores. It excludes
+all outward locator/digest fields and the obligation-record digest that contains the root registry bundle. The
+same noncircular digest is bound into the T43 target artifact and all three root obligation artifacts.
+
+This completes the documentary interface through T43. It does not prove the root implication.
+
+## Genuine current frontiers
+
+There is no further atomic documentary target beyond T43. The current frontiers are the unresolved mathematics
+inside the existing work banks:
+
+```text
+T01--T02 source truth and genuine recurrence exhaustiveness
+T03--T04 actual complete population
+T05 arbitrary-n geometry coverage
+T06--T18 semantic, score, rank, predicate and row theorems
+T19 genuine global-family exhaustiveness
+T20--T21 all 252 chamber theorems
+T22--T31 all ten final premise implications
+T35--T40 all six ordinary handoff arguments
+T41 ordinary final review
+T42 final dossier sign-off
+T43 the reviewed root implication to D(n)=2n
+```
+
+T32--T34 are exact documentary aggregation gates; they become effective only when their lower proof banks are
+genuinely complete.
 
 ## Concrete mathematical work still required
 
@@ -217,8 +274,9 @@ T43 prove the reviewed root implication to D(n)=2n
 6. Prove T19 global-family exhaustiveness for the genuine recurrence.
 7. Prove and review all 252 T20/T21 chamber dispositions.
 8. Supply and review all ten T22--T31 final premise implications.
-9. Complete T32--T43 typed support, handoff and dossier review.
-10. Prove the ordinary implication from the reviewed quotient and handoff to `D(n)=2n`.
+9. Prove and review all six T35--T40 handoff assertions.
+10. Complete T41 review and T42 dossier sign-off.
+11. Prove the ordinary T43 implication from the reviewed quotient and handoff to `D(n)=2n`.
 
 ## Corrections retained
 
@@ -230,15 +288,17 @@ T43 prove the reviewed root implication to D(n)=2n
 - T19 exact coverage does not prove the global family exhaustive.
 - T20/T21 typed chamber artifacts do not prove chamber closure.
 - Exact T22--T31 support does not prove any dependency implication or final premise.
+- Exact T32--T43 support does not prove any handoff, review, dossier or root theorem.
 - Typed artifacts and readiness flags are documentary metadata.
 - Syntax compilation and isolated helper tests are not a dependency-backed certificate suite.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2629**, the repository has an exact finite documentary stack from
-source statements through global-family coverage, the complete exceptional-chamber worklist and ten
-noncircular final-premise frontiers.
+There is no complete proof. Through **CMR2647**, the repository has an exact finite documentary stack from
+source statements through all 43 atomic targets, including the complete exceptional-chamber worklist, ten
+noncircular final-premise frontiers, six handoff frontiers, final review, dossier audit and root-implication
+interface.
 
 The unresolved center remains the genuine mathematics: source and recurrence truth, actual population,
 arbitrary-`n` coverage, semantic correctness, global-family exhaustiveness, all 252 chamber proofs, all ten
-final premises, the handoff/dossier layers and the implication to all `n`.
+final premises, all six handoff arguments, final review and the implication to all `n`.
