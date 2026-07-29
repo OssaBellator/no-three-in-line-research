@@ -36,12 +36,13 @@ The authoritative live ledger is split across:
 | CMR2566--2573 | Corrected T15 roots, T04-derived interface rows, intercomponent multipliers, exact row arithmetic and T11/T12 exit dispositions | PROVED as documentary T15; genuine interface exhaustiveness remains open | `docs/421-prime-power-interface-exhaustiveness-frontier.md` |
 | CMR2574--2581 | T15-derived critical edges, explicit well-founded domains, exact ranks, edge descent and graph audit | PROVED as documentary T16; rank meaning and external well-foundedness remain open | `docs/422-prime-power-global-rank-frontier.md` |
 | CMR2582--2597 | Corrected T17/T18 target ancestry, T13-derived predicates, representative agreement, rank-sensitive binding, T12/T15-derived final rows, global rescaling, exact predicate multisets, T16 edge binding and typed sealing | PROVED as documentary T17/T18; predicate meaning and row theorems remain open | `docs/423-prime-power-state-predicate-row-theorem-frontiers.md` |
+| CMR2598--2613 | T02/T18-derived global-family coverage, exact T04 clause ancestry, corrected T19--T21 roots, canonical 232+20 chamber census, T05 host support and typed chamber closure modes | PROVED as documentary T19/T20/T21; family exhaustiveness and every chamber theorem remain open | `docs/424-prime-power-global-family-exceptional-chamber-frontiers.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The executable work banks now reach T18:
+The executable work banks now reach T21:
 
 ```text
 T01 source statements
@@ -62,42 +63,40 @@ T15 interface-row exhaustiveness
 T16 global-rank well-foundedness
 T17 global-state predicates
 T18 final row theorems
+T19 global-family exhaustiveness
+T20 exceptional zero-selector chamber closure
+T21 hard-core chamber closure
 ```
 
 Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
-## Exact T17 predicate frontier
+## Exact T19 global-family frontier
 
-T17 derives every state from the exact T13 class bank. Every proved predicate covers every literal local
-representative with exact T07 claim support. States present in T16's critical rank bank must bind the
-exact T16 rank record and artifact; other states cannot import a rank.
+T19 derives every expected parent from T02 and every final row from T18. Each row is rebound to the exact
+T04 case, clause and operation slot. Every proved parent coverage unit cites its T02 application artifact,
+all relevant T04 population artifacts and all relevant T18 row-theorem artifacts.
 
-Every proved state has one `global-state-predicate-proof`. The aggregate noncircular T17 bank binds the
-T13 and T16 proof banks and synchronizes `T17_STATE_PREDICATES`. T17 proof closure now depends on both
-T13 and T16, while research can begin after T13.
+The aggregate bank synchronizes `EXPECTED_GLOBAL_FAMILY_EXHAUSTIVE` and `T19_GLOBAL_FAMILY` without using
+the independently assembled global integer family as its population root.
 
-## Exact T18 row-theorem frontier
+## Exact T20/T21 chamber frontier
 
-T18 derives its final row family as the canonical union of T12-eliminated recurrent rows and exact T15
-interface rows. Recurrent rows are rescaled from T11 local weights to final T14/T15 global weights;
-interface rows retain exact T15 arithmetic. Every theorem reconstructs the parent and target T17
-predicate multiset, fixed offset, load, margin and strict/critical classification.
+The canonical worklist contains exactly 232 zero-selector and 20 hard-core chambers. Every closed chamber
+cites the exact T05 geometry artifacts for its host. Row-based and host-union modes additionally cite exact
+T18 row-theorem and T19 coverage artifacts. Direct and signature-infeasibility modes remain external
+chamber theorems but now have chamber-specific typed artifacts.
 
-Every critical interface target must cite its exact proved T16 descent edge. Every proved row has one
-`global-row-theorem-proof` with exact immediate support from the relevant T05, T07, T10--T17 artifacts.
-The aggregate bank synchronizes `T18_ROW_THEOREMS` without importing the older parallel global quotient.
+Separate noncircular banks synchronize the T20 and T21 obligations and atomic targets. No chamber is
+mathematically closed merely because its metadata is complete.
 
 ## Active frontier
 
 1. Populate and prove every genuine T01 source statement and T02 recurrence record.
 2. Enter real T03/T04 data and prove T05 arbitrary-`n` coverage.
-3. Prove every T07 claim, T06 score, T08 simultaneous row, T09 physical resource and T10 route theorem.
-4. Prove every T11 block and T12 expansion semantically genuine.
-5. Prove every T13 identity, T14 scale equation, T15 interface theorem and T16 rank theorem.
-6. Populate and prove every T17 predicate and T18 final row theorem.
-7. Replace the older independently assembled global-family package with exact T19 exhaustiveness over the
-   T02 skeleton and the T11/T15/T18 row banks.
-8. Close all 252 T20/T21 exceptional chambers.
-9. Complete the typed premise/handoff stack and review the ordinary implication to `D(n)=2n`.
+3. Prove every T06--T18 semantic and row theorem genuinely.
+4. Prove T19 global-family exhaustiveness for the actual recurrence.
+5. Supply and review all 252 T20/T21 chamber proofs.
+6. Rebuild T22--T31 as exact premise contracts over the T01--T21 banks.
+7. Complete T32--T43 typed support, handoff, dossier and the ordinary implication to `D(n)=2n`.
 
 No documentary checker substitutes for the missing mathematical proofs.
