@@ -1,0 +1,30 @@
+{
+  "m": 10,
+  "source_cycle_window": [209, 287],
+  "definition": "For each of the thirteen violating count-level Hall maximizers, record subset cardinality k, total source supply W, mean source mass W/k, reached capacity V, absolute capacity deficit Delta=sW-V, and normalized deficit Delta/V=A_s-1.",
+  "violating_count_maxima": [
+    {"source_cycles":209,"hall_subset_size":29,"hall_subset_supply":3520,"mean_source_mass":"3520/29","hall_subset_capacity":731056,"capacity_deficit":4624,"normalized_capacity_deficit":"289/45691"},
+    {"source_cycles":215,"hall_subset_size":3,"hall_subset_supply":384,"mean_source_mass":"128","hall_subset_capacity":79704,"capacity_deficit":2856,"normalized_capacity_deficit":"119/3321"},
+    {"source_cycles":227,"hall_subset_size":27,"hall_subset_supply":2944,"mean_source_mass":"2944/27","hall_subset_capacity":633808,"capacity_deficit":34480,"normalized_capacity_deficit":"2155/39613"},
+    {"source_cycles":234,"hall_subset_size":2,"hall_subset_supply":256,"mean_source_mass":"128","hall_subset_capacity":49408,"capacity_deficit":10496,"normalized_capacity_deficit":"41/193"},
+    {"source_cycles":248,"hall_subset_size":2,"hall_subset_supply":256,"mean_source_mass":"128","hall_subset_capacity":50016,"capacity_deficit":13472,"normalized_capacity_deficit":"421/1563"},
+    {"source_cycles":272,"hall_subset_size":3,"hall_subset_supply":384,"mean_source_mass":"128","hall_subset_capacity":92576,"capacity_deficit":11872,"normalized_capacity_deficit":"371/2893"},
+    {"source_cycles":276,"hall_subset_size":85,"hall_subset_supply":9792,"mean_source_mass":"576/5","hall_subset_capacity":2274240,"capacity_deficit":428352,"normalized_capacity_deficit":"97/515"},
+    {"source_cycles":278,"hall_subset_size":124,"hall_subset_supply":13248,"mean_source_mass":"3312/31","hall_subset_capacity":2763576,"capacity_deficit":919368,"normalized_capacity_deficit":"12769/38383"},
+    {"source_cycles":280,"hall_subset_size":2,"hall_subset_supply":256,"mean_source_mass":"128","hall_subset_capacity":60496,"capacity_deficit":11184,"normalized_capacity_deficit":"699/3781"},
+    {"source_cycles":281,"hall_subset_size":6,"hall_subset_supply":384,"mean_source_mass":"64","hall_subset_capacity":102128,"capacity_deficit":5776,"normalized_capacity_deficit":"361/6383"},
+    {"source_cycles":282,"hall_subset_size":3,"hall_subset_supply":384,"mean_source_mass":"128","hall_subset_capacity":85440,"capacity_deficit":22848,"normalized_capacity_deficit":"119/445"},
+    {"source_cycles":284,"hall_subset_size":1,"hall_subset_supply":128,"mean_source_mass":"128","hall_subset_capacity":34520,"capacity_deficit":1832,"normalized_capacity_deficit":"229/4315"},
+    {"source_cycles":286,"hall_subset_size":4,"hall_subset_supply":512,"mean_source_mass":"128","hall_subset_capacity":125248,"capacity_deficit":21184,"normalized_capacity_deficit":"331/1957"}
+  ],
+  "microscopic_subset_cutoff": 6,
+  "microscopic_violations": 9,
+  "microscopic_mean_mass_128": 8,
+  "microscopic_mean_mass_64": 1,
+  "largest_microscopic_normalized_deficit": {"source_cycles":248,"value":"421/1563"},
+  "largest_overall_normalized_deficit": {"source_cycles":278,"value":"12769/38383"},
+  "all_mean_source_masses_between_64_and_128": true,
+  "source_ledger": "experiments/m10-hall-transition-count-maximizer-subset-scale-audit.json",
+  "asymptotic_source_mass_theorem_proved": false,
+  "all_exact_regressions_verified": true
+}
