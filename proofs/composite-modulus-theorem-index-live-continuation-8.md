@@ -38,12 +38,13 @@ The authoritative live ledger is split across:
 | CMR2582--2597 | Corrected T17/T18 target ancestry, T13-derived predicates, representative agreement, rank-sensitive binding, T12/T15-derived final rows, global rescaling, exact predicate multisets, T16 edge binding and typed sealing | PROVED as documentary T17/T18; predicate meaning and row theorems remain open | `docs/423-prime-power-state-predicate-row-theorem-frontiers.md` |
 | CMR2598--2613 | T02/T18-derived global-family coverage, exact T04 clause ancestry, corrected T19--T21 roots, canonical 232+20 chamber census, T05 host support and typed chamber closure modes | PROVED as documentary T19/T20/T21; family exhaustiveness and every chamber theorem remain open | `docs/424-prime-power-global-family-exceptional-chamber-frontiers.md` |
 | CMR2614--2629 | Exact premise-to-target registry, T01--T21 dependency support records, no-premature-proof gate, reviewed premise semantics, stable artifact cores, noncircular per-premise bundles, contract/premise/target synchronization and aggregate T22--T31 bank | PROVED as documentary T22--T31 premise frontiers; every mathematical premise remains open until supplied and reviewed | `docs/425-prime-power-final-premise-frontiers.md` |
+| CMR2630--2647 | Canonical T32--T43 registry, exact immediate-target census, typed obligation/support/premise aggregation, six handoff frontiers, final review and dossier gates, stable root cores, exact three-artifact root bank and noncircular T43 dual binding | PROVED as documentary T32--T43 support/handoff/root frontiers; every handoff, review and root theorem remains open until genuinely proved and reviewed | `docs/426-prime-power-final-support-handoff-frontiers.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The executable work banks now reach T31:
+The executable documentary work banks now reach all 43 atomic targets:
 
 ```text
 T01 source statements
@@ -77,6 +78,18 @@ T28 cross-block assembly premise
 T29 exceptional-case premise
 T30 termination premise
 T31 objective-translation premise
+T32 typed obligation artifacts
+T33 obligation-artifact support DAG
+T34 typed final-premise artifacts
+T35 base-domain handoff
+T36 nonbase recurrence handoff
+T37 invariant/resource handoff
+T38 branch-termination handoff
+T39 exceptional/hard-core handoff
+T40 objective-translation handoff
+T41 final handoff review
+T42 final dossier audit
+T43 root implication
 ```
 
 Every final checker permanently reports `all_n_proved_by_checker = 0`.
@@ -114,6 +127,19 @@ T22--T31 target artifact.
 The checker synchronizes every premise with the fixed final contract and atomic execution DAG. It does not
 prove the lower targets, the dependency implication or the arbitrary-`n` statement.
 
+## Exact T32--T43 final support and root frontier
+
+The final checker derives every immediate atomic dependency and every external support surface for T32--T43.
+T32 aggregates the exact non-root obligation artifacts; T33 binds the stable support DAG; T34 aggregates all
+ten T22--T31 premise frontiers; T35--T40 bind the six typed handoff assertions; T41 and T42 synchronize the
+final handoff and dossier gates; and T43 binds stable root-obligation, root-closure, root-artifact and target
+cores.
+
+Every proved target requires one reviewed semantic certificate and a canonical
+`final-support-handoff-frontier://TARGET-ID` target proof pointer. T43 additionally requires exactly three root
+obligation artifacts and binds the same noncircular digest into all three. The checker proves documentary
+identity only, not any mathematical handoff or root implication.
+
 ## Active frontier
 
 1. Populate and prove every genuine T01 source statement and T02 recurrence record.
@@ -122,6 +148,8 @@ prove the lower targets, the dependency implication or the arbitrary-`n` stateme
 4. Prove T19 global-family exhaustiveness for the actual recurrence.
 5. Supply and review all 252 T20/T21 chamber proofs.
 6. Supply and review all ten exact T22--T31 premise implications.
-7. Complete T32--T43 typed support, handoff, dossier and the ordinary implication to `D(n)=2n`.
+7. Prove and review all six T35--T40 handoff arguments.
+8. Complete T41 review and T42 dossier sign-off.
+9. Prove the ordinary T43 implication to `D(n)=2n`.
 
 No documentary checker substitutes for the missing mathematical proofs.
