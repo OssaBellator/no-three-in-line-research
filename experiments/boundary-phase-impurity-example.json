@@ -1,0 +1,17 @@
+{
+  "owners": ["t0", "t1", "t2"],
+  "boundary_components": [
+    {"id": "C0", "size": 5},
+    {"id": "C1", "size": 2},
+    {"id": "C2", "size": 4},
+    {"id": "C3", "size": 1}
+  ],
+  "edges": [
+    {"u": "t0", "v": "C0", "label": 0},
+    {"u": "t0", "v": "C1", "label": 1},
+    {"u": "t1", "v": "C1", "label": 0},
+    {"u": "t1", "v": "C2", "label": 1},
+    {"u": "t1", "v": "t2", "label": 1},
+    {"u": "t2", "v": "C3", "label": 1}
+  ]
+}
