@@ -54,6 +54,7 @@ FINITE_THEOREM_CHECKS = (
     "check_prime_power_hard_core_exchange_realisability.py",
     "check_prime_power_hard_core_two_point_classification.py",
     "check_prime_power_hard_core_collinear_backgrounds.py",
+    "check_prime_power_hard_core_pivot_line_energy.py",
 )
 DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "README.md": (
@@ -61,7 +62,7 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2761",
+        "CMR2771",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
@@ -69,21 +70,23 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "check_prime_power_hard_core_exchange_realisability.py",
         "check_prime_power_hard_core_two_point_classification.py",
         "check_prime_power_hard_core_collinear_backgrounds.py",
+        "check_prime_power_hard_core_pivot_line_energy.py",
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2752--2761",
+        "CMR2762--2771",
         "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2761",
+        "CMR2771",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
         "check_prime_power_hard_core_two_point_classification.py",
         "check_prime_power_hard_core_collinear_backgrounds.py",
+        "check_prime_power_hard_core_pivot_line_energy.py",
         "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
@@ -129,12 +132,18 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "3e818c8ece650173676e3afaa94b0adfb65fd0185146dc4b49485131a020c99a",
         "all_n_proved_by_checker = 0",
     ),
+    "docs/436-prime-power-hard-core-pivot-line-energy.md": (
+        "CMR2762--CMR2771",
+        "a88ddee378c70d2713734a836aa3c18683d6db193ebbb89d52921efa55efa4f3",
+        "all_n_proved_by_checker = 0",
+    ),
     ".github/workflows/current-frontier-regression.yml": (
         "actions/upload-artifact@v4",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
         "check_prime_power_hard_core_two_point_classification.py",
         "check_prime_power_hard_core_collinear_backgrounds.py",
+        "check_prime_power_hard_core_pivot_line_energy.py",
         "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
