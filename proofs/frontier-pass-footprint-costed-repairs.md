@@ -1,0 +1,16 @@
+# Frontier pass: SRR footprint-costed repairs
+
+## New closure
+
+- SRR2gg bounds conditioned-repair footprint conflicts by `h(beta-1)`.
+- SRR2gh extracts and executes a commuting footprint-disjoint batch with equal witness-deficit descent.
+- SRR2gi either fits the batch inside the typed burden/source reserve or returns the least exact shortage.
+- SRR2gj bounds cumulative scalar repair cost by `kappa(Delta_0 + sum U_j)`.
+
+## Verified finite record
+
+Seed `751` checks 2,500 resampling systems and a 5,000-epoch churn-funded cost ledger.
+
+## Remaining frontier
+
+Construct cycle/threshold/blocker repair maps and footprints; prove concrete overlap, cost, reserve, and replenishment bounds; preserve source and endpoint-burden ledgers. The global conjecture remains open.
