@@ -40,13 +40,13 @@ The authoritative live ledger is split across:
 | CMR2614--2629 | Exact premise-to-target registry, T01--T21 dependency support records, no-premature-proof gate, reviewed premise semantics, stable artifact cores, noncircular per-premise bundles, contract/premise/target synchronization and aggregate T22--T31 bank | PROVED as documentary T22--T31 premise frontiers; every mathematical premise remains open until supplied and reviewed | `docs/425-prime-power-final-premise-frontiers.md` |
 | CMR2630--2647 | Canonical T32--T43 registry, exact immediate-target census, typed obligation/support/premise aggregation, six handoff frontiers, final review and dossier gates, stable root cores, exact three-artifact root bank and noncircular T43 dual binding | PROVED as documentary T32--T43 support/handoff/root frontiers; every handoff, review and root theorem remains open until genuinely proved and reviewed | `docs/426-prime-power-final-support-handoff-frontiers.md` |
 | CMR2648--2663 | Fixed canonical T19--T21 root registry, exact proof/research dependencies, obsolete support removal, one-time installation, compatibility-context idempotence, DAG and T32 stability, exact downstream impact and canonical v2 T43 endpoint | PROVED as cross-frontier dependency integrity; no mathematical target is closed | `docs/427-prime-power-canonical-frontier-roots.md` |
+| CMR2664--2675 | Branch-wide syntax inventory, exact 13/43 source census, canonical endpoint and honesty gates, document synchronization, two executable root self-tests, deterministic subprocesses and Python 3.10/3.12 continuous regression | PROVED as software/documentary regression infrastructure; no mathematical target is closed | `docs/428-prime-power-current-frontier-regression.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The executable documentary work banks cover all 43 atomic targets. Canonical execution now begins by
-installing the exact T19--T21 roots:
+Canonical execution installs:
 
 ```text
 T19 <- T02, T18
@@ -54,28 +54,23 @@ T20 <- T05, T18, T19
 T21 <- T05, T18, T19
 ```
 
-and then validates the existing T01--T43 certificate schema through:
+and validates the existing T01--T43 schema through:
 
 ```text
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py
 ```
 
+The branch-wide regression is:
+
+```text
+scripts/run_prime_power_current_frontier_regression.py
+```
+
+It checks syntax across every prime-power checker and retained verifier, parses the exact thirteen-frontier and
+forty-three-target source tables, checks the canonical endpoint/honesty manifest, synchronizes the public
+status documents and executes both canonical-root self-tests. GitHub Actions runs it on Python 3.10 and 3.12.
+
 Every final checker permanently reports `all_n_proved_by_checker = 0`.
-
-## Canonical-root audit
-
-The structural audit publishes:
-
-- exact T19--T21 proof and research roots;
-- removal of legacy special-certificate support;
-- target-definition identity before, during and after the old correction contexts;
-- proof and research DAG acyclicity across all 43 targets;
-- stability of the derived T32 obligation-target census;
-- exact proof and research descendants of each corrected root; and
-- mandatory propagation of all three corrections to T43.
-
-The certificate schema is unchanged. Certificates carrying former target-definition, result, completion or
-artifact-bundle hashes must be regenerated.
 
 ## Active frontier
 
