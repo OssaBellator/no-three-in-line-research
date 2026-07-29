@@ -4,7 +4,7 @@
 
 This branch studies explicit sparse algebraic hosts with perfect-matching spread, exact switching ratios, zero-conflict block embeddings, and balanced compression back to the standard grid. Branch proofs are canonical under `docs/`.
 
-> **Status:** The sparse block host and its matching distribution are understood substantially better than the final standard-grid compression. The concentrated SAS5i swap certificate has now been developed through exact destruction/repair words, divisor and dilation arithmetic, weighted parameter-chain batching, donor execution, two-swap mixed-curvature ledgers, matched-square composition, aggregate negative-collateral installation, and opposite-destroyer payment. SAS5gq--SAS5gt additionally show that a composed-only output cannot immediately recycle on the same operation square: after rebasing at the composed state its full weight is current-only payment for the reverse square. The remaining bottlenecks are global aggregate barrier payment, changed-signature recycling cycles, legality of the creator/opposite-destroyer squares in every word family, failed-incidence neutral output, and boundary/high-incidence profiles.
+> **Status:** The sparse block host and its matching distribution are understood substantially better than the final standard-grid compression. The concentrated SAS5i swap certificate has been developed through exact destruction/repair words, divisor and dilation arithmetic, weighted parameter-chain batching, donor execution, two-swap mixed-curvature ledgers, matched-square composition, aggregate negative-collateral installation, opposite-destroyer payment, immediate same-square reversal and finite changed-signature cycle payment. SAS5hd--SAS5hh reduce mixed-orientation legality to two transported base checks. SAS5hi--SAS5hl now make the structural part of those checks exact: one layer needs precisely two cross host edges, while two layers add precisely two row-local collision inequalities, with four atomic failure witnesses. The remaining bottlenecks are global aggregate barrier payment, arithmetic/line/boundary legality in each word family, failed-incidence neutral output, physical cycle-lift verification, and boundary/high-incidence profiles.
 
 ## Branch map
 
@@ -25,13 +25,18 @@ This branch studies explicit sparse algebraic hosts with perfect-matching spread
 - [`docs/sparse-negative-collateral-physical-installation.md`](docs/sparse-negative-collateral-physical-installation.md): installation of aggregate negative collateral.
 - [`docs/sparse-opposite-destroyer-payment.md`](docs/sparse-opposite-destroyer-payment.md): opposite-destroyer payment and recycled output routing.
 - [`docs/sparse-composed-only-reversal.md`](docs/sparse-composed-only-reversal.md): involutive reversal of composed-only output to current payment.
+- [`docs/sparse-changed-signature-cycles.md`](docs/sparse-changed-signature-cycles.md): finite recurrence cycles and chord tickets.
+- [`docs/sparse-changed-signature-cycle-payment.md`](docs/sparse-changed-signature-cycle-payment.md): cycle-local barrier/descent balance.
+- [`docs/sparse-mixed-orientation-legality.md`](docs/sparse-mixed-orientation-legality.md): transported local-guard criterion.
+- [`docs/sparse-base-swap-admissibility.md`](docs/sparse-base-swap-admissibility.md): exact one- and two-layer structural swap criterion.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch-specific theorem ledger.
+- [`proofs/frontier-pass-mixed-orientation.md`](proofs/frontier-pass-mixed-orientation.md): late-stage legality addendum.
 
 ## Highest-value frontier
 
 1. Pay or terminate aggregate creator and opposite-swap barriers across many operation squares.
-2. Prove that changed-signature composed-output trajectories consume new finite addresses, descend, or enter one exact recurrent profile cycle.
-3. Establish mixed-orientation creator and opposite-destroyer legality for every localized arithmetic word family, including base-state single-swap admissibility.
+2. Verify the physical cycle-lift contract for every localized arithmetic word family and close any changed-boundary outputs.
+3. Establish arithmetic-word, collinearity, boundary and payment-sensitive creator/opposite-destroyer guards; the underlying matching structure is now closed.
 4. Batch neutral outputs when global incidence caps fail and classify the returned high-incidence column or constraint fibres.
 5. Resolve positive-base-row realization, heavy-parameter comparison, boundary profiles, and exact balanced standard-grid compression.
 
