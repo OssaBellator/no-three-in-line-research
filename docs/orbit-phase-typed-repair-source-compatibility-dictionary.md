@@ -6,7 +6,7 @@ Fix selected typed residual/edit repair incidences `R` and live unit-sensitive s
 
 The preceding source-conservation block supplies an injective one-use debit map `d:R->S` with live tokens.
 
-## OP4fn--OP4fr
+## OP4fs--OP4fw
 
 1. Complete unit, valuation, holonomy and physical-source addresses determine compatibility without hidden state.
 2. The stored graph is exact iff `E={(r,s):Compat(r,s)}`.
