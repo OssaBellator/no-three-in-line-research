@@ -46,6 +46,7 @@ The authoritative live ledger is split across:
 | CMR2706--2721 | Corrected `-B -S -s` launcher, disabled site initialization, scrubbed import paths, doubled runtime fingerprint, per-module source identity, endpoint evidence classes, sealed schema-v1 manifest, tamper tests and Python-version workflow artifacts | PROVED as reproducible runtime-manifest infrastructure; no mathematical target is closed | `docs/431-prime-power-reproducible-runtime-manifest.md` |
 | CMR2722--2733 | Exact eleven-host hard-core response normal form, one alternating four-cycle, explicit rank-one/rank-two/rank-three affine difference, weak/strict lexicographic halfspaces, integer pressure threshold, one nontrivial functional for twenty chambers, exhaustive signature tests and corruption rejection | PROVED as finite scalar T21 selector geometry; genuine survivor signatures, labelled semantics and all twenty chamber proofs remain open | `docs/432-prime-power-hard-core-exchange-normal-form.md` |
 | CMR2734--2741 | Exact background evaluation, vanishing sub-two-point pair terms, relevant-line intersection exclusion, empty/one-point `Q1` theorem, sharp two-point `Q4` witness, two-sided scalar realisability, bounded censuses and tamper rejection | PROVED as sharp finite T21 chamber-realisability geometry; genuine recurrence signatures and semantic chamber arguments remain open | `docs/433-prime-power-hard-core-exchange-realisability.md` |
+| CMR2742--2751 | Exact two-point delta decomposition, pivot-rectangle cross term, legal point weights, necessity of a `K_-` point, double-`K_-` and mixed positive-unit families, negative-pivot boundary ties, complete iff classification, strict delta spectrum and exhaustive bounded census | PROVED as exact finite T21 two-point chamber geometry; genuine recurrence backgrounds, labelled semantics and all twenty chamber arguments remain open | `docs/434-prime-power-hard-core-two-point-classification.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -57,15 +58,13 @@ scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
 scripts/check_prime_power_hard_core_exchange_normal_form.py
 scripts/check_prime_power_hard_core_exchange_realisability.py
+scripts/check_prime_power_hard_core_two_point_classification.py
 scripts/check_prime_power_reproducible_runtime_manifest.py --self-test --manifest artifacts/current-frontier-runtime.json
 scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The hard-core checkers prove one scalar exchange functional and the sharp two-background-point threshold for its
-strict `Q4` halfspace. They do not supply genuine recurrence signatures or labelled chamber semantics. GitHub
-Actions is configured to run both finite theorems and upload separate Python 3.10 and 3.12 runtime manifests.
-Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The hard-core checkers prove one scalar exchange functional, the sharp two-background-point threshold and the exact two-point strict-`Q4` classification. They do not supply genuine recurrence signatures or labelled chamber semantics. GitHub Actions is configured to run all three finite theorems and upload separate Python 3.10 and 3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
@@ -74,7 +73,7 @@ Every final checker permanently reports `all_n_proved_by_checker = 0`.
 3. Prove every T06--T18 semantic and row theorem genuinely.
 4. Prove T19 global-family exhaustiveness for the actual recurrence.
 5. Supply and review all 232 T20 zero-selector chamber proofs.
-6. Populate genuine signatures and prove all 20 T21 semantic arguments on both realizable scalar halfspaces.
+6. Populate genuine signatures and prove all 20 T21 semantic arguments, using the exact two-point classification whenever the real survivor background has cardinality two.
 7. Supply and review all ten exact T22--T31 premise implications.
 8. Prove and review all six T35--T40 handoff arguments.
 9. Complete T41 review and T42 dossier sign-off.
