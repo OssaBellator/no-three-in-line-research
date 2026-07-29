@@ -2,10 +2,10 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2771**, this branch contains exact documentary
+The no-three-in-line conjecture remains open. Through **CMR2781**, this branch contains exact documentary
 interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, corrected runtime manifests, one
-explicit side-four hard-core exchange functional, exact two-point and collinear geometry, and an arbitrary-
-background pivot-line energy identity with sharp cardinality extremes.
+explicit side-four hard-core exchange functional, exact two-point and collinear geometry, an arbitrary-background
+pivot-line energy identity, sharp cardinality extremes and exact first stability gaps away from `K_-` and `K_+`.
 
 Every final checker, finite theorem checker, fixture and validation runner permanently reports or preserves:
 
@@ -18,8 +18,8 @@ construction, arbitrary-`n` geometry, semantic row proofs, the global-family the
 all premise implications, all handoff arguments, final mathematical review and the root implication to
 `D(n)=2n`.
 
-A locator, digest, affine halfspace, finite witness, classification, energy identity, successful import, manifest
-or workflow artifact is not evidence that the underlying all-`n` theorem is true.
+A locator, digest, affine halfspace, finite witness, classification, energy identity, stability gap, successful
+import, manifest or workflow artifact is not evidence that the underlying all-`n` theorem is true.
 
 ## 2. Canonical execution and validation
 
@@ -32,6 +32,7 @@ python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
 python scripts/check_prime_power_hard_core_collinear_backgrounds.py
 python scripts/check_prime_power_hard_core_pivot_line_energy.py
+python scripts/check_prime_power_hard_core_extremal_stability.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -55,7 +56,7 @@ T21 <- T05, T18, T19
 
 The corrected runtime layer uses `-B -S -s`, removes inherited `PYTHON*` variables, scrubs third-party paths,
 records source identities and endpoint honesty evidence, and seals one schema-v1 manifest per Python version.
-The branch-wide runner retains the pure validator APIs used by the negative mutation suite and executes all five
+The branch-wide runner retains the pure validator APIs used by the negative mutation suite and executes all six
 hard-core finite theorems. Inspect actual workflow runs and artifacts before claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
@@ -73,9 +74,24 @@ genuine exhaustive recurrence rather than merely an internally complete manifest
 
 ### T03 slot and candidate population
 
-Enter every literal operation-slot field: points, removals, survivors, fate witnesses, response families,
-selectors, vectors, routed credits, loads and transitions. Keep data `populated` rather than `proved` until its
-exact mathematical support exists.
+Enter every literal operation-slot field:
+
+```text
+points
+removals
+survivor_background
+owner_fate_witnesses
+response_family
+feasibility_signatures
+selector_data
+labelled_vectors
+routed_credits
+row_loads
+transitions
+```
+
+The current T03 schema reserves these fields but does not manufacture their mathematical values. Keep a record
+`populated` rather than `proved` until its exact source and recurrence ancestry are reviewed.
 
 ### T04 block and interface population
 
@@ -125,7 +141,7 @@ semantics. Typed dispositions and affine inequalities do not establish those mea
 
 All 232 mathematical arguments remain open.
 
-## 8. T21: exact scalar evaluation for arbitrary backgrounds
+## 8. T21: exact scalar geometry, missing recurrence semantics
 
 The eleven positive-minimum side-four hosts have response families
 
@@ -158,23 +174,20 @@ d_{32}+3h_{x-y-1}+h_{3x+y-3}+h_{x+3y-9}
 The twenty scalar chambers therefore use one nontrivial functional: nine weak `Q1` halfspaces, nine strict `Q4`
 halfspaces and two singleton-response full spaces.
 
-### Sharp realisability and two-point classification
+### Two-point and collinear geometry
 
 No background of at most one legal point selects `Q4`; two points suffice. For exactly two points, strict `Q4`
 occurs precisely in the double-`K_-` family with `Delta=5`, or in the mixed `K_-`/`K_30` or `K_-`/`K_03` family
-with a joining line avoiding the two negative pivots, where `Delta=1`. Negative-pivot alignment is the exact
-`Delta=0` boundary.
+with a joining line avoiding the two negative pivots, where `Delta=1`.
 
-### Collinear compression
-
-For a finite legal background `B` collinear on a line `L`,
+For a collinear legal background `B` on a supporting line `L`,
 
 \[
 \Delta(B)=\beta(L)\binom{|B|}{2}+\sum_{x\in B}\omega(x)-3.
 \]
 
-This gives the sharp supporting-line thresholds `2`, `3`, `3` and `4` for `K_-`, `K_30`, `K_03` and a clean
-positive-pivot pencil, while pure negative and neutral pencils never select `Q4`.
+This yields sharp thresholds `2`, `3`, `3` and `4` on `K_-`, `K_30`, `K_03` and a clean positive-pivot pencil;
+pure negative and neutral pencils never select `Q4`.
 
 ### Arbitrary-background pivot-line energy
 
@@ -205,17 +218,46 @@ For every `m=|B|`,
 \]
 
 The upper equality is exactly concentration on `K_-`, and the lower equality exactly concentration on `K_+`,
-apart from the empty background where both formulas give `-3`. Thus strict `Q4` is scalar-feasible at size `m`
-exactly when `m>=2`.
+apart from the empty background. Strict `Q4` is scalar-feasible at size `m` exactly when `m>=2`.
 
-The next T21 work is now sharply separated from scalar evaluation:
+### Sharp support-line stability
 
-1. populate every genuine survivor background produced by the actual recurrence;
-2. prove that point set and its T03/T04 ancestry are mathematically correct;
+Put
+
+\[
+U_m=(m-1)(m+3),\qquad L_m=-(m+1)(m+3).
+\]
+
+For every nonempty legal background,
+
+\[
+B\nsubseteq K_-\Longrightarrow\Delta(B)\le U_m-2m,
+\]
+
+with equality exactly when one point lies off `K_-`, that point has weight `1`, and the negative-pivot energy is
+zero. Dually,
+
+\[
+B\nsubseteq K_+\Longrightarrow\Delta(B)\ge L_m+2m+3,
+\]
+
+with equality exactly when one point lies off `K_+`, that point has weight `0`, and the positive-pivot energy is
+zero.
+
+Thus a sufficiently near-extremal scalar value forces its entire geometric support onto `K_-` or `K_+`, and the
+first defect band has a complete one-point mechanism.
+
+### Remaining genuine T21 work
+
+Scalar evaluation is now exact for any supplied finite background. The remaining T21 work is:
+
+1. populate every genuine `survivor_background` produced by the actual recurrence;
+2. prove each point set and its T02/T03/T04 ancestry mathematically correct;
 3. compute its four pivot-pencil energies and four relevant-line occupancies;
-4. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
-5. retain return, interface and recurrent-row terms;
-6. review all twenty host-labelled semantic arguments.
+4. use the stability gaps when the resulting value is near an extremum;
+5. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
+6. retain return, interface and recurrent-row terms;
+7. review all twenty host-labelled semantic arguments.
 
 Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct. The two
 singleton `Q4` hosts remain irreducible on their current raw allowed-edge sets.
@@ -239,11 +281,11 @@ only their stated finite or software claims.
 
 1. Prove and seal high-use T01 source statements.
 2. Close every T02 case, clause, exclusion and global-parent record; prove recurrence exhaustiveness.
-3. Enter actual T03/T04 data.
+3. Enter actual T03/T04 data, including every genuine hard-core survivor background.
 4. Prove T05 arbitrary-`n` coverage and every T06--T18 theorem.
 5. Prove genuine T19 global-family exhaustiveness.
 6. Prove all 232 T20 zero-selector chamber arguments.
-7. Populate genuine T21 backgrounds and prove all 20 semantic arguments; scalar evaluation is now available for any supplied background.
+7. Prove all 20 T21 semantic arguments; scalar evaluation and stability are available for every supplied background.
 8. Supply and review all ten T22--T31 premise implications.
 9. Prove all six T35--T40 handoff assertions.
 10. Complete T41 review and T42 dossier sign-off.
