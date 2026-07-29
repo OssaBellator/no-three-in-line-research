@@ -12,11 +12,12 @@ This compact addendum records same-token and concentrated-blocker reductions pro
 | GC4s | Composing with the weighted labelled-fan extraction preserves explicit payment or Hall-deficiency constants | PROVED | `docs/geometric-cleaning-same-token-hall-deficiency.md` |
 | GC4t | Under destruction-faithful eligibility, the deficiency branch enters the existing minimal weighted Hall-core and created-collateral routers | PROVED UNDER THE DECLARED HALL CONTRACT | `docs/geometric-cleaning-same-token-hall-deficiency.md` |
 | GC4u–GC4y | Complete protected-event inventories retain a clean-height-safe half for same-token payment/Hall-core extraction or localize one exact protected-event cause with explicit weight | PROVED UNDER THE HEIGHT-SEPARABLE SAME-TOKEN CONTRACT | `docs/geometric-cleaning-clean-height-same-token-router.md` |
+| GC4z–GC4ac | Occurrence-faithful protected-event capacities retain safe weight `W-U`; relative capacity yields clean-height payment or Hall deficiency, while failure is one exact address-capacity overload | PROVED UNDER THE EXISTING SAME-TOKEN AND CAPACITY CONTRACTS | `docs/geometric-cleaning-protected-event-capacity.md` |
 
 ## Updated GC5 frontier
 
-Shared-token accounting, aggregate noncommon capacity, clean-height filtering and one-removal donor neutralization now compose quantitatively. A compatible fan gives clean-height-safe payment, a clean-height-safe exact Hall core or one concentrated protected-event address; a removable concentrated blocker gives descent or one heavy exact feedback output without donor-count loss.
+Shared-token accounting, aggregate noncommon capacity, clean-height filtering, finite protected-event capacities and one-removal donor neutralization now compose quantitatively. A compatible fan gives clean-height-safe payment, a clean-height-safe exact Hall core or one protected-event demand/capacity overload; a removable concentrated blocker gives descent or one heavy exact feedback output without donor-count loss. Bounded donor reservoirs are already reduced to canonical matchings, Hall cores, finite tickets or named restoration gates.
 
-Remaining work is to construct or pay blocker-removal operations for roles without one, remove protected-event causes, neutralize or delegate the returned clean-height-safe minimal Hall core, and close capacity-overloaded common/global blockers, bounded small reservoirs, repeated non-tagged feedback, pool depletion and local superregular resampling.
+Remaining work is to prove occurrence-faithful capacities for actual protected-event geometries, remove or pay overloaded protected events, construct blocker-removal operations for roles without one, neutralize or delegate the returned clean-height-safe minimal Hall core, and close capacity-overloaded common/global blockers, replenishable donors, repeated non-tagged feedback, context causes, pool depletion and local superregular resampling.
 
 No statement here proves GC5 or the global conjecture.
