@@ -58,6 +58,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_hard_core_two_point_classification.py
 
+      - name: Verify hard-core collinear backgrounds
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_collinear_backgrounds.py
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
