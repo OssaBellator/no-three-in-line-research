@@ -43,8 +43,7 @@ subtract from the exact partition of `W`. QED.
 This uses the actual capacity sum, not the coarser dictionary bound
 `K_H max_p U_p`.
 
-## GC4aa -- capacity-safe same-token payment -- PROVED UNDER THE EXISTING
-## SAME-TOKEN CONTRACTS
+## GC4aa -- capacity-safe same-token payment -- PROVED UNDER THE EXISTING SAME-TOKEN CONTRACTS
 
 Assume every protected address respects capacity and `W>U`. Let `r` be the
 noncommon reuse bound and `kappa>=1` the payment normalization from GC4q--GC4t.
@@ -138,9 +137,8 @@ then the fibre yields:
 
 ### Proof
 
-Apply GC4ab to the compatible family. Since
-`U<=eta W_0/(Gamma+1)<=eta W` need not follow from `W>=W_0/(Gamma+1)` in that
-direction, use the sharper direct estimate from GC4z:
+The capacity hypothesis and `W>=W_0/(Gamma+1)` imply
+`U<=eta W`. More directly, GC4z gives
 
 \[
 W_{\rm safe}\ge W-U
