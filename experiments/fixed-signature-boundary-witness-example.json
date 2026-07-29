@@ -1,0 +1,11 @@
+{
+  "boundary_role_count": 3,
+  "paths": [
+    {"id": "p0", "boundary_vertices": ["a0", "b0", "c0"], "weight": "3/2"},
+    {"id": "p1", "boundary_vertices": ["a0", "b1", "c1"], "weight": "1/2"},
+    {"id": "p2", "boundary_vertices": ["a1", "b2", "c2"], "weight": "1"},
+    {"id": "p3", "boundary_vertices": ["a2", "b3", "c3"], "weight": "1"},
+    {"id": "p4", "boundary_vertices": ["a3", "b4", "c4"], "weight": "1"}
+  ],
+  "threshold": "2"
+}
