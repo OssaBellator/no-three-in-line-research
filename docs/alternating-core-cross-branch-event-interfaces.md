@@ -50,8 +50,7 @@ to the endpoint cost order: by the time the first `i+Delta` endpoints are
 scanned, at least `i` have been selected. The `i`-th selected endpoint costs
 at most `c_(i+Delta)`. Summation proves the bound. QED.
 
-## AC5aq -- diagonal BDA cause separation -- PROVED UNDER THE BDA DECODER
-## HYPOTHESES
+## AC5aq -- diagonal BDA cause separation -- PROVED UNDER THE BDA DECODER HYPOTHESES
 
 Consider one diagonal bounded-denominator channel comparison `(omega,omega)`
 with distinct role parameters `u,v`.
@@ -80,8 +79,7 @@ have distinct affine right-hand sides, while the `AB` equation is the radial
 line independently of the role. The multiplicity identity follows from
 disjoint support. QED.
 
-## AC5ar -- bank-ready RI one-target event law -- PROVED UNDER THE PHYSICAL
-## BLOCK HYPOTHESES
+## AC5ar -- bank-ready RI one-target event law -- PROVED UNDER THE PHYSICAL BLOCK HYPOTHESES
 
 Let one installed RI block have `m` source cosets of subgroup order `h`. Let
 `T_1` be a weighted multiset of one-target terminal records, each carrying one
@@ -137,8 +135,7 @@ The four displayed tests are therefore necessary and sufficient. Disjoint
 involutive swaps commute, and transported legality certifies the opposite
 square sides. QED.
 
-## AC5at -- combined event-cost continuation -- PROVED UNDER THE DECLARED
-## CONTRACTS
+## AC5at -- combined event-cost continuation -- PROVED UNDER THE DECLARED CONTRACTS
 
 For any AC menu satisfying the bounded-left-hole hypothesis, build its exact
 endpoint cost from:
