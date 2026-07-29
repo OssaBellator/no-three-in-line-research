@@ -6,7 +6,7 @@ Fix selected typed owner/charge repair incidences `R` and live physical-source/c
 
 The preceding collateral-conservation block supplies an injective one-use debit map `d:R->S` with live tokens.
 
-## RI5gh--RI5gl
+## RI5gm--RI5gq
 
 1. Complete typed arithmetic addresses determine compatibility without hidden state.
 2. The dictionary is exact iff `E={(r,s):Compat(r,s)}`.
