@@ -70,6 +70,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_hard_core_pivot_line_energy.py
 
+      - name: Verify hard-core extremal stability
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_extremal_stability.py
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
