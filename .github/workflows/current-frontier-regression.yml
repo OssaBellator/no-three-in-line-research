@@ -40,6 +40,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/test_prime_power_current_frontier_regression.py
 
+      - name: Verify canonical prescription partition
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_canonical_prescription_partition.py
+
       - name: Verify hard-core exchange normal form
         env:
           PYTHONDONTWRITEBYTECODE: "1"
