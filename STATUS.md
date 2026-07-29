@@ -12,10 +12,10 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2663**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2675**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
-Every final checker permanently reports:
+Every final checker and branch-wide regression permanently reports:
 
 ```text
 all_n_proved_by_checker = 0
@@ -87,11 +87,12 @@ scripts/check_prime_power_exceptional_chamber_frontier.py
 scripts/check_prime_power_final_premise_frontiers.py
 scripts/check_prime_power_canonical_frontier_roots.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py
+scripts/run_prime_power_current_frontier_regression.py
 ```
 
 ## Canonical T19--T21 roots
 
-The original atomic target table carried legacy dependency roots. Canonical execution now installs:
+Canonical execution installs:
 
 ```text
 T19 <- T02, T18
@@ -108,29 +109,38 @@ T21 <- T19
 ```
 
 Legacy special-certificate support for the old global-family skeleton and exceptional-chamber registry is
-excluded. The structural audit requires both complete 43-target DAGs to remain acyclic, the T32 obligation
-census to remain stable, the older scoped correction contexts to be idempotent, and all three corrections to
-propagate to T43.
+excluded. The canonical-root audit requires both 43-target DAGs to remain acyclic, the T32 obligation census
+to remain stable, the older scoped correction contexts to be idempotent, and all three corrections to reach
+T43. Hashes produced under the former roots are stale and must be regenerated.
 
-Target-definition and artifact hashes produced under the former roots are stale and must be regenerated.
-This is a dependency correction, not a proof of T19, T20 or T21.
+This is dependency integrity, not a proof of T19, T20 or T21.
 
-## Exact T19--T43 stack
+## Current-frontier regression
 
-T19 derives expected parents from T02, final rows from T18 and case/clause/slot ancestry from T04. T20 and
-T21 retain the canonical 232+20 chamber census and require exact T05 host geometry, with T18/T19 support for
-row-based closure modes.
+The branch-wide standard-library regression is:
 
-T22--T31 reconstruct exact lower-target support for ten final premises and bind noncircular proof bundles
-into both premise and atomic target artifacts. T32--T43 aggregate typed obligations and premises, six handoff
-assertions, final review, dossier audit and the root implication interface.
+```text
+python scripts/run_prime_power_current_frontier_regression.py
+```
 
-The canonical v2 endpoint validates the T19--T21 root audit before loading the nested T32--T43 stack. Every
-proved target still requires its ordinary mathematical theorem and review.
+It checks:
+
+```text
+all check_prime_power_*, verify_prime_power_* and run_prime_power_* source syntax
+exact thirteen-frontier and forty-three-target literal census
+presence and honesty markers of all thirteen canonical endpoints
+README, status, theorem-ledger and roadmap synchronisation
+canonical-root executable self-test
+final v2 endpoint root self-test
+```
+
+The GitHub Actions workflow runs the same suite on Python 3.10 and 3.12 with read-only repository permission.
+A committed workflow is not evidence of a passing run; actual Actions results must be reported separately.
+The regression does not validate a mathematical certificate or create T44.
 
 ## Genuine current frontiers
 
-There is no further atomic documentary target beyond T43. The current frontiers are the unresolved mathematics:
+There is no further atomic documentary target beyond T43. The unresolved mathematics is:
 
 ```text
 T01--T02 source truth and genuine recurrence exhaustiveness
@@ -146,7 +156,7 @@ T42 final dossier sign-off
 T43 the reviewed root implication to D(n)=2n
 ```
 
-T32--T34 are exact documentary aggregation gates; they become effective only when their lower proof banks are
+T32--T34 are documentary aggregation gates and become effective only when their lower proof banks are
 genuinely complete.
 
 ## Concrete mathematical work still required
@@ -165,7 +175,7 @@ genuinely complete.
 
 ## Corrections retained
 
-- A locator, hash or sealed evidence record does not prove a theorem true.
+- A locator, hash, workflow result or sealed evidence record does not prove a theorem true.
 - Exact recurrence identity does not prove recurrence exhaustiveness.
 - Literal T03/T04 data do not prove their intended semantics.
 - Finite T05 arithmetic does not prove arbitrary-`n` coverage.
@@ -174,14 +184,12 @@ genuinely complete.
 - T20/T21 typed chamber artifacts do not prove chamber closure.
 - Exact T22--T31 support does not prove any dependency implication or final premise.
 - Exact T32--T43 support does not prove any handoff, review, dossier or root theorem.
-- Canonical dependency roots and acyclic graphs are documentary metadata.
-- Syntax compilation and structural self-tests are not a dependency-backed certificate suite.
+- Canonical dependency roots, syntax compilation, CI and acyclic graphs are documentary metadata.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2663**, the repository has an exact finite documentary stack through
-all 43 atomic targets and a canonical T19--T21 dependency installation audited across the full T43 DAG.
+There is no complete proof. Through **CMR2675**, the repository has a synchronized finite documentary stack
+through all 43 targets, canonical T19--T21 ancestry through T43, and a continuous regression contract over the
+current software and honesty ledgers.
 
-The unresolved centre remains the genuine mathematics: source and recurrence truth, actual population,
-arbitrary-`n` coverage, semantic correctness, global-family exhaustiveness, all 252 chamber proofs, all ten
-final premises, all six handoff arguments, final review and the implication to all `n`.
+The unresolved centre remains the genuine mathematics listed above.
