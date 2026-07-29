@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Run dependency-free regression checks for the complete current prime-power frontier.
+"""Run dependency-free regression checks for the current prime-power frontier.
 
-The suite checks source syntax, the fixed thirteen-frontier/forty-three-target census, canonical endpoint
-presence, honesty-ledger synchronization and executable structural self-tests. It validates research
-infrastructure only and permanently reports ``all_n_proved_by_checker = 0``.
+The suite checks source syntax, the fixed thirteen-frontier/forty-three-target
+census, canonical endpoint presence, honesty-ledger synchronization and executable
+structural self-tests. It validates research infrastructure only and permanently
+reports ``all_n_proved_by_checker = 0``.
 """
 from __future__ import annotations
 
@@ -53,25 +54,27 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "Python 3.10+",
     ),
     "STATUS.md": (
-        "CMR2741",
+        "CMR2751",
         "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
+        "check_prime_power_hard_core_two_point_classification.py",
         "manifest_sha256",
         "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2734--2741",
+        "CMR2742--2751",
         "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2741",
+        "CMR2751",
         "run_prime_power_current_frontier_regression.py",
         "check_prime_power_all_open_target_fixture.py",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
+        "check_prime_power_hard_core_two_point_classification.py",
         "current-frontier-runtime.json",
         "all_n_proved_by_checker = 0",
     ),
@@ -107,10 +110,16 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
         "2b4d743fc4e98d39d63c2c7415ec33639692f8bd7b484dcb630ddb2aefd8896c",
         "all_n_proved_by_checker = 0",
     ),
+    "docs/434-prime-power-hard-core-two-point-classification.md": (
+        "CMR2742--CMR2751",
+        "4ee3f69f653544853c04f0bf4822e839d537a52a41fe4612410604d7bc630f47",
+        "all_n_proved_by_checker = 0",
+    ),
     ".github/workflows/current-frontier-regression.yml": (
         "actions/upload-artifact@v4",
         "check_prime_power_hard_core_exchange_normal_form.py",
         "check_prime_power_hard_core_exchange_realisability.py",
+        "check_prime_power_hard_core_two_point_classification.py",
         "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
@@ -162,33 +171,20 @@ def validate_target_frontier_literals(
     target_rows: Any,
     frontiers: Any,
 ) -> tuple[list[str], list[str]]:
-    """Validate literal target/frontier tables without importing the checker module."""
     require(isinstance(target_rows, list), "TARGET_ROWS must be a literal list")
     require(isinstance(frontiers, dict), "FRONTIERS must be a literal dictionary")
     require(len(target_rows) == 43, "atomic target table must contain exactly 43 targets")
     require(len(frontiers) == 13, "frontier table must contain exactly 13 groups")
-    require(
-        all(isinstance(key, str) and key for key in frontiers),
-        "frontier IDs must be nonempty strings",
-    )
-    require(
-        all(isinstance(value, str) and value for value in frontiers.values()),
-        "frontier titles must be nonempty strings",
-    )
+    require(all(isinstance(key, str) and key for key in frontiers), "frontier IDs must be nonempty strings")
+    require(all(isinstance(value, str) and value for value in frontiers.values()), "frontier titles must be nonempty strings")
 
     target_ids: list[str] = []
     frontier_ids: list[str] = []
     for index, row in enumerate(target_rows, start=1):
-        require(
-            isinstance(row, tuple) and len(row) == 10,
-            f"target row {index}: exact ten-field tuple required",
-        )
+        require(isinstance(row, tuple) and len(row) == 10, f"target row {index}: exact ten-field tuple required")
         target_id, frontier_id = row[0], row[1]
         require(isinstance(target_id, str), f"target row {index}: string target ID required")
-        require(
-            target_id.startswith(f"T{index:02d}_"),
-            f"target row {index}: sequential target ID required",
-        )
+        require(target_id.startswith(f"T{index:02d}_"), f"target row {index}: sequential target ID required")
         require(frontier_id in frontiers, f"target {target_id}: unknown frontier {frontier_id}")
         target_ids.append(target_id)
         frontier_ids.append(frontier_id)
@@ -205,34 +201,24 @@ def exact_target_frontier_census(atomic_path: Path) -> tuple[list[str], list[str
     )
 
 
-def validate_endpoint_text(filename: str, text: str) -> None:
-    require(text.strip(), f"canonical endpoint {filename}: empty source")
-    require(
-        "all_n_proved_by_checker" in text,
-        f"canonical endpoint {filename}: honesty marker missing",
-    )
-    compile(text, filename, "exec")
-
-
 def endpoint_audit(scripts_dir: Path) -> list[str]:
     audited: list[str] = []
     for filename in CANONICAL_ENDPOINTS:
-        path = scripts_dir / filename
-        validate_endpoint_text(filename, source_text(path))
+        text = source_text(scripts_dir / filename)
+        require(text.strip(), f"canonical endpoint {filename}: empty source")
+        require("all_n_proved_by_checker" in text, f"canonical endpoint {filename}: honesty marker missing")
+        compile(text, filename, "exec")
         audited.append(filename)
     return audited
-
-
-def validate_document_markers(relative_path: str, text: str, markers: tuple[str, ...]) -> None:
-    require(text.strip(), f"{relative_path}: empty document")
-    for marker in markers:
-        require(marker in text, f"{relative_path}: missing synchronization marker {marker!r}")
 
 
 def document_audit(root: Path) -> list[str]:
     audited: list[str] = []
     for relative_path, markers in DOCUMENT_EXPECTATIONS.items():
-        validate_document_markers(relative_path, source_text(root / relative_path), markers)
+        text = source_text(root / relative_path)
+        require(text.strip(), f"{relative_path}: empty document")
+        for marker in markers:
+            require(marker in text, f"{relative_path}: missing synchronization marker {marker!r}")
         audited.append(relative_path)
     return audited
 
