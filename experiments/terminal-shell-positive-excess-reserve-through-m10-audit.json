@@ -1,0 +1,36 @@
+{
+  "audited_sizes": [8, 9, 10],
+  "definition": "delta_j=max(kappa_j-1,0), S=sum_j delta_j, and total norm <= tau/(1-S)",
+  "common_total_positive_excess_budget": "2/5",
+  "terminal_uniform_upper_bound": "3/5",
+  "cases": [
+    {
+      "m": 8,
+      "cycle_minimum_horizon": 3,
+      "exact_terminal_shell_factor": "1468416446839930521721999/3789940340738886748063650",
+      "exact_terminal_positive_excess_reserve": "2321523893898956226341651/3789940340738886748063650",
+      "composed_bound_at_common_budget": "1468416446839930521721999/2273964204443332048838190",
+      "margin_below_one_at_common_budget": "805547757603401527116191/2273964204443332048838190"
+    },
+    {
+      "m": 9,
+      "cycle_minimum_horizon": 4,
+      "exact_terminal_shell_factor": "406616023430754819367780545483294984597292560691/708943793924084504981546740829982708967717363200",
+      "exact_terminal_positive_excess_reserve": "302327770493329685613766195346687724370424802509/708943793924084504981546740829982708967717363200",
+      "composed_bound_at_common_budget": "406616023430754819367780545483294984597292560691/425366276354450702988928044497989625380630417920",
+      "margin_below_one_at_common_budget": "18750252923695883621147499014694640783337857229/425366276354450702988928044497989625380630417920"
+    },
+    {
+      "m": 10,
+      "cycle_minimum_horizon": 5,
+      "exact_terminal_shell_factor": "5252950050653541320261353842660696885393101/33843848222070502440710524758866309866934400",
+      "exact_terminal_positive_excess_reserve": "28590898171416961120449170916205612981541299/33843848222070502440710524758866309866934400",
+      "composed_bound_at_common_budget": "5252950050653541320261353842660696885393101/20306308933242301464426314855319785920160640",
+      "margin_below_one_at_common_budget": "15053358882588760144164961012659089034767539/20306308933242301464426314855319785920160640"
+    }
+  ],
+  "common_positive_excess_budget_contractive_at_all_sizes": true,
+  "nonterminal_shell_factors_audited": false,
+  "asymptotic_shell_depth_bound_proved": false,
+  "all_exact_regressions_verified": true
+}
