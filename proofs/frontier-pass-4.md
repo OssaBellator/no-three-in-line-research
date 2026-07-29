@@ -36,6 +36,7 @@ This compact addendum records the next proved theorem blocks after the positive-
 | AC5el--AC5ep | Every localized collision has a canonical least occupied segment slot; complete occurrence lineage returns an exact duplicate physical occurrence, a non-injective slot dictionary or the first missing lineage record, while injective one-use slot debits forbid the collision | PROVED UNDER THE COMPLETE OCCURRENCE-SLOT INJECTIVITY AND ONE-USE DEBIT CONTRACT | `docs/alternating-core-occurrence-slot-collision-lineage.md` |
 | AC5eq--AC5eu | Complete localized defect-use/faithful-slot compatibility is a unit matching problem; full injective realization is equivalent to every Hall inequality, while failure returns the least maximum-deficit core, saturates all neighboring slots and makes every retained use essential | PROVED UNDER THE COMPLETE OCCURRENCE-SLOT COMPATIBILITY AND UNIT-CAPACITY CONTRACT | `docs/alternating-core-occurrence-slot-assignment-hall-core.md` |
 | AC5ev--AC5ez | Every complete repair of a maximum-deficit occurrence-slot core uses at least its deficit many distinct genuinely new core-to-outside-slot incidences; the first such incidences form a canonical physical repair transversal and concentrate on one exact repair class | PROVED UNDER THE COMPLETE REPAIR-EXTENSION AND OCCURRENCE-FAITHFUL SLOT CONTRACT | `docs/alternating-core-occurrence-slot-repair-transversal.md` |
+| AC5fa--AC5fe | Selected repair-transversal incidences are exact one-use debits from occurrence-faithful repair-source tokens; live plus issued mass equals initial plus named deposits globally and classwise, while the first violation is source-less issuance, splitting, reuse, hidden deposit or class mismatch | PROVED UNDER THE COMPLETE REPAIR-SOURCE OCCURRENCE, CLASS AND ONE-USE DEBIT CONTRACT | `docs/alternating-core-repair-transversal-source-conservation.md` |
 
 ## Updated AC4 frontier
 
@@ -43,6 +44,6 @@ Buffer-rich positive-output circulations have the upstream AC3ur--AC3uv payment 
 
 ## Updated AC5 frontier
 
-The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers, pressure/path/segment localization, occurrence-slot lineage, assignment Hall cores and deficit-sized repair transversals. Remaining work is constructing the concrete geometric repair incidences and proving every selected transversal is supplied by faithful physical slots, paid by named deposits or geometrically impossible.
+The deterministic GC1--GC3 inventory now has reverse-load and Hall-core routing, classwise obstruction banks, cumulative integrated balances, exact mixed-cut barriers, pressure/path/segment localization, occurrence-slot lineage, assignment Hall cores, deficit-sized repair transversals and exact repair-source conservation. Remaining work is constructing the concrete geometric repair-source dictionary and proving every selected incidence has a compatible live token, or discharging the returned source-less, split, reuse, hidden-deposit or class-mismatch witness.
 
 No statement here proves AC4, AC5, AC6 or the no-three-in-line conjecture.
