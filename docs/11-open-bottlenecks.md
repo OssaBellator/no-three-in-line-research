@@ -2,10 +2,10 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2761**, this branch contains exact documentary
+The no-three-in-line conjecture remains open. Through **CMR2771**, this branch contains exact documentary
 interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, corrected runtime manifests, one
-explicit side-four hard-core exchange functional, exact two-point geometry and an arbitrary-cardinality collinear
-normal form.
+explicit side-four hard-core exchange functional, exact two-point and collinear geometry, and an arbitrary-
+background pivot-line energy identity with sharp cardinality extremes.
 
 Every final checker, finite theorem checker, fixture and validation runner permanently reports or preserves:
 
@@ -18,8 +18,8 @@ construction, arbitrary-`n` geometry, semantic row proofs, the global-family the
 all premise implications, all handoff arguments, final mathematical review and the root implication to
 `D(n)=2n`.
 
-A locator, digest, affine halfspace, finite witness, classification, quadratic formula, successful import,
-manifest or workflow artifact is not evidence that the underlying all-`n` theorem is true.
+A locator, digest, affine halfspace, finite witness, classification, energy identity, successful import, manifest
+or workflow artifact is not evidence that the underlying all-`n` theorem is true.
 
 ## 2. Canonical execution and validation
 
@@ -31,6 +31,7 @@ python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
 python scripts/check_prime_power_hard_core_collinear_backgrounds.py
+python scripts/check_prime_power_hard_core_pivot_line_energy.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -54,8 +55,8 @@ T21 <- T05, T18, T19
 
 The corrected runtime layer uses `-B -S -s`, removes inherited `PYTHON*` variables, scrubs third-party paths,
 records source identities and endpoint honesty evidence, and seals one schema-v1 manifest per Python version.
-The branch-wide runner has restored the pure validator APIs used by the negative mutation suite and executes all
-four hard-core finite theorems. Inspect actual workflow runs and artifacts before claiming CI success.
+The branch-wide runner retains the pure validator APIs used by the negative mutation suite and executes all five
+hard-core finite theorems. Inspect actual workflow runs and artifacts before claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
 
@@ -124,7 +125,7 @@ semantics. Typed dispositions and affine inequalities do not establish those mea
 
 All 232 mathematical arguments remain open.
 
-## 8. T21: one functional, exact two-point geometry and collinear compression
+## 8. T21: exact scalar evaluation for arbitrary backgrounds
 
 The eleven positive-minimum side-four hosts have response families
 
@@ -164,43 +165,57 @@ occurs precisely in the double-`K_-` family with `Delta=5`, or in the mixed `K_-
 with a joining line avoiding the two negative pivots, where `Delta=1`. Negative-pivot alignment is the exact
 `Delta=0` boundary.
 
-### Arbitrary-cardinality collinear normal form
+### Collinear compression
 
-For a finite legal background `B` collinear on a line `L`, put
-
-\[
-\beta(L)=\#\{(3,2),(1,0)\in L\}-\#\{(3,0),(1,2)\in L\}
-\]
-
-and let `omega(x)` be the signed point weight from the four relevant lines. Then
+For a finite legal background `B` collinear on a line `L`,
 
 \[
-\boxed{\Delta(B)=\beta(L)\binom{|B|}{2}+\sum_{x\in B}\omega(x)-3.}
+\Delta(B)=\beta(L)\binom{|B|}{2}+\sum_{x\in B}\omega(x)-3.
 \]
 
-The exact pure and clean thresholds are:
+This gives the sharp supporting-line thresholds `2`, `3`, `3` and `4` for `K_-`, `K_30`, `K_03` and a clean
+positive-pivot pencil, while pure negative and neutral pencils never select `Q4`.
 
-```text
-K_minus:              Delta=(m-1)(m+3),       Q4 iff m>=2
-K_30 or K_03:         Delta=(m-2)(m+3)/2,     Q4 iff m>=3
-clean positive pencil: Delta=m(m-1)/2-3,       Q4 iff m>=4
-K_plus:               Delta=-(m+1)(m+3),      never Q4
-clean negative pencil: Delta=-m(m-1)/2-3,      never Q4
-clean neutral line:    Delta=-3,               never Q4
-```
+### Arbitrary-background pivot-line energy
 
-This gives a concrete compression whenever a genuine survivor background is proved collinear. It does not prove
-that genuine recurrence fibres are collinear.
+For each positive or negative response pivot, partition `B` by the line through that pivot. Let `E_+(B)` and
+`E_-(B)` be the total within-pencil pair counts over the two positive and two negative pivots, and let `W(B)` be
+the signed occupancy weight on the four relevant lines. Then
 
-The next T21 work is therefore:
+\[
+\boxed{\Delta(B)=E_+(B)-E_-(B)+W(B)-3.}
+\]
+
+Equivalently,
+
+\[
+\boxed{Q_4\iff E_+(B)+W(B)\ge E_-(B)+4.}
+\]
+
+Insertion of a legal point `x` has the exact marginal
+
+\[
+\Delta(B\cup\{x\})-\Delta(B)=\omega(x)+\sum_{y\in B}\chi(x,y).
+\]
+
+For every `m=|B|`,
+
+\[
+\boxed{-(m+1)(m+3)\le\Delta(B)\le(m-1)(m+3).}
+\]
+
+The upper equality is exactly concentration on `K_-`, and the lower equality exactly concentration on `K_+`,
+apart from the empty background where both formulas give `-3`. Thus strict `Q4` is scalar-feasible at size `m`
+exactly when `m>=2`.
+
+The next T21 work is now sharply separated from scalar evaluation:
 
 1. populate every genuine survivor background produced by the actual recurrence;
-2. prove its cardinality and any collinearity/supporting-line claim;
-3. apply the exact two-point classifier or collinear formula when justified;
-4. evaluate `Delta` directly otherwise;
-5. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
-6. retain return, interface and recurrent-row terms;
-7. review all twenty host-labelled semantic arguments.
+2. prove that point set and its T03/T04 ancestry are mathematically correct;
+3. compute its four pivot-pencil energies and four relevant-line occupancies;
+4. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
+5. retain return, interface and recurrent-row terms;
+6. review all twenty host-labelled semantic arguments.
 
 Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct. The two
 singleton `Q4` hosts remain irreducible on their current raw allowed-edge sets.
@@ -228,7 +243,7 @@ only their stated finite or software claims.
 4. Prove T05 arbitrary-`n` coverage and every T06--T18 theorem.
 5. Prove genuine T19 global-family exhaustiveness.
 6. Prove all 232 T20 zero-selector chamber arguments.
-7. Populate genuine signatures and prove all 20 T21 semantic arguments, using finite geometry only when its hypotheses are proved.
+7. Populate genuine T21 backgrounds and prove all 20 semantic arguments; scalar evaluation is now available for any supplied background.
 8. Supply and review all ten T22--T31 premise implications.
 9. Prove all six T35--T40 handoff assertions.
 10. Complete T41 review and T42 dossier sign-off.
