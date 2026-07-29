@@ -37,12 +37,13 @@ The authoritative live ledger is split across:
 | CMR2574--2581 | T15-derived critical edges, explicit well-founded domains, exact ranks, edge descent and graph audit | PROVED as documentary T16; rank meaning and external well-foundedness remain open | `docs/422-prime-power-global-rank-frontier.md` |
 | CMR2582--2597 | Corrected T17/T18 target ancestry, T13-derived predicates, representative agreement, rank-sensitive binding, T12/T15-derived final rows, global rescaling, exact predicate multisets, T16 edge binding and typed sealing | PROVED as documentary T17/T18; predicate meaning and row theorems remain open | `docs/423-prime-power-state-predicate-row-theorem-frontiers.md` |
 | CMR2598--2613 | T02/T18-derived global-family coverage, exact T04 clause ancestry, corrected T19--T21 roots, canonical 232+20 chamber census, T05 host support and typed chamber closure modes | PROVED as documentary T19/T20/T21; family exhaustiveness and every chamber theorem remain open | `docs/424-prime-power-global-family-exceptional-chamber-frontiers.md` |
+| CMR2614--2629 | Exact premise-to-target registry, T01--T21 dependency support records, no-premature-proof gate, reviewed premise semantics, stable artifact cores, noncircular per-premise bundles, contract/premise/target synchronization and aggregate T22--T31 bank | PROVED as documentary T22--T31 premise frontiers; every mathematical premise remains open until supplied and reviewed | `docs/425-prime-power-final-premise-frontiers.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
 ## Current exact finite stack
 
-The executable work banks now reach T21:
+The executable work banks now reach T31:
 
 ```text
 T01 source statements
@@ -66,6 +67,16 @@ T18 final row theorems
 T19 global-family exhaustiveness
 T20 exceptional zero-selector chamber closure
 T21 hard-core chamber closure
+T22 base-case premise
+T23 recurrence-exhaustiveness premise
+T24 invariant-preservation premise
+T25 operation-selection premise
+T26 resource-and-credit premise
+T27 block-and-auxiliary contraction premise
+T28 cross-block assembly premise
+T29 exceptional-case premise
+T30 termination premise
+T31 objective-translation premise
 ```
 
 Every final checker permanently reports `all_n_proved_by_checker = 0`.
@@ -89,6 +100,20 @@ chamber theorems but now have chamber-specific typed artifacts.
 Separate noncircular banks synchronize the T20 and T21 obligations and atomic targets. No chamber is
 mathematically closed merely because its metadata is complete.
 
+## Exact T22--T31 premise frontier
+
+Each final premise reconstructs its complete dependency-target census from T01--T21, including target
+result/completion digests, typed target artifacts and target artifact-bundle digests. Proved premises require
+one reviewed semantic implication and every dependency target effectively complete.
+
+Each per-premise bundle hashes stable premise and target artifact cores with the exact lower-target support.
+The outward premise and target locator/digest fields and ancestor certificate SHAs are excluded from the
+bundle definition. The resulting digest is then bound into both the typed premise artifact and the atomic
+T22--T31 target artifact.
+
+The checker synchronizes every premise with the fixed final contract and atomic execution DAG. It does not
+prove the lower targets, the dependency implication or the arbitrary-`n` statement.
+
 ## Active frontier
 
 1. Populate and prove every genuine T01 source statement and T02 recurrence record.
@@ -96,7 +121,7 @@ mathematically closed merely because its metadata is complete.
 3. Prove every T06--T18 semantic and row theorem genuinely.
 4. Prove T19 global-family exhaustiveness for the actual recurrence.
 5. Supply and review all 252 T20/T21 chamber proofs.
-6. Rebuild T22--T31 as exact premise contracts over the T01--T21 banks.
+6. Supply and review all ten exact T22--T31 premise implications.
 7. Complete T32--T43 typed support, handoff, dossier and the ordinary implication to `D(n)=2n`.
 
 No documentary checker substitutes for the missing mathematical proofs.
