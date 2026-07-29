@@ -4,7 +4,7 @@
 
 This branch studies simultaneous structure of a multiplicative set and its image under the rational secant map, including collision involutions, subgroup-coset overlap, quotient cycles, order-two obstructions, and the physical-lift interface needed by absorber banks. Canonical proofs are under `docs/`.
 
-> **Status:** Scale-localized completion debt has a full two-layer product bank. Every blocker occupancy is executable, singleton repair profiles have exact direction/offset addresses, and active collateral has exact component-cylinder probabilities. Original and shadow rank one terminate by hyperbola localization or finite margin pruning. The terminal active core has only thirteen canonical rank-two/rank-three words, and every word reduces to one-target incidence or an exact two-target hyperbola secant. RI5ak--RI5at give the exact blocker-profile and derangement probability laws, while RI5ay--RI5bc reduce exact profile recurrence to physical owner-lineage gates. RI5bd--RI5bg now complete the bank-ready one-target collateral audit: every rank-one prescription has probability `1/(mh)`, weighted collateral is exactly `Q_1/(mh)`, and a fixed context pair supports at most two target cells. The remaining bottleneck is the two-target secant audit, non-bank-ready physical lifts, arithmetic owner payment, and replenishable-source recurrence.
+> **Status:** Scale-localized completion debt has a full two-layer product bank. Every blocker occupancy is executable, singleton repair profiles have exact direction/offset addresses, and active collateral has exact component-cylinder probabilities. Original and shadow rank one terminate by hyperbola localization or finite margin pruning. The terminal active core has only thirteen canonical rank-two/rank-three words, and every word reduces to one-target incidence or an exact two-target hyperbola secant. RI5ak--RI5at give the exact blocker-profile and derangement probability laws, while RI5ay--RI5bc reduce exact profile recurrence to physical owner-lineage gates. RI5bd--RI5bg complete the bank-ready one-target audit, and RI5bh--RI5bk now complete the distinct-coset two-target audit with exact probability `1/((m)_2h^2)` and weighted collateral `Q_2/((m)_2h^2)`. The remaining bottleneck is rank-three collateral, repeated-coset lower-rank correlations not already classified, non-bank-ready physical lifts, arithmetic owner payment, and replenishable-source recurrence.
 
 ## Branch map
 
@@ -33,14 +33,16 @@ This branch studies simultaneous structure of a multiplicative set and its image
 - [`docs/rational-inverse-shadow-pruning.md`](docs/rational-inverse-shadow-pruning.md): finite removal of all residual rank-one shadows.
 - [`docs/rational-inverse-terminal-interactions.md`](docs/rational-inverse-terminal-interactions.md): thirteen terminal words and two hyperbola incidence geometries.
 - [`docs/rational-inverse-one-target-bank-audit.md`](docs/rational-inverse-one-target-bank-audit.md): exact bank-ready one-target collateral law.
+- [`docs/rational-inverse-two-target-bank-audit.md`](docs/rational-inverse-two-target-bank-audit.md): exact bank-ready two-target secant law.
 - [`docs/rational-inverse-quotient-reconstruction.md`](docs/rational-inverse-quotient-reconstruction.md): canonical prime-field subgroup, coset and physical occurrence addresses.
 - [`docs/rational-inverse-blocker-average-splitting.md`](docs/rational-inverse-blocker-average-splitting.md): exact occupancy and rank router for the conditional blocker average.
 - [`docs/rational-inverse-derangement-extension-formula.md`](docs/rational-inverse-derangement-extension-formula.md): exact overlap-dependent derangement probabilities and sharp large-rank amplification.
 - [`proofs/theorem-index.md`](proofs/theorem-index.md): branch-specific theorem ledger.
+- [`proofs/frontier-pass-two-target.md`](proofs/frontier-pass-two-target.md): late-stage two-target audit ledger.
 
 ## Highest-value frontier
 
-1. Complete the two-target hyperbola-secant collateral audit inside one RI5ae interaction class and connect it to the fixed-edge bank.
+1. Complete the bank-ready rank-three terminal collateral audit and classify repeated-coset lower-rank correlations not already routed.
 2. Classify or terminate one selected singleton affine, finite small-derangement, or exact `(t,s,q)` large blocker profile.
 3. Prove bank readiness or return a paid physical-lift output for every selected quotient/scale/carry class.
 
