@@ -87,19 +87,28 @@ no-three-in-line conjecture.
 | PP3bur--PP3but | The boundary XOR system is a labelled constraint graph of rank `n-r`, with at most eight solutions; exact minimum recleaning and `T`-only feasibility are linear-time propagation problems | PROVED | `docs/385-boundary-graph-rank-and-linear-time-exact-recleaning.md` |
 | PP3buu--PP3buw | Gershgorin row sums, pair coherence, and sparse overlap degree give directly combinatorial upper bounds for the spectral localized-Hall constant | PROVED | `docs/386-gershgorin-coherence-criteria-for-spectral-hall-localization.md` |
 | PP3bux--PP3buz | Total positive nonterminal-shell excess below `2/5` would keep every audited macro horizon contractive; exact products credit contractive shells multiplicatively | PROVED / VERIFIED FINITELY (CONDITIONAL ON NONTERMINAL BOUNDS) | `docs/387-positive-excess-and-compensated-shell-budgets.md` |
+| PP3bva--PP3bvc | Boundary recleaning cost is exactly half the total absolute-imbalance deficit; `T`-only repair has an exact pinned owner-disagreement formula | PROVED | `docs/388-boundary-imbalance-invariants-for-low-cost-recleaning.md` |
+| PP3bvd--PP3bvf | Positive diagonal scaling gives an exact Perron variational form for Hall overlap congestion; unscaled congestion is average target multiplicity | PROVED | `docs/389-diagonally-scaled-overlap-congestion-for-localized-hall.md` |
+| PP3bvg--PP3bvi | AM--GM gives the sharp shell-product bound at fixed depth and total positive excess; a common total budget `3/5` keeps all audited horizons contractive | PROVED / VERIFIED FINITELY (CONDITIONAL ON NONTERMINAL BOUNDS) | `docs/390-depth-aware-am-gm-shell-expansion-budgets.md` |
 
 ## Current exact frontier
 
 The parity coordinate no longer requires global sign optimization in the
 audited range. Any locally coupled clean repair must cover every active
 violated edge, and target recleaning is a labelled boundary constraint graph.
-If that graph has `n` variables and `r` connected components, its rank is
-`n-r`, its affine solution count is `2^r<=8`, and exact minimum owner-Hamming
-cost plus `T`-only feasibility are computable by one linear-time propagation.
+Its exact minimum cost is
+
+```text
+(1/2) sum_R (W_R-|I_R|),
+```
+
+the total weighted minority phase across graph components. The stricter `T`-only
+cost is the number of owner variables disagreeing with the boundary-pinned phase.
 At `m=10`, every one of the `12,786,720` optimal positive signed states has a
-direct covering clean rotation changing at most two signs. The missing
-asymptotic step is now purely structural: existence of useful covering
-successors whose boundary graph has uniformly low recleaning cost.
+direct covering clean rotation changing at most two signs. The remaining
+asymptotic step is now purely structural: prove useful covering successors whose
+boundary phases have uniformly small imbalance deficit, ideally with every
+boundary-component variable fixed to zero.
 
 The exact two-owner atomic defect can be decreased while preserving
 target-optimality and fixed signs through `m=9`, but complete atomic descent is
@@ -135,31 +144,37 @@ m=10: maximum macro distance 5.
 Clean-macro distance has an exact cycle-coordinate shell recursion, and the
 orientation correction is sharply localised. Through `m=10`, every nonvalid
 clean fibre has width at most one. Reverse-column norms multiply across the
-cycle-minimum shells. The exact terminal factors permit three nested analytic
-targets: an exact nonuniform product below the reciprocal reserve, a common
-per-shell ceiling `6/5`, or the amortized condition that total positive excess
-`sum_j max(kappa_j-1,0)` is at most `2/5`. The last gives full-horizon bounds
-`0.64575...`, `0.95591...`, and `0.25868...` at `m=8,9,10`, conditionally on the
-nonterminal factors. Thus local expansion is allowed and contractive shells can
-be credited, while the geometric frontier remains cycle-minimum depth and
-adjacent-fibre width.
+cycle-minimum shells. At fixed nonterminal depth `r` and total positive excess
+`E`, AM--GM gives the sharp bound `(1+E/r)^r`. The exact terminal factors then
+permit total excess budgets `6/5`, `3/5`, and `2` at `m=8,9,10`; in particular,
+the common budget `3/5` gives full-horizon bounds `0.65479...`, `0.99109...`, and
+`0.27146...`. This improves the prior common `2/5` certificate. The remaining
+geometric frontier is cycle-minimum depth and adjacent-fibre width; the analytic
+frontier is an exact compensated product, a depth-aware total-excess estimate,
+or the simpler per-shell ceiling `6/5`.
 
 Exact weighted-Hall flaw transport is complete through `m=10`. All `47,512`
 supported signed flaws have proper bottlenecks. For the 43 count maxima in the
 intermittent window, 7 of the 13 constant-one violations are witnessed by at
 most three sources and 9 by at most six; the other four use subset sizes
-`27,29,85,124`. Weighted second moments give a positive larger-subset bound, and
-Gershgorin now replaces the normalised overlap Gram eigenvalue by a maximum
-normalised overlap row sum. Pair coherence gives a `(k-1)mu` microscopic bound,
-while sparse overlap degree can remain bounded on mesoscopic subsets. The
-remaining Hall task is therefore a direct one-source capacity and normalized
-overlap-degree estimate, plus a compatible-source lower bound.
+`27,29,85,124`. The normalized overlap Gram constant now has the exact scaled
+variational form
+
+```text
+inf_(a>0) max_x
+ [sum_(x') O(x,x')a(x')]/[D(x)a(x)].
+```
+
+With `a=1`, this is bounded by the maximum capacity-weighted average target
+multiplicity seen from one source, and hence by the maximum target multiplicity.
+The remaining Hall task is a direct one-source capacity plus scaled overlap-
+congestion estimate, combined with a compatible-source lower bound.
 
 ## Remaining tasks
 
-1. Prove asymptotic existence of pair-safe covering rotations whose labelled
-   boundary graph has a uniformly low-cost propagated solution, ideally with all
-   boundary-component variables zero.
+1. Prove asymptotic existence of pair-safe covering rotations whose boundary
+   phases have uniformly small imbalance deficit, ideally with all boundary-
+   component variables zero.
 2. Prove a geometric Hall bound, or construct explicit balanced weights, for
    target-optimal strict repair throughout the logarithmic frustration window.
 3. Generalize the sharp `m=10` degree/layer coincidence to a uniform multi-layer
@@ -168,15 +183,14 @@ overlap-degree estimate, plus a compatible-source lower bound.
    the `m=9,10` word banks into a structural bounded-collateral rule with
    controlled predecessor charge.
 5. Bound the clean-macro cycle minimum by a decreasing invariant, prove uniform
-   adjacent-shell fibre width, and prove either a nonterminal `6/5` ceiling, a
-   total positive excess budget `2/5`, or a sharper compensated product fitting
-   the exact terminal reserve.
-6. Prove one-source capacity and pair coherence through the microscopic Hall
-   scale, bound normalized overlap row sums or sparse overlap degree at
-   mesoscopic scales, and combine the resulting inverse-support constant with a
-   compatible-source lower bound.
+   adjacent-shell fibre width, and prove either a depth-aware total positive-
+   excess estimate, a compensated product fitting the exact terminal reserve,
+   or the simpler nonterminal `6/5` ceiling.
+6. Prove one-source capacity and low-order overlap control at microscopic scale,
+   bound scaled average target congestion at mesoscopic scale, and combine the
+   resulting inverse-support constant with a compatible-source lower bound.
 7. Combine covering local repair, sharp reverse-collision contraction,
    inherited-load heat evolution, the owner light cone, and compensated
    three-owner drift.
 
-The next available theorem identifier is `PP3bva`.
+The next available theorem identifier is `PP3bvj`.
