@@ -6,7 +6,7 @@ Fix selected burden-repair incidences `R` and live candidate/witness-source toke
 
 The preceding witness-conservation block supplies an injective one-use debit map `d:R->S` with live tokens.
 
-## SRR2ex--SRR2fb
+## SRR2fc--SRR2fg
 
 1. Complete candidate, witness, conditioning and source addresses determine compatibility without hidden state.
 2. The stored graph is exact iff `E={(r,s):Compat(r,s)}`.
