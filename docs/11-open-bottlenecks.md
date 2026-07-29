@@ -2,9 +2,10 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2741**, this branch contains exact documentary
+The no-three-in-line conjecture remains open. Through **CMR2751**, this branch contains exact documentary
 interfaces for all 43 atomic targets, canonical T19--T21 ancestry through T43, corrected runtime manifests, one
-explicit hard-core exchange functional and a sharp background-cardinality theorem for both scalar halfspaces.
+explicit hard-core exchange functional, a sharp background-cardinality theorem and an exact classification of all
+legal two-point strict-`Q4` backgrounds.
 
 Every final checker, finite theorem checker, fixture and validation runner permanently reports or preserves:
 
@@ -17,8 +18,8 @@ construction, arbitrary-`n` geometry, semantic row proofs, the global-family the
 all premise implications, all handoff arguments, final mathematical review and the root implication to
 `D(n)=2n`.
 
-A locator, digest, affine halfspace, finite witness, stress test, successful import, manifest or workflow artifact
-is not evidence that the underlying all-`n` theorem is true.
+A locator, digest, affine halfspace, finite witness, classification, stress test, successful import, manifest or
+workflow artifact is not evidence that the underlying all-`n` theorem is true.
 
 ## 2. Canonical execution and validation
 
@@ -28,6 +29,7 @@ Run:
 python scripts/test_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
+python scripts/check_prime_power_hard_core_two_point_classification.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -51,7 +53,7 @@ T21 <- T05, T18, T19
 
 The corrected runtime layer uses `-B -S -s`, removes inherited `PYTHON*` variables, scrubs third-party paths,
 records source identities and endpoint honesty evidence, and seals one schema-v1 manifest per Python version.
-The workflow executes both finite hard-core theorems. Inspect the actual workflow run and artifacts before
+The workflow executes all three finite hard-core theorems. Inspect the actual workflow run and artifacts before
 claiming CI success.
 
 ## 3. T01--T04: source truth, recurrence and actual population
@@ -121,7 +123,7 @@ semantics. Typed dispositions and affine inequalities do not establish those mea
 
 All 232 mathematical arguments remain open.
 
-## 8. T21: one functional, both halfspaces realizable
+## 8. T21: one functional and exact two-point geometry
 
 The eleven positive-minimum side-four hosts have response families
 
@@ -175,13 +177,37 @@ B={(-1,-2),(4,3)}: Delta=5, strict Q4
 Thus two background points are necessary and sufficient for strict `Q4` scalar selection. Both halfspaces are
 legally realizable; feasibility alone cannot eliminate either response.
 
+### Complete two-point classification
+
+For a legal two-point background `B={u,v}`, strict `Q4` occurs exactly in two families.
+
+1. **Double K-minus.** Both points lie on
+   \[
+   K_-:x-y-1=0,
+   \]
+   and `Delta=5`.
+2. **Mixed positive-unit.** Exactly one point lies on `K_-`, the other lies on
+   \[
+   K_{30}:3x+y-3=0
+   \quad\text{or}\quad
+   K_{03}:x+3y-9=0,
+   \]
+   and the joining line avoids the negative pivots `(3,0)` and `(1,2)`. Then `Delta=1`.
+
+If the mixed joining line passes through a negative pivot, `Delta=0` and the lexicographic selector returns `Q1`.
+Every other legal two-point background has `Delta<=0`.
+
+The bounded exhaustive census over 3,486 pairs contains 15 double-`K_-` strict cases, 22 mixed strict cases, two
+negative-pivot ties and 3,447 other non-`Q4` cases.
+
 This sharpens the next T21 work:
 
 1. populate every genuine survivor background produced by the real recurrence;
-2. evaluate `Delta` exactly for each resulting signature;
-3. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
-4. retain return, interface and recurrent-row terms;
-5. review all twenty host-labelled semantic arguments.
+2. use the exact two-point classifier whenever its cardinality is two;
+3. evaluate `Delta` directly for larger backgrounds;
+4. prove destroyed-threshold and labelled child-vector consequences separately in the `Q1` and `Q4` regimes;
+5. retain return, interface and recurrent-row terms;
+6. review all twenty host-labelled semantic arguments.
 
 Keep fixed-response correction `17`, rollback distance `12` and uniform correction `44` distinct. The two
 singleton `Q4` hosts remain irreducible on their current raw allowed-edge sets.
@@ -209,7 +235,7 @@ only their stated finite or software claims.
 4. Prove T05 arbitrary-`n` coverage and every T06--T18 theorem.
 5. Prove genuine T19 global-family exhaustiveness.
 6. Prove all 232 T20 zero-selector chamber arguments.
-7. Populate genuine signatures and prove all 20 T21 semantic arguments on both realizable scalar halfspaces.
+7. Populate genuine signatures and prove all 20 T21 semantic arguments, using the exact two-point classification where applicable.
 8. Supply and review all ten T22--T31 premise implications.
 9. Prove all six T35--T40 handoff assertions.
 10. Complete T41 review and T42 dossier sign-off.
