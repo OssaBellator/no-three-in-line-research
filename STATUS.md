@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2771**. CMR2390 onward is recorded in
+The authoritative theorem ledger reaches **CMR2781**. CMR2390 onward is recorded in
 `proofs/composite-modulus-theorem-index-live-continuation-8.md`.
 
 Every final checker, finite theorem checker, fixture, runtime manifest and branch-wide regression permanently
@@ -48,7 +48,7 @@ The branch contains synchronized documentary work banks through all 43 atomic ta
 | T18 | T12/T15-derived final rows and exact predicate multisets | row theorems and fixed-offset meaning remain open |
 | T19 | T02/T18-derived parent-to-final-row coverage with T04 clause ancestry | genuine global-family exhaustiveness remains open |
 | T20 | exact 232 zero-selector chamber dispositions with typed host/row support | every zero-selector chamber proof remains open until supplied and reviewed |
-| T21 | exact 20 hard-core chambers, one exchange functional, exact two-point and collinear geometry, and arbitrary-background pivot-line energy bounds | genuine recurrence signatures, labelled semantics and all 20 chamber arguments remain open |
+| T21 | exact 20 hard-core chambers, one exchange functional, exact two-point/collinear/arbitrary-background energy, and sharp extremal stability | genuine recurrence signatures, labelled semantics and all 20 chamber arguments remain open |
 | T22 | exact T01 dependency census and base-case premise bundle | the complete base-domain theorem remains open |
 | T23 | exact T02/T19 dependency census and recurrence premise bundle | the nonbase recurrence-exhaustiveness implication remains open |
 | T24 | exact T05/T07 dependency census and invariant premise bundle | invariant preservation remains open |
@@ -83,6 +83,7 @@ python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
 python scripts/check_prime_power_hard_core_collinear_backgrounds.py
 python scripts/check_prime_power_hard_core_pivot_line_energy.py
+python scripts/check_prime_power_hard_core_extremal_stability.py
 python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 python scripts/run_prime_power_current_frontier_regression.py
@@ -186,8 +187,36 @@ The upper equality is attained exactly by legal backgrounds on `K_-`, and the lo
 backgrounds on `K_+` (apart from the empty background, where both formulas give `-3`). Therefore strict `Q4` is
 realisable at cardinality `m` exactly when `m>=2`.
 
-These formulas evaluate any supplied background. They do not supply the genuine recurrence backgrounds or prove
-any destroyed-threshold, labelled-child, return, interface or recurrent semantic statement.
+## Sharp extremal stability
+
+Write
+
+\[
+U_m=(m-1)(m+3),\qquad L_m=-(m+1)(m+3).
+\]
+
+The upper and lower defects decompose into nonnegative energy and weight terms. If a nonempty background is not
+fully supported on `K_-`, then
+
+\[
+\boxed{\Delta(B)\le U_m-2m.}
+\]
+
+Equality holds exactly when one point lies off `K_-`, that point has weight `1`, and the background has zero
+negative-pivot energy.
+
+If a nonempty background is not fully supported on `K_+`, then
+
+\[
+\boxed{\Delta(B)\ge L_m+2m+3.}
+\]
+
+Equality holds exactly when one point lies off `K_+`, that point has weight `0`, and the background has zero
+positive-pivot energy.
+
+These formulas can turn a sufficiently near-extremal selector value into a geometric support conclusion. They do
+not supply the genuine recurrence backgrounds or prove any destroyed-threshold, labelled-child, return, interface
+or recurrent semantic statement.
 
 ## Corrected runtime audit
 
@@ -196,9 +225,9 @@ scrubbing, doubled runtime probes, source identities, AST honesty evidence and a
 manifest contains a literal `manifest_sha256` seal. The manifest records what runtime validation executed; it is
 not a proof certificate.
 
-GitHub Actions is configured to run all five hard-core finite theorems and upload one thirty-day runtime-manifest
+GitHub Actions is configured to run all six hard-core finite theorems and upload one thirty-day runtime-manifest
 artifact per Python version. The branch-wide runner retains the pure validator APIs required by the negative test
-suite and executes all five theorem checkers. A committed workflow or uploaded artifact is not evidence that the
+suite and executes all six theorem checkers. A committed workflow or uploaded artifact is not evidence that the
 conjecture is proved.
 
 ## Genuine current frontiers
@@ -210,7 +239,7 @@ T05 arbitrary-n geometry coverage
 T06--T18 semantic, score, rank, predicate and row theorems
 T19 genuine global-family exhaustiveness
 T20 all 232 zero-selector chamber theorems
-T21 genuine recurrence backgrounds and all 20 semantic arguments; scalar evaluation is now exact once a background is supplied
+T21 genuine recurrence backgrounds and all 20 semantic arguments; scalar evaluation and extremal stability are exact once a background is supplied
 T22--T31 all ten final premise implications
 T35--T40 all six ordinary handoff arguments
 T41 ordinary final review
@@ -229,15 +258,16 @@ complete.
 - Finite T05 arithmetic does not prove arbitrary-`n` coverage.
 - T06 scores and T07--T18 semantic statements remain external mathematics.
 - T19 exact coverage does not prove the global family exhaustive.
-- Scalar T21 halfspaces, witnesses, classifications, collinear formulas and pivot-line energy identities do not supply genuine recurrence signatures or semantics.
+- Scalar T21 halfspaces, witnesses, classifications, energy identities and stability gaps do not supply genuine recurrence signatures or semantics.
 - Exact T22--T43 support does not prove any premise, handoff, review, dossier or root theorem.
 - Canonical roots, syntax compilation, isolated imports, AST honesty checks, mutation rejection, manifests, CI
   and acyclic graphs are documentary or software metadata.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2771**, the repository has a synchronized finite documentary stack
+There is no complete proof. Through **CMR2781**, the repository has a synchronized finite documentary stack
 through all 43 targets, corrected runtime validation, one explicit hard-core exchange functional, exact two-point
-and collinear geometry, and an arbitrary-background pivot-line energy identity with sharp cardinality extremes.
+and collinear geometry, arbitrary-background pivot-line energy, sharp cardinality extremes and exact first
+stability gaps away from the two extremal support lines.
 
 The unresolved centre remains the genuine mathematics listed above.
