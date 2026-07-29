@@ -64,6 +64,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_hard_core_collinear_backgrounds.py
 
+      - name: Verify hard-core pivot-line energy
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_hard_core_pivot_line_energy.py
+
       - name: Prepare runtime artifact directory
         run: mkdir -p artifacts
 
