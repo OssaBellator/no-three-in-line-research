@@ -1,0 +1,73 @@
+{
+  "audited_sizes": [8, 9, 10],
+  "definition": "if at most q nonterminal shell norms exceed one and each is at most B, total norm is at most tau*B^q",
+  "ceilings": [
+    {
+      "B": "3/2",
+      "cases": [
+        {
+          "m": 8,
+          "nonterminal_boundaries": 2,
+          "exact_terminal_shell_factor": "1468416446839930521721999/3789940340738886748063650",
+          "maximum_guaranteed_expansive_boundaries": 2,
+          "accepted_product": "1468416446839930521721999/1684417929217282999139400",
+          "accepted_margin_below_one": "216001482377352477417401/1684417929217282999139400",
+          "first_rejected_product": null
+        },
+        {
+          "m": 9,
+          "nonterminal_boundaries": 3,
+          "exact_terminal_shell_factor": "406616023430754819367780545483294984597292560691/708943793924084504981546740829982708967717363200",
+          "maximum_guaranteed_expansive_boundaries": 1,
+          "accepted_product": "406616023430754819367780545483294984597292560691/472629195949389669987697827219988472645144908800",
+          "accepted_margin_below_one": "66013172518634850619917281736693488047852348109/472629195949389669987697827219988472645144908800",
+          "first_rejected_product": "406616023430754819367780545483294984597292560691/315086130632926446658465218146658981763429939200"
+        },
+        {
+          "m": 10,
+          "nonterminal_boundaries": 4,
+          "exact_terminal_shell_factor": "5252950050653541320261353842660696885393101/33843848222070502440710524758866309866934400",
+          "maximum_guaranteed_expansive_boundaries": 4,
+          "accepted_product": "47276550455881871882352184583946271968537909/60166841283680893227929821793540106430105600",
+          "accepted_margin_below_one": "12890290827799021345577637209593834461567691/60166841283680893227929821793540106430105600",
+          "first_rejected_product": null
+        }
+      ]
+    },
+    {
+      "B": "2",
+      "cases": [
+        {
+          "m": 8,
+          "nonterminal_boundaries": 2,
+          "exact_terminal_shell_factor": "1468416446839930521721999/3789940340738886748063650",
+          "maximum_guaranteed_expansive_boundaries": 1,
+          "accepted_product": "1468416446839930521721999/1894970170369443374031825",
+          "accepted_margin_below_one": "426553723529512852309826/1894970170369443374031825",
+          "first_rejected_product": "2936832893679861043443998/1894970170369443374031825"
+        },
+        {
+          "m": 9,
+          "nonterminal_boundaries": 3,
+          "exact_terminal_shell_factor": "406616023430754819367780545483294984597292560691/708943793924084504981546740829982708967717363200",
+          "maximum_guaranteed_expansive_boundaries": 0,
+          "accepted_product": "406616023430754819367780545483294984597292560691/708943793924084504981546740829982708967717363200",
+          "accepted_margin_below_one": "302327770493329685613766195346687724370424802509/708943793924084504981546740829982708967717363200",
+          "first_rejected_product": "406616023430754819367780545483294984597292560691/354471896962042252490773370414991354483858681600"
+        },
+        {
+          "m": 10,
+          "nonterminal_boundaries": 4,
+          "exact_terminal_shell_factor": "5252950050653541320261353842660696885393101/33843848222070502440710524758866309866934400",
+          "maximum_guaranteed_expansive_boundaries": 2,
+          "accepted_product": "5252950050653541320261353842660696885393101/8460962055517625610177631189716577466733600",
+          "accepted_margin_below_one": "3208012004864084289916277347055880581340499/8460962055517625610177631189716577466733600",
+          "first_rejected_product": "5252950050653541320261353842660696885393101/4230481027758812805088815594858288733366800"
+        }
+      ]
+    }
+  ],
+  "nonterminal_shell_factors_audited": false,
+  "asymptotic_bad_shell_count_bound_proved": false,
+  "all_exact_regressions_verified": true
+}
