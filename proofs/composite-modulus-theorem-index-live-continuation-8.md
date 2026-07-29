@@ -44,6 +44,7 @@ The authoritative live ledger is split across:
 | CMR2676--2691 | Negative validator tests, pure literal-table checks, endpoint/document/subprocess mutation rejection, exact all-open 43-target fixture, seven fixture mutations and continuous negative validation | PROVED as validator and fixture infrastructure; no mathematical target is closed | `docs/429-prime-power-negative-regression-open-fixture.md` |
 | CMR2692--2705 | Fresh-process imports, bounded probes, exact import markers and AST-backed executable all-n-zero semantics | PROVED as runtime/honesty infrastructure except the original `-I` environment-control claim, which is explicitly superseded by CMR2706--CMR2712 | `docs/430-prime-power-isolated-import-honesty-audit.md` |
 | CMR2706--2721 | Corrected `-B -S -s` launcher, disabled site initialization, scrubbed import paths, doubled runtime fingerprint, per-module source identity, endpoint evidence classes, sealed schema-v1 manifest, tamper tests and Python-version workflow artifacts | PROVED as reproducible runtime-manifest infrastructure; no mathematical target is closed | `docs/431-prime-power-reproducible-runtime-manifest.md` |
+| CMR2722--2733 | Exact eleven-host hard-core response normal form, one alternating four-cycle, explicit rank-one/rank-two/rank-three affine difference, weak/strict lexicographic halfspaces, integer pressure threshold, one nontrivial functional for twenty chambers, exhaustive signature tests and corruption rejection | PROVED as finite scalar T21 selector geometry; genuine survivor signatures, labelled semantics and all twenty chamber proofs remain open | `docs/432-prime-power-hard-core-exchange-normal-form.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -53,13 +54,16 @@ The branch still does not prove the all-`n` conjecture.
 scripts/check_prime_power_canonical_frontier_roots.py --self-test
 scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
+scripts/check_prime_power_hard_core_exchange_normal_form.py
 scripts/check_prime_power_reproducible_runtime_manifest.py --self-test --manifest artifacts/current-frontier-runtime.json
 scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The manifest records exactly which sources imported and which executable honesty forms were found. GitHub Actions is
-configured to upload separate Python 3.10 and 3.12 manifests. Every final checker permanently reports
+The hard-core checker proves that the nine two-response hosts share one scalar exchange functional; it does not
+supply their genuine survivor signatures or labelled chamber semantics. The runtime manifest records exactly
+which sources imported and which executable honesty forms were found. GitHub Actions is configured to run the
+finite theorem and upload separate Python 3.10 and 3.12 manifests. Every final checker permanently reports
 `all_n_proved_by_checker = 0`.
 
 ## Active frontier
@@ -68,10 +72,11 @@ configured to upload separate Python 3.10 and 3.12 manifests. Every final checke
 2. Enter real T03/T04 data and prove T05 arbitrary-`n` coverage.
 3. Prove every T06--T18 semantic and row theorem genuinely.
 4. Prove T19 global-family exhaustiveness for the actual recurrence.
-5. Supply and review all 252 T20/T21 chamber proofs.
-6. Supply and review all ten exact T22--T31 premise implications.
-7. Prove and review all six T35--T40 handoff arguments.
-8. Complete T41 review and T42 dossier sign-off.
-9. Prove the ordinary T43 implication to `D(n)=2n`.
+5. Supply and review all 232 T20 zero-selector chamber proofs.
+6. Populate genuine signatures and prove all 20 T21 hard-core semantic chamber arguments using the explicit exchange normal form.
+7. Supply and review all ten exact T22--T31 premise implications.
+8. Prove and review all six T35--T40 handoff arguments.
+9. Complete T41 review and T42 dossier sign-off.
+10. Prove the ordinary T43 implication to `D(n)=2n`.
 
-No documentary checker or runtime manifest substitutes for the missing mathematical proofs.
+No finite selector calculation, documentary checker or runtime manifest substitutes for the missing mathematical proofs.
