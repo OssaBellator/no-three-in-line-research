@@ -8,7 +8,7 @@ runtime validation performed over the current T01--T43 software stack.
 The command is:
 
 ```text
-python scripts/check_prime_power_import_smoke.py --self-test \
+python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
   --manifest artifacts/current-frontier-runtime.json
 ```
 
@@ -50,11 +50,12 @@ Other ordinary environment keys are retained.
 Children start with:
 
 ```text
-python -B -s -c ...
+python -B -S -s -c ...
 ```
 
-`-B` suppresses bytecode independently of the environment. `-s` disables the user-site directory while leaving
-the standard library available.
+`-B` suppresses bytecode independently of the environment. `-S` prevents automatic `site` initialization,
+including `.pth` execution and automatic site-package insertion. `-s` independently disables the user-site flag.
+The standard library remains available.
 
 ### CMR2709 — scrubbed runtime import path
 
@@ -78,6 +79,7 @@ Before importing repository modules, two fresh child interpreters report:
 hash fingerprint
 dont_write_bytecode flag
 no_user_site flag
+no_site flag
 isolated-mode flag
 ```
 
@@ -90,18 +92,20 @@ fingerprint. This tests the effective child-process seed rather than merely chec
 
 The fingerprint is runtime evidence, not a mathematical digest.
 
-### CMR2712 — bytecode, user-site and third-party path gates
+### CMR2712 — bytecode, site and third-party path gates
 
 Every import record must report:
 
 ```text
 dont_write_bytecode = 1
 no_user_site = 1
+no_site = 1
 third_party_path_entries = 0
 isolated = 0
 ```
 
-The final field confirms that the corrected launcher no longer relies on `-I`.
+`no_site = 1` proves that automatic site initialization is disabled. The final field confirms that the
+corrected launcher no longer relies on `-I`.
 
 ### CMR2713 — exact module source identity
 
