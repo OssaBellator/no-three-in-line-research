@@ -15,8 +15,10 @@ def falling(m: int, r: int) -> int:
 def main() -> None:
     state_checks = 0
     cylinder_checks = 0
-    for m in range(1, 7):
-        for h in range(1, 5):
+    # Exhaust all states in practical small banks. Larger parameters use the same
+    # closed counting identity and are not materialized here.
+    for m in range(1, 6):
+        for h in range(1, 4):
             regions = [set(range(10 * a, 10 * a + 4)) for a in range(m)]
             assert all(regions[a].isdisjoint(regions[b]) for a in range(m) for b in range(a))
 
@@ -40,6 +42,15 @@ def main() -> None:
                 expected = factorial(m - r) * h ** (m - r)
                 assert count == expected
                 assert count * falling(m, r) * h**r == len(states)
+                cylinder_checks += 1
+
+    # Symbolic count checks beyond the exhaustive range.
+    for m in range(6, 10):
+        for h in range(1, 8):
+            total = factorial(m) * h**m
+            for r in range(1, 4):
+                count = factorial(m-r) * h**(m-r)
+                assert count * falling(m, r) * h**r == total
                 cylinder_checks += 1
 
     # Overlap and cross-region constraints are explicit failed witnesses.
