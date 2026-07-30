@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2827**. Every final checker,
+The authoritative theorem ledger reaches **CMR2839**. Every final checker,
 finite theorem checker, population bridge, fixture, runtime manifest and
 branch-wide regression permanently reports or preserves:
 
@@ -25,7 +25,7 @@ all_n_proved_by_checker = 0
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
 | T01 | literal source statements, hashes and sealed source artifacts | genuine source statements remain unproved/unpopulated |
-| T02 | documentary clause banks plus deterministic clean/dirty anchor dispatch relative to a supplied family and exact triple universe | global family generation, geometric exactness and recurrence exhaustiveness remain open |
+| T02 | canonical masked-host family, realizable triple universe, anchor, target and complete local response | global generation of the actual host/mask/context sequence and recurrence exhaustiveness remain open |
 | T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete population, including survivor backgrounds, remains absent |
 | T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
 | T05 | exact finite geometry and selector arithmetic | arbitrary-`n` coverage remains open |
@@ -77,6 +77,7 @@ python scripts/test_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_canonical_prescription_partition.py
 python scripts/check_prime_power_target_trigger_response_partition.py
 python scripts/check_prime_power_canonical_target_dispatch.py
+python scripts/check_prime_power_masked_host_parent_generation.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -93,47 +94,59 @@ python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certifica
 Every runtime artifact contains a literal `manifest_sha256` seal. A manifest
 records validation execution and is not a proof certificate.
 
-## Canonical local T02 dispatch
+## Canonical masked-host T02 dispatch
 
-Let \(S\) be a supplied anchor, \(\mathcal F\) a supplied equal-cardinality
-feasible family and \(\mathcal U\) a supplied exact triple universe. Define
+For side \(n\), the labelled host is
 
 \[
-\mathcal T_{\mathcal U}(S)=\{T\in\mathcal U:T\subseteq S\}.
+H_n=\{0,1\}\times[n]\times[n].
 \]
 
-The local rule is now deterministic without a supplied target bank:
+A state is an ordered pair of permutation matchings whose physical cells are
+disjoint. For a canonical deleted-edge mask \(D\), the checker generates
+
+\[
+\mathcal F(n,D)
+=
+\{S:\ S\text{ is saturated, layer-disjoint and }S\cap D=\varnothing\}.
+\]
+
+It then generates the exact realizable collinear-triple universe
+
+\[
+\mathcal U(n,D)
+=
+\bigcup_{S\in\mathcal F(n,D)}
+\{T\subseteq S:|T|=3,\ T\text{ collinear}\}.
+\]
+
+For every undeleted edge \(f\),
+
+\[
+\mathcal F(n,D\cup\{f\})
+=
+\{S\in\mathcal F(n,D):f\notin S\},
+\]
+
+and
+
+\[
+\mathcal U(n,D\cup\{f\})\subseteq\mathcal U(n,D).
+\]
+
+The local dispatch is now canonical from \((n,D)\):
 
 ```text
-T_U(S) empty
+F(n,D) empty
+  -> infeasible-mask terminal
+
+F(n,D) nonempty and least anchor is triple-free
   -> clean-anchor terminal
 
-T_U(S) nonempty
-  -> choose its canonical least triple T_*
-  -> use the singleton target bank {T_*}
-```
-
-Every alternative under a dirty anchor is exactly one of:
-
-```text
-canonical target preserved
-  -> exact three-cell target contraction
-
-canonical target destroyed with lower triple potential
-  -> strict improvement
-
-canonical target destroyed without lower triple potential
-  -> canonical least new triple
-  -> duplicate-free four-way first-missing partition
-```
-
-For a new triple \((f_0,f_1,f_2)\), the exact children are:
-
-```text
-0: omit f0
-1: contain f0 and omit f1
-2: contain f0,f1 and omit f2
-3: contain f0,f1,f2 and contract the forced triple
+F(n,D) nonempty and least anchor is dirty
+  -> least anchor triple
+  -> target contraction, strict improvement,
+     or least-new-triple first-missing partition
 ```
 
 The T02 theorem contracts record:
@@ -143,6 +156,11 @@ conditional_parent_rule_clause_ready = 1
 local_target_response_rule_ready = 1
 canonical_target_bank_external_choice_required = 0
 local_anchor_dispatch_complete = 1
+masked_host_family_generated = 1
+triple_universe_generated_from_family = 1
+single_edge_mask_extension_exact = 1
+child_triple_universe_monotone = 1
+local_masked_parent_dispatch_complete = 1
 actual_global_parent_rule_complete = 0
 ```
 
@@ -152,11 +170,13 @@ Their contract digests are:
 dca487a954f03f5aaebf09394ab427ef5b338f0e107adf6581146d84863ce39c
 c7239521fb73e0347783e76ebfde83d96e968712376745542b5a93888312c0ef
 634318242ece5cab549b9394ba33e116d7c1b01b4c74d5a02e276004fe1e8444
+0cdc1914c11c79e1c9f3274f025263597c8eec5a7ed9c7e60d8cc24d66f817e7
 ```
 
-The local rule is complete only after the family, anchor and exact triple
-universe are supplied. It does not prove global generation or geometric
-completeness of those objects.
+The local rule still does not prove that the actual prime-power construction
+generates every required host, deletion mask, factor, owner, routing or
+closure-envelope context, nor that every contraction and relabelling is
+captured by this masked-host model.
 
 ## T21 scalar and population boundary
 
@@ -190,7 +210,7 @@ t21_semantic_chambers_proved = 0
 GitHub Actions is configured for Python 3.10 and 3.12 to run:
 
 - the negative validator suite;
-- nine finite theorem checkers;
+- ten finite theorem checkers;
 - the T03/T21 population-bridge self-test;
 - the strict runtime-manifest audit; and
 - the complete current-frontier regression.
@@ -203,9 +223,9 @@ Configuration is not evidence that a workflow passed.
 
 ```text
 T01 prove and populate genuine source statements
-T02 prove global family/anchor/triple-universe generation and complete recurrence exhaustiveness
+T02 prove global host/mask/context generation and complete recurrence exhaustiveness
 T03--T04 populate every real slot, block and interface
-T05 prove arbitrary-n geometry coverage and triple-universe exactness
+T05 prove arbitrary-n geometry coverage
 T06--T18 prove semantic, score, resource, rank, predicate and row theorems
 T19 prove genuine global-family exhaustiveness
 T20 prove all 232 zero-selector chambers
@@ -222,9 +242,9 @@ their lower proof banks are genuinely complete.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2827**, the branch contains a
-deterministic clean/dirty local anchor dispatch relative to supplied data, six
+There is no complete proof. Through **CMR2839**, the branch contains a complete
+local masked-host dispatcher relative to a side length and deletion mask, six
 exact hard-core scalar theorems, a T03/T21 population bridge, and synchronized
-documentary interfaces through all 43 targets. Global parent generation, exact
-geometric population, recurrence exhaustiveness and all global semantic
-implications remain open.
+documentary interfaces through all 43 targets. Global generation of the actual
+prime-power context/mask sequence, real population, recurrence exhaustiveness
+and all global semantic implications remain open.
