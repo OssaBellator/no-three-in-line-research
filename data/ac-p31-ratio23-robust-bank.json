@@ -55,7 +55,18 @@
     "heavy_rank": 1,
     "heavy_anchor_address": [2, 3],
     "heavy_anchor_cell": [5, 19],
-    "heavy_anchor_degree": 14
+    "heavy_anchor_degree": 14,
+    "heavy_line_classes": [
+      {"direction": [1, -1], "fixed_points": [[1, 23], [3, 21], [21, 3], [23, 1]], "certificate_pairs": 6},
+      {"direction": [1, 1], "fixed_points": [[2, 16], [7, 21], [10, 24], [15, 29]], "certificate_pairs": 6},
+      {"direction": [1, -10], "fixed_points": [[4, 29], [6, 9]], "certificate_pairs": 1},
+      {"direction": [1, -5], "fixed_points": [[7, 9], [8, 4]], "certificate_pairs": 1}
+    ],
+    "fixed_line_filters": [
+      {"minimum_fixed_points": 3, "bad_positions": 13, "remaining_states": 42, "minimum_potential": 87, "potential_sum": 4199},
+      {"minimum_fixed_points": 4, "bad_positions": 8, "remaining_states": 167, "minimum_potential": 87, "potential_sum": 17480},
+      {"minimum_fixed_points": 5, "bad_positions": 1, "remaining_states": 1044, "minimum_potential": 87, "potential_sum": 119358}
+    ]
   },
   "conjugacy": {
     "map": "(x,y)->(31-x,31-y)",
