@@ -54,6 +54,7 @@ The authoritative live ledger is split across:
 | CMR2794--2805 | First-missing prescription index, canonical disjoint branch partition, exact counting, empty-child pruning, rejected-state localisation, exact conditioned contraction, four-way labelled-triple rule, canonical operation keys, CMR866 trigger linkage, duplicate-free completeness, exhaustive family census and honesty boundary | PROVED as one genuine conditional T02 parent-rule clause; global trigger exhaustiveness, the complete parent rule and all downstream populations remain open | `docs/439-prime-power-canonical-prescription-parent-rule.md` |
 | CMR2806--2817 | Target-core identity, exact preserving-family contraction, exhaustive three-way candidate trigger partition, strict-improvement action, CMR698 new-triple surplus, canonical witness selection, duplicate-free four-way response, complete local target response, exhaustive hypergraph/subfamily censuses and corruption rejection | PROVED as a complete local T02 response relative to a supplied feasible family and target bank; global parent generation, target-bank availability and recurrence exhaustiveness remain open | `docs/440-prime-power-target-trigger-response-partition.md` |
 | CMR2818--2827 | Exact anchor triple set, clean-anchor terminal, canonical least dirty-anchor target, exact singleton-target contraction, deterministic clean/dirty dispatch, exhaustive candidate actions, duplicate-free nonimproving response, exhaustive hypergraph/subfamily censuses and corruption rejection | PROVED as a complete local T02 anchor dispatch relative to a supplied family and exact triple universe; global family generation, triple-universe exactness and recurrence exhaustiveness remain open | `docs/441-prime-power-canonical-anchor-target-dispatch.md` |
+| CMR2828--2839 | Labelled two-layer host, permutation-state bijection, exact masked feasible family, infeasible terminal, realizable collinear-triple universe, exact single-edge mask extension, child-universe monotonicity, canonical anchor, empty/clean/dirty dispatch, local masked-parent rule, exhaustive mask censuses and honesty boundary | PROVED as a complete local T02 dispatcher relative to a side length and deletion mask; global context/mask generation, recurrence exhaustiveness and termination remain open | `docs/442-prime-power-canonical-masked-host-parent-generation.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -66,6 +67,7 @@ scripts/test_prime_power_current_frontier_regression.py
 scripts/check_prime_power_canonical_prescription_partition.py
 scripts/check_prime_power_target_trigger_response_partition.py
 scripts/check_prime_power_canonical_target_dispatch.py
+scripts/check_prime_power_masked_host_parent_generation.py
 scripts/check_prime_power_hard_core_exchange_normal_form.py
 scripts/check_prime_power_hard_core_exchange_realisability.py
 scripts/check_prime_power_hard_core_two_point_classification.py
@@ -78,18 +80,28 @@ scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The nine finite theorem checkers now include a duplicate-free prescription clause, a complete local target-response rule, a canonical clean/dirty anchor dispatcher and six hard-core scalar theorems. The population bridge validates the exact T03/T21 interface but supplies no complete global parent rule, slot population or chamber semantics. GitHub Actions is configured to run all nine finite theorems, the bridge self-test and separate Python 3.10/3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The ten finite theorem checkers now include a duplicate-free prescription
+clause, a complete local target-response rule, a canonical clean/dirty anchor
+dispatcher, a canonical masked-host family generator and six hard-core scalar
+theorems. The population bridge validates the exact T03/T21 interface but
+supplies no complete global parent rule, slot population or chamber semantics.
+GitHub Actions is configured to run all ten finite theorems, the bridge
+self-test and separate Python 3.10/3.12 runtime manifests. Every final checker
+permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
-1. Prove global generation of every feasible parent family, intended anchor and exact triple universe.
-2. Classify all global parent/closure situations and prove the complete recurrence exhaustive.
-3. Populate and prove every genuine T01 source statement and all resulting T02 recurrence records.
-4. Enter real T03/T04 data, including every genuine hard-core survivor background, and prove T05 arbitrary-`n` coverage.
-5. Prove every T06--T18 semantic and row theorem genuinely.
-6. Prove T19 global-family exhaustiveness for the actual recurrence.
-7. Supply and review all 232 T20 zero-selector chamber proofs and all 20 T21 semantic arguments.
-8. Supply and review all ten exact T22--T31 premise implications and all six T35--T40 handoff arguments.
-9. Complete T41 review and T42 dossier sign-off, then prove the ordinary T43 implication to `D(n)=2n`.
+1. Trace every genuine parent/closure context to one labelled host and deletion
+   mask, or isolate the exact additional restriction.
+2. Prove every contraction, relabelling, owner and routing transition preserves
+   the masked-host semantics.
+3. Prove the global context/mask trigger bank exhaustive and terminating.
+4. Populate and prove every genuine T01 source statement and resulting T02
+   recurrence record.
+5. Enter real T03/T04 data and prove T05 arbitrary-`n` coverage.
+6. Prove every T06--T19 semantic, row and global-family theorem.
+7. Supply and review all 232 T20 chamber proofs and all 20 T21 arguments.
+8. Supply and review all T22--T31 premises and T35--T40 handoffs.
+9. Complete T41 review, T42 dossier sign-off and the T43 implication.
 
 No finite selector calculation, documentary checker or runtime manifest substitutes for the missing mathematical proofs.
