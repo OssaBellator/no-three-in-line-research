@@ -1,0 +1,29 @@
+{
+  "schema": "ac-p19-path-compression-v1",
+  "raw_switch_moves": 389,
+  "raw_state_occurrences": 390,
+  "distinct_exact_states": 389,
+  "dihedral_layer_orbits": 389,
+  "only_repeated_state": {"first_index": 257, "second_index": 259},
+  "induced_shortest_switch_moves": 357,
+  "saved_switch_moves": 32,
+  "shortcut_edges": [
+    {"from_index":69,"to_index":72,"move":"b:10,12"},
+    {"from_index":114,"to_index":117,"move":"r:8,10"},
+    {"from_index":186,"to_index":189,"move":"b:6,15"},
+    {"from_index":232,"to_index":235,"move":"r:7,9"},
+    {"from_index":235,"to_index":238,"move":"b:13,15"},
+    {"from_index":242,"to_index":245,"move":"b:4,11"},
+    {"from_index":257,"to_index":260,"move":"r:13,15"},
+    {"from_index":268,"to_index":271,"move":"r:5,15"},
+    {"from_index":285,"to_index":288,"move":"r:3,16"},
+    {"from_index":291,"to_index":294,"move":"r:15,16"},
+    {"from_index":294,"to_index":297,"move":"r:8,15"},
+    {"from_index":302,"to_index":305,"move":"b:3,6"},
+    {"from_index":314,"to_index":319,"move":"b:3,15"},
+    {"from_index":320,"to_index":323,"move":"b:5,13"},
+    {"from_index":325,"to_index":328,"move":"r:6,11"}
+  ],
+  "compressed_maximum_potential": 41,
+  "compressed_final_potential": 0
+}
