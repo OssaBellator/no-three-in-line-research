@@ -1,0 +1,55 @@
+{
+  "schema": "ac-p31-ratio23-heavy-anchor-v1",
+  "p": 31,
+  "heavy_anchor": [5, 19],
+  "occurrences": 14,
+  "direction_counts": {"1,-1": 6, "1,1": 6, "1,-10": 1, "1,-5": 1},
+  "channel_pair_counts": {"1,1": 3, "1,23": 8, "23,23": 3},
+  "product_signature_count": 11,
+  "maximum_signature_multiplicity": 4,
+  "signature_multiplicities": {
+    "((1, 23), (1, 4))": 1,
+    "((1, 23), (1, 7))": 1,
+    "((1, 23), (14, 4))": 1,
+    "((1, 23), (14, 7))": 1,
+    "((1, 23), (2, 0))": 4,
+    "(1, (1, 14))": 1,
+    "(1, (1, 2))": 1,
+    "(1, (2, 2))": 1,
+    "(23, (0, 0))": 1,
+    "(23, (1, 3))": 1,
+    "(23, (4, 7))": 1
+  },
+  "occurrence_records": [
+    {"points": [[1,23],[3,21]], "channels": [23,1], "product_carries": [0,2], "primitive_direction": [1,-1]},
+    {"points": [[1,23],[21,3]], "channels": [23,1], "product_carries": [0,2], "primitive_direction": [1,-1]},
+    {"points": [[1,23],[23,1]], "channels": [23,23], "product_carries": [0,0], "primitive_direction": [1,-1]},
+    {"points": [[2,16],[7,21]], "channels": [1,23], "product_carries": [1,4], "primitive_direction": [1,1]},
+    {"points": [[2,16],[10,24]], "channels": [1,23], "product_carries": [1,7], "primitive_direction": [1,1]},
+    {"points": [[2,16],[15,29]], "channels": [1,1], "product_carries": [1,14], "primitive_direction": [1,1]},
+    {"points": [[3,21],[21,3]], "channels": [1,1], "product_carries": [2,2], "primitive_direction": [1,-1]},
+    {"points": [[3,21],[23,1]], "channels": [1,23], "product_carries": [2,0], "primitive_direction": [1,-1]},
+    {"points": [[4,29],[6,9]], "channels": [23,23], "product_carries": [3,1], "primitive_direction": [1,-10]},
+    {"points": [[7,9],[8,4]], "channels": [1,1], "product_carries": [2,1], "primitive_direction": [1,-5]},
+    {"points": [[7,21],[10,24]], "channels": [23,23], "product_carries": [4,7], "primitive_direction": [1,1]},
+    {"points": [[7,21],[15,29]], "channels": [23,1], "product_carries": [4,14], "primitive_direction": [1,1]},
+    {"points": [[10,24],[15,29]], "channels": [23,1], "product_carries": [7,14], "primitive_direction": [1,1]},
+    {"points": [[21,3],[23,1]], "channels": [1,23], "product_carries": [2,0], "primitive_direction": [1,-1]}
+  ],
+  "endpoint_graph_components": [4,4,2,2],
+  "maximum_endpoint_disjoint_size": 6,
+  "lexicographically_least_maximum_matching": [
+    [[1,23],[3,21]], [[2,16],[7,21]], [[4,29],[6,9]],
+    [[7,9],[8,4]], [[10,24],[15,29]], [[21,3],[23,1]]
+  ],
+  "maximum_distinct_signature_matching": {
+    "signature_count": 6,
+    "edges": [
+      [[1,23],[23,1]], [[2,16],[7,21]], [[3,21],[21,3]],
+      [[4,29],[6,9]], [[7,9],[8,4]], [[10,24],[15,29]]
+    ]
+  },
+  "primitive_direction_denominators": [1],
+  "owner_route": "PROSPECTIVE",
+  "automatic_current_payment": 0
+}
