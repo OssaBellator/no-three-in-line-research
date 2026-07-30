@@ -144,10 +144,7 @@ def ac1_audit(anchor, switch, removed, inserted, selected, expected):
         ("anchor", divmod(position_id, 7), point)
         for position_id, point in enumerate(points)
         if point is not None
-    ] + [
-        ("fixed", None, point)
-        for point in fixed
-    ]
+    ] + [("fixed", None, point) for point in fixed]
 
     counts = Counter({1: 0, 2: 0, 3: 0})
     degrees = {1: Counter(), 2: Counter(), 3: Counter()}
@@ -172,13 +169,7 @@ def ac1_audit(anchor, switch, removed, inserted, selected, expected):
     d_star = base.direct_potential(current) - base_potential
     f_star = fixed_potential - base_potential
     gap = d_star - f_star
-    assert (
-        base_potential,
-        fixed_potential,
-        d_star,
-        f_star,
-        gap,
-    ) == (
+    assert (base_potential, fixed_potential, d_star, f_star, gap) == (
         expected["base_potential"],
         expected["fixed_potential"],
         expected["D_star"],
@@ -193,11 +184,7 @@ def ac1_audit(anchor, switch, removed, inserted, selected, expected):
         }
     )
 
-    normalized = {
-        1: counts[1] / 7,
-        2: counts[2] / 42,
-        3: counts[3] / 210,
-    }
+    normalized = {1: counts[1] / 7, 2: counts[2] / 42, 3: counts[3] / 210}
     heavy_rank = max(normalized, key=normalized.get)
     assert heavy_rank == expected["heavy_rank"] == 1
     heavy_address, heavy_degree = degrees[heavy_rank].most_common(1)[0]
@@ -206,6 +193,88 @@ def ac1_audit(anchor, switch, removed, inserted, selected, expected):
     assert list(heavy_point) == expected["heavy_anchor_cell"]
     assert heavy_degree == expected["heavy_anchor_degree"]
     assert normalized[heavy_rank] >= gap / 384
+
+
+def heavy_line_filter_audit(anchor, switch, removed, inserted, selected, expected):
+    (
+        columns,
+        rows,
+        forbidden,
+        points,
+        fixed,
+        fixed_potential,
+        unary,
+        pair_cost,
+        triple_cost,
+    ) = orientation_tables(anchor, switch, removed, inserted, selected)
+
+    heavy_address = tuple(expected["heavy_anchor_address"])
+    heavy_point = points[heavy_address[0] * 7 + heavy_address[1]]
+    direction_classes = {}
+    for fixed_point in fixed:
+        direction = base.primitive(
+            fixed_point[0] - heavy_point[0], fixed_point[1] - heavy_point[1]
+        )
+        direction_classes.setdefault(direction, []).append(fixed_point)
+
+    actual_classes = []
+    for direction, fixed_points in sorted(direction_classes.items()):
+        if len(fixed_points) < 2:
+            continue
+        actual_classes.append(
+            {
+                "direction": list(direction),
+                "fixed_points": sorted(map(list, fixed_points)),
+                "certificate_pairs": len(fixed_points) * (len(fixed_points) - 1) // 2,
+            }
+        )
+    expected_classes = sorted(
+        expected["heavy_line_classes"], key=lambda record: tuple(record["direction"])
+    )
+    assert actual_classes == expected_classes
+    assert sum(record["certificate_pairs"] for record in actual_classes) == expected[
+        "heavy_anchor_degree"
+    ]
+
+    allowed = [
+        permutation
+        for permutation in ALL_PERMUTATIONS
+        if all((index, permutation[index]) not in forbidden for index in range(7))
+    ]
+    actual_filters = []
+    for threshold in (3, 4, 5):
+        bad_positions = set()
+        for position_id, point in enumerate(points):
+            if point is None:
+                continue
+            line_loads = Counter(
+                base.primitive(fixed_point[0] - point[0], fixed_point[1] - point[1])
+                for fixed_point in fixed
+            )
+            if any(load >= threshold for load in line_loads.values()):
+                bad_positions.add(divmod(position_id, 7))
+
+        values = []
+        for permutation in allowed:
+            if any(
+                (index, permutation[index]) in bad_positions for index in range(7)
+            ):
+                continue
+            values.append(
+                bank_value(
+                    permutation, fixed_potential, unary, pair_cost, triple_cost
+                )
+            )
+        actual_filters.append(
+            {
+                "minimum_fixed_points": threshold,
+                "bad_positions": len(bad_positions),
+                "remaining_states": len(values),
+                "minimum_potential": min(values),
+                "potential_sum": sum(values),
+            }
+        )
+    assert actual_filters == expected["fixed_line_filters"]
 
 
 def main():
@@ -243,9 +312,7 @@ def main():
         group_minimum_states = 0
 
         for orientation_bits in product((0, 1), repeat=7):
-            selected = [
-                pair[bit] for pair, bit in zip(selected_pairs, orientation_bits)
-            ]
+            selected = [pair[bit] for pair, bit in zip(selected_pairs, orientation_bits)]
             if len({x for x, _ in selected}) < 7:
                 continue
             if len({y for _, y in selected}) < 7:
@@ -278,11 +345,7 @@ def main():
 
             for permutation in allowed:
                 value = bank_value(
-                    permutation,
-                    fixed_potential,
-                    unary,
-                    pair_cost,
-                    triple_cost,
+                    permutation, fixed_potential, unary, pair_cost, triple_cost
                 )
                 group_states += 1
                 total_states += 1
@@ -296,12 +359,7 @@ def main():
                 elif value == group_minimum:
                     group_minimum_states += 1
 
-                candidate = (
-                    value,
-                    omitted_pair_index,
-                    orientation_bits,
-                    permutation,
-                )
+                candidate = (value, omitted_pair_index, orientation_bits, permutation)
                 if global_best is None or candidate < global_best:
                     global_best = candidate
 
@@ -326,15 +384,10 @@ def main():
     selected_pairs = [
         pair for index, pair in enumerate(pairs) if index != omitted_pair_index
     ]
-    selected = [
-        pair[bit] for pair, bit in zip(selected_pairs, orientation_bits)
-    ]
+    selected = [pair[bit] for pair, bit in zip(selected_pairs, orientation_bits)]
     columns = [point[0] for point in selected]
     rows = [point[1] for point in selected]
-    replacement = {
-        (columns[index], rows[permutation[index]])
-        for index in range(7)
-    }
+    replacement = {(columns[index], rows[permutation[index]]) for index in range(7)}
     fixed = ((anchor | switch) - set(selected) - removed) | inserted
     assert len(fixed | replacement) == 60
     assert base.direct_potential(fixed | replacement) == value == 87
@@ -346,13 +399,9 @@ def main():
     assert [list(point) for point in selected] == best_record["selected_endpoints"]
     assert sorted(map(list, replacement)) == sorted(best_record["replacement_cells"])
 
-    ac1_audit(
-        anchor,
-        switch,
-        removed,
-        inserted,
-        selected,
-        record["best_record_ac1"],
+    ac1_audit(anchor, switch, removed, inserted, selected, record["best_record_ac1"])
+    heavy_line_filter_audit(
+        anchor, switch, removed, inserted, selected, record["best_record_ac1"]
     )
 
     rotate = lambda point: (P - point[0], P - point[1])
@@ -364,8 +413,7 @@ def main():
     assert {rotate(point) for point in inserted} == inserted
     pairs_two = base.secant_pairs(tuple(sorted(anchor)), candidate_two)
     assert {
-        tuple(sorted((rotate(first), rotate(second))))
-        for first, second in pairs
+        tuple(sorted((rotate(first), rotate(second)))) for first, second in pairs
     } == set(pairs_two)
 
     print("AC p=31 ratio-23 robust-bank audit")
@@ -377,6 +425,9 @@ def main():
     print("improving_states: 0")
     print("best_record_ac1_counts: 208, 122, 13")
     print("best_record_heavy_anchor: (5, 19), degree 14")
+    print("heavy_line_certificate_split: 6, 6, 1, 1")
+    print("high_line_filter_remaining_states: 42, 167, 1044")
+    print("high_line_filter_minima: 87, 87, 87")
     print("candidate_180_degree_conjugacy: verified")
 
 
