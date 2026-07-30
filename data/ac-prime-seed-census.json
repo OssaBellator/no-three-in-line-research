@@ -1,0 +1,40 @@
+{
+  "schema": "ac-prime-seed-census-v1",
+  "seed_counts": [
+    {"p":11,"max_secant_pairs":4,"seeds_at_least_7":0},
+    {"p":13,"max_secant_pairs":4,"seeds_at_least_7":0},
+    {"p":17,"max_secant_pairs":5,"seeds_at_least_7":0},
+    {"p":19,"max_secant_pairs":7,"seeds_at_least_7":56,"high_pair_histogram":{"7":56}},
+    {"p":23,"max_secant_pairs":7,"seeds_at_least_7":144,"high_pair_histogram":{"6":240,"7":144}},
+    {"p":29,"max_secant_pairs":8,"seeds_at_least_7":600,"high_pair_histogram":{"6":1304,"7":504,"8":96}},
+    {"p":31,"max_secant_pairs":8,"seeds_at_least_7":216,"high_pair_histogram":{"6":2696,"7":112,"8":104}},
+    {"p":37,"max_secant_pairs":10,"seeds_at_least_7":2512,"high_pair_histogram":{"6":8032,"7":1992,"8":392,"10":128}}
+  ],
+  "canonical_full_state_banks": [
+    {"p":19,"anchor_channel":7,"switch_channel":1,"switch_rows":[3,13],"candidate":[13,13],"bank_size":1101,"current_potential":66,"fixed_potential":39,"best_potential":50,"improving_states":408,"potential_sum":76241},
+    {"p":23,"anchor_channel":7,"switch_channel":1,"switch_rows":[7,13],"candidate":[7,16],"bank_size":1300,"current_potential":80,"fixed_potential":37,"best_potential":54,"improving_states":1172,"potential_sum":91226},
+    {"p":29,"anchor_channel":4,"switch_channel":1,"switch_rows":[4,22],"candidate":[22,22],"bank_size":1289,"current_potential":120,"fixed_potential":91,"best_potential":113,"improving_states":26,"potential_sum":181551},
+    {"p":31,"anchor_channel":1,"switch_channel":2,"switch_rows":[4,16],"candidate":[16,16],"bank_size":1088,"current_potential":106,"base_potential":73,"fixed_potential":88,"best_potential":108,"improving_states":0,"potential_sum":135141}
+  ],
+  "p31_ac1_record": {
+    "selected_pairs": [
+      [[1,1],[30,30]],
+      [[4,8],[19,18]],
+      [[6,26],[26,6]],
+      [[8,4],[18,19]],
+      [[10,28],[14,20]],
+      [[12,13],[24,22]],
+      [[13,12],[22,24]]
+    ],
+    "selected_endpoints": [[1,1],[4,8],[6,26],[8,4],[10,28],[12,13],[13,12]],
+    "forbidden_positions": [[0,0],[1,1],[1,3],[2,2],[3,1],[3,3],[4,4],[5,2],[5,5],[6,6]],
+    "certificate_counts": {"rank_1":179,"rank_2":112,"rank_3":20},
+    "D_star":33,
+    "F_star":15,
+    "gap":18,
+    "heavy_rank":1,
+    "heavy_anchor_address":[5,6],
+    "heavy_anchor_cell":[12,12],
+    "heavy_anchor_degree":20
+  }
+}
