@@ -20,7 +20,7 @@ from typing import Any
 
 
 class CurrentFrontierRegressionError(RuntimeError):
-    """Raised when the current-frontier source or structural regression suite fails."""
+    pass
 
 
 def require(condition: bool, message: str) -> None:
@@ -51,6 +51,7 @@ SELF_TESTS = (
 )
 FINITE_THEOREM_CHECKS = (
     "check_prime_power_canonical_prescription_partition.py",
+    "check_prime_power_target_trigger_response_partition.py",
     "check_prime_power_hard_core_exchange_normal_form.py",
     "check_prime_power_hard_core_exchange_realisability.py",
     "check_prime_power_hard_core_two_point_classification.py",
@@ -64,27 +65,22 @@ FRONTIER_BRIDGE_CHECKS = (
 DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "README.md": ("does **not** contain a complete proof", "Python 3.10+"),
     "STATUS.md": (
-        "CMR2805",
-        "remains open",
+        "CMR2817", "remains open",
         "check_prime_power_final_support_handoff_frontiers_v2.py",
         "check_prime_power_all_open_target_fixture.py",
         *FINITE_THEOREM_CHECKS,
         "check_prime_power_hard_core_population_bridge.py",
-        "manifest_sha256",
-        "all_n_proved_by_checker = 0",
+        "manifest_sha256", "all_n_proved_by_checker = 0",
     ),
     "proofs/composite-modulus-theorem-index-live-continuation-8.md": (
-        "CMR2794--2805",
+        "CMR2806--2817",
         "No finite selector calculation, documentary checker or runtime manifest substitutes",
     ),
     "docs/11-open-bottlenecks.md": (
-        "CMR2805",
-        "run_prime_power_current_frontier_regression.py",
-        "check_prime_power_all_open_target_fixture.py",
-        *FINITE_THEOREM_CHECKS,
+        "CMR2817", "run_prime_power_current_frontier_regression.py",
+        "check_prime_power_all_open_target_fixture.py", *FINITE_THEOREM_CHECKS,
         "check_prime_power_hard_core_population_bridge.py",
-        "current-frontier-runtime.json",
-        "all_n_proved_by_checker = 0",
+        "current-frontier-runtime.json", "all_n_proved_by_checker = 0",
     ),
     "docs/427-prime-power-canonical-frontier-roots.md": ("CMR2663", "all_n_proved_by_checker = 0"),
     "docs/428-prime-power-current-frontier-regression.md": ("CMR2664--CMR2675", "all_n_proved_by_checker = 0"),
@@ -92,36 +88,29 @@ DOCUMENT_EXPECTATIONS: dict[str, tuple[str, ...]] = {
     "docs/430-prime-power-isolated-import-honesty-audit.md": ("CMR2692--CMR2705", "Correction:", "all_n_proved_by_checker = 0"),
     "docs/431-prime-power-reproducible-runtime-manifest.md": ("CMR2706--CMR2721", "manifest_sha256", "all_n_proved_by_checker = 0"),
     "docs/432-prime-power-hard-core-exchange-normal-form.md": (
-        "CMR2722--CMR2733", "ae35c2afa6574f602ccc2bb10124c0a5743ae4d712ebd967f93e56680928b1bf", "all_n_proved_by_checker = 0",
-    ),
+        "CMR2722--CMR2733", "ae35c2afa6574f602ccc2bb10124c0a5743ae4d712ebd967f93e56680928b1bf", "all_n_proved_by_checker = 0"),
     "docs/433-prime-power-hard-core-exchange-realisability.md": (
-        "CMR2734--CMR2741", "2b4d743fc4e98d39d63c2c7415ec33639692f8bd7b484dcb630ddb2aefd8896c", "all_n_proved_by_checker = 0",
-    ),
+        "CMR2734--CMR2741", "2b4d743fc4e98d39d63c2c7415ec33639692f8bd7b484dcb630ddb2aefd8896c", "all_n_proved_by_checker = 0"),
     "docs/434-prime-power-hard-core-two-point-classification.md": (
-        "CMR2742--CMR2751", "4ee3f69f653544853c04f0bf4822e839d537a52a41fe4612410604d7bc630f47", "all_n_proved_by_checker = 0",
-    ),
+        "CMR2742--CMR2751", "4ee3f69f653544853c04f0bf4822e839d537a52a41fe4612410604d7bc630f47", "all_n_proved_by_checker = 0"),
     "docs/435-prime-power-hard-core-collinear-backgrounds.md": (
-        "CMR2752--CMR2761", "3e818c8ece650173676e3afaa94b0adfb65fd0185146dc4b49485131a020c99a", "all_n_proved_by_checker = 0",
-    ),
+        "CMR2752--CMR2761", "3e818c8ece650173676e3afaa94b0adfb65fd0185146dc4b49485131a020c99a", "all_n_proved_by_checker = 0"),
     "docs/436-prime-power-hard-core-pivot-line-energy.md": (
-        "CMR2762--CMR2771", "a88ddee378c70d2713734a836aa3c18683d6db193ebbb89d52921efa55efa4f3", "all_n_proved_by_checker = 0",
-    ),
+        "CMR2762--CMR2771", "a88ddee378c70d2713734a836aa3c18683d6db193ebbb89d52921efa55efa4f3", "all_n_proved_by_checker = 0"),
     "docs/437-prime-power-hard-core-extremal-stability.md": (
-        "CMR2772--CMR2781", "0bddec3bea04c1e38a6b3d11919d9f1f23566e6284644f37223a7c290b4a6131", "all_n_proved_by_checker = 0",
-    ),
+        "CMR2772--CMR2781", "0bddec3bea04c1e38a6b3d11919d9f1f23566e6284644f37223a7c290b4a6131", "all_n_proved_by_checker = 0"),
     "docs/438-prime-power-hard-core-population-bridge.md": (
         "CMR2782--CMR2793", "c7773e0f18779f6fa89db7d31e802c281e4e2618e60096a9a3d86471d08d528c",
-        "actual_parent_rule_present = 0", "t21_semantic_chambers_proved = 0", "all_n_proved_by_checker = 0",
-    ),
+        "actual_parent_rule_present = 0", "t21_semantic_chambers_proved = 0", "all_n_proved_by_checker = 0"),
     "docs/439-prime-power-canonical-prescription-parent-rule.md": (
         "CMR2794--CMR2805", "dca487a954f03f5aaebf09394ab427ef5b338f0e107adf6581146d84863ce39c",
-        "conditional_parent_rule_clause_ready = 1", "actual_global_parent_rule_complete = 0", "all_n_proved_by_checker = 0",
-    ),
+        "conditional_parent_rule_clause_ready = 1", "actual_global_parent_rule_complete = 0", "all_n_proved_by_checker = 0"),
+    "docs/440-prime-power-target-trigger-response-partition.md": (
+        "CMR2806--CMR2817", "c7239521fb73e0347783e76ebfde83d96e968712376745542b5a93888312c0ef",
+        "local_target_response_rule_ready = 1", "actual_global_parent_rule_complete = 0", "all_n_proved_by_checker = 0"),
     ".github/workflows/current-frontier-regression.yml": (
-        "actions/upload-artifact@v4",
-        *FINITE_THEOREM_CHECKS,
-        "check_prime_power_hard_core_population_bridge.py",
-        "--manifest",
+        "actions/upload-artifact@v4", *FINITE_THEOREM_CHECKS,
+        "check_prime_power_hard_core_population_bridge.py", "--manifest",
         "current-frontier-runtime-python-${{ matrix.python-version }}",
     ),
 }
@@ -145,20 +134,16 @@ def source_text(path: Path) -> str:
 def literal_assignment(path: Path, name: str) -> Any:
     tree = ast.parse(source_text(path), filename=str(path))
     for node in tree.body:
-        if isinstance(node, ast.Assign):
-            if any(isinstance(target, ast.Name) and target.id == name for target in node.targets):
-                return ast.literal_eval(node.value)
-        elif isinstance(node, ast.AnnAssign):
-            if isinstance(node.target, ast.Name) and node.target.id == name:
-                return ast.literal_eval(node.value)
+        if isinstance(node, ast.Assign) and any(isinstance(t, ast.Name) and t.id == name for t in node.targets):
+            return ast.literal_eval(node.value)
+        if isinstance(node, ast.AnnAssign) and isinstance(node.target, ast.Name) and node.target.id == name:
+            return ast.literal_eval(node.value)
     raise CurrentFrontierRegressionError(f"{path}: literal assignment {name} not found")
 
 
 def syntax_inventory(scripts_dir: Path) -> list[str]:
-    paths = sorted(
-        path for path in scripts_dir.glob("*.py")
-        if path.name.startswith(("check_prime_power_", "verify_prime_power_", "run_prime_power_", "test_prime_power_"))
-    )
+    paths = sorted(path for path in scripts_dir.glob("*.py")
+                   if path.name.startswith(("check_prime_power_", "verify_prime_power_", "run_prime_power_", "test_prime_power_")))
     require(paths, "no prime-power scripts found")
     for path in paths:
         compile(source_text(path), str(path), "exec")
@@ -166,20 +151,15 @@ def syntax_inventory(scripts_dir: Path) -> list[str]:
 
 
 def validate_target_frontier_literals(target_rows: Any, frontiers: Any) -> tuple[list[str], list[str]]:
-    """Validate literal target/frontier tables without importing the checker module."""
-    require(isinstance(target_rows, list), "TARGET_ROWS must be a literal list")
-    require(isinstance(frontiers, dict), "FRONTIERS must be a literal dictionary")
-    require(len(target_rows) == 43, "atomic target table must contain exactly 43 targets")
-    require(len(frontiers) == 13, "frontier table must contain exactly 13 groups")
-    require(all(isinstance(key, str) and key for key in frontiers), "frontier IDs must be nonempty strings")
-    require(all(isinstance(value, str) and value for value in frontiers.values()), "frontier titles must be nonempty strings")
-    target_ids: list[str] = []
-    frontier_ids: list[str] = []
+    require(isinstance(target_rows, list) and len(target_rows) == 43, "atomic target table must contain exactly 43 targets")
+    require(isinstance(frontiers, dict) and len(frontiers) == 13, "frontier table must contain exactly 13 groups")
+    require(all(isinstance(k, str) and k for k in frontiers), "frontier IDs must be nonempty strings")
+    require(all(isinstance(v, str) and v for v in frontiers.values()), "frontier titles must be nonempty strings")
+    target_ids, frontier_ids = [], []
     for index, row in enumerate(target_rows, start=1):
         require(isinstance(row, tuple) and len(row) == 10, f"target row {index}: exact ten-field tuple required")
         target_id, frontier_id = row[0], row[1]
-        require(isinstance(target_id, str), f"target row {index}: string target ID required")
-        require(target_id.startswith(f"T{index:02d}_"), f"target row {index}: sequential target ID required")
+        require(isinstance(target_id, str) and target_id.startswith(f"T{index:02d}_"), f"target row {index}: sequential target ID required")
         require(frontier_id in frontiers, f"target {target_id}: unknown frontier {frontier_id}")
         target_ids.append(target_id)
         frontier_ids.append(frontier_id)
@@ -189,40 +169,31 @@ def validate_target_frontier_literals(target_rows: Any, frontiers: Any) -> tuple
 
 
 def exact_target_frontier_census(atomic_path: Path) -> tuple[list[str], list[str]]:
-    return validate_target_frontier_literals(
-        literal_assignment(atomic_path, "TARGET_ROWS"),
-        literal_assignment(atomic_path, "FRONTIERS"),
-    )
+    return validate_target_frontier_literals(literal_assignment(atomic_path, "TARGET_ROWS"), literal_assignment(atomic_path, "FRONTIERS"))
 
 
 def validate_endpoint_text(filename: str, text: str) -> None:
-    """Reject empty, dishonest or syntactically invalid canonical endpoint source."""
     require(text.strip(), f"canonical endpoint {filename}: empty source")
     require("all_n_proved_by_checker" in text, f"canonical endpoint {filename}: honesty marker missing")
     compile(text, filename, "exec")
 
 
 def endpoint_audit(scripts_dir: Path) -> list[str]:
-    audited = []
     for filename in CANONICAL_ENDPOINTS:
         validate_endpoint_text(filename, source_text(scripts_dir / filename))
-        audited.append(filename)
-    return audited
+    return list(CANONICAL_ENDPOINTS)
 
 
 def validate_document_markers(relative_path: str, text: str, markers: tuple[str, ...]) -> None:
-    """Reject an empty synchronized document or any missing required marker."""
     require(text.strip(), f"{relative_path}: empty document")
     for marker in markers:
         require(marker in text, f"{relative_path}: missing synchronization marker {marker!r}")
 
 
 def document_audit(root: Path) -> list[str]:
-    audited = []
-    for relative_path, markers in DOCUMENT_EXPECTATIONS.items():
-        validate_document_markers(relative_path, source_text(root / relative_path), markers)
-        audited.append(relative_path)
-    return audited
+    for path, markers in DOCUMENT_EXPECTATIONS.items():
+        validate_document_markers(path, source_text(root / path), markers)
+    return list(DOCUMENT_EXPECTATIONS)
 
 
 def subprocess_environment() -> dict[str, str]:
@@ -233,66 +204,43 @@ def subprocess_environment() -> dict[str, str]:
 
 def run_script(root: Path, script: str, arguments: tuple[str, ...] = ()) -> dict[str, Any]:
     command = [sys.executable, str(root / "scripts" / script), *arguments]
-    completed = subprocess.run(
-        command, cwd=root, env=subprocess_environment(), check=False, capture_output=True, text=True,
-    )
-    require(
-        completed.returncode == 0,
-        f"script failed: {' '.join(command)}\nstdout:\n{completed.stdout}\nstderr:\n{completed.stderr}",
-    )
+    completed = subprocess.run(command, cwd=root, env=subprocess_environment(), check=False, capture_output=True, text=True)
+    require(completed.returncode == 0,
+            f"script failed: {' '.join(command)}\nstdout:\n{completed.stdout}\nstderr:\n{completed.stderr}")
     output = completed.stdout.strip()
     require(output, f"script {script} produced no output")
     return {"script": script, "arguments": list(arguments), "stdout": output, "returncode": completed.returncode}
 
 
 def run_self_test(root: Path, script: str, argument: str) -> dict[str, Any]:
-    """Compatibility wrapper retained for the negative regression test interface."""
     result = run_script(root, script, (argument,))
-    return {
-        "script": result["script"],
-        "argument": argument,
-        "stdout": result["stdout"],
-        "returncode": result["returncode"],
-    }
+    return {"script": result["script"], "argument": argument,
+            "stdout": result["stdout"], "returncode": result["returncode"]}
 
 
 def exact_regression(root: Path, static_only: bool = False) -> dict[str, Any]:
-    scripts_dir = root / "scripts"
-    syntax_files = syntax_inventory(scripts_dir)
-    target_ids, frontier_ids = exact_target_frontier_census(
-        scripts_dir / "check_prime_power_atomic_frontier_execution.py"
-    )
-    endpoints = endpoint_audit(scripts_dir)
+    scripts = root / "scripts"
+    syntax_files = syntax_inventory(scripts)
+    target_ids, frontier_ids = exact_target_frontier_census(scripts / "check_prime_power_atomic_frontier_execution.py")
+    endpoints = endpoint_audit(scripts)
     documents = document_audit(root)
-    self_tests = [] if static_only else [run_self_test(root, script, argument) for script, argument in SELF_TESTS]
-    theorem_checks = [] if static_only else [run_script(root, script) for script in FINITE_THEOREM_CHECKS]
-    bridge_checks = [] if static_only else [
-        run_script(root, script, arguments) for script, arguments in FRONTIER_BRIDGE_CHECKS
-    ]
+    self_tests = [] if static_only else [run_self_test(root, s, a) for s, a in SELF_TESTS]
+    theorem_checks = [] if static_only else [run_script(root, s) for s in FINITE_THEOREM_CHECKS]
+    bridge_checks = [] if static_only else [run_script(root, s, a) for s, a in FRONTIER_BRIDGE_CHECKS]
     claims = {
         "syntax_checked_prime_power_scripts": len(syntax_files),
-        "frontier_groups": len(frontier_ids),
-        "atomic_targets": len(target_ids),
-        "canonical_endpoints": len(endpoints),
-        "synchronized_documents": len(documents),
-        "executable_self_tests": len(self_tests),
-        "finite_theorem_checks": len(theorem_checks),
-        "frontier_bridge_checks": len(bridge_checks),
-        "static_only": int(static_only),
+        "frontier_groups": len(frontier_ids), "atomic_targets": len(target_ids),
+        "canonical_endpoints": len(endpoints), "synchronized_documents": len(documents),
+        "executable_self_tests": len(self_tests), "finite_theorem_checks": len(theorem_checks),
+        "frontier_bridge_checks": len(bridge_checks), "static_only": int(static_only),
         "python_major_minor": f"{sys.version_info.major}.{sys.version_info.minor}",
         "all_n_proved_by_checker": 0,
     }
-    return {
-        "syntax_checked_files": syntax_files,
-        "frontier_ids": frontier_ids,
-        "target_ids": target_ids,
-        "canonical_endpoint_files": endpoints,
-        "synchronized_document_files": documents,
-        "self_test_results": self_tests,
-        "finite_theorem_results": theorem_checks,
-        "frontier_bridge_results": bridge_checks,
-        "claims": claims,
-    }
+    return {"syntax_checked_files": syntax_files, "frontier_ids": frontier_ids,
+            "target_ids": target_ids, "canonical_endpoint_files": endpoints,
+            "synchronized_document_files": documents, "self_test_results": self_tests,
+            "finite_theorem_results": theorem_checks, "frontier_bridge_results": bridge_checks,
+            "claims": claims}
 
 
 def main() -> None:
@@ -300,8 +248,7 @@ def main() -> None:
     parser.add_argument("--static-only", action="store_true",
                         help="skip executable structural, finite-theorem and frontier-bridge checks")
     args = parser.parse_args()
-    result = exact_regression(repository_root(), static_only=args.static_only)
-    print(json.dumps(result["claims"], sort_keys=True))
+    print(json.dumps(exact_regression(repository_root(), args.static_only)["claims"], sort_keys=True))
 
 
 if __name__ == "__main__":
