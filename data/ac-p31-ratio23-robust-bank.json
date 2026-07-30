@@ -1,0 +1,66 @@
+{
+  "schema": "ac-p31-ratio23-robust-bank-v1",
+  "p": 31,
+  "n": 30,
+  "anchor_channel": 1,
+  "switch_channel": 23,
+  "channel_ratio": 23,
+  "switch_rows": [15, 16],
+  "removed_cells": [[15, 16], [16, 15]],
+  "inserted_cells": [[15, 15], [16, 16]],
+  "candidate": [15, 15],
+  "conjugate_candidate": [16, 16],
+  "full_secant_pairs": [
+    [[1, 1], [30, 30]],
+    [[3, 21], [11, 17]],
+    [[5, 25], [25, 5]],
+    [[7, 9], [19, 18]],
+    [[9, 7], [18, 19]],
+    [[12, 13], [27, 23]],
+    [[13, 12], [23, 27]],
+    [[17, 11], [21, 3]]
+  ],
+  "current_potential": 82,
+  "orientation_policy": "all seven-of-eight pair selections and all endpoint orientations",
+  "omitted_pair_groups": [
+    {"omitted_pair_index": 0, "states": 166944, "minimum_potential": 90, "minimum_states": 2, "potential_sum": 22649184},
+    {"omitted_pair_index": 1, "states": 183448, "minimum_potential": 89, "minimum_states": 1, "potential_sum": 23604317},
+    {"omitted_pair_index": 2, "states": 168582, "minimum_potential": 89, "minimum_states": 2, "potential_sum": 22016335},
+    {"omitted_pair_index": 3, "states": 176536, "minimum_potential": 87, "minimum_states": 1, "potential_sum": 21919049},
+    {"omitted_pair_index": 4, "states": 176536, "minimum_potential": 87, "minimum_states": 1, "potential_sum": 21919049},
+    {"omitted_pair_index": 5, "states": 160560, "minimum_potential": 91, "minimum_states": 1, "potential_sum": 20131812},
+    {"omitted_pair_index": 6, "states": 160560, "minimum_potential": 91, "minimum_states": 1, "potential_sum": 20131812},
+    {"omitted_pair_index": 7, "states": 183448, "minimum_potential": 89, "minimum_states": 1, "potential_sum": 23604317}
+  ],
+  "total_states": 1376614,
+  "total_potential_sum": 175975875,
+  "improving_states": 0,
+  "global_minimum_potential": 87,
+  "global_gap": 5,
+  "best_record": {
+    "omitted_pair_index": 3,
+    "orientation_bits": [1, 1, 0, 1, 0, 1, 0],
+    "permutation": [4, 0, 6, 5, 1, 3, 2],
+    "omitted_pair": [[7, 9], [19, 18]],
+    "selected_endpoints": [[30, 30], [11, 17], [5, 25], [18, 19], [12, 13], [23, 27], [17, 11]],
+    "replacement_cells": [[5, 11], [11, 30], [12, 17], [17, 25], [18, 27], [23, 19], [30, 13]]
+  },
+  "best_record_ac1": {
+    "base_potential": 51,
+    "fixed_potential": 73,
+    "D_star": 31,
+    "F_star": 22,
+    "gap": 9,
+    "certificate_counts": {"rank_1": 208, "rank_2": 122, "rank_3": 13},
+    "heavy_rank": 1,
+    "heavy_anchor_address": [2, 3],
+    "heavy_anchor_cell": [5, 19],
+    "heavy_anchor_degree": 14
+  },
+  "conjugacy": {
+    "map": "(x,y)->(31-x,31-y)",
+    "preserves_channels": [1, 23],
+    "maps_candidate": [15, 15],
+    "to": [16, 16]
+  }
+}
