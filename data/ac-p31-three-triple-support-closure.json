@@ -1,5 +1,5 @@
 {
-  "schema": "ac-p31-three-triple-support-closure-v1",
+  "schema": "ac-p31-three-triple-support-closure-v2",
   "p": 31,
   "n": 30,
   "state_three": {
@@ -9,40 +9,22 @@
     "red_core_rows": [14,16,20,23],
     "blue_core_rows": [9,14,18,20,29]
   },
-  "families": [
-    {
-      "name": "one_red_one_blue_extra",
-      "extra_red_rows": 1,
-      "extra_blue_rows": 1,
-      "jobs": 650,
-      "assignments": 56160000,
-      "collision_free_states": 42195600,
-      "minimum_potential": 3
-    },
-    {
-      "name": "two_red_extra",
-      "extra_red_rows": 2,
-      "extra_blue_rows": 0,
-      "jobs": 325,
-      "assignments": 28080000,
-      "collision_free_states": 20353104,
-      "minimum_potential": 3
-    },
-    {
-      "name": "two_blue_extra",
-      "extra_red_rows": 0,
-      "extra_blue_rows": 2,
-      "jobs": 300,
-      "assignments": 36288000,
-      "collision_free_states": 28146816,
-      "minimum_potential": 3
-    }
-  ],
-  "totals": {
-    "jobs": 1275,
-    "assignments": 120528000,
-    "collision_free_states": 90695520,
-    "minimum_potential": 3
+  "two_extra_census": {
+    "families": [
+      {"distribution": [1,1], "jobs": 650, "assignments": 56160000, "collision_free_states": 42195600, "minimum_potential": 3},
+      {"distribution": [2,0], "jobs": 325, "assignments": 28080000, "collision_free_states": 20353104, "minimum_potential": 3},
+      {"distribution": [0,2], "jobs": 300, "assignments": 36288000, "collision_free_states": 28146816, "minimum_potential": 3}
+    ],
+    "totals": {"jobs": 1275, "assignments": 120528000, "collision_free_states": 90695520, "minimum_potential": 3}
   },
-  "conclusion": "Every lower-potential endpoint differs from the current three-triple state on at least three row addresses outside the nine core-support rows."
+  "three_extra_exact_closure": {
+    "families": [
+      {"distribution": [0,3], "support_choices": 2300, "partial_states": 109579, "complete_potential_at_most_two_states": 0},
+      {"distribution": [1,2], "support_choices": 7800, "partial_states": 295821, "complete_potential_at_most_two_states": 0},
+      {"distribution": [2,1], "support_choices": 8125, "partial_states": 276343, "complete_potential_at_most_two_states": 0},
+      {"distribution": [3,0], "support_choices": 2600, "partial_states": 92218, "complete_potential_at_most_two_states": 0}
+    ],
+    "totals": {"support_choices": 20825, "partial_states": 773961, "complete_potential_at_most_two_states": 0}
+  },
+  "conclusion": "Every endpoint of potential at most two differs from the current three-triple state on at least four tagged row addresses outside the nine core-support rows."
 }
