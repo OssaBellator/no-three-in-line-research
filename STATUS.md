@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2817**. Every final checker,
+The authoritative theorem ledger reaches **CMR2827**. Every final checker,
 finite theorem checker, population bridge, fixture, runtime manifest and
 branch-wide regression permanently reports or preserves:
 
@@ -25,7 +25,7 @@ all_n_proved_by_checker = 0
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
 | T01 | literal source statements, hashes and sealed source artifacts | genuine source statements remain unproved/unpopulated |
-| T02 | documentary clause banks plus a complete local target-response rule relative to a supplied family and target bank | global parent-family generation, target-bank availability and genuine recurrence exhaustiveness remain open |
+| T02 | documentary clause banks plus deterministic clean/dirty anchor dispatch relative to a supplied family and exact triple universe | global family generation, geometric exactness and recurrence exhaustiveness remain open |
 | T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete population, including survivor backgrounds, remains absent |
 | T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
 | T05 | exact finite geometry and selector arithmetic | arbitrary-`n` coverage remains open |
@@ -76,6 +76,7 @@ python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/test_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_canonical_prescription_partition.py
 python scripts/check_prime_power_target_trigger_response_partition.py
+python scripts/check_prime_power_canonical_target_dispatch.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -92,33 +93,41 @@ python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certifica
 Every runtime artifact contains a literal `manifest_sha256` seal. A manifest
 records validation execution and is not a proof certificate.
 
-## Complete local T02 target-response rule
+## Canonical local T02 dispatch
 
-Let \(S\) be an anchor state, \(\mathcal F\) a supplied equal-cardinality feasible
-family containing it, and \(\mathcal Q\) a nonempty designated target bank in
-\(S\). Put
+Let \(S\) be a supplied anchor, \(\mathcal F\) a supplied equal-cardinality
+feasible family and \(\mathcal U\) a supplied exact triple universe. Define
 
 \[
-K(\mathcal Q)=\bigcup_{T\in\mathcal Q}T.
+\mathcal T_{\mathcal U}(S)=\{T\in\mathcal U:T\subseteq S\}.
 \]
 
-Every alternative is exactly one of:
+The local rule is now deterministic without a supplied target bank:
 
 ```text
-target-preserving
-  -> contains the whole target core K and admits exact core contraction
+T_U(S) empty
+  -> clean-anchor terminal
 
-target-destroying with lower triple potential
-  -> strict potential improvement
-
-target-destroying without lower potential
-  -> CMR698 supplies a canonical new triple
-  -> apply the duplicate-free four-way first-missing rule
+T_U(S) nonempty
+  -> choose its canonical least triple T_*
+  -> use the singleton target bank {T_*}
 ```
 
-The target-preserving family is exactly the conditioned family
-\(\mathcal F_K\), and removing \(K\) is injective. For the third class, the
-canonical new triple \(C=(f_0,f_1,f_2)\) yields:
+Every alternative under a dirty anchor is exactly one of:
+
+```text
+canonical target preserved
+  -> exact three-cell target contraction
+
+canonical target destroyed with lower triple potential
+  -> strict improvement
+
+canonical target destroyed without lower triple potential
+  -> canonical least new triple
+  -> duplicate-free four-way first-missing partition
+```
+
+For a new triple \((f_0,f_1,f_2)\), the exact children are:
 
 ```text
 0: omit f0
@@ -127,15 +136,13 @@ canonical new triple \(C=(f_0,f_1,f_2)\) yields:
 3: contain f0,f1,f2 and contract the forced triple
 ```
 
-The two T02 theorem contracts record:
+The T02 theorem contracts record:
 
 ```text
 conditional_parent_rule_clause_ready = 1
 local_target_response_rule_ready = 1
-exact_candidate_trigger_partition = 1
-target_preserving_core_contraction = 1
-strict_improvement_action = 1
-nonimproving_new_triple_action = 1
+canonical_target_bank_external_choice_required = 0
+local_anchor_dispatch_complete = 1
 actual_global_parent_rule_complete = 0
 ```
 
@@ -144,11 +151,12 @@ Their contract digests are:
 ```text
 dca487a954f03f5aaebf09394ab427ef5b338f0e107adf6581146d84863ce39c
 c7239521fb73e0347783e76ebfde83d96e968712376745542b5a93888312c0ef
+634318242ece5cab549b9394ba33e116d7c1b01b4c74d5a02e276004fe1e8444
 ```
 
-The local rule is complete only after the feasible family, anchor, exact triple
-universe and nonempty target bank are supplied. It does not prove that every
-global parent supplies those objects or belongs to another exhaustive clause.
+The local rule is complete only after the family, anchor and exact triple
+universe are supplied. It does not prove global generation or geometric
+completeness of those objects.
 
 ## T21 scalar and population boundary
 
@@ -182,7 +190,7 @@ t21_semantic_chambers_proved = 0
 GitHub Actions is configured for Python 3.10 and 3.12 to run:
 
 - the negative validator suite;
-- eight finite theorem checkers;
+- nine finite theorem checkers;
 - the T03/T21 population-bridge self-test;
 - the strict runtime-manifest audit; and
 - the complete current-frontier regression.
@@ -195,9 +203,9 @@ Configuration is not evidence that a workflow passed.
 
 ```text
 T01 prove and populate genuine source statements
-T02 prove global parent-family generation, target-bank availability and complete recurrence exhaustiveness
+T02 prove global family/anchor/triple-universe generation and complete recurrence exhaustiveness
 T03--T04 populate every real slot, block and interface
-T05 prove arbitrary-n geometry coverage
+T05 prove arbitrary-n geometry coverage and triple-universe exactness
 T06--T18 prove semantic, score, resource, rank, predicate and row theorems
 T19 prove genuine global-family exhaustiveness
 T20 prove all 232 zero-selector chambers
@@ -214,8 +222,9 @@ their lower proof banks are genuinely complete.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2817**, the branch contains a complete
-local target-response rule relative to supplied data, six exact hard-core scalar
-theorems, a T03/T21 population bridge, and synchronized documentary interfaces
-through all 43 targets. Global parent generation, real population, recurrence
-exhaustiveness and all global semantic implications remain open.
+There is no complete proof. Through **CMR2827**, the branch contains a
+deterministic clean/dirty local anchor dispatch relative to supplied data, six
+exact hard-core scalar theorems, a T03/T21 population bridge, and synchronized
+documentary interfaces through all 43 targets. Global parent generation, exact
+geometric population, recurrence exhaustiveness and all global semantic
+implications remain open.
