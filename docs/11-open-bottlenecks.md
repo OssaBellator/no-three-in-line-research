@@ -2,8 +2,8 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2805**, this branch
-contains exact documentary interfaces for all 43 atomic targets, seven finite
+The no-three-in-line conjecture remains open. Through **CMR2817**, this branch
+contains exact documentary interfaces for all 43 atomic targets, eight finite
 theorem checkers, corrected runtime validation and one T03-to-T21 population
 bridge.
 
@@ -24,6 +24,7 @@ python scripts/check_prime_power_canonical_frontier_roots.py --self-test
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/test_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_canonical_prescription_partition.py
+python scripts/check_prime_power_target_trigger_response_partition.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -53,59 +54,88 @@ No sealed source record proves its statement true by itself.
 
 ## 4. T02: complete parent rule
 
-### Closed conditional clause
+### Closed local response rule
 
-CMR866 supplies a canonical new labelled triple
-\(C_Q=(f_0,f_1,f_2)\) whenever a candidate is nonimproving and destroys
-positive target load.
+Let \(S\) be a supplied anchor, \(\mathcal F\) a supplied equal-cardinality
+feasible family and \(\mathcal Q\) a nonempty designated target bank in \(S\).
+Define
 
-CMR2794--CMR2805 replace the overlapping CMR862 deletion union by the disjoint
-first-missing partition:
+\[
+K(\mathcal Q)=\bigcup_{T\in\mathcal Q}T.
+\]
+
+CMR2806--CMR2817 give a complete local response for every alternative
+\(R\in\mathcal F\setminus\{S\}\):
+
+```text
+A. R preserves every designated target
+   -> R contains the complete target core K
+   -> exact target-core contraction
+
+B. R destroys a target and Phi(R) < Phi(S)
+   -> strict potential improvement
+
+C. R destroys a target and Phi(R) >= Phi(S)
+   -> CMR698 gives at least one genuinely new triple
+   -> choose the canonical first new triple
+   -> apply the duplicate-free first-missing partition
+```
+
+For case C, if the canonical new triple is \((f_0,f_1,f_2)\), the exact
+children are:
 
 ```text
 B0: omit f0
 B1: contain f0 and omit f1
 B2: contain f0,f1 and omit f2
-B3: contain all three edges
+B3: contain f0,f1,f2 and contract the forced triple
 ```
 
-The first three branches are duplicate-free deletion children. The final branch
-contains the rejected candidate and admits exact triple contraction. Empty
-children may be dropped without losing coverage.
-
-The executable endpoint is:
+The executable endpoints are:
 
 ```text
 python scripts/check_prime_power_canonical_prescription_partition.py
+python scripts/check_prime_power_target_trigger_response_partition.py
 ```
 
-It records:
+They record:
 
 ```text
 conditional_parent_rule_clause_ready = 1
+local_target_response_rule_ready = 1
+exact_candidate_trigger_partition = 1
+target_preserving_core_contraction = 1
+strict_improvement_action = 1
+nonimproving_new_triple_action = 1
 actual_global_parent_rule_complete = 0
 ```
 
+This is a complete local response **relative to supplied data**. It is not the
+complete global parent rule.
+
 ### Remaining T02 work
 
-The next genuine parent-rule task is not to reprove the first-missing clause. It
-is to classify every global parent into a finite exhaustive trigger bank:
+The genuine parent-rule frontier is now:
 
-1. prove when the CMR866 nonimproving target-destruction trigger applies;
-2. state the alternative clauses when it does not apply;
-3. prove those trigger predicates mutually complete;
-4. define every finite parameter axis;
-5. justify every excluded parameter row;
-6. assign genuine expected raw hosts and ordered state labels;
-7. bind every global parent to exactly one admitted clause/slot; and
-8. prove no recurrence alternative is omitted.
+1. generate every feasible parent family \(\mathcal F\) from the actual
+   construction;
+2. prove the anchor and exact triple universe correct;
+3. prove that a nonempty designated target bank exists whenever this local rule
+   is invoked;
+4. classify every parent/closure situation where no such target bank is
+   available;
+5. prove those global trigger classes mutually complete;
+6. define every finite parameter axis and justify every exclusion;
+7. assign genuine expected raw hosts and ordered state labels;
+8. bind every global parent to exactly one admitted clause/slot; and
+9. prove that no recurrence alternative is omitted.
 
 The existing declarative clause enumerator is exhaustive only relative to
 supplied cases and clauses.
 
 ## 5. T03--T04: real population
 
-For every T02 operation slot, enter literal:
+For every genuine T02 operation slot, enter literal:
 
 ```text
 points
@@ -223,11 +253,12 @@ T32--T34 remain documentary aggregation gates.
 
 ## 12. Immediate work order
 
-1. Extend the first-missing triple clause into an exhaustive trigger
-   classification for every global parent.
-2. Populate and prove the T01 sources needed by those clauses.
-3. Generate the genuine T02 slot registry.
-4. Enter exact T03/T04 populations.
+1. Prove global generation of every feasible parent family and the exact target
+   bank used by the complete local response theorem.
+2. Classify all parent/closure situations outside that target-bank setup and
+   prove the global trigger bank exhaustive.
+3. Populate and prove the T01 sources required by those clauses.
+4. Generate the genuine T02 slot registry and enter exact T03/T04 populations.
 5. Run the T05--T21 finite engines on those real records.
 6. Prove the semantic rows, chambers, premises, handoffs and root theorem.
 
