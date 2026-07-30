@@ -12,8 +12,11 @@ Only AC remains active. No pull request or merge was created.
 
 - **AC5nx:** exact barrier ten from six triples to five.
 - **AC5ny:** exact barrier ten from five triples to four.
-- **AC5nz:** explicit 212-switch physical path from the 75-triple AN successor to four triples.
+- **AC5nz:** explicit 212-switch path from the 75-triple AN successor to four triples.
 - **AC5oa:** exact four-triple lower frontier through barrier nine.
+- **AC5ob:** exact barrier ten from four triples to three.
+- **AC5oc:** explicit 254-switch path from the 75-triple AN successor to three triples.
+- **AC5od:** exact three-triple lower frontier through barrier eight.
 
 ## Exact ledgers
 
@@ -22,8 +25,6 @@ Only AC remains active. No pull request or merge was created.
 - stored path length: `26`;
 - path maximum: `10`;
 - lower-component sizes at barriers `6,7,8,9`: `1,9,33,860`;
-- barrier-ten search processed states: `65,864`;
-- barrier-ten discovered states: `75,944`;
 - endpoint potential: `5`.
 
 ### Five to four
@@ -31,39 +32,46 @@ Only AC remains active. No pull request or merge was created.
 - stored path length: `32`;
 - path maximum: `10`;
 - lower-component sizes at barriers `6,7,8,9`: `2,18,68,501`;
-- barrier-ten search processed states: `182,765`;
-- barrier-ten discovered states: `223,691`;
 - endpoint potential: `4`.
 
-### Four-triple frontier
+### Four to three
 
+- stored path length: `42`;
+- path maximum: `10`;
 - lower-component sizes at barriers `5,6,7,8,9`: `2,10,29,286,2033`;
-- exact conclusion: barrier at least `10`;
-- barrier-ten search remains open and yields no theorem until it returns a lower state or exhausts.
+- exact barrier: `10`;
+- endpoint potential: `3`.
+
+### Three-triple frontier
+
+- lower-component sizes at barriers `3,4,5,6,7,8`: `1,3,5,17,302,2196`;
+- exact conclusion: barrier at least `9`;
+- the barrier-nine search remains open and yields no stronger theorem until it returns a lower state or exhausts.
 
 ## Deterministic audit
 
-`data/ac-p31-barrier-ten-extension.json` stores the complete permutation tables, move words, potential words and component ledgers.
+`data/ac-p31-barrier-ten-extension.json` stores the complete permutation tables, move words, potential words, triple addresses and component ledgers.
 
 `scripts/verify_ac_p31_barrier_ten_extension.cpp`:
 
-- replays all 58 new switches;
+- replays all `100` switches from six triples to three;
 - verifies every stored potential;
-- recomputes the complete lower components in modes `6`, `5` and `4`;
+- recomputes the complete lower components in modes `6`, `5`, `4` and `3`;
 - rejects any illegal layer collision or component containing a lower-potential state.
 
 Local equivalent execution returned:
 
-- replay final potential: `4`;
+- replay final potential: `3`;
 - mode 6 component total: `903`;
 - mode 5 component total: `589`;
-- mode 4 component total: `2360`.
+- mode 4 component total: `2360`;
+- mode 3 component total: `2524`.
 
 ## Remaining AC frontier
 
-1. Complete the four-triple barrier-ten search.
-2. Continue to three, two, one and zero triples.
-3. Classify the returned cores by physical arithmetic labels.
+1. Complete the three-triple barrier-nine search.
+2. Continue to two, one and zero triples.
+3. Classify the three retained line occurrences physically.
 4. Extract a reusable minimax repair pattern.
 5. Extend the construction beyond this explicit `p=31` state.
 
