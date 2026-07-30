@@ -52,6 +52,12 @@ jobs:
           PYTHONHASHSEED: "0"
         run: python scripts/check_prime_power_target_trigger_response_partition.py
 
+      - name: Verify canonical anchor target dispatch
+        env:
+          PYTHONDONTWRITEBYTECODE: "1"
+          PYTHONHASHSEED: "0"
+        run: python scripts/check_prime_power_canonical_target_dispatch.py
+
       - name: Verify hard-core exchange normal form
         env:
           PYTHONDONTWRITEBYTECODE: "1"
