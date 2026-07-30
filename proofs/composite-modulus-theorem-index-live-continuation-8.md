@@ -53,6 +53,7 @@ The authoritative live ledger is split across:
 | CMR2782--2793 | Exact eleven-host T03 projection, expected-slot ancestry, literal survivor validation, response-family binding, arbitrary-background energy recomputation, canonical selector-data sealing, open/populated/proved separation, population-gap manifest, readiness separation and ten corruption rejections | PROVED as an exact T03-to-T21 scalar consistency bridge; the parent rule, genuine populations and all semantic chamber proofs remain absent | `docs/438-prime-power-hard-core-population-bridge.md` |
 | CMR2794--2805 | First-missing prescription index, canonical disjoint branch partition, exact counting, empty-child pruning, rejected-state localisation, exact conditioned contraction, four-way labelled-triple rule, canonical operation keys, CMR866 trigger linkage, duplicate-free completeness, exhaustive family census and honesty boundary | PROVED as one genuine conditional T02 parent-rule clause; global trigger exhaustiveness, the complete parent rule and all downstream populations remain open | `docs/439-prime-power-canonical-prescription-parent-rule.md` |
 | CMR2806--2817 | Target-core identity, exact preserving-family contraction, exhaustive three-way candidate trigger partition, strict-improvement action, CMR698 new-triple surplus, canonical witness selection, duplicate-free four-way response, complete local target response, exhaustive hypergraph/subfamily censuses and corruption rejection | PROVED as a complete local T02 response relative to a supplied feasible family and target bank; global parent generation, target-bank availability and recurrence exhaustiveness remain open | `docs/440-prime-power-target-trigger-response-partition.md` |
+| CMR2818--2827 | Exact anchor triple set, clean-anchor terminal, canonical least dirty-anchor target, exact singleton-target contraction, deterministic clean/dirty dispatch, exhaustive candidate actions, duplicate-free nonimproving response, exhaustive hypergraph/subfamily censuses and corruption rejection | PROVED as a complete local T02 anchor dispatch relative to a supplied family and exact triple universe; global family generation, triple-universe exactness and recurrence exhaustiveness remain open | `docs/441-prime-power-canonical-anchor-target-dispatch.md` |
 
 The branch still does not prove the all-`n` conjecture.
 
@@ -64,6 +65,7 @@ scripts/check_prime_power_all_open_target_fixture.py --self-test
 scripts/test_prime_power_current_frontier_regression.py
 scripts/check_prime_power_canonical_prescription_partition.py
 scripts/check_prime_power_target_trigger_response_partition.py
+scripts/check_prime_power_canonical_target_dispatch.py
 scripts/check_prime_power_hard_core_exchange_normal_form.py
 scripts/check_prime_power_hard_core_exchange_realisability.py
 scripts/check_prime_power_hard_core_two_point_classification.py
@@ -76,12 +78,12 @@ scripts/run_prime_power_current_frontier_regression.py
 scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The eight finite theorem checkers now include a duplicate-free prescription clause, a complete local target-response rule and six hard-core scalar theorems. The population bridge validates the exact T03/T21 interface but supplies no complete global parent rule, slot population or chamber semantics. GitHub Actions is configured to run all eight finite theorems, the bridge self-test and separate Python 3.10/3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
+The nine finite theorem checkers now include a duplicate-free prescription clause, a complete local target-response rule, a canonical clean/dirty anchor dispatcher and six hard-core scalar theorems. The population bridge validates the exact T03/T21 interface but supplies no complete global parent rule, slot population or chamber semantics. GitHub Actions is configured to run all nine finite theorems, the bridge self-test and separate Python 3.10/3.12 runtime manifests. Every final checker permanently reports `all_n_proved_by_checker = 0`.
 
 ## Active frontier
 
-1. Prove global generation of every feasible parent family and existence of the designated target bank needed by the complete local response rule.
-2. Classify all parent/closure situations outside that local target-bank setup and prove the complete recurrence exhaustive.
+1. Prove global generation of every feasible parent family, intended anchor and exact triple universe.
+2. Classify all global parent/closure situations and prove the complete recurrence exhaustive.
 3. Populate and prove every genuine T01 source statement and all resulting T02 recurrence records.
 4. Enter real T03/T04 data, including every genuine hard-core survivor background, and prove T05 arbitrary-`n` coverage.
 5. Prove every T06--T18 semantic and row theorem genuinely.
