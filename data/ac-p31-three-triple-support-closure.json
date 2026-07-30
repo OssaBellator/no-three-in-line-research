@@ -1,0 +1,48 @@
+{
+  "schema": "ac-p31-three-triple-support-closure-v1",
+  "p": 31,
+  "n": 30,
+  "state_three": {
+    "red": [12,15,24,9,27,20,4,17,28,29,6,2,8,13,1,18,7,19,23,11,26,30,10,5,14,3,21,22,25,16],
+    "blue": [17,10,21,22,7,15,8,28,25,13,9,4,20,26,30,12,27,24,29,23,14,1,2,11,18,6,3,16,5,19],
+    "potential": 3,
+    "red_core_rows": [14,16,20,23],
+    "blue_core_rows": [9,14,18,20,29]
+  },
+  "families": [
+    {
+      "name": "one_red_one_blue_extra",
+      "extra_red_rows": 1,
+      "extra_blue_rows": 1,
+      "jobs": 650,
+      "assignments": 56160000,
+      "collision_free_states": 42195600,
+      "minimum_potential": 3
+    },
+    {
+      "name": "two_red_extra",
+      "extra_red_rows": 2,
+      "extra_blue_rows": 0,
+      "jobs": 325,
+      "assignments": 28080000,
+      "collision_free_states": 20353104,
+      "minimum_potential": 3
+    },
+    {
+      "name": "two_blue_extra",
+      "extra_red_rows": 0,
+      "extra_blue_rows": 2,
+      "jobs": 300,
+      "assignments": 36288000,
+      "collision_free_states": 28146816,
+      "minimum_potential": 3
+    }
+  ],
+  "totals": {
+    "jobs": 1275,
+    "assignments": 120528000,
+    "collision_free_states": 90695520,
+    "minimum_potential": 3
+  },
+  "conclusion": "Every lower-potential endpoint differs from the current three-triple state on at least three row addresses outside the nine core-support rows."
+}
