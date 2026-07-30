@@ -23,7 +23,7 @@ from typing import Any, Iterable
 Edge = tuple[int, int, int]       # (layer,row,column)
 State = tuple[Edge, ...]
 Triple = tuple[Edge, Edge, Edge]
-EXPECTED_CONTRACT_SHA256 = "8fe3f68df6b25cf3c86e8d822ef37bfb9c8778382d3a3b6a58ac5d21f5595f70"
+EXPECTED_CONTRACT_SHA256 = "0cdc1914c11c79e1c9f3274f025263597c8eec5a7ed9c7e60d8cc24d66f817e7"
 
 
 class MaskedHostGenerationError(ValueError):
@@ -118,6 +118,19 @@ def generate_exact_triple_universe(family: tuple[State, ...]) -> tuple[Triple, .
             if is_collinear(triple):
                 triples.add(triple)  # type: ignore[arg-type]
     return tuple(sorted(triples))
+
+
+def validate_mask_extension(n: int, deleted: tuple[Edge, ...], edge: Edge) -> None:
+    require(edge not in set(deleted), "extension edge already deleted")
+    parent = generate_feasible_family(n, deleted)
+    child_mask = tuple(sorted(deleted + (edge,)))
+    child = generate_feasible_family(n, child_mask)
+    restricted = tuple(state for state in parent if edge not in set(state))
+    require(child == restricted, "single-edge mask extension identity failed")
+    parent_universe = set(generate_exact_triple_universe(parent))
+    child_universe = set(generate_exact_triple_universe(child))
+    require(child_universe <= parent_universe,
+            "child realizable triple universe is not monotone")
 
 
 def state_triples(state: State, universe: tuple[Triple, ...]) -> tuple[Triple, ...]:
@@ -316,6 +329,8 @@ def contract_manifest() -> dict[str, Any]:
             "masked_host_family_generated": 1,
             "family_generation_duplicate_free": 1,
             "triple_universe_generated_from_family": 1,
+            "single_edge_mask_extension_exact": 1,
+            "child_triple_universe_monotone": 1,
             "canonical_anchor_and_target_generated": 1,
             "empty_clean_dirty_dispatch_exhaustive": 1,
             "local_masked_parent_dispatch_complete": 1,
@@ -339,7 +354,7 @@ def exhaustive_regression() -> dict[str, int]:
     # Every mask on the complete side-two labelled host.
     host2 = all_host_edges(2)
     masks2 = feasible2 = infeasible2 = clean2 = dirty2 = 0
-    state_occurrences2 = 0
+    state_occurrences2 = extension_checks2 = 0
     for mask_bits in range(1 << len(host2)):
         deleted = tuple(edge for i, edge in enumerate(host2)
                         if mask_bits & (1 << i))
@@ -351,10 +366,15 @@ def exhaustive_regression() -> dict[str, int]:
         clean2 += claims["clean_anchor_terminal"]
         dirty2 += claims["dirty_anchor_dispatch"]
         state_occurrences2 += claims["feasible_states"]
+        for edge in host2:
+            if edge not in set(deleted):
+                validate_mask_extension(2, deleted, edge)
+                extension_checks2 += 1
 
     # Every side-three mask of size at most two.
     host3 = all_host_edges(3)
     masks3 = feasible3 = clean3 = dirty3 = candidates3 = 0
+    extension_checks3 = 0
     for size in range(3):
         for deleted in combinations(host3, size):
             manifest = exact_manifest(3, deleted)
@@ -364,6 +384,11 @@ def exhaustive_regression() -> dict[str, int]:
             clean3 += claims["clean_anchor_terminal"]
             dirty3 += claims["dirty_anchor_dispatch"]
             candidates3 += len(manifest["candidate_records"])
+            if size <= 1:
+                for edge in host3:
+                    if edge not in set(deleted):
+                        validate_mask_extension(3, tuple(deleted), edge)
+                        extension_checks3 += 1
 
     require(masks2 == 256 and feasible2 + infeasible2 == masks2,
             "side-two mask census drift")
@@ -377,11 +402,13 @@ def exhaustive_regression() -> dict[str, int]:
         "side_two_clean_anchors": clean2,
         "side_two_dirty_anchors": dirty2,
         "side_two_state_occurrences": state_occurrences2,
+        "side_two_mask_extension_checks": extension_checks2,
         "side_three_masks_size_at_most_two": masks3,
         "side_three_feasible_masks": feasible3,
         "side_three_clean_anchors": clean3,
         "side_three_dirty_anchors": dirty3,
         "side_three_candidate_records": candidates3,
+        "side_three_mask_extension_checks": extension_checks3,
     }
 
 
