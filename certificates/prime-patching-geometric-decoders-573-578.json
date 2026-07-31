@@ -1,0 +1,74 @@
+{
+  "schema_version": 3,
+  "branch": "research/all-n-prime-patching",
+  "tranche": "docs/573--578",
+  "theorem_range": "PP3cqp--PP3crg",
+  "candidate_field_completion": {
+    "boundary": "3/5",
+    "hall": "5/5",
+    "threshold": "4/5",
+    "prefix": "5/5",
+    "shell": "5/5",
+    "integration": "1/5"
+  },
+  "completed_candidate_fields": 23,
+  "total_candidate_fields": 30,
+  "candidate_complete_frontiers": [
+    "hall",
+    "prefix",
+    "shell"
+  ],
+  "frontiers": {
+    "boundary": {
+      "conversion_level": "inherited_line_state_obstruction",
+      "globally_legal_path_counts_by_blocks": [8, 282, 74, 4, 0],
+      "five_block_extension_attempts": 306,
+      "result": "no five-block word within offset radius 24"
+    },
+    "hall": {
+      "conversion_level": "repository_typed_complete_grid_decoder",
+      "host": "K_4,4",
+      "decoded_compatible_pairs": 12,
+      "matching_extensions_per_pair": 2,
+      "microscopic_orientation_witnesses": 24,
+      "remaining_gap": "coordinate-level prime-patching endpoint-cell identification"
+    },
+    "threshold": {
+      "conversion_level": "source_matrix_partial_normal_census",
+      "positive_source_cell_normals": 12,
+      "controlled": 4,
+      "hidden": 8,
+      "hidden_witness": [1, 1, 0, 0],
+      "remaining_gap": "complete actual residual threshold normal list"
+    },
+    "prefix": {
+      "conversion_level": "automaton_decoded_risk_census",
+      "terminal_inventory": [10, 11, 9],
+      "aggregate_support_nesting_risk": 638045608200,
+      "mean_support_nesting_risk": "110/29",
+      "remaining_gap": "coordinate-level support-chord cell decoder"
+    },
+    "shell": {
+      "conversion_level": "repository_source_action_aligned",
+      "derived_incidence": [[1, 0, 0], [0, 1, 0], [0, 0, 1]],
+      "minimum_l1_buffer": "6/5",
+      "remaining_gap": "clean-macro geometric resource identification"
+    },
+    "integration": {
+      "conversion_level": "fixture_derived",
+      "fixed_point_total": "705466760524005697/3623878655999606784",
+      "fixed_point_slack": "200502903475895999/3623878655999606784",
+      "actual_rows_promoted": 0
+    }
+  },
+  "actual_global_row_evidence": {
+    "boundary": "fixture_derived",
+    "hall": "fixture_derived",
+    "threshold": "fixture_derived",
+    "prefix": "fixture_derived",
+    "shell": "fixture_derived",
+    "integration": "fixture_derived"
+  },
+  "geometric_closure_allowed": false,
+  "next_theorem_identifier": "PP3crh"
+}
