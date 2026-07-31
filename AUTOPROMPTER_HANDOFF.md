@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-07-31 11:58 Australia/Melbourne
+Checkpoint time: 2026-07-31 12:05 Australia/Melbourne
 
 ## Goal
 
@@ -19,7 +19,7 @@ The asymptotic all-`n` theorem remains open. Existing results are finite reducti
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint head: `856d446b61fdc5464964d2ade924172804590cb1`
+- Verified pre-checkpoint head: `4812b59671cde542bb4ddac005be1fd6f5f8292b`
 - Pre-checkpoint head title: `Refresh repository continuity checkpoint`
 - The branch was remotely verified identical to that commit before this refresh.
 - Latest research-content head before continuity-only commits: `e97a9d92ecdd7fea86c9ef6c8d6bd76c3ea6ffd0` (`Index frontier reductions through docs 542`).
@@ -108,7 +108,7 @@ More specifically:
 ## Uncommitted work
 
 - No completed, reviewable in-session theorem, script, documentation, or continuity change was left uncommitted before this refresh.
-- The remote branch was verified identical to `856d446b61fdc5464964d2ade924172804590cb1` before updating this file.
+- The remote branch was verified identical to `4812b59671cde542bb4ddac005be1fd6f5f8292b` before updating this file.
 - No new project work was started during this checkpoint response.
 - The repository connector cannot inspect unrelated external local clones; changes outside this connected branch are not represented here.
 
