@@ -97,6 +97,10 @@ records validation execution and is not a proof certificate.
 
 ## Canonical masked-host and required-prefix T02 dispatch
 
+The predecessor masked-host endpoint is **CMR2828--CMR2839**. CMR2840--CMR2851
+adds the exact required-prefix context interface without changing its honesty
+boundary.
+
 For side \(n\), the labelled host is
 
 \[
