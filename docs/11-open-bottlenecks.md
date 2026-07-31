@@ -3,7 +3,7 @@
 ## 1. Current proof status
 
 The no-three-in-line conjecture remains open. The authoritative theorem ledger
-reaches **CMR2943**. The predecessor typed-transition endpoint **CMR2899** and
+reaches **CMR2967**. The predecessor typed-transition endpoint **CMR2899** and
 plain masked-host endpoint **CMR2839** remain part of the synchronized theorem
 history.
 
@@ -32,6 +32,8 @@ python scripts/check_prime_power_routing_change_context_ancestry.py
 python scripts/check_prime_power_routing_change_history_payment.py
 python scripts/check_prime_power_factor_child_product_ancestry.py
 python scripts/check_prime_power_mixed_child_deletion_ancestry.py
+python scripts/check_prime_power_forced_certificate_escape_ancestry.py
+python scripts/check_prime_power_target_edge_return_ancestry.py
 ```
 
 Dedicated Python 3.10/3.12 workflows include:
@@ -41,11 +43,13 @@ Dedicated Python 3.10/3.12 workflows include:
 .github/workflows/routing-change-ancestry-frontier.yml
 .github/workflows/factor-child-product-frontier.yml
 .github/workflows/mixed-child-deletion-frontier.yml
+.github/workflows/forced-certificate-escape-frontier.yml
+.github/workflows/target-edge-return-frontier.yml
 ```
 
-The legacy branch-wide regression, hard-core finite checkers, population bridge
-and final documentary/root checkers remain listed in `STATUS.md`. Inspect actual
-workflow runs before claiming CI success.
+The legacy branch-wide regression, hard-core finite checkers, population bridge,
+fixture, runtime manifest and final documentary/root checkers remain listed in
+`STATUS.md`. Inspect actual workflow runs before claiming CI success.
 
 ## 3. T01: source truth remains open
 
@@ -56,56 +60,69 @@ mathematical verification and human review.
 
 No sealed source record proves its statement true by itself.
 
-## 4. T02: local square/asymmetric engine
+## 4. T02: local context and typed transition engine
 
-The branch generates exact square and asymmetric feasible families, triple
-universes, anchors and targets. It is closed under deleted/required restrictions,
+The branch generates exact square and asymmetric families, triple universes,
+anchors and targets. It is closed under deleted/required restrictions,
 forced-set contraction and contraction composition. Every dirty context has the
 complete local preserving/improving/new-triple response.
 
 CMR2888--CMR2899 provide typed context identities and exact local deletion,
 conditioning, contraction and first-missing transitions.
 
-## 5. T02: routing-change ancestry
+## 5. T02: routing and fixed-product ancestry
 
-CMR2900--CMR2919 prove actual construction ancestry for the CMR656--CMR676
-routing-skeleton-change operation.
+CMR2900--CMR2919 prove actual construction ancestry for routing-skeleton changes,
+including theorem-derived factor/envelope labels, changed vertices,
+entering/leaving support, alternating-component union, finite routing stock and
+full-token payment.
 
-The factor envelope, old/new routing skeletons, changed vertices,
-entering/leaving support and routing-changing alternating-component union are
-reconstructed from literal factor matchings. Owner, factor, routing and envelope
-labels are theorem-derived.
+CMR2920--CMR2931 generate exact fixed-routing child products. Every positive
+child is strict in factor side and prefix depth. Mixed-clean dirty products hand
+off to the canonical strict child context.
 
-Fixed-factor histories have exact recurrent-edge versus finite-history
-alternatives and full-token payment.
+## 6. T02: mixed deletion and forced-certificate escape
 
-## 6. T02: fixed-routing product and strict child descent
+CMR2932--CMR2943 install the canonical active mixed-atom procedure. Every
+nonterminal deletion preserves a nonempty child product, destroys the selected
+atom, activates no new atom and spends one unit of the initial child-edge stock.
 
-CMR2920--CMR2931 generate one exact child context for every positive routing
-cell and prove the fixed-routing product bijection. Every child has matching size
-at most `d-1` and prefix depth `beta+1`.
+CMR2944--CMR2955 install all CMR643--CMR648 forced-certificate endpoints:
 
-In a mixed-clean product with no globally clean state, the canonical pure-dirty
-child receives an exact strict handoff.
+```text
+persistent certificate
+certificate-edge deletion
+selected-skeleton churn
+factor essentiality loss through restored entering edges
+```
 
-## 7. T02: mixed-child deletion
+Every affected alternating component receives entering support. Escape histories
+have the exact `3n^2` owner-labelled witness universe and inherited token
+payment.
 
-CMR2932--CMR2943 install the CMR677--CMR681 canonical procedure.
+## 7. T02: returned target edges
 
-For the first active mixed atom, the checker verifies the exact Cartesian
-occurrence box. If every atom edge is child-essential, the atom is a forced mixed
-certificate. Otherwise it deletes the first nonessential edge from its literal
-child context.
+CMR2956--CMR2967 install the CMR720--CMR726 target-edge return operation.
 
-Each deletion:
+The returned edge is a literal restored mask entry. The response is:
 
-- preserves a nonempty child product;
-- destroys the selected atom;
-- cannot activate a new atom;
-- strictly decreases the active mixed-atom set; and
-- spends one unit of the literal initial child-edge stock.
+```text
+stored avoidance survives
+  -> exact redeletion
 
-The procedure terminates at a mixed-clean product or a forced mixed certificate.
+stored avoidance blocked, target nonessential
+  -> canonical missing stored edge
+  -> exact alternate redeletion
+
+stored avoidance blocked, target essential
+  -> canonical missing stored edge
+  -> exact contraction
+  -> target rank at most two
+```
+
+Essential-return histories have a linear witness stock of size equal to the
+stored matching. Repeated blocking satisfies the exact absence-run versus
+reintroduction identity.
 
 Current construction flags include:
 
@@ -114,7 +131,13 @@ routing_change_construction_ancestry_proved = 1
 factor_product_construction_ancestry_proved = 1
 mixed_atom_deletion_ancestry_proved = 1
 mixed_clean_child_handoff_ancestry_proved = 1
-forced_mixed_certificate_escape_proved = 0
+forced_mixed_certificate_escape_proved = 1
+factor_restoration_essentiality_loss_transition_exact = 1
+returned_target_edge_ancestry_proved = 1
+returned_target_edge_restoration_exact = 1
+essential_target_contraction_exact = 1
+all_restoration_operations_proved = 0
+all_returned_edge_operations_proved = 0
 all_construction_ancestry_proved = 0
 global_transition_kind_bank_exhaustive = 0
 global_termination_proved = 0
@@ -124,15 +147,12 @@ all_n_proved_by_checker = 0
 
 ## 8. T02 global blocker
 
-The immediate blocker is the forced mixed-certificate escape of
-CMR643--CMR648. Its deletion, routing-change or entering-edge alternatives must
-be converted into literal typed context transitions with exact stock/payment.
-
-After that, install:
+The immediate uninstalled operation classes are:
 
 - owner changes;
-- closure-envelope changes;
-- restoration and returned-edge operations;
+- general closure-envelope expansion or contraction;
+- restorations outside forced-certificate essentiality loss and returned targets;
+- returned edges outside the target-edge theorem;
 - target-bank handoffs; and
 - recurrent scheduler steps.
 
@@ -141,8 +161,10 @@ labels, exact local ancestry and either strict descent or a separately finite
 stock. Any unmodelled restriction must be isolated rather than silently fitted
 to the current context class.
 
-Then prove the complete transition bank exhaustive and combine its individual
-endpoints into one global termination theorem.
+After installation, prove the transition-kind bank exhaustive. Then combine
+routing stock, mixed-deletion stock, forced-certificate witness stock,
+stored-matching witness stock, redeletions, contractions and strict child descents
+into one global termination theorem.
 
 ## 9. T03--T04: genuine population
 
@@ -181,10 +203,9 @@ ordinary mathematical review, T42 dossier sign-off and the T43 implication to
 
 ## 13. Immediate work order
 
-1. Install the CMR643--CMR648 forced mixed-certificate escape transition.
-2. Bind every escape alternative to an exact context and finite stock/descent.
-3. Install owner, envelope, restoration, returned-edge, target-handoff and
-   scheduler operations.
+1. Install owner and closure-envelope transition ancestry.
+2. Install target-bank handoff and recurrent scheduler transitions.
+3. Extend restoration and returned-edge ancestry beyond the two proved cases.
 4. Prove transition-bank exhaustiveness and global termination/descent.
 5. Populate and verify the T01 sources required by those operations.
 6. Generate genuine T02 records and T03/T04 populations.
