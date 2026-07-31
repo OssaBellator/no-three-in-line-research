@@ -428,7 +428,7 @@ def mutation_tests() -> int:
     for call in bad_calls:
         try:
             call()
-        except (RequiredPrefixGenerationError, StopIteration):
+        except (ValueError, StopIteration):
             rejected_total += 1
         else:
             raise RequiredPrefixGenerationError("malformed input accepted")
