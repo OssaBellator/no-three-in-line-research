@@ -1,0 +1,27 @@
+{
+  "schema": "ac-p31-support-seven-extreme-closure-v1",
+  "p": 31,
+  "n": 30,
+  "families": [
+    {
+      "distribution": [0,7],
+      "support_choices": 480700,
+      "partial_states": 171025856,
+      "complete_potential_at_most_two_states": 0,
+      "shards": [[0,200000,71934270],[200000,400000,71130721],[400000,480700,27960865]]
+    },
+    {
+      "distribution": [7,0],
+      "support_choices": 657800,
+      "partial_states": 144149641,
+      "complete_potential_at_most_two_states": 0,
+      "shards": [[0,200000,43015481],[200000,400000,45271252],[400000,600000,44659755],[600000,657800,11203153]]
+    }
+  ],
+  "totals": {
+    "support_choices": 1138500,
+    "partial_states": 315175497,
+    "complete_potential_at_most_two_states": 0
+  },
+  "scope": "Only the all-blue and all-red seven-extra distributions are closed. Six mixed distributions remain open."
+}
