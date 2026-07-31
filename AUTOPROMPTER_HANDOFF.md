@@ -1,122 +1,165 @@
 # Autoprompter continuity handoff
 
-## Checkpoint scope
-
-This file records repository continuity only. It does not add a mathematical claim, checker result, or new research frontier.
-
 ## Repository and branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Pre-checkpoint branch head: `45674d7a6c09dfd3c47ea5c20a804025a30926d9`
-- Authoritative theorem ledger endpoint: **CMR2827**
-- Mathematical status: the no-three-in-line conjecture remains open; every final checker preserves `all_n_proved_by_checker = 0`.
+- Authoritative theorem ledger endpoint: **CMR2851**
+- Mathematical status: the no-three-in-line conjecture remains open.
+- Every final and finite checker preserves `all_n_proved_by_checker = 0`.
 
-## Goal
+## Latest completed frontier
 
-Continue all current frontiers toward a rigorous prime-power/composite-modulus recurrence while preserving strict proof-status honesty. Prioritize genuine mathematical structure, source truth, real recurrence generation, and semantic closure over documentary or runtime-layer expansion.
+CMR2840--CMR2851 add the first genuine required-prefix parent-generation
+interface on top of the canonical masked host.
 
-## Completed and committed work
+A local context is now generated from:
 
-### Correctness and reproducibility
+```text
+side length n
++ deleted labelled-edge mask D
++ compatible required labelled-edge set P
+```
 
-- Corrected the earlier invalid `python -I` environment-control claim.
-- Installed the strict `python -B -S -s` runtime-manifest entrypoint.
-- Added deterministic source/runtime identity, sealed manifests, mutation rejection, Python 3.10/3.12 workflow integration, and branch-wide regression synchronization.
-- Restored the public regression validator functions used by the negative test suite.
+The checker reconstructs exactly
 
-### T21 finite scalar hard-core theory
+\[
+\mathcal F(n,D;P)=\{S\in\mathcal F(n,D):P\subseteq S\}
+\]
 
-The branch contains six exact finite scalar theorems for the eleven side-four hard-core hosts:
+and its exact realizable collinear-triple universe. It proves exact deleted-edge
+and required-edge extensions and realizes every first-missing prescription child
+as one generated context:
 
-1. exchange normal form and one explicit selector functional;
-2. sharp scalar realisability threshold;
-3. exact two-point classification;
-4. arbitrary-cardinality collinear-background formulas;
-5. arbitrary-background pivot-line energy identity and sharp bounds;
-6. extremal support-line stability and equality mechanisms.
+```text
+branch i < 3:
+  require the earlier prescription edges
+  delete the first missing edge
 
-The T03-to-T21 population bridge validates supplied hard-core survivor backgrounds and selector data. It does not supply genuine T03 populations or prove any of the twenty semantic chambers.
+branch 3:
+  require the full prescription
+```
 
-### T02 local recurrence structure
+The four branches are pairwise disjoint and exhaustive. A branch whose omitted
+edge was already required is an exact required/deleted contradiction terminal.
+The conditioned branch has an injective set contraction lowering labelled state
+cardinality by three.
 
-- Added a canonical first-missing prescription partition, producing duplicate-free deletion branches and one conditioned contraction branch.
-- Added the complete local target-response trichotomy relative to a supplied feasible family, anchor, exact triple universe, and target bank:
-  - target preservation -> exact target-core contraction;
-  - target destruction with lower potential -> strict improvement;
-  - target destruction without lower potential -> canonical new-triple first-missing response.
-- Removed the local external target-bank choice through canonical anchor dispatch:
-  - triple-free anchor -> clean local terminal;
-  - dirty anchor -> choose the least exact anchor triple and apply the complete local response rule.
-- The latest theorem contract is documented in `docs/441-prime-power-canonical-anchor-target-dispatch.md` and checked by `scripts/check_prime_power_canonical_target_dispatch.py`.
+The implementation and theorem chapter are:
 
-### Current synchronized validation inventory
+```text
+scripts/check_prime_power_required_prefix_parent_generation.py
+docs/443-prime-power-required-prefix-parent-generation.md
+proofs/composite-modulus-theorem-index-live-continuation-9.md
+```
 
-- Nine finite theorem checkers.
-- One T03/T21 population-bridge self-test.
-- Three structural self-tests.
-- Negative validator suite.
-- Strict runtime-manifest audit.
-- Complete current-frontier regression.
-- Python 3.10 and 3.12 GitHub Actions configuration.
+The contract digest is:
 
-No GitHub Actions result was observable through the connector for the pre-checkpoint head, so CI is configured but not claimed as passing.
+```text
+030398f03aae9f26e71ad867a49ad163752410fb3f6eb437cc2538fdba82e0e1
+```
 
-## Decisions and invariants
+Finite regression records:
 
-- Do not introduce T44; the atomic target bank remains T01--T43.
-- Do not mark any target proved merely because a schema, manifest, finite census, mutation suite, workflow, or bridge passes.
-- Keep `all_n_proved_by_checker = 0` in every final checker until a genuine reviewed proof exists.
-- Treat the CMR2818--CMR2827 dispatcher as a **local theorem relative to supplied family/anchor/triple-universe data**, not as the complete global parent rule.
-- The target-bank-choice issue is closed locally; do not re-open or duplicate it.
-- The highest-value T02 work is now global family/anchor/triple-universe generation and recurrence exhaustiveness.
-- For T21, do not add more free-standing scalar inequalities unless they bind to genuine recurrence-generated survivor backgrounds or semantic chamber consequences.
-- Use primary authoritative sources for T01. For PDFs, inspect the actual PDF pages and record stable locators; a sealed transcription is not a proof.
+```text
+2,592 valid side-two contexts
+511 feasible contexts
+2,081 infeasible contexts
+512 feasible-state occurrences
+728 side-three first-missing scenarios
+2,912 branch records
+1,624 nonempty branch records
+9 rejected malformed/corrupt cases
+```
 
-## Current blockers
+A dedicated workflow runs the masked-host and required-prefix checkers on Python
+3.10 and 3.12:
 
-### T01
+```text
+.github/workflows/required-prefix-frontier.yml
+```
 
-- Genuine source statements, locators, hashes, and ordinary mathematical verification remain incomplete.
+No workflow result was observable through the connector, so configuration is
+recorded but CI success is not claimed.
 
-### T02
+## What is genuinely closed locally
 
-- No theorem yet generates every genuine feasible parent family from the actual construction.
-- The intended anchor for every global parent is not yet generated and proved correct.
-- The supplied exact triple universe is not yet proved geometrically complete for every parent.
-- Global parent/closure-envelope types, finite parameter domains, exclusions, and recurrence alternatives are not yet classified exhaustively.
-- Repeated local dispatches are not yet proved terminating or globally contracting.
-
-### T03--T04
-
-- Genuine operation-slot payloads, survivor backgrounds, recurrent blocks, return rows, interface rows, and exact ancestry remain unpopulated.
-
-### T05--T21
-
-- Arbitrary-`n` geometry coverage, intended score/policy semantics, fate/state/resource/rank/row theorems, T19 global-family exhaustiveness, all 232 T20 chamber proofs, and all 20 T21 semantic chamber arguments remain open.
-
-### T22--T43
-
-- All ten final premise implications, six ordinary handoff arguments, final review, dossier sign-off, and the root implication to `D(n)=2n` remain open.
-
-## Uncommitted work
-
-- None known at this checkpoint.
-- All completed reviewable changes preceding this checkpoint were already committed on `research/all-n-composite-modulus`.
-- This handoff file is the only checkpoint change.
-
-## Exact next steps
-
-1. Re-fetch the branch head and this handoff before editing.
-2. Inspect the proved pre-interface recurrence chapters around CMR698--CMR869 and the T02 documentary schema to define the actual global parent object, its feasible family, intended anchor, and exact triple universe.
-3. Prove a first genuine global-generation clause from the construction, including exact hypotheses, parameter domain, exclusions, and canonical operation-slot keys.
-4. Build a checker that validates that clause from first principles and rejects malformed family, anchor, triple-universe, and ancestry data; keep `actual_global_parent_rule_complete = 0` unless all global cases are covered.
-5. Reconcile the clause into T02/T03 schemas and populate only the genuine slots it actually generates.
-6. In parallel, inspect T01 source registries (`docs/408`, `docs/409`, `docs/410`) and populate one authoritative primary-source statement with exact locator and verification artifact if available.
-7. Once genuine hard-core T03 backgrounds exist, run the existing population bridge and pursue destroyed-threshold, labelled-child, return/interface, recurrent-row, and chamber-semantic proofs.
-8. Update `STATUS.md`, `docs/11-open-bottlenecks.md`, the theorem ledger, workflow, and branch-wide regression only when a reviewable mathematical or correctness change is committed.
-9. Verify every new commit remotely before reporting success; do not claim unobserved CI results.
+- The masked feasible family is generated from `(n,D)`.
+- The contextual feasible family is generated from `(n,D,P)`.
+- Realizable labelled collinear triples are generated from each family.
+- Canonical anchors are generated from nonempty families.
+- Single-edge deletion children are literal mask extensions.
+- Positive prefix conditions are literal required-edge extensions.
+- Every first-missing child is an exact generated context or contradiction
+  terminal.
+- The first-missing contexts are disjoint and exhaustive.
+- The full-prescription branch contracts injectively as a finite set family.
 
 ## Immediate honesty boundary
 
-The branch through CMR2827 proves a deterministic local anchor dispatcher relative to supplied exact data. It does not prove global generation, recurrence exhaustiveness, termination, any exceptional chamber, or the no-three-in-line conjecture.
+CMR2851 does **not** prove that a conditioned residual is a standard smaller
+masked host. In particular, it does not yet specify or prove the exact:
+
+- row deletion and relabelling in each layer;
+- column deletion and relabelling in each layer;
+- opposite-layer physical-cell restrictions caused by prescribed cells;
+- inherited deleted and required masks after contraction;
+- preservation of collinearity under the chosen coordinate map; or
+- compatibility with factor, owner, routing and closure-envelope contexts.
+
+It also does not prove global context generation, recurrence exhaustiveness,
+termination, genuine T03/T04 population, any exceptional chamber, or the
+all-`n` implication.
+
+The permanent checker boundary is:
+
+```text
+conditioned_residual_standard_host_representability_proved = 0
+actual_global_parent_rule_complete = 0
+all_n_proved_by_checker = 0
+```
+
+## Exact next steps
+
+1. Define the residual host of a forced compatible prescription using explicit
+   surviving row and column sets in both layers.
+2. Prove the restriction/adjoin bijection between the conditioned contextual
+   family and that residual host, including opposite-layer forbidden physical
+   cells.
+3. Determine the precise criterion under which the residual host is isomorphic
+   to a standard smaller square masked host; otherwise introduce only the
+   minimal rectangular or asymmetric context type actually required.
+4. Prove the induced deleted/required mask transport and triple-universe map.
+5. Add exhaustive small-side verification and corruption rejection without
+   setting the global-parent or all-`n` flags.
+6. Trace the pre-interface contraction, owner, routing, factor and
+   closure-envelope chapters into the resulting context type.
+7. Update `docs/11-open-bottlenecks.md`, the current-frontier regression runner
+   and the main workflow once the contraction interface is reviewable.
+8. In parallel, populate one genuine T01 primary-source statement and one real
+   T03 operation slot only when exact source or construction ancestry is known.
+
+## Current global blockers
+
+### T01
+
+Genuine source statements, locators, hashes and ordinary mathematical
+verification remain incomplete.
+
+### T02
+
+The contraction/relabeling interface, actual global context sequence, all owner,
+routing, factor and closure-envelope transitions, recurrence exhaustiveness and
+termination remain open.
+
+### T03--T21
+
+Real operation slots, survivor backgrounds, recurrent blocks, interfaces,
+arbitrary-`n` coverage, score/state/resource/rank/row semantics, T19 global-family
+exhaustiveness, all 232 T20 chambers and all 20 T21 semantic arguments remain
+open.
+
+### T22--T43
+
+All ten final premise implications, six ordinary handoff arguments, final review,
+dossier sign-off and the root implication to `D(n)=2n` remain open.
