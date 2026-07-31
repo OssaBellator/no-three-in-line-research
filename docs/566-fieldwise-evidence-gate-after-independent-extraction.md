@@ -22,15 +22,15 @@ shell       5/5,
 integration 1/5.
 ```
 
-Thus `22` of `30` candidate fields are now represented by an exact finite
-construction or obstruction.  Only the corrected structural prefix model and
-the benchmark shell model are internally complete; neither is linked to the
+Thus `22` of `30` candidate fields are represented by an exact finite
+construction or obstruction.  Only the dual-graded structural prefix encoding
+and the benchmark shell model are internally complete; neither is linked to the
 actual prime-patching geometry.
 
 #### Proof
 
 Each completed field has a source definition and checker in `docs/561--565`.
-Each missing field is listed explicitly in the new machine-readable certificate.
+Each missing field is listed explicitly in the machine-readable certificate.
 Summation gives `22/30`. ∎
 
 ## 2. Exact arithmetic fixed point remains feasible
@@ -75,10 +75,11 @@ prime-patching closure.
 
 The boundary attempt ends in a seam obstruction; the Hall microcensus lacks a
 geometric decoder; the threshold source and transient fixtures disagree; the
-prefix risk is structural rather than geometric; and the shell incidence is a
-benchmark definition.  Hence every actual global row retains at least one
-missing geometric source field.  The closure rule requires both arithmetic
-feasibility and geometric verification of every row, so it remains false. ∎
+prefix risk belongs to the size-preserving encoding rather than a geometric
+incidence; and the shell incidence is a benchmark definition.  Hence every
+actual global row retains at least one missing geometric source field.  The
+closure rule requires both arithmetic feasibility and geometric verification of
+every row, so it remains false. ∎
 
 ## 4. Machine-readable evidence record
 
@@ -102,7 +103,7 @@ python scripts/check_frontier_561_566.py
 
 ## 5. Prime-patching consequence
 
-The new tranche makes progress without manufacturing a theorem from benchmarks.
+The tranche makes progress without manufacturing a theorem from benchmarks.
 The next work is sharply localized: a non-diagonal boundary seam mechanism, a
 geometric decoder for the Hall cylinder states, one aligned threshold source
 matrix and normal list, the actual geometric prefix risks, the true shell
