@@ -2,10 +2,10 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. Through **CMR2851**, this branch
-contains exact documentary interfaces for all 43 atomic targets, eleven finite
-theorem checkers, corrected runtime validation and one T03-to-T21 population
-bridge. The predecessor plain masked-host endpoint remains CMR2839.
+The no-three-in-line conjecture remains open. Through **CMR2887**, this branch
+contains exact documentary interfaces for all 43 atomic targets, fourteen finite
+local/scalar theorem checkers, corrected runtime validation and one T03-to-T21
+population bridge.
 
 Every final checker, finite theorem checker, bridge, fixture and regression
 permanently reports or preserves:
@@ -14,20 +14,20 @@ permanently reports or preserves:
 all_n_proved_by_checker = 0
 ```
 
-A locator, hash, finite census, selector inequality, bridge manifest, runtime
-manifest or workflow result is not evidence of the all-`n` theorem.
+A locator, source hash, finite census, selector inequality, context manifest,
+runtime manifest or workflow result is not evidence of the all-`n` theorem.
 
-## 2. Canonical validation
+## 2. Canonical local validation stack
 
 ```text
-python scripts/check_prime_power_canonical_frontier_roots.py --self-test
-python scripts/check_prime_power_all_open_target_fixture.py --self-test
-python scripts/test_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_canonical_prescription_partition.py
 python scripts/check_prime_power_target_trigger_response_partition.py
 python scripts/check_prime_power_canonical_target_dispatch.py
 python scripts/check_prime_power_masked_host_parent_generation.py
 python scripts/check_prime_power_required_prefix_parent_generation.py
+python scripts/check_prime_power_asymmetric_residual_host_contraction.py
+python scripts/check_prime_power_asymmetric_context_generation.py
+python scripts/check_prime_power_asymmetric_target_dispatch.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -35,181 +35,164 @@ python scripts/check_prime_power_hard_core_collinear_backgrounds.py
 python scripts/check_prime_power_hard_core_pivot_line_energy.py
 python scripts/check_prime_power_hard_core_extremal_stability.py
 python scripts/check_prime_power_hard_core_population_bridge.py --self-test
-python -B -S -s scripts/check_prime_power_reproducible_runtime_manifest.py --self-test \
-  --manifest artifacts/current-frontier-runtime.json
-python scripts/run_prime_power_current_frontier_regression.py
 ```
 
-The dedicated workflow `.github/workflows/required-prefix-frontier.yml` runs the
-masked-host and required-prefix checkers on Python 3.10 and 3.12. Inspect actual
-workflow runs and artifacts before claiming CI success.
+The new asymmetric stack is configured in dedicated Python 3.10/3.12 workflows:
 
-## 3. T01: source truth
+```text
+.github/workflows/asymmetric-residual-frontier.yml
+.github/workflows/asymmetric-context-frontier.yml
+.github/workflows/asymmetric-target-dispatch-frontier.yml
+```
 
-The source registry binds literal UTF-8 statement text, hashes and typed
-verification artifacts. The genuine work remains to transcribe, verify, prove
-or independently check, seal and review every mathematical source statement.
+Inspect actual workflow runs before claiming CI success.
+
+## 3. T01: source truth remains open
+
+The source registry binds literal UTF-8 statement text, hashes, source kinds and
+typed verification artifacts. The genuine work remains to:
+
+1. locate each authoritative primary source;
+2. record an exact stable statement locator;
+3. transcribe the exact mathematical statement;
+4. verify the statement hash against the transcription;
+5. provide an ordinary mathematical proof or independent verification artifact;
+6. review the proof rather than merely validate its schema; and
+7. bind the proved statement to every downstream source use.
+
 No sealed source record proves its statement true by itself.
 
-## 4. T02: deleted/required contexts closed locally, contraction interface open
+## 4. T02: complete local square/asymmetric engine, global generation open
 
-### Closed deterministic masked-host rule
+### 4.1 Square contexts
 
-For side \(n\), define the labelled two-layer host
+For side `n`, the labelled square host is
 
 \[
 H_n=\{0,1\}\times[n]\times[n].
 \]
 
-A saturated state is an ordered pair of permutation matchings with no shared
-physical cell. For a monotone deleted-edge mask \(D\), define
-
-\[
-\mathcal F(n,D)
-=
-\{S:S\text{ is saturated, layer-disjoint and }S\cap D=\varnothing\}.
-\]
-
-The checker reconstructs this family exactly and without duplicates. It also
-reconstructs the exact realizable triple universe
-
-\[
-\mathcal U(n,D)
-=
-\bigcup_{S\in\mathcal F(n,D)}
-\{T\subseteq S:|T|=3,\ T\text{ physically collinear}\}.
-\]
-
-Single-edge deletion is literal mask extension:
-
-\[
-\mathcal F(n,D\cup\{f\})
-=
-\{S\in\mathcal F(n,D):f\notin S\},
-\]
-
-with
-
-\[
-\mathcal U(n,D\cup\{f\})\subseteq\mathcal U(n,D).
-\]
-
-Thus the CMR830 abstract child \(\mathcal F-f\) is exactly the generated child
-under mask \(D\cup\{f\}\).
-
-### Closed required-prefix context rule
-
-For a compatible required-edge set \(P\), define
+A state is an ordered pair of permutation matchings with no shared physical cell.
+For deleted edges `D` and compatible required edges `P`, the local family is
 
 \[
 \mathcal F(n,D;P)
 =
-\{S\in\mathcal F(n,D):P\subseteq S\}.
+\{S:S\text{ is saturated and layer-disjoint},
+ S\cap D=\varnothing,
+ P\subseteq S\}.
 \]
 
-This contextual family, its exact triple universe and its least anchor are now
-generated rather than supplied. Requiring one additional compatible edge is the
-exact positive restriction
+The family, exact realizable triple universe, least anchor and least dirty-anchor
+target are generated rather than supplied. Deleted and required extensions are
+exact restrictions. Every first-missing child is one generated context.
+
+### 4.2 Forced-triple residual obstruction
+
+Removing a forced labelled triple leaves `2n-3` selected edges, which is odd.
+The three prescribed edges cannot split evenly across two layers, so the two
+residual matching sizes are unequal. Therefore the residual is not a standard
+equal-layer square host.
+
+The exact child is an asymmetric context with:
+
+- independent surviving row and column domains in each layer;
+- inherited deleted and required edges;
+- opposite-layer blockers at fixed physical cells;
+- original integer grid coordinates; and
+- an exact restriction/adjoin bijection.
+
+### 4.3 Asymmetric contexts
+
+An asymmetric context is
 
 \[
-\mathcal F(n,D;P\cup\{f\})
-=
-\{S\in\mathcal F(n,D;P):f\in S\}.
+(n;R_0,K_0,R_1,K_1;D,P),
+\qquad
+|R_\lambda|=|K_\lambda|,
 \]
 
-For a canonical prescription \(C=(f_0,f_1,f_2)\), every first-missing child is
-one exact deleted/required context:
+where the two layer matching sizes may differ. The checker generates the exact
+family, triple universe, canonical anchor and empty/clean/dirty dispatch.
+
+The class is closed under:
 
 ```text
-B0: delete f0
-B1: require f0; delete f1
-B2: require f0,f1; delete f2
-B3: require f0,f1,f2; contract the forced triple
+deleted-edge extension
+required-edge extension
+arbitrary compatible forced-set contraction
+repeated contraction composition
 ```
 
-A branch whose omitted edge was already required is an exact
-required/deleted contradiction terminal. The four branches are pairwise
-disjoint and exhaustive, every child triple universe is monotone, and the full
-prescription branch contracts injectively by three labelled edges.
+Sequential contractions give exactly the same domains, masks, required edges,
+family and triple universe as direct contraction of the union.
 
-The executable endpoints are:
+### 4.4 Complete local asymmetric response
+
+For every dirty asymmetric anchor and every alternative candidate:
 
 ```text
-python scripts/check_prime_power_canonical_prescription_partition.py
-python scripts/check_prime_power_target_trigger_response_partition.py
-python scripts/check_prime_power_canonical_target_dispatch.py
-python scripts/check_prime_power_masked_host_parent_generation.py
-python scripts/check_prime_power_required_prefix_parent_generation.py
+canonical target preserved
+  -> exact asymmetric forced-triple contraction
+
+canonical target destroyed with lower potential
+  -> strict improvement
+
+canonical target destroyed without lower potential
+  -> least genuinely new triple
+  -> disjoint first-missing asymmetric contexts
+  -> exact conditioned contraction in branch 3
 ```
 
-They record:
+The local theorem flags include:
 
 ```text
-conditional_parent_rule_clause_ready = 1
-local_target_response_rule_ready = 1
-canonical_target_bank_external_choice_required = 0
-local_anchor_dispatch_complete = 1
-masked_host_family_generated = 1
-triple_universe_generated_from_family = 1
-single_edge_mask_extension_exact = 1
-child_triple_universe_monotone = 1
-local_masked_parent_dispatch_complete = 1
-required_prefix_family_generated = 1
-required_prefix_restriction_exact = 1
-context_triple_universe_generated_from_family = 1
-deletion_extension_exact = 1
-required_edge_extension_exact = 1
-first_missing_contexts_generated = 1
-first_missing_partition_exact = 1
-first_missing_partition_pairwise_disjoint = 1
-conditioned_branch_set_contraction_exact = 1
-conditioned_residual_standard_host_representability_proved = 0
+asymmetric_residual_host_generated = 1
+asymmetric_context_family_generated = 1
+asymmetric_forced_set_contraction_exact = 1
+forced_contraction_composition_exact = 1
+local_asymmetric_candidate_response_complete = 1
 actual_global_parent_rule_complete = 0
+all_n_proved_by_checker = 0
 ```
 
-### Immediate T02 blocker: contraction and relabelling
+### 4.5 Remaining global T02 work
 
-The next theorem must characterize the residual of a forced compatible
-prescription. The open points are exact, not terminological:
+The missing theorem is no longer another local family or target convention. It
+is the actual construction-to-context bridge.
 
-1. which rows survive in each labelled layer;
-2. which columns survive in each labelled layer;
-3. how prescribed physical cells restrict the opposite layer;
-4. how surviving coordinates are relabelled;
-5. how deleted and required edges transport;
-6. whether physical collinearity is preserved by that coordinate map;
-7. when the residual is a standard smaller square masked host; and
-8. which minimal rectangular or asymmetric context is needed otherwise.
+For every genuine operation, prove the exact parent and child context data:
 
-The current checker proves only the injective set-family contraction. It does
-not promote the residual family to a standard host.
+1. operation kind;
+2. ambient coordinates and layer domains;
+3. deleted and required edges;
+4. owner and routing identifiers;
+5. factor and child identifiers;
+6. closure-envelope state;
+7. target and prescription ancestry;
+8. restoration or returned-edge data;
+9. the exact local theorem authorizing the child; and
+10. the global measure or finite stock paying for the transition.
 
-### Remaining global T02 work
+Then prove:
 
-After the contraction interface:
+- every genuine parent admits one listed transition kind;
+- no transition requires an unmodelled restriction;
+- the transition-kind bank is exhaustive;
+- every branch terminates, strictly improves, contracts, descends a factor, or
+  enters a separately finite owner-labelled stock; and
+- all terminal leaves have the intended mathematical meaning.
 
-1. prove which side, factor host and labelled coordinate system each genuine
-   parent uses;
-2. generate every initial and inherited deleted/required context from the actual
-   construction;
-3. prove every owner, routing and closure-envelope transition induces the
-   claimed context and relabelling;
-4. identify every additional restriction, if one exists;
-5. classify every parent/context type and prove the classification exhaustive;
-6. define every finite parameter axis and justify every exclusion;
-7. assign genuine raw hosts and ordered labels;
-8. bind every parent to exactly one admitted clause and slot; and
-9. prove that no recurrence alternative is omitted and every branch terminates
-   or reaches a successful descent.
+The declarative T02 clause and slot registries remain documentary until this
+construction-level bridge is supplied.
 
-The declarative clause enumerator remains exhaustive only relative to supplied
-cases and clauses.
-
-## 5. T03--T04: real population
+## 5. T03--T04: genuine operation population
 
 For every genuine T02 operation slot, enter literal:
 
 ```text
+parent_context
+child_contexts
 points
 removals
 survivor_background
@@ -223,35 +206,58 @@ row_loads
 transitions
 ```
 
-Keep data `populated` rather than `proved` until its source and T02 ancestry are
-established. T04 must assemble exact recurrent blocks, return rows, interface
-rows, off-diagonal rows, local states and route attachments.
+Keep data `populated` rather than `proved` until exact T01/T02 source and
+construction ancestry are established.
 
-## 6. T05--T10: geometry, policy and resources
+T04 must assemble exact recurrent blocks, return rows, interface rows,
+off-diagonal rows, local states and route attachments from those genuine slots.
 
-T05 must prove that the contextual host model and finite geometry bank cover
-every genuine arbitrary-`n` parent, including contractions or relabellings not
-represented by a square deleted/required context.
+## 6. T05: arbitrary-`n` geometry coverage
 
-T06 must prove the candidate score is the intended recurrence policy. T07 must
-prove every fate, state and transition record. T08--T10 must prove simultaneous
-row completeness, physical resource scope, routed-credit meaning and nonreuse.
+Prove that the square/asymmetric context class and every finite geometry theorem
+cover all genuine arbitrary-`n` operation contexts. In particular:
 
-## 7. T11--T18: contraction and global quotient
+- original-coordinate collinearity must agree with every construction use;
+- owner/routing/factor relabellings must preserve the stated geometry;
+- no compressed-coordinate map may be used without an affine-geometry proof;
+- every opposite-layer blocker and inherited mask must be exhaustive; and
+- finite exceptional side lengths must be handled explicitly.
+
+## 7. T06--T10: policy, fate and resources
+
+T06 must prove that each candidate score is the intended recurrence policy.
+T07 must prove every fate, state and transition record. T08--T10 must prove:
+
+- simultaneous row completeness;
+- physical resource scope;
+- routed-credit meaning;
+- injectivity and nonreuse; and
+- exact child-state semantics.
+
+Schema validation alone does not prove these meanings.
+
+## 8. T11--T18: recurrence quotient and semantic rows
 
 Every T11 recurrent block needs a genuine primitive positive state-weight
 vector, exact parent-row coverage, closure, strong connectivity and positive
-margin. T12 must prove every auxiliary expansion semantically valid. T13--T18
-still require genuine identities, scale meaning, interface exhaustiveness,
-well-founded ranks, predicate truth and final row theorems.
+margin. T12 must prove each auxiliary expansion semantically valid. T13--T18
+still require genuine:
 
-## 8. T19: global-family exhaustiveness
+- state identities;
+- scale meaning;
+- interface exhaustiveness;
+- well-founded ranks;
+- predicate truth;
+- global rescaling; and
+- final row theorems.
 
-The documentary family binds rows to the supplied T02 skeleton. The missing
-theorem is that the globally generated context tree and final row bank exhaust
-every genuine recurrence alternative for every parent state.
+## 9. T19: global-family exhaustiveness
 
-## 9. T20: 232 zero-selector chambers
+The documentary family binds final rows to a supplied T02 skeleton. The missing
+theorem is that the globally generated square/asymmetric context tree and final
+row bank exhaust every genuine recurrence alternative for every parent state.
+
+## 10. T20: 232 zero-selector chambers
 
 Every chamber needs genuine host geometry, the selected response,
 destroyed-threshold consequences, labelled child vectors, return/interface
@@ -259,60 +265,48 @@ terms, recurrent-row semantics and ordinary mathematical review.
 
 All 232 arguments remain open.
 
-## 10. T21: hard-core chambers
+## 11. T21: 20 hard-core chambers
 
-The scalar selector is exact for every supplied background:
+The finite scalar selector geometry is exact for every supplied background, and
+the T03 bridge validates supplied hard-core survivor data. It does not supply
+genuine recurrence backgrounds or prove chamber semantics.
 
-\[
-\Delta(B)=E_+(B)-E_-(B)+W(B)-3.
-\]
+The remaining sequence is:
 
-For \(m=|B|\),
+1. obtain genuine hard-core slots from the global T02 context-transition rule;
+2. populate every survivor background;
+3. run the existing bridge;
+4. prove owner-fate and destroyed-threshold consequences;
+5. prove labelled-vector, routed-credit, return/interface and recurrent-row
+   consequences; and
+6. review all 20 host-labelled chamber arguments.
 
-\[
--(m+1)(m+3)\le\Delta(B)\le(m-1)(m+3),
-\]
+## 12. T22--T43: final implications and review
 
-with sharp support-line stability.
+Prove and review:
 
-The population bridge:
+- all ten T22--T31 premise implications;
+- all six T35--T40 ordinary handoff arguments;
+- T41 mathematical review;
+- T42 dossier sign-off; and
+- the T43 implication to `D(n)=2n`.
 
-```text
-python scripts/check_prime_power_hard_core_population_bridge.py \
-  t03-certificate.json \
-  --write artifacts/hard-core-population-bridge.json
-```
+T32--T34 remain documentary aggregation gates and become effective only after
+their lower mathematical proof banks are genuinely complete.
 
-validates literal backgrounds, response families and selector data. It does not
-supply genuine T03 data or prove chamber semantics.
+## 13. Immediate work order
 
-The remaining sequence is to obtain genuine hard-core slots from the global
-T02 rule, populate every survivor background, run the bridge, prove owner-fate,
-destroyed-threshold, labelled-vector, routed-credit, return/interface and
-recurrent consequences, and review all 20 host-labelled chambers.
+1. Define the canonical global context-transition record.
+2. Trace one genuine pre-interface owner/routing/factor/envelope operation into
+   that record and prove its exact generated child context.
+3. Extend the bridge to every genuine operation kind.
+4. Prove the global transition bank exhaustive.
+5. Prove a well-founded global termination/descent measure.
+6. Populate and verify the T01 sources required by those operations.
+7. Generate genuine T02 records and T03/T04 populations.
+8. Run the T05--T21 engines on those real records.
+9. Prove the remaining semantic rows, chambers, premises, handoffs and root
+   theorem.
 
-## 11. T22--T43
-
-Prove and review all ten T22--T31 premise implications, all six T35--T40
-handoff arguments, the T41 mathematical review, the T42 dossier sign-off and
-the T43 implication to `D(n)=2n`.
-
-T32--T34 remain documentary aggregation gates.
-
-## 12. Immediate work order
-
-1. Prove the forced-prescription residual-host contraction and relabelling
-   interface.
-2. Determine whether the residual is square, rectangular or requires one
-   additional asymmetric context type.
-3. Prove deleted/required mask and triple-universe transport through that map.
-4. Trace every actual prime-power parent/closure transition into the resulting
-   context model.
-5. Prove the global context trigger bank exhaustive and terminating.
-6. Populate and prove the T01 sources required by those clauses.
-7. Generate the genuine T02 registry and enter exact T03/T04 populations.
-8. Run the T05--T21 finite engines on those real records.
-9. Prove the semantic rows, chambers, premises, handoffs and root theorem.
-
-No finite selector calculation, documentary checker or runtime manifest
-substitutes for the missing mathematical proofs.
+No finite selector calculation, local context checker, documentary registry or
+runtime manifest substitutes for the missing mathematical proofs.
