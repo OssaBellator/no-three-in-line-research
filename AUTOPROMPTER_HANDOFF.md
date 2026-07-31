@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-07-31 14:43 Australia/Melbourne
+Checkpoint time: 2026-07-31 15:15 Australia/Melbourne
 
 ## Goal
 
@@ -13,113 +13,129 @@ Develop a rigorous all-`n` prime-patching route for the no-three-in-line researc
 5. clean-macro shell attenuation and scheduling;
 6. global interaction/integration certificates.
 
-The asymptotic all-`n` theorem remains open. Existing results are finite reductions, exact certificates, conditional closure mechanisms, and independently enumerated candidate models; they must not be described as a completed proof of the all-`n` theorem.
+The asymptotic all-`n` theorem remains open. Existing results are finite reductions, exact certificates, conditional closure mechanisms, independently enumerated candidate models, and source-aligned benchmarks; they must not be described as a completed proof of the all-`n` theorem.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint head: `edddefecba87208f727d6c11aa63fb04cbb071f9`
-- Pre-checkpoint head title: `Index independent extraction theorems through docs 566`
+- Verified pre-checkpoint head: `44ad1092c09e94550e9c86825bdb930d3323eeac`
+- Pre-checkpoint head title: `Index source-conversion theorems through docs 572`
 - The branch was remotely verified identical to that commit before this refresh.
-- Latest research-content head before this continuity commit: `edddefecba87208f727d6c11aa63fb04cbb071f9`.
-- Next available theorem identifier: `PP3cpx`.
+- Latest research-content head before this continuity commit: `44ad1092c09e94550e9c86825bdb930d3323eeac`.
+- Next available theorem identifier: `PP3cqp`.
+
+## Corrective work in this checkpoint
+
+The exclusive node-grading claim previously recorded in `docs/564` was too strong. The original automaton series is correctly leaf-graded. Its eliminated equation also has a size-preserving unary-binary encoding in which the same exponent is encoded total-node count. The branch now records
+
+```text
+original leaf count = encoded total-node count,
+```
+
+while encoded leaves remain a separate statistic. The following files were corrected before the new tranche:
+
+- `docs/564-corrected-node-grading-and-risk-marked-prefix-dp.md`;
+- `scripts/check_node_graded_prefix_risk_dp.py`;
+- `docs/566-fieldwise-evidence-gate-after-independent-extraction.md`;
+- `certificates/prime-patching-independent-extraction-561-566.json`;
+- `proofs/prime-patching-parity-index-561-566-supplement.md`.
+
+The exact risk distribution, family size, aggregate `638045608200`, mean `110/29`, and witness extraction remain valid on the unary-binary encoding.
 
 ## Completed work
 
-The branch contains the cumulative six-frontier sequence through `docs/566`. The latest tranche is the independent extraction and obstruction sequence `docs/561--566`:
+The branch contains the cumulative six-frontier sequence through `docs/572`. The latest tranche is the source-conversion and obstruction sequence `docs/567--572`:
 
-- `docs/561-coordinate-level-four-seven-boundary-seam-attempt.md`
-  - Theorems `PP3cpf--PP3cph`.
-  - Independently enumerates saturated side-four and side-seven blocks with two points in every row and column and no collinear triple.
-  - Both blocks have four distinct dihedral variants.
-  - All 64 ordered diagonal seams fail; twenty-nine first witnesses have slope one.
-  - This rules out the simplest diagonal realization of the four/seven marker semigroup.
+- `docs/567-band-offset-boundary-cycle-obstruction.md`
+  - Theorems `PP3cpx--PP3cpz`.
+  - Enumerates 282 locally legal band-offset transitions for the explicit side-four and side-seven blocks within offset radius 24.
+  - Sharp minimum absolute offsets are `10,16,16,24` for `P->P,P->Q,Q->P,Q->Q`.
+  - Every zero-drift cycle of length two or three, and every shortest mixed length-four cycle, fails globally after two periods.
+  - Exact audit scope: 242 length-two cycles, 84 length-three cycles, and 1172 shortest mixed length-four cycles.
+  - The result proves that local seam state must be enlarged by long-range line-incidence history.
 
-- `docs/562-independent-cylinder-microcensus-for-hall-gadgets.md`
-  - Theorems `PP3cpi--PP3cpk`.
-  - Defines six microscopic states and four local choices before taking any quotient.
-  - Enumerates two exact `6 x 6` transition matrices with 36 positive entries and explicit choice witnesses.
-  - Of all 15 pair partitions, exactly the syndrome fibres are strongly lumpable for both gadgets.
-  - The quotient matrices recover the stored Hall kernels, but no prime-patching geometric decoder is supplied.
+- `docs/568-choice-grid-decoder-for-cylinder-hall-states.md`
+  - Theorems `PP3cqa--PP3cqc`.
+  - A state-only decoder is impossible because six microstates cannot encode twelve compatible grid pairs.
+  - The quotient-choice map `(s,c)->(c,c+s+1 mod 4)` is a bijection onto every ordered distinct pair in a complete four-by-four same-side choice grid.
+  - Every pair has exactly two microscopic witnesses per gadget, one for each orientation.
+  - The remaining gap is a map from the four abstract choices to actual endpoint cells.
 
-- `docs/563-source-layer-alignment-for-threshold-schedules.md`
-  - Theorems `PP3cpl--PP3cpn`.
-  - Proves layer-sum invariance and refutes direct identity of the `docs/521` and `docs/527` layer fixtures.
-  - The `docs/521` layers sum to the conservative matrix `M`; the `docs/527` cyclic alphabet sums to the all-ones matrix.
-  - In the later four-layer coordinates, only 6 of 1120 canonical primitive normals with coefficients in `[-3,3]` factor through the two-observable quotient.
+- `docs/569-aligned-conservative-threshold-layer-benchmark.md`
+  - Theorems `PP3cqd--PP3cqf`.
+  - Uses the original conservative matrix rather than an independent transient alphabet.
+  - Enumerates all 84 ordered four-permutation decompositions.
+  - Derived fixed-point and cyclic-forward observables have sharp minimum prefix discrepancy one, attained by 16 decompositions.
+  - The selected aligned quotient has rank three including the constant row.
+  - Of 1120 canonical primitive normals in `[-3,3]^4`, 145 are controlled and 975 are hidden.
 
-- `docs/564-corrected-node-grading-and-risk-marked-prefix-dp.md`
-  - Theorems `PP3cpo--PP3cpq`.
-  - Refutes the prior interpretation that `z` marks leaves in `T=z(1+T+uT^2)`; it marks total nodes.
-  - Correct interpretation: for total nodes `n` and binary nodes `j`, unary nodes are `n-1-2j` and leaves are `j+1`.
-  - At total size 30 and 9 binary nodes, the family size remains `168212023980`.
-  - An exact unary-to-unary risk DP gives aggregate risk `638045608200`, mean `110/29`, `153857776072` objects with risk at most five, and a deterministic risk-zero witness.
+- `docs/570-prefix-grading-propagation-and-risk-interface.md`
+  - Theorems `PP3cqg--PP3cqi`.
+  - Reconciles original leaf grading with encoded node grading through a size-preserving Motzkin encoding.
+  - At original leaf count and encoded size 30 with nine encoded binary nodes, the encoding has eleven unary nodes and ten encoded leaves; family size remains `168212023980`.
+  - The unary-to-unary risk is exact on the encoding but is not a geometric support/source risk without a decoder.
 
-- `docs/565-nonprecancelled-shell-incidence-benchmark.md`
-  - Theorems `PP3cpr--PP3cpt`.
-  - Applies the `A,A,B,B,C` service multiset to a full-rank physical incidence matrix with determinant `-2`.
-  - The physical word is not precancelled.
-  - Among all 30 orders, 10 attain minimum physical `l_1` reserve `6/5`; `ABABC` has buffer `(2/5,4/5,0)`.
-  - This is an identifiable benchmark, not the actual prime-patching shell incidence system.
+- `docs/571-canonical-source-service-shell-incidence.md`
+  - Theorems `PP3cqj--PP3cql`.
+  - Derives the identity incidence matrix from the `A/B/C` service-debt definitions instead of choosing an extra physical matrix.
+  - Among all 30 orders of `A,A,B,B,C`, ten attain minimum `l_1` reserve `6/5`.
+  - The lexicographic optimum `ABABC` has buffer `(0,2/5,4/5)` and is verified for 500 repeated prefixes.
 
-- `docs/566-fieldwise-evidence-gate-after-independent-extraction.md`
-  - Theorems `PP3cpu--PP3cpw`.
-  - Independent extraction completes 22 of 30 candidate source fields.
-  - Prefix and shell are internally complete benchmark models; no actual global row is promoted.
-  - The exact fixture fixed-point total remains
-    `705466760524005697/3623878655999606784`, with positive arithmetic slack.
-  - Geometric closure remains false because all six actual rows are still `fixture_derived`.
+- `docs/572-source-conversion-evidence-gate.md`
+  - Theorems `PP3cqm--PP3cqo`.
+  - Candidate field completion remains `22/30`; source-aligned benchmark quality improves but no missing geometric coordinate map is completed.
+  - The fixture fixed-point total remains
+    `705466760524005697/3623878655999606784` with positive slack.
+  - All six actual row evidence levels remain `fixture_derived`; zero rows are promoted.
 
 Machine-readable record:
 
-- `certificates/prime-patching-independent-extraction-561-566.json`
+- `certificates/prime-patching-source-conversions-567-572.json`
 
 Reproducibility files:
 
-- `scripts/check_boundary_coordinate_seam_attempt.py`
-- `scripts/check_independent_hall_microcensus.py`
-- `scripts/check_threshold_source_layer_alignment.py`
-- `scripts/check_node_graded_prefix_risk_dp.py`
-- `scripts/check_nonprecancelled_shell_incidence.py`
-- `scripts/check_independent_extraction_evidence_gate.py`
-- `scripts/check_frontier_561_566.py`
-- `proofs/prime-patching-parity-index-561-566-supplement.md`
+- `scripts/check_boundary_band_offset_cycles.py`
+- `scripts/check_hall_choice_grid_decoder.py`
+- `scripts/check_aligned_threshold_decompositions.py`
+- `scripts/check_prefix_grading_propagation.py`
+- `scripts/check_canonical_shell_service_incidence.py`
+- `scripts/check_source_conversion_evidence_gate.py`
+- `scripts/check_frontier_567_572.py`
+- `proofs/prime-patching-parity-index-567-572-supplement.md`
 
 The latest combined validation command is:
 
 ```bash
-python scripts/check_frontier_561_566.py
+python scripts/check_frontier_567_572.py
 ```
 
-All six new local diagnostics and `python -m py_compile` on the seven new scripts were run successfully before commit. The complete chained group runner was not re-executed in the disconnected local runtime because the repository cannot be cloned there; it invokes `scripts/check_frontier_555_560.py` first.
+All six new diagnostics, the corrected prior prefix diagnostic, and `python -m py_compile` on the new and corrected scripts were run successfully in the local execution runtime before commit. The complete chained group runner was not re-executed locally because the repository cannot be cloned into that runtime; it invokes `scripts/check_frontier_561_566.py` first.
 
-The exact new audit scope is 64 boundary seams, all 15 Hall pair partitions and 511 switch words, 1120 bounded primitive threshold normals, the complete corrected 30-node prefix risk distribution, all 30 shell orders with 500 repeated prefixes, and the exact coupled fixed point.
-
-The final research-content head was remotely verified identical to `edddefecba87208f727d6c11aa63fb04cbb071f9`.
+The final research-content head was remotely verified identical to `44ad1092c09e94550e9c86825bdb930d3323eeac`.
 
 ## Decisions and conventions
 
 - Continue on `research/all-n-prime-patching`.
 - Use sequential, reviewable commits and exact rational or integer arithmetic.
-- Continue theorem numbering from `PP3cpx`.
+- Continue theorem numbering from `PP3cqp`.
 - Every frontier tranche must include a stored certificate and checker.
 - Keep the six-frontier organization stable.
 - State explicitly that the all-`n` theorem remains open.
 - Do not replace proof obligations with bounded computation.
 - Track arithmetic feasibility separately from evidence provenance.
-- Preserve the corrected prefix grading: `z` marks total nodes, not leaves.
-- No global row may be promoted from an internally complete benchmark without a machine-checkable map to the prime-patching geometry.
+- Preserve the dual prefix grading: original leaves equal encoded total nodes.
+- No global row may be promoted from a repository-typed or source-derived benchmark without a machine-checkable map to prime-patching geometry.
 - Negative extraction results and minimal counterexamples are valid frontier progress.
 
 ## Blockers
 
-- Boundary: the direct diagonal four/seven seam model is now refuted. A realization needs different blocks, seam correctors, or a nontrivial permutation of row and column bands.
-- Hall: the independent cylinder microcensus is exact, but its states and choices have no coordinate-level prime-patching decoder.
-- Threshold: the source conservative matrix and transient layer alphabet are different fixtures. One aligned matrix/decomposition/observable/normal data set is required.
-- Prefix: the grading is corrected and one structural risk is completely enumerated, but the actual geometric support/source risk coordinates remain undefined.
-- Shell: a nonprecancelled full-rank benchmark is complete, but the true shell resources and incidence entries are still absent.
-- Integration: all direct loss rows and coupling coefficients remain fixture-derived; finite small lengths remain downstream of genuine realization.
+- Boundary: locally legal band offsets exist, but short zero-drift cycles fail through long-range collinearities. A sound controller needs line-history state, destructive seam correctors, or new blocks.
+- Hall: the cylinder quotient choices now type-check as a complete four-by-four choice grid, but the four choice labels are not identified with actual endpoint cells or matching moves.
+- Threshold: source matrix, decomposition, and observables are aligned for one benchmark. The actual residual threshold normal list is still absent; 975 of 1120 bounded normals would be hidden.
+- Prefix: leaf/node grading is reconciled and one encoded structural risk is exact. No decoder to actual support-chord/source incidence risks exists.
+- Shell: the service-debt incidence is source-derived for the abstract period, but those debts are not identified with the actual clean-macro shell resources.
+- Integration: all direct loss rows and coupling coefficients remain fixture-derived. Finite small lengths remain downstream of genuine realization.
 
 ## Uncommitted work
 
@@ -130,12 +146,12 @@ The final research-content head was remotely verified identical to `edddefecba87
 ## Exact next steps
 
 1. Fetch this handoff and verify the branch head.
-2. Start theorem numbering at `PP3cpx`.
-3. Build `docs/567--572` around the next source-level conversions, not new abstract optimizers.
-4. Boundary: enumerate band-permuted placements and bounded seam-corrector states for the explicit four/seven blocks; preserve a minimal long-range collinearity witness if no cycle exists.
-5. Hall: attempt to decode the independent cylinder states into one existing rectangle, resource-star, or local matching gadget from the PP3 chain; otherwise prove a type mismatch.
-6. Threshold: choose one conservative source matrix, enumerate all its valid permutation decompositions, attach observables to those exact layers, and compute the complete listed normal coverage.
-7. Prefix: propagate the node-grading correction into the affected earlier chapters and add the first repository-defined geometric risk coordinate to the exact DP.
-8. Shell: locate or define source-level geometric shell resources and derive incidence entries rather than choosing them; test a nonprecancelled word.
-9. Integration: promote only fields with a source path, recompute the evidence meet and fixed point, and keep the closure gate closed otherwise.
+2. Start theorem numbering at `PP3cqp`.
+3. Build `docs/573--578` around the next geometric decoders rather than additional abstract optimizers.
+4. Boundary: augment the band-offset state with a canonical finite set of inherited line signatures; search for a globally legal strongly connected component or prove state growth is unbounded.
+5. Hall: instantiate the four abstract choice labels as cells in one explicit resource-star or complete-grid host from the earlier PP3 chain; verify every decoded pair has a matching-extension witness.
+6. Threshold: extract a first actual threshold normal from an earlier prime-patching inequality and test it against the aligned quotient; preserve an exact hidden-normal witness if it fails.
+7. Prefix: define one geometric incidence risk on the size-preserving encoding by mapping encoded constructors to support-chord cells; reconstruct its aggregate with the existing DP.
+8. Shell: identify one actual shell service action and derive its incidence vector in the canonical service-debt coordinates.
+9. Integration: promote only a row with a complete source path, recompute the evidence meet and fixed point, and leave closure false otherwise.
 10. Run the new diagnostics, `python -m py_compile scripts/*.py`, and the previous group runner when a complete runtime is available; re-verify the remote head and refresh this handoff.
