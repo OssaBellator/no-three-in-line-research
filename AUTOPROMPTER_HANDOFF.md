@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-07-31 15:15 Australia/Melbourne
+Checkpoint time: 2026-07-31 15:40 Australia/Melbourne
 
 ## Goal
 
@@ -13,145 +13,119 @@ Develop a rigorous all-`n` prime-patching route for the no-three-in-line researc
 5. clean-macro shell attenuation and scheduling;
 6. global interaction/integration certificates.
 
-The asymptotic all-`n` theorem remains open. Existing results are finite reductions, exact certificates, conditional closure mechanisms, independently enumerated candidate models, and source-aligned benchmarks; they must not be described as a completed proof of the all-`n` theorem.
+The asymptotic all-`n` theorem remains open. Existing results are finite reductions, exact certificates, conditional closure mechanisms, independently enumerated candidate models, source-aligned benchmarks, and repository-typed decoders; they must not be described as a completed proof.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint head: `44ad1092c09e94550e9c86825bdb930d3323eeac`
-- Pre-checkpoint head title: `Index source-conversion theorems through docs 572`
-- The branch was remotely verified identical to that commit before this refresh.
-- Latest research-content head before this continuity commit: `44ad1092c09e94550e9c86825bdb930d3323eeac`.
-- Next available theorem identifier: `PP3cqp`.
-
-## Corrective work in this checkpoint
-
-The exclusive node-grading claim previously recorded in `docs/564` was too strong. The original automaton series is correctly leaf-graded. Its eliminated equation also has a size-preserving unary-binary encoding in which the same exponent is encoded total-node count. The branch now records
-
-```text
-original leaf count = encoded total-node count,
-```
-
-while encoded leaves remain a separate statistic. The following files were corrected before the new tranche:
-
-- `docs/564-corrected-node-grading-and-risk-marked-prefix-dp.md`;
-- `scripts/check_node_graded_prefix_risk_dp.py`;
-- `docs/566-fieldwise-evidence-gate-after-independent-extraction.md`;
-- `certificates/prime-patching-independent-extraction-561-566.json`;
-- `proofs/prime-patching-parity-index-561-566-supplement.md`.
-
-The exact risk distribution, family size, aggregate `638045608200`, mean `110/29`, and witness extraction remain valid on the unary-binary encoding.
+- Verified pre-checkpoint research head: `45f2729faa207fc65c588f95b65668ede78fc854`
+- Pre-checkpoint head title: `Index geometric-decoder theorems through docs 578`
+- Next available theorem identifier: `PP3crh`.
 
 ## Completed work
 
-The branch contains the cumulative six-frontier sequence through `docs/572`. The latest tranche is the source-conversion and obstruction sequence `docs/567--572`:
+The branch contains the cumulative six-frontier sequence through `docs/578`. The latest tranche is `docs/573--578`:
 
-- `docs/567-band-offset-boundary-cycle-obstruction.md`
-  - Theorems `PP3cpx--PP3cpz`.
-  - Enumerates 282 locally legal band-offset transitions for the explicit side-four and side-seven blocks within offset radius 24.
-  - Sharp minimum absolute offsets are `10,16,16,24` for `P->P,P->Q,Q->P,Q->Q`.
-  - Every zero-drift cycle of length two or three, and every shortest mixed length-four cycle, fails globally after two periods.
-  - Exact audit scope: 242 length-two cycles, 84 length-three cycles, and 1172 shortest mixed length-four cycles.
-  - The result proves that local seam state must be enlarged by long-range line-incidence history.
+- `docs/573-inherited-line-state-obstruction-for-boundary-words.md`
+  - Theorems `PP3cqp--PP3cqr`.
+  - Exact inherited pair-line signatures decide every next-block extension.
+  - Globally legal path counts inside offset radius 24 are `8,282,74,4,0` for one through five blocks.
+  - The four length-four survivors have 496 distinct pair lines.
+  - All 306 adjacent-legal fifth-step attempts fail.
 
-- `docs/568-choice-grid-decoder-for-cylinder-hall-states.md`
-  - Theorems `PP3cqa--PP3cqc`.
-  - A state-only decoder is impossible because six microstates cannot encode twelve compatible grid pairs.
-  - The quotient-choice map `(s,c)->(c,c+s+1 mod 4)` is a bijection onto every ordered distinct pair in a complete four-by-four same-side choice grid.
-  - Every pair has exactly two microscopic witnesses per gadget, one for each orientation.
-  - The remaining gap is a map from the four abstract choices to actual endpoint cells.
+- `docs/574-complete-grid-extension-decoder-for-hall-choices.md`
+  - Theorems `PP3cqs--PP3cqu`.
+  - The quotient-choice map bijects onto the twelve compatible pairs incident with two fixed left resources of `K_4,4`.
+  - Every decoded pair leaves `K_2,2`, hence has exactly two perfect-matching extensions.
+  - Both microscopic orientations witness every pair.
+  - The remaining gap is coordinate-level identification of the four choice labels with actual prime-patching endpoint cells.
 
-- `docs/569-aligned-conservative-threshold-layer-benchmark.md`
-  - Theorems `PP3cqd--PP3cqf`.
-  - Uses the original conservative matrix rather than an independent transient alphabet.
-  - Enumerates all 84 ordered four-permutation decompositions.
-  - Derived fixed-point and cyclic-forward observables have sharp minimum prefix discrepancy one, attained by 16 decompositions.
-  - The selected aligned quotient has rank three including the constant row.
-  - Of 1120 canonical primitive normals in `[-3,3]^4`, 145 are controlled and 975 are hidden.
+- `docs/575-source-cell-normal-census-for-threshold-layers.md`
+  - Theorems `PP3cqv--PP3cqx`.
+  - Extracts all twelve positive source-cell occupancy normals from the aligned conservative decomposition.
+  - Four factor through the constant/fixed/forward quotient and eight are hidden.
+  - Cell `(0,0)` gives the hidden witness `(1,1,0,0)`.
 
-- `docs/570-prefix-grading-propagation-and-risk-interface.md`
-  - Theorems `PP3cqg--PP3cqi`.
-  - Reconciles original leaf grading with encoded node grading through a size-preserving Motzkin encoding.
-  - At original leaf count and encoded size 30 with nine encoded binary nodes, the encoding has eleven unary nodes and ten encoded leaves; family size remains `168212023980`.
-  - The unary-to-unary risk is exact on the encoding but is not a geometric support/source risk without a decoder.
+- `docs/576-automaton-support-leaf-risk-decoder.md`
+  - Theorems `PP3cqy--PP3cra`.
+  - Decodes encoded constructors into state-0, state-1, and state-2 terminals of the original automaton.
+  - At original leaf count thirty and binary profile nine, terminal inventory is `(10,11,9)`.
+  - Unary-to-unary risk is exact consecutive nesting of state-1 support terminals.
+  - Aggregate risk remains `638045608200`, mean `110/29`.
 
-- `docs/571-canonical-source-service-shell-incidence.md`
-  - Theorems `PP3cqj--PP3cql`.
-  - Derives the identity incidence matrix from the `A/B/C` service-debt definitions instead of choosing an extra physical matrix.
-  - Among all 30 orders of `A,A,B,B,C`, ten attain minimum `l_1` reserve `6/5`.
-  - The lexicographic optimum `ABABC` has buffer `(0,2/5,4/5)` and is verified for 500 repeated prefixes.
+- `docs/577-source-action-bridge-for-shell-service.md`
+  - Theorems `PP3crb--PP3crd`.
+  - The unit source actions `A,B,C` force identity incidence in the canonical debt coordinates.
+  - Transfers the three `ABC` phase buffers and the `AABBC` optimum without an extra incidence fixture.
+  - The minimum `l_1` reserve remains `6/5`.
 
-- `docs/572-source-conversion-evidence-gate.md`
-  - Theorems `PP3cqm--PP3cqo`.
-  - Candidate field completion remains `22/30`; source-aligned benchmark quality improves but no missing geometric coordinate map is completed.
-  - The fixture fixed-point total remains
-    `705466760524005697/3623878655999606784` with positive slack.
-  - All six actual row evidence levels remain `fixture_derived`; zero rows are promoted.
+- `docs/578-geometric-decoder-evidence-gate.md`
+  - Theorems `PP3cre--PP3crg`.
+  - Candidate completion rises from `22/30` to `23/30`; Hall joins prefix and shell as an internally complete repository-typed model.
+  - The fixture fixed-point total remains `705466760524005697/3623878655999606784` with positive slack.
+  - All six actual direct rows remain `fixture_derived`; zero rows are promoted and geometric closure remains false.
 
 Machine-readable record:
 
-- `certificates/prime-patching-source-conversions-567-572.json`
+- `certificates/prime-patching-geometric-decoders-573-578.json`
 
 Reproducibility files:
 
-- `scripts/check_boundary_band_offset_cycles.py`
-- `scripts/check_hall_choice_grid_decoder.py`
-- `scripts/check_aligned_threshold_decompositions.py`
-- `scripts/check_prefix_grading_propagation.py`
-- `scripts/check_canonical_shell_service_incidence.py`
-- `scripts/check_source_conversion_evidence_gate.py`
-- `scripts/check_frontier_567_572.py`
-- `proofs/prime-patching-parity-index-567-572-supplement.md`
+- `scripts/check_boundary_inherited_line_states.py`
+- `scripts/check_hall_complete_grid_extensions.py`
+- `scripts/check_threshold_source_cell_normals.py`
+- `scripts/check_prefix_support_leaf_risk_decoder.py`
+- `scripts/check_shell_source_action_bridge.py`
+- `scripts/check_geometric_decoder_evidence_gate.py`
+- `scripts/check_frontier_573_578.py`
+- `proofs/prime-patching-parity-index-573-578-supplement.md`
 
 The latest combined validation command is:
 
 ```bash
-python scripts/check_frontier_567_572.py
+python scripts/check_frontier_573_578.py
 ```
 
-All six new diagnostics, the corrected prior prefix diagnostic, and `python -m py_compile` on the new and corrected scripts were run successfully in the local execution runtime before commit. The complete chained group runner was not re-executed locally because the repository cannot be cloned into that runtime; it invokes `scripts/check_frontier_561_566.py` first.
-
-The final research-content head was remotely verified identical to `44ad1092c09e94550e9c86825bdb930d3323eeac`.
+All six new standalone diagnostics and `python -m py_compile` on the new scripts passed in the local execution runtime before commit. The complete chained runner was not re-executed locally because the repository cannot be cloned into that runtime; it invokes `scripts/check_frontier_567_572.py` first.
 
 ## Decisions and conventions
 
 - Continue on `research/all-n-prime-patching`.
 - Use sequential, reviewable commits and exact rational or integer arithmetic.
-- Continue theorem numbering from `PP3cqp`.
-- Every frontier tranche must include a stored certificate and checker.
+- Continue theorem numbering from `PP3crh`.
 - Keep the six-frontier organization stable.
+- Every tranche must include a stored certificate and checker.
 - State explicitly that the all-`n` theorem remains open.
 - Do not replace proof obligations with bounded computation.
 - Track arithmetic feasibility separately from evidence provenance.
 - Preserve the dual prefix grading: original leaves equal encoded total nodes.
-- No global row may be promoted from a repository-typed or source-derived benchmark without a machine-checkable map to prime-patching geometry.
+- Treat repository-typed decoders as intermediate evidence, not geometric row verification.
 - Negative extraction results and minimal counterexamples are valid frontier progress.
 
-## Blockers
+## Current blockers
 
-- Boundary: locally legal band offsets exist, but short zero-drift cycles fail through long-range collinearities. A sound controller needs line-history state, destructive seam correctors, or new blocks.
-- Hall: the cylinder quotient choices now type-check as a complete four-by-four choice grid, but the four choice labels are not identified with actual endpoint cells or matching moves.
-- Threshold: source matrix, decomposition, and observables are aligned for one benchmark. The actual residual threshold normal list is still absent; 975 of 1120 bounded normals would be hidden.
-- Prefix: leaf/node grading is reconciled and one encoded structural risk is exact. No decoder to actual support-chord/source incidence risks exists.
-- Shell: the service-debt incidence is source-derived for the abstract period, but those debts are not identified with the actual clean-macro shell resources.
-- Integration: all direct loss rows and coupling coefficients remain fixture-derived. Finite small lengths remain downstream of genuine realization.
+- Boundary: the explicit four/seven catalogue has no five-block realization inside offset radius 24. The next attempt needs a larger-offset proof/search, seam point replacements, new blocks, or a compressed inherited-line invariant.
+- Hall: complete-grid cells and extension witnesses exist, but the four choice labels are not tied to actual coordinate-level endpoint cells of a prime-patching host.
+- Threshold: eight of twelve canonical positive source-cell normals are hidden from the aligned quotient; the complete actual geometric inequality list remains absent.
+- Prefix: support nesting is decoded to the original automaton, but automaton terminals are not identified with coordinate-level support-chord cells.
+- Shell: source service actions align exactly, but canonical debts are not identified with actual clean-macro resources.
+- Integration: all direct rows and couplings remain fixture-derived; finite small lengths remain downstream of genuine realization.
 
 ## Uncommitted work
 
-- No completed theorem, script, certificate, proof supplement, or continuity change is left uncommitted.
-- The latest research-content head was verified remotely before this handoff update.
+- No completed theorem, script, certificate, supplement, or continuity change is left uncommitted.
 - The repository connector cannot inspect unrelated external local clones.
 
 ## Exact next steps
 
 1. Fetch this handoff and verify the branch head.
-2. Start theorem numbering at `PP3cqp`.
-3. Build `docs/573--578` around the next geometric decoders rather than additional abstract optimizers.
-4. Boundary: augment the band-offset state with a canonical finite set of inherited line signatures; search for a globally legal strongly connected component or prove state growth is unbounded.
-5. Hall: instantiate the four abstract choice labels as cells in one explicit resource-star or complete-grid host from the earlier PP3 chain; verify every decoded pair has a matching-extension witness.
-6. Threshold: extract a first actual threshold normal from an earlier prime-patching inequality and test it against the aligned quotient; preserve an exact hidden-normal witness if it fails.
-7. Prefix: define one geometric incidence risk on the size-preserving encoding by mapping encoded constructors to support-chord cells; reconstruct its aggregate with the existing DP.
-8. Shell: identify one actual shell service action and derive its incidence vector in the canonical service-debt coordinates.
-9. Integration: promote only a row with a complete source path, recompute the evidence meet and fixed point, and leave closure false otherwise.
-10. Run the new diagnostics, `python -m py_compile scripts/*.py`, and the previous group runner when a complete runtime is available; re-verify the remote head and refresh this handoff.
+2. Start theorem numbering at `PP3crh`.
+3. Build `docs/579--584` around coordinate-level identification or decisive obstructions.
+4. Boundary: test offsets beyond 24 with symmetry and inherited-line pruning, or introduce a finite seam-corrector deletion/replacement catalogue.
+5. Hall: instantiate the four decoded columns as actual endpoint cells in one explicit earlier PP3 host and verify residual matching extension after all geometric exclusions.
+6. Threshold: extract the first actual residual geometric inequality and determine whether its normal is one of the four controlled cell directions or one of the eight hidden directions.
+7. Prefix: map automaton state terminals to explicit support-chord cells and test whether state-1 nesting corresponds to a real conflict count.
+8. Shell: identify one clean-macro resource whose service vector is one of the canonical unit actions and derive the remaining resource coordinates.
+9. Integration: promote only rows with a complete coordinate source path; otherwise preserve the closed evidence gate.
+10. Run all new diagnostics, Python compilation, the chained runner in a complete checkout, verify the remote head, and refresh this handoff.
