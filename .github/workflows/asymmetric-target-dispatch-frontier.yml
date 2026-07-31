@@ -1,0 +1,51 @@
+name: Asymmetric target-dispatch frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - "scripts/check_prime_power_masked_host_parent_generation.py"
+      - "scripts/check_prime_power_required_prefix_parent_generation.py"
+      - "scripts/check_prime_power_asymmetric_residual_host_contraction.py"
+      - "scripts/check_prime_power_asymmetric_context_generation.py"
+      - "scripts/check_prime_power_asymmetric_target_dispatch.py"
+      - "docs/446-prime-power-asymmetric-target-dispatch.md"
+      - ".github/workflows/asymmetric-target-dispatch-frontier.yml"
+  pull_request:
+    paths:
+      - "scripts/check_prime_power_masked_host_parent_generation.py"
+      - "scripts/check_prime_power_required_prefix_parent_generation.py"
+      - "scripts/check_prime_power_asymmetric_residual_host_contraction.py"
+      - "scripts/check_prime_power_asymmetric_context_generation.py"
+      - "scripts/check_prime_power_asymmetric_target_dispatch.py"
+      - "docs/446-prime-power-asymmetric-target-dispatch.md"
+      - ".github/workflows/asymmetric-target-dispatch-frontier.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  asymmetric-target-dispatch:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile target-dispatch stack
+        run: |
+          python -m py_compile \
+            scripts/check_prime_power_masked_host_parent_generation.py \
+            scripts/check_prime_power_required_prefix_parent_generation.py \
+            scripts/check_prime_power_asymmetric_residual_host_contraction.py \
+            scripts/check_prime_power_asymmetric_context_generation.py \
+            scripts/check_prime_power_asymmetric_target_dispatch.py
+      - name: Run asymmetric context checker
+        run: python scripts/check_prime_power_asymmetric_context_generation.py
+      - name: Run asymmetric target-dispatch checker
+        run: python scripts/check_prime_power_asymmetric_target_dispatch.py
