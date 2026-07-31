@@ -1,0 +1,24 @@
+{
+  "schema": "ac-p31-support-six-balanced-closure-v1",
+  "p": 31,
+  "n": 30,
+  "distribution": [3,3],
+  "support_choices": 5980000,
+  "partial_states": 577440893,
+  "complete_potential_at_most_two_states": 0,
+  "shards": [
+    {"lo":0,"hi":500000,"partial_states":43527834},
+    {"lo":500000,"hi":1000000,"partial_states":47398791},
+    {"lo":1000000,"hi":1500000,"partial_states":47083933},
+    {"lo":1500000,"hi":2000000,"partial_states":45227886},
+    {"lo":2000000,"hi":2500000,"partial_states":49218031},
+    {"lo":2500000,"hi":3000000,"partial_states":54575439},
+    {"lo":3000000,"hi":3500000,"partial_states":47839434},
+    {"lo":3500000,"hi":4000000,"partial_states":40880803},
+    {"lo":4000000,"hi":4500000,"partial_states":60497458},
+    {"lo":4500000,"hi":5000000,"partial_states":44582148},
+    {"lo":5000000,"hi":5500000,"partial_states":44852772},
+    {"lo":5500000,"hi":5980000,"partial_states":51756364}
+  ],
+  "conclusion": "No endpoint of potential at most two exists when exactly three red and three blue extra row addresses are added to the nine-address three-triple core support."
+}
