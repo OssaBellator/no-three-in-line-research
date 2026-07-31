@@ -1,6 +1,6 @@
 # AUTOPROMPTER HANDOFF
 
-Checkpoint updated: 2026-07-31 11:25 Australia/Melbourne.
+Checkpoint updated: 2026-07-31 12:52 Australia/Melbourne.
 
 ## Repository and current branch
 
@@ -84,7 +84,7 @@ At the committed six-triple state, complete components at barriers 6, 7, 8, and 
 
 ## Completed session results not yet materialized as repository certificates
 
-The following were obtained and replay-checked during the interrupted research session. Their exact move arrays and predecessor forests are not present in the repository and must be regenerated before these become repository-backed theorem claims.
+The following results were obtained and replay-checked during the interrupted research session. Their exact move arrays and predecessor forests are not present in the repository and must be regenerated before they become repository-backed theorem claims.
 
 ### Six triples to five
 
@@ -125,7 +125,7 @@ Latest reliable session ledger:
 - the queue had not closed;
 - therefore no claim that barrier 10 is necessary has been proved.
 
-A separate barrier-ten goal search had been considered, but no repository-backed `3 -> 2` path exists.
+No repository-backed `3 -> 2` path exists. Any barrier-ten candidate search remains exploratory until its physical path is lifted and replayed.
 
 ## Decisions and proof standards
 
@@ -142,7 +142,7 @@ A separate barrier-ten goal search had been considered, but no repository-backed
 ## Blockers
 
 - The exact physical move arrays for the completed session segments `6 -> 5`, `5 -> 4`, and `4 -> 3` were not preserved in repository files.
-- No local workspace artifacts are available in the current checkpoint tool session, so there are no additional reviewable files available to commit beyond this continuity update.
+- No local workspace artifacts are available in this checkpoint tool session, so there are no additional reviewable source or data files available to commit beyond this continuity update.
 - The three-triple barrier-nine quotient is large and needs durable checkpoint serialization.
 - No uniform theorem currently guarantees a terminal path for all prime-minus-one seeds.
 - The physical AC1 arithmetic conversion, repair-layer predicates, and source-compatibility predicates remain open in the uniform argument.
