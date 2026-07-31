@@ -4,152 +4,250 @@
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Authoritative theorem ledger endpoint: **CMR2851**
+- Authoritative theorem ledger endpoint: **CMR2887**
 - Mathematical status: the no-three-in-line conjecture remains open.
 - Every final and finite checker preserves `all_n_proved_by_checker = 0`.
 
 ## Latest completed frontier
 
-CMR2840--CMR2851 add the first genuine required-prefix parent-generation
-interface on top of the canonical masked host.
+This pass adds three exact local T02 theorem blocks after CMR2851.
 
-A local context is now generated from:
+### CMR2852--CMR2863 — asymmetric residual-host contraction
 
-```text
-side length n
-+ deleted labelled-edge mask D
-+ compatible required labelled-edge set P
-```
-
-The checker reconstructs exactly
-
-\[
-\mathcal F(n,D;P)=\{S\in\mathcal F(n,D):P\subseteq S\}
-\]
-
-and its exact realizable collinear-triple universe. It proves exact deleted-edge
-and required-edge extensions and realizes every first-missing prescription child
-as one generated context:
+A forced labelled triple in a deleted/required square context contracts exactly
+to a host with independent surviving row and column domains in the two labelled
+layers. The child context contains:
 
 ```text
-branch i < 3:
-  require the earlier prescription edges
-  delete the first missing edge
-
-branch 3:
-  require the full prescription
+layer-specific surviving row domains
+layer-specific surviving column domains
+surviving inherited deleted edges
+surviving inherited required edges
+opposite-layer blockers at prescribed physical cells
 ```
 
-The four branches are pairwise disjoint and exhaustive. A branch whose omitted
-edge was already required is an exact required/deleted contradiction terminal.
-The conditioned branch has an injective set contraction lowering labelled state
-cardinality by three.
+Restriction and adjoining are inverse bijections. The residual triple universe
+is exactly the parent triple universe restricted to triples disjoint from the
+forced prescription, with original integer grid coordinates retained.
 
-The implementation and theorem chapter are:
+A three-edge contraction can never be a standard equal-layer square host:
 
 ```text
-scripts/check_prime_power_required_prefix_parent_generation.py
-docs/443-prime-power-required-prefix-parent-generation.md
-proofs/composite-modulus-theorem-index-live-continuation-9.md
+parent cardinality = 2n
+residual cardinality = 2n - 3, which is odd
 ```
 
-The contract digest is:
+and the residual layer matching sizes are unequal because the three prescribed
+edges cannot split evenly between two layers.
+
+Implementation and theorem chapter:
 
 ```text
-030398f03aae9f26e71ad867a49ad163752410fb3f6eb437cc2538fdba82e0e1
+scripts/check_prime_power_asymmetric_residual_host_contraction.py
+docs/444-prime-power-asymmetric-residual-host-contraction.md
+proofs/composite-modulus-theorem-index-live-continuation-10.md
 ```
 
-Finite regression records:
+Contract digest:
 
 ```text
-2,592 valid side-two contexts
-511 feasible contexts
-2,081 infeasible contexts
-512 feasible-state occurrences
-728 side-three first-missing scenarios
-2,912 branch records
-1,624 nonempty branch records
-9 rejected malformed/corrupt cases
+fcc593f5812912d031ed90ab37e0fae105a35302a48b757f3fe69a7e80a0403b
 ```
 
-A dedicated workflow runs the masked-host and required-prefix checkers on Python
-3.10 and 3.12:
+Finite regression:
 
 ```text
-.github/workflows/required-prefix-frontier.yml
+376 side-three contraction scenarios
+1,056 side-four contraction scenarios
+1,904 nontrivial residual triples on side four
+10 rejected malformed/corrupt cases
 ```
 
-No workflow result was observable through the connector, so configuration is
-recorded but CI success is not claimed.
+### CMR2864--CMR2875 — asymmetric context generation and composition
+
+The asymmetric residual host is now a canonical generated context. For arbitrary
+layer-specific row/column domains, the checker reconstructs:
+
+- the exact feasible two-layer matching family;
+- the exact realizable collinear-triple universe;
+- the least feasible anchor;
+- the empty/clean/dirty dispatch; and
+- the least dirty-anchor target.
+
+Deleted-edge and required-edge extensions remain literal exact restrictions.
+Any compatible forced set contracts to another asymmetric context with exact
+mask, blocker, required-set and triple-universe transport.
+
+Successive contractions compose exactly: contracting two disjoint forced sets in
+sequence gives the same domains, masks, required edges, feasible family and
+triple universe as contracting their union directly.
+
+Implementation and theorem chapter:
+
+```text
+scripts/check_prime_power_asymmetric_context_generation.py
+docs/445-prime-power-asymmetric-context-generation-and-composition.md
+proofs/composite-modulus-theorem-index-live-continuation-11.md
+```
+
+Contract digest:
+
+```text
+8a12029b565cd8b9d51dba236f3cff782ed45ef3544fffd3ccddab8b0a32a0b9
+```
+
+Finite regression:
+
+```text
+400 side-three asymmetric domain hosts
+391 feasible and 9 infeasible hosts
+4,320 exact deleted/required extension checks
+116 forced-triple contractions
+152 exact side-four two-triple contraction compositions
+10 rejected malformed/corrupt cases
+```
+
+### CMR2876--CMR2887 — complete asymmetric target dispatch
+
+Every dirty asymmetric context now has the complete deterministic local response:
+
+```text
+canonical target preserved
+  -> exact asymmetric forced-triple contraction
+
+canonical target destroyed with lower potential
+  -> strict improvement
+
+canonical target destroyed without lower potential
+  -> least genuinely new triple
+  -> disjoint first-missing asymmetric contexts
+  -> exact conditioned contraction in branch 3
+```
+
+Every alternative candidate receives exactly one action. Every first-missing
+child is generated by literal deleted/required extensions in the same asymmetric
+host class, and the conditioned child contracts through the composition-safe
+forced-set theorem.
+
+Implementation and theorem chapter:
+
+```text
+scripts/check_prime_power_asymmetric_target_dispatch.py
+docs/446-prime-power-asymmetric-target-dispatch.md
+proofs/composite-modulus-theorem-index-live-continuation-12.md
+```
+
+Contract digest:
+
+```text
+5e982b03f24ce4cd1230ede70563b49e3ac67976b0a84e038ae27b463e39fa83
+```
+
+Finite regression:
+
+```text
+400 side-three asymmetric hosts
+44 dirty dispatches
+148 classified side-three alternatives
+39 side-three nonimproving first-missing responses
+216 side-four feasible states
+215 classified side-four alternatives
+8 preserving, 172 improving, 35 nonimproving side-four alternatives
+10 rejected malformed/corrupt cases
+```
+
+## Current validation workflows
+
+Dedicated Python 3.10/3.12 workflows were added for the new stack:
+
+```text
+.github/workflows/asymmetric-residual-frontier.yml
+.github/workflows/asymmetric-context-frontier.yml
+.github/workflows/asymmetric-target-dispatch-frontier.yml
+```
+
+No workflow result was observed through the connector during this pass, so CI
+configuration is recorded but CI success is not claimed.
 
 ## What is genuinely closed locally
 
-- The masked feasible family is generated from `(n,D)`.
-- The contextual feasible family is generated from `(n,D,P)`.
-- Realizable labelled collinear triples are generated from each family.
-- Canonical anchors are generated from nonempty families.
-- Single-edge deletion children are literal mask extensions.
-- Positive prefix conditions are literal required-edge extensions.
-- Every first-missing child is an exact generated context or contradiction
-  terminal.
-- The first-missing contexts are disjoint and exhaustive.
-- The full-prescription branch contracts injectively as a finite set family.
+- Square feasible families are generated from side length and deleted mask.
+- Required-prefix square families are generated from deleted/required contexts.
+- Forced-triple square residuals are exactly represented by asymmetric contexts.
+- Asymmetric families, triple universes, anchors and targets are generated.
+- Deleted and required extensions are exact on both square and asymmetric hosts.
+- Arbitrary compatible forced-set contraction is exact on asymmetric hosts.
+- Repeated contractions compose exactly.
+- Complete target-preserving/improving/new-triple candidate dispatch is exact on
+  arbitrary asymmetric contexts.
+- Every conditioned branch remains inside the same context class.
 
-## Immediate honesty boundary
-
-CMR2851 does **not** prove that a conditioned residual is a standard smaller
-masked host. In particular, it does not yet specify or prove the exact:
-
-- row deletion and relabelling in each layer;
-- column deletion and relabelling in each layer;
-- opposite-layer physical-cell restrictions caused by prescribed cells;
-- inherited deleted and required masks after contraction;
-- preservation of collinearity under the chosen coordinate map; or
-- compatibility with factor, owner, routing and closure-envelope contexts.
-
-It also does not prove global context generation, recurrence exhaustiveness,
-termination, genuine T03/T04 population, any exceptional chamber, or the
-all-`n` implication.
-
-The permanent checker boundary is:
+The permanent local theorem flags now include:
 
 ```text
-conditioned_residual_standard_host_representability_proved = 0
+asymmetric_residual_host_generated = 1
+asymmetric_context_family_generated = 1
+asymmetric_forced_set_contraction_exact = 1
+forced_contraction_composition_exact = 1
+local_asymmetric_candidate_response_complete = 1
 actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
+## Immediate honesty boundary
+
+CMR2887 does not prove that the actual prime-power construction generates every
+square or asymmetric context used by the local engine. It does not yet identify
+or prove the exact context transition induced by every:
+
+- owner change;
+- routing change;
+- factor decomposition or child handoff;
+- closure-envelope expansion or contraction;
+- restoration or returned-edge operation;
+- target-bank handoff; or
+- recurrent scheduler step.
+
+It also does not prove that those global transition kinds are exhaustive or that
+every branch terminates or reaches a successful potential/target descent.
+
+No genuine T03/T04 population, T05 arbitrary-`n` semantic coverage, exceptional
+chamber proof, final premise implication, handoff theorem, final review or root
+implication is supplied by the local context engine.
+
 ## Exact next steps
 
-1. Define the residual host of a forced compatible prescription using explicit
-   surviving row and column sets in both layers.
-2. Prove the restriction/adjoin bijection between the conditioned contextual
-   family and that residual host, including opposite-layer forbidden physical
-   cells.
-3. Determine the precise criterion under which the residual host is isomorphic
-   to a standard smaller square masked host; otherwise introduce only the
-   minimal rectangular or asymmetric context type actually required.
-4. Prove the induced deleted/required mask transport and triple-universe map.
-5. Add exhaustive small-side verification and corruption rejection without
-   setting the global-parent or all-`n` flags.
-6. Trace the pre-interface contraction, owner, routing, factor and
-   closure-envelope chapters into the resulting context type.
-7. Update `docs/11-open-bottlenecks.md`, the current-frontier regression runner
-   and the main workflow once the contraction interface is reviewable.
-8. In parallel, populate one genuine T01 primary-source statement and one real
-   T03 operation slot only when exact source or construction ancestry is known.
+1. Define a canonical global context-transition record with literal parent and
+   child square/asymmetric contexts, operation kind, owner/routing/factor/envelope
+   data and the exact local theorem authorizing the transition.
+2. Trace one genuine pre-interface operation from the construction into that
+   record and prove its child context equals the generated local child from first
+   principles.
+3. Extend this to every genuine owner, routing, factor and closure-envelope
+   operation; reject any transition requiring an unmodelled restriction.
+4. Prove the global transition-kind bank exhaustive for every genuine parent.
+5. Define a well-founded global measure and prove every transition decreases it,
+   reaches strict triple-potential improvement, or enters a separately finite
+   stock.
+6. Populate one authoritative T01 primary-source statement only with exact source
+   text, stable locator, source hash and an ordinary mathematical verification
+   artifact.
+7. Populate genuine T02 recurrence records and T03/T04 slots only after exact
+   construction ancestry is established.
+8. Run the existing T05--T21 engines on those real records and then prove the
+   remaining semantic, chamber, premise, handoff and root implications.
 
 ## Current global blockers
 
 ### T01
 
-Genuine source statements, locators, hashes and ordinary mathematical
-verification remain incomplete.
+Genuine source statements, stable primary-source locators, exact hashes and
+ordinary mathematical verification remain incomplete.
 
 ### T02
 
-The contraction/relabeling interface, actual global context sequence, all owner,
-routing, factor and closure-envelope transitions, recurrence exhaustiveness and
+The local square/asymmetric engine is complete relative to supplied contexts.
+Actual global context generation, operation-transition exhaustiveness and
 termination remain open.
 
 ### T03--T21
