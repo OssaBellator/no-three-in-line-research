@@ -1,0 +1,42 @@
+name: Required-prefix frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - "scripts/check_prime_power_masked_host_parent_generation.py"
+      - "scripts/check_prime_power_required_prefix_parent_generation.py"
+      - "docs/443-prime-power-required-prefix-parent-generation.md"
+      - ".github/workflows/required-prefix-frontier.yml"
+  pull_request:
+    paths:
+      - "scripts/check_prime_power_masked_host_parent_generation.py"
+      - "scripts/check_prime_power_required_prefix_parent_generation.py"
+      - "docs/443-prime-power-required-prefix-parent-generation.md"
+      - ".github/workflows/required-prefix-frontier.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  required-prefix-checker:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile frontier checkers
+        run: |
+          python -m py_compile \
+            scripts/check_prime_power_masked_host_parent_generation.py \
+            scripts/check_prime_power_required_prefix_parent_generation.py
+      - name: Run masked-host parent checker
+        run: python scripts/check_prime_power_masked_host_parent_generation.py
+      - name: Run required-prefix parent checker
+        run: python scripts/check_prime_power_required_prefix_parent_generation.py
