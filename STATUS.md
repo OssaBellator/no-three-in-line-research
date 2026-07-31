@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2919**. The predecessor typed
+The authoritative theorem ledger reaches **CMR2943**. The predecessor typed
 transition endpoint **CMR2899** and plain masked-host endpoint **CMR2839** remain
 part of the synchronized theorem history. Every final checker, finite theorem
 checker, population bridge, fixture, runtime manifest and branch-wide regression
@@ -27,7 +27,7 @@ all_n_proved_by_checker = 0
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
 | T01 | literal source statements, hashes and sealed source artifacts | genuine primary-source statements and ordinary verification remain incomplete |
-| T02 | canonical square/asymmetric contexts, complete local response, typed restrictions/contractions, and theorem-derived routing-change ancestry with finite-stock payment | ancestry for all other construction operations, global transition exhaustiveness and termination remain open |
+| T02 | canonical square/asymmetric contexts, typed local transitions, theorem-derived routing ancestry, exact fixed-routing child products, mixed deletion and strict child handoff | forced mixed-certificate escape, all other construction operation ancestry, global exhaustiveness and termination remain open |
 | T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete operation population, including survivor backgrounds, remains absent |
 | T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
 | T05 | exact finite geometry and selector arithmetic | arbitrary-`n` construction coverage remains open |
@@ -84,6 +84,8 @@ python scripts/check_prime_power_asymmetric_target_dispatch.py
 python scripts/check_prime_power_context_transition_registry.py
 python scripts/check_prime_power_routing_change_context_ancestry.py
 python scripts/check_prime_power_routing_change_history_payment.py
+python scripts/check_prime_power_factor_child_product_ancestry.py
+python scripts/check_prime_power_mixed_child_deletion_ancestry.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -108,98 +110,72 @@ python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certifica
 Every runtime artifact contains a literal `manifest_sha256` seal. A manifest
 records validation execution and is not a proof certificate.
 
-## T02 local theorem endpoint
+## T02 local and construction endpoint
 
-### Square and asymmetric context engine
+### Square/asymmetric context engine
 
-For side `n`, deleted edges `D` and compatible required edges `P`, the square
-family is generated exactly. Forced triple contraction necessarily enters an
-asymmetric host with independent row and column domains in each layer. The
-enlarged class is closed under deleted/required extensions, arbitrary compatible
-forced-set contraction and repeated contraction composition.
+The branch generates exact square and asymmetric families, triple universes,
+canonical anchors and canonical targets. It is closed under deleted/required
+extensions, arbitrary compatible forced-set contraction and repeated
+contraction composition. Every dirty context has the complete canonical
+preserving/improving/new-triple response.
 
-For every dirty asymmetric anchor and every alternative candidate:
+### Typed restriction and contraction transitions
 
-```text
-canonical target preserved
-  -> exact asymmetric forced-triple contraction
+CMR2888--CMR2899 provide sealed context identities and exact typed transitions
+for single-edge deletion, required-edge conditioning, forced-set contraction and
+all first-missing children.
 
-canonical target destroyed with lower potential
-  -> strict improvement
+### Routing-skeleton-change ancestry
 
-canonical target destroyed without lower potential
-  -> least genuinely new triple
-  -> disjoint first-missing asymmetric contexts
-  -> exact conditioned contraction in branch 3
-```
+CMR2900--CMR2919 embed one balanced factor as a one-layer asymmetric context and
+reconstruct the canonical envelope, old/new routing skeletons, changed vertices,
+entering/leaving support and the full routing-changing alternating-component
+union. Owner, factor, routing and envelope labels are theorem-derived.
 
-### Typed context-transition layer
+Fixed-factor histories have exact CMR674--CMR675 recurrent-edge versus
+finite-history alternatives and full-token incidence.
 
-Every established local operation emits a sealed transition record containing:
+### Fixed-routing child-product ancestry
 
-```text
-operation kind
-source theorem identifiers
-construction labels
-literal parent context
-literal child context
-operation payload or endpoint states
-exact family or state semantics
-```
+CMR2920--CMR2931 generate one strict child context for every positive routing
+cell and prove the exact product bijection
 
-The exact restriction/contraction transition kinds are:
+\[
+\mathcal F_\Gamma
+\cong
+\prod_{r,s}\operatorname{PM}(H[X_{rs},Y_{rs}]).
+\]
 
-```text
-single-edge-deletion
-required-edge-conditioning
-forced-set-contraction
-first-missing-deletion
-first-missing-conditioned-contraction
-```
+Every child has matching size at most `d-1` and prefix depth `beta+1`. In a
+mixed-clean dirty product, the canonical pure-dirty child receives an exact
+strict handoff.
 
-The CMR830 trace proves that deleting a selected edge of a rejected feasible
-state removes that state and preserves exactly every state omitting the edge.
-The CMR862/CMR2794 trace produces the exact four first-missing child transitions,
-including the conditioned asymmetric contraction.
+### Mixed-child deletion ancestry
 
-### First theorem-derived construction transition
+CMR2932--CMR2943 generate active mixed triples, verify their exact Cartesian
+occurrence boxes, classify forced versus nonessential atom edges, and execute
+literal single-edge deletion inside the selected child context.
 
-CMR2900--CMR2919 install the actual CMR656--CMR676
-`routing-skeleton-change` operation. A balanced factor host is embedded exactly
-as layer zero of an asymmetric context with an empty second layer. The checker
-recomputes:
+Each deletion preserves a nonempty product, destroys the selected atom, cannot
+activate a new atom and strictly decreases the active mixed-atom set. The
+procedure terminates within the literal initial child-edge stock at a mixed-clean
+product or a forced mixed certificate.
 
-- the canonical prime-power factor envelope;
-- both vertex-routing skeletons;
-- all changed source and target vertices;
-- exact entering and leaving routing support;
-- the complete routing-changing alternating-component union;
-- theorem-derived owner, factor, routing and envelope labels; and
-- exact CMR674--CMR675 finite-stock and full-token payment.
-
-A routing change is a state-to-state transition inside one unchanged factor
-context. It is the first operation for which construction ancestry is proved,
-not merely label-bound.
-
-The current exact flags are:
+The current exact flags include:
 
 ```text
-asymmetric_residual_host_generated = 1
-asymmetric_context_family_generated = 1
-asymmetric_forced_set_contraction_exact = 1
-forced_contraction_composition_exact = 1
 local_asymmetric_candidate_response_complete = 1
 canonical_context_identity_sealed = 1
-single_edge_deletion_transition_exact = 1
-required_edge_conditioning_transition_exact = 1
-forced_set_contraction_transition_exact = 1
-cmr830_single_edge_trace_exact = 1
-cmr862_first_missing_trace_exact = 1
-transition_child_context_generated = 1
-transition_family_semantics_exact = 1
 routing_change_construction_ancestry_proved = 1
 routing_change_full_token_payment_exact = 1
 routing_change_history_endpoint_exact = 1
+factor_product_construction_ancestry_proved = 1
+fixed_routing_product_bijection_exact = 1
+mixed_clean_child_handoff_ancestry_proved = 1
+mixed_atom_deletion_ancestry_proved = 1
+mixed_deletion_edge_stock_bound_exact = 1
+forced_mixed_certificate_escape_proved = 0
 all_construction_ancestry_proved = 0
 global_transition_kind_bank_exhaustive = 0
 global_termination_proved = 0
@@ -207,33 +183,32 @@ actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-The current contract digests are:
+The current construction contract digests are:
 
 ```text
-fcc593f5812912d031ed90ab37e0fae105a35302a48b757f3fe69a7e80a0403b
-8a12029b565cd8b9d51dba236f3cff782ed45ef3544fffd3ccddab8b0a32a0b9
-5e982b03f24ce4cd1230ede70563b49e3ac67976b0a84e038ae27b463e39fa83
 ace68b33d5c7111a5d623cb5a1db128ccc86bb193601404a5ede4713571b241d
 b2de334dedbde2a865704f3d08cc9f590e74e14b7e8d813c329e59cc97636360
 b7c4efe585e6fa70cf6556e4eb86969e685c542d8192326b3c29169c8f9b2259
+bd725106632e65cac38f2b33fb1787f3d5ef93d0825c4ccfc0d2afd2c6492dae
+b49c1313b765fc63676aed96bfbb91adf52f17293feb47089cfc8129b42b7429
 ```
 
 ## T02 global honesty boundary
 
-Routing-skeleton changes now have theorem-derived construction labels and exact
-history payment. This does not prove the other genuine operations. The next
-bridges must trace the exact square/asymmetric transition induced by every:
+The fixed-routing product is now exact through deletion, mixed-clean handoff and
+forced-certificate detection. The forced certificate's later escape payment is
+not yet installed. The remaining construction transitions include:
 
-- factor creation or child handoff;
+- forced mixed-certificate escape;
 - owner change;
 - closure-envelope change;
 - restoration or returned-edge operation;
 - target-bank handoff; and
 - recurrent scheduler step.
 
-The resulting transition-kind bank must then be proved exhaustive and equipped
-with one global well-founded measure or a complete collection of separately
-finite owner-labelled stocks.
+The resulting transition bank must be proved exhaustive and equipped with one
+global well-founded measure or a complete collection of separately finite
+owner-labelled stocks.
 
 ## T21 scalar and population boundary
 
@@ -254,8 +229,8 @@ For `m=|B|`,
 
 with exact support-line stability gaps away from the two extremal lines.
 
-The T03 bridge validates any supplied hard-core survivor background and exact
-selector data, but it records:
+The T03 bridge validates supplied hard-core survivor backgrounds and selector
+data, but records:
 
 ```text
 actual_t03_population_supplied_by_bridge = 0
@@ -272,6 +247,8 @@ Dedicated Python 3.10/3.12 workflows are configured for the current T02 stack:
 .github/workflows/asymmetric-target-dispatch-frontier.yml
 .github/workflows/context-transition-frontier.yml
 .github/workflows/routing-change-ancestry-frontier.yml
+.github/workflows/factor-child-product-frontier.yml
+.github/workflows/mixed-child-deletion-frontier.yml
 ```
 
 Configuration is not evidence that a workflow passed. Actual workflow runs and
@@ -281,7 +258,7 @@ artifacts must be inspected before claiming CI success.
 
 ```text
 T01 prove and populate genuine primary-source statements
-T02 prove all remaining construction ancestry, global transition exhaustiveness and termination
+T02 install forced-certificate escape and all remaining operation ancestry; prove exhaustiveness and termination
 T03--T04 populate every real slot, block and interface
 T05 prove arbitrary-n construction coverage
 T06--T18 prove semantic, score, resource, rank, predicate and row theorems
@@ -300,13 +277,12 @@ lower proof banks are genuinely complete.
 
 ## Immediate work order
 
-1. Install genuine factor-creation and strict child-handoff ancestry from
-   CMR656--CMR663 and CMR677--CMR683.
+1. Install the CMR643--CMR648 forced mixed-certificate escape transition.
 2. Install owner, closure-envelope, restoration, returned-edge, target-handoff
    and scheduler transitions.
 3. Prove the construction transition-kind bank exhaustive.
-4. Combine every transition's descent or finite-stock endpoint into one global
-   termination theorem.
+4. Combine routing stock, mixed-deletion stock, strict child descent and all
+   remaining endpoints into one global termination theorem.
 5. Populate and verify the T01 sources required by those operations.
 6. Generate genuine T02 records and T03/T04 populations.
 7. Run the T05--T21 engines on those real records.
@@ -315,9 +291,9 @@ lower proof banks are genuinely complete.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2919**, the branch contains a complete
-local square/asymmetric context engine, a typed exact transition layer, and
-actual construction ancestry plus finite-stock payment for routing-skeleton
-changes. Ancestry for the remaining operation kinds, global recurrence
-exhaustiveness, termination, genuine population and every global semantic
-implication remain open.
+There is no complete proof. Through **CMR2943**, the branch contains a complete
+local square/asymmetric context engine and genuine construction ancestry for
+routing changes, fixed-routing child products, mixed-atom deletion and strict
+mixed-clean child handoff. Forced-certificate escape, remaining operation
+ancestry, global exhaustiveness, termination, genuine population and every
+global semantic implication remain open.
