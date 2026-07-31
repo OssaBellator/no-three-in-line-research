@@ -58,14 +58,14 @@
       "completed_required_fields": 5,
       "total_required_fields": 5,
       "completed": [
+        "size-preserving original-leaf/encoded-node reconciliation",
         "coefficient dynamic program",
-        "integer unary-unary risk definition",
-        "aggregate risk reconstruction",
-        "profile-mass cross-check",
+        "integer encoded unary-unary risk definition",
+        "aggregate risk reconstruction and profile-mass cross-check",
         "deterministic witness extraction"
       ],
       "blocked": [],
-      "result": "complete for corrected node-graded structural risk coordinate"
+      "result": "complete for the dual-graded structural encoding risk coordinate"
     },
     "shell": {
       "completed_required_fields": 5,
