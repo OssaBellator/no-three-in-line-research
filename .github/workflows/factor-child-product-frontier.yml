@@ -1,0 +1,42 @@
+name: Factor child-product frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - "scripts/check_prime_power_routing_change_context_ancestry.py"
+      - "scripts/check_prime_power_factor_child_product_ancestry.py"
+      - "docs/449-prime-power-factor-child-product-ancestry.md"
+      - ".github/workflows/factor-child-product-frontier.yml"
+  pull_request:
+    paths:
+      - "scripts/check_prime_power_routing_change_context_ancestry.py"
+      - "scripts/check_prime_power_factor_child_product_ancestry.py"
+      - "docs/449-prime-power-factor-child-product-ancestry.md"
+      - ".github/workflows/factor-child-product-frontier.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  factor-child-product:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile factor ancestry checkers
+        run: |
+          python -m py_compile \
+            scripts/check_prime_power_routing_change_context_ancestry.py \
+            scripts/check_prime_power_factor_child_product_ancestry.py
+      - name: Run routing ancestry dependency
+        run: python scripts/check_prime_power_routing_change_context_ancestry.py
+      - name: Run factor child-product ancestry
+        run: python scripts/check_prime_power_factor_child_product_ancestry.py
