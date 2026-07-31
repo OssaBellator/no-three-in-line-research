@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2887**. The predecessor plain
+The authoritative theorem ledger reaches **CMR2899**. The predecessor plain
 masked-host endpoint **CMR2839** remains part of the synchronized theorem
 history. Every final checker, finite theorem checker, population bridge, fixture,
 runtime manifest and branch-wide regression permanently reports or preserves:
@@ -26,7 +26,7 @@ all_n_proved_by_checker = 0
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
 | T01 | literal source statements, hashes and sealed source artifacts | genuine primary-source statements and ordinary verification remain incomplete |
-| T02 | canonical square and asymmetric contexts, exact family/triple generation, anchors, targets, deleted/required restrictions, forced-set contraction, contraction composition and complete local candidate response | actual owner/routing/factor/envelope context generation, global recurrence exhaustiveness and termination remain open |
+| T02 | canonical square/asymmetric contexts, complete local candidate response, exact contraction composition and typed deletion/conditioning/contraction transitions | actual owner/routing/factor/envelope ancestry, global transition exhaustiveness and termination remain open |
 | T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete operation population, including survivor backgrounds, remains absent |
 | T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
 | T05 | exact finite geometry and selector arithmetic | arbitrary-`n` construction coverage remains open |
@@ -80,6 +80,7 @@ python scripts/check_prime_power_required_prefix_parent_generation.py
 python scripts/check_prime_power_asymmetric_residual_host_contraction.py
 python scripts/check_prime_power_asymmetric_context_generation.py
 python scripts/check_prime_power_asymmetric_target_dispatch.py
+python scripts/check_prime_power_context_transition_registry.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -106,65 +107,13 @@ records validation execution and is not a proof certificate.
 
 ## T02 local theorem endpoint
 
-### Square deleted/required contexts
+### Square and asymmetric context engine
 
-For side `n`, the labelled host is
-
-\[
-H_n=\{0,1\}\times[n]\times[n].
-\]
-
-For deleted edges `D` and compatible required edges `P`, the exact family is
-
-\[
-\mathcal F(n,D;P)
-=
-\{S:S\text{ is saturated and layer-disjoint},
- S\cap D=\varnothing,
- P\subseteq S\}.
-\]
-
-The checker generates the family, exact realizable triple universe, least anchor
-and least dirty-anchor target. Deleted and required extensions are exact. Every
-first-missing child is a generated context.
-
-### Asymmetric residual necessity
-
-Removing a forced labelled triple leaves `2n-3` selected edges. This is odd, so
-the residual cannot be a standard equal-layer square host. The three prescribed
-edges also split unequally between the two labelled layers.
-
-The exact residual has independent surviving row and column domains in each
-layer, inherited deleted/required edges, opposite-layer blockers at prescribed
-physical cells and original integer grid coordinates.
-
-### Asymmetric context closure
-
-An asymmetric context has layer domains
-
-\[
-(R_0,K_0),
-\qquad
-(R_1,K_1),
-\qquad
-|R_\lambda|=|K_\lambda|,
-\]
-
-with no requirement that the two layer matching sizes agree.
-
-The local class is closed under:
-
-```text
-deleted-edge extension
-required-edge extension
-arbitrary compatible forced-set contraction
-repeated contraction composition
-```
-
-Sequential contractions equal direct contraction of the union on domains,
-masks, required sets, feasible families and triple universes.
-
-### Complete asymmetric candidate response
+For side `n`, deleted edges `D` and compatible required edges `P`, the square
+family is generated exactly. Forced triple contraction necessarily enters an
+asymmetric host with independent row and column domains in each layer. The
+enlarged class is closed under deleted/required extensions, arbitrary compatible
+forced-set contraction and repeated contraction composition.
 
 For every dirty asymmetric anchor and every alternative candidate:
 
@@ -181,6 +130,35 @@ canonical target destroyed without lower potential
   -> exact conditioned contraction in branch 3
 ```
 
+### Typed context-transition layer
+
+Every local operation now emits a sealed transition record containing:
+
+```text
+operation kind
+source theorem identifiers
+construction labels
+literal parent context
+literal child context
+operation payload
+exact child-family semantics
+```
+
+The admitted transition kinds are:
+
+```text
+single-edge-deletion
+required-edge-conditioning
+forced-set-contraction
+first-missing-deletion
+first-missing-conditioned-contraction
+```
+
+The CMR830 trace proves that deleting a selected edge of a rejected feasible
+state removes that state and preserves exactly every state omitting the edge.
+The CMR862/CMR2794 trace produces the exact four first-missing child transitions,
+including the conditioned asymmetric contraction.
+
 The current exact flags are:
 
 ```text
@@ -189,23 +167,36 @@ asymmetric_context_family_generated = 1
 asymmetric_forced_set_contraction_exact = 1
 forced_contraction_composition_exact = 1
 local_asymmetric_candidate_response_complete = 1
+canonical_context_identity_sealed = 1
+single_edge_deletion_transition_exact = 1
+required_edge_conditioning_transition_exact = 1
+forced_set_contraction_transition_exact = 1
+cmr830_single_edge_trace_exact = 1
+cmr862_first_missing_trace_exact = 1
+transition_child_context_generated = 1
+transition_family_semantics_exact = 1
+construction_labels_bound = 1
+actual_construction_ancestry_proved = 0
+global_transition_kind_bank_exhaustive = 0
+global_termination_proved = 0
 actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-The new contract digests are:
+The current contract digests are:
 
 ```text
 fcc593f5812912d031ed90ab37e0fae105a35302a48b757f3fe69a7e80a0403b
 8a12029b565cd8b9d51dba236f3cff782ed45ef3544fffd3ccddab8b0a32a0b9
 5e982b03f24ce4cd1230ede70563b49e3ac67976b0a84e038ae27b463e39fa83
+ace68b33d5c7111a5d623cb5a1db128ccc86bb193601404a5ede4713571b241d
 ```
 
 ## T02 global honesty boundary
 
-The local engine does not prove that the actual prime-power construction
-generates every context it needs. The missing bridge must identify and prove the
-exact square/asymmetric context transition induced by every:
+The transition checker seals owner, routing, factor and envelope identifiers but
+does not derive them from the actual prime-power construction. The next bridge
+must trace the exact context transition induced by every genuine:
 
 - owner change;
 - routing change;
@@ -216,12 +207,7 @@ exact square/asymmetric context transition induced by every:
 - recurrent scheduler step.
 
 The global transition-kind bank must then be proved exhaustive and equipped with
-a well-founded measure or separately finite owner-labelled stock. Until that is
-done:
-
-```text
-actual_global_parent_rule_complete = 0
-```
+a well-founded measure or separately finite owner-labelled stock.
 
 ## T21 scalar and population boundary
 
@@ -252,12 +238,13 @@ t21_semantic_chambers_proved = 0
 
 ## Validation workflow status
 
-Dedicated Python 3.10/3.12 workflows are configured for the new T02 stack:
+Dedicated Python 3.10/3.12 workflows are configured for the current T02 stack:
 
 ```text
 .github/workflows/asymmetric-residual-frontier.yml
 .github/workflows/asymmetric-context-frontier.yml
 .github/workflows/asymmetric-target-dispatch-frontier.yml
+.github/workflows/context-transition-frontier.yml
 ```
 
 Configuration is not evidence that a workflow passed. Actual workflow runs and
@@ -267,7 +254,7 @@ artifacts must be inspected before claiming CI success.
 
 ```text
 T01 prove and populate genuine primary-source statements
-T02 prove actual global context transitions, exhaustiveness and termination
+T02 prove actual construction ancestry, global transition exhaustiveness and termination
 T03--T04 populate every real slot, block and interface
 T05 prove arbitrary-n construction coverage
 T06--T18 prove semantic, score, resource, rank, predicate and row theorems
@@ -286,22 +273,20 @@ lower proof banks are genuinely complete.
 
 ## Immediate work order
 
-1. Define the canonical global context-transition record.
-2. Trace one genuine owner/routing/factor/envelope operation into an exact parent
-   and child square/asymmetric context.
-3. Extend the construction bridge to every operation kind.
-4. Prove global transition exhaustiveness and termination/descent.
-5. Populate and verify the T01 sources required by those operations.
-6. Generate genuine T02 records and T03/T04 populations.
-7. Run the T05--T21 engines on those real records.
-8. Prove the remaining semantic rows, chambers, premises, handoffs and root
+1. Trace one genuine owner/routing/factor/envelope operation from its original
+   construction theorem into the typed transition record.
+2. Extend genuine ancestry to every construction operation kind.
+3. Prove global transition exhaustiveness and termination/descent.
+4. Populate and verify the T01 sources required by those operations.
+5. Generate genuine T02 records and T03/T04 populations.
+6. Run the T05--T21 engines on those real records.
+7. Prove the remaining semantic rows, chambers, premises, handoffs and root
    theorem.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2887**, the branch contains a complete
-local square/asymmetric context engine, exact hard-core scalar theorems, a
-T03/T21 population bridge and synchronized documentary interfaces through all
-43 targets. Actual global construction-to-context generation, recurrence
-exhaustiveness, termination, genuine population and every global semantic
-implication remain open.
+There is no complete proof. Through **CMR2899**, the branch contains a complete
+local square/asymmetric context engine and a typed exact transition layer for
+CMR830 deletion, CMR862 conditioning and forced contraction. Actual construction
+ancestry, global recurrence exhaustiveness, termination, genuine population and
+every global semantic implication remain open.
