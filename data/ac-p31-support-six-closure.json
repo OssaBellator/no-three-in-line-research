@@ -1,0 +1,20 @@
+{
+  "schema": "ac-p31-support-six-closure-v1",
+  "p": 31,
+  "n": 30,
+  "families": [
+    {"distribution":[0,6],"support_choices":177100,"partial_states":35678890,"complete_potential_at_most_two_states":0,"shards":[[0,177100,35678890]]},
+    {"distribution":[1,5],"support_choices":1381380,"partial_states":202363641,"complete_potential_at_most_two_states":0,"shards":[[0,500000,72454278],[500000,1000000,70528822],[1000000,1381380,59380541]]},
+    {"distribution":[2,4],"support_choices":4111250,"partial_states":467355187,"complete_potential_at_most_two_states":0,"shards":[[0,750000,78343390],[750000,1500000,88246388],[1500000,2250000,79597203],[2250000,3000000,90087376],[3000000,3750000,84712359],[3750000,4111250,46368471]]},
+    {"distribution":[3,3],"support_choices":5980000,"partial_states":577440893,"complete_potential_at_most_two_states":0,"shards":[[0,500000,43527834],[500000,1000000,47398791],[1000000,1500000,47083933],[1500000,2000000,45227886],[2000000,2500000,49218031],[2500000,3000000,54575439],[3000000,3500000,47839434],[3500000,4000000,40880803],[4000000,4500000,60497458],[4500000,5000000,44582148],[5000000,5500000,44852772],[5500000,5980000,51756364]]},
+    {"distribution":[4,2],"support_choices":4485000,"partial_states":416388566,"complete_potential_at_most_two_states":0,"shards":[[0,750000,64926409],[750000,1500000,71945821],[1500000,2250000,68341313],[2250000,3000000,75819652],[3000000,3750000,68224169],[3750000,4485000,67131202]]},
+    {"distribution":[5,1],"support_choices":1644500,"partial_states":169065024,"complete_potential_at_most_two_states":0,"shards":[[0,500000,51155065],[500000,1000000,52372669],[1000000,1644500,65537290]]},
+    {"distribution":[6,0],"support_choices":230230,"partial_states":29657917,"complete_potential_at_most_two_states":0,"shards":[[0,230230,29657917]]}
+  ],
+  "totals": {
+    "support_choices": 18009460,
+    "partial_states": 1897950118,
+    "complete_potential_at_most_two_states": 0
+  },
+  "conclusion": "Every endpoint of potential at most two differs from the explicit three-triple state on at least seven tagged row addresses outside the nine core-support rows."
+}
