@@ -12,9 +12,10 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2887**. Every final checker,
-finite theorem checker, population bridge, fixture, runtime manifest and
-branch-wide regression permanently reports or preserves:
+The authoritative theorem ledger reaches **CMR2887**. The predecessor plain
+masked-host endpoint **CMR2839** remains part of the synchronized theorem
+history. Every final checker, finite theorem checker, population bridge, fixture,
+runtime manifest and branch-wide regression permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
