@@ -7,7 +7,7 @@ This supplement continues the cumulative parity index after `docs/560`.
 | PP3cpf--PP3cph | Explicit four- and seven-side saturated blocks admit a finite port/seam census, and every naive diagonal dihedral seam is obstructed | PROVED | `docs/561-coordinate-level-four-seven-boundary-seam-attempt.md` |
 | PP3cpi--PP3cpk | An independently defined six-state cylinder gadget has a complete transition census, a unique common pair-lumping, and exact switched quotient commutation | PROVED | `docs/562-independent-cylinder-microcensus-for-hall-gadgets.md` |
 | PP3cpl--PP3cpn | Threshold layer sums are reorder-invariant, the stored source and transient alphabets differ, and bounded physical normals admit an exact quotient-coverage census | PROVED / ONE LINEAGE IDENTITY REFUTED | `docs/563-source-layer-alignment-for-threshold-schedules.md` |
-| PP3cpo--PP3cpq | The prior leaf grading is refuted; the profile is node-graded and admits an exact unary-run risk dynamic program with witness extraction | REFUTED / PROVED AFTER CORRECTION | `docs/564-corrected-node-grading-and-risk-marked-prefix-dp.md` |
+| PP3cpo--PP3cpq | Original leaf grading and encoded node grading are reconciled by a size-preserving unary-binary encoding, which admits an exact unary-run risk DP | PROVED AFTER DUAL-GRADING CORRECTION | `docs/564-corrected-node-grading-and-risk-marked-prefix-dp.md` |
 | PP3cpr--PP3cpt | A full-rank nonprecancelled shell benchmark has an exact physical trajectory, order optimum, and identifiable reserve certificate | PROVED FOR THE BENCHMARK | `docs/565-nonprecancelled-shell-incidence-benchmark.md` |
 | PP3cpu--PP3cpw | Independent extraction completes 22 of 30 candidate fields, preserves positive arithmetic slack, and keeps the geometric evidence gate closed | PROVED | `docs/566-fieldwise-evidence-gate-after-independent-extraction.md` |
 
@@ -46,12 +46,13 @@ factor through the two-observable quotient.
 
 ### Support-chord repair words
 
-The equation `T=z(1+T+uT^2)` is graded by total nodes, not leaves.  At total
-size thirty with nine binary nodes, the exact family size remains
-`168212023980`; there are eleven unary nodes and ten leaves.  A new exact DP
-marks unary-to-unary edges, gives mean risk `110/29`, certifies
-`153857776072` objects with risk at most five, and reconstructs a risk-zero
-witness.
+The original automaton series remains leaf-graded.  Its eliminated equation also
+has a size-preserving unary-binary encoding in which the same exponent is encoded
+total-node count.  At original leaf count and encoded size thirty with nine
+encoded binary nodes, the family size is `168212023980`; the encoding has eleven
+unary nodes and ten encoded leaves.  An exact DP marks encoded unary-to-unary
+edges, gives mean risk `110/29`, certifies `153857776072` objects with risk at
+most five, and reconstructs a risk-zero encoding.
 
 ### Clean-macro shells
 
@@ -73,9 +74,9 @@ The exact fixture fixed point still totals
 705466760524005697 / 3623878655999606784
 ```
 
-and remains below `1/4`.  Independent extraction now covers 22 of 30 candidate
-source fields, with internally complete benchmark models for prefix and shell.
-No actual global row is promoted, so geometric closure remains false.
+and remains below `1/4`.  Independent extraction covers 22 of 30 candidate
+source fields, with internally complete encoded-prefix and benchmark-shell
+models.  No actual global row is promoted, so geometric closure remains false.
 
 ## Exact diagnostics
 
@@ -96,9 +97,9 @@ python scripts/check_nonprecancelled_shell_incidence.py
 python scripts/check_independent_extraction_evidence_gate.py
 ```
 
-The new local audits cover sixty-four boundary seams, all fifteen Hall pair
+The local audits cover sixty-four boundary seams, all fifteen Hall pair
 partitions and 511 switch words, 1120 bounded primitive threshold normals, the
-full corrected thirty-node prefix risk distribution, all thirty shell orders
-with five hundred repeated prefixes, and the exact six-row fixed point.
+full thirty-size encoded prefix risk distribution, all thirty shell orders with
+five hundred repeated prefixes, and the exact six-row fixed point.
 
 The next available theorem identifier is `PP3cpx`.
