@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "branch": "research/all-n-prime-patching",
+  "evidence_levels": [
+    "assumed",
+    "fixture_derived",
+    "independently_enumerated",
+    "geometric_verified"
+  ],
+  "frontiers": {
+    "boundary": {
+      "adapter": "docs/549-finite-signature-adapter-for-boundary-markers.md",
+      "evidence_level": "fixture_derived",
+      "independent_geometric_source": null,
+      "lineage": [
+        {"source": "docs/519-eventual-quasipolynomials-for-marker-schedules.md", "lengths": [2, 3], "role": "stored_fixture"},
+        {"source": "docs/525-min-plus-critical-graphs-for-marker-schedules.md", "lengths": [1, 2, 4], "role": "stored_fixture"},
+        {"source": "docs/531-affine-semigroup-saturation-for-marker-cycles.md", "lengths": [1, 2, 3], "role": "stored_fixture"},
+        {"source": "docs/537-apery-certificates-for-marker-semigroups.md", "lengths": [1, 4, 7], "role": "stored_fixture"},
+        {"source": "docs/544-phase-locked-marker-semigroup-synchronization.md", "lengths": [4, 7], "role": "stored_fixture"},
+        {"source": "docs/549-finite-signature-adapter-for-boundary-markers.md", "lengths": [4, 7], "role": "adapter_fixture"}
+      ],
+      "current_signature": {
+        "block_lengths": [4, 7],
+        "per_length_losses": ["1/30", "1/20"],
+        "seam_loss": "1",
+        "phase_modulus": 3
+      },
+      "required_for_promotion": [
+        "explicit local point sets for every block",
+        "controller port labels and orientations",
+        "seam compatibility table",
+        "direct reconstruction of defect/action/loss signatures",
+        "machine-checkable link to the prime-patching geometric definitions"
+      ]
+    },
+    "hall": {
+      "adapter": "docs/550-exact-lumpability-adapter-for-hall-gadgets.md",
+      "evidence_level": "fixture_derived",
+      "independent_geometric_source": null,
+      "quotient_kernels": [
+        [[3, 1, 0], [0, 3, 1], [1, 0, 3]],
+        [[3, 1, 0], [1, 0, 3], [0, 3, 1]]
+      ],
+      "microscopic_construction": "balanced two-by-two lift generated from each quotient entry",
+      "microscopic_states": 6,
+      "syndrome_partition": [[0, 1], [2, 3], [4, 5]],
+      "required_for_promotion": [
+        "independent definitions of microscopic gadget states",
+        "enumeration of every local transition and multiplicity",
+        "partition search performed after the transition census",
+        "exact lumpability certificate or a recorded minimal counterexample",
+        "geometric decoding witness for every positive transition"
+      ]
+    },
+    "threshold": {
+      "adapter": "docs/551-facet-normal-adapter-for-threshold-schedules.md",
+      "evidence_level": "fixture_derived",
+      "independent_geometric_source": null,
+      "quotient_cycles": [
+        [[1, 0], [0, 1], [-1, 0], [0, -1]],
+        [[1, 1], [-1, 0], [0, -1]]
+      ],
+      "facet_normals": [
+        ["1/48", "1/96"],
+        ["-1/96", "1/48"],
+        ["1/120", "-1/120"]
+      ],
+      "quotient_map": null,
+      "source_inequality_ids": [],
+      "required_for_promotion": [
+        "physical resource coordinate list",
+        "complete residual threshold normal matrix",
+        "exact quotient map from physical to scheduled resources",
+        "factorization certificate G = Lambda Q",
+        "separate charge for every nonfactorable residual normal"
+      ]
+    },
+    "prefix": {
+      "adapter": "docs/552-profile-sliced-existence-for-prefix-risk.md",
+      "evidence_level": "fixture_derived",
+      "independent_geometric_source": null,
+      "profile": {"leaves": 30, "binary_nodes": 9, "family_size": 168212023980},
+      "thresholds": [10, 10, 8, 16],
+      "aggregate_risk_multipliers": [3, 2, 1, 1],
+      "risk_enumerator": null,
+      "required_for_promotion": [
+        "canonical object indexing or coefficient dynamic program",
+        "integer risk definition for every object and coordinate",
+        "reconstructed aggregate risk totals",
+        "cross-check between family count and enumerated profile mass",
+        "deterministic witness extraction from the certified good set"
+      ]
+    },
+    "shell": {
+      "adapter": "docs/553-incidence-projected-shell-reserve-adapter.md",
+      "evidence_level": "fixture_derived",
+      "independent_geometric_source": null,
+      "component_words": [
+        [[1, -1], [0, 0], [-1, 1]],
+        [[-1, 1], [0, 0], [1, -1]]
+      ],
+      "incidence_matrix": [[1, 0], [0, 1], [1, 1]],
+      "selected_phase": [0, 0],
+      "slotwise_component_sum_zero": true,
+      "required_for_promotion": [
+        "physical shell resource definitions",
+        "component-to-resource incidence entries derived from geometry",
+        "component residual words before cancellation",
+        "physical prefix trajectory and reserve computation",
+        "nontrivial rank/nullspace audit distinguishing incidence from pre-cancellation"
+      ]
+    },
+    "integration": {
+      "adapter": "docs/554-coupled-frontier-supersolution-closure.md",
+      "evidence_level": "fixture_derived",
+      "independent_geometric_source": null,
+      "base_rows": ["7/120", "11723/524288", "1/24", "1/40", "1/40", "1/48"],
+      "coupling_edges": [
+        {"to": "boundary", "from": "interaction", "weight": "1/200"},
+        {"to": "hall", "from": "boundary", "weight": "1/100"},
+        {"to": "threshold", "from": "hall", "weight": "1/120"},
+        {"to": "prefix", "from": "threshold", "weight": "1/160"},
+        {"to": "shell", "from": "prefix", "weight": "1/120"},
+        {"to": "interaction", "from": "shell", "weight": "1/200"}
+      ],
+      "supersolution": ["59/1000", "23/1000", "42/1000", "26/1000", "26/1000", "22/1000"],
+      "required_for_promotion": [
+        "geometric verification of every direct row",
+        "enumeration or proof of every cross-frontier coupling coefficient",
+        "proof that omitted coupling entries are zero",
+        "recomputed rational supersolution below the global margin",
+        "verified certificates for the finite residual range"
+      ]
+    }
+  }
+}
