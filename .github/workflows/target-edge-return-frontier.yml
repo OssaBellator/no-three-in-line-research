@@ -1,0 +1,45 @@
+name: Target edge return frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - scripts/check_prime_power_forced_certificate_escape_ancestry.py
+      - scripts/check_prime_power_target_edge_return_ancestry.py
+      - docs/452-prime-power-target-edge-return-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-18.md
+      - .github/workflows/target-edge-return-frontier.yml
+  pull_request:
+    paths:
+      - scripts/check_prime_power_forced_certificate_escape_ancestry.py
+      - scripts/check_prime_power_target_edge_return_ancestry.py
+      - docs/452-prime-power-target-edge-return-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-18.md
+      - .github/workflows/target-edge-return-frontier.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile return ancestry stack
+        run: |
+          python -m py_compile \
+            scripts/check_prime_power_forced_certificate_escape_ancestry.py \
+            scripts/check_prime_power_target_edge_return_ancestry.py
+      - name: Run forced-certificate escape ancestry
+        run: python scripts/check_prime_power_forced_certificate_escape_ancestry.py
+      - name: Run target-edge return ancestry
+        run: python scripts/check_prime_power_target_edge_return_ancestry.py
