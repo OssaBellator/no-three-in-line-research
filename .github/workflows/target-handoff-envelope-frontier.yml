@@ -1,0 +1,38 @@
+name: Target handoff envelope frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - scripts/check_prime_power_target_handoff_envelope_ancestry.py
+      - docs/453-prime-power-target-handoff-envelope-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-19.md
+      - .github/workflows/target-handoff-envelope-frontier.yml
+  pull_request:
+    paths:
+      - scripts/check_prime_power_target_handoff_envelope_ancestry.py
+      - docs/453-prime-power-target-handoff-envelope-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-19.md
+      - .github/workflows/target-handoff-envelope-frontier.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile target handoff checker
+        run: python -m py_compile scripts/check_prime_power_target_handoff_envelope_ancestry.py
+      - name: Run target handoff and envelope ancestry
+        run: python scripts/check_prime_power_target_handoff_envelope_ancestry.py
