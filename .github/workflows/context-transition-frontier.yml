@@ -1,0 +1,48 @@
+name: Context transition frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - "scripts/check_prime_power_asymmetric_context_generation.py"
+      - "scripts/check_prime_power_asymmetric_target_dispatch.py"
+      - "scripts/check_prime_power_context_transition_registry.py"
+      - "docs/447-prime-power-context-transition-registry.md"
+      - ".github/workflows/context-transition-frontier.yml"
+  pull_request:
+    paths:
+      - "scripts/check_prime_power_asymmetric_context_generation.py"
+      - "scripts/check_prime_power_asymmetric_target_dispatch.py"
+      - "scripts/check_prime_power_context_transition_registry.py"
+      - "docs/447-prime-power-context-transition-registry.md"
+      - ".github/workflows/context-transition-frontier.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  context-transition-checker:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile transition stack
+        run: |
+          python -m py_compile \
+            scripts/check_prime_power_required_prefix_parent_generation.py \
+            scripts/check_prime_power_asymmetric_context_generation.py \
+            scripts/check_prime_power_asymmetric_target_dispatch.py \
+            scripts/check_prime_power_context_transition_registry.py
+      - name: Run asymmetric context checker
+        run: python scripts/check_prime_power_asymmetric_context_generation.py
+      - name: Run asymmetric target checker
+        run: python scripts/check_prime_power_asymmetric_target_dispatch.py
+      - name: Run context transition checker
+        run: python scripts/check_prime_power_context_transition_registry.py
