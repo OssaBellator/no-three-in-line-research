@@ -1,0 +1,109 @@
+{
+  "schema_version": 2,
+  "branch": "research/all-n-prime-patching",
+  "tranche": "docs/561--566",
+  "theorem_range": "PP3cpf--PP3cpw",
+  "actual_global_row_evidence": {
+    "boundary": "fixture_derived",
+    "hall": "fixture_derived",
+    "threshold": "fixture_derived",
+    "prefix": "fixture_derived",
+    "shell": "fixture_derived",
+    "integration": "fixture_derived"
+  },
+  "independent_extractions": {
+    "boundary": {
+      "completed_required_fields": 3,
+      "total_required_fields": 5,
+      "completed": [
+        "explicit local point sets for candidate four/seven blocks",
+        "controller port labels for every dihedral variant",
+        "complete diagonal seam compatibility table"
+      ],
+      "blocked": [
+        "direct reconstruction of defect/action/loss signatures",
+        "machine-checkable link to prime-patching geometry"
+      ],
+      "result": "all 64 candidate seams obstructed"
+    },
+    "hall": {
+      "completed_required_fields": 4,
+      "total_required_fields": 5,
+      "completed": [
+        "independent microscopic state definition",
+        "complete transition and multiplicity census",
+        "partition search after census",
+        "exact unique common lumpability certificate"
+      ],
+      "blocked": [
+        "prime-patching geometric decoding witness"
+      ],
+      "result": "unique syndrome partition among 15 pair partitions"
+    },
+    "threshold": {
+      "completed_required_fields": 4,
+      "total_required_fields": 5,
+      "completed": [
+        "benchmark physical layer-coordinate list",
+        "exact quotient map",
+        "row-space factorization oracle",
+        "hidden-normal witness and separate-charge flag"
+      ],
+      "blocked": [
+        "complete actual residual normal matrix"
+      ],
+      "result": "docs/521 and docs/527 layer sums differ"
+    },
+    "prefix": {
+      "completed_required_fields": 5,
+      "total_required_fields": 5,
+      "completed": [
+        "coefficient dynamic program",
+        "integer unary-unary risk definition",
+        "aggregate risk reconstruction",
+        "profile-mass cross-check",
+        "deterministic witness extraction"
+      ],
+      "blocked": [],
+      "result": "complete for corrected node-graded structural risk coordinate"
+    },
+    "shell": {
+      "completed_required_fields": 5,
+      "total_required_fields": 5,
+      "completed": [
+        "candidate physical shell resources",
+        "incidence entries derived from those definitions",
+        "nonprecancelled residual word",
+        "physical prefix trajectory and reserve",
+        "full-rank incidence audit"
+      ],
+      "blocked": [],
+      "result": "complete for benchmark shell model, not actual prime-patching shells"
+    },
+    "integration": {
+      "completed_required_fields": 1,
+      "total_required_fields": 5,
+      "completed": [
+        "exact benchmark fixed-point recomputation"
+      ],
+      "blocked": [
+        "geometric direct rows",
+        "geometric coupling coefficients",
+        "proof omitted couplings are zero",
+        "finite residual certificates"
+      ],
+      "result": "arithmetic feasible but evidence gate closed"
+    }
+  },
+  "global_summary": {
+    "completed_candidate_fields": 22,
+    "total_candidate_fields": 30,
+    "candidate_complete_frontiers": [
+      "prefix",
+      "shell"
+    ],
+    "actual_rows_promoted": 0,
+    "global_evidence_meet": "fixture_derived",
+    "geometric_closure_allowed": false
+  }
+}
