@@ -1,0 +1,53 @@
+{
+  "schema_version": 3,
+  "branch": "research/all-n-prime-patching",
+  "tranche": "docs/567--572",
+  "theorem_range": "PP3cpx--PP3cqo",
+  "frontiers": {
+    "boundary": {
+      "result": "282 locally legal band-offset seams, but no globally legal zero-drift cycle among lengths 2, 3, or shortest mixed length 4",
+      "minimum_absolute_offsets": {"P->P": 10, "P->Q": 16, "Q->P": 16, "Q->Q": 24},
+      "candidate_fields": "3/5",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "hall": {
+      "result": "bijection (s,c)->(c,c+s+1 mod 4) from quotient choices to complete four-by-four compatible pairs",
+      "microscopic_witnesses_per_pair_per_gadget": 2,
+      "candidate_fields": "4/5",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "threshold": {
+      "result": "84 exact decompositions of the source matrix; 16 attain prefix discrepancy 1 under derived observables",
+      "bounded_normal_coverage": {"controlled": 145, "hidden": 975, "total": 1120},
+      "candidate_fields": "4/5",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "prefix": {
+      "result": "original-leaf and encoded-node grading reconciled; structural risk retained with geometric type gap explicit",
+      "corrected_profile": {"original_leaves": 30, "encoded_total_nodes": 30, "encoded_binary_nodes": 9, "encoded_unary_nodes": 11, "encoded_leaves": 10, "family_size": 168212023980},
+      "candidate_fields": "5/5",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "shell": {
+      "result": "identity incidence derived from the A/B/C service-debt definitions; exact optimum remains 6/5",
+      "selected_word": "ABABC",
+      "selected_buffer": ["0", "2/5", "4/5"],
+      "candidate_fields": "5/5",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "integration": {
+      "result": "source conversions do not change the stored arithmetic fixed point or evidence meet",
+      "candidate_fields": "1/5",
+      "actual_row_evidence": "fixture_derived"
+    }
+  },
+  "global_summary": {
+    "completed_candidate_fields": 22,
+    "total_candidate_fields": 30,
+    "actual_rows_promoted": 0,
+    "global_evidence_meet": "fixture_derived",
+    "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+    "geometric_closure_allowed": false,
+    "next_theorem_identifier": "PP3cqp"
+  }
+}
