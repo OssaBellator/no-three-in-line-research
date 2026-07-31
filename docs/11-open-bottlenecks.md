@@ -3,7 +3,7 @@
 ## 1. Current proof status
 
 The no-three-in-line conjecture remains open. The authoritative theorem ledger
-reaches **CMR2887**. The predecessor plain masked-host endpoint **CMR2839**
+reaches **CMR2899**. The predecessor plain masked-host endpoint **CMR2839**
 remains part of the synchronized theorem history.
 
 Every final checker, finite theorem checker, bridge, fixture and regression
@@ -13,8 +13,9 @@ permanently reports or preserves:
 all_n_proved_by_checker = 0
 ```
 
-A locator, source hash, finite census, context manifest, selector inequality,
-runtime manifest or workflow result is not evidence of the all-`n` theorem.
+A locator, source hash, finite census, context manifest, transition seal,
+selector inequality, runtime manifest or workflow result is not evidence of the
+all-`n` theorem.
 
 ## 2. Validation entrypoints
 
@@ -41,13 +42,14 @@ python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-The new local T02 stack is:
+The current local T02 stack is:
 
 ```text
 python scripts/check_prime_power_required_prefix_parent_generation.py
 python scripts/check_prime_power_asymmetric_residual_host_contraction.py
 python scripts/check_prime_power_asymmetric_context_generation.py
 python scripts/check_prime_power_asymmetric_target_dispatch.py
+python scripts/check_prime_power_context_transition_registry.py
 ```
 
 Dedicated Python 3.10/3.12 workflows are configured in:
@@ -56,6 +58,7 @@ Dedicated Python 3.10/3.12 workflows are configured in:
 .github/workflows/asymmetric-residual-frontier.yml
 .github/workflows/asymmetric-context-frontier.yml
 .github/workflows/asymmetric-target-dispatch-frontier.yml
+.github/workflows/context-transition-frontier.yml
 ```
 
 Inspect actual workflow runs before claiming CI success.
@@ -77,45 +80,15 @@ No sealed source record proves its statement true by itself.
 
 ## 4. T02: complete local square/asymmetric engine
 
-### Square contexts
+### Square and asymmetric contexts
 
 For side `n`, deleted edges `D` and compatible required edges `P`, the exact
-family is
+square family, realizable triple universe, least anchor and least dirty-anchor
+target are generated. A forced triple contracts to an asymmetric context with
+independent row and column domains in each layer, inherited masks and exact
+opposite-layer blockers.
 
-\[
-\mathcal F(n,D;P)
-=
-\{S:S\text{ is saturated and layer-disjoint},
- S\cap D=\varnothing,
- P\subseteq S\}.
-\]
-
-The family, exact realizable triple universe, least anchor and least dirty-anchor
-target are generated. Deleted/required extensions and first-missing children are
-exact generated contexts.
-
-### Forced-triple residual
-
-Removing a forced labelled triple leaves `2n-3` edges, hence an odd state
-cardinality. The three edges cannot split evenly between the two labelled
-layers. Therefore the child is not a standard equal-layer square host.
-
-The exact child is an asymmetric context with independent surviving row and
-column domains in each layer, inherited deleted/required edges, exact
-opposite-layer blockers and original integer grid coordinates.
-
-### Asymmetric contexts
-
-An asymmetric context is
-
-\[
-(n;R_0,K_0,R_1,K_1;D,P),
-\qquad |R_\lambda|=|K_\lambda|,
-\]
-
-without requiring equal matching sizes across layers.
-
-The class is closed under:
+The asymmetric class is closed under:
 
 ```text
 deleted-edge extension
@@ -124,8 +97,7 @@ arbitrary compatible forced-set contraction
 repeated contraction composition
 ```
 
-Sequential contractions agree exactly with direct contraction of the union on
-domains, masks, required sets, feasible families and triple universes.
+Sequential contractions agree exactly with direct contraction of the union.
 
 ### Complete local candidate response
 
@@ -144,6 +116,36 @@ canonical target destroyed without lower potential
   -> exact conditioned contraction in branch 3
 ```
 
+### Typed transition layer
+
+Every established local operation now has a typed transition record with:
+
+```text
+operation kind
+source theorem identifiers
+construction labels
+literal parent context
+literal child context
+operation payload
+exact child-family semantics
+```
+
+The exact transition kinds are:
+
+```text
+single-edge-deletion
+required-edge-conditioning
+forced-set-contraction
+first-missing-deletion
+first-missing-conditioned-contraction
+```
+
+The CMR830 trace removes a rejected feasible state by deleting one of its edges
+and preserves exactly every state omitting that edge. The CMR862/CMR2794 trace
+emits the complete four-child first-missing bundle, including the exact
+conditioned contraction. Required/deleted overlap is represented by a canonical
+empty contradiction terminal.
+
 The exact local flags include:
 
 ```text
@@ -152,16 +154,30 @@ asymmetric_context_family_generated = 1
 asymmetric_forced_set_contraction_exact = 1
 forced_contraction_composition_exact = 1
 local_asymmetric_candidate_response_complete = 1
+canonical_context_identity_sealed = 1
+single_edge_deletion_transition_exact = 1
+required_edge_conditioning_transition_exact = 1
+forced_set_contraction_transition_exact = 1
+cmr830_single_edge_trace_exact = 1
+cmr862_first_missing_trace_exact = 1
+transition_child_context_generated = 1
+transition_family_semantics_exact = 1
+construction_labels_bound = 1
+actual_construction_ancestry_proved = 0
+global_transition_kind_bank_exhaustive = 0
+global_termination_proved = 0
 actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
 ## 5. T02 global blocker
 
-The remaining T02 theorem is construction-level rather than local. For every
-genuine operation, prove the exact parent and child context data:
+The transition record schema is now defined. The remaining theorem is
+construction-level rather than local.
 
-- operation kind;
+For one genuine operation at a time, derive from the original construction:
+
+- the operation kind;
 - ambient coordinates and layer domains;
 - deleted and required edges;
 - owner and routing identifiers;
@@ -172,15 +188,16 @@ genuine operation, prove the exact parent and child context data:
 - the exact local theorem authorizing the child; and
 - the global measure or finite stock paying for the transition.
 
-Then prove the operation-kind bank exhaustive and prove that every branch
-terminates, strictly improves, contracts, descends a factor, or enters a
-separately finite owner-labelled stock.
-
-Until then:
+The current owner/routing/factor/envelope strings are bound identifiers only:
 
 ```text
-actual_global_parent_rule_complete = 0
+construction_labels_bound = 1
+actual_construction_ancestry_proved = 0
 ```
+
+After genuine ancestry is installed, prove the operation-kind bank exhaustive
+and prove that every branch terminates, strictly improves, contracts, descends a
+factor, or enters a separately finite owner-labelled stock.
 
 ## 6. T03--T04: genuine population
 
@@ -223,15 +240,17 @@ ordinary mathematical review, T42 dossier sign-off and the T43 implication to
 
 ## 10. Immediate work order
 
-1. Define the canonical global context-transition record.
-2. Trace one genuine owner/routing/factor/envelope operation into an exact
-   square/asymmetric parent and child context.
-3. Extend the bridge to every genuine operation kind.
+1. Locate the earliest genuine owner/routing/factor/envelope operation with a
+   literal construction definition.
+2. Derive its actual parent and child context and replace placeholder labels with
+   theorem-derived labels.
+3. Extend genuine ancestry to every operation kind, rejecting any unmodelled
+   restriction.
 4. Prove global transition exhaustiveness and termination/descent.
 5. Populate and verify the T01 sources required by those operations.
 6. Generate genuine T02 records and T03/T04 populations.
 7. Run the T05--T21 engines on those real records.
 8. Prove the remaining rows, chambers, premises, handoffs and root theorem.
 
-No local context checker, documentary registry or runtime manifest substitutes
-for the missing mathematical proofs.
+No local context checker, typed transition registry, documentary interface or
+runtime manifest substitutes for the missing mathematical proofs.
