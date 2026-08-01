@@ -4,12 +4,12 @@ from fractions import Fraction
 CANDIDATE_FIELDS = {
     "boundary": (4, 5),
     "Hall": (4, 5),
-    "threshold": (4, 5),
+    "threshold": (5, 5),
     "prefix": (5, 5),
     "shell": (5, 5),
     "integration": (2, 5),
 }
-assert sum(value for value, _ in CANDIDATE_FIELDS.values()) == 24
+assert sum(value for value, _ in CANDIDATE_FIELDS.values()) == 25
 assert sum(total for _, total in CANDIDATE_FIELDS.values()) == 30
 ACTUAL_EVIDENCE = {name: "fixture_derived" for name in CANDIDATE_FIELDS}
 PROMOTED = tuple(name for name, evidence in ACTUAL_EVIDENCE.items() if evidence == "geometrically_verified")
@@ -29,14 +29,14 @@ assert SLACK == Fraction(200502903475895999, 3623878655999606784) > 0
 
 print({
     "candidate_field_completion": {name: f"{value}/{total}" for name, (value, total) in CANDIDATE_FIELDS.items()},
-    "candidate_fields_complete": 24,
+    "candidate_fields_complete": 25,
     "candidate_fields_total": 30,
     "new_results": {
-        "boundary": "budget-seven corrected chain reaches nine blocks and stops before ten",
-        "Hall": "three matching restrictions plus one cell require six residual resources, sharply",
-        "threshold": "all eight targets have six ordered two-swap algebraic generations and no legal intermediate",
-        "prefix": "parabola retained-source anchors give exact removal-credit count",
-        "shell": "binary odd-column frontier selects the symmetric (1,1,1) action as throughput-improving",
+        "boundary": "complete eighth spectrum; budget-seven corrected chain reaches nine blocks and stops before ten",
+        "Hall": "sharp six-resource core plus bad-vertex and degree-two reserve extraction criteria",
+        "threshold": "all eight targets have forty-eight ordered two-swap paths through twenty illegal intermediates",
+        "prefix": "exact retained-anchor price and explicit parabola source realization",
+        "shell": "unique optimal odd column (1,1,1) gives twelve active controls and zero startup buffer",
     },
     "actual_evidence_levels": ACTUAL_EVIDENCE,
     "promoted_rows": PROMOTED,
