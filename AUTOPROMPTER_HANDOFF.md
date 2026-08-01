@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-07-31 15:40 Australia/Melbourne
+Checkpoint time: 2026-08-01 11:56 Australia/Melbourne
 
 ## Goal
 
@@ -13,119 +13,126 @@ Develop a rigorous all-`n` prime-patching route for the no-three-in-line researc
 5. clean-macro shell attenuation and scheduling;
 6. global interaction/integration certificates.
 
-The asymptotic all-`n` theorem remains open. Existing results are finite reductions, exact certificates, conditional closure mechanisms, independently enumerated candidate models, source-aligned benchmarks, and repository-typed decoders; they must not be described as a completed proof.
+The asymptotic all-`n` theorem remains open. Existing results are finite reductions, exact certificates, conditional closure mechanisms, candidate models, source bridges, coordinate decoders, and decisive bounded obstructions; they must not be described as a completed proof.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint research head: `45f2729faa207fc65c588f95b65668ede78fc854`
-- Pre-checkpoint head title: `Index geometric-decoder theorems through docs 578`
-- Next available theorem identifier: `PP3crh`.
+- Verified pre-checkpoint research head: `d7306300962dbe93387f259ac03f69e0ab7041a9`
+- Pre-checkpoint head title: `Index coordinate-identification theorems through docs 584`
+- The branch was remotely verified identical to that commit before this refresh.
+- Next available theorem identifier: `PP3crz`.
 
 ## Completed work
 
-The branch contains the cumulative six-frontier sequence through `docs/578`. The latest tranche is `docs/573--578`:
+The branch contains the cumulative six-frontier sequence through `docs/584`. The latest tranche is `docs/579--584`:
 
-- `docs/573-inherited-line-state-obstruction-for-boundary-words.md`
-  - Theorems `PP3cqp--PP3cqr`.
-  - Exact inherited pair-line signatures decide every next-block extension.
-  - Globally legal path counts inside offset radius 24 are `8,282,74,4,0` for one through five blocks.
-  - The four length-four survivors have 496 distinct pair lines.
-  - All 306 adjacent-legal fifth-step attempts fail.
+- `docs/579-larger-offset-inherited-line-horizon.md`
+  - Theorems `PP3crh--PP3crj`.
+  - Uses complete inherited pair-line state for exact boundary extension.
+  - At vertical offset radius 32, globally legal path counts for lengths one through six are `8,688,886,376,8,0`.
+  - The eight five-block survivors are all-P words using two variant patterns and four signed offset patterns.
+  - Every survivor has 780 distinct pair lines; all 4160 sixth-block attempts fail.
+  - This is a bounded coordinate obstruction, not an all-offset theorem.
 
-- `docs/574-complete-grid-extension-decoder-for-hall-choices.md`
-  - Theorems `PP3cqs--PP3cqu`.
-  - The quotient-choice map bijects onto the twelve compatible pairs incident with two fixed left resources of `K_4,4`.
-  - Every decoded pair leaves `K_2,2`, hence has exactly two perfect-matching extensions.
+- `docs/580-coordinate-grid-matching-decoder-for-hall.md`
+  - Theorems `PP3crk--PP3crm`.
+  - Decodes the twelve quotient choices into actual cells in the first two rows of a four-by-four grid.
+  - Every pair extends to a no-three-in-line permutation using all four rows and columns.
+  - There are eighteen legal extensions: six pairs have one and six pairs have two.
   - Both microscopic orientations witness every pair.
-  - The remaining gap is coordinate-level identification of the four choice labels with actual prime-patching endpoint cells.
 
-- `docs/575-source-cell-normal-census-for-threshold-layers.md`
-  - Theorems `PP3cqv--PP3cqx`.
-  - Extracts all twelve positive source-cell occupancy normals from the aligned conservative decomposition.
-  - Four factor through the constant/fixed/forward quotient and eight are hidden.
-  - Cell `(0,0)` gives the hidden witness `(1,1,0,0)`.
+- `docs/581-geometric-obstruction-for-aligned-threshold-layers.md`
+  - Theorems `PP3crn--PP3crp`.
+  - Exactly eighteen of twenty-four four-cell permutation layers are no-three-in-line.
+  - None of the eighty-four ordered decompositions of the aligned conservative matrix uses four legal layers.
+  - Every decomposition has at least two illegal layers; the distribution is 48 with two, 12 with three, and 24 with four.
+  - Among fifteen positive-cell collinear triples, eleven quotient normals are controlled and four are hidden.
+  - Hidden witness: triple `(0,0),(1,1),(3,3)` with layer normal `(1,3,0,2)`.
 
-- `docs/576-automaton-support-leaf-risk-decoder.md`
-  - Theorems `PP3cqy--PP3cra`.
-  - Decodes encoded constructors into state-0, state-1, and state-2 terminals of the original automaton.
-  - At original leaf count thirty and binary profile nine, terminal inventory is `(10,11,9)`.
-  - Unary-to-unary risk is exact consecutive nesting of state-1 support terminals.
-  - Aggregate risk remains `638045608200`, mean `110/29`.
+- `docs/582-state-only-support-cell-decoder-obstruction.md`
+  - Theorems `PP3crq--PP3crs`.
+  - Every object in the thirty-leaf, nine-binary profile has terminal inventory `(10,11,9)`.
+  - The same inventory contains `367479684` risk-zero objects and `92378` risk-ten objects.
+  - Therefore state-labelled terminal cells alone cannot recover support-nesting risk; parent-child incidence or equivalent ancestry data is necessary.
 
-- `docs/577-source-action-bridge-for-shell-service.md`
-  - Theorems `PP3crb--PP3crd`.
-  - The unit source actions `A,B,C` force identity incidence in the canonical debt coordinates.
-  - Transfers the three `ABC` phase buffers and the `AABBC` optimum without an extra incidence fixture.
-  - The minimum `l_1` reserve remains `6/5`.
+- `docs/583-cycle-resource-incidence-bridge-for-shell-controls.md`
+  - Theorems `PP3crt--PP3crv`.
+  - Derives the `docs/517` action-to-cycle incidence matrix
+    `((1,1,0),(0,1,1),(1,0,1))`, with determinant two.
+  - Maps the stored action buffer `(2/5,0,0)` to cycle reserve `(2/5,0,2/5)` and reproduces the exact twenty-slot prefix certificate.
+  - Computes the three cycle-coordinate phase buffers for the unit-action period.
 
-- `docs/578-geometric-decoder-evidence-gate.md`
-  - Theorems `PP3cre--PP3crg`.
-  - Candidate completion rises from `22/30` to `23/30`; Hall joins prefix and shell as an internally complete repository-typed model.
-  - The fixture fixed-point total remains `705466760524005697/3623878655999606784` with positive slack.
+- `docs/584-coordinate-identification-evidence-gate.md`
+  - Theorems `PP3crw--PP3cry`.
+  - Candidate field completion remains `23/30`.
+  - The exact fixture fixed-point total remains
+    `705466760524005697/3623878655999606784` with positive slack
+    `200502903475895999/3623878655999606784`.
   - All six actual direct rows remain `fixture_derived`; zero rows are promoted and geometric closure remains false.
 
 Machine-readable record:
 
-- `certificates/prime-patching-geometric-decoders-573-578.json`
+- `certificates/prime-patching-coordinate-identification-579-584.json`
 
 Reproducibility files:
 
-- `scripts/check_boundary_inherited_line_states.py`
-- `scripts/check_hall_complete_grid_extensions.py`
-- `scripts/check_threshold_source_cell_normals.py`
-- `scripts/check_prefix_support_leaf_risk_decoder.py`
-- `scripts/check_shell_source_action_bridge.py`
-- `scripts/check_geometric_decoder_evidence_gate.py`
-- `scripts/check_frontier_573_578.py`
-- `proofs/prime-patching-parity-index-573-578-supplement.md`
+- `scripts/check_boundary_large_offset_horizon.py`
+- `scripts/check_hall_coordinate_grid_extensions.py`
+- `scripts/check_threshold_geometric_layer_obstruction.py`
+- `scripts/check_prefix_state_only_cell_obstruction.py`
+- `scripts/check_shell_cycle_resource_bridge.py`
+- `scripts/check_coordinate_identification_evidence_gate.py`
+- `scripts/check_frontier_579_584.py`
+- `proofs/prime-patching-parity-index-579-584-supplement.md`
 
 The latest combined validation command is:
 
 ```bash
-python scripts/check_frontier_573_578.py
+python scripts/check_frontier_579_584.py
 ```
 
-All six new standalone diagnostics and `python -m py_compile` on the new scripts passed in the local execution runtime before commit. The complete chained runner was not re-executed locally because the repository cannot be cloned into that runtime; it invokes `scripts/check_frontier_567_572.py` first.
+All six new standalone diagnostics and `python -m py_compile` on the new scripts passed in the local execution runtime before commit. The boundary radius-32 audit completed in approximately twenty-five seconds locally. The complete chained runner was not re-executed locally because the repository cannot be cloned into that runtime; it invokes `scripts/check_frontier_573_578.py` first.
 
 ## Decisions and conventions
 
 - Continue on `research/all-n-prime-patching`.
 - Use sequential, reviewable commits and exact rational or integer arithmetic.
-- Continue theorem numbering from `PP3crh`.
+- Continue theorem numbering from `PP3crz`.
 - Keep the six-frontier organization stable.
 - Every tranche must include a stored certificate and checker.
 - State explicitly that the all-`n` theorem remains open.
 - Do not replace proof obligations with bounded computation.
 - Track arithmetic feasibility separately from evidence provenance.
 - Preserve the dual prefix grading: original leaves equal encoded total nodes.
-- Treat repository-typed decoders as intermediate evidence, not geometric row verification.
-- Negative extraction results and minimal counterexamples are valid frontier progress.
+- Coordinate candidates and stored-source bridges are intermediate evidence, not geometric row verification.
+- Negative results and minimal counterexamples are valid frontier progress.
 
 ## Current blockers
 
-- Boundary: the explicit four/seven catalogue has no five-block realization inside offset radius 24. The next attempt needs a larger-offset proof/search, seam point replacements, new blocks, or a compressed inherited-line invariant.
-- Hall: complete-grid cells and extension witnesses exist, but the four choice labels are not tied to actual coordinate-level endpoint cells of a prime-patching host.
-- Threshold: eight of twelve canonical positive source-cell normals are hidden from the aligned quotient; the complete actual geometric inequality list remains absent.
-- Prefix: support nesting is decoded to the original automaton, but automaton terminals are not identified with coordinate-level support-chord cells.
-- Shell: source service actions align exactly, but canonical debts are not identified with actual clean-macro resources.
+- Boundary: radius 32 permits five blocks but no sixth. A realization needs an all-large-offset argument, a seam deletion/replacement catalogue, or different blocks.
+- Hall: coordinate grid cells and legal matching extensions exist, but the four columns are not identified with endpoint cells of an actual prime-patching host and its extra exclusions.
+- Threshold: the current aligned conservative matrix is geometrically unrealizable in four legal slots. A different matrix, more slots, or an exact repair mechanism is required.
+- Prefix: terminal labels do not determine nesting risk. An actual support-chord decoder must retain parent-child incidence and coordinate geometry.
+- Shell: the source-action/cycle incidence bridge is exact for the stored `docs/517` system, but its three cycle inequalities are not identified with actual clean-macro resources.
 - Integration: all direct rows and couplings remain fixture-derived; finite small lengths remain downstream of genuine realization.
 
 ## Uncommitted work
 
 - No completed theorem, script, certificate, supplement, or continuity change is left uncommitted.
+- The research head was remotely verified before this handoff refresh.
 - The repository connector cannot inspect unrelated external local clones.
 
 ## Exact next steps
 
 1. Fetch this handoff and verify the branch head.
-2. Start theorem numbering at `PP3crh`.
-3. Build `docs/579--584` around coordinate-level identification or decisive obstructions.
-4. Boundary: test offsets beyond 24 with symmetry and inherited-line pruning, or introduce a finite seam-corrector deletion/replacement catalogue.
-5. Hall: instantiate the four decoded columns as actual endpoint cells in one explicit earlier PP3 host and verify residual matching extension after all geometric exclusions.
-6. Threshold: extract the first actual residual geometric inequality and determine whether its normal is one of the four controlled cell directions or one of the eight hidden directions.
-7. Prefix: map automaton state terminals to explicit support-chord cells and test whether state-1 nesting corresponds to a real conflict count.
-8. Shell: identify one clean-macro resource whose service vector is one of the canonical unit actions and derive the remaining resource coordinates.
-9. Integration: promote only rows with a complete coordinate source path; otherwise preserve the closed evidence gate.
+2. Start theorem numbering at `PP3crz`.
+3. Build `docs/585--590` around replacements for the newly proved obstructions rather than extending incompatible fixtures.
+4. Boundary: search radius beyond 32 with symmetry/inherited-line pruning, and separately enumerate one-point seam deletions or replacements for the eight five-block survivors.
+5. Hall: identify the four coordinate columns with cells in one explicit earlier PP3 endpoint host and recheck matching extension after every host-specific exclusion.
+6. Threshold: enumerate nearby conservative matrices with the same margins and search for one admitting a decomposition entirely into legal permutation layers; attach quotient observables only after geometric legality.
+7. Prefix: augment the exact DP with parent-child support-chord incidence or an explicit coordinate edge label, then reconstruct one nontrivial geometric aggregate.
+8. Shell: trace the three `docs/517` cycle inequalities to clean-macro resource definitions, or preserve a precise type-mismatch witness if no such definitions exist.
+9. Integration: promote only rows with complete coordinate source paths; otherwise preserve the closed evidence gate and unchanged fixture fixed point.
 10. Run all new diagnostics, Python compilation, the chained runner in a complete checkout, verify the remote head, and refresh this handoff.
