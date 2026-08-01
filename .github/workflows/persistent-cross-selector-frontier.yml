@@ -1,0 +1,28 @@
+name: Persistent cross selector frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_persistent_cross_selector_ancestry.py'
+      - 'docs/478-prime-power-persistent-cross-selector-ancestry.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-44.md'
+      - '.github/workflows/persistent-cross-selector-frontier.yml'
+  pull_request:
+    paths:
+      - 'scripts/check_prime_power_persistent_cross_selector_ancestry.py'
+      - 'docs/478-prime-power-persistent-cross-selector-ancestry.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-44.md'
+      - '.github/workflows/persistent-cross-selector-frontier.yml'
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_persistent_cross_selector_ancestry.py
