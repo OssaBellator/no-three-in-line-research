@@ -4,28 +4,28 @@
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Authoritative theorem endpoint: **CMR3537**
+- Authoritative theorem endpoint: **CMR3585**
 - Mathematical status: the no-three-in-line conjecture remains open.
 - Every checker preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical installed stack
 
 ```text
-138 unique construction operation kinds
-22 exact checker contracts
-42 owner-changing kinds
-96 same-owner kinds
-36 installed checkers
+188 unique construction operation kinds
+23 exact checker contracts
+62 owner-changing kinds
+126 same-owner kinds
+38 installed checkers
 ```
 
 Canonical runner and chained manifest:
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_138.py
-e04a2859b6d64b738d7e300a4fd42c371ef476aefb73542e4649bda99a8b88b3
+python scripts/run_prime_power_installed_construction_regression_188.py
+7e93cf1e7379a12d4146f13a98d075225a9616321838f17002a9bc6ed120a6ca
 ```
 
-The 110-, 117- and 132-kind checkpoints remain historical validation layers. Installed-bank exhaustiveness is not global construction exhaustiveness.
+The 110-, 117-, 132- and 138-kind stacks remain historical validation layers. Installed-bank exhaustiveness is not global construction exhaustiveness.
 
 ## Installed construction history
 
@@ -37,91 +37,94 @@ CMR3202--3257 rooted/pair line-clean cylinders and weighted availability
 CMR3258--3299 adaptive unavailable-token temporal accounting
 CMR3300--3341 persistent crosses, trace ancestry and fixed-selector obstruction stock
 CMR3342--3383 canonical selector collateral and protected absorption chase
-CMR3384--3425 narrow packed-conflict/protected-contact batching checkpoint
+CMR3384--3425 narrow protected batching checkpoint
 CMR3426--3469 selector protected-certificate, slack/core and owned-stock bank
-CMR3470--3489 heavy-line/star protected execution and interface histories
-CMR3490--3513 historical coarser 132-kind registry and runner
-CMR3514--3537 canonical fine-grained 138-kind registry and runner
+CMR3470--3537 heavy-line/star execution, sparse interfaces and 138-kind checkpoint
+CMR3538--3561 product rectangles, factor recursion, prefix routing and child ancestry
+CMR3562--3585 canonical 188-kind registry and 38-checker runner
 ```
 
-## CMR3426--CMR3469 bank
+## CMR3538--CMR3561 bank
 
-Checker and contract:
+Canonical checker and contract:
 
 ```text
-scripts/check_prime_power_selector_protected_certificate_ancestry.py
-b82d83290aa95e41743fe1db9dbbf3a26c09801f40888e42cc1c8e0f0eefd0f0
+scripts/check_prime_power_product_factor_child_ancestry.py
+0ce977177196fbffe8c8ffc446346dde64347999b299307f96ca74d4586e4e12
 ```
 
-It installs disjoint-conflict deletion/restoration, protected-contact token ledgers, recurrent-set batching, weak-slack persistent-core amplification and owner-labelled certificate stocks.
-
-Observed finite highlights:
+The checker is split into reusable modules:
 
 ```text
-434 disjoint-conflict packings
-324 matching-preserving deletions
-162 fully forced conflicts
-802 restoration subsets
-208 protected contact states
-4,095 persistent unavailable-set profiles
-3,264 batch-absorption profiles
-831 small-cover wall profiles
+scripts/product_factor_child_common.py
+scripts/product_factor_child_product.py
+scripts/product_factor_child_routing.py
 ```
 
-## CMR3470--CMR3537 bank
-
-Checker and contract:
+Literal CMR629--CMR690 ancestry includes:
 
 ```text
-scripts/check_prime_power_protected_interface_execution_ancestry.py
-59d5aa3221a9589d8b3f1b9f652383231795ee1e5188b8db1e31d48e080f746f
-```
-
-Literal CMR605--CMR628 operations cover:
-
-```text
-heavy-line contact extraction, absorption, residual caps, destruction and growth
-secant-star wall extraction, compatible-arm filtering and bulk absorption
-protected/free cross-skeleton extraction and exact product factorization
-small-free-factor recursive dispatch
-finite skeleton histories and protected-factor diversity
-physical cross-edge churn and labelled token payment
+product pure/mixed decomposition and exact mixed rectangles
+protected/free low-rank deletion and private restoration codes
+essential contraction, trigger transfer and forced-product escape witnesses
+complete-core pure-factor recursion and anchored deletion
+canonical prefix envelopes, transport tables and exact child routing products
+cross-child boxes, routing-change edge support and mixed-child deletion
+forced-child certificate stock, terminality and paid escape
 ```
 
 Observed finite highlights:
 
 ```text
-34,012 protected-line profiles
-15,466 free line-cell incidences
-41,742 star bulk-absorption profiles
-1,022 exact product-factorization checks
-1,408 interface state incidences
-158 skeleton-changing transitions
-458 physical cross-edge churn incidences
+247 matchable side-three hosts
+64,128 essentiality-loss escape instances
+64,128 affected alternating components
+4,320 factor-prefix profiles
+29,984 transport-table checks
+21,076 routing-product factorisations
+264 routing-changing matching pairs
+49 mixed-child host pairs
+7 mixed-child deletion steps
+9 forced-child endpoints
+40 mixed-clean endpoints
 ```
 
-Canonical 138-kind seals:
+## Canonical 188-kind seals
 
 ```text
 registry contract:
-1ad61f338ba3095e632b4b3e2ee28b1b0400a082d50795311c077068cf6beda3
+f70e412fffd0e8e1c0987fe3b274d138b382a8624867c6e2f0b3ebc0193a034e
 
-36-checker chained manifest:
-e04a2859b6d64b738d7e300a4fd42c371ef476aefb73542e4649bda99a8b88b3
+registry seal:
+4d4875c010c4a6eac3d51eb6492d2db39322bc1b17015dc0dc50eb10946fecfc
+
+38-checker chained manifest:
+7e93cf1e7379a12d4146f13a98d075225a9616321838f17002a9bc6ed120a6ca
+```
+
+The registry entry bank is stored in:
+
+```text
+scripts/product_factor_child_registry_entries_a.py
+scripts/product_factor_child_registry_entries_b.py
 ```
 
 ## Exact current flags
 
 ```text
-selector_protected_certificate_ancestry_proved = 1
-heavy_line_protected_absorption_proved = 1
-secant_star_protected_absorption_proved = 1
-protected_core_interface_factorization_exact = 1
-protected_skeleton_history_exact = 1
-protected_interface_execution_ancestry_proved = 1
-installed_transition_kind_bank_138_exhaustive = 1
-installed_payment_assignment_138_complete = 1
-installed_transition_regression_138_complete = 1
+product_conflict_rectangle_ancestry_proved = 1
+essential_prescription_transfer_exact = 1
+forced_product_certificate_escape_exact = 1
+pure_factor_essential_recursion_exact = 1
+factor_prefix_routing_exact = 1
+multi_child_conflict_rectangles_exact = 1
+routing_change_edge_support_exact = 1
+mixed_child_deletion_recursion_exact = 1
+forced_child_certificate_ancestry_exact = 1
+product_factor_child_ancestry_proved = 1
+installed_transition_kind_bank_188_exhaustive = 1
+installed_payment_assignment_188_complete = 1
+installed_transition_regression_188_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -137,20 +140,32 @@ all_n_proved_by_checker = 0
 
 ## Validation honesty
 
-Dedicated Python 3.10/3.12 workflows exist for the canonical checker, registry and runner. Workflow success must not be claimed without inspecting actual runs, logs and artifacts. The canonical runner validates installed finite claims only.
+Dedicated Python 3.10/3.12 workflows exist for the checker, registry and runner. Workflow success must not be claimed without inspecting actual runs, logs and artifacts. The canonical runner validates installed finite claims only.
 
 ## Immediate next frontier
 
 Install in literal theorem order:
 
 ```text
-CMR629--635 product-conflict rectangle decomposition and deletion
-CMR636--642 essential-prescription transfer
-CMR643--648 forced-product certificate escape
-CMR649--655 pure-factor essential recursion
-CMR656--663 factor-prefix routing
-CMR664--690 multi-child rectangles, routing changes, mixed deletion and forced-child ancestry
-CMR691 onward all remaining owner, target, return, envelope and scheduler definitions
+CMR691--697 descending-path owner stock
+CMR698--706 target handoff and potential conversion
+CMR707--719 fixed-envelope target chains and recurrent target deletion
+CMR720--747 returned-edge ancestry, essential-return Hall batches and unit-wall factor trees
+CMR748 onward recurrent target reserves, neutralized pairs, global return forests,
+              anchor batches, active-context absorption, physical lineage and later actions
+```
+
+Immediate source chapters begin at:
+
+```text
+docs/189-prime-power-descending-path-owner-stock.md
+docs/190-prime-power-target-handoff-potential-conversion.md
+docs/191-prime-power-fixed-envelope-target-chain.md
+docs/192-prime-power-recurrent-target-edge-deletion.md
+docs/193-prime-power-target-edge-return-ancestry.md
+docs/194-prime-power-essential-return-hall-batch.md
+docs/195-prime-power-unit-wall-factorization.md
+docs/196-prime-power-unit-wall-factor-tree.md
 ```
 
 For every genuine action, install a literal parent/child or restricted-family operation, theorem-derived owner effect, exact stock/reintroduction/descent/protected-growth or mandatory scheduler continuation, contract seal and corruption rejection.
