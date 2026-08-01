@@ -6,7 +6,7 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR3941**. Every checker, fixture, bridge, manifest and regression preserves:
+The authoritative theorem ledger reaches **CMR4037**. Every checker, fixture, bridge, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -15,76 +15,104 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_472.py
+python scripts/run_prime_power_installed_construction_regression_552.py
 ```
 
 ```text
-chained manifest = 0c4e224bf17c50069b27abc6b48c4133b57e37e4826f28b69cb7abe00febf730
-installed operation kinds = 472
-bound checker contracts = 30
-owner-changing kinds = 148
-same-owner kinds = 324
-installed checkers = 53
+chained manifest = aab192d2cd4682e51be31a09285141377b5786d231006950a898f36cf43b39fd
+installed operation kinds = 552
+bound checker contracts = 32
+owner-changing kinds = 159
+same-owner kinds = 393
+installed checkers = 57
 ```
 
 Newest direct entrypoints:
 
 ```text
-scripts/check_prime_power_protected_surplus_target_packing_ancestry.py
-scripts/check_prime_power_selected_scheduler_terminal_wall_ancestry.py
-scripts/check_prime_power_universal_base_nonclosure_ancestry.py
-scripts/check_prime_power_installed_operation_registry_472.py
+scripts/check_prime_power_collateral_spectral_ancestry.py
+scripts/check_prime_power_finite_grid_response_ancestry.py
+scripts/check_prime_power_installed_operation_registry_552.py
 ```
 
 A manifest records validation execution; it is not a proof certificate.
 
 ## Latest installed T02 banks
 
-### CMR3798--CMR3845 — CMR1006--CMR1093
-
-Protected robust-surplus execution, simultaneous common/cross stars, target packing/escape, large-core descent and global protected capacity are executable.
-
-### CMR3846--CMR3893 — CMR1094--CMR1165
-
-Selected routing is parameter-free; normalized minimum losses are permanent and finite; fixed cores recondition or expose real losses; rollback banks compress to blocker covers; selected scheduler currencies are finite; fully blocked response banks produce exact deficiency-one unit walls.
-
 ### CMR3894--CMR3941 — CMR1166--CMR1197
 
-Universal-range dirty owners are nonterminal and descend to strict children, unit walls or finite bases. Side three has an exact singleton response bank; side two is physically rigid and clean at the root; side one contracts. Every dirty small-interface target has a canonical lifted response-bank owner.
-
-Finite response is **not** promoted to minimum zero. The checker includes an explicit positive-minimum finite-response countermodel and preserves:
+Universal-range dirty owners descend to response banks, strict children, unit walls or finite bases. The finite-response countermodel preserves:
 
 ```text
 global_target_collateral_inequality_proved = 0
 ```
 
-CMR1196 remains an open target.
+### CMR3942--CMR3989 — CMR1198--CMR1277
+
+Degree-two fixed-target response banks now have exact rank-cylinder probabilities, restricted-host penalties, absolute last-entering owners, corrected three-rank line energies, doubly stochastic rank-one marginals, pointwise local collateral envelopes and optimized target aggregation.
+
+Every physical triple has one last-creation credit and owner cell. Target response policies reduce to finite nonnegative offspring matrices; successful policies admit exact rational/integer Lyapunov certificates. This is a reduction and certificate format, not a proof that every owner is subcritical.
+
+Finite checker highlights:
+
+```text
+216 side-four joint states
+1,728 selected target cells
+2,112 degree-two bank configurations
+5,436 response states
+9,514 rank-cylinder checks
+8,192 restricted-host profiles
+21,744 edge-conditioned envelope checks
+72 live-credit histories
+8,100 rational Lyapunov certificates
+```
+
+### CMR3990--CMR4037 — CMR1278--CMR1317
+
+Full standard grids and verified translate/common-scale affine copies have finite response policies:
+
+```text
+side 3: every dirty target response is clean
+side 4: all 176 dirty ordered states have a strict response
+side 5: all 5,216 dirty ordered states have a strict response
+side 6: 189,476 dirty states improve immediately;
+        1,184 traps escape in at most two equal responses;
+        24 ordered traps form six two-cycles plus twelve feeders;
+        one recorded clean joint response escapes the closed class
+```
+
+These numerical policies do **not** transfer by arbitrary relabelling to scattered residual factors. The side-six trap class also proves that repeated one-layer fixed-target banks are not globally sufficient.
 
 ## Canonical contracts and seals
 
 ```text
-selected scheduler / terminal wall checker:
-f10e632f119fdd56a830ddeb8b9d15d18769f59e703d0dad7a59f243a7c8246c
+collateral/spectral checker:
+26e224413ed320276f50e0852b64291c11994861d21b35bb4bec9077179b7577
 
-universal/base/nonclosure checker:
-1872628306b27c0e3240fe4be2acb27f319c9d2f36acead6b47deaa6838efd36
+finite-grid checker:
+caa854d1cac17e5d4680558a9829b01a5d19b86a811e2baae47170d4839f3114
 
-472-kind registry contract:
-83c69c981fbccb8ab8634a2a767032c6a44384cb30afafbf27e883738baf0232
+552-kind registry contract:
+77670b377285d73441fd7c19cdd83a115ce658ef263098f45c73a633f352d232
 
-472-kind registry seal:
-754a91a7c1e978756b97d01576095763d8d7249f01d137acf8c5b7a174283ee1
+552-kind registry seal:
+890827174d7c40a37b23c8c5ccba673ddd3ab39a7e3ae7cef4f88df5c1b0387b
+
+57-checker manifest:
+aab192d2cd4682e51be31a09285141377b5786d231006950a898f36cf43b39fd
 ```
 
-Current exact flags include:
+## Current exact flags
 
 ```text
-selected_scheduler_terminal_wall_ancestry_proved = 1
-universal_base_nonclosure_ancestry_proved = 1
-installed_transition_kind_bank_472_exhaustive = 1
-installed_payment_assignment_472_complete = 1
-installed_transition_regression_472_complete = 1
+collateral_spectral_ancestry_proved = 1
+finite_grid_response_ancestry_proved = 1
+installed_transition_kind_bank_552_exhaustive = 1
+installed_payment_assignment_552_complete = 1
+installed_transition_regression_552_complete = 1
 
+scattered_residual_finite_grid_policy_proved = 0
+one_layer_fixed_target_policy_globally_sufficient = 0
 global_target_collateral_inequality_proved = 0
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -100,23 +128,20 @@ all_n_proved_by_checker = 0
 
 ## Exact next mathematical frontier
 
-The next literal range starts at source chapter 254:
+The next literal source range starts at chapter 269:
 
 ```text
-degree-two bank collateral expectation
-restricted-bank target collateral selection
-last-entering collateral ownership
-degree-two bank line energy
-rank-one bank marginal refinement
-full collateral local envelope
-optimized envelope target aggregation
-last-creation collateral credit ledger
-collateral reproduction matrices
-rational spectral certificates
-explicit side-three through side-six strict-improvement banks
+last-entering owner triangularity
+exact credit classes and upper quotients
+degree-two bank line-profile classes
+line-profile pair-moment envelopes
+extension-free permanent and marginal bounds
+extension-free line-composition kernels and exact cylinder types
+cross-line edge assignment and candidate-transversal Hall walls
+rook-owner weights and cross-line owner assignment
 ```
 
-The missing theorem is an actual target-versus-collateral inequality or equivalent spectral certificate that forces one bank state below a positive selected minimum.
+The active theorem remains a globally valid target-versus-collateral subcriticality certificate for inherited-coordinate factors, including genuine block triangularity or a bounded interface error.
 
 ## Other open targets
 
@@ -124,4 +149,4 @@ T01 lacks authoritative primary-source population. T03--T04 lack genuine operati
 
 ## Validation status
 
-The newest mathematical checkers and registries were executed locally and passed. The complete 53-checker repository runner was not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but configuration is not evidence of CI success.
+The collateral/spectral checker and both new registries were executed locally and passed. The finite-grid consolidated wrapper compiles, but its complete inherited side-five/side-six enumeration was not executed in the current local environment. Neither the complete 55-checker nor 57-checker repository runner was executed locally. Dedicated Python 3.10/3.12 workflows are configured, but configuration is not evidence of CI success.
