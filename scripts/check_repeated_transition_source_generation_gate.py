@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify the candidate ledger and strict evidence gate after docs 621--626."""
+"""Verify the consolidated candidate ledger and strict evidence gate for docs 621--626."""
 from fractions import Fraction
 
 CANDIDATE_FIELDS = {
@@ -38,11 +38,11 @@ print({
     "candidate_fields_complete": 25,
     "candidate_fields_total": 30,
     "new_results": {
-        "boundary": "one seven-point corrected eighth transition; zero raw ninth extensions",
-        "Hall": "reserve condition total_resources >= 6 + max(bad_left,bad_right)",
-        "threshold": "all eight nearest legal matrices have two-pivot conservative source paths",
-        "prefix": "mean retained-anchor reservoir 418/29; maximum 22",
-        "shell": "unique l1<=3 odd column (1,1,1) achieves twelve active controls and zero buffer",
+        "boundary": "budget-seven corrected path reaches nine blocks; the two tenth-step survivors have no budget-seven correction",
+        "Hall": "three degree-two forbidden families need forty-two residual resources to extract the sharp six-resource core",
+        "threshold": "all eight targets have forty-eight ordered two-pivot paths through twenty illegal intermediates",
+        "prefix": "parabola anchors realize the incidence model; retained-anchor reservoir mean is 418/29 and worst case twenty-two",
+        "shell": "the unique optimal odd column (1,1,1) gives twelve active controls and a zero-buffer period",
     },
     "actual_evidence_levels": ACTUAL_EVIDENCE,
     "promoted_rows": PROMOTED,
