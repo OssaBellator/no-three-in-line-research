@@ -6,7 +6,7 @@ SCRIPTS = (
     "scripts/check_frontier_615_620.py",
     "scripts/check_boundary_eighth_corrected_transition.py",
     "scripts/check_boundary_budget_seven_chain.py",
-    "scripts/check_hall_quantitative_reserve_extraction.py",
+    "scripts/check_hall_bad_vertex_reserve.py",
     "scripts/check_hall_three_matching_reserve_threshold.py",
     "scripts/check_threshold_two_pivot_generation.py",
     "scripts/check_prefix_retained_anchor_reservoir.py",
