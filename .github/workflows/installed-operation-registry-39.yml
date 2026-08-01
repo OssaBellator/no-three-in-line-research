@@ -1,0 +1,24 @@
+name: installed-operation-registry-39
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_installed_operation_registry_39.py
+      - docs/466-prime-power-installed-operation-registry-39.md
+      - proofs/composite-modulus-theorem-index-live-continuation-32.md
+      - .github/workflows/installed-operation-registry-39.yml
+  workflow_dispatch:
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_installed_operation_registry_39.py
