@@ -2,38 +2,37 @@
 
 `docs/609` constructs a sharp six-point seam corrector and `docs/615` finds one
 corrected seventh transition.  This chapter combines the complete eighth-step
-transversal spectrum with explicit corrected eighth and ninth transitions,
+small-transversal spectrum with explicit corrected eighth and ninth transitions,
 retaining the full inherited-line state and offset radius `32`.
 
-## 1. Complete eighth-step spectrum
+## 1. Eighth-step small-transversal spectrum
 
-### Theorem PP3cwd -- PROVED / COMPLETE RADIUS-32 TRANSVERSAL CENSUS
+### Theorem PP3cwd -- PROVED / RADIUS-32 TRANSVERSAL CENSUS THROUGH SIX
 
 For the canonical corrected seventh state, the 520 typed eighth-block attempts
-have exact minimum line-conflict transversal histogram
+have exact minimum line-conflict transversal histogram through size six
 
 ```text
-4:1, 5:6, 6:21, 7:68, 8:164,
-9:2, 10:4, 11:34, 12:41, 13:107, 14:72.
+4:1, 5:6, 6:21, greater than 6:492.
 ```
 
-Exactly ninety-six attempts have minimum transversal at most seven.  Their
-minimum-transversal families contain 808 distinct sets.  Restricting to minimum
-sizes four and five leaves seven attempts and twenty-one minimum transversals.
+The seven attempts of minimum size four or five have exactly twenty-one minimum
+transversals in total.
 
 #### Proof
 
 The checker reconstructs the corrected seventh state, forms every old-old-new
-and old-new-new collinear triple, solves minimum hitting set exactly, and
-enumerates all minimum sets through size seven.  ∎
+and old-new-new collinear triple, and solves minimum hitting set exactly through
+size six.  It then enumerates every minimum transversal for the seven smallest
+attempts.  ∎
 
 ## 2. Corrected eighth and ninth transitions
 
 ### Theorem PP3cwe -- PROVED / TWO EXPLICIT BUDGET-SEVEN TRANSITIONS
 
-Among all 808 eighth-step minimum transversals and every enlargement to total
-deletion size at most seven, exactly one degree-preserving legal eighth
-correction exists.  It uses `P1` at offset `31`:
+Among the twenty-one minimum transversals of size four or five and every
+enlargement to total deletion size at most seven, exactly one degree-preserving
+legal eighth correction exists.  It uses `P1` at offset `31`:
 
 ```text
 delete:
