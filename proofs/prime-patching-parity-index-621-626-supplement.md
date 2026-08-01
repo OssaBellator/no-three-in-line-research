@@ -5,7 +5,7 @@ This supplement continues the cumulative PP3 index after `docs/620`.
 | ID | Statement | Status | Location |
 |---|---|---|---|
 | PP3cwd--PP3cwf | The corrected boundary state has a complete eighth transversal spectrum, unique corrected eighth and ninth transitions, and no budget-seven tenth transition | PROVED | `docs/621-repeated-corrected-boundary-transition.md` |
-| PP3cwg--PP3cwi | Bounded-degree forbidden families admit matching-shaped reserve extraction; three degree-two families need forty-two residual resources, and the six-resource completion threshold is sharp | PROVED / CONDITIONAL INTERFACE | `docs/622-quantitative-hall-reserve-extraction.md` |
+| PP3cwg--PP3cwi | Three matching-shaped restrictions plus one cell have a sharp six-resource completion threshold, with exact bad-vertex and bounded-degree extraction criteria | PROVED / CONDITIONAL INTERFACE | `docs/622-sharp-three-matching-hall-reserve-threshold.md` |
 | PP3cwj--PP3cwl | Every nearest legal threshold target has six shortest two-pivot source paths, all through illegal visible intermediates, completing the candidate matrix-level source path | PROVED / FINITE REDUCTION | `docs/623-two-pivot-generation-of-threshold-trades.md` |
 | PP3cwm--PP3cwo | Maximal-run counts give the exact retained-anchor price; an integer-parabola source realizes the incidences, while the internal nineteen-cell reservoir fails on a positive fraction | PROVED / CONDITIONAL SOURCE MODEL | `docs/624-retained-anchor-reservoir-price.md` |
 | PP3cwp--PP3cwr | The unique optimal odd shell column of `l_1` norm at most three is `(1,1,1)`, giving twelve active controls and a zero-buffer period | PROVED / CONDITIONAL SOURCE COLUMN | `docs/625-optimal-all-cycle-odd-shell-column.md` |
@@ -29,17 +29,25 @@ five, and neither admits a correction within budget seven.
 
 ### Localized Hall transport
 
-For `k` forbidden families of maximum degree `Delta`, a matching-shaped reserve
-of size `r` is extracted whenever
+Three matching-shaped restrictions plus one arbitrary cell are always completable
+on six residual resources per side, sharply; five fail through a forbidden
+`K_3,3` decomposed into three matchings.
+
+Bad-vertex counts give the exact preselection condition
+
+```text
+m >= 8+max(b_L,b_R).
+```
+
+Alternatively, for `k` forbidden families of maximum degree `Delta`, a reserve of
+size `r` is extracted whenever
 
 ```text
 N >= r(1+2k*C(Delta,2)).
 ```
 
-With three degree-two families and target reserve six, forty-two residual
-resources suffice, or forty-four before the local pair consumes two.  The six-
-resource completion core is sharp: five fail via a forbidden `K_3,3` decomposed
-into three matchings.
+With three degree-two families and reserve six, forty-two residual resources
+suffice, or forty-four before the local pair consumes two.
 
 ### Fractional direct-clean layers
 
@@ -92,7 +100,7 @@ or the consolidated audits individually:
 ```bash
 python scripts/check_boundary_eighth_corrected_transition.py
 python scripts/check_boundary_budget_seven_chain.py
-python scripts/check_hall_quantitative_reserve_extraction.py
+python scripts/check_hall_bad_vertex_reserve.py
 python scripts/check_hall_three_matching_reserve_threshold.py
 python scripts/check_threshold_two_pivot_generation.py
 python scripts/check_prefix_retained_anchor_reservoir.py
