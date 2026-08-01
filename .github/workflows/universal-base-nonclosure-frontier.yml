@@ -1,0 +1,28 @@
+name: Universal base nonclosure frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_universal_base_nonclosure_ancestry.py'
+      - 'docs/250-prime-power-universal-range-target-descent.md'
+      - 'docs/251-prime-power-small-joint-factor-base.md'
+      - 'docs/252-prime-power-small-interface-target-ancestry.md'
+      - 'docs/253-prime-power-finite-response-nonclosure.md'
+      - 'docs/518-prime-power-universal-base-nonclosure-ancestry.md'
+      - '.github/workflows/universal-base-nonclosure-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run universal base nonclosure checker
+        run: python scripts/check_prime_power_universal_base_nonclosure_ancestry.py
