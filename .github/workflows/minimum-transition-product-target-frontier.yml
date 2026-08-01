@@ -1,0 +1,35 @@
+name: Minimum transition product target frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_minimum_transition_product_target_ancestry.py'
+      - 'scripts/check_prime_power_scc_branch_minimum_face_ancestry.py'
+      - 'docs/220-prime-power-minimum-face-owner-transition.md'
+      - 'docs/221-prime-power-minimum-expansion-rollback.md'
+      - 'docs/222-prime-power-lowering-expansion-core-contraction.md'
+      - 'docs/223-prime-power-complete-host-transition-normalization.md'
+      - 'docs/224-prime-power-induced-product-potential-transport.md'
+      - 'docs/225-prime-power-minimum-coordinate-fibre-descent.md'
+      - 'docs/226-prime-power-minimum-core-host-representability.md'
+      - 'docs/227-prime-power-minimum-face-target-handoff.md'
+      - 'docs/228-prime-power-minimum-robust-target-surplus.md'
+      - 'docs/229-prime-power-absolute-signature-pair-stabilization.md'
+      - 'docs/509-prime-power-minimum-transition-product-target-ancestry.md'
+      - '.github/workflows/minimum-transition-product-target-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run minimum transition product target checker
+        run: python scripts/check_prime_power_minimum_transition_product_target_ancestry.py
