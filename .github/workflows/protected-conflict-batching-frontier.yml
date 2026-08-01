@@ -1,0 +1,28 @@
+name: Protected conflict batching frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_protected_conflict_batching_ancestry.py'
+      - 'docs/484-prime-power-protected-conflict-batching-ancestry.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-50.md'
+      - '.github/workflows/protected-conflict-batching-frontier.yml'
+  pull_request:
+    paths:
+      - 'scripts/check_prime_power_protected_conflict_batching_ancestry.py'
+      - 'docs/484-prime-power-protected-conflict-batching-ancestry.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-50.md'
+      - '.github/workflows/protected-conflict-batching-frontier.yml'
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_protected_conflict_batching_ancestry.py
