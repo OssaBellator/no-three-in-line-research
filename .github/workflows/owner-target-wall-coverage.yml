@@ -1,0 +1,33 @@
+name: Owner target wall coverage
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_owner_target_wall_coverage.py'
+      - 'scripts/run_prime_power_installed_construction_regression_188_coverage.py'
+      - 'docs/498-prime-power-owner-target-wall-coverage.md'
+      - 'docs/499-prime-power-installed-construction-regression-188-coverage.md'
+      - '.github/workflows/owner-target-wall-coverage.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  coverage:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile coverage sources
+        run: |
+          python -m py_compile \
+            scripts/check_prime_power_owner_target_wall_coverage.py \
+            scripts/run_prime_power_installed_construction_regression_188_coverage.py
+      - name: Run inherited coverage checker
+        run: python scripts/check_prime_power_owner_target_wall_coverage.py
+      - name: Static canonical coverage manifest
+        run: python scripts/run_prime_power_installed_construction_regression_188_coverage.py --static-only
