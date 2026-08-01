@@ -1,0 +1,27 @@
+name: Extended installed operation registry
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_extended_installed_operation_registry.py
+      - scripts/check_prime_power_essential_return_unit_wall_ancestry.py
+      - scripts/check_prime_power_sparse_rollback_restoration_ancestry.py
+      - docs/460-prime-power-extended-installed-operation-registry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-26.md
+      - .github/workflows/extended-installed-operation-registry.yml
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m py_compile scripts/check_prime_power_extended_installed_operation_registry.py
+      - run: python scripts/check_prime_power_extended_installed_operation_registry.py
