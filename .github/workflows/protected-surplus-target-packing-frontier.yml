@@ -1,0 +1,35 @@
+name: Protected surplus target packing frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_protected_surplus_target_packing_ancestry.py'
+      - 'docs/230-prime-power-robust-surplus-entry-rank-dichotomy.md'
+      - 'docs/231-prime-power-secant-star-layer-polarization.md'
+      - 'docs/232-prime-power-entering-pair-line-absorption.md'
+      - 'docs/233-prime-power-robust-surplus-protected-execution.md'
+      - 'docs/234-prime-power-large-protected-core-minimum-descent.md'
+      - 'docs/235-prime-power-loaded-target-line-minimum-absorption.md'
+      - 'docs/236-prime-power-simultaneous-star-direct-absorption.md'
+      - 'docs/237-prime-power-simultaneous-cross-star-absorption.md'
+      - 'docs/238-prime-power-minimum-target-hypergraph-packing.md'
+      - 'docs/239-prime-power-disjoint-target-simultaneous-escape.md'
+      - 'docs/240-prime-power-global-protected-owner-capacity.md'
+      - 'docs/512-prime-power-protected-surplus-target-packing-ancestry.md'
+      - '.github/workflows/protected-surplus-target-packing-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run protected surplus target packing checker
+        run: python scripts/check_prime_power_protected_surplus_target_packing_ancestry.py
