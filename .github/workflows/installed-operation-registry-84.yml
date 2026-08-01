@@ -1,0 +1,30 @@
+name: Installed operation registry 84
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_installed_operation_registry_84.py'
+      - 'scripts/check_prime_power_persistent_cross_selector_ancestry.py'
+      - 'docs/479-prime-power-installed-operation-registry-84.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-45.md'
+      - '.github/workflows/installed-operation-registry-84.yml'
+  pull_request:
+    paths:
+      - 'scripts/check_prime_power_installed_operation_registry_84.py'
+      - 'scripts/check_prime_power_persistent_cross_selector_ancestry.py'
+      - 'docs/479-prime-power-installed-operation-registry-84.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-45.md'
+      - '.github/workflows/installed-operation-registry-84.yml'
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_installed_operation_registry_84.py
