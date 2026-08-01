@@ -1,0 +1,58 @@
+{
+  "tranche": "603-608",
+  "theorems": [
+    "PP3cub-PP3cud",
+    "PP3cue-PP3cug",
+    "PP3cuh-PP3cuj",
+    "PP3cuk-PP3cum",
+    "PP3cun-PP3cup",
+    "PP3cuq-PP3cus"
+  ],
+  "candidate_field_completion": {
+    "boundary": "3/5",
+    "Hall": "4/5",
+    "threshold": "4/5",
+    "prefix": "5/5",
+    "shell": "5/5",
+    "integration": "2/5"
+  },
+  "candidate_fields_complete": 23,
+  "candidate_fields_total": 30,
+  "frontiers": {
+    "boundary": {
+      "result": "210092 exact degree-preserving five-point refills all fail",
+      "evidence_level": "exact_five_point_boundary_repair_obstruction",
+      "promoted": false
+    },
+    "Hall": {
+      "result": "96 complete source-typed five-resource lifts; 72 uniformly single-exclusion robust",
+      "evidence_level": "source_typed_five_resource_hall_fixture",
+      "promoted": false
+    },
+    "threshold": {
+      "result": "unique legal augmentation (3,0,1,2) requires degree-five margins and one extra slot",
+      "evidence_level": "exact_threshold_source_margin_obstruction",
+      "promoted": false
+    },
+    "prefix": {
+      "result": "aggregate distinct unary-run collinear triples 396499770810, mean 33/14",
+      "evidence_level": "distinct_ancestry_run_collinearity_census",
+      "promoted": false
+    },
+    "shell": {
+      "result": "recorded source monoid remains in the even-coordinate-sum lattice",
+      "evidence_level": "exact_recorded_source_monoid_obstruction",
+      "promoted": false
+    },
+    "integration": {
+      "result": "zero rows promoted; closure false",
+      "evidence_level": "evidence_gate",
+      "promoted": false
+    }
+  },
+  "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+  "fixture_slack_below_one_quarter": "200502903475895999/3623878655999606784",
+  "geometric_closure": false,
+  "all_n_theorem": "open",
+  "next_theorem_identifier": "PP3cut"
+}
