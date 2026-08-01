@@ -2,10 +2,10 @@
 
 `docs/616` treats two matching-shaped forbidden families in residual `K_{4,4}`.
 A real conditional host may also have a matching-shaped host-defect family.  This
-chapter gives the sharp reserve needed for three such families plus one arbitrary
-blocked cell.
+chapter combines a sharp six-resource completion theorem with two quantitative
+ways to extract the required matching-shaped restrictions.
 
-## 1. Six residual resources suffice
+## 1. Six residual resources suffice, sharply
 
 ### Theorem PP3cwg -- PROVED / THREE-MATCHING RESERVE LEMMA
 
@@ -16,64 +16,88 @@ F = M_partner union M_source union M_host union {e},
 ```
 
 where each `M_*` is a partial matching and `e` is one arbitrary edge.  Then
-`K_{6,6}-F` has a perfect matching.
+`K_{6,6}-F` has a perfect matching.  Five residual resources are insufficient.
 
 #### Proof
 
-Suppose not.  Hall gives `S subseteq L`, `|S|=s`, with
-`|N(S)|<=s-1`.  Put `T=R\N(S)`.  Then
-
-```text
-|T| >= 6-s+1
-```
-
-and the complete rectangle `S x T` lies in `F`.
-
-The union of three partial matchings has degree at most three.  Adding `e` can
-raise the degree to four at only one left and one right vertex.  The minimum
-Hall-rectangle dimensions are
+A Hall failure on six resources requires a complete forbidden rectangle of one
+of the dimensions
 
 ```text
 1x6, 2x5, 3x4, 4x3, 5x2, 6x1.
 ```
 
-The first, second, fifth, and sixth require degree at least five somewhere.  A
-`3x4` rectangle requires three left vertices of degree four, and a `4x3`
-rectangle requires three right vertices of degree four.  Both exceed the single
-exception supplied by `e`.  Contradiction.  ∎
+Three matchings have maximum degree three, and `e` raises the degree to four at
+only one left and one right vertex.  The outer four rectangles require degree at
+least five.  A `3x4` rectangle requires three left vertices of degree four, and
+a `4x3` rectangle requires three right vertices of degree four.  None is
+possible.
 
-## 2. Five residual resources are insufficient
+For sharpness, in `K_{5,5}` forbid a `K_{3,3}` decomposed into the three cyclic
+perfect matchings.  Its three left vertices retain only the other two right
+neighbours.  ∎
 
-### Theorem PP3cwh -- PROVED / SHARP FIVE-RESOURCE OBSTRUCTION
+## 2. Reserve extraction from bad vertices
 
-The six-resource conclusion is sharp.  In `K_{5,5}`, choose three left vertices
-and three right vertices and forbid their complete `K_{3,3}`.  This forbidden
-rectangle is the union of three perfect matchings on those triples.  The selected
-three left vertices then have only the other two right vertices as neighbours,
-so Hall fails.
+### Theorem PP3cwh -- PROVED / EXACT BAD-VERTEX FORMULA
+
+Suppose a local pair has consumed two resources per side from a host with `m`
+resources per side.  Let `b_L,b_R` be the numbers of remaining resources whose
+degree exceeds one in any restricted partner, source, or host-defect family.
+Then six good residual resources per side can be selected whenever
+
+```text
+m >= 8 + max(b_L,b_R).
+```
 
 #### Proof
 
-Decompose `K_{3,3}` into the three cyclic matchings
-`j=i`, `j=i+1`, and `j=i+2 mod 3`.  The displayed set of three left vertices has
-neighbourhood size two in the complement.  ∎
+There are `m-2` unused resources.  Removing all bad vertices leaves every
+restriction of maximum degree at most one, hence a partial matching.  Six good
+resources remain on each side exactly when
 
-## 3. Conditional-host consequence
+```text
+m-2-b_L >= 6,
+m-2-b_R >= 6.
+```
 
-### Theorem PP3cwi -- PROVED UNDER MATCHING-SHAPED RESTRICTIONS / EIGHT-RESOURCE CONDITION
+These inequalities are equivalent to the displayed formula.  ∎
 
-After a local pair consumes two endpoint resources on each side, conditional
-completion is guaranteed if:
+## 3. Reserve extraction from degree bounds
 
-1. at least six resources remain on each side;
-2. the restricted partner fibre is a partial matching;
-3. the restricted source exclusions are a partial matching;
-4. the restricted host defects are a partial matching; and
-5. at most one further residual cell is blocked.
+### Theorem PP3cwi -- PROVED / FORTY-FOUR-RESOURCE PIPELINE
 
-Equivalently, this finite interface requires at least eight resources per side
-before selecting the local pair.
+For `k` forbidden families of maximum degree `Delta`, an `r`-resource reserve on
+which every family is a partial matching exists whenever
 
-The missing asymptotic statement is now precise: the superregular conditional
-host must expose six unused resources and convert each of the three restricted
-forbidden families into a partial matching.
+```text
+N >= r(1+2k*C(Delta,2))
+```
+
+unused resources remain per side.  In particular, for the three partner, source,
+and host-defect families with degree at most two, forty-two residual resources
+suffice to extract the sharp six-resource core.  Thus forty-four resources per
+side before selecting the local pair suffice, and the core survives one further
+blocked cell by `PP3cwg`.
+
+#### Proof
+
+On one side, join two resources when they share a neighbour in any forbidden
+family.  The collision graph has at most `kN*C(Delta,2)` edges, so the standard
+independence bound gives an independent set of size at least
+
+```text
+N/(1+2k*C(Delta,2)).
+```
+
+Choose `r` independent left resources and repeat on the right; independence makes
+every restricted family a partial matching.  Substitute `k=3`, `r=6`,
+`Delta=2`.  ∎
+
+## Consequence
+
+The Hall obligation is now numerical and sharp at the finite core.  The
+asymptotic conditional host must either bound the union of bad vertices strongly
+enough for `PP3cwh`, or provide degree at most two and forty-two residual
+resources for `PP3cwi`.  Neither estimate is currently available, so the Hall
+row remains unpromoted.
