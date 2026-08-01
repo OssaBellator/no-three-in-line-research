@@ -20,14 +20,14 @@ integration 2/5
 for a total of `25/30`.
 
 The threshold candidate gains one field because every nearest legal target now
-has a complete repository-native two-pivot source-matrix path.  The strengthened
+has a complete repository-native two-swap source-matrix path. The strengthened
 boundary, Hall, prefix, and shell results sharpen finite interfaces but do not
 complete another candidate field.
 
 #### Proof
 
 `scripts/check_repeated_transition_source_generation_gate.py` reconstructs the
-ledger and records the provenance of each result.  ∎
+ledger and records the provenance of each result. ∎
 
 ## 2. Actual evidence gate
 
@@ -40,19 +40,20 @@ The unresolved source paths are:
 
 - boundary: the budget-seven corrected path reaches nine blocks but has no tenth
   transition at that budget;
-- Hall: the forty-two-resource degree-two reserve hypothesis is not derived from
-  the asymptotic conditional host;
-- threshold: every two-pivot path has an illegal visible intermediate and no
-  atomic geometric pivot compound is known;
+- Hall: the asymptotic host has not been shown to expose six unused resources per
+  side with partner, source, and host-defect restrictions all partial matchings;
+- threshold: every two-swap path has an illegal visible intermediate and no
+  atomic geometric compound is known;
 - prefix: the parabola reservoir is not the saturated PP3 retained source, while
   the internal nineteen-cell reservoir fails on a positive fraction;
-- shell: the optimal `(1,1,1)` all-cycle action has no clean-macro realization;
+- shell: the optimal `(1,1,1)` all-cycle action has no clean-macro realization,
+  despite its exact zero-buffer schedule;
 - integration: no source-derived coefficients are available for a promoted meet.
 
 #### Proof
 
 Each row fails at least one complete coordinate source-path requirement, so the
-strict provenance meet rejects every promotion.  ∎
+strict provenance meet rejects every promotion. ∎
 
 ## 3. Fixed-point arithmetic
 
@@ -75,6 +76,6 @@ The arithmetic closure test remains positive, but geometric closure is false.
 #### Proof
 
 The checker reconstructs and sums the six exact rational fixture coordinates,
-then evaluates the evidence meet separately.  ∎
+then evaluates the evidence meet separately. ∎
 
 The all-`n` theorem remains open.
