@@ -1,0 +1,24 @@
+name: rooted-star-compatible-pair-line-clean-frontier
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_rooted_star_compatible_pair_line_clean.py
+      - docs/471-prime-power-rooted-star-compatible-pair-line-clean-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-37.md
+      - .github/workflows/rooted-star-compatible-pair-line-clean-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  finite-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_rooted_star_compatible_pair_line_clean.py
