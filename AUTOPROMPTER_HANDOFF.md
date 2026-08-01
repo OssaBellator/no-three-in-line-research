@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-01 20:35 Australia/Brisbane
+Checkpoint time: 2026-08-01 22:54 Australia/Brisbane
 
 ## Goal
 
@@ -23,80 +23,86 @@ proof.
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint research head: `fa73461bc33185d53f73b80648b99630cf22f871`.
-- Pre-checkpoint title: `Index geometric source-realization theorems through docs 632`.
+- Verified pre-checkpoint research head: `1bed7b1a21c33eb8e89d076d670c9ee4fd173689`.
+- Pre-checkpoint title: `Index scalable source-realization theorems through docs 638`.
 - The branch was remotely verified identical to that commit before this refresh.
-- Next available theorem identifier: `PP3cxn`.
+- Next available theorem identifier: `PP3cyf`.
 
-## Completed canonical tranche: `docs/627--632`
+## Completed canonical tranche: `docs/633--638`
 
-### Boundary — `docs/627-radius64-boundary-transition.md`
+### Boundary — `docs/633-corrected-eleventh-boundary-transition.md`
 
-Theorems `PP3cwv--PP3cwx`.
+Theorems `PP3cxn--PP3cxp`.
 
-- The two radius-32 tenth candidates each have one minimum five-point core.
-- All `67525` three-extra-deletion choices per candidate fail at correction budget
-  eight.
-- Widening the offset window to `[-64,64]` exposes `P3` at offset `64` with a
-  unique three-point core.
-- A six-point row-and-column-preserving correction produces a legal eighty-point
-  ten-block state.
-- All `1032` raw eleventh-block attempts in radius 64 fail.
+- The exact radius-64 eleventh minimum-transversal histogram is
+  `4:12, 5:35, 6:76, 7:135, 8:261, 9:21, 10:41, 11:79, 12:99, 13:170, 14:103`.
+- The twelve minimum-four attempts have ninety-four minimum cores.
+- Every minimum-four attempt has a row-and-column-preserving correction of total
+  deletion size at most seven.
+- The canonical `P1` offset-31 correction deletes
+  `(0,79),(6,34),(23,2),(40,196),(43,195)` and adds
+  `(0,196),(6,2),(23,195),(40,34),(43,79)`.
+- This five-point correction gives a legal eighty-eight-point eleven-block state.
+- All `1032` raw twelfth-block attempts in radius 64 fail.
 
-### Hall — `docs/628-sharp-degree-two-hall-extraction.md`
+### Hall — `docs/634-mixed-degree-hall-extraction.md`
 
-Theorems `PP3cwy--PP3cxa`.
+Theorems `PP3cxq--PP3cxs`.
 
-- Three maximum-degree-two forbidden families induce a collision graph of maximum
-  degree six on each resource side.
-- Thirty-six residual resources force an independent set of six and therefore a
-  six-resource core on which all three families are partial matchings.
-- Thirty-eight resources before the selected local pair suffice.
-- The constant is sharp: five disjoint `K7` collision components on thirty-five
-  resources have independence number five, and each `K7` decomposes into three
-  Hamilton cycles realizable by degree-two forbidden families.
+- If the partner restriction is matching-shaped and the source and host-defect
+  restrictions have maximum degree two, each side's collision graph has maximum
+  degree four.
+- Twenty-six residual resources force six resources on which all three families
+  are partial matchings.
+- Twenty-eight resources before selecting the local pair suffice for the sharp
+  six-resource Hall core.
+- The constant is sharp: twenty-five resources can form five disjoint `K5`
+  collision components, each decomposed into two Hamilton cycles supplied by the
+  two degree-two families.
 
-### Threshold — `docs/629-atomic-threshold-six-cycle.md`
+### Threshold — `docs/635-threshold-c6-circuit-indivisibility.md`
 
-Theorems `PP3cxb--PP3cxd`.
+Theorems `PP3cxt--PP3cxv`.
 
-- Every nearest legal target differs from the source on exactly six cells.
-- The signed support is a simple alternating `C6` on exactly three rows and three
-  columns.
-- The eight targets give eight distinct atomic cycles.
-- Each cycle has six ordered two-swap factorizations; all twenty intermediate
-  matrices remain geometrically illegal.
-- The remaining operation is an exposed-state-safe simultaneous six-cell cycle.
+- Every nearest legal target has an alternating six-cell signed support on three
+  rows and three columns.
+- Among all sixty-four subsets of each support, only the empty subset and the
+  complete cycle preserve every row and column margin.
+- The `C6` is therefore a circuit of the transportation kernel.
+- No sequence of proper visible margin-preserving sub-edits can implement it; a
+  source operation must expose the full six-cell atom in one step or inside a
+  larger atomic edit.
 
-### Prefix — `docs/630-saturated-anchor-reservoir.md`
+### Prefix — `docs/636-twelve-pair-saturated-anchor-reservoir.md`
 
-Theorems `PP3cxe--PP3cxg`.
+Theorems `PP3cxw--PP3cxy`.
 
-- The two explicit permutations
-  `P=(4,1,3,9,8,0,2,10,5,7,6)` and
-  `Q=(6,3,1,8,5,10,0,2,7,9,4)` form a twenty-two-cell no-three-in-line set in an
-  `11x11` grid with every row and column degree two.
-- The source partitions into eleven anchor pairs using pairing permutation
-  `(1,0,3,2,5,4,8,6,7,10,9)`.
-- All `1024` ordered compositions of eleven unary nodes embed with zero mixed-run
-  triples and maximum coordinate magnitude `110`.
-- This is a complete finite saturated reservoir for the size-thirty profile, not
-  an asymptotic saturated source family.
+- The permutations
+  `P=(6,7,0,4,9,2,11,10,1,5,8,3)` and
+  `Q=(2,9,11,7,0,4,10,8,3,6,1,5)` form a twenty-four-cell no-three source on a
+  `12 x 12` grid with row and column degree two.
+- The pairing permutation `(11,9,10,8,5,6,7,4,3,2,1,0)` gives twelve disjoint
+  anchor pairs with distinct endpoint resources.
+- All `2048` ordered compositions of twelve unary nodes embed with zero mixed-run
+  triples and maximum coordinate magnitude `187`.
+- Complete saturated reservoirs are now certified at consecutive pair counts
+  eleven and twelve, but no infinite or nested family is known.
 
-### Shell — `docs/631-weighted-shell-cost-frontier.md`
+### Shell — `docs/637-shell-collateral-budget.md`
 
-Theorems `PP3cxh--PP3cxj`.
+Theorems `PP3cxz--PP3cyb`.
 
-- If one `(1,1,1)` macro has active-equivalent cost `w`, the three exact-service
-  frontier costs are `12+2w`, `9+4w`, and `6+6w`.
-- All meet the recorded baseline cost `15` at the sharp threshold `w=3/2`.
-- Below `3/2`, six uses are optimal; above `3/2`, the recorded baseline wins.
-- A useful geometric clean macro must therefore have incidence `(1,1,1)`, legal
-  exposed states, controlled collateral effects, and cost strictly below `3/2`.
+- With six `(1,1,1)` uses, per-use overhead `delta`, and fixed collateral `C`,
+  total active-equivalent cost is `12+6*delta+C`.
+- Strict improvement over the recorded baseline occurs exactly when
+  `6*delta+C<3`.
+- At unit macro cost, at most two integer collateral controls may be spent per
+  period; three tie the baseline.
+- With no fixed collateral, the sharp per-use overhead threshold is `1/2`.
 
-### Integration — `docs/632-geometric-source-realization-evidence-gate.md`
+### Integration — `docs/638-scalable-source-realization-evidence-gate.md`
 
-Theorems `PP3cxk--PP3cxm`.
+Theorems `PP3cyc--PP3cye`.
 
 - Candidate completion remains `25/30`:
   boundary `4/5`, Hall `4/5`, threshold `5/5`, prefix `5/5`, shell `5/5`,
@@ -110,61 +116,63 @@ Theorems `PP3cxk--PP3cxm`.
 
 ## Machine-readable and reproducibility files
 
-- `certificates/prime-patching-geometric-source-realization-627-632.json`
-- `scripts/check_boundary_budget_eight.cpp`
-- `scripts/check_boundary_radius64_transition.py`
-- `scripts/check_hall_sharp_degree_two_extraction.py`
-- `scripts/check_threshold_atomic_six_cycle.py`
-- `scripts/check_prefix_saturated_anchor_reservoir.py`
-- `scripts/check_shell_weighted_odd_column.py`
-- `scripts/check_geometric_source_realization_gate.py`
-- `scripts/check_frontier_627_632.py`
-- `proofs/prime-patching-parity-index-627-632-supplement.md`
+- `certificates/prime-patching-scalable-source-realization-633-638.json`
+- `scripts/check_boundary_eleventh_spectrum.cpp`
+- `scripts/check_boundary_eleventh_corrections.cpp`
+- `scripts/check_boundary_eleventh_transition.py`
+- `scripts/check_hall_mixed_degree_extraction.py`
+- `scripts/check_threshold_c6_circuit.py`
+- `scripts/check_prefix_saturated_anchor_reservoir_12.py`
+- `scripts/check_shell_collateral_budget.py`
+- `scripts/check_scalable_source_realization_gate.py`
+- `scripts/check_frontier_633_638.py`
+- `proofs/prime-patching-parity-index-633-638-supplement.md`
 
 Latest group command:
 
 ```bash
-python scripts/check_frontier_627_632.py
+python scripts/check_frontier_633_638.py
 ```
 
 ## Validation status
 
 - All six new standalone diagnostics passed in the isolated local runtime.
-- The boundary diagnostic compiled and executed its C++ exhaustive kernel.
+- Both boundary C++ kernels compiled and executed successfully.
 - Python compilation passed for all seven new Python scripts.
 - The complete historical chained runner was not executed locally because the
   isolated runtime does not contain a full repository checkout; the group runner
-  begins with `scripts/check_frontier_621_626.py`.
+  begins with `scripts/check_frontier_627_632.py`.
 
 ## Current blockers
 
-- Boundary: the corrected path reaches ten blocks but has no raw eleventh
-  extension; a corrected eleventh transition or periodic component is missing.
-- Hall: the sharp 38-resource interface still requires the actual conditional host
-  to prove degree at most two for all three restricted forbidden families.
-- Threshold: no geometric source edit realizes the alternating `C6` atom while
-  keeping every exposed state legal.
-- Prefix: the saturated anchor source is finite at eleven runs and is not yet a
-  scalable family compatible with arbitrary prime-patching scales.
-- Shell: no clean macro realizes `(1,1,1)` with collateral control and
-  active-equivalent cost below `3/2`.
+- Boundary: the corrected path reaches eleven blocks but has no raw twelfth
+  extension; a corrected twelfth transition or periodic corrected-state component
+  is missing.
+- Hall: the actual conditional host has not proved the mixed degree profile
+  `(1,2,2)` on both resource sides.
+- Threshold: no exposed-state-safe geometric source primitive realizes the
+  indivisible alternating `C6`.
+- Prefix: the eleven- and twelve-pair witnesses do not yet form an infinite,
+  nested, or uniformly constructible saturated family.
+- Shell: no geometric `(1,1,1)` macro is known whose total overhead satisfies
+  `6*delta+C<3` while controlling collateral interactions.
 - Integration: all actual rows and coupling coefficients remain fixture-derived.
 
 ## Exact next steps
 
-1. Verify this handoff and continue theorem numbering at `PP3cxn`.
-2. Build `docs/633--638` around corrected eleventh transitions and scalable source
-   realization.
-3. Boundary: enumerate minimum eleventh conflict cores in radius 64 and search
-   degree-preserving corrections, then test corrected-state recurrence or drift.
-4. Hall: derive the three degree-two restrictions from one asymptotic conditional
-   host, or replace them with a source-specific collision bound below degree six.
-5. Threshold: map one alternating `C6` atom to actual source cells and audit all
-   exposed geometric states; otherwise prove source-catalogue absence.
-6. Prefix: generalize the two-per-row/two-per-column anchor reservoir beyond eleven
-   pairs while retaining no-three and mixed-line avoidance.
-7. Shell: construct a geometric `(1,1,1)` macro and prove its effective cost is
-   below `3/2`, including collateral interactions and scheduling.
+1. Verify this handoff and continue theorem numbering at `PP3cyf`.
+2. Build `docs/639--644` around a corrected twelfth transition and genuinely
+   scalable source mechanisms.
+3. Boundary: enumerate minimum twelfth conflict cores in radius 64, search
+   degree-preserving corrections, and test corrected-state drift or recurrence.
+4. Hall: derive the mixed degree profile `(1,2,2)` from the actual conditional
+   resource-star host, or replace it with a source-specific collision estimate.
+5. Threshold: map one indivisible alternating `C6` to actual source cells and
+   audit all exposed geometric states; otherwise prove catalogue absence.
+6. Prefix: find a thirteen-pair saturated reservoir and search for a uniform
+   extension rule or an infinite two-per-row/two-per-column source family.
+7. Shell: construct a geometric `(1,1,1)` macro and place every repair, startup,
+   and collateral cost inside `6*delta+C<3`.
 8. Integration: promote only rows with complete coordinate source paths;
    otherwise preserve the closed gate and unchanged fixed point.
 9. Run diagnostics, Python compilation, the chained runner in a complete checkout,
