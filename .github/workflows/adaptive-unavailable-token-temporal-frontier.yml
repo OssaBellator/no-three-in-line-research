@@ -1,0 +1,24 @@
+name: adaptive-unavailable-token-temporal-frontier
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_adaptive_unavailable_token_temporal_ancestry.py
+      - docs/475-prime-power-adaptive-unavailable-token-temporal-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-41.md
+      - .github/workflows/adaptive-unavailable-token-temporal-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  finite-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_adaptive_unavailable_token_temporal_ancestry.py
