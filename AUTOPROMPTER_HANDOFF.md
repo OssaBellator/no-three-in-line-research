@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-01 13:03 Australia/Melbourne
+Checkpoint time: 2026-08-01 13:22 Australia/Melbourne
 
 ## Goal
 
@@ -16,135 +16,134 @@ program by advancing six linked frontiers:
 
 The asymptotic all-`n` theorem remains open. Existing results are finite
 reductions, exact certificates, conditional mechanisms, coordinate candidates,
-source-typed fixtures, repair catalogues, and bounded obstructions; they must not
-be described as a completed proof.
+source-typed fixtures, sharp finite correctors, and bounded obstructions; they
+must not be described as a completed proof.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint research head: `e33173837dccb923e2d20a74408503f0600520cd`
-- Pre-checkpoint head title: `Index source-identification theorems through docs 608`
+- Verified pre-checkpoint research head: `e90cd0fcbdefac44a08f5eeac9c37846557618af`
+- Pre-checkpoint head title: `Index source-resource realization theorems through docs 614`
 - The branch was remotely verified identical to that commit before this refresh.
-- Next available theorem identifier: `PP3cut`.
+- Next available theorem identifier: `PP3cvl`.
 
 ## Completed work
 
-The branch contains the cumulative six-frontier sequence through `docs/608`. The
-latest tranche is `docs/603--608`:
+The branch contains the cumulative six-frontier sequence through `docs/614`. The
+latest tranche is `docs/609--614`:
 
-- `docs/603-five-point-boundary-refill-obstruction.md`
-  - Theorems `PP3cub--PP3cud`.
-  - Reconstructs the four sharp three-deletion seam repairs.
-  - Enumerates all `3960` ways to delete two additional points.
-  - Enumerates `210092` unique exact five-point row-column refills.
-  - None is no-three-in-line.
-  - The next corrector must leave the deleted degree support, change at least
-    three further incidences, alter the saturation interface, or use new blocks.
+- `docs/609-sharp-six-point-boundary-seam-corrector.md`
+  - Theorems `PP3cut--PP3cuv`.
+  - The four sharp radius-32 sixth-block repairs admit exact six-point
+    delete-and-refill correctors preserving all row and column degrees.
+  - Previous exhaustive four- and five-point failures make six the sharp minimum
+    in the audited degree-support class.
+  - The corrected forty-eight-point states have no raw seventh-block extension
+    among `2080` typed-offset attempts in radius 32.
 
-- `docs/604-source-typed-five-resource-hall-lift.md`
-  - Theorems `PP3cue--PP3cug`.
-  - Lifts the stored binary-resource-star fixture by one free left and right
-    resource while retaining its six recorded partner-fibre conflicts.
-  - Of 480 candidate quotient embeddings, 96 are complete and 72 have minimum
-    residual blocker number two.
-  - A best embedding has 64 conditional perfect matchings across its twelve
-    choices, with blocker distribution three twos and nine threes.
-  - The extra resource is not yet supplied by the asymptotic endpoint host.
+- `docs/610-spare-resource-conditional-hall-lemma.md`
+  - Theorems `PP3cuw--PP3cuy`.
+  - Every residual `K_3,3` minus a partial matching has between two and six
+    perfect matchings and survives one further cell exclusion.
+  - All thirty-four partial matchings are audited.
+  - All twelve choices in the best source-typed five-resource lift satisfy the
+    partial-matching fibre condition and have sixty-four conditional completions
+    in total.
 
-- `docs/605-threshold-augmentation-source-margin-obstruction.md`
-  - Theorems `PP3cuh--PP3cuj`.
-  - Confirms the unique legal augmentation `(3,0,1,2)`.
-  - The augmented matrix has exactly 120 ordered legal five-layer
-    decompositions.
-  - It changes all row and column margins from four to five, adds four
-    source-cell units, occupies `1/5` of the augmented schedule, and increases
-    slot count by `1/4`.
-  - Existing fixed-margin threshold operations cannot supply it.
+- `docs/611-threshold-augmentation-nonamortization-dual.md`
+  - Theorems `PP3cuz--PP3cvb`.
+  - The integer cell dual
+    `((3,1,2,0),(0,0,0,-1),(-1,-3,-1,-3),(1,0,0,0))`
+    scores the source matrix by three, legal layers by at most zero, and every
+    augmentation layer by at least minus three.
+  - Therefore `k` source periods require at least `k` augmentation layers.
+  - The unique augmentation `(3,0,1,2)` attains equality, so its `1/5` schedule
+    density and `1/4` slot increase cannot be amortized away.
 
-- `docs/606-distinct-unary-run-chord-triples.md`
-  - Theorems `PP3cuk--PP3cum`.
-  - Replaces coincident unary-chain chord copies by distinct integer points on
-    run-specific vertical lines.
-  - At encoded size thirty with nine binary nodes, family size is
-    `168212023980`.
-  - Aggregate guaranteed within-run collinear triples are `396499770810`, with
-    mean `33/14`.
-  - These are encoding coordinates, not source-derived support chords.
+- `docs/612-row-column-distinct-unary-run-geometry.md`
+  - Theorems `PP3cvc--PP3cve`.
+  - Gives a greedy integer embedding of every unary-run list with globally
+    distinct rows and columns, collinear runs, and zero cross-run triples.
+  - All `1024` ordered compositions of the eleven unary nodes are audited; the
+    chosen embeddings use coordinates of absolute value at most `113`.
+  - The exact thirty-node, nine-binary aggregate is `396499770810`, mean `33/14`.
 
-- `docs/607-recorded-shell-source-monoid-obstruction.md`
-  - Theorems `PP3cun--PP3cup`.
-  - Proves that the monoid generated by the three recorded controls, idle,
-    simultaneous composition, repetition, and the scaled startup buffer remains
-    in the even-coordinate-sum lattice.
-  - The bounded audit checks 729 distinct compound vectors.
-  - Any odd-sum action must be a genuinely new source operation.
+- `docs/613-fixed-column-shell-source-type-obstruction.md`
+  - Theorems `PP3cvf--PP3cvh`.
+  - Proves that target changes, coefficient optimization, ceiling quantization,
+    and chamber transport preserve the lattice generated by the fixed source
+    columns.
+  - Applies this to `docs/499`, `505`, `511`, and `517`.
+  - The integer source image remains exactly the even-coordinate-sum lattice, so
+    no odd-sum action is created.
 
-- `docs/608-source-identification-evidence-gate.md`
-  - Theorems `PP3cuq--PP3cus`.
-  - Candidate field completion remains `23/30`.
+- `docs/614-source-resource-realization-evidence-gate.md`
+  - Theorems `PP3cvi--PP3cvk`.
+  - Candidate field completion rises from `23/30` to `24/30` because the stored
+    boundary fixture now has a complete degree-preserving seam corrector.
   - The fixture fixed-point total remains
-    `705466760524005697/3623878655999606784`.
-  - Positive slack remains
+    `705466760524005697/3623878655999606784`, with positive slack
     `200502903475895999/3623878655999606784`.
   - All six actual rows remain `fixture_derived`; zero rows are promoted and
     geometric closure remains false.
 
 Machine-readable record:
 
-- `certificates/prime-patching-source-identification-603-608.json`
+- `certificates/prime-patching-source-resource-realization-609-614.json`
 
 Reproducibility files:
 
-- `scripts/check_boundary_five_point_refill_obstruction.py`
-- `scripts/check_hall_lifted_conditional_star.py`
-- `scripts/check_threshold_augmentation_source_margin.py`
-- `scripts/check_prefix_distinct_run_chord_triples.py`
-- `scripts/check_shell_recorded_closure_parity.py`
-- `scripts/check_source_identification_evidence_gate.py`
-- `scripts/check_frontier_603_608.py`
-- `proofs/prime-patching-parity-index-603-608-supplement.md`
+- `scripts/check_boundary_six_point_corrector.py`
+- `scripts/check_hall_spare_resource_lemma.py`
+- `scripts/check_threshold_nonamortization_dual.py`
+- `scripts/check_prefix_row_column_run_embedding.py`
+- `scripts/check_shell_fixed_column_lattice.py`
+- `scripts/check_source_resource_realization_evidence_gate.py`
+- `scripts/check_frontier_609_614.py`
+- `proofs/prime-patching-parity-index-609-614-supplement.md`
 
 The latest combined validation command is:
 
 ```bash
-python scripts/check_frontier_603_608.py
+python scripts/check_frontier_609_614.py
 ```
 
 All six new standalone diagnostics and `python -m py_compile` on the seven new
 scripts passed in the local execution runtime before commit. The complete chained
 runner was not re-executed locally because the repository cannot be cloned into
-that runtime; it invokes `scripts/check_frontier_597_602.py` first. The boundary
-audit completed in approximately thirty-two seconds locally.
+that runtime; it invokes `scripts/check_frontier_603_608.py` first.
 
 ## Decisions and conventions
 
 - Continue on `research/all-n-prime-patching`.
 - Use sequential, reviewable commits and exact rational or integer arithmetic.
-- Continue theorem numbering from `PP3cut`.
+- Continue theorem numbering from `PP3cvl`.
 - Keep the six-frontier organization stable.
 - Every tranche must include a stored certificate and checker.
 - State explicitly that the all-`n` theorem remains open.
 - Do not replace proof obligations with bounded computation.
 - Track arithmetic feasibility separately from evidence provenance.
-- Treat source-typed finite lifts and encoding geometries as intermediate
-  evidence, not verified global rows.
+- Treat source-typed finite lifts, bounded correctors, and encoding geometries as
+  intermediate evidence, not verified global rows.
 - Negative results and minimal counterexamples are valid frontier progress.
 
 ## Current blockers
 
-- Boundary: exact five-point degree refills inside the deleted support all fail. A
-  corrector must use off-support cells, change at least three more incidences,
-  alter the saturation interface, or replace the explicit blocks.
-- Hall: a five-resource source-typed lift is uniformly robust, but the extra free
-  endpoint resource is not derived from the asymptotic conditional host.
-- Threshold: the unique legal fifth layer needs new degree-five margins and one
-  extra slot; no source inequality or residue mechanism pays for it.
-- Prefix: distinct unary-run points give nonzero collinearity, but the run lines
-  are not actual row-column-saturated support chords and cross-run incidences are
-  uncharged.
-- Shell: every operation composed from the recorded primitives stays in the
-  even-sum lattice. A genuinely new clean-macro action is required.
+- Boundary: the sharp six-point corrector restores saturation but does not accept
+  a raw seventh block. A corrector-aware transition state or periodic corrector
+  cycle is missing.
+- Hall: the spare-resource lemma is exact, but the asymptotic conditional host has
+  not been shown to supply one spare left/right resource with a matching-shaped
+  restricted partner fibre after real source exclusions.
+- Threshold: the fifth layer cannot be residue-amortized. A source mechanism must
+  supply degree-five margins at positive density, or the source matrix must be
+  replaced by different legal geometry.
+- Prefix: the ancestry geometry now has distinct rows and columns and exact
+  triples, but its run lines are not identified with actual prime-patching
+  support chords.
+- Shell: every recorded fixed-column operation remains in the even-sum lattice.
+  A genuinely new clean-macro action column is required.
 - Integration: all direct rows and coupling coefficients remain fixture-derived;
   finite small lengths remain downstream of genuine realization.
 
@@ -158,24 +157,22 @@ audit completed in approximately thirty-two seconds locally.
 ## Exact next steps
 
 1. Fetch this handoff and verify the branch head.
-2. Start theorem numbering at `PP3cut`.
-3. Build `docs/609--614` around source-resource realization rather than another
-   enlargement of the same finite fixtures.
-4. Boundary: allow one or more refill cells outside the five deleted degree
-   supports, formulate the necessary compensating degree transfers, and enumerate
-   the smallest exact off-support corrector class.
-5. Hall: derive a one-spare-resource conditional completion lemma from the
-   superregular/resource-star PP3 host, including its real partner-fibre and
-   source exclusions; otherwise preserve a precise missing-resource condition.
-6. Threshold: test whether one legal augmentation layer can be supplied by a
-   residue corrector or amortized across several source periods; quantify the
-   exact extra-slot density and direct-clean cost.
-7. Prefix: convert run-specific vertical triples into distinct support chords
-   satisfying row/column resource constraints and count both within-run and
-   cross-run incidences.
-8. Shell: inspect the earlier shell-cover and chamber-stability source operations
-   for a genuinely new odd-sum cycle vector; if absent, extend the source-type
-   impossibility beyond `docs/517`.
+2. Start theorem numbering at `PP3cvl`.
+3. Build `docs/615--620` around composition and source-generation obligations.
+4. Boundary: treat each six-point corrector as a typed transition state; search
+   corrected-to-corrected seventh/eighth-block transitions and zero-drift cycles,
+   retaining the complete inherited-line state.
+5. Hall: formulate a quantitative spare-resource lemma for a superregular
+   conditional host after partner-fibre and source exclusions, and identify the
+   exact slack condition yielding a residual matching-shaped fibre.
+6. Threshold: search source-preserving degree-four matrices or new source actions
+   rather than further amortization; use the integer dual to reject candidates
+   that still require positive-density augmentation.
+7. Prefix: map the row-column-distinct run lines to one explicit support-chord
+   source model and audit all within-run and cross-run source incidences.
+8. Shell: inspect geometric clean-macro moves outside the fixed-column LP chain
+   for a new odd-sum incidence column; otherwise state a broader source-catalogue
+   absence theorem.
 9. Integration: promote only rows with complete coordinate source paths;
    otherwise preserve the closed evidence gate and unchanged fixture fixed point.
 10. Run all new diagnostics, Python compilation, the chained runner in a complete
