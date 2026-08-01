@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR3513**. The predecessor endpoints CMR2899 and CMR2839 remain synchronized.
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR3537**. The predecessor endpoints CMR2899 and CMR2839 remain synchronized.
 
 Every checker, bridge, fixture, runtime manifest and regression preserves:
 
@@ -17,25 +17,24 @@ No source hash, finite census, transition seal, registry digest, manifest or wor
 Canonical installed runner:
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_132.py
+python scripts/run_prime_power_installed_construction_regression_138.py
 ```
 
 Thirty-six-checker chained manifest:
 
 ```text
-260cc38054f3ecfede323d6057bbbecad46bb191e90410b6a4523479cc6b696d
+e04a2859b6d64b738d7e300a4fd42c371ef476aefb73542e4649bda99a8b88b3
 ```
 
 Newest direct entrypoints:
 
 ```text
 python scripts/check_prime_power_selector_protected_certificate_ancestry.py
-python scripts/check_prime_power_installed_operation_registry_117.py
 python scripts/check_prime_power_protected_interface_execution_ancestry.py
-python scripts/check_prime_power_installed_operation_registry_132.py
+python scripts/check_prime_power_installed_operation_registry_138.py
 ```
 
-The 110-kind and 117-kind stacks remain historical checkpoints. All earlier construction entrypoints and legacy finite, hard-core, root, negative-fixture, documentary and runtime checks remain active. Inspect actual workflow runs before claiming CI success.
+The 110-, 117- and 132-kind stacks remain historical checkpoints. All earlier construction entrypoints and legacy finite, hard-core, root, negative-fixture, documentary and runtime checks remain active. Inspect actual workflow runs before claiming CI success.
 
 ## 3. T01 source truth
 
@@ -43,7 +42,7 @@ The source registry remains infrastructure only. Completion requires authoritati
 
 ## 4. T02 installed construction surface
 
-The branch has finite construction ancestry for **132 registered operation kinds**.
+The branch has finite construction ancestry for **138 registered operation kinds**.
 
 ### Through CMR3383
 
@@ -57,35 +56,49 @@ A narrow historical checkpoint covers packed deletion, protected contacts and re
 
 The 117-kind checkpoint extends through CMR604 with weak-slack conversion, persistent-core amplification and owner-labelled certificate stocks.
 
-### CMR3470--CMR3513
+### CMR3470--CMR3489
 
-The 132-kind bank installs:
+The CMR605--CMR628 theorem checker installs heavy-line and secant-star protected absorption, exact protected/free factorization and protected-skeleton history payment.
+
+### CMR3490--CMR3513
+
+The 132-kind registry remains a coarser historical partition over the same CMR605--CMR628 checker.
+
+### CMR3514--CMR3537
+
+The canonical fine-grained registry distinguishes 21 line, star, interface and history operations, including:
 
 ```text
-heavy-line-free-cell-absorption
-heavy-line-post-absorption-cap
-heavy-line-large-core-dispatch
+protected-line-contact-extraction
+protected-line-bulk-absorption
+protected-line-residual-atom-cap
+protected-line-atom-destruction
+protected-line-growth-budget
+protected-line-large-core-dispatch
 secant-star-matching-vertex-wall
-secant-star-compatible-arm-extraction
+secant-star-compatible-arm-bank
+secant-star-protected-touch-filter
 secant-star-bulk-absorption
+secant-star-growth-budget
 secant-star-large-core-dispatch
-protected-core-cross-skeleton-extraction
-protected-core-product-factorization
-protected-core-sparse-interface-recursion
+protected-interface-skeleton-extraction
+protected-interface-product-factorization
+protected-interface-skeleton-stock
+protected-interface-large-core-dispatch
 protected-skeleton-finite-history
 protected-skeleton-factor-diversity
-protected-skeleton-cross-churn-payment
-protected-skeleton-recurrent-cross-edge
-protected-interface-history-endpoint
+protected-skeleton-cross-churn
+protected-interface-token-payment
+protected-skeleton-history-dispatch
 ```
 
 Current installed census:
 
 ```text
-installed operation kinds = 132
+installed operation kinds = 138
 bound contracts = 22
-owner-changing kinds = 43
-same-owner kinds = 89
+owner-changing kinds = 42
+same-owner kinds = 96
 installed checker manifest = 36
 ```
 
@@ -98,9 +111,9 @@ secant_star_protected_absorption_proved = 1
 protected_core_interface_factorization_exact = 1
 protected_skeleton_history_exact = 1
 protected_interface_execution_ancestry_proved = 1
-installed_transition_kind_bank_132_exhaustive = 1
-installed_payment_assignment_132_complete = 1
-installed_transition_regression_132_complete = 1
+installed_transition_kind_bank_138_exhaustive = 1
+installed_payment_assignment_138_complete = 1
+installed_transition_regression_138_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -169,7 +182,7 @@ T03--T04 still require genuine slot, recurrent-block and interface populations. 
 
 ## 9. Immediate work order
 
-1. Install every genuine CMR629 onward operation absent from the 132-kind registry.
+1. Install every genuine CMR629 onward operation absent from the 138-kind registry.
 2. Extend the registry and chained regression after each bank.
 3. Prove global transition-kind exhaustiveness.
 4. Close recurrent endpoints and prove global termination.
