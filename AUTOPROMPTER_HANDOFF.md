@@ -4,171 +4,194 @@
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Authoritative theorem ledger endpoint: **CMR3121**
+- Authoritative theorem endpoint: **CMR3299**
 - Mathematical status: the no-three-in-line conjecture remains open.
-- Every final, finite and regression checker preserves `all_n_proved_by_checker = 0`.
+- Every checker preserves `all_n_proved_by_checker = 0`.
 
-## Established construction stack
+## Canonical installed stack
 
-The typed local context endpoint is CMR2899. Genuine installed construction ancestry now includes:
+The current installed operation registry contains:
 
 ```text
-CMR2900--2919 routing changes and history payment
-CMR2920--2931 exact fixed-routing child products
-CMR2932--2943 mixed-child deletion
+66 unique construction operation kinds
+18 exact checker contracts
+34 owner-changing kinds
+32 same-owner kinds
+```
+
+The canonical installed-stack runner is:
+
+```text
+python scripts/run_prime_power_installed_construction_regression_66.py
+```
+
+Its twenty-eight-checker manifest is sealed by:
+
+```text
+ecc5043ee6e9c04901e4a1814ca0446b49c3a9c115bfbfd6ab196d02ea13150a
+```
+
+Installed-bank exhaustiveness is not global construction exhaustiveness.
+
+## Earlier construction stack
+
+```text
+CMR2888--2899 typed local restrictions and contractions
+CMR2900--2919 routing changes and token payment
+CMR2920--2931 fixed-routing products and strict child handoff
+CMR2932--2943 mixed-atom deletion
 CMR2944--2955 forced-certificate escape
-CMR2956--2967 returned target-edge response
-CMR2968--2981 target handoff and fixed-envelope chains
+CMR2956--2967 returned-target restoration/redeletion/contraction
+CMR2968--2981 target handoff and fixed-envelope target chains
 CMR2982--2993 recurrent target-edge deletion
 CMR2994--3007 closure-envelope state machine
-CMR3008--3021 twenty-kind owner/payment registry
-CMR3022--3033 fourteen-checker installed regression
+CMR3008--3033 first owner/payment registry and regression
 CMR3034--3047 essential-return unit walls and factor trees
-CMR3048--3059 sparse rollback restoration and forced-core contraction
-CMR3060--3071 twenty-nine-kind registry extension
-CMR3072--3083 seventeen-checker regression
-CMR3084--3097 minimum-cost rollback faces and SCC factors
-CMR3098--3109 thirty-three-kind registry
-CMR3110--3121 nineteen-checker construction regression
+CMR3048--3059 sparse rollback restoration
+CMR3084--3097 minimum-cost rollback face and SCC factors
+CMR3098--3121 thirty-three-kind registry and regression
 ```
 
-## Latest mathematical banks
+## CMR3122--CMR3201: layered rollback and theta bank
 
-### Essential-return unit walls
-
-For every exhaustive side-three essential returned edge:
+Installed operations include:
 
 ```text
-H-e has matching deficiency exactly one
-one canonical minimal unit wall is generated
-one stored avoidance edge witnesses the wall
-PM(H) = {e} x PM(H_A) x PM(H_B)
-a+b = m-1
-rank-two targets are forced or admit a local deletion
-factor-tree side mass decreases by one per split
+rollback-level-skeleton-restriction
+rollback-residual-level-factorization
+same-level-colour-source-split
+colour-separated-level-factorization
+mixed-colour-cycle-batch-flip
+mixed-cycle-sparse-tail-deletion
+mixed-cycle-boundary-fan-extraction
+mixed-cycle-small-return-cut
+mixed-cycle-two-edge-bottleneck
+theta-fan-cycle-flip
+theta-fan-private-edge-payment
+theta-fan-rooted-conflict-dispatch
 ```
 
-Finite census:
-
-```text
-247 matchable hosts
-513 essential-return host/edge pairs
-252 singleton walls
-261 robust walls
-150 forced target cases
-42 deletable target cases
-```
-
-Checker and contract:
-
-```text
-scripts/check_prime_power_essential_return_unit_wall_ancestry.py
-97e448a12314e894018ee0065b9e58b0b4d0172c22f1b619ad7329989f7be0e5
-```
-
-### Sparse rollback restoration
-
-Relative to the complete deletion-pass ancestor, every final essential edge receives a canonical minimum restoration footprint.
-
-```text
-minimum rollback edges are forced in the avoiding host
-minimum rollback is an exact restored matching core
-cheap restoration uses one edge in the side-three census
-size-two rollback contracts two rows and columns
-recreated conflicts always contain a restored edge
-```
-
-Finite census:
+Finite observed censuses include:
 
 ```text
 513 essential rollback pairs
-450 rollback footprints of size one
-63 rollback footprints of size two
-576 restored-edge incidences
-192 recreated conflicts with restored support
+835 sparse level skeletons
+1,481 residual level hosts
+195 mixed-colour residual hosts
+412 canonical boundary cycles
+96 theta-fan profiles
+384 small-cut profiles
+288 private route-edge incidences
 ```
 
-Checker and contract:
+Contracts and seals:
 
 ```text
-scripts/check_prime_power_sparse_rollback_restoration_ancestry.py
-35fc36f758016a3de0dba687950e4d6f0d1b17caece487ef21af3e9967f32267
+b97b2553cf5548cfc32a022172d2e011bc60952021d87178ae0e0fdc673ecc23
+aa7b4d1b0d7c1e7c76b8e22e547c132db5ee848c633cfc5cb45b41a76e522144
+7089d93aa893b506e3e9d183d29869961c5e4fc59a25547d1a0c7e5607f084be
+2a5dfa1457e056259566eaf4e54034801f3a37ff57cd0548fbd0e117589b04b3
 ```
 
-### Minimum-cost rollback face and SCC factors
+## CMR3202--CMR3257: rooted/pair line-clean bank
 
-The minimum rollback family is exactly the perfect-matching family of a generated tight host. The optimal-allowed core is generated by strongly connected exchange blocks and factors exactly over those blocks.
+Boundary-rooted conflicts are exact secant stars. Every rooted arm and compatible two-edge bottleneck pair has an exact full-parent line-clean derangement cylinder. Restricted-host availability is normalized by minimum restoration, forced-core factorization and weighted cheap-clean selection.
 
-Finite census:
+Installed kinds include:
 
 ```text
-513 essential rollback pairs
-1,116 minimum rollback state incidences
-3,276 tight-edge incidences
-909 SCC factor blocks
-513 rollback-active blocks
-369 active-level concentration endpoints
-144 strict small-block endpoints
-512 marked ancestor-reset profiles
+boundary-rooted-secant-star-extraction
+rooted-cycle-arm-survival
+rooted-arm-line-clean-cylinder
+rooted-arm-equal-weight-bank
+two-edge-bottleneck-pair-cylinder
+compatible-pair-line-clean-cylinder
+line-clean-minimum-restoration
+line-clean-forced-core-contraction
+line-clean-cheap-restoration
+line-clean-weighted-selection
+line-clean-unavailable-edge-concentration
+line-clean-unavailable-inventory-payment
 ```
 
-Checker and contract:
+Finite observed censuses:
 
 ```text
-scripts/check_prime_power_rollback_optimal_face_scc_ancestry.py
-1281001711d4312dd98b8434e20dffb226b0608a893ffe5cf13f8b8e13940feb
+56 clean side-five bases
+328 rooted arms
+200 universal compatible-pair cylinders
+64 residual availability subhosts
+48 cheap and 16 forced-factor profiles
+3,528 physical weighted paid-pair profiles
 ```
 
-## Installed operation registry
-
-The currently installed bank contains exactly:
+Contracts and registry seal:
 
 ```text
-33 operation kinds
-13 checker contracts
-24 owner-changing kinds
-9 same-owner kinds
+4492a6220f6b7622373a872b1521478089d5dd319482c8110b8cfe1e4ae9495d
+c56a0c82ee03ed6498ac5c974e64c8129344a921a262e3d13cb28672df39ab2e
+307652b1890a3382992c06ea6f860f1da513f5f7368e5142e3ce8a1183d37f50
 ```
 
-The latest registry checker and seals are:
+## CMR3258--CMR3299: adaptive unavailable/token/temporal bank
+
+The adaptive forbidden matching absorbs a maximum compatible unavailable matching. The remaining allowed unavailable edges receive an exact König cover and a heavy row/column star. Heavy stars become heavy labelled tokens or dispersed token banks. Repeated token and absorbed-edge episodes reach finite stock, reintroduction payment or one persistent continuously unavailable blocker.
+
+Installed kinds:
 
 ```text
-scripts/check_prime_power_installed_operation_registry_33.py
-5f9d98c0b964f207fc4ac2d493b51fef5c3caaccf1464cf8bd351a477af93583
-5fa644a7cd340834eec7aa1776b1dcdad102749878664e3259c9be5c5a9b5ae2
+adaptive-unavailable-matching-absorption
+unavailable-row-column-cover-extraction
+heavy-unavailable-star-extraction
+unavailable-star-heavy-token
+unavailable-star-dispersed-token-bank
+unavailable-token-finite-stock
+unavailable-token-reintroduction-payment
+unavailable-token-persistent-blocker
+free-absorption-finite-stock
 ```
 
-`installed_transition_kind_bank_33_exhaustive = 1` means exhaustive only over the installed identifiers. It does not imply global construction completeness.
-
-## Canonical installed regression
+Finite observed census:
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_33.py
+4,096 adaptive absorption profiles
+1,150 free-absorption profiles
+3,988 heavy-star profiles
+8,160 token-scale profiles
+5,008 heavy-token profiles
+3,152 dispersed-token profiles
+665 absence histories
+42,084 finite absorption histories
+4,572 recurrent absorbed-edge histories
 ```
 
-The runner binds nineteen checker paths, contracts and theorem flags. Its manifest digest is:
+Contracts, registry and manifest:
 
 ```text
-50b66679af79082ff57ec0926508482f1efb72eefd6fe0e620d41eb949890fca
+d7c2c9bef971f9cb2d4b3298ef908641fb9afb8d80ba8f381202ee100a6efcc0
+3644c4335cb81419903c89576ea4ae78cf1fcdb66c6ed7a959fd664542214b02
+7d63fde340856c7e51900eefe4e2cbacc464690e6cc11298f5d3ec6d42a30806
+ecc5043ee6e9c04901e4a1814ca0446b49c3a9c115bfbfd6ab196d02ea13150a
 ```
 
-The new mathematical checkers were executed locally and their finite censuses were observed. The complete nineteen-checker repository runner was not executed in the local container. Dedicated workflows are configured, but no GitHub status result has yet been observed, so CI success is not claimed.
-
-## Exact current flags
+## Current exact flags
 
 ```text
-essential_return_unit_wall_ancestry_proved = 1
-unit_wall_factorization_exact = 1
-unit_wall_factor_tree_stock_exact = 1
-sparse_rollback_restoration_ancestry_proved = 1
-minimum_rollback_forced_core_exact = 1
-rollback_minimum_cost_face_ancestry_proved = 1
-rollback_tight_host_exact = 1
-rollback_optimal_scc_factorization_exact = 1
-marked_ancestor_reset_optimal_face_exact = 1
-installed_transition_kind_bank_33_exhaustive = 1
-installed_payment_assignment_33_complete = 1
-installed_transition_regression_33_complete = 1
+rollback_level_skeleton_ancestry_proved = 1
+same_level_colour_split_ancestry_proved = 1
+mixed_cycle_packing_ancestry_proved = 1
+mixed_cycle_boundary_fan_ancestry_proved = 1
+theta_fan_private_edge_payment_proved = 1
+rooted_star_pair_cylinder_ancestry_proved = 1
+universal_pair_line_clean_cylinder_exact = 1
+line_clean_rollback_availability_proved = 1
+line_clean_weighted_selection_proved = 1
+adaptive_unavailable_absorption_ancestry_proved = 1
+unavailable_star_token_splice_proved = 1
+unavailable_token_temporal_scheduler_exact = 1
+installed_transition_kind_bank_66_exhaustive = 1
+installed_payment_assignment_66_complete = 1
+installed_transition_regression_66_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -182,49 +205,31 @@ actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-## Immediate honesty boundary
+## Validation honesty
 
-The installed bank has not been proved complete. The next concrete source chapters are CMR462--CMR521, containing possible unregistered operations:
+The new individual finite checkers were executed locally and their censuses above were observed. The complete twenty-eight-checker repository runner was not executed in the local container. Dedicated Python 3.10/3.12 workflows are configured, but workflow success must not be claimed without inspecting actual runs, logs and artifacts.
+
+## Immediate next frontier
+
+Start at CMR522 and inspect literally:
 
 ```text
-rollback level skeleton and balanced residual levels
-same-level colour separation
-mixed-cycle packing and boundary fan/cut transitions
-theta-fan private-edge payment
-rooted-star and pair-cylinder actions
-line-clean rollback availability and weighted selection
-adaptive unavailable-edge absorption
-unavailable-star token splice
-temporal absence-run and reintroduction scheduler operations
+persistent-blocker absorption and deficiency
+persistent cross-pair banks
+cross-signature and trace ancestry
+fixed-selector obstruction stock
+canonical selector and collateral-line decompositions
+protected absorption/contact/token ledgers
+protected-core interface factorization
+all later owner, restoration, return, envelope and scheduler operations
 ```
 
-Later construction chapters must also be audited for owner, restoration, returned-edge, envelope and scheduler operations not represented by the thirty-three kinds.
+For every genuine action, install one literal parent/child or restricted-family operation, theorem-derived owner effect, exact finite stock/reintroduction/descent or mandatory scheduler continuation, contract seal and corruption rejection.
 
-## Exact next steps
+After the operation audit:
 
-1. Install the CMR462--CMR521 transition kinds with literal parent/child contexts and theorem-derived owner effects.
-2. Extend the installed registry and canonical regression after every genuine new operation.
-3. Audit every later construction chapter and reject anonymous or unmodelled owner movement.
-4. Prove the resulting transition bank globally exhaustive.
-5. Close every recurrent owner-edge, certificate, wall, restored-edge and cell-target endpoint.
-6. Combine the exact stocks and strict descents into a global well-founded termination theorem.
-7. Populate authoritative T01 sources and genuine T02/T03/T04 records.
-8. Run T05--T21 on real populations and prove all remaining chambers, premises, handoffs, review and root implications.
-
-## Global blockers
-
-### T01
-
-Genuine source statements, stable primary locators, exact transcriptions, hashes, ordinary verification and human review remain incomplete.
-
-### T02
-
-Thirty-three installed construction kinds have exact local ancestry and payment metadata. Global operation completeness, recurrent closure and termination remain open.
-
-### T03--T21
-
-Real operation slots, survivor backgrounds, recurrent blocks, interfaces, arbitrary-`n` coverage, score/state/resource/rank/row semantics, T19 global-family exhaustiveness, all 232 T20 chambers and all 20 T21 semantic arguments remain open.
-
-### T22--T43
-
-All ten final premise implications, all six ordinary handoff arguments, final review, dossier sign-off and the root implication to `D(n)=2n` remain open.
+1. prove the full transition-kind bank globally exhaustive;
+2. close every recurrent endpoint, including the persistent blocker;
+3. prove global termination;
+4. populate authoritative T01 and genuine T02/T03/T04 records; and
+5. proceed through T05--T43 without changing any open flag prematurely.
