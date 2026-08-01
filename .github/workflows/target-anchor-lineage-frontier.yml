@@ -1,0 +1,34 @@
+name: Target anchor lineage frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_target_anchor_lineage_ancestry.py'
+      - 'scripts/target_anchor_common.py'
+      - 'scripts/target_anchor_target.py'
+      - 'scripts/target_anchor_anchor.py'
+      - 'docs/500-prime-power-target-anchor-lineage-ancestry.md'
+      - '.github/workflows/target-anchor-lineage-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile target-anchor modules
+        run: |
+          python -m py_compile \
+            scripts/target_anchor_common.py \
+            scripts/target_anchor_target.py \
+            scripts/target_anchor_anchor.py \
+            scripts/check_prime_power_target_anchor_lineage_ancestry.py
+      - name: Run target-anchor checker
+        run: python scripts/check_prime_power_target_anchor_lineage_ancestry.py
