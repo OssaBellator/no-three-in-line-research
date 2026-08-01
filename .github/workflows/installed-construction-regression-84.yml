@@ -1,0 +1,35 @@
+name: Installed construction regression 84
+
+on:
+  push:
+    paths:
+      - 'scripts/run_prime_power_installed_construction_regression_84.py'
+      - 'scripts/run_prime_power_installed_construction_regression_66.py'
+      - 'scripts/check_prime_power_persistent_cross_selector_ancestry.py'
+      - 'scripts/check_prime_power_installed_operation_registry_84.py'
+      - 'docs/480-prime-power-installed-construction-regression-84.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-46.md'
+      - '.github/workflows/installed-construction-regression-84.yml'
+  pull_request:
+    paths:
+      - 'scripts/run_prime_power_installed_construction_regression_84.py'
+      - 'scripts/run_prime_power_installed_construction_regression_66.py'
+      - 'scripts/check_prime_power_persistent_cross_selector_ancestry.py'
+      - 'scripts/check_prime_power_installed_operation_registry_84.py'
+      - 'docs/480-prime-power-installed-construction-regression-84.md'
+      - 'proofs/composite-modulus-theorem-index-live-continuation-46.md'
+      - '.github/workflows/installed-construction-regression-84.yml'
+
+jobs:
+  check:
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/run_prime_power_installed_construction_regression_84.py --static-only
+      - run: python scripts/run_prime_power_installed_construction_regression_84.py
