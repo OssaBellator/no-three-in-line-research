@@ -1,0 +1,25 @@
+name: Sparse rollback restoration frontier
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_sparse_rollback_restoration_ancestry.py
+      - docs/459-prime-power-sparse-rollback-restoration-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-25.md
+      - .github/workflows/sparse-rollback-restoration-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m py_compile scripts/check_prime_power_sparse_rollback_restoration_ancestry.py
+      - run: python scripts/check_prime_power_sparse_rollback_restoration_ancestry.py
