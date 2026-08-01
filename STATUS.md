@@ -12,63 +12,59 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR3033**. The predecessor typed
-transition endpoint **CMR2899** and plain masked-host endpoint **CMR2839** remain
-part of the synchronized theorem history. Every final checker, finite theorem
-checker, population bridge, fixture, runtime manifest and regression permanently
-reports or preserves:
+The authoritative theorem ledger reaches **CMR3121**. The predecessor typed-transition endpoint **CMR2899** and plain masked-host endpoint **CMR2839** remain part of the synchronized history. Every checker, fixture, bridge, runtime manifest and regression permanently reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
 ```
 
-## Current exact finite endpoint
+## Current target ledger
 
-| Target | Exact finite surface | Mathematical status |
+| Target | Exact installed surface | Mathematical status |
 |---|---|---|
-| T01 | literal source statements, hashes and sealed source artifacts | genuine primary-source statements and ordinary verification remain incomplete |
-| T02 | exact square/asymmetric contexts, twenty installed construction transition kinds, closure-envelope state machine and nonrecurrent owner/scheduler stocks | completeness of the installed bank, general owner/restoration/return/scheduler coverage, global exhaustiveness and termination remain open |
-| T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete operation population, including survivor backgrounds, remains absent |
-| T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
-| T05 | exact finite geometry and selector arithmetic | arbitrary-`n` construction coverage remains open |
-| T06 | exact slot scores, candidate sets and deterministic winners | score theorems and intended policy remain open |
-| T07 | exact fate, state and transition subjects and support DAGs | semantic truth remains open |
-| T08 | one active row per exact T06 application | genuine simultaneous-row exhaustiveness remains open |
-| T09 | literal destroyed resources, overlap graph and scopes | physical resource exhaustiveness remains open |
-| T10 | routed-credit subjects, assignments and injectivity | route and child-state semantics remain open |
-| T11 | exact row bridges, primitive weights, recurrent closure and margins | genuine recurrent-block semantics remain open |
-| T12 | acyclic auxiliary substitution and selected-response stability | expansion truth and target-state meaning remain open |
-| T13 | T04-derived states, T07-supported global classes and proof trees | genuine cross-block identity remains open |
-| T14 | T11/T13 scale equations, multipliers and component weights | external scale semantics remain open |
-| T15 | T04-derived interface rows, final multipliers and exit dispositions | genuine interface exhaustiveness remains open |
-| T16 | T15-derived critical edges, rank domains, ranks and graph audit | genuine rank meaning remains open |
-| T17 | T13-derived predicates and rank-sensitive binding | predicate truth remains open |
-| T18 | T12/T15-derived final rows and exact predicate multisets | row theorems and fixed-offset meaning remain open |
-| T19 | T02/T18-derived parent-to-final-row coverage | genuine global-family exhaustiveness remains open |
-| T20 | exact 232 zero-selector chamber dispositions | every zero-selector chamber proof remains open |
-| T21 | exact hard-core scalar geometry, stability and T03 bridge | genuine recurrence populations, labelled semantics and all 20 chamber arguments remain open |
-| T22 | exact base-domain premise bundle | complete base-domain theorem remains open |
-| T23 | exact recurrence premise bundle | nonbase recurrence-exhaustiveness implication remains open |
-| T24 | exact invariant premise bundle | invariant preservation remains open |
-| T25 | exact selection premise bundle | operation admissibility and intended minimization remain open |
-| T26 | exact resource premise bundle | physical resource and credit semantics remain open |
-| T27 | exact contraction premise bundle | genuine global contraction semantics remain open |
-| T28 | exact cross-block premise bundle | validity of the assembled quotient remains open |
-| T29 | exact exceptional premise bundle | all 252 chamber theorems remain open |
-| T30 | exact termination premise bundle | genuine branch termination remains open |
-| T31 | exact objective-translation bundle | translation to `D(n)=2n` remains open |
-| T32 | typed non-root obligation aggregation | genuine obligation proofs remain open |
-| T33 | stable obligation-artifact support DAG | acyclicity metadata does not prove semantic sufficiency |
-| T34 | aggregation of all ten final premises | every final premise remains mathematically open |
-| T35 | base-domain handoff bundle | base handoff argument remains open |
-| T36 | recurrence/selection handoff bundle | exhaustive nonbase handoff remains open |
-| T37 | invariant/resource handoff bundle | invariant preservation remains open |
-| T38 | contraction/cross-block/termination handoff | termination of every genuine branch remains open |
-| T39 | exceptional handoff bundle | all chamber proofs and exceptional implication remain open |
-| T40 | objective-translation handoff bundle | quotient-to-objective translation remains open |
+| T01 | source schemas, literal text and hashes | genuine primary-source population and ordinary verification remain incomplete |
+| T02 | square/asymmetric contexts and 33 registered construction operation kinds | global operation completeness, recurrent closure and termination remain open |
+| T03 | typed slot payload schemas and finite bridges | genuine complete operation population remains absent |
+| T04 | recurrent-block/interface assembly schemas | actual complete assembly remains absent |
+| T05 | finite geometry and selector arithmetic | arbitrary-`n` construction coverage remains open |
+| T06 | exact scores, candidates and deterministic winners | intended score theorem remains open |
+| T07 | fate/state/transition subjects and support DAGs | semantic truth remains open |
+| T08 | one active row per supplied application | genuine simultaneous-row exhaustiveness remains open |
+| T09 | literal destroyed-resource schemas | physical resource exhaustiveness remains open |
+| T10 | routed-credit assignments and injectivity | route and child-state semantics remain open |
+| T11 | row bridges, weights and recurrent margins | genuine recurrent-block semantics remain open |
+| T12 | auxiliary substitution and stability schemas | expansion truth remains open |
+| T13 | global-class and proof-tree schemas | genuine cross-block identity remains open |
+| T14 | scale equations and multipliers | external scale semantics remain open |
+| T15 | interface rows and dispositions | genuine interface exhaustiveness remains open |
+| T16 | critical-edge rank audit | genuine rank meaning remains open |
+| T17 | predicate and rank binding | predicate truth remains open |
+| T18 | final-row and predicate-multiset schemas | row theorems remain open |
+| T19 | parent-to-final-row coverage schema | genuine global-family exhaustiveness remains open |
+| T20 | exact 232 chamber records | every zero-selector chamber proof remains open |
+| T21 | finite hard-core scalar geometry and supplied-background bridge | genuine populations and all 20 semantic arguments remain open |
+| T22 | base-domain premise bundle | complete base theorem remains open |
+| T23 | recurrence premise bundle | recurrence-exhaustiveness implication remains open |
+| T24 | invariant premise bundle | invariant preservation remains open |
+| T25 | selection premise bundle | admissibility and intended minimization remain open |
+| T26 | resource premise bundle | physical resource and credit semantics remain open |
+| T27 | contraction premise bundle | global contraction semantics remain open |
+| T28 | cross-block premise bundle | assembled quotient validity remains open |
+| T29 | exceptional premise bundle | all 252 chamber implications remain open |
+| T30 | termination premise bundle | genuine branch termination remains open |
+| T31 | objective-translation bundle | translation to `D(n)=2n` remains open |
+| T32 | typed nonroot obligation aggregation | genuine obligation proofs remain open |
+| T33 | support-artifact DAG | acyclicity does not prove semantic sufficiency |
+| T34 | ten-premise aggregation | every final premise remains mathematically open |
+| T35 | base handoff bundle | base handoff argument remains open |
+| T36 | recurrence/selection handoff | exhaustive nonbase handoff remains open |
+| T37 | invariant/resource handoff | invariant preservation remains open |
+| T38 | contraction/cross-block/termination handoff | branch termination remains open |
+| T39 | exceptional handoff | chamber implication remains open |
+| T40 | objective handoff | quotient-to-objective translation remains open |
 | T41 | six-assertion review census | ordinary mathematical review remains open |
-| T42 | seven-gate dossier | final dossier sign-off remains open |
-| T43 | stable root cores and three-artifact bank | reviewed implication to `D(n)=2n` remains open |
+| T42 | seven-gate dossier | final sign-off remains open |
+| T43 | root cores and artifact bank | reviewed implication to `D(n)=2n` remains open |
 
 ## Canonical construction execution
 
@@ -88,10 +84,15 @@ python scripts/check_prime_power_target_handoff_envelope_ancestry.py
 python scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
 python scripts/check_prime_power_closure_envelope_transition_ancestry.py
 python scripts/check_prime_power_installed_owner_scheduler_bank.py
-python scripts/run_prime_power_installed_construction_regression.py
+python scripts/check_prime_power_essential_return_unit_wall_ancestry.py
+python scripts/check_prime_power_sparse_rollback_restoration_ancestry.py
+python scripts/check_prime_power_extended_installed_operation_registry.py
+python scripts/check_prime_power_rollback_optimal_face_scc_ancestry.py
+python scripts/check_prime_power_installed_operation_registry_33.py
+python scripts/run_prime_power_installed_construction_regression_33.py
 ```
 
-The original finite theorem and hard-core checks remain:
+The legacy finite, documentary and root stack remains:
 
 ```text
 python scripts/check_prime_power_canonical_prescription_partition.py
@@ -105,11 +106,6 @@ python scripts/check_prime_power_hard_core_collinear_backgrounds.py
 python scripts/check_prime_power_hard_core_pivot_line_energy.py
 python scripts/check_prime_power_hard_core_extremal_stability.py
 python scripts/check_prime_power_hard_core_population_bridge.py --self-test
-```
-
-The documentary/root regression stack remains:
-
-```text
 python scripts/check_prime_power_canonical_frontier_roots.py --self-test
 python scripts/check_prime_power_all_open_target_fixture.py --self-test
 python scripts/test_prime_power_current_frontier_regression.py
@@ -119,88 +115,98 @@ python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-Every runtime artifact contains a literal `manifest_sha256` seal. A manifest or
-passing regression records validation execution; it is not a proof certificate.
+Every runtime artifact contains a literal `manifest_sha256` seal. A manifest records validation execution; it is not a proof certificate.
 
 ## T02 construction endpoint
 
-### Local contexts and factor execution
+### CMR2888--CMR3033
 
-CMR2888--CMR2899 give sealed typed restriction, conditioning and contraction
-transitions. CMR2900--CMR2943 install routing changes, exact fixed-routing child
-products, mixed deletion and strict child handoff. CMR2944--CMR2955 install all
-forced-certificate escape branches with owner-labelled witness payment.
+The branch has exact typed local restrictions/contractions, routing changes, fixed-routing products, mixed deletion, forced-certificate escape, returned-target responses, target handoff, recurrent-target deletion, the closure-envelope state machine, a twenty-kind owner/payment registry and the first installed construction regression.
 
-### Restoration, return and target scheduling
+### CMR3034--CMR3047 — essential-return unit walls
 
-CMR2956--CMR2967 install returned-target restoration, exact redeletion and
-essential contraction. CMR2968--CMR2981 install nonimproving target handoff,
-four-endpoint destruction banks, one exact envelope-expansion witness and the
-fixed-envelope target-chain bound.
+Every essential returned edge yields one canonical deficiency-one Hall wall. The full family factors exactly into the essential edge and two strict factors. Rank-two target rectangles are forced or admit a matching-preserving local deletion. Repeated wall splits decrease total factor-side mass by one and have explicit tree-wide edge, token and certificate stock.
 
-CMR2982--CMR2993 install the CMR713--CMR719 recurrent entering-target deletion:
-the preceding matching proves nonessentiality, the exact deletion child destroys
-the complete active target star, and recurrence requires reintroduction or owner
-change. The finite regression covers 672 side-three/side-four transitions.
-
-### Closure-envelope state machine
-
-CMR2994--CMR3007 install the complete internal-versus-expansion partition for
-row-preserving closure rematches. The exact envelope is derived from the moved
-column history, both inherited row sets are invariant, internal rematches keep
-one owner, and every outside-column move strictly decreases prefix depth.
-
-The side-eight regression records 18 internal rematches, 666 strict expansions,
-the exact depth chain `3 -> 2 -> 1 -> 0`, and 83 crossing-target expansion
-witnesses.
-
-### Installed owner and scheduler bank
-
-CMR3008--CMR3021 bind twenty installed transition kinds to ten checker contracts,
-their theorem ancestry, exact owner effect and one of eleven payment/dispatch
-classes. The CMR691--CMR719 owner-stage, edge/token, certificate, cell-target,
-fixed-envelope and strict-descent stocks are executable.
-
-For the sample `d=4`, `p=2`, `h=3`, `lambda=3`, `mu=2`:
+Finite census:
 
 ```text
-owner stages = 912
-owner edges = 12,272
-owner tokens = 73,632
-owner certificates = 370,940
-owner cell-target pairs = 113,992,704
-fixed-envelope target bound = 666,624
-coarse nonrecurrent scheduler bound = 115,043,458
+247 side-three matchable hosts
+513 essential-return host/edge pairs
+252 singleton and 261 robust walls
+150 forced and 42 deletable target cases
 ```
 
-### Installed construction regression
+### CMR3048--CMR3059 — sparse rollback restoration
 
-CMR3022--CMR3033 add a fourteen-checker manifest runner. Every checker must
-compile, emit one JSON object, match its exact contract digest, set its expected
-theorem flag to one and preserve `all_n_proved_by_checker = 0`.
+Every final essential edge receives a minimum restored-edge footprint. Minimum rollback edges form a forced matching core, producing either cheap restoration or strict residual contraction. Every recreated conflict has restored-edge support and exact token incidence.
 
-The installed manifest digest is:
+Finite census:
 
 ```text
-2fd61262229cbd866d978d7dcf5e19b607a5f81eb843d3d3a48046b598fa5e20
+450 minimum rollbacks of size one
+63 minimum rollbacks of size two
+576 restored-edge incidences
+192 recreated conflicts with restored support
 ```
 
-## Exact flags and honesty boundary
+### CMR3060--CMR3071 — twenty-nine-kind registry
+
+Hall-wall and sparse rollback operations extend the installed registry to twenty-nine unique kinds and twelve contracts. This is installed-bank exhaustiveness only.
+
+### CMR3084--CMR3097 — rollback optimal face and SCC factors
+
+Minimum rollback is restricted to its exact tight host. The optimal-allowed core factors over strongly connected exchange blocks, local rollback cost is additive, and all 512 side-three marked ancestor-reset profiles receive the same normalization.
+
+Finite census:
 
 ```text
-recurrent_target_edge_deletion_ancestry_proved = 1
-canonical_closure_envelope_identity_exact = 1
-envelope_row_set_invariance_exact = 1
-closure_branch_envelope_transition_bank_exhaustive = 1
-installed_transition_kind_bank_exhaustive = 1
-installed_operation_payment_assignment_complete = 1
-descending_path_owner_stage_stock_exact = 1
-owner_edge_token_stock_exact = 1
-owner_certificate_stock_exact = 1
-owner_target_pair_stock_exact = 1
-fixed_envelope_scheduler_bound_exact = 1
-installed_nonrecurrent_scheduler_finite = 1
-installed_transition_regression_complete = 1
+513 essential rollback pairs
+1,116 minimum rollback state incidences
+3,276 tight-edge incidences
+909 SCC factor blocks
+512 marked ancestor-reset profiles
+```
+
+### CMR3098--CMR3109 — thirty-three-kind registry
+
+Four optimal-face/SCC operations extend the installed bank to:
+
+```text
+installed operation kinds = 33
+bound contracts = 13
+owner-changing kinds = 24
+same-owner kinds = 9
+```
+
+### CMR3110--CMR3121 — nineteen-checker regression
+
+The canonical installed-stack runner is:
+
+```text
+python scripts/run_prime_power_installed_construction_regression_33.py
+```
+
+Its manifest digest is:
+
+```text
+50b66679af79082ff57ec0926508482f1efb72eefd6fe0e620d41eb949890fca
+```
+
+The exact current flags include:
+
+```text
+essential_return_unit_wall_ancestry_proved = 1
+unit_wall_factorization_exact = 1
+unit_wall_factor_tree_stock_exact = 1
+sparse_rollback_restoration_ancestry_proved = 1
+minimum_rollback_forced_core_exact = 1
+rollback_minimum_cost_face_ancestry_proved = 1
+rollback_tight_host_exact = 1
+rollback_optimal_scc_factorization_exact = 1
+marked_ancestor_reset_optimal_face_exact = 1
+installed_transition_kind_bank_33_exhaustive = 1
+installed_payment_assignment_33_complete = 1
+installed_transition_regression_33_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -214,68 +220,76 @@ actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-The installed bank is exhaustive only relative to its own registry. It is not
-yet proved to contain every operation of the original construction.
+Newest contract and registry seals:
+
+```text
+97e448a12314e894018ee0065b9e58b0b4d0172c22f1b619ad7329989f7be0e5
+35fc36f758016a3de0dba687950e4d6f0d1b17caece487ef21af3e9967f32267
+4df61b20f4d3b2bad19a296a18e00f817ac1a20feda02b77f8486783bb561487
+1281001711d4312dd98b8434e20dffb226b0608a893ffe5cf13f8b8e13940feb
+5f9d98c0b964f207fc4ac2d493b51fef5c3caaccf1464cf8bd351a477af93583
+5fa644a7cd340834eec7aa1776b1dcdad102749878664e3259c9be5c5a9b5ae2
+```
+
+## T02 global honesty boundary
+
+The thirty-three-kind bank is not known to exhaust the original construction. The next concrete audit begins at CMR462--CMR521 and must install any missing:
+
+- rollback level-skeleton and level-factor operations;
+- same-level colour splits;
+- mixed-cycle, boundary-fan and theta-fan moves;
+- line-clean rollback and weighted restoration selections;
+- unavailable-edge absorption and token-splice operations;
+- temporal absence-run/reintroduction scheduler actions; and
+- later owner, returned-edge or envelope operations not already represented.
+
+After installation, global transition-kind exhaustiveness must be proved. Every recurrent owner-edge, certificate, wall, restored edge and cell-target endpoint must then be closed before the finite stocks can imply global termination.
 
 ## Validation workflow status
 
-Dedicated Python 3.10/3.12 workflows now include:
+Dedicated Python 3.10/3.12 workflows include the earlier construction workflows plus:
 
 ```text
-.github/workflows/context-transition-frontier.yml
-.github/workflows/routing-change-ancestry-frontier.yml
-.github/workflows/factor-child-product-frontier.yml
-.github/workflows/mixed-child-deletion-frontier.yml
-.github/workflows/forced-certificate-escape-frontier.yml
-.github/workflows/target-edge-return-frontier.yml
-.github/workflows/target-handoff-envelope-frontier.yml
-.github/workflows/recurrent-target-deletion-frontier.yml
-.github/workflows/closure-envelope-transition-frontier.yml
-.github/workflows/installed-owner-scheduler-frontier.yml
-.github/workflows/installed-construction-regression.yml
+.github/workflows/essential-return-unit-wall-frontier.yml
+.github/workflows/sparse-rollback-restoration-frontier.yml
+.github/workflows/extended-installed-operation-registry.yml
+.github/workflows/extended-installed-construction-regression.yml
+.github/workflows/rollback-optimal-face-scc-frontier.yml
+.github/workflows/installed-operation-registry-33.yml
+.github/workflows/installed-construction-regression-33.yml
 ```
 
-Configuration is not evidence that a workflow passed. Actual workflow runs and
-artifacts must be inspected before claiming CI success.
+Configuration is not evidence that a workflow passed. Actual runs, logs and artifacts must be inspected before claiming CI success.
 
 ## Genuine current frontiers
 
 ```text
-T01 prove and populate genuine primary-source statements
-T02 audit for unrepresented operations; install remaining owner/restoration/return/scheduler ancestry; prove global exhaustiveness and termination
-T03--T04 populate every real slot, block and interface
+T01 populate and verify genuine primary-source statements
+T02 complete the operation audit, prove global transition exhaustiveness and termination
+T03--T04 populate every real slot, recurrent block and interface
 T05 prove arbitrary-n construction coverage
-T06--T18 prove semantic, score, resource, rank, predicate and row theorems
+T06--T18 prove score, state, resource, rank, predicate and row semantics
 T19 prove genuine global-family exhaustiveness
 T20 prove all 232 zero-selector chambers
 T21 populate genuine hard-core slots and prove all 20 semantic arguments
 T22--T31 prove all ten final premise implications
 T35--T40 prove all six ordinary handoff arguments
-T41 complete ordinary final review
+T41 complete ordinary mathematical review
 T42 complete dossier sign-off
 T43 prove the reviewed root implication to D(n)=2n
 ```
 
-T32--T34 remain documentary aggregation gates.
+T32--T34 remain documentary aggregation gates and become effective only after their lower proof banks are genuinely complete.
 
 ## Immediate work order
 
-1. Audit the original construction chapters for operation kinds absent from the
-   twenty-kind installed registry.
-2. Install every remaining owner, restoration, returned-edge and scheduler
-   transition with literal parent/child contexts.
-3. Prove the resulting transition-kind bank globally exhaustive.
-4. Close every recurrent endpoint and promote the installed nonrecurrent stock
-   bound to a global termination theorem.
-5. Populate and verify genuine T01 sources and T02/T03/T04 records.
-6. Apply the existing T05--T21 engines to real populations and prove the
-   remaining chambers, premises, handoffs, review and root implication.
+1. Install the CMR462--CMR521 level, colour, cycle/fan, line-clean, unavailable-edge and temporal operations absent from the thirty-three-kind registry.
+2. Audit later construction chapters for every remaining owner, restoration, return, envelope and scheduler transition.
+3. Prove the resulting operation bank globally exhaustive.
+4. Close all recurrent endpoints and prove one global well-founded termination theorem.
+5. Populate and verify the T01 sources and genuine T02/T03/T04 records.
+6. Run T05--T21 on real populations and prove the remaining chambers, premises, handoffs, review and root theorem.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR3033**, the branch has a sealed local
-context engine, genuine ancestry for the main factor/target/return operations,
-a complete closure-rematch envelope state machine, an exact twenty-kind installed
-owner/payment registry and a fourteen-checker construction regression. Global
-operation completeness, recurrent-endpoint closure, termination, genuine
-population and every final semantic implication remain open.
+There is no complete proof. Through **CMR3121**, the branch contains exact local context machinery and genuine construction ancestry for thirty-three registered transition kinds, including essential-return Hall walls, unit-wall factor trees, sparse rollback restoration, minimum-cost rollback faces and SCC factorization. Global operation completeness, termination, genuine populations and every final semantic implication remain open.
