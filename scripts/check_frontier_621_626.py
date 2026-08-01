@@ -4,15 +4,17 @@ import sys
 
 SCRIPTS = (
     "scripts/check_frontier_615_620.py",
-    "scripts/check_boundary_eighth_corrected_transition.py",
     "scripts/check_boundary_budget_seven_chain.py",
     "scripts/check_hall_bad_vertex_reserve.py",
+    "scripts/check_hall_quantitative_reserve_extraction.py",
     "scripts/check_hall_three_matching_reserve_threshold.py",
-    "scripts/check_threshold_two_pivot_generation.py",
+    "scripts/check_threshold_two_swap_generation.py",
+    "scripts/check_prefix_retained_anchor_budget.py",
     "scripts/check_prefix_retained_anchor_reservoir.py",
     "scripts/check_prefix_parabola_source_anchors.py",
+    "scripts/check_shell_binary_odd_column_frontier.py",
     "scripts/check_shell_all_cycle_odd_column.py",
-    "scripts/check_repeated_transition_source_generation_gate.py",
+    "scripts/check_repeated_transition_evidence_gate.py",
 )
 
 for script in SCRIPTS:
