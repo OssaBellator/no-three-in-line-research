@@ -1,0 +1,33 @@
+name: SCC branch minimum-face frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_scc_branch_minimum_face_ancestry.py'
+      - 'docs/211-prime-power-generic-exchange-scc-width.md'
+      - 'docs/212-prime-power-new-triple-prescription-split.md'
+      - 'docs/213-prime-power-new-triple-support-packing.md'
+      - 'docs/214-prime-power-constant-arity-path-budget.md'
+      - 'docs/215-prime-power-support-atom-edge-batching.md'
+      - 'docs/216-prime-power-disjoint-leaf-certificate-compression.md'
+      - 'docs/217-prime-power-minimum-anchor-preserving-path.md'
+      - 'docs/218-prime-power-minimum-face-edge-dichotomy.md'
+      - 'docs/219-prime-power-minimum-face-edge-lineage-budget.md'
+      - 'docs/506-prime-power-scc-branch-minimum-face-ancestry.md'
+      - '.github/workflows/scc-branch-minimum-face-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run SCC branch minimum-face ancestry checker
+        run: python scripts/check_prime_power_scc_branch_minimum_face_ancestry.py
