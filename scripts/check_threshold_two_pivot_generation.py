@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Generate every nearest legal threshold matrix by two conservative 2x2 pivots."""
-from __future__ import annotations
-
+"""Generate every nearest legal threshold matrix by two conservative pivots."""
 from collections import Counter
 from itertools import combinations, combinations_with_replacement, permutations
 
@@ -12,15 +10,12 @@ SOURCE = (
     (1, 1, 0, 2),
 )
 
-
 def collinear(a, b, c):
     return (b[0] - a[0]) * (c[1] - a[1]) == (b[1] - a[1]) * (c[0] - a[0])
-
 
 def legal(permutation):
     points = tuple((row, permutation[row]) for row in range(4))
     return all(not collinear(*triple) for triple in combinations(points, 3))
-
 
 def layer_matrix(layers):
     return tuple(
@@ -28,10 +23,8 @@ def layer_matrix(layers):
         for row in range(4)
     )
 
-
 def distance(first, second):
     return sum(abs(first[r][c] - second[r][c]) for r in range(4) for c in range(4))
-
 
 def pivots(matrix):
     for r1, r2 in combinations(range(4), 2):
@@ -57,26 +50,27 @@ legal_matrices = {
 assert len(legal_matrices) == 4475
 minimum_distance = min(distance(SOURCE, matrix) for matrix in legal_matrices)
 targets = tuple(sorted(matrix for matrix in legal_matrices if distance(SOURCE, matrix) == minimum_distance))
-assert minimum_distance == 6
-assert len(targets) == 8
+assert minimum_distance == 6 and len(targets) == 8
 
 first_steps = tuple(pivots(SOURCE))
-path_counts = []
-canonical_paths = []
+paths = []
 for target in targets:
     assert all(intermediate != target for _, intermediate in first_steps)
-    paths = []
+    target_paths = []
     for first_pivot, intermediate in first_steps:
         for second_pivot, final in pivots(intermediate):
             if final == target:
-                paths.append((first_pivot, second_pivot))
-    assert len(paths) == 6
-    path_counts.append(len(paths))
-    canonical_paths.append(min(paths))
-    assert all(sum(row) == 4 for row in target)
-    assert all(sum(target[row][column] for row in range(4)) == 4 for column in range(4))
+                target_paths.append((first_pivot, intermediate, second_pivot))
+    assert len(target_paths) == 6
+    paths.extend((target, *record) for record in target_paths)
 
-assert Counter(path_counts) == {6: 8}
+assert len(paths) == 48
+assert Counter(record[0] for record in paths) == Counter({target: 6 for target in targets})
+intermediates = {record[2] for record in paths}
+assert len(intermediates) == 20
+assert all(intermediate not in legal_matrices for intermediate in intermediates)
+assert all(sum(row) == 4 for intermediate in intermediates for row in intermediate)
+assert all(sum(intermediate[row][column] for row in range(4)) == 4 for intermediate in intermediates for column in range(4))
 
 print({
     "legal_permutation_layers": len(legal_layers),
@@ -84,10 +78,12 @@ print({
     "nearest_legal_matrices": len(targets),
     "entrywise_l1_distance": minimum_distance,
     "minimum_conservative_2x2_pivots": 2,
-    "shortest_pivot_paths_per_target": path_counts,
-    "canonical_paths": canonical_paths,
+    "ordered_shortest_paths": len(paths),
+    "shortest_paths_per_target": 6,
+    "distinct_intermediate_matrices": len(intermediates),
+    "geometrically_legal_intermediates": 0,
     "source_margins_preserved_at_every_step": True,
-    "remaining_gap": "the residual-flow pivots are repository-native matrix operations, not yet geometric prime-patching moves",
+    "remaining_gap": "the two-pivot compound is repository-native matrix algebra but lacks an atomic geometric prime-patching realization",
     "evidence_level": "exact_conservative_residual_pivot_source_path",
     "status": "passed",
 })
