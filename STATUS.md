@@ -6,7 +6,7 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR3845**. The predecessor endpoints CMR2899 and CMR2839 remain synchronized. Every checker, fixture, bridge, manifest and regression preserves:
+The authoritative theorem ledger reaches **CMR3893**. The predecessor endpoints CMR2899 and CMR2839 remain synchronized. Every checker, fixture, bridge, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -15,89 +15,81 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_392.py
+python scripts/run_prime_power_installed_construction_regression_454.py
 ```
 
 ```text
-chained manifest = 0a4e90217d3caaa06bb57f8458939e7cce2f9c68bd05ccddea2ea1c3149321bd
-installed operation kinds = 392
-bound checker contracts = 28
-owner-changing kinds = 130
-same-owner kinds = 262
-installed checkers = 49
+chained manifest = b5766866f7d04d687fcb56cf32d1f107be34c28fc34be1eae8b75039c269edbe
+installed operation kinds = 454
+bound checker contracts = 29
+owner-changing kinds = 143
+same-owner kinds = 311
+installed checkers = 51
 ```
 
 Newest direct entrypoints:
 
 ```text
-scripts/check_prime_power_scc_branch_minimum_face_ancestry.py
 scripts/check_prime_power_minimum_transition_product_target_ancestry.py
 scripts/check_prime_power_protected_surplus_target_packing_ancestry.py
-scripts/check_prime_power_installed_operation_registry_392.py
+scripts/check_prime_power_selected_scheduler_terminal_wall_ancestry.py
+scripts/check_prime_power_installed_operation_registry_454.py
 ```
 
 A manifest records validation execution; it is not a proof certificate.
 
 ## Installed T02 endpoint
 
-### Through CMR3701
+### Through CMR3845
 
-Installed banks cover typed contexts, routing, deletion/restoration, envelopes, Hall walls, rollback normal forms, product/factor/child ancestry, target/return/anchor lineage and completeness-corrected branching with distinguishing rank.
+Installed banks cover typed contexts, routing, deletion/restoration, envelopes, Hall walls, rollback normal forms, product/factor/child ancestry, target/return/anchor lineage, completeness-corrected branching, minimum host normalization, protected robust-surplus execution and global protected capacity.
 
-### CMR3702--CMR3749 — CMR854--CMR925
+### CMR3846--CMR3893 — CMR1094--CMR1165
 
-Exchange-SCC matching products, exact low-rank prescription branching, new-triple support packing, constant-arity path budgets, minimum-anchor forcing, minimum-face edge dichotomy and physical-edge lineage are executable.
-
-### CMR3750--CMR3797 — CMR926--CMR1005
-
-Minimum-face owner transitions, exact rollback, lowering added-edge contraction, complete same-vertex-set normalization, induced product/fibre potential transport, host-representable conditioning, physical target handoff, robust surplus and absolute residual-pair stabilization are executable.
-
-### CMR3798--CMR3845 — CMR1006--CMR1093
-
-The new protected-execution bank installs:
+The selected-scheduler and terminal-wall bank installs:
 
 ```text
-entry-rank routing of new triples
-simultaneous secant-star layer polarization
-entering-pair and loaded-old-line absorption
-robust protected execution and large-core coordinate descent
-direct simultaneous common-star and cross-star absorption
-minimum-target hypergraph packing and disjoint-target Hall escape
-branch-wide protected-owner capacity
+minimum-selected routing restriction and exact strict child products
+parameter-free owner protected deletion and loss stocks
+permanent normalized minimum-loss witnesses
+fixed-core reconditioning or real lifted-anchor loss
+rollback missing support and parameter-free blocker covers
+bulk redeletion of returned cover edges
+finite selected-scheduler currency response
+terminal Hall-cut and linear blocker-wall extraction
+minimal deficiency-one blocker unit walls
+full-layer fixed-target and loaded-line response banks
+finite certificate-bank wall descent and small-side dispatch
 ```
 
 Finite highlights:
 
 ```text
-216 side-four saturated states
-46,656 ordered state transitions
-31,104 rank-one new-triple incidences
-46,656 higher-rank new-triple incidences
-24,064 cell-disjoint secant-star banks
-39,744 entering-pair loaded lines
-288 loaded selected-line profiles
-4,608 protected-touch subset checks
-176 dirty target hypergraphs
-72 disjoint-target escape banks
+247 selected-routing hosts and products
+661 strict selected children
+6,480 normalized minimum-chain checks
+252 fixed-core conditionings
+10,584 reopening comparisons
+41 rollback blocker covers
+232 bulk-redeletion subsets
+12,013 blocked degree-two graphs
+1,095 minimal blocker unit walls
+1,863 private blocker matchings
+576 degree-two response boards
+1,944 response matchings
 ```
 
 ## Canonical contracts and seals
 
 ```text
-CMR854--CMR925 checker:
-3ec89baac0450290c3dbe3a340af76aaea95bf7f4c84342a9aac8f7c31862498
+selected scheduler / terminal wall checker:
+f10e632f119fdd56a830ddeb8b9d15d18769f59e703d0dad7a59f243a7c8246c
 
-CMR926--CMR1005 checker:
-dcdd3c27f46f64757c999621de5a67ff4868a355fc0e5fab7ac0953b8cf62086
+454-kind registry contract:
+63034b7d3af319de121a26ea863309808de0e3b06f0359448be9afed3e73f40f
 
-CMR1006--CMR1093 checker:
-5e90f91f2c8a8679bdeb3fc78ab7b0ed71c2f8d3e09de41b8ad9fc18865bddd8
-
-392-kind registry contract:
-5f9d0e26a11c58fd45976e1ace87c86a287d00d9d48dbc83dae421a6c2bc9785
-
-392-kind registry seal:
-73991d389765adee57e8665c41533a7b6e2c71653312366d8b4ce237635bf814
+454-kind registry seal:
+9396a9ecce73ffdc9e673fcfb33b1317149acfd92c9790237f29717d0347ce35
 ```
 
 Current exact flags include:
@@ -106,9 +98,10 @@ Current exact flags include:
 scc_branch_minimum_face_ancestry_proved = 1
 minimum_transition_product_target_ancestry_proved = 1
 protected_surplus_target_packing_ancestry_proved = 1
-installed_transition_kind_bank_392_exhaustive = 1
-installed_payment_assignment_392_complete = 1
-installed_transition_regression_392_complete = 1
+selected_scheduler_terminal_wall_ancestry_proved = 1
+installed_transition_kind_bank_454_exhaustive = 1
+installed_payment_assignment_454_complete = 1
+installed_transition_regression_454_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -124,9 +117,18 @@ all_n_proved_by_checker = 0
 
 ## Honesty boundary and next source range
 
-The 392-kind bank is exhaustive only over installed identifiers. It is not known to exhaust the original construction. Global transition exhaustiveness and global termination remain open.
+The 454-kind bank is exhaustive only over installed identifiers. It is not known to exhaust the original construction. Global transition exhaustiveness and global termination remain open.
 
-The next literal range begins after CMR1093 with selected-routing normalization, minimum-loss/rollback, blocker and Hall-wall scheduler operations. These must be installed before any global completeness flag can change.
+The next literal source sequence begins at:
+
+```text
+docs/250-prime-power-universal-range-target-descent.md
+docs/251-prime-power-small-joint-factor-base.md
+docs/252-prime-power-small-interface-target-ancestry.md
+docs/253-prime-power-finite-response-nonclosure.md
+```
+
+It then continues through collateral selection, last-entering ownership, reproduction matrices, rational spectral certificates and explicit side-three through side-six finite-improvement banks.
 
 ## Other open targets
 
@@ -134,4 +136,4 @@ T01 still lacks authoritative primary-source population. T03--T04 lack genuine o
 
 ## Validation status
 
-Dedicated Python 3.10/3.12 workflows exist for the three newest checker/registry/runner banks. Configuration is not evidence that a workflow passed; actual runs, logs and artifacts must be inspected before claiming CI success.
+The newest mathematical checker and registry were executed locally and passed. The complete 51-checker repository runner was not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but workflow configuration is not evidence of CI success.
