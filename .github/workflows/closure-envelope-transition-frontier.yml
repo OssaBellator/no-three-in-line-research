@@ -1,0 +1,29 @@
+name: Closure envelope transition frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - scripts/check_prime_power_closure_envelope_transition_ancestry.py
+      - docs/455-prime-power-closure-envelope-transition-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-21.md
+      - .github/workflows/closure-envelope-transition-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_prime_power_closure_envelope_transition_ancestry.py
+      - name: Verify closure envelope transitions
+        run: python scripts/check_prime_power_closure_envelope_transition_ancestry.py
