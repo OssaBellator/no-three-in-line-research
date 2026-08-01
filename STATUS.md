@@ -12,7 +12,7 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR3513**. The predecessor typed-transition endpoint **CMR2899** and plain masked-host endpoint **CMR2839** remain synchronized. Every checker, fixture, bridge, runtime manifest and regression permanently reports or preserves:
+The authoritative theorem ledger reaches **CMR3537**. The predecessor typed-transition endpoint **CMR2899** and plain masked-host endpoint **CMR2839** remain synchronized. Every checker, fixture, bridge, runtime manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -23,7 +23,7 @@ all_n_proved_by_checker = 0
 | Target | Exact installed surface | Mathematical status |
 |---|---|---|
 | T01 | source schemas, literal text and hashes | genuine primary-source population and ordinary verification remain incomplete |
-| T02 | square/asymmetric contexts and 132 registered construction operation kinds | global operation completeness, recurrent closure and termination remain open |
+| T02 | square/asymmetric contexts and 138 registered construction operation kinds | global operation completeness, recurrent closure and termination remain open |
 | T03 | typed slot payload schemas and finite bridges | genuine complete operation population remains absent |
 | T04 | recurrent-block/interface assembly schemas | actual complete assembly remains absent |
 | T05 | finite geometry and selector arithmetic | arbitrary-`n` construction coverage remains open |
@@ -69,25 +69,24 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_132.py
+python scripts/run_prime_power_installed_construction_regression_138.py
 ```
 
 Chained thirty-six-checker manifest:
 
 ```text
-260cc38054f3ecfede323d6057bbbecad46bb191e90410b6a4523479cc6b696d
+e04a2859b6d64b738d7e300a4fd42c371ef476aefb73542e4649bda99a8b88b3
 ```
 
 Newest direct entrypoints:
 
 ```text
 python scripts/check_prime_power_selector_protected_certificate_ancestry.py
-python scripts/check_prime_power_installed_operation_registry_117.py
 python scripts/check_prime_power_protected_interface_execution_ancestry.py
-python scripts/check_prime_power_installed_operation_registry_132.py
+python scripts/check_prime_power_installed_operation_registry_138.py
 ```
 
-The 110-kind and 117-kind checkpoints remain historical validation layers. All earlier construction checkers, chained runners and legacy finite, hard-core, root, negative-fixture, documentary and runtime checks remain active. A runtime or manifest is validation evidence, not a theorem certificate.
+The 110-, 117- and 132-kind stacks remain historical validation layers. All earlier construction checkers, chained runners and legacy finite, hard-core, root, negative-fixture, documentary and runtime checks remain active. A manifest records validation execution; it is not a proof certificate.
 
 ## T02 construction endpoint
 
@@ -97,11 +96,11 @@ Installed banks cover typed local contexts, routing, products, deletion/restorat
 
 ### CMR3384--CMR3425 — historical narrow protected batching
 
-The 110-kind checkpoint installs packed deletion, protected-contact token walls and recurrent-set batch absorption for CMR577--CMR592.
+The 110-kind checkpoint installs packed deletion, protected-contact token walls and recurrent-set batch absorption through CMR592.
 
 ### CMR3426--CMR3469 — selector protected-certificate bank
 
-The superseding 117-kind checkpoint extends through CMR604 with weak-slack conversion, persistent-core amplification and owner-labelled protected-state, line, token-edge and certificate stocks.
+The 117-kind checkpoint extends through CMR604 with weak-slack conversion, persistent-core amplification and owner-labelled protected-state, line, token-edge and certificate stocks.
 
 Finite highlights:
 
@@ -111,22 +110,21 @@ Finite highlights:
 162 fully forced packed conflicts
 802 restoration subsets
 208 protected contact states
-2,256 blocked contact-edge incidences
 4,095 persistent unavailable-set profiles
 3,264 batch-absorption profiles
 831 small-cover wall profiles
 ```
 
-### CMR3470--CMR3513 — heavy-line/star and protected-interface execution
+### CMR3470--CMR3513 — protected-interface execution theorem bank
 
 CMR605--CMR628 now have literal executable ancestry:
 
-- heavy-line free-cell absorption, post-absorption atom caps and finite line growth;
-- secant-star matching-vertex walls, compatible-arm extraction and bulk absorption;
+- heavy-line protected absorption and post-absorption atom caps;
+- secant-star wall/arm extraction and bulk protected growth;
 - exact protected/free cross-skeleton products and sparse-interface recursion;
-- finite skeleton histories, protected-factor diversity and physical cross-edge churn.
+- skeleton recurrence, factor diversity and physical cross-edge churn.
 
-Finite highlights:
+Observed finite highlights:
 
 ```text
 34,012 protected-line profiles
@@ -139,33 +137,32 @@ Finite highlights:
 458 physical cross-edge churn incidences
 ```
 
-The canonical installed census is:
+### CMR3514--CMR3537 — canonical fine-grained registry and runner
+
+The same CMR605--CMR628 checker is partitioned into 21 exact line, star, interface and history operations. This 138-kind partition supersedes the coarser 132-kind checkpoint.
+
+Canonical census:
 
 ```text
-installed operation kinds = 132
+installed operation kinds = 138
 bound contracts = 22
-owner-changing kinds = 43
-same-owner kinds = 89
+owner-changing kinds = 42
+same-owner kinds = 96
 installed checker manifest = 36
 ```
 
 Current exact flags include:
 
 ```text
-disjoint_conflict_deletion_ancestry_proved = 1
-protected_contact_token_ledger_exact = 1
-dynamic_selector_recurrent_set_batching_exact = 1
-selector_slack_persistent_core_exact = 1
-owned_certificate_stock_exact = 1
 selector_protected_certificate_ancestry_proved = 1
 heavy_line_protected_absorption_proved = 1
 secant_star_protected_absorption_proved = 1
 protected_core_interface_factorization_exact = 1
 protected_skeleton_history_exact = 1
 protected_interface_execution_ancestry_proved = 1
-installed_transition_kind_bank_132_exhaustive = 1
-installed_payment_assignment_132_complete = 1
-installed_transition_regression_132_complete = 1
+installed_transition_kind_bank_138_exhaustive = 1
+installed_payment_assignment_138_complete = 1
+installed_transition_regression_138_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -179,31 +176,25 @@ actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-Newest contracts and seals:
+Canonical contracts and seals:
 
 ```text
 selector protected-certificate checker:
 b82d83290aa95e41743fe1db9dbbf3a26c09801f40888e42cc1c8e0f0eefd0f0
 
-117-kind registry:
-043cc0dfdc5f9509de81da436df1aec8579a7803623d0ace54d6d0dd6904bfdf
-
 protected-interface checker:
 59d5aa3221a9589d8b3f1b9f652383231795ee1e5188b8db1e31d48e080f746f
 
-132-kind registry contract:
-833bb6751b69002613c0442f3f1b4180b6c02044361017e4e1e713ec2ea9b298
-
-132-kind registry seal:
-35c751e505513c43f834311488f37831f3f8846f060e772c0980f71de95ef1a5
+138-kind registry contract:
+1ad61f338ba3095e632b4b3e2ee28b1b0400a082d50795311c077068cf6beda3
 
 36-checker manifest:
-260cc38054f3ecfede323d6057bbbecad46bb191e90410b6a4523479cc6b696d
+e04a2859b6d64b738d7e300a4fd42c371ef476aefb73542e4649bda99a8b88b3
 ```
 
 ## T02 global honesty boundary
 
-The 132-kind bank is exhaustive only over installed identifiers. It is not known to exhaust the original construction.
+The 138-kind bank is exhaustive only over installed identifiers. It is not known to exhaust the original construction.
 
 The next literal range begins at **CMR629**:
 
@@ -229,11 +220,9 @@ Dedicated Python 3.10/3.12 workflows include all earlier workflows plus:
 
 ```text
 .github/workflows/selector-protected-certificate-frontier.yml
-.github/workflows/installed-operation-registry-117.yml
-.github/workflows/installed-construction-regression-117.yml
 .github/workflows/protected-interface-execution-frontier.yml
-.github/workflows/installed-operation-registry-132.yml
-.github/workflows/installed-construction-regression-132.yml
+.github/workflows/installed-operation-registry-138.yml
+.github/workflows/installed-construction-regression-138.yml
 ```
 
 Configuration is not evidence that a workflow passed. Actual runs, logs and artifacts must be inspected before claiming CI success.
@@ -260,4 +249,4 @@ T32--T34 remain documentary aggregation gates and become effective only after th
 
 ## Bottom line
 
-There is no complete proof. Through **CMR3513**, the branch contains finite construction ancestry for 132 registered operation kinds and a chained 36-checker installed-stack runner. Remaining product/factor and later construction operations, global exhaustiveness, termination, genuine populations and every final semantic implication remain open.
+There is no complete proof. Through **CMR3537**, the branch contains finite construction ancestry for 138 registered operation kinds and a chained 36-checker installed-stack runner. Remaining product/factor and later construction operations, global exhaustiveness, termination, genuine populations and every final semantic implication remain open.
