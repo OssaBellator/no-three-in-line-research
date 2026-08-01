@@ -1,0 +1,24 @@
+name: line-clean-rollback-weighted-availability-frontier
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_line_clean_rollback_weighted_availability.py
+      - docs/472-prime-power-line-clean-rollback-weighted-availability-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-38.md
+      - .github/workflows/line-clean-rollback-weighted-availability-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  finite-check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_line_clean_rollback_weighted_availability.py
