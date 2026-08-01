@@ -4,59 +4,80 @@ This supplement continues the cumulative PP3 index after `docs/620`.
 
 | ID | Statement | Status | Location |
 |---|---|---|---|
-| PP3cwd--PP3cwf | The canonical correction-budget-seven boundary state has explicit eighth and ninth corrected transitions, complete minimum-transversal censuses, and no budget-seven tenth transition | PROVED | `docs/621-budget-seven-corrected-boundary-chain.md` |
-| PP3cwg--PP3cwi | Three matching-shaped forbidden families plus one cell require six residual resources per side, sharply, giving an eight-resource conditional-host interface | PROVED / PROVED UNDER HYPOTHESES | `docs/622-sharp-three-matching-hall-reserve-threshold.md` |
-| PP3cwj--PP3cwl | Every nearest legal threshold matrix has six ordered two-swap generations, all through illegal intermediates, reducing realization to one atomic compound operation | PROVED / FINITE REDUCTION | `docs/623-atomic-two-swap-generation-of-threshold-trades.md` |
-| PP3cwm--PP3cwo | Integer-parabola retained-source anchors give distinct resources, zero mixed-run triples, and exact maximal-run deletion-credit aggregates | PROVED | `docs/624-parabola-retained-source-anchor-model.md` |
-| PP3cwp--PP3cwr | Binary odd shell columns have a complete service frontier; `(1,1,1)` completes the lattice and uniquely improves unit-cost throughput | PROVED / CONDITIONAL TARGET | `docs/625-binary-odd-shell-column-frontier.md` |
-| PP3cws--PP3cwu | Candidate coverage stays `24/30`, fixture arithmetic is unchanged, and zero global rows are promoted | PROVED | `docs/626-repeated-transition-evidence-gate.md` |
+| PP3cwd--PP3cwf | The corrected boundary state has a complete eighth transversal spectrum, unique corrected eighth and ninth transitions, and no budget-seven tenth transition | PROVED | `docs/621-repeated-corrected-boundary-transition.md` |
+| PP3cwg--PP3cwi | Bounded-degree forbidden families admit matching-shaped reserve extraction; three degree-two families need forty-two residual resources, and the six-resource completion threshold is sharp | PROVED / CONDITIONAL INTERFACE | `docs/622-quantitative-hall-reserve-extraction.md` |
+| PP3cwj--PP3cwl | Every nearest legal threshold target has six shortest two-pivot source paths, all through illegal visible intermediates, completing the candidate matrix-level source path | PROVED / FINITE REDUCTION | `docs/623-two-pivot-generation-of-threshold-trades.md` |
+| PP3cwm--PP3cwo | Maximal-run counts give the exact retained-anchor price; an integer-parabola source realizes the incidences, while the internal nineteen-cell reservoir fails on a positive fraction | PROVED / CONDITIONAL SOURCE MODEL | `docs/624-retained-anchor-reservoir-price.md` |
+| PP3cwp--PP3cwr | The unique optimal odd shell column of `l_1` norm at most three is `(1,1,1)`, giving twelve active controls and a zero-buffer period | PROVED / CONDITIONAL SOURCE COLUMN | `docs/625-optimal-all-cycle-odd-shell-column.md` |
+| PP3cws--PP3cwu | Candidate coverage is `25/30`, fixture arithmetic slack remains positive, and no geometric row is promoted | PROVED | `docs/626-repeated-transition-source-generation-evidence-gate.md` |
 
 ## Frontier update
 
 ### Boundary recleaning
 
-The canonical corrected path now reaches nine blocks.  The eighth census has
-seven promising attempts and twenty-one minimum transversals; the ninth has
-sixteen and 120.  Explicit seven-point corrections close both steps.  At the
-tenth step only two minimum-five attempts survive, and neither has a
-row-column-preserving correction within budget seven.
+The full eighth-step minimum-transversal histogram is
+
+```text
+4:1, 5:6, 6:21, 7:68, 8:164,
+9:2, 10:4, 11:34, 12:41, 13:107, 14:72.
+```
+
+The unique size-seven eighth correction is followed by a second explicit size-
+seven correction at the ninth step.  The corrected path reaches nine blocks.  At
+the tenth step only `(P2,-32)` and `(P3,-32)` have minimum transversal at most
+five, and neither admits a correction within budget seven.
 
 ### Localized Hall transport
 
-The finite reserve threshold is sharp.  Three partial-matching forbidden
-families plus one arbitrary cell cannot create a Hall rectangle on six residual
-resources per side.  Five residual resources fail through a `K_3,3` forbidden
-rectangle decomposed into three matchings.  A conditioned local pair therefore
-needs eight total resources per side for this exact interface.
+For `k` forbidden families of maximum degree `Delta`, a matching-shaped reserve
+of size `r` is extracted whenever
+
+```text
+N >= r(1+2k*C(Delta,2)).
+```
+
+With three degree-two families and target reserve six, forty-two residual
+resources suffice, or forty-four before the local pair consumes two.  The six-
+resource completion core is sharp: five fail via a forbidden `K_3,3` decomposed
+into three matchings.
 
 ### Fractional direct-clean layers
 
-The eight source-preserving legal matrices are no longer algebraically mysterious.
-Each has exactly six ordered length-two paths in the elementary conservative
-`2x2` trade graph.  The forty-eight paths use twenty intermediate matrices, none
-of which is geometrically legal.  The missing operation is an atomic two-swap
-compound.
+Every nearest legal degree-four target has exactly six shortest paths of two
+conservative `2x2` pivots, for forty-eight paths total.  They use twenty distinct
+nonnegative margin-preserving intermediates, none of which is geometrically legal.
+This completes the candidate matrix-generation field while reducing geometry to
+one atomic two-pivot compound.
 
 ### Support-chord repair words
 
-Synthetic anchors are replaced by cells of an explicit integer-parabola source.
-All 1,024 unary-run compositions retain distinct rows and columns and zero mixed-
-run triples.  The exact profile has aggregate maximal-run count
-`1212286655580`, mean `209/29`; one deleted anchor per run clears its complete
-anchor-pair blocker family.
+The selected profile has aggregate `1212286655580` maximal unary runs, mean
+`209/29`.  Two retained anchors per run require aggregate `2424573311160`, mean
+`418/29`, and at most twenty-two cells.  The internal nineteen-cell source fails
+on `4858898044` trees, proportion `289/10005`.
+
+An explicit integer-parabola source realizes the anchor incidences for all 1,024
+run compositions with distinct rows and columns and zero mixed-run triples.  It
+is not the saturated PP3 source.
 
 ### Clean-macro shells
 
-The complete binary odd-column catalogue is audited.  The symmetric action
-`(1,1,1)` completes the integer lattice and has target-service frontier
-`(uses,total)=(2,14),(4,13),(6,12)`, improving the fifteen-control recorded
-baseline by as much as three under unit action cost.
+Among all nonnegative odd columns of norm at most three, `(1,1,1)` is uniquely
+best.  The identity
+
+```text
+2A+4B+6D=(12,10,8)
+```
+
+uses twelve active controls and eight idle slots.  The word
+`DABABBBDDDDDIIIIIIII` satisfies every prefix service inequality with zero
+startup buffer.
 
 ### Integration
 
-Candidate completion remains `24/30`.  The fixture fixed point and positive
-slack are unchanged.  All direct rows remain fixture-derived and the evidence
-gate remains closed.
+Candidate coverage rises to `25/30` because the threshold matrix-level source
+path is complete.  The fixture fixed point and positive slack are unchanged.
+All direct rows remain fixture-derived and the evidence gate remains closed.
 
 ## Exact diagnostics
 
@@ -66,15 +87,18 @@ Run the complete group with
 python scripts/check_frontier_621_626.py
 ```
 
-or the new audits individually:
+or the consolidated audits individually:
 
 ```bash
+python scripts/check_boundary_eighth_corrected_transition.py
 python scripts/check_boundary_budget_seven_chain.py
+python scripts/check_hall_quantitative_reserve_extraction.py
 python scripts/check_hall_three_matching_reserve_threshold.py
-python scripts/check_threshold_two_swap_generation.py
+python scripts/check_threshold_two_pivot_generation.py
+python scripts/check_prefix_retained_anchor_reservoir.py
 python scripts/check_prefix_parabola_source_anchors.py
-python scripts/check_shell_binary_odd_column_frontier.py
-python scripts/check_repeated_transition_evidence_gate.py
+python scripts/check_shell_all_cycle_odd_column.py
+python scripts/check_repeated_transition_source_generation_gate.py
 ```
 
 The next available theorem identifier is `PP3cwv`.
