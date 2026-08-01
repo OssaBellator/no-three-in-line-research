@@ -1,0 +1,38 @@
+name: Installed owner scheduler frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - scripts/check_prime_power_installed_owner_scheduler_bank.py
+      - scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+      - scripts/check_prime_power_closure_envelope_transition_ancestry.py
+      - docs/456-prime-power-installed-owner-scheduler-bank.md
+      - proofs/composite-modulus-theorem-index-live-continuation-22.md
+      - .github/workflows/installed-owner-scheduler-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile installed construction bank
+        run: |
+          python -m py_compile scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+          python -m py_compile scripts/check_prime_power_closure_envelope_transition_ancestry.py
+          python -m py_compile scripts/check_prime_power_installed_owner_scheduler_bank.py
+      - name: Verify prerequisite construction banks
+        run: |
+          python scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+          python scripts/check_prime_power_closure_envelope_transition_ancestry.py
+      - name: Verify installed owner scheduler bank
+        run: python scripts/check_prime_power_installed_owner_scheduler_bank.py
