@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR3941**. Every checker, bridge, fixture, manifest and regression preserves:
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4037**. Every checker, bridge, fixture, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -13,73 +13,84 @@ No finite census, registry digest, manifest or workflow result proves the all-`n
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_472.py
-manifest = 0c4e224bf17c50069b27abc6b48c4133b57e37e4826f28b69cb7abe00febf730
-operation kinds = 472
-checker contracts = 30
-owner-changing kinds = 148
-same-owner kinds = 324
-checkers = 53
+runner = scripts/run_prime_power_installed_construction_regression_552.py
+manifest = aab192d2cd4682e51be31a09285141377b5786d231006950a898f36cf43b39fd
+operation kinds = 552
+checker contracts = 32
+owner-changing kinds = 159
+same-owner kinds = 393
+checkers = 57
 ```
 
 Inspect actual workflow runs before claiming CI success.
 
-## 3. Installed T02 surface
+## 3. Installed collateral and finite-grid surface
 
-### Through CMR3893
+### CMR3942--CMR3989
 
-Exchange-SCC products, complete low-rank branching, minimum host normalization, protected robust execution, selected routing, permanent loss stocks, fixed-core reopening, blocker covers, finite scheduler currencies and terminal unit walls are installed.
-
-### CMR3894--CMR3941
-
-Source CMR1166--CMR1197 installs:
+Source CMR1198--CMR1277 installs:
 
 ```text
-universal-range dirty-target descent
-side-three exact singleton response banks
-side-two physical rigidity and root cleanliness
-side-one forced contraction
-last-fixation small-interface target ancestry
-lifted bank-owner response and finite lineage stock
-finite canonical response-class reduction
+degree-two bank permanent/cylinder bounds
+restricted-host availability penalties
+absolute last-entering collateral owners
+corrected rank-one/rank-two/rank-three line energy
+doubly stochastic rank-one marginals
+pointwise full local collateral envelopes
+optimized target-cell aggregation
+last-creation physical credit ledgers
+nonnegative offspring-matrix reduction
+exact rational/integer spectral certificates
 ```
 
-It also proves the crucial nonclosure statement:
+These results reduce the missing theorem to a finite subcriticality certificate. They do not prove that every canonical owner has spectral radius below one.
+
+### CMR3990--CMR4037
+
+Full standard grids and verified translate/common-scale affine copies are closed through side six. Sides three through five have strict deterministic response policies. Side six has a completely classified one-layer trap class and a clean two-layer escape.
+
+Two boundaries remain explicit:
 
 ```text
-finite scheduler termination does not imply minimum zero
-global_target_collateral_inequality_proved = 0
+scattered_residual_finite_grid_policy_proved = 0
+one_layer_fixed_target_policy_globally_sufficient = 0
 ```
 
-CMR1196 remains open.
+Arbitrary inherited-coordinate factors still require local-envelope, line-profile, quotient/carry or spectral control.
 
 ## 4. Active mathematical frontier
 
-The next source sequence begins at chapter 254 and attacks the actual missing inequality:
+Continue from chapter 269:
 
 ```text
-degree-two bank collateral expectation
-restricted-bank target/collateral selection
-last-entering collateral ownership
-line-energy and rank-one marginal refinements
-full local collateral envelopes
-optimized target aggregation
-last-creation collateral credits
-collateral reproduction matrices
-rational spectral certificates
-explicit side-three through side-six strict-improvement banks
+last-entering owner triangularity
+exact credit classes and upper quotients
+degree-two line-profile classes
+line-profile pair-moment envelopes
+extension-free permanent and derangement marginals
+extension-free line-composition kernels
+exact cylinder types
+cross-line edge assignments
+candidate-transversal Hall walls
+rook-owner edge weights and cross-line owner assignments
+harmonic and lattice-capacity owner bounds
 ```
 
-For every genuine operation or inequality component, record exact bank distributions, destroyed target load, created collateral, physical ownership, matrix/rational certificate, finite side range and corruption rejection.
+For each result, distinguish an exact offspring bound from a reduction. Do not promote a block-triangular theorem unless the actual last-active owner order is proved, and do not absorb interface collateral without an explicit bounded error matrix.
 
 ## 5. Global blockers
 
-1. Prove the target-versus-collateral expectation or an equivalent spectral inequality for every canonical dirty response class.
-2. Install all remaining finite-side and extension-free response operations.
-3. Prove the original operation list globally exhaustive.
-4. Combine the strict-improvement inequality with structural descent to prove global termination and minimum zero.
+1. Construct a globally valid upper offspring matrix for every canonical inherited-coordinate dirty owner.
+2. Prove its spectral radius is below one, or prove an equivalent target-versus-collateral inequality.
+3. Route blocked rows through exact unit-wall descent and glue strict-child blocks with genuine triangular ownership.
+4. Audit the original operation list for global transition-kind exhaustiveness.
+5. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
 
-## 6. Downstream frontiers
+## 6. Validation blockers
+
+The collateral/spectral checker and 525/552 registries passed locally. The finite-grid consolidated wrapper and complete 55/57-checker runners have not been executed locally. Dedicated workflows are configured but have no observed success status in this session.
+
+## 7. Downstream frontiers
 
 T01 lacks genuine authoritative source population. T03--T04 require genuine operation populations. T05--T19 require arbitrary-`n` coverage and semantic proofs. T20--T31 chamber, hard-core and final-premise arguments remain open. T35--T40 handoffs, T41 review, T42 sign-off and T43 remain open. T32--T34 are documentary aggregation gates only.
 
