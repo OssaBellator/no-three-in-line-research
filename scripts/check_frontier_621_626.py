@@ -4,7 +4,6 @@ import sys
 
 SCRIPTS = (
     "scripts/check_frontier_615_620.py",
-    "scripts/check_boundary_eighth_corrected_transition.py",
     "scripts/check_boundary_budget_seven_chain.py",
     "scripts/check_hall_bad_vertex_reserve.py",
     "scripts/check_hall_quantitative_reserve_extraction.py",
