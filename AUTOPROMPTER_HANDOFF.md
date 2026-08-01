@@ -4,25 +4,25 @@
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Authoritative theorem endpoint: **CMR3893**
+- Authoritative theorem endpoint: **CMR3941**
 - Mathematical status: the no-three-in-line conjecture remains open.
 - Every checker preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical installed stack
 
 ```text
-454 unique construction operation kinds
-29 exact checker contracts
-143 owner-changing kinds
-311 same-owner kinds
-51 installed checkers
+472 unique construction operation kinds
+30 exact checker contracts
+148 owner-changing kinds
+324 same-owner kinds
+53 installed checkers
 ```
 
 Canonical runner and manifest:
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_454.py
-b5766866f7d04d687fcb56cf32d1f107be34c28fc34be1eae8b75039c269edbe
+python scripts/run_prime_power_installed_construction_regression_472.py
+0c4e224bf17c50069b27abc6b48c4133b57e37e4826f28b69cb7abe00febf730
 ```
 
 Installed-bank exhaustiveness is not global construction exhaustiveness.
@@ -30,66 +30,72 @@ Installed-bank exhaustiveness is not global construction exhaustiveness.
 ## Latest installed history
 
 ```text
-CMR3702--3749 exchange-SCC products, constant-arity branching,
-                 support compression, minimum anchors and edge lineage
-CMR3750--3797 minimum owner transitions, rollback/contraction,
-                 product/fibre transport and robust signatures
-CMR3798--3845 protected robust-surplus execution, simultaneous stars,
+CMR3798--3845 robust protected execution, simultaneous stars,
                  target packing/escape and global protected capacity
-CMR3846--3893 selected-routing normalization, permanent loss stocks,
-                 fixed-core reopening, rollback blocker covers,
-                 finite scheduler currencies and terminal unit-wall descent
+CMR3846--3893 selected routing, minimum-loss/fixed-core normalization,
+                 blocker covers, finite scheduler and terminal unit walls
+CMR3894--3941 universal-range descent, exact small joint bases,
+                 lifted small-interface ancestry and finite-response nonclosure
 ```
 
 ## CMR1094--CMR1165 bank
 
-Checker and contract:
-
 ```text
-scripts/check_prime_power_selected_scheduler_terminal_wall_ancestry.py
-f10e632f119fdd56a830ddeb8b9d15d18769f59e703d0dad7a59f243a7c8246c
+checker = scripts/check_prime_power_selected_scheduler_terminal_wall_ancestry.py
+contract = f10e632f119fdd56a830ddeb8b9d15d18769f59e703d0dad7a59f243a7c8246c
 ```
 
 Finite highlights:
 
 ```text
-247 selected-routing hosts and products
-661 strict selected children
+247 selected-routing products
 6,480 normalized minimum-chain checks
 10,584 fixed-core reopening comparisons
 41 rollback blocker covers
-232 bulk-redeletion subsets
 12,013 blocked degree-two graphs
 1,095 exact unit walls
 1,863 private blocker matchings
 576 degree-two response boards
-1,944 response matchings
 ```
 
-Canonical seals:
+## CMR1166--CMR1197 bank
 
 ```text
-454-kind registry contract:
-63034b7d3af319de121a26ea863309808de0e3b06f0359448be9afed3e73f40f
+checker = scripts/check_prime_power_universal_base_nonclosure_ancestry.py
+contract = 1872628306b27c0e3240fe4be2acb27f319c9d2f36acead6b47deaa6838efd36
+```
 
-454-kind registry seal:
-9396a9ecce73ffdc9e673fcfb33b1317149acfd92c9790237f29717d0347ce35
+It installs universal dirty-target descent, the exact side-three singleton bank, side-two rigidity/root cleanliness, side-one contraction and lifted small-interface target ancestry. It also validates a finite-response countermodel and preserves:
 
-51-checker manifest:
-b5766866f7d04d687fcb56cf32d1f107be34c28fc34be1eae8b75039c269edbe
+```text
+global_target_collateral_inequality_proved = 0
+```
+
+CMR1196 is open.
+
+## Canonical seals
+
+```text
+472-kind registry contract:
+83c69c981fbccb8ab8634a2a767032c6a44384cb30afafbf27e883738baf0232
+
+472-kind registry seal:
+754a91a7c1e978756b97d01576095763d8d7249f01d137acf8c5b7a174283ee1
+
+53-checker manifest:
+0c4e224bf17c50069b27abc6b48c4133b57e37e4826f28b69cb7abe00febf730
 ```
 
 ## Exact current flags
 
 ```text
-scc_branch_minimum_face_ancestry_proved = 1
-minimum_transition_product_target_ancestry_proved = 1
-protected_surplus_target_packing_ancestry_proved = 1
 selected_scheduler_terminal_wall_ancestry_proved = 1
-installed_transition_kind_bank_454_exhaustive = 1
-installed_payment_assignment_454_complete = 1
-installed_transition_regression_454_complete = 1
+universal_base_nonclosure_ancestry_proved = 1
+installed_transition_kind_bank_472_exhaustive = 1
+installed_payment_assignment_472_complete = 1
+installed_transition_regression_472_complete = 1
 
+global_target_collateral_inequality_proved = 0
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
 all_restoration_operations_proved = 0
@@ -104,28 +110,23 @@ all_n_proved_by_checker = 0
 
 ## Validation honesty
 
-The newest mathematical checker and registry were executed locally and passed. The complete 51-checker repository runner was not executed locally. Workflow configuration is not CI success; inspect actual runs, logs and artifacts before claiming a pass.
+The newest mathematical checkers and registries were executed locally and passed. The complete 53-checker repository runner was not executed locally. Workflow configuration is not CI success.
 
 ## Immediate next frontier
 
-Continue in literal theorem order from source chapter 250:
+Continue from source chapter 254 in literal order:
 
 ```text
-docs/250-prime-power-universal-range-target-descent.md
-docs/251-prime-power-small-joint-factor-base.md
-docs/252-prime-power-small-interface-target-ancestry.md
-docs/253-prime-power-finite-response-nonclosure.md
 docs/254-prime-power-degree-two-bank-collateral-expectation.md
+docs/255-prime-power-restricted-bank-target-collateral-selection.md
+docs/256-prime-power-last-entering-edge-collateral-ownership.md
+docs/257-prime-power-degree-two-bank-line-energy.md
+docs/258-prime-power-rank-one-bank-marginal-refinement.md
+docs/259-prime-power-full-collateral-local-envelope.md
+docs/260-prime-power-optimized-envelope-target-aggregation.md
+docs/261-prime-power-last-creation-collateral-credit-ledger.md
+docs/262-prime-power-collateral-reproduction-matrix.md
+docs/263-prime-power-rational-spectral-certificate.md
 ```
 
-Then continue through restricted-bank collateral selection, last-entering ownership, local-envelope aggregation, reproduction matrices, rational spectral certificates and the explicit side-three through side-six improvement banks.
-
-For every genuine action, install a literal parent/child or conditioned family, theorem-derived owner effect, exact stock/reintroduction/descent/branch-cover or mandatory scheduler continuation, contract seal and corruption rejection.
-
-After the operation audit:
-
-1. prove the full transition-kind bank globally exhaustive;
-2. close every recurrent endpoint and terminal finite-response endpoint;
-3. prove global termination;
-4. populate authoritative T01 and genuine T02/T03/T04 records; and
-5. proceed through T05--T43 without changing any open flag prematurely.
+Then install the explicit side-three through side-six improvement banks and extension-free response families. The active mathematical target is the global target-versus-collateral inequality, not another finite response normalization.
