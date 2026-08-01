@@ -1,0 +1,43 @@
+name: Installed construction regression
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - scripts/check_prime_power_asymmetric_residual_host_contraction.py
+      - scripts/check_prime_power_asymmetric_context_generation.py
+      - scripts/check_prime_power_asymmetric_target_dispatch.py
+      - scripts/check_prime_power_context_transition_registry.py
+      - scripts/check_prime_power_routing_change_context_ancestry.py
+      - scripts/check_prime_power_routing_change_history_payment.py
+      - scripts/check_prime_power_factor_child_product_ancestry.py
+      - scripts/check_prime_power_mixed_child_deletion_ancestry.py
+      - scripts/check_prime_power_forced_certificate_escape_ancestry.py
+      - scripts/check_prime_power_target_edge_return_ancestry.py
+      - scripts/check_prime_power_target_handoff_envelope_ancestry.py
+      - scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+      - scripts/check_prime_power_closure_envelope_transition_ancestry.py
+      - scripts/check_prime_power_installed_owner_scheduler_bank.py
+      - scripts/run_prime_power_installed_construction_regression.py
+      - docs/457-prime-power-installed-construction-regression.md
+      - proofs/composite-modulus-theorem-index-live-continuation-23.md
+      - .github/workflows/installed-construction-regression.yml
+  workflow_dispatch:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Static installed construction audit
+        run: python scripts/run_prime_power_installed_construction_regression.py --static-only
+      - name: Full installed construction regression
+        run: python scripts/run_prime_power_installed_construction_regression.py
