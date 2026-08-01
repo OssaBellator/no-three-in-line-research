@@ -1,0 +1,26 @@
+name: Installed operation registry 33
+
+on:
+  push:
+    branches: [research/all-n-composite-modulus]
+    paths:
+      - scripts/check_prime_power_installed_operation_registry_33.py
+      - scripts/check_prime_power_rollback_optimal_face_scc_ancestry.py
+      - docs/463-prime-power-installed-operation-registry-33.md
+      - proofs/composite-modulus-theorem-index-live-continuation-29.md
+      - .github/workflows/installed-operation-registry-33.yml
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m py_compile scripts/check_prime_power_installed_operation_registry_33.py
+      - run: python scripts/check_prime_power_installed_operation_registry_33.py
