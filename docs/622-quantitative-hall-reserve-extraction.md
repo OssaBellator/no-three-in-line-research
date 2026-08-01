@@ -1,87 +1,106 @@
 # Quantitative Hall reserve extraction
 
-`docs/616` proves robust completion in a residual `K_4,4` when the restricted
-partner and source forbidden families are partial matchings.  This chapter gives
-a quantitative condition that forces such a four-by-four reserve inside a larger
-conditional host.
+`docs/616` proves robust completion in residual `K_{4,4}` for two matching-shaped
+forbidden families.  A real conditional host may also contribute a matching-
+shaped host-defect family.  This chapter combines quantitative extraction with
+the sharp reserve threshold for three families plus one arbitrary blocked cell.
 
-Let `F_1,F_2` be two forbidden bipartite graphs on equal residual resource sets
-of size `N`.  Assume every vertex has degree at most `Delta` in each family.
+## 1. Multi-family collision extraction
 
-## 1. Collision-graph extraction
+### Theorem PP3cwg -- PROVED / MATCHING-SHAPED RESERVE EXTRACTION
 
-### Theorem PP3cwg -- PROVED / FOUR-RESOURCE RESERVE FROM BOUNDED FORBIDDEN DEGREE
-
-Set
+Let `F_1,...,F_k` be forbidden bipartite graphs on equal resource sets of size
+`N`, each of maximum degree at most `Delta`.  Put
 
 ```text
-b = C(Delta,2),
-N_0(Delta) = 4(1+4b).
+b = C(Delta,2).
 ```
 
-If `N>=N_0(Delta)`, there are four left resources and four right resources such
-that each restricted forbidden family is a partial matching.
+For any target reserve size `r`, if
+
+```text
+N >= r(1+2kb),
+```
+
+there are `r` left and `r` right resources on which every restricted `F_i` is a
+partial matching.
 
 #### Proof
 
 On the left resources, join two vertices when they share a right neighbour in
-`F_1` or `F_2`.  Each right vertex contributes at most `b` collision edges per
-family, so the collision graph has at most `2Nb` edges.  The standard bound
+some `F_i`.  There are at most `kNb` collision edges.  The standard independence
+bound gives
 
 ```text
-alpha(G) >= N^2/(N+2|E(G)|)
+alpha >= N^2/(N+2kNb) = N/(1+2kb) >= r.
 ```
 
-gives an independent set of size at least
+Choose `r` independent left resources.  On the right, join two vertices when
+they occur in the same neighbourhood of one selected left resource in some
+family.  There are at most `krb` collision edges, so
 
 ```text
-N/(1+4b) >= 4.
+alpha >= N^2/(N+2krb) >= r
 ```
 
-Choose four independent left resources.  In either forbidden family their right
-neighbourhoods are pairwise disjoint, so every right vertex already has restricted
-degree at most one.
+under the same threshold.  Independence on both sides means no restricted
+family repeats a left or right endpoint.  ∎
 
-Now join two right resources when they lie in the same neighbourhood of one of
-the four selected left resources in either family.  There are eight such
-neighbourhood buckets, each of size at most `Delta`, hence at most `8b` collision
-edges.  Again
+## 2. Sharp six-resource completion threshold
+
+### Theorem PP3cwh -- PROVED / THREE-MATCHING HALL THRESHOLD
+
+On six residual resources per side, the complement of
 
 ```text
-alpha >= N^2/(N+16b) >= 4
+M_partner union M_source union M_host union {e}
 ```
 
-under the stated bound.  Four independent right resources therefore give left
-and right restricted degree at most one in each family. ∎
-
-## 2. Degree-two numerical threshold
-
-### Theorem PP3cwh -- PROVED / TWENTY-RESOURCE RESIDUAL THRESHOLD
-
-For `Delta=2`, twenty residual resources per side suffice.  If two decoder
-choices have already consumed one left and one right resource each, a host with
-twenty-two available resources per side meets the stated reserve count.
+has a perfect matching whenever the three `M_*` are partial matchings and `e` is
+one arbitrary edge.  Five residual resources are insufficient.
 
 #### Proof
 
-`C(2,2)=1`, so `N_0(2)=4(1+4)=20`. ∎
+A Hall failure on six resources requires a complete forbidden rectangle of one
+of the dimensions
 
-## 3. Robust conditional completion
+```text
+1x6, 2x5, 3x4, 4x3, 5x2, 6x1.
+```
 
-### Theorem PP3cwi -- PROVED / QUANTITATIVE SIX-RESOURCE HALL PIPELINE
+Three matchings have maximum degree three, and `e` can raise the degree to four
+at only one left and one right vertex.  None of the six rectangles is possible:
+the outer four require degree at least five, while `3x4` or `4x3` requires three
+vertices of degree four on one side.
 
-Under `PP3cwg`, the extracted `K_4,4` minus the two restricted partial matchings
-retains at least two perfect matchings and survives deletion of one additional
-allowed cell.
+For sharpness, in `K_{5,5}` forbid a `K_{3,3}` decomposed into its three cyclic
+perfect matchings.  The three selected left vertices then have only two
+neighbours.  ∎
+
+## 3. Numerical conditional-host pipeline
+
+### Theorem PP3cwi -- PROVED UNDER DEGREE BOUNDS / FORTY-FOUR-RESOURCE PIPELINE
+
+For three forbidden families of maximum degree two, forty-two residual resources
+per side suffice to extract six resources on which all three restrictions are
+partial matchings.  If two resources per side have already been consumed by the
+local choice, forty-four available resources per side suffice before
+conditioning.  The extracted core survives one further blocked cell.
 
 #### Proof
 
-Apply the complete two-matching exclusion audit of `docs/616` to the extracted
-reserve. ∎
+In `PP3cwg`, take `k=3`, `r=6`, `Delta=2`, so `b=1` and
+
+```text
+N >= 6(1+6)=42.
+```
+
+Apply `PP3cwh` to the extracted six-by-six core.  ∎
 
 ## Consequence
 
-The Hall obligation is now numerical: it is enough to prove a residual pool
-lower bound and a uniform forbidden-degree bound.  The PP3 asymptotic host has
-not yet supplied those two estimates, so this remains a conditional source
-bridge rather than a promoted Hall row.
+The Hall obligation is now numerical and sharp at the finite core: prove a
+residual pool of at least forty-two resources and degree at most two for the
+partner, source, and host-defect families, or provide a better extraction using
+more structure.  No asymptotic PP3 theorem currently supplies those estimates,
+so the Hall row remains unpromoted.
