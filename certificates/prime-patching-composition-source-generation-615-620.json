@@ -1,0 +1,58 @@
+{
+  "tranche": "615-620",
+  "theorems": [
+    "PP3cvl-PP3cvn",
+    "PP3cvo-PP3cvq",
+    "PP3cvr-PP3cvt",
+    "PP3cvu-PP3cvw",
+    "PP3cvx-PP3cvz",
+    "PP3cwa-PP3cwc"
+  ],
+  "candidate_field_completion": {
+    "boundary": "4/5",
+    "Hall": "4/5",
+    "threshold": "4/5",
+    "prefix": "5/5",
+    "shell": "5/5",
+    "integration": "2/5"
+  },
+  "candidate_fields_complete": 24,
+  "candidate_fields_total": 30,
+  "frontiers": {
+    "boundary": {
+      "result": "six minimum-four seventh attempts, eighty-two minimum transversals, one canonical six-point corrected transition, zero raw eighth extensions",
+      "evidence_level": "exact_corrector_aware_boundary_transition_census",
+      "promoted": false
+    },
+    "Hall": {
+      "result": "all 43681 ordered pairs of partial-matching forbidden families in K4,4 survive one extra exclusion",
+      "evidence_level": "exact_two_matching_spare_resource_lemma",
+      "promoted": false
+    },
+    "threshold": {
+      "result": "eight nearest source-preserving legal matrices are unit alternating three-cycle trades",
+      "evidence_level": "exact_source_preserving_threshold_trade_catalogue",
+      "promoted": false
+    },
+    "prefix": {
+      "result": "synthetic two-anchor chords give eleven source-pair blockers per encoding and aggregate 1850332263780",
+      "evidence_level": "explicit_synthetic_source_chord_lift",
+      "promoted": false
+    },
+    "shell": {
+      "result": "signed cancellation and coordinate permutation preserve the even-sum source lattice",
+      "evidence_level": "exact_signed_permuted_source_lattice_obstruction",
+      "promoted": false
+    },
+    "integration": {
+      "result": "zero rows promoted; closure false",
+      "evidence_level": "evidence_gate",
+      "promoted": false
+    }
+  },
+  "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+  "fixture_slack_below_one_quarter": "200502903475895999/3623878655999606784",
+  "geometric_closure": false,
+  "all_n_theorem": "open",
+  "next_theorem_identifier": "PP3cwd"
+}
