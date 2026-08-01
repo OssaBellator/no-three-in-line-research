@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-01 13:44 Australia/Melbourne
+Checkpoint time: 2026-08-01 15:06 Australia/Melbourne
 
 ## Goal
 
@@ -16,69 +16,75 @@ program by advancing six linked frontiers:
 
 The asymptotic all-`n` theorem remains open. Existing results are finite
 reductions, exact certificates, conditional mechanisms, coordinate candidates,
-source-typed fixtures, sharp finite correctors, and bounded obstructions; they
-must not be described as a completed proof.
+source-typed fixtures, bounded corrected chains, and source-operation reductions;
+they must not be described as a completed proof.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint research head: `76f9cea37d661fcd9966e87d2d0bab81a04974d3`
-- Pre-checkpoint head title: `Index composition source-generation theorems through docs 620`
+- Verified pre-checkpoint research head: `5964f09ed73054b107c926136c9e4474a7b80cad`.
+- Pre-checkpoint head title: `Remove conflicting threshold candidate draft`.
 - The branch was remotely verified identical to that commit before this refresh.
-- Next available theorem identifier: `PP3cwd`.
+- Next available theorem identifier: `PP3cwv`.
 
 ## Completed work
 
-The branch contains the cumulative six-frontier sequence through `docs/620`. The
-latest tranche is `docs/615--620`:
+The branch contains the cumulative six-frontier sequence through `docs/626`. The
+latest canonical tranche is `docs/621--626`:
 
-- `docs/615-corrector-aware-boundary-transition-census.md`
-  - Theorems `PP3cvl--PP3cvn`.
-  - Reconstructs the four corrected six-block states.
-  - Among 2,080 raw seventh-block attempts, exactly six have minimum conflict
-    transversal four, with eighty-two minimum transversals total.
-  - Under the lexicographically first transversal rule, exactly one attempt has a
-    degree-preserving correction of size at most six.
-  - The corrected seventh state has no raw eighth-block extension among 520
-    radius-32 attempts.
+- `docs/621-budget-seven-corrected-boundary-chain.md`
+  - Theorems `PP3cwd--PP3cwf`.
+  - The eighth-step census has seven attempts of transversal number at most five
+    and twenty-one minimum transversals.
+  - One seven-point degree-preserving correction produces a legal sixty-four-point
+    eight-block state.
+  - The ninth-step census has sixteen attempts of transversal number at most five
+    and 120 minimum transversals.
+  - One seven-point correction produces a legal seventy-two-point nine-block
+    state.
+  - At the tenth step, two minimum-five attempts remain; neither has a
+    degree-preserving correction within budget seven.
 
-- `docs/616-two-matching-spare-resource-hall-lemma.md`
-  - Theorems `PP3cvo--PP3cvq`.
-  - A residual `K_4,4` has 209 partial matchings.
-  - All 43,681 ordered pairs of matching-shaped partner and source exclusions are
-    audited; their 7,343 distinct unions retain at least two perfect matchings.
-  - Every union survives deletion of any one additional allowed cell.
-  - This gives an exact six-resource sufficient condition for conditional Hall
-    completion.
+- `docs/622-sharp-three-matching-hall-reserve-threshold.md`
+  - Theorems `PP3cwg--PP3cwi`.
+  - In residual `K_{6,6}`, the complement of three partial matchings and one
+    arbitrary edge always has a perfect matching.
+  - Five residual resources are insufficient, witnessed by a forbidden `K_{3,3}`
+    decomposed into three matchings.
+  - The finite conditional interface therefore needs eight resources per side
+    before the local pair consumes two.
 
-- `docs/617-source-preserving-threshold-three-cycle-trades.md`
-  - Theorems `PP3cvr--PP3cvt`.
-  - The eight nearest legal degree-four matrices remain at entrywise distance six
-    from the stored source matrix.
-  - Every one is exactly a unit alternating three-cycle trade on three source rows
-    and three action columns.
-  - Such a trade would avoid the impossible positive-density fifth layer while
-    preserving all row and column margins.
+- `docs/623-atomic-two-swap-generation-of-threshold-trades.md`
+  - Theorems `PP3cwj--PP3cwl`.
+  - Every nearest legal degree-four target has exactly six ordered length-two
+    conservative-swap paths; there are forty-eight paths and twenty distinct
+    intermediate matrices.
+  - None of the twenty intermediates is decomposable into four legal
+    no-three-in-line layers.
+  - The geometric obligation is an atomic two-swap compound, not two visible
+    legal schedules.
 
-- `docs/618-synthetic-source-anchor-support-chords.md`
-  - Theorems `PP3cvu--PP3cvw`.
-  - Adds two explicit synthetic anchors to every unary-run line.
-  - All 1,024 ordered compositions of eleven unary nodes have globally distinct
-    anchor and insertion rows and columns, with zero mixed-run triples.
-  - Every encoding has exactly eleven anchor-pair blockers.
-  - The aggregate profile count is `1850332263780`.
+- `docs/624-parabola-retained-source-anchor-model.md`
+  - Theorems `PP3cwm--PP3cwo`.
+  - Replaces synthetic run anchors by cells on the integer parabola `y=x^2`.
+  - All 1,024 ordered compositions of eleven unary nodes have distinct rows and
+    columns, zero cross-run triples, and maximum coordinate magnitude `40802`.
+  - The exact profile has aggregate maximal-run count `1212286655580`, mean
+    `209/29`; one deleted anchor per run clears the complete anchor-pair blocker
+    family.
 
-- `docs/619-signed-permuted-shell-source-lattice.md`
-  - Theorems `PP3cvx--PP3cvz`.
-  - The recorded shell columns generate exactly the even-coordinate-sum integer
-    lattice of index two.
-  - Signed cancellation, simultaneous composition, and all cycle-coordinate
-    permutations preserve the obstruction.
-  - The bounded diagnostic audits 4,913 signed/permuted vectors.
+- `docs/625-binary-odd-shell-column-frontier.md`
+  - Theorems `PP3cwp--PP3cwr`.
+  - The binary odd columns are the three unit vectors and `(1,1,1)`.
+  - The symmetric column completes the integer service lattice.
+  - Its nondominated target-service frontier is `(uses,total controls)` equal to
+    `(2,14)`, `(4,13)`, and `(6,12)`.
+  - `(1,1,1)` is the unique binary odd column improving the stored fifteen-control
+    baseline under unit action cost.
 
-- `docs/620-composition-source-generation-evidence-gate.md`
-  - Theorems `PP3cwa--PP3cwc`.
+- `docs/626-repeated-transition-evidence-gate.md`
+  - Theorems `PP3cws--PP3cwu`.
   - Candidate field completion remains `24/30`.
   - The fixture fixed-point total remains
     `705466760524005697/3623878655999606784`, with positive slack
@@ -88,58 +94,65 @@ latest tranche is `docs/615--620`:
 
 Machine-readable record:
 
-- `certificates/prime-patching-composition-source-generation-615-620.json`
+- `certificates/prime-patching-repeated-transitions-621-626.json`
 
 Reproducibility files:
 
-- `scripts/check_boundary_corrector_transition_state.py`
-- `scripts/check_hall_two_matching_exclusion_lemma.py`
-- `scripts/check_threshold_three_cycle_replacements.py`
-- `scripts/check_prefix_source_anchor_chords.py`
-- `scripts/check_shell_signed_permutation_lattice.py`
-- `scripts/check_composition_source_generation_evidence_gate.py`
-- `scripts/check_frontier_615_620.py`
-- `proofs/prime-patching-parity-index-615-620-supplement.md`
+- `scripts/check_boundary_budget_seven_chain.py`
+- `scripts/check_hall_three_matching_reserve_threshold.py`
+- `scripts/check_threshold_two_swap_generation.py`
+- `scripts/check_prefix_parabola_source_anchors.py`
+- `scripts/check_shell_binary_odd_column_frontier.py`
+- `scripts/check_repeated_transition_evidence_gate.py`
+- `scripts/check_frontier_621_626.py`
+- `proofs/prime-patching-parity-index-621-626-supplement.md`
 
 The latest combined validation command is:
 
 ```bash
-python scripts/check_frontier_615_620.py
+python scripts/check_frontier_621_626.py
 ```
 
-All six new standalone diagnostics and `python -m py_compile` on the seven new
-scripts passed in the local execution runtime before commit. The complete chained
-runner was not re-executed locally because the repository cannot be cloned into
-that runtime; it invokes `scripts/check_frontier_609_614.py` first.
+The six standalone diagnostics and Python compilation passed during the
+interrupted execution before the canonical tranche was committed. The complete
+historical chained runner was not re-executed locally because the isolated
+runtime does not contain a full repository checkout; the group runner invokes
+`scripts/check_frontier_615_620.py` first.
+
+During continuity recovery, alternate duplicate theorem paths were removed and
+the machine-readable candidate ledger was aligned with the canonical evidence
+gate at `24/30`.
 
 ## Decisions and conventions
 
 - Continue on `research/all-n-prime-patching`.
 - Use sequential, reviewable commits and exact rational or integer arithmetic.
-- Continue theorem numbering from `PP3cwd`.
+- Continue theorem numbering from `PP3cwv`.
 - Keep the six-frontier organization stable.
 - Every tranche must include a stored certificate and checker.
 - State explicitly that the all-`n` theorem remains open.
 - Do not replace proof obligations with bounded computation.
 - Track arithmetic feasibility separately from evidence provenance.
-- Treat source-typed finite lifts, bounded correctors, and synthetic source
-  geometries as intermediate evidence, not verified global rows.
+- Treat finite corrected chains, conditional reserve lemmas, algebraic source
+  paths, and explicit auxiliary sources as intermediate evidence, not verified
+  global rows.
 - Negative results and minimal counterexamples are valid frontier progress.
 
 ## Current blockers
 
-- Boundary: the corrected-state transition relation is nonempty, but the unique
-  canonical corrected seventh state has no raw eighth extension. A periodic
-  corrected-state cycle or another corrected transition is missing.
-- Hall: the exact six-resource lemma requires four residual resources per side and
-  both real restricted forbidden families to be partial matchings. The asymptotic
-  host has not been shown to supply that structure.
-- Threshold: source-preserving legal replacements reduce to eight unit
-  three-cycle trades. No actual prime-patching source operation realizes one.
-- Prefix: the two anchors per run give exact finite source-pair blockers, but they
-  are synthetic and have no retained-source identification or removal credit.
-- Shell: even signed cancellation and coordinate relabelling stay in the
-  even-sum lattice. A genuinely new clean-macro incidence column is required.
+- Boundary: the budget-seven corrected chain reaches nine blocks but has no tenth
+  transition. A larger correction budget, wider offset range, noncanonical core,
+  or periodic corrected-state component is missing.
+- Hall: the sharp six-residual-resource lemma assumes three restricted forbidden
+  families are partial matchings. The asymptotic conditional host has not been
+  shown to supply six unused resources with that structure.
+- Threshold: every target is an atomic compound of two conservative swaps, but no
+  geometric source edit realizes the compound without exposing an illegal
+  intermediate schedule.
+- Prefix: the parabola anchors are explicit and no-three-in-line, but they are not
+  identified with the saturated retained source used by prime patching.
+- Shell: `(1,1,1)` is the exact preferred odd column, but no clean-macro
+  realization, startup-buffer audit, or collateral-cost bound is known.
 - Integration: all direct rows and coupling coefficients remain fixture-derived;
   finite small lengths remain downstream of genuine realization.
 
@@ -153,24 +166,22 @@ that runtime; it invokes `scripts/check_frontier_609_614.py` first.
 ## Exact next steps
 
 1. Fetch this handoff and verify the branch head.
-2. Start theorem numbering at `PP3cwd`.
-3. Build `docs/621--626` around repeated corrected transitions and actual source
-   operation generation.
-4. Boundary: allow an eighth block followed by a correction, enumerate all
-   minimum transversals and degree-preserving correctors, and search the resulting
-   corrected-state graph for a strongly connected or zero-drift component.
-5. Hall: derive the six-resource condition from a superregular conditional host;
-   prove a quantitative reserve/slack lemma forcing four unused resources per
-   side and matching-shaped restricted partner and source exclusions.
-6. Threshold: search the earlier source-operation catalogue for a realizable unit
-   alternating three-cycle trade; otherwise derive an invariant proving those
-   trades are absent from the recorded source moves.
-7. Prefix: identify the two synthetic anchors of each run with actual retained
-   source cells, verify source validity and row-column saturation, and price their
-   removal credit.
-8. Shell: search geometric clean-macro moves outside the recorded fixed-column
-   family for the smallest odd-sum incidence column and compute its throughput
-   and buffer cost; otherwise extend the source-catalogue absence theorem.
+2. Start theorem numbering at `PP3cwv`.
+3. Build `docs/627--632` around escaping the budget-seven boundary stop and
+   identifying actual geometric source operations.
+4. Boundary: enumerate tenth-step corrections at budget eight and over all
+   minimum cores; then widen the offset radius or search for a corrected-state
+   cycle if the budget-eight graph still terminates.
+5. Hall: derive six unused resources and three matching-shaped restricted
+   forbidden families from one asymptotic superregular conditional host, or prove
+   a quantitative extraction theorem from explicit pool and degree bounds.
+6. Threshold: realize one atomic two-swap compound on actual source cells while
+   keeping every exposed geometric state legal, or prove an invariant excluding
+   the recorded source catalogue.
+7. Prefix: embed the parabola anchor model into a two-per-row/two-per-column
+   saturated retained source and charge the exact one-deletion-per-run credit.
+8. Shell: construct a clean-macro action with incidence `(1,1,1)` and audit its
+   startup buffer, collateral interactions, and unit-cost assumption.
 9. Integration: promote only rows with complete coordinate source paths;
    otherwise preserve the closed evidence gate and unchanged fixture fixed point.
 10. Run all new diagnostics, Python compilation, the chained runner in a complete
