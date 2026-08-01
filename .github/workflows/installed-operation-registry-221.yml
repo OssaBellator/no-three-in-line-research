@@ -1,0 +1,32 @@
+name: Installed operation registry 221
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_installed_operation_registry_221.py'
+      - 'scripts/target_anchor_registry_entries_a.py'
+      - 'scripts/target_anchor_registry_entries_b.py'
+      - 'docs/501-prime-power-installed-operation-registry-221.md'
+      - '.github/workflows/installed-operation-registry-221.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile registry modules
+        run: |
+          python -m py_compile \
+            scripts/target_anchor_registry_entries_a.py \
+            scripts/target_anchor_registry_entries_b.py \
+            scripts/check_prime_power_installed_operation_registry_221.py
+      - name: Run installed registry
+        run: python scripts/check_prime_power_installed_operation_registry_221.py
