@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "branch": "research/all-n-prime-patching",
+  "tranche": "docs/585--590",
+  "theorem_range": "PP3crz--PP3csq",
+  "frontiers": {
+    "boundary": {
+      "result": "minimum three point deletions for four of 4160 radius-32 sixth-block candidates",
+      "sharp_certificates": 4,
+      "remaining_gap": "refill three columns and two rows without new triples",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "hall": {
+      "result": "six decoded pairs are robust and six are fragile to one residual-cell exclusion",
+      "decoded_pairs": 12,
+      "remaining_gap": "actual endpoint-host exclusion table and cell identification",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "threshold": {
+      "result": "nearest four-layer legal conservative matrix has entrywise l1 distance six",
+      "nearest_matrices": 8,
+      "remaining_gap": "derive the six units of moved mass from actual threshold inequalities",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "prefix": {
+      "result": "ancestry-aware support interval span aggregate reconstructed exactly",
+      "aggregate_span": 4963626417750,
+      "remaining_gap": "embed canonical intervals as actual support chords",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "shell": {
+      "result": "docs/517 action lattice has index two in integer cycle-resource space",
+      "integer_image": "even coordinate sum",
+      "remaining_gap": "identify clean-macro resources in the source lattice or add a coset-crossing action",
+      "actual_row_evidence": "fixture_derived"
+    },
+    "integration": {
+      "completed_candidate_fields": 23,
+      "total_candidate_fields": 30,
+      "rows_promoted": 0,
+      "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+      "fixture_slack": "200502903475895999/3623878655999606784",
+      "geometric_closure_allowed": false
+    }
+  }
+}
