@@ -1,0 +1,29 @@
+name: Recurrent target deletion frontier
+
+on:
+  push:
+    branches:
+      - research/all-n-composite-modulus
+    paths:
+      - scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+      - docs/454-prime-power-recurrent-target-deletion-ancestry.md
+      - proofs/composite-modulus-theorem-index-live-continuation-20.md
+      - .github/workflows/recurrent-target-deletion-frontier.yml
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+      - name: Verify recurrent target deletion ancestry
+        run: python scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
