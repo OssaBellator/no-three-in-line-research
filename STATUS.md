@@ -1,6 +1,6 @@
 # Status and honesty ledger
 
-**Last updated:** 31 July 2026
+**Last updated:** 1 August 2026
 
 ## External status
 
@@ -12,11 +12,11 @@ D(n)=2n
 
 remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR2981**. The predecessor typed
+The authoritative theorem ledger reaches **CMR3033**. The predecessor typed
 transition endpoint **CMR2899** and plain masked-host endpoint **CMR2839** remain
 part of the synchronized theorem history. Every final checker, finite theorem
-checker, population bridge, fixture, runtime manifest and branch-wide regression
-permanently reports or preserves:
+checker, population bridge, fixture, runtime manifest and regression permanently
+reports or preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -27,7 +27,7 @@ all_n_proved_by_checker = 0
 | Target | Exact finite surface | Mathematical status |
 |---|---|---|
 | T01 | literal source statements, hashes and sealed source artifacts | genuine primary-source statements and ordinary verification remain incomplete |
-| T02 | canonical square/asymmetric contexts; typed restrictions/contractions; routing, fixed products, mixed deletion, forced-certificate escape, returned targets, target handoff and fixed-envelope target chains | complete owner/envelope/scheduler systems, general restoration/return coverage, global exhaustiveness and termination remain open |
+| T02 | exact square/asymmetric contexts, twenty installed construction transition kinds, closure-envelope state machine and nonrecurrent owner/scheduler stocks | completeness of the installed bank, general owner/restoration/return/scheduler coverage, global exhaustiveness and termination remain open |
 | T03 | open/populated/proved slot payloads plus a hard-core population bridge | actual complete operation population, including survivor backgrounds, remains absent |
 | T04 | skeleton-derived recurrent-block and interface assembly | actual complete assembly remains absent |
 | T05 | exact finite geometry and selector arithmetic | arbitrary-`n` construction coverage remains open |
@@ -70,13 +70,9 @@ all_n_proved_by_checker = 0
 | T42 | seven-gate dossier | final dossier sign-off remains open |
 | T43 | stable root cores and three-artifact bank | reviewed implication to `D(n)=2n` remains open |
 
-## Canonical local execution
+## Canonical construction execution
 
 ```text
-python scripts/check_prime_power_canonical_prescription_partition.py
-python scripts/check_prime_power_target_trigger_response_partition.py
-python scripts/check_prime_power_canonical_target_dispatch.py
-python scripts/check_prime_power_masked_host_parent_generation.py
 python scripts/check_prime_power_required_prefix_parent_generation.py
 python scripts/check_prime_power_asymmetric_residual_host_contraction.py
 python scripts/check_prime_power_asymmetric_context_generation.py
@@ -89,6 +85,19 @@ python scripts/check_prime_power_mixed_child_deletion_ancestry.py
 python scripts/check_prime_power_forced_certificate_escape_ancestry.py
 python scripts/check_prime_power_target_edge_return_ancestry.py
 python scripts/check_prime_power_target_handoff_envelope_ancestry.py
+python scripts/check_prime_power_recurrent_target_edge_deletion_ancestry.py
+python scripts/check_prime_power_closure_envelope_transition_ancestry.py
+python scripts/check_prime_power_installed_owner_scheduler_bank.py
+python scripts/run_prime_power_installed_construction_regression.py
+```
+
+The original finite theorem and hard-core checks remain:
+
+```text
+python scripts/check_prime_power_canonical_prescription_partition.py
+python scripts/check_prime_power_target_trigger_response_partition.py
+python scripts/check_prime_power_canonical_target_dispatch.py
+python scripts/check_prime_power_masked_host_parent_generation.py
 python scripts/check_prime_power_hard_core_exchange_normal_form.py
 python scripts/check_prime_power_hard_core_exchange_realisability.py
 python scripts/check_prime_power_hard_core_two_point_classification.py
@@ -110,72 +119,94 @@ python scripts/run_prime_power_current_frontier_regression.py
 python scripts/check_prime_power_final_support_handoff_frontiers_v2.py certificate.json
 ```
 
-Every runtime artifact contains a literal `manifest_sha256` seal. A manifest
-records validation execution and is not a proof certificate.
+Every runtime artifact contains a literal `manifest_sha256` seal. A manifest or
+passing regression records validation execution; it is not a proof certificate.
 
 ## T02 construction endpoint
 
-### Local context and transition engine
+### Local contexts and factor execution
 
-The branch generates exact square/asymmetric families, triple universes, anchors
-and targets. Deleted/required restrictions, forced-set contraction, contraction
-composition and complete local target response are exact. CMR2888--CMR2899 add
-sealed typed deletion, conditioning, contraction and first-missing transitions.
+CMR2888--CMR2899 give sealed typed restriction, conditioning and contraction
+transitions. CMR2900--CMR2943 install routing changes, exact fixed-routing child
+products, mixed deletion and strict child handoff. CMR2944--CMR2955 install all
+forced-certificate escape branches with owner-labelled witness payment.
 
-### Factor execution
+### Restoration, return and target scheduling
 
-CMR2900--CMR2919 install routing-change ancestry, alternating-component support,
-finite routing stock and token payment. CMR2920--CMR2931 install exact
-fixed-routing child products and strict child handoff. CMR2932--CMR2943 install
-monotone mixed-atom deletion and its finite child-edge stock.
+CMR2956--CMR2967 install returned-target restoration, exact redeletion and
+essential contraction. CMR2968--CMR2981 install nonimproving target handoff,
+four-endpoint destruction banks, one exact envelope-expansion witness and the
+fixed-envelope target-chain bound.
 
-CMR2944--CMR2955 install forced-certificate persistence, edge deletion,
-selected-skeleton churn and factor essentiality loss through restored entering
-edges, with componentwise support and owner-labelled escape stock.
+CMR2982--CMR2993 install the CMR713--CMR719 recurrent entering-target deletion:
+the preceding matching proves nonessentiality, the exact deletion child destroys
+the complete active target star, and recurrence requires reintroduction or owner
+change. The finite regression covers 672 side-three/side-four transitions.
 
-### Restoration and returned target edges
+### Closure-envelope state machine
 
-CMR2956--CMR2967 model a returned target as a literal restored mask entry. The
-stored avoidance matching gives exact redeletion when it survives. If blocked,
-its least absent edge is a deletion-ancestry witness. Blocked nonessential
-returns still redeletable; essential returns contract exactly and transfer the
-target to rank at most two. Essential-return histories have linear witness stock
-and exact absence-run/reintroduction accounting.
+CMR2994--CMR3007 install the complete internal-versus-expansion partition for
+row-preserving closure rematches. The exact envelope is derived from the moved
+column history, both inherited row sets are invariant, internal rematches keep
+one owner, and every outside-column move strictly decreases prefix depth.
 
-### Target handoff and fixed-envelope chains
+The side-eight regression records 18 internal rematches, 666 strict expansions,
+the exact depth chain `3 -> 2 -> 1 -> 0`, and 83 crossing-target expansion
+witnesses.
 
-CMR2968--CMR2981 generate exact lost/new triple sets for saturated transitions.
-A nonimproving transition which destroys `D` targets generates at least `D` new
-triples, each with entering support. Canonical assignment concentrates load on
-one entering cell and generates a nonempty four-endpoint bank which destroys the
-entire assigned family.
+### Installed owner and scheduler bank
 
-The bank is either internal to the supplied envelope column set or records a
-strict expansion witness. Forced certificates convert to target-load-one banks.
-Inside one fixed envelope, repeated target signatures refine to recurrent
-cell-target pairs with exact token payment, or the target chain is finite.
+CMR3008--CMR3021 bind twenty installed transition kinds to ten checker contracts,
+their theorem ancestry, exact owner effect and one of eleven payment/dispatch
+classes. The CMR691--CMR719 owner-stage, edge/token, certificate, cell-target,
+fixed-envelope and strict-descent stocks are executable.
 
-The current exact flags include:
+For the sample `d=4`, `p=2`, `h=3`, `lambda=3`, `mu=2`:
 
 ```text
-local_asymmetric_candidate_response_complete = 1
-canonical_context_identity_sealed = 1
-routing_change_construction_ancestry_proved = 1
-factor_product_construction_ancestry_proved = 1
-mixed_atom_deletion_ancestry_proved = 1
-mixed_clean_child_handoff_ancestry_proved = 1
-forced_mixed_certificate_escape_proved = 1
-factor_restoration_essentiality_loss_transition_exact = 1
-returned_target_edge_ancestry_proved = 1
-returned_target_edge_restoration_exact = 1
-essential_target_contraction_exact = 1
-target_handoff_construction_ancestry_proved = 1
-fixed_envelope_target_chain_proved = 1
-closure_envelope_expansion_witness_ancestry_proved = 1
+owner stages = 912
+owner edges = 12,272
+owner tokens = 73,632
+owner certificates = 370,940
+owner cell-target pairs = 113,992,704
+fixed-envelope target bound = 666,624
+coarse nonrecurrent scheduler bound = 115,043,458
+```
+
+### Installed construction regression
+
+CMR3022--CMR3033 add a fourteen-checker manifest runner. Every checker must
+compile, emit one JSON object, match its exact contract digest, set its expected
+theorem flag to one and preserve `all_n_proved_by_checker = 0`.
+
+The installed manifest digest is:
+
+```text
+2fd61262229cbd866d978d7dcf5e19b607a5f81eb843d3d3a48046b598fa5e20
+```
+
+## Exact flags and honesty boundary
+
+```text
+recurrent_target_edge_deletion_ancestry_proved = 1
+canonical_closure_envelope_identity_exact = 1
+envelope_row_set_invariance_exact = 1
+closure_branch_envelope_transition_bank_exhaustive = 1
+installed_transition_kind_bank_exhaustive = 1
+installed_operation_payment_assignment_complete = 1
+descending_path_owner_stage_stock_exact = 1
+owner_edge_token_stock_exact = 1
+owner_certificate_stock_exact = 1
+owner_target_pair_stock_exact = 1
+fixed_envelope_scheduler_bound_exact = 1
+installed_nonrecurrent_scheduler_finite = 1
+installed_transition_regression_complete = 1
+
+all_owner_operations_proved = 0
+all_scheduler_operations_proved = 0
 all_restoration_operations_proved = 0
 all_returned_edge_operations_proved = 0
 all_envelope_operations_proved = 0
-all_scheduler_operations_proved = 0
 all_construction_ancestry_proved = 0
 global_transition_kind_bank_exhaustive = 0
 global_termination_proved = 0
@@ -183,49 +214,14 @@ actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-The newest contract digests are:
-
-```text
-dc3c472d258d7cfbbfbf5dd45f68f19a5999c5f4a1818a6945dd460eb1c82253
-04a533666c90c2f13bcb18731e10e0bca4d6357a806f8be44ee47af6f90e2382
-a8230eb1e301b1c08972b686be836dc30a3daba8d906840bb4dba6a67bb1fa8b
-```
-
-## T02 global honesty boundary
-
-The following remain incomplete:
-
-- the complete owner-stage transition system;
-- the complete prime-power closure-envelope expansion/contraction system;
-- restorations outside forced-certificate essentiality loss and returned targets;
-- returned edges outside the target-edge theorem;
-- recurrent scheduler operations outside the fixed-envelope target chain; and
-- construction transition-kind exhaustiveness and global termination.
-
-The independent routing, deletion, certificate, stored-matching and target-chain
-stocks, redeletions, contractions, envelope expansions and strict child descents
-must still be assembled into one exhaustive well-founded theorem.
-
-## T21 scalar and population boundary
-
-The finite hard-core selector and population bridge remain exact for supplied
-backgrounds, but record:
-
-```text
-actual_t03_population_supplied_by_bridge = 0
-t21_semantic_chambers_proved = 0
-```
-
-All 232 T20 zero-selector chambers and all 20 T21 semantic arguments remain open.
+The installed bank is exhaustive only relative to its own registry. It is not
+yet proved to contain every operation of the original construction.
 
 ## Validation workflow status
 
-Dedicated Python 3.10/3.12 workflows include:
+Dedicated Python 3.10/3.12 workflows now include:
 
 ```text
-.github/workflows/asymmetric-residual-frontier.yml
-.github/workflows/asymmetric-context-frontier.yml
-.github/workflows/asymmetric-target-dispatch-frontier.yml
 .github/workflows/context-transition-frontier.yml
 .github/workflows/routing-change-ancestry-frontier.yml
 .github/workflows/factor-child-product-frontier.yml
@@ -233,6 +229,10 @@ Dedicated Python 3.10/3.12 workflows include:
 .github/workflows/forced-certificate-escape-frontier.yml
 .github/workflows/target-edge-return-frontier.yml
 .github/workflows/target-handoff-envelope-frontier.yml
+.github/workflows/recurrent-target-deletion-frontier.yml
+.github/workflows/closure-envelope-transition-frontier.yml
+.github/workflows/installed-owner-scheduler-frontier.yml
+.github/workflows/installed-construction-regression.yml
 ```
 
 Configuration is not evidence that a workflow passed. Actual workflow runs and
@@ -242,7 +242,7 @@ artifacts must be inspected before claiming CI success.
 
 ```text
 T01 prove and populate genuine primary-source statements
-T02 install complete owner/envelope/scheduler and remaining restoration/return ancestry; prove exhaustiveness and termination
+T02 audit for unrepresented operations; install remaining owner/restoration/return/scheduler ancestry; prove global exhaustiveness and termination
 T03--T04 populate every real slot, block and interface
 T05 prove arbitrary-n construction coverage
 T06--T18 prove semantic, score, resource, rank, predicate and row theorems
@@ -256,27 +256,26 @@ T42 complete dossier sign-off
 T43 prove the reviewed root implication to D(n)=2n
 ```
 
-T32--T34 are documentary aggregation gates and become effective only when their
-lower proof banks are genuinely complete.
+T32--T34 remain documentary aggregation gates.
 
 ## Immediate work order
 
-1. Install the complete owner-stage and prime-power envelope transition system.
-2. Install remaining scheduler and general restoration/returned-edge operations.
-3. Prove the construction transition-kind bank exhaustive.
-4. Combine every finite stock, target-chain bound, redeletion, contraction,
-   envelope expansion and strict descent into one global termination theorem.
-5. Populate and verify the T01 sources required by those operations.
-6. Generate genuine T02 records and T03/T04 populations.
-7. Run the T05--T21 engines on real records and prove the remaining semantic
-   rows, chambers, premises, handoffs and root theorem.
+1. Audit the original construction chapters for operation kinds absent from the
+   twenty-kind installed registry.
+2. Install every remaining owner, restoration, returned-edge and scheduler
+   transition with literal parent/child contexts.
+3. Prove the resulting transition-kind bank globally exhaustive.
+4. Close every recurrent endpoint and promote the installed nonrecurrent stock
+   bound to a global termination theorem.
+5. Populate and verify genuine T01 sources and T02/T03/T04 records.
+6. Apply the existing T05--T21 engines to real populations and prove the
+   remaining chambers, premises, handoffs, review and root implication.
 
 ## Bottom line
 
-There is no complete proof. Through **CMR2981**, the branch contains a complete
-local square/asymmetric engine and genuine construction ancestry for the main
-factor execution, forced-certificate escape, one returned-target operation, the
-nonimproving target handoff, four-endpoint bank generation and fixed-envelope
-target-chain payment. Complete owner/envelope/scheduler systems, general
-restoration and return coverage, global exhaustiveness, termination, genuine
-population and every global semantic implication remain open.
+There is no complete proof. Through **CMR3033**, the branch has a sealed local
+context engine, genuine ancestry for the main factor/target/return operations,
+a complete closure-rematch envelope state machine, an exact twenty-kind installed
+owner/payment registry and a fourteen-checker construction regression. Global
+operation completeness, recurrent-endpoint closure, termination, genuine
+population and every final semantic implication remain open.
