@@ -39,8 +39,8 @@ print({
     "candidate_fields_total": 30,
     "new_results": {
         "boundary": "budget-seven corrected path reaches nine blocks; the two tenth-step survivors have no budget-seven correction",
-        "Hall": "three degree-two forbidden families need forty-two residual resources to extract the sharp six-resource core",
-        "threshold": "all eight targets have forty-eight ordered two-pivot paths through twenty illegal intermediates",
+        "Hall": "three matching-shaped forbidden families plus one cell are safe on six residual resources and fail sharply on five",
+        "threshold": "all eight targets have forty-eight ordered two-swap paths through twenty illegal intermediates",
         "prefix": "parabola anchors realize the incidence model; retained-anchor reservoir mean is 418/29 and worst case twenty-two",
         "shell": "the unique optimal odd column (1,1,1) gives twelve active controls and a zero-buffer period",
     },
