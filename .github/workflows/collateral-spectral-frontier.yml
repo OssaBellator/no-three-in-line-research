@@ -1,0 +1,34 @@
+name: Collateral spectral frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_collateral_spectral_ancestry.py'
+      - 'docs/521-prime-power-collateral-spectral-ancestry.md'
+      - 'docs/254-prime-power-degree-two-bank-collateral-expectation.md'
+      - 'docs/255-prime-power-restricted-bank-target-collateral-selection.md'
+      - 'docs/256-prime-power-last-entering-edge-collateral-ownership.md'
+      - 'docs/257-prime-power-degree-two-bank-line-energy.md'
+      - 'docs/258-prime-power-rank-one-bank-marginal-refinement.md'
+      - 'docs/259-prime-power-full-collateral-local-envelope.md'
+      - 'docs/260-prime-power-optimized-envelope-target-aggregation.md'
+      - 'docs/261-prime-power-last-creation-collateral-credit-ledger.md'
+      - 'docs/262-prime-power-collateral-reproduction-matrix.md'
+      - 'docs/263-prime-power-rational-spectral-certificate.md'
+      - '.github/workflows/collateral-spectral-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run collateral spectral ancestry checker
+        run: python scripts/check_prime_power_collateral_spectral_ancestry.py
