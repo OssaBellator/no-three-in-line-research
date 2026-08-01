@@ -1,0 +1,27 @@
+name: Installed operation registry 454
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_installed_operation_registry_454.py'
+      - 'scripts/selected_scheduler_registry_entries_a.py'
+      - 'scripts/selected_scheduler_registry_entries_b.py'
+      - 'scripts/check_prime_power_selected_scheduler_terminal_wall_ancestry.py'
+      - 'docs/516-prime-power-installed-operation-registry-454.md'
+      - '.github/workflows/installed-operation-registry-454.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run installed operation registry 454
+        run: python scripts/check_prime_power_installed_operation_registry_454.py
