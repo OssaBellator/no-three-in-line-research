@@ -4,33 +4,33 @@
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Authoritative theorem endpoint: **CMR3425**
+- Authoritative theorem endpoint: **CMR3469**
 - Mathematical status: the no-three-in-line conjecture remains open.
 - Every checker preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical installed stack
 
 ```text
-110 unique construction operation kinds
+117 unique construction operation kinds
 21 exact checker contracts
 40 owner-changing kinds
-70 same-owner kinds
+77 same-owner kinds
 34 installed checkers
 ```
 
 Canonical runner:
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_110.py
+python scripts/run_prime_power_installed_construction_regression_117.py
 ```
 
 Chained manifest:
 
 ```text
-c35739fdbfd53f0ae1357113e6b636a2c2b403e8fa6c6ad8cc7def28274cf59f
+d259fb78a7b8a2ccbf7387c3fdd7a780b1e21f0366179c08af5ebb068cda3507
 ```
 
-Installed-bank exhaustiveness is not global construction exhaustiveness.
+The 110-kind checkpoint remains a narrower historical validation layer. Installed-bank exhaustiveness is not global construction exhaustiveness.
 
 ## Installed construction history
 
@@ -42,64 +42,78 @@ CMR3202--3257 rooted/pair line-clean cylinders and weighted availability
 CMR3258--3299 adaptive unavailable-token temporal accounting
 CMR3300--3341 persistent crosses, trace ancestry and fixed-selector obstruction stock
 CMR3342--3383 canonical selector collateral and protected absorption chase
-CMR3384--3425 packed-conflict deletion, protected-contact tokens and recurrent-set batching
+CMR3384--3425 narrow packed-conflict/protected-contact batching checkpoint
+CMR3426--3469 superseding selector protected-certificate and owned-stock bank
 ```
 
-## CMR3384--CMR3425 bank
+## CMR3426--CMR3469 bank
 
-Installed operations:
+The canonical checker installs CMR577--CMR604 in one owner-labelled bank.
+
+Installed kinds include:
 
 ```text
-packed-conflict-nonessential-deletion
-packed-conflict-forced-terminality
-packed-conflict-private-restoration
+disjoint-conflict-local-deletion
+disjoint-conflict-fully-forced-dispatch
+disjoint-conflict-private-restoration-payment
 protected-contact-finite-stock
 protected-contact-wall-extraction
-protected-contact-token-splice
-protected-contact-reintroduction
+protected-contact-heavy-token
+protected-contact-dispersed-token-bank
+protected-contact-reintroduction-payment
+protected-contact-persistent-dispatch
 recurrent-unavailable-set-extraction
 recurrent-set-aggregate-reintroduction
 recurrent-set-batch-absorption
-recurrent-set-persistent-wall
-recurrent-set-batch-growth
+recurrent-set-small-cover-wall
+weak-slack-near-static-dispatch
+persistent-core-amplification
+owner-labelled-protected-state-stock
+owner-labelled-line-stock
+owner-labelled-token-edge-stock
+owner-labelled-certificate-recurrence
 ```
 
 Observed finite census:
 
 ```text
-247 matchable side-three hosts
-434 packed-conflict profiles
+434 disjoint-conflict packings
+486 processed conflicts
 324 matching-preserving deletions
-162 fully forced packed conflicts
+162 fully forced conflicts
 802 restoration subsets
-414 recreated conflicts with private restoration
-208 protected selector states
-89,040 protected-contact subsets
-30,574 heavy protected-contact tokens
-58,466 dispersed protected-contact banks
-11,110 unavailable-subset histories
-164,944 matching-cover profiles
-9,680 batch-absorption profiles
-155,264 persistent-wall profiles
-694 joint-absence histories
-486 aggregate-reintroduction endpoints
-208 jointly persistent-set endpoints
+414 recreated conflicts
+208 protected contact states
+2,256 blocked contact-edge incidences
+4,095 persistent unavailable-set profiles
+3,264 batch-absorption profiles
+831 small-cover wall profiles
+120 slack parameter checks
+```
+
+Sample owner-labelled stocks for `p=2,h=3,t=8`:
+
+```text
+selector signatures = 1,618,176
+protected states = 14,563,584
+owned line signatures = 29,360,185,344
+owned labelled token-edge pairs = 4,893,364,224
 ```
 
 Contracts and seals:
 
 ```text
-protected batching checker:
-a48ee5aa77c167c1dba3d6eab6e3a65db7397e1739323fb794df66c32d76ec5f
+selector protected-certificate checker:
+b82d83290aa95e41743fe1db9dbbf3a26c09801f40888e42cc1c8e0f0eefd0f0
 
-110-kind registry contract:
-2b71be7e9325fc6efdf606f59faae245e6a73047ee70deb04edf34b47e373a5f
+117-kind registry contract:
+4c961b63515c0a8ac986f9ab0a11cef7ad33df3d012fbbe0ca23bcf95a2324eb
 
-110-kind registry seal:
-3400f7a8014c0f4e6492cd9468735f0dcd3bc90552bdf6d5296fba5523eb0074
+117-kind registry seal:
+043cc0dfdc5f9509de81da436df1aec8579a7803623d0ace54d6d0dd6904bfdf
 
 34-checker chained manifest:
-c35739fdbfd53f0ae1357113e6b636a2c2b403e8fa6c6ad8cc7def28274cf59f
+d259fb78a7b8a2ccbf7387c3fdd7a780b1e21f0366179c08af5ebb068cda3507
 ```
 
 ## Current exact flags
@@ -107,19 +121,17 @@ c35739fdbfd53f0ae1357113e6b636a2c2b403e8fa6c6ad8cc7def28274cf59f
 ```text
 persistent_blocker_absorption_deficiency_ancestry_proved = 1
 persistent_cross_pair_bank_ancestry_proved = 1
-cross_signature_ancestry_exact = 1
-refined_trace_fixed_selector_exact = 1
-fixed_selector_obstruction_stock_exact = 1
 canonical_selector_ledger_exact = 1
-canonical_collateral_line_decomposition_exact = 1
-canonical_collateral_carry_splice_exact = 1
 canonical_selector_absorption_chase_exact = 1
-packed_conflict_deletion_ancestry_proved = 1
+disjoint_conflict_deletion_ancestry_proved = 1
 protected_contact_token_ledger_exact = 1
-recurrent_unavailable_set_batching_exact = 1
-installed_transition_kind_bank_110_exhaustive = 1
-installed_payment_assignment_110_complete = 1
-installed_transition_regression_110_complete = 1
+dynamic_selector_recurrent_set_batching_exact = 1
+selector_slack_persistent_core_exact = 1
+owned_certificate_stock_exact = 1
+selector_protected_certificate_ancestry_proved = 1
+installed_transition_kind_bank_117_exhaustive = 1
+installed_payment_assignment_117_complete = 1
+installed_transition_regression_117_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -135,23 +147,19 @@ all_n_proved_by_checker = 0
 
 ## Validation honesty
 
-The new protected-conflict batching checker was executed locally and its JSON report and census were observed. Python startup emitted an unrelated `artifact_tool` spreadsheet warmup traceback to stderr, but the checker exited zero.
-
-The 110-kind registry and 34-checker runner are contract-sealed and workflow-wired. The complete 34-checker repository execution was not performed locally. Workflow success must not be claimed without inspecting actual runs, logs and artifacts.
+The branch contains dedicated Python 3.10/3.12 workflows for the 117-kind stack. Workflow success must not be claimed without inspecting actual runs, logs and artifacts. The canonical 34-checker runner validates installed finite claims only.
 
 ## Immediate next frontier
 
 Install in literal theorem order:
 
 ```text
-CMR593--598 selector slack and persistent-core amplification
-CMR599--604 protected-state owners, line/token stocks and owned recurrence
-CMR605--610 heavy-line protected absorption
-CMR611--616 secant-star protected absorption
-CMR617--622 protected-core interface factorization
-CMR623--628 protected-skeleton recurrence, churn and history payment
-CMR629 onward product-conflict and essential-prescription operations,
-then all later owner, restoration, return, envelope and scheduler actions
+CMR605--610 heavy-line protected absorption and finite line-growth budget
+CMR611--616 secant-star protected absorption and finite star-growth budget
+CMR617--622 protected-core interface factorization and sparse cross skeletons
+CMR623--628 protected-skeleton recurrence, product diversity, churn and payment
+CMR629 onward product-conflict rectangles and essential-prescription transfers,
+then every later owner, restoration, return, envelope and scheduler action
 ```
 
 For every genuine action, install a literal parent/child or restricted-family operation, theorem-derived owner effect, exact stock/reintroduction/descent/protected-growth or mandatory scheduler continuation, contract seal and corruption rejection.
