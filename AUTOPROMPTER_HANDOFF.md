@@ -4,31 +4,30 @@
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Active branch: `research/all-n-composite-modulus`
-- Authoritative theorem endpoint: **CMR3299**
+- Authoritative theorem endpoint: **CMR3383**
 - Mathematical status: the no-three-in-line conjecture remains open.
 - Every checker preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical installed stack
 
-The current installed operation registry contains:
-
 ```text
-66 unique construction operation kinds
-18 exact checker contracts
-34 owner-changing kinds
-32 same-owner kinds
+98 unique construction operation kinds
+20 exact checker contracts
+36 owner-changing kinds
+62 same-owner kinds
+32 installed checkers
 ```
 
-The canonical installed-stack runner is:
+Canonical runner:
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_66.py
+python scripts/run_prime_power_installed_construction_regression_98.py
 ```
 
-Its twenty-eight-checker manifest is sealed by:
+Chained manifest:
 
 ```text
-ecc5043ee6e9c04901e4a1814ca0446b49c3a9c115bfbfd6ab196d02ea13150a
+bf0a209785183ec05e45b93bd9122159251571719bd63488240f34adacb23599
 ```
 
 Installed-bank exhaustiveness is not global construction exhaustiveness.
@@ -50,148 +49,132 @@ CMR3034--3047 essential-return unit walls and factor trees
 CMR3048--3059 sparse rollback restoration
 CMR3084--3097 minimum-cost rollback face and SCC factors
 CMR3098--3121 thirty-three-kind registry and regression
+CMR3122--3201 level, colour, mixed-cycle and theta operations
+CMR3202--3257 rooted/pair line-clean and weighted availability
+CMR3258--3299 adaptive unavailable-token temporal accounting
 ```
 
-## CMR3122--CMR3201: layered rollback and theta bank
+## CMR3300--3341: persistent-cross selector bank
 
-Installed operations include:
+Installed kinds include:
 
 ```text
-rollback-level-skeleton-restriction
-rollback-residual-level-factorization
-same-level-colour-source-split
-colour-separated-level-factorization
-mixed-colour-cycle-batch-flip
-mixed-cycle-sparse-tail-deletion
-mixed-cycle-boundary-fan-extraction
-mixed-cycle-small-return-cut
-mixed-cycle-two-edge-bottleneck
-theta-fan-cycle-flip
-theta-fan-private-edge-payment
-theta-fan-rooted-conflict-dispatch
+persistent-blocker-trace-contact
+persistent-blocker-maximum-absorption
+persistent-blocker-two-endpoint-deficiency
+persistent-cross-pair-cylinder
+persistent-cross-pair-recurrence
+persistent-cross-two-arm-bank
+persistent-cross-one-arm-line-star
+persistent-cross-weighted-selector
+persistent-cross-trace-token-signature
+persistent-cross-joint-absence-payment
+cross-envelope-epoch-assignment
+cross-signature-finite-stock
+cross-signature-joint-persistence
+refined-trace-fixed-selector
+fixed-selector-unavailable-stock
+fixed-selector-collateral-polarization
+fixed-selector-rank-zero-target-recurrence
+fixed-selector-rank-one-secant-recurrence
 ```
 
-Finite observed censuses include:
+Observed finite census:
 
 ```text
-513 essential rollback pairs
-835 sparse level skeletons
-1,481 residual level hosts
-195 mixed-colour residual hosts
-412 canonical boundary cycles
-96 theta-fan profiles
-384 small-cut profiles
-288 private route-edge incidences
+2,304 graph-edge cases
+441 two-endpoint deficiencies
+400 injective cross-pair line types
+800 pair-cylinder state occurrences
+478 two-arm and 33 one-arm partner-support profiles
+32,768 three-edge availability histories
+33,207 failed-selector integer profiles
+13,992 rank-one paid-line-separation atoms
 ```
 
 Contracts and seals:
 
 ```text
-b97b2553cf5548cfc32a022172d2e011bc60952021d87178ae0e0fdc673ecc23
-aa7b4d1b0d7c1e7c76b8e22e547c132db5ee848c633cfc5cb45b41a76e522144
-7089d93aa893b506e3e9d183d29869961c5e4fc59a25547d1a0c7e5607f084be
-2a5dfa1457e056259566eaf4e54034801f3a37ff57cd0548fbd0e117589b04b3
+persistent-cross checker:
+35bfc31201b5fffb46b37e9c36ffd4c1e9e01c6d1ccdb2b592818b9dc8bdcc80
+
+84-kind registry contract:
+515aaa29fac034eb7f1f119040b60164a3de4ae128363e87a6b48d3f3962fbdd
+
+84-kind registry seal:
+407d0fa4850effb642ec3cfc318594eaf9f6b0c7e46df4eb7370d90e09b326e1
+
+30-checker chained manifest:
+041abca9a30cad0f0b97a440b455df2fdbeb4501bac711c681f8f2f202ae0c49
 ```
 
-## CMR3202--CMR3257: rooted/pair line-clean bank
-
-Boundary-rooted conflicts are exact secant stars. Every rooted arm and compatible two-edge bottleneck pair has an exact full-parent line-clean derangement cylinder. Restricted-host availability is normalized by minimum restoration, forced-core factorization and weighted cheap-clean selection.
+## CMR3342--3383: canonical selector and protected absorption bank
 
 Installed kinds include:
 
 ```text
-boundary-rooted-secant-star-extraction
-rooted-cycle-arm-survival
-rooted-arm-line-clean-cylinder
-rooted-arm-equal-weight-bank
-two-edge-bottleneck-pair-cylinder
-compatible-pair-line-clean-cylinder
-line-clean-minimum-restoration
-line-clean-forced-core-contraction
-line-clean-cheap-restoration
-line-clean-weighted-selection
-line-clean-unavailable-edge-concentration
-line-clean-unavailable-inventory-payment
+canonical-selector-forbidden-matching
+canonical-selector-static-collateral
+canonical-selector-dynamic-availability
+canonical-selector-edge-recurrence
+static-collateral-rank-polarization
+static-collateral-line-decomposition
+static-collateral-heavy-line
+static-collateral-secant-star
+static-collateral-disjoint-triple-bank
+static-collateral-carry-splice
+canonical-selector-protected-extension
+canonical-selector-edge-absorption
+canonical-selector-protected-contact
+canonical-selector-absorption-chase
 ```
 
-Finite observed censuses:
+Observed finite census:
 
 ```text
-56 clean side-five bases
-328 rooted arms
-200 universal compatible-pair cylinders
-64 residual availability subhosts
-48 cheap and 16 forced-factor profiles
-3,528 physical weighted paid-pair profiles
+882 physical selector signatures
+38,808 canonical cylinder states
+1,764 supporting-line decomposition checks
+2,726 low-height line checks
+4,096 dynamic availability profiles
+209 protected partial matchings
+252 absorbable and 2,256 blocked edge cases
+3,264 protected contact signatures
+292 protected-growth steps
+maximum chase depth 4
 ```
 
-Contracts and registry seal:
+Contracts and seals:
 
 ```text
-4492a6220f6b7622373a872b1521478089d5dd319482c8110b8cfe1e4ae9495d
-c56a0c82ee03ed6498ac5c974e64c8129344a921a262e3d13cb28672df39ab2e
-307652b1890a3382992c06ea6f860f1da513f5f7368e5142e3ce8a1183d37f50
-```
+canonical-selector checker:
+15fdb4ac2e639dd23b89dae3ce302356ee4790a2183e7768315aed8b881e6d5e
 
-## CMR3258--CMR3299: adaptive unavailable/token/temporal bank
+98-kind registry contract:
+d42d011f37658f9614435831004fe2ef10c4ec73517cad049d7ce34f0f5dfdfa
 
-The adaptive forbidden matching absorbs a maximum compatible unavailable matching. The remaining allowed unavailable edges receive an exact König cover and a heavy row/column star. Heavy stars become heavy labelled tokens or dispersed token banks. Repeated token and absorbed-edge episodes reach finite stock, reintroduction payment or one persistent continuously unavailable blocker.
+98-kind registry seal:
+4732c504824406c78b9a9e92033994f30be1c744e633a5e49dcc5531497e00ae
 
-Installed kinds:
-
-```text
-adaptive-unavailable-matching-absorption
-unavailable-row-column-cover-extraction
-heavy-unavailable-star-extraction
-unavailable-star-heavy-token
-unavailable-star-dispersed-token-bank
-unavailable-token-finite-stock
-unavailable-token-reintroduction-payment
-unavailable-token-persistent-blocker
-free-absorption-finite-stock
-```
-
-Finite observed census:
-
-```text
-4,096 adaptive absorption profiles
-1,150 free-absorption profiles
-3,988 heavy-star profiles
-8,160 token-scale profiles
-5,008 heavy-token profiles
-3,152 dispersed-token profiles
-665 absence histories
-42,084 finite absorption histories
-4,572 recurrent absorbed-edge histories
-```
-
-Contracts, registry and manifest:
-
-```text
-d7c2c9bef971f9cb2d4b3298ef908641fb9afb8d80ba8f381202ee100a6efcc0
-3644c4335cb81419903c89576ea4ae78cf1fcdb66c6ed7a959fd664542214b02
-7d63fde340856c7e51900eefe4e2cbacc464690e6cc11298f5d3ec6d42a30806
-ecc5043ee6e9c04901e4a1814ca0446b49c3a9c115bfbfd6ab196d02ea13150a
+32-checker chained manifest:
+bf0a209785183ec05e45b93bd9122159251571719bd63488240f34adacb23599
 ```
 
 ## Current exact flags
 
 ```text
-rollback_level_skeleton_ancestry_proved = 1
-same_level_colour_split_ancestry_proved = 1
-mixed_cycle_packing_ancestry_proved = 1
-mixed_cycle_boundary_fan_ancestry_proved = 1
-theta_fan_private_edge_payment_proved = 1
-rooted_star_pair_cylinder_ancestry_proved = 1
-universal_pair_line_clean_cylinder_exact = 1
-line_clean_rollback_availability_proved = 1
-line_clean_weighted_selection_proved = 1
-adaptive_unavailable_absorption_ancestry_proved = 1
-unavailable_star_token_splice_proved = 1
-unavailable_token_temporal_scheduler_exact = 1
-installed_transition_kind_bank_66_exhaustive = 1
-installed_payment_assignment_66_complete = 1
-installed_transition_regression_66_complete = 1
+persistent_blocker_absorption_deficiency_ancestry_proved = 1
+persistent_cross_pair_bank_ancestry_proved = 1
+cross_signature_ancestry_exact = 1
+refined_trace_fixed_selector_exact = 1
+fixed_selector_obstruction_stock_exact = 1
+canonical_selector_ledger_exact = 1
+canonical_collateral_line_decomposition_exact = 1
+canonical_collateral_carry_splice_exact = 1
+canonical_selector_absorption_chase_exact = 1
+installed_transition_kind_bank_98_exhaustive = 1
+installed_payment_assignment_98_complete = 1
+installed_transition_regression_98_complete = 1
 
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -207,29 +190,46 @@ all_n_proved_by_checker = 0
 
 ## Validation honesty
 
-The new individual finite checkers were executed locally and their censuses above were observed. The complete twenty-eight-checker repository runner was not executed in the local container. Dedicated Python 3.10/3.12 workflows are configured, but workflow success must not be claimed without inspecting actual runs, logs and artifacts.
+The two new mathematical checkers and both new registries were executed locally. Their JSON reports and finite censuses were observed. Python startup emitted an unrelated `artifact_tool` spreadsheet warmup traceback to stderr, but each checker exited zero.
+
+The 30- and 32-checker runners passed isolated static mock-repository audits. The complete repository executions were not performed locally. Dedicated Python 3.10/3.12 workflows are configured, but workflow success must not be claimed without inspecting actual runs, logs and artifacts.
 
 ## Immediate next frontier
 
-Start at CMR522 and inspect literally:
+Install the literal operations in this order:
 
 ```text
-persistent-blocker absorption and deficiency
-persistent cross-pair banks
-cross-signature and trace ancestry
-fixed-selector obstruction stock
-canonical selector and collateral-line decompositions
-protected absorption/contact/token ledgers
-protected-core interface factorization
-all later owner, restoration, return, envelope and scheduler operations
+CMR577--581
+  packed rank-zero conflict deletion
+  fully forced packing terminality
+  private deleted-edge restoration code
+
+CMR582--586
+  protected-contact finite stock
+  protected row/column contact walls
+  heavy/dispersed protected-contact tokens
+  recurrent protected-contact absence runs
+
+CMR587--592
+  recurrent unavailable-set extraction
+  aggregate reintroduction
+  batch protected absorption
+  persistent wall and token splice
+
+CMR593 onward
+  selector slack and protected-core amplification
+  owned certificate stock
+  heavy-line and secant-star protected absorption
+  protected-core interface factorization and history
+  all later owner, restoration, return, envelope and scheduler operations
 ```
 
-For every genuine action, install one literal parent/child or restricted-family operation, theorem-derived owner effect, exact finite stock/reintroduction/descent or mandatory scheduler continuation, contract seal and corruption rejection.
+For each genuine action, install one literal parent/child or restricted-family operation, theorem-derived owner effect, exact finite stock/reintroduction/descent or mandatory scheduler continuation, contract seal and corruption rejection.
 
 After the operation audit:
 
 1. prove the full transition-kind bank globally exhaustive;
-2. close every recurrent endpoint, including the persistent blocker;
+2. close every recurrent endpoint;
 3. prove global termination;
 4. populate authoritative T01 and genuine T02/T03/T04 records; and
 5. proceed through T05--T43 without changing any open flag prematurely.
