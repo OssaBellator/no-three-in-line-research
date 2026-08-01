@@ -1,0 +1,34 @@
+name: Finite grid response frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_finite_grid_response_ancestry.py'
+      - 'scripts/verify_prime_power_side_three_strict_improvement.py'
+      - 'scripts/verify_prime_power_side_four_finite_improvement.py'
+      - 'scripts/verify_prime_power_side_five_finite_improvement.py'
+      - 'scripts/verify_prime_power_extension_free_response.py'
+      - 'scripts/verify_prime_power_side_six_target_response_traps.py'
+      - 'docs/524-prime-power-finite-grid-response-ancestry.md'
+      - 'docs/264-prime-power-side-three-strict-target-improvement.md'
+      - 'docs/265-prime-power-side-four-finite-improvement.md'
+      - 'docs/266-prime-power-side-five-finite-improvement.md'
+      - 'docs/267-prime-power-extension-free-target-response-family.md'
+      - 'docs/268-prime-power-side-six-target-response-traps.md'
+      - '.github/workflows/finite-grid-response-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run finite-grid response ancestry checker
+        run: python scripts/check_prime_power_finite_grid_response_ancestry.py
