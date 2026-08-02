@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-02T18:30:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-02T18:37:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -14,8 +14,10 @@ constructions.
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified theorem-bearing head before this continuity refresh:
+- Verified canonical theorem-bearing head before this final continuity refresh:
   `de78a62c3f70e61511cf5b977d987cbb379f3fdb`.
+- Before this refresh the branch was exactly one commit ahead of that head, and the
+  only changed file was this continuity handoff.
 - Completed canonical tranches: `docs/651--656` and `docs/657--662`.
 - Latest theorem range: `PP3dah--PP3day`.
 - Next available theorem identifier: `PP3daz`.
@@ -26,11 +28,11 @@ constructions.
 
 Theorems `PP3czp--PP3czr`.
 
-- Exact fourteenth spectrum:
+- Exact fourteenth minimum-transversal histogram:
   `3:3,4:13,5:62,6:123,7:173,8:151,9:36,10:61,11:130,12:131,13:98,14:51`.
 - Sixteen attempts have minimum at most four, with exactly 125 minimum cores.
-- Every one of the 125 cores corrects through budget seven; first-success
-  histogram: `3:2,4:23,5:54,6:38,7:8`.
+- Every core corrects through budget seven; first-success histogram:
+  `3:2,4:23,5:54,6:38,7:8`.
 - Canonical `P2,+63` three-point correction reaches a legal 112-point,
   fourteen-block state.
 - All raw fifteenth attempts fail.
@@ -39,10 +41,12 @@ Theorems `PP3czp--PP3czr`.
 
 Theorems `PP3czs--PP3czu`.
 
-- Motif resource overlap and selected-centre conflicts are separated into two
-  graph stages.
-- Maximum motif degree `Delta` guarantees `ceil(M/(Delta+1))` disjoint motifs.
-- Retainable centres equal `3q-tau(H)`; for bipartite `H`, `tau(H)=nu(H)`.
+- Candidate-motif overlap and selected-centre conflicts form two graph stages.
+- Maximum motif degree `Delta` gives `q=ceil(M/(Delta+1))` disjoint motifs.
+- The exact retained centre pool is `3q-tau(H)`; for bipartite `H`,
+  `tau(H)=nu(H)`.
+- Under `nu(H)<=m`, the sharp degree-only candidate threshold is
+  `(ceil((28+m)/3)-1)*(Delta+1)+1`.
 
 ### Threshold — `docs/653-sign-coherent-threshold-drift.md`
 
@@ -53,7 +57,7 @@ Theorems `PP3czv--PP3czx`.
 - Every transient matching covers the full `4 x 4` grid with load histogram
   `2:8,5:8`.
 - Target displacements are cellwise sign-coherent; every nonempty target subset
-  has `L1` drift six times its cardinality and cannot self-neutralize.
+  has aggregate `L1` drift six times its cardinality and cannot self-neutralize.
 
 ### Prefix — `docs/654-fourteen-pair-saturated-anchor-reservoir.md`
 
@@ -64,9 +68,9 @@ Theorems `PP3czy--PP3daa`.
   `Q=(7,3,8,0,11,1,2,10,9,13,5,12,4,6)`.
 - Pairing shift `+5 mod 14` supplies fourteen anchors.
 - All 8,192 compositions pass with maximum coordinate 100.
-- The incidence graph is one fourteen-cycle, so the witness is not nested.
-- The older thirteen-pair source comparison gives minimum four cross-component
-  anchors and 104 minimum-crossing matchings.
+- The incidence graph is one fourteen-cycle, so the source is not nested.
+- The older thirteen-pair comparison requires at least four cross-component
+  anchors and has exactly 104 minimum-crossing matchings.
 
 ### Shell — `docs/655-heterogeneous-shell-schedule-envelope.md`
 
@@ -108,7 +112,7 @@ Theorems `PP3dah--PP3daj`.
 
 Theorems `PP3dak--PP3dam`.
 
-- Caro–Wei gives `ceil(sum_v 1/(d_v+1))` disjoint motifs from the full overlap
+- Caro--Wei gives `ceil(sum_v 1/(d_v+1))` disjoint motifs from the full overlap
   degree sequence.
 - Average degree gives `ceil(M/(d_bar+1))`; equal-clique unions are sharp.
 - With selected-centre matching loss `m`, the Hall condition is
@@ -120,12 +124,12 @@ Theorems `PP3dan--PP3dap`.
 
 - The twenty-four target-buffer incidences have 44 three-round factorizations and
   `4,429,185,024` fully ordered native schedules.
-- Every one-round transient matching covers all sixteen cells with invariant load
+- Every one-round matching covers all sixteen cells with invariant load
   histogram `2:8,5:8`.
 - Across 12,544 ordered batches, maximum exposure histogram is
   `2:49,3:1553,4:7970,5:2972`.
 - Each of the 49 matchings has one perfectly balanced order, but all 392 balanced
-  intermediate occurrences remain illegal.
+  intermediate occurrences remain matrix-illegal.
 
 ### Prefix — `docs/660-fourteen-pair-saturated-anchor-reservoir.md`
 
@@ -164,9 +168,25 @@ Theorems `PP3daw--PP3day`.
 
 ## Reproducibility
 
+### `651--656`
+
 - `scripts/check_frontier_651_656.py`
 - `certificates/prime-patching-uniform-mechanisms-651-656.json`
 - `proofs/prime-patching-parity-index-651-656-supplement.md`
+
+### `657--662`
+
+- `scripts/check_boundary_fifteenth_transition.py`
+- `scripts/check_hall_degree_sequence_packing.py`
+- `scripts/check_hall_two_level_packing.py`
+- `scripts/check_threshold_incidence_factorizations.py`
+- `scripts/check_threshold_factorized_exposure_collision.py`
+- `scripts/check_threshold_balanced_exposure_batch.py`
+- `scripts/check_prefix_fourteen_pair_reservoir.py`
+- `scripts/check_prefix_two_component_rerouting.py`
+- `scripts/check_shell_repertoire_envelope.py`
+- `scripts/check_shell_repertoire_cycle_mean.py`
+- `scripts/check_compensating_mechanism_gate.py`
 - `scripts/check_frontier_657_662.py`
 - `certificates/prime-patching-compensating-mechanisms-657-662.json`
 - `proofs/prime-patching-parity-index-657-662-supplement.md`
@@ -183,23 +203,25 @@ python scripts/check_frontier_657_662.py
   corrected finite states were executed successfully in isolated generation
   runtimes.
 - Both fourteen-pair reservoir audits checked all 8,192 compositions.
-- This response independently reproduced the 32,768 six-vertex Caro–Wei audit,
-  all 49 balanced threshold batches, all 208 rerouting cases, shell cycle examples,
-  and exact fixed-point arithmetic.
+- Exact standalone audits covered the 32,768 six-vertex Hall graphs, all 49
+  balanced threshold batches, all 208 rerouting cases, shell finite-state
+  examples, and exact fixed-point arithmetic.
+- Python compilation passed for the standalone scripts in their isolated
+  generation runtimes.
 - The complete historical chained runner was not executed here because a local
   checkout could not be obtained: `github.com` DNS resolution failed.
 
 ## Decisions
 
-- Maintain one canonical theorem chapter per number. Concurrent duplicate chapters,
-  gates, certificates, and stale audits were removed.
-- Keep the first fourteen-pair reservoir in `docs/654` and the distinct second
-  reservoir plus finite nesting/rerouting results in `docs/660`.
+- Maintain one canonical theorem chapter per number. Concurrent duplicate
+  chapters, duplicate gates, and stale certificates were removed.
+- Keep the first fourteen-pair reservoir in `docs/654`; keep the distinct second
+  reservoir plus finite nesting and rerouting results in `docs/660`.
 - Treat Hall graph data as conditional until derived from coordinates.
 - Treat balanced threshold exposure as an obstruction, not a legal operation.
 - Treat prefix rerouting as a permutation-layer result until coordinate insertion
   is proved.
-- Treat shell cycle-mean results as scheduling targets, not geometric evidence.
+- Treat shell repertoire results as scheduling targets, not geometric evidence.
 - Promote no row without a complete coordinate source path.
 
 ## Current blockers
