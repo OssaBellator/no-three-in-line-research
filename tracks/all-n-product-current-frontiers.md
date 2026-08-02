@@ -3,7 +3,7 @@
 **Branch:** `research/all-n-product-construction`  
 **Reconciled:** 2 August 2026
 
-This map records the active frontiers through PX1196. It is not a proof of the classical conjecture or an all-side product theorem.
+This map records the active frontiers through PX1203. It is not a proof of the classical conjecture or an all-side product theorem.
 
 ## Effective asymptotic repair
 
@@ -13,16 +13,16 @@ The paired path is effective for `N>=10^2874`. At decimal order `2873`, the unch
 
 ## Side-seven finite census
 
-All support-twenty selectors of multiplicity at least three are exact. Multiplicity-two cases `0--1399` are exact. The committed cache contains:
+All support-twenty selectors of multiplicity at least three are exact. Multiplicity-two cases `0--1409` are exact. The committed cache contains:
 
-- `40,399` certified-infeasible selectors;
+- `40,419` certified-infeasible selectors;
 - two constructive selectors;
-- `31,459` unclassified selectors;
-- `3,285,616,695` certified rejection-CSP nodes.
+- `31,439` unclassified selectors;
+- `3,291,140,089` certified rejection-CSP nodes.
 
-The unresolved set is exactly `2,440` multiplicity-two signatures (`4,880` selectors) plus all `26,579` multiplicity-one selectors. The next canonical multiplicity-two case is `1400`.
+The unresolved set is exactly `2,430` multiplicity-two signatures (`4,860` selectors) plus all `26,579` multiplicity-one selectors. The next canonical multiplicity-two case is `1410`.
 
-Cases `1400--1409` are registered for exact computation and remain uncounted until their transcripts are promoted and replayed.
+Cases `1410--1419` are registered for exact computation and remain uncounted until their transcripts are promoted and replayed.
 
 ## Certificate compression
 
@@ -46,12 +46,12 @@ Multiplicity-two case `1287`, selector zero, orientation zero is constructive an
 
 ## Produced-base recursion
 
-The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--5199` are obstructed in both remaining orientations:
+The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--5599` are obstructed in both remaining orientations:
 
-- `fc`: 5,200 geometries, `184,338,885` nodes, maximum `1,877,339`;
-- `ff`: 5,200 geometries, `112,022,029` nodes, maximum `909,040`.
+- `fc`: 5,600 geometries, `202,321,011` nodes, maximum `1,877,339`;
+- `ff`: 5,600 geometries, `121,526,788` nodes, maximum `909,040`.
 
-No constructive witness appears in these 10,400 fine-row geometries. Pair indices `5200--5599` are registered but uncounted.
+No constructive witness appears in these 11,200 fine-row geometries. Pair indices `5600--5999` are registered but uncounted.
 
 ## Protected spread
 
@@ -73,8 +73,8 @@ The complete side-two through side-five carry profile isolates a high-concentrat
 
 ## Operational priorities
 
-1. Promote side-seven cases `1400--1409` only after exact transcript replay.
-2. Promote side-ten fine intervals `5200--5599` only after exact transcript replay.
+1. Promote side-seven cases `1410--1419` only after exact transcript replay.
+2. Promote side-ten fine intervals `5600--5999` only after exact transcript replay.
 3. Continue semantic-union expansion from the `34,891` uncovered top orders and recompute the expanded basis.
 4. Analyze the case-`1287` symmetry orbit and reusable pattern content.
 5. Advance the decimal-2873 target, protected residual entropy, bounded-barrier repair, and carry/absorber closure in parallel.
