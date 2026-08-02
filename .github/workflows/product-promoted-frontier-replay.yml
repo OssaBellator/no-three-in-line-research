@@ -6,10 +6,21 @@ on:
       - main
     paths:
       - .github/workflows/product-promoted-frontier-replay.yml
+      - .github/workflows/product-side-seven-frontier.yml
+      - .github/workflows/product-side-ten-opposite-fine-5200-5599.yml
+      - .github/product-side-seven-multiplicity-two-1400-1409-trigger.txt
+      - .github/product-side-ten-opposite-fine-5200-5599-trigger.txt
+      - AUTOPROMPTER_HANDOFF.md
+      - STATUS.md
+      - docs/365-side-seven-multiplicity-two-cases-1390-through-1399.md
+      - docs/366-side-ten-opposite-pair-fine-row-thirteenth-prefix.md
+      - tracks/all-n-product-current-frontiers.md
+      - tracks/all-n-product-frontier-manifest.json
       - scripts/measure_product_side_seven_single_case_all_selectors.cpp
       - scripts/search_product_transposition_double_coset_ten.cpp
       - scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
       - scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+      - scripts/verify_product_frontier_manifest.py
   workflow_dispatch:
 
 permissions:
@@ -31,3 +42,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Replay pair indices 4800 through 5199
         run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+
+  frontier-consistency:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify certified and registered boundaries
+        run: python scripts/verify_product_frontier_manifest.py
