@@ -1,6 +1,6 @@
 # Status and honesty ledger
 
-**Last updated:** 28 July 2026
+**Last updated:** 2 August 2026
 
 ## External status
 
@@ -12,43 +12,47 @@ The classical no-three-in-line problem remains unresolved. The analogous no-`(k+
 2. The branch proves factor-independent products `2x3 -> 6`, `2x4 -> 8`, `2x5 -> 10`, and `2x6 -> 12`.
 3. Every saturated side-`n` factor has a factor-compatible side-`2n` state with `O(n log n)` bad triples.
 4. The audited paired repair path is effective for every `N >= 10^2874`.
-5. At decimal order `2873`, the unchanged divisor-improvement threshold lies between `1.0979139` and `1.0979151`; factor `1.097913` is insufficient and `1.097916` is sufficient.
-6. All side-seven support-twenty selectors of multiplicity at least three are classified. Multiplicity-two cases `0` through `1279` add `2,560` exact rejections. The committed cache contains:
-   - `40,160` certified-infeasible selectors;
-   - one constructive selector;
-   - `31,699` unclassified selectors;
-   - `3,242,756,553` certified rejection-CSP nodes.
-7. For case zero, orientation three, the first 128 semantic reference cores reduce to 102 actual partial-assignment keys. Their 316 extension occurrences cover 164 distinct clean top orders, verified by 3,185,280 exact bottom checks. Three selector-zero references require twelve-triple rather than seven-triple greedy covers.
-8. At side ten, the complete opposite-pair double coset is infeasible in `cc` and `cf`. Pair indices `0` through `3599` are also infeasible in each of `fc` and `ff`, using 108,097,044 and 72,006,698 nodes respectively.
-9. Protected-rainbow cylinder bounds require cubic entropy in every nonempty slice conditioned on at most three edges; the exact order-five and order-seven families collapse to singleton slices after two compatible edges.
-10. In the canonical side-six repair graph, every state is within two unweighted moves of a solution. Exactly 102 nonsolutions have a forced minimax-optimal first move, while every bounded-uphill state has at least three optimal exits.
-11. Exact carry multiplicity at sides two through five is at most three-fifths of the general cap, with sharp maxima 12, 36, 48, and 72.
+5. At decimal order `2873`, the unchanged divisor-improvement threshold satisfies `1.0979139 < rho_* < 1.0979151`. A 9% improvement is insufficient through exponent `2873.0585` and sufficient from `2873.0616` onward.
+6. All side-seven support-twenty selectors of multiplicity at least three are classified. Multiplicity-two cases `0--1389` are also classified with witness-aware exact replay.
+7. The classified multiplicity-two prefix contains `2,780` selectors: `2,779` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
+8. Across support twenty, the exact cache contains `40,379` certified-infeasible selectors, two constructive selectors, `31,479` unclassified selectors, and `3,278,927,685` certified rejection-CSP nodes.
+9. For multiplicity-two case zero, orientation three, 192 references reduce to 150 relaxed semantic keys. A 115-key irredundant basis covers 204 of 35,112 clean top orders, with exact digest `12529763722981785837`; `34,908` clean top orders remain outside that union.
+10. At side ten, the opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--4799` are obstructed in both `fc` and `ff`, with no constructive witness in those 9,600 geometries.
+11. Protected-spread, repair, and carry diagnostics include the first tested genuinely cubic common-rainbow family at order 13, the exact canonical side-six repair-path profile, and complete side-two through side-five carry-level profiles.
 
 ## Current exact finite boundary
 
 The side-seven support-twenty cache contains `71,860` selectors:
 
-- `40,160` certified infeasible;
-- `1` constructive;
-- `31,699` unclassified.
+- `40,379` certified infeasible;
+- `2` constructive;
+- `31,479` unclassified.
 
 The unresolved set is exactly:
 
-- `2,560` multiplicity-two signatures containing `5,120` selectors;
+- `2,450` multiplicity-two signatures containing `4,900` selectors;
 - `26,579` multiplicity-one selectors.
 
-The next canonical multiplicity-two case is `1280`. Cases `1280` through `1359` are registered but are not counted until their transcripts are promoted.
+The next certified multiplicity-two case is `1390`. Cases `1390--1399` are registered for exact computation but are not counted until every transcript is promoted and replayed.
+
+For the side-ten opposite-pair fine-row search:
+
+- `fc`: indices `0--4799`, `171,920,043` nodes, maximum `1,877,339`;
+- `ff`: indices `0--4799`, `100,441,668` nodes, maximum `909,040`.
+
+Indices `4800--5199` are registered but uncounted.
 
 ## Active frontiers
 
-- Prove the approximately `9.7914%` interval-specific decimal-2873 divisor improvement, reduce effective divisor loss, or construct a structural extension below `10^2874`.
-- Promote side-ten pair indices `3600` through `3999`, then continue the opposite-pair coset and address the two larger double cosets.
-- Extend semantic master learning beyond top index 127 and compute a compact set-cover basis from the 102-key vocabulary.
-- Prove cubic simultaneous-rainbow abundance with cubic residual entropy after every rank-at-most-three conditioning.
-- Prove a global bounded-barrier repair/resampling theorem that coordinates forced states and the multiple exits at uphill states.
-- Improve carry multiplicity asymptotically or prove second-generation collateral concentration, termination, or bounded-denominator absorbers.
-- Complete multiplicity two and multiplicity one in the side-seven census.
+- Complete multiplicity two from case `1390`, then classify multiplicity one.
+- Continue side-ten fine-row obstruction from pair index `4800`, then address the larger double cosets.
+- Expand the semantic union from the `34,908` uncovered clean top orders.
+- Determine whether the case-`1287` construction has a symmetry orbit or reusable local template.
+- Prove the decimal-2873 interval-specific improvement on the first 6.16% of the logarithmic slab, or reduce effective divisor loss.
+- Prove cubic protected residual entropy and bounded rank-three completion multiplicity.
+- Prove a global bounded-barrier repair/resampling theorem.
+- Prove second-generation collateral concentration, monotone carry termination, or bounded-denominator absorbers.
 
 ## Bottom line
 
-There is no complete proof of the classical no-three-in-line conjecture and no all-side product theorem. The active exact matrices are side-seven cases `1280--1359` and side-ten fine-row indices `3600--3999`; both are excluded from the certified boundary until promoted.
+There is no complete proof of the classical no-three-in-line conjecture and no infinite all-side product theorem. The repository contains exact finite classifications, verified constructions, computational obstructions, and conditional reductions. Registered workloads do not advance the certified boundary until their outputs are independently replayed and committed.
