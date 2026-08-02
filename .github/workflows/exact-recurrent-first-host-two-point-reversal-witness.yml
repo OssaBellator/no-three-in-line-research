@@ -1,0 +1,46 @@
+name: Exact recurrent first-host two-point reversal witness
+
+on:
+  push:
+    paths:
+      - scripts/check_exact_recurrent_first_host_two_point_reversal_witness.py
+      - data/exact_recurrent_first_host_two_point_reversal_witness.json
+      - docs/exact-recurrent-first-host-two-point-reversal-witness.md
+      - .github/workflows/exact-recurrent-first-host-two-point-reversal-witness.yml
+  pull_request:
+    paths:
+      - scripts/check_exact_recurrent_first_host_two_point_reversal_witness.py
+      - data/exact_recurrent_first_host_two_point_reversal_witness.json
+      - docs/exact-recurrent-first-host-two-point-reversal-witness.md
+      - .github/workflows/exact-recurrent-first-host-two-point-reversal-witness.yml
+
+jobs:
+  audit:
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_exact_recurrent_first_host_two_point_reversal_witness.py
+      - name: Validate deterministic witness manifest
+        run: |
+          python scripts/check_exact_recurrent_first_host_two_point_reversal_witness.py \
+            --check data/exact_recurrent_first_host_two_point_reversal_witness.json \
+            | tee /tmp/reversal.json
+          python - <<'PY'
+          import json
+          data = json.load(open('/tmp/reversal.json', encoding='utf-8'))
+          assert data['radius_four_background_pairs_checked'] == 2415
+          assert data['radius_four_strict_original_reversals'] == 0
+          assert data['radius_five_background_pairs_checked'] == 5995
+          assert data['radius_five_strict_original_reversals'] == 2
+          assert data['minimal_reversal_witnesses'] == 2
+          assert data['mutation_corruptions_rejected'] == 11
+          assert data['witness_physically_realizable'] == 0
+          assert data['all_n_proved_by_checker'] == 0
+          PY
