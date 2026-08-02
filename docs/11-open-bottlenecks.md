@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4229**. Every checker, bridge, fixture, manifest and regression preserves:
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4277**. Every checker, bridge, fixture, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -13,77 +13,78 @@ No finite census, registry digest, manifest or workflow result proves the all-`n
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_782.py
-manifest = 895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
-operation kinds = 782
-checker contracts = 36
+runner = scripts/run_prime_power_installed_construction_regression_830.py
+manifest = 9fe8e73ea57a7386c9c90d637d02037f5d96018ab904218f08f4fbec78446583
+operation kinds = 830
+checker contracts = 37
 owner-changing kinds = 164
-same-owner kinds = 618
-checkers = 65
+same-owner kinds = 666
+checkers = 67
 ```
 
 Inspect actual workflow runs before claiming CI success.
 
-## 3. Installed recurrent-core surface
+## 3. Installed recurrent-certificate surface
 
-### Through CMR4181
+### Through CMR4229
 
-Candidate-transversal, owner-capacity, signature, displacement, carry, private-support and root-child operations are installed. Strict transfer and first-use resources are off-diagonal; recurrent root, token, loaded-owner, fixed-interface and CRT blocks remain.
+Line-clean, repeated-token, selector-return, trace and returned-edge exchange rows are exact finite coefficient problems.
 
-### CMR4182--CMR4229
+### CMR4230--CMR4277
 
-Source CMR1510--CMR1581 installs:
+Source CMR1582--CMR1629 installs:
 
 ```text
-partial-matching deletion survival and complete nonaxis line cleaning
-zero same-owner same-line collateral
-atomic repeated-token return/selector/trace rows
-exact degree-two component rook rows
-strong, singleton and endpoint-overlap line-clean coefficients
-subunit selector-to-return restoration splices
-finite first-restoration and rooted-centre stocks
-rooted trace strong/singleton execution
-returned-edge exchange-pair kernels
-finite rational return upper quotients
-exact two-row return-selector criterion
+one shared return-selector assignment score and dual
+strict rational/integer assignment certificate format
+strong/singleton/overlap integer line-clean budgets
+critical-selector finite class localization
+prime-field root singleton support reduction
+exact rational fixed-interface rows
+finite thin-side certificate compiler
+label-preserving collision/local-line/CRT state refinement
+labelled SCC spectral reduction and constructive certificate gluing
 ```
 
-The line-clean and return frontiers are now exact finite coefficient problems. They are not yet numerically certified strict.
+The structural certificate protocol is complete for these modules. The required recurrent blocks are not yet certified strict.
 
 ## 4. Active mathematical frontier
 
-Continue from source CMR1582:
+Continue from source CMR1630:
 
 ```text
-return-selector shared assignment scalarization
-line-clean integer credit budgets
-critical selector profile localization
-prime-field root-channel support splice
-fixed-interface thin exact tables
-label-preserving CRT certificate assembly
+return-assignment superlevel covers
+universal line-clean budget floors
+selector-capacity gap compiler
+fixed-interface symmetry normalization
+normalized thin response census
+return class-support covers
+line-clean profile-capacity compiler
+normalized thin rank-three census
+subcritical auxiliary-block elimination
 ```
 
-The next useful result must construct a strict rational/integer certificate or complete finite table for a genuinely recurrent block.
+The next useful result must close a recurrent class by a strict assignment/cover certificate, universal positive budget, normalized finite census, or exact auxiliary elimination.
 
 ## 5. Exact global blockers
 
-1. Prove strong, singleton and endpoint-overlap line-clean inequalities in every inherited geometric class.
-2. Bound the critical paid-pair selector regime not covered by the subunit restoration splice.
-3. Compute or dominate the returned-edge exchange quotient and prove `alpha + beta*T < 1` classwise.
-4. Execute trace incidences whose rooted centre cannot be chosen as the fixed target.
-5. Certify prime-field root/fixed-interface and thin residual blocks.
-6. Preserve collision, local-line and interface labels through CRT assembly and glue all certified blocks.
-7. Audit the original operation list for global transition-kind exhaustiveness.
-8. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
+1. Construct a globally strict combined return-selector assignment dual or a finite class-supported cover certificate.
+2. Prove positive strong/singleton/overlap line-clean slacks in all inherited geometric classes.
+3. Eliminate or certify every localized critical selector class.
+4. Execute and certify the normalized fixed-interface/thin row tables, retaining geometric fibre distinctions.
+5. Preserve collision, local-line and CRT labels through every recurrent SCC and publish strict block certificates.
+6. Audit the original operation list for global transition-kind exhaustiveness.
+7. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
 
 ## 6. Validation blockers
 
 ```text
-registry 782 = locally executed and passed
-new checker source/contract = locally compiled and reproduced
-runner 782 manifest = locally reproduced
-consolidated nine-verifier checker = not executed end to end locally
-complete 65-checker runner = not executed locally
+checker contract = locally reproduced
+registry 830 contract/census/seal = locally reproduced
+registry corruption audit = locally reproduced and passed
+runner 830 manifest = locally reproduced
+consolidated six-verifier checker = not executed end to end locally
+complete 67-checker runner = not executed locally
 workflow success = not observed
 ```
 
