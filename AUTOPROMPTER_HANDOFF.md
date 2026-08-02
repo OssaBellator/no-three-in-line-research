@@ -2,7 +2,7 @@
 
 ## Current goal
 
-Continue the prime-power/composite-modulus construction in literal source order while preserving exact ownership, validation and honesty boundaries. Source CMR1510--CMR1581 has now been audited and bound to one consolidated line-clean/return-core checker. The next unit is registry installation, followed by the chained runner, theorem ledger and workflows.
+Continue the prime-power/composite-modulus construction in literal source order while preserving exact ownership, validation and honesty boundaries. Source CMR1510--CMR1581 has been audited, bound to a consolidated checker, and registered as 68 genuine same-owner operations. The next unit is the chained 65-checker runner, followed by theorem chapters, live continuations, workflows and status synchronization.
 
 ## Repository and branch
 
@@ -18,26 +18,19 @@ The classical no-three-in-line conjecture remains open. Every checker and manife
 all_n_proved_by_checker = 0
 ```
 
-## Canonical installed stack
-
-The last fully installed stack remains:
+## Last fully installed stack
 
 ```text
-714 unique construction operation kinds
-35 exact checker contracts
+714 operation kinds
+35 checker contracts
 164 owner-changing kinds
 550 same-owner kinds
 63 installed checkers
-```
-
-```text
 runner = scripts/run_prime_power_installed_construction_regression_714.py
 manifest = c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
-registry contract = 675ab24a159db1d009d6c74369a70913573351c32aa9d55494e8eac3d8837895
-registry seal = a56bf0f4f45277106f5489ddc5f490a0ff068771e41a21d8d66e8c0b65120e73
 ```
 
-## Newly completed unit
+## Completed current-phase units
 
 ### CMR1510--CMR1581 consolidated checker
 
@@ -50,20 +43,38 @@ verifier entrypoints = 9
 rejected fixture corruptions = 13
 ```
 
-The checker binds:
+The checker binds target-safe line cleaning, repeated-token atomic compression, exact and uniform line-clean rook rows, subunit selector-to-return splices, rooted trace execution and returned-edge exchange kernels.
+
+### Installed registry 782
 
 ```text
-arbitrary partial-matching deletion and target-safe nonaxis line cleaning
-repeated-token compression to return, selector and trace atomic rows
-exact degree-two component rook rows
-uniform and exact ternary line-clean coefficients
-subunit paid-pair selector restoration caps
-rooted trace-centre line-clean splices
-returned-edge exchange-pair kernels
-exact return-selector two-row certificate form
+registry = scripts/check_prime_power_installed_operation_registry_782.py
+contract = b15c91825d0859a979f3953139554c2e2c81a1f68ea31d0b7d35a57437f0b946
+seal = 8da81442b93b56c48054370aa1f36f47e9ce5acbe9e5b99f01c5e6a8fd62f91f
+commit = a178290ad9621416e3a83f8df161b6796d5e5cff
 ```
 
-The checker source and contract compile locally. Its fixture mutation audit passes. The nine inherited verifier programs have not been executed together in this environment.
+```text
+68 new operation kinds
+782 installed operation kinds
+36 checker contracts
+164 owner-changing kinds
+618 same-owner kinds
+15 rejected corruptions
+```
+
+New payment counts:
+
+```text
+spectral-certificate = 24
+owner-witness-stock = 10
+scheduler-dispatch = 10
+local-family-equivalence = 10
+finite-base-dispatch = 8
+history-budget = 6
+```
+
+The registry validator was executed locally and passed. No new structural owner-changing operation is claimed in this bank.
 
 ## Decisions that must be preserved
 
@@ -76,12 +87,15 @@ The checker source and contract compile locally. Its fixture mutation audit pass
 7. Rooted trace recurrence reduces to strong or singleton line-clean rows only when the rooted centre may be used as the fixed target.
 8. Returned-edge recreation is transported through the exact same-source exchange predecessor; a total churn bound alone is not the installed kernel.
 9. The return-selector block is subcritical exactly when its finite rational coefficients satisfy the strict two-row inequality; that inequality is not yet proved globally.
-10. All global honesty flags remain zero unless directly proved.
+10. All CMR1510--CMR1581 registry operations preserve structural owner. Do not invent a child-owner transition for line cleaning or return transport.
+11. All global honesty flags remain zero unless directly proved.
 
 ## Exact current flags
 
 ```text
 line_clean_return_core_ancestry_proved = 1
+installed_transition_kind_bank_782_exhaustive = 1
+installed_payment_assignment_782_complete = 1
 
 line_clean_recurrent_rows_subcritical = 0
 return_selector_block_subcritical = 0
@@ -105,17 +119,15 @@ all_n_proved_by_checker = 0
 ```text
 checker source/contract = compiled and reproduced locally
 checker fixture mutation audit = executed locally and passed
+registry 782 = executed locally and passed
 consolidated nine-verifier checker = not executed end to end locally
-registry 714 = previously executed locally and passed
 complete 63-checker runner = not executed locally
 workflow success = not observed
 ```
 
 Workflow configuration is not CI success.
 
-## Blockers
-
-The exact numerical blockers after CMR1581 are:
+## Exact numerical blockers
 
 ```text
 prove strict strong/singleton/endpoint-overlap line-clean inequalities by geometric class
@@ -138,10 +150,9 @@ No completed implementation exists only in chat.
 ## Exact next steps
 
 ```text
-1. register the genuine CMR1510--CMR1581 line-clean, token-compression, restoration, trace and return-kernel operations
-2. validate the new registry locally with corruption rejection
-3. extend the 63-checker canonical runner
-4. add theorem chapters, live continuations and Python 3.10/3.12 workflows
-5. synchronize STATUS.md, this handoff and docs/11-open-bottlenecks.md
-6. continue in literal source order from CMR1582 after the bank is fully installed
+1. extend the 63-checker canonical runner with the new checker and registry
+2. validate the 65-checker chained manifest locally
+3. add theorem chapters, live continuations and Python 3.10/3.12 workflows
+4. synchronize STATUS.md, this handoff and docs/11-open-bottlenecks.md
+5. continue in literal source order from CMR1582 after the bank is fully installed
 ```
