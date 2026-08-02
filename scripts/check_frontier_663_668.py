@@ -8,11 +8,11 @@ subprocess.run([sys.executable, str(HERE / "check_frontier_657_662.py")], check=
 checks = [
     "check_boundary_sixteenth_transition.py",
     "check_hall_local_resource_incidence.py",
-    "check_threshold_global_separation.py",
+    "check_threshold_legal_convex_separation.py",
     "check_prefix_coordinate_rerouting_lift.py",
     "check_prefix_rerouting_geometry.py",
     "check_shell_interval_cycle_robustness.py",
-    "check_robust_compensation_gate.py",
+    "check_coordinate_compensation_gate.py",
 ]
 for check in checks:
     subprocess.run([sys.executable, str(HERE / check)], check=True)
