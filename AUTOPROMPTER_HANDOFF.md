@@ -2,99 +2,97 @@
 
 ## Current goal
 
-Continue in literal source order with exact ownership and honesty boundaries. The indexed stack remains at CMR4325. Source CMR1702--CMR1773 is now implemented as a rank-mass/multiplicity checker, 974-kind registry and 71-checker runner. The next unit is theorem indexing, workflows and authoritative synchronization.
+Continue in literal source order with exact ownership and honesty boundaries. Source CMR1702--CMR1773 is fully installed through CMR4373. The next phase begins with geometric-orbit fibre correction, exact line-energy marginals, nested assignments, coordinate-labelled host censuses and unified outer response scores.
 
 ## Repository and branch
 
 ```text
 repository = OssaBellator/no-three-in-line-research
 branch = research/all-n-composite-modulus
-authoritative theorem endpoint = CMR4325
+authoritative theorem endpoint = CMR4373
 ```
 
 The no-three-in-line conjecture remains open. Every checker preserves `all_n_proved_by_checker = 0`.
 
-## Last fully indexed stack
+## Canonical installed stack
 
 ```text
-902 operation kinds
-38 contracts
+974 operation kinds
+39 checker contracts
 164 owner-changing kinds
-738 same-owner kinds
-69 checkers
-runner = scripts/run_prime_power_installed_construction_regression_902.py
-manifest = f8ab06f6f46e08b91b425c10e53c55779e66be9acea6bbc0017d7216130f4857
+810 same-owner kinds
+71 installed checkers
+runner = scripts/run_prime_power_installed_construction_regression_974.py
+manifest = 58a5c6eaa877331a9c4711835d9a3ce84c9def64001eea9ffb301325b7620be5
+registry contract = 5bff249b3ada147307677bb59979f034b1c2587c4cc0a8643b903dbcd6eaf96e
+registry seal = 240be08e0fe0e6e061d55a245cd544880b8612f9575099faa011e10d47ec77c6
 ```
 
-The canonical CMR1630--CMR1701 checker is `scripts/check_prime_power_superlevel_budget_thin_auxiliary_ancestry.py`; do not restore the removed parallel checker `scripts/check_prime_power_recurrent_cover_budget_census_ancestry.py`.
+## Completed phase
 
-## Completed current-phase units
+### CMR4326--CMR4341
 
 ```text
 checker = scripts/check_prime_power_rank_mass_multiplicity_line_energy_ancestry.py
-checker contract = 681a56e37003368e62a92ae7df349488e03e03eec34c2cddf2ab39b8d6622bdd
-checker commit = 6ca4a83650c331c49e43ee0386d9ae751369562f
+contract = 681a56e37003368e62a92ae7df349488e03e03eec34c2cddf2ab39b8d6622bdd
+commit = 6ca4a83650c331c49e43ee0386d9ae751369562f
 source = CMR1702--CMR1773
 ```
 
+### CMR4342--CMR4357
+
 ```text
 registry = scripts/check_prime_power_installed_operation_registry_974.py
-registry contract = 5bff249b3ada147307677bb59979f034b1c2587c4cc0a8643b903dbcd6eaf96e
-registry seal = 240be08e0fe0e6e061d55a245cd544880b8612f9575099faa011e10d47ec77c6
-registry commit = aa37af29c96121acad8649e9c8490f38191c79ee
+contract = 5bff249b3ada147307677bb59979f034b1c2587c4cc0a8643b903dbcd6eaf96e
+seal = 240be08e0fe0e6e061d55a245cd544880b8612f9575099faa011e10d47ec77c6
+commit = aa37af29c96121acad8649e9c8490f38191c79ee
 ```
 
-```text
-72 new same-owner kinds
-974 installed kinds
-39 contracts
-164 owner-changing kinds
-810 same-owner kinds
-```
-
-Payment counts:
-
-```text
-spectral-certificate = 29
-local-family-equivalence = 13
-scheduler-dispatch = 12
-finite-base-dispatch = 11
-credit-charge = 5
-owner-witness-stock = 2
-```
+### CMR4358--CMR4373
 
 ```text
 runner = scripts/run_prime_power_installed_construction_regression_974.py
 71-checker manifest = 58a5c6eaa877331a9c4711835d9a3ce84c9def64001eea9ffb301325b7620be5
-runner commit = 59c82884b0b5ae959d1073c1af21d4e48497a0fb
+commit = 59c82884b0b5ae959d1073c1af21d4e48497a0fb
 ```
 
-Installed mathematical interfaces:
+### Installed interfaces
 
 ```text
-exact prescription rank-mass conservation
-multiplicity-aware line-clean large-load closure
+exact rank-mass conservation and forced-mass subtraction
+multiplicity-aware line-clean and rooted-trace thresholds
 owner-support matching-number and cover capacities
-small-support and reused-support large-load closure
-exact rank-one secant, rank-two line-load and rank-three injective multiplicities
-packed secant multiplicity bounds
-bounded-congestion background-triple charges
-background-potential multiplicity bounds
-exact line-energy profile census and profile charges
+small-support/reused-support thresholds
+exact geometric prescription multiplicities
+packed secant and potential-only multiplicity bounds
+labelled bounded-congestion background-triple charges
+exact line-energy profile census and response-load charges
 ```
 
-The strict closures are conditional on response-host nonemptiness, destroyed load, multiplicity caps, owner-support coverage and complete child accounting. They are not global policies.
+### Documentation and workflows
+
+```text
+docs/545-prime-power-rank-mass-multiplicity-line-energy-ancestry.md
+docs/546-prime-power-installed-operation-registry-974.md
+docs/547-prime-power-installed-construction-regression-974.md
+proofs/composite-modulus-theorem-index-live-continuation-111.md
+proofs/composite-modulus-theorem-index-live-continuation-112.md
+proofs/composite-modulus-theorem-index-live-continuation-113.md
+.github/workflows/rank-mass-multiplicity-line-energy-frontier.yml
+.github/workflows/installed-operation-registry-974.yml
+.github/workflows/installed-construction-regression-974.yml
+```
 
 ## Decisions that must be preserved
 
-1. Rank-mass conservation is exact for distinct prescriptions; geometric credit multiplicity remains explicit.
-2. Forced prescriptions leave the recurrent stochastic row through contraction before rank-mass comparison.
-3. Large-load closures require an actual nonempty response host and complete accounting of retained children.
-4. Owner-support closure requires every retained recurrent child owner to lie in the claimed support.
-5. Background-triple charges require current labelled credits and explicit congestion; historical or spent triples cannot be charged again.
-6. Triple-free response bounds are conditional on selecting a triple-free response; global availability is not proved.
-7. Line-energy profiles dominate corrected rows but do not make every profile subcritical.
-8. All 72 new operations preserve structural owner.
+1. Rank-mass conservation applies to distinct prescriptions; geometric multiplicity remains explicit.
+2. Forced prescriptions contract before stochastic mass comparison.
+3. Large-load closures require an actual nonempty host and complete accounting of retained child classes.
+4. Owner-support closure requires every retained recurrent child owner inside the claimed support.
+5. Background-triple charging requires current labelled credits and explicit congestion.
+6. Triple-free response bounds are conditional on selecting such a response.
+7. Matching normalization does not preserve collinearity; the next bank must expand to coordinate-labelled geometric fibres.
+8. All 72 CMR1702--CMR1773 operations preserve structural owner.
 9. Workflow configuration is not CI success.
 
 ## Exact current flags
@@ -139,8 +137,13 @@ uncommitted generated artifacts = none known
 ## Exact next steps
 
 ```text
-1. add theorem chapters for checker, registry and runner
-2. add live continuations and Python 3.10/3.12 workflows
-3. synchronize STATUS.md, this handoff and docs/11-open-bottlenecks.md
-4. resolve the literal source frontier after CMR1773
+1. docs/325-prime-power-geometric-orbit-fibre-correction.md
+2. docs/326-prime-power-line-energy-marginal-rook-compiler.md
+3. docs/327-prime-power-nested-assignment-line-energy-certificates.md
+4. docs/328-prime-power-geometric-fibre-host-census-and-line-caps.md
+5. docs/329-prime-power-exact-rank-three-geometric-fibre-census.md
+6. docs/330-prime-power-line-occupancy-capacity-certificate.md
+7. docs/331-prime-power-unified-outer-assignment-response-score.md
 ```
+
+The success criterion is an exact coordinate-labelled geometric-fibre certificate or strict unified outer assignment—not matching normalization alone.
