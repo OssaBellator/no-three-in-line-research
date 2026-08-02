@@ -1,0 +1,26 @@
+name: Installed construction regression 974
+
+on:
+  push:
+    paths:
+      - 'scripts/run_prime_power_installed_construction_regression_974.py'
+      - 'scripts/check_prime_power_rank_mass_multiplicity_line_energy_ancestry.py'
+      - 'scripts/check_prime_power_installed_operation_registry_974.py'
+      - 'docs/547-prime-power-installed-construction-regression-974.md'
+      - '.github/workflows/installed-construction-regression-974.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/run_prime_power_installed_construction_regression_974.py --static-only
+      - run: python scripts/run_prime_power_installed_construction_regression_974.py
