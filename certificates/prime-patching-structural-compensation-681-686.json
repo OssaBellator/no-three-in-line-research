@@ -1,0 +1,83 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "681-686",
+  "theorems": [
+    "PP3ddb", "PP3ddc", "PP3ddd",
+    "PP3dde", "PP3ddf", "PP3ddg",
+    "PP3ddh", "PP3ddi", "PP3ddj",
+    "PP3ddk", "PP3ddl", "PP3ddm",
+    "PP3ddn", "PP3ddo", "PP3ddp",
+    "PP3ddq", "PP3ddr", "PP3dds"
+  ],
+  "boundary": {
+    "corrected_points": 144,
+    "corrected_blocks": 18,
+    "raw_nineteenth_histogram": {
+      "4": 1, "5": 13, "6": 46, "7": 176, "8": 280, "9": 1,
+      "10": 17, "11": 61, "12": 124, "13": 176, "14": 137
+    },
+    "unique_minimum_four_attempt": "P2/-64",
+    "minimum_cores": 5,
+    "none_through_budget": 6,
+    "budget_six_replacements_per_core": 7595280,
+    "budget_six_replacements_total": 37976400,
+    "corrected_nineteenth_transition": false
+  },
+  "hall": {
+    "defect_multigraph": "centres are source-host defect edges",
+    "centre_conflict_graph": "H=L(D)",
+    "degree_two_retention": "alpha(H)=nu(D)=(3q+o(H))/2",
+    "incidence_graphs_checked": 74954,
+    "degree_two_graphs_checked": 10172,
+    "packet_interfaces_checked": 76156,
+    "packet_bound": "sum_j (3q_j+o_j)/2 - sum_j c_j",
+    "identical_packet_bound": "K(r-c)+c"
+  },
+  "threshold": {
+    "minimum_equality_batches": 19834,
+    "support_histogram": {"2": 5, "3": 210, "4": 2255, "5": 17364},
+    "identity_layers": 12,
+    "legal_score_zero_layers": 20,
+    "primitive_identity": "3I+P1+P2+P3+P4+P5=2S",
+    "admissible_four_layer_submultisets": 30,
+    "legal_submultisets": 5,
+    "cyclic_orders": 6720,
+    "legal_window_histogram": {"0": 3840, "1": 1920, "2": 960},
+    "maximum_legal_cyclic_four_windows": 2
+  },
+  "prefix": {
+    "minimum_crossing_matchings": 104,
+    "physical_matching_deletion_cases": 208,
+    "rerouting_distance_histogram": {"4": 208},
+    "optimal_routes_per_case": 144,
+    "selected_route": "lexicographically first optimal route",
+    "compositions_per_case": 1024,
+    "coordinate_audits": 212992,
+    "failures": 0,
+    "maximum_coordinate_histograms": {
+      "delete_0_2": {"120": 52, "132": 52},
+      "delete_3_5": {"84": 52, "132": 52}
+    }
+  },
+  "shell": {
+    "robust_circulation_lp": "maximize gamma subject to Bx=0, x>=0, sum x=1, gamma<=<3-b^u,x>",
+    "direct_execution": "balanced rational circulation with weakly connected nonzero support",
+    "small_connected_circulations_checked": 1086,
+    "optimal_normalized_margin": "1/2",
+    "integer_bundle_gain": "1",
+    "connector_saving": "-2",
+    "least_bundle_repetitions": 3,
+    "connected_example_scale": 6,
+    "connected_example_gain": 10
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "actual_evidence_level": "fixture_derived",
+    "promoted_rows": [],
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3ddt"
+  }
+}
