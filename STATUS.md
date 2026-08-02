@@ -16,7 +16,7 @@ The classical no-three-in-line problem remains unresolved. The analogous no-`(k+
 6. All side-seven support-twenty selectors of multiplicity at least three are classified. Multiplicity-two cases `0--1399` are also classified with witness-aware exact replay.
 7. The classified multiplicity-two prefix contains `2,800` selectors: `2,799` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
 8. Across support twenty, the exact cache contains `40,399` certified-infeasible selectors, two constructive selectors, `31,459` unclassified selectors, and `3,285,616,695` certified rejection-CSP nodes.
-9. For multiplicity-two case zero, orientation three, 192 references reduce to 150 relaxed semantic keys. A 115-key irredundant basis covers 204 of 35,112 clean top orders, with exact digest `12529763722981785837`; `34,908` clean top orders remain outside that union.
+9. For multiplicity-two case zero, orientation three, the first 192 references reduce to 150 relaxed semantic keys. A 115-key irredundant basis covers 204 of 35,112 clean top orders, with exact digest `12529763722981785837`. The first 16 references selected from outside that union add 15 distinct keys and expand exact coverage to 221 clean top orders; `34,891` remain uncovered. The expansion digest is `16150749401146711547`.
 10. At side ten, the opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--5199` are obstructed in both `fc` and `ff`, with no constructive witness in those 10,400 geometries.
 11. Protected-spread, repair, and carry diagnostics include the first tested genuinely cubic common-rainbow family at order 13, the exact canonical side-six repair-path profile, and complete side-two through side-five carry-level profiles.
 
@@ -46,7 +46,7 @@ Indices `5200--5599` are registered but uncounted.
 
 - Complete multiplicity two from case `1400`, then classify multiplicity one.
 - Continue side-ten fine-row obstruction from pair index `5200`, then address the larger double cosets.
-- Expand the semantic union from the `34,908` uncovered clean top orders.
+- Continue semantic-union expansion from the `34,891` uncovered clean top orders and recompute a compact basis for the 221-top expanded union.
 - Determine whether the case-`1287` construction has a symmetry orbit or reusable local template.
 - Prove the decimal-2873 interval-specific improvement on the first 6.16% of the logarithmic slab, or reduce effective divisor loss.
 - Prove cubic protected residual entropy and bounded rank-three completion multiplicity.
