@@ -1,0 +1,58 @@
+{
+  "tranche": "651-656",
+  "theorems": [
+    "PP3czp-PP3czr",
+    "PP3czs-PP3czu",
+    "PP3czv-PP3czx",
+    "PP3czy-PP3daa",
+    "PP3dab-PP3dad",
+    "PP3dae-PP3dag"
+  ],
+  "candidate_field_completion": {
+    "boundary": "4/5",
+    "Hall": "4/5",
+    "threshold": "5/5",
+    "prefix": "5/5",
+    "shell": "5/5",
+    "integration": "2/5"
+  },
+  "candidate_fields_complete": 25,
+  "candidate_fields_total": 30,
+  "frontiers": {
+    "boundary": {
+      "result": "the exact fourteenth spectrum has 125 low-transversal minimum cores, all correct through budget seven; a minimum three-point correction reaches fourteen blocks; the exact raw fifteenth spectrum has no extension",
+      "evidence_level": "exact_corrected_fourteenth_transition",
+      "promoted": false
+    },
+    "Hall": {
+      "result": "cross-copy conflict degree Delta gives the sharp worst-case motif threshold ceil((27*(Delta+1)+1+e)/3)",
+      "evidence_level": "exact_cross_copy_conflict_degree_interface",
+      "promoted": false
+    },
+    "threshold": {
+      "result": "the target-buffer graph has 44 three-round one-factorizations, but every matching covers all 16 cells with load histogram 2:8 and 5:8",
+      "evidence_level": "exact_threshold_factorization_and_exposure_collision_obstruction",
+      "promoted": false
+    },
+    "prefix": {
+      "result": "an explicit 28-cell no-three source on 14x14 supplies fourteen anchors and passes all 8192 ordered-composition audits with maximum coordinate 100",
+      "evidence_level": "explicit_fourteen_pair_saturated_anchor_reservoir",
+      "promoted": false
+    },
+    "shell": {
+      "result": "heterogeneous schedules improve exactly when cumulative saving B_k=sum(3-b_i) exceeds setup; periodic schedules are completely classified by period surplus",
+      "evidence_level": "exact_heterogeneous_shell_schedule_envelope",
+      "promoted": false
+    },
+    "integration": {
+      "result": "zero rows promoted; closure false",
+      "evidence_level": "evidence_gate",
+      "promoted": false
+    }
+  },
+  "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+  "fixture_slack_below_one_quarter": "200502903475895999/3623878655999606784",
+  "geometric_closure": false,
+  "all_n_theorem": "open",
+  "next_theorem_identifier": "PP3dah"
+}
