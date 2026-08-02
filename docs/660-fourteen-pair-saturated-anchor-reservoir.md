@@ -1,7 +1,7 @@
 # Fourteen-pair saturated anchor reservoir
 
 The local obstruction in `docs/648` applies only to the canonical thirteen-pair
-source.  A deterministic global low-defect search reaches a different legal source
+source. A deterministic global low-defect search reaches a different legal source
 at size fourteen.
 
 ## PP3daq — Explicit global source
@@ -29,39 +29,48 @@ Pair the `P` cell in row `r` with the `Q` cell in row
 ```
 
 These fourteen pairs partition all twenty-eight source cells and have distinct row
-and column endpoints.  The established greedy primitive-direction insertion audit
+and column endpoints. The established greedy primitive-direction insertion audit
 passes all
 
 ```text
 2^13 = 8,192
 ```
 
-ordered compositions of fourteen.  Every mixed-run collinear triple is excluded,
+ordered compositions of fourteen. Every mixed-run collinear triple is excluded,
 and the maximum absolute coordinate over the full audit is 80.
 
-## PP3das — Incidence components and finite nesting
+## PP3das — Finite nesting and exact rerouting barrier
 
-The source incidence permutation has component sizes
+The fourteen-pair source incidence permutation has component sizes
 
 ```text
 2,2,2,2,3,3.
 ```
 
 Deleting any two-cycle component leaves an induced twelve-pair saturated source,
-providing four such deletions.  Deleting either three-cycle component leaves an
-induced eleven-pair saturated source.
+providing four such deletions. Deleting either three-cycle component leaves an
+induced eleven-pair saturated source. The displayed anchor pairing is not
+component-respecting, so this incidence nesting is not itself an anchor recurrence.
 
-The displayed anchor pairing is not component-respecting, and no componentwise
-restriction supplies a nested anchor construction.  The source therefore gives
-finite incidence nesting but not an anchor-compatible recurrence.
+The earlier canonical thirteen-pair source admits a complementary exact audit.
+It has 104 anchor matchings with the minimum four cross-component pairs. For each
+of its two two-pair components and each minimum-crossing matching, deleting the
+component creates exactly two outgoing and two incoming anchor assignments. The
+least valid reassignment changes exactly four remaining anchors, and every one of
+the 208 deletion cases has exactly 144 optimal reroutings.
+
+Thus component deletion has a sharp bounded combinatorial rerouting radius, but no
+coordinate insertion theorem realizes those reroutings uniformly.
 
 Exact checkers:
 
 - `scripts/check_prefix_14_low_defect_search.cpp`
 - `scripts/check_prefix_saturated_anchor_reservoir_14_components.cpp`
 - `scripts/check_prefix_fourteen_pair_reservoir.py`
+- `scripts/check_prefix_two_component_rerouting.py`
 
 ## Evidence boundary
 
 Explicit saturated anchor reservoirs now exist at eleven, twelve, thirteen, and
-fourteen pairs.  No uniform all-size construction or infinite family is proved.
+fourteen pairs. No uniform all-size construction, coordinate-safe rerouting rule,
+or infinite family is proved.
