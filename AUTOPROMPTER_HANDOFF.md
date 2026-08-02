@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint date: 2026-08-02 Australia/Melbourne
+Checkpoint time: 2026-08-02T23:05:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -18,8 +18,8 @@ all-length coordinate constructions.
   `docs/663--668`, `docs/669--674`, `docs/675--680`, and `docs/681--686`.
 - Current theorem range: `PP3ddb--PP3dds`.
 - Next available theorem identifier: `PP3ddt`.
-- Verified theorem-bearing head before this continuity commit:
-  `25e703bc7fe5a33034673004a167dc08819ffd77`.
+- Verified canonical head before this continuity commit:
+  `401c675ebdfbe2dc07974965de232f982856f9d7`.
 
 ## Corrected prior-tranche fact
 
@@ -187,6 +187,7 @@ python scripts/check_frontier_681_686.py
   certificates, all 19,834 threshold endpoint batches and the rigid layer/window
   obstruction, all 212,992 physical prefix compositions, and the shell
   LP/Eulerian execution examples.
+- The standalone structural integration gate passed exact arithmetic checks.
 - The complete historical chained runner was not executed end-to-end in this
   environment because a full local checkout remains unavailable; direct clone
   attempts could not resolve `github.com`.
