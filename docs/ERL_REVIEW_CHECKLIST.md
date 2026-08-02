@@ -7,8 +7,11 @@
 - [x] Pair-through-response component atlas compiled.
 - [x] Critical pair lines `x+y=2` and `x+y=4` classified.
 - [x] Infinite generic original-face family proved on both critical lines.
-- [x] All strict reversals on both critical lines classified: four pairs.
-- [ ] Prove or refute physical occurrence of the critical line classes.
+- [x] Global integer two-point strict reversal classification completed.
+- [x] Exactly four strict `3012` backgrounds proved; no strict `3210` background.
+- [x] Current side-four projection proved non-injective for complete scores.
+- [ ] Populate complete coordinate-labelled physical first-host fibres.
+- [ ] Prove or refute physical occurrence of the four strict backgrounds and tie classes.
 - [ ] Attach deletion causes, owners and installed legal operations.
 - [ ] Compile labelled child rows and exact positive weights.
 - [ ] Prove strict recurrent subcriticality or publish a realizable obstruction.
