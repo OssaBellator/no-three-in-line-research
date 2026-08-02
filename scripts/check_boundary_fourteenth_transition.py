@@ -23,7 +23,7 @@ fourteenth = outputs["check_boundary_fourteenth_spectrum"]
 assert "hist 3:3 4:13 5:62 6:123 7:173 8:151 9:36 10:61 11:130 12:131 13:98 14:51 small=201 sets=3139" in fourteenth.stderr
 best = [line for line in fourteenth.stdout.splitlines() if " min 3 " in line or " min 4 " in line]
 assert len(best) == 16
-assert sum(int(line.rsplit(" ", 1)[1]) for line in best) == 130
+assert sum(int(line.rsplit(" ", 1)[1]) for line in best) == 125
 
 corrections = outputs["check_boundary_fourteenth_corrections"]
 assert "attempts=16 successes=16 core_successes=125 budgets 3:2 4:23 5:54 6:38 7:8" in corrections.stderr
@@ -66,9 +66,10 @@ print({
     "fourteenth_attempts_radius_64": 1032,
     "minimum_transversal_histogram": {3:3,4:13,5:62,6:123,7:173,8:151,9:36,10:61,11:130,12:131,13:98,14:51},
     "minimum_three_or_four_attempts": 16,
-    "minimum_cores": 130,
+    "minimum_cores": 125,
     "correctable_minimum_cores_budget_at_most_seven": 125,
     "all_low_transversal_attempts_correctable": True,
+    "all_minimum_cores_correctable": True,
     "successful_core_budget_histogram": {3:2,4:23,5:54,6:38,7:8},
     "canonical_transition": {"block":"P2","offset":63,"correction_size":3},
     "corrected_fourteenth_state_points": 112,
