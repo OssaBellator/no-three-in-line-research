@@ -1,0 +1,45 @@
+name: Exact recurrent first-host pair-through-point atlas
+
+on:
+  push:
+    paths:
+      - scripts/check_exact_recurrent_first_host_pair_through_point_atlas.py
+      - data/exact_recurrent_first_host_pair_through_point_atlas.json
+      - docs/exact-recurrent-first-host-pair-through-point-atlas.md
+      - .github/workflows/exact-recurrent-first-host-pair-through-point-atlas.yml
+  pull_request:
+    paths:
+      - scripts/check_exact_recurrent_first_host_pair_through_point_atlas.py
+      - data/exact_recurrent_first_host_pair_through_point_atlas.json
+      - docs/exact-recurrent-first-host-pair-through-point-atlas.md
+      - .github/workflows/exact-recurrent-first-host-pair-through-point-atlas.yml
+
+jobs:
+  audit:
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_exact_recurrent_first_host_pair_through_point_atlas.py
+      - name: Validate deterministic manifest and mutation audit
+        run: |
+          python scripts/check_exact_recurrent_first_host_pair_through_point_atlas.py \
+            --check data/exact_recurrent_first_host_pair_through_point_atlas.json \
+            | tee /tmp/pair-atlas.json
+          python - <<'PY'
+          import json
+          data = json.load(open('/tmp/pair-atlas.json', encoding='utf-8'))
+          assert data['response_union_points'] == 11
+          assert data['distinct_lines_through_union_pairs'] == 36
+          assert data['pair_through_point_contribution_classes'] == 39
+          assert data['stored_integer_witness_pairs'] == 48
+          assert data['mutation_corruptions_rejected'] == 12
+          assert data['full_two_point_score_signature_classification_complete'] == 0
+          assert data['all_n_proved_by_checker'] == 0
+          PY
