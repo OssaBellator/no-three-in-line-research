@@ -99,6 +99,16 @@ proofs/composite-modulus-theorem-index-live-continuation-110.md
 .github/workflows/installed-construction-regression-902.yml
 ```
 
+### Reconciliation
+
+A parallel unreferenced checker for the same CMR1630--CMR1701 source range was removed in commit:
+
+```text
+be502db4b4a4f4bc798716d27311040797b50c67
+```
+
+Do not restore `scripts/check_prime_power_recurrent_cover_budget_census_ancestry.py`. The canonical checker is `scripts/check_prime_power_superlevel_budget_thin_auxiliary_ancestry.py` with contract `e155ea311c24...`.
+
 ## Decisions that must be preserved
 
 1. Return and selector terms remain one shared edge score; do not sum incompatible maxima.
