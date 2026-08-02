@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4085**. Every checker, bridge, fixture, manifest and regression preserves:
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4133**. Every checker, bridge, fixture, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -13,83 +13,85 @@ No finite census, registry digest, manifest or workflow result proves the all-`n
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_608.py
-manifest = 06e533ad5145c771fd0083ce94ca149124f10dcdd157043fd5bb2cea1facbb43
-operation kinds = 608
-checker contracts = 33
-owner-changing kinds = 161
-same-owner kinds = 447
-checkers = 59
+runner = scripts/run_prime_power_installed_construction_regression_656.py
+manifest = 5678e89e0f0b73946471b3c99cb027448266715a5ae0b0ffc42636dd4aa9bd3d
+operation kinds = 656
+checker contracts = 34
+owner-changing kinds = 162
+same-owner kinds = 494
+checkers = 61
 ```
 
 Inspect actual workflow runs before claiming CI success.
 
 ## 3. Installed inherited-coordinate surface
 
-### Through CMR4037
+### Through CMR4085
 
-Degree-two collateral banks, corrected line energy, physical credit ownership, rational certificate formats and finite full-grid policies through side six are installed. The side-six trap class preserves the failure of repeated one-layer target banks.
+Last-entering structural owners, exact same-owner rows, host-uniform upper quotients, line-profile envelopes, extension-free cylinders and cross-line selector/fractional matching normal forms are installed. The global matrix is block upper triangular, but same-owner blocks are not certified subcritical.
 
-### CMR4038--CMR4085
+### CMR4086--CMR4133
 
-Source CMR1318--CMR1389 installs:
+Source CMR1390--CMR1453 installs:
 
 ```text
-persistent last-entering structural owners
-finite forward owner DAG and block upper triangular offspring matrix
-exact state-credit classes and host-uniform upper quotients
-exact/dyadic line-profile rows and pair-moment envelopes
-extension-free permanent and exact derangement marginals
-exact line-composition and row-column cylinder rows
-cross-line edge-selector and fractional matching normal forms
-deterministic response selection from a strict fractional certificate
-blocked-response deficiency-one unit-wall descent
-side-five independent-line obstruction and zero-collateral cross-line witness
+weighted surviving-transversal optimization
+clean and threshold response selection
+failed-selector Hall witnesses and deficiency-one unit-wall descent
+fixed pre-sampling owner edges
+exact rook-class owner rows and probabilities
+sharp extension-free matching preclusion and two exceptional stars
+owner-tail policies and fractional cover/packing alternatives
+shared cross-line assignment primal/dual certificates
+harmonic conditional owner-star envelopes
+lattice-capacity refinement and exact inherited-span height cutoff
 ```
 
-The global spectral problem is reduced to same-owner diagonal blocks. The reduction does not prove those blocks subcritical.
+The corrected CMR1430--CMR1437 rook-owner formulas co-bind the earlier range rather than adding duplicate kinds.
 
-Two boundaries remain explicit:
+Three boundaries remain explicit:
 
 ```text
+uniform_cross_line_owner_policy_proved = 0
 same_owner_diagonal_blocks_subcritical = 0
-independent_line_kernel_sufficient = 0
 global_target_collateral_inequality_proved = 0
 ```
 
 ## 4. Active mathematical frontier
 
-Continue after source chapter 277 in literal order:
+Continue from source CMR1454:
 
 ```text
-candidate-transversal Hall walls
-rook-owner edge weights
-cross-line owner assignments
-harmonic owner bounds
-lattice-capacity owner bounds
-primitive-height, prefix, quotient/carry and CRT same-owner classes
+eligible owner signature fans
+fractional packed signature fans
+weighted displacement/carry routing
+exact-displacement private path payment
+transfer-resource triangularity
+root displacement child channels
+owner-disjoint packed/loaded alternatives
 ```
 
-The next useful result must quantitatively control cross-line selector loads or produce a strict same-owner weighted row. Another exact reformulation without a new bound is not closure.
+The next useful result must turn owner-capacity bounds into a uniform quantitative routing/payment alternative: strict same-owner assignment, finite token/resource depletion, a loaded-owner concentration, or strict child descent.
 
 ## 5. Global blockers
 
-1. Construct a uniform cross-line owner/selector rule for every canonical inherited-coordinate dirty owner.
-2. Prove a host-uniform strict integer/rational offspring inequality for that rule.
-3. Bound candidate-transversal, rook-owner, harmonic and lattice-capacity loads strongly enough to make every same-owner diagonal block subcritical.
-4. Route blocked rows through exact unit-wall descent and glue strict-child blocks with genuine triangular ownership.
-5. Integrate primitive-height, prefix, quotient/carry, thin and CRT classes into the same certificate.
-6. Audit the original operation list for global transition-kind exhaustiveness.
-7. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
+1. Construct one uniform cross-line owner/selector rule for every canonical inherited-coordinate dirty owner.
+2. Prove strict assignment duals for every eligible owner signature.
+3. Route exact displacement through prefix/carry classes without duplicate ownership.
+4. Pay private displacement paths by finite token/resource stocks or strict descendants.
+5. Separate packed owners from loaded owners and close the loaded branch.
+6. Integrate line-clean, returned-edge, fixed-interface, thin and CRT recurrent classes into one labelled certificate.
+7. Audit the original operation list for global transition-kind exhaustiveness.
+8. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
 
 ## 6. Validation blockers
 
 ```text
-registry 608 = locally executed and passed
+registry 656 = locally executed and passed
 new checker source/contract = locally compiled and reproduced
-runner 608 manifest = locally reproduced
-consolidated nine-verifier checker = not executed end to end locally
-complete 59-checker runner = not executed locally
+runner 656 manifest = locally reproduced
+consolidated seven-verifier checker = not executed end to end locally
+complete 61-checker runner = not executed locally
 workflow success = not observed
 ```
 
