@@ -20,6 +20,7 @@ on:
       - scripts/measure_product_side_seven_single_case_all_selectors.cpp
       - scripts/search_product_transposition_double_coset_ten.cpp
       - scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+      - scripts/verify_product_side_seven_multiplicity2_cases1400_1409.py
       - scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
       - scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.cpp
       - scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
@@ -34,13 +35,21 @@ permissions:
   contents: read
 
 jobs:
-  side-seven-replay:
+  side-seven-1390-1399-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
       - name: Replay cases 1390 through 1399
         run: python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+
+  side-seven-1400-1409-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay cases 1400 through 1409
+        run: python scripts/verify_product_side_seven_multiplicity2_cases1400_1409.py
 
   side-ten-replay:
     runs-on: ubuntu-latest
