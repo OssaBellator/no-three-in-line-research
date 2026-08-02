@@ -19,44 +19,43 @@ The broader goal remains a uniform AC theorem for the intended prime-minus-one i
 
 ## Completed and committed work
 
-### Existing ancestry
+### Durable trajectory through three triples
 
-The branch ancestry contains the AC manifest architecture, the complete explicit `p=19`, `n=18` zero-triple certificate, the prime-minus-one seed census, and the committed explicit `p=31` trajectory from potential 75 to potential 6 in 154 switches.
+The original committed 154-switch path reaches potential six. Three recovered exact tail segments now extend it:
 
-### Recovered p=31 tail
+- `6 -> 5`: 26 switches, exact barrier 10, lower components `1,9,33,860`;
+- `5 -> 4`: 32 switches, exact barrier 10, lower components `1,2,18,68,501`;
+- `4 -> 3`: 41 switches, exact barrier 10, lower components `1,2,10,29,286,2033`.
 
-#### Six to five
+The repository-backed trajectory reaches potential three in 253 switches after the alternating-star installation.
 
-- data: `data/ac-p31-tail-six-to-five.json`
-- verifier: `scripts/verify_ac_p31_tail_six_to_five.py`
-- exact barrier: `10`
-- switches: `26`
-- lower components through barrier nine: `1,9,33,860`
-- recovery processed/discovered counts: `65,865 / 75,945`
+Key new artifacts:
 
-#### Five to four
+- `data/ac-p31-tail-six-to-five.json`
+- `data/ac-p31-tail-five-to-four.json`
+- `data/ac-p31-tail-four-to-three.json`
+- their exact replay/component verifiers, theorem notes and proof ledgers;
+- `scripts/verify_ac_p31_trajectory_through_three.py` for the combined trajectory.
 
-- data: `data/ac-p31-tail-five-to-four.json`
-- verifier: `scripts/verify_ac_p31_tail_five_to_four.cpp`
-- exact barrier: `10`
-- switches: `32`
-- lower components through barrier nine: `1,2,18,68,501`
-- recovery processed/discovered counts: `182,766 / 223,692`
+### Three-triple lower components
 
-#### Four to three
+Artifacts:
 
-- data: `data/ac-p31-tail-four-to-three.json`
-- verifier: `scripts/verify_ac_p31_tail_four_to_three.cpp`
-- exact barrier: `10`
-- switches: `41`
-- lower components through barrier nine: `1,2,10,29,286,2033`
-- recovery processed/discovered counts: `1,367,504 / 1,524,432`
+- `data/ac-p31-three-triple-lower-components.json`
+- `scripts/verify_ac_p31_three_triple_lower_components.cpp`
+- `docs/alternating-core-p31-three-triple-lower-components.md`
+- `proofs/frontier-ac-p31-three-triple-lower-components.md`
 
-The durable explicit trajectory now reaches potential three in
+Exact component sizes:
 
-`154 + 26 + 32 + 41 = 253`
+- barrier 3: `1`;
+- barrier 4: `2`;
+- barrier 5: `5`;
+- barrier 6: `16`;
+- barrier 7: `80`;
+- barrier 8: `1159`.
 
-legal two-row switches after the alternating-star installation.
+None contains a two-triple state, so the certified next barrier lower bound is nine.
 
 ## Decisions and proof standards
 
@@ -65,35 +64,37 @@ legal two-row switches after the alternating-star installation.
 3. Every barrier lower bound requires complete sublevel-component exhaustion.
 4. Every upper path is replayed with exact determinant potential and permutation/disjointness checks.
 5. Long searches use durable accepted-state and predecessor checkpoints.
-6. Each recovered segment is committed before the next long search.
-7. Heuristic searches may locate candidates but never prove lower bounds.
-8. Do not create a pull request or merge unless explicitly requested.
+6. Symmetry quotienting is permitted only when returned paths are lifted and replayed in physical coordinates.
+7. Each completed segment or exhausted component is committed before the next larger search.
+8. Heuristic searches may locate candidates but never prove lower bounds.
+9. Do not create a pull request or merge unless explicitly requested.
 
 ## Blockers
 
-- No repository-backed three-to-two path or lower-component certificate exists yet.
-- The three-triple sublevel quotient is expected to be large and requires durable checkpoint serialization.
+- Barrier nine from the committed three-triple state is not yet exhausted.
+- No repository-backed three-to-two path exists.
+- The expected barrier-nine quotient is large and requires durable serialization.
 - No uniform theorem currently guarantees a terminal path for all prime-minus-one seeds.
 - The physical AC1 arithmetic conversion, repair-layer predicates and source-compatibility predicates remain open in the uniform argument.
 
 ## Uncommitted work
 
-- A combined replay verifier from potential 75 through potential 3.
-- Durable exact search from the committed three-triple endpoint toward two.
-- Any future `3 -> 2 -> 1 -> 0` certificate.
+- A durable symmetry-quotient search implementation for barrier nine.
+- The barrier-nine accepted-state queue and predecessor forest.
+- Any `3 -> 2 -> 1 -> 0` path.
 
-No completed logical unit is intentionally left only in chat at this checkpoint.
+No completed theorem or path unit is intentionally left only in chat at this checkpoint.
 
 ## Exact next steps
 
-1. Add and commit a combined verifier chaining the original 75-to-6 path with all three recovered tail data files.
-2. Start from the three-triple endpoint in `data/ac-p31-tail-four-to-three.json`.
-3. Enumerate complete lower components beginning at barrier three using a durable checkpoint format.
-4. If a lower state is found, replay and commit the exact path before increasing the barrier.
-5. If a component exhausts, commit its exact size as a lower-bound certificate before starting the next barrier.
-6. Continue checkpoint by checkpoint through two, one and zero triples.
-7. Update this handoff after every completed tail segment or exact component exhaustion.
+1. Commit a resumable barrier search tool that serializes canonical states, queue position, parent edge and physical lift data.
+2. Start the barrier-nine search from the endpoint in `data/ac-p31-tail-four-to-three.json`.
+3. Checkpoint frequently and preserve the complete predecessor forest.
+4. If a canonical state of potential at most two appears, lift its path and replay every physical switch before committing it.
+5. If the quotient exhausts, commit the exact quotient size, prove the quotient covers the physical component, and raise the barrier lower bound to ten.
+6. Continue at the next barrier and then through one and zero triples.
+7. Update this handoff after the search tool commit and after every completed component/path.
 
 ## Current remote checkpoint
 
-The latest completed proof ledger before this handoff update is commit `5c8a5a85747688c0b67d92935b253ce8d8d58353` on `agent/ac-p31-tail-recovery`.
+The latest completed proof ledger before this handoff update is commit `f571ff1a3fc3d2ef30c96959a50336e0ef49253a` on `agent/ac-p31-tail-recovery`.
