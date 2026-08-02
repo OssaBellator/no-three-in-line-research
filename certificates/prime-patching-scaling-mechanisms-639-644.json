@@ -1,0 +1,20 @@
+{
+  "tranche": "639-644",
+  "theorems": ["PP3cyf-PP3cyh","PP3cyi-PP3cyk","PP3cyl-PP3cyn","PP3cyo-PP3cyq","PP3cyr-PP3cyt","PP3cyu-PP3cyw"],
+  "candidate_field_completion": {"boundary":"4/5","Hall":"4/5","threshold":"5/5","prefix":"5/5","shell":"5/5","integration":"2/5"},
+  "candidate_fields_complete": 25,
+  "candidate_fields_total": 30,
+  "frontiers": {
+    "boundary": {"result":"corrected radius-64 path reaches twelve blocks; no raw thirteenth extension","evidence_level":"exact_corrected_twelfth_transition","promoted":false},
+    "Hall": {"result":"actual source-star fixture has three matching-shaped centres out of four and exact bad-centre pruning threshold 28+b","evidence_level":"exact_source_star_centre_pruning_interface","promoted":false},
+    "threshold": {"result":"every native two-swap realization has a seven-cell footprint with one transient source-unit cell","evidence_level":"exact_threshold_transient_buffer_cell_catalogue","promoted":false},
+    "prefix": {"result":"explicit thirteen-pair saturated source checks all 4096 compositions and contains induced eleven-pair subsources","evidence_level":"explicit_thirteen_pair_saturated_anchor_reservoir_with_nesting_obstruction","promoted":false},
+    "shell": {"result":"fixed collateral is amortizable exactly when per-use overhead is below one half","evidence_level":"exact_shell_batch_amortization_frontier","promoted":false},
+    "integration": {"result":"zero rows promoted; closure false","evidence_level":"evidence_gate","promoted":false}
+  },
+  "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+  "fixture_slack_below_one_quarter": "200502903475895999/3623878655999606784",
+  "geometric_closure": false,
+  "all_n_theorem": "open",
+  "next_theorem_identifier": "PP3cyx"
+}
