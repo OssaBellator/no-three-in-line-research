@@ -16,42 +16,58 @@ same-owner kinds = 1002
 checkers = 77
 ```
 
-## 3. Installed owner/fate and lineage surface
+## 3. Installed owner/fate and finite-lineage surface
 
-Source CMR1894--CMR1965 installs full owner/fate/collision class keys, compulsory weighted assignment artifacts, rank-three slack preconditioning, complete line-energy kernels, background increments, selector stability, normalized kernels, raw-fibre lineage and an exact side-four zero-response blocker atlas.
+The repaired CMR1894--CMR1965 bank installs complete owner/fate compression, compulsory certificate checks, line kernels, selector stability, raw-fibre lineage and the side-four blocker atlas.
 
-The missing source and verifier dependencies have been restored. All nine verifier programs and the consolidated checker execute locally. Complete recurrent-state population and global strictness remain open.
+Two deterministic post-ledger manifests now populate the complete normalized side-four matching/geometric layer:
+
+```text
+86 raw hosts
+206 response occurrences
+137 zero responses
+75 zero-response hosts
+11 blocker-alternative hosts
+42 unique minimum selectors
+44 tied minimizer faces
+47 positive next-energy gaps
+```
+
+Coordinate host, deletion, response, selector, minimizer face, collision key and normalized interface are complete. Global provenance and weighted rows remain open.
 
 ## 4. Active frontier
 
 ```text
-materialize the complete 86-host side-four raw-fibre lineage batch
-attach exact target, background, response and provenance data
-build every compulsory child-weighted row
-apply zero-response or exact blocker dispatch
-certify strict preconditioned kernels where possible
-publish the exact residual host/lineage worklist where strictness fails
+refine every host/selector record by exact owner, fate, line, interface and CRT labels
+populate compulsory return, selector, collision, line, interface and geometric coefficients
+attach positive child weights to every coefficient
+preserve full minimizer faces and exact stability gaps
+run zero-response or blocker dispatch
+validate slack-preconditioned inner and outer duals
+publish strict rows or an exact residual host/provenance worklist
 ```
 
 ## 5. Exact blockers
 
-1. Owner/fate rows are not populated for every recurrent state.
-2. Compulsory weighted certificates are not complete for the full recurrent bank.
-3. Raw-fibre backgrounds do not yet cover every provenance refinement.
-4. The side-four blocker atlas is exact, but its alternatives are not globally resolved in every recurrent row.
-5. A complete positive-vector certificate for every labelled recurrent block is still missing.
+1. Global owner/fate/interface/CRT provenance is not yet attached to the 86 normalized hosts.
+2. Compulsory weighted coefficients are not populated for the finite block.
+3. The selector manifests optimize only response-triple energy, not the complete coupled response score.
+4. The exact blocker alternatives are not yet resolved against every compulsory child term.
+5. A complete positive-vector certificate for the labelled recurrent block is missing.
 6. Global transition exhaustiveness and global termination remain open.
 
 ## 6. Validation boundary
 
 ```text
-nine standalone verifiers = executed locally
+nine standalone source verifiers = executed locally
 consolidated owner/fate checker = executed locally
 checker fixture corruptions = 17 rejected
 registry 1166 contract/census/payment counts/seal = locally reproduced
 runner 1166 manifest = locally reproduced
+raw-lineage manifest checker = executed locally; 10 corruptions rejected
+selected-response manifest checker = executed locally; 10 corruptions rejected
 complete 77-checker runner = not executed locally
 workflow success = not observed
 ```
 
-Workflow configuration is not CI success. The finite blocker atlas and repaired checker do not substitute for a populated strict recurrent certificate.
+Workflow configuration is not CI success. The populated matching/geometric manifests do not substitute for complete compulsory weighted recurrent rows.
