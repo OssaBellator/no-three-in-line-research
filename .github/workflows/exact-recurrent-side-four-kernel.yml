@@ -1,0 +1,33 @@
+name: Exact recurrent side-four kernel
+
+on:
+  push:
+    paths:
+      - 'scripts/check_exact_recurrent_side_four_kernel.py'
+      - 'data/exact_recurrent_side_four_kernel.json'
+      - 'docs/exact-recurrent-side-four-kernel.md'
+      - '.github/workflows/exact-recurrent-side-four-kernel.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile source
+        run: python -m py_compile scripts/check_exact_recurrent_side_four_kernel.py
+      - name: Rebuild and compare exact manifest
+        run: >-
+          python scripts/check_exact_recurrent_side_four_kernel.py
+          --check data/exact_recurrent_side_four_kernel.json
+      - name: Confirm honesty boundary
+        run: >-
+          python scripts/check_exact_recurrent_side_four_kernel.py |
+          python -c "import json,sys; d=json.load(sys.stdin); assert d['coordinate_host_response_complete']==1; assert d['all_n_proved_by_checker']==0; assert d['strict_lyapunov_certificate_proved']==0"
