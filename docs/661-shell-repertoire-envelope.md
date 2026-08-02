@@ -2,7 +2,8 @@
 
 The heterogeneous shell law permits varying period burdens, but variation alone
 does not create savings. This chapter gives the exact optimization envelope for a
-finite macro repertoire, including compatibility constraints.
+finite macro repertoire, including quotas, compatibility constraints, and robust
+worst-case scheduling.
 
 For macro type or transition `j`, write
 
@@ -35,8 +36,8 @@ being less than `3K-S`.
 
 ## PP3dau — Compatibility graph and positive-cycle criterion
 
-When macro compatibility is represented by a directed transition graph, assign
-edge saving
+When macro compatibility is represented by a finite directed transition graph,
+assign edge saving
 
 ```text
 w(e)=3-b(e).
@@ -46,9 +47,25 @@ Starting from the designated initial state, every fixed setup is amortizable if
 and only if a reachable directed cycle has positive total saving, equivalently if
 a reachable cycle has mean burden below three.
 
+### Proof
+
+A positive cycle may be repeated until its accumulated saving exceeds any fixed
+setup. Conversely, if every reachable cycle has nonpositive saving, removing a
+cycle from a walk never decreases total saving. Every walk then has a simple
+representative with at least as much saving, and the finite graph supplies a
+uniform finite upper bound. ∎
+
 The best asymptotic saving rate is the maximum reachable cycle mean of `w`, or
-three minus the minimum reachable cycle mean burden. Entry paths may lose controls;
-a positive cycle eventually repays any finite entry loss and setup.
+three minus the minimum reachable cycle-mean burden. If an entry path has saving
+`A` and reaches a cycle of gain `G>0`, the least number of complete repetitions
+needed to beat setup `S` is
+
+```text
+max(0, floor((S-A)/G)+1).
+```
+
+Entry paths and individual cycle edges may lose controls; only the positive total
+cycle gain controls indefinite amortization.
 
 ## PP3dav — Robustness against arbitrary schedules
 
