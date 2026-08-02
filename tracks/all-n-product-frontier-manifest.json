@@ -2,7 +2,7 @@
   "schema_version": 1,
   "reconciled_date": "2026-08-02",
   "branch": "research/all-n-product-construction",
-  "certified_through": "PX1193",
+  "certified_through": "PX1196",
   "side_seven": {
     "support_twenty_total_selectors": 71860,
     "certified_infeasible_selectors": 40399,
@@ -20,16 +20,25 @@
     "registered_uncounted_cases": [1400, 1409]
   },
   "semantic_compression": {
-    "reference_count": 192,
-    "relaxed_key_count": 150,
+    "baseline_reference_count": 192,
+    "baseline_relaxed_key_count": 150,
+    "reference_count": 208,
+    "relaxed_key_count": 165,
     "irredundant_basis_keys": 115,
     "basis_incidences": 231,
     "private_top_witnesses": 177,
     "maximum_overlap": 2,
+    "basis_covered_top_orders": 204,
     "clean_top_orders": 35112,
-    "covered_top_orders": 204,
-    "uncovered_top_orders": 34908,
-    "basis_digest": "12529763722981785837"
+    "covered_top_orders": 221,
+    "uncovered_top_orders": 34891,
+    "basis_digest": "12529763722981785837",
+    "expansion_reference_indices": [192, 207],
+    "expansion_new_distinct_keys": 15,
+    "expansion_extension_sum": 20,
+    "expansion_union_growth": 17,
+    "expansion_bottom_checks": 201600,
+    "expansion_digest": "16150749401146711547"
   },
   "constructive_template": {
     "case": 1287,
