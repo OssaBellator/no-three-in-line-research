@@ -1,0 +1,33 @@
+name: Inherited-coordinate diagonal-block frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_inherited_coordinate_diagonal_block_ancestry.py'
+      - 'scripts/verify_prime_power_last_entering_owner_triangularity.py'
+      - 'scripts/verify_prime_power_exact_credit_upper_quotients.py'
+      - 'scripts/verify_prime_power_degree_two_bank_line_profiles.py'
+      - 'scripts/verify_prime_power_line_profile_pair_moments.py'
+      - 'scripts/verify_prime_power_extension_free_permanent.py'
+      - 'scripts/verify_prime_power_extension_free_derangement_marginals.py'
+      - 'scripts/verify_prime_power_extension_free_line_kernel.py'
+      - 'scripts/verify_prime_power_extension_free_exact_cylinders.py'
+      - 'scripts/verify_prime_power_cross_line_edge_assignment.py'
+      - 'docs/527-prime-power-inherited-coordinate-diagonal-block-ancestry.md'
+      - '.github/workflows/inherited-coordinate-diagonal-block-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run inherited-coordinate diagonal-block checker
+        run: python scripts/check_prime_power_inherited_coordinate_diagonal_block_ancestry.py
