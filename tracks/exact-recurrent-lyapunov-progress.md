@@ -72,7 +72,7 @@ counterexample to the conjecture.
 ## ERL1e first-host selector background witness — PROVED
 
 For `s4-75b04c45c1c8eac2`, empty-background scores are `(1,4)`, giving unique
-selector `3012` and gap `3`. Adding the affine schema-completion point `(4,3)` on
+selector `3012` and gap `3`. Adding affine schema-completion point `(4,3)` on
 `x-y-1=0` and off `x+y-3=0` changes the scores to `(4,4)`. The minimizer face
 changes from `{3012}` to `{3012,3210}`.
 
@@ -105,21 +105,15 @@ restore 02 -> 2031 or 2310
 restore 20 -> 3201.
 ```
 
-A singleton background spoils a response exactly when it lies on one of its six
-secants. The affine common-secant points of all three reopening responses are
+The affine common-secant points of all three reopening responses are
 
 ```text
 (-1,4), (2/3,7/3), (3/2,3/2), (7/3,2/3), (4,-1).
 ```
 
-The only integer points are `(-1,4)` and `(4,-1)`. For either witness, all three
-reopening scores rise from zero to one. The two original response scores become
-`3012=2` and `3210=10`.
-
-There is no common integer witness inside the original `4x4` square; each integer
-witness requires one unit of relative coordinate padding. Global realization is
-not claimed. The theorem proves that intrinsic zero-response dispatch is not
-background-robust and must retain background secant incidences.
+The only integer points are `(-1,4)` and `(4,-1)`. Either witness raises all
+three reopening scores from zero to one. There is no common integer witness
+inside the original `4x4` square. Global realization is not claimed.
 
 ## ERL1h lossless first-host background signature — PROVED
 
@@ -129,12 +123,12 @@ For the five-response menu
 3012, 3210, 2031, 2310, 3201,
 ```
 
-the exact complete new-triple score vector is determined by a finite signature:
+the exact complete new-triple score vector is determined by
 
 ```text
 20 response-secant line loads
 11 background-pair-through-response-point counts
-31 integer coordinates total
+31 integer coordinates total.
 ```
 
 For every finite background `B` disjoint from response `Q`,
@@ -146,28 +140,20 @@ score(Q;B)
  + sum_{q in Q} pair_B(q).
 ```
 
-This follows by partitioning new triples according to whether they contain three,
-two or one response points. The exact `5 x 31` coefficient matrix has rational
-row rank five; the four selector-difference rows have rank four.
-
-The implementation was checked against direct triple enumeration on all 2,626
-backgrounds of size at most three drawn from the padded `6 x 6` audit domain,
-for 13,130 response/background comparisons. All agree.
-
-This replaces the vague background requirement by a lossless geometric input
-contract. Actual signature values, physical owners, legal operations and child
-rows remain unpopulated.
+The exact `5 x 31` coefficient matrix has rational row rank five; the four
+selector-difference rows have rank four. Direct enumeration agrees on 2,626
+backgrounds and 13,130 response/background comparisons.
 
 ## ERL1i canonical forbidden-background invariance — PROVED CONDITIONALLY
 
 Let
 
 ```text
-F={00,01,11,22,33}
+F={00,01,11,22,33}.
 ```
 
-be the four diagonal cells plus target `01`. For every one of the 32 subsets
-`B` of `F`, all five candidate scores receive the same common offset
+For every one of the 32 subsets `B` of `F`, all five candidate scores receive
+the common offset
 
 ```text
 c(B)=1[{00,01} subset B]+1[{01,11} subset B].
@@ -181,13 +167,59 @@ Hence
 3210=c(B)+4.
 ```
 
-The exact offset census is 20 backgrounds with offset zero, eight with offset
-one and four with offset two. The selector order is preserved on all 32
-backgrounds, and the minimizer face is always `{2031,2310,3201}`.
+The selector order is preserved, with minimizer face
+`{2031,2310,3201}`. This is a complete safe local class, not a physical coverage
+theorem.
 
-This is a complete safe local class, not a physical coverage theorem. The
-singleton witnesses from ERL1g lie outside `F`, so the unresolved physical issue
-is whether exterior secant incidences can occur in a realizable first-host fibre.
+## ERL1j full integer singleton signature atlas — PROVED
+
+For one integer background point disjoint from the union of all five candidate
+responses, the pair-through-point part of the 31-coordinate signature vanishes.
+The point is either off all 20 secants, on exactly one secant, or at an
+intersection of at least two secants.
+
+Exact arrangement census:
+
+```text
+distinct response secants                         20
+distinct rational secant intersections           103
+integer intersections including response points   27
+excluded response-union points                    11
+admissible integer intersections                  16
+distinct integer singleton score signatures       15
+```
+
+The complete score classification is:
+
+```text
+minimum score 0                 14 signatures
+minimum score 1                  1 signature
+original response is minimizer   0 signatures
+```
+
+The zero-score reopening census is:
+
+```text
+3 zero reopenings   3 signatures
+2 zero reopenings   6 signatures
+1 zero reopening    5 signatures
+0 zero reopenings   1 signature
+```
+
+The unique class with no zero reopening is
+
+```text
+3012=2, 3210=10, 2031=2310=3201=1,
+```
+
+realized exactly by the two integer points `(-1,4)` and `(4,-1)`. Even there,
+the three reopening responses remain the minimizer face. Thus no integer
+singleton background makes either original residual response optimal.
+
+The implementation reconstructs all line and intersection classes, supplies a
+generic integer witness for every secant, checks direct scores on 10,190 lattice
+points in `[-50,50]^2`, and rejects thirteen corruptions. Physical singleton
+coverage and every multi-point background claim remain zero.
 
 ## First host: exact known interface
 
@@ -202,13 +234,15 @@ restore 20        exposes 3201
 coarse H=2 bound  69
 score signature   20 line loads + 11 pair counts
 safe local class  all 32 subsets of {00,01,11,22,33}
+singleton atlas   15 exact integer score classes
+critical points   (-1,4), (4,-1)
 ```
 
 ## Active work queue
 
-- **#18:** prove whether every physical first-host occurrence lies in the safe
-  forbidden-background signature class; otherwise populate each exterior class,
-  together with deletion causes, owners and legal transitions.
+- **#18:** classify the two-point background layer, where pair-through-response-
+  point coordinates first become nonzero; then prove physical coverage or
+  populate exterior signatures, deletion causes, owners and legal transitions.
 - **#19:** publish a realizable non-strict SCC or failed row whenever found.
 - **#20:** classify the unique depth-two overlap under installed operations.
 - **#21:** compile exact offspring rows and solve or refute the strict rational
