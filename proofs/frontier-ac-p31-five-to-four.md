@@ -25,7 +25,7 @@ Search counts are not proof inputs. The proof consists of the exact replay and t
 ## Artifacts
 
 - `data/ac-p31-five-to-four.json`
-- `scripts/verify_ac_p31-five-to-four.py` is not a valid path; the committed verifier is `scripts/verify_ac_p31_five_to_four.py`.
+- `scripts/verify_ac_p31_five_to_four.py`
 - `docs/alternating-core-p31-five-to-four.md`
 
 ## Next task
