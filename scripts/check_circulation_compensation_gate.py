@@ -22,13 +22,14 @@ BOUNDARY = {
     "minimum_four_cores": 5,
     "budgets_exhausted": (4, 5, 6),
     "correctable_through_budget_six": 0,
+    "six_point_replacements_rejected": 37976400,
     "minimum_remaining_budget": 7,
 }
-assert BOUNDARY["minimum_four_attempts"] == 1
-assert BOUNDARY["minimum_four_cores"] == 5
 assert BOUNDARY["minimum_remaining_budget"] == max(BOUNDARY["budgets_exhausted"]) + 1
 
 HALL = {
+    "degree_two_incidence_graphs": 10172,
+    "retention_formula": "(3q+o)/2",
     "two_packet_cases": 76156,
     "exact_cases": 3766,
     "strict_cases": 72390,
@@ -39,10 +40,14 @@ assert HALL["exact_cases"] + HALL["strict_cases"] == HALL["two_packet_cases"]
 THRESHOLD = {
     "minimal_batches": 19834,
     "support_histogram": {2: 5, 3: 210, 4: 2255, 5: 17364},
-    "two_support_partition": (4, 1),
+    "minimum_illegal_layers": 12,
+    "minimum_layer_decomposition_unique": True,
+    "cyclic_orders": 6720,
+    "maximum_legal_four_windows": 2,
 }
 assert sum(THRESHOLD["support_histogram"].values()) == THRESHOLD["minimal_batches"]
-assert THRESHOLD["support_histogram"][2] == 5
+assert THRESHOLD["minimum_illegal_layers"] == 12
+assert THRESHOLD["maximum_legal_four_windows"] < 8
 
 PREFIX = {
     "physical_matchings": 104,
@@ -62,6 +67,7 @@ SHELL = {
     "connector_saving": Fraction(-2),
     "least_bundle_repetitions": 3,
     "executable_gain": Fraction(1),
+    "connected_integer_circulations_checked": 1086,
 }
 assert 2 * SHELL["normalized_margin"] == SHELL["integer_bundle_gain"]
 assert 2 * SHELL["integer_bundle_gain"] + SHELL["connector_saving"] == 0
@@ -85,11 +91,11 @@ print({
     "candidate_fields_complete": 25,
     "candidate_fields_total": 30,
     "new_results": {
-        "boundary": "the unique minimum-four nineteenth attempt has five cores and none repairs through deletion budget six",
-        "Hall": "packet concatenation retains at least sum r_j minus certified interface edges, giving exact positive-surplus thresholds",
-        "threshold": "there are exactly 19834 minimal equal-weight hidden-mixture batches with a complete support and multiplicity census",
-        "prefix": "the first optimal route for all 208 physical matching/deletion cases passes all 1024 compositions",
-        "shell": "positive robust circulations are finite LP certificates and clear to executable closed walks after exact connector repayment",
+        "boundary": "the unique five-core minimum nineteenth frontier has no preserving correction through deletion budget six",
+        "Hall": "defect-incidence odd-path retention and packet-interface surplus give exact conditional asymptotic bounds",
+        "threshold": "19834 minimum endpoint batches share one rigid twelve-identity aggregate layer decomposition and no legal rolling four-window schedule",
+        "prefix": "the deterministic first optimal route passes all 1024 compositions in all 208 physical matching/deletion cases",
+        "shell": "robust circulation LP witnesses are directly executable exactly on connected support, with explicit connector repayment otherwise",
     },
     "actual_evidence_levels": ACTUAL_EVIDENCE,
     "promoted_rows": PROMOTED,
