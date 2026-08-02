@@ -13,10 +13,8 @@ assert sum(value for value, _ in CANDIDATE_FIELDS.values()) == 25
 assert sum(total for _, total in CANDIDATE_FIELDS.values()) == 30
 
 ACTUAL_EVIDENCE = {name: "fixture_derived" for name in CANDIDATE_FIELDS}
-PROMOTED = tuple(
-    name for name, evidence in ACTUAL_EVIDENCE.items()
-    if evidence == "geometrically_verified"
-)
+PROMOTED = tuple(name for name, evidence in ACTUAL_EVIDENCE.items()
+                 if evidence == "geometrically_verified")
 assert PROMOTED == ()
 
 BOUNDARY = {
@@ -25,8 +23,9 @@ BOUNDARY = {
     "canonical_budget": 6,
     "corrected_points": 144,
     "corrected_blocks": 18,
-    "nineteenth_minimum_four_attempts": 2,
-    "nineteenth_minimum_four_cores": 6,
+    "nineteenth_minimum_four_attempts": 1,
+    "nineteenth_minimum_four_cores": 5,
+    "stale_p1_minus_33_minimum": 5,
 }
 assert BOUNDARY["corrected_points"] == 8 * BOUNDARY["corrected_blocks"]
 
@@ -48,9 +47,7 @@ THRESHOLD = {
     "hidden_states": 3,
     "legal_facet_states": 5,
 }
-assert THRESHOLD["hidden_states"] * THRESHOLD["hidden_score"] == (
-    THRESHOLD["batch_size"] * THRESHOLD["source_score"]
-)
+assert THRESHOLD["hidden_states"] * THRESHOLD["hidden_score"] == THRESHOLD["batch_size"] * THRESHOLD["source_score"]
 assert THRESHOLD["hidden_states"] + THRESHOLD["legal_facet_states"] == THRESHOLD["batch_size"]
 
 PREFIX = {
@@ -60,12 +57,7 @@ PREFIX = {
     "pairs_checked": 40960,
     "maximum_coordinate": 132,
 }
-assert (
-    PREFIX["selected_representatives"]
-    * PREFIX["deletion_cases"]
-    * PREFIX["compositions_per_route"]
-    == PREFIX["pairs_checked"]
-)
+assert PREFIX["selected_representatives"] * PREFIX["deletion_cases"] * PREFIX["compositions_per_route"] == PREFIX["pairs_checked"]
 
 SHELL = {
     "primitive_robust_gains": (Fraction(-1), Fraction(-1)),
@@ -77,14 +69,8 @@ SHELL = {
 assert max(SHELL["primitive_robust_gains"]) < 0
 assert SHELL["mixed_margin"] > 0
 assert SHELL["composite_robust_gain"] == 2 * SHELL["mixed_margin"]
-assert (
-    SHELL["connector_saving"]
-    + (SHELL["least_positive_bundles"] - 1) * SHELL["composite_robust_gain"]
-) <= 0
-assert (
-    SHELL["connector_saving"]
-    + SHELL["least_positive_bundles"] * SHELL["composite_robust_gain"]
-) > 0
+assert SHELL["connector_saving"] + (SHELL["least_positive_bundles"] - 1) * SHELL["composite_robust_gain"] <= 0
+assert SHELL["connector_saving"] + SHELL["least_positive_bundles"] * SHELL["composite_robust_gain"] > 0
 
 FIXED_POINT = (
     Fraction(70590897652005075, 1207959551999868928),
@@ -100,14 +86,11 @@ assert TOTAL == Fraction(705466760524005697, 3623878655999606784)
 assert SLACK == Fraction(200502903475895999, 3623878655999606784)
 
 print({
-    "candidate_field_completion": {
-        name: f"{value}/{total}"
-        for name, (value, total) in CANDIDATE_FIELDS.items()
-    },
+    "candidate_field_completion": {name: f"{value}/{total}" for name, (value, total) in CANDIDATE_FIELDS.items()},
     "candidate_fields_complete": 25,
     "candidate_fields_total": 30,
     "new_results": {
-        "boundary": "one of seven eighteenth cores repairs at budget six; the corrected chain reaches eighteen blocks",
+        "boundary": "one of seven eighteenth cores repairs at budget six; the corrected chain reaches eighteen blocks; the raw nineteenth minimum-four frontier is uniquely P2/-64 with five cores",
         "Hall": "bipartite maximum-degree-two centre conflicts have an exact path/even-cycle retention formula",
         "threshold": "the 3/8 hidden-mass lower bound is attained algebraically by a minimal eight-state mixture",
         "prefix": "forty selected routes pass all 1024 compositions, for 40960 finite coordinate audits",
