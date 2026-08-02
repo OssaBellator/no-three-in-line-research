@@ -1,0 +1,65 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "663-668",
+  "theorems": [
+    "PP3daz", "PP3dba", "PP3dbb",
+    "PP3dbc", "PP3dbd", "PP3dbe",
+    "PP3dbf", "PP3dbg", "PP3dbh",
+    "PP3dbi", "PP3dbj", "PP3dbk",
+    "PP3dbl", "PP3dbm", "PP3dbn",
+    "PP3dbo", "PP3dbp", "PP3dbq"
+  ],
+  "boundary": {
+    "raw_sixteenth_attempts": 1032,
+    "minimum_four_attempts": 9,
+    "minimum_four_cores": 39,
+    "certified_transition": {"node":"P1","offset":-37,"deletions":4},
+    "corrected_points": 128,
+    "corrected_blocks": 16,
+    "raw_seventeenth_extensions": 0,
+    "raw_seventeenth_histogram": {"3":1,"4":2,"5":17,"6":56,"7":192,"8":248,"9":1,"10":18,"11":65,"12":182,"13":162,"14":88},
+    "unique_minimum_three_attempt": "P2/-57"
+  },
+  "hall": {
+    "local_load": "L_v=sum_{r in R(v)}(mu_r-1)",
+    "exact_degree": "d_v=L_v-sum_{u!=v}max(|R(u) intersect R(v)|-1,0)",
+    "incidence_only_packing": "ceil(sum_v 1/(L_v+1))",
+    "uniform_corollary": "ceil(M/(s(lambda-1)+1))",
+    "two_stage_condition": "3*ceil(sum_v 1/(L_v+1))-m>=28"
+  },
+  "threshold": {
+    "legal_permutation_layers": 18,
+    "legal_four_layer_matrices": 4475,
+    "separator": "Phi(M)=M03+M10-M11-M22+M30+M32",
+    "source_score": -3,
+    "legal_score_histogram": {"0":495,"1":956,"2":1193,"3":1012,"4":590,"5":176,"6":44,"7":8,"8":1},
+    "finite_legal_endpoint_compensation": false
+  },
+  "prefix": {
+    "canonical_minimum_cross_matching": [3,6,5,0,1,2,7,4,10,8,12,9,11],
+    "two_pair_deletion_cases": 2,
+    "optimal_reroutings_per_case": 144,
+    "compositions_per_rerouting": 1024,
+    "rerouting_composition_pairs_checked": 294912,
+    "all_pairs_pass": true,
+    "best_maximum_coordinates": [87,84],
+    "worst_maximum_coordinates": [144,156]
+  },
+  "shell": {
+    "edge_burden_interval": "[lower_e,upper_e]",
+    "possible_condition": "a reachable cycle has sum_e(3-lower_e)>0",
+    "robust_condition": "a reachable cycle has sum_e(3-upper_e)>0",
+    "robust_mean_condition": "a reachable cycle has upper-burden mean below three",
+    "robust_setup_repetitions": "max(0,floor((S-A)/G)+1)"
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "promoted_rows": [],
+    "actual_evidence_level": "fixture_derived",
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3dbr"
+  }
+}
