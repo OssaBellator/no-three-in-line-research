@@ -15,8 +15,8 @@ fourteenth attempts have exact minimum-transversal histogram
 9:36, 10:61, 11:130, 12:131, 13:98, 14:51.
 ```
 
-Exactly sixteen attempts have minimum transversal at most four.  Their minimum
-cores total 130:
+Exactly sixteen attempts have minimum transversal at most four. Their minimum
+cores total 125:
 
 ```text
 P0/-29:9   P0/60:3   P0/62:54
@@ -27,20 +27,17 @@ P3/-13:3   P3/57:3   P3/61:3   P3/63:3.
 
 The exhaustive kernel is `scripts/check_boundary_fourteenth_spectrum.cpp`.
 
-## PP3czq — Attemptwise correction through budget seven
+## PP3czq — Complete minimum-core correction through budget seven
 
-Every one of the sixteen low-transversal attempts has at least one row-and-column
-preserving legal correction with total deletion size at most seven.
-
-Of the 130 minimum cores, 125 admit such a correction.  The exact successful-core
+Every one of the 125 minimum cores has a row-and-column-preserving legal
+correction with total deletion size at most seven. The exact first-success
 minimum-budget distribution is
 
 ```text
 3:2, 4:23, 5:54, 6:38, 7:8.
 ```
 
-Five minimum cores do not admit a correction within the searched budget.  The
-claim is therefore attemptwise, not a statement that every minimum core repairs.
+Consequently every one of the sixteen low-transversal attempts is correctable.
 The exhaustive kernel is `scripts/check_boundary_fourteenth_corrections.cpp`.
 
 ## PP3czr — Canonical three-point correction and fifteenth obstruction
@@ -65,11 +62,13 @@ and add
 (32,258),(44,377),(52,79).
 ```
 
-The deletion and addition multisets agree in every row and column.  The corrected
-state has 112 points, fourteen blocks, and no collinear triple.
+The deletion and addition multisets agree in every row and column. Because the
+correction size equals the exact minimum transversal number three for that
+attempt, this canonical correction is minimum. The corrected state has 112
+points, fourteen blocks, and no collinear triple.
 
 Using next origin `(56,376)`, all eight node variants at all 129 offsets fail as
-raw fifteenth extensions.  Their exact minimum-transversal histogram is
+raw fifteenth extensions. Their exact minimum-transversal histogram is
 
 ```text
 4:10, 5:36, 6:100, 7:193, 8:186,
@@ -81,5 +80,5 @@ transition or periodic corrected-state invariant is yet known.
 
 ## Evidence boundary
 
-This is an exact finite corrected transition.  It does not establish recurrence,
+This is an exact finite corrected transition. It does not establish recurrence,
 an unbounded corrected component, or the all-`n` theorem.
