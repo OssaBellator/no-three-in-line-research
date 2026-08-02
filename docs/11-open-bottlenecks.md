@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4181**. Every checker, bridge, fixture, manifest and regression preserves:
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4229**. Every checker, bridge, fixture, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -13,89 +13,77 @@ No finite census, registry digest, manifest or workflow result proves the all-`n
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_714.py
-manifest = c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
-operation kinds = 714
-checker contracts = 35
+runner = scripts/run_prime_power_installed_construction_regression_782.py
+manifest = 895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
+operation kinds = 782
+checker contracts = 36
 owner-changing kinds = 164
-same-owner kinds = 550
-checkers = 63
+same-owner kinds = 618
+checkers = 65
 ```
 
 Inspect actual workflow runs before claiming CI success.
 
-## 3. Installed inherited-coordinate surface
+## 3. Installed recurrent-core surface
 
-### Through CMR4133
+### Through CMR4181
 
-Candidate transversals, fixed rook owners, exact rook probabilities, owner assignment, harmonic envelopes and lattice-capacity refinements are installed. They expose exact owner loads but do not yet prove one uniform strict owner policy.
+Candidate-transversal, owner-capacity, signature, displacement, carry, private-support and root-child operations are installed. Strict transfer and first-use resources are off-diagonal; recurrent root, token, loaded-owner, fixed-interface and CRT blocks remain.
 
-### CMR4134--CMR4181
+### CMR4182--CMR4229
 
-Source CMR1454--CMR1509 installs:
-
-```text
-eligible prime-power owner signatures
-fractional packed signature concentration
-exact-displacement translated banks
-weighted prefix/carry routing
-private translation-path reserve payment
-finite monotone edge/token resources
-transfer-resource block triangularity
-root residue channels and quotient carries
-strict root child normalization
-owner-disjoint packed/loaded payment
-```
-
-The off-diagonal frontier is substantially reduced: strict scaling, earlier-depth transfer, fresh resource use and strict child channels no longer need independent diagonal contraction estimates.
-
-The exact remaining recurrent cores are:
+Source CMR1510--CMR1581 installs:
 
 ```text
-root-channel/fixed-interface states
-repeated absolute-token and reused residual-edge states
-loaded-owner/loaded-line states
-line-clean recurrent factors
-returned-edge exchange/selector states
-thin and CRT interface blocks
+partial-matching deletion survival and complete nonaxis line cleaning
+zero same-owner same-line collateral
+atomic repeated-token return/selector/trace rows
+exact degree-two component rook rows
+strong, singleton and endpoint-overlap line-clean coefficients
+subunit selector-to-return restoration splices
+finite first-restoration and rooted-centre stocks
+rooted trace strong/singleton execution
+returned-edge exchange-pair kernels
+finite rational return upper quotients
+exact two-row return-selector criterion
 ```
+
+The line-clean and return frontiers are now exact finite coefficient problems. They are not yet numerically certified strict.
 
 ## 4. Active mathematical frontier
 
-Continue from source CMR1510:
+Continue from source CMR1582:
 
 ```text
-extension-free partial-matching line-clean response
-repeated-token atomic compression
-line-clean exact rook rows
-line-clean uniform permanent envelopes
-line-clean factor signature sharpening
-singleton fractional factors
-paid-pair selector/return splices
-trace-centre line-clean splice
-returned-edge exchange kernels
+return-selector shared assignment scalarization
+line-clean integer credit budgets
+critical selector profile localization
+prime-field root-channel support splice
+fixed-interface thin exact tables
+label-preserving CRT certificate assembly
 ```
 
-The next useful result must certify a recurrent core numerically or dispatch it to a finite exact table, paid return splice or strict descendant.
+The next useful result must construct a strict rational/integer certificate or complete finite table for a genuinely recurrent block.
 
-## 5. Global blockers
+## 5. Exact global blockers
 
-1. Prove strict rational/integer inequalities for recurrent root-channel and fixed-interface blocks.
-2. Compress repeated-token/reused-edge recurrence into finite atomic credit classes.
-3. Prove the loaded-owner/loaded-line block subcritical or dispatch it to line-clean execution.
-4. Close returned-edge selector and exchange-kernel recurrence without duplicate ownership.
-5. Integrate thin fixed-interface tables and CRT labelled assembly.
-6. Audit the original operation list for global transition-kind exhaustiveness.
-7. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
+1. Prove strong, singleton and endpoint-overlap line-clean inequalities in every inherited geometric class.
+2. Bound the critical paid-pair selector regime not covered by the subunit restoration splice.
+3. Compute or dominate the returned-edge exchange quotient and prove `alpha + beta*T < 1` classwise.
+4. Execute trace incidences whose rooted centre cannot be chosen as the fixed target.
+5. Certify prime-field root/fixed-interface and thin residual blocks.
+6. Preserve collision, local-line and interface labels through CRT assembly and glue all certified blocks.
+7. Audit the original operation list for global transition-kind exhaustiveness.
+8. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
 
 ## 6. Validation blockers
 
 ```text
-registry 714 = locally executed and passed
+registry 782 = locally executed and passed
 new checker source/contract = locally compiled and reproduced
-runner 714 manifest = locally reproduced
-consolidated seven-verifier checker = not executed end to end locally
-complete 63-checker runner = not executed locally
+runner 782 manifest = locally reproduced
+consolidated nine-verifier checker = not executed end to end locally
+complete 65-checker runner = not executed locally
 workflow success = not observed
 ```
 
