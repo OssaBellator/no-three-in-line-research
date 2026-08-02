@@ -18,6 +18,8 @@ all-length coordinate constructions.
   `docs/663--668`.
 - Current theorem range: `PP3daz--PP3dbq`.
 - Next available theorem identifier: `PP3dbr`.
+- Verified theorem-bearing head before this continuity commit:
+  `474f84030aeb68b07b2b23f87ae4f46308bcd680`.
 
 ## Completed canonical tranche: `docs/663--668`
 
@@ -28,14 +30,17 @@ Theorems `PP3daz--PP3dbb`.
 - The 1,032 raw sixteenth attempts have exact minimum-transversal histogram
   `4:9,5:21,6:88,7:166,8:238,9:8,10:38,11:83,12:157,13:151,14:73`.
 - Exactly nine attempts have minimum four, with thirty-nine minimum cores.
-- The certified `P1/-37` four-point correction deletes
+- Canonical attempt `P1/-37` has fifteen minimum cores. All fifteen admit a
+  row/column-preserving correction through deletion budget seven, with exact
+  first-success distribution `4:1,5:7,6:5,7:2`.
+- The smallest canonical correction deletes
   `(22,106),(39,165),(48,315),(62,312)` and adds
   `(22,315),(39,312),(48,165),(62,106)`.
 - The corrected state has 128 points, sixteen blocks, and no collinear triple.
 - All 1,032 raw seventeenth attempts fail. Their exact histogram is
   `3:1,4:2,5:17,6:56,7:192,8:248,9:1,10:18,11:65,12:182,13:162,14:88`.
-- The unique minimum-three seventeenth attempt is `P2/-57`, with three minimum
-  cores.
+- The unique minimum-three seventeenth attempt is `P2/-57`, with five conflict
+  triples and three minimum cores.
 
 ### Hall — `docs/664-local-resource-incidence-hall-packing.md`
 
@@ -52,18 +57,19 @@ Theorems `PP3dbc--PP3dbe`.
 - With selected-centre matching loss `m`, the two-stage Hall condition is
   `3*ceil(sum_v 1/(L_v+1))-m>=28`.
 
-### Threshold — `docs/665-global-threshold-separation.md`
+### Threshold — `docs/665-legal-convex-threshold-separation.md`
 
 Theorems `PP3dbf--PP3dbh`.
 
 - The integer functional
-  `Phi(M)=M[0,3]+M[1,0]-M[1,1]-M[2,2]+M[3,0]+M[3,2]`
+  `Phi(M)=-M[0,0]+M[1,0]+M[1,2]+M[2,1]+M[3,2]-M[3,3]`
   gives source score `-3`.
 - All 4,475 legal four-layer matrices have nonnegative score, with exact
   histogram `0:495,1:956,2:1193,3:1012,4:590,5:176,6:44,7:8,8:1`.
-- Every legal endpoint has displacement margin at least three from the source.
 - The source is outside the convex hull of the legal catalogue, so no nonempty
-  finite legal endpoint-only batch can compensate back to the source.
+  finite legal endpoint-only batch can average back to the source.
+- The eight nearest legal targets are at `L1` distance six and all lie on the
+  sharp supporting face `Phi=0`.
 
 ### Prefix — `docs/666-coordinate-anchor-rerouting-lift.md`
 
@@ -78,10 +84,15 @@ Theorems `PP3dbi--PP3dbk`.
   compositions under the established greedy primitive-direction insertion rule.
 - The exhaustive audit covers 294,912 rerouting/composition pairs with no
   mixed-run collinear triple.
-- Maximum-coordinate distributions are recorded exactly; best bounds are 87 and
-  84, and worst bounds are 144 and 156 for the two deletion cases.
+- Maximum-coordinate distributions are exact; best bounds are 87 and 84, and
+  worst bounds are 144 and 156 for the two deletion cases.
 
-### Shell — `docs/667-interval-shell-cycle-robustness.md`
+A distinct supplemental finite audit remains committed at
+`scripts/check_prefix_second_reservoir_rerouting.py`. It checks 19,008
+anchor-permutation deletion cases for the second fourteen-pair reservoir but is
+not assigned theorem identifiers and is not part of the canonical `666` claim.
+
+### Shell — `docs/667-robust-interval-shell-cycles.md`
 
 Theorems `PP3dbl--PP3dbn`.
 
@@ -91,10 +102,11 @@ Theorems `PP3dbl--PP3dbn`.
 - Every admissible realization is guaranteed to amortize every setup exactly when
   a reachable cycle has `sum_e(3-upper_e)>0`.
 - This yields exact robust, possible-only, and impossible regimes.
-- With guaranteed entry saving `A`, robust cycle gain `G>0`, and setup `S`, the
-  least guaranteed repetition count is `max(0,floor((S-A)/G)+1)`.
+- With worst-case entry saving `A_minus`, robust cycle gain `G_minus>0`, and setup
+  `S`, the least guaranteed repetition count is
+  `max(0,floor((S-A_minus)/G_minus)+1)`.
 
-### Integration — `docs/668-robust-compensation-evidence-gate.md`
+### Integration — `docs/668-coordinate-compensation-evidence-gate.md`
 
 Theorems `PP3dbo--PP3dbq`.
 
@@ -110,17 +122,18 @@ Theorems `PP3dbo--PP3dbq`.
 ## Reproducibility
 
 - `scripts/check_boundary_sixteenth_spectrum.cpp`
+- `scripts/check_boundary_sixteenth_canonical_corrections.cpp`
 - `scripts/check_boundary_seventeenth_spectrum.cpp`
 - `scripts/check_boundary_sixteenth_transition.py`
 - `scripts/check_hall_local_resource_incidence.py`
-- `scripts/check_threshold_global_separation.py`
+- `scripts/check_threshold_legal_convex_separation.py`
 - `scripts/check_prefix_coordinate_rerouting_lift.py`
 - `scripts/check_prefix_rerouting_geometry.cpp`
 - `scripts/check_prefix_rerouting_geometry.py`
 - `scripts/check_shell_interval_cycle_robustness.py`
-- `scripts/check_robust_compensation_gate.py`
+- `scripts/check_coordinate_compensation_gate.py`
 - `scripts/check_frontier_663_668.py`
-- `certificates/prime-patching-robust-compensation-663-668.json`
+- `certificates/prime-patching-coordinate-compensation-663-668.json`
 - `proofs/prime-patching-parity-index-663-668-supplement.md`
 
 Latest chained command:
@@ -131,18 +144,19 @@ python scripts/check_frontier_663_668.py
 
 ## Validation status
 
-- The sixteenth spectrum, certified correction, corrected 128-point state, and
-  complete seventeenth spectrum were executed successfully in isolated local
-  runs.
+- `scripts/check_boundary_sixteenth_transition.py` was executed successfully in an
+  isolated local runtime after adding the canonical correction kernel. It compiled
+  the sixteenth census, all-fifteen-core canonical correction audit, and
+  seventeenth census; it also verified the legal 128-point state.
 - The Hall canonical audit records exhaustive checks of all 54,263 multisets of
   at most six nonempty motif types on four resources against exact independence
   numbers.
-- The threshold separator was independently reconstructed over all eighteen legal
-  permutation layers and all 4,475 legal four-layer matrices.
+- The threshold audit reconstructed all eighteen legal permutation layers and all
+  4,475 legal four-layer matrices, confirming the separator and score histogram.
 - The exhaustive prefix C++ audit compiled and ran successfully, checking all
   294,912 rerouting/composition pairs and the exact coordinate-bound histograms.
-- The shell interval checker was reviewed and its exact robust, possible-only, and
-  impossible examples are committed.
+- The shell interval audit checks reachable-cycle examples, all interval corners,
+  and the exact setup repayment formula.
 - Exact fixed-point arithmetic and the closed integration gate are committed.
 - The complete historical chained runner was not executed in this environment
   because a full repository checkout was unavailable; earlier clone attempts could
@@ -150,13 +164,13 @@ python scripts/check_frontier_663_668.py
 
 ## Decisions
 
-- Preserve one canonical theorem chapter, audit path, gate, and certificate per
-  frontier number. Concurrent duplicate Hall, threshold, and integration artifacts
-  were removed.
-- Use the certified `P1/-37` repair without claiming exhaustive repair of all
-  thirty-nine sixteenth cores.
+- Preserve one canonical theorem chapter, audit path, integration gate, and
+  certificate per frontier number. Concurrent duplicate Hall, threshold, prefix,
+  shell, integration, and certificate artifacts were removed.
+- Strengthen `PP3dba` only for all fifteen minimum cores of canonical `P1/-37`;
+  do not claim exhaustive repair of all thirty-nine sixteenth cores.
 - Treat local Hall resource incidence as a promotion interface until instantiated
-  by actual host coordinates and both degree-two restrictions.
+  by actual host coordinates and both restricted degree-two conditions.
 - Treat the threshold separator as a complete obstruction for the present legal
   four-layer endpoint catalogue; future work must change or enlarge the state
   model.
@@ -186,7 +200,7 @@ python scripts/check_frontier_663_668.py
 
 - No completed repository change is intentionally left only in chat.
 - Exhaustive correction of all thirty-nine sixteenth minimum cores was not
-  completed; the theorem records only the verified correction.
+  completed; the theorem records the complete canonical-attempt audit only.
 - Unsuccessful exploratory searches were not promoted as theorem evidence.
 
 ## Exact next steps
