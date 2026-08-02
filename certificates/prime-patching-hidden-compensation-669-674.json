@@ -57,7 +57,12 @@
     "matching_deletion_cases": 208,
     "deletion_case_orbit_sizes": [16,32,80,80],
     "grid_dihedral_source_symmetries": 1,
-    "coordinate_orbit_reduction": false
+    "coordinate_orbit_reduction": false,
+    "supplemental_diagonal_subgroup_size": 160,
+    "supplemental_matching_orbits": 20,
+    "supplemental_orbit_size_histogram": {"2": 12, "10": 8},
+    "supplemental_unit_coordinate_lifts": 40,
+    "supplemental_unit_coordinate_lifts_pass": true
   },
   "shell": {
     "polyhedral_fixed_cycle_condition": "max_{b in U}<b,chi_C><3|C|",
