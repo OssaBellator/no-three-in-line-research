@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "reconciled_date": "2026-08-02",
+  "branch": "research/all-n-product-construction",
+  "certified_through": "PX1224",
+  "side_seven": {
+    "support_twenty_total_selectors": 71860,
+    "certified_infeasible_selectors": 40479,
+    "constructive_selectors": 2,
+    "unclassified_selectors": 31379,
+    "certified_rejection_nodes": 3297611555,
+    "multiplicity_two_classified_cases": [0, 1439],
+    "multiplicity_two_classified_selectors": 2880,
+    "multiplicity_two_infeasible_selectors": 2879,
+    "multiplicity_two_constructive_selectors": 1,
+    "multiplicity_two_next_case": 1440,
+    "multiplicity_two_unresolved_signatures": 2400,
+    "multiplicity_two_unresolved_selectors": 4800,
+    "multiplicity_one_unresolved_selectors": 26579,
+    "registered_uncounted_cases": [1440, 1449]
+  },
+  "semantic_compression": {
+    "baseline_reference_count": 192,
+    "baseline_relaxed_key_count": 150,
+    "reference_count": 208,
+    "relaxed_key_count": 165,
+    "irredundant_basis_keys": 115,
+    "basis_incidences": 231,
+    "private_top_witnesses": 177,
+    "maximum_overlap": 2,
+    "basis_covered_top_orders": 204,
+    "clean_top_orders": 35112,
+    "covered_top_orders": 221,
+    "uncovered_top_orders": 34891,
+    "basis_digest": "12529763722981785837",
+    "expansion_reference_indices": [192, 207],
+    "expansion_new_distinct_keys": 15,
+    "expansion_extension_sum": 20,
+    "expansion_union_growth": 17,
+    "expansion_bottom_checks": 201600,
+    "expansion_digest": "16150749401146711547"
+  },
+  "constructive_template": {
+    "case": 1287,
+    "selector": 0,
+    "orientation": 0,
+    "status": "verified_constructive",
+    "next_target": "compute certified symmetry orbit and normalized local template inventory"
+  },
+  "side_ten": {
+    "fine_pair_classified_indices": [0, 6799],
+    "fc_geometries": 6800,
+    "fc_nodes": 232466543,
+    "fc_maximum_nodes": 1877339,
+    "ff_geometries": 6800,
+    "ff_nodes": 150194835,
+    "ff_maximum_nodes": 909040,
+    "constructive_witnesses": 0,
+    "registered_uncounted_indices": [6800, 7199]
+  },
+  "asymptotic_repair": {
+    "certified_cutoff_decimal_exponent": 2874,
+    "threshold_lower": "1.0979139",
+    "threshold_upper": "1.0979151",
+    "nine_percent_insufficient_through_exponent": "2873.0585",
+    "nine_percent_sufficient_from_exponent": "2873.0616",
+    "next_target": "prove the interval-specific improvement on the first 6.16 percent of the logarithmic slab or reduce effective divisor loss"
+  },
+  "protected_spread": {
+    "first_tested_cubic_order": 13,
+    "common_rainbow_matchings": 4524,
+    "next_target": "cubic residual entropy and bounded rank-three completion multiplicity after compatible rank-at-most-three conditioning"
+  },
+  "global_repair": {
+    "canonical_side": 6,
+    "global_complete_minimax_path_maximum": 38,
+    "next_target": "global bounded-barrier repair or resampling theorem"
+  },
+  "carry_absorber": {
+    "profiled_sides": [2, 5],
+    "side_five_factor_pairs": 64,
+    "side_five_maximum_multiplicity_pairs": 8,
+    "side_five_maximum_multiplicity": 72,
+    "next_target": "second-generation collateral concentration, monotone termination, or bounded-denominator absorption"
+  },
+  "frontier_ids": [
+    "side-seven-census",
+    "side-ten-recursion",
+    "semantic-compression",
+    "constructive-template",
+    "finite-range-arithmetic",
+    "protected-spread",
+    "repair-resampling",
+    "carry-absorbers"
+  ]
+}

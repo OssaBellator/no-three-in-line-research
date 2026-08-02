@@ -1,0 +1,92 @@
+name: Product side-seven multiplicity-two cases 1440 through 1449
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-frontier.yml
+      - .github/product-side-seven-multiplicity-two-1440-1449-trigger.txt
+  workflow_dispatch:
+
+concurrency:
+  group: product-side-seven-frontier-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  classify-case:
+    name: case-${{ matrix.case }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    strategy:
+      fail-fast: false
+      matrix:
+        case: [1440, 1441, 1442, 1443, 1444, 1445, 1446, 1447, 1448, 1449]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-side-seven-multiplicity-two-1440-1449' .github/product-side-seven-multiplicity-two-1440-1449-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact selector classifier
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/measure_product_side_seven_single_case_all_selectors.cpp
+          -o /tmp/classify-product-side-seven-case
+      - name: Classify exact case
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/classify-product-side-seven-case "${{ matrix.case }}" 2 \
+            | tee "product-side-seven-multiplicity-two-case-${{ matrix.case }}.txt"
+          grep -Eq '^FINAL case=${{ matrix.case }} .* PASS$' \
+            "product-side-seven-multiplicity-two-case-${{ matrix.case }}.txt"
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-multiplicity-two-case-${{ matrix.case }}
+          path: product-side-seven-multiplicity-two-case-${{ matrix.case }}.txt
+          if-no-files-found: error
+
+  summarize:
+    if: always()
+    needs: classify-case
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: product-side-seven-multiplicity-two-case-*
+          merge-multiple: true
+      - name: Build compact frontier summary
+        shell: bash
+        run: |
+          shopt -s nullglob
+          files=(product-side-seven-multiplicity-two-case-*.txt)
+          if ((${#files[@]} == 0)); then
+            printf 'No exact case transcript was produced.\n' > frontier-summary.md
+            exit 1
+          fi
+          printf '## Exact side-seven multiplicity-two cases 1440--1449\n\n' > frontier-summary.md
+          for file in $(printf '%s\n' "${files[@]}" | sort -V); do
+            printf '### `%s`\n\n```text\n' "$file" >> frontier-summary.md
+            tail -n 3 "$file" >> frontier-summary.md
+            printf '```\n\n' >> frontier-summary.md
+          done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: product-side-seven-multiplicity-two-1440-1449-summary
+          path: frontier-summary.md
+          if-no-files-found: error
+
+# Registered but uncounted until every transcript is promoted and replayed.

@@ -1,88 +1,50 @@
 # Status and honesty ledger
 
-**Last updated:** 24 July 2026
+**Last updated:** 2 August 2026
 
 ## External status
 
-The classical no-three-in-line conjecture \(D(n)=2n\) remains open. A July 2026 paper proves the analogous maximum \(kn\) for every fixed \(k\ge3\) and sufficiently large \(n\), while identifying \(k=2\) as the exceptional unresolved case.
+The classical no-three-in-line problem remains unresolved. The analogous no-`(k+1)`-in-line problem is resolved for each fixed `k>=3` and sufficiently large `n`; that does not settle the exceptional `k=2` case studied here.
 
-## What is genuinely proved in this notebook
+## What this branch genuinely proves
 
-1. **Saturated decomposition.** A set with exactly two points in every row and column decomposes into two permutation layers.
-2. **Clone-host regularity criterion.** Small active-coordinate secant shadow gives a near-complete superregular completion host.
-3. **Candidate-only logarithmic obstruction.** A constant-density candidate host contains \(\Omega(n^4\log n)\) collinear candidate triples; first-moment pruning cannot close the problem.
-4. **Reverse-scale certified multicover.** Descending dyadic heights avoids the protected-long-line problem and gives exact potential destruction under target deletion.
-5. **Spread injection lemma.** A dense target-partner graph with \(t\ll p\) admits a \(K/p\)-spread random injection by greedy exposure.
-6. **Uniform local-bank implication.** Explicit switch-shadow and anchor-load conditions imply negative expected drift.
-7. **Protected tomographic trades.** Difference operators produce finite row/column/direction line-sum-preserving signed trades.
-8. **Affine finite-direction construction.** For suitable arithmetic moduli, two affine permutations give a saturated configuration avoiding any fixed finite direction set.
-9. **Subgroup coset absorbers.** Suitable affine configurations contain linearly many independently switchable blocks preserving protected toroidal line sums.
-10. **Exact one-block collateral identity.** For absorber order \(h\le H\), a high line meets a block at most once and average collateral equals external secant shadow divided by \(h\).
-11. **Block-shadow closure.** Whole-block reservoir growth makes every reservoir block externally shadow-clean without row/column deficits.
-12. **Product-state LLL criterion.** A full-product block completion exists when normalized pair/triple conflict mass per block is small.
-13. **Complementary hyperbola seed.** \(H_a\cup H_b\) has two points per row/column, at most four per line, no monochromatic triples, and bounded displacement multiplicity.
-14. **Low-syndrome seed.** Some pair of hyperbola channels has \(O(n\log n)\) triple certificates.
-15. **Hamiltonian-cycle criterion.** The union graph cycles are controlled by the multiplicative order of \(b/a\).
-16. **Möbius secant matching.** For a fixed opposite-channel anchor, same-channel secant pairs form a projective involution matching.
-17. **Cycle-bank theorem.** Every trapping cycle supports a \(k\)-state row-column-preserving cyclic matching trade.
-18. **Window-product theorem.** Each cycle state lies in a number of modular hyperbolas equal to its distinct cyclic window-product count.
-19. **Collision-free carry-cycle bank bound.** Every carry-filtered cycle has a collision-aware full-permutation state whose cost is bounded by normalized one-, two-, and three-cell certificate counts.
-20. **Frozen-cycle concentration.** Failure of every cycle-block state forces a dense one-cell shadow, anchored-pair shadow, or candidate-only triple core.
-21. **Clone-space exact selection theorem.** A uniformly random perfect matching on two row and column clones avoids unavailable cells, duplicate cells and all lifted collinear triples whenever the maximum local canonical-event probability load is at most \(1/24\).
-22. **Concrete endpoint.** For \(n\ge100\), a candidate host with at most \(n/100\) unavailable cells and at most \(n^3/200\) residual collinear triples incident with each row or column contains a saturated no-three-in-line configuration.
-23. **Selection failure concentration.** Failure in a near-complete candidate host forces some row or column to support \(\Omega(n^3)\) residual collinear triples.
-24. **Fixed-rank superregular spread.** A uniformly random perfect matching of a dense superregular pair is \(O(1/N)\)-spread for every fixed rank, by six-cycle switchings.
-25. **Clone inheritance.** The two-clone blow-up of a superregular pair remains superregular with explicit parameter loss.
-26. **Two-layer spread.** Dense superregular pairs support a spread distribution on two edge-disjoint perfect matchings, giving exact row and column degree two.
-27. **Global conflict-mass endpoint.** A dense superregular host contains a saturated conflict-free two-layer selection whenever the total spread-weighted conflict mass is below one.
-28. **Inverse-additive repair banks.** Small quotient sets and many low-complexity windows produce linear common-ratio rectangle banks; near-minimal quotient sets complete to subgroup-coset absorbers.
-29. **Coset and rational propagation.** Structured cycle parameters propagate to opposite-colour anchor structure, while full subgroup cosets of order at least three expand under the normalized Möbius map.
-30. **Exact common-ratio collateral.** The cost of one same-ratio rectangle switch is exactly its two weighted secant loads plus the occupancy of its switched-pair line.
-31. **Common-ratio decoder-or-structure theorem.** A paid common-ratio bank either contains an improving rectangle, a dense channel-pair secant star, or a large aligned multiplicative anchor class.
-32. **Uniform conversion inequality.** If total current defect incidence exceeds \(2m\Theta+2q\Lambda\), one rectangle strictly lowers the triple potential.
-33. **Syndrome-weighted quotient extraction.** If \(|X/X|\le K|X|\), actual point triple degrees produce an admissible common-ratio matching carrying at least \(H/(6K)\) vertex-incidence weight.
-34. **Paid-bank lower bound.** In a \(q\)-channel universe, the extracted bank has \(D\ge H/(6K)-(q-1)|X|\).
-35. **Weighted conversion criterion.** Sufficiently large structured syndrome incidence forces an improving rectangle or one of the explicit alternating-closure structures.
-36. **Projective conic-pencil geometry.** Every opposite-channel anchor has an exact modular tangent/secant profile governed by \(\chi(1-b/a)\).
-37. **Aligned-anchor carry signatures.** Nondegenerate signatures have only \(p^{o(1)}\) real solutions, while degenerate signatures are exact affine-interpolation cells.
-38. **Sharp same-channel carry dispersion.** A same-channel real secant star has divisor-bounded multiplicity at each exact cross-carry level.
-39. **Universal star carry dispersion.** Any endpoint-disjoint secant star, including a cross-channel star, occupies at least its edge count divided by \(p^{o(1)}\) product-carry signatures.
-40. **Combined paid-bank transition.** A failed paid bank produces an improvement, product/coordinate carry dispersion, or a perfect affine-alignment population.
-41. **Perfect-alignment parameter classification.** Zero-leading-carry parameters form an explicit finite rational grid; the two endpoint parameters are inadmissible.
-42. **Reduced-denominator chamber criterion.** Perfect alignment at parameter \(t'/q\) occurs exactly when both relevant wrap indices are divisible by \(q\).
-43. **Denominator-sensitive sparsity.** A denominator-\(q\) perfect chamber contains at most \(4p/q\) base points; positive-density chambers therefore have bounded denominator.
-44. **Explicit wrap centers.** Every degenerate scalar carry cell is radial about one rational center \(pS/d\), while every nondegenerate cell meets one hyperbola channel at most twice.
-45. **Perfect-wrap factorization.** After recentering a degenerate chamber, its points satisfy a divisor-controlled integer product equation.
-46. **Wrap-center dispersion.** A large perfect-alignment class either occupies many rational centers or has multipliers with a large common divisor relative to their size.
-47. **Two-forbidden-matching spread.** Permutations avoiding a position set of row/column degree at most two have constant density and \(128/(t)_r\) cylinder bounds.
-48. **Movable endpoint substar.** A star of \(M\) endpoint-disjoint pairs contains at least \(M/(2q)\) movable endpoints in one permutation layer and channel.
-49. **Alternating star neutralization.** Permuting those endpoints within their rows and columns destroys the dominant original star while preserving saturation and layer disjointness.
-50. **Joint-bank collateral bound.** The remaining expected collateral is controlled by normalized one-, two-, and three-anchor certificate counts.
+1. Saturated states decompose into two permutation layers, and product existence has exact finite CSP/SAT encodings.
+2. The branch proves factor-independent products `2x3 -> 6`, `2x4 -> 8`, `2x5 -> 10`, and `2x6 -> 12`.
+3. Every saturated side-`n` factor has a factor-compatible side-`2n` state with `O(n log n)` bad triples.
+4. The audited paired repair path is effective for every `N >= 10^2874`.
+5. At decimal order `2873`, the unchanged divisor-improvement threshold satisfies `1.0979139 < rho_* < 1.0979151`. A 9% improvement is insufficient through exponent `2873.0585` and sufficient from `2873.0616` onward.
+6. All side-seven support-twenty selectors of multiplicity at least three are classified. Multiplicity-two cases `0--1439` are also classified with witness-aware exact replay.
+7. The classified multiplicity-two prefix contains `2,880` selectors: `2,879` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
+8. Across support twenty, the exact cache contains `40,479` certified-infeasible selectors, two constructive selectors, `31,379` unclassified selectors, and `3,297,611,555` certified rejection-CSP nodes.
+9. The semantic-compression frontier has 208 references, 165 relaxed keys, 221 covered clean top orders, and `34,891` uncovered clean top orders. The basis digest is `12529763722981785837`; the expansion digest is `16150749401146711547`.
+10. At side ten, fine-row pair indices `0--6799` are obstructed in both `fc` and `ff`, with no constructive witness in those 13,600 geometries.
+11. Protected-spread, repair, and carry diagnostics include the first tested genuinely cubic common-rainbow family at order 13, the exact canonical side-six repair-path profile, and complete side-two through side-five carry-level profiles.
 
-## What remains conditional
+## Current exact finite boundary
 
-- Uniform scale-sensitive cleaning of switch shadows and anchored pair shadows.
-- Product-state conflict regularization for candidate-only triples.
-- Carry-sensitive phase codes.
-- Orbit Tanner expansion beyond bounded local conflict mass.
-- Alternating two-colour carry-core termination and conversion.
-- A second-order concentration theorem for the normalized certificate counts of the alternating neutralization bank.
-- A monotone carry-complexity potential showing that repeated carry/wrap-center dispersion must terminate or enter an absorbable exception.
-- Row-column-preserving absorbers for bounded-denominator perfect-interpolation chambers.
-- A superregular resampling oracle or exact conflict-free perfect-matching theorem that upgrades spread to a local-load endpoint.
-- Sparse algebraic \(O(1/d)\)-spread when the candidate degree is \(d=o(N)\).
+The side-seven support-twenty cache contains `71,860` selectors:
 
-## Important refutations
+- `40,479` certified infeasible;
+- `2` constructive;
+- `31,379` unclassified.
 
-- Dense constant-probability pruning cannot make all candidate-only triple constraints sparse enough.
-- A large secant bank does not automatically certify destruction of current defects.
-- Wall expansion does not necessarily terminate in an improving synchronized state.
-- A single common absorber shift or common slope can be trapped by translated blocks.
-- Bounded line occupancy and bounded pair codegree alone do not imply private-repair expansion.
-- A carry-filtered cycle need not have an improving cyclic state, an improving full one-colour permutation state, or an improving extracted order-two orbit absorber.
-- A spread perfect-matching measure does not by itself inherit the complete-permutation negative-dependency graph.
-- Arbitrary pair weights do not admit constant-fraction extraction into one quotient ratio; the positive theorem relies on vertex-induced syndrome weights and saturation.
+The unresolved set is exactly `2,400` multiplicity-two signatures containing `4,800` selectors plus `26,579` multiplicity-one selectors. The next canonical multiplicity-two case is `1440`. Cases `1440--1449` are registered but uncounted.
+
+For side ten:
+
+- `fc`: indices `0--6799`, `232,466,543` nodes, maximum `1,877,339`;
+- `ff`: indices `0--6799`, `150,194,835` nodes, maximum `909,040`.
+
+Indices `6800--7199` are registered but uncounted.
+
+## Active frontiers
+
+- Continue multiplicity two from case `1440`, then classify multiplicity one.
+- Continue side-ten fine-row obstruction from pair index `6800`, then address larger double cosets.
+- Continue semantic-union expansion from the `34,891` uncovered clean top orders and recompute a compact basis for the 221-top union.
+- Determine whether the case-`1287` construction has a symmetry orbit or reusable local template.
+- Advance the decimal-2873 arithmetic, protected-spread, global repair, and carry/absorber frontiers without upgrading conditional statements.
 
 ## Bottom line
 
-There is no complete proof. The reviewed branch is merged. Carry and wrap-center classification now make every first-generation obstruction explicit, and a dominant secant star can be neutralized by an exact two-colour permutation bank. The next bottleneck is the second-generation normalized collateral of that joint bank, followed by a monotone termination or bounded-denominator absorption theorem.
+There is no complete proof of the classical no-three-in-line conjecture and no infinite all-side product theorem. Registered workloads do not advance the certified boundary until their outputs are independently replayed and committed.
