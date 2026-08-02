@@ -7,14 +7,16 @@ on:
     paths:
       - .github/workflows/product-promoted-frontier-replay.yml
       - .github/workflows/product-side-seven-frontier.yml
-      - .github/workflows/product-side-ten-opposite-fine-5200-5599.yml
-      - .github/product-side-seven-multiplicity-two-1400-1409-trigger.txt
-      - .github/product-side-ten-opposite-fine-5200-5599-trigger.txt
+      - .github/workflows/product-side-ten-opposite-fine-5600-5999.yml
+      - .github/product-side-seven-multiplicity-two-1410-1419-trigger.txt
+      - .github/product-side-ten-opposite-fine-5600-5999-trigger.txt
       - AUTOPROMPTER_HANDOFF.md
       - STATUS.md
       - docs/365-side-seven-multiplicity-two-cases-1390-through-1399.md
       - docs/366-side-ten-opposite-pair-fine-row-thirteenth-prefix.md
       - docs/367-side-seven-semantic-uncovered-top-expansion-16.md
+      - docs/368-side-seven-multiplicity-two-cases-1400-through-1409.md
+      - docs/369-side-ten-opposite-pair-fine-row-fourteenth-prefix.md
       - tracks/all-n-product-current-frontiers.md
       - tracks/all-n-product-frontier-manifest.json
       - scripts/measure_product_side_seven_single_case_all_selectors.cpp
