@@ -14,10 +14,10 @@ def digest(value: Any)->str:
 BASE_CHAINED_MANIFEST_SHA256="ae6023ffcf2eed5fca0e2cd1a3050b29d4db3098370f8bb39c8a0fd59aef376b"
 BASE_MANIFEST_COUNT=75
 MANIFEST_EXTENSION=[
-("scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py","a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb","owner_fate_lineage_kernel_ancestry_proved"),
-("scripts/check_prime_power_installed_operation_registry_1166.py","29d41e186b0ab1be5b755f6c751a0cbb6ef6db89574e8f39f91ff1325e24be9f","installed_transition_kind_bank_1166_exhaustive"),
+("scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py","8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828","owner_fate_lineage_kernel_ancestry_proved"),
+("scripts/check_prime_power_installed_operation_registry_1166.py","383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b","installed_transition_kind_bank_1166_exhaustive"),
 ]
-EXPECTED_CHAINED_MANIFEST_SHA256="6bea37ee2abf2a6eff122fcf07bcd11348b6dc39378e8bab94f290d41e93d2c3"
+EXPECTED_CHAINED_MANIFEST_SHA256="e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d"
 
 def repository_root(start: Path|None=None)->Path:
     current=(start or Path(__file__).resolve()).resolve()
