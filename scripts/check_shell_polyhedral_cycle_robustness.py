@@ -41,12 +41,12 @@ vertices = (
     (Fraction(1), Fraction(4)),
     (Fraction(4), Fraction(1)),
 )
-cycles = ((1,0),(0,1))
-assert [robust_cycle_gain(vertices, cycle) for cycle in cycles] == [-1,-1]
-assert [worst_cycle_burden(vertices, cycle) for cycle in cycles] == [4,4]
+primitive_cycles = ((1,0),(0,1))
+assert [robust_cycle_gain(vertices, cycle) for cycle in primitive_cycles] == [-1,-1]
+assert [worst_cycle_burden(vertices, cycle) for cycle in primitive_cycles] == [4,4]
 
-# On the entire segment between the two vertices, the best revealed cycle has
-# saving max(2-3t, -1+3t), minimized at t=1/2 with value 1/2.
+# On the entire segment between the two vertices, the best revealed primitive
+# cycle has saving max(2-3t, -1+3t), minimized at t=1/2 with value 1/2.
 for numerator in range(0, 101):
     t = Fraction(numerator, 100)
     first = 2 - 3*t
@@ -54,15 +54,18 @@ for numerator in range(0, 101):
     assert max(first, second) >= Fraction(1,2)
 assert max(2-3*Fraction(1,2), -1+3*Fraction(1,2)) == Fraction(1,2)
 
-# The exact minimax dual uses equal cycle weights. Its expected gain is 1/2 at
-# both uncertainty vertices, certifying the adaptive margin without selecting one
-# fixed cycle in advance.
+# Equal mixed weights certify the same minimax value. Because these two loops share
+# a base state, one copy of each concatenates to a fixed closed walk with robust
+# total gain one. Thus the gap is between primitive cycles and composite execution,
+# not between all fixed closed walks and adaptive observation.
 weights = (Fraction(1,2), Fraction(1,2))
-assert mixed_cycle_gain(vertices, cycles, weights) == Fraction(1,2)
+assert mixed_cycle_gain(vertices, primitive_cycles, weights) == Fraction(1,2)
 for numerator in range(0, 101):
     weight = Fraction(numerator, 100)
-    candidate = mixed_cycle_gain(vertices, cycles, (weight, 1-weight))
+    candidate = mixed_cycle_gain(vertices, primitive_cycles, (weight, 1-weight))
     assert candidate <= Fraction(1,2)
+composite = (1,1)
+assert robust_cycle_gain(vertices, composite) == 1
 
 correlated_scenarios = (
     (Fraction(-2), Fraction(3)),
@@ -96,16 +99,17 @@ assert robust_cycle_gain(triangle_vertices, incidence) == (
 print({
     "polyhedral_fixed_cycle_condition": "max_{b in U} <b,chi_C> < 3|C|",
     "vertex_reduction": True,
-    "fixed_cycle_robust_gains_in_gap_example": (-1,-1),
-    "revealed_state_adaptive_minimum_gain": "1/2",
+    "primitive_cycle_robust_gains_in_example": (-1,-1),
+    "revealed_state_primitive_minimum_gain": "1/2",
     "mixed_cycle_dual_minimum_gain": "1/2",
     "mixed_cycle_weights": ("1/2","1/2"),
+    "composite_closed_walk_robust_gain": 1,
+    "primitive_vs_composite_gap": True,
     "adaptive_minimax_formula": "min_b max_C g_C(b)=max_lambda min_b sum_C lambda_C g_C(b)",
-    "fixed_vs_adaptive_gap": True,
     "correlated_setup_example_exact_repetitions": 7,
     "separate_extrema_bound": 10,
     "exact_correlated_repetition_formula": "max_u max(0,floor((S-A_u)/G_u)+1)",
-    "remaining_gap": "no coordinate macro graph supplies a certified polyhedral burden set with a fixed reachable robust-positive cycle",
+    "remaining_gap": "no coordinate macro graph supplies a certified polyhedral burden set and executable composite walk",
     "evidence_level": "exact_polyhedral_shell_cycle_interface",
     "status": "passed",
 })
