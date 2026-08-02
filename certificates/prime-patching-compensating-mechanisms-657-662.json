@@ -22,10 +22,12 @@
     "raw_sixteenth_histogram": {"4":9,"5":21,"6":88,"7":166,"8":238,"9":8,"10":38,"11":83,"12":157,"13":151,"14":73}
   },
   "hall": {
-    "resource_disjoint_motifs": "ceil(M/(Delta+1))",
-    "exact_retainable_good_centres": "3*ceil(M/(Delta+1))-tau(H)",
+    "motif_degree_sequence_bound": "ceil(sum_v 1/(d_v+1))",
+    "average_degree_corollary": "ceil(M/(average_degree+1))",
+    "exact_retainable_good_centres": "3*q-tau(H)",
     "bipartite_reduction": "tau(H)=nu(H)",
-    "sharp_candidate_threshold_under_matching_bound_m": "(ceil((28+m)/3)-1)*(Delta+1)+1"
+    "two_stage_condition": "3*ceil(sum_v 1/(d_v+1))-m>=28",
+    "sharpness": "disjoint unions of equal cliques plus a centre-conflict matching"
   },
   "threshold": {
     "perfect_matchings": 49,
@@ -35,6 +37,7 @@
     "round_footprint_cells": 16,
     "round_load_histogram": {"2":8,"5":8},
     "perfectly_balanced_one_round_batches": 49,
+    "balanced_intermediate_occurrences": 392,
     "balanced_legal_intermediate_occurrences": 0
   },
   "prefix": {
@@ -48,13 +51,19 @@
     "incidence_component_sizes": [2,2,2,2,3,3],
     "induced_twelve_pair_subsources": 4,
     "induced_eleven_pair_subsources": 2,
-    "component_respecting_anchor_pairing": false
+    "component_respecting_anchor_pairing": false,
+    "old_source_minimum_cross_component_anchor_matchings": 104,
+    "old_source_deletion_cases_checked": 208,
+    "old_source_minimum_rerouting_distance": 4,
+    "old_source_optimal_reroutings_per_case": 144
   },
   "shell": {
-    "unconstrained_minimum_burden": "K*min_j(b_j)",
+    "static_unconstrained_minimum_burden": "K*min_j(b_j)",
     "lower_quota_minimum_burden": "sum_j ell_j*b_j+(K-sum_j ell_j)*min_j(b_j)",
     "robust_all_schedule_condition": "K*(3-max_j(b_j))>S",
-    "some_uniformly_improving_length_exists": "max_j(b_j)<3"
+    "transition_saving": "w(e)=3-b(e)",
+    "all_setups_amortizable": "a reachable directed cycle has positive total saving",
+    "equivalent_cycle_condition": "a reachable cycle has mean burden below three"
   },
   "integration": {
     "candidate_completion": "25/30",
