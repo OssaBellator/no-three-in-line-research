@@ -13,51 +13,27 @@ Checkpoint updated: 2026-08-02 22:20 Australia/Melbourne.
 
 ## Goal
 
-Complete the explicit `p=31`, `n=30` trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact switch addresses and exact minimax barriers.
+Complete the explicit `p=31`, `n=30` trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact physical switch addresses and exact minimax barriers.
+
+The broader goal remains a uniform AC theorem. AC6 and the general no-three-in-line conjecture remain open.
 
 ## Durable trajectory status
 
-### Existing path to six
+### Existing path through four triples
 
-The branch ancestry contains the committed 154-switch path from potential 75 to potential 6.
+The branch contains:
 
-### Six to five: AC5nx--AC5ny
+- the 154-switch installed path from potential 75 to 6;
+- a 69-switch route from 6 to 5 with exact barrier 10;
+- a 527-switch route from 5 to 4 with exact barrier 10.
 
-- 69 legal switches;
-- maximum 10;
-- complete barrier-nine component: 860 states;
-- exact minimax barrier: 10;
-- endpoint potential: 5.
+### Four to three: AC5od--AC5of
 
-### Five-triple lower frontier and core: AC5nz--AC5oa
-
-- complete components at barriers 5--9: `1,2,14,100,6797`;
-- no state below five;
-- 812 legal immediate switches and no one-step improvement;
-- unique least neighbour `r:3,27` has potential 6.
-
-### Five to four: AC5ob--AC5oc
-
-- 527 legal switches;
-- maximum 10;
-- exact minimax barrier: 10;
-- endpoint potential: 4.
-
-Artifacts:
-
-- `data/ac-p31-five-to-four.json`
-- `scripts/verify_ac_p31_five_to_four.py`
-- `docs/alternating-core-p31-five-to-four.md`
-- `proofs/frontier-ac-p31-five-to-four.md`
-
-### Four-triple frontier and route to three: AC5od--AC5of
-
-- four current triples;
-- 810 legal immediate switches and no one-step improvement;
+- complete four-triple immediate repair atlas: 810 legal moves, no improvement;
 - complete lower components at barriers 4--8: `1,1,5,29,465`;
-- 35-switch upper path with maximum 9;
+- 35-switch route from 4 to 3 with maximum 9;
 - exact minimax barrier: 9;
-- endpoint potential: 3.
+- explicit three-triple endpoint committed.
 
 Artifacts:
 
@@ -69,9 +45,30 @@ Artifacts:
 - `docs/alternating-core-p31-four-triple-frontier.md`
 - `proofs/frontier-ac-p31-four-triple-frontier.md`
 
+### Three-triple physical frontier: AC5og--AC5oh
+
+Artifacts:
+
+- `data/ac-p31-three-triple-core.json`
+- `scripts/verify_ac_p31_three_triple_core.py`
+- `data/ac-p31-three-triple-frontier.json`
+- `scripts/verify_ac_p31_three_triple_frontier.cpp`
+- `docs/alternating-core-p31-three-triple-frontier.md`
+- `proofs/frontier-ac-p31-three-triple-frontier.md`
+
+Exact result:
+
+- the three current triples are vertex-disjoint;
+- 810 legal immediate switches;
+- no one-switch improvement;
+- least immediate potential 5, attained by four moves;
+- complete component sizes at barriers 3--8: `1,1,9,42,205,3635`;
+- no component contains a state below potential 3;
+- therefore the next minimax barrier is at least 9.
+
 ## Current durable branch head before this handoff update
 
-`40b27d8e9dc7b286e75c1aef66ed8a6445b3006d`
+`d6942989b4f0f692cb35d8631683bce69866ec18`
 
 ## Current endpoint
 
@@ -97,34 +94,50 @@ Exact potential: `3`.
 8. Completed logical units are committed before the next risky unit.
 9. Do not create a pull request or merge unless explicitly requested.
 
-## Current uncommitted work
+## Current uncommitted computation
 
-No completed file is waiting to be committed. The next computation has not yet started at this checkpoint.
+Upper-path searches from the explicit three-triple state are active:
+
+- two best-first searches at barrier 9;
+- three best-first searches at barrier 10;
+- two tabu traversals at barrier 9;
+- two tabu traversals at barrier 10.
+
+Latest original best-first ledgers before this update:
+
+- barrier 9: more than 60,000 states expanded and 84,000 states seen;
+- barrier 10: more than 60,000 states expanded and 359,000 states seen;
+- no two-triple endpoint yet.
+
+No upper-path result is accepted until an exact move sequence is written and replayed.
+
+## Blockers
+
+- No durable `3 -> 2`, `2 -> 1` or `1 -> 0` segment exists yet.
+- The exact barrier-nine component has not been exhausted; only barriers through 8 are complete.
+- Uniform AC arithmetic and repair predicates remain open.
+- No theorem guarantees terminal paths uniformly across prime-minus-one seeds.
 
 ## Exact next steps
 
-1. Build the physical three-triple core atlas.
-2. Enumerate complete lower sublevels from the three-triple state.
-3. Search for and replay a path to potential two.
-4. Commit data, verifier, theorem note and proof ledger for that logical unit.
-5. Continue through one and zero triples.
-6. Once zero is reached, add a standalone verifier from the installed 75-triple state to the terminal state.
-7. Update this handoff after every completed segment or material blocker.
+1. Continue the active barrier-nine and barrier-ten candidate searches.
+2. Preserve the first exact path reaching potential at most two.
+3. Replay the path independently and determine its maximum potential.
+4. If the path stays within barrier 9, combine it with AC5oh to prove exact barrier 9.
+5. If it requires barrier 10, exhaust the complete barrier-nine component before claiming equality.
+6. Commit the `3 -> 2` data, verifier, theorem note and proof ledger as a separate unit.
+7. Repeat the process through potential 1 and 0.
+8. Once zero is reached, add a standalone verifier from the installed 75-triple state to the terminal state.
 
 ## Validation commands
 
 ```text
-python scripts/verify_ac_p31_five_to_four.py
-python scripts/verify_ac_p31_four_triple_core.py
+python scripts/verify_ac_p31_three_triple_core.py
 
-g++ -O3 -std=c++20 scripts/verify_ac_p31_four_triple_frontier.cpp -o verify_four
-./verify_four
-
-python scripts/verify_ac_p31_four_to_three.py
+g++ -O3 -std=c++20 scripts/verify_ac_p31_three_triple_frontier.cpp -o verify_three
+./verify_three
 ```
 
-## Blockers
+## Uncommitted files
 
-- No durable three-to-two, two-to-one or one-to-zero segment exists yet.
-- Uniform AC arithmetic and repair predicates remain open.
-- No theorem guarantees terminal paths uniformly across prime-minus-one seeds.
+No completed source or data file is waiting to be committed. Only active search processes and temporary local logs are uncommitted.
