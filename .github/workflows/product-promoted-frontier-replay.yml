@@ -20,6 +20,8 @@ on:
       - scripts/search_product_transposition_double_coset_ten.cpp
       - scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
       - scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+      - scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.cpp
+      - scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
       - scripts/verify_product_frontier_manifest.py
   workflow_dispatch:
 
@@ -46,6 +48,14 @@ jobs:
       - uses: actions/checkout@v4
       - name: Replay pair indices 4800 through 5199
         run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+
+  semantic-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay first 16 uncovered semantic references
+        run: python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
 
   frontier-consistency:
     runs-on: ubuntu-latest
