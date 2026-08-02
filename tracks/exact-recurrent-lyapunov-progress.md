@@ -162,24 +162,13 @@ minimum score 1                  1 signature
 original response is minimizer   0 signatures.
 ```
 
-Zero-score reopening census:
+The unique no-zero class is realized exactly by `(-1,4)` and `(4,-1)` and has
 
 ```text
-3 zero reopenings   3 signatures
-2 zero reopenings   6 signatures
-1 zero reopening    5 signatures
-0 zero reopenings   1 signature.
+3012=2, 3210=10, 2031=2310=3201=1.
 ```
 
-The unique no-zero class is
-
-```text
-3012=2, 3210=10, 2031=2310=3201=1,
-```
-
-realized exactly by `(-1,4)` and `(4,-1)`. Even there, all three reopening
-responses remain the minimizer face. The checker audits 10,190 integer points in
-`[-50,50]^2` and rejects thirteen corruptions.
+Even there, all three reopening responses remain the minimizer face.
 
 ## ERL1k — pair-through-response-point component atlas
 
@@ -189,9 +178,6 @@ of response points on the line through `b1,b2`.
 ```text
 response-union points                         11
 lines through response-union pairs            36
-  lines containing 2 union points             28
-  lines containing 3 union points              7
-  line containing 4 union points               1
 pair-through contribution classes             39
 stored integer witness pairs                  48.
 ```
@@ -202,103 +188,108 @@ Componentwise maxima are
 3012:3, 3210:4, 2031:2, 2310:2, 3201:2.
 ```
 
-This classifies the non-additive component exactly. It does not by itself
-classify compatible complete two-point score signatures.
+## ERL1l–m — minimal reversals and infinite tie families
 
-## ERL1l — minimal two-point original-response reversal
-
-Singleton robustness fails sharply at background size two. Under the
-`L_infinity` coordinate-radius measure, the smallest affine integer backgrounds
-for which an original residual response is strictly better than every reopening
-response occur at radius five.
-
-```text
-radius 4: 70 available points, 2,415 pairs, 0 strict original reversals
-radius 5: 110 available points, 5,995 pairs, 2 strict original reversals.
-```
-
-The complete minimal witness set is
-
-```text
-{(-3,5),(5,-3)}
-{(-1,3),(5,-3)}.
-```
-
-Both produce
-
-```text
-3012=1, 3210=4, 2031=2, 2310=2, 3201=2,
-```
-
-so `3012` is the unique complete-score minimizer. The background-pair line is
-`x+y-2=0`, containing response-union points `02` and `20`; its pair-through
-contribution adds one to each reopening response. The singleton components add
-one further hit to `3201`, and one further hit to each of `2031` and `2310`.
-
-This disproves any background-independent rule that a local reopening response
-always minimizes the complete score. It does not prove either witness is a
-physically realizable construction state.
-
-## ERL1m — infinite two-point original-face family
-
-The pair-through vector
-
-```text
-(3012,3210,2031,2310,3201)=(0,0,1,1,1)
-```
-
-occurs on exactly two lines determined by response-union points:
+The smallest strict original-response reversals occur at radius five. The two
+critical pair lines are
 
 ```text
 x+y=2, through 02 and 20
 x+y=4, through 13 and 31.
 ```
 
-Neither line is a secant of any one candidate response. After removing the
-finite response-union and response-secant intersection set, each line still
-contains infinitely many integer points with zero singleton increment. Any two
-distinct remaining points on either line therefore produce
+Generic integer pairs on either line produce
 
 ```text
-3012=1, 3210=4, 2031=1, 2310=1, 3201=1.
+3012=1, 3210=4, 2031=1, 2310=1, 3201=1,
 ```
 
-The minimizer face is `{3012,2031,2310,3201}`. Thus the original intrinsically
-bad response re-enters the complete-score minimizer face on an infinite affine
-schema-completion family. This is not a physical realization theorem.
+so `3012` re-enters the minimizer face on infinite affine families.
 
-Artifacts:
+## ERL1n — global integer two-point strict-reversal classification
+
+The full integer-lattice strict-reversal problem reduces to
 
 ```text
-scripts/check_exact_recurrent_first_host_two_point_original_face_family.py
-data/exact_recurrent_first_host_two_point_original_face_family.json
-docs/exact-recurrent-first-host-two-point-original-face-family.md
-.github/workflows/exact-recurrent-first-host-two-point-original-face-family.yml
+15 singleton vectors
+39 pair vectors
+43 abstract triples making 3012 uniquely minimal
+ 0 abstract triples making 3210 uniquely minimal.
 ```
 
-The checker proves the two-line classification, validates direct triple counts
-and rejects eight mutation corruptions.
+Exact incidence compatibility audits
+
+```text
+14 fixed response-union lines
+26 exceptional pairs on those lines
+24 candidate pairs through exactly one response-union point
+0 generic strict families.
+```
+
+Exactly four strict backgrounds survive globally:
+
+```text
+{(-3,5),(5,-3)}
+{(-1,3),(5,-3)}
+{(-2,6),(4,0)}
+{(-2,6),(6,-2)}.
+```
+
+Every one gives
+
+```text
+3012=1, 3210=4, 2031=2, 2310=2, 3201=2.
+```
+
+There are no other strict original-response reversals anywhere in the integer
+lattice at background size two. The full two-point score atlas remains open
+because non-strict tie classes are still infinite.
+
+## ERL1o — side-four projection non-identifiability
+
+The current deterministic first-host projection stores
+
+```text
+host ID, deletion edges, intrinsic response energies, dispatch and blocker IDs.
+```
+
+It stores no coordinate-labelled background, deletion causes or physical owner
+labels. Consequently the same projected row admits at least two different
+complete lineage candidates:
+
+```text
+empty background
+  score vector (1,4,0,0,0)
+  minimizer face {2031,2310,3201}
+
+background {(-3,5),(5,-3)}
+  score vector (1,4,2,2,2)
+  minimizer face {3012}.
+```
+
+The complete background-sensitive lineage identifiers differ, but the stored
+side-four projection is identical. Therefore no proof using only the current
+host/response manifest can physically exclude the strict signatures.
 
 ## Current exact interface
 
 ```text
-first host          s4-75b04c45c1c8eac2
-score signature     20 line loads + 11 pair counts
-safe local class    32 forbidden-cell backgrounds
-singleton atlas     15 exact integer signatures
-pair component      39 exact contribution classes
-singleton critical  (-1,4), (4,-1)
-two-point reversal  2 minimal radius-five backgrounds
-critical pair lines x+y=2 and x+y=4
-coarse H=2 bound    69.
+first host             s4-75b04c45c1c8eac2
+score signature        20 line loads + 11 pair counts
+safe local class       32 forbidden-cell backgrounds
+singleton atlas        15 exact integer signatures
+pair component         39 exact contribution classes
+strict two-point set   exactly 4 backgrounds globally
+strict 3210 set        empty
+projection status      non-injective for complete scores
+coarse H=2 bound       69.
 ```
 
 ## Active work queue
 
-- **#18:** determine whether the two critical pair-line classes and the strict
-  reversal signatures are excluded by physical provenance; otherwise retain
-  them as labelled states and enumerate installed legal operations, children
-  and multiplicities.
+- **#18:** populate complete coordinate-labelled physical first-host fibres,
+  then exclude, reroute, pay or retain the four strict signatures and infinite
+  tie classes.
 - **#19:** publish a realizable non-strict SCC or failed row whenever found.
 - **#20:** classify the unique depth-two overlap under installed operations.
 - **#21:** compile exact offspring rows and solve or refute the strict rational
@@ -309,10 +300,10 @@ coarse H=2 bound    69.
 A valid first-host compiler must provide:
 
 1. every realizable physical occurrence over deletion trace `{02,20}`;
-2. the exact 20 secant-line loads and 11 pair-through-point counts;
-3. proof excluding both critical pair-line classes and strict reversal
-   signatures, or explicit labelled states for them;
-4. physical causes and owners of cells `02` and `20`;
+2. exact coordinate-labelled backgrounds and the 31 signature coordinates;
+3. physical causes and owners of cells `02` and `20`;
+4. proof excluding the four strict backgrounds and tie classes, or explicit
+   labelled states for them;
 5. every installed legal operation and intermediate state;
 6. exact labelled child multiplicities and positive weights;
 7. either a strict exact row, a strict parent-budget comparison, or a realizable
