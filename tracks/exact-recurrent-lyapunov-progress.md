@@ -4,94 +4,128 @@
 
 ## ERL1 finite seed — PROVED LOCALLY
 
-The first exact physical host compiler is installed.
+The exact side-four host compiler reconstructs all 86 feasible hosts and 206
+response incidences. It isolates 11 residual hosts, proves the three minimal
+blockers
 
 ```text
-script   = scripts/check_exact_recurrent_side_four_kernel.py
-manifest = data/exact_recurrent_side_four_kernel.json
-chapter  = docs/exact-recurrent-side-four-kernel.md
-workflow = .github/workflows/exact-recurrent-side-four-kernel.yml
+{02,20}, {02,31}, {13,31},
 ```
 
-Exact output:
+and identifies `{02,13,20,31}` as the unique local reopening-depth-two state.
+All global provenance, legal-reopening, recurrent-row, Lyapunov and all-`n`
+flags remain zero.
+
+Artifacts:
 
 ```text
-feasible side-four hosts       86
-response incidences           206
-hosts with good response       75
-residual hosts                 11
-minimal blocker patterns        3
-maximum local reopening depth   2
+scripts/check_exact_recurrent_side_four_kernel.py
+data/exact_recurrent_side_four_kernel.json
+docs/exact-recurrent-side-four-kernel.md
+.github/workflows/exact-recurrent-side-four-kernel.yml
 ```
 
-The minimal blocker basis is
+## ERL1a raw lineage projection — PROVED EXACTLY
 
-```text
-{02,20}, {02,31}, {13,31}.
-```
-
-The unique depth-two overlap is
-
-```text
-{02,13,20,31}.
-```
-
-The compiler reconstructs the host family from first principles, compares the
-complete deterministic manifest, and rejects seven mutation corruptions. It
-certifies only coordinate-host-response completeness. All global provenance,
-legal-reopening, recurrent-row, Lyapunov and all-`n` flags remain zero.
-
-## ERL1a lineage projection — PROVED EXACTLY
-
-The local residual kernel now joins bijectively to the stable host and blocker
-identifiers in the composite-modulus side-four raw-fibre lineage manifest.
-
-```text
-script     = scripts/check_exact_recurrent_side_four_lineage_projection.py
-projection = data/exact_recurrent_side_four_lineage_projection.json
-chapter    = docs/exact-recurrent-side-four-lineage-projection.md
-workflow   = .github/workflows/exact-recurrent-side-four-lineage-projection.yml
-```
-
-The audit checks deletion sets, response spectra, blocker dispatch and contained
-blocker identifiers for all eleven residual hosts. It rejects nine mutation
+The eleven residual states join bijectively to stable upstream raw-fibre host
+IDs and the three blocker IDs. The audit checks deletion sets, response spectra,
+blocker dispatch and contained blocker classes, rejecting nine mutation
 corruptions.
 
-The exact unresolved provenance inventory is
+The raw lineage layer leaves null:
 
 ```text
 physical deletion-cause assignments                 32
 background records                                  11
-owner/fate/collision/line/interface/CRT fields       66
+raw owner/fate/collision/line/interface/CRT slots    66
 legal operation families                            11
 recurrent child rows                                11
 ```
 
-This is a missing-data certificate, not a proof of legal reopening. Unsupported
-provenance slots remain null and every global proof flag remains zero.
+These counts describe the raw lineage file only.
+
+Artifacts:
+
+```text
+scripts/check_exact_recurrent_side_four_lineage_projection.py
+data/exact_recurrent_side_four_lineage_projection.json
+docs/exact-recurrent-side-four-lineage-projection.md
+.github/workflows/exact-recurrent-side-four-lineage-projection.yml
+```
+
+## ERL1b selected-response provenance — PROVED EXACTLY
+
+A separate upstream manifest fills normalized selector provenance for every
+residual host. All eleven minimizer faces are singletons:
+
+```text
+selector 3012, minimum energy 1, next gap 3      9 hosts
+selector 3210, minimum energy 4, no higher face  2 hosts
+```
+
+The normalized key is
+
+```text
+owner scope       side-four-raw-host
+fate              B
+collision key     host deletion trace
+line class        minimum-response-energy
+interface         target-01
+CRT scope         not-applied
+```
+
+Thus the earlier 66 raw-layer null slots are now populated by exact normalized
+classes. They are not complete physical provenance: actual backgrounds,
+deletion causes, owner identities, collision ancestry, legal operations and
+child rows remain open.
+
+Artifacts:
+
+```text
+scripts/check_exact_recurrent_side_four_selected_provenance_projection.py
+data/exact_recurrent_side_four_selected_provenance_projection.json
+docs/exact-recurrent-side-four-selected-provenance.md
+.github/workflows/exact-recurrent-side-four-selected-provenance.yml
+```
+
+The selected-provenance audit rejects twelve corruption classes and retains all
+global proof flags at zero.
+
+## First active host
+
+```text
+upstream ID  s4-75b04c45c1c8eac2
+deletions    {02,20}
+selector     3012
+energy       1
+next gap     3
+blocker      b4-8a44614df456
+```
+
+The selector is no longer ambiguous. The next work is to explain the unique
+selected triple physically and classify the two unavailable cells.
 
 ## Active work queue
 
-- Issue #18: populate the first complete physical lineage fibre, beginning with
-  upstream host `s4-75b04c45c1c8eac2` for deletion set `{02,20}`; then enumerate
-  installed legal transitions.
-- Issue #19: preserve proof-or-refutation posture and publish any realizable
-  non-strict SCC rather than hiding it behind another conditional interface.
+- Issue #18: enumerate every physical background and cause assignment over
+  `s4-75b04c45c1c8eac2`, then enumerate only installed legal transitions.
+- Issue #19: publish any realizable non-strict SCC or failed row rather than
+  hiding it behind another conditional interface.
 - Issue #20: classify the unique depth-two overlap under installed operations.
 - Issue #21: compile exact offspring rows and solve or refute the strict rational
   Lyapunov system.
 
 ## Next acceptance test
 
-A provenance compiler for upstream host `s4-75b04c45c1c8eac2` must output:
+A compiler for `s4-75b04c45c1c8eac2` must output:
 
-1. every physically realizable background fibre over deletion set `{02,20}`;
-2. the exact physical cause and owner of unavailable cells `02` and `20`;
-3. the complete fate/collision/line/interface/CRT compression key;
-4. every installed legal operation and intermediate state;
-5. exact resulting child labels and multiplicities;
-6. either a complete row suitable for `scripts/check_exact_recurrent_manifest.py`
-   or a source-backed witness that the present repository data do not determine
-   such a row.
+1. every physically realizable background fibre over deletion trace `{02,20}`;
+2. the physical cause and owner of unavailable cells `02` and `20`;
+3. the refinement of the normalized fate/collision/line/interface/CRT key;
+4. the exact selected triple created by response `3012` in each background;
+5. every installed legal operation and intermediate state;
+6. exact resulting child labels and multiplicities;
+7. either a complete row suitable for `check_exact_recurrent_manifest.py` or a
+   source-backed witness that the current repository data are insufficient.
 
 No progress entry may set `all_n_proved_by_checker` to one.
