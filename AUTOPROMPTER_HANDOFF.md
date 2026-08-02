@@ -2,7 +2,7 @@
 
 ## Current goal
 
-Continue the prime-power/composite-modulus construction in literal source order while preserving exact ownership, validation and honesty boundaries. Source CMR1510--CMR1581 has been audited, bound to a consolidated checker, and registered as 68 genuine same-owner operations. The next unit is the chained 65-checker runner, followed by theorem chapters, live continuations, workflows and status synchronization.
+Continue the prime-power/composite-modulus construction in literal source order while preserving exact ownership, validation and honesty boundaries. Source CMR1510--CMR1581 is now bound to a consolidated checker, registered as 68 genuine same-owner operations, and chained into the canonical 65-checker runner. The next unit is theorem-ledger installation, live continuations, workflows and authoritative status synchronization.
 
 ## Repository and branch
 
@@ -18,16 +18,18 @@ The classical no-three-in-line conjecture remains open. Every checker and manife
 all_n_proved_by_checker = 0
 ```
 
-## Last fully installed stack
+## Current installed stack
 
 ```text
-714 operation kinds
-35 checker contracts
+782 operation kinds
+36 checker contracts
 164 owner-changing kinds
-550 same-owner kinds
-63 installed checkers
-runner = scripts/run_prime_power_installed_construction_regression_714.py
-manifest = c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
+618 same-owner kinds
+65 installed checkers
+runner = scripts/run_prime_power_installed_construction_regression_782.py
+manifest = 895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
+registry contract = b15c91825d0859a979f3953139554c2e2c81a1f68ea31d0b7d35a57437f0b946
+registry seal = 8da81442b93b56c48054370aa1f36f47e9ce5acbe9e5b99f01c5e6a8fd62f91f
 ```
 
 ## Completed current-phase units
@@ -76,6 +78,17 @@ history-budget = 6
 
 The registry validator was executed locally and passed. No new structural owner-changing operation is claimed in this bank.
 
+### Chained regression 782
+
+```text
+runner = scripts/run_prime_power_installed_construction_regression_782.py
+base manifest = c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
+65-checker manifest = 895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
+commit = dd4a615e5a805c557cf1be61d2f7c4785e8686d4
+```
+
+The runner source compiles and the chained manifest digest was reproduced locally. The complete 65-checker runner was not executed locally.
+
 ## Decisions that must be preserved
 
 1. Installed exhaustiveness is not global construction exhaustiveness.
@@ -96,6 +109,7 @@ The registry validator was executed locally and passed. No new structural owner-
 line_clean_return_core_ancestry_proved = 1
 installed_transition_kind_bank_782_exhaustive = 1
 installed_payment_assignment_782_complete = 1
+installed_transition_regression_782_complete = 1
 
 line_clean_recurrent_rows_subcritical = 0
 return_selector_block_subcritical = 0
@@ -120,8 +134,9 @@ all_n_proved_by_checker = 0
 checker source/contract = compiled and reproduced locally
 checker fixture mutation audit = executed locally and passed
 registry 782 = executed locally and passed
+runner 782 chained manifest = reproduced locally
 consolidated nine-verifier checker = not executed end to end locally
-complete 63-checker runner = not executed locally
+complete 65-checker runner = not executed locally
 workflow success = not observed
 ```
 
@@ -150,9 +165,8 @@ No completed implementation exists only in chat.
 ## Exact next steps
 
 ```text
-1. extend the 63-checker canonical runner with the new checker and registry
-2. validate the 65-checker chained manifest locally
-3. add theorem chapters, live continuations and Python 3.10/3.12 workflows
-4. synchronize STATUS.md, this handoff and docs/11-open-bottlenecks.md
-5. continue in literal source order from CMR1582 after the bank is fully installed
+1. add theorem chapters for the CMR1510--CMR1581 checker, registry and runner
+2. add live theorem-index continuations and Python 3.10/3.12 workflows
+3. synchronize STATUS.md, this handoff and docs/11-open-bottlenecks.md
+4. continue in literal source order from CMR1582 after the bank is fully installed
 ```
