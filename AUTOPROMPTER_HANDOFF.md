@@ -1,10 +1,10 @@
 # Autoprompter continuity handoff
 
-**Reconstructed:** 2 August 2026
+**Reconstructed and advanced:** 2 August 2026
 
 ## Scope and source discipline
 
-This file was reconstructed because no prior `AUTOPROMPTER_HANDOFF.md` existed on `main` or on the active broad-frontier branch. It records only state proved by tracked repository material, commit history, and the open pull-request metadata. It does not reconstruct unrecorded chat decisions.
+This file was originally reconstructed because no prior `AUTOPROMPTER_HANDOFF.md` existed on `main` or on the active broad-frontier branch. It records only state proved by tracked repository material, commit history, exact workflow transcripts, independent replay, and open pull-request metadata. It does not reconstruct unrecorded chat decisions.
 
 ## Active continuity target
 
@@ -12,33 +12,37 @@ This file was reconstructed because no prior `AUTOPROMPTER_HANDOFF.md` existed o
 - Working branch: `research/all-n-product-construction`
 - Pull request: #3, `Advance all-n product frontiers: exact census, semantic masters, and recursion obstructions`
 - Base: `main`
-- Reconstructed head before this handoff: `84d6901a13959b3281ecae14bc835a10a268e7f5`
 - Main at branch creation: `38439b5a3d47603e1378bc692428fffbf1f6f64a`
+- Certified theorem boundary: `PX1193`
 
 The branch is explicitly incomplete: it contains exact finite classifications, verified constructions, computational obstructions, and proved reductions, but no proof of the classical no-three-in-line conjecture and no infinite all-side product theorem.
 
 ## Latest certified broad-frontier boundary
 
-The open PR records the following completed state beyond the older `STATUS.md` snapshot:
+The branch records the following completed state beyond the older `main` snapshot:
 
 1. Side-seven support-twenty multiplicity-three is complete.
-2. Multiplicity-two cases `0--1389` are classified with witness-aware exact replay.
-3. The side-seven cache has `2,780` multiplicity-two selectors in that range: `2,779` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
-4. Across support twenty, `40,379` selectors are certified infeasible, two are constructive, and `31,479` remain unclassified.
-5. The unresolved cache is exactly `2,450` multiplicity-two signatures (`4,900` selectors) plus `26,579` multiplicity-one selectors.
-6. The cumulative certified bottom-CSP rejection search is `3,278,927,685` nodes.
-7. For multiplicity-two case zero, orientation three, the first 192 references reduce to 150 relaxed semantic keys; a 115-key irredundant basis covers 204 of 35,112 clean top orders. The exact basis digest is `12529763722981785837`, and the uncovered complement has `34,908` clean top orders.
-8. The decimal-order-2873 arithmetic threshold satisfies `1.0979139 < rho_* < 1.0979151`. A 9% improvement remains insufficient through exponent `2873.0585` and is sufficient from `2873.0616` onward.
-9. At side ten, `cc` and `cf` are complete for the opposite-pair double coset. `fc` and `ff` pair indices `0--4799` are obstructed, with no constructive witness in those 9,600 fine-row geometries.
-10. The latest branch commit removes the completed workflow for side-ten intervals `4400--4799`, so the next bounded side-ten prefix begins at pair index `4800`.
-11. Protected-spread, repair, and carry diagnostics currently include: the first tested genuinely cubic common-rainbow family at order 13; the canonical side-six repair graph with a unique complete minimax path and bounded-uphill multiplicity; and the side-two through side-five carry profile with only 8 of 64 side-five factor pairs attaining multiplicity 72.
+2. Multiplicity-two cases `0--1399` are classified with witness-aware exact replay.
+3. The side-seven classified multiplicity-two prefix has `2,800` selectors: `2,799` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
+4. Across support twenty, `40,399` selectors are certified infeasible, two are constructive, and `31,459` remain unclassified.
+5. The unresolved cache is exactly `2,440` multiplicity-two signatures (`4,880` selectors) plus `26,579` multiplicity-one selectors.
+6. The cumulative certified bottom-CSP rejection search is `3,285,616,695` nodes; the classified multiplicity-two prefix contributes `519,161,451` nodes.
+7. Cases `1390--1399` added 20 infeasible selectors and `6,689,010` rejection nodes. GitHub Actions run `30728198789` completed the matrix, and the full matrix was independently rerun before promotion.
+8. For multiplicity-two case zero, orientation three, the first 192 references reduce to 150 relaxed semantic keys; a 115-key irredundant basis covers 204 of 35,112 clean top orders. The exact basis digest is `12529763722981785837`, and the uncovered complement has `34,908` clean top orders.
+9. The decimal-order-2873 arithmetic threshold satisfies `1.0979139 < rho_* < 1.0979151`. A 9% improvement remains insufficient through exponent `2873.0585` and is sufficient from `2873.0616` onward.
+10. At side ten, `cc` and `cf` are complete for the opposite-pair double coset. `fc` and `ff` pair indices `0--5199` are obstructed, with no constructive witness in those 10,400 fine-row geometries.
+11. The cumulative side-ten fine-row counts are `184,338,885` nodes in `fc` and `112,022,029` nodes in `ff`, with maxima `1,877,339` and `909,040` respectively.
+12. Pair indices `4800--5199` added `12,418,842` `fc` nodes and `11,580,361` `ff` nodes. GitHub Actions run `30728198799` completed the matrix, and the full matrix was independently rerun before promotion.
+13. Protected-spread, repair, and carry diagnostics currently include: the first tested genuinely cubic common-rainbow family at order 13; the canonical side-six repair graph with a unique complete minimax path and bounded-uphill multiplicity; and the side-two through side-five carry profile with only 8 of 64 side-five factor pairs attaining multiplicity 72.
+
+The next canonical multiplicity-two case is `1400`. Cases `1400--1409` are registered but uncounted. The next bounded prefix begins at pair index `5200`; indices `5200--5599` are registered but uncounted.
 
 ## Current frontiers
 
 Advance all of these without treating any conditional statement as proved:
 
-1. **Side-seven census:** continue multiplicity-two classification from canonical case `1390`, preserving exact transcript promotion and witness-aware replay; then continue multiplicity one.
-2. **Side-ten recursion obstruction:** continue `fc` and `ff` fine-row search from pair index `4800` and promote only completed exact intervals.
+1. **Side-seven census:** continue multiplicity-two classification from canonical case `1400`, preserving exact transcript promotion and witness-aware replay; then continue multiplicity one.
+2. **Side-ten recursion obstruction:** continue `fc` and `ff` fine-row search from pair index `5200` and promote only completed exact intervals.
 3. **Semantic proof compression:** generate new semantic references from the `34,908` clean top orders outside the current 204-top union; seek union expansion rather than further optimization inside the current island.
 4. **Constructive-template analysis:** determine whether the case-`1287` construction has a symmetry orbit or reusable local template.
 5. **Finite-range arithmetic:** prove the exact decimal-2873 improvement on the first 6.16% of the logarithmic slab, or reduce the effective divisor loss.
@@ -57,11 +61,20 @@ Advance all of these without treating any conditional statement as proved:
 
 ## Immediate next actions
 
-1. Inspect the registered but unpromoted side-seven case-`1390` workflow/scripts and either promote an existing transcript or register the smallest deterministic next interval.
-2. Inspect side-ten fine-row workflow registration at pair index `4800`; retain a durable workflow until all exact transcripts in its interval are secured, then promote and remove it.
-3. Add a deterministic frontier manifest/checker that compares tracked certified boundaries with this handoff and flags stale `STATUS.md` numbers.
-4. Continue the semantic-union expansion using uncovered clean top orders and preserve a replayable basis digest.
+1. Inspect the registered side-seven cases `1400--1409`; promote only after every exact transcript is secured and independently replayed.
+2. Inspect the registered side-ten intervals `5200--5599`; retain the durable workflow until all eight exact transcripts are secured, then promote and remove it.
+3. Continue semantic-union expansion using uncovered clean top orders and preserve a replayable basis digest.
+4. Compute the certified symmetry orbit and normalized local template inventory of the case-`1287` construction.
+5. Keep `tracks/all-n-product-frontier-manifest.json`, `STATUS.md`, and the deterministic frontier checker synchronized through `PX1193` or the next promoted boundary.
 
 ## Validation baseline
 
-The repository uses Python 3.10+ standard-library verifiers and selected C++ exact-search programs. Before promoting a boundary, run the narrow verifier for the affected frontier and the corresponding deterministic replay/audit. The broad README commands remain sanity checks rather than proofs for arbitrary side length.
+The repository uses Python 3.10+ standard-library verifiers and selected C++ exact-search programs. The promoted tranches have deterministic replay scripts:
+
+```bash
+python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+python scripts/verify_product_frontier_manifest.py
+```
+
+Before promoting a boundary, run the narrow verifier for the affected frontier and the corresponding deterministic replay/audit. The broad README commands remain sanity checks rather than proofs for arbitrary side length.
