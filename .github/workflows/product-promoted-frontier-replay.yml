@@ -7,18 +7,17 @@ on:
     paths:
       - .github/workflows/product-promoted-frontier-replay.yml
       - .github/workflows/product-side-seven-frontier.yml
-      - .github/workflows/product-side-ten-opposite-fine-6400-6799.yml
-      - .github/product-side-seven-multiplicity-two-1430-1439-trigger.txt
-      - .github/product-side-ten-opposite-fine-6400-6799-trigger.txt
+      - .github/workflows/product-side-ten-opposite-fine-6800-7199.yml
+      - .github/product-side-seven-multiplicity-two-1440-1449-trigger.txt
+      - .github/product-side-ten-opposite-fine-6800-7199-trigger.txt
       - AUTOPROMPTER_HANDOFF.md
       - STATUS.md
       - docs/367-side-seven-semantic-uncovered-top-expansion-16.md
-      - docs/368-side-seven-multiplicity-two-cases-1400-through-1409.md
-      - docs/369-side-ten-opposite-pair-fine-row-fourteenth-prefix.md
       - docs/370-side-seven-multiplicity-two-cases-1410-through-1419.md
-      - docs/371-side-ten-opposite-pair-fine-row-fifteenth-prefix.md
       - docs/372-side-seven-multiplicity-two-cases-1420-through-1429.md
       - docs/373-side-ten-opposite-pair-fine-row-sixteenth-prefix.md
+      - docs/374-side-seven-multiplicity-two-cases-1430-through-1439.md
+      - docs/375-side-ten-opposite-pair-fine-row-seventeenth-prefix.md
       - tracks/all-n-product-current-frontiers.md
       - tracks/all-n-product-frontier-manifest.json
       - scripts/measure_product_side_seven_single_case_all_selectors.cpp
@@ -33,7 +32,6 @@ on:
       - scripts/verify_product_transposition_double_coset_opposite_fine_ten_5600_5999.py
       - scripts/verify_product_transposition_double_coset_opposite_fine_ten_6000_6399.py
       - scripts/verify_product_transposition_double_coset_opposite_fine_ten_6400_6799.py
-      - scripts/measure_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.cpp
       - scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
       - scripts/verify_product_frontier_manifest.py
   workflow_dispatch:
