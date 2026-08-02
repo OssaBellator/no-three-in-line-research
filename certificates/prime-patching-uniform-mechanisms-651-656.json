@@ -13,39 +13,59 @@
     "attempts": 1032,
     "minimum_transversal_histogram": {"3":3,"4":13,"5":62,"6":123,"7":173,"8":151,"9":36,"10":61,"11":130,"12":131,"13":98,"14":51},
     "best_attempts": 16,
-    "minimum_cores": 130,
+    "minimum_cores": 125,
     "minimum_cores_correctable_through_budget_seven": 125,
     "all_best_attempts_correctable_through_budget_seven": true,
-    "all_best_cores_correctable_through_budget_seven": false,
-    "uncorrected_minimum_cores_through_budget_seven": 5,
+    "all_best_cores_correctable_through_budget_seven": true,
     "successful_core_correction_budget_histogram": {"3":2,"4":23,"5":54,"6":38,"7":8},
     "canonical_transition": {"node":"P2","offset":63,"deletions":3},
     "corrected_points":112,
-    "raw_fifteenth_extensions":0
+    "raw_fifteenth_extensions":0,
+    "fifteenth_minimum_transversal_histogram": {"4":10,"5":36,"6":100,"7":193,"8":186,"9":28,"10":81,"11":106,"12":151,"13":110,"14":31}
   },
   "hall": {
-    "interface":"bounded-overlap motif conflict graph",
-    "independent_motif_lower_bound":"ceil(M/(Delta+1))",
-    "good_centres_after_corruption":"3*ceil(M/(Delta+1))-e",
-    "sharp_candidate_threshold":"(ceil((28+e)/3)-1)*(Delta+1)+1"
+    "interface":"two-stage motif-overlap and centre-conflict graphs",
+    "resource_disjoint_motif_lower_bound":"ceil(M/(Delta+1))",
+    "retainable_good_centres":"3*ceil(M/(Delta+1))-tau(H)",
+    "bipartite_specialisation":"3*ceil(M/(Delta+1))-nu(H)",
+    "sharp_candidate_threshold_under_nu_at_most_m":"(ceil((28+m)/3)-1)*(Delta+1)+1"
   },
   "threshold": {
     "nearest_targets":8,
+    "perfect_matchings":49,
+    "unordered_three_round_factorizations":44,
+    "ordered_three_round_factorizations":264,
+    "ordered_native_three_round_schedules":4429185024,
+    "footprint_union_cells_per_round":16,
+    "footprint_load_histogram":{"2":8,"5":8},
+    "maximum_shared_cell_load":5,
     "cellwise_sign_coherent":true,
     "nonempty_subset_l1":"6*subset_size",
     "zero_drift_nonempty_subsets":0,
     "all_target_l1":48
   },
   "prefix": {
-    "component_pair_sizes":[2,2,4,5],
-    "two_pair_component_internally_anchorable":false,
-    "minimum_cross_component_anchor_pairs":4,
-    "minimum_cross_component_anchor_matchings":104
+    "grid_size":14,
+    "source_cells":28,
+    "row_degree":2,
+    "column_degree":2,
+    "source_no_three_in_line":true,
+    "anchor_pairs":14,
+    "pairing_shift":5,
+    "compositions_checked":8192,
+    "mixed_run_triples":0,
+    "maximum_coordinate":100,
+    "incidence_component_sizes":[14],
+    "componentwise_nesting":false,
+    "older_thirteen_pair_minimum_cross_component_anchors":4
   },
   "shell": {
-    "irregular_saving":"sum_i(3-6*delta_i-c_i)-S",
-    "repeatable_cycle_condition":"mean_i(6*delta_i+c_i)<3",
-    "individually_losing_periods_allowed":true
+    "period_burden":"b_i=6*delta_i+c_i",
+    "prefix_saving":"B_k=sum_{i<=k}(3-b_i)",
+    "setup_improves":"exists k with B_k>S",
+    "all_fixed_setups_amortizable":"sup_k B_k=infinity",
+    "periodic_gain":"G=sum_{i=1}^m(3-b_i)",
+    "periodic_classification":"G>0 amortizes every setup; G<=0 only within-period prefix peaks can help"
   },
   "integration": {
     "candidate_completion":"25/30",
