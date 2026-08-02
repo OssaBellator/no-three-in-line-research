@@ -2,56 +2,56 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4469**. Every checker and manifest preserves `all_n_proved_by_checker = 0`.
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4517**. Every checker and manifest preserves `all_n_proved_by_checker = 0`.
 
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_1094.py
-manifest = ae6023ffcf2eed5fca0e2cd1a3050b29d4db3098370f8bb39c8a0fd59aef376b
-operation kinds = 1094
-checker contracts = 41
+runner = scripts/run_prime_power_installed_construction_regression_1166.py
+manifest = e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d
+operation kinds = 1166
+checker contracts = 42
 owner-changing kinds = 164
-same-owner kinds = 930
-checkers = 75
+same-owner kinds = 1002
+checkers = 77
 ```
 
-## 3. Installed labelled moment/slack surface
+## 3. Installed owner/fate and lineage surface
 
-Source CMR1830--CMR1893 installs exact host occupancy moments, label-weighted nested assignment LPs, diagonal-parity refinements, finite Pareto envelopes, an executable labelled manifest checker, exact rank-three slack classes, response-averaged line moments and hostwise residual line-budget allocation.
+Source CMR1894--CMR1965 installs full owner/fate/collision class keys, compulsory weighted assignment artifacts, rank-three slack preconditioning, complete line-energy kernels, background increments, selector stability, normalized kernels, raw-fibre lineage and an exact side-four zero-response blocker atlas.
 
-The certificate formats and finite host tables are exact. Complete labelled recurrent-state population and global strictness remain open.
+The missing source and verifier dependencies have been restored. All nine verifier programs and the consolidated checker execute locally. Complete recurrent-state population and global strictness remain open.
 
 ## 4. Active frontier
 
 ```text
-populate every surviving labelled recurrent state
-attach actual background-height and provenance profiles
-build one complete child-labelled coefficient row per state
-combine exact rook, nested, moment, parity and occupancy bounds
-allocate rank-three slack without double counting
-solve strict positive integer labelled row inequalities
-route every failed row to a finite residual class or strict descendant
+materialize the complete 86-host side-four raw-fibre lineage batch
+attach exact target, background, response and provenance data
+build every compulsory child-weighted row
+apply zero-response or exact blocker dispatch
+certify strict preconditioned kernels where possible
+publish the exact residual host/lineage worklist where strictness fails
 ```
 
 ## 5. Exact blockers
 
-1. The executable assignment manifest is not populated for every recurrent state.
-2. Actual background-height profiles are not yet certified across all geometric/provenance fibres.
-3. Rank-three slack does not yet pay every lower-rank and return-selector row.
-4. A complete positive-vector certificate for every labelled recurrent block is still missing.
-5. Labelled SCCs must remain consistent through auxiliary elimination, CRT assembly and owner routing.
+1. Owner/fate rows are not populated for every recurrent state.
+2. Compulsory weighted certificates are not complete for the full recurrent bank.
+3. Raw-fibre backgrounds do not yet cover every provenance refinement.
+4. The side-four blocker atlas is exact, but its alternatives are not globally resolved in every recurrent row.
+5. A complete positive-vector certificate for every labelled recurrent block is still missing.
 6. Global transition exhaustiveness and global termination remain open.
 
 ## 6. Validation boundary
 
 ```text
-checker contract = locally reproduced
-registry 1094 contract/census/seal = locally reproduced
-runner 1094 manifest = locally reproduced
-eight-entrypoint checker = not executed end to end locally
-complete 75-checker runner = not executed locally
+nine standalone verifiers = executed locally
+consolidated owner/fate checker = executed locally
+checker fixture corruptions = 17 rejected
+registry 1166 contract/census/payment counts/seal = locally reproduced
+runner 1166 manifest = locally reproduced
+complete 77-checker runner = not executed locally
 workflow success = not observed
 ```
 
-Workflow configuration is not CI success. No local checker, manifest format or finite table substitutes for the missing populated strict recurrent certificate.
+Workflow configuration is not CI success. The finite blocker atlas and repaired checker do not substitute for a populated strict recurrent certificate.
