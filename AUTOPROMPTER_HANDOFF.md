@@ -1,11 +1,11 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-02T17:55:00+10:00 Australia/Melbourne
+Checkpoint date: 2026-08-02 Australia/Melbourne
 
 ## Goal
 
 Develop a rigorous all-`n` prime-patching route for the no-three-in-line program
-across boundary, Hall, threshold, prefix, shell, and integration frontiers.  The
+across boundary, Hall, threshold, prefix, shell, and integration frontiers. The
 all-`n` theorem remains open; finite corrected chains and conditional interfaces
 must not be presented as an all-length construction.
 
@@ -15,6 +15,7 @@ must not be presented as an all-length construction.
 - Branch: `research/all-n-prime-patching`
 - Last fully indexed tranche: `docs/645--650`, theorems `PP3cyx--PP3czo`.
 - Current in-progress tranche: `docs/651--656`.
+- Boundary theorem file completed: `docs/651-corrected-fourteenth-boundary-transition.md`.
 - Next available theorem identifier: `PP3czs`.
 
 ## Newly completed and committed
@@ -25,10 +26,11 @@ Theorems `PP3czp--PP3czr`.
 
 - The 1,032 raw fourteenth attempts have exact minimum-transversal histogram
   `3:3, 4:13, 5:62, 6:123, 7:173, 8:151, 9:36, 10:61, 11:130, 12:131, 13:98, 14:51`.
-- Sixteen attempts have minimum at most four, with 130 minimum cores.
-- All sixteen attempts have a row/column-preserving repair through budget seven.
-- Exactly 125 of the 130 minimum cores repair within that budget; successful-core
-  minimum budgets are `3:2, 4:23, 5:54, 6:38, 7:8`.
+- Sixteen attempts have minimum at most four, with exactly 125 minimum cores.
+- Every one of the 125 minimum cores has a row/column-preserving repair through
+  total deletion budget seven.
+- The exact first-success minimum-budget distribution is
+  `3:2, 4:23, 5:54, 6:38, 7:8`.
 - The canonical `P2` offset-63 correction deletes
   `(32,79),(44,258),(52,377)` and adds
   `(32,258),(44,377),(52,79)`.
@@ -43,14 +45,15 @@ Committed reproducibility files:
 - `scripts/check_boundary_fifteenth_spectrum.cpp`
 - `scripts/check_boundary_fourteenth_transition.py`
 
-All four were generated from and executed successfully in the isolated local
-runtime before commit.  The complete repository chain has not yet been run.
+The boundary wrapper, exact C++ kernels, corrected state, and raw fifteenth scan
+were executed successfully in the isolated local runtime. The complete historical
+repository chain has not yet been run.
 
 ## Decisions
 
-- Preserve theorem numbering and six-frontier structure.
-- The correction theorem is attemptwise: five minimum cores do not repair within
-  budget seven, although every low-transversal attempt has at least one repair.
+- Preserve theorem numbering and the six-frontier structure.
+- Correct the initial arithmetic transcription: the listed low-core counts sum to
+  125, not 130. All 125 are correctable through budget seven.
 - Use the smallest canonical correction, `P2` offset 63 with deletion size three.
 - Treat the fourteen-block state as finite evidence only; no recurrence or state
   invariant has been proved.
@@ -69,8 +72,8 @@ runtime before commit.  The complete repository chain has not yet been run.
 
 ## Uncommitted work
 
-No completed repository change is intentionally left only in chat.  The remaining
-frontier investigations for `docs/652--656` have not yet been committed.
+No completed repository change is intentionally left only in chat. The remaining
+frontier investigations for `docs/652--656` are not yet committed.
 
 ## Exact next steps
 
