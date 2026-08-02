@@ -1,72 +1,69 @@
-# Two-level Hall packing
+# Degree-sequence Hall packing
 
-The Hall frontier has two distinct conflicts: candidate motifs may share resources,
-and good centres from selected motifs may still be mutually incompatible.  This
-chapter composes the two exact graph interfaces.
+`docs/652` gives a two-stage packing interface from a maximum motif-overlap degree
+and a centre-conflict vertex-cover or matching bound. This chapter replaces the
+coarse maximum-degree motif estimate by the full degree sequence.
 
-## PP3dak — Motif packing followed by centre packing
+## PP3dak — Caro–Wei motif packing
 
-Let `G` be the resource-overlap graph on `M` candidate motifs, with maximum degree
-`Delta`.  A greedy packing selects at least
-
-```text
-t = ceil(M/(Delta+1))
-```
-
-resource-disjoint motifs.  These motifs supply `3t` intrinsically good centres.
-
-Let `H` be the certified conflict graph on those centres.  The maximum retainable
-centre set has size
+Let the candidate-motif resource-overlap graph have vertex degrees
+`d_1,...,d_M`. It contains a resource-disjoint motif set of size at least
 
 ```text
-alpha(H) = 3t - tau(H),
+q = ceil(sum_i 1/(d_i+1)).
 ```
 
-where `tau(H)` is the minimum vertex-cover number.  Hence the exact two-level Hall
-condition is
+### Proof
+
+Choose a uniformly random ordering of the motifs and retain a motif when it
+precedes all its neighbours. Motif `i` is retained with probability
+`1/(d_i+1)`. The expected retained count is the displayed sum, so some ordering
+attains at least its ceiling. ∎
+
+## PP3dal — Average-degree corollary and sharpness
+
+If the overlap graph has average degree `d_bar`, then
 
 ```text
-3*ceil(M/(Delta+1)) - tau(H) >= 28.
+q >= ceil(M/(d_bar+1)).
 ```
 
-## PP3dal — Bipartite matching form
+This follows from convexity of `x -> 1/(x+1)`. The degree-sequence and average-
+degree bounds are sharp for disjoint unions of equal cliques, where every clique
+contributes exactly one selected motif.
 
-If `H` is bipartite, König's theorem gives `tau(H)=nu(H)`.  Under a proved matching
-bound `nu(H)<=m`, it is enough to select
+The degree-sequence form can be much stronger than a maximum-degree bound. For
+the degree sequence consisting of nine zeros and ten nines, it certifies ten
+motifs, while the maximum-degree-only estimate certifies only two.
+
+## PP3dam — Two-stage centre-conflict certificate
+
+After selecting `q` resource-disjoint motifs, there are `3q` intrinsically good
+centres. If their certified cross-copy conflict graph is bipartite with maximum
+matching number at most `m`, at least
 
 ```text
-q = ceil((28+m)/3)
+3q-m
 ```
 
-motifs.  Therefore the sharp candidate-pool threshold becomes
+centres remain. Thus the 28-resource Hall interface follows whenever
 
 ```text
-(q-1)*(Delta+1)+1.
+3*ceil(sum_i 1/(d_i+1)) - m >= 28.
 ```
 
-For `Delta=2`, the exact thresholds are:
+The required selected motif counts are ten for `m=0` or `m=2`, eleven for
+`m=3` or `m=5`, and twelve for `m=6`.
 
-```text
-m=0 or 2: 28 candidates,
-m=3 or 5: 31 candidates,
-m=6:      34 candidates.
-```
+## Verification
 
-## PP3dam — Graph-level sharpness
-
-The motif threshold is sharp by a disjoint union of `q-1` cliques
-`K_(Delta+1)`, whose independence number is exactly `q-1`.  On the selected
-centres, a matching of size `m` has vertex-cover number `m`, so the retained count
-is exactly `3(q-1)-m`.
-
-Thus neither stage can be improved from maximum-degree and matching-number data
-alone.
-
-The combined checker is `scripts/check_hall_two_level_packing.py`; the exhaustive
-six-vertex graph audit remains in `scripts/check_hall_conflict_graph_packing.py`.
+`scripts/check_hall_degree_sequence_packing.py` exhausts all 32,768 labelled
+six-vertex graphs, checks the Caro–Wei and average-degree bounds against exact
+independence numbers, checks clique equality cases, and verifies the two-stage
+matching thresholds.
 
 ## Evidence boundary
 
-No conditional host has yet produced the required candidate motif family, bounded
-resource-overlap degree, bipartite centre-conflict certificate, or the two
-source/host-defect degree restrictions simultaneously.
+The conditional host must still derive the motif degree sequence and a certified
+centre-conflict matching bound from coordinates, while preserving the separate
+source and host-defect degree-two restrictions.
