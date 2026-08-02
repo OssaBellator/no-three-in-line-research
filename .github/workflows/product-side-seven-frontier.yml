@@ -1,4 +1,4 @@
-name: Product side-seven multiplicity-two cases 1420 through 1429
+name: Product side-seven multiplicity-two cases 1430 through 1439
 
 on:
   pull_request:
@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - .github/workflows/product-side-seven-frontier.yml
-      - .github/product-side-seven-multiplicity-two-1420-1429-trigger.txt
+      - .github/product-side-seven-multiplicity-two-1430-1439-trigger.txt
   workflow_dispatch:
 
 concurrency:
@@ -24,14 +24,14 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        case: [1420, 1421, 1422, 1423, 1424, 1425, 1426, 1427, 1428, 1429]
+        case: [1430, 1431, 1432, 1433, 1434, 1435, 1436, 1437, 1438, 1439]
     steps:
       - uses: actions/checkout@v4
       - name: Check durable trigger
         id: gate
         shell: bash
         run: |
-          if grep -qx 'run-side-seven-multiplicity-two-1420-1429' .github/product-side-seven-multiplicity-two-1420-1429-trigger.txt; then
+          if grep -qx 'run-side-seven-multiplicity-two-1430-1439' .github/product-side-seven-multiplicity-two-1430-1439-trigger.txt; then
             echo 'run=true' >> "$GITHUB_OUTPUT"
           else
             echo 'run=false' >> "$GITHUB_OUTPUT"
@@ -78,7 +78,7 @@ jobs:
             printf 'No exact case transcript was produced.\n' > frontier-summary.md
             exit 1
           fi
-          printf '## Exact side-seven multiplicity-two cases 1420--1429\n\n' > frontier-summary.md
+          printf '## Exact side-seven multiplicity-two cases 1430--1439\n\n' > frontier-summary.md
           for file in $(printf '%s\n' "${files[@]}" | sort -V); do
             printf '### `%s`\n\n```text\n' "$file" >> frontier-summary.md
             tail -n 3 "$file" >> frontier-summary.md
@@ -87,7 +87,7 @@ jobs:
       - name: Upload compact summary
         uses: actions/upload-artifact@v4
         with:
-          name: product-side-seven-multiplicity-two-1420-1429-summary
+          name: product-side-seven-multiplicity-two-1430-1439-summary
           path: frontier-summary.md
           if-no-files-found: error
 
