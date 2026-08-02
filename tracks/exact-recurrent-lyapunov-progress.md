@@ -158,6 +158,37 @@ This replaces the vague background requirement by a lossless geometric input
 contract. Actual signature values, physical owners, legal operations and child
 rows remain unpopulated.
 
+## ERL1i canonical forbidden-background invariance — PROVED CONDITIONALLY
+
+Let
+
+```text
+F={00,01,11,22,33}
+```
+
+be the four diagonal cells plus target `01`. For every one of the 32 subsets
+`B` of `F`, all five candidate scores receive the same common offset
+
+```text
+c(B)=1[{00,01} subset B]+1[{01,11} subset B].
+```
+
+Hence
+
+```text
+2031=2310=3201=c(B)
+3012=c(B)+1
+3210=c(B)+4.
+```
+
+The exact offset census is 20 backgrounds with offset zero, eight with offset
+one and four with offset two. The selector order is preserved on all 32
+backgrounds, and the minimizer face is always `{2031,2310,3201}`.
+
+This is a complete safe local class, not a physical coverage theorem. The
+singleton witnesses from ERL1g lie outside `F`, so the unresolved physical issue
+is whether exterior secant incidences can occur in a realizable first-host fibre.
+
 ## First host: exact known interface
 
 ```text
@@ -170,12 +201,14 @@ restore 02        exposes 2031 and 2310
 restore 20        exposes 3201
 coarse H=2 bound  69
 score signature   20 line loads + 11 pair counts
+safe local class  all 32 subsets of {00,01,11,22,33}
 ```
 
 ## Active work queue
 
-- **#18:** populate the 31-coordinate signature, deletion causes, owners and
-  legal transitions for every physical occurrence of the first host.
+- **#18:** prove whether every physical first-host occurrence lies in the safe
+  forbidden-background signature class; otherwise populate each exterior class,
+  together with deletion causes, owners and legal transitions.
 - **#19:** publish a realizable non-strict SCC or failed row whenever found.
 - **#20:** classify the unique depth-two overlap under installed operations.
 - **#21:** compile exact offspring rows and solve or refute the strict rational
@@ -187,11 +220,12 @@ A valid first-host compiler must provide:
 
 1. every realizable physical occurrence over deletion trace `{02,20}`;
 2. the exact 20 secant-line loads and 11 pair-through-point counts;
-3. physical causes and owners of cells `02` and `20`;
-4. the complete score vector obtained from the committed integer matrix;
-5. every installed legal operation and intermediate state;
-6. exact labelled child multiplicities and positive weights;
-7. either a strict exact row, a parent budget making an applicable upper bound
+3. a proof of safe-class membership or an explicit exterior signature;
+4. physical causes and owners of cells `02` and `20`;
+5. the complete score vector obtained from the committed integer matrix;
+6. every installed legal operation and intermediate state;
+7. exact labelled child multiplicities and positive weights;
+8. either a strict exact row, a parent budget making an applicable upper bound
    strict, or an explicit realizable residual witness.
 
 No artifact may set `all_n_proved_by_checker` to one.
