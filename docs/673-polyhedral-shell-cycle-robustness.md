@@ -2,7 +2,7 @@
 
 `docs/667` treats independent edge-burden intervals. Coordinate repairs may
 instead create correlated burden uncertainty, so edgewise upper bounds can be
-strictly pessimistic. This chapter gives exact fixed-cycle and revealed-state
+strictly pessimistic. This chapter gives exact primitive-cycle and mixed-cycle
 criteria for a compact polyhedral uncertainty set.
 
 Let `U` be a compact polytope of edge-burden vectors, let `chi_C` be the edge
@@ -33,27 +33,26 @@ rho_fixed = max_C (3|C| - h_U(chi_C)).
 For an axis-aligned interval box, the support function reduces to the sum of
 edgewise upper burdens, recovering `docs/667`.
 
-## PP3dce — Adaptive and mixed-cycle minimax criterion
+## PP3dce — Primitive, mixed, and composite cycle criteria
 
-If the burden vector is revealed before a cycle is selected, the exact guaranteed
-margin is
+For a finite menu of primitive cycles, the revealed-state primitive margin is
 
 ```text
-rho_adaptive = min_{b in U} max_C g_C(b).
+rho_primitive = min_{b in U} max_C g_C(b).
 ```
 
-This can be strictly larger than `rho_fixed`. Since the maximum over cycles equals
-the maximum over probability weights `lambda` on the finite cycle set, the
-bilinear minimax theorem gives the exact dual formula
+Since the maximum over primitive cycles equals the maximum over probability
+weights `lambda` on that menu, the bilinear minimax theorem gives
 
 ```text
-rho_adaptive
+rho_primitive
  = max_{lambda in simplex}
    (3 sum_C lambda_C |C| - h_U(sum_C lambda_C chi_C)).
 ```
 
-The mixed weights are a dual certificate for revealed-state adaptation; they need
-not describe one executable fixed cycle.
+The mixed weights are a dual certificate. When the weighted primitive cycles can
+be concatenated into one closed walk, rational weights also give a deterministic
+fixed composite execution after clearing denominators.
 
 For two self-loop cycles and the uncertainty segment with vertices
 
@@ -61,20 +60,21 @@ For two self-loop cycles and the uncertainty segment with vertices
 (b_1,b_2)=(1,4) and (4,1),
 ```
 
-each fixed cycle has worst-case saving `-1`, so `rho_fixed=-1`. At every point of
-the segment, however, choosing the better revealed cycle gives saving at least
-`1/2`, with equality at `(5/2,5/2)`. Equal mixed weights `(1/2,1/2)` certify the
-same margin `rho_adaptive=1/2` at both vertices.
+each primitive loop has worst-case saving `-1`. Choosing the better revealed loop
+has margin `1/2`, and equal mixed weights certify the same value. Because the loops
+share a base state, concatenating one copy of each gives a fixed composite closed
+walk with robust total gain one.
 
-Therefore any theorem using adaptive state observation must state that information
-structure explicitly. The fixed-cycle condition and the adaptive condition are
-not interchangeable under correlated uncertainty.
+Thus the example separates primitive loops from composite execution; it does not
+separate all fixed closed walks from adaptive observation. Any theorem using the
+mixed certificate must state whether its cycle menu can be concatenated and what
+connector costs are incurred.
 
 ## PP3dcf — Exact correlated setup repayment
 
-Fix an entry path and a cycle. At uncertainty vertex `u`, let entry saving be
-`A_u` and cycle gain be `G_u>0`. The least number of repetitions that beats setup
-`S` for every admissible burden vector is
+Fix an entry path and a cycle or executable closed walk. At uncertainty vertex
+`u`, let entry saving be `A_u` and repeated-walk gain be `G_u>0`. The least number
+of repetitions that beats setup `S` for every admissible burden vector is
 
 ```text
 max_u max(0, floor((S-A_u)/G_u)+1).
@@ -98,12 +98,12 @@ bound ten.
 ## Verification
 
 `scripts/check_shell_polyhedral_cycle_robustness.py` uses exact rational arithmetic
-to verify the support-function reduction, the fixed/adaptive gap over the full
-uncertainty segment, the equal-weight mixed-cycle certificate, and the correlated
+to verify the support-function reduction, the primitive/mixed minimax value, the
+robust composite closed walk in the two-loop example, and the correlated
 setup-repayment formula.
 
 ## Evidence boundary
 
 No coordinate macro transition graph currently supplies a certified polyhedral
-burden set with a fixed reachable robust-positive cycle. The result is an exact
-scheduling interface, not a geometric macro construction.
+burden set together with an executable robust-positive composite walk. The result
+is an exact scheduling interface, not a geometric macro construction.
