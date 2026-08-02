@@ -1,0 +1,60 @@
+name: Product side-ten opposite-pair fine-row intervals 5200 through 5599
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-ten-opposite-fine-5200-5599.yml
+      - .github/product-side-ten-opposite-fine-5200-5599-trigger.txt
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  search:
+    name: fine-${{ matrix.orientation }}-${{ matrix.first_pair }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    strategy:
+      fail-fast: false
+      matrix:
+        orientation: [fc, ff]
+        first_pair: [5200, 5300, 5400, 5500]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-opposite-fine-5200-5599' .github/product-side-ten-opposite-fine-5200-5599-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact double-coset search
+        if: steps.gate.outputs.run == 'true'
+        run: >-
+          g++ -O3 -std=c++17
+          scripts/search_product_transposition_double_coset_ten.cpp
+          -o /tmp/search-product-transposition-double-coset-ten
+      - name: Search exact interval
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/search-product-transposition-double-coset-ten \
+            "${{ matrix.orientation }}" 5 "${{ matrix.first_pair }}" 100 \
+            | tee "side-ten-opposite-fine-${{ matrix.orientation }}-${{ matrix.first_pair }}.txt"
+          grep -Eq '^(NONE|FOUND)' \
+            "side-ten-opposite-fine-${{ matrix.orientation }}-${{ matrix.first_pair }}.txt"
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
+        uses: actions/upload-artifact@v4
+        with:
+          name: side-ten-opposite-fine-${{ matrix.orientation }}-${{ matrix.first_pair }}
+          path: side-ten-opposite-fine-${{ matrix.orientation }}-${{ matrix.first_pair }}.txt
+          if-no-files-found: error
+
+# Registered but uncounted until all eight transcripts are promoted and replayed.
