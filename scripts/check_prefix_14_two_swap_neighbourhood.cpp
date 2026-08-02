@@ -1,0 +1,6 @@
+#include <bits/stdc++.h>
+using namespace std;bool col(array<int,2>a,array<int,2>b,array<int,2>c){return 1LL*(b[0]-a[0])*(c[1]-a[1])==1LL*(b[1]-a[1])*(c[0]-a[0]);}
+int score(const vector<int>&P,const vector<int>&Q){int n=P.size();vector<array<int,2>>v;for(int i=0;i<n;i++)v.push_back({i,P[i]});for(int i=0;i<n;i++)v.push_back({i,Q[i]});int s=0;for(int i=0;i<2*n;i++)for(int j=i+1;j<2*n;j++)for(int k=j+1;k<2*n;k++)s+=col(v[i],v[j],v[k]);return s;}
+struct M{int l,i,j;};int main(){vector<int>P0={9,4,7,13,0,1,12,8,11,10,2,6,5,3},Q0={7,12,9,11,4,3,8,13,2,1,5,10,6,0};int n=14;vector<M>ms;for(int l=0;l<2;l++)for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)ms.push_back({l,i,j});int best=score(P0,Q0);vector<int>BP=P0,BQ=Q0;long long ck=0;
+for(int a=-1;a<(int)ms.size();a++){auto P=P0,Q=Q0;if(a>=0){auto m=ms[a];auto&A=m.l?Q:P;swap(A[m.i],A[m.j]);}for(int b=-1;b<(int)ms.size();b++){auto P2=P,Q2=Q;if(b>=0){auto m=ms[b];auto&A=m.l?Q2:P2;swap(A[m.i],A[m.j]);}bool ok=1;for(int r=0;r<n;r++)if(P2[r]==Q2[r])ok=0;if(!ok)continue;int s=score(P2,Q2);ck++;if(s<best){best=s;BP=P2;BQ=Q2;cerr<<"best "<<best<<" moves "<<a<<","<<b<<"\n";}if(s==0)goto done;}}
+done:cerr<<"checked "<<ck<<" best "<<best<<"\n";cout<<"P";for(int x:BP)cout<<" "<<x;cout<<"\nQ";for(int x:BQ)cout<<" "<<x;cout<<"\n";}
