@@ -1,67 +1,79 @@
 # All-n product construction: current frontier map
 
-**Branch:** `research/all-n-product-construction`
+**Branch:** `research/all-n-product-construction`  
+**Reconciled:** 2 August 2026
 
-This map records the active frontiers after PX1135. It is not a proof of the classical conjecture or an all-side product theorem.
+This map records the active frontiers through PX1186. It is not a proof of the classical conjecture or an all-side product theorem.
 
 ## Effective asymptotic repair
 
-The paired path is effective for `N>=10^2874`. At decimal order `2873`, the exact unchanged-inequality improvement threshold lies between `1.0979139` and `1.0979151`.
+The paired path is effective for `N>=10^2874`. At decimal order `2873`, the unchanged-inequality improvement threshold lies between `1.0979139` and `1.0979151`. A 9% improvement is insufficient through exponent `2873.0585` and guaranteed sufficient from `2873.0616` onward.
 
-**Next:** prove the approximately `9.7914%` interval-specific improvement, reduce effective divisor loss, or construct an extension or absorber below the cutoff.
+**Next:** prove the interval-specific improvement on the first 6.16% of the logarithmic slab, reduce effective divisor loss, or construct an extension or absorber below the cutoff.
 
 ## Side-seven finite census
 
-Cases `0--1279` of multiplicity two are exact. The committed cache contains:
+All support-twenty selectors of multiplicity at least three are exact. Multiplicity-two cases `0--1389` are exact. The committed cache contains:
 
-- `40,160` infeasible selectors;
-- one constructive selector;
-- `31,699` unclassified selectors;
-- `3,242,756,553` rejection-CSP nodes.
+- `40,379` certified-infeasible selectors;
+- two constructive selectors;
+- `31,479` unclassified selectors;
+- `3,278,927,685` certified rejection-CSP nodes.
 
-The unresolved set is `2,560` multiplicity-two signatures and all `26,579` multiplicity-one selectors. Cases `1280--1359` are registered but uncounted.
+The unresolved set is exactly `2,450` multiplicity-two signatures (`4,900` selectors) plus all `26,579` multiplicity-one selectors. The next canonical multiplicity-two case is `1390`.
+
+Cases `1390--1399` are registered for exact computation and remain uncounted until their transcripts are promoted and replayed.
 
 ## Certificate compression
 
-For case zero, orientation three:
+For multiplicity-two case zero, orientation three:
 
-- 64 references reduce to 49 keys covering 92 clean top orders;
-- 128 references reduce to 102 keys covering 164 clean top orders;
-- the extension replays use 3,185,280 exact bottom checks;
-- selector zero first requires twelve greedy cover triples at three references beyond the original prefix.
+- 192 references reduce to 150 relaxed semantic keys;
+- a deterministic greedy selection followed by reverse deletion gives a 115-key irredundant basis;
+- the basis has 231 incidences, 177 private top-order witnesses, and maximum overlap two;
+- the exact basis digest is `12529763722981785837`;
+- the basis covers 204 of 35,112 clean top orders, leaving `34,908` outside the current union.
 
-**Next:** extend beyond top index 127 and compute a compact set-cover basis.
+**Next:** generate semantic references from uncovered clean top orders. Do not spend the next tranche only optimizing the existing 204-top island.
+
+## Constructive-template analysis
+
+Multiplicity-two case `1287`, selector zero, orientation zero is constructive and independently verified.
+
+**Next:** compute its stabilizer, orbit under the certified coordinate symmetries, and normalized local pattern inventory; determine whether it yields a reusable selector template rather than an isolated witness.
 
 ## Produced-base recursion
 
-The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--3599` are obstructed in both remaining orientations:
+The opposite-pair double coset is completely obstructed in `cc` and `cf`. Fine-row pair indices `0--4799` are obstructed in both remaining orientations:
 
-- `fc`: 108,097,044 nodes;
-- `ff`: 72,006,698 nodes.
+- `fc`: 4,800 geometries, `171,920,043` nodes, maximum `1,877,339`;
+- `ff`: 4,800 geometries, `100,441,668` nodes, maximum `909,040`.
 
-Pair indices `3600--3999` are registered but uncounted.
+No constructive witness appears in these 9,600 fine-row geometries. Pair indices `4800--5199` are registered but uncounted.
 
 ## Protected spread
 
-An absolute residual rank-three cylinder bound requires cubic entropy in every nonempty slice conditioned on at most three edges. The exact order-five and order-seven families become singleton slices after two compatible conditions.
+Order 13 is the first tested protected-spread case with a genuinely cubic common-rainbow family: 4,524 matchings with exact rank-one through rank-three cylinder profiles. Smaller tested families can collapse to singleton conditioned slices.
 
-**Next:** prove cubic simultaneous-rainbow abundance with controlled rank-three completion counts uniformly after conditioning.
+**Next:** prove cubic simultaneous-rainbow abundance with cubic residual entropy and bounded rank-three completion multiplicity uniformly after every compatible rank-at-most-three conditioning.
 
 ## Global repair
 
-The canonical side-six repair graph has 546 states. Exactly 102 nonsolutions have a forced minimax-optimal first move, but all ten bounded-uphill states have between three and eight optimal exits.
+The canonical side-six repair graph has a unique complete minimax path at the forced states and multiple complete minimax-optimal exits at every bounded-uphill state; the global path multiplicity maximum is 38.
 
-**Next:** coordinate forced ordinary states and the available uphill choice reserve without collateral accumulation across fibres.
+**Next:** coordinate forced ordinary states with the uphill choice reserve while charging collateral to a bounded barrier or resampling potential.
 
 ## Carry and bounded-denominator geometry
 
-For sides two through five, exact fixed-level carry multiplicity is at most three-fifths of the general cap. Weighted quotient extraction, carry dispersion, wrap-center factorization, and first-generation endpoint neutralization remain available.
+The complete side-two through side-five carry profile isolates a high-concentration class: only 8 of 64 side-five factor pairs attain multiplicity 72. Weighted quotient extraction, carry dispersion, wrap-center factorization, and first-generation endpoint neutralization remain available.
 
-**Next:** prove an asymptotic carry-cap improvement, second-generation collateral concentration, termination, or row-column-preserving absorbers.
+**Next:** prove an asymptotic carry-cap improvement, second-generation collateral concentration, a monotone termination potential, or row-column-preserving bounded-denominator absorbers.
 
 ## Operational priorities
 
-1. Promote side-seven cases `1280--1359`.
-2. Promote side-ten fine intervals `3600--3999`.
-3. Extend semantic master learning beyond top index 127.
-4. Advance the exact decimal-2873 target, protected residual entropy, bounded-barrier repair, and carry/absorber closure.
+1. Promote side-seven cases `1390--1399` only after exact transcript replay.
+2. Promote side-ten fine intervals `4800--5199` only after exact transcript replay.
+3. Expand the semantic union using uncovered top orders.
+4. Analyze the case-`1287` symmetry orbit and reusable pattern content.
+5. Advance the decimal-2873 target, protected residual entropy, bounded-barrier repair, and carry/absorber closure in parallel.
+6. Keep `STATUS.md` and `AUTOPROMPTER_HANDOFF.md` synchronized with certified, not merely registered, boundaries.
