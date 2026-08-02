@@ -1,0 +1,32 @@
+name: Rank mass multiplicity line energy frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_rank_mass_multiplicity_line_energy_ancestry.py'
+      - 'scripts/verify_prime_power_prescription_rank_mass_conservation.py'
+      - 'scripts/verify_prime_power_line_clean_rank_mass_large_load.py'
+      - 'scripts/verify_prime_power_owner_support_rank_mass_capacities.py'
+      - 'scripts/verify_prime_power_owner_support_large_load_closure.py'
+      - 'scripts/verify_prime_power_geometric_prescription_multiplicity.py'
+      - 'scripts/verify_prime_power_packed_secant_multiplicity.py'
+      - 'scripts/verify_prime_power_background_triple_multiplicity_charge.py'
+      - 'scripts/verify_prime_power_background_potential_multiplicity.py'
+      - 'scripts/verify_prime_power_line_energy_profile_census.py'
+      - 'docs/545-prime-power-rank-mass-multiplicity-line-energy-ancestry.md'
+      - '.github/workflows/rank-mass-multiplicity-line-energy-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_rank_mass_multiplicity_line_energy_ancestry.py
