@@ -2,96 +2,70 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4277**. Every checker, bridge, fixture, manifest and regression preserves:
-
-```text
-all_n_proved_by_checker = 0
-```
-
-No finite census, registry digest, manifest or workflow result proves the all-`n` theorem.
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4325**. Every checker, bridge, fixture, manifest and regression preserves `all_n_proved_by_checker = 0`.
 
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_830.py
-manifest = 9fe8e73ea57a7386c9c90d637d02037f5d96018ab904218f08f4fbec78446583
-operation kinds = 830
-checker contracts = 37
+runner = scripts/run_prime_power_installed_construction_regression_902.py
+manifest = f8ab06f6f46e08b91b425c10e53c55779e66be9acea6bbc0017d7216130f4857
+operation kinds = 902
+checker contracts = 38
 owner-changing kinds = 164
-same-owner kinds = 666
-checkers = 67
+same-owner kinds = 738
+checkers = 69
 ```
-
-Inspect actual workflow runs before claiming CI success.
 
 ## 3. Installed recurrent-certificate surface
 
-### Through CMR4229
-
-Line-clean, repeated-token, selector-return, trace and returned-edge exchange rows are exact finite coefficient problems.
-
-### CMR4230--CMR4277
-
-Source CMR1582--CMR1629 installs:
+Source CMR1630--CMR1701 installs:
 
 ```text
-one shared return-selector assignment score and dual
-strict rational/integer assignment certificate format
-strong/singleton/overlap integer line-clean budgets
-critical-selector finite class localization
-prime-field root singleton support reduction
-exact rational fixed-interface rows
-finite thin-side certificate compiler
-label-preserving collision/local-line/CRT state refinement
-labelled SCC spectral reduction and constructive certificate gluing
+combined return superlevel and class-support covers
+universal line-clean budget floors
+selector capacity-gap compiler
+fixed-interface matching symmetry normalization
+normalized thin response and rank-three censuses through side five
+profile-capacity and overflow compilers
+exact auxiliary resolvent elimination
 ```
 
-The structural certificate protocol is complete for these modules. The required recurrent blocks are not yet certified strict.
+These interfaces produce exact strict tests and finite worklists. They do not prove every geometric row or effective core strict.
 
 ## 4. Active mathematical frontier
 
-Continue from source CMR1630:
+Continue from CMR1702:
 
 ```text
-return-assignment superlevel covers
-universal line-clean budget floors
-selector-capacity gap compiler
-fixed-interface symmetry normalization
-normalized thin response census
-return class-support covers
-line-clean profile-capacity compiler
-normalized thin rank-three census
-subcritical auxiliary-block elimination
+prescription rank-mass conservation
+line-clean rank-mass large-load closure
+owner-support rank-mass capacities
+owner-support large-load closure
+geometric prescription multiplicity formulas
+packed secant multiplicity bounds
+background triple multiplicity charge
+background-potential multiplicity bounds
+line-energy profile census
 ```
-
-The next useful result must close a recurrent class by a strict assignment/cover certificate, universal positive budget, normalized finite census, or exact auxiliary elimination.
 
 ## 5. Exact global blockers
 
-1. Construct a globally strict combined return-selector assignment dual or a finite class-supported cover certificate.
-2. Prove positive strong/singleton/overlap line-clean slacks in all inherited geometric classes.
-3. Eliminate or certify every localized critical selector class.
-4. Execute and certify the normalized fixed-interface/thin row tables, retaining geometric fibre distinctions.
-5. Preserve collision, local-line and CRT labels through every recurrent SCC and publish strict block certificates.
-6. Audit the original operation list for global transition-kind exhaustiveness.
-7. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
+1. Prove a globally strict combined return cover or assignment certificate.
+2. Prove all inherited line-clean profile capacities enter exact or universal budgets.
+3. Close every residual selector capacity class.
+4. Lift matching-level thin caps to exact geometric offspring rows and certify the effective core.
+5. Preserve all collision, local-line and CRT labels through recurrent SCCs.
+6. Prove global transition-kind exhaustiveness and global termination.
 
-## 6. Validation blockers
+## 6. Validation boundary
 
 ```text
 checker contract = locally reproduced
-registry 830 contract/census/seal = locally reproduced
-registry corruption audit = locally reproduced and passed
-runner 830 manifest = locally reproduced
-consolidated six-verifier checker = not executed end to end locally
-complete 67-checker runner = not executed locally
+registry 902 contract/census/seal = locally reproduced
+runner 902 manifest = locally reproduced
+nine-verifier checker = not executed end to end locally
+complete 69-checker runner = not executed locally
 workflow success = not observed
 ```
 
-Dedicated workflows are configured, but configuration is not evidence of CI success.
-
-## 7. Downstream frontiers
-
-T01 lacks genuine authoritative source population. T03--T04 require genuine operation populations. T05--T19 require arbitrary-`n` coverage and semantic proofs. T20--T31 chamber, hard-core and final-premise arguments remain open. T35--T40 handoffs, T41 review, T42 sign-off and T43 remain open. T32--T34 are documentary aggregation gates only.
-
-No local checker, registry or runtime manifest substitutes for those proofs.
+Workflow configuration is not CI success. No local checker, registry or runtime manifest substitutes for the missing mathematical proofs.
