@@ -43,22 +43,25 @@ corrected state has 144 distinct points, eighteen blocks, and no collinear tripl
 
 ## PP3dcl — Exact raw nineteenth spectrum
 
-Using next origin `(72,213)`, all 1,032 raw nineteenth attempts fail. Their exact
-minimum-transversal histogram is
+Using next origin `(72,213)`, all 1,032 raw nineteenth attempts fail. Recompiling
+the committed spectrum kernel gives the exact minimum-transversal histogram
 
 ```text
-4:2, 5:9, 6:47, 7:175, 8:283,
-9:3, 10:16, 11:63, 12:121, 13:176, 14:137.
+4:1, 5:13, 6:46, 7:176, 8:280,
+9:1, 10:17, 11:61, 12:124, 13:176, 14:137.
 ```
 
-The two minimum-four attempts are
+The unique minimum-four attempt is
 
 ```text
-P1/-33: one minimum core,
 P2/-64: five minimum cores.
 ```
 
-Thus the next correction frontier contains six minimum cores across two attempts.
+The previously recorded `P1/-33` claim was stale: the current 144-point state has
+eleven conflict triples there, minimum transversal five, and exactly three
+minimum-five cores. Thus the next minimum correction frontier contains five cores
+in the single attempt `P2/-64`.
+
 The exact spectrum is `scripts/check_boundary_nineteenth_spectrum.cpp`, and the
 combined state audit is `scripts/check_boundary_eighteenth_transition.py`.
 
