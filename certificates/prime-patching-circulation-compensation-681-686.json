@@ -1,0 +1,85 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "681-686",
+  "theorems": [
+    "PP3ddb", "PP3ddc", "PP3ddd",
+    "PP3dde", "PP3ddf", "PP3ddg",
+    "PP3ddh", "PP3ddi", "PP3ddj",
+    "PP3ddk", "PP3ddl", "PP3ddm",
+    "PP3ddn", "PP3ddo", "PP3ddp",
+    "PP3ddq", "PP3ddr", "PP3dds"
+  ],
+  "boundary": {
+    "corrected_points": 144,
+    "corrected_blocks": 18,
+    "raw_nineteenth_minimum_four_attempts": 1,
+    "canonical_attempt": {"node": "P2", "offset": -64},
+    "conflict_triples": 9,
+    "minimum_cores": 5,
+    "budgets_exhausted": [4, 5, 6],
+    "cores_correctable_through_budget_six": 0,
+    "minimum_remaining_deletion_budget": 7,
+    "corrected_nineteenth_transition": false
+  },
+  "hall": {
+    "packet_retention": "sum_j r_j-sum_i c_i",
+    "identical_packet_retention": "K*r-(K-1)*c=K*(r-c)+c",
+    "positive_density_condition": "r>c",
+    "packets_needed_for_28": "max(1,ceil((28-c)/(r-c)))",
+    "packet_graphs": 26,
+    "two_packet_interface_cases": 76156,
+    "exact_lower_bound_cases": 3766,
+    "strict_lower_bound_cases": 72390,
+    "maximum_observed_slack": 4
+  },
+  "threshold": {
+    "legal_permutation_layers": 18,
+    "legal_four_layer_matrices": 4475,
+    "facet_matrices": 495,
+    "pair_sum_states": 12870,
+    "minimal_equal_weight_batches": 19834,
+    "support_histogram": {"2": 5, "3": 210, "4": 2255, "5": 17364},
+    "multiplicity_partition_histogram": {
+      "1+1+1+1+1": 17364,
+      "2+1+1+1": 2255,
+      "2+2+1": 175,
+      "3+1+1": 35,
+      "4+1": 5
+    },
+    "geometric_hidden_primitive": false
+  },
+  "prefix": {
+    "physical_minimum_crossing_matchings": 104,
+    "deletion_cases": 2,
+    "physical_cases": 208,
+    "minimum_rerouting_distance": 4,
+    "optimal_routes_per_case": 144,
+    "selector": "lexicographically first optimal route",
+    "compositions_per_route": 1024,
+    "route_composition_pairs_checked": 212992,
+    "all_pairs_pass": true,
+    "maximum_coordinate_histograms": {
+      "deletion_0_2": {"120": 52, "132": 52},
+      "deletion_3_5": {"84": 52, "132": 52}
+    }
+  },
+  "shell": {
+    "robust_circulation_lp": "maximize gamma subject to Bx=0, x>=0, sum x=1, gamma<=<3-b^u,x>",
+    "example_normalized_margin": "1/2",
+    "example_integer_bundle_gain": 1,
+    "example_connector_saving": -2,
+    "least_bundle_repetitions": 3,
+    "executable_closed_walk_gain": 1,
+    "coordinate_macro_graph": false
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "promoted_rows": [],
+    "actual_evidence_level": "fixture_derived",
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3ddt"
+  }
+}
