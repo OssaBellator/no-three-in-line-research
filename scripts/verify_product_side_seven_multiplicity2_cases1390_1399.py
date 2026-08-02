@@ -47,7 +47,10 @@ def main() -> None:
                 capture_output=True,
                 text=True,
             )
-            assert "FEASIBLE " not in completed.stdout
+            assert not any(
+                line.startswith("FEASIBLE ")
+                for line in completed.stdout.splitlines()
+            )
             final = completed.stdout.strip().splitlines()[-1]
             assert final == EXPECTED[case]
             match = FINAL_RE.fullmatch(final)
