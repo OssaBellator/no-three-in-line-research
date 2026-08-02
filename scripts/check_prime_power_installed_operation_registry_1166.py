@@ -14,7 +14,7 @@ BASE_REGISTRY_SHA256="a4d652ef07e5a78e53d7b674e0fc50b97e714e2797270db72fe540a26d
 BASE_OPERATION_KIND_COUNT=1094
 BASE_CONTRACT_COUNT=41
 BASE_OWNER_CHANGING_KIND_COUNT=164
-NEW_CONTRACT_SHA256="a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb"
+NEW_CONTRACT_SHA256="8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828"
 
 RAW=r"""exact-owner-fate-class-key|CMR1894|same-owner|local-family-equivalence|replace every child credit by its exact owner fate collision line interface and provenance key
 owner-fate-class-coefficient-sum|CMR1895|same-owner|local-family-equivalence|replace per-credit coefficients by exact sums inside one complete class
@@ -95,7 +95,7 @@ def parse(line: str)->dict[str,Any]:
 
 NEW_ENTRIES=[parse(line) for line in RAW.splitlines() if line]
 CONTRACT={"schema":"prime-power-installed-operation-registry-1166/v1","base_registry_sha256":BASE_REGISTRY_SHA256,"base_operation_kind_count":BASE_OPERATION_KIND_COUNT,"base_contract_count":BASE_CONTRACT_COUNT,"base_owner_changing_kind_count":BASE_OWNER_CHANGING_KIND_COUNT,"new_contract_sha256":NEW_CONTRACT_SHA256,"new_entries":NEW_ENTRIES,"scope":"installed owner-fate compression compulsory certificates line kernels selector stability raw lineage and zero-response blocker operations through CMR1965","honesty_flags":{"owner_fate_rows_populated_all_recurrent_states":0,"compulsory_weighted_certificates_complete":0,"raw_fibre_backgrounds_cover_all_provenance":0,"rank_three_zero_blockers_globally_resolved":0,"complete_labelled_recurrent_lp_strict":0,"all_labelled_recurrent_blocks_subcritical":0,"same_owner_diagonal_blocks_subcritical":0,"global_target_collateral_inequality_proved":0,"global_transition_kind_bank_exhaustive":0,"global_termination_proved":0,"actual_global_parent_rule_complete":0,"all_n_proved_by_checker":0}}
-EXPECTED_CONTRACT_DIGEST="29d41e186b0ab1be5b755f6c751a0cbb6ef6db89574e8f39f91ff1325e24be9f"
+EXPECTED_CONTRACT_DIGEST="383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b"
 ALLOWED_OWNERS={"same-owner","factor-child-owner-change"}
 ALLOWED_PAYMENTS={"spectral-certificate","local-family-equivalence","finite-base-dispatch","scheduler-dispatch","owner-witness-stock","table-enumeration","certificate-gluing","history-budget"}
 
@@ -133,5 +133,4 @@ def main()->None:
     contract=digest(CONTRACT); require(contract==EXPECTED_CONTRACT_DIGEST,"contract digest mismatch")
     census=validate(copy.deepcopy(NEW_ENTRIES)); census["rejected_corruptions"]=mutation_audit()
     print(json.dumps({"contract_digest":contract,"census":census,"installed_transition_kind_bank_1166_exhaustive":1,"owner_fate_lineage_kernel_operations_registered":1,"installed_payment_assignment_1166_complete":1,"owner_fate_rows_populated_all_recurrent_states":0,"compulsory_weighted_certificates_complete":0,"raw_fibre_backgrounds_cover_all_provenance":0,"rank_three_zero_blockers_globally_resolved":0,"complete_labelled_recurrent_lp_strict":0,"all_labelled_recurrent_blocks_subcritical":0,"same_owner_diagonal_blocks_subcritical":0,"global_target_collateral_inequality_proved":0,"global_transition_kind_bank_exhaustive":0,"global_termination_proved":0,"actual_global_parent_rule_complete":0,"all_n_proved_by_checker":0},sort_keys=True))
-
 if __name__=="__main__": main()
