@@ -3,7 +3,7 @@
 ```text
 runner = scripts/run_prime_power_installed_construction_regression_1166.py
 base manifest = ae6023ffcf2eed5fca0e2cd1a3050b29d4db3098370f8bb39c8a0fd59aef376b
-77-checker manifest = 6bea37ee2abf2a6eff122fcf07bcd11348b6dc39378e8bab94f290d41e93d2c3
+77-checker manifest = e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d
 ```
 
 ## Theorem CMR4502 -- PROVED
@@ -20,11 +20,11 @@ The extension contains exactly the owner/fate-lineage-kernel checker and the 116
 
 ## Theorem CMR4505 -- PROVED
 
-The ancestry checker is bound to contract `a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb` and flag `owner_fate_lineage_kernel_ancestry_proved`.
+The ancestry checker is bound to contract `8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828` and flag `owner_fate_lineage_kernel_ancestry_proved`.
 
 ## Theorem CMR4506 -- PROVED
 
-The registry is bound to contract `29d41e186b0ab1be5b755f6c751a0cbb6ef6db89574e8f39f91ff1325e24be9f` and flag `installed_transition_kind_bank_1166_exhaustive`.
+The registry is bound to contract `383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b` and flag `installed_transition_kind_bank_1166_exhaustive`.
 
 ## Theorem CMR4507 -- PROVED
 
@@ -36,7 +36,7 @@ Every bound contract is a lowercase 64-character SHA-256 digest.
 
 ## Theorem CMR4509 -- PROVED
 
-The chained manifest `6bea37ee2abf2a6eff122fcf07bcd11348b6dc39378e8bab94f290d41e93d2c3` was reproduced locally from the 75-checker base and ordered two-entry extension.
+The chained manifest `e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d` was reproduced locally from the 75-checker base and ordered two-entry extension.
 
 ## Theorem CMR4510 -- PROVED
 
@@ -64,7 +64,7 @@ installed checkers = 77
 
 ## Theorem CMR4514 -- VALIDATION BOUNDARY
 
-The runner source and chained manifest were reproduced locally. The complete 77-checker execution was not observed.
+The complete owner/fate checker, registry contract/census/seal and chained runner manifest were reproduced locally. The complete 77-checker execution was not observed.
 
 ## Theorem CMR4515 -- PROVED
 
