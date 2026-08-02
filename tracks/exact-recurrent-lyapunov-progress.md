@@ -239,6 +239,46 @@ This disproves any background-independent rule that a local reopening response
 always minimizes the complete score. It does not prove either witness is a
 physically realizable construction state.
 
+## ERL1m — infinite two-point original-face family
+
+The pair-through vector
+
+```text
+(3012,3210,2031,2310,3201)=(0,0,1,1,1)
+```
+
+occurs on exactly two lines determined by response-union points:
+
+```text
+x+y=2, through 02 and 20
+x+y=4, through 13 and 31.
+```
+
+Neither line is a secant of any one candidate response. After removing the
+finite response-union and response-secant intersection set, each line still
+contains infinitely many integer points with zero singleton increment. Any two
+distinct remaining points on either line therefore produce
+
+```text
+3012=1, 3210=4, 2031=1, 2310=1, 3201=1.
+```
+
+The minimizer face is `{3012,2031,2310,3201}`. Thus the original intrinsically
+bad response re-enters the complete-score minimizer face on an infinite affine
+schema-completion family. This is not a physical realization theorem.
+
+Artifacts:
+
+```text
+scripts/check_exact_recurrent_first_host_two_point_original_face_family.py
+data/exact_recurrent_first_host_two_point_original_face_family.json
+docs/exact-recurrent-first-host-two-point-original-face-family.md
+.github/workflows/exact-recurrent-first-host-two-point-original-face-family.yml
+```
+
+The checker proves the two-line classification, validates direct triple counts
+and rejects eight mutation corruptions.
+
 ## Current exact interface
 
 ```text
@@ -249,14 +289,16 @@ singleton atlas     15 exact integer signatures
 pair component      39 exact contribution classes
 singleton critical  (-1,4), (4,-1)
 two-point reversal  2 minimal radius-five backgrounds
+critical pair lines x+y=2 and x+y=4
 coarse H=2 bound    69.
 ```
 
 ## Active work queue
 
-- **#18:** determine whether the two minimal reversal signatures are excluded by
-  physical provenance; otherwise retain them as labelled states and enumerate
-  installed legal operations, children and multiplicities.
+- **#18:** determine whether the two critical pair-line classes and the strict
+  reversal signatures are excluded by physical provenance; otherwise retain
+  them as labelled states and enumerate installed legal operations, children
+  and multiplicities.
 - **#19:** publish a realizable non-strict SCC or failed row whenever found.
 - **#20:** classify the unique depth-two overlap under installed operations.
 - **#21:** compile exact offspring rows and solve or refute the strict rational
@@ -268,7 +310,8 @@ A valid first-host compiler must provide:
 
 1. every realizable physical occurrence over deletion trace `{02,20}`;
 2. the exact 20 secant-line loads and 11 pair-through-point counts;
-3. proof excluding the reversal signatures or explicit labelled reversal states;
+3. proof excluding both critical pair-line classes and strict reversal
+   signatures, or explicit labelled states for them;
 4. physical causes and owners of cells `02` and `20`;
 5. every installed legal operation and intermediate state;
 6. exact labelled child multiplicities and positive weights;
