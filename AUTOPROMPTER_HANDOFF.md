@@ -2,7 +2,7 @@
 
 ## Current goal
 
-Populate a complete machine-checkable side-four raw-fibre lineage and compulsory weighted-row manifest using the repaired CMR1894--CMR1965 owner/fate-lineage-kernel interfaces.
+Extend the complete normalized side-four raw-host/response manifest with actual owner, fate, collision, line, interface and CRT provenance, then generate every compulsory child-weighted row and classify strict versus residual states.
 
 ## Repository state
 
@@ -75,17 +75,43 @@ base manifest = ae6023ffcf2eed5fca0e2cd1a3050b29d4db3098370f8bb39c8a0fd59aef376b
 contract-fix commit = 9b0bfc9fb55645ce51b893122fa9ccc65b15bb79
 ```
 
-## Exact finite blocker atlas
+## Post-ledger populated support artifact
 
-The restored side-four zero-response verifier checks:
+```text
+manifest = data/prime_power_side_four_raw_fibre_lineage_manifest.json
+manifest sha256 = 84ad1c92a9e0bcfb4d1f613e05edec20c4300022d96269ed561b45d32bf7432f
+checker = scripts/check_prime_power_side_four_raw_fibre_lineage_manifest.py
+manifest commit = 78ecbfd9b6401f31749380a9e0091975991d5b63
+checker commit = 0fa4e9124d8e85cafde082debfa791c9931885b2
+workflow = .github/workflows/side-four-raw-fibre-lineage-manifest.yml
+workflow commit = 2ef66f505040439bfe2c1754013134f478d6f434
+```
+
+The deterministic manifest contains:
 
 ```text
 executable raw hosts = 86
+response occurrences = 206
+zero-triple response occurrences = 137
 hosts admitting a zero-triple response = 75
-zero-response-free hosts = 11
-inclusion-minimal blockers = 3
-zero-response-free minimum counts = 9 hosts at 1, 2 hosts at 4
+blocker-alternative hosts = 11
+minimal blockers = 3
+response energy census = {0: 137, 1: 34, 4: 35}
+manifest corruption fixtures = 10
 ```
+
+Each host has a stable identifier, exact deletion trace, exact response permutations and triple counts, zero-response or blocker dispatch, and every contained minimal blocker. Coordinate geometry, target, opposite matching, deletion trace and response family are complete.
+
+The manifest deliberately records:
+
+```text
+global_owner_fate_collision_interface_crt = 0
+compulsory_weighted_rows_complete = 0
+all_recurrent_states_populated = 0
+all_n_proved_by_checker = 0
+```
+
+## Exact finite blocker atlas
 
 The exact minimal deletion blockers are:
 
@@ -94,6 +120,8 @@ The exact minimal deletion blockers are:
 {(0,2),(3,1)}
 {(1,3),(3,1)}
 ```
+
+Among the 11 zero-response-free hosts, nine have minimum response-triple count one and two have minimum four.
 
 ## Decisions to preserve
 
@@ -104,9 +132,10 @@ The exact minimal deletion blockers are:
 5. Complete line-energy kernels retain exact background and response line profiles.
 6. Selector stability is conditional on accumulated perturbation remaining below the response gap; ties retain the exact minimizer face.
 7. Raw-fibre lineage identifies the coordinate-labelled host, target, background, response family and complete provenance.
-8. The three-blocker atlas is complete only for the normalized side-four raw-host problem.
-9. All 72 CMR1894--CMR1965 registry operations preserve structural owner.
-10. Workflow configuration is not CI success.
+8. The new 86-host manifest is complete only for coordinate host/response lineage; it does not populate global owner/fate/CRT provenance.
+9. The three-blocker atlas is complete only for the normalized side-four raw-host problem.
+10. All 72 CMR1894--CMR1965 registry operations preserve structural owner.
+11. Workflow configuration is not CI success.
 
 ## Exact current flags
 
@@ -115,6 +144,7 @@ owner_fate_lineage_kernel_ancestry_proved = 1
 installed_transition_kind_bank_1166_exhaustive = 1
 installed_payment_assignment_1166_complete = 1
 installed_transition_regression_1166_complete = 1
+side_four_raw_fibre_lineage_manifest_complete = 1
 
 owner_fate_rows_populated_all_recurrent_states = 0
 compulsory_weighted_certificates_complete = 0
@@ -133,11 +163,13 @@ all_n_proved_by_checker = 0
 ## Validation boundary
 
 ```text
-nine standalone verifiers = executed locally
+nine standalone source verifiers = executed locally
 consolidated owner/fate checker = executed locally
 checker contract and 17-fixture audit = reproduced locally
 registry contract/census/payment counts/seal = reproduced locally
 runner 77-checker manifest = reproduced locally
+side-four lineage manifest checker = executed locally
+side-four manifest hash and 10-fixture audit = reproduced locally
 complete 77-checker runner = not executed locally
 workflow success = not observed
 ```
@@ -154,13 +186,13 @@ uncommitted generated artifacts = none known
 No literal source chapter after CMR1965 has been confirmed. Continue with executable population work:
 
 ```text
-1. materialize the complete 86-host normalized side-four raw-fibre lineage batch
-2. assign stable identifiers and exact response families to every host
-3. attach target, background and owner/fate/collision/line/interface/CRT provenance records
-4. generate every compulsory child-weighted coefficient row
-5. dispatch zero-response hosts directly and retain exact blocker alternatives for the remaining 11
-6. run the compulsory and slack-preconditioned manifest checks
-7. publish strict rows or an exact residual host/lineage worklist
+1. define the finite provenance dimensions that refine each of the 86 normalized hosts
+2. attach owner, fate, collision, local-line, interface and CRT labels without merging distinct rows
+3. derive complete compulsory return, selector, collision, line, interface and geometric coefficients
+4. attach one positive child-weight lookup to every coefficient
+5. run zero-response dispatch on 75 hosts and exact blocker alternatives on 11 hosts
+6. apply slack-preconditioned inner and outer dual checks
+7. publish strict rows or an exact residual host/provenance worklist
 ```
 
-The success criterion is a complete populated manifest for this finite block, not another unpopulated schema.
+The success criterion is a complete compulsory weighted-row manifest for at least one full finite provenance refinement of the 86-host block.
