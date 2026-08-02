@@ -38,12 +38,22 @@ The branch records the following completed state beyond the older `main` snapsho
 
 The next canonical multiplicity-two case is `1420`. Cases `1420--1429` are registered but uncounted. The next bounded prefix begins at pair index `6000`; indices `6000--6399` are registered but uncounted.
 
+## In-flight promotion audit
+
+The registered workloads have completed, but the certified boundary remains `PX1210` until independent replay succeeds:
+
+1. GitHub Actions run `30746691734` completed side-seven cases `1420--1429`. The exact transcripts contain 20 infeasible selectors, no constructive selector, and `1,922,329` rejection nodes with orientation totals `416,891`, `578,825`, `452,125`, and `474,488`.
+2. `scripts/verify_product_side_seven_multiplicity2_cases1420_1429.py` records the exact per-case expected output and aggregate totals as proposed `PX1211--PX1214`; it is committed but not yet promoted.
+3. GitHub Actions run `30746691737` completed side-ten pair indices `6000--6399`. All 800 geometries are obstructed, adding `2,403,505` `fc` nodes and `3,970,538` `ff` nodes; interval maxima are `23,756` and `76,725`.
+4. `scripts/verify_product_transposition_double_coset_opposite_fine_ten_6000_6399.py` records the exact eight interval outputs as proposed `PX1215--PX1217`; it is committed but not yet promoted.
+5. Commit `0c08568b2fda690fbbe7233d636b09ab8ae5f1f6` wires both new verifiers into `.github/workflows/product-promoted-frontier-replay.yml`. Do not update certified counts or delete the registered workflows/triggers unless both new replay jobs pass.
+
 ## Current frontiers
 
 Advance all of these without treating any conditional statement as proved:
 
-1. **Side-seven census:** continue multiplicity-two classification from canonical case `1420`, preserving exact transcript promotion and witness-aware replay; then continue multiplicity one.
-2. **Side-ten recursion obstruction:** continue `fc` and `ff` fine-row search from pair index `6000` and promote only completed exact intervals.
+1. **Side-seven census:** complete the independent replay and promotion audit for cases `1420--1429`; then continue multiplicity-two classification from canonical case `1430`, preserving exact transcript promotion and witness-aware replay; then continue multiplicity one.
+2. **Side-ten recursion obstruction:** complete the independent replay and promotion audit for pair indices `6000--6399`; then continue `fc` and `ff` fine-row search from pair index `6400` and promote only completed exact intervals.
 3. **Semantic proof compression:** continue generating references from the `34,891` clean top orders outside the 221-top expanded union, and recompute a compact irredundant basis for the expanded vocabulary.
 4. **Constructive-template analysis:** determine whether the case-`1287` construction has a symmetry orbit or reusable local template.
 5. **Finite-range arithmetic:** prove the exact decimal-2873 improvement on the first 6.16% of the logarithmic slab, or reduce the effective divisor loss.
@@ -62,23 +72,25 @@ Advance all of these without treating any conditional statement as proved:
 
 ## Immediate next actions
 
-1. Inspect the registered side-seven cases `1420--1429`; promote only after every exact transcript is secured and independently replayed.
-2. Inspect the registered side-ten intervals `6000--6399`; retain the durable workflow until all eight exact transcripts are secured, then promote and remove it.
+1. Check the permanent replay workflow containing the new `1420--1429` and `6000--6399` jobs. Promote only if both deterministic expected-output replays succeed.
+2. On successful replay, add documentation chapters, advance the manifest/status/current-frontier records to `PX1217`, remove the completed registered triggers and workflows, and register cases `1430--1439` plus pair indices `6400--6799` as uncounted.
 3. Continue semantic-union expansion from the `34,891` uncovered clean top orders and compute an updated basis for the 221-top union.
 4. Compute the certified symmetry orbit and normalized local template inventory of the case-`1287` construction.
-5. Keep `tracks/all-n-product-frontier-manifest.json`, `STATUS.md`, and the deterministic frontier checker synchronized through `PX1210` or the next promoted boundary.
+5. Keep `tracks/all-n-product-frontier-manifest.json`, `STATUS.md`, and the deterministic frontier checker synchronized through `PX1210` until promotion, then through `PX1217`.
 
 ## Validation baseline
 
-The repository uses Python 3.10+ standard-library verifiers and selected C++ exact-search programs. The promoted tranches have deterministic replay scripts:
+The repository uses Python 3.10+ standard-library verifiers and selected C++ exact-search programs. The promoted and pending tranches have deterministic replay scripts:
 
 ```bash
 python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
 python scripts/verify_product_side_seven_multiplicity2_cases1400_1409.py
 python scripts/verify_product_side_seven_multiplicity2_cases1410_1419.py
+python scripts/verify_product_side_seven_multiplicity2_cases1420_1429.py
 python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
 python scripts/verify_product_transposition_double_coset_opposite_fine_ten_5200_5599.py
 python scripts/verify_product_transposition_double_coset_opposite_fine_ten_5600_5999.py
+python scripts/verify_product_transposition_double_coset_opposite_fine_ten_6000_6399.py
 python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
 python scripts/verify_product_frontier_manifest.py
 ```
