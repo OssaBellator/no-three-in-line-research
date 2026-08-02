@@ -6,60 +6,58 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4373**. Every checker, fixture, bridge, manifest and regression preserves `all_n_proved_by_checker = 0`.
+The authoritative theorem ledger reaches **CMR4421**. Every checker, fixture, bridge, manifest and regression preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical construction execution
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_974.py
-manifest = 58a5c6eaa877331a9c4711835d9a3ce84c9def64001eea9ffb301325b7620be5
-operation kinds = 974
-checker contracts = 39
+runner = scripts/run_prime_power_installed_construction_regression_1030.py
+manifest = cb57bcbf2eb5278b8265975f948fec9970ba8539c4bc3c7e1ff12f5128d31626
+operation kinds = 1030
+checker contracts = 40
 owner-changing kinds = 164
-same-owner kinds = 810
-installed checkers = 71
+same-owner kinds = 866
+installed checkers = 73
 ```
 
-## Latest installed bank: CMR4326--CMR4373
+## Latest installed bank: CMR4374--CMR4421
 
-Source CMR1702--CMR1773 installs:
+Source CMR1774--CMR1829 installs:
 
 ```text
-exact prescription rank-mass conservation
-multiplicity-aware line-clean large-load thresholds
-owner-support matching-number and vertex-cover capacities
-small-support and prime-field reused-support thresholds
-rank-one secant, rank-two line-load and rank-three injective multiplicities
-exact packed secant bounds
-labelled bounded-congestion background-triple charges
-background-potential multiplicity bounds
-exact line-energy profile census and profile charges
+matching-versus-geometric orbit correction
+exact coordinate-labelled geometric fibres and honest upper-fibre rows
+exact line-energy marginal rook numerators
+nested rank-two and rank-three assignment certificates
+740 raw side-four/five geometric hosts
+exact denominator-specific rank-three fibre tables
+line-occupancy assignment capacities
+one unified outer return-selector-geometric response score
 ```
 
-These results prove genuine strict-response regimes under explicit host, load, support, multiplicity and profile hypotheses. They do not prove those hypotheses cover every recurrent row.
+The matching-fibre layer contains 86 side-four and 654 side-five raw hosts. Matching denominators may be reused inside a fibre; Euclidean numerators and labelled offspring rows remain fibre-specific.
 
 ## Canonical contracts and seals
 
 ```text
-checker = 681a56e37003368e62a92ae7df349488e03e03eec34c2cddf2ab39b8d6622bdd
-registry contract = 5bff249b3ada147307677bb59979f034b1c2587c4cc0a8643b903dbcd6eaf96e
-registry seal = 240be08e0fe0e6e061d55a245cd544880b8612f9575099faa011e10d47ec77c6
-71-checker manifest = 58a5c6eaa877331a9c4711835d9a3ce84c9def64001eea9ffb301325b7620be5
+checker = f03ab61fabb4ad8727f239a31474466f3074f2397762a63fd4255c683176e3eb
+registry contract = c93c2c8d69260ecc2c2c4b0709af26c16a9c054b2ec7f85f4cea83a36dcb8084
+registry seal = 60172375358504d3c697b73cf45d0d7df60441a01f09a0fa46140d720852245b
+73-checker manifest = cb57bcbf2eb5278b8265975f948fec9970ba8539c4bc3c7e1ff12f5128d31626
 ```
 
 ## Current exact flags
 
 ```text
-rank_mass_multiplicity_line_energy_ancestry_proved = 1
-installed_transition_kind_bank_974_exhaustive = 1
-installed_payment_assignment_974_complete = 1
-installed_transition_regression_974_complete = 1
+geometric_fibre_outer_assignment_ancestry_proved = 1
+installed_transition_kind_bank_1030_exhaustive = 1
+installed_payment_assignment_1030_complete = 1
+installed_transition_regression_1030_complete = 1
 
-all_line_clean_large_load_rows_closed = 0
-all_owner_support_rows_closed = 0
-geometric_multiplicity_caps_globally_sufficient = 0
-triple_free_response_policy_globally_available = 0
-line_energy_profile_rows_subcritical = 0
+geometric_fibre_rows_complete_all_provenance = 0
+rank_one_two_geometric_fibre_rows_subcritical = 0
+unified_outer_assignment_globally_strict = 0
+all_labelled_recurrent_blocks_subcritical = 0
 same_owner_diagonal_blocks_subcritical = 0
 global_target_collateral_inequality_proved = 0
 global_transition_kind_bank_exhaustive = 0
@@ -71,17 +69,18 @@ all_n_proved_by_checker = 0
 ## Exact next source frontier
 
 ```text
-docs/325-prime-power-geometric-orbit-fibre-correction.md
-docs/326-prime-power-line-energy-marginal-rook-compiler.md
-docs/327-prime-power-nested-assignment-line-energy-certificates.md
-docs/328-prime-power-geometric-fibre-host-census-and-line-caps.md
-docs/329-prime-power-exact-rank-three-geometric-fibre-census.md
-docs/330-prime-power-line-occupancy-capacity-certificate.md
-docs/331-prime-power-unified-outer-assignment-response-score.md
+docs/332-prime-power-geometric-fibre-occupancy-moment-census.md
+docs/333-prime-power-label-weighted-unified-assignment-lp.md
+docs/334-prime-power-diagonal-parity-line-occupancy-census.md
+docs/335-prime-power-geometric-fibre-moment-pareto-envelopes.md
+docs/336-prime-power-labelled-assignment-certificate-manifest.md
+docs/337-prime-power-rank-three-fibre-slack-classification.md
+docs/338-prime-power-exact-response-averaged-line-moment-census.md
+docs/339-prime-power-rank-three-slack-line-budget-allocation.md
 ```
 
-The next success criterion is an exact coordinate-labelled geometric fibre certificate or strict unified outer assignment, not matching normalization alone.
+The next success criterion is an exact labelled recurrent LP or strict moment/slack allocation certificate on the coordinate-labelled fibre catalogue.
 
 ## Validation status
 
-The checker contract, registry contract/census/seal and runner manifest were reproduced locally. The consolidated nine-verifier checker and complete 71-checker runner were not executed locally. Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
+The checker contract, registry contract/census/seal and runner manifest were reproduced locally. The consolidated seven-verifier checker and complete 73-checker runner were not executed locally. Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
