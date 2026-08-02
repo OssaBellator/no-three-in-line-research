@@ -15,6 +15,12 @@ ACTUAL_EVIDENCE = {name:"fixture_derived" for name in CANDIDATE_FIELDS}
 PROMOTED = tuple(name for name,evidence in ACTUAL_EVIDENCE.items() if evidence == "geometrically_verified")
 assert PROMOTED == ()
 
+BOUNDARY_MINIMUM_CORES = 130
+BOUNDARY_CORRECTABLE_CORES = 125
+BOUNDARY_BEST_ATTEMPTS = 16
+assert BOUNDARY_CORRECTABLE_CORES < BOUNDARY_MINIMUM_CORES
+assert BOUNDARY_BEST_ATTEMPTS == 16
+
 FIXED_POINT = (
     Fraction(70590897652005075,1207959551999868928),
     Fraction(211454017460,9215999999999),
@@ -32,7 +38,7 @@ print({
     "candidate_fields_complete":25,
     "candidate_fields_total":30,
     "new_results":{
-        "boundary":"all 125 best fourteenth cores correct within budget seven; a three-point correction reaches fourteen blocks",
+        "boundary":"all 16 best fourteenth attempts correct within budget seven; 125 of 130 minimum cores correct and a three-point correction reaches fourteen blocks",
         "Hall":"bounded-overlap motif packing gives the sharp candidate-pool threshold",
         "threshold":"nearest target displacements are cellwise sign-coherent, so every nonempty batch has additive L1 drift",
         "prefix":"every two-pair incidence component is internally anchor-unpairable and the canonical source needs at least four cross-component anchors",
