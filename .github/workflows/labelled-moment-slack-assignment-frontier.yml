@@ -1,0 +1,31 @@
+name: Labelled moment slack assignment frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_labelled_moment_slack_assignment_ancestry.py'
+      - 'scripts/verify_prime_power_geometric_fibre_occupancy_moments.py'
+      - 'scripts/verify_prime_power_label_weighted_unified_assignment_lp.py'
+      - 'scripts/verify_prime_power_diagonal_parity_line_occupancy.py'
+      - 'scripts/verify_prime_power_geometric_fibre_moment_pareto_envelopes.py'
+      - 'scripts/check_label_weighted_assignment_certificate.py'
+      - 'scripts/verify_prime_power_rank_three_fibre_slack_classification.py'
+      - 'scripts/verify_prime_power_exact_response_averaged_line_moments.py'
+      - 'scripts/verify_prime_power_rank_three_slack_line_budget_allocation.py'
+      - 'docs/551-prime-power-labelled-moment-slack-assignment-ancestry.md'
+      - '.github/workflows/labelled-moment-slack-assignment-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_labelled_moment_slack_assignment_ancestry.py
