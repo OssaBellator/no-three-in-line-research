@@ -6,121 +6,82 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4325**. Every checker, fixture, bridge, manifest and regression preserves:
-
-```text
-all_n_proved_by_checker = 0
-```
+The authoritative theorem ledger reaches **CMR4373**. Every checker, fixture, bridge, manifest and regression preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_902.py
-```
-
-```text
-chained manifest = f8ab06f6f46e08b91b425c10e53c55779e66be9acea6bbc0017d7216130f4857
-installed operation kinds = 902
-bound checker contracts = 38
+runner = scripts/run_prime_power_installed_construction_regression_974.py
+manifest = 58a5c6eaa877331a9c4711835d9a3ce84c9def64001eea9ffb301325b7620be5
+operation kinds = 974
+checker contracts = 39
 owner-changing kinds = 164
-same-owner kinds = 738
-installed checkers = 69
+same-owner kinds = 810
+installed checkers = 71
 ```
 
-Newest direct entrypoints:
+## Latest installed bank: CMR4326--CMR4373
+
+Source CMR1702--CMR1773 installs:
 
 ```text
-scripts/check_prime_power_superlevel_budget_thin_auxiliary_ancestry.py
-scripts/check_prime_power_installed_operation_registry_902.py
-scripts/run_prime_power_installed_construction_regression_902.py
+exact prescription rank-mass conservation
+multiplicity-aware line-clean large-load thresholds
+owner-support matching-number and vertex-cover capacities
+small-support and prime-field reused-support thresholds
+rank-one secant, rank-two line-load and rank-three injective multiplicities
+exact packed secant bounds
+labelled bounded-congestion background-triple charges
+background-potential multiplicity bounds
+exact line-energy profile census and profile charges
 ```
 
-## Latest installed banks
-
-### Through CMR4277 — source CMR1582--CMR1629
-
-Shared return-selector assignment, line-clean integer budgets, critical-selector localization, prime-field support, fixed-interface/thin tables and labelled CRT gluing are installed as exact certificate interfaces.
-
-### CMR4278--CMR4325 — source CMR1630--CMR1701
-
-The installed bank now contains:
-
-```text
-combined return-selector superlevel matching and König-cover certificates
-class-supported source/target cover compilers
-universal strong, singleton and overlap line-clean budget floors
-exact selector-capacity gaps and restoration caps
-matching-level fixed-interface symmetry normalization
-normalized thin response census through side five
-exact nonforced rank-one/two/three thin probability caps
-line-clean profile-capacity and overflow compilers
-nonnegative rational auxiliary resolvent elimination
-constructive rational/integer certificate lifting
-```
-
-The side-four thin caps are `3/4`, `2/3`, `1/2`; side-five caps are `2/3`, `2/5`, `1/4`. These are matching-level capacities, not complete geometric offspring certificates.
+These results prove genuine strict-response regimes under explicit host, load, support, multiplicity and profile hypotheses. They do not prove those hypotheses cover every recurrent row.
 
 ## Canonical contracts and seals
 
 ```text
-superlevel/budget/thin/auxiliary checker:
-e155ea311c24a9f04e1a603877190d1e60f9928a4607546635a9198344e53ad0
-
-902-kind registry contract:
-239245dca95e8a3936fd5700248af65f1534f706ac4aceccca7890c850a955ff
-
-902-kind registry seal:
-2c9bf1cc1b551a0560753b5d5de918abaa61e2d602d2ac2ce078ff247cdccdb4
-
-69-checker manifest:
-f8ab06f6f46e08b91b425c10e53c55779e66be9acea6bbc0017d7216130f4857
+checker = 681a56e37003368e62a92ae7df349488e03e03eec34c2cddf2ab39b8d6622bdd
+registry contract = 5bff249b3ada147307677bb59979f034b1c2587c4cc0a8643b903dbcd6eaf96e
+registry seal = 240be08e0fe0e6e061d55a245cd544880b8612f9575099faa011e10d47ec77c6
+71-checker manifest = 58a5c6eaa877331a9c4711835d9a3ce84c9def64001eea9ffb301325b7620be5
 ```
 
 ## Current exact flags
 
 ```text
-superlevel_budget_thin_auxiliary_ancestry_proved = 1
-installed_transition_kind_bank_902_exhaustive = 1
-installed_payment_assignment_902_complete = 1
-installed_transition_regression_902_complete = 1
+rank_mass_multiplicity_line_energy_ancestry_proved = 1
+installed_transition_kind_bank_974_exhaustive = 1
+installed_payment_assignment_974_complete = 1
+installed_transition_regression_974_complete = 1
 
-return_superlevel_cover_globally_strict = 0
-universal_line_clean_budgets_close_all_classes = 0
-selector_capacity_classes_closed = 0
-normalized_thin_geometric_rows_subcritical = 0
-auxiliary_effective_core_subcritical = 0
+all_line_clean_large_load_rows_closed = 0
+all_owner_support_rows_closed = 0
+geometric_multiplicity_caps_globally_sufficient = 0
+triple_free_response_policy_globally_available = 0
+line_energy_profile_rows_subcritical = 0
 same_owner_diagonal_blocks_subcritical = 0
 global_target_collateral_inequality_proved = 0
-all_owner_operations_proved = 0
-all_scheduler_operations_proved = 0
-all_restoration_operations_proved = 0
-all_returned_edge_operations_proved = 0
-all_envelope_operations_proved = 0
-all_construction_ancestry_proved = 0
 global_transition_kind_bank_exhaustive = 0
 global_termination_proved = 0
 actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-## Exact next mathematical frontier
-
-Continue in literal source order from CMR1702:
+## Exact next source frontier
 
 ```text
-docs/316-prime-power-prescription-rank-mass-conservation.md
-docs/317-prime-power-line-clean-rank-mass-large-load-closure.md
-docs/318-prime-power-owner-support-rank-mass-capacities.md
-docs/319-prime-power-owner-support-large-load-closure.md
-docs/320-prime-power-geometric-prescription-multiplicity-formulas.md
-docs/321-prime-power-packed-secant-multiplicity-bounds.md
-docs/322-prime-power-background-triple-multiplicity-charge.md
-docs/323-prime-power-background-potential-multiplicity-bounds.md
-docs/324-prime-power-line-energy-profile-census.md
+docs/325-prime-power-geometric-orbit-fibre-correction.md
+docs/326-prime-power-line-energy-marginal-rook-compiler.md
+docs/327-prime-power-nested-assignment-line-energy-certificates.md
+docs/328-prime-power-geometric-fibre-host-census-and-line-caps.md
+docs/329-prime-power-exact-rank-three-geometric-fibre-census.md
+docs/330-prime-power-line-occupancy-capacity-certificate.md
+docs/331-prime-power-unified-outer-assignment-response-score.md
 ```
 
-The next success criterion is a strict large-load or owner-support closure, an exact geometric multiplicity bound, or a finite labelled certificate—not another undefined interface.
+The next success criterion is an exact coordinate-labelled geometric fibre certificate or strict unified outer assignment, not matching normalization alone.
 
 ## Validation status
 
-The checker contract, registry contract/census/seal and runner manifest were reproduced locally. The consolidated nine-verifier checker and complete 69-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
+The checker contract, registry contract/census/seal and runner manifest were reproduced locally. The consolidated nine-verifier checker and complete 71-checker runner were not executed locally. Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
