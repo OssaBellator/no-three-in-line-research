@@ -20,7 +20,7 @@ checks = [
     "check_prefix_all_physical_compositions.py",
     "check_shell_robust_circulation.py",
     "check_shell_circulation_realization.py",
-    "check_circulation_compensation_gate.py",
+    "check_structural_compensation_gate.py",
 ]
 for check in checks:
     subprocess.run([sys.executable, str(HERE / check)], check=True)
