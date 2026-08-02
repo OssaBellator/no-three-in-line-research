@@ -12,34 +12,28 @@ This file records only state proved by tracked repository material, commit histo
 - Working branch: `research/all-n-product-construction`
 - Pull request: #3, `Advance all-n product frontiers: exact census, semantic masters, and recursion obstructions`
 - Base: `main`
-- Certified theorem boundary: `PX1217`
+- Certified theorem boundary: `PX1224`
 
 The branch is incomplete: it contains exact finite classifications, verified constructions, computational obstructions, and proved reductions, but no proof of the classical no-three-in-line conjecture and no infinite all-side product theorem.
 
 ## Latest certified boundary
 
-- Side-seven multiplicity-two cases `0--1429` are certified with witness-aware exact replay.
-- The classified multiplicity-two prefix contains `2,860` selectors: `2,859` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
-- Across support twenty, `40,459` selectors are certified infeasible, two are constructive, and `31,399` remain unclassified.
-- The unresolved cache is `2,410` multiplicity-two signatures (`4,820` selectors) plus `26,579` multiplicity-one selectors.
-- Certified rejection search is `3,295,710,592` nodes overall and `529,255,348` nodes in the classified multiplicity-two prefix.
+- Side-seven multiplicity-two cases `0--1439` are certified with witness-aware exact replay.
+- The classified multiplicity-two prefix contains `2,880` selectors: `2,879` infeasible and one constructive selector at case `1287`, selector zero, orientation zero.
+- Across support twenty, `40,479` selectors are certified infeasible, two are constructive, and `31,379` remain unclassified.
+- The unresolved cache is `2,400` multiplicity-two signatures (`4,800` selectors) plus `26,579` multiplicity-one selectors.
+- Certified rejection search is `3,297,611,555` nodes overall and `531,156,311` nodes in the classified multiplicity-two prefix.
+- Cases `1430--1439` added 20 infeasible selectors and `1,900,963` rejection nodes. Run `30747166521` produced the exact matrix, and run `30747345046` independently replayed it before promotion.
 - The semantic-compression frontier remains 208 references, 165 relaxed keys, 221 covered clean top orders, and `34,891` uncovered clean top orders. The basis digest is `12529763722981785837`; the expansion digest is `16150749401146711547`.
-- Side-ten `fc` and `ff` pair indices `0--6399` are obstructed with no constructive witness in 12,800 fine-row geometries. Cumulative nodes are `224,654,411` in `fc` and `135,595,069` in `ff`.
+- Side-ten `fc` and `ff` pair indices `0--6799` are obstructed with no constructive witness in 13,600 fine-row geometries. Cumulative nodes are `232,466,543` in `fc` and `150,194,835` in `ff`.
+- Pair indices `6400--6799` added `7,812,132` `fc` nodes and `14,599,766` `ff` nodes. Run `30747166514` produced the exact matrix, and run `30747345046` independently replayed it before promotion.
 
-## In-flight promotion audit
-
-The next registered workloads have completed, but the certified boundary remains `PX1217` until independent replay succeeds:
-
-1. GitHub Actions run `30747166521` completed side-seven cases `1430--1439`. The exact transcripts contain 20 infeasible selectors, no constructive selector, and `1,900,963` rejection nodes with orientation totals `464,818`, `488,262`, `483,551`, and `464,332`.
-2. `scripts/verify_product_side_seven_multiplicity2_cases1430_1439.py` records the exact per-case expected outputs and aggregate totals as proposed `PX1218--PX1221`.
-3. GitHub Actions run `30747166514` completed side-ten pair indices `6400--6799`. All 800 geometries are obstructed, adding `7,812,132` `fc` nodes and `14,599,766` `ff` nodes; interval maxima are `89,440` and `566,774`.
-4. `scripts/verify_product_transposition_double_coset_opposite_fine_ten_6400_6799.py` records the exact eight interval outputs as proposed `PX1222--PX1224`.
-5. Commit `61e9734d0d0f3d9ef5149157aa5202a8055b66bf` wires both new verifiers into `.github/workflows/product-promoted-frontier-replay.yml`. Do not update certified counts or remove the registered workflows/triggers unless both new replay jobs pass.
+The next canonical multiplicity-two case is `1440`. Cases `1440--1449` are registered but uncounted. The next bounded prefix begins at pair index `6800`; indices `6800--7199` are registered but uncounted.
 
 ## Current frontiers
 
-1. Complete the independent replay and promotion audit for side-seven cases `1430--1439`; after promotion continue from case `1440`.
-2. Complete the independent replay and promotion audit for side-ten pair indices `6400--6799`; after promotion continue from pair index `6800`.
+1. Continue multiplicity-two classification from case `1440`, preserving exact transcript promotion and witness-aware replay; then continue multiplicity one.
+2. Continue side-ten `fc` and `ff` fine-row search from pair index `6800`, promoting only completed exact intervals.
 3. Continue semantic expansion from the `34,891` uncovered clean top orders and recompute a compact basis for the 221-top union.
 4. Compute the symmetry orbit and normalized local-template inventory of the case-`1287` construction.
 5. Advance the decimal-2873 arithmetic, protected-spread, bounded-barrier repair, and carry/absorber frontiers without upgrading conditional statements.
@@ -54,9 +48,10 @@ The next registered workloads have completed, but the certified boundary remains
 
 ## Immediate next actions
 
-1. Check the permanent replay workflow containing the new `1430--1439` and `6400--6799` jobs.
-2. On successful replay, promote through `PX1224`, rotate durable ranges to cases `1440--1449` and pair indices `6800--7199`, and synchronize manifest, status, frontier map, checker, PR, and this handoff.
+1. Inspect side-seven cases `1440--1449`; promote only after every exact transcript is secured and independently replayed.
+2. Inspect side-ten pair indices `6800--7199`; promote only after all eight exact transcripts are secured and independently replayed.
 3. Continue semantic-union expansion and case-`1287` template analysis.
+4. Keep the manifest, `STATUS.md`, frontier map, checker, PR summary, and this handoff synchronized through `PX1224` or the next promoted boundary.
 
 ## Validation baseline
 
