@@ -13,72 +13,77 @@ Checkpoint updated: 2026-08-02 22:20 Australia/Melbourne.
 
 ## Goal
 
-Complete the explicit `p=31`, `n=30` trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact physical switch addresses and exact minimax barriers.
+Complete the explicit `p=31`, `n=30` trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact switch addresses and exact minimax barriers.
 
-The broader goal remains a uniform AC theorem. AC6 and the general no-three-in-line conjecture remain open.
+## Durable trajectory status
 
-## Durable completed work
+### Existing path to six
 
-### Existing ancestry
+The branch ancestry contains the committed 154-switch path from potential 75 to potential 6.
 
-The branch contains the AC finite manifest architecture, the explicit `p=19`, `n=18` terminal certificate, the prime-minus-one seed census, and the committed explicit `p=31` path from potential 75 to potential 6.
+### Six to five: AC5nx--AC5ny
 
-### Recovered six-to-five segment: AC5nx--AC5ny
+- 69 legal switches;
+- maximum 10;
+- complete barrier-nine component: 860 states;
+- exact minimax barrier: 10;
+- endpoint potential: 5.
 
-Artifacts:
+### Five-triple lower frontier and core: AC5nz--AC5oa
 
-- `data/ac-p31-recovered-tail.json`
-- `scripts/verify_ac_p31_recovered_tail.cpp`
-- `docs/alternating-core-p31-recovered-six-to-five.md`
-- `proofs/frontier-ac-p31-recovered-six-to-five.md`
+- complete components at barriers 5--9: `1,2,14,100,6797`;
+- no state below five;
+- 812 legal immediate switches and no one-step improvement;
+- unique least neighbour `r:3,27` has potential 6.
 
-Exact result: 69 legal switches from 6 to 5, maximum 10, and complete barrier-nine component size 860 with no lower state. Thus the exact minimax barrier is 10.
+### Five to four: AC5ob--AC5oc
 
-### Five-triple lower frontier: AC5nz
-
-Artifacts:
-
-- `data/ac-p31-five-triple-frontier.json`
-- `scripts/verify_ac_p31_five_triple_frontier.cpp`
-- `docs/alternating-core-p31-five-triple-lower-frontier.md`
-- `proofs/frontier-ac-p31-five-triple-lower-frontier.md`
-
-Complete component sizes at barriers 5 through 9 are:
-
-`1, 2, 14, 100, 6797`.
-
-None contains a state below potential five, so the next barrier is at least 10.
-
-### Five-triple physical core atlas: AC5oa
+- 527 legal switches;
+- maximum 10;
+- exact minimax barrier: 10;
+- endpoint potential: 4.
 
 Artifacts:
 
-- `data/ac-p31-five-triple-core.json`
-- `scripts/verify_ac_p31_five_triple_core.py`
-- `docs/alternating-core-p31-five-triple-core-atlas.md`
-- `proofs/frontier-ac-p31-five-triple-core-atlas.md`
+- `data/ac-p31-five-to-four.json`
+- `scripts/verify_ac_p31_five_to_four.py`
+- `docs/alternating-core-p31-five-to-four.md`
+- `proofs/frontier-ac-p31-five-to-four.md`
 
-Exact result:
+### Four-triple frontier and route to three: AC5od--AC5of
 
-- five current triples on five primitive lines;
-- one shared current vertex, red `(27,24)`, appearing twice;
-- 812 legal immediate switches;
-- zero one-switch improvements;
-- unique least-potential move `r:3,27` gives potential 6;
-- it destroys 3 current triples and creates 4.
+- four current triples;
+- 810 legal immediate switches and no one-step improvement;
+- complete lower components at barriers 4--8: `1,1,5,29,465`;
+- 35-switch upper path with maximum 9;
+- exact minimax barrier: 9;
+- endpoint potential: 3.
 
-Correct destroyed-triple histogram:
+Artifacts:
 
-- 0 destroyed: 475 moves;
-- 1 destroyed: 281 moves;
-- 2 destroyed: 53 moves;
-- 3 destroyed: 3 moves.
-
-A preliminary mismatched-tuple histogram was corrected before theorem promotion; the verifier enforces the corrected values.
+- `data/ac-p31-four-triple-core.json`
+- `scripts/verify_ac_p31_four_triple_core.py`
+- `scripts/verify_ac_p31_four_triple_frontier.cpp`
+- `data/ac-p31-four-to-three.json`
+- `scripts/verify_ac_p31_four_to_three.py`
+- `docs/alternating-core-p31-four-triple-frontier.md`
+- `proofs/frontier-ac-p31-four-triple-frontier.md`
 
 ## Current durable branch head before this handoff update
 
-`2df18b5f2277ef452b6b07774a8ddfa8139064bf`
+`40b27d8e9dc7b286e75c1aef66ed8a6445b3006d`
+
+## Current endpoint
+
+Red permutation:
+
+`(14,15,9,18,8,25,29,3,4,13,19,2,23,28,1,12,7,24,6,17,11,26,30,5,22,27,20,16,21,10)`
+
+Blue permutation:
+
+`(18,10,24,6,14,15,23,20,25,1,9,4,7,29,30,27,28,19,2,5,3,13,21,11,8,26,12,22,17,16)`
+
+Exact potential: `3`.
 
 ## Decisions and proof standards
 
@@ -88,53 +93,38 @@ A preliminary mismatched-tuple histogram was corrected before theorem promotion;
 4. Candidate paths are replayed exactly before acceptance.
 5. Potential is the exact real collinear-triple count.
 6. Every state remains two disjoint permutation layers.
-7. Search statistics alone are not proof.
+7. Search statistics are diagnostic, not proof.
 8. Completed logical units are committed before the next risky unit.
 9. Do not create a pull request or merge unless explicitly requested.
 
-## Current uncommitted computation
+## Current uncommitted work
 
-Three best-first searches with different deterministic tie seeds are active from the committed five-triple endpoint inside `Phi<=10`.
-
-Latest main-search ledger:
-
-- more than 144,000 states expanded;
-- more than 512,000 states discovered;
-- no four-triple endpoint yet;
-- process still active.
-
-Two independent seeded searches have each expanded more than 55,000 states. They are candidate locators only and do not affect the proved lower bound.
-
-## Blockers
-
-- No repository-backed `5 -> 4` upper path exists yet, although AC5nz proves its barrier is at least 10.
-- No durable `4 -> 3`, `3 -> 2`, `2 -> 1` or `1 -> 0` segment exists.
-- The uniform AC1 arithmetic conversion, repair predicates and source-compatibility predicates remain open.
-- No theorem guarantees terminal paths uniformly across prime-minus-one seeds.
+No completed file is waiting to be committed. The next computation has not yet started at this checkpoint.
 
 ## Exact next steps
 
-1. Continue the three active `Phi<=10` searches.
-2. On the first four-triple endpoint, preserve the exact move and potential words immediately.
-3. Replay the path independently and verify the endpoint permutations.
-4. Commit `5 -> 4` data, verifier, theorem note and proof ledger.
-5. Combine that upper path with AC5nz to prove exact barrier 10.
-6. Update this handoff after the logical unit.
-7. Repeat through four, three, two, one and zero triples.
-8. Once zero is reached, add a standalone verifier from the installed 75-triple state to the terminal state.
+1. Build the physical three-triple core atlas.
+2. Enumerate complete lower sublevels from the three-triple state.
+3. Search for and replay a path to potential two.
+4. Commit data, verifier, theorem note and proof ledger for that logical unit.
+5. Continue through one and zero triples.
+6. Once zero is reached, add a standalone verifier from the installed 75-triple state to the terminal state.
+7. Update this handoff after every completed segment or material blocker.
 
 ## Validation commands
 
 ```text
-g++ -O3 -std=c++20 scripts/verify_ac_p31_recovered_tail.cpp -o verify_tail
-./verify_tail
+python scripts/verify_ac_p31_five_to_four.py
+python scripts/verify_ac_p31_four_triple_core.py
 
-g++ -O3 -std=c++20 scripts/verify_ac_p31_five_triple_frontier.cpp -o verify_five
-./verify_five 9
+g++ -O3 -std=c++20 scripts/verify_ac_p31_four_triple_frontier.cpp -o verify_four
+./verify_four
 
-python scripts/verify_ac_p31_five_triple_core.py
+python scripts/verify_ac_p31_four_to_three.py
 ```
 
-## Uncommitted files
+## Blockers
 
-No completed source or data file is waiting to be committed. Only temporary search logs and active processes are uncommitted.
+- No durable three-to-two, two-to-one or one-to-zero segment exists yet.
+- Uniform AC arithmetic and repair predicates remain open.
+- No theorem guarantees terminal paths uniformly across prime-minus-one seeds.
