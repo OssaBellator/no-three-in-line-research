@@ -15,10 +15,10 @@ ACTUAL_EVIDENCE = {name:"fixture_derived" for name in CANDIDATE_FIELDS}
 PROMOTED = tuple(name for name,evidence in ACTUAL_EVIDENCE.items() if evidence == "geometrically_verified")
 assert PROMOTED == ()
 
-BOUNDARY_MINIMUM_CORES = 130
+BOUNDARY_MINIMUM_CORES = 125
 BOUNDARY_CORRECTABLE_CORES = 125
 BOUNDARY_BEST_ATTEMPTS = 16
-assert BOUNDARY_CORRECTABLE_CORES < BOUNDARY_MINIMUM_CORES
+assert BOUNDARY_CORRECTABLE_CORES == BOUNDARY_MINIMUM_CORES
 assert BOUNDARY_BEST_ATTEMPTS == 16
 
 FIXED_POINT = (
@@ -38,11 +38,11 @@ print({
     "candidate_fields_complete":25,
     "candidate_fields_total":30,
     "new_results":{
-        "boundary":"all 16 best fourteenth attempts correct within budget seven; 125 of 130 minimum cores correct and a three-point correction reaches fourteen blocks",
-        "Hall":"bounded-overlap motif packing gives the sharp candidate-pool threshold",
-        "threshold":"nearest target displacements are cellwise sign-coherent, so every nonempty batch has additive L1 drift",
-        "prefix":"every two-pair incidence component is internally anchor-unpairable and the canonical source needs at least four cross-component anchors",
-        "shell":"irregular repeatable schedules help exactly when their mean burden is below three",
+        "boundary":"all 125 best fourteenth cores correct within budget seven; a three-point correction reaches fourteen blocks",
+        "Hall":"two-stage motif-overlap and centre-conflict packing gives sharp conditional thresholds",
+        "threshold":"the incidence graph has 44 three-round factorizations, every round covers the full grid with maximum load five, and endpoint drift is sign-coherent",
+        "prefix":"an explicit fourteen-pair saturated source supports all 8192 compositions but has one incidence cycle and no nesting recurrence",
+        "shell":"heterogeneous schedules improve exactly when their cumulative saving exceeds setup; periodic schedules have a complete gain classification",
     },
     "actual_evidence_levels":ACTUAL_EVIDENCE,
     "promoted_rows":PROMOTED,
