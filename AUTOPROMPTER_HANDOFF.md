@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-01 22:54 Australia/Brisbane
+Checkpoint time: 2026-08-02 11:56 Australia/Melbourne
 
 ## Goal
 
@@ -23,86 +23,87 @@ proof.
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint research head: `1bed7b1a21c33eb8e89d076d670c9ee4fd173689`.
-- Pre-checkpoint title: `Index scalable source-realization theorems through docs 638`.
+- Verified pre-checkpoint research head: `208422665488c9071ebc854ee83a5c6219457304`.
+- Pre-checkpoint title: `Index scaling mechanisms theorems through docs 644`.
 - The branch was remotely verified identical to that commit before this refresh.
-- Next available theorem identifier: `PP3cyf`.
+- Next available theorem identifier: `PP3cyx`.
 
-## Completed canonical tranche: `docs/633--638`
+## Completed canonical tranche: `docs/639--644`
 
-### Boundary — `docs/633-corrected-eleventh-boundary-transition.md`
+### Boundary — `docs/639-corrected-twelfth-boundary-transition.md`
 
-Theorems `PP3cxn--PP3cxp`.
+Theorems `PP3cyf--PP3cyh`.
 
-- The exact radius-64 eleventh minimum-transversal histogram is
-  `4:12, 5:35, 6:76, 7:135, 8:261, 9:21, 10:41, 11:79, 12:99, 13:170, 14:103`.
-- The twelve minimum-four attempts have ninety-four minimum cores.
-- Every minimum-four attempt has a row-and-column-preserving correction of total
-  deletion size at most seven.
-- The canonical `P1` offset-31 correction deletes
-  `(0,79),(6,34),(23,2),(40,196),(43,195)` and adds
-  `(0,196),(6,2),(23,195),(40,34),(43,79)`.
-- This five-point correction gives a legal eighty-eight-point eleven-block state.
-- All `1032` raw twelfth-block attempts in radius 64 fail.
+- The exact radius-64 twelfth minimum-transversal histogram is
+  `3:1, 4:4, 5:8, 6:101, 7:173, 8:239, 9:8, 10:25, 11:75, 12:146, 13:158, 14:94`.
+- Five attempts have minimum transversal at most four, with sixty-one minimum
+  cores total.
+- Every one of those attempts has a row-and-column-preserving correction within
+  budget seven.
+- The canonical `P2` offset-64 correction deletes
+  `(2,1),(14,48),(32,98),(46,257),(47,258)` and adds
+  `(2,257),(14,258),(32,98),(46,1),(47,48)`.
+- The corrected state has ninety-six points and twelve blocks.
+- All 1,032 raw thirteenth attempts in radius 64 fail.
 
-### Hall — `docs/634-mixed-degree-hall-extraction.md`
+### Hall — `docs/640-source-star-centre-pruning.md`
 
-Theorems `PP3cxq--PP3cxs`.
+Theorems `PP3cyi--PP3cyk`.
 
-- If the partner restriction is matching-shaped and the source and host-defect
-  restrictions have maximum degree two, each side's collision graph has maximum
-  degree four.
-- Twenty-six residual resources force six resources on which all three families
-  are partial matchings.
-- Twenty-eight resources before selecting the local pair suffice for the sharp
-  six-resource Hall core.
-- The constant is sharp: twenty-five resources can form five disjoint `K5`
-  collision components, each decomposed into two Hamilton cycles supplied by the
-  two degree-two families.
+- The stored binary source-star fixture has four centres with partner-fibre
+  records `(size,max degree,matching,completions)` equal to
+  `(3,3,no,0)`, `(1,1,yes,4)`, `(0,0,yes,6)`, and `(2,1,yes,3)`.
+- Three quarters of the centres therefore satisfy the partner-matching condition.
+- If `b` bad centre resources are pruned, the mixed-degree Hall pipeline needs
+  `28+b` resources on the centred side and twenty-eight on the opposite side,
+  assuming the source and host-defect restrictions have degree at most two.
+- Ten copies of the numerical four-centre pattern are the first count supplying
+  at least twenty-eight good centre resources, but no geometric cross-copy theorem
+  is known.
 
-### Threshold — `docs/635-threshold-c6-circuit-indivisibility.md`
+### Threshold — `docs/641-threshold-transient-buffer-cell.md`
 
-Theorems `PP3cxt--PP3cxv`.
+Theorems `PP3cyl--PP3cyn`.
 
-- Every nearest legal target has an alternating six-cell signed support on three
-  rows and three columns.
-- Among all sixty-four subsets of each support, only the empty subset and the
-  complete cycle preserve every row and column margin.
-- The `C6` is therefore a circuit of the transportation kernel.
-- No sequence of proper visible margin-preserving sub-edits can implement it; a
-  source operation must expose the full six-cell atom in one step or inside a
-  larger atomic edit.
+- Every one of the forty-eight native two-swap factorizations has union support
+  seven: the six target `C6` cells plus one cancelling transient cell.
+- The possible transient cells are exactly the eight source entries of
+  multiplicity one.
+- Each transient cell occurs in exactly six ordered factorizations.
+- A native atomic batch must therefore protect a seven-cell geometric footprint;
+  hiding the swap order does not produce a six-cell exposed operation.
 
-### Prefix — `docs/636-twelve-pair-saturated-anchor-reservoir.md`
+### Prefix — `docs/642-thirteen-pair-saturated-anchor-reservoir.md`
 
-Theorems `PP3cxw--PP3cxy`.
+Theorems `PP3cyo--PP3cyq`.
 
 - The permutations
-  `P=(6,7,0,4,9,2,11,10,1,5,8,3)` and
-  `Q=(2,9,11,7,0,4,10,8,3,6,1,5)` form a twenty-four-cell no-three source on a
-  `12 x 12` grid with row and column degree two.
-- The pairing permutation `(11,9,10,8,5,6,7,4,3,2,1,0)` gives twelve disjoint
-  anchor pairs with distinct endpoint resources.
-- All `2048` ordered compositions of twelve unary nodes embed with zero mixed-run
-  triples and maximum coordinate magnitude `187`.
-- Complete saturated reservoirs are now certified at consecutive pair counts
-  eleven and twelve, but no infinite or nested family is known.
+  `P=(9,4,7,3,0,1,12,8,11,10,2,6,5)` and
+  `Q=(7,12,9,1,4,3,8,0,2,11,5,10,6)` form a twenty-six-cell no-three source on
+  `13 x 13`, with degree two in every row and column.
+- The pairing permutation `(1,0,3,2,5,4,7,8,6,10,12,9,11)` supplies thirteen
+  disjoint anchor pairs.
+- All 4,096 ordered compositions of thirteen unary nodes embed with zero mixed-run
+  triples and maximum coordinate magnitude 180.
+- The incidence component pair-sizes are `2,2,4,5`; deleting either two-pair
+  component leaves an induced eleven-pair saturated source.
+- No anchor matching respects those incidence components, so the nested source
+  does not give a nested anchor construction.
 
-### Shell — `docs/637-shell-collateral-budget.md`
+### Shell — `docs/643-shell-batch-amortization.md`
 
-Theorems `PP3cxz--PP3cyb`.
+Theorems `PP3cyr--PP3cyt`.
 
-- With six `(1,1,1)` uses, per-use overhead `delta`, and fixed collateral `C`,
-  total active-equivalent cost is `12+6*delta+C`.
-- Strict improvement over the recorded baseline occurs exactly when
-  `6*delta+C<3`.
-- At unit macro cost, at most two integer collateral controls may be spent per
-  period; three tie the baseline.
-- With no fixed collateral, the sharp per-use overhead threshold is `1/2`.
+- Across `t` periods, per-use overhead `delta`, and fixed collateral `C`, the
+  candidate cost is `t(12+6 delta)+C`.
+- It beats the recorded baseline exactly when `t(3-6 delta)>C`.
+- Fixed collateral is amortizable over some finite number of periods exactly when
+  `delta<1/2`.
+- At zero overhead the minimum period count is `floor(C/3)+1`.
 
-### Integration — `docs/638-scalable-source-realization-evidence-gate.md`
+### Integration — `docs/644-scaling-mechanisms-evidence-gate.md`
 
-Theorems `PP3cyc--PP3cye`.
+Theorems `PP3cyu--PP3cyw`.
 
 - Candidate completion remains `25/30`:
   boundary `4/5`, Hall `4/5`, threshold `5/5`, prefix `5/5`, shell `5/5`,
@@ -116,63 +117,64 @@ Theorems `PP3cyc--PP3cye`.
 
 ## Machine-readable and reproducibility files
 
-- `certificates/prime-patching-scalable-source-realization-633-638.json`
-- `scripts/check_boundary_eleventh_spectrum.cpp`
-- `scripts/check_boundary_eleventh_corrections.cpp`
-- `scripts/check_boundary_eleventh_transition.py`
-- `scripts/check_hall_mixed_degree_extraction.py`
-- `scripts/check_threshold_c6_circuit.py`
-- `scripts/check_prefix_saturated_anchor_reservoir_12.py`
-- `scripts/check_shell_collateral_budget.py`
-- `scripts/check_scalable_source_realization_gate.py`
-- `scripts/check_frontier_633_638.py`
-- `proofs/prime-patching-parity-index-633-638-supplement.md`
+- `certificates/prime-patching-scaling-mechanisms-639-644.json`
+- `scripts/check_boundary_twelfth_spectrum.cpp`
+- `scripts/check_boundary_twelfth_corrections.cpp`
+- `scripts/check_boundary_twelfth_transition.py`
+- `scripts/check_hall_source_center_pruning.py`
+- `scripts/check_threshold_transient_cell_batch.py`
+- `scripts/check_prefix_saturated_anchor_reservoir_13.py`
+- `scripts/check_shell_amortized_collateral.py`
+- `scripts/check_scaling_mechanisms_gate.py`
+- `scripts/check_frontier_639_644.py`
+- `proofs/prime-patching-parity-index-639-644-supplement.md`
 
 Latest group command:
 
 ```bash
-python scripts/check_frontier_633_638.py
+python scripts/check_frontier_639_644.py
 ```
 
 ## Validation status
 
 - All six new standalone diagnostics passed in the isolated local runtime.
-- Both boundary C++ kernels compiled and executed successfully.
+- Both twelfth-step C++ kernels compiled and executed successfully.
 - Python compilation passed for all seven new Python scripts.
 - The complete historical chained runner was not executed locally because the
   isolated runtime does not contain a full repository checkout; the group runner
-  begins with `scripts/check_frontier_627_632.py`.
+  begins with `scripts/check_frontier_633_638.py`.
 
 ## Current blockers
 
-- Boundary: the corrected path reaches eleven blocks but has no raw twelfth
-  extension; a corrected twelfth transition or periodic corrected-state component
-  is missing.
-- Hall: the actual conditional host has not proved the mixed degree profile
-  `(1,2,2)` on both resource sides.
-- Threshold: no exposed-state-safe geometric source primitive realizes the
-  indivisible alternating `C6`.
-- Prefix: the eleven- and twelve-pair witnesses do not yet form an infinite,
-  nested, or uniformly constructible saturated family.
-- Shell: no geometric `(1,1,1)` macro is known whose total overhead satisfies
-  `6*delta+C<3` while controlling collateral interactions.
+- Boundary: the corrected path reaches twelve blocks but has no raw thirteenth
+  extension; a corrected thirteenth transition or periodic state invariant is
+  missing.
+- Hall: the actual source supplies a three-quarter good-centre fixture rate, but no
+  asymptotic bad-centre bound or compatible source/host-defect degree-two theorem.
+- Threshold: no legal geometric source operation protects either the seven-cell
+  native batch or a primitive six-cell circuit.
+- Prefix: saturated sources exist at eleven, twelve, and thirteen pairs, but no
+  anchor-preserving nested or uniform all-size construction is known.
+- Shell: the true per-use overhead and fixed collateral of a geometric `(1,1,1)`
+  macro are unknown.
 - Integration: all actual rows and coupling coefficients remain fixture-derived.
 
 ## Exact next steps
 
-1. Verify this handoff and continue theorem numbering at `PP3cyf`.
-2. Build `docs/639--644` around a corrected twelfth transition and genuinely
-   scalable source mechanisms.
-3. Boundary: enumerate minimum twelfth conflict cores in radius 64, search
-   degree-preserving corrections, and test corrected-state drift or recurrence.
-4. Hall: derive the mixed degree profile `(1,2,2)` from the actual conditional
-   resource-star host, or replace it with a source-specific collision estimate.
-5. Threshold: map one indivisible alternating `C6` to actual source cells and
-   audit all exposed geometric states; otherwise prove catalogue absence.
-6. Prefix: find a thirteen-pair saturated reservoir and search for a uniform
-   extension rule or an infinite two-per-row/two-per-column source family.
-7. Shell: construct a geometric `(1,1,1)` macro and place every repair, startup,
-   and collateral cost inside `6*delta+C<3`.
+1. Verify this handoff and continue theorem numbering at `PP3cyx`.
+2. Build `docs/645--650` around a corrected thirteenth transition and source-level
+   uniformity.
+3. Boundary: enumerate minimum thirteenth conflict cores in radius 64 and search
+   degree-preserving corrections, then test drift or recurrence across the last
+   three corrected states.
+4. Hall: prove an asymptotic bound on bad centre fibres and derive degree at most
+   two for source and host-defect restrictions after pruning.
+5. Threshold: test all eight transient buffer choices against actual source-cell
+   geometry, or construct a primitive six-cell atomic edit.
+6. Prefix: search for a fourteen-pair source and an anchor pairing compatible with
+   component deletion, or prove a structural obstruction to componentwise nesting.
+7. Shell: build a geometric `(1,1,1)` macro, measure `delta` and `C`, and apply the
+   exact amortization law.
 8. Integration: promote only rows with complete coordinate source paths;
    otherwise preserve the closed gate and unchanged fixed point.
 9. Run diagnostics, Python compilation, the chained runner in a complete checkout,
