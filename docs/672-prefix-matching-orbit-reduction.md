@@ -32,7 +32,7 @@ orbits under this group, with sizes
 ```
 
 The 208 pairs consisting of a minimum-crossing matching and one of the two
- two-pair component deletions also split into exactly four orbits, with sizes
+two-pair component deletions also split into exactly four orbits, with sizes
 
 ```text
 16,32,80,80.
@@ -56,15 +56,38 @@ classification guide, but geometric success must still be checked separately
 unless a larger coordinate automorphism group or equivariant insertion theorem is
 proved.
 
+## Supplemental diagonal-subgroup unit lifts
+
+A separate finite audit uses the 160-element subgroup that applies the same
+component rotation or exchange to `P` and `Q` row labels. Under that subgroup the
+104 matchings split into twenty orbits: twelve of size two and eight of size ten.
+
+For each of the twenty representatives and each two-pair deletion, the audit
+chooses the lexicographically first optimal distance-four rerouting and tests the
+all-unit composition. All forty coordinate lifts pass. Their maximum-coordinate
+histograms are
+
+```text
+first deletion:  50:4, 52:4, 66:2, 84:10
+second deletion: 44:10, 48:10.
+```
+
+This is useful finite evidence across more matching types, but it checks only one
+composition and one optimal rerouting per representative. It does not imply the
+same result for every physical labeling in an orbit.
+
 ## Verification
 
-`scripts/check_prefix_matching_orbits.py` constructs the forbidden graph,
-enumerates its complete bipartition-preserving automorphism group, regenerates all
-104 minimum-crossing matchings, computes both orbit decompositions, and checks all
-eight grid-dihedral transformations of the source.
+- `scripts/check_prefix_matching_orbits.py` constructs the forbidden graph,
+  enumerates its complete bipartition-preserving automorphism group, regenerates
+  all 104 minimum-crossing matchings, computes both full orbit decompositions, and
+  checks all eight grid-dihedral transformations of the source.
+- `scripts/check_prefix_automorphism_orbit_unit_lifts.py` performs the supplemental
+  160-subgroup classification and forty all-unit coordinate audits.
 
 ## Evidence boundary
 
 The result reduces the abstract combinatorial classification from 104 matchings to
-four types. It does not reduce the coordinate audit to four cases and does not
-supply an all-size recurrence.
+four full-incidence types and supplies forty supplemental unit-composition lifts.
+It does not reduce the full coordinate audit to four cases and does not supply an
+all-size recurrence.
