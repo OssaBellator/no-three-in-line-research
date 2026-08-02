@@ -2,13 +2,13 @@
 
 ```text
 registry = scripts/check_prime_power_installed_operation_registry_1166.py
-contract = 29d41e186b0ab1be5b755f6c751a0cbb6ef6db89574e8f39f91ff1325e24be9f
-registry seal = cfdc409b28c15ff3a421d0d2cbed1592ac8d5c5d7404d87958c14cc245f4799e
+contract = 383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b
+registry seal = b67dc8f667a5e3e51914b8dba928825f8e8d7de0aa5a43f0e79994eca22ac18e
 ```
 
 ## Theorem CMR4486 -- PROVED
 
-The registry extends the exact 1094-kind base seal `a4d652ef07e5a78e53d7b674e0fc50b97e714e2797270db72fe540a26d40bbb5` and binds every new entry to checker contract `a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb`.
+The registry extends the exact 1094-kind base seal `a4d652ef07e5a78e53d7b674e0fc50b97e714e2797270db72fe540a26d40bbb5` and binds every new entry to checker contract `8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828`.
 
 ## Theorem CMR4487 -- PROVED
 
@@ -24,15 +24,15 @@ All 72 operations preserve structural owner. The installed census remains 164 ow
 
 ## Theorem CMR4490 -- PROVED
 
-Twenty-three spectral-certificate operations bind class weights, compulsory weighted rows, slack preconditioning, complete kernels, stability gaps and normalized kernels.
+Twenty-two spectral-certificate operations bind class weights, compulsory weighted rows, slack preconditioning, complete kernels, stability gaps and normalized kernels.
 
 ## Theorem CMR4491 -- PROVED
 
-Twenty local-family equivalences bind lossless class compression, complete kernel identities, background increments, normalized profiles, lineage reconstruction and blocker generation.
+Nineteen local-family equivalences bind lossless class compression, complete kernel identities, background increments, normalized profiles, lineage reconstruction and blocker generation.
 
 ## Theorem CMR4492 -- PROVED
 
-Thirteen finite-base operations record compression, certificate, manifest, kernel, stability, lineage and blocker endpoints.
+Fourteen finite-base operations record compression, certificate, manifest, kernel, stability, lineage and blocker endpoints.
 
 ## Theorem CMR4493 -- PROVED
 
@@ -40,11 +40,11 @@ Five owner-witness operations preserve projection warnings, compulsory terms, se
 
 ## Theorem CMR4494 -- PROVED
 
-Four table-enumeration operations bind complete response tables, raw-fibre response batches and zero-response blocker censuses.
+Six table-enumeration operations bind complete response tables, raw-fibre response batches and zero-response blocker censuses.
 
 ## Theorem CMR4495 -- PROVED
 
-Four certificate-gluing operations bind compulsory and preconditioned inner duals, background increment telescopes and labelled auxiliary elimination.
+Three certificate-gluing operations bind compulsory and preconditioned inner duals and background-increment telescopes.
 
 ## Theorem CMR4496 -- PROVED
 
@@ -59,12 +59,12 @@ One history-budget operation bounds selector changes by accumulated nonnegative 
 The exact payment census is
 
 ```text
-spectral-certificate = 23
-local-family-equivalence = 20
-finite-base-dispatch = 13
+spectral-certificate = 22
+local-family-equivalence = 19
+finite-base-dispatch = 14
+table-enumeration = 6
 owner-witness-stock = 5
-table-enumeration = 4
-certificate-gluing = 4
+certificate-gluing = 3
 scheduler-dispatch = 2
 history-budget = 1
 ```
