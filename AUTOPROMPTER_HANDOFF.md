@@ -38,17 +38,24 @@ Complete component sizes at barriers `3,4,5,6,7,8` are
 
 None contains a two-triple state, so the certified minimax lower bound is nine.
 
-### Durable search implementation
+### Compact durable quotient search implementation
 
-Committed tool:
+Committed at `51e54e50ab694b0bf03b0a2cf9936cad555ce849`:
 
 - `scripts/search_ac_p31_three_triple_quotient.cpp`
 
-It canonicalizes under the eight square symmetries and layer interchange while retaining one reachable physical representative, physical parent switch and exact potential for every orbit.
+The committed implementation now:
+
+- stores each state and canonical key in one fixed 128-byte record;
+- uses a compact open-addressing canonical-state index;
+- preserves the pre-existing checkpoint binary format;
+- loads the existing barrier-nine and barrier-ten checkpoints without recomputation;
+- retains one actual reachable physical representative, parent index, physical switch and exact potential for every symmetry orbit;
+- writes checkpoints atomically and emits a physical result path on the first lower state.
+
+The remote commit was verified through the GitHub commit API.
 
 ## Current exact computations
-
-Two independent exact quotient searches are active from the committed three-triple state.
 
 ### Barrier nine: lower-bound computation
 
@@ -59,8 +66,7 @@ Latest durable local checkpoint:
 - active queue: `97,907`;
 - two-triple state found: no;
 - checkpoint file: `/tmp/p31_3_b9_quot.cp`;
-- checkpoint size: approximately `788 MiB`;
-- SHA-256: `ccfae25306ffd73abee982ce98af8302cc3c0a0cf13284df20b13699cf161157`.
+- checkpoint SHA-256: `ccfae25306ffd73abee982ce98af8302cc3c0a0cf13284df20b13699cf161157`.
 
 The queue is incomplete. No barrier-nine exhaustion claim is proved.
 
@@ -73,12 +79,11 @@ Latest durable local checkpoint:
 - active queue: `425,401`;
 - two-triple state found: no;
 - checkpoint file: `/tmp/p31_3_b10_quot.cp`;
-- checkpoint size: approximately `504 MiB`;
-- SHA-256: `2974213b2a2de879068c65e758ab92a1940b5f665f5ca3448ea959c7774b6697`.
+- checkpoint SHA-256: `2974213b2a2de879068c65e758ab92a1940b5f665f5ca3448ea959c7774b6697`.
 
-This search is also incomplete and gives no upper path yet.
+This search is incomplete and gives no upper path yet.
 
-The large binary checkpoints are local execution artifacts, not repository theorem artifacts. If the workspace is lost they must be regenerated from the committed search tool and the counts above are progress records only.
+The large binary checkpoints are local execution artifacts, not repository theorem artifacts. If the workspace is lost they must be regenerated from the committed search tool.
 
 ## Decisions and proof standards
 
@@ -94,30 +99,27 @@ The large binary checkpoints are local execution artifacts, not repository theor
 
 ## Current blockers
 
-- Barrier nine is much larger than the initial finite components and has not exhausted after 6.35 million processed quotient states.
+- Barrier nine is incomplete after 6.35 million processed quotient states.
 - Barrier ten has not produced a two-triple path after 3.7 million processed quotient states.
-- The compact fixed-record implementation used locally materially reduces memory, but the committed search source still uses the earlier string-backed record representation and should be updated before future clean reruns.
 - No uniform theorem currently guarantees a terminal path for all prime-minus-one seeds.
 - The physical AC1 arithmetic conversion, repair-layer predicates and source-compatibility predicates remain open in the uniform argument.
 
 ## Uncommitted work
 
-- Compact fixed-record/open-addressing implementation of the quotient search.
 - Incomplete barrier-nine and barrier-ten local checkpoint files.
 - Any `3 -> 2 -> 1 -> 0` path.
 
-No completed theorem or physical path is intentionally left only in chat.
+No completed theorem, implementation or physical path is intentionally left only in chat.
 
 ## Exact next steps
 
-1. Update the committed quotient search tool to the compact fixed-record implementation without changing the checkpoint format.
-2. Resume barrier nine until a two-triple state is found or the quotient exhausts.
+1. Resume barrier nine from `/tmp/p31_3_b9_quot.cp` with the committed compact engine.
+2. If it exhausts, commit the exact quotient size and the symmetry-cover argument before increasing the lower-bound barrier.
 3. Continue barrier ten independently as an upper-path search.
-4. On a lower-state hit, emit the stored physical path, replay it exactly and commit it as a separate segment.
-5. On barrier-nine exhaustion, commit the exact quotient size and proof that orbit exhaustion excludes every physical barrier-nine path.
-6. Continue through one and zero triples.
-7. Update this handoff after every completed component or path.
+4. On a lower-state hit, replay its stored physical path and commit the segment as a separate unit.
+5. Continue through one and zero triples.
+6. Update this handoff after every completed component, path or material blocker change.
 
 ## Current remote checkpoint
 
-This handoff update follows the committed search tool at `4edd6083ad0ee46e6664a3015a9d8bcb04a7c29b` and the prior handoff at `f0525aa033007198a2204836defb28a380a80f71` on `agent/ac-p31-tail-recovery`.
+The compact search engine is commit `51e54e50ab694b0bf03b0a2cf9936cad555ce849` on `agent/ac-p31-tail-recovery`.
