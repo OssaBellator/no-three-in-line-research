@@ -5,7 +5,7 @@
 | `669` | `PP3dbr--PP3dbt` | All three minimum cores of `P2/-57` repair at budget five; corrected chain reaches seventeen blocks; exact raw eighteenth spectrum | Finite corrected chain only |
 | `670` | `PP3dbu--PP3dbw` | Componentwise rounded Caro--Wei, exact component independence additivity, and two-stage Hall condition | No asymptotic coordinate resource family or centre-conflict bound |
 | `671` | `PP3dbx--PP3dbz` | Separator facet, exact transportation score floor, and necessary `3/8` hidden-state mass | Necessary obstruction; no hidden primitive |
-| `672` | `PP3dca--PP3dcc` | Four matching orbits and four deletion-case orbits under 2,560 incidence automorphisms; no nontrivial grid-dihedral source symmetry | Combinatorial orbit reduction does not transfer coordinate legality |
+| `672` | `PP3dca--PP3dcc` | Four full-incidence matching orbits and four deletion-case orbits; no nontrivial grid-dihedral source symmetry; supplemental forty all-unit lifts across twenty diagonal-subgroup representatives | Combinatorial or unit-composition evidence does not transfer full coordinate legality |
 | `673` | `PP3dcd--PP3dcf` | Polyhedral support-function cycle criterion, fixed/adaptive gap, and exact correlated setup repayment | No coordinate macro graph or robust-positive cycle |
 | `674` | `PP3dcg--PP3dci` | Candidate/evidence gate and unchanged fixture fixed point | Zero promoted rows; all-`n` open |
 
@@ -19,7 +19,8 @@
   hidden-mass averaging conserve row and column totals.
 - Prefix automorphisms preserve the forbidden bipartite incidence relation and the
   four-cross-component matching count, but are not asserted to preserve integer
-  coordinates.
+  coordinates. The supplemental forty lifts are individually checked rather than
+  inferred by symmetry.
 - Polyhedral shell robustness evaluates complete cycle incidence vectors against a
   shared uncertainty vector; correlated edge burdens are not replaced by
   independent extrema.
