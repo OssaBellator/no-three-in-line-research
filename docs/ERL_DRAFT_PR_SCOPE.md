@@ -1,10 +1,17 @@
-# ERL draft integration scope
+# ERL draft pull-request scope
 
-This file marks the initial review boundary for the exact recurrent Lyapunov
-research branch. The branch contributes finite local classifications, exact
-lineage projections, and honesty-preserving certificate formats. It does not
-claim legal global reopening, recurrent subcriticality, termination, arbitrary
-side-length transfer, or the no-three-in-line conjecture.
+This branch develops exact finite and affine proof-or-refutation interfaces for
+the recurrent side-four block. It does not claim the classical no-three-in-line
+conjecture.
 
-The next integration gate is a source-backed provenance fibre for upstream host
-`s4-75b04c45c1c8eac2` with deletion set `{02,20}`.
+The first residual host now has:
+
+- a lossless 31-coordinate complete-score signature;
+- a complete integer singleton atlas;
+- a complete pair-through-response component atlas;
+- an infinite two-point original-face family on `x+y=2` and `x+y=4`;
+- a complete strict-reversal classification on those two critical lines;
+- four exact strict `3012` reversal pairs, at radii five and six.
+
+Physical realization, legal operations, recurrent child rows, strict Lyapunov
+weights, global termination and `all_n_proved_by_checker` all remain zero.
