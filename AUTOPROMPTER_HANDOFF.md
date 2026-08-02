@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint date: 2026-08-02 Australia/Melbourne
+Checkpoint time: 2026-08-02T17:34:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -23,9 +23,10 @@ proof.
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified pre-checkpoint research head: `de999c613e987e93ce4ac84f14f4a08ed5c8efb2`.
-- Pre-checkpoint title: `Index uniformity-frontier theorems through docs 650`.
-- The branch was remotely verified identical to that commit before this refresh.
+- Verified theorem-bearing research head: `de999c613e987e93ce4ac84f14f4a08ed5c8efb2`.
+- Theorem-bearing title: `Index uniformity-frontier theorems through docs 650`.
+- The branch contained one committed continuity refresh after that theorem-bearing
+  head before this checkpoint update.
 - Next available theorem identifier: `PP3czp`.
 
 ## Completed canonical tranche: `docs/645--650`
@@ -137,12 +138,29 @@ python scripts/check_frontier_645_650.py
 
 ## Validation status
 
-- All six new standalone diagnostics passed in the isolated local runtime.
-- All four new C++ kernels compiled and executed successfully.
-- Python compilation passed for all seven new Python scripts.
-- The complete historical chained runner was not executed locally because the
-  isolated runtime does not contain a full repository checkout; the group runner
-  begins with `scripts/check_frontier_639_644.py`.
+- All six standalone diagnostics for `docs/645--650` passed in the isolated local
+  runtime used when that tranche was produced.
+- All four C++ kernels compiled and executed successfully at that time.
+- Python compilation passed for all seven Python scripts at that time.
+- The complete historical chained runner was not executed because the isolated
+  runtime did not contain a full repository checkout; the group runner begins with
+  `scripts/check_frontier_639_644.py`.
+- This response performs only a repository continuity checkpoint and starts no new
+  mathematical or computational work.
+
+## Decisions
+
+- Preserve the six-frontier structure and theorem numbering.
+- Keep candidate completion strictly separate from actual geometric/source
+  evidence; do not promote fixture-derived rows.
+- Continue using exact arithmetic, reviewable commits, standalone checkers,
+  certificates, and parity-index supplements for each tranche.
+- Treat the corrected finite boundary chain as finite evidence only; do not infer a
+  periodic or all-length construction without a proved state invariant.
+- Treat numerical Hall amplification, distinct threshold-buffer assignments, local
+  prefix obstructions, and shell amortization inequalities as conditional
+  interfaces until complete coordinate-level source realizations exist.
+- State explicitly that the all-`n` theorem remains open.
 
 ## Current blockers
 
@@ -158,6 +176,14 @@ python scripts/check_frontier_645_650.py
 - Shell: no geometric `(1,1,1)` macro has measured recurring overhead satisfying
   `6*delta+c<3`.
 - Integration: all actual rows and coupling coefficients remain fixture-derived.
+
+## Uncommitted work
+
+- No uncommitted repository work is visible through the action-capable GitHub
+  connector.
+- No new project work was started during this checkpoint response.
+- All completed reviewable work described above was already committed before this
+  continuity-only commit.
 
 ## Exact next steps
 
@@ -176,8 +202,8 @@ python scripts/check_frontier_645_650.py
    recurring collateral against `6*delta+c<3`.
 8. Integration: promote only rows with complete coordinate source paths;
    otherwise preserve the closed gate and unchanged fixed point.
-9. Run diagnostics, Python compilation, the chained runner in a complete checkout,
-   verify the remote head, and refresh this handoff.
+9. Run diagnostics, Python compilation, and the chained runner in a complete
+   checkout; verify the remote head; then refresh this handoff.
 
 ## Conventions
 
