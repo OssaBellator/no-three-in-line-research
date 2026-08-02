@@ -6,7 +6,7 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4181**. Every checker, fixture, bridge, manifest and regression preserves:
+The authoritative theorem ledger reaches **CMR4229**. Every checker, fixture, bridge, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -15,95 +15,85 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_714.py
+python scripts/run_prime_power_installed_construction_regression_782.py
 ```
 
 ```text
-chained manifest = c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
-installed operation kinds = 714
-bound checker contracts = 35
+chained manifest = 895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
+installed operation kinds = 782
+bound checker contracts = 36
 owner-changing kinds = 164
-same-owner kinds = 550
-installed checkers = 63
+same-owner kinds = 618
+installed checkers = 65
 ```
 
 Newest direct entrypoints:
 
 ```text
-scripts/check_prime_power_signature_carry_resource_ancestry.py
-scripts/check_prime_power_installed_operation_registry_714.py
-scripts/run_prime_power_installed_construction_regression_714.py
+scripts/check_prime_power_line_clean_return_core_ancestry.py
+scripts/check_prime_power_installed_operation_registry_782.py
+scripts/run_prime_power_installed_construction_regression_782.py
 ```
 
 A manifest records validation execution; it is not a proof certificate.
 
-## Latest installed T02 banks
+## Latest installed banks
 
-### CMR4086--CMR4133 — CMR1390--CMR1453
+### Through CMR4181 — source CMR1390--CMR1509
 
-Candidate transversals, fixed rook owners, exact rook probabilities, matching-preclusion tails, shared owner assignment, harmonic envelopes and lattice-capacity refinements are installed. They do not yet construct one uniform strict owner policy.
+Candidate transversals, rook-owner probabilities, owner-capacity envelopes, prime-power signature fans, exact-displacement routing, private support, finite token/edge resources and root child channels are installed. Strict transfer and first-use resources are off-diagonal; recurrent numerical cores remain.
 
-### CMR4134--CMR4181 — CMR1454--CMR1509
+### CMR4182--CMR4229 — source CMR1510--CMR1581
 
 The installed bank now contains:
 
 ```text
-eligible prime-power owner signature fans
-fractional packed signature concentration
-exact-displacement translate banks
-weighted prefix/carry routing
-translation path-forest private support
-finite residual-edge and absolute-token resources
-strict transfer/resource DAG triangularity
-root residue channels with exact quotient carries
-strict root child normalization
-owner-disjoint packed-versus-loaded payment
+arbitrary partial-matching deletion and target-safe nonaxis line cleaning
+zero same-owner same-line collateral after complete line cleaning
+repeated-token compression to return, paid-pair selector and trace atomic rows
+exact degree-two component rook response counts and prescription ratios
+strong, singleton and endpoint-overlap line-clean coefficient classes
+subunit paid-pair selector restoration caps and return splices
+finite first-restoration and rooted-centre stocks
+rooted trace strong/singleton line-clean execution
+returned-edge source/target exchange bijections
+exact recreated-credit transport to returned predecessors
+finite rational return upper quotients and exact two-row coupling criterion
 ```
 
-Strict internal scaling, earlier-depth handoff, fresh private-edge payment, fresh-token payment and strict root child channels are off-diagonal. Their finite collateral glues by rational scaling.
-
-The remaining recurrent numerical cores are:
-
-```text
-root-channel/fixed-interface recurrence
-repeated absolute tokens and reused residual supports
-loaded-owner/loaded-line states
-thin, returned-edge and CRT recurrent blocks
-```
+The bank removes undefined line-clean and return coefficients, but it does not prove their recurrent rows strict.
 
 ## Canonical contracts and seals
 
 ```text
-signature/carry/resource checker:
-e1a59036d2e0bdfacab901cb75f44aaf01f3a03c3f8c2e44f1f4466326d717fc
+line-clean/return-core checker:
+0a1620bf756ec529255be95c072a8435d870762644908a5000418d084948aec4
 
-714-kind registry contract:
-675ab24a159db1d009d6c74369a70913573351c32aa9d55494e8eac3d8837895
+782-kind registry contract:
+b15c91825d0859a979f3953139554c2e2c81a1f68ea31d0b7d35a57437f0b946
 
-714-kind registry seal:
-a56bf0f4f45277106f5489ddc5f490a0ff068771e41a21d8d66e8c0b65120e73
+782-kind registry seal:
+8da81442b93b56c48054370aa1f36f47e9ce5acbe9e5b99f01c5e6a8fd62f91f
 
-63-checker manifest:
-c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
+65-checker manifest:
+895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
 ```
 
 ## Current exact flags
 
 ```text
-signature_carry_resource_ancestry_proved = 1
-installed_transition_kind_bank_714_exhaustive = 1
-installed_payment_assignment_714_complete = 1
-installed_transition_regression_714_complete = 1
+line_clean_return_core_ancestry_proved = 1
+installed_transition_kind_bank_782_exhaustive = 1
+installed_payment_assignment_782_complete = 1
+installed_transition_regression_782_complete = 1
 
+line_clean_recurrent_rows_subcritical = 0
+return_selector_block_subcritical = 0
+critical_selector_candidate_regime_closed = 0
+trace_without_root_target_execution_closed = 0
 uniform_signature_payment_certificate_proved = 0
 recurrent_root_channel_core_subcritical = 0
-repeated_token_reused_edge_core_subcritical = 0
-loaded_owner_core_subcritical = 0
-uniform_cross_line_owner_policy_proved = 0
 same_owner_diagonal_blocks_subcritical = 0
-independent_line_kernel_sufficient = 0
-scattered_residual_finite_grid_policy_proved = 0
-one_layer_fixed_target_policy_globally_sufficient = 0
 global_target_collateral_inequality_proved = 0
 all_owner_operations_proved = 0
 all_scheduler_operations_proved = 0
@@ -119,20 +109,18 @@ all_n_proved_by_checker = 0
 
 ## Exact next mathematical frontier
 
-Continue in literal source order from CMR1510:
+Continue in literal source order from CMR1582:
 
 ```text
-extension-free partial-matching line-clean response
-repeated-token atomic compression
-line-clean exact rook rows and uniform permanent envelopes
-line-clean factor signature sharpening
-singleton fractional factors
-paid-pair selector/return splices
-trace-centre line-clean splice
-returned-edge exchange kernels
+docs/301-prime-power-return-selector-assignment-scalarization.md
+docs/302-prime-power-line-clean-integer-credit-budgets.md
+docs/303-prime-power-critical-selector-profile-localization.md
+docs/304-prime-field-root-channel-support-splice.md
+docs/305-prime-power-fixed-interface-thin-exact-table.md
+docs/306-prime-power-label-preserving-crt-certificate-assembly.md
 ```
 
-The active theorem remains a strict rational/integer certificate for every recurrent same-owner core, with line-clean or returned-edge execution replacing root/token/loaded recurrence.
+The next success criterion is a strict numerical certificate or finite exact-table closure for the coupled return-selector, line-clean, critical-selector, root/fixed-interface, thin and labelled CRT blocks.
 
 ## Other open targets
 
@@ -140,4 +128,4 @@ T01 lacks authoritative primary-source population. T03--T04 lack genuine operati
 
 ## Validation status
 
-The 714-kind registry validator was executed locally and passed. The new checker source, contract and 63-checker manifest seal were validated locally. The consolidated seven-verifier checker and complete 63-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
+The 782-kind registry validator was executed locally and passed. The new checker source, contract and 65-checker manifest seal were validated locally. The consolidated nine-verifier checker and complete 65-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
