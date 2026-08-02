@@ -37,7 +37,7 @@ def main() -> None:
     manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     require(manifest["schema_version"] == 1, "unsupported frontier manifest schema")
     require(manifest["branch"] == "research/all-n-product-construction", "unexpected branch")
-    require(manifest["certified_through"] == "PX1193", "unexpected certified theorem boundary")
+    require(manifest["certified_through"] == "PX1196", "unexpected certified theorem boundary")
 
     side7 = manifest["side_seven"]
     total = as_int(side7, "support_twenty_total_selectors")
@@ -77,12 +77,25 @@ def main() -> None:
     require(side7["registered_uncounted_cases"] == [1400, 1409], "unexpected registered side-seven range")
 
     semantic = manifest["semantic_compression"]
+    require(as_int(semantic, "baseline_reference_count") == 192, "semantic baseline reference mismatch")
+    require(as_int(semantic, "baseline_relaxed_key_count") == 150, "semantic baseline key mismatch")
+    require(as_int(semantic, "reference_count") == 208, "semantic reference count mismatch")
+    require(as_int(semantic, "relaxed_key_count") == 165, "semantic key count mismatch")
+    require(as_int(semantic, "basis_covered_top_orders") == 204, "semantic basis coverage mismatch")
     require(
         as_int(semantic, "covered_top_orders") + as_int(semantic, "uncovered_top_orders")
         == as_int(semantic, "clean_top_orders"),
         "semantic union partition mismatch",
     )
+    require(as_int(semantic, "covered_top_orders") == 221, "semantic expanded union mismatch")
+    require(as_int(semantic, "uncovered_top_orders") == 34_891, "semantic complement mismatch")
     require(semantic["basis_digest"] == "12529763722981785837", "semantic basis digest mismatch")
+    require(semantic["expansion_reference_indices"] == [192, 207], "semantic expansion interval mismatch")
+    require(as_int(semantic, "expansion_new_distinct_keys") == 15, "semantic expansion key mismatch")
+    require(as_int(semantic, "expansion_extension_sum") == 20, "semantic extension sum mismatch")
+    require(as_int(semantic, "expansion_union_growth") == 17, "semantic union growth mismatch")
+    require(as_int(semantic, "expansion_bottom_checks") == 201_600, "semantic bottom replay mismatch")
+    require(semantic["expansion_digest"] == "16150749401146711547", "semantic expansion digest mismatch")
 
     template = manifest["constructive_template"]
     require(
@@ -128,27 +141,40 @@ def main() -> None:
         ],
     )
     require_markers(
+        "docs/367-side-seven-semantic-uncovered-top-expansion-16.md",
+        [
+            "indices `192` through `207`",
+            "vocabulary: `150 -> 165` keys",
+            "exact union: `204 -> 221` clean top orders",
+            "`34,891` clean top orders",
+            "`201,600` exact bottom checks",
+            "`16150749401146711547`",
+        ],
+    )
+    require_markers(
         "STATUS.md",
         [
             "Cases `1400--1409` are registered",
             "Indices `5200--5599` are registered but uncounted",
-            "`34,908` clean top orders",
+            "`34,891` remain uncovered",
         ],
     )
     require_markers(
         "tracks/all-n-product-current-frontiers.md",
         [
-            "through PX1193",
+            "through PX1196",
             "Cases `1400--1409` are registered",
             "Pair indices `5200--5599` are registered but uncounted",
-            "`12529763722981785837`",
+            "`16150749401146711547`",
         ],
     )
     require_markers(
         "AUTOPROMPTER_HANDOFF.md",
         [
+            "Certified theorem boundary: `PX1196`",
             "The next canonical multiplicity-two case is `1400`",
             "next bounded prefix begins at pair index `5200`",
+            "`34,891` clean top orders remain uncovered",
             "Advance all of these",
         ],
     )
@@ -157,6 +183,7 @@ def main() -> None:
         [
             "case: [1400, 1401, 1402, 1403, 1404, 1405, 1406, 1407, 1408, 1409]",
             "run-side-seven-multiplicity-two-1400-1409",
+            "cancel-in-progress: true",
             "Registered but uncounted",
         ],
     )
@@ -166,6 +193,7 @@ def main() -> None:
             "orientation: [fc, ff]",
             "first_pair: [5200, 5300, 5400, 5500]",
             "run-opposite-fine-5200-5599",
+            "cancel-in-progress: true",
             "Registered but uncounted",
         ],
     )
@@ -174,16 +202,20 @@ def main() -> None:
         [
             "verify_product_side_seven_multiplicity2_cases1390_1399.py",
             "verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py",
+            "verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py",
+            "cancel-in-progress: true",
         ],
     )
     require_missing(".github/product-side-seven-multiplicity-two-1390-1399-trigger.txt")
     require_missing(".github/product-side-ten-opposite-fine-4800-5199-trigger.txt")
     require_missing(".github/workflows/product-side-ten-opposite-fine-4800-5199.yml")
+    require_missing(".github/workflows/product-side-seven-semantic-uncovered16.yml")
 
     print(
-        "PX1193 frontier manifest: "
+        "PX1196 frontier manifest: "
         "side7=40399+2+31459 "
         "side7_registered=1400--1409 "
+        "semantic=208refs,165keys,221covered,34891uncovered "
         "side10_certified=0--5199 "
         "side10_registered=5200--5599 "
         "frontiers=8 PASS"
