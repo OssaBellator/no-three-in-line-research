@@ -3,7 +3,7 @@
 **Branch:** `research/all-n-product-construction`  
 **Reconciled:** 2 August 2026
 
-This map records the active frontiers through PX1193. It is not a proof of the classical conjecture or an all-side product theorem.
+This map records the active frontiers through PX1196. It is not a proof of the classical conjecture or an all-side product theorem.
 
 ## Effective asymptotic repair
 
@@ -28,13 +28,15 @@ Cases `1400--1409` are registered for exact computation and remain uncounted unt
 
 For multiplicity-two case zero, orientation three:
 
-- 192 references reduce to 150 relaxed semantic keys;
-- a deterministic greedy selection followed by reverse deletion gives a 115-key irredundant basis;
-- the basis has 231 incidences, 177 private top-order witnesses, and maximum overlap two;
-- the exact basis digest is `12529763722981785837`;
-- the basis covers 204 of 35,112 clean top orders, leaving `34,908` outside the current union.
+- the established 192 references reduce to 150 relaxed semantic keys;
+- a deterministic greedy selection followed by reverse deletion gives a 115-key irredundant basis for the original 204-top union;
+- that basis has 231 incidences, 177 private top-order witnesses, maximum overlap two, and exact digest `12529763722981785837`;
+- the first 16 canonical references outside the original union add 15 distinct relaxed keys;
+- the expanded 208-reference vocabulary has 165 keys and covers 221 of 35,112 clean top orders;
+- the exact expansion adds 17 clean top orders, uses `201,600` bottom checks, and has digest `16150749401146711547`;
+- `34,891` clean top orders remain outside the expanded union.
 
-**Next:** generate semantic references from uncovered clean top orders. Do not spend the next tranche only optimizing the existing 204-top island.
+**Next:** continue generating semantic references from uncovered clean top orders and recompute a compact irredundant basis for the 221-top expanded union.
 
 ## Constructive-template analysis
 
@@ -73,7 +75,7 @@ The complete side-two through side-five carry profile isolates a high-concentrat
 
 1. Promote side-seven cases `1400--1409` only after exact transcript replay.
 2. Promote side-ten fine intervals `5200--5599` only after exact transcript replay.
-3. Expand the semantic union using uncovered top orders.
+3. Continue semantic-union expansion from the `34,891` uncovered top orders and recompute the expanded basis.
 4. Analyze the case-`1287` symmetry orbit and reusable pattern content.
 5. Advance the decimal-2873 target, protected residual entropy, bounded-barrier repair, and carry/absorber closure in parallel.
 6. Keep `STATUS.md` and `AUTOPROMPTER_HANDOFF.md` synchronized with certified, not merely registered, boundaries.
