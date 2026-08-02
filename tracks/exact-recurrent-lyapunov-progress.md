@@ -221,6 +221,40 @@ generic integer witness for every secant, checks direct scores on 10,190 lattice
 points in `[-50,50]^2`, and rejects thirteen corruptions. Physical singleton
 coverage and every multi-point background claim remain zero.
 
+## ERL1k pair-through-response-point atlas — PROVED
+
+For a two-point background `{b1,b2}`, the full score has one non-additive term:
+the number of response points lying on the line through `b1,b2`.
+
+The five-response union has 11 points. Lines through pairs of union points have
+the exact census
+
+```text
+36 distinct lines
+28 lines containing 2 union points
+ 7 lines containing 3 union points
+ 1 line containing 4 union points.
+```
+
+A background-pair line either avoids the union, meets exactly one union point,
+or is one of those 36 lines. After equal vectors are identified, there are
+exactly 39 pair-through-response-point contribution classes. The compiler stores
+48 integer witness pairs and rejects twelve corruptions.
+
+The maximum component contributions are
+
+```text
+3012: 3
+3210: 4
+2031: 2
+2310: 2
+3201: 2.
+```
+
+This completes the non-additive pair component only. The full two-point score
+still requires compatibility between two singleton secant signatures and one
+pair-through-point class.
+
 ## First host: exact known interface
 
 ```text
@@ -235,14 +269,15 @@ coarse H=2 bound  69
 score signature   20 line loads + 11 pair counts
 safe local class  all 32 subsets of {00,01,11,22,33}
 singleton atlas   15 exact integer score classes
+pair-line atlas   39 exact contribution classes
 critical points   (-1,4), (4,-1)
 ```
 
 ## Active work queue
 
-- **#18:** classify the two-point background layer, where pair-through-response-
-  point coordinates first become nonzero; then prove physical coverage or
-  populate exterior signatures, deletion causes, owners and legal transitions.
+- **#18:** classify compatibility of the two singleton secant signatures with
+  the 39 pair-through-point classes; then prove physical coverage or populate
+  exterior signatures, deletion causes, owners and legal transitions.
 - **#19:** publish a realizable non-strict SCC or failed row whenever found.
 - **#20:** classify the unique depth-two overlap under installed operations.
 - **#21:** compile exact offspring rows and solve or refute the strict rational
