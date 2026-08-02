@@ -1,14 +1,91 @@
-#define main semantic_vocabulary_full192_relaxed_main
-#include "measure_product_side_seven_multiplicity2_case0_orientation3_semantic_vocabulary_full192_relaxed.cpp"
+#define main semantic_cover_core_top35_main
+#include "measure_product_side_seven_multiplicity2_case0_orientation3_semantic_cover_core.cpp"
 #undef main
 
+#include <algorithm>
 #include <cassert>
 #include <iostream>
+#include <map>
 #include <set>
 #include <vector>
 
 namespace {
 constexpr int EXPANSION_REFERENCES = 16;
+
+struct RelaxedPartialKey {
+    uint16_t mask = 0;
+    Assignment values{};
+    bool operator<(RelaxedPartialKey const& other) const {
+        if (mask != other.mask) return mask < other.mask;
+        return values < other.values;
+    }
+};
+
+RelaxedPartialKey relaxed_key(uint16_t mask, Assignment const& assignment) {
+    RelaxedPartialKey key;
+    key.mask = mask;
+    key.values.fill(-1);
+    for (int column = 0; column < SIDE; ++column)
+        if ((mask >> column) & 1u) key.values[column] = assignment[column];
+    return key;
+}
+
+MinimizedCover minimize_selector_relaxed(
+    int selector,
+    Signature const& signature,
+    State const& state,
+    Assignment const& reference,
+    std::vector<std::array<int8_t, N>> const& bottoms,
+    uint64_t& digest
+) {
+    MinimizedCover result;
+    result.cover = greedy_cover(state, reference, bottoms);
+    result.syntactic_mask = syntactic_support(result.cover);
+    result.semantic_mask = result.syntactic_mask;
+
+    digest = mix(digest, selector);
+    digest = mix(digest, result.cover.size());
+    for (auto const& triple : result.cover)
+        for (auto edge : triple) digest = mix(digest, edge);
+    digest = mix(digest, result.syntactic_mask);
+
+    for (int column = 0; column < SIDE; ++column) {
+        if (!((result.semantic_mask >> column) & 1u)) continue;
+        uint16_t candidate = uint16_t(result.semantic_mask & ~(1u << column));
+        AssumptionTopEnumerator top;
+        top.run(signature, reference, candidate);
+        bool valid = true;
+        uint64_t tested_bottoms = 0;
+        size_t checked_extensions = 0;
+        for (auto const& extension : top.solutions) {
+            ++checked_extensions;
+            if (!cover_valid(result.cover, extension, bottoms, tested_bottoms)) {
+                valid = false;
+                break;
+            }
+        }
+        digest = mix(digest, column);
+        digest = mix(digest, candidate);
+        digest = mix(digest, top.solutions.size());
+        digest = mix(digest, checked_extensions);
+        digest = mix(digest, top.nodes);
+        digest = mix(digest, tested_bottoms);
+        digest = mix(digest, valid);
+        if (valid) result.semantic_mask = candidate;
+    }
+
+    digest = mix(digest, result.semantic_mask);
+    return result;
+}
+
+void print_counts(std::map<int, int> const& counts) {
+    bool first = true;
+    for (auto const& [value, count] : counts) {
+        if (!first) std::cout << ',';
+        first = false;
+        std::cout << value << ':' << count;
+    }
+}
 
 void print_indices(std::vector<int> const& indices) {
     for (size_t index = 0; index < indices.size(); ++index) {
