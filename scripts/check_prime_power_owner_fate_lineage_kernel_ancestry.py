@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-"""Execute owner/fate, lineage and line-kernel ancestry for CMR1894--CMR1965."""
 from __future__ import annotations
 import copy, hashlib, json, os, subprocess, sys
 from pathlib import Path
@@ -14,7 +13,7 @@ def digest(value: Any)->str:
 SOURCE_FILES=["docs/340-prime-power-owner-fate-collision-class-compression.md","docs/341-prime-power-compulsory-weighted-assignment-certificates.md","docs/342-prime-power-slack-preconditioned-assignment-manifest.md","docs/343-prime-power-complete-line-energy-kernel.md","docs/344-prime-power-background-increment-line-energy-kernel.md","docs/345-prime-power-line-energy-selector-stability.md","docs/346-prime-power-background-normalized-line-energy-kernel.md","docs/347-prime-power-raw-fibre-background-lineage.md","docs/348-prime-power-rank-three-zero-response-blockers.md"]
 VERIFIER_FILES=["scripts/verify_prime_power_owner_fate_class_compression.py","scripts/verify_prime_power_compulsory_weighted_assignment.py","scripts/verify_prime_power_slack_preconditioned_manifest.py","scripts/verify_prime_power_complete_line_energy_kernel.py","scripts/verify_prime_power_background_increment_kernel.py","scripts/verify_prime_power_line_energy_selector_stability.py","scripts/verify_prime_power_background_normalized_kernel.py","scripts/verify_prime_power_raw_fibre_background_lineage.py","scripts/verify_prime_power_rank_three_zero_response_blockers.py"]
 CONTRACT={"schema":"prime-power-owner-fate-lineage-kernel-ancestry/v1","source_range":["CMR1894","CMR1965"],"source_files":SOURCE_FILES,"verifier_files":VERIFIER_FILES,"checked_layers":["exact owner fate collision class compression and compulsory weighted assignment certificates","slack-preconditioned executable manifests and complete line-energy kernels","background increment selector stability and background-normalized kernel identities","raw geometric fibre background lineage and exact rank-three zero-response blockers"],"honesty_flags":{"owner_fate_rows_populated_all_recurrent_states":0,"compulsory_weighted_certificates_complete":0,"raw_fibre_backgrounds_cover_all_provenance":0,"rank_three_zero_blockers_globally_resolved":0,"complete_labelled_recurrent_lp_strict":0,"all_labelled_recurrent_blocks_subcritical":0,"same_owner_diagonal_blocks_subcritical":0,"global_target_collateral_inequality_proved":0,"global_transition_kind_bank_exhaustive":0,"global_termination_proved":0,"actual_global_parent_rule_complete":0,"all_n_proved_by_checker":0}}
-EXPECTED_CONTRACT_SHA256="a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb"
+EXPECTED_CONTRACT_SHA256="8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828"
 
 def repository_root(start: Path|None=None)->Path:
     current=(start or Path(__file__).resolve()).resolve()
@@ -22,7 +21,6 @@ def repository_root(start: Path|None=None)->Path:
     for candidate in (current,*current.parents):
         if (candidate/"STATUS.md").is_file() and (candidate/"scripts").is_dir(): return candidate
     raise OwnerFateLineageKernelError("unable to locate repository root")
-
 def environment()->dict[str,str]:
     result=dict(os.environ); result.update({"PYTHONDONTWRITEBYTECODE":"1","PYTHONHASHSEED":"0"}); return result
 
