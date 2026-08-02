@@ -1,0 +1,84 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "675-680",
+  "theorems": [
+    "PP3dcj", "PP3dck", "PP3dcl",
+    "PP3dcm", "PP3dcn", "PP3dco",
+    "PP3dcp", "PP3dcq", "PP3dcr",
+    "PP3dcs", "PP3dct", "PP3dcu",
+    "PP3dcv", "PP3dcw", "PP3dcx",
+    "PP3dcy", "PP3dcz", "PP3dda"
+  ],
+  "boundary": {
+    "eighteenth_minimum_four_cores": 7,
+    "budgets_exhausted": [4, 5, 6],
+    "cores_correctable_through_budget_six": 1,
+    "canonical_attempt": {"node": "P0", "offset": -39, "core": 2},
+    "canonical_correction_size": 6,
+    "corrected_points": 144,
+    "corrected_blocks": 18,
+    "raw_nineteenth_extensions": 0,
+    "raw_nineteenth_histogram": {
+      "4": 2, "5": 9, "6": 47, "7": 175, "8": 283,
+      "9": 3, "10": 16, "11": 63, "12": 121, "13": 176, "14": 137
+    },
+    "minimum_four_nineteenth_attempts": {
+      "P1/-33": 1,
+      "P2/-64": 5
+    }
+  },
+  "hall": {
+    "component_hypotheses": ["bipartite", "maximum_degree_at_most_two"],
+    "component_types": ["isolated_vertex", "path", "even_cycle"],
+    "retained_centres": "sum_path ceil(|C|/2)+sum_even_cycle |C|/2",
+    "matching_loss": "sum_nontrivial_component floor(|C|/2)",
+    "bipartite_graphs_checked": 74954,
+    "degree_two_graphs_checked": 10172,
+    "motif_loss_budgets": {"10": 2, "11": 5, "12": 8}
+  },
+  "threshold": {
+    "hidden_state": "4I_4",
+    "hidden_state_score": -8,
+    "source_score": -3,
+    "equal_weight_batch_size": 8,
+    "hidden_states": 3,
+    "legal_facet_states": 5,
+    "hidden_weight": "3/8",
+    "identity": "3*(4I_4)+sum(five legal facet matrices)=8*S",
+    "minimum_equal_weight_batch_size": 8,
+    "algebraic_hidden_mass_bound_sharp": true,
+    "geometric_hidden_primitive": false
+  },
+  "prefix": {
+    "selected_representatives": 20,
+    "deletion_cases": 2,
+    "canonical_route_rule": "lexicographically first optimal radius-four route",
+    "compositions_per_route": 1024,
+    "route_composition_pairs_checked": 40960,
+    "all_pairs_pass": true,
+    "maximum_coordinate_histograms": {
+      "deletion_0_2": {"120": 10, "132": 10},
+      "deletion_3_5": {"84": 10, "132": 10}
+    }
+  },
+  "shell": {
+    "primitive_example_robust_gains": [-1, -1],
+    "mixed_margin": "1/2",
+    "cleared_cycle_counts": [1, 1],
+    "composite_robust_gain": 1,
+    "common_base_realization": true,
+    "connector_repayment": "max(0,floor((S-A_connector)/G_bundle)+1)",
+    "observation_required_for_rational_mixed_certificate": false,
+    "coordinate_macro_graph": false
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "promoted_rows": [],
+    "actual_evidence_level": "fixture_derived",
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3ddb"
+  }
+}
