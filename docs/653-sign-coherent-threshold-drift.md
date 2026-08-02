@@ -1,61 +1,80 @@
-# Sign-coherent threshold drift
+# Threshold factorization, exposure, and sign-coherent drift
 
-`docs/647` shows that the eight nearest legal targets admit 49 assignments of
-distinct transient buffer cells. Distinctness removes buffer reuse, but it does
-not address the displacement accumulated at the batch endpoint.
+This chapter consolidates the concurrent threshold audits into one canonical
+three-theorem account. It separates transient-buffer scheduling, exposed-cell
+sharing, and endpoint displacement.
 
-## PP3czv — The nearest-target family is cellwise sign-coherent
+## PP3czv — Complete three-round buffer factorization
 
-For every matrix cell, all eight target-minus-source entries have one sign: no
-cell is increased by one nearest target and decreased by another.
-
-### Proof
-
-`scripts/check_threshold_sign_coherent_drift.py` reconstructs all 4,475 legal
-four-layer matrices and the eight distance-six targets. It checks the eight
-signed differences in each of the sixteen cells and finds no cell containing
-both `+1` and `-1`. ∎
-
-## PP3czw — Every nonempty target subset has additive drift
-
-For any nonempty subset `S` of the eight nearest targets,
+The twenty-four target-buffer incidences of the connected cubic bipartite graph
+admit exactly forty-four unordered one-factorizations into three perfect
+matchings. Hence there are
 
 ```text
-|| sum_{T in S} (T-SOURCE) ||_1 = 6 |S|.
+44*3! = 264
 ```
 
-In particular, no nonempty subset has zero aggregate displacement.
+ordered three-round schedules in which every target uses each of its three
+available transient cells exactly once and every transient cell is used exactly
+once per round. Each incidence has two native swap orders, giving
 
-### Proof
+```text
+264*2^24 = 4,429,185,024
+```
 
-Each individual target has `L1` displacement six. By `PP3czv`, absolute values
-commute with summation cell by cell, so no cancellation is possible. The checker
-exhausts all 255 nonempty subsets. ∎
+fully ordered native three-round schedules.
 
-## PP3czx — Distinct buffers do not change endpoint drift
+## PP3czw — Matching-independent full-grid exposure
 
-Every one of the 49 perfect transient assignments and all 12,544 ordered
-factorization batches have the same target endpoint displacement. For the batch
-containing all eight targets, the aggregate signed matrix is
+For every one of the forty-nine perfect transient assignments, the union of the
+eight seven-cell native footprints is the entire `4 x 4` source grid. The cell
+load histogram is independent of the matching:
+
+```text
+load 2: eight source-unit cells,
+load 5: eight non-unit cells.
+```
+
+Thus no distinct-buffer assignment makes the eight target operations disjoint or
+reduces the maximum shared-cell load below five. Every round requires protection
+of all sixteen source cells.
+
+## PP3czx — Endpoint drift is sign-coherent and cannot cancel
+
+For every matrix cell, the eight nearest target-minus-source entries have one
+sign: no cell is increased by one nearest target and decreased by another.
+Consequently every nonempty target subset `S` satisfies
+
+```text
+|| sum_{T in S}(T-SOURCE) ||_1 = 6|S|,
+```
+
+and no nonempty subset has zero displacement. The all-eight batch has aggregate
+signed matrix
 
 ```text
 (-5,-1, 1, 5,
   5,-5,-1, 1,
   1, 5,-5,-1,
- -1, 1, 5,-5).
+ -1, 1, 5,-5)
 ```
 
-Its `L1` norm is 48.
+and `L1` norm 48. Buffer assignment and swap order alter exposed scheduling but
+cannot alter this endpoint drift.
 
-### Proof
+## Verification
 
-The transient cell cancels between the two swaps of each factorization, so it is
-absent from the endpoint. Assignment and swap order can change exposed states,
-but not the sum of target-minus-source matrices. ∎
+- `scripts/check_threshold_factorized_exposure_collision.py` reconstructs the
+  legal catalogue, all forty-nine matchings, all forty-four factorizations, and
+  the invariant footprint loads.
+- `scripts/check_threshold_incidence_factorizations.py` independently checks the
+  one-factorization counts and matching participation histogram.
+- `scripts/check_threshold_sign_coherent_drift.py` exhausts all 255 nonempty target
+  subsets and verifies exact additive endpoint drift.
 
 ## Evidence boundary
 
-The distinct-buffer construction solves a scheduling collision, not the endpoint
-balance problem. A geometric threshold batch must supply an inverse or other
-compensating source operation; batching only nearest targets can never neutralize
-its own displacement.
+Balanced transient scheduling does not yield independent geometric operations,
+and the nearest-target family cannot neutralize itself. A realization must
+protect a coupled full-grid batch and also supply an inverse or compensating
+source operation with legal exposed states.
