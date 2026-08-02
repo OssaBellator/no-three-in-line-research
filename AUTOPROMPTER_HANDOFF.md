@@ -1,213 +1,90 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-02T17:34:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-02T17:55:00+10:00 Australia/Melbourne
 
 ## Goal
 
-Develop a rigorous all-`n` prime-patching route for the no-three-in-line research
-program across six linked frontiers:
-
-1. boundary recleaning / marker-controller realization;
-2. localized Hall transport and list decoding;
-3. fractional direct-clean threshold layers;
-4. support-chord repair words and constrained prefix codes;
-5. clean-macro shell attenuation and scheduling;
-6. global interaction/integration certificates.
-
-The asymptotic all-`n` theorem remains open. The repository contains exact finite
-reductions, conditional interfaces, bounded corrected chains, matrix-level
-operation reductions, and explicit finite source models; none is an all-length
-proof.
+Develop a rigorous all-`n` prime-patching route for the no-three-in-line program
+across boundary, Hall, threshold, prefix, shell, and integration frontiers.  The
+all-`n` theorem remains open; finite corrected chains and conditional interfaces
+must not be presented as an all-length construction.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Verified theorem-bearing research head: `de999c613e987e93ce4ac84f14f4a08ed5c8efb2`.
-- Theorem-bearing title: `Index uniformity-frontier theorems through docs 650`.
-- The branch contained one committed continuity refresh after that theorem-bearing
-  head before this checkpoint update.
-- Next available theorem identifier: `PP3czp`.
+- Last fully indexed tranche: `docs/645--650`, theorems `PP3cyx--PP3czo`.
+- Current in-progress tranche: `docs/651--656`.
+- Next available theorem identifier: `PP3czs`.
 
-## Completed canonical tranche: `docs/645--650`
+## Newly completed and committed
 
-### Boundary — `docs/645-corrected-thirteenth-boundary-transition.md`
+### Boundary — `docs/651-corrected-fourteenth-boundary-transition.md`
 
-Theorems `PP3cyx--PP3cyz`.
+Theorems `PP3czp--PP3czr`.
 
-- The exact radius-64 thirteenth minimum-transversal histogram is
-  `3:3, 4:8, 5:25, 6:84, 7:163, 8:240, 9:15, 10:37, 11:123, 12:135, 13:135, 14:64`.
-- The eleven attempts of minimum size at most four have ninety-three minimum cores.
-- Every one of the ninety-three cores admits a row-and-column-preserving correction
-  within budget seven.
-- The exact minimum correction-budget distribution is
-  `4:19, 5:45, 6:26, 7:3`.
-- The canonical `P0` offset-56 correction deletes
-  `(18,75),(40,193),(50,316),(51,315)` and adds
-  `(18,316),(40,315),(50,193),(51,75)`.
-- This four-point correction gives a legal 104-point, thirteen-block state.
-- All 1,032 raw fourteenth-block attempts in radius 64 fail.
+- The 1,032 raw fourteenth attempts have exact minimum-transversal histogram
+  `3:3, 4:13, 5:62, 6:123, 7:173, 8:151, 9:36, 10:61, 11:130, 12:131, 13:98, 14:51`.
+- Sixteen attempts have minimum at most four, with 130 minimum cores.
+- All sixteen attempts have a row/column-preserving repair through budget seven.
+- Exactly 125 of the 130 minimum cores repair within that budget; successful-core
+  minimum budgets are `3:2, 4:23, 5:54, 6:38, 7:8`.
+- The canonical `P2` offset-63 correction deletes
+  `(32,79),(44,258),(52,377)` and adds
+  `(32,258),(44,377),(52,79)`.
+- The result is a legal 112-point fourteen-block state.
+- All 1,032 raw fifteenth attempts fail; their exact histogram is
+  `4:10, 5:36, 6:100, 7:193, 8:186, 9:28, 10:81, 11:106, 12:151, 13:110, 14:31`.
 
-### Hall — `docs/646-bad-centre-amplification.md`
+Committed reproducibility files:
 
-Theorems `PP3cza--PP3czc`.
+- `scripts/check_boundary_fourteenth_spectrum.cpp`
+- `scripts/check_boundary_fourteenth_corrections.cpp`
+- `scripts/check_boundary_fifteenth_spectrum.cpp`
+- `scripts/check_boundary_fourteenth_transition.py`
 
-- For `t` disjoint four-centre source motifs and `e` extra corruptions, the exact
-  guaranteed good-centre count is `3t-e`.
-- The numerical Hall interface is satisfied exactly when `3t-e>=28`.
-- Ten motifs suffice without extra corruption and tolerate exactly two additional
-  corruptions; a third requires eleven motifs.
-- If the extra-corruption rate is at most `rho<3`, it suffices that
-  `t>=ceil(28/(3-rho))`.
-- Cross-copy geometry and the source/host-defect degree-two conditions remain open.
-
-### Threshold — `docs/647-distinct-transient-threshold-batching.md`
-
-Theorems `PP3czd--PP3czf`.
-
-- The eight targets and eight transient source cells form a connected 3-regular
-  bipartite incidence graph with twenty-four incidences.
-- Every incidence supports two swap orders.
-- The graph has exactly forty-nine perfect matchings, so all targets can receive
-  pairwise distinct transient cells.
-- These matchings lift to `49*2^8=12544` ordered eight-target batches with no
-  transient-cell reuse.
-- Every individual intermediate remains geometrically illegal.
-
-### Prefix — `docs/648-fourteen-pair-local-extension-obstruction.md`
-
-Theorems `PP3czg--PP3czi`.
-
-- The complete insertion-plus-at-most-one-transposition neighbourhood of the
-  canonical thirteen-pair source contains 23,273 valid candidates and no
-  no-three-in-line source.
-- The unique minimum-defect candidate has exactly three collinear triples.
-- All 25,229 valid ordered move sequences of length at most two from that candidate
-  retain at least three triples.
-- This is a sharp local obstruction, not an impossibility theorem for all
-  fourteen-pair saturated sources.
-
-### Shell — `docs/649-recurring-shell-collateral-barrier.md`
-
-Theorems `PP3czj--PP3czl`.
-
-- For `k` periods, per-use overhead `delta`, recurring collateral `c`, and fixed
-  setup `S`, exact cost is `k(12+6*delta+c)+S`.
-- Strict improvement occurs exactly when `6*delta+c+S/k<3`.
-- Some finite batch helps exactly when the recurring burden satisfies
-  `6*delta+c<3`.
-- The minimum batch length is `floor(S/(3-6*delta-c))+1`.
-- At unit macro cost, at most two integer recurring controls per period are
-  affordable; three tie or lose for every batch length.
-
-### Integration — `docs/650-uniformity-frontier-evidence-gate.md`
-
-Theorems `PP3czm--PP3czo`.
-
-- Candidate completion remains `25/30`:
-  boundary `4/5`, Hall `4/5`, threshold `5/5`, prefix `5/5`, shell `5/5`,
-  integration `2/5`.
-- The fixture fixed-point total remains
-  `705466760524005697/3623878655999606784`.
-- Positive slack below one quarter remains
-  `200502903475895999/3623878655999606784`.
-- All six actual rows remain `fixture_derived`; zero rows are promoted and
-  geometric closure remains false.
-
-## Machine-readable and reproducibility files
-
-- `certificates/prime-patching-uniformity-frontier-645-650.json`
-- `scripts/check_boundary_thirteenth_spectrum.cpp`
-- `scripts/check_boundary_thirteenth_corrections.cpp`
-- `scripts/check_boundary_thirteenth_transition.py`
-- `scripts/check_hall_bad_centre_amplification.py`
-- `scripts/check_threshold_distinct_transient_batch.py`
-- `scripts/check_prefix_13_to_14_neighbourhood.cpp`
-- `scripts/check_prefix_14_two_swap_neighbourhood.cpp`
-- `scripts/check_prefix_13_to_14_extension_obstruction.py`
-- `scripts/check_shell_recurring_collateral.py`
-- `scripts/check_uniformity_frontier_gate.py`
-- `scripts/check_frontier_645_650.py`
-- `proofs/prime-patching-parity-index-645-650-supplement.md`
-
-Latest group command:
-
-```bash
-python scripts/check_frontier_645_650.py
-```
-
-## Validation status
-
-- All six standalone diagnostics for `docs/645--650` passed in the isolated local
-  runtime used when that tranche was produced.
-- All four C++ kernels compiled and executed successfully at that time.
-- Python compilation passed for all seven Python scripts at that time.
-- The complete historical chained runner was not executed because the isolated
-  runtime did not contain a full repository checkout; the group runner begins with
-  `scripts/check_frontier_639_644.py`.
-- This response performs only a repository continuity checkpoint and starts no new
-  mathematical or computational work.
+All four were generated from and executed successfully in the isolated local
+runtime before commit.  The complete repository chain has not yet been run.
 
 ## Decisions
 
-- Preserve the six-frontier structure and theorem numbering.
-- Keep candidate completion strictly separate from actual geometric/source
-  evidence; do not promote fixture-derived rows.
-- Continue using exact arithmetic, reviewable commits, standalone checkers,
-  certificates, and parity-index supplements for each tranche.
-- Treat the corrected finite boundary chain as finite evidence only; do not infer a
-  periodic or all-length construction without a proved state invariant.
-- Treat numerical Hall amplification, distinct threshold-buffer assignments, local
-  prefix obstructions, and shell amortization inequalities as conditional
-  interfaces until complete coordinate-level source realizations exist.
-- State explicitly that the all-`n` theorem remains open.
+- Preserve theorem numbering and six-frontier structure.
+- The correction theorem is attemptwise: five minimum cores do not repair within
+  budget seven, although every low-transversal attempt has at least one repair.
+- Use the smallest canonical correction, `P2` offset 63 with deletion size three.
+- Treat the fourteen-block state as finite evidence only; no recurrence or state
+  invariant has been proved.
+- Keep all actual integration rows at `fixture_derived` unless a complete
+  coordinate source path is supplied.
 
 ## Current blockers
 
-- Boundary: the corrected path reaches thirteen blocks but has no raw fourteenth
-  transition; a corrected fourteenth transition or periodic state invariant is
-  missing.
-- Hall: the motif amplification law is numerical; no asymptotic resource-disjoint
-  motif construction or cross-copy corruption bound is proved.
-- Threshold: distinct buffer assignment removes reuse but no batch has legal
-  exposed geometric states.
-- Prefix: the canonical thirteen-pair source has no local fourteen-pair extension,
-  and no uniform or infinite saturated family is known.
-- Shell: no geometric `(1,1,1)` macro has measured recurring overhead satisfying
-  `6*delta+c<3`.
-- Integration: all actual rows and coupling coefficients remain fixture-derived.
+- Boundary: no raw fifteenth transition or periodic corrected-state invariant.
+- Hall: no geometric resource-disjoint motif family or source/host-defect
+  degree-two theorem.
+- Threshold: no distinct-buffer assignment has legal exposed geometric states.
+- Prefix: no global fourteen-pair saturated source or uniform infinite family.
+- Shell: no geometric `(1,1,1)` macro with measured recurring burden below three.
+- Integration: all actual rows and couplings remain fixture-derived.
 
 ## Uncommitted work
 
-- No uncommitted repository work is visible through the action-capable GitHub
-  connector.
-- No new project work was started during this checkpoint response.
-- All completed reviewable work described above was already committed before this
-  continuity-only commit.
+No completed repository change is intentionally left only in chat.  The remaining
+frontier investigations for `docs/652--656` have not yet been committed.
 
 ## Exact next steps
 
-1. Verify this handoff and continue theorem numbering at `PP3czp`.
-2. Build `docs/651--656` around a corrected fourteenth transition and genuinely
-   uniform source mechanisms.
-3. Boundary: enumerate minimum fourteenth conflict cores in radius 64 and search
-   degree-preserving corrections, then compare drift across the last four states.
-4. Hall: construct resource-disjoint source-star motifs in the conditional host
-   and prove a cross-copy bad-centre bound plus the two degree-two restrictions.
-5. Threshold: test the forty-nine distinct-buffer assignments against actual
-   source-cell geometry and search for a batch with legal exposed states.
-6. Prefix: search globally for a fourteen-pair saturated source or prove a broader
-   extension obstruction; seek a uniform two-per-row/two-per-column family.
-7. Shell: construct a geometric `(1,1,1)` macro and measure its per-use and
-   recurring collateral against `6*delta+c<3`.
-8. Integration: promote only rows with complete coordinate source paths;
-   otherwise preserve the closed gate and unchanged fixed point.
-9. Run diagnostics, Python compilation, and the chained runner in a complete
-   checkout; verify the remote head; then refresh this handoff.
-
-## Conventions
-
-Continue on `research/all-n-prime-patching`; use exact arithmetic and reviewable
-commits; keep candidate completion separate from geometric evidence; preserve the
-six-frontier structure; store a checker and certificate for each tranche; and
-state explicitly that the all-`n` theorem remains open.
+1. Continue at `PP3czs`.
+2. Hall: derive a rigorous packing/corruption law for resource-disjoint motifs and
+   state exactly which geometric hypotheses remain conditional.
+3. Threshold: enumerate the forty-nine perfect matchings by exposure collisions
+   and identify the sharp batch obstruction.
+4. Prefix: perform a broader global fourteen-pair source search or certify a
+   stronger bounded neighbourhood obstruction.
+5. Shell: derive the exact variable-period recurring-collateral envelope for a
+   heterogeneous macro schedule.
+6. Integration: create `docs/656`, certificate, runner, and parity supplement;
+   preserve candidate `25/30` and the closed evidence gate unless promoted evidence
+   is actually found.
+7. Run standalone diagnostics and Python compilation locally, verify the remote
+   theorem-bearing head, and refresh this handoff.
