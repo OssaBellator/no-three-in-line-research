@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-02T22:25:00+10:00 Australia/Melbourne
+Checkpoint date: 2026-08-02 Australia/Melbourne
 
 ## Goal
 
@@ -19,7 +19,7 @@ all-length coordinate constructions.
 - Current theorem range: `PP3ddb--PP3dds`.
 - Next available theorem identifier: `PP3ddt`.
 - Verified theorem-bearing head before this continuity commit:
-  `7c217595c0ca7fc010aeb8973b0064679df6c4bd`.
+  `25e703bc7fe5a33034673004a167dc08819ffd77`.
 
 ## Corrected prior-tranche fact
 
@@ -88,7 +88,7 @@ Theorems `PP3ddh--PP3ddj`.
   has exact histogram `0:3840,1:1920,2:960`; no rolling order exposes more than two
   legal windows.
 
-### Prefix — `docs/684-all-physical-matching-composition-lifts.md`
+### Prefix — `docs/684-all-physical-prefix-composition-lifts.md`
 
 Theorems `PP3ddk--PP3ddm`.
 
@@ -122,7 +122,7 @@ Theorems `PP3ddn--PP3ddp`.
 - The Eulerian realization audit covers 1,086 small connected integer
   circulations.
 
-### Integration — `docs/686-circulation-compensation-evidence-gate.md`
+### Integration — `docs/686-structural-compensation-evidence-gate.md`
 
 Theorems `PP3ddq--PP3dds`.
 
@@ -167,9 +167,9 @@ Shell and integration:
 
 - `scripts/check_shell_robust_circulation.py`
 - `scripts/check_shell_circulation_realization.py`
-- `scripts/check_circulation_compensation_gate.py`
+- `scripts/check_structural_compensation_gate.py`
 - `scripts/check_frontier_681_686.py`
-- `certificates/prime-patching-circulation-compensation-681-686.json`
+- `certificates/prime-patching-structural-compensation-681-686.json`
 - `proofs/prime-patching-parity-index-681-686-supplement.md`
 
 Latest chained command:
@@ -183,10 +183,10 @@ python scripts/check_frontier_681_686.py
 - The current nineteenth spectrum was independently rebuilt and checked against an
   exact hitting-set reconstruction. The five-core correction kernel rejected all
   corrections through budget six in isolated local execution.
-- Direct local audits checked the unified Hall incidence and packet certificates,
-  all 19,834 threshold endpoint batches and the rigid layer/window obstruction,
-  all 212,992 physical prefix compositions, and the shell LP/Eulerian execution
-  examples.
+- Direct and committed audits cover the unified Hall incidence and packet
+  certificates, all 19,834 threshold endpoint batches and the rigid layer/window
+  obstruction, all 212,992 physical prefix compositions, and the shell
+  LP/Eulerian execution examples.
 - The complete historical chained runner was not executed end-to-end in this
   environment because a full local checkout remains unavailable; direct clone
   attempts could not resolve `github.com`.
