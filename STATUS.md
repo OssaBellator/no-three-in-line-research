@@ -6,7 +6,7 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4133**. Every checker, fixture, bridge, manifest and regression preserves:
+The authoritative theorem ledger reaches **CMR4181**. Every checker, fixture, bridge, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -15,79 +15,90 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_656.py
+python scripts/run_prime_power_installed_construction_regression_714.py
 ```
 
 ```text
-chained manifest = 5678e89e0f0b73946471b3c99cb027448266715a5ae0b0ffc42636dd4aa9bd3d
-installed operation kinds = 656
-bound checker contracts = 34
-owner-changing kinds = 162
-same-owner kinds = 494
-installed checkers = 61
+chained manifest = c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
+installed operation kinds = 714
+bound checker contracts = 35
+owner-changing kinds = 164
+same-owner kinds = 550
+installed checkers = 63
 ```
 
 Newest direct entrypoints:
 
 ```text
-scripts/check_prime_power_candidate_transversal_rook_capacity_ancestry.py
-scripts/check_prime_power_installed_operation_registry_656.py
-scripts/run_prime_power_installed_construction_regression_656.py
+scripts/check_prime_power_signature_carry_resource_ancestry.py
+scripts/check_prime_power_installed_operation_registry_714.py
+scripts/run_prime_power_installed_construction_regression_714.py
 ```
 
 A manifest records validation execution; it is not a proof certificate.
 
 ## Latest installed T02 banks
 
-### CMR4038--CMR4085 — CMR1318--CMR1389
-
-Persistent last-entering owners give a finite forward owner DAG and block upper triangular reproduction matrix. Exact state-credit rows, host-uniform upper quotients, extension-free cylinders and cross-line assignment normal forms are installed. The reduction does not prove same-owner blocks subcritical.
-
 ### CMR4086--CMR4133 — CMR1390--CMR1453
+
+Candidate transversals, fixed rook owners, exact rook probabilities, matching-preclusion tails, shared owner assignment, harmonic envelopes and lattice-capacity refinements are installed. They do not yet construct one uniform strict owner policy.
+
+### CMR4134--CMR4181 — CMR1454--CMR1509
 
 The installed bank now contains:
 
 ```text
-exact weighted deletion-transversal identities
-clean and threshold surviving-transversal response selection
-failed-selector Hall witnesses and exact unit-wall child descent
-fixed pre-sampling candidate owners
-exact rook-class owner rows and prescription probabilities
-sharp extension-free matching preclusion and two minimum owner stars
-owner-tail response policies and fractional cover/packing alternatives
-one shared cross-line assignment primal/dual
-harmonic conditional owner-star bounds in inherited coordinates
-sharper lattice-capacity owner envelopes and exact height cutoffs
+eligible prime-power owner signature fans
+fractional packed signature concentration
+exact-displacement translate banks
+weighted prefix/carry routing
+translation path-forest private support
+finite residual-edge and absolute-token resources
+strict transfer/resource DAG triangularity
+root residue channels with exact quotient carries
+strict root child normalization
+owner-disjoint packed-versus-loaded payment
 ```
 
-The finalized CMR1430--CMR1437 rook-owner formulas co-bind the earlier CMR1398--CMR1405 operation family; they are not double-counted.
+Strict internal scaling, earlier-depth handoff, fresh private-edge payment, fresh-token payment and strict root child channels are off-diagonal. Their finite collateral glues by rational scaling.
 
-These theorems give exact candidate walls, owner loads and quantitative envelopes. They do not yet construct one uniform strict owner policy for every inherited-coordinate block.
+The remaining recurrent numerical cores are:
+
+```text
+root-channel/fixed-interface recurrence
+repeated absolute tokens and reused residual supports
+loaded-owner/loaded-line states
+thin, returned-edge and CRT recurrent blocks
+```
 
 ## Canonical contracts and seals
 
 ```text
-candidate/rook/capacity checker:
-a590a41fb713c91904106d20d5eb31e18171a0761ce35a3908a29c8b87d547db
+signature/carry/resource checker:
+e1a59036d2e0bdfacab901cb75f44aaf01f3a03c3f8c2e44f1f4466326d717fc
 
-656-kind registry contract:
-65c91f7b242b0c8d35749aad1126a4b4af937cff346e71babe0890013660b3d2
+714-kind registry contract:
+675ab24a159db1d009d6c74369a70913573351c32aa9d55494e8eac3d8837895
 
-656-kind registry seal:
-1152af341932a040dc60c93baf4a8712964486f7d3a39fd4d4d69ec5a1162321
+714-kind registry seal:
+a56bf0f4f45277106f5489ddc5f490a0ff068771e41a21d8d66e8c0b65120e73
 
-61-checker manifest:
-5678e89e0f0b73946471b3c99cb027448266715a5ae0b0ffc42636dd4aa9bd3d
+63-checker manifest:
+c8a579625e9fba23b4526bf3a1465df985dd1897224104cbc8e863d6873f0811
 ```
 
 ## Current exact flags
 
 ```text
-candidate_transversal_rook_capacity_ancestry_proved = 1
-installed_transition_kind_bank_656_exhaustive = 1
-installed_payment_assignment_656_complete = 1
-installed_transition_regression_656_complete = 1
+signature_carry_resource_ancestry_proved = 1
+installed_transition_kind_bank_714_exhaustive = 1
+installed_payment_assignment_714_complete = 1
+installed_transition_regression_714_complete = 1
 
+uniform_signature_payment_certificate_proved = 0
+recurrent_root_channel_core_subcritical = 0
+repeated_token_reused_edge_core_subcritical = 0
+loaded_owner_core_subcritical = 0
 uniform_cross_line_owner_policy_proved = 0
 same_owner_diagonal_blocks_subcritical = 0
 independent_line_kernel_sufficient = 0
@@ -108,19 +119,20 @@ all_n_proved_by_checker = 0
 
 ## Exact next mathematical frontier
 
-Continue in literal source order from CMR1454:
+Continue in literal source order from CMR1510:
 
 ```text
-eligible owner signature fans
-fractional packed signature fans
-weighted displacement/carry routing
-exact-displacement private path payment
-transfer-resource triangularity
-root displacement child channels
-owner-disjoint packed/loaded alternatives
+extension-free partial-matching line-clean response
+repeated-token atomic compression
+line-clean exact rook rows and uniform permanent envelopes
+line-clean factor signature sharpening
+singleton fractional factors
+paid-pair selector/return splices
+trace-centre line-clean splice
+returned-edge exchange kernels
 ```
 
-The active theorem remains an actual host-uniform strict integer/rational inequality for every same-owner inherited-coordinate response class, with blocked or loaded classes routed to finite resources or strict descendants.
+The active theorem remains a strict rational/integer certificate for every recurrent same-owner core, with line-clean or returned-edge execution replacing root/token/loaded recurrence.
 
 ## Other open targets
 
@@ -128,4 +140,4 @@ T01 lacks authoritative primary-source population. T03--T04 lack genuine operati
 
 ## Validation status
 
-The 656-kind registry validator was executed locally and passed. The new checker source, contract and 61-checker manifest seal were validated locally. The consolidated seven-verifier checker and complete 61-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
+The 714-kind registry validator was executed locally and passed. The new checker source, contract and 63-checker manifest seal were validated locally. The consolidated seven-verifier checker and complete 63-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
