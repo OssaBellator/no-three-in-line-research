@@ -23,6 +23,10 @@ on:
       - scripts/verify_product_frontier_manifest.py
   workflow_dispatch:
 
+concurrency:
+  group: product-promoted-frontier-replay-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
