@@ -10,6 +10,7 @@ checks = [
     "check_hall_component_resource_packing.py",
     "check_threshold_facet_hidden_mass.py",
     "check_prefix_matching_orbits.py",
+    "check_prefix_automorphism_orbit_unit_lifts.py",
     "check_shell_polyhedral_cycle_robustness.py",
     "check_hidden_compensation_gate.py",
 ]
