@@ -1,12 +1,12 @@
 # Status and honesty ledger
 
-**Last updated:** 1 August 2026
+**Last updated:** 2 August 2026
 
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4037**. Every checker, fixture, bridge, manifest and regression preserves:
+The authoritative theorem ledger reaches **CMR4085**. Every checker, fixture, bridge, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -15,102 +15,82 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_552.py
+python scripts/run_prime_power_installed_construction_regression_608.py
 ```
 
 ```text
-chained manifest = aab192d2cd4682e51be31a09285141377b5786d231006950a898f36cf43b39fd
-installed operation kinds = 552
-bound checker contracts = 32
-owner-changing kinds = 159
-same-owner kinds = 393
-installed checkers = 57
+chained manifest = 06e533ad5145c771fd0083ce94ca149124f10dcdd157043fd5bb2cea1facbb43
+installed operation kinds = 608
+bound checker contracts = 33
+owner-changing kinds = 161
+same-owner kinds = 447
+installed checkers = 59
 ```
 
 Newest direct entrypoints:
 
 ```text
-scripts/check_prime_power_collateral_spectral_ancestry.py
-scripts/check_prime_power_finite_grid_response_ancestry.py
-scripts/check_prime_power_installed_operation_registry_552.py
+scripts/check_prime_power_inherited_coordinate_diagonal_block_ancestry.py
+scripts/check_prime_power_installed_operation_registry_608.py
+scripts/run_prime_power_installed_construction_regression_608.py
 ```
 
 A manifest records validation execution; it is not a proof certificate.
 
 ## Latest installed T02 banks
 
-### CMR3894--CMR3941 — CMR1166--CMR1197
-
-Universal-range dirty owners descend to response banks, strict children, unit walls or finite bases. The finite-response countermodel preserves:
-
-```text
-global_target_collateral_inequality_proved = 0
-```
-
 ### CMR3942--CMR3989 — CMR1198--CMR1277
 
-Degree-two fixed-target response banks now have exact rank-cylinder probabilities, restricted-host penalties, absolute last-entering owners, corrected three-rank line energies, doubly stochastic rank-one marginals, pointwise local collateral envelopes and optimized target aggregation.
-
-Every physical triple has one last-creation credit and owner cell. Target response policies reduce to finite nonnegative offspring matrices; successful policies admit exact rational/integer Lyapunov certificates. This is a reduction and certificate format, not a proof that every owner is subcritical.
-
-Finite checker highlights:
-
-```text
-216 side-four joint states
-1,728 selected target cells
-2,112 degree-two bank configurations
-5,436 response states
-9,514 rank-cylinder checks
-8,192 restricted-host profiles
-21,744 edge-conditioned envelope checks
-72 live-credit histories
-8,100 rational Lyapunov certificates
-```
+Degree-two response banks have exact probability bounds, restricted-host penalties, corrected line energies, last-entering owners, local collateral envelopes, physical credit ledgers and rational/integer spectral certificate formats. This is a reduction, not a proof that every owner is subcritical.
 
 ### CMR3990--CMR4037 — CMR1278--CMR1317
 
-Full standard grids and verified translate/common-scale affine copies have finite response policies:
+Full standard grids and verified translate/common-scale affine copies are closed through side six. Sides three through five have strict response policies. Side six has an exact one-layer trap class and a clean two-layer escape. These numerical tables do not transfer by arbitrary relabelling to scattered residual factors.
+
+### CMR4038--CMR4085 — CMR1318--CMR1389
+
+The installed bank now contains:
 
 ```text
-side 3: every dirty target response is clean
-side 4: all 176 dirty ordered states have a strict response
-side 5: all 5,216 dirty ordered states have a strict response
-side 6: 189,476 dirty states improve immediately;
-        1,184 traps escape in at most two equal responses;
-        24 ordered traps form six two-cycles plus twelve feeders;
-        one recorded clean joint response escapes the closed class
+persistent last-entering structural credit owners
+finite forward owner-DAG and block upper triangular reproduction matrices
+exact state-credit rows and host-uniform componentwise upper quotients
+exact/dyadic line-profile classes and pair-moment envelopes
+extension-free permanent and exact derangement marginal bounds
+exact line-composition and row-column cylinder rows
+cross-line edge-selector, fractional matching and deterministic policy normal forms
+exact blocked-response unit-wall descent
+explicit side-five independent-line obstruction and zero-collateral witness
 ```
 
-These numerical policies do **not** transfer by arbitrary relabelling to scattered residual factors. The side-six trap class also proves that repeated one-layer fixed-target banks are not globally sufficient.
+The owner DAG reduces the global spectral problem to same-owner diagonal blocks. It does not prove those diagonal blocks subcritical. Independent linewise kernels are explicitly insufficient; cross-line assignment retains the missing correlation but does not yet produce one uniform all-owner policy.
 
 ## Canonical contracts and seals
 
 ```text
-collateral/spectral checker:
-26e224413ed320276f50e0852b64291c11994861d21b35bb4bec9077179b7577
+inherited-coordinate checker:
+bff27495eef9188b3d90e5f36ee66ed889b0606c7fa92f8b3391a3114e03d826
 
-finite-grid checker:
-caa854d1cac17e5d4680558a9829b01a5d19b86a811e2baae47170d4839f3114
+608-kind registry contract:
+3271d30e50a8e2ff6147b316cb9a9e78b4bf9bfe4d82eb170058b0405902d194
 
-552-kind registry contract:
-77670b377285d73441fd7c19cdd83a115ce658ef263098f45c73a633f352d232
+608-kind registry seal:
+4c0e1714052dcd95aa941a83249a2b2fecc09c723f58d29fa8fe32933f7c27a9
 
-552-kind registry seal:
-890827174d7c40a37b23c8c5ccba673ddd3ab39a7e3ae7cef4f88df5c1b0387b
-
-57-checker manifest:
-aab192d2cd4682e51be31a09285141377b5786d231006950a898f36cf43b39fd
+59-checker manifest:
+06e533ad5145c771fd0083ce94ca149124f10dcdd157043fd5bb2cea1facbb43
 ```
 
 ## Current exact flags
 
 ```text
-collateral_spectral_ancestry_proved = 1
-finite_grid_response_ancestry_proved = 1
-installed_transition_kind_bank_552_exhaustive = 1
-installed_payment_assignment_552_complete = 1
-installed_transition_regression_552_complete = 1
+inherited_coordinate_diagonal_block_ancestry_proved = 1
+installed_transition_kind_bank_608_exhaustive = 1
+installed_payment_assignment_608_complete = 1
+installed_transition_regression_608_complete = 1
 
+same_owner_diagonal_blocks_subcritical = 0
+independent_line_kernel_sufficient = 0
 scattered_residual_finite_grid_policy_proved = 0
 one_layer_fixed_target_policy_globally_sufficient = 0
 global_target_collateral_inequality_proved = 0
@@ -128,20 +108,18 @@ all_n_proved_by_checker = 0
 
 ## Exact next mathematical frontier
 
-The next literal source range starts at chapter 269:
+Continue in literal source order after chapter 277:
 
 ```text
-last-entering owner triangularity
-exact credit classes and upper quotients
-degree-two bank line-profile classes
-line-profile pair-moment envelopes
-extension-free permanent and marginal bounds
-extension-free line-composition kernels and exact cylinder types
-cross-line edge assignment and candidate-transversal Hall walls
-rook-owner weights and cross-line owner assignment
+candidate-transversal Hall walls
+rook-owner edge weights
+cross-line owner assignments
+harmonic owner bounds
+lattice-capacity owner bounds
+primitive-height, prefix, quotient/carry and CRT same-owner classes
 ```
 
-The active theorem remains a globally valid target-versus-collateral subcriticality certificate for inherited-coordinate factors, including genuine block triangularity or a bounded interface error.
+The active theorem remains an actual host-uniform strict integer/rational inequality for every same-owner inherited-coordinate response class, with blocked classes routed to strict descendants.
 
 ## Other open targets
 
@@ -149,4 +127,4 @@ T01 lacks authoritative primary-source population. T03--T04 lack genuine operati
 
 ## Validation status
 
-The collateral/spectral checker and both new registries were executed locally and passed. The finite-grid consolidated wrapper compiles, but its complete inherited side-five/side-six enumeration was not executed in the current local environment. Neither the complete 55-checker nor 57-checker repository runner was executed locally. Dedicated Python 3.10/3.12 workflows are configured, but configuration is not evidence of CI success.
+The 608-kind registry validator was executed locally and passed. The new checker source, contract and runner manifest seal were validated locally. The consolidated nine-verifier checker and complete 59-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
