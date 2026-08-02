@@ -1,0 +1,31 @@
+name: Candidate-transversal rook-capacity frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_candidate_transversal_rook_capacity_ancestry.py'
+      - 'scripts/verify_prime_power_candidate_transversal_hall.py'
+      - 'scripts/verify_prime_power_rook_owner_edge_weights.py'
+      - 'scripts/verify_prime_power_owner_support_matching_preclusion.py'
+      - 'scripts/verify_prime_power_extension_free_rook_probabilities.py'
+      - 'scripts/verify_prime_power_cross_line_owner_assignment.py'
+      - 'scripts/verify_prime_power_cross_line_harmonic_owner.py'
+      - 'scripts/verify_prime_power_cross_line_lattice_capacity.py'
+      - 'docs/530-prime-power-candidate-transversal-rook-capacity-ancestry.md'
+      - '.github/workflows/candidate-transversal-rook-capacity-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run candidate-transversal rook-capacity checker
+        run: python scripts/check_prime_power_candidate_transversal_rook_capacity_ancestry.py
