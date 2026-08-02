@@ -1,26 +1,34 @@
 # Autoprompter continuity handoff
 
-Checkpoint date: 2026-08-02 Australia/Melbourne
+Checkpoint time: 2026-08-02T17:36:00+10:00 Australia/Melbourne
 
 ## Goal
 
 Develop a rigorous all-`n` prime-patching route for the no-three-in-line program
-across boundary, Hall, threshold, prefix, shell, and integration frontiers. The
-all-`n` theorem remains open. Finite corrected chains, matrix-level obstructions,
-and conditional packing interfaces must not be presented as an all-length
-coordinate construction.
+across six linked frontiers:
+
+1. boundary recleaning / marker-controller realization;
+2. localized Hall transport and list decoding;
+3. fractional direct-clean threshold layers;
+4. support-chord repair words and constrained prefix codes;
+5. clean-macro shell attenuation and scheduling;
+6. global interaction/integration certificates.
+
+The all-`n` theorem remains open. Finite corrected chains, matrix-level schedules,
+conditional graph interfaces, and explicit finite source reservoirs must not be
+presented as an all-length coordinate construction.
 
 ## Current branch
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
 - Verified theorem-bearing head before this continuity refresh:
-  `a889131a35982a86f40d885289e233108bdf3adf`.
-- Completed canonical tranche: `docs/651--656`.
-- Theorems: `PP3czp--PP3dag`.
-- Next available theorem identifier: `PP3dah`.
+  `72908250794b68724249ff31dc7a5d20e753266b`.
+- Completed canonical tranches: `docs/651--656` and `docs/657--662`.
+- Latest theorem range: `PP3dah--PP3day`.
+- Next available theorem identifier: `PP3daz`.
 
-## Completed canonical tranche: `docs/651--656`
+## Canonical tranche `docs/651--656`
 
 ### Boundary — `docs/651-corrected-fourteenth-boundary-transition.md`
 
@@ -30,176 +38,260 @@ Theorems `PP3czp--PP3czr`.
   `3:3, 4:13, 5:62, 6:123, 7:173, 8:151, 9:36, 10:61, 11:130, 12:131, 13:98, 14:51`.
 - Sixteen attempts have minimum at most four, with exactly 125 minimum cores.
 - Every minimum core has a row/column-preserving correction through deletion
-  budget seven; the exact first-success distribution is
+  budget seven; the first-success distribution is
   `3:2, 4:23, 5:54, 6:38, 7:8`.
 - The canonical `P2` offset-63 correction deletes
   `(32,79),(44,258),(52,377)` and adds
   `(32,258),(44,377),(52,79)`.
-- The resulting state has 112 points and fourteen blocks.
-- All 1,032 raw fifteenth attempts fail. Their exact minimum-transversal histogram
-  is `4:10, 5:36, 6:100, 7:193, 8:186, 9:28, 10:81, 11:106, 12:151, 13:110, 14:31`.
+- The result is a legal 112-point, fourteen-block state.
+- All 1,032 raw fifteenth attempts fail, with histogram
+  `4:10, 5:36, 6:100, 7:193, 8:186, 9:28, 10:81, 11:106, 12:151, 13:110, 14:31`.
 
 ### Hall — `docs/652-bounded-overlap-hall-packing.md`
 
 Theorems `PP3czs--PP3czu`.
 
-- If `M` candidate motifs have resource-overlap conflict graph of maximum degree
-  `Delta`, at least `ceil(M/(Delta+1))` resource-disjoint motifs can be selected.
-- After `e` extra good-centre corruptions, the guarantee is
-  `3*ceil(M/(Delta+1))-e`.
-- The sharp candidate threshold for the 28-resource interface is
-  `(ceil((28+e)/3)-1)*(Delta+1)+1`.
-- At overlap degree two, the thresholds are 28 candidates for `e=0` or `e=2`, and
-  31 candidates for `e=3`.
-- The graph-level constant is sharp by disjoint unions of `K_(Delta+1)`.
+- Candidate motif overlap and selected-centre conflicts are separated into two
+  graph stages.
+- Maximum motif-overlap degree `Delta` guarantees
+  `ceil(M/(Delta+1))` resource-disjoint motifs.
+- If the selected-centre conflict graph is `H`, the exact retainable count is
+  `3*ceil(M/(Delta+1))-tau(H)`.
+- For bipartite `H`, König's theorem replaces `tau(H)` by matching number `nu(H)`.
+- Under `nu(H)<=m`, the sharp maximum-degree candidate threshold is
+  `(ceil((28+m)/3)-1)*(Delta+1)+1`.
 
 ### Threshold — `docs/653-sign-coherent-threshold-drift.md`
 
 Theorems `PP3czv--PP3czx`.
 
-- The eight nearest legal target displacements are cellwise sign-coherent: no cell
-  is increased by one target and decreased by another.
-- Every nonempty target subset `S` has aggregate `L1` displacement exactly
-  `6|S|`; none has zero drift.
-- The all-eight batch has aggregate `L1` displacement 48.
-- The 49 distinct transient assignments and 12,544 ordered batches can alter
-  exposed scheduling but cannot alter endpoint drift.
+- The target-buffer incidence graph has forty-four unordered three-round
+  one-factorizations, 264 ordered factorizations, and
+  `4,429,185,024` fully ordered native schedules.
+- Every transient perfect matching covers the full `4 x 4` source grid with load
+  histogram `2:8, 5:8`; no matching lowers maximum shared load below five.
+- Nearest-target endpoint displacements are cellwise sign-coherent.
+- Every nonempty target subset has `L1` displacement `6|S|`; none self-neutralizes.
 
-### Prefix — `docs/654-component-anchor-nesting-obstruction.md`
+### Prefix — `docs/654-fourteen-pair-saturated-anchor-reservoir.md`
 
 Theorems `PP3czy--PP3daa`.
 
-- Every two-pair incidence component is internally anchor-unpairable: for either
-  `P` edge, the two `Q` edges share its row or its column.
-- The canonical thirteen-pair source has component sizes `2,2,4,5`, with internal
-  compatible-anchor counts `0,0,2,13`.
-- Every complete anchor pairing uses at least four cross-component pairs; the
-  bound is sharp, with exactly 104 minimum-crossing anchor matchings.
-- Deleting either two-pair component cannot preserve anchors by componentwise
-  restriction; a nested family requires global rerouting or must avoid such
-  components.
+- The permutations
+  `P=(8,6,2,3,10,13,5,12,1,0,4,9,11,7)` and
+  `Q=(7,3,8,0,11,1,2,10,9,13,5,12,4,6)` form a 28-cell no-three source on
+  `14 x 14`, with degree two in every row and column.
+- Pairing shift `+5 mod 14` supplies fourteen disjoint anchors.
+- All 8,192 ordered compositions of fourteen pass with zero mixed-run triples and
+  maximum coordinate magnitude 100.
+- The incidence graph is one fourteen-cycle, so the witness is not componentwise
+  nested.
+- The older thirteen-pair source comparison shows that two-pair components force
+  at least four cross-component anchors.
 
-### Shell — `docs/655-irregular-shell-schedule-budget.md`
+### Shell — `docs/655-heterogeneous-shell-schedule-envelope.md`
 
 Theorems `PP3dab--PP3dad`.
 
-- For varying period overheads `delta_i`, collateral `c_i`, and setup `S`, exact
-  saving is `sum_i(3-6*delta_i-c_i)-S`.
-- A repeatable cycle beats some finite setup exactly when its mean burden
-  `mean_i(6*delta_i+c_i)` is below three.
-- With cycle margin `M`, the minimum repetitions paying setup `S` are
-  `floor(S/M)+1`.
-- Individual periods may tie or lose if compensated by lighter periods; at unit
-  cost the collateral cycle `(0,3)` saves three controls per two-period cycle.
+- For period burden `b_i=6*delta_i+c_i`, cumulative saving is
+  `B_k=sum_{i<=k}(3-b_i)`.
+- A prefix beats setup `S` exactly when `B_k>S`.
+- Every fixed setup is amortizable exactly when `sup_k B_k=infinity`.
+- Periodic schedules are completely classified by period gain and within-period
+  prefix peaks; individual expensive periods may be compensated by later gains.
 
 ### Integration — `docs/656-uniform-mechanism-evidence-gate.md`
 
 Theorems `PP3dae--PP3dag`.
 
-- Candidate completion remains `25/30`: boundary `4/5`, Hall `4/5`, threshold
-  `5/5`, prefix `5/5`, shell `5/5`, integration `2/5`.
-- All six actual rows remain `fixture_derived`; the promoted set is empty.
+- Candidate completion remains `25/30`.
+- All six actual evidence rows remain `fixture_derived`; zero rows are promoted.
 - The fixture fixed-point total remains
   `705466760524005697/3623878655999606784`.
 - Positive slack below one quarter remains
   `200502903475895999/3623878655999606784`.
+- Geometric closure is false.
+
+## Canonical tranche `docs/657--662`
+
+### Boundary — `docs/657-corrected-fifteenth-boundary-transition.md`
+
+Theorems `PP3dah--PP3daj`.
+
+- Exactly ten raw fifteenth attempts have minimum transversal four, with 156
+  minimum cores.
+- Every minimum core corrects through budget seven; first-success histogram:
+  `4:6, 5:70, 6:74, 7:6`.
+- The canonical `P0` offset-30 correction deletes
+  `(9,59),(19,74),(58,349),(59,346)` and adds
+  `(9,349),(19,346),(58,74),(59,59)`.
+- The result is a legal 120-point, fifteen-block state.
+- All 1,032 raw sixteenth attempts fail, with histogram
+  `4:9, 5:21, 6:88, 7:166, 8:238, 9:8, 10:38, 11:83, 12:157, 13:151, 14:73`.
+
+### Hall — `docs/658-two-level-hall-packing.md`
+
+Theorems `PP3dak--PP3dam`.
+
+- The full motif degree sequence gives the Caro–Wei bound
+  `ceil(sum_v 1/(d_v+1))`, which can sharply improve the maximum-degree estimate.
+- Average degree gives the corollary `ceil(M/(d_bar+1))`.
+- Both bounds are sharp for disjoint unions of equal cliques.
+- Combining with a bipartite selected-centre matching bound `m`, the Hall
+  condition is
+  `3*ceil(sum_v 1/(d_v+1))-m>=28`.
+
+### Threshold — `docs/659-threshold-exposure-obstruction.md`
+
+Theorems `PP3dan--PP3dap`.
+
+- Across 12,544 ordered distinct-buffer batches, distinct-intermediate counts have
+  histogram `4:7, 5:84, 6:634, 7:2804, 8:9015`.
+- Changed-cell union sizes have histogram `14:164, 15:2808, 16:9572`.
+- Maximum cell exposure has histogram `2:49, 3:1553, 4:7970, 5:2972`.
+- Every one of the 49 transient perfect matchings has exactly one swap-order choice
+  exposing all sixteen cells exactly twice.
+- None of the 392 intermediate occurrences in those balanced batches is legal.
+
+### Prefix — `docs/660-two-component-anchor-rerouting-radius.md`
+
+Theorems `PP3daq--PP3das`.
+
+- For every minimum-crossing thirteen-pair anchor matching and either two-pair
+  component deletion, boundary flow is exactly two outgoing and two incoming
+  assignments.
+- Every one of the 208 deletion cases has exact rerouting radius four on the
+  surviving eleven-row anchor permutation.
+- Every case has exactly 144 optimal distance-four reroutings.
+
+### Shell — `docs/661-shell-repertoire-cycle-mean.md`
+
+Theorems `PP3dat--PP3dav`.
+
+- A finite macro transition repertoire amortizes every fixed setup exactly when a
+  reachable directed cycle has positive total saving.
+- Equivalently, a reachable cycle has mean burden below three.
+- The optimal asymptotic saving rate is the maximum reachable cycle mean saving.
+- For entry saving `A`, positive cycle gain `G`, and setup `S`, the exact number of
+  complete cycle repetitions is `max(0,floor((S-A)/G)+1)`.
+
+### Integration — `docs/662-compensating-mechanisms-evidence-gate.md`
+
+Theorems `PP3daw--PP3day`.
+
+- Candidate completion remains `25/30`.
+- All actual rows remain `fixture_derived`; the promoted set is empty.
+- The fixture fixed-point total and slack remain unchanged.
 - Geometric closure is false and the all-`n` theorem remains open.
 
 ## Reproducibility files
 
-- `scripts/check_boundary_fourteenth_spectrum.cpp`
-- `scripts/check_boundary_fourteenth_corrections.cpp`
-- `scripts/check_boundary_fifteenth_spectrum.cpp`
-- `scripts/check_boundary_fourteenth_transition.py`
-- `scripts/check_hall_overlap_packing.py`
-- `scripts/check_threshold_sign_coherent_drift.py`
-- `scripts/check_prefix_component_anchor_obstruction.py`
-- `scripts/check_shell_irregular_period_schedule.py`
-- `scripts/check_uniform_mechanism_gate.py`
+### `651--656`
+
 - `scripts/check_frontier_651_656.py`
 - `certificates/prime-patching-uniform-mechanisms-651-656.json`
 - `proofs/prime-patching-parity-index-651-656-supplement.md`
 
+### `657--662`
+
+- `scripts/check_boundary_fifteenth_corrections.cpp`
+- `scripts/check_boundary_fifteenth_transition.py`
+- `scripts/check_boundary_sixteenth_spectrum.cpp`
+- `scripts/check_hall_degree_sequence_packing.py`
+- `scripts/check_hall_two_level_packing.py`
+- `scripts/check_threshold_balanced_exposure_batch.py`
+- `scripts/check_prefix_two_component_rerouting.py`
+- `scripts/check_shell_repertoire_cycle_mean.py`
+- `scripts/check_compensating_mechanisms_gate.py`
+- `scripts/check_frontier_657_662.py`
+- `certificates/prime-patching-compensating-mechanisms-657-662.json`
+- `proofs/prime-patching-parity-index-657-662-supplement.md`
+
 Latest chained command:
 
 ```bash
-python scripts/check_frontier_651_656.py
+python scripts/check_frontier_657_662.py
 ```
 
 ## Validation status
 
-- The boundary spectrum, correction, corrected-state, and raw-fifteenth kernels
-  were executed successfully in the isolated runtime that produced `docs/651`.
-- The Hall overlap checker and the new threshold, prefix, shell, and integration
-  audits passed in the current isolated runtime.
-- Python compilation passed for the new Python checkers and runner.
-- The complete historical chained runner was not executed locally because the
-  isolated runtime does not contain a full repository checkout; the committed
-  runner begins with `scripts/check_frontier_645_650.py`.
-- The remote branch was verified identical to theorem-bearing head
-  `a889131a35982a86f40d885289e233108bdf3adf` before this refresh.
+- The exact fourteenth transition and its boundary kernels were executed in the
+  isolated runtime used to produce `docs/651`.
+- The committed fifteenth wrapper compiles and asserts the fifteenth spectrum,
+  correction census, corrected state, and sixteenth spectrum; a complete rerun was
+  not possible in the current response because a full checkout could not be
+  obtained.
+- The current isolated runtime independently reproduced:
+  - all 32,768 six-vertex Caro–Wei checks;
+  - the 49 balanced threshold batches and their exact histograms;
+  - all 208 prefix deletion cases, rerouting radius four, and 144 optimum repairs;
+  - the shell positive-cycle and bounded-no-positive-cycle examples;
+  - the exact fixed-point total and slack.
+- The explicit fourteen-pair C++ source audit was compiled and executed during this
+  work, producing all 8,192 successful compositions and maximum coordinate 100.
+- Python compilation passed for the newly added Python diagnostics and runners.
+- `git clone` and the complete historical chained runner could not be executed in
+  this environment because `github.com` DNS resolution failed.
 
 ## Decisions
 
-- Preserve exact theorem numbering, the six-frontier structure, and reviewable
-  checker-backed commits.
-- Treat the fourteen-block boundary chain as finite evidence only; do not infer
-  recurrence from successive bounded corrections.
-- Use the Hall overlap graph only as a conditional interface until an actual
-  conditional host proves bounded motif overlap and both degree-two restrictions.
-- Treat distinct transient buffers as scheduling data only; endpoint neutrality
-  requires an inverse or compensating threshold operation.
-- Require explicit global anchor rerouting in any nested source family containing
-  two-pair incidence components.
-- Allow heterogeneous shell macro cycles, but promote nothing until actual
-  geometric period burdens are measured and average below three.
-- Keep candidate completion separate from actual geometric evidence.
+- Preserve one canonical theorem chapter per frontier number; remove duplicate
+  concurrent chapters and duplicate gate/certificate artifacts.
+- Keep the fourteen-pair reservoir as the canonical prefix result for `docs/654`;
+  retain the thirteen-pair component obstruction only as a supplementary comparison.
+- Treat Hall degree-sequence and conflict-graph bounds as conditional until their
+  data are derived from coordinates.
+- Treat balanced threshold exposure as an obstruction, not a legal source
+  realization.
+- Treat anchor rerouting radius four as a permutation-layer theorem only.
+- Treat shell positive-cycle existence as the exact finite-state scheduling target,
+  not evidence that a geometric macro repertoire exists.
+- Promote no integration row without a complete coordinate source path.
 
 ## Current blockers
 
-- Boundary: no corrected fifteenth transition, recurrence, or periodic state
-  invariant.
-- Hall: no geometric candidate-motif family with bounded resource-overlap degree,
-  and no proof of the source/host-defect degree-two conditions after selection.
-- Threshold: no inverse or compensating legal source operation and no batch with
-  legal exposed geometric states.
-- Prefix: no global fourteen-pair saturated source or uniform all-size family;
-  two-pair components force nonlocal anchor rerouting.
-- Shell: no concrete `(1,1,1)` macro repertoire with measured average burden below
-  three.
+- Boundary: no corrected sixteenth transition, recurrence, or periodic corrected-
+  state invariant.
+- Hall: no coordinate-derived candidate-motif degree sequence, selected-centre
+  conflict matching bound, or simultaneous source/host-defect degree-two theorem.
+- Threshold: every uniquely balanced native batch still exposes illegal
+  intermediates; no legal inverse or replacement primitive is known.
+- Prefix: the four-assignment rerouting has no uniform coordinate insertion
+  realization, and no all-size recurrence links the finite reservoirs.
+- Shell: no coordinate-level `(1,1,1)` macro transition graph with a reachable
+  sub-three mean-burden cycle is known.
 - Integration: all actual rows and coupling coefficients remain fixture-derived.
 
 ## Uncommitted work
 
 - No completed repository change is intentionally left only in chat.
-- The exploratory global `14 x 14` source searches did not produce a certified
-  witness and were not committed as mathematical evidence.
+- The exploratory global source searches that did not produce a certified witness
+  were not committed as theorem evidence.
 
 ## Exact next steps
 
-1. Verify this handoff and continue theorem numbering at `PP3dah`.
-2. Build `docs/657--662` around a corrected fifteenth transition and compensating
-   source mechanisms.
-3. Boundary: enumerate all minimum fifteenth cores, search row/column-preserving
+1. Verify this handoff and continue theorem numbering at `PP3daz`.
+2. Build `docs/663--668` around a corrected sixteenth transition and coordinate-
+   level compensating mechanisms.
+3. Boundary: enumerate minimum sixteenth cores, search row/column-preserving
    corrections, and compare corrected-state signatures for recurrence.
-4. Hall: derive an actual motif-overlap bound from conditional-host coordinates
-   and prove the source and host-defect degree-two restrictions after packing.
-5. Threshold: search the legal matrix catalogue for inverse-sign operations or a
-   finite compensating cycle, then audit transient and exposed states.
-6. Prefix: solve the global fourteen-pair saturated-source problem with component
-   constraints that avoid two-pair obstructions, or prove a broader impossibility;
-   construct a bounded global anchor-rerouting rule.
-7. Shell: enumerate or construct a finite geometric macro repertoire and measure
-   the exact burden of each period in a repeatable cycle.
+4. Hall: derive motif degrees and selected-centre conflicts from an explicit
+   conditional host; prove the two restricted degree-two properties after packing.
+5. Threshold: search for a primitive or hidden-state operation whose balanced
+   execution avoids all illegal intermediates and supplies endpoint compensation.
+6. Prefix: lift one of the 144 optimal four-assignment reroutings into the integer
+   insertion geometry and audit all compositions; seek a recurrence between finite
+   reservoirs.
+7. Shell: construct an explicit finite macro transition graph, calculate every
+   edge burden from coordinates, and search for a reachable positive-saving cycle.
 8. Integration: promote only complete coordinate source paths; otherwise preserve
    the closed gate and unchanged fixed point.
-9. Run standalone diagnostics, Python compilation, and the complete chained runner
-   when a full checkout is available; verify the remote head and refresh this
-   handoff.
+9. Run the standalone diagnostics, Python compilation, and complete historical
+   chain in a full checkout; verify the remote head and refresh this handoff.
 
 ## Conventions
 
 Continue on `research/all-n-prime-patching`; use exact arithmetic and reviewable
-commits; store a checker and certificate for every tranche; preserve candidate
-versus actual evidence separation; and state explicitly that the all-`n` theorem
-remains open.
+commits; store a checker and certificate for each tranche; keep candidate
+completion separate from actual geometric evidence; and state explicitly that the
+all-`n` theorem remains open.
