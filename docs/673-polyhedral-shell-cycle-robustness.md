@@ -2,13 +2,17 @@
 
 `docs/667` treats independent edge-burden intervals. Coordinate repairs may
 instead create correlated burden uncertainty, so edgewise upper bounds can be
-strictly pessimistic. This chapter gives the exact fixed-cycle criterion for a
-polyhedral uncertainty set.
+strictly pessimistic. This chapter gives exact fixed-cycle and revealed-state
+criteria for a compact polyhedral uncertainty set.
 
-Let `U` be a compact polytope of edge-burden vectors and let `chi_C` be the edge
-multiplicity vector of a reachable directed cycle `C`.
+Let `U` be a compact polytope of edge-burden vectors, let `chi_C` be the edge
+multiplicity vector of a reachable directed cycle `C`, and define
 
-## PP3dcd — Support-function robust-cycle criterion
+```text
+g_C(b) = 3|C| - <b,chi_C>.
+```
+
+## PP3dcd — Support-function fixed-cycle criterion
 
 Cycle `C` has positive saving for every burden vector in `U` exactly when
 
@@ -20,27 +24,51 @@ Because the objective is linear, the maximum is attained at a vertex of `U`.
 Thus a fixed reachable robust-positive cycle exists exactly when one reachable
 cycle passes this finite vertex test.
 
+Equivalently, with support function `h_U`, the fixed-cycle robust margin is
+
+```text
+rho_fixed = max_C (3|C| - h_U(chi_C)).
+```
+
 For an axis-aligned interval box, the support function reduces to the sum of
 edgewise upper burdens, recovering `docs/667`.
 
-## PP3dce — Fixed versus revealed-state adaptation
+## PP3dce — Adaptive and mixed-cycle minimax criterion
 
-A fixed cycle chosen before the burden vector is known can be strictly weaker than
-a cycle selected after the realized burden is revealed.
-
-Consider two self-loop cycles and the uncertainty segment with vertices
+If the burden vector is revealed before a cycle is selected, the exact guaranteed
+margin is
 
 ```text
-(b_1,b_2)=(1,4) and (4,1).
+rho_adaptive = min_{b in U} max_C g_C(b).
 ```
 
-Each fixed cycle has worst-case saving `-1`, so no fixed robust-positive cycle
-exists. Yet at every point of the segment, choosing the better revealed cycle
-gives saving at least `1/2`; the minimum occurs at the midpoint `(5/2,5/2)`.
+This can be strictly larger than `rho_fixed`. Since the maximum over cycles equals
+the maximum over probability weights `lambda` on the finite cycle set, the
+bilinear minimax theorem gives the exact dual formula
 
-Therefore a theorem based on adaptive state observation must state that
-information structure explicitly. The fixed-cycle criterion cannot be replaced by
-“every realization has some positive cycle.”
+```text
+rho_adaptive
+ = max_{lambda in simplex}
+   (3 sum_C lambda_C |C| - h_U(sum_C lambda_C chi_C)).
+```
+
+The mixed weights are a dual certificate for revealed-state adaptation; they need
+not describe one executable fixed cycle.
+
+For two self-loop cycles and the uncertainty segment with vertices
+
+```text
+(b_1,b_2)=(1,4) and (4,1),
+```
+
+each fixed cycle has worst-case saving `-1`, so `rho_fixed=-1`. At every point of
+the segment, however, choosing the better revealed cycle gives saving at least
+`1/2`, with equality at `(5/2,5/2)`. Equal mixed weights `(1/2,1/2)` certify the
+same margin `rho_adaptive=1/2` at both vertices.
+
+Therefore any theorem using adaptive state observation must state that information
+structure explicitly. The fixed-cycle condition and the adaptive condition are
+not interchangeable under correlated uncertainty.
 
 ## PP3dcf — Exact correlated setup repayment
 
@@ -52,8 +80,10 @@ Fix an entry path and a cycle. At uncertainty vertex `u`, let entry saving be
 max_u max(0, floor((S-A_u)/G_u)+1).
 ```
 
-The formula is exact because each expression is affine in the uncertainty vector,
-so it suffices to check vertices.
+For each fixed repetition count `r`, the total saving `A(b)+rG(b)` is affine in
+the burden vector, so its minimum over `U` is attained at a vertex. Taking the
+least strict-improvement count at each vertex and then the maximum gives the exact
+formula.
 
 Correlation can materially improve the bound over combining separate worst-case
 entry loss and cycle gain. In the certified example
@@ -69,7 +99,8 @@ bound ten.
 
 `scripts/check_shell_polyhedral_cycle_robustness.py` uses exact rational arithmetic
 to verify the support-function reduction, the fixed/adaptive gap over the full
-uncertainty segment, and the correlated setup-repayment formula.
+uncertainty segment, the equal-weight mixed-cycle certificate, and the correlated
+setup-repayment formula.
 
 ## Evidence boundary
 
