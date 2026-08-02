@@ -2,22 +2,22 @@
   "schema_version": 1,
   "reconciled_date": "2026-08-02",
   "branch": "research/all-n-product-construction",
-  "certified_through": "PX1186",
+  "certified_through": "PX1193",
   "side_seven": {
     "support_twenty_total_selectors": 71860,
-    "certified_infeasible_selectors": 40379,
+    "certified_infeasible_selectors": 40399,
     "constructive_selectors": 2,
-    "unclassified_selectors": 31479,
-    "certified_rejection_nodes": 3278927685,
-    "multiplicity_two_classified_cases": [0, 1389],
-    "multiplicity_two_classified_selectors": 2780,
-    "multiplicity_two_infeasible_selectors": 2779,
+    "unclassified_selectors": 31459,
+    "certified_rejection_nodes": 3285616695,
+    "multiplicity_two_classified_cases": [0, 1399],
+    "multiplicity_two_classified_selectors": 2800,
+    "multiplicity_two_infeasible_selectors": 2799,
     "multiplicity_two_constructive_selectors": 1,
-    "multiplicity_two_next_case": 1390,
-    "multiplicity_two_unresolved_signatures": 2450,
-    "multiplicity_two_unresolved_selectors": 4900,
+    "multiplicity_two_next_case": 1400,
+    "multiplicity_two_unresolved_signatures": 2440,
+    "multiplicity_two_unresolved_selectors": 4880,
     "multiplicity_one_unresolved_selectors": 26579,
-    "registered_uncounted_cases": [1390, 1399]
+    "registered_uncounted_cases": [1400, 1409]
   },
   "semantic_compression": {
     "reference_count": 192,
@@ -39,15 +39,15 @@
     "next_target": "compute certified symmetry orbit and normalized local template inventory"
   },
   "side_ten": {
-    "fine_pair_classified_indices": [0, 4799],
-    "fc_geometries": 4800,
-    "fc_nodes": 171920043,
+    "fine_pair_classified_indices": [0, 5199],
+    "fc_geometries": 5200,
+    "fc_nodes": 184338885,
     "fc_maximum_nodes": 1877339,
-    "ff_geometries": 4800,
-    "ff_nodes": 100441668,
+    "ff_geometries": 5200,
+    "ff_nodes": 112022029,
     "ff_maximum_nodes": 909040,
     "constructive_witnesses": 0,
-    "registered_uncounted_indices": [4800, 5199]
+    "registered_uncounted_indices": [5200, 5599]
   },
   "asymptotic_repair": {
     "certified_cutoff_decimal_exponent": 2874,
