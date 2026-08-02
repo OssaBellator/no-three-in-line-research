@@ -87,4 +87,14 @@ jobs:
           path: frontier-summary.md
           if-no-files-found: error
 
+  replay-promoted-frontiers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay side-seven cases 1390 through 1399
+        run: python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+      - name: Replay side-ten pair indices 4800 through 5199
+        run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+
 # Registered but uncounted until every transcript is promoted and replayed.
