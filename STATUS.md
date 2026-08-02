@@ -6,7 +6,7 @@
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4229**. Every checker, fixture, bridge, manifest and regression preserves:
+The authoritative theorem ledger reaches **CMR4277**. Every checker, fixture, bridge, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -15,84 +15,82 @@ all_n_proved_by_checker = 0
 ## Canonical construction execution
 
 ```text
-python scripts/run_prime_power_installed_construction_regression_782.py
+python scripts/run_prime_power_installed_construction_regression_830.py
 ```
 
 ```text
-chained manifest = 895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
-installed operation kinds = 782
-bound checker contracts = 36
+chained manifest = 9fe8e73ea57a7386c9c90d637d02037f5d96018ab904218f08f4fbec78446583
+installed operation kinds = 830
+bound checker contracts = 37
 owner-changing kinds = 164
-same-owner kinds = 618
-installed checkers = 65
+same-owner kinds = 666
+installed checkers = 67
 ```
 
 Newest direct entrypoints:
 
 ```text
-scripts/check_prime_power_line_clean_return_core_ancestry.py
-scripts/check_prime_power_installed_operation_registry_782.py
-scripts/run_prime_power_installed_construction_regression_782.py
+scripts/check_prime_power_recurrent_certificate_assembly_ancestry.py
+scripts/check_prime_power_installed_operation_registry_830.py
+scripts/run_prime_power_installed_construction_regression_830.py
 ```
 
 A manifest records validation execution; it is not a proof certificate.
 
 ## Latest installed banks
 
-### Through CMR4181 — source CMR1390--CMR1509
+### Through CMR4229 — source CMR1510--CMR1581
 
-Candidate transversals, rook-owner probabilities, owner-capacity envelopes, prime-power signature fans, exact-displacement routing, private support, finite token/edge resources and root child channels are installed. Strict transfer and first-use resources are off-diagonal; recurrent numerical cores remain.
+Target-safe line cleaning, repeated-token atomic rows, exact line-clean rook coefficients, selector-to-return splices, rooted trace execution and returned-edge exchange kernels are installed. Their recurrent inequalities remain open.
 
-### CMR4182--CMR4229 — source CMR1510--CMR1581
+### CMR4230--CMR4277 — source CMR1582--CMR1629
 
 The installed bank now contains:
 
 ```text
-arbitrary partial-matching deletion and target-safe nonaxis line cleaning
-zero same-owner same-line collateral after complete line cleaning
-repeated-token compression to return, paid-pair selector and trace atomic rows
-exact degree-two component rook response counts and prescription ratios
-strong, singleton and endpoint-overlap line-clean coefficient classes
-subunit paid-pair selector restoration caps and return splices
-finite first-restoration and rooted-centre stocks
-rooted trace strong/singleton line-clean execution
-returned-edge source/target exchange bijections
-exact recreated-credit transport to returned predecessors
-finite rational return upper quotients and exact two-row coupling criterion
+shared return-selector assignment scalarization
+strict rational and integer assignment-dual certificate format
+strong, singleton and endpoint-overlap line-clean integer budgets
+critical selector finite rank/profile/geometric localization
+prime-field root singleton support and exact fixed-interface splice
+finite exact fixed-interface and thin rational row tables
+label-preserving collision/local-line/CRT state refinement
+labelled SCC spectral reduction
+constructive reverse-topological rational certificate gluing
+strict integer certificate clearing
 ```
 
-The bank removes undefined line-clean and return coefficients, but it does not prove their recurrent rows strict.
+This removes undefined recurrent coefficients and supplies a complete certificate protocol. It does not prove that every required labelled recurrent block has positive slack.
 
 ## Canonical contracts and seals
 
 ```text
-line-clean/return-core checker:
-0a1620bf756ec529255be95c072a8435d870762644908a5000418d084948aec4
+recurrent-certificate checker:
+195b9f8ce43391860ea28b7b0d882250fc0f13222b16e67f432c786cc2d80285
 
-782-kind registry contract:
-b15c91825d0859a979f3953139554c2e2c81a1f68ea31d0b7d35a57437f0b946
+830-kind registry contract:
+e533e625b1f430ba72eb6c0c3a5821cbe9c0316e0d1284d65becc4f3e00c7e67
 
-782-kind registry seal:
-8da81442b93b56c48054370aa1f36f47e9ce5acbe9e5b99f01c5e6a8fd62f91f
+830-kind registry seal:
+ab7be2d96abc4c31d70cbc2c13db579eb417474bdb6944a0d48bea83537cc362
 
-65-checker manifest:
-895657e67dddbb61d802cad364656428a51f729189d5f67f2a4876830e564c38
+67-checker manifest:
+9fe8e73ea57a7386c9c90d637d02037f5d96018ab904218f08f4fbec78446583
 ```
 
 ## Current exact flags
 
 ```text
-line_clean_return_core_ancestry_proved = 1
-installed_transition_kind_bank_782_exhaustive = 1
-installed_payment_assignment_782_complete = 1
-installed_transition_regression_782_complete = 1
+recurrent_certificate_assembly_ancestry_proved = 1
+installed_transition_kind_bank_830_exhaustive = 1
+installed_payment_assignment_830_complete = 1
+installed_transition_regression_830_complete = 1
 
-line_clean_recurrent_rows_subcritical = 0
-return_selector_block_subcritical = 0
-critical_selector_candidate_regime_closed = 0
-trace_without_root_target_execution_closed = 0
-uniform_signature_payment_certificate_proved = 0
-recurrent_root_channel_core_subcritical = 0
+return_selector_assignment_dual_globally_strict = 0
+line_clean_integer_slacks_globally_positive = 0
+critical_selector_classes_closed = 0
+fixed_interface_thin_table_subcritical = 0
+labelled_crt_recurrent_blocks_subcritical = 0
 same_owner_diagonal_blocks_subcritical = 0
 global_target_collateral_inequality_proved = 0
 all_owner_operations_proved = 0
@@ -109,18 +107,21 @@ all_n_proved_by_checker = 0
 
 ## Exact next mathematical frontier
 
-Continue in literal source order from CMR1582:
+Continue in literal source order from CMR1630:
 
 ```text
-docs/301-prime-power-return-selector-assignment-scalarization.md
-docs/302-prime-power-line-clean-integer-credit-budgets.md
-docs/303-prime-power-critical-selector-profile-localization.md
-docs/304-prime-field-root-channel-support-splice.md
-docs/305-prime-power-fixed-interface-thin-exact-table.md
-docs/306-prime-power-label-preserving-crt-certificate-assembly.md
+docs/307-prime-power-return-assignment-superlevel-covers.md
+docs/308-prime-power-line-clean-universal-budget-floors.md
+docs/309-prime-power-selector-capacity-gap-compiler.md
+docs/310-prime-power-fixed-interface-symmetry-normalization.md
+docs/311-prime-power-normalized-thin-response-census.md
+docs/312-prime-power-return-class-support-covers.md
+docs/313-prime-power-line-clean-profile-capacity-compiler.md
+docs/314-prime-power-normalized-thin-rank-three-census.md
+docs/315-prime-power-subcritical-auxiliary-block-elimination.md
 ```
 
-The next success criterion is a strict numerical certificate or finite exact-table closure for the coupled return-selector, line-clean, critical-selector, root/fixed-interface, thin and labelled CRT blocks.
+The next success criterion is an actual strict recurrent certificate, normalized finite census, or exact auxiliary elimination—not another undefined interface.
 
 ## Other open targets
 
@@ -128,4 +129,4 @@ T01 lacks authoritative primary-source population. T03--T04 lack genuine operati
 
 ## Validation status
 
-The 782-kind registry validator was executed locally and passed. The new checker source, contract and 65-checker manifest seal were validated locally. The consolidated nine-verifier checker and complete 65-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
+The recurrent checker contract, 830-kind registry contract, registry census/seal and 67-checker manifest were reproduced locally. All fourteen declared registry corruptions reject locally. The consolidated six-verifier checker and complete 67-checker repository runner were not executed locally. Dedicated Python 3.10/3.12 workflows are configured, but no successful workflow run has been observed and CI success is not claimed.
