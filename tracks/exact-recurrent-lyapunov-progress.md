@@ -81,8 +81,7 @@ complete-score selector. Global realizability of the completion is not claimed.
 
 ## ERL1f first-host occupancy moments — PROVED
 
-For the response family `{3012,3210}`, exact enumeration of all nonaxis lines in
-the standard `4x4` grid gives
+For response family `{3012,3210}`, exact enumeration gives
 
 ```text
 nonaxis lines   54
@@ -91,18 +90,73 @@ capacity census {1:31, 2:2, 3:1, 4:1}
 M1              42
 M2              11
 M3               5
+E2              69
 ```
 
-For a triple-free background, every relevant line has load at most `H=2`, so the
-installed moment inequality gives
+The value `69` is an exact deterministic upper certificate for triple-free
+backgrounds. It is not an exact row and is not strict without a parent budget.
+
+## ERL1g reopening singleton fragility — PROVED
+
+The local reopenings expose intrinsically zero responses
 
 ```text
-E2=M1+2*M2+M3=69.
+restore 02 -> 2031 or 2310
+restore 20 -> 3201.
 ```
 
-This is an exact deterministic upper certificate for the stated background
-class. It is not an exact row and cannot prove strictness until a destroyed-load
-or parent-budget value greater than the applicable row is supplied.
+A singleton background spoils a response exactly when it lies on one of its six
+secants. The affine common-secant points of all three reopening responses are
+
+```text
+(-1,4), (2/3,7/3), (3/2,3/2), (7/3,2/3), (4,-1).
+```
+
+The only integer points are `(-1,4)` and `(4,-1)`. For either witness, all three
+reopening scores rise from zero to one. The two original response scores become
+`3012=2` and `3210=10`.
+
+There is no common integer witness inside the original `4x4` square; each integer
+witness requires one unit of relative coordinate padding. Global realization is
+not claimed. The theorem proves that intrinsic zero-response dispatch is not
+background-robust and must retain background secant incidences.
+
+## ERL1h lossless first-host background signature — PROVED
+
+For the five-response menu
+
+```text
+3012, 3210, 2031, 2310, 3201,
+```
+
+the exact complete new-triple score vector is determined by a finite signature:
+
+```text
+20 response-secant line loads
+11 background-pair-through-response-point counts
+31 integer coordinates total
+```
+
+For every finite background `B` disjoint from response `Q`,
+
+```text
+score(Q;B)
+ = intrinsic(Q)
+ + sum_l C(k_Q(l),2) h_B(l)
+ + sum_{q in Q} pair_B(q).
+```
+
+This follows by partitioning new triples according to whether they contain three,
+two or one response points. The exact `5 x 31` coefficient matrix has rational
+row rank five; the four selector-difference rows have rank four.
+
+The implementation was checked against direct triple enumeration on all 2,626
+backgrounds of size at most three drawn from the padded `6 x 6` audit domain,
+for 13,130 response/background comparisons. All agree.
+
+This replaces the vague background requirement by a lossless geometric input
+contract. Actual signature values, physical owners, legal operations and child
+rows remain unpopulated.
 
 ## First host: exact known interface
 
@@ -112,15 +166,16 @@ deletions         {02,20}
 selected response 3012
 selected line     x-y-1=0
 selected triple   {(1,0),(2,1),(3,2)}
-restore 02        exposes zero responses 2031 and 2310
-restore 20        exposes zero response 3201
+restore 02        exposes 2031 and 2310
+restore 20        exposes 3201
 coarse H=2 bound  69
+score signature   20 line loads + 11 pair counts
 ```
 
 ## Active work queue
 
-- **#18:** populate physical backgrounds, causes, owners and legal transitions
-  for `s4-75b04c45c1c8eac2`.
+- **#18:** populate the 31-coordinate signature, deletion causes, owners and
+  legal transitions for every physical occurrence of the first host.
 - **#19:** publish a realizable non-strict SCC or failed row whenever found.
 - **#20:** classify the unique depth-two overlap under installed operations.
 - **#21:** compile exact offspring rows and solve or refute the strict rational
@@ -130,13 +185,13 @@ coarse H=2 bound  69
 
 A valid first-host compiler must provide:
 
-1. every realizable background over deletion trace `{02,20}`;
-2. physical causes and owners of cells `02` and `20`;
-3. background loads and retained incidences on every response-relevant line;
-4. the complete coupled response scores and selector face;
+1. every realizable physical occurrence over deletion trace `{02,20}`;
+2. the exact 20 secant-line loads and 11 pair-through-point counts;
+3. physical causes and owners of cells `02` and `20`;
+4. the complete score vector obtained from the committed integer matrix;
 5. every installed legal operation and intermediate state;
-6. exact labelled child multiplicities and weights;
-7. either a strict exact row, a parent budget making the `69` bound strict, or an
-   explicit realizable residual witness.
+6. exact labelled child multiplicities and positive weights;
+7. either a strict exact row, a parent budget making an applicable upper bound
+   strict, or an explicit realizable residual witness.
 
 No artifact may set `all_n_proved_by_checker` to one.
