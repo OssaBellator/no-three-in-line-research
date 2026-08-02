@@ -2,7 +2,7 @@
 
 ## 1. Current proof status
 
-The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4037**. Every checker, bridge, fixture, manifest and regression preserves:
+The no-three-in-line conjecture remains open. The authoritative theorem ledger reaches **CMR4085**. Every checker, bridge, fixture, manifest and regression preserves:
 
 ```text
 all_n_proved_by_checker = 0
@@ -13,82 +13,87 @@ No finite census, registry digest, manifest or workflow result proves the all-`n
 ## 2. Canonical validation surface
 
 ```text
-runner = scripts/run_prime_power_installed_construction_regression_552.py
-manifest = aab192d2cd4682e51be31a09285141377b5786d231006950a898f36cf43b39fd
-operation kinds = 552
-checker contracts = 32
-owner-changing kinds = 159
-same-owner kinds = 393
-checkers = 57
+runner = scripts/run_prime_power_installed_construction_regression_608.py
+manifest = 06e533ad5145c771fd0083ce94ca149124f10dcdd157043fd5bb2cea1facbb43
+operation kinds = 608
+checker contracts = 33
+owner-changing kinds = 161
+same-owner kinds = 447
+checkers = 59
 ```
 
 Inspect actual workflow runs before claiming CI success.
 
-## 3. Installed collateral and finite-grid surface
+## 3. Installed inherited-coordinate surface
 
-### CMR3942--CMR3989
+### Through CMR4037
 
-Source CMR1198--CMR1277 installs:
+Degree-two collateral banks, corrected line energy, physical credit ownership, rational certificate formats and finite full-grid policies through side six are installed. The side-six trap class preserves the failure of repeated one-layer target banks.
+
+### CMR4038--CMR4085
+
+Source CMR1318--CMR1389 installs:
 
 ```text
-degree-two bank permanent/cylinder bounds
-restricted-host availability penalties
-absolute last-entering collateral owners
-corrected rank-one/rank-two/rank-three line energy
-doubly stochastic rank-one marginals
-pointwise full local collateral envelopes
-optimized target-cell aggregation
-last-creation physical credit ledgers
-nonnegative offspring-matrix reduction
-exact rational/integer spectral certificates
+persistent last-entering structural owners
+finite forward owner DAG and block upper triangular offspring matrix
+exact state-credit classes and host-uniform upper quotients
+exact/dyadic line-profile rows and pair-moment envelopes
+extension-free permanent and exact derangement marginals
+exact line-composition and row-column cylinder rows
+cross-line edge-selector and fractional matching normal forms
+deterministic response selection from a strict fractional certificate
+blocked-response deficiency-one unit-wall descent
+side-five independent-line obstruction and zero-collateral cross-line witness
 ```
 
-These results reduce the missing theorem to a finite subcriticality certificate. They do not prove that every canonical owner has spectral radius below one.
-
-### CMR3990--CMR4037
-
-Full standard grids and verified translate/common-scale affine copies are closed through side six. Sides three through five have strict deterministic response policies. Side six has a completely classified one-layer trap class and a clean two-layer escape.
+The global spectral problem is reduced to same-owner diagonal blocks. The reduction does not prove those blocks subcritical.
 
 Two boundaries remain explicit:
 
 ```text
-scattered_residual_finite_grid_policy_proved = 0
-one_layer_fixed_target_policy_globally_sufficient = 0
+same_owner_diagonal_blocks_subcritical = 0
+independent_line_kernel_sufficient = 0
+global_target_collateral_inequality_proved = 0
 ```
-
-Arbitrary inherited-coordinate factors still require local-envelope, line-profile, quotient/carry or spectral control.
 
 ## 4. Active mathematical frontier
 
-Continue from chapter 269:
+Continue after source chapter 277 in literal order:
 
 ```text
-last-entering owner triangularity
-exact credit classes and upper quotients
-degree-two line-profile classes
-line-profile pair-moment envelopes
-extension-free permanent and derangement marginals
-extension-free line-composition kernels
-exact cylinder types
-cross-line edge assignments
 candidate-transversal Hall walls
-rook-owner edge weights and cross-line owner assignments
-harmonic and lattice-capacity owner bounds
+rook-owner edge weights
+cross-line owner assignments
+harmonic owner bounds
+lattice-capacity owner bounds
+primitive-height, prefix, quotient/carry and CRT same-owner classes
 ```
 
-For each result, distinguish an exact offspring bound from a reduction. Do not promote a block-triangular theorem unless the actual last-active owner order is proved, and do not absorb interface collateral without an explicit bounded error matrix.
+The next useful result must quantitatively control cross-line selector loads or produce a strict same-owner weighted row. Another exact reformulation without a new bound is not closure.
 
 ## 5. Global blockers
 
-1. Construct a globally valid upper offspring matrix for every canonical inherited-coordinate dirty owner.
-2. Prove its spectral radius is below one, or prove an equivalent target-versus-collateral inequality.
-3. Route blocked rows through exact unit-wall descent and glue strict-child blocks with genuine triangular ownership.
-4. Audit the original operation list for global transition-kind exhaustiveness.
-5. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
+1. Construct a uniform cross-line owner/selector rule for every canonical inherited-coordinate dirty owner.
+2. Prove a host-uniform strict integer/rational offspring inequality for that rule.
+3. Bound candidate-transversal, rook-owner, harmonic and lattice-capacity loads strongly enough to make every same-owner diagonal block subcritical.
+4. Route blocked rows through exact unit-wall descent and glue strict-child blocks with genuine triangular ownership.
+5. Integrate primitive-height, prefix, quotient/carry, thin and CRT classes into the same certificate.
+6. Audit the original operation list for global transition-kind exhaustiveness.
+7. Combine strict weighted-potential descent with structural descent to prove global termination and minimum zero.
 
 ## 6. Validation blockers
 
-The collateral/spectral checker and 525/552 registries passed locally. The finite-grid consolidated wrapper and complete 55/57-checker runners have not been executed locally. Dedicated workflows are configured but have no observed success status in this session.
+```text
+registry 608 = locally executed and passed
+new checker source/contract = locally compiled and reproduced
+runner 608 manifest = locally reproduced
+consolidated nine-verifier checker = not executed end to end locally
+complete 59-checker runner = not executed locally
+workflow success = not observed
+```
+
+Dedicated workflows are configured, but configuration is not evidence of CI success.
 
 ## 7. Downstream frontiers
 
