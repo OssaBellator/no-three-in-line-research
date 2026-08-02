@@ -1,0 +1,33 @@
+name: Line-clean return-core frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_line_clean_return_core_ancestry.py'
+      - 'scripts/verify_prime_power_extension_free_partial_matching_line_clean.py'
+      - 'scripts/verify_prime_power_repeated_token_atomic_compression.py'
+      - 'scripts/verify_prime_power_extension_free_line_clean_rook_rows.py'
+      - 'scripts/verify_prime_power_line_clean_uniform_permanent.py'
+      - 'scripts/verify_prime_power_line_clean_factor_sharpening.py'
+      - 'scripts/verify_prime_power_line_clean_singleton_fractional.py'
+      - 'scripts/verify_prime_power_paid_pair_selector_return_splice.py'
+      - 'scripts/verify_prime_power_trace_centre_line_clean_splice.py'
+      - 'scripts/verify_prime_power_return_exchange_kernel.py'
+      - 'docs/536-prime-power-line-clean-return-core-ancestry.md'
+      - '.github/workflows/line-clean-return-core-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Run line-clean return-core checker
+        run: python scripts/check_prime_power_line_clean_return_core_ancestry.py
