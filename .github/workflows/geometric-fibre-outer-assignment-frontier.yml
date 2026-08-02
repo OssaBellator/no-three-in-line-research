@@ -1,0 +1,30 @@
+name: Geometric fibre outer assignment frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_geometric_fibre_outer_assignment_ancestry.py'
+      - 'scripts/verify_prime_power_geometric_orbit_fibre_correction.py'
+      - 'scripts/verify_prime_power_line_energy_marginal_rook_compiler.py'
+      - 'scripts/verify_prime_power_nested_assignment_line_energy.py'
+      - 'scripts/verify_prime_power_geometric_fibre_host_census.py'
+      - 'scripts/verify_prime_power_exact_rank_three_geometric_fibre_census.py'
+      - 'scripts/verify_prime_power_line_occupancy_capacity.py'
+      - 'scripts/verify_prime_power_unified_outer_assignment_response.py'
+      - 'docs/548-prime-power-geometric-fibre-outer-assignment-ancestry.md'
+      - '.github/workflows/geometric-fibre-outer-assignment-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_geometric_fibre_outer_assignment_ancestry.py
