@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-02T21:24:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-02T21:42:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -16,152 +16,87 @@ all-length coordinate constructions.
 - Branch: `research/all-n-prime-patching`
 - Canonical completed tranches: `docs/651--656`, `docs/657--662`,
   `docs/663--668`, and `docs/669--674`.
-- Current theorem range: `PP3dbr--PP3dci`.
-- Next available theorem identifier: `PP3dcj`.
-- Latest theorem-bearing head before this continuity commit:
-  `7571b22e9f9917ad3816aa1b19be780b03e0e928`.
+- In-progress tranche: `docs/675--680`.
+- Completed in current tranche: boundary `docs/675`.
+- Current theorem range: `PP3dcj--PP3dcl`.
+- Next available theorem identifier: `PP3dcm`.
 
-## Completed canonical tranche: `docs/669--674`
+## Prior canonical tranche: `docs/669--674`
 
-### Boundary — `docs/669-corrected-seventeenth-boundary-transition.md`
+Theorems `PP3dbr--PP3dci`.
 
-Theorems `PP3dbr--PP3dbt`.
+- Corrected boundary chain through seventeen blocks.
+- Component-exact Hall packing over bounded resource-overlap components.
+- Threshold separator facet and necessary hidden-state mass `3/8`.
+- Full incidence-orbit reduction for the 104 prefix matchings, with supplemental
+  all-unit coordinate lifts for forty diagonal-subgroup representatives.
+- Exact fixed, adaptive, and mixed-cycle shell criteria under polyhedral burden
+  uncertainty.
+- Candidate completion `25/30`, no promoted rows, unchanged fixed point, and
+  closed geometric gate.
 
-- The unique minimum-three raw seventeenth attempt is `P2/-57`, with five conflict
-  triples and exactly three minimum cores.
-- All three cores first repair at deletion budget five; exact histogram `5:3`.
+## Current tranche progress
+
+### Boundary — `docs/675-corrected-eighteenth-boundary-transition.md`
+
+Theorems `PP3dcj--PP3dcl`.
+
+- The seven minimum-four eighteenth cores were exhaustively searched at deletion
+  budgets four, five, and six.
+- No core repairs at budget four or five. Exactly one core repairs at budget six:
+  the second core of `P0/-39`.
 - Canonical correction deletes
-  `(0,110),(42,193),(54,378),(64,253),(66,252)` and adds
-  `(0,252),(42,378),(54,253),(64,110),(66,193)`.
-- The corrected state has 136 points, seventeen blocks, and no collinear triple.
-- Raw eighteenth histogram:
-  `4:3,5:16,6:70,7:211,8:218,9:2,10:15,11:68,12:152,13:178,14:99`.
-- Seven minimum cores remain across `P0/-39`, `P2/-40`, and `P2/-26`.
+  `(2,257),(31,111),(58,347),(69,216),(71,213),(71,215)` and adds
+  `(2,213),(31,257),(58,216),(69,215),(71,111),(71,347)`.
+- The corrected state has 144 points, eighteen blocks, and no collinear triple.
+- All 1,032 raw nineteenth attempts fail, with exact histogram
+  `4:2,5:9,6:47,7:175,8:283,9:3,10:16,11:63,12:121,13:176,14:137`.
+- Minimum-four nineteenth targets are `P1/-33` with one core and `P2/-64` with
+  five cores.
 
-### Hall — `docs/670-component-exact-hall-packing.md`
+Reproducibility:
 
-Theorems `PP3dbu--PP3dbw`.
-
-- Componentwise rounded Caro--Wei dominates global rounded Caro--Wei and can be
-  strict.
-- Exact packing is additive across resource-overlap components.
-- Exhaustion of 54,263 motif multisets found three strict improvements and 50,387
-  exact component certificates.
-- The two-stage Hall condition remains `3q-m>=28`.
-
-### Threshold — `docs/671-threshold-facet-hidden-mass.md`
-
-Theorems `PP3dbx--PP3dbz`.
-
-- The legal hull has affine dimension nine; its 495 score-zero matrices span
-  dimension eight, so the separator is a facet.
-- Among all 10,147 integer transportation matrices, minimum score is `-8`, uniquely
-  at `4I_4`.
-- Any same-space compensation requires hidden-state weight at least `3/8`, or at
-  least `ceil(3N/8)` hidden states in an equal-weight `N`-state batch.
-
-### Prefix — `docs/672-prefix-matching-orbit-reduction.md`
-
-Theorems `PP3dca--PP3dcc`.
-
-- The full forbidden-incidence bipartition-preserving automorphism group has order
-  2,560.
-- The 104 minimum-crossing matchings have orbit sizes `8,16,40,40`; the 208
-  matching/deletion cases have orbit sizes `16,32,80,80`.
-- Only the identity grid-dihedral transformation preserves the coordinate source,
-  so incidence automorphisms do not transfer coordinate certificates.
-- Supplemental audit: a 160-element diagonal subgroup gives twenty matching
-  orbits; forty lexicographically selected all-unit coordinate lifts pass. This
-  supplemental result has no additional theorem identifiers.
-
-### Shell — `docs/673-polyhedral-shell-cycle-robustness.md`
-
-Theorems `PP3dcd--PP3dcf`.
-
-- Fixed cycle `C` is robust-positive under polyhedral burden set `U` exactly when
-  `max_{b in U}<b,chi_C><3|C|`.
-- Revealed-state adaptive margin is
-  `min_b max_C g_C(b)` and has an exact mixed-cycle minimax dual.
-- In the certified two-cycle segment, every fixed cycle has robust gain `-1`, while
-  equal mixed weights certify adaptive margin `1/2`.
-- Exact correlated setup repayment is
-  `max_u max(0,floor((S-A_u)/G_u)+1)`; the example needs seven repetitions versus
-  ten from separate extrema.
-
-### Integration — `docs/674-hidden-compensation-evidence-gate.md`
-
-Theorems `PP3dcg--PP3dci`.
-
-- Candidate completion remains `25/30`: boundary `4/5`, Hall `4/5`, threshold
-  `5/5`, prefix `5/5`, shell `5/5`, integration `2/5`.
-- All six actual rows remain `fixture_derived`; no rows are promoted.
-- Fixed-point total remains
-  `705466760524005697/3623878655999606784`.
-- Slack below one quarter remains
-  `200502903475895999/3623878655999606784`.
-- Geometric closure is false and the all-`n` theorem remains open.
-
-## Reproducibility
-
-- `scripts/check_boundary_seventeenth_corrections.cpp`
-- `scripts/check_boundary_eighteenth_spectrum.cpp`
-- `scripts/check_boundary_seventeenth_transition.py`
-- `scripts/check_hall_component_resource_packing.py`
-- `scripts/check_threshold_facet_hidden_mass.py`
-- `scripts/check_prefix_matching_orbits.py`
-- `scripts/check_prefix_automorphism_orbit_unit_lifts.py`
-- `scripts/check_shell_polyhedral_cycle_robustness.py`
-- `scripts/check_hidden_compensation_gate.py`
-- `scripts/check_frontier_669_674.py`
-- `certificates/prime-patching-hidden-compensation-669-674.json`
-- `proofs/prime-patching-parity-index-669-674-supplement.md`
-
-Latest chained command:
-
-```bash
-python scripts/check_frontier_669_674.py
-```
+- `scripts/check_boundary_eighteenth_corrections.cpp`
+- `scripts/check_boundary_nineteenth_spectrum.cpp`
+- `scripts/check_boundary_eighteenth_transition.py`
 
 ## Validation status
 
-- The seventeenth correction and eighteenth spectrum kernels and wrapper passed in
-  isolated local runs.
-- Exact local audits covered 54,263 Hall motif multisets; all 4,475 legal and
-  10,147 transportation threshold matrices; 2,560 prefix automorphisms, 104
-  matchings, and 208 deletion cases; and exact rational shell examples.
-- The supplemental prefix script records forty passing all-unit coordinate lifts.
-- Standalone scripts authored in this tranche were executed before commit. The
-  complete historical chained runner was not executed because a full checkout was
-  unavailable in the isolated runtime.
+- The exact eighteenth correction checker enumerated every preserving replacement
+  for all seven cores through budget six.
+- The canonical correction was independently checked for equal row and column
+  multisets, 144 distinct points, and absence of collinear triples.
+- The nineteenth spectrum checker compiled and executed, confirming the full
+  histogram and six-core next frontier.
+- The complete historical chained runner remains unavailable because a full local
+  checkout has not been obtainable in this environment.
 
 ## Decisions
 
-- Preserve one canonical theorem chapter, checker path, certificate, and parity row
-  per frontier number.
-- Use the first `P2/-57` core as canonical; all three are certified.
-- Use component-exact Hall packing when coordinate resource lists have bounded
-  overlap components; retain the centre-conflict stage.
-- Treat the threshold facet and `3/8` hidden-mass law as necessary obstructions,
-  not constructions.
-- Treat incidence orbits and supplemental unit lifts as finite prefix evidence;
-  do not infer full coordinate symmetry or arbitrary-composition coverage.
+- Preserve one canonical theorem chapter and theorem sequence per frontier number.
+- Use the unique budget-six `P0/-39` repair as the canonical eighteenth state.
+- State only the exact budget-six obstruction for the other six cores; budget seven
+  is not excluded.
+- Use component-exact Hall packing only when actual coordinate resource lists and
+  bounded components are certified.
+- Treat the threshold hidden-mass law as a necessary obstruction, not a primitive.
+- Treat prefix orbit and unit-lift evidence as finite; do not infer coordinate
+  equivariance or recurrence.
 - Distinguish fixed-cycle execution, revealed-state adaptation, and mixed-cycle
-  dual certificates under correlated shell uncertainty.
-- Promote no integration row without a recurrent or asymptotic coordinate source
-  path.
+  dual certificates in shell arguments.
+- Promote no integration row without a recurrent or asymptotic coordinate path.
 
 ## Current blockers
 
-- Boundary: no corrected eighteenth transition, recurrence, or periodic invariant.
+- Boundary: no corrected nineteenth transition, recurrence, or periodic invariant.
 - Hall: no asymptotic coordinate motif resource family, centre-conflict bound, or
   simultaneous source/host-defect degree-two theorem.
 - Threshold: no hidden-state primitive, alternate source, or expanded model meeting
   the necessary hidden mass.
-- Prefix: full incidence orbits do not reduce physical coordinate audits;
-  supplemental lifts cover only one route and the all-unit composition per
-  representative; no recurrence is known.
-- Shell: no coordinate macro graph supplies a certified polyhedral burden set with
-  a fixed robust-positive cycle or an executable adaptive policy.
+- Prefix: no arbitrary-composition orbit-wide lift, equivariant insertion rule, or
+  all-size recurrence.
+- Shell: no coordinate macro graph supplies a certified burden polytope with a
+  fixed robust-positive cycle or executable adaptive policy.
 - Integration: all rows and coupling coefficients remain fixture-derived.
 
 ## Uncommitted work
@@ -171,19 +106,20 @@ python scripts/check_frontier_669_674.py
 
 ## Exact next steps
 
-1. Continue theorem numbering at `PP3dcj` and build `docs/675--680`.
-2. Boundary: exhaustively repair the seven minimum eighteenth cores and measure the
-   raw nineteenth spectrum.
-3. Hall: instantiate component-exact packing on asymptotic coordinate resource
-   lists and certify the centre-conflict stage plus both degree-two restrictions.
-4. Threshold: construct a hidden-state or expanded-model primitive carrying the
-   necessary separator mass and audit exposed states.
-5. Prefix: extend coordinate audits beyond all-unit compositions and one route per
-   representative, or prove an equivariant insertion rule.
-6. Shell: instantiate a coordinate macro graph and correlated burden polytope;
-   separate fixed and adaptive execution guarantees.
-7. Integration: promote only complete coordinate paths; otherwise preserve
-   `25/30`, the fixed point, and the closed gate.
+1. Continue theorem numbering at `PP3dcm`.
+2. Hall (`docs/676`): strengthen the component-exact interface with a certified
+   centre-conflict decomposition or an explicit finite obstruction profile.
+3. Threshold (`docs/677`): classify minimal hidden-state mixtures meeting the
+   `3/8` mass bound or prove additional necessary constraints.
+4. Prefix (`docs/678`): extend orbit-representative coordinate audits beyond the
+   all-unit composition and test deterministic route selection.
+5. Shell (`docs/679`): derive implementable finite-memory adaptive guarantees or a
+   no-observation obstruction for correlated burden polytopes.
+6. Integration (`docs/680`): update the evidence gate, certificate, parity
+   supplement, and chained runner; preserve `25/30` and the fixed point absent a
+   complete coordinate source path.
+7. Boundary follow-up: search the six nineteenth minimum cores for preserving
+   corrections and measure the raw twentieth spectrum from any certified state.
 8. Run the complete historical chain in a full checkout, verify the remote head,
    and refresh this handoff.
 
