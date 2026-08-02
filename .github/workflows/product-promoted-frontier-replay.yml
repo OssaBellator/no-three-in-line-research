@@ -14,6 +14,7 @@ on:
       - STATUS.md
       - docs/365-side-seven-multiplicity-two-cases-1390-through-1399.md
       - docs/366-side-ten-opposite-pair-fine-row-thirteenth-prefix.md
+      - docs/367-side-seven-semantic-uncovered-top-expansion-16.md
       - tracks/all-n-product-current-frontiers.md
       - tracks/all-n-product-frontier-manifest.json
       - scripts/measure_product_side_seven_single_case_all_selectors.cpp
