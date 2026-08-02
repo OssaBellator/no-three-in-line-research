@@ -19,12 +19,17 @@
     "corrected_blocks": 18,
     "raw_nineteenth_extensions": 0,
     "raw_nineteenth_histogram": {
-      "4": 2, "5": 9, "6": 47, "7": 175, "8": 283,
-      "9": 3, "10": 16, "11": 63, "12": 121, "13": 176, "14": 137
+      "4": 1, "5": 13, "6": 46, "7": 176, "8": 280,
+      "9": 1, "10": 17, "11": 61, "12": 124, "13": 176, "14": 137
     },
     "minimum_four_nineteenth_attempts": {
-      "P1/-33": 1,
       "P2/-64": 5
+    },
+    "corrected_stale_attempt": {
+      "attempt": "P1/-33",
+      "minimum": 5,
+      "conflict_triples": 11,
+      "minimum_cores": 3
     }
   },
   "hall": {
