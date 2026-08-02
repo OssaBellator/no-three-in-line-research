@@ -10,7 +10,11 @@ HERE = Path(__file__).resolve().parent
 with tempfile.TemporaryDirectory() as directory:
     directory = Path(directory)
     outputs = {}
-    for stem in ("check_boundary_sixteenth_spectrum", "check_boundary_seventeenth_spectrum"):
+    for stem in (
+        "check_boundary_sixteenth_spectrum",
+        "check_boundary_sixteenth_canonical_corrections",
+        "check_boundary_seventeenth_spectrum",
+    ):
         source = HERE / f"{stem}.cpp"
         binary = directory / stem
         subprocess.run(["c++", "-O3", "-std=c++17", str(source), "-o", str(binary)], check=True)
@@ -36,6 +40,12 @@ for line in best:
     observed[(fields[0], int(fields[1]))] = int(fields[-1])
 assert observed == expected
 assert sum(observed.values()) == 39
+
+corrections = outputs["check_boundary_sixteenth_canonical_corrections"]
+assert "attempts=1 totalcores=15 successes=1 core_successes=15 budgets 4:1 5:7 6:5 7:2" in corrections.stderr
+assert "P1 -37 min 4 cores 15 successful_cores 15 budget 4" in corrections.stdout
+assert "D (22,106) (39,165) (48,315) (62,312)" in corrections.stdout
+assert "A (22,315) (39,312) (48,165) (62,106)" in corrections.stdout
 
 source_text = (HERE / "check_boundary_sixteenth_spectrum.cpp").read_text()
 match = re.search(r"vector<Pt> T=\{(.*?)\};\s*sort", source_text, re.S)
@@ -69,6 +79,9 @@ print({
     "sixteenth_minimum_transversal_histogram": {4:9,5:21,6:88,7:166,8:238,9:8,10:38,11:83,12:157,13:151,14:73},
     "minimum_four_attempts": len(expected),
     "minimum_four_cores": sum(expected.values()),
+    "canonical_attempt": {"block":"P1","offset":-37,"minimum_cores":15},
+    "canonical_core_budget_histogram": {4:1,5:7,6:5,7:2},
+    "all_canonical_minimum_cores_correctable_through_budget_seven": True,
     "certified_transition": {"block":"P1","offset":-37,"correction_size":4},
     "corrected_sixteenth_state_points": len(SIXTEENTH),
     "seventeenth_attempts_radius_64": 1032,
