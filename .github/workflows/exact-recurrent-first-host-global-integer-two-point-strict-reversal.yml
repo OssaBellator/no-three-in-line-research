@@ -1,0 +1,49 @@
+name: Exact recurrent first-host global integer two-point strict reversal
+
+on:
+  push:
+    paths:
+      - 'scripts/check_exact_recurrent_first_host_global_integer_two_point_strict_reversal.py'
+      - 'data/exact_recurrent_first_host_global_integer_two_point_strict_reversal.json'
+      - '.github/workflows/exact-recurrent-first-host-global-integer-two-point-strict-reversal.yml'
+  pull_request:
+    paths:
+      - 'scripts/check_exact_recurrent_first_host_global_integer_two_point_strict_reversal.py'
+      - 'data/exact_recurrent_first_host_global_integer_two_point_strict_reversal.json'
+      - '.github/workflows/exact-recurrent-first-host-global-integer-two-point-strict-reversal.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_exact_recurrent_first_host_global_integer_two_point_strict_reversal.py
+      - name: Verify exact manifest
+        run: |
+          python scripts/check_exact_recurrent_first_host_global_integer_two_point_strict_reversal.py \
+            --check data/exact_recurrent_first_host_global_integer_two_point_strict_reversal.json \
+            | tee /tmp/result.json
+      - name: Assert theorem and honesty flags
+        run: |
+          python - <<'PY'
+          import json
+          result = json.load(open('/tmp/result.json', encoding='utf-8'))
+          assert result['abstract_strict_3012_vector_triples'] == 43
+          assert result['abstract_strict_3210_vector_triples'] == 0
+          assert result['global_integer_strict_3012_pairs'] == 4
+          assert result['global_integer_strict_3210_pairs'] == 0
+          assert result['generic_strict_families'] == 0
+          assert result['mutation_corruptions_rejected'] == 12
+          assert result['full_two_point_score_signature_classification_complete'] == 0
+          assert result['physical_two_point_background_coverage_proved'] == 0
+          assert result['strict_lyapunov_certificate_proved'] == 0
+          assert result['all_n_proved_by_checker'] == 0
+          PY
