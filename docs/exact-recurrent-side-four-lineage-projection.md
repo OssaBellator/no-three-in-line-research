@@ -2,16 +2,16 @@
 
 **Branch:** `research/exact-recurrent-lyapunov-audit`
 
-**Status:** exact coordinate-lineage join proved; global provenance remains absent.
+**Status:** exact coordinate-lineage join proved; this chapter audits the raw
+lineage layer only.
 
 ## Result
 
 The eleven states in `data/exact_recurrent_side_four_kernel.json` join
-bijectively, by their deletion sets, to eleven stable host identifiers in the
+bijectively, by deletion set, to eleven stable host identifiers in the
 composite-modulus raw-fibre lineage manifest.
 
-The three local blocker classes likewise join to the stable upstream blocker
-identifiers
+The three local blocker classes likewise join to stable upstream identifiers:
 
 ```text
 {02,20} -> b4-8a44614df456
@@ -19,48 +19,52 @@ identifiers
 {13,31} -> b4-4b72675a7313
 ```
 
-For every residual host, the checker verifies all of the following:
+For every residual host, the checker verifies the deletion set, surviving
+response spectrum, blocker-alternative dispatch, contained blocker identifiers,
+and uniqueness of the join.
 
-1. the deletion set agrees exactly;
-2. the surviving response permutations and intrinsic triple counts agree;
-3. the blocker-alternative dispatch agrees;
-4. the contained minimal-blocker identifiers agree;
-5. no local residual state is missing or duplicated.
+## Raw-layer gap certificate
 
-Thus the coordinate host/response residual kernel is no longer disconnected
-from the upstream lineage namespace.
+The raw lineage file certifies coordinate host/response linkage but does not
+itself contain background records, physical deletion causes, legal operation
+families or recurrent child rows. Its owner/fate/collision/line/interface/CRT
+slots are also absent at this layer.
 
-## Exact missing-data certificate
-
-The upstream source manifest explicitly certifies coordinate host/response
-lineage but retains zero for global owner/fate/collision/interface/CRT
-provenance and recurrent weighted rows. The projection therefore keeps every
-unsupported provenance slot null.
-
-Across the eleven residual hosts, the unresolved inputs are exactly
+Across the eleven residual hosts, the raw-layer null inventory is
 
 ```text
 physical deletion-cause assignments                 32
 background records                                  11
-owner/fate/collision/line/interface/CRT fields       66
+raw owner/fate/collision/line/interface/CRT slots    66
 legal operation families                            11
 recurrent child rows                                11
 ```
 
-These are not estimates. The first count is the sum of the deletion-set sizes;
-the other counts follow from the required schema per joined host.
+The first count is the sum of deletion-set sizes. The other counts follow from
+the declared schema per host.
+
+## Subsequent normalized layer
+
+A separate upstream selected-response manifest supplies normalized values for
+all six owner/fate/collision/line/interface/CRT coordinates. Those values are
+integrated and checked in
+`docs/exact-recurrent-side-four-selected-provenance.md`.
+
+Therefore the 66 slots above must not be described as globally absent after the
+selected-response layer is included. They are absent from the raw lineage file,
+then populated by normalized classes. Those normalized classes still do not
+identify physical owners, backgrounds, deletion causes, collision ancestry or
+legal repairs.
 
 ## Why this matters
 
-The local blocker theorem says which cells would have to be reopened to expose
-a triple-free response. It does not say why those cells are unavailable, who
-owns the corresponding obstruction, whether reopening is legal, what collateral
-is created, or whether the same host can recur later.
+The local blocker theorem identifies which cells would have to be reopened to
+expose a triple-free response. The raw lineage join gives stable host and blocker
+addresses. Neither fact says why a cell is unavailable, whether it can legally
+be reopened, what collateral is created, or whether the same host can recur.
 
-The new projection prevents those missing facts from being silently replaced by
-anonymous labels. A future provenance compiler must populate the null slots with
-source-backed records and then enumerate installed operations. Merely assigning
-synthetic owner names or copying one representative background is rejected.
+The checker prevents a coordinate host from being silently assigned an invented
+physical background or owner.
 
 ## Executable audit
 
@@ -72,27 +76,13 @@ python scripts/check_exact_recurrent_side_four_lineage_projection.py \
   --projection data/exact_recurrent_side_four_lineage_projection.json
 ```
 
-Expected structural output includes
-
-```text
-joined_residual_hosts                                      11
-joined_blocker_classes                                      3
-missing_deletion_cause_assignments                         32
-missing_background_records                                11
-missing_owner_fate_collision_line_interface_crt_fields     66
-missing_legal_operation_families                          11
-missing_recurrent_child_rows                              11
-mutation_corruptions_rejected                              9
-```
-
-All global proof and strict-Lyapunov flags remain zero.
+The audit rejects nine corruption classes. All global proof and strict-Lyapunov
+flags remain zero.
 
 ## Next theorem target
 
-Choose one stable upstream host, beginning with
-`s4-75b04c45c1c8eac2` for deletion set `{02,20}`, and enumerate every physically
-realizable lineage fibre over that host. Each record must include the exact
-background, a cause for both unavailable cells, the complete compression key,
-and every installed legal operation. The first acceptable output is either a
-complete exact offspring row or a source-backed witness showing that the current
-manifests do not determine one.
+For upstream host `s4-75b04c45c1c8eac2`, deletion set `{02,20}`, combine the
+stable raw lineage address with the exact normalized selector record, then
+enumerate every physically realizable background and deletion-cause fibre. The
+first acceptable output is a complete legal transition row or a source-backed
+witness that the present repository data do not determine one.
