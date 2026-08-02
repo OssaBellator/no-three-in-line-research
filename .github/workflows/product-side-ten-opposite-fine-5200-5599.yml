@@ -9,6 +9,10 @@ on:
       - .github/product-side-ten-opposite-fine-5200-5599-trigger.txt
   workflow_dispatch:
 
+concurrency:
+  group: product-side-ten-fine-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
