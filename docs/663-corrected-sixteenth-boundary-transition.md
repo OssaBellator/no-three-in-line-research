@@ -27,15 +27,24 @@ P3/-25:1.
 Thus the low frontier contains exactly thirty-nine minimum cores. The exhaustive
 census is `scripts/check_boundary_sixteenth_spectrum.cpp`.
 
-## PP3dba — Certified four-point sixteenth correction
+## PP3dba — Canonical-attempt correction through budget seven
 
-Use node `P1` at offset `-37`, with block origin `(60,309)`. Delete
+The `P1` attempt at offset `-37`, with block origin `(60,309)`, has fifteen
+minimum cores. Every one of those fifteen cores admits a row-and-column-preserving
+legal correction with deletion size at most seven. The exact first-success budget
+distribution is
+
+```text
+4:1, 5:7, 6:5, 7:2.
+```
+
+The smallest correction deletes
 
 ```text
 (22,106),(39,165),(48,315),(62,312)
 ```
 
-and add
+and adds
 
 ```text
 (22,315),(39,312),(48,165),(62,106).
@@ -44,8 +53,10 @@ and add
 The deletion and addition multisets agree in every row and column. The corrected
 state has 128 points, sixteen blocks, and no collinear triple.
 
-This theorem certifies one exact repair. It does not claim that all thirty-nine
-minimum cores, or all nine minimum-four attempts, repair within a fixed budget.
+The exhaustive canonical-attempt repair audit is
+`scripts/check_boundary_sixteenth_canonical_corrections.cpp`. This theorem does
+not claim that the other twenty-four minimum cores, or all nine minimum-four
+attempts, repair within a fixed budget.
 
 ## PP3dbb — Exact raw seventeenth spectrum
 
@@ -61,7 +72,7 @@ The unique minimum-three attempt is `P2` at offset `-57`; it has five conflict
 triples and three minimum cores. The reappearance of transversal number three
 makes that attempt the first target for the next correction search.
 
-Exact verification is provided by
+Exact integrated verification is provided by
 `scripts/check_boundary_sixteenth_transition.py` and
 `scripts/check_boundary_seventeenth_spectrum.cpp`.
 
