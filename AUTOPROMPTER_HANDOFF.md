@@ -13,7 +13,7 @@ Checkpoint updated: 2026-08-02 22:20 Australia/Melbourne.
 
 ## Goal
 
-Complete the explicit prime-minus-one trajectory for `p=31`, `n=30` from the strongest alternating-star successor to a zero-triple configuration, retaining exact physical switch addresses and exact minimax-barrier certificates at every checkpoint.
+Complete the explicit `p=31`, `n=30` trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact physical switch addresses and exact minimax barriers.
 
 The broader goal remains a uniform AC theorem. AC6 and the general no-three-in-line conjecture remain open.
 
@@ -32,13 +32,7 @@ Artifacts:
 - `docs/alternating-core-p31-recovered-six-to-five.md`
 - `proofs/frontier-ac-p31-recovered-six-to-five.md`
 
-Exact result:
-
-- 69 legal switches from potential 6 to potential 5;
-- maximum potential 10;
-- complete `Phi<=9` component: 860 states;
-- no lower state in that component;
-- exact minimax barrier from six to lower potential: 10.
+Exact result: 69 legal switches from 6 to 5, maximum 10, and complete barrier-nine component size 860 with no lower state. Thus the exact minimax barrier is 10.
 
 ### Five-triple lower frontier: AC5nz
 
@@ -49,50 +43,67 @@ Artifacts:
 - `docs/alternating-core-p31-five-triple-lower-frontier.md`
 - `proofs/frontier-ac-p31-five-triple-lower-frontier.md`
 
-Complete component sizes from the recovered five-triple endpoint are:
+Complete component sizes at barriers 5 through 9 are:
 
-- barrier 5: 1 state;
-- barrier 6: 2 states;
-- barrier 7: 14 states;
-- barrier 8: 100 states;
-- barrier 9: 6797 states.
+`1, 2, 14, 100, 6797`.
 
-None contains a state below potential five. Therefore the next minimax barrier is at least 10.
+None contains a state below potential five, so the next barrier is at least 10.
+
+### Five-triple physical core atlas: AC5oa
+
+Artifacts:
+
+- `data/ac-p31-five-triple-core.json`
+- `scripts/verify_ac_p31_five_triple_core.py`
+- `docs/alternating-core-p31-five-triple-core-atlas.md`
+- `proofs/frontier-ac-p31-five-triple-core-atlas.md`
+
+Exact result:
+
+- five current triples on five primitive lines;
+- one shared current vertex, red `(27,24)`, appearing twice;
+- 812 legal immediate switches;
+- zero one-switch improvements;
+- unique least-potential move `r:3,27` gives potential 6;
+- it destroys 3 current triples and creates 4.
+
+Correct destroyed-triple histogram:
+
+- 0 destroyed: 475 moves;
+- 1 destroyed: 281 moves;
+- 2 destroyed: 53 moves;
+- 3 destroyed: 3 moves.
+
+A preliminary mismatched-tuple histogram was corrected before theorem promotion; the verifier enforces the corrected values.
 
 ## Current durable branch head before this handoff update
 
-`619a2f892e7366391f60b036a9c5ac491068897c`
-
-This commit records the proof ledger for AC5nz after the data, verifier and theorem-note commits.
+`2df18b5f2277ef452b6b07774a8ddfa8139064bf`
 
 ## Decisions and proof standards
 
 1. AC remains the only active track.
 2. Every switch retains layer and exact row pair.
 3. Barrier lower bounds require complete sublevel-component exhaustion.
-4. Search may locate upper paths, but each path is replayed exactly.
+4. Candidate paths are replayed exactly before acceptance.
 5. Potential is the exact real collinear-triple count.
 6. Every state remains two disjoint permutation layers.
 7. Search statistics alone are not proof.
-8. Completed logical units are committed before the next risky computation.
+8. Completed logical units are committed before the next risky unit.
 9. Do not create a pull request or merge unless explicitly requested.
 
 ## Current uncommitted computation
 
-Three independent searches are active from the committed five-triple endpoint inside `Phi<=10`:
+Three best-first searches with different deterministic tie seeds are active from the committed five-triple endpoint inside `Phi<=10`.
 
-1. a best-first exact-potential search;
-2. a sampled tabu/random walk;
-3. a full-neighbour tabu search.
+Latest main-search ledger:
 
-Latest observed best-first ledger:
-
-- more than 76,000 states expanded;
-- more than 274,000 states discovered;
+- more than 144,000 states expanded;
+- more than 512,000 states discovered;
 - no four-triple endpoint yet;
 - process still active.
 
-The random searches are diagnostic candidate locators only. No result is accepted until replayed exactly.
+Two independent seeded searches have each expanded more than 55,000 states. They are candidate locators only and do not affect the proved lower bound.
 
 ## Blockers
 
@@ -103,33 +114,27 @@ The random searches are diagnostic candidate locators only. No result is accepte
 
 ## Exact next steps
 
-1. Continue the current `Phi<=10` searches from the five-triple endpoint.
-2. On the first lower endpoint, preserve the exact move and potential words immediately.
-3. Replay the candidate independently and verify the endpoint permutation tables.
-4. Commit the `5 -> 4` data, then its verifier, theorem note and proof ledger.
-5. Combine the upper path with AC5nz to prove exact barrier 10.
-6. Update this handoff after that logical unit.
+1. Continue the three active `Phi<=10` searches.
+2. On the first four-triple endpoint, preserve the exact move and potential words immediately.
+3. Replay the path independently and verify the endpoint permutations.
+4. Commit `5 -> 4` data, verifier, theorem note and proof ledger.
+5. Combine that upper path with AC5nz to prove exact barrier 10.
+6. Update this handoff after the logical unit.
 7. Repeat through four, three, two, one and zero triples.
-8. Once zero is reached, add a standalone verifier from the 75-triple installed state to the terminal state.
+8. Once zero is reached, add a standalone verifier from the installed 75-triple state to the terminal state.
 
 ## Validation commands
-
-Recovered six-to-five segment:
 
 ```text
 g++ -O3 -std=c++20 scripts/verify_ac_p31_recovered_tail.cpp -o verify_tail
 ./verify_tail
-```
 
-Five-triple lower frontier:
-
-```text
 g++ -O3 -std=c++20 scripts/verify_ac_p31_five_triple_frontier.cpp -o verify_five
 ./verify_five 9
-```
 
-Expected barrier-nine result: `6797` states and no lower state.
+python scripts/verify_ac_p31_five_triple_core.py
+```
 
 ## Uncommitted files
 
-No completed source or data file is waiting to be committed. The only uncommitted work is the active candidate search and temporary local logs.
+No completed source or data file is waiting to be committed. Only temporary search logs and active processes are uncommitted.
