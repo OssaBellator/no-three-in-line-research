@@ -1,0 +1,32 @@
+name: Owner fate lineage kernel frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py'
+      - 'scripts/verify_prime_power_owner_fate_class_compression.py'
+      - 'scripts/verify_prime_power_compulsory_weighted_assignment.py'
+      - 'scripts/verify_prime_power_slack_preconditioned_manifest.py'
+      - 'scripts/verify_prime_power_complete_line_energy_kernel.py'
+      - 'scripts/verify_prime_power_background_increment_kernel.py'
+      - 'scripts/verify_prime_power_line_energy_selector_stability.py'
+      - 'scripts/verify_prime_power_background_normalized_kernel.py'
+      - 'scripts/verify_prime_power_raw_fibre_background_lineage.py'
+      - 'scripts/verify_prime_power_rank_three_zero_response_blockers.py'
+      - 'docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md'
+      - '.github/workflows/owner-fate-lineage-kernel-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py
