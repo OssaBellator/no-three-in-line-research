@@ -21,11 +21,9 @@ The union of the two permutation graphs
 ```
 
 contains twenty-eight distinct cells, has degree two in every row and every
-column, and contains no collinear triple.
-
-This is a genuinely global witness: `docs/648` exhausts the insertion-plus-one-
-transposition neighbourhood of the canonical thirteen-pair source and finds no
-source there.
+column, and contains no collinear triple. This is a genuinely global witness:
+`docs/648` exhausts the insertion-plus-one-transposition neighbourhood of the
+canonical thirteen-pair source and finds no source there.
 
 ## PP3czz — Fourteen disjoint anchors and all compositions
 
@@ -42,10 +40,8 @@ Equivalently, the pairing permutation is
 ```
 
 These fourteen pairs partition all twenty-eight source cells, and each pair has
-distinct row and column resources.
-
-Apply the established greedy primitive-direction insertion rule to every ordered
-composition of fourteen. All
+distinct row and column resources. Apply the established greedy primitive-
+direction insertion rule to every ordered composition of fourteen. All
 
 ```text
 2^13 = 8,192
@@ -63,12 +59,25 @@ For this source, the incidence permutation
 sigma = Q^{-1} o P
 ```
 
-is one cycle of length fourteen. Hence the two-regular row-column incidence
-graph has one component and offers no proper component deletion that preserves a
-smaller saturated source.
+is one cycle of length fourteen. Hence the two-regular row-column incidence graph
+has one component and offers no proper component deletion that preserves a
+smaller saturated source. The witness advances the finite source frontier from
+thirteen to fourteen pairs, but it does not provide a nested extension rule or an
+infinite family.
 
-The new witness advances the finite source frontier from thirteen to fourteen
-pairs, but it does not provide a nested extension rule or an infinite family.
+## Comparison with the thirteen-pair source
+
+The previous thirteen-pair source has component sizes `2,2,4,5`. Every two-pair
+component is internally anchor-unpairable: for either `P` edge, one `Q` edge
+shares its row and the other shares its column. A complete anchor pairing for that
+source therefore requires at least four cross-component pairs; exactly 104
+pairings attain the minimum. This explains why component deletion there requires
+global rerouting, while the new fourteen-pair witness avoids the four-cycle issue
+by using a single incidence cycle.
+
+The comparison is checked by
+`scripts/check_prefix_component_anchor_obstruction.py` and is supplementary to
+the three canonical fourteen-pair theorems above.
 
 ## Verification
 
@@ -76,6 +85,8 @@ pairs, but it does not provide a nested extension rule or an infinite family.
   anchors, all 8,192 compositions, the coordinate bound, and the incidence cycle.
 - `scripts/check_prefix_saturated_anchor_reservoir_14.py` compiles the exact C++
   audit and validates its certificate line.
+- `scripts/check_prefix_component_anchor_obstruction.py` checks the older
+  component-routing obstruction.
 
 ## Remaining prefix obligation
 
