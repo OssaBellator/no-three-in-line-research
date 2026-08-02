@@ -7,18 +7,18 @@ on:
     paths:
       - .github/workflows/product-promoted-frontier-replay.yml
       - .github/workflows/product-side-seven-frontier.yml
-      - .github/workflows/product-side-ten-opposite-fine-6000-6399.yml
-      - .github/product-side-seven-multiplicity-two-1420-1429-trigger.txt
-      - .github/product-side-ten-opposite-fine-6000-6399-trigger.txt
+      - .github/workflows/product-side-ten-opposite-fine-6400-6799.yml
+      - .github/product-side-seven-multiplicity-two-1430-1439-trigger.txt
+      - .github/product-side-ten-opposite-fine-6400-6799-trigger.txt
       - AUTOPROMPTER_HANDOFF.md
       - STATUS.md
-      - docs/365-side-seven-multiplicity-two-cases-1390-through-1399.md
-      - docs/366-side-ten-opposite-pair-fine-row-thirteenth-prefix.md
       - docs/367-side-seven-semantic-uncovered-top-expansion-16.md
       - docs/368-side-seven-multiplicity-two-cases-1400-through-1409.md
       - docs/369-side-ten-opposite-pair-fine-row-fourteenth-prefix.md
       - docs/370-side-seven-multiplicity-two-cases-1410-through-1419.md
       - docs/371-side-ten-opposite-pair-fine-row-fifteenth-prefix.md
+      - docs/372-side-seven-multiplicity-two-cases-1420-through-1429.md
+      - docs/373-side-ten-opposite-pair-fine-row-sixteenth-prefix.md
       - tracks/all-n-product-current-frontiers.md
       - tracks/all-n-product-frontier-manifest.json
       - scripts/measure_product_side_seven_single_case_all_selectors.cpp
@@ -49,76 +49,66 @@ jobs:
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay cases 1390 through 1399
-        run: python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+      - run: python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
 
   side-seven-1400-1409-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay cases 1400 through 1409
-        run: python scripts/verify_product_side_seven_multiplicity2_cases1400_1409.py
+      - run: python scripts/verify_product_side_seven_multiplicity2_cases1400_1409.py
 
   side-seven-1410-1419-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay cases 1410 through 1419
-        run: python scripts/verify_product_side_seven_multiplicity2_cases1410_1419.py
+      - run: python scripts/verify_product_side_seven_multiplicity2_cases1410_1419.py
 
   side-seven-1420-1429-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay cases 1420 through 1429
-        run: python scripts/verify_product_side_seven_multiplicity2_cases1420_1429.py
+      - run: python scripts/verify_product_side_seven_multiplicity2_cases1420_1429.py
 
   side-ten-4800-5199-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay pair indices 4800 through 5199
-        run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+      - run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
 
   side-ten-5200-5599-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay pair indices 5200 through 5599
-        run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_5200_5599.py
+      - run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_5200_5599.py
 
   side-ten-5600-5999-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay pair indices 5600 through 5999
-        run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_5600_5999.py
+      - run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_5600_5999.py
 
   side-ten-6000-6399-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay pair indices 6000 through 6399
-        run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_6000_6399.py
+      - run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_6000_6399.py
 
   semantic-replay:
     runs-on: ubuntu-latest
     timeout-minutes: 360
     steps:
       - uses: actions/checkout@v4
-      - name: Replay first 16 uncovered semantic references
-        run: python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
+      - run: python scripts/verify_product_side_seven_multiplicity2_case0_orientation3_semantic_uncovered16.py
 
   frontier-consistency:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Verify certified and registered boundaries
-        run: python scripts/verify_product_frontier_manifest.py
+      - run: python scripts/verify_product_frontier_manifest.py
