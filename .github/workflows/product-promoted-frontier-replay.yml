@@ -1,0 +1,33 @@
+name: Replay promoted all-n frontier intervals
+
+on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-promoted-frontier-replay.yml
+      - scripts/measure_product_side_seven_single_case_all_selectors.cpp
+      - scripts/search_product_transposition_double_coset_ten.cpp
+      - scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+      - scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  side-seven-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay cases 1390 through 1399
+        run: python scripts/verify_product_side_seven_multiplicity2_cases1390_1399.py
+
+  side-ten-replay:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replay pair indices 4800 through 5199
+        run: python scripts/verify_product_transposition_double_coset_opposite_fine_ten_4800_5199.py
