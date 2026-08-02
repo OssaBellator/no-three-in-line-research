@@ -30,10 +30,16 @@ The branch is incomplete: it contains exact finite classifications, verified con
 
 The next canonical multiplicity-two case is `1440`. Cases `1440--1449` are registered but uncounted. The next bounded prefix begins at pair index `6800`; indices `6800--7199` are registered but uncounted.
 
+## Completed but unpromoted workloads
+
+- GitHub Actions run `30747725283` completed side-seven cases `1440--1449` successfully.
+- GitHub Actions run `30747725282` completed side-ten pair indices `6800--7199` successfully.
+- These runs are not certified or counted. Their artifacts have not yet been reconciled into deterministic expected-output verifiers, and no independent replay has been performed.
+
 ## Current frontiers
 
-1. Continue multiplicity-two classification from case `1440`, preserving exact transcript promotion and witness-aware replay; then continue multiplicity one.
-2. Continue side-ten `fc` and `ff` fine-row search from pair index `6800`, promoting only completed exact intervals.
+1. Fetch and reconcile every artifact from runs `30747725283` and `30747725282`; preserve exact digests, node counts, witness lines, and interval maxima.
+2. Commit deterministic replay scripts for cases `1440--1449` and pair indices `6800--7199`; promote only after both independent replay jobs pass.
 3. Continue semantic expansion from the `34,891` uncovered clean top orders and recompute a compact basis for the 221-top union.
 4. Compute the symmetry orbit and normalized local-template inventory of the case-`1287` construction.
 5. Advance the decimal-2873 arithmetic, protected-spread, bounded-barrier repair, and carry/absorber frontiers without upgrading conditional statements.
@@ -48,10 +54,9 @@ The next canonical multiplicity-two case is `1440`. Cases `1440--1449` are regis
 
 ## Immediate next actions
 
-1. Inspect side-seven cases `1440--1449`; promote only after every exact transcript is secured and independently replayed.
-2. Inspect side-ten pair indices `6800--7199`; promote only after all eight exact transcripts are secured and independently replayed.
-3. Continue semantic-union expansion and case-`1287` template analysis.
-4. Keep the manifest, `STATUS.md`, frontier map, checker, PR summary, and this handoff synchronized through `PX1224` or the next promoted boundary.
+1. Secure and reconcile the `1440--1449` summary and all eight `6800--7199` interval artifacts.
+2. Create proposed PX1225 onward replay scripts and add them to the permanent replay workflow without changing the PX1224 manifest.
+3. On successful independent replay, promote, rotate durable ranges, and synchronize the manifest, status, frontier map, checker, PR, and this handoff.
 
 ## Validation baseline
 
