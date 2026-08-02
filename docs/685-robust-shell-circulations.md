@@ -1,11 +1,11 @@
 # Robust shell circulations
 
 `docs/679` realizes rational mixed-cycle certificates by clearing denominators and
-paying connector losses. This chapter packages the search problem as one finite
-linear program on edge circulations.
+paying connector losses. This chapter packages robust search as a finite linear
+program and gives the exact condition for lossless execution as one closed walk.
 
 Let `G=(V,E)` be a finite directed macro graph. Let the burden uncertainty polytope
-have vertices `b^u`, and write `B` for the vertex-edge incidence matrix.
+have rational vertices `b^u`, and write `B` for the vertex-edge incidence matrix.
 
 ## PP3ddn — Exact robust-circulation linear program
 
@@ -33,56 +33,62 @@ subject to
 ```
 
 A positive optimum is equivalent to a positive rational robust circulation. Since
-all data are rational, a positive optimum has a rational optimal witness and its
-denominators can be cleared.
+all data are rational, a positive optimum has a rational witness.
 
-## PP3ddo — From circulation to one executable closed walk
+## PP3ddo — Exact single-walk realization criterion
 
-After clearing denominators, the circulation becomes an integer Eulerian
-multigraph on each connected support component. Each component therefore has a
-closed Euler tour carrying its certified robust gain.
+A nonnegative rational edge vector clears to one closed walk using every edge in
+its prescribed proportion exactly when it is balanced and its nonzero support is
+weakly connected.
 
-If the ambient macro graph supplies a fixed connector tour visiting all support
-components, let its worst-case saving be `A_connector<=0`, and let one cleared
-circulation bundle have robust gain `G_bundle>0`. Repeating the bundle
+After clearing denominators, balance gives an integer circulation. A balanced
+directed multigraph with weakly connected nonzero support is Eulerian, so one
+Euler tour uses every edge with exactly the cleared multiplicity. Conversely, the
+edge-incidence vector of any closed walk is balanced and has connected support.
 
-```text
-max(1, floor((-A_connector)/G_bundle)+1)
-```
+Thus a positive robust circulation with connected support is directly executable,
+and denominator clearing multiplies its robust gain by the clearing denominator
+without connector loss.
 
-times and inserting the connector tour gives one deterministic closed walk with
-strictly positive robust gain.
-
-More generally, with setup `S`, replace `-A_connector` by `S-A_connector`.
-
-## PP3ddp — Exact two-state circulation witness
-
-`scripts/check_shell_robust_circulation.py` audits a two-state graph with one loop
-at each state and a connector in each direction. The uncertainty vertices assign
-loop burdens
+If the support has several connected components, each component clears to a closed
+walk but no single walk traverses all components. A connector tour is then
+mathematically necessary. If its worst-case saving is `A_connector<=0`, one cleared
+bundle has gain `G_bundle>0`, and setup is `S`, the exact repetition count is
 
 ```text
-(1,4) and (4,1),
+max(1, floor((S-A_connector)/G_bundle)+1).
 ```
 
-while both connectors have burden four.
+## PP3ddp — Exact finite witnesses and audits
 
-The optimal normalized circulation is
+The two-state circulation example has one loop at each state and connectors in
+both directions. Its uncertainty vertices assign loop burdens `(1,4)` and `(4,1)`
+while both connectors have burden four. The optimal normalized circulation is
 
 ```text
 x=(1/2,1/2,0,0)
 ```
 
-with exact robust margin `1/2`. The checker proves optimality from the average of
-the two scenario gains and exhausts every rational grid of denominator at most 32.
+with robust margin `1/2`. Clearing denominators gives one copy of each loop with
+robust gain one. The connector tour has worst-case saving `-2`, so two bundles only
+break even and exactly three give positive gain.
 
-Clearing denominators gives one copy of each loop with robust gain one. The
-connector tour has worst-case saving `-2`, so two bundles only break even and
-exactly three bundles give a deterministic closed walk of robust gain one.
+A separate connected example with rational edge weights `1/2,1/2,1/3,1/3`
+clears at denominator six to multiplicities `3,3,2,2` and has robust gain ten.
+
+## Verification
+
+- `scripts/check_shell_robust_circulation.py` proves the two-state LP optimum and
+  exhausts rational grids of denominator at most 32.
+- `scripts/check_shell_circulation_realization.py` exhausts all 1,086 nonzero
+  balanced weakly connected directed multigraphs on three labelled vertices with
+  edge multiplicities zero, one, or two, reconstructing an exact Euler tour in
+  every case. It also checks denominator clearing, disconnected-support failure,
+  connector repair, and setup repayment.
 
 ## Evidence boundary
 
-This converts a finite macro graph and burden polytope into an exact optimization
-and execution test. No coordinate construction currently supplies the required
-macro edges, rational burden vertices, or connector tour, so no shell row is
-promoted.
+This converts a finite macro graph and rational burden polytope into an exact
+optimization and execution test. No coordinate construction currently supplies a
+positive connected circulation, the certified macro edges and burdens, or a
+connector tour for disconnected support, so no shell row is promoted.
