@@ -10,55 +10,60 @@
     "PP3daw", "PP3dax", "PP3day"
   ],
   "boundary": {
-    "minimum_fifteenth_attempts": 10,
-    "minimum_fifteenth_cores": 156,
+    "raw_fifteenth_attempts": 1032,
+    "minimum_four_attempts": 10,
+    "minimum_cores": 156,
     "all_minimum_cores_correctable_through_budget_seven": true,
-    "correction_budget_histogram": {"4":6,"5":70,"6":74,"7":6},
+    "minimum_correction_budget_histogram": {"4":6,"5":70,"6":74,"7":6},
     "canonical_transition": {"node":"P0","offset":-30,"deletions":4},
-    "corrected_points":120,
-    "corrected_blocks":15,
-    "raw_sixteenth_extensions":0,
-    "sixteenth_minimum_transversal_histogram": {"4":9,"5":21,"6":88,"7":166,"8":238,"9":8,"10":38,"11":83,"12":157,"13":151,"14":73}
+    "corrected_points": 120,
+    "corrected_blocks": 15,
+    "raw_sixteenth_extensions": 0,
+    "raw_sixteenth_histogram": {"4":9,"5":21,"6":88,"7":166,"8":238,"9":8,"10":38,"11":83,"12":157,"13":151,"14":73}
   },
   "hall": {
-    "motif_degree_sequence_bound":"ceil(sum_v 1/(d_v+1))",
-    "average_degree_corollary":"ceil(M/(average_degree+1))",
-    "two_stage_retained_centres":"3*q-m",
-    "required_condition":"3*ceil(sum_v 1/(d_v+1))-m>=28",
-    "sharpness":"disjoint unions of equal cliques"
+    "resource_disjoint_motifs": "ceil(M/(Delta+1))",
+    "exact_retainable_good_centres": "3*ceil(M/(Delta+1))-tau(H)",
+    "bipartite_reduction": "tau(H)=nu(H)",
+    "sharp_candidate_threshold_under_matching_bound_m": "(ceil((28+m)/3)-1)*(Delta+1)+1"
   },
   "threshold": {
-    "ordered_distinct_buffer_batches":12544,
-    "distinct_intermediate_histogram":{"4":7,"5":84,"6":634,"7":2804,"8":9015},
-    "union_changed_cell_histogram":{"14":164,"15":2808,"16":9572},
-    "maximum_exposure_histogram":{"2":49,"3":1553,"4":7970,"5":2972},
-    "perfectly_balanced_batches":49,
-    "balanced_exposure_per_cell":2,
-    "balanced_intermediate_occurrences":392,
-    "balanced_legal_intermediate_occurrences":0
+    "perfect_matchings": 49,
+    "unordered_three_round_factorizations": 44,
+    "ordered_three_round_factorizations": 264,
+    "fully_ordered_native_schedules": 4429185024,
+    "round_footprint_cells": 16,
+    "round_load_histogram": {"2":8,"5":8},
+    "perfectly_balanced_one_round_batches": 49,
+    "balanced_legal_intermediate_occurrences": 0
   },
   "prefix": {
-    "minimum_cross_component_anchor_matchings":104,
-    "deletion_cases_checked":208,
-    "boundary_flow":{"outgoing":2,"incoming":2},
-    "minimum_rerouting_distance":4,
-    "optimal_reroutings_per_case":144
+    "grid_size": 14,
+    "source_cells": 28,
+    "global_search_states_scored": 884907,
+    "search_depth": 14,
+    "anchor_pairs": 14,
+    "unary_compositions_checked": 8192,
+    "maximum_coordinate": 80,
+    "incidence_component_sizes": [2,2,2,2,3,3],
+    "induced_twelve_pair_subsources": 4,
+    "induced_eleven_pair_subsources": 2,
+    "component_respecting_anchor_pairing": false
   },
   "shell": {
-    "transition_burden":"b(e)=6*delta(e)+c(e)",
-    "transition_saving":"w(e)=3-b(e)",
-    "all_setups_amortizable":"a reachable directed cycle has positive total saving",
-    "equivalent_condition":"a reachable cycle has mean burden below three",
-    "optimal_asymptotic_rate":"maximum reachable cycle mean saving"
+    "unconstrained_minimum_burden": "K*min_j(b_j)",
+    "lower_quota_minimum_burden": "sum_j ell_j*b_j+(K-sum_j ell_j)*min_j(b_j)",
+    "robust_all_schedule_condition": "K*(3-max_j(b_j))>S",
+    "some_uniformly_improving_length_exists": "max_j(b_j)<3"
   },
   "integration": {
-    "candidate_completion":"25/30",
-    "promoted_rows":[],
-    "actual_evidence_level":"fixture_derived",
-    "fixed_point_total":"705466760524005697/3623878655999606784",
-    "slack_below_one_quarter":"200502903475895999/3623878655999606784",
-    "geometric_closure":false,
-    "all_n_theorem":"open",
-    "next_theorem_identifier":"PP3daz"
+    "candidate_completion": "25/30",
+    "promoted_rows": [],
+    "actual_evidence_level": "fixture_derived",
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3daz"
   }
 }
