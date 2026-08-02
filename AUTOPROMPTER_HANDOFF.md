@@ -13,7 +13,7 @@ Checkpoint updated: 2026-08-02 20:52 Australia/Melbourne.
 
 ## Goal
 
-Complete the explicit `p=31`, `n=30` two-permutation trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact physical switches and exact minimax barrier certificates at every low-potential checkpoint.
+Complete the explicit `p=31`, `n=30` two-permutation trajectory from the strongest alternating-star successor to a zero-triple configuration, retaining exact physical switch addresses and complete minimax barrier certificates.
 
 The broader goal remains a uniform AC theorem for the intended prime-minus-one initial-state class. AC6 and the general no-three-in-line conjecture remain open.
 
@@ -21,43 +21,42 @@ The broader goal remains a uniform AC theorem for the intended prime-minus-one i
 
 ### Existing ancestry
 
-The branch ancestry contains the AC manifest architecture, the complete explicit `p=19`, `n=18` zero-triple certificate, the prime-minus-one seed census and the committed explicit `p=31` trajectory from potential 75 to potential 6 in 154 switches.
+The branch ancestry contains the AC manifest architecture, the complete explicit `p=19`, `n=18` zero-triple certificate, the prime-minus-one seed census, and the committed explicit `p=31` trajectory from potential 75 to potential 6 in 154 switches.
 
-### Six triples to five
+### Recovered p=31 tail
 
-Artifacts:
+#### Six to five
 
-- `data/ac-p31-tail-six-to-five.json`
-- `scripts/verify_ac_p31_tail_six_to_five.py`
-- `docs/alternating-core-p31-six-to-five-tail.md`
-- `proofs/frontier-ac-p31-six-to-five-tail.md`
+- data: `data/ac-p31-tail-six-to-five.json`
+- verifier: `scripts/verify_ac_p31_tail_six_to_five.py`
+- exact barrier: `10`
+- switches: `26`
+- lower components through barrier nine: `1,9,33,860`
+- recovery processed/discovered counts: `65,865 / 75,945`
 
-Results:
+#### Five to four
 
-- lower components at barriers `6,7,8,9`: `1,9,33,860`;
-- exact barrier: `10`;
-- path length: `26` switches;
-- endpoint potential: `5`;
-- recovery processed/discovered counts: `65,865 / 75,945`.
+- data: `data/ac-p31-tail-five-to-four.json`
+- verifier: `scripts/verify_ac_p31_tail_five_to_four.cpp`
+- exact barrier: `10`
+- switches: `32`
+- lower components through barrier nine: `1,2,18,68,501`
+- recovery processed/discovered counts: `182,766 / 223,692`
 
-### Five triples to four
+#### Four to three
 
-Artifacts:
+- data: `data/ac-p31-tail-four-to-three.json`
+- verifier: `scripts/verify_ac_p31_tail_four_to_three.cpp`
+- exact barrier: `10`
+- switches: `41`
+- lower components through barrier nine: `1,2,10,29,286,2033`
+- recovery processed/discovered counts: `1,367,504 / 1,524,432`
 
-- `data/ac-p31-tail-five-to-four.json`
-- `scripts/verify_ac_p31_tail_five_to_four.cpp`
-- `docs/alternating-core-p31-five-to-four-tail.md`
-- `proofs/frontier-ac-p31-five-to-four-tail.md`
+The durable explicit trajectory now reaches potential three in
 
-Results:
+`154 + 26 + 32 + 41 = 253`
 
-- lower components at barriers `5,6,7,8,9`: `1,2,18,68,501`;
-- exact barrier: `10`;
-- path length: `32` switches;
-- endpoint potential: `4`;
-- recovery processed/discovered counts: `182,766 / 223,692`.
-
-The durable explicit trajectory now reaches potential four in `154+26+32=212` switches after the alternating-star installation.
+legal two-row switches after the alternating-star installation.
 
 ## Decisions and proof standards
 
@@ -67,34 +66,34 @@ The durable explicit trajectory now reaches potential four in `154+26+32=212` sw
 4. Every upper path is replayed with exact determinant potential and permutation/disjointness checks.
 5. Long searches use durable accepted-state and predecessor checkpoints.
 6. Each recovered segment is committed before the next long search.
-7. Do not create a pull request or merge unless explicitly requested.
+7. Heuristic searches may locate candidates but never prove lower bounds.
+8. Do not create a pull request or merge unless explicitly requested.
 
 ## Blockers
 
-- The exact four-to-three move array remains absent from repository history and must be regenerated.
-- The three-triple sublevel quotient is large and needs durable checkpoint serialization.
+- No repository-backed three-to-two path or lower-component certificate exists yet.
+- The three-triple sublevel quotient is expected to be large and requires durable checkpoint serialization.
 - No uniform theorem currently guarantees a terminal path for all prime-minus-one seeds.
 - The physical AC1 arithmetic conversion, repair-layer predicates and source-compatibility predicates remain open in the uniform argument.
 
 ## Uncommitted work
 
-- Regeneration of the exact four-to-three barrier-ten path.
-- Durable exact search from three triples toward two.
+- A combined replay verifier from potential 75 through potential 3.
+- Durable exact search from the committed three-triple endpoint toward two.
 - Any future `3 -> 2 -> 1 -> 0` certificate.
 
 No completed logical unit is intentionally left only in chat at this checkpoint.
 
 ## Exact next steps
 
-1. Start from the four-triple endpoint in `data/ac-p31-tail-five-to-four.json`.
-2. Recompute complete lower components through barrier nine.
-3. Regenerate the barrier-ten path to potential three with a durable predecessor checkpoint.
-4. Commit data, exact verifier, theorem note and proof ledger.
-5. Add a combined replay verifier from potential 75 through three.
-6. Update this handoff.
-7. Begin the exact three-triple search toward two with checkpoint files durable before a long run.
-8. Continue through one and zero triples.
+1. Add and commit a combined verifier chaining the original 75-to-6 path with all three recovered tail data files.
+2. Start from the three-triple endpoint in `data/ac-p31-tail-four-to-three.json`.
+3. Enumerate complete lower components beginning at barrier three using a durable checkpoint format.
+4. If a lower state is found, replay and commit the exact path before increasing the barrier.
+5. If a component exhausts, commit its exact size as a lower-bound certificate before starting the next barrier.
+6. Continue checkpoint by checkpoint through two, one and zero triples.
+7. Update this handoff after every completed tail segment or exact component exhaustion.
 
 ## Current remote checkpoint
 
-The latest completed proof ledger before this handoff update is commit `36d8078b4adb483a8261c3ac1d29739fe6fc93c9` on `agent/ac-p31-tail-recovery`.
+The latest completed proof ledger before this handoff update is commit `5c8a5a85747688c0b67d92935b253ce8d8d58353` on `agent/ac-p31-tail-recovery`.
