@@ -19,6 +19,13 @@ def worst_cycle_burden(vertices, incidence):
         for vertex in vertices
     )
 
+def mixed_cycle_gain(vertices, cycles, weights):
+    assert sum(weights) == 1
+    return min(
+        sum(weight * cycle_saving(vertex, cycle) for weight, cycle in zip(weights, cycles))
+        for vertex in vertices
+    )
+
 def exact_repetition_count(scenarios, setup):
     setup = Fraction(setup)
     answer = 0
@@ -46,6 +53,16 @@ for numerator in range(0, 101):
     second = -1 + 3*t
     assert max(first, second) >= Fraction(1,2)
 assert max(2-3*Fraction(1,2), -1+3*Fraction(1,2)) == Fraction(1,2)
+
+# The exact minimax dual uses equal cycle weights. Its expected gain is 1/2 at
+# both uncertainty vertices, certifying the adaptive margin without selecting one
+# fixed cycle in advance.
+weights = (Fraction(1,2), Fraction(1,2))
+assert mixed_cycle_gain(vertices, cycles, weights) == Fraction(1,2)
+for numerator in range(0, 101):
+    weight = Fraction(numerator, 100)
+    candidate = mixed_cycle_gain(vertices, cycles, (weight, 1-weight))
+    assert candidate <= Fraction(1,2)
 
 correlated_scenarios = (
     (Fraction(-2), Fraction(3)),
@@ -81,6 +98,9 @@ print({
     "vertex_reduction": True,
     "fixed_cycle_robust_gains_in_gap_example": (-1,-1),
     "revealed_state_adaptive_minimum_gain": "1/2",
+    "mixed_cycle_dual_minimum_gain": "1/2",
+    "mixed_cycle_weights": ("1/2","1/2"),
+    "adaptive_minimax_formula": "min_b max_C g_C(b)=max_lambda min_b sum_C lambda_C g_C(b)",
     "fixed_vs_adaptive_gap": True,
     "correlated_setup_example_exact_repetitions": 7,
     "separate_extrema_bound": 10,
