@@ -12,6 +12,10 @@ on:
       - scripts/product_side_seven_cache_engine.hpp
   workflow_dispatch:
 
+concurrency:
+  group: product-side-seven-semantic-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
