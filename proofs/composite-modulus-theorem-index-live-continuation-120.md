@@ -2,9 +2,9 @@
 
 | IDs | Contents | Status | Location |
 |---|---|---|---|
-| CMR4470--4485 | CMR1894--CMR1965 source binding, lossless owner/fate/collision compression, compulsory complete weighted certificates, rank-three slack preconditioning, complete line-energy kernels, background increment and selector-stability laws, normalized kernels, raw-fibre background lineage, rank-three zero-response blocker atlas, executable contract and honesty boundary | PROVED as exact compression, kernel, lineage and blocker interfaces; complete recurrent population and global blocker resolution remain open | `docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md` |
+| CMR4470--4485 | CMR1894--CMR1965 source binding, lossless owner/fate/collision compression, compulsory complete weighted certificates, rank-three slack preconditioning, complete line-energy kernels, background increment and selector-stability laws, normalized kernels, raw-fibre background lineage, exact side-four zero-response blocker atlas, executable contract and honesty boundary | PROVED as exact compression, kernel, lineage and blocker interfaces; all nine verifier programs and the consolidated checker were executed locally, while complete recurrent population and global blocker resolution remain open | `docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md` |
 
 ```text
 checker = scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py
-contract = a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb
+contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
 ```
