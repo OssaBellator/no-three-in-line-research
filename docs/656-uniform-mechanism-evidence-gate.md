@@ -19,18 +19,24 @@ integration  2/5
 total       25/30.
 ```
 
-The new tranche sharpens mechanisms and obstructions but does not complete a
-missing candidate field.
+The new tranche sharpens mechanisms and extends finite source evidence, but it
+does not complete a missing candidate field.
 
 ## PP3daf — No evidence row is promoted
 
 All six actual evidence rows remain `fixture_derived`. In particular:
 
 - the boundary chain reaches fourteen blocks but has no recurrence;
-- Hall packing is combinatorial and lacks a geometric bounded-overlap host;
-- threshold batches have unavoidable sign-coherent endpoint drift;
-- prefix nesting requires global anchor rerouting and has no all-size source;
-- shell scheduling has no measured geometric macro burdens.
+- Hall has an exact two-stage packing interface but no geometric overlap/conflict
+  bounds or post-selection degree-two theorem;
+- threshold has balanced three-round buffer factorizations, but every round covers
+  the full `4 x 4` grid with fivefold-shared heavy cells and the endpoint drift is
+  sign-coherent;
+- prefix now has an explicit fourteen-pair saturated reservoir supporting all
+  8,192 compositions, but the source is a single incidence cycle and gives no
+  nested or all-size recurrence;
+- shell has an exact heterogeneous prefix envelope but no measured geometric macro
+  burden sequence.
 
 Therefore the promoted-row set is empty and geometric closure is false.
 
@@ -59,7 +65,7 @@ levels, exact fixed-point sum, and slack. ∎
 ## Conclusion
 
 The all-`n` theorem remains open. The next tranche should seek a corrected
-fifteenth transition or recurrence, a geometric bounded-overlap Hall host, an
-inverse threshold operation, a globally constructible saturated family with
-bounded anchor rerouting, and a concrete shell macro repertoire whose average
-burden is below three.
+fifteenth transition or recurrence, coordinate-derived Hall overlap bounds, a
+threshold inverse or compensating cycle, a recurrence linking the finite
+saturated reservoirs, and a concrete shell macro repertoire with unbounded
+cumulative saving.
