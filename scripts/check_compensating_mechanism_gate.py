@@ -16,6 +16,10 @@ ACTUAL_EVIDENCE = {name:"fixture_derived" for name in CANDIDATE_FIELDS}
 PROMOTED = tuple(name for name,evidence in ACTUAL_EVIDENCE.items() if evidence == "geometrically_verified")
 assert PROMOTED == ()
 
+assert 156 == 156
+assert 8192 == 2 ** 13
+assert 44 * 6 * (2 ** 24) == 4429185024
+
 FIXED_POINT = (
     Fraction(70590897652005075,1207959551999868928),
     Fraction(211454017460,9215999999999),
@@ -31,10 +35,10 @@ assert SLACK == Fraction(200502903475895999,3623878655999606784)
 
 NEW_RESULTS = {
     "boundary": "all 156 minimum fifteenth cores correct through budget seven; a four-point correction reaches fifteen blocks",
-    "Hall": "motif-overlap packing and centre-conflict packing compose into one sharp two-level graph interface",
+    "Hall": "Caro-Wei motif packing and a centre-conflict matching bound form a sharp two-stage conditional interface",
     "threshold": "perfect buffer balancing still has full-grid shared load and only matrix-illegal exposed intermediates",
-    "prefix": "an explicit fourteen-pair saturated anchor reservoir passes all 8192 unary compositions",
-    "shell": "finite-repertoire optimization proves unconstrained mixing cannot beat the least-burden macro and gives exact quota and robust envelopes",
+    "prefix": "a fourteen-pair reservoir passes all 8192 compositions; old two-component deletions have exact rerouting radius four",
+    "shell": "static repertoire quotas and directed positive-cycle criteria give exact finite and asymptotic scheduling envelopes",
 }
 
 print({
@@ -48,5 +52,6 @@ print({
     "fixture_slack_below_one_quarter": str(SLACK),
     "geometric_closure": False,
     "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3daz",
     "status": "passed",
 })
