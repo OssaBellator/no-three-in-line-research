@@ -12,21 +12,28 @@
   "boundary": {
     "corrected_points": 144,
     "corrected_blocks": 18,
-    "raw_nineteenth_minimum_four_attempts": 1,
+    "raw_nineteenth_histogram": {
+      "4": 1, "5": 13, "6": 46, "7": 176, "8": 280, "9": 1,
+      "10": 17, "11": 61, "12": 124, "13": 176, "14": 137
+    },
     "canonical_attempt": {"node": "P2", "offset": -64},
     "conflict_triples": 9,
     "minimum_cores": 5,
     "budgets_exhausted": [4, 5, 6],
     "cores_correctable_through_budget_six": 0,
+    "six_point_replacements_rejected": 37976400,
     "minimum_remaining_deletion_budget": 7,
     "corrected_nineteenth_transition": false
   },
   "hall": {
+    "centre_graph": "line graph of a bipartite source-host defect multigraph with label loads at most two",
+    "exact_retained_centres": "(3*q+o(H))/2",
+    "two_stage_condition": "3*q+o(H)>=56",
+    "degree_two_graphs_checked": 10172,
     "packet_retention": "sum_j r_j-sum_i c_i",
-    "identical_packet_retention": "K*r-(K-1)*c=K*(r-c)+c",
+    "identical_packet_retention": "K*(r-c)+c",
     "positive_density_condition": "r>c",
     "packets_needed_for_28": "max(1,ceil((28-c)/(r-c)))",
-    "packet_graphs": 26,
     "two_packet_interface_cases": 76156,
     "exact_lower_bound_cases": 3766,
     "strict_lower_bound_cases": 72390,
@@ -46,6 +53,18 @@
       "3+1+1": 35,
       "4+1": 5
     },
+    "target_layers": 32,
+    "minimum_illegal_layers": 12,
+    "unique_minimum_illegal_type": [0, 1, 2, 3],
+    "aggregate_legal_layer_multiplicities": {
+      "(2,3,0,1)": 4,
+      "(2,1,3,0)": 4,
+      "(1,3,2,0)": 4,
+      "(1,2,0,3)": 4,
+      "(0,2,3,1)": 4
+    },
+    "cyclic_primitive_orders": 6720,
+    "legal_window_histogram": {"0": 3840, "1": 1920, "2": 960},
     "geometric_hidden_primitive": false
   },
   "prefix": {
@@ -65,8 +84,12 @@
   },
   "shell": {
     "robust_circulation_lp": "maximize gamma subject to Bx=0, x>=0, sum x=1, gamma<=<3-b^u,x>",
+    "direct_execution_condition": "balanced circulation with weakly connected nonzero support",
+    "small_integer_circulations_checked": 1086,
     "example_normalized_margin": "1/2",
     "example_integer_bundle_gain": 1,
+    "connected_denominator_clearing_scale": 6,
+    "connected_example_robust_gain": 10,
     "example_connector_saving": -2,
     "least_bundle_repetitions": 3,
     "executable_closed_walk_gain": 1,
