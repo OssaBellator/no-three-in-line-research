@@ -21,41 +21,45 @@ The broader goal remains a uniform AC theorem for the intended prime-minus-one i
 
 ### Durable trajectory through three triples
 
-The original committed 154-switch path reaches potential six. Three recovered exact tail segments now extend it:
+The repository-backed path reaches potential three in 253 switches after the alternating-star installation:
 
-- `6 -> 5`: 26 switches, exact barrier 10, lower components `1,9,33,860`;
-- `5 -> 4`: 32 switches, exact barrier 10, lower components `1,2,18,68,501`;
-- `4 -> 3`: 41 switches, exact barrier 10, lower components `1,2,10,29,286,2033`.
+- `75 -> 6`: 154 switches;
+- `6 -> 5`: 26 switches, exact barrier 10;
+- `5 -> 4`: 32 switches, exact barrier 10;
+- `4 -> 3`: 41 switches, exact barrier 10.
 
-The repository-backed trajectory reaches potential three in 253 switches after the alternating-star installation.
-
-Key new artifacts:
-
-- `data/ac-p31-tail-six-to-five.json`
-- `data/ac-p31-tail-five-to-four.json`
-- `data/ac-p31-tail-four-to-three.json`
-- their exact replay/component verifiers, theorem notes and proof ledgers;
-- `scripts/verify_ac_p31_trajectory_through_three.py` for the combined trajectory.
+All four path blocks have exact replay data and verifiers. `scripts/verify_ac_p31_trajectory_through_three.py` audits the complete chain.
 
 ### Three-triple lower components
+
+Exact complete component sizes at barriers `3,4,5,6,7,8` are
+
+`1,2,5,16,80,1159`.
+
+None contains a two-triple state, so the certified barrier lower bound is nine.
 
 Artifacts:
 
 - `data/ac-p31-three-triple-lower-components.json`
 - `scripts/verify_ac_p31_three_triple_lower_components.cpp`
-- `docs/alternating-core-p31-three-triple-lower-components.md`
-- `proofs/frontier-ac-p31-three-triple-lower-components.md`
+- theorem note and proof ledger.
 
-Exact component sizes:
+### Durable quotient search implementation
 
-- barrier 3: `1`;
-- barrier 4: `2`;
-- barrier 5: `5`;
-- barrier 6: `16`;
-- barrier 7: `80`;
-- barrier 8: `1159`.
+Committed:
 
-None contains a two-triple state, so the certified next barrier lower bound is nine.
+- `scripts/search_ac_p31_three_triple_quotient.cpp`
+
+The tool:
+
+- canonicalizes under all eight square symmetries and layer interchange;
+- stores one actual physical representative for every canonical orbit;
+- preserves the physical parent switch, so returned paths need no abstract relabelling;
+- serializes canonical keys, physical representatives, queue position, parent indices, moves and potentials;
+- writes checkpoints atomically;
+- emits a replayable result file immediately when a lower state is found.
+
+The implementation was tested at barrier eight and reproduced all `1159` physical states with no accidental orbit collapse.
 
 ## Decisions and proof standards
 
@@ -64,37 +68,32 @@ None contains a two-triple state, so the certified next barrier lower bound is n
 3. Every barrier lower bound requires complete sublevel-component exhaustion.
 4. Every upper path is replayed with exact determinant potential and permutation/disjointness checks.
 5. Long searches use durable accepted-state and predecessor checkpoints.
-6. Symmetry quotienting is permitted only when returned paths are lifted and replayed in physical coordinates.
+6. Symmetry quotienting is valid only because one reachable physical representative is stored and expanded for every orbit.
 7. Each completed segment or exhausted component is committed before the next larger search.
 8. Heuristic searches may locate candidates but never prove lower bounds.
 9. Do not create a pull request or merge unless explicitly requested.
 
-## Blockers
+## Current blocker
 
-- Barrier nine from the committed three-triple state is not yet exhausted.
-- No repository-backed three-to-two path exists.
-- The expected barrier-nine quotient is large and requires durable serialization.
-- No uniform theorem currently guarantees a terminal path for all prime-minus-one seeds.
-- The physical AC1 arithmetic conversion, repair-layer predicates and source-compatibility predicates remain open in the uniform argument.
+Barrier nine from the committed three-triple state is not yet exhausted, and no repository-backed three-to-two path exists.
 
 ## Uncommitted work
 
-- A durable symmetry-quotient search implementation for barrier nine.
-- The barrier-nine accepted-state queue and predecessor forest.
+- The local barrier-nine quotient checkpoint and predecessor forest while the computation is incomplete.
 - Any `3 -> 2 -> 1 -> 0` path.
 
 No completed theorem or path unit is intentionally left only in chat at this checkpoint.
 
 ## Exact next steps
 
-1. Commit a resumable barrier search tool that serializes canonical states, queue position, parent edge and physical lift data.
-2. Start the barrier-nine search from the endpoint in `data/ac-p31-tail-four-to-three.json`.
-3. Checkpoint frequently and preserve the complete predecessor forest.
-4. If a canonical state of potential at most two appears, lift its path and replay every physical switch before committing it.
-5. If the quotient exhausts, commit the exact quotient size, prove the quotient covers the physical component, and raise the barrier lower bound to ten.
-6. Continue at the next barrier and then through one and zero triples.
-7. Update this handoff after the search tool commit and after every completed component/path.
+1. Compile `scripts/search_ac_p31_three_triple_quotient.cpp`.
+2. Run barrier nine in bounded checkpoint chunks.
+3. If a two-triple state is found, replay its stored physical path and commit the segment.
+4. If the quotient exhausts, commit the exact quotient size and a theorem that orbit exhaustion excludes every physical barrier-nine path.
+5. Proceed to barrier ten only after the barrier-nine result is durable.
+6. Continue through one and zero triples.
+7. Update this handoff after every completed component or path.
 
 ## Current remote checkpoint
 
-The latest completed proof ledger before this handoff update is commit `f571ff1a3fc3d2ef30c96959a50336e0ef49253a` on `agent/ac-p31-tail-recovery`.
+The durable search implementation is commit `4edd6083ad0ee46e6664a3015a9d8bcb04a7c29b` on `agent/ac-p31-tail-recovery`.
