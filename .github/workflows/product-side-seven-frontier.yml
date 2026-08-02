@@ -9,6 +9,10 @@ on:
       - .github/product-side-seven-multiplicity-two-1400-1409-trigger.txt
   workflow_dispatch:
 
+concurrency:
+  group: product-side-seven-frontier-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
