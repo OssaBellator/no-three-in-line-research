@@ -1,0 +1,58 @@
+{
+  "tranche": "645-650",
+  "theorems": [
+    "PP3cyx-PP3cyz",
+    "PP3cza-PP3czc",
+    "PP3czd-PP3czf",
+    "PP3czg-PP3czi",
+    "PP3czj-PP3czl",
+    "PP3czm-PP3czo"
+  ],
+  "candidate_field_completion": {
+    "boundary": "4/5",
+    "Hall": "4/5",
+    "threshold": "5/5",
+    "prefix": "5/5",
+    "shell": "5/5",
+    "integration": "2/5"
+  },
+  "candidate_fields_complete": 25,
+  "candidate_fields_total": 30,
+  "frontiers": {
+    "boundary": {
+      "result": "all 93 minimum cores in the eleven best thirteenth attempts correct within budget seven; a four-point correction reaches thirteen blocks",
+      "evidence_level": "exact_corrected_thirteenth_transition",
+      "promoted": false
+    },
+    "Hall": {
+      "result": "t four-centre source motifs with e extra corruptions retain exactly 3t-e good centres; 3t-e>=28 is necessary and sufficient for the numerical interface",
+      "evidence_level": "exact_bad_centre_amplification_interface",
+      "promoted": false
+    },
+    "threshold": {
+      "result": "the 8-by-8 target-transient incidence graph has 49 perfect matchings and 12544 ordered distinct-buffer batches",
+      "evidence_level": "exact_distinct_transient_threshold_batch",
+      "promoted": false
+    },
+    "prefix": {
+      "result": "23273 insertion-plus-one-swap candidates and 25229 second-neighbourhood move sequences fail to extend the canonical thirteen-pair source",
+      "evidence_level": "exact_local_extension_obstruction_at_fourteen_pairs",
+      "promoted": false
+    },
+    "shell": {
+      "result": "recurring shell collateral is amortizable exactly when 6*delta+c<3; fixed setup alone can be batched away",
+      "evidence_level": "exact_recurring_shell_collateral_barrier",
+      "promoted": false
+    },
+    "integration": {
+      "result": "zero rows promoted; closure false",
+      "evidence_level": "evidence_gate",
+      "promoted": false
+    }
+  },
+  "fixture_fixed_point_total": "705466760524005697/3623878655999606784",
+  "fixture_slack_below_one_quarter": "200502903475895999/3623878655999606784",
+  "geometric_closure": false,
+  "all_n_theorem": "open",
+  "next_theorem_identifier": "PP3czp"
+}
