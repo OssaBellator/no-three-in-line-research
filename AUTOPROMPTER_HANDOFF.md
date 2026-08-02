@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint date: 2026-08-02 Australia/Melbourne
+Checkpoint time: 2026-08-02T22:25:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -33,8 +33,9 @@ correct exact histogram is
 ```
 
 The unique minimum-four attempt is `P2/-64` with five cores. `P1/-33` has minimum
-five, eleven conflict triples, and three minimum-five cores. The theorem chapter
-and wrapper assertions were corrected before `docs/681` was finalized.
+five, eleven conflict triples, and three minimum-five cores. The theorem chapter,
+wrapper, preceding integration gate, and preceding certificate were aligned with
+that exact output before `docs/681--686` was finalized.
 
 ## Completed canonical tranche: `docs/681--686`
 
@@ -87,7 +88,7 @@ Theorems `PP3ddh--PP3ddj`.
   has exact histogram `0:3840,1:1920,2:960`; no rolling order exposes more than two
   legal windows.
 
-### Prefix — `docs/684-all-physical-prefix-composition-lifts.md`
+### Prefix — `docs/684-all-physical-matching-composition-lifts.md`
 
 Theorems `PP3ddk--PP3ddm`.
 
@@ -182,12 +183,10 @@ python scripts/check_frontier_681_686.py
 - The current nineteenth spectrum was independently rebuilt and checked against an
   exact hitting-set reconstruction. The five-core correction kernel rejected all
   corrections through budget six in isolated local execution.
-- Direct local audits checked the Hall odd-path identity, the unique threshold
-  aggregate layer decomposition, all 208 physical all-unit prefix cases, and 1,086
-  connected shell circulations.
-- The committed canonical audits additionally record the Hall packet census, the
-  19,834 threshold-batch census and cyclic-window audit, all 212,992 physical
-  prefix compositions, and the robust-circulation LP witness.
+- Direct local audits checked the unified Hall incidence and packet certificates,
+  all 19,834 threshold endpoint batches and the rigid layer/window obstruction,
+  all 212,992 physical prefix compositions, and the shell LP/Eulerian execution
+  examples.
 - The complete historical chained runner was not executed end-to-end in this
   environment because a full local checkout remains unavailable; direct clone
   attempts could not resolve `github.com`.
@@ -253,5 +252,4 @@ python scripts/check_frontier_681_686.py
 
 Continue on `research/all-n-prime-patching`; use exact arithmetic and reviewable
 commits; commit each completed logical unit promptly; separate candidate completion
-from geometric evidence; and state explicitly that the all-`n` theorem remains
-open.
+from geometric evidence; and state explicitly that the all-`n` theorem remains open.
