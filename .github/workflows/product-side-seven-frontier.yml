@@ -1,82 +1,90 @@
-name: Product side-seven frontier
+name: Product side-seven multiplicity-two cases 1390 through 1399
 
 on:
+  pull_request:
+    branches:
+      - main
+    paths:
+      - .github/workflows/product-side-seven-frontier.yml
+      - .github/product-side-seven-multiplicity-two-1390-1399-trigger.txt
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
-  measure-shard:
-    name: measure-shard-${{ matrix.shard }}
+  classify-case:
+    name: case-${{ matrix.case }}
     runs-on: ubuntu-latest
     timeout-minutes: 360
     strategy:
       fail-fast: false
       matrix:
-        include:
-          - { shard: 22, first_case: 2200, case_count: 100 }
-          - { shard: 23, first_case: 2300, case_count: 100 }
-          - { shard: 24, first_case: 2400, case_count: 100 }
-          - { shard: 25, first_case: 2500, case_count: 100 }
-          - { shard: 26, first_case: 2600, case_count: 100 }
-          - { shard: 27, first_case: 2700, case_count: 100 }
-          - { shard: 28, first_case: 2800, case_count: 100 }
-          - { shard: 29, first_case: 2900, case_count: 100 }
-          - { shard: 30, first_case: 3000, case_count: 100 }
-          - { shard: 31, first_case: 3100, case_count: 100 }
-          - { shard: 32, first_case: 3200, case_count: 100 }
-          - { shard: 33, first_case: 3300, case_count: 100 }
-          - { shard: 34, first_case: 3400, case_count: 100 }
-          - { shard: 35, first_case: 3500, case_count: 44 }
+        case: [1390, 1391, 1392, 1393, 1394, 1395, 1396, 1397, 1398, 1399]
     steps:
       - uses: actions/checkout@v4
-      - name: Compile measurement tool
+      - name: Check durable trigger
+        id: gate
+        shell: bash
+        run: |
+          if grep -qx 'run-side-seven-multiplicity-two-1390-1399' .github/product-side-seven-multiplicity-two-1390-1399-trigger.txt; then
+            echo 'run=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'run=false' >> "$GITHUB_OUTPUT"
+          fi
+      - name: Compile exact selector classifier
+        if: steps.gate.outputs.run == 'true'
         run: >-
           g++ -O3 -std=c++17
-          scripts/measure_product_side_seven_tier_shard.cpp
-          -o /tmp/measure_product_side_seven_tier_shard
-      - name: Measure exact shard
-        run: >-
-          /tmp/measure_product_side_seven_tier_shard
-          "${{ matrix.first_case }}" "${{ matrix.case_count }}" 3
-          | tee "product-side-seven-shard-${{ matrix.first_case }}.txt"
-      - name: Upload transcript
-        if: always()
+          scripts/measure_product_side_seven_single_case_all_selectors.cpp
+          -o /tmp/classify-product-side-seven-case
+      - name: Classify exact case
+        if: steps.gate.outputs.run == 'true'
+        shell: bash
+        run: |
+          set -o pipefail
+          /tmp/classify-product-side-seven-case "${{ matrix.case }}" 2 \
+            | tee "product-side-seven-multiplicity-two-case-${{ matrix.case }}.txt"
+          grep -Eq '^FINAL case=${{ matrix.case }} .* PASS$' \
+            "product-side-seven-multiplicity-two-case-${{ matrix.case }}.txt"
+      - name: Upload exact transcript
+        if: always() && steps.gate.outputs.run == 'true'
         uses: actions/upload-artifact@v4
         with:
-          name: product-side-seven-3-${{ matrix.first_case }}-${{ matrix.case_count }}
-          path: product-side-seven-shard-${{ matrix.first_case }}.txt
-          if-no-files-found: warn
+          name: product-side-seven-multiplicity-two-case-${{ matrix.case }}
+          path: product-side-seven-multiplicity-two-case-${{ matrix.case }}.txt
+          if-no-files-found: error
 
   summarize:
     if: always()
-    needs: measure-shard
+    needs: classify-case
     runs-on: ubuntu-latest
     steps:
-      - name: Download shard transcripts
+      - name: Download case transcripts
         uses: actions/download-artifact@v4
         with:
-          pattern: product-side-seven-3-*
+          pattern: product-side-seven-multiplicity-two-case-*
           merge-multiple: true
       - name: Build compact frontier summary
         shell: bash
         run: |
           shopt -s nullglob
-          files=(product-side-seven-shard-*.txt)
+          files=(product-side-seven-multiplicity-two-case-*.txt)
           if ((${#files[@]} == 0)); then
-            printf 'No shard transcript was produced.\n' > frontier-summary.md
+            printf 'No exact case transcript was produced.\n' > frontier-summary.md
             exit 1
           fi
-          printf '## Exact side-seven multiplicity-three frontier\n\n' > frontier-summary.md
+          printf '## Exact side-seven multiplicity-two cases 1390--1399\n\n' > frontier-summary.md
           for file in $(printf '%s\n' "${files[@]}" | sort -V); do
-            printf '### `%s`\n\n```cpp\n' "$file" >> frontier-summary.md
-            tail -n 12 "$file" >> frontier-summary.md
+            printf '### `%s`\n\n```text\n' "$file" >> frontier-summary.md
+            tail -n 3 "$file" >> frontier-summary.md
             printf '```\n\n' >> frontier-summary.md
           done
       - name: Upload compact summary
         uses: actions/upload-artifact@v4
         with:
-          name: product-side-seven-frontier-summary
+          name: product-side-seven-multiplicity-two-1390-1399-summary
           path: frontier-summary.md
           if-no-files-found: error
+
+# Registered but uncounted until every transcript is promoted and replayed.
