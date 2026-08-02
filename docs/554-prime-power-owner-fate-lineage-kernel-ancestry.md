@@ -2,7 +2,7 @@
 
 ```text
 checker = scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py
-contract = a81184108c06638fe3b44754b80c0fe271d8a92d7b78db6befb681890dd810eb
+contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
 source = CMR1894--CMR1965
 ```
 
@@ -56,15 +56,15 @@ Every raw geometric fibre lineage record identifies one exact coordinate-labelle
 
 ## Theorem CMR4482 -- PROVED
 
-The side-four rank-three zero-response problem has a complete finite blocker atlas. Hosts admitting no zero-triple response contain one canonical blocker and have an exact positive-response minimum classification.
+The side-four rank-three zero-response problem has a complete finite blocker atlas. Of 86 executable raw hosts, 75 admit a zero-triple response and 11 do not. The zero-response-free hosts contain one of exactly three inclusion-minimal blockers; nine have minimum response-triple count one and two have minimum four.
 
 ## Theorem CMR4483 -- PROVED
 
-The consolidated checker binds the source files, compiles the nine inherited verifier programs, validates its contract digest and rejects sixteen independent fixture corruptions.
+The consolidated checker binds all nine restored source files, executes all nine verifier programs, validates the reproduced contract digest and rejects seventeen independent fixture corruptions.
 
 ## Theorem CMR4484 -- VALIDATION BOUNDARY
 
-The checker contract and fixture audit were reproduced locally. The complete nine-verifier execution was not observed in the current environment.
+All nine standalone verifiers and the complete consolidated checker were executed locally. This does not substitute for execution of the complete 77-checker repository stack or successful CI.
 
 ## Theorem CMR4485 -- HONEST ENDPOINT
 
