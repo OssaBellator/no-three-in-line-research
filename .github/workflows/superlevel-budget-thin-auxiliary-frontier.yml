@@ -1,0 +1,32 @@
+name: Superlevel budget thin auxiliary frontier
+
+on:
+  push:
+    paths:
+      - 'scripts/check_prime_power_superlevel_budget_thin_auxiliary_ancestry.py'
+      - 'scripts/verify_prime_power_return_assignment_superlevel_covers.py'
+      - 'scripts/verify_prime_power_line_clean_universal_budget_floors.py'
+      - 'scripts/verify_prime_power_selector_capacity_gap_compiler.py'
+      - 'scripts/verify_prime_power_fixed_interface_symmetry_normalization.py'
+      - 'scripts/verify_prime_power_normalized_thin_response_census.py'
+      - 'scripts/verify_prime_power_return_class_support_covers.py'
+      - 'scripts/verify_prime_power_line_clean_profile_capacity_compiler.py'
+      - 'scripts/verify_prime_power_normalized_thin_rank_three_census.py'
+      - 'scripts/verify_prime_power_subcritical_auxiliary_block_elimination.py'
+      - 'docs/542-prime-power-superlevel-budget-thin-auxiliary-ancestry.md'
+      - '.github/workflows/superlevel-budget-thin-auxiliary-frontier.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  checker:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_superlevel_budget_thin_auxiliary_ancestry.py
