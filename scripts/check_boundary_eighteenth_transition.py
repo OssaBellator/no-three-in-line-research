@@ -44,12 +44,15 @@ assert corrections == [
 spectrum = outputs["check_boundary_nineteenth_spectrum"]
 assert spectrum.stderr.splitlines() == [
     "state=144",
-    "hist 4:2 5:9 6:47 7:175 8:283 9:3 10:16 11:63 12:121 13:176 14:137 small=58 sets=495",
+    "hist 4:1 5:13 6:46 7:176 8:280 9:1 10:17 11:61 12:124 13:176 14:137 small=60 sets=515",
 ]
 low = [line for line in spectrum.stdout.splitlines() if " min 4 " in line]
 assert low == [
-    "P1 -33 min 4 triples 10 cores 1",
     "P2 -64 min 4 triples 9 cores 5",
+]
+p1 = [line for line in spectrum.stdout.splitlines() if line.startswith("P1 -33 ")]
+assert p1 == [
+    "P1 -33 min 5 triples 11 cores 3",
 ]
 
 def points_from_source(path):
@@ -96,8 +99,9 @@ print({
     "raw_nineteenth_attempts": 1032,
     "raw_nineteenth_extensions": 0,
     "raw_nineteenth_minimum_transversal_histogram": {
-        4:2,5:9,6:47,7:175,8:283,9:3,10:16,11:63,12:121,13:176,14:137,
+        4:1,5:13,6:46,7:176,8:280,9:1,10:17,11:61,12:124,13:176,14:137,
     },
-    "minimum_four_nineteenth_attempts": {"P1/-33": 1, "P2/-64": 5},
+    "minimum_four_nineteenth_attempts": {"P2/-64": 5},
+    "stale_p1_minus_33_corrected_to": {"minimum": 5, "triples": 11, "cores": 3},
     "status": "passed",
 })
