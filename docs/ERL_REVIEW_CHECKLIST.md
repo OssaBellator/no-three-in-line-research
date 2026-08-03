@@ -13,6 +13,9 @@
 - [x] Installed raw-lineage target/response-edge promotion gap proved.
 - [x] Dual-edge bridge reconstructs exactly `3012,3210` while retaining target `01`.
 - [x] Sixteen-field physical completeness worklist compiled.
+- [x] Exact source coverage proves zero of sixteen physical fields populated.
+- [x] Reject-by-default physical occurrence batch gate installed.
+- [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Prove or refute physical occurrence of the four strict backgrounds and tie classes.
