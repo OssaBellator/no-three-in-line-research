@@ -155,19 +155,57 @@ where `C0` is initial exact gate capacity, `H_cap=sum rho_a*s_a(0)` is source-pa
 
 Sixteen first-host import fields are required to activate these formulae; zero are populated.
 
+## ERL2h — exact closure-route source gate
+
+The capacity and reset formulae do not decide whether one exact menu edge is admissible under any physical closure route. The source gate therefore classifies every directed edge against five alternating-core routes:
+
+```text
+physical exclusion
+terminal or improving output
+bounded strict potential
+finite unrestorable capacity
+decorated outer reset.
+```
+
+The resulting acceptance surface has
+
+```text
+8 directed menu edges
+5 route classes
+40 exact edge-route pairs.
+```
+
+All eight symbolic edges have candidate normalized menu-state addresses. Current source coverage gives
+
+```text
+physical legal edges                         0
+persistent physical owner tokens             0
+source-admissible edge-route pairs            0
+edges with at least one admissible route       0.
+```
+
+The five route contracts use eight fields from the existing sixteen-field physical worklist and sixteen additional route-specific fields. The additional fields include exact exclusion references, terminal outcome proofs, bounded potential values and ranges, capacity addresses and nonrestoration proofs, and decorated outer-profile repetition routes. None is populated.
+
+A capacity-only label-scalar closure requires three distinct exact gate addresses; a capacity-only menu-scalar closure requires four. Distinct directed normalized edges cannot share one capacity coordinate unless a separate shared-capacity theorem is installed.
+
+Each selector-changing directed edge is residual in exactly three of the six label covers. Each directed menu edge is residual in exactly seven of the fourteen menu covers. Thus no exact directed edge is unavoidable under every scalar choice, but every chosen scalar exposes a complete source-backed worklist of three or four routes.
+
+Naming a transition an outer reset closes only its first decorated traversal. Repetition still requires a macro ticket, payment theorem, bounded descent or terminal output.
+
 ## Import boundary
 
-The exact scalar alternatives and conditional route budgets are finite:
+The exact scalar alternatives, conditional budgets and source acceptance matrix are finite:
 
 ```text
 6 label-scalar route covers
 14 menu-scalar route covers
 4 additive bit-potential orientations
 10 interaction-required orientations
-2 exact conditional episode ceilings.
+2 exact conditional episode ceilings
+40 exact edge-route acceptance cells.
 ```
 
-No artifact chooses one of these alternatives physically. A valid alternating-core import must still attach every realized menu edge to a persistent physical owner, prove legality, assign source-backed potential values, verify strict descent on paid edges, and populate the exact capacities, capacity-source ledger, decorated outer edges or macro tickets needed by every residual route.
+No artifact chooses one of these alternatives physically. A valid alternating-core import must still attach every realized menu edge to a persistent physical owner, prove legality, assign source-backed potential values on paid edges, and populate one accepted route with exact source evidence for every residual edge.
 
 Therefore
 
@@ -193,6 +231,10 @@ docs/exact-recurrent-first-host-menu-interaction-potential.md
 scripts/check_exact_recurrent_first_host_alternating_route_budget_import.py
 data/exact_recurrent_first_host_alternating_route_budget_import.json
 docs/exact-recurrent-first-host-alternating-route-budget-import.md
+
+scripts/check_exact_recurrent_first_host_closure_route_source_gate.py
+data/exact_recurrent_first_host_closure_route_source_gate.json
+docs/exact-recurrent-first-host-closure-route-source-gate.md
 
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
