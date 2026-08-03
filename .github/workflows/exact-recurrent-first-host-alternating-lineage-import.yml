@@ -9,8 +9,11 @@ on:
       - data/exact_recurrent_first_host_forbidden_background_invariance.json
       - data/exact_recurrent_first_host_physical_source_coverage.json
       - data/exact_recurrent_first_host_alternating_lineage_import.json
+      - data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
+      - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
+      - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
 
@@ -30,3 +33,7 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_alternating_lineage_import.py \
             --check data/exact_recurrent_first_host_alternating_lineage_import.json
+      - name: Check exact side-four arithmetic profile import
+        run: |
+          python scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py \
+            --check data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
