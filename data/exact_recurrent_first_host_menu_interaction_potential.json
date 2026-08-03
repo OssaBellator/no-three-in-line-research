@@ -1,0 +1,483 @@
+{
+  "aggregate": {
+    "acyclic_menu_orientations": 14,
+    "additive_orientations": 4,
+    "cyclic_label_projection_orientations": 2,
+    "interaction_required_orientations": 10,
+    "maximum_witness_value": 3,
+    "minimum_absolute_interaction_distribution": {
+      "0": 4,
+      "2": 10
+    },
+    "minimum_nonzero_absolute_integer_interaction": 2,
+    "parallel_reversal_profile": {
+      "both": 2,
+      "none": 4,
+      "r02_only": 4,
+      "r20_only": 4
+    }
+  },
+  "conclusion": {
+    "both_cyclic_label_projection_lifts_require_interaction": 1,
+    "every_nonadditive_orientation_has_abs_gamma_2_witness": 1,
+    "every_nonadditive_orientation_requires_abs_gamma_at_least_2": 1,
+    "gamma_zero_exactly_matches_additive_orientation_class": 1,
+    "interaction_requirement_classification_complete": 1,
+    "physical_potential_installed": 0,
+    "promotion_to_recurrent_closure_allowed": 0
+  },
+  "cyclic_label_projection_witnesses": [
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 0
+      },
+      "projected_label_cycle": 1,
+      "witness_boolean_coefficients": {
+        "constant": 2,
+        "interaction": -2,
+        "r02": 1,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 2,
+        "01": 1,
+        "10": 3,
+        "11": 0
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 0
+      },
+      "projected_label_cycle": 1,
+      "witness_boolean_coefficients": {
+        "constant": 1,
+        "interaction": 2,
+        "r02": -1,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 1,
+        "01": 2,
+        "10": 0,
+        "11": 3
+      }
+    }
+  ],
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_chart_confinement_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "orientations": [
+    {
+      "additive_realizable": 1,
+      "minimum_absolute_integer_interaction": 0,
+      "paid_menu_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 0
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 2,
+        "interaction": 0,
+        "r02": -1,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 2,
+        "01": 1,
+        "10": 1,
+        "11": 0
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 1
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 3,
+        "interaction": 2,
+        "r02": -3,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 3,
+        "01": 2,
+        "10": 0,
+        "11": 1
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->01",
+        "00->10",
+        "10->11",
+        "11->01"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 0
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 3,
+        "interaction": 2,
+        "r02": -1,
+        "r20": -3
+      },
+      "witness_values": {
+        "00": 3,
+        "01": 0,
+        "10": 2,
+        "11": 1
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->01",
+        "00->10",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 1
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 1,
+        "interaction": 2,
+        "r02": -1,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 1,
+        "01": 0,
+        "10": 0,
+        "11": 1
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 0
+      },
+      "projected_label_cycle": 1,
+      "witness_boolean_coefficients": {
+        "constant": 2,
+        "interaction": -2,
+        "r02": 1,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 2,
+        "01": 1,
+        "10": 3,
+        "11": 0
+      }
+    },
+    {
+      "additive_realizable": 1,
+      "minimum_absolute_integer_interaction": 0,
+      "paid_menu_edges": [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 0
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 1,
+        "interaction": 0,
+        "r02": 1,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 1,
+        "01": 0,
+        "10": 2,
+        "11": 1
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->01",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 1
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 1,
+        "interaction": 2,
+        "r02": 1,
+        "r20": -1
+      },
+      "witness_values": {
+        "00": 1,
+        "01": 0,
+        "10": 2,
+        "11": 3
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->11"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 1
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 2,
+        "interaction": -2,
+        "r02": -1,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 2,
+        "01": 3,
+        "10": 1,
+        "11": 0
+      }
+    },
+    {
+      "additive_realizable": 1,
+      "minimum_absolute_integer_interaction": 0,
+      "paid_menu_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 0
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 1,
+        "interaction": 0,
+        "r02": -1,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 1,
+        "01": 2,
+        "10": 0,
+        "11": 1
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 0
+      },
+      "projected_label_cycle": 1,
+      "witness_boolean_coefficients": {
+        "constant": 1,
+        "interaction": 2,
+        "r02": -1,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 1,
+        "01": 2,
+        "10": 0,
+        "11": 3
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 1
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 0,
+        "interaction": -2,
+        "r02": 1,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 0,
+        "01": 1,
+        "10": 1,
+        "11": 0
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "01->00",
+        "01->11",
+        "10->00",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 1,
+        "r20": 0
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 0,
+        "interaction": -2,
+        "r02": 1,
+        "r20": 3
+      },
+      "witness_values": {
+        "00": 0,
+        "01": 3,
+        "10": 1,
+        "11": 2
+      }
+    },
+    {
+      "additive_realizable": 0,
+      "minimum_absolute_integer_interaction": 2,
+      "paid_menu_edges": [
+        "01->00",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 1
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 0,
+        "interaction": -2,
+        "r02": 3,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 0,
+        "01": 1,
+        "10": 3,
+        "11": 2
+      }
+    },
+    {
+      "additive_realizable": 1,
+      "minimum_absolute_integer_interaction": 0,
+      "paid_menu_edges": [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_direction_reversal": {
+        "r02": 0,
+        "r20": 0
+      },
+      "projected_label_cycle": 0,
+      "witness_boolean_coefficients": {
+        "constant": 0,
+        "interaction": 0,
+        "r02": 1,
+        "r20": 1
+      },
+      "witness_values": {
+        "00": 0,
+        "01": 1,
+        "10": 1,
+        "11": 2
+      }
+    }
+  ],
+  "schema": "exact-recurrent-first-host-menu-interaction-potential/v1",
+  "scope": {
+    "host_id": "s4-75b04c45c1c8eac2",
+    "integer_strict_edge_potential": 1,
+    "interaction_identity": "Gamma=(V11-V01)-(V10-V00)=(V11-V10)-(V01-V00)",
+    "potential_form": "V=c+alpha*r02+beta*r20+Gamma*r02*r20"
+  }
+}
