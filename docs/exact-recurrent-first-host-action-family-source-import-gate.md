@@ -6,7 +6,7 @@
 
 ## Structural reduction
 
-The preceding congruence audit requires ten fields for one uniform family theorem. Three are already fixed exactly by the normalized restoration geometry:
+The family congruence contract has ten fields. Exact restoration geometry determines three:
 
 ```text
 family_id
@@ -23,7 +23,7 @@ restore_20  edges 00->01,10->11  quantify r02
 delete_20   edges 01->00,11->10  quantify r02.
 ```
 
-This leaves exactly seven source-evidence fields per family:
+The remaining seven fields are physical source evidence:
 
 ```text
 shared_theorem_ref
@@ -35,16 +35,35 @@ child_payment_compatibility_ref
 realization_status.
 ```
 
-The three structural fields are normalized identifiers, not physical evidence.
+Exact total census:
+
+```text
+action families                           4
+contract fields per family               10
+total contract slots                     40
+geometry-prefilled slots                 12
+source-evidence slots                    28
+populated source-evidence slots           0
+fully imported families                   0.
+```
+
+The three structural fields are normalized identifiers. They do not count as transition legality, owner identity, operation compatibility, payment compatibility or realization evidence.
 
 ## Audited abstract interfaces
 
-Seven source interfaces were pinned by immutable blob ID:
+Seven source interfaces are pinned by immutable blob ID.
+
+Three external alternating-core blobs provide abstract contracts:
 
 ```text
 Boolean boundary gates
 occurrence-lineage gates
-physical-signature lineage quotient
+physical-signature lineage quotient.
+```
+
+Four current-branch documents are additionally checked for exact theorem markers:
+
+```text
 installed 1,166-kind operation registry
 inherited-coordinate diagonal blocks
 owner/fate lineage kernel
@@ -61,7 +80,7 @@ closure-route schema
 child/payment schema.
 ```
 
-The exact capability census is:
+The capability census is:
 
 ```text
 context-quantification interfaces   1
@@ -71,49 +90,79 @@ closure-route interfaces            3
 child/payment-schema interfaces     2.
 ```
 
-No single source covers all five components. The minimum abstract cover uses three sources, and there are exactly two minimum covers:
+No single source covers all five components. The minimum abstract cover uses three sources, with exactly two minimum covers:
 
 ```text
 Boolean boundary + inherited-coordinate + installed registry
 Boolean boundary + inherited-coordinate + protected-interface execution.
 ```
 
-These are abstract schema covers only. The protected-interface source is a side-five fixture, while the installed registry is an operation-kind bank rather than an occurrence-level legality table.
+These are schema covers only. Neither cover supplies one occurrence-faithful theorem joining its components to the same first-host owner and the same two exact family edges.
 
-## Missing join
+## Missing occurrence-faithful join
 
-The union of abstract contracts does not prove that their owner, operation, route and child/payment objects refer to the same first-host occurrence, the same persistent token or the same two exact family edges.
-
-Current census:
+For every family, candidate abstract roles exist for owner, operation, route and child/payment schemas. Current sources provide none of:
 
 ```text
-action families                           4
-uniformity fields per family             10
-structural fields fixed per family        3
-source-evidence fields required            7
-structural fields fixed in total          12
-source-evidence fields populated           0
+first-host shared theorem reference
+proof covering both values of the other restoration bit
+selected first-host owner schema
+selected first-host operation schema
+selected accepted route schema
+first-host child/payment compatibility
+physical realization status.
+```
+
+Accordingly:
+
+```text
 first-host family theorems found           0
+occurrence-faithful family joins           0
 source-backed uniform family imports       0.
 ```
 
-For every family, candidate schema roles exist for owner, operation, route and child/payment. No role has been selected by a source-backed first-host theorem, and no theorem proves both values of the other context bit.
+An operation-kind name does not prove family uniformity. A union of compatible-looking abstract theorems also does not prove that their objects refer to the same occurrence or lineage.
 
-Therefore neither an operation-kind name nor a union of compatible-looking abstract theorems proves family uniformity.
+## Minimum scalar-closure import burden
+
+Family-level scalar closure requires one directed family for bit `02` and one for bit `20`. The exact minimum pairs are
+
+```text
+delete_02  + delete_20
+delete_02  + restore_20
+restore_02 + delete_20
+restore_02 + restore_20.
+```
+
+Each pair has:
+
+```text
+theorem-contract slots                    20
+structurally prefilled slots               6
+remaining source-evidence slots           14.
+```
+
+The transition-domain contract requires twelve fields per separately ingested edge. The two-family shortcut contains four member edges, so the alternative edge-by-edge surface is
+
+```text
+4 edges x 12 fields = 48 field slots.
+```
+
+The twenty-slot family theorem is a contract compression, but not an evidentiary waiver. Its fourteen evidence slots must imply the occurrence, owner, operation, route, child and payment facts required for both members of each imported family.
 
 ## Import acceptance rule
 
 One family import is accepted only when all seven evidence fields are populated and the cited theorem:
 
-1. refers to the two exact normalized edge members;
+1. refers to both exact edge members;
 2. proves both values of the other restoration bit;
 3. preserves one occurrence-faithful owner lineage;
 4. supplies a shared or explicitly context-parametric operation schema;
 5. supplies one accepted closure route in both contexts;
-6. proves the required child-row and payment compatibility;
+6. proves child-row and payment compatibility;
 7. records physical realization.
 
-Two accepted imports, one for bit `02` and one for bit `20`, are still required for the family-level scalar shortcut.
+Two accepted imports on different restoration bits are still required for the family scalar shortcut.
 
 ## Executable audit
 
@@ -124,6 +173,6 @@ python scripts/check_exact_recurrent_first_host_action_family_source_import_gate
   --check data/exact_recurrent_first_host_action_family_source_import_gate.json
 ```
 
-The checker reconstructs all four normalized family templates, audits seven immutable source interfaces, computes the exact five-component coverage and both minimum abstract source covers, and rejects fifteen deliberate corruptions.
+The checker joins the congruence, transition-domain and family-leverage manifests; verifies four local source documents by theorem markers; pins three external alternating-core theorem blobs; computes the exact five-component coverage and both minimum abstract source covers; reconstructs all four minimum scalar import pairs; and rejects eighteen deliberate corruptions.
 
 Physical occurrence coverage, transition legality, owner identity, operation/payment congruence, recurrent child rows, strict Lyapunov closure, global termination and `all_n_proved_by_checker` remain zero.
