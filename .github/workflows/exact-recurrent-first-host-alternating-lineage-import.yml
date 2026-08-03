@@ -20,6 +20,7 @@ on:
       - data/exact_recurrent_first_host_menu_interaction_potential.json
       - data/exact_recurrent_first_host_alternating_route_budget_import.json
       - data/exact_recurrent_first_host_closure_route_source_gate.json
+      - data/exact_recurrent_first_host_route_cover_admission.json
       - scripts/check_exact_recurrent_first_host_background_signature.py
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
       - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
@@ -32,6 +33,7 @@ on:
       - scripts/check_exact_recurrent_first_host_menu_interaction_potential.py
       - scripts/check_exact_recurrent_first_host_alternating_route_budget_import.py
       - scripts/check_exact_recurrent_first_host_closure_route_source_gate.py
+      - scripts/check_exact_recurrent_first_host_route_cover_admission.py
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
@@ -43,6 +45,7 @@ on:
       - docs/exact-recurrent-first-host-menu-interaction-potential.md
       - docs/exact-recurrent-first-host-alternating-route-budget-import.md
       - docs/exact-recurrent-first-host-closure-route-source-gate.md
+      - docs/exact-recurrent-first-host-route-cover-admission.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
 
@@ -102,3 +105,7 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_closure_route_source_gate.py \
             --check data/exact_recurrent_first_host_closure_route_source_gate.json
+      - name: Check route-cover admission
+        run: |
+          python scripts/check_exact_recurrent_first_host_route_cover_admission.py \
+            --check data/exact_recurrent_first_host_route_cover_admission.json
