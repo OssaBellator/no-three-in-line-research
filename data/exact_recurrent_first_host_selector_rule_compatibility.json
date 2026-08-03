@@ -1,0 +1,260 @@
+{
+  "aggregate": {
+    "complete_tie_break_dependent_cases": 64,
+    "complete_unique_minimizer_cases": 64,
+    "directly_source_authorized_cases": 32,
+    "formal_extension_only_cases": 96,
+    "menu_background_cases": 128,
+    "minimizer_face_agreement_cases": 104,
+    "minimizer_face_disagreement_cases": 24,
+    "next_gap_agreement_cases": 128,
+    "restoration_menus": 4,
+    "restored_menu_cases": 96,
+    "restored_menus": 3,
+    "restored_selector_import_fields_per_menu": 8,
+    "restored_selector_import_fields_populated": 0,
+    "restored_selector_rules_imported": 0,
+    "restored_tie_break_dependent_cases": 64,
+    "safe_backgrounds_per_menu": 32,
+    "scheduler_source_documents_audited": 2,
+    "scheduler_tie_break_rules_found": 0,
+    "selected_identity_agreement_cases": 128
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "global_termination_proved": 0,
+    "legal_restoration_operation_proved": 0,
+    "operation_congruence_proved": 0,
+    "payment_congruence_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "source_scheduler_tie_break_proved": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "host_id": "s4-75b04c45c1c8eac2",
+  "menus": [
+    {
+      "complete_minimizer_faces": [
+        {
+          "background_count": 32,
+          "face": [
+            "3012"
+          ]
+        }
+      ],
+      "complete_next_gap": 3,
+      "complete_selected_response": "3012",
+      "complete_tie_break_dependent_cases": 0,
+      "complete_unique_minimizer_cases": 32,
+      "formal_rule_extension_only_cases": 0,
+      "intrinsic_minimizer_face": [
+        "3012"
+      ],
+      "intrinsic_next_gap": 3,
+      "intrinsic_selected_response": "3012",
+      "menu": "blocked",
+      "menu_background_cases": 32,
+      "minimizer_face_agreement_cases": 32,
+      "minimizer_face_disagreement_cases": 0,
+      "next_gap_agreement_cases": 32,
+      "responses": [
+        "3012",
+        "3210"
+      ],
+      "restored_selector_import_accepted": 0,
+      "restored_selector_import_fields": null,
+      "selected_identity_agreement_cases": 32,
+      "source_rule_directly_authorized_cases": 32
+    },
+    {
+      "complete_minimizer_faces": [
+        {
+          "background_count": 32,
+          "face": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "complete_next_gap": 1,
+      "complete_selected_response": "2031",
+      "complete_tie_break_dependent_cases": 32,
+      "complete_unique_minimizer_cases": 0,
+      "formal_rule_extension_only_cases": 32,
+      "intrinsic_minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "intrinsic_next_gap": 1,
+      "intrinsic_selected_response": "2031",
+      "menu": "restore_02",
+      "menu_background_cases": 32,
+      "minimizer_face_agreement_cases": 32,
+      "minimizer_face_disagreement_cases": 0,
+      "next_gap_agreement_cases": 32,
+      "responses": [
+        "2031",
+        "2310",
+        "3012",
+        "3210"
+      ],
+      "restored_selector_import_accepted": 0,
+      "restored_selector_import_fields": {
+        "child_payment_congruence_ref": null,
+        "legal_menu_state_ref": null,
+        "physical_occurrence_ref": null,
+        "realization_status": null,
+        "response_family_ref": null,
+        "scheduler_operation_ref": null,
+        "score_semantics_ref": null,
+        "selector_rule_ref": null
+      },
+      "selected_identity_agreement_cases": 32,
+      "source_rule_directly_authorized_cases": 0
+    },
+    {
+      "complete_minimizer_faces": [
+        {
+          "background_count": 32,
+          "face": [
+            "3201"
+          ]
+        }
+      ],
+      "complete_next_gap": 1,
+      "complete_selected_response": "3201",
+      "complete_tie_break_dependent_cases": 0,
+      "complete_unique_minimizer_cases": 32,
+      "formal_rule_extension_only_cases": 32,
+      "intrinsic_minimizer_face": [
+        "3201"
+      ],
+      "intrinsic_next_gap": 1,
+      "intrinsic_selected_response": "3201",
+      "menu": "restore_20",
+      "menu_background_cases": 32,
+      "minimizer_face_agreement_cases": 32,
+      "minimizer_face_disagreement_cases": 0,
+      "next_gap_agreement_cases": 32,
+      "responses": [
+        "3012",
+        "3201",
+        "3210"
+      ],
+      "restored_selector_import_accepted": 0,
+      "restored_selector_import_fields": {
+        "child_payment_congruence_ref": null,
+        "legal_menu_state_ref": null,
+        "physical_occurrence_ref": null,
+        "realization_status": null,
+        "response_family_ref": null,
+        "scheduler_operation_ref": null,
+        "score_semantics_ref": null,
+        "selector_rule_ref": null
+      },
+      "selected_identity_agreement_cases": 32,
+      "source_rule_directly_authorized_cases": 0
+    },
+    {
+      "complete_minimizer_faces": [
+        {
+          "background_count": 8,
+          "face": [
+            "2031",
+            "2301",
+            "2310",
+            "3201"
+          ]
+        },
+        {
+          "background_count": 24,
+          "face": [
+            "2031",
+            "2310",
+            "3201"
+          ]
+        }
+      ],
+      "complete_next_gap": 1,
+      "complete_selected_response": "2031",
+      "complete_tie_break_dependent_cases": 32,
+      "complete_unique_minimizer_cases": 0,
+      "formal_rule_extension_only_cases": 32,
+      "intrinsic_minimizer_face": [
+        "2031",
+        "2301",
+        "2310",
+        "3201"
+      ],
+      "intrinsic_next_gap": 1,
+      "intrinsic_selected_response": "2031",
+      "menu": "restore_both",
+      "menu_background_cases": 32,
+      "minimizer_face_agreement_cases": 8,
+      "minimizer_face_disagreement_cases": 24,
+      "next_gap_agreement_cases": 32,
+      "responses": [
+        "2031",
+        "2301",
+        "2310",
+        "3012",
+        "3201",
+        "3210"
+      ],
+      "restored_selector_import_accepted": 0,
+      "restored_selector_import_fields": {
+        "child_payment_congruence_ref": null,
+        "legal_menu_state_ref": null,
+        "physical_occurrence_ref": null,
+        "realization_status": null,
+        "response_family_ref": null,
+        "scheduler_operation_ref": null,
+        "score_semantics_ref": null,
+        "selector_rule_ref": null
+      },
+      "selected_identity_agreement_cases": 32,
+      "source_rule_directly_authorized_cases": 0
+    }
+  ],
+  "restored_selector_import_contract": {
+    "acceptance_rule": "each restored menu requires a physical occurrence and legal menu state, a source-defined response family and score semantics, and either a source tie-break rule or complete child/payment congruence on its entire minimizer face",
+    "field_count": 8,
+    "fields": [
+      "physical_occurrence_ref",
+      "legal_menu_state_ref",
+      "response_family_ref",
+      "score_semantics_ref",
+      "selector_rule_ref",
+      "scheduler_operation_ref",
+      "child_payment_congruence_ref",
+      "realization_status"
+    ]
+  },
+  "rules": {
+    "complete_score_audit_rule": "lexicographically least response in complete-score minimizer face",
+    "formal_extension_scope": "apply the intrinsic rule to every response in each restoration menu",
+    "source_rule_scope": "original residual response family of each normalized side-four host",
+    "source_selected_provenance_rule": "minimum triple count then lexicographically least response permutation"
+  },
+  "schema": "exact-recurrent-first-host-selector-rule-compatibility/v1",
+  "source_boundary": {
+    "blocked_normalized_selector_compatible": 1,
+    "face_congruence_substitute_proved": 0,
+    "formal_intrinsic_extension_matches_complete_minimizer_face_all_cases": 0,
+    "formal_intrinsic_extension_matches_complete_next_gap_all_cases": 1,
+    "formal_intrinsic_extension_matches_complete_selected_identity_all_cases": 1,
+    "installed_scheduler_specifies_lexicographic_tie_break": 0,
+    "physical_selector_rule_import_allowed": 0,
+    "restore_02_selector_requires_tie_break": 1,
+    "restore_20_selector_requires_tie_break": 0,
+    "restore_both_face_disagreement_cases": 24,
+    "restore_both_selector_requires_tie_break": 1,
+    "restored_selector_rule_source_authorized": 0
+  },
+  "sources": {
+    "installed_operation_registry": "docs/555-prime-power-installed-operation-registry-1166.md",
+    "owner_fate_lineage_kernel": "docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md",
+    "restoration_selector_faces": "data/exact_recurrent_first_host_restoration_selector_face.json",
+    "selected_provenance": "data/exact_recurrent_side_four_selected_provenance_projection.json"
+  }
+}
