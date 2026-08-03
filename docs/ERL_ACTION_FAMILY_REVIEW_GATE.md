@@ -33,7 +33,9 @@ child_payment_compatibility_ref
 realization_status.
 ```
 
-A union of abstract schemas is not sufficient. The cited objects must be joined occurrence-faithfully to the same first-host occurrence, persistent owner and both exact family edges.
+Across all four families, geometry fixes 12 of 40 contract slots. The remaining 28 slots are source evidence and currently all are empty. Structural prefill never counts as physical evidence.
+
+A union of abstract schemas is not sufficient. The cited objects must be joined occurrence-faithfully to the same first-host occurrence, persistent owner and both exact family edges. The source gate pins three external alternating-core theorem blobs and verifies four local execution interfaces by exact theorem markers; this source coverage still provides zero family-specific joins.
 
 The following are not sufficient evidence of family congruence:
 
@@ -61,6 +63,16 @@ restore_02 + delete_20
 delete_02  + restore_20
 delete_02  + delete_20.
 ```
+
+Every minimum pair has exactly:
+
+```text
+theorem-contract slots                    20
+structurally prefilled slots               6
+remaining source-evidence slots           14.
+```
+
+The alternative edge-by-edge route contains four member edges and exposes 48 twelve-field edge-promotion slots. The compressed theorem contract must still imply all physical facts needed by those members.
 
 Both directions of only one bit are insufficient.
 
