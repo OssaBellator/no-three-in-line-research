@@ -70,7 +70,7 @@ The context-parametric theorem has a ten-field source contract covering its edge
 
 ## ERL2o — source import gate
 
-The ten-field contract now splits exactly into three normalized structural fields and seven source-evidence fields.
+The ten-field contract splits exactly into three normalized structural fields and seven source-evidence fields.
 
 Geometry fixes
 
@@ -102,19 +102,30 @@ closure-route schema
 child/payment schema.
 ```
 
-No single source covers all five. The minimum abstract cover uses three sources, with exactly two minimum covers. This union is not an occurrence-faithful join: no source record identifies one first-host occurrence, one persistent owner and both exact family edges across all selected schemas.
+Three interfaces are external alternating-core blobs. Four current-branch interfaces are additionally verified by exact theorem markers. No single source covers all five components; the minimum abstract cover uses three sources, with exactly two minimum covers. This union is not an occurrence-faithful join: no source record identifies one first-host occurrence, one persistent owner and both exact family edges across all selected schemas.
 
-Exact census:
+Exact contract census:
 
 ```text
-structural fields fixed per family              3
-source-evidence fields required per family      7
-structural fields fixed in total               12
-source-evidence fields populated                0
-abstract component types covered                5 of 5
-first-host context-parametric theorems found    0
-accepted uniform family imports                 0.
+action families                              4
+contract slots in total                     40
+structural slots fixed                      12
+source-evidence slots                       28
+source-evidence slots populated              0
+abstract component types covered         5 of 5
+first-host context-parametric theorems       0
+accepted uniform family imports              0.
 ```
+
+Each minimum scalar family pair has
+
+```text
+theorem-contract slots                      20
+structurally prefilled slots                 6
+remaining source-evidence slots             14.
+```
+
+The equivalent edge-by-edge ingestion surface contains four member edges and therefore `4 x 12 = 48` edge-promotion field slots. The family theorem is a contract compression, not a waiver of occurrence, owner, operation, route or child/payment evidence.
 
 An operation-kind name, a fixture theorem, or a union of compatible-looking abstract schemas does not prove family uniformity.
 
