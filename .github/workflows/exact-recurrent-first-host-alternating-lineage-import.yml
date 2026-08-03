@@ -17,6 +17,7 @@ on:
       - data/exact_recurrent_first_host_restoration_selector_face.json
       - data/exact_recurrent_first_host_selector_boolean_boundary.json
       - data/exact_recurrent_first_host_scalar_route_cover.json
+      - data/exact_recurrent_first_host_menu_interaction_potential.json
       - scripts/check_exact_recurrent_first_host_background_signature.py
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
       - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
@@ -26,6 +27,7 @@ on:
       - scripts/check_exact_recurrent_first_host_restoration_selector_face.py
       - scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py
       - scripts/check_exact_recurrent_first_host_scalar_route_cover.py
+      - scripts/check_exact_recurrent_first_host_menu_interaction_potential.py
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
@@ -34,6 +36,7 @@ on:
       - docs/exact-recurrent-first-host-restoration-selector-face.md
       - docs/exact-recurrent-first-host-selector-boolean-boundary.md
       - docs/exact-recurrent-first-host-scalar-route-cover.md
+      - docs/exact-recurrent-first-host-menu-interaction-potential.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
 
@@ -81,3 +84,7 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_scalar_route_cover.py \
             --check data/exact_recurrent_first_host_scalar_route_cover.json
+      - name: Check menu interaction potentials
+        run: |
+          python scripts/check_exact_recurrent_first_host_menu_interaction_potential.py \
+            --check data/exact_recurrent_first_host_menu_interaction_potential.json
