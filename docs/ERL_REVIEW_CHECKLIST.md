@@ -49,6 +49,15 @@
 - [x] Boolean interaction coefficient `Gamma` classified on all fourteen menu orientations.
 - [x] Exactly ten menu orientations proved to require nonzero interaction.
 - [x] Sharp minimum nonzero integer interaction magnitude proved to be two.
+- [x] Alternating-core capacity, recreation and outer-reset contracts pinned by immutable source blobs.
+- [x] Upstream capacity/reset validators proved not to contain first-host physical data.
+- [x] Every menu cover proved to leave exactly three changing, one neutral, two `r02` and two `r20` routes.
+- [x] Residual restore/delete burden classified into exact `1,4,4,4,1` distribution.
+- [x] Direction-only nonnegative route costs proved to admit an additive optimum.
+- [x] Exact edge-sensitive costs proved capable of forcing every interaction cover.
+- [x] Conditional gate-capacity ceiling `N_cap <= C0 + H_cap` installed.
+- [x] Conditional outer-reset ceiling `N_out <= E_first + Q` installed.
+- [x] Sixteen-field alternating route-import worklist compiled with zero populated fields.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
@@ -57,6 +66,8 @@
 - [ ] Attach persistent physical owner identities to all realized selector gates.
 - [ ] Choose a source-backed scalar route cover or prove the relevant edge domain smaller.
 - [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
+- [ ] Populate direct exact gate capacities or a source-faithful capacity-recreation ledger.
+- [ ] Populate source-backed outer profiles, decorations, epoch bound and macro tickets for reset-routed edges.
 - [ ] Populate one registered closure route or finite capacity for every residual edge.
 - [ ] Prove simultaneous restoration is physically legal or exclude it from the operation registry.
 - [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
