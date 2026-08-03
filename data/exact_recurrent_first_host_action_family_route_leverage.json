@@ -1,0 +1,394 @@
+{
+  "aggregate": {
+    "current_complete_scalar_covers": 0,
+    "current_source_closed_edges": 0,
+    "current_source_closed_families": 0,
+    "directed_action_families": 4,
+    "edges_per_family": 2,
+    "family_subsets": 16,
+    "minimal_label_family_sets": 4,
+    "minimal_menu_family_sets": 4,
+    "minimum_families_for_label_cover": 2,
+    "minimum_families_for_menu_cover": 2,
+    "two_family_label_shortcuts": 4,
+    "two_family_menu_shortcuts": 4,
+    "two_family_subsets": 6
+  },
+  "conclusion": {
+    "action_family_classification_complete": 1,
+    "all_delete_families_form_menu_cover": 1,
+    "all_restore_families_form_menu_cover": 1,
+    "both_directions_of_one_bit_suffice": 0,
+    "current_source_family_certificate_complete": 0,
+    "mixed_action_families_can_form_menu_cover": 1,
+    "one_directed_family_per_bit_suffices": 1,
+    "one_family_closes_scalar_cover": 0,
+    "promotion_to_recurrent_closure_allowed": 0
+  },
+  "criterion": {
+    "same_bit_bidirectional_failure": "closing restore and delete families for only one bit leaves the other bit reversal pairs uncovered",
+    "two_family_shortcut": "one directed action family for bit 02 and one directed action family for bit 20",
+    "uniformity_warning": "a family certificate must source-close both context edges; one edge cannot stand in for the family"
+  },
+  "family_contract": {
+    "delete_02": {
+      "action": "delete",
+      "bit": "02",
+      "current_source_certificate": 0,
+      "directed_edges": [
+        "10->00",
+        "11->01"
+      ],
+      "uniform_source_certificate_required": 1
+    },
+    "delete_20": {
+      "action": "delete",
+      "bit": "20",
+      "current_source_certificate": 0,
+      "directed_edges": [
+        "01->00",
+        "11->10"
+      ],
+      "uniform_source_certificate_required": 1
+    },
+    "restore_02": {
+      "action": "restore",
+      "bit": "02",
+      "current_source_certificate": 0,
+      "directed_edges": [
+        "00->10",
+        "01->11"
+      ],
+      "uniform_source_certificate_required": 1
+    },
+    "restore_20": {
+      "action": "restore",
+      "bit": "20",
+      "current_source_certificate": 0,
+      "directed_edges": [
+        "00->01",
+        "10->11"
+      ],
+      "uniform_source_certificate_required": 1
+    }
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "host_id": "s4-75b04c45c1c8eac2",
+  "minimal_complete_family_sets": [
+    [
+      "delete_02",
+      "delete_20"
+    ],
+    [
+      "delete_02",
+      "restore_20"
+    ],
+    [
+      "restore_02",
+      "delete_20"
+    ],
+    [
+      "restore_02",
+      "restore_20"
+    ]
+  ],
+  "patterns": [
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [],
+      "family_count": 0,
+      "minimum_additional_label_edges": 3,
+      "minimum_additional_menu_edges": 4,
+      "route_closed_edge_count": 0,
+      "route_closed_edges": []
+    },
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [
+        "delete_20"
+      ],
+      "family_count": 1,
+      "minimum_additional_label_edges": 2,
+      "minimum_additional_menu_edges": 2,
+      "route_closed_edge_count": 2,
+      "route_closed_edges": [
+        "01->00",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [
+        "restore_20"
+      ],
+      "family_count": 1,
+      "minimum_additional_label_edges": 2,
+      "minimum_additional_menu_edges": 2,
+      "route_closed_edge_count": 2,
+      "route_closed_edges": [
+        "00->01",
+        "10->11"
+      ]
+    },
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [
+        "restore_20",
+        "delete_20"
+      ],
+      "family_count": 2,
+      "minimum_additional_label_edges": 2,
+      "minimum_additional_menu_edges": 2,
+      "route_closed_edge_count": 4,
+      "route_closed_edges": [
+        "00->01",
+        "01->00",
+        "10->11",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [
+        "delete_02"
+      ],
+      "family_count": 1,
+      "minimum_additional_label_edges": 1,
+      "minimum_additional_menu_edges": 2,
+      "route_closed_edge_count": 2,
+      "route_closed_edges": [
+        "10->00",
+        "11->01"
+      ]
+    },
+    {
+      "contained_label_covers": 1,
+      "contained_menu_covers": 1,
+      "families": [
+        "delete_02",
+        "delete_20"
+      ],
+      "family_count": 2,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 4,
+      "route_closed_edges": [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 1,
+      "contained_menu_covers": 1,
+      "families": [
+        "delete_02",
+        "restore_20"
+      ],
+      "family_count": 2,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 4,
+      "route_closed_edges": [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ]
+    },
+    {
+      "contained_label_covers": 2,
+      "contained_menu_covers": 4,
+      "families": [
+        "delete_02",
+        "restore_20",
+        "delete_20"
+      ],
+      "family_count": 3,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 6,
+      "route_closed_edges": [
+        "00->01",
+        "01->00",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [
+        "restore_02"
+      ],
+      "family_count": 1,
+      "minimum_additional_label_edges": 1,
+      "minimum_additional_menu_edges": 2,
+      "route_closed_edge_count": 2,
+      "route_closed_edges": [
+        "00->10",
+        "01->11"
+      ]
+    },
+    {
+      "contained_label_covers": 1,
+      "contained_menu_covers": 1,
+      "families": [
+        "restore_02",
+        "delete_20"
+      ],
+      "family_count": 2,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 4,
+      "route_closed_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 1,
+      "contained_menu_covers": 1,
+      "families": [
+        "restore_02",
+        "restore_20"
+      ],
+      "family_count": 2,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 4,
+      "route_closed_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ]
+    },
+    {
+      "contained_label_covers": 2,
+      "contained_menu_covers": 4,
+      "families": [
+        "restore_02",
+        "restore_20",
+        "delete_20"
+      ],
+      "family_count": 3,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 6,
+      "route_closed_edges": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->11",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 0,
+      "contained_menu_covers": 0,
+      "families": [
+        "restore_02",
+        "delete_02"
+      ],
+      "family_count": 2,
+      "minimum_additional_label_edges": 1,
+      "minimum_additional_menu_edges": 2,
+      "route_closed_edge_count": 4,
+      "route_closed_edges": [
+        "00->10",
+        "01->11",
+        "10->00",
+        "11->01"
+      ]
+    },
+    {
+      "contained_label_covers": 3,
+      "contained_menu_covers": 4,
+      "families": [
+        "restore_02",
+        "delete_02",
+        "delete_20"
+      ],
+      "family_count": 3,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 6,
+      "route_closed_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "11->01",
+        "11->10"
+      ]
+    },
+    {
+      "contained_label_covers": 3,
+      "contained_menu_covers": 4,
+      "families": [
+        "restore_02",
+        "delete_02",
+        "restore_20"
+      ],
+      "family_count": 3,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 6,
+      "route_closed_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01"
+      ]
+    },
+    {
+      "contained_label_covers": 6,
+      "contained_menu_covers": 14,
+      "families": [
+        "restore_02",
+        "delete_02",
+        "restore_20",
+        "delete_20"
+      ],
+      "family_count": 4,
+      "minimum_additional_label_edges": 0,
+      "minimum_additional_menu_edges": 0,
+      "route_closed_edge_count": 8,
+      "route_closed_edges": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ]
+    }
+  ],
+  "schema": "exact-recurrent-first-host-action-family-route-leverage/v1",
+  "source_transition_audit": "data/exact_recurrent_first_host_transition_domain_source_audit.json"
+}
