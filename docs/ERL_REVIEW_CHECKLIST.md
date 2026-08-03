@@ -10,9 +10,12 @@
 - [x] Global integer two-point strict reversal classification completed.
 - [x] Exactly four strict `3012` backgrounds proved; no strict `3210` background.
 - [x] Current side-four projection proved non-injective for complete scores.
-- [ ] Populate complete coordinate-labelled physical first-host fibres.
+- [x] Installed raw-lineage target/response-edge promotion gap proved.
+- [x] Dual-edge bridge reconstructs exactly `3012,3210` while retaining target `01`.
+- [x] Sixteen-field physical completeness worklist compiled.
+- [ ] Populate every physical first-host occurrence with the dual-edge bridge.
+- [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Prove or refute physical occurrence of the four strict backgrounds and tie classes.
-- [ ] Attach deletion causes, owners and installed legal operations.
 - [ ] Compile labelled child rows and exact positive weights.
 - [ ] Prove strict recurrent subcriticality or publish a realizable obstruction.
 - [ ] Prove global termination and all-side transfer.
