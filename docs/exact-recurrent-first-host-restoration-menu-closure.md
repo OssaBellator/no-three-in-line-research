@@ -39,9 +39,45 @@ restore 20 minimizer face = {3201}
 
 Hence selector choice is congruent across the safe class for either individual restoration. This is a score statement only; physical legality and transition provenance remain unpopulated.
 
+## Exact operation-aware signature
+
+Define four Boolean coordinates
+
+```text
+a = 1[{00,01} subset B]
+b = 1[{01,11} subset B]
+u = 1[11 in B]
+v = 1[22 in B].
+```
+
+The previous five-response signature retained only the ordered pair `(a,b)`. Restoring both deletions exposes line loads detecting `u` and `v`.
+
+Across the 32 safe backgrounds, exactly ten quadruples `(a,b,u,v)` occur, with class sizes
+
+```text
+(0,0,0,0): 6
+(0,0,0,1): 6
+(0,0,1,0): 4
+(0,0,1,1): 4
+(0,1,1,0): 2
+(0,1,1,1): 2
+(1,0,0,0): 2
+(1,0,0,1): 2
+(1,1,1,0): 2
+(1,1,1,1): 2.
+```
+
+Point `33` remains invisible and doubles every realizable class in which the other four cells are fixed.
+
 ## New response score
 
-The exact complete score of `2301` on the safe class is
+The exact complete score of `2301` is
+
+```text
+score(2301;B)=a+b+u+v.
+```
+
+Equivalently,
 
 ```text
 score(2301;B)
@@ -63,9 +99,9 @@ x+y-2=0
 3x+y-6=0.
 ```
 
-On the safe class, `22` lies on `x+y=4` and `11` lies on `x+y=2`. Neither point was visible through a response-secant load in the previous five-response interface.
+On the safe class, `22` lies on `x+y=4` and `11` lies on `x+y=2`. No safe point lies on `3x+y=6`, but that coordinate remains part of the full expanded response geometry.
 
-## Exact expanded score census
+## Eight score classes, ten exact signatures
 
 Using response order
 
@@ -86,13 +122,25 @@ the 32 safe backgrounds split into eight score classes:
 (3,6,2,2,2,4):  2.
 ```
 
-The earlier current-menu classification had four exact 31-coordinate signatures. Those four states are therefore not closed under the expanded response menu.
+The eight-score quotient is still non-injective on the ten exact operation signatures. There are exactly two collisions:
+
+```text
+score (1,4,0,0,0,1):
+  (a,b,u,v)=(0,0,0,1)
+  (a,b,u,v)=(0,0,1,0)
+
+score (2,5,1,1,1,2):
+  (a,b,u,v)=(0,1,1,0)
+  (a,b,u,v)=(1,0,0,1).
+```
+
+Thus even equality of all six current response scores does not identify the operation-aware geometric state.
 
 ## Consequence for alternating-core import
 
-A recurrence quotient must be closed under every installed operation menu. The four-class current geometric signature fails this test if simultaneous restoration is admitted: backgrounds identified by the old signature can have different `2301` scores.
+A recurrence quotient must be closed under every installed operation menu. The four-class five-response signature fails this test if simultaneous restoration is admitted, and the resulting eight-score quotient still loses the distinction between the two new line-load coordinates.
 
-The minimum operation-aware refinement must retain at least the new line loads detecting `11` and `22`, in addition to the two existing target-pair indicators. Even that refinement is only score-complete; owner identity, legal operations, intermediate states, child multiplicities, positive weights, parent budget, continuation edges and capacities still require physical data.
+The minimum known operation-aware alphabet on the safe class therefore has ten states, represented by `(a,b,u,v)`. This alphabet is exact for the enumerated response geometry only. Owner identity, legal operations, intermediate states, child multiplicities, positive weights, parent budget, continuation edges and capacities still require physical data and may force further refinement.
 
 ## Executable audit
 
@@ -103,6 +151,6 @@ python scripts/check_exact_recurrent_first_host_restoration_menu_closure.py \
   --check data/exact_recurrent_first_host_restoration_menu_closure.json
 ```
 
-The checker enumerates all four response menus and all 32 safe backgrounds, verifies the exact `2301` formula and eight-class census, and rejects eleven deliberate corruptions.
+The checker enumerates all four response menus and all 32 safe backgrounds, verifies the exact `2301` formula, the ten-signature and eight-score censuses, both score collisions, and rejects thirteen deliberate corruptions.
 
 Physical chart confinement, legal restoration, occurrence coverage, recurrent child rows, strict Lyapunov slack, global termination and `all_n_proved_by_checker` remain zero.
