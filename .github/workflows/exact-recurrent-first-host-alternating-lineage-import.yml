@@ -15,6 +15,7 @@ on:
       - data/exact_recurrent_first_host_safe_signature_symmetry.json
       - data/exact_recurrent_first_host_restoration_menu_closure.json
       - data/exact_recurrent_first_host_restoration_selector_face.json
+      - data/exact_recurrent_first_host_selector_rule_compatibility.json
       - data/exact_recurrent_first_host_selector_boolean_boundary.json
       - data/exact_recurrent_first_host_scalar_route_cover.json
       - data/exact_recurrent_first_host_menu_interaction_potential.json
@@ -33,6 +34,7 @@ on:
       - scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py
       - scripts/check_exact_recurrent_first_host_restoration_menu_closure.py
       - scripts/check_exact_recurrent_first_host_restoration_selector_face.py
+      - scripts/check_exact_recurrent_first_host_selector_rule_compatibility.py
       - scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py
       - scripts/check_exact_recurrent_first_host_scalar_route_cover.py
       - scripts/check_exact_recurrent_first_host_menu_interaction_potential.py
@@ -50,6 +52,7 @@ on:
       - docs/exact-recurrent-first-host-safe-signature-symmetry.md
       - docs/exact-recurrent-first-host-restoration-menu-closure.md
       - docs/exact-recurrent-first-host-restoration-selector-face.md
+      - docs/exact-recurrent-first-host-selector-rule-compatibility.md
       - docs/exact-recurrent-first-host-selector-boolean-boundary.md
       - docs/exact-recurrent-first-host-scalar-route-cover.md
       - docs/exact-recurrent-first-host-menu-interaction-potential.md
@@ -100,6 +103,10 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_restoration_selector_face.py \
             --check data/exact_recurrent_first_host_restoration_selector_face.json
+      - name: Check selector-rule compatibility
+        run: |
+          python scripts/check_exact_recurrent_first_host_selector_rule_compatibility.py \
+            --check data/exact_recurrent_first_host_selector_rule_compatibility.json
       - name: Check selector Boolean boundary gates
         run: |
           python scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py \
