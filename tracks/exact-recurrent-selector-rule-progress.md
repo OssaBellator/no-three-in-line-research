@@ -87,6 +87,40 @@ For a non-singleton minimizer face, either:
 
 Current populated restored-selector fields: **0 of 24**.
 
+## ERL2s — exact face-congruence basis
+
+The tied faces admit a minimum anchored comparison basis with anchor `2031`.
+
+At raw-background level:
+
+```text
+restore_02 comparisons                    32
+restore_both four-way comparisons         24
+restore_both three-way comparisons        48
+raw comparisons total                    104.
+```
+
+Joining to the ten exact operation signatures compresses this to:
+
+```text
+menu/signature cells                      20
+signature-level response-pair obligations 32.
+```
+
+Exact pair census:
+
+```text
+2031 ~ 2301   2 signature obligations,  8 raw comparisons
+2031 ~ 2310  20 signature obligations, 64 raw comparisons
+2031 ~ 3201  10 signature obligations, 32 raw comparisons.
+```
+
+The finite worklist can be discharged by 32 signature-specific proofs, four explicitly menu-parametric pair theorems, or three cross-menu pair-type theorems. The latter two are valid only when source theorems prove their stated uniformity.
+
+Each signature obligation has nine source-evidence fields, for 288 exact slots. Current populated slots: **0**.
+
+The four-coordinate operation signature is a score-worklist index, not a proved physical owner/child/payment signature.
+
 ## Current boundary
 
 ```text
@@ -95,6 +129,7 @@ legal restored menu states                 0
 source-restored selector semantics          0
 source scheduler tie-break                  0
 complete-face operation/payment congruence  0
+accepted face-congruence obligations        0 of 32
 promotion to recurrent closure              0
 all_n_proved_by_checker                     0.
 ```
@@ -105,5 +140,12 @@ all_n_proved_by_checker                     0.
 scripts/check_exact_recurrent_first_host_selector_rule_compatibility.py
 data/exact_recurrent_first_host_selector_rule_compatibility.json
 docs/exact-recurrent-first-host-selector-rule-compatibility.md
+
+scripts/check_exact_recurrent_first_host_selector_face_congruence_worklist.py
+data/exact_recurrent_first_host_selector_face_congruence_worklist.json
+docs/exact-recurrent-first-host-selector-face-congruence-worklist.md
+
+docs/ERL_SELECTOR_RULE_REVIEW_GATE.md
+docs/ERL_SELECTOR_FACE_CONGRUENCE_REVIEW_GATE.md
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
