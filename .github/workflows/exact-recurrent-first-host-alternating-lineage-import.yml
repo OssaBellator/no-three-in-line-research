@@ -12,13 +12,16 @@ on:
       - data/exact_recurrent_first_host_alternating_lineage_import.json
       - data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
       - data/exact_recurrent_first_host_safe_signature_quotient.json
+      - data/exact_recurrent_first_host_safe_signature_symmetry.json
       - scripts/check_exact_recurrent_first_host_background_signature.py
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
       - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
       - scripts/check_exact_recurrent_first_host_safe_signature_quotient.py
+      - scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
+      - docs/exact-recurrent-first-host-safe-signature-symmetry.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
 
@@ -46,3 +49,7 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_safe_signature_quotient.py \
             --check data/exact_recurrent_first_host_safe_signature_quotient.json
+      - name: Check exact safe signature symmetry
+        run: |
+          python scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py \
+            --check data/exact_recurrent_first_host_safe_signature_symmetry.json
