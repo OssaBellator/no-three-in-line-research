@@ -20,6 +20,7 @@ on:
       - data/exact_recurrent_first_host_selector_face_congruence_worklist.json
       - data/exact_recurrent_first_host_selector_face_source_import_gate.json
       - data/exact_recurrent_first_host_selector_face_closure_leverage.json
+      - data/exact_recurrent_first_host_minimizer_face_scalar_route_cover.json
       - data/exact_recurrent_first_host_selector_boolean_boundary.json
       - data/exact_recurrent_first_host_scalar_route_cover.json
       - data/exact_recurrent_first_host_menu_interaction_potential.json
@@ -42,6 +43,7 @@ on:
       - scripts/check_exact_recurrent_first_host_selector_face_congruence_worklist.py
       - scripts/check_exact_recurrent_first_host_selector_face_source_import_gate.py
       - scripts/check_exact_recurrent_first_host_selector_face_closure_leverage.py
+      - scripts/check_exact_recurrent_first_host_minimizer_face_scalar_route_cover.py
       - scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py
       - scripts/check_exact_recurrent_first_host_scalar_route_cover.py
       - scripts/check_exact_recurrent_first_host_menu_interaction_potential.py
@@ -59,6 +61,7 @@ on:
       - docs/ERL_SELECTOR_FACE_CONGRUENCE_REVIEW_GATE.md
       - docs/ERL_SELECTOR_FACE_SOURCE_IMPORT_REVIEW_GATE.md
       - docs/ERL_SELECTOR_FACE_CLOSURE_LEVERAGE_REVIEW_GATE.md
+      - docs/ERL_MINIMIZER_FACE_SCALAR_REVIEW_GATE.md
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
@@ -69,6 +72,7 @@ on:
       - docs/exact-recurrent-first-host-selector-face-congruence-worklist.md
       - docs/exact-recurrent-first-host-selector-face-source-import-gate.md
       - docs/exact-recurrent-first-host-selector-face-closure-leverage.md
+      - docs/exact-recurrent-first-host-minimizer-face-scalar-route-cover.md
       - docs/exact-recurrent-first-host-selector-boolean-boundary.md
       - docs/exact-recurrent-first-host-scalar-route-cover.md
       - docs/exact-recurrent-first-host-menu-interaction-potential.md
@@ -136,6 +140,10 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_selector_face_closure_leverage.py \
             --check data/exact_recurrent_first_host_selector_face_closure_leverage.json
+      - name: Check minimizer-face scalar route covers
+        run: |
+          python scripts/check_exact_recurrent_first_host_minimizer_face_scalar_route_cover.py \
+            --check data/exact_recurrent_first_host_minimizer_face_scalar_route_cover.json
       - name: Check selector Boolean boundary gates
         run: |
           python scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py \
