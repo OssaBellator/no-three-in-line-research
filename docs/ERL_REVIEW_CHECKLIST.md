@@ -22,11 +22,14 @@
 - [x] Alternating-core occurrence and physical-signature contracts audited.
 - [x] Thirty-two safe backgrounds compressed to three exact selector-score classes.
 - [x] Three-class quotient proved insufficient for payment or transition closure.
+- [x] Exact side-four determinant-ratio denominator ceiling reduced from 18 to 13.
+- [x] Conditional side-four arithmetic-profile stock reduced to 20,250.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
+- [ ] Prove the physical CRT label is determinant-realized and populate its role address.
 - [ ] Exclude, route, pay, or retain the exact one- and two-exterior worklists.
 - [ ] Compile labelled child rows and exact positive weights.
 - [ ] Prove strict recurrent subcriticality or publish a realizable obstruction.
