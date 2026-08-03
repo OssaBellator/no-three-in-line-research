@@ -19,10 +19,14 @@
 - [x] Synthetic `grid-response` fixtures proved insufficient for physical promotion.
 - [x] One-exterior original-face worklist classified completely.
 - [x] Strict two-point reversal proved to require two exterior points.
+- [x] Alternating-core occurrence and physical-signature contracts audited.
+- [x] Thirty-two safe backgrounds compressed to three exact selector-score classes.
+- [x] Three-class quotient proved insufficient for payment or transition closure.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
+- [ ] Populate a payment-complete physical-signature map and continuation edges.
 - [ ] Exclude, route, pay, or retain the exact one- and two-exterior worklists.
 - [ ] Compile labelled child rows and exact positive weights.
 - [ ] Prove strict recurrent subcriticality or publish a realizable obstruction.
