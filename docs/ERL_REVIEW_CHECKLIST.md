@@ -80,16 +80,24 @@
 - [x] Twelve-field physical edge-promotion contract compiled.
 - [x] Restore-both state `11` proved to require its own physical realization before any incident edge can be promoted.
 - [x] Current source proved not to determine whether the physical transition graph is full, proper or empty.
+- [x] All sixteen impossible-state subsets classified for incident-edge physical exclusion leverage.
+- [x] No single impossible state proved sufficient to complete either a label or menu scalar cover.
+- [x] Excluding restore-both state `11` alone proved to leave a two-edge route deficit at both levels.
+- [x] Exact two-state label shortcuts proved to be `{00,01}`, `{00,11}`, `{01,10}`.
+- [x] Exact two-state menu shortcuts proved to be the opposite pairs `{00,11}` and `{01,10}`.
+- [x] Current source proved to supply zero state-impossibility certificates.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
 - [ ] Emit source-backed physical state records for every restoration-menu state claimed realizable.
+- [ ] Supply a source-backed impossibility certificate for every state claimed excluded.
 - [ ] Map every claimed directed edge to one installed operation kind and exact registry entry.
 - [ ] Supply source and target state references, persistent owner identity, operation trace and legality proof for every claimed edge.
-- [ ] Prove state `11` physically realizable or exclude all four incident edges from the physical domain.
+- [ ] Prove state `11` physically realizable or source-prove it impossible; if impossible, route the remaining exact two-edge deficit.
 - [ ] Publish the exact physical legal-edge mask, including source-backed exclusions for absent directions.
+- [ ] After state exclusions, populate the exact remaining edge routes reported by the leverage manifest.
 - [ ] Populate a route-closed edge mask covering every reversal pair and avoiding the two cycle obstructions.
 - [ ] Choose a source-backed scalar route cover contained in that admitted edge mask.
 - [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
