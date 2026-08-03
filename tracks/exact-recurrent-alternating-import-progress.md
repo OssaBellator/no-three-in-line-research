@@ -133,6 +133,40 @@ Therefore the four-state current signature is not closed under the expanded
 menu, and even the eight-state score quotient is non-injective. The minimum
 known operation-aware geometric alphabet on the safe class has ten states.
 
+## ERL2c — selector identity and gap congruence
+
+The complete minimizer face under simultaneous restoration is not constant:
+
+```text
+{2031,2301,2310,3201}: 8 backgrounds
+{2031,2310,3201}:      24 backgrounds.
+```
+
+Nevertheless, under the canonical rule “lexicographically least response in
+the complete-score minimizer face,” the selected response is constant on the
+safe class for every restoration menu:
+
+```text
+blocked      -> 3012
+restore 02   -> 2031
+restore 20   -> 3201
+restore both -> 2031.
+```
+
+The positive next-distinct-energy gap is also constant per menu:
+
+```text
+blocked      gap 3
+restore 02   gap 1
+restore 20   gap 1
+restore both gap 1.
+```
+
+Thus selector identity and selector-stability gap admit a one-state quotient
+inside each fixed restoration menu even though the exact face and operation
+geometry require more states. This is a partial congruence result only; it does
+not identify child rows, weights, budgets, continuation edges or capacities.
+
 ## Import boundary
 
 Current source coverage still has zero of sixteen physical fields populated.
@@ -173,6 +207,10 @@ docs/exact-recurrent-first-host-safe-signature-symmetry.md
 scripts/check_exact_recurrent_first_host_restoration_menu_closure.py
 data/exact_recurrent_first_host_restoration_menu_closure.json
 docs/exact-recurrent-first-host-restoration-menu-closure.md
+
+scripts/check_exact_recurrent_first_host_restoration_selector_face.py
+data/exact_recurrent_first_host_restoration_selector_face.json
+docs/exact-recurrent-first-host-restoration-selector-face.md
 
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
