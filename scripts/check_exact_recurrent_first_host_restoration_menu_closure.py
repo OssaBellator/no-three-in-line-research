@@ -87,14 +87,19 @@ def face(menu: tuple[str, ...], background: tuple[Point, ...]) -> tuple[str, ...
     return tuple(name for name, value in zip(menu, values) if value == minimum)
 
 
-def score_2301_formula(background: tuple[Point, ...]) -> int:
+def operation_signature(background: tuple[Point, ...]) -> tuple[int, int, int, int]:
     active = set(background)
     return (
-        int((1, 1) in active)
-        + int((2, 2) in active)
-        + int({(0, 0), (0, 1)} <= active)
-        + int({(0, 1), (1, 1)} <= active)
+        int({(0, 0), (0, 1)} <= active),
+        int({(0, 1), (1, 1)} <= active),
+        int((1, 1) in active),
+        int((2, 2) in active),
     )
+
+
+def score_2301_formula(background: tuple[Point, ...]) -> int:
+    a, b, u, v = operation_signature(background)
+    return a + b + u + v
 
 
 def compile_manifest() -> dict[str, object]:
@@ -112,19 +117,41 @@ def compile_manifest() -> dict[str, object]:
 
     restore_02_faces = set()
     restore_20_faces = set()
-    expanded: dict[tuple[int, ...], int] = {}
+    score_classes: dict[tuple[int, ...], int] = {}
+    signature_classes: dict[tuple[int, int, int, int], int] = {}
+    score_to_signatures: dict[tuple[int, ...], set[tuple[int, int, int, int]]] = {}
     backgrounds = subsets()
+
     for background in backgrounds:
         require(score("2301", background) == score_2301_formula(background), "2301 formula")
         restore_02_faces.add(face(menus["restore_02"], background))
         restore_20_faces.add(face(menus["restore_20"], background))
         vector = tuple(score(name, background) for name in RESPONSES)
-        expanded[vector] = expanded.get(vector, 0) + 1
+        signature = operation_signature(background)
+        score_classes[vector] = score_classes.get(vector, 0) + 1
+        signature_classes[signature] = signature_classes.get(signature, 0) + 1
+        score_to_signatures.setdefault(vector, set()).add(signature)
 
     require(restore_02_faces == {("2031", "2310")}, "restore 02 face")
     require(restore_20_faces == {("3201",)}, "restore 20 face")
-    require(len(expanded) == 8, "expanded class count")
-    require(sorted(expanded.values()) == [2, 2, 2, 2, 4, 4, 6, 10], "expanded census")
+    require(len(score_classes) == 8, "expanded score class count")
+    require(sorted(score_classes.values()) == [2, 2, 2, 2, 4, 4, 6, 10], "score census")
+    require(len(signature_classes) == 10, "operation signature class count")
+    require(sorted(signature_classes.values()) == [2, 2, 2, 2, 2, 2, 4, 4, 6, 6], "signature census")
+
+    collisions = {
+        vector: signatures
+        for vector, signatures in score_to_signatures.items()
+        if len(signatures) > 1
+    }
+    require(
+        collisions
+        == {
+            (1, 4, 0, 0, 0, 1): {(0, 0, 0, 1), (0, 0, 1, 0)},
+            (2, 5, 1, 1, 1, 2): {(0, 1, 1, 0), (1, 0, 0, 1)},
+        },
+        "operation score collisions",
+    )
 
     old_lines = set()
     for name in RESPONSES[:-1]:
@@ -135,7 +162,7 @@ def compile_manifest() -> dict[str, object]:
     require(new_lines == {(1, 1, -4), (1, 1, -2), (3, 1, -6)}, "new secants")
 
     return {
-        "schema": "exact-recurrent-first-host-restoration-menu-closure/v1",
+        "schema": "exact-recurrent-first-host-restoration-menu-closure/v2",
         "scope": {
             "host_id": HOST_ID,
             "deletions": ["02", "20"],
@@ -143,13 +170,30 @@ def compile_manifest() -> dict[str, object]:
             "response_order": list(RESPONSES),
         },
         "menus": {name: list(menu) for name, menu in menus.items()},
-        "restore_both_2301_formula": (
-            "1[11 in B]+1[22 in B]+1[{00,01} subset B]+1[{01,11} subset B]"
-        ),
+        "operation_signature": {
+            "coordinates": [
+                "a=1[{00,01} subset B]",
+                "b=1[{01,11} subset B]",
+                "u=1[11 in B]",
+                "v=1[22 in B]",
+            ],
+            "classes": [
+                {"signature": list(signature), "background_count": count}
+                for signature, count in sorted(signature_classes.items())
+            ],
+        },
+        "restore_both_2301_formula": "score(2301;B)=a+b+u+v",
         "new_restore_both_secant_lines": [list(item) for item in sorted(new_lines)],
         "expanded_score_classes": [
             {"score_vector": list(vector), "background_count": count}
-            for vector, count in sorted(expanded.items())
+            for vector, count in sorted(score_classes.items())
+        ],
+        "score_collisions": [
+            {
+                "score_vector": list(vector),
+                "operation_signatures": [list(signature) for signature in sorted(signatures)],
+            }
+            for vector, signatures in sorted(collisions.items())
         ],
         "aggregate": {
             "safe_backgrounds": len(backgrounds),
@@ -159,11 +203,14 @@ def compile_manifest() -> dict[str, object]:
             "new_restore_both_response": "2301",
             "new_secant_line_coordinates": len(new_lines),
             "five_response_signature_classes": 4,
-            "six_response_score_classes": len(expanded),
+            "six_response_score_classes": len(score_classes),
+            "operation_aware_signature_classes": len(signature_classes),
+            "six_response_score_collision_classes": len(collisions),
         },
         "conclusion": {
             "single_edge_restoration_selector_congruent_on_safe_class": 1,
             "four_class_five_response_signature_closed_under_restore_both": 0,
+            "eight_class_six_response_score_quotient_injective_on_operation_signature": 0,
             "operation_menu_expansion_requires_signature_refinement": 1,
             "transition_payment_congruence_proved": 0,
         },
@@ -186,12 +233,14 @@ def mutation_audit(manifest: dict[str, object]) -> int:
     mutations = [
         lambda item: item["aggregate"].update(safe_backgrounds=31),
         lambda item: item["aggregate"].update(six_response_score_classes=7),
+        lambda item: item["aggregate"].update(operation_aware_signature_classes=9),
+        lambda item: item["aggregate"].update(six_response_score_collision_classes=1),
         lambda item: item["aggregate"].update(new_secant_line_coordinates=2),
         lambda item: item["menus"].update(restore_both=item["menus"]["restore_both"][:-1]),
         lambda item: item["new_restore_both_secant_lines"].pop(),
-        lambda item: item["expanded_score_classes"][0].update(background_count=99),
-        lambda item: item.update(restore_both_2301_formula="wrong"),
-        lambda item: item["conclusion"].update(four_class_five_response_signature_closed_under_restore_both=1),
+        lambda item: item["operation_signature"]["classes"][0].update(background_count=99),
+        lambda item: item["score_collisions"].pop(),
+        lambda item: item["conclusion"].update(eight_class_six_response_score_quotient_injective_on_operation_signature=1),
         lambda item: item["conclusion"].update(transition_payment_congruence_proved=1),
         lambda item: item["honesty"].update(legal_restoration_operation_proved=1),
         lambda item: item["honesty"].update(all_n_proved_by_checker=1),
