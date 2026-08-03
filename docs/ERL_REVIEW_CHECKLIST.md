@@ -31,6 +31,9 @@
 - [x] Safe class compiled into ten exact operation-aware signatures.
 - [x] Six-response score quotient has eight classes and two exact signature collisions.
 - [x] Current four-signature quotient proved not closed under expanded response menus.
+- [x] Canonical selected response proved background-invariant for all four restoration menus.
+- [x] Positive next-energy gap proved background-invariant within every restoration menu.
+- [x] Simultaneous-restoration minimizer face classified into exact 8/24 census.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
