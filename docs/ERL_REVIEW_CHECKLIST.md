@@ -15,7 +15,9 @@
 - [x] Sixteen-field physical completeness worklist compiled.
 - [x] Exact source coverage proves zero of sixteen physical fields populated.
 - [x] Reject-by-default physical occurrence batch gate installed.
+- [x] Chart confinement plus response disjointness proved sufficient for selector safety.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
+- [ ] Prove chart confinement and response disjointness from a physical source, or enumerate exterior backgrounds.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Prove or refute physical occurrence of the four strict backgrounds and tie classes.
