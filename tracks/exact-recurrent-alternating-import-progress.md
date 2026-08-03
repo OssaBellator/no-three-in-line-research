@@ -44,12 +44,40 @@ Every class has minimizer face `{2031,2310,3201}`. Thus selector score and the
 Boolean original-response-currentness predicate factor through a three-state
 alphabet.
 
+## ERL1y — exact side-four arithmetic-profile import
+
+For side four, the normalized primitive direction universe has exactly 15
+elements. The 225 ordered direction pairs contain 210 nonzero determinants, and
+the nonzero determinant magnitudes are exactly
+
+```text
+1,2,...,13.
+```
+
+Therefore every reduced determinant-ratio denominator is at most 13, improving
+the generic alternating-core safe bound 18. The exact conditional arithmetic
+profile stock is
+
+```text
+15^2 * sum(q, q=2..13) = 20,250,
+```
+
+rather than 38,250. With 16 board anchors, the exact non-scalar address
+coefficient is `324,000 * L_ext` rather than `612,000 * L_ext`.
+
+This does not populate `provenance.crt`: no physical source proves determinant
+realization for the first host, and the external role dictionary bound `L_ext`
+remains absent.
+
 ## Import boundary
 
 The three-state quotient is not payment-complete. Current source coverage still
 has zero of sixteen physical fields populated, and there is no proof that legal
 operations, intermediate states, child rows, weights, budgets or capacities
 factor through score offset.
+
+The arithmetic import supplies a finite conditional CRT alphabet but not the
+actual CRT profile or continuation/payment data.
 
 Therefore:
 
@@ -65,9 +93,15 @@ all_n_proved_by_checker = 0
 scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
 data/exact_recurrent_first_host_alternating_lineage_import.json
 docs/exact-recurrent-first-host-alternating-lineage-import.md
+
+scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
+data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
+docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
+
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
 
 The next admissible cross-branch result must populate a payment-complete physical
-signature map and registered continuation edges, or prove directly that every
-operation and child row is congruent on the three score classes.
+signature map and registered continuation edges, prove directly that operations
+and child rows are congruent on the three score classes, or attach a physically
+determinant-realized CRT profile and finite external role address.
