@@ -34,11 +34,20 @@
 - [x] Canonical selected response proved background-invariant for all four restoration menus.
 - [x] Positive next-energy gap proved background-invariant within every restoration menu.
 - [x] Simultaneous-restoration minimizer face classified into exact 8/24 census.
+- [x] Two-bit restoration context compiled into six exact selector recreation gates.
+- [x] Exact selector gate stock improves the generic single-bit bound from 12 to 6.
+- [x] Selected-label transition graph proved to be the complete bidirected triangle.
+- [x] Selected-label-only strict potential refuted on the six-edge gate stock.
+- [x] Menu-state-only strict potential refuted on the eight-edge context stock.
+- [x] At least three selector gates proved to require a non-label-descent route.
+- [x] At least four menu edges proved to require a non-menu-descent route.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
+- [ ] Attach persistent physical owner identities to all realized selector gates.
+- [ ] Populate one registered closure route or finite capacity for every realized selector gate.
 - [ ] Prove simultaneous restoration is physically legal or exclude it from the operation registry.
 - [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
 - [ ] Prove the physical CRT label is determinant-realized and populate its role address.
