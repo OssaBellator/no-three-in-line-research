@@ -82,14 +82,62 @@ realization status.
 
 Both endpoint states must be physically realized. Edges incident to `11` additionally require an exact physical restore-both state; local exposure of response `2301` is not enough.
 
+## ERL2j — state-exclusion route leverage
+
+A source-backed proof that one menu state is impossible closes all incident directed edges by the physical-exclusion route. All sixteen impossible-state subsets were classified.
+
+No single-state exclusion contains a scalar cover:
+
+```text
+state  label deficit  menu deficit
+00     1              2
+01     1              2
+10     2              2
+11     2              2.
+```
+
+In particular, excluding restore-both state `11` closes its four incident edges but still requires two additional route-closed edges for either scalar problem.
+
+Among the six two-state patterns, exactly three complete a label cover:
+
+```text
+{00,01}
+{00,11}
+{01,10}.
+```
+
+Only the two opposite-state pairs complete a menu cover without any other route evidence:
+
+```text
+{00,11}
+{01,10}.
+```
+
+Each opposite pair is incident to all eight directed square edges and therefore contains all six label covers and all fourteen menu covers. The adjacent pair `{00,01}` completes every label cover but still needs one menu route.
+
+Exact census:
+
+```text
+state-exclusion patterns                         16
+single-state shortcuts                            0
+minimum state exclusions for label closure        2
+minimum state exclusions for menu closure         2
+two-state label shortcuts                         3
+two-state menu shortcuts                          2
+patterns closing all eight edges                  7.
+```
+
+This is conditional leverage only. The current source provides no state-impossibility proof.
+
 ## Current boundary
 
-The exact Boolean state, selector and cover calculations are complete, but the physical transition graph is unknown. It may be the full square, a proper subgraph, or empty.
+The exact Boolean state, selector, cover and exclusion calculations are complete, but the physical transition graph is unknown. It may be the full square, a proper subgraph, or empty.
 
 Therefore
 
 ```text
 physical_transition_domain_known = 0
+source_backed_impossible_states = 0
 route_cover_admission_applicable_to_physical_mask = 0
 physical_route_assignment_complete = 0
 promotion_to_recurrent_closure_allowed = 0
@@ -106,6 +154,10 @@ docs/exact-recurrent-first-host-route-cover-admission.md
 scripts/check_exact_recurrent_first_host_transition_domain_source_audit.py
 data/exact_recurrent_first_host_transition_domain_source_audit.json
 docs/exact-recurrent-first-host-transition-domain-source-audit.md
+
+scripts/check_exact_recurrent_first_host_state_exclusion_route_leverage.py
+data/exact_recurrent_first_host_state_exclusion_route_leverage.json
+docs/exact-recurrent-first-host-state-exclusion-route-leverage.md
 
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
