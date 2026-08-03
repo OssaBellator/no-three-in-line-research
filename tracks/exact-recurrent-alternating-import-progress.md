@@ -69,12 +69,38 @@ This does not populate `provenance.crt`: no physical source proves determinant
 realization for the first host, and the external role dictionary bound `L_ext`
 remains absent.
 
+## ERL1z — exact safe 31-signature quotient
+
+The three complete-score classes are not the exact geometric state alphabet.
+Recomputing all 31 signature coordinates on the 32 safe backgrounds gives four
+classes:
+
+```text
+no active target pair: 20 backgrounds
+active pair {00,01}:    4 backgrounds
+active pair {01,11}:    4 backgrounds
+both active pairs:      4 backgrounds
+```
+
+All 20 secant line-load coordinates vanish. The two offset-one classes have the
+same score vector `(2,5,1,1,1)` but different pair-through coordinates:
+
+```text
+{00,01} -> response points 02 and 03
+{01,11} -> response points 21 and 31.
+```
+
+Thus present score equality does not imply exact 31-signature equality, and the
+three-state score quotient is formally non-injective on retained geometry.
+The four-state signature quotient is exact for current complete-score geometry,
+but transition congruence and payment completeness remain unproved.
+
 ## Import boundary
 
-The three-state quotient is not payment-complete. Current source coverage still
-has zero of sixteen physical fields populated, and there is no proof that legal
-operations, intermediate states, child rows, weights, budgets or capacities
-factor through score offset.
+Current source coverage still has zero of sixteen physical fields populated.
+There is no proof that legal operations, intermediate states, child rows,
+weights, budgets, continuation identity or shared capacities factor through the
+four exact signature classes.
 
 The arithmetic import supplies a finite conditional CRT alphabet but not the
 actual CRT profile or continuation/payment data.
@@ -98,10 +124,14 @@ scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
 data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
 docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
 
+scripts/check_exact_recurrent_first_host_safe_signature_quotient.py
+data/exact_recurrent_first_host_safe_signature_quotient.json
+docs/exact-recurrent-first-host-safe-signature-quotient.md
+
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
 
 The next admissible cross-branch result must populate a payment-complete physical
-signature map and registered continuation edges, prove directly that operations
-and child rows are congruent on the three score classes, or attach a physically
+signature map and registered continuation edges, prove operations and child rows
+congruent on the four exact signature classes, or attach a physically
 determinant-realized CRT profile and finite external role address.
