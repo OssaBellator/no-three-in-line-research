@@ -87,9 +87,21 @@ Project each changing menu edge to its old and new selected-response labels. The
 
 Thus the selected-label transition graph is the complete bidirected triangle. It has one strongly connected component containing all three labels and three directed two-cycles.
 
-Consequently there is no scalar function depending only on the selected response label that strictly decreases on every one of the six symbolic selector-changing edges. Any closure argument admitting all six edges must retain richer state or use gate-specific impossibility, progress, reset, or capacity data.
+Consequently there is no scalar function depending only on the selected response label that strictly decreases on every one of the six symbolic selector-changing edges.
 
-This is a symbolic graph obstruction. It does not prove that all six menu edges are physically legal or jointly realizable.
+A strict scalar ordering can pay at most one direction from each unordered label pair, hence at most three of the six edges. Therefore at least three selector-changing gates must use a non-label-descent route:
+
+```text
+physical exclusion
+richer-state strict progress
+finite gate capacity
+terminal or improving output
+outer builder reset.
+```
+
+The full four-state restoration graph is also bidirected on each of its four cube edges. A scalar depending only on the menu state can strictly pay at most four of the eight directed menu edges, so at least four require a non-menu-descent route.
+
+These are symbolic graph lower bounds. They do not prove that all six selector gates or all eight menu edges are physically legal or jointly realizable.
 
 ## Exact improvement over the generic Boolean bound
 
@@ -114,15 +126,7 @@ compared with the generic three-label bound `3*2^(2J-2)=12`.
 
 ## Alternating-core import boundary
 
-The alternating-core finite Boolean boundary theorem can therefore be instantiated **symbolically** with this exact six-gate stock. A recurrence or termination promotion still requires each gate to be attached to the same exact physical owner token and to satisfy at least one registered closure route:
-
-```text
-physical impossibility
-improving or terminal output
-strict bounded descent
-finite unrestorable capacity
-recorded outer builder reset.
-```
+The alternating-core finite Boolean boundary theorem can therefore be instantiated **symbolically** with this exact six-gate stock. A recurrence or termination promotion still requires each gate to be attached to the same exact physical owner token and to satisfy at least one registered closure route.
 
 None of those physical gate routes is currently populated. The repository has no proof that a response label such as `2031` denotes one persistent owner token across menu states, no legal transition trace, and no boundary capacity ledger.
 
@@ -131,6 +135,9 @@ Therefore
 ```text
 symbolic Boolean boundary interface available   yes
 strict selected-label-only potential             no
+strict menu-state-only potential                  no
+minimum non-label-descent selector routes         3
+minimum non-menu-descent transition routes        4
 physical owner-token gate identification         no
 promotion to recurrent closure                   no.
 ```
@@ -144,6 +151,6 @@ python scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py \
   --check data/exact_recurrent_first_host_selector_boolean_boundary.json
 ```
 
-The checker reconstructs the four menu states, all eight directed single-bit edges, the six exact recreation gates, the two neutral edges, the complete bidirected selected-label graph, both exact gate-stock improvements, and rejects sixteen deliberate corruptions.
+The checker reconstructs the four menu states, all eight directed single-bit edges, the six exact recreation gates, the two neutral edges, the complete bidirected selected-label graph, both minimum non-descent route bounds, both exact gate-stock improvements, and rejects nineteen deliberate corruptions.
 
 Physical chart confinement, occurrence coverage, operation legality, boundary capacities, recurrent child rows, strict Lyapunov slack, global termination, and `all_n_proved_by_checker` remain zero.
