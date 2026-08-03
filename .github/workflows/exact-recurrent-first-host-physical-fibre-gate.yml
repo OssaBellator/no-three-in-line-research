@@ -1,0 +1,42 @@
+name: Exact recurrent first-host physical fibre gate
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+  pull_request:
+    paths:
+      - data/prime_power_side_four_raw_fibre_lineage_manifest.json
+      - data/prime_power_side_four_selected_response_provenance_manifest.json
+      - data/exact_recurrent_first_host_dual_edge_bridge.json
+      - data/exact_recurrent_first_host_physical_source_coverage.json
+      - data/exact_recurrent_first_host_physical_fibre_batch_gate.json
+      - data/exact_recurrent_side_four_selected_line_geometry.json
+      - data/exact_recurrent_side_four_kernel.json
+      - data/exact_recurrent_first_host_occupancy_moments.json
+      - scripts/extend_prime_power_installed_operation_registry_1166.py
+      - scripts/check_exact_recurrent_first_host_physical_source_coverage.py
+      - scripts/check_exact_recurrent_first_host_physical_fibre_batch_gate.py
+      - .github/workflows/exact-recurrent-first-host-physical-fibre-gate.yml
+  workflow_dispatch:
+
+jobs:
+  exact-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Check physical source coverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_physical_source_coverage.py \
+            --check data/exact_recurrent_first_host_physical_source_coverage.json
+      - name: Check physical fibre batch gate
+        run: |
+          python scripts/check_exact_recurrent_first_host_physical_fibre_batch_gate.py \
+            --check data/exact_recurrent_first_host_physical_fibre_batch_gate.json
