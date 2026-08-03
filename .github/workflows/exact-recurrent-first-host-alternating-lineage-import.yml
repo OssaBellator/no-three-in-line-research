@@ -13,17 +13,20 @@ on:
       - data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
       - data/exact_recurrent_first_host_safe_signature_quotient.json
       - data/exact_recurrent_first_host_safe_signature_symmetry.json
+      - data/exact_recurrent_first_host_two_restoration_closure_signature.json
       - data/exact_recurrent_first_host_restoration_menu_closure.json
       - scripts/check_exact_recurrent_first_host_background_signature.py
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
       - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
       - scripts/check_exact_recurrent_first_host_safe_signature_quotient.py
       - scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py
+      - scripts/check_exact_recurrent_first_host_two_restoration_closure_signature.py
       - scripts/check_exact_recurrent_first_host_restoration_menu_closure.py
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
       - docs/exact-recurrent-first-host-safe-signature-symmetry.md
+      - docs/exact-recurrent-first-host-two-restoration-closure-signature.md
       - docs/exact-recurrent-first-host-restoration-menu-closure.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
@@ -56,6 +59,10 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py \
             --check data/exact_recurrent_first_host_safe_signature_symmetry.json
+      - name: Check two-restoration closure signature
+        run: |
+          python scripts/check_exact_recurrent_first_host_two_restoration_closure_signature.py \
+            --check data/exact_recurrent_first_host_two_restoration_closure_signature.json
       - name: Check restoration menu closure
         run: |
           python scripts/check_exact_recurrent_first_host_restoration_menu_closure.py \
