@@ -72,12 +72,24 @@
 - [x] One bidirectionally route-closed pair proved sufficient to remove the cycle obstruction.
 - [x] All-restore and all-delete edge sets proved to be exact additive menu-cover patterns.
 - [x] Current zero-admission source state proved to contain no complete scalar cover.
+- [x] Installed 1,166-kind registry proved not to be an occurrence-level legality table.
+- [x] Protected-interface, target-anchor, inherited-coordinate and owner/fate execution interfaces audited for first-host state and edge records.
+- [x] Side-three anchor restoration fixtures proved insufficient to promote `02` or `20` first-host transitions.
+- [x] Four symbolic menu states compiled with zero physical state records.
+- [x] Eight symbolic directed edges compiled with zero operation-kind mappings, owner tokens, traces or legality proofs.
+- [x] Twelve-field physical edge-promotion contract compiled.
+- [x] Restore-both state `11` proved to require its own physical realization before any incident edge can be promoted.
+- [x] Current source proved not to determine whether the physical transition graph is full, proper or empty.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
-- [ ] Attach persistent physical owner identities to all realized selector gates.
+- [ ] Emit source-backed physical state records for every restoration-menu state claimed realizable.
+- [ ] Map every claimed directed edge to one installed operation kind and exact registry entry.
+- [ ] Supply source and target state references, persistent owner identity, operation trace and legality proof for every claimed edge.
+- [ ] Prove state `11` physically realizable or exclude all four incident edges from the physical domain.
+- [ ] Publish the exact physical legal-edge mask, including source-backed exclusions for absent directions.
 - [ ] Populate a route-closed edge mask covering every reversal pair and avoiding the two cycle obstructions.
 - [ ] Choose a source-backed scalar route cover contained in that admitted edge mask.
 - [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
@@ -86,7 +98,6 @@
 - [ ] Populate source-backed outer profiles, decorations, epoch bound and macro tickets for reset-routed edges.
 - [ ] Populate the route-specific proof fields for every chosen residual edge.
 - [ ] Populate one registered closure route or finite capacity for every residual edge.
-- [ ] Prove simultaneous restoration is physically legal or exclude it from the operation registry.
 - [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
 - [ ] Prove the physical CRT label is determinant-realized and populate its role address.
 - [ ] Exclude, route, pay, or retain the exact one- and two-exterior worklists.
