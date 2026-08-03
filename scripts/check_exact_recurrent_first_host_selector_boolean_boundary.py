@@ -5,7 +5,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
-from itertools import product
+from itertools import combinations, product
 from pathlib import Path
 
 State = tuple[int, int]
@@ -118,6 +118,19 @@ def compile_manifest() -> dict[str, object]:
     }
     require(changing_by_bit == {"r02": 4, "r20": 2}, "changing-bit census")
 
+    label_edges = {
+        (SELECTED[source], SELECTED[target])
+        for source, target in changing
+    }
+    complete_bidirected = {
+        (source, target)
+        for source, target in product(RESPONSES, repeat=2)
+        if source != target
+    }
+    require(label_edges == complete_bidirected, "complete bidirected label graph")
+    bidirected_pairs = tuple(sorted(tuple(sorted(pair)) for pair in combinations(RESPONSES, 2)))
+    require(len(bidirected_pairs) == 3, "label two-cycle census")
+
     gate_rows = []
     for response in RESPONSES:
         for source, target in single_bit_gates[response]:
@@ -134,7 +147,7 @@ def compile_manifest() -> dict[str, object]:
             )
 
     return {
-        "schema": "exact-recurrent-first-host-selector-boolean-boundary/v1",
+        "schema": "exact-recurrent-first-host-selector-boolean-boundary/v2",
         "scope": {
             "host_id": HOST_ID,
             "context_bits": [
@@ -169,6 +182,15 @@ def compile_manifest() -> dict[str, object]:
             }
             for source, target in neutral
         ],
+        "selected_label_transition_graph": {
+            "vertices": list(RESPONSES),
+            "directed_edges": [
+                {"source": source, "target": target}
+                for source, target in sorted(label_edges)
+            ],
+            "bidirected_pairs": [list(pair) for pair in bidirected_pairs],
+            "strongly_connected_components": [list(RESPONSES)],
+        },
         "aggregate": {
             "context_bits": 2,
             "menu_states": len(states),
@@ -182,12 +204,18 @@ def compile_manifest() -> dict[str, object]:
             "generic_arbitrary_gate_bound_three_labels": len(RESPONSES) * 4,
             "changing_edges_flipping_r02": changing_by_bit["r02"],
             "changing_edges_flipping_r20": changing_by_bit["r20"],
+            "selected_label_transition_edges": len(label_edges),
+            "selected_label_bidirected_pairs": len(bidirected_pairs),
+            "selected_label_strongly_connected_components": 1,
+            "largest_selected_label_scc": len(RESPONSES),
         },
         "conclusion": {
             "selected_response_predicates_exact_on_safe_class": 1,
             "single_bit_selector_recreation_stock_exact": 1,
             "exact_single_bit_stock_improves_generic_bound": 1,
             "two_selector_neutral_menu_edges_identified": 1,
+            "selected_label_transition_graph_complete_bidirected": 1,
+            "strict_selected_label_potential_exists_on_all_six_edges": 0,
             "alternating_core_boolean_boundary_interface_applicable_symbolically": 1,
             "physical_owner_token_identification_proved": 0,
             "physical_transition_legality_proved": 0,
@@ -218,9 +246,13 @@ def mutation_audit(manifest: dict[str, object]) -> int:
         lambda item: item["aggregate"].update(exact_single_bit_recreation_gates=5),
         lambda item: item["aggregate"].update(exact_arbitrary_transition_recreation_gates=9),
         lambda item: item["aggregate"].update(changing_edges_flipping_r02=3),
+        lambda item: item["aggregate"].update(selected_label_transition_edges=5),
+        lambda item: item["aggregate"].update(selected_label_bidirected_pairs=2),
         lambda item: item["predicates"].update(2031="r20"),
         lambda item: item["single_bit_recreation_gates"].pop(),
         lambda item: item["selector_neutral_single_bit_edges"].pop(),
+        lambda item: item["selected_label_transition_graph"]["directed_edges"].pop(),
+        lambda item: item["conclusion"].update(strict_selected_label_potential_exists_on_all_six_edges=1),
         lambda item: item["conclusion"].update(physical_owner_token_identification_proved=1),
         lambda item: item["conclusion"].update(promotion_to_recurrent_closure_allowed=1),
         lambda item: item["honesty"].update(all_n_proved_by_checker=1),
