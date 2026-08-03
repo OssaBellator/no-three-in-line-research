@@ -68,6 +68,56 @@ Therefore same changed cell and action do not imply one context-free operation r
 
 The context-parametric theorem has a ten-field source contract covering its edge references, quantified context, owner schema, operation schema, route schema, child/payment compatibility and realization status.
 
+## ERL2o — source import gate
+
+The ten-field contract now splits exactly into three normalized structural fields and seven source-evidence fields.
+
+Geometry fixes
+
+```text
+family_id
+edge_refs
+quantified_context_bit.
+```
+
+The remaining evidence is
+
+```text
+shared_theorem_ref
+both_context_values_proved
+shared_owner_schema_ref
+shared_operation_schema_ref
+shared_route_schema_ref
+child_payment_compatibility_ref
+realization_status.
+```
+
+Seven immutable upstream interfaces were audited. Their union covers all five abstract component types:
+
+```text
+context quantification
+owner continuation
+operation schema
+closure-route schema
+child/payment schema.
+```
+
+No single source covers all five. The minimum abstract cover uses three sources, with exactly two minimum covers. This union is not an occurrence-faithful join: no source record identifies one first-host occurrence, one persistent owner and both exact family edges across all selected schemas.
+
+Exact census:
+
+```text
+structural fields fixed per family              3
+source-evidence fields required per family      7
+structural fields fixed in total               12
+source-evidence fields populated                0
+abstract component types covered                5 of 5
+first-host context-parametric theorems found    0
+accepted uniform family imports                 0.
+```
+
+An operation-kind name, a fixture theorem, or a union of compatible-looking abstract schemas does not prove family uniformity.
+
 ## Current source boundary
 
 ```text
@@ -81,7 +131,7 @@ promotion to recurrent closure allowed        0
 all_n_proved_by_checker                        0.
 ```
 
-The next source-facing shortcut is concrete but strict: prove one context-parametric route theorem for either restore/delete `02`, and one for either restore/delete `20`. Each must cover both member edges with occurrence, owner, endpoint, operation, trace, legality and route-specific evidence.
+The next source-facing shortcut is concrete but strict: prove one context-parametric route theorem for either restore/delete `02`, and one for either restore/delete `20`. Each must cover both member edges with occurrence, owner, endpoint, operation, trace, legality, route-specific evidence and child/payment compatibility.
 
 ## Executable artifacts
 
@@ -93,6 +143,10 @@ docs/exact-recurrent-first-host-action-family-route-leverage.md
 scripts/check_exact_recurrent_first_host_action_family_congruence_obstruction.py
 data/exact_recurrent_first_host_action_family_congruence_obstruction.json
 docs/exact-recurrent-first-host-action-family-congruence-obstruction.md
+
+scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py
+data/exact_recurrent_first_host_action_family_source_import_gate.json
+docs/exact-recurrent-first-host-action-family-source-import-gate.md
 
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
