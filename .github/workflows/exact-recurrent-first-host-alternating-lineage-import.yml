@@ -6,6 +6,7 @@ on:
       - research/exact-recurrent-lyapunov-audit
   pull_request:
     paths:
+      - data/exact_recurrent_side_four_selected_provenance_projection.json
       - data/exact_recurrent_first_host_background_signature.json
       - data/exact_recurrent_first_host_forbidden_background_invariance.json
       - data/exact_recurrent_first_host_physical_source_coverage.json
@@ -46,6 +47,8 @@ on:
       - scripts/check_exact_recurrent_first_host_action_family_route_leverage.py
       - scripts/check_exact_recurrent_first_host_action_family_congruence_obstruction.py
       - scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py
+      - docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md
+      - docs/555-prime-power-installed-operation-registry-1166.md
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
