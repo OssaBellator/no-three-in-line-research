@@ -41,13 +41,23 @@
 - [x] Menu-state-only strict potential refuted on the eight-edge context stock.
 - [x] At least three selector gates proved to require a non-label-descent route.
 - [x] At least four menu edges proved to require a non-menu-descent route.
+- [x] Six scalar-compatible minimum selector route covers classified exactly.
+- [x] Fourteen scalar-compatible minimum menu route covers classified exactly.
+- [x] Menu refinement proved to expand paid selector patterns from six to eight without increasing the paid-gate count.
+- [x] Exactly two directed label tournaments proved to lift to acyclic menu-state orders.
+- [x] Additive bit potentials proved to realize exactly four of fourteen menu orientations.
+- [x] Boolean interaction coefficient `Gamma` classified on all fourteen menu orientations.
+- [x] Exactly ten menu orientations proved to require nonzero interaction.
+- [x] Sharp minimum nonzero integer interaction magnitude proved to be two.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
 - [ ] Attach persistent physical owner identities to all realized selector gates.
-- [ ] Populate one registered closure route or finite capacity for every realized selector gate.
+- [ ] Choose a source-backed scalar route cover or prove the relevant edge domain smaller.
+- [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
+- [ ] Populate one registered closure route or finite capacity for every residual edge.
 - [ ] Prove simultaneous restoration is physically legal or exclude it from the operation registry.
 - [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
 - [ ] Prove the physical CRT label is determinant-realized and populate its role address.
