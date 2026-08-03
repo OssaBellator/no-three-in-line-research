@@ -23,15 +23,21 @@
 - [x] Thirty-two safe backgrounds compressed to three exact selector-score classes.
 - [x] Three-class score quotient proved non-injective on the 31-coordinate signature.
 - [x] Safe class compiled into four exact 31-coordinate signature classes.
-- [x] Four-class signature quotient proved insufficient for payment or transition closure.
+- [x] Four-class reduction to three proved impossible by first-host symmetry.
 - [x] Exact side-four determinant-ratio denominator ceiling reduced from 18 to 13.
 - [x] Conditional side-four arithmetic-profile stock reduced to 20,250.
+- [x] Individual restorations `02` and `20` have fixed safe-class minimizer faces.
+- [x] Simultaneous restoration exposes response `2301` and three new secant coordinates.
+- [x] Safe class compiled into ten exact operation-aware signatures.
+- [x] Six-response score quotient has eight classes and two exact signature collisions.
+- [x] Current four-signature quotient proved not closed under expanded response menus.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
-- [ ] Prove operations and child rows congruent on the four exact signature classes.
+- [ ] Prove simultaneous restoration is physically legal or exclude it from the operation registry.
+- [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
 - [ ] Prove the physical CRT label is determinant-realized and populate its role address.
 - [ ] Exclude, route, pay, or retain the exact one- and two-exterior worklists.
 - [ ] Compile labelled child rows and exact positive weights.
