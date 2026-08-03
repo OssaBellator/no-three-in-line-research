@@ -16,6 +16,7 @@ on:
       - data/exact_recurrent_first_host_physical_fibre_batch_gate.json
       - data/exact_recurrent_first_host_chart_confinement_transfer.json
       - data/exact_recurrent_first_host_chart_fixture_nonpromotion.json
+      - data/exact_recurrent_first_host_one_exterior_original_face.json
       - data/exact_recurrent_first_host_forbidden_background_invariance.json
       - data/exact_recurrent_first_host_global_integer_two_point_strict_reversal.json
       - data/exact_recurrent_side_four_selected_line_geometry.json
@@ -29,6 +30,7 @@ on:
       - scripts/check_exact_recurrent_first_host_physical_fibre_batch_gate.py
       - scripts/check_exact_recurrent_first_host_chart_confinement_transfer.py
       - scripts/check_exact_recurrent_first_host_chart_fixture_nonpromotion.py
+      - scripts/check_exact_recurrent_first_host_one_exterior_original_face.py
       - .github/workflows/exact-recurrent-first-host-physical-fibre-gate.yml
   workflow_dispatch:
 
@@ -60,3 +62,7 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_chart_fixture_nonpromotion.py \
             --check data/exact_recurrent_first_host_chart_fixture_nonpromotion.json
+      - name: Check one-exterior original-face classification
+        run: |
+          python scripts/check_exact_recurrent_first_host_one_exterior_original_face.py \
+            --check data/exact_recurrent_first_host_one_exterior_original_face.json
