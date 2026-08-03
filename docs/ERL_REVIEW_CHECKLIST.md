@@ -66,13 +66,20 @@
 - [x] Capacity-only menu-scalar closure proved to require four distinct exact gate addresses absent a sharing theorem.
 - [x] Every selector edge proved residual in three of six label covers; every menu edge in seven of fourteen menu covers.
 - [x] First traversal of a decorated outer edge proved insufficient to close its repetition.
+- [x] All 64 selector-edge admission masks classified; exactly 25 contain a label-scalar cover.
+- [x] All 256 menu-edge admission masks classified; exactly 79 contain a menu-scalar cover.
+- [x] Pair coverage proved necessary and sufficient except for exactly two directed cycles at each level.
+- [x] One bidirectionally route-closed pair proved sufficient to remove the cycle obstruction.
+- [x] All-restore and all-delete edge sets proved to be exact additive menu-cover patterns.
+- [x] Current zero-admission source state proved to contain no complete scalar cover.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
 - [ ] Fill all sixteen source-backed physical fields per occurrence.
 - [ ] Populate a payment-complete physical-signature map and continuation edges.
 - [ ] Attach persistent physical owner identities to all realized selector gates.
-- [ ] Choose a source-backed scalar route cover or prove the relevant edge domain smaller.
+- [ ] Populate a route-closed edge mask covering every reversal pair and avoiding the two cycle obstructions.
+- [ ] Choose a source-backed scalar route cover contained in that admitted edge mask.
 - [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
 - [ ] Populate direct exact gate capacities or a source-faithful capacity-recreation ledger.
 - [ ] Prove any proposed shared-capacity relation across distinct directed gate addresses.
