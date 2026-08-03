@@ -72,6 +72,25 @@ The two remaining directed edges of the restoration cube are
 
 Both retain selected response `2031`. Hence the eight directed single-bit context edges split exactly into six selector-changing and two selector-neutral edges.
 
+## Selected-label transition obstruction
+
+Project each changing menu edge to its old and new selected-response labels. The six projected edges are
+
+```text
+3012 -> 2031
+2031 -> 3012
+3012 -> 3201
+3201 -> 3012
+2031 -> 3201
+3201 -> 2031.
+```
+
+Thus the selected-label transition graph is the complete bidirected triangle. It has one strongly connected component containing all three labels and three directed two-cycles.
+
+Consequently there is no scalar function depending only on the selected response label that strictly decreases on every one of the six symbolic selector-changing edges. Any closure argument admitting all six edges must retain richer state or use gate-specific impossibility, progress, reset, or capacity data.
+
+This is a symbolic graph obstruction. It does not prove that all six menu edges are physically legal or jointly realizable.
+
 ## Exact improvement over the generic Boolean bound
 
 For three symbolic labels on two Boolean context bits, the generic alternating-core single-bit boundary bound is
@@ -111,8 +130,9 @@ Therefore
 
 ```text
 symbolic Boolean boundary interface available   yes
-physical owner-token gate identification        no
-promotion to recurrent closure                  no.
+strict selected-label-only potential             no
+physical owner-token gate identification         no
+promotion to recurrent closure                   no.
 ```
 
 ## Executable audit
@@ -124,6 +144,6 @@ python scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py \
   --check data/exact_recurrent_first_host_selector_boolean_boundary.json
 ```
 
-The checker reconstructs the four menu states, all eight directed single-bit edges, the six exact recreation gates, the two neutral edges, both exact gate-stock improvements, and rejects twelve deliberate corruptions.
+The checker reconstructs the four menu states, all eight directed single-bit edges, the six exact recreation gates, the two neutral edges, the complete bidirected selected-label graph, both exact gate-stock improvements, and rejects sixteen deliberate corruptions.
 
 Physical chart confinement, occurrence coverage, operation legality, boundary capacities, recurrent child rows, strict Lyapunov slack, global termination, and `all_n_proved_by_checker` remain zero.
