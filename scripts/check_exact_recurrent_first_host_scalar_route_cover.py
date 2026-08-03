@@ -20,7 +20,7 @@ MENUS = {(0, 0): "blocked", (0, 1): "restore_20", (1, 0): "restore_02", (1, 1): 
 
 class AuditError(RuntimeError):
     pass
-n
+
 
 def require(ok: bool, message: str) -> None:
     if not ok:
