@@ -58,6 +58,14 @@
 - [x] Conditional gate-capacity ceiling `N_cap <= C0 + H_cap` installed.
 - [x] Conditional outer-reset ceiling `N_out <= E_first + Q` installed.
 - [x] Sixteen-field alternating route-import worklist compiled with zero populated fields.
+- [x] Five admissible closure-route classes compiled for every directed menu edge.
+- [x] Exact source-admissibility matrix compiled for all forty edge-route pairs.
+- [x] All eight symbolic edges proved to have candidate normalized addresses but zero physical legal-edge proofs.
+- [x] All forty edge-route pairs proved source-inadmissible under current first-host coverage.
+- [x] Capacity-only label-scalar closure proved to require three distinct exact gate addresses absent a sharing theorem.
+- [x] Capacity-only menu-scalar closure proved to require four distinct exact gate addresses absent a sharing theorem.
+- [x] Every selector edge proved residual in three of six label covers; every menu edge in seven of fourteen menu covers.
+- [x] First traversal of a decorated outer edge proved insufficient to close its repetition.
 - [ ] Supply a source-defined occurrence domain and exact expected count.
 - [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
 - [ ] Populate every physical first-host occurrence with the dual-edge bridge.
@@ -67,7 +75,9 @@
 - [ ] Choose a source-backed scalar route cover or prove the relevant edge domain smaller.
 - [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
 - [ ] Populate direct exact gate capacities or a source-faithful capacity-recreation ledger.
+- [ ] Prove any proposed shared-capacity relation across distinct directed gate addresses.
 - [ ] Populate source-backed outer profiles, decorations, epoch bound and macro tickets for reset-routed edges.
+- [ ] Populate the route-specific proof fields for every chosen residual edge.
 - [ ] Populate one registered closure route or finite capacity for every residual edge.
 - [ ] Prove simultaneous restoration is physically legal or exclude it from the operation registry.
 - [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
