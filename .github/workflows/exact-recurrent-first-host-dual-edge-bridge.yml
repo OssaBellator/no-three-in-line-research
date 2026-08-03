@@ -1,0 +1,25 @@
+name: Exact recurrent first-host dual-edge bridge
+
+on:
+  pull_request:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_exact_recurrent_first_host_dual_edge_bridge.py
+      - name: Verify exact bridge manifest
+        run: >-
+          python scripts/check_exact_recurrent_first_host_dual_edge_bridge.py
+          --check data/exact_recurrent_first_host_dual_edge_bridge.json
