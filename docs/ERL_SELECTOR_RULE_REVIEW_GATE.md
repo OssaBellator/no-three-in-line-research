@@ -77,6 +77,8 @@ unique-selector stability theorems applied to a tied face
 a fixture scheduler at another side
 ```
 
-Current restored selector imports: **0**.
+Current restored selector imports: **0 of 3**.
 
-This gate does not authorize physical restoration legality, recurrent child rows, strict Lyapunov closure, global termination, or `all_n_proved_by_checker=1`.
+Current populated restored-selector fields: **0 of 24**.
+
+This gate does not authorize physical restoration legality, persistent owner identity, operation/payment congruence, recurrent child rows, strict Lyapunov closure, global termination, or `all_n_proved_by_checker=1`.
