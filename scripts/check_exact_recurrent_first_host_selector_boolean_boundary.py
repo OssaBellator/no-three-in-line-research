@@ -131,6 +131,17 @@ def compile_manifest() -> dict[str, object]:
     bidirected_pairs = tuple(sorted(tuple(sorted(pair)) for pair in combinations(RESPONSES, 2)))
     require(len(bidirected_pairs) == 3, "label two-cycle census")
 
+    maximum_label_descent_edges = len(bidirected_pairs)
+    minimum_label_other_route_edges = len(label_edges) - maximum_label_descent_edges
+    context_bidirected_pairs = len(directed_single_bit) // 2
+    maximum_context_descent_edges = context_bidirected_pairs
+    minimum_context_other_route_edges = len(directed_single_bit) - maximum_context_descent_edges
+    require(maximum_label_descent_edges == 3, "maximum label descent edge count")
+    require(minimum_label_other_route_edges == 3, "minimum label other-route count")
+    require(context_bidirected_pairs == 4, "context two-cycle count")
+    require(maximum_context_descent_edges == 4, "maximum context descent edge count")
+    require(minimum_context_other_route_edges == 4, "minimum context other-route count")
+
     gate_rows = []
     for response in RESPONSES:
         for source, target in single_bit_gates[response]:
@@ -147,7 +158,7 @@ def compile_manifest() -> dict[str, object]:
             )
 
     return {
-        "schema": "exact-recurrent-first-host-selector-boolean-boundary/v2",
+        "schema": "exact-recurrent-first-host-selector-boolean-boundary/v3",
         "scope": {
             "host_id": HOST_ID,
             "context_bits": [
@@ -190,12 +201,21 @@ def compile_manifest() -> dict[str, object]:
             ],
             "bidirected_pairs": [list(pair) for pair in bidirected_pairs],
             "strongly_connected_components": [list(RESPONSES)],
+            "maximum_edges_payable_by_strict_label_descent": maximum_label_descent_edges,
+            "minimum_edges_requiring_non_label_descent_route": minimum_label_other_route_edges,
+        },
+        "menu_transition_graph": {
+            "directed_edges": len(directed_single_bit),
+            "bidirected_pairs": context_bidirected_pairs,
+            "maximum_edges_payable_by_strict_menu_descent": maximum_context_descent_edges,
+            "minimum_edges_requiring_non_menu_descent_route": minimum_context_other_route_edges,
         },
         "aggregate": {
             "context_bits": 2,
             "menu_states": len(states),
             "symbolic_selected_response_labels": len(RESPONSES),
             "directed_single_bit_context_edges": len(directed_single_bit),
+            "context_bidirected_pairs": context_bidirected_pairs,
             "selector_changing_single_bit_edges": len(changing),
             "selector_neutral_single_bit_edges": len(neutral),
             "exact_single_bit_recreation_gates": sum(map(len, single_bit_gates.values())),
@@ -208,6 +228,10 @@ def compile_manifest() -> dict[str, object]:
             "selected_label_bidirected_pairs": len(bidirected_pairs),
             "selected_label_strongly_connected_components": 1,
             "largest_selected_label_scc": len(RESPONSES),
+            "maximum_selected_label_edges_payable_by_strict_descent": maximum_label_descent_edges,
+            "minimum_selector_edges_requiring_other_route": minimum_label_other_route_edges,
+            "maximum_menu_edges_payable_by_strict_descent": maximum_context_descent_edges,
+            "minimum_menu_edges_requiring_other_route": minimum_context_other_route_edges,
         },
         "conclusion": {
             "selected_response_predicates_exact_on_safe_class": 1,
@@ -216,6 +240,9 @@ def compile_manifest() -> dict[str, object]:
             "two_selector_neutral_menu_edges_identified": 1,
             "selected_label_transition_graph_complete_bidirected": 1,
             "strict_selected_label_potential_exists_on_all_six_edges": 0,
+            "strict_menu_state_potential_exists_on_all_eight_edges": 0,
+            "at_least_three_selector_edges_need_non_label_descent_route": 1,
+            "at_least_four_menu_edges_need_non_menu_descent_route": 1,
             "alternating_core_boolean_boundary_interface_applicable_symbolically": 1,
             "physical_owner_token_identification_proved": 0,
             "physical_transition_legality_proved": 0,
@@ -248,11 +275,14 @@ def mutation_audit(manifest: dict[str, object]) -> int:
         lambda item: item["aggregate"].update(changing_edges_flipping_r02=3),
         lambda item: item["aggregate"].update(selected_label_transition_edges=5),
         lambda item: item["aggregate"].update(selected_label_bidirected_pairs=2),
+        lambda item: item["aggregate"].update(minimum_selector_edges_requiring_other_route=2),
+        lambda item: item["aggregate"].update(minimum_menu_edges_requiring_other_route=3),
         lambda item: item["predicates"].update(2031="r20"),
         lambda item: item["single_bit_recreation_gates"].pop(),
         lambda item: item["selector_neutral_single_bit_edges"].pop(),
         lambda item: item["selected_label_transition_graph"]["directed_edges"].pop(),
         lambda item: item["conclusion"].update(strict_selected_label_potential_exists_on_all_six_edges=1),
+        lambda item: item["conclusion"].update(strict_menu_state_potential_exists_on_all_eight_edges=1),
         lambda item: item["conclusion"].update(physical_owner_token_identification_proved=1),
         lambda item: item["conclusion"].update(promotion_to_recurrent_closure_allowed=1),
         lambda item: item["honesty"].update(all_n_proved_by_checker=1),
