@@ -167,12 +167,60 @@ inside each fixed restoration menu even though the exact face and operation
 geometry require more states. This is a partial congruence result only; it does
 not identify child rows, weights, budgets, continuation edges or capacities.
 
+## ERL2d — exact Boolean selector boundary and descent obstruction
+
+Use restoration bits
+
+```text
+r02=1 iff edge 02 is restored
+r20=1 iff edge 20 is restored.
+```
+
+The exact selected-response predicates are
+
+```text
+3012 iff not r02 and not r20
+2031 iff r02
+3201 iff not r02 and r20.
+```
+
+The two-bit cube has eight directed single-bit context edges. Six change the
+selected response and two toggle `r20` while retaining `2031`. The six exact
+false-to-true selector gates split as two gates for each of `3012`, `2031` and
+`3201`, improving the generic three-label single-bit bound from 12 to 6. The
+exact arbitrary-jump gate stock is 10 rather than the generic bound 12.
+
+After projecting the six changing edges to selected labels, every ordered pair
+of distinct labels occurs. Hence the label graph is the complete bidirected
+triangle with one three-vertex strongly connected component.
+
+A scalar label potential can strictly pay at most one direction from each of
+the three unordered label pairs. Therefore
+
+```text
+maximum selector edges payable by strict label descent  3
+minimum selector edges requiring another closure route   3.
+```
+
+Likewise the four-state menu graph is bidirected on all four cube edges, so a
+menu-state-only scalar can strictly pay at most four of its eight directed
+edges. At least four menu edges require physical exclusion, richer-state
+progress, finite capacity, terminal output or builder reset.
+
+These are symbolic lower bounds. Persistent owner identity, legal transition
+realization and gate capacities remain unpopulated.
+
 ## Import boundary
 
 Current source coverage still has zero of sixteen physical fields populated.
 There is no proof that legal operations, intermediate states, child rows,
 weights, budgets, continuation identity or shared capacities factor through the
 ten operation-aware signatures.
+
+The selector Boolean interface now supplies six exact symbolic gate addresses,
+but no gate is attached to a persistent physical owner token and no closure
+route or capacity is populated. Selected-label-only and menu-state-only strict
+potentials are both refuted on the complete symbolic edge stocks.
 
 The arithmetic import supplies a finite conditional CRT alphabet but not the
 actual CRT profile or continuation/payment data.
@@ -212,10 +260,15 @@ scripts/check_exact_recurrent_first_host_restoration_selector_face.py
 data/exact_recurrent_first_host_restoration_selector_face.json
 docs/exact-recurrent-first-host-restoration-selector-face.md
 
+scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py
+data/exact_recurrent_first_host_selector_boolean_boundary.json
+docs/exact-recurrent-first-host-selector-boolean-boundary.md
+
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
 
-The next admissible cross-branch result must populate a payment-complete physical
-signature map and registered continuation edges, prove operation and child-row
-congruence on the ten exact operation-aware states, or attach a physically
-determinant-realized CRT profile and finite external role address.
+The next admissible cross-branch result must attach physical owner identities and
+registered closure routes to all realized selector gates, populate a
+payment-complete physical signature map and continuation edges, prove operation
+and child-row congruence on the ten exact operation-aware states, or attach a
+physically determinant-realized CRT profile and finite external role address.
