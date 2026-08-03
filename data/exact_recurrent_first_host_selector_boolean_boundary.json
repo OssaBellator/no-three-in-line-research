@@ -8,7 +8,11 @@
     "exact_single_bit_recreation_gates": 6,
     "generic_arbitrary_gate_bound_three_labels": 12,
     "generic_single_bit_gate_bound_three_labels": 12,
+    "largest_selected_label_scc": 3,
     "menu_states": 4,
+    "selected_label_bidirected_pairs": 3,
+    "selected_label_strongly_connected_components": 1,
+    "selected_label_transition_edges": 6,
     "selector_changing_single_bit_edges": 6,
     "selector_neutral_single_bit_edges": 2,
     "symbolic_selected_response_labels": 3
@@ -20,8 +24,10 @@
     "physical_owner_token_identification_proved": 0,
     "physical_transition_legality_proved": 0,
     "promotion_to_recurrent_closure_allowed": 0,
+    "selected_label_transition_graph_complete_bidirected": 1,
     "selected_response_predicates_exact_on_safe_class": 1,
     "single_bit_selector_recreation_stock_exact": 1,
+    "strict_selected_label_potential_exists_on_all_six_edges": 0,
     "two_selector_neutral_menu_edges_identified": 1
   },
   "honesty": {
@@ -60,7 +66,7 @@
     "3012": "not r02 and not r20",
     "3201": "not r02 and r20"
   },
-  "schema": "exact-recurrent-first-host-selector-boolean-boundary/v1",
+  "schema": "exact-recurrent-first-host-selector-boolean-boundary/v2",
   "scope": {
     "context_bits": [
       "r02=1 iff deletion edge 02 is restored",
@@ -69,6 +75,60 @@
     "host_id": "s4-75b04c45c1c8eac2",
     "selector_rule": "lexicographically least complete-score minimizer on the chart-safe class",
     "symbolic_selected_responses": [
+      "3012",
+      "2031",
+      "3201"
+    ]
+  },
+  "selected_label_transition_graph": {
+    "bidirected_pairs": [
+      [
+        "2031",
+        "3012"
+      ],
+      [
+        "2031",
+        "3201"
+      ],
+      [
+        "3012",
+        "3201"
+      ]
+    ],
+    "directed_edges": [
+      {
+        "source": "2031",
+        "target": "3012"
+      },
+      {
+        "source": "2031",
+        "target": "3201"
+      },
+      {
+        "source": "3012",
+        "target": "2031"
+      },
+      {
+        "source": "3012",
+        "target": "3201"
+      },
+      {
+        "source": "3201",
+        "target": "2031"
+      },
+      {
+        "source": "3201",
+        "target": "3012"
+      }
+    ],
+    "strongly_connected_components": [
+      [
+        "3012",
+        "2031",
+        "3201"
+      ]
+    ],
+    "vertices": [
       "3012",
       "2031",
       "3201"
