@@ -121,6 +121,44 @@ Each signature obligation has nine source-evidence fields, for 288 exact slots. 
 
 The four-coordinate operation signature is a score-worklist index, not a proved physical owner/child/payment signature.
 
+## ERL2t — source-import gate
+
+The owner/fate ancestry and installed operation-registry documents jointly expose all five required abstract components:
+
+```text
+common owner
+operation
+child row
+payment
+closure route.
+```
+
+The unique minimum abstract source cover uses both documents. Neither source alone is complete, neither document names any first-host face response, and neither supplies an occurrence-faithful response-pair join.
+
+The exact import modes are now registered with stable IDs:
+
+```text
+signature-specific   32 records, 288 evidence slots
+menu-parametric       4 records,  40 evidence slots
+cross-menu            3 records,  30 evidence slots.
+```
+
+A mode is accepted only when every record required by that mode is complete. Partial records from different modes do not combine into a proof.
+
+Current source-import census:
+
+```text
+abstract component union complete         1
+occurrence-faithful pair joins             0
+first-host response-pair theorems          0
+accepted signature records                0 of 32
+accepted menu-parametric theorems          0 of 4
+accepted cross-menu theorems               0 of 3
+accepted import modes                      0 of 3.
+```
+
+The schema cover does not authorize selector substitution.
+
 ## Current boundary
 
 ```text
@@ -130,6 +168,7 @@ source-restored selector semantics          0
 source scheduler tie-break                  0
 complete-face operation/payment congruence  0
 accepted face-congruence obligations        0 of 32
+accepted face-congruence import modes        0 of 3
 promotion to recurrent closure              0
 all_n_proved_by_checker                     0.
 ```
@@ -145,7 +184,12 @@ scripts/check_exact_recurrent_first_host_selector_face_congruence_worklist.py
 data/exact_recurrent_first_host_selector_face_congruence_worklist.json
 docs/exact-recurrent-first-host-selector-face-congruence-worklist.md
 
+scripts/check_exact_recurrent_first_host_selector_face_source_import_gate.py
+data/exact_recurrent_first_host_selector_face_source_import_gate.json
+docs/exact-recurrent-first-host-selector-face-source-import-gate.md
+
 docs/ERL_SELECTOR_RULE_REVIEW_GATE.md
 docs/ERL_SELECTOR_FACE_CONGRUENCE_REVIEW_GATE.md
+docs/ERL_SELECTOR_FACE_SOURCE_IMPORT_REVIEW_GATE.md
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
