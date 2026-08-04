@@ -1,0 +1,30 @@
+name: Side-four joint sample weight compatibility
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_sample_weight_feasibility_contract.json'
+      - 'data/prime_power_side_four_blocker_sample_weight_feasibility_contract.json'
+      - 'data/prime_power_side_four_joint_sample_weight_compatibility_contract.json'
+      - 'scripts/check_prime_power_side_four_sample_weight_feasibility.py'
+      - 'scripts/check_prime_power_side_four_blocker_sample_weight_feasibility.py'
+      - 'scripts/check_prime_power_side_four_joint_sample_weight_compatibility.py'
+      - 'docs/570-prime-power-side-four-joint-sample-weight-compatibility.md'
+      - '.github/workflows/side-four-joint-sample-weight-compatibility.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  compatibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_sample_weight_feasibility.py
+      - run: python scripts/check_prime_power_side_four_blocker_sample_weight_feasibility.py
+      - run: python scripts/check_prime_power_side_four_joint_sample_weight_compatibility.py
