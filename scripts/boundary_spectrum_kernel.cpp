@@ -1,0 +1,17 @@
+#include <algorithm>
+#include <array>
+#include <iostream>
+#include <map>
+#include <set>
+#include <string>
+#include <tuple>
+#include <vector>
+using namespace std;
+struct Pt{int x,y;bool operator<(Pt const&o)const{return tie(x,y)<tie(o.x,o.y);}};
+long long cross(Pt a,Pt b,Pt c){return 1LL*(b.x-a.x)*(c.y-a.y)-1LL*(b.y-a.y)*(c.x-a.x);}
+struct Node{string name;vector<Pt>p;};
+struct Solver{int n;vector<array<int,3>>e;vector<char>s;int best;bool hit(array<int,3>const&a){return s[a[0]]||s[a[1]]||s[a[2]];}int lb(vector<int>const&u){vector<char>x(n);int c=0;for(int i:u){auto a=e[i];if(!x[a[0]]&&!x[a[1]]&&!x[a[2]])x[a[0]]=x[a[1]]=x[a[2]]=1,c++;}return c;}void dfs(int c){if(c>=best)return;vector<int>u;vector<int>f(n);for(int i=0;i<(int)e.size();i++)if(!hit(e[i])){u.push_back(i);for(int v:e[i])f[v]++;}if(u.empty()){best=c;return;}if(c+lb(u)>=best)return;int q=u[0],z=-1;for(int i:u){int t=0;for(int v:e[i])t+=f[v];if(t>z)z=t,q=i;}auto a=e[q];sort(a.begin(),a.end(),[&](int x,int y){return f[x]>f[y];});for(int v:a)s[v]=1,dfs(c+1),s[v]=0;}int minimum(int ub){s.assign(n,0);best=ub;dfs(0);return best;}void en(int t,set<vector<int>>&out,int c=0){if(c>t)return;vector<int>u;vector<int>f(n);for(int i=0;i<(int)e.size();i++)if(!hit(e[i])){u.push_back(i);for(int v:e[i])f[v]++;}if(u.empty()){if(c==t){vector<int>a;for(int i=0;i<n;i++)if(s[i])a.push_back(i);out.insert(a);}return;}if(c+lb(u)>t)return;int q=u[0],z=-1;for(int i:u){int w=0;for(int v:e[i])w+=f[v];if(w>z)z=w,q=i;}auto a=e[q];sort(a.begin(),a.end(),[&](int x,int y){return f[x]>f[y];});for(int v:a)s[v]=1,en(t,out,c+1),s[v]=0;}};
+vector<Node> nodes={
+{"P0",{{0,0},{0,2},{1,1},{1,3},{2,1},{2,3},{3,0},{3,2}}},{"P1",{{0,0},{0,3},{1,1},{1,2},{2,0},{2,3},{3,1},{3,2}}},{"P2",{{0,1},{0,3},{1,0},{1,2},{2,0},{2,2},{3,1},{3,3}}},{"P3",{{0,1},{0,2},{1,0},{1,3},{2,1},{2,2},{3,0},{3,3}}},
+{"Q0",{{0,3},{0,5},{1,0},{1,6},{2,2},{2,4},{3,1},{3,5},{4,2},{4,4},{5,0},{5,6},{6,1},{6,3}}},{"Q1",{{0,1},{0,5},{1,0},{1,3},{2,2},{2,4},{3,0},{3,6},{4,2},{4,4},{5,3},{5,6},{6,1},{6,5}}},{"Q2",{{0,1},{0,3},{1,0},{1,6},{2,2},{2,4},{3,1},{3,5},{4,2},{4,4},{5,0},{5,6},{6,3},{6,5}}},{"Q3",{{0,1},{0,5},{1,3},{1,6},{2,2},{2,4},{3,0},{3,6},{4,2},{4,4},{5,0},{5,3},{6,1},{6,5}}}};
+int main(){int J;cin>>J;while(J--){string label;int n,origin,limit;cin>>label>>n>>origin>>limit;vector<Pt>T(n);for(auto&p:T)cin>>p.x>>p.y;map<int,int>h;int best=99;cout<<"BEGIN "<<label<<"\n";for(auto const&node:nodes)for(int off=-64;off<=64;off++){vector<Pt>b;for(auto p:node.p)b.push_back({origin+p.x,213+off+p.y});vector<Pt>a=T;a.insert(a.end(),b.begin(),b.end());sort(a.begin(),a.end());a.erase(unique(a.begin(),a.end(),[](Pt x,Pt y){return x.x==y.x&&x.y==y.y;}),a.end());auto at=[&](Pt p){return int(lower_bound(a.begin(),a.end(),p)-a.begin());};set<array<int,3>>es;for(int i=0;i<n;i++)for(int j=i+1;j<n;j++)for(auto c:b)if(cross(T[i],T[j],c)==0){array<int,3>x={at(T[i]),at(T[j]),at(c)};sort(x.begin(),x.end());es.insert(x);}for(int i=0;i<(int)b.size();i++)for(int j=i+1;j<(int)b.size();j++)for(auto c:T)if(cross(b[i],b[j],c)==0){array<int,3>x={at(b[i]),at(b[j]),at(c)};sort(x.begin(),x.end());es.insert(x);}Solver s;s.n=a.size();s.e.assign(es.begin(),es.end());int m=s.minimum(node.p.size()+1);h[m]++;best=min(best,m);if(m<=limit){s.s.assign(s.n,0);set<vector<int>>cs;s.en(m,cs);cout<<"ATT "<<node.name<<" "<<off<<" "<<es.size()<<" "<<m<<" "<<cs.size()<<"\n";for(auto const&v:cs){cout<<"CORE";for(int i:v)cout<<" "<<a[i].x<<","<<a[i].y;cout<<"\n";}}}cout<<"HIST";for(auto[k,v]:h)cout<<" "<<k<<":"<<v;cout<<" BEST "<<best<<"\nEND\n";}}
