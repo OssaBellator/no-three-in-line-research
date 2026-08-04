@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-04T20:42:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-04T21:02:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -18,11 +18,11 @@ all-length coordinate constructions.
   `docs/663--668`, `docs/669--674`, `docs/675--680`, and `docs/681--686`.
 - In-progress tranche: `docs/687--692`.
 - Completed in current tranche: boundary `docs/687`, Hall `docs/688`, threshold
-  `docs/689`.
-- Current theorem range in this tranche: `PP3ddt--PP3deb`.
-- Next available theorem identifier: `PP3dec`.
-- Latest threshold theorem commit before this continuity update:
-  `8daee56910dfc23bd2f53d296c77a04c43adc27e`.
+  `docs/689`, prefix `docs/690`.
+- Current theorem range in this tranche: `PP3ddt--PP3dee`.
+- Next available theorem identifier: `PP3def`.
+- Latest prefix theorem commit before this continuity update:
+  `eb9a658089fe0555529e6808da95c1339d2687fd`.
 
 ## Current tranche progress
 
@@ -40,9 +40,7 @@ Theorems `PP3ddt--PP3ddv`.
 - Any corrected nineteenth transition needs budget at least seven, a raw attempt
   of minimum at least seven, or a changed repertoire/state representation.
 
-Reproducibility:
-
-- `scripts/check_boundary_nineteenth_low_frontier_obstruction.py`
+Reproducibility: `scripts/check_boundary_nineteenth_low_frontier_obstruction.py`.
 
 ### Hall — `docs/688-hall-packet-transfer-matrix.md`
 
@@ -60,28 +58,39 @@ Theorems `PP3ddw--PP3ddy`.
 - A smallest strict Hall example reaches 28 centres in nine packets rather than
   thirteen under the additive charge.
 
-Reproducibility:
-
-- `scripts/check_hall_packet_transfer_matrix.py`
+Reproducibility: `scripts/check_hall_packet_transfer_matrix.py`.
 
 ### Threshold — `docs/689-threshold-identity-window-density.md`
 
 Theorems `PP3ddz--PP3deb`.
 
-- Among all 126 four-layer type multisets from the forced primitive alphabet
-  `{I,P1,...,P5}`, all 70 identity-free types are legal and all 56
-  identity-containing types are illegal.
-- A cyclic schedule of `K` minimum batches has exactly `3K` identity positions and
-  at most `5K-3` legal four-windows. A contiguous identity block attains the
-  bound.
+- Among all 126 four-layer type multisets from `{I,P1,...,P5}`, all 70
+  identity-free types are legal and all 56 identity-containing types are illegal.
+- A cyclic schedule of `K` minimum batches has at most `5K-3` legal four-windows;
+  a contiguous identity block attains the bound.
 - The exact minimum illegal-window count is `3K+3`; the optimal asymptotic legal
-  density is therefore `5/8`.
+  density is `5/8`.
 - Exhaustive identity-position censuses for `K=1,2,3` contain 56, 8,008, and
-  1,307,504 cases and attain maxima 2, 7, and 12 respectively, matching `5K-3`.
+  1,307,504 cases and attain maxima 2, 7, and 12.
 
-Reproducibility:
+Reproducibility: `scripts/check_threshold_identity_window_density.py`.
 
-- `scripts/check_threshold_identity_window_density.py`
+### Prefix — `docs/690-all-optimal-prefix-short-compositions.md`
+
+Theorems `PP3dec--PP3dee`.
+
+- The complete physical family contains 104 minimum-crossing matchings, two
+  deletion classes, and exactly 144 optimal radius-four routes per case.
+- Every optimal route succeeds for every ordered composition of eleven with at
+  most three runs; there are 56 such compositions.
+- The exact audit contains `104*2*144*56=1,677,312` coordinate embeddings with no
+  failures or mixed-run collinear triples.
+- Uniform maximum coordinates are 120 for deletion `{0,2}` and 154 for deletion
+  `{3,5}`.
+- This covers all optimal routes on a bounded composition family, but not the
+  remaining 968 compositions per route or an all-size recurrence.
+
+Reproducibility: `scripts/check_prefix_all_optimal_short_compositions.py`.
 
 ## Prior canonical tranche: `docs/681--686`
 
@@ -90,10 +99,9 @@ Reproducibility:
 - Hall: defect-incidence line graphs give exact degree-two odd-path retention and
   safe additive packet-interface bounds.
 - Threshold: 19,834 minimum endpoint batches share one rigid primitive aggregate
-  with twelve identity layers; no one-batch cyclic four-window schedule conceals
-  it.
-- Prefix: all 104 physical matchings, both deletions, and all 1,024 compositions
-  pass the deterministic first optimal route, totaling 212,992 audits.
+  with twelve identity layers.
+- Prefix: all 104 physical matchings and all 1,024 compositions pass the
+  deterministic first optimal route, totaling 212,992 audits.
 - Shell: robust circulation is an exact rational LP; connected balanced support
   clears to one Euler walk and disconnected support pays connector loss.
 - Integration: candidate completion is `25/30`; all rows remain
@@ -104,8 +112,8 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
 
 ## Validation status
 
-- Boundary, Hall, and threshold standalone audits passed in isolated local
-  execution in roughly five, one, and nine seconds respectively.
+- Boundary, Hall, threshold, and prefix standalone audits passed in isolated local
+  execution in roughly five, one, nine, and twenty-eight seconds respectively.
 - The complete historical chained runner remains unavailable because a full local
   checkout cannot be obtained; direct clone attempts cannot resolve `github.com`.
 
@@ -115,11 +123,11 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
   authoritative when stale prose or assertions disagree.
 - Do not search boundary budget seven naively; require symmetry, exact-cover,
   repeated-row, or state-signature pruning.
-- Use the exact Hall transfer matrix when packet boundary states are available;
-  retain additive interface charging only as a safe coarse certificate.
+- Use the exact Hall transfer matrix when packet boundary states are available.
 - Treat the threshold `5/8` density as an obstruction for the forced rolling
-  four-window alphabet, not for larger endpoint windows or non-rolling hidden
-  operations.
+  four-window alphabet, not for larger windows or genuinely hidden operations.
+- Treat the prefix all-route theorem as bounded to compositions with at most three
+  runs and the fixed thirteen-pair source.
 - Preserve one canonical theorem chapter, checker, certificate, and parity row per
   frontier number.
 - Promote no row without a recurrent or asymptotic coordinate source path.
@@ -131,8 +139,9 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
 - Hall: no coordinate packet family supplies actual resource lists, defect labels,
   packet boundaries, and repeatable geometric transfer states.
 - Threshold: minimum-batch rolling schedules retain illegal exposure density at
-  least `3/8`; no larger-window or genuinely hidden geometric operation is known.
-- Prefix: no recurrence between source sizes and no all-optimal-route theorem.
+  least `3/8`; no larger-window or genuinely hidden operation is known.
+- Prefix: 968 longer compositions remain unaudited for all 144 routes; there is no
+  recurrence between source sizes.
 - Shell: no coordinate macro graph supplies a positive connected circulation and
   certified burden polytope.
 - Integration: all rows and coupling coefficients remain fixture-derived.
@@ -144,15 +153,13 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
 
 ## Exact next steps
 
-1. Continue theorem numbering at `PP3dec` and build `docs/690--692`.
-2. Prefix (`docs/690`): extend beyond the deterministic first route, or isolate a
-   finite-state recurrence between the thirteen- and fourteen-pair reservoirs.
-3. Shell (`docs/691`): derive the exact minimum connector augmentation for
+1. Continue theorem numbering at `PP3def` and build `docs/691--692`.
+2. Shell (`docs/691`): derive the exact minimum connector augmentation for
    disconnected positive circulations and audit small macro graphs.
-4. Integration (`docs/692`): update the gate, certificate, parity supplement, and
+3. Integration (`docs/692`): update the gate, certificate, parity supplement, and
    chained runner; preserve `25/30`, the fixed point, and closed gate absent a
    promoted coordinate path.
-5. Run the complete historical chain when a full checkout becomes available,
+4. Run the complete historical chain when a full checkout becomes available,
    verify the remote head, and refresh this handoff.
 
 ## Conventions
