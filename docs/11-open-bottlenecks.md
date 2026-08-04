@@ -21,73 +21,95 @@ checkers = 77
 ```text
 86 normalized hosts and complete response families
 canonical selectors and full minimizer faces
-378 ordered response-to-response transitions
-344 identity-to-selected exchange entries
+exact response-exchange and returned-edge kernels
 344 rank-one and 516 rank-two structural return slots
 516 compulsory dependency records
 488 exact symbolic response-line occurrences
 86-record actual-background profile schema
 ```
 
-The normalized host, return-exchange and symbolic line structures are complete. They do not determine the inherited background or global child state.
+The normalized structures do not determine inherited backgrounds or global child states.
 
-## 4. Newly populated sample row
+## 4. Populated zero-response sample
 
 ```text
-sample seal = 71ba5fcea70f61c5e94e40a635b7eddaa8cb72c8c0cdda9fb78f0f56a84609a0
-routing seal = f4920483e99ed4d53da28fc5a752391e570cfceab828937e5d63ac36d91553b5
 host = s4-fc915f89dec31fec
-selected response = 2031
-background = {(4,4), (6,5)}
+selector = 2031
+background = {(4,4),(6,5)}
+rank totals = (2,2,0)
+line total = 4
+return charges = {00:1, 22:3}
 ```
 
-The explicit sample numerically populates two non-geometric categories:
+The four credits route to three child classes with coefficient vector `(1,1,2)`. The local return cone has witness
 
 ```text
-rank-one line/return total = 2
-rank-two line/return total = 2
-complete line-kernel total = 4
-return charge census = {00:1, 22:3}
+parent = 8
+child weights = 1,1,1
+weighted total = 4
+slack = 4
 ```
 
-The four credits are routed exactly once. Line energy certifies the count; return classes receive the offspring charges. Three full child keys are installed after lossless compression:
+This witness is scoped and not globally bound.
+
+## 5. Populated blocker-alternative sample
 
 ```text
-return:00 rank-one coefficient 1
-return:22 rank-one coefficient 1
-return:22 rank-two coefficient 2
+host = s4-75b04c45c1c8eac2
+selector = 3012
+collision key = 02,20
+blocker = b4-8a44614df456
+background = {(-1,6),(-2,9)}
+rank totals = (2,2,1)
+line total = 5
+return charges = {00:1, 11:3, 33:1}
 ```
 
-## 5. Active frontier
+The intrinsic rank-three response credit is routed once to `return:33`. The five credits compress to four child classes with coefficient vector `(1,1,2,1)`. The local return cone has witness
 
 ```text
-supply or derive positive weights for the three sample child classes
-bind an actual parent weight/budget rather than inventing one
-attach selector, collision and interface coefficients for the sample row
-ensure the complete coupled row counts each recreated credit once
-extend the explicit background batch to additional selector and blocker classes
-publish a strict row or an exact residual binding worklist
+parent = 10
+child weights = 1,1,1,1
+weighted total = 5
+slack = 5
 ```
 
-## 6. Exact blockers
+This witness is also scoped and not globally bound.
 
-1. The sample child weights are symbolic and have no globally bound Lyapunov values.
-2. No parent weight or destroyed-load budget is attached to the sample row.
-3. Selector, collision and interface terms remain unresolved.
-4. The sample is an explicit coordinate profile, not proof that the profile occurs in every recurrent provenance fibre.
-5. The remaining 85 normalized hosts still have no actual background profiles.
-6. Complete coupled selector scores on tied minimizer faces are missing.
-7. Global transition exhaustiveness and termination remain open.
-
-## 7. Validation boundary
+## 6. Active frontier
 
 ```text
-sample coefficient compiler = functionally executed locally
-sample coefficient corruptions rejected = 14
-sample routing compiler = functionally executed locally
-sample routing corruptions rejected = 14
+identify the exact parent recurrent state for each sample
+bind two parent weights and seven child-class weights to one installed global Lyapunov vector
+or publish a checked incompatibility/residual-binding contract
+populate selector coefficients on full minimizer faces
+populate collision and interface coefficients and child keys
+test a joint normalized weight assignment for both rows
+extend to another blocker collision class
+```
+
+## 7. Exact blockers
+
+1. Neither sample is proven to occur as a global recurrent provenance state.
+2. The two parent state keys are unresolved.
+3. Seven child-class weight symbols are not bound to a global Lyapunov vector.
+4. Selector, collision and interface categories remain unresolved for both rows.
+5. Local cone witnesses do not imply compatibility with the rest of the recurrent matrix.
+6. The remaining 84 normalized hosts have no populated actual-background profiles.
+7. Complete coupled selector scores on tied minimizer faces are missing.
+8. Global transition exhaustiveness and termination remain open.
+
+## 8. Validation boundary
+
+```text
+zero-response coefficient and routing compilers = functionally executed locally
+zero-response corruption audits = 14 + 14 rejected
+zero-response weight arithmetic = reproduced locally
+blocker coefficient/routing/weight arithmetic = reproduced locally
+new checker sources = syntax-compiled locally
+complete repository execution of all new checkers = not independently observed
 complete 77-checker runner = not executed
 workflow success = not observed
 ```
 
-Workflow configuration is not CI success. A populated sample and exact child routing do not substitute for globally bound weights, complete compulsory rows, or termination.
+Workflow configuration is not CI success. Two populated samples and locally feasible return cones do not substitute for globally compatible weights, complete compulsory rows, or termination.
