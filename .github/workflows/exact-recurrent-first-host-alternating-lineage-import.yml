@@ -83,7 +83,7 @@ on:
       - docs/exact-recurrent-first-host-selector-boolean-boundary.md
       - docs/exact-recurrent-first-host-scalar-route-cover.md
       - docs/exact-recurrent-first-host-menu-interaction-potential.md
-      - docs/exact-recurrent-first-host-alternating-route_budget_import.md
+      - docs/exact-recurrent-first-host-alternating-route-budget-import.md
       - docs/exact-recurrent-first-host-closure-route-source-gate.md
       - docs/exact-recurrent-first-host-route-cover-admission.md
       - docs/exact-recurrent-first-host-transition-domain-source-audit.md
