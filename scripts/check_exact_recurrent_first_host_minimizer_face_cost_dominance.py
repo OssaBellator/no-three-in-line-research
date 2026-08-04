@@ -43,8 +43,8 @@ def acyclic(ds):
     return n==len(V)
 def projectable(b): return b[2]==b[3] and b[4]==b[5]
 def cid(b):
-    return sid({"paid_face_directions":sorted(f"{a}->{c}" for a,c in dirs(b)),
-                "menu_projectable":int(projectable(b))})
+    return sid({"paid":sorted(f"{a}->{c}" for a,c in dirs(b)),
+                "projectable":int(projectable(b))})
 def state_edge(a,b):
     s={"A":"00","B":"01","C":"10","D3":"11","D4":"11"}
     return f"{s[a]}->{s[b]}"
