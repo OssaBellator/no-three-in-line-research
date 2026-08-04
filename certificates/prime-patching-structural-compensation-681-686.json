@@ -12,16 +12,23 @@
   "boundary": {
     "corrected_points": 144,
     "corrected_blocks": 18,
+    "canonical_state_coordinate": [42, 378],
+    "stale_state_coordinate_excluded": [42, 193],
     "raw_nineteenth_histogram": {
-      "4": 1, "5": 13, "6": 46, "7": 176, "8": 280, "9": 1,
-      "10": 17, "11": 61, "12": 124, "13": 176, "14": 137
+      "4": 2, "5": 9, "6": 47, "7": 175, "8": 283, "9": 3,
+      "10": 16, "11": 63, "12": 121, "13": 176, "14": 137
     },
-    "unique_minimum_four_attempt": "P2/-64",
-    "minimum_cores": 5,
+    "minimum_four_attempts": {
+      "P1/-33": 1,
+      "P2/-64": 5
+    },
+    "minimum_cores": 6,
     "none_through_budget": 6,
-    "budget_six_replacements_per_core": 7595280,
-    "budget_six_replacements_total": 37976400,
-    "corrected_nineteenth_transition": false
+    "budget_six_replacements_per_core": 7595640,
+    "budget_six_replacements_total": 45573840,
+    "corrected_nineteenth_transition_within_range": false,
+    "later_canonical_transition_budget": 7,
+    "later_canonical_transition_document": "docs/693-corrected-nineteenth-boundary-transition.md"
   },
   "hall": {
     "defect_multigraph": "centres are source-host defect edges",
