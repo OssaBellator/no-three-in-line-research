@@ -28,73 +28,72 @@ exact response-exchange and returned-edge kernels
 86-record actual-background profile schema
 ```
 
-The normalized structures do not determine inherited backgrounds or global child states.
+## 4. Two populated sample rows
 
-## 4. Populated zero-response sample
+### Zero-response row
 
 ```text
 host = s4-fc915f89dec31fec
-selector = 2031
-background = {(4,4),(6,5)}
 rank totals = (2,2,0)
-line total = 4
-return charges = {00:1, 22:3}
+return coefficient vector = (1,1,2)
+local witness = parent 8; children 1,1,1
+local slack = 4
 ```
 
-The four credits route to three child classes with coefficient vector `(1,1,2)`. The local return cone has witness
-
-```text
-parent = 8
-child weights = 1,1,1
-weighted total = 4
-slack = 4
-```
-
-This witness is scoped and not globally bound.
-
-## 5. Populated blocker-alternative sample
+### Blocker-alternative row
 
 ```text
 host = s4-75b04c45c1c8eac2
-selector = 3012
 collision key = 02,20
 blocker = b4-8a44614df456
-background = {(-1,6),(-2,9)}
 rank totals = (2,2,1)
-line total = 5
-return charges = {00:1, 11:3, 33:1}
+return coefficient vector = (1,1,2,1)
+local witness = parent 10; children 1,1,1,1
+local slack = 5
 ```
 
-The intrinsic rank-three response credit is routed once to `return:33`. The five credits compress to four child classes with coefficient vector `(1,1,2,1)`. The local return cone has witness
+The blocker rank-three credit is routed once to `return:33`.
+
+## 5. Joint exact-class namespace
 
 ```text
-parent = 10
-child weights = 1,1,1,1
-weighted total = 5
-slack = 5
+joint contract seal = 1fef7cdd2e3554800e3c9c2ace9b78fa02b0df655b57556c21eb681233287dd5
+local aliases = 6
+exact child classes = 7
+colliding aliases = 1
 ```
 
-This witness is also scoped and not globally bound.
+The alias `w_return_00_rank1` refers to different full classes in the two samples and is split into distinct joint symbols.
+
+A simultaneous local witness exists:
+
+```text
+both parent weights = 16
+all seven exact child weights = 1
+zero row total/slack = 4/12
+blocker row total/slack = 5/11
+```
+
+This proves only direct local return-cone compatibility, not global recurrent compatibility.
 
 ## 6. Active frontier
 
 ```text
-identify the exact parent recurrent state for each sample
-bind two parent weights and seven child-class weights to one installed global Lyapunov vector
-or publish a checked incompatibility/residual-binding contract
+identify exact parent recurrent-state keys for both samples
+map seven exact child classes to installed global recurrent states without alias projection
+bind global parent and child weights, or publish a checked incompatibility certificate
 populate selector coefficients on full minimizer faces
 populate collision and interface coefficients and child keys
-test a joint normalized weight assignment for both rows
 extend to another blocker collision class
 ```
 
 ## 7. Exact blockers
 
 1. Neither sample is proven to occur as a global recurrent provenance state.
-2. The two parent state keys are unresolved.
-3. Seven child-class weight symbols are not bound to a global Lyapunov vector.
-4. Selector, collision and interface categories remain unresolved for both rows.
-5. Local cone witnesses do not imply compatibility with the rest of the recurrent matrix.
+2. The two parent state keys remain unresolved.
+3. Seven exact child classes are not mapped to installed global states.
+4. The joint local weight witness is not an installed global Lyapunov vector.
+5. Selector, collision and interface categories remain unresolved for both rows.
 6. The remaining 84 normalized hosts have no populated actual-background profiles.
 7. Complete coupled selector scores on tied minimizer faces are missing.
 8. Global transition exhaustiveness and termination remain open.
@@ -104,12 +103,13 @@ extend to another blocker collision class
 ```text
 zero-response coefficient and routing compilers = functionally executed locally
 zero-response corruption audits = 14 + 14 rejected
-zero-response weight arithmetic = reproduced locally
-blocker coefficient/routing/weight arithmetic = reproduced locally
+zero and blocker weight arithmetic = reproduced locally
+blocker coordinate and routing construction = reproduced locally
+joint namespace, alias audit and arithmetic witness = reproduced locally
 new checker sources = syntax-compiled locally
 complete repository execution of all new checkers = not independently observed
 complete 77-checker runner = not executed
 workflow success = not observed
 ```
 
-Workflow configuration is not CI success. Two populated samples and locally feasible return cones do not substitute for globally compatible weights, complete compulsory rows, or termination.
+Workflow configuration is not CI success. Two populated samples and a joint local witness do not substitute for global state occurrence, globally compatible weights, complete compulsory rows, or termination.
