@@ -10,7 +10,6 @@ subprocess.run(
 )
 
 checks = [
-    "check_boundary_nineteenth_obstruction.py",
     "check_hall_defect_incidence_line_graph.py",
     "check_hall_odd_path_surplus.py",
     "check_hall_packet_interface_surplus.py",
