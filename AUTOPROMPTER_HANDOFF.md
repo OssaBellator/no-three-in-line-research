@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-02T23:05:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-04T20:15:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -16,213 +16,97 @@ all-length coordinate constructions.
 - Branch: `research/all-n-prime-patching`
 - Canonical completed tranches: `docs/651--656`, `docs/657--662`,
   `docs/663--668`, `docs/669--674`, `docs/675--680`, and `docs/681--686`.
-- Current theorem range: `PP3ddb--PP3dds`.
-- Next available theorem identifier: `PP3ddt`.
-- Verified canonical head before this continuity commit:
-  `401c675ebdfbe2dc07974965de232f982856f9d7`.
+- In-progress tranche: `docs/687--692`.
+- Completed in current tranche: boundary `docs/687`.
+- Current theorem range in this tranche: `PP3ddt--PP3ddv`.
+- Next available theorem identifier: `PP3ddw`.
+- Latest boundary theorem commit before this continuity update:
+  `3f21a9a63e578faa5fb4582122e14d79f2a27f02`.
 
-## Corrected prior-tranche fact
+## Corrected nineteenth base state
 
-The nineteenth-spectrum assertions formerly recorded in `docs/675` and its
-transition wrapper were stale relative to the committed 144-point state. The
-correct exact histogram is
+The committed 144-point state has exact raw nineteenth histogram
 
 ```text
 4:1,5:13,6:46,7:176,8:280,9:1,
 10:17,11:61,12:124,13:176,14:137.
 ```
 
-The unique minimum-four attempt is `P2/-64` with five cores. `P1/-33` has minimum
-five, eleven conflict triples, and three minimum-five cores. The theorem chapter,
-wrapper, preceding integration gate, and preceding certificate were aligned with
-that exact output before `docs/681--686` was finalized.
+The unique minimum-four attempt is `P2/-64` with five cores. `P1/-33` has
+minimum five, eleven conflict triples, and three minimum-five cores.
 
-## Completed canonical tranche: `docs/681--686`
+## Current tranche progress
 
-### Boundary — `docs/681-nineteenth-boundary-budget-six-obstruction.md`
+### Boundary — `docs/687-nineteenth-low-frontier-budget-six-obstruction.md`
 
-Theorems `PP3ddb--PP3ddd`.
+Theorems `PP3ddt--PP3ddv`.
 
-- The exact minimum-four nineteenth frontier is the single attempt `P2/-64`, with
-  nine conflict triples and five minimum cores.
-- Every core has no row/column-preserving correction at deletion budgets four,
-  five, or six.
-- Per core the exact tested replacement counts are `24`, `17,520`, and
-  `7,595,280`; the complete budget-six layer contains `37,976,400` rejected
-  replacements.
-- The corrected finite chain remains at eighteen blocks. Budget seven is open; no
-  corrected nineteenth state or raw twentieth spectrum is claimed.
+- The 13 minimum-five attempts contain 68 minimum cores. Their per-attempt core
+  histogram is `3:6,5:3,6:1,9:2,11:1`.
+- The 46 minimum-six attempts contain 442 minimum cores. Their core histogram is
+  `1:6,3:17,5:1,9:13,11:1,15:2,21:2,27:1,33:1,39:1,81:1`.
+- Every minimum-five core is uncorrectable at budgets five and six; every
+  minimum-six core is uncorrectable at budget six.
+- Exact rejected replacement counts are `4,890`, `4,258,350`, and `142,200`,
+  respectively, for a new total of `4,405,440` rejected replacements.
+- Together with `docs/681`, all 60 raw attempts and all 515 minimum cores with
+  transversal at most six are obstructed through deletion budget six.
+- A corrected nineteenth transition must use budget at least seven, a raw attempt
+  of minimum at least seven, or a changed repertoire/state representation.
 
-### Hall — `docs/682-packet-interface-hall-surplus.md`
+Reproducibility:
 
-Theorems `PP3dde--PP3ddg`.
+- `scripts/check_boundary_nineteenth_low_frontier_obstruction.py`
 
-- Selected centres are represented as edges of a bipartite source/host defect
-  multigraph `D`; the complete centre-conflict graph is the line graph `H=L(D)`.
-- Source and host label loads at most two force path/even-cycle components and
-  exact retention
-  `alpha(H)=nu(D)=(3q+o(H))/2`, where `o(H)` counts odd path components including
-  isolates.
-- The sharp second-stage Hall condition is `3q+o(H)>=56`.
-- Packet concatenation with interface bounds `c_j` retains at least
-  `sum_j (3q_j+o_j)/2-sum_j c_j`.
-- Identical packets have bound `K(r-c)+c`, positive asymptotic density exactly when
-  `r>c`, and packet threshold `max(1,ceil((28-c)/(r-c)))`.
-- Audits cover 74,954 small incidence graphs, all 10,172 degree-two cases, and
-  76,156 two-packet interfaces.
+## Prior canonical tranche: `docs/681--686`
 
-### Threshold — `docs/683-minimal-hidden-mixture-census.md`
+- Boundary: the unique minimum-four nineteenth attempt has five cores, all
+  obstructed through budget six.
+- Hall: selected centres are edges of a bipartite source/host defect multigraph;
+  degree-two loads give exact odd-path retention and packet-interface bounds.
+- Threshold: 19,834 minimum endpoint batches share one rigid primitive aggregate
+  with twelve identity layers; no cyclic four-window schedule conceals it.
+- Prefix: all 104 physical matchings, both deletions, and all 1,024 compositions
+  pass the deterministic first optimal route, totaling 212,992 audits.
+- Shell: robust circulation is an exact rational LP; connected balanced support
+  clears to one Euler walk and disconnected support pays connector loss.
+- Integration: candidate completion is `25/30`; all rows remain
+  `fixture_derived`; no row is promoted; fixed point and slack are unchanged;
+  geometric closure is false.
 
-Theorems `PP3ddh--PP3ddj`.
-
-- There are exactly 19,834 five-element legal-facet multisets satisfying the
-  minimum equality equation with three hidden copies of `4I_4`.
-- Support histogram: `2:5,3:210,4:2255,5:17364`.
-- Multiplicity partitions:
-  `1+1+1+1+1:17364`, `2+1+1+1:2255`, `2+2+1:175`,
-  `3+1+1:35`, `4+1:5`.
-- At primitive layer scale every minimum equality batch has the same aggregate:
-  twelve illegal identity layers and four copies of each of five legal score-zero
-  permutations.
-- Across all 6,720 cyclic primitive orders, the number of legal four-layer windows
-  has exact histogram `0:3840,1:1920,2:960`; no rolling order exposes more than two
-  legal windows.
-
-### Prefix — `docs/684-all-physical-prefix-composition-lifts.md`
-
-Theorems `PP3ddk--PP3ddm`.
-
-- The canonical source has 104 minimum-crossing matchings. For both two-pair
-  deletions, every physical case has exact rerouting distance four and exactly 144
-  optimal routes.
-- Choosing the lexicographically first optimal route in each of 208 physical
-  matching/deletion cases, all 1,024 ordered compositions embed successfully.
-- The exact coordinate audit contains `208*1024=212,992` route/composition pairs
-  with no mixed-run collinear triple.
-- Maximum-coordinate histograms are `120:52,132:52` for deletion `{0,2}` and
-  `84:52,132:52` for deletion `{3,5}`.
-- This completes the deterministic selector on the fixed thirteen-pair source, but
-  does not prove an all-size recurrence or certify all 144 optimal routes in every
-  physical case.
-
-### Shell — `docs/685-robust-shell-circulations.md`
-
-Theorems `PP3ddn--PP3ddp`.
-
-- Robust mixed-shell search is the rational circulation linear program
-  `Bx=0`, `x>=0`, `sum x=1`, maximizing the worst burden-vertex saving margin.
-- A rational edge certificate clears directly to one deterministic closed walk
-  exactly when it is balanced and its nonzero support is weakly connected.
-- Connected denominator clearing preserves positivity without connector loss;
-  disconnected support requires a charged connector tour.
-- The two-state example has optimal normalized margin `1/2`; after clearing and
-  charging connector saving `-2`, exactly three bundles yield gain one.
-- A connected denominator-six example has edge multiplicities `3,3,2,2` and
-  robust gain ten.
-- The Eulerian realization audit covers 1,086 small connected integer
-  circulations.
-
-### Integration — `docs/686-structural-compensation-evidence-gate.md`
-
-Theorems `PP3ddq--PP3dds`.
-
-- Candidate completion remains `25/30`: boundary `4/5`, Hall `4/5`, threshold
-  `5/5`, prefix `5/5`, shell `5/5`, integration `2/5`.
-- All six actual rows remain `fixture_derived`; no rows are promoted.
-- Fixed-point total remains
-  `705466760524005697/3623878655999606784`.
-- Slack below one quarter remains
-  `200502903475895999/3623878655999606784`.
-- Geometric closure is false and the all-`n` theorem remains open.
-
-## Reproducibility
-
-Boundary:
-
-- `scripts/check_boundary_nineteenth_spectrum.cpp`
-- `scripts/check_boundary_eighteenth_transition.py`
-- `scripts/check_boundary_nineteenth_corrections.cpp`
-- `scripts/check_boundary_nineteenth_obstruction.py`
-
-Hall:
-
-- `scripts/check_hall_defect_incidence_line_graph.py`
-- `scripts/check_hall_odd_path_surplus.py`
-- `scripts/check_hall_packet_interface_surplus.py`
-
-Threshold:
-
-- `scripts/check_threshold_minimal_hidden_mixture_census.cpp`
-- `scripts/check_threshold_minimal_hidden_mixture_census.py`
-- `scripts/check_threshold_minimal_layer_decomposition.py`
-- `scripts/check_threshold_hidden_layer_windows.py`
-
-Prefix:
-
-- `scripts/check_prefix_all_physical_compositions.cpp`
-- `scripts/check_prefix_all_physical_compositions.py`
-- `scripts/check_prefix_all_physical_unit_routes.py` (supplemental)
-
-Shell and integration:
-
-- `scripts/check_shell_robust_circulation.py`
-- `scripts/check_shell_circulation_realization.py`
-- `scripts/check_structural_compensation_gate.py`
-- `scripts/check_frontier_681_686.py`
-- `certificates/prime-patching-structural-compensation-681-686.json`
-- `proofs/prime-patching-parity-index-681-686-supplement.md`
-
-Latest chained command:
-
-```bash
-python scripts/check_frontier_681_686.py
-```
+Theorems in that tranche are `PP3ddb--PP3dds`.
 
 ## Validation status
 
-- The current nineteenth spectrum was independently rebuilt and checked against an
-  exact hitting-set reconstruction. The five-core correction kernel rejected all
-  corrections through budget six in isolated local execution.
-- Direct and committed audits cover the unified Hall incidence and packet
-  certificates, all 19,834 threshold endpoint batches and the rigid layer/window
-  obstruction, all 212,992 physical prefix compositions, and the shell
-  LP/Eulerian execution examples.
-- The standalone structural integration gate passed exact arithmetic checks.
-- The complete historical chained runner was not executed end-to-end in this
-  environment because a full local checkout remains unavailable; direct clone
-  attempts could not resolve `github.com`.
+- The new boundary checker reconstructs the committed state from the canonical
+  spectrum source, recompiles an exact C++ kernel, enumerates all minimum-five and
+  minimum-six cores, and rejects every preserving correction through budget six.
+- The standalone run completed successfully in the isolated local runtime in about
+  five seconds.
+- The complete historical chained runner remains unavailable because a full local
+  checkout cannot be obtained; direct clone attempts cannot resolve `github.com`.
 
 ## Decisions
 
 - Treat executable checker output and independent exact reconstruction as
   authoritative when stale prose or assertions disagree.
-- Preserve one canonical theorem chapter, checker path, certificate, and parity row
-  per frontier number; retain complementary scripts without duplicate theorem
-  chapters.
-- Do not search boundary budget seven naively; require stronger symmetry,
-  repeated-row, exact-cover, or state-signature pruning first.
-- Treat Hall packet surplus as conditional until one coordinate packet family
-  certifies motif resources, complete defect labels, bounded interfaces, and both
-  label-load restrictions.
-- Treat the threshold census and layer rigidity as an obstruction, not a geometric
-  hidden-state execution.
-- Treat the prefix deterministic selector as complete for the fixed thirteen-pair
-  source, not as an all-size recurrence.
-- Treat shell circulations as an exact finite execution interface until a coordinate
-  macro graph and burden polytope are supplied.
+- Do not search boundary budget seven naively; require symmetry, exact-cover,
+  repeated-row, or state-signature pruning.
+- Preserve one canonical theorem chapter, checker, certificate, and parity row per
+  frontier number.
 - Promote no row without a recurrent or asymptotic coordinate source path.
 
 ## Current blockers
 
-- Boundary: no corrected nineteenth transition; all five minimum cores are
-  obstructed through budget six and budget seven remains open.
-- Hall: no coordinate packet family supplies the complete first- and second-stage
-  certificates with bounded interfaces.
-- Threshold: no geometric hidden operation prevents the twelve identity layers or
-  identity-containing windows from becoming exposed illegal states.
+- Boundary: every raw minimum core with transversal at most six is obstructed
+  through budget six; no corrected nineteenth transition exists.
+- Hall: no coordinate packet family supplies complete motif resources, defect
+  labels, odd-path surplus, and bounded interfaces.
+- Threshold: no geometric hidden operation carries the forced identity-layer mass
+  without exposing an illegal state.
 - Prefix: no recurrence between source sizes and no all-optimal-route theorem.
 - Shell: no coordinate macro graph supplies a positive connected circulation and
-  certified rational burden polytope.
+  certified burden polytope.
 - Integration: all rows and coupling coefficients remain fixture-derived.
 
 ## Uncommitted work
@@ -232,22 +116,22 @@ python scripts/check_frontier_681_686.py
 
 ## Exact next steps
 
-1. Continue theorem numbering at `PP3ddt` and build `docs/687--692`.
-2. Boundary: design a symmetry/exact-cover budget-seven search, compare corrected
-   state signatures, and explore alternate raw attempts or repertoire changes if
-   all five cores remain obstructed.
-3. Hall: instantiate one repeatable coordinate packet with explicit motif resource
-   lists, defect labels, odd-path surplus, and bounded packet interfaces.
-4. Threshold: search larger-memory schedules or genuinely unexposed operations
-   capable of carrying the forced identity-layer mass.
-5. Prefix: seek a recurrence between the finite thirteen- and fourteen-pair
-   reservoirs, or prove an insertion selector uniform across source sizes.
-6. Shell: extract a finite coordinate macro graph and certify a positive connected
-   circulation under an exact burden polytope.
-7. Integration: promote only complete coordinate paths; otherwise preserve
-   `25/30`, the fixed point, and the closed gate.
-8. Run the complete historical chain in a full checkout, verify the remote head,
-   and refresh this handoff.
+1. Continue theorem numbering at `PP3ddw` and build `docs/688--692`.
+2. Hall (`docs/688`): replace additive interface loss by an exact finite-state
+   maximum-independent-set transfer matrix for periodic packets and derive its
+   asymptotic max-plus cycle mean.
+3. Threshold (`docs/689`): quantify larger-memory rolling schedules under the
+   forced identity-layer density and search exact finite automata for legal-window
+   density.
+4. Prefix (`docs/690`): extend beyond the deterministic first route, or isolate a
+   finite-state recurrence between the thirteen- and fourteen-pair reservoirs.
+5. Shell (`docs/691`): derive the exact minimum connector augmentation for
+   disconnected positive circulations and audit small macro graphs.
+6. Integration (`docs/692`): update the gate, certificate, parity supplement, and
+   chained runner; preserve `25/30`, the fixed point, and closed gate absent a
+   promoted coordinate path.
+7. Run the complete historical chain when a full checkout becomes available,
+   verify the remote head, and refresh this handoff.
 
 ## Conventions
 
