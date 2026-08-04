@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-04T22:05:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-04T22:24:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -32,10 +32,9 @@ canonical: (42,378)
 ```
 
 The canonical 144-point state is reconstructed from the certified eighteenth
-transition rather than trusted from that stale snapshot. It has no collinear
-triple. All boundary chapters, the integration gate, certificate, parity
-supplement, and canonical wrappers have been reconciled to the reconstructed
-state.
+transition and has no collinear triple. The spectrum source, historical boundary
+chapters, structural and transfer gates, certificates, parity supplements, and
+canonical wrappers are reconciled to this state.
 
 ## Current tranche progress
 
@@ -43,39 +42,43 @@ state.
 
 Theorems `PP3del--PP3den`.
 
-- The corrected raw nineteenth histogram is
+- Corrected raw nineteenth histogram:
   `4:2,5:9,6:47,7:175,8:283,9:3,10:16,11:63,12:121,13:176,14:137`.
-- The two minimum-four attempts are `P1/-33` with one core and `P2/-64` with five
-  cores.
+- Minimum-four attempts: `P1/-33` with one core and `P2/-64` with five cores.
 - All six minimum-four cores have no preserving correction at budgets four, five,
-  or six, so budget seven is a sharp lower bound.
-- The canonical `P2/-64` first-core correction deletes
+  or six. Every core rejects exactly `24`, `17,520`, and `7,595,640` candidates,
+  so budget seven is a sharp lower bound.
+- Canonical `P2/-64` first-core correction deletes
   `(8,34),(13,77),(16,76),(46,1),(73,151),(75,150),(75,152)` and adds
   `(8,77),(13,152),(16,151),(46,150),(73,34),(75,1),(75,76)`.
 - The corrected state has 152 distinct points, nineteen blocks, and no collinear
   triple.
-- The exact raw twentieth histogram from origin `(76,213)` is
+- Raw twentieth histogram from origin `(76,213)`:
   `4:3,5:21,6:73,7:195,8:224,9:4,10:35,11:98,12:140,13:153,14:86`.
 - The minimum-four twentieth frontier has nine cores across
   `P1/-28` (one), `P2/52` (five), and `P3/-27` (three).
 
-Canonical audit:
+Canonical audits:
 
 - `scripts/check_boundary_nineteenth_transition.py`
+- `scripts/check_boundary_nineteenth_corrections.cpp`
+- `scripts/check_boundary_nineteenth_low_frontier_corrections.cpp`
+- `scripts/check_boundary_nineteenth_low_frontier_obstruction.py`
 
 ### Corrected historical boundary census
 
-- Minimum-four nineteenth frontier: two attempts, six cores.
+- Minimum-four frontier: two attempts, six cores.
 - Minimum-five frontier: nine attempts, 54 cores.
 - Minimum-six frontier: 47 attempts, 435 cores.
 - Total transversal-at-most-six frontier: 58 attempts, 495 cores.
 - Minimum-five and minimum-six rejected replacement counts are `3,810`,
   `3,318,750`, and `143,640`, totaling `3,466,200` beyond the minimum-four layer.
+- The six minimum-four budget-six layers total `45,573,840` rejected
+  replacements.
 
-The canonical wrappers
-`scripts/check_boundary_eighteenth_transition.py` and
-`scripts/check_boundary_nineteenth_low_frontier_obstruction.py` now route through
-the reconstructed transition audit.
+`scripts/check_boundary_eighteenth_transition.py` delegates to the reconstructed
+nineteenth transition audit. The low-frontier wrapper independently compiles and
+checks the dedicated exact C++ census.
 
 ## Latest completed prior tranche: `docs/687--692`
 
@@ -83,14 +86,14 @@ the reconstructed transition audit.
 
 - Exact packet boundary occupancy tables compose by a max-plus transition matrix.
 - The asymptotic retained count per packet is the reachable maximum cycle mean.
-- All 4,096 direct packet-chain comparisons pass; exact transfer strictly improves
-  uniform interface charging in 3,060 checks.
+- All 4,096 direct packet-chain comparisons pass; exact transfer improves uniform
+  interface charging in 3,060 checks.
 
 ### Threshold — `docs/689-threshold-identity-window-density.md`
 
 - A cyclic schedule of `K` minimum batches has at most `5K-3` legal four-windows.
-- The exact minimum illegal-window count is `3K+3`, so the asymptotic legal density
-  is `5/8`.
+- The exact minimum illegal-window count is `3K+3`, so asymptotic legal density is
+  `5/8`.
 
 ### Prefix — `docs/690-all-optimal-prefix-short-compositions.md`
 
@@ -117,14 +120,16 @@ the reconstructed transition audit.
 ## Validation status
 
 - The corrected eighteenth state, nineteenth spectrum, all six minimum-four
-  budget-four through budget-six obstructions, budget-seven correction
-  certificate, corrected 152-point state, and raw twentieth spectrum were
-  independently reconstructed in the isolated runtime before repository writes.
-- The canonical Python audit recompiles corrected copies of the historical C++
-  correction kernels rather than trusting the stale coordinate snapshot.
-- The complete historical chained runner has not been executed end-to-end in this
-  environment because a full local checkout remains unavailable; direct clone
-  attempts cannot resolve `github.com`.
+  budget-four through budget-six obstructions, budget-seven correction,
+  corrected 152-point state, and raw twentieth spectrum were independently
+  reconstructed in the isolated runtime before repository writes.
+- The corrected low-frontier C++ audit passed all 489 minimum-five and minimum-six
+  cores with exact rejected replacement totals and zero repairs.
+- Historical structural and transfer documents, gates, certificates, and parity
+  supplements now use the corrected state and census.
+- The complete historical chained runner has not been executed end-to-end because
+  a full local checkout remains unavailable; direct clone attempts cannot resolve
+  `github.com`.
 
 ## Decisions
 
@@ -143,8 +148,8 @@ the reconstructed transition audit.
 
 ## Current blockers
 
-- Boundary: the chain now reaches nineteen blocks, but the raw twentieth frontier
-  has nine minimum-four cores and no corrected twentieth transition or recurrence.
+- Boundary: the chain reaches nineteen blocks, but the raw twentieth frontier has
+  nine minimum-four cores and no corrected twentieth transition or recurrence.
 - Hall: no coordinate packet family supplies explicit motif resources, defect
   labels, boundary states, and a repeatable geometric transfer.
 - Threshold: minimum-batch rolling schedules retain illegal exposure density at
@@ -183,5 +188,5 @@ the reconstructed transition audit.
 
 Continue on `research/all-n-prime-patching`; use exact arithmetic and reviewable
 commits; commit each completed logical unit promptly; separate candidate completion
-from geometric evidence; reconstruct copied boundary states from their certified
+from geometric evidence; reconstruct copied boundary states from certified
 predecessors; and state explicitly that the all-`n` theorem remains open.
