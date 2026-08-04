@@ -4,7 +4,6 @@ from itertools import combinations
 from pathlib import Path
 import re
 import subprocess
-import sys
 import tempfile
 
 HERE = Path(__file__).resolve().parent
@@ -154,7 +153,7 @@ def spectrum(state, origin_x):
             histogram[minimum] += 1
             if minimum <= 6:
                 cores = enumerate_exact_hitting_sets(len(all_points), edges, minimum)
-                low.append((name, offset, minimum, len(edges), len(cores), all_points, cores))
+                low.append((name, offset, minimum, len(edges), len(cores)))
     return histogram, low
 
 
@@ -164,51 +163,35 @@ assert NINETEENTH_HISTOGRAM == Counter({
     10: 16, 11: 63, 12: 121, 13: 176, 14: 137,
 })
 assert sum(item[4] for item in NINETEENTH_LOW) == 495
-minimum_four = [(name, offset, triples, cores) for name, offset, minimum, triples, cores, _, _ in NINETEENTH_LOW if minimum == 4]
+minimum_four = [
+    (name, offset, triples, cores)
+    for name, offset, minimum, triples, cores in NINETEENTH_LOW
+    if minimum == 4
+]
 assert minimum_four == [
     ("P1", -33, 10, 1),
     ("P2", -64, 9, 5),
 ]
 
 with tempfile.TemporaryDirectory() as directory:
-    directory = Path(directory)
-    corrected_p2 = (HERE / "check_boundary_nineteenth_corrections.cpp").read_text().replace("{42,193}", "{42,378}")
-    p2_source = directory / "p2.cpp"
-    p2_binary = directory / "p2"
-    p2_source.write_text(corrected_p2)
-    subprocess.run(["c++", "-O3", "-std=c++17", str(p2_source), "-o", str(p2_binary)], check=True)
-    p2_output = subprocess.run([str(p2_binary)], check=True, capture_output=True, text=True).stdout.splitlines()
-    assert p2_output[-1] == "summary attempts=1 cores=5 none_through_budget_6=true"
+    binary = Path(directory) / "check_boundary_nineteenth_corrections"
+    subprocess.run([
+        "c++", "-O3", "-std=c++17", "-pthread",
+        str(HERE / "check_boundary_nineteenth_corrections.cpp"),
+        "-o", str(binary),
+    ], check=True)
+    correction_output = subprocess.run(
+        [str(binary)], check=True, capture_output=True, text=True
+    ).stdout.splitlines()
 
-    p1_source_text = corrected_p2.replace(
-        "{72,150},{72,152},{73,149},{73,151},{74,149},{74,151},{75,150},{75,152}",
-        "{72,180},{72,183},{73,181},{73,182},{74,180},{74,183},{75,181},{75,182}",
-    )
-    p1_source_text = re.sub(
-        r"vector<vector<Pt>> cores=\{.*?\n \};",
-        "vector<vector<Pt>> cores={{{70,214},{74,180},{74,183},{75,181}}};",
-        p1_source_text,
-        flags=re.S,
-    )
-    p1_source_text = re.sub(
-        r"const vector<unsigned long long> expected6=\{.*?\};",
-        "const vector<unsigned long long> expected6={7595640};",
-        p1_source_text,
-    )
-    p1_source_text = p1_source_text.replace("P2/-64 core", "P1/-33 core")
-    p1_source_text = p1_source_text.replace("summary attempts=1 cores=5", "summary attempts=1 cores=1")
-    p1_source = directory / "p1.cpp"
-    p1_binary = directory / "p1"
-    p1_source.write_text(p1_source_text)
-    subprocess.run(["c++", "-O3", "-std=c++17", str(p1_source), "-o", str(p1_binary)], check=True)
-    p1_output = subprocess.run([str(p1_binary)], check=True, capture_output=True, text=True).stdout.splitlines()
-    assert p1_output == [
-        "P1/-33 core1 (70,214) (74,180) (74,183) (75,181)",
-        "budget 4 none tested 24",
-        "budget 5 none tested 17520",
-        "budget 6 none tested 7595640",
-        "summary attempts=1 cores=1 none_through_budget_6=true",
-    ]
+assert len(correction_output) == 25
+assert correction_output[0] == "P1/-33 core1 (70,214) (74,180) (74,183) (75,181)"
+for task in range(6):
+    base = 4 * task
+    assert correction_output[base + 1] == "budget 4 none tested 24"
+    assert correction_output[base + 2] == "budget 5 none tested 17520"
+    assert correction_output[base + 3] == "budget 6 none tested 7595640"
+assert correction_output[-1] == "summary attempts=2 cores=6 none_through_budget_6=true"
 
 P2_BLOCK = {(72 + x, 149 + y) for x, y in NODES["P2"]}
 RAW_NINETEENTH = EIGHTEENTH | P2_BLOCK
@@ -227,7 +210,7 @@ assert TWENTIETH_HISTOGRAM == Counter({
 })
 twentieth_minimum_four = [
     (name, offset, triples, cores)
-    for name, offset, minimum, triples, cores, _, _ in TWENTIETH_LOW
+    for name, offset, minimum, triples, cores in TWENTIETH_LOW
     if minimum == 4
 ]
 assert twentieth_minimum_four == [
