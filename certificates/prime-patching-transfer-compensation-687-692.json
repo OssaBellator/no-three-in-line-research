@@ -10,17 +10,23 @@
     "PP3dei", "PP3dej", "PP3dek"
   ],
   "boundary": {
-    "minimum_five_attempts": 13,
-    "minimum_five_cores": 68,
-    "minimum_six_attempts": 46,
-    "minimum_six_cores": 442,
-    "low_attempts_including_minimum_four": 60,
-    "low_cores_including_minimum_four": 515,
-    "five_point_replacements_rejected": 4890,
-    "six_point_replacements_from_minimum_five_cores_rejected": 4258350,
-    "six_point_replacements_from_minimum_six_cores_rejected": 142200,
-    "new_replacements_rejected": 4405440,
-    "corrected_nineteenth_transition": false
+    "minimum_four_attempts": 2,
+    "minimum_four_cores": 6,
+    "minimum_five_attempts": 9,
+    "minimum_five_cores": 54,
+    "minimum_six_attempts": 47,
+    "minimum_six_cores": 435,
+    "low_attempts_including_minimum_four": 58,
+    "low_cores_including_minimum_four": 495,
+    "five_point_replacements_rejected": 3810,
+    "six_point_replacements_from_minimum_five_cores_rejected": 3318750,
+    "six_point_replacements_from_minimum_six_cores_rejected": 143640,
+    "new_replacements_rejected": 3466200,
+    "corrected_nineteenth_transition": true,
+    "correction_budget": 7,
+    "corrected_nineteenth_points": 152,
+    "twentieth_minimum_four_attempts": 3,
+    "twentieth_minimum_four_cores": 9
   },
   "hall": {
     "packet_graphs": 1024,
@@ -83,6 +89,6 @@
     "slack_below_one_quarter": "200502903475895999/3623878655999606784",
     "geometric_closure": false,
     "all_n_theorem": "open",
-    "next_theorem_identifier": "PP3del"
+    "next_theorem_identifier": "PP3deo"
   }
 }
