@@ -1,0 +1,30 @@
+name: Side-four sample weight feasibility
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_sample_credit_routing_contract.json'
+      - 'data/prime_power_side_four_sample_weight_feasibility_contract.json'
+      - 'scripts/check_prime_power_side_four_actual_background_sample_batch.py'
+      - 'scripts/check_prime_power_side_four_sample_credit_routing.py'
+      - 'scripts/check_prime_power_side_four_sample_weight_feasibility.py'
+      - 'docs/566-prime-power-side-four-sample-weight-feasibility.md'
+      - '.github/workflows/side-four-sample-weight-feasibility.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  feasibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_actual_background_sample_batch.py
+      - run: python scripts/check_prime_power_side_four_sample_credit_routing.py
+      - run: python scripts/check_prime_power_side_four_sample_weight_feasibility.py
