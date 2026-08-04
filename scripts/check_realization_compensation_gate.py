@@ -22,34 +22,31 @@ assert PROMOTED == ()
 BOUNDARY = {
     "canonical_stale_coordinate": (42, 193),
     "canonical_correct_coordinate": (42, 378),
-    "minimum_four_nineteenth_attempts": 2,
-    "minimum_four_nineteenth_cores": 6,
-    "none_through_budget": 6,
-    "correction_budget": 7,
-    "corrected_points": 152,
-    "corrected_blocks": 19,
-    "twentieth_minimum_four_attempts": 3,
-    "twentieth_minimum_four_cores": 9,
+    "corrected_points": 168,
+    "corrected_blocks": 21,
+    "twentysecond_minimum": 6,
+    "twentysecond_minimum_attempts": 26,
+    "twentysecond_minimum_cores": 178,
+    "budget_six_replacement_permutations": 68580,
+    "budget_six_repairs": 0,
 }
-assert BOUNDARY["correction_budget"] == BOUNDARY["none_through_budget"] + 1
 assert BOUNDARY["corrected_points"] == 8 * BOUNDARY["corrected_blocks"]
+assert BOUNDARY["twentysecond_minimum"] == 6
+assert BOUNDARY["budget_six_repairs"] == 0
 
 HALL = {
-    "centres_per_packet": 6,
-    "motifs_per_packet": 2,
-    "load_two_partitions": 76,
-    "incidence_tables": 5776,
-    "realisable_conflict_graphs": 1636,
-    "all_simple_graphs": 32768,
-    "direct_chain_checks": 6544,
-    "strict_transfer_improvements": 4866,
-    "minimum_packets_for_28": 7,
-    "strict_example_additive_packets": 9,
+    "synthetic_motifs": 10,
+    "synthetic_centres": 30,
+    "single_packet_retention": 28,
+    "chain_formula": "27*K+1",
+    "explicit_coordinate_chain_checks": 6,
+    "two_motif_realisable_graphs": 1636,
+    "two_motif_direct_chain_checks": 6544,
+    "host_derived_resources": False,
 }
-assert HALL["load_two_partitions"] ** 2 == HALL["incidence_tables"]
-assert HALL["realisable_conflict_graphs"] < HALL["all_simple_graphs"]
-assert HALL["direct_chain_checks"] == 4 * HALL["realisable_conflict_graphs"]
-assert HALL["minimum_packets_for_28"] < HALL["strict_example_additive_packets"]
+assert HALL["single_packet_retention"] == 28
+assert HALL["two_motif_direct_chain_checks"] == 4 * HALL["two_motif_realisable_graphs"]
+assert not HALL["host_derived_resources"]
 
 THRESHOLD = {
     "legal_permutation_layers": 18,
@@ -69,10 +66,14 @@ PREFIX = {
     "compositions_at_most_four_runs": 176,
     "distinct_coordinate_audits": 1275648,
     "covered_physical_pairs": 5271552,
+    "new_four_run_physical_pairs": 3594240,
+    "remaining_compositions": 848,
     "failures": 0,
 }
 assert 2 * PREFIX["unique_routes_per_deletion"] * PREFIX["compositions_at_most_four_runs"] == PREFIX["distinct_coordinate_audits"]
 assert PREFIX["physical_matchings"] * PREFIX["deletions"] * PREFIX["optimal_routes_per_case"] * PREFIX["compositions_at_most_four_runs"] == PREFIX["covered_physical_pairs"]
+assert PREFIX["remaining_compositions"] == 1024 - PREFIX["compositions_at_most_four_runs"]
+assert PREFIX["failures"] == 0
 
 SHELL = {
     "components": 3,
@@ -82,9 +83,11 @@ SHELL = {
     "edgewise_worst_overcharge_cases": 1116,
     "repetition_formula_checks": 147456,
     "robust_loss_tour_not_repetition_optimal": 5640,
+    "coordinate_macro_graph": False,
 }
 assert SHELL["directed_burden_tables"] == 4 ** 6
 assert SHELL["repetition_formula_checks"] == SHELL["directed_burden_tables"] * 9 * 4
+assert not SHELL["coordinate_macro_graph"]
 
 FIXED_POINT = (
     Fraction(70590897652005075, 1207959551999868928),
@@ -109,16 +112,16 @@ print({
     "actual_evidence_levels": ACTUAL_EVIDENCE,
     "promoted_rows": PROMOTED,
     "new_results": {
-        "boundary": "canonical budget-seven correction reaches nineteen blocks and gives an exact nine-core twentieth frontier",
-        "Hall": "all two-motif degree-two incidence packets are classified and their exact transfer rates are audited",
-        "threshold": "the identity separator obstructs every rolling window width with exact optimum max(0,5K-w+1)",
+        "boundary": "the corrected finite chain reaches twenty-one blocks and all 178 minimum-six twenty-second cores are obstructed at budget six",
+        "Hall": "a synthetic coordinate defect packet retains 28 centres and repeats with exact transfer 27K+1, but its resources are not host-derived",
+        "threshold": "the identity separator obstructs every rolling width with exact optimum max(0,5K-w+1)",
         "prefix": "all optimal routes pass every composition with at most four runs after exact route deduplication",
-        "shell": "connector tours are optimized jointly over uncertainty vectors and repetition gains",
+        "shell": "connector tours are optimized jointly over uncertainty burden vectors and repetition gains",
     },
     "fixture_fixed_point_total": str(TOTAL),
     "fixture_slack_below_one_quarter": str(SLACK),
     "geometric_closure": False,
     "all_n_theorem": "open",
-    "next_theorem_identifier": "PP3dfd",
+    "next_theorem_identifier": "PP3dfj",
     "status": "passed",
 })
