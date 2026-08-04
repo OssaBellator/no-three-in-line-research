@@ -2,7 +2,7 @@
 
 ## Current goal
 
-Bind a scoped positive-weight and parent-budget certificate for the exact side-four sample child routing, if mathematically justified. Otherwise publish the exact residual binding worklist. Then extend the explicit background batch to additional selector and blocker classes.
+Bind the remaining selector, collision and interface terms for the explicit side-four sample, and determine whether its parent and three child-class weights can be identified with an installed global recurrent Lyapunov vector. The return-only local cone is now certified; do not promote that local witness to a complete weighted row without the missing global bindings.
 
 ## Repository state
 
@@ -55,19 +55,12 @@ line refinement = 8ff0751442bfefe378a74978c710d71c9e8c0d2c04652e4dcd220274684689
 actual-background obligation v2 = e605c9da6e45bc4253129cea8e40e744dece8426aae0f0e7efbd2c849e1a08cd
 ```
 
-## Completed explicit background sample
+## Explicit actual-background sample
 
 ```text
 sample = data/prime_power_side_four_actual_background_sample_batch.json
 sample seal = 71ba5fcea70f61c5e94e40a635b7eddaa8cb72c8c0cdda9fb78f0f56a84609a0
 checker = scripts/check_prime_power_side_four_actual_background_sample_batch.py
-documentation = docs/564-prime-power-side-four-actual-background-sample-batch.md
-workflow = .github/workflows/side-four-actual-background-sample-batch.yml
-sample commit = 82996fb0037a2cca9438f318d9fd1b9e365a9cee
-checker commit = e335855758b8e122e07858f5eceac388fc4c4b06
-```
-
-```text
 host = s4-fc915f89dec31fec
 selected response = 2031
 background points = {(4,4), (6,5)}
@@ -79,23 +72,17 @@ complete line-kernel total = 4
 return charges = {00:1, 11:0, 22:3, 33:0}
 ```
 
-The sample is explicitly declared, not inferred from the normalized host or identity matching. The coefficient checker reconstructs the numbers from coordinates and rejects 14 corruptions.
+The background is explicitly declared, not inferred from the normalized host or identity matching. The sample checker reconstructs all coefficients from coordinates and rejects 14 corruptions.
 
-## Completed exact credit routing
+## Exact child routing
 
 ```text
 routing = data/prime_power_side_four_sample_credit_routing_contract.json
 routing seal = f4920483e99ed4d53da28fc5a752391e570cfceab828937e5d63ac36d91553b5
 checker = scripts/check_prime_power_side_four_sample_credit_routing.py
-documentation = docs/565-prime-power-side-four-sample-credit-routing.md
-workflow = .github/workflows/side-four-sample-credit-routing.yml
-routing commit = dd0399399d74a0857e00d509694837ffe36b2e42
-checker commit = d686bd4db0f16c4c2e04a535db704b445f7610e3
-documentation commit = cc82a0ae869411ba127d2e24aa10f2fc5ddee493
-workflow commit = 9a429704ed3768016ea42fa8d3957934784727d8
 ```
 
-The four recreated credits are counted once: line energy is the certificate source and return classes are the offspring destination. Lossless compression gives:
+The four recreated credits are counted once. Line energy is the certificate source; return classes are the offspring destination.
 
 ```text
 return:00 | rank1:1,-2,4:h2:k2 -> coefficient 1
@@ -103,13 +90,53 @@ return:22 | rank1:1,-2,4:h2:k2 -> coefficient 1
 return:22 | rank2:1,-2,4:h2:k2 -> coefficient 2
 ```
 
-Each class has a complete owner/fate/collision/line/interface/provenance key. The exact symbolic expression is
+Every populated credit has a complete owner/fate/collision/line/interface/provenance child key.
+
+## Newly completed return-only weight-feasibility unit
 
 ```text
-w_return_00_rank1 + w_return_22_rank1 + 2*w_return_22_rank2.
+contract = data/prime_power_side_four_sample_weight_feasibility_contract.json
+contract seal = d85580884ba95d368350ee1230890e4b54b86c33466c55fb20cb837de46b7316
+checker = scripts/check_prime_power_side_four_sample_weight_feasibility.py
+documentation = docs/566-prime-power-side-four-sample-weight-feasibility.md
+workflow = .github/workflows/side-four-sample-weight-feasibility.yml
+contract commit = 3b686146754444ef8221bed12a26730b71858042
+checker commit = 97a001f2302da92cbee61c6b274467bdb969f0f1
+documentation commit = b9bd26139b47ff8e77a3ec41aa83d7cedabe625b
+workflow commit = bcf65287793c95fcba4a04ce892af18c7a84c5b9
 ```
 
-All weights are required positive, but no numeric weights or parent budget are bound. The routing checker rejects 14 corruptions.
+The exact return-only inequality is
+
+```text
+w_parent_sample
+> w_return_00_rank1
++ w_return_22_rank1
++ 2*w_return_22_rank2.
+```
+
+A scoped integer witness is
+
+```text
+parent weight = 8
+three child-class weights = 1,1,1
+weighted child total = 4
+strict slack = 4
+```
+
+After parent normalization, every child weight is `1/8`, the weighted total is `1/2`, and the slack is `1/2`. This proves only that the local return-only cone is nonempty.
+
+Nine residual bindings remain:
+
+```text
+parent state key
+parent global weight binding
+three child-class global weight bindings
+selector coefficient and child binding
+collision coefficient and child binding
+interface coefficient and child binding
+global recurrent-block compatibility
+```
 
 ## Decisions to preserve
 
@@ -117,9 +144,10 @@ All weights are required positive, but no numeric weights or parent budget are b
 2. The explicit sample is not a global recurrent-state occurrence claim.
 3. Line and return views describe the same four credits; each credit is charged once.
 4. Full child keys are required for lossless compression.
-5. Do not default symbolic Lyapunov weights to one without a scoped certificate.
-6. Selector ties retain the full minimizer face; response-energy gaps are not complete coupled-score gaps.
-7. Workflow configuration is not CI success.
+5. The local witness `(8;1,1,1)` is scoped and must not be substituted into the global recurrence without compatible state bindings.
+6. Selector, collision and interface terms remain unresolved rather than zero.
+7. Selector ties retain the full minimizer face; response-energy gaps are not complete coupled-score gaps.
+8. Workflow configuration is not CI success.
 
 ## Exact flags
 
@@ -130,10 +158,14 @@ sample_rank_one_rank_two_return_coefficients_complete = 1
 sample_credit_partition_complete = 1
 sample_child_routing_complete = 1
 sample_child_keys_complete_for_populated_credits = 1
+sample_return_only_weight_feasibility_proved = 1
+sample_return_only_local_witness_complete = 1
 
 actual_background_profiles_complete = 0
-sample_child_weights_complete = 0
+sample_global_weight_bindings_complete = 0
+sample_full_compulsory_row_complete = 0
 sample_weighted_row_strict = 0
+sample_child_weights_complete = 0
 global_child_provenance_complete = 0
 compulsory_coefficients_complete = 0
 child_weights_complete = 0
@@ -153,6 +185,9 @@ sample coefficient compiler = functionally executed locally
 sample coefficient corruptions rejected = 14
 sample routing compiler = functionally executed locally
 sample routing corruptions rejected = 14
+weight contract digest and arithmetic witness = reproduced locally
+weight checker source = syntax-compiled locally
+complete weight checker repository execution = not independently observed
 complete 77-checker runner = not executed
 workflow success = not observed
 ```
@@ -169,12 +204,12 @@ uncommitted generated artifacts = none known
 No literal source chapter after CMR1965 has been confirmed.
 
 ```text
-1. derive the exact return-only feasibility inequality against a symbolic parent budget
-2. determine whether actual parent and child Lyapunov weights are available from an existing recurrent block
-3. if not, publish a residual binding worklist rather than inventing values
-4. attach selector, collision and interface terms for this sample row
-5. extend the explicit background batch to other selector and blocker classes
-6. publish a complete strict weighted row only after every compulsory term is bound
+1. identify or define the exact parent recurrent state for the sample row
+2. search for compatible installed global weights for the parent and three child classes
+3. attach selector, collision and interface coefficients and child keys
+4. evaluate the complete coupled selector score over the full minimizer face
+5. extend the explicit background batch to at least one blocker-alternative host
+6. publish a complete strict weighted row only after all compulsory terms and global bindings are present
 ```
 
-The next success criterion is a checked symbolic weight-feasibility or residual-binding contract for this sample row.
+The next success criterion is either one globally compatible sample weight binding or a checked impossibility/residual certificate, followed by a populated blocker-class sample.
