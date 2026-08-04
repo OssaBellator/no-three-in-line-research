@@ -62,46 +62,48 @@ strict recurrent closure               0
 all_n_proved_by_checker                 0.
 ```
 
-## ERL2z — convex completion and source leverage
+## ERL2z — exact cost dominance
 
-Every background-sensitive cover `O` has two exact menu-projectable completions:
-
-```text
-O_D3 copies the D3 directions onto D4
-O_D4 copies the D4 directions onto D3.
-```
-
-Both completions are acyclic for all thirty-two sensitive covers. Their occurrence-route vectors satisfy
+Every background-sensitive cover `S` has two canonical menu-projectable completions:
 
 ```text
-4 R(O) = 3 R(O_D3) + R(O_D4).
+C_D3 copies the D3 directions onto D4
+C_D4 copies the D4 directions onto D3.
 ```
 
-Hence every `D3/D4`-blind linear route cost satisfies
+Both completions are acyclic for all thirty-two sensitive covers. Their paid and external occurrence vectors satisfy the componentwise identities
 
 ```text
-C(O) = 3/4 C(O_D3) + 1/4 C(O_D4),
-min(C(O_D3),C(O_D4)) <= C(O).
+4 S = 3 C_D3 + C_D4.
 ```
 
-Exact consequence:
+Therefore every `D3/D4`-blind linear route or payment cost satisfies
 
 ```text
-class-blind advantageous sensitive covers   0 of 32
-sensitive covers with no-worse completion  32 of 32.
+cost(S) = 3/4 cost(C_D3) + 1/4 cost(C_D4),
+min(cost(C_D3),cost(C_D4)) <= cost(S).
 ```
 
-A sensitive cover can become uniquely optimal only under source-backed costs or routes that genuinely distinguish the six face-pair domains.
+The same completion argument shows that class-blind route feasibility adds no new cover: if a sensitive cover is feasible, both ordinary completions are feasible.
 
-The minimum differential source interfaces are
+Exact completion graph:
 
 ```text
-menu-projectable                   12 records
-one-family split                   16 records
-both-families split                18 records.
+ordered sensitive completion maps       32
+unordered ordinary completion pairs     16
+sensitive mixtures per pair               2
+ordinary-cover degree distribution   10 of degree 2, 4 of degree 3.
 ```
 
-Every sensitive cover also requires an eight-field `D3/D4` classifier. Current populated classifier fields and accepted classifier records are zero.
+Source-domain comparison:
+
+```text
+ordinary menu cover                    4 route domains
+one-family sensitive split            5 route domains, 24 covers
+two-family sensitive split            6 route domains,  8 covers.
+```
+
+A strict sensitive advantage requires eight source fields covering the physical occurrence domain, exact `D3/D4` partition, class completeness, split-pair cost and admissibility, a benefit theorem, and realization. Current populated fields and accepted advantage theorems are zero.
 
 ## Artifacts
 
@@ -111,9 +113,9 @@ data/exact_recurrent_first_host_minimizer_face_scalar_route_cover.json
 docs/exact-recurrent-first-host-minimizer-face-scalar-route-cover.md
 docs/ERL_MINIMIZER_FACE_SCALAR_REVIEW_GATE.md
 
-scripts/check_exact_recurrent_first_host_minimizer_face_source_leverage.py
-data/exact_recurrent_first_host_minimizer_face_source_leverage.json
-docs/exact-recurrent-first-host-minimizer-face-source-leverage.md
-docs/ERL_MINIMIZER_FACE_SOURCE_LEVERAGE_REVIEW_GATE.md
+scripts/check_exact_recurrent_first_host_minimizer_face_cost_dominance.py
+data/exact_recurrent_first_host_minimizer_face_cost_dominance.json
+docs/exact-recurrent-first-host-minimizer-face-cost-dominance.md
+docs/ERL_MINIMIZER_FACE_COST_DOMINANCE_REVIEW_GATE.md
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
