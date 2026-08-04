@@ -40,33 +40,33 @@ and add
 
 The deletion and addition multisets agree in every row and every column. The
 corrected state has 144 distinct points, eighteen blocks, and no collinear triple.
+In particular, the canonical state contains `(42,378)`, not the stale coordinate
+`(42,193)` that appeared in an earlier nineteenth-spectrum source snapshot.
 
-## PP3dcl — Exact raw nineteenth spectrum
+## PP3dcl — Corrected raw nineteenth spectrum
 
-Using next origin `(72,213)`, all 1,032 raw nineteenth attempts fail. Recompiling
-the committed spectrum kernel gives the exact minimum-transversal histogram
-
-```text
-4:1, 5:13, 6:46, 7:176, 8:280,
-9:1, 10:17, 11:61, 12:124, 13:176, 14:137.
-```
-
-The unique minimum-four attempt is
+Using next origin `(72,213)`, all 1,032 raw nineteenth attempts fail. Rebuilding
+from the certified eighteenth transition gives the exact minimum-transversal
+histogram
 
 ```text
-P2/-64: five minimum cores.
+4:2, 5:9, 6:47, 7:175, 8:283,
+9:3, 10:16, 11:63, 12:121, 13:176, 14:137.
 ```
 
-The previously recorded `P1/-33` claim was stale: the current 144-point state has
-eleven conflict triples there, minimum transversal five, and exactly three
-minimum-five cores. Thus the next minimum correction frontier contains five cores
-in the single attempt `P2/-64`.
+There are two minimum-four attempts:
 
-The exact spectrum is `scripts/check_boundary_nineteenth_spectrum.cpp`, and the
-combined state audit is `scripts/check_boundary_eighteenth_transition.py`.
+```text
+P1/-33: ten conflict triples and one minimum core,
+P2/-64: nine conflict triples and five minimum cores.
+```
+
+The exact reconstruction and transition audit is
+`scripts/check_boundary_nineteenth_transition.py`.
 
 ## Evidence boundary
 
-The corrected finite chain now reaches eighteen blocks. No corrected nineteenth
-transition, recurrence, periodic state invariant, or all-length construction is
-proved.
+The corrected finite chain reaches eighteen blocks in this chapter. The later
+budget-seven correction in `docs/693` reaches nineteen blocks, but no recurrence,
+periodic state invariant, or all-length construction follows from either finite
+transition.
