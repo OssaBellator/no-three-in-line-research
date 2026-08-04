@@ -8,6 +8,10 @@ subprocess.run(
     [sys.executable, str(HERE / "check_frontier_693_695.py")],
     check=True,
 )
-check = "check_hall_coordinate_defect_packet.py"
-subprocess.run([sys.executable, str(HERE / check)], check=True)
-print({"frontier": "693-696", "check": check, "status": "passed"})
+checks = [
+    "check_hall_two_motif_incidence_packets.py",
+    "check_hall_coordinate_defect_packet.py",
+]
+for check in checks:
+    subprocess.run([sys.executable, str(HERE / check)], check=True)
+print({"frontier": "693-696", "checks": checks, "status": "passed"})
