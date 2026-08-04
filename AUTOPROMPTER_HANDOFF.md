@@ -108,7 +108,7 @@ Theorems `PP3dex--PP3dez`.
 - The packet resources and defect labels are synthetic, not extracted from the
   actual prime-patching host; the Hall row is not promoted.
 
-### Prefix — `docs/698-all-optimal-prefix-four-run-compositions.md`
+### Prefix — `docs/698-prefix-all-optimal-four-run-compositions.md`
 
 Theorems `PP3dfa--PP3dfc`.
 
