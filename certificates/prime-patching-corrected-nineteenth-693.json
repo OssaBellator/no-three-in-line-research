@@ -1,0 +1,77 @@
+{
+  "schema": "prime-patching-boundary-transition-certificate-v1",
+  "document": 693,
+  "theorems": ["PP3del", "PP3dem", "PP3den"],
+  "base_state": {
+    "points": 144,
+    "blocks": 18,
+    "stale_coordinate": [42, 193],
+    "canonical_coordinate": [42, 378],
+    "no_collinear_triple": true
+  },
+  "raw_nineteenth": {
+    "origin": [72, 213],
+    "attempts": 1032,
+    "minimum_transversal_histogram": {
+      "4": 2,
+      "5": 9,
+      "6": 47,
+      "7": 175,
+      "8": 283,
+      "9": 3,
+      "10": 16,
+      "11": 63,
+      "12": 121,
+      "13": 176,
+      "14": 137
+    },
+    "minimum_four_attempts": [
+      {"attempt": "P1/-33", "conflict_triples": 10, "minimum_cores": 1},
+      {"attempt": "P2/-64", "conflict_triples": 9, "minimum_cores": 5}
+    ],
+    "minimum_four_none_through_budget": 6
+  },
+  "correction": {
+    "attempt": "P2/-64",
+    "core": 1,
+    "budget": 7,
+    "deleted": [[8, 34], [13, 77], [16, 76], [46, 1], [73, 151], [75, 150], [75, 152]],
+    "added": [[8, 77], [13, 152], [16, 151], [46, 150], [73, 34], [75, 1], [75, 76]],
+    "row_multiset_preserved": true,
+    "column_multiset_preserved": true,
+    "corrected_points": 152,
+    "corrected_blocks": 19,
+    "no_collinear_triple": true
+  },
+  "raw_twentieth": {
+    "origin": [76, 213],
+    "attempts": 1032,
+    "minimum_transversal_histogram": {
+      "4": 3,
+      "5": 21,
+      "6": 73,
+      "7": 195,
+      "8": 224,
+      "9": 4,
+      "10": 35,
+      "11": 98,
+      "12": 140,
+      "13": 153,
+      "14": 86
+    },
+    "minimum_four_attempts": [
+      {"attempt": "P1/-28", "conflict_triples": 11, "minimum_cores": 1},
+      {"attempt": "P2/52", "conflict_triples": 10, "minimum_cores": 5},
+      {"attempt": "P3/-27", "conflict_triples": 10, "minimum_cores": 3}
+    ],
+    "minimum_four_cores": 9
+  },
+  "evidence": {
+    "checker": "scripts/check_boundary_nineteenth_transition.py",
+    "level": "exact_finite_coordinate_transition",
+    "recurrent": false,
+    "promoted": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3deo"
+  }
+}
