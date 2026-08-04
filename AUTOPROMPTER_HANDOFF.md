@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-04T21:02:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-04T21:18:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -18,11 +18,11 @@ all-length coordinate constructions.
   `docs/663--668`, `docs/669--674`, `docs/675--680`, and `docs/681--686`.
 - In-progress tranche: `docs/687--692`.
 - Completed in current tranche: boundary `docs/687`, Hall `docs/688`, threshold
-  `docs/689`, prefix `docs/690`.
-- Current theorem range in this tranche: `PP3ddt--PP3dee`.
-- Next available theorem identifier: `PP3def`.
-- Latest prefix theorem commit before this continuity update:
-  `eb9a658089fe0555529e6808da95c1339d2687fd`.
+  `docs/689`, prefix `docs/690`, shell `docs/691`.
+- Current theorem range in this tranche: `PP3ddt--PP3deh`.
+- Next available theorem identifier: `PP3dei`.
+- Latest shell theorem commit before this continuity update:
+  `2fe5c59d118e2040ba98f1e9076c1130f184c8dd`.
 
 ## Current tranche progress
 
@@ -83,14 +83,31 @@ Theorems `PP3dec--PP3dee`.
   deletion classes, and exactly 144 optimal radius-four routes per case.
 - Every optimal route succeeds for every ordered composition of eleven with at
   most three runs; there are 56 such compositions.
-- The exact audit contains `104*2*144*56=1,677,312` coordinate embeddings with no
-  failures or mixed-run collinear triples.
+- The exact audit contains `1,677,312` coordinate embeddings with no failures or
+  mixed-run collinear triples.
 - Uniform maximum coordinates are 120 for deletion `{0,2}` and 154 for deletion
   `{3,5}`.
-- This covers all optimal routes on a bounded composition family, but not the
-  remaining 968 compositions per route or an all-size recurrence.
 
 Reproducibility: `scripts/check_prefix_all_optimal_short_compositions.py`.
+
+### Shell — `docs/691-shell-connector-augmentation.md`
+
+Theorems `PP3def--PP3deh`.
+
+- The exact connector problem for disconnected positive support is the minimum-cost
+  nonnegative integer augmentation satisfying componentwise balance and all
+  directed cut constraints.
+- After directed shortest-path closure, the optimum equals the minimum directed
+  Hamiltonian-tour cost; shortest connector paths can be strictly cheaper than a
+  direct-edge tour.
+- If one disconnected positive bundle has robust gain `G`, optimal connector loss
+  is `L*`, and setup is `S`, the least repetitions are
+  `floor((S+L*)/G)+1`.
+- The checker exhausts all 729 three-component directed cost matrices with costs in
+  `{1,2,3}`; the balanced augmentation and metric-tour optima agree in every case.
+- Metric closure strictly improves direct tours in three cases, by one unit.
+
+Reproducibility: `scripts/check_shell_connector_augmentation.py`.
 
 ## Prior canonical tranche: `docs/681--686`
 
@@ -103,7 +120,8 @@ Reproducibility: `scripts/check_prefix_all_optimal_short_compositions.py`.
 - Prefix: all 104 physical matchings and all 1,024 compositions pass the
   deterministic first optimal route, totaling 212,992 audits.
 - Shell: robust circulation is an exact rational LP; connected balanced support
-  clears to one Euler walk and disconnected support pays connector loss.
+  clears to one Euler walk and disconnected support pays an unspecified connector
+  loss.
 - Integration: candidate completion is `25/30`; all rows remain
   `fixture_derived`; no row is promoted; fixed point and slack are unchanged;
   geometric closure is false.
@@ -112,8 +130,8 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
 
 ## Validation status
 
-- Boundary, Hall, threshold, and prefix standalone audits passed in isolated local
-  execution in roughly five, one, nine, and twenty-eight seconds respectively.
+- Boundary, Hall, threshold, prefix, and shell standalone audits passed in isolated
+  local execution in roughly five, one, nine, twenty-eight, and one second.
 - The complete historical chained runner remains unavailable because a full local
   checkout cannot be obtained; direct clone attempts cannot resolve `github.com`.
 
@@ -128,6 +146,7 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
   four-window alphabet, not for larger windows or genuinely hidden operations.
 - Treat the prefix all-route theorem as bounded to compositions with at most three
   runs and the fixed thirteen-pair source.
+- Use directed metric closure before charging shell connector loss.
 - Preserve one canonical theorem chapter, checker, certificate, and parity row per
   frontier number.
 - Promote no row without a recurrent or asymptotic coordinate source path.
@@ -142,8 +161,8 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
   least `3/8`; no larger-window or genuinely hidden operation is known.
 - Prefix: 968 longer compositions remain unaudited for all 144 routes; there is no
   recurrence between source sizes.
-- Shell: no coordinate macro graph supplies a positive connected circulation and
-  certified burden polytope.
+- Shell: no coordinate macro graph supplies the positive components, connector
+  costs, and robust burden polytope required by the exact augmentation theorem.
 - Integration: all rows and coupling coefficients remain fixture-derived.
 
 ## Uncommitted work
@@ -153,12 +172,12 @@ Theorems in that tranche are `PP3ddb--PP3dds`.
 
 ## Exact next steps
 
-1. Continue theorem numbering at `PP3def` and build `docs/691--692`.
-2. Shell (`docs/691`): derive the exact minimum connector augmentation for
-   disconnected positive circulations and audit small macro graphs.
-3. Integration (`docs/692`): update the gate, certificate, parity supplement, and
+1. Continue theorem numbering at `PP3dei` and build `docs/692`.
+2. Integration: update the evidence gate, certificate, parity supplement, and
    chained runner; preserve `25/30`, the fixed point, and closed gate absent a
    promoted coordinate path.
+3. Begin the next tranche at `PP3del` only after the canonical `687--692` map and
+   runner are verified.
 4. Run the complete historical chain when a full checkout becomes available,
    verify the remote head, and refresh this handoff.
 
