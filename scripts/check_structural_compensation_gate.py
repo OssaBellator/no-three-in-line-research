@@ -22,13 +22,14 @@ assert PROMOTED == ()
 BOUNDARY = {
     "corrected_points": 144,
     "corrected_blocks": 18,
-    "minimum_attempt": "P2/-64",
-    "minimum_cores": 5,
+    "minimum_attempts": 2,
+    "minimum_cores": 6,
     "none_through_budget": 6,
-    "budget_six_per_core": 7595280,
+    "budget_six_per_core": 7595640,
+    "budget_six_total": 45573840,
 }
 assert BOUNDARY["corrected_points"] == 8 * BOUNDARY["corrected_blocks"]
-assert BOUNDARY["minimum_cores"] * BOUNDARY["budget_six_per_core"] == 37976400
+assert BOUNDARY["minimum_cores"] * BOUNDARY["budget_six_per_core"] == BOUNDARY["budget_six_total"]
 
 HALL = {
     "incidence_graphs": 74954,
@@ -101,7 +102,7 @@ print({
     "candidate_fields_complete": 25,
     "candidate_fields_total": 30,
     "new_results": {
-        "boundary": "five minimum P2/-64 cores have no preserving correction through budget six",
+        "boundary": "six minimum-four cores across P1/-33 and P2/-64 have no preserving correction through budget six",
         "Hall": "defect incidence gives an exact degree-two line-graph retention formula and packet-interface surplus",
         "threshold": "19834 minimum equality batches share one rigid 32-layer aggregate and no cyclic four-window concealment",
         "prefix": "all 104 physical matchings and both deletions pass every composition for the deterministic first optimal route",
