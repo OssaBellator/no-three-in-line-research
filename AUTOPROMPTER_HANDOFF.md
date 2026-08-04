@@ -2,7 +2,7 @@
 
 ## Current goal
 
-Populate the unresolved compulsory return, selector, collision, line and interface coefficients, then bind every category occurrence to an exact child provenance key and positive Lyapunov weight. Do not default unresolved terms to zero.
+Ground the unresolved return category by enumerating exact old/new response exchanges inside every normalized side-four host. Preserve every returned edge, entering edge, source exchange pair, alternating-cycle label and unresolved recreated-credit class. Do not infer return coefficients from churn counts alone.
 
 ## Repository state
 
@@ -27,18 +27,6 @@ registry contract = 383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a
 registry seal = b67dc8f667a5e3e51914b8dba928825f8e8d7de0aa5a43f0e79994eca22ac18e
 runner = scripts/run_prime_power_installed_construction_regression_1166.py
 77-checker manifest = e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d
-```
-
-## Repaired CMR1894--CMR1965 bank
-
-All nine source chapters `docs/340--348` and nine verifier programs are present and executable. The corrected bindings are:
-
-```text
-checker = scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py
-checker contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
-checker fix = fed0a3983f7b020e537e6c5420ec68933779f95e
-registry fix = 0929900cbbef9543966188e09ae6f4a130fe5853
-runner fix = 9b0bfc9fb55645ce51b893122fa9ccc65b15bb79
 ```
 
 ## Complete normalized side-four finite data
@@ -67,38 +55,18 @@ positive next-energy gap hosts = 47
 minimum energy census = {0: 75, 1: 9, 4: 2}
 ```
 
-The canonical selector is the lexicographically least member of the complete minimizer face. The full face remains authoritative for stability and coupled-score optimization.
+The canonical selector is the lexicographically least member of the complete minimizer face. The full face remains authoritative.
 
-## Newly completed compulsory-row obligation unit
+## Complete compulsory-row obligation unit
 
 ```text
 contract = data/prime_power_side_four_compulsory_row_obligation_worklist.json
 contract sha256 = 62c6c448b40a8b0294a35673aac997eac73c3380b1cceedffe9616c2326f3211
 compiled 86-row sha256 = b33e4fa3e442349edacbb14a65b088a92b823c67b6a4f810958076a65e3e797b
 checker = scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py
-contract commit = b041e6936838533ea88ca91522c6e8c37cb91eb5
-checker commit = a323fdf168dee954c50139c7a5b78e473a908525
-documentation commit = 9207b0a729a5a78a1734b9b0480b4eb4b0eb67bd
-workflow commit = 25cc92064683dde155e8ed48136b6f29aad0856b
+documentation = docs/557-prime-power-side-four-compulsory-row-obligation-worklist.md
+workflow = .github/workflows/side-four-compulsory-row-obligation-worklist.yml
 ```
-
-The checker deterministically compiles all 86 rows from the sealed selected-response manifest. Each row retains:
-
-```text
-host identifier
-normalized owner scope
-fate
-collision/deletion key
-selected response and complete minimizer face
-minimum energy and next-energy gap
-exact selected-response secant-line signature
-side-four target-01 interface
-p=2, k=2 prime-power label
-CRT-not-applied label
-blocker identifiers
-```
-
-The exact obligation census is:
 
 ```text
 rows = 86
@@ -107,14 +75,50 @@ known coefficients = 86
 unresolved coefficients = 430
 unresolved child keys = 516
 unresolved positive child weights = 516
-zero geometric coefficients = 75
-positive geometric coefficients = 11
-distinct local-line signatures = 6
 ```
 
-Only the geometric coefficient is currently known, equal to the selected minimum response energy. Return, selector, collision, line and interface coefficients remain explicitly unresolved. All child provenance keys and positive weights remain unresolved, including the geometric child binding.
+Only the geometric coefficient is known, equal to the selected minimum response energy.
 
-A temporary oversized partial representation was immediately replaced by the deterministic contract before any checker depended on it. The active branch contains the corrected contract at `b041e693...`.
+## Complete compulsory coefficient dependency map
+
+```text
+contract = data/prime_power_side_four_compulsory_coefficient_dependency_contract.json
+contract sha256 = 4416e7d13dab1b9154040350e0d2b2fbac59e6f94d3984d0bd2b72456c5fb340
+compiled dependency records sha256 = ac085fd5ec8283e266a603b71deac1d434980b0978780e3e18f23f0d6cd37865
+checker = scripts/check_prime_power_side_four_compulsory_coefficient_dependency_map.py
+documentation = docs/558-prime-power-side-four-compulsory-coefficient-dependency-map.md
+workflow = .github/workflows/side-four-compulsory-coefficient-dependency-map.yml
+documentation commit = 1fc7e0d44f0f3e48cdacf58f808afcb8c7301017
+workflow commit = 5077431d3fd097611b73d1852cc5786dc475d203
+duplicate cleanup commit = bf3013dfb9abe5ccc65286a8a3be92072394a3ad
+```
+
+The exact dependency census is:
+
+```text
+dependency records = 516
+known coefficient records = 86
+unresolved coefficient records = 430
+child-binding unresolved records = 516
+known input occurrences = 516
+missing input occurrences = 1634
+ungrounded return records = 86
+partially grounded selector/collision/line/interface records = 344
+geometric coefficient-known but binding-unresolved records = 86
+```
+
+Category status:
+
+```text
+return = ungrounded; exchange class, returned-edge/token state, child key and rule missing
+selector = minimizer face and gap known; complete coupled score and child binding missing
+collision = deletion trace known; child owner/fate/class and rule missing
+line = selected-response line signature known; actual background profile and routing missing
+interface = normalized target interface known; child interface route and provenance missing
+geometric = coefficient known; child key and positive weight missing
+```
+
+The raw host does not determine the actual background set. No line coefficient may be inferred from the identity matching or normalized host alone.
 
 ## Decisions to preserve
 
@@ -122,11 +126,12 @@ A temporary oversized partial representation was immediately replaced by the det
 2. Incomplete fibres use componentwise maxima; never select an arbitrary representative.
 3. Every compulsory coefficient, positive child weight, inner dual and outer edge must be present before a strict-row claim.
 4. Unresolved coefficients are not zero coefficients.
-5. Rank-three slack is allocated once in the same row and cannot be double-counted.
-6. Selector ties retain the complete minimizer face; the canonical selector is only a deterministic representative.
-7. A positive next-energy gap is a response-energy stability margin, not a complete coupled-score stability theorem.
-8. The normalized host context is complete, but global child provenance and weighted rows are not.
-9. Workflow configuration is not CI success.
+5. Return payment uses the exact returned-edge exchange kernel, not total churn magnitude.
+6. Rank-three slack is allocated once in the same row and cannot be double-counted.
+7. Selector ties retain the complete minimizer face; the canonical selector is only a deterministic representative.
+8. A positive next-energy gap is a response-energy stability margin, not a complete coupled-score stability theorem.
+9. The normalized host context and dependency map are complete, but global child provenance and weighted rows are not.
+10. Workflow configuration is not CI success.
 
 ## Exact flags
 
@@ -139,7 +144,10 @@ side_four_raw_fibre_lineage_manifest_complete = 1
 side_four_selected_response_provenance_manifest_complete = 1
 side_four_compulsory_row_obligation_worklist_complete = 1
 compiled_normalized_row_context_complete = 1
+side_four_compulsory_coefficient_dependency_map_complete = 1
+dependency_map_complete_for_normalized_block = 1
 
+unresolved_coefficients_populated = 0
 global_child_provenance_complete = 0
 compulsory_coefficients_complete = 0
 child_weights_complete = 0
@@ -168,6 +176,7 @@ runner manifest = reproduced locally
 raw-lineage checker and 10 corruptions = executed locally
 selected-response checker and 10 corruptions = executed locally
 obligation compiler and 12 corruptions = executed locally
+dependency compiler and 12 corruptions = executed locally
 complete 77-checker runner = not executed locally
 workflow success = not observed
 ```
@@ -184,14 +193,15 @@ uncommitted generated artifacts = none known
 No literal source chapter after CMR1965 has been confirmed.
 
 ```text
-1. compile an exact per-category dependency worklist for the 430 unresolved coefficients
-2. identify the source state/provenance fields required for each return, selector, collision, line and interface term
-3. populate coefficients only where those inputs are present; retain explicit unresolved records elsewhere
-4. attach one exact child key and positive weight to every populated coefficient
-5. preserve all minimizer faces and stability gaps while optimizing the complete coupled score
-6. apply zero-response dispatch on 75 rows and blocker alternatives on 11 rows
-7. run slack-preconditioned inner and outer dual validation
-8. publish strict rows or an exact residual host/provenance worklist
+1. enumerate every ordered old/new response pair within each of the 86 hosts
+2. record leaving and entering edge sets and the source exchange bijection
+3. decompose each symmetric difference into alternating cycles and retain cycle lengths
+4. attach the selected-response transition subset without discarding other allowed responses
+5. leave recreated-credit classes and exact return-kernel counts unresolved until physical credit provenance is present
+6. use the exchange manifest to partially ground all 86 return dependency records
+7. attach actual background-height profiles for line coefficients
+8. attach collision and interface child routing
+9. publish populated weighted rows or an exact residual worklist
 ```
 
-The next success criterion is a checked dependency map for all 430 unresolved coefficients, followed by at least one fully populated compulsory weighted row without hidden zero defaults.
+The next success criterion is a checked finite return-exchange manifest for every within-host response transition, followed by at least one exact return-kernel coefficient after recreated-credit provenance is supplied.
