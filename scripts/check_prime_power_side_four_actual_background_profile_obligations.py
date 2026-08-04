@@ -30,16 +30,22 @@ def digest(value: Any) -> str:
 SELECTED_PATH = "data/prime_power_side_four_selected_response_provenance_manifest.json"
 RETURN_CONTRACT_PATH = "data/prime_power_side_four_return_exchange_context_contract.json"
 RESIDUAL_CONTRACT_PATH = "data/prime_power_side_four_residual_return_credit_worklist_contract.json"
+SYMBOLIC_LINE_CONTRACT_PATH = "data/prime_power_side_four_symbolic_line_kernel_context_contract.json"
+LINE_REFINEMENT_PATH = "data/prime_power_side_four_coefficient_dependency_line_refinement.json"
 PROFILE_CONTRACT_PATH = "data/prime_power_side_four_actual_background_profile_obligation_contract.json"
 RETURN_CHECKER_PATH = "scripts/check_prime_power_side_four_return_exchange_context.py"
 RESIDUAL_CHECKER_PATH = "scripts/check_prime_power_side_four_residual_return_credit_worklist.py"
+SYMBOLIC_LINE_CHECKER_PATH = "scripts/check_prime_power_side_four_symbolic_line_kernel_context.py"
+LINE_REFINEMENT_CHECKER_PATH = "scripts/check_prime_power_side_four_coefficient_dependency_line_refinement.py"
 
 EXPECTED_SELECTED_SHA256 = "0eb284dd945b3022b529551c5d5f0407884f8ed1958de02b58e3cff024f5a4e6"
 EXPECTED_RETURN_CONTRACT_SHA256 = "0ef63d739e0d82c80105387cffaa4e81ff8834fc0d389f2597f4968cd1084e1b"
 EXPECTED_RETURN_CONTEXT_ROW_SHA256 = "fdb2ff3287ce607727740130754230cd9c55a415985f393ea166bb3f7ef626ea"
 EXPECTED_RESIDUAL_CONTRACT_SHA256 = "606627526d45ca38c216ad036439046b0da8d9f90f12041fa25019fbb2a82808"
 EXPECTED_RESIDUAL_ROW_SHA256 = "72efb06f92a1af90addde21b06146cdfc5b73f31134953583effae188f8713d2"
-EXPECTED_PROFILE_CONTRACT_SHA256 = "090adf1124d186d0eb8c16a4f7ae286d167583540386832c642b4eac2d24922f"
+EXPECTED_SYMBOLIC_LINE_CONTRACT_SHA256 = "0232bda658189acdb880681ce19192698e049d603a2e779d5f9e287d43fe481e"
+EXPECTED_LINE_REFINEMENT_SHA256 = "8ff0751442bfefe378a74978c710d71c9e8c0d2c04652e4dcd2202746846890c"
+EXPECTED_PROFILE_CONTRACT_SHA256 = "e605c9da6e45bc4253129cea8e40e744dece8426aae0f0e7efbd2c849e1a08cd"
 
 
 def repository_root(start: Path | None = None) -> Path:
@@ -63,11 +69,13 @@ def load_module(path: Path, name: str) -> Any:
 
 def expected_contract() -> dict[str, Any]:
     return {
-        "schema": "prime-power-side-four-actual-background-profile-obligation-contract/v1",
+        "schema": "prime-power-side-four-actual-background-profile-obligation-contract/v2",
         "selected_response_manifest_sha256": EXPECTED_SELECTED_SHA256,
         "return_exchange_contract_sha256": EXPECTED_RETURN_CONTRACT_SHA256,
         "residual_return_contract_sha256": EXPECTED_RESIDUAL_CONTRACT_SHA256,
         "compiled_residual_return_row_sha256": EXPECTED_RESIDUAL_ROW_SHA256,
+        "symbolic_line_contract_sha256": EXPECTED_SYMBOLIC_LINE_CONTRACT_SHA256,
+        "line_dependency_refinement_sha256": EXPECTED_LINE_REFINEMENT_SHA256,
         "profile_fields": [
             "host_id",
             "background_id",
@@ -83,7 +91,7 @@ def expected_contract() -> dict[str, Any]:
             "background_identity": "each profile identifies one exact background point set and complete provenance refinement for one normalized host row",
             "rank_one_witness": "for each selected entering edge, list every nonaxis background line through it and certify the exact sum of binomial(line_load,2)",
             "rank_two_line_class": "all response pairs on one exact host-line share one background line-load variable; a response line of occupancy k expands to binomial(k,2) pair slots",
-            "complete_line_kernel": "for background load h and response occupancy k use k*binomial(h,2)+binomial(k,2)*h+binomial(k,3)",
+            "complete_line_kernel": "use the bound symbolic rule K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3)",
             "provenance_boundary": "line owner, interface and CRT labels remain explicit and are never inferred from the normalized host",
             "unresolved_boundary": "null profile fields are obligations, not zero values",
         },
@@ -94,6 +102,9 @@ def expected_contract() -> dict[str, Any]:
             "rank_two_host_line_classes": 488,
             "host_line_classes_by_response_occupancy": {"2": 477, "3": 9, "4": 2},
             "pair_slots_by_response_occupancy": {"2": 477, "3": 27, "4": 12},
+            "rank_one_multiplier_total": 989,
+            "rank_two_multiplier_total": 516,
+            "rank_three_constant_total": 17,
             "unresolved_background_ids": 86,
             "unresolved_background_point_sets": 86,
             "unresolved_background_point_provenance_records": 86,
@@ -105,6 +116,8 @@ def expected_contract() -> dict[str, Any]:
         },
         "honesty": {
             "actual_background_profile_obligation_compiler_complete": 1,
+            "symbolic_line_binding_complete": 1,
+            "line_dependency_refinement_binding_complete": 1,
             "actual_background_profiles_complete": 0,
             "rank_one_return_coefficients_complete": 0,
             "rank_two_return_coefficients_complete": 0,
@@ -148,6 +161,9 @@ def compile_requirements(residual_rows: list[dict[str, Any]]) -> list[dict[str, 
                 {
                     "line_equation": list(line),
                     "response_line_occupancy": occupancy,
+                    "rank_one_multiplier": occupancy,
+                    "rank_two_multiplier": comb(occupancy, 2),
+                    "rank_three_constant": comb(occupancy, 3),
                     "response_pairs": [entry["response_pair"] for entry in entries],
                     "entering_owners": [entry["entering_owner"] for entry in entries],
                     "returned_predecessors": [entry["returned_predecessor"] for entry in entries],
@@ -173,6 +189,7 @@ def compile_requirements(residual_rows: list[dict[str, Any]]) -> list[dict[str, 
 
 
 def validate(
+    root: Path,
     selected: dict[str, Any],
     return_rows: list[dict[str, Any]],
     residual_rows: list[dict[str, Any]],
@@ -180,6 +197,16 @@ def validate(
 ) -> list[dict[str, Any]]:
     require(digest(selected) == EXPECTED_SELECTED_SHA256, "selected manifest digest")
     require(len(return_rows) == 86 and len(residual_rows) == 86, "host row coverage")
+
+    symbolic = load_module(root / SYMBOLIC_LINE_CHECKER_PATH, "side_four_symbolic_line")
+    refinement = load_module(root / LINE_REFINEMENT_CHECKER_PATH, "side_four_line_refinement")
+    require(symbolic.EXPECTED_CONTRACT_SHA256 == EXPECTED_SYMBOLIC_LINE_CONTRACT_SHA256, "symbolic line contract binding")
+    require(refinement.EXPECTED_REFINEMENT_SHA256 == EXPECTED_LINE_REFINEMENT_SHA256, "line refinement binding")
+    symbolic_contract = json.loads((root / SYMBOLIC_LINE_CONTRACT_PATH).read_text(encoding="utf-8"))
+    refinement_contract = json.loads((root / LINE_REFINEMENT_PATH).read_text(encoding="utf-8"))
+    symbolic.validate(root, symbolic_contract)
+    refinement.validate(root, refinement_contract)
+
     require(contract == expected_contract(), "profile obligation contract differs from canonical schema")
     require(digest(contract) == EXPECTED_PROFILE_CONTRACT_SHA256, "profile obligation contract digest")
 
@@ -195,7 +222,9 @@ def validate(
         for line in row["rank_two_line_loads"]
     )
     require(line_class_occupancies == Counter({2: 477, 3: 9, 4: 2}), "host-line occupancy census")
+
     pair_slot_occupancies = Counter()
+    rank_one_total = rank_two_total = rank_three_total = 0
     for row in requirements:
         require(row["background_id"] is None, f"{row['host_id']}: background id honesty")
         require(row["background_points"] is None, f"{row['host_id']}: background points honesty")
@@ -209,11 +238,16 @@ def validate(
             require(line["background_line_load"] is None, f"{row['host_id']}: line-load honesty")
             require(line["line_owner_label"] is None, f"{row['host_id']}: line-owner honesty")
             pair_slot_occupancies[line["response_line_occupancy"]] += len(line["response_pairs"])
+            rank_one_total += line["rank_one_multiplier"]
+            rank_two_total += line["rank_two_multiplier"]
+            rank_three_total += line["rank_three_constant"]
     require(pair_slot_occupancies == Counter({2: 477, 3: 27, 4: 12}), "pair-slot occupancy census")
+    require((rank_one_total, rank_two_total, rank_three_total) == (989, 516, 17), "symbolic multiplier census")
     return requirements
 
 
 def mutation_audit(
+    root: Path,
     selected: dict[str, Any],
     return_rows: list[dict[str, Any]],
     residual_rows: list[dict[str, Any]],
@@ -222,14 +256,15 @@ def mutation_audit(
     mutations = [
         lambda item: item["aggregate"].update(host_profile_records=85),
         lambda item: item["aggregate"].update(rank_two_host_line_classes=487),
+        lambda item: item["aggregate"].update(rank_one_multiplier_total=988),
         lambda item: item["aggregate"]["host_line_classes_by_response_occupancy"].update({"2": 476}),
-        lambda item: item["aggregate"]["pair_slots_by_response_occupancy"].update({"3": 26}),
         lambda item: item["profile_fields"].remove("background_points"),
+        lambda item: item.update(symbolic_line_contract_sha256="0" * 64),
+        lambda item: item.update(line_dependency_refinement_sha256="0" * 64),
         lambda item: item["rules"].update(rank_two_line_class="one variable per response pair"),
         lambda item: item["rules"].update(unresolved_boundary="null means zero"),
         lambda item: item["rules"].update(complete_line_kernel="rank three only"),
         lambda item: item["honesty"].update(actual_background_profiles_complete=1),
-        lambda item: item["honesty"].update(rank_one_return_coefficients_complete=1),
         lambda item: item["honesty"].update(line_coefficients_complete=1),
         lambda item: item["honesty"].update(all_n_proved_by_checker=1),
     ]
@@ -238,7 +273,7 @@ def mutation_audit(
         bad = copy.deepcopy(contract)
         mutate(bad)
         try:
-            validate(selected, return_rows, residual_rows, bad)
+            validate(root, selected, return_rows, residual_rows, bad)
         except ActualBackgroundProfileObligationError:
             rejected += 1
     require(rejected == len(mutations), "background profile corruption accepted")
@@ -261,19 +296,26 @@ def main() -> None:
 
     return_rows = return_checker.validate(selected, return_contract)
     residual_rows = residual_checker.validate(selected, return_rows, residual_contract)
-    requirements = validate(selected, return_rows, residual_rows, contract)
+    requirements = validate(root, selected, return_rows, residual_rows, contract)
     print(
         json.dumps(
             {
                 "checker": "prime-power-side-four-actual-background-profile-obligations",
                 "profile_obligation_contract_sha256": EXPECTED_PROFILE_CONTRACT_SHA256,
+                "symbolic_line_contract_sha256": EXPECTED_SYMBOLIC_LINE_CONTRACT_SHA256,
+                "line_dependency_refinement_sha256": EXPECTED_LINE_REFINEMENT_SHA256,
                 "compiled_profile_requirement_sha256": digest(requirements),
                 "profile_record_count": 86,
                 "rank_one_incidence_slot_count": 344,
                 "rank_two_pair_slot_count": 516,
                 "rank_two_host_line_class_count": 488,
-                "rejected_corruptions": mutation_audit(selected, return_rows, residual_rows, contract),
+                "rank_one_multiplier_total": 989,
+                "rank_two_multiplier_total": 516,
+                "rank_three_constant_total": 17,
+                "rejected_corruptions": mutation_audit(root, selected, return_rows, residual_rows, contract),
                 "actual_background_profile_obligation_compiler_complete": 1,
+                "symbolic_line_binding_complete": 1,
+                "line_dependency_refinement_binding_complete": 1,
                 "actual_background_profiles_complete": 0,
                 "rank_one_return_coefficients_complete": 0,
                 "rank_two_return_coefficients_complete": 0,
