@@ -8,6 +8,10 @@ subprocess.run(
     [sys.executable, str(HERE / "check_frontier_693_696.py")],
     check=True,
 )
-check = "check_threshold_all_window_widths.py"
-subprocess.run([sys.executable, str(HERE / check)], check=True)
-print({"frontier": "693-697", "check": check, "status": "passed"})
+checks = [
+    "check_hall_coordinate_defect_packet.py",
+    "check_hall_two_motif_incidence_packets.py",
+]
+for check in checks:
+    subprocess.run([sys.executable, str(HERE / check)], check=True)
+print({"frontier": "693-697", "checks": checks, "status": "passed"})
