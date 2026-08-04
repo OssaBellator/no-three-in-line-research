@@ -1,0 +1,88 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "687-692",
+  "theorems": [
+    "PP3ddt", "PP3ddu", "PP3ddv",
+    "PP3ddw", "PP3ddx", "PP3ddy",
+    "PP3ddz", "PP3dea", "PP3deb",
+    "PP3dec", "PP3ded", "PP3dee",
+    "PP3def", "PP3deg", "PP3deh",
+    "PP3dei", "PP3dej", "PP3dek"
+  ],
+  "boundary": {
+    "minimum_five_attempts": 13,
+    "minimum_five_cores": 68,
+    "minimum_six_attempts": 46,
+    "minimum_six_cores": 442,
+    "low_attempts_including_minimum_four": 60,
+    "low_cores_including_minimum_four": 515,
+    "five_point_replacements_rejected": 4890,
+    "six_point_replacements_from_minimum_five_cores_rejected": 4258350,
+    "six_point_replacements_from_minimum_six_cores_rejected": 142200,
+    "new_replacements_rejected": 4405440,
+    "corrected_nineteenth_transition": false
+  },
+  "hall": {
+    "packet_graphs": 1024,
+    "direct_chain_checks": 4096,
+    "strict_transfer_improvements": 3060,
+    "maximum_four_packet_improvement": 6,
+    "cycle_mean_histogram": {
+      "3": 381,
+      "5/2": 115,
+      "7/3": 22,
+      "2": 503,
+      "3/2": 2,
+      "1": 1
+    },
+    "example_exact_packets_for_28": 9,
+    "example_additive_packets_for_28": 13
+  },
+  "threshold": {
+    "primitive_type_multisets": 126,
+    "identity_free_legal": 70,
+    "identity_containing_illegal": 56,
+    "exact_maximum_legal_windows": "5K-3",
+    "exact_minimum_illegal_windows": "3K+3",
+    "asymptotic_legal_window_density": "5/8",
+    "small_multiple_identity_position_sets": {
+      "1": 56,
+      "2": 8008,
+      "3": 1307504
+    },
+    "small_multiple_maxima": {
+      "1": 2,
+      "2": 7,
+      "3": 12
+    }
+  },
+  "prefix": {
+    "minimum_crossing_matchings": 104,
+    "deletion_cases": 2,
+    "optimal_routes_per_case": 144,
+    "compositions_with_at_most_three_runs": 56,
+    "coordinate_audits": 1677312,
+    "failures": 0,
+    "maximum_coordinate_by_deletion": {
+      "delete_0_2": 120,
+      "delete_3_5": 154
+    }
+  },
+  "shell": {
+    "three_component_cost_matrices": 729,
+    "exact_eulerian_equals_metric_tour": true,
+    "strict_metric_closure_improvements": 3,
+    "maximum_metric_improvement": 1,
+    "repetition_formula": "floor((S+L*)/G)+1"
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "actual_evidence_level": "fixture_derived",
+    "promoted_rows": [],
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3del"
+  }
+}
