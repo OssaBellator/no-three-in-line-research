@@ -2,7 +2,7 @@
 
 ## Current goal
 
-Populate compulsory child-weighted coefficient rows on the complete normalized side-four host and selected-response manifests, while retaining exact owner/fate/collision/line/interface/CRT labels and all honesty boundaries.
+Populate the unresolved compulsory return, selector, collision, line and interface coefficients, then bind every category occurrence to an exact child provenance key and positive Lyapunov weight. Do not default unresolved terms to zero.
 
 ## Repository state
 
@@ -31,89 +31,101 @@ runner = scripts/run_prime_power_installed_construction_regression_1166.py
 
 ## Repaired CMR1894--CMR1965 bank
 
-All nine previously missing source chapters `docs/340--348` and all nine verifier programs were restored. The consolidated checker, registry and runner contract bindings were corrected.
+All nine source chapters `docs/340--348` and nine verifier programs are present and executable. The corrected bindings are:
 
 ```text
+checker = scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py
+checker contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
 checker fix = fed0a3983f7b020e537e6c5420ec68933779f95e
 registry fix = 0929900cbbef9543966188e09ae6f4a130fe5853
 runner fix = 9b0bfc9fb55645ce51b893122fa9ccc65b15bb79
 ```
 
-The exact 72-entry payment census is:
+## Complete normalized side-four finite data
 
-```text
-spectral-certificate = 22
-local-family-equivalence = 19
-finite-base-dispatch = 14
-table-enumeration = 6
-owner-witness-stock = 5
-certificate-gluing = 3
-scheduler-dispatch = 2
-history-budget = 1
-```
-
-## Complete normalized side-four lineage manifest
+### Raw lineage
 
 ```text
 manifest = data/prime_power_side_four_raw_fibre_lineage_manifest.json
 manifest sha256 = 84ad1c92a9e0bcfb4d1f613e05edec20c4300022d96269ed561b45d32bf7432f
-checker = scripts/check_prime_power_side_four_raw_fibre_lineage_manifest.py
-manifest commit = 78ecbfd9b6401f31749380a9e0091975991d5b63
-checker commit = 0fa4e9124d8e85cafde082debfa791c9931885b2
-```
-
-```text
-executable raw hosts = 86
+hosts = 86
 response occurrences = 206
-zero-triple response occurrences = 137
-hosts admitting a zero-triple response = 75
+zero-triple responses = 137
+zero-response hosts = 75
 blocker-alternative hosts = 11
-response energy census = {0: 137, 1: 34, 4: 35}
 minimal blockers = 3
 ```
 
-Every host has a stable identifier, exact deletion trace, exact response family and triple counts, dispatch class and contained blockers.
-
-## Complete selected-response/fate refinement
+### Selected response and fate
 
 ```text
 manifest = data/prime_power_side_four_selected_response_provenance_manifest.json
 manifest sha256 = 0eb284dd945b3022b529551c5d5f0407884f8ed1958de02b58e3cff024f5a4e6
-checker = scripts/check_prime_power_side_four_selected_response_provenance_manifest.py
-manifest commit = 10a2387a4400bbce597d638c04c890fe230d21fb
-checker commit = 7d6c01694f44d7bf61829d89d15ae5b740bb31fa
-workflow commit = c49628e857d7295a64e49281f9fc41f9134bacec
-```
-
-The selector rule is minimum triple count, then lexicographically least response. The exact finite selector census is:
-
-```text
 unique minimum hosts = 42
 tied minimum hosts = 44
-hosts with positive next-energy gap = 47
-hosts with no higher-energy response = 39
-gap census = {1: 25, 3: 9, 4: 13, none: 39}
+positive next-energy gap hosts = 47
 minimum energy census = {0: 75, 1: 9, 4: 2}
 ```
 
-The exact minimal deletion blockers remain:
+The canonical selector is the lexicographically least member of the complete minimizer face. The full face remains authoritative for stability and coupled-score optimization.
+
+## Newly completed compulsory-row obligation unit
 
 ```text
-{(0,2),(2,0)}
-{(0,2),(3,1)}
-{(1,3),(3,1)}
+contract = data/prime_power_side_four_compulsory_row_obligation_worklist.json
+contract sha256 = 62c6c448b40a8b0294a35673aac997eac73c3380b1cceedffe9616c2326f3211
+compiled 86-row sha256 = b33e4fa3e442349edacbb14a65b088a92b823c67b6a4f810958076a65e3e797b
+checker = scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py
+contract commit = b041e6936838533ea88ca91522c6e8c37cb91eb5
+checker commit = a323fdf168dee954c50139c7a5b78e473a908525
+documentation commit = 9207b0a729a5a78a1734b9b0480b4eb4b0eb67bd
+workflow commit = 25cc92064683dde155e8ed48136b6f29aad0856b
 ```
+
+The checker deterministically compiles all 86 rows from the sealed selected-response manifest. Each row retains:
+
+```text
+host identifier
+normalized owner scope
+fate
+collision/deletion key
+selected response and complete minimizer face
+minimum energy and next-energy gap
+exact selected-response secant-line signature
+side-four target-01 interface
+p=2, k=2 prime-power label
+CRT-not-applied label
+blocker identifiers
+```
+
+The exact obligation census is:
+
+```text
+rows = 86
+compulsory category slots = 516
+known coefficients = 86
+unresolved coefficients = 430
+unresolved child keys = 516
+unresolved positive child weights = 516
+zero geometric coefficients = 75
+positive geometric coefficients = 11
+distinct local-line signatures = 6
+```
+
+Only the geometric coefficient is currently known, equal to the selected minimum response energy. Return, selector, collision, line and interface coefficients remain explicitly unresolved. All child provenance keys and positive weights remain unresolved, including the geometric child binding.
+
+A temporary oversized partial representation was immediately replaced by the deterministic contract before any checker depended on it. The active branch contains the corrected contract at `b041e693...`.
 
 ## Decisions to preserve
 
 1. Full owner/fate/collision/local-line/interface/provenance keys are required for lossless compression.
 2. Incomplete fibres use componentwise maxima; never select an arbitrary representative.
-3. Every compulsory coefficient, positive child weight, inner dual and outer edge must be present.
-4. Rank-three slack is allocated once in the same row and cannot be double-counted.
-5. Selector ties retain the full minimizer face; the canonical selector is only the deterministic tie-break representative.
-6. The positive next-energy gap is an exact stability margin, not a global background-stability claim.
-7. The two new manifests complete normalized coordinate host/response/selector lineage only.
-8. Global owner/fate/collision/interface/CRT provenance and compulsory weighted rows remain unpopulated.
+3. Every compulsory coefficient, positive child weight, inner dual and outer edge must be present before a strict-row claim.
+4. Unresolved coefficients are not zero coefficients.
+5. Rank-three slack is allocated once in the same row and cannot be double-counted.
+6. Selector ties retain the complete minimizer face; the canonical selector is only a deterministic representative.
+7. A positive next-energy gap is a response-energy stability margin, not a complete coupled-score stability theorem.
+8. The normalized host context is complete, but global child provenance and weighted rows are not.
 9. Workflow configuration is not CI success.
 
 ## Exact flags
@@ -125,9 +137,14 @@ installed_payment_assignment_1166_complete = 1
 installed_transition_regression_1166_complete = 1
 side_four_raw_fibre_lineage_manifest_complete = 1
 side_four_selected_response_provenance_manifest_complete = 1
+side_four_compulsory_row_obligation_worklist_complete = 1
+compiled_normalized_row_context_complete = 1
 
+global_child_provenance_complete = 0
+compulsory_coefficients_complete = 0
+child_weights_complete = 0
+complete_weighted_rows_strict = 0
 owner_fate_rows_populated_all_recurrent_states = 0
-compulsory_weighted_certificates_complete = 0
 raw_fibre_backgrounds_cover_all_provenance = 0
 rank_three_zero_blockers_globally_resolved = 0
 complete_labelled_recurrent_lp_strict = 0
@@ -148,8 +165,9 @@ consolidated owner/fate checker = executed locally
 checker contract and 17 corruptions = reproduced locally
 registry contract/census/payment counts/seal = reproduced locally
 runner manifest = reproduced locally
-lineage manifest checker and 10 corruptions = executed locally
+raw-lineage checker and 10 corruptions = executed locally
 selected-response checker and 10 corruptions = executed locally
+obligation compiler and 12 corruptions = executed locally
 complete 77-checker runner = not executed locally
 workflow success = not observed
 ```
@@ -166,14 +184,14 @@ uncommitted generated artifacts = none known
 No literal source chapter after CMR1965 has been confirmed.
 
 ```text
-1. define the finite provenance refinement attached to each host/selector record
-2. populate owner, collision, local-line, interface and CRT keys without merging rows
-3. derive compulsory return, selector, collision, line, interface and geometric coefficients
-4. attach one positive child weight to every coefficient
-5. apply zero-response dispatch on 75 hosts and blocker alternatives on 11 hosts
-6. use each exact minimizer face and next-energy gap in selector-stability checks
+1. compile an exact per-category dependency worklist for the 430 unresolved coefficients
+2. identify the source state/provenance fields required for each return, selector, collision, line and interface term
+3. populate coefficients only where those inputs are present; retain explicit unresolved records elsewhere
+4. attach one exact child key and positive weight to every populated coefficient
+5. preserve all minimizer faces and stability gaps while optimizing the complete coupled score
+6. apply zero-response dispatch on 75 rows and blocker alternatives on 11 rows
 7. run slack-preconditioned inner and outer dual validation
 8. publish strict rows or an exact residual host/provenance worklist
 ```
 
-The next success criterion is one complete compulsory weighted-row manifest for the full 86-host normalized provenance block.
+The next success criterion is a checked dependency map for all 430 unresolved coefficients, followed by at least one fully populated compulsory weighted row without hidden zero defaults.
