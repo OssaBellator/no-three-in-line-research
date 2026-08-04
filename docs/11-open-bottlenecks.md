@@ -16,97 +16,83 @@ same-owner kinds = 1002
 checkers = 77
 ```
 
-## 3. Populated normalized side-four surface
+## 3. Complete normalized side-four structure
 
-The repaired CMR1894--CMR1965 bank supplies the exact certificate and kernel schemas. Post-ledger compilers now populate:
-
-```text
-86 normalized raw hosts
-206 response occurrences
-75 zero-response hosts
-11 blocker alternatives
-complete selected minimizer faces and response-energy gaps
-516 compulsory category slots
-exact rank-three return coefficients and returned-edge charges
-exact symbolic line-kernel rules
-complete prerequisite records for all compulsory categories
-```
-
-The exact finite seals are recorded in `STATUS.md` and `AUTOPROMPTER_HANDOFF.md`.
-
-## 4. Progress on formerly undefined coefficients
-
-### Return
-
-The fixed identity-to-selected-response transition gives 344 exact exchange pairs. The selected-response rank-three return kernel is complete:
+The current post-ledger stack contains:
 
 ```text
-17 recreated rank-three credits
-13 nonzero returned-edge kernel entries
-2 charges to returned edge 22
-15 charges to returned edge 33
+86 normalized hosts and complete allowed response families
+canonical selected responses and full minimizer faces
+378 ordered response-to-response transitions
+344 identity-to-selected exchange entries
+exact selected-response rank-three return kernel
+344 rank-one structural return dependencies
+516 rank-two structural return dependencies
+516 compulsory category dependency records
+exact symbolic line coefficient rules on 488 distinct response-line occurrences
 ```
 
-The residual return worklist explicitly retains 344 unresolved rank-one, rank-two, selector-token and other-labelled coefficient slots.
+The canonical dependency map v4 has 774 known and 1462 missing prerequisite occurrences. The additive symbolic-line refinement raises the known total to 860 and lowers the missing total to 1376.
 
-### Line
+## 4. Closed structural fronts
 
-The exact symbolic rule
+### Return exchange
+
+```text
+rank-three recreated credits = 17
+nonzero rank-three kernel entries = 13
+rank-one structural entries = 344
+rank-two structural entries = 516
+```
+
+Every returned predecessor, entering owner, matching-cycle label, response pair and rank-two line equation is known. Actual background incidences and child bindings are not.
+
+### Line kernel
 
 ```text
 K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3)
+line occurrences = 488
+rank-one multiplier total = 989
+rank-two multiplier total = 516
+rank-three constant total = 17
 ```
 
-is compiled on all 488 selected-response line occurrences. The rank-three constants total 17 and match the return kernel. Actual line heights and line-owner labels are still absent.
-
-### Dependency map
-
-```text
-records = 516
-known coefficients = 86
-unresolved coefficients = 430
-known prerequisites after line refinement = 774
-missing prerequisites after line refinement = 1376
-```
-
-No category is now structurally ungrounded, but no non-geometric category is numerically complete.
+The rank-three constants match the return kernel. Numerical rank-one and rank-two coefficients still require the actual background height on each line.
 
 ## 5. Active frontier
 
 ```text
-attach actual background-height profiles to every coordinate line occurrence
-attach line-owner labels and line child routing
-refine residual return credit classes and total return coefficient rules
+construct exact actual-background profiles for a nontrivial provenance batch
+attach coordinate background points and retained incidence labels
+populate 344 rank-one background-pair incidences
+populate 516 rank-two background-point incidences
+attach line-owner labels and return/line child routes
 attach collision child owner/fate/class routing
 attach interface child route and provenance
-evaluate complete coupled scores across full minimizer faces
-bind every coefficient to one exact child key and positive weight
-run slack-preconditioned inner and outer dual validation
+evaluate complete coupled selector scores on full minimizer faces
+bind positive child weights and validate strict rows
 ```
 
 ## 6. Exact blockers
 
-1. The normalized host does not identify the actual inherited background-height profile.
-2. Line owners and child routes are not attached to the 488 line occurrences.
-3. Rank-one, rank-two, selector-token and other-labelled return classes remain unresolved.
-4. Collision traces are known, but their child owner/fate/class routing is not.
-5. The target interface is known, but child interface route and provenance are not.
-6. Selector choice currently minimizes response-triple energy, not the complete coupled weighted score.
-7. All 516 child keys and positive weights remain unresolved.
-8. Global transition exhaustiveness and termination remain open.
+1. The normalized host and identity matching do not determine the actual inherited background.
+2. All 344 rank-one background-pair incidences remain null.
+3. All 516 rank-two background-point incidences remain null.
+4. Line-owner labels and child routes are absent.
+5. Return child keys and the complete return coefficient rule are absent.
+6. Collision and interface child routing remain absent.
+7. Selector choice is based on response-triple energy, not the complete coupled weighted score.
+8. All compulsory child weights remain unresolved.
+9. Global transition exhaustiveness and termination remain open.
 
 ## 7. Validation boundary
 
 ```text
-repaired source verifiers and owner/fate checker = executed locally during repair
-registry 1166 contract/census/seal = locally reproduced
-runner 1166 manifest = locally reproduced
-raw-lineage, selector, obligation, return and base dependency audits = reproduced during installation
-residual-return checker = source/workflow installed; current execution not independently observed
+canonical repair and v4 finite checkers = locally reproduced in installed docs
 symbolic-line checker = source/workflow installed; current execution not independently observed
 line-refinement checker = source/workflow installed; current execution not independently observed
 complete 77-checker runner = not executed
 workflow success = not observed
 ```
 
-Workflow configuration is not CI success. Exact structural compilers do not substitute for a populated strict weighted recurrent row.
+Workflow configuration is not CI success. Exact structural worklists do not substitute for actual background incidence data or a strict weighted recurrent row.
