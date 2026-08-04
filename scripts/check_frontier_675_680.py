@@ -6,7 +6,7 @@ import sys
 HERE = Path(__file__).resolve().parent
 subprocess.run([sys.executable, str(HERE / "check_frontier_669_674.py")], check=True)
 checks = [
-    "check_boundary_eighteenth_transition.py",
+    "check_boundary_corrected_nineteenth_frontier.py",
     "check_hall_degree_two_centre_components.py",
     "check_threshold_minimal_hidden_mixture.py",
     "check_prefix_orbit_representative_compositions.py",
