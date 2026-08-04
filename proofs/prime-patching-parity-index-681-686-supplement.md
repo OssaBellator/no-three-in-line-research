@@ -2,7 +2,7 @@
 
 | Document | Theorems | Exact content | Evidence boundary |
 |---|---|---|---|
-| `681` | `PP3ddb--PP3ddd` | Corrected nineteenth frontier: unique `P2/-64` minimum-four attempt, five cores, and no preserving correction through budget six | Finite obstruction; budget seven and recurrence open |
+| `681` | `PP3ddb--PP3ddd` | Corrected nineteenth frontier: `P1/-33` has one minimum-four core, `P2/-64` has five, and all six have no preserving correction through budget six | Finite obstruction; the later budget-seven transition in `docs/693` is sharp but not recurrent |
 | `682` | `PP3dde--PP3ddg` | Defect-incidence line-graph model, exact odd-path retention, and packet concatenation bound `sum r_j-sum c_i` | Conditional on coordinate packets, bounded interfaces, and both label-load restrictions |
 | `683` | `PP3ddh--PP3ddj` | Exact 19,834 minimum hidden-mixture batches; unique aggregate primitive content with twelve identity layers; no cyclic four-window concealment | Algebraic/layer obstruction; no hidden geometric execution |
 | `684` | `PP3ddk--PP3ddm` | All 104 physical matchings, both deletions, and all 1,024 compositions pass the deterministic first optimal route; 212,992 audits | Complete for the fixed thirteen-pair source and selector; no all-size recurrence or all-route theorem |
@@ -11,8 +11,10 @@
 
 ## Conservation checks
 
-- The corrected 144-point eighteenth state remains row/column balanced and legal;
-  `docs/681` adds no transition and therefore introduces no new coordinate state.
+- The canonical 144-point eighteenth state contains `(42,378)` and excludes the
+  stale coordinate `(42,193)`. It remains row/column balanced and legal.
+  `docs/681` introduces no new coordinate state, but its six minimum-four cores
+  reject all preserving replacements through budget six.
 - In the Hall line-graph model, source/host defect degrees are at most two; every
   odd path contributes one parity-surplus unit, and packet interfaces subtract
   only the certified cross-packet conflict edges.
@@ -27,18 +29,19 @@
   its exact multiplicity, while disconnected support requires a charged connector
   tour.
 
-## Correction carried into this tranche
+## Corrected boundary census carried into this tranche
 
-The committed 144-point state has the nineteenth histogram
+The reconstructed 144-point state has exact nineteenth histogram
 
 ```text
-4:1,5:13,6:46,7:176,8:280,9:1,
-10:17,11:61,12:124,13:176,14:137.
+4:2,5:9,6:47,7:175,8:283,9:3,
+10:16,11:63,12:121,13:176,14:137.
 ```
 
-`P1/-33` has minimum five, not four. The unique minimum-four attempt is `P2/-64`
-with five cores. `docs/675` and its transition wrapper were corrected before
-`docs/681` was added.
+The complete minimum-four frontier consists of six cores across `P1/-33` and
+`P2/-64`. Every core rejects exactly 24, 17,520, and 7,595,640 preserving
+replacements at budgets four, five, and six. The stale one-attempt/five-core
+census came from the copied coordinate `(42,193)` and is superseded.
 
 ## Promotion rule
 
