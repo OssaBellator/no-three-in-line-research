@@ -9,7 +9,7 @@ on:
       - 'scripts/check_prime_power_side_four_compulsory_coefficient_dependency_map.py'
       - 'scripts/check_prime_power_side_four_symbolic_line_kernel_context.py'
       - 'scripts/check_prime_power_side_four_coefficient_dependency_line_refinement.py'
-      - 'docs/561-prime-power-side-four-line-dependency-refinement.md'
+      - 'docs/563-prime-power-side-four-line-dependency-refinement.md'
       - '.github/workflows/side-four-line-dependency-refinement.yml'
   pull_request:
   workflow_dispatch:
