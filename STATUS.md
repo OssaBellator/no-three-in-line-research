@@ -81,8 +81,6 @@ For each selected-response line,
 K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3).
 ```
 
-The exact catalogue contains:
-
 ```text
 selector patterns = 6
 line occurrences = 488
@@ -90,15 +88,46 @@ occupancy census = {2: 477, 3: 9, 4: 2}
 rank-one multiplier total = 989
 rank-two multiplier total = 516
 rank-three constant total = 17
-```
-
-The rank-three constants match the selected-return kernel row-by-row. The line-rule refinement adds 86 known prerequisite occurrences to dependency v4:
-
-```text
 known prerequisite occurrences after refinement = 860
 missing prerequisite occurrences after refinement = 1376
 remaining line inputs per row = background-height profile + line-owner labels
 ```
+
+The rank-three constants match the selected-return kernel row-by-row.
+
+## Actual-background profile obligation v2
+
+```text
+contract = data/prime_power_side_four_actual_background_profile_obligation_contract.json
+contract seal = e605c9da6e45bc4253129cea8e40e744dece8426aae0f0e7efbd2c849e1a08cd
+checker = scripts/check_prime_power_side_four_actual_background_profile_obligations.py
+documentation = docs/562-prime-power-side-four-actual-background-profile-obligations.md
+workflow = .github/workflows/side-four-actual-background-profile-obligations.yml
+```
+
+The v2 compiler binds the canonical selected-return, residual-return, symbolic-line and line-refinement artifacts.
+
+```text
+host profile records = 86
+rank-one incidence slots = 344
+rank-two pair slots = 516
+shared rank-two host-line variables = 488
+unresolved background identifiers = 86
+unresolved background point sets = 86
+unresolved rank-one incidence witnesses = 344
+unresolved rank-two line loads = 488
+unresolved line owner labels = 488
+unresolved interface provenance records = 86
+unresolved CRT provenance records = 86
+```
+
+The 516 pair slots expand consistently from the 488 shared line variables:
+
+```text
+477*C(2,2) + 9*C(3,2) + 2*C(4,2) = 516.
+```
+
+This is a complete schema, not a populated actual-background batch.
 
 ## Exact current flags
 
@@ -118,6 +147,9 @@ side_four_compulsory_coefficient_dependency_map_complete = 1
 symbolic_line_coefficient_rule_complete_for_normalized_block = 1
 rank_three_line_constants_match_return_kernel = 1
 line_dependency_refinement_complete_for_normalized_block = 1
+actual_background_profile_obligation_compiler_complete = 1
+symbolic_line_binding_complete = 1
+line_dependency_refinement_binding_complete = 1
 
 actual_background_profiles_complete = 0
 actual_background_height_profiles_complete = 0
@@ -144,12 +176,13 @@ all_n_proved_by_checker = 0
 No literal source chapter after CMR1965 has been confirmed.
 
 ```text
-construct exact actual-background profile records for a nontrivial provenance batch
-attach background points, line heights and retained incidence labels
-populate rank-one background-pair and rank-two background-point incidences
-bind line and return child keys with positive weights
-attach collision and interface child routing
-evaluate complete coupled selector scores on full minimizer faces
+populate one nontrivial actual-background batch using the v2 schema
+attach background points, identifiers and retained point provenance
+populate 344 rank-one incidence witnesses and 488 shared line heights
+expand shared heights consistently to all 516 rank-two pair slots
+attach line-owner, interface and CRT provenance
+evaluate the bound symbolic kernels without double counting rank three
+bind line/return child keys with positive weights
 publish strict weighted rows or an exact residual provenance worklist
 ```
 
@@ -159,4 +192,4 @@ The next success criterion is one checked actual-background profile batch that n
 
 The repaired source verifiers, owner/fate checker, registry census/seal and runner manifest were reproduced during the repair pass. The canonical raw-lineage, selector, obligation, selected-return, all-pair exchange, residual-return and dependency-v4 checkers report local reproduction in their installed documentation.
 
-The additive symbolic-line and line-refinement checker sources and Python 3.10/3.12 workflows are installed, but their complete current executions have not been independently observed. The complete 77-checker runner has not been executed, workflow success has not been observed, and CI success is not claimed.
+The additive symbolic-line, line-refinement and background-profile v2 checker sources and Python 3.10/3.12 workflows are installed, but their complete current executions have not been independently observed. The complete 77-checker runner has not been executed, workflow success has not been observed, and CI success is not claimed.
