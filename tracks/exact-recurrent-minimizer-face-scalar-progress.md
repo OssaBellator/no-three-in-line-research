@@ -62,6 +62,47 @@ strict recurrent closure               0
 all_n_proved_by_checker                 0.
 ```
 
+## ERL2z — convex completion and source leverage
+
+Every background-sensitive cover `O` has two exact menu-projectable completions:
+
+```text
+O_D3 copies the D3 directions onto D4
+O_D4 copies the D4 directions onto D3.
+```
+
+Both completions are acyclic for all thirty-two sensitive covers. Their occurrence-route vectors satisfy
+
+```text
+4 R(O) = 3 R(O_D3) + R(O_D4).
+```
+
+Hence every `D3/D4`-blind linear route cost satisfies
+
+```text
+C(O) = 3/4 C(O_D3) + 1/4 C(O_D4),
+min(C(O_D3),C(O_D4)) <= C(O).
+```
+
+Exact consequence:
+
+```text
+class-blind advantageous sensitive covers   0 of 32
+sensitive covers with no-worse completion  32 of 32.
+```
+
+A sensitive cover can become uniquely optimal only under source-backed costs or routes that genuinely distinguish the six face-pair domains.
+
+The minimum differential source interfaces are
+
+```text
+menu-projectable                   12 records
+one-family split                   16 records
+both-families split                18 records.
+```
+
+Every sensitive cover also requires an eight-field `D3/D4` classifier. Current populated classifier fields and accepted classifier records are zero.
+
 ## Artifacts
 
 ```text
@@ -69,5 +110,10 @@ scripts/check_exact_recurrent_first_host_minimizer_face_scalar_route_cover.py
 data/exact_recurrent_first_host_minimizer_face_scalar_route_cover.json
 docs/exact-recurrent-first-host-minimizer-face-scalar-route-cover.md
 docs/ERL_MINIMIZER_FACE_SCALAR_REVIEW_GATE.md
+
+scripts/check_exact_recurrent_first_host_minimizer_face_source_leverage.py
+data/exact_recurrent_first_host_minimizer_face_source_leverage.json
+docs/exact-recurrent-first-host-minimizer-face-source-leverage.md
+docs/ERL_MINIMIZER_FACE_SOURCE_LEVERAGE_REVIEW_GATE.md
 .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
 ```
