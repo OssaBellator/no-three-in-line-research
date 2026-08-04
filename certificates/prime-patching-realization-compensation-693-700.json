@@ -1,0 +1,100 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "693-700",
+  "theorems": [
+    "PP3del", "PP3dem", "PP3den",
+    "PP3deo", "PP3dep", "PP3deq",
+    "PP3der", "PP3des", "PP3det",
+    "PP3deu", "PP3dev", "PP3dew",
+    "PP3dex", "PP3dey", "PP3dez",
+    "PP3dfa", "PP3dfb", "PP3dfc",
+    "PP3dfd", "PP3dfe", "PP3dff",
+    "PP3dfg", "PP3dfh", "PP3dfi"
+  ],
+  "boundary": {
+    "canonical_corrected_coordinate": [42, 378],
+    "stale_coordinate_excluded": [42, 193],
+    "nineteenth_correction_budget": 7,
+    "canonical_endpoint_points": 168,
+    "canonical_endpoint_blocks": 21,
+    "raw_twentysecond_histogram": {
+      "6": 26, "7": 205, "8": 285, "9": 1, "10": 3,
+      "11": 38, "12": 100, "13": 199, "14": 175
+    },
+    "twentysecond_minimum_attempts": 26,
+    "twentysecond_minimum_cores": 178,
+    "budget_six_replacement_histogram": {
+      "180": 49,
+      "360": 92,
+      "720": 37
+    },
+    "budget_six_replacements_rejected": 68580,
+    "budget_six_repairs": 0
+  },
+  "threshold": {
+    "forced_alphabet_size": 6,
+    "legal_permutation_layers": 18,
+    "forced_multisets_checked_widths_1_through_16": 74612,
+    "all_width_legality_criterion": "identity count is zero",
+    "maximum_legal_windows": "max(0,5K-w+1)",
+    "minimum_illegal_windows": "8K-max(0,5K-w+1)",
+    "fixed_width_asymptotic_density": "5/8",
+    "linear_width_density": "max(0,(5-rho)/8)"
+  },
+  "hall": {
+    "synthetic_motifs": 10,
+    "synthetic_centres": 30,
+    "pairwise_resource_disjoint_motifs": 10,
+    "single_packet_retention": 28,
+    "boundary_table": {
+      "0,0": 26,
+      "0,1": 27,
+      "1,0": 27,
+      "1,1": 28
+    },
+    "chain_formula": "27K+1",
+    "explicit_coordinate_chain_checks": 6,
+    "maximum_checked_chain_points": 180,
+    "two_motif_realisable_conflict_graphs": 1636,
+    "two_motif_direct_chain_checks": 6544,
+    "resources_extracted_from_prime_patching_host": false
+  },
+  "prefix": {
+    "minimum_crossing_matchings": 104,
+    "deletion_classes": 2,
+    "optimal_routes_per_physical_case": 144,
+    "unique_routes_per_deletion": 3624,
+    "compositions_with_at_most_four_runs": 176,
+    "new_exactly_four_run_compositions": 120,
+    "distinct_coordinate_audits": 1275648,
+    "covered_physical_route_composition_pairs": 5271552,
+    "new_four_run_physical_pairs": 3594240,
+    "remaining_compositions": 848,
+    "failures": 0,
+    "maximum_coordinate_by_deletion": {
+      "delete_0_2": 120,
+      "delete_3_5": 154
+    }
+  },
+  "shell": {
+    "components": 3,
+    "uncertainty_states": 2,
+    "directed_burden_tables": 4096,
+    "statewise_optima_incompatible_cases": 644,
+    "edgewise_worst_overcharge_cases": 1116,
+    "repetition_formula_checks": 147456,
+    "robust_loss_tour_not_repetition_optimal_cases": 5640,
+    "exact_repetition_objective": "min_T max_u (floor((S+L_u(T))/G_u)+1)",
+    "coordinate_macro_graph": false
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "actual_evidence_level": "fixture_derived",
+    "promoted_rows": [],
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3dfj"
+  }
+}
