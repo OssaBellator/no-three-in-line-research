@@ -33,6 +33,7 @@ on:
       - data/exact_recurrent_first_host_action_family_route_leverage.json
       - data/exact_recurrent_first_host_action_family_congruence_obstruction.json
       - data/exact_recurrent_first_host_action_family_source_import_gate.json
+      - data/exact_recurrent_first_host_mixed_source_certificate_leverage.json
       - scripts/check_exact_recurrent_first_host_background_signature.py
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
       - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
@@ -57,6 +58,7 @@ on:
       - scripts/check_exact_recurrent_first_host_action_family_route_leverage.py
       - scripts/check_exact_recurrent_first_host_action_family_congruence_obstruction.py
       - scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py
+      - scripts/check_exact_recurrent_first_host_mixed_source_certificate_leverage.py
       - docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md
       - docs/555-prime-power-installed-operation-registry-1166.md
       - docs/ERL_SELECTOR_RULE_REVIEW_GATE.md
@@ -65,6 +67,7 @@ on:
       - docs/ERL_SELECTOR_FACE_CLOSURE_LEVERAGE_REVIEW_GATE.md
       - docs/ERL_MINIMIZER_FACE_SCALAR_REVIEW_GATE.md
       - docs/ERL_MINIMIZER_FACE_COST_DOMINANCE_REVIEW_GATE.md
+      - docs/ERL_MIXED_SOURCE_CERTIFICATE_REVIEW_GATE.md
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
@@ -80,7 +83,7 @@ on:
       - docs/exact-recurrent-first-host-selector-boolean-boundary.md
       - docs/exact-recurrent-first-host-scalar-route-cover.md
       - docs/exact-recurrent-first-host-menu-interaction-potential.md
-      - docs/exact-recurrent-first-host-alternating-route-budget-import.md
+      - docs/exact-recurrent-first-host-alternating-route_budget_import.md
       - docs/exact-recurrent-first-host-closure-route-source-gate.md
       - docs/exact-recurrent-first-host-route-cover-admission.md
       - docs/exact-recurrent-first-host-transition-domain-source-audit.md
@@ -88,8 +91,10 @@ on:
       - docs/exact-recurrent-first-host-action-family-route-leverage.md
       - docs/exact-recurrent-first-host-action-family-congruence-obstruction.md
       - docs/exact-recurrent-first-host-action-family-source-import-gate.md
+      - docs/exact-recurrent-first-host-mixed-source-certificate-leverage.md
       - tracks/exact-recurrent-selector-rule-progress.md
       - tracks/exact-recurrent-minimizer-face-scalar-progress.md
+      - tracks/exact-recurrent-mixed-source-certificate-progress.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
 
@@ -198,3 +203,8 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py \
             --check data/exact_recurrent_first_host_action_family_source_import_gate.json
+      - name: Check mixed source-certificate leverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_mixed_source_certificate_leverage.py \
+            --check data/exact_recurrent_first_host_mixed_source_certificate_leverage.json \
+            --self-test
