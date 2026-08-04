@@ -24,10 +24,10 @@ RETURN_CONTRACT_PATH = "data/prime_power_side_four_return_exchange_context_contr
 DEPENDENCY_CONTRACT_PATH = "data/prime_power_side_four_compulsory_coefficient_dependency_contract.json"
 EXPECTED_OBLIGATION_CONTRACT_SHA256 = "62c6c448b40a8b0294a35673aac997eac73c3380b1cceedffe9616c2326f3211"
 EXPECTED_OBLIGATION_ROW_SHA256 = "b33e4fa3e442349edacbb14a65b088a92b823c67b6a4f810958076a65e3e797b"
-EXPECTED_RETURN_CONTRACT_SHA256 = "d13c5357bd54433c01148f12f2b683add5945b30e41ddf420746c2268f77033f"
-EXPECTED_RETURN_ROW_SHA256 = "0d70e367357021770cb79c30c7bfdd2322f10392356c85efd938d96349da800b"
-EXPECTED_DEPENDENCY_CONTRACT_SHA256 = "8645d87dc80ba623d230a970ef91655b62d05aca5a34294f7fdbb95614d87d1f"
-EXPECTED_DEPENDENCY_RECORD_SHA256 = "1f57224b1c51e28479c82a10cbaa59064590a296b3b83c74c2de40c8763f016e"
+EXPECTED_RETURN_CONTRACT_SHA256 = "0ef63d739e0d82c80105387cffaa4e81ff8834fc0d389f2597f4968cd1084e1b"
+EXPECTED_RETURN_CONTEXT_ROW_SHA256 = "fdb2ff3287ce607727740130754230cd9c55a415985f393ea166bb3f7ef626ea"
+EXPECTED_DEPENDENCY_CONTRACT_SHA256 = "47c765be4b4a79f826dba2ac23fb2d7a69f0d64ba23bb94d1cb1d608178fbacc"
+EXPECTED_DEPENDENCY_RECORD_SHA256 = "4cd91e195393ea226474c3c33f80ac63fcdd9c4b8b0bf95b810f54d0c490d401"
 
 CATEGORY_SPECS = {
     "return": {
@@ -38,7 +38,7 @@ CATEGORY_SPECS = {
             "return_coefficient_rule",
         ],
         "available_context_inputs": ["return_exchange_class", "returned_edge_or_token_state"],
-        "coefficient_source": "exact returned-edge exchange context plus a still-missing coefficient rule",
+        "coefficient_source": "exact returned-edge exchange context and exact rank-three return subkernel; residual classes and total coefficient rule remain missing",
     },
     "selector": {
         "required_inputs": [
@@ -109,9 +109,10 @@ def load_module(path: Path, name: str) -> Any:
 def known_value(context: dict[str, Any], return_row: dict[str, Any], input_name: str) -> Any:
     mapping = {
         "return_exchange_class": "|".join(exchange[4] for exchange in return_row["exchanges"]),
-        "returned_edge_or_token_state": "|".join(
-            f"{exchange[1]}>{exchange[2]}@{exchange[3]}" for exchange in return_row["exchanges"]
-        ),
+        "returned_edge_or_token_state": json.dumps({
+            "exchanges": [[exchange[1], exchange[2], exchange[3]] for exchange in return_row["exchanges"]],
+            "rank_three_charges": return_row["rank_three_kernel"]["charges"],
+        }, sort_keys=True, separators=(",", ":")),
         "minimizer_face": context["minimizer_face"],
         "next_energy_gap": context["next_energy_gap"],
         "deletion_collision_trace": context["collision_key"],
@@ -149,11 +150,11 @@ def compile_records(rows: list[dict[str, Any]], return_rows: list[dict[str, Any]
 
 def expected_contract(categories: tuple[str, ...]) -> dict[str, Any]:
     return {
-        "schema": "prime-power-side-four-compulsory-coefficient-dependency-contract/v2",
+        "schema": "prime-power-side-four-compulsory-coefficient-dependency-contract/v3",
         "obligation_contract_sha256": EXPECTED_OBLIGATION_CONTRACT_SHA256,
         "compiled_obligation_row_sha256": EXPECTED_OBLIGATION_ROW_SHA256,
         "return_exchange_contract_sha256": EXPECTED_RETURN_CONTRACT_SHA256,
-        "compiled_return_exchange_row_sha256": EXPECTED_RETURN_ROW_SHA256,
+        "compiled_return_context_row_sha256": EXPECTED_RETURN_CONTEXT_ROW_SHA256,
         "compiled_dependency_record_sha256": EXPECTED_DEPENDENCY_RECORD_SHA256,
         "category_order": list(categories),
         "category_specs": CATEGORY_SPECS,
@@ -182,7 +183,7 @@ def expected_contract(categories: tuple[str, ...]) -> dict[str, Any]:
             "no_higher_energy_rows": 39,
         },
         "resolution_priority": [
-            "return: derive the coefficient rule and child key from the exact exchange context",
+            "return: enumerate residual non-rank-three credit classes and derive the total coefficient rule and child key",
             "line: attach actual background-height profile and line ownership",
             "collision: attach child owner/fate/collision routing",
             "interface: attach child interface route and provenance",
@@ -205,7 +206,7 @@ def validate(root: Path, contract: dict[str, Any]) -> list[dict[str, Any]]:
     require(obligation.EXPECTED_CONTRACT_SHA256 == EXPECTED_OBLIGATION_CONTRACT_SHA256, "obligation contract binding")
     require(obligation.EXPECTED_COMPILED_ROW_SHA256 == EXPECTED_OBLIGATION_ROW_SHA256, "obligation row binding")
     require(return_checker.EXPECTED_CONTRACT_SHA256 == EXPECTED_RETURN_CONTRACT_SHA256, "return contract binding")
-    require(return_checker.EXPECTED_COMPILED_ROW_SHA256 == EXPECTED_RETURN_ROW_SHA256, "return row binding")
+    require(return_checker.EXPECTED_COMPILED_CONTEXT_ROW_SHA256 == EXPECTED_RETURN_CONTEXT_ROW_SHA256, "return context row binding")
     selected = json.loads((root / SELECTED_PATH).read_text(encoding="utf-8"))
     obligation_contract = json.loads((root / OBLIGATION_CONTRACT_PATH).read_text(encoding="utf-8"))
     return_contract = json.loads((root / RETURN_CONTRACT_PATH).read_text(encoding="utf-8"))
@@ -261,7 +262,7 @@ def main() -> None:
         "obligation_contract_sha256": EXPECTED_OBLIGATION_CONTRACT_SHA256,
         "compiled_obligation_row_sha256": EXPECTED_OBLIGATION_ROW_SHA256,
         "return_exchange_contract_sha256": EXPECTED_RETURN_CONTRACT_SHA256,
-        "compiled_return_exchange_row_sha256": EXPECTED_RETURN_ROW_SHA256,
+        "compiled_return_context_row_sha256": EXPECTED_RETURN_CONTEXT_ROW_SHA256,
         "dependency_contract_sha256": EXPECTED_DEPENDENCY_CONTRACT_SHA256,
         "compiled_dependency_record_sha256": EXPECTED_DEPENDENCY_RECORD_SHA256,
         "dependency_record_count": len(records),
