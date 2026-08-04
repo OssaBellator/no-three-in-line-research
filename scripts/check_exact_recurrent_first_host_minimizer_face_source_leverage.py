@@ -375,8 +375,16 @@ def compile_manifest(root: Path) -> dict[str, Any]:
             "accepted_classifier_records": 0,
         },
         "decomposition_registry": {
-            "records": decompositions,
             "record_count": len(decompositions),
+            "background_sensitive_cover_ids": [
+                row["background_sensitive_cover_id"] for row in decompositions
+            ],
+            "D3_completion_cover_ids": [
+                row["D3_completion_cover_id"] for row in decompositions
+            ],
+            "D4_completion_cover_ids": [
+                row["D4_completion_cover_id"] for row in decompositions
+            ],
             "digest": decomposition_digest,
         },
         "aggregate": {
