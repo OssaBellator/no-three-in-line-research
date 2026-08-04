@@ -20,19 +20,24 @@ PROMOTED = tuple(
 assert PROMOTED == ()
 
 BOUNDARY = {
-    "minimum_four_attempts": 1,
-    "minimum_four_cores": 5,
-    "minimum_five_attempts": 13,
-    "minimum_five_cores": 68,
-    "minimum_six_attempts": 46,
-    "minimum_six_cores": 442,
-    "low_attempts": 60,
-    "low_cores": 515,
-    "new_replacements_rejected": 4405440,
-    "corrected_transition": False,
+    "minimum_four_attempts": 2,
+    "minimum_four_cores": 6,
+    "minimum_five_attempts": 9,
+    "minimum_five_cores": 54,
+    "minimum_six_attempts": 47,
+    "minimum_six_cores": 435,
+    "low_attempts": 58,
+    "low_cores": 495,
+    "new_replacements_rejected": 3466200,
+    "corrected_transition": True,
+    "correction_budget": 7,
+    "corrected_points": 152,
+    "twentieth_minimum_four_attempts": 3,
+    "twentieth_minimum_four_cores": 9,
 }
 assert BOUNDARY["minimum_four_attempts"] + BOUNDARY["minimum_five_attempts"] + BOUNDARY["minimum_six_attempts"] == BOUNDARY["low_attempts"]
 assert BOUNDARY["minimum_four_cores"] + BOUNDARY["minimum_five_cores"] + BOUNDARY["minimum_six_cores"] == BOUNDARY["low_cores"]
+assert BOUNDARY["correction_budget"] == 7
 
 HALL = {
     "packet_graphs": 1024,
@@ -97,7 +102,7 @@ print({
     "actual_evidence_levels": ACTUAL_EVIDENCE,
     "promoted_rows": PROMOTED,
     "new_results": {
-        "boundary": "all 515 minimum cores from the 60 raw attempts of transversal at most six are obstructed through deletion budget six",
+        "boundary": "the canonical budget-seven correction reaches nineteen blocks and exposes a nine-core minimum-four twentieth frontier",
         "Hall": "exact packet boundary-state transfer and max-plus cycle mean replace uniform interface charging",
         "threshold": "minimum-batch rolling four-window legality has exact optimum 5K-3 and asymptotic density 5/8",
         "prefix": "all 144 optimal routes pass all 56 compositions with at most three runs across every physical matching and deletion",
@@ -107,6 +112,6 @@ print({
     "fixture_slack_below_one_quarter": str(SLACK),
     "geometric_closure": False,
     "all_n_theorem": "open",
-    "next_theorem_identifier": "PP3del",
+    "next_theorem_identifier": "PP3deo",
     "status": "passed",
 })
