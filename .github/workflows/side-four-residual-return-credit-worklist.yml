@@ -1,0 +1,29 @@
+name: Side-four residual return-credit worklist
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_return_exchange_context_contract.json'
+      - 'data/prime_power_side_four_residual_return_credit_worklist_contract.json'
+      - 'scripts/check_prime_power_side_four_return_exchange_context.py'
+      - 'scripts/check_prime_power_side_four_residual_return_credit_worklist.py'
+      - 'docs/560-prime-power-side-four-return-exchange-context.md'
+      - 'docs/561-prime-power-side-four-residual-return-credit-worklist.md'
+      - '.github/workflows/side-four-residual-return-credit-worklist.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  residual-return:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_return_exchange_context.py
+      - run: python scripts/check_prime_power_side_four_residual_return_credit_worklist.py
