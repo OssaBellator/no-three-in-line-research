@@ -49,10 +49,11 @@ Thus the complete minimum-four budget-six layer contains
 6 * 7,595,640 = 45,573,840
 ```
 
-rejected replacements. The five `P2/-64` cores are checked by
-`scripts/check_boundary_nineteenth_corrections.cpp`; the canonical wrapper
-`scripts/check_boundary_nineteenth_transition.py` reconstructs and checks the
-additional `P1/-33` core before accepting the transition certificate.
+rejected replacements. The exact parallel census is
+`scripts/check_boundary_nineteenth_corrections.cpp`; the canonical reconstruction
+wrapper `scripts/check_boundary_nineteenth_transition.py` verifies the legal
+144-point state and the six-core output before accepting the transition
+certificate.
 
 ## PP3ddd — Exact remaining frontier after budget six
 
@@ -67,5 +68,5 @@ recurrence or all-length construction.
 ## Evidence boundary
 
 This is a finite exact obstruction for the complete minimum-four frontier through
-budget six. Its coordinate correction is independently reconstructed by
-`scripts/check_boundary_nineteenth_transition.py`.
+budget six. Its coordinate state and correction census are independently checked
+by `scripts/check_boundary_nineteenth_transition.py`.
