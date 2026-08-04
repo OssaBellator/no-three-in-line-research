@@ -8,7 +8,7 @@ on:
       - 'data/prime_power_side_four_symbolic_line_kernel_context_contract.json'
       - 'scripts/check_prime_power_side_four_return_exchange_context.py'
       - 'scripts/check_prime_power_side_four_symbolic_line_kernel_context.py'
-      - 'docs/560-prime-power-side-four-symbolic-line-kernel-context.md'
+      - 'docs/562-prime-power-side-four-symbolic-line-kernel-context.md'
       - '.github/workflows/side-four-symbolic-line-kernel-context.yml'
   pull_request:
   workflow_dispatch:
