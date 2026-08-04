@@ -1,0 +1,26 @@
+name: Side-four blocker actual-background sample
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_actual_background_profile_obligation_contract.json'
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'scripts/check_prime_power_side_four_blocker_actual_background_sample.py'
+      - 'docs/567-prime-power-side-four-blocker-actual-background-sample.md'
+      - '.github/workflows/side-four-blocker-actual-background-sample.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_blocker_actual_background_sample.py
