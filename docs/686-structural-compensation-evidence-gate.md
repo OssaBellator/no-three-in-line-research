@@ -4,12 +4,12 @@ This chapter integrates `docs/681--685` under the strict promotion rule used by
 the preceding tranches: a row is promoted only by a complete coordinate source
 path with exposed-state legality and recurrent or asymptotic continuation.
 
-## PP3ddq — Current frontier advances
+## PP3ddq — Corrected current frontier advances
 
 The tranche adds five exact results:
 
-1. the unique minimum-four nineteenth attempt has five cores, and all preserving
-   corrections through deletion budget six are excluded;
+1. the complete minimum-four nineteenth frontier has two attempts and six cores,
+   and all preserving corrections through deletion budget six are excluded;
 2. Hall centre conflicts are represented by a bipartite source/host defect
    incidence graph, with exact degree-two retention and packet-interface surplus;
 3. all 19,834 minimum threshold equality batches share one rigid 32-layer
@@ -40,8 +40,10 @@ total       25/30
 All six actual evidence rows remain `fixture_derived`, and the promoted set is
 empty.
 
-- The corrected boundary chain still stops at eighteen blocks; budget seven and a
-  corrected nineteenth transition remain open.
+- Within this tranche the corrected boundary chain reaches eighteen blocks and
+  excludes the complete minimum-four frontier through budget six. The later sharp
+  budget-seven transition in `docs/693` reaches nineteen blocks, but still gives
+  no recurrence or periodic state invariant.
 - The Hall packet theorem has no coordinate packet family supplying all resource,
   defect-label, and interface certificates.
 - The threshold census proves rigidity and a rolling-window obstruction but does
