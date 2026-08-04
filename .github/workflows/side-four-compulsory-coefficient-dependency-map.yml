@@ -5,10 +5,13 @@ on:
     paths:
       - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
       - 'data/prime_power_side_four_compulsory_row_obligation_worklist.json'
+      - 'data/prime_power_side_four_return_exchange_context_contract.json'
       - 'data/prime_power_side_four_compulsory_coefficient_dependency_contract.json'
       - 'scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py'
+      - 'scripts/check_prime_power_side_four_return_exchange_context.py'
       - 'scripts/check_prime_power_side_four_compulsory_coefficient_dependency_map.py'
       - 'docs/558-prime-power-side-four-compulsory-coefficient-dependency-map.md'
+      - 'docs/560-prime-power-side-four-return-exchange-context.md'
       - '.github/workflows/side-four-compulsory-coefficient-dependency-map.yml'
   pull_request:
   workflow_dispatch:
@@ -25,4 +28,5 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - run: python scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py
+      - run: python scripts/check_prime_power_side_four_return_exchange_context.py
       - run: python scripts/check_prime_power_side_four_compulsory_coefficient_dependency_map.py
