@@ -142,17 +142,10 @@ contract seal = 0232bda658189acdb880681ce19192698e049d603a2e779d5f9e287d43fe481e
 checker = scripts/check_prime_power_side_four_symbolic_line_kernel_context.py
 documentation = docs/562-prime-power-side-four-symbolic-line-kernel-context.md
 workflow = .github/workflows/side-four-symbolic-line-kernel-context.yml
-contract commit = 58e7d578908e0d6571f7f4f2cd0242e7aca43fba
-checker commit = 1d0a711ab0fab96a7b1312e9ee7207561cbfb31e
-```
-
-The exact local formula is
-
-```text
-K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3).
 ```
 
 ```text
+K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3)
 selector patterns = 6
 distinct response-line occurrences = 488
 occupancy census = {2: 477, 3: 9, 4: 2}
@@ -171,11 +164,7 @@ refinement seal = 8ff0751442bfefe378a74978c710d71c9e8c0d2c04652e4dcd220274684689
 checker = scripts/check_prime_power_side_four_coefficient_dependency_line_refinement.py
 documentation = docs/563-prime-power-side-four-line-dependency-refinement.md
 workflow = .github/workflows/side-four-line-dependency-refinement.yml
-contract commit = a9019f9c98605b222f16b52e9b16c28fd96a2ad0
-checker commit = 9197b2fc11db9d61854434cee086d060a92dd468
 ```
-
-The exact line rule refines all 86 line-category records:
 
 ```text
 known prerequisite delta = +86
@@ -184,6 +173,44 @@ known prerequisite occurrences after refinement = 860
 missing prerequisite occurrences after refinement = 1376
 remaining line inputs per row = background-height profile + line-owner labels
 ```
+
+## Actual-background profile obligation v2
+
+```text
+contract = data/prime_power_side_four_actual_background_profile_obligation_contract.json
+contract seal = e605c9da6e45bc4253129cea8e40e744dece8426aae0f0e7efbd2c849e1a08cd
+checker = scripts/check_prime_power_side_four_actual_background_profile_obligations.py
+documentation = docs/562-prime-power-side-four-actual-background-profile-obligations.md
+workflow = .github/workflows/side-four-actual-background-profile-obligations.yml
+contract v2 commit = 893b0a9a133277a57ead9c83a88e52355b8a80d3
+checker v2 commit = 87258b7e392e61a170002c0054560f5a8653b3a6
+documentation v2 commit = 36b5b0c68500e8bd33835dda68b20ea96a046bd0
+workflow v2 commit = b4bb4336c85555a8aed3e3be406085cbfbc79986
+```
+
+The v2 compiler binds both the symbolic-line contract and line-refinement seal. It defines:
+
+```text
+host profile records = 86
+rank-one incidence slots = 344
+rank-two pair slots = 516
+shared rank-two host-line variables = 488
+unresolved background identifiers = 86
+unresolved background point sets = 86
+unresolved rank-one incidence witnesses = 344
+unresolved rank-two line loads = 488
+unresolved line owner labels = 488
+unresolved interface provenance records = 86
+unresolved CRT provenance records = 86
+```
+
+The 516 rank-two pair slots expand from the 488 shared line variables as
+
+```text
+477*C(2,2) + 9*C(3,2) + 2*C(4,2) = 516.
+```
+
+This is a complete profile schema, not an actual populated background batch.
 
 ## Reconciliation decisions
 
@@ -198,7 +225,7 @@ docs/558-prime-power-side-four-return-and-coefficient-dependency.md
 .github/workflows/side-four-return-and-coefficient-dependency.yml
 ```
 
-The additive symbolic line compiler was retained, rebased onto dependency v4, and moved to docs 562--563 so canonical docs 558--561 remain authoritative.
+The all-response-pair exchange catalogue remains complementary to the canonical identity-to-selected context. The actual-background obligation binds the canonical symbolic line surface rather than replacing it.
 
 ## Decisions to preserve
 
@@ -229,6 +256,9 @@ side_four_compulsory_coefficient_dependency_map_complete = 1
 symbolic_line_coefficient_rule_complete_for_normalized_block = 1
 rank_three_line_constants_match_return_kernel = 1
 line_dependency_refinement_complete_for_normalized_block = 1
+actual_background_profile_obligation_compiler_complete = 1
+symbolic_line_binding_complete = 1
+line_dependency_refinement_binding_complete = 1
 
 actual_background_profiles_complete = 0
 actual_background_height_profiles_complete = 0
@@ -256,6 +286,7 @@ all_n_proved_by_checker = 0
 canonical repair and v4 finite checkers = locally reproduced in installed documentation
 symbolic-line checker = source/workflow installed; current execution not independently observed
 line-refinement checker = source/workflow installed; current execution not independently observed
+background-profile v2 checker = source/workflow installed; current execution not independently observed
 complete 77-checker runner = not executed
 workflow success = not observed
 ```
@@ -272,14 +303,16 @@ uncommitted generated artifacts = none known
 No literal source chapter after CMR1965 has been confirmed.
 
 ```text
-1. define one exact actual-background profile record format
-2. populate a nontrivial batch with coordinate background points, line heights and retained incidence labels
-3. feed those heights into the 344 rank-one and 516 rank-two return dependencies
-4. evaluate the 488 distinct-line symbolic kernels without double counting rank three
-5. attach line/return child keys and positive weights
-6. attach collision and interface child routing
-7. evaluate complete coupled selector scores on full minimizer faces
-8. publish strict weighted rows or an exact residual provenance worklist
+1. populate a nontrivial actual-background batch using the v2 profile schema
+2. attach coordinate background points, background identifiers and retained point provenance
+3. populate 344 rank-one incidence witnesses and 488 shared line heights
+4. expand the shared heights consistently to all 516 rank-two pair slots
+5. attach line-owner, interface and CRT provenance
+6. evaluate the bound symbolic kernels without double counting rank three
+7. attach line/return child keys and positive weights
+8. attach collision and interface child routing
+9. evaluate complete coupled selector scores on full minimizer faces
+10. publish strict weighted rows or an exact residual provenance worklist
 ```
 
 The next success criterion is one checked actual-background profile batch that numerically populates a complete non-geometric category, followed by at least one fully bound compulsory weighted row.
