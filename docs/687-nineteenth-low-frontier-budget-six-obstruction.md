@@ -51,8 +51,10 @@ Thus the complete minimum-five and minimum-six frontier contributes
 ```
 
 additional rejected replacements beyond the minimum-four audit in `docs/681`.
-The canonical checker is
-`scripts/check_boundary_nineteenth_transition.py`.
+The executable census is
+`scripts/check_boundary_nineteenth_low_frontier_corrections.cpp`, with canonical
+assertion wrapper
+`scripts/check_boundary_nineteenth_low_frontier_obstruction.py`.
 
 ## PP3ddv — Sharp remaining boundary alternative
 
