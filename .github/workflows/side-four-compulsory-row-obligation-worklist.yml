@@ -1,0 +1,26 @@
+name: Side-four compulsory row obligation worklist
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_compulsory_row_obligation_worklist.json'
+      - 'scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py'
+      - 'docs/557-prime-power-side-four-compulsory-row-obligation-worklist.md'
+      - '.github/workflows/side-four-compulsory-row-obligation-worklist.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  worklist:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_selected_response_provenance_manifest.py
+      - run: python scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py
