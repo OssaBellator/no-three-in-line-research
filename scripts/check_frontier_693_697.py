@@ -9,7 +9,8 @@ subprocess.run(
     check=True,
 )
 checks = [
-    "check_prefix_all_optimal_four_run_compositions.py",
+    "check_hall_two_motif_incidence_packets.py",
+    "check_hall_coordinate_defect_packet.py",
 ]
 for check in checks:
     subprocess.run([sys.executable, str(HERE / check)], check=True)
