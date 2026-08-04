@@ -1,0 +1,53 @@
+{
+  "certificate": "prime-patching-boundary-continuation-694",
+  "evidence_level": "exact_finite_coordinate_chain",
+  "nineteenth_repair_selection": {
+    "attempt": "P2/-64",
+    "selected_core": 2,
+    "budget": 7,
+    "reason": "fewer raw twentieth attempts at transversal at most six than core 1: 90 versus 97",
+    "deletion": [[1,113],[33,101],[57,347],[62,106],[73,151],[75,150],[75,152]],
+    "addition": [[1,150],[33,347],[57,151],[62,152],[73,101],[75,106],[75,113]],
+    "raw_twentieth_histogram": {"4":2,"5":14,"6":74,"7":199,"8":227,"9":2,"10":23,"11":91,"12":160,"13":149,"14":91}
+  },
+  "twentieth_correction": {
+    "attempt": "P3/-27",
+    "core": 6,
+    "budget": 6,
+    "deletion": [[4,33],[7,32],[62,309],[70,214],[76,188],[78,187]],
+    "addition": [[4,188],[7,187],[62,33],[70,309],[76,214],[78,32]],
+    "raw_twentyfirst_histogram": {"4":3,"5":11,"6":63,"7":184,"8":255,"9":3,"10":13,"11":51,"12":117,"13":180,"14":152}
+  },
+  "twentyfirst_correction": {
+    "attempt": "P3/60",
+    "core": 8,
+    "budget": 6,
+    "deletion": [[10,58],[18,76],[29,111],[53,376],[81,276],[83,276]],
+    "addition": [[10,276],[18,276],[29,376],[53,58],[81,111],[83,76]],
+    "budget_six_repair_candidates": 11,
+    "selection_rule": "maximize raw twenty-second minimum transversal, then minimize number of minimum attempts",
+    "selection_comparison": [
+      ["P0/59-core1",5,3,9],
+      ["P2/60-core2",4,1,1],
+      ["P3/60-core3",5,4,4],
+      ["P3/60-core4",5,2,2],
+      ["P3/60-core5",5,2,2],
+      ["P3/60-core6",5,2,2],
+      ["P3/60-core7",5,2,2],
+      ["P3/60-core8",6,26,178],
+      ["P3/60-core12",5,2,2],
+      ["P3/60-core20",5,1,9],
+      ["P3/60-core23",6,37,167]
+    ]
+  },
+  "twentysecond": {
+    "origin": [84,213],
+    "histogram": {"6":26,"7":205,"8":285,"9":1,"10":3,"11":38,"12":100,"13":199,"14":175},
+    "minimum_transversal": 6,
+    "minimum_attempts": 26,
+    "minimum_cores": 178
+  },
+  "final_state": {"points":168,"blocks":21},
+  "geometric_closure": false,
+  "all_n_theorem": "open"
+}
