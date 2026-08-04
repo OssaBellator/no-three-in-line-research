@@ -17,37 +17,68 @@ def digest(value: Any) -> str:
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":")).encode()).hexdigest()
 
 OBLIGATION_CHECKER_PATH = "scripts/check_prime_power_side_four_compulsory_row_obligation_worklist.py"
+RETURN_CHECKER_PATH = "scripts/check_prime_power_side_four_return_exchange_context.py"
 SELECTED_PATH = "data/prime_power_side_four_selected_response_provenance_manifest.json"
 OBLIGATION_CONTRACT_PATH = "data/prime_power_side_four_compulsory_row_obligation_worklist.json"
+RETURN_CONTRACT_PATH = "data/prime_power_side_four_return_exchange_context_contract.json"
 DEPENDENCY_CONTRACT_PATH = "data/prime_power_side_four_compulsory_coefficient_dependency_contract.json"
 EXPECTED_OBLIGATION_CONTRACT_SHA256 = "62c6c448b40a8b0294a35673aac997eac73c3380b1cceedffe9616c2326f3211"
 EXPECTED_OBLIGATION_ROW_SHA256 = "b33e4fa3e442349edacbb14a65b088a92b823c67b6a4f810958076a65e3e797b"
-EXPECTED_DEPENDENCY_CONTRACT_SHA256 = "4416e7d13dab1b9154040350e0d2b2fbac59e6f94d3984d0bd2b72456c5fb340"
-EXPECTED_DEPENDENCY_RECORD_SHA256 = "ac085fd5ec8283e266a603b71deac1d434980b0978780e3e18f23f0d6cd37865"
+EXPECTED_RETURN_CONTRACT_SHA256 = "d13c5357bd54433c01148f12f2b683add5945b30e41ddf420746c2268f77033f"
+EXPECTED_RETURN_ROW_SHA256 = "0d70e367357021770cb79c30c7bfdd2322f10392356c85efd938d96349da800b"
+EXPECTED_DEPENDENCY_CONTRACT_SHA256 = "8645d87dc80ba623d230a970ef91655b62d05aca5a34294f7fdbb95614d87d1f"
+EXPECTED_DEPENDENCY_RECORD_SHA256 = "1f57224b1c51e28479c82a10cbaa59064590a296b3b83c74c2de40c8763f016e"
 
 CATEGORY_SPECS = {
     "return": {
-        "required_inputs": ["return_exchange_class", "returned_edge_or_token_state", "return_child_key", "return_coefficient_rule"],
-        "available_context_inputs": [],
-        "coefficient_source": "returned-edge exchange and return-kernel state",
+        "required_inputs": [
+            "return_exchange_class",
+            "returned_edge_or_token_state",
+            "return_child_key",
+            "return_coefficient_rule",
+        ],
+        "available_context_inputs": ["return_exchange_class", "returned_edge_or_token_state"],
+        "coefficient_source": "exact returned-edge exchange context plus a still-missing coefficient rule",
     },
     "selector": {
-        "required_inputs": ["minimizer_face", "next_energy_gap", "complete_coupled_response_score", "selector_child_key", "selector_coefficient_rule"],
+        "required_inputs": [
+            "minimizer_face",
+            "next_energy_gap",
+            "complete_coupled_response_score",
+            "selector_child_key",
+            "selector_coefficient_rule",
+        ],
         "available_context_inputs": ["minimizer_face", "next_energy_gap"],
         "coefficient_source": "complete coupled response score, not response-triple energy alone",
     },
     "collision": {
-        "required_inputs": ["deletion_collision_trace", "child_owner", "child_fate", "child_collision_class", "collision_coefficient_rule"],
+        "required_inputs": [
+            "deletion_collision_trace",
+            "child_owner",
+            "child_fate",
+            "child_collision_class",
+            "collision_coefficient_rule",
+        ],
         "available_context_inputs": ["deletion_collision_trace"],
         "coefficient_source": "owner/fate/collision child routing",
     },
     "line": {
-        "required_inputs": ["selected_response_line_signature", "background_height_profile", "line_owner_labels", "line_coefficient_rule"],
+        "required_inputs": [
+            "selected_response_line_signature",
+            "background_height_profile",
+            "line_owner_labels",
+            "line_coefficient_rule",
+        ],
         "available_context_inputs": ["selected_response_line_signature"],
         "coefficient_source": "complete line-energy kernel on the actual background profile",
     },
     "interface": {
-        "required_inputs": ["normalized_target_interface", "child_interface_route", "interface_provenance", "interface_coefficient_rule"],
+        "required_inputs": [
+            "normalized_target_interface",
+            "child_interface_route",
+            "interface_provenance",
+            "interface_coefficient_rule",
+        ],
         "available_context_inputs": ["normalized_target_interface"],
         "coefficient_source": "label-preserving interface routing",
     },
@@ -67,16 +98,20 @@ def repository_root(start: Path | None = None) -> Path:
             return candidate
     raise CoefficientDependencyError("unable to locate repository root")
 
-def load_module(path: Path) -> Any:
-    require(path.is_file(), f"{path}: missing obligation checker")
-    spec = importlib.util.spec_from_file_location("side_four_obligation_checker", path)
-    require(spec is not None and spec.loader is not None, "obligation checker import spec")
+def load_module(path: Path, name: str) -> Any:
+    require(path.is_file(), f"{path}: missing checker")
+    spec = importlib.util.spec_from_file_location(name, path)
+    require(spec is not None and spec.loader is not None, f"{name}: import spec")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     return module
 
-def known_value(context: dict[str, Any], input_name: str) -> Any:
+def known_value(context: dict[str, Any], return_row: dict[str, Any], input_name: str) -> Any:
     mapping = {
+        "return_exchange_class": "|".join(exchange[4] for exchange in return_row["exchanges"]),
+        "returned_edge_or_token_state": "|".join(
+            f"{exchange[1]}>{exchange[2]}@{exchange[3]}" for exchange in return_row["exchanges"]
+        ),
         "minimizer_face": context["minimizer_face"],
         "next_energy_gap": context["next_energy_gap"],
         "deletion_collision_trace": context["collision_key"],
@@ -87,21 +122,21 @@ def known_value(context: dict[str, Any], input_name: str) -> Any:
     require(input_name in mapping, f"{input_name}: unavailable context mapping")
     return mapping[input_name]
 
-def compile_records(rows: list[dict[str, Any]], categories: tuple[str, ...]) -> list[dict[str, Any]]:
+def compile_records(rows: list[dict[str, Any]], return_rows: list[dict[str, Any]], categories: tuple[str, ...]) -> list[dict[str, Any]]:
+    return_by_host = {row["host_id"]: row for row in return_rows}
+    require(len(return_by_host) == len(return_rows) == 86, "return row host coverage")
     records: list[dict[str, Any]] = []
     for row in rows:
         context = row["context"]
+        require(context["host_id"] in return_by_host, f"{context['host_id']}: return context missing")
+        return_row = return_by_host[context["host_id"]]
+        require(return_row["selected_response"] == context["selected_response"], f"{context['host_id']}: selector/return mismatch")
         for category in categories:
             spec = CATEGORY_SPECS[category]
-            known_inputs = {name: known_value(context, name) for name in spec["available_context_inputs"]}
+            known_inputs = {name: known_value(context, return_row, name) for name in spec["available_context_inputs"]}
             missing_inputs = [name for name in spec["required_inputs"] if name not in spec["available_context_inputs"]]
             coefficient_status = "known" if category == "geometric" else "unresolved"
-            if category == "geometric":
-                dependency_status = "coefficient-known-binding-unresolved"
-            elif known_inputs:
-                dependency_status = "partially-grounded"
-            else:
-                dependency_status = "ungrounded"
+            dependency_status = "coefficient-known-binding-unresolved" if category == "geometric" else "partially-grounded"
             records.append({
                 "host_id": context["host_id"],
                 "category": category,
@@ -114,9 +149,11 @@ def compile_records(rows: list[dict[str, Any]], categories: tuple[str, ...]) -> 
 
 def expected_contract(categories: tuple[str, ...]) -> dict[str, Any]:
     return {
-        "schema": "prime-power-side-four-compulsory-coefficient-dependency-contract/v1",
+        "schema": "prime-power-side-four-compulsory-coefficient-dependency-contract/v2",
         "obligation_contract_sha256": EXPECTED_OBLIGATION_CONTRACT_SHA256,
         "compiled_obligation_row_sha256": EXPECTED_OBLIGATION_ROW_SHA256,
+        "return_exchange_contract_sha256": EXPECTED_RETURN_CONTRACT_SHA256,
+        "compiled_return_exchange_row_sha256": EXPECTED_RETURN_ROW_SHA256,
         "compiled_dependency_record_sha256": EXPECTED_DEPENDENCY_RECORD_SHA256,
         "category_order": list(categories),
         "category_specs": CATEGORY_SPECS,
@@ -125,13 +162,13 @@ def expected_contract(categories: tuple[str, ...]) -> dict[str, Any]:
             "coefficient_known_records": 86,
             "coefficient_unresolved_records": 430,
             "child_binding_unresolved_records": 516,
-            "known_input_occurrences": 516,
-            "missing_input_occurrences": 1634,
-            "ungrounded_records": 86,
-            "partially_grounded_records": 344,
+            "known_input_occurrences": 688,
+            "missing_input_occurrences": 1462,
+            "ungrounded_records": 0,
+            "partially_grounded_records": 430,
             "coefficient_known_binding_unresolved_records": 86,
             "category_census": {
-                "return": {"records": 86, "known_coefficients": 0, "unresolved_coefficients": 86, "known_input_occurrences": 0, "missing_input_occurrences": 344, "dependency_status": "ungrounded"},
+                "return": {"records": 86, "known_coefficients": 0, "unresolved_coefficients": 86, "known_input_occurrences": 172, "missing_input_occurrences": 172, "dependency_status": "partially-grounded"},
                 "selector": {"records": 86, "known_coefficients": 0, "unresolved_coefficients": 86, "known_input_occurrences": 172, "missing_input_occurrences": 258, "dependency_status": "partially-grounded"},
                 "collision": {"records": 86, "known_coefficients": 0, "unresolved_coefficients": 86, "known_input_occurrences": 86, "missing_input_occurrences": 344, "dependency_status": "partially-grounded"},
                 "line": {"records": 86, "known_coefficients": 0, "unresolved_coefficients": 86, "known_input_occurrences": 86, "missing_input_occurrences": 258, "dependency_status": "partially-grounded"},
@@ -145,7 +182,7 @@ def expected_contract(categories: tuple[str, ...]) -> dict[str, Any]:
             "no_higher_energy_rows": 39,
         },
         "resolution_priority": [
-            "return: attach return-exchange class and returned-edge/token state",
+            "return: derive the coefficient rule and child key from the exact exchange context",
             "line: attach actual background-height profile and line ownership",
             "collision: attach child owner/fate/collision routing",
             "interface: attach child interface route and provenance",
@@ -163,38 +200,43 @@ def expected_contract(categories: tuple[str, ...]) -> dict[str, Any]:
     }
 
 def validate(root: Path, contract: dict[str, Any]) -> list[dict[str, Any]]:
-    obligation = load_module(root / OBLIGATION_CHECKER_PATH)
+    obligation = load_module(root / OBLIGATION_CHECKER_PATH, "side_four_obligation_checker")
+    return_checker = load_module(root / RETURN_CHECKER_PATH, "side_four_return_checker")
     require(obligation.EXPECTED_CONTRACT_SHA256 == EXPECTED_OBLIGATION_CONTRACT_SHA256, "obligation contract binding")
     require(obligation.EXPECTED_COMPILED_ROW_SHA256 == EXPECTED_OBLIGATION_ROW_SHA256, "obligation row binding")
+    require(return_checker.EXPECTED_CONTRACT_SHA256 == EXPECTED_RETURN_CONTRACT_SHA256, "return contract binding")
+    require(return_checker.EXPECTED_COMPILED_ROW_SHA256 == EXPECTED_RETURN_ROW_SHA256, "return row binding")
     selected = json.loads((root / SELECTED_PATH).read_text(encoding="utf-8"))
     obligation_contract = json.loads((root / OBLIGATION_CONTRACT_PATH).read_text(encoding="utf-8"))
+    return_contract = json.loads((root / RETURN_CONTRACT_PATH).read_text(encoding="utf-8"))
     rows = obligation.validate(selected, obligation_contract)
+    return_rows = return_checker.validate(selected, return_contract)
     categories = tuple(obligation.CATEGORIES)
     require(contract == expected_contract(categories), "dependency contract differs from canonical schema")
     require(digest(contract) == EXPECTED_DEPENDENCY_CONTRACT_SHA256, "dependency contract digest mismatch")
-    records = compile_records(rows, categories)
+    records = compile_records(rows, return_rows, categories)
     require(len(records) == 516, "dependency record count")
     require(digest(records) == EXPECTED_DEPENDENCY_RECORD_SHA256, "dependency record digest mismatch")
     status = Counter(record["dependency_status"] for record in records)
-    require(status == Counter({"partially-grounded": 344, "ungrounded": 86, "coefficient-known-binding-unresolved": 86}), "dependency status census")
+    require(status == Counter({"partially-grounded": 430, "coefficient-known-binding-unresolved": 86}), "dependency status census")
     coefficient = Counter(record["coefficient_status"] for record in records)
     require(coefficient == Counter({"unresolved": 430, "known": 86}), "coefficient status census")
     known_occurrences = sum(len(record["known_inputs"]) for record in records)
     missing_occurrences = sum(len(record["missing_inputs"]) for record in records)
-    require((known_occurrences, missing_occurrences) == (516, 1634), "input occurrence census")
+    require((known_occurrences, missing_occurrences) == (688, 1462), "input occurrence census")
     return records
 
 def mutation_audit(root: Path, contract: dict[str, Any]) -> int:
     mutations = [
         lambda item: item["aggregate"].update(records=515),
-        lambda item: item["aggregate"].update(missing_input_occurrences=1633),
+        lambda item: item["aggregate"].update(missing_input_occurrences=1461),
         lambda item: item.update(compiled_dependency_record_sha256="0" * 64),
+        lambda item: item.update(return_exchange_contract_sha256="0" * 64),
         lambda item: item["category_order"].pop(),
-        lambda item: item["category_specs"]["return"]["required_inputs"].pop(),
+        lambda item: item["category_specs"]["return"]["available_context_inputs"].remove("return_exchange_class"),
+        lambda item: item["category_specs"]["return"].update(coefficient_source="churn magnitude"),
         lambda item: item["category_specs"]["selector"]["available_context_inputs"].remove("next_energy_gap"),
-        lambda item: item["category_specs"]["collision"].update(coefficient_source="deletion count"),
         lambda item: item["category_specs"]["line"]["available_context_inputs"].append("background_height_profile"),
-        lambda item: item["category_specs"]["interface"]["required_inputs"].remove("interface_provenance"),
         lambda item: item["resolution_priority"].pop(),
         lambda item: item["honesty"].update(unresolved_coefficients_populated=1),
         lambda item: item["honesty"].update(all_n_proved_by_checker=1),
@@ -218,17 +260,19 @@ def main() -> None:
         "checker": "prime-power-side-four-compulsory-coefficient-dependency-map",
         "obligation_contract_sha256": EXPECTED_OBLIGATION_CONTRACT_SHA256,
         "compiled_obligation_row_sha256": EXPECTED_OBLIGATION_ROW_SHA256,
+        "return_exchange_contract_sha256": EXPECTED_RETURN_CONTRACT_SHA256,
+        "compiled_return_exchange_row_sha256": EXPECTED_RETURN_ROW_SHA256,
         "dependency_contract_sha256": EXPECTED_DEPENDENCY_CONTRACT_SHA256,
         "compiled_dependency_record_sha256": EXPECTED_DEPENDENCY_RECORD_SHA256,
         "dependency_record_count": len(records),
         "unresolved_coefficient_record_count": 430,
         "known_coefficient_record_count": 86,
-        "known_input_occurrence_count": 516,
-        "missing_input_occurrence_count": 1634,
-        "ungrounded_return_record_count": 86,
-        "partially_grounded_record_count": 344,
+        "known_input_occurrence_count": 688,
+        "missing_input_occurrence_count": 1462,
+        "partially_grounded_record_count": 430,
         "rejected_corruptions": mutation_audit(root, contract),
         "side_four_compulsory_coefficient_dependency_map_complete": 1,
+        "return_exchange_context_attached": 1,
         "dependency_map_complete_for_normalized_block": 1,
         "unresolved_coefficients_populated": 0,
         "global_child_provenance_complete": 0,
