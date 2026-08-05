@@ -32,40 +32,11 @@ complete_labelled_recurrent_lp_strict = 0
 all_n_proved_by_checker = 0
 ```
 
-## Two explicit sample rows
+## Global binding and population status
 
-### Zero-response sample
-
-```text
-host = s4-fc915f89dec31fec
-response-only selector = 2031
-background = {(4,4),(6,5)}
-rank totals on 2031 = (2,2,0)
-return charges on 2031 = {00:1,22:3}
-```
-
-### Blocker-alternative sample
+The checked global binding attempt is underdetermined, not incompatible.
 
 ```text
-host = s4-75b04c45c1c8eac2
-collision key = 02,20
-blocker = b4-8a44614df456
-response-only selector = 3012
-background = {(-1,6),(-2,9)}
-rank totals on 3012 = (2,2,1)
-return charges on 3012 = {00:1,11:3,33:1}
-```
-
-The existing joint compatibility unit has seven exact child classes. One local alias collision is preserved: the two `w_return_00_rank1` occurrences have different full child keys and must never be merged globally.
-
-The local witness with both parent weights 16 and all seven child weights 1 proves only simultaneous return-only local feasibility. It is not an installed global Lyapunov vector.
-
-## Global binding status
-
-The checked global binding attempt remains underdetermined:
-
-```text
-checked_global_binding_attempt_complete = 1
 global_binding_constructed = 0
 global_binding_incompatibility_proved = 0
 joint_sample_global_weight_bindings_complete = 0
@@ -81,7 +52,7 @@ data/prime_power_side_four_recurrent_state_population_table.json
 data/prime_power_side_four_population_record_candidate.json
 ```
 
-Current population state:
+Current population:
 
 ```text
 qualifying installed population sources = 0
@@ -92,9 +63,31 @@ candidate admissible = 0
 binding_input_population_complete = 0
 ```
 
-Do not invent recurrent-state keys, installed weights, transition provenance, normalization witnesses or recurrent-block witnesses merely to populate these interfaces.
+Do not invent recurrent-state keys, installed weights, transition provenance, normalization witnesses or recurrent-block witnesses.
 
-## Newly completed complete-line selector score unit
+## Explicit sample backgrounds
+
+### Zero-response host
+
+```text
+host = s4-fc915f89dec31fec
+background = {(4,4),(6,5)}
+old response-only selector = 2031
+```
+
+### Blocker-alternative host
+
+```text
+host = s4-75b04c45c1c8eac2
+collision key = 02,20
+blocker = b4-8a44614df456
+background = {(-1,6),(-2,9)}
+old response-only selector = 3012
+```
+
+The old return-routing contracts remain historical exact rows for `2031` and `3012`; they are not selected rows after the complete-line reoptimization below.
+
+## Complete-line selector scores
 
 ```text
 contract = data/prime_power_side_four_joint_sample_complete_line_selector_scores.json
@@ -102,68 +95,121 @@ contract seal = c5a7f78ddef889aacdffc152b40945ed4b798f850c9aecbd20d4428f9ea63d0e
 checker = scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py
 documentation = docs/576-prime-power-side-four-joint-sample-complete-line-selector-scores.md
 workflow = .github/workflows/side-four-joint-sample-complete-line-selector-scores.yml
-contract commit = 83ad24e63eef8480efc978d32b2ae34c08714675
-checker commit = f09d9ba9649c9a64522d3379fc9eea1910ac59d9
-documentation commit = 13dc2d7079ff9d96ee5c5b8ea0c750a31db0a14d
-workflow commit = 7c3159de0c69c03108e6947930a09b3bf1ddc2f9
 ```
 
-The checker reconstructs every allowed response from the normalized host and evaluates
+Exact zero-host scores:
 
 ```text
-K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3)
+2031 -> 4
+2301 -> 0
+2310 -> 0
+3012 -> 4
+3201 -> 0
+3210 -> 4
 ```
 
-on the declared sample backgrounds.
-
-### Zero sample exact scores
-
-```text
-2031 -> (2,2,0,total 4)
-2301 -> (0,0,0,total 0)
-2310 -> (0,0,0,total 0)
-3012 -> (0,3,1,total 4)
-3201 -> (0,0,0,total 0)
-3210 -> (0,0,4,total 4)
-```
-
-Complete-line minimizer face:
+Complete-line zero minimizer face:
 
 ```text
 {2301,2310,3201}
 ```
 
-The prior selector `2031` has disadvantage 4.
-
-### Blocker sample exact scores
+Exact blocker-host scores:
 
 ```text
-3012 -> (2,2,1,total 5)
-3210 -> (0,0,4,total 4)
+3012 -> 5
+3210 -> 4
 ```
 
-Complete-line minimizer face:
+Complete-line blocker minimizer:
 
 ```text
 {3210}
 ```
 
-The prior selector `3012` has disadvantage 1.
+Therefore neither old response-only selector is stable under the declared background line score.
 
-Therefore:
+## Newly completed reoptimized return routing
 
 ```text
-joint_sample_complete_line_selector_score_tables_complete = 1
-joint_sample_canonical_selectors_stable_under_complete_line_score = 0
-joint_sample_complete_coupled_selector_terms_complete = 0
-joint_sample_full_compulsory_rows_complete = 0
+contract = data/prime_power_side_four_reoptimized_minimizer_return_routing.json
+contract seal = de7742146a77134b97d3ccb36c6112bd458cf8920e346c2e9e515777a9c5b2b6
+checker = scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py
+documentation = docs/577-prime-power-side-four-reoptimized-minimizer-return-routing.md
+workflow = .github/workflows/side-four-reoptimized-minimizer-return-routing.yml
+contract commit = 82422791fc70e2e0dd8ab172c2eb44cb79c0d32a
+checker commit = 6e42dcc342f9519ee5df2ff540c55879086be404
+documentation commit = 2a342d6928909ac4b1b881652a0f5a80e242b37c
+workflow commit = fadb3fae3da0f7ff40f962fc76a85cdca29ffed1
 ```
 
-The line/geometric tables do not include return, collision, interface or globally weighted child terms. They prove reoptimization is required, not that the displayed line minimizers are final coupled selectors.
+### Zero minimizers
+
+For each of
+
+```text
+2301, 2310, 3201
+```
+
+the declared background creates no rank-one or rank-two credit and the response creates no rank-three credit.
+
+```text
+return charges = {00:0,11:0,22:0,33:0}
+weighted return expression = 0
+```
+
+The return category preserves the three-way zero-host tie.
+
+### Blocker minimizer
+
+For response `3210`, all four response points lie on `x+y-3=0`. Its four rank-three credits route as:
+
+```text
+03|12|21 -> return:22
+03|12|30 -> return:33
+03|21|30 -> return:33
+12|21|30 -> return:33
+```
+
+Thus
+
+```text
+return charges = {00:0,11:0,22:1,33:3}
+```
+
+with exact compressed classes
+
+```text
+return:22 | rank3:1,1,-3:h0:k4 | collision:02,20 -> coefficient 1
+return:33 | rank3:1,1,-3:h0:k4 | collision:02,20 -> coefficient 3
+```
+
+and symbolic row
+
+```text
+w_reopt_return_22_rank3_k4 + 3*w_reopt_return_33_rank3_k4.
+```
+
+The old `3012` return total was five; the reoptimized `3210` return total is four. The two new child weights are unresolved.
+
+Exact flags:
+
+```text
+joint_sample_reoptimized_return_routing_complete = 1
+zero_reoptimized_return_rows_complete = 1
+blocker_reoptimized_return_row_complete = 1
+reoptimized_child_weights_complete = 0
+joint_sample_complete_coupled_selector_terms_complete = 0
+joint_sample_full_compulsory_rows_complete = 0
+complete_weighted_rows_strict = 0
+all_n_proved_by_checker = 0
+```
 
 ## Reconciliation decisions
 
-Two temporary duplicate audit layers were removed after concurrent canonical units appeared. The surviving canonical files are:
+Concurrent canonical binding/source/population interfaces superseded two temporary duplicate audit layers, which were removed. Do not recreate duplicate chapters 571 or 573.
+
+Surviving canonical source/population paths include:
 
 ```text
 data/prime_power_side_four_joint_global_binding_attempt_contract.json
@@ -175,27 +221,26 @@ docs/574-prime-power-side-four-recurrent-state-population-table.md
 docs/575-prime-power-side-four-population-record-candidate.md
 ```
 
-No duplicate chapter 571 or 573 should be recreated.
-
 ## Decisions to preserve
 
-1. Do not invent global recurrent-state keys or occurrence provenance.
-2. Do not promote local sample weights to installed global weights.
+1. Do not invent global recurrent-state keys, weights or occurrence provenance.
+2. Do not promote local sample witnesses to installed global Lyapunov weights.
 3. Do not merge exact child classes through reused local aliases.
 4. Missing compulsory terms, incidences, weights and duals are unresolved, not zero.
 5. Coordinate samples are not global recurrence occurrence claims.
 6. Return, line and geometric views of one credit must not be double-counted.
-7. The old response-only selectors are invalid for the declared complete-line score.
-8. Complete-line minimizers are not final coupled minimizers until return, collision and interface terms are included.
-9. Workflow configuration is not CI success.
+7. Do not reuse routing from obsolete responses `2031` or `3012` as selected routing.
+8. Preserve all three zero-host minimizers until collision, interface and global-weight terms break the tie.
+9. The blocker response `3210` is only the line-plus-unweighted-return candidate; it is not yet the complete coupled selector.
+10. Workflow configuration is not CI success.
 
 ## Validation boundary
 
 ```text
-complete-line score contract arithmetic = reproduced locally
-checker source = syntax-compiled locally
-allowed response families = reconstructed locally
-mutation audit = installed in checker
+complete-line and reoptimized-routing contract arithmetic = reproduced locally
+checker sources = syntax-compiled locally
+allowed response families and credit ownership = reconstructed locally
+mutation audits = installed in checkers
 complete repository execution = not independently observed
 complete 77-checker runner = not executed
 workflow success = not observed
@@ -203,11 +248,11 @@ workflow success = not observed
 
 ## Exact next step
 
-Recompute the exact return-credit routing for every response in the new complete-line minimizer faces:
+Attach exact collision and interface dependency records to the four reoptimized candidate responses:
 
 ```text
 zero: 2301, 2310, 3201
 blocker: 3210
 ```
 
-Then compare those return rows and attach collision/interface dependency records. Preserve all three zero-sample minimizers until the complete coupled score breaks the tie. Do not reuse routing derived from `2031` or `3012` as though those responses remained selected.
+Record every locally known field and every missing coefficient rule, child key, child weight and global provenance field. Preserve the zero tie. Do not treat the blocker collision key `02,20` as a numerical collision coefficient without an exact offspring-routing rule.
