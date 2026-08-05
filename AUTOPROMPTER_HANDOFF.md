@@ -43,7 +43,7 @@ joint_sample_global_recurrent_compatibility_proved = 0
 
 This proves only simultaneous local return-only feasibility. Coordinate samples are not installed global recurrent-state occurrence claims.
 
-## Newly completed checked global binding attempt
+## Checked global binding attempt
 
 Files:
 
@@ -79,7 +79,7 @@ joint_sample_global_recurrent_compatibility_proved = 0
 all_n_proved_by_checker = 0
 ```
 
-The attempt checked two requested parent-state keys, seven exact child classes and nine requested global parent/child weight bindings against the installed ancestry boundary. That boundary still records:
+The installed ancestry boundary still records:
 
 ```text
 owner_fate_rows_populated_all_recurrent_states = 0
@@ -87,39 +87,72 @@ compulsory_weighted_certificates_complete = 0
 actual_global_parent_rule_complete = 0
 ```
 
-Therefore no honest installed state/weight binding can yet be derived. This is not an incompatibility proof. Do not invent global state keys, promote the local `(16;1,...,1)` witness to a global Lyapunov vector, or merge child classes through local aliases.
+Therefore no honest installed state/weight binding can yet be derived. This is not an incompatibility proof.
 
-## Residual bindings
+## Newly completed binding-input manifest
+
+Files:
 
 ```text
-zero parent state key = unresolved
-blocker parent state key = unresolved
-two parent global weights = unresolved
-seven exact child-class global weights = unresolved
-global recurrent-block compatibility = unresolved
-global weight normalization = unresolved
-global transition occurrence = unresolved
-selector/collision/interface terms for both rows = unresolved
+data/prime_power_side_four_joint_global_binding_input_manifest.json
+scripts/check_prime_power_side_four_joint_global_binding_input_manifest.py
+docs/572-prime-power-side-four-joint-global-binding-input-manifest.md
 ```
+
+Commits:
+
+```text
+manifest = d037b174f3d105068efe1549a00179b07983f688
+checker = 72866fd99fd6a08a5b1d15482874b3461fd8780a
+documentation = a7cdb3b1b0b56f78e91fe2cd39c2a13cf42c4535
+```
+
+Manifest SHA-256:
+
+```text
+743e049de6211b8333fcb2f85e03d9deb2204715a35d2e3a0a50423902edd870
+```
+
+The manifest fixes the complete machine-readable input interface for the next attempt:
+
+```text
+2 parent records
+7 distinct exact child records
+3 global records
+2 complete compulsory-row records
+```
+
+Each parent needs an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. Each child needs an exact recurrent-state key, installed weight and transition-occurrence provenance. The global layer needs weight normalization, recurrent-block identity and recurrent-block compatibility. Each completed row additionally needs selector, collision, interface, local-line and geometric terms, inner duals, outer dual and positive slack.
+
+Current status:
+
+```text
+binding_input_manifest_complete = 1
+binding_input_population_complete = 0
+global_binding_constructed = 0
+global_binding_incompatibility_proved = 0
+joint_sample_global_recurrent_compatibility_proved = 0
+all_n_proved_by_checker = 0
+```
+
+## Decisions to preserve
+
+1. Do not invent global recurrent-state keys or occurrence provenance.
+2. Do not promote the local `(16;1,...,1)` witness to an installed global Lyapunov vector.
+3. Do not merge the two exact `return:00` rank-one classes through their shared local alias.
+4. Missing compulsory terms or weights are unresolved, not zero.
+5. A complete manifest is not a populated binding and not an incompatibility certificate.
+6. Return-only local strictness is not complete compulsory-row strictness.
 
 ## Validation boundary
 
-The new checker source was committed but complete repository execution and workflow success were not independently observed in this chat. The checker validates the seven distinct exact classes, the two local parent weights, unresolved joint residual records, and the installed ancestry honesty literals.
+The new manifest, checker and documentation were committed. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
 
 ## Exact next step
 
-Populate or locate a checked installed recurrent-state table for the relevant owner/fate classes containing:
+Populate the manifest from a checked installed recurrent-state source. The first useful increment is one parent record or one exact child record with all required provenance fields, not an alias-level or coordinate-only guess.
 
-```text
-exact recurrent state keys
-normalized installed weights
-transition occurrence provenance
-parent-rule provenance
-```
-
-Then replace the underdetermined result with either:
+After all required records are populated, replace the underdetermined attempt with either:
 
 1. a constructive exact binding of both parents and all seven child classes, or
 2. a genuine checked incompatibility/residual certificate.
-
-Only after that should selector, collision and interface terms be promoted toward complete compulsory-row strictness.
