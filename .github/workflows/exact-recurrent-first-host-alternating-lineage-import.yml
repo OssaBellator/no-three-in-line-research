@@ -35,6 +35,7 @@ on:
       - data/exact_recurrent_first_host_action_family_source_import_gate.json
       - data/exact_recurrent_first_host_mixed_source_certificate_leverage.json
       - data/exact_recurrent_first_host_hybrid_source_certificate_antichain.json
+      - data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json
       - scripts/check_exact_recurrent_first_host_background_signature.py
       - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
       - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
@@ -61,6 +62,7 @@ on:
       - scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py
       - scripts/check_exact_recurrent_first_host_mixed_source_certificate_leverage.py
       - scripts/check_exact_recurrent_first_host_hybrid_source_certificate_antichain.py
+      - scripts/check_exact_recurrent_first_host_evidence_scope_overlap_obstruction.py
       - docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md
       - docs/555-prime-power-installed-operation-registry-1166.md
       - docs/ERL_SELECTOR_RULE_REVIEW_GATE.md
@@ -71,6 +73,7 @@ on:
       - docs/ERL_MINIMIZER_FACE_COST_DOMINANCE_REVIEW_GATE.md
       - docs/ERL_MIXED_SOURCE_CERTIFICATE_REVIEW_GATE.md
       - docs/ERL_HYBRID_SOURCE_CERTIFICATE_REVIEW_GATE.md
+      - docs/ERL_EVIDENCE_SCOPE_OVERLAP_REVIEW_GATE.md
       - docs/exact-recurrent-first-host-alternating-lineage-import.md
       - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
       - docs/exact-recurrent-first-host-safe-signature-quotient.md
@@ -96,10 +99,12 @@ on:
       - docs/exact-recurrent-first-host-action-family-source-import-gate.md
       - docs/exact-recurrent-first-host-mixed-source-certificate-leverage.md
       - docs/exact-recurrent-first-host-hybrid-source-certificate-antichain.md
+      - docs/exact-recurrent-first-host-evidence-scope-overlap-obstruction.md
       - tracks/exact-recurrent-selector-rule-progress.md
       - tracks/exact-recurrent-minimizer-face-scalar-progress.md
       - tracks/exact-recurrent-mixed-source-certificate-progress.md
       - tracks/exact-recurrent-hybrid-source-certificate-progress.md
+      - tracks/exact-recurrent-evidence-scope-overlap-progress.md
       - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
   workflow_dispatch:
 
@@ -217,4 +222,9 @@ jobs:
         run: |
           python scripts/check_exact_recurrent_first_host_hybrid_source_certificate_antichain.py \
             --check data/exact_recurrent_first_host_hybrid_source_certificate_antichain.json \
+            --self-test
+      - name: Check evidence-scope overlap obstruction
+        run: |
+          python scripts/check_exact_recurrent_first_host_evidence_scope_overlap_obstruction.py \
+            --check data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json \
             --self-test
