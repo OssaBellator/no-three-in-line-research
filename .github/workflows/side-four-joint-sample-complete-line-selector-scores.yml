@@ -1,0 +1,29 @@
+name: Side-four joint sample complete line selector scores
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_joint_sample_complete_line_selector_scores.json'
+      - 'scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py'
+      - 'docs/576-prime-power-side-four-joint-sample-complete-line-selector-scores.md'
+      - '.github/workflows/side-four-joint-sample-complete-line-selector-scores.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  selector-scores:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_actual_background_sample_batch.py
+      - run: python scripts/check_prime_power_side_four_blocker_actual_background_sample_batch.py
+      - run: python scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py
