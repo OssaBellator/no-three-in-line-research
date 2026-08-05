@@ -1,0 +1,31 @@
+name: Side-four joint global binding source audit
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_joint_global_binding_attempt_contract.json'
+      - 'data/prime_power_side_four_joint_global_binding_input_manifest.json'
+      - 'data/prime_power_side_four_joint_global_binding_source_audit.json'
+      - 'data/prime_power_side_four_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py'
+      - 'scripts/check_prime_power_labelled_moment_slack_assignment_ancestry.py'
+      - 'scripts/check_prime_power_side_four_joint_global_binding_source_audit.py'
+      - 'docs/573-prime-power-side-four-joint-global-binding-source-audit.md'
+      - '.github/workflows/side-four-joint-global-binding-source-audit.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_joint_global_binding_input_manifest.py
+      - run: python scripts/check_prime_power_side_four_joint_global_binding_source_audit.py
