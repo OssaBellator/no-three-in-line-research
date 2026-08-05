@@ -15,15 +15,6 @@ The no-three-in-line conjecture remains open. Preserve `all_n_proved_by_checker 
 
 The side-four joint sample compatibility unit contains two sampled parent rows and seven distinct exact child classes. The local alias `w_return_00_rank1` denotes two different full child classes and must remain split in every joint or global namespace.
 
-Canonical prior files:
-
-```text
-data/prime_power_side_four_joint_sample_weight_compatibility_contract.json
-scripts/check_prime_power_side_four_joint_sample_weight_compatibility.py
-docs/570-prime-power-side-four-joint-sample-weight-compatibility.md
-.github/workflows/side-four-joint-sample-weight-compatibility.yml
-```
-
 Prior local result:
 
 ```text
@@ -44,16 +35,6 @@ joint_sample_global_recurrent_compatibility_proved = 0
 This proves only simultaneous local return-only feasibility. Coordinate samples are not installed global recurrent-state occurrence claims.
 
 ## Checked global binding attempt
-
-Files:
-
-```text
-data/prime_power_side_four_joint_global_binding_attempt_contract.json
-scripts/check_prime_power_side_four_joint_global_binding_attempt.py
-docs/571-prime-power-side-four-joint-global-binding-attempt.md
-```
-
-Checked result:
 
 ```text
 binding_attempt_result = underdetermined
@@ -77,14 +58,6 @@ Therefore no honest installed state/weight binding can yet be derived. This is n
 
 ## Binding-input manifest
 
-Files:
-
-```text
-data/prime_power_side_four_joint_global_binding_input_manifest.json
-scripts/check_prime_power_side_four_joint_global_binding_input_manifest.py
-docs/572-prime-power-side-four-joint-global-binding-input-manifest.md
-```
-
 The manifest fixes the machine-readable input interface:
 
 ```text
@@ -96,25 +69,9 @@ The manifest fixes the machine-readable input interface:
 
 Each parent needs an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. Each child needs an exact recurrent-state key, installed weight and transition-occurrence provenance. The global layer needs weight normalization, recurrent-block identity and recurrent-block compatibility. Each completed row additionally needs selector, collision, interface, local-line and geometric terms, inner duals, outer dual and positive slack.
 
-## Newly completed source-coverage audit
+## Source-coverage audit
 
-Files:
-
-```text
-data/prime_power_side_four_joint_binding_source_coverage_contract.json
-scripts/check_prime_power_side_four_joint_binding_source_coverage.py
-docs/573-prime-power-side-four-joint-binding-source-coverage.md
-```
-
-Commits:
-
-```text
-contract = ef6549802b1cb71b3d204fa4e68450e37e6dd625
-checker = ed5da92f71cc7eb9d092f05b34f67e8911e7879f
-documentation = 71e707393d88db6c4b5e83676a99f98cee9c61ab
-```
-
-The audit covers the installed owner/fate ancestry range `docs/340` through `docs/348` and records:
+The checked audit of `docs/340` through `docs/348` records:
 
 ```text
 candidate_source_count = 9
@@ -127,7 +84,61 @@ global_binding_incompatibility_proved = 0
 all_n_proved_by_checker = 0
 ```
 
-Those sources establish local formats, exact kernels, selector stability, raw-fibre lineage and blocker structure. None supplies, together, an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. This is a checked source-coverage obstruction, not a mathematical incompatibility certificate.
+Those sources establish local formats, kernels, selector stability, raw-fibre lineage and blocker structure. None supplies, together, an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. This is a checked source-coverage obstruction, not mathematical incompatibility.
+
+## Newly completed recurrent-state population table interface
+
+Files:
+
+```text
+data/prime_power_side_four_recurrent_state_population_table.json
+scripts/check_prime_power_side_four_recurrent_state_population_table.py
+docs/574-prime-power-side-four-recurrent-state-population-table.md
+```
+
+Commits:
+
+```text
+table = c7113f488424b351661919fc27951fb5f0308e0d
+checker = 9f9a59c7b14321fb87eaf69d587895b0843467d0
+documentation = 6a8733e4df28dc5409418196ba098cd42191293f
+```
+
+Table contract SHA-256:
+
+```text
+897e31816869208ea1d1ff82920d6dabfff0d61a689fff3fc20e4eba06eca457
+```
+
+The table fixes exactly two parent targets and seven exact child targets. Parent records require:
+
+```text
+record_id
+sample_scope
+exact_recurrent_state_key
+positive installed_weight
+transition_occurrence_provenance
+parent_rule_provenance
+recurrent_block_id
+normalization_id
+```
+
+Child records require the same fields except parent-rule provenance, plus `exact_child_class`. The checker rejects local aliases as state keys, nonpositive weights, missing provenance, duplicate targets and any completion flag inconsistent with the populated records.
+
+Current table state:
+
+```text
+population_table_schema_complete = 1
+parent_records_populated = 0
+child_records_populated = 0
+first_manifest_record_populated = 0
+binding_input_population_complete = 0
+global_binding_constructed = 0
+global_binding_incompatibility_proved = 0
+all_n_proved_by_checker = 0
+```
+
+The empty table is a checked interface, not a binding or incompatibility certificate.
 
 ## Decisions to preserve
 
@@ -135,24 +146,16 @@ Those sources establish local formats, exact kernels, selector stability, raw-fi
 2. Do not promote the local `(16;1,...,1)` witness to an installed global Lyapunov vector.
 3. Do not merge the two exact `return:00` rank-one classes through their shared local alias.
 4. Missing compulsory terms or weights are unresolved, not zero.
-5. A complete manifest is not a populated binding and not an incompatibility certificate.
+5. A complete manifest or empty population table is not a populated binding and not an incompatibility certificate.
 6. Return-only local strictness is not complete compulsory-row strictness.
-7. Do not re-audit `docs/340` through `docs/348` as though they were recurrent-state population tables; the checked source-coverage count is zero.
+7. Do not re-audit `docs/340` through `docs/348` as though they were recurrent-state population tables; the checked qualifying source count is zero.
 
 ## Validation boundary
 
-The source-coverage contract, checker and documentation were committed. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
+The population table, checker and documentation were committed. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
 
 ## Exact next step
 
-Construct or locate an explicit checked recurrent-state population table that supplies at least one complete manifest record with:
+Populate the first table record from a repository-proven installed recurrent-state source. The first admissible increment is one complete parent or child record with every required field and matching normalization/recurrent-block entries.
 
-```text
-exact recurrent-state key
-positive installed weight
-transition-occurrence provenance
-parent-rule provenance for parent records
-normalization and recurrent-block identity
-```
-
-The first acceptable increment is one fully populated parent or child record tied to that table. Local coordinates, aliases, formats and kernel identities are not substitutes.
+Local coordinates, aliases, formats, kernel identities and unproved weights are not substitutes.
