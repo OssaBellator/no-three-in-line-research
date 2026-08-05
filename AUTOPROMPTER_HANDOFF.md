@@ -33,9 +33,9 @@ complete_labelled_recurrent_lp_strict = 0
 all_n_proved_by_checker = 0
 ```
 
-## Global binding and population interfaces
+## Global binding and population status
 
-The checked global binding attempt remains underdetermined, not incompatible.
+The checked global binding attempt is underdetermined, not incompatible.
 
 ```text
 global_binding_constructed = 0
@@ -44,7 +44,7 @@ joint_sample_global_weight_bindings_complete = 0
 joint_sample_global_recurrent_compatibility_proved = 0
 ```
 
-Canonical interfaces:
+Canonical population interfaces:
 
 ```text
 data/prime_power_side_four_joint_global_binding_attempt_contract.json
@@ -67,7 +67,7 @@ binding_input_population_complete = 0
 
 Never invent recurrent-state keys, installed weights, transition provenance, normalization witnesses or recurrent-block witnesses.
 
-## Explicit side-four samples
+## Explicit samples and obsolete selectors
 
 ```text
 zero host = s4-fc915f89dec31fec
@@ -81,7 +81,7 @@ blocker background = {(-1,6),(-2,9)}
 old response-only selector = 3012
 ```
 
-The old `2031` and `3012` routing contracts remain historical exact rows only. They are not selected rows after complete-line reoptimization.
+The historical `2031` and `3012` routing contracts remain exact for those responses, but neither response remains selected under complete-line scoring.
 
 ## Complete-line selector scores
 
@@ -93,34 +93,14 @@ doc = docs/576-prime-power-side-four-joint-sample-complete-line-selector-scores.
 workflow = .github/workflows/side-four-joint-sample-complete-line-selector-scores.yml
 ```
 
-Exact zero-host scores:
-
 ```text
-2031 -> 4
-2301 -> 0
-2310 -> 0
-3012 -> 4
-3201 -> 0
-3210 -> 4
-```
+zero scores:
+2031:4  2301:0  2310:0  3012:4  3201:0  3210:4
+zero complete-line minimizer face = {2301,2310,3201}
 
-Zero complete-line minimizer face:
-
-```text
-{2301,2310,3201}
-```
-
-Exact blocker-host scores:
-
-```text
-3012 -> 5
-3210 -> 4
-```
-
-Blocker complete-line minimizer:
-
-```text
-{3210}
+blocker scores:
+3012:5  3210:4
+blocker complete-line minimizer = {3210}
 ```
 
 Neither old response-only selector is stable under the declared complete-line score.
@@ -150,7 +130,7 @@ return charges = {00:0,11:0,22:0,33:0}
 
 Return terms preserve the three-way zero tie.
 
-For blocker candidate `3210`, all four response points lie on `x+y-3=0`. The four rank-three credits route as:
+For blocker candidate `3210`, four rank-three credits route as:
 
 ```text
 03|12|21 -> return:22
@@ -170,7 +150,7 @@ weighted expression = w_reopt_return_22_rank3_k4 + 3*w_reopt_return_33_rank3_k4
 
 The two reoptimized child weights remain unresolved.
 
-## Newly completed collision/interface dependency unit
+## Collision/interface dependency unit
 
 ```text
 contract = data/prime_power_side_four_reoptimized_collision_interface_dependency.json
@@ -184,19 +164,16 @@ doc commit = bcce607362726ac72628b00ac46a9d5bb7da2f62
 workflow commit = 8ccc619a2624027347788b965ce334b445deab0c
 ```
 
-The four response records are:
+The four records cover:
 
 ```text
 zero: 2301,2310,3201
 blocker: 3210
 ```
 
-Every record contains exact response edges, source fate, collision/deletion key, blocker labels, local interface provenance, CRT label and target edge. Every candidate avoids target edge `01` and every deleted edge.
-
-Exact census:
+Every record retains exact response edges, source fate, collision/deletion key, blocker labels, interface provenance, CRT label and target edge. Every response avoids target edge `01` and every deleted edge.
 
 ```text
-candidate responses = 4
 collision dependency records = 4
 interface dependency records = 4
 collision coefficients populated = 0
@@ -230,10 +207,17 @@ global transition occurrence
 
 A deletion trace, blocker label or local interface label is not a numerical coefficient or child route.
 
-Exact flags:
+## Exact flags
 
 ```text
+joint_sample_complete_line_selector_score_tables_complete = 1
+joint_sample_reoptimized_return_routing_complete = 1
+zero_reoptimized_return_rows_complete = 1
+blocker_reoptimized_return_row_complete = 1
 joint_sample_reoptimized_collision_interface_dependency_complete = 1
+
+joint_sample_canonical_selectors_stable_under_complete_line_score = 0
+reoptimized_child_weights_complete = 0
 collision_coefficients_complete = 0
 interface_coefficients_complete = 0
 collision_child_bindings_complete = 0
@@ -264,17 +248,19 @@ Concurrent canonical binding/source/population units superseded two temporary du
 ## Validation boundary
 
 ```text
-selector, routing and dependency contract arithmetic = reproduced locally
-checker sources = syntax-compiled locally
-allowed responses, credits and response-edge dependencies = reconstructed locally
-mutation audits = installed in checkers
-complete repository execution = not independently observed
+selector-score, routing and dependency contract arithmetic = reproduced during construction
+selector-score and routing checker sources = syntax-checked before installation
+dependency checker source = installed; complete execution not independently observed
+allowed responses, credit ownership and response-edge dependencies = reconstructed during construction
+mutation audits = installed in all three checkers
+fresh repository clone/runtime execution = unavailable in the current container
 complete 77-checker runner = not executed
 workflow success = not observed
+final visible commit status entries = none observed
 ```
 
 ## Exact next step
 
-Construct one exact collision-offspring enumerator for the blocker response `3210` and its host collision trace `02,20`. The enumerator must identify physical offspring, exact owner/fate/collision/interface/provenance child keys and multiplicities. If the repository lacks the state-transition semantics needed to enumerate those offspring, publish that precise semantic-input obstruction instead of assigning zero.
+Construct one exact collision-offspring enumerator for blocker response `3210` and collision trace `02,20`. It must identify physical offspring, exact multiplicities and complete owner/fate/collision/interface/provenance child keys.
 
-In parallel, define the exact child-interface routing input required by the four candidate responses, but do not populate an interface coefficient without a verified route and multiplicity.
+If installed transition semantics are insufficient, record that exact semantic-input obstruction instead of assigning a zero coefficient. In parallel, define exact child-interface routing inputs for all four candidate responses without inventing a route or multiplicity.
