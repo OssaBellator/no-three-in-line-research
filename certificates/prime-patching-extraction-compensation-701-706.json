@@ -1,0 +1,96 @@
+{
+  "schema": "prime-patching-frontier-certificate-v1",
+  "range": "701-706",
+  "theorems": [
+    "PP3dfj", "PP3dfk", "PP3dfl",
+    "PP3dfm", "PP3dfn", "PP3dfo",
+    "PP3dfp", "PP3dfq", "PP3dfr",
+    "PP3dfs", "PP3dft", "PP3dfu",
+    "PP3dfv", "PP3dfw", "PP3dfx",
+    "PP3dfy", "PP3dfz", "PP3dga"
+  ],
+  "boundary": {
+    "canonical_endpoint_points": 168,
+    "canonical_endpoint_blocks": 21,
+    "raw_twentysecond_minimum": 6,
+    "minimum_six_attempts": 26,
+    "minimum_six_cores": 178,
+    "budget_seven_replacement_histogram": {
+      "212940": 49,
+      "423360": 92,
+      "841680": 37
+    },
+    "budget_seven_replacements_rejected": 80525340,
+    "combined_budget_six_and_seven_rejections": 80593920,
+    "repairs_through_budget_seven": 0,
+    "remaining_budget_seven_raw_minimum_seven_attempts": 205
+  },
+  "hall": {
+    "centres": 30,
+    "path_even_cycle_component_signatures_checked": 18170,
+    "retention_at_least_28_signatures": 9,
+    "retention_histogram": {
+      "28": 6,
+      "29": 2,
+      "30": 1
+    },
+    "minimum_isolated_centres": 24,
+    "maximum_nonisolated_centres": 6,
+    "host_derived_resources": false
+  },
+  "threshold": {
+    "legal_primitive_layers": 18,
+    "dual_nonnegative_separators": 2,
+    "common_zero_types": 5,
+    "equality_scale": "8K",
+    "hidden_matrices": "3K",
+    "legal_primitive_multiplicities": "4K copies of each common-zero type",
+    "hidden_layer_density": "3/8",
+    "enlarged_primitive_alphabet": false
+  },
+  "prefix": {
+    "minimum_crossing_matchings": 104,
+    "deletion_classes": 2,
+    "optimal_routes_per_physical_case": 144,
+    "unique_routes_per_deletion": 3624,
+    "ordered_compositions": 1024,
+    "distinct_coordinate_audits": 7421952,
+    "covered_physical_route_composition_pairs": 30670848,
+    "failures": 0,
+    "maximum_coordinate_by_deletion": {
+      "delete_0_2": 144,
+      "delete_3_5": 156
+    },
+    "source_size_recurrence": false
+  },
+  "shell": {
+    "components": 3,
+    "uncertainty_states": 3,
+    "directed_burden_tables": 262144,
+    "robust_gap_histogram": {
+      "0": 199456,
+      "1": 57492,
+      "2": 5112,
+      "3": 84
+    },
+    "statewise_optima_incompatible_cases": 62688,
+    "edgewise_worst_overcharge_histogram": {
+      "0": 137740,
+      "1": 120324,
+      "2": 4080
+    },
+    "repetition_formula_checks": 28311552,
+    "robust_loss_tour_not_repetition_optimal_cases": 1601388,
+    "coordinate_macro_graph": false
+  },
+  "integration": {
+    "candidate_completion": "25/30",
+    "actual_evidence_level": "fixture_derived",
+    "promoted_rows": [],
+    "fixed_point_total": "705466760524005697/3623878655999606784",
+    "slack_below_one_quarter": "200502903475895999/3623878655999606784",
+    "geometric_closure": false,
+    "all_n_theorem": "open",
+    "next_theorem_identifier": "PP3dgb"
+  }
+}
