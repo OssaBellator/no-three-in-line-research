@@ -1,0 +1,62 @@
+{
+  "schema": "prime-power-side-four-recurrent-state-population-table/v1",
+  "purpose": "checked population interface for exact recurrent states needed by the two side-four sample parents and seven exact child classes",
+  "required_record_kinds": {
+    "parent": [
+      "record_id",
+      "sample_scope",
+      "exact_recurrent_state_key",
+      "installed_weight",
+      "transition_occurrence_provenance",
+      "parent_rule_provenance",
+      "recurrent_block_id",
+      "normalization_id"
+    ],
+    "child": [
+      "record_id",
+      "sample_scope",
+      "exact_child_class",
+      "exact_recurrent_state_key",
+      "installed_weight",
+      "transition_occurrence_provenance",
+      "recurrent_block_id",
+      "normalization_id"
+    ]
+  },
+  "target_parent_records": [
+    "zero_parent",
+    "blocker_parent"
+  ],
+  "target_child_classes": [
+    "return:00|rank1:1,-2,4:h2:k2",
+    "return:22|rank1:1,-2,4:h2:k2",
+    "return:22|rank2:1,-2,4:h2:k2",
+    "return:00|rank1:3,1,-3:h2:k2|collision:02,20",
+    "return:11|rank1:3,1,-3:h2:k2|collision:02,20",
+    "return:11|rank2:3,1,-3:h2:k2|collision:02,20",
+    "return:33|rank3:1,-1,-1:h0:k3|collision:02,20"
+  ],
+  "population": {
+    "parents": [],
+    "children": []
+  },
+  "global_records": {
+    "normalizations": [],
+    "recurrent_blocks": []
+  },
+  "completion": {
+    "population_table_schema_complete": 1,
+    "parent_records_populated": 0,
+    "child_records_populated": 0,
+    "first_manifest_record_populated": 0,
+    "binding_input_population_complete": 0,
+    "global_binding_constructed": 0,
+    "global_binding_incompatibility_proved": 0,
+    "all_n_proved_by_checker": 0
+  },
+  "honesty": {
+    "empty_population_is_not_incompatibility": 1,
+    "local_sample_weights_are_not_installed_weights": 1,
+    "aliases_are_not_exact_state_keys": 1
+  }
+}
