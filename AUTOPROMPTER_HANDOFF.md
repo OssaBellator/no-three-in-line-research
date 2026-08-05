@@ -53,20 +53,6 @@ scripts/check_prime_power_side_four_joint_global_binding_attempt.py
 docs/571-prime-power-side-four-joint-global-binding-attempt.md
 ```
 
-Commits:
-
-```text
-contract = baa296bba31650a99570879fb9e5eea85aa54bb4
-checker = cc2b076a192e90aa5ad0a2abbba5018ed07e0046
-documentation = 54a4073c32e9c728d63d3a4818d10439e882cc0e
-```
-
-Contract SHA-256:
-
-```text
-787039d4458fe2e5ee1400e76815cee6dc8b4425d04436453083a91ce7d9f077
-```
-
 Checked result:
 
 ```text
@@ -89,7 +75,7 @@ actual_global_parent_rule_complete = 0
 
 Therefore no honest installed state/weight binding can yet be derived. This is not an incompatibility proof.
 
-## Newly completed binding-input manifest
+## Binding-input manifest
 
 Files:
 
@@ -99,21 +85,7 @@ scripts/check_prime_power_side_four_joint_global_binding_input_manifest.py
 docs/572-prime-power-side-four-joint-global-binding-input-manifest.md
 ```
 
-Commits:
-
-```text
-manifest = d037b174f3d105068efe1549a00179b07983f688
-checker = 72866fd99fd6a08a5b1d15482874b3461fd8780a
-documentation = a7cdb3b1b0b56f78e91fe2cd39c2a13cf42c4535
-```
-
-Manifest SHA-256:
-
-```text
-743e049de6211b8333fcb2f85e03d9deb2204715a35d2e3a0a50423902edd870
-```
-
-The manifest fixes the complete machine-readable input interface for the next attempt:
+The manifest fixes the machine-readable input interface:
 
 ```text
 2 parent records
@@ -124,16 +96,38 @@ The manifest fixes the complete machine-readable input interface for the next at
 
 Each parent needs an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. Each child needs an exact recurrent-state key, installed weight and transition-occurrence provenance. The global layer needs weight normalization, recurrent-block identity and recurrent-block compatibility. Each completed row additionally needs selector, collision, interface, local-line and geometric terms, inner duals, outer dual and positive slack.
 
-Current status:
+## Newly completed source-coverage audit
+
+Files:
 
 ```text
-binding_input_manifest_complete = 1
+data/prime_power_side_four_joint_binding_source_coverage_contract.json
+scripts/check_prime_power_side_four_joint_binding_source_coverage.py
+docs/573-prime-power-side-four-joint-binding-source-coverage.md
+```
+
+Commits:
+
+```text
+contract = ef6549802b1cb71b3d204fa4e68450e37e6dd625
+checker = ed5da92f71cc7eb9d092f05b34f67e8911e7879f
+documentation = 71e707393d88db6c4b5e83676a99f98cee9c61ab
+```
+
+The audit covers the installed owner/fate ancestry range `docs/340` through `docs/348` and records:
+
+```text
+candidate_source_count = 9
+qualifying_population_source_count = 0
+first_manifest_record_populated = 0
+source_coverage_audit_complete = 1
 binding_input_population_complete = 0
 global_binding_constructed = 0
 global_binding_incompatibility_proved = 0
-joint_sample_global_recurrent_compatibility_proved = 0
 all_n_proved_by_checker = 0
 ```
+
+Those sources establish local formats, exact kernels, selector stability, raw-fibre lineage and blocker structure. None supplies, together, an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. This is a checked source-coverage obstruction, not a mathematical incompatibility certificate.
 
 ## Decisions to preserve
 
@@ -143,16 +137,22 @@ all_n_proved_by_checker = 0
 4. Missing compulsory terms or weights are unresolved, not zero.
 5. A complete manifest is not a populated binding and not an incompatibility certificate.
 6. Return-only local strictness is not complete compulsory-row strictness.
+7. Do not re-audit `docs/340` through `docs/348` as though they were recurrent-state population tables; the checked source-coverage count is zero.
 
 ## Validation boundary
 
-The new manifest, checker and documentation were committed. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
+The source-coverage contract, checker and documentation were committed. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
 
 ## Exact next step
 
-Populate the manifest from a checked installed recurrent-state source. The first useful increment is one parent record or one exact child record with all required provenance fields, not an alias-level or coordinate-only guess.
+Construct or locate an explicit checked recurrent-state population table that supplies at least one complete manifest record with:
 
-After all required records are populated, replace the underdetermined attempt with either:
+```text
+exact recurrent-state key
+positive installed weight
+transition-occurrence provenance
+parent-rule provenance for parent records
+normalization and recurrent-block identity
+```
 
-1. a constructive exact binding of both parents and all seven child classes, or
-2. a genuine checked incompatibility/residual certificate.
+The first acceptable increment is one fully populated parent or child record tied to that table. Local coordinates, aliases, formats and kernel identities are not substitutes.
