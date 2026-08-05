@@ -86,7 +86,7 @@ all_n_proved_by_checker = 0
 
 Those sources establish local formats, kernels, selector stability, raw-fibre lineage and blocker structure. None supplies, together, an exact recurrent-state key, installed weight, transition-occurrence provenance and parent-rule provenance. This is a checked source-coverage obstruction, not mathematical incompatibility.
 
-## Newly completed recurrent-state population table interface
+## Recurrent-state population table interface
 
 Files:
 
@@ -96,34 +96,7 @@ scripts/check_prime_power_side_four_recurrent_state_population_table.py
 docs/574-prime-power-side-four-recurrent-state-population-table.md
 ```
 
-Commits:
-
-```text
-table = c7113f488424b351661919fc27951fb5f0308e0d
-checker = 9f9a59c7b14321fb87eaf69d587895b0843467d0
-documentation = 6a8733e4df28dc5409418196ba098cd42191293f
-```
-
-Table contract SHA-256:
-
-```text
-897e31816869208ea1d1ff82920d6dabfff0d61a689fff3fc20e4eba06eca457
-```
-
-The table fixes exactly two parent targets and seven exact child targets. Parent records require:
-
-```text
-record_id
-sample_scope
-exact_recurrent_state_key
-positive installed_weight
-transition_occurrence_provenance
-parent_rule_provenance
-recurrent_block_id
-normalization_id
-```
-
-Child records require the same fields except parent-rule provenance, plus `exact_child_class`. The checker rejects local aliases as state keys, nonpositive weights, missing provenance, duplicate targets and any completion flag inconsistent with the populated records.
+The table fixes exactly two parent targets and seven exact child targets. Parent records require an exact recurrent-state key, positive installed weight, transition-occurrence provenance, parent-rule provenance, recurrent-block identity and normalization identity. Child records require the same except parent-rule provenance, plus the exact child class.
 
 Current table state:
 
@@ -140,22 +113,70 @@ all_n_proved_by_checker = 0
 
 The empty table is a checked interface, not a binding or incompatibility certificate.
 
+## Newly completed one-record candidate admission envelope
+
+Files:
+
+```text
+data/prime_power_side_four_population_record_candidate.json
+scripts/check_prime_power_side_four_population_record_candidate.py
+docs/575-prime-power-side-four-population-record-candidate.md
+```
+
+Commits:
+
+```text
+envelope = 13a5a8515d6b0f41b3e287cc4cbf7274ae6d2025
+checker = 3eefff078b130237fe70ea7dcea0524863460de9
+documentation = d4298dd6a6b8eebed68739080071ac6c5803bd3c
+```
+
+The envelope is a gate for exactly one proposed parent or child record before insertion into the population table. Every candidate requires:
+
+```text
+exact target identity
+exact non-alias recurrent-state key
+positive installed weight
+transition-occurrence provenance
+normalization witness
+recurrent-block witness
+```
+
+Parent candidates additionally require parent-rule provenance. Child candidates additionally require one of the seven exact child classes. The two distinct rank-one `return:00` child classes remain separate targets.
+
+Current candidate state:
+
+```text
+candidate = null
+candidate_present = 0
+candidate_admissible_for_population_table = 0
+candidate_envelope_complete = 1
+first_manifest_record_populated = 0
+binding_input_population_complete = 0
+global_binding_constructed = 0
+global_binding_incompatibility_proved = 0
+all_n_proved_by_checker = 0
+```
+
+The checker rejects alias-like keys, nonpositive weights, missing provenance, absent normalization or recurrent-block witnesses, and targets outside the fixed two-parent/seven-child namespace. A future non-null candidate passing the checker would establish only admission eligibility for one record, not global recurrence compatibility.
+
 ## Decisions to preserve
 
 1. Do not invent global recurrent-state keys or occurrence provenance.
 2. Do not promote the local `(16;1,...,1)` witness to an installed global Lyapunov vector.
 3. Do not merge the two exact `return:00` rank-one classes through their shared local alias.
 4. Missing compulsory terms or weights are unresolved, not zero.
-5. A complete manifest or empty population table is not a populated binding and not an incompatibility certificate.
+5. A complete manifest, empty table or empty candidate envelope is not a populated binding and not an incompatibility certificate.
 6. Return-only local strictness is not complete compulsory-row strictness.
 7. Do not re-audit `docs/340` through `docs/348` as though they were recurrent-state population tables; the checked qualifying source count is zero.
+8. Do not insert a population record directly into the table without first passing the one-record candidate admission checker.
 
 ## Validation boundary
 
-The population table, checker and documentation were committed. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
+The candidate envelope, checker and documentation were committed. The first checker write was blocked by the repository action safety filter; a simplified equivalent checker was committed successfully. Complete repository execution, the 77-checker runner and workflow success were not independently observed in this chat.
 
 ## Exact next step
 
-Populate the first table record from a repository-proven installed recurrent-state source. The first admissible increment is one complete parent or child record with every required field and matching normalization/recurrent-block entries.
+Locate or construct one repository-proven candidate record and populate the admission envelope with all required witnesses. Only after the candidate checker accepts it should the record and its normalization/recurrent-block references be inserted into the recurrent-state population table.
 
 Local coordinates, aliases, formats, kernel identities and unproved weights are not substitutes.
