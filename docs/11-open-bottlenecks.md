@@ -135,13 +135,15 @@ all_n_proved_by_checker = 0
 ## 9. Validation boundary
 
 ```text
-selector-score, reoptimized-routing and dependency arithmetic = reproduced locally
-allowed response families, credit ownership and edge dependencies = reconstructed locally
-new checker sources = syntax-compiled locally
-mutation audits = installed in checkers
-complete repository execution of all new checkers = not independently observed
+contract arithmetic = reproduced during construction
+selector-score and reoptimized-routing checker sources = syntax-checked before installation
+collision/interface dependency checker source = installed; complete execution not independently observed
+allowed response families, credit ownership and edge dependencies = reconstructed during construction
+mutation audits = installed in all three checkers
+fresh repository clone/runtime execution = unavailable in the current container
 complete 77-checker runner = not executed
 workflow success = not observed
+latest checked head had no visible status entries
 ```
 
 Workflow configuration is not CI success. Exact local sample rows do not substitute for globally occurring states, globally compatible weights, complete compulsory certificates or termination.
