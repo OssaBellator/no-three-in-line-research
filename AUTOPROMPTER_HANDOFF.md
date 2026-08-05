@@ -1,6 +1,6 @@
 # Autoprompter continuity handoff
 
-Checkpoint time: 2026-08-04T23:55:00+10:00 Australia/Melbourne
+Checkpoint time: 2026-08-05T16:29:00+10:00 Australia/Melbourne
 
 ## Goal
 
@@ -13,143 +13,112 @@ bounded coordinate lifts are not all-length prime-patching constructions.
 
 - Repository: `OssaBellator/no-three-in-line-research`
 - Branch: `research/all-n-prime-patching`
-- Canonical completed tranches through `docs/693--700`.
-- Latest theorem range: `PP3del--PP3dfi`.
-- Next theorem identifier: `PP3dfj`.
-- Next tranche: `docs/701--706`.
+- Canonical completed tranches through `docs/701--706`.
+- Latest theorem range: `PP3dfj--PP3dga`.
+- Next theorem identifier: `PP3dgb`.
+- Next tranche: `docs/707--712`.
+- Verified theorem-bearing head before this continuity commit:
+  `0b6cb8238396b4d3d33148b4af6d08674872678e`.
 
 ## Critical corrected boundary fact
 
 The copied nineteenth-state snapshot contained the stale point `(42,193)`. The
 certified predecessor reconstruction contains `(42,378)` instead. The canonical
-144-point eighteenth state, every later selected state, and every promoted finite
-transition are reconstructed from certified predecessors and pass complete exact
-no-three audits.
+144-point eighteenth state and every later selected state are reconstructed from
+certified predecessors and pass complete exact no-three audits.
 
-## Completed canonical tranche: `docs/693--700`
+The certified finite boundary chain currently reaches 168 points and twenty-one
+blocks. Its raw twenty-second spectrum is
 
-### Boundary I — `docs/693-corrected-nineteenth-boundary-transition.md`
+```text
+6:26,7:205,8:285,9:1,10:3,11:38,12:100,13:199,14:175.
+```
 
-Theorems `PP3del--PP3den`.
+## Completed canonical tranche: `docs/701--706`
 
-- Correct raw nineteenth histogram:
-  `4:2,5:9,6:47,7:175,8:283,9:3,10:16,11:63,12:121,13:176,14:137`.
-- The two minimum-four attempts are `P1/-33` with one core and `P2/-64` with five
-  cores.
-- All six cores reject row/column-preserving corrections through budget six.
-- Budget seven is sharp; two `P2/-64` minimum cores repair there.
-- The first certified repair gives a 152-point, nineteen-block state and an exact
-  raw twentieth spectrum.
+### Boundary — `docs/701-twentysecond-minimum-six-budget-seven-obstruction.md`
 
-### Boundary II — `docs/694-alternative-boundary-continuation-through-twenty-one-blocks.md`
+Theorems `PP3dfj--PP3dfl`.
 
-Theorems `PP3deo--PP3deq`.
+- The raw twenty-second minimum-six layer contains 26 attempts and 178 exact
+  minimum cores.
+- Every core rejects all row/column-preserving corrections at deletion budget
+  seven.
+- Exact tested-per-core histogram:
+  `212,940:49`, `423,360:92`, `841,680:37`.
+- The new layer contains 80,525,340 rejected replacements and zero repairs.
+- Combined with budget six, the same 178 cores account for 80,593,920 rejected
+  replacements through budget seven.
+- This closes only the minimum-six layer. A budget-seven transition may still
+  arise from one of the 205 raw minimum-seven attempts; budget eight on the
+  minimum-six layer also remains open.
 
-- The second `P2/-64` budget-seven repair is selected because its raw twentieth
-  low frontier has 90 attempts of transversal at most six, versus 97 for the first
-  repair.
-- Selected raw twentieth histogram:
-  `4:2,5:14,6:74,7:199,8:227,9:2,10:23,11:91,12:160,13:149,14:91`.
-- `P3/-27` core 6 first repairs at budget six, producing a 160-point,
-  twenty-block state.
-- Its raw twenty-first histogram is
-  `4:3,5:11,6:63,7:184,8:255,9:3,10:13,11:51,12:117,13:180,14:152`.
-- Eleven of 33 minimum-four twenty-first cores repair at budget six. Exact
-  next-spectrum comparison selects `P3/60` core 8.
-- The selected endpoint has 168 points and twenty-one blocks. Its raw
-  twenty-second histogram is
-  `6:26,7:205,8:285,9:1,10:3,11:38,12:100,13:199,14:175`.
+### Hall — `docs/702-hall-thirty-centre-extremal-signatures.md`
 
-### Boundary III — `docs/695-twentysecond-boundary-budget-six-obstruction.md`
+Theorems `PP3dfm--PP3dfo`.
 
-Theorems `PP3der--PP3det`.
+- All 18,170 multisets of path and even-cycle component orders summing to thirty
+  were classified under the maximum-degree-two defect-incidence model.
+- Exactly nine signatures retain at least 28 centres: six retain 28, two retain
+  29, and one retains 30.
+- Every qualifying packet has at least 24 isolated conflict vertices and at most
+  six nonisolated centres.
+- Hence at least 24 centres must have both source and host defect labels private.
+- The result is a sharp host-extraction filter, not a host-derived packet.
 
-- The raw twenty-second minimum is six, with 26 attempts and 178 minimum cores.
-- Every preserving correction at deletion budget six is rejected.
-- Matching-count histogram per core:
-  `180:49,360:92,720:37`.
-- The complete layer contains 68,580 rejected replacement permutations and zero
-  repairs.
-- Budget seven on this frontier remains open.
+### Threshold — `docs/703-threshold-all-equality-multiples.md`
 
-### Threshold — `docs/696-threshold-all-window-widths.md`
+Theorems `PP3dfp--PP3dfr`.
 
-Theorems `PP3deu--PP3dew`.
+- Two independent integer functionals are nonnegative on all eighteen legal
+  primitive permutation layers.
+- Applied to an equality-scale mixture, they force `t=8K` and exactly `h=3K`
+  hidden `4I` matrices.
+- Equality in both separators restricts all legal primitive layers to the same
+  five common-zero types used by the minimum batch.
+- A unimodular five-by-five minor forces exactly `4K` copies of each type.
+- Thus every equality multiple has the same scaled aggregate and hidden density
+  `3/8`; non-minimum multiples do not enlarge the alphabet.
+- Enlarged primitive alphabets and genuinely unexposed non-rolling operations
+  remain open.
 
-- A forced-alphabet rolling window of every positive width is legal exactly when
-  it contains no identity layer.
-- The separator score is `-2` times the identity count, while every legal-layer sum
-  has nonnegative score.
-- For `K` minimum batches and width `w`, the exact maximum number of legal cyclic
-  windows is `max(0,5K-w+1)`.
-- Every fixed width has optimal asymptotic legal density `5/8`.
-- For `w=rho*K+O(1)`, the limiting upper density is `max(0,(5-rho)/8)`.
-- Wider rolling memory cannot conceal the forced identity mass; progress requires
-  a different alphabet or a genuinely unexposed operation.
+### Prefix — `docs/704-all-optimal-prefix-all-compositions.md`
 
-### Hall — `docs/697-coordinate-hall-defect-packet.md`
+Theorems `PP3dfs--PP3dfu`.
 
-Theorems `PP3dex--PP3dez`.
+- Each deletion class has 3,624 distinct optimal ordered routes, for 7,248
+  distinct deletion/route pairs.
+- Every route passes all 1,024 ordered compositions of eleven.
+- The exact deduplicated audit contains 7,421,952 coordinate embeddings with zero
+  failures and covers 30,670,848 physical route/composition pairs.
+- Uniform maximum coordinates are 144 for deletion `{0,2}` and 156 for deletion
+  `{3,5}`.
+- The complete fixed thirteen-pair route/composition frontier is closed. The only
+  remaining prefix gap is a compatible larger reservoir or source-size recurrence.
 
-- Every finite simple maximum-degree-two bipartite defect graph has an integer
-  no-three realization whose row/column conflict graph is its line graph.
-- An explicit synthetic packet has ten pairwise resource-disjoint motifs and
-  thirty centres. Its conflict graph is two disjoint edges plus 26 isolates, so it
-  retains exactly 28 centres.
-- The explicit coordinate packet has no collinear triple and maximum-coordinate
-  bit length 46.
-- Its exact boundary table is
-  `W[0,0]=26,W[0,1]=27,W[1,0]=27,W[1,1]=28`.
-- Repeated packets have exact retention `27K+1`. Transfer is checked through twelve
-  packets and explicit no-three coordinate chains through six packets, totaling
-  180 points.
-- Independently, all 1,636 two-motif degree-two packet graphs are classified and
-  6,544 one-through-four packet values agree with direct independence numbers.
-- The packet resources and defect labels are synthetic, not extracted from the
-  actual prime-patching host; the Hall row is not promoted.
+### Shell — `docs/705-shell-three-state-connector-tours.md`
 
-### Prefix — `docs/698-prefix-all-optimal-four-run-compositions.md`
+Theorems `PP3dfv--PP3dfx`.
 
-Theorems `PP3dfa--PP3dfc`.
+- All 262,144 three-component, three-state directed burden tables with edge/state
+  values in `{1,2}` were classified.
+- Statewise tour optima are incompatible with one common robust tour in 62,688
+  cases; the robust gap reaches three.
+- Edgewise-worst scalarization overcharges in 124,404 cases and by as much as two.
+- All 28,311,552 weighted gain/setup repetition comparisons agree with the exact
+  strict-positivity formula.
+- In 1,601,388 cases, every worst-loss-minimizing tour is disjoint from the
+  repetition-optimal tour set.
+- No coordinate macro graph currently supplies the component, connector-burden,
+  and positive robust gain vectors.
 
-- Each deletion class has 14,976 physical optimal-route occurrences but only
-  3,624 distinct ordered routes.
-- Every distinct route passes all 176 ordered compositions of eleven with at most
-  four runs.
-- The exact deduplicated audit contains 1,275,648 coordinate embeddings and covers
-  5,271,552 physical route/composition pairs.
-- The newly added exactly-four-run layer contributes 3,594,240 physical pairs.
-- There are zero failures. Uniform maximum coordinates remain 120 for deletion
-  `{0,2}` and 154 for deletion `{3,5}`.
-- The remaining 848 compositions with at least five runs and every larger source
-  size remain open.
+### Integration — `docs/706-extraction-compensation-evidence-gate.md`
 
-### Shell — `docs/699-robust-shell-connector-tours.md`
-
-Theorems `PP3dfd--PP3dff`.
-
-- Connector burdens must be retained as uncertainty vectors and summed before the
-  worst-state maximum.
-- The exact robust loss is `min_T max_u L_u(T)`; statewise shortest tours and
-  edgewise-worst scalarization can both be wrong.
-- Across all 4,096 three-component, two-state burden tables, statewise-optimal
-  tours are incompatible in 644 cases and edgewise-worst charging overcharges in
-  1,116 cases.
-- For gain vector `G` and setup `S`, the exact repetition objective is
-  `min_T max_u(floor((S+L_u(T))/G_u)+1)`.
-- All 147,456 gain/setup comparisons agree with direct repetition search.
-- In 5,640 cases, every worst-loss-minimizing tour is disjoint from the
-  repetition-minimizing tour set.
-- No coordinate macro graph currently supplies the component, path-burden, and
-  gain vectors.
-
-### Integration — `docs/700-realization-compensation-evidence-gate.md`
-
-Theorems `PP3dfg--PP3dfi`.
+Theorems `PP3dfy--PP3dga`.
 
 - Candidate completion remains `25/30`: boundary `4/5`, Hall `4/5`, threshold
   `5/5`, prefix `5/5`, shell `5/5`, integration `2/5`.
-- All six actual evidence rows remain `fixture_derived`; no row is promoted.
+- All six actual evidence rows remain `fixture_derived`; no rows are promoted.
 - Fixed-point total remains
   `705466760524005697/3623878655999606784`.
 - Slack below one quarter remains
@@ -158,101 +127,84 @@ Theorems `PP3dfg--PP3dfi`.
 
 ## Reproducibility
 
-Boundary:
-
-- `scripts/check_boundary_nineteenth_transition.py`
-- `scripts/boundary_spectrum_kernel.cpp`
-- `scripts/boundary_exact_cover_kernel.cpp`
-- `scripts/boundary_legacy_correction_kernel.cpp`
-- `scripts/check_boundary_continuation_694.py`
-- `scripts/check_boundary_twentyfirst_selection_694.py`
-- `scripts/check_boundary_twentysecond_budget_six_obstruction_695.py`
-
-Threshold and Hall:
-
-- `scripts/check_threshold_all_window_widths.py`
-- `scripts/check_hall_coordinate_defect_packet.py`
-- `scripts/check_hall_two_motif_incidence_packets.py`
-
-Prefix, shell, and integration:
-
-- `scripts/check_prefix_all_optimal_four_run_compositions.py`
-- `scripts/check_shell_robust_connector_tours.py`
-- `scripts/check_realization_compensation_gate.py`
-
-Canonical runner and evidence:
-
-- `scripts/check_frontier_693_700.py`
-- `certificates/prime-patching-boundary-continuation-694.json`
-- `certificates/prime-patching-corrected-nineteenth-693.json`
-- `certificates/prime-patching-realization-compensation-693-700.json`
-- `proofs/prime-patching-parity-index-693-700-supplement.md`
+- `scripts/check_boundary_twentysecond_budget_seven_obstruction_701.py`
+- `scripts/check_hall_thirty_centre_extremal_signatures_702.py`
+- `scripts/check_threshold_all_equality_multiples_703.py`
+- `scripts/check_prefix_all_optimal_all_compositions_704.py`
+- `scripts/check_shell_three_state_connector_tours_705.py`
+- `scripts/check_extraction_compensation_gate_706.py`
+- `scripts/check_frontier_701_706.py`
+- `certificates/prime-patching-extraction-compensation-701-706.json`
+- `proofs/prime-patching-parity-index-701-706-supplement.md`
 
 Latest chained command:
 
 ```bash
-python scripts/check_frontier_693_700.py
+python scripts/check_frontier_701_706.py
 ```
 
 ## Validation status
 
-- The canonical boundary path, alternative-repair comparison, eleven-state
-  twenty-first selection, and complete twenty-second budget-six obstruction passed
-  isolated exact execution.
-- Threshold checks all 74,612 forced type multisets of widths one through sixteen,
-  every identity-position set for `K=1,2,3`, and the general score/gap proof.
-- Hall checks the explicit thirty-centre coordinate packet, transfer through twelve
-  packets, explicit coordinate chains through six packets, all 1,636 two-motif
-  incidence graphs, and 6,544 direct packet-chain comparisons.
-- Prefix checks 1,275,648 distinct embeddings covering 5,271,552 physical pairs.
-- Shell checks all 4,096 burden tables and 147,456 gain/setup instances.
-- The standalone integration gate passes exact fixed-point arithmetic.
-- The complete historical chained runner was not executed end-to-end because a
-  full repository checkout remains unavailable; direct clone attempts cannot
-  resolve `github.com` in this environment.
+- The certified 168-point state and its twenty-second spectrum were independently
+  reconstructed. The 178 minimum-six cores were processed in attempt-sized exact
+  batches, rejecting all 80,525,340 budget-seven permutations.
+- Hall exhausts all 18,170 thirty-vertex path/even-cycle signatures.
+- Threshold checks all eighteen legal primitive layers against both separators,
+  verifies the common-zero set and unimodular minor, and checks the scaled identity
+  through 64 multiples.
+- Prefix ran sixteen deterministic shards covering all 7,421,952 distinct
+  route/composition embeddings.
+- Shell exhausts all 262,144 burden tables and 28,311,552 weighted repetition
+  comparisons.
+- The standalone integration arithmetic is exact.
+- The complete historical chained runner was written but not executed end-to-end
+  because a full repository checkout remains unavailable; direct clone attempts
+  cannot resolve `github.com` in this environment.
 
 ## Decisions
 
-- Reconstruct copied boundary states from certified predecessors and audit every
-  selected state globally.
-- Select finite continuation states by exact next-frontier spectra, not by the
-  first available correction.
-- Treat the twenty-one-block chain as finite evidence only.
-- Treat the all-width threshold result as an obstruction, not a hidden operation.
-- Treat the synthetic coordinate Hall packet as a realization interface, not a
-  host-derived packet or promoted row.
-- Treat the prefix theorem as bounded to four runs and the fixed thirteen-pair
-  source.
-- Preserve full uncertainty vectors when optimizing shell connector tours and
-  repetitions.
+- Reconstruct every copied boundary state from certified predecessors and audit it
+  globally.
+- Treat the twenty-one-block boundary chain as finite evidence only.
+- Search the raw minimum-seven twenty-second layer before escalating the
+  minimum-six cores to budget eight.
+- Use the nine Hall signatures as an immediate rejection filter for host-derived
+  thirty-centre candidates.
+- Treat all-multiple threshold rigidity as closing the current equality alphabet,
+  not enlarged alphabets or hidden geometric operations.
+- Treat prefix as complete for the fixed thirteen-pair source, not as an all-size
+  recurrence.
+- Preserve full uncertainty vectors and optimize connector tours jointly with
+  gain-scaled repetition counts.
 - Promote no row without a complete recurrent or asymptotic coordinate source path
   derived from the actual prime-patching host.
 
 ## Current blockers
 
-- Boundary: budget seven for the 178 minimum-six twenty-second cores is open; no
-  recurrence or periodic state invariant is known.
-- Hall: the synthetic packet is coordinate-valid, but no actual prime-patching host
-  supplies its motif resources, defect labels, and repeatable packet extraction.
-- Threshold: every rolling width is obstructed within the minimum forced alphabet;
-  no enlarged alphabet or genuinely hidden non-rolling operation is known.
-- Prefix: 848 longer compositions remain unaudited for all optimal routes, and no
-  recurrence between source sizes is known.
+- Boundary: the 205 raw minimum-seven twenty-second attempts have not been searched
+  at budget seven; budget eight and recurrence remain open.
+- Hall: no actual prime-patching host supplies ten resource-disjoint motifs with
+  one of the nine qualifying defect signatures and a repeatable extraction rule.
+- Threshold: the current equality alphabet is rigid; no enlarged legal primitive
+  alphabet or genuinely unexposed operation is known.
+- Prefix: no compatible fourteen-pair reservoir or insertion recurrence across
+  source sizes is known.
 - Shell: no coordinate macro graph supplies positive components, Pareto connector
-  burdens, and positive robust gain vectors.
+  burdens, and robust gain vectors.
 - Integration: all rows and coupling coefficients remain fixture-derived.
 
 ## Exact next steps
 
-1. Continue theorem numbering at `PP3dfj` and build `docs/701--706`.
-2. Boundary: share candidate precomputation across all 178 twenty-second cores and
-   search budget seven; compare repaired-state spectra before selecting a path.
-3. Hall: extract actual motif resources and defect labels from a prime-patching
-   host, then match them to the synthetic coordinate packet interface.
-4. Threshold: search non-minimum hidden mixtures, additional primitive types, or a
-   genuinely unexposed non-rolling operation.
-5. Prefix: extend the deduplicated audit to compositions with at least five runs
-   and seek a recurrence between the thirteen- and fourteen-pair reservoirs.
+1. Continue theorem numbering at `PP3dgb` and build `docs/707--712`.
+2. Boundary: enumerate the minimum cores of all 205 raw minimum-seven attempts,
+   search preserving budget-seven corrections, and compare repaired-state spectra
+   before selecting any continuation.
+3. Hall: extract actual motif-resource and defect-label data from a certified
+   prime-patching host and test candidates against the nine-signature filter.
+4. Threshold: enumerate enlarged primitive candidates or formulate a genuinely
+   unexposed non-rolling operation; the current equality alphabet is closed.
+5. Prefix: construct and audit a fourteen-pair reservoir or prove a uniform
+   source-size insertion recurrence.
 6. Shell: extract an actual coordinate macro graph and certify Pareto connector
    path vectors, robust bundle gains, and the exact joint repetition optimum.
 7. Integration: promote only a complete host-derived recurrent coordinate path;
@@ -263,8 +215,8 @@ python scripts/check_frontier_693_700.py
 ## Uncommitted work
 
 - No completed logical result is intentionally left only in chat.
-- Obsolete duplicate theorem chapters and the superseded `693--698` certificate
-  and parity supplement were removed during canonical reconciliation.
+- Exploratory all-composition prefix execution and budget-seven boundary batches
+  were promoted into exact repository checkers and theorem chapters.
 
 ## Conventions
 
