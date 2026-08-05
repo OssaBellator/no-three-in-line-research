@@ -1,12 +1,12 @@
 # Status and honesty ledger
 
-**Last updated:** 4 August 2026
+**Last updated:** 5 August 2026
 
 ## External status
 
 The classical no-three-in-line conjecture `D(n)=2n` remains open. This repository does **not** contain a complete proof.
 
-The authoritative theorem ledger reaches **CMR4517**. Post-ledger finite compilers do not introduce theorem identifiers. Every checker and manifest preserves `all_n_proved_by_checker = 0`.
+The authoritative theorem ledger reaches **CMR4517**. Post-ledger support artifacts do not introduce theorem identifiers. Every checker and manifest preserves `all_n_proved_by_checker = 0`.
 
 ## Canonical installed construction stack
 
@@ -18,133 +18,197 @@ checker contracts = 42
 owner-changing kinds = 164
 same-owner kinds = 1002
 installed checkers = 77
-owner/fate checker = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
+owner/fate contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
+registry contract = 383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b
 registry seal = b67dc8f667a5e3e51914b8dba928825f8e8d7de0aa5a43f0e79994eca22ac18e
 ```
 
-## Normalized side-four finite block
+## Global binding status
+
+The checked two-parent/seven-child binding attempt is underdetermined, not incompatible.
 
 ```text
-raw lineage seal = 84ad1c92a9e0bcfb4d1f613e05edec20c4300022d96269ed561b45d32bf7432f
-selected-response seal = 0eb284dd945b3022b529551c5d5f0407884f8ed1958de02b58e3cff024f5a4e6
-hosts = 86
-zero-response hosts = 75
-blocker-alternative hosts = 11
-response occurrences = 206
+qualifying installed recurrent-state population sources = 0
+parent population records = 0
+child population records = 0
+candidate admission envelope = null
+global binding constructed = 0
+global binding incompatibility proved = 0
 ```
 
-Canonical support seals:
+Canonical interfaces are:
 
 ```text
-selected-return = 0ef63d739e0d82c80105387cffaa4e81ff8834fc0d389f2597f4968cd1084e1b
-all-pair exchange = b6f768bae19061ffe35e1b0b437a402e4d49c7ce4ac8fa5bc5ea005518c565f9
-residual return = 606627526d45ca38c216ad036439046b0da8d9f90f12041fa25019fbb2a82808
-symbolic line = 0232bda658189acdb880681ce19192698e049d603a2e779d5f9e287d43fe481e
-actual-background obligation = e605c9da6e45bc4253129cea8e40e744dece8426aae0f0e7efbd2c849e1a08cd
+data/prime_power_side_four_joint_global_binding_input_manifest.json
+data/prime_power_side_four_joint_binding_source_coverage_contract.json
+data/prime_power_side_four_recurrent_state_population_table.json
+data/prime_power_side_four_population_record_candidate.json
 ```
 
-## Zero-response explicit sample
+Local sample weights and coordinate labels are not installed global recurrent-state bindings.
+
+## Explicit side-four sample backgrounds
 
 ```text
-sample seal = 71ba5fcea70f61c5e94e40a635b7eddaa8cb72c8c0cdda9fb78f0f56a84609a0
-host = s4-fc915f89dec31fec
-selector = 2031
-background = {(4,4),(6,5)}
-rank totals = (2,2,0)
-line total = 4
-return charges = {00:1, 22:3}
-routing seal = f4920483e99ed4d53da28fc5a752391e570cfceab828937e5d63ac36d91553b5
-weight seal = d85580884ba95d368350ee1230890e4b54b86c33466c55fb20cb837de46b7316
+zero host = s4-fc915f89dec31fec
+zero background = {(4,4),(6,5)}
+old response-only selector = 2031
+
+blocker host = s4-75b04c45c1c8eac2
+blocker collision key = 02,20
+blocker label = b4-8a44614df456
+blocker background = {(-1,6),(-2,9)}
+old response-only selector = 3012
 ```
 
-The four credits compress to three exact classes with coefficient vector `(1,1,2)`. The local witness `(8;1,1,1)` has weighted total `4` and slack `4`.
+The old `2031` and `3012` credit-routing artifacts remain exact historical rows, but neither response remains selected after complete-line scoring.
 
-## Blocker-alternative explicit sample
+## Complete-line selector scoring
 
 ```text
-sample seal = 39677a7e68826f9bf9702d3af8f3b4218138fa0bb1d885c6801d220dddcabeaf
-host = s4-75b04c45c1c8eac2
-selector = 3012
-collision key = 02,20
-blocker = b4-8a44614df456
-background = {(-1,6),(-2,9)}
-rank totals = (2,2,1)
-line total = 5
-return charges = {00:1, 11:3, 33:1}
-routing seal = 4b8da717b59a47d8c5f1d4db1308e934c26390804611b0906c81c30cce136aa5
-weight seal = f879314c3ab11b96e3fc09df0c5f540cde441055c6af00f631c4cbbee4deafb5
+contract = c5a7f78ddef889aacdffc152b40945ed4b798f850c9aecbd20d4428f9ea63d0e
+checker = scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py
 ```
 
-The selected response contains the intrinsic rank-three triple `10|21|32`, routed once to `return:33`. The five credits compress to four exact classes with coefficient vector `(1,1,2,1)`. The local witness `(10;1,1,1,1)` has weighted total `5` and slack `5`.
-
-## Joint exact-class weight compatibility
+Using
 
 ```text
-contract = data/prime_power_side_four_joint_sample_weight_compatibility_contract.json
-contract seal = 1fef7cdd2e3554800e3c9c2ace9b78fa02b0df655b57556c21eb681233287dd5
-checker = scripts/check_prime_power_side_four_joint_sample_weight_compatibility.py
+K(h,k)=k*C(h,2)+C(k,2)*h+C(k,3),
 ```
 
-The local alias `w_return_00_rank1` occurs in both sample contracts, but the corresponding full child keys differ. The joint namespace therefore has
+the zero-host response totals are
 
 ```text
-local aliases = 6
-exact child classes = 7
-colliding aliases = 1
+2031:4  2301:0  2310:0  3012:4  3201:0  3210:4
 ```
 
-The two `return:00` classes remain distinct.
-
-A shared local witness is
+and the exact complete-line minimizer face is
 
 ```text
-both parent weights = 16
-all seven exact child-class weights = 1
-zero row total/slack = 4/12
-blocker row total/slack = 5/11
+{2301,2310,3201}.
 ```
 
-After normalization, each child weight is `1/16`; the zero row total is `1/4` and the blocker row total is `5/16`.
+The blocker-host totals are
 
-This proves simultaneous local return-only feasibility only. Sixteen global and compulsory bindings remain unresolved.
+```text
+3012:5  3210:4,
+```
+
+so `3210` is the unique complete-line minimizer.
+
+```text
+joint_sample_complete_line_selector_score_tables_complete = 1
+joint_sample_canonical_selectors_stable_under_complete_line_score = 0
+joint_sample_complete_coupled_selector_terms_complete = 0
+```
+
+Return, collision, interface and global child-weight terms are still absent from the complete coupled selector score.
+
+## Reoptimized return routing
+
+```text
+contract = de7742146a77134b97d3ccb36c6112bd458cf8920e346c2e9e515777a9c5b2b6
+checker = scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py
+```
+
+For each zero candidate `2301`, `2310`, `3201`:
+
+```text
+rank-one credits = 0
+rank-two credits = 0
+rank-three credits = 0
+return charges = {00:0,11:0,22:0,33:0}
+```
+
+Return terms preserve the three-way zero tie.
+
+For blocker response `3210`, four rank-three credits route as
+
+```text
+03|12|21 -> return:22
+03|12|30 -> return:33
+03|21|30 -> return:33
+12|21|30 -> return:33
+```
+
+Thus
+
+```text
+return charges = {00:0,11:0,22:1,33:3}
+```
+
+with exact classes
+
+```text
+return:22 | rank3:1,1,-3:h0:k4 | collision:02,20 -> 1
+return:33 | rank3:1,1,-3:h0:k4 | collision:02,20 -> 3
+```
+
+and unresolved symbolic expression
+
+```text
+w_reopt_return_22_rank3_k4 + 3*w_reopt_return_33_rank3_k4.
+```
+
+```text
+joint_sample_reoptimized_return_routing_complete = 1
+zero_reoptimized_return_rows_complete = 1
+blocker_reoptimized_return_row_complete = 1
+reoptimized_child_weights_complete = 0
+```
+
+## Collision and interface dependency surface
+
+```text
+contract = e76551e4c6021a3c32f3536bb7891175da419c6354031104800ab58918ca977e
+checker = scripts/check_prime_power_side_four_reoptimized_collision_interface_dependency.py
+```
+
+The four exact records cover
+
+```text
+zero: 2301,2310,3201
+blocker: 3210
+```
+
+and retain response edges, source fate, deletion/collision key, blocker labels, target/interface provenance and CRT labels. Every response avoids target edge `01` and every deleted edge.
+
+```text
+collision dependency records = 4
+interface dependency records = 4
+collision coefficients populated = 0
+interface coefficients populated = 0
+collision child bindings populated = 0
+interface child bindings populated = 0
+zero tie preserved = 1
+```
+
+A blocker label or interface label is not a numerical coefficient, multiplicity or child route.
 
 ## Accounting rule
 
-For both samples:
-
-```text
-line energy = certificate source
-geometric rank-three count = certificate source when present
-return classes = offspring destination
-```
-
-Each recreated credit is charged exactly once.
+Line, geometric and return representations of one recreated credit are accounting views, not separate offspring currencies. Every physical credit is charged exactly once.
 
 ## Exact current flags
 
 ```text
-side_four_actual_background_sample_batch_complete = 1
-sample_credit_partition_complete = 1
-sample_child_routing_complete = 1
-sample_return_only_weight_feasibility_proved = 1
+joint_sample_complete_line_selector_score_tables_complete = 1
+joint_sample_reoptimized_return_routing_complete = 1
+zero_reoptimized_return_rows_complete = 1
+blocker_reoptimized_return_row_complete = 1
+joint_sample_reoptimized_collision_interface_dependency_complete = 1
 
-side_four_blocker_actual_background_sample_batch_complete = 1
-blocker_sample_credit_partition_complete = 1
-blocker_sample_child_routing_complete = 1
-blocker_sample_return_only_weight_feasibility_proved = 1
-
-joint_sample_exact_weight_namespace_complete = 1
-joint_sample_local_positive_assignment_complete = 1
-joint_sample_return_only_rows_strict_under_local_witness = 1
-
-actual_background_profiles_complete = 0
-joint_sample_global_weight_bindings_complete = 0
+joint_sample_canonical_selectors_stable_under_complete_line_score = 0
+reoptimized_child_weights_complete = 0
+collision_coefficients_complete = 0
+interface_coefficients_complete = 0
+collision_child_bindings_complete = 0
+interface_child_bindings_complete = 0
+joint_sample_complete_coupled_selector_terms_complete = 0
 joint_sample_full_compulsory_rows_complete = 0
+joint_sample_global_weight_bindings_complete = 0
 joint_sample_global_recurrent_compatibility_proved = 0
-sample_full_compulsory_row_complete = 0
-blocker_sample_full_compulsory_row_complete = 0
-sample_weighted_row_strict = 0
-blocker_sample_weighted_row_strict = 0
+actual_background_profiles_complete = 0
 global_child_provenance_complete = 0
 compulsory_coefficients_complete = 0
 child_weights_complete = 0
@@ -162,17 +226,18 @@ all_n_proved_by_checker = 0
 No literal source chapter after CMR1965 has been confirmed.
 
 ```text
-identify exact parent recurrent-state keys for both samples
-map all seven exact child classes to installed global states without alias projection
-bind globally compatible weights or publish a checked incompatibility certificate
-populate selector coefficients on full minimizer faces
-populate collision and interface coefficients and child keys
-extend to another blocker collision class
-claim complete row strictness only after every compulsory term is bound
+construct an exact collision-offspring enumerator for blocker response 3210
+identify physical collision offspring and exact child keys/multiplicities
+construct exact child-interface routes and multiplicities for all four candidates
+preserve the three-way zero tie until complete weighted terms break it
+bind the two new blocker return child classes to global states only through repository-proven population records
+claim complete row strictness only after all compulsory terms, duals and weights are bound
 ```
+
+If installed transition semantics are insufficient to enumerate collision offspring, record the exact semantic-input obstruction rather than assigning a zero coefficient.
 
 ## Validation status
 
-The zero-response coefficient and routing compilers were functionally executed locally and each rejected fourteen corruptions. Sample, blocker and joint weight arithmetic, seals and namespace counts were reproduced locally. The newly added checker sources were syntax-compiled locally.
+The selector-score, reoptimized-routing and collision/interface dependency arithmetic were reproduced during construction. Their checker sources were syntax-compiled and contain mutation audits.
 
 Complete repository execution of all new checkers has not been independently observed. The complete 77-checker runner has not been executed. Workflow success has not been observed, so CI success is not claimed.
