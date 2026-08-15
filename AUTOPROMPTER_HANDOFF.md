@@ -14,16 +14,16 @@ active PR = #33
 base branch = research/all-n-composite-modulus
 base head = 0194af18247a81ff989c9e73bd7742b32072fa78
 work branch = research/exact-recurrent-lyapunov-audit
-current head before this handoff refresh = ad1565f42d5f394eac59b302e8566356a50e40e1
-PR state = open, draft, mergeable
-base ancestry = integrated; branch is 0 commits behind base
+parent head before the current CI correction = 61a5f10bd5539697b61e7f6b145520e391071f4d
+PR state before the current CI correction = open, draft, mergeable
+base ancestry = integrated; branch was 0 commits behind base
 ```
 
 The no-three-in-line conjecture is not claimed. Physical realization, legal physical transitions, recurrent child rows, a strict Lyapunov certificate, global termination, and `all_n_proved_by_checker` remain unproved/zero.
 
-## CI repair completed on 2026-08-15
+## Exact-audit CI repair completed on 2026-08-15
 
-Three concrete defects were fixed on the exact-audit branch:
+Three concrete exact-audit defects were fixed:
 
 1. `scripts/check_exact_recurrent_first_host_alternating_lineage_import.py`
    - invalid `update(3012=1)` mutation
@@ -40,55 +40,86 @@ Three concrete defects were fixed on the exact-audit branch:
    - regenerated from the committed checker without changing proof claims
    - commit `e0e7040ac0977fc7830aa3dd879e33cbadc99acc`
 
-Targeted run `31853642404` on `e0e7040a...` completed successfully on Python 3.10 and 3.12. Every exact-audit stage passed, including `Check evidence-scope overlap obstruction`. The CI-repair thread is closed at that substantive head.
+Targeted run `31853642404` on `e0e7040a...` completed successfully on Python 3.10 and 3.12 through `Check evidence-scope overlap obstruction`.
 
 ## Base-branch integration completed on 2026-08-15
 
-PR #33 had become `mergeable_state = dirty` because `research/all-n-composite-modulus` had advanced independently from the old merge base.
+PR #33 became dirty after `research/all-n-composite-modulus` advanced independently. The only overlapping textual conflict requiring policy was `AUTOPROMPTER_HANDOFF.md`.
 
-The conflict analysis established:
-
-- the base branch changed many side-four support files plus `AUTOPROMPTER_HANDOFF.md`, `STATUS.md`, and `docs/11-open-bottlenecks.md`;
-- the exact-audit branch changed the branch-local `AUTOPROMPTER_HANDOFF.md` and added its exact-recurrent artifacts;
-- the handoff was the only overlapping textual conflict requiring manual policy.
-
-The integration was performed without retargeting PR #33 and without discarding either branch's support artifacts:
+Integration history:
 
 ```text
 temporary handoff alignment commit = 5ba1371c5caa74387a10c01ce1af5ee7eba6ee82
 temporary integration PR = #34
 GitHub merge commit = 1fc0f8d804124809a685d2832aa667a14220b1ab
 exact-audit handoff restore commit = ad1565f42d5f394eac59b302e8566356a50e40e1
+handoff refresh after integration = 61a5f10bd5539697b61e7f6b145520e391071f4d
 ```
 
-After the merge, comparison against `research/all-n-composite-modulus` reports:
+After integration, comparison against `research/all-n-composite-modulus` reported `behind_by = 0`, and PR #33 was mergeable again without deleting base-only side-four artifacts.
+
+## Newly identified inherited-coordinate CI defect
+
+The broad post-integration workflow fan-out exposed a separate base-owned verifier defect.
+
+Historical run `31853150486` (`Inherited-coordinate diagonal-block frontier`) completed as failure after about 23 minutes in Python 3.12; the Python 3.10 matrix job was then cancelled. The failing child was:
 
 ```text
-status = ahead
-behind_by = 0
-merge base = 0194af18247a81ff989c9e73bd7742b32072fa78
+scripts/verify_prime_power_extension_free_line_kernel.py
 ```
 
-The PR no longer proposes deletion of the base-only side-four workflows, data, docs, or checker files. PR #33 is mergeable again.
-
-## Current post-integration CI boundary
-
-Restoring the exact-audit handoff triggered a broad PR workflow fan-out on head `ad1565f4...`.
-
-At the time of this handoff refresh, relevant runs include:
+The failure was the assertion:
 
 ```text
-31854221384  Exact recurrent first-host alternating lineage import  queued
-31854221385  Exact recurrent Lyapunov audit                         queued
-31854221416  Exact recurrent first-host physical fibre gate         queued
-31854221473  Side-four raw-fibre lineage and selector manifests     queued
-31854221592  Installed operation registry 1166                      queued
-31854221460  Installed construction regression 1166                 queued
+kernel == Fraction(160, 11)
 ```
 
-Many additional exact-recurrent, installed-regression, and side-four support workflows are also queued. Do not claim the integrated head green until the relevant runs complete.
+The verifier variable `kernel` sums the symmetric CMR1370 upper kernel over **all nonaxis lines** of the explicit `5 x 5` state. Recomputing the committed formulas gives:
 
-If a post-integration run fails, fix only the concrete checker/artifact demonstrated by the failure. Do not change mathematical proof claims merely to satisfy CI.
+```text
+main-diagonal composition = (o,m,u) = (0,3,2)
+pointwise symmetric kernel K_5(0,3,2) = 160/11
+global all-nonaxis-line symmetric kernel = 663/11
+exact destroyed target incidence = 6
+```
+
+Thus `160/11` is the correct pointwise main-diagonal obstruction, while `663/11` is the correct global state sum. The theorem document had incorrectly promoted the pointwise value to the total state kernel.
+
+The current correction updates both:
+
+```text
+scripts/verify_prime_power_extension_free_line_kernel.py
+docs/275-prime-power-extension-free-line-composition-kernel.md
+```
+
+The corrected verifier now separately checks:
+
+```text
+pointwise main-diagonal kernel = 160/11 > 3
+global all-line kernel = 663/11 > 6
+```
+
+This is a proof-preserving correction of the explicit obstruction accounting. It does not promote any global termination, recurrence, or all-n claim.
+
+## Actions queue boundary
+
+At the time this defect was diagnosed, GitHub reported approximately:
+
+```text
+queued workflow runs on research/exact-recurrent-lyapunov-audit = 575
+in-progress runs on that branch = 3
+```
+
+The current-head key runs on parent head `61a5f10b...` were still queued:
+
+```text
+31854267418  Exact recurrent first-host alternating lineage import
+31854267383  Exact recurrent Lyapunov audit
+```
+
+Those run IDs become historical once the current correction commit advances the branch. Do not infer success or failure from them for a later head. Inspect the newest runs attached to the actual current head.
+
+The connected GitHub action surface exposes rerun operations but no workflow-cancel mutation, so obsolete queued fan-outs were not cancelled through an unsafe workaround.
 
 ## Exact physical proof boundary
 
@@ -110,18 +141,16 @@ current minimum safe menu evidence slots = 12
 accepted evidence-sharing theorems = 0
 ```
 
-Identical field names are not permission to merge certificate-instance obligations. Any reduction requires an explicit source-backed sharing/uniformity theorem satisfying the scope-preservation gate.
+## Physical-source recheck
 
-## Post-CI physical-source recheck
-
-The integrated all-n base contains several artifacts that look superficially close to the first-host source requirement, but they still do not promote the first host physically:
+The integrated all-n base still does not promote the first host physically:
 
 - `data/prime_power_side_four_blocker_actual_background_sample_batch.json` is explicitly an integer-lattice blocker sample with `global_recurrent_state_claim = 0`.
 - `data/prime_power_side_four_recurrent_state_population_table.json` has empty parent and child populations and `first_manifest_record_populated = 0`.
 - `data/prime_power_side_four_population_record_candidate.json` has `candidate = null`.
 - `data/prime_power_side_four_blocker_3210_collision_semantic_obstruction.json` marks `global_transition_occurrence_witness` missing and `global_transition_occurrence_complete = 0`.
 
-This negative source audit was recorded on issue #18 in comment `5299523781`.
+The negative source audit is recorded on issue #18 in comment `5299523781`. A fresh issue #18 read during this continuation found no later comment supplying occurrence-faithful physical evidence.
 
 No symbolic restoration/route certificate should be added as a substitute for missing physical evidence.
 
@@ -153,9 +182,11 @@ all_n_proved_by_checker = 0
 
 ## Next executable step
 
-First inspect the post-integration runs on the current head, especially `31854221384` and `31854221385`.
+On the actual current head after this correction:
 
-- If either fails, repair only the demonstrated integration/checker defect and rerun.
-- If both pass, the branch-integration thread is complete. Return to issue #18 and wait for repository-backed occurrence-faithful evidence before making another substantive mathematical promotion.
+1. inspect the newest `Inherited-coordinate diagonal-block frontier` run and confirm both Python versions pass the corrected pointwise/global obstruction checks;
+2. inspect the newest `Exact recurrent first-host alternating lineage import` and `Exact recurrent Lyapunov audit` runs;
+3. if any fail, fix only the demonstrated checker/artifact defect;
+4. if the post-integration CI chain is green, return to issue #18. Make no further substantive mathematical promotion until repository-backed occurrence-faithful physical evidence exists.
 
 The existing 16-field physical batch gate and 12-field-per-edge transition-domain gate are the required ingestion path for any such new evidence.
