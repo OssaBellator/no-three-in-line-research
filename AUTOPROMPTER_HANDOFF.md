@@ -2,165 +2,124 @@
 
 ## Current goal
 
-Populate a complete machine-checkable side-four raw-fibre lineage and compulsory weighted-row manifest using the repaired CMR1894--CMR1965 owner/fate-lineage-kernel interfaces.
+Continue PR #33, `Audit exact recurrent side-four lineage and Lyapunov boundary`, without promoting symbolic side-four results into physical recurrence claims that the repository does not prove.
+
+The immediate engineering objective is to keep the exact audit chain executable and reject-by-default while the physical occurrence/source frontier remains unresolved.
 
 ## Repository state
 
 ```text
 repository = OssaBellator/no-three-in-line-research
-branch = research/all-n-composite-modulus
-authoritative theorem endpoint = CMR4517
+active PR = #33
+base branch = research/all-n-composite-modulus
+work branch = research/exact-recurrent-lyapunov-audit
+substantive audit head before this handoff refresh = e0e7040ac0977fc7830aa3dd879e33cbadc99acc
+PR state = open, draft, mergeable
 ```
 
-The no-three-in-line conjecture remains open. Every checker and manifest preserves `all_n_proved_by_checker = 0`.
+The no-three-in-line conjecture is not claimed. Physical realization, legal physical transitions, recurrent child rows, a strict Lyapunov certificate, global termination, and `all_n_proved_by_checker` remain unproved/zero.
 
-## Canonical installed stack
+## Continuation performed on 2026-08-15
+
+The prior handoff existed on the PR branch but predated the current exact recurrent audit work. Repository/CI evidence was used to reconcile it against the active branch.
+
+Three concrete CI defects were fixed:
+
+1. `scripts/check_exact_recurrent_first_host_alternating_lineage_import.py`
+   - invalid numeric keyword mutation `update(3012=1)`
+   - replaced by mapping update `update({"3012": 1})`
+   - commit `2969f35d52bcd7d16a8bcc9792ad73710094d307`
+
+2. `scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py`
+   - invalid numeric keyword mutation `update(2031="r20")`
+   - replaced by mapping update `update({"2031": "r20"})`
+   - commit `9bdbd2c1ddd1684ad580478d5433f9d5453928ea`
+
+3. `data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json`
+   - committed numerical counts/floors matched the checker, but ten registry digests were stale relative to the deterministic compiler
+   - regenerated the manifest from the committed checker without changing proof claims
+   - commit `e0e7040ac0977fc7830aa3dd879e33cbadc99acc`
+
+A scan of the current PR patch found no remaining `.update(<digit>...)` mutation syntax pattern.
+
+## CI evidence
+
+Run `31853150417` verified the first syntax fix on Python 3.10 and 3.12, then exposed the selector-boundary syntax defect.
+
+Run `31853246012` on head `9bdbd2c1...` passed every exact-audit stage through:
 
 ```text
-1166 operation kinds
-42 checker contracts
-164 owner-changing kinds
-1002 same-owner kinds
-77 installed checkers
-runner = scripts/run_prime_power_installed_construction_regression_1166.py
-manifest = e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d
-registry contract = 383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b
-registry seal = b67dc8f667a5e3e51914b8dba928825f8e8d7de0aa5a43f0e79994eca22ac18e
+alternating-core lineage import
+side-four arithmetic profile import
+safe signature quotient and symmetry
+restoration menu/selector audits
+selector-face worklist/source/leverage
+minimizer-face scalar/cost audits
+selector Boolean boundary
+scalar route cover
+menu interaction potential
+alternating route budget
+closure route source gate
+route-cover admission
+transition-domain source audit
+state-exclusion leverage
+action-family leverage/congruence/source import
+mixed-source certificate leverage
+hybrid source-certificate antichain
 ```
 
-## Repaired completed phase
+Both Python versions then failed only at `Check evidence-scope overlap obstruction` because the stored JSON did not equal the checker-recomputed manifest. The substantive summaries matched; the stale registry digests were regenerated in `e0e7040a...`.
 
-### CMR4470--CMR4485
+Targeted run `31853642404` was triggered for `e0e7040a...`; at the time of this handoff refresh its Python 3.10 and 3.12 jobs were queued, so do not claim that head green until the run result is observed.
+
+## Exact proof boundary to preserve
+
+For the first residual host `s4-75b04c45c1c8eac2`:
 
 ```text
-checker = scripts/check_prime_power_owner_fate_lineage_kernel_ancestry.py
-contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
-source = CMR1894--CMR1965
-source chapters = docs/340--348
-verifier entrypoints = 9
-checker fixture corruptions = 17
-contract-fix commit = fed0a3983f7b020e537e6c5420ec68933779f95e
+required physical fields = 16
+source-backed physical fields = 0
+physical occurrence records = 0
 ```
 
-All nine missing source chapters and verifier programs were restored in theorem order. All nine standalone verifiers and the consolidated checker execute locally.
+The chart-safe symbolic analysis remains exact, including the restoration-menu/selector calculations and route-cover classifications, but it does not establish physical occurrence coverage or recurrence closure.
 
-### CMR4486--CMR4501
+The evidence-scope gate remains:
 
 ```text
-registry = scripts/check_prime_power_installed_operation_registry_1166.py
-contract = 383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b
-seal = b67dc8f667a5e3e51914b8dba928825f8e8d7de0aa5a43f0e79994eca22ac18e
-contract-fix commit = 0929900cbbef9543966188e09ae6f4a130fe5853
+current minimum safe label evidence slots = 11
+current minimum safe menu evidence slots = 12
+accepted evidence-sharing theorems = 0
 ```
 
-The exact 72-entry payment census is:
+Identical field names are not permission to merge certificate-instance obligations. Any reduction of those safe floors requires an explicit source-backed sharing/uniformity theorem satisfying the scope-preservation gate.
+
+## Mandatory physical frontier
+
+The next mathematical promotion must be supported by repository evidence supplying at least one of:
+
+- a source-backed empty-domain theorem for the relevant physical occurrence domain;
+- a complete or quantified physical occurrence batch;
+- a physical chart/exterior-count theorem that reduces the remaining occurrence worklist.
+
+For recurrence import, the source must additionally establish the physically legal directed transition domain and persistent owner identities, then populate accepted routes/capacities or equivalent strict-potential/output evidence and operation/child-row congruence.
+
+Do not infer any of these from synthetic fixtures, symbolic restoration menus, matching field names, or abstract alternating-core contracts.
+
+## Current flags
 
 ```text
-spectral-certificate = 22
-local-family-equivalence = 19
-finite-base-dispatch = 14
-table-enumeration = 6
-owner-witness-stock = 5
-certificate-gluing = 3
-scheduler-dispatch = 2
-history-budget = 1
-```
-
-### CMR4502--CMR4517
-
-```text
-runner = scripts/run_prime_power_installed_construction_regression_1166.py
-base manifest = ae6023ffcf2eed5fca0e2cd1a3050b29d4db3098370f8bb39c8a0fd59aef376b
-77-checker manifest = e0f69a5665fd4adf4cf88a8cccb861f84133a5dbde435e9f996640159e24988d
-contract-fix commit = 9b0bfc9fb55645ce51b893122fa9ccc65b15bb79
-```
-
-## Exact finite blocker atlas
-
-The restored side-four zero-response verifier checks:
-
-```text
-executable raw hosts = 86
-hosts admitting a zero-triple response = 75
-zero-response-free hosts = 11
-inclusion-minimal blockers = 3
-zero-response-free minimum counts = 9 hosts at 1, 2 hosts at 4
-```
-
-The exact minimal deletion blockers are:
-
-```text
-{(0,2),(2,0)}
-{(0,2),(3,1)}
-{(1,3),(3,1)}
-```
-
-## Decisions to preserve
-
-1. Owner/fate/collision/local-line/interface/provenance compression is lossless only with the full declared key.
-2. Dropping fate or geometric labels may create artificial recurrent loops; incomplete fibres use componentwise maxima only.
-3. Every compulsory weighted coefficient, child weight, inner dual and allowed outer edge must be present.
-4. Rank-three slack is allocated once inside the same row; negative, duplicate or unallocated claimed slack is invalid.
-5. Complete line-energy kernels retain exact background and response line profiles.
-6. Selector stability is conditional on accumulated perturbation remaining below the response gap; ties retain the exact minimizer face.
-7. Raw-fibre lineage identifies the coordinate-labelled host, target, background, response family and complete provenance.
-8. The three-blocker atlas is complete only for the normalized side-four raw-host problem.
-9. All 72 CMR1894--CMR1965 registry operations preserve structural owner.
-10. Workflow configuration is not CI success.
-
-## Exact current flags
-
-```text
-owner_fate_lineage_kernel_ancestry_proved = 1
-installed_transition_kind_bank_1166_exhaustive = 1
-installed_payment_assignment_1166_complete = 1
-installed_transition_regression_1166_complete = 1
-
-owner_fate_rows_populated_all_recurrent_states = 0
-compulsory_weighted_certificates_complete = 0
-raw_fibre_backgrounds_cover_all_provenance = 0
-rank_three_zero_blockers_globally_resolved = 0
-complete_labelled_recurrent_lp_strict = 0
-all_labelled_recurrent_blocks_subcritical = 0
-same_owner_diagonal_blocks_subcritical = 0
-global_target_collateral_inequality_proved = 0
-global_transition_kind_bank_exhaustive = 0
+physical_chart_confinement_proved = 0
+physical_occurrence_coverage_proved = 0
+physical_transition_legality_proved = 0
+persistent_owner_identity_proved = 0
+boundary_capacities_populated = 0
+recurrent_child_rows_populated = 0
+strict_lyapunov_certificate_proved = 0
 global_termination_proved = 0
-actual_global_parent_rule_complete = 0
 all_n_proved_by_checker = 0
 ```
 
-## Validation boundary
+## Next executable step
 
-```text
-nine standalone verifiers = executed locally
-consolidated owner/fate checker = executed locally
-checker contract and 17-fixture audit = reproduced locally
-registry contract/census/payment counts/seal = reproduced locally
-runner 77-checker manifest = reproduced locally
-complete 77-checker runner = not executed locally
-workflow success = not observed
-```
-
-## Uncommitted work
-
-```text
-uncommitted repository files = none known
-uncommitted generated artifacts = none known
-```
-
-## Exact next steps
-
-No literal source chapter after CMR1965 has been confirmed. Continue with executable population work:
-
-```text
-1. materialize the complete 86-host normalized side-four raw-fibre lineage batch
-2. assign stable identifiers and exact response families to every host
-3. attach target, background and owner/fate/collision/line/interface/CRT provenance records
-4. generate every compulsory child-weighted coefficient row
-5. dispatch zero-response hosts directly and retain exact blocker alternatives for the remaining 11
-6. run the compulsory and slack-preconditioned manifest checks
-7. publish strict rows or an exact residual host/lineage worklist
-```
-
-The success criterion is a complete populated manifest for this finite block, not another unpopulated schema.
+Inspect targeted run `31853642404` for head `e0e7040a...` first. If it fails, fix only the concrete failing checker/artifact demonstrated by the log. If it passes, return to the physical-source frontier rather than extending the symbolic audit surface without new source evidence.
