@@ -63,6 +63,15 @@ def collinear(triple):
     return line_key(triple[0], triple[1]) == line_key(triple[0], triple[2])
 
 
+def collinear_triples(side):
+    cells = [(row, column) for row in range(side) for column in range(side)]
+    return tuple(
+        frozenset(triple)
+        for triple in combinations(cells, 3)
+        if collinear(triple)
+    )
+
+
 def compatible(prescription):
     return len({row for row, _column in prescription}) == len(prescription) and len(
         {column for _row, column in prescription}
@@ -90,31 +99,34 @@ def line_formula_sums(side, opposite, current, lines):
     return sums, target_layer, profiles
 
 
-def direct_candidate_sums(side, opposite, current):
-    cells = {(row, column) for row in range(side) for column in range(side)}
+def direct_candidate_sums(side, opposite, current, triples):
+    """Count exactly the same (target edge, triple) pairs as the original loop.
+
+    For a fixed collinear triple T, the old implementation considered T once for
+    each target edge e in current with e not in T.  Because current is a perfect
+    matching of size ``side``, that multiplicity is ``side - |T intersect current|``.
+    Enumerating collinear triples once avoids repeatedly testing noncollinear triples.
+    """
+
     old_state = set(opposite) | set(current)
+    opposite_set = set(opposite)
+    current_set = set(current)
     totals = [0, 0, 0, 0]
-    for edge in current:
-        graph = cells - set(opposite) - {edge}
-        for triple in combinations(set(opposite) | graph, 3):
-            triple_set = set(triple)
-            if triple_set <= old_state or not collinear(triple):
-                continue
-            residual = triple_set - set(opposite)
-            if not compatible(residual):
-                continue
-            totals[len(residual)] += 1
+    for triple in triples:
+        if triple <= old_state:
+            continue
+        residual = triple - opposite_set
+        if not compatible(residual):
+            continue
+        multiplicity = side - len(triple & current_set)
+        totals[len(residual)] += multiplicity
     return totals
 
 
-def direct_target_incidence(opposite, current):
+def direct_target_incidence(opposite, current, triples):
     state = set(opposite) | set(current)
-    total = 0
-    for triple in combinations(state, 3):
-        if not collinear(triple):
-            continue
-        total += len(set(triple) & set(current))
-    return total
+    current_set = set(current)
+    return sum(len(triple & current_set) for triple in triples if triple <= state)
 
 
 def kernel_layer(side, o, m, u):
@@ -148,12 +160,13 @@ def check_exact_line_sums():
             current = rng.choice(disjoint)
             pairs.append((opposite, current))
         lines = board_lines(side)
+        triples = collinear_triples(side)
         for opposite, current in pairs:
             formula, target_formula, _profiles = line_formula_sums(
                 side, opposite, current, lines
             )
-            direct = direct_candidate_sums(side, opposite, current)
-            target_direct = direct_target_incidence(opposite, current)
+            direct = direct_candidate_sums(side, opposite, current, triples)
+            target_direct = direct_target_incidence(opposite, current, triples)
             assert direct == formula
             assert target_direct == target_formula
             candidates += sum(direct)
