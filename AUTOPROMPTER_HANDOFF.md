@@ -14,8 +14,10 @@ active PR = #33
 base branch = research/all-n-composite-modulus
 work branch = research/exact-recurrent-lyapunov-audit
 substantive audit head before this handoff refresh = e0e7040ac0977fc7830aa3dd879e33cbadc99acc
-PR state = open, draft, mergeable
+PR state = open, draft
 ```
+
+Recheck mergeability on the current head rather than carrying forward a cached value.
 
 The no-three-in-line conjecture is not claimed. Physical realization, legal physical transitions, recurrent child rows, a strict Lyapunov certificate, global termination, and `all_n_proved_by_checker` remain unproved/zero.
 
