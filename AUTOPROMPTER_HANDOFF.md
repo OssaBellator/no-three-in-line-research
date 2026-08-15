@@ -13,11 +13,11 @@ repository = OssaBellator/no-three-in-line-research
 active PR = #33
 base branch = research/all-n-composite-modulus
 work branch = research/exact-recurrent-lyapunov-audit
-substantive audit head before this handoff refresh = e0e7040ac0977fc7830aa3dd879e33cbadc99acc
+substantive audit head before continuity-only commits = e0e7040ac0977fc7830aa3dd879e33cbadc99acc
 PR state = open, draft
 ```
 
-Recheck mergeability on the current head rather than carrying forward a cached value.
+Recheck mergeability on the current head rather than carrying forward a cached value. At the 2026-08-15 refresh after the CI repair, GitHub reported the PR non-mergeable while the base branch had advanced/diverged; do not infer a specific conflict resolution without inspecting current branch state again.
 
 The no-three-in-line conjecture is not claimed. Physical realization, legal physical transitions, recurrent child rows, a strict Lyapunov certificate, global termination, and `all_n_proved_by_checker` remain unproved/zero.
 
@@ -72,7 +72,7 @@ hybrid source-certificate antichain
 
 Both Python versions then failed only at `Check evidence-scope overlap obstruction` because the stored JSON did not equal the checker-recomputed manifest. The substantive summaries matched; the stale registry digests were regenerated in `e0e7040a...`.
 
-Targeted run `31853642404` was triggered for `e0e7040a...`; at the time of this handoff refresh its Python 3.10 and 3.12 jobs were queued, so do not claim that head green until the run result is observed.
+Targeted run `31853642404` on `e0e7040a...` subsequently completed successfully on both Python 3.10 and 3.12. Every listed exact-audit stage passed, including `Check evidence-scope overlap obstruction`. The CI-repair thread is therefore closed at that substantive head.
 
 ## Exact proof boundary to preserve
 
@@ -106,7 +106,7 @@ The next mathematical promotion must be supported by repository evidence supplyi
 
 For recurrence import, the source must additionally establish the physically legal directed transition domain and persistent owner identities, then populate accepted routes/capacities or equivalent strict-potential/output evidence and operation/child-row congruence.
 
-Do not infer any of these from synthetic fixtures, symbolic restoration menus, matching field names, or abstract alternating-core contracts.
+Do not infer any of these from synthetic fixtures, symbolic restoration menus, matching field names, abstract alternating-core contracts, or coordinate/sample artifacts that explicitly disclaim global recurrence occurrence.
 
 ## Current flags
 
@@ -124,4 +124,4 @@ all_n_proved_by_checker = 0
 
 ## Next executable step
 
-Inspect targeted run `31853642404` for head `e0e7040a...` first. If it fails, fix only the concrete failing checker/artifact demonstrated by the log. If it passes, return to the physical-source frontier rather than extending the symbolic audit surface without new source evidence.
+Return to the physical-source frontier. Search current repository evidence for an occurrence-faithful source for `s4-75b04c45c1c8eac2` that supplies an explicit physical occurrence domain/record, or a theorem proving that domain empty/complete or chart-confined. Reject coordinate samples and abstract contracts that explicitly lack global recurrence-occurrence provenance. If no qualifying source exists, record that exact negative audit rather than extending the symbolic restoration/route surface.
