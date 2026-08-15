@@ -4,7 +4,7 @@
 
 Continue PR #33, `Audit exact recurrent side-four lineage and Lyapunov boundary`, without promoting symbolic side-four results into physical recurrence claims that the repository does not prove.
 
-The immediate engineering objective is to keep the exact audit chain executable and reject-by-default while the physical occurrence/source frontier remains unresolved.
+Keep the exact audit chain executable and reject-by-default while the physical occurrence/source frontier remains unresolved.
 
 ## Repository state
 
@@ -12,71 +12,87 @@ The immediate engineering objective is to keep the exact audit chain executable 
 repository = OssaBellator/no-three-in-line-research
 active PR = #33
 base branch = research/all-n-composite-modulus
+base head = 0194af18247a81ff989c9e73bd7742b32072fa78
 work branch = research/exact-recurrent-lyapunov-audit
-substantive audit head before continuity-only commits = e0e7040ac0977fc7830aa3dd879e33cbadc99acc
-PR state = open, draft
+current head before this handoff refresh = ad1565f42d5f394eac59b302e8566356a50e40e1
+PR state = open, draft, mergeable
+base ancestry = integrated; branch is 0 commits behind base
 ```
-
-Recheck mergeability on the current head rather than carrying forward a cached value. At the 2026-08-15 refresh after the CI repair, GitHub reported the PR non-mergeable while the base branch had advanced/diverged; do not infer a specific conflict resolution without inspecting current branch state again.
 
 The no-three-in-line conjecture is not claimed. Physical realization, legal physical transitions, recurrent child rows, a strict Lyapunov certificate, global termination, and `all_n_proved_by_checker` remain unproved/zero.
 
-## Continuation performed on 2026-08-15
+## CI repair completed on 2026-08-15
 
-The prior handoff existed on the PR branch but predated the current exact recurrent audit work. Repository/CI evidence was used to reconcile it against the active branch.
-
-Three concrete CI defects were fixed:
+Three concrete defects were fixed on the exact-audit branch:
 
 1. `scripts/check_exact_recurrent_first_host_alternating_lineage_import.py`
-   - invalid numeric keyword mutation `update(3012=1)`
-   - replaced by mapping update `update({"3012": 1})`
+   - invalid `update(3012=1)` mutation
+   - replaced by `update({"3012": 1})`
    - commit `2969f35d52bcd7d16a8bcc9792ad73710094d307`
 
 2. `scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py`
-   - invalid numeric keyword mutation `update(2031="r20")`
-   - replaced by mapping update `update({"2031": "r20"})`
+   - invalid `update(2031="r20")` mutation
+   - replaced by `update({"2031": "r20"})`
    - commit `9bdbd2c1ddd1684ad580478d5433f9d5453928ea`
 
 3. `data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json`
-   - committed numerical counts/floors matched the checker, but ten registry digests were stale relative to the deterministic compiler
-   - regenerated the manifest from the committed checker without changing proof claims
+   - numerical counts/floors matched the deterministic checker, but ten registry digests were stale
+   - regenerated from the committed checker without changing proof claims
    - commit `e0e7040ac0977fc7830aa3dd879e33cbadc99acc`
 
-A scan of the current PR patch found no remaining `.update(<digit>...)` mutation syntax pattern.
+Targeted run `31853642404` on `e0e7040a...` completed successfully on Python 3.10 and 3.12. Every exact-audit stage passed, including `Check evidence-scope overlap obstruction`. The CI-repair thread is closed at that substantive head.
 
-## CI evidence
+## Base-branch integration completed on 2026-08-15
 
-Run `31853150417` verified the first syntax fix on Python 3.10 and 3.12, then exposed the selector-boundary syntax defect.
+PR #33 had become `mergeable_state = dirty` because `research/all-n-composite-modulus` had advanced independently from the old merge base.
 
-Run `31853246012` on head `9bdbd2c1...` passed every exact-audit stage through:
+The conflict analysis established:
+
+- the base branch changed many side-four support files plus `AUTOPROMPTER_HANDOFF.md`, `STATUS.md`, and `docs/11-open-bottlenecks.md`;
+- the exact-audit branch changed the branch-local `AUTOPROMPTER_HANDOFF.md` and added its exact-recurrent artifacts;
+- the handoff was the only overlapping textual conflict requiring manual policy.
+
+The integration was performed without retargeting PR #33 and without discarding either branch's support artifacts:
 
 ```text
-alternating-core lineage import
-side-four arithmetic profile import
-safe signature quotient and symmetry
-restoration menu/selector audits
-selector-face worklist/source/leverage
-minimizer-face scalar/cost audits
-selector Boolean boundary
-scalar route cover
-menu interaction potential
-alternating route budget
-closure route source gate
-route-cover admission
-transition-domain source audit
-state-exclusion leverage
-action-family leverage/congruence/source import
-mixed-source certificate leverage
-hybrid source-certificate antichain
+temporary handoff alignment commit = 5ba1371c5caa74387a10c01ce1af5ee7eba6ee82
+temporary integration PR = #34
+GitHub merge commit = 1fc0f8d804124809a685d2832aa667a14220b1ab
+exact-audit handoff restore commit = ad1565f42d5f394eac59b302e8566356a50e40e1
 ```
 
-Both Python versions then failed only at `Check evidence-scope overlap obstruction` because the stored JSON did not equal the checker-recomputed manifest. The substantive summaries matched; the stale registry digests were regenerated in `e0e7040a...`.
+After the merge, comparison against `research/all-n-composite-modulus` reports:
 
-Targeted run `31853642404` on `e0e7040a...` subsequently completed successfully on both Python 3.10 and 3.12. Every listed exact-audit stage passed, including `Check evidence-scope overlap obstruction`. The CI-repair thread is therefore closed at that substantive head.
+```text
+status = ahead
+behind_by = 0
+merge base = 0194af18247a81ff989c9e73bd7742b32072fa78
+```
 
-## Exact proof boundary to preserve
+The PR no longer proposes deletion of the base-only side-four workflows, data, docs, or checker files. PR #33 is mergeable again.
 
-For the first residual host `s4-75b04c45c1c8eac2`:
+## Current post-integration CI boundary
+
+Restoring the exact-audit handoff triggered a broad PR workflow fan-out on head `ad1565f4...`.
+
+At the time of this handoff refresh, relevant runs include:
+
+```text
+31854221384  Exact recurrent first-host alternating lineage import  queued
+31854221385  Exact recurrent Lyapunov audit                         queued
+31854221416  Exact recurrent first-host physical fibre gate         queued
+31854221473  Side-four raw-fibre lineage and selector manifests     queued
+31854221592  Installed operation registry 1166                      queued
+31854221460  Installed construction regression 1166                 queued
+```
+
+Many additional exact-recurrent, installed-regression, and side-four support workflows are also queued. Do not claim the integrated head green until the relevant runs complete.
+
+If a post-integration run fails, fix only the concrete checker/artifact demonstrated by the failure. Do not change mathematical proof claims merely to satisfy CI.
+
+## Exact physical proof boundary
+
+For first residual host `s4-75b04c45c1c8eac2`:
 
 ```text
 required physical fields = 16
@@ -84,7 +100,7 @@ source-backed physical fields = 0
 physical occurrence records = 0
 ```
 
-The chart-safe symbolic analysis remains exact, including the restoration-menu/selector calculations and route-cover classifications, but it does not establish physical occurrence coverage or recurrence closure.
+The chart-safe symbolic analysis, restoration-menu calculations, selector calculations, scalar covers, route-cover admission, and evidence-scope accounting are exact as symbolic/conditional statements. They do not establish physical occurrence coverage or recurrence closure.
 
 The evidence-scope gate remains:
 
@@ -94,24 +110,24 @@ current minimum safe menu evidence slots = 12
 accepted evidence-sharing theorems = 0
 ```
 
-Identical field names are not permission to merge certificate-instance obligations. Any reduction of those safe floors requires an explicit source-backed sharing/uniformity theorem satisfying the scope-preservation gate.
+Identical field names are not permission to merge certificate-instance obligations. Any reduction requires an explicit source-backed sharing/uniformity theorem satisfying the scope-preservation gate.
 
 ## Post-CI physical-source recheck
 
-The newer `research/all-n-composite-modulus` artifacts that could plausibly affect the first-host source boundary were re-audited after the targeted CI run passed:
+The integrated all-n base contains several artifacts that look superficially close to the first-host source requirement, but they still do not promote the first host physically:
 
-- `data/prime_power_side_four_blocker_actual_background_sample_batch.json` explicitly declares an integer-lattice blocker sample, `coordinate_scope = integer-lattice-blocker-sample-not-global-board-claim`, and `global_recurrent_state_claim = 0`.
+- `data/prime_power_side_four_blocker_actual_background_sample_batch.json` is explicitly an integer-lattice blocker sample with `global_recurrent_state_claim = 0`.
 - `data/prime_power_side_four_recurrent_state_population_table.json` has empty parent and child populations and `first_manifest_record_populated = 0`.
-- `data/prime_power_side_four_population_record_candidate.json` has `candidate = null`; transition-occurrence provenance is unpopulated.
+- `data/prime_power_side_four_population_record_candidate.json` has `candidate = null`.
 - `data/prime_power_side_four_blocker_3210_collision_semantic_obstruction.json` marks `global_transition_occurrence_witness` missing and `global_transition_occurrence_complete = 0`.
 
-These artifacts therefore do not provide a source-backed physical occurrence domain/record, empty-domain/completeness theorem, or global transition-occurrence witness for the first host. This negative source audit was recorded on issue #18 in comment `5299523781`.
+This negative source audit was recorded on issue #18 in comment `5299523781`.
 
-No new symbolic restoration/route certificate was added as a substitute for missing physical evidence.
+No symbolic restoration/route certificate should be added as a substitute for missing physical evidence.
 
 ## Mandatory physical frontier
 
-The next mathematical promotion must be supported by repository evidence supplying at least one of:
+The next mathematical promotion requires repository evidence supplying at least one of:
 
 - a source-backed empty-domain theorem for the relevant physical occurrence domain;
 - a complete or quantified physical occurrence batch;
@@ -119,9 +135,9 @@ The next mathematical promotion must be supported by repository evidence supplyi
 
 For recurrence import, the source must additionally establish the physically legal directed transition domain and persistent owner identities, then populate accepted routes/capacities or equivalent strict-potential/output evidence and operation/child-row congruence.
 
-Do not infer any of these from synthetic fixtures, symbolic restoration menus, matching field names, abstract alternating-core contracts, or coordinate/sample artifacts that explicitly disclaim global recurrence occurrence.
+Do not infer these facts from synthetic fixtures, symbolic restoration menus, matching field names, abstract alternating-core contracts, operation-kind registries, or coordinate/sample artifacts that explicitly disclaim global recurrence occurrence.
 
-## Current flags
+## Current proof flags
 
 ```text
 physical_chart_confinement_proved = 0
@@ -137,4 +153,9 @@ all_n_proved_by_checker = 0
 
 ## Next executable step
 
-The repository currently supplies no qualifying occurrence-faithful source for `s4-75b04c45c1c8eac2`. Do not extend the symbolic restoration/route surface merely to create activity. The next substantive change requires new repository evidence giving an explicit physical occurrence domain/record, or a source-backed theorem proving that domain empty/complete or physically chart-confined; once such evidence exists, route it through the existing 16-field physical batch gate and then the 12-field-per-edge transition-domain gate.
+First inspect the post-integration runs on the current head, especially `31854221384` and `31854221385`.
+
+- If either fails, repair only the demonstrated integration/checker defect and rerun.
+- If both pass, the branch-integration thread is complete. Return to issue #18 and wait for repository-backed occurrence-faithful evidence before making another substantive mathematical promotion.
+
+The existing 16-field physical batch gate and 12-field-per-edge transition-domain gate are the required ingestion path for any such new evidence.
