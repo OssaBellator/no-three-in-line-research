@@ -19,7 +19,7 @@ o=o_L=|O\cap L|,
 \qquad
 m=m_L=|M\cap L|,
 \qquad
-\nu=u_L=|L\cap[n]^2|-o-m.
+u=u_L=|L\cap[n]^2|-o-m.
 \]
 
 For each `e in M`, use the extension-free response graph
