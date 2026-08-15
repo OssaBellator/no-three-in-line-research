@@ -1,0 +1,180 @@
+{
+  "aggregate": {
+    "minimal_reversal_witnesses": 2,
+    "radius_five_available_points": 110,
+    "radius_five_background_pairs_checked": 5995,
+    "radius_five_strict_original_reversals": 2,
+    "radius_four_available_points": 70,
+    "radius_four_background_pairs_checked": 2415,
+    "radius_four_strict_original_reversals": 0
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "legal_operations_populated": 0,
+    "minimal_affine_integer_two_point_reversal_proved": 1,
+    "physical_two_point_background_coverage_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0,
+    "witness_physically_realizable": 0
+  },
+  "minimal_radius": 5,
+  "schema": "exact-recurrent-first-host-two-point-reversal-witness/v1",
+  "scope": {
+    "background": "two integer points disjoint from response union",
+    "host_id": "s4-75b04c45c1c8eac2",
+    "minimality_measure": "maximum absolute coordinate",
+    "responses": [
+      "3012",
+      "3210",
+      "2031",
+      "2310",
+      "3201"
+    ]
+  },
+  "witnesses": [
+    {
+      "background": [
+        [
+          -3,
+          5
+        ],
+        [
+          5,
+          -3
+        ]
+      ],
+      "complete_score_vector": {
+        "2031": 2,
+        "2310": 2,
+        "3012": 1,
+        "3201": 2,
+        "3210": 4
+      },
+      "minimizer_face": [
+        "3012"
+      ],
+      "pair_line": [
+        1,
+        1,
+        -2
+      ],
+      "pair_through_point_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "response_union_points_on_pair_line": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "singleton_increments": [
+        {
+          "increment_vector": {
+            "2031": 0,
+            "2310": 0,
+            "3012": 0,
+            "3201": 1,
+            "3210": 0
+          },
+          "point": [
+            -3,
+            5
+          ]
+        },
+        {
+          "increment_vector": {
+            "2031": 1,
+            "2310": 1,
+            "3012": 0,
+            "3201": 0,
+            "3210": 0
+          },
+          "point": [
+            5,
+            -3
+          ]
+        }
+      ]
+    },
+    {
+      "background": [
+        [
+          -1,
+          3
+        ],
+        [
+          5,
+          -3
+        ]
+      ],
+      "complete_score_vector": {
+        "2031": 2,
+        "2310": 2,
+        "3012": 1,
+        "3201": 2,
+        "3210": 4
+      },
+      "minimizer_face": [
+        "3012"
+      ],
+      "pair_line": [
+        1,
+        1,
+        -2
+      ],
+      "pair_through_point_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "response_union_points_on_pair_line": [
+        [
+          0,
+          2
+        ],
+        [
+          2,
+          0
+        ]
+      ],
+      "singleton_increments": [
+        {
+          "increment_vector": {
+            "2031": 0,
+            "2310": 0,
+            "3012": 0,
+            "3201": 1,
+            "3210": 0
+          },
+          "point": [
+            -1,
+            3
+          ]
+        },
+        {
+          "increment_vector": {
+            "2031": 1,
+            "2310": 1,
+            "3012": 0,
+            "3201": 0,
+            "3210": 0
+          },
+          "point": [
+            5,
+            -3
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1116 @@
+{
+  "aggregate": {
+    "accepted_signature_obligations": 0,
+    "cross_menu_pair_theorem_types": 3,
+    "evidence_fields_per_signature_obligation": 9,
+    "imported_cross_menu_pair_theorems": 0,
+    "imported_menu_parametric_pair_theorems": 0,
+    "menu_parametric_pair_theorem_domains": 4,
+    "menu_signature_cells": 20,
+    "populated_signature_evidence_slots": 0,
+    "raw_face_congruence_comparisons": 104,
+    "restore_02_signature_classes": 10,
+    "restore_both_four_way_signature_classes": 2,
+    "restore_both_signature_classes": 10,
+    "restore_both_three_way_signature_classes": 8,
+    "safe_backgrounds": 32,
+    "signature_pair_obligations": 32,
+    "tied_restoration_menus": 2,
+    "total_signature_evidence_slots": 288,
+    "unique_response_pair_types": 3
+  },
+  "basis_rule": {
+    "anchor": "lexicographically least member of each complete-score minimizer face",
+    "signature_scope": "the four-coordinate operation signature compresses the enumerated safe background worklist only; it is not assumed to determine physical behaviour",
+    "transitive_basis": "compare the anchor with every other face member; equality of operation, child-row, payment and closure-route behaviour is then sufficient for face-wide interchangeability"
+  },
+  "cells": [
+    {
+      "anchor_response": "2031",
+      "background_count": 6,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 6,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 4,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 4,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 1,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "operation_signature": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 6,
+      "basis_obligation_count": 3,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2301"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2301",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 6,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 4,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 4,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 3,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2301"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2301",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        1,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "anchor_response": "2031",
+      "background_count": 2,
+      "basis_obligation_count": 2,
+      "basis_obligations": [
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "2310"
+          ]
+        },
+        {
+          "congruence_accepted": 0,
+          "evidence": {
+            "child_row_congruence_ref": null,
+            "closure_route_congruence_ref": null,
+            "common_owner_ref": null,
+            "legal_menu_state_ref": null,
+            "operation_congruence_ref": null,
+            "operation_signature_domain_ref": null,
+            "payment_congruence_ref": null,
+            "physical_occurrence_domain_ref": null,
+            "realization_status": null
+          },
+          "evidence_fields_populated": 0,
+          "response_pair": [
+            "2031",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "operation_signature": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "evidence_contract": {
+    "acceptance_rule": "one signature-level obligation is accepted only when all evidence fields are populated for the same physical occurrence domain, legal menu state, persistent owner and response pair",
+    "field_count": 9,
+    "fields": [
+      "physical_occurrence_domain_ref",
+      "legal_menu_state_ref",
+      "operation_signature_domain_ref",
+      "common_owner_ref",
+      "operation_congruence_ref",
+      "child_row_congruence_ref",
+      "payment_congruence_ref",
+      "closure_route_congruence_ref",
+      "realization_status"
+    ]
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "global_termination_proved": 0,
+    "legal_restoration_operation_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "host_id": "s4-75b04c45c1c8eac2",
+  "menu_parametric_domains": [
+    {
+      "background_cases": 32,
+      "menu": "restore_02",
+      "response_pair": [
+        "2031",
+        "2310"
+      ],
+      "signature_classes": 10,
+      "uniform_theorem_imported": 0
+    },
+    {
+      "background_cases": 8,
+      "menu": "restore_both",
+      "response_pair": [
+        "2031",
+        "2301"
+      ],
+      "signature_classes": 2,
+      "uniform_theorem_imported": 0
+    },
+    {
+      "background_cases": 32,
+      "menu": "restore_both",
+      "response_pair": [
+        "2031",
+        "2310"
+      ],
+      "signature_classes": 10,
+      "uniform_theorem_imported": 0
+    },
+    {
+      "background_cases": 32,
+      "menu": "restore_both",
+      "response_pair": [
+        "2031",
+        "3201"
+      ],
+      "signature_classes": 10,
+      "uniform_theorem_imported": 0
+    }
+  ],
+  "pair_type_census": [
+    {
+      "raw_background_comparisons": 8,
+      "response_pair": [
+        "2031",
+        "2301"
+      ],
+      "signature_obligations": 2
+    },
+    {
+      "raw_background_comparisons": 64,
+      "response_pair": [
+        "2031",
+        "2310"
+      ],
+      "signature_obligations": 20
+    },
+    {
+      "raw_background_comparisons": 32,
+      "response_pair": [
+        "2031",
+        "3201"
+      ],
+      "signature_obligations": 10
+    }
+  ],
+  "schema": "exact-recurrent-first-host-selector-face-congruence-worklist/v1",
+  "source_boundary": {
+    "face_wide_child_row_congruence_proved": 0,
+    "face_wide_closure_route_congruence_proved": 0,
+    "face_wide_operation_congruence_proved": 0,
+    "face_wide_payment_congruence_proved": 0,
+    "formal_face_basis_complete_on_safe_class": 1,
+    "operation_signature_physically_complete": 0,
+    "selector_tie_break_substitution_allowed": 0
+  },
+  "sources": {
+    "restoration_menu_closure": "data/exact_recurrent_first_host_restoration_menu_closure.json",
+    "selector_rule_compatibility": "data/exact_recurrent_first_host_selector_rule_compatibility.json"
+  }
+}

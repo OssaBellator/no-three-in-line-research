@@ -1,0 +1,50 @@
+name: Exact recurrent first-host side-four projection non-identifiability
+
+on:
+  push:
+    paths:
+      - 'scripts/check_exact_recurrent_first_host_side_four_projection_nonidentifiability.py'
+      - 'data/exact_recurrent_first_host_side_four_projection_nonidentifiability.json'
+      - '.github/workflows/exact-recurrent-first-host-side-four-projection-nonidentifiability.yml'
+  pull_request:
+    paths:
+      - 'scripts/check_exact_recurrent_first_host_side_four_projection_nonidentifiability.py'
+      - 'data/exact_recurrent_first_host_side_four_projection_nonidentifiability.json'
+      - '.github/workflows/exact-recurrent-first-host-side-four-projection-nonidentifiability.yml'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Compile checker
+        run: python -m py_compile scripts/check_exact_recurrent_first_host_side_four_projection_nonidentifiability.py
+      - name: Verify exact manifest
+        run: |
+          python scripts/check_exact_recurrent_first_host_side_four_projection_nonidentifiability.py \
+            --check data/exact_recurrent_first_host_side_four_projection_nonidentifiability.json \
+            | tee /tmp/result.json
+      - name: Assert obstruction and honesty flags
+        run: |
+          python - <<'PY'
+          import json
+          result = json.load(open('/tmp/result.json', encoding='utf-8'))
+          assert result['projected_records'] == 1
+          assert result['distinct_complete_lineage_identifiers'] == 2
+          assert result['distinct_complete_score_vectors'] == 2
+          assert result['distinct_minimizer_faces'] == 2
+          assert result['background_coordinates_present_in_projection'] == 0
+          assert result['projection_noninjectivity_for_complete_scores_proved'] == 1
+          assert result['strict_reversal_physically_realizable'] == 0
+          assert result['strict_reversal_physically_excluded'] == 0
+          assert result['mutation_corruptions_rejected'] == 10
+          assert result['strict_lyapunov_certificate_proved'] == 0
+          assert result['all_n_proved_by_checker'] == 0
+          PY

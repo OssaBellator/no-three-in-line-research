@@ -1,0 +1,33 @@
+name: Exact recurrent first-host forbidden background invariance
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+    paths:
+      - scripts/check_exact_recurrent_first_host_forbidden_background_invariance.py
+      - data/exact_recurrent_first_host_forbidden_background_invariance.json
+      - docs/exact-recurrent-first-host-forbidden-background-invariance.md
+      - .github/workflows/exact-recurrent-first-host-forbidden-background-invariance.yml
+  pull_request:
+    paths:
+      - scripts/check_exact_recurrent_first_host_forbidden_background_invariance.py
+      - data/exact_recurrent_first_host_forbidden_background_invariance.json
+      - docs/exact-recurrent-first-host-forbidden-background-invariance.md
+      - .github/workflows/exact-recurrent-first-host-forbidden-background-invariance.yml
+
+jobs:
+  audit:
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m py_compile scripts/check_exact_recurrent_first_host_forbidden_background_invariance.py
+      - run: |
+          python scripts/check_exact_recurrent_first_host_forbidden_background_invariance.py \
+            --check data/exact_recurrent_first_host_forbidden_background_invariance.json

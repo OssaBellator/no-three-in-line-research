@@ -1,0 +1,406 @@
+{
+  "aggregate": {
+    "minimum_state_exclusions_for_label_cover_without_edge_routes": 2,
+    "minimum_state_exclusions_for_menu_cover_without_edge_routes": 2,
+    "patterns_closing_all_eight_edges": 7,
+    "single_state_patterns": 4,
+    "single_state_patterns_completing_label_cover": 0,
+    "single_state_patterns_completing_menu_cover": 0,
+    "state_exclusion_patterns": 16,
+    "two_state_patterns": 6,
+    "two_state_patterns_completing_label_cover": 3,
+    "two_state_patterns_completing_menu_cover": 2
+  },
+  "conclusion": {
+    "current_source_supplies_state_impossibility_proof": 0,
+    "exclude_state_11_alone_completes_label_cover": 0,
+    "exclude_state_11_alone_completes_menu_cover": 0,
+    "exclude_state_11_alone_still_needs_two_routes": 1,
+    "promotion_to_recurrent_closure_allowed": 0,
+    "state_impossibility_can_route_incident_edges_by_physical_exclusion": 1,
+    "two_state_exclusion_shortcuts_classified": 1
+  },
+  "current_source_state": {
+    "complete_label_covers": 0,
+    "complete_menu_covers": 0,
+    "incident_route_closed_edges": [],
+    "source_backed_impossible_states": []
+  },
+  "distinguished_patterns": {
+    "exclude_restore_both_only": {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_states": [
+        "11"
+      ],
+      "incident_edges": [
+        "01->11",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 2,
+      "minimum_additional_menu_routes": 2
+    },
+    "label_only_two_state_shortcut": {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 0,
+      "excluded_states": [
+        "00",
+        "01"
+      ],
+      "minimum_additional_menu_routes": 1
+    },
+    "menu_complete_opposite_pairs": [
+      [
+        "00",
+        "11"
+      ],
+      [
+        "01",
+        "10"
+      ]
+    ]
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "patterns": [
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 0,
+      "excluded_states": [],
+      "incident_edge_count": 0,
+      "incident_edges_physically_excluded": [],
+      "minimum_additional_label_routes": 3,
+      "minimum_additional_menu_routes": 4
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 1,
+      "excluded_states": [
+        "00"
+      ],
+      "incident_edge_count": 4,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "10->00"
+      ],
+      "minimum_additional_label_routes": 1,
+      "minimum_additional_menu_routes": 2
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 1,
+      "excluded_states": [
+        "01"
+      ],
+      "incident_edge_count": 4,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "01->00",
+        "01->11",
+        "11->01"
+      ],
+      "minimum_additional_label_routes": 1,
+      "minimum_additional_menu_routes": 2
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 1,
+      "excluded_states": [
+        "10"
+      ],
+      "incident_edge_count": 4,
+      "incident_edges_physically_excluded": [
+        "00->10",
+        "10->00",
+        "10->11",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 2,
+      "minimum_additional_menu_routes": 2
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 1,
+      "excluded_states": [
+        "11"
+      ],
+      "incident_edge_count": 4,
+      "incident_edges_physically_excluded": [
+        "01->11",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 2,
+      "minimum_additional_menu_routes": 2
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 2,
+      "excluded_states": [
+        "00",
+        "01"
+      ],
+      "incident_edge_count": 6,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "11->01"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 1
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 2,
+      "excluded_states": [
+        "00",
+        "10"
+      ],
+      "incident_edge_count": 6,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "10->00",
+        "10->11",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 1,
+      "minimum_additional_menu_routes": 1
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 2,
+      "excluded_states": [
+        "00",
+        "11"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 2,
+      "excluded_states": [
+        "01",
+        "10"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 2,
+      "excluded_states": [
+        "01",
+        "11"
+      ],
+      "incident_edge_count": 6,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "01->00",
+        "01->11",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 1,
+      "minimum_additional_menu_routes": 1
+    },
+    {
+      "complete_label_covers": 0,
+      "complete_menu_covers": 0,
+      "excluded_state_count": 2,
+      "excluded_states": [
+        "10",
+        "11"
+      ],
+      "incident_edge_count": 6,
+      "incident_edges_physically_excluded": [
+        "00->10",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 1,
+      "minimum_additional_menu_routes": 1
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 3,
+      "excluded_states": [
+        "00",
+        "01",
+        "10"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 3,
+      "excluded_states": [
+        "00",
+        "01",
+        "11"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 3,
+      "excluded_states": [
+        "00",
+        "10",
+        "11"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 3,
+      "excluded_states": [
+        "01",
+        "10",
+        "11"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    },
+    {
+      "complete_label_covers": 6,
+      "complete_menu_covers": 14,
+      "excluded_state_count": 4,
+      "excluded_states": [
+        "00",
+        "01",
+        "10",
+        "11"
+      ],
+      "incident_edge_count": 8,
+      "incident_edges_physically_excluded": [
+        "00->01",
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11",
+        "11->01",
+        "11->10"
+      ],
+      "minimum_additional_label_routes": 0,
+      "minimum_additional_menu_routes": 0
+    }
+  ],
+  "schema": "exact-recurrent-first-host-state-exclusion-route-leverage/v1",
+  "scope": {
+    "conditional_rule": "a source-backed impossible state physically excludes every incident directed edge",
+    "host_id": "s4-75b04c45c1c8eac2",
+    "states": [
+      "00",
+      "01",
+      "10",
+      "11"
+    ]
+  }
+}

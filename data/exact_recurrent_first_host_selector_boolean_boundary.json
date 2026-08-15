@@ -1,0 +1,227 @@
+{
+  "aggregate": {
+    "changing_edges_flipping_r02": 4,
+    "changing_edges_flipping_r20": 2,
+    "context_bidirected_pairs": 4,
+    "context_bits": 2,
+    "directed_single_bit_context_edges": 8,
+    "exact_arbitrary_transition_recreation_gates": 10,
+    "exact_single_bit_recreation_gates": 6,
+    "generic_arbitrary_gate_bound_three_labels": 12,
+    "generic_single_bit_gate_bound_three_labels": 12,
+    "largest_selected_label_scc": 3,
+    "maximum_menu_edges_payable_by_strict_descent": 4,
+    "maximum_selected_label_edges_payable_by_strict_descent": 3,
+    "menu_states": 4,
+    "minimum_menu_edges_requiring_other_route": 4,
+    "minimum_selector_edges_requiring_other_route": 3,
+    "selected_label_bidirected_pairs": 3,
+    "selected_label_strongly_connected_components": 1,
+    "selected_label_transition_edges": 6,
+    "selector_changing_single_bit_edges": 6,
+    "selector_neutral_single_bit_edges": 2,
+    "symbolic_selected_response_labels": 3
+  },
+  "conclusion": {
+    "alternating_core_boolean_boundary_interface_applicable_symbolically": 1,
+    "at_least_four_menu_edges_need_non_menu_descent_route": 1,
+    "at_least_three_selector_edges_need_non_label_descent_route": 1,
+    "boundary_capacities_populated": 0,
+    "exact_single_bit_stock_improves_generic_bound": 1,
+    "physical_owner_token_identification_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "promotion_to_recurrent_closure_allowed": 0,
+    "selected_label_transition_graph_complete_bidirected": 1,
+    "selected_response_predicates_exact_on_safe_class": 1,
+    "single_bit_selector_recreation_stock_exact": 1,
+    "strict_menu_state_potential_exists_on_all_eight_edges": 0,
+    "strict_selected_label_potential_exists_on_all_six_edges": 0,
+    "two_selector_neutral_menu_edges_identified": 1
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "global_termination_proved": 0,
+    "legal_operations_populated": 0,
+    "physical_chart_confinement_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "menu_states": [
+    {
+      "menu": "blocked",
+      "selected_response": "3012",
+      "state": "00"
+    },
+    {
+      "menu": "restore_20",
+      "selected_response": "3201",
+      "state": "01"
+    },
+    {
+      "menu": "restore_02",
+      "selected_response": "2031",
+      "state": "10"
+    },
+    {
+      "menu": "restore_both",
+      "selected_response": "2031",
+      "state": "11"
+    }
+  ],
+  "menu_transition_graph": {
+    "bidirected_pairs": 4,
+    "directed_edges": 8,
+    "maximum_edges_payable_by_strict_menu_descent": 4,
+    "minimum_edges_requiring_non_menu_descent_route": 4
+  },
+  "predicates": {
+    "2031": "r02",
+    "3012": "not r02 and not r20",
+    "3201": "not r02 and r20"
+  },
+  "schema": "exact-recurrent-first-host-selector-boolean-boundary/v3",
+  "scope": {
+    "context_bits": [
+      "r02=1 iff deletion edge 02 is restored",
+      "r20=1 iff deletion edge 20 is restored"
+    ],
+    "host_id": "s4-75b04c45c1c8eac2",
+    "selector_rule": "lexicographically least complete-score minimizer on the chart-safe class",
+    "symbolic_selected_responses": [
+      "3012",
+      "2031",
+      "3201"
+    ]
+  },
+  "selected_label_transition_graph": {
+    "bidirected_pairs": [
+      [
+        "2031",
+        "3012"
+      ],
+      [
+        "2031",
+        "3201"
+      ],
+      [
+        "3012",
+        "3201"
+      ]
+    ],
+    "directed_edges": [
+      {
+        "source": "2031",
+        "target": "3012"
+      },
+      {
+        "source": "2031",
+        "target": "3201"
+      },
+      {
+        "source": "3012",
+        "target": "2031"
+      },
+      {
+        "source": "3012",
+        "target": "3201"
+      },
+      {
+        "source": "3201",
+        "target": "2031"
+      },
+      {
+        "source": "3201",
+        "target": "3012"
+      }
+    ],
+    "maximum_edges_payable_by_strict_label_descent": 3,
+    "minimum_edges_requiring_non_label_descent_route": 3,
+    "strongly_connected_components": [
+      [
+        "3012",
+        "2031",
+        "3201"
+      ]
+    ],
+    "vertices": [
+      "3012",
+      "2031",
+      "3201"
+    ]
+  },
+  "selector_neutral_single_bit_edges": [
+    {
+      "changed_bit": "r20",
+      "selected_response": "2031",
+      "source": "10",
+      "source_menu": "restore_02",
+      "target": "11",
+      "target_menu": "restore_both"
+    },
+    {
+      "changed_bit": "r20",
+      "selected_response": "2031",
+      "source": "11",
+      "source_menu": "restore_both",
+      "target": "10",
+      "target_menu": "restore_02"
+    }
+  ],
+  "single_bit_recreation_gates": [
+    {
+      "bit_direction": "1->0",
+      "changed_bit": "r20",
+      "response": "3012",
+      "source": "01",
+      "source_menu": "restore_20",
+      "target": "00",
+      "target_menu": "blocked"
+    },
+    {
+      "bit_direction": "1->0",
+      "changed_bit": "r02",
+      "response": "3012",
+      "source": "10",
+      "source_menu": "restore_02",
+      "target": "00",
+      "target_menu": "blocked"
+    },
+    {
+      "bit_direction": "0->1",
+      "changed_bit": "r02",
+      "response": "2031",
+      "source": "00",
+      "source_menu": "blocked",
+      "target": "10",
+      "target_menu": "restore_02"
+    },
+    {
+      "bit_direction": "0->1",
+      "changed_bit": "r02",
+      "response": "2031",
+      "source": "01",
+      "source_menu": "restore_20",
+      "target": "11",
+      "target_menu": "restore_both"
+    },
+    {
+      "bit_direction": "0->1",
+      "changed_bit": "r20",
+      "response": "3201",
+      "source": "00",
+      "source_menu": "blocked",
+      "target": "01",
+      "target_menu": "restore_20"
+    },
+    {
+      "bit_direction": "1->0",
+      "changed_bit": "r02",
+      "response": "3201",
+      "source": "11",
+      "source_menu": "restore_both",
+      "target": "01",
+      "target_menu": "restore_20"
+    }
+  ]
+}

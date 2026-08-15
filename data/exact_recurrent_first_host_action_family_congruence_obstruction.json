@@ -1,0 +1,521 @@
+{
+  "aggregate": {
+    "action_families": 4,
+    "families_homogeneous_changed_cell_action": 4,
+    "families_homogeneous_ordered_face_profile_pair": 0,
+    "families_homogeneous_ordered_gap_pair": 0,
+    "families_homogeneous_ordered_selected_pair": 0,
+    "families_homogeneous_selector_change_flag": 2,
+    "families_related_by_exact_host_automorphism": 0,
+    "families_touching_context_sensitive_state_11": 4,
+    "members_per_family": 2,
+    "source_uniformity_fields_per_family": 10,
+    "source_uniformity_records_populated": 0
+  },
+  "conclusion": {
+    "action_family_geometry_audit_complete": 1,
+    "changed_cell_action_implies_operation_congruence": 0,
+    "complete_face_profile_implies_operation_congruence": 0,
+    "context_parametric_source_theorem_required": 1,
+    "current_uniform_family_operation_congruence_proved": 0,
+    "exact_symmetry_identifies_family_members": 0,
+    "gap_pair_implies_operation_congruence": 0,
+    "promotion_to_recurrent_closure_allowed": 0,
+    "selected_response_pair_implies_operation_congruence": 0,
+    "selector_change_flag_implies_operation_congruence": 0
+  },
+  "families": [
+    {
+      "action": "restore",
+      "changed_cell": "02",
+      "context_free_operation_row_inferred": 0,
+      "family": "restore_02",
+      "homogeneous_changed_cell_action": 1,
+      "homogeneous_ordered_face_profile_pair": 0,
+      "homogeneous_ordered_gap_pair": 0,
+      "homogeneous_ordered_selected_pair": 0,
+      "homogeneous_selector_change_flag": 1,
+      "members": [
+        {
+          "edge": "00->10",
+          "selector_changing": 1,
+          "source_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3012"
+              ]
+            }
+          ],
+          "source_gap": 3,
+          "source_selected": "3012",
+          "source_state": "00",
+          "target_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "2031",
+                "2310"
+              ]
+            }
+          ],
+          "target_gap": 1,
+          "target_selected": "2031",
+          "target_state": "10",
+          "touches_state_11": 0
+        },
+        {
+          "edge": "01->11",
+          "selector_changing": 1,
+          "source_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3201"
+              ]
+            }
+          ],
+          "source_gap": 1,
+          "source_selected": "3201",
+          "source_state": "01",
+          "target_face_profiles": [
+            {
+              "background_count": 8,
+              "face": [
+                "2031",
+                "2301",
+                "2310",
+                "3201"
+              ]
+            },
+            {
+              "background_count": 24,
+              "face": [
+                "2031",
+                "2310",
+                "3201"
+              ]
+            }
+          ],
+          "target_gap": 1,
+          "target_selected": "2031",
+          "target_state": "11",
+          "touches_state_11": 1
+        }
+      ],
+      "members_related_by_exact_host_automorphism": 0,
+      "other_context_bit": "r20",
+      "source_uniformity_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "edge_refs": null,
+        "family_id": null,
+        "quantified_context_bit": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "source_uniformity_populated": 0,
+      "touches_context_sensitive_state_11": 1
+    },
+    {
+      "action": "delete",
+      "changed_cell": "02",
+      "context_free_operation_row_inferred": 0,
+      "family": "delete_02",
+      "homogeneous_changed_cell_action": 1,
+      "homogeneous_ordered_face_profile_pair": 0,
+      "homogeneous_ordered_gap_pair": 0,
+      "homogeneous_ordered_selected_pair": 0,
+      "homogeneous_selector_change_flag": 1,
+      "members": [
+        {
+          "edge": "10->00",
+          "selector_changing": 1,
+          "source_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "2031",
+                "2310"
+              ]
+            }
+          ],
+          "source_gap": 1,
+          "source_selected": "2031",
+          "source_state": "10",
+          "target_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3012"
+              ]
+            }
+          ],
+          "target_gap": 3,
+          "target_selected": "3012",
+          "target_state": "00",
+          "touches_state_11": 0
+        },
+        {
+          "edge": "11->01",
+          "selector_changing": 1,
+          "source_face_profiles": [
+            {
+              "background_count": 8,
+              "face": [
+                "2031",
+                "2301",
+                "2310",
+                "3201"
+              ]
+            },
+            {
+              "background_count": 24,
+              "face": [
+                "2031",
+                "2310",
+                "3201"
+              ]
+            }
+          ],
+          "source_gap": 1,
+          "source_selected": "2031",
+          "source_state": "11",
+          "target_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3201"
+              ]
+            }
+          ],
+          "target_gap": 1,
+          "target_selected": "3201",
+          "target_state": "01",
+          "touches_state_11": 1
+        }
+      ],
+      "members_related_by_exact_host_automorphism": 0,
+      "other_context_bit": "r20",
+      "source_uniformity_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "edge_refs": null,
+        "family_id": null,
+        "quantified_context_bit": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "source_uniformity_populated": 0,
+      "touches_context_sensitive_state_11": 1
+    },
+    {
+      "action": "restore",
+      "changed_cell": "20",
+      "context_free_operation_row_inferred": 0,
+      "family": "restore_20",
+      "homogeneous_changed_cell_action": 1,
+      "homogeneous_ordered_face_profile_pair": 0,
+      "homogeneous_ordered_gap_pair": 0,
+      "homogeneous_ordered_selected_pair": 0,
+      "homogeneous_selector_change_flag": 0,
+      "members": [
+        {
+          "edge": "00->01",
+          "selector_changing": 1,
+          "source_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3012"
+              ]
+            }
+          ],
+          "source_gap": 3,
+          "source_selected": "3012",
+          "source_state": "00",
+          "target_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3201"
+              ]
+            }
+          ],
+          "target_gap": 1,
+          "target_selected": "3201",
+          "target_state": "01",
+          "touches_state_11": 0
+        },
+        {
+          "edge": "10->11",
+          "selector_changing": 0,
+          "source_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "2031",
+                "2310"
+              ]
+            }
+          ],
+          "source_gap": 1,
+          "source_selected": "2031",
+          "source_state": "10",
+          "target_face_profiles": [
+            {
+              "background_count": 8,
+              "face": [
+                "2031",
+                "2301",
+                "2310",
+                "3201"
+              ]
+            },
+            {
+              "background_count": 24,
+              "face": [
+                "2031",
+                "2310",
+                "3201"
+              ]
+            }
+          ],
+          "target_gap": 1,
+          "target_selected": "2031",
+          "target_state": "11",
+          "touches_state_11": 1
+        }
+      ],
+      "members_related_by_exact_host_automorphism": 0,
+      "other_context_bit": "r02",
+      "source_uniformity_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "edge_refs": null,
+        "family_id": null,
+        "quantified_context_bit": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "source_uniformity_populated": 0,
+      "touches_context_sensitive_state_11": 1
+    },
+    {
+      "action": "delete",
+      "changed_cell": "20",
+      "context_free_operation_row_inferred": 0,
+      "family": "delete_20",
+      "homogeneous_changed_cell_action": 1,
+      "homogeneous_ordered_face_profile_pair": 0,
+      "homogeneous_ordered_gap_pair": 0,
+      "homogeneous_ordered_selected_pair": 0,
+      "homogeneous_selector_change_flag": 0,
+      "members": [
+        {
+          "edge": "01->00",
+          "selector_changing": 1,
+          "source_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3201"
+              ]
+            }
+          ],
+          "source_gap": 1,
+          "source_selected": "3201",
+          "source_state": "01",
+          "target_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "3012"
+              ]
+            }
+          ],
+          "target_gap": 3,
+          "target_selected": "3012",
+          "target_state": "00",
+          "touches_state_11": 0
+        },
+        {
+          "edge": "11->10",
+          "selector_changing": 0,
+          "source_face_profiles": [
+            {
+              "background_count": 8,
+              "face": [
+                "2031",
+                "2301",
+                "2310",
+                "3201"
+              ]
+            },
+            {
+              "background_count": 24,
+              "face": [
+                "2031",
+                "2310",
+                "3201"
+              ]
+            }
+          ],
+          "source_gap": 1,
+          "source_selected": "2031",
+          "source_state": "11",
+          "target_face_profiles": [
+            {
+              "background_count": 32,
+              "face": [
+                "2031",
+                "2310"
+              ]
+            }
+          ],
+          "target_gap": 1,
+          "target_selected": "2031",
+          "target_state": "10",
+          "touches_state_11": 1
+        }
+      ],
+      "members_related_by_exact_host_automorphism": 0,
+      "other_context_bit": "r02",
+      "source_uniformity_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "edge_refs": null,
+        "family_id": null,
+        "quantified_context_bit": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "source_uniformity_populated": 0,
+      "touches_context_sensitive_state_11": 1
+    }
+  ],
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "global_termination_proved": 0,
+    "operation_congruence_proved": 0,
+    "payment_congruence_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "host_id": "s4-75b04c45c1c8eac2",
+  "schema": "exact-recurrent-first-host-action-family-congruence-obstruction/v1",
+  "sources": {
+    "exact_symmetry": "data/exact_recurrent_first_host_safe_signature_symmetry.json",
+    "family_leverage": "data/exact_recurrent_first_host_action_family_route_leverage.json",
+    "selector_faces": "data/exact_recurrent_first_host_restoration_selector_face.json",
+    "transition_domain": "data/exact_recurrent_first_host_transition_domain_source_audit.json"
+  },
+  "states": [
+    {
+      "face_background_invariant": 1,
+      "face_profiles": [
+        {
+          "background_count": 32,
+          "face": [
+            "3012"
+          ]
+        }
+      ],
+      "menu": "blocked",
+      "next_gap": 3,
+      "selected": "3012",
+      "state": "00"
+    },
+    {
+      "face_background_invariant": 1,
+      "face_profiles": [
+        {
+          "background_count": 32,
+          "face": [
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_20",
+      "next_gap": 1,
+      "selected": "3201",
+      "state": "01"
+    },
+    {
+      "face_background_invariant": 1,
+      "face_profiles": [
+        {
+          "background_count": 32,
+          "face": [
+            "2031",
+            "2310"
+          ]
+        }
+      ],
+      "menu": "restore_02",
+      "next_gap": 1,
+      "selected": "2031",
+      "state": "10"
+    },
+    {
+      "face_background_invariant": 0,
+      "face_profiles": [
+        {
+          "background_count": 8,
+          "face": [
+            "2031",
+            "2301",
+            "2310",
+            "3201"
+          ]
+        },
+        {
+          "background_count": 24,
+          "face": [
+            "2031",
+            "2310",
+            "3201"
+          ]
+        }
+      ],
+      "menu": "restore_both",
+      "next_gap": 1,
+      "selected": "2031",
+      "state": "11"
+    }
+  ],
+  "uniform_family_contract": {
+    "acceptance_rule": "either provide both member edge records separately or a theorem explicitly quantified over both values of the other restoration bit",
+    "complete_face_shortcut_available": 0,
+    "field_count": 10,
+    "required_fields": [
+      "family_id",
+      "edge_refs",
+      "shared_theorem_ref",
+      "quantified_context_bit",
+      "both_context_values_proved",
+      "shared_owner_schema_ref",
+      "shared_operation_schema_ref",
+      "shared_route_schema_ref",
+      "child_payment_compatibility_ref",
+      "realization_status"
+    ],
+    "selector_gap_shortcut_available": 0,
+    "symmetry_shortcut_available": 0
+  }
+}

@@ -1,0 +1,43 @@
+name: Exact recurrent first-host critical-line strict reversal
+
+on:
+  push:
+    paths:
+      - scripts/check_exact_recurrent_first_host_critical_line_strict_reversal.py
+      - data/exact_recurrent_first_host_critical_line_strict_reversal.json
+      - docs/exact-recurrent-first-host-critical-line-strict-reversal.md
+      - .github/workflows/exact-recurrent-first-host-critical-line-strict-reversal.yml
+  pull_request:
+    paths:
+      - scripts/check_exact_recurrent_first_host_critical_line_strict_reversal.py
+      - data/exact_recurrent_first_host_critical_line_strict_reversal.json
+      - docs/exact-recurrent-first-host-critical-line-strict-reversal.md
+      - .github/workflows/exact-recurrent-first-host-critical-line-strict-reversal.yml
+
+jobs:
+  audit:
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: |
+          python -m py_compile scripts/check_exact_recurrent_first_host_critical_line_strict_reversal.py
+          python scripts/check_exact_recurrent_first_host_critical_line_strict_reversal.py \
+            --check data/exact_recurrent_first_host_critical_line_strict_reversal.json \
+            | tee /tmp/result.json
+          python - <<'PY'
+          import json
+          result = json.loads(open('/tmp/result.json', encoding='utf-8').read())
+          assert result['critical_line_strict_reversal_classification_complete'] == 1
+          assert result['strict_reversal_pairs'] == 4
+          assert result['strict_reversal_radius_census'] == {'5': 2, '6': 2}
+          assert result['all_pair_lines_strict_reversal_classification_complete'] == 0
+          assert result['physical_background_realizability_proved'] == 0
+          assert result['all_n_proved_by_checker'] == 0
+          assert result['mutation_corruptions_rejected'] == 9
+          PY

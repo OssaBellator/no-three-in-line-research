@@ -258,7 +258,15 @@ For this line,
 \]
 
 The complete state has one further selected target line of composition `(1,2,0)`;
-its kernel is zero.  Hence the total independent-line upper kernel is `160/11`,
+its kernel is zero.  Non-target lines can nevertheless contribute positive
+collateral upper-kernel mass.  Direct summation over every nonaxis line gives
+
+\[
+\boxed{
+\sum_L\mathcal K_5(o_L,m_L,u_L)=\frac{663}{11},
+}
+\]
+
 while
 
 \[
@@ -268,8 +276,9 @@ while
 ### Proof
 
 The two displayed permutations are disjoint.  Direct determinant enumeration
-gives exactly the two stated target lines.  Substitute `D_5=44` and
-`lambda_5=40/11` into CMR1370. ∎
+gives exactly the two stated target lines.  Substituting `D_5=44` and
+`lambda_5=40/11` into CMR1370 gives the pointwise main-diagonal value `160/11`.
+Summing the same exact kernel over all nonaxis lines gives `663/11`. ∎
 
 This does not show that the state lacks an improving response.  It shows that
 the present independent-line upper relaxation is too coarse to prove one.

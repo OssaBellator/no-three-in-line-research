@@ -1,0 +1,390 @@
+{
+  "aggregate": {
+    "base_route_fields": 8,
+    "candidate_normalized_gates": 8,
+    "contracts_audited": 4,
+    "contracts_with_first_host_values": 0,
+    "directed_edges": 8,
+    "edge_route_pairs": 40,
+    "edges_with_route": 0,
+    "persistent_owner_tokens": 0,
+    "physical_legal_edges": 0,
+    "route_classes": 5,
+    "route_specific_fields": 16,
+    "selector_changing_edges": 6,
+    "selector_neutral_edges": 2,
+    "source_admissible_edge_route_pairs": 0,
+    "source_backed_base_route_fields": 0,
+    "source_backed_route_specific_fields": 0
+  },
+  "alternating_core_contracts": [
+    {
+      "checker": "scripts/verify_ac_builder_state_boundary_gates.py",
+      "checker_blob_sha": "acebfb7fa66e6fdf7a390cde5aec42b2ecd47f0b",
+      "document": "docs/alternating-core-builder-state-boundary-gates.md",
+      "document_blob_sha": "33ee792692a52d232dd71e3cde48ea8573ba78df",
+      "first_host_values_populated": 0,
+      "synthetic_parameter_check": 1
+    },
+    {
+      "checker": "scripts/verify_ac_physical_source_capacity_overload.py",
+      "checker_blob_sha": "b88c477aafb01c089ac3fb72920f5edf09154563",
+      "document": "docs/alternating-core-physical-source-capacity-overload.md",
+      "document_blob_sha": "022c24a9004d330cf84a149540eaf86a28390342",
+      "first_host_values_populated": 0,
+      "synthetic_parameter_check": 1
+    },
+    {
+      "checker": "scripts/verify_ac_source_capacity_recreation.py",
+      "checker_blob_sha": "d0fe04a9752f1cd523fcf27d28948de0a41a5e5e",
+      "document": "docs/alternating-core-source-capacity-recreation-ledger.md",
+      "document_blob_sha": "20890501500cb1212a5cd0cdd8a32a48fdf609a9",
+      "first_host_values_populated": 0,
+      "synthetic_parameter_check": 1
+    },
+    {
+      "checker": "scripts/verify_ac_outer_reset_quotient.py",
+      "checker_blob_sha": "852601f0e0309660d8bf8e8c506872eaf50cf432",
+      "document": "docs/alternating-core-outer-reset-quotient.md",
+      "document_blob_sha": "4ef671f294392b3ff31a48dd516f9e7759535b3c",
+      "first_host_values_populated": 0,
+      "synthetic_parameter_check": 1
+    }
+  ],
+  "conclusion": {
+    "alternating_contracts_supply_acceptance_rules": 1,
+    "alternating_contracts_supply_first_host_values": 0,
+    "finite_route_classification_complete": 1,
+    "first_outer_reset_alone_closes_repetition": 0,
+    "physical_route_assignment_complete": 0,
+    "promotion_to_recurrent_closure_allowed": 0,
+    "shared_capacity_reduction_without_theorem": 0
+  },
+  "conditional_budgets": {
+    "capacity_only": "sum_{e in residual cover} initial_capacity(e)",
+    "outer_first_traversals": "number of distinct decorated outer edges",
+    "outer_repetitions": "macro-ticket stock plus separately bounded descent/payment events",
+    "source_paid_recreation": "sum_a rho_a*source_stock_a(0)"
+  },
+  "cover_obligations": {
+    "label_scalar": {
+      "compatible_covers": 6,
+      "distinct_capacity_addresses_if_capacity_only": 3,
+      "residual_edges_per_cover": 3,
+      "residual_frequency": {
+        "00->01": 3,
+        "00->10": 3,
+        "01->00": 3,
+        "01->11": 3,
+        "10->00": 3,
+        "11->01": 3
+      }
+    },
+    "menu_scalar": {
+      "compatible_covers": 14,
+      "distinct_capacity_addresses_if_capacity_only": 4,
+      "residual_edges_per_cover": 4,
+      "residual_frequency": {
+        "00->01": 7,
+        "00->10": 7,
+        "01->00": 7,
+        "01->11": 7,
+        "10->00": 7,
+        "10->11": 7,
+        "11->01": 7,
+        "11->10": 7
+      },
+      "residual_selector_changing": 3,
+      "residual_selector_neutral": 1
+    }
+  },
+  "edges": [
+    {
+      "action": "restore",
+      "bit": "r20",
+      "candidate_normalized_gate": 1,
+      "edge": "00->01",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 1,
+      "source_menu": "blocked",
+      "source_selected": "3012",
+      "target_menu": "restore_20",
+      "target_selected": "3201"
+    },
+    {
+      "action": "restore",
+      "bit": "r02",
+      "candidate_normalized_gate": 1,
+      "edge": "00->10",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 1,
+      "source_menu": "blocked",
+      "source_selected": "3012",
+      "target_menu": "restore_02",
+      "target_selected": "2031"
+    },
+    {
+      "action": "delete",
+      "bit": "r20",
+      "candidate_normalized_gate": 1,
+      "edge": "01->00",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 1,
+      "source_menu": "restore_20",
+      "source_selected": "3201",
+      "target_menu": "blocked",
+      "target_selected": "3012"
+    },
+    {
+      "action": "restore",
+      "bit": "r02",
+      "candidate_normalized_gate": 1,
+      "edge": "01->11",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 1,
+      "source_menu": "restore_20",
+      "source_selected": "3201",
+      "target_menu": "restore_both",
+      "target_selected": "2031"
+    },
+    {
+      "action": "delete",
+      "bit": "r02",
+      "candidate_normalized_gate": 1,
+      "edge": "10->00",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 1,
+      "source_menu": "restore_02",
+      "source_selected": "2031",
+      "target_menu": "blocked",
+      "target_selected": "3012"
+    },
+    {
+      "action": "restore",
+      "bit": "r20",
+      "candidate_normalized_gate": 1,
+      "edge": "10->11",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 0,
+      "source_menu": "restore_02",
+      "source_selected": "2031",
+      "target_menu": "restore_both",
+      "target_selected": "2031"
+    },
+    {
+      "action": "delete",
+      "bit": "r02",
+      "candidate_normalized_gate": 1,
+      "edge": "11->01",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 1,
+      "source_menu": "restore_both",
+      "source_selected": "2031",
+      "target_menu": "restore_20",
+      "target_selected": "3201"
+    },
+    {
+      "action": "delete",
+      "bit": "r20",
+      "candidate_normalized_gate": 1,
+      "edge": "11->10",
+      "persistent_owner_token": 0,
+      "physical_legal_edge": 0,
+      "route_admissibility": {
+        "bounded_strict_potential": 0,
+        "decorated_outer_reset": 0,
+        "finite_unrestorable_capacity": 0,
+        "physical_exclusion": 0,
+        "terminal_or_improving_output": 0
+      },
+      "selector_changing": 0,
+      "source_menu": "restore_both",
+      "source_selected": "2031",
+      "target_menu": "restore_02",
+      "target_selected": "2031"
+    }
+  ],
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "outer_profile_mapping_populated": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "route_contracts": [
+    {
+      "base_fields_populated": 0,
+      "base_physical_fields": [
+        "physical_source_ref",
+        "legal_operations",
+        "realization_status"
+      ],
+      "route": "physical_exclusion",
+      "route_specific_fields": [
+        "exact_edge_ref",
+        "exclusion_proof_ref"
+      ],
+      "route_specific_fields_populated": 0
+    },
+    {
+      "base_fields_populated": 0,
+      "base_physical_fields": [
+        "physical_source_ref",
+        "provenance.owner",
+        "legal_operations",
+        "intermediate_states",
+        "child_row",
+        "positive_weights",
+        "parent_budget",
+        "realization_status"
+      ],
+      "route": "terminal_or_improving_output",
+      "route_specific_fields": [
+        "outcome_kind",
+        "outcome_proof_ref"
+      ],
+      "route_specific_fields_populated": 0
+    },
+    {
+      "base_fields_populated": 0,
+      "base_physical_fields": [
+        "physical_source_ref",
+        "provenance.owner",
+        "legal_operations",
+        "intermediate_states",
+        "positive_weights",
+        "parent_budget",
+        "realization_status"
+      ],
+      "route": "bounded_strict_potential",
+      "route_specific_fields": [
+        "potential_ref",
+        "source_value",
+        "target_value",
+        "bounded_range_ref"
+      ],
+      "route_specific_fields_populated": 0
+    },
+    {
+      "base_fields_populated": 0,
+      "base_physical_fields": [
+        "physical_source_ref",
+        "provenance.owner",
+        "legal_operations",
+        "intermediate_states",
+        "realization_status"
+      ],
+      "route": "finite_unrestorable_capacity",
+      "route_specific_fields": [
+        "capacity_address",
+        "initial_capacity",
+        "debit_rule_ref",
+        "nonrestoration_ref"
+      ],
+      "route_specific_fields_populated": 0
+    },
+    {
+      "base_fields_populated": 0,
+      "base_physical_fields": [
+        "physical_source_ref",
+        "legal_operations",
+        "intermediate_states",
+        "realization_status"
+      ],
+      "route": "decorated_outer_reset",
+      "route_specific_fields": [
+        "source_outer_profile_ref",
+        "target_outer_profile_ref",
+        "decoration_ref",
+        "repetition_route_ref"
+      ],
+      "route_specific_fields_populated": 0
+    }
+  ],
+  "schema": "exact-recurrent-first-host-closure-route-source-gate/v1",
+  "scope": {
+    "host_id": "s4-75b04c45c1c8eac2",
+    "states": [
+      {
+        "menu": "blocked",
+        "selected": "3012",
+        "state": "00"
+      },
+      {
+        "menu": "restore_20",
+        "selected": "3201",
+        "state": "01"
+      },
+      {
+        "menu": "restore_02",
+        "selected": "2031",
+        "state": "10"
+      },
+      {
+        "menu": "restore_both",
+        "selected": "2031",
+        "state": "11"
+      }
+    ]
+  }
+}

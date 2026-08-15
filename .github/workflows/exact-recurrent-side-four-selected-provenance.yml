@@ -1,0 +1,37 @@
+name: Exact recurrent side-four selected provenance
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+    paths:
+      - data/exact_recurrent_side_four_kernel.json
+      - data/exact_recurrent_side_four_lineage_projection.json
+      - data/exact_recurrent_side_four_selected_provenance_projection.json
+      - scripts/check_exact_recurrent_side_four_selected_provenance_projection.py
+      - .github/workflows/exact-recurrent-side-four-selected-provenance.yml
+  pull_request:
+    paths:
+      - data/exact_recurrent_side_four_kernel.json
+      - data/exact_recurrent_side_four_lineage_projection.json
+      - data/exact_recurrent_side_four_selected_provenance_projection.json
+      - scripts/check_exact_recurrent_side_four_selected_provenance_projection.py
+      - .github/workflows/exact-recurrent-side-four-selected-provenance.yml
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: |
+          python -m py_compile scripts/check_exact_recurrent_side_four_selected_provenance_projection.py
+          python scripts/check_exact_recurrent_side_four_selected_provenance_projection.py \
+            --kernel data/exact_recurrent_side_four_kernel.json \
+            --lineage-projection data/exact_recurrent_side_four_lineage_projection.json \
+            --selected-projection data/exact_recurrent_side_four_selected_provenance_projection.json

@@ -1,0 +1,34 @@
+name: Exact recurrent side-four lineage projection
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+    paths:
+      - data/exact_recurrent_side_four_kernel.json
+      - data/exact_recurrent_side_four_lineage_projection.json
+      - scripts/check_exact_recurrent_side_four_lineage_projection.py
+      - .github/workflows/exact-recurrent-side-four-lineage-projection.yml
+  pull_request:
+    paths:
+      - data/exact_recurrent_side_four_kernel.json
+      - data/exact_recurrent_side_four_lineage_projection.json
+      - scripts/check_exact_recurrent_side_four_lineage_projection.py
+      - .github/workflows/exact-recurrent-side-four-lineage-projection.yml
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: |
+          python -m py_compile scripts/check_exact_recurrent_side_four_lineage_projection.py
+          python scripts/check_exact_recurrent_side_four_lineage_projection.py \
+            --kernel data/exact_recurrent_side_four_kernel.json \
+            --projection data/exact_recurrent_side_four_lineage_projection.json

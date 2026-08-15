@@ -1,0 +1,1869 @@
+{
+  "admissible_integer_intersections": [
+    {
+      "incident_lines": [
+        [
+          1,
+          2,
+          -4
+        ],
+        [
+          1,
+          3,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        -6,
+        5
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          -1
+        ],
+        [
+          3,
+          2,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        -5,
+        -3
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          3,
+          2,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        -5,
+        12
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          3,
+          -9
+        ],
+        [
+          2,
+          1,
+          -7
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        -4,
+        15
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          3,
+          -9
+        ],
+        [
+          2,
+          3,
+          -6
+        ],
+        [
+          3,
+          2,
+          -6
+        ]
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        -3,
+        4
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          3,
+          2,
+          -6
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        -2,
+        6
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          2,
+          -4
+        ],
+        [
+          2,
+          3,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        -2,
+        9
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          1,
+          1,
+          -3
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 6
+      },
+      "point": [
+        -1,
+        4
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          3,
+          -9
+        ],
+        [
+          2,
+          3,
+          -9
+        ],
+        [
+          3,
+          2,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        -1,
+        6
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -1,
+          -2
+        ],
+        [
+          3,
+          2,
+          -6
+        ]
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        4,
+        -3
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          1,
+          -3
+        ],
+        [
+          3,
+          -1,
+          -3
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 6
+      },
+      "point": [
+        4,
+        -1
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          -1
+        ],
+        [
+          2,
+          3,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        5,
+        -3
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -1,
+          -2
+        ],
+        [
+          2,
+          3,
+          -9
+        ]
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        6,
+        -1
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -1,
+          -1
+        ],
+        [
+          2,
+          1,
+          -7
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 3,
+        "3201": 0,
+        "3210": 0
+      },
+      "point": [
+        6,
+        5
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          -1
+        ],
+        [
+          3,
+          2,
+          -6
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        8,
+        -9
+      ]
+    },
+    {
+      "incident_lines": [
+        [
+          1,
+          -2,
+          4
+        ],
+        [
+          2,
+          3,
+          -6
+        ]
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "point": [
+        8,
+        6
+      ]
+    }
+  ],
+  "aggregate": {
+    "admissible_integer_line_intersections": 16,
+    "audit_integer_points_checked": 10190,
+    "audit_radius": 50,
+    "classes_with_minimum_one": 1,
+    "classes_with_minimum_zero": 14,
+    "classes_with_original_response_minimizer": 0,
+    "distinct_rational_line_intersections": 103,
+    "distinct_secant_lines": 20,
+    "excluded_response_union_points": 11,
+    "integer_line_intersections_including_response_points": 27,
+    "integer_singleton_signature_classes": 15,
+    "unique_no_zero_reopening_integer_points": 2,
+    "zero_reopening_count_census": {
+      "0": 1,
+      "1": 5,
+      "2": 6,
+      "3": 3
+    }
+  },
+  "critical_class": {
+    "complete_score_vector": {
+      "2031": 1,
+      "2310": 1,
+      "3012": 2,
+      "3201": 1,
+      "3210": 10
+    },
+    "id": "S12",
+    "increment_vector": {
+      "2031": 1,
+      "2310": 1,
+      "3012": 1,
+      "3201": 1,
+      "3210": 6
+    },
+    "minimum_score": 1,
+    "minimizer_face": [
+      "2031",
+      "2310",
+      "3201"
+    ],
+    "realizers": [
+      {
+        "incident_lines": [
+          [
+            1,
+            -2,
+            4
+          ],
+          [
+            1,
+            1,
+            -3
+          ]
+        ],
+        "kind": "integer-intersection",
+        "point": [
+          -1,
+          4
+        ]
+      },
+      {
+        "incident_lines": [
+          [
+            1,
+            1,
+            -3
+          ],
+          [
+            3,
+            -1,
+            -3
+          ]
+        ],
+        "kind": "integer-intersection",
+        "point": [
+          4,
+          -1
+        ]
+      }
+    ],
+    "zero_score_reopenings": []
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "deletion_causes_populated": 0,
+    "full_integer_singleton_signature_classification_complete": 1,
+    "legal_operations_populated": 0,
+    "multi_point_background_classification_complete": 0,
+    "physical_singleton_background_coverage_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "singleton_original_response_exclusion_proved": 1,
+    "singleton_zero_reopening_exception_classified": 1,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "intrinsic_score_vector": {
+    "2031": 0,
+    "2310": 0,
+    "3012": 1,
+    "3201": 0,
+    "3210": 4
+  },
+  "schema": "exact-recurrent-first-host-integer-singleton-signature-atlas/v1",
+  "scope": {
+    "background": "one integer point disjoint from the five-response union",
+    "coverage": "full integer lattice",
+    "host_id": "s4-75b04c45c1c8eac2",
+    "responses": [
+      "3012",
+      "3210",
+      "2031",
+      "2310",
+      "3201"
+    ]
+  },
+  "secant_lines": [
+    {
+      "generic_integer_witness": [
+        -1,
+        -1
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        -2,
+        -1
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -2,
+        1
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        -2,
+        4
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        1,
+        -1
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "line": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        0,
+        -1
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 3,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        -1,
+        -1
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -1,
+        1
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        -1,
+        2
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -2,
+        5
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 6
+      },
+      "line": [
+        1,
+        1,
+        -3
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -1,
+        3
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "line": [
+        1,
+        2,
+        -5
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -2,
+        3
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        2,
+        -4
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        6,
+        1
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        3,
+        -9
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -3,
+        3
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        1,
+        3,
+        -6
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        1,
+        5
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        2,
+        1,
+        -7
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        3,
+        -1
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        2,
+        1,
+        -5
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        3,
+        -2
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "line": [
+        2,
+        1,
+        -4
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        2,
+        -2
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        2,
+        1,
+        -2
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        -3,
+        5
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "line": [
+        2,
+        3,
+        -9
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        6,
+        -2
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        2,
+        3,
+        -6
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        0,
+        -3
+      ],
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        3,
+        -1,
+        -3
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        2,
+        -3
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        3,
+        1,
+        -3
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        7,
+        -6
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "line": [
+        3,
+        2,
+        -9
+      ]
+    },
+    {
+      "generic_integer_witness": [
+        6,
+        -6
+      ],
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "line": [
+        3,
+        2,
+        -6
+      ]
+    }
+  ],
+  "signature_classes": [
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S00",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "kind": "off-all-secants",
+          "witness": [
+            0,
+            0
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031",
+        "2310",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 1,
+        "3201": 1,
+        "3210": 4
+      },
+      "id": "S01",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031",
+        "2310"
+      ],
+      "realizers": [
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            -1,
+            -2
+          ],
+          "witness": [
+            1,
+            -1
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            2,
+            -5
+          ],
+          "witness": [
+            -1,
+            3
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            2,
+            1,
+            -4
+          ],
+          "witness": [
+            3,
+            -2
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            2,
+            3,
+            -9
+          ],
+          "witness": [
+            -3,
+            5
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            3,
+            2,
+            -6
+          ],
+          "witness": [
+            6,
+            -6
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031",
+        "2310"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S02",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            -1,
+            2
+          ],
+          "witness": [
+            -1,
+            1
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            2,
+            -4
+          ],
+          "witness": [
+            -2,
+            3
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            2,
+            1,
+            -5
+          ],
+          "witness": [
+            3,
+            -1
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            2,
+            3,
+            -6
+          ],
+          "witness": [
+            6,
+            -2
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            3,
+            2,
+            -9
+          ],
+          "witness": [
+            7,
+            -6
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 4
+      },
+      "id": "S03",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              -1,
+              -2
+            ],
+            [
+              3,
+              2,
+              -6
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            4,
+            -3
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              -1,
+              -2
+            ],
+            [
+              2,
+              3,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            6,
+            -1
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S04",
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            -2,
+            -1
+          ],
+          "witness": [
+            -1,
+            -1
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            -2,
+            4
+          ],
+          "witness": [
+            -2,
+            1
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            3,
+            -6
+          ],
+          "witness": [
+            -3,
+            3
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            2,
+            1,
+            -7
+          ],
+          "witness": [
+            1,
+            5
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            2,
+            1,
+            -2
+          ],
+          "witness": [
+            2,
+            -2
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            3,
+            -1,
+            -3
+          ],
+          "witness": [
+            0,
+            -3
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2310",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 1,
+        "3201": 1,
+        "3210": 4
+      },
+      "id": "S05",
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 0,
+        "3201": 1,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2310"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              4
+            ],
+            [
+              3,
+              2,
+              -6
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -2,
+            6
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              -1
+            ],
+            [
+              3,
+              2,
+              -6
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            8,
+            -9
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              4
+            ],
+            [
+              2,
+              3,
+              -6
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            8,
+            6
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2310"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 1,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S06",
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 0,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "3201"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              -1
+            ],
+            [
+              3,
+              2,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -5,
+            -3
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              4
+            ],
+            [
+              3,
+              2,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -5,
+            12
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              -1
+            ],
+            [
+              2,
+              3,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            5,
+            -3
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 2,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S07",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            3,
+            -9
+          ],
+          "witness": [
+            6,
+            1
+          ]
+        },
+        {
+          "kind": "generic-line",
+          "line": [
+            3,
+            1,
+            -3
+          ],
+          "witness": [
+            2,
+            -3
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031",
+        "2310",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 2,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S08",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              2,
+              -4
+            ],
+            [
+              1,
+              3,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -6,
+            5
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              2,
+              -4
+            ],
+            [
+              2,
+              3,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -2,
+            9
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 2,
+        "3201": 1,
+        "3210": 4
+      },
+      "id": "S09",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              2,
+              3,
+              -6
+            ],
+            [
+              3,
+              2,
+              -6
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -3,
+            4
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              2,
+              3,
+              -9
+            ],
+            [
+              3,
+              2,
+              -9
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -1,
+            6
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 2,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S10",
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 1,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              3,
+              -9
+            ],
+            [
+              2,
+              1,
+              -7
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -4,
+            15
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2310",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 2,
+        "3201": 1,
+        "3210": 10
+      },
+      "id": "S11",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 6
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031"
+      ],
+      "realizers": [
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            1,
+            -3
+          ],
+          "witness": [
+            -2,
+            5
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 2,
+        "3201": 1,
+        "3210": 10
+      },
+      "id": "S12",
+      "increment_vector": {
+        "2031": 1,
+        "2310": 1,
+        "3012": 1,
+        "3201": 1,
+        "3210": 6
+      },
+      "minimum_score": 1,
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              -2,
+              4
+            ],
+            [
+              1,
+              1,
+              -3
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            -1,
+            4
+          ]
+        },
+        {
+          "incident_lines": [
+            [
+              1,
+              1,
+              -3
+            ],
+            [
+              3,
+              -1,
+              -3
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            4,
+            -1
+          ]
+        }
+      ],
+      "zero_score_reopenings": []
+    },
+    {
+      "complete_score_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 4,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S13",
+      "increment_vector": {
+        "2031": 0,
+        "2310": 0,
+        "3012": 3,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2031",
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "kind": "generic-line",
+          "line": [
+            1,
+            -1,
+            -1
+          ],
+          "witness": [
+            0,
+            -1
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2031",
+        "2310",
+        "3201"
+      ]
+    },
+    {
+      "complete_score_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 4,
+        "3201": 0,
+        "3210": 4
+      },
+      "id": "S14",
+      "increment_vector": {
+        "2031": 1,
+        "2310": 0,
+        "3012": 3,
+        "3201": 0,
+        "3210": 0
+      },
+      "minimum_score": 0,
+      "minimizer_face": [
+        "2310",
+        "3201"
+      ],
+      "realizers": [
+        {
+          "incident_lines": [
+            [
+              1,
+              -1,
+              -1
+            ],
+            [
+              2,
+              1,
+              -7
+            ]
+          ],
+          "kind": "integer-intersection",
+          "point": [
+            6,
+            5
+          ]
+        }
+      ],
+      "zero_score_reopenings": [
+        "2310",
+        "3201"
+      ]
+    }
+  ]
+}

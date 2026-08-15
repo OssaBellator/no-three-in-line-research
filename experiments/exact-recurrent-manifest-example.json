@@ -1,0 +1,34 @@
+{
+  "schema": "exact-recurrent-lyapunov/v1",
+  "research_status": "toy arithmetic certificate; not a physical recurrent block",
+  "declared_state_set_complete": false,
+  "coefficient_provenance_complete": false,
+  "states": [
+    {
+      "id": "diffuse",
+      "weight": "5"
+    },
+    {
+      "id": "concentrated",
+      "weight": "8"
+    }
+  ],
+  "rows": [
+    {
+      "parent": "diffuse",
+      "offspring": {
+        "diffuse": "1/5",
+        "concentrated": "1/4"
+      },
+      "slack": "2"
+    },
+    {
+      "parent": "concentrated",
+      "offspring": {
+        "diffuse": "1/2",
+        "concentrated": "1/2"
+      },
+      "slack": "3/2"
+    }
+  ]
+}

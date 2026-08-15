@@ -1,0 +1,34 @@
+name: Exact recurrent side-four line kernel nonidentifiability
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+    paths:
+      - data/exact_recurrent_side_four_selected_line_geometry.json
+      - data/exact_recurrent_side_four_line_kernel_nonidentifiability.json
+      - scripts/check_exact_recurrent_side_four_line_kernel_nonidentifiability.py
+      - .github/workflows/exact-recurrent-side-four-line-kernel-nonidentifiability.yml
+  pull_request:
+    paths:
+      - data/exact_recurrent_side_four_selected_line_geometry.json
+      - data/exact_recurrent_side_four_line_kernel_nonidentifiability.json
+      - scripts/check_exact_recurrent_side_four_line_kernel_nonidentifiability.py
+      - .github/workflows/exact-recurrent-side-four-line-kernel-nonidentifiability.yml
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: |
+          python -m py_compile scripts/check_exact_recurrent_side_four_line_kernel_nonidentifiability.py
+          python scripts/check_exact_recurrent_side_four_line_kernel_nonidentifiability.py \
+            --geometry data/exact_recurrent_side_four_selected_line_geometry.json \
+            --witness data/exact_recurrent_side_four_line_kernel_nonidentifiability.json

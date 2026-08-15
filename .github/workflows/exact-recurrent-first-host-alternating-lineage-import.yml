@@ -1,0 +1,230 @@
+name: Exact recurrent first-host alternating lineage import
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+  pull_request:
+    paths:
+      - data/exact_recurrent_side_four_selected_provenance_projection.json
+      - data/exact_recurrent_first_host_background_signature.json
+      - data/exact_recurrent_first_host_forbidden_background_invariance.json
+      - data/exact_recurrent_first_host_physical_source_coverage.json
+      - data/exact_recurrent_first_host_alternating_lineage_import.json
+      - data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
+      - data/exact_recurrent_first_host_safe_signature_quotient.json
+      - data/exact_recurrent_first_host_safe_signature_symmetry.json
+      - data/exact_recurrent_first_host_restoration_menu_closure.json
+      - data/exact_recurrent_first_host_restoration_selector_face.json
+      - data/exact_recurrent_first_host_selector_rule_compatibility.json
+      - data/exact_recurrent_first_host_selector_face_congruence_worklist.json
+      - data/exact_recurrent_first_host_selector_face_source_import_gate.json
+      - data/exact_recurrent_first_host_selector_face_closure_leverage.json
+      - data/exact_recurrent_first_host_minimizer_face_scalar_route_cover.json
+      - data/exact_recurrent_first_host_minimizer_face_cost_dominance.json
+      - data/exact_recurrent_first_host_selector_boolean_boundary.json
+      - data/exact_recurrent_first_host_scalar_route_cover.json
+      - data/exact_recurrent_first_host_menu_interaction_potential.json
+      - data/exact_recurrent_first_host_alternating_route_budget_import.json
+      - data/exact_recurrent_first_host_closure_route_source_gate.json
+      - data/exact_recurrent_first_host_route_cover_admission.json
+      - data/exact_recurrent_first_host_transition_domain_source_audit.json
+      - data/exact_recurrent_first_host_state_exclusion_route_leverage.json
+      - data/exact_recurrent_first_host_action_family_route_leverage.json
+      - data/exact_recurrent_first_host_action_family_congruence_obstruction.json
+      - data/exact_recurrent_first_host_action_family_source_import_gate.json
+      - data/exact_recurrent_first_host_mixed_source_certificate_leverage.json
+      - data/exact_recurrent_first_host_hybrid_source_certificate_antichain.json
+      - data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json
+      - scripts/check_exact_recurrent_first_host_background_signature.py
+      - scripts/check_exact_recurrent_first_host_alternating_lineage_import.py
+      - scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py
+      - scripts/check_exact_recurrent_first_host_safe_signature_quotient.py
+      - scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py
+      - scripts/check_exact_recurrent_first_host_restoration_menu_closure.py
+      - scripts/check_exact_recurrent_first_host_restoration_selector_face.py
+      - scripts/check_exact_recurrent_first_host_selector_rule_compatibility.py
+      - scripts/check_exact_recurrent_first_host_selector_face_congruence_worklist.py
+      - scripts/check_exact_recurrent_first_host_selector_face_source_import_gate.py
+      - scripts/check_exact_recurrent_first_host_selector_face_closure_leverage.py
+      - scripts/check_exact_recurrent_first_host_minimizer_face_scalar_route_cover.py
+      - scripts/check_exact_recurrent_first_host_minimizer_face_cost_dominance.py
+      - scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py
+      - scripts/check_exact_recurrent_first_host_scalar_route_cover.py
+      - scripts/check_exact_recurrent_first_host_menu_interaction_potential.py
+      - scripts/check_exact_recurrent_first_host_alternating_route_budget_import.py
+      - scripts/check_exact_recurrent_first_host_closure_route_source_gate.py
+      - scripts/check_exact_recurrent_first_host_route_cover_admission.py
+      - scripts/check_exact_recurrent_first_host_transition_domain_source_audit.py
+      - scripts/check_exact_recurrent_first_host_state_exclusion_route_leverage.py
+      - scripts/check_exact_recurrent_first_host_action_family_route_leverage.py
+      - scripts/check_exact_recurrent_first_host_action_family_congruence_obstruction.py
+      - scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py
+      - scripts/check_exact_recurrent_first_host_mixed_source_certificate_leverage.py
+      - scripts/check_exact_recurrent_first_host_hybrid_source_certificate_antichain.py
+      - scripts/check_exact_recurrent_first_host_evidence_scope_overlap_obstruction.py
+      - docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md
+      - docs/555-prime-power-installed-operation-registry-1166.md
+      - docs/ERL_SELECTOR_RULE_REVIEW_GATE.md
+      - docs/ERL_SELECTOR_FACE_CONGRUENCE_REVIEW_GATE.md
+      - docs/ERL_SELECTOR_FACE_SOURCE_IMPORT_REVIEW_GATE.md
+      - docs/ERL_SELECTOR_FACE_CLOSURE_LEVERAGE_REVIEW_GATE.md
+      - docs/ERL_MINIMIZER_FACE_SCALAR_REVIEW_GATE.md
+      - docs/ERL_MINIMIZER_FACE_COST_DOMINANCE_REVIEW_GATE.md
+      - docs/ERL_MIXED_SOURCE_CERTIFICATE_REVIEW_GATE.md
+      - docs/ERL_HYBRID_SOURCE_CERTIFICATE_REVIEW_GATE.md
+      - docs/ERL_EVIDENCE_SCOPE_OVERLAP_REVIEW_GATE.md
+      - docs/exact-recurrent-first-host-alternating-lineage-import.md
+      - docs/exact-recurrent-first-host-side-four-arithmetic-profile-import.md
+      - docs/exact-recurrent-first-host-safe-signature-quotient.md
+      - docs/exact-recurrent-first-host-safe-signature-symmetry.md
+      - docs/exact-recurrent-first-host-restoration-menu-closure.md
+      - docs/exact-recurrent-first-host-restoration-selector-face.md
+      - docs/exact-recurrent-first-host-selector-rule-compatibility.md
+      - docs/exact-recurrent-first-host-selector-face-congruence-worklist.md
+      - docs/exact-recurrent-first-host-selector-face-source-import-gate.md
+      - docs/exact-recurrent-first-host-selector-face-closure-leverage.md
+      - docs/exact-recurrent-first-host-minimizer-face-scalar-route-cover.md
+      - docs/exact-recurrent-first-host-minimizer-face-cost-dominance.md
+      - docs/exact-recurrent-first-host-selector-boolean-boundary.md
+      - docs/exact-recurrent-first-host-scalar-route-cover.md
+      - docs/exact-recurrent-first-host-menu-interaction-potential.md
+      - docs/exact-recurrent-first-host-alternating-route-budget-import.md
+      - docs/exact-recurrent-first-host-closure-route-source-gate.md
+      - docs/exact-recurrent-first-host-route-cover-admission.md
+      - docs/exact-recurrent-first-host-transition-domain-source-audit.md
+      - docs/exact-recurrent-first-host-state-exclusion-route-leverage.md
+      - docs/exact-recurrent-first-host-action-family-route-leverage.md
+      - docs/exact-recurrent-first-host-action-family-congruence-obstruction.md
+      - docs/exact-recurrent-first-host-action-family-source-import-gate.md
+      - docs/exact-recurrent-first-host-mixed-source-certificate-leverage.md
+      - docs/exact-recurrent-first-host-hybrid-source-certificate-antichain.md
+      - docs/exact-recurrent-first-host-evidence-scope-overlap-obstruction.md
+      - tracks/exact-recurrent-selector-rule-progress.md
+      - tracks/exact-recurrent-minimizer-face-scalar-progress.md
+      - tracks/exact-recurrent-mixed-source-certificate-progress.md
+      - tracks/exact-recurrent-hybrid-source-certificate-progress.md
+      - tracks/exact-recurrent-evidence-scope-overlap-progress.md
+      - .github/workflows/exact-recurrent-first-host-alternating-lineage-import.yml
+  workflow_dispatch:
+
+jobs:
+  exact-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Check alternating-core lineage import
+        run: |
+          python scripts/check_exact_recurrent_first_host_alternating_lineage_import.py \
+            --check data/exact_recurrent_first_host_alternating_lineage_import.json
+      - name: Check exact side-four arithmetic profile import
+        run: |
+          python scripts/check_exact_recurrent_first_host_side_four_arithmetic_profile_import.py \
+            --check data/exact_recurrent_first_host_side_four_arithmetic_profile_import.json
+      - name: Check exact safe signature quotient
+        run: |
+          python scripts/check_exact_recurrent_first_host_safe_signature_quotient.py \
+            --check data/exact_recurrent_first_host_safe_signature_quotient.json
+      - name: Check exact safe signature symmetry
+        run: |
+          python scripts/check_exact_recurrent_first_host_safe_signature_symmetry.py \
+            --check data/exact_recurrent_first_host_safe_signature_symmetry.json
+      - name: Check restoration menu closure
+        run: |
+          python scripts/check_exact_recurrent_first_host_restoration_menu_closure.py \
+            --check data/exact_recurrent_first_host_restoration_menu_closure.json
+      - name: Check restoration selector faces
+        run: |
+          python scripts/check_exact_recurrent_first_host_restoration_selector_face.py \
+            --check data/exact_recurrent_first_host_restoration_selector_face.json
+      - name: Check selector-rule compatibility
+        run: |
+          python scripts/check_exact_recurrent_first_host_selector_rule_compatibility.py \
+            --check data/exact_recurrent_first_host_selector_rule_compatibility.json
+      - name: Check selector-face congruence worklist
+        run: |
+          python scripts/check_exact_recurrent_first_host_selector_face_congruence_worklist.py \
+            --check data/exact_recurrent_first_host_selector_face_congruence_worklist.json
+      - name: Check selector-face source import gate
+        run: |
+          python scripts/check_exact_recurrent_first_host_selector_face_source_import_gate.py \
+            --check data/exact_recurrent_first_host_selector_face_source_import_gate.json
+      - name: Check selector-face closure leverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_selector_face_closure_leverage.py \
+            --check data/exact_recurrent_first_host_selector_face_closure_leverage.json
+      - name: Check minimizer-face scalar route covers
+        run: |
+          python scripts/check_exact_recurrent_first_host_minimizer_face_scalar_route_cover.py \
+            --check data/exact_recurrent_first_host_minimizer_face_scalar_route_cover.json
+      - name: Check minimizer-face cost dominance
+        run: |
+          python scripts/check_exact_recurrent_first_host_minimizer_face_cost_dominance.py \
+            --check data/exact_recurrent_first_host_minimizer_face_cost_dominance.json \
+            --self-test
+      - name: Check selector Boolean boundary gates
+        run: |
+          python scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py \
+            --check data/exact_recurrent_first_host_selector_boolean_boundary.json
+      - name: Check scalar route-cover classification
+        run: |
+          python scripts/check_exact_recurrent_first_host_scalar_route_cover.py \
+            --check data/exact_recurrent_first_host_scalar_route_cover.json
+      - name: Check menu interaction potentials
+        run: |
+          python scripts/check_exact_recurrent_first_host_menu_interaction_potential.py \
+            --check data/exact_recurrent_first_host_menu_interaction_potential.json
+      - name: Check alternating route budget import
+        run: |
+          python scripts/check_exact_recurrent_first_host_alternating_route_budget_import.py \
+            --check data/exact_recurrent_first_host_alternating_route_budget_import.json
+      - name: Check closure route source gate
+        run: |
+          python scripts/check_exact_recurrent_first_host_closure_route_source_gate.py \
+            --check data/exact_recurrent_first_host_closure_route_source_gate.json
+      - name: Check route-cover admission
+        run: |
+          python scripts/check_exact_recurrent_first_host_route_cover_admission.py \
+            --check data/exact_recurrent_first_host_route_cover_admission.json
+      - name: Check transition-domain source audit
+        run: |
+          python scripts/check_exact_recurrent_first_host_transition_domain_source_audit.py \
+            --check data/exact_recurrent_first_host_transition_domain_source_audit.json
+      - name: Check state-exclusion route leverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_state_exclusion_route_leverage.py \
+            --check data/exact_recurrent_first_host_state_exclusion_route_leverage.json
+      - name: Check action-family route leverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_action_family_route_leverage.py \
+            --check data/exact_recurrent_first_host_action_family_route_leverage.json
+      - name: Check action-family congruence obstruction
+        run: |
+          python scripts/check_exact_recurrent_first_host_action_family_congruence_obstruction.py \
+            --check data/exact_recurrent_first_host_action_family_congruence_obstruction.json
+      - name: Check action-family source import gate
+        run: |
+          python scripts/check_exact_recurrent_first_host_action_family_source_import_gate.py \
+            --check data/exact_recurrent_first_host_action_family_source_import_gate.json
+      - name: Check mixed source-certificate leverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_mixed_source_certificate_leverage.py \
+            --check data/exact_recurrent_first_host_mixed_source_certificate_leverage.json \
+            --self-test
+      - name: Check hybrid source-certificate antichain
+        run: |
+          python scripts/check_exact_recurrent_first_host_hybrid_source_certificate_antichain.py \
+            --check data/exact_recurrent_first_host_hybrid_source_certificate_antichain.json \
+            --self-test
+      - name: Check evidence-scope overlap obstruction
+        run: |
+          python scripts/check_exact_recurrent_first_host_evidence_scope_overlap_obstruction.py \
+            --check data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json \
+            --self-test

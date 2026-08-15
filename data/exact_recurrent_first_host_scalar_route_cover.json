@@ -1,0 +1,318 @@
+{
+  "additive_bit_potentials": [
+    {
+      "coefficient_signs": {
+        "r02": -1,
+        "r20": -1
+      },
+      "external_route_edges": [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "paid_menu_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ]
+    },
+    {
+      "coefficient_signs": {
+        "r02": -1,
+        "r20": 1
+      },
+      "external_route_edges": [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "paid_menu_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ]
+    },
+    {
+      "coefficient_signs": {
+        "r02": 1,
+        "r20": -1
+      },
+      "external_route_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ],
+      "paid_menu_edges": [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ]
+    },
+    {
+      "coefficient_signs": {
+        "r02": 1,
+        "r20": 1
+      },
+      "external_route_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ],
+      "paid_menu_edges": [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ]
+    }
+  ],
+  "aggregate": {
+    "additive_bit_potential_orientations": 4,
+    "arbitrary_menu_scalar_orientations": 14,
+    "distinct_menu_scalar_orientations": 14,
+    "distinct_projected_label_tournaments": 8,
+    "menu_cyclic_incompatible_route_covers": 2,
+    "menu_minimum_external_routes": 4,
+    "menu_one_per_pair_route_choices": 16,
+    "menu_orientations_with_cyclic_label_projection": 2,
+    "menu_orientations_with_transitive_label_projection": 12,
+    "menu_paid_edges": 4,
+    "menu_scalar_compatible_route_covers": 14,
+    "menu_total_orders": 24,
+    "residual_menu_routes_flipping_r02": 2,
+    "residual_menu_routes_flipping_r20": 2,
+    "residual_menu_routes_selector_changing": 3,
+    "residual_menu_routes_selector_neutral": 1,
+    "residual_selector_routes_flipping_r02": 2,
+    "residual_selector_routes_flipping_r20": 1,
+    "restore_paid_orientation_distribution": {
+      "0": 1,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 1
+    },
+    "selected_label_cyclic_incompatible_route_covers": 2,
+    "selected_label_minimum_external_routes": 3,
+    "selected_label_one_per_pair_route_choices": 8,
+    "selected_label_paid_edges": 3,
+    "selected_label_scalar_compatible_route_covers": 6,
+    "selected_label_total_orders": 6
+  },
+  "conclusion": {
+    "additive_bit_potentials_realize_all_menu_scalar_patterns": 0,
+    "interaction_sensitive_menu_state_needed_for_cyclic_projection": 1,
+    "label_scalar_route_cover_classification_complete": 1,
+    "menu_refinement_expands_paid_selector_patterns_from_6_to_8": 1,
+    "menu_refinement_increases_maximum_paid_selector_edges": 0,
+    "menu_scalar_route_cover_classification_complete": 1,
+    "physical_route_assignment_proved": 0,
+    "promotion_to_recurrent_closure_allowed": 0,
+    "two_cyclic_label_tournaments_lift_to_acyclic_menu_orders": 1
+  },
+  "cyclic_label_projection_menu_lifts": [
+    {
+      "external_route_edges": [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      "low_to_high_orders": [
+        [
+          "11",
+          "01",
+          "00",
+          "10"
+        ]
+      ],
+      "paid_menu_edges": [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "projected_label_cycle": [
+        "2031->3012",
+        "3012->3201",
+        "3201->2031"
+      ]
+    },
+    {
+      "external_route_edges": [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "low_to_high_orders": [
+        [
+          "10",
+          "00",
+          "01",
+          "11"
+        ]
+      ],
+      "paid_menu_edges": [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      "projected_label_cycle": [
+        "2031->3201",
+        "3012->2031",
+        "3201->3012"
+      ]
+    }
+  ],
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_chart_confinement_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "schema": "exact-recurrent-first-host-scalar-route-cover/v1",
+  "scope": {
+    "descent_convention": "paid iff potential(source) > potential(target)",
+    "host_id": "s4-75b04c45c1c8eac2",
+    "states": [
+      {
+        "menu": "blocked",
+        "selected_response": "3012",
+        "state": "00"
+      },
+      {
+        "menu": "restore_20",
+        "selected_response": "3201",
+        "state": "01"
+      },
+      {
+        "menu": "restore_02",
+        "selected_response": "2031",
+        "state": "10"
+      },
+      {
+        "menu": "restore_both",
+        "selected_response": "2031",
+        "state": "11"
+      }
+    ]
+  },
+  "selected_label_scalar_orders": [
+    {
+      "external_routes": [
+        "00->01",
+        "00->10",
+        "11->01"
+      ],
+      "low_to_high": [
+        "3012",
+        "2031",
+        "3201"
+      ],
+      "paid": [
+        "01->00",
+        "01->11",
+        "10->00"
+      ]
+    },
+    {
+      "external_routes": [
+        "00->01",
+        "00->10",
+        "01->11"
+      ],
+      "low_to_high": [
+        "3012",
+        "3201",
+        "2031"
+      ],
+      "paid": [
+        "01->00",
+        "10->00",
+        "11->01"
+      ]
+    },
+    {
+      "external_routes": [
+        "00->01",
+        "10->00",
+        "11->01"
+      ],
+      "low_to_high": [
+        "2031",
+        "3012",
+        "3201"
+      ],
+      "paid": [
+        "00->10",
+        "01->00",
+        "01->11"
+      ]
+    },
+    {
+      "external_routes": [
+        "01->00",
+        "10->00",
+        "11->01"
+      ],
+      "low_to_high": [
+        "2031",
+        "3201",
+        "3012"
+      ],
+      "paid": [
+        "00->01",
+        "00->10",
+        "01->11"
+      ]
+    },
+    {
+      "external_routes": [
+        "00->10",
+        "01->00",
+        "01->11"
+      ],
+      "low_to_high": [
+        "3201",
+        "3012",
+        "2031"
+      ],
+      "paid": [
+        "00->01",
+        "10->00",
+        "11->01"
+      ]
+    },
+    {
+      "external_routes": [
+        "01->00",
+        "01->11",
+        "10->00"
+      ],
+      "low_to_high": [
+        "3201",
+        "2031",
+        "3012"
+      ],
+      "paid": [
+        "00->01",
+        "00->10",
+        "11->01"
+      ]
+    }
+  ]
+}

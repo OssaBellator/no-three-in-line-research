@@ -1,0 +1,249 @@
+{
+  "aggregate": {
+    "current_complete_covers": 0,
+    "current_route_closed_edges": 0,
+    "label_cycle_obstructions": 2,
+    "label_directed_edges": 6,
+    "label_feasible_masks": 25,
+    "label_masks": 64,
+    "label_pair_covered_masks": 27,
+    "menu_cycle_obstructions": 2,
+    "menu_directed_edges": 8,
+    "menu_feasible_masks": 79,
+    "menu_masks": 256,
+    "menu_pair_covered_masks": 81
+  },
+  "conclusion": {
+    "current_source_gate_completes_a_scalar_cover": 0,
+    "one_bidirectional_pair_removes_cycle_obstruction": 1,
+    "pair_coverage_is_necessary": 1,
+    "pair_coverage_is_sufficient_except_two_cycles": 1,
+    "promotion_to_recurrent_closure_allowed": 0,
+    "source_cover_admission_classification_complete": 1
+  },
+  "criterion": {
+    "bidirectional_shortcut": "pair coverage plus one bidirectionally route-closed pair always contains a scalar cover",
+    "only_remaining_obstruction": "exactly one direction per pair forming one of two directed cycles",
+    "pair_coverage": "at least one route-closed direction in every reversal pair"
+  },
+  "current_source_state": {
+    "complete_label_scalar_covers": 0,
+    "complete_menu_scalar_covers": 0,
+    "route_closed_edges": []
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "outer_profile_mapping_populated": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "host_id": "s4-75b04c45c1c8eac2",
+  "label_scalar": {
+    "contained_cover_count_distribution": {
+      "1": 12,
+      "2": 6,
+      "3": 6,
+      "6": 1
+    },
+    "cycle_obstruction_masks": [
+      [
+        "00->01",
+        "01->11",
+        "10->00"
+      ],
+      [
+        "00->10",
+        "01->00",
+        "11->01"
+      ]
+    ],
+    "directed_edge_masks": 64,
+    "feasible_mask_size_distribution": {
+      "3": 6,
+      "4": 12,
+      "5": 6,
+      "6": 1
+    },
+    "minimal_covers": [
+      [
+        "00->01",
+        "00->10",
+        "01->11"
+      ],
+      [
+        "00->01",
+        "00->10",
+        "11->01"
+      ],
+      [
+        "00->01",
+        "10->00",
+        "11->01"
+      ],
+      [
+        "00->10",
+        "01->00",
+        "01->11"
+      ],
+      [
+        "01->00",
+        "01->11",
+        "10->00"
+      ],
+      [
+        "01->00",
+        "10->00",
+        "11->01"
+      ]
+    ],
+    "minimal_feasible_masks": 6,
+    "pair_covered_masks": 27,
+    "source_cover_feasible_masks": 25,
+    "source_cover_infeasible_masks": 39
+  },
+  "menu_scalar": {
+    "contained_cover_count_distribution": {
+      "1": 22,
+      "14": 1,
+      "2": 24,
+      "3": 12,
+      "4": 12,
+      "7": 8
+    },
+    "cycle_obstruction_masks": [
+      [
+        "00->01",
+        "01->11",
+        "10->00",
+        "11->10"
+      ],
+      [
+        "00->10",
+        "01->00",
+        "10->11",
+        "11->01"
+      ]
+    ],
+    "directed_edge_masks": 256,
+    "feasible_mask_size_distribution": {
+      "4": 14,
+      "5": 32,
+      "6": 24,
+      "7": 8,
+      "8": 1
+    },
+    "minimal_covers": [
+      [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ],
+      [
+        "00->01",
+        "00->10",
+        "01->11",
+        "11->10"
+      ],
+      [
+        "00->01",
+        "00->10",
+        "10->11",
+        "11->01"
+      ],
+      [
+        "00->01",
+        "00->10",
+        "11->01",
+        "11->10"
+      ],
+      [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      [
+        "00->01",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      [
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->11"
+      ],
+      [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ],
+      [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      [
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      [
+        "01->00",
+        "01->11",
+        "10->00",
+        "11->10"
+      ],
+      [
+        "01->00",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ]
+    ],
+    "minimal_feasible_masks": 14,
+    "pair_covered_masks": 81,
+    "source_cover_feasible_masks": 79,
+    "source_cover_infeasible_masks": 177
+  },
+  "schema": "exact-recurrent-first-host-route-cover-admission/v1",
+  "source_gate": "data/exact_recurrent_first_host_closure_route_source_gate.json",
+  "sufficient_patterns": {
+    "all_delete_menu_edges": [
+      "01->00",
+      "10->00",
+      "11->01",
+      "11->10"
+    ],
+    "all_restore_menu_edges": [
+      "00->01",
+      "00->10",
+      "01->11",
+      "10->11"
+    ],
+    "all_selector_changing_edges_close_a_label_cover": 1,
+    "all_selector_changing_plus_either_neutral_direction_close_a_menu_cover": 1,
+    "one_bit_family_alone_closes_a_menu_cover": 0
+  }
+}

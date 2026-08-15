@@ -1,0 +1,335 @@
+{
+  "aggregate": {
+    "five_response_signature_classes": 4,
+    "new_restore_both_response": "2301",
+    "new_secant_line_coordinates": 3,
+    "operation_aware_signature_classes": 10,
+    "restore_both_responses": 6,
+    "safe_backgrounds": 32,
+    "single_restore_02_minimizer_faces": 1,
+    "single_restore_20_minimizer_faces": 1,
+    "six_response_score_classes": 8,
+    "six_response_score_collision_classes": 2
+  },
+  "conclusion": {
+    "eight_class_six_response_score_quotient_injective_on_operation_signature": 0,
+    "four_class_five_response_signature_closed_under_restore_both": 0,
+    "operation_menu_expansion_requires_signature_refinement": 1,
+    "single_edge_restoration_selector_congruent_on_safe_class": 1,
+    "transition_payment_congruence_proved": 0
+  },
+  "expanded_score_classes": [
+    {
+      "background_count": 6,
+      "score_vector": [
+        1,
+        4,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "background_count": 10,
+      "score_vector": [
+        1,
+        4,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "background_count": 4,
+      "score_vector": [
+        1,
+        4,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    {
+      "background_count": 2,
+      "score_vector": [
+        2,
+        5,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "background_count": 4,
+      "score_vector": [
+        2,
+        5,
+        1,
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "background_count": 2,
+      "score_vector": [
+        2,
+        5,
+        1,
+        1,
+        1,
+        3
+      ]
+    },
+    {
+      "background_count": 2,
+      "score_vector": [
+        3,
+        6,
+        2,
+        2,
+        2,
+        3
+      ]
+    },
+    {
+      "background_count": 2,
+      "score_vector": [
+        3,
+        6,
+        2,
+        2,
+        2,
+        4
+      ]
+    }
+  ],
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "legal_restoration_operation_proved": 0,
+    "physical_chart_confinement_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "menus": {
+    "blocked": [
+      "3012",
+      "3210"
+    ],
+    "restore_02": [
+      "2031",
+      "2310",
+      "3012",
+      "3210"
+    ],
+    "restore_20": [
+      "3012",
+      "3201",
+      "3210"
+    ],
+    "restore_both": [
+      "2031",
+      "2301",
+      "2310",
+      "3012",
+      "3201",
+      "3210"
+    ]
+  },
+  "new_restore_both_secant_lines": [
+    [
+      1,
+      1,
+      -4
+    ],
+    [
+      1,
+      1,
+      -2
+    ],
+    [
+      3,
+      1,
+      -6
+    ]
+  ],
+  "operation_signature": {
+    "classes": [
+      {
+        "background_count": 6,
+        "signature": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "background_count": 6,
+        "signature": [
+          0,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "background_count": 4,
+        "signature": [
+          0,
+          0,
+          1,
+          0
+        ]
+      },
+      {
+        "background_count": 4,
+        "signature": [
+          0,
+          0,
+          1,
+          1
+        ]
+      },
+      {
+        "background_count": 2,
+        "signature": [
+          0,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "background_count": 2,
+        "signature": [
+          0,
+          1,
+          1,
+          1
+        ]
+      },
+      {
+        "background_count": 2,
+        "signature": [
+          1,
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "background_count": 2,
+        "signature": [
+          1,
+          0,
+          0,
+          1
+        ]
+      },
+      {
+        "background_count": 2,
+        "signature": [
+          1,
+          1,
+          1,
+          0
+        ]
+      },
+      {
+        "background_count": 2,
+        "signature": [
+          1,
+          1,
+          1,
+          1
+        ]
+      }
+    ],
+    "coordinates": [
+      "a=1[{00,01} subset B]",
+      "b=1[{01,11} subset B]",
+      "u=1[11 in B]",
+      "v=1[22 in B]"
+    ]
+  },
+  "restore_both_2301_formula": "score(2301;B)=a+b+u+v",
+  "schema": "exact-recurrent-first-host-restoration-menu-closure/v2",
+  "scope": {
+    "deletions": [
+      "02",
+      "20"
+    ],
+    "host_id": "s4-75b04c45c1c8eac2",
+    "response_order": [
+      "3012",
+      "3210",
+      "2031",
+      "2310",
+      "3201",
+      "2301"
+    ],
+    "safe_background_universe": [
+      "00",
+      "01",
+      "11",
+      "22",
+      "33"
+    ]
+  },
+  "score_collisions": [
+    {
+      "operation_signatures": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "score_vector": [
+        1,
+        4,
+        0,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "operation_signatures": [
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "score_vector": [
+        2,
+        5,
+        1,
+        1,
+        1,
+        2
+      ]
+    }
+  ]
+}

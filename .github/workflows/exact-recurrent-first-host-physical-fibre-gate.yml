@@ -1,0 +1,68 @@
+name: Exact recurrent first-host physical fibre gate
+
+on:
+  push:
+    branches:
+      - research/exact-recurrent-lyapunov-audit
+  pull_request:
+    paths:
+      - STATUS.md
+      - docs/325-prime-power-geometric-orbit-fibre-correction.md
+      - docs/328-prime-power-geometric-fibre-host-census-and-line-caps.md
+      - data/prime_power_side_four_raw_fibre_lineage_manifest.json
+      - data/prime_power_side_four_selected_response_provenance_manifest.json
+      - data/exact_recurrent_first_host_dual_edge_bridge.json
+      - data/exact_recurrent_first_host_physical_source_coverage.json
+      - data/exact_recurrent_first_host_physical_fibre_batch_gate.json
+      - data/exact_recurrent_first_host_chart_confinement_transfer.json
+      - data/exact_recurrent_first_host_chart_fixture_nonpromotion.json
+      - data/exact_recurrent_first_host_one_exterior_original_face.json
+      - data/exact_recurrent_first_host_forbidden_background_invariance.json
+      - data/exact_recurrent_first_host_global_integer_two_point_strict_reversal.json
+      - data/exact_recurrent_side_four_selected_line_geometry.json
+      - data/exact_recurrent_side_four_kernel.json
+      - data/exact_recurrent_first_host_occupancy_moments.json
+      - scripts/extend_prime_power_installed_operation_registry_1166.py
+      - scripts/verify_prime_power_geometric_fibre_host_census.py
+      - scripts/verify_prime_power_line_occupancy_capacity.py
+      - scripts/check_prime_power_geometric_fibre_outer_assignment_ancestry.py
+      - scripts/check_exact_recurrent_first_host_physical_source_coverage.py
+      - scripts/check_exact_recurrent_first_host_physical_fibre_batch_gate.py
+      - scripts/check_exact_recurrent_first_host_chart_confinement_transfer.py
+      - scripts/check_exact_recurrent_first_host_chart_fixture_nonpromotion.py
+      - scripts/check_exact_recurrent_first_host_one_exterior_original_face.py
+      - .github/workflows/exact-recurrent-first-host-physical-fibre-gate.yml
+  workflow_dispatch:
+
+jobs:
+  exact-audit:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Check physical source coverage
+        run: |
+          python scripts/check_exact_recurrent_first_host_physical_source_coverage.py \
+            --check data/exact_recurrent_first_host_physical_source_coverage.json
+      - name: Check physical fibre batch gate
+        run: |
+          python scripts/check_exact_recurrent_first_host_physical_fibre_batch_gate.py \
+            --check data/exact_recurrent_first_host_physical_fibre_batch_gate.json
+      - name: Check chart-confinement transfer
+        run: |
+          python scripts/check_exact_recurrent_first_host_chart_confinement_transfer.py \
+            --check data/exact_recurrent_first_host_chart_confinement_transfer.json
+      - name: Check chart-fixture non-promotion
+        run: |
+          python scripts/check_exact_recurrent_first_host_chart_fixture_nonpromotion.py \
+            --check data/exact_recurrent_first_host_chart_fixture_nonpromotion.json
+      - name: Check one-exterior original-face classification
+        run: |
+          python scripts/check_exact_recurrent_first_host_one_exterior_original_face.py \
+            --check data/exact_recurrent_first_host_one_exterior_original_face.json

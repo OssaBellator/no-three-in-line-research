@@ -1,0 +1,116 @@
+# ERL review checklist
+
+- [x] Exact 11-host residual side-four kernel compiled.
+- [x] Stable upstream host and blocker IDs joined.
+- [x] Complete-score dependence compressed to a 31-coordinate signature.
+- [x] Full integer singleton signature atlas compiled.
+- [x] Pair-through-response component atlas compiled.
+- [x] Critical pair lines `x+y=2` and `x+y=4` classified.
+- [x] Infinite generic original-face family proved on both critical lines.
+- [x] Global integer two-point strict reversal classification completed.
+- [x] Exactly four strict `3012` backgrounds proved; no strict `3210` background.
+- [x] Current side-four projection proved non-injective for complete scores.
+- [x] Installed raw-lineage target/response-edge promotion gap proved.
+- [x] Dual-edge bridge reconstructs exactly `3012,3210` while retaining target `01`.
+- [x] Sixteen-field physical completeness worklist compiled.
+- [x] Exact source coverage proves zero of sixteen physical fields populated.
+- [x] Reject-by-default physical occurrence batch gate installed.
+- [x] Chart confinement plus response disjointness proved sufficient for selector safety.
+- [x] Synthetic `grid-response` fixtures proved insufficient for physical promotion.
+- [x] One-exterior original-face worklist classified completely.
+- [x] Strict two-point reversal proved to require two exterior points.
+- [x] Alternating-core occurrence and physical-signature contracts audited.
+- [x] Thirty-two safe backgrounds compressed to three exact selector-score classes.
+- [x] Three-class score quotient proved non-injective on the 31-coordinate signature.
+- [x] Safe class compiled into four exact 31-coordinate signature classes.
+- [x] Four-class reduction to three proved impossible by first-host symmetry.
+- [x] Exact side-four determinant-ratio denominator ceiling reduced from 18 to 13.
+- [x] Conditional side-four arithmetic-profile stock reduced to 20,250.
+- [x] Individual restorations `02` and `20` have fixed safe-class minimizer faces.
+- [x] Simultaneous restoration exposes response `2301` and three new secant coordinates.
+- [x] Safe class compiled into ten exact operation-aware signatures.
+- [x] Six-response score quotient has eight classes and two exact signature collisions.
+- [x] Current four-signature quotient proved not closed under expanded response menus.
+- [x] Canonical selected response proved background-invariant for all four restoration menus.
+- [x] Positive next-energy gap proved background-invariant within every restoration menu.
+- [x] Simultaneous-restoration minimizer face classified into exact 8/24 census.
+- [x] Two-bit restoration context compiled into six exact selector recreation gates.
+- [x] Exact selector gate stock improves the generic single-bit bound from 12 to 6.
+- [x] Selected-label transition graph proved to be the complete bidirected triangle.
+- [x] Selected-label-only strict potential refuted on the six-edge gate stock.
+- [x] Menu-state-only strict potential refuted on the eight-edge context stock.
+- [x] At least three selector gates proved to require a non-label-descent route.
+- [x] At least four menu edges proved to require a non-menu-descent route.
+- [x] Six scalar-compatible minimum selector route covers classified exactly.
+- [x] Fourteen scalar-compatible minimum menu route covers classified exactly.
+- [x] Menu refinement proved to expand paid selector patterns from six to eight without increasing the paid-gate count.
+- [x] Exactly two directed label tournaments proved to lift to acyclic menu-state orders.
+- [x] Additive bit potentials proved to realize exactly four of fourteen menu orientations.
+- [x] Boolean interaction coefficient `Gamma` classified on all fourteen menu orientations.
+- [x] Exactly ten menu orientations proved to require nonzero interaction.
+- [x] Sharp minimum nonzero integer interaction magnitude proved to be two.
+- [x] Alternating-core capacity, recreation and outer-reset contracts pinned by immutable source blobs.
+- [x] Upstream capacity/reset validators proved not to contain first-host physical data.
+- [x] Every menu cover proved to leave exactly three changing, one neutral, two `r02` and two `r20` routes.
+- [x] Residual restore/delete burden classified into exact `1,4,4,4,1` distribution.
+- [x] Direction-only nonnegative route costs proved to admit an additive optimum.
+- [x] Exact edge-sensitive costs proved capable of forcing every interaction cover.
+- [x] Conditional gate-capacity ceiling `N_cap <= C0 + H_cap` installed.
+- [x] Conditional outer-reset ceiling `N_out <= E_first + Q` installed.
+- [x] Sixteen-field alternating route-import worklist compiled with zero populated fields.
+- [x] Five admissible closure-route classes compiled for every directed menu edge.
+- [x] Exact source-admissibility matrix compiled for all forty edge-route pairs.
+- [x] All eight symbolic edges proved to have candidate normalized addresses but zero physical legal-edge proofs.
+- [x] All forty edge-route pairs proved source-inadmissible under current first-host coverage.
+- [x] Capacity-only label-scalar closure proved to require three distinct exact gate addresses absent a sharing theorem.
+- [x] Capacity-only menu-scalar closure proved to require four distinct exact gate addresses absent a sharing theorem.
+- [x] Every selector edge proved residual in three of six label covers; every menu edge in seven of fourteen menu covers.
+- [x] First traversal of a decorated outer edge proved insufficient to close its repetition.
+- [x] All 64 selector-edge admission masks classified; exactly 25 contain a label-scalar cover.
+- [x] All 256 menu-edge admission masks classified; exactly 79 contain a menu-scalar cover.
+- [x] Pair coverage proved necessary and sufficient except for exactly two directed cycles at each level.
+- [x] One bidirectionally route-closed pair proved sufficient to remove the cycle obstruction.
+- [x] All-restore and all-delete edge sets proved to be exact additive menu-cover patterns.
+- [x] Current zero-admission source state proved to contain no complete scalar cover.
+- [x] Installed 1,166-kind registry proved not to be an occurrence-level legality table.
+- [x] Protected-interface, target-anchor, inherited-coordinate and owner/fate execution interfaces audited for first-host state and edge records.
+- [x] Side-three anchor restoration fixtures proved insufficient to promote `02` or `20` first-host transitions.
+- [x] Four symbolic menu states compiled with zero physical state records.
+- [x] Eight symbolic directed edges compiled with zero operation-kind mappings, owner tokens, traces or legality proofs.
+- [x] Twelve-field physical edge-promotion contract compiled.
+- [x] Restore-both state `11` proved to require its own physical realization before any incident edge can be promoted.
+- [x] Current source proved not to determine whether the physical transition graph is full, proper or empty.
+- [x] All sixteen impossible-state subsets classified for incident-edge physical exclusion leverage.
+- [x] No single impossible state proved sufficient to complete either a label or menu scalar cover.
+- [x] Excluding restore-both state `11` alone proved to leave a two-edge route deficit at both levels.
+- [x] Exact two-state label shortcuts proved to be `{00,01}`, `{00,11}`, `{01,10}`.
+- [x] Exact two-state menu shortcuts proved to be the opposite pairs `{00,11}` and `{01,10}`.
+- [x] Current source proved to supply zero state-impossibility certificates.
+- [ ] Supply a source-defined occurrence domain and exact expected count.
+- [ ] Prove a physical chart or exterior-count bound, or enumerate unrestricted exterior occurrences.
+- [ ] Populate every physical first-host occurrence with the dual-edge bridge.
+- [ ] Fill all sixteen source-backed physical fields per occurrence.
+- [ ] Populate a payment-complete physical-signature map and continuation edges.
+- [ ] Emit source-backed physical state records for every restoration-menu state claimed realizable.
+- [ ] Supply a source-backed impossibility certificate for every state claimed excluded.
+- [ ] Map every claimed directed edge to one installed operation kind and exact registry entry.
+- [ ] Supply source and target state references, persistent owner identity, operation trace and legality proof for every claimed edge.
+- [ ] Prove state `11` physically realizable or source-prove it impossible; if impossible, route the remaining exact two-edge deficit.
+- [ ] Publish the exact physical legal-edge mask, including source-backed exclusions for absent directions.
+- [ ] After state exclusions, populate the exact remaining edge routes reported by the leverage manifest.
+- [ ] Populate a route-closed edge mask covering every reversal pair and avoiding the two cycle obstructions.
+- [ ] Choose a source-backed scalar route cover contained in that admitted edge mask.
+- [ ] Install source-backed menu potential values and verify strict descent on every paid edge.
+- [ ] Populate direct exact gate capacities or a source-faithful capacity-recreation ledger.
+- [ ] Prove any proposed shared-capacity relation across distinct directed gate addresses.
+- [ ] Populate source-backed outer profiles, decorations, epoch bound and macro tickets for reset-routed edges.
+- [ ] Populate the route-specific proof fields for every chosen residual edge.
+- [ ] Populate one registered closure route or finite capacity for every residual edge.
+- [ ] Prove operations and child rows congruent on the ten operation-aware signature classes.
+- [ ] Prove the physical CRT label is determinant-realized and populate its role address.
+- [ ] Exclude, route, pay, or retain the exact one- and two-exterior worklists.
+- [ ] Compile labelled child rows and exact positive weights.
+- [ ] Prove strict recurrent subcriticality or publish a realizable obstruction.
+- [ ] Prove global termination and all-side transfer.
+
+No review item authorizes setting `all_n_proved_by_checker` to one.

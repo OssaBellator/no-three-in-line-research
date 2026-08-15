@@ -1,287 +1,192 @@
 # Autoprompter continuity handoff
 
+## Current goal
+
+Continue PR #33, `Audit exact recurrent side-four lineage and Lyapunov boundary`, without promoting symbolic side-four results into physical recurrence claims that the repository does not prove.
+
+Keep the exact audit chain executable and reject-by-default while the physical occurrence/source frontier remains unresolved.
+
 ## Repository state
 
 ```text
 repository = OssaBellator/no-three-in-line-research
-branch = research/all-n-composite-modulus
-branch role = independent all-n composite-modulus line
-main project focus elsewhere = alternating core
-authoritative theorem endpoint = CMR4517
+active PR = #33
+base branch = research/all-n-composite-modulus
+base head = 0194af18247a81ff989c9e73bd7742b32072fa78
+work branch = research/exact-recurrent-lyapunov-audit
+parent head before the current CI correction = 61a5f10bd5539697b61e7f6b145520e391071f4d
+PR state before the current CI correction = open, draft, mergeable
+base ancestry = integrated; branch was 0 commits behind base
 ```
 
-The no-three-in-line conjecture remains open. Preserve `all_n_proved_by_checker = 0`.
+The no-three-in-line conjecture is not claimed. Physical realization, legal physical transitions, recurrent child rows, a strict Lyapunov certificate, global termination, and `all_n_proved_by_checker` remain unproved/zero.
 
-## Installed construction boundary
+## Exact-audit CI repair completed on 2026-08-15
+
+Three concrete exact-audit defects were fixed:
+
+1. `scripts/check_exact_recurrent_first_host_alternating_lineage_import.py`
+   - invalid `update(3012=1)` mutation
+   - replaced by `update({"3012": 1})`
+   - commit `2969f35d52bcd7d16a8bcc9792ad73710094d307`
+
+2. `scripts/check_exact_recurrent_first_host_selector_boolean_boundary.py`
+   - invalid `update(2031="r20")` mutation
+   - replaced by `update({"2031": "r20"})`
+   - commit `9bdbd2c1ddd1684ad580478d5433f9d5453928ea`
+
+3. `data/exact_recurrent_first_host_evidence_scope_overlap_obstruction.json`
+   - numerical counts/floors matched the deterministic checker, but ten registry digests were stale
+   - regenerated from the committed checker without changing proof claims
+   - commit `e0e7040ac0977fc7830aa3dd879e33cbadc99acc`
+
+Targeted run `31853642404` on `e0e7040a...` completed successfully on Python 3.10 and 3.12 through `Check evidence-scope overlap obstruction`.
+
+## Base-branch integration completed on 2026-08-15
+
+PR #33 became dirty after `research/all-n-composite-modulus` advanced independently. The only overlapping textual conflict requiring policy was `AUTOPROMPTER_HANDOFF.md`.
+
+Integration history:
 
 ```text
-operation kinds = 1166
-checker contracts = 42
-installed checkers = 77
-owner/fate contract = 8f52372765f2877c48c32f417fcca27e068ac4675cc98263fd9044e30f28d828
-registry contract = 383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b
+temporary handoff alignment commit = 5ba1371c5caa74387a10c01ce1af5ee7eba6ee82
+temporary integration PR = #34
+GitHub merge commit = 1fc0f8d804124809a685d2832aa667a14220b1ab
+exact-audit handoff restore commit = ad1565f42d5f394eac59b302e8566356a50e40e1
+handoff refresh after integration = 61a5f10bd5539697b61e7f6b145520e391071f4d
 ```
 
-Installed honesty remains:
+After integration, comparison against `research/all-n-composite-modulus` reported `behind_by = 0`, and PR #33 was mergeable again without deleting base-only side-four artifacts.
+
+## Newly identified inherited-coordinate CI defect
+
+The broad post-integration workflow fan-out exposed a separate base-owned verifier defect.
+
+Historical run `31853150486` (`Inherited-coordinate diagonal-block frontier`) completed as failure after about 23 minutes in Python 3.12; the Python 3.10 matrix job was then cancelled. The failing child was:
 
 ```text
-owner_fate_rows_populated_all_recurrent_states = 0
-compulsory_weighted_certificates_complete = 0
-actual_global_parent_rule_complete = 0
-complete_labelled_recurrent_lp_strict = 0
+scripts/verify_prime_power_extension_free_line_kernel.py
+```
+
+The failure was the assertion:
+
+```text
+kernel == Fraction(160, 11)
+```
+
+The verifier variable `kernel` sums the symmetric CMR1370 upper kernel over **all nonaxis lines** of the explicit `5 x 5` state. Recomputing the committed formulas gives:
+
+```text
+main-diagonal composition = (o,m,u) = (0,3,2)
+pointwise symmetric kernel K_5(0,3,2) = 160/11
+global all-nonaxis-line symmetric kernel = 663/11
+exact destroyed target incidence = 6
+```
+
+Thus `160/11` is the correct pointwise main-diagonal obstruction, while `663/11` is the correct global state sum. The theorem document had incorrectly promoted the pointwise value to the total state kernel.
+
+The current correction updates both:
+
+```text
+scripts/verify_prime_power_extension_free_line_kernel.py
+docs/275-prime-power-extension-free-line-composition-kernel.md
+```
+
+The corrected verifier now separately checks:
+
+```text
+pointwise main-diagonal kernel = 160/11 > 3
+global all-line kernel = 663/11 > 6
+```
+
+This is a proof-preserving correction of the explicit obstruction accounting. It does not promote any global termination, recurrence, or all-n claim.
+
+## Actions queue boundary
+
+At the time this defect was diagnosed, GitHub reported approximately:
+
+```text
+queued workflow runs on research/exact-recurrent-lyapunov-audit = 575
+in-progress runs on that branch = 3
+```
+
+The current-head key runs on parent head `61a5f10b...` were still queued:
+
+```text
+31854267418  Exact recurrent first-host alternating lineage import
+31854267383  Exact recurrent Lyapunov audit
+```
+
+Those run IDs become historical once the current correction commit advances the branch. Do not infer success or failure from them for a later head. Inspect the newest runs attached to the actual current head.
+
+The connected GitHub action surface exposes rerun operations but no workflow-cancel mutation, so obsolete queued fan-outs were not cancelled through an unsafe workaround.
+
+## Exact physical proof boundary
+
+For first residual host `s4-75b04c45c1c8eac2`:
+
+```text
+required physical fields = 16
+source-backed physical fields = 0
+physical occurrence records = 0
+```
+
+The chart-safe symbolic analysis, restoration-menu calculations, selector calculations, scalar covers, route-cover admission, and evidence-scope accounting are exact as symbolic/conditional statements. They do not establish physical occurrence coverage or recurrence closure.
+
+The evidence-scope gate remains:
+
+```text
+current minimum safe label evidence slots = 11
+current minimum safe menu evidence slots = 12
+accepted evidence-sharing theorems = 0
+```
+
+## Physical-source recheck
+
+The integrated all-n base still does not promote the first host physically:
+
+- `data/prime_power_side_four_blocker_actual_background_sample_batch.json` is explicitly an integer-lattice blocker sample with `global_recurrent_state_claim = 0`.
+- `data/prime_power_side_four_recurrent_state_population_table.json` has empty parent and child populations and `first_manifest_record_populated = 0`.
+- `data/prime_power_side_four_population_record_candidate.json` has `candidate = null`.
+- `data/prime_power_side_four_blocker_3210_collision_semantic_obstruction.json` marks `global_transition_occurrence_witness` missing and `global_transition_occurrence_complete = 0`.
+
+The negative source audit is recorded on issue #18 in comment `5299523781`. A fresh issue #18 read during this continuation found no later comment supplying occurrence-faithful physical evidence.
+
+No symbolic restoration/route certificate should be added as a substitute for missing physical evidence.
+
+## Mandatory physical frontier
+
+The next mathematical promotion requires repository evidence supplying at least one of:
+
+- a source-backed empty-domain theorem for the relevant physical occurrence domain;
+- a complete or quantified physical occurrence batch;
+- a physical chart/exterior-count theorem that reduces the remaining occurrence worklist.
+
+For recurrence import, the source must additionally establish the physically legal directed transition domain and persistent owner identities, then populate accepted routes/capacities or equivalent strict-potential/output evidence and operation/child-row congruence.
+
+Do not infer these facts from synthetic fixtures, symbolic restoration menus, matching field names, abstract alternating-core contracts, operation-kind registries, or coordinate/sample artifacts that explicitly disclaim global recurrence occurrence.
+
+## Current proof flags
+
+```text
+physical_chart_confinement_proved = 0
+physical_occurrence_coverage_proved = 0
+physical_transition_legality_proved = 0
+persistent_owner_identity_proved = 0
+boundary_capacities_populated = 0
+recurrent_child_rows_populated = 0
+strict_lyapunov_certificate_proved = 0
+global_termination_proved = 0
 all_n_proved_by_checker = 0
 ```
 
-The operation registry catalogs operation kinds and payment classes, not recurrent transition instances. The checked registry-instance gap is recorded in:
+## Next executable step
 
-```text
-data/prime_power_side_four_operation_registry_instance_gap_contract.json
-scripts/check_prime_power_side_four_operation_registry_instance_gap.py
-docs/579-prime-power-side-four-operation-registry-instance-gap.md
-```
+On the actual current head after this correction:
 
-Do not treat operation-kind exhaustiveness as a state key, installed weight, transition-occurrence witness, normalization, recurrent-block witness or parent-rule witness.
+1. inspect the newest `Inherited-coordinate diagonal-block frontier` run and confirm both Python versions pass the corrected pointwise/global obstruction checks;
+2. inspect the newest `Exact recurrent first-host alternating lineage import` and `Exact recurrent Lyapunov audit` runs;
+3. if any fail, fix only the demonstrated checker/artifact defect;
+4. if the post-integration CI chain is green, return to issue #18. Make no further substantive mathematical promotion until repository-backed occurrence-faithful physical evidence exists.
 
-## Global binding and population status
-
-The checked global binding attempt remains underdetermined, not incompatible.
-
-```text
-global_binding_constructed = 0
-global_binding_incompatibility_proved = 0
-joint_sample_global_weight_bindings_complete = 0
-joint_sample_global_recurrent_compatibility_proved = 0
-qualifying installed population sources = 0
-parent records populated = 0
-child records populated = 0
-candidate admissible = 0
-binding_input_population_complete = 0
-```
-
-Canonical population interfaces remain:
-
-```text
-data/prime_power_side_four_joint_global_binding_attempt_contract.json
-data/prime_power_side_four_joint_global_binding_input_manifest.json
-data/prime_power_side_four_joint_binding_source_coverage_contract.json
-data/prime_power_side_four_recurrent_state_population_table.json
-data/prime_power_side_four_population_record_candidate.json
-```
-
-Never invent recurrent-state keys, installed weights, transition provenance, normalization witnesses or recurrent-block witnesses.
-
-## Explicit samples and selector correction
-
-```text
-zero host = s4-fc915f89dec31fec
-zero background = {(4,4),(6,5)}
-obsolete response-only selector = 2031
-
-blocker host = s4-75b04c45c1c8eac2
-blocker collision key = 02,20
-blocker label = b4-8a44614df456
-blocker background = {(-1,6),(-2,9)}
-obsolete response-only selector = 3012
-```
-
-Complete-line scoring gives:
-
-```text
-zero scores:
-2031:4  2301:0  2310:0  3012:4  3201:0  3210:4
-zero minimizer face = {2301,2310,3201}
-
-blocker scores:
-3012:5  3210:4
-blocker minimizer = {3210}
-```
-
-Canonical files:
-
-```text
-data/prime_power_side_four_joint_sample_complete_line_selector_scores.json
-scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py
-docs/576-prime-power-side-four-joint-sample-complete-line-selector-scores.md
-```
-
-Do not reuse routing from obsolete selected responses `2031` or `3012`.
-
-## Reoptimized return routing
-
-For zero candidates `2301`, `2310`, `3201`, all rank-one, rank-two and rank-three return credits vanish, so return terms preserve the three-way tie.
-
-For blocker response `3210`, response edges are:
-
-```text
-03,12,21,30
-```
-
-The four rank-three triples route as:
-
-```text
-03|12|21 -> return:22
-03|12|30 -> return:33
-03|21|30 -> return:33
-12|21|30 -> return:33
-```
-
-Thus:
-
-```text
-return charges = {00:0,11:0,22:1,33:3}
-return:22 | rank3:1,1,-3:h0:k4 | collision:02,20 -> coefficient 1
-return:33 | rank3:1,1,-3:h0:k4 | collision:02,20 -> coefficient 3
-weighted expression = w_reopt_return_22_rank3_k4 + 3*w_reopt_return_33_rank3_k4
-```
-
-The two reoptimized child weights remain unresolved.
-
-Canonical files:
-
-```text
-data/prime_power_side_four_reoptimized_minimizer_return_routing.json
-scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py
-docs/577-prime-power-side-four-reoptimized-minimizer-return-routing.md
-```
-
-## Collision/interface dependency surface
-
-Canonical files:
-
-```text
-data/prime_power_side_four_reoptimized_collision_interface_dependency.json
-scripts/check_prime_power_side_four_reoptimized_collision_interface_dependency.py
-docs/578-prime-power-side-four-reoptimized-collision-interface-dependency.md
-```
-
-The four active records are:
-
-```text
-zero: 2301,2310,3201
-blocker: 3210
-```
-
-Every response avoids target edge `01` and its deleted edges. Current flags remain:
-
-```text
-collision dependency records = 4
-interface dependency records = 4
-collision coefficients populated = 0
-interface coefficients populated = 0
-collision child bindings populated = 0
-interface child bindings populated = 0
-zero tie preserved = 1
-```
-
-A deletion trace, blocker label or local interface label is not a numerical coefficient, child route or multiplicity.
-
-## Newly completed blocker-3210 collision semantic obstruction
-
-Canonical files:
-
-```text
-data/prime_power_side_four_blocker_3210_collision_semantic_obstruction.json
-scripts/check_prime_power_side_four_blocker_3210_collision_semantic_obstruction.py
-docs/580-prime-power-side-four-blocker-3210-collision-semantic-obstruction.md
-```
-
-Commits:
-
-```text
-contract = c99f707e0b99d80de118f02bc92ece28187bfcf8
-checker = dfed38ab5ddfeae2153db43413609d90f4ac64cf
-documentation = d2c5b4e27d3fc7903eed8b3991d9a3ad0c260e30
-```
-
-Exact scope:
-
-```text
-host = s4-75b04c45c1c8eac2
-response = 3210
-response edges = 03,12,21,30
-collision/deletion trace = 02,20
-blocker = b4-8a44614df456
-target edge = 01
-```
-
-The response avoids the deleted edges and target edge. Return routing is complete, but return multiplicity does not determine collision multiplicity.
-
-Six semantic inputs are absent from the installed artifacts:
-
-```text
-collision event domain
-physical offspring constructor
-collision multiplicity rule
-owner/fate/collision child-key constructor
-interface/provenance constructor
-global transition-occurrence witness
-```
-
-Checked result:
-
-```text
-semantic_input_obstruction_complete = 1
-physical_collision_offspring_enumerated = 0
-collision_multiplicities_complete = 0
-collision_child_keys_complete = 0
-collision_coefficient_complete = 0
-collision_child_weight_binding_complete = 0
-global_transition_occurrence_complete = 0
-collision_incompatibility_proved = 0
-all_n_proved_by_checker = 0
-```
-
-This is the prescribed semantic-input obstruction, not a zero collision coefficient and not a collision incompatibility proof.
-
-## Exact flags
-
-```text
-joint_sample_complete_line_selector_score_tables_complete = 1
-joint_sample_reoptimized_return_routing_complete = 1
-zero_reoptimized_return_rows_complete = 1
-blocker_reoptimized_return_row_complete = 1
-joint_sample_reoptimized_collision_interface_dependency_complete = 1
-semantic_input_obstruction_complete = 1
-
-joint_sample_canonical_selectors_stable_under_complete_line_score = 0
-reoptimized_child_weights_complete = 0
-physical_collision_offspring_enumerated = 0
-collision_multiplicities_complete = 0
-collision_coefficients_complete = 0
-interface_coefficients_complete = 0
-collision_child_bindings_complete = 0
-interface_child_bindings_complete = 0
-joint_sample_complete_coupled_selector_terms_complete = 0
-joint_sample_full_compulsory_rows_complete = 0
-complete_weighted_rows_strict = 0
-all_n_proved_by_checker = 0
-```
-
-## Decisions to preserve
-
-1. Do not invent global recurrent-state keys, weights or occurrence provenance.
-2. Do not promote local sample witnesses to installed global Lyapunov weights.
-3. Do not merge exact child classes through reused local aliases.
-4. Missing compulsory terms, incidences, weights and duals are unresolved, not zero.
-5. Coordinate samples are not global recurrence occurrence claims.
-6. Return, line and geometric views of one credit must not be double-counted.
-7. Do not reuse routing from obsolete responses `2031` or `3012`.
-8. Preserve all three zero-host minimizers until exact collision, interface and globally weighted terms break the tie.
-9. Response `3210` remains only a line-plus-unweighted-return candidate.
-10. Deleted-edge count, blocker membership, return charges and registry entries do not determine collision offspring or multiplicity.
-11. Workflow configuration is not CI success.
-
-## Validation boundary
-
-```text
-new obstruction contract and checker committed
-checker source not independently executed in a fresh clone
-complete 77-checker runner not executed
-workflow success not observed
-```
-
-## Exact next step
-
-Define or locate an instance-level collision semantics contract supplying the six missing inputs for blocker response `3210`. Only then construct physical offspring, exact multiplicities and complete owner/fate/collision/interface/provenance child keys.
-
-In parallel, define exact child-interface routing inputs for responses `2301`, `2310`, `3201` and `3210` without inventing route or multiplicity.
+The existing 16-field physical batch gate and 12-field-per-edge transition-domain gate are the required ingestion path for any such new evidence.

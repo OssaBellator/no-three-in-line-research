@@ -1,0 +1,798 @@
+{
+  "aggregate": {
+    "additive_covers": 4,
+    "complete_route_contracts": 0,
+    "directed_menu_edges": 8,
+    "distinct_scalar_compatible_menu_covers": 14,
+    "interaction_required_covers": 10,
+    "interaction_restore_cross_table": {
+      "additive:restore_0": 1,
+      "additive:restore_2": 2,
+      "additive:restore_4": 1,
+      "interaction:restore_1": 4,
+      "interaction:restore_2": 2,
+      "interaction:restore_3": 4
+    },
+    "populated_physical_import_fields": 0,
+    "required_physical_import_fields": 16,
+    "residual_edges_per_cover": 4,
+    "residual_r02_per_cover": 2,
+    "residual_r20_per_cover": 2,
+    "residual_restore_distribution": {
+      "0": 1,
+      "1": 4,
+      "2": 4,
+      "3": 4,
+      "4": 1
+    },
+    "residual_selector_changing_per_cover": 3,
+    "residual_selector_neutral_per_cover": 1
+  },
+  "conclusion": {
+    "alternating_core_capacity_and_reset_contracts_exact": 1,
+    "coarse_bit_or_selector_profile_distinguishes_menu_covers": 0,
+    "contracts_supply_first_host_values": 0,
+    "direction_only_nonnegative_cost_has_additive_optimum": 1,
+    "finite_gate_budget_formula_installed_conditionally": 1,
+    "interaction_can_be_forced_by_exact_edge_sensitive_costs": 1,
+    "operation_direction_profile_distinguishes_menu_covers": 1,
+    "outer_reset_ticket_formula_installed_conditionally": 1,
+    "physical_route_contract_installed": 0,
+    "promotion_to_recurrent_closure_allowed": 0
+  },
+  "conditional_budget_formulae": {
+    "finite_gate_capacity": {
+      "definitions": {
+        "C0": "sum of initial exact residual-gate capacities",
+        "H_cap": "sum_a rho_a*s_a(0), the source-faithful capacity-recreation budget",
+        "N_cap": "total charged episodes routed through those exact capacities"
+      },
+      "formula": "N_cap <= C0 + H_cap",
+      "hypotheses": [
+        "every charged episode consumes one unit at its exact normalized gate address",
+        "every positive capacity increment is occurrence-faithfully source assigned",
+        "no unregistered atom, rate, source address, or payment decoration enters the epoch"
+      ]
+    },
+    "outer_reset_ticket": {
+      "definitions": {
+        "E_first": "number of distinct decorated residual outer edges traversed",
+        "N_out": "total residual episodes routed as outer resets",
+        "Q": "finite capacity-one macro-ticket stock consumed by repeated decorated edges"
+      },
+      "formula": "N_out <= E_first + Q",
+      "hypotheses": [
+        "every symbolic residual edge has a source-backed decorated outer-edge address",
+        "each first decorated traversal is counted once",
+        "every repeated decorated traversal consumes a new macro ticket or closes by another registered route"
+      ]
+    }
+  },
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "boundary_capacities_populated": 0,
+    "global_termination_proved": 0,
+    "outer_macro_tickets_populated": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_chart_confinement_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "menu_scalar_route_covers": [
+    {
+      "interaction_required": 0,
+      "minimum_integer_abs_gamma": 0,
+      "paid_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 4,
+        "r02": 2,
+        "r20": 2,
+        "restore": 0,
+        "selected_target_counts": {
+          "3012": 2,
+          "3201": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "11",
+          "01",
+          "10",
+          "00"
+        ],
+        [
+          "11",
+          "10",
+          "01",
+          "00"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": true
+      },
+      "residual_profile": {
+        "delete": 3,
+        "r02": 2,
+        "r20": 2,
+        "restore": 1,
+        "selected_target_counts": {
+          "3012": 2,
+          "3201": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "01->00",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "10",
+          "11",
+          "01",
+          "00"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->01",
+        "00->10",
+        "10->11",
+        "11->01"
+      ],
+      "parallel_reversal_profile": {
+        "r02": true,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 3,
+        "r02": 2,
+        "r20": 2,
+        "restore": 1,
+        "selected_target_counts": {
+          "2031": 1,
+          "3012": 2
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "01->00",
+        "01->11",
+        "10->00",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "01",
+          "11",
+          "10",
+          "00"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->01",
+        "00->10",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": true,
+        "r20": true
+      },
+      "residual_profile": {
+        "delete": 2,
+        "r02": 2,
+        "r20": 2,
+        "restore": 2,
+        "selected_target_counts": {
+          "2031": 1,
+          "3012": 2
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "01",
+          "10",
+          "00",
+          "11"
+        ],
+        [
+          "01",
+          "10",
+          "11",
+          "00"
+        ],
+        [
+          "10",
+          "01",
+          "00",
+          "11"
+        ],
+        [
+          "10",
+          "01",
+          "11",
+          "00"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "parallel_reversal_profile": {
+        "r02": true,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 3,
+        "r02": 2,
+        "r20": 2,
+        "restore": 1,
+        "selected_target_counts": {
+          "2031": 1,
+          "3012": 1,
+          "3201": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "11",
+          "01",
+          "00",
+          "10"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 0,
+      "minimum_integer_abs_gamma": 0,
+      "paid_edges": [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 2,
+        "r02": 2,
+        "r20": 2,
+        "restore": 2,
+        "selected_target_counts": {
+          "2031": 2,
+          "3012": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "01",
+          "00",
+          "11",
+          "10"
+        ],
+        [
+          "01",
+          "11",
+          "00",
+          "10"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->01",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": true
+      },
+      "residual_profile": {
+        "delete": 1,
+        "r02": 2,
+        "r20": 2,
+        "restore": 3,
+        "selected_target_counts": {
+          "2031": 2,
+          "3012": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->11"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "01",
+          "00",
+          "10",
+          "11"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "10->11"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": true
+      },
+      "residual_profile": {
+        "delete": 3,
+        "r02": 2,
+        "r20": 2,
+        "restore": 1,
+        "selected_target_counts": {
+          "3012": 1,
+          "3201": 2
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "11",
+          "10",
+          "00",
+          "01"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 0,
+      "minimum_integer_abs_gamma": 0,
+      "paid_edges": [
+        "00->10",
+        "01->00",
+        "01->11",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 2,
+        "r02": 2,
+        "r20": 2,
+        "restore": 2,
+        "selected_target_counts": {
+          "3012": 1,
+          "3201": 2
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "10",
+          "00",
+          "11",
+          "01"
+        ],
+        [
+          "10",
+          "11",
+          "00",
+          "01"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "00->10",
+        "01->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": true,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 1,
+        "r02": 2,
+        "r20": 2,
+        "restore": 3,
+        "selected_target_counts": {
+          "2031": 1,
+          "3012": 1,
+          "3201": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "10",
+          "00",
+          "01",
+          "11"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "01->00",
+        "01->11",
+        "10->00",
+        "10->11"
+      ],
+      "parallel_reversal_profile": {
+        "r02": true,
+        "r20": true
+      },
+      "residual_profile": {
+        "delete": 2,
+        "r02": 2,
+        "r20": 2,
+        "restore": 2,
+        "selected_target_counts": {
+          "2031": 1,
+          "3201": 2
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "00->10",
+        "11->01",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "00",
+          "11",
+          "01",
+          "10"
+        ],
+        [
+          "00",
+          "11",
+          "10",
+          "01"
+        ],
+        [
+          "11",
+          "00",
+          "01",
+          "10"
+        ],
+        [
+          "11",
+          "00",
+          "10",
+          "01"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "01->00",
+        "01->11",
+        "10->00",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": true,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 1,
+        "r02": 2,
+        "r20": 2,
+        "restore": 3,
+        "selected_target_counts": {
+          "2031": 1,
+          "3201": 2
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "00->10",
+        "10->11",
+        "11->01"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "00",
+          "10",
+          "11",
+          "01"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 1,
+      "minimum_integer_abs_gamma": 2,
+      "paid_edges": [
+        "01->00",
+        "10->00",
+        "10->11",
+        "11->01"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": true
+      },
+      "residual_profile": {
+        "delete": 1,
+        "r02": 2,
+        "r20": 2,
+        "restore": 3,
+        "selected_target_counts": {
+          "2031": 2,
+          "3201": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "11->10"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "00",
+          "01",
+          "11",
+          "10"
+        ]
+      ]
+    },
+    {
+      "interaction_required": 0,
+      "minimum_integer_abs_gamma": 0,
+      "paid_edges": [
+        "01->00",
+        "10->00",
+        "11->01",
+        "11->10"
+      ],
+      "parallel_reversal_profile": {
+        "r02": false,
+        "r20": false
+      },
+      "residual_profile": {
+        "delete": 0,
+        "r02": 2,
+        "r20": 2,
+        "restore": 4,
+        "selected_target_counts": {
+          "2031": 2,
+          "3201": 1
+        },
+        "selector_changing": 3,
+        "selector_neutral": 1
+      },
+      "residual_route_edges": [
+        "00->01",
+        "00->10",
+        "01->11",
+        "10->11"
+      ],
+      "strict_menu_orders_low_to_high": [
+        [
+          "00",
+          "01",
+          "10",
+          "11"
+        ],
+        [
+          "00",
+          "10",
+          "01",
+          "11"
+        ]
+      ]
+    }
+  ],
+  "missing_physical_import_fields": [
+    "persistent_owner_token",
+    "legal_normalized_transition_edges",
+    "direct_gate_capacities",
+    "capacity_atom_universe",
+    "capacity_source_addresses",
+    "capacity_conversion_rates",
+    "capacity_source_initial_counters",
+    "capacity_increment_assignments",
+    "physical_occurrence_capacities",
+    "overload_crossing_tickets",
+    "outer_profile_dictionary",
+    "outer_edge_decorations",
+    "internal_epoch_bound",
+    "macro_ticket_stock",
+    "source_backed_menu_potential_values",
+    "registered_residual_route_assignment"
+  ],
+  "schema": "exact-recurrent-first-host-alternating-route-budget-import/v1",
+  "scope": {
+    "audit_branch": "research/exact-recurrent-lyapunov-audit",
+    "host_id": "s4-75b04c45c1c8eac2",
+    "states": [
+      {
+        "menu": "blocked",
+        "selected_response": "3012",
+        "state": "00"
+      },
+      {
+        "menu": "restore_20",
+        "selected_response": "3201",
+        "state": "01"
+      },
+      {
+        "menu": "restore_02",
+        "selected_response": "2031",
+        "state": "10"
+      },
+      {
+        "menu": "restore_both",
+        "selected_response": "2031",
+        "state": "11"
+      }
+    ],
+    "upstream_branch": "research/alternating-core-chain"
+  },
+  "source_nonpromotion": {
+    "upstream_validators_with_first_host_capacity_values": 0,
+    "upstream_validators_with_first_host_macro_tickets": 0,
+    "upstream_validators_with_first_host_owner_tokens": 0,
+    "upstream_validators_with_first_host_records": 0,
+    "validator_inputs_are_generic_or_synthetic": 1
+  },
+  "upstream_contracts": [
+    {
+      "contract": "exact gate address plus finite unrestorable capacity, or another registered route",
+      "doc_blob_sha": "33ee792692a52d232dd71e3cde48ea8573ba78df",
+      "doc_path": "docs/alternating-core-builder-state-boundary-gates.md",
+      "role": "normalized_builder_boundary_capacity",
+      "script_blob_sha": "acebfb7fa66e6fdf7a390cde5aec42b2ecd47f0b",
+      "script_path": "scripts/verify_ac_builder_state_boundary_gates.py",
+      "validator_kind": "synthetic finite state/predicate/graph/ticket enumeration"
+    },
+    {
+      "contract": "fixed atom universe, finite source addresses/rates/counters, and occurrence-faithful assignment of every positive capacity increment",
+      "doc_blob_sha": "20890501500cb1212a5cd0cdd8a32a48fdf609a9",
+      "doc_path": "docs/alternating-core-source-capacity-recreation-ledger.md",
+      "role": "source_paid_capacity_recreation",
+      "script_blob_sha": "d0fe04a9752f1cd523fcf27d28948de0a41a5e5e",
+      "script_path": "scripts/verify_ac_source_capacity_recreation.py",
+      "validator_kind": "synthetic exhaustive vectors plus seeded random histories"
+    },
+    {
+      "contract": "fixed occurrence-faithful atom capacities and finite crossing/loss/conservative ticket stocks",
+      "doc_blob_sha": "022c24a9004d330cf84a149540eaf86a28390342",
+      "doc_path": "docs/alternating-core-physical-source-capacity-overload.md",
+      "role": "physical_capacity_overload",
+      "script_blob_sha": "b88c477aafb01c089ac3fb72920f5edf09154563",
+      "script_path": "scripts/verify_ac_physical_source_capacity_overload.py",
+      "validator_kind": "generic finite capacity and occupancy audit"
+    },
+    {
+      "contract": "finite outer profiles/decorations; first decorated edge is progress and every repeat needs a macro ticket, another strict potential, payment, or terminal output",
+      "doc_blob_sha": "4ef671f294392b3ff31a48dd516f9e7759535b3c",
+      "doc_path": "docs/alternating-core-outer-reset-quotient.md",
+      "role": "outer_reset_repetition",
+      "script_blob_sha": "852601f0e0309660d8bf8e8c506872eaf50cf432",
+      "script_path": "scripts/verify_ac_outer_reset_quotient.py",
+      "validator_kind": "synthetic profile/edge/ticket parameter sweep"
+    }
+  ]
+}

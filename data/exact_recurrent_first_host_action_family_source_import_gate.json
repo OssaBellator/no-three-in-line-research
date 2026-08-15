@@ -1,0 +1,501 @@
+{
+  "abstract_component_analysis": {
+    "abstract_union_implies_first_host_import": 0,
+    "capability_counts": {
+      "child_payment_schema": 2,
+      "closure_route_schema": 3,
+      "context_quantification": 1,
+      "operation_schema": 2,
+      "owner_continuation": 3
+    },
+    "components": [
+      "context_quantification",
+      "owner_continuation",
+      "operation_schema",
+      "closure_route_schema",
+      "child_payment_schema"
+    ],
+    "minimum_source_covers": [
+      [
+        "boolean_boundary_context",
+        "inherited_coordinate_diagonal_block",
+        "installed_operation_registry"
+      ],
+      [
+        "boolean_boundary_context",
+        "inherited_coordinate_diagonal_block",
+        "protected_interface_execution"
+      ]
+    ],
+    "minimum_sources_to_cover_abstract_components": 3,
+    "single_source_covers_all_components": 0,
+    "union_component_set_complete": 1,
+    "union_components_covered": 5
+  },
+  "aggregate": {
+    "abstract_schema_component_types": 5,
+    "abstract_schema_component_types_covered": 5,
+    "action_families": 4,
+    "evidence_fields_per_family": 7,
+    "evidence_fields_populated_total": 0,
+    "external_blob_interfaces": 3,
+    "first_host_family_theorems_found": 0,
+    "local_marker_audited_interfaces": 4,
+    "minimal_scalar_closure_import_sets": 4,
+    "minimum_uniform_family_imports_for_scalar_cover": 2,
+    "remaining_evidence_slots_per_minimal_scalar_cover": 14,
+    "separate_edge_record_slots_per_minimal_scalar_cover": 48,
+    "source_backed_uniform_family_imports": 0,
+    "source_evidence_field_slots_total": 28,
+    "structural_fields_per_family": 3,
+    "structural_fields_populated_total": 12,
+    "structural_slots_per_minimal_scalar_cover": 6,
+    "theorem_contract_slots_per_minimal_scalar_cover": 20,
+    "total_contract_field_slots": 40,
+    "uniformity_fields_per_family": 10,
+    "upstream_interfaces_audited": 7
+  },
+  "conclusion": {
+    "abstract_contract_components_available_in_union": 1,
+    "abstract_contract_components_joined_occurrence_faithfully": 0,
+    "context_parametric_first_host_theorem_found": 0,
+    "current_uniform_family_import_allowed": 0,
+    "external_abstract_theorem_counts_as_occurrence_record": 0,
+    "geometry_prefills_three_fields_per_family": 1,
+    "minimum_missing_source_evidence_slots_for_scalar_closure": 14,
+    "normalized_family_structure_complete": 1,
+    "one_abstract_source_covers_full_family_contract": 0,
+    "one_operation_kind_name_proves_family_uniformity": 0,
+    "promotion_to_recurrent_closure_allowed": 0
+  },
+  "contract": {
+    "acceptance_rule": "geometry fixes family identity, both exact edge members and the other context bit; a source import is accepted only when all seven evidence fields are populated and the theorem proves both context values for the same occurrence-faithful owner lineage",
+    "all_fields": [
+      "family_id",
+      "edge_refs",
+      "shared_theorem_ref",
+      "quantified_context_bit",
+      "both_context_values_proved",
+      "shared_owner_schema_ref",
+      "shared_operation_schema_ref",
+      "shared_route_schema_ref",
+      "child_payment_compatibility_ref",
+      "realization_status"
+    ],
+    "evidence_fields": [
+      "shared_theorem_ref",
+      "both_context_values_proved",
+      "shared_owner_schema_ref",
+      "shared_operation_schema_ref",
+      "shared_route_schema_ref",
+      "child_payment_compatibility_ref",
+      "realization_status"
+    ],
+    "structural_fields": [
+      "family_id",
+      "edge_refs",
+      "quantified_context_bit"
+    ],
+    "structural_prefill_counts_as_physical_evidence": 0
+  },
+  "families": [
+    {
+      "abstract_schema_candidate_roles": {
+        "child_payment_compatibility_ref": [
+          "inherited_coordinate_diagonal_block",
+          "owner_fate_lineage_kernel"
+        ],
+        "shared_operation_schema_ref": [
+          "installed_operation_registry",
+          "protected_interface_execution"
+        ],
+        "shared_owner_schema_ref": [
+          "occurrence_lineage",
+          "physical_signature_quotient",
+          "inherited_coordinate_diagonal_block"
+        ],
+        "shared_route_schema_ref": [
+          "boolean_boundary_context",
+          "occurrence_lineage",
+          "physical_signature_quotient"
+        ]
+      },
+      "action": "restore",
+      "changed_cell": "02",
+      "edge_refs": [
+        "00->10",
+        "01->11"
+      ],
+      "evidence_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "evidence_fields_populated": 0,
+      "family_id": "restore_02",
+      "family_import_accepted": 0,
+      "quantified_context_bit": "r20",
+      "selected_source_backed_schema_refs": 0,
+      "separate_member_edge_record_field_slots": 24,
+      "structural_fields": {
+        "edge_refs": [
+          "00->10",
+          "01->11"
+        ],
+        "family_id": "restore_02",
+        "quantified_context_bit": "r20"
+      },
+      "structural_fields_populated": 3
+    },
+    {
+      "abstract_schema_candidate_roles": {
+        "child_payment_compatibility_ref": [
+          "inherited_coordinate_diagonal_block",
+          "owner_fate_lineage_kernel"
+        ],
+        "shared_operation_schema_ref": [
+          "installed_operation_registry",
+          "protected_interface_execution"
+        ],
+        "shared_owner_schema_ref": [
+          "occurrence_lineage",
+          "physical_signature_quotient",
+          "inherited_coordinate_diagonal_block"
+        ],
+        "shared_route_schema_ref": [
+          "boolean_boundary_context",
+          "occurrence_lineage",
+          "physical_signature_quotient"
+        ]
+      },
+      "action": "delete",
+      "changed_cell": "02",
+      "edge_refs": [
+        "10->00",
+        "11->01"
+      ],
+      "evidence_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "evidence_fields_populated": 0,
+      "family_id": "delete_02",
+      "family_import_accepted": 0,
+      "quantified_context_bit": "r20",
+      "selected_source_backed_schema_refs": 0,
+      "separate_member_edge_record_field_slots": 24,
+      "structural_fields": {
+        "edge_refs": [
+          "10->00",
+          "11->01"
+        ],
+        "family_id": "delete_02",
+        "quantified_context_bit": "r20"
+      },
+      "structural_fields_populated": 3
+    },
+    {
+      "abstract_schema_candidate_roles": {
+        "child_payment_compatibility_ref": [
+          "inherited_coordinate_diagonal_block",
+          "owner_fate_lineage_kernel"
+        ],
+        "shared_operation_schema_ref": [
+          "installed_operation_registry",
+          "protected_interface_execution"
+        ],
+        "shared_owner_schema_ref": [
+          "occurrence_lineage",
+          "physical_signature_quotient",
+          "inherited_coordinate_diagonal_block"
+        ],
+        "shared_route_schema_ref": [
+          "boolean_boundary_context",
+          "occurrence_lineage",
+          "physical_signature_quotient"
+        ]
+      },
+      "action": "restore",
+      "changed_cell": "20",
+      "edge_refs": [
+        "00->01",
+        "10->11"
+      ],
+      "evidence_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "evidence_fields_populated": 0,
+      "family_id": "restore_20",
+      "family_import_accepted": 0,
+      "quantified_context_bit": "r02",
+      "selected_source_backed_schema_refs": 0,
+      "separate_member_edge_record_field_slots": 24,
+      "structural_fields": {
+        "edge_refs": [
+          "00->01",
+          "10->11"
+        ],
+        "family_id": "restore_20",
+        "quantified_context_bit": "r02"
+      },
+      "structural_fields_populated": 3
+    },
+    {
+      "abstract_schema_candidate_roles": {
+        "child_payment_compatibility_ref": [
+          "inherited_coordinate_diagonal_block",
+          "owner_fate_lineage_kernel"
+        ],
+        "shared_operation_schema_ref": [
+          "installed_operation_registry",
+          "protected_interface_execution"
+        ],
+        "shared_owner_schema_ref": [
+          "occurrence_lineage",
+          "physical_signature_quotient",
+          "inherited_coordinate_diagonal_block"
+        ],
+        "shared_route_schema_ref": [
+          "boolean_boundary_context",
+          "occurrence_lineage",
+          "physical_signature_quotient"
+        ]
+      },
+      "action": "delete",
+      "changed_cell": "20",
+      "edge_refs": [
+        "01->00",
+        "11->10"
+      ],
+      "evidence_fields": {
+        "both_context_values_proved": null,
+        "child_payment_compatibility_ref": null,
+        "realization_status": null,
+        "shared_operation_schema_ref": null,
+        "shared_owner_schema_ref": null,
+        "shared_route_schema_ref": null,
+        "shared_theorem_ref": null
+      },
+      "evidence_fields_populated": 0,
+      "family_id": "delete_20",
+      "family_import_accepted": 0,
+      "quantified_context_bit": "r02",
+      "selected_source_backed_schema_refs": 0,
+      "separate_member_edge_record_field_slots": 24,
+      "structural_fields": {
+        "edge_refs": [
+          "01->00",
+          "11->10"
+        ],
+        "family_id": "delete_20",
+        "quantified_context_bit": "r02"
+      },
+      "structural_fields_populated": 3
+    }
+  ],
+  "honesty": {
+    "all_n_proved_by_checker": 0,
+    "global_termination_proved": 0,
+    "operation_congruence_proved": 0,
+    "payment_congruence_proved": 0,
+    "persistent_owner_identity_proved": 0,
+    "physical_occurrence_coverage_proved": 0,
+    "physical_transition_legality_proved": 0,
+    "recurrent_child_rows_populated": 0,
+    "strict_lyapunov_certificate_proved": 0
+  },
+  "host_id": "s4-75b04c45c1c8eac2",
+  "minimal_scalar_closure_import_sets": [
+    {
+      "current_scalar_closure": 0,
+      "currently_imported_families": 0,
+      "families": [
+        "delete_02",
+        "delete_20"
+      ],
+      "family_count": 2,
+      "remaining_source_evidence_field_slots": 14,
+      "separate_edge_record_field_slots": 48,
+      "structurally_prefilled_field_slots": 6,
+      "theorem_contract_field_slots": 20
+    },
+    {
+      "current_scalar_closure": 0,
+      "currently_imported_families": 0,
+      "families": [
+        "delete_02",
+        "restore_20"
+      ],
+      "family_count": 2,
+      "remaining_source_evidence_field_slots": 14,
+      "separate_edge_record_field_slots": 48,
+      "structurally_prefilled_field_slots": 6,
+      "theorem_contract_field_slots": 20
+    },
+    {
+      "current_scalar_closure": 0,
+      "currently_imported_families": 0,
+      "families": [
+        "restore_02",
+        "delete_20"
+      ],
+      "family_count": 2,
+      "remaining_source_evidence_field_slots": 14,
+      "separate_edge_record_field_slots": 48,
+      "structurally_prefilled_field_slots": 6,
+      "theorem_contract_field_slots": 20
+    },
+    {
+      "current_scalar_closure": 0,
+      "currently_imported_families": 0,
+      "families": [
+        "restore_02",
+        "restore_20"
+      ],
+      "family_count": 2,
+      "remaining_source_evidence_field_slots": 14,
+      "separate_edge_record_field_slots": 48,
+      "structurally_prefilled_field_slots": 6,
+      "theorem_contract_field_slots": 20
+    }
+  ],
+  "schema": "exact-recurrent-first-host-action-family-source-import-gate/v2",
+  "sources": {
+    "family_congruence": "data/exact_recurrent_first_host_action_family_congruence_obstruction.json",
+    "family_leverage": "data/exact_recurrent_first_host_action_family_route_leverage.json",
+    "transition_domain": "data/exact_recurrent_first_host_transition_domain_source_audit.json"
+  },
+  "upstream_interfaces": [
+    {
+      "boundary": "fixed-token Boolean boundary and route theorem; no first-host owner, operation, child row or family mapping",
+      "capabilities": [
+        "context_quantification",
+        "closure_route_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "74b61c0f4ccfdcaba98249c06f2f37d44c53e622",
+      "doc_path": "docs/alternating-core-boolean-boundary-gates.md",
+      "first_host_family_records": 0,
+      "local_document": 0,
+      "local_markers_verified": 0,
+      "occurrence_faithful_family_join": 0,
+      "role": "boolean_boundary_context",
+      "source_branch": "research/alternating-core-chain",
+      "verified_marker_count": 0
+    },
+    {
+      "boundary": "declared continuation-edge identity wall; no first-host continuation relation or context-family theorem",
+      "capabilities": [
+        "owner_continuation",
+        "closure_route_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "9fef497dd4b3a7689b92c0a6c5fe0d1208b8922d",
+      "doc_path": "docs/alternating-core-occurrence-lineage-gates.md",
+      "first_host_family_records": 0,
+      "local_document": 0,
+      "local_markers_verified": 0,
+      "occurrence_faithful_family_join": 0,
+      "role": "occurrence_lineage",
+      "source_branch": "research/alternating-core-chain",
+      "verified_marker_count": 0
+    },
+    {
+      "boundary": "finite payment-complete signature quotient contract; no first-host signature map or family edge",
+      "capabilities": [
+        "owner_continuation",
+        "closure_route_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "51df0c27bd8d079768837d1a8bf9a295939f7835",
+      "doc_path": "docs/alternating-core-physical-signature-lineage-quotient.md",
+      "first_host_family_records": 0,
+      "local_document": 0,
+      "local_markers_verified": 0,
+      "occurrence_faithful_family_join": 0,
+      "role": "physical_signature_quotient",
+      "source_branch": "research/alternating-core-chain",
+      "verified_marker_count": 0
+    },
+    {
+      "boundary": "1166 declared operation kinds and continuation rules; not an occurrence-level edge mapping",
+      "capabilities": [
+        "operation_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "fd5971338a71449bc03e759ceb350977001fe4d4",
+      "doc_path": "docs/555-prime-power-installed-operation-registry-1166.md",
+      "first_host_family_records": 0,
+      "local_document": 1,
+      "local_markers_verified": 1,
+      "occurrence_faithful_family_join": 0,
+      "role": "installed_operation_registry",
+      "source_branch": "research/exact-recurrent-lyapunov-audit",
+      "verified_marker_count": 3
+    },
+    {
+      "boundary": "owner DAG and exact-row/upper-quotient schema; same-owner blocks and global parent rule remain open",
+      "capabilities": [
+        "owner_continuation",
+        "child_payment_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "49d472aa0c5917d32f5f10738aace7e95a96801b",
+      "doc_path": "docs/527-prime-power-inherited-coordinate-diagonal-block-ancestry.md",
+      "first_host_family_records": 0,
+      "local_document": 1,
+      "local_markers_verified": 1,
+      "occurrence_faithful_family_join": 0,
+      "role": "inherited_coordinate_diagonal_block",
+      "source_branch": "research/exact-recurrent-lyapunov-audit",
+      "verified_marker_count": 3
+    },
+    {
+      "boundary": "lossless row keys and compulsory weighted-certificate schema; recurrent rows remain unpopulated",
+      "capabilities": [
+        "child_payment_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "ec44cff041306268b4ed8677b1ab17915cc99a0d",
+      "doc_path": "docs/554-prime-power-owner-fate-lineage-kernel-ancestry.md",
+      "first_host_family_records": 0,
+      "local_document": 1,
+      "local_markers_verified": 1,
+      "occurrence_faithful_family_join": 0,
+      "role": "owner_fate_lineage_kernel",
+      "source_branch": "research/exact-recurrent-lyapunov-audit",
+      "verified_marker_count": 3
+    },
+    {
+      "boundary": "side-five execution fixture and factorization theorem; no first-host state or edge record",
+      "capabilities": [
+        "operation_schema"
+      ],
+      "context_parametric_family_theorems": 0,
+      "doc_blob_sha": "e57bc9a66dff826b3bb8e643d3a53e0a38b0cdae",
+      "doc_path": "docs/490-prime-power-protected-interface-execution-ancestry.md",
+      "first_host_family_records": 0,
+      "local_document": 1,
+      "local_markers_verified": 1,
+      "occurrence_faithful_family_join": 0,
+      "role": "protected_interface_execution",
+      "source_branch": "research/exact-recurrent-lyapunov-audit",
+      "verified_marker_count": 3
+    }
+  ]
+}
