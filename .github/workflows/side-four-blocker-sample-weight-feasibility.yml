@@ -1,0 +1,30 @@
+name: Side-four blocker sample weight feasibility
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_blocker_sample_credit_routing_contract.json'
+      - 'data/prime_power_side_four_blocker_sample_weight_feasibility_contract.json'
+      - 'scripts/check_prime_power_side_four_blocker_actual_background_sample.py'
+      - 'scripts/check_prime_power_side_four_blocker_sample_credit_routing.py'
+      - 'scripts/check_prime_power_side_four_blocker_sample_weight_feasibility.py'
+      - 'docs/569-prime-power-side-four-blocker-sample-weight-feasibility.md'
+      - '.github/workflows/side-four-blocker-sample-weight-feasibility.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  feasibility:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_blocker_actual_background_sample.py
+      - run: python scripts/check_prime_power_side_four_blocker_sample_credit_routing.py
+      - run: python scripts/check_prime_power_side_four_blocker_sample_weight_feasibility.py

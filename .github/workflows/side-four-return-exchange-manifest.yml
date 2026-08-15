@@ -1,0 +1,30 @@
+name: Side-four return exchange manifest
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_raw_fibre_lineage_manifest.json'
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_return_exchange_manifest_contract.json'
+      - 'scripts/check_prime_power_side_four_raw_fibre_lineage_manifest.py'
+      - 'scripts/check_prime_power_side_four_selected_response_provenance_manifest.py'
+      - 'scripts/check_prime_power_side_four_return_exchange_manifest.py'
+      - 'docs/559-prime-power-side-four-return-exchange-manifest.md'
+      - '.github/workflows/side-four-return-exchange-manifest.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  exchange:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_raw_fibre_lineage_manifest.py
+      - run: python scripts/check_prime_power_side_four_selected_response_provenance_manifest.py
+      - run: python scripts/check_prime_power_side_four_return_exchange_manifest.py

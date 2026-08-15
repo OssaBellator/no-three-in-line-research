@@ -1,0 +1,30 @@
+name: Side-four reoptimized collision interface dependency
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_joint_sample_complete_line_selector_scores.json'
+      - 'data/prime_power_side_four_reoptimized_minimizer_return_routing.json'
+      - 'data/prime_power_side_four_reoptimized_collision_interface_dependency.json'
+      - 'data/prime_power_side_four_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py'
+      - 'scripts/check_prime_power_side_four_reoptimized_collision_interface_dependency.py'
+      - 'docs/578-prime-power-side-four-reoptimized-collision-interface-dependency.md'
+      - '.github/workflows/side-four-reoptimized-collision-interface-dependency.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  dependencies:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py
+      - run: python scripts/check_prime_power_side_four_reoptimized_collision_interface_dependency.py

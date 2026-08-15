@@ -1,0 +1,29 @@
+name: Side-four reoptimized minimizer return routing
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_joint_sample_complete_line_selector_scores.json'
+      - 'data/prime_power_side_four_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_reoptimized_minimizer_return_routing.json'
+      - 'scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py'
+      - 'scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py'
+      - 'docs/577-prime-power-side-four-reoptimized-minimizer-return-routing.md'
+      - '.github/workflows/side-four-reoptimized-minimizer-return-routing.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  routing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_joint_sample_complete_line_selector_scores.py
+      - run: python scripts/check_prime_power_side_four_reoptimized_minimizer_return_routing.py

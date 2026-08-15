@@ -1,0 +1,33 @@
+{
+  "schema": "prime-power-side-four-operation-registry-instance-gap/v1",
+  "registry_checker": "scripts/check_prime_power_installed_operation_registry_1166.py",
+  "registry_contract_sha256": "383afc9477f5b52cf60f500c55f51005e4a3020dc34051a04437bdaf503a619b",
+  "installed_operation_kind_count": 1166,
+  "new_owner_fate_operation_kind_count": 72,
+  "required_population_fields": [
+    "exact_recurrent_state_key",
+    "installed_weight",
+    "transition_occurrence_provenance",
+    "recurrent_block_id",
+    "normalization_id"
+  ],
+  "parent_additional_field": "parent_rule_provenance",
+  "registry_fields": [
+    "operation_kind",
+    "source_theorems",
+    "owner_effect",
+    "payment_class",
+    "continuation",
+    "contract_sha256"
+  ],
+  "instance_population_fields_present": 0,
+  "conclusion": "operation-kind registry is not a recurrent-state population source",
+  "honesty": {
+    "registry_instance_gap_checked": 1,
+    "first_manifest_record_populated": 0,
+    "binding_input_population_complete": 0,
+    "global_binding_constructed": 0,
+    "global_binding_incompatibility_proved": 0,
+    "all_n_proved_by_checker": 0
+  }
+}

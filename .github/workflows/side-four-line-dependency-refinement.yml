@@ -1,0 +1,30 @@
+name: Side-four line dependency refinement
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_compulsory_coefficient_dependency_contract.json'
+      - 'data/prime_power_side_four_symbolic_line_kernel_context_contract.json'
+      - 'data/prime_power_side_four_coefficient_dependency_line_refinement.json'
+      - 'scripts/check_prime_power_side_four_compulsory_coefficient_dependency_map.py'
+      - 'scripts/check_prime_power_side_four_symbolic_line_kernel_context.py'
+      - 'scripts/check_prime_power_side_four_coefficient_dependency_line_refinement.py'
+      - 'docs/563-prime-power-side-four-line-dependency-refinement.md'
+      - '.github/workflows/side-four-line-dependency-refinement.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  line-refinement:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_compulsory_coefficient_dependency_map.py
+      - run: python scripts/check_prime_power_side_four_symbolic_line_kernel_context.py
+      - run: python scripts/check_prime_power_side_four_coefficient_dependency_line_refinement.py

@@ -1,0 +1,27 @@
+name: Side-four blocker sample credit routing
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_blocker_actual_background_sample_batch.json'
+      - 'data/prime_power_side_four_blocker_sample_credit_routing_contract.json'
+      - 'scripts/check_prime_power_side_four_blocker_actual_background_sample.py'
+      - 'scripts/check_prime_power_side_four_blocker_sample_credit_routing.py'
+      - 'docs/568-prime-power-side-four-blocker-sample-credit-routing.md'
+      - '.github/workflows/side-four-blocker-sample-credit-routing.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  routing:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_blocker_actual_background_sample.py
+      - run: python scripts/check_prime_power_side_four_blocker_sample_credit_routing.py

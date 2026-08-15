@@ -1,0 +1,29 @@
+name: Side-four symbolic line kernel context
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_return_exchange_context_contract.json'
+      - 'data/prime_power_side_four_symbolic_line_kernel_context_contract.json'
+      - 'scripts/check_prime_power_side_four_return_exchange_context.py'
+      - 'scripts/check_prime_power_side_four_symbolic_line_kernel_context.py'
+      - 'docs/562-prime-power-side-four-symbolic-line-kernel-context.md'
+      - '.github/workflows/side-four-symbolic-line-kernel-context.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  symbolic-line:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_selected_response_provenance_manifest.py
+      - run: python scripts/check_prime_power_side_four_return_exchange_context.py
+      - run: python scripts/check_prime_power_side_four_symbolic_line_kernel_context.py

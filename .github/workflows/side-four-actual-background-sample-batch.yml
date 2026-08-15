@@ -1,0 +1,27 @@
+name: Side-four actual-background sample batch
+
+on:
+  push:
+    paths:
+      - 'data/prime_power_side_four_selected_response_provenance_manifest.json'
+      - 'data/prime_power_side_four_actual_background_profile_obligation_contract.json'
+      - 'data/prime_power_side_four_actual_background_sample_batch.json'
+      - 'scripts/check_prime_power_side_four_actual_background_sample_batch.py'
+      - 'docs/564-prime-power-side-four-actual-background-sample-batch.md'
+      - '.github/workflows/side-four-actual-background-sample-batch.yml'
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  sample:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python scripts/check_prime_power_side_four_actual_background_profile_obligations.py
+      - run: python scripts/check_prime_power_side_four_actual_background_sample_batch.py

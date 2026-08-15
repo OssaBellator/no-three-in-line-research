@@ -1,0 +1,48 @@
+{
+  "schema": "prime-power-side-four-population-record-candidate/v1",
+  "purpose": "checked admission envelope for the first repository-proven recurrent-state population record",
+  "allowed_record_kinds": ["parent", "child"],
+  "required_candidate_fields": [
+    "record_kind",
+    "record_id",
+    "sample_scope",
+    "exact_recurrent_state_key",
+    "installed_weight",
+    "transition_occurrence_provenance",
+    "recurrent_block",
+    "normalization"
+  ],
+  "parent_only_required_fields": ["parent_rule_provenance"],
+  "child_only_required_fields": ["exact_child_class"],
+  "target_parent_record_ids": ["zero_parent", "blocker_parent"],
+  "target_child_classes": [
+    "return:00|rank1:1,-2,4:h2:k2",
+    "return:22|rank1:1,-2,4:h2:k2",
+    "return:22|rank2:1,-2,4:h2:k2",
+    "return:00|rank1:3,1,-3:h2:k2|collision:02,20",
+    "return:11|rank1:3,1,-3:h2:k2|collision:02,20",
+    "return:11|rank2:3,1,-3:h2:k2|collision:02,20",
+    "return:33|rank3:1,-1,-1:h0:k3|collision:02,20"
+  ],
+  "candidate": null,
+  "admission": {
+    "candidate_present": 0,
+    "candidate_schema_valid": 0,
+    "target_identity_exact": 0,
+    "state_key_non_alias": 0,
+    "installed_weight_positive": 0,
+    "transition_provenance_present": 0,
+    "parent_rule_provenance_present_when_required": 0,
+    "normalization_witness_present": 0,
+    "recurrent_block_witness_present": 0,
+    "candidate_admissible_for_population_table": 0
+  },
+  "completion": {
+    "candidate_envelope_complete": 1,
+    "first_manifest_record_populated": 0,
+    "binding_input_population_complete": 0,
+    "global_binding_constructed": 0,
+    "global_binding_incompatibility_proved": 0,
+    "all_n_proved_by_checker": 0
+  }
+}
