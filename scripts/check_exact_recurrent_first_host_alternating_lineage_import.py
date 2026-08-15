@@ -207,7 +207,7 @@ def mutation_audit(manifest: dict[str, Any]) -> int:
         lambda x: x["aggregate"].update(source_backed_physical_fields=1),
         lambda x: x["aggregate"].update(registered_occurrence_continuation_edges=1),
         lambda x: x["score_classes"][0].update(background_count=19),
-        lambda x: x["score_classes"][1]["score_vector"].update(3012=1),
+        lambda x: x["score_classes"][1]["score_vector"].update({"3012": 1}),
         lambda x: x["import_gate"].update(payment_complete_physical_signature_proved=1),
         lambda x: x["import_gate"].update(alternating_core_recurrence_closure_import_allowed=1),
         lambda x: x["conclusion"].update(promotion_to_recurrent_row_allowed=1),
