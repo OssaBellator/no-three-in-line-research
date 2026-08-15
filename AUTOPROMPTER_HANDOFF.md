@@ -96,6 +96,19 @@ accepted evidence-sharing theorems = 0
 
 Identical field names are not permission to merge certificate-instance obligations. Any reduction of those safe floors requires an explicit source-backed sharing/uniformity theorem satisfying the scope-preservation gate.
 
+## Post-CI physical-source recheck
+
+The newer `research/all-n-composite-modulus` artifacts that could plausibly affect the first-host source boundary were re-audited after the targeted CI run passed:
+
+- `data/prime_power_side_four_blocker_actual_background_sample_batch.json` explicitly declares an integer-lattice blocker sample, `coordinate_scope = integer-lattice-blocker-sample-not-global-board-claim`, and `global_recurrent_state_claim = 0`.
+- `data/prime_power_side_four_recurrent_state_population_table.json` has empty parent and child populations and `first_manifest_record_populated = 0`.
+- `data/prime_power_side_four_population_record_candidate.json` has `candidate = null`; transition-occurrence provenance is unpopulated.
+- `data/prime_power_side_four_blocker_3210_collision_semantic_obstruction.json` marks `global_transition_occurrence_witness` missing and `global_transition_occurrence_complete = 0`.
+
+These artifacts therefore do not provide a source-backed physical occurrence domain/record, empty-domain/completeness theorem, or global transition-occurrence witness for the first host. This negative source audit was recorded on issue #18 in comment `5299523781`.
+
+No new symbolic restoration/route certificate was added as a substitute for missing physical evidence.
+
 ## Mandatory physical frontier
 
 The next mathematical promotion must be supported by repository evidence supplying at least one of:
@@ -124,4 +137,4 @@ all_n_proved_by_checker = 0
 
 ## Next executable step
 
-Return to the physical-source frontier. Search current repository evidence for an occurrence-faithful source for `s4-75b04c45c1c8eac2` that supplies an explicit physical occurrence domain/record, or a theorem proving that domain empty/complete or chart-confined. Reject coordinate samples and abstract contracts that explicitly lack global recurrence-occurrence provenance. If no qualifying source exists, record that exact negative audit rather than extending the symbolic restoration/route surface.
+The repository currently supplies no qualifying occurrence-faithful source for `s4-75b04c45c1c8eac2`. Do not extend the symbolic restoration/route surface merely to create activity. The next substantive change requires new repository evidence giving an explicit physical occurrence domain/record, or a source-backed theorem proving that domain empty/complete or physically chart-confined; once such evidence exists, route it through the existing 16-field physical batch gate and then the 12-field-per-edge transition-domain gate.
