@@ -277,7 +277,7 @@ def mutation_audit(manifest: dict[str, object]) -> int:
         lambda item: item["aggregate"].update(selected_label_bidirected_pairs=2),
         lambda item: item["aggregate"].update(minimum_selector_edges_requiring_other_route=2),
         lambda item: item["aggregate"].update(minimum_menu_edges_requiring_other_route=3),
-        lambda item: item["predicates"].update(2031="r20"),
+        lambda item: item["predicates"].update({"2031": "r20"}),
         lambda item: item["single_bit_recreation_gates"].pop(),
         lambda item: item["selector_neutral_single_bit_edges"].pop(),
         lambda item: item["selected_label_transition_graph"]["directed_edges"].pop(),
