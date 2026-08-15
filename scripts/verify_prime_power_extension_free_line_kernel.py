@@ -192,28 +192,33 @@ def check_explicit_obstruction():
     formula_opposite, target_opposite, _profiles_opposite = line_formula_sums(
         side, current, opposite, lines
     )
-    kernel = Fraction(formula_current[1], side - 2)
-    kernel += lambda_value(side) * Fraction(
+    global_kernel = Fraction(formula_current[1], side - 2)
+    global_kernel += lambda_value(side) * Fraction(
         formula_current[2], side * (side - 1)
     )
-    kernel += lambda_value(side) * Fraction(
+    global_kernel += lambda_value(side) * Fraction(
         formula_current[3], side * (side - 1) * (side - 2)
     )
-    kernel += Fraction(formula_opposite[1], side - 2)
-    kernel += lambda_value(side) * Fraction(
+    global_kernel += Fraction(formula_opposite[1], side - 2)
+    global_kernel += lambda_value(side) * Fraction(
         formula_opposite[2], side * (side - 1)
     )
-    kernel += lambda_value(side) * Fraction(
+    global_kernel += lambda_value(side) * Fraction(
         formula_opposite[3], side * (side - 1) * (side - 2)
+    )
+    main_diagonal_kernel = kernel_layer(side, 0, 3, 2) + kernel_layer(
+        side, 3, 0, 2
     )
     assert sorted(profile for profile in profiles_current if profile[1] + profile[2] >= 3) == [
         (3, 1, 2, 0),
         (5, 0, 3, 2),
     ]
-    assert kernel == Fraction(160, 11)
+    assert main_diagonal_kernel == Fraction(160, 11)
     assert target_current + target_opposite == 6
-    assert kernel > target_current + target_opposite
-    return kernel, target_current + target_opposite
+    assert global_kernel == Fraction(663, 11)
+    assert main_diagonal_kernel > 3
+    assert global_kernel > target_current + target_opposite
+    return main_diagonal_kernel, global_kernel, target_current + target_opposite
 
 
 def main():
@@ -228,10 +233,12 @@ def main():
         exact[2],
         "layer target incidences,",
         check_symmetric_kernel_identity(),
-        "kernel arithmetic cases, and explicit obstruction",
+        "kernel arithmetic cases, pointwise obstruction",
         obstruction[0],
-        ">",
+        "> 3 and global obstruction",
         obstruction[1],
+        ">",
+        obstruction[2],
     )
 
 
